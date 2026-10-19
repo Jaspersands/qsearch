@@ -1,0 +1,63 @@
+{
+  "all_checks_passed": true,
+  "byproduct_verification": {
+    "byproduct_sign_cancellation_exact": true,
+    "outcomes_checked": 4
+  },
+  "distance_scaling_sweep": [
+    {
+      "code_distance_d": 3,
+      "data_qubits_per_rotated_patch": 9,
+      "fifteen_cnot_tree_logical_fidelity": 0.985104546362002,
+      "logical_error_per_cnot": 0.0010000000000000002,
+      "syndrome_rounds_per_logical_cnot": 6,
+      "three_patch_cnot_footprint_qubits": 27
+    },
+    {
+      "code_distance_d": 5,
+      "data_qubits_per_rotated_patch": 25,
+      "fifteen_cnot_tree_logical_fidelity": 0.9985010495451366,
+      "logical_error_per_cnot": 0.00010000000000000003,
+      "syndrome_rounds_per_logical_cnot": 10,
+      "three_patch_cnot_footprint_qubits": 75
+    },
+    {
+      "code_distance_d": 7,
+      "data_qubits_per_rotated_patch": 49,
+      "fifteen_cnot_tree_logical_fidelity": 0.9998500104995457,
+      "logical_error_per_cnot": 1.0000000000000003e-05,
+      "syndrome_rounds_per_logical_cnot": 14,
+      "three_patch_cnot_footprint_qubits": 147
+    },
+    {
+      "code_distance_d": 9,
+      "data_qubits_per_rotated_patch": 81,
+      "fifteen_cnot_tree_logical_fidelity": 0.9999850001049991,
+      "logical_error_per_cnot": 1.0000000000000004e-06,
+      "syndrome_rounds_per_logical_cnot": 18,
+      "three_patch_cnot_footprint_qubits": 243
+    },
+    {
+      "code_distance_d": 11,
+      "data_qubits_per_rotated_patch": 121,
+      "fifteen_cnot_tree_logical_fidelity": 0.9999985000010508,
+      "logical_error_per_cnot": 1.0000000000000005e-07,
+      "syndrome_rounds_per_logical_cnot": 22,
+      "three_patch_cnot_footprint_qubits": 363
+    }
+  ],
+  "domain": "topological_quantum_error_correction_surface_code_lattice_surgery",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "subsystem_id": "dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge",
+  "subsystem_number": 155,
+  "theorem_checks": {
+    "distance_7_achieves_above_99_98pct_15_cnot_tree_fidelity": true,
+    "lattice_surgery_byproduct_cancels_all_measurement_signs": true,
+    "logical_error_suppresses_exponentially_with_code_distance_d": true,
+    "rotated_surface_code_3_patch_footprint_equals_3_d_squared": true
+  }
+}

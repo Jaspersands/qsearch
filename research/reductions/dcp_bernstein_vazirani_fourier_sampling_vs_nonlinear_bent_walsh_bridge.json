@@ -1,0 +1,55 @@
+{
+  "all_checks_passed": true,
+  "balanced_carry_case": {
+    "analytic_formula_probability": 0.0,
+    "carry_hamming_weight": 8,
+    "max_spectrum_probability": 1.0,
+    "n_bits": 4,
+    "parseval_total_probability": 1.0,
+    "secret_s": 11,
+    "target_bv_probability": 0.0
+  },
+  "bent_cascade_carry_case": {
+    "analytic_formula_probability": 0.0625,
+    "carry_hamming_weight": 6,
+    "max_spectrum_probability": 0.0625,
+    "n_bits": 4,
+    "parseval_total_probability": 1.0,
+    "secret_s": 11,
+    "target_bv_probability": 0.0625
+  },
+  "domain": "boolean_fourier_analysis_bernstein_vazirani_carry_dilution",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "peeled_zero_carry_case": {
+    "analytic_formula_probability": 1.0,
+    "carry_hamming_weight": 0,
+    "max_spectrum_probability": 1.0,
+    "n_bits": 4,
+    "parseval_total_probability": 1.0,
+    "secret_s": 11,
+    "target_bv_probability": 1.0
+  },
+  "quadratic_and_carry_case": {
+    "analytic_formula_probability": 0.25,
+    "carry_hamming_weight": 4,
+    "max_spectrum_probability": 0.25,
+    "n_bits": 4,
+    "parseval_total_probability": 1.0,
+    "secret_s": 11,
+    "target_bv_probability": 0.25
+  },
+  "subsystem_id": "dcp_bernstein_vazirani_fourier_sampling_vs_nonlinear_bent_walsh_bridge",
+  "subsystem_number": 156,
+  "theorem_checks": {
+    "analytic_weight_formula_matches_exact_walsh_peak": true,
+    "balanced_carry_completely_extinguishes_target_secret_peak": true,
+    "bent_carry_creates_flat_1_over_16_walsh_floor_everywhere": true,
+    "cnot_peeled_zero_carry_achieves_100pct_single_query_bv": true,
+    "parseval_identity_sums_to_1_across_all_regimes": true,
+    "single_and_carry_dilutes_bv_peak_to_exact_one_quarter": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_quantum_fano_holevo_mutual_information_sample_lower_bound_bridge",
+  "title": "Universal Fano-Holevo Sample-Complexity Lower Bound for Single-Qubit DCP Receivers",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Each single-qubit DCP state rho(theta, gamma) carries Holevo capacity at most chi_1(gamma) = 1 - h_2((1 + gamma)/2) >= gamma^2 / (2 ln 2) bits.",
+    "By quantum subadditivity and Fano's inequality, any collective or adaptive receiver recovering s in Z_q^n with error probability at most delta requires N_copies >= ((1 - delta) * n * log_2(q) - h_2(delta)) / (1 - h_2((1 + gamma)/2)) = Omega(n log_2(q) / gamma^2)."
+  ],
+  "favorable_controls": [
+    "32-bit secret space (n=8, q=16) across gamma in {0.10, 0.25, 0.50, 0.80, 1.00} at delta=0.01"
+  ]
+}

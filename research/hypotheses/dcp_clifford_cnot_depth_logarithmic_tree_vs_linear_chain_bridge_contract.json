@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_clifford_cnot_depth_logarithmic_tree_vs_linear_chain_bridge",
+  "title": "Balanced Binary CNOT Tree (Depth log_2 h) vs. Linear Star (Depth h-1) Idle Decoherence Suppression",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any power-of-2 witness weight h = 2^d, both the linear CNOT star and the balanced binary fan-in CNOT tree use exactly h - 1 CNOT gates and project the all-zero syndrome d = 0^{h-1} onto the identical 2-dimensional subspace span{|0^h>, |1^h>}.",
+    "Reducing circuit depth from h - 1 to log_2(h) cuts total qubit-layer idle volume from h*(h-1) to h*log_2(h), boosting coherence visibility by exp(alpha_idle * h * (h - 1 - log_2(h))) (>5.81x at h=16, alpha_idle=0.01)."
+  ],
+  "favorable_controls": [
+    "Witness weights h in {2, 4, 8, 16, 32}"
+  ]
+}

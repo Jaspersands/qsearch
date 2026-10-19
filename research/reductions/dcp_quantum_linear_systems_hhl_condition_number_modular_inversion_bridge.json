@@ -1,0 +1,59 @@
+{
+  "all_checks_passed": true,
+  "domain": "quantum_linear_systems_hhl_vs_modular_peeling",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "ill_conditioned_unimodular_case": {
+    "condition_number_kappa": 62.984122982864164,
+    "det_real": 1,
+    "hhl_worst_case_success_prob": 0.0002520796731898421,
+    "matrix_h": [
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ]
+    ],
+    "modular_unitary_condition_number": 1.0,
+    "modular_unitary_recovery_fraction": 1.0,
+    "modulus_q": 8,
+    "real_inversion_wraparound_failure_fraction": 0.84375,
+    "sigma_max": 7.936253712102602,
+    "sigma_min": 0.12600403619594397
+  },
+  "shear_matrix_case": {
+    "condition_number_kappa": 2.6180339887498953,
+    "det_real": 1,
+    "hhl_worst_case_success_prob": 0.1458980337503154,
+    "matrix_h": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "modular_unitary_condition_number": 1.0,
+    "modular_unitary_recovery_fraction": 1.0,
+    "modulus_q": 8,
+    "real_inversion_wraparound_failure_fraction": 0.4375,
+    "sigma_max": 1.618033988749895,
+    "sigma_min": 0.6180339887498948
+  },
+  "subsystem_id": "dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_bridge",
+  "subsystem_number": 143,
+  "theorem_checks": {
+    "discrete_modular_unitary_peeling_achieves_100pct_with_kappa_1": true,
+    "ill_conditioned_matrix_inflates_hhl_kappa_above_35": true,
+    "real_hhl_inversion_fails_on_modular_wraparound_states": true,
+    "unipotent_upper_triangular_has_kappa_golden_ratio_squared": true
+  }
+}

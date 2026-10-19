@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_bridge",
+  "subsystem_number": 143,
+  "hypothesis": "Continuous HHL/QSVT real matrix inversion of modular syndrome equations suffers from both condition number blowup kappa(H) > 1 and unknown integer wrap-around k in Z^m, whereas discrete reversible modular CNOT/Hensel row reduction is a permutation unitary with kappa = 1 and 100% recovery.",
+  "required_checks": [
+    "unipotent_upper_triangular_has_kappa_golden_ratio_squared",
+    "ill_conditioned_matrix_inflates_hhl_kappa_above_35",
+    "real_hhl_inversion_fails_on_modular_wraparound_states",
+    "discrete_modular_unitary_peeling_achieves_100pct_with_kappa_1"
+  ]
+}

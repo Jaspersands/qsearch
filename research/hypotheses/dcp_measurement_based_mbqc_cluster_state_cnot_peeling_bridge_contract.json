@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_measurement_based_mbqc_cluster_state_cnot_peeling_bridge",
+  "subsystem_number": 142,
+  "hypothesis": "Raussendorf-Briegel MBQC executes arbitrary Clifford CNOT syndrome-peeling trees in strictly 1 simultaneous quantum measurement round by propagating Pauli byproduct frames linearly over F_2.",
+  "required_checks": [
+    "mbqc_cnot_symplectic_involution_exact",
+    "mbqc_byproduct_frame_f2_linear",
+    "mbqc_quantum_depth_strictly_one_for_all_k",
+    "k64_compresses_6_tree_layers_to_1_measurement_round"
+  ]
+}

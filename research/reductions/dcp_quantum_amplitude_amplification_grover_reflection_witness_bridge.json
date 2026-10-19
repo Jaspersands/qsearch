@@ -1,0 +1,62 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "0dcd33cf5c4e6f73",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-amplitude-amplification-grover-reflection-witness-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Coherent Grover-BHMT quantum amplitude amplification of CNOT syndrome branches prior to syndrome measurement",
+    "controls_included": "Includes weight-3 witness (p_0=1/4 -> k=1 deterministic P_1=1.0), weight-2 over-rotation control (p_0=1/2 -> P_1=0.5), and weight-4 witness (p_0=1/8 -> P_1=25/32=0.78125), all preserving 100% survivor fidelity.",
+    "does_not_claim": "Amplification of already-measured classical mixtures without coherent access to the state-preparation unitary U_prep"
+  },
+  "theorem_id": "dcp_quantum_amplitude_amplification_grover_reflection_witness_bridge",
+  "weight2_overrotation_k1": {
+    "amplified_syndrome_prob_closed_form": 0.4999999999999996,
+    "amplified_syndrome_prob_explicit": 0.5,
+    "conditional_survivor_state_fidelity": 0.9999999999999996,
+    "exact_laws_verified": true,
+    "h_wires": 2,
+    "initial_syndrome_prob_p0": 0.5,
+    "k_grover_steps": 1,
+    "probability_boost_factor": 1.0,
+    "q_mod": 8,
+    "target_syndrome": [
+      0
+    ]
+  },
+  "weight3_deterministic_k1": {
+    "amplified_syndrome_prob_closed_form": 1.0,
+    "amplified_syndrome_prob_explicit": 0.9999999999999998,
+    "conditional_survivor_state_fidelity": 1.0,
+    "exact_laws_verified": true,
+    "h_wires": 3,
+    "initial_syndrome_prob_p0": 0.24999999999999994,
+    "k_grover_steps": 1,
+    "probability_boost_factor": 4.0,
+    "q_mod": 5,
+    "target_syndrome": [
+      0,
+      1
+    ]
+  },
+  "weight4_boost_k1": {
+    "amplified_syndrome_prob_closed_form": 0.7812500000000001,
+    "amplified_syndrome_prob_explicit": 0.78125,
+    "conditional_survivor_state_fidelity": 0.9999999999999996,
+    "exact_laws_verified": true,
+    "h_wires": 4,
+    "initial_syndrome_prob_p0": 0.125,
+    "k_grover_steps": 1,
+    "probability_boost_factor": 6.25,
+    "q_mod": 8,
+    "target_syndrome": [
+      0,
+      0,
+      0
+    ]
+  }
+}

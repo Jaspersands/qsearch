@@ -1,0 +1,77 @@
+{
+  "all_checks_passed": true,
+  "audit_d_1_2_mod8": {
+    "channel_orders_q_i": [
+      8,
+      4
+    ],
+    "coupled_matrix_B": [
+      [
+        5,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "divisibility_chain_verified": true,
+    "exact_snf_laws_verified": true,
+    "expected_image_cardinality": 32,
+    "expected_kernel_cardinality": 2,
+    "explicit_image_cardinality": 32,
+    "explicit_kernel_cardinality": 2,
+    "invariant_factors_d": [
+      1,
+      2
+    ],
+    "max_phase_decoupling_error": 0.0,
+    "n_dim": 2,
+    "q_mod": 8,
+    "snf_diagonal_verified": true
+  },
+  "audit_d_2_6_mod12": {
+    "channel_orders_q_i": [
+      6,
+      2
+    ],
+    "coupled_matrix_B": [
+      [
+        10,
+        2
+      ],
+      [
+        8,
+        10
+      ]
+    ],
+    "divisibility_chain_verified": true,
+    "exact_snf_laws_verified": true,
+    "expected_image_cardinality": 12,
+    "expected_kernel_cardinality": 12,
+    "explicit_image_cardinality": 12,
+    "explicit_kernel_cardinality": 12,
+    "invariant_factors_d": [
+      2,
+      6
+    ],
+    "max_phase_decoupling_error": 0.0,
+    "n_dim": 2,
+    "q_mod": 12,
+    "snf_diagonal_verified": true
+  },
+  "certificate_sha256_16": "c373c05e6106185f",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-modular-hermite-normal-form-determinant-smith-peeling-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Smith Normal Form U B V == diag(d_1, ..., d_n) mod q invariant-factor channel decoupling and coset capacity",
+    "controls_included": "Evaluates d=[1, 2] over Z_8^2 (|Im|=32, |ker|=2) and d=[2, 6] over Z_{12}^2 (|Im|=12, |ker|=12), verifying < 1e-12 phase decoupling error across all (s, u).",
+    "does_not_claim": "Recovery of secret components lying inside the non-trivial kernel ker(B^T mod q) of size prod_i gcd(d_i, q)"
+  },
+  "theorem_id": "dcp_modular_hermite_normal_form_determinant_smith_peeling_bridge"
+}

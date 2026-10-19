@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_continuous_variable_gkp_modular_grid_stabilizer_peeling_bridge",
+  "title": "Finite-Z_q GKP Coset Comb State Poisson Summation Dual Comb and Shift Error Correction",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For q = d * M, the primal coset comb state |C_{d, s_0}> = M^{-1/2} sum_{k=0}^{M-1} |s_0 + k*d mod q> transforms under QFT_q into the exact reciprocal comb d^{-1/2} sum_{r=0}^{d-1} exp(2*pi*i s_0 r / d) |r * M> with zero out-of-comb leakage.",
+    "Measuring the QFT register modulo M uniquely diagnoses and corrects any modular frequency shift error |e_f| <= (M - 1) // 2, restoring 100% deterministic recovery of s_0 in Z_d."
+  ],
+  "favorable_controls": [
+    "q=20 (d=4, M=5, radius=2, 20/20 exact recoveries)",
+    "q=56 (d=8, M=7, radius=3, 56/56 exact recoveries)"
+  ]
+}

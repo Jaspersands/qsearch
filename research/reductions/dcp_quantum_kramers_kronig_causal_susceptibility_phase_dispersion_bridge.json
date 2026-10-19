@@ -1,0 +1,54 @@
+{
+  "all_checks_passed": true,
+  "domain": "causal_linear_response_kramers_kronig_dispersive_readout",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "kramers_kronig_quadrature_checks": [
+    {
+      "absolute_error": 1.0611284068096083e-07,
+      "chi_real_analytic": 0.4,
+      "chi_real_kramers_kronig_quadrature": 0.39999989388715934,
+      "detuning_delta": -2.0,
+      "gamma": 1.0
+    },
+    {
+      "absolute_error": 5.305164585411859e-08,
+      "chi_real_analytic": 0.5,
+      "chi_real_kramers_kronig_quadrature": 0.49999994694835415,
+      "detuning_delta": -1.0,
+      "gamma": 1.0
+    },
+    {
+      "absolute_error": 0.0,
+      "chi_real_analytic": -0.0,
+      "chi_real_kramers_kronig_quadrature": 0.0,
+      "detuning_delta": 0.0,
+      "gamma": 1.0
+    },
+    {
+      "absolute_error": 5.305164585411859e-08,
+      "chi_real_analytic": -0.5,
+      "chi_real_kramers_kronig_quadrature": -0.49999994694835415,
+      "detuning_delta": 1.0,
+      "gamma": 1.0
+    },
+    {
+      "absolute_error": 1.0611284068096083e-07,
+      "chi_real_analytic": -0.4,
+      "chi_real_kramers_kronig_quadrature": -0.39999989388715934,
+      "detuning_delta": 2.0,
+      "gamma": 1.0
+    }
+  ],
+  "subsystem_id": "dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_bridge",
+  "subsystem_number": 153,
+  "theorem_checks": {
+    "half_linewidth_detuning_gives_exact_3pi_over_4_phase": true,
+    "kramers_kronig_principal_value_matches_analytic_within_2e_minus_3": true,
+    "real_part_odd_and_imaginary_part_even_in_detuning": true,
+    "zero_detuning_has_purely_absorptive_susceptibility": true
+  }
+}

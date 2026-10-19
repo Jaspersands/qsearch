@@ -1,0 +1,34 @@
+{
+  "hypothesis_id": "shared_support_interleaved_decoder_bypass_for_character_DQI",
+  "status": "CLASSICAL_PRIMITIVE_EXECUTED_QUANTUM_REPLACEMENT_REJECTED_LOCALLY_REVIEW_PENDING",
+  "scientific_question": "Can collaborative interleaved decoding replace the expensive capacity decoder without losing the original single-polynomial OPI objective?",
+  "input_model": "Explicit p=3 mod4 quadratic-character OPI with fixed public shifts; c independent nonzero Fourier-value rows conditional on a common support; no IID input shifts",
+  "proposed_mechanism": "Stack row syndromes, reconstruct common error locator, erase all row errors, separate Fourier readouts, select an original output polynomial",
+  "expected_upside_not_realized": "Replace severe capacity-decoder exponents by polynomial-size collaborative field-linear recovery while retaining the known finite score",
+  "resource_requirements": "cN error and cK syndrome registers with O(logp) bits; field-linear recurrence solve, root checks, Vandermonde reconstruction and full syndrome replay; scalable coherent gate compilation not supplied",
+  "executed_classical_result": "p61,N127,K39,cap32: five/eight independent rows recover all errors; two rows and five repeated rows remain UNKNOWN; no source/support passed to decoder",
+  "local_rank_proof": "For c(K-ell)>=ell, a degree-j nonzero minor polynomial gives failure mass<=ell/(p-1) on independent uniform Fp* row values, for every fixed support",
+  "local_quantum_rejection": "All-support near-isometry, tensor polar comparison and pointwise predicate-square bounds make each original row nearly uniform; rank postselection separately charges failure and collision amplification",
+  "large_fixed_input_bound": "At N127,K39,ell32,p61, each rank-heralded row is within3.726e-9 TV of uniform; best of five/eight reaches110/127 with probability<=1.863e-8/2.981e-8 under local proof",
+  "strongest_comparators": "Correct single-copy finite DQI conditional lower tail0.314586 at110/127; saved classical same-input word109/127; no new matched runtime separation is claimed",
+  "falsifiers_and_scope": [
+    "Actual rank recovery must use only syndromes and retain rank failures",
+    "Rank rejection mass must not be equated to genuine collision mass or blindly given M-fold amplification",
+    "All-support Gram uniformity, not merely radial norm control, is required",
+    "Uniform-polynomial tail bounds may use only K-wise-independent moments, not a full binomial law",
+    "Joint product correlation is not the original individual-polynomial score",
+    "General interleaving, new linear combinations, joint quantum readout, asymmetric sources and support-dependent feedforward are not ruled out"
+  ],
+  "evidence": [
+    "theorems/prime_character_interleaved_probe.py",
+    "tests/test_prime_character_interleaved_probe.py",
+    "research/classical_baselines/prime_character_interleaved_probe.json",
+    "research/PRIME_CHARACTER_INTERLEAVED_PROBE.md"
+  ],
+  "literature": ["https://arxiv.org/abs/cs/0610074"],
+  "all_interleaving_or_all_quantum_readouts_ruled_out": false,
+  "coherent_large_decoder_gate_compilation_supplied": false,
+  "independent_or_formal_application_review_completed": false,
+  "accepted_speedup_candidate": false,
+  "new_central_candidate_negative_or_proof_registered": false
+}

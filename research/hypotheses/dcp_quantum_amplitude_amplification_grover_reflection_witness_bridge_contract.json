@@ -1,0 +1,15 @@
+{
+  "hypothesis_id": "dcp_quantum_amplitude_amplification_grover_reflection_witness_bridge",
+  "title": "Coherent Grover-BHMT Quantum Amplitude Amplification of CNOT Syndrome Branches",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Applying k coherent Grover-BHMT reflection steps prior to CNOT syndrome readout rotates the marked syndrome branch probability from p_0 = sin^2(theta_0) to P_k(p_0) = sin^2((2k + 1) * theta_0) while preserving 100% survivor state fidelity.",
+    "For any weight-3 CNOT witness (p_0 = 2^{-(3-1)} = 1/4, theta_0 = pi/6), a single amplification step (k = 1) achieves 100% deterministic syndrome preparation (P_1 = 1.0).",
+    "For a weight-2 witness (p_0 = 1/2), standard pi-reflection over-rotates to sin^2(3*pi/4) = 1/2."
+  ],
+  "favorable_controls": [
+    "Weight-3 witness A=[1,1,1] mod 5 on d*=(0,1) (p_0=0.25 -> P_1=1.0)",
+    "Weight-2 over-rotation control (p_0=0.50 -> P_1=0.50)",
+    "Weight-4 witness (p_0=0.125 -> P_1=25/32=0.78125)"
+  ]
+}

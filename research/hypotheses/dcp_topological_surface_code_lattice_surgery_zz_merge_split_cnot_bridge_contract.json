@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge",
+  "subsystem_number": 155,
+  "hypothesis": "Rotated surface code lattice surgery executes logical CNOT via rough ZZ-merge and smooth XX-split across 3 d^2 data qubits in 2d syndrome rounds, with deterministic Pauli byproduct correction Z_C^{m_ZZ} X_T^{m_XX} and exponential logical error suppression.",
+  "required_checks": [
+    "lattice_surgery_byproduct_cancels_all_measurement_signs",
+    "logical_error_suppresses_exponentially_with_code_distance_d",
+    "distance_7_achieves_above_99_98pct_15_cnot_tree_fidelity",
+    "rotated_surface_code_3_patch_footprint_equals_3_d_squared"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_entanglement_assisted_pre_shared_ebit_superdense_phase_bridge",
+  "title": "Pre-Shared Bell-Pair Superdense Phase Sensing and 100% Pauli-X Bit-Flip Immunity",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "When one qubit of a pre-shared Bell pair |Phi^+>_{AB} undergoes phase shift theta, dephasing gamma, and Pauli-X bit-flip noise eta_X in [0, 1], the Bell basis splits orthogonally into unflipped {|Phi^pm>} (prob 1 - eta_X) and flipped {|Psi^pm>} (prob eta_X) subspaces.",
+    "The Bell parity observable <X_A otimes X_B> = gamma * cos(theta) is 100% invariant across all bit-flip rates eta_X in [0, 1], while Z_A otimes Z_B diagnoses the exact bit-flip probability eta_X."
+  ],
+  "favorable_controls": [
+    "Sweep across eta_X in {0.0, 0.10, 0.25, 0.50, 0.75, 1.00} at theta=pi/3, gamma=0.88"
+  ]
+}

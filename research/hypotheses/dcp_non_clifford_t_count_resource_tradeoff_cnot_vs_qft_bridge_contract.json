@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_non_clifford_t_count_resource_tradeoff_cnot_vs_qft_bridge",
+  "title": "Exact (m - 1)x Non-Clifford Rotation Reduction of Adaptive R_Z Peeling vs. m-Qubit QFT",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "A full m-qubit inverse QFT_{2^m}^dagger requires C(m-1, 2) controlled fine-angle phase rotations (k >= 3), decomposing into (m - 2)(m - 1) single-qubit fine non-Clifford Z-rotations plus (m - 1) controlled-S gates.",
+    "Iterative adaptive R_Z(-phi_known) bit peeling requires 0 non-Clifford rotations at stages r = 0, 1 and at most (m - 2) single-qubit fine rotations across stages r = 2..m-1, achieving an exact (m - 1)x reduction in fine-angle non-Clifford rotations and zero 2-qubit controlled-phase gates."
+  ],
+  "favorable_controls": [
+    "Register sizes m in {3, 4, 8, 16, 32, 64} (31x reduction at m=32; 63x reduction at m=64)"
+  ]
+}

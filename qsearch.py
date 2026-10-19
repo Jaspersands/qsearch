@@ -251,6 +251,32 @@ for _p in [_ROOT_DIR, _CORE_DIR, _THEOREMS_DIR]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
+from theorems.dcp_bernstein_vazirani_fourier_sampling_vs_nonlinear_bent_walsh_bridge import generate_dcp_bernstein_vazirani_fourier_sampling_vs_nonlinear_bent_walsh_certificate
+from theorems.dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge import generate_dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_certificate
+from theorems.dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_bridge import generate_dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_certificate
+from theorems.dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_bridge import generate_dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_certificate
+from theorems.dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge import generate_dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_certificate
+from theorems.dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_bridge import generate_dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_certificate
+from theorems.dcp_centennial_100_subsystem_master_audit_and_completeness_bridge import generate_dcp_centennial_100_subsystem_master_audit_and_completeness_certificate
+from theorems.dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_bridge import generate_dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_certificate
+from theorems.dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge import generate_dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_certificate
+from theorems.dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge import generate_dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_certificate
+from theorems.dcp_majorana_fermionic_gaussian_matchgate_parity_peeling_bridge import generate_dcp_majorana_fermionic_gaussian_matchgate_parity_peeling_certificate
+from theorems.dcp_quantum_sanov_theorem_large_deviations_kl_syndrome_hypothesis_bridge import generate_dcp_quantum_sanov_theorem_large_deviations_kl_syndrome_hypothesis_certificate
+from theorems.dcp_floquet_dynamical_decoupling_carr_purcell_udds_carry_filter_bridge import generate_dcp_floquet_dynamical_decoupling_carr_purcell_udds_carry_filter_certificate
+from theorems.dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_bridge import generate_dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_certificate
+from theorems.dcp_measurement_based_mbqc_cluster_state_cnot_peeling_bridge import generate_dcp_measurement_based_mbqc_cluster_state_cnot_peeling_certificate
+from theorems.dcp_quantum_ziv_zakai_bellman_minimax_phase_lower_bound_bridge import generate_dcp_quantum_ziv_zakai_bellman_minimax_phase_lower_bound_certificate
+
+from theorems.dcp_shadow_tomography_classical_shadows_pauli_observable_sample_bridge import generate_dcp_shadow_tomography_classical_shadows_pauli_observable_sample_certificate
+from theorems.dcp_continuous_variable_gkp_modular_grid_stabilizer_peeling_bridge import generate_dcp_continuous_variable_gkp_modular_grid_stabilizer_peeling_certificate
+from theorems.dcp_modular_hermite_normal_form_determinant_smith_peeling_bridge import generate_dcp_modular_hermite_normal_form_determinant_smith_peeling_certificate
+from theorems.dcp_noisy_quantum_ram_bucket_brigade_routing_fault_scaling_bridge import generate_dcp_noisy_quantum_ram_bucket_brigade_routing_fault_scaling_certificate
+from theorems.dcp_hidden_shift_bent_function_roetteler_involutory_dual_bridge import generate_dcp_hidden_shift_bent_function_roetteler_involutory_dual_certificate
+from theorems.dcp_quantum_fisher_information_matrix_multiparameter_cramer_rao_bridge import generate_dcp_quantum_fisher_information_matrix_multiparameter_cramer_rao_certificate
+from theorems.dcp_krawtchouk_polynomial_binary_hamming_scheme_macwilliams_cnot_bridge import generate_dcp_krawtchouk_polynomial_binary_hamming_scheme_macwilliams_cnot_certificate
+from theorems.dcp_quantum_phase_estimation_kaiser_bessel_chebyshev_dolph_window_bridge import generate_dcp_quantum_phase_estimation_kaiser_bessel_chebyshev_dolph_window_certificate
+
 from self_dual_wreath_branch_character_cyclic_polar_compiler import write_branch_character_cyclic_polar_report
 from self_dual_wreath_branch_character_cyclic_quadrant_overlap import write_cyclic_quadrant_overlap_report
 from self_dual_wreath_branch_character_equivariant_multiplier_normal_form import write_equivariant_multiplier_normal_form_report
@@ -29409,7 +29435,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     native_history_erasure_dequantization = subparsers.add_parser(
         "native-history-erasure-dequantization",
-        help="Run native phase bank history erasure barrier, ISIS equivalence, and classical dequantization audit.",
+        help="Replay scoped history countercontrols and quarantine the unsupported universal no-go.",
     )
     native_history_erasure_dequantization.add_argument("--no-registry", action="store_true")
     native_history_erasure_dequantization.set_defaults(func=command_native_history_erasure_dequantization)
@@ -30560,3 +30586,151 @@ if __name__ == "__main__":
 # Subsystem CLI hook: dcp-short-integer-solution-sis-dual-homomorphic-trapdoor-bridge -> theorems.dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge
 
 # Subsystem CLI hook: dcp-grand-synthesis-50-subsystem-taxonomy-and-frontier-bridge -> theorems.dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge
+
+# Subsystem CLI hook: dcp-quantum-amplitude-amplification-grover-reflection-witness-bridge -> theorems.dcp_quantum_amplitude_amplification_grover_reflection_witness_bridge
+
+# Subsystem CLI hook: dcp-fixed-point-pi-over-3-grover-syndrome-amplification-bridge -> theorems.dcp_fixed_point_pi_over_3_grover_syndrome_amplification_bridge
+
+# Subsystem CLI hook: dcp-radix-4-quaternary-qft-butterfly-depth-halving-bridge -> theorems.dcp_radix_4_quaternary_qft_butterfly_depth_halving_bridge
+
+# Subsystem CLI hook: dcp-quantum-chernoff-information-geodesic-exponent-bridge -> theorems.dcp_quantum_chernoff_information_geodesic_exponent_bridge
+
+# Subsystem CLI hook: dcp-pauli-twirling-coherent-carry-to-stochastic-dephasing-bridge -> theorems.dcp_pauli_twirling_coherent_carry_to_stochastic_dephasing_bridge
+
+# Subsystem CLI hook: dcp-reed-muller-boolean-polynomial-degree-cnot-depth-bridge -> theorems.dcp_reed_muller_boolean_polynomial_degree_cnot_depth_bridge
+
+# Subsystem CLI hook: dcp-adaptive-sequential-probability-ratio-test-wald-peeling-bridge -> theorems.dcp_adaptive_sequential_probability_ratio_test_wald_peeling_bridge
+
+# Subsystem CLI hook: dcp-non-clifford-t-count-resource-tradeoff-cnot-vs-qft-bridge -> theorems.dcp_non_clifford_t_count_resource_tradeoff_cnot_vs_qft_bridge
+
+# Subsystem CLI hook: dcp-quantum-slepian-prolate-spheroidal-discrete-window-bridge -> theorems.dcp_quantum_slepian_prolate_spheroidal_discrete_window_bridge
+
+# Subsystem CLI hook: dcp-quantum-fano-holevo-mutual-information-sample-lower-bound-bridge -> theorems.dcp_quantum_fano_holevo_mutual_information_sample_lower_bound_bridge
+
+# Subsystem CLI hook: dcp-non-binary-reed-solomon-vandermonde-qudit-witness-bridge -> theorems.dcp_non_binary_reed_solomon_vandermonde_qudit_witness_bridge
+
+# Subsystem CLI hook: dcp-magic-state-distillation-15-to-1-reed-muller-peeling-cost-bridge -> theorems.dcp_magic_state_distillation_15_to_1_reed_muller_peeling_cost_bridge
+
+# Subsystem CLI hook: dcp-entanglement-assisted-pre-shared-ebit-superdense-phase-bridge -> theorems.dcp_entanglement_assisted_pre_shared_ebit_superdense_phase_bridge
+
+# Subsystem CLI hook: dcp-clifford-cnot-depth-logarithmic-tree-vs-linear-chain-bridge -> theorems.dcp_clifford_cnot_depth_logarithmic_tree_vs_linear_chain_bridge
+
+# Subsystem CLI hook: dcp-prime-field-f-p-berlekamp-massey-linear-recurrence-peeling-bridge -> theorems.dcp_prime_field_f_p_berlekamp_massey_linear_recurrence_peeling_bridge
+
+# Subsystem CLI hook: dcp-master-verification-82-subsystem-comprehensive-ledger-bridge -> theorems.dcp_master_verification_82_subsystem_comprehensive_ledger_bridge
+
+# Subsystem CLI hook: dcp-even-sublattice-parity-blindness-and-rescaling-bridge -> theorems.dcp_even_sublattice_parity_blindness_and_rescaling_bridge
+
+# Subsystem CLI hook: planted-qary-macwilliams-dual-weight-enumerator-bridge -> theorems.planted_qary_macwilliams_dual_weight_enumerator_bridge
+
+# Subsystem CLI hook: native-higher-call-composite-modulus-crt-factorization-audit -> theorems.native_higher_call_composite_modulus_crt_factorization_audit
+
+# Subsystem CLI hook: dcp-multi-packet-product-twirl-sq-dimension-audit -> theorems.dcp_multi_packet_product_twirl_sq_dimension_audit
+
+# Subsystem CLI hook: dcp-coherent-syndrome-uncomputation-reversible-oracle-bridge -> theorems.dcp_coherent_syndrome_uncomputation_reversible_oracle_bridge
+
+# Subsystem CLI hook: dcp-sieve-bucket-collision-birthday-tradeoff-audit -> theorems.dcp_sieve_bucket_collision_birthday_tradeoff_audit
+
+# Subsystem CLI hook: dcp-twisted-convolution-pretty-good-measurement-gram-bridge -> theorems.dcp_twisted_convolution_pretty_good_measurement_gram_bridge
+
+# Subsystem CLI hook: dcp-dyadic-valuation-anchor-invariance-hierarchy-bridge -> theorems.dcp_dyadic_valuation_anchor_invariance_hierarchy_bridge
+
+# Subsystem CLI hook: dcp-bell-conjugate-pair-phase-cancellation-obstruction -> theorems.dcp_bell_conjugate_pair_phase_cancellation_obstruction
+
+# Subsystem CLI hook: dcp-coset-subspace-qft-concentration-and-leakage-bridge -> theorems.dcp_coset_subspace_qft_concentration_and_leakage_bridge
+
+# Subsystem CLI hook: dcp-cyclic-group-qft-dihedral-coset-interference-bridge -> theorems.dcp_cyclic_group_qft_dihedral_coset_interference_bridge
+
+# Subsystem CLI hook: dcp-adaptive-hybrid-classical-quantum-peeling-sample-complexity-bridge -> theorems.dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_bridge
+
+# Subsystem CLI hook: dcp-overlapping-cnot-dag-carry-fanout-obstruction -> theorems.dcp_overlapping_cnot_dag_carry_fanout_obstruction
+
+# Subsystem CLI hook: dcp-sine-window-fejer-dirichlet-kernel-cutoff-bridge -> theorems.dcp_sine_window_fejer_dirichlet_kernel_cutoff_bridge
+
+# Subsystem CLI hook: dcp-anchor-conditioned-adaptive-syndrome-routing-bridge -> theorems.dcp_anchor_conditioned_adaptive_syndrome_routing_bridge
+
+# Subsystem CLI hook: dcp-multicopy-schur-weyl-symmetric-projection-bridge -> theorems.dcp_multicopy_schur_weyl_symmetric_projection_bridge
+
+# Subsystem CLI hook: dcp-cascaded-dyadic-adaptive-kernel-weight-pruning-bridge -> theorems.dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_bridge
+
+# Subsystem CLI hook: dcp-multicopy-distinct-header-cyclic-swap-interference-bridge -> theorems.dcp_multicopy_distinct_header_cyclic_swap_interference_bridge
+
+# Subsystem CLI hook: dcp-cnot-conjugated-schur-weyl-clifford-twirl-bridge -> theorems.dcp_cnot_conjugated_schur_weyl_clifford_twirl_bridge
+
+# Subsystem CLI hook: dcp-dihedral-vs-heisenberg-two-copy-commutant-bridge -> theorems.dcp_dihedral_vs_heisenberg_two_copy_commutant_bridge
+
+# Subsystem CLI hook: dcp-noisy-cascaded-dyadic-peeling-sample-complexity-bridge -> theorems.dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge
+
+# Subsystem CLI hook: dcp-odd-prime-modulus-cnot-carry-shift-obstruction -> theorems.dcp_odd_prime_modulus_cnot_carry_shift_obstruction
+
+# Subsystem CLI hook: dcp-heisenberg-dyadic-boundary-cocycle-repair-bridge -> theorems.dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge
+
+# Subsystem CLI hook: dcp-correlated-z-fault-syndrome-parity-twirl-bridge -> theorems.dcp_correlated_z_fault_syndrome_parity_twirl_bridge
+
+# Subsystem CLI hook: dcp-multi-target-reusable-syndrome-bank-amortization-bridge -> theorems.dcp_multi_target_reusable_syndrome_bank_amortization_bridge
+
+# Subsystem CLI hook: dcp-tensor-power-k-moment-dihedral-twirl-bridge -> theorems.dcp_tensor_power_k_moment_dihedral_twirl_bridge
+
+# Subsystem CLI hook: dcp-ternary-signed-witness-cnot-routing-bridge -> theorems.dcp_ternary_signed_witness_cnot_routing_bridge
+
+# Subsystem CLI hook: dcp-coherent-syndrome-sign-flip-pauli-frame-bridge -> theorems.dcp_coherent_syndrome_sign_flip_pauli_frame_bridge
+
+# Subsystem CLI hook: dcp-banded-qft-truncation-vs-dyadic-cnot-fidelity-bridge -> theorems.dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_bridge
+
+# Subsystem CLI hook: dcp-multi-packet-collective-helstrom-product-likelihood-bridge -> theorems.dcp_multi_packet_collective_helstrom_product_likelihood_bridge
+
+# Subsystem CLI hook: dcp-ternary-pgm-gram-eigenvalue-success-bridge -> theorems.dcp_ternary_pgm_gram_eigenvalue_success_bridge
+
+# Subsystem CLI hook: dcp-coherent-fiber-support-erasure-inversion-bridge -> theorems.dcp_coherent_fiber_support_erasure_inversion_bridge
+
+# Subsystem CLI hook: dcp-d-ary-qudit-phase-register-cnot-mod-d-bridge -> theorems.dcp_d_ary_qudit_phase_register_cnot_mod_d_bridge
+
+# Subsystem CLI hook: dcp-sine-vs-box-window-pair-difference-overlap-bridge -> theorems.dcp_sine_vs_box_window_pair_difference_overlap_bridge
+
+# Subsystem CLI hook: dcp-quantum-phase-estimation-kaiser-bessel-chebyshev-dolph-window-bridge -> theorems.dcp_quantum_phase_estimation_kaiser_bessel_chebyshev_dolph_window_bridge
+
+# Subsystem CLI hook: dcp-krawtchouk-polynomial-binary-hamming-scheme-macwilliams-cnot-bridge -> theorems.dcp_krawtchouk_polynomial_binary_hamming_scheme_macwilliams_cnot_bridge
+
+# Subsystem CLI hook: dcp-quantum-fisher-information-matrix-multiparameter-cramer-rao-bridge -> theorems.dcp_quantum_fisher_information_matrix_multiparameter_cramer_rao_bridge
+
+# Subsystem CLI hook: dcp-hidden-shift-bent-function-roetteler-involutory-dual-bridge -> theorems.dcp_hidden_shift_bent_function_roetteler_involutory_dual_bridge
+
+# Subsystem CLI hook: dcp-noisy-quantum-ram-bucket-brigade-routing-fault-scaling-bridge -> theorems.dcp_noisy_quantum_ram_bucket_brigade_routing_fault_scaling_bridge
+
+# Subsystem CLI hook: dcp-modular-hermite-normal-form-determinant-smith-peeling-bridge -> theorems.dcp_modular_hermite_normal_form_determinant_smith_peeling_bridge
+
+# Subsystem CLI hook: dcp-continuous-variable-gkp-modular-grid-stabilizer-peeling-bridge -> theorems.dcp_continuous_variable_gkp_modular_grid_stabilizer_peeling_bridge
+
+# Subsystem CLI hook: dcp-shadow-tomography-classical-shadows-pauli-observable-sample-bridge -> theorems.dcp_shadow_tomography_classical_shadows_pauli_observable_sample_bridge
+
+# Subsystem CLI hook: dcp-quantum-ziv-zakai-bellman-minimax-phase-lower-bound-bridge -> theorems.dcp_quantum_ziv_zakai_bellman_minimax_phase_lower_bound_bridge
+
+# Subsystem CLI hook: dcp-measurement-based-mbqc-cluster-state-cnot-peeling-bridge -> theorems.dcp_measurement_based_mbqc_cluster_state_cnot_peeling_bridge
+
+# Subsystem CLI hook: dcp-quantum-linear-systems-hhl-condition-number-modular-inversion-bridge -> theorems.dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_bridge
+
+# Subsystem CLI hook: dcp-floquet-dynamical-decoupling-carr-purcell-udds-carry-filter-bridge -> theorems.dcp_floquet_dynamical_decoupling_carr_purcell_udds_carry_filter_bridge
+
+# Subsystem CLI hook: dcp-quantum-sanov-theorem-large-deviations-kl-syndrome-hypothesis-bridge -> theorems.dcp_quantum_sanov_theorem_large_deviations_kl_syndrome_hypothesis_bridge
+
+# Subsystem CLI hook: dcp-majorana-fermionic-gaussian-matchgate-parity-peeling-bridge -> theorems.dcp_majorana_fermionic_gaussian_matchgate_parity_peeling_bridge
+
+# Subsystem CLI hook: dcp-quantum-wasserstein-ornstein-uhlenbeck-cooling-dissipative-peeling-bridge -> theorems.dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge
+
+# Subsystem CLI hook: dcp-galois-ring-gr-4-m-nechaev-kloosterman-hensel-carry-bridge -> theorems.dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge
+
+# Subsystem CLI hook: dcp-quantum-network-distributed-teleportation-bell-pair-cnot-peeling-bridge -> theorems.dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_bridge
+
+# Subsystem CLI hook: dcp-centennial-100-subsystem-master-audit-and-completeness-bridge -> theorems.dcp_centennial_100_subsystem_master_audit_and_completeness_bridge
+
+# Subsystem CLI hook: dcp-quantum-renyi-petz-sandwiched-divergence-hypothesis-bridge -> theorems.dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_bridge
+
+# Subsystem CLI hook: dcp-expander-graph-margulis-ramanujan-ldpc-syndrome-peeling-bridge -> theorems.dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge
+
+# Subsystem CLI hook: dcp-quantum-kramers-kronig-causal-susceptibility-phase-dispersion-bridge -> theorems.dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_bridge
+
+# Subsystem CLI hook: dcp-representation-theory-schur-weyl-symmetric-subspace-permutation-bridge -> theorems.dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_bridge
+
+# Subsystem CLI hook: dcp-topological-surface-code-lattice-surgery-zz-merge-split-cnot-bridge -> theorems.dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge
+
+# Subsystem CLI hook: dcp-bernstein-vazirani-fourier-sampling-vs-nonlinear-bent-walsh-bridge -> theorems.dcp_bernstein_vazirani_fourier_sampling_vs_nonlinear_bent_walsh_bridge

@@ -32,6 +32,63 @@ The central question driving Q-Search is: **Can explicit computational structure
 
 **Test constructive algorithms, not more surrounding infrastructure. No breakthrough algorithm is implemented.**
 
+The [character-rounding interval attack](research/INTERVAL_CHARACTER_ROUNDING.md)
+now supplies a constructive classical all-target bound for prime full-support
+RS interval search: `d<=(p-1)/2`, `u=O(sqrt(p log p))`, with randomized
+rounding and an executed deterministic integer-potential derandomization.
+All24 saved LLL targets, nine larger half-rate controls and eight deterministic
+controls have native verified witnesses. This is a local
+derivation pending independent review, not a novelty claim, faithful sampler,
+or attack on punctured exponentially large fields. Run
+`python theorems/interval_character_rounding.py --write`.
+
+The [sparse subgroup-frame attack](research/INTERVAL_SUBGROUP_ROUNDING.md)
+strengthens this to `u=O(sqrt(ell log p))` when `d<=ell` and ell is a proper
+divisor of p-1. It computes the rational inverse and pays for its denominator.
+At p1021,d17 it certifies radius14 instead of the dense radius78. All ten
+declared inputs have native witnesses; arbitrary moduli/sets and prescribed
+sampling remain outside the claim. Run
+`python theorems/interval_subgroup_rounding.py --write`.
+
+Its nonsplit mode now uses norm-one trace cosets from divisors of **p+1**,
+without changing the prime-field input. At p1019,d17 it certifies radius14
+where the best earlier split-subgroup certificate gave78. Trace multiplicities
+and the 2060-bit rational denominator are explicitly charged; no all-prime
+divisor, prescribed-sampling or novelty claim is made.
+
+The [divisor-free split-fiber construction](research/INTERVAL_SPLIT_FIBERS.md)
+now computes public frames without either divisor condition, with an explicit
+restricted-degree setup theorem and retained setup failures. At p347,d8,
+deterministic nearest rounding certifies radius8 versus the best torus bound11.
+The resulting rows already attain the minimum L1 mass for their moment order;
+further progress requires better coupled rounding or a different mechanism.
+Run `python theorems/interval_split_fibers.py --write`.
+
+The [local-resampling attack](research/INTERVAL_LOCAL_LEMMA.md) implements
+Moser-Tardos rounding on verified sparse frames. Fixing the global constant
+first yields radius `O(sqrt(ell log ell))`, under exact-coin and public-frame
+conditions. Native witnesses and failed budgets are replayed; large-field
+examples are analytic only. Run `python theorems/interval_local_lemma.py --write`.
+No quantum algorithm or novelty claim follows from these classical comparators.
+
+Its exact fixed-target extension now certifies the unchanged p347,d8 input at
+radius5 (uniform bound9), while the narrower radius3 replay remains uncertified.
+The [universal history-erasure no-go](research/NATIVE_HISTORY_ERASURE_DEQUANTIZATION.md)
+has been retracted and quarantined: a blind traced marginal does not exclude
+joint readout or source-specific erasure. Neither correction is a new algorithm.
+
+A [folded norm-source proposal](research/FOLDED_NORM_SOURCE_DECISION.md) now has
+an actual known folded-RS decoder, including native syndrome conversion and
+received-block pruning: `python theorems/folded_rs_decoder.py --write`.
+It recovers six block errors beyond guaranteed unique radius5 at a61-bit base
+field and retains an actual two-codeword ambiguity. The [block source and
+matched attacks](research/FOLDED_NORM_SOURCE.md) now have correct extension-field
+phases, scalar-rank collision bounds and conditional finite readout estimates.
+At127 blocks, basic classical attacks find99 versus a pruning-paid mathematical
+mean floor113.279. This is NOT a runtime comparison; the quantum receiver is
+not compiled and stronger classical norm/MQ attacks remain open. No candidate
+is accepted.
+
 The [Jacobi/surface-counting proposal](research/JACOBI_KNOWN_NORM_REDUCTION.md)
 has a decisive classical competitor: published known-relative-norm generator
 recovery removes its proposed prime-conductor asymptotic quantum opening
@@ -82,6 +139,17 @@ and gate budget were missing at that stage. A
 a conditional114.66/127 mean at radius32, with finite tails, but STILL no
 implemented large decoder or matched runtime advantage. This is known DQI,
 not a new quantum algorithm or an established speedup.
+An [interleaved-decoder bypass](research/PRIME_CHARACTER_INTERLEAVED_PROBE.md)
+now recovers the large classical error packets, but its plain shared-support
+quantum readout changes the task and leaves individual polynomials nearly
+uniform. That specific replacement is rejected; general interleaving is not.
+An [auxiliary phase-feedback test](research/PRIME_CHARACTER_PHASE_FEEDBACK.md)
+now restores that interference on complete native small states, retaining every
+measurement outcome. Its large conditional error is small, but the supplied
+encoded-phase construction costs over4e29 reflections on average. This is a
+physical rescue, NOT an efficient decoder bypass or a quantum speedup.
+Its follow-up executes a source-specific phase/erasure reduction and retains
+a counterexample to interpreting that operation as a general syndrome decoder.
 The [fixed-input Morse extension](research/PRIME_CHARACTER_MORSE_ATTACK.md)
 now supplies an explicit classical probability bound under degree/field-size
 conditions, with a strict127/127 witness in a declared1279-bit field lift.
@@ -100,6 +168,13 @@ not guide search.
 The latest multi-packet local-Helstrom > X-readout claim was also corrected:
 an explicit distinct-header counterexample reverses that ordering. Passing
 the selected controls did not establish a universal measurement hierarchy.
+
+An [independent interval/soft-decoder test](research/INTERVAL_SOFT_DECODER.md)
+now executes the known non-flat receiver with every target/failure retained.
+An exact classical sampler handles constant-width cases; saved lattice
+certificates solve EVERY syndrome in four finite families. Larger declared
+trials also solve classically, but no asymptotic sparse-growing conclusion
+or new quantum algorithm follows.
 
 The [polar source-design follow-up](research/POLAR_SOURCE_DESIGN.md) now
 constructs a non-prefix half-rate family at32,768 coordinates with classical

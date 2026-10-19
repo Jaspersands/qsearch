@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_quantum_sanov_theorem_large_deviations_kl_syndrome_hypothesis_bridge",
+  "subsystem_number": 145,
+  "hypothesis": "Quantum Stein's Lemma establishes that the asymmetric missed-detection exponent between a CNOT-peeled witness state rho_1 and a carry-dephased state rho_0 equals the Umegaki quantum relative entropy D(rho_1 || rho_0) >= (1/2)||rho_1 - rho_0||_1^2.",
+  "required_checks": [
+    "zero_relative_entropy_for_identical_states",
+    "quantum_pinsker_inequality_holds_commuting_and_noncommuting",
+    "stein_exponent_monotone_decreasing_as_v0_approaches_v1",
+    "phase_misalignment_increases_umegaki_divergence"
+  ]
+}

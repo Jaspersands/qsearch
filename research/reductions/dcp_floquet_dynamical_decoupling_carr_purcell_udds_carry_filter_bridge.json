@@ -1,0 +1,60 @@
+{
+  "all_checks_passed": true,
+  "domain": "dynamical_decoupling_filter_functions_cpmg_udd",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "low_frequency_sweep": [
+    {
+      "cpmg_filter_value": 9.983345827713575e-05,
+      "fid_filter_value": 0.039866844317516734,
+      "num_pulses_n": 1,
+      "omega_tau": 0.2,
+      "udd_filter_value": 9.983345827713565e-05,
+      "udd_over_fid_suppression_ratio": 0.0025041725771425233
+    },
+    {
+      "cpmg_filter_value": 6.242191893039218e-08,
+      "fid_filter_value": 0.039866844317516734,
+      "num_pulses_n": 2,
+      "omega_tau": 0.2,
+      "udd_filter_value": 6.242191893039218e-08,
+      "udd_over_fid_suppression_ratio": 1.565760220027377e-06
+    },
+    {
+      "cpmg_filter_value": 1.2233958187639912e-06,
+      "fid_filter_value": 0.039866844317516734,
+      "num_pulses_n": 3,
+      "omega_tau": 0.2,
+      "udd_filter_value": 1.734375795588103e-11,
+      "udd_over_fid_suppression_ratio": 4.3504215728106956e-10
+    },
+    {
+      "cpmg_filter_value": 3.89527502762543e-09,
+      "fid_filter_value": 0.039866844317516734,
+      "num_pulses_n": 4,
+      "omega_tau": 0.2,
+      "udd_filter_value": 2.7104139238846484e-15,
+      "udd_over_fid_suppression_ratio": 6.798666837780647e-14
+    },
+    {
+      "cpmg_filter_value": 1.5845814099476294e-07,
+      "fid_filter_value": 0.039866844317516734,
+      "num_pulses_n": 5,
+      "omega_tau": 0.2,
+      "udd_filter_value": 2.710736564124605e-19,
+      "udd_over_fid_suppression_ratio": 6.79947613243509e-18
+    }
+  ],
+  "subsystem_id": "dcp_floquet_dynamical_decoupling_carr_purcell_udds_carry_filter_bridge",
+  "subsystem_number": 144,
+  "theorem_checks": {
+    "n1_hahn_echo_cpmg_equals_udd_exact": true,
+    "n2_two_pulse_cpmg_equals_udd_at_quarter_three_quarter": true,
+    "udd5_suppresses_low_freq_noise_by_over_12_orders_of_magnitude": true,
+    "udd_filter_monotone_decreasing_with_order_n": true,
+    "udd_strictly_outperforms_cpmg_for_n_ge_3_at_low_freq": true
+  }
+}

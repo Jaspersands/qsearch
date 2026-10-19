@@ -1,0 +1,55 @@
+{
+  "all_checks_passed": true,
+  "domain": "quantum_information_stein_lemma_umegaki_relative_entropy",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "subsystem_id": "dcp_quantum_sanov_theorem_large_deviations_kl_syndrome_hypothesis_bridge",
+  "subsystem_number": 145,
+  "theorem_checks": {
+    "phase_misalignment_increases_umegaki_divergence": true,
+    "quantum_pinsker_inequality_holds_commuting_and_noncommuting": true,
+    "stein_exponent_monotone_decreasing_as_v0_approaches_v1": true,
+    "zero_relative_entropy_for_identical_states": true
+  },
+  "visibility_sweep": [
+    {
+      "copies_for_1e_minus_6_type2_error": 32.0,
+      "corrupted_visibility_v0": 0.1,
+      "noncommuting_pinsker_lb": 0.3822,
+      "noncommuting_rotated_d_rel": 0.4840739407962283,
+      "peeled_visibility_v1": 0.92,
+      "pinsker_lower_bound": 0.33620000000000005,
+      "stein_exponent_d_rel": 0.43791968083993354
+    },
+    {
+      "copies_for_1e_minus_6_type2_error": 43.0,
+      "corrupted_visibility_v0": 0.25,
+      "noncommuting_pinsker_lb": 0.33945000000000003,
+      "noncommuting_rotated_d_rel": 0.4399823999283801,
+      "peeled_visibility_v1": 0.92,
+      "pinsker_lower_bound": 0.22445000000000004,
+      "stein_exponent_d_rel": 0.32249250646220223
+    },
+    {
+      "copies_for_1e_minus_6_type2_error": 85.0,
+      "corrupted_visibility_v0": 0.5,
+      "noncommuting_pinsker_lb": 0.3181999999999999,
+      "noncommuting_rotated_d_rel": 0.41636324265799757,
+      "peeled_visibility_v1": 0.92,
+      "pinsker_lower_bound": 0.08820000000000001,
+      "stein_exponent_d_rel": 0.1636824162643324
+    },
+    {
+      "copies_for_1e_minus_6_type2_error": 319.0,
+      "corrupted_visibility_v0": 0.75,
+      "noncommuting_pinsker_lb": 0.35944999999999994,
+      "noncommuting_rotated_d_rel": 0.4909829851352841,
+      "peeled_visibility_v1": 0.92,
+      "pinsker_lower_bound": 0.014450000000000006,
+      "stein_exponent_d_rel": 0.04342365085256222
+    }
+  ]
+}

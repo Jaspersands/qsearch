@@ -1,0 +1,45 @@
+{
+  "hypothesis_id": "explicit_interval_RS_soft_decoding_search_and_sampling",
+  "status": "KNOWN_RECEIVER_EXECUTED_FIXED_WIDTH_CLASSICAL_SAMPLER_AND_FOUR_FINITE_COVERING_CERTIFICATES_LOCAL_REVIEW_PENDING",
+  "scientific_question": "Does a compact non-flat interval source plus soft RS decoding provide a genuinely new algorithmic opening after classical attacks and prior-art scope are charged?",
+  "input_model": "Prime p, FULL support0,...,p-1, N=p, d public power-sum checks, uniform random public target syndrome, centered interval[-u,u]; no membership oracle, planted short vector or target reroll",
+  "problem": "Find an explicit integer word e in the interval box with H*e=s modp; equivalently recover a degree<p-d polynomial P with y-P in the box for any public particular H*y=s",
+  "known_quantum_mechanism": "Prepare the inverse-DFT interval profile as a product source, use a syndrome decoder for RS_d, retain the paid zero-residual herald, apply the public coset phase and full QFT",
+  "expected_asymptotic_advantage_not_established": "A scalable soft decoder can give the known inhomogeneous quantum reduction in its published regime; no new quantum algorithm or matched runtime separation is supplied here",
+  "resources": "Two N-field quantum registers, coherent source/QFT, public code/phase arithmetic, reversible decoder and list workspace, source precision, herald/repetition and verification; small reference instead enumerates p^N sources and an exact MAP table",
+  "profile_ceiling": "For every complex target amplitude supported on L values, the KV collision score C<=L/p; nonwrapping uniform intervals have C>=2L/(3p), leaving less than a3/2 gain in real cutoff from profile tuning alone",
+  "prior_art_scope": "At fixed rates and fixed gaps, the resulting RS support-search rate region is already inside known capacity-based search; no finite/runtime uniformity is inferred for vanishing density or shrinking gaps, nor is weighted sampling replaced by finding any solution",
+  "classical_fixed_width_result": "C<=L/p and d/p<C force d<L. At constant L uniform interval search/sampling is polynomial in N=p; exact weighted DP applies to supplied integer profiles, not arbitrary free complex probabilities",
+  "finite_classical_results": "All24 declared uniform-target LLL/Babai replays solve the native equations; saved independently replayable exact GS bounds additionally certify ALL target syndromes for(p,d,u)=(31,8,7),(31,5,5),(61,17,15),(61,8,7)",
+  "unresolved_scope": "At p127 the saved covering bounds are inconclusive although all trials succeed; no asymptotic sparse-growing covering proof or exact weighted sampler at growing codimension is supplied",
+  "decisive_counterexamples": [
+    "Profile(4,5,4),d2,target(2,0) is feasible, but valid probability0.722780 and fidelity0.719020 are below average decoder mass0.770203",
+    "Discarding signed source phases changes TV up to0.72064; the actual complex-source control changes by0.85778",
+    "Profile(1,2,1) improves finite acceptance but fails the d2 sufficient KV condition",
+    "The S={0} control retains four empty targets among five; these are failures, not conditioned-out data"
+  ],
+  "proof_obligations": [
+    "FULL-support dual RS convention and correct public coset phase",
+    "Source amplitudes, exact norm and deterministic syndrome-only decoder",
+    "Actual efficient coherent KV/list-selection implementation, not the exhaustive MAP reference",
+    "All decoder failures and empty target cosets retained",
+    "Uniform syndrome average distinguished from pointwise and planted distributions",
+    "Full native modular equations and polynomial witnesses checked independently",
+    "Universal classical covering certificates checked from saved bases, not green flags",
+    "Fixed-width, fixed-rate and vanishing-density scopes kept separate",
+    "Matched asymptotic classical attack and full gate/precision/repetition costs"
+  ],
+  "next_decisive_experiment": "Derive an analytic constructive public RS-lattice basis/rounding bound for growing u~sqrt(p),d~(16/15)sqrt(p), or choose a genuinely different code/source mechanism; do not add filter or LLL-seed meshes",
+  "evidence": [
+    "theorems/interval_soft_decoder.py",
+    "tests/test_interval_soft_decoder.py",
+    "research/classical_baselines/interval_soft_decoder.json",
+    "research/INTERVAL_SOFT_DECODER.md"
+  ],
+  "literature": ["https://arxiv.org/abs/2411.12553", "https://arxiv.org/abs/2610.12357", "https://arxiv.org/abs/1701.07112"],
+  "all_soft_decoding_or_all_growing_interval_families_dequantized": false,
+  "large_quantum_KV_compiler_supplied": false,
+  "new_algorithm_speedup_or_novelty_claimed": false,
+  "independent_or_formal_application_review_completed": false,
+  "new_central_candidate_negative_or_proof_registered": false
+}

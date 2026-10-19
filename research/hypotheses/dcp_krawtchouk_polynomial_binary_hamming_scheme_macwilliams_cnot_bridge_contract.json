@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_krawtchouk_polynomial_binary_hamming_scheme_macwilliams_cnot_bridge",
+  "title": "Krawtchouk Polynomial Radial Hadamard Matrix Law and Quadratic Root Blind Spots",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "On the K-wire Hamming association scheme H(K, 2), H^{otimes K} acts on the (K+1) weight shells |S_w> via the involutory radial matrix M_{k, w} = 2^{-K/2} sqrt(C(K, w)/C(K, k)) K_k(w; K) satisfying M^2 == I_{K+1}.",
+    "The degree-2 Krawtchouk polynomial K_2(w; K) = 0.5*((K - 2w)^2 - K) vanishes at the exact integer weights w_pm = (K +/- sqrt(K))/2 whenever K is a perfect square."
+  ],
+  "favorable_controls": [
+    "K=4 square (roots at w in {1, 3})",
+    "K=6 non-square control (no integer roots)",
+    "K=9 square (roots at w in {3, 6})"
+  ]
+}

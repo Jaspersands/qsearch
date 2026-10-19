@@ -1,0 +1,49 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "671ec550570d187b",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "matched_level_m64_audit": {
+    "eps_target": 1e-08,
+    "exact_factory_laws_verified": true,
+    "m_bits": 64,
+    "n_t_gates_adaptive_peeling": 2480,
+    "n_t_gates_qft": 156429,
+    "p_after_1_level": 3.552922264518264e-08,
+    "p_after_2_levels": 1.5697315686425054e-21,
+    "p_raw": 0.001,
+    "peeling_distillation_levels_required": 2,
+    "peeling_total_raw_magic_states": 558000,
+    "qft_distillation_levels_required": 2,
+    "qft_total_raw_magic_states": 35196525,
+    "raw_magic_state_reduction_factor": 63.07620967741936,
+    "t_gate_ratio_qft_over_peeling": 63.07620967741936
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-magic-state-distillation-15-to-1-reed-muller-peeling-cost-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Bravyi-Kitaev [[15, 1, 3]] 15-to-1 magic state distillation factory footprint for QFT_{2^m}^dagger vs. adaptive R_Z bit peeling",
+    "controls_included": "Includes level-stepdown regime (m=32, p_raw=1e-3, eps=1e-4: L=1 vs L=2 giving 451.16x raw T-state reduction) and matched-level regime (m=64, eps=1e-8: 63.08x reduction).",
+    "does_not_claim": "Zero T-gate overhead when phi_known requires non-Clifford angle synthesis"
+  },
+  "theorem_id": "dcp_magic_state_distillation_15_to_1_reed_muller_peeling_cost_bridge",
+  "threshold_stepdown_m32_audit": {
+    "eps_target": 0.0001,
+    "exact_factory_laws_verified": true,
+    "m_bits": 32,
+    "n_t_gates_adaptive_peeling": 1200,
+    "n_t_gates_qft": 37293,
+    "p_after_1_level": 3.552922264518264e-08,
+    "p_after_2_levels": 1.5697315686425054e-21,
+    "p_raw": 0.001,
+    "peeling_distillation_levels_required": 1,
+    "peeling_total_raw_magic_states": 18000,
+    "qft_distillation_levels_required": 2,
+    "qft_total_raw_magic_states": 8390925,
+    "raw_magic_state_reduction_factor": 466.1625,
+    "t_gate_ratio_qft_over_peeling": 31.0775
+  }
+}

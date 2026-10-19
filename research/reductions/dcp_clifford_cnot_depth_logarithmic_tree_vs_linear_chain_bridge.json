@@ -1,0 +1,94 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "6ef0ed9d64d42444",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-clifford-cnot-depth-logarithmic-tree-vs-linear-chain-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Balanced binary CNOT tree (depth log_2 h) vs. linear CNOT star (depth h-1) zero-syndrome subspace equivalence and idle decoherence suppression",
+    "controls_included": "Evaluates h in {2, 4, 8, 16, 32}, verifying identical zero-syndrome subspace {|0^h>, |1^h>} and >5.81x coherence enhancement at h=16, alpha_idle=0.01.",
+    "does_not_claim": "Reduction in total two-qubit CNOT gate count (both architectures use exactly h - 1 CNOT gates)"
+  },
+  "theorem_id": "dcp_clifford_cnot_depth_logarithmic_tree_vs_linear_chain_bridge",
+  "tree_vs_chain_sweep": {
+    "all_verified": true,
+    "alpha_gate": 0.005,
+    "alpha_idle": 0.01,
+    "records": [
+      {
+        "binary_tree_depth": 1,
+        "cnot_gate_count_both": 1,
+        "depth_reduction_factor": 1.0,
+        "exact_laws_verified": true,
+        "h_wires": 2,
+        "linear_chain_depth": 1,
+        "qubit_layer_volume_chain": 2,
+        "qubit_layer_volume_tree": 2,
+        "visibility_binary_tree": 0.9753099120283326,
+        "visibility_gain_tree_over_chain": 1.0,
+        "visibility_linear_chain": 0.9753099120283326,
+        "zero_syndrome_subspace_identical": true
+      },
+      {
+        "binary_tree_depth": 2,
+        "cnot_gate_count_both": 3,
+        "depth_reduction_factor": 1.5,
+        "exact_laws_verified": true,
+        "h_wires": 4,
+        "linear_chain_depth": 3,
+        "qubit_layer_volume_chain": 12,
+        "qubit_layer_volume_tree": 8,
+        "visibility_binary_tree": 0.9093729344682314,
+        "visibility_gain_tree_over_chain": 1.0408107741923882,
+        "visibility_linear_chain": 0.8737159116880344,
+        "zero_syndrome_subspace_identical": true
+      },
+      {
+        "binary_tree_depth": 3,
+        "cnot_gate_count_both": 7,
+        "depth_reduction_factor": 2.3333333333333335,
+        "exact_laws_verified": true,
+        "h_wires": 8,
+        "linear_chain_depth": 7,
+        "qubit_layer_volume_chain": 56,
+        "qubit_layer_volume_tree": 24,
+        "visibility_binary_tree": 0.7595721232249685,
+        "visibility_gain_tree_over_chain": 1.3771277643359572,
+        "visibility_linear_chain": 0.5515625658678297,
+        "zero_syndrome_subspace_identical": true
+      },
+      {
+        "binary_tree_depth": 4,
+        "cnot_gate_count_both": 15,
+        "depth_reduction_factor": 3.75,
+        "exact_laws_verified": true,
+        "h_wires": 16,
+        "linear_chain_depth": 15,
+        "qubit_layer_volume_chain": 240,
+        "qubit_layer_volume_tree": 64,
+        "visibility_binary_tree": 0.48919211179633154,
+        "visibility_gain_tree_over_chain": 5.812437394402589,
+        "visibility_linear_chain": 0.08416299025731036,
+        "zero_syndrome_subspace_identical": true
+      },
+      {
+        "binary_tree_depth": 5,
+        "cnot_gate_count_both": 31,
+        "depth_reduction_factor": 6.2,
+        "exact_laws_verified": true,
+        "h_wires": 32,
+        "linear_chain_depth": 31,
+        "qubit_layer_volume_chain": 992,
+        "qubit_layer_volume_tree": 160,
+        "visibility_binary_tree": 0.17290724229171636,
+        "visibility_gain_tree_over_chain": 4105.160008274187,
+        "visibility_linear_chain": 4.2119489116919155e-05,
+        "zero_syndrome_subspace_identical": true
+      }
+    ]
+  }
+}

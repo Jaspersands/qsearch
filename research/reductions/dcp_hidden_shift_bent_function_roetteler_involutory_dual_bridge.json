@@ -1,0 +1,50 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "c20e358677e27703",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "maiorana_mcfarland_4q_audit": {
+    "bent_family": "maiorana_mcfarland",
+    "exact_roetteler_laws_verified": true,
+    "hilbert_dim": 16,
+    "is_strictly_self_dual": true,
+    "k_pairs": 2,
+    "m_qubits": 4,
+    "max_1query_deviation_from_uniform_1_over_dim": 0.0,
+    "max_dual_unit_modulus_error": 0.0,
+    "min_2query_roetteler_success_prob_across_all_shifts": 1.0
+  },
+  "maiorana_mcfarland_6q_audit": {
+    "bent_family": "maiorana_mcfarland",
+    "exact_roetteler_laws_verified": true,
+    "hilbert_dim": 64,
+    "is_strictly_self_dual": true,
+    "k_pairs": 3,
+    "m_qubits": 6,
+    "max_1query_deviation_from_uniform_1_over_dim": 0.0,
+    "max_dual_unit_modulus_error": 0.0,
+    "min_2query_roetteler_success_prob_across_all_shifts": 1.0
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-hidden-shift-bent-function-roetteler-involutory-dual-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Roetteler 2-query bent-function hidden-shift algorithm for canceling quadratic CNOT carry phases",
+    "controls_included": "Exhaustively tests all 16 shifts of 4-qubit Maiorana-McFarland and complete-graph bent carries and all 64 shifts of 6-qubit Maiorana-McFarland carries, verifying 1-query uniform dephasing (1/2^{2k}) vs 2-query 100% deterministic recovery (P(s)=1.0).",
+    "does_not_claim": "Oracle access to the shifted bent function f(u (+) s) without a quadratic carry interaction"
+  },
+  "symmetric_complete_4q_audit": {
+    "bent_family": "symmetric_complete_graph",
+    "exact_roetteler_laws_verified": true,
+    "hilbert_dim": 16,
+    "is_strictly_self_dual": false,
+    "k_pairs": 2,
+    "m_qubits": 4,
+    "max_1query_deviation_from_uniform_1_over_dim": 0.0,
+    "max_dual_unit_modulus_error": 0.0,
+    "min_2query_roetteler_success_prob_across_all_shifts": 1.0
+  },
+  "theorem_id": "dcp_hidden_shift_bent_function_roetteler_involutory_dual_bridge"
+}

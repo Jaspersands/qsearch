@@ -1,0 +1,71 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "941ff9afdc6075f7",
+  "chernoff_exponent_sweep": {
+    "all_verified": true,
+    "gamma": 0.85,
+    "records": [
+      {
+        "collective_exponent_ratio_qcb_over_sep": 1.2843890486410285,
+        "delta_theta_over_pi": 0.25,
+        "exact_laws_verified": true,
+        "is_commuting_pair": false,
+        "quantum_bhattacharyya_closed_form": 0.9306989290927005,
+        "quantum_bhattacharyya_explicit": 0.9306989290927005,
+        "quantum_chernoff_exponent_xi_QCB": 0.07181943843828106,
+        "separable_helstrom_bhattacharyya": 0.9456174304144569,
+        "separable_helstrom_exponent_xi_sep": 0.055917199320775074,
+        "sin_sq_half_delta_theta": 0.14644660940672624
+      },
+      {
+        "collective_exponent_ratio_qcb_over_sep": 1.2046367583574686,
+        "delta_theta_over_pi": 0.5,
+        "exact_laws_verified": true,
+        "is_commuting_pair": false,
+        "quantum_bhattacharyya_closed_form": 0.7633913438213186,
+        "quantum_bhattacharyya_explicit": 0.7633913438213186,
+        "quantum_chernoff_exponent_xi_QCB": 0.2699844777170621,
+        "separable_helstrom_bhattacharyya": 0.7992183681572891,
+        "separable_helstrom_exponent_xi_sep": 0.22412106873211138,
+        "sin_sq_half_delta_theta": 0.4999999999999999
+      },
+      {
+        "collective_exponent_ratio_qcb_over_sep": 1.0790797010962694,
+        "delta_theta_over_pi": 0.75,
+        "exact_laws_verified": true,
+        "is_commuting_pair": false,
+        "quantum_bhattacharyya_closed_form": 0.5960837585499366,
+        "quantum_bhattacharyya_explicit": 0.5960837585499366,
+        "quantum_chernoff_exponent_xi_QCB": 0.5173740873110729,
+        "separable_helstrom_bhattacharyya": 0.619118466286025,
+        "separable_helstrom_exponent_xi_sep": 0.47945864127131393,
+        "sin_sq_half_delta_theta": 0.8535533905932737
+      },
+      {
+        "collective_exponent_ratio_qcb_over_sep": 1.0,
+        "delta_theta_over_pi": 1.0,
+        "exact_laws_verified": true,
+        "is_commuting_pair": true,
+        "quantum_bhattacharyya_closed_form": 0.526782687642637,
+        "quantum_bhattacharyya_explicit": 0.526782687642637,
+        "quantum_chernoff_exponent_xi_QCB": 0.6409671728978238,
+        "separable_helstrom_bhattacharyya": 0.526782687642637,
+        "separable_helstrom_exponent_xi_sep": 0.6409671728978238,
+        "sin_sq_half_delta_theta": 1.0
+      }
+    ]
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-chernoff-information-geodesic-exponent-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Quantum Chernoff Bound (QCB) exponent xi_QCB vs. separable single-copy Helstrom Chernoff exponent on DCP states",
+    "controls_included": "Evaluates Delta_theta in {pi/4, pi/2, 3*pi/4, pi} at gamma = 0.85, verifying strict collective advantage xi_QCB > xi_sep_Hel for non-commuting phases (>1.15x at pi/2) and exact equality at commuting Delta_theta = pi.",
+    "does_not_claim": "Collective Chernoff advantage at Delta_theta == pi where rho_0 and rho_1 commute"
+  },
+  "theorem_id": "dcp_quantum_chernoff_information_geodesic_exponent_bridge"
+}

@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_fixed_point_pi_over_3_grover_syndrome_amplification_bridge",
+  "title": "Fixed-Point pi/3 Grover Syndrome Amplification Resolving Weight-2 Over-Rotation",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "A single pi/3 fixed-point reflection step A_{pi/3} = R_0(pi/3) R_chi(pi/3) cubes the unmarked failure probability for every p_0 in [0, 1]: 1 - P_1^{(pi/3)}(p_0) = (1 - p_0)^3.",
+    "On a weight-2 CNOT syndrome branch (p_0 = 1/2, where standard pi-Grover stagnates at 1/2), 1-step pi/3 amplification boosts success to 7/8 = 87.5% and 2-level recursive pi/3 amplification boosts success to 511/512 ~ 99.805%."
+  ],
+  "favorable_controls": [
+    "Sweep across p_0 in {1/8, 1/4, 1/2, 3/4, 1} verifying exact cubic failure contraction"
+  ]
+}

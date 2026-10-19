@@ -1,0 +1,95 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "b1c4ab36f69b2a0b",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "non_clifford_resource_sweep": {
+    "all_verified": true,
+    "records": [
+      {
+        "adaptive_peeling_estimated_total_t_count": 40,
+        "adaptive_peeling_fine_1q_rotations": 1,
+        "exact_counts_verified": true,
+        "expected_reduction_factor_m_minus_1": 2.0,
+        "fine_rotation_reduction_factor": 2.0,
+        "m_bits": 3,
+        "qft_controlled_fine_gates_k_ge_3": 1,
+        "qft_controlled_s_gates": 2,
+        "qft_estimated_total_t_count": 86,
+        "qft_fine_1q_rotations": 2
+      },
+      {
+        "adaptive_peeling_estimated_total_t_count": 80,
+        "adaptive_peeling_fine_1q_rotations": 2,
+        "exact_counts_verified": true,
+        "expected_reduction_factor_m_minus_1": 3.0,
+        "fine_rotation_reduction_factor": 3.0,
+        "m_bits": 4,
+        "qft_controlled_fine_gates_k_ge_3": 3,
+        "qft_controlled_s_gates": 3,
+        "qft_estimated_total_t_count": 249,
+        "qft_fine_1q_rotations": 6
+      },
+      {
+        "adaptive_peeling_estimated_total_t_count": 240,
+        "adaptive_peeling_fine_1q_rotations": 6,
+        "exact_counts_verified": true,
+        "expected_reduction_factor_m_minus_1": 7.0,
+        "fine_rotation_reduction_factor": 7.0,
+        "m_bits": 8,
+        "qft_controlled_fine_gates_k_ge_3": 21,
+        "qft_controlled_s_gates": 7,
+        "qft_estimated_total_t_count": 1701,
+        "qft_fine_1q_rotations": 42
+      },
+      {
+        "adaptive_peeling_estimated_total_t_count": 560,
+        "adaptive_peeling_fine_1q_rotations": 14,
+        "exact_counts_verified": true,
+        "expected_reduction_factor_m_minus_1": 15.0,
+        "fine_rotation_reduction_factor": 15.0,
+        "m_bits": 16,
+        "qft_controlled_fine_gates_k_ge_3": 105,
+        "qft_controlled_s_gates": 15,
+        "qft_estimated_total_t_count": 8445,
+        "qft_fine_1q_rotations": 210
+      },
+      {
+        "adaptive_peeling_estimated_total_t_count": 1200,
+        "adaptive_peeling_fine_1q_rotations": 30,
+        "exact_counts_verified": true,
+        "expected_reduction_factor_m_minus_1": 31.0,
+        "fine_rotation_reduction_factor": 31.0,
+        "m_bits": 32,
+        "qft_controlled_fine_gates_k_ge_3": 465,
+        "qft_controlled_s_gates": 31,
+        "qft_estimated_total_t_count": 37293,
+        "qft_fine_1q_rotations": 930
+      },
+      {
+        "adaptive_peeling_estimated_total_t_count": 2480,
+        "adaptive_peeling_fine_1q_rotations": 62,
+        "exact_counts_verified": true,
+        "expected_reduction_factor_m_minus_1": 63.0,
+        "fine_rotation_reduction_factor": 63.0,
+        "m_bits": 64,
+        "qft_controlled_fine_gates_k_ge_3": 1953,
+        "qft_controlled_s_gates": 63,
+        "qft_estimated_total_t_count": 156429,
+        "qft_fine_1q_rotations": 3906
+      }
+    ],
+    "synth_t_per_fine_rotation": 40
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-non-clifford-t-count-resource-tradeoff-cnot-vs-qft-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Exact non-Clifford fine-angle rotation count (m-2)(m-1) of m-qubit QFT_{2^m}^dagger vs. (m-2) of adaptive R_Z(-phi_known) bit peeling",
+    "controls_included": "Evaluates m in {3, 4, 8, 16, 32, 64}, verifying the exact (m - 1)x reduction in fine-angle non-Clifford rotations (31x at m=32; 63x at m=64) and zero two-qubit controlled-phase gates.",
+    "does_not_claim": "Reduction of non-Clifford gates below m - 2 when arbitrary fine angles phi_known are synthesized online"
+  },
+  "theorem_id": "dcp_non_clifford_t_count_resource_tradeoff_cnot_vs_qft_bridge"
+}

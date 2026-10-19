@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_non_binary_reed_solomon_vandermonde_qudit_witness_bridge",
+  "title": "Lagrange Barycentric Vandermonde Qudit Witness Annihilation Over F_p",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any d + 2 distinct evaluation points x_0, ..., x_{d+1} in F_p, the barycentric weights w_j = prod_{l != j} (x_j - x_l)^{-1} mod p satisfy sum_j w_j x_j^r == 0 (mod p) for 0 <= r <= d and sum_j w_j x_j^{d+1} == 1 (mod p).",
+    "Applying the Z_p-weighted modular qudit sum with weights w_j annihilates 100% of p^{d+1} polynomials of degree <= d while extracting the exact leading degree-(d+1) coefficient."
+  ],
+  "favorable_controls": [
+    "Exhaustive 125-polynomial F_5 (d=2) audit on [0,1,2,3]",
+    "Exhaustive 343-polynomial F_7 (d=2) audit on non-consecutive [1,2,4,6]"
+  ]
+}

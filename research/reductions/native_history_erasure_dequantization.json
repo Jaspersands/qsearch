@@ -1,33 +1,152 @@
 {
-  "status": "NATIVE_HISTORY_ERASURE_DEQUANTIZATION_PROVED",
-  "derivation_sha256": "20421fee1880316c237d643ffec2cafafcb5026c27685b9a6d4d288fb7621c4e",
+  "status": "UNIVERSAL_HISTORY_ERASURE_NO_GO_RETRACTED",
+  "proof_status": "EXACT_SCOPED_COUNTERCONTROLS_NOT_GENERAL_ALGORITHM_OR_HARDNESS_PROOF",
+  "source_sha256": "65bd6f799efe5c10fde590a80bacb75775ef1709daf49ae664489daf77c20bc9",
+  "derivation_sha256": "d8ba7bab663ae276da0efc47463dcdabb79782878e4fda0836d8ce2cc31dbcf3",
   "constructive_scaling_contract": {
     "modulus": "q = 3^n",
     "bank_size": "M = n^2",
     "exposure": "W = n^2",
     "noise_width": "alpha = n^-3"
   },
-  "theorems_proved": [
+  "scoped_identities": [
     {
-      "name": "Coherence Vanishing & Exact Classical BKW Dequantization",
-      "statement": "Tr_hist(|Psi><Psi|) is strictly diagonal in frequency basis; trace distance to classical linear sample combination is 0.0.",
+      "name": "Discarded Explicit History: Scoped Marginal Identity",
+      "statement": "The explicitly tagged calibration, with a known uniform classical path sampler and traced history, has a diagonal frequency marginal. This does not cover joint readout or arbitrary receivers.",
       "verified": true
     },
     {
       "name": "Cauchy-Schwarz Noise Inflation Lower Bound",
       "statement": "For any exponent path with ||c||_1 = W = n^2, effective noise standard deviation inflates by at least ||c||_2 >= n.",
       "verified": true
-    },
-    {
-      "name": "Syndrome Erasure / ISIS Computational Hardness",
-      "statement": "Unitary history erasure requires finding short c with A^T c = v mod q, which is ISIS_{q, M, W} with exponential gap q/W = 3^n / n^2.",
-      "verified": true
-    },
-    {
-      "name": "Coset QFT Dual Code Lattice Invariance",
-      "statement": "Coset Fourier measurement projects onto primal code lattice Lambda(A), yielding a secret-independent shift without noise reduction.",
-      "verified": true
     }
+  ],
+  "exact_countercontrols": {
+    "phase_and_joint_readout_controls": [
+      {
+        "q": 9,
+        "public_header": [
+          1,
+          0
+        ],
+        "secret_first_coordinate": 0,
+        "phase_exact": "1",
+        "H_U_H_probability_zero_exact": "1",
+        "traced_frequency_marginal": [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        "joint_X_parity_even_probability_exact": "1",
+        "joint_XX_expectation_exact": "1",
+        "clean_history_erasure_performed": false
+      },
+      {
+        "q": 9,
+        "public_header": [
+          1,
+          0
+        ],
+        "secret_first_coordinate": 3,
+        "phase_exact": "-1/2 + sqrt(3)*I/2",
+        "H_U_H_probability_zero_exact": "1/4",
+        "traced_frequency_marginal": [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        "joint_X_parity_even_probability_exact": "1/4",
+        "joint_XX_expectation_exact": "-1/2",
+        "clean_history_erasure_performed": false
+      }
+    ],
+    "source_fiber_erasure": {
+      "public_matrix_A": [
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "q": 9,
+      "history_exponent_paths": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "common_frequency": [
+        1,
+        0
+      ],
+      "noise_assumption": "zero for this scoped countercontrol",
+      "logical_history_state": "(|0>+|1>)/sqrt(2)",
+      "source_state_after_H": [
+        "1",
+        "0"
+      ],
+      "orthogonal_basis_image_overlap_exact": "0",
+      "basiswise_many_to_one_erasure_possible": false,
+      "unique_basis_history_necessary_for_source_state_erasure": false,
+      "arbitrary_noisy_fiber_eraser_or_ISIS_solver_supplied": false
+    },
+    "bounded_history_QFT_countercontrol": {
+      "q": 9,
+      "M": 4,
+      "history_L1_bound": 1,
+      "frequency": [
+        1,
+        0
+      ],
+      "Fourier_outcome_outside_rowspace": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "outside_rowspace_probability_exact": "1/13122",
+      "full_uniform_coset_identity_refuted": false,
+      "full_uniform_coset_premise_holds_for_bounded_pair": false
+    },
+    "these_controls_solve_random_LWE_or_establish_a_speedup": false
+  },
+  "retracted_implications": [
+    "A formal query-polynomial expansion does not physically record orthogonal histories; tagging paths changes interference.",
+    "A traced marginal can be diagonal while joint frequency/history measurements retain secret-dependent interference.",
+    "The impossibility of erasing every basis history in a fiber does not exclude erasing one specified coherent fiber state.",
+    "No efficient CLASSICAL ISIS solver or worst-case hardness reduction follows merely from an efficient quantum source eraser or the ratio q/W.",
+    "The full uniform coset Fourier identity does not apply to an arbitrary bounded or noise-weighted history fiber.",
+    "The norm lower bound assumes a fixed path with net L1 exposure W, not every circuit using at most W queries."
+  ],
+  "general_no_go_claim_allowed": false,
+  "literature": [
+    "https://arxiv.org/abs/quant-ph/9802049",
+    "https://cims.nyu.edu/~regev/papers/average.pdf"
   ],
   "finite_instance_verifications": [
     {
@@ -41,12 +160,14 @@
       "max_off_diagonal_coherence": 0.0,
       "coherence_vanishes_identically": true,
       "density_matrix_trace": 1.0000000000000002,
-      "trace_distance_to_classical_bkw": 0.0,
+      "trace_distance_to_classical_bkw": 2.42861286636753e-17,
       "dequantization_verified": true,
       "all_paths_satisfy_cauchy_schwarz": true,
       "min_l2_norm_at_max_exposure": 2.0,
       "cauchy_schwarz_l2_bound": 2.0,
-      "noise_inflation_lower_bound_satisfied": true
+      "noise_inflation_lower_bound_satisfied": true,
+      "scope": "explicit tagged state, traced history, known uniform classical path sampler, frequency marginal only",
+      "arbitrary_interleaved_receiver_or_joint_readout_covered": false
     },
     {
       "status": "FINITE_COHERENCE_VANISHING_VERIFIED",
@@ -59,12 +180,14 @@
       "max_off_diagonal_coherence": 0.0,
       "coherence_vanishes_identically": true,
       "density_matrix_trace": 1.0,
-      "trace_distance_to_classical_bkw": 0.0,
+      "trace_distance_to_classical_bkw": 1.9081958235744878e-17,
       "dequantization_verified": true,
       "all_paths_satisfy_cauchy_schwarz": true,
       "min_l2_norm_at_max_exposure": 2.0,
       "cauchy_schwarz_l2_bound": 2.0,
-      "noise_inflation_lower_bound_satisfied": true
+      "noise_inflation_lower_bound_satisfied": true,
+      "scope": "explicit tagged state, traced history, known uniform classical path sampler, frequency marginal only",
+      "arbitrary_interleaved_receiver_or_joint_readout_covered": false
     },
     {
       "status": "FINITE_COHERENCE_VANISHING_VERIFIED",
@@ -76,13 +199,15 @@
       "distinct_frequencies_reached": 220,
       "max_off_diagonal_coherence": 0.0,
       "coherence_vanishes_identically": true,
-      "density_matrix_trace": 1.0,
-      "trace_distance_to_classical_bkw": 0.0,
+      "density_matrix_trace": 1.0000000000000002,
+      "trace_distance_to_classical_bkw": 6.201636426617085e-17,
       "dequantization_verified": true,
       "all_paths_satisfy_cauchy_schwarz": true,
       "min_l2_norm_at_max_exposure": 1.7320508075688772,
       "cauchy_schwarz_l2_bound": 1.0,
-      "noise_inflation_lower_bound_satisfied": true
+      "noise_inflation_lower_bound_satisfied": true,
+      "scope": "explicit tagged state, traced history, known uniform classical path sampler, frequency marginal only",
+      "arbitrary_interleaved_receiver_or_joint_readout_covered": false
     }
   ],
   "scaling_profiles": [
@@ -94,12 +219,12 @@
       "secret_trits": 4,
       "min_noise_inflation_factor": 2,
       "max_noise_inflation_factor": 4,
-      "isis_modulus_to_bound_ratio": "9/4",
-      "isis_modulus_to_bound_ratio_float": 2.25,
-      "log2_isis_gap": 1.1699250014423122,
-      "isis_hard_regime": true,
-      "history_erasure_requires_gapsvp_oracle": false,
-      "un_erased_state_is_classically_dequantized": true
+      "modulus_to_path_bound_ratio": "9/4",
+      "log2_modulus_to_path_bound_ratio": 1.1699250014423122,
+      "fixed_path_L1_equals_W_required_for_noise_bound": true,
+      "hardness_reduction_verified": false,
+      "general_history_eraser_implies_classical_ISIS_solver": false,
+      "arbitrary_receiver_dequantized": false
     },
     {
       "dimension": 3,
@@ -109,12 +234,12 @@
       "secret_trits": 9,
       "min_noise_inflation_factor": 3,
       "max_noise_inflation_factor": 9,
-      "isis_modulus_to_bound_ratio": "3",
-      "isis_modulus_to_bound_ratio_float": 3.0,
-      "log2_isis_gap": 1.584962500721156,
-      "isis_hard_regime": true,
-      "history_erasure_requires_gapsvp_oracle": false,
-      "un_erased_state_is_classically_dequantized": true
+      "modulus_to_path_bound_ratio": "3",
+      "log2_modulus_to_path_bound_ratio": 1.584962500721156,
+      "fixed_path_L1_equals_W_required_for_noise_bound": true,
+      "hardness_reduction_verified": false,
+      "general_history_eraser_implies_classical_ISIS_solver": false,
+      "arbitrary_receiver_dequantized": false
     },
     {
       "dimension": 4,
@@ -124,12 +249,12 @@
       "secret_trits": 16,
       "min_noise_inflation_factor": 4,
       "max_noise_inflation_factor": 16,
-      "isis_modulus_to_bound_ratio": "81/16",
-      "isis_modulus_to_bound_ratio_float": 5.0625,
-      "log2_isis_gap": 2.3398500028846243,
-      "isis_hard_regime": true,
-      "history_erasure_requires_gapsvp_oracle": true,
-      "un_erased_state_is_classically_dequantized": true
+      "modulus_to_path_bound_ratio": "81/16",
+      "log2_modulus_to_path_bound_ratio": 2.3398500028846243,
+      "fixed_path_L1_equals_W_required_for_noise_bound": true,
+      "hardness_reduction_verified": false,
+      "general_history_eraser_implies_classical_ISIS_solver": false,
+      "arbitrary_receiver_dequantized": false
     },
     {
       "dimension": 8,
@@ -139,12 +264,12 @@
       "secret_trits": 64,
       "min_noise_inflation_factor": 8,
       "max_noise_inflation_factor": 64,
-      "isis_modulus_to_bound_ratio": "6561/64",
-      "isis_modulus_to_bound_ratio_float": 102.515625,
-      "log2_isis_gap": 6.679700005769249,
-      "isis_hard_regime": true,
-      "history_erasure_requires_gapsvp_oracle": true,
-      "un_erased_state_is_classically_dequantized": true
+      "modulus_to_path_bound_ratio": "6561/64",
+      "log2_modulus_to_path_bound_ratio": 6.679700005769249,
+      "fixed_path_L1_equals_W_required_for_noise_bound": true,
+      "hardness_reduction_verified": false,
+      "general_history_eraser_implies_classical_ISIS_solver": false,
+      "arbitrary_receiver_dequantized": false
     },
     {
       "dimension": 16,
@@ -154,12 +279,12 @@
       "secret_trits": 256,
       "min_noise_inflation_factor": 16,
       "max_noise_inflation_factor": 256,
-      "isis_modulus_to_bound_ratio": "43046721/256",
-      "isis_modulus_to_bound_ratio_float": 168151.25390625,
-      "log2_isis_gap": 17.359400011538497,
-      "isis_hard_regime": true,
-      "history_erasure_requires_gapsvp_oracle": true,
-      "un_erased_state_is_classically_dequantized": true
+      "modulus_to_path_bound_ratio": "43046721/256",
+      "log2_modulus_to_path_bound_ratio": 17.359400011538497,
+      "fixed_path_L1_equals_W_required_for_noise_bound": true,
+      "hardness_reduction_verified": false,
+      "general_history_eraser_implies_classical_ISIS_solver": false,
+      "arbitrary_receiver_dequantized": false
     },
     {
       "dimension": 32,
@@ -169,12 +294,12 @@
       "secret_trits": 1024,
       "min_noise_inflation_factor": 32,
       "max_noise_inflation_factor": 1024,
-      "isis_modulus_to_bound_ratio": "1853020188851841/1024",
-      "isis_modulus_to_bound_ratio_float": 1809590028175.626,
-      "log2_isis_gap": 40.718800023076994,
-      "isis_hard_regime": true,
-      "history_erasure_requires_gapsvp_oracle": true,
-      "un_erased_state_is_classically_dequantized": true
+      "modulus_to_path_bound_ratio": "1853020188851841/1024",
+      "log2_modulus_to_path_bound_ratio": 40.718800023076994,
+      "fixed_path_L1_equals_W_required_for_noise_bound": true,
+      "hardness_reduction_verified": false,
+      "general_history_eraser_implies_classical_ISIS_solver": false,
+      "arbitrary_receiver_dequantized": false
     },
     {
       "dimension": 64,
@@ -184,12 +309,12 @@
       "secret_trits": 4096,
       "min_noise_inflation_factor": 64,
       "max_noise_inflation_factor": 4096,
-      "isis_modulus_to_bound_ratio": "3433683820292512484657849089281/4096",
-      "isis_modulus_to_bound_ratio_float": 8.383017139386017e+26,
-      "log2_isis_gap": 89.43760004615399,
-      "isis_hard_regime": true,
-      "history_erasure_requires_gapsvp_oracle": true,
-      "un_erased_state_is_classically_dequantized": true
+      "modulus_to_path_bound_ratio": "3433683820292512484657849089281/4096",
+      "log2_modulus_to_path_bound_ratio": 89.43760004615399,
+      "fixed_path_L1_equals_W_required_for_noise_bound": true,
+      "hardness_reduction_verified": false,
+      "general_history_eraser_implies_classical_ISIS_solver": false,
+      "arbitrary_receiver_dequantized": false
     }
   ],
   "speedup_claim_allowed": false,

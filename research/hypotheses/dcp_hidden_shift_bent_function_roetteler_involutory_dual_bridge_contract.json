@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_hidden_shift_bent_function_roetteler_involutory_dual_bridge",
+  "title": "Roetteler 2-Query Bent-Function Hidden-Shift Carry Cancellation",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Under a quadratic bent carry phase (-1)^{f(u (+) s)} on 2k wires, 1-query Bernstein-Vazirani Hadamard sampling H^{otimes 2k} U_{f_s} H^{otimes 2k} |0^{2k}> produces the completely flat uniform distribution P(w) = 2^{-2k}.",
+    "Applying the dual bent phase oracle U_{f_tilde} between two Hadamard layers (Roetteler's 2-query algorithm) cancels the quadratic carry phase and recovers the exact shift s with 100% single-shot probability (P(s) = 1.0) across all 2^{2k} shifts."
+  ],
+  "favorable_controls": [
+    "4-qubit Maiorana-McFarland self-dual bent carry (16/16 shifts)",
+    "4-qubit complete-graph bent carry (16/16 shifts)",
+    "6-qubit Maiorana-McFarland bent carry (64/64 shifts)"
+  ]
+}

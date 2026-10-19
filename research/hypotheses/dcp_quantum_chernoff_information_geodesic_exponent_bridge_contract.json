@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_quantum_chernoff_information_geodesic_exponent_bridge",
+  "title": "Quantum Chernoff Information Geodesic Exponent vs. Separable Helstrom Chernoff Bound",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For two isospectral single-qubit DCP states rho(theta_0, gamma) and rho(theta_1, gamma), Tr(rho_0^s rho_1^{1-s}) is minimized at s* = 1/2, with exact Quantum Bhattacharyya coefficient B_QCB = 1 - (1 - sqrt(1 - gamma^2)) * sin^2(Delta_theta / 2).",
+    "For every non-commuting phase difference Delta_theta not in {0, pi} mod 2*pi, xi_QCB = -ln(B_QCB) strictly exceeds the optimal separable single-copy Helstrom Chernoff exponent xi_sep = -0.5 * ln(1 - gamma^2 * sin^2(Delta_theta / 2))."
+  ],
+  "favorable_controls": [
+    "Non-commuting phases Delta_theta in {pi/4, pi/2, 3*pi/4} (>1.15x exponent ratio at pi/2)",
+    "Commuting antipodal control Delta_theta = pi (exact equality xi_QCB == xi_sep)"
+  ]
+}

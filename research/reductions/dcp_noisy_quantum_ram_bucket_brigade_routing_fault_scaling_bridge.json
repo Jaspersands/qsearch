@@ -1,0 +1,174 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "111e5de92d66b9dd",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "ideal_wait_qram_sweep": {
+    "all_verified": true,
+    "eps_active": 0.001,
+    "eps_wait": 0.0,
+    "records": [
+      {
+        "active_switches_bucket_brigade": 1,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.999,
+        "fidelity_fanout_decoder": 0.999,
+        "infidelity_bucket_brigade": 0.0010000000000000009,
+        "infidelity_fanout_decoder": 0.0010000000000000009,
+        "infidelity_reduction_ratio_fanout_over_bb": 1.0,
+        "switch_activation_reduction_ratio": 1.0,
+        "table_size_L": 2,
+        "total_tree_switches": 1,
+        "tree_depth_d": 1
+      },
+      {
+        "active_switches_bucket_brigade": 2,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.998001,
+        "fidelity_fanout_decoder": 0.997002999,
+        "infidelity_bucket_brigade": 0.001998999999999973,
+        "infidelity_fanout_decoder": 0.002997000999999999,
+        "infidelity_reduction_ratio_fanout_over_bb": 1.4992501250625512,
+        "switch_activation_reduction_ratio": 1.5,
+        "table_size_L": 4,
+        "total_tree_switches": 3,
+        "tree_depth_d": 2
+      },
+      {
+        "active_switches_bucket_brigade": 4,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.996005996001,
+        "fidelity_fanout_decoder": 0.985104546362002,
+        "infidelity_bucket_brigade": 0.003994003998999962,
+        "infidelity_fanout_decoder": 0.014895453637998046,
+        "infidelity_reduction_ratio_fanout_over_bb": 3.7294538617707045,
+        "switch_activation_reduction_ratio": 3.75,
+        "table_size_L": 16,
+        "total_tree_switches": 15,
+        "tree_depth_d": 4
+      },
+      {
+        "active_switches_bucket_brigade": 8,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.992027944069944,
+        "fidelity_fanout_decoder": 0.7748176364970051,
+        "infidelity_bucket_brigade": 0.00797205593005601,
+        "infidelity_fanout_decoder": 0.22518236350299492,
+        "infidelity_reduction_ratio_fanout_over_bb": 28.246460571609767,
+        "switch_activation_reduction_ratio": 31.875,
+        "table_size_L": 256,
+        "total_tree_switches": 255,
+        "tree_depth_d": 8
+      },
+      {
+        "active_switches_bucket_brigade": 10,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.9900448802097482,
+        "fidelity_fanout_decoder": 0.3593308089987088,
+        "infidelity_bucket_brigade": 0.009955119790251765,
+        "infidelity_fanout_decoder": 0.6406691910012912,
+        "infidelity_reduction_ratio_fanout_over_bb": 64.35574905172373,
+        "switch_activation_reduction_ratio": 102.3,
+        "table_size_L": 1024,
+        "total_tree_switches": 1023,
+        "tree_depth_d": 10
+      },
+      {
+        "active_switches_bucket_brigade": 12,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.9880657804942089,
+        "fidelity_fanout_decoder": 0.01662165582555117,
+        "infidelity_bucket_brigade": 0.0119342195057911,
+        "infidelity_fanout_decoder": 0.9833783441744488,
+        "infidelity_reduction_ratio_fanout_over_bb": 82.39988745784866,
+        "switch_activation_reduction_ratio": 341.25,
+        "table_size_L": 4096,
+        "total_tree_switches": 4095,
+        "tree_depth_d": 12
+      }
+    ]
+  },
+  "noisy_wait_qram_sweep": {
+    "all_verified": true,
+    "eps_active": 0.001,
+    "eps_wait": 1e-06,
+    "records": [
+      {
+        "active_switches_bucket_brigade": 1,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.999,
+        "fidelity_fanout_decoder": 0.999,
+        "infidelity_bucket_brigade": 0.0010000000000000009,
+        "infidelity_fanout_decoder": 0.0010000000000000009,
+        "infidelity_reduction_ratio_fanout_over_bb": 1.0,
+        "switch_activation_reduction_ratio": 1.0,
+        "table_size_L": 2,
+        "total_tree_switches": 1,
+        "tree_depth_d": 1
+      },
+      {
+        "active_switches_bucket_brigade": 2,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.998000001999,
+        "fidelity_fanout_decoder": 0.997002999,
+        "infidelity_bucket_brigade": 0.0019999980010000362,
+        "infidelity_fanout_decoder": 0.002997000999999999,
+        "infidelity_reduction_ratio_fanout_over_bb": 1.4985019977527192,
+        "switch_activation_reduction_ratio": 1.5,
+        "table_size_L": 4,
+        "total_tree_switches": 3,
+        "tree_depth_d": 2
+      },
+      {
+        "active_switches_bucket_brigade": 4,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.9959950399898239,
+        "fidelity_fanout_decoder": 0.985104546362002,
+        "infidelity_bucket_brigade": 0.0040049600101761396,
+        "infidelity_fanout_decoder": 0.014895453637998046,
+        "infidelity_reduction_ratio_fanout_over_bb": 3.719251528142709,
+        "switch_activation_reduction_ratio": 3.75,
+        "table_size_L": 16,
+        "total_tree_switches": 15,
+        "tree_depth_d": 4
+      },
+      {
+        "active_switches_bucket_brigade": 8,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.9917829433040914,
+        "fidelity_fanout_decoder": 0.7748176364970051,
+        "infidelity_bucket_brigade": 0.008217056695908553,
+        "infidelity_fanout_decoder": 0.22518236350299492,
+        "infidelity_reduction_ratio_fanout_over_bb": 27.404260653953866,
+        "switch_activation_reduction_ratio": 31.875,
+        "table_size_L": 256,
+        "total_tree_switches": 255,
+        "tree_depth_d": 8
+      },
+      {
+        "active_switches_bucket_brigade": 10,
+        "exact_scaling_verified": true,
+        "fidelity_bucket_brigade": 0.9890424720503156,
+        "fidelity_fanout_decoder": 0.3593308089987088,
+        "infidelity_bucket_brigade": 0.010957527949684409,
+        "infidelity_fanout_decoder": 0.6406691910012912,
+        "infidelity_reduction_ratio_fanout_over_bb": 58.46840582503312,
+        "switch_activation_reduction_ratio": 102.3,
+        "table_size_L": 1024,
+        "total_tree_switches": 1023,
+        "tree_depth_d": 10
+      }
+    ]
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-noisy-quantum-ram-bucket-brigade-routing-fault-scaling-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Bucket-Brigade qRAM O(d * eps_active) vs. Fanout-Decoder qRAM O((2^d - 1) * eps_active) routing fault scaling for fiber lookup",
+    "controls_included": "Evaluates d in {1, 2, 4, 8, 10, 12} at eps_active = 1e-3 (with eps_wait = 0 and eps_wait = 1e-6), verifying d=1 equality control and >64.4x infidelity reduction at d=10 (L=1024).",
+    "does_not_claim": "Sub-exponential time complexity to populate all 2^d classical table entries prior to the quantum query"
+  },
+  "theorem_id": "dcp_noisy_quantum_ram_bucket_brigade_routing_fault_scaling_bridge"
+}

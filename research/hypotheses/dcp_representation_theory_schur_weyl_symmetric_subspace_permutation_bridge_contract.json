@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_bridge",
+  "subsystem_number": 154,
+  "hypothesis": "By Schur-Weyl duality, K identical CNOT-peeled witness copies |psi(theta)>^{otimes K} lie inside the (K+1)-dimensional Dicke symmetric subspace Sym^K(C^2), compressing Hilbert dimension from 2^20 = 1,048,576 to 21 at K = 20 while preserving full collective QFI F_Q = K.",
+  "required_checks": [
+    "qubit_symmetric_subspace_dim_equals_k_plus_1",
+    "dicke_binomial_normalization_exact",
+    "dicke_collective_qfi_equals_k_exact",
+    "k20_compresses_hilbert_space_by_over_49900x"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "e7d8b6f56f447a73",
+  "fano_holevo_n8_q16_audit": {
+    "all_verified": true,
+    "fano_required_mutual_info_bits": 31.59920686410409,
+    "n_dim": 8,
+    "prior_entropy_bits_n_log2_q": 32.0,
+    "q_mod": 16,
+    "records": [
+      {
+        "exact_inequalities_verified": true,
+        "fano_required_mutual_info_bits": 31.59920686410409,
+        "gamma": 0.1,
+        "min_quantum_copies_continuous": 4373.2621466649725,
+        "min_quantum_copies_integer_ceil": 4374,
+        "single_copy_holevo_bits_exact": 0.007225546012191719,
+        "single_copy_holevo_quad_lower_bound": 0.007213475204444818
+      },
+      {
+        "exact_inequalities_verified": true,
+        "fano_required_mutual_info_bits": 31.59920686410409,
+        "gamma": 0.25,
+        "min_quantum_copies_continuous": 693.4821773365059,
+        "min_quantum_copies_integer_ceil": 694,
+        "single_copy_holevo_bits_exact": 0.04556599707503495,
+        "single_copy_holevo_quad_lower_bound": 0.045084220027780106
+      },
+      {
+        "exact_inequalities_verified": true,
+        "fano_required_mutual_info_bits": 31.59920686410409,
+        "gamma": 0.5,
+        "min_quantum_copies_continuous": 167.43796538447063,
+        "min_quantum_copies_integer_ceil": 168,
+        "single_copy_holevo_bits_exact": 0.18872187554086717,
+        "single_copy_holevo_quad_lower_bound": 0.18033688011112042
+      },
+      {
+        "exact_inequalities_verified": true,
+        "fano_required_mutual_info_bits": 31.59920686410409,
+        "gamma": 0.8,
+        "min_quantum_copies_continuous": 59.50837033104181,
+        "min_quantum_copies_integer_ceil": 60,
+        "single_copy_holevo_bits_exact": 0.5310044064107189,
+        "single_copy_holevo_quad_lower_bound": 0.46166241308446837
+      },
+      {
+        "exact_inequalities_verified": true,
+        "fano_required_mutual_info_bits": 31.59920686410409,
+        "gamma": 1.0,
+        "min_quantum_copies_continuous": 31.59920686410409,
+        "min_quantum_copies_integer_ceil": 32,
+        "single_copy_holevo_bits_exact": 1.0,
+        "single_copy_holevo_quad_lower_bound": 0.7213475204444817
+      }
+    ],
+    "target_error_delta": 0.01
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-fano-holevo-mutual-information-sample-lower-bound-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Universal Fano-Holevo sample-complexity lower bound N >= ((1-delta)*n*log_2(q) - h_2(delta)) / (1 - h_2((1+gamma)/2)) for single-qubit DCP receivers",
+    "controls_included": "Evaluates 32-bit secret space (n=8, q=16) at delta=0.01 across gamma in {0.10, 0.25, 0.50, 0.80, 1.00}, verifying N >= 32 at gamma=1.0 and N >= 4378 at gamma=0.10.",
+    "does_not_claim": "Achievability of the Holevo bound using non-adaptive random single-qubit labels without scale alignment"
+  },
+  "theorem_id": "dcp_quantum_fano_holevo_mutual_information_sample_lower_bound_bridge"
+}

@@ -1,0 +1,39 @@
+{
+  "all_checks_passed": true,
+  "audit_q20_d4_m5": {
+    "M_dual_spacing": 5,
+    "correctable_frequency_shift_radius": 2,
+    "d_primal_spacing": 4,
+    "exact_gkp_laws_verified": true,
+    "max_poisson_dual_comb_error": 4.47545209131181e-17,
+    "out_of_comb_leakage_mass": 3.832600589330598e-32,
+    "q_mod": 20,
+    "successful_error_correction_trials": 20,
+    "total_error_correction_trials": 20
+  },
+  "audit_q56_d8_m7": {
+    "M_dual_spacing": 7,
+    "correctable_frequency_shift_radius": 3,
+    "d_primal_spacing": 8,
+    "exact_gkp_laws_verified": true,
+    "max_poisson_dual_comb_error": 8.777083671441753e-17,
+    "out_of_comb_leakage_mass": 4.155160225360956e-31,
+    "q_mod": 56,
+    "successful_error_correction_trials": 56,
+    "total_error_correction_trials": 56
+  },
+  "certificate_sha256_16": "75312d2c54b91408",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-continuous-variable-gkp-modular-grid-stabilizer-peeling-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Finite-Z_q GKP coset comb states |C_{d, s_0}>, Poisson dual-comb QFT_q spectrum, and bounded modular shift error correction",
+    "controls_included": "Evaluates q=20 (d=4, M=5, radius=2, 20 trials) and q=56 (d=8, M=7, radius=3, 56 trials), verifying 0.0 out-of-comb leakage and 100% exact coset recovery.",
+    "does_not_claim": "Correction of shift errors exceeding half the grid spacing |e_f| > (M - 1)/2 where modular aliasing occurs"
+  },
+  "theorem_id": "dcp_continuous_variable_gkp_modular_grid_stabilizer_peeling_bridge"
+}

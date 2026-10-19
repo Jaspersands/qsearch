@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge",
+  "subsystem_number": 148,
+  "hypothesis": "In the Galois Ring GR(4, m), the 2-adic Teichmuller decomposition a + b = c_0 + 2 c_1 satisfies the exact Frobenius carry identity c_1^2 = a * b in T_m, generalizing the binary Z_4 carry obstruction c_1 = a * b.",
+  "required_checks": [
+    "teichmuller_representatives_satisfy_a4_equals_a",
+    "two_adic_teichmuller_decomposition_is_bijection_on_gr4_2",
+    "carry_component_satisfies_exact_frobenius_identity_c1_sq_eq_ab",
+    "doubling_teichmuller_element_shifts_purely_into_carry_slot"
+  ]
+}

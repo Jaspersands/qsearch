@@ -1,0 +1,67 @@
+{
+  "all_checks_passed": true,
+  "domain": "expander_graphs_ramanujan_spectral_gap_ldpc_peeling",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "ramanujan_degree_sweep": [
+    {
+      "degree_d": 3,
+      "guarantees_linear_time_peeling": false,
+      "majority_peeling_threshold_d_over_2": 1.5,
+      "ramanujan_lambda2_bound": 2.8284271247461903,
+      "spectral_gap_d_minus_lambda2": 0.1715728752538097,
+      "tanner_expansion_ratio": 1.1221945137157106
+    },
+    {
+      "degree_d": 4,
+      "guarantees_linear_time_peeling": false,
+      "majority_peeling_threshold_d_over_2": 2.0,
+      "ramanujan_lambda2_bound": 3.4641016151377544,
+      "spectral_gap_d_minus_lambda2": 0.5358983848622456,
+      "tanner_expansion_ratio": 1.3245033112582782
+    },
+    {
+      "degree_d": 5,
+      "guarantees_linear_time_peeling": false,
+      "majority_peeling_threshold_d_over_2": 2.5,
+      "ramanujan_lambda2_bound": 4.0,
+      "spectral_gap_d_minus_lambda2": 1.0,
+      "tanner_expansion_ratio": 1.5451174289245984
+    },
+    {
+      "degree_d": 6,
+      "guarantees_linear_time_peeling": false,
+      "majority_peeling_threshold_d_over_2": 3.0,
+      "ramanujan_lambda2_bound": 4.47213595499958,
+      "spectral_gap_d_minus_lambda2": 1.5278640450004204,
+      "tanner_expansion_ratio": 1.7716535433070864
+    },
+    {
+      "degree_d": 8,
+      "guarantees_linear_time_peeling": false,
+      "majority_peeling_threshold_d_over_2": 4.0,
+      "ramanujan_lambda2_bound": 5.291502622129181,
+      "spectral_gap_d_minus_lambda2": 2.7084973778708186,
+      "tanner_expansion_ratio": 2.228412256267409
+    },
+    {
+      "degree_d": 10,
+      "guarantees_linear_time_peeling": false,
+      "majority_peeling_threshold_d_over_2": 5.0,
+      "ramanujan_lambda2_bound": 6.0,
+      "spectral_gap_d_minus_lambda2": 4.0,
+      "tanner_expansion_ratio": 2.6824034334763946
+    }
+  ],
+  "subsystem_id": "dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge",
+  "subsystem_number": 152,
+  "theorem_checks": {
+    "d10_ramanujan_lambda2_equals_6_exact": true,
+    "spectral_gap_d_minus_2sqrt_d_minus_1_strictly_increasing": true,
+    "tanner_expansion_monotone_increasing_with_degree_d": true,
+    "tanner_vertex_expansion_exceeds_1_45_for_d_ge_5": true
+  }
+}

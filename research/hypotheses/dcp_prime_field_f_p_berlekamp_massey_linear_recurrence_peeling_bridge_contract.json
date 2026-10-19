@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_prime_field_f_p_berlekamp_massey_linear_recurrence_peeling_bridge",
+  "title": "Cayley-Hamilton / Hankel 2n-Sample Linear Recurrence Extrapolation Over F_p",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "By the Cayley-Hamilton theorem, any matrix-power phase sequence z_k = <u, M^k s> mod p (M in F_p^{n x n}) satisfies an order-n linear recurrence over F_p.",
+    "Inverting the n x n Hankel matrix H_{i,j} = z_{i+j} mod p from the first 2n samples uniquely recovers the recurrence coefficients and deterministically predicts all future terms z_k (k >= 2n) with zero additional quantum queries."
+  ],
+  "favorable_controls": [
+    "3D general matrix over F_17 (6 training samples -> 14/14 exact out-of-sample predictions)",
+    "4D companion matrix over F_31 (8 training samples -> 16/16 exact out-of-sample predictions)"
+  ]
+}

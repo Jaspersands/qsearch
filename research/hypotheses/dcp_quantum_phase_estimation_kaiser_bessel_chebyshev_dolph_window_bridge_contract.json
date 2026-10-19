@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_quantum_phase_estimation_kaiser_bessel_chebyshev_dolph_window_bridge",
+  "title": "Dolph-Chebyshev Minimax Equiripple QFT Stopband Sidelobe Suppression Window",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any window size P and target mainlobe-to-sidelobe amplitude ratio R > 1, the Dolph-Chebyshev frequency polynomial T_{P-1}(x_0 cos(pi f)) / R has P - 2 equal-height stopband extrema of exact power ratio 1 / R^2.",
+    "At P = 16, R = 30 and P = 24, R = 40, the discrete Dolph-Chebyshev window achieves >35x lower peak stopband sidelobe power than the uniform box window and >3.5x lower peak stopband sidelobe power than the Dirichlet-sine window."
+  ],
+  "favorable_controls": [
+    "P=16, R=30 (-29.54 dB equiripple stopband)",
+    "P=24, R=40 (-32.04 dB equiripple stopband)"
+  ]
+}

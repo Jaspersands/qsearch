@@ -1,0 +1,49 @@
+{
+  "all_checks_passed": true,
+  "domain": "fermionic_gaussian_matchgates_vs_clifford_cnot_peeling",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "majorana_gate_analysis": {
+    "complexity_comparison_n_qubits": {
+      "clifford_symplectic_tableau_dim": "2n x 2n over F_2",
+      "matchgate_so2n_covariance_dim": "2n x 2n over R",
+      "universal_cnot_plus_matchgate_hilbert_dim": "2^n"
+    },
+    "gate_majorana_degrees": {
+      "fermionic_fswap_cz_swap": {
+        "is_clifford_in_general": true,
+        "is_fermionic_gaussian": true,
+        "majorana_degree": 1
+      },
+      "planar_matchgate_xx_yy": {
+        "is_clifford_in_general": false,
+        "is_fermionic_gaussian": true,
+        "majorana_degree": 1
+      },
+      "standard_cnot": {
+        "is_clifford_in_general": true,
+        "is_fermionic_gaussian": false,
+        "majorana_degree": 3
+      },
+      "standard_swap": {
+        "is_clifford_in_general": true,
+        "is_fermionic_gaussian": false,
+        "majorana_degree": 3
+      }
+    },
+    "num_majorana_modes_2n": 4,
+    "num_qubits_n": 2,
+    "so4_orthogonality_max_error": 2.7755575615628914e-17
+  },
+  "subsystem_id": "dcp_majorana_fermionic_gaussian_matchgate_parity_peeling_bridge",
+  "subsystem_number": 146,
+  "theorem_checks": {
+    "cnot_is_clifford_but_outside_fermionic_gaussian_matchgates": true,
+    "matchgate_composition_preserves_so2n_orthogonality": true,
+    "planar_matchgate_and_fswap_preserve_majorana_degree_1": true,
+    "standard_cnot_and_swap_inflate_majorana_degree_to_3": true
+  }
+}

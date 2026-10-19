@@ -1,0 +1,29 @@
+{
+  "hypothesis_id": "LOCAL-INTERVAL-SPARSE-SUBGROUP-ROUNDING",
+  "status": "CLASSICAL_CONSTRUCTIVE_BOUND_PENDING_INDEPENDENT_REVIEW",
+  "input": "full-prime N=p RS interval search H_d[j,x]=x^j; arbitrary public word or syndrome; d<=ell<=floor(p/2); ell|(p-1) for split mode or ell|(p+1) for nonsplit mode",
+  "mechanism": "constant row plus p-1 translates of split subgroup differences or nonsplit norm-one trace-coset differences; exact rational cyclic inverse and denominator-aware unbiased rounding",
+  "all_target_bound": "failure <= min(1,2p exp(-2(u+1)^2/S)), S=1+sum(w^2); S=2ell+1 in split and generic nonsplit index>=5; S=3ell-gcd(ell,2)+1 for nonsplit indices3/4; width O(sqrt(ell log p)) gives expected polynomial classical search",
+  "deterministic_alternative": "exact nearest-coordinate rounding gives all-target integer radius ell from column L1<=2ell+1; independent tail is comparison-only when this mode is used",
+  "cost": "explicit generator/subgroup and polynomial rational xgcd setup; nonsplit mode pays for constant-degree quadratic field and exhaustive Cayley generator search; O(p ell) big-integer streamed multiplication per attempt; actual rational coordinate bit lengths charged",
+  "proof_obligations": [
+    "vanishing moments below ell and nonzero first excluded moment",
+    "nonsplit exact norm-one generator, inverse trace classes, fiber multiplicities and correct squared-norm variance",
+    "prime cyclotomic irreducibility and full real rank of retained translations",
+    "zero-mean factor division, exact cyclic inverse and integer reconstruction",
+    "cofactor coordinate bit bounds, actual common-denominator coins and paid setup",
+    "column squared-range bound2ell+1, native equations, integer threshold, all failures retained",
+    "independent review and prior-art comparison before any novelty claim"
+  ],
+  "falsifiers": [
+    "a kernel, rank or reconstruction failure at an admitted input",
+    "unit-fiber undercount at small nonsplit quotient indices or the zero waveform from inverse coset classes at index3",
+    "a coin drawn modulo p instead of the actual coordinate denominator",
+    "accepted witnesses failing original native moments or full polynomial replay",
+    "claims about missing subgroup divisors, arbitrary sets, prescribed sampling or punctured exponential fields"
+  ],
+  "producer": "theorems/interval_subgroup_rounding.py",
+  "report": "research/classical_baselines/interval_subgroup_rounding.json",
+  "novelty_quantum_speedup_or_general_dequantization_claimed": false,
+  "central_registry_promotion": false
+}
