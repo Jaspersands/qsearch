@@ -4,10 +4,11 @@
     python tools/cockpit/build_cockpit.py --inertia 6     # raise the stuck flag after 6 sections
     python tools/cockpit/build_cockpit.py --no-history    # skip dating sections from git history
 
-Reads research/AGENT_HANDOFF.md, the negative-results registry, the progress
-snapshot's git history, .research_checkpoint.json and, when present,
-research/audits/spend_summary.json. Git is used read-only (log, show, status).
-Never imports core/ or theorems/.
+Reads research/AGENT_HANDOFF.md and its git history, the negative-results registry and
+its git history, the progress snapshot's git history, .research_checkpoint.json and, when
+present, research/audits/spend_summary.json. Git is used read-only: only the exact log,
+show, status and rev-parse argument lists defined below are ever run. Never imports core/
+or theorems/.
 """
 
 from __future__ import annotations
@@ -18,7 +19,9 @@ import json
 import os
 import re
 import subprocess
+from bisect import bisect_right
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable
@@ -43,26 +46,93 @@ class Section:
     body: str
 
 
+def _line_starts(text: str, token: str) -> list[int]:
+    """Offsets of the lines that start with token."""
+    found = [0] if text.startswith(token) else []
+    needle, at = "\n" + token, text.find("\n" + token)
+    while at != -1:
+        found.append(at + 1)
+        at = text.find(needle, at + 1)
+    return found
+
+
+def _fence_lines(text: str) -> list[tuple[int, int, str, str]]:
+    """(line start, line end, marker, info string) for every line that opens or closes a fence."""
+    lines = []
+    for token in ("```", "~~~"):
+        at = text.find(token)
+        while at != -1:
+            start = text.rfind("\n", 0, at) + 1
+            if text[start:at].strip(" \t"):  # the run is not at the start of its line
+                at = text.find(token, at + 3)
+                continue
+            end = text.find("\n", at)
+            end = len(text) if end == -1 else end
+            run = at
+            while run < end and text[run] == token[0]:
+                run += 1
+            marker, info = text[at:run], text[run:end].strip()
+            if not (marker[0] == "`" and "`" in info):  # ```x``` is inline code, not a fence
+                lines.append((start, end, marker, info))
+            at = text.find(token, end)
+    return sorted(lines)
+
+
+def _fenced_spans(text: str, headings: list[int]) -> list[tuple[int, int]]:
+    """(start, end) character spans of the ``` and ~~~ code fences, oldest first.
+
+    A fence closes at the next line made only of at least as many of the same character.
+    A fence with no such line, or whose would-be closer comes only after another opening
+    fence with an info string (```text), is taken as unclosed: it ends at the next "## "
+    heading, so one missing closer cannot hide every later section.
+    """
+    lines = _fence_lines(text)
+    spans: list[tuple[int, int]] = []
+    i = 0
+    while i < len(lines):
+        start, _, marker, _ = lines[i]
+        end, resume = None, len(lines)
+        for j in range(i + 1, len(lines)):
+            _, line_end, other, info = lines[j]
+            if other[0] != marker[0] or len(other) < len(marker):
+                continue
+            if not info:
+                end, resume = line_end, j + 1
+                break
+            break  # a new fence with an info string opens: the first one was never closed
+        if end is None:
+            k = bisect_right(headings, start)
+            end = headings[k] if k < len(headings) else len(text)
+            resume = next((j for j in range(i + 1, len(lines)) if lines[j][0] >= end), len(lines))
+        spans.append((start, end))
+        i = resume
+    return spans
+
+
 def split_sections(text: str) -> list[Section]:
-    """Split the handoff into its "## " sections, ignoring headings inside code fences."""
+    """Split the handoff into its "## " sections, ignoring headings inside code fences.
+
+    Lines end at "\\n" only, as GitHub counts them, so line numbers match its #L anchors.
+    """
+    text = text.replace("\r\n", "\n")
+    candidates = _line_starts(text, "## ")
+    spans = _fenced_spans(text, candidates)
+    starts, k = [], 0
+    for position in candidates:
+        while k < len(spans) and spans[k][1] <= position:
+            k += 1
+        if not (k < len(spans) and spans[k][0] <= position < spans[k][1]):
+            starts.append(position)
     sections: list[Section] = []
-    heading, line_no, body = None, 0, []
-    in_fence = False
-
-    def close() -> None:
-        if heading is not None:
-            sections.append(Section(len(sections), line_no, heading, "\n".join(body).strip("\n")))
-
-    for number, line in enumerate(text.splitlines(), start=1):
-        if line.lstrip().startswith("```"):
-            in_fence = not in_fence
-        if not in_fence and line.startswith("## "):
-            close()
-            heading, line_no, body = line[3:].strip(), number, []
-            continue
-        if heading is not None:
-            body.append(line)
-    close()
+    line, counted = 1, 0
+    for n, start in enumerate(starts):
+        line += text.count("\n", counted, start)
+        counted = start
+        eol = text.find("\n", start)
+        eol = len(text) if eol == -1 else eol
+        stop = starts[n + 1] if n + 1 < len(starts) else len(text)
+        body = text[eol + 1:stop] if eol < stop else ""
+        sections.append(Section(n, line, text[start + 3:eol].strip(), body.strip("\n")))
     return sections
 
 
@@ -320,31 +390,42 @@ def attribution_check(results: list[Attribution]) -> dict[str, int]:
     return check
 
 
-# ---------- Registry entries ----------
+# ---------- Registry ids quoted in the handoff ----------
 
-ID_TOKEN = re.compile(r"(?<![A-Za-z0-9_-])[A-Z][A-Z0-9_]*(?:-[A-Z0-9_]+)+(?![A-Za-z0-9_])")
+# Any run of letters, digits and underscores joined by hyphens (double hyphens included). A
+# token is matched against the real registry ids as a whole, so NEG-A-B-v2 never counts as
+# NEG-A-B and NEG--HIDDEN-INVOLUTION-... is found.
+ID_TOKEN = re.compile(r"[A-Za-z0-9_]+(?:-+[A-Za-z0-9_]+)+")
 WRAPPED_ID = re.compile(r"(?<=[A-Z0-9_])-\n[ \t]*(?=[A-Z0-9])")
 
 
+def _read_text(path: Path) -> str:
+    """A text file, with any byte that is not UTF-8 replaced rather than failing the build."""
+    return path.read_bytes().decode("utf-8", errors="replace")
+
+
 def _read_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(_read_text(path))
+
+
+def _records(data: Any) -> dict[str, dict[str, Any]] | None:
+    """Registry records by id, or None when the data is not a list of records."""
+    if not isinstance(data, list):
+        return None
+    return {record["id"]: record for record in data if isinstance(record, dict) and isinstance(record.get("id"), str)}
 
 
 def registry_ids(root: Path) -> set[str]:
     """Ids of every negative result: the active registry plus quarantined records.
 
     Quarantined records were registry entries when they were written, so a section that
-    added one still added a registry entry.
+    quotes one still quotes a registry id.
     """
     ids: set[str] = set()
     for rel in (REGISTRY, QUARANTINE):
         path = root / rel
-        if not path.is_file():
-            continue
-        data = _read_json(path)
-        for record in data if isinstance(data, list) else []:
-            if isinstance(record, dict) and isinstance(record.get("id"), str):
-                ids.add(record["id"])
+        if path.is_file():
+            ids |= set(_records(_read_json(path)) or {})
     return ids
 
 
@@ -353,20 +434,161 @@ def mentioned_registry_ids(text: str, ids: set[str]) -> set[str]:
     return set(ID_TOKEN.findall(WRAPPED_ID.sub("-", text))) & ids
 
 
-def new_registry_ids(texts: list[str], ids: set[str]) -> list[list[str]]:
-    """For texts in chronological order, the registry ids no earlier text mentioned."""
-    seen: set[str] = set()
-    result = []
-    for text in texts:
-        found = mentioned_registry_ids(text, ids)
-        result.append(sorted(found - seen))
-        seen |= found
+def _scan_handoff(versions: list[tuple[str, str]], ids: set[str] | None = None) -> tuple[dict, dict[str, tuple[str, int]]]:
+    """One pass over the committed handoff versions (day, text), oldest first.
+
+    Returns the day each section key first appears, and, when ids are given, for each id the
+    key of the section that quoted it in the first version quoting it. Within that version a
+    section that is new in it wins over an older section edited in it; after that the lower
+    one (the older by file order) wins.
+    """
+    first_seen: dict[tuple[str, int], str] = {}
+    credit: dict[str, tuple[str, int]] = {}
+    scanned: set[str] = set()  # section texts already searched: their ids are credited already
+    for day, text in versions:
+        sections = split_sections(text)
+        keys = _occurrence_keys([s.heading for s in sections])
+        if ids:
+            for i in sorted(range(len(sections)), key=lambda i: (keys[i] in first_seen, -i)):
+                blob = sections[i].heading + "\n" + sections[i].body
+                if blob in scanned:
+                    continue
+                scanned.add(blob)
+                for rid in mentioned_registry_ids(blob, ids):
+                    credit.setdefault(rid, keys[i])
+        for key in keys:
+            first_seen.setdefault(key, day)
+    return first_seen, credit
+
+
+def _assign_quotes(
+    sections: list[Section], credit: dict[str, tuple[str, int]], ids: set[str], order: list[int]
+) -> tuple[dict[int, list[str]], dict[str, int]]:
+    keys = _occurrence_keys([s.heading for s in sections])
+    index_of = {key: s.index for s, key in zip(sections, keys)}
+    quotes: dict[int, list[str]] = {s.index: [] for s in sections}
+    stats = {"from_history": 0, "from_current_text": 0, "lost": 0}
+    for rid, key in credit.items():
+        if key in index_of:
+            quotes[index_of[key]].append(rid)
+            stats["from_history"] += 1
+        else:
+            stats["lost"] += 1  # the section that quoted it first is gone or renamed
+    credited = set(credit)
+    by_index = {s.index: s for s in sections}
+    for index in order:  # ids no committed version quotes: the oldest current section quoting them
+        section = by_index[index]
+        found = mentioned_registry_ids(section.heading + "\n" + section.body, ids) - credited
+        quotes[index].extend(found)
+        credited |= found
+        stats["from_current_text"] += len(found)
+    return {index: sorted(found) for index, found in quotes.items()}, stats
+
+
+def first_quoted(
+    sections: list[Section], versions: list[tuple[str, str]], ids: set[str], order: list[int]
+) -> tuple[dict[int, list[str]], dict[str, int]]:
+    """Credit each registry id to the section that quoted it in the first committed handoff version quoting it.
+
+    The credit follows history, not today's text: agents reword sections, so the section that
+    first quoted an id often stops quoting it. Ids no committed version quotes go to the oldest
+    current section quoting them (order is the current sections oldest first). Ids whose first
+    quoting section no longer exists are counted as lost and credited to no one.
+    """
+    _, credit = _scan_handoff(versions, ids)
+    return _assign_quotes(sections, credit, ids, order)
+
+
+# ---------- Registry growth from the registry's own history ----------
+
+UNCLASSIFIED = "unclassified"
+
+
+def record_direction(record: dict[str, Any]) -> DirectionResult:
+    """A registry record's direction: the keyword table on its id (as the heading), claim and tags.
+
+    A record that matches no keyword is "unclassified" rather than "other".
+    """
+    tags = record.get("applies_to")
+    tags = [tag for tag in tags if isinstance(tag, str)] if isinstance(tags, list) else []
+    result = classify_direction(str(record.get("id") or ""), f"{record.get('claim') or ''}\n{' '.join(tags)}")
+    if result.direction == OTHER:
+        return DirectionResult(UNCLASSIFIED, result.scores, weak=False)
     return result
+
+
+def _gain(rid: str, day: str | None, record: dict[str, Any]) -> dict[str, Any]:
+    direction = record_direction(record)
+    return {"id": rid, "date": day, "direction": direction.direction, "weak": direction.weak}
+
+
+def registry_gains(versions: list[tuple[str, str, str]], current: Any) -> dict[str, Any] | None:
+    """Records the registry gained, dated by the first committed version that contains them.
+
+    versions are (sha, UTC commit date, file text), oldest first. The first version that
+    parses is the baseline: its records were there before anything could be measured.
+    current is the parsed working-tree registry; its records that no commit holds yet are
+    gains dated None. A record removed later still counts as gained on its day.
+    """
+    baseline: dict[str, Any] | None = None
+    known: set[str] = set()
+    gains: list[dict[str, Any]] = []
+    parsed = 0
+    for _, day, text in versions:
+        try:
+            records = _records(json.loads(text))
+        except ValueError:
+            records = None
+        if records is None:
+            continue
+        parsed += 1
+        if baseline is None:
+            baseline = {"date": day, "records": len(records)}
+            known |= set(records)
+            continue
+        for rid, record in records.items():
+            if rid not in known:
+                known.add(rid)
+                gains.append(_gain(rid, day, record))
+    if baseline is None:
+        return None
+    for rid, record in (_records(current) or {}).items():
+        if rid not in known:
+            known.add(rid)
+            gains.append(_gain(rid, None, record))
+    return {"versions": parsed, "baseline": baseline, "gains": gains, "ids": known}
+
+
+def registry_summary(gains: dict[str, Any]) -> dict[str, Any]:
+    """What the registry gained after its baseline, by direction and by day (None: not committed)."""
+    entries = gains["gains"]
+    committed = [gain for gain in entries if gain["date"] is not None]
+    by_direction = {d.id: 0 for d in DIRECTIONS if d.id != OTHER}
+    by_direction[UNCLASSIFIED] = 0
+    days: dict[str | None, dict[str, Any]] = {}
+    for gain in entries:
+        by_direction[gain["direction"]] += 1
+        day = days.setdefault(gain["date"], {"date": gain["date"], "records": 0, "by_direction": Counter()})
+        day["records"] += 1
+        day["by_direction"][gain["direction"]] += 1
+    ordered = sorted(days.values(), key=lambda day: day["date"] or NOT_COMMITTED)
+    return {
+        "source": REGISTRY,
+        "versions": gains["versions"],
+        "baseline": gains["baseline"],
+        "added": len(committed),
+        "uncommitted": len(entries) - len(committed),
+        "by_direction": by_direction,
+        "unclassified": by_direction[UNCLASSIFIED],
+        "weak": sum(1 for gain in entries if gain["weak"]),
+        "last_gain": max((gain["date"] for gain in committed), default=None),
+        "days": [{**day, "by_direction": dict(day["by_direction"])} for day in ordered],
+    }
 
 
 # ---------- Chronology and inertia ----------
 
-NOT_COMMITTED = "9999-12-31"  # sorts uncommitted sections after every committed one
+NOT_COMMITTED = "9999-12-31"  # sorts uncommitted sections (and registry records) after every committed one
 
 
 def chronological_order(count: int, first_committed: dict[int, str | None]) -> list[int]:
@@ -374,66 +596,107 @@ def chronological_order(count: int, first_committed: dict[int, str | None]) -> l
     return sorted(range(count), key=lambda i: (first_committed.get(i) or NOT_COMMITTED, -i))
 
 
-def _label(direction_id: str) -> str:
-    return next((d.label for d in DIRECTIONS if d.id == direction_id), direction_id)
+def _public_day(day: str | None) -> str | None:
+    return None if day in (None, NOT_COMMITTED) else day
 
 
-def inertia(chronological: list[dict[str, Any]], threshold: int) -> dict[str, Any]:
-    """Per direction, how many of its own sections have passed since one added a registry entry.
+def _gains_by_direction(gains: list[dict[str, Any]]) -> dict[str, dict[str, list[str]]]:
+    """direction -> {gain day (NOT_COMMITTED when not committed yet) -> ids gained that day}."""
+    by_direction: dict[str, dict[str, list[str]]] = {}
+    for gain in gains:
+        by_direction.setdefault(gain["direction"], {}).setdefault(gain["date"] or NOT_COMMITTED, []).append(gain["id"])
+    return by_direction
 
-    Sections about other directions in between neither count nor reset the streak. The flag
-    is raised when the streak reaches the threshold. "Other" is a catch-all and never flags.
+
+def registry_days(rows: list[dict[str, Any]], gains: list[dict[str, Any]]) -> dict[int, bool]:
+    """Per section: was it first committed on a day the registry gained a record in its direction?"""
+    days = {(gain["direction"], gain["date"] or NOT_COMMITTED) for gain in gains}
+    return {
+        row["index"]: row["direction"] != OTHER and (row["direction"], row.get("first_committed") or NOT_COMMITTED) in days
+        for row in rows
+    }
+
+
+def _direction_runs(
+    chronological: list[dict[str, Any]], positions: list[int], days: list[str], threshold: int, direction: str
+) -> tuple[int, list[tuple[int, dict[str, Any]]]]:
+    """(current streak, runs at or over the threshold) for one direction's sections and gain days."""
+    runs: list[tuple[int, dict[str, Any]]] = []
+
+    def close(run: list[int], epoch: int, ongoing: bool) -> None:
+        if len(run) < threshold:
+            return
+        first, last = chronological[run[0]], chronological[run[-1]]
+        runs.append((run[0], {
+            "direction": direction,
+            "length": len(run),
+            "from_index": first["index"],
+            "to_index": last["index"],
+            "from_date": first.get("first_committed"),
+            "to_date": last.get("first_committed"),
+            "after_gain": _public_day(days[epoch - 1]) if epoch else None,
+            "ended_by_gain": None if ongoing else _public_day(days[epoch]),
+            "ongoing": ongoing,
+        }))
+
+    run: list[int] = []
+    epoch = 0  # how many gain days fall on or before the current run's sections
+    for pos in positions:
+        day = chronological[pos].get("first_committed") or NOT_COMMITTED
+        current = bisect_right(days, day)
+        on_gain_day = current > 0 and days[current - 1] == day
+        if current != epoch or on_gain_day:
+            close(run, epoch, False)
+            run, epoch = [], current
+        if not on_gain_day:
+            run.append(pos)
+    ongoing = epoch == len(days)  # no gain came after the latest run
+    close(run, epoch, ongoing)
+    return (len(run) if ongoing else 0), runs
+
+
+def inertia(chronological: list[dict[str, Any]], threshold: int, gains: list[dict[str, Any]] | None) -> dict[str, Any]:
+    """Per direction, how many of its own sections were first committed after the registry last
+    gained a record in that direction.
+
+    gains are the registry's gained records ({"id", "date", "direction"}, date None when not
+    committed yet), read from the registry's own git history. Sections first committed on a day
+    the registry gained a record in their direction are not counted, and that day ends a run,
+    as does any such day between two sections. Sections about other directions neither count
+    nor end a run. The flag is raised when the current streak reaches the threshold. "Other" is
+    a catch-all and never flags; gained records that match no keyword ("unclassified") end no
+    run. Without registry history (gains None) the measure is unavailable.
     """
+    if gains is None:
+        return {"available": False, "threshold": threshold, "directions": [], "flags": [], "runs": []}
+    by_direction = _gains_by_direction(gains)
     rows: list[dict[str, Any]] = []
-    runs: list[tuple[int, dict[str, Any]]] = []  # (chronological start, run)
+    runs: list[tuple[int, dict[str, Any]]] = []
     total = len(chronological)
-
-    def close_run(direction_id: str, run: list[int], ongoing: bool) -> None:
-        if len(run) >= threshold:
-            first, last = chronological[run[0]], chronological[run[-1]]
-            runs.append((run[0], {
-                "direction": direction_id,
-                "length": len(run),
-                "from_index": first["index"],
-                "to_index": last["index"],
-                "from_date": first.get("first_committed"),
-                "to_date": last.get("first_committed"),
-                "ongoing": ongoing,
-            }))
-
     for direction in DIRECTIONS:
         if direction.id == OTHER:
             continue
         positions = [pos for pos, row in enumerate(chronological) if row["direction"] == direction.id]
         if not positions:
             continue
-        last_new, run = None, []
-        for pos in positions:
-            row = chronological[pos]
-            if row["new_registry_ids"]:
-                close_run(direction.id, run, False)
-                run = []
-                last_new = {
-                    "index": row["index"],
-                    "heading": row.get("heading", ""),
-                    "ids": list(row["new_registry_ids"]),
-                    "first_committed": row.get("first_committed"),
-                }
-            else:
-                run.append(pos)
-        close_run(direction.id, run, True)
-        streak = len(run)
+        gained = by_direction.get(direction.id, {})
+        days = sorted(gained)
+        streak, direction_runs = _direction_runs(chronological, positions, days, threshold, direction.id)
+        runs += direction_runs
+        last = days[-1] if days else None
         rows.append({
             "direction": direction.id,
             "label": direction.label,
             "sections": len(positions),
             "streak": streak,
             "flag": streak >= threshold,
-            "last_new": last_new,
+            "last_gain": {"date": _public_day(last), "records": len(gained[last]), "ids": gained[last][:3]} if last else None,
+            "gained": sum(len(ids) for ids in gained.values()),
             "latest_index": chronological[positions[-1]]["index"],
             "sections_ago": total - 1 - positions[-1],
         })
     return {
+        "available": True,
         "threshold": threshold,
         "directions": rows,
         "flags": [row for row in rows if row["flag"]],
@@ -444,41 +707,71 @@ def inertia(chronological: list[dict[str, Any]], threshold: int) -> dict[str, An
 # ---------- Git (read-only) ----------
 
 GitRunner = Callable[..., "str | None"]
-READ_ONLY_GIT = frozenset({"log", "show", "status"})
 RS, US = "\x1e", "\x1f"  # record and field separators in git log formats
-COMMIT_LOG_ARGS = ("log", f"--format={RS}%H{US}%cs{US}%s", "--name-only")
-SNAPSHOT_LOG_ARGS = ("log", f"--format=%H{US}%cs", "--", SNAPSHOT)
-HANDOFF_LOG_ARGS = ("log", f"--format=%H{US}%cs", "--", HANDOFF)
-CHECKPOINT_LOG_ARGS = ("log", "-1", f"--format=%H{US}%cs", "--", CHECKPOINT)
+# %ct (commit time as a Unix timestamp) rather than %cs: %cs is the date in each committer's
+# own time zone, while the spend summary uses UTC days. utc_day() turns %ct into a UTC date.
+COMMIT_LOG_ARGS = ("log", f"--format={RS}%H{US}%ct{US}%s", "--name-only")
+SNAPSHOT_LOG_ARGS = ("log", f"--format=%H{US}%ct", "--", SNAPSHOT)
+HANDOFF_LOG_ARGS = ("log", f"--format=%H{US}%ct", "--", HANDOFF)
+REGISTRY_LOG_ARGS = ("log", f"--format=%H{US}%ct", "--", REGISTRY)
+CHECKPOINT_LOG_ARGS = ("log", "-1", f"--format=%H{US}%ct", "--", CHECKPOINT)
 STATUS_ARGS = ("status", "--porcelain", "--untracked-files=all")
+SHALLOW_ARGS = ("rev-parse", "--is-shallow-repository")
+# Every git argument list the builder runs, exactly. Anything else is refused before git starts,
+# so no option such as --output=FILE can ever reach git.
+ALLOWED_GIT_ARGS = frozenset({
+    COMMIT_LOG_ARGS, SNAPSHOT_LOG_ARGS, HANDOFF_LOG_ARGS, REGISTRY_LOG_ARGS, CHECKPOINT_LOG_ARGS, STATUS_ARGS, SHALLOW_ARGS,
+})
+SHOW_PATHS = frozenset({HANDOFF, SNAPSHOT, REGISTRY})  # plus "git show <full sha>:<one of these>"
+SHOW_ARG = re.compile(r"[0-9a-f]{40}(?:[0-9a-f]{24})?:(.+)")
+
+
+def allowed_git_args(args: tuple[str, ...]) -> bool:
+    """True only for the builder's own read-only git commands."""
+    args = tuple(args)
+    if args in ALLOWED_GIT_ARGS:
+        return True
+    if len(args) == 2 and args[0] == "show":
+        match = SHOW_ARG.fullmatch(args[1])
+        return bool(match and match.group(1) in SHOW_PATHS)
+    return False
 
 
 def git_runner(root: Path) -> GitRunner:
-    """Run read-only git commands in root; return stdout, or None when git fails."""
+    """Run the builder's read-only git commands in root; return stdout, or None when git fails."""
     env = {**os.environ, "GIT_OPTIONAL_LOCKS": "0"}  # git status must not even refresh the index
 
     def run(*args: str) -> str | None:
-        if not args or args[0] not in READ_ONLY_GIT:
-            raise ValueError(f"the cockpit only runs read-only git commands, not {args[:1]!r}")
+        if not allowed_git_args(args):
+            raise ValueError(f"the cockpit only runs its own read-only git commands, not {args!r}")
         try:
-            result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, text=True, env=env)
+            result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, env=env)
         except FileNotFoundError:
             return None
-        return result.stdout if result.returncode == 0 else None
+        # A committed file may hold bytes that are not UTF-8; replace them rather than fail.
+        return result.stdout.decode("utf-8", errors="replace") if result.returncode == 0 else None
 
     return run
 
 
+def utc_day(timestamp: str) -> str | None:
+    """The UTC calendar date of a git %ct timestamp."""
+    try:
+        return dt.datetime.fromtimestamp(int(timestamp), dt.timezone.utc).date().isoformat()
+    except (ValueError, OverflowError, OSError):
+        return None
+
+
 def parse_commit_log(text: str) -> list[dict[str, Any]]:
-    """Commits from COMMIT_LOG_ARGS output, in log order (newest first)."""
+    """Commits from COMMIT_LOG_ARGS output, in log order (newest first), dated in UTC."""
     commits = []
     for record in text.split(RS):
         if not record.strip():
             continue
         header, _, rest = record.partition("\n")
-        sha, day, subject = (header.split(US) + ["", ""])[:3]
+        sha, stamp, subject = (header.split(US) + ["", ""])[:3]
         files = [line.strip() for line in rest.splitlines() if line.strip()]
-        commits.append({"sha": sha, "date": day, "subject": subject, "files": files})
+        commits.append({"sha": sha, "date": utc_day(stamp), "subject": subject, "files": files})
     return commits
 
 
@@ -498,9 +791,11 @@ def commit_topic(subject: str, files: list[str]) -> str:
 
 
 def commits_per_day(commits: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Commits grouped by commit date, oldest day first, with a topic count per day."""
+    """Commits grouped by UTC commit date, oldest day first, with a topic count per day."""
     days: dict[str, dict[str, Any]] = {}
     for commit in commits:
+        if not commit["date"]:
+            continue
         day = days.setdefault(commit["date"], {"date": commit["date"], "count": 0, "topics": Counter(), "commits": []})
         topic = commit_topic(commit["subject"], commit["files"])
         day["count"] += 1
@@ -557,17 +852,31 @@ def _occurrence_keys(headings: list[str]) -> list[tuple[str, int]]:
     return list(reversed(keys))
 
 
+def _dates(sections: list[Section], first_seen: dict[tuple[str, int], str]) -> dict[int, str | None]:
+    keys = _occurrence_keys([s.heading for s in sections])
+    return {section.index: first_seen.get(key) for section, key in zip(sections, keys)}
+
+
 def first_committed(sections: list[Section], versions: list[tuple[str, str]]) -> dict[int, str | None]:
     """Date each section by the first committed version of the handoff that contains it.
 
     versions are (commit date, file text), oldest first. Uncommitted sections get None.
     """
-    first_seen: dict[tuple[str, int], str] = {}
-    for day, text in versions:
-        for key in _occurrence_keys([s.heading for s in split_sections(text)]):
-            first_seen.setdefault(key, day)
+    first_seen, _ = _scan_handoff(versions)
+    return _dates(sections, first_seen)
+
+
+def head_lines(sections: list[Section], head_text: str | None) -> dict[int, int | None]:
+    """Each current section's line number in the head commit's handoff (None when not in it).
+
+    Links pin that commit, so a line number from the working tree could point elsewhere.
+    """
+    if head_text is None:
+        return {section.index: None for section in sections}
+    head = split_sections(head_text)
+    line_of = dict(zip(_occurrence_keys([s.heading for s in head]), (s.line for s in head)))
     keys = _occurrence_keys([s.heading for s in sections])
-    return {section.index: first_seen.get(key) for section, key in zip(sections, keys)}
+    return {section.index: line_of.get(key) for section, key in zip(sections, keys)}
 
 
 def _porcelain_entries(porcelain: str) -> list[tuple[str, str]]:
@@ -587,16 +896,10 @@ def dirty_paths(porcelain: str) -> set[str]:
 
 
 def dirty_summary(porcelain: str) -> dict[str, Any]:
-    """Counts of modified and untracked files, by top-level folder. No file names leave here."""
+    """Counts of changed tracked files and untracked files. No file or folder names leave here."""
     entries = _porcelain_entries(porcelain)
     untracked = sum(1 for status, _ in entries if status == "??")
-    areas = Counter(path.split("/", 1)[0] if "/" in path else "(root)" for _, path in entries)
-    return {
-        "modified": len(entries) - untracked,
-        "untracked": untracked,
-        "total": len(entries),
-        "by_area": dict(sorted(areas.items())),
-    }
+    return {"modified": len(entries) - untracked, "untracked": untracked, "total": len(entries)}
 
 
 def checkpoint_status(
@@ -604,10 +907,13 @@ def checkpoint_status(
     *,
     last_commit: tuple[str, str] | None,
     commit_shas: list[str],
-    dirty: set[str],
+    dirty: set[str] | None,
     today: dt.date,
 ) -> dict[str, Any] | None:
-    """Summary of .research_checkpoint.json, the agents' resumable session checkpoint."""
+    """Summary of .research_checkpoint.json, the agents' resumable session checkpoint.
+
+    dirty is None when git status was not available: local edits are then unknown, not absent.
+    """
     path = root / CHECKPOINT
     if not path.is_file():
         return None
@@ -633,11 +939,22 @@ def checkpoint_status(
         "review": {key: review.get(key) for key in ("date", "status", "next_decision")} if review else None,
         "last_commit": {"sha": sha[:8], "date": last_commit[1]} if last_commit else None,
         "commits_since": commit_shas.index(sha) if sha in commit_shas else None,
-        "uncommitted_changes": CHECKPOINT in dirty,
+        "uncommitted_changes": None if dirty is None else CHECKPOINT in dirty,
     }
 
 
 SPEND_FIELDS = ("date", "runs", "wall_seconds", "cpu_seconds", "negatives_added", "tokens")
+OPTIONAL_SPEND_FIELDS = ("tokens_uncached",)  # passed through when the spend summary has it
+
+
+def _spend_row(day: dict[str, Any]) -> dict[str, Any]:
+    row = {key: day.get(key) for key in SPEND_FIELDS}
+    row.update({key: day[key] for key in OPTIONAL_SPEND_FIELDS if key in day})
+    # The spend summary writes wall_seconds 0.0 and cpu_seconds null for a day with no timed
+    # run. That is "not recorded", not zero seconds.
+    if row["cpu_seconds"] is None and not row["wall_seconds"]:
+        row["wall_seconds"] = None
+    return row
 
 
 def spend_summary(root: Path) -> tuple[dict[str, Any] | None, str | None]:
@@ -652,7 +969,7 @@ def spend_summary(root: Path) -> tuple[dict[str, Any] | None, str | None]:
             raise ValueError("days must be a list of objects with a date")
     except (ValueError, KeyError, TypeError) as error:
         return None, f"{SPEND} was skipped: {error}"
-    rows = sorted(({key: day.get(key) for key in SPEND_FIELDS} for day in days), key=lambda day: day["date"])
+    rows = sorted((_spend_row(day) for day in days), key=lambda day: day["date"])
     return {"generated_on": data.get("generated_on"), "days": rows, "source": SPEND}, None
 
 
@@ -661,28 +978,57 @@ def spend_summary(root: Path) -> tuple[dict[str, Any] | None, str | None]:
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = "site/data/cockpit.json"
 DEFAULT_INERTIA = 8
+SHOW_WORKERS = 6
+NO_GIT_WARNING = (
+    "git is not available here, or this is not a git checkout. Commits, section dates, registry growth, "
+    "inertia, the working tree and the checkpoint's commit are unknown."
+)
+SHALLOW_WARNING = (
+    "This checkout is a shallow clone, so its git history is cut off. Sections are left undated, registry "
+    "growth and inertia are not computed, the checkpoint's last commit is unknown, and commit counts and research "
+    "metrics cover only the commits that were fetched. Run git fetch --unshallow and rebuild."
+)
+
+
+def _log_entries(git: GitRunner, log_args: tuple[str, ...]) -> list[tuple[str, str]]:
+    """(sha, UTC commit date) for every commit a log lists, oldest first."""
+    entries = []
+    for line in reversed((git(*log_args) or "").splitlines()):
+        sha, _, stamp = line.strip().partition(US)
+        day = utc_day(stamp)
+        if sha and day:
+            entries.append((sha, day))
+    return entries
 
 
 def _history(git: GitRunner, log_args: tuple[str, ...], rel: str) -> list[tuple[str, str, str]]:
-    """Every committed version of rel as (sha, commit date, text), oldest first."""
-    versions = []
-    for line in reversed((git(*log_args) or "").splitlines()):
-        sha, _, day = line.strip().partition(US)
-        if not sha:
-            continue
-        text = git("show", f"{sha}:{rel}")
-        if text is not None:
-            versions.append((sha, day, text))
-    return versions
+    """Every committed version of rel as (sha, UTC commit date, text), oldest first.
+
+    The git show calls run a few at a time: each is a separate read-only process.
+    """
+    entries = _log_entries(git, log_args)
+    with ThreadPoolExecutor(max_workers=SHOW_WORKERS) as pool:
+        texts = list(pool.map(lambda entry: git("show", f"{entry[0]}:{rel}"), entries))
+    return [(sha, day, text) for (sha, day), text in zip(entries, texts) if text is not None]
 
 
-def _section_rows(root: Path, git: GitRunner, history: bool) -> tuple[list[dict[str, Any]], list[Attribution]]:
+def _section_rows(
+    root: Path,
+    git: GitRunner,
+    *,
+    history: bool,
+    head_text: str | None,
+    ids: set[str],
+    gains: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[Attribution], dict[str, int], set[str]]:
     path = root / HANDOFF
-    sections = split_sections(path.read_text(encoding="utf-8")) if path.is_file() else []
+    sections = split_sections(_read_text(path)) if path.is_file() else []
     versions = [(day, text) for _, day, text in _history(git, HANDOFF_LOG_ARGS, HANDOFF)] if history else []
-    dates = first_committed(sections, versions)
+    first_seen, credit = _scan_handoff(versions, ids)
+    dates = _dates(sections, first_seen)
     order = chronological_order(len(sections), dates)
-    new_ids = new_registry_ids([sections[i].heading + "\n" + sections[i].body for i in order], registry_ids(root))
+    quotes, quote_stats = _assign_quotes(sections, credit, ids, order)
+    lines = head_lines(sections, head_text)
     position = {index: pos for pos, index in enumerate(order)}
     rows, attributions = [], []
     for section in sections:
@@ -692,6 +1038,7 @@ def _section_rows(root: Path, git: GitRunner, history: bool) -> tuple[list[dict[
         rows.append({
             "index": section.index,
             "line": section.line,
+            "head_line": lines[section.index],
             "heading": section.heading,
             "heading_date": heading_date(section.heading),
             "first_committed": dates.get(section.index),
@@ -700,9 +1047,13 @@ def _section_rows(root: Path, git: GitRunner, history: bool) -> tuple[list[dict[
             "direction_weak": direction.weak,
             "agent": attribution.agent,
             "cues": attribution.cues,
-            "new_registry_ids": new_ids[position[section.index]],
+            "first_quoted_ids": quotes[section.index],
         })
-    return rows, attributions
+    marks = registry_days(rows, gains)
+    for row in rows:
+        row["registry_day"] = marks[row["index"]]
+    quoted = set(credit) | {rid for found in quotes.values() for rid in found}
+    return rows, attributions, quote_stats, quoted
 
 
 def build(
@@ -714,20 +1065,45 @@ def build(
     history: bool = True,
 ) -> dict[str, Any]:
     """Everything the cockpit page shows, as one JSON-ready dict."""
-    today = today or dt.date.today()
+    today = today or dt.datetime.now(dt.timezone.utc).date()
     warnings: list[str] = []
-    porcelain = git(*STATUS_ARGS)  # read before anything is written
-    rows, attributions = _section_rows(root, git, history)
+    shallow_answer = git(*SHALLOW_ARGS)
+    available = shallow_answer is not None
+    shallow = shallow_answer.strip() == "true" if available else None
+    if not available:
+        warnings.append(NO_GIT_WARNING)
+    elif shallow:
+        warnings.append(SHALLOW_WARNING)
+    complete = available and not shallow
+    use_history = history and complete
+
+    porcelain = git(*STATUS_ARGS) if available else None  # read before anything is written
+    commits = parse_commit_log(git(*COMMIT_LOG_ARGS) or "") if available else []
+    head = commits[0] if commits else None
+    head_text = git("show", f"{head['sha']}:{HANDOFF}") if head else None
+    registry_path = root / REGISTRY
+    current_registry = _read_json(registry_path) if registry_path.is_file() else None
+    gains = registry_gains(_history(git, REGISTRY_LOG_ARGS, REGISTRY), current_registry) if use_history else None
+    ids = registry_ids(root) | (gains["ids"] if gains else set())
+    rows, attributions, quote_stats, quoted = _section_rows(
+        root, git, history=use_history, head_text=head_text, ids=ids, gains=gains["gains"] if gains else []
+    )
     chronological = sorted(rows, key=lambda row: row["order"])
-    commits = parse_commit_log(git(*COMMIT_LOG_ARGS) or "")
-    checkpoint_log = (git(*CHECKPOINT_LOG_ARGS) or "").strip()
-    last_commit = tuple(checkpoint_log.split(US)[:2]) if US in checkpoint_log else None
+    checkpoint_log = (git(*CHECKPOINT_LOG_ARGS) or "").strip() if complete else ""
+    stamp = checkpoint_log.split(US)[:2] if US in checkpoint_log else None
+    last_commit = (stamp[0], utc_day(stamp[1])) if stamp and utc_day(stamp[1]) else None
     by_direction = Counter(row["direction"] for row in rows)
+    registry = None
+    if gains:
+        registry = registry_summary(gains)
+        registry["quoted"] = len({gain["id"] for gain in gains["gains"]} & quoted)
     payload: dict[str, Any] = {
         "generated_by": "tools/cockpit/build_cockpit.py",
         "generated_on": today.isoformat(),
         "settings": {"history": history, "inertia_threshold": inertia_threshold},
-        "head": {"sha": commits[0]["sha"][:8], "date": commits[0]["date"]} if commits else None,
+        "git": {"available": available, "shallow": shallow, "history": use_history},
+        # The commit the build started from. The commit that carries this page comes after it.
+        "head": {"sha": head["sha"][:8], "commit": head["sha"], "date": head["date"]} if head else None,
         "directions": [{"id": d.id, "label": d.label} for d in DIRECTIONS],
         "sections": rows,
         "coverage": {
@@ -741,15 +1117,17 @@ def build(
             "check": attribution_check(attributions),
             "cues": cue_table(Counter(cue for row in rows for cue in row["cues"])),
         },
-        "inertia": inertia(chronological, inertia_threshold),
-        "commits": {"total": len(commits), "days": commits_per_day(commits)},
-        "metrics": metrics_series(_history(git, SNAPSHOT_LOG_ARGS, SNAPSHOT)),
+        "registry": registry,
+        "quotes": quote_stats,
+        "inertia": inertia(chronological, inertia_threshold, gains["gains"] if gains else None),
+        "commits": {"total": len(commits), "days": commits_per_day(commits), "complete": complete},
+        "metrics": metrics_series(_history(git, SNAPSHOT_LOG_ARGS, SNAPSHOT)) if available else {"keys": [], "points": []},
         "dirty": dirty_summary(porcelain) if porcelain is not None else None,
         "checkpoint": checkpoint_status(
             root,
             last_commit=last_commit,
             commit_shas=[commit["sha"] for commit in commits],
-            dirty=dirty_paths(porcelain or ""),
+            dirty=dirty_paths(porcelain) if porcelain is not None else None,
             today=today,
         ),
         "warnings": warnings,
@@ -779,8 +1157,9 @@ def main(argv: list[str] | None = None, git: GitRunner | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=ROOT, help="Repository checkout to read.")
     parser.add_argument("--inertia", type=_positive, default=DEFAULT_INERTIA,
-                        help="Sections of one direction without a new registry entry before it is flagged.")
-    parser.add_argument("--no-history", action="store_true", help="Do not date sections from the handoff's git history.")
+                        help="Sections of one direction since its last registry gain before it is flagged.")
+    parser.add_argument("--no-history", action="store_true",
+                        help="Do not read git history: sections stay undated and inertia is not computed.")
     parser.add_argument("--out", type=Path, help=f"Output file (default: ROOT/{OUTPUT}).")
     args = parser.parse_args(argv)
     payload = build(args.root, git=git or git_runner(args.root), inertia_threshold=args.inertia,
@@ -788,8 +1167,9 @@ def main(argv: list[str] | None = None, git: GitRunner | None = None) -> int:
     out = args.out or args.root / OUTPUT
     write_json(out, payload)
     coverage, attribution = payload["coverage"], payload["attribution"]["by_agent"]
+    flags = [(row["direction"], row["streak"]) for row in payload["inertia"]["flags"]]
     print(f"wrote {out}: {coverage['sections']} sections, other share {coverage['other_share']:.1%}, "
-          f"agents {attribution}, flags {[row['direction'] for row in payload['inertia']['flags']]}")
+          f"agents {attribution}, flags {flags}")
     for warning in payload["warnings"]:
         print(f"warning: {warning}")
     return 0

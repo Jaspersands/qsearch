@@ -1,8 +1,9 @@
 import { niceMax } from "./chart.js";
-import { escapeHtml, formatDate, formatNumber } from "./format.js";
+import { REPO_URL, escapeHtml, formatDate, formatNumber } from "./format.js";
 
 const DAY_MS = 86400000;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const HANDOFF_PATH = "research/AGENT_HANDOFF.md";
 
 export const AGENT_LABELS = { codex: "Codex", gemini: "Gemini", unknown: "Unknown" };
 
@@ -36,6 +37,72 @@ export function metricLabel(key) {
   if (METRIC_LABELS[key]) return METRIC_LABELS[key];
   const words = String(key).replace(/[_-]+/g, " ").trim();
   return words.charAt(0).toUpperCase() + words.slice(1);
+}
+
+/* ---------- Small HTML pieces (every value from the data is escaped) ---------- */
+
+export function countText(value) {
+  return value === null || value === undefined ? "–" : formatNumber(value);
+}
+
+export function figureHtml(value, label) {
+  return `<div><span class="figure-value">${escapeHtml(value)}</span><span class="figure-label">${escapeHtml(label)}</span></div>`;
+}
+
+// rows are [label, html]; the html must already be escaped. Rows with no value are left out.
+export function factsHtml(rows) {
+  return `<dl class="facts">${rows
+    .filter(([, value]) => value)
+    .map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${value}</dd>`)
+    .join("")}</dl>`;
+}
+
+export function commitLinkHtml(sha, shown = sha) {
+  return `<a href="${REPO_URL}/commit/${encodeURIComponent(sha)}"><code>${escapeHtml(String(shown).slice(0, 8))}</code></a>`;
+}
+
+export function warningsHtml(warnings) {
+  return (warnings || []).map((warning) => `<p class="load-error">${escapeHtml(warning)}</p>`).join("");
+}
+
+// Draw each panel on its own, so one panel's error does not blank the others.
+export function runPanels(panels, onError) {
+  for (const panel of panels) {
+    try {
+      panel.draw();
+    } catch (error) {
+      onError(panel, error);
+    }
+  }
+}
+
+/* ---------- Header ---------- */
+
+export function builtHtml(data) {
+  const built = `Built ${escapeHtml(formatDate(data.generated_on))} (all dates are UTC days)`;
+  if (!data.head) return `${built}.`;
+  return (
+    `${built}, starting from commit ${commitLinkHtml(data.head.commit || data.head.sha, data.head.sha)} ` +
+    `of ${escapeHtml(formatDate(data.head.date))}. The commit that carries this page comes after it.`
+  );
+}
+
+// The header figures are frozen when the page is built, so each says which moment it describes.
+export function headFigures(data) {
+  const built = formatDate(data.generated_on);
+  const checkpoint = data.checkpoint;
+  const commits = data.commits || {};
+  const inertia = data.inertia || {};
+  return [
+    { value: data.dirty ? countText(data.dirty.total) : "unknown", label: "files uncommitted when this page was built" },
+    {
+      value: commits.complete ? countText(commitsInWindow(commits.days, data.generated_on, 7)) : "unknown",
+      label: `commits in the 7 days to ${built}`,
+    },
+    { value: inertia.available ? countText(inertia.flags.length) : "unknown", label: "directions flagged for inertia" },
+    { value: countText(data.coverage.sections), label: "handoff sections read" },
+    { value: checkpoint ? countText(checkpoint.days_since_session) : "–", label: `days from the last checkpoint session to ${built}` },
+  ];
 }
 
 /* ---------- Commits ---------- */
@@ -87,6 +154,13 @@ export function latestCommits(days, n) {
     }
   }
   return commits;
+}
+
+export function commitItemHtml(commit, labels = {}) {
+  return `<li>
+        <time datetime="${escapeHtml(commit.date)}">${escapeHtml(formatDate(commit.date))}</time>
+        <div>${escapeHtml(commit.subject)}<p class="small">${commitLinkHtml(commit.sha)} · ${escapeHtml(labels[commit.topic] || commit.topic)}</p></div>
+      </li>`;
 }
 
 function topicText(topics, labels) {
@@ -156,6 +230,32 @@ export function recentSections(sections, { direction = "", agent = "", limit = I
     .slice(0, limit);
 }
 
+// A link to the section's line in the commit the build started from. Line numbers come from that
+// commit's own copy of the handoff, so they do not drift when the next handoff commit lands.
+export function handoffUrl(section, head) {
+  const commit = head && (head.commit || head.sha);
+  if (!commit || !section.head_line) return null;
+  const path = HANDOFF_PATH.split("/").map(encodeURIComponent).join("/");
+  return `${REPO_URL}/blob/${encodeURIComponent(commit)}/${path}?plain=1#L${Number(section.head_line)}`;
+}
+
+export function sectionRowHtml(section, { labels = {}, head = null } = {}) {
+  const url = handoffUrl(section, head);
+  const cues = (section.cues || []).length ? `<span class="cues">${escapeHtml(section.cues.join(" · "))}</span>` : "";
+  const weak = section.direction_weak ? '<span class="cues">weak match</span>' : "";
+  const ids = (section.first_quoted_ids || []).length
+    ? section.first_quoted_ids.map(escapeHtml).join("<br>")
+    : '<span class="muted">none</span>';
+  const heading = url ? `<a href="${escapeHtml(url)}">${escapeHtml(section.heading)}</a>` : escapeHtml(section.heading);
+  return `<tr>
+    <td data-label="First committed" class="inline-sm">${escapeHtml(sectionDate(section))}</td>
+    <td data-label="Agent" class="inline-sm">${escapeHtml(AGENT_LABELS[section.agent] || section.agent)}${cues}</td>
+    <td data-label="Direction" class="inline-sm">${escapeHtml(labels[section.direction] || section.direction)}${weak}</td>
+    <td class="heading no-label">${heading}</td>
+    <td data-label="Registry ids first quoted here" class="ids">${ids}</td>
+  </tr>`;
+}
+
 export function rugLayout({ sections, groups, key, width = 720, labelWidth = 180, rowHeight = 26, axisHeight = 24 }) {
   const count = Math.max(1, sections.length);
   const plotWidth = width - labelWidth;
@@ -169,7 +269,8 @@ export function rugLayout({ sections, groups, key, width = 720, labelWidth = 180
         x: x(section.order),
         index: section.index,
         order: section.order,
-        isNew: (section.new_registry_ids || []).length > 0,
+        // first committed on a day the registry gained a record in the section's direction
+        isNew: Boolean(section.registry_day),
         section,
       }));
     return { id: group.id, label: group.label, count: ticks.length, top: i * rowHeight, ticks };
@@ -224,14 +325,12 @@ export function nearestTick(ticks, x, maxDist) {
   return best;
 }
 
-/* ---------- Inertia ---------- */
+/* ---------- Inertia and registry growth ---------- */
 
-function lastNewText(lastNew) {
-  if (!lastNew) return "none in the log";
-  const date = lastNew.first_committed ? formatDate(lastNew.first_committed) : "not committed yet";
-  const ids = lastNew.ids || [];
-  if (!ids.length) return date;
-  return `${date} (${ids[0]}${ids.length > 1 ? ` and ${ids.length - 1} more` : ""})`;
+function lastGainText(lastGain, baseline) {
+  if (!lastGain) return baseline ? `none after ${formatDate(baseline.date)}` : "none recorded";
+  const records = plural(lastGain.records, "record");
+  return lastGain.date ? `${formatDate(lastGain.date)} (${records})` : `not committed yet (${records})`;
 }
 
 function lastSeenText(sectionsAgo) {
@@ -239,7 +338,7 @@ function lastSeenText(sectionsAgo) {
   return `${plural(sectionsAgo, "section")} ago`;
 }
 
-export function inertiaRows(inertia) {
+export function inertiaRows(inertia, baseline = null) {
   return inertia.directions
     .map((row) => ({
       direction: row.direction,
@@ -247,18 +346,61 @@ export function inertiaRows(inertia) {
       sections: row.sections,
       streak: row.streak,
       flag: row.flag,
-      lastNew: lastNewText(row.last_new),
+      gained: row.gained,
+      lastGain: lastGainText(row.last_gain, baseline),
       lastSeen: lastSeenText(row.sections_ago),
     }))
     .sort((a, b) => Number(b.flag) - Number(a.flag) || b.streak - a.streak || b.sections - a.sections);
 }
 
-export function flaggedSentence({ threshold, flags }) {
+export function flaggedSentence({ threshold, flags, available = true }) {
+  if (!available) {
+    return "Inertia is not measured in this build: it needs the full git history of the handoff and of the registry.";
+  }
   const rule = `${formatNumber(threshold)} or more of`;
-  if (!flags.length) return `No direction has run ${rule} its own handoff sections without a new registry entry.`;
+  const since = "handoff sections since the registry last gained a record in";
+  if (!flags.length) return `No direction has had ${rule} its own ${since} its direction.`;
   const names = listWords(flags.map((flag) => flag.label));
-  if (flags.length === 1) return `${names} has run ${rule} its own handoff sections without a new registry entry.`;
-  return `${names} have each run ${rule} their own handoff sections without a new registry entry.`;
+  if (flags.length === 1) return `${names} has had ${rule} its own ${since} its direction.`;
+  return `${names} have each had ${rule} their own ${since} their direction.`;
+}
+
+export function registrySentence(registry, labels = {}) {
+  if (!registry) return "Registry growth was not read: this build had no full git history of the registry.";
+  const baseline = registry.baseline;
+  const parts = [
+    `The negative-results registry gained ${plural(registry.added, "record")} after its first committed version ` +
+      `(${formatDate(baseline.date)}, ${plural(baseline.records, "record")})` +
+      (registry.last_gain ? `, the last of them on ${formatDate(registry.last_gain)}.` : "."),
+  ];
+  if (registry.uncommitted) parts.push(`${plural(registry.uncommitted, "more record")} are in the working tree, not committed yet.`);
+  const named = Object.entries(registry.by_direction || {})
+    .filter(([id, n]) => id !== "unclassified" && n > 0)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([id, n]) => `${labels[id] || id} ${formatNumber(n)}`);
+  if (named.length) parts.push(`By direction: ${listWords(named)}.`);
+  if (registry.unclassified) {
+    parts.push(`${formatNumber(registry.unclassified)} match no keyword, so they count as unclassified and end no run.`);
+  }
+  if (typeof registry.quoted === "number") {
+    const total = registry.added + (registry.uncommitted || 0);
+    const only = registry.quoted * 2 < total ? "Only " : "";
+    parts.push(`${only}${formatNumber(registry.quoted)} of the ${formatNumber(total)} are ever quoted in a handoff section.`);
+  }
+  return parts.join(" ");
+}
+
+export function runRowHtml(run, labels = {}) {
+  const day = (date) => (date ? formatDate(date) : "not committed yet");
+  let ended = "still running";
+  if (!run.ongoing) ended = run.ended_by_gain ? formatDate(run.ended_by_gain) : "records not committed yet";
+  return `<tr>
+          <td>${escapeHtml(labels[run.direction] || run.direction)}</td>
+          <td data-label="Sections" class="num">${formatNumber(run.length)}</td>
+          <td data-label="From">${escapeHtml(day(run.from_date))}</td>
+          <td data-label="To">${escapeHtml(day(run.to_date))}</td>
+          <td data-label="Ended by a registry gain on">${escapeHtml(ended)}</td>
+        </tr>`;
 }
 
 /* ---------- Metrics ---------- */
@@ -298,6 +440,78 @@ export function sparkline({ points, key, width = 240, height = 64 }) {
   };
 }
 
+export function readoutText(point) {
+  return `${formatNumber(point.value)} on ${formatDate(point.date)}`;
+}
+
+// One card per chart. Cards are found again by position (.ck-spark, .ck-readout, .ck-spark-chart),
+// never by a selector built from a metric key, so no key can break the page.
+export function sparkCardsHtml(charts) {
+  return charts
+    .map(
+      (chart) => `<div class="ck-spark">
+        <h3>${escapeHtml(metricLabel(chart.key))}</h3>
+        <p class="small ck-readout">${escapeHtml(readoutText(chart.points[chart.points.length - 1]))}</p>
+        <div class="ck-spark-chart">${chart.svg}</div>
+      </div>`,
+    )
+    .join("");
+}
+
+/* ---------- Working tree and checkpoint ---------- */
+
+export function dirtyHtml(dirty, builtOn) {
+  if (!dirty) return '<p class="load-error">Unknown: git status was not available when this page was built.</p>';
+  return (
+    factsHtml([
+      ["Changed tracked files", formatNumber(dirty.modified)],
+      ["Untracked files", formatNumber(dirty.untracked)],
+      ["Total", formatNumber(dirty.total)],
+    ]) +
+    `<p class="small">Counted with <code>git status</code> when this page was built (${escapeHtml(formatDate(builtOn))}), ` +
+    "before it was committed, so the counts include the files that the page's own commit then added. " +
+    "File and folder names are left out on purpose.</p>"
+  );
+}
+
+function localEditsText(changes) {
+  if (changes === null || changes === undefined) return "unknown: git status was not available";
+  return changes ? "yes, the file had local changes when this page was built" : "none when this page was built";
+}
+
+export function checkpointHtml(checkpoint, { builtOn, complete = true } = {}) {
+  if (!checkpoint) return '<p class="load-error">No research checkpoint file was found in this checkout.</p>';
+  const review = checkpoint.review || {};
+  const last = checkpoint.last_commit;
+  const ago = checkpoint.days_since_session;
+  let lastCommitted = complete ? "not in the git history" : "unknown: this checkout has no full git history";
+  if (last) {
+    lastCommitted = `${escapeHtml(formatDate(last.date))} in ${commitLinkHtml(last.sha)}`;
+    if (typeof checkpoint.commits_since === "number") lastCommitted += `; ${plural(checkpoint.commits_since, "commit")} since`;
+  }
+  return (
+    factsHtml([
+      ["File", `<code>${escapeHtml(checkpoint.file)}</code>`],
+      [
+        "Session",
+        checkpoint.session_date
+          ? `${escapeHtml(formatDate(checkpoint.session_date))}${
+              typeof ago === "number" ? ` (${plural(ago, "day")} before the build on ${escapeHtml(formatDate(builtOn))})` : ""
+            }`
+          : "",
+      ],
+      ["Active milestone", escapeHtml(checkpoint.active_milestone || "")],
+      ["Latest verified subsystem", checkpoint.latest_verified_subsystem ? `<code>${escapeHtml(checkpoint.latest_verified_subsystem)}</code>` : ""],
+      ["Verified subsystems", checkpoint.total_verified_subsystems === null ? "" : escapeHtml(countText(checkpoint.total_verified_subsystems))],
+      ["Review", review.status ? `${escapeHtml(review.status)}${review.date ? ` (${escapeHtml(formatDate(review.date))})` : ""}` : ""],
+      ["Next decision", escapeHtml(review.next_decision || "")],
+      ["Last committed", lastCommitted],
+      ["Uncommitted edits", escapeHtml(localEditsText(checkpoint.uncommitted_changes))],
+    ]) +
+    '<p class="small">Agents edit this file to record the state of a research session. No code reads it, so its session date shows when a checkpoint was last recorded, not when work last happened.</p>'
+  );
+}
+
 /* ---------- Spend ---------- */
 
 export function formatDuration(seconds) {
@@ -319,20 +533,49 @@ export function compactCount(value) {
   }
 }
 
+function known(days, field) {
+  return days.map((day) => day[field]).filter((value) => typeof value === "number");
+}
+
 function sumKnown(days, field) {
-  const known = days.map((day) => day[field]).filter((value) => typeof value === "number");
-  return known.length ? known.reduce((sum, value) => sum + value, 0) : null;
+  const values = known(days, field);
+  return values.length ? values.reduce((sum, value) => sum + value, 0) : null;
 }
 
 export function spendTotals(spend) {
   const days = (spend && spend.days) || [];
   const cpu = sumKnown(days, "cpu_seconds");
+  const wall = sumKnown(days, "wall_seconds");
+  // The cached share needs both counts on the same days; the spend summary may not carry them.
+  const paired = days.filter((day) => typeof day.tokens === "number" && typeof day.tokens_uncached === "number");
+  const pairedTokens = paired.reduce((sum, day) => sum + day.tokens, 0);
+  const pairedUncached = paired.reduce((sum, day) => sum + day.tokens_uncached, 0);
   return {
     days: days.length,
     runs: sumKnown(days, "runs") ?? 0,
-    wall_hours: (sumKnown(days, "wall_seconds") ?? 0) / 3600,
+    wall_hours: wall === null ? null : wall / 3600,
     cpu_hours: cpu === null ? null : cpu / 3600,
     negatives_added: sumKnown(days, "negatives_added") ?? 0,
     tokens: sumKnown(days, "tokens"),
+    token_days: known(days, "tokens").length,
+    cached_share: pairedTokens > 0 ? (pairedTokens - pairedUncached) / pairedTokens : null,
   };
+}
+
+export function tokenLabel(totals) {
+  if (totals.tokens === null) return "Codex tokens (none recorded)";
+  const days = `on ${formatNumber(totals.token_days)} of ${plural(totals.days, "day")}`;
+  if (typeof totals.cached_share === "number") return `Codex tokens ${days}, ${Math.round(totals.cached_share * 100)}% of them cached input`;
+  return `Codex tokens ${days}, cached input included`;
+}
+
+export function spendRowHtml(day) {
+  return `<tr>
+        <td>${escapeHtml(formatDate(day.date))}</td>
+        <td class="num" data-label="Experiment runs">${countText(day.runs)}</td>
+        <td class="num" data-label="Wall time">${escapeHtml(formatDuration(day.wall_seconds))}</td>
+        <td class="num" data-label="CPU time">${escapeHtml(formatDuration(day.cpu_seconds))}</td>
+        <td class="num" data-label="Negatives added">${countText(day.negatives_added)}</td>
+        <td class="num" data-label="Tokens">${typeof day.tokens === "number" ? countText(day.tokens) : "not recorded"}</td>
+      </tr>`;
 }
