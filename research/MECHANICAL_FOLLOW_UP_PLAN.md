@@ -9,7 +9,11 @@ To wire a new subcommand:
 2. Import theorem code inside the command function.
 3. Append one line to `ORDER` and one to `FUNCTIONS` in `qsearch_cli/registry.py`.
 
-The old three-place style still works, but only inside the marked legacy block at the bottom of `qsearch.py`. `python tools/split_cli/migrate.py sweep --root .` moves those additions later.
+The old three-place style still works, but only around the marked legacy block at the bottom of `qsearch.py`: the import and `command_*` function above `_legacy_extensions`, the `add_parser` lines inside it. That code may use `json`, `Path`, `validate_registry` and the other old globals without importing them. `python tools/split_cli/migrate.py sweep --root .` moves those additions later; it refuses, with the line number, anything it would otherwise drop.
+
+`tools/wire_pass5_experiments.py`, `tools/wire_pass6_experiments.py` and `scratch/wire_generic_batch.py` no longer wire CLI commands. Pass 5 and the generic batch stop with FileNotFoundError; pass 6 prints success but leaves `qsearch.py` unchanged. Wire commands by hand as above.
+
+`python qsearch.py validate` no longer imports every theorem module. After renaming or deleting a function that `qsearch.py` used to import, run `python tools/split_cli/migrate.py check-imports --root .`.
 
 Do not add top-level theorem imports to `qsearch.py`. They make every command slow again: startup dropped from about 5 s to under 1.5 s. Details: `tools/split_cli/README.md`.
 

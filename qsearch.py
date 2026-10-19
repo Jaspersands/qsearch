@@ -251,17 +251,20 @@ for _p in [_ROOT_DIR, _CORE_DIR, _THEOREMS_DIR]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
+# The monolith imported theorems/coset_typical_modular_gap_bound.py for every command, and
+# that module raises this limit. Keep it, without importing the module.
+if hasattr(sys, "set_int_max_str_digits"):
+    sys.set_int_max_str_digits(100_000)
+
 # The subcommands live in qsearch_cli/, one module per research domain. Every name this
-# file used to import, and every command_* function, still resolves as qsearch.<name>: it
-# is imported the first time it is used, so startup no longer loads every theorem module.
+# file used to import, and every command_* function, still resolves as qsearch.<name>. It
+# is looked up when it is used, so startup no longer loads every theorem module.
 
 
 def __getattr__(name: str):
     from qsearch_cli.resolve import resolve
 
-    value = resolve(name)
-    globals()[name] = value
-    return value
+    return resolve(name)
 
 
 def build_parser():
@@ -289,9 +292,17 @@ def _legacy_extensions(subparsers) -> None:
     pass  # legacy-extensions
 
 
+# Old-style code above may read any name the monolith had (json, Path, validate_registry,
+# command_*). Bind exactly the names it reads. With no old-style code this binds nothing.
+from qsearch_cli.legacy import bind as _bind_legacy_globals  # noqa: E402
+
+_bind_legacy_globals(globals())
+
+
 if __name__ == "__main__":
-    sys.modules.setdefault("qsearch", sys.modules["__main__"])
-    raise SystemExit(main())
+    import qsearch
+
+    raise SystemExit(qsearch.main())
 
 # Subsystem CLI hook: dcp-coherent-multi-representative-amplitude-equalization-bridge -> theorems.dcp_coherent_multi_representative_amplitude_equalization_bridge
 

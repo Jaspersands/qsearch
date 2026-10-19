@@ -1,9 +1,14 @@
 """Read the monolithic qsearch.py into a model that the generator can split.
 
 The extractor accepts only the shapes qsearch.py actually uses: top-level imports, the
-sys.path block, ``command_*`` functions, a ``build_parser`` made of add_parser blocks, and a
-``main`` that adds certificate flags and dispatches them. Anything else raises SplitError,
-so a migration can never silently drop behaviour.
+sys.path block and ``__main__`` block exactly as written (they are not moved, so a changed
+body would be lost), ``command_*`` functions, a ``build_parser`` made of add_parser blocks,
+and a ``main`` that adds certificate flags and dispatches them. Anything else raises
+SplitError with its line number, so a migration can never silently drop behaviour.
+
+A command may read ``_ROOT_DIR``, ``_CORE_DIR``, ``_THEOREMS_DIR``, ``__file__`` and
+``__doc__``: the shim keeps them, so the moved command imports them from ``qsearch``. Any
+other module global (the loop variable, ``__name__``) is refused.
 """
 
 from __future__ import annotations
@@ -15,6 +20,20 @@ from dataclasses import dataclass, field
 
 PATH_NAMES = {"_ROOT_DIR", "_CORE_DIR", "_THEOREMS_DIR"}
 FRAMEWORK = {"build_parser", "main"}
+# Module globals the shim keeps with the monolith's values. A moved command reads them with
+# ``from qsearch import _ROOT_DIR`` (or ``__file__``); in its new module they would be wrong.
+PROVIDED = frozenset(PATH_NAMES | {"__file__", "__doc__"})
+# Module globals every module has, with a value that changes when a function moves.
+MODULE_DUNDERS = frozenset({"__name__", "__package__", "__loader__", "__spec__", "__cached__", "__builtins__"})
+
+# The only shapes accepted for the monolith's non-command top-level statements.
+PATH_SHAPES = {
+    "_ROOT_DIR": "_ROOT_DIR = os.path.dirname(os.path.abspath(__file__))",
+    "_CORE_DIR": "_CORE_DIR = os.path.join(_ROOT_DIR, 'core')",
+    "_THEOREMS_DIR": "_THEOREMS_DIR = os.path.join(_ROOT_DIR, 'theorems')",
+}
+PATH_LOOP = "for _p in [_ROOT_DIR, _CORE_DIR, _THEOREMS_DIR]:\n    if _p not in sys.path:\n        sys.path.insert(0, _p)"
+MAIN_BLOCK = "if __name__ == '__main__':\n    raise SystemExit(main())"
 
 
 class SplitError(Exception):
@@ -51,6 +70,8 @@ class Block:
     function: str | None
     source: str           # statements, indented one level
     stdlib: list[str]
+    imports: list[str] = field(default_factory=list)  # with carry=True: every name the block imports
+    functions: list[str] = field(default_factory=list)  # command functions the block reads
 
 
 @dataclass
@@ -124,18 +145,37 @@ def _call_on(node: ast.AST, var: str | None = None) -> str | None:
 
 
 def _classify(names: set[str], bindings: dict[str, Binding], defs: set[str]) -> tuple[list[str], list[str]]:
-    lazy = sorted(n for n in names if (n in bindings and not bindings[n].stdlib) or n in defs)
-    std = sorted(n for n in names if n in bindings and bindings[n].stdlib)
+    lazy = sorted(n for n in names if (n in bindings and not bindings[n].stdlib) or n in defs or n in PROVIDED)
+    std = sorted(n for n in names if n in bindings and bindings[n].stdlib and n not in PROVIDED)
     return lazy, std
 
 
+def module_globals(tree: ast.Module) -> set[str]:
+    """Names a module assigns at top level, plus the dunders every module has."""
+    names = set(MODULE_DUNDERS)
+    for node in tree.body:
+        if isinstance(node, ast.Assign):
+            targets = node.targets
+        elif isinstance(node, (ast.For, ast.AugAssign, ast.AnnAssign)):
+            targets = [node.target]
+        else:
+            continue
+        names |= {n.id for t in targets for n in ast.walk(t) if isinstance(n, ast.Name)}
+    return names
+
+
 def command_from(node: ast.FunctionDef, source: str, start: int, names: set[str],
-                 bindings: dict[str, Binding], defs: set[str]) -> Command:
+                 bindings: dict[str, Binding], defs: set[str], others: set[str] = frozenset()) -> Command:
+    """``others``: module globals the command may not read, because moving it changes their value."""
     if node.decorator_list:
         raise SplitError(f"line {node.lineno}: decorated function {node.name}")
     first = node.body[0]
     if first.lineno == node.lineno:
         raise SplitError(f"line {node.lineno}: one-line function {node.name}")
+    stuck = sorted((names & (set(others) | MODULE_DUNDERS)) - PROVIDED - set(bindings) - defs)
+    if stuck:
+        raise SplitError(f"line {node.lineno}: {node.name} reads module global {', '.join(stuck)}, "
+                         "which would change value in another module")
     has_doc = isinstance(first, ast.Expr) and isinstance(first.value, ast.Constant) and isinstance(first.value.value, str)
     anchor = first.end_lineno + 1 if has_doc else first.lineno
     lines = source.splitlines()[start - 1:node.end_lineno]
@@ -151,7 +191,16 @@ def _block_names(stmts: list[ast.stmt]) -> set[str]:
 
 
 def parse_blocks(stmts: list[ast.stmt], source: str, subparsers: str, bindings: dict[str, Binding],
-                 where: str) -> list[Block]:
+                 where: str, carry: bool = False, others: set[str] = frozenset(),
+                 functions: set[str] | None = None) -> list[Block]:
+    """Split add_parser statements into one block per subcommand.
+
+    By default a block may read only standard-library names. With ``carry`` (used by sweep)
+    it may read any name in ``bindings``; the block then lists the import statements its
+    adder needs, and a name that is neither imported, a builtin, nor in ``functions`` is refused.
+    """
+    import builtins
+
     blocks: list[Block] = []
     current: list[ast.stmt] = []
     owners: set[str] = set()
@@ -160,8 +209,9 @@ def parse_blocks(stmts: list[ast.stmt], source: str, subparsers: str, bindings: 
         if not current:
             return
         head = current[0].value
+        line = current[0].lineno
         if not head.args or not isinstance(head.args[0], ast.Constant):
-            raise SplitError(f"{where}: line {current[0].lineno}: add_parser without a literal name")
+            raise SplitError(f"{where}: line {line}: add_parser without a literal name")
         kw = {k.arg: k.value for k in head.keywords}
         aliases = [a.value for a in kw["aliases"].elts] if "aliases" in kw else []
         func = None
@@ -173,12 +223,24 @@ def parse_blocks(stmts: list[ast.stmt], source: str, subparsers: str, bindings: 
                             raise SplitError(f"{where}: line {st.lineno}: func is not a plain name")
                         func = k.value.id
         used = _block_names(current) - owners - {subparsers}
-        lazy = [n for n in used if n in bindings and not bindings[n].stdlib]
-        if lazy:
-            raise SplitError(f"{where}: line {current[0].lineno}: parser block reads imported names {sorted(lazy)}")
-        std = sorted(n for n in used if n in bindings and bindings[n].stdlib)
+        stuck = sorted(n for n in used if (n in others or n in MODULE_DUNDERS or n in PROVIDED) and n not in bindings)
+        if stuck:
+            raise SplitError(f"{where}: line {line}: parser block reads module global {', '.join(stuck)}")
         text = _lines(source, current[0].lineno, current[-1].end_lineno)
-        blocks.append(Block(head.args[0].value, aliases, func, text, std))
+        if not carry:
+            lazy = [n for n in used if n in bindings and not bindings[n].stdlib]
+            if lazy:
+                raise SplitError(f"{where}: line {line}: parser block reads imported names {sorted(lazy)}")
+            std = sorted(n for n in used if n in bindings and bindings[n].stdlib)
+            blocks.append(Block(head.args[0].value, aliases, func, text, std))
+            return
+        defined = set(functions or ())
+        imported = sorted(n for n in used if n in bindings and n not in defined)
+        unknown = sorted(n for n in used if n not in bindings and n not in defined and not hasattr(builtins, n))
+        if unknown:
+            raise SplitError(f"{where}: line {line}: parser block reads undefined name {', '.join(unknown)}")
+        blocks.append(Block(head.args[0].value, aliases, func, text, [],
+                            [bindings[n].statement() for n in imported], sorted(used & defined)))
 
     for st in stmts:
         if isinstance(st, ast.Assign) and len(st.targets) == 1 and isinstance(st.targets[0], ast.Name) \
@@ -203,7 +265,8 @@ def parse_blocks(stmts: list[ast.stmt], source: str, subparsers: str, bindings: 
     return blocks
 
 
-def _parse_build_parser(node: ast.FunctionDef, source: str, bindings: dict[str, Binding], mono: Monolith) -> None:
+def _parse_build_parser(node: ast.FunctionDef, source: str, bindings: dict[str, Binding], mono: Monolith,
+                        others: set[str] = frozenset()) -> None:
     body = node.body
     if not body or not isinstance(body[-1], ast.Return) or not isinstance(body[-1].value, ast.Name):
         raise SplitError("build_parser: must end with `return <parser>`")
@@ -232,7 +295,7 @@ def _parse_build_parser(node: ast.FunctionDef, source: str, bindings: dict[str, 
     if text.count("__doc__") > 1 or ("__doc__" in text and "description=__doc__" not in text):
         raise SplitError("build_parser: __doc__ used other than as description=__doc__")
     mono.prelude = text
-    mono.blocks = parse_blocks(body[index:-1], source, mono.subparsers_var, bindings, "build_parser")
+    mono.blocks = parse_blocks(body[index:-1], source, mono.subparsers_var, bindings, "build_parser", others=others)
 
 
 DISPATCH_TEMPLATE = "print(json.dumps({fn}(), indent=2, sort_keys=True))"
@@ -274,11 +337,18 @@ def _parse_main(node: ast.FunctionDef, source: str, mono: Monolith) -> None:
         raise fail(body[0] if body else node)
 
 
+def _shape(node: ast.stmt, expected: str, what: str) -> None:
+    if ast.unparse(node) != expected:
+        raise SplitError(f"line {node.lineno}: {what} differs from the known shape {expected!r}; "
+                         "move the change into a command or extend tools/split_cli/extract.py")
+
+
 def extract(source: str) -> Monolith:
     tree = ast.parse(source)
     bindings = bindings_of(tree.body)
     by_name = {b.name: b for b in bindings}
     defs = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}
+    others = module_globals(tree)
     names = function_globals(source)
     mono = Monolith(ast.get_docstring(tree, clean=False) or "", bindings, [])
     previous_end = 0
@@ -287,18 +357,24 @@ def extract(source: str) -> Monolith:
             pass
         elif i == 0 and isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant):
             mono.docstring_source = ast.get_source_segment(source, node)
-        elif isinstance(node, ast.Assign) and all(isinstance(t, ast.Name) and t.id in PATH_NAMES for t in node.targets):
-            pass
+        elif isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id in PATH_NAMES for t in node.targets):
+            target = node.targets[0]
+            _shape(node, PATH_SHAPES.get(getattr(target, "id", ""), ""), f"the {getattr(target, 'id', '?')} assignment")
         elif isinstance(node, ast.For) and ast.unparse(node.iter) == "[_ROOT_DIR, _CORE_DIR, _THEOREMS_DIR]":
-            pass
+            _shape(node, PATH_LOOP, "the sys.path loop")
         elif isinstance(node, ast.If) and ast.unparse(node.test) == "__name__ == '__main__'":
+            _shape(node, MAIN_BLOCK, "the __main__ block")
+            if node is not tree.body[-1]:
+                later = tree.body[i + 1]
+                raise SplitError(f"line {later.lineno}: statement after the __main__ block {ast.unparse(later)[:80]!r}")
             mono.trailer = "\n".join(source.splitlines()[node.end_lineno:]).strip("\n")
         elif isinstance(node, ast.FunctionDef) and node.name == "build_parser":
-            _parse_build_parser(node, source, by_name, mono)
+            _parse_build_parser(node, source, by_name, mono, others)
         elif isinstance(node, ast.FunctionDef) and node.name == "main":
             _parse_main(node, source, mono)
         elif isinstance(node, ast.FunctionDef) and node.name.startswith("command_"):
-            mono.commands.append(command_from(node, source, previous_end + 1, names.get(node.name, set()), by_name, defs))
+            mono.commands.append(command_from(node, source, previous_end + 1, names.get(node.name, set()),
+                                              by_name, defs, others))
         else:
             raise SplitError(f"line {node.lineno}: unsupported top-level statement {ast.unparse(node)[:80]!r}")
         previous_end = node.end_lineno

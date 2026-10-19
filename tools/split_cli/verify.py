@@ -123,12 +123,20 @@ def _without_lazy_import(node: ast.FunctionDef) -> ast.FunctionDef:
     return node
 
 
-def function_problems(legacy_source: str, root: Path, functions: dict[str, str]) -> tuple[list[str], list[str]]:
+def function_problems(legacy_source: str, root: Path, functions: dict[str, str],
+                      legacy_names: set[str] = frozenset()) -> tuple[list[str], list[str]]:
+    """``legacy_names``: every global the executed legacy module held."""
     legacy = _defs(legacy_source)
     commands = {n: d for n, d in legacy.items() if n.startswith("command_")}
     problems = [f"function {n}: missing in new" for n in sorted(set(commands) - set(functions))]
     problems += [f"function {n}: not in legacy" for n in sorted(set(functions) - set(commands))]
-    legacy_top = set(legacy) | {b.name for b in ex.bindings_of(ast.parse(legacy_source).body)} | set(dir(builtins))
+    legacy_tree = ast.parse(legacy_source)
+    imported = {b.name for b in ex.bindings_of(legacy_tree.body)}
+    # Globals of the legacy module that are neither imports nor functions: __file__, _ROOT_DIR,
+    # the loop variable, __name__ ... A moved function that reads one gets another value or none.
+    module_only = ((set(legacy_names) | ex.module_globals(legacy_tree) | {"__file__", "__doc__"})
+                   - set(legacy) - imported - {"__builtins__", "annotations"})
+    legacy_top = set(legacy) | imported | set(dir(builtins)) | module_only
     legacy_globals = ex.function_globals(legacy_source)
     notes = []
     for path in sorted({root / (m.replace(".", "/") + ".py") for m in set(functions.values())}):
@@ -138,7 +146,10 @@ def function_problems(legacy_source: str, root: Path, functions: dict[str, str])
         bound |= {b.name for b in ex.bindings_of(tree.body)}
         new_defs = {n.name: n for n in tree.body if isinstance(n, ast.FunctionDef)}
         for name, used in ex.function_globals(source, str(path)).items():
-            for missing in sorted(used - bound):
+            for name_read in sorted(used & module_only):
+                problems.append(f"{path.name}: {name} reads legacy module global {name_read}, "
+                                "which its new module does not provide")
+            for missing in sorted(used - bound - module_only):
                 if name in legacy_globals and missing in legacy_globals[name] and missing not in legacy_top:
                     notes.append(f"{name}: {missing} was already undefined in the legacy module")
                 else:
@@ -150,13 +161,55 @@ def function_problems(legacy_source: str, root: Path, functions: dict[str, str])
     return problems, notes
 
 
-def compare(root: Path, legacy_path: Path) -> tuple[list[str], list[str]]:
-    root = root.resolve()
+def dispatch_problems(legacy_source: str, dispatch: list) -> list[str]:
+    """DISPATCH must be the legacy main's flag if-chain: same flags, modules, functions, order."""
+    node = _defs(legacy_source).get("main")
+    if node is None:
+        return ["DISPATCH: the legacy source has no main"]
+    mono = ex.Monolith("", [], [])
+    ex._parse_main(node, legacy_source, mono)
+    old, new = [tuple(d) for d in mono.dispatch], [tuple(d) for d in dispatch]
+    problems = [f"DISPATCH[{i}]: legacy {a} != new {b}" for i, (a, b) in enumerate(zip(old, new)) if a != b]
+    if len(old) != len(new):
+        problems.append(f"DISPATCH: {len(old)} flags in the legacy main, {len(new)} in the registry")
+    return problems
+
+
+def _use_root(root: Path) -> None:
     loaded = sys.modules.get("qsearch_cli")
     if loaded is not None and not str(Path(loaded.__file__).resolve()).startswith(str(root)):
         raise RuntimeError("qsearch_cli is already imported from another checkout")
     if str(root) not in sys.path[:1]:
         sys.path.insert(0, str(root))
+
+
+def check_imports(root: Path) -> tuple[int, list[str]]:
+    """Resolve every name in IMPORTS and every command function, as the monolith's start did.
+
+    Returns how many names were checked and one line per failure.
+    """
+    root = root.resolve()
+    _use_root(root)
+    for extra in (root / "core", root / "theorems"):  # the order the shim sets up
+        if str(extra) not in sys.path:
+            sys.path.insert(0, str(extra))
+    from qsearch_cli.imports import IMPORTS
+    from qsearch_cli.registry import FUNCTIONS
+    from qsearch_cli.resolve import resolve
+
+    names = list(IMPORTS) + [f for f in FUNCTIONS if f not in IMPORTS]
+    failures = []
+    for name in names:
+        try:
+            resolve(name)
+        except Exception as error:  # noqa: BLE001 - report every kind of import failure
+            failures.append(f"{name}: {type(error).__name__}: {error}")
+    return len(names), failures
+
+
+def compare(root: Path, legacy_path: Path) -> tuple[list[str], list[str]]:
+    root = root.resolve()
+    _use_root(root)
     legacy_source = legacy_path.read_text(encoding="utf-8")
     legacy = load_legacy(legacy_path, root)
     from qsearch_cli import imports as new_imports
@@ -177,8 +230,9 @@ def compare(root: Path, legacy_path: Path) -> tuple[list[str], list[str]]:
     legacy_names = {b.name for b in ex.bindings_of(ast.parse(legacy_source).body)}
     problems += [f"import {n}: missing from IMPORTS" for n in sorted(legacy_names - set(new_imports.IMPORTS))]
 
-    more, notes = function_problems(legacy_source, root, registry.FUNCTIONS)
+    more, notes = function_problems(legacy_source, root, registry.FUNCTIONS, set(vars(legacy)))
     problems += more
+    problems += dispatch_problems(legacy_source, registry.DISPATCH)
 
     shim = root / "qsearch.py"
     if "qsearch_cli" in shim.read_text(encoding="utf-8"):

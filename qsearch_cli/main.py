@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib
 import json
+import sys
 
 from qsearch_cli.registry import DISPATCH
 
@@ -181,6 +182,15 @@ def add_flags(parser) -> None:
     )
 
 
+def current(func):
+    """What ``qsearch.<name>`` holds now: a patch or an old-style redefinition wins, as in the monolith."""
+    qsearch = sys.modules.get("qsearch")
+    name = getattr(func, "__name__", None)
+    if qsearch is None or not isinstance(name, str):
+        return func
+    return getattr(qsearch, name, func)
+
+
 def run(argv, parser) -> int:
     add_flags(parser)
     args = parser.parse_args(argv)
@@ -188,4 +198,4 @@ def run(argv, parser) -> int:
         if getattr(args, dest, False):
             print(json.dumps(getattr(importlib.import_module(module), function)(), indent=2, sort_keys=True))
             return 0
-    return args.func(args)
+    return current(args.func)(args)
