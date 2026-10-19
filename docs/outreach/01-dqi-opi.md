@@ -24,9 +24,11 @@ the squares, optionally also allowing zero.
 **What we found.**
 
 - **High rate (K = 77).** Classical attacks find perfect 127/127 witnesses on every saved
-  input. Common-coset inputs fall to power completion, a formal square root at infinity.
-  Mixed-orientation inputs fall to a norm search from F_{p^2}: write the residual target
-  as R² − νZ² and read Q off R. This works in both the zero-allowing and the strict modes.
+  N = 127, K = 77 input. (One smaller saved input, N = 31 and K = 16 with mixed
+  orientations, stops at 30/31; the norm search was not run on it.) Common-coset inputs
+  fall to power completion, a formal square root at infinity. Mixed-orientation inputs
+  fall to a norm search from F_{p^2}: write the residual target as R² − νZ² and read Q
+  off R. This works in both the zero-allowing and the strict modes.
 - **We have no fixed-input guarantee for the N = 127 inputs in the original field.** A
   Morse-progression argument with twist and exterior-power trace bounds lower-bounds the
   success rate for a fixed input. For the saved N = 127 inputs over the original 61-bit
@@ -48,14 +50,19 @@ near-perfect classical word does not disprove asymptotic perfect quantum search.
 is no hardness claim and no matched runtime comparison. Our source notes mark the local
 derivations as review pending; none has had independent review.
 
-**Reproducing it.** The classical solvers are packaged separately:
+**Reproducing it.**
 
 ```bash
-pip install -e packages/qsearch_classical
+pip install python-flint sympy numpy scipy cvxpy
 docs/papers/classical-competitors/reproduce.sh OUT
 ```
 
-The script regenerates every report and compares each number with the committed value.
+The script regenerates the solver reports and compares each number in the write-up with
+its committed value. It runs the solver source vendored in the repository (it puts
+`packages/qsearch_classical/src` on `PYTHONPATH`) and stops if one of the five packages is
+missing. The same solvers are also an installable package
+(`pip install -e packages/qsearch_classical`), but the script does not use the installed
+copy, and the package's dependencies omit scipy and cvxpy, which the script needs.
 Repository: [link]. A short write-up is attached [if sending the draft].
 
 Two questions, if you have time:

@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -51,6 +52,63 @@ def test_transform_rewrites_imports_dependency_paths_and_root() -> None:
 def test_transform_rejects_an_unvendored_theorem_import() -> None:
     with pytest.raises(ValueError, match="parity_block"):
         _sync().transform("from theorems.parity_block_usd_prange import affine_system\n", "x")
+
+
+@pytest.mark.parametrize("source", [
+    "from theorems import prime_character_opi\n",
+    "from  theorems.prime_character_opi import instance\n",
+    "from theorems . prime_character_opi import instance\n",
+    "from theorems.prime_character_opi  import instance\n",
+    "from theorems.prime_character_opi.helpers import instance\n",
+    "import theorems\n",
+    "import theorems.prime_character_opi as opi\n",
+    "def f():\n    from theorems import polar_source_design\n",
+    "try:\n    import theorems.polar_source_design\nexcept ImportError:\n    pass\n",
+    "import importlib\nm = importlib.import_module('theorems.prime_character_opi')\n",
+    "m = __import__('theorems.prime_character_opi')\n",
+    "from . import prime_character_opi\n",
+])
+def test_transform_rejects_every_other_theorems_import(source: str) -> None:
+    with pytest.raises(ValueError, match="unsupported import of theorems"):
+        _sync().transform(source, "x")
+
+
+def test_transform_ignores_theorems_mentioned_outside_imports() -> None:
+    source = '"""Notes: from theorems import X, import theorems."""\nNOTE = "import theorems.x"\n'
+    assert _sync().transform(source, "x").endswith(source)
+
+
+def test_transform_rejects_a_validator_the_package_does_not_copy() -> None:
+    with pytest.raises(ValueError, match="_validators.py provides only"):
+        _sync().transform("from theorems.bpqm_gibbs_frontier import integer, frontier_report\n", "x")
+
+
+def _scratch_repo(tmp_path: Path) -> Path:
+    sync = _sync()
+    repo = tmp_path / "repo"
+    (repo / "theorems").mkdir(parents=True)
+    for name in (*sync.MODULES, sync.VALIDATOR_SOURCE):
+        shutil.copy(REPO / "theorems" / f"{name}.py", repo / "theorems" / f"{name}.py")
+    return repo
+
+
+def test_check_reports_an_unsupported_upstream_import(tmp_path: Path) -> None:
+    repo = _scratch_repo(tmp_path)
+    sync = _sync()
+    assert sync.check(repo) == []
+    upstream = repo / "theorems" / "polar_source_design.py"
+    upstream.write_text(upstream.read_text().replace("\nimport ", "\nfrom theorems import bpqm_log_reliability\nimport ", 1))
+    drift = sync.check(repo)
+    assert len(drift) == 1 and drift[0].startswith("error polar_source_design: unsupported import of theorems")
+
+
+def test_check_reports_a_vendored_file_with_no_upstream(tmp_path: Path) -> None:
+    target = tmp_path / "qsearch_classical"
+    shutil.copytree(PACKAGE / "src" / "qsearch_classical", target, ignore=shutil.ignore_patterns("__pycache__"))
+    sync = _sync()
+    assert sync.check(REPO, target) == []
+    (target / "stale_module.py").write_text("x = 1\n")
+    assert sync.check(REPO, target) == ["extra stale_module.py (no upstream module in theorems/)"]
 
 
 def test_validators_are_extracted_verbatim() -> None:

@@ -14,8 +14,14 @@ mechanical rewrites:
    to the current directory;
 4. dependency hashes read the vendored copies (`PACKAGE/"x.py"`) instead of theorems/.
 
-A theorems/ import outside MODULES is an error, so a new upstream dependency surfaces as
-a failing parity test instead of a broken install.
+Only the canonical form `from theorems.X import ...` of a vendored module is rewritten.
+After the rewrites an AST scan rejects every import still naming `theorems` (`import
+theorems.X`, `from theorems import X`, odd spacing such as `from  theorems.X` or
+`from theorems . X`, submodules, relative imports, and `importlib.import_module` or
+`__import__` calls with a literal theorems name), and a validator import of a name
+`_validators.py` does not provide. So a new upstream dependency surfaces as a failing
+parity test instead of a broken install. `--check` also lists vendored files that no
+longer have an upstream module.
 """
 
 from __future__ import annotations
@@ -75,10 +81,11 @@ def transform(text: str, name: str) -> str:
             raise ValueError(f"{name}: imports theorems.{module}, which the package does not vendor")
         return f"from qsearch_classical.{module} import"
 
+    _check_validator_names(text, name)
     out = re.sub(r"from theorems\.(\w+) import", rewrite_import, out)
-    bad = re.findall(r"^\s*import theorems\b.*$", out, flags=re.M)
+    bad = theorem_imports(out)
     if bad:
-        raise ValueError(f"{name}: unsupported import form {bad[0]!r}")
+        raise ValueError(f"{name}: unsupported import of theorems on line {bad[0][0]}: {bad[0][1]}")
 
     def rewrite_path(match: re.Match) -> str:
         module, spacing = match.group(2), match.group(1)
@@ -95,6 +102,51 @@ def transform(text: str, name: str) -> str:
     return _header(name) + out
 
 
+def _parse(source: str, name: str = "source") -> ast.AST:
+    try:
+        return ast.parse(source)
+    except SyntaxError as exc:
+        raise ValueError(f"{name}: cannot parse: {exc}") from None
+
+
+def _names_theorems(module: str | None) -> bool:
+    return module is not None and (module == "theorems" or module.startswith("theorems."))
+
+
+def theorem_imports(source: str) -> list[tuple[int, str]]:
+    """Every import in `source` that still names the theorems package, as (line, description).
+
+    Covers `import theorems[.X]`, `from theorems[.X] import ...` in any spacing, relative
+    imports (which would resolve inside the package instead), and importlib.import_module /
+    __import__ calls whose first argument is a literal theorems name."""
+    found = []
+    for node in ast.walk(_parse(source)):
+        if isinstance(node, ast.Import):
+            found += [(node.lineno, f"import {a.name}") for a in node.names if _names_theorems(a.name)]
+        elif isinstance(node, ast.ImportFrom):
+            if node.level:
+                found.append((node.lineno, f"relative import from {'.' * node.level}{node.module or ''}"))
+            elif _names_theorems(node.module):
+                found.append((node.lineno, f"from {node.module} import ..."))
+        elif isinstance(node, ast.Call) and node.args:
+            func = node.func
+            called = func.attr if isinstance(func, ast.Attribute) else getattr(func, "id", None)
+            first = node.args[0]
+            if (called in ("import_module", "__import__") and isinstance(first, ast.Constant)
+                    and isinstance(first.value, str) and _names_theorems(first.value)):
+                found.append((node.lineno, f"{called}({first.value!r})"))
+    return sorted(found)
+
+
+def _check_validator_names(source: str, name: str) -> None:
+    for node in ast.walk(_parse(source, name)):
+        if isinstance(node, ast.ImportFrom) and node.level == 0 and node.module == f"theorems.{VALIDATOR_SOURCE}":
+            extra = sorted({a.name for a in node.names} - set(VALIDATORS))
+            if extra:
+                raise ValueError(f"{name}: imports {extra} from theorems.{VALIDATOR_SOURCE}; "
+                                 f"_validators.py provides only {list(VALIDATORS)}")
+
+
 def validators(source: str) -> str:
     tree = ast.parse(source)
     parts = []
@@ -107,20 +159,48 @@ def validators(source: str) -> str:
             "from fractions import Fraction\n\n\n" + "\n\n\n".join(parts) + "\n")
 
 
+# Files in the package that sync.py does not generate.
+HAND_WRITTEN = ("__init__.py",)
+
+
+def _generate(repo: Path) -> tuple[dict[str, str], list[str]]:
+    files, errors = {}, []
+    for name in MODULES:
+        try:
+            files[f"{name}.py"] = transform((repo / "theorems" / f"{name}.py").read_text(encoding="utf-8"), name)
+        except ValueError as exc:
+            errors.append(str(exc))
+    try:
+        files["_validators.py"] = validators((repo / "theorems" / f"{VALIDATOR_SOURCE}.py").read_text(encoding="utf-8"))
+    except ValueError as exc:
+        errors.append(str(exc))
+    return files, errors
+
+
 def generate(repo: Path) -> dict[str, str]:
-    files = {f"{name}.py": transform((repo / "theorems" / f"{name}.py").read_text(encoding="utf-8"), name) for name in MODULES}
-    files["_validators.py"] = validators((repo / "theorems" / f"{VALIDATOR_SOURCE}.py").read_text(encoding="utf-8"))
+    files, errors = _generate(repo)
+    if errors:
+        raise ValueError("; ".join(errors))
     return files
 
 
+def extra_files(target: Path = TARGET) -> list[str]:
+    """Python files in the package that neither sync.py generates nor are hand-written."""
+    expected = {f"{name}.py" for name in MODULES} | {"_validators.py", *HAND_WRITTEN}
+    found = (p.relative_to(target).as_posix() for p in target.rglob("*.py") if "__pycache__" not in p.parts)
+    return sorted(f for f in found if f not in expected)
+
+
 def check(repo: Path, target: Path = TARGET) -> list[str]:
-    drift = []
-    for filename, text in generate(repo).items():
+    files, errors = _generate(repo)
+    drift = [f"error {message}" for message in errors]
+    for filename, text in files.items():
         path = target / filename
         if not path.exists():
             drift.append(f"missing {filename}")
         elif path.read_text(encoding="utf-8") != text:
             drift.append(f"differs {filename}")
+    drift += [f"extra {filename} (no upstream module in theorems/)" for filename in extra_files(target)]
     return drift
 
 
@@ -138,7 +218,10 @@ def main(argv: list[str] | None = None) -> int:
     for filename, text in generate(args.repo).items():
         (TARGET / filename).write_text(text, encoding="utf-8")
     print(f"wrote {len(MODULES) + 1} modules to {TARGET}")
-    return 0
+    stale = extra_files()
+    for filename in stale:
+        print(f"extra {filename} has no upstream module in theorems/; delete it or add it to MODULES")
+    return 1 if stale else 0
 
 
 if __name__ == "__main__":

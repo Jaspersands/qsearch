@@ -9,6 +9,11 @@ pip install -e packages/qsearch_classical
 QSEARCH_CLASSICAL_ROOT=out python -m qsearch_classical.prime_character_opi --write
 ```
 
+The install needs `setuptools>=68` to build. Under pip's default build isolation pip
+fetches it into a temporary build environment, so offline use
+`pip install --no-build-isolation -e packages/qsearch_classical` with a recent setuptools
+already installed.
+
 The `--write` flag writes `out/research/classical_baselines/prime_character_opi.json`.
 Reports are read and written under `$QSEARCH_CLASSICAL_ROOT`, which defaults to the
 current directory. Point it at a checkout of the repository to read the committed reports
@@ -49,9 +54,15 @@ The rewrites are mechanical:
 - The `sys.path` block is replaced by `$QSEARCH_CLASSICAL_ROOT`.
 - Dependency hashes read the vendored copies.
 
-If an upstream module starts importing a theorem module that is not vendored, sync stops
-with an error. The tools CI workflow runs on changes to the vendored theorem files, so
-drift shows up as a failing parity test.
+Only the canonical form `from theorems.X import ...` of a vendored module is rewritten.
+After the rewrites, sync scans each module's imports with `ast` and stops with an error on
+any import that still names `theorems`: `import theorems.X`, `from theorems import X`,
+odd spacing such as `from  theorems.X` or `from theorems . X`, submodules, relative
+imports, and `importlib.import_module` or `__import__` calls with a literal theorems name.
+It also stops if a module imports a validator that `_validators.py` does not copy.
+`--check` reports these errors, files that differ or are missing, and vendored files with
+no upstream module. The tools CI workflow runs on changes to the vendored theorem files,
+so drift shows up as a failing parity test.
 
 The layout is flat, one module per theorem file. The plan sketched `prime_character/`,
 `polar/` and `jacobi/` subpackages. Keeping the file names identical keeps the rewrite
@@ -62,21 +73,30 @@ rules trivial. The groups are listed in `qsearch_classical.PRIME_CHARACTER`, `PO
 
 `tests/tools/test_classical_package.py` covers four things:
 
-- **Rewrite rules:** imports, paths and the root are rewritten correctly, and an
-  unvendored import is rejected.
-- **Parity:** the committed package matches a fresh sync of `theorems/`.
+- **Rewrite rules:** imports, paths and the root are rewritten correctly; an unvendored
+  import, every non-canonical theorems import form and an uncopied validator are
+  rejected.
+- **Parity:** the committed package matches a fresh sync of `theorems/`, and `check()`
+  reports an unsupported upstream import and a stale vendored file with no upstream.
 - **Isolation:** the package imports with only `src/` on the path, and no `theorems` or
   `core` module gets loaded.
 - **Reproduction:** six modules recompute their committed reports exactly, ignoring
   source hashes and library versions. They are the OPI, norm-attack, capacity-source,
   finite-readout, conditional-sampler and small source-design modules, and each finishes
-  in seconds. The OPI report includes the 127 of 127 positions recovered at N = 127,
-  K = 77.
+  in seconds. At N = 127, K = 77 the OPI report has perfect 127 of 127 witnesses only for
+  the two common-coset (global) inputs; its mixed inputs reach 124 and 122. The perfect
+  127 of 127 mixed witnesses are in the norm-attack report.
 
 The Morse attack and the exterior bound are too slow for CI. Both were checked once by
 hand on 2026-10-19 and matched exactly, in 271 s and 21 s.
-`docs/papers/classical-competitors/reproduce.sh` reruns everything, including the
-N = 32768 polar design.
+`docs/papers/classical-competitors/reproduce.sh` reruns the eight prime-character and
+polar modules, including the N = 32768 polar design; it does not run the two Jacobi
+modules. It runs the vendored source from the checkout (it puts `src/` on `PYTHONPATH`),
+not an installed copy, and it also needs scipy and cvxpy, which this package does not
+list, for the DCP circuit search.
 
-An editable install was checked in a fresh virtual environment, with
-`--system-site-packages` and `--no-deps`. The editable install itself downloaded nothing.
+An editable install was checked offline on 2026-10-19 in a fresh virtual environment
+with `--system-site-packages`, using `pip install --no-index --no-deps`. With build
+isolation it fails, because pip cannot fetch `setuptools>=68`; with
+`--no-build-isolation` it succeeds, and the installed package imports without loading
+`theorems` or `core`.

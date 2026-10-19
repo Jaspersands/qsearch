@@ -12,7 +12,7 @@ that regenerates its numbers, and might be settled by someone who knows the righ
 Scores in problems 1 and 2 are total-variation distances between outcome laws. Success
 probability is (1 + TV)/2.
 
-### 1. Does LOCC reach the separable optimum for a sign-ambiguous two-packet test?
+### 1. Does LOCC reach the collective score for a sign-ambiguous two-packet test?
 
 A dihedral-coset phase qubit is ρ(θ, γ) = (I + γ cos θ X + γ sin θ Y)/2, with θ = 2πhs/q
 for header h, secret s and modulus q. Take two pure packets (γ = 1) with q = 64 and
@@ -33,11 +33,14 @@ or a proof that LOCC stays at the X-basis score, would settle it.
 
 Take three mixed packets ρ(θ_k, γ_k) with purities γ = 0.85, 0.8 and 0.75. The test is
 all angles 0 against the known angles π/4, π/3 and 2π/3. The PPT bound certifies that no
-local protocol exceeds 0.6895. The collective optimum is 0.6993, a
-certified gap of 0.0098. The best one-way adaptive circuit we found reaches 0.68676.
+local protocol exceeds 0.6894745 (the certified bound, rounded up). The collective
+optimum is 0.6993, a certified gap of at least 0.0098. The best one-way adaptive circuit
+we found reaches 0.6867675 (rounded down).
 
-**Question:** does some local protocol reach 0.6895, or is the true LOCC optimum below
-the PPT bound? The window is 0.00271.
+**Question:** where in [0.6867675, 0.6894745] is the best LOCC score? A local protocol
+above 0.6867675, for example a two-way or multi-outcome one, would narrow the window from
+below; a bound tighter than PPT would narrow it from above. The window is less than
+0.00271.
 
 ### 3. Low-rate explicit quadratic-character OPI
 
@@ -54,9 +57,10 @@ an argument that it cannot?
 ### 4. Adversarial signs for the polar Gibbs source
 
 For polar codes at N = 32768 and rate 1/2, classical successive-cancellation shaping has
-average error E_J TV ≤ 0.010221 over uniformly random clause signs. For one sign pattern
-the error can be much worse. On a length-2 calibration the average is 2/5 and the worst
-case is 18/25.
+average error E_J TV ≤ 0.010221 over uniformly random clause signs, a certificate that
+rests on review-pending derivations in our notes. We have not computed the error for
+any single sign pattern at that length. On a length-2 calibration with p = 1/10 the worst
+syndrome is much worse than the average: 18/25 against 2/5.
 
 **Question:** is there an efficient classical sampler with a worst-case-sign guarantee
 for this polar family? Or is there a sign pattern where a quantum receiver provably helps?
@@ -68,8 +72,13 @@ classical hardness. Most derivations are marked review pending in our notes. To
 regenerate every number:
 
 ```bash
-pip install -e packages/qsearch_classical
+pip install python-flint sympy numpy scipy cvxpy
 docs/papers/classical-competitors/reproduce.sh OUT
 ```
+
+The script runs the solver source vendored in the repository (it puts
+`packages/qsearch_classical/src` on `PYTHONPATH`) and stops if one of the five packages is
+missing. The solvers are also an installable package
+(`pip install -e packages/qsearch_classical`), but the script does not use that copy.
 
 The circuit search behind problems 1 and 2 is `tools/circuit_search/dcp_readout.py`.

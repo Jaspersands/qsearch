@@ -5,7 +5,12 @@
 #   docs/papers/classical-competitors/reproduce.sh [OUT]       # OUT defaults to a temp dir
 #   PYTHON=/path/to/python docs/papers/classical-competitors/reproduce.sh
 #
-# Needs python-flint, sympy, numpy, scipy and cvxpy. The prime-character Morse attack and the
+# Needs python-flint, sympy, numpy, scipy and cvxpy, and stops at once if any is missing
+# (without cvxpy the circuit search would silently drop its PPT bounds). The qsearch-classical
+# package lists only the first three; scipy and cvxpy are for the DCP circuit search. The
+# modules run from the vendored source in packages/qsearch_classical/src, put on PYTHONPATH,
+# so an installed copy of the package is not what this exercises. The two Jacobi modules are
+# not run: no number in the paper comes from them. The prime-character Morse attack and the
 # N = 32768 polar design take minutes each. The rediscovery-audit numbers are not
 # regenerated here: they come from committed judgements, and `python tools/audit/rediscovery.py
 # report` rebuilds them deterministically.
@@ -15,6 +20,16 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$HERE/../../.." && pwd)"
 OUT="${1:-$(mktemp -d)}"
 PY="${PYTHON:-python3}"
+
+"$PY" - <<'EOF'
+import importlib.util
+import sys
+
+needed = {"flint": "python-flint", "sympy": "sympy", "numpy": "numpy", "scipy": "scipy", "cvxpy": "cvxpy"}
+missing = [name for module, name in needed.items() if importlib.util.find_spec(module) is None]
+if missing:
+    sys.exit(f"reproduce.sh: missing {', '.join(missing)}; install with: pip install {' '.join(missing)}")
+EOF
 
 export PYTHONPATH="$REPO/packages/qsearch_classical/src"
 export QSEARCH_CLASSICAL_ROOT="$OUT"
