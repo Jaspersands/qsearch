@@ -1,0 +1,49 @@
+name: arXiv watch
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The write token is not stored in .git/config, so the install and fetch steps
+          # cannot use it; only the push step below authenticates.
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install what watch.py needs (corpus index only, no solver packages)
+        run: pip install "scikit-learn>=1.4"
+      - name: Fetch new papers and update the digest
+        run: python tools/arxiv_watch/watch.py
+      - name: Open a pull request when the digest changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # watch.py rewrites the outputs only when it found new papers or a coverage gap.
+          if git diff --quiet -- research/audits; then
+            echo "No new papers."
+            exit 0
+          fi
+          day="$(date -u +%Y-%m-%d)"
+          branch="arxiv-watch/${day}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "${branch}"
+          git add research/audits/arxiv_collisions.json research/audits/ARXIV_WATCH.md
+          git commit -m "arXiv watch ${day}"
+          auth="$(printf 'x-access-token:%s' "${GH_TOKEN}" | base64 | tr -d '\n')"
+          echo "::add-mask::${auth}"
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${auth}" push origin "${branch}"
+          gh pr create --base main --head "${branch}" --title "arXiv watch ${day}" \
+            --body "New papers from the weekly arXiv watch. Read research/audits/ARXIV_WATCH.md; labels are triage, not judgement. Opened with GITHUB_TOKEN, so CI does not run on this PR until it is pushed to or closed and reopened."

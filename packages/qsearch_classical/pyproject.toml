@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qsearch-classical"
+version = "0.1.0"
+description = "Classical solvers produced by the Q-Search quantum-algorithm research loop: prime-character OPI attacks, a polar Gibbs source, Jacobi-sum reconstruction."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "python-flint>=0.6",
+    "sympy>=1.12",
+    "numpy>=1.26",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

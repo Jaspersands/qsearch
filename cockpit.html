@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent cockpit · Q-Search</title>
+  <meta name="description" content="What the research agents have been doing, read from the repository: handoff log, commits, metrics, uncommitted work and checkpoint status.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="site/styles.css">
+  <style>
+    .ck-figures { grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); max-width: none; }
+    .ck-figures .figure-label { max-width: 16ch; }
+    #timeline .wrap { position: relative; }
+    .ck-frame { margin-top: 8px; }
+    .ck-frame + .ck-frame { margin-top: 28px; }
+    .ck-frame h3 { margin-bottom: 10px; }
+    .ck-chart svg { width: 100%; height: auto; overflow: visible; }
+    .chart-hit { fill: transparent; }
+    .chart-hit:hover { fill: rgba(17, 17, 17, 0.05); }
+    .rug-row { stroke: var(--rule); stroke-width: 1; }
+    .rug-tick { stroke: var(--text-3); stroke-width: 1.5; }
+    .rug-new { stroke: var(--accent); stroke-width: 2; }
+    .rug-count { fill: var(--text-3); font-variant-numeric: tabular-nums; }
+    .rug-label { fill: var(--text); }
+    .ck-rug { cursor: crosshair; }
+    .ck-tip { z-index: 2; }
+    .ck-tip .ids { display: block; margin-top: 6px; font-family: var(--mono); font-size: 0.72rem; color: var(--accent); overflow-wrap: anywhere; }
+    .legend-tick::before, .legend-new::before { content: ""; display: inline-block; width: 2px; height: 12px; margin-right: 8px; vertical-align: -1px; background: var(--text-3); }
+    .legend-new::before { height: 15px; background: var(--accent); }
+    #ck-dating { margin-top: 12px; }
+    .spark-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+    .ck-sparks { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 28px 36px; margin-top: 8px; }
+    .ck-spark h3 { font-size: 0.95rem; margin-bottom: 2px; }
+    .ck-spark .small { margin: 0 0 6px; min-height: 1.4em; }
+    .ck-spark svg { width: 100%; height: auto; overflow: visible; }
+    .ck-columns { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
+    @media (min-width: 900px) { .ck-columns { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 56px; } }
+    .ck-columns h3 { margin-bottom: 14px; }
+    .ck-filters { margin-bottom: 4px; }
+    .ck-filter-label { font-size: 0.85rem; color: var(--text-2); margin-right: 4px; align-self: center; }
+    #ck-inertia-rule, #ck-registry, #ck-quotes-note { margin-top: 14px; max-width: 52rem; }
+    #ck-top-warnings { margin-top: 18px; max-width: 52rem; }
+    .ck-sections td:first-child { white-space: nowrap; }
+    .ck-sections td.heading { min-width: 16rem; }
+    .ck-sections .cues { display: block; font-size: 0.78rem; color: var(--text-3); }
+    .ck-sections .ids { font-family: var(--mono); font-size: 0.74rem; overflow-wrap: anywhere; }
+    .table td.num, .table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    @media (max-width: 760px) { .table td.num { text-align: left; } }
+    .ck-commits { list-style: none; padding: 0; margin: 0; max-width: 52rem; }
+    .ck-commits li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 2px 20px; padding: 8px 0; border-top: 1px solid var(--rule); font-size: 0.92rem; }
+    .ck-commits .small { margin: 0; }
+    @media (max-width: 600px) { .ck-commits li { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+  <script type="module" src="site/js/cockpit.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Q-Search</a>
+      <nav aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="open-problems.html">Open problems</a>
+        <a href="negative-results.html">Negative results</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="header-github" href="https://github.com/Jaspersands/qsearch">GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-head with-notes">
+      <div>
+        <h1>Agent cockpit</h1>
+        <div class="prose">
+          <p>What the research agents have been doing, read straight from the repository: the shared handoff log, the commit history, the progress snapshot and the working tree. <span id="ck-built">It is rebuilt by a script, not written by hand.</span></p>
+        </div>
+        <div class="figures ck-figures" id="ck-figures" aria-live="polite"></div>
+        <div id="ck-top-warnings" role="status" hidden></div>
+      </div>
+      <aside class="note">
+        <p>Built by <a href="https://github.com/Jaspersands/qsearch/blob/main/tools/cockpit/build_cockpit.py"><code>build_cockpit.py</code></a> from <a href="https://github.com/Jaspersands/qsearch/blob/main/research/AGENT_HANDOFF.md"><code>AGENT_HANDOFF.md</code></a>, <code>git log</code> and <code>git status</code>.</p>
+        <p>Directions and agents are guessed from wording, so read them as estimates. The <a href="https://github.com/Jaspersands/qsearch/blob/main/tools/cockpit/README.md">README</a> lists the rules and how well they hold up.</p>
+      </aside>
+    </div>
+
+    <section class="section" id="inertia">
+      <div class="wrap" id="ck-inertia-box">
+        <div class="section-head">
+          <h2>Inertia</h2>
+          <p id="ck-inertia-summary">Which lines of work keep going while the registry gains nothing in their direction.</p>
+        </div>
+        <table class="table" id="ck-inertia">
+          <thead>
+            <tr><th>Direction</th><th>Status</th><th class="num">Sections since its last registry gain</th><th>Last registry gain in this direction</th><th class="num">Records gained</th><th>Latest section</th><th class="num">All sections</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p class="small" id="ck-registry"></p>
+        <p class="small" id="ck-inertia-rule"></p>
+        <details class="sub" id="ck-runs-box" hidden>
+          <summary id="ck-runs-summary">Earlier runs</summary>
+          <table class="table plain">
+            <thead><tr><th>Direction</th><th class="num">Sections</th><th>From</th><th>To</th><th>Ended by a registry gain on</th></tr></thead>
+            <tbody id="ck-runs"></tbody>
+          </table>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="wrap" id="ck-timeline-box">
+        <div class="section-head">
+          <h2>Handoff log in order</h2>
+          <p>Each tick is one section of the handoff log, oldest on the left. The horizontal axis is section order, not calendar time: a busy day takes many ticks and a quiet week takes none. Month labels mark where each month's sections start. Long stretches of grey ticks with no orange are the inertia above.</p>
+        </div>
+        <div class="ck-frame">
+          <h3>By direction</h3>
+          <div class="ck-chart ck-rug" id="ck-rug-directions"></div>
+        </div>
+        <div class="ck-frame">
+          <h3>By agent</h3>
+          <div class="ck-chart ck-rug" id="ck-rug-agents"></div>
+        </div>
+        <div class="map-tip ck-tip" id="ck-tip" hidden></div>
+        <p class="legend"><span class="legend-tick">A handoff section</span><span class="legend-new">A section first committed on a day the registry gained a record in its direction</span></p>
+        <p class="small" id="ck-dating"></p>
+      </div>
+    </section>
+
+    <section class="section" id="sections">
+      <div class="wrap" id="ck-sections-box">
+        <div class="section-head">
+          <h2>Latest handoff sections</h2>
+          <p>Newest first, with the guessed direction and agent. The small grey text under an agent names the wording cues behind the guess. Each heading links to its line in the commit this page was built from.</p>
+        </div>
+        <div class="filters ck-filters" id="ck-direction-filter" role="group" aria-label="Filter by direction"></div>
+        <div class="filters ck-filters" id="ck-agent-filter" role="group" aria-label="Filter by agent"></div>
+        <p class="result-count" id="ck-section-count" aria-live="polite"></p>
+        <table class="table ck-sections">
+          <thead><tr><th>First committed</th><th>Agent</th><th>Direction</th><th>Section</th><th>Registry ids first quoted here</th></tr></thead>
+          <tbody id="ck-section-rows"></tbody>
+        </table>
+        <button class="button" type="button" id="ck-more" hidden>Show more</button>
+        <p class="small" id="ck-quotes-note"></p>
+      </div>
+    </section>
+
+    <section class="section" id="commits">
+      <div class="wrap" id="ck-commits-box">
+        <div class="section-head">
+          <h2>Commits per day</h2>
+          <p id="ck-commit-summary">Every commit on the checked-out branch, by UTC commit date. Hover a day to see what the commits were about.</p>
+        </div>
+        <figure class="chart ck-chart" id="ck-commit-chart"></figure>
+        <div class="ck-columns" style="margin-top: 36px">
+          <div>
+            <h3>Topics</h3>
+            <table class="table plain">
+              <thead><tr><th>Topic</th><th class="num">Last 14 days</th><th class="num">All time</th></tr></thead>
+              <tbody id="ck-topics"></tbody>
+            </table>
+            <p class="small">A commit's topic comes from the same keyword table as the handoff sections, applied to its subject and changed paths.</p>
+          </div>
+          <div>
+            <h3>Latest commits</h3>
+            <ul class="ck-commits" id="ck-latest-commits"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metrics">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Research metrics</h2>
+          <p id="ck-metrics-summary">The headline counts from every committed version of the progress snapshot. Each chart has its own scale, starting at zero.</p>
+        </div>
+        <div class="ck-sparks" id="ck-sparks"></div>
+        <details class="sub">
+          <summary>Show as a table</summary>
+          <div style="overflow-x: auto">
+            <table class="table plain" id="ck-metrics-table"></table>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="state">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Working tree and checkpoint</h2>
+          <p>What was uncommitted in the checkout that built this page, at the moment it was built, and where the last recorded research checkpoint stands.</p>
+        </div>
+        <div class="ck-columns">
+          <div>
+            <h3>Uncommitted files</h3>
+            <div id="ck-dirty"></div>
+          </div>
+          <div>
+            <h3>Research checkpoint</h3>
+            <div id="ck-checkpoint"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="spend" hidden>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Compute spend</h2>
+          <p id="ck-spend-summary">Runs and compute time per day, from the spend summary.</p>
+        </div>
+        <div class="figures ck-figures" id="ck-spend-figures"></div>
+        <details class="sub" style="margin-top: 28px">
+          <summary>Show every day</summary>
+          <div style="overflow-x: auto">
+            <table class="table plain">
+              <thead><tr><th>Date</th><th class="num">Experiment runs</th><th class="num">Wall time</th><th class="num">CPU time</th><th class="num">Negatives added</th><th class="num">Tokens</th></tr></thead>
+              <tbody id="ck-spend-rows"></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How the guesses are made</h2>
+          <p>The handoff log has no machine-readable author or topic fields, and every commit has the same human author, so both are inferred from the text.</p>
+        </div>
+        <div class="prose" id="ck-method"></div>
+        <details class="sub">
+          <summary>Wording cues and how often each fired</summary>
+          <table class="table plain">
+            <thead><tr><th>Cue</th><th>Points to</th><th class="num">Sections</th></tr></thead>
+            <tbody id="ck-cues"></tbody>
+          </table>
+        </details>
+        <div id="ck-warnings"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Q-Search is an open research project by Jasper Sands. Data updated <time data-updated>recently</time>.</p>
+      <p><a href="https://github.com/Jaspersands/qsearch">Source on GitHub</a> · <a href="index.html#cite">Cite</a></p>
+    </div>
+  </footer>
+</body>
+</html>

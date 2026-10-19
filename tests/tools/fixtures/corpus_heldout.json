@@ -1,0 +1,82 @@
+[
+ {
+  "id": "NEG-AFFINE-ERASURE-INSTRUMENT-MATCHED-CLASSICAL-DUAL",
+  "query": "Let's design a measurement with nonnegative weights that projects onto a shifted linear subspace and forgets which point we landed on, while keeping the relative phases between outcome branches. That should give statistics that no conventional sampler working under the same set of constraints can reproduce."
+ },
+ {
+  "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
+  "query": "I want a polynomial-time quantum procedure that computes the covolume of the unit lattice and finds a generator for a principal ideal, and it should work for number fields whose dimension over the rationals grows with the input instead of staying fixed."
+ },
+ {
+  "id": "NEG-BOSON-SAMPLING-PHOTONIC-LOSS-DEQUANTIZATION-BARRIER",
+  "query": "If we feed single photons or squeezed light into real interferometer hardware and sample where the light exits, we can scale that into an engine that is exponentially faster than any conventional computer on useful decision or graph problems."
+ },
+ {
+  "id": "NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION",
+  "query": "Let's try to tell apart the twisted-gadget graph pairs that defeat Weisfeiler-Leman color refinement, either by letting several interacting particles hop across the graphs or by slowly morphing a Hamiltonian, and beat the best classical isomorphism testers on those instances."
+ },
+ {
+  "id": "NEG-CONTINUOUS-HSP-IRRATIONAL-JITTER-INDEX-CALCULUS-BOUNDARY",
+  "query": "Hallgren's period-finding method for fields made by adjoining a square root to the rationals should give us an exponential edge over every non-quantum method, both for computing the logarithm of the fundamental unit and for solving Pell's equation."
+ },
+ {
+  "id": "NEG-CONTINUOUS-VARIABLE-GKP-NON-GAUSSIAN-BARRIER",
+  "query": "We could build a scalable fault-tolerant machine from optical or microwave oscillator modes using only squeezed and displaced states plus finitely squeezed Gottesman-Kitaev-Preskill grid codes. That way we skip the expensive distillation of resource states outside the squeezed-light family."
+ },
+ {
+  "id": "NEG-DCP-BABAI-DEVIATION-DEPTH-EXPONENTIAL-BARRIER",
+  "query": "A successive-projection rounding decoder that keeps a list of candidates should find a valid solution to a modular knapsack whose item count matches the modulus bit-length with probability at least one over a polynomial. It only needs a fixed number of branching levels or a polynomial number of candidates."
+ },
+ {
+  "id": "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER",
+  "query": "Let's see whether standard L2 lattice basis reduction, bounded-distance closest-vector decoding, or projection-rounding list decoders can solve modular knapsack instances, where the number of items equals the modulus bit-length, in polynomial time or at least with inverse-polynomial success probability."
+ },
+ {
+  "id": "NEG-DIHEDRAL-COSET-CHIRP-ALIASING-SPECTRAL-FLATNESS-BARRIER",
+  "query": "Instead of linear phases, we could label states with quadratic or higher-degree polynomial phases. Those should slip past linear Fourier-type tests and still let us pull out the hidden shift efficiently, which would give an exponential speedup for the hidden reflection problem in the symmetry group of a regular N-gon."
+ },
+ {
+  "id": "NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND",
+  "query": "Let's recover a hidden subgroup of Sp(2n, F_q) that stabilizes an unknown totally null subspace of the symplectic form, aiming for an exponential speedup over classical search."
+ },
+ {
+  "id": "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
+  "query": "If we enlarge our stored pool of angle-encoded registers to about n^2 of them and read them all out together with one entangled receiver, we should be able to beat the classical lattice-reduction attacks we've been benchmarking against."
+ },
+ {
+  "id": "NEG-NILPOTENT-CENTRAL-DESCENT-BARRIER",
+  "query": "For hidden subgroups in any group whose chain of iterated commutators reaches the identity, we could strip off the elements that commute with everything one layer at a time and recurse on the quotient. The Imran-Ivanyos zero-sum subsequence trick would pass information between layers, keeping the quantum running time polynomial overall."
+ },
+ {
+  "id": "NEG-PARITY-BLOCK-MED-LPN-DECODING-BARRIER",
+  "query": "Let's apply a Helstrom-optimal joint measurement to groups of correlated XOR-check registers and see whether that recovers codewords spread across several chunks better than any classical error-correction routine."
+ },
+ {
+  "id": "NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER",
+  "query": "QAOA with only a constant number of alternating layers, run on graphs where every vertex has few neighbors, should beat the best efficient classical approximation algorithms for cut-type combinatorial problems, or at least show a quantum advantage there."
+ },
+ {
+  "id": "NEG-QUANTUM-ERROR-MITIGATION-EXPONENTIAL-SAMPLING-BARRIER",
+  "query": "We could skip full fault tolerance and post-process noisy runs instead. Either we randomly insert inverse-noise operations and reweight the results, or we deliberately amplify the noise and extrapolate back to zero, and then we push this to deep circuits to get a polynomial algorithmic advantage."
+ },
+ {
+  "id": "NEG-QUANTUM-SCRAMBLING-OTOC-MSS-COMPLEXITY-BARRIER",
+  "query": "Let's evolve the input under a strongly chaotic many-body Hamiltonian that saturates the chaos bound (an SYK-like model) and then efficiently read local phases, periodicities, or a hidden subgroup out of the resulting state."
+ },
+ {
+  "id": "NEG-ROWSPACE-RREF-GAUGE-ELIMINATION-FOURIER-EXTINCTION-BARRIER",
+  "query": "To decide whether two linear codes match up to permuting and rescaling coordinates, especially high-rate or self-orthogonal ones, we could measure a single coset superposition in the irreducible-representation basis. Instances that fall outside the Dinh-Moore-Russell dimension condition might then give an exponential speedup."
+ },
+ {
+  "id": "NEG-SELF-DUAL-WREATH-PLANCHEREL-SIGN-ORBIT-MASS-EXTINCTION-BARRIER",
+  "query": "We could measure many copies jointly and condition on the pattern of coordinate flips, or track higher-order Racah recoupling statistics, in the hyperoctahedral group (permutations combined with coordinate flips). That should give an asymptotic quantum speedup for testing whether two codes are equivalent."
+ },
+ {
+  "id": "NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER",
+  "query": "Let's use Fourier sampling over the group of real 2x2 matrices with determinant one to find a hidden discrete subgroup, such as a lattice acting on the hyperbolic plane, in polynomial time."
+ },
+ {
+  "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
+  "query": "Ordinary Fourier sampling should identify a hidden subgroup of the three-dimensional rotation group, or of its double cover, the unit quaternions, in polynomial time."
+ }
+]

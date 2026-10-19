@@ -1,0 +1,179 @@
+{
+ "0811.3171": {
+  "abstract": "Solving linear systems of equations is a common problem that arises both on its own and as a subroutine in more complex problems: given a matrix A and a vector b, find a vector x such that Ax=b. We consider the case where one doesn't need to know the solution x itself, but rather an approximation of the expectation value of some operator associated with x, e.g., x'Mx for some matrix M. In this case, when A is sparse, N by N and has condition number kappa, classical algorithms can find x and estimate x'Mx in O(N sqrt(kappa)) time. Here, we exhibit a quantum algorithm for this task that runs in poly(log N, kappa) time, an exponential improvement over the best classical algorithm.",
+  "arxiv_id": "0811.3171",
+  "authors": [
+   "Aram W. Harrow",
+   "Avinatan Hassidim",
+   "Seth Lloyd"
+  ],
+  "categories": [
+   "quant-ph"
+  ],
+  "published": "2008-11-19",
+  "title": "Quantum algorithm for solving linear systems of equations",
+  "updated": "2009-09-30",
+  "url": "https://arxiv.org/abs/0811.3171",
+  "version": "v3"
+ },
+ "1307.0401": {
+  "abstract": "The usual way to reveal properties of an unknown quantum state, given many copies of a system in that state, is to perform measurements of different observables and to analyze the measurement results statistically. Here we show that the unknown quantum state can play an active role in its own analysis. In particular, given multiple copies of a quantum system with density matrix \u03c1, then it is possible to perform the unitary transformation e^{-i\u03c1t}. As a result, one can create quantum coherence among different copies of the system to perform quantum principal component analysis, revealing the eigenvectors corresponding to the large eigenvalues of the unknown state in time exponentially faster than any existing algorithm.",
+  "arxiv_id": "1307.0401",
+  "authors": [
+   "Seth Lloyd",
+   "Masoud Mohseni",
+   "Patrick Rebentrost"
+  ],
+  "categories": [
+   "quant-ph"
+  ],
+  "published": "2013-07-01",
+  "title": "Quantum principal component analysis",
+  "updated": "2013-09-16",
+  "url": "https://arxiv.org/abs/1307.0401",
+  "version": "v2"
+ },
+ "1603.08675": {
+  "abstract": "A recommendation system uses the past purchases or ratings of $n$ products by a group of $m$ users, in order to provide personalized recommendations to individual users. The information is modeled as an $m \\times n$ preference matrix which is assumed to have a good rank-$k$ approximation, for a small constant $k$. In this work, we present a quantum algorithm for recommendation systems that has running time $O(\\text{poly}(k)\\text{polylog}(mn))$. All known classical algorithms for recommendation systems that work through reconstructing an approximation of the preference matrix run in time polynomial in the matrix dimension. Our algorithm provides good recommendations by sampling efficiently from an approximation of the preference matrix, without reconstructing the entire matrix. For this, we design an efficient quantum procedure to project a given vector onto the row space of a given matrix. This is the first algorithm for recommendation systems that runs in time polylogarithmic in the dimensions of the matrix and provides an example of a quantum machine learning algorithm for a real world application.",
+  "arxiv_id": "1603.08675",
+  "authors": [
+   "Iordanis Kerenidis",
+   "Anupam Prakash"
+  ],
+  "categories": [
+   "quant-ph",
+   "cs.DS",
+   "cs.IR"
+  ],
+  "published": "2016-03-29",
+  "title": "Quantum Recommendation Systems",
+  "updated": "2016-09-22",
+  "url": "https://arxiv.org/abs/1603.08675",
+  "version": "v3"
+ },
+ "1704.00690": {
+  "abstract": "We prove that constant-depth quantum circuits are more powerful than their classical counterparts. To this end we introduce a non-oracular version of the Bernstein-Vazirani problem which we call the 2D Hidden Linear Function problem. An instance of the problem is specified by a quadratic form q that maps n-bit strings to integers modulo four. The goal is to identify a linear boolean function which describes the action of q on a certain subset of n-bit strings. We prove that any classical probabilistic circuit composed of bounded fan-in gates that solves the 2D Hidden Linear Function problem with high probability must have depth logarithmic in n. In contrast, we show that this problem can be solved with certainty by a constant-depth quantum circuit composed of one- and two-qubit gates acting locally on a two-dimensional grid.",
+  "arxiv_id": "1704.00690",
+  "authors": [
+   "Sergey Bravyi",
+   "David Gosset",
+   "Robert Koenig"
+  ],
+  "categories": [
+   "quant-ph",
+   "cs.CC"
+  ],
+  "published": "2017-04-03",
+  "title": "Quantum advantage with shallow circuits",
+  "updated": "2017-04-03",
+  "url": "https://arxiv.org/abs/1704.00690",
+  "version": "v1"
+ },
+ "2204.02063": {
+  "abstract": "We show the following hold, unconditionally unless otherwise stated, relative to a random oracle: - There are NP search problems solvable by quantum polynomial-time machines but not classical probabilistic polynomial-time machines. - There exist functions that are one-way, and even collision resistant, against classical adversaries but are easily inverted quantumly. Similar separations hold for digital signatures and CPA-secure public key encryption (the latter requiring the assumption of a classically CPA-secure encryption scheme). Interestingly, the separation does not necessarily extend to the case of other cryptographic objects such as PRGs. - There are unconditional publicly verifiable proofs of quantumness with the minimal rounds of interaction: for uniform adversaries, the proofs are non-interactive, whereas for non-uniform adversaries the proofs are two message public coin. - Our results do not appear to contradict the Aaronson-Ambanis conjecture. Assuming this conjecture, there exist publicly verifiable certifiable randomness, again with the minimal rounds of interaction. By replacing the random oracle with a concrete cryptographic hash function such as SHA2, we obtain plausible Minicrypt instantiations of the above results. Previous analogous results all required substantial structure, either in terms of highly structured oracles and/or algebraic assumptions in Cryptomania and beyond.",
+  "arxiv_id": "2204.02063",
+  "authors": [
+   "Takashi Yamakawa",
+   "Mark Zhandry"
+  ],
+  "categories": [
+   "quant-ph",
+   "cs.CC",
+   "cs.CR"
+  ],
+  "published": "2022-04-05",
+  "title": "Verifiable Quantum Advantage without Structure",
+  "updated": "2024-11-11",
+  "url": "https://arxiv.org/abs/2204.02063",
+  "version": "v3"
+ },
+ "2308.06572": {
+  "abstract": "We show that $n$-bit integers can be factorized by independently running a quantum circuit with $\\tilde{O}(n^{3/2})$ gates for $\\sqrt{n}+4$ times, and then using polynomial-time classical post-processing. The correctness of the algorithm relies on a number-theoretic heuristic assumption reminiscent of those used in subexponential classical factorization algorithms. It is currently not clear if the algorithm can lead to improved physical implementations in practice.",
+  "arxiv_id": "2308.06572",
+  "authors": [
+   "Oded Regev"
+  ],
+  "categories": [
+   "quant-ph",
+   "cs.CC"
+  ],
+  "published": "2023-08-12",
+  "title": "An Efficient Quantum Factoring Algorithm",
+  "updated": "2024-01-07",
+  "url": "https://arxiv.org/abs/2308.06572",
+  "version": "v3"
+ },
+ "2408.08292": {
+  "abstract": "Achieving superpolynomial speedups for optimization has long been a central goal for quantum algorithms. Here we introduce Decoded Quantum Interferometry (DQI), a quantum algorithm that uses the quantum Fourier transform to reduce optimization problems to decoding problems. For approximating optimal polynomial fits over finite fields, DQI achieves a superpolynomial speedup over known classical algorithms. The speedup arises because the problem's algebraic structure is reflected in the decoding problem, which can be solved efficiently. We then investigate whether this approach can achieve speedup for optimization problems that lack algebraic structure but have sparse clauses. These problems reduce to decoding LDPC codes, for which powerful decoders are known. To test this, we construct a max-XORSAT instance where DQI finds an approximate optimum significantly faster than general-purpose classical heuristics, such as simulated annealing. While a tailored classical solver can outperform DQI on this instance, our results establish that combining quantum Fourier transforms with powerful decoding primitives provides a promising new path toward quantum speedups for hard optimization problems.",
+  "arxiv_id": "2408.08292",
+  "authors": [
+   "Stephen P. Jordan",
+   "Noah Shutty",
+   "Mary Wootters",
+   "Adam Zalcman",
+   "Alexander Schmidhuber",
+   "Robbie King",
+   "Sergei V. Isakov",
+   "Tanuj Khattar",
+   "Ryan Babbush"
+  ],
+  "categories": [
+   "quant-ph"
+  ],
+  "published": "2024-08-15",
+  "title": "Optimization by Decoded Quantum Interferometry",
+  "updated": "2025-10-22",
+  "url": "https://arxiv.org/abs/2408.08292",
+  "version": "v5"
+ },
+ "quant-ph/0209131": {
+  "abstract": "We construct an oracular (i.e., black box) problem that can be solved exponentially faster on a quantum computer than on a classical computer. The quantum algorithm is based on a continuous time quantum walk, and thus employs a different technique from previous quantum algorithms based on quantum Fourier transforms. We show how to implement the quantum walk efficiently in our oracular setting. We then show how this quantum walk can be used to solve our problem by rapidly traversing a graph. Finally, we prove that no classical algorithm can solve this problem with high probability in subexponential time.",
+  "arxiv_id": "quant-ph/0209131",
+  "authors": [
+   "Andrew M. Childs",
+   "Richard Cleve",
+   "Enrico Deotto",
+   "Edward Farhi",
+   "Sam Gutmann",
+   "Daniel A. Spielman"
+  ],
+  "categories": [
+   "quant-ph"
+  ],
+  "published": "2002-09-24",
+  "title": "Exponential algorithmic speedup by quantum walk",
+  "updated": "2002-10-25",
+  "url": "https://arxiv.org/abs/quant-ph/0209131",
+  "version": "v2"
+ },
+ "quant-ph/9508027": {
+  "abstract": "A digital computer is generally believed to be an efficient universal computing device; that is, it is believed able to simulate any physical computing device with an increase in computation time of at most a polynomial factor. This may not be true when quantum mechanics is taken into consideration. This paper considers factoring integers and finding discrete logarithms, two problems which are generally thought to be hard on a classical computer and have been used as the basis of several proposed cryptosystems. Efficient randomized algorithms are given for these two problems on a hypothetical quantum computer. These algorithms take a number of steps polynomial in the input size, e.g., the number of digits of the integer to be factored.",
+  "arxiv_id": "quant-ph/9508027",
+  "authors": [
+   "Peter W. Shor"
+  ],
+  "categories": [
+   "quant-ph"
+  ],
+  "published": "1995-08-30",
+  "title": "Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer",
+  "updated": "1996-01-25",
+  "url": "https://arxiv.org/abs/quant-ph/9508027",
+  "version": "v2"
+ },
+ "quant-ph/9605043": {
+  "abstract": "Imagine a phone directory containing N names arranged in completely random order. In order to find someone's phone number with a 50% probability, any classical algorithm (whether deterministic or probabilistic) will need to look at a minimum of N/2 names. Quantum mechanical systems can be in a superposition of states and simultaneously examine multiple names. By properly adjusting the phases of various operations, successful computations reinforce each other while others interfere randomly. As a result, the desired phone number can be obtained in only O(sqrt(N)) steps. The algorithm is within a small constant factor of the fastest possible quantum mechanical algorithm.",
+  "arxiv_id": "quant-ph/9605043",
+  "authors": [
+   "Lov K. Grover"
+  ],
+  "categories": [
+   "quant-ph"
+  ],
+  "published": "1996-05-29",
+  "title": "A fast quantum mechanical algorithm for database search",
+  "updated": "1996-11-19",
+  "url": "https://arxiv.org/abs/quant-ph/9605043",
+  "version": "v3"
+ }
+}

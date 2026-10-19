@@ -1,0 +1,47 @@
+name: Lean
+
+# Builds the Lean 4 formalization in formal/. This job is separate from the
+# Python validation and is allowed to be slow (it downloads the Mathlib cache).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "formal/**"
+      - "theorems/prime_character_exterior_bound.py"
+      - ".github/workflows/lean.yml"
+  pull_request:
+    paths:
+      - "formal/**"
+      - "theorems/prime_character_exterior_bound.py"
+      - ".github/workflows/lean.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cross-check data matches the Python mirror
+        run: python3 formal/scripts/gen_crosscheck.py --check
+
+      - name: Install elan (official installer, no default toolchain)
+        run: |
+          curl -sSfL -o elan-init.sh https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh
+          sh elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch the prebuilt Mathlib cache (never builds Mathlib from source)
+        working-directory: formal
+        run: lake exe cache get
+
+      # --wfail turns warnings into errors, so a `sorry` anywhere fails the build,
+      # not only in the theorems Formal/Audit.lean lists.
+      - name: Build and check all proofs
+        working-directory: formal
+        run: lake build --wfail

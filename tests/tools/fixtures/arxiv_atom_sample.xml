@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/foAwJlA+UcmtxEwpGpz3Dcg+5GE</id>
+  <title>arXiv Query: search_query=abs:"dihedral" AND abs:"hidden subgroup"&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-10-18T12:53:29Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22dihedral%22+AND+abs:%22hidden+subgroup%22&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>29</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.34996v1</id>
+    <title>Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli</title>
+    <updated>2026-09-28T12:04:31Z</updated>
+    <link href="https://arxiv.org/abs/2609.34996v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.34996v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Learning With Errors (LWE) problem is a fundamental assumption in post-quantum cryptography. Regev established a quantum reduction from LWE to the Dihedral Coset Problem (DCP). Later, Brakerski et al. introduced the Extrapolated Dihedral Coset Problem (EDCP), proving its equivalence to LWE. However, unlike DCP, EDCP no longer admits a coset structure. This limits the direct application of techniques for hidden subgroup problems.
+  In this work, we introduce the Cyclotomic Coset Problem (CCP), a cyclotomic generalization of DCP that preserves an exact hidden-subgroup structure. Let $ζ_p$ be a primitive $p$-th root of unity, let $π=ζ_p-1$, and write $q=p^t$ and $L=t(p-1)$. We work over $R_q=\mathbb Z_q[ζ_p] \cong \mathbb Z[ζ_p]/(π^L)$, where the isomorphism follows from the total ramification identity $(p)=(π)^{p-1}$. We exploit the resulting $π$-adic ideal chain to construct a quantum sieve that successively reduces phase states modulo $π^{L},π^{L-1},\ldots,π$. For every fixed prime $p$ and modulus $q=p^t$, our algorithm solves the CCP in time and sample complexity $2^{O_p(\log n\log q)}$, using polynomial quantum space. The sieve also applies to uniform EDCP and Gaussian S|LWE&gt;, yielding quasi-polynomial time algorithms for all the above problems when $q=\text{poly}(n)$. This extends the power-of-two EDCP sieve of Bai et al. (CRYPTO 2025) to a cyclotomic setting.
+  However, we emphasize that our result does not, by itself, yield a quasi-polynomial-time algorithm for standard LWE, because the currently known reduction produces only a limited number of approximate CCP states.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T12:04:31Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Mathias Boucher</name>
+    </author>
+    <author>
+      <name>Pierre-Alain Fouque</name>
+    </author>
+    <author>
+      <name>Yixin Shen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.10596v1</id>
+    <title>Quantum Inversion of Units in Group Rings: Block Dimension, Not Commutativity, Governs Hardness</title>
+    <updated>2026-09-07T09:50:40Z</updated>
+    <link href="https://arxiv.org/abs/2609.10596v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.10596v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Several public-key schemes base their security on the belief that inverting a unit of a group ring is hard. A recent result showed that this belief is false on a quantum computer when the group is abelian. To restore security, designers moved to non-abelian groups, especially dihedral groups, believing that the hardness of the dihedral hidden subgroup problem (HSP) would protect the scheme. This paper shows that unit inversion is a different problem and does not require an HSP solver. Instead, it can be solved by a change of basis that splits the group ring into small matrix blocks. We prove that unit inversion is polynomial-time, classically and quantumly, when an efficient generalized Fourier transform exists, the group ring is semisimple, and the largest matrix block has polynomial size. Dihedral group rings satisfy these conditions because their irreducible representations have dimension at most 2 and an efficient Fourier transform exists. We give an explicit reversible quantum circuit for the block-inversion step and validate it in a register-level simulator. We also identify the exact structural boundary where the method stops and propose a candidate construction in the surviving regime under a new, clearly stated security assumption. The constructive results are supported by reproducible software artifacts and experiments.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-07T09:50:40Z</published>
+    <arxiv:comment>29 pages, 7 tables, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Bhanwar Gupta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.05321v2</id>
+    <title>The Hidden Subgroup Problem in Semidirect Products and Quasi-Hamiltonian Groups</title>
+    <updated>2026-09-28T23:22:33Z</updated>
+    <link href="https://arxiv.org/abs/2608.05321v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.05321v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Several early quantum algorithms, including Simon's algorithm and Shor's period-finding are instances of the hidden subgroup problem (HSP) over finite abelian groups. No polynomial-time quantum algorithm is known for the HSP over arbitrary non-abelian finite groups. The non-Abelian case is of particular interest because some instances, such as the dihedral and symmetric group HSPs, are connected to lattice problems and graph isomorphism, respectively.
+  In this work, we give polynomial-time quantum algorithms for two further families containing non-Abelian groups. First, we consider groups of the form $G=A\rtimes_{\varphi} \mathbb{Z}_{p^k}$, with $A$ finite Abelian, $p$ prime, $k\in \mathbb{N}$ and the action of $\mathbb Z_{p^k}$ is generated by the scalar automorphism $a\mapstoμa$, for some $μ\in\mathbb Z_{\operatorname{Exp}(A)}^\times$, where $\mathrm{Exp}(A)$ is the exponent of $A$. Our algorithm is efficient when $A$ has bounded generator rank and $\mathrm{Exp}(A)/p=\mathrm{polylog}(|G|)$. This includes the case $A=\mathbb{Z}_N$ for $N\in\mathbb{N}$ and $k=1$, studied by Bacon, Childs and van Dam (FOCS 2005), and $A=\mathbb{Z}_{q^r}$ with $q$ prime and $r\in \mathbb{N}$ studied by van Dam and Dey (TQC 2014). Second, we give a polynomial-time quantum algorithm for finite quasi-Hamiltonian groups under a mild assumption on the input structure. Quasi-Hamiltonian groups are finite nilpotent groups with modular subgroup lattice, or equivalently the finite groups in which every subgroup is permutable. As far as we know, this is the first quantum algorithm to exploit the modularity of the subgroup lattice for solving the HSP. This extends, under the aforementioned structured input assumption, the quantum algorithm for Dedekind groups given by Hallgren, Russell, and Ta-Shma (SIAM J. Comput. 32, 2003).</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-05T18:25:25Z</published>
+    <arxiv:comment>30+9 pages, 1 figure</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Mauro E. S. Morales</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.12615v2</id>
+    <title>Quantum state isomorphism problems for groups</title>
+    <updated>2026-09-30T20:23:03Z</updated>
+    <link href="https://arxiv.org/abs/2605.12615v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.12615v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the computational complexity of quantum state isomorphism problems under group actions: given two quantum circuits that prepare pure or mixed states, decide whether the two states are related by a group action. This can be seen as a quantum state version of the Hidden Shift Problem, in much the same way that the State Hidden Subgroup Problem is a quantum version of the ordinary Hidden Subgroup Problem.
+  We prove several results for this computational problem:
+  - For the pure-state version, we show that the problem is BQP-hard for all nontrivial groups, and contained in QCMA $\cap$ QCSZK. We further obtain refined results for specific groups of interest: for abelian groups we show that the problem reduces to the state hidden subgroup problem over the generalized dihedral group; for the Clifford group, the problem is at least as hard as Graph Isomorphism under polynomial-time reductions; for the Pauli group it is BQP-complete.
+  - For the mixed-state version, for nontrivial, finite and efficiently representable groups, the problem is QSZK-complete.
+  - We also study a variant of this problem over an infinite group, in particular, the bosonic linear optical unitaries. We show that in the setting where the classical description of the quantum state is given in a suitable wave function representation known as the stellar representation, the problem is at least as hard as Graph Isomorphism, and is contained in NP $\cap$ SZK.
+  Prior to our work, state isomorphism problems had only been studied for the symmetric group [LG17]. As a consequence of our results, we resolve an open question posed in [HEC25] about the existence of a quantum algorithm for the abelian state hidden subgroup problem on mixed states. We show that this problem is QSZK-hard in the worst case, thereby ruling out an efficient quantum algorithm unless QSZK = BQP.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-12T18:05:27Z</published>
+    <arxiv:comment>Updated definition of PSGI to a more natural version which ignores global phase; updated proofs to fit this new definition</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Alexandru Gheorghiu</name>
+    </author>
+    <author>
+      <name>Dale Jacobs</name>
+    </author>
+    <author>
+      <name>Saeed Mehraban</name>
+    </author>
+    <author>
+      <name>Arsalan Motamedi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.02087v1</id>
+    <title>A survey about Hidden Subgroup Problem from a mathematical and cryptographic perspective</title>
+    <updated>2025-12-01T12:48:34Z</updated>
+    <link href="https://arxiv.org/abs/2512.02087v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.02087v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We provide a survey on the Hidden Subgroup Problem (HSP), which plays an important role in studying the security of public-key cryptosystems. We first review the abelian case, where Kitaev's algorithm yields an efficient quantum solution to the HSP, recalling how classical problems (such as order finding, integer factorization, and discrete logarithm) can be formulated as abelian HSP instances. We then examine the current state of the art for non-abelian HSP, where no general efficient quantum solution is known, focusing on some relevant groups including dihedral group (connected to the shortest vector problem), symmetric groups (connected to the graph isomorphism problem), and semidirect product constructions (connected, in a special case, to the code equivalence problem). We also describe the main techniques for addressing the HSP in non-abelian cases, namely Fourier sampling and the black-box approach. Throughout the paper, we highlight the mathematical notions required and exploited in this context, providing a cryptography-oriented perspective.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-01T12:48:34Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Simone Dutto</name>
+    </author>
+    <author>
+      <name>Pietro Mercuri</name>
+    </author>
+    <author>
+      <name>Nadir Murru</name>
+    </author>
+    <author>
+      <name>Lorenzo Romano</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,5412 @@
+{
+ "generated_by": "tools/split_cli/migrate.py",
+ "source_sha256": "0af1dabf775cfc5c6bc8f73d952b8ec4a9130112a9d0a4aa49427741027e255f",
+ "subcommands": [
+  {
+   "name": "audit",
+   "aliases": [],
+   "function": "command_audit",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "literature",
+   "aliases": [],
+   "function": "command_literature",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "hypothesize",
+   "aliases": [],
+   "function": "command_hypothesize",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "hidden-shift",
+   "aliases": [],
+   "function": "command_hidden_shift",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-samples",
+   "aliases": [],
+   "function": "command_dcp_samples",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-decode",
+   "aliases": [],
+   "function": "command_dcp_decode",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-recurrence",
+   "aliases": [],
+   "function": "command_dcp_recurrence",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-schedules",
+   "aliases": [],
+   "function": "command_dcp_schedules",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-uniform-schedules",
+   "aliases": [],
+   "function": "command_dcp_uniform_schedules",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-bad-registers",
+   "aliases": [],
+   "function": "command_dcp_bad_registers",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-contamination",
+   "aliases": [],
+   "function": "command_dcp_contamination",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-witness-search",
+   "aliases": [],
+   "function": "command_dcp_witness_search",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-clifford-witnesses",
+   "aliases": [],
+   "function": "command_dcp_clifford_witnesses",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-clifford-contamination",
+   "aliases": [],
+   "function": "command_dcp_clifford_contamination",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-hadamard-scaling",
+   "aliases": [],
+   "function": "command_dcp_hadamard_scaling",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-random-decoder",
+   "aliases": [],
+   "function": "command_dcp_random_decoder",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-decoder-frontier",
+   "aliases": [],
+   "function": "command_dcp_decoder_frontier",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-multiscale-aliasing",
+   "aliases": [],
+   "function": "command_dcp_multiscale_aliasing",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-fourier-bridge",
+   "aliases": [],
+   "function": "command_dcp_fourier_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-sparse-fourier-audit",
+   "aliases": [],
+   "function": "command_dcp_sparse_fourier_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-iid-hash-audit",
+   "aliases": [],
+   "function": "command_dcp_iid_hash_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-biased-linear-audit",
+   "aliases": [],
+   "function": "command_dcp_biased_linear_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-multirecord-audit",
+   "aliases": [],
+   "function": "command_dcp_multirecord_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-ustatistic-audit",
+   "aliases": [],
+   "function": "command_dcp_ustatistic_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-factorized-contraction",
+   "aliases": [],
+   "function": "command_dcp_factorized_contraction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-low-rank-contraction",
+   "aliases": [],
+   "function": "command_dcp_low_rank_contraction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-measurement",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_measurement",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-hashed-fiber-measurement",
+   "aliases": [],
+   "function": "command_dcp_hashed_fiber_measurement",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-reference-projection",
+   "aliases": [],
+   "function": "command_dcp_reference_projection",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-covariant-pgm",
+   "aliases": [],
+   "function": "command_dcp_covariant_pgm",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-pgm-gram",
+   "aliases": [],
+   "function": "command_dcp_pgm_gram",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-pgm-qsvt",
+   "aliases": [],
+   "function": "command_dcp_pgm_qsvt",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-quenched-occupancy",
+   "aliases": [],
+   "function": "command_dcp_quenched_occupancy",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-fiber-erasure-boundary",
+   "aliases": [],
+   "function": "command_dcp_fiber_erasure_boundary",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-erasure-inversion",
+   "aliases": [],
+   "function": "command_dcp_erasure_inversion",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-erasure-coherence",
+   "aliases": [],
+   "function": "command_dcp_erasure_coherence",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-erasure-perturbation",
+   "aliases": [],
+   "function": "command_dcp_erasure_perturbation",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-contaminated-pgm",
+   "aliases": [],
+   "function": "command_dcp_contaminated_pgm",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-bridge",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-lattice",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_lattice",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-two-adic",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_two_adic",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-resource-frontier",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_resource_frontier",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-carry-anf",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_carry_anf",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-synthesize",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_synthesize",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-low-bit-bdd",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_low_bit_bdd",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-conditioned-quotient",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_conditioned_quotient",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-carry-slice-lattice",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_carry_slice_lattice",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-carry-high-part",
+   "aliases": [],
+   "function": "command_dcp_carry_high_part",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-carry-affine-degree-invariance",
+   "aliases": [],
+   "function": "command_dcp_carry_affine_degree_invariance",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-boolean-coset-separation",
+   "aliases": [],
+   "function": "command_dcp_boolean_coset_separation",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-marker-list-decoder",
+   "aliases": [],
+   "function": "command_dcp_marker_list_decoder",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-marker-deviations",
+   "aliases": [],
+   "function": "command_dcp_marker_deviations",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-marker-all-targets",
+   "aliases": [],
+   "function": "command_dcp_marker_all_targets",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-marker-vulnerable-coordinates",
+   "aliases": [],
+   "function": "command_dcp_marker_vulnerable_coordinates",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-marker-chart-union",
+   "aliases": [],
+   "function": "command_dcp_marker_chart_union",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-marker-target-beam",
+   "aliases": [],
+   "function": "command_dcp_marker_target_beam",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-preconditioned-geometry",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_preconditioned_geometry",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-fourth-moment",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_fourth_moment",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-smith-moments",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_smith_moments",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-smith-transfer",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_smith_transfer",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-fixed-moments",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_fixed_moments",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-conditioned-tail",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_conditioned_tail",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-growing-moments",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_growing_moments",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-growing-chain",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_growing_chain",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-signed-l2",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_signed_l2",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-sparse-characters",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_sparse_characters",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-qtt",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_qtt",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-embedding-volume",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_embedding_volume",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-short-relations",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_short_relations",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-carry-relations",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_carry_relations",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-marker-coset",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_marker_coset",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-affine-cvp",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_affine_cvp",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-affine-scaling",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_affine_scaling",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-affine-bdd",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_affine_bdd",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-target-distribution",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_target_distribution",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-coherent-matching",
+   "aliases": [],
+   "function": "command_dcp_coherent_matching",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-quantum-relation-fidelity",
+   "aliases": [],
+   "function": "command_dcp_quantum_relation_fidelity",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-quantum-walk-source-audit",
+   "aliases": [],
+   "function": "command_dcp_quantum_walk_source_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-symmetric-relation-lift",
+   "aliases": [],
+   "function": "command_dcp_symmetric_relation_lift",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-fiber-transport",
+   "aliases": [],
+   "function": "command_dcp_fiber_transport",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-fiber-graph",
+   "aliases": [],
+   "function": "command_dcp_fiber_graph",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-signed-permutation-transport",
+   "aliases": [],
+   "function": "command_dcp_signed_permutation_transport",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-affine-transport",
+   "aliases": [],
+   "function": "command_dcp_affine_transport",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-fiber-balance",
+   "aliases": [],
+   "function": "command_dcp_fiber_balance",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-partial-relations",
+   "aliases": [],
+   "function": "command_dcp_partial_relations",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-target-locality",
+   "aliases": [],
+   "function": "command_dcp_target_locality",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-fiber-entanglement",
+   "aliases": [],
+   "function": "command_dcp_fiber_entanglement",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-adaptive-layouts",
+   "aliases": [],
+   "function": "command_dcp_adaptive_layouts",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-randomize",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_randomize",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-odd-unit-geometry",
+   "aliases": [],
+   "function": "command_dcp_odd_unit_geometry",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-likelihood-search",
+   "aliases": [],
+   "function": "command_dcp_likelihood_search",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "coset-state",
+   "aliases": [],
+   "function": "command_coset_state",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "collective-observables",
+   "aliases": [],
+   "function": "command_collective_observables",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "code-family-search",
+   "aliases": [],
+   "function": "command_code_family_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-search",
+   "aliases": [],
+   "function": "command_code_self_dual_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-local-obstruction",
+   "aliases": [],
+   "function": "command_code_self_dual_local_obstruction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-global-orbit",
+   "aliases": [],
+   "function": "command_code_self_dual_global_orbit",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-hsp",
+   "aliases": [],
+   "function": "command_code_self_dual_hsp",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-rowspace-hsp",
+   "aliases": [],
+   "function": "command_code_self_dual_rowspace_hsp",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-automorphisms",
+   "aliases": [],
+   "function": "command_code_self_dual_automorphisms",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-high-order",
+   "aliases": [],
+   "function": "command_code_self_dual_high_order",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-sparsity",
+   "aliases": [],
+   "function": "command_code_self_dual_sparsity",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-hecke",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_hecke",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-pgm",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_pgm",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-carrier",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_carrier",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-orbits",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_orbits",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-harmonics",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_harmonics",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-commutant",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_commutant",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-frame-blocks",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_frame_blocks",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-unequal-blocks",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_unequal_blocks",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-w3-tuples",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_w3_tuples",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-moments",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_moments",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-third-moment",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_third_moment",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-all-unequal",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_all_unequal",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-commutators",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_commutators",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-stable-rank",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_stable_rank",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-typical-portfolio",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_typical_portfolio",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-self-dual-wreath-recoupling-transfer",
+   "aliases": [],
+   "function": "command_code_self_dual_wreath_recoupling_transfer",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "tensor-observables",
+   "aliases": [],
+   "function": "command_tensor_observables",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "gm-switching",
+   "aliases": [
+    "godsil-mckay"
+   ],
+   "function": "command_gm_switching",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "cfi-scaling",
+   "aliases": [],
+   "function": "command_cfi_scaling",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "cfi-base-search",
+   "aliases": [],
+   "function": "command_cfi_base_search",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "cfi-parity-solver",
+   "aliases": [],
+   "function": "command_cfi_parity_solver",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "cfi-structural-decoder",
+   "aliases": [],
+   "function": "command_cfi_structural_decoder",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "cfi-irregular-decoder",
+   "aliases": [],
+   "function": "command_cfi_irregular_decoder",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "cfi-bipartite-decoder",
+   "aliases": [],
+   "function": "command_cfi_bipartite_decoder",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "individualized-wl",
+   "aliases": [],
+   "function": "command_individualized_wl",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "individualized-tensors",
+   "aliases": [],
+   "function": "command_individualized_tensors",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "coset-triage",
+   "aliases": [],
+   "function": "command_coset_triage",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "representation-obstructions",
+   "aliases": [],
+   "function": "command_representation_obstructions",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "weak-fourier",
+   "aliases": [],
+   "function": "command_weak_fourier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "coset-distinguishability",
+   "aliases": [],
+   "function": "command_coset_distinguishability",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-pgm",
+   "aliases": [],
+   "function": "command_coset_pgm",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-holevo",
+   "aliases": [],
+   "function": "command_coset_holevo",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-covariant-frame",
+   "aliases": [],
+   "function": "command_coset_covariant_frame",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-two-copy-frame",
+   "aliases": [],
+   "function": "command_coset_two_copy_frame",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-same-hidden-target-law",
+   "aliases": [],
+   "function": "command_coset_same_hidden_target_law",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-commutant-information-no-go",
+   "aliases": [],
+   "function": "command_coset_commutant_information_obstruction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-carrier-information",
+   "aliases": [],
+   "function": "command_coset_carrier_information_audit",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-natural-multicopy-pgm",
+   "aliases": [],
+   "function": "command_coset_natural_multicopy_pgm",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-pgm-gain-localization",
+   "aliases": [],
+   "function": "command_coset_pgm_gain_localization",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-pgm-average-frame",
+   "aliases": [],
+   "function": "command_coset_pgm_average_frame",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-character-ratios",
+   "aliases": [],
+   "function": "command_coset_character_ratios",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-projector-subpovm",
+   "aliases": [],
+   "function": "command_coset_projector_subpovm",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "code-wreath-projector-subpovm",
+   "aliases": [],
+   "function": "command_code_wreath_projector_subpovm",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-subpovm-moments",
+   "aliases": [],
+   "function": "command_code_wreath_subpovm_moments",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-natural-unequal",
+   "aliases": [],
+   "function": "command_code_wreath_natural_unequal",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-moment-word-map",
+   "aliases": [],
+   "function": "command_code_wreath_moment_word_map",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-word-map-mixing",
+   "aliases": [],
+   "function": "command_code_wreath_word_map_mixing",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-coupled-word-gap",
+   "aliases": [],
+   "function": "command_code_wreath_coupled_word_gap",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-conditioned-kernel",
+   "aliases": [],
+   "function": "command_code_wreath_conditioned_kernel",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-global-collision",
+   "aliases": [],
+   "function": "command_code_wreath_global_collision",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-collision-free-frame",
+   "aliases": [],
+   "function": "command_code_wreath_collision_free_frame",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-character-ratios",
+   "aliases": [],
+   "function": "command_code_wreath_character_ratios",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-short-words",
+   "aliases": [],
+   "function": "command_code_wreath_short_words",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-mask-hypergraph",
+   "aliases": [],
+   "function": "command_code_wreath_mask_hypergraph",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-subgroup-twirl",
+   "aliases": [],
+   "function": "command_code_wreath_subgroup_twirl",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-fourier",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_fourier",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-moments",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_moments",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-core-carrier-factorization",
+   "aliases": [],
+   "function": "command_code_wreath_pair_core_carrier_factorization",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-multistar-degree",
+   "aliases": [],
+   "function": "command_code_wreath_multistar_degree",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-quotient-overlap",
+   "aliases": [],
+   "function": "command_code_wreath_pair_quotient_overlap",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-recursive-pair-generation",
+   "aliases": [],
+   "function": "command_code_wreath_recursive_pair_generation",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-augmented-common-core-cech",
+   "aliases": [],
+   "function": "command_code_wreath_augmented_common_core_cech",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-common-core-cech",
+   "aliases": [],
+   "function": "command_code_wreath_common_core_cech",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-core-recoupling",
+   "aliases": [],
+   "function": "command_code_wreath_pair_core_recoupling",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-common-core-atomization",
+   "aliases": [],
+   "function": "command_code_wreath_common_core_atomization",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-laplacian-gap",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_laplacian_gap",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-common-ranges",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_common_ranges",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-family-ranges",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_family_ranges",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-pair-angles",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_pair_angles",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-block-core",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_block_core",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-plancherel-block-obstruction",
+   "aliases": [],
+   "function": "command_code_wreath_plancherel_block_obstruction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-spectral-trim",
+   "aliases": [],
+   "function": "command_code_wreath_spectral_trim",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-spectral-filter-degree",
+   "aliases": [],
+   "function": "command_code_wreath_spectral_filter_degree",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-plancherel-block-mass",
+   "aliases": [],
+   "function": "command_code_wreath_plancherel_block_mass",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-covariant-quotient",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_covariant_quotient",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-branch-controlled-invariant-filter",
+   "aliases": [],
+   "function": "command_code_wreath_branch_controlled_invariant_filter",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-block-core-quotient",
+   "aliases": [],
+   "function": "command_code_wreath_block_core_quotient",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-paired-block-filter-bypass",
+   "aliases": [],
+   "function": "command_code_wreath_paired_block_filter_bypass",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-local-isotypic-filter-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_local_isotypic_filter_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-cluster-locality-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_cluster_locality_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-spectral-filter-query-bound",
+   "aliases": [],
+   "function": "command_code_wreath_spectral_filter_query_bound",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-affine-core-flag",
+   "aliases": [],
+   "function": "command_code_wreath_affine_core_flag",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-affine-node-common-outlier",
+   "aliases": [],
+   "function": "command_code_wreath_affine_node_common_outlier",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-affine-plane-scalar-holonomy",
+   "aliases": [],
+   "function": "command_code_wreath_affine_plane_scalar_holonomy",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-affine-plane-support-pressure-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_affine_plane_support_pressure_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-affine-recoupling-bundle",
+   "aliases": [],
+   "function": "command_code_wreath_affine_recoupling_bundle",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-affine-relation-weighted-bulk",
+   "aliases": [],
+   "function": "command_code_wreath_affine_relation_weighted_bulk",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-affine-star-channel-gap",
+   "aliases": [],
+   "function": "command_code_wreath_affine_star_channel_gap",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-augmented-h0-dimension-obstruction",
+   "aliases": [],
+   "function": "command_code_wreath_augmented_h0_dimension_obstruction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-canonical-coefficient-affine",
+   "aliases": [],
+   "function": "command_code_wreath_canonical_coefficient_affine",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-cayley-fiber-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_cayley_fiber_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-central-support-rank-bridge",
+   "aliases": [],
+   "function": "command_code_wreath_central_support_rank_bridge",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-coherent-fourier-decoder",
+   "aliases": [],
+   "function": "command_code_wreath_coherent_fourier_decoder",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-collision-free-event-transfer",
+   "aliases": [],
+   "function": "command_code_wreath_collision_free_event_transfer",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-common-core-polar-bypass",
+   "aliases": [],
+   "function": "command_code_wreath_common_core_polar_bypass",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-complete-s6-vertex-channel-audit",
+   "aliases": [],
+   "function": "command_code_wreath_complete_s6_vertex_channel_audit",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-defect-gap-bridge",
+   "aliases": [],
+   "function": "command_code_wreath_component_defect_gap_bridge",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-povm-regular-master-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_component_povm_regular_master_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-povm-sparse-support-boundary",
+   "aliases": [],
+   "function": "command_code_wreath_component_povm_sparse_support_boundary",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-covariant-pgm-factorization",
+   "aliases": [],
+   "function": "command_code_wreath_covariant_pgm_factorization",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-coverage-welch-pressure",
+   "aliases": [],
+   "function": "command_code_wreath_coverage_welch_pressure",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-cross-dependency-neutrality",
+   "aliases": [],
+   "function": "command_code_wreath_cross_dependency_neutrality",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-dependency-homology",
+   "aliases": [],
+   "function": "command_code_wreath_dependency_homology",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-early-level-overlap-localization",
+   "aliases": [],
+   "function": "command_code_wreath_early_level_overlap_localization",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-extended-kronecker-threshold",
+   "aliases": [],
+   "function": "command_code_wreath_extended_kronecker_threshold",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-final-root-leverage-edge",
+   "aliases": [],
+   "function": "command_code_wreath_final_root_leverage_edge",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-defect-rank-mass",
+   "aliases": [],
+   "function": "command_code_wreath_component_defect_rank_mass",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-effect-algebra-boundary",
+   "aliases": [],
+   "function": "command_code_wreath_component_effect_algebra_boundary",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-povm-spectral-trim",
+   "aliases": [],
+   "function": "command_code_wreath_component_povm_spectral_trim",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-final-root-natural-common-span",
+   "aliases": [],
+   "function": "command_code_wreath_final_root_natural_common_span",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-fixed-family-common-rank-dilution",
+   "aliases": [],
+   "function": "command_code_wreath_fixed_family_common_rank_dilution",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-global-carrier-channel-extractor",
+   "aliases": [],
+   "function": "command_code_wreath_global_carrier_channel_extractor",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-global-collision-free-mass",
+   "aliases": [],
+   "function": "command_code_wreath_global_collision_free_mass",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-global-distinct-joint-kernel",
+   "aliases": [],
+   "function": "command_code_wreath_global_distinct_joint_kernel",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-global-partition-collision",
+   "aliases": [],
+   "function": "command_code_wreath_global_partition_collision",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-gpe-holonomy-resolver-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_gpe_holonomy_resolver_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-gpe-pair-polar-transport",
+   "aliases": [],
+   "function": "command_code_wreath_gpe_pair_polar_transport",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-gpe-recursive-node-compiler",
+   "aliases": [],
+   "function": "command_code_wreath_gpe_recursive_node_compiler",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-graded-channel-graph-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_graded_channel_graph_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-graded-flat-transport-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_graded_flat_transport_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-graded-frobenius-trim",
+   "aliases": [],
+   "function": "command_code_wreath_graded_frobenius_trim",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-hamming-stratum-rank-transition",
+   "aliases": [],
+   "function": "command_code_wreath_hamming_stratum_rank_transition",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-hierarchical-cokernel-resolution",
+   "aliases": [],
+   "function": "command_code_wreath_hierarchical_cokernel_resolution",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-hierarchical-polar-tree",
+   "aliases": [],
+   "function": "command_code_wreath_hierarchical_polar_tree",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-hierarchy-low-carrier-trim",
+   "aliases": [],
+   "function": "command_code_wreath_hierarchy_low_carrier_trim",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-hierarchy-pair-common-rank-budget",
+   "aliases": [],
+   "function": "command_code_wreath_hierarchy_pair_common_rank_budget",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-internal-closure-graded-rescue",
+   "aliases": [],
+   "function": "command_code_wreath_internal_closure_graded_rescue",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-interplane-gauge-homology",
+   "aliases": [],
+   "function": "command_code_wreath_interplane_gauge_homology",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-invariant-projector-circuit",
+   "aliases": [],
+   "function": "command_code_wreath_invariant_projector_circuit",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-isotypic-dephasing-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_isotypic_dephasing_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-leaf-whitening-commutator-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_leaf_whitening_commutator_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-level-three-flag-audit",
+   "aliases": [],
+   "function": "command_code_wreath_level_three_flag_audit",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-local-pair-transversality",
+   "aliases": [],
+   "function": "command_code_wreath_local_pair_transversality",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-matrix-cayley-boundary",
+   "aliases": [],
+   "function": "command_code_wreath_matrix_cayley_boundary",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-matrix-povm-recursive-compiler",
+   "aliases": [],
+   "function": "command_code_wreath_matrix_povm_recursive_compiler",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-mixed-covariant-decoder",
+   "aliases": [],
+   "function": "command_code_wreath_mixed_covariant_decoder",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-common-span-component-universality-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_common_span_component_universality_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-mrs-coherence-escape-criterion",
+   "aliases": [],
+   "function": "command_code_wreath_mrs_coherence_escape_criterion",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-mrs-transcript-povm-separation",
+   "aliases": [],
+   "function": "command_code_wreath_mrs_transcript_povm_separation",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-multiscale-polar-schedule",
+   "aliases": [],
+   "function": "command_code_wreath_multiscale_polar_schedule",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-native-frame-access-boundary",
+   "aliases": [],
+   "function": "command_code_wreath_native_frame_access_boundary",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-natural-leaf-commutator-mass",
+   "aliases": [],
+   "function": "command_code_wreath_natural_leaf_commutator_mass",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-natural-pair-carrier-law",
+   "aliases": [],
+   "function": "command_code_wreath_natural_pair_carrier_law",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-operator-steiner-bulk-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_operator_steiner_bulk_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-filter-physical-access",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_filter_physical_access",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-rank-budget",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_rank_budget",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-retention-theorem",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_retention_theorem",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-orientation-subspace-filter",
+   "aliases": [],
+   "function": "command_code_wreath_orientation_subspace_filter",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-common-covering-transition",
+   "aliases": [],
+   "function": "command_code_wreath_pair_common_covering_transition",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-core-rank-concentration",
+   "aliases": [],
+   "function": "command_code_wreath_pair_core_rank_concentration",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-polar-sampler",
+   "aliases": [],
+   "function": "command_code_wreath_pair_polar_sampler",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-polar-transport-network",
+   "aliases": [],
+   "function": "command_code_wreath_pair_polar_transport_network",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-transport-degree-obstruction",
+   "aliases": [],
+   "function": "command_code_wreath_pair_transport_degree_obstruction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pair-transport-native-mass-boundary",
+   "aliases": [],
+   "function": "command_code_wreath_pair_transport_native_mass_boundary",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-partial-support-child-embedding",
+   "aliases": [],
+   "function": "command_code_wreath_partial_support_child_embedding",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-partial-support-source-mass-boundary",
+   "aliases": [],
+   "function": "command_code_wreath_partial_support_source_mass_boundary",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-boolean-graph-stopping-core-pressure",
+   "aliases": [],
+   "function": "command_code_wreath_boolean_graph_stopping_core_pressure",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-aggregate-frame-indeterminacy",
+   "aliases": [],
+   "function": "command_code_wreath_component_aggregate_frame_indeterminacy",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-commutator-collision-free-transfer",
+   "aliases": [],
+   "function": "command_code_wreath_component_commutator_collision_free_transfer",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-commutator-haar-benchmark",
+   "aliases": [],
+   "function": "command_code_wreath_component_commutator_haar_benchmark",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-commutator-trace-mass-bridge",
+   "aliases": [],
+   "function": "command_code_wreath_component_commutator_trace_mass_bridge",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-green-ridge-stability",
+   "aliases": [],
+   "function": "command_code_wreath_component_green_ridge_stability",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-hamming-orbit-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_component_hamming_orbit_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-component-leaf-resolved-green-normal-form",
+   "aliases": [],
+   "function": "command_code_wreath_component_leaf_resolved_green_normal_form",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-contiguous-all-a-support-pressure",
+   "aliases": [],
+   "function": "command_code_wreath_contiguous_all_a_support_pressure",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-contiguous-frame-target-factorization",
+   "aliases": [],
+   "function": "command_code_wreath_contiguous_frame_target_factorization",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-exceptional-block-graph-core-pressure",
+   "aliases": [],
+   "function": "command_code_wreath_exceptional_block_graph_core_pressure",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-frame-subword-entropy",
+   "aliases": [],
+   "function": "command_code_wreath_frame_subword_entropy",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-leaf-marked-green-word-normal-form",
+   "aliases": [],
+   "function": "command_code_wreath_leaf_marked_green_word_normal_form",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-linear-code-support-pressure",
+   "aliases": [],
+   "function": "command_code_wreath_linear_code_support_pressure",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-marked-pressure-obstruction-search",
+   "aliases": [],
+   "function": "command_code_wreath_marked_pressure_obstruction_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-marked-relation-topology",
+   "aliases": [],
+   "function": "command_code_wreath_marked_relation_topology",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-mixed-split-target-genus",
+   "aliases": [],
+   "function": "command_code_wreath_mixed_split_target_genus",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-natural-leaf-commutator-trace-profile",
+   "aliases": [],
+   "function": "command_code_wreath_natural_leaf_commutator_trace_profile",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-parity-stopping-core-pressure",
+   "aliases": [],
+   "function": "command_code_wreath_parity_stopping_core_pressure",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-periodic-frame-fiber-counterfamily",
+   "aliases": [],
+   "function": "command_code_wreath_periodic_frame_fiber_counterfamily",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-high-codimension-face-word-frontier",
+   "aliases": [],
+   "function": "command_code_wreath_high_codimension_face_word_frontier",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-periodic-frame-rank-collapse",
+   "aliases": [],
+   "function": "command_code_wreath_periodic_frame_rank_collapse",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-petz-pgm-obstruction",
+   "aliases": [],
+   "function": "command_code_wreath_petz_pgm_obstruction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pgm-quantum-sampling-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_pgm_quantum_sampling_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pgm-spectral-window",
+   "aliases": [],
+   "function": "command_code_wreath_pgm_spectral_window",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pgm-success-theorem",
+   "aliases": [],
+   "function": "command_code_wreath_pgm_success_theorem",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-pgm-truncation-robustness",
+   "aliases": [],
+   "function": "command_code_wreath_pgm_truncation_robustness",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-physical-orientation-interference",
+   "aliases": [],
+   "function": "command_code_wreath_physical_orientation_interference",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-physical-pgm-intertwiner",
+   "aliases": [],
+   "function": "command_code_wreath_physical_pgm_intertwiner",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-plancherel-kronecker-positivity",
+   "aliases": [],
+   "function": "command_code_wreath_plancherel_kronecker_positivity",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-polar-factor-transfer",
+   "aliases": [],
+   "function": "command_code_wreath_polar_factor_transfer",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-postfilter-frame-compression",
+   "aliases": [],
+   "function": "command_code_wreath_postfilter_frame_compression",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-random-steiner-gauge-edge",
+   "aliases": [],
+   "function": "command_code_wreath_random_steiner_gauge_edge",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-reciprocal-carrier-accumulation-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_reciprocal_carrier_accumulation_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-regular-master-central-support",
+   "aliases": [],
+   "function": "command_code_wreath_regular_master_central_support",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-relation-cokernel-transfer",
+   "aliases": [],
+   "function": "command_code_wreath_relation_cokernel_transfer",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-relative-effect-intersection",
+   "aliases": [],
+   "function": "command_code_wreath_relative_effect_intersection",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-relative-surface-factorization",
+   "aliases": [],
+   "function": "command_code_wreath_relative_surface_factorization",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-residual-frobenius-typicality",
+   "aliases": [],
+   "function": "command_code_wreath_residual_frobenius_typicality",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-sector-weight-concentration",
+   "aliases": [],
+   "function": "command_code_wreath_sector_weight_concentration",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-shorted-overlap-balance",
+   "aliases": [],
+   "function": "command_code_wreath_shorted_overlap_balance",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-sibling-frame-jacobi-surrogate",
+   "aliases": [],
+   "function": "command_code_wreath_sibling_frame_jacobi_surrogate",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-sibling-frame-joint-conditioning-surrogate",
+   "aliases": [],
+   "function": "command_code_wreath_sibling_frame_joint_conditioning_surrogate",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-sibling-frame-joint-freeness",
+   "aliases": [],
+   "function": "command_code_wreath_sibling_frame_joint_freeness",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-sibling-frame-mp-moments",
+   "aliases": [],
+   "function": "command_code_wreath_sibling_frame_mp_moments",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-sibling-word-map-normal-form",
+   "aliases": [],
+   "function": "command_code_wreath_sibling_word_map_normal_form",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-signed-steiner-bulk-edge",
+   "aliases": [],
+   "function": "command_code_wreath_signed_steiner_bulk_edge",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-signed-steiner-incidence-boundary",
+   "aliases": [],
+   "function": "command_code_wreath_signed_steiner_incidence_boundary",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-signed-steiner-nullity-theorem",
+   "aliases": [],
+   "function": "command_code_wreath_signed_steiner_nullity_theorem",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-single-anchor-shorting",
+   "aliases": [],
+   "function": "command_code_wreath_single_anchor_shorting",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-sparse-invariant-dependency",
+   "aliases": [],
+   "function": "command_code_wreath_sparse_invariant_dependency",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-star-channel-mass-typicality",
+   "aliases": [],
+   "function": "command_code_wreath_star_channel_mass_typicality",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-subgroup-pair-angle-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_subgroup_pair_angle_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-subgroup-projection-walk",
+   "aliases": [],
+   "function": "command_code_wreath_subgroup_projection_walk",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-support-affine-rank-entropy",
+   "aliases": [],
+   "function": "command_code_wreath_support_affine_rank_entropy",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-support-difference-peeling-no-go",
+   "aliases": [],
+   "function": "command_code_wreath_support_difference_peeling_no_go",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-target-survival-surface-seed",
+   "aliases": [],
+   "function": "command_code_wreath_target_survival_surface_seed",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-trace-polynomial-edge-burden",
+   "aliases": [],
+   "function": "command_code_wreath_trace_polynomial_edge_burden",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-trace-weighted-pgm-bridge",
+   "aliases": [],
+   "function": "command_code_wreath_trace_weighted_pgm_bridge",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-trace-weighted-polar-truncation",
+   "aliases": [],
+   "function": "command_code_wreath_trace_weighted_polar_truncation",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-transport-carrier-mass",
+   "aliases": [],
+   "function": "command_code_wreath_transport_carrier_mass",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-two-color-return-walk",
+   "aliases": [],
+   "function": "command_code_wreath_two_color_return_walk",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-two-partition-ribbon-surface",
+   "aliases": [],
+   "function": "command_code_wreath_two_partition_ribbon_surface",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-uniform-orientation-rank-concentration",
+   "aliases": [],
+   "function": "command_code_wreath_uniform_orientation_rank_concentration",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-vertex-channel-groupoid",
+   "aliases": [],
+   "function": "command_code_wreath_vertex_channel_groupoid",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-vertex-kernel-graded-reduction",
+   "aliases": [],
+   "function": "command_code_wreath_vertex_kernel_graded_reduction",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-wreath-vertex-trivialization-criterion",
+   "aliases": [],
+   "function": "command_code_wreath_vertex_trivialization_criterion",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "coset-hidden-involution-binary-identification-self-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_binary_identification_self_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-branch-erasure-normalization-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_branch_erasure_normalization_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-bulk-conditioning-normalization-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_bulk_conditioning_normalization_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-common-factor-trim",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_common_factor_trim",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-common-outlier-deflation",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_common_outlier_deflation",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-foulkes-support-mass-probe",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_foulkes_support_mass_probe",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-foulkes-support-projector-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_foulkes_support_projector_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-fourier-coefficient-normalization-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_fourier_coefficient_normalization_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-imprimitive-plethysm-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_imprimitive_plethysm_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-incidence-walk-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_incidence_walk_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-induced-source-bundle-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_induced_source_bundle_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-isotypic-support-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_isotypic_support_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matrix-hecke-transfer-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matrix_hecke_transfer_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-multiplicity-hard-mass",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_multiplicity_hard_mass",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-orbit-synthesis-flatness",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_orbit_synthesis_flatness",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-pair-polar-holonomy-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_pair_polar_holonomy_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-pair-polar-phase-compiler",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_pair_polar_phase_compiler",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-regular-orbit-row-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_regular_orbit_row_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-rigid-gi-bridge",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_rigid_gi_bridge",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-s3-chart-gram-compiler",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_s3_chart_gram_compiler",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-source-deflation-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_source_deflation_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-spherical-outlier-deflation",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_spherical_outlier_deflation",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-subgroup-outlier-hierarchy",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_subgroup_outlier_hierarchy",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-subgroup-support-dichotomy",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_subgroup_support_dichotomy",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hyperoctahedral-cg-kronecker-reduction",
+   "aliases": [],
+   "function": "command_coset_hyperoctahedral_cg_kronecker_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hyperoctahedral-color-weight-concentration",
+   "aliases": [],
+   "function": "command_coset_hyperoctahedral_color_weight_concentration",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hyperoctahedral-free-orbit-canonicalization-boundary",
+   "aliases": [],
+   "function": "command_coset_hyperoctahedral_free_orbit_canonicalization_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hyperoctahedral-source-plancherel-typicality",
+   "aliases": [],
+   "function": "command_coset_hyperoctahedral_source_plancherel_typicality",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hyperoctahedral-trimmed-orbit-canonicalizer",
+   "aliases": [],
+   "function": "command_coset_hyperoctahedral_trimmed_orbit_canonicalizer",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hyperoctahedral-trivial-color-mass-no-go",
+   "aliases": [],
+   "function": "command_coset_hyperoctahedral_trivial_color_mass_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "self-dual-wreath-adaptive-syndrome-trim-transfer",
+   "aliases": [],
+   "function": "command_self_dual_wreath_adaptive_syndrome_trim_transfer",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-base-orbit-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_base_orbit_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-block-operator-anova",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_block_operator_anova",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-cycle-type-block-dependence",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_cycle_type_block_dependence",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-entropy-transfer-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_entropy_transfer_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-even-collision-core-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_even_collision_core_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-even-collision-entropy-bridge",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_even_collision_entropy_bridge",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-even-collision-support-pressure",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_even_collision_support_pressure",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-parity-coset-channel",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_parity_coset_channel",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-product-character-zeta",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_product_character_zeta",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-sixway-synergy-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_sixway_synergy_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-alternating-trimmed-sixway-renyi-transfer",
+   "aliases": [],
+   "function": "command_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-central-fiber-racah-information-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_central_fiber_racah_information_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-character-triangle-barrier",
+   "aliases": [],
+   "function": "command_self_dual_wreath_character_triangle_barrier",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-coherent-branching-transport-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_coherent_branching_transport_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-compressed-orientation-racah-cumulant-probe",
+   "aliases": [],
+   "function": "command_self_dual_wreath_compressed_orientation_racah_cumulant_probe",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-compressed-racah-block-probe",
+   "aliases": [],
+   "function": "command_self_dual_wreath_compressed_racah_block_probe",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-compressed-racah-coupling-probe",
+   "aliases": [],
+   "function": "command_self_dual_wreath_compressed_racah_coupling_probe",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-dense-automaton-fiber-dyadic-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_dense_automaton_fiber_dyadic_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-disjoint-grid-recoupling-falsifier",
+   "aliases": [],
+   "function": "command_self_dual_wreath_disjoint_grid_recoupling_falsifier",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-dyadic-modular-fiber-torsion-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_dyadic_modular_fiber_torsion_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-fractional-haar-enhancement-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_fractional_haar_enhancement_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-free-probability-projector-resolution-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_free_probability_projector_resolution_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-grid-quantum-marginal-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_grid_quantum_marginal_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-orientation-fixed-support-control-variate",
+   "aliases": [],
+   "function": "command_self_dual_wreath_orientation_fixed_support_control_variate",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-orientation-identity-tail-control-variate",
+   "aliases": [],
+   "function": "command_self_dual_wreath_orientation_identity_tail_control_variate",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-orientation-word-map-classical-baseline",
+   "aliases": [],
+   "function": "command_self_dual_wreath_orientation_word_map_classical_baseline",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-projector-orbit-variance",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_projector_orbit_variance",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-projector-tetrahedral-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_projector_tetrahedral_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-racah-conditional-cumulant",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_racah_conditional_cumulant",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-racah-information-projection",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_racah_information_projection",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-racah-rank-residual-decomposition",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_racah_rank_residual_decomposition",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-racah-toric-obstruction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_racah_toric_obstruction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-rank-profile-entropy-transfer",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_rank_profile_entropy_transfer",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-rank-profile-physical-transfer-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_rank_profile_physical_transfer_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-rank-profile-plancherel-mixing",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_rank_profile_plancherel_mixing",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-parity-rank-profile-trimmed-likelihood-transfer",
+   "aliases": [],
+   "function": "command_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-physical-orientation-racah-sampling",
+   "aliases": [],
+   "function": "command_self_dual_wreath_physical_orientation_racah_sampling",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-physical-outer-racah-sampling",
+   "aliases": [],
+   "function": "command_self_dual_wreath_physical_outer_racah_sampling",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-physical-recoupling-rank-pressure-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_physical_recoupling_rank_pressure_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-physical-recoupling-tetrahedral-synergy",
+   "aliases": [],
+   "function": "command_self_dual_wreath_physical_recoupling_tetrahedral_synergy",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-character-racah-fourier-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_plancherel_character_racah_fourier_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-down-up-racah-tail-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_plancherel_down_up_racah_tail_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-marginal-compatibility-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_plancherel_marginal_compatibility_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-recoupling-rank-pressure-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_plancherel_recoupling_rank_pressure_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-projected-parity-coset-kernel",
+   "aliases": [],
+   "function": "command_self_dual_wreath_projected_parity_coset_kernel",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-projected-tetrahedral-word-map",
+   "aliases": [],
+   "function": "command_self_dual_wreath_projected_tetrahedral_word_map",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-racah-entropic-delocalization-certificate",
+   "aliases": [],
+   "function": "command_self_dual_wreath_racah_entropic_delocalization_certificate",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-racah-fractional-moment-certificate",
+   "aliases": [],
+   "function": "command_self_dual_wreath_racah_fractional_moment_certificate",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-recoupling-channel-flatness-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_recoupling_channel_flatness_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-recoupling-collision-channel-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_recoupling_collision_channel_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-recoupling-dimension-certificate",
+   "aliases": [],
+   "function": "command_self_dual_wreath_recoupling_dimension_certificate",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-recoupling-haar-gap-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_recoupling_haar_gap_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-recoupling-mutual-information-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_recoupling_mutual_information_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-separating-surface-target-mixing",
+   "aliases": [],
+   "function": "command_self_dual_wreath_separating_surface_target_mixing",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-sign-orbit-kl-chain-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_sign_orbit_kl_chain_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-sign-orbit-syndrome-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_sign_orbit_syndrome_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-sign-syndrome-unconditional-decoupling",
+   "aliases": [],
+   "function": "command_self_dual_wreath_sign_syndrome_unconditional_decoupling",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-source-conditioned-channel-decoupling",
+   "aliases": [],
+   "function": "command_self_dual_wreath_source_conditioned_channel_decoupling",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-tetrahedral-chi-square-tail-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_tetrahedral_chi_square_tail_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-tetrahedral-collision-growth-scale",
+   "aliases": [],
+   "function": "command_self_dual_wreath_tetrahedral_collision_growth_scale",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-tetrahedral-dimension-trim",
+   "aliases": [],
+   "function": "command_self_dual_wreath_tetrahedral_dimension_trim",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "code-wreath-weighted-overlap-exclusion",
+   "aliases": [],
+   "function": "command_code_wreath_weighted_overlap_exclusion",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "coset-arbitrary-covariant-measurement-reduction",
+   "aliases": [],
+   "function": "command_coset_arbitrary_covariant_measurement_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-centralizer-whitening-rank-bound",
+   "aliases": [],
+   "function": "command_coset_centralizer_whitening_rank_bound",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-covariant-measurement-multiplicity-width-no-go",
+   "aliases": [],
+   "function": "command_coset_covariant_measurement_multiplicity_width_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-covariant-multiplicity-whitening-escape",
+   "aliases": [],
+   "function": "command_coset_covariant_multiplicity_whitening_escape",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-gelfand-row-orientation-no-go",
+   "aliases": [],
+   "function": "command_coset_gelfand_row_orientation_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-binary-decision-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_binary_decision_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-fourth-moment-threshold",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_fourth_moment_threshold",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-multiplicity-support-obstruction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_multiplicity_support_obstruction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-orbit-hull-twirl-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_orbit_hull_twirl_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-query-separation-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_query_separation_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-support-span-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_support_span_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-threshold-compiler-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_threshold_compiler_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hyperoctahedral-branching-polar-boundary",
+   "aliases": [],
+   "function": "command_coset_hyperoctahedral_branching_polar_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-kronecker-marginal-conservation",
+   "aliases": [],
+   "function": "command_coset_kronecker_marginal_conservation",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-measurement-copy-width-whitening-tradeoff",
+   "aliases": [],
+   "function": "command_coset_measurement_copy_width_whitening_tradeoff",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-multiplicity-whitening-copy-window",
+   "aliases": [],
+   "function": "command_coset_multiplicity_whitening_copy_window",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-perfect-matching-spherical-boundary",
+   "aliases": [],
+   "function": "command_coset_perfect_matching_spherical_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-prefix-polar-holonomy-reduction",
+   "aliases": [],
+   "function": "command_coset_prefix_polar_holonomy_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-prefix-relative-gap-inference-no-go",
+   "aliases": [],
+   "function": "command_coset_prefix_relative_gap_inference_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-restriction-principal-angle-polar-reduction",
+   "aliases": [],
+   "function": "command_coset_restriction_principal_angle_polar_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-sector-coherence-degree-no-go",
+   "aliases": [],
+   "function": "command_coset_sector_coherence_degree_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-source-weighted-frame-inversion-tradeoff",
+   "aliases": [],
+   "function": "command_coset_source_weighted_frame_inversion_tradeoff",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-whitening-rank-sandwich-no-go",
+   "aliases": [],
+   "function": "command_coset_whitening_rank_sandwich_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "dcp-adaptive-layout-uniform-entanglement-no-go",
+   "aliases": [],
+   "function": "command_dcp_adaptive_layout_uniform_entanglement_no_go",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-label-digest-audit",
+   "aliases": [],
+   "function": "command_dcp_label_digest_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-arbitrary-measurement-witness-reduction",
+   "aliases": [],
+   "function": "command_dcp_arbitrary_measurement_witness_reduction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-canonical-pgm-erasure-equivalence",
+   "aliases": [],
+   "function": "command_dcp_canonical_pgm_erasure_equivalence",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-covariant-rank-one-measurement-reduction",
+   "aliases": [],
+   "function": "command_dcp_covariant_rank_one_measurement_reduction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-four-block-ksum-noncollapse",
+   "aliases": [],
+   "function": "command_dcp_four_block_ksum_noncollapse",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-linear-depth-fiber-walk-no-go",
+   "aliases": [],
+   "function": "command_dcp_linear_depth_fiber_walk_no_go",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-low-bit-candidate-list-no-go",
+   "aliases": [],
+   "function": "command_dcp_low_bit_candidate_list_no_go",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-multiplicity-oracle-query-lower-bound",
+   "aliases": [],
+   "function": "command_dcp_multiplicity_oracle_query_lower_bound",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-per-target-stratum-obstruction",
+   "aliases": [],
+   "function": "command_dcp_per_target_stratum_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-pgm-bootstrap-perturbation-reduction",
+   "aliases": [],
+   "function": "command_dcp_pgm_bootstrap_perturbation_reduction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-pgm-garbage-bootstrap-reduction",
+   "aliases": [],
+   "function": "command_dcp_pgm_garbage_bootstrap_reduction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-polynomial-feature-contraction-no-go",
+   "aliases": [],
+   "function": "command_dcp_polynomial_feature_contraction_no_go",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-source-weighted-inversion-tradeoff",
+   "aliases": [],
+   "function": "command_dcp_source_weighted_inversion_tradeoff",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-cube-section-gap-theorem",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_cube_section_gap_theorem",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-subset-sum-sparse-character-obstruction",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_sparse_character_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-uniform-legal-multiplicity-no-go",
+   "aliases": [],
+   "function": "command_dcp_uniform_legal_multiplicity_no_go",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-varying-hms-fiber-normal-form",
+   "aliases": [],
+   "function": "command_dcp_varying_hms_fiber_normal_form",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "diagram-hidden-subalgebra-coset-no-go",
+   "aliases": [],
+   "function": "command_diagram_hidden_subalgebra_coset_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "diagram-multiplicity-source-mass-gate",
+   "aliases": [],
+   "function": "command_diagram_multiplicity_source_mass_gate",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "all-codimension-baba-no-go",
+   "aliases": [],
+   "function": "command_all_codimension_baba_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "class-uniform-commutator-moment",
+   "aliases": [],
+   "function": "command_class_uniform_commutator_moment",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "codimension-one-commuting-compression-no-go",
+   "aliases": [],
+   "function": "command_codimension_one_commuting_compression_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "codimension-two-universal-no-go",
+   "aliases": [],
+   "function": "command_codimension_two_universal_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "commutator-sector-filter-no-go",
+   "aliases": [],
+   "function": "command_commutator_sector_filter_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "component-block-coherence-boundary",
+   "aliases": [],
+   "function": "command_component_block_coherence_boundary",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "component-coefficient-projection-normal-form",
+   "aliases": [],
+   "function": "command_component_coefficient_projection_normal_form",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "component-noncrossing-lower-bound",
+   "aliases": [],
+   "function": "command_component_noncrossing_lower_bound",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "full-support-pair-budget-no-go",
+   "aliases": [],
+   "function": "command_full_support_pair_budget_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "information-set-universal-no-go",
+   "aliases": [],
+   "function": "command_information_set_universal_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "interleaved-even-parity-no-go",
+   "aliases": [],
+   "function": "command_interleaved_even_parity_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "interleaved-leaf-pressure-no-go",
+   "aliases": [],
+   "function": "command_interleaved_leaf_pressure_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "interleaved-product-lift-no-go",
+   "aliases": [],
+   "function": "command_interleaved_product_lift_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "nonsystematic-incidence-lattice-bound",
+   "aliases": [],
+   "function": "command_nonsystematic_incidence_lattice_bound",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "nonsystematic-mod-four-no-go",
+   "aliases": [],
+   "function": "command_nonsystematic_mod_four_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "nonsystematic-pair-witness-collapse",
+   "aliases": [],
+   "function": "command_nonsystematic_pair_witness_collapse",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "nonsystematic-twisted-star-no-go",
+   "aliases": [],
+   "function": "command_nonsystematic_twisted_star_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "plancherel-target-word-collapse",
+   "aliases": [],
+   "function": "command_plancherel_target_word_collapse",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "poisson-ridge-word-mixture",
+   "aliases": [],
+   "function": "command_poisson_ridge_word_mixture",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "same-support-triangle-target-no-go",
+   "aliases": [],
+   "function": "command_same_support_triangle_target_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "separator-defect-frontier",
+   "aliases": [],
+   "function": "command_separator_defect_frontier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "systematic-stopping-core-no-go",
+   "aliases": [],
+   "function": "command_systematic_stopping_core_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "translated-parity-commutator-no-go",
+   "aliases": [],
+   "function": "command_translated_parity_commutator_no_go",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "semidirect-hms-transfer-boundary",
+   "aliases": [],
+   "function": "command_semidirect_hms_transfer_boundary",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "coset-hidden-involution-support-filter-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_support_filter_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "dcp-cnot-linear-split-entanglement-no-go",
+   "aliases": [],
+   "function": "command_dcp_cnot_linear_split_entanglement_no_go",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-linear-reparameterization-affine-flat-no-go",
+   "aliases": [],
+   "function": "command_dcp_linear_reparameterization_affine_flat_no_go",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "self-dual-wreath-component-dependency-ridge-physical-curl",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_dependency_ridge_physical_curl",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-dependency-ridge-physical-hamming",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_dependency_ridge_physical_hamming",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-dependency-ridge-physical-spectrum",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_dependency_ridge_physical_spectrum",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-dependency-ridge-single-frame-tail",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_dependency_ridge_single_frame_tail",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-diagonal-leakage-bridge",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_diagonal_leakage_bridge",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-leaf-fourier-commutator-duality",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_leaf_fourier_commutator_duality",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-leaf-fourier-leverage",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_leaf_fourier_leverage",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-leaf-fourier-strata",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_leaf_fourier_strata",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-m4-operational-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_m4_operational_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-polar-traffic-curl",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_polar_traffic_curl",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-single-leaf-diagonal-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_single_leaf_diagonal_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-size-biased-effect-law",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_size_biased_effect_law",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-parent-coherence-witness",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_parent_coherence_witness",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-pgm-coarse-graining",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_pgm_coarse_graining",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-stabilizer-collision-free-kernel",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_stabilizer_collision_free_kernel",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-stabilizer-quotient",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_stabilizer_quotient",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-standard-energy",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_standard_energy",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-young-star-naimark",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_young_star_naimark",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-recursive-kernel-isometry",
+   "aliases": [],
+   "function": "command_self_dual_wreath_recursive_kernel_isometry",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-reversible-automaton-fiber-collapse",
+   "aliases": [],
+   "function": "command_self_dual_wreath_reversible_automaton_fiber_collapse",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-shared-pair-recoupling-decoupling",
+   "aliases": [],
+   "function": "command_self_dual_wreath_shared_pair_recoupling_decoupling",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-sibling-frame-all-fixed-joint",
+   "aliases": [],
+   "function": "command_self_dual_wreath_sibling_frame_all_fixed_joint",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-sibling-frame-all-fixed-mp",
+   "aliases": [],
+   "function": "command_self_dual_wreath_sibling_frame_all_fixed_mp",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-sign-twist-collective-activation",
+   "aliases": [],
+   "function": "command_self_dual_wreath_sign_twist_collective_activation",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "coset-strong-fourier-information",
+   "aliases": [],
+   "function": "command_coset_strong_fourier_information",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-entanglement-width",
+   "aliases": [],
+   "function": "command_coset_entanglement_width_gate",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-growing-width-architecture",
+   "aliases": [],
+   "function": "command_coset_growing_width_architecture",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-two-copy-transitions",
+   "aliases": [],
+   "function": "command_coset_two_copy_transitions",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-three-copy-recoupling",
+   "aliases": [],
+   "function": "command_coset_three_copy_recoupling",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-recoupling-capabilities",
+   "aliases": [],
+   "function": "command_coset_recoupling_capabilities",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-jm-labels",
+   "aliases": [],
+   "function": "command_coset_jm_labels",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-multiplicity-commutant",
+   "aliases": [],
+   "function": "command_coset_multiplicity_commutant",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-commutant-gap-scaling",
+   "aliases": [],
+   "function": "command_coset_commutant_gap_scaling",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-commutant-gap-proof",
+   "aliases": [],
+   "function": "command_coset_commutant_gap_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-control",
+   "aliases": [],
+   "function": "command_coset_racah_control",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-complete-control",
+   "aliases": [],
+   "function": "command_coset_racah_complete_control",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-hierarchical-control",
+   "aliases": [],
+   "function": "command_coset_racah_hierarchical_control",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-gap-scaling",
+   "aliases": [],
+   "function": "command_coset_racah_gap_scaling",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-sparse-gap",
+   "aliases": [],
+   "function": "command_coset_racah_sparse_gap",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-trace-conjecture",
+   "aliases": [],
+   "function": "command_coset_racah_trace_conjecture",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-trace-proof",
+   "aliases": [],
+   "function": "command_coset_racah_trace_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-second-moment-proof",
+   "aliases": [],
+   "function": "command_coset_racah_second_moment_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-third-moment-proof",
+   "aliases": [],
+   "function": "command_coset_racah_third_moment_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-fourth-moment-proof",
+   "aliases": [],
+   "function": "command_coset_racah_fourth_moment_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-root-separation-proof",
+   "aliases": [],
+   "function": "command_coset_racah_root_separation_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-coherent-label-proof",
+   "aliases": [],
+   "function": "command_coset_racah_coherent_label_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-transition",
+   "aliases": [],
+   "function": "command_coset_racah_stable_transition",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-complementary-sectors",
+   "aliases": [],
+   "function": "command_coset_racah_complementary_sectors",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-proof",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_proof",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-labels",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_labels",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-traces",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_traces",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-second-moments",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_second_moments",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-cubic-determinant",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_cubic_determinant",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-quadratic-gaps",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_quadratic_gaps",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-cubic-gap",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_cubic_gap",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-coherent-labels",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_coherent_labels",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-first-stage-labels",
+   "aliases": [],
+   "function": "command_coset_racah_stable_first_stage_labels",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-shape-router",
+   "aliases": [],
+   "function": "command_coset_racah_stable_shape_router",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-encoded-tree",
+   "aliases": [],
+   "function": "command_coset_racah_stable_encoded_tree",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-three-copy-frame",
+   "aliases": [],
+   "function": "command_coset_racah_stable_three_copy_frame",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-three-copy-frame-conditioning",
+   "aliases": [],
+   "function": "command_coset_racah_stable_three_copy_frame_conditioning",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-stable-branch-access",
+   "aliases": [],
+   "function": "command_coset_racah_stable_branch_access",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-irrep-transfer",
+   "aliases": [],
+   "function": "command_coset_racah_typical_irrep_transfer",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-commutant-moments",
+   "aliases": [],
+   "function": "command_coset_racah_typical_commutant_moments",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-class-contraction",
+   "aliases": [],
+   "function": "command_coset_racah_typical_class_contraction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-portfolio-collision",
+   "aliases": [],
+   "function": "command_coset_racah_typical_portfolio_collision",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-third-generator",
+   "aliases": [],
+   "function": "command_coset_racah_typical_third_generator",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-high-multiplicity",
+   "aliases": [],
+   "function": "command_coset_racah_typical_high_multiplicity",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-separator-gaps",
+   "aliases": [],
+   "function": "command_coset_racah_typical_separator_gaps",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-n9-probe",
+   "aliases": [],
+   "function": "command_coset_racah_typical_n9_probe",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-n9-full",
+   "aliases": [],
+   "function": "command_coset_racah_typical_n9_full",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-n10-feasibility",
+   "aliases": [],
+   "function": "command_coset_racah_typical_n10_feasibility",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-support-growth",
+   "aliases": [],
+   "function": "command_coset_racah_typical_support_growth",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-invariant-contraction",
+   "aliases": [],
+   "function": "command_coset_racah_typical_invariant_contraction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-yjm-projector",
+   "aliases": [],
+   "function": "command_coset_racah_typical_yjm_projector",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-modular-yjm",
+   "aliases": [],
+   "function": "command_coset_racah_typical_modular_yjm",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-modular-gaps",
+   "aliases": [],
+   "function": "command_coset_racah_typical_modular_gaps",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-n10-gap-trend",
+   "aliases": [],
+   "function": "command_coset_racah_typical_n10_gap_trend",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-source-coverage",
+   "aliases": [],
+   "function": "command_coset_racah_typical_source_coverage",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-uniform-sources",
+   "aliases": [],
+   "function": "command_coset_racah_typical_uniform_sources",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-parity-separator",
+   "aliases": [],
+   "function": "command_coset_racah_typical_parity_separator",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-racah-typical-parity-holdout",
+   "aliases": [],
+   "function": "command_coset_racah_typical_parity_holdout",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-recoupling-synthesize",
+   "aliases": [],
+   "function": "command_coset_recoupling_synthesize",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "cfi-code-reduction",
+   "aliases": [],
+   "function": "command_cfi_code_reduction",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "code-hull-projector",
+   "aliases": [],
+   "function": "command_code_hull_projector",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-equivalence",
+   "aliases": [],
+   "function": "command_code_equivalence",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-invariants",
+   "aliases": [],
+   "function": "command_code_invariants",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-info-sets",
+   "aliases": [],
+   "function": "command_code_info_sets",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-canonicalize",
+   "aliases": [],
+   "function": "command_code_canonicalize",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-profile-search",
+   "aliases": [],
+   "function": "command_code_profile_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-tuple-profiles",
+   "aliases": [],
+   "function": "command_code_tuple_profiles",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-low-weight",
+   "aliases": [],
+   "function": "command_code_low_weight",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-qc-search",
+   "aliases": [],
+   "function": "command_code_qc_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-qc-canonicalize",
+   "aliases": [],
+   "function": "command_code_qc_canonicalize",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-qc-info-resolve",
+   "aliases": [],
+   "function": "command_code_qc_info_resolve",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-cyclic-search",
+   "aliases": [],
+   "function": "command_code_cyclic_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-bch-search",
+   "aliases": [],
+   "function": "command_code_bch_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-goppa-search",
+   "aliases": [],
+   "function": "command_code_goppa_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-goppa-scaling",
+   "aliases": [],
+   "function": "command_code_goppa_scaling",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-goppa-syzygies",
+   "aliases": [],
+   "function": "command_code_goppa_syzygies",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-goppa-projectors",
+   "aliases": [],
+   "function": "command_code_goppa_projectors",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-tanner-search",
+   "aliases": [],
+   "function": "command_code_tanner_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-rm-search",
+   "aliases": [],
+   "function": "command_code_reed_muller_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-rank-metric-search",
+   "aliases": [],
+   "function": "command_code_rank_metric_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-incidence-resolve",
+   "aliases": [],
+   "function": "command_code_incidence_resolve",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-ag-search",
+   "aliases": [],
+   "function": "command_code_affine_geometry_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-pg-search",
+   "aliases": [],
+   "function": "command_code_projective_geometry_search",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-schur-filtration",
+   "aliases": [
+    "code-schur"
+   ],
+   "function": "command_code_schur_filtration",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-closure-attack",
+   "aliases": [
+    "code-closure"
+   ],
+   "function": "command_code_closure_attack",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "code-triage",
+   "aliases": [],
+   "function": "command_code_triage",
+   "module": "qsearch_cli.commands.code"
+  },
+  {
+   "name": "dequantize",
+   "aliases": [],
+   "function": "command_dequantize",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "baselines",
+   "aliases": [],
+   "function": "command_baselines",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "query-lower-bounds",
+   "aliases": [
+    "hidden-shift-lower-bounds"
+   ],
+   "function": "command_query_lower_bounds",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "learnability",
+   "aliases": [],
+   "function": "command_learnability",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "fourier-learnability",
+   "aliases": [
+    "compressibility"
+   ],
+   "function": "command_fourier_learnability",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "character-shift",
+   "aliases": [],
+   "function": "command_character_shift",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "character-decoders",
+   "aliases": [],
+   "function": "command_character_decoders",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "character-lower-bound",
+   "aliases": [
+    "character-decoding-lower-bound"
+   ],
+   "function": "command_character_lower_bound",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "character-query-info",
+   "aliases": [
+    "character-query-information"
+   ],
+   "function": "command_character_query_info",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "character-moments",
+   "aliases": [
+    "character-moment-obstruction"
+   ],
+   "function": "command_character_moments",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "character-complexity",
+   "aliases": [],
+   "function": "command_character_complexity",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "phase-naturalness",
+   "aliases": [],
+   "function": "command_phase_naturalness",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "trace-functions",
+   "aliases": [],
+   "function": "command_trace_functions",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "family-triage",
+   "aliases": [],
+   "function": "command_family_triage",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "run",
+   "aliases": [],
+   "function": "command_run",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "run-next",
+   "aliases": [],
+   "function": "command_run_next",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "trends",
+   "aliases": [],
+   "function": "command_trends",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "proofs",
+   "aliases": [],
+   "function": "command_proofs",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "proof-routes",
+   "aliases": [],
+   "function": "command_proof_routes",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "reductions",
+   "aliases": [],
+   "function": "command_reductions",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "coset-hidden-involution-all-copy-target-lcu-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_all_copy_target_lcu_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-bounded-support-commutant-generation",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_bounded_support_commutant_generation",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-colour-resolved-paired-tower-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_colour_resolved_paired_tower_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-commutant-support-growth-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_commutant_support_growth_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-commuting-square-recoupling-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_commuting_square_recoupling_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-cross-transposition-hecke-degree-five-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_cross_transposition_hecke_degree_five_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-cross-transposition-hecke-moment-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_cross_transposition_hecke_moment_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-diagonal-charge-bias-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_diagonal_charge_bias_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-double-coset-polar-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_double_coset_polar_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-hyperoctahedral-branching-mass",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_hyperoctahedral_branching_mass",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-joint-primitive-ambient-lift-obstruction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_joint_primitive_ambient_lift_obstruction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-joint-primitive-representation-cone-obstruction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_joint_primitive_representation_cone_obstruction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-coherent-label-compiler",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_coherent_label_compiler",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-conditional-diameter",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_conditional_diameter",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-cs-correlation",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_cs_correlation",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-natural-independence",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_natural_independence",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-orbit-recoupling-reduction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_orbit_recoupling_reduction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-pairwise-kernel-dequantization",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_pairwise_kernel_dequantization",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-target-gauge-trivialization",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_target_gauge_trivialization",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-matching-charge-word-moment-dequantization",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_matching_charge_word_moment_dequantization",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-mixed-hecke-word-lcu-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_mixed_hecke_word_lcu_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-natural-matrix-multiplicity",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_natural_matrix_multiplicity",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-natural-recoupling-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_natural_recoupling_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-normalized-likelihood-charge-commutator-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_normalized_likelihood_charge_commutator_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-occupied-matrix-rank",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_occupied_matrix_rank",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-pair-gaudin-hierarchy",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_pair_gaudin_hierarchy",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-pair-matching-charge-hierarchy",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_pair_matching_charge_hierarchy",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-paired-tower-joint-primitive-projector",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_paired_tower_joint_primitive_projector",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-paired-tower-missing-label-boundary",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_paired_tower_missing_label_boundary",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-physical-target-convolution-normal-form",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_physical_target_convolution_normal_form",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-plancherel-local-commutant-certificate",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_plancherel_local_commutant_certificate",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-rank-tracking-commutant-witness",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_rank_tracking_commutant_witness",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-multiplicity-twirl-projection",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_multiplicity_twirl_projection",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-multiplicity-fiber-trace",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_multiplicity_fiber_trace",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-high-mass-support-scan",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_high_mass_support_scan",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-source-weighted-support-portfolio",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_source_weighted_support_portfolio",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-spectral-label-budget",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_spectral_label_budget",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-signed-tensor-access",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_signed_tensor_access",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-encoded-restriction",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_encoded_restriction",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-reference-twirl-information",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_reference_twirl_information",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-binary-carrier-instruments",
+   "aliases": [],
+   "function": "command_coset_binary_carrier_instruments",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-overlap-transfer",
+   "aliases": [],
+   "function": "command_coset_overlap_transfer",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-overlap-echo",
+   "aliases": [],
+   "function": "command_coset_overlap_echo",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-missing-harmonic",
+   "aliases": [],
+   "function": "command_coset_missing_harmonic_detector",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-natural-support-six-mass-audit",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_natural_support_six_mass_audit",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-shared-conjugation-qsvt-lower-bound",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_shared_conjugation_qsvt_lower_bound",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-single-hecke-all-degree-moment-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_single_hecke_all_degree_moment_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-single-hecke-bounded-spectral-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_single_hecke_bounded_spectral_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-source-local-likelihood-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_source_local_likelihood_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-stable-support-six-certificate",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_stable_support_six_certificate",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-standard-block-recoupling",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_standard_block_recoupling",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-target-interference-negativity-barrier",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_target_interference_negativity_barrier",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-trimmed-row-block-encoding-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_trimmed_row_block_encoding_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-trimmed-row-kernel-succinctness",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_trimmed_row_kernel_succinctness",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "coset-hidden-involution-two-subgroup-projector-algebra-no-go",
+   "aliases": [],
+   "function": "command_coset_hidden_involution_two_subgroup_projector_algebra_no_go",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "self-dual-wreath-component-direct-naimark-polar-equivalence",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_direct_naimark_polar_equivalence",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-component-polar-physical-pgm-closure",
+   "aliases": [],
+   "function": "command_self_dual_wreath_component_polar_physical_pgm_closure",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-connected-clifford-normal-form",
+   "aliases": [],
+   "function": "command_self_dual_wreath_connected_clifford_normal_form",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-connected-quotient-heisenberg-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_connected_quotient_heisenberg_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-gpe-fusion-tree-cs-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_gpe_fusion_tree_cs_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-latent-master-polar-tradeoff",
+   "aliases": [],
+   "function": "command_self_dual_wreath_latent_master_polar_tradeoff",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-mrs-identification-escape-theorem",
+   "aliases": [],
+   "function": "command_self_dual_wreath_mrs_identification_escape_theorem",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-orientation-fixed-space-recoupling",
+   "aliases": [],
+   "function": "command_self_dual_wreath_orientation_fixed_space_recoupling",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-orientation-homogeneous-space-polar",
+   "aliases": [],
+   "function": "command_self_dual_wreath_orientation_homogeneous_space_polar",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-orientation-syndrome-component-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_orientation_syndrome_component_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-pair-relation-common-support-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_pair_relation_common_support_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-pair-sheaf-metric-incompatibility",
+   "aliases": [],
+   "function": "command_self_dual_wreath_pair_sheaf_metric_incompatibility",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-centered-residual-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_centered_residual_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-child-star-relative-collision",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_child_star_relative_collision",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-copy-threshold",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_copy_threshold",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-critical-energy-separation",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_critical_energy_separation",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-point-critical-identity-atom",
+   "aliases": [],
+   "function": "command_self_dual_wreath_point_critical_identity_atom",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-regular-master-walsh-flatness-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_regular_master_walsh_flatness_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-source-adaptive-walsh-collision-reduction",
+   "aliases": [],
+   "function": "command_self_dual_wreath_source_adaptive_walsh_collision_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-source-block-branch-covariance-boundary",
+   "aliases": [],
+   "function": "command_self_dual_wreath_source_block_branch_covariance_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-source-order-gauge-canonicalization",
+   "aliases": [],
+   "function": "command_self_dual_wreath_source_order_gauge_canonicalization",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-trace-biased-adaptive-walsh-no-go",
+   "aliases": [],
+   "function": "command_self_dual_wreath_trace_biased_adaptive_walsh_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "reduction-contracts",
+   "aliases": [],
+   "function": "command_reduction_contracts",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "proof-queue",
+   "aliases": [],
+   "function": "command_proof_queue",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "sweep",
+   "aliases": [],
+   "function": "command_sweep",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "conjectures",
+   "aliases": [],
+   "function": "command_conjectures",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "mutate",
+   "aliases": [],
+   "function": "command_mutate",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "quarantine-invalid",
+   "aliases": [],
+   "function": "command_quarantine_invalid",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "blockers",
+   "aliases": [],
+   "function": "command_blockers",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "frontiers",
+   "aliases": [],
+   "function": "command_frontiers",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "query-models",
+   "aliases": [],
+   "function": "command_query_models",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ingest-papers",
+   "aliases": [],
+   "function": "command_ingest_papers",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "propose",
+   "aliases": [],
+   "function": "command_propose",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "self-dual-wreath-final-root-addressed-weyl-assembly-boundary",
+   "aliases": [],
+   "function": "command_sdw_final_root_addressed_weyl_assembly_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-recursive-polar-normalization-conservation-boundary",
+   "aliases": [],
+   "function": "command_sdw_recursive_polar_normalization_conservation_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-affine-gpe-nodelocal-naimark-access-boundary",
+   "aliases": [],
+   "function": "command_sdw_affine_gpe_nodelocal_naimark_access_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-positive-naimark-access-equivalence-boundary",
+   "aliases": [],
+   "function": "command_sdw_positive_naimark_access_equivalence_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-hierarchical-endpoint-schur-algebra-boundary",
+   "aliases": [],
+   "function": "command_sdw_hierarchical_endpoint_schur_algebra_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-affine-flag-aggregate-schur-query-boundary",
+   "aliases": [],
+   "function": "command_sdw_affine_flag_aggregate_schur_query_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-affine-node-frame-response-boundary",
+   "aliases": [],
+   "function": "command_sdw_affine_node_frame_response_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-cayley-endpoint-gauge-compiler",
+   "aliases": [],
+   "function": "command_sdw_cayley_endpoint_gauge_compiler",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-affine-star-cayley-compiler",
+   "aliases": [],
+   "function": "command_sdw_affine_star_cayley_compiler",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-pair-carrier-label-contextuality",
+   "aliases": [],
+   "function": "command_sdw_pair_carrier_label_contextuality",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-occupied-carrier-octahedral-boundary",
+   "aliases": [],
+   "function": "command_sdw_occupied_carrier_octahedral_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-carrier-contextuality",
+   "aliases": [],
+   "function": "command_sdw_plancherel_carrier_contextuality",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-carrier-nonidentity-tail",
+   "aliases": [],
+   "function": "command_sdw_plancherel_carrier_nonidentity_tail",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-carrier-near-derangement-reduction",
+   "aliases": [],
+   "function": "command_sdw_plancherel_carrier_near_derangement_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-carrier-asymptotic-closure",
+   "aliases": [],
+   "function": "command_sdw_plancherel_carrier_asymptotic_closure",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-carrier-racah-access-boundary",
+   "aliases": [],
+   "function": "command_sdw_plancherel_carrier_racah_access_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-carrier-noncentral-readout-boundary",
+   "aliases": [],
+   "function": "command_sdw_carrier_noncentral_readout_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-carrier-conditioned-pgm-boundary",
+   "aliases": [],
+   "function": "command_sdw_carrier_conditioned_pgm_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-carrier-holevo-budget-theorem",
+   "aliases": [],
+   "function": "command_sdw_carrier_holevo_budget_theorem",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-carrier-branch-pgm-success-certificate",
+   "aliases": [],
+   "function": "command_sdw_carrier_branch_pgm_success_certificate",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-disjoint-pair-branch-pgm-compiler-boundary",
+   "aliases": [],
+   "function": "command_sdw_disjoint_pair_branch_pgm_compiler_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-disjoint-pair-covariance-polar-reduction",
+   "aliases": [],
+   "function": "command_sdw_disjoint_pair_covariance_polar_reduction",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-dimensionless-pgm-truncation-bridge",
+   "aliases": [],
+   "function": "command_sdw_dimensionless_pgm_truncation_bridge",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-local-block-metric-normalization-no-go",
+   "aliases": [],
+   "function": "command_sdw_local_block_metric_normalization_no_go",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "self-dual-wreath-scale-free-endpoint-graph-transfer-boundary",
+   "aliases": [],
+   "function": "command_sdw_scale_free_endpoint_graph_transfer_boundary",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "ternary-pair-lattice",
+   "aliases": [],
+   "function": "command_ternary_pair_lattice",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ternary-pair-collimation",
+   "aliases": [],
+   "function": "command_ternary_pair_collimation",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ternary-pair-cell-coverage",
+   "aliases": [],
+   "function": "command_ternary_pair_cell_coverage",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ternary-curvature-frontier",
+   "aliases": [],
+   "function": "command_ternary_curvature_frontier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ternary-cyclic-extractor",
+   "aliases": [],
+   "function": "command_ternary_cyclic_extractor",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ternary-posterior-dual",
+   "aliases": [],
+   "function": "command_ternary_posterior_dual",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ternary-least-trit-bootstrap",
+   "aliases": [],
+   "function": "command_ternary_least_trit_bootstrap",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "ternary-covariant-noise",
+   "aliases": [],
+   "function": "command_ternary_covariant_noise",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "parity-block-usd-prange",
+   "aliases": [],
+   "function": "command_parity_block_usd_prange",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "linear-erasure-prange-duality",
+   "aliases": [],
+   "function": "command_linear_erasure_prange_duality",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "parity-block-med-lpn-barrier",
+   "aliases": [],
+   "function": "command_parity_block_med_lpn_barrier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "nil3-state-hsp-descent-receiver",
+   "aliases": [],
+   "function": "command_nil3_state_hsp_descent_receiver",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-babai-deviation-depth-barrier",
+   "aliases": [],
+   "function": "command_dcp_babai_deviation_depth_barrier",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "wreath-orientation-gram-norm",
+   "aliases": [],
+   "function": "command_wreath_orientation_gram_norm",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "native-recovery-capacity",
+   "aliases": [],
+   "function": "command_native_recovery_capacity",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-gaussian-bank-robustness",
+   "aliases": [],
+   "function": "command_native_gaussian_bank_robustness",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-history-erasure-dequantization",
+   "aliases": [],
+   "function": "command_native_history_erasure_dequantization",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "wreath-coset-permutation-holevo-collapse",
+   "aliases": [],
+   "function": "command_wreath_coset_permutation_holevo_collapse",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-two-adic-carry-fragmentation-barrier",
+   "aliases": [],
+   "function": "command_dcp_two_adic_carry_fragmentation_barrier",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "coset-multiplicity-carrier-trilemma",
+   "aliases": [],
+   "function": "command_coset_multiplicity_carrier_trilemma",
+   "module": "qsearch_cli.commands.coset"
+  },
+  {
+   "name": "self-dual-wreath-plancherel-mass-extinction-barrier",
+   "aliases": [],
+   "function": "command_self_dual_wreath_plancherel_mass_extinction_barrier",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "character-shift-decoding-lower-bound-barrier",
+   "aliases": [],
+   "function": "command_character_shift_decoding_lower_bound_barrier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-general-povm-secret-variance-collapse",
+   "aliases": [],
+   "function": "command_dcp_general_povm_secret_variance_collapse",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "self-dual-wreath-naimark-compressed-permutation-barrier",
+   "aliases": [],
+   "function": "command_self_dual_wreath_naimark_compressed_permutation_barrier",
+   "module": "qsearch_cli.commands.self_dual_wreath"
+  },
+  {
+   "name": "dihedral-coset-chirp-aliasing-spectral-flatness-barrier",
+   "aliases": [],
+   "function": "command_dihedral_coset_chirp_aliasing_spectral_flatness_barrier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "cfi-graph-coset-luks-subsumption-barrier",
+   "aliases": [],
+   "function": "command_cfi_graph_coset_luks_subsumption_barrier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "godsil-mckay-cospectral-tensor-invariance-barrier",
+   "aliases": [],
+   "function": "command_godsil_mckay_cospectral_tensor_invariance_barrier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "rowspace-rref-gauge-elimination-fourier-extinction-barrier",
+   "aliases": [],
+   "function": "command_rowspace_rref_gauge_elimination_fourier_extinction_barrier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-subset-sum-euclidean-volume-inflation-barrier",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_euclidean_volume_inflation_barrier",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-basis-lottery",
+   "aliases": [],
+   "function": "command_native_basis_lottery",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-recursive-quotient-audit",
+   "aliases": [],
+   "function": "command_native_recursive_quotient_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-source-refresh",
+   "aliases": [],
+   "function": "command_native_source_refresh",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-prefix-ambiguity-pruning",
+   "aliases": [],
+   "function": "command_native_prefix_ambiguity_pruning",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "dcp-bad-register-audit",
+   "aliases": [],
+   "function": "command_dcp_bad_register_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-physical-bad-register-lineage",
+   "aliases": [],
+   "function": "command_dcp_bad_register_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-syndrome-dilation",
+   "aliases": [],
+   "function": "command_native_syndrome_dilation",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-word-collision-symmetry",
+   "aliases": [],
+   "function": "command_native_word_collision_symmetry",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-word-spectral-filter-audit",
+   "aliases": [],
+   "function": "command_native_word_spectral_filter_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-refresh-crossover-scope-audit",
+   "aliases": [],
+   "function": "command_native_refresh_crossover_scope_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-refresh-lottery-crossover",
+   "aliases": [],
+   "function": "command_native_refresh_lottery_crossover",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-gaussian-dither-sampler",
+   "aliases": [],
+   "function": "command_native_gaussian_dither_sampler",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-interleaved-syndrome-work-audit",
+   "aliases": [],
+   "function": "command_native_interleaved_syndrome_work_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "dcp-collective-majority-purification-audit",
+   "aliases": [],
+   "function": "command_dcp_collective_majority_purification_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-response-path-valuation",
+   "aliases": [],
+   "function": "command_native_response_path_valuation",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-mp12-prime-power-search-to-decision-audit",
+   "aliases": [],
+   "function": "command_native_mp12_prime_power_search_to_decision_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-response-fourier-factorization-audit",
+   "aliases": [],
+   "function": "command_native_response_fourier_factorization_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "native-banded-qft-baseline",
+   "aliases": [],
+   "function": "command_native_banded_qft_baseline",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-source",
+   "aliases": [],
+   "function": "command_planted_qary_source",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "native-response-mpo-baseline",
+   "aliases": [],
+   "function": "command_native_response_mpo_baseline",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "dcp-latent-error-access",
+   "aliases": [],
+   "function": "command_dcp_latent_error_access",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-complex-axis-readout",
+   "aliases": [],
+   "function": "command_dcp_complex_axis_readout",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-correlated-block-observables",
+   "aliases": [],
+   "function": "command_dcp_correlated_block_observables",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-pairing-composition-barrier",
+   "aliases": [],
+   "function": "command_dcp_pairing_composition_barrier",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-correlated-phase-block",
+   "aliases": [],
+   "function": "command_dcp_correlated_phase_block",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-native-tree-variance-cap",
+   "aliases": [],
+   "function": "command_dcp_native_tree_variance_cap",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-oblivious-tree-merge",
+   "aliases": [],
+   "function": "command_dcp_oblivious_tree_merge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-native-tree-receiver",
+   "aliases": [],
+   "function": "command_dcp_native_tree_receiver",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-native-tree-moment-audit",
+   "aliases": [],
+   "function": "command_dcp_native_tree_moment_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-vector-short-mask-join",
+   "aliases": [],
+   "function": "command_dcp_vector_short_mask_join",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-noise-matched-source",
+   "aliases": [],
+   "function": "command_dcp_noise_matched_source",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-disjoint-kernel-pairing",
+   "aliases": [],
+   "function": "command_dcp_disjoint_kernel_pairing",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-affine-fiber-rigidity",
+   "aliases": [],
+   "function": "command_dcp_affine_fiber_rigidity",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-nonlinear-fiber-pairing",
+   "aliases": [],
+   "function": "command_dcp_nonlinear_fiber_pairing",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-affine-packet-noise",
+   "aliases": [],
+   "function": "command_dcp_affine_packet_noise",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-adaptive-affine-packet-receiver",
+   "aliases": [],
+   "function": "command_dcp_adaptive_affine_packet_receiver",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-adaptive-direction-rank-gate",
+   "aliases": [],
+   "function": "command_dcp_adaptive_direction_rank_gate",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-carry-congruence-source",
+   "aliases": [],
+   "function": "command_dcp_carry_congruence_source",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-paid-tree-receiver",
+   "aliases": [],
+   "function": "command_dcp_paid_tree_receiver",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "lattice-localization-gap-frontier",
+   "aliases": [],
+   "function": "command_lattice_localization_gap_frontier",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "lattice-sine-window-source",
+   "aliases": [],
+   "function": "command_lattice_sine_window_source",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "native-banded-qft-transfer-matrix-audit",
+   "aliases": [],
+   "function": "command_native_banded_qft_transfer_matrix_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "lattice-cube-coset-source",
+   "aliases": [],
+   "function": "command_lattice_cube_coset_source",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "lattice-cube-source-circuit",
+   "aliases": [],
+   "function": "command_lattice_cube_source_circuit",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "lattice-cube-dcp-readout",
+   "aliases": [],
+   "function": "command_lattice_cube_dcp_readout",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "lattice-qft-precision",
+   "aliases": [],
+   "function": "command_lattice_qft_precision",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "planted-qary-cube-basis-coordinate-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_cube_basis_coordinate_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-noisy-fourier-likelihood-decoder-audit",
+   "aliases": [],
+   "function": "command_dcp_noisy_fourier_likelihood_decoder_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-signed-path-valuation-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_signed_path_valuation_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "lattice-qft-cutoff-phase-fidelity-bridge",
+   "aliases": [],
+   "function": "command_lattice_qft_cutoff_phase_fidelity_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "planted-qary-cdkm-adder-sparsity-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_cdkm_adder_sparsity_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "planted-qary-offset-pair-mass-frontier-audit",
+   "aliases": [],
+   "function": "command_planted_qary_offset_pair_mass_frontier_audit",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-adaptive-quadrature-tree-sieve-audit",
+   "aliases": [],
+   "function": "command_dcp_adaptive_quadrature_tree_sieve_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-prime-power-survival-closed-form",
+   "aliases": [],
+   "function": "command_native_higher_call_prime_power_survival_closed_form",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-classical-attack-threshold-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_classical_attack_threshold_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-truncated-qft-tree-merge-joint-channel-audit",
+   "aliases": [],
+   "function": "command_dcp_truncated_qft_tree_merge_joint_channel_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-weighted-fourier-pinching-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_weighted_fourier_pinching_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-multiprobe-gl-rank-saturation-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_multiprobe_gl_rank_saturation_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-noisy-tree-merge-error-propagation-audit",
+   "aliases": [],
+   "function": "command_dcp_noisy_tree_merge_error_propagation_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-prime-power-divisibility-hierarchy-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_prime_power_divisibility_hierarchy_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-coset-shift-fourier-bias-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_coset_shift_fourier_bias_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-pgm-fidelity-window-threshold-audit",
+   "aliases": [],
+   "function": "command_dcp_pgm_fidelity_window_threshold_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-kronecker-moment-rank-bridge",
+   "aliases": [],
+   "function": "command_native_higher_call_kronecker_moment_rank_bridge",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-second-moment-probe-variance-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_second_moment_probe_variance_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-interleaved-tree-merge-syndrome-pruning-audit",
+   "aliases": [],
+   "function": "command_dcp_interleaved_tree_merge_syndrome_pruning_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-commutant-trace-orthogonality-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_commutant_trace_orthogonality_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-noisy-parity-check-likelihood-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_noisy_parity_check_likelihood_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-multi-harmonic-weighted-fisher-decoder-audit",
+   "aliases": [],
+   "function": "command_dcp_multi_harmonic_weighted_fisher_decoder_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-two-copy-swap-purity-bridge",
+   "aliases": [],
+   "function": "command_native_higher_call_two_copy_swap_purity_bridge",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-dual-intersection-cascade-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_dual_intersection_cascade_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-quadrature-conjugate-pair-holevo-audit",
+   "aliases": [],
+   "function": "command_dcp_quadrature_conjugate_pair_holevo_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-error-table-gauge-invariance-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_error_table_gauge_invariance_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-noisy-dual-intersection-false-negative-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_noisy_dual_intersection_false_negative_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-two-copy-cnot-difference-alignment-audit",
+   "aliases": [],
+   "function": "command_dcp_two_copy_cnot_difference_alignment_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-time-reversal-schedule-duality-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_time_reversal_schedule_duality_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-multiproduct-k-copy-dual-tensor-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_multiproduct_k_copy_dual_tensor_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-subset-sum-modular-collision-entropy-audit",
+   "aliases": [],
+   "function": "command_dcp_subset_sum_modular_collision_entropy_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-word-permutation-covariance-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_word_permutation_covariance_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "planted-qary-punctured-coordinate-projection-bridge",
+   "aliases": [],
+   "function": "command_planted_qary_punctured_coordinate_projection_bridge",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-cyclic-subgroup-quotient-aliasing-audit",
+   "aliases": [],
+   "function": "command_dcp_cyclic_subgroup_quotient_aliasing_audit",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "native-higher-call-secret-subspace-restriction-audit",
+   "aliases": [],
+   "function": "command_native_higher_call_secret_subspace_restriction_audit",
+   "module": "qsearch_cli.commands.native"
+  },
+  {
+   "name": "dcp-clean-linear-witness-carry-obstruction",
+   "aliases": [],
+   "function": "command_dcp_clean_linear_witness_carry_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-babai-lattice-rounding-witness-obstruction",
+   "aliases": [],
+   "function": "command_dcp_babai_lattice_rounding_witness_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-product-sine-source-coordinate-marginal-obstruction",
+   "aliases": [],
+   "function": "command_dcp_product_sine_source_coordinate_marginal_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-poly-pool-cnot-collimation-branching-obstruction",
+   "aliases": [],
+   "function": "command_dcp_poly_pool_cnot_collimation_branching_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-sine-window-public-basis-lll-dominance-bridge",
+   "aliases": [],
+   "function": "command_dcp_sine_window_public_basis_lll_dominance_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-iqp-bounded-degree-carry-orthogonality-obstruction",
+   "aliases": [],
+   "function": "command_dcp_iqp_bounded_degree_carry_orthogonality_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-disjoint-tree-wire-capacity-tradeoff-obstruction",
+   "aliases": [],
+   "function": "command_dcp_disjoint_tree_wire_capacity_tradeoff_obstruction",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-prefix-peeling-error-propagation-union-bridge",
+   "aliases": [],
+   "function": "command_dcp_prefix_peeling_error_propagation_union_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "ternary-cubic-syndrome-twirl-reflection-collapse",
+   "aliases": [],
+   "function": "command_ternary_cubic_syndrome_twirl_reflection_collapse",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "prime-character-capacity-source",
+   "aliases": [],
+   "function": "command_prime_character_capacity_source",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "prime-character-finite-readout",
+   "aliases": [],
+   "function": "command_prime_character_finite_readout",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "dcp-grand-synthesis-50-subsystem-taxonomy-and-frontier-bridge",
+   "aliases": [],
+   "function": "command_dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-non-stationary-markov-drift-secret-tracking-kalman-bridge",
+   "aliases": [],
+   "function": "command_dcp_non_stationary_markov_drift_secret_tracking_kalman_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-quantum-z-error-detection-stabilizer-iceberg-code-bridge",
+   "aliases": [],
+   "function": "command_dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-short-integer-solution-sis-dual-homomorphic-trapdoor-bridge",
+   "aliases": [],
+   "function": "command_dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-haar-random-vs-dihedral-2-design-frame-potential-bridge",
+   "aliases": [],
+   "function": "command_dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-kitaev-phase-estimation-hadamard-test-bit-by-bit-bridge",
+   "aliases": [],
+   "function": "command_dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-multi-antenna-mimo-spatial-diversity-combining-bridge",
+   "aliases": [],
+   "function": "command_dcp_multi_antenna_mimo_spatial_diversity_combining_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "dcp-walsh-hadamard-gold-bent-nonlinear-carry-spectrum-bridge",
+   "aliases": [],
+   "function": "command_dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge",
+   "module": "qsearch_cli.commands.dcp"
+  },
+  {
+   "name": "validate",
+   "aliases": [],
+   "function": "command_validate",
+   "module": "qsearch_cli.commands.general"
+  },
+  {
+   "name": "list",
+   "aliases": [],
+   "function": "command_list",
+   "module": "qsearch_cli.commands.general"
+  }
+ ],
+ "functions": 895,
+ "orphan_functions": [
+  "command_sdw_addressed_cross_map_linear_assembly_normalization_boundary",
+  "command_sdw_addressed_cross_map_pair_polar_gram_boundary",
+  "command_sdw_branch_character_cyclic_polar_compiler",
+  "command_sdw_branch_character_cyclic_quadrant_overlap",
+  "command_sdw_branch_character_equivariant_multiplier_normal_form",
+  "command_sdw_branch_character_gpe_dilation_separation",
+  "command_sdw_branch_character_label_coherent_power_map_boundary",
+  "command_sdw_branch_character_naimark_autocorrelation_fourier_boundary",
+  "command_sdw_branch_character_natural_frobenius_word_map",
+  "command_sdw_branch_character_polar_naimark_completion",
+  "command_sdw_branch_character_power_map_fourier_access_boundary",
+  "command_sdw_branch_character_raw_concentration_central_fourier_bridge",
+  "command_sdw_branch_character_raw_polar_matched_filter_boundary",
+  "command_sdw_branch_character_sector_resolved_whitening_no_go",
+  "command_sdw_branch_character_whole_sum_path_erasure_boundary",
+  "command_sdw_final_root_byproduct_covariance_no_go",
+  "command_sdw_final_root_metric_access_width_no_go",
+  "command_sdw_final_root_physical_preparation_extension_scope_boundary",
+  "command_sdw_final_root_program_contraction_normalization_no_go",
+  "command_sdw_final_root_purification_naimark_program_boundary",
+  "command_sdw_final_root_scalar_mixer_no_go",
+  "command_sdw_final_root_state_preparation_oracle_query_boundary",
+  "command_sdw_joint_character_analysis_map_normalization",
+  "command_sdw_joint_character_natural_sector_mass",
+  "command_sdw_joint_character_purification_access_boundary",
+  "command_sdw_natural_q_scale_spectral_window_no_go",
+  "command_sdw_orientation_kernel_character_tensor_boundary",
+  "command_sdw_orientation_kernel_hash_normalization_no_go",
+  "command_sdw_schur_branch_merger_polar_equivalence",
+  "command_sdw_schur_companion_transform_scope_boundary",
+  "command_sdw_schur_dilated_multiplicity_access",
+  "command_sdw_split_sector_branch_regularity",
+  "command_sdw_trace_biased_coefficient_rank_no_go"
+ ],
+ "flags": [
+  {
+   "dest": "dcp_ternary_pgm_gram_eigenvalue_success_bridge",
+   "module": "theorems.dcp_ternary_pgm_gram_eigenvalue_success_bridge",
+   "function": "generate_dcp_ternary_pgm_gram_eigenvalue_success_certificate"
+  },
+  {
+   "dest": "dcp_coherent_fiber_support_erasure_inversion_bridge",
+   "module": "theorems.dcp_coherent_fiber_support_erasure_inversion_bridge",
+   "function": "generate_dcp_coherent_fiber_support_erasure_inversion_certificate"
+  },
+  {
+   "dest": "dcp_d_ary_qudit_phase_register_cnot_mod_d_bridge",
+   "module": "theorems.dcp_d_ary_qudit_phase_register_cnot_mod_d_bridge",
+   "function": "generate_dcp_d_ary_qudit_phase_register_cnot_mod_d_certificate"
+  },
+  {
+   "dest": "dcp_sine_vs_box_window_pair_difference_overlap_bridge",
+   "module": "theorems.dcp_sine_vs_box_window_pair_difference_overlap_bridge",
+   "function": "generate_dcp_sine_vs_box_window_pair_difference_overlap_certificate"
+  },
+  {
+   "dest": "dcp_ternary_signed_witness_cnot_routing_bridge",
+   "module": "theorems.dcp_ternary_signed_witness_cnot_routing_bridge",
+   "function": "generate_dcp_ternary_signed_witness_cnot_routing_certificate"
+  },
+  {
+   "dest": "dcp_coherent_syndrome_sign_flip_pauli_frame_bridge",
+   "module": "theorems.dcp_coherent_syndrome_sign_flip_pauli_frame_bridge",
+   "function": "generate_dcp_coherent_syndrome_sign_flip_pauli_frame_certificate"
+  },
+  {
+   "dest": "dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_bridge",
+   "module": "theorems.dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_bridge",
+   "function": "generate_dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_certificate"
+  },
+  {
+   "dest": "dcp_multi_packet_collective_helstrom_product_likelihood_bridge",
+   "module": "theorems.dcp_multi_packet_collective_helstrom_product_likelihood_bridge",
+   "function": "generate_dcp_multi_packet_collective_helstrom_product_likelihood_certificate"
+  },
+  {
+   "dest": "dcp_multi_target_reusable_syndrome_bank_amortization_bridge",
+   "module": "theorems.dcp_multi_target_reusable_syndrome_bank_amortization_bridge",
+   "function": "generate_dcp_multi_target_reusable_syndrome_bank_amortization_certificate"
+  },
+  {
+   "dest": "dcp_tensor_power_k_moment_dihedral_twirl_bridge",
+   "module": "theorems.dcp_tensor_power_k_moment_dihedral_twirl_bridge",
+   "function": "generate_dcp_tensor_power_k_moment_dihedral_twirl_certificate"
+  },
+  {
+   "dest": "dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge",
+   "module": "theorems.dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge",
+   "function": "generate_dcp_heisenberg_dyadic_boundary_cocycle_repair_certificate"
+  },
+  {
+   "dest": "dcp_correlated_z_fault_syndrome_parity_twirl_bridge",
+   "module": "theorems.dcp_correlated_z_fault_syndrome_parity_twirl_bridge",
+   "function": "generate_dcp_correlated_z_fault_syndrome_parity_twirl_certificate"
+  },
+  {
+   "dest": "dcp_cnot_conjugated_schur_weyl_clifford_twirl_bridge",
+   "module": "theorems.dcp_cnot_conjugated_schur_weyl_clifford_twirl_bridge",
+   "function": "generate_dcp_cnot_conjugated_schur_weyl_clifford_twirl_certificate"
+  },
+  {
+   "dest": "dcp_dihedral_vs_heisenberg_two_copy_commutant_bridge",
+   "module": "theorems.dcp_dihedral_vs_heisenberg_two_copy_commutant_bridge",
+   "function": "generate_dcp_dihedral_vs_heisenberg_two_copy_commutant_certificate"
+  },
+  {
+   "dest": "dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge",
+   "module": "theorems.dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge",
+   "function": "generate_dcp_noisy_cascaded_dyadic_peeling_sample_complexity_certificate"
+  },
+  {
+   "dest": "dcp_odd_prime_modulus_cnot_carry_shift_obstruction",
+   "module": "theorems.dcp_odd_prime_modulus_cnot_carry_shift_obstruction",
+   "function": "generate_dcp_odd_prime_modulus_cnot_carry_shift_certificate"
+  },
+  {
+   "dest": "dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_bridge",
+   "module": "theorems.dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_bridge",
+   "function": "generate_dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_certificate"
+  },
+  {
+   "dest": "dcp_multicopy_distinct_header_cyclic_swap_interference_bridge",
+   "module": "theorems.dcp_multicopy_distinct_header_cyclic_swap_interference_bridge",
+   "function": "generate_dcp_multicopy_distinct_header_cyclic_swap_interference_certificate"
+  },
+  {
+   "dest": "dcp_anchor_conditioned_adaptive_syndrome_routing_bridge",
+   "module": "theorems.dcp_anchor_conditioned_adaptive_syndrome_routing_bridge",
+   "function": "generate_dcp_anchor_conditioned_adaptive_syndrome_routing_certificate"
+  },
+  {
+   "dest": "dcp_multicopy_schur_weyl_symmetric_projection_bridge",
+   "module": "theorems.dcp_multicopy_schur_weyl_symmetric_projection_bridge",
+   "function": "generate_dcp_multicopy_schur_weyl_symmetric_projection_certificate"
+  },
+  {
+   "dest": "dcp_overlapping_cnot_dag_carry_fanout_obstruction",
+   "module": "theorems.dcp_overlapping_cnot_dag_carry_fanout_obstruction",
+   "function": "generate_dcp_overlapping_cnot_dag_carry_fanout_certificate"
+  },
+  {
+   "dest": "dcp_sine_window_fejer_dirichlet_kernel_cutoff_bridge",
+   "module": "theorems.dcp_sine_window_fejer_dirichlet_kernel_cutoff_bridge",
+   "function": "generate_dcp_sine_window_fejer_dirichlet_kernel_cutoff_certificate"
+  },
+  {
+   "dest": "dcp_cyclic_group_qft_dihedral_coset_interference_bridge",
+   "module": "theorems.dcp_cyclic_group_qft_dihedral_coset_interference_bridge",
+   "function": "generate_dcp_cyclic_group_qft_dihedral_coset_interference_certificate"
+  },
+  {
+   "dest": "dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_bridge",
+   "module": "theorems.dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_bridge",
+   "function": "generate_dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_certificate"
+  },
+  {
+   "dest": "dcp_bell_conjugate_pair_phase_cancellation_obstruction",
+   "module": "theorems.dcp_bell_conjugate_pair_phase_cancellation_obstruction",
+   "function": "generate_dcp_bell_conjugate_pair_phase_cancellation_certificate"
+  },
+  {
+   "dest": "dcp_coset_subspace_qft_concentration_and_leakage_bridge",
+   "module": "theorems.dcp_coset_subspace_qft_concentration_and_leakage_bridge",
+   "function": "generate_dcp_coset_subspace_qft_concentration_and_leakage_certificate"
+  },
+  {
+   "dest": "dcp_twisted_convolution_pretty_good_measurement_gram_bridge",
+   "module": "theorems.dcp_twisted_convolution_pretty_good_measurement_gram_bridge",
+   "function": "generate_dcp_twisted_convolution_pretty_good_measurement_gram_certificate"
+  },
+  {
+   "dest": "dcp_dyadic_valuation_anchor_invariance_hierarchy_bridge",
+   "module": "theorems.dcp_dyadic_valuation_anchor_invariance_hierarchy_bridge",
+   "function": "generate_dcp_dyadic_valuation_anchor_invariance_hierarchy_certificate"
+  },
+  {
+   "dest": "dcp_even_sublattice_parity_blindness_and_rescaling_bridge",
+   "module": "theorems.dcp_even_sublattice_parity_blindness_and_rescaling_bridge",
+   "function": "generate_dcp_even_sublattice_parity_blindness_and_rescaling_certificate"
+  },
+  {
+   "dest": "planted_qary_macwilliams_dual_weight_enumerator_bridge",
+   "module": "theorems.planted_qary_macwilliams_dual_weight_enumerator_bridge",
+   "function": "generate_planted_qary_macwilliams_dual_weight_enumerator_certificate"
+  },
+  {
+   "dest": "native_higher_call_composite_modulus_crt_factorization_audit",
+   "module": "theorems.native_higher_call_composite_modulus_crt_factorization_audit",
+   "function": "generate_native_higher_call_composite_modulus_crt_factorization_certificate"
+  },
+  {
+   "dest": "dcp_multi_packet_product_twirl_sq_dimension_audit",
+   "module": "theorems.dcp_multi_packet_product_twirl_sq_dimension_audit",
+   "function": "generate_dcp_multi_packet_product_twirl_sq_dimension_certificate"
+  },
+  {
+   "dest": "dcp_coherent_syndrome_uncomputation_reversible_oracle_bridge",
+   "module": "theorems.dcp_coherent_syndrome_uncomputation_reversible_oracle_bridge",
+   "function": "generate_dcp_coherent_syndrome_uncomputation_reversible_oracle_certificate"
+  },
+  {
+   "dest": "dcp_sieve_bucket_collision_birthday_tradeoff_audit",
+   "module": "theorems.dcp_sieve_bucket_collision_birthday_tradeoff_audit",
+   "function": "generate_dcp_sieve_bucket_collision_birthday_tradeoff_certificate"
+  }
+ ],
+ "imports": 838,
+ "dropped_duplicate_definitions": [
+  "command_native_banded_qft_transfer_matrix_audit"
+ ]
+}

@@ -1,0 +1,2124 @@
+{
+ "clusters": {
+  "C01": {
+   "barrier": "Speedup claims for ad hoc oracle secret-finding problems backed only by tiny (N=3) custom-oracle simulations, with no successful runs and no natural scalable family, give no evidence of an asymptotic quantum speedup; generic secret identification from an oracle is the oracle identification problem whose query complexity is already characterized.",
+   "citations": [
+    {
+     "arxiv_id": "1401.2910",
+     "doc_id": null,
+     "quote": "how to avoid pitfalls that might mask or fake quantum speedup",
+     "title": "Defining and detecting quantum speedup",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0403056",
+     "doc_id": null,
+     "quote": "The OIP contains several concrete problems such as the original Grover search and the Bernstein-Vazirani problem",
+     "title": "Quantum Identification of Boolean Oracles",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1311.7685",
+     "doc_id": null,
+     "quote": "we are given oracle access to an unknown N-bit string x promised to belong to a known set C of size M",
+     "title": "An optimal quantum algorithm for the oracle identification problem",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "ti:\"defining and detecting quantum speedup\"",
+    "abs:\"quantum speedup\" AND abs:\"small problem sizes\" AND abs:scaling",
+    "abs:\"oracle\" AND abs:\"secret string\" AND abs:\"lower bound\" AND abs:quantum",
+    "abs:\"Bernstein-Vazirani\" AND abs:nonlinear",
+    "abs:\"oracle identification\" AND abs:quantum"
+   ]
+  },
+  "C02": {
+   "barrier": "The records only state that proposed hidden-involution measurement and compiler primitives for symmetric-group coset states (support filters, orbit twirls, PGM truncation and coarse-graining) were falsified by exact theorem checks, without stating the shared reason.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0501177",
+     "doc_id": null,
+     "quote": "the PGM is the optimal one-register experiment in the case where the hidden subgroup is a uniformly random conjugate of H",
+     "title": "For Distinguishing Conjugate Hidden Subgroups, the Pretty Good Measurement is as Good as it Gets",
+     "verified": true
+    }
+   ],
+   "confidence": 0.8,
+   "label": "unclear",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "abs:\"hidden subgroup\" AND abs:\"symmetric group\" AND abs:measurement AND abs:efficient"
+   ]
+  },
+  "C03": {
+   "barrier": "Internal theorem-evaluation records on carrier-law, rank-concentration and trace-polynomial bounds for collective measurements on the self-dual-code wreath-product hidden subgroup problem; the records state no reason beyond 'falsified or refined by exact theorem evaluation', so the shared barrier cannot be stated in standard terms.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0612089",
+     "doc_id": null,
+     "quote": "we consider the natural reduction of Graph Isomorphism to the HSP over the the wreath product",
+     "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+     "verified": true
+    }
+   ],
+   "confidence": 0.8,
+   "label": "unclear",
+   "member_overrides": {},
+   "queries": [
+    "abs:Plancherel AND abs:\"hidden subgroup\"",
+    "abs:\"hidden subgroup\" AND abs:\"wreath product\"",
+    "abs:\"McEliece\" AND abs:\"hidden subgroup\" AND abs:\"Fourier sampling\""
+   ]
+  },
+  "C04": {
+   "barrier": "An information-theoretically adequate measurement on hidden-involution coset states, such as a PGM or covariant POVM with finite-n success certificates, does not by itself give an efficient algorithm. The missing step is an efficient circuit implementation and decoder, and known explicit multiregister measurements solve the problem only information-theoretically, in exponential time.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0504067",
+     "doc_id": null,
+     "quote": "While this does not, in general, yield an efficient algorithm, it generalizes the relationship between Subset Sum and the HSP in the dihedral group",
+     "title": "Explicit Multiregister Measurements for Hidden Subgroup Problems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0401083",
+     "doc_id": null,
+     "quote": "However our quantum algorithm requires exponential time, as in the classical case.",
+     "title": "The quantum query complexity of the hidden subgroup problem is polynomial",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0504083",
+     "doc_id": null,
+     "quote": "its probability of success and unitary implementation are closely related to an average-case algebraic problem",
+     "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+     "verified": true
+    }
+   ],
+   "confidence": 0.7,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"graph isomorphism\" AND abs:\"coset states\" AND abs:entangled",
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "ti:\"query complexity of the hidden subgroup problem is polynomial\"",
+    "abs:\"hidden subgroup\" AND abs:\"symmetric group\" AND abs:measurement AND abs:efficient"
+   ]
+  },
+  "C05": {
+   "barrier": "The dihedral coset problem supplies only i.i.d. uniformly random Fourier labels on possibly faulty coset states, so shortcuts needing chosen or correlated queries (sparse/significant Fourier transforms, chosen-multiplier hidden-number methods), clean states, or local detection of bad registers do not transfer; useful labels are exponentially rare and the only known route is collective subexponential sieving.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0302112",
+     "doc_id": null,
+     "quote": "We present a quantum algorithm for the dihedral hidden subgroup problem with time and query complexity",
+     "title": "A subexponential-time quantum algorithm for the dihedral hidden subgroup problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1607.01842",
+     "doc_id": null,
+     "quote": "Our original contributions include: a discussion of the limitations on the usefulness of these tools",
+     "title": "Finding Significant Fourier Coefficients: Clarifications, Simplifications, Applications and Limitations",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2608.16598",
+     "doc_id": null,
+     "quote": "The assumption that the distinguished group contains no faulty samples can also be dropped.",
+     "title": "Rigorous Statements and Proofs of the Lemmas in Simon's Algorithm for the Dihedral Coset Problem and Their Underlying Hypothesis",
+     "verified": true
+    }
+   ],
+   "confidence": 0.5,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"dihedral coset problem\"",
+    "abs:\"hidden number problem\" AND abs:Fourier AND abs:limitations",
+    "abs:dihedral AND abs:Kuperberg AND (abs:noisy OR abs:noise OR abs:faulty)",
+    "abs:\"significant Fourier\" AND abs:\"random samples\""
+   ]
+  },
+  "C06": {
+   "barrier": "Exact spectral data (characteristic polynomials of a Racah/recoupling operator) on symmetric-group coset states does not by itself give an efficient collective measurement; a spectral gap, an efficient coherent circuit for the highly entangled multi-register measurement and a decoder are still missing, which is the known obstacle for coset-state approaches to hidden-involution (graph isomorphism type) problems.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0609138",
+     "doc_id": null,
+     "quote": "must perform highly entangled measurements across Omega(n log n) coset states",
+     "title": "On the Impossibility of a Quantum Sieve Algorithm for Graph Isomorphism",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0511148",
+     "doc_id": null,
+     "quote": "entangled quantum measurements that act jointly on many states at once",
+     "title": "Limitations of Quantum Coset States for Graph Isomorphism",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0504083",
+     "doc_id": null,
+     "quote": "its probability of success and unitary implementation are closely related to an average-case algebraic problem",
+     "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"coset states\" AND abs:\"graph isomorphism\"",
+    "abs:Racah AND abs:quantum AND abs:circuit",
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "abs:\"Clebsch-Gordan\" AND abs:\"symmetric group\" AND abs:quantum"
+   ]
+  },
+  "C07": {
+   "barrier": "In multiregister coset-state measurements for the symmetric-group/wreath-product hidden subgroup problem (graph-isomorphism or code-equivalence type), trivial and sign representation components give common subspaces shared by exponentially many hidden-involution orientations, so local blockwise filtering or uniform frame-norm bounds cannot isolate the hidden subgroup.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0612089",
+     "doc_id": null,
+     "quote": "Using a recently proved bound on the irreducible characters of S_n, we show that no algorithm in this family can solve Graph Isomorphism",
+     "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0501066",
+     "doc_id": null,
+     "quote": "the hidden subgroup problem on the symmetric group cannot be solved by any POVM applied to pairs of coset states",
+     "title": "The Symmetric Group Defies Strong Fourier Sampling: Part II",
+     "verified": true
+    }
+   ],
+   "confidence": 0.45,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"wreath product\" AND abs:\"hidden subgroup\"",
+    "abs:\"symmetric group\" AND abs:\"Plancherel\" AND abs:\"coset states\"",
+    "abs:\"strong Fourier sampling\" AND abs:\"symmetric group\""
+   ]
+  },
+  "C08": {
+   "barrier": "Single-register weak or strong Fourier sampling and other label-only measurements on symmetric-group coset states yield negligible information about a hidden involution, so the graph-isomorphism HSP needs measurements entangled across Omega(n log n) registers; restricted multiplicity-based shortcuts are either incomplete or classically solvable.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0501056",
+     "doc_id": null,
+     "quote": "the hidden subgroup problem over the symmetric group cannot be efficiently solved by strong Fourier sampling",
+     "title": "The Symmetric Group Defies Strong Fourier Sampling: Part I",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0607204",
+     "doc_id": null,
+     "quote": "the weak standard method for the symmetric group has no advantage whatsoever over classical exhaustive search",
+     "title": "Permutation groups, minimal degrees and quantum computing",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0511149",
+     "doc_id": null,
+     "quote": "an Omega(n log n) lower bound on the number of coset states over which we must perform an entangled measurement",
+     "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+     "verified": true
+    }
+   ],
+   "confidence": 0.65,
+   "label": "published",
+   "member_overrides": {
+    "NEG-MECH-JM-LABEL-MULTIPLICITY-RECOUPLING": {
+     "label": "adjacent",
+     "note": "Spectral-packing obstruction for a specific Young-Jucys-Murphy label primitive; related sieve impossibility results exist (Moore-Russell-Sniady) but not for this primitive."
+    },
+    "NEG-MECH-PROJECTOR-COUNT-DECODER": {
+     "label": "adjacent",
+     "note": "Counting multiplicities with commuting projectors is known (#BQP results), but the point that counts do not yield state-dependent recoupling amplitudes is only implied in the literature."
+    }
+   },
+   "queries": [
+    "abs:\"strong Fourier sampling\" AND abs:\"symmetric group\"",
+    "abs:\"coset states\" AND abs:\"graph isomorphism\" AND abs:entangled",
+    "abs:\"Kronecker coefficients\" AND abs:quantum AND abs:\"polynomial time\"",
+    "abs:\"Kronecker coefficients\" AND abs:\"quantum algorithm\" AND abs:classical",
+    "ti:\"representation theoretic multiplicities\" AND ti:classical"
+   ]
+  },
+  "C09": {
+   "barrier": "Splitting the optimal joint measurement on several symmetric-group coset states into local pairwise (pair-carrier) measurements fails because the shared hidden label correlates the registers and overlapping isotypic projectors do not commute, so pair-local or alternating schemes lose information relative to the global pretty good measurement and a highly entangled multi-register measurement is still required.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0501066",
+     "doc_id": null,
+     "quote": "cannot be solved by any POVM applied to pairs of coset states",
+     "title": "The Symmetric Group Defies Strong Fourier Sampling: Part II",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0511149",
+     "doc_id": null,
+     "quote": "lower bound on the number of coset states over which we must perform an entangled measurement",
+     "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0504083",
+     "doc_id": null,
+     "quote": "entangled measurements across multiple copies of hidden subgroup states can be useful for efficiently solving the nonabelian HSP",
+     "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"coset states\" AND abs:\"graph isomorphism\"",
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "abs:\"generalized phase estimation\" AND abs:\"symmetric group\""
+   ]
+  },
+  "C10": {
+   "barrier": "Mixed cluster: registry-process quarantines (mutations lacking the coherent evaluator or oracle access their upstream theorem requires) plus claims that finite-n LLL success on modular subset-sum embeddings supplies Regev's average-case subset-sum routine for the dihedral coset problem without a uniform coverage theorem.",
+   "citations": [
+    {
+     "arxiv_id": "cs/0304005",
+     "doc_id": null,
+     "quote": "we solve the hidden subgroup problem on the dihedral group by using an average case subset sum routine",
+     "title": "Quantum Computation and Lattice Problems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2408.16108",
+     "doc_id": null,
+     "quote": "the theoretical guarantee on the density of feasible instances has remained unimproved for almost 40 years",
+     "title": "Improving Lagarias-Odlyzko Algorithm For Average-Case Subset Sum: Modular Arithmetic Approach",
+     "verified": true
+    }
+   ],
+   "confidence": 0.7,
+   "label": "unclear",
+   "member_overrides": {
+    "NEG-DCP-ODD-UNIT-LLL-FINITE-RANDOMIZATION-WITHOUT-COVERAGE": {
+     "label": "adjacent",
+     "note": "Same as the other DCP-LLL record: LLL provable density guarantees fall short of density-one instances; implied, not stated for Regev's setting."
+    },
+    "NEG-DCP-TESTED-LLL-DENSITY-ONE-PARTIAL-SOLVERS": {
+     "label": "adjacent",
+     "note": "Regev's DCP-to-average-case-subset-sum reduction and the low-density-only provable guarantees of Lagarias-Odlyzko lattice reduction are published; the density-one coverage gap for Regev's legal inputs is implied rather than stated."
+    }
+   },
+   "queries": [
+    "abs:\"dihedral coset problem\" AND abs:\"subset sum\"",
+    "abs:\"subset sum\" AND abs:density AND abs:\"lattice reduction\"",
+    "ti:\"Quantum computation and lattice problems\""
+   ]
+  },
+  "C11": {
+   "barrier": "Cannot be stated: the members only record that unspecified initial claims about self-dual-code wreath-product coset-state measurements (PGM bridges, overlap balance, flag audits, polar-factor transfer) were falsified or refined by exact evaluation.",
+   "citations": [],
+   "confidence": 0.85,
+   "label": "unclear",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "abs:\"hidden subgroup\" AND abs:\"self-dual\" AND abs:codes",
+    "abs:\"code equivalence\" AND abs:\"hidden subgroup\" AND abs:\"Fourier sampling\""
+   ]
+  },
+  "C12": {
+   "barrier": "Structured code families (cyclic, Goppa/alternant, Tanner) proposed as hard code-equivalence instances are resolved or reduced by classical structural invariants (low-weight codeword/matroid structure, closures, support splitting, family-specific equivalence tests), so they are not viable hard rows for a coset-state quantum approach.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2108.08619",
+     "doc_id": null,
+     "quote": "a new algorithm to test equivalence of two cyclic codes has been introduced which is efficient",
+     "title": "A Generalization of Cyclic Code Equivalence Algorithm to Constacyclic Codes",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2304.14757",
+     "doc_id": null,
+     "quote": "recovers in polynomial time the relevant algebraic structure of an alternant code of degree",
+     "title": "Polynomial time key-recovery attack on high rate random alternant codes",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"permutation equivalence\" AND abs:codewords AND abs:algorithm",
+    "abs:\"code equivalence\" AND abs:\"low-weight codewords\"",
+    "ti:\"code equivalence\"",
+    "abs:\"support splitting\" AND abs:equivalence"
+   ]
+  },
+  "C13": {
+   "barrier": "Coset-state Fourier sampling cannot solve nonabelian hidden subgroup problems such as those for graph isomorphism and code equivalence: weak Fourier sampling is blind to conjugate subgroups, single-copy strong Fourier sampling yields exponentially small information, and useful measurements must be entangled across Omega(n log n) coset states (with related spectral blindness of quantum walks on strongly regular graphs).",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0501056",
+     "doc_id": null,
+     "quote": "the hidden subgroup problem over the symmetric group cannot be efficiently solved by strong Fourier sampling, even if one may perform an arbitrary POVM on the coset state",
+     "title": "The Symmetric Group Defies Strong Fourier Sampling: Part I",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0511148",
+     "doc_id": null,
+     "quote": "entangled quantum measurements on at least \u03a9(n log n) coset states are necessary to get useful information for the case of graph isomorphism",
+     "title": "Limitations of Quantum Coset States for Graph Isomorphism",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "the natural case of the Hidden Subgroup Problem to which the McEliece cryptosystem reduces cannot be solved by strong Fourier sampling, or by any measurement of a coset state",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    }
+   ],
+   "confidence": 0.85,
+   "label": "published",
+   "member_overrides": {
+    "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER": {
+     "label": "adjacent",
+     "note": "Infinite braid groups; weak-Fourier conjugacy blindness is the known finite-group barrier transferred to a new setting."
+    },
+    "NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND": {
+     "label": "adjacent",
+     "note": "Main barrier is a classical reflection/transvection membership dequantization for parabolic HSP in O(d,F_q); Fourier-sampling limits are known only for other groups/subgroups."
+    },
+    "NEG-SINGER-CYCLE-TORAL-HSP-BARRIER": {
+     "label": "adjacent",
+     "note": "Hallgren-Roetteler-Sen extend few-copy limits to GL(n,F_{p^m}) for some subgroups, but not Singer-cycle tori specifically."
+    },
+    "NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND": {
+     "label": "adjacent",
+     "note": "Main barrier is a classical unitary-transvection dequantization for parabolic HSP in U(n,F_{q^2}); not stated in retrieved abstracts."
+    }
+   },
+   "queries": [
+    "abs:\"strong Fourier sampling\" AND abs:\"symmetric group\"",
+    "abs:\"graph isomorphism\" AND abs:\"coset states\" AND abs:entangled",
+    "abs:\"quantum walks\" AND abs:\"strongly regular graphs\"",
+    "abs:\"code equivalence\" AND abs:\"Fourier sampling\"",
+    "abs:\"weak Fourier sampling\" AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C14": {
+   "barrier": "Heterogeneous grab-bag of claimed quantum advantages that vanish under classical baselines: hidden shifts of explicitly given bent or quadratic functions are recoverable classically, and NISQ proposals (noisy random circuit sampling, quantum kernels, error mitigation, variational circuits, boson sampling, Gaussian CV, low-depth QAOA) each face their own known simulation, concentration or exponential-sampling barrier.",
+   "citations": [
+    {
+     "arxiv_id": "2408.02778",
+     "doc_id": null,
+     "quote": "We show that this family of circuits can in fact be simulated in polynomial time via symbolic path integrals.",
+     "title": "Polynomial-Time Classical Simulation of Hidden Shift Circuits via Confluent Rewriting of Symbolic Sums",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2211.03999",
+     "doc_id": null,
+     "quote": "We give a polynomial time classical algorithm for sampling from the output distribution of a noisy random quantum circuit in the regime of anti-concentration",
+     "title": "A polynomial-time classical algorithm for noisy random circuit sampling",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2208.09178",
+     "doc_id": null,
+     "quote": "the sampling cost required for a wide class of protocols to mitigate errors must grow exponentially with the circuit depth",
+     "title": "Universal Sampling Lower Bounds for Quantum Error Mitigation",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "unclear",
+   "member_overrides": {
+    "HS-DEQUANTIZED-MM_MAJORITY_BENT_F2": {
+     "citations": [
+      {
+       "arxiv_id": "2408.02778",
+       "doc_id": null,
+       "quote": "We show that this family of circuits can in fact be simulated in polynomial time via symbolic path integrals.",
+       "title": "Polynomial-Time Classical Simulation of Hidden Shift Circuits via Confluent Rewriting of Symbolic Sums",
+       "verified": true
+      }
+     ],
+     "label": "published",
+     "note": "arXiv:2408.02778: Roetteler's shifted (Maiorana-McFarland) bent-function hidden-shift circuits are classically simulable in polynomial time."
+    },
+    "NEG-BARREN-PLATEAUS-VARIATIONAL-QUANTUM-HORIZON": {
+     "citations": [
+      {
+       "arxiv_id": "2312.09121",
+       "doc_id": null,
+       "quote": "many commonly used models whose loss landscapes avoid barren plateaus can also admit classical simulation",
+       "title": "Does provable absence of barren plateaus imply classical simulability?",
+       "verified": true
+      },
+      {
+       "arxiv_id": "2011.12245",
+       "doc_id": null,
+       "quote": "show that the numbers of shots required in the optimization grows exponentially with the number of qubits",
+       "title": "Effect of barren plateaus on gradient-free optimization",
+       "verified": true
+      }
+     ],
+     "label": "published",
+     "note": "arXiv:2312.09121 (Cerezo et al.): barren-plateau-free models tend to be classically simulable; arXiv:2011.12245 shows gradient-free optimizers do not escape barren plateaus."
+    },
+    "NEG-QUANTUM-ERROR-MITIGATION-EXPONENTIAL-SAMPLING-BARRIER": {
+     "citations": [
+      {
+       "arxiv_id": "2208.09178",
+       "doc_id": null,
+       "quote": "the sampling cost required for a wide class of protocols to mitigate errors must grow exponentially with the circuit depth",
+       "title": "Universal Sampling Lower Bounds for Quantum Error Mitigation",
+       "verified": true
+      }
+     ],
+     "label": "published",
+     "note": "arXiv:2208.09178 (Takagi-Tajima-Gu): universal error-mitigation sampling cost grows exponentially with circuit depth."
+    },
+    "NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER": {
+     "citations": [
+      {
+       "arxiv_id": "2208.11060",
+       "doc_id": null,
+       "quote": "We show that, under certain conditions, values of quantum kernels over different input data can be exponentially concentrated (in the number of qubits) towards some fixed value. Thus on training with a polynomial number of measurements, one ends up with a trivial model where the predictions on unseen inputs are independent of the input data.",
+       "title": "Exponential concentration in quantum kernel methods",
+       "verified": true
+      }
+     ],
+     "label": "published",
+     "note": "arXiv:2208.11060 (Thanasilp et al.): quantum kernel values exponentially concentrate, so polynomial shots give a trivial model."
+    },
+    "NEG-QUANTUM-SUPREMACY-RCS-ANTICONCENTRATION-BARRIER": {
+     "citations": [
+      {
+       "arxiv_id": "2211.03999",
+       "doc_id": null,
+       "quote": "We give a polynomial time classical algorithm for sampling from the output distribution of a noisy random quantum circuit in the regime of anti-concentration",
+       "title": "A polynomial-time classical algorithm for noisy random circuit sampling",
+       "verified": true
+      }
+     ],
+     "label": "published",
+     "note": "arXiv:2211.03999 (Aharonov-Gao-Landau-Liu) gives a polynomial-time classical algorithm for noisy RCS in the anticoncentration regime."
+    }
+   },
+   "queries": [
+    "abs:\"barren plateau\" AND abs:gradient",
+    "abs:\"barren plateaus\" AND abs:\"classical simulability\"",
+    "abs:\"random circuit sampling\" AND abs:noise AND abs:\"polynomial-time classical\"",
+    "abs:\"quantum kernel\" AND abs:\"exponential concentration\"",
+    "abs:\"error mitigation\" AND abs:exponential AND abs:\"lower bound\" AND abs:samples"
+   ]
+  },
+  "C15": {
+   "barrier": "A fixed finite span of low-support conjugacy-class (orbit-average) operators has degenerate spectrum on some Kronecker multiplicity spaces, so it cannot uniformly resolve those spaces as n grows; resolving them needs generator sets that grow with n.",
+   "citations": [
+    {
+     "arxiv_id": "1911.11649",
+     "doc_id": null,
+     "quote": "the distinguishability of Young diagrams when a finite set of Casimirs are known",
+     "title": "BPS states, conserved charges and centres of symmetric group algebras",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2303.12154",
+     "doc_id": null,
+     "quote": "detecting projectors in finite dimensional associative algebras with a combinatorial basis",
+     "title": "The quantum detection of projectors in finite-dimensional algebras and holography",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1210.5579",
+     "doc_id": null,
+     "quote": "by using the Schur-Weyl duality between the symmetric group and the partition algebra",
+     "title": "The partition algebra and the Kronecker coefficients",
+     "verified": true
+    }
+   ],
+   "confidence": 0.5,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"Kronecker coefficients\" AND abs:\"multiplicity space\"",
+    "abs:\"Kronecker\" AND abs:\"partition algebra\" AND abs:\"symmetric group\"",
+    "abs:\"central elements\" AND abs:\"symmetric group\" AND abs:\"Kronecker\"",
+    "abs:\"symmetric group algebra\" AND abs:centre AND abs:generate AND abs:\"Young diagrams\""
+   ]
+  },
+  "C16": {
+   "barrier": "Small or generic linear codes do not supply hard permutation-code-equivalence instances: pairs that collide on cheap invariants turn out to be equivalent, and classical methods (support splitting, canonical forms, reduction to graph isomorphism for trivial or small hulls) decide equivalence efficiently, so such rows cannot motivate a coset-state quantum measurement.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1905.00073",
+     "doc_id": null,
+     "quote": "Experimental results obtained with randomly drawn binary codes having trivial hulls show that permutation code equivalence can be decided in a few minutes for lengths up to 50,000.",
+     "title": "Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"graph isomorphism\"",
+    "abs:\"permutation code equivalence\"",
+    "abs:\"support splitting algorithm\""
+   ]
+  },
+  "C17": {
+   "barrier": "Extracting a polar factor or whitened (inverse-square-root) operator from a block-encoding whose singular values are all O(w^-1/2) costs Omega(sqrt(w)) queries, a normalization or condition-number lower bound, and generic addressed aggregation of local data reduces to unstructured search with an Omega(sqrt(q)) BBBV bound. Generic QSVT, polar or Naimark routes to the hidden-involution PGM decoder are therefore exponentially costly when w = Theta(n!).",
+   "citations": [
+    {
+     "arxiv_id": "2101.11868",
+     "doc_id": null,
+     "quote": "for worst-case instances the runtime scales at least linearly in",
+     "title": "On solving classes of positive-definite quantum linear systems with quadratically improved runtime in the condition number",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2106.07634",
+     "doc_id": null,
+     "quote": "has a simple and concise implementation via the quantum singular value transform",
+     "title": "Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2007.15698",
+     "doc_id": null,
+     "quote": "any quantum operation that verifies whether a given quantum state is within a constant distance from the solution of the quantum linear systems problem requires",
+     "title": "Complexity of quantum state verification in the quantum linear systems problem",
+     "verified": true
+    }
+   ],
+   "confidence": 0.65,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"singular value transformation\" AND abs:\"lower bound\" AND abs:\"block-encoding\"",
+    "abs:\"polar decomposition\" AND abs:quantum AND abs:\"singular value\"",
+    "abs:\"linear systems\" AND abs:\"condition number\" AND abs:\"lower bound\" AND abs:quantum"
+   ]
+  },
+  "C18": {
+   "barrier": "Restricted collective measurements on graph-isomorphism (symmetric-group involution) coset states, such as fixed-mask, single-query, discard-after-use or low-weight selector architectures at polynomial copy count, extract only negligible information about the hidden involution.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0511149",
+     "doc_id": null,
+     "quote": "an Omega(n log n) lower bound on the number of coset states over which we must perform an entangled measurement in order to obtain non-negligible information about a hidden involution",
+     "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0612089",
+     "doc_id": null,
+     "quote": "no algorithm in this family can solve Graph Isomorphism in less than e^{\u03a9(\\sqrt{n})} time, no matter what adaptive rule it uses to select and combine quantum states",
+     "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"graph isomorphism\" AND abs:\"coset states\" AND abs:entangled",
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "abs:\"coset states\" AND abs:\"symmetric group\" AND abs:measurement AND abs:information"
+   ]
+  },
+  "C19": {
+   "barrier": "Under the promise that a graph is a regular CFI-gadget construction over a known base graph, the global twist parity (hence isomorphism) is recoverable classically in polynomial time, so CFI twist instances give no evidence for a nonabelian coset-state speedup.",
+   "citations": [
+    {
+     "arxiv_id": "2107.03778",
+     "doc_id": null,
+     "quote": "A prominent example of a decision problem in PTIME that is not known to be CPT-definable is the isomorphism problem on unordered Cai-F\u00fcrer-Immerman graphs",
+     "title": "Choiceless Polynomial Time, Symmetric Circuits and Cai-F\u00fcrer-Immerman Graphs",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1607.04287",
+     "doc_id": null,
+     "quote": "the CFI-graphs are closely related to what we call \"group CSPs\": constraint satisfaction problems where the constraints are membership tests in some coset of a subgroup",
+     "title": "Linear Diophantine Equations, Group CSPs, and Graph Isomorphism",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"CFI graphs\" AND abs:isomorphism",
+    "abs:\"Cai\" AND abs:\"Immerman\" AND abs:\"polynomial time\" AND abs:\"isomorphism\"",
+    "abs:\"individualization\" AND abs:\"refinement\" AND abs:\"graph isomorphism\" AND abs:\"lower bound\""
+   ]
+  },
+  "C20": {
+   "barrier": "The records mix finite-size failures of specific negative-character echo and parity readouts on S_6 coset-state controls, a centralizer-intersection bound for perfect-matching involutions, and a classical-query upper bound for shifted character problems, so there is no single shared barrier.",
+   "citations": [
+    {
+     "arxiv_id": "1502.06631",
+     "doc_id": null,
+     "quote": "Such results have been known before only for the special case of a linear",
+     "title": "Polynomial Interpolation and Identity Testing from High Powers over Finite Fields",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0008059",
+     "doc_id": null,
+     "quote": "the unknown s in F_q can be obtained exactly with only",
+     "title": "Quantum Algorithms for Weighing Matrices and Quadratic Residues",
+     "verified": true
+    }
+   ],
+   "confidence": 0.65,
+   "label": "unclear",
+   "member_overrides": {
+    "CHARACTER-QUERY-ADVANTAGE-KILLED-QUARTIC_CHARACTER": {
+     "label": "published",
+     "note": "Hidden shifted power/character problems already have randomized classical algorithms with O(log q) queries (Ivanyos-Karpinski-Santha-Saxena 1502.06631; van Dam quant-ph/0008059), so no query separation is available; the record restates this."
+    }
+   },
+   "queries": [
+    "abs:\"shifted\" AND abs:\"character\" AND abs:\"classical\" AND abs:\"queries\"",
+    "abs:\"shifted power\" OR abs:\"hidden shifted power\"",
+    "abs:\"commuting probability\" AND abs:\"symmetric group\""
+   ]
+  },
+  "C21": {
+   "barrier": "Graph-isomorphism instances built from Cai-Furer-Immerman (CFI) constructions over small base graphs are not evidence for quantum coset-state advantage, because they are solved classically by Weisfeiler-Leman with individualization or by structural (linear-algebraic) recovery of the CFI twist; CFI isomorphism is in polynomial time.",
+   "citations": [
+    {
+     "arxiv_id": "2107.03778",
+     "doc_id": null,
+     "quote": "A prominent example of a decision problem in PTIME that is not known to be CPT-definable is the isomorphism problem on unordered Cai-F\u00fcrer-Immerman graphs",
+     "title": "Choiceless Polynomial Time, Symmetric Circuits and Cai-F\u00fcrer-Immerman Graphs",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1607.04287",
+     "doc_id": null,
+     "quote": "A notable exception were the algebraic algorithms over the field GF(2), for which no lower bound was known",
+     "title": "Linear Diophantine Equations, Group CSPs, and Graph Isomorphism",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"CFI graphs\" AND abs:isomorphism",
+    "abs:\"Cai\" AND abs:\"Immerman\" AND abs:\"polynomial time\" AND abs:\"isomorphism\"",
+    "abs:\"Weisfeiler\" AND abs:quantum AND abs:\"graph isomorphism\"",
+    "abs:\"individualization\" AND abs:\"refinement\" AND abs:\"graph isomorphism\" AND abs:\"lower bound\""
+   ]
+  },
+  "C22": {
+   "barrier": "Finite-n checks on a few hand-picked or highest-mass irreducible blocks of S_n cover vanishing Plancherel mass and do not establish typical-case behaviour, because the largest Plancherel atom is exp(-Theta(sqrt n)), so any polynomial catalog of fixed partitions has superpolynomially small mass.",
+   "citations": [
+    {
+     "arxiv_id": "2605.25995",
+     "doc_id": null,
+     "quote": "We prove that the maximal dimension $d_N$ of an irreducible representation of the symmetric group",
+     "title": "On the maximal dimension of an irreducible representation of the symmetric group",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1001.4275",
+     "doc_id": null,
+     "quote": "dimensions of irreducible representations of finite symmetric groups, after appropriate normalization, converge to a constant with respect to the Plancherel family of measures",
+     "title": "On the Vershik-Kerov Conjecture Concerning the Shannon-McMillan-Breiman Theorem for the Plancherel Family of Measures on the Space of Young Diagrams",
+     "verified": true
+    },
+    {
+     "arxiv_id": "math/0304010",
+     "doc_id": null,
+     "quote": "the weight of a diagram is proportional to the squared dimension of the corresponding irreducible representation",
+     "title": "Kerov's central limit theorem for the Plancherel measure on Young diagrams",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {
+    "SOURCE-RANKED-S14-PORTFOLIO-DOES-NOT-REQUIRE-SUPPORT-FIVE-OR-SIX": {
+     "label": "not-found",
+     "note": "A finite computational observation about support-four commutant witnesses at S_14; it refutes a support-growth claim rather than restating a Plancherel-coverage barrier, and no abstract addresses it."
+    }
+   },
+   "queries": [
+    "abs:\"maximal dimension\" AND abs:\"symmetric group\" AND abs:irreducible",
+    "abs:\"Plancherel measure\" AND abs:\"Young diagrams\" AND abs:\"dimension\"",
+    "abs:Plancherel AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C23": {
+   "barrier": "Dihedral-coset relation finding needs coherent preparation or transport of subset-sum solution superpositions (fiber states), which is as hard as average-case subset sum and state generation of the index-erasure type. Finite-size spectral gaps, small-instance coverage, or tensor-network bond counts give no polynomial algorithm, and exponential Schmidt rank only lower-bounds a declared tensor-network bond, not circuit size.",
+   "citations": [
+    {
+     "arxiv_id": "1608.02003",
+     "doc_id": null,
+     "quote": "it reduces to random subset sum with density $> 1$ and also to quantum sampling subset sum solutions",
+     "title": "How hard is deciding trivial versus nontrivial in the dihedral coset problem?",
+     "verified": true
+    },
+    {
+     "arxiv_id": "cs/0304005",
+     "doc_id": null,
+     "quote": "we solve the hidden subgroup problem on the dihedral group by using an average case subset sum routine",
+     "title": "Quantum Computation and Lattice Problems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1902.07336",
+     "doc_id": null,
+     "quote": "The Index-Erasure problem is a quantum state generation problem that asks a quantum computer to prepare a uniform superposition over the image of an injective function given by an oracle.",
+     "title": "A Tight Lower Bound for Non-coherent Index Erasure",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"dihedral\" AND abs:\"subset sum\" AND abs:quantum",
+    "abs:\"index erasure\"",
+    "abs:\"dihedral coset problem\" AND abs:\"subset sum\" AND abs:superposition"
+   ]
+  },
+  "C24": {
+   "barrier": "Internal theorem-evaluation records on collective (component/commutator/defect-rank) measurements for the self-dual-code wreath-product hidden subgroup problem; the records state no reason beyond 'falsified or refined by exact theorem evaluation', so the shared barrier cannot be stated in standard terms.",
+   "citations": [
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "the natural case of the Hidden Subgroup Problem to which the McEliece cryptosystem reduces cannot be solved by strong Fourier sampling",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    }
+   ],
+   "confidence": 0.8,
+   "label": "unclear",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"McEliece\" AND abs:\"hidden subgroup\" AND abs:\"Fourier sampling\"",
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C25": {
+   "barrier": "The records only state that unspecified Kronecker-positivity, Hamming-stratum and frame-edge hypotheses for wreath-product coset-state measurements on self-dual codes were falsified or refined by exact theorem evaluation; no shared barrier is stated in reviewable form.",
+   "citations": [],
+   "confidence": 0.85,
+   "label": "unclear",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"Kronecker coefficients\" AND abs:Plancherel",
+    "abs:\"Kronecker coefficient\" AND abs:positivity",
+    "abs:Kronecker AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C26": {
+   "barrier": "Observables on a bounded number of coset-state registers (like few-particle quantum walks) that separate a graph pair reduce to classical invariants such as k-dimensional Weisfeiler-Leman refinement, spectra, walk counts or homomorphism counts, so separating pairs such as strongly regular graphs is not evidence of quantum advantage.",
+   "citations": [
+    {
+     "arxiv_id": "1002.3003",
+     "doc_id": null,
+     "quote": "We prove that quantum walks of two noninteracting particles, Fermions or Bosons, cannot distinguish certain pairs of non-isomorphic SRG's",
+     "title": "Two-particle quantum walks applied to the graph isomorphism problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1207.4535",
+     "doc_id": null,
+     "quote": "no continuous-time walk of a fixed number of particles can distinguish all strongly regular graphs",
+     "title": "Comparing algorithms for graph isomorphism using discrete- and continuous-time quantum random walks",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2402.08989",
+     "doc_id": null,
+     "quote": "Many natural equivalence relations comparing graphs such as (quantum) isomorphism, cospectrality, and logical equivalences can be characterised as homomorphism indistinguishability relations",
+     "title": "An Algorithmic Meta Theorem for Homomorphism Indistinguishability",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"quantum walk\" AND abs:\"strongly regular\" AND abs:isomorphism",
+    "abs:\"Weisfeiler\" AND abs:\"quantum\" AND abs:\"isomorphism\" AND abs:\"equivalent\"",
+    "abs:\"quantum walk\" AND abs:Weisfeiler"
+   ]
+  },
+  "C27": {
+   "barrier": "The records are templated stubs about graded or hierarchical decompositions and spectral-gap ('endpoint gap', 'quarter gap') bounds for frame or channel operators in self-dual-code wreath-product coset-state measurements; they hint that the gap closes at natural widths but never state the barrier in standard terms.",
+   "citations": [
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "This eliminates the approach of strong Fourier sampling on which almost all known exponential speedups by quantum algorithms are based",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    }
+   ],
+   "confidence": 0.75,
+   "label": "unclear",
+   "member_overrides": {},
+   "queries": [
+    "abs:McEliece AND abs:\"Fourier sampling\"",
+    "abs:\"pretty good measurement\" AND abs:\"condition number\""
+   ]
+  },
+  "C28": {
+   "barrier": "Collisions of coordinate or tuple weight-profile invariants between small random codes turn out to be genuinely equivalent codes that classical canonicalization or support-splitting-style invariants resolve, so they are not hard code-equivalence instances and give no evidence for a quantum advantage.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1905.00073",
+     "doc_id": null,
+     "quote": "Experimental results obtained with randomly drawn binary codes having trivial hulls show that permutation code equivalence can be",
+     "title": "Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"support splitting\"",
+    "abs:\"permutation code equivalence\"",
+    "abs:\"code equivalence\" AND abs:invariants AND abs:algorithm",
+    "abs:\"code equivalence\" AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C29": {
+   "barrier": "Implementing a pretty-good measurement (inverse square root of the ensemble or frame operator) by generic QSVT/LCU on a block encoding costs polynomial degree that scales with the inverse of the relevant spectral scale or condition number, which is exponential or factorial for these coset-state ensembles, so an efficient PGM needs problem-specific structure.",
+   "citations": [
+    {
+     "arxiv_id": "2106.07634",
+     "doc_id": null,
+     "quote": "whose gate complexity exhibits a polynomial advantage in the size and condition number of the input",
+     "title": "Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2601.16697",
+     "doc_id": null,
+     "quote": "The main parameters determining the complexity of QLS solvers are the condition number",
+     "title": "Sparsity-dependent Complexity Lower Bound of Quantum Linear System Solvers",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0504083",
+     "doc_id": null,
+     "quote": "its probability of success and unitary implementation are closely related to an average-case algebraic problem",
+     "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+     "verified": true
+    }
+   ],
+   "confidence": 0.65,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"pretty good measurement\" AND abs:\"block encoding\"",
+    "abs:\"singular value transformation\" AND abs:\"lower bound\" AND abs:degree",
+    "abs:\"condition number\" AND abs:\"block-encoding\" AND abs:\"lower bound\" AND abs:inverse",
+    "abs:\"condition number\" AND abs:\"quantum linear systems\" AND abs:optimal AND abs:\"lower bound\"",
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C30": {
+   "barrier": "Small random or weakly structured code-equivalence instances are separated by classical invariants of low-weight codewords and punctured/shortened subcodes (support-splitting-style signatures, information-set canonical forms), so they give no evidence of hardness that would motivate quantum coset-state measurements.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1905.00073",
+     "doc_id": null,
+     "quote": "Experimental results obtained with randomly drawn binary codes having trivial hulls show that permutation code equivalence can be decided in a few minutes",
+     "title": "Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial",
+     "verified": true
+    }
+   ],
+   "confidence": 0.7,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"support splitting\"",
+    "abs:\"code equivalence\" AND abs:\"graph isomorphism\"",
+    "abs:\"code equivalence\" AND abs:hull",
+    "abs:\"support splitting algorithm\"",
+    "abs:\"permutation equivalence\" AND abs:codewords AND abs:weight"
+   ]
+  },
+  "C31": {
+   "barrier": "Candidate hard code-equivalence instances for quantum coset-state (hidden subgroup) attacks are separated classically by structural invariants such as Sendrier's support splitting, hull dimension, and punctured/shortened weight enumerators, so they give no evidence for a quantum advantage.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "However, for many codes the support splitting algorithm of Sendrier provides a classical attack in this case.",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1905.00073",
+     "doc_id": null,
+     "quote": "one may deterministically decide the permutation code equivalence provided that the underlying vector spaces intersect trivially with their orthogonal complement",
+     "title": "Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial",
+     "verified": true
+    }
+   ],
+   "confidence": 0.7,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"Fourier sampling\"",
+    "abs:\"support splitting\"",
+    "abs:\"permutation code equivalence\" AND abs:invariant",
+    "abs:\"code equivalence\" AND abs:\"graph isomorphism\"",
+    "abs:\"code equivalence\" AND abs:hull"
+   ]
+  },
+  "C32": {
+   "barrier": "Pairs of inequivalent Goppa codes are separated in polynomial time by permutation-invariant algebraic invariants (Schur/square-code dimensions of the dual and its shortenings, hulls, weight distributions as used in support splitting), so they are not hard code-equivalence instances for a coset-state attack.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2111.13038",
+     "doc_id": null,
+     "quote": "We revisit a distinguisher for alternant and Goppa codes through a new approach, namely by studying the dimension of square codes.",
+     "title": "On the dimension and structure of the square of the dual of a Goppa code",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2603.23230",
+     "doc_id": null,
+     "quote": "A recent paper has introduced the use of the Schur product to solve PEP, identifying many new easy-to-solve instances.",
+     "title": "The Power of Power Codes: New Classes of Easy Instances for the Linear Equivalence Problem",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"Goppa codes\" AND abs:distinguisher",
+    "abs:Goppa AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C33": {
+   "barrier": "Partial structure for density-one modular subset sum (polynomial-size representations of the low-order bits, finite-size algebraic fits of carry or 2-adic lifting predicates, or reduction to a relation-solving interface) does not by itself give a polynomial-time solver; the residual high-bit search keeps linear entropy and the best known classical and quantum algorithms remain exponential.",
+   "citations": [
+    {
+     "arxiv_id": "2002.05276",
+     "doc_id": null,
+     "quote": "We show how to partially overcome this heuristic, and we obtain an algorithm with quantum time",
+     "title": "Improved Classical and Quantum Algorithms for Subset-Sum",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1608.02003",
+     "doc_id": null,
+     "quote": "then that unitary can be used to solve random subset sum with constant density",
+     "title": "How hard is deciding trivial versus nontrivial in the dihedral coset problem?",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"subset sum\" AND abs:\"quantum walk\" AND abs:representations",
+    "abs:\"dihedral\" AND abs:\"subset sum\" AND abs:quantum AND abs:hardness"
+   ]
+  },
+  "C34": {
+   "barrier": "The records appear to say that character-bias ('pressure margin') and stopping-set/peeling-core statistics of self-dual codes give no usable signal for the code-equivalence hidden subgroup problem over the wreath product, but they are templated stubs ('falsified or refined by exact theorem evaluation') that never state the barrier.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "solving this case of the HSP requires rich, entangled measurements",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    }
+   ],
+   "confidence": 0.75,
+   "label": "unclear",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"self-dual\"",
+    "abs:\"code equivalence\" AND abs:\"hidden subgroup\""
+   ]
+  },
+  "C35": {
+   "barrier": "Quasi-cyclic codes carry a large natural automorphism group (block permutations and cyclic shifts), so invariant collisions among them are equivalences under that known group rather than hard code-equivalence instances; such symmetry is a known structural weakness and conflicts with the small-automorphism-group conditions needed for Fourier-sampling hardness.",
+   "citations": [
+    {
+     "arxiv_id": "1405.5101",
+     "doc_id": null,
+     "quote": "We show that the use of such symmetric alternant/Goppa codes in cryptography introduces a fundamental weakness",
+     "title": "Folding Alternant and Goppa Codes with Non-Trivial Automorphism Groups",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1805.09972",
+     "doc_id": null,
+     "quote": "The proof of indistinguishability is achieved due to two constraints over automorphism group; small size and large minimal degree",
+     "title": "McEliece-type Cryptosystems over Quasi-cyclic Codes",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1903.04911",
+     "doc_id": null,
+     "quote": "two quasi-cyclic codes are permutation equivalent if and only if their constituent codes are equivalent",
+     "title": "Construction of Isodual Quasi-cyclic Codes over Finite Fields",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"quasi-cyclic\" AND abs:equivalence AND abs:codes",
+    "abs:\"quasi-cyclic\" AND abs:McEliece AND abs:automorphism",
+    "abs:McEliece AND abs:\"Fourier sampling\""
+   ]
+  },
+  "C36": {
+   "barrier": "Lattice nearest-plane (Babai/LLL) list decoding has no proof of recovering witnesses of random density-one subset-sum instances, which Regev's reduction of the dihedral coset problem needs, with inverse-polynomial probability, and finite empirical success gives no asymptotic coverage; this matches the known fact that lattice attacks on subset sum succeed only at low density.",
+   "citations": [
+    {
+     "arxiv_id": "1608.02003",
+     "doc_id": null,
+     "quote": "It is known that lattice problems reduce to it, and that it reduces to random subset sum",
+     "title": "How hard is deciding trivial versus nontrivial in the dihedral coset problem?",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2202.09157",
+     "doc_id": null,
+     "quote": "which have been proved in the literature to become hardest when the so-called density approaches one",
+     "title": "Tackling A Class of Hard Subset-Sum Problems: Integration of Lattice Attacks with Disaggregation Techniques",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2408.16108",
+     "doc_id": null,
+     "quote": "the theoretical guarantee on the density of feasible instances has remained unimproved for almost 40 years",
+     "title": "Improving Lagarias-Odlyzko Algorithm For Average-Case Subset Sum: Modular Arithmetic Approach",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"dihedral coset problem\" AND abs:\"subset sum\"",
+    "abs:\"subset sum\" AND abs:density AND abs:lattice",
+    "abs:\"dihedral hidden subgroup\" AND abs:\"subset sum\""
+   ]
+  },
+  "C37": {
+   "barrier": "Code-equivalence instances drawn from structured algebraic families (BCH/cyclic and punctured Reed-Muller codes) are not hard: apparent invariant collisions are equivalent pairs related by known automorphisms (cyclic-code multipliers acting on defining sets, the affine group), and classical tools such as support splitting and canonical forms decide equivalence, so these rows give no hard instance for a coset-state/HSP approach.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "However, for many codes the support splitting algorithm of Sendrier provides a classical attack in this case. We revisit the claims of our previous article in the light of these classical attacks, and discuss the particular case of the Sidelnikov cryptosystem, which is based on Reed-Muller codes.",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2211.00897",
+     "doc_id": null,
+     "quote": "A necessary and sufficient condition for the monomial equivalence of linear cyclic codes through a shift map on their defining set is also given.",
+     "title": "On the equivalence of linear cyclic and constacyclic codes",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"support splitting\"",
+    "abs:\"Reed-Muller\" AND abs:\"Sidelnikov\" AND abs:attack",
+    "abs:\"Reed-Muller codes\" AND abs:\"square code\"",
+    "abs:\"Reed-Muller\" AND abs:McEliece AND abs:permutation",
+    "abs:\"permutation equivalence\" AND abs:\"linear codes\" AND abs:algorithm"
+   ]
+  },
+  "C38": {
+   "barrier": "In Regev's subset-sum-measurement template for the dihedral coset problem, fixed- or sub-logarithmic-order moment and correlation statistics of low-bit-conditioned density-one modular subset-sum fibers retain no persistent signal (residuals are low-order independent and bad-tuple contributions decay), so a solver needs growing-order, signed, or non-moment mechanisms.",
+   "citations": [
+    {
+     "arxiv_id": "2609.40062",
+     "doc_id": null,
+     "quote": "any algorithm following this template must make extensive use of the Fourier labels",
+     "title": "A Fourier-Label Information-Loss Barrier for Dihedral Coset Algorithms",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2609.40062",
+     "doc_id": null,
+     "quote": "We consider the Fourier-sampling and subset-sum-measurement template proposed by Regev",
+     "title": "A Fourier-Label Information-Loss Barrier for Dihedral Coset Algorithms",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1608.02003",
+     "doc_id": null,
+     "quote": "it reduces to random subset sum with density",
+     "title": "How hard is deciding trivial versus nontrivial in the dihedral coset problem?",
+     "verified": true
+    }
+   ],
+   "confidence": 0.5,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"dihedral coset problem\" AND abs:\"subset sum\"",
+    "abs:\"subset sum\" AND abs:\"k-wise independent\"",
+    "abs:\"dihedral\" AND abs:\"subset sum\" AND abs:quantum AND abs:hardness"
+   ]
+  },
+  "C39": {
+   "barrier": "Building the pretty good measurement (inverse square root of the frame operator) for multi-copy wreath-product/symmetric-group coset states requires controlling every irrep-tuple sector, including correlated multi-copy blocks that are invisible at the single-copy level, so single-copy or partial-sector moment calculations do not yield a well-conditioned all-n preconditioner.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0501066",
+     "doc_id": null,
+     "quote": "cannot be solved by any POVM applied to pairs of coset states",
+     "title": "The Symmetric Group Defies Strong Fourier Sampling: Part II",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0501177",
+     "doc_id": null,
+     "quote": "the PGM is the optimal one-register experiment in the case where the hidden subgroup is a uniformly random conjugate of H",
+     "title": "For Distinguishing Conjugate Hidden Subgroups, the Pretty Good Measurement is as Good as it Gets",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "solving this case of the HSP requires rich, entangled measurements",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"wreath product\" AND abs:\"hidden subgroup\"",
+    "abs:\"pretty good measurement\" AND abs:\"symmetric group\"",
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "abs:\"coset states\" AND abs:\"graph isomorphism\"",
+    "abs:\"pretty good measurement\" AND abs:\"condition number\""
+   ]
+  },
+  "C40": {
+   "barrier": "For the symmetric-group hidden subgroup problem with a hidden involution (the graph-isomorphism case), weak and strong Fourier sampling on one or a few coset states yields negligible information; any successful measurement must be entangled across Omega(n log n) coset states, and Kuperberg-style sieves cannot supply it.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0511149",
+     "doc_id": null,
+     "quote": "yields an Omega(n log n) lower bound on the number of coset states over which we must perform an entangled measurement in order to obtain non-negligible information about a hidden involution",
+     "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0501066",
+     "doc_id": null,
+     "quote": "we show that the hidden subgroup problem on the symmetric group cannot be solved by any POVM applied to pairs of coset states",
+     "title": "The Symmetric Group Defies Strong Fourier Sampling: Part II",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0612089",
+     "doc_id": null,
+     "quote": "In this paper we show that no such approach can produce a polynomial-time quantum algorithm for Graph Isomorphism.",
+     "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+     "verified": true
+    }
+   ],
+   "confidence": 0.85,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"coset states\" AND abs:\"graph isomorphism\" AND abs:entangled",
+    "abs:\"weak Fourier sampling\" AND abs:\"symmetric group\"",
+    "abs:\"Fourier sampling\" AND abs:\"symmetric group\" AND abs:involution"
+   ]
+  },
+  "C41": {
+   "barrier": "Information-theoretic distinguishability of hidden-involution coset states from polynomially many copies (e.g. by the pretty good measurement) is not an efficient algorithm: the required collective measurement over Omega(n log n) registers has no known efficient implementation, so sample complexity does not imply time complexity.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0401083",
+     "doc_id": null,
+     "quote": "However our quantum algorithm requires exponential time, as in the classical case.",
+     "title": "The quantum query complexity of the hidden subgroup problem is polynomial",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0604174",
+     "doc_id": null,
+     "quote": "the pretty good measurement can identify any hidden subgroup of an arbitrary group with at most",
+     "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0511148",
+     "doc_id": null,
+     "quote": "This may be viewed as a negative result because highly entangled measurements seem hard to implement in general.",
+     "title": "Limitations of Quantum Coset States for Graph Isomorphism",
+     "verified": true
+    }
+   ],
+   "confidence": 0.8,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"pretty good measurement\" AND abs:\"hidden subgroup\"",
+    "ti:\"query complexity of the hidden subgroup problem is polynomial\""
+   ]
+  },
+  "C42": {
+   "barrier": "A query or sample lower bound for a hidden-shift family does not establish a quantum speedup, because polynomially many classical samples already determine the shift information-theoretically (by exhaustive enumeration); a time/decoding lower bound is required.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0401083",
+     "doc_id": null,
+     "quote": "However our quantum algorithm requires exponential time, as in the classical case.",
+     "title": "The quantum query complexity of the hidden subgroup problem is polynomial",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2408.02778",
+     "doc_id": null,
+     "quote": "this family of circuits can in fact be simulated in polynomial time via symbolic path integrals",
+     "title": "Polynomial-Time Classical Simulation of Hidden Shift Circuits via Confluent Rewriting of Symbolic Sums",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"hidden subgroup\" AND abs:\"query complexity\" AND abs:polynomial AND abs:exponential",
+    "ti:\"query complexity of the hidden subgroup problem is polynomial\"",
+    "abs:\"hidden shift\" AND abs:\"bent\" AND abs:classical"
+   ]
+  },
+  "C43": {
+   "barrier": "Weak Fourier sampling (measuring only irrep labels) of symmetric-group coset states yields exponentially small information about hidden involutions of large support, such as fixed-point-free involutions and large matchings; useful information requires highly entangled measurements across Omega(n log n) coset states.",
+   "citations": [
+    {
+     "arxiv_id": "quant-ph/0607204",
+     "doc_id": null,
+     "quote": "This implies that the weak standard method for the symmetric group has no advantage whatsoever over classical exhaustive search.",
+     "title": "Permutation groups, minimal degrees and quantum computing",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0511149",
+     "doc_id": null,
+     "quote": "an Omega(n log n) lower bound on the number of coset states over which we must perform an entangled measurement in order to obtain non-negligible information about a hidden involution",
+     "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0609110",
+     "doc_id": null,
+     "quote": "even a combination of weak Fourier sampling and weak Schur sampling fails to identify the hidden subgroup",
+     "title": "Weak Fourier-Schur sampling, the hidden subgroup problem, and the quantum collision problem",
+     "verified": true
+    }
+   ],
+   "confidence": 0.9,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"weak Fourier sampling\" AND abs:\"symmetric group\"",
+    "abs:\"weak Fourier sampling\"",
+    "ti:\"normal subgroup reconstruction\"",
+    "abs:\"hidden subgroup\" AND abs:\"symmetric group\" AND abs:\"Fourier sampling\"",
+    "abs:\"graph isomorphism\" AND abs:\"coset states\" AND abs:entangled"
+   ]
+  },
+  "C44": {
+   "barrier": "Hidden-shift families built from low-degree phase functions (quadratic forms, quadratic or cubic chirps, Maiorana-McFarland bent functions) are classically reconstructible with polynomially many value queries. Hardness that comes only from hashing, masking or noise in the generator is artificial, so neither kind of family is evidence of a quantum advantage.",
+   "citations": [
+    {
+     "arxiv_id": "0911.4724",
+     "doc_id": null,
+     "quote": "We also show how to identify an unknown quadratic form on n variables using a linear number of queries, in contrast to the classical case were this takes Theta(n^2) many queries to a black box.",
+     "title": "Quantum algorithms to solve the hidden shift problem for quadratics and for functions of large Gowers norm",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2408.02778",
+     "doc_id": null,
+     "quote": "this rewriting system suffices to reduce the circuit's path integral to the hidden shift in polynomial time",
+     "title": "Polynomial-Time Classical Simulation of Hidden Shift Circuits via Confluent Rewriting of Symbolic Sums",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {
+    "PHASE-NATURALNESS-REJECT-BENT_QUADRATIC_F2": {
+     "label": "not-found",
+     "note": "Rejects the family because its hardness comes from hash/mask/noise artificiality in the generator, not low-degree learnability; no retrieved abstract states this naturalness objection."
+    }
+   },
+   "queries": [
+    "abs:\"hidden shift\" AND abs:\"bent functions\" AND abs:classical",
+    "abs:\"hidden shift\" AND abs:\"classical algorithm\"",
+    "abs:\"hidden shift\" AND abs:polynomials AND abs:degree",
+    "abs:\"hidden shift\" AND abs:polynomial AND abs:\"finite field\""
+   ]
+  },
+  "C45": {
+   "barrier": "Code-equivalence pairs proposed as hard instances for a coset-state (hidden-subgroup) quantum attack are separated or solved in classical polynomial time by algebraic invariants such as Schur/componentwise products, t-closures, conductors and support splitting, so quantum measurement hardness is irrelevant for them.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1409.8220",
+     "doc_id": null,
+     "quote": "We give a polynomial time attack on the McEliece public key cryptosystem based on subcodes of algebraic geometry (AG) codes",
+     "title": "Cryptanalysis of public-key cryptosystems that use subcodes of algebraic geometry codes",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2304.14757",
+     "doc_id": null,
+     "quote": "using code shortening and the component-wise product of codes to derive from the original alternant code a sequence of alternant codes",
+     "title": "Polynomial time key-recovery attack on high rate random alternant codes",
+     "verified": true
+    }
+   ],
+   "confidence": 0.75,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"Fourier sampling\"",
+    "abs:conductor AND abs:\"Schur product\" AND abs:codes",
+    "abs:\"square code\" AND abs:\"polynomial time\" AND abs:attack",
+    "abs:\"componentwise product\" AND abs:attack AND abs:codes",
+    "abs:\"Schur product\" AND abs:McEliece",
+    "abs:alternant AND abs:\"key-recovery\" AND abs:conductor",
+    "ti:\"random alternant codes\"",
+    "abs:\"support splitting\" AND abs:equivalence"
+   ]
+  },
+  "C46": {
+   "barrier": "In the code-equivalence hidden subgroup problem the hidden subgroup is determined by the code's permutation automorphism group, so instances cannot be assumed rigid (order-two hidden subgroup); coset-state no-go results transfer only after certifying small automorphism group and large minimal degree, and non-rigid instances require the full stabilizer HSP.",
+   "citations": [
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "extend them to subgroups of arbitrary structure, including the automorphism groups of linear codes",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1805.09972",
+     "doc_id": null,
+     "quote": "The proof of indistinguishability is achieved due to two constraints over automorphism group; small size and large minimal degree.",
+     "title": "McEliece-type Cryptosystems over Quasi-cyclic Codes",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"self-dual codes\" AND abs:\"automorphism group\" AND abs:random",
+    "abs:\"hidden subgroup\" AND abs:\"automorphism group\" AND abs:\"minimal degree\"",
+    "abs:\"self-dual\" AND abs:\"permutation equivalence\""
+   ]
+  },
+  "C47": {
+   "barrier": "Code pairs claimed to be hard non-equivalent instances are actually equivalent, as an exact classical canonical-form check (matching basis-normalized column multisets) shows. Classical code-equivalence algorithms decide such small instances, so they cannot serve as coset-state hardness evidence.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1305.1193",
+     "doc_id": null,
+     "quote": "we are able to compute canonical forms of linear codes",
+     "title": "Canonical Forms and Automorphisms in the Projective Space",
+     "verified": true
+    }
+   ],
+   "confidence": 0.5,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"hidden subgroup\"",
+    "abs:\"code equivalence\" AND abs:\"graph isomorphism\"",
+    "abs:\"linear codes\" AND abs:equivalence AND abs:\"canonical form\""
+   ]
+  },
+  "C48": {
+   "barrier": "Random small self-dual codes do not give hard permutation code-equivalence instances: independently sampled codes are often already equivalent, and while non-trivial hull is needed to escape the polynomial reduction of trivial-hull code equivalence to graph isomorphism, large hull alone does not guarantee hardness against classical invariants and canonicalization.",
+   "citations": [
+    {
+     "arxiv_id": "1905.00073",
+     "doc_id": null,
+     "quote": "one may deterministically decide the permutation code equivalence provided that the underlying vector spaces intersect trivially with their orthogonal complement",
+     "title": "Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2610.08664",
+     "doc_id": null,
+     "quote": "rely on the hardness of Permutation Code Equivalence (PCE) on `random' self-dual codes for security",
+     "title": "Algorithms for Sampling Self-Orthogonal and Totally Self-Orthogonal Codes in Odd Characteristic",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:hull",
+    "abs:\"self-dual codes\" AND abs:\"mass formula\" AND abs:classification",
+    "abs:\"support splitting\"",
+    "abs:\"self-dual codes\" AND abs:\"code equivalence\""
+   ]
+  },
+  "C49": {
+   "barrier": "Componentwise (Schur) products and powers of a code and its dual, applied along puncturing/shortening filtrations, are polynomial-time permutation invariants that separate candidate inequivalent code pairs, so such pairs are easy permutation-code-equivalence instances rather than hard rows needing a collective quantum measurement.",
+   "citations": [
+    {
+     "arxiv_id": "2603.23230",
+     "doc_id": null,
+     "quote": "A recent paper has introduced the use of the Schur product to solve PEP, identifying many new easy-to-solve instances.",
+     "title": "The Power of Power Codes: New Classes of Easy Instances for the Linear Equivalence Problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1203.6686",
+     "doc_id": null,
+     "quote": "This operation is applied to punctured versions of this square code obtained by picking a subset $I$ of the whole set of columns.",
+     "title": "A Distinguisher-Based Attack of a Homomorphic Encryption Scheme Relying on Reed-Solomon Codes",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    }
+   ],
+   "confidence": 0.65,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"Schur product\" AND abs:codes AND abs:cryptanalysis",
+    "abs:\"component-wise product\" AND abs:codes AND abs:attack",
+    "abs:\"code equivalence\" AND (abs:\"Schur\" OR abs:\"square code\" OR abs:\"componentwise\")",
+    "abs:\"Schur products\" AND abs:\"linear codes\""
+   ]
+  },
+  "C50": {
+   "barrier": "At the tested sizes, the hidden-shift instance families are recovered by classical baselines: few random value samples plus exhaustive scoring, or known-form low-degree reconstruction. Classical hidden-shift query complexity is small even when time is domain-scale, so surviving some baselines is not evidence of a quantum advantage.",
+   "citations": [
+    {
+     "arxiv_id": "1110.0812",
+     "doc_id": null,
+     "quote": "lead to more efficient algorithms than the naive interpolation algorithm, for example, they use substantially fewer queries to the oracle",
+     "title": "On the Hidden Shifted Power Problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": "0911.4724",
+     "doc_id": null,
+     "quote": "in contrast to the classical case were this takes Theta(n^2) many queries to a black box",
+     "title": "Quantum algorithms to solve the hidden shift problem for quadratics and for functions of large Gowers norm",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2408.02778",
+     "doc_id": null,
+     "quote": "We show that this family of circuits can in fact be simulated in polynomial time via symbolic path integrals.",
+     "title": "Polynomial-Time Classical Simulation of Hidden Shift Circuits via Confluent Rewriting of Symbolic Sums",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"hidden shift\" AND abs:\"bent functions\" AND abs:classical",
+    "ti:\"Boolean hidden shift problem\"",
+    "abs:\"hidden shift\" AND abs:classical AND abs:\"query complexity\"",
+    "abs:\"hidden shift\" AND abs:\"classical algorithm\"",
+    "ti:\"hidden shifted power\""
+   ]
+  },
+  "C51": {
+   "barrier": "In the code-equivalence hidden subgroup formulation over GL_k x S_n, the GL_k row-scrambler factor is removed classically by putting generator matrices in canonical (reduced row echelon) form, so a high-rate gap in scrambler-based no-go theorems is not an algorithmic opening; the problem reduces to an S_n hidden-shift (permutation-equivalence) problem whose coset-state hardness is governed by the code's automorphism group size and minimal degree.",
+   "citations": [
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "Specifically, we show that the natural case of the Hidden Subgroup Problem to which the McEliece cryptosystem reduces cannot be solved by strong Fourier sampling",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1805.09972",
+     "doc_id": null,
+     "quote": "The proof of indistinguishability is achieved due to two constraints over automorphism group; small size and large minimal degree.",
+     "title": "McEliece-type Cryptosystems over Quasi-cyclic Codes",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2512.02087",
+     "doc_id": null,
+     "quote": "semidirect product constructions (connected, in a special case, to the code equivalence problem)",
+     "title": "A survey about Hidden Subgroup Problem from a mathematical and cryptographic perspective",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:McEliece AND abs:\"quantum Fourier sampling\"",
+    "ti:\"resist quantum Fourier sampling\"",
+    "abs:\"code equivalence\" AND abs:quantum AND abs:\"symmetric group\"",
+    "abs:\"code equivalence\" AND abs:\"hidden shift\""
+   ]
+  },
+  "C52": {
+   "barrier": "Published coset-state no-go theorems for code equivalence (quantum Fourier sampling resistance) are sufficient conditions that require a small automorphism group with large minimal degree and parameter/dimension bounds; when those hypotheses fail, as for large-dimension self-dual codes, the no-go simply does not apply, which is neither a hardness proof nor evidence of tractability.",
+   "citations": [
+    {
+     "arxiv_id": "1805.09972",
+     "doc_id": null,
+     "quote": "The proof of indistinguishability is achieved due to two constraints over automorphism group; small size and large minimal degree.",
+     "title": "McEliece-type Cryptosystems over Quasi-cyclic Codes",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0607204",
+     "doc_id": null,
+     "quote": "We completely characterize the hidden subgroups of the symmetric group that can be distinguished from identity with weak Quantum Fourier Sampling, showing these are exactly the subgroups with bounded minimal degree.",
+     "title": "Permutation groups, minimal degrees and quantum computing",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "the natural case of the Hidden Subgroup Problem to which the McEliece cryptosystem reduces cannot be solved by strong Fourier sampling",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "ti:\"single coset states\" AND abs:\"code equivalence\"",
+    "abs:\"code equivalence\" AND abs:\"coset state\"",
+    "au:Dinh AND au:Moore AND au:Russell",
+    "abs:\"self-dual\" AND abs:\"hidden subgroup\"",
+    "abs:\"quantum Fourier sampling\" AND abs:\"minimal degree\""
+   ]
+  },
+  "C53": {
+   "barrier": "Self-dual codes have hull equal to the whole code, so hull-based local signatures from puncturing and shortening (the invariants behind support splitting and trivial-hull reductions to graph isomorphism) are forced and uninformative below the minimum distance; large-hull self-dual codes are the standard hard regime for these classical distinguishers.",
+   "citations": [
+    {
+     "arxiv_id": "1905.00073",
+     "doc_id": null,
+     "quote": "provided that the underlying vector spaces intersect trivially with their orthogonal complement",
+     "title": "Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2610.08664",
+     "doc_id": null,
+     "quote": "schemes that rely on the hardness of Permutation Code Equivalence (PCE)",
+     "title": "Algorithms for Sampling Self-Orthogonal and Totally Self-Orthogonal Codes in Odd Characteristic",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2606.18662",
+     "doc_id": null,
+     "quote": "This gives a natural class of codes with large hull for which PCE is easy",
+     "title": "On (Non-)Isomorphism of Self-Dual Lattices and Codes",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:hull",
+    "abs:\"code equivalence\" AND abs:\"self-dual\"",
+    "abs:\"permutation code equivalence\" AND abs:hull AND abs:hardness"
+   ]
+  },
+  "C54": {
+   "barrier": "Encoding Cai-Furer-Immerman graph pairs as code-equivalence instances inherits their classical tractability: CFI pairs defeat Weisfeiler-Leman-type refinement, but CFI isomorphism is decidable in polynomial time (GF(2) linear algebra once the base graph is recovered from the generators), so the encoded pairs are not hard benchmarks.",
+   "citations": [
+    {
+     "arxiv_id": "2107.03778",
+     "doc_id": null,
+     "quote": "A prominent example of a decision problem in PTIME that is not known to be CPT-definable is the isomorphism problem on unordered Cai-F\u00fcrer-Immerman graphs",
+     "title": "Choiceless Polynomial Time, Symmetric Circuits and Cai-F\u00fcrer-Immerman Graphs",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1607.04287",
+     "doc_id": null,
+     "quote": "introduced by Cai, F\u00fcrer, and Immerman in 1992 as hard examples for the combinatorial Weisfeiler-Leman algorithm",
+     "title": "Linear Diophantine Equations, Group CSPs, and Graph Isomorphism",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2501.03683",
+     "doc_id": null,
+     "quote": "how quantum walks can be used to distinguish hard graphs like CFI graphs which k-WL tests cannot distinguish",
+     "title": "Multiparticle quantum walks for distinguishing hard graphs",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"CFI graphs\" AND abs:isomorphism AND abs:\"polynomial time\"",
+    "abs:\"Weisfeiler\" AND abs:\"CFI\" AND abs:\"Gaussian elimination\"",
+    "abs:\"Cai, Furer, and Immerman\" AND abs:\"bounded color class\"",
+    "abs:\"Cai-Furer-Immerman\" AND abs:\"linear algebra\"",
+    "abs:CFI AND abs:\"graph isomorphism\" AND abs:quantum"
+   ]
+  },
+  "C55": {
+   "barrier": "Code-equivalence instances obtained by faithful reduction from Cai-Furer-Immerman graph pairs inherit the CFI promise, and CFI isomorphism is decidable classically in polynomial time (e.g. by algebraic or GF(2) linear-algebra methods), so these coset-state frontier rows are dequantized.",
+   "citations": [
+    {
+     "arxiv_id": "1012.2081",
+     "doc_id": null,
+     "quote": "Unlike the Weisfeiler-Lehman algorithm, our algorithm can distinguish the Cai-Furer-Immerman graphs in polynomial time.",
+     "title": "The Graph Isomorphism Problem and approximate categories",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2107.03778",
+     "doc_id": null,
+     "quote": "A prominent example of a decision problem in PTIME that is not known to be CPT-definable is the isomorphism problem on unordered Cai-F\u00fcrer-Immerman graphs",
+     "title": "Choiceless Polynomial Time, Symmetric Circuits and Cai-F\u00fcrer-Immerman Graphs",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "for many codes the support splitting algorithm of Sendrier provides a classical attack in this case",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"hidden subgroup\"",
+    "abs:\"Cai-Furer-Immerman\" AND abs:\"polynomial time\"",
+    "abs:\"CFI graphs\" AND abs:isomorphism",
+    "abs:\"CFI\" AND abs:\"graph isomorphism\" AND abs:quantum"
+   ]
+  },
+  "C56": {
+   "barrier": "When the codes have trivial permutation automorphism group, code equivalence reduces to a symmetric-group hidden-subgroup (hidden-shift) instance with an order-two hidden subgroup exactly as for graph isomorphism, so the known coset-state no-go results (strong Fourier sampling fails; entangled measurements over Omega(n log n) copies are needed) apply rather than being escaped.",
+   "citations": [
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "extend them to subgroups of arbitrary structure, including the automorphism groups of linear codes",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0511149",
+     "doc_id": null,
+     "quote": "yields an Omega(n log n) lower bound on the number of coset states over which we must perform an entangled measurement",
+     "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "solving this case of the HSP requires rich, entangled measurements",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    }
+   ],
+   "confidence": 0.65,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"coset states\" AND abs:\"graph isomorphism\" AND abs:entangled",
+    "abs:McEliece AND abs:\"hidden subgroup\" AND abs:automorphism"
+   ]
+  },
+  "C57": {
+   "barrier": "When a code-equivalence instance is rigid (trivial or small automorphism group of large minimal degree), its hidden subgroup has the structure of the graph-isomorphism hidden-involution case, for which strong Fourier sampling on single coset states provably fails.",
+   "citations": [
+    {
+     "arxiv_id": "1008.2390",
+     "doc_id": null,
+     "quote": "the natural case of the Hidden Subgroup Problem to which the McEliece cryptosystem reduces cannot be solved by strong Fourier sampling, or by any measurement of a coset state",
+     "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1805.09972",
+     "doc_id": null,
+     "quote": "The proof of indistinguishability is achieved due to two constraints over automorphism group; small size and large minimal degree",
+     "title": "McEliece-type Cryptosystems over Quasi-cyclic Codes",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0607204",
+     "doc_id": null,
+     "quote": "showing these are exactly the subgroups with bounded minimal degree",
+     "title": "Permutation groups, minimal degrees and quantum computing",
+     "verified": true
+    }
+   ],
+   "confidence": 0.7,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:McEliece AND abs:\"Fourier sampling\" AND abs:automorphism",
+    "abs:\"hidden subgroup\" AND abs:\"minimal degree\""
+   ]
+  },
+  "C58": {
+   "barrier": "Classical post-processing of independent single-register dihedral coset (DCP) samples with linear, fixed-degree product or U-statistic estimators of coarse Fourier buckets runs into a Parseval/variance bound that forces exponentially many samples or exponentially many buckets, an instance of the known sample-versus-time tradeoff for DCP.",
+   "citations": [
+    {
+     "arxiv_id": "2206.14408",
+     "doc_id": null,
+     "quote": "admit many trade-offs between quantum and classical time, memory and queries",
+     "title": "Time and Query Complexity Tradeoffs for the Dihedral Coset Problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": "quant-ph/0501044",
+     "doc_id": null,
+     "quote": "identifies the hidden subgroup with a probability that is exponentially small in log N",
+     "title": "Optimal measurements for the dihedral hidden subgroup problem",
+     "verified": true
+    },
+    {
+     "arxiv_id": null,
+     "doc_id": "literature:galbraith-laity-shani-fourier-limitations-2016",
+     "quote": "Provides a primary-source guide to significant-Fourier-coefficient algorithms and their access limitations",
+     "title": "literature:galbraith-laity-shani-fourier-limitations-2016",
+     "verified": true
+    }
+   ],
+   "confidence": 0.5,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"significant Fourier coefficients\" AND abs:samples",
+    "abs:\"hidden number problem\" AND abs:Fourier AND abs:bias",
+    "abs:dihedral AND abs:\"hidden subgroup\" AND abs:\"classical post-processing\"",
+    "abs:\"dihedral\" AND abs:\"hidden subgroup\" AND abs:\"exponential\" AND abs:\"classical\"",
+    "abs:\"dihedral coset\" AND abs:\"lower bound\""
+   ]
+  },
+  "C59": {
+   "barrier": "Small or structured code-equivalence instances offered as hard inputs for the code-equivalence hidden subgroup approach are decided by exact classical code-equivalence methods, such as reduction to graph isomorphism, support splitting, or polynomial-time rank-metric equivalence, so they give no evidence for a quantum coset-state speedup.",
+   "citations": [
+    {
+     "arxiv_id": "1111.4382",
+     "doc_id": null,
+     "quote": "However, for many codes the support splitting algorithm of Sendrier provides a classical attack in this case.",
+     "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+     "verified": true
+    },
+    {
+     "arxiv_id": "1106.2428",
+     "doc_id": null,
+     "quote": "a different graph is then introduced that transforms the problem of code equivalence into a problem of graph isomorphism",
+     "title": "On the classification of Hermitian self-dual additive codes over GF(9)",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2011.04611",
+     "doc_id": null,
+     "quote": "We prove the latter problem to be either in $\\mathcal{P}$ or in $\\mathcal{ZPP}$ depending of the ground field size.",
+     "title": "On the hardness of code equivalence problems in rank metric",
+     "verified": true
+    }
+   ],
+   "confidence": 0.6,
+   "label": "published",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"code equivalence\" AND abs:\"hidden subgroup\"",
+    "abs:\"code equivalence\" AND abs:\"graph isomorphism\"",
+    "abs:\"support splitting\" AND abs:code"
+   ]
+  },
+  "C60": {
+   "barrier": "Hidden-shift problems for explicitly described low-degree algebraic functions over finite fields (traces of low-degree rational functions, Kloosterman-type families) are classically solvable, because a few evaluations yield constant-degree polynomial or rational equations in the shift that can be solved directly, so these natural families give no quantum advantage.",
+   "citations": [
+    {
+     "arxiv_id": "1502.06631",
+     "doc_id": null,
+     "quote": "Such results have been known before only for the special case of a linear $f$, called the hidden shifted power problem.",
+     "title": "Polynomial Interpolation and Identity Testing from High Powers over Finite Fields",
+     "verified": true
+    },
+    {
+     "arxiv_id": "2408.02778",
+     "doc_id": null,
+     "quote": "We show that this family of circuits can in fact be simulated in polynomial time via symbolic path integrals.",
+     "title": "Polynomial-Time Classical Simulation of Hidden Shift Circuits via Confluent Rewriting of Symbolic Sums",
+     "verified": true
+    }
+   ],
+   "confidence": 0.55,
+   "label": "adjacent",
+   "member_overrides": {},
+   "queries": [
+    "abs:\"hidden shift\" AND abs:\"finite field\" AND abs:classical",
+    "abs:\"shifted\" AND abs:\"character\" AND abs:\"quantum\" AND abs:\"classical\" AND abs:\"finite field\"",
+    "abs:\"function reconstruction\" AND abs:\"character\"",
+    "abs:\"hidden shift\" AND abs:\"bent functions\"",
+    "abs:\"hidden shift\" AND (abs:\"rational function\" OR abs:\"Kloosterman\" OR abs:\"trace function\")"
+   ]
+  }
+ },
+ "spot_check": {
+  "CFI-STRUCTURAL-DECODER-DEQUANTIZED-PETERSEN": {
+   "agree": true,
+   "note": "label=published; 2107.03778 states that the CFI-query (twist parity of an unordered CFI graph) is in PTIME, which is exactly the record's barrier. The Petersen base graph is only an instance.",
+   "seen_label": "published"
+  },
+  "CODE-FRONTIER-TRIAGE-HAMMING_7_4_PERMUTED": {
+   "agree": true,
+   "note": "label=published; A permuted [7,4] Hamming code is an equivalent control that classical canonicalization and code-equivalence algorithms resolve. The fit is weak because SSA struggles with transitive automorphism groups, but n=7 is trivially classical.",
+   "seen_label": "published"
+  },
+  "CODE-STRUCTURAL-INVARIANT-REJECTED-CODE_FAMILY_RANDOM_WEAK_COLLISION_12_5": {
+   "agree": true,
+   "note": "label=published; Support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382 cites Sendrier's SSA as a classical attack). This random [12,5] pair is an instance.",
+   "seen_label": "published"
+  },
+  "CODE-STRUCTURAL-INVARIANT-REJECTED-CODE_FAMILY_RANDOM_WEAK_COLLISION_9_4": {
+   "agree": true,
+   "note": "label=published; Hull dimension, support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382, 1905.00073). This random [9,4] pair is an instance.",
+   "seen_label": "published"
+  },
+  "FINITE-CARRIER-BRANCH-SUCCESS-NOT-ALL-N-DECODER": {
+   "agree": true,
+   "note": "label=published; quant-ph/0504067 and quant-ph/0401083 already state that a finite-n success certificate for a hidden-involution measurement is not an efficient algorithm without an efficient circuit and decoder. Only the finite-to-all-n proof gap is project-specific.",
+   "seen_label": "published"
+  },
+  "HS-DEQUANTIZED-QUADRATIC_CHIRP": {
+   "agree": false,
+   "note": "label=adjacent; The record is clear: a quadratic-chirp hidden shift is recovered classically from an explicit evaluator, because the shift difference is a linear phase. This is known for Boolean quadratic/bent hidden shifts (2408.02778, folklore O(n)-query attack); a chirp is a neighbouring setting.",
+   "seen_label": "unclear"
+  },
+  "LEGACY-BERNSTEIN_VAZIRANI": {
+   "agree": true,
+   "note": "label=adjacent; A procedural rejection: an N=3 custom-oracle simulation is not evidence of speedup. This parallels known speedup-detection pitfalls (1401.2910) in another setting. The record is terse, and BV itself is a published algorithm covered by oracle identification.",
+   "seen_label": "adjacent"
+  },
+  "LEGACY-NONLINEARTERNARYPRODUCTSUMSECRETFINDING": {
+   "agree": true,
+   "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem.",
+   "seen_label": "adjacent"
+  },
+  "LEGACY-NOVEL_NONLINEAR_BITWISE_ROTATION_SECRET_FINDING": {
+   "agree": true,
+   "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem.",
+   "seen_label": "adjacent"
+  },
+  "NEG-CODE-SELF-DUAL-AUTOMORPHISM-SELF-DUAL-K16-INSTANCE-07": {
+   "agree": true,
+   "note": "label=published; 1008.2390 and 1805.09972 extend the no-go to hidden subgroups given by code automorphism groups, provided they are small with large minimal degree. The record only certifies that this instance is non-rigid, which falls under that known condition.",
+   "seen_label": "published"
+  },
+  "NEG-CODE-SELF-DUAL-HIGH-ORDER-RIGID-SELF-DUAL-K32-INSTANCE-03": {
+   "agree": true,
+   "note": "label=published; The record only certifies that this instance is rigid, which puts it in the hidden-involution case where Dinh-Moore-Russell (1008.2390) show coset-state measurements fail for codes with small automorphism group. It adds an instance, not a new barrier.",
+   "seen_label": "published"
+  },
+  "NEG-CODE-SELF-DUAL-SELF-DUAL-K6-01-05": {
+   "agree": true,
+   "note": "label=adjacent; The trivial-hull reduction to GI is published (1905.00073). The record's own point, that small random self-dual codes collide so a large hull does not guarantee hardness, is only implied by the literature, not stated.",
+   "seen_label": "adjacent"
+  },
+  "NEG-CODE-SELF-DUAL-WREATH-SCALAR-SUBSET-ORBIT-PRECONDITIONER": {
+   "agree": true,
+   "note": "label=adjacent; The record's barrier (Hamming-weight orbit sums do not commute, so there is no (k+1)-dim commutative algebra) differs from the cluster's pair-local PGM barrier, and the cited abstracts do not state it. It is known elsewhere: S_k-invariant algebras are noncommutative (Schur-Weyl/Terwilliger).",
+   "seen_label": "adjacent"
+  },
+  "NEG-COSET-FINITE-NATURAL-PGM-NOT-EFFICIENT-DECODER": {
+   "agree": true,
+   "note": "label=published; quant-ph/0504067 and quant-ph/0401083 state that information-theoretically adequate multiregister measurements for the GI-type hidden-involution HSP do not give efficient algorithms. The record restates this for its finite-n PGM.",
+   "seen_label": "published"
+  },
+  "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM": {
+   "agree": true,
+   "note": "label=adjacent; The barrier (counting or projecting a Kronecker multiplicity space gives no basis or amplitudes) is not the cluster's polar-cost bound and is absent from the cited QLS/polar abstracts. It parallels the known weak- versus strong-Fourier-sampling gap in HSP.",
+   "seen_label": "adjacent"
+  },
+  "NEG-COSET-STABLE-LEAKAGE-AS-SINGLE-COMPLEMENT-REPAIR": {
+   "agree": false,
+   "note": "label=not-found; The record's barrier (leakage spreads over every character-allowed complementary sector, so one extra intermediate partition cannot close the associator) differs from the cluster's spectral-gap/circuit barrier. No cited abstract states it or clearly implies it.",
+   "seen_label": "adjacent"
+  },
+  "NEG-COSET-TRANSPOSITION-SIGNATURE-ALONE-AS-STABLE-SHAPE-ROUTER": {
+   "agree": true,
+   "note": "label=adjacent; Kemp-Ramgoolam 1911.11649 studies the same question (telling Young diagrams apart by central class sums), but the abstract only poses it. The paper body shows T_2 alone fails beyond n=5, so this is borderline published; the record adds stable-range collisions.",
+   "seen_label": "adjacent"
+  },
+  "NEG-DCP-IID-EXACT-LINEAR-HASH-BIN-PARSEVAL": {
+   "agree": true,
+   "note": "label=adjacent; The Parseval/variance bound for linear iid bucket estimators is not stated in the DCP abstracts. It is implied, for a restricted estimator class, by the known DCP sample-versus-time tradeoffs (Ettinger-Hoyer, Kuperberg, Bacon-Childs-van Dam).",
+   "seen_label": "adjacent"
+  },
+  "NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION": {
+   "agree": false,
+   "note": "label=not-found; Mis-clustered. The record is a DCP/quantum-walk interface gap (walk-internal history independence does not certify the outputs Regev's reduction needs), not symmetric-group Fourier sampling. The cited S_n abstracts do not address it.",
+   "seen_label": "published"
+  },
+  "NEG-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY": {
+   "agree": true,
+   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+   "seen_label": "unclear"
+  },
+  "NEG-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS": {
+   "agree": true,
+   "note": "label=unclear; Templated stub: the reason is only 'Falsified or refined by exact theorem evaluation' and no barrier is stated, so nothing can be matched to the literature.",
+   "seen_label": "unclear"
+  },
+  "NEG-SELF-DUAL-WREATH-PGM-QUANTUM-SAMPLING-REDUCTION": {
+   "agree": true,
+   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+   "seen_label": "unclear"
+  },
+  "NEG-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT": {
+   "agree": true,
+   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+   "seen_label": "unclear"
+  },
+  "NEG-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO": {
+   "agree": true,
+   "note": "label=unclear; Templated stub. The reason states no barrier, so it cannot be checked against the cited PGM-optimality paper (quant-ph/0501177).",
+   "seen_label": "unclear"
+  },
+  "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE": {
+   "agree": true,
+   "note": "label=published; The barrier (O(1) coset copies carry negligible information about the hidden permutation, so Omega(n log n) entangled copies are needed) is stated by Hallgren-Roetteler-Sen and Moore-Russell-Schulman for the S_n wr Z_2 / GI setting. The Holevo/Fano bound only adds a specific estimate.",
+   "seen_label": "published"
+  },
+  "REP-SFS-NOGO-S12": {
+   "agree": true,
+   "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are required (quant-ph/0511149). S_12 is just an instance.",
+   "seen_label": "published"
+  },
+  "REP-SFS-NOGO-S16": {
+   "agree": true,
+   "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are needed (quant-ph/0511149). S_16 is just an instance.",
+   "seen_label": "published"
+  },
+  "SCHUR-COMPANION-FINAL-ROOT-RAW-METRIC-ACCESS-SQRT-WIDTH": {
+   "agree": true,
+   "note": "label=adjacent; Singular values of O(w^-1/2) forcing Omega(sqrt(w)) cost for QSVT or amplification is the known condition-number/normalization lower bound (HHL, 2101.11868, 2007.15698). The record applies it to a new setting, the hidden-involution polar hierarchy.",
+   "seen_label": "adjacent"
+  },
+  "SCHUR-COMPANION-FIXED-ARITY-WELL-CONDITIONED-NO-POLY-DIMENSIONAL-ENDPOINT-ALGEBRA": {
+   "agree": true,
+   "note": "label=adjacent; The barrier (two well-conditioned positive generators already generate all of M_D(C), so algebra dimension is no circuit lower bound) is a standard Burnside-type fact, not the cluster's polar-cost bound. The cited QLS/polar abstracts do not state it.",
+   "seen_label": "adjacent"
+  },
+  "SCHUR-REJECT-SCHUR_CODE_EQUIVALENCE_WORKBENCH_RANDOM_8_4_WEAK_INVARIANT_COLLISION": {
+   "agree": true,
+   "note": "label=published; 2603.23230 and 1203.6686 state that Schur (componentwise) products of punctured or shortened codes give poly-time PEP invariants and easy instances. The random [8,4] pair is a specific instance.",
+   "seen_label": "published"
+  }
+ }
+}

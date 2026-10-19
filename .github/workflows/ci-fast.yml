@@ -1,0 +1,54 @@
+name: CLI fast check
+
+# Quick feedback for the commands in qsearch_cli/ and the qsearch.py shim:
+# the parser builds, every subcommand renders its help page, startup imports
+# no theorem module, and no migrated subcommand has disappeared. Needs only
+# pytest, because building the parser imports no research code.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "qsearch.py"
+      - "qsearch_cli/**"
+      - "tools/split_cli/**"
+      - "research/audits/cli_manifest.json"
+      - "tests/tools/test_split_cli.py"
+      - "tests/test_cli_parser_integrity.py"
+      - "site/**"
+      - "tests/js/**"
+      - ".github/workflows/ci-fast.yml"
+  pull_request:
+    paths:
+      - "qsearch.py"
+      - "qsearch_cli/**"
+      - "tools/split_cli/**"
+      - "research/audits/cli_manifest.json"
+      - "tests/tools/test_split_cli.py"
+      - "tests/test_cli_parser_integrity.py"
+      - "site/**"
+      - "tests/js/**"
+      - ".github/workflows/ci-fast.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  cli:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install pytest
+      - name: Parser, help pages, lazy startup and registry
+        run: python -m pytest -q tests/tools/test_split_cli.py tests/test_cli_parser_integrity.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Site JavaScript tests
+        run: |
+          for file in site/js/*.js site/js/lib/*.js; do node --check "$file"; done
+          node --test tests/js/*.test.mjs
