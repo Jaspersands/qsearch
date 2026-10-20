@@ -1,7 +1,8 @@
 # Draft: a classical sampler for the uniform-sign polar Gibbs source
 
 Status: DRAFT, not sent. Recipients: [authors of the polar-code quantum message-passing
-papers and of the DQI Gibbs-sampling paper the project cites; confirm before sending].
+papers, of the DQI Gibbs-sampling paper the project cites, and of arXiv:2610.03566
+(Piveteau, Quek, Franco Garrido); confirm before sending].
 
 ---
 
@@ -75,8 +76,12 @@ Two questions, if you have time:
 1. Is the identity between the SC source-shaping error terms and the reversed bit-channel
    root fidelities already stated somewhere we should cite? We know the joint-law step
    from Korada and Urbanke.
-2. For the polar family, do you expect the quantum receiver to have an edge only for
-   adversarial signs, or also for the uniform average at finite length?
+2. Piveteau, Quek and Franco Garrido (arXiv:2610.03566) dequantize the
+   unambiguous-discrimination decoder for uniform signs and report a BPQM threshold
+   beyond the classical Shannon limit on dilute spin glasses. Their claim concerns
+   classical decoders inside the reduction, not every classical sampler. For the polar
+   family, where SC source shaping already matches the uniform average, do you expect a
+   quantum receiver to have an edge only for adversarial signs?
 
 Thank you for considering this.
 

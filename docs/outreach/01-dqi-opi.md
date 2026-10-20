@@ -1,7 +1,7 @@
 # Draft: classical attacks on explicit prime-character OPI instances
 
 Status: DRAFT, not sent. Recipients: [authors of the DQI and prime-field OPI papers the
-project cites; confirm before sending].
+project cites, and Mazumder and Niroula (arXiv:2610.06753); confirm before sending].
 
 ---
 
@@ -42,7 +42,9 @@ the squares, optionally also allowing zero.
   the radii evaluated, a finite certificate for a known DQI route beats it only at
   radius ℓ = 32, with a certified mean of at least 0.9028 of the positions. The
   certificate assumes an exact source and an exact unique decoder beyond half the
-  minimum distance. No such decoder circuit has been built.
+  minimum distance. No such decoder circuit has been built. Within half the distance,
+  Mazumder and Niroula's margin cap over Prange completion (arXiv:2610.06753) puts DQI
+  near 0.861 at this rate, which the 109/127 witness (0.858) almost reaches.
 
 **What we do not claim.** This is not an all-rate or all-field dequantization of OPI. It
 does not touch the asymptotic guarantee or the random-oracle separation: a finite
@@ -69,8 +71,10 @@ Two questions, if you have time:
 
 1. Is the explicit quadratic-character family already known to be classically easy at
    high rate, for example through the norm-form argument?
-2. Is the low-rate regime, roughly K/N below 1/3 with explicit characters, one where you
-   would expect the quantum route to beat every classical method?
+2. Given that cap, a low-rate edge (K/N below about 1/3 with explicit characters) seems to
+   need efficient unique decoding beyond half the minimum distance, near radius 32 at
+   N = 127. Do you expect such a decoder to exist for these explicit-character instances,
+   or a different objective or error model to be the right route?
 
 Thank you for considering this.
 
