@@ -5,14 +5,22 @@ from pathlib import Path
 
 import pytest
 
-from tests.tools.conftest import NEGATIVES
+from tests.tools.conftest import HANDOFF, NEGATIVES, NOTE, QUARANTINED
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus.cli import main
-from tools.corpus.duplicates import check_claim, near_duplicates, pair_report
+from tools.corpus.duplicates import check_claim, draft_claim, near_duplicates, pair_report
 from tools.corpus.mcp_server import create_server
 
 HELSTROM = "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
+PLATYPUS = "negative:NEG-NEW-PLATYPUS-SIEVE"
+UNIQUE = {
+    "id": "NEG-NEW-PLATYPUS-SIEVE",
+    "applies_to": ["HSP"],
+    "claim": "A platypus sieve over echidna coset states recovers the hidden shift in polynomial time.",
+    "reason_invalid": "The platypus sieve collapses to Kuperberg merging, whose cost is subexponential.",
+    "lesson": "Charge the merging cost of every sieve.",
+}
 # The Helstrom record's claim with two words changed ("readout" -> "measurement", "dominates" -> "beats").
 NEAR_CLAIM = "Local Helstrom measurement of each dihedral coset packet beats every product X-basis readout."
 
@@ -166,6 +174,21 @@ def test_cli_near_duplicates_labels_follow_the_kind(fake_repo: Path, tmp_path: P
     assert "the index has no `nosuchkind` documents" in captured.err and captured.out == ""
 
 
+def test_check_claim_leaves_out_excluded_ids(corpus: Corpus) -> None:
+    assert check_claim(corpus, NEAR_CLAIM)[0].doc_id == HELSTROM
+    assert check_claim(corpus, NEAR_CLAIM, exclude=(HELSTROM,)) == []
+
+
+def test_draft_claim_reads_claim_and_reason_of_a_record() -> None:
+    record = dict(NEGATIVES[0], id="NEG-DRAFT-HELSTROM")
+    expected = f"{record['claim']} {record['reason_invalid']}"
+    assert draft_claim(json.dumps(record, indent=2)) == (expected, "NEG-DRAFT-HELSTROM")
+    assert draft_claim(json.dumps({"claim": "Only a claim."})) == ("Only a claim.", None)
+    assert draft_claim("A plain draft claim.\n") == ("A plain draft claim.\n", None)
+    assert draft_claim("[1, 2]") == ("[1, 2]", None)
+    assert draft_claim('{"id": "NEG-NO-CLAIM"}') == ('{"id": "NEG-NO-CLAIM"}', None)
+
+
 def test_cli_check_new_exit_code_gates_on_a_match(fake_repo: Path, tmp_path: Path, capsys) -> None:
     root = ["--root", str(fake_repo)]
     assert main([*root, "check-new", "--text", NEAR_CLAIM]) == 2
@@ -173,9 +196,65 @@ def test_cli_check_new_exit_code_gates_on_a_match(fake_repo: Path, tmp_path: Pat
     assert main([*root, "check-new", "--text", "zebrafish migration", "--json"]) == 0
     payload = json.loads(capsys.readouterr().out)
     assert payload["matches"] == [] and payload["duplicate"] is False and "index_incomplete" in payload
+    assert main([*root, "check-new", "--text", "zebrafish migration"]) == 0
+    assert capsys.readouterr().out.startswith("No negative record (retained or quarantined) has TF-IDF cosine")
     record = tmp_path / "record.json"
-    record.write_text(json.dumps(NEGATIVES[0], indent=2))
+    record.write_text(json.dumps(dict(NEGATIVES[0], id="NEG-DRAFT-HELSTROM"), indent=2))
     assert main([*root, "check-new", "--file", str(record)]) == 2
+    plain = tmp_path / "claim.txt"
+    plain.write_text(NEAR_CLAIM + "\n")
+    assert main([*root, "check-new", "--file", str(plain)]) == 2
+
+
+def test_cli_check_new_file_checks_claim_and_reason_not_the_raw_json(
+    fake_repo: Path, tmp_path: Path, corpus: Corpus
+) -> None:
+    # Padded with a note and a handoff, the raw JSON is too diluted to match; its claim and reason are not.
+    padded = dict(NEGATIVES[0], id="NEG-DRAFT-HELSTROM-PADDED", context=[NOTE, HANDOFF])
+    raw = json.dumps(padded, indent=2)
+    assert check_claim(corpus, raw) == []
+    assert check_claim(corpus, draft_claim(raw)[0])[0].doc_id == HELSTROM
+    record = tmp_path / "padded.json"
+    record.write_text(raw)
+    assert main(["--root", str(fake_repo), "check-new", "--file", str(record)]) == 2
+
+
+def test_cli_check_new_file_does_not_match_the_record_with_itself(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    root = ["--root", str(fake_repo), "check-new", "--json", "--file"]
+    draft = tmp_path / "draft.json"
+    draft.write_text(json.dumps(UNIQUE, indent=2))
+    assert main([*root, str(draft)]) == 0  # before it is filed
+    capsys.readouterr()
+    corpus = _corpus_with(fake_repo, [UNIQUE])  # after: a hook on registry edits sees the record filed
+    assert check_claim(corpus, f"{UNIQUE['claim']} {UNIQUE['reason_invalid']}")[0].doc_id == PLATYPUS
+    assert main([*root, str(draft)]) == 0
+    assert json.loads(capsys.readouterr().out)["matches"] == []
+    twin = tmp_path / "twin.json"
+    twin.write_text(json.dumps(dict(UNIQUE, id="NEG-NEW-PLATYPUS-SIEVE-TWIN")))
+    assert main([*root, str(twin)]) == 2
+    assert [match["doc_id"] for match in json.loads(capsys.readouterr().out)["matches"]] == [PLATYPUS]
+    filed = tmp_path / "filed.json"
+    filed.write_text(json.dumps(NEGATIVES[0]))
+    assert main([*root, str(filed)]) == 0
+    quarantined = tmp_path / "quarantined.json"
+    quarantined.write_text(json.dumps({"id": QUARANTINED[0]["id"], **QUARANTINED[0]["original_record"]}))
+    assert main([*root, str(quarantined)]) == 0
+
+
+def test_cli_check_new_unreadable_file_exits_1_before_indexing(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    missing = tmp_path / "missing.json"
+    assert main(["--root", str(fake_repo), "check-new", "--file", str(missing)]) == 1
+    assert f"error: cannot read {missing}" in capsys.readouterr().err
+    assert not (fake_repo / "research" / "corpus_index").exists()
+
+
+def test_cli_check_new_marks_a_quarantined_match(fake_repo: Path, capsys) -> None:
+    original = QUARANTINED[0]["original_record"]
+    assert main(["--root", str(fake_repo), "check-new", "--text", f"{original['claim']} {original['reason_invalid']}"]) == 2
+    out = capsys.readouterr().out
+    assert out.startswith("POSSIBLE DUPLICATE: 1 negative record(s), 1 of them quarantined, at TF-IDF cosine >= 0.6.")
+    assert "NEG-ANNEALING-GAP-BARRIER (quarantined)" in out
+    assert "retained" not in out
 
 
 def test_check_duplicate_negative_tool(fake_repo: Path) -> None:

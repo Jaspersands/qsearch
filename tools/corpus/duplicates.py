@@ -14,6 +14,7 @@ how many pairs of one such family are kept, so they do not crowd true restatemen
 
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass, replace
 
@@ -91,13 +92,39 @@ def near_duplicates(
     return pair_report(corpus, kind=kind, threshold=threshold, limit=limit, per_family=per_family).pairs
 
 
-def check_claim(corpus: Corpus, text: str, threshold: float = 0.6, k: int = 5) -> list[Hit]:
-    """Retained negatives whose TF-IDF cosine with a draft claim is at least `threshold`.
+def draft_claim(raw: str) -> tuple[str, str | None]:
+    """The text to check for a draft, and the draft's record id when it has one.
+
+    A JSON object with a `claim` is a registry record: its claim and reason_invalid are
+    checked, and its `id` is returned so the record is not matched with itself once filed.
+    Anything else (plain text, other JSON) is checked as it is, with no id.
+    """
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return raw, None
+    if not (isinstance(data, dict) and data.get("claim")):
+        return raw, None
+    record_id = data.get("id")
+    text = f"{data['claim']} {data.get('reason_invalid') or ''}".strip()
+    return text, str(record_id) if record_id else None
+
+
+def own_ids(record_id: str | None) -> tuple[str, ...]:
+    """The doc ids a registry record with this id has in the index (retained or quarantined)."""
+    return (f"negative:{record_id}", f"quarantined:{record_id}") if record_id else ()
+
+
+def check_claim(
+    corpus: Corpus, text: str, threshold: float = 0.6, k: int = 5, exclude: tuple[str, ...] = ()
+) -> list[Hit]:
+    """Negative records (retained or quarantined) whose TF-IDF cosine with a draft claim is at least `threshold`.
 
     The fused search finds candidates; each is re-scored with `Corpus.cosine`, so a hit's
-    `score` here is a cosine in [0, 1], not the search's rank-fusion score.
+    `score` here is a cosine in [0, 1], not the search's rank-fusion score. Doc ids in
+    `exclude` (say the draft's own record, already filed) are never returned.
     """
-    hits = corpus.search(text, kinds=("negative",), k=max(2 * k, 10))
+    hits = corpus.search(text, kinds=("negative",), k=max(2 * k, 10), exclude=exclude)
     cosines = corpus.cosine(text, [hit.doc_id for hit in hits])
     scored = [
         replace(hit, score=round(cosines[hit.doc_id], 4))

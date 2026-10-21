@@ -27,7 +27,7 @@ verdict on the idea.
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
 | `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
-| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained one. |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the file cannot be read. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
 Every command except `build` first refreshes the index incrementally: it stats about
@@ -158,12 +158,19 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   also writes `FILE.md` with the stem upper-cased; the committed report is
   `research/audits/registry_duplicates.json` and `REGISTRY_DUPLICATES.md` (0.9,
   `--per-family 3`: 167 pairs on 2026-10-21, all of them).
-- `check-new` checks one draft claim against retained negatives at cosine 0.6 and exits 2
-  on any match, 0 otherwise, so it can gate a hook or a script. `--file` takes a text file
-  or a registry record as JSON; a record contributes its `claim` and `reason_invalid`. An
+- `check-new` checks one draft claim against the negative records, retained and
+  quarantined, at cosine 0.6. It exits 2 on any match, 0 when there is none, and 1 when
+  the `--file` cannot be read (checked before the index is touched). argparse usage errors
+  also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
+  file or a registry record as JSON; a record contributes its `claim` and `reason_invalid`,
+  and is never matched with its own `id` (`negative:ID` or `quarantined:ID`). The answer is
+  therefore the same before and after the record is filed, and a hook can run on the draft
+  or on the registry edit that files it; a draft that reuses another record's id is not
+  compared with that record. A quarantined match is labelled `(quarantined)`. An
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
-  The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches.
+  The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches
+  for a claim's text, with no id left out.
 - The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
   ones (`quarantined:` ids, 12). Both are compared and both can match; no quarantined record
   is in a pair at 0.7 or above today.
@@ -228,11 +235,15 @@ Smoke runs on this checkout (2026-10-21):
 | input | exit | top match (cosine) |
 |---|---|---|
 | `--text` claim of `COSET-DISTINGUISHABILITY-DEBT-S10-FIXED_POINT_FREE_INVOLUTION` | 2 | that record (0.701) |
-| `--file` that record | 2 | that record (0.850), then its S8 sibling (0.785) |
+| `--file` that record under a new id | 2 | that record (0.850), then its S8 sibling (0.785) |
+| `--file` that record as filed | 2 | its S8 sibling (0.785); its own id is left out |
 | `--text` claim of `NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER` | 0 | none: a long reason, claim alone below 0.6 |
-| `--file` that record | 2 | that record (0.775) |
-| `--file` `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` | 2 | that record (0.855), then the orthogonal one (0.664) |
+| `--text` claim and reason of that record | 2 | that record (0.775) |
+| `--file` that record as filed | 0 | none: no other record is that close |
+| `--file` `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` as filed | 2 | the orthogonal one (0.664) |
 | `--text "Grover search gives a quadratic speedup for unstructured search."` | 0 | none |
+| `--text` claim and reason of quarantined `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` | 2 | that record, labelled `(quarantined)` (0.924) |
+| `--file /nonexistent/draft.json` | 1 | none: `error: cannot read ...` on stderr |
 
 ## Baselines
 

@@ -28,7 +28,7 @@ if __package__ in (None, ""):
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
 from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
-from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, pair_report  # noqa: E402
+from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, draft_claim, own_ids, pair_report  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -58,8 +58,13 @@ def _recommendation_json(rec: Recommendation) -> dict:
     }
 
 
+def _record_label(doc_id: str) -> str:
+    prefix, _, rest = doc_id.partition(":")
+    return f"{rest} (quarantined)" if prefix == "quarantined" else rest or doc_id
+
+
 def _print_hit(index: int, hit: Hit) -> None:
-    label = hit.doc_id.split(":", 1)[1] if hit.kind in {"negative", "dequant"} else hit.title
+    label = _record_label(hit.doc_id) if hit.kind in {"negative", "dequant"} else hit.title
     tags = ", ".join(str(t) for t in hit.meta.get("tags", [])[:4])
     extra = " · ".join(part for part in (_status(hit), tags) if part)
     print(f"  {index}. {hit.kind:<10} {label[:110]}" + (f"  [{extra}]" if extra else ""))
@@ -189,11 +194,6 @@ def cmd_eval(args: argparse.Namespace) -> int:
     return 0 if found >= args.min else 1
 
 
-def _record_label(doc_id: str) -> str:
-    prefix, _, rest = doc_id.partition(":")
-    return f"{rest} (quarantined)" if prefix == "quarantined" else rest or doc_id
-
-
 def _cell(text: str, width: int = 160) -> str:
     text = " ".join(str(text).split()).replace("|", "\\|")
     return text if len(text) <= width else text[: width - 1].rstrip() + "…"
@@ -275,33 +275,31 @@ def cmd_near_duplicates(args: argparse.Namespace) -> int:
     return 0
 
 
-def _claim_text(args: argparse.Namespace) -> str:
-    """The claim to check: --text, or a file; a JSON registry record contributes claim + reason_invalid."""
-    if args.text is not None:
-        return args.text
-    raw = Path(args.file).read_text(encoding="utf-8")
-    try:
-        data = json.loads(raw)
-    except json.JSONDecodeError:
-        return raw
-    if isinstance(data, dict) and data.get("claim"):
-        return f"{data['claim']} {data.get('reason_invalid') or ''}".strip()
-    return raw
-
-
 def cmd_check_new(args: argparse.Namespace) -> int:
+    # Read the draft before touching the index, so an unreadable file fails fast with exit 1, never 0.
+    if args.text is not None:
+        text, record_id = args.text, None
+    else:
+        try:
+            raw = Path(args.file).read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            print(f"error: cannot read {args.file}: {exc}", file=sys.stderr)
+            return 1
+        text, record_id = draft_claim(raw)
     corpus = _corpus(args)
-    matches = check_claim(corpus, _claim_text(args), threshold=args.threshold)
+    matches = check_claim(corpus, text, threshold=args.threshold, exclude=own_ids(record_id))
     if args.json:
         payload = {"matches": [_hit_json(h) for h in matches], "duplicate": bool(matches), **_issues_json(corpus)}
         print(json.dumps(payload, indent=2))
         return 2 if matches else 0
     if not matches:
-        print(f"No retained negative has TF-IDF cosine >= {args.threshold} with this claim.")
+        print(f"No negative record (retained or quarantined) has TF-IDF cosine >= {args.threshold} with this claim.")
         if corpus.incomplete():
             print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
         return 0
-    print(f"POSSIBLE DUPLICATE: {len(matches)} retained negative(s) at TF-IDF cosine >= {args.threshold}.\n")
+    quarantined = sum(hit.doc_id.startswith("quarantined:") for hit in matches)
+    of_them = f", {quarantined} of them quarantined," if quarantined else ""
+    print(f"POSSIBLE DUPLICATE: {len(matches)} negative record(s){of_them} at TF-IDF cosine >= {args.threshold}.\n")
     for index, hit in enumerate(matches, start=1):
         _print_hit(index, hit)
         print(f"     Cosine: {hit.score:.3f}")
@@ -406,10 +404,16 @@ def build_parser() -> argparse.ArgumentParser:
     dups.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
     dups.set_defaults(func=cmd_near_duplicates)
 
-    check = sub.add_parser("check-new", help="Exit 2 when a draft claim is close to a retained negative.")
+    check = sub.add_parser(
+        "check-new", help="Exit 2 when a draft claim is close to a negative record, 1 when --file cannot be read."
+    )
     source = check.add_mutually_exclusive_group(required=True)
     source.add_argument("--text", help="The draft claim.")
-    source.add_argument("--file", help="A text file, or a JSON record whose claim and reason_invalid are checked.")
+    source.add_argument(
+        "--file",
+        help="A text file, or a JSON record whose claim and reason_invalid are checked; "
+        "the record is never matched with its own id.",
+    )
     check.add_argument("--threshold", type=float, default=0.6, help="Minimum TF-IDF cosine for a match.")
     check.add_argument("--json", action="store_true")
     check.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
