@@ -17,6 +17,7 @@ The referee never edits research/*.md.
 
 from __future__ import annotations
 
+import datetime as dt
 import hashlib
 import json
 import sys
@@ -25,6 +26,7 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
+from tools.audit.rediscovery import _norm, _rows  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.markdown import JOURNALS, note_status  # noqa: E402
 from tools.referee.extract import DATE, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
@@ -155,3 +157,63 @@ def export_batches(root: Path, out_dir: Path, notes: list[Path], batch_size: int
         path.write_text(json.dumps(batch, indent=1), encoding="utf-8")
         paths.append(path)
     return paths
+
+
+MIN_QUOTE_WORDS = 6
+MAX_CLAIMS = 6
+
+
+def _note_path(root: Path, stem: str) -> Path:
+    return root / "research" / f"{stem}.md"
+
+
+def _claim_entry(where: str, claim: dict, source: str) -> dict:
+    verdict = claim.get("verdict")
+    if verdict not in CLAIM_VERDICTS:
+        raise ValueError(f"{where}: bad claim verdict {verdict!r}")
+    quote = str(claim.get("quote", ""))
+    words = _norm(quote)
+    if len(words.split()) < MIN_QUOTE_WORDS:
+        raise ValueError(f"{where}: quote under {MIN_QUOTE_WORDS} words: {quote!r}")
+    if f" {words} " not in source:
+        raise ValueError(f"{where}: quote not verbatim in the note: {quote[:120]!r}")
+    return {
+        "quote": quote[:400],
+        "verdict": verdict,
+        "step": str(claim.get("step", ""))[:300],
+        "finding": str(claim.get("finding", ""))[:600],
+        "covered_by_self_check": bool(claim.get("covered_by_self_check")),
+    }
+
+
+def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None) -> dict:
+    """Verify judge rows against the notes and store them; nothing is written if any row fails."""
+    reviewed_on = today or dt.date.today().isoformat()
+    entries: dict[str, dict] = {}
+    for path in paths:
+        for row in _rows(Path(path)):
+            stem = str(row.get("stem") or "")
+            note = _note_path(root, stem)
+            if not stem or not note.is_file():
+                raise ValueError(f"{path}: unknown note {stem!r}")
+            overall = row.get("overall")
+            if overall not in OVERALL:
+                raise ValueError(f"{path}: {stem}: bad overall verdict {overall!r}")
+            source = f" {_norm(note.read_bytes().decode('utf-8', errors='replace'))} "
+            claims = [_claim_entry(f"{path}: {stem}", claim, source) for claim in (row.get("claims") or [])[:MAX_CLAIMS]]
+            sha = str(row.get("content_sha") or "")
+            entries[stem] = {
+                "reviewed_on": reviewed_on,
+                "judge": judge,
+                "content_sha": sha,
+                "overall": overall,
+                "claims": claims,
+                "summary": str(row.get("summary", ""))[:1500],
+                "stale": sha != note_sha(note),
+            }
+    data = load_reviews(root)
+    data.setdefault("notes", {}).update(entries)
+    store = root / REVIEWS
+    store.parent.mkdir(parents=True, exist_ok=True)
+    store.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    return {"imported": sorted(entries), "stale": sorted(stem for stem, entry in entries.items() if entry["stale"])}

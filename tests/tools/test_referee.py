@@ -6,6 +6,8 @@ import os
 import textwrap
 from pathlib import Path
 
+import pytest
+
 from tools.referee import extract as X
 from tools.referee import referee as R
 
@@ -278,3 +280,65 @@ def test_export_writes_instructions_and_batches_with_artifact_excerpts(tmp_path:
     for word in R.CLAIM_VERDICTS + R.OVERALL:
         assert f"`{word}`" in instructions
     assert "verbatim" in instructions and "must not propose" in instructions
+
+
+def _claim(quote: str, verdict: str = "gap", **extra) -> dict:
+    return {"quote": quote, "verdict": verdict, "step": "Question And Result", "finding": "The margin needs a uniform bound.", **extra}
+
+
+def _row(root: Path, stem: str = "FIXTURE_NOTE", overall: str = "needs-work", claims: list[dict] | None = None, **extra) -> dict:
+    sha = R.note_sha(root / "research" / f"{stem}.md")
+    claims = claims if claims is not None else [_claim("It holds for all twelve saved inputs, with margin at least 0.031")]
+    return {"stem": stem, "content_sha": sha, "overall": overall, "summary": "One gap in the margin.", "claims": claims, **extra}
+
+
+def _jsonl(path: Path, rows: list[dict]) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("".join(json.dumps(row) + "\n" for row in rows), encoding="utf-8")
+    return path
+
+
+def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    _dated_note(tmp_path, "OTHER", "2026-10-11. REVIEW PENDING.", 1000)
+    out = tmp_path / "out"
+    bad_rows = [
+        _row(tmp_path, claims=[_claim("It holds for all twelve saved inputs", verdict="maybe")]),
+        _row(tmp_path, overall="fine"),
+        _row(tmp_path, claims=[_claim("the radial bound holds")]),
+        _row(tmp_path, claims=[_claim("It holds for all thirteen saved inputs")]),
+        _row(tmp_path, claims=[_claim("olds for all twelve saved inputs")]),
+        _row(tmp_path, stem="OTHER") | {"stem": "MISSING_NOTE"},
+    ]
+    for index, row in enumerate(bad_rows):
+        with pytest.raises(ValueError):
+            R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [_row(tmp_path, stem="OTHER", claims=[]), row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900)] * 8
+    good = _row(tmp_path, claims=many, summary="s" * 2000)
+    stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
+    result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21")
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"]}
+    data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
+    entry = data["notes"]["FIXTURE_NOTE"]
+    assert (entry["judge"], entry["reviewed_on"], entry["overall"], entry["stale"]) == ("test-judge", "2026-10-21", "needs-work", False)
+    assert len(entry["claims"]) == 6 and len(entry["claims"][0]["finding"]) == 600 and len(entry["summary"]) == 1500
+    assert entry["claims"][0]["covered_by_self_check"] is False
+    assert data["notes"]["OTHER"]["stale"] is True
+
+    again = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    R.import_reviews(tmp_path, [_jsonl(out / "again.jsonl", [again])], "second-judge", today="2026-10-22")
+    data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
+    assert data["notes"]["FIXTURE_NOTE"]["overall"] == "unsound" and data["notes"]["FIXTURE_NOTE"]["judge"] == "second-judge"
+    assert len(data["notes"]["FIXTURE_NOTE"]["claims"]) == 1 and "OTHER" in data["notes"]
+
+
+def test_import_rejects_a_quote_from_the_artifact_excerpt(tmp_path: Path) -> None:
+    notes = _export_fixture(tmp_path)
+    batch = json.loads(R.export_batches(tmp_path, tmp_path / "out", notes[:1])[0].read_text(encoding="utf-8"))
+    lifted = "certificate verified for every saved input"
+    assert lifted in batch["notes"][0]["artifact_excerpt"]
+    row = _row(tmp_path, claims=[_claim(lifted, verdict="holds")])
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "lifted.jsonl", [row])], "j")
