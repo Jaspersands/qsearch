@@ -516,8 +516,62 @@ def test_arxiv_section_tolerates_verdicts_for_unknown_papers_and_null_first_seen
     # Verdicts with no stored papers at all still give the reviews and actions.
     (tmp_path / B.ARXIV_STATE).unlink()
     section = B.arxiv_section(tmp_path, SINCE)
-    assert section["available"] is True and section["flagged"] == []
+    assert section["available"] is True and section["flagged"] is None
     assert [a["id"] for a in section["actions"]] == ["2610.99999"]
+
+
+@pytest.mark.parametrize("state", ["missing", "directory", "no papers", "not json"])
+def test_arxiv_open_flags_are_not_available_without_a_readable_collisions_file(tmp_path: Path, state: str) -> None:
+    # Open flags live only in the collisions file; without it "0 open" would be a guess.
+    _arxiv_files(tmp_path, [_paper("2610.11111", "Open kill", "possible-kill", "2026-09-01")],
+                 {"2610.99999": _verdict("should-cite", "2026-10-20", action="Cite it.")})
+    path = tmp_path / B.ARXIV_STATE
+    path.unlink()
+    if state == "directory":
+        path.mkdir()
+    elif state == "no papers":
+        _write_json(path, {"updated": "2026-10-19"})
+    elif state == "not json":
+        path.write_text("{not json", encoding="utf-8")
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["available"] is True and section["flagged"] is None
+    assert B.ARXIV_STATE in section["flagged_reason"]
+    assert [a["id"] for a in section["actions"]] == ["2610.99999"]
+    assert [r["id"] for r in section["reviewed"]] == ["2610.99999"]
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "no verdict yet: 0" not in text and "already reviewed: 0" not in text
+    assert f"Possible kills and scoops: not available: {section['flagged_reason']}" in text
+    assert "`2610.99999`: should-cite (human, 2026-10-20)" in text  # the verdict is still named
+    assert "Cite it." in text
+
+
+def test_arxiv_names_a_verdict_in_the_window_on_a_paper_first_seen_before_it(tmp_path: Path) -> None:
+    # The flagged table keeps reviewed papers only when first seen in the window, so a kill
+    # recorded this week on an older paper, with no action, would be only a tally.
+    _arxiv_files(
+        tmp_path,
+        [_paper("2610.00002", "Old paper, judged a kill", "possible-kill", "2026-10-01"),
+         _paper("2610.33333", "New paper", "possible-scoop", "2026-10-18")],
+        {"2610.00002": _verdict("kill", "2026-10-20"),
+         "2610.33333": _verdict("false-alarm", "2026-10-19"),
+         "2610.44444": _verdict("scoop", "2026-10-01")},  # before the window: not named
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [f["id"] for f in section["flagged"]] == ["2610.33333"]
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "`2610.00002`: kill (human, 2026-10-20)" in text
+    assert "`2610.33333`: false-alarm" not in text  # already in the table
+    assert "2610.44444" not in text
+
+
+@pytest.mark.parametrize("done", ["false", "no", 1, "true"])
+def test_only_action_done_true_closes_an_action(tmp_path: Path, done) -> None:
+    # action_done is written by hand; a string or number is not a JSON true.
+    _arxiv_files(tmp_path, [], {"2610.11111": _verdict("kill", "2026-10-20", action="Retract the note.",
+                                                       action_done=done),
+                                "2610.22222": _verdict("kill", "2026-10-20", action="Done.", action_done=True)})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [a["id"] for a in section["actions"]] == ["2610.11111"]
 
 
 def test_arxiv_section_missing(tmp_path: Path) -> None:
