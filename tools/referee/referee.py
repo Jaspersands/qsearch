@@ -178,6 +178,9 @@ SYMBOL_FORMS = str.maketrans({"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">="
 LINE_MARKER = re.compile(r"(?m)^[ \t]*(?:[-+*>][ \t]+)+")
 
 
+STEM = re.compile(r"^[A-Za-z0-9_][A-Za-z0-9_.-]*$")  # a file name in research/, never a path
+
+
 def _note_path(root: Path, stem: str) -> Path:
     return root / "research" / f"{stem}.md"
 
@@ -293,19 +296,32 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     exported = exported_texts(paths)
     entries: dict[str, dict] = {}
     for path in paths:
-        for row in _rows(Path(path)):
+        try:
+            rows = _rows(Path(path))
+        except OSError as error:
+            raise ValueError(f"{path}: cannot read: {error.strerror or error}") from error
+        except ValueError as error:
+            raise ValueError(f"{path}: not JSON lines: {error}") from error
+        for number, row in enumerate(rows, start=1):
+            if not isinstance(row, dict):
+                raise ValueError(f"{path}: row {number} is not a JSON object")
             stem = str(row.get("stem") or "")
+            if not STEM.match(stem):
+                raise ValueError(f"{path}: row {number}: bad note stem {stem!r}")
             note = _note_path(root, stem)
-            if not stem or not note.is_file():
+            if not note.is_file():
                 raise ValueError(f"{path}: unknown note {stem!r}")
             overall = row.get("overall")
             if overall not in OVERALL:
                 raise ValueError(f"{path}: {stem}: bad overall verdict {overall!r}")
+            given = row.get("claims") or []
+            if not isinstance(given, list) or not all(isinstance(claim, dict) for claim in given):
+                raise ValueError(f"{path}: {stem}: claims must be a list of JSON objects")
             sha, current = str(row.get("content_sha") or ""), note_sha(note)
             source, strict = note.read_bytes().decode("utf-8", errors="replace"), True
             if sha != current:
                 source, strict = (exported[(stem, sha)], True) if (stem, sha) in exported else (source, False)
-            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in (row.get("claims") or [])[:MAX_CLAIMS]]
+            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given[:MAX_CLAIMS]]
             conflict = overall_conflict(overall, claims)
             if conflict:
                 raise ValueError(f"{path}: {stem}: overall {overall!r} contradicts the claims: {conflict}")
@@ -337,6 +353,11 @@ def worst_claim(entry: dict) -> dict | None:
     return max(claims, key=lambda claim: WORST.get(claim.get("verdict"), 0)) if claims else None
 
 
+def stored_reviews(root: Path) -> dict:
+    """Stored reviews whose stem is a note name (import refuses others; this skips hand edits)."""
+    return {stem: entry for stem, entry in load_reviews(root).get("notes", {}).items() if STEM.match(stem)}
+
+
 def is_stale(root: Path, stem: str, entry: dict) -> bool:
     """True when the note is gone or its bytes differ from the version the judge read."""
     path = _note_path(root, stem)
@@ -346,7 +367,7 @@ def is_stale(root: Path, stem: str, entry: dict) -> bool:
 def status(root: Path) -> dict:
     if not (root / REVIEWS).exists():
         return {"available": False, "reason": f"no reviews yet ({REVIEWS} absent)", "reviewed": 0, "flagged": [], "stale": []}
-    notes = load_reviews(root).get("notes", {})
+    notes = stored_reviews(root)
     stale = sorted(stem for stem, entry in notes.items() if is_stale(root, stem, entry))
     flagged = [
         {"stem": stem, "overall": entry["overall"], "reviewed_on": entry.get("reviewed_on"), "worst_claim": worst_claim(entry)}
@@ -436,7 +457,7 @@ def _render_queue(root: Path, notes: dict, stale: list[str], today: str) -> str:
 
 def render(root: Path, today: str | None = None) -> None:
     """Write reviews/<STEM>.md for every stored review and REFEREE_QUEUE.md."""
-    notes = load_reviews(root).get("notes", {})
+    notes = stored_reviews(root)
     stale = sorted(stem for stem, entry in notes.items() if is_stale(root, stem, entry))
     out = (root / REVIEWS).parent
     out.mkdir(parents=True, exist_ok=True)
@@ -444,6 +465,18 @@ def render(root: Path, today: str | None = None) -> None:
         (out / f"{stem}.md").write_text(_render_review(stem, entry, stem in stale), encoding="utf-8")
     queue = root / QUEUE
     queue.write_text(_render_queue(root, notes, stale, today or dt.date.today().isoformat()), encoding="utf-8")
+
+
+def _count(least: int):
+    def parse(text: str) -> int:
+        try:
+            value = int(text)
+        except ValueError:
+            raise argparse.ArgumentTypeError(f"not an integer: {text!r}") from None
+        if value < least:
+            raise argparse.ArgumentTypeError(f"must be at least {least}: {value}")
+        return value
+    return parse
 
 
 def _selected(root: Path, args: argparse.Namespace) -> list[Path]:
@@ -456,14 +489,14 @@ def main(argv: list[str] | None = None) -> int:
     common.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     choose = argparse.ArgumentParser(add_help=False)
     choose.add_argument("--prefix", action="append", default=[], help="Only notes whose stem starts with this (repeatable).")
-    choose.add_argument("--limit", type=int, default=NEXT, help="At most this many notes; 0 for all.")
+    choose.add_argument("--limit", type=_count(0), default=NEXT, help="At most this many notes; 0 for all.")
     choose.add_argument("--include-reviewed", action="store_true", help="Keep notes whose review is still current.")
     sub = parser.add_subparsers(dest="command", required=True)
     select = sub.add_parser("select", parents=[common, choose], help="List the newest review-pending notes.")
     select.add_argument("--json", action="store_true")
     export = sub.add_parser("export", parents=[common, choose], help="Write INSTRUCTIONS.md and judge batches.")
     export.add_argument("--out-dir", type=Path, required=True)
-    export.add_argument("--batch-size", type=int, default=5)
+    export.add_argument("--batch-size", type=_count(1), default=5)
     export.add_argument("--note", action="append", default=[], metavar="STEM",
                         help="Export this note whatever its status (repeatable); replaces the selection.")
     imp = sub.add_parser("import", parents=[common], help="Verify and store judge reviews (JSONL).")
@@ -490,7 +523,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "export":
         if args.note:
-            notes = [_note_path(root, stem.removesuffix(".md")) for stem in args.note]
+            notes = [_note_path(root, Path(stem).name.removesuffix(".md")) for stem in args.note]
             missing = [path.stem for path in notes if not path.is_file()]
             if missing:
                 parser.error(f"no such note: {', '.join(missing)}")
@@ -512,7 +545,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "render":
         render(root)
-        print(f"wrote {len(load_reviews(root).get('notes', {}))} reviews and {QUEUE}")
+        print(f"wrote {len(stored_reviews(root))} reviews and {QUEUE}")
         return 0
 
     result = status(root)

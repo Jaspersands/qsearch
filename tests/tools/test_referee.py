@@ -361,6 +361,57 @@ def test_import_rejects_an_overall_verdict_that_contradicts_the_claims(tmp_path:
             R.import_reviews(tmp_path, [answer], "j")
 
 
+def test_import_rejects_malformed_rows_and_stems_that_are_paths(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    (tmp_path / "README.md").write_text("Some words here for a long enough quote to pass the check.\n", encoding="utf-8")
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    out = tmp_path / "out"
+    malformed = {
+        "list": '[["a"]]\n',
+        "scalar": "5\n",
+        "claims_object": json.dumps(_row(tmp_path) | {"claims": {"quote": quote}}) + "\n",
+        "claim_string": json.dumps(_row(tmp_path) | {"claims": [quote]}) + "\n",
+        "traversal": json.dumps({"stem": "../README", "content_sha": "x", "overall": "unsound", "claims": [
+            {"quote": "Some words here for a long enough quote", "verdict": "wrong"}]}) + "\n",
+        "bad_json": '{"stem": \n',
+    }
+    for name, text in malformed.items():
+        path = out / f"{name}.jsonl"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        with pytest.raises(ValueError):
+            R.import_reviews(tmp_path, [path], "j")
+    with pytest.raises(ValueError, match="cannot read"):
+        R.import_reviews(tmp_path, [out / "absent" / "*.jsonl"], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps({"notes": {"../README": {"overall": "unsound", "content_sha": "x", "claims": []}}}), encoding="utf-8")
+    R.render(tmp_path, today="2026-10-21")
+    assert not (tmp_path / "research/audits/README.md").exists()
+    assert sorted(p.name for p in (tmp_path / "research/audits/reviews").iterdir()) == ["reviews.json"]
+
+
+def test_cli_rejects_bad_numbers_and_reports_import_errors_without_a_traceback(tmp_path: Path, capsys) -> None:
+    _export_fixture(tmp_path)
+    root = str(tmp_path)
+    for argv in (["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--batch-size", "0"],
+                 ["select", "--root", root, "--limit", "-1"]):
+        with pytest.raises(SystemExit) as exit_info:
+            R.main(argv)
+        assert exit_info.value.code == 2
+    assert R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--note", "research/OTHER_3.md"]) == 0
+    assert [n["stem"] for n in json.loads((tmp_path / "o" / "batch_01.json").read_text(encoding="utf-8"))["notes"]] == ["OTHER_3"]
+    with pytest.raises(SystemExit):
+        R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--note", "../README"])
+    capsys.readouterr()
+    rows = _jsonl(tmp_path / "rows.jsonl", [_row(tmp_path) | {"claims": {"quote": "x"}}])
+    for files in ([str(tmp_path / "nonexistent" / "*.jsonl")], [str(rows)]):
+        assert R.main(["import", *files, "--root", root, "--judge", "j"]) == 2
+        assert "nothing imported" in capsys.readouterr().err
+
+
 def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     R.export_batches(tmp_path, tmp_path / "pass", notes[:2])
