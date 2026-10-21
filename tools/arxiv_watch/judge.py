@@ -155,6 +155,12 @@ def _verbatim(quote: str, source: str) -> bool:
     return bool(source) and len(words.split()) >= MIN_QUOTE_WORDS and f" {words} " in f" {_norm(source)} "
 
 
+def _by_judge(entry) -> bool:
+    """A stored verdict a judge may replace: one whose `by` names a judge. An entry without `by`
+    (written by hand) counts as a human's."""
+    return isinstance(entry, dict) and str(entry.get("by") or "").startswith(JUDGE_PREFIX)
+
+
 def _confidence(value) -> float | None:
     try:
         return max(0.0, min(1.0, float(value)))
@@ -187,7 +193,7 @@ def import_judgements(
     for _, row in rows:
         arxiv_id = row["arxiv_id"]
         record = state["papers"][arxiv_id]
-        if not str((existing.get(arxiv_id) or {}).get("by", JUDGE_PREFIX)).startswith(JUDGE_PREFIX):
+        if arxiv_id in existing and not _by_judge(existing[arxiv_id]):
             rejected.append({"arxiv_id": arxiv_id, "why": "human verdict exists"})
             continue
         quote, quote_from = str(row.get("quote") or ""), str(row.get("quote_from") or "abstract")

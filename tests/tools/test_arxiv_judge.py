@@ -7,7 +7,7 @@ import pytest
 
 from tools.arxiv_watch.judge import export_batches, import_judgements, main, pending
 from tools.arxiv_watch.tracks import TRACKS
-from tools.arxiv_watch.verdicts import VERDICTS, load_verdicts, set_verdict
+from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, set_verdict
 from tools.arxiv_watch.watch import _load_state, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Paper
@@ -114,6 +114,13 @@ def test_judge_never_overwrites_a_human_verdict(watched: tuple[Path, Corpus], tm
     set_verdict(root, "2610.11111", "false-alarm", "read it", "jsands")
     result = import_judgements(root, [_jsonl(tmp_path / "d.jsonl", [first])], "three", corpus=corpus)
     assert result["rejected"] == [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]
+
+    # An entry written by hand without `by` is a human's, not a judge's.
+    hand = {"verdict": "false-alarm", "reason": "read it by hand", "action": None, "reviewed_on": "2026-10-21"}
+    (root / VERDICTS_FILE).write_text(json.dumps({"verdicts": {"2610.11111": hand}}), encoding="utf-8")
+    result = import_judgements(root, [_jsonl(tmp_path / "e.jsonl", [dict(first, verdict="kill")])], "four", corpus=corpus)
+    assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]}
+    assert load_verdicts(root)["verdicts"]["2610.11111"] == hand
 
 
 def test_quote_crossing_a_chunk_boundary_is_rejected(watched: tuple[Path, Corpus], tmp_path: Path) -> None:

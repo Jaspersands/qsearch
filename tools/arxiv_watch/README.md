@@ -125,7 +125,8 @@ missing or not stored, stops it (exit 2). A row is then rejected when
   ignored) in the one text `quote_from` names: the abstract, or the excerpt of one of the
   paper's nearest records. A quote that runs from one text into another, or comes from a
   record the judge was not shown, is not evidence ("quote not found");
-- the paper already has a verdict recorded by anyone but a judge ("human verdict exists").
+- the paper already has a verdict recorded by anyone but a judge, including an entry written
+  by hand without `by` ("human verdict exists").
 
 Accepted rows go into `research/audits/arxiv_verdicts.json` with `by: "judge:NAME"`, the
 quote, `quote_from` and `confidence`. A later import may replace a judge's verdict, never a
