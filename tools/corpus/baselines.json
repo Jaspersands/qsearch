@@ -32,12 +32,11 @@
       "aliases": ["Prange completion", "Prange restarts"],
       "problem": "Optimal polynomial intersection and max-LINSAT over a prime field: make as many constraints as possible land in their accepted sets with one low-degree polynomial or codeword.",
       "mechanisms": ["optimal polynomial intersection", "max linsat", "prime field", "accepted set", "reed solomon"],
-      "summary": "Pick n independent constraints, draw a target from each one's accepted set, solve for the codeword by Gaussian elimination mod q and count how many other constraints land in their accepted sets; keep the best of N restarts. The finite-length counterpart of the Prange line rho + (1 - rho) n/m that a DQI margin is measured against; the DQI screener computes both.",
+      "summary": "Pick n independent constraints, draw a target from each one's accepted set, solve for the codeword by Gaussian elimination mod q and count how many other constraints land in their accepted sets; keep the best of N restarts. The finite-length counterpart of the Prange line rho + (1 - rho) n/m that a DQI margin is measured against. The DQI screener (tools/dqi_screen/screen.py) computes only that asymptotic line; prange_restarts in tools/dqi_screen/prange.py computes the best-of-N score on an instance, given its matrix, accepted sets and q.",
       "references": [
-        {"note": "PRIME_CHARACTER_OPI"}
+        {"arxiv": "2610.06753"}
       ],
       "runnable": {
-        "command": "python tools/dqi_screen/screen.py",
         "entry": "tools/dqi_screen/prange.py:prange_restarts"
       }
     },
@@ -49,7 +48,6 @@
       "mechanisms": ["cycle code", "linear programming", "lp decoding", "max k cut", "graph coloring"],
       "summary": "Relax maximum-likelihood decoding to a linear program and round its solution; polynomial time. arXiv:2609.40036 shows LP decoders recover a positive fraction of randomly located errors with arbitrary values on regular logarithmic-girth graphs and uses them to bound DQI with classical decoders. Run it before claiming a DQI or BPQM edge on a cycle or colouring code.",
       "references": [
-        {"note": "TERNARY_PREFIX_INTEGRALITY"},
         {"arxiv": "2609.40036"}
       ],
       "runnable": null
@@ -57,7 +55,7 @@
     {
       "id": "norm-search-fp2",
       "name": "Quadratic-extension norm search",
-      "aliases": ["norm search", "norm attack", "quadratic-extension norm"],
+      "aliases": ["norm search", "norm attack", "quadratic-extension norm", "norm construction"],
       "problem": "Prime-field optimal polynomial intersection with mixed square and non-square (quadratic character) coset constraints.",
       "mechanisms": ["quadratic extension", "norm map", "quadratic residue", "power character", "mixed coset"],
       "summary": "Factor a target polynomial over F_p and F_{p^2} to write it as a norm from the quadratic extension (a monic polynomial is a norm exactly when every odd-degree irreducible factor has even multiplicity); the norm gives a polynomial within the degree budget that meets the mixed square and non-square constraints. Standard factorization and norm machinery. In the referenced note it solves both saved N127, K77 mixed inputs perfectly; it does not reach the K39 inputs under its degree budget.",
@@ -112,8 +110,7 @@
       "mechanisms": ["gibbs sampling", "spin glass", "p spin", "stochastic localization", "tilted mean"],
       "summary": "Follow the stochastic localization process, estimating the mean of the tilted distribution at each step; this reduces sampling from a distribution on the hypercube to mean estimation. arXiv:2609.40250 uses it to sample typical quantum p-spin Gibbs states to polynomially small total variation in (almost) polynomial time.",
       "references": [
-        {"arxiv": "2609.40250"},
-        {"note": "AFFINE_CLUSTER_NATIVE_PROBE"}
+        {"arxiv": "2609.40250"}
       ],
       "runnable": null
     },

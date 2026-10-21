@@ -419,10 +419,12 @@ def cmd_baselines(args: argparse.Namespace) -> int:
         print(textwrap.fill(baseline["summary"], width=100, initial_indent=" " * 5, subsequent_indent=" " * 5))
         if baseline["references"]:
             print(f"     references: {', '.join(_reference_label(ref) for ref in baseline['references'])}")
-        runnable = baseline.get("runnable")
-        if runnable:
+        runnable = baseline.get("runnable") or {}
+        if runnable.get("command"):
             entry = f"  (entry {runnable['entry']})" if runnable.get("entry") else ""
             print(f"     run: {runnable['command']}{entry}")
+        elif runnable.get("entry"):
+            print(f"     call: {runnable['entry']} (a library function; it needs an instance)")
         print()
     print(
         textwrap.fill(

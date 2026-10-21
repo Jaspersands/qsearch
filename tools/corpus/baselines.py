@@ -6,7 +6,8 @@
 
 The catalog (`baselines.json`, next to this module) lists named classical algorithms: the
 problem each solves, three to six lowercase mechanism keywords, references (arXiv ids and
-research notes by stem) and, when the repository has one, a command that runs it.
+research notes by stem) and, when the repository has one, a command that runs it or the
+library function that computes it.
 
 A baseline's score is the fraction of its keywords found in the idea, plus a tenth for each
 note or negative among the ten documents nearest the idea that names it (its name or an
@@ -31,6 +32,7 @@ _TEXT_FIELDS = ("id", "name", "problem", "summary")
 _LIST_FIELDS = ("aliases", "mechanisms", "references")
 _ARXIV = re.compile(r"\d{4}\.\d{4,5}")
 _STEM = re.compile(r"[A-Z0-9_]+")
+_ENTRY = re.compile(r"[\w./-]+\.py:\w+")
 
 
 def load_catalog(path: Path = CATALOG) -> list[dict]:
@@ -80,10 +82,12 @@ def validate_catalog(entries: list[dict]) -> list[str]:
         runnable = entry.get("runnable")
         if runnable is not None and not (
             isinstance(runnable, dict)
-            and isinstance(runnable.get("command"), str)
+            and runnable
             and set(runnable) <= {"command", "entry"}
+            and all(isinstance(runnable.get(key, "x"), str) and runnable.get(key, "x").strip() for key in runnable)
+            and ("entry" not in runnable or _ENTRY.fullmatch(runnable["entry"]))
         ):
-            problems.append(f"{label}: runnable must be null or {{command, entry?}}")
+            problems.append(f"{label}: runnable must be null or {{command?, entry?}} with at least one, entry path.py:name")
     return problems
 
 

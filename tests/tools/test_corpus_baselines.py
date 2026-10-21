@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import re
+import shlex
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -9,7 +11,7 @@ import pytest
 from tests.tools.conftest import NEGATIVES
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
-from tools.corpus.baselines import load_catalog, recommend, tokens, validate_catalog
+from tools.corpus.baselines import _name_pattern, load_catalog, recommend, tokens, validate_catalog
 from tools.corpus.cli import main
 from tools.corpus.mcp_server import create_server
 
@@ -140,17 +142,31 @@ def test_catalog_note_references_exist() -> None:
     assert [stem for stem in stems if not (REPO / "research" / f"{stem}.md").is_file()] == []
 
 
-def test_runnable_commands_point_at_existing_files() -> None:
+def test_catalog_note_references_name_their_baseline() -> None:
+    if not (REPO / "research" / "registry").is_dir():
+        pytest.skip("no research registry in this checkout")
+    silent = [
+        f"{entry['id']}: {ref['note']}"
+        for entry in load_catalog()
+        for ref in entry["references"]
+        if "note" in ref
+        and not _name_pattern(entry).search((REPO / "research" / f"{ref['note']}.md").read_text(encoding="utf-8"))
+    ]
+    assert silent == []
+
+
+def test_runnables_run_as_printed_or_name_an_existing_function() -> None:
     if not (REPO / "tools" / "dqi_screen").is_dir():
         pytest.skip("Project 1 not merged")
     runnable = [entry["runnable"] for entry in load_catalog() if entry["runnable"]]
     assert runnable
     for item in runnable:
-        scripts = [token for token in item["command"].split() if token.endswith(".py")]
-        assert scripts and all((REPO / script).is_file() for script in scripts)
         if item.get("entry"):
             path, _, name = item["entry"].partition(":")
             assert re.search(rf"^def {re.escape(name)}\(", (REPO / path).read_text(encoding="utf-8"), re.M)
+        if item.get("command"):  # the CLI prints it as "run:", so it must run from the repository root
+            done = subprocess.run(shlex.split(item["command"]), cwd=REPO, capture_output=True, text=True, timeout=120)
+            assert done.returncode == 0, (item["command"], done.stderr[-500:])
 
 
 def test_prange_ranks_first_when_a_note_mentions_it(fake_repo: Path) -> None:
@@ -219,7 +235,9 @@ def test_cli_baselines_text_and_json(fake_repo: Path, capsys) -> None:
     assert "why: matched syndrome decoding, linear code; cited by research/PRANGE_SYNDROME.md" in out
     assert "references: research/PARITY_BLOCK_USD_PRANGE.md" in out
     assert main([*root, "baselines", "optimal polynomial intersection over a prime field"]) == 0
-    assert "run: python tools/dqi_screen/screen.py" in capsys.readouterr().out
+    out = capsys.readouterr().out
+    assert "call: tools/dqi_screen/prange.py:prange_restarts (a library function; it needs an instance)" in out
+    assert "run:" not in out and "screener computes both" not in out
     assert main([*root, "baselines", "zebrafish migration"]) == 0
     assert "No catalog baseline" in capsys.readouterr().out
     assert main([*root, "baselines", IDEA, "--json", "-k", "1"]) == 0

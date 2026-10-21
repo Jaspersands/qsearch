@@ -95,7 +95,8 @@ def create_server(
         """Before claiming a quantum advantage for an idea, list the classical algorithms it must
         beat: entries of the curated catalog ranked by keyword overlap with the idea plus the
         nearby notes and negatives that already name them, each with a summary, references and,
-        when one exists, a command to run it. A recommendation is a competitor to run, not a
+        when one exists, a command to run it or the library function (runnable.entry) that
+        computes it on an instance. A recommendation is a competitor to run, not a
         verdict; an empty list does not mean no classical baseline applies."""
         ready()
         recs = recommend(corpus, idea, k=k)

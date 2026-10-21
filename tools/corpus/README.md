@@ -315,7 +315,9 @@ python tools/corpus/cli.py baselines "DQI for max-k-cut on a ternary cycle code"
 
 Each result shows the baseline's name and id, its score, why it was chosen (the keywords
 matched and the notes or negatives that name it, with `file:line`), its summary, its
-references and, when the repository can run it, a `run:` command. `--json` prints
+references and, when the repository can run it, a `run:` command that runs it as printed,
+or a `call:` line naming the library function that computes it on an instance
+(`prange-restarts-opi`: `tools/dqi_screen/prange.py:prange_restarts`). `--json` prints
 `{"idea", "recommendations": [{"baseline", "score", "matched", "evidence"}], "index_incomplete", "index_issues"}`
 with each evidence hit in the `search --json` shape. The MCP tool
 `classical_baselines(idea, k=5)` returns the same object.
@@ -375,15 +377,21 @@ put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 | `problem` | the problem the algorithm solves, one sentence |
 | `mechanisms` | 3 to 6 lowercase keywords an idea would contain |
 | `summary` | what the algorithm does and what it is the baseline for |
-| `references` | a list of `{"arxiv": "2609.40036"}` or `{"note": "STEM"}` (the file `research/STEM.md`) |
-| `runnable` | `null`, or `{"command": ..., "entry": ...}`: a command run from the repository root and an optional `path.py:function` |
+| `references` | a list of `{"arxiv": "2609.40036"}` or `{"note": "STEM"}` (the file `research/STEM.md`, which must name the baseline or an alias) |
+| `runnable` | `null`, or `{"command": ..., "entry": ...}` with at least one: a command that runs the baseline from the repository root as printed, and a `path.py:function` |
 
 **Adding an entry.** Append it to `baselines.json`, raise the count in
 `test_catalog_is_well_formed`, then run `python -m pytest -q tests/tools/test_corpus_baselines.py`.
 `validate_catalog` reports an entry that is not an object, a duplicate id, a missing or
 mistyped field, fewer than 3 or more than 6 keywords and a malformed reference; the tests also check that every note reference
-exists as `research/<STEM>.md` and that every runnable command and entry points at an existing
-file (that check skips until `tools/dqi_screen/` is merged).
+exists as `research/<STEM>.md` and names its baseline (its name or an alias), that every
+runnable entry is a function defined in that file, and that every runnable command exits 0
+when run from the repository root (that check skips until `tools/dqi_screen/` is merged).
+
+Three entries cite no note: no committed note discusses stochastic localization, Prange
+completion as a finite-length OPI baseline, or LP decoding of cycle codes
+(`TERNARY_PREFIX_INTEGRALITY` uses a certified LP to prune ternary prefixes, a different
+LP). They cite their papers instead.
 
 **Notes to add back when present.** Three notes that belong in the catalog are uncommitted
 agent edits in the main checkout, so no entry references them yet. Add each to its entry once
