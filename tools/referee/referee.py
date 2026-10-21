@@ -271,7 +271,8 @@ def exported_texts(paths: list[Path]) -> dict[tuple[str, str], str]:
     A text whose hash is not its `content_sha` is ignored."""
     texts: dict[tuple[str, str], str] = {}
     folders = {Path(path).resolve().parent for path in paths}
-    for batch in sorted({batch for folder in folders for batch in (*folder.glob("batch_*.json"), *folder.parent.glob("batch_*.json"))}):
+    batches = {batch for folder in folders for near in (folder, folder.parent) for batch in near.glob("batch_*.json")}
+    for batch in sorted(batches):
         try:
             packets = json.loads(batch.read_text(encoding="utf-8")).get("notes") or []
         except (OSError, ValueError, AttributeError):
@@ -406,7 +407,7 @@ def _render_review(stem: str, entry: dict, stale: bool) -> str:
             "",
             f"> {' '.join(claim['quote'].split())}",
             "",
-            *(["- Quote: not found in the current note; the judge read an earlier version, which was not found."]
+            *(["- Quote: not found in the current note, and the version the judge read was not available to check it."]
               if claim.get("verified") is False else []),
             f"- Step: {claim.get('step') or '-'}",
             f"- Finding: {claim.get('finding') or '-'}",
