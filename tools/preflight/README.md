@@ -43,9 +43,12 @@ nothing. A run takes a few seconds, most of it parsing about 250 MB of
 
 The `imports` check collects references from three places:
 
-- `import theorems.x` and `from core.y import z` anywhere in `qsearch.py`,
-  `qsearch_cli/imports.py` and `qsearch_cli/commands/*.py`, including the lazy imports inside
-  command bodies.
+- Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and
+  `qsearch_cli/commands/*.py`, including the lazy imports inside command bodies.
+  `import theorems.x`, `from core.y import z` and `from theorems import x` name their file,
+  whether or not it exists. A bare name, `from x import f` (the usual style here, and the
+  one an old-style addition to `qsearch.py` uses), counts when `theorems/x.py` exists, else
+  when `core/x.py` exists. Standard library names are skipped.
 - The `IMPORTS` table in `qsearch_cli/imports.py`, read with `ast.literal_eval`. A dotted
   `theorems.x` maps to `theorems/x.py`. A bare name maps to `theorems/<name>.py` when that
   file exists, else `core/<name>.py`, the order the CLI puts them on `sys.path`. Standard
@@ -81,10 +84,11 @@ error. Delete that test once the agents fix the file.
 
 ## Limits
 
-- Bare imports inside command bodies are not followed. Only `theorems.*` and `core.*`
-  imports are. `qsearch_cli/commands/native.py` has `from ternary_measured_lattice_decoder
-  import exact_json`, so an untracked module imported that way is not caught. `--imports`
-  does not catch it either: it resolves command functions without running them.
+- A bare import statement whose module is in neither `theorems/` nor `core/` is skipped,
+  since it may be a third-party package. So a bare import of a module that was never
+  written, or was deleted, is not reported. `--imports` does not catch one inside a command
+  body either: it resolves command functions without running them. A dotted or `from
+  theorems import x` import of a missing module is reported.
 - A bare third-party name added to `IMPORTS` (say `numpy`) would be reported as a missing
   `core/numpy.py`. Today the table holds only `theorems/` and `core/` modules and six
   standard library names.

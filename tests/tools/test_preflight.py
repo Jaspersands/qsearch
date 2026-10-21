@@ -149,6 +149,40 @@ def test_untracked_and_missing_theorem_modules(tmp_path: Path) -> None:
     }
 
 
+def test_bare_and_package_style_imports_are_followed(tmp_path: Path) -> None:
+    # An old-style addition to qsearch.py, bare, as the agents usually write imports.
+    shim = '"""Shim."""\n\nfrom new_bare_bridge import generate_new_certificate\nfrom qsearch_cli.main import main\n'
+    general = (
+        "import json\n"
+        "import numpy\n"
+        "\n"
+        "def command_audit(args):\n"
+        "    from qsearch import validate_registry\n"
+        "    from research_registry import load\n"
+        "    from theorems import pkg_style\n"
+        "    from core import gone_pkg\n"
+        "    return json, numpy, validate_registry, load, pkg_style, gone_pkg\n"
+    )
+    repo = _repo(
+        tmp_path, general=general, committed={"qsearch.py": shim, "core/research_registry.py": "load = 0\n"}
+    )
+    _write(repo / "theorems" / "new_bare_bridge.py", "def generate_new_certificate():\n    return 0\n")
+    _write(repo / "theorems" / "pkg_style.py", "x = 1\n")
+
+    # json is stdlib; numpy and qsearch are not files under theorems/ or core/, so they are skipped.
+    assert pf.referenced_modules(repo) == {
+        "theorems/new_bare_bridge.py": {"qsearch.py"},
+        "core/research_registry.py": {"qsearch_cli/commands/general.py"},
+        "theorems/pkg_style.py": {"qsearch_cli/commands/general.py"},
+        "core/gone_pkg.py": {"qsearch_cli/commands/general.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("theorems/new_bare_bridge.py", "not tracked by git"),
+        ("theorems/pkg_style.py", "not tracked by git"),
+        ("core/gone_pkg.py", "missing on disk"),
+    }
+
+
 def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None:
     imports = {
         "os": ("os", None),

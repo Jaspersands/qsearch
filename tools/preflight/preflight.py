@@ -8,9 +8,9 @@
 Research JSON files must parse: an invalid hypothesis contract broke the merge of 2026-10-19.
 Every theorems/ or core/ module the CLI refers to must exist and be tracked by git: the same
 merge carried 24 imports of modules that were only in one working copy. Module references
-are read statically, never imported: AST imports of theorems.* and core.* in qsearch.py,
-qsearch_cli/imports.py and qsearch_cli/commands/*.py, the IMPORTS table, and the module
-column of DISPATCH. Every subcommand in research/audits/cli_manifest.json must still be in
+are read statically, never imported: AST imports in qsearch.py, qsearch_cli/imports.py and
+qsearch_cli/commands/*.py (theorems.x, from core import y, and bare names that resolve to a
+file in theorems/ or core/), the IMPORTS table, and the module column of DISPATCH. Every subcommand in research/audits/cli_manifest.json must still be in
 the registry's ORDER, in the same module.
 
 Prints one line per problem and the count; exits 1 when there is any problem, else 0.
@@ -92,6 +92,36 @@ def _module_path(root: Path, module: str) -> str | None:
     return f"theorems/{module}.py" if (root / "theorems" / f"{module}.py").is_file() else f"core/{module}.py"
 
 
+def _import_paths(root: Path, node: ast.AST) -> list[str]:
+    """The theorems/ or core/ files one import statement loads.
+
+    ``theorems.x`` and ``from core import y`` name their file, present or not. A bare name
+    (``from x import f``) counts only when theorems/x.py or core/x.py exists, the order the
+    CLI puts them on sys.path; a bare name with neither file is a third-party package.
+    """
+    if isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
+        if node.module in ("theorems", "core"):
+            return [f"{node.module}/{alias.name}.py" for alias in node.names if alias.name != "*"]
+        names = [node.module]
+    elif isinstance(node, ast.Import):
+        names = [alias.name for alias in node.names]
+    else:
+        return []
+    paths = []
+    for name in names:
+        if name.startswith(MODULE_PREFIXES):
+            paths.append(name.replace(".", "/") + ".py")
+            continue
+        top = name.split(".")[0]
+        if top in sys.stdlib_module_names or top in ("theorems", "core"):
+            continue
+        for directory in ("theorems", "core"):
+            if (root / directory / f"{top}.py").is_file():
+                paths.append(f"{directory}/{top}.py")
+                break
+    return paths
+
+
 def referenced_modules(root: Path) -> dict[str, set[str]]:
     """Every theorems/ or core/ file the CLI refers to, mapped to the source files that refer to it."""
     root = Path(root).resolve()
@@ -105,15 +135,8 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         for path in sorted(root.glob(pattern)):
             rel = path.relative_to(root).as_posix()
             for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"), filename=rel)):
-                if isinstance(node, ast.ImportFrom) and node.level == 0:
-                    names = [node.module or ""]
-                elif isinstance(node, ast.Import):
-                    names = [alias.name for alias in node.names]
-                else:
-                    continue
-                for name in names:
-                    if name.startswith(MODULE_PREFIXES):
-                        add(name.replace(".", "/") + ".py", rel)
+                for module_path in _import_paths(root, node):
+                    add(module_path, rel)
     for module, _attribute in (_literal(root, IMPORTS_FILE, "IMPORTS") or {}).values():
         add(_module_path(root, module), IMPORTS_FILE)
     for _flag, module, _function in _literal(root, REGISTRY, "DISPATCH") or []:
