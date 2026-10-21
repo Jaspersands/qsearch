@@ -342,3 +342,57 @@ def test_import_rejects_a_quote_from_the_artifact_excerpt(tmp_path: Path) -> Non
     row = _row(tmp_path, claims=[_claim(lifted, verdict="holds")])
     with pytest.raises(ValueError, match="not verbatim"):
         R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "lifted.jsonl", [row])], "j")
+
+
+def _reviewed_repo(root: Path) -> None:
+    """FIXTURE_NOTE unsound, EDITED needs-work then edited, SOUND_NOTE sound, OTHER_n unreviewed."""
+    _write(root, "FIXTURE_NOTE", FIXTURE_NOTE)
+    edited = _dated_note(root, "EDITED", "2026-10-12. REVIEW PENDING.", 1000)
+    _dated_note(root, "SOUND_NOTE", "2026-10-13. REVIEW PENDING.", 1000)
+    for i in range(3):
+        _dated_note(root, f"OTHER_{i}", f"2026-10-0{i + 1}. REVIEW PENDING.", 1000)
+    quote = "A result about the edited inputs"
+    rows = [
+        _row(root, overall="unsound", claims=[
+            _claim("We searched 10000 random inputs for a counterexample", verdict="holds"),
+            _claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="wrong",
+                   finding="Input 7 has margin -0.002 in the excerpt."),
+        ]),
+        _row(root, stem="EDITED", claims=[_claim(quote + ".")]),
+        _row(root, stem="SOUND_NOTE", overall="sound", claims=[]),
+    ]
+    R.import_reviews(root, [_jsonl(root / "out" / "rows.jsonl", rows)], "test-judge", today="2026-10-21")
+    edited.write_text(edited.read_text(encoding="utf-8") + "\nAn added paragraph.\n", encoding="utf-8")
+
+
+def test_render_writes_a_note_review_and_the_queue(tmp_path: Path) -> None:
+    _reviewed_repo(tmp_path)
+    R.render(tmp_path, today="2026-10-21")
+    review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    assert review.startswith("# Referee review: FIXTURE_NOTE")
+    for needle in ("**unsound**", "It holds for all twelve saved inputs", "wrong", "Question And Result", "Input 7 has margin"):
+        assert needle in review
+    assert "Stale" in (tmp_path / "research/audits/reviews/EDITED.md").read_text(encoding="utf-8")
+    queue = (tmp_path / R.QUEUE).read_text(encoding="utf-8")
+    assert "| unsound | 1 |" in queue and "| sound | 1 |" in queue and "| stale | 1 |" in queue
+    flagged, rest = queue.split("## Flagged", 1)[1].split("## Stale", 1)
+    assert "FIXTURE_NOTE" in flagged and "wrong" in flagged and "EDITED" not in flagged
+    stale, upcoming = rest.split("## Next 30", 1)
+    assert "EDITED" in stale
+    assert [s for s in ("OTHER_0", "OTHER_1", "OTHER_2", "EDITED", "FIXTURE_NOTE", "SOUND_NOTE") if s in upcoming] == [
+        "OTHER_0", "OTHER_1", "OTHER_2", "EDITED"]
+
+
+def test_status_returns_only_flagged_non_stale_reviews(tmp_path: Path) -> None:
+    assert R.status(tmp_path)["available"] is False
+    _reviewed_repo(tmp_path)
+    result = R.status(tmp_path)
+    assert result["available"] is True and result["reviewed"] == 3
+    assert [f["stem"] for f in result["flagged"]] == ["FIXTURE_NOTE"]
+    flagged = result["flagged"][0]
+    assert (flagged["overall"], flagged["reviewed_on"]) == ("unsound", "2026-10-21")
+    assert flagged["worst_claim"]["verdict"] == "wrong"
+    assert result["stale"] == ["EDITED"]
+    entry = R.load_reviews(tmp_path)["notes"]["EDITED"]
+    assert R.is_stale(tmp_path, "EDITED", entry) is True
+    assert R.worst_claim({"claims": []}) is None

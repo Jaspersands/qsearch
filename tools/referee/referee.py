@@ -217,3 +217,121 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     store.parent.mkdir(parents=True, exist_ok=True)
     store.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
     return {"imported": sorted(entries), "stale": sorted(stem for stem, entry in entries.items() if entry["stale"])}
+
+
+WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
+FLAGGED = ("unsound", "needs-work")
+QUEUE = "research/audits/REFEREE_QUEUE.md"
+NEXT = 30
+
+
+def worst_claim(entry: dict) -> dict | None:
+    claims = entry.get("claims") or []
+    return max(claims, key=lambda claim: WORST.get(claim.get("verdict"), 0)) if claims else None
+
+
+def is_stale(root: Path, stem: str, entry: dict) -> bool:
+    """True when the note is gone or its bytes differ from the version the judge read."""
+    path = _note_path(root, stem)
+    return not path.is_file() or note_sha(path) != entry.get("content_sha")
+
+
+def status(root: Path) -> dict:
+    if not (root / REVIEWS).exists():
+        return {"available": False, "reason": f"no reviews yet ({REVIEWS} absent)", "reviewed": 0, "flagged": [], "stale": []}
+    notes = load_reviews(root).get("notes", {})
+    stale = sorted(stem for stem, entry in notes.items() if is_stale(root, stem, entry))
+    flagged = [
+        {"stem": stem, "overall": entry["overall"], "reviewed_on": entry.get("reviewed_on"), "worst_claim": worst_claim(entry)}
+        for stem, entry in notes.items()
+        if entry.get("overall") in FLAGGED and stem not in stale
+    ]
+    flagged.sort(key=lambda item: (FLAGGED.index(item["overall"]), item["stem"]))
+    return {"available": True, "reviewed": len(notes), "flagged": flagged, "stale": stale}
+
+
+def _cell(text: str, limit: int = 160) -> str:
+    flat = " ".join(str(text).split()).replace("|", "/")
+    return flat if len(flat) <= limit else flat[: limit - 3] + "..."
+
+
+def _render_review(stem: str, entry: dict, stale: bool) -> str:
+    lines = [
+        f"# Referee review: {stem}",
+        "",
+        f"Note: `research/{stem}.md`. Reviewed {entry.get('reviewed_on')} by {entry.get('judge')}. "
+        f"Overall: **{entry.get('overall')}**.",
+        "",
+        "An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.",
+        "",
+    ]
+    if stale:
+        lines += ["**Stale:** the note changed after this review, so the review may no longer apply.", ""]
+    if entry.get("summary"):
+        lines += [entry["summary"], ""]
+    lines += ["## Claims", ""]
+    if not entry.get("claims"):
+        lines += ["No claims recorded.", ""]
+    for number, claim in enumerate(entry.get("claims") or [], start=1):
+        lines += [
+            f"### {number}. {claim['verdict']}",
+            "",
+            f"> {' '.join(claim['quote'].split())}",
+            "",
+            f"- Step: {claim.get('step') or '-'}",
+            f"- Finding: {claim.get('finding') or '-'}",
+            f"- Conceded by the note's own self-check: {'yes' if claim.get('covered_by_self_check') else 'no'}",
+            "",
+        ]
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _render_queue(root: Path, notes: dict, stale: list[str], today: str) -> str:
+    current = [entry for stem, entry in notes.items() if stem not in stale]
+    lines = [
+        "# Referee queue",
+        "",
+        f"Generated on {today} from `{REVIEWS}` by `python tools/referee/referee.py render`.",
+        "Reviews come from in-session model judges that quote each claim from the note; they are a",
+        "triage, not peer review. The referee never edits `research/*.md`.",
+        "",
+        "| Overall | Notes |",
+        "|---|---|",
+    ]
+    for overall in ("unsound", "needs-work", "unclear", "sound"):
+        lines.append(f"| {overall} | {sum(entry.get('overall') == overall for entry in current)} |")
+    lines += [f"| stale | {len(stale)} |", "", "## Flagged", "",
+              "Unsound and needs-work reviews of notes that have not changed since.", ""]
+    flagged = status(root)["flagged"]
+    if flagged:
+        lines += ["| Note | Overall | Reviewed | Worst claim |", "|---|---|---|---|"]
+        for item in flagged:
+            worst = item["worst_claim"]
+            text = f"{worst['verdict']}: \"{_cell(worst['quote'], 120)}\" {_cell(worst.get('finding', ''), 200)}" if worst else "-"
+            lines.append(f"| [{item['stem']}](reviews/{item['stem']}.md) | {item['overall']} | {item['reviewed_on']} | {text} |")
+    else:
+        lines.append("None.")
+    lines += ["", "## Stale", "", "Notes edited after their review; re-run the referee on them.", ""]
+    lines += [f"- {stem} (reviewed {notes[stem].get('reviewed_on')}, {notes[stem].get('overall')})" for stem in stale] or ["None."]
+    upcoming = select_notes(root, limit=NEXT)
+    lines += ["", f"## Next {NEXT}", "", "Review-pending notes without a current review, newest first.", ""]
+    if upcoming:
+        lines += ["| Note | Date |", "|---|---|"]
+        for path in upcoming:
+            date = _note_date(path.read_text(encoding="utf-8", errors="replace").splitlines())
+            lines.append(f"| {path.stem} | {date or 'undated'} |")
+    else:
+        lines.append("None.")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def render(root: Path, today: str | None = None) -> None:
+    """Write reviews/<STEM>.md for every stored review and REFEREE_QUEUE.md."""
+    notes = load_reviews(root).get("notes", {})
+    stale = sorted(stem for stem, entry in notes.items() if is_stale(root, stem, entry))
+    out = (root / REVIEWS).parent
+    out.mkdir(parents=True, exist_ok=True)
+    for stem, entry in sorted(notes.items()):
+        (out / f"{stem}.md").write_text(_render_review(stem, entry, stem in stale), encoding="utf-8")
+    queue = root / QUEUE
+    queue.write_text(_render_queue(root, notes, stale, today or dt.date.today().isoformat()), encoding="utf-8")
