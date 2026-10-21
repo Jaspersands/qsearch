@@ -146,6 +146,9 @@ def _validate(c: Candidate) -> None:
     if root is None:
         raise ValueError(f"q must be a prime power, got {c.q}")
     p, b = root
+    if c.objective == "cosine" and (b != 1 or c.q <= 3):
+        raise ValueError(f"the cosine objective needs a prime q > 3, got q = {c.q}: Proposition 13's law assumes "
+                         "cos(2 pi v / q) has mean 0, variance 1/2 and skewness 0 over F_q")
     field = f"q = {c.q} = {p}^{b}"
     if c.p is not None and c.p != p:
         raise ValueError(f"p = {c.p} does not match {field}: p is the prime with q = p^b")

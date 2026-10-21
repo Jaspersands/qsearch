@@ -347,6 +347,16 @@ def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
         S.candidate_from_dict({**base, "q": float(2**61 - 1)})
 
 
+def test_cosine_objective_needs_a_prime_above_three() -> None:
+    # Proposition 13 assumes q > 3 prime: over F_2 cos(pi v) = +-1 has variance 1, over F_3 skewness 1/sqrt(2).
+    base = {"name": "x", "objective": "cosine", "m": 1000, "n": 300, "rho": 0.5, "radius": 30, "decoder_known": True}
+    for q in (2, 3, 4, 9, 4096):
+        with pytest.raises(ValueError, match="prime q > 3"):
+            S.screen(S.candidate_from_dict({**base, "q": q}))
+    assert S.screen(S.candidate_from_dict({**base, "q": 5})).quantities["cosine_objective"] is not None
+    assert S.main(["--objective", "cosine", "--q", "2", "--m", "1000", "--n", "300", "--rho", "0.5"]) == 2
+
+
 def test_claimed_values_must_be_finite_and_in_the_objective_range() -> None:
     base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5, "radius": 5}
     for key in ("finite_dqi_mean", "classical_witness"):

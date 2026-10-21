@@ -27,7 +27,7 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | Field | Meaning |
 |---|---|
 | `name` | label for the report |
-| `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows) |
+| `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows; needs a prime q > 3, as Proposition 13 does) |
 | `q`, `m`, `n` | field size (a prime power), constraints, variables; alpha = n/m |
 | `rho` | accepted density of each constraint |
 | `radius` | claimed decoding radius l; lam = l/m |
