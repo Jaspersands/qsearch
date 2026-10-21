@@ -25,7 +25,7 @@ if __package__ in (None, ""):
 from mcp.server.fastmcp import FastMCP  # noqa: E402
 
 from tools.corpus.api import Corpus, CorpusRootError, checkout_root  # noqa: E402
-from tools.corpus.baselines import recommend  # noqa: E402
+from tools.corpus.baselines import CatalogError, recommend  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
 from tools.corpus.duplicates import NO_NEGATIVES, allow_patterns, claim_report, valid_threshold  # noqa: E402
 from tools.corpus.ranking import Embedder, query_terms  # noqa: E402
@@ -99,7 +99,10 @@ def create_server(
         computes it on an instance. A recommendation is a competitor to run, not a
         verdict; an empty list does not mean no classical baseline applies."""
         ready()
-        recs = recommend(corpus, idea, k=k)
+        try:
+            recs = recommend(corpus, idea, k=k)
+        except CatalogError as exc:
+            return {"error": str(exc)}
         return {"idea": idea, "recommendations": [_recommendation_json(r) for r in recs], **_issues_json(corpus)}
 
     @server.tool()

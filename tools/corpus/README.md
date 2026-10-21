@@ -384,7 +384,14 @@ put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 **Adding an entry.** Append it to `baselines.json`, raise the count in
 `test_catalog_is_well_formed`, then run `python -m pytest -q tests/tools/test_corpus_baselines.py`.
 `validate_catalog` reports an entry that is not an object, a duplicate id, a missing or
-mistyped field, fewer than 3 or more than 6 keywords and a malformed reference; the tests also check that every note reference
+mistyped field, a blank name or alias, fewer than 3 or more than 6 keywords, a keyword that
+is not lowercase or that `tokens` cannot match as written (`"-"` has no word and would match
+every idea; the `χ` of `"χ² test"` would be dropped, so spell keywords in ASCII, although
+accents fold and `"gröbner basis"` is fine), a `runnable` other than `null` or
+`{command?, entry?}`, and a malformed reference. `recommend`, the CLI and the MCP tool refuse
+a catalog with any such problem, or one that cannot be read or parsed as
+`{"baselines": [...]}`: the CLI prints `error: ...` on stderr and exits 1, and the MCP tool
+returns `{"error"}`. The tests also check that every note reference
 exists as `research/<STEM>.md` and names its baseline (its name or an alias), that every
 runnable entry is a function defined in that file, and that every runnable command exits 0
 when run from the repository root (that check skips until `tools/dqi_screen/` is merged).

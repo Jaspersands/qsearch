@@ -27,7 +27,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.corpus.api import Corpus, CorpusRootError, Hit, checkout_root  # noqa: E402
-from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
+from tools.corpus.baselines import CatalogError, Recommendation, recommend  # noqa: E402
 from tools.corpus.duplicates import (  # noqa: E402
     NO_NEGATIVES,
     REPORT_THRESHOLD,
@@ -552,7 +552,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         return args.func(args)
-    except CorpusRootError as exc:
+    except (CorpusRootError, CatalogError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 

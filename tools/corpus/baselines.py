@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import re
+import string
 import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
@@ -35,8 +36,24 @@ _STEM = re.compile(r"[A-Z0-9_]+")
 _ENTRY = re.compile(r"[\w./-]+\.py:\w+")
 
 
-def load_catalog(path: Path = CATALOG) -> list[dict]:
-    return json.loads(Path(path).read_text(encoding="utf-8"))["baselines"]
+class CatalogError(ValueError):
+    """The baseline catalog cannot be read or is not well formed."""
+
+
+def load_catalog(path: Path | None = None) -> list[dict]:
+    """The catalog's entries, not yet validated (see `validate_catalog`; `recommend` refuses an
+    invalid catalog). CatalogError when the file cannot be read, is not JSON or has no
+    "baselines" list."""
+    path = Path(CATALOG if path is None else path)
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except OSError as exc:
+        raise CatalogError(f"cannot read the baseline catalog {path}: {exc.strerror or exc}") from exc
+    except ValueError as exc:  # JSONDecodeError, or bytes that are not UTF-8
+        raise CatalogError(f"the baseline catalog {path} is not valid JSON: {exc}") from exc
+    if not isinstance(data, dict) or not isinstance(data.get("baselines"), list):
+        raise CatalogError(f'the baseline catalog {path} must be an object with a "baselines" list')
+    return data["baselines"]
 
 
 def _reference_ok(ref: object) -> bool:
@@ -46,6 +63,26 @@ def _reference_ok(ref: object) -> bool:
     (key, value), = ref.items()
     pattern = {"arxiv": _ARXIV, "note": _STEM}.get(key)
     return pattern is not None and isinstance(value, str) and pattern.fullmatch(value) is not None
+
+
+def _keyword_problem(keyword: object) -> str | None:
+    """Why a mechanism keyword cannot be matched as written, or None.
+
+    Keywords are lowercase and matched on the ASCII words `tokens` keeps. One with no such word
+    ("-") would match every idea, and a letter `tokens` drops (the "χ" of "χ² test") would
+    quietly widen the keyword to the rest of it.
+    """
+    shown = json.dumps(keyword, ensure_ascii=False)
+    if not isinstance(keyword, str):
+        return f"mechanism {shown} must be a string"
+    ignored = sorted(set(re.findall(r"[^\W\d_]", _fold(keyword))) - set(string.ascii_lowercase))
+    if ignored:
+        return f"mechanism {shown} has letters the matcher ignores ({''.join(ignored)}); spell it in ASCII"
+    if not tokens(keyword):
+        return f"mechanism {shown} has no letter or digit, so it would match every idea"
+    if keyword != keyword.lower():
+        return f"mechanism {shown} must be lowercase"
+    return None
 
 
 def validate_catalog(entries: list[dict]) -> list[str]:
@@ -70,10 +107,10 @@ def validate_catalog(entries: list[dict]) -> list[str]:
             problems.append(f"{label}: duplicate id")
         seen.add(label)
         mechanisms = entry.get("mechanisms")
-        if isinstance(mechanisms, list) and not (
-            3 <= len(mechanisms) <= 6 and all(isinstance(m, str) and m.strip() for m in mechanisms)
-        ):
-            problems.append(f"{label}: mechanisms must be 3 to 6 keywords, found {len(mechanisms)}")
+        if isinstance(mechanisms, list):
+            if not 3 <= len(mechanisms) <= 6:
+                problems.append(f"{label}: mechanisms must be 3 to 6 keywords, found {len(mechanisms)}")
+            problems.extend(f"{label}: {problem}" for m in mechanisms if (problem := _keyword_problem(m)))
         if isinstance(entry.get("aliases"), list) and not all(isinstance(a, str) and a.strip() for a in entry["aliases"]):
             problems.append(f"{label}: aliases must be non-empty strings")
         for ref in entry.get("references") if isinstance(entry.get("references"), list) else ():
@@ -128,10 +165,14 @@ def tokens(text: str) -> list[str]:
     dropped from words longer than three letters. Umlauts become ae/oe/ue and other accents
     are dropped ("Gröbner" is `groebner`), and a few spelling variants are folded into one
     (`_SPELLINGS`: "colouring" is `coloring`, "MaxCut" is `max cut`)."""
-    folded = unicodedata.normalize("NFKD", text.lower().translate(_UMLAUTS))
-    folded = "".join(ch for ch in folded if not unicodedata.combining(ch))
-    words = [_singular(w) for w in re.findall(r"[a-z0-9]+", folded)]
+    words = [_singular(w) for w in re.findall(r"[a-z0-9]+", _fold(text))]
     return [part for word in words for part in _SPELLINGS.get(word, word).split()]
+
+
+def _fold(text: str) -> str:
+    """Lowercase, umlauts as ae/oe/ue, other accents dropped and compatibility forms unfolded ("²" is "2")."""
+    folded = unicodedata.normalize("NFKD", text.lower().translate(_UMLAUTS))
+    return "".join(ch for ch in folded if not unicodedata.combining(ch))
 
 
 def _number_like(word: str) -> bool:
@@ -198,9 +239,14 @@ def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None 
     note sections and negatives the corpus ranks nearest the idea are read in full; each note
     or negative among them that names a baseline adds 0.1 to its score (a note once, however
     many of its sections are near) and its nearest hit is returned as evidence. Baselines
-    scoring 0 are left out.
+    scoring 0 are left out. CatalogError when the catalog cannot be loaded or `validate_catalog`
+    finds a problem in it.
     """
     entries = load_catalog() if catalog is None else catalog
+    problems = validate_catalog(entries)
+    if problems:
+        where = f" {CATALOG}" if catalog is None else ""
+        raise CatalogError(f"invalid baseline catalog{where}: {'; '.join(problems)}")
     words = tokens(idea)
     hits = corpus.search(idea, kinds=("note", "negative"), k=NEARBY)
     patterns = [_name_pattern(baseline) for baseline in entries]

@@ -11,7 +11,8 @@ import pytest
 from tests.tools.conftest import NEGATIVES
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
-from tools.corpus.baselines import _name_pattern, load_catalog, recommend, tokens, validate_catalog
+from tools.corpus import baselines as baselines_module
+from tools.corpus.baselines import CatalogError, _name_pattern, load_catalog, recommend, tokens, validate_catalog
 from tools.corpus.cli import main
 from tools.corpus.mcp_server import create_server
 
@@ -52,6 +53,92 @@ def test_catalog_is_well_formed() -> None:
     assert any(p.startswith("too-few: mechanisms") for p in problems)
     assert sum(p.startswith("bad-ref: malformed reference") for p in problems) == 2
     assert validate_catalog([first, "oops", None]) == ["entry 2: must be an object", "entry 3: must be an object"]
+
+
+@pytest.mark.parametrize(
+    ("change", "problem"),
+    [
+        ({"mechanisms": ["a", "b", "c", "d", "e", "f", "g"]}, "mechanisms must be 3 to 6 keywords, found 7"),
+        ({"mechanisms": "gibbs sampling"}, "mechanisms must be a list"),
+        ({"references": {"arxiv": "2610.06753"}}, "references must be a list"),
+        ({"aliases": "Prange"}, "aliases must be a list"),
+        ({"aliases": ["Prange", " "]}, "aliases must be non-empty strings"),
+        ({"name": "  "}, "name must be a non-empty string"),
+        ({"summary": 3}, "summary must be a non-empty string"),
+        (
+            {"runnable": "python tools/dqi_screen/screen.py"},
+            "runnable must be null or {command?, entry?} with at least one, entry path.py:name",
+        ),
+        ({"runnable": {}}, "runnable must be null or {command?, entry?} with at least one, entry path.py:name"),
+        (
+            {"runnable": {"entry": "prange_restarts"}},
+            "runnable must be null or {command?, entry?} with at least one, entry path.py:name",
+        ),
+        (
+            {"runnable": {"command": "python x.py", "script": "x.py"}},
+            "runnable must be null or {command?, entry?} with at least one, entry path.py:name",
+        ),
+        # a keyword with no word the matcher keeps would match every idea
+        ({"mechanisms": ["gibbs sampling", "parity check", "-"]}, 'mechanism "-" has no letter or digit, so it would match every idea'),
+        ({"mechanisms": ["gibbs sampling", "parity check", "格"]}, 'mechanism "格" has letters the matcher ignores (格); spell it in ASCII'),
+        ({"mechanisms": ["gibbs sampling", "χ² test", "code"]}, 'mechanism "χ² test" has letters the matcher ignores (χ); spell it in ASCII'),
+        ({"mechanisms": ["gibbs sampling", "parity check", 3]}, "mechanism 3 must be a string"),
+        ({"mechanisms": ["Gibbs sampling", "parity check", "code"]}, 'mechanism "Gibbs sampling" must be lowercase'),
+    ],
+)
+def test_validate_catalog_names_each_broken_rule(change: dict, problem: str) -> None:
+    entry = dict(load_catalog()[1], id="broken", **change)
+    assert validate_catalog([entry]) == [f"broken: {problem}"]
+
+
+def test_accented_and_numbered_keywords_are_valid() -> None:
+    entry = dict(load_catalog()[1], id="fine", mechanisms=["gröbner basis", "max k cut", "3-sat"])
+    assert validate_catalog([entry]) == []
+
+
+def test_recommend_refuses_an_invalid_catalog(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    every_idea = dict(load_catalog()[1], id="every-idea", mechanisms=["格", "-", "χ²"])
+    with pytest.raises(CatalogError, match="every-idea: mechanism"):
+        recommend(corpus, "Shor factoring of RSA moduli", catalog=[every_idea])  # scored 0.6667 on any idea
+    with pytest.raises(CatalogError, match="found 0"):  # was ZeroDivisionError
+        recommend(corpus, IDEA, catalog=[dict(load_catalog()[1], id="none", mechanisms=[])])
+
+
+@pytest.mark.parametrize(
+    ("content", "message"),
+    [
+        (None, "cannot read the baseline catalog"),
+        ('{"baselines": [', "is not valid JSON"),
+        ('{"entries": []}', 'must be an object with a "baselines" list'),
+        ("[]", 'must be an object with a "baselines" list'),
+        ('{"baselines": [{"id": "lonely"}]}', "invalid baseline catalog"),
+    ],
+)
+def test_a_broken_catalog_file_is_a_clean_error(
+    fake_repo: Path, tmp_path: Path, monkeypatch, capsys, content: str | None, message: str
+) -> None:
+    catalog = tmp_path / "catalog" / "baselines.json"
+    if content is not None:
+        catalog.parent.mkdir()
+        catalog.write_text(content, encoding="utf-8")
+    monkeypatch.setattr(baselines_module, "CATALOG", catalog)
+    assert main(["--root", str(fake_repo), "baselines", IDEA]) == 1
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert captured.err.startswith("error: ") and message in captured.err and str(catalog) in captured.err
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "classical_baselines", {"idea": IDEA})
+    assert set(payload) == {"error"} and message in payload["error"]
+
+
+def test_a_citation_matches_the_name_in_any_case(fake_repo: Path) -> None:
+    shout = "# PRANGE SHOUT\n\nPRANGE decoding already solves syndrome decoding of this random linear code.\n"
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SHOUT", shout)
+    recs = recommend(corpus, IDEA)
+    assert recs[0].baseline["id"] == "prange-isd"
+    assert recs[0].evidence[0].doc_id.startswith("note:PRANGE_SHOUT")
+    assert recs[0].score == pytest.approx(2 / 5 + 1 / 10)
 
 
 def test_tokens_drop_a_plural_s_but_keep_a_double_s() -> None:
