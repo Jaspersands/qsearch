@@ -41,7 +41,8 @@ leaves them byte-for-byte unchanged:
 - `research/audits/ARXIV_WATCH.md`: the digest, newest first, with possible kills,
   possible scoops and related papers, then the Reviewed table.
 - `research/audits/arxiv_verdicts.json`: the reviewed verdicts, keyed by arXiv id. Written
-  by `--verdict`; the source of truth for the Reviewed table.
+  by `--verdict` and by the judge import (`judge.py`); the source of truth for the Reviewed
+  table.
 
 ## Tracks and labels
 
@@ -102,6 +103,36 @@ Seeding the file (the 22 verdicts of the 2026-10-21 review) changes every stored
 names, so the first weekly run after a seed opens a pull request even when no new paper
 arrives.
 
+## Judging unreviewed flags
+
+New possible kills and scoops arrive every week. `judge.py` hands the unreviewed ones (flagged,
+no verdict) to in-session subagents, in the same export and import loop as `tools/audit/`:
+
+```bash
+python tools/arxiv_watch/judge.py --export DIR --batches 3
+# one fresh subagent per batch reads DIR/INSTRUCTIONS.md and DIR/batch_NN.json, writes DIR/out/batch_NN.jsonl
+python tools/arxiv_watch/judge.py --import DIR/out/*.jsonl --judge claude-subagent-2026-10-27
+```
+
+Each batch item has the paper's title, abstract, label, cues and tracks, and its nearest
+Q-Search records with the first 600 characters of each. The judge writes one row per paper:
+`{"arxiv_id", "verdict", "reason", "quote", "quote_from", "action", "confidence"}`.
+
+Import checks every row before it writes anything: an unknown verdict, or an id that is
+missing or not stored, stops it (exit 2). A row is then rejected when
+
+- its quote is under six words, or does not appear verbatim (case, punctuation and spacing
+  ignored) in the one text `quote_from` names: the abstract, or the excerpt of one of the
+  paper's nearest records. A quote that runs from one text into another, or comes from a
+  record the judge was not shown, is not evidence ("quote not found");
+- the paper already has a verdict recorded by anyone but a judge ("human verdict exists").
+
+Accepted rows go into `research/audits/arxiv_verdicts.json` with `by: "judge:NAME"`, the
+quote, `quote_from` and `confidence`. A later import may replace a judge's verdict, never a
+human's. The stored records and the digest are then rewritten, and the Reviewed table shows
+who decided. A judge verdict is one model's reading: check a `kill` or `scoop` by hand before
+acting on it, and record the outcome with `watch.py --verdict`.
+
 ## Scheduling
 
 `.github/workflows/arxiv_watch.yml` runs every Monday and on demand. When the digest
@@ -117,8 +148,15 @@ to get CI.
 
 ## Checks
 
-- Unit tests (`tests/tools/test_arxiv_watch.py`) use a recorded arXiv API response and
-  a fake client; nothing in the test suite touches the network.
+- Unit tests (`tests/tools/test_arxiv_watch.py`, `tests/tools/test_arxiv_judge.py`) use a
+  recorded arXiv API response and a fake client; nothing in the test suite touches the
+  network.
+- Verdict smoke run (2026-10-21, after seeding): `watch.py --relabel` on the branch checkout
+  kept all 22 verdicts on their records; the possible-kill and possible-scoop sections were
+  empty and the Reviewed table had 22 rows, none "not stored". The five flags the review calls
+  already cited kept their labels there, because the notes that cite them were not committed
+  yet. Four other papers changed label or tracks under the branch's rules and index. The
+  relabelled outputs were not committed: the first weekly run writes them.
 - Seed replay: all 52 seed papers whose tags name a track are placed on it. Nine
   patterns were added after the first replay missed them, so this is a consistency
   check on the seeds, not a held-out accuracy figure.

@@ -34,7 +34,7 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `site/` - public progress-page styles, assets, and frontend behavior.
 - `tools/` - maintenance and artifact-generation utilities (`build_progress_snapshot.py`).
 - `tools/corpus/` - searchable index and MCP server over notes, registries, theorem modules and literature ("has this been tried?"); index lives in the git-ignored `research/corpus_index/`.
-- `tools/arxiv_watch/` - weekly arXiv collision watch; digest in `research/audits/ARXIV_WATCH.md`.
+- `tools/arxiv_watch/` - weekly arXiv collision watch; digest in `research/audits/ARXIV_WATCH.md`; reviewed verdicts in `research/audits/arxiv_verdicts.json`, recorded with `watch.py --verdict` or by the `judge.py` export/import loop for unreviewed flags.
 - `tools/audit/` - read-only audits of the registry (failure modes, rediscovery); outputs in `research/audits/`.
 - `tools/claim_checker/` - flags the fine print (input loading, readout, oracle-only, baselines) in a quantum-advantage abstract.
 - `tools/circuit_search/` - searches local readout circuits (product, adaptive) against certified PPT and collective bounds; DCP packets first.

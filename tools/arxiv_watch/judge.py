@@ -1,13 +1,23 @@
 """Judge the arXiv watch's unreviewed flags with in-session subagents.
 
+    python tools/arxiv_watch/judge.py --export DIR [--batches 3]
+    python tools/arxiv_watch/judge.py --import DIR/out/*.jsonl --judge NAME
+
 A flag is a stored paper labelled possible-kill or possible-scoop with no verdict in
 research/audits/arxiv_verdicts.json. Export writes INSTRUCTIONS.md and batch files; each item
 carries the paper's abstract and its nearest Q-Search records, each with the first 600
 characters of its text, so the judge can compare the paper with what the project claims.
+
+A fresh subagent reads INSTRUCTIONS.md and one batch and writes one JSONL row per paper. Import
+keeps a row only when its quote (at least six words) appears verbatim in the abstract or in the
+one excerpt it names, and never replaces a verdict recorded by anyone but a judge. Kept rows are
+stored with by = "judge:NAME", copied onto the stored papers and listed in the digest's Reviewed
+table.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -15,11 +25,14 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.arxiv_watch.verdicts import load_verdicts  # noqa: E402
-from tools.arxiv_watch.watch import FLAGGED, _load_state, attach_verdicts  # noqa: E402
+from tools.arxiv_watch.verdicts import VERDICTS, load_verdicts, save_verdicts, set_verdict  # noqa: E402
+from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts  # noqa: E402
+from tools.audit.rediscovery import _norm, _rows  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 
 EXCERPT_CHARS = 600
+MIN_QUOTE_WORDS = 6
+JUDGE_PREFIX = "judge:"
 MEANINGS = {
     "kill": "The paper invalidates a project claim or retained result, for example a classical algorithm or bound "
             "that removes a quantum advantage a note claims.",
@@ -134,3 +147,105 @@ def export_batches(root: Path, out_dir: Path, n_batches: int = 3, corpus: Corpus
         path.write_text(json.dumps({"batch": index + 1, "verdicts": MEANINGS, "papers": papers}, indent=1), encoding="utf-8")
         paths.append(path)
     return paths
+
+
+def _verbatim(quote: str, source: str) -> bool:
+    """At least six words of `quote` appear as whole words, in order, in `source` (case and punctuation ignored)."""
+    words = _norm(quote)
+    return bool(source) and len(words.split()) >= MIN_QUOTE_WORDS and f" {words} " in f" {_norm(source)} "
+
+
+def _confidence(value) -> float | None:
+    try:
+        return max(0.0, min(1.0, float(value)))
+    except (TypeError, ValueError):
+        return None
+
+
+def import_judgements(
+    root: Path, paths: list[Path], judge_name: str, corpus: Corpus | None = None, today: str | None = None
+) -> dict:
+    """Store the judge's verdicts whose quotes check out.
+
+    Returns {"imported": [arxiv ids], "rejected": [{"arxiv_id", "why"}]}. Every row is checked
+    before anything is written: an unknown verdict, or an arxiv_id that is missing or not a stored
+    paper, raises ValueError. A quote is looked for only in the one text `quote_from` names: the
+    abstract, or the excerpt of one of the paper's nearest records.
+    """
+    root = Path(root)
+    state = _load_state(root)
+    rows = [(path, row) for path in paths for row in _rows(Path(path))]
+    for path, row in rows:
+        if row.get("verdict") not in VERDICTS:
+            raise ValueError(f"{path}: unknown verdict {row.get('verdict')!r} for {row.get('arxiv_id')!r}")
+        if row.get("arxiv_id") not in state["papers"]:
+            raise ValueError(f"{path}: arxiv_id {row.get('arxiv_id')!r} is missing or not a stored paper")
+    existing = load_verdicts(root)["verdicts"]
+    imported: list[str] = []
+    rejected: list[dict] = []
+    evidence: dict[str, dict] = {}
+    for _, row in rows:
+        arxiv_id = row["arxiv_id"]
+        record = state["papers"][arxiv_id]
+        if not str((existing.get(arxiv_id) or {}).get("by", JUDGE_PREFIX)).startswith(JUDGE_PREFIX):
+            rejected.append({"arxiv_id": arxiv_id, "why": "human verdict exists"})
+            continue
+        quote, quote_from = str(row.get("quote") or ""), str(row.get("quote_from") or "abstract")
+        if quote_from == "abstract":
+            source = record.get("abstract", "")
+        elif quote_from in {near["doc_id"] for near in record.get("nearest", [])}:
+            corpus = corpus or _corpus(root)
+            source = _excerpt(corpus, quote_from)
+        else:
+            source = ""
+        if not _verbatim(quote, source):
+            rejected.append({"arxiv_id": arxiv_id, "why": "quote not found"})
+            continue
+        action = row.get("action")
+        set_verdict(
+            root, arxiv_id, row["verdict"], str(row.get("reason") or "")[:600], f"{JUDGE_PREFIX}{judge_name}",
+            action=str(action)[:300] if action else None, today=today,
+        )
+        evidence[arxiv_id] = {"quote": quote[:400], "quote_from": quote_from, "confidence": _confidence(row.get("confidence"))}
+        if arxiv_id not in imported:
+            imported.append(arxiv_id)
+    if imported:
+        data = load_verdicts(root)
+        for arxiv_id, extra in evidence.items():
+            data["verdicts"][arxiv_id].update(extra)
+        save_verdicts(root, data)
+        attach_verdicts(state, data["verdicts"])
+        _save(root, state)
+    return {"imported": imported, "rejected": rejected}
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
+    parser.add_argument("--export", type=Path, metavar="DIR", help="Write INSTRUCTIONS.md and batches for the unreviewed flags.")
+    parser.add_argument("--batches", type=int, default=3)
+    parser.add_argument("--import", dest="imports", nargs="+", type=Path, metavar="FILE", help="Judge outputs (JSONL).")
+    parser.add_argument("--judge", help="Name stored as by = judge:NAME on imported verdicts.")
+    args = parser.parse_args(argv)
+    if bool(args.export) == bool(args.imports):
+        parser.error("give either --export DIR or --import FILE ...")
+    if args.export:
+        paths = export_batches(args.root, args.export, args.batches)
+        count = sum(len(json.loads(path.read_text(encoding="utf-8"))["papers"]) for path in paths)
+        print(f"exported {count} unreviewed flags in {len(paths)} batches; instructions in {args.export / 'INSTRUCTIONS.md'}")
+        return 0
+    if not args.judge:
+        parser.error("--import needs --judge NAME")
+    try:
+        result = import_judgements(args.root, args.imports, args.judge)
+    except ValueError as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
+    print(f"imported {len(result['imported'])} verdicts; rejected {len(result['rejected'])}")
+    for item in result["rejected"]:
+        print(f"  {item['arxiv_id']}: {item['why']}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
