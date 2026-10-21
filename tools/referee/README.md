@@ -104,12 +104,15 @@ text.
    wording of the span, not the judge's copy, widened to whole whitespace-delimited tokens
    (less a trailing `.`, `,`, `;` or `:`) so that a sign or operator next to the first or
    last word is kept. A quote lifted from the artifact excerpt fails, because
-   it is not in the note. A row whose `content_sha` differs from the note's current hash
-   (the note was edited after export) is stored with `stale: true`, and its quotes are
-   checked against the text the judge read, taken from the `batch_NN.json` beside the
-   judge file (in its folder or the folder above) when that text's hash matches. When no
-   exported text is found, a quote that is not in the current note is stored as the judge
-   wrote it with `verified: false` instead of rejecting the file. Re-importing a note
+   it is not in the note. A `content_sha` must be 64 lower-case hex digits. A row whose
+   `content_sha` differs from the note's current hash (the note was edited after export)
+   is stored with `stale: true`, and its quotes are checked against the text the judge
+   read, taken from the `batch_NN.json` beside the judge file (in its folder or the folder
+   above) when that text's hash matches. When packets for the note sit beside the judge
+   file but none of them has the row's `content_sha`, the sha was miscopied and the file
+   is rejected. Only when no exported packet for the note is found is a quote that is not
+   in the current note stored as the judge wrote it with `verified: false` instead of
+   rejecting the file. Re-importing a note
    replaces its review. Stored text is capped: summary 1500 characters, finding 600,
    quote 400, six claims.
 4. `render` rebuilds the per-note reviews and the queue.

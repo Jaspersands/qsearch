@@ -158,8 +158,9 @@ Write one JSON object per line (JSONL), one line per note, to your output path. 
 
 
 def build_packet(root: Path, path: Path) -> dict:
-    packet = parse_note(path)
-    text = path.read_bytes().decode("utf-8", errors="replace")
+    raw = path.read_bytes()  # one read, so content_sha is the hash of `text`
+    packet = parse_note(path, raw)
+    text = raw.decode("utf-8", errors="replace")
     rel = (packet.producer or {}).get("artifact")
     found = _resolve_artifact(root, rel) if rel else None
     return {
@@ -207,6 +208,7 @@ SPACE = re.compile(r"\s")
 
 
 STEM = re.compile(r"^[A-Za-z0-9_][A-Za-z0-9_.-]*$")  # a file name in research/, never a path
+SHA = re.compile(r"[0-9a-f]{64}")
 
 
 def _note_path(root: Path, stem: str) -> Path:
@@ -335,11 +337,13 @@ def overall_conflict(overall: str, claims: list[dict]) -> str | None:
     return None
 
 
-def exported_texts(paths: list[Path]) -> dict[tuple[str, str], str]:
+def exported_texts(paths: list[Path]) -> tuple[dict[tuple[str, str], str], dict[str, set[str]]]:
     """Note texts the judges read, by (stem, content_sha), from the `batch_NN.json` files in
-    each judge file's folder or its parent (`DIR/out/*.jsonl` sits under `DIR/batch_NN.json`).
-    A text whose hash is not its `content_sha` is ignored."""
+    each judge file's folder or its parent (`DIR/out/*.jsonl` sits under `DIR/batch_NN.json`),
+    and the `content_sha` each exported packet declares, by stem. A text whose hash is not its
+    `content_sha` is left out of the texts."""
     texts: dict[tuple[str, str], str] = {}
+    declared: dict[str, set[str]] = {}
     folders = {Path(path).resolve().parent for path in paths}
     batches = {batch for folder in folders for near in (folder, folder.parent) for batch in near.glob("batch_*.json")}
     for batch in sorted(batches):
@@ -348,23 +352,28 @@ def exported_texts(paths: list[Path]) -> dict[tuple[str, str], str]:
         except (OSError, ValueError, AttributeError):
             continue
         for packet in packets if isinstance(packets, list) else []:
-            if not isinstance(packet, dict) or not isinstance(packet.get("text"), str):
+            if not isinstance(packet, dict):
+                continue
+            declared.setdefault(str(packet.get("stem")), set()).add(str(packet.get("content_sha")))
+            if not isinstance(packet.get("text"), str):
                 continue
             sha = hashlib.sha256(packet["text"].encode("utf-8")).hexdigest()
             if sha == packet.get("content_sha"):
                 texts[(str(packet.get("stem")), sha)] = packet["text"]
-    return texts
+    return texts, declared
 
 
 def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None) -> dict:
     """Verify judge rows against the notes and store them; nothing is written if any row fails.
 
-    A row for the note's current version is checked against the note. A row for an earlier
-    version (the note changed after export) is checked against the exported text when it is
-    found beside the judge file, and is stored as stale either way; without the exported
-    text, its quotes that are not in the current note are stored unverified."""
+    A row's `content_sha` must be 64 lower-case hex digits. A row for the note's current version
+    is checked against the note. A row for an earlier version (the note changed after export)
+    is checked against the exported text when it is found beside the judge file, and is stored
+    as stale either way; a sha that no packet for the note beside the judge file declares is a
+    miscopy and rejected. With no exported packet for the note at all, quotes that are not in
+    the current note are stored unverified."""
     reviewed_on = today or dt.date.today().isoformat()
-    exported = exported_texts(paths)
+    exported, declared = exported_texts(paths)
     entries: dict[str, dict] = {}
     for path in paths:
         try:
@@ -388,10 +397,20 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             given = row.get("claims") or []
             if not isinstance(given, list) or not all(isinstance(claim, dict) for claim in given):
                 raise ValueError(f"{path}: {stem}: claims must be a list of JSON objects")
-            sha, current = str(row.get("content_sha") or ""), note_sha(note)
-            source, strict = note.read_bytes().decode("utf-8", errors="replace"), True
+            sha = row.get("content_sha")
+            if not isinstance(sha, str) or not SHA.fullmatch(sha):
+                raise ValueError(f"{path}: {stem}: content_sha must be the packet's 64 lower-case hex digits, not {sha!r}")
+            raw = note.read_bytes()  # one read, so the quotes are checked against the bytes hashed
+            current = hashlib.sha256(raw).hexdigest()
+            source, strict = raw.decode("utf-8", errors="replace"), True
             if sha != current:
-                source, strict = (exported[(stem, sha)], True) if (stem, sha) in exported else (source, False)
+                if (stem, sha) in exported:
+                    source = exported[(stem, sha)]
+                elif sha not in declared.get(stem, {sha}):
+                    raise ValueError(f"{path}: {stem}: content_sha {sha[:12]}... is neither the note's nor that of its "
+                                     "exported packet beside the judge file (miscopied?)")
+                else:
+                    strict = False
             claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given[:MAX_CLAIMS]]
             conflict = overall_conflict(overall, claims)
             if conflict:

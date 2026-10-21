@@ -162,8 +162,9 @@ def _section_dict(section: tuple[str, int, list[str]]) -> dict:
     return {"heading": heading, "line": line, "text": "\n".join(body).strip()}
 
 
-def parse_note(path: Path) -> NotePacket:
-    raw = path.read_bytes()
+def parse_note(path: Path, raw: bytes | None = None) -> NotePacket:
+    """The packet for the note at `path`, parsed from `raw` (its bytes, read once) when given."""
+    raw = path.read_bytes() if raw is None else raw
     text = raw.decode("utf-8", errors="replace")
     lines = text.splitlines()
     title = next((line[2:].strip() for line in lines if line.startswith("# ")), path.stem)

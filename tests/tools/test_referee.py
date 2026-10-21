@@ -651,6 +651,52 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     assert "not found in the current note" in review
 
 
+def test_import_rejects_a_malformed_or_miscopied_content_sha(tmp_path: Path) -> None:
+    # A sha one hex digit off once turned off quote checking: an artifact-excerpt quote and an
+    # invented one were stored unverified, and the unchanged note was reported stale.
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:1])
+    claims = [_claim("certificate verified for every saved input", verdict="holds"),
+              _claim("the radial bound fails on input seven of twelve", verdict="holds")]
+    good = _row(tmp_path, overall="sound", claims=claims)
+    sha = good["content_sha"]
+    for value in (sha[:-1] + ("0" if sha[-1] != "0" else "1"), sha.upper(), "", None, 7, "missing"):
+        row = {key: item for key, item in good.items() if not (key == "content_sha" and value == "missing")}
+        row |= {} if value == "missing" else {"content_sha": value}
+        with pytest.raises(ValueError, match="content_sha"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [row])], "j")
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [good])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+
+def test_packet_and_import_hash_the_bytes_they_read(tmp_path: Path, monkeypatch) -> None:
+    # The note is edited between two reads of one export or import.
+    path = _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    edited = FIXTURE_NOTE.replace("It holds for all twelve", "It holds for eleven of twelve")
+    parse_note, note_sha = R.parse_note, R.note_sha
+
+    def parse_then_edit(note: Path, *args, **kwargs):
+        packet = parse_note(note, *args, **kwargs)
+        note.write_text(edited, encoding="utf-8")
+        return packet
+
+    monkeypatch.setattr(R, "parse_note", parse_then_edit)
+    packet = R.build_packet(tmp_path, path)
+    assert packet["content_sha"] == hashlib.sha256(packet["text"].encode("utf-8")).hexdigest()
+
+    def hash_then_edit(note: Path) -> str:
+        sha = note_sha(note)
+        note.write_text(edited, encoding="utf-8")
+        return sha
+
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path)
+    monkeypatch.setattr(R, "note_sha", hash_then_edit)
+    result = R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "rows.jsonl", [row])], "j")
+    assert result["stale"] == [] and R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["verified"] is True
+
+
 def test_import_rejects_a_quote_from_the_artifact_excerpt(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     batch = json.loads(R.export_batches(tmp_path, tmp_path / "out", notes[:1])[0].read_text(encoding="utf-8"))
