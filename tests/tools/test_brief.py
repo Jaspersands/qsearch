@@ -25,13 +25,20 @@ def _git(repo: Path, *args: str, env: dict | None = None) -> None:
     )
 
 
-def _commit(repo: Path, files: dict[str, object], date: str) -> None:
-    """Write files (JSON-encoded unless already text) and commit them at noon UTC on `date`."""
+def _dated(date: str, time: str = "12:00:00") -> dict:
+    return {**os.environ, "GIT_AUTHOR_DATE": f"{date}T{time}Z", "GIT_COMMITTER_DATE": f"{date}T{time}Z"}
+
+
+def _commit(repo: Path, files: dict[str, object | None], date: str, time: str = "12:00:00") -> None:
+    """Write files (JSON-encoded unless already text; None deletes) and commit them at `time` UTC on `date`."""
     for rel, content in files.items():
         path = repo / rel
+        if content is None:
+            path.unlink()
+            continue
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content if isinstance(content, str) else json.dumps(content), encoding="utf-8")
-    env = {**os.environ, "GIT_AUTHOR_DATE": f"{date}T12:00:00Z", "GIT_COMMITTER_DATE": f"{date}T12:00:00Z"}
+    env = _dated(date, time)
     _git(repo, "add", "-A", env=env)
     _git(repo, "commit", "-qm", date, env=env)
 
@@ -84,6 +91,38 @@ def test_cutoff_is_the_start_of_the_utc_day_not_the_time_of_day(tmp_path: Path) 
     assert B.since_commit(repo, since_days=5, today=evening) == since
 
 
+def test_baseline_ignores_a_side_branch_commit_that_left_the_registry_alone(tmp_path: Path) -> None:
+    # The repository's own workflow: a tool branch that never touches the registry is merged
+    # into main with --no-ff. Its last commit (10-12) is newer than the registry's last change
+    # on main (10-05), but its registry is the older [A]; B was filed before the window.
+    repo = tmp_path / "git"
+    repo.mkdir()
+    _git(repo, "init", "-q", "-b", "main")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-01")
+    _git(repo, "branch", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-05")
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {"tools/x.txt": "tool work\n"}, "2026-10-12")
+    _git(repo, "checkout", "-q", "main")
+    _git(repo, "merge", "--no-ff", "-qm", "merge side", "side", env=_dated("2026-10-15"))
+    since = B.since_commit(repo, since_days=7, today="2026-10-20")  # cutoff 2026-10-13
+    assert since is not None and since[1] == "2026-10-05"
+    delta = B.registry_delta(repo, since[0], since_date=since[1])
+    assert (delta["added"], delta["removed"]) == ([], [])
+
+
+def test_a_commit_at_midnight_on_the_cutoff_day_is_inside_the_window(tmp_path: Path) -> None:
+    # git's --before keeps a commit dated exactly at the limit; the window starts at 00:00 UTC.
+    repo = tmp_path / "git"
+    repo.mkdir()
+    _git(repo, "init", "-q")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-12", "23:59:59")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-13", "00:00:00")
+    since = B.since_commit(repo, since_days=7, today="2026-10-20")  # cutoff 2026-10-13
+    assert since is not None and since[1] == "2026-10-12"
+    assert B.registry_delta(repo, since[0], since_date=since[1])["added"] == ["B"]
+
+
 def test_ids_reads_a_list_or_a_records_object() -> None:
     assert B._ids([{"id": "A"}, {"id": "B"}, {"no": "id"}, "junk"]) == {"A", "B"}
     assert B._ids({"records": [{"id": "X"}]}) == {"X"}
@@ -101,18 +140,40 @@ def test_registry_delta_is_unavailable_outside_git(tmp_path: Path) -> None:
     assert "added" not in delta
 
 
-def test_registry_delta_reports_a_missing_registry_at_the_cutoff(tmp_path: Path) -> None:
+def test_registry_delta_reports_a_registry_younger_than_the_window(tmp_path: Path) -> None:
     repo = tmp_path / "git"
     repo.mkdir()
     _git(repo, "init", "-q")
     _commit(repo, {"README.md": "start\n"}, "2026-10-01")
     _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-15")
+    # A commit before the cutoff exists, but none of them holds the registry.
+    assert B.since_commit(repo, since_days=7, today="2026-10-20") is None
+    section = B._registry_section(repo, 7, dt.date(2026, 10, 20), B.git_runner(repo))
+    assert section == {"available": False, "reason": f"no commit before 2026-10-13 changed {B.REGISTRY}: "
+                                                      "the registry, or the history, is younger than the window"}
+
+
+def test_a_failing_git_log_is_not_reported_as_a_young_history(tmp_path: Path) -> None:
+    def git(*args):
+        return "false\n\n" if args == B.HISTORY_ARGS else None  # a full clone at its top; log fails
+
+    section = B._registry_section(tmp_path, 7, dt.date(2026, 10, 20), git)
+    assert section == {"available": False,
+                       "reason": f"git log could not list the changes to {B.REGISTRY} before 2026-10-13"}
+
+
+def test_registry_delta_reports_a_registry_deleted_before_the_cutoff(tmp_path: Path) -> None:
+    repo = tmp_path / "git"
+    repo.mkdir()
+    _git(repo, "init", "-q")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-01")
+    _commit(repo, {B.REGISTRY: None, "README.md": "registry moved\n"}, "2026-10-05")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-15")
     since = B.since_commit(repo, since_days=7, today="2026-10-20")
-    assert since is not None and since[1] == "2026-10-01"
+    assert since is not None and since[1] == "2026-10-05"
     delta = B.registry_delta(repo, since[0], since_date=since[1])
-    assert delta["available"] is False
-    assert "did not exist" in delta["reason"] and since[0][:8] in delta["reason"]
-    assert "added" not in delta
+    assert delta["available"] is False and "added" not in delta
+    assert delta["reason"] == f"{B.REGISTRY} did not exist at the cutoff (commit {since[0][:8]} of 2026-10-05)"
 
 
 def test_registry_delta_says_when_no_commit_is_older_than_the_window(tmp_path: Path) -> None:
@@ -150,8 +211,11 @@ def test_since_commit_is_unavailable_for_a_copy_inside_another_repository(tmp_pa
     assert "scratch/copy" in delta["reason"]
 
 
-def test_allowed_git_args_accepts_only_the_three_shapes() -> None:
-    assert B.allowed_git_args(("log", "-1", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct")) is True
+LOG = ("--", B.REGISTRY)
+
+
+def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
+    assert B.allowed_git_args(("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG)) is True
     assert B.allowed_git_args(("show", f"{SHA}:{B.REGISTRY}")) is True
     assert B.allowed_git_args(("rev-parse", "--is-shallow-repository", "--show-prefix")) is True
 
@@ -159,12 +223,18 @@ def test_allowed_git_args_accepts_only_the_three_shapes() -> None:
 @pytest.mark.parametrize(
     "args",
     [
-        ("log", "-1", "--before=2026-10-13", f"--format=%H{US}%ct"),
-        ("log", "-1", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct", "--output=/tmp/x"),
-        ("log", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct"),
-        ("log", "-1", "--before=yesterday", f"--format=%H{US}%ct"),
-        ("log", "-1", "--before=2026-10-13T00:00:00Z", "--format=%H %s"),
-        ("log", "-1", f"--format=%H{US}%ct", "--before=2026-10-13T00:00:00Z"),
+        ("log", "-1", "--before=2026-10-12", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct", *LOG),  # git keeps 00:00:00 itself
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct"),  # every commit, not the registry's
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--", "research/registry"),
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG, "--output=/tmp/x"),
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--output=/tmp/x", B.REGISTRY),
+        ("log", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--before=yesterday", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--before=٢٠٢٦-١٠-١٢T23:59:59Z",
+         f"--format=%H{US}%ct", *LOG),  # Arabic-Indic digits: \d would take them
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", "--format=%H %s", *LOG),
+        ("log", "-1", f"--format=%H{US}%ct", "--before=2026-10-12T23:59:59Z", *LOG),
         ("show", f"HEAD:{B.REGISTRY}"),
         ("show", f"{SHA}:research/registry/dequantization_checks.json"),
         ("show", f"{SHA}:{B.REGISTRY}", "--output=/tmp/x"),
@@ -481,6 +551,8 @@ def test_render_contains_every_section_heading_and_action_strings(tmp_path: Path
     assert positions == sorted(positions)
     for needle in (
         "since 2026-10-13",
+        "1 at commit ",
+        "(2026-10-01), the registry's last change before 2026-10-13.",
         "Cite it in research/X.md and run the LP decoder.",  # the open action, verbatim
         "2610.11111",  # the open flag
         "FIXTURE_NOTE", "Input 7 fails.",  # the referee's flagged note and its worst claim

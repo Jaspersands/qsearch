@@ -54,21 +54,34 @@ LOG_FORMAT = f"--format=%H{US}%ct"
 HISTORY_ARGS = ("rev-parse", "--is-shallow-repository", "--show-prefix")
 # The cutoff is the start of a UTC day. git reads a bare date (--before=2026-10-13) as that day
 # at the current time of day, so the same command would pick different commits morning and
-# evening; an explicit midnight UTC does not.
-BEFORE_ARG = re.compile(r"--before=\d{4}-\d{2}-\d{2}T00:00:00Z")
+# evening; and --before keeps a commit dated exactly at its limit. So the limit is the last
+# second before the cutoff (commit dates are whole seconds). [0-9], not \d: \d takes any
+# Unicode digit.
+BEFORE_ARG = re.compile(r"--before=[0-9]{4}-[0-9]{2}-[0-9]{2}T23:59:59Z")
 SHOW_ARG = re.compile(r"[0-9a-f]{40}(?:[0-9a-f]{24})?:" + re.escape(REGISTRY))
+
+
+def _log_args(cutoff: dt.date) -> tuple[str, ...]:
+    """The newest change to the registry before the cutoff, as "<sha><US><unix time>".
+
+    Path-limited, so git's history simplification follows a merge's parent whose registry is
+    the merge's own: a side branch that never touched the registry (a tool branch merged with
+    --no-ff) cannot stand in for the registry as it was before the cutoff.
+    """
+    before = f"--before={(cutoff - dt.timedelta(days=1)).isoformat()}T23:59:59Z"
+    return ("log", "-1", before, LOG_FORMAT, "--", REGISTRY)
 
 
 def allowed_git_args(args: tuple[str, ...]) -> bool:
     """True only for the brief's own read-only git commands:
 
-    ("log", "-1", "--before=YYYY-MM-DDT00:00:00Z", "--format=%H<US>%ct"),
+    ("log", "-1", "--before=YYYY-MM-DDT23:59:59Z", "--format=%H<US>%ct", "--", REGISTRY),
     ("show", "<full sha>:" + REGISTRY) and ("rev-parse", "--is-shallow-repository", "--show-prefix").
     """
     args = tuple(args)
     if args == HISTORY_ARGS:
         return True
-    if len(args) == 4 and args[:2] == ("log", "-1") and args[3] == LOG_FORMAT:
+    if len(args) == 6 and args[:2] == ("log", "-1") and args[3:] == (LOG_FORMAT, "--", REGISTRY):
         return bool(BEFORE_ARG.fullmatch(args[2]))
     if len(args) == 2 and args[0] == "show":
         return bool(SHOW_ARG.fullmatch(args[1]))
@@ -109,20 +122,35 @@ def cutoff_day(since_days: int, today: dt.date | str | None = None) -> dt.date:
 def since_commit(
     root: Path, since_days: int = 7, today: dt.date | str | None = None, git: GitRunner | None = None
 ) -> tuple[str, str] | None:
-    """(sha, UTC commit date) of the newest commit before the cutoff day (00:00 UTC).
+    """(sha, UTC commit date) of the registry's last change before the cutoff day (00:00 UTC).
 
-    None when git cannot answer; when the clone is shallow (its oldest commit is a cut, so the
-    commit before the cutoff may be missing and an older one would be used silently); when root
-    is not the top of its work tree (a copy inside another repository would be compared with
-    that repository's history); or when no commit is that old.
+    The registry at that commit is the registry as it stood at the cutoff. None when git cannot
+    answer; when the clone is shallow (its oldest commit is a cut, so the commit before the
+    cutoff may be missing and an older one would be used silently); when root is not the top of
+    its work tree (a copy inside another repository would be compared with that repository's
+    history); or when no commit before the cutoff changed the registry.
     """
-    git = git or git_runner(root)
-    if _history_problem(git(*HISTORY_ARGS)) is not None:
-        return None
-    before = f"--before={cutoff_day(since_days, today).isoformat()}T00:00:00Z"
-    sha, _, stamp = (git("log", "-1", before, LOG_FORMAT) or "").strip().partition(US)
+    return _baseline(since_days, today, git or git_runner(root))[0]
+
+
+def _no_change_reason(cutoff: str) -> str:
+    return f"no commit before {cutoff} changed {REGISTRY}: the registry, or the history, is younger than the window"
+
+
+def _baseline(
+    since_days: int, today: dt.date | str | None, git: GitRunner
+) -> tuple[tuple[str, str] | None, str]:
+    """since_commit's answer and, when it is None, why."""
+    problem = _history_problem(git(*HISTORY_ARGS))
+    if problem is not None:
+        return None, problem
+    cutoff = cutoff_day(since_days, today)
+    answer = git(*_log_args(cutoff))
+    if answer is None:
+        return None, f"git log could not list the changes to {REGISTRY} before {cutoff.isoformat()}"
+    sha, _, stamp = answer.strip().partition(US)
     day = utc_day(stamp)
-    return (sha, day) if sha and day else None
+    return ((sha, day), "") if sha and day else (None, _no_change_reason(cutoff.isoformat()))
 
 
 def _history_problem(answer: str | None) -> str | None:
@@ -140,7 +168,7 @@ def _history_problem(answer: str | None) -> str | None:
 
 
 def _no_baseline_reason(git: GitRunner) -> str:
-    return _history_problem(git(*HISTORY_ARGS)) or "no commit before the cutoff: the history is younger than the window"
+    return _history_problem(git(*HISTORY_ARGS)) or _no_change_reason("the cutoff")
 
 
 def _ids(data: Any) -> set[str]:
@@ -427,8 +455,10 @@ def commands_section() -> dict[str, Any]:
 
 
 def _registry_section(root: Path, since_days: int, today: dt.date, git: GitRunner) -> dict[str, Any]:
-    since = since_commit(root, since_days, today, git)
-    return registry_delta(root, since[0] if since else None, git, since[1] if since else None)
+    since, reason = _baseline(since_days, today, git)
+    if since is None:
+        return {"available": False, "reason": reason}
+    return registry_delta(root, since[0], git, since[1])
 
 
 def build(
@@ -470,7 +500,7 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
     commit = section["since_sha"][:8] + (f" ({section['since_date']})" if section.get("since_date") else "")
     lines = [
         f"{section['current_count']} negative records in the working copy; {section['baseline_count']} at commit "
-        f"{commit}, the last commit before {since}.",
+        f"{commit}, the registry's last change before {since}.",
         "",
     ]
     added, removed = section["added"], section["removed"]

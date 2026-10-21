@@ -35,7 +35,7 @@ preflight only helps when someone runs it. The brief puts each of them on one pa
 
 | Section | Reads | Shows |
 |---|---|---|
-| Registry | `research/registry/negative_results.json` in the working copy and at the last commit before the window (git) | ids added and removed; removed ids now in `quarantined_campaign_negatives.json` are named as quarantined |
+| Registry | `research/registry/negative_results.json` in the working copy and at its last change before the window (git) | ids added and removed; removed ids now in `quarantined_campaign_negatives.json` are named as quarantined |
 | arXiv watch | `research/audits/arxiv_collisions.json`, `research/audits/arxiv_verdicts.json` (via `tools/arxiv_watch/verdicts.py`) | possible kills and scoops with no verdict (however old), flagged papers first seen in the window with their verdict, verdicts recorded in the window, and every verdict action not marked `action_done` |
 | Referee | `tools/referee/referee.py` `status()` over `research/audits/reviews/reviews.json` | notes flagged unsound or needs-work with their worst claim, and stale reviews |
 | Preflight | `tools/preflight/preflight.py` `run()`, the static checks only | problems grouped by check (`json`, `imports`, `manifest`) |
@@ -50,18 +50,24 @@ is missing, whose tool is not in the checkout, or that raises for any reason bec
 `{"available": false, "reason": ...}` and the page prints `Not available: <reason>` under its
 heading. Not available never means "nothing to report", and one broken source never stops the
 others. The registry section is unavailable, not "no change", when there is no git, on a
-shallow clone, when the root is not the top of its own work tree, when no commit is older than
-the window, or when the registry did not exist in that commit; the duplicates section is then
-unavailable too.
+shallow clone, when the root is not the top of its own work tree, when no commit before the
+window changed the registry, or when the registry did not exist in that commit (it was
+deleted there); the duplicates section is then unavailable too.
 
 **Git.** Read-only, through an allow-list in the cockpit's style: exactly
-`log -1 --before=YYYY-MM-DDT00:00:00Z --format=%H<US>%ct`, `show <full sha>:research/registry/negative_results.json`
-and `rev-parse --is-shallow-repository --show-prefix`; anything else raises before git starts.
-The cutoff names midnight UTC because git reads a bare date (`--before=2026-10-13`) as that day
-at the current time of day, so the same command picked a different commit in the morning and
-in the evening. A shallow clone is refused outright: its oldest commit is a cut, so the commit
-before the cutoff can be missing and an older one would be used without warning. So is a root
-below the top of a work tree (a copy under `scratch/`, say): git would answer with the outer
+`log -1 --before=YYYY-MM-DDT23:59:59Z --format=%H<US>%ct -- research/registry/negative_results.json`,
+`show <full sha>:research/registry/negative_results.json` and
+`rev-parse --is-shallow-repository --show-prefix`; anything else raises before git starts.
+The baseline is the registry's last change before the window, not the last commit: the
+path-limited log follows, at each merge, the parent whose registry the merge kept, so a tool
+branch merged with `--no-ff` whose last commit falls just before the cutoff (and whose registry
+is older than main's) cannot stand in for the registry as it was. The limit is the last second
+before the cutoff day (00:00 UTC) because `--before` keeps a commit dated exactly at its limit,
+and it names a time because git reads a bare date (`--before=2026-10-12`) as that day at the
+current time of day, so the same command picked a different commit in the morning and in the
+evening. A shallow clone is refused outright: its oldest commit is a cut, so the commit before
+the cutoff can be missing and an older one would be used without warning. So is a root below
+the top of a work tree (a copy under `scratch/`, say): git would answer with the outer
 repository's history and registry.
 
 **Duplicates threshold.** 0.8, not the 0.9 of the committed registry report: the brief only
