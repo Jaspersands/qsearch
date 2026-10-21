@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sqlite3
 import string
@@ -246,10 +247,14 @@ def _verbatim(quote: str, source: str) -> bool:
 
 
 def _confidence(value) -> float | None:
+    """The judge's confidence clamped to [0, 1]; None unless it is a finite number (not a bool or NaN)."""
+    if isinstance(value, bool):
+        return None
     try:
-        return max(0.0, min(1.0, float(value)))
+        number = float(value)
     except (TypeError, ValueError):
         return None
+    return max(0.0, min(1.0, number)) if math.isfinite(number) else None
 
 
 def import_judgements(

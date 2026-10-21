@@ -155,7 +155,8 @@ write each, so a verdict or run recorded meanwhile is kept. A row is rejected wh
   by hand without `by` ("human verdict exists").
 
 Accepted rows go into `research/audits/arxiv_verdicts.json` with `by: "judge:NAME"`, the
-quote, `quote_from` and `confidence`. A later import may replace a judge's verdict, never a
+quote, `quote_from` and `confidence` (clamped to 0..1; null when it is not a finite number,
+or is `true` or `false`). A later import may replace a judge's verdict, never a
 human's. The stored records and the digest are then rewritten, and the Reviewed table shows
 who decided. A judge verdict is one model's reading: check a `kill` or `scoop` by hand before
 acting on it, and record the outcome with `watch.py --verdict`.

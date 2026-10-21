@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from tools.arxiv_watch.judge import _verbatim, export_batches, import_judgements, main, pending
+from tools.arxiv_watch.judge import _confidence, _verbatim, export_batches, import_judgements, main, pending
 from tools.arxiv_watch.tracks import TRACKS
 from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, set_verdict
 from tools.arxiv_watch.watch import _load_state, attach_verdicts, render_digest, run
@@ -269,6 +269,23 @@ def test_batch_shows_symbols_as_stored_so_a_copied_quote_is_accepted(math_flag: 
     quote = re.search(r"we prove the margin satisfies [^\"]*? against the bound", raw).group(0)
     result = import_judgements(root, [_jsonl(tmp_path / "copied.jsonl", [_row("2610.44444", quote)])], "test", corpus=corpus)
     assert result == {"imported": ["2610.44444"], "rejected": []}
+
+
+@pytest.mark.parametrize(
+    ("value", "stored"),
+    [(0.7, 0.7), ("0.3", 0.3), (1.5, 1.0), (-0.2, 0.0), (1, 1.0), ("nan", None), (float("nan"), None), ("inf", None),
+     (float("-inf"), None), (True, None), (False, None), ("sure", None), (None, None)],
+)
+def test_confidence_is_a_clamped_finite_number_or_null(value, stored) -> None:
+    assert _confidence(value) == stored
+
+
+def test_bare_nan_confidence_is_stored_as_null(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
+    root, corpus = watched
+    row = json.dumps(_row("2610.11111", "A classical algorithm for quantum product readout")).replace("0.7", "NaN")
+    (tmp_path / "nan.jsonl").write_text(row + "\n", encoding="utf-8")
+    assert import_judgements(root, [tmp_path / "nan.jsonl"], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    assert load_verdicts(root)["verdicts"]["2610.11111"]["confidence"] is None
 
 
 def _excerpt_row(root: Path, corpus: Corpus, arxiv_id: str = "2610.11111") -> dict:
