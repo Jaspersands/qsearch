@@ -1,0 +1,99 @@
+# Note referee
+
+An independent, adversarial read of the research notes marked review pending. Most notes
+in `research/*.md` say "REVIEW PENDING" and nobody outside the agent that wrote them has
+checked them. The referee hands each note to a fresh in-session judge, which picks the
+claims that carry the conclusion, quotes each one from the note, and says whether it
+holds, has a gap, is wrong or is unclear. The tool checks every quote and keeps the
+reviews in one file, keyed by the note's content hash so a review goes stale when the
+note changes.
+
+The referee never edits `research/*.md`. Its outputs go to `research/audits/`.
+
+```bash
+python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--include-reviewed] [--json]
+python tools/referee/referee.py export --out-dir DIR [--limit 30] [--prefix P] [--batch-size 5]
+python tools/referee/referee.py export --out-dir DIR --note PRIME_CHARACTER_OPI --note POLAR_SOURCE_DESIGN
+python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21
+python tools/referee/referee.py render
+python tools/referee/referee.py status [--json]
+```
+
+| Command | What it does |
+|---|---|
+| `select` | Lists review-pending notes, newest first, without a current review. |
+| `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status. |
+| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a row fails. |
+| `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
+| `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, and stale ones. Used by the agent brief. |
+
+## Selection
+
+A note is review pending when the corpus status rule (`note_status` in
+`tools/corpus/sources/markdown.py`) says so: the first eight lines, title excluded, match
+"review pending" and nothing more decisive (quarantined, superseded, retracted,
+rejected). Notes that say "require review" instead are `unlabelled`, so export them with
+`--note`. The two journals (`AGENT_HANDOFF.md`, `MECHANICAL_FOLLOW_UP_PLAN.md`) are never
+selected. Notes are ordered by the first date in the status block (the first paragraph
+after the title), undated last, then by file modification time. A note whose stored
+review has its current content hash is skipped unless `--include-reviewed` is given.
+
+## The packet
+
+`build_packet` gives the judge the full note `text` plus fields parsed from it
+(`extract.py`):
+
+- `date`, `status`, and `not_claimed`: preamble sentences or bullets containing "not" or
+  "no".
+- `producer`: the first `python theorems/<module>.py <flags>` anywhere in the note, with
+  its JSON `artifact`. The artifact is the first `x/y.json` path in the note, else the
+  `REPORT = "...json"` constant in the producer's source. Paths resolve against the
+  repository root, then against `research/`.
+- `result`: the first section whose heading contains Result, Question, Claim or Summary,
+  else the first section. `derivations` (Derivation, Lemma, Proof, Bound, Certificate or
+  a numbered heading), `controls` (Controls, Comparison, Classical), `self_check`
+  (Attempts To Prove It Wrong, Try To Kill, Falsifier, Kill) and `decision` (Decision,
+  Next) come from the headings too. Headings inside fenced code are not section breaks.
+- `flags`: the claim checker's flags (`tools/claim_checker/check.py`) on the result's
+  prose.
+- `artifact_excerpt`: the artifact's top-level keys, then its numeric and short string
+  leaves depth first, lists capped at five items, at most 4000 characters.
+- `content_sha`: SHA-256 of the note's bytes.
+
+These fields are pointers, not a summary: the heading rules take the first match, so a
+note whose first command or first "Decision" heading is not its own gets a misleading
+field. The judge is told to work from the full text.
+
+## The judge loop
+
+1. `export --out-dir research/audits/reviews/<pass>` writes the instructions and batches.
+2. One fresh general-purpose subagent per batch reads `INSTRUCTIONS.md` and its
+   `batch_NN.json`, and writes `out/batch_NN.jsonl`: one row per note with `stem`,
+   `content_sha`, `overall` (`sound`, `needs-work`, `unsound`, `unclear`), `summary` and
+   up to six `claims`, each with a verbatim `quote`, a `verdict` (`holds`, `gap`, `wrong`,
+   `unclear`), the `step` at fault, a `finding` (the counterexample or missing condition)
+   and `covered_by_self_check`. The judge must not propose new research.
+3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, a quote
+   under six words, or a quote that is not in the note text after lower-casing and
+   collapsing punctuation and whitespace (the rediscovery audit's `_norm`, matched on
+   word boundaries). A quote lifted from the artifact excerpt fails, because it is not in
+   the note. A row whose `content_sha` differs from the note's current hash is stored
+   with `stale: true`. Re-importing a note replaces its review. Stored text is capped:
+   summary 1500 characters, finding 600, quote 400, six claims.
+4. `render` rebuilds the per-note reviews and the queue.
+
+Cost: about 100k tokens per batch of five notes.
+
+## Outputs
+
+- `research/audits/reviews/reviews.json`: `{"notes": {STEM: {reviewed_on, judge,
+  content_sha, overall, claims, summary, stale}}}`, sorted.
+- `research/audits/reviews/<STEM>.md`: the overall verdict, summary and each claim with its
+  quote, verdict, step and finding; marked stale when the note changed since.
+- `research/audits/REFEREE_QUEUE.md`: counts by overall verdict (current reviews) and
+  stale, flagged notes with their worst claim (wrong, then gap, then unclear), stale
+  reviews, and the next 30 unreviewed review-pending notes.
+
+A review is one model's reading of one note. It is a triage for the agents and the
+human, not peer review: a `holds` means the judge found no gap, not that the claim is
+proved.

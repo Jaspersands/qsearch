@@ -396,3 +396,45 @@ def test_status_returns_only_flagged_non_stale_reviews(tmp_path: Path) -> None:
     entry = R.load_reviews(tmp_path)["notes"]["EDITED"]
     assert R.is_stale(tmp_path, "EDITED", entry) is True
     assert R.worst_claim({"claims": []}) is None
+
+
+def test_cli_round_trip(tmp_path: Path, capsys) -> None:
+    _export_fixture(tmp_path)
+    root = str(tmp_path)
+    assert R.main(["select", "--root", root, "--json"]) == 0
+    selected = json.loads(capsys.readouterr().out)
+    assert isinstance(selected, list) and [s["stem"] for s in selected][:2] == ["FIXTURE_NOTE", "OTHER_0"]
+    assert selected[0] == {"stem": "FIXTURE_NOTE", "path": "research/FIXTURE_NOTE.md", "date": "2026-10-18"}
+
+    out = tmp_path / "batches"
+    assert R.main(["export", "--root", root, "--out-dir", str(out), "--limit", "2"]) == 0
+    assert str(out / "INSTRUCTIONS.md") in capsys.readouterr().out
+    batch = json.loads((out / "batch_01.json").read_text(encoding="utf-8"))
+    assert [n["stem"] for n in batch["notes"]] == ["FIXTURE_NOTE", "OTHER_0"]
+
+    answer = _jsonl(out / "out" / "batch_01.jsonl", [_row(tmp_path, overall="unsound", claims=[
+        _claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="wrong")])])
+    assert R.main(["import", str(answer), "--root", root, "--judge", "test-judge"]) == 0
+    assert "imported 1" in capsys.readouterr().out
+    assert R.main(["render", "--root", root]) == 0
+    assert (tmp_path / R.QUEUE).exists() and (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").exists()
+    capsys.readouterr()
+    assert R.main(["status", "--root", root, "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert [f["stem"] for f in payload["flagged"]] == ["FIXTURE_NOTE"]
+
+    assert R.main(["select", "--root", root, "--json"]) == 0
+    assert "FIXTURE_NOTE" not in [s["stem"] for s in json.loads(capsys.readouterr().out)]
+    assert R.main(["select", "--root", root, "--json", "--include-reviewed", "--prefix", "FIX"]) == 0
+    assert [s["stem"] for s in json.loads(capsys.readouterr().out)] == ["FIXTURE_NOTE"]
+
+    _write(tmp_path, "UNLABELLED", "# U\n\n2026-10-20. Local derivations require review.\n\n## Result\n\nSomething.\n")
+    cal = tmp_path / "calibration"
+    assert R.main(["export", "--root", root, "--out-dir", str(cal), "--note", "UNLABELLED", "--note", "OTHER_3"]) == 0
+    batch = json.loads((cal / "batch_01.json").read_text(encoding="utf-8"))
+    assert [(n["stem"], n["status"]) for n in batch["notes"]] == [("UNLABELLED", "unlabelled"), ("OTHER_3", "review-pending")]
+
+    bad = _jsonl(out / "out" / "bad.jsonl", [_row(tmp_path, overall="fine")])
+    capsys.readouterr()
+    assert R.main(["import", str(bad), "--root", root, "--judge", "test-judge"]) == 2
+    assert "bad overall verdict" in capsys.readouterr().err

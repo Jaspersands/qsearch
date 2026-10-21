@@ -17,6 +17,7 @@ The referee never edits research/*.md.
 
 from __future__ import annotations
 
+import argparse
 import datetime as dt
 import hashlib
 import json
@@ -335,3 +336,93 @@ def render(root: Path, today: str | None = None) -> None:
         (out / f"{stem}.md").write_text(_render_review(stem, entry, stem in stale), encoding="utf-8")
     queue = root / QUEUE
     queue.write_text(_render_queue(root, notes, stale, today or dt.date.today().isoformat()), encoding="utf-8")
+
+
+def _selected(root: Path, args: argparse.Namespace) -> list[Path]:
+    return select_notes(root, prefixes=tuple(args.prefix), limit=args.limit, exclude_reviewed=not args.include_reviewed)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    common = argparse.ArgumentParser(add_help=False)
+    common.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
+    choose = argparse.ArgumentParser(add_help=False)
+    choose.add_argument("--prefix", action="append", default=[], help="Only notes whose stem starts with this (repeatable).")
+    choose.add_argument("--limit", type=int, default=NEXT, help="At most this many notes; 0 for all.")
+    choose.add_argument("--include-reviewed", action="store_true", help="Keep notes whose review is still current.")
+    sub = parser.add_subparsers(dest="command", required=True)
+    select = sub.add_parser("select", parents=[common, choose], help="List the newest review-pending notes.")
+    select.add_argument("--json", action="store_true")
+    export = sub.add_parser("export", parents=[common, choose], help="Write INSTRUCTIONS.md and judge batches.")
+    export.add_argument("--out-dir", type=Path, required=True)
+    export.add_argument("--batch-size", type=int, default=5)
+    export.add_argument("--note", action="append", default=[], metavar="STEM",
+                        help="Export this note whatever its status (repeatable); replaces the selection.")
+    imp = sub.add_parser("import", parents=[common], help="Verify and store judge reviews (JSONL).")
+    imp.add_argument("files", nargs="+", type=Path)
+    imp.add_argument("--judge", required=True, help="Judge name stored with each review.")
+    sub.add_parser("render", parents=[common], help="Write reviews/<STEM>.md and REFEREE_QUEUE.md.")
+    stat = sub.add_parser("status", parents=[common], help="Flagged and stale reviews.")
+    stat.add_argument("--json", action="store_true")
+    args = parser.parse_args(argv)
+    root = args.root
+
+    if args.command == "select":
+        rows = []
+        for path in _selected(root, args):
+            date = _note_date(path.read_text(encoding="utf-8", errors="replace").splitlines())
+            rows.append({"stem": path.stem, "path": f"research/{path.name}", "date": date})
+        if args.json:
+            print(json.dumps(rows, indent=1))
+        else:
+            for row in rows:
+                print(f"{row['date'] or 'undated':<10}  {row['stem']}")
+            print(f"{len(rows)} notes")
+        return 0
+
+    if args.command == "export":
+        if args.note:
+            notes = [_note_path(root, stem.removesuffix(".md")) for stem in args.note]
+            missing = [path.stem for path in notes if not path.is_file()]
+            if missing:
+                parser.error(f"no such note: {', '.join(missing)}")
+        else:
+            notes = _selected(root, args)
+        paths = export_batches(root, args.out_dir, notes, batch_size=args.batch_size)
+        print(f"{len(notes)} notes in {len(paths)} batches; instructions in {args.out_dir / 'INSTRUCTIONS.md'}")
+        return 0
+
+    if args.command == "import":
+        try:
+            result = import_reviews(root, args.files, args.judge)
+        except ValueError as error:
+            print(f"error: {error}; nothing imported", file=sys.stderr)
+            return 2
+        stale = f": {', '.join(result['stale'])}" if result["stale"] else ""
+        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}")
+        return 0
+
+    if args.command == "render":
+        render(root)
+        print(f"wrote {len(load_reviews(root).get('notes', {}))} reviews and {QUEUE}")
+        return 0
+
+    result = status(root)
+    if args.json:
+        print(json.dumps(result, indent=1))
+        return 0
+    if not result["available"]:
+        print(result["reason"])
+        return 0
+    print(f"{result['reviewed']} reviewed, {len(result['flagged'])} flagged, {len(result['stale'])} stale")
+    for item in result["flagged"]:
+        worst = item["worst_claim"]
+        detail = f"  {worst['verdict']}: {_cell(worst['quote'], 100)}" if worst else ""
+        print(f"  {item['overall']:<10} {item['stem']}{detail}")
+    for stem in result["stale"]:
+        print(f"  stale      {stem}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
