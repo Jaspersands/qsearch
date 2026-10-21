@@ -91,11 +91,16 @@ def save_verdicts(root: Path, data: dict) -> None:
     path.write_text(json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def verdict_entry(verdict: str, reason: str, by: str, action: str | None = None, today: str | None = None) -> dict:
-    """One verdicts-file entry; ValueError on an unknown verdict."""
+def verdict_entry(
+    verdict: str, reason: str, by: str, action: str | None = None, today: str | None = None, action_done: bool = False
+) -> dict:
+    """One verdicts-file entry; ValueError on an unknown verdict. `action_done` is kept only with an action."""
     if verdict not in VERDICTS:
         raise ValueError(f"unknown verdict {verdict!r}; expected one of {', '.join(VERDICTS)}")
-    return {"verdict": verdict, "reason": reason, "action": action or None, "by": by, "reviewed_on": today or dt.date.today().isoformat()}
+    entry = {"verdict": verdict, "reason": reason, "action": action or None, "by": by, "reviewed_on": today or dt.date.today().isoformat()}
+    if action_done and entry["action"]:
+        entry["action_done"] = True
+    return entry
 
 
 def set_verdict(
@@ -106,11 +111,27 @@ def set_verdict(
     by: str,
     action: str | None = None,
     today: str | None = None,
+    action_done: bool = False,
 ) -> dict:
     """Record (or replace) one paper's verdict under its bare id (see normalize_id) and return the stored entry."""
-    entry = verdict_entry(verdict, reason, by, action=action, today=today)
+    entry = verdict_entry(verdict, reason, by, action=action, today=today, action_done=action_done)
     arxiv_id = normalize_id(arxiv_id)
     data = load_verdicts(root)
     data["verdicts"][arxiv_id] = entry
+    save_verdicts(root, data)
+    return entry
+
+
+def mark_action_done(root: Path, arxiv_id: str) -> dict:
+    """Mark a recorded verdict's action as carried out and return the entry; ValueError when the
+    paper has no verdict or its verdict has no action."""
+    arxiv_id = normalize_id(arxiv_id)
+    data = load_verdicts(root)
+    entry = data["verdicts"].get(arxiv_id)
+    if entry is None:
+        raise ValueError(f"no verdict recorded for {arxiv_id}")
+    if not entry.get("action"):
+        raise ValueError(f"the verdict for {arxiv_id} has no action to mark done")
+    entry["action_done"] = True
     save_verdicts(root, data)
     return entry

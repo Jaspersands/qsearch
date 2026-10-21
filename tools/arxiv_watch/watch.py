@@ -5,6 +5,7 @@
     python tools/arxiv_watch/watch.py --relabel        # re-apply the label rules to stored papers, offline
     python tools/arxiv_watch/watch.py --replay-seeds   # check the track classifier on seed papers
     python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." [--action "..."]
+    python tools/arxiv_watch/watch.py --action-done 2610.06753  # its action has been carried out
 
 Each new paper is placed on tracks, matched against the corpus index (nearest negatives,
 notes, theorem modules) and given a triage label from wording cues:
@@ -33,7 +34,9 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
-from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, normalize_id, set_verdict  # noqa: E402
+from tools.arxiv_watch.verdicts import (  # noqa: E402
+    VERDICTS, VERDICTS_FILE, load_verdicts, mark_action_done, normalize_id, set_verdict,
+)
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.arxiv import Client, Paper  # noqa: E402
@@ -536,9 +539,17 @@ def main(argv: list[str] | None = None) -> int:
         help=f"Record a reviewed verdict ({', '.join(VERDICTS)}) and re-render the digest; no fetching.",
     )
     parser.add_argument("--reason", default="", help="With --verdict: why, in a sentence or two.")
-    parser.add_argument("--action", help="With --verdict: what a named document should change, if anything.")
+    parser.add_argument(
+        "--action",
+        help='With --verdict: what a named document should change. Left out, a re-recorded verdict keeps its earlier action; "" clears it.',
+    )
     parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
+    parser.add_argument(
+        "--action-done", metavar="ARXIV_ID", help="Mark a recorded verdict's action as carried out and re-render the digest; no fetching."
+    )
     args = parser.parse_args(argv)
+    if args.verdict and args.action_done:
+        parser.error("give --verdict or --action-done, not both")
     problem = checkout_error(args.root)  # a mistyped --root would otherwise get a fresh research/audits/
     if problem:
         print(f"error: {problem}", file=sys.stderr)
@@ -550,19 +561,33 @@ def main(argv: list[str] | None = None) -> int:
         except (ValueError, OSError) as error:
             print(f"error: {error}", file=sys.stderr)
             return 2
-    if args.verdict:
-        raw_id, verdict = args.verdict
+    if args.verdict or args.action_done:
+        kept = False
         try:
-            arxiv_id = normalize_id(raw_id)
             state = _load_state(args.root)
-            set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=args.action)
+            if args.verdict:
+                raw_id, verdict = args.verdict
+                arxiv_id = normalize_id(raw_id)
+                previous = load_verdicts(args.root)["verdicts"].get(arxiv_id) or {}
+                action = args.action
+                if action is None and previous.get("action"):  # re-recorded without --action: keep the earlier one
+                    action, kept = previous["action"], True
+                done = bool(previous.get("action_done")) and action == previous.get("action")
+                set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=action, action_done=done)
+                outcome = verdict
+            else:
+                arxiv_id = normalize_id(args.action_done)
+                mark_action_done(args.root, arxiv_id)
+                outcome = "action marked done"
             attach_verdicts(state, load_verdicts(args.root)["verdicts"])
             _save(args.root, state)
         except (ValueError, OSError) as error:
             print(f"error: {error}", file=sys.stderr)
             return 2
         stored = "" if arxiv_id in state["papers"] else " (not in the collisions file yet)"
-        print(f"{arxiv_id}: {verdict}{stored}; digest re-rendered")
+        print(f"{arxiv_id}: {outcome}{stored}; digest re-rendered")
+        if kept:
+            print('kept the earlier action and whether it was done (--action "" clears it)')
         return 0
     if args.relabel:
         corpus = Corpus(args.root)

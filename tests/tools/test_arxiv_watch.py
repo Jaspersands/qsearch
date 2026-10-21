@@ -657,6 +657,44 @@ def test_verdict_flag_records_and_rerenders_without_fetching(fake_repo: Path, mo
     assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["verdict"] == "false-alarm"
 
 
+def test_verdict_flag_keeps_an_earlier_action_and_action_done_marks_it(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    digest = fake_repo / "research" / "audits" / "ARXIV_WATCH.md"
+
+    def verdict(*argv: str) -> dict:
+        assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", *argv]) == 0, argv
+        return load_verdicts(fake_repo)["verdicts"]["2610.11111"]
+
+    entry = verdict("should-cite", "--reason", "r", "--action", "Cite it in X.")
+    assert entry["action"] == "Cite it in X." and "action_done" not in entry
+    capsys.readouterr()
+    assert watch.main(["--root", str(fake_repo), "--action-done", "arXiv:2610.11111v1"]) == 0
+    assert capsys.readouterr().out == "2610.11111: action marked done; digest re-rendered\n"
+    assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["action_done"] is True
+    assert "Cite it in X. (done) |" in _section(digest.read_text(), "Reviewed")
+
+    # Re-recording without --action keeps the action and whether it was done, and says so.
+    entry = verdict("kill", "--reason", "read the full text")
+    assert (entry["verdict"], entry["action"], entry["action_done"]) == ("kill", "Cite it in X.", True)
+    assert "kept the earlier action" in capsys.readouterr().out
+    entry = verdict("kill", "--reason", "again", "--action", "Cite it in X.")
+    assert entry["action_done"] is True
+    entry = verdict("kill", "--reason", "again", "--action", "Cite it in Y.")  # a new action is not done yet
+    assert entry["action"] == "Cite it in Y." and "action_done" not in entry
+    entry = verdict("kill", "--reason", "again", "--action", "")  # an empty --action clears it
+    assert entry["action"] is None and "action_done" not in entry
+
+    capsys.readouterr()
+    for ident, why in (("2610.11111", "no action"), ("2610.22222", "no verdict"), ("2610.0675", "not an arXiv id")):
+        assert watch.main(["--root", str(fake_repo), "--action-done", ident]) == 2, ident
+        assert why in capsys.readouterr().err, ident
+
+
 def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
     from tools.arxiv_watch import watch
 

@@ -10,6 +10,7 @@ python tools/arxiv_watch/watch.py --since 2026-09-18 --tracks dcp,dqi_opi
 python tools/arxiv_watch/watch.py --relabel       # re-apply label rules to stored papers, no fetching
 python tools/arxiv_watch/watch.py --replay-seeds  # classifier consistency check on the seed papers
 python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." --action "..."
+python tools/arxiv_watch/watch.py --action-done 2610.06753   # that verdict's action is carried out
 ```
 
 Each track query is sorted newest first and paged (`--max` results per page, default 100)
@@ -109,7 +110,10 @@ They do the same when `arxiv_collisions.json` cannot be read, and when `--root` 
 | false-alarm | The wording cue or the corpus match is spurious. |
 
 Each entry holds `verdict`, `reason`, `action` (null when nothing is to be done), `by` and
-`reviewed_on`. `action_done: true` marks an action already carried out. The file is the
+`reviewed_on`. `action_done: true` marks an action already carried out; set it with
+`watch.py --action-done ID` (exit 2 when the paper has no verdict or its verdict no action).
+Re-recording a verdict without `--action` keeps the earlier action and its `action_done`, and
+says so; a different `--action` starts not done, and `--action ""` clears it. The file is the
 source of truth: every run copies its entries onto the stored records and drops a withdrawn
 one. The digest's Reviewed table lists every entry, by verdict then id, with the paper's
 machine label; an id the collisions file does not hold shows "not stored".
