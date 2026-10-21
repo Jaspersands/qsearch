@@ -73,6 +73,10 @@ The `imports` check collects references from these places:
   scan found exactly the import statements a full parse finds in every one of the 1281 files
   under `theorems/`, `core/` and `qsearch_cli/`.
 
+A CLI source that does not parse, or a table of the wrong shape (an `IMPORTS` entry whose
+module is `None`, an `ORDER` that is a dict), is one `imports` problem, `cannot read the
+CLI sources: ...`, and the other checks still run.
+
 A module named in another case than its file (`theorems.Foo` for `theorems/foo.py`) is
 missing: Python's import matches case even on macOS, whose file system does not. The
 message names the file, `missing on disk (case differs: theorems/foo.py)`, on every

@@ -350,6 +350,31 @@ def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_pa
     ]
 
 
+@pytest.mark.parametrize(
+    "tables, table",
+    [
+        ({"imports": {"x": (None, "x")}}, "IMPORTS"),
+        ({"imports": [("a", "b")]}, "IMPORTS"),
+        ({"imports": {"x": "ab"}}, "IMPORTS"),  # would unpack into module "a", attribute "b"
+        ({"dispatch": [("f", 3, "g")]}, "DISPATCH"),
+        ({"order": [("audit", None, "add_audit")]}, "ORDER"),
+        ({"functions": ["command_audit"]}, "FUNCTIONS"),
+        ({"functions": {"command_audit": 3}}, "FUNCTIONS"),
+    ],
+)
+def test_a_table_of_the_wrong_shape_is_one_problem(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], tables: dict, table: str
+) -> None:
+    repo = _repo(tmp_path, git=False, **tables)
+
+    assert pf.main(["--root", str(repo)]) == 1
+    lines = capsys.readouterr().out.splitlines()
+    [line] = [line for line in lines if line.startswith("imports: .: cannot read")]
+    assert line.startswith(f"imports: .: cannot read the CLI sources: ValueError: {table} in qsearch_cli/")
+    if table == "ORDER":
+        assert any(line.startswith("manifest: qsearch_cli/registry.py: cannot read ORDER: ValueError: ORDER") for line in lines)
+
+
 def test_real_checkout_has_no_untracked_imports() -> None:
     assert pf.check_untracked_imports(REPO) == []
 

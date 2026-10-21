@@ -87,6 +87,38 @@ def _literal(root: Path, rel: str, name: str):
     return None
 
 
+# Each CLI table: (file, container, row width, shape). Width 0: a dict whose values are module names.
+TABLES = {
+    "IMPORTS": (IMPORTS_FILE, dict, 2, "a dict of name: (module, attribute or None)"),
+    "DISPATCH": (REGISTRY, list, 3, "a list of (flag, module, function)"),
+    "ORDER": (REGISTRY, list, 3, "a list of (subcommand, module, function)"),
+    "FUNCTIONS": (REGISTRY, dict, 0, "a dict of function: module"),
+}
+
+
+def _table(root: Path, name: str):
+    """The CLI table ``name``, read with _literal; None when absent, ValueError when it has another shape."""
+    rel, container, width, shape = TABLES[name]
+    value = _literal(root, rel, name)
+    if value is None:
+        return None
+
+    def well_formed(row) -> bool:
+        if width == 0:
+            return isinstance(row, str)
+        if not isinstance(row, (tuple, list)) or len(row) != width:
+            return False
+        last_ok = isinstance(row[-1], str) or (name == "IMPORTS" and row[-1] is None)
+        return last_ok and all(isinstance(column, str) for column in row[:-1])
+
+    if not isinstance(value, container):
+        raise ValueError(f"{name} in {rel} is not {shape}")
+    for key, row in value.items() if isinstance(value, dict) else enumerate(value):
+        if not well_formed(row):
+            raise ValueError(f"{name} in {rel} is not {shape}: {key!r}: {row!r}")
+    return value
+
+
 def _dotted_path(root: Path, name: str) -> str | None:
     """The file a dotted ``theorems.``, ``core.`` or ``qsearch_cli.`` name loads, present or not.
 
@@ -200,17 +232,17 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
             for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"), filename=rel)):
                 for module_path in _import_paths(root, node):
                     add(module_path, rel)
-    for module, attribute in (_literal(root, IMPORTS_FILE, "IMPORTS") or {}).values():
+    for module, attribute in (_table(root, "IMPORTS") or {}).values():
         if module in PACKAGES and attribute:  # ("theorems", "x"): `from theorems import x`, as sweep writes it
             add(f"{module}/{attribute}.py", IMPORTS_FILE)
         else:
             add(_module_path(root, module), IMPORTS_FILE)
-    for _flag, module, _function in _literal(root, REGISTRY, "DISPATCH") or []:
+    for _flag, module, _function in _table(root, "DISPATCH") or []:
         add(_module_path(root, module), REGISTRY)
     # parser.py imports every ORDER module to build the parser; resolve.py imports FUNCTIONS' on use.
-    for _name, module, _adder in _literal(root, REGISTRY, "ORDER") or []:
+    for _name, module, _adder in _table(root, "ORDER") or []:
         add(_module_path(root, module), REGISTRY)
-    for module in (_literal(root, REGISTRY, "FUNCTIONS") or {}).values():
+    for module in (_table(root, "FUNCTIONS") or {}).values():
         add(_module_path(root, module), REGISTRY)
     queue = sorted(refs)
     while queue:
@@ -322,7 +354,7 @@ def check_untracked_imports(root: Path) -> list[Problem]:
 
 def registry_order(root: Path) -> dict[str, str]:
     """Subcommand name -> module, from the ORDER literal in qsearch_cli/registry.py (read, never imported)."""
-    order = _literal(Path(root).resolve(), REGISTRY, "ORDER")
+    order = _table(Path(root).resolve(), "ORDER")
     if order is None:
         raise ValueError(f"{REGISTRY} has no ORDER")
     return {name: module for name, module, _add_parser in order}
