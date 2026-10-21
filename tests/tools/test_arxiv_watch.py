@@ -9,6 +9,7 @@ from urllib.parse import parse_qs, urlparse
 import pytest
 
 from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
+from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, set_verdict
 from tools.arxiv_watch.watch import label_for, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
@@ -429,3 +430,22 @@ LABEL_CASES = [
 @pytest.mark.parametrize(("arxiv_id", "title", "abstract", "tracks", "expected"), LABEL_CASES, ids=[c[0] for c in LABEL_CASES])
 def test_labels_on_committed_papers(arxiv_id: str, title: str, abstract: str, tracks: list[str], expected: str) -> None:
     assert label_for(_paper(arxiv_id, title, abstract), tracks, cited=False)[0] == expected
+
+
+# --- verdicts -------------------------------------------------------------------------------------
+
+
+def test_verdict_round_trip(tmp_path: Path) -> None:
+    assert load_verdicts(tmp_path) == {"verdicts": {}}
+    entry = set_verdict(tmp_path, "2610.11111", "false-alarm", "cue spurious", "human", today="2026-10-21")
+    expected = {"verdict": "false-alarm", "reason": "cue spurious", "action": None, "by": "human", "reviewed_on": "2026-10-21"}
+    assert entry == expected
+    assert load_verdicts(tmp_path) == {"verdicts": {"2610.11111": expected}}
+    text = (tmp_path / VERDICTS_FILE).read_text(encoding="utf-8")
+    assert text.endswith("}\n") and json.loads(text) == {"verdicts": {"2610.11111": expected}}
+
+
+def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
+    with pytest.raises(ValueError):
+        set_verdict(tmp_path, "2610.11111", "maybe", "unsure", "human")
+    assert not (tmp_path / VERDICTS_FILE).exists()
