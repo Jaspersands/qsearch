@@ -465,6 +465,15 @@ def test_check_new_with_no_negative_records_is_an_error(fake_repo: Path, capsys)
     assert "the index has no negative records" in payload["error"] and "duplicate" not in payload
 
 
+def test_check_duplicate_negative_tool_sees_a_record_filed_since_its_last_refresh(fake_repo: Path) -> None:
+    server = create_server(fake_repo, dense="off")  # refreshes other tools at most every 30 s
+    claim = f"{UNIQUE['claim']} {UNIQUE['reason_invalid']}"
+    assert _call(server, "check_duplicate_negative", {"claim": claim})["duplicate"] is False
+    _corpus_with(fake_repo, [UNIQUE])  # another agent files the record and indexes it
+    payload = _call(server, "check_duplicate_negative", {"claim": claim})
+    assert payload["duplicate"] is True and payload["matches"][0]["doc_id"] == PLATYPUS
+
+
 def test_check_duplicate_negative_tool_rejects_an_empty_claim(fake_repo: Path) -> None:
     server = create_server(fake_repo, dense="off")
     for claim in ("", "the of and"):

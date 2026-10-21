@@ -51,7 +51,8 @@ before" group then means the registry could not be read, not that the idea is ne
 `tools/dqi_screen/README.md`), `classical_baselines` (the `baselines` command, below) and
 `check_duplicate_negative` (the `check-new` check, below).
 It keeps the index warm and refreshes it at most every 30
-seconds. With the default `--dense auto` it adds the embedding ranker only while every
+seconds, except `check_duplicate_negative`, which refreshes before every check so a record
+another agent filed a moment ago is compared. With the default `--dense auto` it adds the embedding ranker only while every
 document has a vector (after `build --dense`); documents added since then switch it back
 to lexical ranking until the next `build --dense`, because a ranker that cannot see the
 newest records would push them down. `--dense on` embeds new documents at each refresh

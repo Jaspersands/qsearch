@@ -38,8 +38,8 @@ def create_server(
     corpus = Corpus(checkout_root(Path(root) if root else None), embedder=embedder)  # CorpusRootError if not a checkout
     last_refresh = [0.0]
 
-    def ready() -> bool:
-        if time.time() - last_refresh[0] >= refresh_seconds:
+    def ready(force: bool = False) -> bool:
+        if force or time.time() - last_refresh[0] >= refresh_seconds:
             corpus.refresh(dense=dense == "on")
             last_refresh[0] = time.time()
         # auto: a ranker that cannot see the newest documents would push them down, so wait for full coverage
@@ -116,7 +116,9 @@ def create_server(
             threshold = valid_threshold(threshold)
         except ValueError as exc:
             return {"error": str(exc)}
-        ready()
+        # Always refresh (a no-op costs well under a second): a negative another agent filed
+        # inside the refresh window is exactly the duplicate this gate exists to catch.
+        ready(force=True)
         report = claim_report(corpus, claim, threshold=threshold)
         if report.documents == 0:
             return {"error": NO_NEGATIVES, **_issues_json(corpus)}
