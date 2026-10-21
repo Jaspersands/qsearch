@@ -39,7 +39,7 @@ nothing. A run takes a few seconds, most of it parsing about 250 MB of
 | Check | Catches | Message |
 |---|---|---|
 | `json` | Any `*.json` under `research/hypotheses`, `research/registry`, `research/audits` or `research/classical_baselines` that does not parse, including non-UTF-8 bytes | the parser's own error, e.g. `Invalid \escape: line 7 column 167 (char 635)` |
-| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `not tracked by git`, `not tracked by git (intent-to-add only)`, or one `git unavailable` (with the reason when the root is inside a work tree) |
+| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `missing on disk (case differs: theorems/x.py)`, `not tracked by git`, `not tracked by git (intent-to-add only)`, or one `git unavailable` (with the reason when the root is inside a work tree) |
 | `manifest` | A subcommand in `research/audits/cli_manifest.json` that is no longer in `ORDER` in `qsearch_cli/registry.py`, or that moved module | `subcommand X missing from ORDER`, `X: manifest says A, ORDER says B` |
 
 The `imports` check collects references from these places:
@@ -72,6 +72,11 @@ The `imports` check collects references from these places:
   strings and comments, with its bracketed or backslash-continued names. On 2026-10-22 the
   scan found exactly the import statements a full parse finds in every one of the 1281 files
   under `theorems/`, `core/` and `qsearch_cli/`.
+
+A module named in another case than its file (`theorems.Foo` for `theorems/foo.py`) is
+missing: Python's import matches case even on macOS, whose file system does not. The
+message names the file, `missing on disk (case differs: theorems/foo.py)`, on every
+platform.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
 One marked with `git add -N` (intent to add) does not: `git ls-files` lists it, but a plain

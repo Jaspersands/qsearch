@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import os
 import re
 import subprocess
 import sys
@@ -269,6 +270,29 @@ def tracked_files(root: Path) -> set[str] | None:
     return None if isinstance(index, str) else index[0]
 
 
+def _spelled_on_disk(root: Path, rel: str, listings: dict[Path, list[str]]) -> str | None:
+    """rel as a file on disk spells it: rel itself, else a path differing only in case, else None.
+
+    Python's import system matches case even where the file system does not (macOS), so a
+    case mismatch is a missing module on every platform. ``listings`` caches os.listdir.
+    """
+    here, parts = root, []
+    for name in rel.split("/"):
+        if here not in listings:
+            try:
+                listings[here] = sorted(os.listdir(here))
+            except OSError:
+                listings[here] = []
+        if name not in listings[here]:
+            matches = [n for n in listings[here] if n.casefold() == name.casefold()]
+            if not matches:
+                return None
+            name = matches[0]
+        parts.append(name)
+        here = here / name
+    return "/".join(parts) if here.is_file() else None
+
+
 def check_untracked_imports(root: Path) -> list[Problem]:
     """Modules the CLI refers to that are missing on disk or that git does not track."""
     root = Path(root).resolve()
@@ -280,9 +304,13 @@ def check_untracked_imports(root: Path) -> list[Problem]:
     index = _git_index(root)
     tracked, intent = (None, set()) if isinstance(index, str) else index
     problems = []
+    listings: dict[Path, list[str]] = {}
     for module_path in sorted(refs):
-        if not (root / module_path).is_file():
+        on_disk = _spelled_on_disk(root, module_path, listings)
+        if on_disk is None:
             problems.append(Problem("imports", module_path, "missing on disk"))
+        elif on_disk != module_path:
+            problems.append(Problem("imports", module_path, f"missing on disk (case differs: {on_disk})"))
         elif module_path in intent:
             problems.append(Problem("imports", module_path, "not tracked by git (intent-to-add only)"))
         elif tracked is not None and module_path not in tracked:

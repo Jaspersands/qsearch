@@ -339,6 +339,17 @@ def test_staged_module_counts_as_tracked_but_intent_to_add_does_not(tmp_path: Pa
     ]
 
 
+def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_path: Path) -> None:
+    # Python's import matches case even on macOS, whose file system does not: git add would not help.
+    general = "def command_audit(args):\n    from theorems.Tracked import a\n    from theorems.Gone import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": "a = 1\n"})
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/Gone.py", "missing on disk"),
+        pf.Problem("imports", "theorems/Tracked.py", "missing on disk (case differs: theorems/tracked.py)"),
+    ]
+
+
 def test_real_checkout_has_no_untracked_imports() -> None:
     assert pf.check_untracked_imports(REPO) == []
 
