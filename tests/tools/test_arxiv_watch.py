@@ -625,17 +625,48 @@ def _review_verdicts(text: str) -> dict[str, str]:
     return found
 
 
-@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
-def test_seeded_verdicts_match_the_reviewed_triage() -> None:
-    text = REVIEW.read_text(encoding="utf-8")
+SEED_DAY = "2026-10-21"
+
+
+def _assert_seed_matches_review(verdicts: dict, text: str) -> None:
+    """The 22 seeded entries still say what the review says.
+
+    Only the seed is checked: later verdicts for other papers, an action marked done since, or a
+    seeded paper re-recorded on a later day (its entry is no longer the review's) all pass.
+    """
     reviewed = set(re.findall(r"\b\d{4}\.\d{5}\b", text))
     expected = _review_verdicts(text)
-    verdicts = load_verdicts(REPO)["verdicts"]
-    assert len(reviewed) == 22 and set(expected) == reviewed and set(verdicts) == reviewed
-    assert {arxiv_id: entry["verdict"] for arxiv_id, entry in verdicts.items()} == expected
-    assert all(entry["by"] == "human" and entry["reason"] for entry in verdicts.values())
+    assert len(reviewed) == 22 and set(expected) == reviewed and reviewed <= set(verdicts)
     counts: dict[str, int] = {}
-    for entry in verdicts.values():
-        counts[entry["verdict"]] = counts.get(entry["verdict"], 0) + 1
+    for verdict in expected.values():
+        counts[verdict] = counts.get(verdict, 0) + 1
     assert counts == {"should-cite": 9, "related-only": 8, "false-alarm": 5}
-    assert {arxiv_id for arxiv_id, entry in verdicts.items() if entry.get("action_done")} == {"2610.06753", "2610.03566"}
+    seed = {arxiv_id: verdicts[arxiv_id] for arxiv_id in reviewed if verdicts[arxiv_id].get("reviewed_on") == SEED_DAY}
+    assert {arxiv_id: entry["verdict"] for arxiv_id, entry in seed.items()} == {arxiv_id: expected[arxiv_id] for arxiv_id in seed}
+    assert all(entry["by"] == "human" and entry["reason"] for entry in seed.values())
+    assert {"2610.06753", "2610.03566"} & set(seed) <= {arxiv_id for arxiv_id, entry in seed.items() if entry.get("action_done")}
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seeded_verdicts_match_the_reviewed_triage() -> None:
+    _assert_seed_matches_review(load_verdicts(REPO)["verdicts"], REVIEW.read_text(encoding="utf-8"))
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seed_check_allows_later_verdicts_but_not_a_drifted_seed() -> None:
+    text = REVIEW.read_text(encoding="utf-8")
+    seeded = load_verdicts(REPO)["verdicts"]
+    later = {
+        "2609.23818": {"verdict": "related-only", "reason": "read it", "action": None, "by": "human", "reviewed_on": "2026-10-27"},
+        "2610.99999": {"verdict": "kill", "reason": "r", "action": "a", "by": "judge:x", "reviewed_on": "2026-10-27",
+                       "quote": "q", "quote_from": "abstract", "confidence": 0.5},
+        "2610.00502": {**seeded["2610.00502"], "action_done": True},  # an agent carried out a seeded action
+        "2610.01141": {**seeded["2610.01141"], "verdict": "kill", "reviewed_on": "2026-11-02"},  # re-recorded since
+    }
+    _assert_seed_matches_review({**seeded, **later}, text)
+    for drift in ({"verdict": "kill"}, {"by": "judge:x"}, {"action_done": False}):
+        changed = {**seeded, "2610.06753": {**seeded["2610.06753"], **drift}}
+        with pytest.raises(AssertionError):
+            _assert_seed_matches_review(changed, text)
+    with pytest.raises(AssertionError):
+        _assert_seed_matches_review({k: v for k, v in seeded.items() if k != "2610.01902"}, text)
