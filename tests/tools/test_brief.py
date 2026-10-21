@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import datetime as dt
 import hashlib
+import inspect
 import json
 import os
 import subprocess
@@ -831,6 +832,33 @@ def test_render_contains_every_section_heading_and_action_strings(tmp_path: Path
         "python tools/preflight/preflight.py",
     ):
         assert needle in text, needle
+
+
+PREFLIGHT_PY = (REPO / "tools" / "preflight" / "preflight.py").resolve()
+
+
+def test_build_runs_only_allow_listed_git_and_preflight_local_reads(tmp_path: Path, monkeypatch) -> None:
+    # The brief's own git goes through the allow-list. The preflight section runs preflight's
+    # own git, outside it: the module docstring and README must say so, and name each command.
+    repo = _full_repo(tmp_path, monkeypatch)
+    real_run, own, preflight = subprocess.run, [], []
+
+    def spy(command, *args, **kwargs):
+        if command[0] == "git":
+            git_args = tuple(command[3:]) if command[1] == "-C" else tuple(command[1:])
+            callers = {Path(frame.filename).resolve() for frame in inspect.stack()[1:]}
+            (preflight if PREFLIGHT_PY in callers else own).append(git_args)
+        return real_run(command, *args, **kwargs)
+
+    monkeypatch.setattr(subprocess, "run", spy)
+    B.build(repo, today="2026-10-20")
+    assert own and all(B.allowed_git_args(args) for args in own), own
+    assert preflight, "the preflight section ran no git"
+    readme = (REPO / "tools" / "brief" / "README.md").read_text(encoding="utf-8")
+    for args in preflight:
+        assert args[0] in {"rev-parse", "ls-files", "diff"}, args  # local reads: none contacts a remote
+        assert f"`git {args[0]}" in readme, args
+    assert "preflight" in B.__doc__.split("Git is used read-only")[1].split("\n\n")[0]
 
 
 def test_main_writes_both_files(tmp_path: Path, capsys) -> None:

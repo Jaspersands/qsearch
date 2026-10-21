@@ -84,6 +84,13 @@ the cutoff can be missing and an older one would be used without warning. So is 
 the top of a work tree (a copy under `scratch/`, say): git would answer with the outer
 repository's history and registry.
 
+**Preflight's git.** All of the above is the brief's own git. The preflight section calls
+`tools/preflight/preflight.py` `run()`, which runs its own git outside this allow-list,
+environment and timeout: `git rev-parse --show-prefix`, `git ls-files -z` and
+`git diff --name-only -z --diff-filter=A`, the last two over `theorems/`, `core/` and
+`qsearch_cli/`. They read the local index and work tree and never contact a remote; they are
+the commands preflight runs before every commit.
+
 **Duplicates threshold.** 0.8, not the 0.9 of the committed registry report: the brief only
 compares the window's new records, so the list stays short, and the corpus README's hand check
 has a true restatement at 0.80. The nearest pair below it among the records of the ten days to

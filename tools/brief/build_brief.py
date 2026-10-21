@@ -9,8 +9,10 @@ arXiv flags and verdict actions, referee flags, preflight problems, cockpit iner
 duplicates of the new negatives, and the five commands to run. A section whose source is
 missing or broken says "Not available" and why; it never reads as "nothing to report".
 
-Git is used read-only: only the exact argument lists `allowed_git_args` accepts are ever run.
-Never imports core/ or theorems/.
+Git is used read-only. The brief's own git runs only the exact argument lists
+`allowed_git_args` accepts, offline and with a timeout; the preflight section is the exception,
+since tools/preflight/preflight.py runs its own local reads (rev-parse, ls-files, diff of the
+index) without that runner. Never imports core/ or theorems/.
 """
 
 from __future__ import annotations
