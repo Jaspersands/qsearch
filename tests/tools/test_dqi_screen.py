@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from dataclasses import replace
 from pathlib import Path
 
@@ -141,3 +142,19 @@ def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
     for bad in ({**base, "radiuss": 3}, {**base, "objective": "max"}, {"objective": "count"}, {**base, "q": 12}):
         with pytest.raises(ValueError):
             S.screen(S.candidate_from_dict(bad))
+
+
+def test_cli_json_and_markdown(capsys, tmp_path) -> None:
+    main = S.main
+    assert main(["--params", str(EXAMPLES / "mpi_signed_cosine.json"), "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["verdict"] == "viable" and payload["quantities"]["cosine_objective"] == pytest.approx(0.367, abs=5e-4)
+    out = tmp_path / "s.md"
+    assert main(["--params", str(EXAMPLES / "opi_prime_character_r32.json"), "--out", str(out)]) == 1
+    assert "outside licensed Hamming reach" in out.read_text() and "# DQI screen: opi-prime-character-r32" in out.read_text()
+    assert capsys.readouterr().out == f"not viable: {out}\n"
+    assert main(["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5", "--radius", "5", "--min-distance", "20", "--decoder-known"]) == 0
+    text = capsys.readouterr().out
+    assert text.startswith("# DQI screen: candidate") and "| q_prange |" in text and "Verdict:" in text
+    assert main(["--objective", "count", "--q", "12", "--m", "100", "--n", "30", "--rho", "0.5"]) == 2
+    assert "prime power" in capsys.readouterr().err

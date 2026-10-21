@@ -1,19 +1,30 @@
 """Screen a DQI candidate against the Mazumder-Niroula soundness rules (arXiv:2610.06753).
 
+    python tools/dqi_screen/screen.py --params tools/dqi_screen/examples/opi_prime_character_r19.json
+    python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.5 --radius 5 --min-distance 20 --decoder-known
+    python tools/dqi_screen/screen.py --params cand.json --json --out screen.json
+
 A candidate is a max-LINSAT family: m constraints over n variables in F_q, accepted density
 rho, the objective ("count" of satisfied constraints, or "cosine"), and the claimed decoding
 radius. The screen computes the closed-form quantities, runs each rule and gives a verdict:
 "not viable" when a hard rule fails, "unknown" when an input is missing or a soft rule
 flags, else "viable". It is a soundness screen, not a proof.
+
+Exit codes: 0 viable or unknown, 1 not viable, 2 bad input.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
-from dataclasses import MISSING, dataclass, fields
+import sys
+from dataclasses import MISSING, asdict, dataclass, fields
 from pathlib import Path
 
-from tools.dqi_screen import rules as R
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from tools.dqi_screen import rules as R  # noqa: E402
 
 OBJECTIVES = ("count", "cosine")
 HARD = ("R1", "reach", "R2", "R3-encoder", "R4")
@@ -347,3 +358,87 @@ def screen(c: Candidate) -> Screen:
     ]
     verdict, reasons = _verdict(checks)
     return Screen(c, qn, checks, verdict, reasons)
+
+
+def _cell(value) -> str:
+    if value is None:
+        return "-"
+    if isinstance(value, float):
+        return f"{value:.6g}"
+    return str(value)
+
+
+def _status(check: Check) -> str:
+    if check.passed is None:
+        return "n/a" if check.detail.startswith(NOT_APPLICABLE) else "open"
+    return "pass" if check.passed else "FAIL"
+
+
+def render(s: Screen) -> str:
+    c = s.candidate
+    lines = [
+        f"# DQI screen: {c.name}",
+        "",
+        f"Objective {c.objective}, q = {c.q}, m = {c.m}, n = {c.n}, rho = {_cell(c.rho)}, radius = {_cell(c.radius)}, "
+        f"min_distance = {_cell(c.min_distance)}, decoder known: {'yes' if c.decoder_known else 'no'}, "
+        f"encoder known: {'yes' if c.encoder_known else 'no'}.",
+        "",
+        "## Quantities",
+        "",
+        "| Quantity | Value |",
+        "|---|---|",
+        *[f"| {key} | {_cell(value)} |" for key, value in s.quantities.items()],
+        "",
+        "## Checks",
+        "",
+        *[f"- {ch.rule} ({'hard' if ch.rule in HARD else 'soft'}): {_status(ch)}. {ch.detail}" for ch in s.checks],
+        "",
+        f"**Verdict: {s.verdict}**",
+    ]
+    if s.reasons:
+        lines += ["", "Reasons:", "", *[f"- {reason}" for reason in s.reasons]]
+    lines += ["", "Asymptotic rules for worst-case Hamming decoding; a screen, not a proof."]
+    return "\n".join(lines) + "\n"
+
+
+_FLAGS = ("name", "objective", "q", "m", "n", "rho", "radius", "min_distance", "decoder_known", "encoder_known",
+          "p", "b", "c", "classical_witness", "finite_dqi_mean")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--params", type=Path, help="JSON file with the candidate's fields (see examples/); flags override it.")
+    parser.add_argument("--name")
+    parser.add_argument("--objective", choices=OBJECTIVES)
+    for flag in ("q", "m", "n", "radius", "min-distance", "p", "b", "c"):
+        parser.add_argument(f"--{flag}", type=int)
+    for flag in ("rho", "classical-witness", "finite-dqi-mean"):
+        parser.add_argument(f"--{flag}", type=float)
+    parser.add_argument("--decoder-known", action="store_true", help="An efficient decoder reaches the radius.")
+    parser.add_argument("--encoder-known", action="store_true", help="The planted encoder is known (R3: margin <= 0).")
+    parser.add_argument("--json", action="store_true")
+    parser.add_argument("--out", type=Path, help="Write the report here instead of printing it.")
+    args = parser.parse_args(argv)
+
+    try:
+        data = json.loads(args.params.read_text(encoding="utf-8")) if args.params else {}
+        if not isinstance(data, dict):
+            raise ValueError(f"{args.params} must hold a JSON object")
+        data.update({key: getattr(args, key) for key in _FLAGS if getattr(args, key) not in (None, False)})
+        data.setdefault("name", "candidate")
+        result = screen(candidate_from_dict(data))
+    except (OSError, ValueError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+    text = json.dumps(asdict(result), indent=1) + "\n" if args.json else render(result)
+    if args.out:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(text, encoding="utf-8")
+        print(f"{result.verdict}: {args.out}")
+    else:
+        print(text, end="")
+    return 1 if result.verdict == "not viable" else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
