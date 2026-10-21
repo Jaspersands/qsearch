@@ -553,3 +553,20 @@ def test_verdict_flag_records_and_rerenders_without_fetching(fake_repo: Path, mo
     assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", "maybe"]) == 2
     assert "unknown verdict" in capsys.readouterr().err
     assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["verdict"] == "false-alarm"
+
+
+REPO = Path(__file__).resolve().parents[2]
+REVIEW = REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seeded_verdicts_match_the_reviewed_triage() -> None:
+    reviewed = set(re.findall(r"\b\d{4}\.\d{5}\b", REVIEW.read_text(encoding="utf-8")))
+    verdicts = load_verdicts(REPO)["verdicts"]
+    assert len(reviewed) == 22 and set(verdicts) == reviewed
+    assert all(entry["by"] == "human" and entry["reason"] for entry in verdicts.values())
+    counts: dict[str, int] = {}
+    for entry in verdicts.values():
+        counts[entry["verdict"]] = counts.get(entry["verdict"], 0) + 1
+    assert counts == {"should-cite": 9, "related-only": 8, "false-alarm": 5}
+    assert {arxiv_id for arxiv_id, entry in verdicts.items() if entry.get("action_done")} == {"2610.06753", "2610.03566"}
