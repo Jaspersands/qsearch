@@ -57,3 +57,152 @@ def rho_crit(alpha: float) -> float:
     licensed radius beats Prange."""
     alpha = _unit("alpha", alpha)
     return 0.5 * (1 - math.sqrt(2 * (1 - alpha) / (2 - alpha)))
+
+
+# ---------------------------------------------------------------------------
+# Licensed Hamming reach: upper bounds on lam for the dual code (redundancy alpha).
+
+UNIVERSAL_CAP = (math.sqrt(2) - 1) / 2  # max over alpha of margin_cap(alpha)
+
+
+def licensed_radius(min_distance: int) -> int:
+    """Largest radius l with 2l + 1 < d (worst-case unique decoding)."""
+    if min_distance < 1:
+        raise ValueError(f"min_distance must be at least 1, got {min_distance}")
+    return (min_distance - 2) // 2
+
+
+def singleton_reach(alpha: float) -> float:
+    """Singleton: d <= n + 1, so a licensed lam is below alpha/2."""
+    return _unit("alpha", alpha) / 2
+
+
+def distance_reach(delta: float) -> float:
+    """A code of relative distance delta decodes up to delta/2."""
+    if not 0 < delta <= 1:
+        raise ValueError(f"delta must lie in (0, 1], got {delta}")
+    return delta / 2
+
+
+def q_ary_entropy(x: float, q: int) -> float:
+    """H_q(x) = x log_q(q-1) - x log_q x - (1-x) log_q(1-x)."""
+    if q < 2:
+        raise ValueError(f"q must be at least 2, got {q}")
+    if not 0 <= x <= 1:
+        raise ValueError(f"x must lie in [0, 1], got {x}")
+    value = 0.0
+    if x > 0:
+        value += x * math.log(q - 1) - x * math.log(x)
+    if x < 1:
+        value -= (1 - x) * math.log(1 - x)
+    return value / math.log(q)
+
+
+def q_ary_entropy_inverse(y: float, q: int) -> float:
+    """The x in [0, 1 - 1/q] with H_q(x) = y, by bisection (H_q increases there)."""
+    if not 0 <= y <= 1:
+        raise ValueError(f"y must lie in [0, 1], got {y}")
+    lo, hi = 0.0, 1 - 1 / q
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if q_ary_entropy(mid, q) < y:
+            lo = mid
+        else:
+            hi = mid
+        if hi - lo < 1e-15:
+            break
+    return (lo + hi) / 2
+
+
+def sphere_packing_reach(alpha: float, q: int) -> float:
+    """Hamming bound: q^(m-n) balls of radius lam*m fit in F_q^m, so H_q(lam) <= alpha."""
+    return q_ary_entropy_inverse(_unit("alpha", alpha), q)
+
+
+def plotkin_reach(alpha: float, q: int) -> float:
+    """Plotkin: delta <= (1 - 1/q) alpha for the dual code, so lam <= (1 - 1/q) alpha / 2."""
+    return (1 - 1 / q) * _unit("alpha", alpha) / 2
+
+
+# ---------------------------------------------------------------------------
+# Margin cap, cosine objective, finite length, existential and subfield rules.
+
+
+def margin_cap(alpha: float) -> float:
+    """Proposition 8: within licensed reach DQI beats Prange by at most sqrt(u(1-u)) - u, u = alpha/2."""
+    u = _unit("alpha", alpha) / 2
+    return math.sqrt(u * (1 - u)) - u
+
+
+def cosine_objective(lam: float) -> float:
+    """Semicircle value of the cosine (signed) objective at radius lam: 2 sqrt(lam(1-lam))."""
+    if not 0 <= lam <= 1:
+        raise ValueError(f"lam must lie in [0, 1], got {lam}")
+    return 2 * math.sqrt(lam * (1 - lam))
+
+
+def lambda_crit_cos(alpha: float) -> float | None:
+    """Threshold radius for the cosine objective, (1 - sqrt(1 - 2 alpha^2)) / 2; None when
+    alpha >= 1/sqrt(2), where no radius beats Prange."""
+    alpha = _unit("alpha", alpha)
+    if 2 * alpha * alpha >= 1:
+        return None
+    return (1 - math.sqrt(1 - 2 * alpha * alpha)) / 2
+
+
+def restart_length(alpha: float, mu: float, R: float, N: float = 2**40, eta: float = 0.05) -> float | None:
+    """Theorem 10: the instance length m needed before N Prange restarts (objective range R:
+    1 count, 2 cosine) fail to close DQI's margin mu, at confidence 1 - eta:
+    (1-alpha) R^2 ln(N/eta) / (2 mu^2). None when mu <= 0 (no length suffices)."""
+    alpha = _unit("alpha", alpha)
+    if mu <= 0:
+        return None
+    return (1 - alpha) * R * R * math.log(N / eta) / (2 * mu * mu)
+
+
+def _kl(x: float, rho: float) -> float:
+    value = x * math.log(x / rho)
+    if x < 1:
+        value += (1 - x) * math.log((1 - x) / (1 - rho))
+    return value
+
+
+def existential_line(alpha: float, rho: float, q: int) -> float:
+    """R3: the satisfied fraction Q* some assignment reaches by counting, D_KL(Q* || rho) =
+    alpha ln q, when q^alpha rho < 1; otherwise 1 (a perfect assignment exists)."""
+    alpha, rho = _unit("alpha", alpha), _unit("rho", rho)
+    budget = alpha * math.log(q)
+    if budget + math.log(rho) >= 0:
+        return 1.0
+    lo, hi = rho, 1.0
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if _kl(mid, rho) < budget:
+            lo = mid
+        else:
+            hi = mid
+        if hi - lo < 1e-15:
+            break
+    return (lo + hi) / 2
+
+
+def subfield_rate(alpha: float, b: int, c: int) -> float:
+    """R4: rate of the instance read over the subfield, min(1, b alpha / c)."""
+    if b < 1 or c < 1:
+        raise ValueError(f"b and c must be positive, got {b}, {c}")
+    return min(1.0, b * _unit("alpha", alpha) / c)
+
+
+def subfield_baseline(rho: float, alpha_sub: float, m: int) -> float:
+    """Prange completion over the subfield: rho + (1 - rho) floor(alpha_sub m) / m."""
+    rho = _unit("rho", rho)
+    if not 0 <= alpha_sub <= 1 or m < 1:
+        raise ValueError(f"need 0 <= alpha_sub <= 1 and m >= 1, got {alpha_sub}, {m}")
+    return rho + (1 - rho) * math.floor(alpha_sub * m + 1e-9) / m
+
+
+def subfield_blocks_at_half(alpha: float, b: int, c: int) -> bool:
+    """At rho = 1/2 the subfield baseline beats DQI at every licensed radius iff alpha >= 2c^2/(b^2+c^2)."""
+    if b < 1 or c < 1:
+        raise ValueError(f"b and c must be positive, got {b}, {c}")
+    return _unit("alpha", alpha) >= 2 * c * c / (b * b + c * c)
