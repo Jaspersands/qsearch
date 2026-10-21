@@ -1,0 +1,92 @@
+{
+  "all_checks_passed": true,
+  "below_threshold_f_040": {
+    "input_fidelity": 0.4,
+    "output_fidelity": 0.38461538461538464,
+    "success_probability": 0.52
+  },
+  "distillation_sweep": [
+    {
+      "distillation_rounds_r": 0,
+      "distributed_peeling_visibility": 0.20971519999999988,
+      "expected_raw_ebits_per_cnot": 1.0,
+      "link_bell_fidelity": 0.85,
+      "nonlocal_cnot_count_l": 7,
+      "total_expected_raw_ebits": 7.0,
+      "werner_depolarizing_visibility": 0.7999999999999999
+    },
+    {
+      "distillation_rounds_r": 1,
+      "distributed_peeling_visibility": 0.30895668385267666,
+      "expected_raw_ebits_per_cnot": 2.439024390243903,
+      "link_bell_fidelity": 0.8841463414634146,
+      "nonlocal_cnot_count_l": 7,
+      "total_expected_raw_ebits": 17.07317073170732,
+      "werner_depolarizing_visibility": 0.8455284552845529
+    },
+    {
+      "distillation_rounds_r": 2,
+      "distributed_peeling_visibility": 0.4236573963990497,
+      "expected_raw_ebits_per_cnot": 5.688957409905571,
+      "link_bell_fidelity": 0.9134033532472539,
+      "nonlocal_cnot_count_l": 7,
+      "total_expected_raw_ebits": 39.822701869339,
+      "werner_depolarizing_visibility": 0.8845378043296718
+    },
+    {
+      "distillation_rounds_r": 3,
+      "distributed_peeling_visibility": 0.5415908369063012,
+      "expected_raw_ebits_per_cnot": 12.766909025011355,
+      "link_bell_fidelity": 0.937091075155393,
+      "nonlocal_cnot_count_l": 7,
+      "total_expected_raw_ebits": 89.36836317507948,
+      "werner_depolarizing_visibility": 0.916121433540524
+    },
+    {
+      "distillation_rounds_r": 4,
+      "distributed_peeling_visibility": 0.6507489982591056,
+      "expected_raw_ebits_per_cnot": 27.765037555646785,
+      "link_bell_fidelity": 0.9553522406583338,
+      "nonlocal_cnot_count_l": 7,
+      "total_expected_raw_ebits": 194.3552628895275,
+      "werner_depolarizing_visibility": 0.9404696542111117
+    },
+    {
+      "distillation_rounds_r": 5,
+      "distributed_peeling_visibility": 0.7433059626042272,
+      "expected_raw_ebits_per_cnot": 58.93401011036543,
+      "link_bell_fidelity": 0.9688803905549647,
+      "nonlocal_cnot_count_l": 7,
+      "total_expected_raw_ebits": 412.538070772558,
+      "werner_depolarizing_visibility": 0.9585071874066196
+    },
+    {
+      "distillation_rounds_r": 6,
+      "distributed_peeling_visibility": 0.8165676591399295,
+      "expected_raw_ebits_per_cnot": 122.86006879699704,
+      "link_bell_fidelity": 0.9785992452253491,
+      "nonlocal_cnot_count_l": 7,
+      "total_expected_raw_ebits": 860.0204815789793,
+      "werner_depolarizing_visibility": 0.9714656603004655
+    }
+  ],
+  "domain": "distributed_quantum_computing_gate_teleportation_bbpssw_peeling",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "subsystem_id": "dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_bridge",
+  "subsystem_number": 149,
+  "theorem_checks": {
+    "bbpssw_degrades_below_half_and_improves_above_half": true,
+    "bbpssw_fixed_point_at_fidelity_half": true,
+    "distributed_peeling_visibility_monotone_increasing_with_distillation": true,
+    "four_round_distillation_boosts_7_cnot_visibility_above_98pct": true
+  },
+  "threshold_f_050": {
+    "input_fidelity": 0.5,
+    "output_fidelity": 0.5,
+    "success_probability": 0.5555555555555556
+  }
+}

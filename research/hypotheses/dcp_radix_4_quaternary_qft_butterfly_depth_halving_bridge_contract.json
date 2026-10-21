@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_radix_4_quaternary_qft_butterfly_depth_halving_bridge",
+  "title": "Radix-4 Quaternary QFT Butterfly Stage-Depth Halving and Truncation Dominance",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Factoring QFT_{4^k}^dagger into k radix-4 quaternary digit pairs is unitarily identical to the 2k-stage radix-2 QFT_{2^{2k}}^dagger while halving the number of outer Cooley-Tukey stages from 2k to k.",
+    "Band-1 radix-4 truncation (local 2-qubit QFT_4^dagger blocks on disjoint pairs, zero inter-pair gates) achieves 100% peak survival on 4-adic multiples and strictly dominates radix-2 band-1 (H^{otimes 2k}) truncation."
+  ],
+  "favorable_controls": [
+    "N=16 (k=2, y=4 exact 1.0 vs 0.5; y=5 odd 0.7286 vs 0.5177)",
+    "N=64 (k=3, y=16 exact 1.0)"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "all_checks_passed": true,
+  "domain": "galois_ring_gr_4_m_teichmuller_lift_carry_algebra",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "gr4_2_verification": {
+    "cardinality": 16,
+    "diagonal_doubling_c0_zero_c1_equals_a": true,
+    "frobenius_carry_c1_sq_equals_ab_exact": true,
+    "ring": "GR(4, 2) = Z_4[x] / (x^2 + x + 1)",
+    "teichmuller_4th_power_identity_ok": true,
+    "teichmuller_set_size": 4,
+    "unique_2adic_bijection_all_16_elements": true
+  },
+  "subsystem_id": "dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge",
+  "subsystem_number": 148,
+  "theorem_checks": {
+    "carry_component_satisfies_exact_frobenius_identity_c1_sq_eq_ab": true,
+    "doubling_teichmuller_element_shifts_purely_into_carry_slot": true,
+    "teichmuller_representatives_satisfy_a4_equals_a": true,
+    "two_adic_teichmuller_decomposition_is_bijection_on_gr4_2": true
+  }
+}

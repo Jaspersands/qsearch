@@ -1,0 +1,56 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "d906d59d35b91e7f",
+  "general_odd_y5_audit": {
+    "N_dim": 16,
+    "exact_laws_verified": true,
+    "k_quaternary_digits": 2,
+    "m_qubits": 4,
+    "max_full_radix4_unitary_error": 4.041272810440265e-16,
+    "prob_radix2_band1_hadamard_only": 0.13172816234354492,
+    "prob_radix4_band1_local_qft4_blocks": 0.8210669490340057,
+    "radix2_outer_stages": 4,
+    "radix4_outer_stages": 2,
+    "stage_reduction_factor": 2.0,
+    "target_freq_y": 5
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "k3_n64_y16_audit": {
+    "N_dim": 64,
+    "exact_laws_verified": true,
+    "k_quaternary_digits": 3,
+    "m_qubits": 6,
+    "max_full_radix4_unitary_error": 0.0,
+    "prob_radix2_band1_hadamard_only": 0.5000000000000001,
+    "prob_radix4_band1_local_qft4_blocks": 1.0,
+    "radix2_outer_stages": 6,
+    "radix4_outer_stages": 3,
+    "stage_reduction_factor": 2.0,
+    "target_freq_y": 16
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "quaternary_exact_y4_audit": {
+    "N_dim": 16,
+    "exact_laws_verified": true,
+    "k_quaternary_digits": 2,
+    "m_qubits": 4,
+    "max_full_radix4_unitary_error": 0.0,
+    "prob_radix2_band1_hadamard_only": 0.5000000000000001,
+    "prob_radix4_band1_local_qft4_blocks": 1.0,
+    "radix2_outer_stages": 4,
+    "radix4_outer_stages": 2,
+    "stage_reduction_factor": 2.0,
+    "target_freq_y": 4
+  },
+  "schema_version": "dcp-radix-4-quaternary-qft-butterfly-depth-halving-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Radix-4 quaternary Cooley-Tukey QFT_{4^k}^dagger butterfly decomposition and band-1 QFT_4^dagger block truncation",
+    "controls_included": "Evaluates N=16 (k=2, y=4: radix-4 band-1 gets 1.0 vs radix-2 band-1 0.5; y=5: 0.7286 vs 0.5177) and N=64 (k=3, y=16: radix-4 band-1 gets 1.0).",
+    "does_not_claim": "Elimination of inter-pair twiddles for arbitrary odd frequencies without fidelity loss"
+  },
+  "theorem_id": "dcp_radix_4_quaternary_qft_butterfly_depth_halving_bridge"
+}

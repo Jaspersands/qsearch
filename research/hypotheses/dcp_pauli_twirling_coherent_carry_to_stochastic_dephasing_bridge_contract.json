@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_pauli_twirling_coherent_carry_to_stochastic_dephasing_bridge",
+  "title": "Pauli-X / Sign Twirling Conversion of Coherent Carry Error to Stochastic Dephasing",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "An uncompensated coherent phase carry error U_delta = diag(1, exp(i * delta)) has linear worst-case state trace distance D_tr^{coherent}(delta) = |sin(delta / 2)| = O(|delta|).",
+    "Conjugating by {I, X} twirling (or averaging balanced +/- delta syndrome branches) cancels the imaginary skew and produces a pure phase-flip channel with quadratic trace distance D_tr^{twirled}(delta) = sin^2(delta / 2) = (D_tr^{coherent}(delta))^2."
+  ],
+  "favorable_controls": [
+    "Sweep across delta in {0.02, 0.05, 0.10, 0.25, pi/2, pi} (>20.0x suppression at delta = 0.10 rad)"
+  ]
+}

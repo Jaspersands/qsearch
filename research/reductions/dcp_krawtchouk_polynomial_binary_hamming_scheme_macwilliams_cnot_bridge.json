@@ -1,0 +1,87 @@
+{
+  "all_checks_passed": true,
+  "audit_k4_square": {
+    "K_total": 4,
+    "exact_krawtchouk_laws_verified": true,
+    "expected_k2_roots": [
+      1,
+      3
+    ],
+    "is_perfect_square_K": true,
+    "k2_integer_root_weights": [
+      1,
+      3
+    ],
+    "k2_polynomial_values": [
+      6,
+      0,
+      -2,
+      0,
+      6
+    ],
+    "max_explicit_shell_error": 0.0,
+    "max_involution_error": 1.1102230246251565e-16,
+    "max_symmetry_error": 0.0
+  },
+  "audit_k6_nonsquare": {
+    "K_total": 6,
+    "exact_krawtchouk_laws_verified": true,
+    "expected_k2_roots": [],
+    "is_perfect_square_K": false,
+    "k2_integer_root_weights": [],
+    "k2_polynomial_values": [
+      15,
+      5,
+      -1,
+      -3,
+      -1,
+      5,
+      15
+    ],
+    "max_explicit_shell_error": 5.551115123125783e-17,
+    "max_involution_error": 2.7755575615628914e-17,
+    "max_symmetry_error": 5.551115123125783e-17
+  },
+  "audit_k9_square": {
+    "K_total": 9,
+    "exact_krawtchouk_laws_verified": true,
+    "expected_k2_roots": [
+      3,
+      6
+    ],
+    "is_perfect_square_K": true,
+    "k2_integer_root_weights": [
+      3,
+      6
+    ],
+    "k2_polynomial_values": [
+      36,
+      20,
+      8,
+      0,
+      -4,
+      -4,
+      0,
+      8,
+      20,
+      36
+    ],
+    "max_explicit_shell_error": 0.0,
+    "max_involution_error": 2.220446049250313e-16,
+    "max_symmetry_error": 5.551115123125783e-17
+  },
+  "certificate_sha256_16": "f825fb27146196e5",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-krawtchouk-polynomial-binary-hamming-scheme-macwilliams-cnot-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Krawtchouk polynomial K_k(w; K) radial Hadamard transformation on H(K, 2) and quadratic root blind spots w_pm = (K +/- sqrt(K))/2",
+    "controls_included": "Evaluates K=4 (roots w in {1, 3}), K=6 (non-square control, no integer roots), and K=9 (roots w in {3, 6}), verifying M^2 == I_{K+1} to < 1e-12.",
+    "does_not_claim": "Vanishing of non-symmetric targeted weight-2 CNOT pairs when the input state is not symmetrized over the Hamming shell"
+  },
+  "theorem_id": "dcp_krawtchouk_polynomial_binary_hamming_scheme_macwilliams_cnot_bridge"
+}

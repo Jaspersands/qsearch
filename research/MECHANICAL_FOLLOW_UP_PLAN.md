@@ -17,7 +17,319 @@ The old three-place style still works, but only around the marked legacy block a
 
 Do not add top-level theorem imports to `qsearch.py`. They make every command slow again: startup dropped from about 5 s to under 1.5 s. Details: `tools/split_cli/README.md`.
 
+2026-10-19 CLEAN PAUSE: CURRENT COHERENCE PASS FINISHED.
+The user's latest instruction is to wrap up; do not auto-resume this backlog.
+The SAME outer-coded-chirp producer now writes schema v2, including all69
+full flagged target controls,5 retained infeasible targets, exact histogram
+error intervals, a separate rank-one classical baseline, wrong-inverse and
+generic pointwise countercontrols.23 module tests are included in91 passing
+connected tests. See the top of AGENT_HANDOFF.md and OUTER_CODED_CHIRP_PROBE.md.
+On authorized later wiring: reuse the producer, charge exponential ML/dense
+costs, distinguish average from worst-target bounds, never drop infeasible
+targets/failure flags, and never promote this to a scalable quantum decoder.
+Do not describe the generic counterexample as an RS impossibility theorem.
+No new candidate/central negative/proof admission follows from these controls.
+
+OUTER-CODED CHIRP PROBE COMPLETE, NOT A NEW QUANTUM CANDIDATE:
+Run `python theorems/outer_coded_chirp_probe.py --write`; read
+OUTER_CODED_CHIRP_PROBE.md. It contains the actual local unitary probability
+controls AND a deterministic native classical solver for EVERY moment-square
+target at r<|S|-(p-1)/2. Full/dense support is essential, p<2|S| makes ambient
+setup polynomial, and sparse61-bit/127-point inputs are refused BEFORE setup.
+No general folded-norm MQ solution, coherent outer decoder, exact sampler,
+fault-tolerant compiler or strict-nonzero-every-coordinate solver is claimed.
+The proposed full/dense-RS SEARCH advantage is killed by its own stronger
+classical baseline. Do not replace per-label readout success by an assumed
+uniform coherent-erasure bound or discard chirp phases. Routine optional
+qsearch/EXP exposure should reuse this producer/report and its scope. No
+central admission/negative/proof promotion; do not spend more on this compiler.
+
+GLOBAL NATIVE MQ LIVE WORKFLOW COMPLETE: `theorems/folded_norm_mq.py --write`
+produced `research/classical_baselines/folded_norm_mq.json`. See
+FOLDED_NORM_MQ.md for optional CoCoA-enabled cvc5 backend/dependency installation
+and the exact reduction. Do NOT vendor the downloaded binary or ignored large
+SMT files. Targets25/58/114 on unchanged n25/65/127 inputs all timed out at60s,
+with no witness, reroll, hardness evidence or automatic negative. The first
+input already has a perfect classical norm-pencil witness; even one six-block
+known-SAT calibration timed out. Do not extend this into a solver/time mesh.
+Optional CLI/EXP exposure must reuse this producer and its INCONCLUSIVE status,
+retain original F_p coefficients, all costs, exact selectable-subset semantics,
+source/dependency/input hashes and independent SAT verification. UNKNOWN and
+uncertified UNSAT are not proof-status or negative-result updates.
+
+LATEST16-MODULE GEMINI REVIEW, CONCRETE REPAIR CONTRACT:
+-16 imports inserted above qsearch's future import broke ALL CLI commands.
+ They have been moved below path setup; source-compilation regression exists.
+ DO NOT prepend ordinary imports before the module docstring/future import.
+-The surface-code bridge's prescribed protocol (ancilla |+>, measure Z_C Z_A,
+ then X_A X_T, then Z_A) needs THREE measurement bits. Direct Kraus evaluation
+ gives correction Z_C^mXX X_T^(mZZ xor mZ), up to global phase, NOT the stated
+ Z_C^mZZ X_T^mXX. The latter fails6/8 branches. Replace the tautological sign
+ test with actual projectors on arbitrary two-qubit input, including all8
+ branches and entangled/reference inputs; recompute dependent artifacts.
+-The expander module claims a decoding threshold that NONE of its own rows
+ reaches. Its checks substitute expansion>1.45 for expansion>d/2. Preserve
+ arithmetic only; remove the decoding guarantee unless an actual graph-family
+ theorem with its correct stronger premises and native decoder is supplied.
+-The centennial ledger test fails: checkpoint has106 entries, not100. Do not
+ fix scientific verification by just changing the magic count: hashes/file
+ existence do not prove theorem contracts, novelty flags or mathematical claims.
+ Keep integration counts separate from independently reviewed mathematics.
+The23 selected tests gave22 passes/one failure. This is NOT a full repository
+regression; passing bridge tests did not catch the independent counterexamples.
+No latest-bridge mathematical repair has been silently made by this MQ pass.
+
+UNIFORM FAMILY AND PHASE SIMPLIFICATION NOW DERIVED in the SAME
+folded_norm_source.py. Read the uniform-family section of FOLDED_NORM_SOURCE.md.
+New helpers block_ball_envelope(), uniform_family_certificate() and
+quarter_turn_source_bound() are MATHEMATICAL ARITHMETIC, not large executions.
+For ALL n>=3200 divisible by100, m31,K=62n/5,ell=n/4,p3mod4,
+p-1>=4*(31n)^2, verified public field/gamma, explicit32-weight source and8192
+pruning trials: total full-flagged synthesis budget<=1e-3 gives mean>=0.909
+and Pr[score>=0.9n]>=0.09, CONDITIONALLY on that implementation budget.
+Neither the3200/1e6 artifact nor1e12-block test ran a quantum state or decoder.
+DO NOT launch huge dense RREFs from these analytic records or retroactively
+apply the theorem to the old25/65/127 controls with different parameters.
+
+Concrete source primitive for later low-level implementation: uniform E*
+labels, actual trace-dual/public-shift phase, sign character and the COMPUTED
+Gauss quarter-turn ON EVERY ACTIVE BLOCK. The exact Fourier source for the
+ternary character needs no tiny eta/arctan correction; comparison with the
+binary indicator source has pure trace squared<=ell/(Q+1). This error must
+fit WITHIN total synthesis error, not be added free. Do not drop the relative
+Gauss phase across weights, leave support/weight history entangled, or claim
+the same bound for conditional postselection. Existing physical controls
+actually check full success/failure trace contraction. Optional bounded
+circuit work should implement this specified primitive, not invent a new
+oracle problem; whole-family compilation and classical global completion
+remain unresolved. Routine CLI exposure should reuse the actual producer.
+
+NATIVE NORM-PENCIL ATTACK NOW IMPLEMENTED in the SAME folded_norm_attacks.py.
+The producer --write retains original F_p coefficients, fixed public input,
+K-1 scalar roots, Frobenius-product norm polynomials, all8192 parameter scores
+and native winner checks. Same inputs improve21/53/99 to25/57/104. Do NOT
+advertise this as a uniform classical solver or the quantum mean LOWER bound
+as an upper limit: only the first finite instance is perfectly solved; the
+second meets57 and the last still misses114. The old fresh-full-fit bound
+DOES NOT apply to these retained-value lines. Fixed-line Weil certificates
+check actual irreducible square classes and conflicts; positive counts are
+not efficient parameter-finding algorithms. At n25 the first line has a
+known-bound lower count34809302503912 out of p2^61-1; n65/127 counts are
+inconclusive0, not hardness. CLI/EXP wiring, if useful, must reuse THIS producer
+and display the stronger scores beside the old baseline. No new named bridge,
+seed mesh, admitted candidate, general dequantization or gate-speedup claim.
+
+Latest Gemini batch review REPRODUCED: master ledger accepts67 fabricated
+nonhex16-character digests; both quadratic bent families admit n+1 evaluator
+queries classically (all shifts4/6/10 bits); finite comb secret0 with position
+error1 equals secret1 with no error at q20. Preserve the useful narrower
+identities, but do not promote broad verification/correction claims. These
+modules are NOT repaired by the norm-pencil pass. Separately, eight imports
+placed ABOVE qsearch's future import made every CLI command syntactically
+invalid; they were MOVED below path setup without removing modules/commands,
+and a compile regression check was added. Routine future imports must stay
+after the module docstring and before all ordinary imports/statements.
+
+FIXED-INPUT CLASSICAL FIT BOUND NOW IMPLEMENTED in folded_norm_attacks.py.
+Do NOT confuse it with the old IID-shift population reference. It uses exact
+Fourier/MDS joint-indicator error, conditional factorial moments and the REAL
+root-square sampler's zero bias. Uses effective fitted dimension m*floor(K/m),
+not unused scalar coefficients. On ANY legal fixed p61,m31,n127,K1550 source,
+target114 has upper8.717424e-9 per fresh FULL fit; half success needs>=57356397
+such fits by a union bound. It does NOT cover retained-value block-exchange,
+optimized roots/seeds or general norm/MQ solvers. Fresh roots on ALL anchors
+are essential. The saved conditional quantum tail now uses the SAME target
+and includes bounded-pruning loss, but still NO matched runtime advantage.
+Expose both scopes if wiring CLI/EXP artifacts; never turn this into a blanket
+negative result or a new admitted candidate. Stronger STRUCTURAL classical
+completion is still the main research priority, not more random restarts.
+
+FOLDED SOURCE FOLLOW-UP COMPLETE: run folded_norm_source.py --write and
+folded_norm_attacks.py --write, both under theorems/. Read FOLDED_NORM_SOURCE.md.
+Actual trace-dual/irreducible field setup and Gauss -i at m31 are mandatory;
+substituting prime +i changes native output TV~.702. Whole-ball intersection
+dimension is m*(j+r)-K over F_p; never round K up to an E rank. Extra observable
+radius, source TV and bounded-pruner failure are PAID separately. At4096
+pruning trials the per-attempt mean floors are21.132864/25,56.698412/65,
+113.278983/127; these are mathematical composition bounds, NOT executed gates.
+One trial at n25 has vacuous loss and cannot claim that score. Classical32
+fits+64 repairs on the same sources give21/53/99 with full witnesses; this
+does NOT imply runtime separation. Population binomial/union bounds cover
+truly IID input shifts for nonadaptive fits ONLY, never fixed-input restarts
+or adaptive repair. No new candidate/proof admission or dequantization claim.
+Optional CLI/EXP exposure is mechanical and must preserve these flags and
+actual producers, not clone formulas. Main-model next priority is GLOBAL norm/
+quadratic completion or a natural reduction/application, not more bridges,
+source/decoder/seed meshes or cosmetic circuit compilation. Any source/compiler
+trace budget must be subtracted additionally from the exact-source bounds.
+
+NEW CONSTRUCTIVE COMPONENT: `python theorems/folded_rs_decoder.py --write`.
+Read FOLDED_NORM_SOURCE_DECISION.md. This implements the known linear-algebraic
+folded-RS decoder, real affine-space pruning and native H[j,i]=a_i^j syndrome
+conversion, NOT an injected list oracle. Random hidden-support controls beyond
+unique radius recover both at p1019/N150 and p61/N775; a real ambiguous input
+returns two verified errors with identical native syndrome at weights3 and4.
+Optional CLI/EXP integration is mechanical; reuse the producer and preserve
+ORIGINAL scalar rank K versus decoded polynomial dimension nm-K, exact GRS
+multipliers, finite root gate, failed pruning trials, incomplete-list flag and
+the explicit NO quantum/norm-source implementation flags. No p^r enumeration,
+source-support advice, central candidate admission or proof promotion.
+Main-model next work is the block norm-character Fourier/collision derivation
+and SAME-input classical norm/square-completion attacks. Do not restore the
+old scalar decoder claim: n127,m1,K39,ell32 is correctly rejected by this gate.
+
+2026-10-19 MATHEMATICAL CORRECTION, NOT AN OPTIONAL OLD BARRIER:
+native_history_erasure_dequantization now RETRACTS its universal no-go.
+The existing qsearch native-history-erasure-dequantization command writes exact
+countercontrols and quarantines NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-
+DEQUANTIZATION-BARRIER; it must NEVER register it again. Complete original
+negative preserved, unrelated records unchanged. Publication/snapshot refresh
+should propagate this correction, not restore old hard-coded PROVED flags.
+Do not import the now-removed evaluate_scaling_trilemma/hardness booleans.
+The replacement evaluate_path_parameters computes arithmetic ONLY.
+
+interval_local_lemma schema v2 also computes exact target-specific event
+probabilities and verifies rational asymmetric/symmetric LLL witnesses. The
+unchanged p347,d8 word is certified at u5, with expected resamplings<=0.263767
+and ideal128-budget failure<=0.00206068; u3 remains uncertified despite its
+successful16-step replay. Keep the fixed_target_certificate separate from
+certificate (uniform bound). CLI/EXP exposure may reuse the same producer;
+never turn a fixed-target certificate into a uniform radius or seed confidence.
+No further tail/witness/seed mesh is requested. Main scientific blockers are
+public sparse frames beyond the restricted setup regime and a concrete compact
+source/decoder mechanism; more DCP bridge modules do not address them.
+
+NEW LOCAL-LEMMA PRODUCER: `python theorems/interval_local_lemma.py --write`;
+read INTERVAL_LOCAL_LEMMA.md. This actually implements Moser-Tardos local
+resampling on verified sparse frames. Constant coefficient0 is fixed nearest
+BEFORE the product coins, NEVER resampled. Pay its mean offset<=1/2, actual
+denominator coins, dependency degree and every native check. Three certified
+native controls and an UNCERTIFIED aggressive16-step replay are distinct from
+three pure analytic large-field certificates. Optional qsearch/EXP bindings
+must reuse the producer, preserve null runtime claims outside its criterion
+and NEVER turn budget/source-setup failure into ISIS hardness. No original
+N127 cryptanalytic result, prescribed sampler, novelty or GPT Git work.
+Exact per-event probability DP is specified in the handoff; ordinary CLI/
+backups/registry refresh remain mechanical Gemini work.
+
+NEW divisor-free producer: `python theorems/interval_split_fibers.py --write`;
+read INTERVAL_SPLIT_FIBERS.md. Four verified affine witnesses, two extra
+setup-only successes, two failed degree16 prefixes and a huge-field ANALYTIC
+certificate are distinct artifacts, not interchangeable success evidence.
+Generic waveform validation/inversion/rounding is now actually SHARED with
+the sparse torus producer. Do not copy another solver or inject a free short
+row. Optional exposure must preserve completed degree, full-field setup costs,
+positive Weil criterion versus verified instance, actual denominator bits and
+all failed prefixes. Nearest mode uses its own L1 all-target guarantee and NO
+rounding coins; independent tail values are COMPARISON ONLY in that mode.
+Do not promote a source-search failure to an ISIS negative or lower the
+uniform bound from a finite seed. No GPT commit/push. Another waveform grid
+is not the mathematical priority after the L1 optimality proof in the note.
+
+NEW sparse subgroup-frame producer:
+`python theorems/interval_subgroup_rounding.py --write`; read
+INTERVAL_SUBGROUP_ROUNDING.md. Optional CLI/EXP exposure must reuse its
+run_controls()/REPORT, preserve d<=ell|p-1, full-prime support, actual rational
+inverse/denominator costs and exact coins. Do not use field-modulus coins in
+place of denominator coins, or promote arbitrary-modulus/sampling/novelty
+claims. Ten declared native witnesses and independent inverse/moment tests
+exist. No main-model Git work or need for another named bridge batch.
+
+Nonsplit extension is now in the SAME producer: ell|(p+1), torus="nonsplit",
+18 witnesses total. Preserve the actual trace-fiber norm, quotient3/4 fallback,
+index3 ZERO naive waveform countercontrol and 2060-bit denominator costs.
+Original input remains prime F_p, not F_(p^2). Both modes need exposure only
+if useful; mathematical implementation is done and229 connected checks pass.
+
+NEW character-rounding producer: `python theorems/interval_character_rounding.py
+--write`; read INTERVAL_CHARACTER_ROUNDING.md. This executes a real classical
+all-target interval algorithm, not another conditional quantum bridge.
+Schema v2 includes solve_deterministic() exact integer-potential conditional
+expectations, eight native controls and the nearest-rounding linear-error
+spike falsifier. No PRNG coins in that solver; do not confuse its width
+certificate with the optimized randomized bound (p23 needs9 not8).
+Optional CLI exposure should reuse run_controls()/REPORT and preserve exact
+coins, failure certificates, all failed rounds, original targets, full-support
+prime-field scope, d<=half-rate and native polynomial/moment verification.
+Do not promote seeded frequencies, a weighted sampler or general OPI claims.
+Saved matched interval report is a SHA-pinned input dependency. If it changes,
+rerun the actual producer and focused independent tests, never patch JSON.
+Routine qsearch/EXP integration and infrequent Git backup remain Gemini work;
+main model should improve the constructive mathematical mechanism.
+
 ## Current Research Override
+
+NEW interval experiment: `python theorems/interval_soft_decoder.py --write`;
+read INTERVAL_SOFT_DECODER.md and its local hypothesis contract. It is a
+known non-flat reduction with an EXHAUSTIVE small MAP reference, not a new
+KV gate compiler. All decoder failures, complex source phases, uniform targets,
+empty cosets, exact DP costs and original modular witnesses must stay visible.
+Do not advertise finite profile improvements as a scalable algorithm.
+Saved public bases and independent exact GS replay certify ALL syndromes in
+FOUR finite p31/61 families; p127 bounds stay inconclusive despite successful
+trials. N=p includes zero; p61 means prime61, not2^61-1. Uniform-target mean
+performance is not a fixed-target guarantee; a feasible counterexample remains.
+Optional CLI/EXP exposure must reuse run_controls()/REPORT without promoting
+central claims. Fixed-width is classically tractable; fixed-rate prior-art
+subsumption does NOT imply a vanishing-density runtime theorem or a weighted
+sampler. Main-model next work is analytic sparse-growing RS-lattice geometry
+or another actual code/source mechanism, not profile/LLL-seed meshes. No GPT
+commit/push or UI cosmetic work.
+
+SOURCE-SUPPORT REDUCTION FOLLOW-UP: the EXISTING phase-feedback producer now
+includes source_support_erasure_certificate and four bounded coherent
+extraction/erasure controls. No new CLI subsystem is needed. Preserve the
+entire label amplitudes, actual adjoint order, known-vacuum reference
+controlization and false-general-decoder counterexample (correct support only1/6
+at7 and1/10 at11 for a unique classical syndrome). The large127 phase calls
+expand to5.1914e31 actual native reflections in this construction. Do not
+advertise a polynomial eraser or arbitrary syndrome decoder. Direct controlled
+phase access is NOT necessary: native vacuum/reference swaps supply it, with
+an extra main-sized register. Do not restore that unnecessary access barrier.
+New focused
+tests are test_prime_character_support_erasure.py. Routine exposure may reuse
+the same run_controls()/REPORT. Main-model next research is the independent
+compact interval/soft-decoder question in the note, not another phase wrapper.
+
+NEW phase-feedback experiment: `python theorems/prime_character_phase_feedback.py
+--write`; read PRIME_CHARACTER_PHASE_FEEDBACK.md and its local contract.
+Full native quantum controls really apply every measurement-conditioned
+reflection product and retain every outcome. Large certificates are LOCAL,
+CONDITIONAL mathematical results, NOT executed gates. Physical interference
+is restored, but this explicit construction costs>4.0555e29 expected native
+reflections at the saved large input. Do not expose a free support-phase oracle
+or claim the syndrome-only decoder now gives an efficient quantum receiver.
+Optional CLI wiring must reuse run_controls()/REPORT and preserve the actual
+weights, rank error, mask probabilities, exponential costs and guardrails.
+No central promotion or GPT Git work. Main-model next science needs an actual
+polynomial phase compiler or an independent constructive route, not more
+feedback parameter meshes.
+
+CONFIRMED GEMINI BATCH CORRECTIONS (review2026-10-18, not repaired here):
+- SIS bridge evaluate(...n_dim=1,t_bits=2,r_trapdoor=[[1,1],[0,0]]) reports
+  all_verified=True while only gadget row0 is covered twice. Require distinct
+  row coverage, validate binary rectangular inputs and retain this regression.
+- Kitaev bridge's gamma^2/2 and gamma^2 quantities need a stated continuous
+  parameter model; do NOT infer universal exact2x binary sample savings. Its
+  own random-X/Y likelihoods at gamma.8 have Chernoff rate
+  -log((sqrt(1-gamma^2 cos^2 phi)+sqrt(1-gamma^2 sin^2 phi))/2), versus aligned
+  -.5log(1-gamma^2). Ratios are2.2892/2.6491 at phi0/pi4. Preserve genuine
+  finite Bayes-error comparisons, correct the copy claim and grand synthesis,
+  and regenerate related Python/JS/docs/JSON rather than just changing flags.
+16 selected bridge/parser tests passed despite these faults; validation is
+not a mathematical correctness proof. No new DCP bridge batch is requested.
+
+NEW interleaved experiment: `python theorems/prime_character_interleaved_probe.py
+--write`; read PRIME_CHARACTER_INTERLEAVED_PROBE.md. Classical syndrome-only
+rank/locator/Vandermonde recovery really runs at N127,K39,cap32,p61. It is NOT
+a quantum compiler. Preserve smaller-weight/whole-cap uniqueness, all source
+rows, failures, frame/rank-postselection costs and scope. The plain shared-
+support/separate-readout replacement is rejected because its original output
+rows are nearly uniform, not because its decoder fails. Optional exposure
+must not present product-correlation gain as an individual OPI score. Do not
+compile that failed replacement or generate more rank/seed sweeps. General
+interleaving and genuinely new phase/readout corrections remain outside this
+scoped rejection. No central promotion or GPT Git work.
 
 NEW finite readout producer: `python theorems/prime_character_finite_readout.py
 --write`; read PRIME_CHARACTER_FINITE_READOUT.md. It supersedes the earlier

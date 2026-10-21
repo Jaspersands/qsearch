@@ -1,0 +1,76 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "f16823046bbb5a1f",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-pauli-twirling-coherent-carry-to-stochastic-dephasing-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Pauli-X / sign twirling conversion of coherent phase carry errors U_delta into stochastic Z-dephasing channels",
+    "controls_included": "Evaluates delta in {0.02, 0.05, 0.10, 0.25, pi/2, pi}, verifying exact squaring law D_tr^{twirled} = (D_tr^{coherent})^2 = sin^2(delta/2) and >20.0x trace-distance suppression at delta = 0.10 rad.",
+    "does_not_claim": "Reduction of the real cosine expectation attenuation 1 - cos(delta) = 2*sin^2(delta/2)"
+  },
+  "theorem_id": "dcp_pauli_twirling_coherent_carry_to_stochastic_dephasing_bridge",
+  "twirling_carry_sweep": {
+    "all_verified": true,
+    "records": [
+      {
+        "coherent_trace_distance_closed_form": 0.009999833334166664,
+        "coherent_trace_distance_explicit": 0.009999833334166666,
+        "delta_rad": 0.02,
+        "error_suppression_ratio_coh_over_twirl": 100.0016666861113,
+        "exact_squaring_law_verified": true,
+        "twirled_trace_distance_closed_form": 9.99966667111108e-05,
+        "twirled_trace_distance_explicit": 9.999666671112184e-05
+      },
+      {
+        "coherent_trace_distance_closed_form": 0.024997395914712332,
+        "coherent_trace_distance_explicit": 0.024997395914712332,
+        "delta_rad": 0.05,
+        "error_suppression_ratio_coh_over_twirl": 40.004166970506134,
+        "exact_squaring_law_verified": true,
+        "twirled_trace_distance_closed_form": 0.0006248698025168767,
+        "twirled_trace_distance_explicit": 0.0006248698025168586
+      },
+      {
+        "coherent_trace_distance_closed_form": 0.04997916927067833,
+        "coherent_trace_distance_explicit": 0.04997916927067833,
+        "delta_rad": 0.1,
+        "error_suppression_ratio_coh_over_twirl": 20.00833576452976,
+        "exact_squaring_law_verified": true,
+        "twirled_trace_distance_closed_form": 0.002497917360987117,
+        "twirled_trace_distance_explicit": 0.0024979173609870897
+      },
+      {
+        "coherent_trace_distance_closed_form": 0.12467473338522769,
+        "coherent_trace_distance_explicit": 0.1246747333852277,
+        "delta_rad": 0.25,
+        "error_suppression_ratio_coh_over_twirl": 8.020871373433286,
+        "exact_squaring_law_verified": true,
+        "twirled_trace_distance_closed_form": 0.015543789144677609,
+        "twirled_trace_distance_explicit": 0.015543789144677633
+      },
+      {
+        "coherent_trace_distance_closed_form": 0.7071067811865475,
+        "coherent_trace_distance_explicit": 0.7071067811865475,
+        "delta_rad": 1.5707963267948966,
+        "error_suppression_ratio_coh_over_twirl": 1.4142135623730951,
+        "exact_squaring_law_verified": true,
+        "twirled_trace_distance_closed_form": 0.4999999999999999,
+        "twirled_trace_distance_explicit": 0.49999999999999994
+      },
+      {
+        "coherent_trace_distance_closed_form": 1.0,
+        "coherent_trace_distance_explicit": 1.0,
+        "delta_rad": 3.141592653589793,
+        "error_suppression_ratio_coh_over_twirl": 1.0,
+        "exact_squaring_law_verified": true,
+        "twirled_trace_distance_closed_form": 1.0,
+        "twirled_trace_distance_explicit": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "all_checks_passed": true,
+  "alpha_monotonicity_sweep": [
+    {
+      "alpha": 0.25,
+      "renyi_divergence": 0.1244488792194982
+    },
+    {
+      "alpha": 0.5,
+      "renyi_divergence": 0.21872636516040836
+    },
+    {
+      "alpha": 0.75,
+      "renyi_divergence": 0.2860420538902394
+    },
+    {
+      "alpha": 0.999,
+      "renyi_divergence": 0.3324304174277958
+    },
+    {
+      "alpha": 1.0,
+      "renyi_divergence": 0.3325836358255263
+    },
+    {
+      "alpha": 1.001,
+      "renyi_divergence": 0.3327366209904937
+    },
+    {
+      "alpha": 1.5,
+      "renyi_divergence": 0.3863055762768122
+    },
+    {
+      "alpha": 2.0,
+      "renyi_divergence": 0.4123855509527382
+    },
+    {
+      "alpha": 4.0,
+      "renyi_divergence": 0.44244319700125506
+    }
+  ],
+  "commuting_alpha2_comparison": {
+    "araki_lieb_thirring_gap": 0.0,
+    "petz_d2": 0.3145700756055879,
+    "sandwiched_d2": 0.3145700756055879,
+    "theta_rad": 0.0,
+    "v0": 0.3,
+    "v1": 0.88
+  },
+  "domain": "quantum_information_petz_sandwiched_renyi_divergences",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "noncommuting_alpha2_comparison": {
+    "araki_lieb_thirring_gap": 0.017870671931299043,
+    "petz_d2": 0.5066851958803406,
+    "sandwiched_d2": 0.4888145239490415,
+    "theta_rad": 1.0471975511965976,
+    "v0": 0.3,
+    "v1": 0.88
+  },
+  "subsystem_id": "dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_bridge",
+  "subsystem_number": 151,
+  "theorem_checks": {
+    "araki_lieb_thirring_strict_gap_for_noncommuting_states": true,
+    "continuity_to_umegaki_relative_entropy_at_alpha_1": true,
+    "petz_equals_sandwiched_when_states_commute": true,
+    "renyi_divergence_strictly_monotone_increasing_in_alpha": true
+  }
+}

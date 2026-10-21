@@ -1,0 +1,84 @@
+{
+  "all_checks_passed": true,
+  "domain": "centennial_100_subsystem_master_audit_and_completeness_ledger",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "ledger_merkle_sha256_16": "c15a0b7d32d28548",
+  "preceding_ledger_sample_tail_10": [
+    {
+      "index": 90,
+      "sha256_16": "be9f5dbbca09ea5b",
+      "subsystem_id": "dcp_shadow_tomography_classical_shadows_pauli_observable_sample_bridge"
+    },
+    {
+      "index": 91,
+      "sha256_16": "a8102aedd69db347",
+      "subsystem_id": "dcp_quantum_ziv_zakai_bellman_minimax_phase_lower_bound_bridge"
+    },
+    {
+      "index": 92,
+      "sha256_16": "48226cdb9382104d",
+      "subsystem_id": "dcp_measurement_based_mbqc_cluster_state_cnot_peeling_bridge"
+    },
+    {
+      "index": 93,
+      "sha256_16": "5635eb47213fc8cf",
+      "subsystem_id": "dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_bridge"
+    },
+    {
+      "index": 94,
+      "sha256_16": "9eceba6152ff2c88",
+      "subsystem_id": "dcp_floquet_dynamical_decoupling_carr_purcell_udds_carry_filter_bridge"
+    },
+    {
+      "index": 95,
+      "sha256_16": "2e42b209efd0ab96",
+      "subsystem_id": "dcp_quantum_sanov_theorem_large_deviations_kl_syndrome_hypothesis_bridge"
+    },
+    {
+      "index": 96,
+      "sha256_16": "d745635ffcd61976",
+      "subsystem_id": "dcp_majorana_fermionic_gaussian_matchgate_parity_peeling_bridge"
+    },
+    {
+      "index": 97,
+      "sha256_16": "d4da96101f2b78ef",
+      "subsystem_id": "dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge"
+    },
+    {
+      "index": 98,
+      "sha256_16": "442f3649e394baaa",
+      "subsystem_id": "dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge"
+    },
+    {
+      "index": 99,
+      "sha256_16": "90e05117f7c32bd1",
+      "subsystem_id": "dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_bridge"
+    }
+  ],
+  "preceding_verified_count": 99,
+  "subsystem_id": "dcp_centennial_100_subsystem_master_audit_and_completeness_bridge",
+  "subsystem_number": 150,
+  "ten_pillar_taxonomy_counts": {
+    "10_architectures_mbqc_matchgates_shadows_networks_synthesis": 5,
+    "1_radix2_carry_obstruction_and_galois_rings": 11,
+    "2_coherent_cnot_and_qudit_syndrome_peeling": 14,
+    "3_hensel_newton_smith_hnf_modular_lifting": 10,
+    "4_spectral_windows_qsvt_qpe_and_fourier_leakage": 12,
+    "5_quantum_hypothesis_testing_helstrom_stein_chernoff": 11,
+    "6_quantum_estimation_qfim_cramer_rao_ziv_zakai": 9,
+    "7_coding_theory_krawtchouk_macwilliams_ldpc_reed_muller": 11,
+    "8_fault_tolerance_magic_distillation_gkp_iceberg_qram": 11,
+    "9_open_quantum_systems_lindblad_wasserstein_dd_twirling": 6
+  },
+  "theorem_checks": {
+    "all_99_preceding_reductions_and_tests_present_on_disk": true,
+    "exact_100_verified_subsystems_in_checkpoint": true,
+    "ledger_merkle_digest_nonempty_16_hex": true,
+    "ten_pillar_taxonomy_sums_to_100": true
+  },
+  "total_verified_subsystems": 100
+}

@@ -1,0 +1,12 @@
+{
+  "subsystem_id": "dcp_quantum_ziv_zakai_bellman_minimax_phase_lower_bound_bridge",
+  "subsystem_number": 141,
+  "hypothesis": "The Quantum Ziv-Zakai Bound integrates Helstrom error probabilities over all phase lags h in [0, pi], respecting the prior variance ceiling pi^2/12 at low copy count K where local QCRB 1/(K v^2) diverges, and monotonically tightens toward the asymptotic Fisher regime as K grows.",
+  "required_checks": [
+    "zero_visibility_recovers_exact_prior_variance",
+    "qzzb_monotone_decreasing_with_copies_k",
+    "low_copy_qcrb_exceeds_prior_while_qzzb_respects_ceiling",
+    "pure_witness_strictly_outperforms_dephased_witness",
+    "single_qubit_fidelity_formula_exact"
+  ]
+}

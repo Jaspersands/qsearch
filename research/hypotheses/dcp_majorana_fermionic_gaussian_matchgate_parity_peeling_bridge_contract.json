@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_majorana_fermionic_gaussian_matchgate_parity_peeling_bridge",
+  "subsystem_number": 146,
+  "hypothesis": "Planar matchgates evolve in SO(2n) on Majorana modes (degree 1), whereas standard CNOT and un-phased SWAP map single Majorana operators gamma_1 = X_1 I_2 to cubic 3-Majorana operators -i gamma_1 gamma_2 gamma_3 = X_1 X_2.",
+  "required_checks": [
+    "matchgate_composition_preserves_so2n_orthogonality",
+    "planar_matchgate_and_fswap_preserve_majorana_degree_1",
+    "standard_cnot_and_swap_inflate_majorana_degree_to_3",
+    "cnot_is_clifford_but_outside_fermionic_gaussian_matchgates"
+  ]
+}

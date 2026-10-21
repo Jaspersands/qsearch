@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_shadow_tomography_classical_shadows_pauli_observable_sample_bridge",
+  "title": "Classical Shadows 3^w Variance Penalty vs. Commuting X^K Derandomized Witness Readout",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Under uniform {X, Y, Z}^{otimes K} randomized Pauli shadow tomography, any weight-w X-type witness parity observable O_m has single-snapshot hit probability 3^{-w} and exact variance 3^w - <O_m>^2.",
+    "Derandomizing into the commuting basis X^{otimes K} measures all 2^K - 1 X-parities simultaneously with hit probability 1.0 and variance 1 - <O_m>^2, reducing required samples by (3^w - mu^2) / (1 - mu^2) >= 3^w."
+  ],
+  "favorable_controls": [
+    "Weights w in {1, 2, 3, 4, 5} at mu = 0.25 (>28.7x reduction at w=3; >86.3x reduction at w=4)"
+  ]
+}

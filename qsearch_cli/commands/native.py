@@ -327,7 +327,7 @@ def command_native_gaussian_bank_robustness(args: argparse.Namespace) -> int:
 def add_native_history_erasure_dequantization(subparsers) -> None:
     native_history_erasure_dequantization = subparsers.add_parser(
         "native-history-erasure-dequantization",
-        help="Run native phase bank history erasure barrier, ISIS equivalence, and classical dequantization audit.",
+        help="Replay scoped history countercontrols and quarantine the unsupported universal no-go.",
     )
     native_history_erasure_dequantization.add_argument("--no-registry", action="store_true")
     native_history_erasure_dequantization.set_defaults(func=command_native_history_erasure_dequantization)

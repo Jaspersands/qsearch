@@ -1,0 +1,83 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "32a08da3cf418531",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-shadow-tomography-classical-shadows-pauli-observable-sample-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Randomized Pauli Classical Shadows 3^w variance vs. derandomized X^{otimes K} simultaneous readout for weight-w CNOT witness parities",
+    "controls_included": "Evaluates weights w in {1, 2, 3, 4, 5} over all 3^w basis strings, verifying exact unbiasedness E[o_hat] == mu, Var = 3^w - mu^2, and >86x sample savings at w = 4.",
+    "does_not_claim": "Simultaneous single-basis measurement of non-commuting X-type and Z-type observables"
+  },
+  "shadow_vs_derandomized_sweep": {
+    "all_verified": true,
+    "records": [
+      {
+        "derandomized_x_variance": 0.9375,
+        "exact_shadow_laws_verified": true,
+        "sample_reduction_ratio_shadow_over_derand": 3.1333333333333333,
+        "shadow_hit_probability_3_pow_minus_w": 0.3333333333333333,
+        "shadow_mean_explicit": 0.25,
+        "shadow_variance_closed_form": 2.9375,
+        "shadow_variance_explicit": 2.9375,
+        "true_expectation_mu": 0.25,
+        "weight_w": 1,
+        "zero_signal_baseline_3_pow_w": 3.0
+      },
+      {
+        "derandomized_x_variance": 0.9375,
+        "exact_shadow_laws_verified": true,
+        "sample_reduction_ratio_shadow_over_derand": 9.533333333333333,
+        "shadow_hit_probability_3_pow_minus_w": 0.1111111111111111,
+        "shadow_mean_explicit": 0.25,
+        "shadow_variance_closed_form": 8.9375,
+        "shadow_variance_explicit": 8.9375,
+        "true_expectation_mu": 0.25,
+        "weight_w": 2,
+        "zero_signal_baseline_3_pow_w": 9.0
+      },
+      {
+        "derandomized_x_variance": 0.9375,
+        "exact_shadow_laws_verified": true,
+        "sample_reduction_ratio_shadow_over_derand": 28.733333333333334,
+        "shadow_hit_probability_3_pow_minus_w": 0.037037037037037035,
+        "shadow_mean_explicit": 0.25,
+        "shadow_variance_closed_form": 26.9375,
+        "shadow_variance_explicit": 26.9375,
+        "true_expectation_mu": 0.25,
+        "weight_w": 3,
+        "zero_signal_baseline_3_pow_w": 27.0
+      },
+      {
+        "derandomized_x_variance": 0.9375,
+        "exact_shadow_laws_verified": true,
+        "sample_reduction_ratio_shadow_over_derand": 86.33333333333333,
+        "shadow_hit_probability_3_pow_minus_w": 0.012345679012345678,
+        "shadow_mean_explicit": 0.25,
+        "shadow_variance_closed_form": 80.9375,
+        "shadow_variance_explicit": 80.9375,
+        "true_expectation_mu": 0.25,
+        "weight_w": 4,
+        "zero_signal_baseline_3_pow_w": 81.0
+      },
+      {
+        "derandomized_x_variance": 0.9375,
+        "exact_shadow_laws_verified": true,
+        "sample_reduction_ratio_shadow_over_derand": 259.1333333333334,
+        "shadow_hit_probability_3_pow_minus_w": 0.00411522633744856,
+        "shadow_mean_explicit": 0.25,
+        "shadow_variance_closed_form": 242.9375,
+        "shadow_variance_explicit": 242.93750000000003,
+        "true_expectation_mu": 0.25,
+        "weight_w": 5,
+        "zero_signal_baseline_3_pow_w": 243.0
+      }
+    ],
+    "true_expectation_mu": 0.25
+  },
+  "theorem_id": "dcp_shadow_tomography_classical_shadows_pauli_observable_sample_bridge"
+}

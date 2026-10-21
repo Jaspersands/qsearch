@@ -1,0 +1,111 @@
+{
+  "all_checks_passed": true,
+  "domain": "representation_theory_schur_weyl_dicke_symmetric_subspace",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "qubit_dicke_sweep": [
+    {
+      "copies_k": 2,
+      "dicke_collective_qfi": 2.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 4,
+      "hilbert_compression_ratio": 1.3333333333333333,
+      "local_dim_d": 2,
+      "symmetric_subspace_dim": 3
+    },
+    {
+      "copies_k": 4,
+      "dicke_collective_qfi": 4.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 16,
+      "hilbert_compression_ratio": 3.2,
+      "local_dim_d": 2,
+      "symmetric_subspace_dim": 5
+    },
+    {
+      "copies_k": 8,
+      "dicke_collective_qfi": 8.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 256,
+      "hilbert_compression_ratio": 28.444444444444443,
+      "local_dim_d": 2,
+      "symmetric_subspace_dim": 9
+    },
+    {
+      "copies_k": 12,
+      "dicke_collective_qfi": 12.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 4096,
+      "hilbert_compression_ratio": 315.0769230769231,
+      "local_dim_d": 2,
+      "symmetric_subspace_dim": 13
+    },
+    {
+      "copies_k": 16,
+      "dicke_collective_qfi": 16.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 65536,
+      "hilbert_compression_ratio": 3855.0588235294117,
+      "local_dim_d": 2,
+      "symmetric_subspace_dim": 17
+    },
+    {
+      "copies_k": 20,
+      "dicke_collective_qfi": 20.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 1048576,
+      "hilbert_compression_ratio": 49932.19047619047,
+      "local_dim_d": 2,
+      "symmetric_subspace_dim": 21
+    }
+  ],
+  "ququart_symmetric_sweep": [
+    {
+      "copies_k": 2,
+      "dicke_collective_qfi": 2.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 16,
+      "hilbert_compression_ratio": 1.6,
+      "local_dim_d": 4,
+      "symmetric_subspace_dim": 10
+    },
+    {
+      "copies_k": 4,
+      "dicke_collective_qfi": 4.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 256,
+      "hilbert_compression_ratio": 7.314285714285714,
+      "local_dim_d": 4,
+      "symmetric_subspace_dim": 35
+    },
+    {
+      "copies_k": 6,
+      "dicke_collective_qfi": 6.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 4096,
+      "hilbert_compression_ratio": 48.76190476190476,
+      "local_dim_d": 4,
+      "symmetric_subspace_dim": 84
+    },
+    {
+      "copies_k": 8,
+      "dicke_collective_qfi": 8.0,
+      "dicke_norm_sum": 1.0,
+      "full_tensor_hilbert_dim": 65536,
+      "hilbert_compression_ratio": 397.1878787878788,
+      "local_dim_d": 4,
+      "symmetric_subspace_dim": 165
+    }
+  ],
+  "subsystem_id": "dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_bridge",
+  "subsystem_number": 154,
+  "theorem_checks": {
+    "dicke_binomial_normalization_exact": true,
+    "dicke_collective_qfi_equals_k_exact": true,
+    "k20_compresses_hilbert_space_by_over_49900x": true,
+    "qubit_symmetric_subspace_dim_equals_k_plus_1": true
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "all_checks_passed": true,
+  "bell_bitflip_immunity_sweep": {
+    "all_verified": true,
+    "gamma": 0.88,
+    "records": [
+      {
+        "eta_x": 0.0,
+        "exact_immunity_verified": true,
+        "prob_Phi_minus": 0.27999999999999986,
+        "prob_Phi_plus": 0.72,
+        "prob_Psi_minus": 0.0,
+        "prob_Psi_plus": 0.0,
+        "xx_parity_expectation_closed_form": 0.4400000000000001,
+        "xx_parity_expectation_explicit": 0.4400000000000001,
+        "zz_detected_bitflip_rate": 0.0
+      },
+      {
+        "eta_x": 0.1,
+        "exact_immunity_verified": true,
+        "prob_Phi_minus": 0.2519999999999999,
+        "prob_Phi_plus": 0.648,
+        "prob_Psi_minus": 0.027999999999999994,
+        "prob_Psi_plus": 0.072,
+        "xx_parity_expectation_closed_form": 0.4400000000000001,
+        "xx_parity_expectation_explicit": 0.4400000000000001,
+        "zz_detected_bitflip_rate": 0.09999999999999999
+      },
+      {
+        "eta_x": 0.25,
+        "exact_immunity_verified": true,
+        "prob_Phi_minus": 0.20999999999999994,
+        "prob_Phi_plus": 0.5399999999999999,
+        "prob_Psi_minus": 0.06999999999999997,
+        "prob_Psi_plus": 0.18,
+        "xx_parity_expectation_closed_form": 0.4400000000000001,
+        "xx_parity_expectation_explicit": 0.44000000000000006,
+        "zz_detected_bitflip_rate": 0.24999999999999994
+      },
+      {
+        "eta_x": 0.5,
+        "exact_immunity_verified": true,
+        "prob_Phi_minus": 0.13999999999999993,
+        "prob_Phi_plus": 0.36,
+        "prob_Psi_minus": 0.13999999999999993,
+        "prob_Psi_plus": 0.36,
+        "xx_parity_expectation_closed_form": 0.4400000000000001,
+        "xx_parity_expectation_explicit": 0.4400000000000001,
+        "zz_detected_bitflip_rate": 0.4999999999999999
+      },
+      {
+        "eta_x": 0.75,
+        "exact_immunity_verified": true,
+        "prob_Phi_minus": 0.06999999999999997,
+        "prob_Phi_plus": 0.18,
+        "prob_Psi_minus": 0.20999999999999994,
+        "prob_Psi_plus": 0.5399999999999999,
+        "xx_parity_expectation_closed_form": 0.4400000000000001,
+        "xx_parity_expectation_explicit": 0.44000000000000006,
+        "zz_detected_bitflip_rate": 0.7499999999999999
+      },
+      {
+        "eta_x": 1.0,
+        "exact_immunity_verified": true,
+        "prob_Phi_minus": 0.0,
+        "prob_Phi_plus": 0.0,
+        "prob_Psi_minus": 0.27999999999999986,
+        "prob_Psi_plus": 0.72,
+        "xx_parity_expectation_closed_form": 0.4400000000000001,
+        "xx_parity_expectation_explicit": 0.4400000000000001,
+        "zz_detected_bitflip_rate": 0.9999999999999998
+      }
+    ],
+    "theta": 1.0471975511965976
+  },
+  "certificate_sha256_16": "ac265439e999a753",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-entanglement-assisted-pre-shared-ebit-superdense-phase-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Pre-shared Bell-pair |Phi^+>_{AB} phase sensing and 100% X_A otimes X_B immunity to arbitrary Pauli-X bit-flip noise eta_X",
+    "controls_included": "Evaluates eta_X in {0.0, 0.10, 0.25, 0.50, 0.75, 1.00} at theta=pi/3, gamma=0.88, verifying constant <X_A X_B> == 0.44 and exact Z_A Z_B bit-flip diagnosis.",
+    "does_not_claim": "Immunity to Pauli-Z phase-flip noise on the probe wire (which directly shifts theta -> theta + pi)"
+  },
+  "theorem_id": "dcp_entanglement_assisted_pre_shared_ebit_superdense_phase_bridge"
+}

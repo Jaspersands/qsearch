@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge",
+  "subsystem_number": 147,
+  "hypothesis": "Under dissipative Lindblad syndrome reset, the Quantum Wasserstein W_1 distance to |0^m><0^m| equals the expected Hamming weight m p_0 e^{-gamma t} and satisfies T <= W_1 <= m T.",
+  "required_checks": [
+    "w1_exponential_ornstein_uhlenbeck_contraction_exact",
+    "depalma_w1_trace_distance_sandwich_holds_everywhere",
+    "initial_w1_equals_expected_hamming_weight_m_p0",
+    "cooling_reduces_w1_below_0_01_by_gamma_t_6"
+  ]
+}

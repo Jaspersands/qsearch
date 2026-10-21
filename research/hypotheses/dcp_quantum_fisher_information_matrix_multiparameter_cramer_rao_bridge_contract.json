@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_quantum_fisher_information_matrix_multiparameter_cramer_rao_bridge",
+  "title": "Multiparameter QFIM I_Q = sum_m gamma_m^2 b_m b_m^T, Zero SLD Incompatibility, and Tight-Frame Optimality",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For single-qubit DCP survivor states rho_m(theta), all directional SLDs L_{m, i} are scalar multiples of the same single-qubit operator, so [L_{m, i}, L_{m, j}] == 0 and the multiparameter QCRB has zero quantum incompatibility.",
+    "Across M wires, I_Q = sum_{m=1}^M gamma_m^2 b_m b_m^T satisfies Tr(I_Q^{-1}) >= n^2 / Tr(I_Q), with equality iff the weighted columns form an isotropic tight frame I_Q = (Tr(I_Q)/n) I_n."
+  ],
+  "favorable_controls": [
+    "3D Hadamard-simplex tight frame (M=4, anisotropy inflation 1.0000)",
+    "3D skewed frame of equal trace (anisotropy inflation 1.7778x)"
+  ]
+}

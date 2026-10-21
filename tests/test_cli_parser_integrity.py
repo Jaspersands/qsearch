@@ -1,6 +1,13 @@
 """The CLI must construct before any scientific workflow can run."""
 
+from pathlib import Path
+
 import qsearch
+
+
+def test_cli_source_compiles_with_legal_future_import_order():
+    path = Path(qsearch.__file__)
+    compile(path.read_bytes(), str(path), "exec")
 
 
 def test_parser_builds_and_preserves_the_integrated_swap_command():

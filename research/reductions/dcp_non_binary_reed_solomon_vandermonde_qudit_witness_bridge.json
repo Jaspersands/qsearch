@@ -1,0 +1,71 @@
+{
+  "all_checks_passed": true,
+  "audit_p5_d2_consecutive": {
+    "barycentric_weights_mod_p": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "d_degree": 2,
+    "degree_le_d_annihilated_count": 125,
+    "eval_points": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exact_barycentric_laws_verified": true,
+    "leading_coeff_extracted_count": 125,
+    "num_wires_d_plus_2": 4,
+    "p_prime": 5,
+    "total_degree_le_d_polynomials_tested": 125,
+    "vandermonde_moment_sums_r_0_to_d_plus_1": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "audit_p7_d2_nonconsecutive": {
+    "barycentric_weights_mod_p": [
+      6,
+      1,
+      4,
+      3
+    ],
+    "d_degree": 2,
+    "degree_le_d_annihilated_count": 343,
+    "eval_points": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "exact_barycentric_laws_verified": true,
+    "leading_coeff_extracted_count": 343,
+    "num_wires_d_plus_2": 4,
+    "p_prime": 7,
+    "total_degree_le_d_polynomials_tested": 343,
+    "vandermonde_moment_sums_r_0_to_d_plus_1": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "certificate_sha256_16": "79beef6ea3482f4d",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-non-binary-reed-solomon-vandermonde-qudit-witness-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Lagrange barycentric Vandermonde weights w_j = prod_{l!=j} (x_j - x_l)^{-1} mod p for qudit polynomial witness annihilation over F_p",
+    "controls_included": "Exhaustively tests all 125 degree<=2 polynomials over F_5 on [0,1,2,3] and all 343 degree<=2 polynomials over F_7 on non-consecutive [1,2,4,6], verifying 100% annihilation and leading-term extraction.",
+    "does_not_claim": "Carry-free lifting from F_p to Z_{p^2} without monochrome syndrome selection (Subsystem 83)"
+  },
+  "theorem_id": "dcp_non_binary_reed_solomon_vandermonde_qudit_witness_bridge"
+}

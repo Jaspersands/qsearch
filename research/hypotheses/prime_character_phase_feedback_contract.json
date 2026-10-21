@@ -1,0 +1,51 @@
+{
+  "hypothesis_id": "auxiliary_measurement_support_phase_feedback_for_character_DQI",
+  "status": "PHYSICAL_RESTORATION_VERIFIED_BUT_SUPPLIED_PHASE_CONSTRUCTION_EXPONENTIAL_LOCAL_REVIEW_PENDING",
+  "scientific_question": "Can auxiliary measurement restore the original OPI interference after efficient collaborative decoding without an expensive encoded support phase?",
+  "input_model": "Explicit prime p=3 mod4 quadratic-character OPI, fixed public shifts, independent nonzero Fourier values conditional on a common support, no hidden advice or free membership oracle",
+  "mechanism": "Measure every auxiliary polynomial, compute the XOR of its predicate-sign masks, apply the corresponding encoded support phase on the retained polynomial",
+  "actual_implementation": "Complete bounded native source/QFT/measurement followed by ordered genuine native-state reflections; all auxiliary outcomes retained",
+  "expected_asymptotic_upside_not_realized": "Polynomial collaborative decoding would replace the severe single-copy capacity-decoder cost only if a polynomial structured encoded phase action were also supplied",
+  "resources": "cN value and cK syndrome registers; public predicate evaluations; q_z genuine native reflections, each requiring a unitary state preparation and its inverse; dense matrices and field enumerations charged only for small calibrations",
+  "large_conditional_result": "At N127,K39,ell32,p61,c5/8: distance to the desired single-copy native DQI state <3.726e-9 and transferred tail at110 >0.31458, conditional on exact mathematical operations",
+  "decisive_cost_result": "Every nonzero mask uses at least408774727362072591332623950512 reflections in this construction; probability >0.99212598 makes expected calls >4.0555e29",
+  "source_specific_reduction": "N controlled singleton encoded phases implement a clean support extractor/eraser through H-controlled-phase-H; conversely a uniform clean source-support eraser and its inverse implement each encoded phase in two calls",
+  "native_controlization": "Uncontrolled native phases PLUS the known uniform eigenstate suffice: two controlled register swaps and one uncontrolled call give vacuum-anchored control without estimating an unknown global phase; charge2379 reference qubits and604266 controlled bit swaps at the saved large input",
+  "reduction_scope_counterexample": "This does NOT solve arbitrary classical syndrome decoding: native p7/11 individual unique-error syndromes obtain the correct support with probability1/6 or1/10, although coherent source packets are erased with unit probability",
+  "reduction_cost": "At N127,ell32 the explicit construction uses51914390374983219099243241715024 native reflections, not127 cheap gates; no polynomial controlled-phase compiler is supplied",
+  "strongest_classical_baselines": "Same-input saved K39 word109/127; high-rate norm/Morse attacks; no hardness or matched-runtime separation inferred",
+  "proof_obligations": [
+    "Whole-support near-isometry and normalized hybrid, not only radial source norm",
+    "Branch-wise positive amplitude distortion, including every outcome",
+    "Rank-herald collision amplification separately charged",
+    "Actual unitary reflection factors, not a nonorthogonal projector sum",
+    "Per-reflection coherent synthesis and total error budget",
+    "Polynomial structured phase implementation or explicit exponential cost",
+    "Uniform clean erasure on the source frame, not only conversion of one predeclared state",
+    "Controlled action from a known circuit OR known native vacuum eigenstate plus charged reference swaps; no generic uncontrolled-black-box control assumption",
+    "Strong same-input classical comparison and independent proof application review"
+  ],
+  "falsifiers": [
+    "Full physical source and native expansion disagree",
+    "Corrected branches fail the positive-magnitude prediction",
+    "Using one auxiliary mask instead of XOR masks falsely passes",
+    "A public physical predicate sign is incorrectly identified with encoded support phase",
+    "All-zero mask selection or partial measurement outcomes are silently postselected",
+    "Average reflection cost ignores nonzero-mask probability or repeated reflections",
+    "A generic index-erasure lower bound is transferred without a reduction"
+  ],
+  "evidence": [
+    "theorems/prime_character_phase_feedback.py",
+    "tests/test_prime_character_phase_feedback.py",
+    "tests/test_prime_character_support_erasure.py",
+    "research/classical_baselines/prime_character_phase_feedback.json",
+    "research/PRIME_CHARACTER_PHASE_FEEDBACK.md"
+  ],
+  "literature": ["https://arxiv.org/abs/cs/0610074", "https://arxiv.org/abs/1103.2774", "https://arxiv.org/abs/1012.2112", "https://doi.org/10.1137/S0097539796300921", "https://arxiv.org/abs/2610.12357", "https://arxiv.org/abs/2607.16541", "https://arxiv.org/abs/2606.04843", "https://arxiv.org/abs/2411.12553", "https://arxiv.org/abs/1309.7976", "https://arxiv.org/abs/2602.19250"],
+  "general_classical_syndrome_decoder_reduction_proved": false,
+  "efficient_decoder_bypass_supplied": false,
+  "general_structured_phase_lower_bound_proved": false,
+  "independent_or_formal_application_review_completed": false,
+  "accepted_speedup_candidate": false,
+  "new_central_candidate_negative_or_proof_registered": false
+}

@@ -1,0 +1,72 @@
+{
+  "all_checks_passed": true,
+  "depth_scaling_sweep": [
+    {
+      "depth_compression_vs_tree": 1.0,
+      "gate_model_linear_cnot_depth": 1,
+      "gate_model_tree_cnot_depth": 1,
+      "mbqc_cluster_ancilla_qubits": 2,
+      "mbqc_quantum_measurement_depth": 1,
+      "syndrome_weight_k": 2
+    },
+    {
+      "depth_compression_vs_tree": 2.0,
+      "gate_model_linear_cnot_depth": 3,
+      "gate_model_tree_cnot_depth": 2,
+      "mbqc_cluster_ancilla_qubits": 6,
+      "mbqc_quantum_measurement_depth": 1,
+      "syndrome_weight_k": 4
+    },
+    {
+      "depth_compression_vs_tree": 3.0,
+      "gate_model_linear_cnot_depth": 7,
+      "gate_model_tree_cnot_depth": 3,
+      "mbqc_cluster_ancilla_qubits": 14,
+      "mbqc_quantum_measurement_depth": 1,
+      "syndrome_weight_k": 8
+    },
+    {
+      "depth_compression_vs_tree": 4.0,
+      "gate_model_linear_cnot_depth": 15,
+      "gate_model_tree_cnot_depth": 4,
+      "mbqc_cluster_ancilla_qubits": 30,
+      "mbqc_quantum_measurement_depth": 1,
+      "syndrome_weight_k": 16
+    },
+    {
+      "depth_compression_vs_tree": 5.0,
+      "gate_model_linear_cnot_depth": 31,
+      "gate_model_tree_cnot_depth": 5,
+      "mbqc_cluster_ancilla_qubits": 62,
+      "mbqc_quantum_measurement_depth": 1,
+      "syndrome_weight_k": 32
+    },
+    {
+      "depth_compression_vs_tree": 6.0,
+      "gate_model_linear_cnot_depth": 63,
+      "gate_model_tree_cnot_depth": 6,
+      "mbqc_cluster_ancilla_qubits": 126,
+      "mbqc_quantum_measurement_depth": 1,
+      "syndrome_weight_k": 64
+    }
+  ],
+  "domain": "measurement_based_quantum_computation_clifford_cluster_peeling",
+  "exhaustive_f2_linearity": {
+    "f2_affine_superposition_verified": true,
+    "symplectic_involution_verified": true,
+    "total_f2_states_checked": 64
+  },
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "subsystem_id": "dcp_measurement_based_mbqc_cluster_state_cnot_peeling_bridge",
+  "subsystem_number": 142,
+  "theorem_checks": {
+    "k64_compresses_6_tree_layers_to_1_measurement_round": true,
+    "mbqc_byproduct_frame_f2_linear": true,
+    "mbqc_cnot_symplectic_involution_exact": true,
+    "mbqc_quantum_depth_strictly_one_for_all_k": true
+  }
+}

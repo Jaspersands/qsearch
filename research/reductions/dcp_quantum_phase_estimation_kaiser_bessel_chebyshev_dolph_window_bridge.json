@@ -1,0 +1,43 @@
+{
+  "all_checks_passed": true,
+  "audit_p16_r30": {
+    "P_window_size": 16,
+    "exact_minimax_laws_verified": true,
+    "expected_equiripple_power_1_over_R2": 0.0011111111111111111,
+    "max_chebyshev_extrema_equiripple_error": 0.0,
+    "peak_stopband_power_box": 0.04842789592753418,
+    "peak_stopband_power_dolph_chebyshev": 0.001111111111111025,
+    "peak_stopband_power_sine": 0.005432986789524323,
+    "sidelobe_suppression_box_over_cheb": 43.585106334784136,
+    "sidelobe_suppression_sine_over_cheb": 4.88968811057227,
+    "stopband_cutoff_f_stop": 0.08581978417007441,
+    "target_sidelobe_amplitude_ratio_R": 30.0
+  },
+  "audit_p24_r40": {
+    "P_window_size": 24,
+    "exact_minimax_laws_verified": true,
+    "expected_equiripple_power_1_over_R2": 0.000625,
+    "max_chebyshev_extrema_equiripple_error": 1.0842021724855044e-19,
+    "peak_stopband_power_box": 0.04763272366914356,
+    "peak_stopband_power_dolph_chebyshev": 0.0006249999999999304,
+    "peak_stopband_power_sine": 0.005206018788868822,
+    "sidelobe_suppression_box_over_cheb": 76.21235787063819,
+    "sidelobe_suppression_sine_over_cheb": 8.329630062191042,
+    "stopband_cutoff_f_stop": 0.060279598370975025,
+    "target_sidelobe_amplitude_ratio_R": 40.0
+  },
+  "certificate_sha256_16": "f993d11986cd4f1a",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-phase-estimation-kaiser-bessel-chebyshev-dolph-window-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Dolph-Chebyshev minimax equiripple QFT stopband sidelobe suppression vs. Dirichlet-sine and box windows",
+    "controls_included": "Evaluates (P=16, R=30) and (P=24, R=40), verifying exact equiripple extrema 1/R^2 and >35x peak sidelobe suppression over the box window.",
+    "does_not_claim": "Minimization of integrated L2 sidelobe energy (which is globally minimized by Slepian DPSS in Subsystem 125)"
+  },
+  "theorem_id": "dcp_quantum_phase_estimation_kaiser_bessel_chebyshev_dolph_window_bridge"
+}

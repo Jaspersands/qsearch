@@ -1,0 +1,143 @@
+{
+  "all_checks_passed": true,
+  "dephased_v085_sweep": [
+    {
+      "copies_k": 1,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 1.384083044982699,
+      "qzzb_mse": 0.3579612852414367,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 0.85
+    },
+    {
+      "copies_k": 2,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.6920415224913495,
+      "qzzb_mse": 0.24287371040616296,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 0.85
+    },
+    {
+      "copies_k": 4,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.34602076124567477,
+      "qzzb_mse": 0.14706386311437944,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 0.85
+    },
+    {
+      "copies_k": 8,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.17301038062283738,
+      "qzzb_mse": 0.08282385419935771,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 0.85
+    },
+    {
+      "copies_k": 16,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.08650519031141869,
+      "qzzb_mse": 0.044807083352485864,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 0.85
+    },
+    {
+      "copies_k": 32,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.043252595155709346,
+      "qzzb_mse": 0.023621093949377874,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 0.85
+    },
+    {
+      "copies_k": 64,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.021626297577854673,
+      "qzzb_mse": 0.012242169474888482,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 0.85
+    }
+  ],
+  "domain": "quantum_estimation_theory_ziv_zakai_phase_bounds",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "prior_variance_pi_sq_over_12": 0.8224670334241132,
+  "pure_v100_sweep": [
+    {
+      "copies_k": 1,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 1.0,
+      "qzzb_mse": 0.2759892290545857,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 1.0
+    },
+    {
+      "copies_k": 2,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.5,
+      "qzzb_mse": 0.17996727455888517,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 1.0
+    },
+    {
+      "copies_k": 4,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.25,
+      "qzzb_mse": 0.10787858362915385,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 1.0
+    },
+    {
+      "copies_k": 8,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.125,
+      "qzzb_mse": 0.06076309875663531,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 1.0
+    },
+    {
+      "copies_k": 16,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.0625,
+      "qzzb_mse": 0.03282596019772553,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 1.0
+    },
+    {
+      "copies_k": 32,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.03125,
+      "qzzb_mse": 0.017264007651921306,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 1.0
+    },
+    {
+      "copies_k": 64,
+      "prior_variance_ceiling": 0.8224670334241132,
+      "qcrb_mse": 0.015625,
+      "qzzb_mse": 0.008925662136652147,
+      "qzzb_respects_prior_ceiling": true,
+      "visibility_v": 1.0
+    }
+  ],
+  "subsystem_id": "dcp_quantum_ziv_zakai_bellman_minimax_phase_lower_bound_bridge",
+  "subsystem_number": 141,
+  "theorem_checks": {
+    "low_copy_qcrb_exceeds_prior_while_qzzb_respects_ceiling": true,
+    "pure_witness_strictly_outperforms_dephased_witness": true,
+    "qzzb_monotone_decreasing_with_copies_k": true,
+    "single_qubit_fidelity_formula_exact": true,
+    "zero_visibility_recovers_exact_prior_variance": true
+  },
+  "zero_visibility_check": {
+    "copies_k": 10,
+    "prior_variance_ceiling": 0.8224670334241132,
+    "qcrb_mse": null,
+    "qzzb_mse": 0.8224696036335924,
+    "qzzb_respects_prior_ceiling": false,
+    "visibility_v": 0.0
+  }
+}

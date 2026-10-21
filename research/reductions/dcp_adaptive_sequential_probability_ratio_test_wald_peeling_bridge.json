@@ -1,0 +1,117 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "46dfd06da0b21907",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-adaptive-sequential-probability-ratio-test-wald-peeling-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Wald Sequential Probability Ratio Test (SPRT) expected sample complexity E[T] = (M/gamma)*tanh(M*atanh(gamma)) vs. fixed-batch majority voting",
+    "controls_included": "Evaluates M in {1, 2, 3, 4} at gamma = 0.75 and gamma = 0.60, verifying < 1e-12 agreement with exact Markov chain absorption and >2.25x expected copy savings at M = 3, gamma = 0.75.",
+    "does_not_claim": "Reduction in worst-case maximum stopping time when an adversarial trajectory hovers near 0"
+  },
+  "sprt_audit_gamma_060": {
+    "all_verified": true,
+    "gamma": 0.6,
+    "records": [
+      {
+        "M_threshold": 1,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.2,
+        "min_fixed_odd_batch_size_for_target_error": 1,
+        "sample_savings_ratio_fixed_over_sprt": 1.0,
+        "sprt_error_closed_form": 0.2,
+        "sprt_error_markov_explicit": 0.2,
+        "sprt_expected_copies_closed_form": 1.0,
+        "sprt_expected_copies_markov_explicit": 1.0
+      },
+      {
+        "M_threshold": 2,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.05792000000000003,
+        "min_fixed_odd_batch_size_for_target_error": 5,
+        "sample_savings_ratio_fixed_over_sprt": 1.7,
+        "sprt_error_closed_form": 0.058823529411764705,
+        "sprt_error_markov_explicit": 0.05882352941176472,
+        "sprt_expected_copies_closed_form": 2.9411764705882355,
+        "sprt_expected_copies_markov_explicit": 2.9411764705882355
+      },
+      {
+        "M_threshold": 3,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.011654205440000006,
+        "min_fixed_odd_batch_size_for_target_error": 11,
+        "sample_savings_ratio_fixed_over_sprt": 2.26984126984127,
+        "sprt_error_closed_form": 0.015384615384615385,
+        "sprt_error_markov_explicit": 0.015384615384615389,
+        "sprt_expected_copies_closed_form": 4.846153846153846,
+        "sprt_expected_copies_markov_explicit": 4.846153846153846
+      },
+      {
+        "M_threshold": 4,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.0025814628368384025,
+        "min_fixed_odd_batch_size_for_target_error": 17,
+        "sample_savings_ratio_fixed_over_sprt": 2.57,
+        "sprt_error_closed_form": 0.0038910505836575876,
+        "sprt_error_markov_explicit": 0.003891050583657589,
+        "sprt_expected_copies_closed_form": 6.614785992217899,
+        "sprt_expected_copies_markov_explicit": 6.6147859922179
+      }
+    ]
+  },
+  "sprt_audit_gamma_075": {
+    "all_verified": true,
+    "gamma": 0.75,
+    "records": [
+      {
+        "M_threshold": 1,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.125,
+        "min_fixed_odd_batch_size_for_target_error": 1,
+        "sample_savings_ratio_fixed_over_sprt": 1.0,
+        "sprt_error_closed_form": 0.125,
+        "sprt_error_markov_explicit": 0.125,
+        "sprt_expected_copies_closed_form": 1.0,
+        "sprt_expected_copies_markov_explicit": 1.0
+      },
+      {
+        "M_threshold": 2,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.01605224609375,
+        "min_fixed_odd_batch_size_for_target_error": 5,
+        "sample_savings_ratio_fixed_over_sprt": 1.9531250000000002,
+        "sprt_error_closed_form": 0.02,
+        "sprt_error_markov_explicit": 0.019999999999999997,
+        "sprt_expected_copies_closed_form": 2.5599999999999996,
+        "sprt_expected_copies_markov_explicit": 2.5599999999999996
+      },
+      {
+        "M_threshold": 3,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.002482280135154724,
+        "min_fixed_odd_batch_size_for_target_error": 9,
+        "sample_savings_ratio_fixed_over_sprt": 2.263157894736842,
+        "sprt_error_closed_form": 0.0029069767441860465,
+        "sprt_error_markov_explicit": 0.0029069767441860456,
+        "sprt_expected_copies_closed_form": 3.9767441860465116,
+        "sprt_expected_copies_markov_explicit": 3.9767441860465107
+      },
+      {
+        "M_threshold": 4,
+        "exact_wald_identities_verified": true,
+        "fixed_batch_error": 0.00040988201362779364,
+        "min_fixed_odd_batch_size_for_target_error": 13,
+        "sample_savings_ratio_fixed_over_sprt": 2.4395312500000004,
+        "sprt_error_closed_form": 0.00041631973355537054,
+        "sprt_error_markov_explicit": 0.00041631973355537043,
+        "sprt_expected_copies_closed_form": 5.328892589508742,
+        "sprt_expected_copies_markov_explicit": 5.328892589508742
+      }
+    ]
+  },
+  "theorem_id": "dcp_adaptive_sequential_probability_ratio_test_wald_peeling_bridge"
+}

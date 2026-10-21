@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_modular_hermite_normal_form_determinant_smith_peeling_bridge",
+  "title": "Smith Normal Form U B V == diag(d_1, ..., d_n) mod q Invariant-Factor Channel Decoupling",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any n x n compressed column matrix B in Z_q^{n x n} with Smith Normal Form U B V == diag(d_1, ..., d_n) (mod q), the unimodular basis changes V and U^{-T} decouple the phase <B v, s> mod q into n independent cyclic channels of orders q_i = q / gcd(d_i, q).",
+    "The identifiable secret coset space has exact cardinality prod_{i=1}^n (q / gcd(d_i, q)) and indistinguishable kernel fiber size prod_{i=1}^n gcd(d_i, q)."
+  ],
+  "favorable_controls": [
+    "d=[1, 2] over Z_8^2 (|Im|=32, |ker|=2)",
+    "d=[2, 6] over Z_{12}^2 (|Im|=12, |ker|=12)"
+  ]
+}

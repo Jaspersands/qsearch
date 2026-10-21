@@ -1,0 +1,31 @@
+{
+  "hypothesis_id": "LOCAL-DIVISOR-FREE-INTERVAL-SPLIT-FIBERS",
+  "status": "CONSTRUCTIVE_CLASSICAL_RESEARCH_DERIVATION_REVIEW_PENDING",
+  "problem": "full-prime N=p RS interval search, H_d[j,x]=x^j, arbitrary public affine target",
+  "public_setup": "power-of-two ell with d<=ell<=floor(p/2); build two disjoint completely split fibers of a quadratic composition; verify their monic root polynomials differ by1",
+  "mechanism": "Newton moments give a support2ell bounded kernel row; computed prime translation inverse and exact denominator rounding solve affine targets",
+  "uniform_setup_criterion": "p/2^ell - (ell/2-1+2^-ell)*ceil(sqrt(p)) - ell/2 > 0; no general setup guarantee when inconclusive",
+  "all_target_rounding_bound": "conditional on the ACTUALLY completed public frame, failure <= min(1,2p exp(-2(u+1)^2/(2ell+1)))",
+  "deterministic_alternative": "exact nearest row-coordinate rounding has all-target integer radius ell from column L1<=2ell+1; choose the better guarantee for BOTH new and prior constructions",
+  "costs": "full-prime shift scans, exact modular square roots, fiber polynomial products, rational inverse bit lengths and every rounding attempt charged; polynomial in explicit N=p, not log p alone",
+  "proof_obligations": [
+    "distinct nonzero-square preimages and exact cardinality/disjointness at every layer",
+    "squarefree character bounds, subset coefficients and forbidden-zero correction",
+    "positive uniform setup bound distinguished from explicit instance certification",
+    "completed-degree fiber polynomial difference1, zero-sum native moments and nonzero first excluded moment",
+    "computed rational inverse, real rank, true column norm, unchanged target and native polynomial witness checks",
+    "nearest mode uses L1, no random coins and its own all-target certificate; independent tail is comparison only in nearest mode",
+    "failed setups and incomplete prefixes never promoted; independent review before novelty"
+  ],
+  "falsifiers": [
+    "any failed public setup despite a strictly positive universal stage bound",
+    "a repeated, zero or missing root in a certified full fiber",
+    "native polynomial or modular rejection of an accepted interval word",
+    "accepting a degree8 prefix as a degree16 frame or interpreting setup failure as hardness",
+    "assuming arbitrary-degree setup, prescribed sampling or punctured large-field applicability"
+  ],
+  "producer": "theorems/interval_split_fibers.py",
+  "report": "research/classical_baselines/interval_split_fibers.json",
+  "novelty_quantum_speedup_or_general_dequantization_claimed": false,
+  "central_registry_promotion": false
+}

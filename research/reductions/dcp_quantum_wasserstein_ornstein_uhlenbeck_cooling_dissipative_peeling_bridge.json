@@ -1,0 +1,67 @@
+{
+  "all_checks_passed": true,
+  "cooling_trajectory": [
+    {
+      "gamma_t": 0.0,
+      "num_syndrome_qubits_m": 16,
+      "quantum_wasserstein_w1": 4.0,
+      "sandwich_inequality_holds": true,
+      "single_qubit_defect_pt": 0.25,
+      "trace_distance_t": 0.9899774042423815
+    },
+    {
+      "gamma_t": 0.5,
+      "num_syndrome_qubits_m": 16,
+      "quantum_wasserstein_w1": 2.4261226388505337,
+      "sandwich_inequality_holds": true,
+      "single_qubit_defect_pt": 0.15163266492815836,
+      "trace_distance_t": 0.9279982562381485
+    },
+    {
+      "gamma_t": 1.0,
+      "num_syndrome_qubits_m": 16,
+      "quantum_wasserstein_w1": 1.4715177646857693,
+      "sandwich_inequality_holds": true,
+      "single_qubit_defect_pt": 0.09196986029286058,
+      "trace_distance_t": 0.7863985361622794
+    },
+    {
+      "gamma_t": 2.0,
+      "num_syndrome_qubits_m": 16,
+      "quantum_wasserstein_w1": 0.5413411329464508,
+      "sandwich_inequality_holds": true,
+      "single_qubit_defect_pt": 0.033833820809153176,
+      "trace_distance_t": 0.4234601990246454
+    },
+    {
+      "gamma_t": 4.0,
+      "num_syndrome_qubits_m": 16,
+      "quantum_wasserstein_w1": 0.07326255555493671,
+      "sandwich_inequality_holds": true,
+      "single_qubit_defect_pt": 0.004578909722183545,
+      "trace_distance_t": 0.07079955636778379
+    },
+    {
+      "gamma_t": 6.0,
+      "num_syndrome_qubits_m": 16,
+      "quantum_wasserstein_w1": 0.009915008706665434,
+      "sandwich_inequality_holds": true,
+      "single_qubit_defect_pt": 0.0006196880441665896,
+      "trace_distance_t": 0.009869060108348093
+    }
+  ],
+  "domain": "quantum_optimal_transport_wasserstein_w1_dissipative_cooling",
+  "falsification_status": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "subsystem_id": "dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge",
+  "subsystem_number": 147,
+  "theorem_checks": {
+    "cooling_reduces_w1_below_0_01_by_gamma_t_6": true,
+    "depalma_w1_trace_distance_sandwich_holds_everywhere": true,
+    "initial_w1_equals_expected_hamming_weight_m_p0": true,
+    "w1_exponential_ornstein_uhlenbeck_contraction_exact": true
+  }
+}

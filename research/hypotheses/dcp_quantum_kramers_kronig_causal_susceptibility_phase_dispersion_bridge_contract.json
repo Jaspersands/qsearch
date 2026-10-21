@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_bridge",
+  "subsystem_number": 153,
+  "hypothesis": "Causal dispersive syndrome readout susceptibility satisfies the Kramers-Kronig Hilbert transform relation chi'(Delta) = (1/pi) P int chi''(Omega)/(Omega - Delta) dOmega = -Delta/(Delta^2 + gamma^2).",
+  "required_checks": [
+    "kramers_kronig_principal_value_matches_analytic_within_2e_minus_3",
+    "zero_detuning_has_purely_absorptive_susceptibility",
+    "real_part_odd_and_imaginary_part_even_in_detuning",
+    "half_linewidth_detuning_gives_exact_3pi_over_4_phase"
+  ]
+}

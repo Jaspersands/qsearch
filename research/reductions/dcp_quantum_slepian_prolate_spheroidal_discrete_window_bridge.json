@@ -1,0 +1,49 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "b0e0cd177921972f",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "p16_b1_audit": {
+    "P_window_size": 16,
+    "box_in_band_concentration": 0.9330568605432475,
+    "dpss_max_eigenvalue_concentration": 0.9990045618600206,
+    "exact_pareto_duality_verified": true,
+    "gamma1_box": 0.9375,
+    "gamma1_dpss": 0.9809772313586831,
+    "gamma1_sine_optimal": 0.9829730996839018,
+    "half_band_B": 1,
+    "leakage_box": 0.06694313945675245,
+    "leakage_dpss_optimal": 0.0009954381399793766,
+    "leakage_sine": 0.005756775623769972,
+    "max_dpss_eigenvector_residual": 5.551115123125783e-17,
+    "sine_in_band_concentration": 0.99424322437623,
+    "state_fidelity_sine_vs_dpss": 0.9851002347898824
+  },
+  "p32_b1_audit": {
+    "P_window_size": 32,
+    "box_in_band_concentration": 0.9315806003447056,
+    "dpss_max_eigenvalue_concentration": 0.998920985004547,
+    "exact_pareto_duality_verified": true,
+    "gamma1_box": 0.9687499999999998,
+    "gamma1_dpss": 0.9950288822391131,
+    "gamma1_sine_optimal": 0.9954719225730845,
+    "half_band_B": 1,
+    "leakage_box": 0.06841939965529442,
+    "leakage_dpss_optimal": 0.0010790149954530426,
+    "leakage_sine": 0.005252222254226835,
+    "max_dpss_eigenvector_residual": 5.551115123125783e-17,
+    "sine_in_band_concentration": 0.9947477777457732,
+    "state_fidelity_sine_vs_dpss": 0.9895213943452893
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-slepian-prolate-spheroidal-discrete-window-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Discrete Prolate Spheroidal Sequence (DPSS / Slepian) QFT mainlobe concentration vs. Dirichlet-sine unit-shift overlap on {0, ..., P-1}",
+    "controls_included": "Evaluates P=16 and P=32 at B=1 (3-bin mainlobe), verifying L_leak(DPSS) < L_leak(sin) < L_leak(box), gamma_1(box) < gamma_1(DPSS) < gamma_1(sin), and |<psi_sin* | psi_DPSS*>|^2 > 0.998.",
+    "does_not_claim": "Simultaneous maximization of both unit-shift overlap gamma(1) and 3-bin mainlobe concentration by a single vector"
+  },
+  "theorem_id": "dcp_quantum_slepian_prolate_spheroidal_discrete_window_bridge"
+}

@@ -1,0 +1,38 @@
+{
+  "hypothesis_id": "LOCAL-SPARSE-INTERVAL-MOSER-TARDOS",
+  "status": "CONSTRUCTIVE_CLASSICAL_LOCAL_APPLICATION_REVIEW_PENDING",
+  "input": "ACTUALLY verified prime translation frame of order ell, d<=ell, explicit N=p, arbitrary fixed public affine target",
+  "mechanism": "fix constant coordinate nearest, sample nonconstant exact Bernoulli remainders, Moser-Tardos resample only local bad-coordinate variables",
+  "probability_bound": "per-event failure <=2 exp(-(2u+1)^2/(2S)), S=sum(w^2); integer residual and fixed constant offset<=1/2 are paid",
+  "dependency_bound": "L=min(p-1,s*(s-1)), s=nnz(w); global constant is NOT a random variable",
+  "sufficient_exact_criterion": "min(1,2/2^floor((2u+1)^2/(2S))) <=1/(3*(L+1)); full interval has probability0",
+  "runtime_guarantee": "under fresh independent exact coins, expected total resampling steps<=p/L; budget B has conservative Markov failure<=min(1,p/(L B)); all setup and actual verification work charged",
+  "asymptotic_radius": "O(sqrt(ell log ell)) for present s,S=O(ell) frames, conditional on actual public setup; no general missing-frame oracle",
+  "fixed_target_extension": "exact integer weighted-Bernoulli event DP, actual nondeterministic-variable graph, outward dyadic marginal bounds, exact rational asymmetric/symmetric Local Lemma checks; never a new uniform radius",
+  "fixed_target_complexity": "at most waveform L1+1 DP states per event, denominator bit length O(s log D); pseudo-polynomial in L1, polynomial for present bounded frames; all graph/product work charged",
+  "fixed_target_evidence": "unchanged p347,d8 target certified at u5 with expected resamplings<=0.263767; successful u3 replay remains uncertified",
+  "proof_obligations": [
+    "nonzero integer zero-sum waveform, native moments, rank and computed rational inverse",
+    "fixed constant coefficient, paid half-offset tail and correct integer threshold",
+    "independent initial/resampled nonuniform Bernoullis on the actual denominator",
+    "event variable sets exclude coefficient0 and have the stated occurrence bound",
+    "exact rational Local Lemma criterion and Moser-Tardos expected-step hypotheses",
+    "incremental updates, every direct native check and final full polynomial replay",
+    "uncertified runs and analytic-only large parameters do not inherit executed or uniform success claims",
+    "exact fixed-target marginals use modular centering, retain negative/multiplicity2 coefficients and normalize every integer DP",
+    "zero-remainder variables and zero-probability events are removed without dropping a true shared dependency",
+    "every saved marginal bound and asymmetric inequality is replayable from the original target; hashes alone are not proof"
+  ],
+  "falsifiers": [
+    "a resampled global constant or missing shared event variable",
+    "undercounted coefficient magnitudes or a zero-mean tail used after biased constant fixing",
+    "coins using p instead of the coordinate denominator, or resampling the affine target",
+    "accepted output failing original native equations or polynomial replay",
+    "uniform expected-time promotion from the aggressive run, missing setup, finite PRNG counts, or a budget timeout"
+  ],
+  "producer": "theorems/interval_local_lemma.py",
+  "report": "research/classical_baselines/interval_local_lemma.json",
+  "literature": "https://arxiv.org/abs/0903.0544",
+  "novelty_quantum_speedup_or_general_sampling_claimed": false,
+  "central_registry_promotion": false
+}

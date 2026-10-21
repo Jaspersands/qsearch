@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_reed_muller_boolean_polynomial_degree_cnot_depth_bridge",
+  "title": "Exact (2^d - 1) CNOT Parity Phase-Gadget Synthesis of Degree-d Carry Monomials",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Over the integers Z, every degree-d binary product satisfies 2^{d-1} prod_{j=1}^d u_j = sum_{emptyset != S subseteq {1..d}} (-1)^{|S|-1} ((+)_{j in S} u_j) across all u in {0, 1}^d.",
+    "Consequently, the d-body controlled-Z carry gate C^{d-1}Z decomposes into exactly 2^d - 1 single-qubit rotations of angle +/- pi / 2^{d-1} conjugated by CNOT parity trees (3 S-gadgets for CZ, 7 T-gadgets for CCZ, 15 pi/8-gadgets for C^3Z)."
+  ],
+  "favorable_controls": [
+    "Degrees d in {1, 2, 3, 4, 5} (1, 3, 7, 15, 31 parity gadgets)"
+  ]
+}

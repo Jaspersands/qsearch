@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_noisy_quantum_ram_bucket_brigade_routing_fault_scaling_bridge",
+  "title": "Bucket-Brigade qRAM O(d * eps_active) vs. Fanout-Decoder qRAM O(2^d * eps_active) Fault Scaling",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "In a depth-d binary tree of size L = 2^d, a conventional fanout decoder activates all 2^d - 1 switches per query, causing fidelity to decay as (1 - eps_active)^{2^d - 1}.",
+    "A Bucket-Brigade qRAM activates only d switches along the addressed root-to-leaf path, maintaining fidelity (1 - eps_active)^d * (1 - eps_wait)^{2^d - 1 - d} and reducing query infidelity by >64x at d = 10 (L = 1024, eps_active = 1e-3)."
+  ],
+  "favorable_controls": [
+    "Depth d=1 equality control",
+    "Depths d in {2, 4, 8, 10, 12} with eps_wait = 0 and eps_wait = 1e-6"
+  ]
+}

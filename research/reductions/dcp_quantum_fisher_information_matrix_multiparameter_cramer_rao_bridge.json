@@ -1,0 +1,39 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "cd260ada7a13d2aa",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-fisher-information-matrix-multiparameter-cramer-rao-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Multiparameter Quantum Fisher Information Matrix I_Q = sum_m gamma_m^2 b_m b_m^T, SLD compatibility, and tight-frame A-optimality",
+    "controls_included": "Compares 3D Hadamard-simplex tight frame (M=4, anisotropy inflation 1.0000) against skewed 3D frame of equal trace (anisotropy inflation 1.7778x).",
+    "does_not_claim": "Invertibility of I_Q when the M compressed column vectors b_m fail to span R^n"
+  },
+  "skewed_frame_3d_audit": {
+    "M_wires": 4,
+    "anisotropy_inflation_factor": 1.6666666666666667,
+    "exact_qcrb_laws_verified": true,
+    "is_isotropic_tight_frame": false,
+    "isotropic_tight_frame_lower_bound": 1.0380622837370244,
+    "n_dim": 3,
+    "sld_commutator_incompatibility_norm": 0.0,
+    "trace_qfim": 8.669999999999998,
+    "trace_qfim_inverse_mse_bound": 1.730103806228374
+  },
+  "theorem_id": "dcp_quantum_fisher_information_matrix_multiparameter_cramer_rao_bridge",
+  "tight_frame_3d_control": {
+    "M_wires": 4,
+    "anisotropy_inflation_factor": 1.0,
+    "exact_qcrb_laws_verified": true,
+    "is_isotropic_tight_frame": true,
+    "isotropic_tight_frame_lower_bound": 1.0380622837370244,
+    "n_dim": 3,
+    "sld_commutator_incompatibility_norm": 0.0,
+    "trace_qfim": 8.669999999999998,
+    "trace_qfim_inverse_mse_bound": 1.0380622837370244
+  }
+}

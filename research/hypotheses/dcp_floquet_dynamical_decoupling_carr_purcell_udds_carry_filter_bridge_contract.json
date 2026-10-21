@@ -1,0 +1,12 @@
+{
+  "subsystem_id": "dcp_floquet_dynamical_decoupling_carr_purcell_udds_carry_filter_bridge",
+  "subsystem_number": 144,
+  "hypothesis": "Uhrig Dynamical Decoupling (UDD_N) with pulse times t_j = tau sin^2(pi j / (2N + 2)) cancels the first N derivatives of the noise modulation filter function at omega = 0, achieving O((omega tau)^{2N+2}) suppression that strictly outperforms CPMG for N >= 3.",
+  "required_checks": [
+    "n1_hahn_echo_cpmg_equals_udd_exact",
+    "n2_two_pulse_cpmg_equals_udd_at_quarter_three_quarter",
+    "udd_strictly_outperforms_cpmg_for_n_ge_3_at_low_freq",
+    "udd_filter_monotone_decreasing_with_order_n",
+    "udd5_suppresses_low_freq_noise_by_over_12_orders_of_magnitude"
+  ]
+}

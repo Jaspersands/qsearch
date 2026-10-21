@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_magic_state_distillation_15_to_1_reed_muller_peeling_cost_bridge",
+  "title": "Bravyi-Kitaev [[15, 1, 3]] 15-to-1 Magic State Distillation Factory Savings of Adaptive R_Z Peeling",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Under concatenated Bravyi-Kitaev [[15, 1, 3]] 15-to-1 distillation (p_out = 35 p_in^3 / ((1-p_in)^{15} + 35 p_in^3)), reducing fine non-Clifford rotations by (m - 1)x via adaptive R_Z peeling saves > (m - 1)x in raw magic states at matched distillation depth L.",
+    "Across the L=1 -> L=2 distillation level threshold (e.g. m=32, p_raw=1e-3, eps=1e-4), adaptive peeling requires L=1 while QFT_{2^m}^dagger requires L=2, achieving a >451x reduction in total raw magic states."
+  ],
+  "favorable_controls": [
+    "Threshold step-down m=32 (451.16x raw T-state reduction)",
+    "Matched-level m=64 (63.08x raw T-state reduction)"
+  ]
+}

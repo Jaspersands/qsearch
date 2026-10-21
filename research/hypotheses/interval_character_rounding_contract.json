@@ -1,0 +1,46 @@
+{
+  "hypothesis_id": "LOCAL-INTERVAL-CHARACTER-ROUNDING",
+  "status": "CLASSICAL_CONSTRUCTIVE_BOUND_PENDING_INDEPENDENT_REVIEW",
+  "question": "Does a bounded Legendre-character basis remove the apparent prime full-support RS interval-search advantage?",
+  "input_model": "odd prime p, explicit block length N=p, H_d[j,x]=x^j on all x=0..p-1, arbitrary public target syndrome or particular word, 1<=d<=(p-1)/2",
+  "mechanism": "closed-form inverse coordinates in the constant plus p-1 shifted character lattice basis; exact unbiased random rounding OR deterministic integer-potential conditional expectations; native residual verification",
+  "deterministic_guarantee": "uniform all-target search when the exact rational-log Hoeffding potential certificate is <1; O(sqrt(p log p)) certified width, no random coin premise",
+  "deterministic_cost": "O(p^2) operations on O(p log p)-bit integers; O(p^2 log p) bits working storage",
+  "classical_guarantee": "uniform all-target per-attempt failure <= min(1, 2p exp(-2(u+1)^2/p)); full interval has zero failure; integer dyadic outward certificates",
+  "complexity": "O(p^2) O(log p)-bit integer arithmetic per attempt and O(p) streamed working storage; syndrome preparation additionally O(d^3) field operations; expected <=2 attempts at certified_radius(p)=O(sqrt(p log p))",
+  "quantum_advantage": "none claimed; attacks the support-search task rather than compiling the conditional quantum receiver",
+  "proof_obligations": [
+    "native character polynomial moment identity and sharp half-rate boundary",
+    "full real rank, Gram identity and determinant p^((p-1)/2)",
+    "exact coordinate reconstruction and correct signed unbiased rounding",
+    "fresh independent coins, integer residual threshold and column union bound",
+    "deterministic alternative: exact common-denominator potential factors, conditional branch identity, monotonicity, rational log enclosures, final residual potential replay",
+    "unchanged targets, all failed rounds retained, original modular and polynomial witness replay",
+    "independent research review and prior-art comparison before any novelty claim"
+  ],
+  "falsifiers": [
+    "a row outside the claimed native kernel or failure of the character Gram inverse",
+    "a biased signed-numerator rounding distribution or a raw residual with nonzero mean",
+    "an accepted witness failing native moments, interval membership or polynomial replay",
+    "an attempt to extrapolate the bound to d>(p-1)/2, arbitrary acceptance sets, prescribed sampling, or punctured exponentially large fields"
+  ],
+  "experiments": [
+    "independent exact Gram/determinant/inverse and next-moment controls",
+    "exhaustive small exact rounding distributions and all small syndromes",
+    "same-target replay of the 24 prior LLL interval records",
+    "half-rate p257/509/1021 with declared certified widths and public targets",
+    "impossible zero-width nonzero-syndrome control with all failed rounds retained",
+    "independent exhaustive small conditional expectations, permitted-branch greedy choices and naive-nearest linear-error spike falsifier"
+  ],
+  "novelty_or_quantum_speedup_claimed": false,
+  "weighted_sampler_or_general_OPI_dequantized": false,
+  "central_registry_promotion": false,
+  "producer": "theorems/interval_character_rounding.py",
+  "report": "research/classical_baselines/interval_character_rounding.json",
+  "literature_ids": [
+    "https://arxiv.org/abs/2411.12553",
+    "https://doi.org/10.1002/sapm1933121311",
+    "https://doi.org/10.1080/01621459.1963.10500830",
+    "https://arxiv.org/abs/2202.07736"
+  ]
+}

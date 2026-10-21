@@ -1,0 +1,11 @@
+{
+  "subsystem_id": "dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_bridge",
+  "subsystem_number": 151,
+  "hypothesis": "Petz and Sandwiched Quantum Renyi divergences are monotone increasing in alpha, converge to Umegaki relative entropy at alpha -> 1, and satisfy the strict Araki-Lieb-Thirring inequality D_alpha >= D_tilde_alpha when [rho, sigma] != 0.",
+  "required_checks": [
+    "renyi_divergence_strictly_monotone_increasing_in_alpha",
+    "continuity_to_umegaki_relative_entropy_at_alpha_1",
+    "araki_lieb_thirring_strict_gap_for_noncommuting_states",
+    "petz_equals_sandwiched_when_states_commute"
+  ]
+}

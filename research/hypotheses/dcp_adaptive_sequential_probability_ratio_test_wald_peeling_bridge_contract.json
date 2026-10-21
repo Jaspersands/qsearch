@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_adaptive_sequential_probability_ratio_test_wald_peeling_bridge",
+  "title": "Adaptive Wald Sequential Probability Ratio Test (SPRT) vs. Fixed-Batch Bit Peeling",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Stopping a coherent R_Z(-phi_known) bit-peeling stage when the running Pauli-X sum reaches +/- M achieves exact bit-error probability delta_SPRT(M, gamma) = 1 / (1 + ((1+gamma)/(1-gamma))^M) and expected quantum copies E[T_SPRT] = (M / gamma) * tanh(M * atanh(gamma)).",
+    "Across M in {2, 3, 4}, Wald SPRT reduces expected quantum sample complexity by >2.2x compared to the minimum fixed-size odd batch required for the same error rate."
+  ],
+  "favorable_controls": [
+    "M in {1, 2, 3, 4} at gamma = 0.75 and gamma = 0.60 verified against exact tridiagonal Markov chain absorption"
+  ]
+}
