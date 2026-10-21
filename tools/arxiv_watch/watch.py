@@ -12,7 +12,8 @@ notes, theorem modules) and given a triage label from wording cues:
 possible-kill, possible-scoop, related, already-cited or unrelated. Labels are for
 triage only; read the paper before acting on one. A reviewed verdict (research/audits/
 arxiv_verdicts.json, see verdicts.py) is judgement: it is attached to the stored paper and
-moves it from the flagged sections of the digest to the Reviewed table.
+listed in the digest's Reviewed table. A person's verdict also moves the paper out of the
+flagged sections; a judge's leaves it there, marked, until a person records one.
 
 Each track query is paged until results are older than the window start. When the page
 cap stops a query first, the uncovered window is recorded as a gap in the JSON and listed
@@ -35,7 +36,7 @@ if __package__ in (None, ""):
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
 from tools.arxiv_watch.verdicts import (  # noqa: E402
-    VERDICTS, VERDICTS_FILE, load_verdicts, mark_action_done, normalize_id, set_verdict,
+    VERDICTS, VERDICTS_FILE, by_judge, load_verdicts, mark_action_done, normalize_id, set_verdict,
 )
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
@@ -429,7 +430,8 @@ def _cell(text) -> str:
 
 def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = None) -> str:
     """The markdown digest. `verdicts` (arXiv id -> entry) drives the Reviewed table, and papers
-    with a verdict leave the possible-kill and possible-scoop sections."""
+    with a person's verdict leave the possible-kill and possible-scoop sections; a flagged paper
+    with only a judge's verdict stays there with "judge: VERDICT" in its cues."""
     verdicts = verdicts or {}
     papers = sorted(state["papers"].values(), key=lambda p: (p["published"], p["arxiv_id"]), reverse=True)
     counts = {label: sum(p["label"] == label for p in papers) for label in LABEL_ORDER}
@@ -446,8 +448,9 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
     ]
     if verdicts:
         lines += [
-            "The counts are machine labels. Flagged papers with a reviewed verdict are listed under Reviewed,",
-            "not in the possible-kill and possible-scoop sections.",
+            "The counts are machine labels. A flagged paper with a person's verdict is listed under Reviewed,",
+            "not in the possible-kill and possible-scoop sections. One with only a judge's verdict stays in",
+            "its section, marked with that verdict, until a person checks it and records one.",
             "",
         ]
     gaps = state.get("gaps") or []
@@ -465,7 +468,11 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
         ]
     titles = {"possible-kill": "Possible kills", "possible-scoop": "Possible scoops", "related": "Related"}
     for label, heading in titles.items():
-        section = [p for p in papers if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts)]
+        # A judge's verdict is one model's reading: it never moves a flag out of sight by itself.
+        section = [
+            p for p in papers
+            if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts and not by_judge(verdicts[p["arxiv_id"]]))
+        ]
         section = section[:per_section]
         lines += [f"## {heading}", ""]
         if not section:
@@ -477,6 +484,8 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
             near = f"`{nearest['doc_id']}` ({nearest['location']})" if nearest else ""
             title = p["title"].replace("|", "/")
             cues = ", ".join(p.get("cues", [])[:3]).replace("|", "/")
+            if label in FLAGGED and p["arxiv_id"] in verdicts:
+                cues = f"**judge: {_cell(verdicts[p['arxiv_id']].get('verdict'))}**; {cues}"
             lines.append(
                 f"| {p['published']} | [{p['arxiv_id']}]({p['url']}) {title} | {', '.join(p['tracks'])} | {cues} | {near} |"
             )

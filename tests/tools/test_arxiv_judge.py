@@ -98,6 +98,28 @@ def test_import_rejects_unknown_verdict_and_non_verbatim_quote(watched: tuple[Pa
     assert "| 2610.11111 |" in digest and "judge:test" in digest
 
 
+def _flagged_rows(root: Path, heading: str = "Possible kills") -> list[str]:
+    digest = (root / "research" / "audits" / "ARXIV_WATCH.md").read_text(encoding="utf-8")
+    section = digest.split(f"## {heading}\n")[1].split("\n## ")[0]
+    return [line for line in section.splitlines() if line.startswith("| 2")]
+
+
+def test_a_judge_verdict_leaves_the_flag_listed_until_a_person_decides(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
+    from tools.arxiv_watch import watch
+
+    root, corpus = watched
+    dismissal = _row("2610.11111", "A classical algorithm for quantum product readout", verdict="false-alarm")
+    assert import_judgements(root, [_jsonl(tmp_path / "a.jsonl", [dismissal])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    [row] = [line for line in _flagged_rows(root) if "2610.11111" in line]
+    assert "judge: false-alarm" in row
+    digest = (root / "research" / "audits" / "ARXIV_WATCH.md").read_text(encoding="utf-8")
+    assert "| 2610.11111 |" in digest.split("## Reviewed")[1]  # and the Reviewed table shows who decided
+    assert not any("2610.33333" in line for line in _flagged_rows(root))  # a person's verdict moves the flag out
+
+    assert watch.main(["--root", str(root), "--verdict", "2610.11111", "false-alarm", "--reason", "checked it"]) == 0
+    assert not any("2610.11111" in line for line in _flagged_rows(root))
+
+
 def test_judge_never_overwrites_a_human_verdict(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
     root, corpus = watched
     kill = _row("2610.33333", "An efficient classical algorithm for quantum coset states", verdict="kill")

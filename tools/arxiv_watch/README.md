@@ -26,8 +26,9 @@ the v1 submission date, and a paper can be listed several days after it is submi
 recognised by id and never re-reported or re-scored, with two exceptions:
 
 - A paper with a reviewed verdict (see [Verdicts](#verdicts)) gets the verdict copied onto
-  its record and leaves the possible-kill and possible-scoop sections of the digest for the
-  Reviewed table. Its machine label is unchanged.
+  its record and is listed in the digest's Reviewed table. A person's verdict moves it out of
+  the possible-kill and possible-scoop sections; a judge's leaves it there, marked
+  `judge: VERDICT`, until a person records one. Its machine label is unchanged.
 - A stored possible kill or scoop with no verdict is relabelled `already-cited` once a note,
   record or literature file cites its id. The record keeps `relabelled_from` (the old label)
   and `relabelled_on`, and the run reports the count. `--relabel` drops both fields when it
@@ -164,8 +165,10 @@ Accepted rows go into `research/audits/arxiv_verdicts.json` with `by: "judge:NAM
 quote, `quote_from` and `confidence` (clamped to 0..1; null when it is not a finite number,
 or is `true` or `false`). A later import may replace a judge's verdict, never a
 human's. The stored records and the digest are then rewritten, and the Reviewed table shows
-who decided. A judge verdict is one model's reading: check a `kill` or `scoop` by hand before
-acting on it, and record the outcome with `watch.py --verdict`.
+who decided. A judge verdict is one model's reading, so it never takes a flag out of the
+possible-kill and possible-scoop sections: the paper stays there, marked `judge: VERDICT`,
+until a person checks it (a `false-alarm` or `related-only` as much as a `kill` or `scoop`)
+and records the outcome with `watch.py --verdict`.
 
 ## Scheduling
 
