@@ -36,6 +36,7 @@ IMPORTS_FILE = "qsearch_cli/imports.py"
 REGISTRY = "qsearch_cli/registry.py"
 MANIFEST = "research/audits/cli_manifest.json"
 IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE, "qsearch_cli/commands/*.py")
+PACKAGES = ("theorems", "core")  # on the CLI's sys.path in this order
 MODULE_PREFIXES = ("theorems.", "core.")
 
 
@@ -82,13 +83,14 @@ def _literal(root: Path, rel: str, name: str):
 
 
 def _module_path(root: Path, module: str) -> str | None:
-    """The theorems/ or core/ file a table entry loads; None for the standard library and other dotted names.
+    """The theorems/ or core/ file a table entry loads; None for the standard library, other dotted
+    names and the packages themselves.
 
     A bare name resolves as the CLI's sys.path does: theorems/ first, then core/.
     """
     if module.startswith(MODULE_PREFIXES):
         return module.replace(".", "/") + ".py"
-    if "." in module or module in sys.stdlib_module_names:
+    if "." in module or module in sys.stdlib_module_names or module in PACKAGES:
         return None
     return f"theorems/{module}.py" if (root / "theorems" / f"{module}.py").is_file() else f"core/{module}.py"
 
@@ -101,7 +103,7 @@ def _import_paths(root: Path, node: ast.AST) -> list[str]:
     CLI puts them on sys.path; a bare name with neither file is a third-party package.
     """
     if isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
-        if node.module in ("theorems", "core"):
+        if node.module in PACKAGES:
             return [f"{node.module}/{alias.name}.py" for alias in node.names if alias.name != "*"]
         names = [node.module]
     elif isinstance(node, ast.Import):
@@ -114,9 +116,9 @@ def _import_paths(root: Path, node: ast.AST) -> list[str]:
             paths.append(name.replace(".", "/") + ".py")
             continue
         top = name.split(".")[0]
-        if top in sys.stdlib_module_names or top in ("theorems", "core"):
+        if top in sys.stdlib_module_names or top in PACKAGES:
             continue
-        for directory in ("theorems", "core"):
+        for directory in PACKAGES:
             if (root / directory / f"{top}.py").is_file():
                 paths.append(f"{directory}/{top}.py")
                 break
@@ -138,8 +140,11 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
             for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"), filename=rel)):
                 for module_path in _import_paths(root, node):
                     add(module_path, rel)
-    for module, _attribute in (_literal(root, IMPORTS_FILE, "IMPORTS") or {}).values():
-        add(_module_path(root, module), IMPORTS_FILE)
+    for module, attribute in (_literal(root, IMPORTS_FILE, "IMPORTS") or {}).values():
+        if module in PACKAGES and attribute:  # ("theorems", "x"): `from theorems import x`, as sweep writes it
+            add(f"{module}/{attribute}.py", IMPORTS_FILE)
+        else:
+            add(_module_path(root, module), IMPORTS_FILE)
     for _flag, module, _function in _literal(root, REGISTRY, "DISPATCH") or []:
         add(_module_path(root, module), REGISTRY)
     return refs

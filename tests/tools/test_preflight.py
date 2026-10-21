@@ -184,6 +184,29 @@ def test_bare_and_package_style_imports_are_followed(tmp_path: Path) -> None:
     }
 
 
+def test_package_style_imports_table_entries_name_the_submodule(tmp_path: Path) -> None:
+    # `migrate.py sweep` turns `from theorems import x` in qsearch.py into ("theorems", "x"),
+    # which qsearch_cli/resolve.py loads as the submodule theorems/x.py.
+    imports = {
+        "tracked_pkg": ("theorems", "tracked_pkg"),
+        "new_pkg": ("theorems", "new_pkg"),
+        "core_pkg": ("core", "core_pkg"),
+        "theorems": ("theorems", None),
+    }
+    repo = _repo(tmp_path, imports=imports, committed={"theorems/tracked_pkg.py": "x = 1\n"})
+    _write(repo / "theorems" / "new_pkg.py", "y = 2\n")
+
+    assert pf.referenced_modules(repo) == {
+        "theorems/tracked_pkg.py": {"qsearch_cli/imports.py"},
+        "theorems/new_pkg.py": {"qsearch_cli/imports.py"},
+        "core/core_pkg.py": {"qsearch_cli/imports.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("theorems/new_pkg.py", "not tracked by git"),
+        ("core/core_pkg.py", "missing on disk"),
+    }
+
+
 def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None:
     imports = {
         "os": ("os", None),

@@ -50,9 +50,11 @@ The `imports` check collects references from three places:
   one an old-style addition to `qsearch.py` uses), counts when `theorems/x.py` exists, else
   when `core/x.py` exists. Standard library names are skipped.
 - The `IMPORTS` table in `qsearch_cli/imports.py`, read with `ast.literal_eval`. A dotted
-  `theorems.x` maps to `theorems/x.py`. A bare name maps to `theorems/<name>.py` when that
-  file exists, else `core/<name>.py`, the order the CLI puts them on `sys.path`. Standard
-  library names (`os`, `json`, ...) are skipped.
+  `theorems.x` maps to `theorems/x.py`. A package-style entry, `("theorems", "x")` or
+  `("core", "x")`, which is what `tools/split_cli/migrate.py sweep` writes for `from theorems
+  import x`, maps to `theorems/x.py` or `core/x.py`. A bare name maps to `theorems/<name>.py`
+  when that file exists, else `core/<name>.py`, the order the CLI puts them on `sys.path`.
+  Standard library names (`os`, `json`, ...) are skipped.
 - The module column of `DISPATCH` in `qsearch_cli/registry.py`.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
