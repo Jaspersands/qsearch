@@ -3,6 +3,7 @@
     python tools/corpus/mcp_server.py [--root PATH] [--dense auto|on|off]
 
 Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id),
+classical_baselines(idea, k), check_duplicate_negative(claim, threshold),
 screen_dqi_candidate(params) (the DQI soundness screen of tools/dqi_screen; no index needed).
 The index refreshes incrementally before a query when it is older than --refresh-seconds.
 --dense auto uses embeddings only while every document has one (after `build --dense`);
@@ -24,7 +25,9 @@ if __package__ in (None, ""):
 from mcp.server.fastmcp import FastMCP  # noqa: E402
 
 from tools.corpus.api import Corpus  # noqa: E402
-from tools.corpus.cli import _hit_json, _issues_json  # noqa: E402
+from tools.corpus.baselines import recommend  # noqa: E402
+from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
+from tools.corpus.duplicates import check_claim  # noqa: E402
 from tools.corpus.ranking import Embedder  # noqa: E402
 from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 
@@ -86,6 +89,34 @@ def create_server(
             return asdict(screen(candidate_from_dict(params)))
         except (TypeError, ValueError) as exc:
             return {"error": str(exc)}
+
+    @server.tool()
+    def classical_baselines(idea: str, k: int = 5) -> dict:
+        """Before claiming a quantum advantage for an idea, list the classical algorithms it must
+        beat: entries of the curated catalog ranked by keyword overlap with the idea plus the
+        nearby notes and negatives that already name them, each with a summary, references and,
+        when one exists, a command to run it. A recommendation is a competitor to run, not a
+        verdict; an empty list does not mean no classical baseline applies."""
+        ready()
+        recs = recommend(corpus, idea, k=k)
+        return {"idea": idea, "recommendations": [_recommendation_json(r) for r in recs], **_issues_json(corpus)}
+
+    @server.tool()
+    def check_duplicate_negative(claim: str, threshold: float = 0.6) -> dict:
+        """Before filing a new negative result, check whether a retained negative already says
+        it. Returns the retained (and quarantined) negatives whose TF-IDF cosine with the claim
+        is at least threshold, highest first; duplicate is true when there is any. Pass the
+        claim and its reason. A match is a record to read and extend, not proof of identity;
+        if index_incomplete is true, no match does not mean the claim is new."""
+        ready()
+        matches = check_claim(corpus, claim, threshold=threshold)
+        return {
+            "claim": claim,
+            "threshold": threshold,
+            "matches": [_hit_json(h) for h in matches],
+            "duplicate": bool(matches),
+            **_issues_json(corpus),
+        }
 
     return server
 

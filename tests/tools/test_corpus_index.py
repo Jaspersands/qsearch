@@ -121,6 +121,8 @@ def test_matrix_gives_cosine_similarities_for_one_kind(corpus: Corpus) -> None:
     dense = sims.toarray()
     assert dense.shape == (3, 3)
     assert np.allclose(np.diag(dense), 1.0, atol=1e-5)
+    assert np.allclose(dense, dense.T, atol=1e-6)
+    assert len(ids) == sum(doc_id.startswith(("negative:", "quarantined:")) for doc_id in corpus.doc_ids())
 
 
 def test_been_tried_groups_hits(corpus: Corpus) -> None:

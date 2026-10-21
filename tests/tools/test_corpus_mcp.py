@@ -19,13 +19,20 @@ def _call(server, name: str, arguments: dict) -> dict:
     return json.loads(result[0].text)
 
 
-def test_server_lists_the_three_tools(fake_repo: Path) -> None:
+def test_server_lists_its_tools(fake_repo: Path) -> None:
     server = create_server(fake_repo, dense="off")
 
     async def names():
         return sorted(tool.name for tool in await server.list_tools())
 
-    assert anyio.run(names) == ["been_tried", "get_doc", "screen_dqi_candidate", "search_corpus"]
+    assert anyio.run(names) == [
+        "been_tried",
+        "check_duplicate_negative",
+        "classical_baselines",
+        "get_doc",
+        "screen_dqi_candidate",
+        "search_corpus",
+    ]
 
 
 def test_been_tried_tool_returns_grouped_hits(fake_repo: Path) -> None:

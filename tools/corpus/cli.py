@@ -3,6 +3,9 @@
     python tools/corpus/cli.py been-tried "use a quadratic extension norm to solve mixed-coset OPI"
     python tools/corpus/cli.py search "Helstrom product readout" --kinds negative,note
     python tools/corpus/cli.py similar negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY
+    python tools/corpus/cli.py near-duplicates --out research/audits/registry_duplicates.json --per-family 3
+    python tools/corpus/cli.py check-new --text "a draft negative claim"      # exit 2 on a likely duplicate
+    python tools/corpus/cli.py baselines "sampling the Gibbs law of a signed parity-check code"
     python tools/corpus/cli.py build [--full] [--dense]
 
 Every query first refreshes the index incrementally (well under a second when nothing changed).
@@ -13,8 +16,10 @@ file, `been-tried` says INDEX INCOMPLETE and exits 2, because missing negatives 
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import sys
+import textwrap
 from dataclasses import asdict
 from pathlib import Path
 
@@ -22,6 +27,8 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
+from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
+from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, draft_claim, own_ids, pair_report  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -42,8 +49,22 @@ def _hit_json(hit: Hit) -> dict:
     }
 
 
+def _recommendation_json(rec: Recommendation) -> dict:
+    return {
+        "baseline": rec.baseline,
+        "score": rec.score,
+        "matched": rec.matched,
+        "evidence": [_hit_json(h) for h in rec.evidence],
+    }
+
+
+def _record_label(doc_id: str) -> str:
+    prefix, _, rest = doc_id.partition(":")
+    return f"{rest} (quarantined)" if prefix == "quarantined" else rest or doc_id
+
+
 def _print_hit(index: int, hit: Hit) -> None:
-    label = hit.doc_id.split(":", 1)[1] if hit.kind in {"negative", "dequant"} else hit.title
+    label = _record_label(hit.doc_id) if hit.kind in {"negative", "dequant"} else hit.title
     tags = ", ".join(str(t) for t in hit.meta.get("tags", [])[:4])
     extra = " · ".join(part for part in (_status(hit), tags) if part)
     print(f"  {index}. {hit.kind:<10} {label[:110]}" + (f"  [{extra}]" if extra else ""))
@@ -173,6 +194,170 @@ def cmd_eval(args: argparse.Namespace) -> int:
     return 0 if found >= args.min else 1
 
 
+def _cell(text: str, width: int = 160) -> str:
+    text = " ".join(str(text).split()).replace("|", "\\|")
+    return text if len(text) <= width else text[: width - 1].rstrip() + "…"
+
+
+def _pair_count(shown: int, total: int) -> str:
+    """'7 pairs', or '5 of 136 pairs' when --limit cut the list."""
+    return f"{shown} of {total} pairs" if total > shown else f"{shown} pairs"
+
+
+def _duplicates_markdown(payload: dict) -> str:
+    pairs, kind, total, per_family = payload["pairs"], payload["kind"], payload["total"], payload["per_family"]
+    cap = f", at most {per_family} pairs per sweep family" if per_family is not None else ""
+    described = f"`{kind}` documents" + (" (retained and quarantined negatives)" if kind == "negative" else "")
+    count = (
+        f"the first {len(pairs)} of {total} pairs (`--limit {payload['limit']}`)." if total > len(pairs)
+        else f"{len(pairs)} pairs."
+    )
+    lines = [
+        "# Near-duplicate negatives" if kind == "negative" else f"# Near-duplicate `{kind}` documents",
+        "",
+        f"Generated on {payload['generated_on']} by `python tools/corpus/cli.py near-duplicates`: "
+        f"{described} whose TF-IDF cosine is at least {payload['threshold']}{cap}, highest first: {count}",
+        "",
+        "A cosine of 1.000 means the same words in the same proportions. A name that occurs in a single "
+        "record is not in the vocabulary, so two records generated from one template for different "
+        "instances (a size, trial, code family or proposal) can score 1.000. Most pairs are such sweep "
+        "siblings, not restatements; the per-family cap only groups ids that differ in their last "
+        "`-<number>`. A pair is a lead to read, not a verdict; see the hand check in "
+        "`tools/corpus/README.md`, \"Duplicates\".",
+        "",
+        "| cosine | a | b | claim a | claim b |",
+        "|---|---|---|---|---|",
+    ]
+    for pair in pairs:
+        lines.append(
+            f"| {pair['score']:.3f} | {_record_label(pair['a'])} | {_record_label(pair['b'])} | "
+            f"{_cell(pair['title_a'])} | {_cell(pair['title_b'])} |"
+        )
+    return "\n".join(lines) + "\n"
+
+
+def cmd_near_duplicates(args: argparse.Namespace) -> int:
+    corpus = _corpus(args)
+    report = pair_report(
+        corpus, kind=args.kind, threshold=args.threshold, limit=args.limit, per_family=args.per_family
+    )
+    if report.documents == 0:
+        print(f"error: the index has no `{args.kind}` documents; check --kind.", file=sys.stderr)
+        return 1
+    pairs = report.pairs
+    payload = {
+        "kind": args.kind,
+        "threshold": args.threshold,
+        "per_family": args.per_family,
+        "limit": args.limit,
+        "total": report.total,
+        "pairs": [asdict(pair) for pair in pairs],
+        "generated_on": dt.date.today().isoformat(),
+    }
+    count = _pair_count(len(pairs), report.total)
+    if args.out:
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        markdown = out.with_name(out.stem.upper() + ".md")
+        markdown.write_text(_duplicates_markdown(payload), encoding="utf-8")
+    if args.json:
+        print(json.dumps(payload, indent=2))
+    elif args.out:
+        print(f"{count} at cosine >= {args.threshold}; wrote {out} and {markdown}")
+    else:
+        for index, pair in enumerate(pairs, start=1):
+            print(f"  {index}. {pair.score:.3f}  {_record_label(pair.a)}  ~  {_record_label(pair.b)}")
+            print(f"     {pair.title_a[:160]}")
+            print(f"     {pair.title_b[:160]}")
+        cut = " (raise --limit to see the rest)" if report.total > len(pairs) else ""
+        print(f"\n{count} at TF-IDF cosine >= {args.threshold}{cut}. A pair is a lead to read, not a verdict.")
+    return 0
+
+
+def cmd_check_new(args: argparse.Namespace) -> int:
+    # Read the draft before touching the index, so an unreadable file fails fast with exit 1, never 0.
+    if args.text is not None:
+        text, record_id = args.text, None
+    else:
+        try:
+            raw = Path(args.file).read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            print(f"error: cannot read {args.file}: {exc}", file=sys.stderr)
+            return 1
+        text, record_id = draft_claim(raw)
+    corpus = _corpus(args)
+    matches = check_claim(corpus, text, threshold=args.threshold, exclude=own_ids(record_id))
+    if args.json:
+        payload = {"matches": [_hit_json(h) for h in matches], "duplicate": bool(matches), **_issues_json(corpus)}
+        print(json.dumps(payload, indent=2))
+        return 2 if matches else 0
+    if not matches:
+        print(f"No negative record (retained or quarantined) has TF-IDF cosine >= {args.threshold} with this claim.")
+        if corpus.incomplete():
+            print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
+        return 0
+    quarantined = sum(hit.doc_id.startswith("quarantined:") for hit in matches)
+    of_them = f", {quarantined} of them quarantined," if quarantined else ""
+    print(f"POSSIBLE DUPLICATE: {len(matches)} negative record(s){of_them} at TF-IDF cosine >= {args.threshold}.\n")
+    for index, hit in enumerate(matches, start=1):
+        _print_hit(index, hit)
+        print(f"     Cosine: {hit.score:.3f}")
+    print("\nRead the record first: extend it, or say how the new claim differs.")
+    return 2
+
+
+def _reference_label(ref: dict) -> str:
+    return f"arXiv:{ref['arxiv']}" if "arxiv" in ref else f"research/{ref['note']}.md"
+
+
+def cmd_baselines(args: argparse.Namespace) -> int:
+    corpus = _corpus(args)
+    recs = recommend(corpus, args.idea, k=args.k)
+    if args.json:
+        payload = {"idea": args.idea, "recommendations": [_recommendation_json(r) for r in recs], **_issues_json(corpus)}
+        print(json.dumps(payload, indent=2))
+        return 0
+    if not recs:
+        print("No catalog baseline matches this idea by keyword or is named by a nearby note or negative.")
+        print("That does not mean no classical baseline applies; the catalog is tools/corpus/baselines.json.")
+        return 0
+    print(f"Classical baselines for: {args.idea[:120]}\n")
+    for index, rec in enumerate(recs, start=1):
+        baseline = rec.baseline
+        matched = f"matched {', '.join(rec.matched)}" if rec.matched else "no keyword matched"
+        cited = (
+            f"cited by {', '.join(hit.location for hit in rec.evidence)}" if rec.evidence else "no nearby note names it"
+        )
+        print(f"  {index}. {baseline['name']}  [{baseline['id']}]  score {rec.score}")
+        print(f"     why: {matched}; {cited}")
+        print(textwrap.fill(baseline["summary"], width=100, initial_indent=" " * 5, subsequent_indent=" " * 5))
+        if baseline["references"]:
+            print(f"     references: {', '.join(_reference_label(ref) for ref in baseline['references'])}")
+        runnable = baseline.get("runnable")
+        if runnable:
+            entry = f"  (entry {runnable['entry']})" if runnable.get("entry") else ""
+            print(f"     run: {runnable['command']}{entry}")
+        print()
+    print(
+        textwrap.fill(
+            "Score: the share of a baseline's keywords found in the idea, plus 0.1 for each note or "
+            "negative among the ten nearest documents that names it (a note once, however many of its "
+            "sections are near). Run the baseline before claiming an advantage; a high score is a lead, "
+            "not a verdict.",
+            width=100,
+        )
+    )
+    return 0
+
+
+def _count(value: str) -> int:
+    number = int(value)
+    if number < 0:
+        raise argparse.ArgumentTypeError("-k must be at least 0")
+    return number
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", help="Q-Search checkout to index (default: QSEARCH_ROOT or this repo).")
@@ -216,6 +401,38 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--min", type=int, default=0, help="Exit 1 when fewer cases are retrieved.")
     common(evaluate, 5)
     evaluate.set_defaults(func=cmd_eval)
+
+    dups = sub.add_parser("near-duplicates", help="Pairs of negatives with a high TF-IDF cosine.")
+    dups.add_argument("--kind", default="negative", help="Document kind to compare (default: negative).")
+    dups.add_argument("--threshold", type=float, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
+    dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first; the total is still reported.")
+    dups.add_argument("--per-family", type=int, help="At most this many pairs of ids differing only in a trailing number.")
+    dups.add_argument("--out", help="Write FILE.json and FILE.md (stem upper-cased) next to it.")
+    dups.add_argument("--json", action="store_true")
+    dups.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
+    dups.set_defaults(func=cmd_near_duplicates)
+
+    check = sub.add_parser(
+        "check-new", help="Exit 2 when a draft claim is close to a negative record, 1 when --file cannot be read."
+    )
+    source = check.add_mutually_exclusive_group(required=True)
+    source.add_argument("--text", help="The draft claim.")
+    source.add_argument(
+        "--file",
+        help="A text file, or a JSON record whose claim and reason_invalid are checked; "
+        "the record is never matched with its own id.",
+    )
+    check.add_argument("--threshold", type=float, default=0.6, help="Minimum TF-IDF cosine for a match.")
+    check.add_argument("--json", action="store_true")
+    check.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
+    check.set_defaults(func=cmd_check_new)
+
+    baselines = sub.add_parser("baselines", help="Classical baselines an idea should be compared against.")
+    baselines.add_argument("idea")
+    baselines.add_argument("-k", type=_count, default=5, help="Baselines to show.")
+    baselines.add_argument("--json", action="store_true")
+    baselines.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
+    baselines.set_defaults(func=cmd_baselines)
     return parser
 
 

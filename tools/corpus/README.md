@@ -26,6 +26,9 @@ verdict on the idea.
 | `get DOC_ID` | Full text and metadata as JSON. |
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
+| `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the file cannot be read. |
+| `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
 Every command except `build` first refreshes the index incrementally: it stats about
 2,100 source files and re-parses only those whose size, mtime and content hash changed.
@@ -42,8 +45,10 @@ before" group then means the registry could not be read, not that the idea is ne
 ## For the research agents (MCP)
 
 `tools/corpus/mcp_server.py` is a stdio MCP server exposing `been_tried`,
-`search_corpus`, `get_doc` and `screen_dqi_candidate` (the DQI soundness screen, see
-`tools/dqi_screen/README.md`). It keeps the index warm and refreshes it at most every 30
+`search_corpus`, `get_doc`, `screen_dqi_candidate` (the DQI soundness screen, see
+`tools/dqi_screen/README.md`), `classical_baselines` (the `baselines` command, below) and
+`check_duplicate_negative` (the `check-new` check, below).
+It keeps the index warm and refreshes it at most every 30
 seconds. With the default `--dense auto` it adds the embedding ranker only while every
 document has a vector (after `build --dense`); documents added since then switch it back
 to lexical ranking until the next `build --dense`, because a ranker that cannot see the
@@ -131,3 +136,196 @@ so CPU time is the number to compare; wall time was two to three times larger.
 
 The held-out cases (`tests/tools/fixtures/corpus_heldout.json`) are 20 negatives added
 after 2026-10-04, paraphrased blind by a separate agent that saw only the claims.
+
+## Duplicates
+
+Two checks for negatives that say what an existing record already says
+(`duplicates.py`). Both score by TF-IDF cosine (`Corpus.cosine`, the index's own word
+unigram and bigram vectors), not by the rank-fusion score a search hit carries, so a score
+is a similarity in [0, 1] whatever else is in the index.
+
+```bash
+python tools/corpus/cli.py near-duplicates --out research/audits/registry_duplicates.json --per-family 3
+python tools/corpus/cli.py check-new --file draft_record.json      # exit 2: possible duplicate
+python tools/corpus/cli.py check-new --text "claim. reason it fails."
+```
+
+- `near-duplicates` lists pairs of `negative`-kind documents at or above `--threshold`
+  (default 0.9), highest first, at most `--limit` (200). `--per-family N` keeps at most N
+  pairs whose two ids differ only in their last `-<number>` (`...-N48-0-1` and
+  `...-N48-0-2`). The output always gives the count before the limit ("200 of 539 pairs"),
+  and the JSON carries it as `total` next to `per_family` and `limit`. `--kind` picks
+  another document kind; a kind with no documents is an error (exit 1). `--out FILE.json`
+  also writes `FILE.md` with the stem upper-cased; the committed report is
+  `research/audits/registry_duplicates.json` and `REGISTRY_DUPLICATES.md` (0.9,
+  `--per-family 3`: 167 pairs on 2026-10-21, all of them).
+- `check-new` checks one draft claim against the negative records, retained and
+  quarantined, at cosine 0.6. It exits 2 on any match, 0 when there is none, and 1 when
+  the `--file` cannot be read (checked before the index is touched). argparse usage errors
+  also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
+  file or a registry record as JSON; a record contributes its `claim` and `reason_invalid`,
+  and is never matched with its own `id` (`negative:ID` or `quarantined:ID`). The answer is
+  therefore the same before and after the record is filed, and a hook can run on the draft
+  or on the registry edit that files it; a draft that reuses another record's id is not
+  compared with that record. A quarantined match is labelled `(quarantined)`. An
+  unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
+  but does not change the exit code; a hook that must fail closed should check that field.
+  The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches
+  for a claim's text, with no id left out.
+- The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
+  ones (`quarantined:` ids, 12). Both are compared and both can match; no quarantined record
+  is in a pair at 0.7 or above today.
+
+### Calibration (2026-10-21, this tree: 987 negative-kind documents)
+
+| cosine at least | pairs | pairs grouped by `--per-family` (families) | pairs whose ids are equal up to digits |
+|---|---|---|---|
+| 0.7 | 1,286 | 90 (10) | 403 |
+| 0.8 | 601 | 90 (10) | 324 |
+| 0.9 | 207 | 59 (8) | 145 |
+| 0.95 | 67 | 15 (4) | 42 |
+
+57 pairs score 1.000. The report default is 0.9: 207 pairs can be read, the 0.8 list is
+three times longer, and in the hand check below the pairs under 0.9 are also mostly sweep
+siblings. One restatement in the check sits at 0.80, and the default `--limit 200` does not
+reach it: with `--threshold 0.8 --per-family 3` the list is "200 of 539 pairs" and that
+pair is number 519. When cleaning a specific family, run
+`near-duplicates --threshold 0.8 --per-family 3 --limit 1000` and search the output for its
+ids.
+
+Hand check of ten pairs across the bands (classes: sweep sibling, one template filled in
+for another instance; true restatement, the same claim about the same object filed twice;
+distinct, different results that share words):
+
+| cosine | pair | class | why |
+|---|---|---|---|
+| 1.000 | `NEG-CODE-GOPPA-SCALING-GOPPA-SCALE-M6-T3-N48-0-1` / `...-0-2` | sweep sibling | Same generated text for two code pairs of one Goppa instance; `--per-family` groups them. |
+| 1.000 | `NEG-CODE-GOPPA-SCALING-GOPPA-SCALE-M6-T3-N48-0-1` / `...-3-4` | sweep sibling | Same template; the ids differ in two numbers, so `--per-family` does not group them. |
+| 1.000 | `LEGACY-BITWISEMAJORITYSECRETFINDING` / `LEGACY-BITWISEXORANDANDSECRETFINDING` | sweep sibling | Two different toy oracles rejected by one template sentence; each name occurs once, so TF-IDF drops it. |
+| 0.978 | `QC-AUTOMORPHISM-EQUIVALENT-QC_INDEX4_TWO_CIRCULANTS_TRIAL_11_PRIOR_0` / `QC-AUTOMORPHISM-REJECTED-...` (same trial) | true restatement | The same trial filed under two id prefixes; every field but the id is identical. |
+| 0.933 | `QUERY-LOWER-BOUND-GAP-CUBIC_CHIRP` / `...-NOISY_CUBIC_CHIRP` | sweep sibling | One query-lower-bound template run on two hidden-shift families. |
+| 0.863 | `COSET-DISTINGUISHABILITY-DEBT-S10-FIXED_POINT_FREE_INVOLUTION` / `...-S16-...` | sweep sibling | One copy-debt template at n = 10 and n = 16; only the evidence numbers differ. |
+| 0.816 | `NEG-QUARANTINE-MUT-CAND-DHS-GOWERS-SIEVE-QUERY-MODEL-HARDENED` / `NEG-QUARANTINE-MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-QUERY-MODEL-HARDENED` | sweep sibling | One interface-audit template for two different mutation candidates. |
+| 0.803 | `CLOSURE-REJECT-CLOSURE_BCH_CODE_SEARCH_BCH_M5_D3_11_S3_D4__BCH_M5_D3_11_S11_D5` / `SCHUR-REJECT-SCHUR_BCH_...` (same pair) | true restatement | The same BCH pair is declared not a hard row twice, by the closure and by the Schur invariant; one record with two reasons would do. |
+| 0.773 | `NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND` / `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` | distinct | Parallel hand-written results for orthogonal and unitary groups, each with its own classical algorithm and density bound. |
+| 0.724 | `CODE-FRONTIER-TRIAGE-CYCLIC_FAMILY_CYCLIC_N15` / `CODE-FRONTIER-TRIAGE-GOPPA_FAMILY_GOPPA_M4_T2` | sweep sibling | One triage template over two code families. |
+
+Seven sweep siblings, two true restatements, one distinct pair.
+
+**Sweep-sibling caveat.** Most of the registry's close pairs are generated records, one
+per instance, whose only difference is the instance name. A name that occurs in a single
+record is not in the TF-IDF vocabulary (`min_df` 2), so such pairs score up to 1.000.
+`--per-family` groups only ids that differ in their last `-<number>`: 59 of the 207 pairs
+at 0.9, while 145 of them have ids that are equal once digits are ignored and others differ
+by a word (`CUBIC_CHIRP` and `NOISY_CUBIC_CHIRP`). A family key that ignores every digit
+was measured and not adopted: at 0.8 with a cap of 3 it shortens the list from 539 to 403
+pairs, but the 0.80 restatement only moves from number 519 to 385, still past the first 200.
+Read a pair before merging records; a sweep sibling is a separate result and should stay.
+
+**`check-new` threshold.** Each of the 975 retained negatives was checked against itself.
+Its claim plus reason scores at least 0.6 with its own record every time (minimum 0.660,
+median 0.840); its claim alone does so for 92 % (97 % when the reason is at most 300
+characters, 51 % above 300, 16 % above 600, the long hand-written records). End to end
+through `check_claim` on 163 sampled records: own record found from claim plus reason
+163/163, from the claim alone 152/163. Three unrelated claims scored 0.06, 0.12 and 0.16
+against their nearest negative. So 0.6 stays, and the input should be the claim and its reason, as `--file` does with a
+record.
+
+Smoke runs on this checkout (2026-10-21):
+
+| input | exit | top match (cosine) |
+|---|---|---|
+| `--text` claim of `COSET-DISTINGUISHABILITY-DEBT-S10-FIXED_POINT_FREE_INVOLUTION` | 2 | that record (0.701) |
+| `--file` that record under a new id | 2 | that record (0.850), then its S8 sibling (0.785) |
+| `--file` that record as filed | 2 | its S8 sibling (0.785); its own id is left out |
+| `--text` claim of `NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER` | 0 | none: a long reason, claim alone below 0.6 |
+| `--text` claim and reason of that record | 2 | that record (0.775) |
+| `--file` that record as filed | 0 | none: no other record is that close |
+| `--file` `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` as filed | 2 | the orthogonal one (0.664) |
+| `--text "Grover search gives a quadratic speedup for unstructured search."` | 0 | none |
+| `--text` claim and reason of quarantined `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` | 2 | that record, labelled `(quarantined)` (0.924) |
+| `--file /nonexistent/draft.json` | 1 | none: `error: cannot read ...` on stderr |
+
+## Baselines
+
+Which classical algorithm should a quantum idea be compared against first? `baselines.py`
+ranks a curated catalog, `tools/corpus/baselines.json` (15 entries), against a short
+description of the idea.
+
+```bash
+python tools/corpus/cli.py baselines "sampling the Gibbs law of a signed parity-check code"
+python tools/corpus/cli.py baselines "DQI for max-k-cut on a ternary cycle code" -k 3 --json
+```
+
+Each result shows the baseline's name and id, its score, why it was chosen (the keywords
+matched and the notes or negatives that name it, with `file:line`), its summary, its
+references and, when the repository can run it, a `run:` command. `--json` prints
+`{"idea", "recommendations": [{"baseline", "score", "matched", "evidence"}], "index_incomplete", "index_issues"}`
+with each evidence hit in the `search --json` shape. The MCP tool
+`classical_baselines(idea, k=5)` returns the same object.
+
+**Score.** `tokens(t)` lower-cases `t`, keeps the runs of `[a-z0-9]`, turns a final `sses`
+into `ss` and drops a final single `s` from words longer than three letters ("Gibbs" becomes
+`gibb` on both sides; "glasses" and "glass" both become `glass`). A mechanism
+keyword matches when every one of its tokens is among the idea's tokens, in any order. The ten
+note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
+baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
+and on word boundaries. Notes are indexed by section, so a note counts once however many of
+its sections are among the ten, and its nearest citing section is the evidence shown. Each
+negative counts on its own, although all of them live in one registry file.
+
+    score = matched keywords / keywords + citing notes and negatives / 10        (rounded to 4 places)
+
+Baselines scoring 0 are left out; the rest are sorted by score, then name, and the first `k`
+(default 5) are shown. The CLI rejects a negative `-k`, and the Python and MCP calls return
+nothing for one. A score can exceed 1. A citing note may name a baseline only to set it
+aside, and keywords are matched without regard to how the idea uses them, so the score orders
+leads to read and run. It is not evidence that the baseline beats the idea, and an empty list
+does not mean that no classical baseline applies.
+
+Smoke run on this checkout (2026-10-21), `baselines "sampling the Gibbs law of a signed
+parity-check code"`:
+
+| rank | baseline | score | why |
+|---|---|---|---|
+| 1 | `polar-sc-source-shaping` | 0.5 | gibbs sampling, signed parity; named by `RESEARCH_PRIORITY_DECISION.md` |
+| 2 | `usd-prange-rejection-sampler` | 0.5 | gibbs sampling, parity check; named by one registry negative |
+| 3 | `prange-isd` | 0.4 | parity check; named by that negative and `COHERENT_BPQM_ERASURE.md` |
+| 4 | `stochastic-localization-pspin` | 0.2 | gibbs sampling |
+
+`baselines "DQI for max-k-cut on a ternary cycle code" -k 3` ranks `lp-decoding-cycle-codes`
+first (0.4: cycle code, max k cut), then `sdp-relaxation` (0.3: max cut, named by
+`QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md`) and `tensor-network-simulation` (0.1). When
+every section counted, four sections of that one note gave `sdp-relaxation` 0.6 and put it
+above the LP decoder, the baseline this line of work is missing.
+
+**Schema.** `{"baselines": [entry, ...]}`, each entry with every field below:
+
+| field | content |
+|---|---|
+| `id` | unique kebab-case id |
+| `name`, `aliases` | the names a note would use; matched on word boundaries, so avoid short common words |
+| `problem` | the problem the algorithm solves, one sentence |
+| `mechanisms` | 3 to 6 lowercase keywords an idea would contain |
+| `summary` | what the algorithm does and what it is the baseline for |
+| `references` | a list of `{"arxiv": "2609.40036"}` or `{"note": "STEM"}` (the file `research/STEM.md`) |
+| `runnable` | `null`, or `{"command": ..., "entry": ...}`: a command run from the repository root and an optional `path.py:function` |
+
+**Adding an entry.** Append it to `baselines.json`, raise the count in
+`test_catalog_is_well_formed`, then run `python -m pytest -q tests/tools/test_corpus_baselines.py`.
+`validate_catalog` reports an entry that is not an object, a duplicate id, a missing or
+mistyped field, fewer than 3 or more than 6 keywords and a malformed reference; the tests also check that every note reference
+exists as `research/<STEM>.md` and that every runnable command and entry points at an existing
+file (that check skips until `tools/dqi_screen/` is merged).
+
+**Notes to add back when present.** Three notes that belong in the catalog are uncommitted
+agent edits in the main checkout, so no entry references them yet. Add each to its entry once
+it is committed:
+
+| note | likely entry | why |
+|---|---|---|
+| `TERNARY_COLORING_BPQM` | `lp-decoding-cycle-codes` | The q = 3 cycle-code line whose missing baseline is the LP decoder of arXiv:2609.40036 (`research/audits/ARXIV_TRIAGE_REVIEWED.md`). |
+| `BALANCED_SIGNED_MPI` | `prange-restarts-opi` | Multiplicative polynomial intersection with a signed objective, screened against the Prange line. |
+| `CUBIC_ORBIT_DECODER` | not chosen | Read the note first. |
+
+`FOLDED_NORM_MQ` was the fourth such note; it is committed now and `groebner-mq` cites it.
