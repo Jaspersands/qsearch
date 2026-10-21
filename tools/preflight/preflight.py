@@ -193,9 +193,10 @@ def _module_path(root: Path, module: str) -> str | None:
 def _import_paths(root: Path, node: ast.AST) -> list[str]:
     """The theorems/, core/ or qsearch_cli/ files one import statement loads.
 
-    ``theorems.x``, ``qsearch_cli.x`` and ``from core import y`` name their file, present or not. A bare name
-    (``from x import f``) counts only when theorems/x.py or core/x.py exists, the order the
-    CLI puts them on sys.path; a bare name with neither file is a third-party package.
+    ``theorems.x``, ``qsearch_cli.x`` and ``from core import y`` name their file, present or
+    not. A bare name (``from x import f``) counts only when theorems/x.py or core/x.py exists,
+    the order the CLI puts them on sys.path; a bare name with neither file is a third-party
+    package.
     """
     if isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
         if node.module in PACKAGES:
@@ -236,10 +237,10 @@ _IMPORT_LINE = re.compile(r"^[ \t]*(?:from[ \t]+[\w.]+[ \t]+import\b|import[ \t]
 def _scanned_imports(text: str) -> list[ast.stmt]:
     """The import statements in Python source, found by a line scan instead of a full parse.
 
-    Parsing every module the CLI reaches through other modules takes about ten seconds; this
-    scan takes one. It sees an import that starts a line, outside strings and comments, with
-    its parenthesised or backslash-continued names. It misses a one-line compound statement
-    (``if x: import y``) and an import after a semicolon.
+    Parsing every module the CLI reaches through other modules adds about three seconds to a
+    run; this scan adds a fraction of one. It sees an import that starts a line, outside
+    strings and comments, with its parenthesised or backslash-continued names. It misses a
+    one-line compound statement (``if x: import y``) and an import after a semicolon.
     """
     code = _STRING_OR_COMMENT.sub(lambda m: "\n" * m.group().count("\n"), text)
     nodes: list[ast.stmt] = []
@@ -300,7 +301,7 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         try:
             text = (root / rel).read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
-            continue  # its own path is still checked; --imports reports a module that cannot load
+            continue  # its own path is still checked; only its imports go unfollowed
         for node in _scanned_imports(text):
             for module_path in _import_paths(root, node):
                 if module_path not in refs:
