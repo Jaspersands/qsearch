@@ -209,9 +209,11 @@ def import_judgements(
     state = _load_state(root)
     rows = [(path, row) for path in paths for row in _rows(Path(path))]
     for path, row in rows:
+        if not isinstance(row, dict):
+            raise ValueError(f"{path}: each row must be a JSON object, not {row!r:.80}")
         if row.get("verdict") not in VERDICTS:
             raise ValueError(f"{path}: unknown verdict {row.get('verdict')!r} for {row.get('arxiv_id')!r}")
-        if row.get("arxiv_id") not in state["papers"]:
+        if not isinstance(row.get("arxiv_id"), str) or row["arxiv_id"] not in state["papers"]:
             raise ValueError(f"{path}: arxiv_id {row.get('arxiv_id')!r} is missing or not a stored paper")
     existing = load_verdicts(root)["verdicts"]
     imported: list[str] = []
@@ -252,26 +254,33 @@ def import_judgements(
     return {"imported": imported, "rejected": rejected}
 
 
+def _at_least_one(text: str) -> int:
+    value = int(text)
+    if value < 1:
+        raise argparse.ArgumentTypeError("must be at least 1")
+    return value
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--export", type=Path, metavar="DIR", help="Write INSTRUCTIONS.md and batches for the unreviewed flags.")
-    parser.add_argument("--batches", type=int, default=3)
+    parser.add_argument("--batches", type=_at_least_one, default=3)
     parser.add_argument("--import", dest="imports", nargs="+", type=Path, metavar="FILE", help="Judge outputs (JSONL).")
     parser.add_argument("--judge", help="Name stored as by = judge:NAME on imported verdicts.")
     args = parser.parse_args(argv)
     if bool(args.export) == bool(args.imports):
         parser.error("give either --export DIR or --import FILE ...")
-    if args.export:
-        paths = export_batches(args.root, args.export, args.batches)
-        count = sum(len(json.loads(path.read_text(encoding="utf-8"))["papers"]) for path in paths)
-        print(f"exported {count} unreviewed flags in {len(paths)} batches; instructions in {args.export / 'INSTRUCTIONS.md'}")
-        return 0
-    if not args.judge:
+    if args.imports and not args.judge:
         parser.error("--import needs --judge NAME")
     try:
+        if args.export:
+            paths = export_batches(args.root, args.export, args.batches)
+            count = sum(len(json.loads(path.read_text(encoding="utf-8"))["papers"]) for path in paths)
+            print(f"exported {count} unreviewed flags in {len(paths)} batches; instructions in {args.export / 'INSTRUCTIONS.md'}")
+            return 0
         result = import_judgements(args.root, args.imports, args.judge)
-    except ValueError as error:
+    except (ValueError, OSError) as error:  # a bad row, unreadable JSON, a missing file
         print(f"error: {error}", file=sys.stderr)
         return 2
     print(f"imported {len(result['imported'])} verdicts; rejected {len(result['rejected'])}")

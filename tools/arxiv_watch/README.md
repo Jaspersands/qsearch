@@ -122,8 +122,9 @@ escapes, so the judge sees the characters the quote check compares. The judge wr
 per paper:
 `{"arxiv_id", "verdict", "reason", "quote", "quote_from", "action", "confidence"}`.
 
-Import checks every row before it writes anything: an unknown verdict, or an id that is
-missing or not stored, stops it (exit 2). A row is then rejected when
+Import checks every row before it writes anything: a missing or unreadable file, a row that
+is not a JSON object, an unknown verdict, or an id that is missing or not stored stops it
+(exit 2). A row is then rejected when
 
 - its quote is under six words, or does not appear verbatim in the one text `quote_from`
   names: the abstract, or the excerpt of one of the paper's nearest records. Latin letter

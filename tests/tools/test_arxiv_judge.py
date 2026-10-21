@@ -206,3 +206,21 @@ def test_cli_exports_then_imports(watched: tuple[Path, Corpus], tmp_path: Path, 
     assert load_verdicts(root)["verdicts"]["2610.11111"]["by"] == "judge:cli"
     bad = _jsonl(tmp_path / "bad.jsonl", [_row("2610.11111", "x", verdict="maybe")])
     assert main(["--root", str(root), "--import", str(bad), "--judge", "cli"]) == 2
+
+
+def test_cli_exits_2_on_unusable_input(watched: tuple[Path, Corpus], tmp_path: Path, capsys) -> None:
+    root, _ = watched
+    texts = {"string.jsonl": '"just a string"\n', "list_id.jsonl": '{"arxiv_id": ["x"], "verdict": "kill"}\n',
+             "broken.jsonl": "{not json\n"}
+    for name, text in texts.items():
+        (tmp_path / name).write_text(text, encoding="utf-8")
+    for name in [*texts, "no_such_file.jsonl"]:  # an unmatched shell glob passes its pattern through
+        assert main(["--root", str(root), "--import", str(tmp_path / name), "--judge", "t"]) == 2, name
+        assert capsys.readouterr().err.startswith("error: "), name
+    (tmp_path / "a_file").write_text("", encoding="utf-8")
+    assert main(["--root", str(root), "--export", str(tmp_path / "a_file")]) == 2
+    assert capsys.readouterr().err.startswith("error: ")
+    with pytest.raises(SystemExit) as stop:
+        main(["--root", str(root), "--export", str(tmp_path / "out"), "--batches", "0"])
+    assert stop.value.code == 2 and "--batches" in capsys.readouterr().err
+    assert set(load_verdicts(root)["verdicts"]) == {"2610.33333"}
