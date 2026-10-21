@@ -93,7 +93,10 @@ def _coerce(key: str, value):
                              "give it as an exact integer")
         return int(value)
     if key in _FLOATS:
-        return float(value)
+        try:
+            return float(value)
+        except OverflowError:
+            raise ValueError(f"{key} = {value} is too large for a float") from None
     return str(value)
 
 
@@ -437,19 +440,24 @@ def _verdict(checks: list[Check]) -> tuple[str, list[str]]:
 
 
 def screen(c: Candidate) -> Screen:
+    """The quantities, checks and verdict; ValueError on bad input, including integers too large
+    for the floating-point formulas (so a caller never mistakes them for a verdict)."""
     _validate(c)
-    qn = _quantities(c)
-    checks = [
-        _check_r1(c, qn),
-        _check_reach(c, qn),
-        _check_r2(c, qn),
-        _check_r3(c, qn),
-        _check_encoder(c),
-        _check_r4(c, qn),
-        _check_cap(c, qn),
-        _check_witness(c, qn),
-        _check_restarts(c, qn),
-    ]
+    try:
+        qn = _quantities(c)
+        checks = [
+            _check_r1(c, qn),
+            _check_reach(c, qn),
+            _check_r2(c, qn),
+            _check_r3(c, qn),
+            _check_encoder(c),
+            _check_r4(c, qn),
+            _check_cap(c, qn),
+            _check_witness(c, qn),
+            _check_restarts(c, qn),
+        ]
+    except OverflowError as exc:
+        raise ValueError(f"inputs too large to screen in floating point ({exc})") from None
     verdict, reasons = _verdict(checks)
     return Screen(c, qn, checks, verdict, reasons)
 
@@ -531,8 +539,12 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     text = json.dumps(asdict(result), indent=1) + "\n" if args.json else render(result)
     if args.out:
-        args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text(text, encoding="utf-8")
+        try:
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            args.out.write_text(text, encoding="utf-8")
+        except OSError as exc:  # exit 1 means "not viable", never a write error
+            print(f"error: cannot write {args.out}: {exc}", file=sys.stderr)
+            return 2
         print(f"{result.verdict}: {args.out}")
     else:
         print(text, end="")

@@ -390,6 +390,30 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
     assert capsys.readouterr().err.startswith("error: q ")
 
 
+def test_huge_inputs_are_bad_input_not_a_verdict(capsys, tmp_path) -> None:
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
+    for key in ("rho", "classical_witness", "finite_dqi_mean"):
+        with pytest.raises(ValueError, match=key):
+            S.candidate_from_dict({**base, key: 10**400})
+    huge = {**base, "m": 10**400, "n": 10**400 // 2}
+    with pytest.raises(ValueError, match="too large"):
+        S.screen(S.candidate_from_dict(huge))  # the MCP tool turns this ValueError into {"error": ...}
+    for data in (huge, {**base, "rho": 10**400}):
+        path = tmp_path / "huge.json"
+        path.write_text(json.dumps(data))
+        assert S.main(["--params", str(path)]) == 2
+        assert capsys.readouterr().err.startswith("error: ")
+
+
+def test_cli_write_errors_exit_2_not_1(capsys, tmp_path) -> None:
+    args = ["--params", str(EXAMPLES / "hermite_half_rate.json"), "--out"]
+    blocker = tmp_path / "file"
+    blocker.write_text("x")
+    for out in (tmp_path, blocker / "x.md"):  # a directory; a path under a regular file
+        assert S.main([*args, str(out)]) == 2
+        assert capsys.readouterr().err.startswith("error: ")
+
+
 def test_cli_zero_valued_flags_override_the_params_file(capsys) -> None:
     main = S.main
     args = ["--params", str(EXAMPLES / "opi_prime_character_r19.json"), "--json"]
