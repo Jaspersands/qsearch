@@ -10,8 +10,9 @@ Every theorems/ or core/ module the CLI refers to must exist and be tracked by g
 merge carried 24 imports of modules that were only in one working copy. Module references
 are read statically, never imported: AST imports in qsearch.py, qsearch_cli/imports.py and
 qsearch_cli/commands/*.py (theorems.x, from core import y, and bare names that resolve to a
-file in theorems/ or core/), the IMPORTS table, and the module column of DISPATCH. Every subcommand in research/audits/cli_manifest.json must still be in
-the registry's ORDER, in the same module.
+file in theorems/ or core/), the IMPORTS table, and the module column of DISPATCH. Every
+subcommand in research/audits/cli_manifest.json must still be in the registry's ORDER, in
+the same module.
 
 Prints one line per problem and the count; exits 1 when there is any problem, else 0.
 """
@@ -232,8 +233,27 @@ def check_validate(root: Path) -> list[Problem]:
     )
     if result.returncode == 0:
         return []
-    lines = [line for line in result.stderr.splitlines() if line.strip()]
-    return [Problem("validate", "qsearch.py", f"exit {result.returncode}: {lines[-1] if lines else '(no stderr)'}")]
+    reason = _validate_reason(result.stdout, result.stderr)
+    return [Problem("validate", "qsearch.py", f"exit {result.returncode}: {reason}")]
+
+
+def _validate_reason(stdout: str, stderr: str) -> str:
+    """Why validate failed: its first issue (it prints a JSON report on stdout), else the last line of output."""
+    try:
+        report = json.loads(stdout)
+    except ValueError:
+        report = None
+    issues = report.get("issues") if isinstance(report, dict) else None
+    if isinstance(issues, list) and issues:
+        first = issues[0]
+        if isinstance(first, dict) and "message" in first:
+            first = f"{first.get('candidate_id', '?')}: {first['message']}"
+        return f"{len(issues)} issues, first: {first}"
+    for stream in (stderr, stdout):
+        lines = [line.strip() for line in stream.splitlines() if line.strip()]
+        if lines:
+            return lines[-1]
+    return "(no output)"
 
 
 def run(root: Path, imports: bool = False, validate: bool = False) -> list[Problem]:

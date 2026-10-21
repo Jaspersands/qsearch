@@ -65,7 +65,7 @@ every module untracked.
 | Flag | Check | What it does |
 |---|---|---|
 | `--imports` | `resolve` | Calls `tools/split_cli/verify.py`'s `check_imports`, which imports every `IMPORTS` name and command function in this process. It catches a module that exists but fails to import. One problem per failing name, under the path `qsearch_cli`. |
-| `--validate` | `validate` | Runs `python qsearch.py validate` in the root, as CI does. A non-zero exit is one problem, `exit N: <last stderr line>`. |
+| `--validate` | `validate` | Runs `python qsearch.py validate` in the root, as CI does. A non-zero exit is one problem. Validate prints its report as JSON on stdout, so the message is `exit N: K issues, first: <candidate>: <message>`; when there is no report (a crash) it is `exit N:` and the last line of stderr, else of stdout. |
 
 Both together took about 40 seconds on 2026-10-21.
 

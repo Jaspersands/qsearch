@@ -258,6 +258,29 @@ def test_validate_flag_reports_nonzero_exit(tmp_path: Path, capsys: pytest.Captu
     assert payload["problems"] == [{"check": "validate", "path": "qsearch.py", "message": "exit 3: registry is broken"}]
 
 
+def test_validate_reports_the_issues_printed_on_stdout(tmp_path: Path) -> None:
+    # qsearch.py validate prints its report as JSON on stdout and exits 1 when it has issues.
+    report = {
+        "issues": [
+            {"candidate_id": "CODE-X", "field": "falsifiers", "message": "Experiment EXP-1 has no falsifiers."},
+            {"candidate_id": "CODE-Y", "field": "falsifiers", "message": "Experiment EXP-2 has no falsifiers."},
+        ],
+        "valid": False,
+    }
+    shim = f"import json, sys\nprint(json.dumps({report!r}, indent=2))\nsys.exit(1)\n"
+    repo = _repo(tmp_path, committed={"qsearch.py": shim})
+
+    assert pf.check_validate(repo) == [
+        pf.Problem("validate", "qsearch.py", "exit 1: 2 issues, first: CODE-X: Experiment EXP-1 has no falsifiers.")
+    ]
+
+    (repo / "qsearch.py").write_text('print("registry unreadable")\nraise SystemExit(2)\n', encoding="utf-8")
+    assert [p.message for p in pf.check_validate(repo)] == ["exit 2: registry unreadable"]
+
+    (repo / "qsearch.py").write_text("raise SystemExit(4)\n", encoding="utf-8")
+    assert [p.message for p in pf.check_validate(repo)] == ["exit 4: (no output)"]
+
+
 def test_imports_flag_uses_split_cli_verify(
     tmp_path: Path, capsys: pytest.CaptureFixture[str], monkeypatch: pytest.MonkeyPatch
 ) -> None:
