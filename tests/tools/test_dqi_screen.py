@@ -1,8 +1,15 @@
 from __future__ import annotations
 
+from dataclasses import replace
+from pathlib import Path
+
 import pytest
 
 from tools.dqi_screen import rules as R
+from tools.dqi_screen import screen as S
+
+REPO = Path(__file__).resolve().parents[2]
+EXAMPLES = REPO / "tools/dqi_screen/examples"
 
 
 def test_objective_and_threshold_hand_values() -> None:
@@ -46,3 +53,91 @@ def test_restarts_and_subfield_hand_values() -> None:
     assert R.subfield_rate(0.3, 2, 1) == pytest.approx(0.6)
     assert R.subfield_baseline(0.5, 0.6, 100) == pytest.approx(0.8)
     assert R.subfield_blocks_at_half(0.5, 2, 1) is True and R.subfield_blocks_at_half(0.3, 2, 1) is False
+
+
+def _run(example: str, **changes) -> tuple[S.Screen, dict[str, S.Check]]:
+    cand = S.load_candidate(EXAMPLES / example)
+    result = S.screen(replace(cand, **changes))
+    return result, {check.rule: check for check in result.checks}
+
+
+def test_example_a_radius_19_numbers() -> None:
+    s, checks = _run("opi_prime_character_r19.json")
+    qn = s.quantities
+    assert qn["q_prange"] == pytest.approx(0.654, abs=5e-4)
+    assert qn["lambda_crit"] == pytest.approx(0.024, abs=5e-4)
+    assert qn["radius_crit"] == pytest.approx(3.07, abs=5e-3)
+    assert qn["licensed_radius"] == 19
+    assert qn["kappa"] == pytest.approx(0.207, abs=5e-4)
+    assert qn["q_cap"] == pytest.approx(0.861, abs=5e-4)
+    assert qn["restart_length"] == pytest.approx(399.2, abs=0.1)
+    assert checks["R1"].passed is True
+    assert checks["reach"].passed is True
+    assert checks["witness"].passed is False and "0.01" in checks["witness"].detail
+    assert s.verdict == "unknown"
+    assert list(qn) == [
+        "alpha", "lam", "delta", "q_prange", "q_dqi", "q_dqi_finite", "margin", "margin_finite", "lambda_crit",
+        "radius_crit", "licensed_radius", "singleton_reach", "distance_reach", "sphere_packing_reach",
+        "plotkin_reach", "kappa", "q_cap", "cosine_objective", "lambda_crit_cos", "restart_length",
+        "existential_line", "rho_crit", "alpha_sub", "subfield_baseline",
+    ]
+    assert list(checks) == ["R1", "reach", "R2", "R3", "R3-encoder", "R4", "cap", "witness", "restarts"]
+
+
+def test_example_a_radius_32_is_outside_licensed_reach() -> None:
+    s, checks = _run("opi_prime_character_r32.json")
+    assert checks["reach"].passed is False
+    assert "outside licensed Hamming reach" in checks["reach"].detail
+    assert s.verdict == "not viable"
+
+
+def test_example_b_cosine_is_viable() -> None:
+    s, checks = _run("mpi_signed_cosine.json")
+    assert s.quantities["lambda_crit_cos"] == pytest.approx(0.00246, abs=5e-6)
+    assert s.quantities["cosine_objective"] == pytest.approx(0.367, abs=5e-4)
+    assert checks["R1"].passed is True
+    assert s.verdict == "viable", s.reasons
+    s, checks = _run("mpi_signed_cosine.json", decoder_known=False)
+    assert checks["reach"].passed is None and s.verdict == "unknown"
+
+
+def test_example_c_half_rate() -> None:
+    s, checks = _run("hermite_half_rate.json")
+    assert s.quantities["lambda_crit"] == pytest.approx(0.067, abs=5e-4)
+    assert s.quantities["singleton_reach"] == 0.25
+    assert s.quantities["kappa"] == pytest.approx(0.183, abs=5e-4)
+    assert checks["R4"].passed is None and "prime field" in checks["R4"].detail
+
+
+def test_encoder_known_caps_margin_at_zero() -> None:
+    s, checks = _run("mpi_signed_cosine.json", encoder_known=True)
+    assert checks["R3-encoder"].passed is False
+    assert s.verdict == "not viable"
+
+
+def test_prime_power_q_without_subfield_inputs_is_unknown_not_na() -> None:
+    # Example (c) at twice the length is viable over the prime field F_8191.
+    longer = {"m": 2000, "radius": 248, "min_distance": 500}
+    assert _run("hermite_half_rate.json", **longer)[0].verdict == "viable"
+    s, checks = _run("hermite_half_rate.json", q=4096, **longer)
+    assert checks["R4"].passed is None and "give p, b, c" in checks["R4"].detail
+    assert s.verdict == "unknown"
+    s, checks = _run("hermite_half_rate.json", q=4096, p=2, b=12, c=1, **longer)
+    assert checks["R4"].passed is False and s.quantities["subfield_baseline"] == 1.0
+    assert s.verdict == "not viable"
+
+
+def test_saturated_reach_is_flagged_not_viable() -> None:
+    s, checks = _run("hermite_half_rate.json", radius=600)  # lam = 0.6 > 1 - rho
+    assert s.quantities["q_dqi"] == 1.0
+    assert s.verdict == "not viable"
+    assert any("saturated" in check.detail for check in checks.values())
+    assert checks["reach"].passed is False and "saturated" in checks["reach"].detail
+
+
+def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
+    assert S.candidate_from_dict(base).q == 7
+    for bad in ({**base, "radiuss": 3}, {**base, "objective": "max"}, {"objective": "count"}, {**base, "q": 12}):
+        with pytest.raises(ValueError):
+            S.screen(S.candidate_from_dict(bad))
