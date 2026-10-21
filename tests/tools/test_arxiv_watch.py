@@ -613,11 +613,26 @@ REPO = Path(__file__).resolve().parents[2]
 REVIEW = REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
 
 
+def _review_verdicts(text: str) -> dict[str, str]:
+    """arXiv id -> verdict from the review's table rows and its "### id, ..." sections."""
+    found = {}
+    for line in text.splitlines():
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) == 5 and re.fullmatch(r"\d{4}\.\d{5}", cells[0]):
+            found[cells[0]] = cells[3].replace(" ", "-")
+    for arxiv_id, verdict in re.findall(r"^### (\d{4}\.\d{5}),[^\n]*\n\nFlagged \w+\. Verdict: \*\*([a-z ]+)\*\*", text, re.M):
+        found[arxiv_id] = verdict.replace(" ", "-")
+    return found
+
+
 @pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
 def test_seeded_verdicts_match_the_reviewed_triage() -> None:
-    reviewed = set(re.findall(r"\b\d{4}\.\d{5}\b", REVIEW.read_text(encoding="utf-8")))
+    text = REVIEW.read_text(encoding="utf-8")
+    reviewed = set(re.findall(r"\b\d{4}\.\d{5}\b", text))
+    expected = _review_verdicts(text)
     verdicts = load_verdicts(REPO)["verdicts"]
-    assert len(reviewed) == 22 and set(verdicts) == reviewed
+    assert len(reviewed) == 22 and set(expected) == reviewed and set(verdicts) == reviewed
+    assert {arxiv_id: entry["verdict"] for arxiv_id, entry in verdicts.items()} == expected
     assert all(entry["by"] == "human" and entry["reason"] for entry in verdicts.values())
     counts: dict[str, int] = {}
     for entry in verdicts.values():
