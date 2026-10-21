@@ -555,6 +555,28 @@ def test_verdict_flag_records_and_rerenders_without_fetching(fake_repo: Path, mo
     assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["verdict"] == "false-alarm"
 
 
+def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    for ident in ("2610.11111v2", "arXiv:2610.11111", "https://arxiv.org/abs/2610.11111v1"):
+        assert watch.main(["--root", str(fake_repo), "--verdict", ident, "false-alarm", "--reason", "x"]) == 0
+        assert capsys.readouterr().out == "2610.11111: false-alarm; digest re-rendered\n", ident
+        assert set(load_verdicts(fake_repo)["verdicts"]) == {"2610.11111"}
+        assert _state(fake_repo)["papers"]["2610.11111"]["verdict"]["verdict"] == "false-alarm"
+    assert "2610.11111" not in _section((fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text(), "Possible kills")
+
+    assert watch.main(["--root", str(fake_repo), "--verdict", "quant-ph/0501044v2", "related-only"]) == 0
+    assert capsys.readouterr().out == "quant-ph/0501044: related-only (not in the collisions file yet); digest re-rendered\n"
+    for bad in ("2610.111", "see 2610.11111", ""):
+        assert watch.main(["--root", str(fake_repo), "--verdict", bad, "kill"]) == 2
+        assert "not an arXiv id" in capsys.readouterr().err
+    assert set(load_verdicts(fake_repo)["verdicts"]) == {"2610.11111", "quant-ph/0501044"}
+
+
 REPO = Path(__file__).resolve().parents[2]
 REVIEW = REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
 

@@ -33,7 +33,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
-from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, set_verdict  # noqa: E402
+from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, normalize_id, set_verdict  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.arxiv import Client, Paper  # noqa: E402
@@ -505,8 +505,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
     args = parser.parse_args(argv)
     if args.verdict:
-        arxiv_id, verdict = args.verdict
+        raw_id, verdict = args.verdict
         try:
+            arxiv_id = normalize_id(raw_id)
             set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=args.action)
         except ValueError as error:
             print(f"error: {error}", file=sys.stderr)

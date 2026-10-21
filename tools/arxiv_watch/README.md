@@ -82,8 +82,10 @@ python tools/arxiv_watch/watch.py --verdict 2609.40302 false-alarm \
 ```
 
 This writes `research/audits/arxiv_verdicts.json`, copies the verdict onto the stored paper
-and re-renders the digest. It fetches nothing and does not build the corpus index. An
-unknown verdict exits 2.
+and re-renders the digest. It fetches nothing and does not build the corpus index. The id
+may carry a version, an `arXiv:` prefix or the abstract URL (`arXiv:2609.40302v2`); the
+verdict is stored under the bare id the watch uses. An unknown verdict, or an id that is not
+an arXiv id, exits 2.
 
 | Verdict | Meaning |
 |---|---|

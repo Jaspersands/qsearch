@@ -11,12 +11,25 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 from pathlib import Path
 
 from tools.corpus.docs import read_json
 
 VERDICTS = ("kill", "scoop", "should-cite", "related-only", "false-alarm")
 VERDICTS_FILE = "research/audits/arxiv_verdicts.json"
+
+_ID_PREFIX = re.compile(r"^(?:https?://arxiv\.org/abs/|arxiv:)", re.I)
+_ID = re.compile(r"^(?:\d{4}\.\d{4,5}|[a-z-]+(?:\.[A-Z]{2})?/\d{7})$")
+
+
+def normalize_id(raw: str) -> str:
+    """The bare arXiv id the watch stores papers under: "arXiv:2610.06753v2" or
+    "https://arxiv.org/abs/2610.06753v2" -> "2610.06753". ValueError when it is not an arXiv id."""
+    arxiv_id = re.sub(r"v\d+$", "", _ID_PREFIX.sub("", str(raw).strip()))
+    if not _ID.match(arxiv_id):
+        raise ValueError(f"not an arXiv id: {raw!r} (expected e.g. 2610.06753, arXiv:2610.06753v2 or quant-ph/0501044)")
+    return arxiv_id
 
 
 def load_verdicts(root: Path) -> dict:
@@ -44,11 +57,10 @@ def set_verdict(
     action: str | None = None,
     today: str | None = None,
 ) -> dict:
-    """Record (or replace) one paper's verdict and return the stored entry."""
+    """Record (or replace) one paper's verdict under its bare id (see normalize_id) and return the stored entry."""
     if verdict not in VERDICTS:
         raise ValueError(f"unknown verdict {verdict!r}; expected one of {', '.join(VERDICTS)}")
-    if not arxiv_id:
-        raise ValueError("an arXiv id is required")
+    arxiv_id = normalize_id(arxiv_id)
     entry = {
         "verdict": verdict,
         "reason": reason,
