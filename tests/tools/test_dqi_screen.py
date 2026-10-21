@@ -86,7 +86,8 @@ def test_example_a_radius_19_numbers() -> None:
     assert s.verdict == "unknown"
     assert list(qn) == [
         "alpha", "lam", "delta", "q_prange", "q_dqi", "q_dqi_finite", "margin", "margin_finite", "lambda_crit",
-        "radius_crit", "licensed_radius", "signed_packing_radius", "singleton_reach", "distance_reach",
+        "radius_crit", "licensed_radius", "singleton_radius", "plotkin_radius", "hamming_radius",
+        "signed_packing_radius", "singleton_reach", "distance_reach",
         "sphere_packing_reach", "plotkin_reach", "signed_packing_reach", "kappa", "q_cap", "cosine_objective",
         "lambda_crit_cos", "restart_length",
         "existential_line", "rho_crit", "alpha_sub", "subfield_baseline",
@@ -99,6 +100,40 @@ def test_example_a_radius_32_is_outside_licensed_reach() -> None:
     assert checks["reach"].passed is False
     assert "outside licensed Hamming reach" in checks["reach"].detail
     assert s.verdict == "not viable"
+
+
+def test_finite_reach_bounds_hand_values() -> None:
+    assert R.plotkin_distance(15, 11, 2) == 8  # simplex [15, 4, 8] meets the finite Plotkin bound
+    assert R.plotkin_distance(16, 11, 2) == 8  # RM(1, 4) [16, 5, 8]
+    assert R.plotkin_distance(1000, 900, 2) == 500
+    assert R.plotkin_distance(127, 39, 2**61 - 1) == 126  # m (1 - 1/q), rounded down
+    assert R.plotkin_distance(3, 1, 7) == 2  # [3, 2] over F_7: 3 * 6 * 7 / 48 = 2.625
+    assert R.packing_radius(23, 11, 2, 1) >= 3  # the perfect Golay [23, 12, 7] decodes 3 errors
+
+
+@pytest.mark.parametrize("m, n", [(15, 11), (16, 11), (24, 12)])  # simplex, RM(1, 4), extended Golay; d = 8
+def test_licensed_radii_of_real_codes_pass_reach(m: int, n: int) -> None:
+    # Corollary 7's Plotkin and sphere-packing forms are asymptotic: these codes beat them at l = 3 = (d - 2) // 2.
+    s, checks = _run("hermite_half_rate.json", q=2, m=m, n=n, radius=3, min_distance=8)
+    assert checks["reach"].passed is True, checks["reach"].detail
+    assert s.verdict != "not viable", s.reasons
+
+
+def test_reach_uses_finite_singleton_plotkin_and_packing_radii() -> None:
+    # Without d, radius n/2 still cannot be licensed: d <= n + 1 gives l <= (n - 1) // 2.
+    s, checks = _run("hermite_half_rate.json", q=2**61 - 1, m=128, n=40, radius=20, min_distance=None)
+    assert s.quantities["singleton_radius"] == 19
+    assert checks["reach"].passed is False and "Singleton 19" in checks["reach"].detail
+    assert _run("hermite_half_rate.json", q=2**61 - 1, m=128, n=40, radius=19, min_distance=None)[1]["reach"].passed
+    # Binary [1000, 100]: no such code has d > 500 (Plotkin), though sphere packing and Singleton allow l = 300.
+    s, checks = _run("hermite_half_rate.json", q=2, n=900, radius=300, min_distance=None)
+    assert (s.quantities["plotkin_radius"], s.quantities["singleton_radius"]) == (249, 449)
+    assert s.quantities["hamming_radius"] >= 300
+    assert checks["reach"].passed is False and "Plotkin 249" in checks["reach"].detail
+    # Binary [1000, 500] at l = 200: C(1000, 200) > 2^500, though Singleton and Plotkin allow 249.
+    s, checks = _run("hermite_half_rate.json", q=2, radius=200, min_distance=None)
+    assert s.quantities["hamming_radius"] < 200 <= s.quantities["plotkin_radius"]
+    assert checks["reach"].passed is False and "sphere-packing" in checks["reach"].detail
 
 
 def test_example_b_cosine_is_viable() -> None:

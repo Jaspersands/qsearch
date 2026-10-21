@@ -49,7 +49,7 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 | Rule | Kind | Passes when | Formula |
 |---|---|---|---|
 | R1 | hard | every applicable reach bound exceeds the threshold | lambda_crit = (sqrt((1-rho) Q_Pr) - sqrt(rho (1-Q_Pr)))^2 against Singleton alpha/2, distance delta/2, sphere packing H_q^-1(alpha), Plotkin (1 - 1/q) alpha/2; cosine: lambda_crit_cos = (1 - sqrt(1 - 2 alpha^2))/2 against the signed packing reach, the lam <= 1/2 with (H_2(lam) + lam)/log_2 q = alpha (Proposition 13(i)) |
-| reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and lam <= every Hamming reach bound; not saturated (lam > 1 - rho). Cosine: the radius is inside the signed packing radius | cosine: the largest l with C(m, l) 2^l <= q^n, so the {+-1} patterns of weight l have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them |
+| reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and l <= every finite-length radius bound; not saturated (lam > 1 - rho). Cosine: the radius is inside the signed packing radius | count, for the dual [m, k = m - n] code: Singleton (n-1)//2 (d <= n+1); Plotkin (d_P - 2)//2 with d_P = floor(m (q-1) q^(k-1) / (q^k - 1)); sphere packing, the largest l with C(m, l) (q-1)^l <= q^n. Cosine: the largest l with C(m, l) 2^l <= q^n, so the {+-1} patterns of weight l have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them |
 | R2 | hard | the radius beats the threshold | lam > lambda_crit (count) or lambda_crit_cos (cosine) |
 | R3 | soft | the claimed value (finite mean, else Q_DQI or the cosine value) is at most the existential line Q* | count: Q* with D_KL(Q* \|\| rho) = alpha ln q when q^alpha rho < 1, else 1 (Definition 5); cosine: the largest mean of cos(2 pi v/q) within relative entropy alpha ln q of uniform, by exponential tilting (Proposition 13(iii); 0.726 for MPI) |
 | R3-encoder | hard | the encoder is not known | a known encoder caps the margin at 0 |
@@ -75,7 +75,7 @@ prime field on Python ints (exact for q = 2^61 - 1) and returns the best and eve
 | Example | Verdict | Why |
 |---|---|---|
 | `opi_prime_character_r19.json` (q = 2^61 - 1, m = 127, n = 39, l = 19, d = 40) | unknown | witness 0.8583 >= finite DQI mean 0.8168 and >= q_cap - 0.01 = 0.8505; restarts need m >= 399.2, m = 127 |
-| `opi_prime_character_r32.json` (same, l = 32) | not viable | outside licensed Hamming reach: 32 > (40-2)//2 = 19, lam = 0.252 beyond Singleton 0.1535 |
+| `opi_prime_character_r32.json` (same, l = 32) | not viable | outside licensed Hamming reach: 32 > (40-2)//2 = 19 and > the Singleton radius (39-1)//2 = 19 |
 | `mpi_signed_cosine.json` (q = 8191, m = 6000, n = 420, l = 209) | viable | lam = 0.0348 > lambda_crit_cos = 0.00246; signed packing reach 0.196 (Table 3), radius 209 inside the signed packing radius 1178; restarts need 1594.5 <= 6000 |
 | `hermite_half_rate.json` (q = 8191, m = 1000, n = 500, l = 124, d = 250) | unknown | restarts need m >= 1212.7, m = 1000; R4 not applicable (prime field) |
 
@@ -86,7 +86,9 @@ exits 1 and the report says "outside licensed Hamming reach".
 ## What it does not prove
 
 - The rules are asymptotic. A "viable" verdict is not a finite-size certificate; compute the
-  finite DQI mean and run `prange_restarts` on the instance.
+  finite DQI mean and run `prange_restarts` on the instance. Only the reach check is
+  finite-length: short codes beat the asymptotic Plotkin and sphere-packing forms of R1 (the
+  simplex [15, 4, 8] at l = 3), so reach uses the exact finite bounds instead.
 - Reach is worst-case decoding: of Hamming errors for the count objective, of signed {+-1}
   error patterns for the cosine (Proposition 13: the Hamming-based Singleton, sphere-packing,
   Plotkin and distance bounds do not limit signed reach, so for the cosine they are only

@@ -126,6 +126,19 @@ def plotkin_reach(alpha: float, q: int) -> float:
     return (1 - 1 / q) * _unit("alpha", alpha) / 2
 
 
+def plotkin_distance(m: int, n: int, q: int) -> int:
+    """Finite-length Plotkin bound for the dual code, a linear [m, k = m - n] code over F_q: its
+    minimum distance is at most the average nonzero weight, d <= m (q-1) q^(k-1) / (q^k - 1),
+    rounded down. Exact integers; when q^k - 1 > m (q - 1) the bound is floor(m (q - 1) / q)."""
+    if not 0 <= n < m or q < 2:
+        raise ValueError(f"need 0 <= n < m and q >= 2, got m={m}, n={n}, q={q}")
+    k = m - n
+    total = m * (q - 1)
+    if k * math.log2(q) > math.log2(total) + 1:  # q^k > 2 total: the excess over total/q is below one
+        return total // q
+    return total * q ** (k - 1) // (q**k - 1)
+
+
 def binary_entropy(x: float) -> float:
     """H_2(x) in bits."""
     return q_ary_entropy(x, 2)

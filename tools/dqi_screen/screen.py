@@ -204,6 +204,9 @@ def _quantities(c: Candidate) -> dict[str, float | int | None]:
         "lambda_crit": threshold if count else None,
         "radius_crit": threshold * c.m if threshold is not None else None,
         "licensed_radius": R.licensed_radius(c.min_distance) if c.min_distance is not None else None,
+        "singleton_radius": R.licensed_radius(c.n + 1) if count else None,
+        "plotkin_radius": R.licensed_radius(R.plotkin_distance(c.m, c.n, c.q)) if count else None,
+        "hamming_radius": R.packing_radius(c.m, c.n, c.q, c.q - 1) if count else None,
         "signed_packing_radius": None if count else R.packing_radius(c.m, c.n, c.q, 2),
         "singleton_reach": R.singleton_reach(alpha),
         "distance_reach": R.distance_reach(delta) if delta is not None else None,
@@ -272,13 +275,14 @@ def _check_reach(c: Candidate, qn: dict) -> Check:
         return Check("reach", None, "give radius")
     if c.objective == "cosine":
         return _check_reach_signed(c, qn)
+    # Finite-length bounds only: the asymptotic forms in R1 are beaten by real short codes.
     problems = []
     if qn["licensed_radius"] is not None and c.radius > qn["licensed_radius"]:
         problems.append(f"radius {c.radius} > licensed radius {qn['licensed_radius']} = (d - 2) // 2")
-    bounds = _reach_bounds(c, qn)
-    over = [f"{bound} {_fmt(value)}" for bound, value in bounds.items() if lam > value]
+    limits = {"Singleton": qn["singleton_radius"], "Plotkin": qn["plotkin_radius"], "sphere-packing": qn["hamming_radius"]}
+    over = [f"{bound} {value}" for bound, value in limits.items() if c.radius > value]
     if over:
-        problems.append(f"lam = {_fmt(lam)} exceeds the reach bound {', '.join(over)}")
+        problems.append(f"radius {c.radius} exceeds the finite-length radius bound {', '.join(over)}")
     saturated = None
     if c.objective == "count" and lam > 1 - c.rho:
         saturated = (f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, where the semicircle law pins "
@@ -286,11 +290,13 @@ def _check_reach(c: Candidate, qn: dict) -> Check:
     if problems:
         detail = "outside licensed Hamming reach: " + "; ".join(problems)
         return Check("reach", False, detail + (f"; also {saturated}" if saturated else ""))
-    tight = min(bounds, key=bounds.get)
+    if qn["licensed_radius"] is not None:
+        limits["(d - 2) // 2"] = qn["licensed_radius"]
+    tight = min(limits, key=limits.get)
     if saturated:
         return Check("reach", False, f"{saturated} (radius {c.radius} is within every reach bound; tightest: "
-                     f"{tight} {_fmt(bounds[tight])})")
-    inside = f"radius {c.radius} (lam = {_fmt(lam)}) is inside licensed Hamming reach (tightest: {tight} {_fmt(bounds[tight])})"
+                     f"{tight} {limits[tight]})")
+    inside = f"radius {c.radius} (lam = {_fmt(lam)}) is inside licensed Hamming reach (tightest: {tight} {limits[tight]})"
     if not c.decoder_known:
         return Check("reach", None, inside + ", but no decoder is known to reach it; give decoder_known")
     return Check("reach", True, inside)
