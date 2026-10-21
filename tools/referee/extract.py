@@ -174,7 +174,7 @@ def parse_note(path: Path) -> NotePacket:
         self_check=first(SELF_CHECK),
         decision=first(DECISION),
         content_sha=hashlib.sha256(raw).hexdigest(),
-        flags=[flag.name for flag in check_text(prose(result), title).flags],
+        flags=[flag.name for flag in check_text(prose(result), title).flags if not flag.negated],
     )
 
 

@@ -81,6 +81,26 @@ def test_parse_note_reads_every_field(tmp_path: Path) -> None:
     assert X.to_dict(packet)["stem"] == "FIXTURE_NOTE"
 
 
+def test_parse_note_flags_only_what_the_claim_checker_raises_on_the_result(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Flagged
+
+        2026-10-17. REVIEW PENDING.
+
+        ## Result
+
+        The sampler reads the table through QRAM. No membership oracle is supplied.
+
+        ## Discussion
+
+        This is an oracle separation heuristic.
+        """
+    )
+    assert X.parse_note(_write(tmp_path, "FLAGGED", text)).flags == ["input_loading"]
+    assert X.parse_note(_write(tmp_path, "PLAIN", FIXTURE_NOTE)).flags == []
+
+
 def test_parse_note_falls_back_to_the_first_section_for_result(tmp_path: Path) -> None:
     text = textwrap.dedent(
         """\

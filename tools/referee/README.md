@@ -54,8 +54,9 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
   a numbered heading), `controls` (Controls, Comparison, Classical), `self_check`
   (Attempts To Prove It Wrong, Try To Kill, Falsifier, Kill) and `decision` (Decision,
   Next) come from the headings too. Headings inside fenced code are not section breaks.
-- `flags`: the claim checker's flags (`tools/claim_checker/check.py`) on the result's
-  prose.
+- `flags`: the flags the claim checker (`tools/claim_checker/check.py`) raises on the
+  result's prose. Flags it marks negated ("No membership oracle is supplied") are left
+  out, since the note rules them out.
 - `artifact_excerpt`: the artifact's top-level keys, then its numeric and short string
   leaves depth first, lists capped at five items, at most 4000 characters.
 - `content_sha`: SHA-256 of the note's bytes.
