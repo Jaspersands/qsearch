@@ -34,7 +34,7 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | `min_distance` | minimum distance d of the decoded code, when known; delta = d/m |
 | `decoder_known` | an efficient decoder reaches `radius` |
 | `encoder_known` | the planted encoder is known |
-| `p`, `b`, `c` | subfield parameters for R4 (q = p^b), needed when q is not prime |
+| `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and the subfield F_(p^c) with c dividing b; needed when q is not prime, and checked against q when given |
 | `classical_witness` | best satisfied fraction a classical method has reached |
 | `finite_dqi_mean` | DQI's mean at this finite size, when computed |
 

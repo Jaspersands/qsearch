@@ -150,6 +150,18 @@ def test_prime_power_q_without_subfield_inputs_is_unknown_not_na() -> None:
     assert s.verdict == "not viable"
 
 
+def test_subfield_inputs_must_match_q() -> None:
+    longer = {"m": 2000, "radius": 248, "min_distance": 500, "q": 4096}
+    for p, b, c in ((2, 1, 12), (3, 2, 1), (4, 6, 1), (2, 12, 5), (2, 12, 0), (2, 6, 3)):
+        with pytest.raises(ValueError, match="q = 4096"):
+            _run("hermite_half_rate.json", p=p, b=b, c=c, **longer)
+    for p, b, c in ((2, 12, 1), (2, 12, 4), (2, 12, 12)):
+        assert _run("hermite_half_rate.json", p=p, b=b, c=c, **longer)[1]["R4"].passed is not None
+    with pytest.raises(ValueError, match="p = 3"):
+        _run("hermite_half_rate.json", p=3, **longer)  # checked even when b and c are absent
+    assert _run("hermite_half_rate.json", p=8191, b=1, c=1)[1]["R4"].detail == "not applicable (prime field)"
+
+
 def test_saturated_reach_is_flagged_not_viable() -> None:
     s, checks = _run("hermite_half_rate.json", radius=600)  # lam = 0.6 > 1 - rho
     assert s.quantities["q_dqi"] == 1.0

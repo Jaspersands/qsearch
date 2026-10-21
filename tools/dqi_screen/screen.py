@@ -129,21 +129,29 @@ def _validate(c: Candidate) -> None:
         raise ValueError(f"radius must lie in [0, m], got {c.radius}")
     if c.min_distance is not None and not 1 <= c.min_distance <= c.m:
         raise ValueError(f"min_distance must lie in [1, m], got {c.min_distance}")
-    if c.q < 2 or not _is_prime_power(c.q):
+    root = _prime_power(c.q) if c.q >= 2 else None
+    if root is None:
         raise ValueError(f"q must be a prime power, got {c.q}")
-    for key in ("p", "b", "c"):
-        value = getattr(c, key)
-        if value is not None and value < (2 if key == "p" else 1):
-            raise ValueError(f"{key} is too small: {value}")
+    p, b = root
+    field = f"q = {c.q} = {p}^{b}"
+    if c.p is not None and c.p != p:
+        raise ValueError(f"p = {c.p} does not match {field}: p is the prime with q = p^b")
+    if c.b is not None and c.b != b:
+        raise ValueError(f"b = {c.b} does not match {field}: b is the degree of F_q over F_p")
+    if c.c is not None and (c.c < 1 or b % c.c):
+        raise ValueError(f"c = {c.c} does not divide b = {b} ({field}): F_(p^c) is a subfield of F_q only when c | b")
 
 
-def _is_prime_power(q: int) -> bool:
+def _prime_power(q: int) -> tuple[int, int] | None:
+    """(p, b) with q = p^b and p prime, or None when q is not a prime power."""
     import sympy
 
     if _isprime(q):
-        return True
+        return q, 1
     power = sympy.perfect_power(q)
-    return bool(power) and _isprime(int(power[0]))
+    if power and _isprime(int(power[0])):
+        return int(power[0]), int(power[1])
+    return None
 
 
 def _fmt(x: float | None) -> str:
