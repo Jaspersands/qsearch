@@ -4,11 +4,14 @@
     python tools/arxiv_watch/watch.py --since 2026-09-01 --tracks dcp,dqi_opi
     python tools/arxiv_watch/watch.py --relabel        # re-apply the label rules to stored papers, offline
     python tools/arxiv_watch/watch.py --replay-seeds   # check the track classifier on seed papers
+    python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." [--action "..."]
 
 Each new paper is placed on tracks, matched against the corpus index (nearest negatives,
 notes, theorem modules) and given a triage label from wording cues:
 possible-kill, possible-scoop, related, already-cited or unrelated. Labels are for
-triage only; read the paper before acting on one.
+triage only; read the paper before acting on one. A reviewed verdict (research/audits/
+arxiv_verdicts.json, see verdicts.py) is judgement: it is attached to the stored paper and
+moves it from the flagged sections of the digest to the Reviewed table.
 
 Each track query is paged until results are older than the window start. When the page
 cap stops a query first, the uncovered window is recorded as a gap in the JSON and listed
@@ -30,7 +33,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
-from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts  # noqa: E402
+from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, set_verdict  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.arxiv import Client, Paper  # noqa: E402
@@ -493,7 +496,27 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-pages", type=int, default=MAX_PAGES, help="Pages per track query before reporting a gap.")
     parser.add_argument("--replay-seeds", action="store_true")
     parser.add_argument("--relabel", action="store_true", help="Recompute labels for stored papers; no fetching.")
+    parser.add_argument(
+        "--verdict", nargs=2, metavar=("ARXIV_ID", "VERDICT"),
+        help=f"Record a reviewed verdict ({', '.join(VERDICTS)}) and re-render the digest; no fetching.",
+    )
+    parser.add_argument("--reason", default="", help="With --verdict: why, in a sentence or two.")
+    parser.add_argument("--action", help="With --verdict: what a named document should change, if anything.")
+    parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
     args = parser.parse_args(argv)
+    if args.verdict:
+        arxiv_id, verdict = args.verdict
+        try:
+            set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=args.action)
+        except ValueError as error:
+            print(f"error: {error}", file=sys.stderr)
+            return 2
+        state = _load_state(args.root)
+        attach_verdicts(state, load_verdicts(args.root)["verdicts"])
+        _save(args.root, state)
+        stored = "" if arxiv_id in state["papers"] else " (not in the collisions file yet)"
+        print(f"{arxiv_id}: {verdict}{stored}; digest re-rendered")
+        return 0
     if args.relabel:
         corpus = Corpus(args.root)
         corpus.refresh()

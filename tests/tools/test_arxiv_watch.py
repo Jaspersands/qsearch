@@ -527,3 +527,29 @@ def test_recheck_cited_is_fast_for_many_flags_sharing_a_trailing_token(fake_repo
     assert recheck_cited(state, corpus, "2026-10-26") == 1
     assert time.perf_counter() - start < 1.0
     assert state["papers"]["2605.11111"]["label"] == "already-cited"
+
+
+def test_verdict_flag_records_and_rerenders_without_fetching(fake_repo: Path, monkeypatch, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("--verdict must not fetch or build the corpus")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    argv = ["--root", str(fake_repo), "--verdict", "2610.11111", "false-alarm", "--reason", "cue spurious", "--action", "none"]
+    assert watch.main(argv) == 0
+    entry = load_verdicts(fake_repo)["verdicts"]["2610.11111"]
+    assert (entry["verdict"], entry["reason"], entry["action"], entry["by"]) == ("false-alarm", "cue spurious", "none", "human")
+    digest = (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text()
+    assert "| 2610.11111 |" in _section(digest, "Reviewed") and "2610.11111" not in _section(digest, "Possible kills")
+    assert _state(fake_repo)["papers"]["2610.11111"]["verdict"]["verdict"] == "false-alarm"
+
+    assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", "maybe"]) == 2
+    assert "unknown verdict" in capsys.readouterr().err
+    assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["verdict"] == "false-alarm"
