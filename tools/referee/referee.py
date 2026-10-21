@@ -110,8 +110,10 @@ For each note:
    from step 5.
 2. Quote each claim verbatim from the note `text`: at least 6 consecutive words copied
    exactly. Whitespace, letter case, punctuation and markdown markup may differ, but the
-   symbols <, >, =, +, -, /, ^ and decimal points must be the note's, hyphens included
-   (they are the mathematics; ≤ for <= is fine). Quote from the note text only, never
+   letters in any script (Greek variables, superscript exponents) and the symbols <, >, =,
+   +, -, /, ^, ±, √ and decimal points must be the note's, hyphens included, also before
+   your first word and after your last (they are the mathematics; ≤ for <= is fine, and a
+   prose em dash — may be written - or left out). Quote from the note text only, never
    from the artifact excerpt, the flags or these instructions. Every quote is checked
    automatically, and one quote that is not in the note rejects your whole output file.
 3. Give each claim a verdict:
@@ -191,13 +193,17 @@ def export_batches(root: Path, out_dir: Path, notes: list[Path], batch_size: int
 MIN_QUOTE_WORDS = 6
 MAX_CLAIMS = 6
 
-# Words are what `_norm` keeps. Between two words, these symbols must match the note: in
-# ASCII-math notes "b<=epsilon" and "b>=epsilon" have the same words.
-WORD = re.compile(r"[A-Za-z0-9]+")
-SYMBOL = re.compile(r"!=|[<>=+\-/^~]")
-SYMBOL_FORMS = str.maketrans({"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "−": "-", "–": "-", "—": "-",
-                              "→": "->", "⇒": "=>", "≈": "~", "∼": "~"})
+# Words are runs of letters and digits in any script (Greek variables and superscript
+# exponents included; an underscore splits words). Between two words and before the first and
+# after the last word of a quote, the symbols must match the note: in ASCII-math notes
+# "b<=epsilon" and "b>=epsilon" have the same words.
+WORD = re.compile(r"[^\W_]+")
+EM_DASH = "—"
+DASHES = "-−–"  # hyphen, minus sign and en dash all read as a minus; a run of them is one
+SYMBOL = re.compile(rf"!=|<=|>=|->|=>|[{DASHES}]+|{EM_DASH}|[≤≦≥≧≠→⇒≈∼±∓√<>=+/^~]")
+SYMBOL_FORMS = {"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "→": "->", "⇒": "=>", "≈": "~", "∼": "~"}
 LINE_MARKER = re.compile(r"(?m)^[ \t]*(?:[-+*>][ \t]+)+")
+SPACE = re.compile(r"\s")
 
 
 STEM = re.compile(r"^[A-Za-z0-9_][A-Za-z0-9_.-]*$")  # a file name in research/, never a path
@@ -207,50 +213,92 @@ def _note_path(root: Path, stem: str) -> Path:
     return root / "research" / f"{stem}.md"
 
 
-def _symbols(text: str) -> tuple[str, ...]:
+def _symbol_run(segment: str, em_dash: str) -> list[tuple[int, int, str]]:
+    """(start, end, symbol) for each symbol in `segment`: typographic forms read as ASCII, a run
+    of minus signs as one, and an em dash as `em_dash` ("-", or "" to leave it out)."""
+    run: list[tuple[int, int, str]] = []
+    for match in SYMBOL.finditer(segment):
+        token = match.group()
+        token = em_dash if token == EM_DASH else "-" if token[0] in DASHES else SYMBOL_FORMS.get(token, token)
+        if token == "-" and run and run[-1][2] == "-":
+            run[-1] = (run[-1][0], match.end(), "-")
+        elif token:
+            run.append((match.start(), match.end(), token))
+    return run
+
+
+def _symbols(segment: str, em_dash: str) -> tuple[str, ...]:
+    return tuple(token for _, _, token in _symbol_run(segment, em_dash))
+
+
+def _gaps(text: str, words: list[re.Match], em_dash: str) -> tuple[str, ...]:
     """The symbols in each gap between consecutive words; a decimal point counts as one."""
-    text = text.translate(SYMBOL_FORMS)
-    words = list(WORD.finditer(text))
     gaps = []
     for left, right in zip(words, words[1:]):
         gap = text[left.end():right.start()]
         if gap == "." and left.group()[-1].isdigit() and right.group()[0].isdigit():
             gaps.append(".")
         else:
-            gaps.append(re.sub(r"-+", "-", "".join(SYMBOL.findall(gap))))
+            gaps.append("".join(_symbols(gap, em_dash)))
     return tuple(gaps)
 
 
-def _symbol_forms(text: str) -> set[tuple[str, ...]]:
-    """With and without list and quote markers at line starts, which a quote may keep or drop."""
-    return {_symbols(text), _symbols(LINE_MARKER.sub("", text))}
+def _spread(text: str, start: int, end: int) -> str:
+    """text[start:end] widened to whole whitespace-delimited tokens, less trailing .,;: marks."""
+    while start > 0 and not text[start - 1].isspace():
+        start -= 1
+    while end < len(text) and not text[end].isspace():
+        end += 1
+    return text[start:end].rstrip(".,;:")
 
 
 def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     """The note's own span for `quote`, or None and why not.
 
     The words must appear consecutively in `text` (case, whitespace and punctuation aside), and
-    the symbols between them (<, >, =, +, -, /, ^, ~, decimal points) must be the note's.
+    the symbols (<, >, =, +, -, /, ^, ~, ±, √, decimal points) between them, before the first
+    and after the last must be the note's. A quote may keep or drop the list and quote markers
+    at the note's line starts, and may write a prose em dash as - or leave it out. The span is
+    widened to whole whitespace-delimited tokens, so the note's signs and operators next to the
+    quote's first and last words are kept.
     """
-    words = [word.lower() for word in WORD.findall(quote)]
+    quoted = list(WORD.finditer(quote))
+    words = [word.group().lower() for word in quoted]
     if len(words) < MIN_QUOTE_WORDS:
         return None, f"quote under {MIN_QUOTE_WORDS} words"
+    wanted = [(_gaps(quote, quoted, em), _symbols(quote[:quoted[0].start()], em), _symbols(quote[quoted[-1].end():], em))
+              for em in ("-", "")]
     tokens = list(WORD.finditer(text))
+    unmarked = LINE_MARKER.sub(lambda match: " " * len(match.group()), text)  # same positions
     joined, starts = " ", {}
     for index, token in enumerate(tokens):
         starts[len(joined)] = index
         joined += token.group().lower() + " "
-    needle, wanted = " " + " ".join(words) + " ", _symbol_forms(quote)
+    needle = " " + " ".join(words) + " "
     found, at = False, joined.find(needle)
     while at >= 0:
         found = True
         first = starts[at + 1]
-        span = text[tokens[first].start():tokens[first + len(words) - 1].end()]
-        if wanted & _symbol_forms(span):
-            return span, ""
+        last = first + len(words) - 1
+        before = tokens[first - 1].end() if first else 0
+        after = tokens[last + 1].start() if last + 1 < len(tokens) else len(text)
+        for version in (text, unmarked):
+            for em in ("-", ""):
+                lead = _symbol_run(version[before:tokens[first].start()], em)
+                trail = _symbol_run(version[tokens[last].end():after], em)
+                gaps = _gaps(version, tokens[first:last + 1], em)
+                for want_gaps, want_lead, want_trail in wanted:
+                    if (want_gaps != gaps or len(want_lead) > len(lead) or len(want_trail) > len(trail)
+                            or want_lead != tuple(t for _, _, t in lead[len(lead) - len(want_lead):])
+                            or want_trail != tuple(t for _, _, t in trail[:len(want_trail)])):
+                        continue
+                    start = before + lead[-len(want_lead)][0] if want_lead else tokens[first].start()
+                    end = tokens[last].end() + trail[len(want_trail) - 1][1] if want_trail else tokens[last].end()
+                    return _spread(text, start, end), ""
         at = joined.find(needle, at + 1)
     if found:
-        return None, "quote's symbols (<, >, =, +, -, /, ^, decimal points) differ from the note"
+        return None, ("quote's symbols (<, >, =, +, -, /, ^, ~, ±, √, decimal points) differ from the note, "
+                      "between its words or before or after them")
     return None, "quote not verbatim in the note"
 
 

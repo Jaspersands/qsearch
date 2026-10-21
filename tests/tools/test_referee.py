@@ -691,6 +691,7 @@ def test_import_rejects_quotes_whose_symbols_differ_from_the_note(tmp_path: Path
         "1+epsilon >= ||A u||^2 >= 1-(M+1)/epsilon.",
         "the older exact RS moment argument already determines",
         "coefficient, with margin 0,031 on all twelve inputs",
+        "holds for every input\n+ the second listed item has",  # a flipped sign kept at a line start
     ]
     for index, quote in enumerate(flipped):
         row = _row(tmp_path, stem="MATH_NOTE", overall="unsound", claims=[_claim(quote, verdict="wrong")])
@@ -714,6 +715,50 @@ def test_import_stores_the_note_wording_of_each_quote(tmp_path: Path) -> None:
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "loose.jsonl", [row])], "j")
     stored = R.load_reviews(tmp_path)["notes"]["MATH_NOTE"]["claims"]
     assert [claim["quote"] for claim in stored] == list(loose.values())
+
+
+EDGE_NOTE = textwrap.dedent(
+    """\
+    # Edge Symbols
+
+    2026-10-19. REVIEW PENDING.
+
+    ## Result
+
+    The success probability is <= min(1, N * 2^t * 2^(-D)) for every input.
+    The gap -0.5 is the smallest one for every graph. The unit group is U=#R_q^*
+    and the bound holds — on all saved inputs here.
+    DQI keeps O(n²) samples with λ > 1 - ρ in all runs.
+    """
+)
+
+
+def _find(quote: str) -> tuple[str | None, str]:
+    return R.find_quote(quote, EDGE_NOTE)
+
+
+def test_find_quote_compares_the_symbols_at_both_ends_and_stores_whole_tokens() -> None:
+    for flipped in (">= min(1, N * 2^t * 2^(-D)) for every input", "+0.5 is the smallest one for every graph",
+                    "the smallest one for every graph. The unit group is U=#R_q/",
+                    "keeps O(n²) samples with λ > 1 + ρ"):
+        assert _find(flipped)[0] is None and "symbols" in _find(flipped)[1], flipped
+    assert _find("min(1, N * 2^t * 2^(-D)) for every input") == ("min(1, N * 2^t * 2^(-D)) for every input", "")
+    assert _find("<= min(1, N * 2^t * 2^(-D)) for every input")[0] == "<= min(1, N * 2^t * 2^(-D)) for every input"
+    assert _find("is ≤ min(1, N * 2^t * 2^(-D)) for")[0] == "is <= min(1, N * 2^t * 2^(-D)) for"
+    assert _find("0.5 is the smallest one for every graph")[0] == "-0.5 is the smallest one for every graph"
+    assert _find("smallest one for every graph. The unit group is U=#R_q")[0] == (
+        "smallest one for every graph. The unit group is U=#R_q^*")
+
+
+def test_find_quote_reads_letters_in_any_script_and_lets_a_prose_em_dash_go() -> None:
+    for altered in ("DQI keeps O(n³) samples with λ > 1 - ρ", "DQI keeps O(n²) samples with α > 1 - ρ"):
+        assert _find(altered) == (None, "quote not verbatim in the note"), altered
+    assert _find("DQI keeps O(n²) samples with λ > 1 - ρ")[0] == "DQI keeps O(n²) samples with λ > 1 - ρ"
+    for dash in ("the bound holds, on all saved inputs here", "the bound holds -- on all saved inputs here",
+                 "the bound holds — on all saved inputs here"):
+        assert _find(dash)[0] == "the bound holds — on all saved inputs here", dash
+    assert _find("the bound holds + on all saved inputs here")[0] is None
+    assert "em dash" in R.REFEREE_INSTRUCTIONS
 
 
 def _reviewed_repo(root: Path) -> None:

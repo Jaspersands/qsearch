@@ -92,13 +92,18 @@ text.
 3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, an
    `overall` that contradicts the claims (a `wrong` claim requires `unsound` and
    `unsound` requires a `wrong` claim; a `gap` with nothing wrong requires `needs-work`),
-   a quote under six words, or a quote that is not in the note text. A quote's words must appear
-   consecutively in the note after lower-casing (what the rediscovery audit's `_norm`
-   keeps, matched on word boundaries), and the symbols between them (`<`, `>`, `=`, `+`,
-   `-`, `/`, `^`, `~`, decimal points; `≤` and `<=` count as the same) must be the
-   note's, so `b>=epsilon` does not pass for `b<=epsilon`. List and quote markers at line
-   starts may be kept or dropped. The stored quote is the note's own wording of the
-   span, not the judge's copy. A quote lifted from the artifact excerpt fails, because
+   a quote under six words, or a quote that is not in the note text. A quote's words (runs
+   of letters and digits in any script, so Greek variables and superscript exponents count;
+   an underscore splits words) must appear consecutively in the note after lower-casing,
+   and the symbols between them, before the first and after the last (`<`, `>`, `=`, `+`,
+   `-`, `/`, `^`, `~`, `±`, `√`, decimal points; `≤` and `<=` count as the same, and so do
+   `-`, `−`, `–` and a run of them) must be the note's, so `b>=epsilon` does not pass for
+   `b<=epsilon`, nor `>= min(1, ...)` for `<= min(1, ...)`. A prose em dash (`—`) may be
+   written `-` or left out. List and quote markers at the note's line starts may be kept or
+   dropped, but a kept marker must be the note's. The stored quote is the note's own
+   wording of the span, not the judge's copy, widened to whole whitespace-delimited tokens
+   (less a trailing `.`, `,`, `;` or `:`) so that a sign or operator next to the first or
+   last word is kept. A quote lifted from the artifact excerpt fails, because
    it is not in the note. A row whose `content_sha` differs from the note's current hash
    (the note was edited after export) is stored with `stale: true`, and its quotes are
    checked against the text the judge read, taken from the `batch_NN.json` beside the
