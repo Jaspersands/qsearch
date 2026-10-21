@@ -334,6 +334,33 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     assert len(data["notes"]["FIXTURE_NOTE"]["claims"]) == 1 and "OTHER" in data["notes"]
 
 
+@pytest.mark.parametrize("overall, verdicts, accepted", [
+    ("sound", ["wrong"], False),
+    ("sound", ["holds", "gap"], False),
+    ("needs-work", ["gap", "wrong"], False),
+    ("unclear", ["wrong"], False),
+    ("unclear", ["gap"], False),
+    ("unsound", ["gap", "holds"], False),
+    ("unsound", [], False),
+    ("unsound", ["gap", "wrong"], True),
+    ("needs-work", ["holds", "gap"], True),
+    ("needs-work", [], True),
+    ("sound", ["holds", "unclear"], True),
+    ("sound", [], True),
+    ("unclear", ["unclear", "holds"], True),
+])
+def test_import_rejects_an_overall_verdict_that_contradicts_the_claims(tmp_path: Path, overall, verdicts, accepted) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    row = _row(tmp_path, overall=overall, claims=[_claim(quote, verdict=verdict) for verdict in verdicts])
+    answer = _jsonl(tmp_path / "out" / "rows.jsonl", [row])
+    if accepted:
+        assert R.import_reviews(tmp_path, [answer], "j")["imported"] == ["FIXTURE_NOTE"]
+    else:
+        with pytest.raises(ValueError, match="contradicts"):
+            R.import_reviews(tmp_path, [answer], "j")
+
+
 def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     R.export_batches(tmp_path, tmp_path / "pass", notes[:2])

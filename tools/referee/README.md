@@ -73,8 +73,10 @@ field. The judge is told to work from the full text.
    up to six `claims`, each with a verbatim `quote`, a `verdict` (`holds`, `gap`, `wrong`,
    `unclear`), the `step` at fault, a `finding` (the counterexample or missing condition)
    and `covered_by_self_check`. The judge must not propose new research.
-3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, a quote
-   under six words, or a quote that is not in the note text. A quote's words must appear
+3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, an
+   `overall` that contradicts the claims (a `wrong` claim requires `unsound` and
+   `unsound` requires a `wrong` claim; a `gap` with nothing wrong requires `needs-work`),
+   a quote under six words, or a quote that is not in the note text. A quote's words must appear
    consecutively in the note after lower-casing (what the rediscovery audit's `_norm`
    keeps, matched on word boundaries), and the symbols between them (`<`, `>`, `=`, `+`,
    `-`, `/`, `^`, `~`, decimal points; `≤` and `<=` count as the same) must be the

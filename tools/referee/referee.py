@@ -126,6 +126,9 @@ For each note:
    - `needs-work`: at least one gap, nothing shown wrong.
    - `unsound`: a load-bearing claim is wrong.
    - `unclear`: too little is written to judge.
+   The overall must agree with your claims: a `wrong` claim makes it `unsound` (and
+   `unsound` needs one), and a `gap` with nothing wrong makes it `needs-work`. A row that
+   contradicts this rejects your whole output file.
 
 You must not propose new research, new algorithms or next steps: judge only what is
 written. Work from the packet and do not edit any file in the repository.
@@ -246,6 +249,19 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
     }
 
 
+def overall_conflict(overall: str, claims: list[dict]) -> str | None:
+    """Why `overall` contradicts the claim verdicts, or None: a wrong claim makes the note
+    unsound, a gap (and nothing wrong) makes it need work, and unsound needs a wrong claim."""
+    verdicts = {claim["verdict"] for claim in claims}
+    if "wrong" in verdicts and overall != "unsound":
+        return "a claim is wrong, so overall must be unsound"
+    if "wrong" not in verdicts and overall == "unsound":
+        return "unsound needs a wrong claim"
+    if "gap" in verdicts and "wrong" not in verdicts and overall != "needs-work":
+        return "the worst claim is a gap, so overall must be needs-work"
+    return None
+
+
 def exported_texts(paths: list[Path]) -> dict[tuple[str, str], str]:
     """Note texts the judges read, by (stem, content_sha), from the `batch_NN.json` files in
     each judge file's folder or its parent (`DIR/out/*.jsonl` sits under `DIR/batch_NN.json`).
@@ -290,6 +306,9 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             if sha != current:
                 source, strict = (exported[(stem, sha)], True) if (stem, sha) in exported else (source, False)
             claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in (row.get("claims") or [])[:MAX_CLAIMS]]
+            conflict = overall_conflict(overall, claims)
+            if conflict:
+                raise ValueError(f"{path}: {stem}: overall {overall!r} contradicts the claims: {conflict}")
             entries[stem] = {
                 "reviewed_on": reviewed_on,
                 "judge": judge,
