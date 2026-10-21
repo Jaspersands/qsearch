@@ -62,6 +62,16 @@ BEFORE_ARG = re.compile(r"--before=[0-9]{4}-[0-9]{2}-[0-9]{2}T23:59:59Z")
 FULL_SHA = re.compile(r"[0-9a-f]{40}(?:[0-9a-f]{24})?")
 SHOW_ARG = re.compile(FULL_SHA.pattern + ":" + re.escape(REGISTRY))
 GIT_TIMEOUT = 60  # seconds per git command; each takes well under one on this repository
+# Variables that point git at a repository, its index, objects or refs, which git exports to
+# hooks and a shell may export too: inherited, they would make git answer from that repository
+# for any -C directory. git's own list (git rev-parse --local-env-vars; GIT_INTERNAL_SUPER_PREFIX
+# from older versions), plus GIT_NAMESPACE.
+REPOSITORY_ENV = (
+    "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_COMMON_DIR", "GIT_CONFIG", "GIT_CONFIG_COUNT", "GIT_CONFIG_PARAMETERS",
+    "GIT_DIR", "GIT_GRAFT_FILE", "GIT_IMPLICIT_WORK_TREE", "GIT_INDEX_FILE", "GIT_INTERNAL_SUPER_PREFIX",
+    "GIT_NAMESPACE", "GIT_NO_REPLACE_OBJECTS", "GIT_OBJECT_DIRECTORY", "GIT_PREFIX", "GIT_REPLACE_REF_BASE",
+    "GIT_SHALLOW_FILE", "GIT_WORK_TREE",
+)
 
 
 def _log_args(cutoff: dt.date) -> tuple[str, ...]:
@@ -100,11 +110,13 @@ def allowed_git_args(args: tuple[str, ...]) -> bool:
 def git_runner(root: Path) -> GitRunner:
     """Run the brief's read-only git commands in root; return stdout, or None when git fails.
 
-    Offline and non-interactive: a partial clone does not fetch a missing object from its
-    promisor remote (GIT_NO_LAZY_FETCH, git 2.44 and later), git never prompts for credentials,
-    and stdin is closed. Raises RuntimeError when a command runs longer than GIT_TIMEOUT.
+    Against root's own repository: the REPOSITORY_ENV variables are not passed on. Offline and
+    non-interactive: a partial clone does not fetch a missing object from its promisor remote
+    (GIT_NO_LAZY_FETCH, git 2.44 and later), git never prompts for credentials, and stdin is
+    closed. Raises RuntimeError when a command runs longer than GIT_TIMEOUT.
     """
-    env = {**os.environ, "GIT_OPTIONAL_LOCKS": "0", "GIT_NO_LAZY_FETCH": "1", "GIT_TERMINAL_PROMPT": "0"}
+    env = {name: value for name, value in os.environ.items() if name not in REPOSITORY_ENV}
+    env.update(GIT_OPTIONAL_LOCKS="0", GIT_NO_LAZY_FETCH="1", GIT_TERMINAL_PROMPT="0")
 
     def run(*args: str) -> str | None:
         if not allowed_git_args(args):

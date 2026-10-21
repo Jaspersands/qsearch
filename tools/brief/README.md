@@ -65,6 +65,9 @@ fails, to tell a registry absent from that commit from one git cannot read) and
 Git runs offline and never prompts: `GIT_NO_LAZY_FETCH=1` stops a partial clone fetching the
 old registry from its remote (git 2.44 and later), `GIT_TERMINAL_PROMPT=0` stops a credential
 prompt, stdin is closed, and a command that runs past 60 s makes the section unavailable.
+Git always reads `--root`'s own repository: variables such as `GIT_DIR`, `GIT_WORK_TREE` and
+`GIT_INDEX_FILE` (git exports them to hooks, and a shell may export them) are not passed on, so
+a root that is not a checkout says so instead of being compared with another repository's history.
 The baseline is the registry as the checked-out branch had it at the cutoff: its last change
 before the window on the branch's first-parent line, each merge compared with the branch's own
 side of it. So a record merged in from another branch during the window counts as added (and

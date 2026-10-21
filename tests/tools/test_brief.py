@@ -387,6 +387,35 @@ def test_since_commit_is_unavailable_for_a_copy_inside_another_repository(tmp_pa
     assert "scratch/copy" in delta["reason"]
 
 
+def test_git_reads_the_root_not_an_inherited_git_dir(tmp_path: Path, monkeypatch) -> None:
+    # git exports GIT_DIR to hooks (and a shell may export it): git would then answer from that
+    # repository's history for any -C directory, which it takes as the top of the work tree.
+    other = _history_repo(tmp_path)
+    plain = tmp_path / "plain"
+    (plain / "research" / "registry").mkdir(parents=True)
+    (plain / B.REGISTRY).write_text(json.dumps([{"id": "Z"}]), encoding="utf-8")
+    monkeypatch.setenv("GIT_DIR", str(other / ".git"))
+    assert B.since_commit(plain, since_days=7, today="2026-10-20") is None
+    section = B._registry_section(plain, 7, dt.date(2026, 10, 20), B.git_runner(plain))
+    assert section["available"] is False and "not a git checkout" in section["reason"]
+
+    # The root's own repository is still found, whatever the inherited variables name.
+    monkeypatch.setenv("GIT_WORK_TREE", str(plain))
+    monkeypatch.setenv("GIT_INDEX_FILE", str(plain / "index"))
+    since = B.since_commit(other, since_days=7, today="2026-10-20")
+    assert since is not None and since[1] == "2026-10-01"
+
+    calls = []
+    for name in ("GIT_COMMON_DIR", "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_NAMESPACE"):
+        monkeypatch.setenv(name, str(other / ".git"))
+    monkeypatch.setattr(B.subprocess, "run", lambda command, **kw: calls.append(kw["env"]) or
+                        subprocess.CompletedProcess(command, 0, b"false\n\n", b""))
+    B.git_runner(plain)(*B.HISTORY_ARGS)
+    assert not {"GIT_DIR", "GIT_WORK_TREE", "GIT_INDEX_FILE", "GIT_COMMON_DIR", "GIT_OBJECT_DIRECTORY",
+                "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_NAMESPACE"} & set(calls[0])
+    assert calls[0]["GIT_NO_LAZY_FETCH"] == "1"
+
+
 LOG = ("--", B.REGISTRY)
 
 
