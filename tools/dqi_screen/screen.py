@@ -240,17 +240,23 @@ def _check_reach(c: Candidate, qn: dict) -> Check:
     if lam is None:
         return Check("reach", None, "give radius")
     problems = []
-    if c.objective == "count" and lam > 1 - c.rho:
-        problems.append(f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, where the semicircle value is pinned at 1")
     if qn["licensed_radius"] is not None and c.radius > qn["licensed_radius"]:
         problems.append(f"radius {c.radius} > licensed radius {qn['licensed_radius']} = (d - 2) // 2")
     bounds = _reach_bounds(qn)
     over = [f"{bound} {_fmt(value)}" for bound, value in bounds.items() if lam > value]
     if over:
         problems.append(f"lam = {_fmt(lam)} exceeds the reach bound {', '.join(over)}")
+    saturated = None
+    if c.objective == "count" and lam > 1 - c.rho:
+        saturated = (f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, where the semicircle law pins "
+                     "Q_DQI at 1 and says nothing about this radius")
     if problems:
-        return Check("reach", False, "outside licensed Hamming reach: " + "; ".join(problems))
+        detail = "outside licensed Hamming reach: " + "; ".join(problems)
+        return Check("reach", False, detail + (f"; also {saturated}" if saturated else ""))
     tight = min(bounds, key=bounds.get)
+    if saturated:
+        return Check("reach", False, f"{saturated} (radius {c.radius} is within every reach bound; tightest: "
+                     f"{tight} {_fmt(bounds[tight])})")
     inside = f"radius {c.radius} (lam = {_fmt(lam)}) is inside licensed Hamming reach (tightest: {tight} {_fmt(bounds[tight])})"
     if not c.decoder_known:
         return Check("reach", None, inside + ", but no decoder is known to reach it; give decoder_known")

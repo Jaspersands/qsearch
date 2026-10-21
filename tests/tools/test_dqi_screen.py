@@ -130,6 +130,7 @@ def test_example_c_half_rate() -> None:
     assert s.quantities["singleton_reach"] == 0.25
     assert s.quantities["kappa"] == pytest.approx(0.183, abs=5e-4)
     assert checks["R4"].passed is None and "prime field" in checks["R4"].detail
+    assert checks["restarts"].passed is False and s.verdict == "unknown"  # restarts need m >= 1212.7
 
 
 def test_encoder_known_caps_margin_at_zero() -> None:
@@ -168,6 +169,21 @@ def test_saturated_reach_is_flagged_not_viable() -> None:
     assert s.verdict == "not viable"
     assert any("saturated" in check.detail for check in checks.values())
     assert checks["reach"].passed is False and "saturated" in checks["reach"].detail
+
+
+def test_saturation_alone_fails_reach_inside_every_reach_bound() -> None:
+    # alpha = 0.9: lam = 0.35 is below Singleton 0.45 and every other bound, but above 1 - rho = 0.3.
+    s, checks = _run("hermite_half_rate.json", n=900, rho=0.7, radius=350, min_distance=None)
+    assert s.quantities["q_dqi"] == 1.0
+    assert all(s.quantities["lam"] <= bound for bound in (s.quantities["singleton_reach"], s.quantities["plotkin_reach"],
+                                                           s.quantities["sphere_packing_reach"]))
+    assert checks["R1"].passed is True and checks["R2"].passed is True
+    reach = checks["reach"]
+    assert reach.passed is False and "saturated" in reach.detail
+    assert "outside licensed Hamming reach" not in reach.detail and "exceeds the reach bound" not in reach.detail
+    assert s.verdict == "not viable"
+    s, checks = _run("hermite_half_rate.json", n=900, rho=0.7, radius=290, min_distance=None)  # lam = 0.29 <= 0.3
+    assert checks["reach"].passed is True
 
 
 def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
