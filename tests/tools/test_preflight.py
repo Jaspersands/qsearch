@@ -114,6 +114,7 @@ def test_problem_paths_are_relative_with_a_relative_root(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
     _write(tmp_path / "research" / "registry" / "nested" / "truncated.json", '{"id": ')
+    _write(tmp_path / "qsearch.py", "")
     monkeypatch.chdir(tmp_path)
 
     problems = pf.check_json(Path("."))
@@ -365,7 +366,22 @@ def test_tree_inside_an_unrelated_repository_is_git_unavailable(
     repo = _repo(outer / "export", general=general, committed={"theorems/tracked.py": "a = 1\n"}, git=False)
 
     assert pf.tracked_files(repo) is None
-    assert pf.check_untracked_imports(repo) == [pf.Problem("imports", ".", "git unavailable")]
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", ".", "git unavailable: the root is not the top of a git work tree (git sees it as export/repo/)")
+    ]
+
+
+def test_a_root_inside_a_checkout_is_named_as_such(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    # Say --root qsearch_cli by mistake: git works there, so "git unavailable" alone would mislead.
+    repo = _repo(tmp_path)
+
+    assert pf.check_untracked_imports(repo / "qsearch_cli") == [
+        pf.Problem("imports", ".", "git unavailable: the root is not the top of a git work tree (git sees it as qsearch_cli/)")
+    ]
+    with pytest.raises(SystemExit) as exit_info:
+        pf.main(["--root", str(repo / "qsearch_cli")])
+    assert exit_info.value.code == 2
+    assert "qsearch_cli is not a Q-Search checkout: it has no qsearch.py" in capsys.readouterr().err
 
 
 def test_manifest_subcommand_missing_from_order(tmp_path: Path) -> None:

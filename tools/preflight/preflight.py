@@ -238,9 +238,9 @@ def _git_output(root: Path, *args: str) -> str | None:
     return result.stdout.decode("utf-8", errors="replace") if result.returncode == 0 else None
 
 
-def _git_index(root: Path) -> tuple[set[str], set[str]] | None:
+def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
     """(paths git tracks, paths only marked intent-to-add) under theorems/, core/ and qsearch_cli/,
-    relative to root; None when git cannot tell.
+    relative to root; when git cannot tell, why not.
 
     git can tell only when root is the top of its own work tree. A tree that sits inside some
     other repository (an export unpacked under a dotfiles repository) is not that repository's.
@@ -249,12 +249,14 @@ def _git_index(root: Path) -> tuple[set[str], set[str]] | None:
     """
     root = Path(root).resolve()
     prefix = _git_output(root, "rev-parse", "--show-prefix")
-    if prefix is None or prefix.strip():
-        return None
+    if prefix is None:
+        return "git unavailable"
+    if prefix.strip():
+        return f"git unavailable: the root is not the top of a git work tree (git sees it as {prefix.strip()})"
     pathspec = ("--", *PACKAGES, CLI_PACKAGE)
     listing = _git_output(root, "ls-files", "-z", *pathspec)
     if listing is None:
-        return None
+        return "git unavailable"
     added = _git_output(root, "diff", "--no-ext-diff", "--no-renames", "--name-only", "-z", "--diff-filter=A", *pathspec)
     intent = {p for p in (added or "").split("\0") if p}
     return {p for p in listing.split("\0") if p} - intent, intent
@@ -264,7 +266,7 @@ def tracked_files(root: Path) -> set[str] | None:
     """Paths under theorems/, core/ and qsearch_cli/ that git tracks or has staged, relative to root;
     None when git cannot tell (see _git_index)."""
     index = _git_index(root)
-    return None if index is None else index[0]
+    return None if isinstance(index, str) else index[0]
 
 
 def check_untracked_imports(root: Path) -> list[Problem]:
@@ -276,7 +278,7 @@ def check_untracked_imports(root: Path) -> list[Problem]:
         where = error.filename if isinstance(error, SyntaxError) and error.filename else "."
         return [Problem("imports", where, f"cannot read the CLI sources: {type(error).__name__}: {error}")]
     index = _git_index(root)
-    tracked, intent = index if index is not None else (None, set())
+    tracked, intent = (None, set()) if isinstance(index, str) else index
     problems = []
     for module_path in sorted(refs):
         if not (root / module_path).is_file():
@@ -285,8 +287,8 @@ def check_untracked_imports(root: Path) -> list[Problem]:
             problems.append(Problem("imports", module_path, "not tracked by git (intent-to-add only)"))
         elif tracked is not None and module_path not in tracked:
             problems.append(Problem("imports", module_path, "not tracked by git"))
-    if tracked is None:
-        problems.append(Problem("imports", ".", "git unavailable"))
+    if isinstance(index, str):
+        problems.append(Problem("imports", ".", index))
     return problems
 
 
@@ -388,6 +390,8 @@ def main(argv: list[str] | None = None) -> int:
     root = Path(args.root).resolve()
     if not root.is_dir():
         parser.error(f"--root {root} is not a directory")  # exits 2: a typo, not a broken checkout
+    if not (root / "qsearch.py").is_file():  # say a subdirectory of one: every check would mislead
+        parser.error(f"--root {root} is not a Q-Search checkout: it has no qsearch.py")
     problems = run(root, imports=args.imports, validate=args.validate)
     if args.json:
         print(json.dumps({"root": str(root), "problems": [asdict(p) for p in problems], "count": len(problems)}, indent=2))
