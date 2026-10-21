@@ -123,3 +123,111 @@ Cost: about 100k tokens per batch of five notes.
 A review is one model's reading of one note. It is a triage for the agents and the
 human, not peer review: a `holds` means the judge found no gap, not that the claim is
 proved.
+
+## Calibration
+
+On 2026-10-21 the referee (`tools/referee`) ran three times, independently, on one batch of four review-pending notes behind the classical-competitors preprint: `PRIME_CHARACTER_OPI`, `PRIME_CHARACTER_NORM_ATTACK`, `POLAR_SOURCE_DESIGN` and `POLAR_CONDITIONAL_SAMPLER`. The packets are in `research/audits/reviews/calibration/batch_01.json`, and judges A, B and C wrote to `out/`, `out_repeat_b/` and `out_repeat_c/`. Their output was compared with the preprint's review history (`docs/papers/classical-competitors/README.md`, three passes on 2026-10-19).
+
+### Verdicts
+
+| Note | A | B | C |
+| --- | --- | --- | --- |
+| PRIME_CHARACTER_OPI | needs-work | needs-work | needs-work |
+| PRIME_CHARACTER_NORM_ATTACK | needs-work | sound | sound |
+| POLAR_SOURCE_DESIGN | sound | needs-work | sound |
+| POLAR_CONDITIONAL_SAMPLER | sound | sound | sound |
+
+No judge returned wrong or unsound. Pairwise agreement on overall verdicts is A–B 2/4, A–C 3/4 and B–C 3/4, and every split comes from a single gap raised by one judge. Each judge checked 24 claims. Every number any judge compared with an artifact matched. C could not check the OPI live numbers because the packet's artifact path does not resolve (see below).
+
+### Known findings against the judges
+
+Grading: **yes** means the judge raised it as a gap or wrong claim. **partly** means the judge checked the underlying fact but did not flag it. **no** means the judge did not touch it. **n/a** means the finding is about the preprint's wording or about a note outside this batch.
+
+| Review-history finding | Note | A | B | C | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| N=31, K=16 mixed seed-71 input stops at 30/31 (second pass) | OPI / NORM_ATTACK | partly | partly | no | The OPI note reports "31/29 to31/30". NORM_ATTACK lists only the N127 mixed controls as left over and says nothing about N31,K16, where its budget K>max(\|A\|,D) can never hold. A and B matched 31/30 against the artifact and went no further. C never checked it. |
+| Polar certificate presented as unconditional; rests on two review-pending derivations (second pass) | POLAR_SOURCE_DESIGN | no | partly | no | The note says it "removes the missing public-set construction premise", and the sampler note's header says "resolves" it, while the conditions sit only at lines 3–4 and 176. B flagged that sentence, but for scope rather than dependence. A and C re-derived both derivations, found them sound, and said nothing about the conditionality. The packet status for both polar notes was `unlabelled`. |
+| Omitted conditioning on the syndrome in Result C (must-fix) | preprint only | n/a | n/a | n/a | The sampler note states E_s TV(Q_s, P(U\|U_F=s)) ≤ 2ε_F explicitly, and all three judges verified it. The error came in at drafting. |
+| Fixed-input guarantee stated too broadly (must-fix) | preprint only | n/a | n/a | n/a | The OPI and NORM_ATTACK headers scope it correctly. The guarantee comes from the Morse note, which is not in this batch. Only C restated the per-instance limit. |
+| "PPT bound equals collective"; three Result B bounds rounded the wrong way; Result B rounded to nearest | preprint only | n/a | n/a | n/a | Result B, not in this batch. |
+| Wrong reason for the zero bounds; "only above" a threshold; N = 15 controls ignored; 169/756-bit field sizes | preprint only | n/a | n/a | n/a | The Morse and exterior-bound notes, not in this batch. |
+| Mis-scoped "best classical witness" | preprint only | n/a | n/a | n/a | The OPI note already says "not certified local optima". |
+| Korada–Urbanke covers only the joint step; "Lemma 2"; Virmani pages; a new citation's clause | preprint only | n/a | n/a | n/a | Citations. The judges did reconstruct the joint-then-conditional split. |
+| "Highest share" audit sentence; audit section update; Reproducibility claim; reproduce.sh claim; conventions, tolerance, r = 4 prime, angle formula, spacing, bibliography | preprint only | n/a | n/a | n/a | These are preprint text, tooling and bibliography items. |
+| Seventh must-fix (the README counts 7 and names 6) | preprint only | n/a | n/a | n/a | It is not named in the README, so it cannot be mapped. |
+
+Of the four findings that matter most for this calibration, two turned out to be preprint drafting errors over correctly scoped notes: the syndrome conditioning and the fixed-input breadth. The other two have note-level roots, and **no judge raised either one**.
+
+### Findings the review history does not contain
+
+| Note | Judges | Finding | Check |
+| --- | --- | --- | --- |
+| OPI | A, B, C | The p5, N4, K2 tight-degree strict counterexample does not state the coset orientation. | **Real, minor.** A brute force over F5 gives 0 perfect strict polynomials at K2 for a square β but 1 for a nonsquare β (Q=3). The test uses `global`, which means orientation 0. The note needs "square common coset" added. |
+| NORM_ATTACK | A (B and C disagree) | The "at least 1/(2N)" corollary fails at N=1. | **Doubtful.** N=1 with D=2 needs K≥3>N, which is outside an RS code of length N. With K≤N the bound holds. At most the note should state K≤N. |
+| POLAR_SOURCE_DESIGN | B | One certified length (N32768) is called a half-rate "family". | **Real, in wording.** Every coarse half-rate design from N16 to N4096 fails, and the premise needs ε_F→0. The preprint keeps "For this polar family …" (main.tex line 239). |
+| POLAR_SOURCE_DESIGN | A | The N1024, 361-constraint Gibbs sample exists only in the tests. | **Real, provenance only.** The artifact's N1024 row has no samples. `tests/test_polar_source_design.py:151-160` runs the sample. |
+| OPI | A, B, C | The artifact path `classical_baselines/prime_character_opi.json` does not resolve. | **The path problem is real; C's "not in the repository" is wrong.** The file is under `research/`, and the numbers C marked unclear match it. |
+| NORM_ATTACK | B | The artifact stores seeds 1038/1080, not 29/71. | **Real, trivial.** The producer uses seed+1009. |
+
+### What the referee missed
+
+- It raised neither note-level finding from the review history. On N31 it matched the score and moved on. It did not notice that NORM_ATTACK's decision paragraph leaves the N31,K16 mixed controls out, or that its degree budget cannot apply there.
+- It did not flag the polar notes' headline sentences ("removes"/"resolves the missing public-set premise"), which drop the review-pending conditions the same notes state elsewhere.
+- Neither the referee nor the review history noted that the OPI note reports only the common-coset results for r=3 (N63,K46) and r=4 (N32,K24). The artifact's mixed scores there are 55 and 56 of 63, and 28 and 27 of 32.
+- Packet defects weakened the run:
+  - The OPI artifact path lacks `research/`.
+  - Both polar notes have status `unlabelled`.
+  - OPI has `self_check: null`.
+  - Every packet has an empty `derivations`.
+  - The NORM_ATTACK `not_claimed` list contains a sentence about the Morse solver.
+
+### What this says about using the referee
+
+- It works as an independent check of derivations and numbers. All three runs found the same real OPI defect, re-derived every load-bearing argument, and matched every number they checked.
+- A finding raised by only one run is a lead, not a verdict. Of the two such findings here, one is real and one is doubtful. Use at least two runs, and verify any finding raised by only one.
+- It reviews notes in isolation. It cannot catch what a preprint adds at drafting, and 19 of the 21 mapped review items were of that kind. It is no substitute for a check of the preprint against its notes.
+- It judges whether each quoted claim follows. It does not check what a note leaves out of its summaries, or whether a headline sentence keeps the note's own conditions, and it missed both note-level findings for those reasons. The packet builder should fix the defects above before the next run.
+
+### Round two (revised instructions)
+
+Round two changed two things in `INSTRUCTIONS.md`. The packet gained an `artifact_path` field, and the instructions added two checks: the scope of headline sentences (title, status, result and decision must keep the review-pending derivations, the sizes actually certified and the inputs where the method fails) and omissions in summaries (a summary of cases must match every case the note or artifact reports). Two fresh judges, D and E, reviewed the same four notes (`research/audits/reviews/calibration_r2/`).
+
+| Finding | A | B | C | D | E |
+|---|---|---|---|---|---|
+| N31,K16 mixed seed-71 (30/31) left out of NORM_ATTACK's decision; degree budget cannot hold (review history) | no | no | no | yes | yes |
+| Polar headlines ("removes" / "resolves the premise") drop the review-pending derivations (review history) | no | no | no | yes | yes |
+| OPI p=5 counterexample needs the square coset | yes | yes | yes | yes | yes |
+| One certified length (N32768) called a family | no | yes | no | yes | yes |
+| NORM_ATTACK 1/(2N) fails at N=1 (false positive: the degree budget excludes N=1) | yes | no | no | no | no |
+
+- Both judges found both review-history findings that round one missed. They also kept every real round-one finding and dropped A's N=1 false positive, which they correctly rated holds.
+- New, checked as real: neither OPI's open-case list nor NORM_ATTACK's decision mentions the unsolved r=3 N63,K46 (55, 56/63) and r=4 N32,K24 (28, 27/32) mixed inputs, and OPI never reports their scores. NORM_ATTACK also says common cosets were "solved", but the K39 global inputs score 108/127 and 110/127.
+- With `artifact_path`, both judges checked the OPI repair totals, which C could not find in round one.
+- The new checks also produced three low-value gaps: a table without the N16 row (D), the NORM_ATTACK title (E), and an unnamed fully solved configuration (E). Treat a scope gap with no effect on a conclusion as minor.
+- Both judges rated all four notes needs-work. This batch has no correctly scoped note, so whether the new checks over-flag clean notes is still untested. The next calibration should include one.
+
+The four calibration notes' stored reviews are round-two judge D's.
+
+## First pass (2026-10-21)
+
+`research/audits/reviews/pass1/` holds the first pass over the 30 newest review-pending
+notes, made with the revised instructions. Each batch of five went to two independent
+judges (`out_a/`, `out_b/`). A third agent then checked, against the note, its artifact and
+small recomputations, every claim either judge marked gap, wrong or unclear and every claim
+on which they disagreed. It dropped what it could not confirm and wrote the stored review
+(`out/`).
+
+| Overall | Notes |
+|---|---|
+| needs-work | 25 |
+| sound | 5 |
+| unsound or unclear | 0 |
+
+The two judges gave the same overall verdict for 25 of the 30 notes, and both rated four
+notes sound, so the new scope checks do not flag every note (the open question left by
+round two of the calibration). Most gaps are
+headline-scope gaps: a title, status line or decision sentence that drops a condition the
+body states (review pending, the sizes actually certified, the inputs where the method
+fails). Read those as wording fixes unless the finding says a conclusion changes. No claim
+was found wrong, so the plan's hand spot-check of two unsound claims had nothing to check;
+the reconciling agent's per-claim checks took its place.
