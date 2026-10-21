@@ -241,6 +241,20 @@ def test_encoder_known_caps_margin_at_zero() -> None:
     assert s.verdict == "not viable"
 
 
+def test_encoder_known_is_documented_as_a_polynomial_time_encoder_attaining_q_star(capsys) -> None:
+    # Proposition 9 (R3): a polynomial-time encoder for im(B) attaining Q*, not "the planted encoder".
+    s, checks = _run("mpi_signed_cosine.json", encoder_known=True)
+    assert "polynomial-time encoder" in checks["R3-encoder"].detail and "Q*" in checks["R3-encoder"].detail
+    assert "polynomial-time encoder" in _run("mpi_signed_cosine.json")[1]["R3-encoder"].detail
+    with pytest.raises(SystemExit):
+        S.main(["--help"])
+    help_text = " ".join(capsys.readouterr().out.split())
+    assert "planted encoder is known" not in help_text and "polynomial-time encoder" in help_text and "Q*" in help_text
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    row = next(line for line in readme.splitlines() if line.startswith("| `encoder_known`"))
+    assert "planted encoder is known" not in row and "polynomial-time" in row and "Q*" in row
+
+
 def test_prime_power_q_without_subfield_inputs_is_unknown_not_na() -> None:
     # Example (c) at twice the length is viable over the prime field F_8191.
     longer = {"m": 2000, "radius": 248, "min_distance": 500}

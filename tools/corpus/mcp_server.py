@@ -81,8 +81,8 @@ def create_server(
     def screen_dqi_candidate(params: dict) -> dict:
         """Screen a DQI candidate against the Mazumder-Niroula soundness rules (arXiv:2610.06753).
         params: name, objective ("count" or "cosine"), q, m, n, rho, and optionally radius,
-        min_distance, decoder_known, encoder_known, p, b, c, classical_witness, finite_dqi_mean
-        (see tools/dqi_screen/examples). Returns the quantities, each rule's check and a verdict:
+        min_distance, decoder_known, encoder_known (a polynomial-time encoder attains Q*), p, b, c,
+        classical_witness, finite_dqi_mean (see tools/dqi_screen/README.md and examples). Returns the quantities, each rule's check and a verdict:
         "not viable", "unknown" or "viable". This is a soundness screen, not a proof: the rules
         are asymptotic and assume worst-case decoding (of Hamming errors for the count objective,
         of signed {+-1} error patterns for the cosine)."""

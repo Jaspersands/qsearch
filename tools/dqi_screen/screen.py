@@ -342,9 +342,12 @@ def _check_r3(c: Candidate, qn: dict) -> Check:
 
 
 def _check_encoder(c: Candidate) -> Check:
+    """Proposition 9 (R3): a polynomial-time encoder for im(B) attaining Q* is a classical baseline
+    with DQI's limiting value, so mu+ <= 0."""
     if c.encoder_known:
-        return Check("R3-encoder", False, "the encoder is known, so the margin over Prange is <= 0")
-    return Check("R3-encoder", True, "encoder not known")
+        return Check("R3-encoder", False, "a polynomial-time encoder attains the existential line Q*: it is a classical "
+                     "baseline with the same limiting value, so the margin mu+ <= 0 (Proposition 9)")
+    return Check("R3-encoder", True, "no polynomial-time encoder attaining Q* is known")
 
 
 def _check_r4(c: Candidate, qn: dict) -> Check:
@@ -504,7 +507,9 @@ def main(argv: list[str] | None = None) -> int:
     for flag in ("rho", "classical-witness", "finite-dqi-mean"):
         parser.add_argument(f"--{flag}", type=float)
     parser.add_argument("--decoder-known", action="store_true", help="An efficient decoder reaches the radius.")
-    parser.add_argument("--encoder-known", action="store_true", help="The planted encoder is known (R3: margin <= 0).")
+    parser.add_argument("--encoder-known", action="store_true",
+                        help="A polynomial-time encoder for im(B) attains the existential line Q* (R3, Proposition 9: "
+                        "margin <= 0). A generator matrix or a known planted solution is not such an encoder.")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--out", type=Path, help="Write the report here instead of printing it.")
     args = parser.parse_args(argv)

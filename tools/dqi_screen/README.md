@@ -33,7 +33,7 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | `radius` | claimed decoding radius l; lam = l/m |
 | `min_distance` | minimum distance d of the decoded code, when known; delta = d/m |
 | `decoder_known` | an efficient decoder reaches `radius` |
-| `encoder_known` | the planted encoder is known |
+| `encoder_known` | a polynomial-time encoder for the optimizer code im(B) attains the existential line Q* (Proposition 9, R3). Encoder in the lossy-source-coding sense: given the accepted sets it returns a codeword satisfying many rows. The generator map x -> Bx or a known planted solution is not one |
 | `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and c the largest, over the accepted sets, of the smallest F_p-codimension of an affine subspace inside the set (Proposition 9); 1 <= c <= b, and c >= log_p(1/rho) since a set of density rho holds at most rho p^b elements (Appendix A.6). Needed when q is not prime, and checked against q when given |
 | `classical_witness` | best value a classical method has reached: a satisfied fraction in [0, 1] (count), or a mean cosine in [-1, 1] |
 | `finite_dqi_mean` | DQI's mean at this finite size, when computed; same range as the witness |
@@ -52,7 +52,7 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 | reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and l <= every finite-length radius bound; not saturated (lam > 1 - rho, where Eq. (1) already gives Q_DQI = 1: a screen policy, not one of the paper's rules; screen the radius (1 - rho) m instead). Cosine: the radius is inside the signed packing radius | count, for the dual [m, k = m - n] code: Singleton (n-1)//2 (d <= n+1); Plotkin (d_P - 2)//2 with d_P = floor(m (q-1) q^(k-1) / (q^k - 1)); sphere packing, the largest l with C(m, l) (q-1)^l <= q^n. Cosine: the largest l with C(m, l) 2^l <= q^n, so the {+-1} patterns of weight l have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them |
 | R2 | hard | the radius beats the threshold | lam > lambda_crit (count) or lambda_crit_cos (cosine) |
 | R3 | soft | the claimed value (finite mean, else Q_DQI or the cosine value) is at most the existential line Q* | count: Q* with D_KL(Q* \|\| rho) = alpha ln q when q^alpha rho < 1, else 1 (Definition 5); cosine: the largest mean of cos(2 pi v/q) within relative entropy alpha ln q of uniform, by exponential tilting (Proposition 13(iii); 0.726 for MPI) |
-| R3-encoder | hard | the encoder is not known | a known encoder caps the margin at 0 |
+| R3-encoder | hard | no polynomial-time encoder attaining Q* is known | such an encoder is a classical baseline with DQI's limiting value, so mu+ <= 0 (Proposition 9) |
 | R4 | hard | prime field: not applicable; prime power: the claimed value beats the subfield baseline | alpha_sub = min(1, b alpha/c); baseline rho + (1-rho) floor(alpha_sub m)/m; at rho = 1/2 blocked when alpha >= 2c^2/(b^2+c^2) |
 | cap | soft | count only: Q_DQI <= q_cap | q_cap = Q_Pr + kappa, kappa = sqrt(u(1-u)) - u, u = alpha/2 (Proposition 8; at most (sqrt 2 - 1)/2) |
 | witness | soft | the classical witness is below DQI's claimed value (finite mean, else Q_DQI or the cosine value) and, for the count, below q_cap - 0.01 | otherwise the classical method already reaches DQI's claim, or no licensed radius beats it by more than 0.01 |
