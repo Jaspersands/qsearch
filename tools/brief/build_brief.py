@@ -58,7 +58,9 @@ HISTORY_ARGS = ("rev-parse", "--is-shallow-repository", "--show-prefix")
 # second before the cutoff (commit dates are whole seconds). [0-9], not \d: \d takes any
 # Unicode digit.
 BEFORE_ARG = re.compile(r"--before=[0-9]{4}-[0-9]{2}-[0-9]{2}T23:59:59Z")
-SHOW_ARG = re.compile(r"[0-9a-f]{40}(?:[0-9a-f]{24})?:" + re.escape(REGISTRY))
+FULL_SHA = re.compile(r"[0-9a-f]{40}(?:[0-9a-f]{24})?")
+SHOW_ARG = re.compile(FULL_SHA.pattern + ":" + re.escape(REGISTRY))
+GIT_TIMEOUT = 60  # seconds per git command; each takes well under one on this repository
 
 
 def _log_args(cutoff: dt.date) -> tuple[str, ...]:
@@ -76,7 +78,8 @@ def allowed_git_args(args: tuple[str, ...]) -> bool:
     """True only for the brief's own read-only git commands:
 
     ("log", "-1", "--before=YYYY-MM-DDT23:59:59Z", "--format=%H<US>%ct", "--", REGISTRY),
-    ("show", "<full sha>:" + REGISTRY) and ("rev-parse", "--is-shallow-repository", "--show-prefix").
+    ("show", "<full sha>:" + REGISTRY), ("ls-tree", "--name-only", "<full sha>", "--", REGISTRY)
+    and ("rev-parse", "--is-shallow-repository", "--show-prefix").
     """
     args = tuple(args)
     if args == HISTORY_ARGS:
@@ -85,18 +88,28 @@ def allowed_git_args(args: tuple[str, ...]) -> bool:
         return bool(BEFORE_ARG.fullmatch(args[2]))
     if len(args) == 2 and args[0] == "show":
         return bool(SHOW_ARG.fullmatch(args[1]))
+    if len(args) == 5 and args[:2] == ("ls-tree", "--name-only") and args[3:] == ("--", REGISTRY):
+        return bool(FULL_SHA.fullmatch(args[2]))
     return False
 
 
 def git_runner(root: Path) -> GitRunner:
-    """Run the brief's read-only git commands in root; return stdout, or None when git fails."""
-    env = {**os.environ, "GIT_OPTIONAL_LOCKS": "0"}
+    """Run the brief's read-only git commands in root; return stdout, or None when git fails.
+
+    Offline and non-interactive: a partial clone does not fetch a missing object from its
+    promisor remote (GIT_NO_LAZY_FETCH, git 2.44 and later), git never prompts for credentials,
+    and stdin is closed. Raises RuntimeError when a command runs longer than GIT_TIMEOUT.
+    """
+    env = {**os.environ, "GIT_OPTIONAL_LOCKS": "0", "GIT_NO_LAZY_FETCH": "1", "GIT_TERMINAL_PROMPT": "0"}
 
     def run(*args: str) -> str | None:
         if not allowed_git_args(args):
             raise ValueError(f"the brief only runs its own read-only git commands, not {args!r}")
         try:
-            result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, env=env)
+            result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, env=env,
+                                    stdin=subprocess.DEVNULL, timeout=GIT_TIMEOUT)
+        except subprocess.TimeoutExpired:
+            raise RuntimeError(f"git {args[0]} did not finish within {GIT_TIMEOUT} s") from None
         except OSError:
             return None
         # A committed registry may hold bytes that are not UTF-8; replace them rather than fail.
@@ -171,6 +184,20 @@ def _no_baseline_reason(git: GitRunner) -> str:
     return _history_problem(git(*HISTORY_ARGS)) or _no_change_reason("the cutoff")
 
 
+def _unreadable_reason(git: GitRunner, sha: str, date: str | None) -> str:
+    """Why `git show <sha>:REGISTRY` failed: absent from that commit only when git lists no such file there."""
+    commit = f"commit {sha[:8]}" + (f" of {date}" if date else "")
+    # ls-tree answers from the commit's trees alone, which even a blob-less partial clone holds,
+    # and its answer does not depend on the language of git's messages.
+    listed = git("ls-tree", "--name-only", sha, "--", REGISTRY)
+    if listed is None:
+        return f"git could not read {REGISTRY} at {commit}"
+    if not listed.strip():
+        return f"{REGISTRY} did not exist at the cutoff ({commit})"
+    return (f"git could not read {REGISTRY} at {commit}: the file is in that commit, but its content is not in "
+            "this clone (a partial clone?)")
+
+
 def _ids(data: Any) -> set[str]:
     """Record ids of a registry: a list of records, or an object with a "records" list."""
     if isinstance(data, dict) and isinstance(data.get("records"), list):
@@ -202,7 +229,8 @@ def registry_delta(
 
     The working copy includes edits not committed yet. `quarantined` lists the removed ids
     that are now in the quarantine file (None when that file cannot be read). Unavailable
-    (never "no change") when there is no baseline commit or the registry did not exist in it.
+    (never "no change") when there is no baseline commit, the registry did not exist in it, or
+    git cannot read it there.
     """
     root = Path(root)
     git = git or git_runner(root)
@@ -210,10 +238,9 @@ def registry_delta(
         return {"available": False, "reason": _no_baseline_reason(git)}
     committed = git("show", f"{since_sha}:{REGISTRY}")
     if committed is None:
-        commit = f"commit {since_sha[:8]}" + (f" of {since_date}" if since_date else "")
         return {
             "available": False,
-            "reason": f"{REGISTRY} did not exist at the cutoff ({commit})",
+            "reason": _unreadable_reason(git, since_sha, since_date),
             "since_sha": since_sha,
             "since_date": since_date,
         }

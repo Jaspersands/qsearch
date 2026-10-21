@@ -51,13 +51,19 @@ is missing, whose tool is not in the checkout, or that raises for any reason bec
 heading. Not available never means "nothing to report", and one broken source never stops the
 others. The registry section is unavailable, not "no change", when there is no git, on a
 shallow clone, when the root is not the top of its own work tree, when no commit before the
-window changed the registry, or when the registry did not exist in that commit (it was
-deleted there); the duplicates section is then unavailable too.
+window changed the registry, when the registry did not exist in that commit (it was deleted
+there), or when git cannot read it there (a partial clone without that version); the
+duplicates section is then unavailable too.
 
 **Git.** Read-only, through an allow-list in the cockpit's style: exactly
 `log -1 --before=YYYY-MM-DDT23:59:59Z --format=%H<US>%ct -- research/registry/negative_results.json`,
-`show <full sha>:research/registry/negative_results.json` and
+`show <full sha>:research/registry/negative_results.json`,
+`ls-tree --name-only <full sha> -- research/registry/negative_results.json` (only after `show`
+fails, to tell a registry absent from that commit from one git cannot read) and
 `rev-parse --is-shallow-repository --show-prefix`; anything else raises before git starts.
+Git runs offline and never prompts: `GIT_NO_LAZY_FETCH=1` stops a partial clone fetching the
+old registry from its remote (git 2.44 and later), `GIT_TERMINAL_PROMPT=0` stops a credential
+prompt, stdin is closed, and a command that runs past 60 s makes the section unavailable.
 The baseline is the registry's last change before the window, not the last commit: the
 path-limited log follows, at each merge, the parent whose registry the merge kept, so a tool
 branch merged with `--no-ff` whose last commit falls just before the cutoff (and whose registry

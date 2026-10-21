@@ -198,6 +198,73 @@ def test_since_commit_is_unavailable_on_a_shallow_clone(tmp_path: Path) -> None:
     assert delta["available"] is False and "shallow" in delta["reason"]
 
 
+def _git_version() -> tuple[int, ...]:
+    out = subprocess.run(["git", "--version"], capture_output=True, text=True, check=True).stdout
+    return tuple(int(part) for part in out.split()[2].split(".")[:2])
+
+
+def _blobless_clone(tmp_path: Path) -> Path:
+    """A --filter=blob:none clone of _history_repo: it has the 2026-10-15 registry, not the 2026-10-01 one."""
+    source = _history_repo(tmp_path)
+    _git(source, "config", "uploadpack.allowFilter", "true")
+    clone = tmp_path / "partial"
+    subprocess.run(["git", "clone", "-q", "--filter=blob:none", source.resolve().as_uri(), str(clone)], check=True,
+                   capture_output=True)
+    return clone
+
+
+@pytest.mark.skipif(_git_version() < (2, 44), reason="GIT_NO_LAZY_FETCH needs git 2.44")
+def test_registry_delta_never_fetches_a_missing_blob(tmp_path: Path) -> None:
+    clone = _blobless_clone(tmp_path)
+    since = B.since_commit(clone, since_days=7, today="2026-10-20")  # the 2026-10-01 commit
+    assert since is not None and since[1] == "2026-10-01"
+    delta = B.registry_delta(clone, since[0], since_date=since[1])
+    # The origin is reachable; reading the old registry would have fetched it from there.
+    assert delta["available"] is False
+    assert delta["reason"] == (f"git could not read {B.REGISTRY} at commit {since[0][:8]} of 2026-10-01: the file is "
+                               "in that commit, but its content is not in this clone (a partial clone?)")
+
+
+def test_registry_delta_does_not_call_an_unreadable_registry_missing(tmp_path: Path) -> None:
+    clone = _blobless_clone(tmp_path)
+    _git(clone, "remote", "remove", "origin")  # offline, whatever the git version
+    since = B.since_commit(clone, since_days=7, today="2026-10-20")
+    assert since is not None
+    reason = B.registry_delta(clone, since[0], since_date=since[1])["reason"]
+    assert "did not exist" not in reason and "content is not in this clone" in reason
+
+    # When git cannot even list the commit's files, the reason stays generic.
+    def git(*args):
+        return None
+
+    reason = B.registry_delta(clone, SHA, git)["reason"]
+    assert reason == f"git could not read {B.REGISTRY} at commit {SHA[:8]}"
+
+
+def test_git_runner_stays_offline_and_has_a_timeout(tmp_path: Path, monkeypatch) -> None:
+    calls = []
+
+    def fake_run(command, **kwargs):
+        calls.append((command, kwargs))
+        return subprocess.CompletedProcess(command, 0, b"false\n\n", b"")
+
+    monkeypatch.setattr(B.subprocess, "run", fake_run)
+    assert B.git_runner(tmp_path)(*B.HISTORY_ARGS) == "false\n\n"
+    [(command, kwargs)] = calls
+    assert command == ["git", "-C", str(tmp_path), *B.HISTORY_ARGS]
+    env = kwargs["env"]
+    assert (env["GIT_NO_LAZY_FETCH"], env["GIT_TERMINAL_PROMPT"], env["GIT_OPTIONAL_LOCKS"]) == ("1", "0", "0")
+    assert kwargs["stdin"] is subprocess.DEVNULL and kwargs["timeout"] == B.GIT_TIMEOUT
+
+    def slow_run(command, **kwargs):
+        raise subprocess.TimeoutExpired(command, kwargs["timeout"])
+
+    monkeypatch.setattr(B.subprocess, "run", slow_run)
+    brief = B.build(tmp_path, today="2026-10-20")
+    assert brief["registry"] == {"available": False,
+                                 "reason": f"RuntimeError: git rev-parse did not finish within {B.GIT_TIMEOUT} s"}
+
+
 def test_since_commit_is_unavailable_for_a_copy_inside_another_repository(tmp_path: Path) -> None:
     repo = _history_repo(tmp_path)
     nested = repo / "scratch" / "copy"
@@ -217,6 +284,7 @@ LOG = ("--", B.REGISTRY)
 def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
     assert B.allowed_git_args(("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG)) is True
     assert B.allowed_git_args(("show", f"{SHA}:{B.REGISTRY}")) is True
+    assert B.allowed_git_args(("ls-tree", "--name-only", SHA, *LOG)) is True
     assert B.allowed_git_args(("rev-parse", "--is-shallow-repository", "--show-prefix")) is True
 
 
@@ -239,6 +307,11 @@ def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
         ("show", f"{SHA}:research/registry/dequantization_checks.json"),
         ("show", f"{SHA}:{B.REGISTRY}", "--output=/tmp/x"),
         ("show", f"--output=/tmp/x {SHA}:{B.REGISTRY}"),
+        ("ls-tree", "--name-only", "HEAD", *LOG),
+        ("ls-tree", "--name-only", SHA, "--", "research/registry"),
+        ("ls-tree", "--name-only", SHA, B.REGISTRY),
+        ("ls-tree", "-r", SHA, *LOG),
+        ("ls-tree", "--name-only", f"{SHA} --output=/tmp/x", *LOG),
         ("status", "--porcelain"),
         ("rev-parse", "HEAD"),
         ("rev-parse", "--is-shallow-repository"),
