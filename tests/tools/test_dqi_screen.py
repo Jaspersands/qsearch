@@ -439,6 +439,19 @@ def test_prange_reduces_range_accepted_sets_mod_q() -> None:
         P.prange_restarts(B, [range(-1, 7)] * 12, 7)
 
 
+def test_prange_rejects_non_integer_entries() -> None:
+    B = np.ones((5, 1), dtype=int)
+    for accepted in ([{0.5, 1}] * 5, [{2.9}] * 5, ["01"] * 5, [b"01"] * 5):
+        with pytest.raises(ValueError, match="integer"):
+            P.prange_restarts(B, accepted, 3)
+    for entry in (1.7, "1"):
+        bad = np.array([[entry], [1], [1], [1], [1]], dtype=object)
+        with pytest.raises(ValueError, match="integer"):
+            P.prange_restarts(bad, [{0, 1}] * 5, 3)
+    ok = np.array([[np.int64(1)], [1], [2], [1], [1]], dtype=object)
+    assert P.prange_restarts(ok, [{np.int64(0), 1}] * 5, 3)["rank"] == 1
+
+
 def test_prange_large_prime_field() -> None:
     q = 2**61 - 1
     rng = np.random.default_rng(7)

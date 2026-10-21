@@ -12,7 +12,8 @@ rank); the best of N restarts is the finite-length number DQI has to beat (rule 
 A rank-deficient B (duplicated columns, the incidence matrix of a graph) runs on its image:
 the r rows chosen span the row space, so they fix Bx.
 
-Accepted sets are read mod q. A step-1 range is an arc of residues (range(-1, 2) is
+Entries of B and of the accepted sets must be integers (a float or a string raises; it is
+never truncated). Accepted sets are read mod q. A step-1 range is an arc of residues (range(-1, 2) is
 {q-1, 0, 1}) and is never materialised, so large arcs are cheap when q = 2^61 - 1; it may not
 be longer than q. Any other collection is reduced to a set of residues.
 
@@ -21,6 +22,7 @@ Arithmetic is on Python ints, so q up to 2^61 - 1 does not overflow int64.
 
 from __future__ import annotations
 
+import numbers
 from collections.abc import Collection, Sequence
 
 import numpy as np
@@ -51,6 +53,13 @@ class _Arc:
 
 
 _MATERIALIZE_LIMIT = 10**6
+
+
+def _integer(value: object, where: str) -> int:
+    """value as an int; ValueError for anything not integral (a float or a str is never truncated)."""
+    if not isinstance(value, numbers.Integral):
+        raise ValueError(f"{where} must hold integers, got {value!r}")
+    return int(value)
 
 
 def _isprime(q: int) -> bool:
@@ -128,10 +137,12 @@ def prange_restarts(
         raise ValueError(f"B must have at least one row and one column, got shape {matrix.shape}")
     if len(accepted) != m:
         raise ValueError(f"need one accepted set per row: {len(accepted)} sets for {m} rows")
-    rows = [[int(a) % q for a in row] for row in matrix.tolist()]
+    rows = [[_integer(a, "B") % q for a in row] for row in matrix.tolist()]
     pools: list[Sequence[int]] = []  # indexable, in a fixed order, for drawing targets
     members: list[Collection[int]] = []  # fast membership, for scoring
     for coll in accepted:
+        if isinstance(coll, (str, bytes, bytearray)):
+            raise ValueError(f"accepted sets must be collections of integers, got {coll!r}")
         if isinstance(coll, range) and coll.step == 1:
             arc = _Arc(coll, q)
             pools.append(arc)
@@ -139,7 +150,7 @@ def prange_restarts(
         else:
             if isinstance(coll, range) and len(coll) > _MATERIALIZE_LIMIT:
                 raise ValueError(f"accepted range {coll} has step {coll.step}: give a step-1 range or a set")
-            values = sorted({int(v) % q for v in coll})
+            values = sorted({_integer(v, "accepted sets") % q for v in coll})
             pools.append(values)
             members.append(set(values))
         if not len(pools[-1]):
