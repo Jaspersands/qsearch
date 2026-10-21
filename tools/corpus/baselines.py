@@ -1,19 +1,28 @@
-"""The classical baselines a quantum proposal should be compared against.
+"""The classical baselines a quantum proposal should be compared against, and a recommender.
 
-    from tools.corpus.baselines import load_catalog, validate_catalog
+    from tools.corpus.baselines import recommend, validate_catalog, load_catalog
+    recs = recommend(Corpus(), "sampling the Gibbs law of a signed parity-check code")
     problems = validate_catalog(load_catalog())
 
 The catalog (`baselines.json`, next to this module) lists named classical algorithms: the
 problem each solves, three to six lowercase mechanism keywords, references (arXiv ids and
 research notes by stem) and, when the repository has one, a command that runs it.
+
+A baseline's score is the fraction of its keywords found in the idea, plus a tenth for each
+of the ten notes and negatives nearest the idea that name it (its name or an alias, on word
+boundaries). The score ranks leads to run; it is not a judgement that the baseline wins.
 """
 
 from __future__ import annotations
 
 import json
 import re
+from dataclasses import dataclass
 from pathlib import Path
 
+from tools.corpus.api import Corpus, Hit
+
+NEARBY = 10  # notes and negatives searched for citations; each citing one adds 1 / NEARBY
 CATALOG = Path(__file__).with_name("baselines.json")
 FIELDS = ("id", "name", "aliases", "problem", "mechanisms", "summary", "references", "runnable")
 _TEXT_FIELDS = ("id", "name", "problem", "summary")
@@ -71,3 +80,48 @@ def validate_catalog(entries: list[dict]) -> list[str]:
         ):
             problems.append(f"{label}: runnable must be null or {{command, entry?}}")
     return problems
+
+
+@dataclass
+class Recommendation:
+    baseline: dict
+    score: float
+    matched: list[str]
+    evidence: list[Hit]
+
+
+def tokens(text: str) -> list[str]:
+    """Lowercase alphanumeric words, with a trailing "s" dropped from words longer than three letters."""
+    return [w[:-1] if len(w) > 3 and w.endswith("s") else w for w in re.findall(r"[a-z0-9]+", text.lower())]
+
+
+def _name_pattern(baseline: dict) -> re.Pattern[str]:
+    names = [baseline["name"], *baseline.get("aliases", [])]
+    return re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?!\w)", re.I)
+
+
+def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None = None) -> list[Recommendation]:
+    """Catalog baselines for an idea, best first: keyword overlap plus nearby notes that name them.
+
+    A keyword matches when every one of its tokens occurs among the idea's tokens. The ten
+    notes and negatives the corpus ranks nearest the idea are read in full; each that names a
+    baseline adds 0.1 to its score and is returned as evidence. Baselines scoring 0 are left out.
+    """
+    entries = load_catalog() if catalog is None else catalog
+    words = set(tokens(idea))
+    hits = corpus.search(idea, kinds=("note", "negative"), k=NEARBY)
+    texts: dict[str, str] = {}
+    for hit in hits:
+        doc = corpus.get(hit.doc_id)
+        texts[hit.doc_id] = f"{doc.title}\n{doc.text}" if doc is not None else f"{hit.title}\n{hit.snippet}"
+    found: list[Recommendation] = []
+    for baseline in entries:
+        mechanisms = baseline["mechanisms"]
+        matched = [m for m in mechanisms if set(tokens(m)) <= words]
+        pattern = _name_pattern(baseline)
+        citing = [hit for hit in hits if pattern.search(texts[hit.doc_id])]
+        score = round(len(matched) / len(mechanisms) + len(citing) / NEARBY, 4)
+        if score > 0:
+            found.append(Recommendation(baseline, score, matched, citing))
+    found.sort(key=lambda rec: (-rec.score, rec.baseline["name"]))
+    return found[:k]

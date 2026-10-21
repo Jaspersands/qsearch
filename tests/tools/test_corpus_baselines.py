@@ -5,9 +5,26 @@ from pathlib import Path
 
 import pytest
 
-from tools.corpus.baselines import load_catalog, validate_catalog
+from tools.corpus.api import Corpus
+from tools.corpus.baselines import load_catalog, recommend, validate_catalog
 
 REPO = Path(__file__).resolve().parents[2]
+IDEA = "syndrome decoding of a random linear code"
+PRANGE_NOTE = (
+    "# Prange Syndrome\n\n"
+    "Prange information-set decoding already solves syndrome decoding of this random linear code.\n"
+)
+KANGAROO_NOTE = (
+    "# Kangaroo Hop\n\n"
+    "The kangaroo hop question was settled classically by belief propagation on its factor graph.\n"
+)
+
+
+def _corpus_with_note(root: Path, stem: str, text: str) -> Corpus:
+    (root / "research" / f"{stem}.md").write_text(text, encoding="utf-8")
+    corpus = Corpus(root)
+    corpus.refresh()
+    return corpus
 
 
 def test_catalog_is_well_formed() -> None:
@@ -48,3 +65,29 @@ def test_runnable_commands_point_at_existing_files() -> None:
         if item.get("entry"):
             path, _, name = item["entry"].partition(":")
             assert re.search(rf"^def {re.escape(name)}\(", (REPO / path).read_text(encoding="utf-8"), re.M)
+
+
+def test_prange_ranks_first_when_a_note_mentions_it(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = recommend(corpus, IDEA)
+    assert recs[0].baseline["id"] == "prange-isd"
+    assert "syndrome decoding" in recs[0].matched
+    assert recs[0].evidence[0].doc_id.startswith("note:PRANGE_SYNDROME")
+    # "syndrome decoding" and "linear code" of five keywords, plus one citing hit of ten
+    assert recs[0].matched == ["syndrome decoding", "linear code"]
+    assert recs[0].score == pytest.approx(2 / 5 + 1 / 10)
+    assert [rec.score for rec in recs] == sorted((rec.score for rec in recs), reverse=True)
+    assert all(rec.score > 0 for rec in recs)
+    assert len(recommend(corpus, IDEA, k=1)) == 1
+
+
+def test_recommend_scores_corpus_mentions_without_keyword_overlap(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "KANGAROO_HOP", KANGAROO_NOTE)
+    recs = recommend(corpus, "kangaroo hop")
+    assert [rec.baseline["id"] for rec in recs] == ["belief-propagation-ldpc"]
+    assert recs[0].matched == []
+    assert recs[0].score == pytest.approx(0.1)
+    assert recs[0].evidence[0].doc_id.startswith("note:KANGAROO_HOP")
+    # names match on word boundaries: "Kanga" does not cite a note that says "kangaroo"
+    kanga = dict(load_catalog()[0], id="kanga", name="Kanga", aliases=[])
+    assert recommend(corpus, "kangaroo hop", catalog=[kanga]) == []
