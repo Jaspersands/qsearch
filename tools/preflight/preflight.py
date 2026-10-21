@@ -145,17 +145,29 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
     return refs
 
 
-def tracked_files(root: Path) -> set[str] | None:
-    """Paths under theorems/ and core/ that git tracks, relative to root; None when git cannot tell."""
+def _git_output(root: Path, *args: str) -> str | None:
+    """stdout of ``git -C root args``; None when git is missing or fails."""
     try:
-        result = subprocess.run(
-            ["git", "-C", str(Path(root).resolve()), "ls-files", "-z", "--", "theorems", "core"], capture_output=True
-        )
+        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True)
     except OSError:
         return None
-    if result.returncode != 0:
+    return result.stdout.decode("utf-8", errors="replace") if result.returncode == 0 else None
+
+
+def tracked_files(root: Path) -> set[str] | None:
+    """Paths under theorems/ and core/ that git tracks, relative to root; None when git cannot tell.
+
+    git can tell only when root is the top of its own work tree. A tree that sits inside some
+    other repository (an export unpacked under a dotfiles repository) is not that repository's.
+    """
+    root = Path(root).resolve()
+    prefix = _git_output(root, "rev-parse", "--show-prefix")
+    if prefix is None or prefix.strip():
         return None
-    return {p for p in result.stdout.decode("utf-8", errors="replace").split("\0") if p}
+    listing = _git_output(root, "ls-files", "-z", "--", "theorems", "core")
+    if listing is None:
+        return None
+    return {p for p in listing.split("\0") if p}
 
 
 def check_untracked_imports(root: Path) -> list[Problem]:

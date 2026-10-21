@@ -208,6 +208,23 @@ def test_without_git_reports_one_git_unavailable_problem(tmp_path: Path, monkeyp
     assert pf.check_untracked_imports(repo) == [pf.Problem("imports", ".", "git unavailable")]
 
 
+def test_tree_inside_an_unrelated_repository_is_git_unavailable(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    # Say an exported tree unpacked inside a dotfiles repository: that repository tracks none of it.
+    monkeypatch.setenv("GIT_CEILING_DIRECTORIES", str(tmp_path))
+    outer = tmp_path / "home"
+    _write(outer / "README", "outer\n")
+    _git(outer, "init", "-q")
+    _git(outer, "add", "README")
+    _git(outer, "commit", "-qm", "outer")
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    return a\n"
+    repo = _repo(outer / "export", general=general, committed={"theorems/tracked.py": "a = 1\n"}, git=False)
+
+    assert pf.tracked_files(repo) is None
+    assert pf.check_untracked_imports(repo) == [pf.Problem("imports", ".", "git unavailable")]
+
+
 def test_manifest_subcommand_missing_from_order(tmp_path: Path) -> None:
     hidden = {**AUDIT_ENTRY, "name": "hidden-shift", "function": "command_hidden_shift"}
     repo = _repo(tmp_path / "missing", manifest=[AUDIT_ENTRY, hidden], git=False)

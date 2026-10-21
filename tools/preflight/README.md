@@ -56,9 +56,11 @@ The `imports` check collects references from three places:
 - The module column of `DISPATCH` in `qsearch_cli/registry.py`.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
-Without git (an exported tree, or a directory that is not a repository) the check still
-reports modules missing on disk and adds one `git unavailable` problem instead of calling
-every module untracked.
+Git is asked only when the root is the top of its own work tree. Without that (no git, a
+directory that is not a repository, or an exported tree sitting inside some other
+repository such as a dotfiles repository in `$HOME`) the check still reports modules
+missing on disk and adds one `git unavailable` problem instead of calling every module
+untracked.
 
 ## Slow checks
 
