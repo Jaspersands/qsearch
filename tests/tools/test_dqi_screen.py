@@ -392,12 +392,28 @@ def test_prange_full_field_scores_one() -> None:
     B = np.random.default_rng(3).integers(0, 5, size=(6, 3))
     result = P.prange_restarts(B, [range(5)] * 6, 5, restarts=2, seed=0)
     assert result["best"] == 1.0
-    assert (result["m"], result["n"], result["q"], result["restarts"], result["singular"]) == (6, 3, 5, 2, 0)
-    B[:, 2] = 0  # rank 2 < n: every draw is singular and scores 0
+    assert (result["m"], result["n"], result["q"], result["restarts"], result["rank"]) == (6, 3, 5, 2, 3)
+    B[:, 2] = 0  # rank 2 < n: Prange runs on the image of B, every row still accepted
     rank_deficient = P.prange_restarts(B, [range(5)] * 6, 5, restarts=2, seed=0)
-    assert rank_deficient["best"] == 0.0 and rank_deficient["singular"] == 2
+    assert rank_deficient["best"] == 1.0 and rank_deficient["rank"] == 2
     with pytest.raises(ValueError):
         P.prange_restarts(B, [range(4)] * 6, 4)
+
+
+def test_prange_rank_deficient_b_runs_on_its_image() -> None:
+    # Duplicated columns (rank 1 of 2), and a 40 x 10 matrix with a repeated column: never the old 0.0.
+    tiny = P.prange_restarts(np.array([[1, 2], [2, 4], [3, 6], [1, 2]]), [{0, 1}] * 4, 7, restarts=5, seed=0)
+    assert tiny["rank"] == 1 and all(score >= 1 / 4 for score in tiny["scores"])
+    B = np.random.default_rng(11).integers(0, 7, size=(40, 10))
+    B[:, 9] = B[:, 0]
+    result = P.prange_restarts(B, [{0, 1, 2}] * 40, 7, restarts=50, seed=0)
+    assert result["rank"] == 9 and all(score >= 9 / 40 for score in result["scores"])  # the 9 chosen rows hold
+    assert result["best"] > 0.5
+    wide = P.prange_restarts(np.random.default_rng(2).integers(1, 5, size=(2, 3)), [{1}] * 2, 5, restarts=3, seed=0)
+    assert wide["rank"] == 2 and wide["best"] == 1.0  # m < n: both rows are chosen and hold
+    for empty in (np.zeros((0, 2), dtype=int), np.zeros((3, 0), dtype=int)):
+        with pytest.raises(ValueError, match="at least one"):
+            P.prange_restarts(empty, [{0}] * len(empty), 5)
 
 
 def test_prange_more_restarts_never_lower_best() -> None:
@@ -430,4 +446,4 @@ def test_prange_large_prime_field() -> None:
     x = [int(v) for v in rng.integers(1, q, size=2)]
     targets = [(int(B[i, 0]) * x[0] + int(B[i, 1]) * x[1]) % q for i in range(4)]
     result = P.prange_restarts(B, [{t} for t in targets], q, restarts=3, seed=0)
-    assert result["best"] == 1.0 and result["singular"] == 0
+    assert result["best"] == 1.0 and result["rank"] == 2

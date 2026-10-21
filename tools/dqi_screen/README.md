@@ -68,7 +68,9 @@ a cosine candidate and the other way round. The report also lists rho_crit(alpha
 
 `prange.py` gives the finite-length baseline on an actual instance:
 `prange_restarts(B, accepted, q, restarts, seed)` runs best-of-N Prange completion over a
-prime field on Python ints (exact for q = 2^61 - 1) and returns the best and every score.
+prime field on Python ints (exact for q = 2^61 - 1) and returns the best and every score, with
+`rank` = rank(B): a rank-deficient B (duplicated columns, the incidence matrix of a graph) runs
+on its image, solving on rank(B) rows.
 
 ## The four examples
 
