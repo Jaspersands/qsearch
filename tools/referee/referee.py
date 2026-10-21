@@ -21,6 +21,7 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -218,6 +219,12 @@ def _note_path(root: Path, stem: str) -> Path:
     return root / "research" / f"{stem}.md"
 
 
+def _is_note(path: Path) -> bool:
+    """`path` is a file under exactly its own name: on a case-insensitive file system (macOS)
+    `research/bar_note.md` also opens `research/BAR_NOTE.md`."""
+    return path.is_file() and path.name in os.listdir(path.parent)
+
+
 def _symbol_run(segment: str, em_dash: str) -> list[tuple[int, int, str]]:
     """(start, end, symbol) for each symbol in `segment`: typographic forms read as ASCII, a run
     of minus signs as one, and an em dash as `em_dash` ("-", or "" to leave it out)."""
@@ -400,7 +407,7 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                 raise ValueError(f"{path}: {stem}: a second row for this note in one import (the first is in {seen[stem]})")
             seen[stem] = f"{path} row {number}"
             note = _note_path(root, stem)
-            if not note.is_file():
+            if not _is_note(note):
                 raise ValueError(f"{path}: unknown note {stem!r}")
             overall = row.get("overall")
             if overall not in OVERALL:
@@ -471,7 +478,7 @@ def stored_reviews(root: Path) -> dict:
 def is_stale(root: Path, stem: str, entry: dict) -> bool:
     """True when the note is gone or its bytes differ from the version the judge read."""
     path = _note_path(root, stem)
-    return not path.is_file() or note_sha(path) != entry.get("content_sha")
+    return not _is_note(path) or note_sha(path) != entry.get("content_sha")
 
 
 def status(root: Path) -> dict:
@@ -634,7 +641,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "export":
         if args.note:
             notes = [_note_path(root, Path(stem).name.removesuffix(".md")) for stem in args.note]
-            missing = [path.stem for path in notes if not path.is_file()]
+            missing = [path.stem for path in notes if not _is_note(path)]
             if missing:
                 parser.error(f"no such note: {', '.join(missing)}")
         else:

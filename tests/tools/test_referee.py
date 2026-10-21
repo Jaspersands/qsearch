@@ -569,6 +569,25 @@ def test_import_rejects_an_overall_verdict_that_contradicts_the_claims(tmp_path:
             R.import_reviews(tmp_path, [answer], "j")
 
 
+def test_import_and_export_take_only_a_notes_exact_name(tmp_path: Path, capsys) -> None:
+    # On a case-insensitive file system research/bar_note.md opens research/BAR_NOTE.md.
+    _write(tmp_path, "BAR_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path, stem="BAR_NOTE") | {"stem": "bar_note"}
+    with pytest.raises(ValueError, match="unknown note 'bar_note'"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "case.jsonl", [row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+    with pytest.raises(SystemExit):
+        R.main(["export", "--root", str(tmp_path), "--out-dir", str(tmp_path / "o"), "--note", "bar_note"])
+    assert "no such note: bar_note" in capsys.readouterr().err
+    assert not (tmp_path / "o").exists()
+    # A wrong-case key already in the store reads as a note that is gone, as on Linux.
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    entry = {"content_sha": R.note_sha(tmp_path / "research" / "BAR_NOTE.md"), "overall": "unsound", "claims": []}
+    store.write_text(json.dumps({"notes": {"bar_note": entry}}), encoding="utf-8")
+    assert (R.status(tmp_path)["stale"], R.status(tmp_path)["flagged"]) == (["bar_note"], [])
+
+
 def test_import_rejects_more_than_six_claims_and_a_non_boolean_self_check(tmp_path: Path) -> None:
     _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
     quote = "It holds for all twelve saved inputs, with margin at least 0.031"
