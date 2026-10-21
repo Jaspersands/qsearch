@@ -305,8 +305,11 @@ def _check_r2(c: Candidate, qn: dict) -> Check:
 
 
 def _claimed(c: Candidate, qn: dict) -> tuple[float | None, str]:
+    """DQI's claimed value: the finite mean when given, else the asymptotic one."""
     if c.finite_dqi_mean is not None:
         return c.finite_dqi_mean, "finite DQI mean"
+    if c.objective == "cosine":
+        return qn["cosine_objective"], "cosine value"
     return qn["q_dqi"], "Q_DQI"
 
 
@@ -360,15 +363,31 @@ def _check_cap(c: Candidate, qn: dict) -> Check:
 
 
 def _check_witness(c: Candidate, qn: dict) -> Check:
-    if c.classical_witness is None:
+    """The classical witness against DQI's claimed value (both objectives), then, for the count,
+    against the cap q_cap - WITNESS_GAP that bounds every licensed radius."""
+    witness = c.classical_witness
+    if witness is None:
         return Check("witness", None, f"{NOT_APPLICABLE} (no classical witness given)")
-    if qn["q_cap"] is None:
-        return Check("witness", None, f"{NOT_APPLICABLE} (the cap is for the count objective)")
-    limit = qn["q_cap"] - WITNESS_GAP
-    if c.classical_witness < limit:
-        return Check("witness", True, f"classical witness {_fmt(c.classical_witness)} < q_cap - {WITNESS_GAP} = {_fmt(limit)}")
-    return Check("witness", False, f"classical witness {_fmt(c.classical_witness)} >= q_cap - {WITNESS_GAP} = {_fmt(limit)}: "
-                 f"no licensed radius beats it by more than {WITNESS_GAP}")
+    value, label = _claimed(c, qn)
+    passes, fails = [], []
+    if value is not None:
+        if witness < value:
+            passes.append(f"classical witness {_fmt(witness)} < {label} {_fmt(value)}")
+        else:
+            fails.append(f"classical witness {_fmt(witness)} >= {label} {_fmt(value)}: the classical method already "
+                         "reaches DQI's claimed value")
+    if qn["q_cap"] is not None:
+        limit = qn["q_cap"] - WITNESS_GAP
+        if witness < limit:
+            passes.append(f"classical witness {_fmt(witness)} < q_cap - {WITNESS_GAP} = {_fmt(limit)}")
+        else:
+            fails.append(f"classical witness {_fmt(witness)} >= q_cap - {WITNESS_GAP} = {_fmt(limit)}: "
+                         f"no licensed radius beats it by more than {WITNESS_GAP}")
+    if fails:
+        return Check("witness", False, "; ".join(fails))
+    if value is None and c.objective == "cosine":
+        return Check("witness", None, "give radius or finite_dqi_mean to compare the classical witness with")
+    return Check("witness", True, "; ".join(passes))
 
 
 def _check_restarts(c: Candidate, qn: dict) -> Check:

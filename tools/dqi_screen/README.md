@@ -55,7 +55,7 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 | R3-encoder | hard | the encoder is not known | a known encoder caps the margin at 0 |
 | R4 | hard | prime field: not applicable; prime power: the claimed value beats the subfield baseline | alpha_sub = min(1, b alpha/c); baseline rho + (1-rho) floor(alpha_sub m)/m; at rho = 1/2 blocked when alpha >= 2c^2/(b^2+c^2) |
 | cap | soft | count only: Q_DQI <= q_cap | q_cap = Q_Pr + kappa, kappa = sqrt(u(1-u)) - u, u = alpha/2 (Proposition 8; at most (sqrt 2 - 1)/2) |
-| witness | soft | the classical witness is below q_cap - 0.01 | otherwise no licensed radius beats it by more than 0.01 |
+| witness | soft | the classical witness is below DQI's claimed value (finite mean, else Q_DQI or the cosine value) and, for the count, below q_cap - 0.01 | otherwise the classical method already reaches DQI's claim, or no licensed radius beats it by more than 0.01 |
 | restarts | soft | m >= the restart length | (1-alpha) R^2 ln(N/eta) / (2 mu^2), R = 1 count / 2 cosine, N = 2^40, eta = 0.05 (Theorem 10) |
 
 mu is the finite margin (`finite_dqi_mean` minus Prange) when given, else the asymptotic one
@@ -74,7 +74,7 @@ prime field on Python ints (exact for q = 2^61 - 1) and returns the best and eve
 
 | Example | Verdict | Why |
 |---|---|---|
-| `opi_prime_character_r19.json` (q = 2^61 - 1, m = 127, n = 39, l = 19, d = 40) | unknown | witness 0.8583 >= q_cap - 0.01 = 0.8505; restarts need m >= 399.2, m = 127 |
+| `opi_prime_character_r19.json` (q = 2^61 - 1, m = 127, n = 39, l = 19, d = 40) | unknown | witness 0.8583 >= finite DQI mean 0.8168 and >= q_cap - 0.01 = 0.8505; restarts need m >= 399.2, m = 127 |
 | `opi_prime_character_r32.json` (same, l = 32) | not viable | outside licensed Hamming reach: 32 > (40-2)//2 = 19, lam = 0.252 beyond Singleton 0.1535 |
 | `mpi_signed_cosine.json` (q = 8191, m = 6000, n = 420, l = 209) | viable | lam = 0.0348 > lambda_crit_cos = 0.00246; signed packing reach 0.196 (Table 3), radius 209 inside the signed packing radius 1178; restarts need 1594.5 <= 6000 |
 | `hermite_half_rate.json` (q = 8191, m = 1000, n = 500, l = 124, d = 250) | unknown | restarts need m >= 1212.7, m = 1000; R4 not applicable (prime field) |

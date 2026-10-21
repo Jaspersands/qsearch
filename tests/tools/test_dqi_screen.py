@@ -165,6 +165,24 @@ def test_example_c_half_rate() -> None:
     assert checks["restarts"].passed is False and s.verdict == "unknown"  # restarts need m >= 1212.7
 
 
+def test_witness_is_compared_with_the_claimed_dqi_value() -> None:
+    longer = {"m": 2000, "radius": 248, "min_distance": 500}  # Q_DQI 0.8296, q_cap - 0.01 = 0.923
+    s, checks = _run("hermite_half_rate.json", **longer, classical_witness=0.90)
+    assert checks["witness"].passed is False and "Q_DQI" in checks["witness"].detail
+    assert s.verdict == "unknown"
+    s, checks = _run("hermite_half_rate.json", **longer, classical_witness=0.80)
+    assert checks["witness"].passed is True and s.verdict == "viable"
+    s, checks = _run("hermite_half_rate.json", **longer, classical_witness=0.80, finite_dqi_mean=0.79)
+    assert checks["witness"].passed is False and "finite DQI mean" in checks["witness"].detail
+    # The cosine has no cap, but its witness still has to stay below DQI's value 0.259.
+    for witness, finite, passed in ((0.30, None, False), (1.0, None, False), (0.20, None, True), (0.20, 0.19, False)):
+        s, checks = _run("mpi_signed_cosine.json", classical_witness=witness, finite_dqi_mean=finite)
+        assert checks["witness"].passed is passed, (witness, finite, checks["witness"].detail)
+        assert s.verdict == ("viable" if passed else "unknown")
+    s, checks = _run("mpi_signed_cosine.json", classical_witness=0.20, radius=None)
+    assert checks["witness"].passed is None and "give radius or finite_dqi_mean" in checks["witness"].detail
+
+
 def test_encoder_known_caps_margin_at_zero() -> None:
     s, checks = _run("mpi_signed_cosine.json", encoder_known=True)
     assert checks["R3-encoder"].passed is False
