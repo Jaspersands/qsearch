@@ -45,9 +45,11 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
 
 - `date`, `status`, and `not_claimed`: preamble sentences or bullets containing "not" or
   "no".
-- `producer`: the first `python theorems/<module>.py <flags>` anywhere in the note, with
-  its JSON `artifact`. The artifact is the first `x/y.json` path in the note, else the
-  `REPORT = "...json"` constant in the producer's source. Paths resolve against the
+- `producer`: the note's own `python theorems/<stem in lower case>.py <flags>` when the
+  note runs it, else the first `python theorems/<module>.py <flags>` anywhere in the note,
+  with its JSON `artifact`: an `x/y.json` path in the note named after the script, else
+  the `REPORT = "...json"` constant in the script's source when that file exists, else
+  the first `x/y.json` path in the note, else `REPORT`. Paths resolve against the
   repository root, then against `research/`.
 - `result`: the first section whose heading contains Result, Question, Claim or Summary,
   else the first section. `derivations` (Derivation, Lemma, Proof, Bound, Certificate or
@@ -62,8 +64,9 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
 - `content_sha`: SHA-256 of the note's bytes.
 
 These fields are pointers, not a summary: the heading rules take the first match, so a
-note whose first command or first "Decision" heading is not its own gets a misleading
-field. The judge is told to work from the full text.
+note whose first "Decision" heading is not its own gets a misleading field, and a note
+that only runs other modules gets the first of them as its producer. The judge is told
+to work from the full text.
 
 ## The judge loop
 

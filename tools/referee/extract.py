@@ -123,17 +123,27 @@ def _not_claimed(preamble: list[str]) -> list[str]:
     return found
 
 
-def _producer(text: str, root: Path) -> dict | None:
-    command = PRODUCER.search(text)
-    named = ARTIFACT.search(text)
-    artifact = named.group(0) if named else None
-    if command is None:
-        return None if artifact is None else {"command": None, "script": None, "flags": "", "artifact": artifact}
+def _producer(text: str, root: Path, stem: str = "") -> dict | None:
+    """The note's own command (`theorems/<stem lower>.py`) if it runs one, else the first.
+
+    Its artifact: a JSON path in the note named after the script, else the script's
+    `REPORT` when that file exists, else the first JSON path in the note, else `REPORT`."""
+    commands = list(PRODUCER.finditer(text))
+    named = [match.group(0) for match in ARTIFACT.finditer(text)]
+    if not commands:
+        return None if not named else {"command": None, "script": None, "flags": "", "artifact": named[0]}
+    command = next((match for match in commands if match.group(1) == f"theorems/{stem.lower()}.py"), commands[0])
     script, flags = command.group(1), command.group(2).strip()
     source = root / script
-    if artifact is None and source.is_file():
-        report = REPORT.search(source.read_text(encoding="utf-8", errors="replace"))
-        artifact = report.group(1) if report else None
+    found = REPORT.search(source.read_text(encoding="utf-8", errors="replace")) if source.is_file() else None
+    report = found.group(1) if found else None
+    own = next((name for name in named if Path(name).stem == Path(script).stem), None)
+    if own:
+        artifact = own
+    elif report and _resolve_artifact(root, report):
+        artifact = report
+    else:
+        artifact = named[0] if named else report
     return {"command": f"python {script} {flags}".strip(), "script": script, "flags": flags, "artifact": artifact}
 
 
@@ -167,7 +177,7 @@ def parse_note(path: Path) -> NotePacket:
         date=date.group(0) if date else None,
         status=note_status(lines),
         not_claimed=_not_claimed(preamble[2]),
-        producer=_producer(text, path.parents[1]),
+        producer=_producer(text, path.parents[1], path.stem),
         result=result,
         derivations=[_section_dict(s) for s in body if DERIVATION.search(s[0])],
         controls=[_section_dict(s) for s in body if CONTROLS.search(s[0])],

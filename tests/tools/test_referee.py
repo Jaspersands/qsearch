@@ -156,6 +156,65 @@ def test_parse_note_reads_producer_from_the_reproduce_block_at_the_end(tmp_path:
     }
 
 
+def test_parse_note_prefers_the_notes_own_producer_and_its_artifact(tmp_path: Path) -> None:
+    (tmp_path / "theorems").mkdir()
+    for stem in ("own_design", "own_simulation", "report_only"):
+        (tmp_path / "theorems" / f"{stem}.py").write_text(f'REPORT = ROOT / "research/classical_baselines/{stem}.json"\n', encoding="utf-8")
+    (tmp_path / "research" / "classical_baselines").mkdir(parents=True)
+    for stem in ("own_design", "report_only"):
+        (tmp_path / "research" / "classical_baselines" / f"{stem}.json").write_text("{}", encoding="utf-8")
+    own_design = textwrap.dedent(
+        """\
+        # Own Design
+
+        2026-10-14. REVIEW PENDING.
+
+        ## Result
+
+        The sampler from `research/classical_baselines/sampler.json` is reused.
+
+        ## Reproduce
+
+        ```text
+        python theorems/sampler.py --write
+        python theorems/own_design.py --write
+        python theorems/own_design.py --length 32768 --write
+        ```
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "OWN_DESIGN", own_design))
+    assert packet.producer == {"command": "python theorems/own_design.py --write", "script": "theorems/own_design.py",
+                               "flags": "--write", "artifact": "research/classical_baselines/own_design.json"}
+
+    own_simulation = textwrap.dedent(
+        """\
+        # Own Simulation
+
+        2026-10-14. REVIEW PENDING.
+
+        ## Result
+
+        Sources are in `research/literature_audits/instrument_sources.json`.
+
+        ```text
+        python theorems/own_simulation.py
+        ```
+
+        Report: `research/classical_baselines/own_simulation.json`.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "OWN_SIMULATION", own_simulation))
+    assert packet.producer["artifact"] == "research/classical_baselines/own_simulation.json"
+
+    report_only = own_simulation.replace("own_simulation.py", "report_only.py").replace(
+        "Report: `research/classical_baselines/own_simulation.json`.", "")
+    packet = X.parse_note(_write(tmp_path, "REPORT_ONLY_NOTE", report_only))
+    assert packet.producer["artifact"] == "research/classical_baselines/report_only.json"
+    unresolved = own_simulation.replace("Report: `research/classical_baselines/own_simulation.json`.", "")
+    packet = X.parse_note(_write(tmp_path, "UNRESOLVED_NOTE", unresolved))
+    assert packet.producer["artifact"] == "research/literature_audits/instrument_sources.json"
+
+
 def test_parse_note_keeps_fenced_headings_inside_their_section(tmp_path: Path) -> None:
     text = textwrap.dedent(
         """\
