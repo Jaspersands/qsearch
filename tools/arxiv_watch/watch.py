@@ -16,7 +16,7 @@ moves it from the flagged sections of the digest to the Reviewed table.
 Each track query is paged until results are older than the window start. When the page
 cap stops a query first, the uncovered window is recorded as a gap in the JSON and listed
 in the digest until a later run covers it. The outputs are rewritten only when a run finds
-something new, so a quiet week changes nothing.
+something new (a paper, a gap, a verdict, a citation), so a quiet week changes nothing.
 """
 
 from __future__ import annotations
@@ -385,7 +385,23 @@ def run(
         state.setdefault("tracks_updated", {}).update({name: today for name in tracks})
         _save(root, state)
         report.saved = True
+    else:
+        report.saved = _rerender_stale_digest(root, state)
     return report
+
+
+def _rerender_stale_digest(root: Path, state: dict) -> bool:
+    """Rewrite the digest alone when it no longer matches the stored papers and the verdicts file,
+    e.g. after a verdict was added by hand for a paper the watch has not stored. Returns whether it
+    was rewritten; a missing digest is left missing."""
+    _, digest = _paths(root)
+    if not digest.exists():
+        return False
+    text = render_digest(state, verdicts=load_verdicts(root)["verdicts"])
+    if digest.read_text(encoding="utf-8") == text:
+        return False
+    digest.write_text(text, encoding="utf-8")
+    return True
 
 
 def _cell(text) -> str:

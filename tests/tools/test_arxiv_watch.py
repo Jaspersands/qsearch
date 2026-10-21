@@ -492,6 +492,28 @@ def test_paper_with_a_verdict_leaves_the_flagged_list(fake_repo: Path) -> None:
     assert "2610.11111" in _section(digest_path.read_text(), "Possible kills")
 
 
+def test_verdict_added_by_hand_for_an_unstored_paper_reaches_the_digest(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    tracks = {"dcp": TRACKS["dcp"]}
+    client = FakeClient([_paper("2610.11111", "Dihedral coset note", "Coset states.")])
+    run(fake_repo, client, corpus, tracks=tracks, today="2026-10-19")
+    collisions, digest = (fake_repo / "research" / "audits" / name for name in ("arxiv_collisions.json", "ARXIV_WATCH.md"))
+    assert not run(fake_repo, client, corpus, tracks=tracks, today="2026-10-20").saved
+    stored = collisions.read_bytes()
+
+    entry = {"verdict": "related-only", "reason": "hand", "action": None, "by": "human", "reviewed_on": "2026-10-21"}
+    (fake_repo / VERDICTS_FILE).write_text(json.dumps({"verdicts": {"2610.77777": entry}}), encoding="utf-8")
+    report = run(fake_repo, client, corpus, tracks=tracks, today="2026-10-26")
+    assert report.saved and report.new == 0
+    assert "| 2610.77777 | not stored |" in _section(digest.read_text(), "Reviewed")
+    assert collisions.read_bytes() == stored  # no stored record changed, so only the digest is re-rendered
+
+    rendered = digest.read_bytes()
+    assert not run(fake_repo, client, corpus, tracks=tracks, today="2026-11-02").saved
+    assert digest.read_bytes() == rendered
+
+
 def test_flagged_paper_becomes_already_cited_once_a_note_cites_it(fake_repo: Path) -> None:
     corpus = Corpus(fake_repo)
     corpus.refresh()

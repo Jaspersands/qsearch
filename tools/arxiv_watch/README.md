@@ -34,7 +34,8 @@ recognised by id and never re-reported or re-scored, with two exceptions:
 
 Outputs, rewritten only when a run finds a new paper, a coverage gap opens or closes, a
 verdict is added, changed or withdrawn, or a stored flag is relabelled, so a quiet week
-leaves them byte-for-byte unchanged:
+leaves them byte-for-byte unchanged. A verdict for a paper the watch has not stored changes
+no record, so the run re-renders only the digest:
 
 - `research/audits/arxiv_collisions.json`: every paper seen, with tracks, label, wording
   cues, the five nearest corpus records, the date first seen and, once reviewed, its
