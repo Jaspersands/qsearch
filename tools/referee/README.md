@@ -60,7 +60,9 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
   result's prose. Flags it marks negated ("No membership oracle is supplied") are left
   out, since the note rules them out.
 - `artifact_excerpt`: the artifact's top-level keys, then its numeric and short string
-  leaves depth first, lists capped at five items, at most 4000 characters.
+  leaves, lists capped at five items, at most 4000 characters. Leaves are taken in turn
+  from each top-level key (depth first within a key) and printed grouped by key, so a
+  large first key does not crowd out the others.
 - `content_sha`: SHA-256 of the note's bytes.
 
 These fields are pointers, not a summary: the heading rules take the first match, so a

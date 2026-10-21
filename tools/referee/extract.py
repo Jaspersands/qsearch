@@ -224,6 +224,29 @@ def _leaves(value, path: str):
         yield f"{path} = {json.dumps(value, ensure_ascii=False)}"
 
 
+def _shared_leaves(data, budget: int) -> tuple[list[str], bool]:
+    """Leaves taken in turn from each top-level key until `budget` characters (one newline
+    per line counted), then grouped by key; True when some were left out. A large first key
+    no longer hides the others."""
+    keys = sorted(data, key=str) if isinstance(data, dict) else [None]
+    streams = [_leaves(data[key], str(key)) if key is not None else _leaves(data, "") for key in keys]
+    taken: list[list[str]] = [[] for _ in streams]
+    active, used = list(range(len(streams))), 0
+    while active:
+        still = []
+        for index in active:
+            line = next(streams[index], None)
+            if line is None:
+                continue
+            if used + len(line) + 1 > budget:
+                return [line for lines in taken for line in lines], True
+            taken[index].append(line)
+            used += len(line) + 1
+            still.append(index)
+        active = still
+    return [line for lines in taken for line in lines], False
+
+
 def artifact_excerpt(root: Path, packet: NotePacket, max_chars: int = 4000) -> str | None:
     """A compact view of the producer's JSON artifact, or None when it is absent or unreadable."""
     rel = (packet.producer or {}).get("artifact")
@@ -240,12 +263,6 @@ def artifact_excerpt(root: Path, packet: NotePacket, max_chars: int = 4000) -> s
         head = f"keys: {', '.join(keys[:MAX_KEYS])}{more}"
     else:
         head = f"keys: none (top level is a {type(data).__name__})"
-    lines, size = [head], len(head)
-    for line in _leaves(data, ""):
-        if size + len(line) + len(TRUNCATED) + 2 > max_chars:
-            lines.append(TRUNCATED)
-            break
-        lines.append(line)
-        size += len(line) + 1
-    text = "\n".join(lines)
+    leaves, cut = _shared_leaves(data, max_chars - len(head) - len(TRUNCATED) - 1)
+    text = "\n".join([head, *leaves, *([TRUNCATED] if cut else [])])
     return text if len(text) <= max_chars else text[: max_chars - len(TRUNCATED) - 1] + "\n" + TRUNCATED

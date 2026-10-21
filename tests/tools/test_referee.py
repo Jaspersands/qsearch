@@ -286,6 +286,20 @@ def test_artifact_excerpt_lists_keys_and_numeric_leaves(tmp_path: Path) -> None:
     assert short is not None and len(short) <= 500 and short.endswith("[truncated]")
 
 
+def test_artifact_excerpt_shares_the_budget_across_top_level_keys(tmp_path: Path) -> None:
+    data = {"a_large": {f"k{i:03d}": i / 7 for i in range(300)}, "b_small": {"x": 1.5}, "c_list": [7, 8], "d_flag": True}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(data))
+    excerpt = X.artifact_excerpt(tmp_path, packet, max_chars=600)
+    assert excerpt is not None and len(excerpt) <= 600 and excerpt.endswith("[truncated]")
+    lines = excerpt.splitlines()
+    assert lines[0] == "keys: a_large, b_small, c_list, d_flag"
+    assert "b_small.x = 1.5" in lines and "c_list[0] = 7" in lines and "c_list[1] = 8" in lines
+    body = lines[1:-1]
+    assert body[0] == "a_large.k000 = 0.0" and sum(line.startswith("a_large.") for line in body) > 5
+    keys = [line.split(".")[0].split("[")[0] for line in body]
+    assert keys == sorted(keys)  # grouped by key, in key order
+
+
 def test_artifact_excerpt_is_none_when_missing_or_invalid(tmp_path: Path) -> None:
     packet = X.parse_note(_write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE))
     assert X.artifact_excerpt(tmp_path, packet) is None
