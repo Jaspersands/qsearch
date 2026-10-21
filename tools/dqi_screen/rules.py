@@ -135,15 +135,22 @@ def margin_cap(alpha: float) -> float:
 
 
 def cosine_objective(lam: float) -> float:
-    """Semicircle value of the cosine (signed) objective at radius lam: 2 sqrt(lam(1-lam))."""
+    """Semicircle value per row of the cosine objective cos(2 pi v / q) at radius lam.
+
+    Proposition 13(ii): the general law F_bar + sigma max_{t <= lam} (gamma t + 2 sqrt(t(1-t)))
+    with mean 0, sigma = 1/sqrt(2) and skewness 0, i.e. sqrt(2 lam(1-lam)) for lam <= 1/2 and
+    1/sqrt(2) beyond (the paper states the law for lam <= 1/2; a lower degree is always
+    available). Prange's value is alpha, so this meets it exactly at lambda_crit_cos."""
     if not 0 <= lam <= 1:
         raise ValueError(f"lam must lie in [0, 1], got {lam}")
-    return 2 * math.sqrt(lam * (1 - lam))
+    t = min(lam, 0.5)
+    return math.sqrt(2 * t * (1 - t))
 
 
 def lambda_crit_cos(alpha: float) -> float | None:
-    """Threshold radius for the cosine objective, (1 - sqrt(1 - 2 alpha^2)) / 2; None when
-    alpha >= 1/sqrt(2), where no radius beats Prange."""
+    """Threshold radius for the cosine objective, where sqrt(2 lam(1-lam)) = alpha:
+    (1 - sqrt(1 - 2 alpha^2)) / 2. None when alpha >= 1/sqrt(2), the largest cosine value,
+    where no radius beats Prange."""
     alpha = _unit("alpha", alpha)
     if 2 * alpha * alpha >= 1:
         return None

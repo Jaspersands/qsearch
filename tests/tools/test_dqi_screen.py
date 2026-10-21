@@ -43,14 +43,20 @@ def test_reach_bounds_caps_and_cosine() -> None:
     assert R.margin_cap(a) == pytest.approx(0.207, abs=5e-4)
     assert R.margin_cap(0.5) == pytest.approx(0.183, abs=5e-4)
     assert R.margin_cap(1 - 1 / 2**0.5) == pytest.approx(R.UNIVERSAL_CAP, abs=1e-9)
-    assert R.cosine_objective(209 / 6000) == pytest.approx(0.367, abs=5e-4)
+    # Proposition 13(ii) of arXiv:2610.06753: sqrt(2 lam(1-lam)), not 2 sqrt(lam(1-lam)) (the plan's 0.367).
+    assert R.cosine_objective(209 / 6000) == pytest.approx(0.259, abs=5e-4)
     assert R.lambda_crit_cos(0.07) == pytest.approx(0.00246, abs=5e-6)
     assert R.lambda_crit_cos(0.8) is None
+    for alpha in (0.01, 0.07, 0.3, 0.7):  # the value meets Prange's alpha exactly at the threshold
+        assert R.cosine_objective(R.lambda_crit_cos(alpha)) == pytest.approx(alpha, rel=1e-9)
+    assert R.cosine_objective(0.5) == R.cosine_objective(0.8) == pytest.approx(2**-0.5)  # max over t <= lam
 
 
 def test_restarts_and_subfield_hand_values() -> None:
     a = A
     assert R.restart_length(a, 0.816830 - R.q_prange(a, 0.5), 1) == pytest.approx(399.2, abs=0.1)
+    # The paper's Table 3: MPI at m = 6000, alpha = 0.07, finite DQI 0.2518, cosine range R = 2 -> 1729.
+    assert R.restart_length(0.07, 0.2518 - 0.07, 2) == pytest.approx(1729, abs=0.5)
     assert R.existential_line(0.5, 0.5, 2**61 - 1) == 1.0
     assert R.existential_line(0.2, 0.5, 7) == pytest.approx(0.909, abs=5e-4)
     assert R.subfield_rate(0.3, 2, 1) == pytest.approx(0.6)
@@ -97,11 +103,25 @@ def test_example_a_radius_32_is_outside_licensed_reach() -> None:
 def test_example_b_cosine_is_viable() -> None:
     s, checks = _run("mpi_signed_cosine.json")
     assert s.quantities["lambda_crit_cos"] == pytest.approx(0.00246, abs=5e-6)
-    assert s.quantities["cosine_objective"] == pytest.approx(0.367, abs=5e-4)
+    assert s.quantities["cosine_objective"] == pytest.approx(0.259, abs=5e-4)
+    assert s.quantities["restart_length"] == pytest.approx(1594.5, abs=0.1)
     assert checks["R1"].passed is True
     assert s.verdict == "viable", s.reasons
     s, checks = _run("mpi_signed_cosine.json", decoder_known=False)
     assert checks["reach"].passed is None and s.verdict == "unknown"
+
+
+def test_cosine_r2_passes_exactly_when_the_margin_is_positive() -> None:
+    for n in (6, 70, 420, 2000, 4000):
+        for radius in (0, 1, 5, 10, 15, 30, 100, 209, 1000, 2999, 3000, 3500):
+            s, checks = _run("mpi_signed_cosine.json", n=n, radius=radius)
+            if s.quantities["lambda_crit_cos"] is None:
+                continue
+            assert checks["R2"].passed is (s.quantities["margin"] > 0), (n, radius, s.quantities["margin"])
+    # The restart rule uses the same value: at m = 1000, l = 34 the length is 1646.4 > m.
+    s, checks = _run("mpi_signed_cosine.json", m=1000, n=70, radius=34)
+    assert s.quantities["restart_length"] == pytest.approx(1646.4, abs=0.1)
+    assert checks["restarts"].passed is False and s.verdict == "unknown"
 
 
 def test_example_c_half_rate() -> None:
@@ -150,7 +170,7 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
     main = S.main
     assert main(["--params", str(EXAMPLES / "mpi_signed_cosine.json"), "--json"]) == 0
     payload = json.loads(capsys.readouterr().out)
-    assert payload["verdict"] == "viable" and payload["quantities"]["cosine_objective"] == pytest.approx(0.367, abs=5e-4)
+    assert payload["verdict"] == "viable" and payload["quantities"]["cosine_objective"] == pytest.approx(0.259, abs=5e-4)
     out = tmp_path / "s.md"
     assert main(["--params", str(EXAMPLES / "opi_prime_character_r32.json"), "--out", str(out)]) == 1
     assert "outside licensed Hamming reach" in out.read_text() and "# DQI screen: opi-prime-character-r32" in out.read_text()

@@ -27,7 +27,7 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | Field | Meaning |
 |---|---|
 | `name` | label for the report |
-| `objective` | `count` (satisfied constraints) or `cosine` (signed sum) |
+| `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows) |
 | `q`, `m`, `n` | field size (a prime power), constraints, variables; alpha = n/m |
 | `rho` | accepted density of each constraint |
 | `radius` | claimed decoding radius l; lam = l/m |
@@ -56,7 +56,7 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 | restarts | soft | m >= the restart length | (1-alpha) R^2 ln(N/eta) / (2 mu^2), R = 1 count / 2 cosine, N = 2^40, eta = 0.05 (Theorem 10) |
 
 mu is the finite margin (`finite_dqi_mean` minus Prange) when given, else the asymptotic one
-(Q_DQI - Q_Pr, or 2 sqrt(lam(1-lam)) - alpha for the cosine). With mu <= 0 no length suffices.
+(Q_DQI - Q_Pr, or sqrt(2 lam(1-lam)) - alpha for the cosine). With mu <= 0 no length suffices.
 A cosine candidate with alpha >= 1/sqrt(2) has no threshold and is not viable. A check that is
 "not applicable" does not affect the verdict; one waiting for an input ("give radius",
 "give p, b, c", or `decoder_known` false) makes it unknown. Count-only quantities are `-` for
@@ -73,7 +73,7 @@ prime field on Python ints (exact for q = 2^61 - 1) and returns the best and eve
 |---|---|---|
 | `opi_prime_character_r19.json` (q = 2^61 - 1, m = 127, n = 39, l = 19, d = 40) | unknown | witness 0.8583 >= q_cap - 0.01 = 0.8505; restarts need m >= 399.2, m = 127 |
 | `opi_prime_character_r32.json` (same, l = 32) | not viable | outside licensed Hamming reach: 32 > (40-2)//2 = 19, lam = 0.252 beyond Singleton 0.1535 |
-| `mpi_signed_cosine.json` (q = 8191, m = 6000, n = 420, l = 209) | viable | lam = 0.0348 > lambda_crit_cos = 0.00246, inside Plotkin reach 0.035; restarts need 649 <= 6000 |
+| `mpi_signed_cosine.json` (q = 8191, m = 6000, n = 420, l = 209) | viable | lam = 0.0348 > lambda_crit_cos = 0.00246, inside Plotkin reach 0.035; restarts need 1594.5 <= 6000 |
 | `hermite_half_rate.json` (q = 8191, m = 1000, n = 500, l = 124, d = 250) | unknown | restarts need m >= 1212.7, m = 1000; R4 not applicable (prime field) |
 
 Smoke run on the real checkout (2026-10-21):
@@ -87,9 +87,10 @@ exits 1 and the report says "outside licensed Hamming reach".
 - Reach is worst-case Hamming decoding only. A list decoder or an average-case decoder beyond
   (d-2)//2 is outside these rules, not refuted by them.
 - "unknown" is not "probably fine": read the reasons.
-- The cosine value 2 sqrt(lam(1-lam)) and the threshold (1 - sqrt(1 - 2 alpha^2))/2 are taken
-  as the implementation plan states them. They use different normalisations (at
-  lam = lambda_crit_cos the value is sqrt(2) alpha, not alpha), so R2 is stricter than the
-  cosine margin. Check the paper before trusting a cosine verdict near the threshold.
+- The cosine objective is cos(2 pi v / q) with values in [-1, 1]. Its semicircle value is
+  sqrt(2 lam(1-lam)) (Proposition 13(ii): standard deviation 1/sqrt(2) times 2 sqrt(lam(1-lam))),
+  not the 2 sqrt(lam(1-lam)) of a +-1 objective, and it meets Prange's alpha exactly at
+  lambda_crit_cos, so R2 passes exactly when the cosine margin is positive. The paper states
+  the law for lam <= 1/2; the screen holds the value at 1/sqrt(2) beyond.
 
 Tests: `python -m pytest -q tests/tools/test_dqi_screen.py`.
