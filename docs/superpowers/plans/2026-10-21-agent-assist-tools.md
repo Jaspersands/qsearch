@@ -27,10 +27,10 @@ Each project closes one of those gaps. The user's decisions (2026-10-21): execut
 
 ## Setup (this session, before execution)
 
-- [ ] Commit this plan into the repo as `docs/superpowers/plans/2026-10-21-agent-assist-tools.md` on branch `worktree-corpus-substrate` (commit: "Plan: agent-assist tools, seven projects").
-- [ ] Ask the merge-main session (cwd = main checkout) to commit the user's uncommitted backfill, `research/audits/arxiv_collisions.json` and `research/audits/ARXIV_WATCH.md` only (commit: "arXiv watch: backfill to 2026-10-19, 718 papers"), and push main.
-- [ ] In this worktree, `git merge --no-ff main` so the branch sees the 718 papers; run `python -m pytest -q tests/tools` and confirm green before handing over.
-- [ ] Hand over: the Opus session starts in this worktree (`.claude/worktrees/corpus-substrate`, branch `worktree-corpus-substrate`) and reads the plan file above.
+- [x] Commit this plan into the repo as `docs/superpowers/plans/2026-10-21-agent-assist-tools.md` on branch `worktree-corpus-substrate` (6c0e2e26).
+- [x] The merge-main session committed the user's backfill, `research/audits/arxiv_collisions.json` and `research/audits/ARXIV_WATCH.md` only, on main as f18baf61 (718 papers) and pushed.
+- [x] Merged main into this branch (3896bc00); `python -m pytest -q tests/tools`: 498 passed. Post-merge checks: 718 papers in the branch's collisions file; no CLI import of an untracked module; of the four catalog notes only `FOLDED_NORM_MQ` is on main (the other three are still uncommitted agent edits).
+- [x] Hand over: the execution session starts in this worktree (`.claude/worktrees/corpus-substrate`, branch `worktree-corpus-substrate`) and reads this file. Nothing under Phase 1 has been started.
 
 ## Global Constraints
 
