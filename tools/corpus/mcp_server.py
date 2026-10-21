@@ -25,6 +25,7 @@ from mcp.server.fastmcp import FastMCP  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json  # noqa: E402
 from tools.corpus.ranking import Embedder  # noqa: E402
+from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 
 
 def create_server(
@@ -71,6 +72,19 @@ def create_server(
         if doc is None:
             return {"error": f"unknown doc_id {doc_id}"}
         return asdict(doc)
+
+    @server.tool()
+    def screen_dqi_candidate(params: dict) -> dict:
+        """Screen a DQI candidate against the Mazumder-Niroula soundness rules (arXiv:2610.06753).
+        params: name, objective ("count" or "cosine"), q, m, n, rho, and optionally radius,
+        min_distance, decoder_known, encoder_known, p, b, c, classical_witness, finite_dqi_mean
+        (see tools/dqi_screen/examples). Returns the quantities, each rule's check and a verdict:
+        "not viable", "unknown" or "viable". This is a soundness screen, not a proof: the rules
+        are asymptotic and assume worst-case Hamming decoding."""
+        try:
+            return asdict(screen(candidate_from_dict(params)))
+        except (TypeError, ValueError) as exc:
+            return {"error": str(exc)}
 
     return server
 
