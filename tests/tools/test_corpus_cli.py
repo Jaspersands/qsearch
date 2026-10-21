@@ -1,13 +1,15 @@
 from __future__ import annotations
 
+import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
 
 import pytest
 
-from tools.corpus.cli import main
+from tools.corpus.cli import build_parser, main
 
 CLI = Path(__file__).resolve().parents[2] / "tools" / "corpus" / "cli.py"
 
@@ -126,3 +128,27 @@ def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> Non
     with pytest.raises(CorpusRootError, match="is not a directory"):
         create_server(tmp_path / "nosuch", dense="off")
     assert not (tmp_path / "nosuch").exists()
+
+
+def _options(command: str) -> set[str]:
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    return {option for action in sub.choices[command]._actions for option in action.option_strings}
+
+
+def _named_commands(readme: str, lead: str) -> set[str]:
+    match = re.search(re.escape(lead) + r" (.*?) \(", readme, re.S)
+    assert match, f"README no longer says {lead!r}"
+    return set(re.findall(r"`([a-z-]+)`", match.group(1)))
+
+
+def test_readme_names_the_commands_that_take_json_dense_and_no_refresh() -> None:
+    readme = " ".join((CLI.parent / "README.md").read_text(encoding="utf-8").split())  # one line per paragraph
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    commands = set(sub.choices)
+    with_json = {c for c in commands if "--json" in _options(c)}
+    with_dense = {c for c in commands - {"build"} if "--dense" in _options(c)}
+    assert _named_commands(readme, "`--json` prints machine-readable output from") == with_json
+    assert _named_commands(readme, "`--dense` adds the embedding ranker to") == with_dense
+    assert {"check-new", "near-duplicates", "baselines"}.isdisjoint(with_dense)  # they reject --dense (exit 2)
+    assert all("--no-refresh" in _options(c) for c in commands - {"build"})
+    assert "Every command but `build` takes `--no-refresh`" in readme
