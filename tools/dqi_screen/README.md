@@ -35,8 +35,11 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | `decoder_known` | an efficient decoder reaches `radius` |
 | `encoder_known` | the planted encoder is known |
 | `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and the subfield F_(p^c) with c dividing b; needed when q is not prime, and checked against q when given |
-| `classical_witness` | best satisfied fraction a classical method has reached |
-| `finite_dqi_mean` | DQI's mean at this finite size, when computed |
+| `classical_witness` | best value a classical method has reached: a satisfied fraction in [0, 1] (count), or a mean cosine in [-1, 1] |
+| `finite_dqi_mean` | DQI's mean at this finite size, when computed; same range as the witness |
+
+Required fields may not be null, and an integer field sent as a float must be below 2^53 (a
+larger float cannot hold every integer, so `q = 2^61 - 1` has to be sent as an exact integer).
 
 ## Rules
 

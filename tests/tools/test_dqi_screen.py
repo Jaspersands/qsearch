@@ -176,6 +176,25 @@ def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
     for bad in ({**base, "radiuss": 3}, {**base, "objective": "max"}, {"objective": "count"}, {**base, "q": 12}):
         with pytest.raises(ValueError):
             S.screen(S.candidate_from_dict(bad))
+    for key in ("name", "objective", "q", "m", "n", "rho"):  # null required fields name the field
+        with pytest.raises(ValueError, match=f"^{key} "):
+            S.candidate_from_dict({**base, key: None})
+    assert S.candidate_from_dict({**base, "q": 7.0}).q == 7
+    with pytest.raises(ValueError, match="exact integer"):  # float(2^61 - 1) rounds to 2^61
+        S.candidate_from_dict({**base, "q": float(2**61 - 1)})
+
+
+def test_claimed_values_must_be_finite_and_in_the_objective_range() -> None:
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5, "radius": 5}
+    for key in ("finite_dqi_mean", "classical_witness"):
+        for value in (float("nan"), float("inf"), -0.1, 1.5):
+            with pytest.raises(ValueError, match=key):
+                S.screen(S.candidate_from_dict({**base, key: value}))
+        assert S.screen(S.candidate_from_dict({**base, key: 0.0})).quantities is not None
+        cosine = {**base, "objective": "cosine", key: -0.5}
+        assert S.screen(S.candidate_from_dict(cosine)).quantities is not None
+        with pytest.raises(ValueError, match=key):
+            S.screen(S.candidate_from_dict({**cosine, key: -1.5}))
 
 
 def test_cli_json_and_markdown(capsys, tmp_path) -> None:
@@ -192,6 +211,10 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
     assert text.startswith("# DQI screen: candidate") and "| q_prange |" in text and "Verdict:" in text
     assert main(["--objective", "count", "--q", "12", "--m", "100", "--n", "30", "--rho", "0.5"]) == 2
     assert "prime power" in capsys.readouterr().err
+    qnull = tmp_path / "qnull.json"
+    qnull.write_text(json.dumps({"name": "x", "objective": "count", "q": None, "m": 100, "n": 30, "rho": 0.5}))
+    assert main(["--params", str(qnull)]) == 2  # bad input, not "not viable"
+    assert capsys.readouterr().err.startswith("error: q ")
 
 
 def test_prange_full_field_scores_one() -> None:

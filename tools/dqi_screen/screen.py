@@ -70,6 +70,7 @@ class Screen:
 _INTS = {"q", "m", "n", "radius", "min_distance", "p", "b", "c"}
 _FLOATS = {"rho", "classical_witness", "finite_dqi_mean"}
 _BOOLS = {"decoder_known", "encoder_known"}
+_EXACT_FLOAT = 2**53  # from here on a float cannot tell neighbouring integers apart
 
 
 def _coerce(key: str, value):
@@ -86,6 +87,9 @@ def _coerce(key: str, value):
     if key in _INTS:
         if isinstance(value, float) and not value.is_integer():
             raise ValueError(f"{key} must be an integer, got {value!r}")
+        if isinstance(value, float) and abs(value) >= _EXACT_FLOAT:
+            raise ValueError(f"{key} = {value!r} is a float beyond 2^53, which cannot hold every integer: "
+                             "give it as an exact integer")
         return int(value)
     if key in _FLOATS:
         return float(value)
@@ -105,6 +109,9 @@ def candidate_from_dict(data: dict) -> Candidate:
     missing = [key for key in required if key not in data]
     if missing:
         raise ValueError(f"missing keys: {', '.join(missing)}")
+    nulls = [key for key in required if data[key] is None]
+    if nulls:
+        raise ValueError(f"{', '.join(nulls)} must not be null")
     if data["objective"] not in OBJECTIVES:
         raise ValueError(f"objective must be one of {', '.join(OBJECTIVES)}, got {data['objective']!r}")
     return Candidate(**{key: _coerce(key, value) for key, value in data.items()})
@@ -129,6 +136,11 @@ def _validate(c: Candidate) -> None:
         raise ValueError(f"radius must lie in [0, m], got {c.radius}")
     if c.min_distance is not None and not 1 <= c.min_distance <= c.m:
         raise ValueError(f"min_distance must lie in [1, m], got {c.min_distance}")
+    low = 0.0 if c.objective == "count" else -1.0  # satisfied fraction, or mean of cos(2 pi v / q)
+    for key in ("finite_dqi_mean", "classical_witness"):
+        value = getattr(c, key)
+        if value is not None and not low <= value <= 1:  # also rejects NaN and inf
+            raise ValueError(f"{key} must be a finite number in [{low:g}, 1] for the {c.objective} objective, got {value}")
     root = _prime_power(c.q) if c.q >= 2 else None
     if root is None:
         raise ValueError(f"q must be a prime power, got {c.q}")
@@ -435,7 +447,7 @@ def main(argv: list[str] | None = None) -> int:
         data.update({key: getattr(args, key) for key in _FLAGS if getattr(args, key) not in (None, False)})
         data.setdefault("name", "candidate")
         result = screen(candidate_from_dict(data))
-    except (OSError, ValueError) as exc:
+    except (OSError, TypeError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
     text = json.dumps(asdict(result), indent=1) + "\n" if args.json else render(result)
