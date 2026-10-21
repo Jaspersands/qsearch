@@ -248,3 +248,33 @@ def test_select_notes_orders_by_status_date_then_mtime_and_skips_current_reviews
     assert [p.stem for p in R.select_notes(tmp_path, prefixes=("PRIME",), exclude_reviewed=False)] == ["PRIME_NEW", "PRIME_OLD"]
     assert [p.stem for p in R.select_notes(tmp_path, limit=2, exclude_reviewed=False)] == everything[:2]
     assert [p.stem for p in R.select_notes(tmp_path, statuses=("superseded",))] == ["SUPERSEDED_ONE"]
+
+
+def _export_fixture(root: Path) -> list[Path]:
+    artifact = root / "research" / "classical_baselines" / "fixture_radial.json"
+    artifact.parent.mkdir(parents=True, exist_ok=True)
+    artifact.write_text(json.dumps({"mean": 0.9028, "status": "certificate verified for every saved input"}), encoding="utf-8")
+    notes = [_write(root, "FIXTURE_NOTE", FIXTURE_NOTE)]
+    for i in range(5):
+        notes.append(_dated_note(root, f"OTHER_{i}", f"2026-10-0{5 - i}. REVIEW PENDING.", 1000 + i))
+    return notes
+
+
+def test_export_writes_instructions_and_batches_with_artifact_excerpts(tmp_path: Path) -> None:
+    notes = _export_fixture(tmp_path)
+    out = tmp_path / "out"
+    paths = R.export_batches(tmp_path, out, notes)
+    assert [p.name for p in paths] == ["batch_01.json", "batch_02.json"]
+    first, second = (json.loads(p.read_text(encoding="utf-8")) for p in paths)
+    assert (first["batch"], len(first["notes"]), second["batch"], len(second["notes"])) == (1, 5, 2, 1)
+    assert [n["stem"] for n in first["notes"] + second["notes"]] == [p.stem for p in notes]
+    assert first["claim_verdicts"] == list(R.CLAIM_VERDICTS) and first["overall_verdicts"] == list(R.OVERALL)
+    assert '"claims"' in first["output_format"]
+    packet = first["notes"][0]
+    assert "mean = 0.9028" in packet["artifact_excerpt"]
+    assert packet["text"] == FIXTURE_NOTE and packet["content_sha"] == R.note_sha(notes[0])
+    assert all(n["artifact_excerpt"] is None for n in first["notes"][1:] + second["notes"])
+    instructions = (out / "INSTRUCTIONS.md").read_text(encoding="utf-8")
+    for word in R.CLAIM_VERDICTS + R.OVERALL:
+        assert f"`{word}`" in instructions
+    assert "verbatim" in instructions and "must not propose" in instructions
