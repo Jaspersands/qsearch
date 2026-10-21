@@ -18,6 +18,7 @@ from tools.corpus.docs import read_json
 
 VERDICTS = ("kill", "scoop", "should-cite", "related-only", "false-alarm")
 VERDICTS_FILE = "research/audits/arxiv_verdicts.json"
+JUDGE_PREFIX = "judge:"
 
 _ID_PREFIX = re.compile(r"^(?:https?://arxiv\.org/abs/|arxiv:)", re.I)
 _ID = re.compile(r"^(?:\d{4}\.\d{4,5}|[a-z-]+(?:\.[A-Z]{2})?/\d{7})$")
@@ -32,13 +33,46 @@ def normalize_id(raw: str) -> str:
     return arxiv_id
 
 
+def by_judge(entry) -> bool:
+    """A stored verdict a judge may replace: one whose `by` names a judge. An entry without `by`
+    (written by hand) counts as a human's."""
+    return isinstance(entry, dict) and str(entry.get("by") or "").startswith(JUDGE_PREFIX)
+
+
 def load_verdicts(root: Path) -> dict:
-    """The verdicts file as {"verdicts": {arxiv_id: entry}}; empty when the file is absent."""
+    """The verdicts file as {"verdicts": {arxiv_id: entry}}; empty when the file is absent.
+
+    Keys are read as arXiv ids and returned bare (see normalize_id), so an entry written by hand
+    under "arXiv:2610.06753v1" is the verdict for stored paper 2610.06753. When two keys name one
+    paper, a person's entry outranks a judge's. ValueError, naming the file, when it is not JSON,
+    is not {"verdicts": {...}}, an entry is not an object with a known verdict, a key is not an
+    arXiv id, or two entries of the same kind name one paper.
+    """
     path = Path(root) / VERDICTS_FILE
     if not path.exists():
         return {"verdicts": {}}
-    data = read_json(path)
-    data.setdefault("verdicts", {})
+    try:
+        data = read_json(path)
+    except ValueError as error:
+        raise ValueError(f"{VERDICTS_FILE}: not valid JSON ({error})") from error
+    if not isinstance(data, dict) or not isinstance(data.setdefault("verdicts", {}), dict):
+        raise ValueError(f'{VERDICTS_FILE}: expected an object {{"verdicts": {{arXiv id: entry, ...}}}}')
+    verdicts: dict[str, dict] = {}
+    keys: dict[str, str] = {}
+    for key, entry in data["verdicts"].items():
+        if not isinstance(entry, dict) or entry.get("verdict") not in VERDICTS:
+            raise ValueError(f"{VERDICTS_FILE}: entry {key!r} must be an object whose verdict is one of {', '.join(VERDICTS)}")
+        try:
+            arxiv_id = normalize_id(key)
+        except ValueError as error:
+            raise ValueError(f"{VERDICTS_FILE}: {error}") from None
+        if arxiv_id in verdicts:
+            if by_judge(verdicts[arxiv_id]) == by_judge(entry):
+                raise ValueError(f"{VERDICTS_FILE}: {keys[arxiv_id]!r} and {key!r} are both verdicts for {arxiv_id}; keep one")
+            if by_judge(entry):
+                continue  # a person's verdict outranks a judge's
+        verdicts[arxiv_id], keys[arxiv_id] = entry, key
+    data["verdicts"] = verdicts
     return data
 
 

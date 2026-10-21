@@ -523,6 +523,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--action", help="With --verdict: what a named document should change, if anything.")
     parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
     args = parser.parse_args(argv)
+    if not args.replay_seeds:
+        try:
+            load_verdicts(args.root)  # a malformed verdicts file stops every mode before it writes anything
+        except (ValueError, OSError) as error:
+            print(f"error: {error}", file=sys.stderr)
+            return 2
     if args.verdict:
         raw_id, verdict = args.verdict
         try:

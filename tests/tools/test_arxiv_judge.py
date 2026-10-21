@@ -9,7 +9,7 @@ import pytest
 from tools.arxiv_watch.judge import _verbatim, export_batches, import_judgements, main, pending
 from tools.arxiv_watch.tracks import TRACKS
 from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, set_verdict
-from tools.arxiv_watch.watch import _load_state, run
+from tools.arxiv_watch.watch import _load_state, attach_verdicts, render_digest, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Paper
 
@@ -116,12 +116,23 @@ def test_judge_never_overwrites_a_human_verdict(watched: tuple[Path, Corpus], tm
     result = import_judgements(root, [_jsonl(tmp_path / "d.jsonl", [first])], "three", corpus=corpus)
     assert result["rejected"] == [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]
 
-    # An entry written by hand without `by` is a human's, not a judge's.
+    # An entry written by hand without `by` is a human's, not a judge's, and so is one written by
+    # hand under a versioned or prefixed id.
     hand = {"verdict": "false-alarm", "reason": "read it by hand", "action": None, "reviewed_on": "2026-10-21"}
-    (root / VERDICTS_FILE).write_text(json.dumps({"verdicts": {"2610.11111": hand}}), encoding="utf-8")
-    result = import_judgements(root, [_jsonl(tmp_path / "e.jsonl", [dict(first, verdict="kill")])], "four", corpus=corpus)
-    assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]}
-    assert load_verdicts(root)["verdicts"]["2610.11111"] == hand
+    for key in ("2610.11111", "arXiv:2610.11111v1", "2610.11111v2"):
+        (root / VERDICTS_FILE).write_text(json.dumps({"verdicts": {key: hand}}), encoding="utf-8")
+        assert "2610.11111" not in [arxiv_id for arxiv_id, _ in pending(_attached(root))], key
+        result = import_judgements(root, [_jsonl(tmp_path / "e.jsonl", [dict(first, verdict="kill")])], "four", corpus=corpus)
+        assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]}, key
+        assert load_verdicts(root)["verdicts"] == {"2610.11111": hand}
+        digest = render_digest(_attached(root), verdicts=load_verdicts(root)["verdicts"])
+        assert "| not stored |" not in digest and "2610.11111" not in digest.split("## Possible kills")[1].split("## ")[0], key
+
+
+def _attached(root: Path) -> dict:
+    state = _load_state(root)
+    attach_verdicts(state, load_verdicts(root)["verdicts"])
+    return state
 
 
 def test_quote_crossing_a_chunk_boundary_is_rejected(watched: tuple[Path, Corpus], tmp_path: Path) -> None:

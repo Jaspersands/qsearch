@@ -452,6 +452,59 @@ def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
     assert not (tmp_path / VERDICTS_FILE).exists()
 
 
+def _write_verdicts(root: Path, data) -> None:
+    (root / VERDICTS_FILE).parent.mkdir(parents=True, exist_ok=True)
+    (root / VERDICTS_FILE).write_text(json.dumps(data), encoding="utf-8")
+
+
+def _hand(verdict: str = "false-alarm", by: str | None = "human") -> dict:
+    entry = {"verdict": verdict, "reason": "read it by hand", "action": None, "reviewed_on": "2026-10-21"}
+    return {**entry, "by": by} if by else entry
+
+
+def test_hand_written_keys_are_read_as_bare_ids(tmp_path: Path) -> None:
+    for key in ("arXiv:2610.11111v1", "2610.11111v2", "https://arxiv.org/abs/2610.11111v3", "quant-ph/0501044v2"):
+        _write_verdicts(tmp_path, {"verdicts": {key: _hand()}})
+        assert set(load_verdicts(tmp_path)["verdicts"]) == {"2610.11111" if "2610" in key else "quant-ph/0501044"}, key
+
+    # Two keys for one paper: a person's verdict outranks a judge's, and two of a kind are ambiguous.
+    judge = _hand("kill", by="judge:x")
+    _write_verdicts(tmp_path, {"verdicts": {"2610.11111": judge, "arXiv:2610.11111v1": _hand()}})
+    assert load_verdicts(tmp_path)["verdicts"] == {"2610.11111": _hand()}
+    _write_verdicts(tmp_path, {"verdicts": {"arXiv:2610.11111v1": _hand(by=None), "2610.11111": judge}})
+    assert load_verdicts(tmp_path)["verdicts"] == {"2610.11111": _hand(by=None)}
+    _write_verdicts(tmp_path, {"verdicts": {"2610.11111": _hand(), "2610.11111v1": _hand("kill")}})
+    with pytest.raises(ValueError, match="2610.11111"):
+        load_verdicts(tmp_path)
+
+
+@pytest.mark.parametrize(
+    "data",
+    [[], {"verdicts": None}, {"verdicts": []}, {"verdicts": {"2610.11111": "false-alarm"}},
+     {"verdicts": {"2610.11111": {"verdict": "maybe"}}}, {"verdicts": {"see 2610.11111": {"verdict": "kill"}}}],
+    ids=["list", "null", "verdicts-list", "string-entry", "unknown-verdict", "bad-key"],
+)
+def test_malformed_verdicts_file_is_a_clean_error(fake_repo: Path, monkeypatch, capsys, data) -> None:
+    from tools.arxiv_watch import judge, watch
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("a malformed verdicts file must stop the watch before it fetches")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    _write_verdicts(fake_repo, data)
+    with pytest.raises(ValueError, match="arxiv_verdicts.json"):
+        load_verdicts(fake_repo)
+    written = (fake_repo / VERDICTS_FILE).read_bytes()
+    for argv in ([], ["--relabel"], ["--verdict", "2610.22222", "related-only", "--reason", "x"]):
+        assert watch.main(["--root", str(fake_repo), *argv]) == 2, argv
+        assert capsys.readouterr().err.startswith("error: research/audits/arxiv_verdicts.json: "), argv
+    assert (fake_repo / VERDICTS_FILE).read_bytes() == written
+    assert not (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").exists()
+    assert judge.main(["--root", str(fake_repo), "--export", str(fake_repo / "judge")]) == 2
+    assert capsys.readouterr().err.startswith("error: research/audits/arxiv_verdicts.json: ")
+
+
 def _section(digest: str, heading: str) -> str:
     """One `## heading` section of the digest, up to the next section."""
     start = digest.index(f"## {heading}\n")

@@ -89,6 +89,13 @@ may carry a version, an `arXiv:` prefix or the abstract URL (`arXiv:2609.40302v2
 verdict is stored under the bare id the watch uses. An unknown verdict, or an id that is not
 an arXiv id, exits 2.
 
+Keys written into the file by hand are read the same way, so `"arXiv:2609.40302v2"` is the
+verdict for stored paper 2609.40302 and is rewritten bare on the next save. When two keys name
+one paper, a person's entry outranks a judge's. Every mode of `watch.py` (but
+`--replay-seeds`) and `judge.py` reads the file first and exits 2 without writing anything when
+it is not JSON, is not `{"verdicts": {...}}`, an entry is not an object with one of the five
+verdicts, a key is not an arXiv id, or two people's (or two judges') entries name one paper.
+
 | Verdict | Meaning |
 |---|---|
 | kill | The paper invalidates a project claim or retained result. |

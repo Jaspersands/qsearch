@@ -28,14 +28,15 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.arxiv_watch.verdicts import VERDICTS, load_verdicts, save_verdicts, set_verdict  # noqa: E402
+from tools.arxiv_watch.verdicts import (  # noqa: E402
+    JUDGE_PREFIX, VERDICTS, by_judge, load_verdicts, save_verdicts, set_verdict,
+)
 from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts  # noqa: E402
 from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 
 EXCERPT_CHARS = 600
 MIN_QUOTE_WORDS = 6
-JUDGE_PREFIX = "judge:"
 MEANINGS = {
     "kill": "The paper invalidates a project claim or retained result, for example a classical algorithm or bound "
             "that removes a quantum advantage a note claims.",
@@ -243,12 +244,6 @@ def _verbatim(quote: str, source: str) -> bool:
     )
 
 
-def _by_judge(entry) -> bool:
-    """A stored verdict a judge may replace: one whose `by` names a judge. An entry without `by`
-    (written by hand) counts as a human's."""
-    return isinstance(entry, dict) and str(entry.get("by") or "").startswith(JUDGE_PREFIX)
-
-
 def _confidence(value) -> float | None:
     try:
         return max(0.0, min(1.0, float(value)))
@@ -283,7 +278,7 @@ def import_judgements(
     for _, row in rows:
         arxiv_id = row["arxiv_id"]
         record = state["papers"][arxiv_id]
-        if arxiv_id in existing and not _by_judge(existing[arxiv_id]):
+        if arxiv_id in existing and not by_judge(existing[arxiv_id]):
             rejected.append({"arxiv_id": arxiv_id, "why": "human verdict exists"})
             continue
         quote, quote_from = str(row.get("quote") or ""), str(row.get("quote_from") or "abstract")
