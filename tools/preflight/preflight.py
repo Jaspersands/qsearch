@@ -5,7 +5,9 @@
     python tools/preflight/preflight.py --imports    # also import every CLI name (slow)
     python tools/preflight/preflight.py --validate   # also run qsearch.py validate (slow)
 
-Research JSON files must parse: an invalid hypothesis contract broke the merge of 2026-10-19.
+JSON files under research/hypotheses, research/registry, research/audits and
+research/classical_baselines must parse: an invalid hypothesis contract broke the merge of
+2026-10-19. Other research/ directories are not read.
 Every theorems/, core/ or qsearch_cli/ module the CLI refers to must exist and be tracked by
 git: the same merge carried 24 imports of modules that were only in one working copy. Module
 references are read statically, never imported: AST imports in qsearch.py,

@@ -32,7 +32,7 @@ The merge of 2026-10-19 was blocked twice over:
 
 ## Checks
 
-The default checks are static. They parse files and ask git one question, and import
+The default checks are static. They parse files, ask git which files it tracks, and import
 nothing. A run takes a few seconds, most of it parsing about 250 MB of
 `research/classical_baselines/`.
 
@@ -140,3 +140,11 @@ error. Delete that test once the agents fix the file.
   standard library names.
 - The `json` check parses only. It does not check any schema. `qsearch.py validate` checks
   the registries.
+- The `json` check reads only its four directories: 550 of the 1711 tracked
+  `research/**/*.json` files on 2026-10-22. It does not read `research/representation`
+  (619), `research/reductions` (231), `research/phase_workbench` (162),
+  `research/literature_audits` (47), `research/code_equivalence` (34),
+  `research/certificates` (26), `research/coset_workbench` (15), `research/scaling`,
+  `research/quarantine`, or the 25 files at the top of `research/` such as
+  `research/proof_obligations.json`. A broken file there passes. Parsing all of them on
+  2026-10-22 found only the contract above.
