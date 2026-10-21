@@ -444,7 +444,9 @@ def main(argv: list[str] | None = None) -> int:
         data = json.loads(args.params.read_text(encoding="utf-8")) if args.params else {}
         if not isinstance(data, dict):
             raise ValueError(f"{args.params} must hold a JSON object")
-        data.update({key: getattr(args, key) for key in _FLAGS if getattr(args, key) not in (None, False)})
+        # A value flag counts when given, even as 0; a boolean flag only when set, so it never clears the file's true.
+        data.update({key: getattr(args, key) for key in _FLAGS
+                     if getattr(args, key) is True or (key not in _BOOLS and getattr(args, key) is not None)})
         data.setdefault("name", "candidate")
         result = screen(candidate_from_dict(data))
     except (OSError, TypeError, ValueError) as exc:

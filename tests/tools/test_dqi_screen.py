@@ -217,6 +217,18 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
     assert capsys.readouterr().err.startswith("error: q ")
 
 
+def test_cli_zero_valued_flags_override_the_params_file(capsys) -> None:
+    main = S.main
+    args = ["--params", str(EXAMPLES / "opi_prime_character_r19.json"), "--json"]
+    assert main([*args, "--radius", "0", "--classical-witness", "0", "--finite-dqi-mean", "0"]) == 1
+    candidate = json.loads(capsys.readouterr().out)["candidate"]
+    assert (candidate["radius"], candidate["classical_witness"], candidate["finite_dqi_mean"]) == (0, 0.0, 0.0)
+    assert candidate["decoder_known"] is True  # an absent boolean flag keeps the file's value
+    flags = ["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5", "--min-distance", "20"]
+    assert main([*flags, "--radius", "0", "--decoder-known"]) == 1  # lam = 0 cannot beat Prange
+    assert "R2 (hard): FAIL" in capsys.readouterr().out
+
+
 def test_prange_full_field_scores_one() -> None:
     B = np.random.default_rng(3).integers(0, 5, size=(6, 3))
     result = P.prange_restarts(B, [range(5)] * 6, 5, restarts=2, seed=0)
