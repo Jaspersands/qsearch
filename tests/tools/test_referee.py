@@ -521,7 +521,7 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     good = _row(tmp_path, claims=many, summary="s" * 2000)
     stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21")
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"]}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": []}
     data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
     entry = data["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["reviewed_on"], entry["overall"], entry["stale"]) == ("test-judge", "2026-10-21", "needs-work", False)
@@ -625,7 +625,7 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     note.write_text(note.read_text(encoding="utf-8").replace("It holds for all twelve", "It holds for eleven of twelve"), encoding="utf-8")
 
     result = R.import_reviews(tmp_path, [answer], "j", today="2026-10-21")
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"]}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": []}
     claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
     assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
 
@@ -649,6 +649,36 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     R.render(tmp_path, today="2026-10-22")
     review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
     assert "not found in the current note" in review
+
+
+def test_import_keeps_a_current_review_over_a_row_that_is_stale_on_arrival(tmp_path: Path, capsys) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    current = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass2" / "out" / "rows.jsonl", [current])], "new", today="2026-10-22")
+    older = _jsonl(tmp_path / "pass1" / "out" / "rows.jsonl", [_row(tmp_path, overall="sound", claims=[]) | {"content_sha": "0" * 64}])
+    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"]}
+    entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
+    assert (entry["judge"], entry["overall"], entry["stale"]) == ("new", "unsound", False)
+    assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["FIXTURE_NOTE"]
+    assert R.main(["import", str(older), "--root", str(tmp_path), "--judge", "old"]) == 0
+    assert "1 skipped (a current review is stored): FIXTURE_NOTE" in capsys.readouterr().out
+
+    # Once the note changes, the stored review is stale too, and a stale row replaces it.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nAn added paragraph.\n")
+    assert R.import_reviews(tmp_path, [older], "old")["stale"] == ["FIXTURE_NOTE"]
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["judge"] == "old"
+
+
+def test_import_rejects_two_rows_for_one_note(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    unsound = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    sound = _row(tmp_path, overall="sound", claims=[])
+    with pytest.raises(ValueError, match="FIXTURE_NOTE: a second row"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "both.jsonl", [unsound, sound])], "j")
+    first, second = _jsonl(tmp_path / "out" / "a.jsonl", [unsound]), _jsonl(tmp_path / "out" / "b.jsonl", [sound])
+    with pytest.raises(ValueError, match="a second row"):
+        R.import_reviews(tmp_path, [first, second], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
 
 
 def test_import_rejects_a_malformed_or_miscopied_content_sha(tmp_path: Path) -> None:

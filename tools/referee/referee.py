@@ -375,6 +375,8 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     reviewed_on = today or dt.date.today().isoformat()
     exported, declared = exported_texts(paths)
     entries: dict[str, dict] = {}
+    currents: dict[str, str] = {}
+    seen: dict[str, str] = {}
     for path in paths:
         try:
             rows = _rows(Path(path))
@@ -388,6 +390,9 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             stem = str(row.get("stem") or "")
             if not STEM.match(stem):
                 raise ValueError(f"{path}: row {number}: bad note stem {stem!r}")
+            if stem in seen:
+                raise ValueError(f"{path}: {stem}: a second row for this note in one import (the first is in {seen[stem]})")
+            seen[stem] = f"{path} row {number}"
             note = _note_path(root, stem)
             if not note.is_file():
                 raise ValueError(f"{path}: unknown note {stem!r}")
@@ -415,6 +420,7 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             conflict = overall_conflict(overall, claims)
             if conflict:
                 raise ValueError(f"{path}: {stem}: overall {overall!r} contradicts the claims: {conflict}")
+            currents[stem] = current
             entries[stem] = {
                 "reviewed_on": reviewed_on,
                 "judge": judge,
@@ -425,11 +431,18 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                 "stale": sha != current,
             }
     data = load_reviews(root)
-    data.setdefault("notes", {}).update(entries)
+    notes = data.setdefault("notes", {})
+    # A row that is stale on arrival (an earlier pass, re-imported) never replaces a review of
+    # the note's current bytes.
+    skipped = sorted(stem for stem, entry in entries.items() if entry["stale"]
+                     and isinstance(notes.get(stem), dict) and notes[stem].get("content_sha") == currents[stem])
+    stored = {stem: entry for stem, entry in entries.items() if stem not in skipped}
+    notes.update(stored)
     store = root / REVIEWS
     store.parent.mkdir(parents=True, exist_ok=True)
     store.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-    return {"imported": sorted(entries), "stale": sorted(stem for stem, entry in entries.items() if entry["stale"])}
+    return {"imported": sorted(stored), "stale": sorted(stem for stem, entry in stored.items() if entry["stale"]),
+            "skipped": skipped}
 
 
 WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
@@ -630,7 +643,9 @@ def main(argv: list[str] | None = None) -> int:
             print(f"error: {error}; nothing imported", file=sys.stderr)
             return 2
         stale = f": {', '.join(result['stale'])}" if result["stale"] else ""
-        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}")
+        skipped = (f"; {len(result['skipped'])} skipped (a current review is stored): {', '.join(result['skipped'])}"
+                   if result["skipped"] else "")
+        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}{skipped}")
         return 0
 
     if args.command == "render":

@@ -112,9 +112,11 @@ text.
    file but none of them has the row's `content_sha`, the sha was miscopied and the file
    is rejected. Only when no exported packet for the note is found is a quote that is not
    in the current note stored as the judge wrote it with `verified: false` instead of
-   rejecting the file. Re-importing a note
-   replaces its review. Stored text is capped: summary 1500 characters, finding 600,
-   quote 400, six claims.
+   rejecting the file. Two rows for one note in one import (one file or several) reject
+   the import. Re-importing a note replaces its review, except that a row that is stale
+   on arrival (an earlier pass imported again) never replaces a stored review of the
+   note's current bytes: import keeps that review and reports the row as skipped. Stored
+   text is capped: summary 1500 characters, finding 600, quote 400, six claims.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.
