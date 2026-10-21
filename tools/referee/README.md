@@ -51,11 +51,16 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
   the `REPORT = "...json"` constant in the script's source when that file exists, else
   the first `x/y.json` path in the note, else `REPORT`. Paths resolve against the
   repository root, then against `research/`.
-- `result`: the first section whose heading contains Result, Question, Claim or Summary,
-  else the first section. `derivations` (Derivation, Lemma, Proof, Bound, Certificate or
-  a numbered heading), `controls` (Controls, Comparison, Classical), `self_check`
-  (Attempts To Prove It Wrong, Try To Kill, Falsifier, Kill) and `decision` (Decision,
-  Next) come from the headings too. Headings inside fenced code are not section breaks.
+- `result`: the first section whose heading contains Result, Question, Claim or Summary
+  and not Not, Cannot, Why, Next ... Question or Kill/Break ... Claim ("What Can And
+  Cannot Be Claimed" is not a result), else the first section. `derivations`
+  (Derivation, Lemma, Proof, Bound, Bounds, Bounding, Certificate or a numbered heading;
+  not Bounded or Boundary), `controls` (Controls, Comparison, Classical) and `self_check`
+  (the first of Prove ... Wrong, Disprove, Falsifier, Falsification, to/and/can Falsify,
+  Refutation, Attempt To Break, Kill, Self-Critique, Red Team) come from the headings
+  too. `decision` is the first heading with Decision or Next, passing over a result
+  heading ("Question And Decision") and a "Why ..." motivation when another one exists.
+  Headings inside fenced code are not section breaks.
 - `flags`: the flags the claim checker (`tools/claim_checker/check.py`) raises on the
   result's prose. Flags it marks negated ("No membership oracle is supplied") are left
   out, since the note rules them out.
@@ -66,9 +71,10 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
 - `content_sha`: SHA-256 of the note's bytes.
 
 These fields are pointers, not a summary: the heading rules take the first match, so a
-note whose first "Decision" heading is not its own gets a misleading field, and a note
-that only runs other modules gets the first of them as its producer. The judge is told
-to work from the full text.
+note whose headings use other words gets an empty or misleading field (a note's own
+algorithm under "Classical ..." lands in `controls`), and a note that only runs other
+modules gets the first of them as its producer. The judge is told to work from the full
+text.
 
 ## The judge loop
 

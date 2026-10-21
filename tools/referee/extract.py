@@ -26,10 +26,13 @@ FENCE = re.compile(r"^\s*(```|~~~)")
 LIST_MARKER = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+")
 
 RESULT = re.compile(r"Result|Question|Claim|Summary")
-DERIVATION = re.compile(r"Derivation|Lemma|Proof|Bound|Certificate|^\d+\.")
+NOT_RESULT = re.compile(r"\b(?:Not|Cannot|Why)\b|\bNext\b.*\bQuestion|\b(?:Kill|Break)\b.*\bClaim")
+DERIVATION = re.compile(r"Derivation|Lemma|Proof|\bBound(?:s|ing)?\b|Certificate|^\d+\.")
 CONTROLS = re.compile(r"Controls|Comparison|Classical")
-SELF_CHECK = re.compile(r"Attempts To Prove It Wrong|Try To Kill|Falsifier|Kill")
+SELF_CHECK = re.compile(
+    r"Prov(?:e|ing)\b.*\bWrong|Disprove|Falsifi|(?i:to|and|can) Falsify|Refutation|Attempts? To Break|Kill|Self-Critique|Red Team")
 DECISION = re.compile(r"Decision|Next")
+WHY = re.compile(r"\bWhy\b")
 
 
 @dataclass
@@ -166,10 +169,18 @@ def parse_note(path: Path) -> NotePacket:
         hit = next((s for s in body if pattern.search(s[0])), None)
         return _section_dict(hit)["text"] if hit else None
 
-    result = first(RESULT)
-    if result is None:
-        fallback = body[0] if body else (preamble[0], preamble[1], [line for line in preamble[2] if not line.startswith("# ")])
-        result = _section_dict(fallback)["text"]
+    # "What Can And Cannot Be Claimed" and "Why This Is The Next Question" are not results.
+    chosen = next((s for s in body if RESULT.search(s[0]) and not NOT_RESULT.search(s[0])), None)
+    explicit = chosen is not None
+    if chosen is None:
+        chosen = body[0] if body else (preamble[0], preamble[1], [line for line in preamble[2] if not line.startswith("# ")])
+    result = _section_dict(chosen)["text"]
+    # The first decision heading, passing over a result heading ("Question And Decision") and
+    # motivations ("Why This Is The Next Question") when another one exists.
+    decisions = [s for s in body if DECISION.search(s[0])]
+    reasons = [s for s in decisions if not WHY.search(s[0])]
+    preferred = [s for s in reasons if not (explicit and s is chosen)]
+    decision = (preferred or reasons or decisions or [None])[0]
     return NotePacket(
         stem=path.stem,
         path=f"{path.parent.name}/{path.name}",
@@ -182,7 +193,7 @@ def parse_note(path: Path) -> NotePacket:
         derivations=[_section_dict(s) for s in body if DERIVATION.search(s[0])],
         controls=[_section_dict(s) for s in body if CONTROLS.search(s[0])],
         self_check=first(SELF_CHECK),
-        decision=first(DECISION),
+        decision=_section_dict(decision)["text"] if decision else None,
         content_sha=hashlib.sha256(raw).hexdigest(),
         flags=[flag.name for flag in check_text(prose(result), title).flags if not flag.negated],
     )

@@ -101,6 +101,55 @@ def test_parse_note_flags_only_what_the_claim_checker_raises_on_the_result(tmp_p
     assert X.parse_note(_write(tmp_path, "PLAIN", FIXTURE_NOTE)).flags == []
 
 
+def test_parse_note_heading_rules_skip_look_alike_sections(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Look Alikes
+
+        2026-10-16. REVIEW PENDING.
+
+        ## Why This Is The Next Question
+
+        Motivation only.
+
+        ## What Can And Cannot Be Claimed
+
+        Scope only.
+
+        ## Question And Decision
+
+        The pencil recovers every saved root.
+
+        ## Full Coherent Instrument: Bounded Execution Completed
+
+        Ran to completion.
+
+        ## Independently Verifiable Tail Bounds
+
+        The tail is at most 0.01.
+
+        ## Try To Disprove The Pencil, Then Repair It
+
+        A degenerate pencil fails; the repair adds a shift.
+
+        ## Research Decision
+
+        Stop the pencil line.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "LOOK_ALIKES", text))
+    assert packet.result == "The pencil recovers every saved root."
+    assert [d["heading"] for d in packet.derivations] == ["Independently Verifiable Tail Bounds"]
+    assert packet.self_check == "A degenerate pencil fails; the repair adds a shift."
+    assert packet.decision == "Stop the pencil line."
+    for heading in ("Attempt To Prove The Rejection Wrong", "Attempts To Disprove It And Remaining Debt",
+                    "Execute And Falsify", "Attempted Refutations And Scope", "Attempts To Break The Reduction"):
+        note = text.replace("Try To Disprove The Pencil, Then Repair It", heading)
+        assert X.parse_note(_write(tmp_path, "LOOK_ALIKES", note)).self_check == "A degenerate pencil fails; the repair adds a shift."
+    only = text.replace("## Research Decision\n\nStop the pencil line.\n", "")
+    assert X.parse_note(_write(tmp_path, "LOOK_ALIKES", only)).decision == "The pencil recovers every saved root."
+
+
 def test_parse_note_falls_back_to_the_first_section_for_result(tmp_path: Path) -> None:
     text = textwrap.dedent(
         """\
