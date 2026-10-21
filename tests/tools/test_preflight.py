@@ -125,17 +125,26 @@ def test_untracked_and_missing_theorem_modules(tmp_path: Path) -> None:
         general=LAZY_IMPORTS,
         imports={"w": ("table_mod", "w"), "os": ("os", None)},
         dispatch=[("flag", "theorems.dispatched", "gen")],
-        committed={"theorems/tracked.py": "a = 1\n", "theorems/dispatched.py": "def gen():\n    return 0\n"},
+        committed={"theorems/tracked.py": "a = 1\n"},
     )
     _write(repo / "theorems" / "untracked.py", "b = 2\n")
     _write(repo / "theorems" / "table_mod.py", "w = 3\n")
+    _write(repo / "theorems" / "dispatched.py", "def gen():\n    return 0\n")  # named only by DISPATCH
 
+    assert pf.referenced_modules(repo) == {
+        "theorems/tracked.py": {"qsearch_cli/commands/general.py"},
+        "theorems/untracked.py": {"qsearch_cli/commands/general.py"},
+        "core/gone.py": {"qsearch_cli/commands/general.py"},
+        "theorems/table_mod.py": {"qsearch_cli/imports.py"},
+        "theorems/dispatched.py": {"qsearch_cli/registry.py"},
+    }
     problems = pf.check_untracked_imports(repo)
 
     assert {p.check for p in problems} == {"imports"}
     assert {(p.path, p.message) for p in problems} == {
         ("theorems/untracked.py", "not tracked by git"),
         ("theorems/table_mod.py", "not tracked by git"),
+        ("theorems/dispatched.py", "not tracked by git"),
         ("core/gone.py", "missing on disk"),
     }
 
