@@ -134,10 +134,23 @@ def test_since_commit_is_unavailable_on_a_shallow_clone(tmp_path: Path) -> None:
     assert delta["available"] is False and "shallow" in delta["reason"]
 
 
+def test_since_commit_is_unavailable_for_a_copy_inside_another_repository(tmp_path: Path) -> None:
+    repo = _history_repo(tmp_path)
+    nested = repo / "scratch" / "copy"
+    (nested / "research" / "registry").mkdir(parents=True)
+    (nested / B.REGISTRY).write_text(json.dumps([{"id": "Z"}]), encoding="utf-8")
+    # The outer repository has a registry at the same relative path and history before the
+    # cutoff; comparing the copy with it would report a plausible, wrong delta.
+    assert B.since_commit(nested, since_days=7, today="2026-10-20") is None
+    delta = B.registry_delta(nested, None)
+    assert delta["available"] is False and "not the top of its git work tree" in delta["reason"]
+    assert "scratch/copy" in delta["reason"]
+
+
 def test_allowed_git_args_accepts_only_the_three_shapes() -> None:
     assert B.allowed_git_args(("log", "-1", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct")) is True
     assert B.allowed_git_args(("show", f"{SHA}:{B.REGISTRY}")) is True
-    assert B.allowed_git_args(("rev-parse", "--is-shallow-repository")) is True
+    assert B.allowed_git_args(("rev-parse", "--is-shallow-repository", "--show-prefix")) is True
 
 
 @pytest.mark.parametrize(
@@ -155,6 +168,8 @@ def test_allowed_git_args_accepts_only_the_three_shapes() -> None:
         ("show", f"--output=/tmp/x {SHA}:{B.REGISTRY}"),
         ("status", "--porcelain"),
         ("rev-parse", "HEAD"),
+        ("rev-parse", "--is-shallow-repository"),
+        ("rev-parse", "--show-prefix", "--is-shallow-repository"),
         (),
     ],
 )
@@ -404,3 +419,90 @@ def test_section_turns_an_exception_into_unavailable() -> None:
     assert B._section("broken", broken, "inertia") == {"available": False, "reason": "KeyError: 'inertia'"}
     assert B._section("odd", lambda: ["not", "a", "dict"])["available"] is False
     assert B._section("fine", lambda: {"available": True}) == {"available": True}
+
+
+# ---------- Task 3.3: build, render, main ----------
+
+SECTIONS = ("registry", "arxiv", "referee", "preflight", "inertia", "duplicates", "commands")
+HEADINGS = ("## Registry", "## arXiv watch", "## Referee", "## Preflight", "## Inertia", "## Possible duplicates",
+            "## Commands")
+
+
+def test_build_never_fails_when_every_source_is_missing(tmp_path: Path, monkeypatch) -> None:
+    root = tmp_path / "empty"
+    root.mkdir()
+    for module in ("tools.preflight.preflight", "tools.referee.referee", "tools.arxiv_watch.verdicts"):
+        monkeypatch.setitem(sys.modules, module, None)
+    brief = B.build(root, today="2026-10-21")
+    assert set(brief) == {"generated_on", "since_days", *SECTIONS}
+    assert (brief["generated_on"], brief["since_days"]) == ("2026-10-21", 7)
+    for name in SECTIONS[:-1]:
+        assert brief[name]["available"] is False and brief[name]["reason"], name
+    assert brief["commands"]["available"] is True
+    json.dumps(brief)  # JSON-ready
+    text = B.render(brief)
+    assert text.count("Not available: ") == 6
+
+    def boom(*args):
+        raise RuntimeError("git exploded")
+
+    brief = B.build(root, today="2026-10-21", git=boom)
+    assert brief["registry"] == {"available": False, "reason": "RuntimeError: git exploded"}
+    assert brief["duplicates"]["available"] is False
+
+
+def _full_repo(tmp_path: Path, monkeypatch) -> Path:
+    repo = _history_repo(tmp_path)
+    _arxiv_files(
+        repo,
+        [_paper("2610.11111", "Open new kill", "possible-kill", "2026-10-18")],
+        {"2610.33333": _verdict("should-cite", "2026-10-19", action="Cite it in research/X.md and run the LP decoder.")},
+    )
+    _reviewed_note(repo)
+    from tools.corpus.duplicates import Pair
+
+    monkeypatch.setattr(B, "_open_corpus", lambda root: "corpus")
+    monkeypatch.setattr(B, "_near_duplicates", lambda corpus, **kw: [
+        Pair("negative:A", "negative:C", 0.93, "the old claim", "the new claim")])
+    return repo
+
+
+def test_render_contains_every_section_heading_and_action_strings(tmp_path: Path, monkeypatch) -> None:
+    repo = _full_repo(tmp_path, monkeypatch)
+    brief = B.build(repo, today="2026-10-20")
+    assert brief["registry"]["added"] == ["B", "C"]
+    assert brief["duplicates"]["pairs"][0]["new"] == ["C"]
+    assert brief["inertia"]["available"] is False  # no cockpit in this checkout
+    text = B.render(brief)
+    positions = [text.index(heading) for heading in HEADINGS]
+    assert positions == sorted(positions)
+    for needle in (
+        "since 2026-10-13",
+        "Cite it in research/X.md and run the LP decoder.",  # the open action, verbatim
+        "2610.11111",  # the open flag
+        "FIXTURE_NOTE", "Input 7 fails.",  # the referee's flagged note and its worst claim
+        "the old claim", "0.93",  # the possible duplicate
+        f"Not available: {brief['inertia']['reason']}",
+        "python tools/preflight/preflight.py",
+    ):
+        assert needle in text, needle
+
+
+def test_main_writes_both_files(tmp_path: Path, capsys) -> None:
+    root = tmp_path / "empty"
+    root.mkdir()
+    out = tmp_path / "out"
+    assert B.main(["--root", str(root), "--out", str(out)]) == 0
+    printed = capsys.readouterr().out
+    md, js = out / "AGENT_BRIEF.md", out / "agent_brief.json"
+    assert str(md) in printed and str(js) in printed
+    assert md.read_text(encoding="utf-8").startswith("# Agent brief")
+    assert json.loads(js.read_text(encoding="utf-8"))["since_days"] == 7
+
+    assert B.main(["--root", str(root), "--since-days", "3", "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["since_days"] == 3 and set(SECTIONS) <= set(payload)
+    assert (root / B.OUTPUT_MD).is_file() and (root / B.OUTPUT_JSON).is_file()
+
+    with pytest.raises(SystemExit):
+        B.main(["--root", str(root), "--since-days", "0"])
