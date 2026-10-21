@@ -662,8 +662,47 @@ def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
     assert set(load_verdicts(fake_repo)["verdicts"]) == {"2610.11111", "quant-ph/0501044"}
 
 
+def test_a_root_that_is_not_a_checkout_is_refused_before_anything_is_written(tmp_path: Path, monkeypatch, capsys) -> None:
+    from tools.arxiv_watch import judge, watch
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("a wrong --root must be refused before fetching")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    a_file = tmp_path / "a_file"
+    a_file.write_text("", encoding="utf-8")
+    for root in (tmp_path / "nope" / "typo", a_file, tmp_path):
+        for argv in (["--verdict", "2610.06753", "should-cite", "--reason", "x"], [], ["--relabel"]):
+            assert watch.main(["--root", str(root), *argv]) == 2, (root, argv)
+            assert "is not a Q-Search checkout" in capsys.readouterr().err
+        assert judge.main(["--root", str(root), "--export", str(tmp_path / "judge")]) == 2
+        assert "is not a Q-Search checkout" in capsys.readouterr().err
+    assert sorted(path.name for path in tmp_path.iterdir()) == ["a_file"]
+
+
+def test_verdict_flag_writes_nothing_when_the_collisions_file_is_unreadable(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    run(fake_repo, FakeClient([_paper("2610.11111", "Dihedral coset note", "Coset states.")]), corpus,
+        tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    collisions = fake_repo / "research" / "audits" / "arxiv_collisions.json"
+    text = collisions.read_text(encoding="utf-8")
+    for broken in (text[: len(text) // 2], "[]", "directory"):
+        if broken == "directory":
+            collisions.unlink()
+            collisions.mkdir()
+        else:
+            collisions.write_text(broken, encoding="utf-8")
+        assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", "false-alarm", "--reason", "x"]) == 2, broken
+        assert capsys.readouterr().err.startswith("error: "), broken
+        assert not (fake_repo / VERDICTS_FILE).exists(), broken
+
+
 REPO = Path(__file__).resolve().parents[2]
-REVIEW = REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
+REVIEW =REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
 
 
 def _review_verdicts(text: str) -> dict[str, str]:

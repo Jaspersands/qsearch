@@ -275,10 +275,26 @@ def _paths(root: Path) -> tuple[Path, Path]:
 
 
 def _load_state(root: Path) -> dict:
+    """The collisions file; empty when absent. ValueError, naming the file, when it is not JSON or
+    not an object with a "papers" object."""
     path, _ = _paths(root)
-    if path.exists():
-        return read_json(path)
-    return {"updated": None, "papers": {}}
+    if not path.exists():
+        return {"updated": None, "papers": {}}
+    name = path.relative_to(root)
+    try:
+        state = read_json(path)
+    except ValueError as error:
+        raise ValueError(f"{name}: not valid JSON ({error})") from error
+    if not isinstance(state, dict) or not isinstance(state.get("papers"), dict):
+        raise ValueError(f'{name}: expected an object with a "papers" object')
+    return state
+
+
+def checkout_error(root: Path) -> str | None:
+    """Why `root` cannot be a Q-Search checkout (it has no research/ directory), or None."""
+    if not (Path(root) / "research").is_dir():
+        return f"{root} is not a Q-Search checkout (no research/ directory); check --root"
+    return None
 
 
 def _since_for(state: dict, name: str, today: str) -> str:
@@ -523,9 +539,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--action", help="With --verdict: what a named document should change, if anything.")
     parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
     args = parser.parse_args(argv)
+    problem = checkout_error(args.root)  # a mistyped --root would otherwise get a fresh research/audits/
+    if problem:
+        print(f"error: {problem}", file=sys.stderr)
+        return 2
     if not args.replay_seeds:
-        try:
-            load_verdicts(args.root)  # a malformed verdicts file stops every mode before it writes anything
+        try:  # an unreadable verdicts or collisions file stops every mode before it writes anything
+            load_verdicts(args.root)
+            _load_state(args.root)
         except (ValueError, OSError) as error:
             print(f"error: {error}", file=sys.stderr)
             return 2
@@ -533,13 +554,13 @@ def main(argv: list[str] | None = None) -> int:
         raw_id, verdict = args.verdict
         try:
             arxiv_id = normalize_id(raw_id)
+            state = _load_state(args.root)
             set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=args.action)
-        except ValueError as error:
+            attach_verdicts(state, load_verdicts(args.root)["verdicts"])
+            _save(args.root, state)
+        except (ValueError, OSError) as error:
             print(f"error: {error}", file=sys.stderr)
             return 2
-        state = _load_state(args.root)
-        attach_verdicts(state, load_verdicts(args.root)["verdicts"])
-        _save(args.root, state)
         stored = "" if arxiv_id in state["papers"] else " (not in the collisions file yet)"
         print(f"{arxiv_id}: {verdict}{stored}; digest re-rendered")
         return 0

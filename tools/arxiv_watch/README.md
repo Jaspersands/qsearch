@@ -95,6 +95,8 @@ one paper, a person's entry outranks a judge's. Every mode of `watch.py` (but
 `--replay-seeds`) and `judge.py` reads the file first and exits 2 without writing anything when
 it is not JSON, is not `{"verdicts": {...}}`, an entry is not an object with one of the five
 verdicts, a key is not an arXiv id, or two people's (or two judges') entries name one paper.
+They do the same when `arxiv_collisions.json` cannot be read, and when `--root` has no
+`research/` directory, so a mistyped `--root` never gets a fresh `research/audits/`.
 
 | Verdict | Meaning |
 |---|---|

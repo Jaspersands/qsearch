@@ -31,7 +31,7 @@ if __package__ in (None, ""):
 from tools.arxiv_watch.verdicts import (  # noqa: E402
     JUDGE_PREFIX, VERDICTS, by_judge, load_verdicts, save_verdicts, set_verdict,
 )
-from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts  # noqa: E402
+from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts, checkout_error  # noqa: E402
 from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 
@@ -329,6 +329,10 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("give either --export DIR or --import FILE ...")
     if args.imports and not args.judge:
         parser.error("--import needs --judge NAME")
+    problem = checkout_error(args.root)
+    if problem:
+        print(f"error: {problem}", file=sys.stderr)
+        return 2
     try:
         if args.export:
             paths = export_batches(args.root, args.export, args.batches)
