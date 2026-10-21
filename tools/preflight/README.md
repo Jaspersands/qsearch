@@ -38,7 +38,7 @@ nothing. A run takes a few seconds, most of it parsing about 250 MB of
 | Check | Catches | Message |
 |---|---|---|
 | `json` | Any `*.json` under `research/hypotheses`, `research/registry`, `research/audits` or `research/classical_baselines` that does not parse, including non-UTF-8 bytes | the parser's own error, e.g. `Invalid \escape: line 7 column 167 (char 635)` |
-| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `not tracked by git`, or one `git unavailable` |
+| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `not tracked by git`, `not tracked by git (intent-to-add only)`, or one `git unavailable` |
 | `manifest` | A subcommand in `research/audits/cli_manifest.json` that is no longer in `ORDER` in `qsearch_cli/registry.py`, or that moved module | `subcommand X missing from ORDER`, `X: manifest says A, ORDER says B` |
 
 The `imports` check collects references from these places:
@@ -73,6 +73,9 @@ The `imports` check collects references from these places:
   under `theorems/`, `core/` and `qsearch_cli/`.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
+One marked with `git add -N` (intent to add) does not: `git ls-files` lists it, but a plain
+`git commit` leaves it out. Preflight asks `git diff` for those and reports them as `not
+tracked by git (intent-to-add only)`.
 Git is asked only when the root is the top of its own work tree. Without that (no git, a
 directory that is not a repository, or an exported tree sitting inside some other
 repository such as a dotfiles repository in `$HOME`) the check still reports modules

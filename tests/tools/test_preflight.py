@@ -322,6 +322,22 @@ def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None
     assert pf.referenced_modules(repo) == {**CLI_REFS, "core/table_mod.py": {"qsearch_cli/imports.py"}}
 
 
+def test_staged_module_counts_as_tracked_but_intent_to_add_does_not(tmp_path: Path) -> None:
+    # Run before a commit: a plain commit includes a staged file, but leaves out one added with -N.
+    general = "def command_audit(args):\n    from theorems.staged import a\n    from theorems.intent import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general)
+    _write(repo / "theorems" / "staged.py", "a = 1\n")
+    _write(repo / "theorems" / "intent.py", "b = 2\n")
+    _git(repo, "add", "theorems/staged.py")
+    _git(repo, "add", "-N", "theorems/intent.py")
+
+    assert "theorems/staged.py" in pf.tracked_files(repo)
+    assert "theorems/intent.py" not in pf.tracked_files(repo)
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/intent.py", "not tracked by git (intent-to-add only)")
+    ]
+
+
 def test_real_checkout_has_no_untracked_imports() -> None:
     assert pf.check_untracked_imports(REPO) == []
 

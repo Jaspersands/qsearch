@@ -238,20 +238,33 @@ def _git_output(root: Path, *args: str) -> str | None:
     return result.stdout.decode("utf-8", errors="replace") if result.returncode == 0 else None
 
 
-def tracked_files(root: Path) -> set[str] | None:
-    """Paths under theorems/, core/ and qsearch_cli/ that git tracks, relative to root; None when git cannot tell.
+def _git_index(root: Path) -> tuple[set[str], set[str]] | None:
+    """(paths git tracks, paths only marked intent-to-add) under theorems/, core/ and qsearch_cli/,
+    relative to root; None when git cannot tell.
 
     git can tell only when root is the top of its own work tree. A tree that sits inside some
     other repository (an export unpacked under a dotfiles repository) is not that repository's.
+    A staged file is tracked: the commit will include it. One added with ``git add -N`` is
+    listed by ls-files, but a plain commit leaves it out; ``git diff`` shows it as added.
     """
     root = Path(root).resolve()
     prefix = _git_output(root, "rev-parse", "--show-prefix")
     if prefix is None or prefix.strip():
         return None
-    listing = _git_output(root, "ls-files", "-z", "--", *PACKAGES, CLI_PACKAGE)
+    pathspec = ("--", *PACKAGES, CLI_PACKAGE)
+    listing = _git_output(root, "ls-files", "-z", *pathspec)
     if listing is None:
         return None
-    return {p for p in listing.split("\0") if p}
+    added = _git_output(root, "diff", "--no-ext-diff", "--no-renames", "--name-only", "-z", "--diff-filter=A", *pathspec)
+    intent = {p for p in (added or "").split("\0") if p}
+    return {p for p in listing.split("\0") if p} - intent, intent
+
+
+def tracked_files(root: Path) -> set[str] | None:
+    """Paths under theorems/, core/ and qsearch_cli/ that git tracks or has staged, relative to root;
+    None when git cannot tell (see _git_index)."""
+    index = _git_index(root)
+    return None if index is None else index[0]
 
 
 def check_untracked_imports(root: Path) -> list[Problem]:
@@ -262,11 +275,14 @@ def check_untracked_imports(root: Path) -> list[Problem]:
     except (OSError, SyntaxError, ValueError, TypeError) as error:
         where = error.filename if isinstance(error, SyntaxError) and error.filename else "."
         return [Problem("imports", where, f"cannot read the CLI sources: {type(error).__name__}: {error}")]
-    tracked = tracked_files(root)
+    index = _git_index(root)
+    tracked, intent = index if index is not None else (None, set())
     problems = []
     for module_path in sorted(refs):
         if not (root / module_path).is_file():
             problems.append(Problem("imports", module_path, "missing on disk"))
+        elif module_path in intent:
+            problems.append(Problem("imports", module_path, "not tracked by git (intent-to-add only)"))
         elif tracked is not None and module_path not in tracked:
             problems.append(Problem("imports", module_path, "not tracked by git"))
     if tracked is None:
