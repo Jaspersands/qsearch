@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
 
-from tools.corpus.cli import main
+import pytest
+
+from tools.corpus.cli import build_parser, main
 
 CLI = Path(__file__).resolve().parents[2] / "tools" / "corpus" / "cli.py"
 
@@ -96,3 +100,55 @@ def test_corrupt_registry_is_reported_as_incomplete_not_as_novel(fake_repo: Path
     ok = _cli(fake_repo, "been-tried", idea, "--json")
     assert ok.returncode == 0
     assert json.loads(ok.stdout)["index_incomplete"] is False
+
+
+@pytest.mark.parametrize(
+    "command", [["check-new", "--text", "hidden shift sieve"], ["baselines", "hidden shift"], ["near-duplicates"], ["build"]]
+)
+def test_a_root_that_is_not_a_checkout_is_an_error_and_creates_nothing(tmp_path: Path, capsys, command) -> None:
+    missing = tmp_path / "nosuch"
+    assert main(["--root", str(missing), *command]) == 1
+    assert "is not a directory" in capsys.readouterr().err
+    assert not missing.exists()
+    bare = tmp_path / "bare"
+    bare.mkdir()
+    assert main(["--root", str(bare), *command]) == 1
+    assert "is not a Q-Search checkout" in capsys.readouterr().err
+    assert list(bare.iterdir()) == []
+    hollow = tmp_path / "hollow"
+    (hollow / "research").mkdir(parents=True)
+    assert main(["--root", str(hollow), *command]) == 1
+    assert "nothing to index" in capsys.readouterr().err
+
+
+def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> None:
+    from tools.corpus.api import CorpusRootError
+    from tools.corpus.mcp_server import create_server
+
+    with pytest.raises(CorpusRootError, match="is not a directory"):
+        create_server(tmp_path / "nosuch", dense="off")
+    assert not (tmp_path / "nosuch").exists()
+
+
+def _options(command: str) -> set[str]:
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    return {option for action in sub.choices[command]._actions for option in action.option_strings}
+
+
+def _named_commands(readme: str, lead: str) -> set[str]:
+    match = re.search(re.escape(lead) + r" (.*?) \(", readme, re.S)
+    assert match, f"README no longer says {lead!r}"
+    return set(re.findall(r"`([a-z-]+)`", match.group(1)))
+
+
+def test_readme_names_the_commands_that_take_json_dense_and_no_refresh() -> None:
+    readme = " ".join((CLI.parent / "README.md").read_text(encoding="utf-8").split())  # one line per paragraph
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    commands = set(sub.choices)
+    with_json = {c for c in commands if "--json" in _options(c)}
+    with_dense = {c for c in commands - {"build"} if "--dense" in _options(c)}
+    assert _named_commands(readme, "`--json` prints machine-readable output from") == with_json
+    assert _named_commands(readme, "`--dense` adds the embedding ranker to") == with_dense
+    assert {"check-new", "near-duplicates", "baselines"}.isdisjoint(with_dense)  # they reject --dense (exit 2)
+    assert all("--no-refresh" in _options(c) for c in commands - {"build"})
+    assert "Every command but `build` takes `--no-refresh`" in readme

@@ -26,9 +26,21 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.corpus.api import Corpus, Hit  # noqa: E402
-from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
-from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, draft_claim, own_ids, pair_report  # noqa: E402
+from tools.corpus.api import Corpus, CorpusRootError, Hit, checkout_root  # noqa: E402
+from tools.corpus.baselines import CatalogError, Recommendation, recommend  # noqa: E402
+from tools.corpus.duplicates import (  # noqa: E402
+    NO_NEGATIVES,
+    REPORT_THRESHOLD,
+    ClaimReport,
+    DraftError,
+    allow_patterns,
+    claim_report,
+    draft_claims,
+    own_ids,
+    pair_report,
+    valid_threshold,
+)
+from tools.corpus.ranking import query_terms  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -93,7 +105,7 @@ def _issues_json(corpus: Corpus) -> dict:
 
 
 def _corpus(args: argparse.Namespace) -> Corpus:
-    corpus = Corpus(Path(args.root) if args.root else None)
+    corpus = Corpus(checkout_root(Path(args.root) if args.root else None))
     if args.command == "build" or not getattr(args, "no_refresh", False):
         stats = corpus.refresh(full=getattr(args, "full", False), dense=args.command == "build" and args.dense)
         if args.command == "build":
@@ -216,7 +228,8 @@ def _duplicates_markdown(payload: dict) -> str:
         "# Near-duplicate negatives" if kind == "negative" else f"# Near-duplicate `{kind}` documents",
         "",
         f"Generated on {payload['generated_on']} by `python tools/corpus/cli.py near-duplicates`: "
-        f"{described} whose TF-IDF cosine is at least {payload['threshold']}{cap}, highest first: {count}",
+        f"{described} whose TF-IDF cosine is at least {payload['threshold']}{cap}, highest first: {count} "
+        f"{payload['documents']} documents were compared, on a TF-IDF fit of the current documents.",
         "",
         "A cosine of 1.000 means the same words in the same proportions. A name that occurs in a single "
         "record is not in the vocabulary, so two records generated from one template for different "
@@ -237,7 +250,21 @@ def _duplicates_markdown(payload: dict) -> str:
 
 
 def cmd_near_duplicates(args: argparse.Namespace) -> int:
+    out = Path(args.out) if args.out else None
+    if out is not None and out.suffix != ".json":
+        print(f"error: --out must name a .json file (FILE.md is written next to it), got {out}", file=sys.stderr)
+        return 1
     corpus = _corpus(args)
+    incomplete = corpus.incomplete()
+    if out is not None and incomplete:
+        print(
+            f"error: INDEX INCOMPLETE: a registry file or record could not be read; not writing {out}. "
+            "Repair the registry and run again.",
+            file=sys.stderr,
+        )
+        return 2
+    if out is not None:
+        corpus.refit()  # scores then depend on the current documents only, so the report reproduces
     report = pair_report(
         corpus, kind=args.kind, threshold=args.threshold, limit=args.limit, per_family=args.per_family
     )
@@ -251,59 +278,117 @@ def cmd_near_duplicates(args: argparse.Namespace) -> int:
         "per_family": args.per_family,
         "limit": args.limit,
         "total": report.total,
+        "documents": report.documents,
         "pairs": [asdict(pair) for pair in pairs],
         "generated_on": dt.date.today().isoformat(),
+        "changed_since_fit": corpus.changed_since_fit(),
+        **_issues_json(corpus),
     }
     count = _pair_count(len(pairs), report.total)
-    if args.out:
-        out = Path(args.out)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    status = 2 if incomplete else 0
+    if out is not None:
         markdown = out.with_name(out.stem.upper() + ".md")
-        markdown.write_text(_duplicates_markdown(payload), encoding="utf-8")
+        try:
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+            markdown.write_text(_duplicates_markdown(payload), encoding="utf-8")
+        except OSError as exc:
+            print(f"error: cannot write {out} and {markdown}: {exc}", file=sys.stderr)
+            return 1
     if args.json:
         print(json.dumps(payload, indent=2))
-    elif args.out:
+        return status
+    if out is not None:
         print(f"{count} at cosine >= {args.threshold}; wrote {out} and {markdown}")
-    else:
-        for index, pair in enumerate(pairs, start=1):
-            print(f"  {index}. {pair.score:.3f}  {_record_label(pair.a)}  ~  {_record_label(pair.b)}")
-            print(f"     {pair.title_a[:160]}")
-            print(f"     {pair.title_b[:160]}")
-        cut = " (raise --limit to see the rest)" if report.total > len(pairs) else ""
-        print(f"\n{count} at TF-IDF cosine >= {args.threshold}{cut}. A pair is a lead to read, not a verdict.")
-    return 0
+        return status
+    if incomplete:
+        print("INDEX INCOMPLETE: a registry file or record could not be read (see the warnings on stderr).")
+        print("Pairs of the records that could not be read are missing below.\n")
+    for index, pair in enumerate(pairs, start=1):
+        print(f"  {index}. {pair.score:.3f}  {_record_label(pair.a)}  ~  {_record_label(pair.b)}")
+        print(f"     {pair.title_a[:160]}")
+        print(f"     {pair.title_b[:160]}")
+    cut = " (raise --limit to see the rest)" if report.total > len(pairs) else ""
+    print(f"\n{count} at TF-IDF cosine >= {args.threshold}{cut}. A pair is a lead to read, not a verdict.")
+    return status
+
+
+def _claim_header(report: ClaimReport, threshold: float) -> str:
+    if not report.matches:
+        return f"no negative record (retained or quarantined) has TF-IDF cosine >= {threshold}"
+    of_them = f", {report.quarantined} of them quarantined," if report.quarantined else ""
+    shown = f"; the closest {len(report.matches)} are shown" if report.total > len(report.matches) else ""
+    return f"POSSIBLE DUPLICATE: {report.total} negative record(s){of_them} at TF-IDF cosine >= {threshold}{shown}"
 
 
 def cmd_check_new(args: argparse.Namespace) -> int:
     # Read the draft before touching the index, so an unreadable file fails fast with exit 1, never 0.
     if args.text is not None:
-        text, record_id = args.text, None
+        drafts = [(args.text, None)]
     else:
         try:
-            raw = Path(args.file).read_text(encoding="utf-8")
+            raw = Path(args.file).read_text(encoding="utf-8-sig")
         except (OSError, UnicodeDecodeError) as exc:
             print(f"error: cannot read {args.file}: {exc}", file=sys.stderr)
             return 1
-        text, record_id = draft_claim(raw)
+        try:
+            drafts = draft_claims(raw)
+        except DraftError as exc:
+            print(f"error: {args.file}: {exc}", file=sys.stderr)
+            return 1
+    if not all(query_terms(text) for text, _ in drafts):
+        print("error: the draft claim has no words to compare (it is empty or only stop words).", file=sys.stderr)
+        return 1
     corpus = _corpus(args)
-    matches = check_claim(corpus, text, threshold=args.threshold, exclude=own_ids(record_id))
+    # Each draft leaves out every draft's own record, so a batch gets the same answer once filed.
+    exclude = tuple(doc_id for _, record_id in drafts for doc_id in own_ids(record_id))
+    allow = tuple(args.allow or ())
+    reports = [
+        (record_id, claim_report(corpus, text, threshold=args.threshold, exclude=exclude, allow=allow))
+        for text, record_id in drafts
+    ]
+    if reports[0][1].documents == 0:
+        print(f"error: {NO_NEGATIVES}; check --root and research/registry/.", file=sys.stderr)
+        return 1
+    duplicate = any(report.matches for _, report in reports)
     if args.json:
-        payload = {"matches": [_hit_json(h) for h in matches], "duplicate": bool(matches), **_issues_json(corpus)}
+        payload = {
+            "matches": [dict(_hit_json(h), draft_id=record_id) for record_id, report in reports for h in report.matches],
+            "total": sum(report.total for _, report in reports),
+            "allowed": [
+                {"doc_id": h.doc_id, "score": h.score, "draft_id": record_id}
+                for record_id, report in reports
+                for h in report.allowed
+            ],
+            "drafts": len(reports),
+            "duplicate": duplicate,
+            **_issues_json(corpus),
+        }
         print(json.dumps(payload, indent=2))
-        return 2 if matches else 0
-    if not matches:
-        print(f"No negative record (retained or quarantined) has TF-IDF cosine >= {args.threshold} with this claim.")
+        return 2 if duplicate else 0
+    for number, (record_id, report) in enumerate(reports, start=1):
+        header = _claim_header(report, args.threshold)
+        if len(reports) == 1:
+            print(header[0].upper() + header[1:] + ("" if report.matches else " with this claim") + ".")
+        else:
+            print(("" if number == 1 else "\n") + f"{record_id or f'record {number}'}: {header}.")
+        if report.allowed:
+            names = [_record_label(hit.doc_id) for hit in report.allowed]
+            more = f", and {len(names) - 10} more" if len(names) > 10 else ""
+            print(f"Not counted: {len(names)} matching record(s) allowed by --allow: {', '.join(names[:10])}{more}.")
+        if report.matches:
+            print()
+        for index, hit in enumerate(report.matches, start=1):
+            _print_hit(index, hit)
+            print(f"     Cosine: {hit.score:.3f}")
+    if not duplicate:
         if corpus.incomplete():
             print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
         return 0
-    quarantined = sum(hit.doc_id.startswith("quarantined:") for hit in matches)
-    of_them = f", {quarantined} of them quarantined," if quarantined else ""
-    print(f"POSSIBLE DUPLICATE: {len(matches)} negative record(s){of_them} at TF-IDF cosine >= {args.threshold}.\n")
-    for index, hit in enumerate(matches, start=1):
-        _print_hit(index, hit)
-        print(f"     Cosine: {hit.score:.3f}")
-    print("\nRead the record first: extend it, or say how the new claim differs.")
+    print(
+        "\nRead the record first: extend it, or say how the new claim differs. A sweep sibling you have "
+        "read and that should stay a separate record can be accepted with --allow ID."
+    )
     return 2
 
 
@@ -334,10 +419,12 @@ def cmd_baselines(args: argparse.Namespace) -> int:
         print(textwrap.fill(baseline["summary"], width=100, initial_indent=" " * 5, subsequent_indent=" " * 5))
         if baseline["references"]:
             print(f"     references: {', '.join(_reference_label(ref) for ref in baseline['references'])}")
-        runnable = baseline.get("runnable")
-        if runnable:
+        runnable = baseline.get("runnable") or {}
+        if runnable.get("command"):
             entry = f"  (entry {runnable['entry']})" if runnable.get("entry") else ""
             print(f"     run: {runnable['command']}{entry}")
+        elif runnable.get("entry"):
+            print(f"     call: {runnable['entry']} (a library function; it needs an instance)")
         print()
     print(
         textwrap.fill(
@@ -351,10 +438,24 @@ def cmd_baselines(args: argparse.Namespace) -> int:
     return 0
 
 
+def _threshold(value: str) -> float:
+    try:
+        return valid_threshold(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from None
+
+
+def _allow(value: str) -> str:
+    try:
+        return allow_patterns([value])[0]
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from None
+
+
 def _count(value: str) -> int:
     number = int(value)
-    if number < 0:
-        raise argparse.ArgumentTypeError("-k must be at least 0")
+    if number < 1:  # -k 0 would show nothing and then say that no baseline matches
+        raise argparse.ArgumentTypeError("-k must be at least 1")
     return number
 
 
@@ -404,7 +505,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     dups = sub.add_parser("near-duplicates", help="Pairs of negatives with a high TF-IDF cosine.")
     dups.add_argument("--kind", default="negative", help="Document kind to compare (default: negative).")
-    dups.add_argument("--threshold", type=float, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
+    dups.add_argument("--threshold", type=_threshold, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
     dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first; the total is still reported.")
     dups.add_argument("--per-family", type=int, help="At most this many pairs of ids differing only in a trailing number.")
     dups.add_argument("--out", help="Write FILE.json and FILE.md (stem upper-cased) next to it.")
@@ -413,16 +514,27 @@ def build_parser() -> argparse.ArgumentParser:
     dups.set_defaults(func=cmd_near_duplicates)
 
     check = sub.add_parser(
-        "check-new", help="Exit 2 when a draft claim is close to a negative record, 1 when --file cannot be read."
+        "check-new",
+        help="Exit 2 when a draft claim is close to a negative record, 1 when the draft cannot be read or has no words.",
     )
     source = check.add_mutually_exclusive_group(required=True)
     source.add_argument("--text", help="The draft claim.")
     source.add_argument(
         "--file",
-        help="A text file, or a JSON record whose claim and reason_invalid are checked; "
-        "the record is never matched with its own id.",
+        help="A text file, or a JSON record (or list of records) whose claim and reason_invalid are checked; "
+        "a record is never matched with its own id.",
     )
-    check.add_argument("--threshold", type=float, default=0.6, help="Minimum TF-IDF cosine for a match.")
+    check.add_argument(
+        "--threshold", type=_threshold, default=0.6, help="Minimum TF-IDF cosine for a match, in (0, 1] (default 0.6)."
+    )
+    check.add_argument(
+        "--allow",
+        action="append",
+        type=_allow,
+        metavar="ID",
+        help="A record the draft is known to differ from (say a sweep sibling you have read), or an id prefix "
+        "ending in * for a family; its matches are listed but do not count. Repeatable.",
+    )
     check.add_argument("--json", action="store_true")
     check.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
     check.set_defaults(func=cmd_check_new)
@@ -438,7 +550,11 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    return args.func(args)
+    try:
+        return args.func(args)
+    except (CorpusRootError, CatalogError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

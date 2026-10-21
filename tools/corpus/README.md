@@ -27,14 +27,22 @@ verdict on the idea.
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
 | `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
-| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the file cannot be read. |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6] [--allow ID]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
 Every command except `build` first refreshes the index incrementally: it stats about
 2,100 source files and re-parses only those whose size, mtime and content hash changed.
 When nothing changed the refresh only reads (no write lock) and costs 0.05 to 0.15 s of
-CPU. Add `--json` for machine-readable output, `--dense` to add the embedding ranker,
-`--root PATH` (or `QSEARCH_ROOT`) to index another checkout.
+CPU. Every command but `build` takes `--no-refresh` to skip it. `--json` prints
+machine-readable output from `search`, `been-tried`, `similar`, `heldout`, `near-duplicates`,
+`check-new` and `baselines` (`get` always prints JSON). `--dense` adds the embedding ranker to
+`search`, `been-tried`, `similar` and `heldout` (`build --dense` computes the embeddings); the
+other commands reject it as an unknown flag with exit 2, which for `check-new` is also the
+duplicate status, so a script should read `duplicate` from `--json` rather than trust the exit
+code alone. `--root PATH` (or `QSEARCH_ROOT`), given before the command, indexes another
+checkout. A root that is not a directory
+with a `research/` directory is an error (exit 1) before anything is written, and so is a
+checkout with nothing to index; the MCP server refuses to start on either.
 
 A file or registry record that cannot be parsed is never silent. Every command prints the
 problem on stderr and JSON output carries `index_issues`. When the problem is in
@@ -49,7 +57,8 @@ before" group then means the registry could not be read, not that the idea is ne
 `tools/dqi_screen/README.md`), `classical_baselines` (the `baselines` command, below) and
 `check_duplicate_negative` (the `check-new` check, below).
 It keeps the index warm and refreshes it at most every 30
-seconds. With the default `--dense auto` it adds the embedding ranker only while every
+seconds, except `check_duplicate_negative`, which refreshes before every check so a record
+another agent filed a moment ago is compared. With the default `--dense auto` it adds the embedding ranker only while every
 document has a vector (after `build --dense`); documents added since then switch it back
 to lexical ranking until the next `build --dense`, because a ranker that cannot see the
 newest records would push them down. `--dense on` embeds new documents at each refresh
@@ -142,7 +151,15 @@ after 2026-10-04, paraphrased blind by a separate agent that saw only the claims
 Two checks for negatives that say what an existing record already says
 (`duplicates.py`). Both score by TF-IDF cosine (`Corpus.cosine`, the index's own word
 unigram and bigram vectors), not by the rank-fusion score a search hit carries, so a score
-is a similarity in [0, 1] whatever else is in the index.
+is a similarity in [0, 1], not a rank. It still depends on the rest of the index through
+the IDF weights, and on the fit history: between refits (see Ranking above: more than 5 %
+of documents changed) changed documents are patched in with the last fit's vocabulary and
+IDF, which can move a score by a few hundredths. On a shared index patched 406 documents past
+its fit, the committed report's `COSET-DISTINGUISHABILITY-DEBT-S10/S8-PARTIAL_MATCHING` pair
+(0.9002 on a fresh fit) fell just under 0.9, and a `check-new` match within a few thousandths
+of 0.6 can flip the same way. `near-duplicates --out` therefore refits first, so the committed report depends only on
+the current documents, and its JSON records `changed_since_fit` (0 after that refit);
+`build --full` refits the shared index for everything else.
 
 ```bash
 python tools/corpus/cli.py near-duplicates --out research/audits/registry_duplicates.json --per-family 3
@@ -154,24 +171,45 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   (default 0.9), highest first, at most `--limit` (200). `--per-family N` keeps at most N
   pairs whose two ids differ only in their last `-<number>` (`...-N48-0-1` and
   `...-N48-0-2`). The output always gives the count before the limit ("200 of 539 pairs"),
-  and the JSON carries it as `total` next to `per_family` and `limit`. `--kind` picks
-  another document kind; a kind with no documents is an error (exit 1). `--out FILE.json`
-  also writes `FILE.md` with the stem upper-cased; the committed report is
+  and the JSON carries it as `total` next to `per_family` and `limit`, with the number of
+  `documents` compared, `changed_since_fit`, `index_incomplete` and `index_issues`. `--kind`
+  picks another document kind; a kind with no documents is an error (exit 1). When a
+  registry file or record cannot be read the command exits 2, like `been-tried`, and with
+  `--out` it writes nothing, so a half-written registry never replaces the committed report
+  with a shorter one. `--out` must name a `.json` file (exit 1 otherwise, or when it cannot be
+  written); it also writes `FILE.md` with the stem upper-cased; the committed report is
   `research/audits/registry_duplicates.json` and `REGISTRY_DUPLICATES.md` (0.9,
-  `--per-family 3`: 167 pairs on 2026-10-21, all of them).
+  `--per-family 3`: 167 pairs on 2026-10-22, all of them, the same pairs and scores as on
+  2026-10-21).
 - `check-new` checks one draft claim against the negative records, retained and
-  quarantined, at cosine 0.6. It exits 2 on any match, 0 when there is none, and 1 when
-  the `--file` cannot be read (checked before the index is touched). argparse usage errors
-  also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
-  file or a registry record as JSON; a record contributes its `claim` and `reason_invalid`,
-  and is never matched with its own `id` (`negative:ID` or `quarantined:ID`). The answer is
-  therefore the same before and after the record is filed, and a hook can run on the draft
-  or on the registry edit that files it; a draft that reuses another record's id is not
-  compared with that record. A quarantined match is labelled `(quarantined)`. An
+  quarantined, at cosine 0.6. It scores every negative-kind document, not only a search's
+  top hits, so no record at or above the threshold is missed; the header gives how many
+  match, the closest five are listed, and `--json` carries the count as `total`.
+  It exits 2 on any match, 0 when there is none, and 1 when
+  the draft cannot be used (checked before the index is touched): a `--file` that cannot be
+  read, text that starts like a JSON record but is not one (bad or truncated JSON, no string
+  `claim`, a `reason_invalid` that is not a string), or a draft with no words to compare
+  (empty or only stop words); it also exits 1 when the index holds no negative record at
+  all (a `--root` without a registry), rather than calling every claim new. argparse usage
+  errors, among them a `--threshold` that is not a number in (0, 1] (for `near-duplicates`
+  too), also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
+  file, a registry record as JSON, or a JSON list of records (read as UTF-8, with or without
+  a BOM); a record contributes its `claim` and `reason_invalid` (a quarantined record's are
+  read from its `original_record`), and is never matched with its own `id` (`negative:ID`
+  or `quarantined:ID`; the id is stripped and a `negative:` or `quarantined:` prefix
+  dropped). A list is checked record by record, each leaving out every listed record's id,
+  and `--json` marks each match with its `draft_id`. The answer is
+  therefore the same before and after the records are filed, and a hook can run on the draft
+  or on the new records of the registry edit that files them; a draft that reuses another
+  record's id is not compared with that record, and records of one list are not compared
+  with each other. A quarantined match is labelled `(quarantined)`. An
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
-  The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches
-  for a claim's text, with no id left out.
+  `--allow ID` accepts a match the author has read and knows to be a separate result (see
+  "How often it fires on distinct records" below).
+  The MCP tool `check_duplicate_negative(claim, threshold=0.6, allow=None)` returns the same matches
+  for a claim's text, with no id left out, and an `error` for a claim with no words, a
+  threshold outside (0, 1] or an index with no negative records.
 - The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
   ones (`quarantined:` ids, 12). Both are compared and both can match; no quarantined record
   is in a pair at 0.7 or above today.
@@ -231,6 +269,28 @@ through `check_claim` on 163 sampled records: own record found from claim plus r
 against their nearest negative. So 0.6 stays, and the input should be the claim and its reason, as `--file` does with a
 record.
 
+**How often it fires on distinct records.** The checks above measure recall. Specificity,
+measured on 2026-10-22 by refiling each of the 975 retained negatives as filed (its own id
+left out), is low for generated records:
+
+| threshold | records that exit 2 | top match's id equal up to digits | first three id tokens shared | first two shared | other |
+|---|---|---|---|---|---|
+| 0.6 | 401 (41 %) | 209 | 120 | 27 | 45 |
+| 0.65 | 353 (36 %) | 200 | 82 | 26 | 45 |
+| 0.7 | 284 (29 %) | 164 | 57 | 24 | 39 |
+| 0.8 | 102 (10 %) | 64 | 5 | 14 | 19 |
+
+At 0.6, 340 of the 401 have the same `reason_invalid`, word for word, as their closest
+match, and 39 of the 45 "other" are `LEGACY-*SECRET*` toy-oracle template records: sweep
+siblings, which the caveat above says should stay. Hand-written records fare better: of the
+409 `NEG-` records outside the generated `NEG-CODE-` and `NEG-QUARANTINE-MUT-` families, 17
+exit 2, 15 of them siblings inside the `NEG-SELF-DUAL-WREATH` program (0.60 to 0.72) and two
+the orthogonal and unitary parabolic pair classed distinct above. Raising the threshold does
+not fix this (0.7 still blocks 284) and costs claim-alone recall. Instead, after reading a
+sibling, pass `--allow ID`, or `--allow PREFIX*` for its family (repeatable; the MCP tool takes
+`allow`): its matches are then listed as allowed and do not count toward the exit code. A
+bare `*` is rejected.
+
 Smoke runs on this checkout (2026-10-21):
 
 | input | exit | top match (cosine) |
@@ -245,6 +305,8 @@ Smoke runs on this checkout (2026-10-21):
 | `--text "Grover search gives a quadratic speedup for unstructured search."` | 0 | none |
 | `--text` claim and reason of quarantined `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` | 2 | that record, labelled `(quarantined)` (0.924) |
 | `--file /nonexistent/draft.json` | 1 | none: `error: cannot read ...` on stderr |
+| `--file` quarantined `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` as filed (2026-10-22) | 0 | none: its claim is read from `original_record` and its own id left out |
+| `--file` `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` as filed `--allow NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND` (2026-10-22) | 0 | none counted; the orthogonal one listed as allowed |
 
 ## Baselines
 
@@ -259,26 +321,38 @@ python tools/corpus/cli.py baselines "DQI for max-k-cut on a ternary cycle code"
 
 Each result shows the baseline's name and id, its score, why it was chosen (the keywords
 matched and the notes or negatives that name it, with `file:line`), its summary, its
-references and, when the repository can run it, a `run:` command. `--json` prints
+references and, when the repository can run it, a `run:` command that runs it as printed,
+or a `call:` line naming the library function that computes it on an instance
+(`prange-restarts-opi`: `tools/dqi_screen/prange.py:prange_restarts`). `--json` prints
 `{"idea", "recommendations": [{"baseline", "score", "matched", "evidence"}], "index_incomplete", "index_issues"}`
 with each evidence hit in the `search --json` shape. The MCP tool
 `classical_baselines(idea, k=5)` returns the same object.
 
-**Score.** `tokens(t)` lower-cases `t`, keeps the runs of `[a-z0-9]`, turns a final `sses`
+**Score.** `tokens(t)` lower-cases `t`, writes umlauts as ae/oe/ue and drops other accents,
+keeps the runs of `[a-z0-9]`, turns a final `sses`
 into `ss` and drops a final single `s` from words longer than three letters ("Gibbs" becomes
-`gibb` on both sides; "glasses" and "glass" both become `glass`). A mechanism
-keyword matches when every one of its tokens is among the idea's tokens, in any order. The ten
+`gibb` on both sides; "glasses" and "glass" both become `glass`), then folds a few spelling
+variants into one (`_SPELLINGS`: "colouring" is `coloring`, "Gröbner" and "Grobner" are
+`groebner`, "MaxCut" is `max cut`). A mechanism
+keyword matches when every one of its tokens is among the idea's tokens, in any order. A `k`
+in a keyword stands for a number: such a keyword must occur in a row with a number, `k` or
+`q` in that place, so `max k cut` matches "max-3-cut" and "Max-q-Cut" but not "max cut at
+depth 3". The ten
 note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
-and on word boundaries. Notes are indexed by section, so a note counts once however many of
+and on word boundaries. A mention inside a longer name of another baseline counts only for
+that one: "Prange" inside "USD-Prange" or "product-USD/Prange" cites the USD-Prange sampler,
+not `prange-isd` (on "p-spin Gibbs sampling" such mentions had put `prange-isd` first, at 0.5,
+on citations alone). Notes are indexed by section, so a note counts once however many of
 its sections are among the ten, and its nearest citing section is the evidence shown. Each
 negative counts on its own, although all of them live in one registry file.
 
     score = matched keywords / keywords + citing notes and negatives / 10        (rounded to 4 places)
 
 Baselines scoring 0 are left out; the rest are sorted by score, then name, and the first `k`
-(default 5) are shown. The CLI rejects a negative `-k`, and the Python and MCP calls return
-nothing for one. A score can exceed 1. A citing note may name a baseline only to set it
+(default 5) are shown. The CLI rejects a `-k` below 1 (with 0 it would show nothing and then
+say that no baseline matches), and the Python and MCP calls return nothing for one. A score
+can exceed 1. A citing note may name a baseline only to set it
 aside, and keywords are matched without regard to how the idea uses them, so the score orders
 leads to read and run. It is not evidence that the baseline beats the idea, and an empty list
 does not mean that no classical baseline applies.
@@ -297,7 +371,9 @@ parity-check code"`:
 first (0.4: cycle code, max k cut), then `sdp-relaxation` (0.3: max cut, named by
 `QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md`) and `tensor-network-simulation` (0.1). When
 every section counted, four sections of that one note gave `sdp-relaxation` 0.6 and put it
-above the LP decoder, the baseline this line of work is missing.
+above the LP decoder, the baseline this line of work is missing. The same order holds for
+"max-3-cut" (2026-10-22); before the `k` placeholder, that spelling missed `max k cut` and
+put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 
 **Schema.** `{"baselines": [entry, ...]}`, each entry with every field below:
 
@@ -308,15 +384,28 @@ above the LP decoder, the baseline this line of work is missing.
 | `problem` | the problem the algorithm solves, one sentence |
 | `mechanisms` | 3 to 6 lowercase keywords an idea would contain |
 | `summary` | what the algorithm does and what it is the baseline for |
-| `references` | a list of `{"arxiv": "2609.40036"}` or `{"note": "STEM"}` (the file `research/STEM.md`) |
-| `runnable` | `null`, or `{"command": ..., "entry": ...}`: a command run from the repository root and an optional `path.py:function` |
+| `references` | a list of `{"arxiv": "2609.40036"}` or `{"note": "STEM"}` (the file `research/STEM.md`, which must name the baseline or an alias) |
+| `runnable` | `null`, or `{"command": ..., "entry": ...}` with at least one: a command that runs the baseline from the repository root as printed, and a `path.py:function` |
 
 **Adding an entry.** Append it to `baselines.json`, raise the count in
 `test_catalog_is_well_formed`, then run `python -m pytest -q tests/tools/test_corpus_baselines.py`.
 `validate_catalog` reports an entry that is not an object, a duplicate id, a missing or
-mistyped field, fewer than 3 or more than 6 keywords and a malformed reference; the tests also check that every note reference
-exists as `research/<STEM>.md` and that every runnable command and entry points at an existing
-file (that check skips until `tools/dqi_screen/` is merged).
+mistyped field, a blank name or alias, fewer than 3 or more than 6 keywords, a keyword that
+is not lowercase or that `tokens` cannot match as written (`"-"` has no word and would match
+every idea; the `χ` of `"χ² test"` would be dropped, so spell keywords in ASCII, although
+accents fold and `"gröbner basis"` is fine), a `runnable` other than `null` or
+`{command?, entry?}`, and a malformed reference. `recommend`, the CLI and the MCP tool refuse
+a catalog with any such problem, or one that cannot be read or parsed as
+`{"baselines": [...]}`: the CLI prints `error: ...` on stderr and exits 1, and the MCP tool
+returns `{"error"}`. The tests also check that every note reference
+exists as `research/<STEM>.md` and names its baseline (its name or an alias), that every
+runnable entry is a function defined in that file, and that every runnable command exits 0
+when run from the repository root (that check skips until `tools/dqi_screen/` is merged).
+
+Three entries cite no note: no committed note discusses stochastic localization, Prange
+completion as a finite-length OPI baseline, or LP decoding of cycle codes
+(`TERNARY_PREFIX_INTEGRALITY` uses a certified LP to prune ternary prefixes, a different
+LP). They cite their papers instead.
 
 **Notes to add back when present.** Three notes that belong in the catalog are uncommitted
 agent edits in the main checkout, so no entry references them yet. Add each to its entry once

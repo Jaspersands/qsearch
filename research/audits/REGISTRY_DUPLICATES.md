@@ -1,6 +1,6 @@
 # Near-duplicate negatives
 
-Generated on 2026-10-21 by `python tools/corpus/cli.py near-duplicates`: `negative` documents (retained and quarantined negatives) whose TF-IDF cosine is at least 0.9, at most 3 pairs per sweep family, highest first: 167 pairs.
+Generated on 2026-10-22 by `python tools/corpus/cli.py near-duplicates`: `negative` documents (retained and quarantined negatives) whose TF-IDF cosine is at least 0.9, at most 3 pairs per sweep family, highest first: 167 pairs. 987 documents were compared, on a TF-IDF fit of the current documents.
 
 A cosine of 1.000 means the same words in the same proportions. A name that occurs in a single record is not in the vocabulary, so two records generated from one template for different instances (a size, trial, code family or proposal) can score 1.000. Most pairs are such sweep siblings, not restatements; the per-family cap only groups ids that differ in their last `-<number>`. A pair is a lead to read, not a verdict; see the hand check in `tools/corpus/README.md`, "Duplicates".
 
