@@ -9,7 +9,7 @@ from tests.tools.conftest import NEGATIVES
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus.cli import main
-from tools.corpus.duplicates import check_claim, near_duplicates
+from tools.corpus.duplicates import check_claim, near_duplicates, pair_report
 from tools.corpus.mcp_server import create_server
 
 HELSTROM = "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
@@ -89,6 +89,17 @@ def test_per_family_cap_keeps_a_true_restatement_visible(fake_repo: Path) -> Non
     assert len(capped) == 3 * 2 + 1
 
 
+def test_pair_report_counts_the_pairs_cut_by_the_limit(fake_repo: Path) -> None:
+    corpus = _corpus_with(fake_repo, _sweep_records() + RESTATEMENT)
+    report = pair_report(corpus, limit=10)
+    assert len(report.pairs) == 10
+    assert report.total == 3 * 45 + 1  # every sibling pair of three ten-record sweeps, plus the restatement
+    assert report.documents == len(NEGATIVES) + 1 + 30 + 2  # retained, quarantined, sweeps, restatement
+    assert pair_report(corpus, limit=10, per_family=2).total == 3 * 2 + 1
+    assert pair_report(corpus, limit=-1).pairs == []
+    assert pair_report(corpus, kind="nosuchkind").documents == 0
+
+
 @pytest.fixture
 def corpus(fake_repo: Path) -> Corpus:
     corpus = Corpus(fake_repo)
@@ -114,14 +125,45 @@ def test_cli_near_duplicates_writes_json_and_markdown(fake_repo: Path, tmp_path:
     out = tmp_path / "dups.json"
     assert main(["--root", str(fake_repo), "near-duplicates", "--threshold", "0.8", "--out", str(out)]) == 0
     payload = json.loads(out.read_text())
-    assert set(payload) == {"kind", "threshold", "pairs", "generated_on"}
-    assert (payload["kind"], payload["threshold"]) == ("negative", 0.8)
+    assert set(payload) == {"kind", "threshold", "per_family", "limit", "total", "pairs", "generated_on"}
+    assert (payload["kind"], payload["threshold"], payload["per_family"], payload["limit"]) == ("negative", 0.8, None, 200)
+    assert payload["total"] == len(payload["pairs"])
     assert (payload["pairs"][0]["a"], payload["pairs"][0]["b"]) == ("negative:NEG-DUP-A", "negative:NEG-DUP-B")
     markdown = (tmp_path / "DUPS.md").read_text()
     assert "| 1.000 | NEG-DUP-A | NEG-DUP-B |" in markdown
+    assert "(retained and quarantined negatives)" in markdown
     capsys.readouterr()
     assert main(["--root", str(fake_repo), "near-duplicates", "--json"]) == 0
     assert json.loads(capsys.readouterr().out)["pairs"][0]["b"] == "negative:NEG-DUP-B"
+
+
+def test_cli_near_duplicates_says_how_many_pairs_the_limit_cut(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    _corpus_with(fake_repo, _sweep_records() + RESTATEMENT)
+    root = ["--root", str(fake_repo), "near-duplicates", "--threshold", "0.8"]
+    assert main([*root, "--limit", "5"]) == 0
+    assert "\n5 of 136 pairs at TF-IDF cosine >= 0.8 (raise --limit to see the rest)." in capsys.readouterr().out
+    assert main([*root, "--limit", "5", "--per-family", "2", "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert (len(payload["pairs"]), payload["total"]) == (5, 7)
+    out = tmp_path / "dups.json"
+    assert main([*root, "--limit", "5", "--out", str(out)]) == 0
+    assert capsys.readouterr().out.startswith("5 of 136 pairs at cosine >= 0.8")
+    assert "highest first: the first 5 of 136 pairs (`--limit 5`)." in (tmp_path / "DUPS.md").read_text()
+    assert main([*root, "--limit", "500"]) == 0
+    assert "\n136 pairs at TF-IDF cosine >= 0.8. A pair" in capsys.readouterr().out
+
+
+def test_cli_near_duplicates_labels_follow_the_kind(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    root = ["--root", str(fake_repo), "near-duplicates"]
+    out = tmp_path / "notes.json"
+    assert main([*root, "--kind", "note", "--threshold", "0.95", "--out", str(out)]) == 0
+    markdown = (tmp_path / "NOTES.md").read_text()
+    assert markdown.startswith("# Near-duplicate `note` documents\n")
+    assert "`note` documents whose TF-IDF cosine" in markdown and "negatives" not in markdown.split("\n\n")[1]
+    capsys.readouterr()
+    assert main([*root, "--kind", "nosuchkind"]) == 1
+    captured = capsys.readouterr()
+    assert "the index has no `nosuchkind` documents" in captured.err and captured.out == ""
 
 
 def test_cli_check_new_exit_code_gates_on_a_match(fake_repo: Path, tmp_path: Path, capsys) -> None:

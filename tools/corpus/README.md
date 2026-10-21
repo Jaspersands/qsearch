@@ -26,7 +26,7 @@ verdict on the idea.
 | `get DOC_ID` | Full text and metadata as JSON. |
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
-| `near-duplicates [--threshold 0.9] [--per-family N] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
+| `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
 | `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained one. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
@@ -152,9 +152,12 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
 - `near-duplicates` lists pairs of `negative`-kind documents at or above `--threshold`
   (default 0.9), highest first, at most `--limit` (200). `--per-family N` keeps at most N
   pairs whose two ids differ only in their last `-<number>` (`...-N48-0-1` and
-  `...-N48-0-2`). `--out FILE.json` also writes `FILE.md` with the stem upper-cased; the
-  committed report is `research/audits/registry_duplicates.json` and
-  `REGISTRY_DUPLICATES.md` (0.9, `--per-family 3`: 167 pairs on 2026-10-21).
+  `...-N48-0-2`). The output always gives the count before the limit ("200 of 539 pairs"),
+  and the JSON carries it as `total` next to `per_family` and `limit`. `--kind` picks
+  another document kind; a kind with no documents is an error (exit 1). `--out FILE.json`
+  also writes `FILE.md` with the stem upper-cased; the committed report is
+  `research/audits/registry_duplicates.json` and `REGISTRY_DUPLICATES.md` (0.9,
+  `--per-family 3`: 167 pairs on 2026-10-21, all of them).
 - `check-new` checks one draft claim against retained negatives at cosine 0.6 and exits 2
   on any match, 0 otherwise, so it can gate a hook or a script. `--file` takes a text file
   or a registry record as JSON; a record contributes its `claim` and `reason_invalid`. An
@@ -176,8 +179,11 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
 
 57 pairs score 1.000. The report default is 0.9: 207 pairs can be read, the 0.8 list is
 three times longer, and in the hand check below the pairs under 0.9 are also mostly sweep
-siblings. One restatement in the check sits at 0.80, so run `--threshold 0.8` when
-cleaning a specific family.
+siblings. One restatement in the check sits at 0.80, and the default `--limit 200` does not
+reach it: with `--threshold 0.8 --per-family 3` the list is "200 of 539 pairs" and that
+pair is number 519. When cleaning a specific family, run
+`near-duplicates --threshold 0.8 --per-family 3 --limit 1000` and search the output for its
+ids.
 
 Hand check of ten pairs across the bands (classes: sweep sibling, one template filled in
 for another instance; true restatement, the same claim about the same object filed twice;
@@ -203,8 +209,10 @@ per instance, whose only difference is the instance name. A name that occurs in 
 record is not in the TF-IDF vocabulary (`min_df` 2), so such pairs score up to 1.000.
 `--per-family` groups only ids that differ in their last `-<number>`: 59 of the 207 pairs
 at 0.9, while 145 of them have ids that are equal once digits are ignored and others differ
-by a word (`CUBIC_CHIRP` and `NOISY_CUBIC_CHIRP`). Read a pair before merging records; a
-sweep sibling is a separate result and should stay.
+by a word (`CUBIC_CHIRP` and `NOISY_CUBIC_CHIRP`). A family key that ignores every digit
+was measured and not adopted: at 0.8 with a cap of 3 it shortens the list from 539 to 403
+pairs, but the 0.80 restatement only moves from number 519 to 385, still past the first 200.
+Read a pair before merging records; a sweep sibling is a separate result and should stay.
 
 **`check-new` threshold.** Each of the 975 retained negatives was checked against itself.
 Its claim plus reason scores at least 0.6 with its own record every time (minimum 0.660,

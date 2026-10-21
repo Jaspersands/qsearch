@@ -28,7 +28,7 @@ if __package__ in (None, ""):
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
 from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
-from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, near_duplicates  # noqa: E402
+from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, pair_report  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -199,16 +199,24 @@ def _cell(text: str, width: int = 160) -> str:
     return text if len(text) <= width else text[: width - 1].rstrip() + "…"
 
 
-def _duplicates_markdown(payload: dict, per_family: int | None, limit: int) -> str:
-    pairs = payload["pairs"]
+def _pair_count(shown: int, total: int) -> str:
+    """'7 pairs', or '5 of 136 pairs' when --limit cut the list."""
+    return f"{shown} of {total} pairs" if total > shown else f"{shown} pairs"
+
+
+def _duplicates_markdown(payload: dict) -> str:
+    pairs, kind, total, per_family = payload["pairs"], payload["kind"], payload["total"], payload["per_family"]
     cap = f", at most {per_family} pairs per sweep family" if per_family is not None else ""
+    described = f"`{kind}` documents" + (" (retained and quarantined negatives)" if kind == "negative" else "")
+    count = (
+        f"the first {len(pairs)} of {total} pairs (`--limit {payload['limit']}`)." if total > len(pairs)
+        else f"{len(pairs)} pairs."
+    )
     lines = [
-        "# Near-duplicate negatives",
+        "# Near-duplicate negatives" if kind == "negative" else f"# Near-duplicate `{kind}` documents",
         "",
         f"Generated on {payload['generated_on']} by `python tools/corpus/cli.py near-duplicates`: "
-        f"`{payload['kind']}` documents (retained and quarantined negatives) whose TF-IDF cosine is at "
-        f"least {payload['threshold']}{cap}, highest first, {len(pairs)} pairs"
-        + (f" (the first {limit})." if len(pairs) >= limit else "."),
+        f"{described} whose TF-IDF cosine is at least {payload['threshold']}{cap}, highest first: {count}",
         "",
         "A cosine of 1.000 means the same words in the same proportions. A name that occurs in a single "
         "record is not in the vocabulary, so two records generated from one template for different "
@@ -230,31 +238,40 @@ def _duplicates_markdown(payload: dict, per_family: int | None, limit: int) -> s
 
 def cmd_near_duplicates(args: argparse.Namespace) -> int:
     corpus = _corpus(args)
-    pairs = near_duplicates(
+    report = pair_report(
         corpus, kind=args.kind, threshold=args.threshold, limit=args.limit, per_family=args.per_family
     )
+    if report.documents == 0:
+        print(f"error: the index has no `{args.kind}` documents; check --kind.", file=sys.stderr)
+        return 1
+    pairs = report.pairs
     payload = {
         "kind": args.kind,
         "threshold": args.threshold,
+        "per_family": args.per_family,
+        "limit": args.limit,
+        "total": report.total,
         "pairs": [asdict(pair) for pair in pairs],
         "generated_on": dt.date.today().isoformat(),
     }
+    count = _pair_count(len(pairs), report.total)
     if args.out:
         out = Path(args.out)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
         markdown = out.with_name(out.stem.upper() + ".md")
-        markdown.write_text(_duplicates_markdown(payload, args.per_family, args.limit), encoding="utf-8")
+        markdown.write_text(_duplicates_markdown(payload), encoding="utf-8")
     if args.json:
         print(json.dumps(payload, indent=2))
     elif args.out:
-        print(f"{len(pairs)} pairs at cosine >= {args.threshold}; wrote {out} and {markdown}")
+        print(f"{count} at cosine >= {args.threshold}; wrote {out} and {markdown}")
     else:
         for index, pair in enumerate(pairs, start=1):
             print(f"  {index}. {pair.score:.3f}  {_record_label(pair.a)}  ~  {_record_label(pair.b)}")
             print(f"     {pair.title_a[:160]}")
             print(f"     {pair.title_b[:160]}")
-        print(f"\n{len(pairs)} pairs at TF-IDF cosine >= {args.threshold}. A pair is a lead to read, not a verdict.")
+        cut = " (raise --limit to see the rest)" if report.total > len(pairs) else ""
+        print(f"\n{count} at TF-IDF cosine >= {args.threshold}{cut}. A pair is a lead to read, not a verdict.")
     return 0
 
 
@@ -382,7 +399,7 @@ def build_parser() -> argparse.ArgumentParser:
     dups = sub.add_parser("near-duplicates", help="Pairs of negatives with a high TF-IDF cosine.")
     dups.add_argument("--kind", default="negative", help="Document kind to compare (default: negative).")
     dups.add_argument("--threshold", type=float, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
-    dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first.")
+    dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first; the total is still reported.")
     dups.add_argument("--per-family", type=int, help="At most this many pairs of ids differing only in a trailing number.")
     dups.add_argument("--out", help="Write FILE.json and FILE.md (stem upper-cased) next to it.")
     dups.add_argument("--json", action="store_true")
