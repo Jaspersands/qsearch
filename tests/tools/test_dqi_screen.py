@@ -245,6 +245,16 @@ def test_cli_zero_valued_flags_override_the_params_file(capsys) -> None:
     assert "R2 (hard): FAIL" in capsys.readouterr().out
 
 
+def test_corpus_mcp_docs_list_the_screen_tool() -> None:
+    from tools.corpus import mcp_server
+
+    tools = next(par for par in mcp_server.__doc__.split("\n\n") if par.startswith("Tools:"))
+    assert "screen_dqi_candidate(params)" in tools
+    readme = (REPO / "tools/corpus/README.md").read_text(encoding="utf-8")
+    agents = readme.split("## For the research agents (MCP)", 1)[1].split("\n\n")[1]
+    assert "`screen_dqi_candidate`" in agents
+
+
 def test_prange_full_field_scores_one() -> None:
     B = np.random.default_rng(3).integers(0, 5, size=(6, 3))
     result = P.prange_restarts(B, [range(5)] * 6, 5, restarts=2, seed=0)

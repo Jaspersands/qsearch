@@ -2,7 +2,8 @@
 
     python tools/corpus/mcp_server.py [--root PATH] [--dense auto|on|off]
 
-Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id).
+Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id),
+screen_dqi_candidate(params) (the DQI soundness screen of tools/dqi_screen; no index needed).
 The index refreshes incrementally before a query when it is older than --refresh-seconds.
 --dense auto uses embeddings only while every document has one (after `build --dense`);
 --dense on also embeds new documents at each refresh. Results carry `index_incomplete` and
