@@ -264,6 +264,42 @@ def test_parse_note_prefers_the_notes_own_producer_and_its_artifact(tmp_path: Pa
     assert packet.producer["artifact"] == "research/literature_audits/instrument_sources.json"
 
 
+def test_parse_note_reads_the_scripts_own_report_not_a_prefixed_one(tmp_path: Path) -> None:
+    # theorems/ternary_observable_moment_lift.py sets BASE_REPORT (its parent's JSON) before REPORT.
+    (tmp_path / "theorems").mkdir()
+    (tmp_path / "theorems" / "lift.py").write_text(
+        'BASE_REPORT = ROOT / "research/classical_baselines/base.json"\n'
+        'REPORT: Path = ROOT / "research/classical_baselines/lift.json"\n', encoding="utf-8")
+    (tmp_path / "research" / "classical_baselines").mkdir(parents=True)
+    for stem in ("base", "lift"):
+        (tmp_path / "research" / "classical_baselines" / f"{stem}.json").write_text("{}", encoding="utf-8")
+    text = "# Lift\n\n2026-10-14. REVIEW PENDING.\n\n## Result\n\nRun `python theorems/lift.py --write`.\n"
+    packet = X.parse_note(_write(tmp_path, "LIFT", text))
+    assert packet.producer["artifact"] == "research/classical_baselines/lift.json"
+
+
+def test_parse_note_falls_back_to_the_stem_script_when_the_note_runs_none(tmp_path: Path) -> None:
+    # 46 review-pending notes name neither a command nor a JSON path, but their stem script's
+    # REPORT resolves (DCP_AFFINE_CUBE_HIERARCHY: "Module/test/report stem: ...").
+    (tmp_path / "theorems").mkdir()
+    (tmp_path / "theorems" / "stem_only.py").write_text('REPORT = ROOT / "research/phase_workbench/stem_only.json"\n',
+                                                         encoding="utf-8")
+    artifact = tmp_path / "research" / "phase_workbench" / "stem_only.json"
+    artifact.parent.mkdir(parents=True)
+    artifact.write_text('{"mean": 0.5}', encoding="utf-8")
+    text = "# Stem Only\n\n2026-10-14. REVIEW PENDING.\n\n## Result\n\nModule/test/report stem: `stem_only`.\n"
+    path = _write(tmp_path, "STEM_ONLY", text)
+    packet = X.parse_note(path)
+    assert packet.producer == {"command": None, "script": "theorems/stem_only.py", "flags": "",
+                               "artifact": "research/phase_workbench/stem_only.json"}
+    assert "mean = 0.5" in X.artifact_excerpt(tmp_path, packet)
+    assert R.build_packet(tmp_path, path)["artifact_path"] == "research/phase_workbench/stem_only.json"
+    named = _write(tmp_path, "STEM_ONLY", text + "\nSee `classical_baselines/other.json`.\n")
+    artifact.unlink()
+    assert X.parse_note(named).producer["artifact"] == "classical_baselines/other.json"
+    assert X.parse_note(_write(tmp_path, "NO_SCRIPT", text)).producer is None
+
+
 def test_parse_note_keeps_fenced_headings_inside_their_section(tmp_path: Path) -> None:
     text = textwrap.dedent(
         """\

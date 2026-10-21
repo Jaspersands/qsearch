@@ -46,10 +46,12 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
 - `date`, `status`, and `not_claimed`: preamble sentences or bullets containing "not" or
   "no".
 - `producer`: the note's own `python theorems/<stem in lower case>.py <flags>` when the
-  note runs it, else the first `python theorems/<module>.py <flags>` anywhere in the note,
-  with its JSON `artifact`: an `x/y.json` path in the note named after the script, else
-  the `REPORT = "...json"` constant in the script's source when that file exists, else
-  the first `x/y.json` path in the note, else `REPORT`. Paths resolve against the
+  note runs it, else the first `python theorems/<module>.py <flags>` anywhere in the note.
+  A note that runs no command but has a stem script `theorems/<stem in lower case>.py`
+  gets that script with `command: null`. The JSON `artifact` is an `x/y.json` path in the
+  note named after the script, else the script's own `REPORT = "...json"` constant (a
+  line starting `REPORT =` or `REPORT: ... =`, never `BASE_REPORT`) when that file exists,
+  else the first `x/y.json` path in the note, else `REPORT`. Paths resolve against the
   repository root, then against `research/`.
 - `result`: the first section whose heading contains Result, Question, Claim or Summary
   and not Not, Cannot, Why, Next ... Question or Kill/Break ... Claim ("What Can And
