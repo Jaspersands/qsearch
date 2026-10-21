@@ -27,7 +27,7 @@ from mcp.server.fastmcp import FastMCP  # noqa: E402
 from tools.corpus.api import Corpus, CorpusRootError, checkout_root  # noqa: E402
 from tools.corpus.baselines import recommend  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
-from tools.corpus.duplicates import NO_NEGATIVES, claim_report, valid_threshold  # noqa: E402
+from tools.corpus.duplicates import NO_NEGATIVES, allow_patterns, claim_report, valid_threshold  # noqa: E402
 from tools.corpus.ranking import Embedder, query_terms  # noqa: E402
 from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 
@@ -102,24 +102,29 @@ def create_server(
         return {"idea": idea, "recommendations": [_recommendation_json(r) for r in recs], **_issues_json(corpus)}
 
     @server.tool()
-    def check_duplicate_negative(claim: str, threshold: float = 0.6) -> dict:
+    def check_duplicate_negative(claim: str, threshold: float = 0.6, allow: list[str] | None = None) -> dict:
         """Before filing a new negative result, check whether a retained negative already says
         it. Returns the retained (and quarantined) negatives whose TF-IDF cosine with the claim
-        is at least threshold, highest first; duplicate is true when there is any. Pass the
-        claim and its reason. A match is a record to read and extend, not proof of identity;
-        if index_incomplete is true, no match does not mean the claim is new. threshold must be
-        in (0, 1]. A claim with no words to compare (empty or only stop words), a threshold
-        outside (0, 1] or an index with no negative records returns an error."""
+        is at least threshold, highest first (the closest five; total counts them all);
+        duplicate is true when there is any. Pass the claim and its reason. A match is a record
+        to read and extend, not proof of identity: most matches of generated records are sweep
+        siblings, one template filled in for another instance. After reading such a sibling,
+        pass its id in allow (or an id prefix ending in * for its family): it is then listed
+        under allowed and does not count. If index_incomplete is true, no match does not mean
+        the claim is new. threshold must be in (0, 1]. A claim with no words to compare (empty
+        or only stop words), a threshold outside (0, 1], a bare * in allow or an index with no
+        negative records returns an error."""
         if not query_terms(claim):
             return {"error": "the claim has no words to compare (it is empty or only stop words)"}
         try:
             threshold = valid_threshold(threshold)
+            patterns = allow_patterns(allow)
         except ValueError as exc:
             return {"error": str(exc)}
         # Always refresh (a no-op costs well under a second): a negative another agent filed
         # inside the refresh window is exactly the duplicate this gate exists to catch.
         ready(force=True)
-        report = claim_report(corpus, claim, threshold=threshold)
+        report = claim_report(corpus, claim, threshold=threshold, allow=patterns)
         if report.documents == 0:
             return {"error": NO_NEGATIVES, **_issues_json(corpus)}
         return {
@@ -127,6 +132,7 @@ def create_server(
             "threshold": threshold,
             "matches": [_hit_json(h) for h in report.matches],
             "total": report.total,
+            "allowed": [{"doc_id": h.doc_id, "score": h.score} for h in report.allowed],
             "duplicate": bool(report.matches),
             **_issues_json(corpus),
         }

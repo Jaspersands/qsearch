@@ -27,7 +27,7 @@ verdict on the idea.
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
 | `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
-| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words. |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6] [--allow ID]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
 Every command except `build` first refreshes the index incrementally: it stats about
@@ -199,7 +199,9 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   with each other. A quarantined match is labelled `(quarantined)`. An
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
-  The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches
+  `--allow ID` accepts a match the author has read and knows to be a separate result (see
+  "How often it fires on distinct records" below).
+  The MCP tool `check_duplicate_negative(claim, threshold=0.6, allow=None)` returns the same matches
   for a claim's text, with no id left out, and an `error` for a claim with no words, a
   threshold outside (0, 1] or an index with no negative records.
 - The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
@@ -261,6 +263,28 @@ through `check_claim` on 163 sampled records: own record found from claim plus r
 against their nearest negative. So 0.6 stays, and the input should be the claim and its reason, as `--file` does with a
 record.
 
+**How often it fires on distinct records.** The checks above measure recall. Specificity,
+measured on 2026-10-22 by refiling each of the 975 retained negatives as filed (its own id
+left out), is low for generated records:
+
+| threshold | records that exit 2 | top match's id equal up to digits | first three id tokens shared | first two shared | other |
+|---|---|---|---|---|---|
+| 0.6 | 401 (41 %) | 209 | 120 | 27 | 45 |
+| 0.65 | 353 (36 %) | 200 | 82 | 26 | 45 |
+| 0.7 | 284 (29 %) | 164 | 57 | 24 | 39 |
+| 0.8 | 102 (10 %) | 64 | 5 | 14 | 19 |
+
+At 0.6, 340 of the 401 have the same `reason_invalid`, word for word, as their closest
+match, and 39 of the 45 "other" are `LEGACY-*SECRET*` toy-oracle template records: sweep
+siblings, which the caveat above says should stay. Hand-written records fare better: of the
+409 `NEG-` records outside the generated `NEG-CODE-` and `NEG-QUARANTINE-MUT-` families, 17
+exit 2, 15 of them siblings inside the `NEG-SELF-DUAL-WREATH` program (0.60 to 0.72) and two
+the orthogonal and unitary parabolic pair classed distinct above. Raising the threshold does
+not fix this (0.7 still blocks 284) and costs claim-alone recall. Instead, after reading a
+sibling, pass `--allow ID`, or `--allow PREFIX*` for its family (repeatable; the MCP tool takes
+`allow`): its matches are then listed as allowed and do not count toward the exit code. A
+bare `*` is rejected.
+
 Smoke runs on this checkout (2026-10-21):
 
 | input | exit | top match (cosine) |
@@ -275,6 +299,8 @@ Smoke runs on this checkout (2026-10-21):
 | `--text "Grover search gives a quadratic speedup for unstructured search."` | 0 | none |
 | `--text` claim and reason of quarantined `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` | 2 | that record, labelled `(quarantined)` (0.924) |
 | `--file /nonexistent/draft.json` | 1 | none: `error: cannot read ...` on stderr |
+| `--file` quarantined `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` as filed (2026-10-22) | 0 | none: its claim is read from `original_record` and its own id left out |
+| `--file` `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` as filed `--allow NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND` (2026-10-22) | 0 | none counted; the orthogonal one listed as allowed |
 
 ## Baselines
 

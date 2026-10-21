@@ -186,28 +186,58 @@ def valid_threshold(value: float) -> float:
     return number
 
 
+def allow_patterns(values: list[str] | tuple[str, ...] | None) -> tuple[str, ...]:
+    """Record ids, or id prefixes ending in `*`, of records a draft is known to differ from.
+
+    Each is stripped and loses a `negative:` or `quarantined:` prefix. ValueError for an empty
+    pattern or a bare `*`, which would allow every record.
+    """
+    patterns: list[str] = []
+    for value in values or ():
+        pattern = _record_id(value) or ""
+        if not pattern.rstrip("*"):
+            raise ValueError(f"--allow needs a record id or an id prefix ending in *, got {value!r}")
+        patterns.append(pattern)
+    return tuple(patterns)
+
+
+def _is_allowed(doc_id: str, patterns: tuple[str, ...]) -> bool:
+    record = doc_id.partition(":")[2]
+    return any(record.startswith(p[:-1]) if p.endswith("*") else record == p for p in patterns)
+
+
 @dataclass(frozen=True)
 class ClaimReport:
     matches: list[Hit]  # the first `k` matches, highest first
     total: int  # every negative record at or above the threshold, before `k`
     quarantined: int  # how many of the `total` are quarantined records
     documents: int  # negative-kind documents compared
+    allowed: tuple[Hit, ...] = ()  # matches left out of `total` by `allow`, highest first
 
 
 def claim_report(
-    corpus: Corpus, text: str, threshold: float = 0.6, k: int = 5, exclude: tuple[str, ...] = ()
+    corpus: Corpus,
+    text: str,
+    threshold: float = 0.6,
+    k: int = 5,
+    exclude: tuple[str, ...] = (),
+    allow: tuple[str, ...] = (),
 ) -> ClaimReport:
     """Negative records (retained or quarantined) whose TF-IDF cosine with a draft claim is at least `threshold`.
 
     Every negative-kind document is scored (`Corpus.cosine_hits`), so no record at or above
     the threshold is missed and the closest comes first. A hit's `score` is a cosine in
     [0, 1], not the search's rank-fusion score. Doc ids in `exclude` (say the draft's own
-    record, already filed) are never returned or counted. ValueError for a threshold
-    outside (0, 1] (`valid_threshold`).
+    record, already filed) are never returned or counted. A match whose record id is in
+    `allow` (see `allow_patterns`; a sweep sibling the author has read) is reported under
+    `allowed` instead of counting as a match. ValueError for a threshold outside (0, 1]
+    (`valid_threshold`).
     """
     found = corpus.cosine_hits(text, ("negative",), valid_threshold(threshold), exclude=exclude)
+    allowed = tuple(hit for hit in found if _is_allowed(hit.doc_id, allow))
+    found = [hit for hit in found if not _is_allowed(hit.doc_id, allow)]
     quarantined = sum(hit.doc_id.startswith("quarantined:") for hit in found)
-    return ClaimReport(found[: max(k, 0)], len(found), quarantined, corpus.kind_count(("negative",)))
+    return ClaimReport(found[: max(k, 0)], len(found), quarantined, corpus.kind_count(("negative",)), allowed)
 
 
 def check_claim(

@@ -33,6 +33,7 @@ from tools.corpus.duplicates import (  # noqa: E402
     REPORT_THRESHOLD,
     ClaimReport,
     DraftError,
+    allow_patterns,
     claim_report,
     draft_claims,
     own_ids,
@@ -341,8 +342,10 @@ def cmd_check_new(args: argparse.Namespace) -> int:
     corpus = _corpus(args)
     # Each draft leaves out every draft's own record, so a batch gets the same answer once filed.
     exclude = tuple(doc_id for _, record_id in drafts for doc_id in own_ids(record_id))
+    allow = tuple(args.allow or ())
     reports = [
-        (record_id, claim_report(corpus, text, threshold=args.threshold, exclude=exclude)) for text, record_id in drafts
+        (record_id, claim_report(corpus, text, threshold=args.threshold, exclude=exclude, allow=allow))
+        for text, record_id in drafts
     ]
     if reports[0][1].documents == 0:
         print(f"error: {NO_NEGATIVES}; check --root and research/registry/.", file=sys.stderr)
@@ -352,6 +355,11 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         payload = {
             "matches": [dict(_hit_json(h), draft_id=record_id) for record_id, report in reports for h in report.matches],
             "total": sum(report.total for _, report in reports),
+            "allowed": [
+                {"doc_id": h.doc_id, "score": h.score, "draft_id": record_id}
+                for record_id, report in reports
+                for h in report.allowed
+            ],
             "drafts": len(reports),
             "duplicate": duplicate,
             **_issues_json(corpus),
@@ -364,6 +372,10 @@ def cmd_check_new(args: argparse.Namespace) -> int:
             print(header[0].upper() + header[1:] + ("" if report.matches else " with this claim") + ".")
         else:
             print(("" if number == 1 else "\n") + f"{record_id or f'record {number}'}: {header}.")
+        if report.allowed:
+            names = [_record_label(hit.doc_id) for hit in report.allowed]
+            more = f", and {len(names) - 10} more" if len(names) > 10 else ""
+            print(f"Not counted: {len(names)} matching record(s) allowed by --allow: {', '.join(names[:10])}{more}.")
         if report.matches:
             print()
         for index, hit in enumerate(report.matches, start=1):
@@ -373,7 +385,10 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         if corpus.incomplete():
             print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
         return 0
-    print("\nRead the record first: extend it, or say how the new claim differs.")
+    print(
+        "\nRead the record first: extend it, or say how the new claim differs. A sweep sibling you have "
+        "read and that should stay a separate record can be accepted with --allow ID."
+    )
     return 2
 
 
@@ -424,6 +439,13 @@ def cmd_baselines(args: argparse.Namespace) -> int:
 def _threshold(value: str) -> float:
     try:
         return valid_threshold(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from None
+
+
+def _allow(value: str) -> str:
+    try:
+        return allow_patterns([value])[0]
     except ValueError as exc:
         raise argparse.ArgumentTypeError(str(exc)) from None
 
@@ -502,6 +524,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     check.add_argument(
         "--threshold", type=_threshold, default=0.6, help="Minimum TF-IDF cosine for a match, in (0, 1] (default 0.6)."
+    )
+    check.add_argument(
+        "--allow",
+        action="append",
+        type=_allow,
+        metavar="ID",
+        help="A record the draft is known to differ from (say a sweep sibling you have read), or an id prefix "
+        "ending in * for a family; its matches are listed but do not count. Repeatable.",
     )
     check.add_argument("--json", action="store_true")
     check.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")

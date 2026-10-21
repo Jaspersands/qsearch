@@ -534,6 +534,45 @@ def test_check_duplicate_negative_tool_sees_a_record_filed_since_its_last_refres
     assert payload["duplicate"] is True and payload["matches"][0]["doc_id"] == PLATYPUS
 
 
+GOPPA_SIBLING = {
+    "id": "NEG-GOPPA-SCALE-M6-T3-N48-0-11",
+    "claim": SWEEPS["NEG-GOPPA-SCALE-M6-T3-N48-0"],
+    "reason_invalid": "Sweep point.",
+    "lesson": "Sweep.",
+}
+
+
+def test_cli_check_new_allow_accepts_known_siblings(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    _corpus_with(fake_repo, _sweep_records())
+    draft = tmp_path / "sibling.json"
+    draft.write_text(json.dumps(GOPPA_SIBLING))
+    root = ["--root", str(fake_repo), "check-new", "--file", str(draft)]
+    assert main(root) == 2
+    assert capsys.readouterr().out.startswith("POSSIBLE DUPLICATE: 10 negative record(s)")
+    assert main([*root, "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-1"]) == 2  # one sibling allowed, nine left
+    assert capsys.readouterr().out.startswith("POSSIBLE DUPLICATE: 9 negative record(s)")
+    assert main([*root, "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-*"]) == 0
+    out = capsys.readouterr().out
+    assert out.startswith("No negative record (retained or quarantined) has TF-IDF cosine >= 0.6")
+    assert "\nNot counted: 10 matching record(s) allowed by --allow: NEG-GOPPA-SCALE-M6-T3-N48-0-1," in out
+    assert main([*root, "--allow", "negative:NEG-GOPPA-SCALE-M6-T3-N48-0-*", "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["duplicate"] is False and payload["matches"] == [] and len(payload["allowed"]) == 10
+    with pytest.raises(SystemExit):
+        main([*root, "--allow", "*"])
+    assert "--allow" in capsys.readouterr().err
+
+
+def test_check_duplicate_negative_tool_allow(fake_repo: Path) -> None:
+    _corpus_with(fake_repo, _sweep_records())
+    server = create_server(fake_repo, dense="off")
+    claim = f"{GOPPA_SIBLING['claim']} {GOPPA_SIBLING['reason_invalid']}"
+    assert _call(server, "check_duplicate_negative", {"claim": claim})["duplicate"] is True
+    payload = _call(server, "check_duplicate_negative", {"claim": claim, "allow": ["NEG-GOPPA-SCALE-M6-T3-N48-0-*"]})
+    assert payload["duplicate"] is False and len(payload["allowed"]) == 10
+    assert "error" in _call(server, "check_duplicate_negative", {"claim": claim, "allow": ["*"]})
+
+
 def test_check_duplicate_negative_tool_rejects_an_empty_claim(fake_repo: Path) -> None:
     server = create_server(fake_repo, dense="off")
     for claim in ("", "the of and"):
