@@ -38,15 +38,15 @@ nothing. A run takes a few seconds, most of it parsing about 250 MB of
 | Check | Catches | Message |
 |---|---|---|
 | `json` | Any `*.json` under `research/hypotheses`, `research/registry`, `research/audits` or `research/classical_baselines` that does not parse, including non-UTF-8 bytes | the parser's own error, e.g. `Invalid \escape: line 7 column 167 (char 635)` |
-| `imports` | A `theorems/` or `core/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `not tracked by git`, or one `git unavailable` |
+| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `not tracked by git`, or one `git unavailable` |
 | `manifest` | A subcommand in `research/audits/cli_manifest.json` that is no longer in `ORDER` in `qsearch_cli/registry.py`, or that moved module | `subcommand X missing from ORDER`, `X: manifest says A, ORDER says B` |
 
-The `imports` check collects references from three places:
+The `imports` check collects references from these places:
 
 - Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and
   `qsearch_cli/commands/*.py`, including the lazy imports inside command bodies.
-  `import theorems.x`, `from core.y import z` and `from theorems import x` name their file,
-  whether or not it exists. A bare name, `from x import f` (the usual style here, and the
+  `import theorems.x`, `from core.y import z`, `from qsearch_cli.main import main` and `from
+  theorems import x` name their file, whether or not it exists. A bare name, `from x import f` (the usual style here, and the
   one an old-style addition to `qsearch.py` uses), counts when `theorems/x.py` exists, else
   when `core/x.py` exists. Standard library names are skipped.
 - The `IMPORTS` table in `qsearch_cli/imports.py`, read with `ast.literal_eval`. A dotted
@@ -56,6 +56,10 @@ The `imports` check collects references from three places:
   when that file exists, else `core/<name>.py`, the order the CLI puts them on `sys.path`.
   Standard library names (`os`, `json`, ...) are skipped.
 - The module column of `DISPATCH` in `qsearch_cli/registry.py`.
+- The module columns of `ORDER` and `FUNCTIONS` in `qsearch_cli/registry.py`, say
+  `qsearch_cli/commands/general.py`. `qsearch_cli/parser.py` imports every `ORDER` module to
+  build the parser, so one that is missing from a clone breaks every command, `--help`
+  included.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
 Git is asked only when the root is the top of its own work tree. Without that (no git, a

@@ -30,6 +30,9 @@ def command_audit(args):
 '''
 
 ORDER = [("audit", "qsearch_cli.commands.general", "add_audit")]
+FUNCTIONS = {"command_audit": "qsearch_cli.commands.general"}
+# What every minimal checkout refers to inside qsearch_cli/: the shim's import and the registry's module columns.
+CLI_REFS = {"qsearch_cli/main.py": {"qsearch.py"}, "qsearch_cli/commands/general.py": {"qsearch_cli/registry.py"}}
 AUDIT_ENTRY = {"name": "audit", "aliases": [], "function": "command_audit", "module": "qsearch_cli.commands.general"}
 
 
@@ -53,6 +56,7 @@ def _repo(
     general: str = GENERAL,
     imports: dict | None = None,
     order: list | None = None,
+    functions: dict | None = None,
     dispatch: list | None = None,
     manifest: list | None = None,
     committed: dict[str, str] | None = None,
@@ -63,12 +67,13 @@ def _repo(
     files = {
         "qsearch.py": '"""Shim."""\n\nfrom qsearch_cli.main import main\n',
         "qsearch_cli/__init__.py": "",
+        "qsearch_cli/main.py": "def main():\n    return 0\n",
         "qsearch_cli/imports.py": f"IMPORTS = {imports if imports is not None else {}!r}\n",
         "qsearch_cli/commands/__init__.py": "",
         "qsearch_cli/commands/general.py": general,
         "qsearch_cli/registry.py": (
             f"ORDER = {order if order is not None else ORDER!r}\n\n"
-            "FUNCTIONS = {'command_audit': 'qsearch_cli.commands.general'}\n\n"
+            f"FUNCTIONS = {functions if functions is not None else FUNCTIONS!r}\n\n"
             f"DISPATCH = {dispatch if dispatch is not None else []!r}\n"
         ),
         "research/audits/cli_manifest.json": json.dumps(
@@ -133,6 +138,7 @@ def test_untracked_and_missing_theorem_modules(tmp_path: Path) -> None:
     _write(repo / "theorems" / "dispatched.py", "def gen():\n    return 0\n")  # named only by DISPATCH
 
     assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
         "theorems/tracked.py": {"qsearch_cli/commands/general.py"},
         "theorems/untracked.py": {"qsearch_cli/commands/general.py"},
         "core/gone.py": {"qsearch_cli/commands/general.py"},
@@ -172,6 +178,7 @@ def test_bare_and_package_style_imports_are_followed(tmp_path: Path) -> None:
 
     # json is stdlib; numpy and qsearch are not files under theorems/ or core/, so they are skipped.
     assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
         "theorems/new_bare_bridge.py": {"qsearch.py"},
         "core/research_registry.py": {"qsearch_cli/commands/general.py"},
         "theorems/pkg_style.py": {"qsearch_cli/commands/general.py"},
@@ -197,6 +204,7 @@ def test_package_style_imports_table_entries_name_the_submodule(tmp_path: Path) 
     _write(repo / "theorems" / "new_pkg.py", "y = 2\n")
 
     assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
         "theorems/tracked_pkg.py": {"qsearch_cli/imports.py"},
         "theorems/new_pkg.py": {"qsearch_cli/imports.py"},
         "core/core_pkg.py": {"qsearch_cli/imports.py"},
@@ -204,6 +212,36 @@ def test_package_style_imports_table_entries_name_the_submodule(tmp_path: Path) 
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
         ("theorems/new_pkg.py", "not tracked by git"),
         ("core/core_pkg.py", "missing on disk"),
+    }
+
+
+def test_cli_modules_the_registry_and_shim_load_are_checked(tmp_path: Path) -> None:
+    # parser.py imports every ORDER module to build --help, so one missing from a clone breaks every command.
+    order = [
+        *ORDER,
+        ("newcmd", "qsearch_cli.commands.newdomain", "add_newcmd"),
+        ("ghost", "qsearch_cli.commands.ghost", "add_ghost"),
+    ]
+    functions = {**FUNCTIONS, "command_fn": "qsearch_cli.commands.fnonly"}
+    # A dotted name that is a package directory loads its __init__.py, not qsearch_cli/commands.py.
+    repo = _repo(tmp_path, general="import qsearch_cli.commands\n\n" + GENERAL, order=order, functions=functions)
+    _write(repo / "qsearch_cli" / "commands" / "newdomain.py", "def add_newcmd(subparsers):\n    pass\n")
+    _write(repo / "qsearch_cli" / "commands" / "fnonly.py", "def command_fn(args):\n    return 0\n")
+    _git(repo, "rm", "-q", "--cached", "qsearch_cli/main.py")
+    _git(repo, "commit", "-qm", "untrack main")
+
+    assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
+        "qsearch_cli/commands/newdomain.py": {"qsearch_cli/registry.py"},
+        "qsearch_cli/commands/ghost.py": {"qsearch_cli/registry.py"},
+        "qsearch_cli/commands/fnonly.py": {"qsearch_cli/registry.py"},
+        "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/general.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("qsearch_cli/main.py", "not tracked by git"),
+        ("qsearch_cli/commands/newdomain.py", "not tracked by git"),
+        ("qsearch_cli/commands/ghost.py", "missing on disk"),
+        ("qsearch_cli/commands/fnonly.py", "not tracked by git"),
     }
 
 
@@ -216,7 +254,7 @@ def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None
     }
     repo = _repo(tmp_path, imports=imports, git=False)
 
-    assert pf.referenced_modules(repo) == {"core/table_mod.py": {"qsearch_cli/imports.py"}}
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "core/table_mod.py": {"qsearch_cli/imports.py"}}
 
 
 def test_real_checkout_has_no_untracked_imports() -> None:

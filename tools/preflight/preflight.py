@@ -6,11 +6,12 @@
     python tools/preflight/preflight.py --validate   # also run qsearch.py validate (slow)
 
 Research JSON files must parse: an invalid hypothesis contract broke the merge of 2026-10-19.
-Every theorems/ or core/ module the CLI refers to must exist and be tracked by git: the same
-merge carried 24 imports of modules that were only in one working copy. Module references
-are read statically, never imported: AST imports in qsearch.py, qsearch_cli/imports.py and
-qsearch_cli/commands/*.py (theorems.x, from core import y, and bare names that resolve to a
-file in theorems/ or core/), the IMPORTS table, and the module column of DISPATCH. Every
+Every theorems/, core/ or qsearch_cli/ module the CLI refers to must exist and be tracked by
+git: the same merge carried 24 imports of modules that were only in one working copy. Module
+references are read statically, never imported: AST imports in qsearch.py,
+qsearch_cli/imports.py and qsearch_cli/commands/*.py (theorems.x, qsearch_cli.x, from core
+import y, and bare names that resolve to a file in theorems/ or core/), the IMPORTS table,
+the module column of DISPATCH, and the module columns of ORDER and FUNCTIONS. Every
 subcommand in research/audits/cli_manifest.json must still be in the registry's ORDER, in
 the same module.
 
@@ -37,7 +38,8 @@ REGISTRY = "qsearch_cli/registry.py"
 MANIFEST = "research/audits/cli_manifest.json"
 IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE, "qsearch_cli/commands/*.py")
 PACKAGES = ("theorems", "core")  # on the CLI's sys.path in this order
-MODULE_PREFIXES = ("theorems.", "core.")
+CLI_PACKAGE = "qsearch_cli"
+MODULE_PREFIXES = ("theorems.", "core.", "qsearch_cli.")
 
 
 @dataclass(frozen=True)
@@ -82,23 +84,34 @@ def _literal(root: Path, rel: str, name: str):
     return None
 
 
+def _dotted_path(root: Path, name: str) -> str | None:
+    """The file a dotted ``theorems.``, ``core.`` or ``qsearch_cli.`` name loads, present or not.
+
+    A name that is a directory is a package: its __init__.py, or None when it has none.
+    """
+    rel = name.replace(".", "/")
+    if (root / rel).is_dir():
+        return f"{rel}/__init__.py" if (root / rel / "__init__.py").is_file() else None
+    return rel + ".py"
+
+
 def _module_path(root: Path, module: str) -> str | None:
-    """The theorems/ or core/ file a table entry loads; None for the standard library, other dotted
-    names and the packages themselves.
+    """The theorems/, core/ or qsearch_cli/ file a table entry loads; None for the standard library,
+    other dotted names and the packages themselves.
 
     A bare name resolves as the CLI's sys.path does: theorems/ first, then core/.
     """
     if module.startswith(MODULE_PREFIXES):
-        return module.replace(".", "/") + ".py"
+        return _dotted_path(root, module)
     if "." in module or module in sys.stdlib_module_names or module in PACKAGES:
         return None
     return f"theorems/{module}.py" if (root / "theorems" / f"{module}.py").is_file() else f"core/{module}.py"
 
 
 def _import_paths(root: Path, node: ast.AST) -> list[str]:
-    """The theorems/ or core/ files one import statement loads.
+    """The theorems/, core/ or qsearch_cli/ files one import statement loads.
 
-    ``theorems.x`` and ``from core import y`` name their file, present or not. A bare name
+    ``theorems.x``, ``qsearch_cli.x`` and ``from core import y`` name their file, present or not. A bare name
     (``from x import f``) counts only when theorems/x.py or core/x.py exists, the order the
     CLI puts them on sys.path; a bare name with neither file is a third-party package.
     """
@@ -113,7 +126,9 @@ def _import_paths(root: Path, node: ast.AST) -> list[str]:
     paths = []
     for name in names:
         if name.startswith(MODULE_PREFIXES):
-            paths.append(name.replace(".", "/") + ".py")
+            path = _dotted_path(root, name)
+            if path is not None:
+                paths.append(path)
             continue
         top = name.split(".")[0]
         if top in sys.stdlib_module_names or top in PACKAGES:
@@ -126,7 +141,7 @@ def _import_paths(root: Path, node: ast.AST) -> list[str]:
 
 
 def referenced_modules(root: Path) -> dict[str, set[str]]:
-    """Every theorems/ or core/ file the CLI refers to, mapped to the source files that refer to it."""
+    """Every theorems/, core/ or qsearch_cli/ file the CLI refers to, mapped to the files that refer to it."""
     root = Path(root).resolve()
     refs: dict[str, set[str]] = {}
 
@@ -147,6 +162,11 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
             add(_module_path(root, module), IMPORTS_FILE)
     for _flag, module, _function in _literal(root, REGISTRY, "DISPATCH") or []:
         add(_module_path(root, module), REGISTRY)
+    # parser.py imports every ORDER module to build the parser; resolve.py imports FUNCTIONS' on use.
+    for _name, module, _adder in _literal(root, REGISTRY, "ORDER") or []:
+        add(_module_path(root, module), REGISTRY)
+    for module in (_literal(root, REGISTRY, "FUNCTIONS") or {}).values():
+        add(_module_path(root, module), REGISTRY)
     return refs
 
 
@@ -160,7 +180,7 @@ def _git_output(root: Path, *args: str) -> str | None:
 
 
 def tracked_files(root: Path) -> set[str] | None:
-    """Paths under theorems/ and core/ that git tracks, relative to root; None when git cannot tell.
+    """Paths under theorems/, core/ and qsearch_cli/ that git tracks, relative to root; None when git cannot tell.
 
     git can tell only when root is the top of its own work tree. A tree that sits inside some
     other repository (an export unpacked under a dotfiles repository) is not that repository's.
@@ -169,7 +189,7 @@ def tracked_files(root: Path) -> set[str] | None:
     prefix = _git_output(root, "rev-parse", "--show-prefix")
     if prefix is None or prefix.strip():
         return None
-    listing = _git_output(root, "ls-files", "-z", "--", "theorems", "core")
+    listing = _git_output(root, "ls-files", "-z", "--", *PACKAGES, CLI_PACKAGE)
     if listing is None:
         return None
     return {p for p in listing.split("\0") if p}
