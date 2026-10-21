@@ -11,7 +11,7 @@ import pytest
 
 from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
 from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, normalize_id, set_verdict
-from tools.arxiv_watch.watch import label_for, recheck_cited, relabel, replay_seeds, run
+from tools.arxiv_watch.watch import label_for, recheck_cited, relabel, render_digest, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
 
@@ -445,6 +445,27 @@ def test_verdict_round_trip(tmp_path: Path) -> None:
     text = (tmp_path / VERDICTS_FILE).read_text(encoding="utf-8")
     assert text.endswith("}\n") and json.loads(text) == {"verdicts": {"2610.11111": expected}}
 
+    set_verdict(tmp_path, "arXiv:2610.22222v3", "kill", "versioned", "human", today="2026-10-21")
+    assert set(json.loads((tmp_path / VERDICTS_FILE).read_text(encoding="utf-8"))["verdicts"]) == {"2610.11111", "2610.22222"}
+
+
+def test_reviewed_table_is_ordered_by_verdict_then_id_and_marks_done_actions(tmp_path: Path) -> None:
+    def entry(verdict: str, action: str | None = None, done: bool = False) -> dict:
+        base = {"verdict": verdict, "reason": "r", "action": action, "by": "human", "reviewed_on": "2026-10-21"}
+        return {**base, "action_done": True} if done else base
+
+    verdicts = {
+        "2610.55555": entry("false-alarm"),
+        "2610.22222": entry("should-cite", "Cite it in X.", done=True),
+        "2610.44444": entry("kill", "Narrow note Y."),
+        "2610.11111": entry("should-cite", "Cite it in Z."),
+        "2610.33333": entry("related-only"),
+    }
+    digest = render_digest({"updated": "2026-10-21", "papers": {}}, verdicts=verdicts)
+    rows = [line for line in _section(digest, "Reviewed").splitlines() if line.startswith("| 2610.")]
+    assert [row.split(" | ")[0][2:] for row in rows] == ["2610.44444", "2610.11111", "2610.22222", "2610.33333", "2610.55555"]
+    assert rows[1].endswith("| Cite it in Z. |") and rows[2].endswith("| Cite it in X. (done) |")
+
 
 def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
     with pytest.raises(ValueError):
@@ -617,6 +638,31 @@ def test_flagged_paper_becomes_already_cited_once_a_note_cites_it(fake_repo: Pat
     assert relabel(fake_repo, corpus) == 2
     flagged = _state(fake_repo)["papers"]["2610.11111"]
     assert flagged["label"] == "possible-kill" and "relabelled_on" not in flagged and "relabelled_from" not in flagged
+
+
+def test_recheck_cited_demotes_only_flagged_papers(fake_repo: Path) -> None:
+    (fake_repo / "research" / "CITES_ALL.md").write_text(
+        "# Cites All\n\nSee arXiv:2610.11111, arXiv:2610.22222, arXiv:2610.33333 and arXiv:2610.44444.\n", encoding="utf-8"
+    )
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    labels = {"2610.11111": "possible-kill", "2610.22222": "possible-scoop", "2610.33333": "related", "2610.44444": "unrelated"}
+    state = {"papers": {arxiv_id: {"arxiv_id": arxiv_id, "label": label} for arxiv_id, label in labels.items()}}
+    assert recheck_cited(state, corpus, "2026-10-26") == 2
+    assert {arxiv_id: record["label"] for arxiv_id, record in state["papers"].items()} == {
+        "2610.11111": "already-cited", "2610.22222": "already-cited", "2610.33333": "related", "2610.44444": "unrelated"}
+    assert "relabelled_from" not in state["papers"]["2610.33333"]
+
+
+def test_relabel_copies_verdicts_onto_the_records(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    set_verdict(fake_repo, "2610.11111", "false-alarm", "cue spurious", "human", today="2026-10-21")  # by hand, no run since
+    assert "verdict" not in _state(fake_repo)["papers"]["2610.11111"]
+    relabel(fake_repo, corpus)
+    assert _state(fake_repo)["papers"]["2610.11111"]["verdict"]["verdict"] == "false-alarm"
 
 
 def test_recheck_cited_is_fast_for_many_flags_sharing_a_trailing_token(fake_repo: Path) -> None:
