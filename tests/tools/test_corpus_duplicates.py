@@ -7,6 +7,7 @@ import pytest
 
 from tests.tools.conftest import NEGATIVES
 from tools.corpus.api import Corpus
+from tools.corpus.cli import main
 from tools.corpus.duplicates import check_claim, near_duplicates
 
 HELSTROM = "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
@@ -104,3 +105,30 @@ def test_check_claim_returns_cosine_scored_negatives_above_threshold(corpus: Cor
 def test_cosine_of_a_doc_with_itself_is_one(corpus: Corpus) -> None:
     doc = corpus.get(HELSTROM)
     assert corpus.cosine(f"{doc.title} {doc.text}", [HELSTROM])[HELSTROM] == pytest.approx(1.0, abs=1e-5)
+
+
+def test_cli_near_duplicates_writes_json_and_markdown(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    _corpus_with(fake_repo, [DUP_A, DUP_B])
+    out = tmp_path / "dups.json"
+    assert main(["--root", str(fake_repo), "near-duplicates", "--threshold", "0.8", "--out", str(out)]) == 0
+    payload = json.loads(out.read_text())
+    assert set(payload) == {"kind", "threshold", "pairs", "generated_on"}
+    assert (payload["kind"], payload["threshold"]) == ("negative", 0.8)
+    assert (payload["pairs"][0]["a"], payload["pairs"][0]["b"]) == ("negative:NEG-DUP-A", "negative:NEG-DUP-B")
+    markdown = (tmp_path / "DUPS.md").read_text()
+    assert "| 1.000 | NEG-DUP-A | NEG-DUP-B |" in markdown
+    capsys.readouterr()
+    assert main(["--root", str(fake_repo), "near-duplicates", "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["pairs"][0]["b"] == "negative:NEG-DUP-B"
+
+
+def test_cli_check_new_exit_code_gates_on_a_match(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    root = ["--root", str(fake_repo)]
+    assert main([*root, "check-new", "--text", NEAR_CLAIM]) == 2
+    assert "NEG-DCP-LOCAL-HELSTROM-HIERARCHY" in capsys.readouterr().out
+    assert main([*root, "check-new", "--text", "zebrafish migration", "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["matches"] == [] and payload["duplicate"] is False and "index_incomplete" in payload
+    record = tmp_path / "record.json"
+    record.write_text(json.dumps(NEGATIVES[0], indent=2))
+    assert main([*root, "check-new", "--file", str(record)]) == 2

@@ -3,6 +3,8 @@
     python tools/corpus/cli.py been-tried "use a quadratic extension norm to solve mixed-coset OPI"
     python tools/corpus/cli.py search "Helstrom product readout" --kinds negative,note
     python tools/corpus/cli.py similar negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY
+    python tools/corpus/cli.py near-duplicates --out research/audits/registry_duplicates.json --per-family 3
+    python tools/corpus/cli.py check-new --text "a draft negative claim"      # exit 2 on a likely duplicate
     python tools/corpus/cli.py build [--full] [--dense]
 
 Every query first refreshes the index incrementally (well under a second when nothing changed).
@@ -13,6 +15,7 @@ file, `been-tried` says INDEX INCOMPLETE and exits 2, because missing negatives 
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import sys
 from dataclasses import asdict
@@ -22,6 +25,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
+from tools.corpus.duplicates import check_claim, near_duplicates  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -173,6 +177,106 @@ def cmd_eval(args: argparse.Namespace) -> int:
     return 0 if found >= args.min else 1
 
 
+def _record_label(doc_id: str) -> str:
+    prefix, _, rest = doc_id.partition(":")
+    return f"{rest} (quarantined)" if prefix == "quarantined" else rest or doc_id
+
+
+def _cell(text: str, width: int = 160) -> str:
+    text = " ".join(str(text).split()).replace("|", "\\|")
+    return text if len(text) <= width else text[: width - 1].rstrip() + "…"
+
+
+def _duplicates_markdown(payload: dict, per_family: int | None, limit: int) -> str:
+    pairs = payload["pairs"]
+    cap = f", at most {per_family} pairs per sweep family" if per_family is not None else ""
+    lines = [
+        "# Near-duplicate negatives",
+        "",
+        f"Generated on {payload['generated_on']} by `python tools/corpus/cli.py near-duplicates`: "
+        f"`{payload['kind']}` documents (retained and quarantined negatives) whose TF-IDF cosine is at "
+        f"least {payload['threshold']}{cap}, highest first, {len(pairs)} pairs"
+        + (f" (the first {limit})." if len(pairs) >= limit else "."),
+        "",
+        "A cosine of 1.000 means the same words in the same proportions. Ids that differ only in a "
+        "trailing number are usually parameter-sweep siblings (the same template run at another size), "
+        "not restatements. A pair is a lead to read, not a verdict.",
+        "",
+        "| cosine | a | b | claim a | claim b |",
+        "|---|---|---|---|---|",
+    ]
+    for pair in pairs:
+        lines.append(
+            f"| {pair['score']:.3f} | {_record_label(pair['a'])} | {_record_label(pair['b'])} | "
+            f"{_cell(pair['title_a'])} | {_cell(pair['title_b'])} |"
+        )
+    return "\n".join(lines) + "\n"
+
+
+def cmd_near_duplicates(args: argparse.Namespace) -> int:
+    corpus = _corpus(args)
+    pairs = near_duplicates(
+        corpus, kind=args.kind, threshold=args.threshold, limit=args.limit, per_family=args.per_family
+    )
+    payload = {
+        "kind": args.kind,
+        "threshold": args.threshold,
+        "pairs": [asdict(pair) for pair in pairs],
+        "generated_on": dt.date.today().isoformat(),
+    }
+    if args.out:
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        markdown = out.with_name(out.stem.upper() + ".md")
+        markdown.write_text(_duplicates_markdown(payload, args.per_family, args.limit), encoding="utf-8")
+    if args.json:
+        print(json.dumps(payload, indent=2))
+    elif args.out:
+        print(f"{len(pairs)} pairs at cosine >= {args.threshold}; wrote {out} and {markdown}")
+    else:
+        for index, pair in enumerate(pairs, start=1):
+            print(f"  {index}. {pair.score:.3f}  {_record_label(pair.a)}  ~  {_record_label(pair.b)}")
+            print(f"     {pair.title_a[:160]}")
+            print(f"     {pair.title_b[:160]}")
+        print(f"\n{len(pairs)} pairs at TF-IDF cosine >= {args.threshold}. A pair is a lead to read, not a verdict.")
+    return 0
+
+
+def _claim_text(args: argparse.Namespace) -> str:
+    """The claim to check: --text, or a file; a JSON registry record contributes claim + reason_invalid."""
+    if args.text is not None:
+        return args.text
+    raw = Path(args.file).read_text(encoding="utf-8")
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return raw
+    if isinstance(data, dict) and data.get("claim"):
+        return f"{data['claim']} {data.get('reason_invalid') or ''}".strip()
+    return raw
+
+
+def cmd_check_new(args: argparse.Namespace) -> int:
+    corpus = _corpus(args)
+    matches = check_claim(corpus, _claim_text(args), threshold=args.threshold)
+    if args.json:
+        payload = {"matches": [_hit_json(h) for h in matches], "duplicate": bool(matches), **_issues_json(corpus)}
+        print(json.dumps(payload, indent=2))
+        return 2 if matches else 0
+    if not matches:
+        print(f"No retained negative has TF-IDF cosine >= {args.threshold} with this claim.")
+        if corpus.incomplete():
+            print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
+        return 0
+    print(f"POSSIBLE DUPLICATE: {len(matches)} retained negative(s) at TF-IDF cosine >= {args.threshold}.\n")
+    for index, hit in enumerate(matches, start=1):
+        _print_hit(index, hit)
+        print(f"     Cosine: {hit.score:.3f}")
+    print("\nRead the record first: extend it, or say how the new claim differs.")
+    return 2
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", help="Q-Search checkout to index (default: QSEARCH_ROOT or this repo).")
@@ -216,6 +320,25 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--min", type=int, default=0, help="Exit 1 when fewer cases are retrieved.")
     common(evaluate, 5)
     evaluate.set_defaults(func=cmd_eval)
+
+    dups = sub.add_parser("near-duplicates", help="Pairs of negatives with a high TF-IDF cosine.")
+    dups.add_argument("--kind", default="negative", help="Document kind to compare (default: negative).")
+    dups.add_argument("--threshold", type=float, default=0.8, help="Minimum cosine.")
+    dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first.")
+    dups.add_argument("--per-family", type=int, help="At most this many pairs of ids differing only in a trailing number.")
+    dups.add_argument("--out", help="Write FILE.json and FILE.md (stem upper-cased) next to it.")
+    dups.add_argument("--json", action="store_true")
+    dups.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
+    dups.set_defaults(func=cmd_near_duplicates)
+
+    check = sub.add_parser("check-new", help="Exit 2 when a draft claim is close to a retained negative.")
+    source = check.add_mutually_exclusive_group(required=True)
+    source.add_argument("--text", help="The draft claim.")
+    source.add_argument("--file", help="A text file, or a JSON record whose claim and reason_invalid are checked.")
+    check.add_argument("--threshold", type=float, default=0.6, help="Minimum TF-IDF cosine for a match.")
+    check.add_argument("--json", action="store_true")
+    check.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
+    check.set_defaults(func=cmd_check_new)
     return parser
 
 
