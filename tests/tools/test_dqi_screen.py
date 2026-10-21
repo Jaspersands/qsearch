@@ -203,14 +203,32 @@ def test_prime_power_q_without_subfield_inputs_is_unknown_not_na() -> None:
 
 def test_subfield_inputs_must_match_q() -> None:
     longer = {"m": 2000, "radius": 248, "min_distance": 500, "q": 4096}
-    for p, b, c in ((2, 1, 12), (3, 2, 1), (4, 6, 1), (2, 12, 5), (2, 12, 0), (2, 6, 3)):
+    for p, b, c in ((2, 1, 12), (3, 2, 1), (4, 6, 1), (2, 12, 13), (2, 12, 0), (2, 6, 3)):
         with pytest.raises(ValueError, match="q = 4096"):
             _run("hermite_half_rate.json", p=p, b=b, c=c, **longer)
-    for p, b, c in ((2, 12, 1), (2, 12, 4), (2, 12, 12)):
+    # c is an F_p-affine codimension (Proposition 9, R4): any 1 <= c <= b, not only a divisor of b.
+    for p, b, c in ((2, 12, 1), (2, 12, 4), (2, 12, 5), (2, 12, 12)):
         assert _run("hermite_half_rate.json", p=p, b=b, c=c, **longer)[1]["R4"].passed is not None
+    for q, b, c in ((32, 5, 3), (8, 3, 2)):  # the paper's A.6 example: a half-density set in F_32, c <= 3
+        s, checks = _run("hermite_half_rate.json", p=2, b=b, c=c, n=1000, **{**longer, "q": q})  # alpha = 1/2
+        assert s.quantities["alpha_sub"] == pytest.approx(min(1, b * 0.5 / c))
+        assert checks["R4"].passed is False  # Q_DQI 0.83 <= the subfield baseline 0.92 or 0.875
+    # Rounding c = 3 up to the only divisor c = 5 would understate the subfield baseline and pass R4.
+    assert _run("hermite_half_rate.json", p=2, b=5, c=5, n=1000, **{**longer, "q": 32})[1]["R4"].passed is True
     with pytest.raises(ValueError, match="p = 3"):
         _run("hermite_half_rate.json", p=3, **longer)  # checked even when b and c are absent
     assert _run("hermite_half_rate.json", p=8191, b=1, c=1)[1]["R4"].detail == "not applicable (prime field)"
+
+
+def test_subfield_codimension_must_fit_the_density() -> None:
+    # Appendix A.6: a set of density rho contains a codimension-c coset only if p^(b-c) <= rho p^b.
+    sparse = {"q": 4096, "m": 2000, "n": 200, "rho": 0.1, "radius": 90, "min_distance": None, "p": 2, "b": 12}
+    for c in (1, 2, 3):
+        with pytest.raises(ValueError, match=r"log_p\(1/rho\)"):
+            _run("hermite_half_rate.json", c=c, **sparse)
+    assert _run("hermite_half_rate.json", c=4, **sparse)[1]["R4"].passed is not None
+    assert _run("hermite_half_rate.json", q=4096, p=2, b=12, c=1, m=2000, radius=248, min_distance=500)[0].verdict \
+        == "not viable"  # rho = 1/2 = 2^-1 fits exactly
 
 
 def test_saturated_reach_is_flagged_not_viable() -> None:

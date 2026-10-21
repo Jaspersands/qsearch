@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from dataclasses import MISSING, asdict, dataclass, fields
 from pathlib import Path
@@ -150,8 +151,12 @@ def _validate(c: Candidate) -> None:
         raise ValueError(f"p = {c.p} does not match {field}: p is the prime with q = p^b")
     if c.b is not None and c.b != b:
         raise ValueError(f"b = {c.b} does not match {field}: b is the degree of F_q over F_p")
-    if c.c is not None and (c.c < 1 or b % c.c):
-        raise ValueError(f"c = {c.c} does not divide b = {b} ({field}): F_(p^c) is a subfield of F_q only when c | b")
+    if c.c is not None and not 1 <= c.c <= b:
+        raise ValueError(f"c = {c.c} must lie in [1, b = {b}] ({field}): c is the F_p-codimension of an affine "
+                         "subspace inside an accepted set")
+    if c.c is not None and p ** -c.c > c.rho * (1 + 1e-9):
+        raise ValueError(f"c = {c.c} is below log_p(1/rho) = {math.log(1 / c.rho, p):.4g} ({field}): a set of density "
+                         f"rho = {c.rho} cannot contain a coset of codimension c, which holds p^(b-c) > rho p^b elements")
 
 
 def _prime_power(q: int) -> tuple[int, int] | None:

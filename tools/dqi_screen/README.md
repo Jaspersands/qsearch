@@ -34,7 +34,7 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | `min_distance` | minimum distance d of the decoded code, when known; delta = d/m |
 | `decoder_known` | an efficient decoder reaches `radius` |
 | `encoder_known` | the planted encoder is known |
-| `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and the subfield F_(p^c) with c dividing b; needed when q is not prime, and checked against q when given |
+| `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and c the largest, over the accepted sets, of the smallest F_p-codimension of an affine subspace inside the set (Proposition 9); 1 <= c <= b, and c >= log_p(1/rho) since a set of density rho holds at most rho p^b elements (Appendix A.6). Needed when q is not prime, and checked against q when given |
 | `classical_witness` | best value a classical method has reached: a satisfied fraction in [0, 1] (count), or a mean cosine in [-1, 1] |
 | `finite_dqi_mean` | DQI's mean at this finite size, when computed; same range as the witness |
 
