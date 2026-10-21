@@ -3,7 +3,7 @@
     python tools/corpus/mcp_server.py [--root PATH] [--dense auto|on|off]
 
 Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id),
-check_duplicate_negative(claim, threshold).
+classical_baselines(idea, k), check_duplicate_negative(claim, threshold).
 The index refreshes incrementally before a query when it is older than --refresh-seconds.
 --dense auto uses embeddings only while every document has one (after `build --dense`);
 --dense on also embeds new documents at each refresh. Results carry `index_incomplete` and
@@ -24,7 +24,8 @@ if __package__ in (None, ""):
 from mcp.server.fastmcp import FastMCP  # noqa: E402
 
 from tools.corpus.api import Corpus  # noqa: E402
-from tools.corpus.cli import _hit_json, _issues_json  # noqa: E402
+from tools.corpus.baselines import recommend  # noqa: E402
+from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
 from tools.corpus.duplicates import check_claim  # noqa: E402
 from tools.corpus.ranking import Embedder  # noqa: E402
 
@@ -73,6 +74,17 @@ def create_server(
         if doc is None:
             return {"error": f"unknown doc_id {doc_id}"}
         return asdict(doc)
+
+    @server.tool()
+    def classical_baselines(idea: str, k: int = 5) -> dict:
+        """Before claiming a quantum advantage for an idea, list the classical algorithms it must
+        beat: entries of the curated catalog ranked by keyword overlap with the idea plus the
+        nearby notes and negatives that already name them, each with a summary, references and,
+        when one exists, a command to run it. A recommendation is a competitor to run, not a
+        verdict; an empty list does not mean no classical baseline applies."""
+        ready()
+        recs = recommend(corpus, idea, k=k)
+        return {"idea": idea, "recommendations": [_recommendation_json(r) for r in recs], **_issues_json(corpus)}
 
     @server.tool()
     def check_duplicate_negative(claim: str, threshold: float = 0.6) -> dict:

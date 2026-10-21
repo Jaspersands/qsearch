@@ -1,12 +1,16 @@
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
 import pytest
 
+from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus.baselines import load_catalog, recommend, validate_catalog
+from tools.corpus.cli import main
+from tools.corpus.mcp_server import create_server
 
 REPO = Path(__file__).resolve().parents[2]
 IDEA = "syndrome decoding of a random linear code"
@@ -91,3 +95,36 @@ def test_recommend_scores_corpus_mentions_without_keyword_overlap(fake_repo: Pat
     # names match on word boundaries: "Kanga" does not cite a note that says "kangaroo"
     kanga = dict(load_catalog()[0], id="kanga", name="Kanga", aliases=[])
     assert recommend(corpus, "kangaroo hop", catalog=[kanga]) == []
+
+
+def test_cli_baselines_text_and_json(fake_repo: Path, capsys) -> None:
+    _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    root = ["--root", str(fake_repo)]
+    assert main([*root, "baselines", IDEA]) == 0
+    out = capsys.readouterr().out
+    assert "1. Prange information-set decoding" in out
+    assert "why: matched syndrome decoding, linear code; cited by research/PRANGE_SYNDROME.md" in out
+    assert "references: research/PARITY_BLOCK_USD_PRANGE.md" in out
+    assert main([*root, "baselines", "optimal polynomial intersection over a prime field"]) == 0
+    assert "run: python tools/dqi_screen/screen.py" in capsys.readouterr().out
+    assert main([*root, "baselines", "zebrafish migration"]) == 0
+    assert "No catalog baseline" in capsys.readouterr().out
+    assert main([*root, "baselines", IDEA, "--json", "-k", "1"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert set(payload) == {"idea", "recommendations", "index_incomplete", "index_issues"}
+    assert payload["idea"] == IDEA and len(payload["recommendations"]) == 1
+    top = payload["recommendations"][0]
+    assert set(top) == {"baseline", "score", "matched", "evidence"}
+    assert top["baseline"]["id"] == "prange-isd" and top["score"] == pytest.approx(0.5)
+    assert top["matched"] == ["syndrome decoding", "linear code"]
+    assert top["evidence"][0]["doc_id"].startswith("note:PRANGE_SYNDROME")
+
+
+def test_classical_baselines_tool(fake_repo: Path) -> None:
+    _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "classical_baselines", {"idea": IDEA, "k": 2})
+    assert payload["idea"] == IDEA and "index_incomplete" in payload
+    assert [rec["baseline"]["id"] for rec in payload["recommendations"]] == ["prange-isd", "isd-pinning-fft"]
+    assert payload["recommendations"][0]["evidence"][0]["doc_id"].startswith("note:PRANGE_SYNDROME")
+    assert _call(server, "classical_baselines", {"idea": "zebrafish migration"})["recommendations"] == []

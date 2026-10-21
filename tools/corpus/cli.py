@@ -5,6 +5,7 @@
     python tools/corpus/cli.py similar negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY
     python tools/corpus/cli.py near-duplicates --out research/audits/registry_duplicates.json --per-family 3
     python tools/corpus/cli.py check-new --text "a draft negative claim"      # exit 2 on a likely duplicate
+    python tools/corpus/cli.py baselines "sampling the Gibbs law of a signed parity-check code"
     python tools/corpus/cli.py build [--full] [--dense]
 
 Every query first refreshes the index incrementally (well under a second when nothing changed).
@@ -18,6 +19,7 @@ import argparse
 import datetime as dt
 import json
 import sys
+import textwrap
 from dataclasses import asdict
 from pathlib import Path
 
@@ -25,6 +27,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
+from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
 from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, near_duplicates  # noqa: E402
 
 
@@ -43,6 +46,15 @@ def _hit_json(hit: Hit) -> dict:
         "tags": hit.meta.get("tags", []),
         "reason": hit.meta.get("reason"),
         "score": hit.score,
+    }
+
+
+def _recommendation_json(rec: Recommendation) -> dict:
+    return {
+        "baseline": rec.baseline,
+        "score": rec.score,
+        "matched": rec.matched,
+        "evidence": [_hit_json(h) for h in rec.evidence],
     }
 
 
@@ -280,6 +292,49 @@ def cmd_check_new(args: argparse.Namespace) -> int:
     return 2
 
 
+def _reference_label(ref: dict) -> str:
+    return f"arXiv:{ref['arxiv']}" if "arxiv" in ref else f"research/{ref['note']}.md"
+
+
+def cmd_baselines(args: argparse.Namespace) -> int:
+    corpus = _corpus(args)
+    recs = recommend(corpus, args.idea, k=args.k)
+    if args.json:
+        payload = {"idea": args.idea, "recommendations": [_recommendation_json(r) for r in recs], **_issues_json(corpus)}
+        print(json.dumps(payload, indent=2))
+        return 0
+    if not recs:
+        print("No catalog baseline matches this idea by keyword or is named by a nearby note or negative.")
+        print("That does not mean no classical baseline applies; the catalog is tools/corpus/baselines.json.")
+        return 0
+    print(f"Classical baselines for: {args.idea[:120]}\n")
+    for index, rec in enumerate(recs, start=1):
+        baseline = rec.baseline
+        matched = f"matched {', '.join(rec.matched)}" if rec.matched else "no keyword matched"
+        cited = (
+            f"cited by {', '.join(hit.location for hit in rec.evidence)}" if rec.evidence else "no nearby note names it"
+        )
+        print(f"  {index}. {baseline['name']}  [{baseline['id']}]  score {rec.score}")
+        print(f"     why: {matched}; {cited}")
+        print(textwrap.fill(baseline["summary"], width=100, initial_indent=" " * 5, subsequent_indent=" " * 5))
+        if baseline["references"]:
+            print(f"     references: {', '.join(_reference_label(ref) for ref in baseline['references'])}")
+        runnable = baseline.get("runnable")
+        if runnable:
+            entry = f"  (entry {runnable['entry']})" if runnable.get("entry") else ""
+            print(f"     run: {runnable['command']}{entry}")
+        print()
+    print(
+        textwrap.fill(
+            "Score: the share of a baseline's keywords found in the idea, plus 0.1 for each of the ten "
+            "nearest notes and negatives that names it. Run the baseline before claiming an advantage; "
+            "a high score is a lead, not a verdict.",
+            width=100,
+        )
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", help="Q-Search checkout to index (default: QSEARCH_ROOT or this repo).")
@@ -342,6 +397,13 @@ def build_parser() -> argparse.ArgumentParser:
     check.add_argument("--json", action="store_true")
     check.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
     check.set_defaults(func=cmd_check_new)
+
+    baselines = sub.add_parser("baselines", help="Classical baselines an idea should be compared against.")
+    baselines.add_argument("idea")
+    baselines.add_argument("-k", type=int, default=5, help="Baselines to show.")
+    baselines.add_argument("--json", action="store_true")
+    baselines.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
+    baselines.set_defaults(func=cmd_baselines)
     return parser
 
 
