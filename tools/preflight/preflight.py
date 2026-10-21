@@ -28,6 +28,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
@@ -36,6 +37,7 @@ if __package__ in (None, ""):
 
 REPO = Path(__file__).resolve().parents[2]
 JSON_DIRS = ("research/hypotheses", "research/registry", "research/audits", "research/classical_baselines")
+JSON_RETRIES, JSON_RETRY_SECONDS = 3, 0.025  # as tools/corpus/docs.py:read_json
 IMPORTS_FILE = "qsearch_cli/imports.py"
 REGISTRY = "qsearch_cli/registry.py"
 MANIFEST = "research/audits/cli_manifest.json"
@@ -60,11 +62,30 @@ def check_json(root: Path) -> list[Problem]:
         for path in sorted((root / directory).rglob("*.json")):
             if not path.is_file():
                 continue
-            try:
-                json.loads(path.read_text(encoding="utf-8"))
-            except (json.JSONDecodeError, UnicodeDecodeError, OSError) as error:
-                problems.append(Problem("json", path.relative_to(root).as_posix(), str(error)))
+            error = _json_error(path)
+            if error is not None:
+                problems.append(Problem("json", path.relative_to(root).as_posix(), error))
     return problems
+
+
+def _json_error(path: Path) -> str | None:
+    """Why path is not JSON, in the parser's words; None when it parses.
+
+    A failed parse is read again a few times, briefly, as the repository's own readers do: an
+    agent rewriting the file in place can be caught half way. Integers are kept as text, so
+    one past Python's 4300-digit int() limit still parses.
+    """
+    for attempt in range(JSON_RETRIES + 1):
+        try:
+            json.loads(path.read_text(encoding="utf-8"), parse_int=str)
+            return None
+        except ValueError as error:  # JSONDecodeError, or UnicodeDecodeError from a cut multi-byte character
+            if attempt == JSON_RETRIES:
+                return str(error)
+            time.sleep(JSON_RETRY_SECONDS * (attempt + 1))
+        except (RecursionError, OSError) as error:  # nested deeper than the parser follows; unreadable
+            return str(error)
+    raise AssertionError("unreachable")
 
 
 def _literal(root: Path, rel: str, name: str):

@@ -102,6 +102,43 @@ def test_check_json_reports_the_parse_error(tmp_path: Path) -> None:
     assert problems[0].message.startswith("Invalid \\escape: line 1 column")
 
 
+def test_check_json_parses_a_huge_integer_and_reports_deep_nesting(tmp_path: Path) -> None:
+    # Python's int() refuses more than 4300 digits and json recurses per level: neither may end the run.
+    _write(tmp_path / "research" / "audits" / "big.json", "[" + "7" * 5000 + "]\n")
+    _write(tmp_path / "research" / "audits" / "deep.json", "[" * 100_000 + "]" * 100_000)
+    _write(tmp_path / "research" / "registry" / "truncated.json", '{"id": ')
+
+    problems = pf.check_json(tmp_path)
+
+    assert [p.path for p in problems] == ["research/registry/truncated.json", "research/audits/deep.json"]
+    assert "recursion" in problems[1].message
+
+
+def test_check_json_rereads_a_file_caught_mid_rewrite(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # Another agent rewriting a registry file: the first read sees half of it.
+    record = _write(tmp_path / "research" / "registry" / "negative_results.json", '[\n  {"id": "NEG-1"}\n]\n')
+    broken = _write(tmp_path / "research" / "registry" / "broken.json", '{"id": ')
+    real_read_text = Path.read_text
+    reads: dict[str, int] = {}
+
+    def read_text(self: Path, *args, **kwargs) -> str:
+        text = real_read_text(self, *args, **kwargs)
+        reads[self.name] = reads.get(self.name, 0) + 1
+        return text[: len(text) // 2] if self == record and reads[self.name] == 1 else text
+
+    sleeps: list[float] = []
+    monkeypatch.setattr(Path, "read_text", read_text)
+    monkeypatch.setattr(pf.time, "sleep", sleeps.append)
+
+    problems = pf.check_json(tmp_path)
+
+    assert [(p.path, p.message) for p in problems] == [
+        ("research/registry/broken.json", "Expecting value: line 1 column 8 (char 7)")
+    ]
+    assert reads == {"negative_results.json": 2, "broken.json": pf.JSON_RETRIES + 1}
+    assert broken.is_file() and len(sleeps) == 1 + pf.JSON_RETRIES
+
+
 def test_check_json_finds_todays_broken_contract() -> None:
     # Delete this test once the agents fix the contract.
     if not (REPO / "research" / "hypotheses").is_dir():

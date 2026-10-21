@@ -42,6 +42,12 @@ nothing. A run takes a few seconds, most of it parsing about 250 MB of
 | `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `missing on disk (case differs: theorems/x.py)`, `not tracked by git`, `not tracked by git (intent-to-add only)`, or one `git unavailable` (with the reason when the root is inside a work tree) |
 | `manifest` | A subcommand in `research/audits/cli_manifest.json` that is no longer in `ORDER` in `qsearch_cli/registry.py`, or that moved module | `subcommand X missing from ORDER`, `X: manifest says A, ORDER says B` |
 
+A `.json` file that fails to parse is read again up to three times, 25 to 75 ms apart, as
+`tools/corpus/docs.py`'s `read_json` does: an agent rewriting a registry file in place can be
+caught half way. Integers are parsed as text, so one longer than Python's 4300-digit `int()`
+limit parses. Nesting deeper than Python's `json` can follow is reported with its
+`maximum recursion depth exceeded` message.
+
 The `imports` check collects references from these places:
 
 - Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and
