@@ -104,13 +104,19 @@ def test_check_json_finds_todays_broken_contract() -> None:
     assert found[BROKEN_CONTRACT].startswith("Invalid \\escape: line 7 column 167")
 
 
-def test_problem_paths_are_relative_with_a_relative_root(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_problem_paths_are_relative_with_a_relative_root(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     _write(tmp_path / "research" / "registry" / "nested" / "truncated.json", '{"id": ')
     monkeypatch.chdir(tmp_path)
 
     problems = pf.check_json(Path("."))
 
     assert [(p.check, p.path) for p in problems] == [("json", "research/registry/nested/truncated.json")]
+    assert pf.main(["--root", ".", "--json"]) == 1
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["root"] == str(tmp_path.resolve())
+    assert "research/registry/nested/truncated.json" in {p["path"] for p in payload["problems"]}
 
 
 def test_untracked_and_missing_theorem_modules(tmp_path: Path) -> None:
@@ -179,3 +185,50 @@ def test_manifest_subcommand_missing_from_order(tmp_path: Path) -> None:
 
 def test_real_manifest_matches_registry() -> None:
     assert pf.check_manifest(REPO) == []
+
+
+def test_main_prints_problems_and_exits_one(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    general = "def command_audit(args):\n    from theorems.untracked import b\n    return b\n"
+    dirty = _repo(tmp_path / "dirty", general=general)
+    _write(dirty / "theorems" / "untracked.py", "b = 2\n")
+
+    assert pf.main(["--root", str(dirty)]) == 1
+    assert capsys.readouterr().out.splitlines() == [
+        "imports: theorems/untracked.py: not tracked by git",
+        "1 problems",
+    ]
+
+    clean = _repo(tmp_path / "clean")
+    assert pf.main(["--root", str(clean), "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload == {"root": str(clean.resolve()), "problems": [], "count": 0}
+
+
+def test_validate_flag_reports_nonzero_exit(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    shim = 'import sys\nprint("checking", file=sys.stderr)\nprint("registry is broken", file=sys.stderr)\nsys.exit(3)\n'
+    repo = _repo(tmp_path, committed={"qsearch.py": shim})
+
+    assert pf.main(["--root", str(repo), "--json"]) == 0
+    capsys.readouterr()
+    assert pf.main(["--root", str(repo), "--validate", "--json"]) == 1
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["problems"] == [{"check": "validate", "path": "qsearch.py", "message": "exit 3: registry is broken"}]
+
+
+def test_imports_flag_uses_split_cli_verify(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], monkeypatch: pytest.MonkeyPatch
+) -> None:
+    repo = _repo(tmp_path)
+    roots = []
+
+    def fake_check_imports(root: Path) -> tuple[int, list[str]]:
+        roots.append(root)
+        return 2, ["x: ImportError: y"]
+
+    monkeypatch.setattr(pf, "_check_imports", fake_check_imports)
+
+    assert pf.main(["--root", str(repo), "--imports", "--json"]) == 1
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["count"] == 1
+    assert payload["problems"] == [{"check": "resolve", "path": "qsearch_cli", "message": "x: ImportError: y"}]
+    assert roots == [repo.resolve()]

@@ -1,5 +1,10 @@
 """Check a Q-Search checkout for the failures that have blocked a merge.
 
+    python tools/preflight/preflight.py              # before every commit; static, a few seconds
+    python tools/preflight/preflight.py --json
+    python tools/preflight/preflight.py --imports    # also import every CLI name (slow)
+    python tools/preflight/preflight.py --validate   # also run qsearch.py validate (slow)
+
 Research JSON files must parse: an invalid hypothesis contract broke the merge of 2026-10-19.
 Every theorems/ or core/ module the CLI refers to must exist and be tracked by git: the same
 merge carried 24 imports of modules that were only in one working copy. Module references
@@ -7,20 +12,24 @@ are read statically, never imported: AST imports of theorems.* and core.* in qse
 qsearch_cli/imports.py and qsearch_cli/commands/*.py, the IMPORTS table, and the module
 column of DISPATCH. Every subcommand in research/audits/cli_manifest.json must still be in
 the registry's ORDER, in the same module.
+
+Prints one line per problem and the count; exits 1 when there is any problem, else 0.
 """
 
 from __future__ import annotations
 
+import argparse
 import ast
 import json
 import subprocess
 import sys
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
+REPO = Path(__file__).resolve().parents[2]
 JSON_DIRS = ("research/hypotheses", "research/registry", "research/audits", "research/classical_baselines")
 IMPORTS_FILE = "qsearch_cli/imports.py"
 REGISTRY = "qsearch_cli/registry.py"
@@ -57,17 +66,22 @@ def _literal(root: Path, rel: str, name: str):
     if not path.is_file():
         return None
     for node in ast.parse(path.read_text(encoding="utf-8"), filename=rel).body:
-        targets = node.targets if isinstance(node, ast.Assign) else [node.target] if isinstance(node, ast.AnnAssign) else []
+        if isinstance(node, ast.Assign):
+            targets = node.targets
+        elif isinstance(node, ast.AnnAssign):
+            targets = [node.target]
+        else:
+            continue
         if any(isinstance(t, ast.Name) and t.id == name for t in targets) and node.value is not None:
             try:
                 return ast.literal_eval(node.value)
-            except ValueError as error:
-                raise ValueError(f"{rel}: {name} is not a literal ({error})") from None
+            except ValueError:
+                raise ValueError(f"{name} in {rel} is not a literal") from None
     return None
 
 
 def _module_path(root: Path, module: str) -> str | None:
-    """The theorems/ or core/ file a table entry loads; None for the standard library and other packages.
+    """The theorems/ or core/ file a table entry loads; None for the standard library and other dotted names.
 
     A bare name resolves as the CLI's sys.path does: theorems/ first, then core/.
     """
@@ -125,8 +139,9 @@ def check_untracked_imports(root: Path) -> list[Problem]:
     root = Path(root).resolve()
     try:
         refs = referenced_modules(root)
-    except (OSError, SyntaxError, ValueError) as error:
-        return [Problem("imports", ".", f"cannot read the CLI sources: {type(error).__name__}: {error}")]
+    except (OSError, SyntaxError, ValueError, TypeError) as error:
+        where = error.filename if isinstance(error, SyntaxError) and error.filename else "."
+        return [Problem("imports", where, f"cannot read the CLI sources: {type(error).__name__}: {error}")]
     tracked = tracked_files(root)
     problems = []
     for module_path in sorted(refs):
@@ -168,3 +183,63 @@ def check_manifest(root: Path) -> list[Problem]:
         elif order[name] != module:
             problems.append(Problem("manifest", REGISTRY, f"{name}: manifest says {module}, ORDER says {order[name]}"))
     return problems
+
+
+def _check_imports(root: Path) -> tuple[int, list[str]]:
+    from tools.split_cli.verify import check_imports  # imports the CLI and every theorem module it names
+
+    return check_imports(root)
+
+
+def check_imports_resolve(root: Path) -> list[Problem]:
+    """Resolve every IMPORTS name and command function in this process, as the CLI would (slow)."""
+    root = Path(root).resolve()
+    try:
+        _checked, failures = _check_imports(root)
+    except Exception as error:  # noqa: BLE001 - the verifier failing to start is itself the problem
+        return [Problem("resolve", ".", f"{type(error).__name__}: {error}")]
+    return [Problem("resolve", "qsearch_cli", failure) for failure in failures]
+
+
+def check_validate(root: Path) -> list[Problem]:
+    """Run ``qsearch.py validate`` as CI does (slow); a non-zero exit is one problem."""
+    root = Path(root).resolve()
+    result = subprocess.run(
+        [sys.executable, "qsearch.py", "validate"], cwd=root, capture_output=True, text=True, errors="replace"
+    )
+    if result.returncode == 0:
+        return []
+    lines = [line for line in result.stderr.splitlines() if line.strip()]
+    return [Problem("validate", "qsearch.py", f"exit {result.returncode}: {lines[-1] if lines else '(no stderr)'}")]
+
+
+def run(root: Path, imports: bool = False, validate: bool = False) -> list[Problem]:
+    """The static checks, then the slow ones that were asked for."""
+    problems = check_json(root) + check_untracked_imports(root) + check_manifest(root)
+    if imports:
+        problems += check_imports_resolve(root)
+    if validate:
+        problems += check_validate(root)
+    return problems
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--root", default=str(REPO), help="Checkout to check (default: this repository).")
+    parser.add_argument("--json", action="store_true")
+    parser.add_argument("--imports", action="store_true", help="Also import every CLI name and command (slow).")
+    parser.add_argument("--validate", action="store_true", help="Also run qsearch.py validate (slow).")
+    args = parser.parse_args(argv)
+    root = Path(args.root).resolve()
+    problems = run(root, imports=args.imports, validate=args.validate)
+    if args.json:
+        print(json.dumps({"root": str(root), "problems": [asdict(p) for p in problems], "count": len(problems)}, indent=2))
+    else:
+        for problem in problems:
+            print(f"{problem.check}: {problem.path}: {problem.message}")
+        print(f"{len(problems)} problems")
+    return 1 if problems else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
