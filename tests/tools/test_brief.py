@@ -140,6 +140,72 @@ def test_baseline_ignores_a_side_branch_commit_that_left_the_registry_alone(tmp_
     assert (delta["added"], delta["removed"]) == ([], [])
 
 
+def _merge(repo: Path, branch: str, date: str, registry: list | None = None) -> None:
+    """Merge `branch` into the checked-out branch with --no-ff on `date`; `registry` resolves a conflict."""
+    env = _dated(date)
+    subprocess.run(["git", "-C", str(repo), "-c", "user.name=t", "-c", "user.email=t@t", "merge", "--no-ff",
+                    "--no-commit", branch], capture_output=True, env=env)
+    if registry is not None:
+        (repo / B.REGISTRY).write_text(json.dumps(registry), encoding="utf-8")
+        _git(repo, "add", B.REGISTRY, env=env)
+    _git(repo, "commit", "-qm", f"merge {branch}", env=env)
+
+
+def _merge_delta(repo: Path, today: str = "2026-10-20") -> dict:
+    since = B.since_commit(repo, since_days=7, today=today)  # cutoff 2026-10-13
+    assert since is not None
+    return B.registry_delta(repo, since[0], since_date=since[1])
+
+
+def _forked_repo(tmp_path: Path) -> Path:
+    """main holds [A] from 2026-10-01; the branch `side` starts there."""
+    repo = tmp_path / "git"
+    repo.mkdir()
+    _git(repo, "init", "-q", "-b", "main")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-01")
+    _git(repo, "branch", "side")
+    return repo
+
+
+def test_a_record_merged_in_from_a_side_branch_in_the_window_counts_as_added(tmp_path: Path) -> None:
+    # B was filed on a side branch before the window and reached main in it: the agents on main
+    # first saw it in the window. The baseline is main's own registry at the cutoff, [A].
+    repo = _forked_repo(tmp_path)
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-12")
+    _git(repo, "checkout", "-q", "main")
+    _merge(repo, "side", "2026-10-16")
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-01"
+    assert (delta["added"], delta["removed"]) == (["B"], [])
+
+
+def test_a_merge_of_two_changed_registries_compares_with_the_checked_out_branch(tmp_path: Path) -> None:
+    # main filed X (2026-10-10) and the side branch Y (2026-10-12), both before the window; the
+    # merge in the window keeps both. Only Y is new on main; X was there at the cutoff.
+    repo = _forked_repo(tmp_path)
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "X"}]}, "2026-10-10")
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "Y"}]}, "2026-10-12")
+    _git(repo, "checkout", "-q", "main")
+    _merge(repo, "side", "2026-10-16", registry=[{"id": "A"}, {"id": "X"}, {"id": "Y"}])
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-10"
+    assert (delta["added"], delta["removed"]) == (["Y"], [])
+
+
+def test_an_older_main_change_is_not_reported_because_a_newer_side_change_was_merged(tmp_path: Path) -> None:
+    repo = _forked_repo(tmp_path)
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-05")
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "S"}]}, "2026-10-10")
+    _git(repo, "checkout", "-q", "main")
+    _merge(repo, "side", "2026-10-20", registry=[{"id": "A"}, {"id": "B"}, {"id": "S"}])
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-05"
+    assert (delta["added"], delta["removed"]) == (["S"], [])
+
+
 def test_a_commit_at_midnight_on_the_cutoff_day_is_inside_the_window(tmp_path: Path) -> None:
     # git's --before keeps a commit dated exactly at the limit; the window starts at 00:00 UTC.
     repo = tmp_path / "git"
@@ -325,7 +391,8 @@ LOG = ("--", B.REGISTRY)
 
 
 def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
-    assert B.allowed_git_args(("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG)) is True
+    assert B.allowed_git_args(
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG)) is True
     assert B.allowed_git_args(("show", f"{SHA}:{B.REGISTRY}")) is True
     assert B.allowed_git_args(("ls-tree", "--name-only", SHA, *LOG)) is True
     assert B.allowed_git_args(("rev-parse", "--is-shallow-repository", "--show-prefix")) is True
@@ -334,18 +401,22 @@ def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
 @pytest.mark.parametrize(
     "args",
     [
-        ("log", "-1", "--before=2026-10-12", f"--format=%H{US}%ct", *LOG),
-        ("log", "-1", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct", *LOG),  # git keeps 00:00:00 itself
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct"),  # every commit, not the registry's
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--", "research/registry"),
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG, "--output=/tmp/x"),
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--output=/tmp/x", B.REGISTRY),
-        ("log", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG),
-        ("log", "-1", "--before=yesterday", f"--format=%H{US}%ct", *LOG),
-        ("log", "-1", "--before=٢٠٢٦-١٠-١٢T23:59:59Z",
+        ("log", "-1", "--first-parent", "--before=2026-10-12", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--first-parent", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct", *LOG),  # git keeps 00:00:00
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct"),  # not the registry's
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--", "research/registry"),
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG, "--output=/tmp/x"),
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--output=/tmp/x",
+         B.REGISTRY),
+        ("log", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--first-parent", "--before=yesterday", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--first-parent", "--before=٢٠٢٦-١٠-١٢T23:59:59Z",
          f"--format=%H{US}%ct", *LOG),  # Arabic-Indic digits: \d would take them
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", "--format=%H %s", *LOG),
-        ("log", "-1", f"--format=%H{US}%ct", "--before=2026-10-12T23:59:59Z", *LOG),
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", "--format=%H %s", *LOG),
+        ("log", "-1", "--first-parent", f"--format=%H{US}%ct", "--before=2026-10-12T23:59:59Z", *LOG),
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", "--first-parent", f"--format=%H{US}%ct", *LOG),
+        # Without --first-parent, a merge's other side can stand in for the checked-out branch's registry.
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG),
         ("show", f"HEAD:{B.REGISTRY}"),
         ("show", f"{SHA}:research/registry/dequantization_checks.json"),
         ("show", f"{SHA}:{B.REGISTRY}", "--output=/tmp/x"),
@@ -445,8 +516,62 @@ def test_arxiv_section_tolerates_verdicts_for_unknown_papers_and_null_first_seen
     # Verdicts with no stored papers at all still give the reviews and actions.
     (tmp_path / B.ARXIV_STATE).unlink()
     section = B.arxiv_section(tmp_path, SINCE)
-    assert section["available"] is True and section["flagged"] == []
+    assert section["available"] is True and section["flagged"] is None
     assert [a["id"] for a in section["actions"]] == ["2610.99999"]
+
+
+@pytest.mark.parametrize("state", ["missing", "directory", "no papers", "not json"])
+def test_arxiv_open_flags_are_not_available_without_a_readable_collisions_file(tmp_path: Path, state: str) -> None:
+    # Open flags live only in the collisions file; without it "0 open" would be a guess.
+    _arxiv_files(tmp_path, [_paper("2610.11111", "Open kill", "possible-kill", "2026-09-01")],
+                 {"2610.99999": _verdict("should-cite", "2026-10-20", action="Cite it.")})
+    path = tmp_path / B.ARXIV_STATE
+    path.unlink()
+    if state == "directory":
+        path.mkdir()
+    elif state == "no papers":
+        _write_json(path, {"updated": "2026-10-19"})
+    elif state == "not json":
+        path.write_text("{not json", encoding="utf-8")
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["available"] is True and section["flagged"] is None
+    assert B.ARXIV_STATE in section["flagged_reason"]
+    assert [a["id"] for a in section["actions"]] == ["2610.99999"]
+    assert [r["id"] for r in section["reviewed"]] == ["2610.99999"]
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "no verdict yet: 0" not in text and "already reviewed: 0" not in text
+    assert f"Possible kills and scoops: not available: {section['flagged_reason']}" in text
+    assert "`2610.99999`: should-cite (human, 2026-10-20)" in text  # the verdict is still named
+    assert "Cite it." in text
+
+
+def test_arxiv_names_a_verdict_in_the_window_on_a_paper_first_seen_before_it(tmp_path: Path) -> None:
+    # The flagged table keeps reviewed papers only when first seen in the window, so a kill
+    # recorded this week on an older paper, with no action, would be only a tally.
+    _arxiv_files(
+        tmp_path,
+        [_paper("2610.00002", "Old paper, judged a kill", "possible-kill", "2026-10-01"),
+         _paper("2610.33333", "New paper", "possible-scoop", "2026-10-18")],
+        {"2610.00002": _verdict("kill", "2026-10-20"),
+         "2610.33333": _verdict("false-alarm", "2026-10-19"),
+         "2610.44444": _verdict("scoop", "2026-10-01")},  # before the window: not named
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [f["id"] for f in section["flagged"]] == ["2610.33333"]
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "`2610.00002`: kill (human, 2026-10-20)" in text
+    assert "`2610.33333`: false-alarm" not in text  # already in the table
+    assert "2610.44444" not in text
+
+
+@pytest.mark.parametrize("done", ["false", "no", 1, "true"])
+def test_only_action_done_true_closes_an_action(tmp_path: Path, done) -> None:
+    # action_done is written by hand; a string or number is not a JSON true.
+    _arxiv_files(tmp_path, [], {"2610.11111": _verdict("kill", "2026-10-20", action="Retract the note.",
+                                                       action_done=done),
+                                "2610.22222": _verdict("kill", "2026-10-20", action="Done.", action_done=True)})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [a["id"] for a in section["actions"]] == ["2610.11111"]
 
 
 def test_arxiv_section_missing(tmp_path: Path) -> None:

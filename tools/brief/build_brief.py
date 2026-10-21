@@ -67,26 +67,29 @@ GIT_TIMEOUT = 60  # seconds per git command; each takes well under one on this r
 def _log_args(cutoff: dt.date) -> tuple[str, ...]:
     """The newest change to the registry before the cutoff, as "<sha><US><unix time>".
 
-    Path-limited, so git's history simplification follows a merge's parent whose registry is
-    the merge's own: a side branch that never touched the registry (a tool branch merged with
-    --no-ff) cannot stand in for the registry as it was before the cutoff.
+    Path-limited and along the first parents only: the checked-out branch's own line, each
+    merge compared with the branch's side of it. So the registry at the commit found is the
+    registry this branch had at the cutoff. A record merged in from another branch in the
+    window counts as new, however old its commit there; and the other branch's commits, older
+    or newer, never stand in for this branch's registry (a tool branch merged with --no-ff, or
+    a branch that changed the registry too).
     """
     before = f"--before={(cutoff - dt.timedelta(days=1)).isoformat()}T23:59:59Z"
-    return ("log", "-1", before, LOG_FORMAT, "--", REGISTRY)
+    return ("log", "-1", "--first-parent", before, LOG_FORMAT, "--", REGISTRY)
 
 
 def allowed_git_args(args: tuple[str, ...]) -> bool:
     """True only for the brief's own read-only git commands:
 
-    ("log", "-1", "--before=YYYY-MM-DDT23:59:59Z", "--format=%H<US>%ct", "--", REGISTRY),
+    ("log", "-1", "--first-parent", "--before=YYYY-MM-DDT23:59:59Z", "--format=%H<US>%ct", "--", REGISTRY),
     ("show", "<full sha>:" + REGISTRY), ("ls-tree", "--name-only", "<full sha>", "--", REGISTRY)
     and ("rev-parse", "--is-shallow-repository", "--show-prefix").
     """
     args = tuple(args)
     if args == HISTORY_ARGS:
         return True
-    if len(args) == 6 and args[:2] == ("log", "-1") and args[3:] == (LOG_FORMAT, "--", REGISTRY):
-        return bool(BEFORE_ARG.fullmatch(args[2]))
+    if len(args) == 7 and args[:3] == ("log", "-1", "--first-parent") and args[4:] == (LOG_FORMAT, "--", REGISTRY):
+        return bool(BEFORE_ARG.fullmatch(args[3]))
     if len(args) == 2 and args[0] == "show":
         return bool(SHOW_ARG.fullmatch(args[1]))
     if len(args) == 5 and args[:2] == ("ls-tree", "--name-only") and args[3:] == ("--", REGISTRY):
@@ -141,9 +144,10 @@ def cutoff_day(since_days: int, today: dt.date | str | None = None) -> dt.date:
 def since_commit(
     root: Path, since_days: int = 7, today: dt.date | str | None = None, git: GitRunner | None = None
 ) -> tuple[str, str] | None:
-    """(sha, UTC commit date) of the registry's last change before the cutoff day (00:00 UTC).
+    """(sha, UTC commit date) of the registry's last change before the cutoff day (00:00 UTC)
+    on the checked-out branch's first-parent line.
 
-    The registry at that commit is the registry as it stood at the cutoff. None when git cannot
+    The registry at that commit is the registry as this branch had it at the cutoff. None when git cannot
     answer; when the clone is shallow (its oldest commit is a cut, so the commit before the
     cutoff may be missing and an older one would be used silently); when root is not the top of
     its work tree (a copy inside another repository would be compared with that repository's
@@ -296,12 +300,27 @@ def _iso(day: dt.date | str) -> str:
     return day.isoformat() if isinstance(day, dt.date) else str(day)
 
 
+def _arxiv_papers(path: Path) -> tuple[dict[str, Any] | None, str]:
+    """The watch's stored papers, or (None, why) when the collisions file cannot give them."""
+    if not path.is_file():
+        return None, f"no {ARXIV_STATE}" if not os.path.lexists(path) else f"{ARXIV_STATE} is not a file"
+    try:
+        papers = read_json(path).get("papers")
+    except (OSError, ValueError, AttributeError) as error:
+        return None, f"{ARXIV_STATE} cannot be read ({type(error).__name__}: {error})"
+    if not isinstance(papers, dict):
+        return None, f'{ARXIV_STATE} has no "papers" object'
+    return papers, ""
+
+
 def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     """Flagged arXiv papers, verdicts recorded since `since_date`, and the actions still open.
 
     flagged: possible kills and scoops without a verdict (open, however old), then those first
-    seen on or after `since_date` that have one. reviewed: verdicts recorded on or after it.
-    actions: every verdict whose action is not marked `action_done`. Verdicts come from the
+    seen on or after `since_date` that have one; None, with `flagged_reason`, when the
+    collisions file is missing or unreadable (open flags live only there), while the verdicts
+    and actions are still given. reviewed: verdicts recorded on or after `since_date`. actions:
+    every verdict with an action whose `action_done` is not JSON true. Verdicts come from the
     verdicts file, the source of truth, whether or not the watch has copied them onto its records.
     """
     root = Path(root)
@@ -312,12 +331,28 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     state_path = root / ARXIV_STATE
     if not state_path.is_file() and not (root / verdicts_module.VERDICTS_FILE).is_file():
         return {"available": False, "reason": f"no {ARXIV_STATE} and no {verdicts_module.VERDICTS_FILE} yet"}
-    papers = read_json(state_path).get("papers", {}) if state_path.is_file() else {}
+    papers, flagged_reason = _arxiv_papers(state_path)
     verdicts = {
         arxiv_id: entry
         for arxiv_id, entry in verdicts_module.load_verdicts(root)["verdicts"].items()
         if isinstance(entry, dict)
     }
+
+    reviewed = [
+        {"id": arxiv_id, "verdict": entry.get("verdict"), "by": entry.get("by"), "reviewed_on": entry["reviewed_on"]}
+        for arxiv_id, entry in sorted(verdicts.items())
+        if isinstance(entry.get("reviewed_on"), str) and entry["reviewed_on"] >= since
+    ]
+    reviewed.sort(key=lambda item: item["reviewed_on"], reverse=True)
+    actions = [
+        {"id": arxiv_id, "action": str(entry["action"]).strip(), "by": entry.get("by")}
+        for arxiv_id, entry in sorted(verdicts.items())
+        # Only a JSON true closes an action: action_done is written by hand, and "false" is truthy.
+        if str(entry.get("action") or "").strip() and entry.get("action_done") is not True
+    ]
+    if papers is None:
+        return {"available": True, "flagged": None, "flagged_reason": flagged_reason, "reviewed": reviewed,
+                "actions": actions}
 
     flagged = []
     for arxiv_id, record in papers.items():
@@ -337,18 +372,6 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     flagged.sort(key=lambda item: item["id"])
     flagged.sort(key=lambda item: item["first_seen"] or "", reverse=True)
     flagged.sort(key=lambda item: item["verdict"] is not None)
-
-    reviewed = [
-        {"id": arxiv_id, "verdict": entry.get("verdict"), "by": entry.get("by"), "reviewed_on": entry["reviewed_on"]}
-        for arxiv_id, entry in sorted(verdicts.items())
-        if isinstance(entry.get("reviewed_on"), str) and entry["reviewed_on"] >= since
-    ]
-    reviewed.sort(key=lambda item: item["reviewed_on"], reverse=True)
-    actions = [
-        {"id": arxiv_id, "action": str(entry["action"]).strip(), "by": entry.get("by")}
-        for arxiv_id, entry in sorted(verdicts.items())
-        if str(entry.get("action") or "").strip() and not entry.get("action_done")
-    ]
     return {"available": True, "flagged": flagged, "reviewed": reviewed, "actions": actions}
 
 
@@ -557,17 +580,31 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
 
 def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     flagged, reviewed, actions = section["flagged"], section["reviewed"], section["actions"]
-    open_flags = sum(1 for item in flagged if item["verdict"] is None)
     counts: dict[str, int] = {}
     for item in reviewed:
         counts[str(item["verdict"])] = counts.get(str(item["verdict"]), 0) + 1
     tally = ", ".join(f"{verdict} {n}" for verdict, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
-    lines = [
-        f"Possible kills and scoops with no verdict yet: {open_flags}. First seen since {since} and already "
-        f"reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are judgement.",
-        f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."),
-        "",
-        f"Open actions from verdicts ({len(actions)}; set `action_done` in `{ARXIV_VERDICTS}` once done):",
+    if flagged is None:
+        lines = [f"Possible kills and scoops: not available: {_cell(section.get('flagged_reason'))}. The verdicts "
+                 "and actions below come from the verdicts file."]
+    else:
+        open_flags = sum(1 for item in flagged if item["verdict"] is None)
+        lines = [f"Possible kills and scoops with no verdict yet: {open_flags}. First seen since {since} and already "
+                 f"reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are judgement."]
+    lines += [f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."), ""]
+    # Every verdict of the window is named once: in the flagged table, or here.
+    in_table = {item["id"] for item in flagged or []}
+    others = [item for item in reviewed if item["id"] not in in_table]
+    if others:
+        where = "" if flagged is None else " on papers not in the flagged table below"
+        lines += [f"Verdicts recorded since {since}{where} ({len(others)}):", ""]
+        lines += [f"- `{item['id']}`: {_cell(item['verdict'])} ({_cell(item['by'])}, {item['reviewed_on']})."
+                  for item in others[:LIST_CAP]]
+        if len(others) > LIST_CAP:
+            lines.append(f"- And {len(others) - LIST_CAP} more in agent_brief.json.")
+        lines.append("")
+    lines += [
+        f"Open actions from verdicts ({len(actions)}; set `\"action_done\": true` in `{ARXIV_VERDICTS}` once done):",
         "",
     ]
     lines += [f"- `{item['id']}` ({item['by']}): {_cell(item['action'])}" for item in actions] or ["- None."]
