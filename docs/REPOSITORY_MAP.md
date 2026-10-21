@@ -43,6 +43,7 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/split_cli/` - the generator and verifier that split the old 30,000-line `qsearch.py` into `qsearch_cli/`; `migrate.py sweep` moves old-style additions into the package. Manifest in `research/audits/cli_manifest.json`.
 - `tools/cockpit/` - builds `site/data/cockpit.json` for `cockpit.html`, a dashboard of what the agents are working on.
 - `tools/spend/` - spend ledger, opt-in timing wrapper (`timed.py`) and per-day Codex token totals; report in `research/audits/SPEND_REPORT.md`.
+- `tools/dqi_screen/` - screens a DQI candidate against the Mazumder-Niroula soundness rules (Prange threshold, licensed reach, margin cap, restarts) and runs a best-of-N Prange baseline; also the `screen_dqi_candidate` MCP tool. No committed outputs.
 - `formal/` - Lean 4 project formalizing parts of the prime-character exterior bound; built by its own workflow, not by `validate.yml`.
 - `docs/` - human-readable project maps and research documentation.
 - `docs/papers/classical-competitors/` - draft preprint on three classical or local competitors; every number is generated from a committed report, and `reproduce.sh` regenerates them.
