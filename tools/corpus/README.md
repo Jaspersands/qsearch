@@ -42,7 +42,8 @@ before" group then means the registry could not be read, not that the idea is ne
 ## For the research agents (MCP)
 
 `tools/corpus/mcp_server.py` is a stdio MCP server exposing `been_tried`,
-`search_corpus` and `get_doc`. It keeps the index warm and refreshes it at most every 30
+`search_corpus`, `get_doc` and `screen_dqi_candidate` (the DQI soundness screen, see
+`tools/dqi_screen/README.md`). It keeps the index warm and refreshes it at most every 30
 seconds. With the default `--dense auto` it adds the embedding ranker only while every
 document has a vector (after `build --dense`); documents added since then switch it back
 to lexical ranking until the next `build --dense`, because a ranker that cannot see the

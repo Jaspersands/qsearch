@@ -25,7 +25,7 @@ def test_server_lists_the_three_tools(fake_repo: Path) -> None:
     async def names():
         return sorted(tool.name for tool in await server.list_tools())
 
-    assert anyio.run(names) == ["been_tried", "get_doc", "search_corpus"]
+    assert anyio.run(names) == ["been_tried", "get_doc", "screen_dqi_candidate", "search_corpus"]
 
 
 def test_been_tried_tool_returns_grouped_hits(fake_repo: Path) -> None:
@@ -44,6 +44,17 @@ def test_search_and_get_tools(fake_repo: Path) -> None:
     assert doc["doc_id"] == hits[0]["doc_id"] and doc["text"]
     missing = _call(server, "get_doc", {"doc_id": "negative:NOPE"})
     assert missing["error"].startswith("unknown doc_id")
+
+
+def test_screen_dqi_candidate_tool(fake_repo: Path) -> None:
+    server = create_server(fake_repo, dense="off")
+    examples = Path(__file__).resolve().parents[2] / "tools" / "dqi_screen" / "examples"
+    params = json.loads((examples / "mpi_signed_cosine.json").read_text())
+    payload = _call(server, "screen_dqi_candidate", {"params": params})
+    assert payload["verdict"] == "viable"
+    assert {check["rule"] for check in payload["checks"]} >= {"R1", "reach", "R2"}
+    payload = _call(server, "screen_dqi_candidate", {"params": {"objective": "count"}})
+    assert payload["error"]
 
 
 def test_server_sees_files_added_after_start(fake_repo: Path) -> None:
