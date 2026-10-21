@@ -14,8 +14,8 @@ python tools/preflight/preflight.py --root ../other-checkout
 ```
 
 It prints one line per problem, `check: path: message`, then `N problems`. It exits 1 when
-there is any problem and 0 when there is none. Paths are relative to the checked root. It
-writes nothing.
+there is any problem and 0 when there is none. A `--root` that is not a directory is a usage
+error (exit 2). Paths are relative to the checked root. It writes nothing.
 
 ## Why it exists
 

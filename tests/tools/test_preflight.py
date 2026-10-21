@@ -264,6 +264,16 @@ def test_main_prints_problems_and_exits_one(tmp_path: Path, capsys: pytest.Captu
     assert payload == {"root": str(clean.resolve()), "problems": [], "count": 0}
 
 
+def test_main_rejects_a_root_that_is_not_a_directory(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    with pytest.raises(SystemExit) as exit_info:
+        pf.main(["--root", str(tmp_path / "no_such_checkout")])
+
+    assert exit_info.value.code == 2
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert "no_such_checkout is not a directory" in captured.err
+
+
 def test_validate_flag_reports_nonzero_exit(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     shim = 'import sys\nprint("checking", file=sys.stderr)\nprint("registry is broken", file=sys.stderr)\nsys.exit(3)\n'
     repo = _repo(tmp_path, committed={"qsearch.py": shim})

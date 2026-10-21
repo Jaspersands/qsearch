@@ -286,6 +286,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--validate", action="store_true", help="Also run qsearch.py validate (slow).")
     args = parser.parse_args(argv)
     root = Path(args.root).resolve()
+    if not root.is_dir():
+        parser.error(f"--root {root} is not a directory")  # exits 2: a typo, not a broken checkout
     problems = run(root, imports=args.imports, validate=args.validate)
     if args.json:
         print(json.dumps({"root": str(root), "problems": [asdict(p) for p in problems], "count": len(problems)}, indent=2))
