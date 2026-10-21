@@ -45,6 +45,7 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/spend/` - spend ledger, opt-in timing wrapper (`timed.py`) and per-day Codex token totals; report in `research/audits/SPEND_REPORT.md`.
 - `tools/dqi_screen/` - screens a DQI candidate against the Mazumder-Niroula soundness rules (Prange threshold, licensed reach, margin cap, restarts) and runs a best-of-N Prange baseline; also the `screen_dqi_candidate` MCP tool. No committed outputs.
 - `tools/preflight/` - pre-commit checks for what has blocked a merge: research JSON that does not parse, CLI references to untracked `theorems/`/`core/` modules, manifest subcommands missing from the registry; prints problems and exits 1, writes nothing.
+- `tools/referee/` - independent referee for review-pending notes: exports judge batches, verifies verbatim quotes on import; outputs in `research/audits/reviews/` and `research/audits/REFEREE_QUEUE.md`.
 - `formal/` - Lean 4 project formalizing parts of the prime-character exterior bound; built by its own workflow, not by `validate.yml`.
 - `docs/` - human-readable project maps and research documentation.
 - `docs/papers/classical-competitors/` - draft preprint on three classical or local competitors; every number is generated from a committed report, and `reproduce.sh` regenerates them.
