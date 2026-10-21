@@ -165,8 +165,14 @@ to get CI.
   kept all 22 verdicts on their records; the possible-kill and possible-scoop sections were
   empty and the Reviewed table had 22 rows, none "not stored". The five flags the review calls
   already cited kept their labels there, because the notes that cite them were not committed
-  yet. Four other papers changed label or tracks under the branch's rules and index. The
-  relabelled outputs were not committed: the first weekly run writes them.
+  yet. Four unflagged papers changed label or tracks under the branch's rules and index
+  (2609.23818 and 2609.35511 to unrelated, 2609.31484 to already-cited, 2610.17711 lost
+  hidden_shift). The relabelled outputs were not committed. A weekly run never recomputes
+  labels: a simulated first weekly run with no new papers wrote only the 22 verdict
+  attachments. The four changes need an explicit `watch.py --relabel` commit.
+  `.github/workflows/arxiv_watch.yml` still says the outputs change only for new papers or a
+  coverage gap, and its PR body says "New papers"; the first PR after seeding holds verdicts
+  only.
 - Seed replay: all 52 seed papers whose tags name a track are placed on it. Nine
   patterns were added after the first replay missed them, so this is a consistency
   check on the seeds, not a held-out accuracy figure.
