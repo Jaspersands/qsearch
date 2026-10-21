@@ -68,6 +68,8 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
   leaves, lists capped at five items, at most 4000 characters. Leaves are taken in turn
   from each top-level key (depth first within a key) and printed grouped by key, so a
   large first key does not crowd out the others.
+- `artifact_path`: where the artifact actually is, relative to the repository root, or
+  null. Notes often write `x/y.json` for `research/x/y.json`.
 - `content_sha`: SHA-256 of the note's bytes.
 
 These fields are pointers, not a summary: the heading rules take the first match, so a

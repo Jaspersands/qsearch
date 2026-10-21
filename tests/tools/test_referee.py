@@ -404,6 +404,30 @@ def _export_fixture(root: Path) -> list[Path]:
     return notes
 
 
+def test_packet_gives_the_artifact_path_that_resolves(tmp_path: Path) -> None:
+    # The calibration's OPI note writes its artifact without the research/ prefix; a judge
+    # given only that path concluded the file did not exist.
+    artifact = tmp_path / "research" / "classical_baselines" / "fixture_radial.json"
+    artifact.parent.mkdir(parents=True)
+    artifact.write_text('{"mean": 0.9028}', encoding="utf-8")
+    short = _write(tmp_path, "SHORT_PATH", FIXTURE_NOTE.replace("research/classical_baselines/", "classical_baselines/"))
+    packet = R.build_packet(tmp_path, short)
+    assert packet["producer"]["artifact"] == "classical_baselines/fixture_radial.json"
+    assert packet["artifact_path"] == "research/classical_baselines/fixture_radial.json"
+    artifact.unlink()
+    assert R.build_packet(tmp_path, short)["artifact_path"] is None
+
+
+def test_instructions_ask_for_scope_and_omission_checks() -> None:
+    # Calibration on 2026-10-21 missed both note-level findings of the preprint's review
+    # history: a headline that drops the note's own conditions, and a summary that leaves out
+    # an input the note reports elsewhere.
+    text = R.REFEREE_INSTRUCTIONS
+    assert "Scope of headline sentences" in text and "review-pending" in text
+    assert "Omissions in summaries" in text
+    assert "`artifact_path`" in text
+
+
 def test_export_writes_instructions_and_batches_with_artifact_excerpts(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     out = tmp_path / "out"

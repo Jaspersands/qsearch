@@ -31,7 +31,7 @@ if __package__ in (None, ""):
 from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.markdown import JOURNALS, note_status  # noqa: E402
-from tools.referee.extract import DATE, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
+from tools.referee.extract import DATE, _resolve_artifact, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
 
 REVIEWS = "research/audits/reviews/reviews.json"
 
@@ -98,12 +98,16 @@ the note says it does not claim), `producer` (the command and JSON artifact behi
 numbers), `result`, `derivations`, `controls`, `self_check` (the note's own attempt to
 break itself), `decision`, `flags` (fine-print flags a rule-based checker raised on the
 result), `artifact_excerpt` (numbers from the producer's JSON output, or null),
-`content_sha` and the full note `text`.
+`artifact_path` (where that JSON file is, relative to the repository root, or null; the
+note may write it without the `research/` prefix), `content_sha` and the full note `text`.
+The parsed fields are pointers taken from headings and may be empty or misplaced; work
+from the full text.
 
 For each note:
 
 1. Pick up to 6 claims that carry the note's conclusion: the stated result, each bound or
-   lemma the result depends on, and each comparison with a classical baseline.
+   lemma the result depends on, each comparison with a classical baseline, and any finding
+   from step 5.
 2. Quote each claim verbatim from the note `text`: at least 6 consecutive words copied
    exactly. Whitespace, letter case, punctuation and markdown markup may differ, but the
    symbols <, >, =, +, -, /, ^ and decimal points must be the note's, hyphens included
@@ -121,7 +125,18 @@ For each note:
    already concedes the problem.
 4. Check the numbers you can against `artifact_excerpt`, and say in `finding` when a number
    in the note does not match it. The excerpt is evidence for a finding, never a quote.
-5. Give the note an `overall` verdict and a `summary` of at most five sentences:
+5. Two checks that are easy to skip; each finding is a claim like any other:
+   - Scope of headline sentences: read the title, the status block, the result and the
+     decision as a reader who reads nothing else. Each must keep the conditions the note
+     states elsewhere: the review-pending derivations it rests on, the sizes or instances
+     actually certified (one certified length is not a family), and the inputs on which
+     the method fails. A headline that drops one of these is a `gap`, quoted from the
+     headline, even when the derivation behind it holds.
+   - Omissions in summaries: when a sentence summarises cases ("every saved input",
+     "both", "all", a list of what is left open), compare it with every case the note
+     reports elsewhere and with the artifact excerpt. A reported case missing from the
+     summary, or a stated condition that cannot hold for a reported case, is a `gap`.
+6. Give the note an `overall` verdict and a `summary` of at most five sentences:
    - `sound`: every load-bearing claim holds.
    - `needs-work`: at least one gap, nothing shown wrong.
    - `unsound`: a load-bearing claim is wrong.
@@ -143,7 +158,14 @@ Write one JSON object per line (JSONL), one line per note, to your output path. 
 def build_packet(root: Path, path: Path) -> dict:
     packet = parse_note(path)
     text = path.read_bytes().decode("utf-8", errors="replace")
-    return {**to_dict(packet), "artifact_excerpt": artifact_excerpt(root, packet), "text": text}
+    rel = (packet.producer or {}).get("artifact")
+    found = _resolve_artifact(root, rel) if rel else None
+    return {
+        **to_dict(packet),
+        "artifact_excerpt": artifact_excerpt(root, packet),
+        "artifact_path": found.relative_to(root).as_posix() if found else None,
+        "text": text,
+    }
 
 
 def export_batches(root: Path, out_dir: Path, notes: list[Path], batch_size: int = 5) -> list[Path]:
