@@ -157,3 +157,25 @@ def test_without_git_reports_one_git_unavailable_problem(tmp_path: Path, monkeyp
 
     assert pf.tracked_files(repo) is None
     assert pf.check_untracked_imports(repo) == [pf.Problem("imports", ".", "git unavailable")]
+
+
+def test_manifest_subcommand_missing_from_order(tmp_path: Path) -> None:
+    hidden = {**AUDIT_ENTRY, "name": "hidden-shift", "function": "command_hidden_shift"}
+    repo = _repo(tmp_path / "missing", manifest=[AUDIT_ENTRY, hidden], git=False)
+
+    assert pf.registry_order(repo) == {"audit": "qsearch_cli.commands.general"}
+    assert pf.check_manifest(repo) == [
+        pf.Problem("manifest", "qsearch_cli/registry.py", "subcommand hidden-shift missing from ORDER")
+    ]
+
+    moved = _repo(tmp_path / "moved", order=[("audit", "qsearch_cli.commands.dcp", "add_audit")], git=False)
+    assert [p.message for p in pf.check_manifest(moved)] == [
+        "audit: manifest says qsearch_cli.commands.general, ORDER says qsearch_cli.commands.dcp"
+    ]
+
+    (moved / pf.MANIFEST).unlink()
+    assert [(p.check, p.path, p.message) for p in pf.check_manifest(moved)] == [("manifest", pf.MANIFEST, "missing")]
+
+
+def test_real_manifest_matches_registry() -> None:
+    assert pf.check_manifest(REPO) == []

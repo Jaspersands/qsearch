@@ -5,7 +5,8 @@ Every theorems/ or core/ module the CLI refers to must exist and be tracked by g
 merge carried 24 imports of modules that were only in one working copy. Module references
 are read statically, never imported: AST imports of theorems.* and core.* in qsearch.py,
 qsearch_cli/imports.py and qsearch_cli/commands/*.py, the IMPORTS table, and the module
-column of DISPATCH.
+column of DISPATCH. Every subcommand in research/audits/cli_manifest.json must still be in
+the registry's ORDER, in the same module.
 """
 
 from __future__ import annotations
@@ -23,6 +24,7 @@ if __package__ in (None, ""):
 JSON_DIRS = ("research/hypotheses", "research/registry", "research/audits", "research/classical_baselines")
 IMPORTS_FILE = "qsearch_cli/imports.py"
 REGISTRY = "qsearch_cli/registry.py"
+MANIFEST = "research/audits/cli_manifest.json"
 IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE, "qsearch_cli/commands/*.py")
 MODULE_PREFIXES = ("theorems.", "core.")
 
@@ -134,4 +136,35 @@ def check_untracked_imports(root: Path) -> list[Problem]:
             problems.append(Problem("imports", module_path, "not tracked by git"))
     if tracked is None:
         problems.append(Problem("imports", ".", "git unavailable"))
+    return problems
+
+
+def registry_order(root: Path) -> dict[str, str]:
+    """Subcommand name -> module, from the ORDER literal in qsearch_cli/registry.py (read, never imported)."""
+    order = _literal(Path(root).resolve(), REGISTRY, "ORDER")
+    if order is None:
+        raise ValueError(f"{REGISTRY} has no ORDER")
+    return {name: module for name, module, _add_parser in order}
+
+
+def check_manifest(root: Path) -> list[Problem]:
+    """Every subcommand the split manifest lists must still be in ORDER, in the same module."""
+    root = Path(root).resolve()
+    try:
+        entries = json.loads((root / MANIFEST).read_text(encoding="utf-8"))["subcommands"]
+        expected = {entry["name"]: entry["module"] for entry in entries}
+    except FileNotFoundError:
+        return [Problem("manifest", MANIFEST, "missing")]
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        return [Problem("manifest", MANIFEST, f"invalid: {type(error).__name__}: {error}")]
+    try:
+        order = registry_order(root)
+    except (OSError, SyntaxError, ValueError, TypeError) as error:
+        return [Problem("manifest", REGISTRY, f"cannot read ORDER: {type(error).__name__}: {error}")]
+    problems = []
+    for name, module in expected.items():
+        if name not in order:
+            problems.append(Problem("manifest", REGISTRY, f"subcommand {name} missing from ORDER"))
+        elif order[name] != module:
+            problems.append(Problem("manifest", REGISTRY, f"{name}: manifest says {module}, ORDER says {order[name]}"))
     return problems
