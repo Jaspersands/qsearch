@@ -346,6 +346,33 @@ class Corpus:
                 found[doc_id] = float(scores[position[0]])
         return found
 
+    def cosine_hits(
+        self, text: str, kinds: tuple[str, ...], minimum: float, exclude: tuple[str, ...] = ()
+    ) -> list[Hit]:
+        """Every document of `kinds` whose TF-IDF cosine with `text` is at least `minimum`, highest first.
+
+        Exhaustive: each document of those kinds is scored, unlike `search`, whose rank fusion
+        can leave a close document out of its top k. A hit's `score` is the cosine rounded to
+        four places; ties are ordered by doc id. Doc ids in `exclude` are left out.
+        """
+        state = self._state()
+        scores = state.scores(text)
+        keep = np.flatnonzero(np.isin(self._row_kinds(), list(kinds)) & (scores >= minimum))
+        rows = self.store.rows(int(state.rowids[i]) for i in keep)
+        hits: list[Hit] = []
+        for i in keep:
+            doc = rows.get(int(state.rowids[i]))
+            if doc is None or doc.doc_id in exclude:
+                continue
+            score = round(float(scores[i]), 4)
+            hits.append(Hit(doc.doc_id, doc.kind, doc.path, doc.line, doc.title, score, snippet(doc.text, text), doc.meta))
+        hits.sort(key=lambda hit: (-hit.score, hit.doc_id))
+        return hits
+
+    def kind_count(self, kinds: tuple[str, ...]) -> int:
+        """How many indexed documents are of these kinds."""
+        return int(np.isin(self._row_kinds(), list(kinds)).sum())
+
     def matrix(self, kind: str = "negative") -> tuple[list[str], Any]:
         """Doc ids of one kind and their pairwise TF-IDF cosine similarities (sparse)."""
         state = self._state()

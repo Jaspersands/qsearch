@@ -27,7 +27,7 @@ from mcp.server.fastmcp import FastMCP  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.baselines import recommend  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
-from tools.corpus.duplicates import check_claim  # noqa: E402
+from tools.corpus.duplicates import claim_report  # noqa: E402
 from tools.corpus.ranking import Embedder  # noqa: E402
 from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 
@@ -109,12 +109,13 @@ def create_server(
         claim and its reason. A match is a record to read and extend, not proof of identity;
         if index_incomplete is true, no match does not mean the claim is new."""
         ready()
-        matches = check_claim(corpus, claim, threshold=threshold)
+        report = claim_report(corpus, claim, threshold=threshold)
         return {
             "claim": claim,
             "threshold": threshold,
-            "matches": [_hit_json(h) for h in matches],
-            "duplicate": bool(matches),
+            "matches": [_hit_json(h) for h in report.matches],
+            "total": report.total,
+            "duplicate": bool(report.matches),
             **_issues_json(corpus),
         }
 

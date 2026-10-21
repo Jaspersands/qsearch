@@ -160,7 +160,10 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   `research/audits/registry_duplicates.json` and `REGISTRY_DUPLICATES.md` (0.9,
   `--per-family 3`: 167 pairs on 2026-10-21, all of them).
 - `check-new` checks one draft claim against the negative records, retained and
-  quarantined, at cosine 0.6. It exits 2 on any match, 0 when there is none, and 1 when
+  quarantined, at cosine 0.6. It scores every negative-kind document, not only a search's
+  top hits, so no record at or above the threshold is missed; the header gives how many
+  match, the closest five are listed, and `--json` carries the count as `total`.
+  It exits 2 on any match, 0 when there is none, and 1 when
   the `--file` cannot be read (checked before the index is touched). argparse usage errors
   also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
   file or a registry record as JSON; a record contributes its `claim` and `reason_invalid`,

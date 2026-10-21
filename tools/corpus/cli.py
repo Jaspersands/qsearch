@@ -28,7 +28,7 @@ if __package__ in (None, ""):
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
 from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
-from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, draft_claim, own_ids, pair_report  # noqa: E402
+from tools.corpus.duplicates import REPORT_THRESHOLD, claim_report, draft_claim, own_ids, pair_report  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -287,9 +287,15 @@ def cmd_check_new(args: argparse.Namespace) -> int:
             return 1
         text, record_id = draft_claim(raw)
     corpus = _corpus(args)
-    matches = check_claim(corpus, text, threshold=args.threshold, exclude=own_ids(record_id))
+    report = claim_report(corpus, text, threshold=args.threshold, exclude=own_ids(record_id))
+    matches = report.matches
     if args.json:
-        payload = {"matches": [_hit_json(h) for h in matches], "duplicate": bool(matches), **_issues_json(corpus)}
+        payload = {
+            "matches": [_hit_json(h) for h in matches],
+            "total": report.total,
+            "duplicate": bool(matches),
+            **_issues_json(corpus),
+        }
         print(json.dumps(payload, indent=2))
         return 2 if matches else 0
     if not matches:
@@ -297,9 +303,11 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         if corpus.incomplete():
             print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
         return 0
-    quarantined = sum(hit.doc_id.startswith("quarantined:") for hit in matches)
-    of_them = f", {quarantined} of them quarantined," if quarantined else ""
-    print(f"POSSIBLE DUPLICATE: {len(matches)} negative record(s){of_them} at TF-IDF cosine >= {args.threshold}.\n")
+    of_them = f", {report.quarantined} of them quarantined," if report.quarantined else ""
+    shown = f"; the closest {len(matches)} are shown" if report.total > len(matches) else ""
+    print(
+        f"POSSIBLE DUPLICATE: {report.total} negative record(s){of_them} at TF-IDF cosine >= {args.threshold}{shown}.\n"
+    )
     for index, hit in enumerate(matches, start=1):
         _print_hit(index, hit)
         print(f"     Cosine: {hit.score:.3f}")

@@ -9,7 +9,7 @@ from tests.tools.conftest import HANDOFF, NEGATIVES, NOTE, QUARANTINED
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus.cli import main
-from tools.corpus.duplicates import check_claim, draft_claim, near_duplicates, pair_report
+from tools.corpus.duplicates import check_claim, claim_report, draft_claim, near_duplicates, pair_report
 from tools.corpus.mcp_server import create_server
 
 HELSTROM = "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
@@ -58,6 +58,36 @@ RESTATEMENT = [
         "reason_invalid": "A certified semidefinite bound caps collective echidna readout at the adaptive value.",
         "lesson": "Bound collective platypus readout before claiming any gap.",
     },
+]
+
+
+# The closest record to WOMBAT_DRAFT is padded with stop words: TF-IDF ignores them, but BM25
+# ranks the long record below thirty short siblings, so the fused search's top ten leave it out.
+WOMBAT_CLAIM = "A wombat sieve over abelian coset states recovers the hidden shift in polynomial time."
+WOMBAT_REASON = "The wombat sieve collapses to Kuperberg merging, whose cost is subexponential."
+WOMBAT_DRAFT = f"{WOMBAT_CLAIM.replace('polynomial', 'quasi-polynomial')} {WOMBAT_REASON}"
+WOMBAT_TARGET = {
+    "id": "NEG-WOMBAT-TARGET",
+    "claim": WOMBAT_CLAIM,
+    "reason_invalid": f"{WOMBAT_REASON} " + " ".join(["the of and to in is it that for on with as by at from"] * 200),
+    "lesson": "Charge merging.",
+}
+WOMBAT_CROWD = [
+    {
+        "id": f"NEG-WOMBAT-SWEEP-{i}",
+        "claim": f"A wombat sieve over abelian coset states at size {i} recovers the hidden shift.",
+        "reason_invalid": "The wombat sieve collapses to Kuperberg merging.",
+        "lesson": "Sweep.",
+    }
+    for i in range(30)
+] + [
+    {
+        "id": f"NEG-FILLER-{i}",
+        "claim": f"Filler record {i} about lattice zebra {i} and platypus graphs.",
+        "reason_invalid": f"Unrelated filler reason {i} with echidna lemmas.",
+        "lesson": "Filler.",
+    }
+    for i in range(80)
 ]
 
 
@@ -121,6 +151,38 @@ def test_check_claim_returns_cosine_scored_negatives_above_threshold(corpus: Cor
     assert 0.6 <= hits[0].score <= 1.0
     assert all(hit.kind == "negative" and hit.score >= 0.6 for hit in hits)
     assert check_claim(corpus, "zebrafish migration") == []
+
+
+def test_check_claim_scores_every_negative_not_only_the_fused_top_ten(fake_repo: Path) -> None:
+    corpus = _corpus_with(fake_repo, [WOMBAT_TARGET, *WOMBAT_CROWD])
+    target = "negative:NEG-WOMBAT-TARGET"
+    assert target not in [hit.doc_id for hit in corpus.search(WOMBAT_DRAFT, kinds=("negative",), k=10)]
+    cosine = corpus.cosine(WOMBAT_DRAFT, [target])[target]
+    assert cosine > 0.9
+    hits = check_claim(corpus, WOMBAT_DRAFT)
+    assert hits[0].doc_id == target and hits[0].score == round(cosine, 4)
+    assert [hit.doc_id for hit in check_claim(corpus, WOMBAT_DRAFT, threshold=0.9)] == [target]
+    report = claim_report(corpus, WOMBAT_DRAFT)
+    assert report.total == 31 and len(report.matches) == 5  # the target and its thirty siblings
+    assert report.documents == len(NEGATIVES) + 1 + 1 + 110  # retained, quarantined, target, crowd
+    assert [hit.score for hit in report.matches] == sorted((hit.score for hit in report.matches), reverse=True)
+
+
+def test_check_claim_does_not_depend_on_the_search_ranking(corpus: Corpus, monkeypatch) -> None:
+    monkeypatch.setattr(corpus, "search", lambda *args, **kwargs: [])
+    assert check_claim(corpus, NEAR_CLAIM)[0].doc_id == HELSTROM
+
+
+def test_cli_check_new_header_counts_every_match(fake_repo: Path, capsys) -> None:
+    _corpus_with(fake_repo, [WOMBAT_TARGET, *WOMBAT_CROWD])
+    root = ["--root", str(fake_repo), "check-new", "--text", WOMBAT_DRAFT]
+    assert main(root) == 2
+    out = capsys.readouterr().out
+    assert out.startswith("POSSIBLE DUPLICATE: 31 negative record(s) at TF-IDF cosine >= 0.6; the closest 5 are shown.")
+    assert "NEG-WOMBAT-TARGET" in out
+    assert main([*root, "--json"]) == 2
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["total"] == 31 and len(payload["matches"]) == 5
 
 
 def test_cosine_of_a_doc_with_itself_is_one(corpus: Corpus) -> None:

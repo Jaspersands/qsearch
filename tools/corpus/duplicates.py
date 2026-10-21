@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import json
 import re
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 
 import scipy.sparse as sp
 
@@ -115,21 +115,31 @@ def own_ids(record_id: str | None) -> tuple[str, ...]:
     return (f"negative:{record_id}", f"quarantined:{record_id}") if record_id else ()
 
 
+@dataclass(frozen=True)
+class ClaimReport:
+    matches: list[Hit]  # the first `k` matches, highest first
+    total: int  # every negative record at or above the threshold, before `k`
+    quarantined: int  # how many of the `total` are quarantined records
+    documents: int  # negative-kind documents compared
+
+
+def claim_report(
+    corpus: Corpus, text: str, threshold: float = 0.6, k: int = 5, exclude: tuple[str, ...] = ()
+) -> ClaimReport:
+    """Negative records (retained or quarantined) whose TF-IDF cosine with a draft claim is at least `threshold`.
+
+    Every negative-kind document is scored (`Corpus.cosine_hits`), so no record at or above
+    the threshold is missed and the closest comes first. A hit's `score` is a cosine in
+    [0, 1], not the search's rank-fusion score. Doc ids in `exclude` (say the draft's own
+    record, already filed) are never returned or counted.
+    """
+    found = corpus.cosine_hits(text, ("negative",), threshold, exclude=exclude)
+    quarantined = sum(hit.doc_id.startswith("quarantined:") for hit in found)
+    return ClaimReport(found[: max(k, 0)], len(found), quarantined, corpus.kind_count(("negative",)))
+
+
 def check_claim(
     corpus: Corpus, text: str, threshold: float = 0.6, k: int = 5, exclude: tuple[str, ...] = ()
 ) -> list[Hit]:
-    """Negative records (retained or quarantined) whose TF-IDF cosine with a draft claim is at least `threshold`.
-
-    The fused search finds candidates; each is re-scored with `Corpus.cosine`, so a hit's
-    `score` here is a cosine in [0, 1], not the search's rank-fusion score. Doc ids in
-    `exclude` (say the draft's own record, already filed) are never returned.
-    """
-    hits = corpus.search(text, kinds=("negative",), k=max(2 * k, 10), exclude=exclude)
-    cosines = corpus.cosine(text, [hit.doc_id for hit in hits])
-    scored = [
-        replace(hit, score=round(cosines[hit.doc_id], 4))
-        for hit in hits
-        if cosines.get(hit.doc_id, 0.0) >= threshold
-    ]
-    scored.sort(key=lambda hit: (-hit.score, hit.doc_id))
-    return scored[:k]
+    """The matches of `claim_report`, without the counts."""
+    return claim_report(corpus, text, threshold=threshold, k=k, exclude=exclude).matches
