@@ -263,8 +263,9 @@ references and, when the repository can run it, a `run:` command. `--json` print
 with each evidence hit in the `search --json` shape. The MCP tool
 `classical_baselines(idea, k=5)` returns the same object.
 
-**Score.** `tokens(t)` lower-cases `t`, keeps the runs of `[a-z0-9]` and drops a trailing
-`s` from words longer than three letters ("Gibbs" becomes `gibb` on both sides). A mechanism
+**Score.** `tokens(t)` lower-cases `t`, keeps the runs of `[a-z0-9]`, turns a final `sses`
+into `ss` and drops a final single `s` from words longer than three letters ("Gibbs" becomes
+`gibb` on both sides; "glasses" and "glass" both become `glass`). A mechanism
 keyword matches when every one of its tokens is among the idea's tokens, in any order. The ten
 note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
@@ -275,7 +276,8 @@ negative counts on its own, although all of them live in one registry file.
     score = matched keywords / keywords + citing notes and negatives / 10        (rounded to 4 places)
 
 Baselines scoring 0 are left out; the rest are sorted by score, then name, and the first `k`
-(default 5) are shown. A score can exceed 1. A citing note may name a baseline only to set it
+(default 5) are shown. The CLI rejects a negative `-k`, and the Python and MCP calls return
+nothing for one. A score can exceed 1. A citing note may name a baseline only to set it
 aside, and keywords are matched without regard to how the idea uses them, so the score orders
 leads to read and run. It is not evidence that the baseline beats the idea, and an empty list
 does not mean that no classical baseline applies.
@@ -310,8 +312,8 @@ above the LP decoder, the baseline this line of work is missing.
 
 **Adding an entry.** Append it to `baselines.json`, raise the count in
 `test_catalog_is_well_formed`, then run `python -m pytest -q tests/tools/test_corpus_baselines.py`.
-`validate_catalog` reports a duplicate id, a missing or mistyped field, fewer than 3 or more
-than 6 keywords and a malformed reference; the tests also check that every note reference
+`validate_catalog` reports an entry that is not an object, a duplicate id, a missing or
+mistyped field, fewer than 3 or more than 6 keywords and a malformed reference; the tests also check that every note reference
 exists as `research/<STEM>.md` and that every runnable command and entry points at an existing
 file (that check skips until `tools/dqi_screen/` is merged).
 

@@ -9,7 +9,7 @@ import pytest
 from tests.tools.conftest import NEGATIVES
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
-from tools.corpus.baselines import load_catalog, recommend, validate_catalog
+from tools.corpus.baselines import load_catalog, recommend, tokens, validate_catalog
 from tools.corpus.cli import main
 from tools.corpus.mcp_server import create_server
 
@@ -49,6 +49,31 @@ def test_catalog_is_well_formed() -> None:
     assert any(p.startswith(f"{second['id']}: missing field") and "summary" in p for p in problems)
     assert any(p.startswith("too-few: mechanisms") for p in problems)
     assert sum(p.startswith("bad-ref: malformed reference") for p in problems) == 2
+    assert validate_catalog([first, "oops", None]) == ["entry 2: must be an object", "entry 3: must be an object"]
+
+
+def test_tokens_drop_a_plural_s_but_keep_a_double_s() -> None:
+    assert tokens("spin glasses") == tokens("spin glass") == ["spin", "glass"]
+    assert tokens("Gibbs codes processes") == ["gibb", "code", "process"]
+    assert tokens("is gas bias") == ["is", "gas", "bia"]  # short words kept; a single final s still dropped
+
+
+def test_spin_glasses_match_the_spin_glass_keyword(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = recommend(corpus, "sampling Gibbs states of mean-field spin glasses")
+    assert recs[0].baseline["id"] == "stochastic-localization-pspin"
+    assert recs[0].matched == ["gibbs sampling", "spin glass"]
+
+
+def test_a_negative_k_returns_nothing(fake_repo: Path, capsys) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    assert len(recommend(corpus, IDEA)) >= 2
+    assert recommend(corpus, IDEA, k=0) == recommend(corpus, IDEA, k=-1) == []
+    with pytest.raises(SystemExit):
+        main(["--root", str(fake_repo), "baselines", IDEA, "-k", "-1"])
+    assert "-k must be at least 0" in capsys.readouterr().err
+    server = create_server(fake_repo, dense="off")
+    assert _call(server, "classical_baselines", {"idea": IDEA, "k": -1})["recommendations"] == []
 
 
 def test_catalog_note_references_exist() -> None:

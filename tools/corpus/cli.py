@@ -351,6 +351,13 @@ def cmd_baselines(args: argparse.Namespace) -> int:
     return 0
 
 
+def _count(value: str) -> int:
+    number = int(value)
+    if number < 0:
+        raise argparse.ArgumentTypeError("-k must be at least 0")
+    return number
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", help="Q-Search checkout to index (default: QSEARCH_ROOT or this repo).")
@@ -422,7 +429,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     baselines = sub.add_parser("baselines", help="Classical baselines an idea should be compared against.")
     baselines.add_argument("idea")
-    baselines.add_argument("-k", type=int, default=5, help="Baselines to show.")
+    baselines.add_argument("-k", type=_count, default=5, help="Baselines to show.")
     baselines.add_argument("--json", action="store_true")
     baselines.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
     baselines.set_defaults(func=cmd_baselines)

@@ -50,6 +50,9 @@ def validate_catalog(entries: list[dict]) -> list[str]:
     problems: list[str] = []
     seen: set[str] = set()
     for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            problems.append(f"entry {index + 1}: must be an object")
+            continue
         label = str(entry.get("id") or f"entry {index + 1}")
         missing = [name for name in FIELDS if name not in entry]
         if missing:
@@ -91,9 +94,19 @@ class Recommendation:
     evidence: list[Hit]
 
 
+def _singular(word: str) -> str:
+    """'glasses' -> 'glass', 'codes' -> 'code', 'gibbs' -> 'gibb'; 'glass' and words of three letters stay."""
+    if word.endswith("sses"):
+        return word[:-2]
+    if len(word) > 3 and word.endswith("s") and not word.endswith("ss"):
+        return word[:-1]
+    return word
+
+
 def tokens(text: str) -> list[str]:
-    """Lowercase alphanumeric words, with a trailing "s" dropped from words longer than three letters."""
-    return [w[:-1] if len(w) > 3 and w.endswith("s") else w for w in re.findall(r"[a-z0-9]+", text.lower())]
+    """Lowercase alphanumeric words, singular: "sses" becomes "ss", and a final single "s" is
+    dropped from words longer than three letters."""
+    return [_singular(w) for w in re.findall(r"[a-z0-9]+", text.lower())]
 
 
 def _name_pattern(baseline: dict) -> re.Pattern[str]:
@@ -142,4 +155,4 @@ def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None 
         if score > 0:
             found.append(Recommendation(baseline, score, matched, citing))
     found.sort(key=lambda rec: (-rec.score, rec.baseline["name"]))
-    return found[:k]
+    return found[: max(k, 0)]
