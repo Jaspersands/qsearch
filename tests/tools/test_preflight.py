@@ -245,6 +245,71 @@ def test_cli_modules_the_registry_and_shim_load_are_checked(tmp_path: Path) -> N
     }
 
 
+TRACKED_WITH_HELPERS = '''\
+"""Uses helpers, but not this one:
+
+from theorems.in_docstring import x
+"""
+QUOTE = "\'\'\'"  # a quote inside a string starts no string
+from helper import h
+from core.helper2 import h2  # import theorems.in_comment
+import os, json
+
+
+def lazy():
+    from helper3 import (
+        h3,
+    )
+    import theorems.gone \\
+        as gone
+    return h3, gone, """
+import theorems.in_string"""
+
+
+a = 1
+'''
+
+
+def test_imports_inside_referenced_modules_are_followed(tmp_path: Path) -> None:
+    # A committed module whose own helper never was: fine in this copy, ModuleNotFoundError in a clone.
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    return a\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": TRACKED_WITH_HELPERS})
+    _write(repo / "theorems" / "helper.py", "from deep import d\n\nh = 1\n")  # bare: theorems/ first
+    _write(repo / "theorems" / "deep.py", "import theorems.tracked\n\nd = 1\n")  # a cycle back
+    _write(repo / "core" / "helper2.py", "h2 = 1\n")
+    _write(repo / "core" / "helper3.py", "h3 = 1\n")
+
+    refs = pf.referenced_modules(repo)
+
+    assert refs["theorems/tracked.py"] == {"qsearch_cli/commands/general.py", "theorems/deep.py"}
+    assert refs["theorems/helper.py"] == {"theorems/tracked.py"}
+    assert refs["theorems/deep.py"] == {"theorems/helper.py"}
+    assert not {"theorems/in_docstring.py", "theorems/in_comment.py", "theorems/in_string.py"} & set(refs)
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("theorems/helper.py", "not tracked by git"),
+        ("theorems/deep.py", "not tracked by git"),
+        ("core/helper2.py", "not tracked by git"),
+        ("core/helper3.py", "not tracked by git"),
+        ("theorems/gone.py", "missing on disk"),
+    }
+
+
+def test_line_scan_finds_what_a_full_parse_finds_on_the_real_checkout() -> None:
+    import ast
+
+    def statements(nodes) -> list[str]:
+        return sorted(ast.unparse(n) for n in nodes if isinstance(n, (ast.Import, ast.ImportFrom)))
+
+    files = [p for d in ("theorems", "core", "qsearch_cli") for p in sorted((REPO / d).rglob("*.py"))]
+    differing = []
+    for path in files:
+        text = path.read_text(encoding="utf-8")
+        if statements(pf._scanned_imports(text)) != statements(ast.walk(ast.parse(text))):
+            differing.append(path.relative_to(REPO).as_posix())
+    assert len(files) > 1000
+    assert differing == []
+
+
 def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None:
     imports = {
         "os": ("os", None),

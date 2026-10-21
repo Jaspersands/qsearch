@@ -46,9 +46,10 @@ The `imports` check collects references from these places:
 - Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and
   `qsearch_cli/commands/*.py`, including the lazy imports inside command bodies.
   `import theorems.x`, `from core.y import z`, `from qsearch_cli.main import main` and `from
-  theorems import x` name their file, whether or not it exists. A bare name, `from x import f` (the usual style here, and the
-  one an old-style addition to `qsearch.py` uses), counts when `theorems/x.py` exists, else
-  when `core/x.py` exists. Standard library names are skipped.
+  theorems import x` name their file, whether or not it exists. A bare name, `from x import
+  f` (the usual style here, and the one an old-style addition to `qsearch.py` uses), counts
+  when `theorems/x.py` exists, else when `core/x.py` exists. Standard library names are
+  skipped.
 - The `IMPORTS` table in `qsearch_cli/imports.py`, read with `ast.literal_eval`. A dotted
   `theorems.x` maps to `theorems/x.py`. A package-style entry, `("theorems", "x")` or
   `("core", "x")`, which is what `tools/split_cli/migrate.py sweep` writes for `from theorems
@@ -60,6 +61,16 @@ The `imports` check collects references from these places:
   `qsearch_cli/commands/general.py`. `qsearch_cli/parser.py` imports every `ORDER` module to
   build the parser, so one that is missing from a clone breaks every command, `--help`
   included.
+- Import statements inside every module found so far, followed until no new module turns
+  up, by the same rules. A committed theorem module whose new helper was never committed
+  works in the working copy and fails with `ModuleNotFoundError` in a clone. On 2026-10-22
+  the CLI's sources named 962 modules directly and 1092 with their imports.
+
+  These modules are scanned line by line rather than parsed, which keeps the check at about
+  one second instead of four: an `import` or `from ... import` that starts a line, outside
+  strings and comments, with its bracketed or backslash-continued names. On 2026-10-22 the
+  scan found exactly the import statements a full parse finds in every one of the 1281 files
+  under `theorems/`, `core/` and `qsearch_cli/`.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
 Git is asked only when the root is the top of its own work tree. Without that (no git, a
@@ -97,6 +108,9 @@ error. Delete that test once the agents fix the file.
   written, or was deleted, is not reported. `--imports` does not catch one inside a command
   body either: it resolves command functions without running them. A dotted or `from
   theorems import x` import of a missing module is reported.
+- In a module reached through another module, the line scan misses an import in a one-line
+  compound statement (`if x: import y`) or after a semicolon. A module that is not valid
+  UTF-8 is checked itself, but its imports are not followed.
 - A bare third-party name added to `IMPORTS` (say `numpy`) would be reported as a missing
   `core/numpy.py`. Today the table holds only `theorems/` and `core/` modules and six
   standard library names.

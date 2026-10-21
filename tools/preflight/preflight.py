@@ -11,7 +11,8 @@ git: the same merge carried 24 imports of modules that were only in one working 
 references are read statically, never imported: AST imports in qsearch.py,
 qsearch_cli/imports.py and qsearch_cli/commands/*.py (theorems.x, qsearch_cli.x, from core
 import y, and bare names that resolve to a file in theorems/ or core/), the IMPORTS table,
-the module column of DISPATCH, and the module columns of ORDER and FUNCTIONS. Every
+the module column of DISPATCH, and the module columns of ORDER and FUNCTIONS; then the
+imports inside each module found, by a line scan, until no new module turns up. Every
 subcommand in research/audits/cli_manifest.json must still be in the registry's ORDER, in
 the same module.
 
@@ -23,6 +24,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import re
 import subprocess
 import sys
 from dataclasses import asdict, dataclass
@@ -140,10 +142,51 @@ def _import_paths(root: Path, node: ast.AST) -> list[str]:
     return paths
 
 
+# Strings and comments, blanked before the line scan below (a triple-quoted string keeps its newlines).
+_STRING_OR_COMMENT = re.compile(
+    r'"""(?:\\[\s\S]|[^\\])*?"""'
+    r"|'''(?:\\[\s\S]|[^\\])*?'''"
+    r'|"(?:\\.|[^"\\\n])*"'
+    r"|'(?:\\.|[^'\\\n])*'"
+    r"|#[^\n]*"
+)
+_IMPORT_LINE = re.compile(r"^[ \t]*(?:from[ \t]+[\w.]+[ \t]+import\b|import[ \t]+[\w.])", re.M)
+
+
+def _scanned_imports(text: str) -> list[ast.stmt]:
+    """The import statements in Python source, found by a line scan instead of a full parse.
+
+    Parsing every module the CLI reaches through other modules takes about ten seconds; this
+    scan takes one. It sees an import that starts a line, outside strings and comments, with
+    its parenthesised or backslash-continued names. It misses a one-line compound statement
+    (``if x: import y``) and an import after a semicolon.
+    """
+    code = _STRING_OR_COMMENT.sub(lambda m: "\n" * m.group().count("\n"), text)
+    nodes: list[ast.stmt] = []
+    for match in _IMPORT_LINE.finditer(code):
+        end = match.start()
+        while True:
+            newline = code.find("\n", end)
+            end = len(code) if newline < 0 else newline
+            statement = code[match.start() : end]
+            if newline < 0 or (statement.count("(") <= statement.count(")") and not statement.endswith("\\")):
+                break
+            end += 1
+        try:
+            nodes.extend(ast.parse(statement.strip()).body)
+        except SyntaxError:
+            continue
+    return nodes
+
+
 def referenced_modules(root: Path) -> dict[str, set[str]]:
-    """Every theorems/, core/ or qsearch_cli/ file the CLI refers to, mapped to the files that refer to it."""
+    """Every theorems/, core/ or qsearch_cli/ file the CLI refers to, mapped to the files that refer to it.
+
+    Imports inside those files are followed too, since the CLI loads a module's imports with it.
+    """
     root = Path(root).resolve()
     refs: dict[str, set[str]] = {}
+    parsed: set[str] = set()
 
     def add(module_path: str | None, source: str) -> None:
         if module_path is not None:
@@ -152,6 +195,7 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
     for pattern in IMPORT_SOURCES:
         for path in sorted(root.glob(pattern)):
             rel = path.relative_to(root).as_posix()
+            parsed.add(rel)
             for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"), filename=rel)):
                 for module_path in _import_paths(root, node):
                     add(module_path, rel)
@@ -167,6 +211,21 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         add(_module_path(root, module), REGISTRY)
     for module in (_literal(root, REGISTRY, "FUNCTIONS") or {}).values():
         add(_module_path(root, module), REGISTRY)
+    queue = sorted(refs)
+    while queue:
+        rel = queue.pop()
+        if rel in parsed or not (root / rel).is_file():
+            continue
+        parsed.add(rel)
+        try:
+            text = (root / rel).read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue  # its own path is still checked; --imports reports a module that cannot load
+        for node in _scanned_imports(text):
+            for module_path in _import_paths(root, node):
+                if module_path not in refs:
+                    queue.append(module_path)
+                add(module_path, rel)
     return refs
 
 
