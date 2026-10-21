@@ -2,7 +2,8 @@
 
     python tools/corpus/mcp_server.py [--root PATH] [--dense auto|on|off]
 
-Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id).
+Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id),
+check_duplicate_negative(claim, threshold).
 The index refreshes incrementally before a query when it is older than --refresh-seconds.
 --dense auto uses embeddings only while every document has one (after `build --dense`);
 --dense on also embeds new documents at each refresh. Results carry `index_incomplete` and
@@ -24,6 +25,7 @@ from mcp.server.fastmcp import FastMCP  # noqa: E402
 
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json  # noqa: E402
+from tools.corpus.duplicates import check_claim  # noqa: E402
 from tools.corpus.ranking import Embedder  # noqa: E402
 
 
@@ -71,6 +73,23 @@ def create_server(
         if doc is None:
             return {"error": f"unknown doc_id {doc_id}"}
         return asdict(doc)
+
+    @server.tool()
+    def check_duplicate_negative(claim: str, threshold: float = 0.6) -> dict:
+        """Before filing a new negative result, check whether a retained negative already says
+        it. Returns the retained (and quarantined) negatives whose TF-IDF cosine with the claim
+        is at least threshold, highest first; duplicate is true when there is any. Pass the
+        claim and its reason. A match is a record to read and extend, not proof of identity;
+        if index_incomplete is true, no match does not mean the claim is new."""
+        ready()
+        matches = check_claim(corpus, claim, threshold=threshold)
+        return {
+            "claim": claim,
+            "threshold": threshold,
+            "matches": [_hit_json(h) for h in matches],
+            "duplicate": bool(matches),
+            **_issues_json(corpus),
+        }
 
     return server
 

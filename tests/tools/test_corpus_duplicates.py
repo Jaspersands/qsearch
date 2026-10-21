@@ -6,9 +6,11 @@ from pathlib import Path
 import pytest
 
 from tests.tools.conftest import NEGATIVES
+from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus.cli import main
 from tools.corpus.duplicates import check_claim, near_duplicates
+from tools.corpus.mcp_server import create_server
 
 HELSTROM = "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
 # The Helstrom record's claim with two words changed ("readout" -> "measurement", "dominates" -> "beats").
@@ -132,3 +134,11 @@ def test_cli_check_new_exit_code_gates_on_a_match(fake_repo: Path, tmp_path: Pat
     record = tmp_path / "record.json"
     record.write_text(json.dumps(NEGATIVES[0], indent=2))
     assert main([*root, "check-new", "--file", str(record)]) == 2
+
+
+def test_check_duplicate_negative_tool(fake_repo: Path) -> None:
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "check_duplicate_negative", {"claim": NEAR_CLAIM})
+    assert payload["duplicate"] is True and payload["threshold"] == 0.6 and payload["claim"] == NEAR_CLAIM
+    assert payload["matches"][0]["doc_id"] == HELSTROM and "index_incomplete" in payload
+    assert _call(server, "check_duplicate_negative", {"claim": "zebrafish migration"})["duplicate"] is False

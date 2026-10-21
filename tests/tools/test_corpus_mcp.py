@@ -25,7 +25,7 @@ def test_server_lists_the_three_tools(fake_repo: Path) -> None:
     async def names():
         return sorted(tool.name for tool in await server.list_tools())
 
-    assert anyio.run(names) == ["been_tried", "get_doc", "search_corpus"]
+    assert anyio.run(names) == ["been_tried", "check_duplicate_negative", "get_doc", "search_corpus"]
 
 
 def test_been_tried_tool_returns_grouped_hits(fake_repo: Path) -> None:
