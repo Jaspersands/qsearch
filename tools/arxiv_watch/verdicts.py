@@ -82,6 +82,13 @@ def save_verdicts(root: Path, data: dict) -> None:
     path.write_text(json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def verdict_entry(verdict: str, reason: str, by: str, action: str | None = None, today: str | None = None) -> dict:
+    """One verdicts-file entry; ValueError on an unknown verdict."""
+    if verdict not in VERDICTS:
+        raise ValueError(f"unknown verdict {verdict!r}; expected one of {', '.join(VERDICTS)}")
+    return {"verdict": verdict, "reason": reason, "action": action or None, "by": by, "reviewed_on": today or dt.date.today().isoformat()}
+
+
 def set_verdict(
     root: Path,
     arxiv_id: str,
@@ -92,16 +99,8 @@ def set_verdict(
     today: str | None = None,
 ) -> dict:
     """Record (or replace) one paper's verdict under its bare id (see normalize_id) and return the stored entry."""
-    if verdict not in VERDICTS:
-        raise ValueError(f"unknown verdict {verdict!r}; expected one of {', '.join(VERDICTS)}")
+    entry = verdict_entry(verdict, reason, by, action=action, today=today)
     arxiv_id = normalize_id(arxiv_id)
-    entry = {
-        "verdict": verdict,
-        "reason": reason,
-        "action": action or None,
-        "by": by,
-        "reviewed_on": today or dt.date.today().isoformat(),
-    }
     data = load_verdicts(root)
     data["verdicts"][arxiv_id] = entry
     save_verdicts(root, data)

@@ -271,6 +271,70 @@ def test_batch_shows_symbols_as_stored_so_a_copied_quote_is_accepted(math_flag: 
     assert result == {"imported": ["2610.44444"], "rejected": []}
 
 
+def _excerpt_row(root: Path, corpus: Corpus, arxiv_id: str = "2610.11111") -> dict:
+    """A row whose quote comes from the first nearest record's excerpt, so checking it needs the corpus."""
+    doc_id = _load_state(root)["papers"][arxiv_id]["nearest"][0]["doc_id"]
+    return _row(arxiv_id, " ".join(corpus.get(doc_id).text[:600].split()[2:9]), doc_id)
+
+
+def test_import_writes_nothing_when_a_later_row_fails(watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch, capsys) -> None:
+    import sqlite3
+
+    from tools.arxiv_watch import judge
+
+    root, corpus = watched
+    verdicts, collisions = (root / VERDICTS_FILE).read_bytes(), (root / "research/audits/arxiv_collisions.json").read_bytes()
+    good = _row("2610.11111", "A classical algorithm for quantum product readout")
+
+    # A bad second row stops the import before the first is written.
+    rows = _jsonl(tmp_path / "bad.jsonl", [good, _row("2610.11111", "x", verdict="maybe")])
+    with pytest.raises(ValueError, match="unknown verdict"):
+        import_judgements(root, [rows], "test", corpus=corpus)
+
+    # So does a corpus that cannot be opened while the second row's excerpt quote is checked.
+    def locked(root):
+        raise sqlite3.OperationalError("database is locked")
+
+    monkeypatch.setattr(judge, "_corpus", locked)
+    rows = _jsonl(tmp_path / "locked.jsonl", [good, _excerpt_row(root, corpus)])
+    with pytest.raises(sqlite3.OperationalError):
+        import_judgements(root, [rows], "test")
+    assert main(["--root", str(root), "--import", str(rows), "--judge", "test"]) == 2
+    assert capsys.readouterr().err == "error: database is locked\n"
+    assert (root / VERDICTS_FILE).read_bytes() == verdicts
+    assert (root / "research/audits/arxiv_collisions.json").read_bytes() == collisions
+
+
+def test_import_keeps_what_was_written_while_it_ran(watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch) -> None:
+    from tools.arxiv_watch import judge
+
+    root, corpus = watched
+    path = root / "research/audits/arxiv_collisions.json"
+    gap = {"track": "dcp", "since": "2026-09-01", "until": "2026-09-10", "found_on": "2026-10-23"}
+
+    def busy_corpus(root):  # another writer records a person's verdict and a gap while the rows are checked
+        set_verdict(root, "2610.11111", "false-alarm", "read it", "human", today="2026-10-23")
+        state = json.loads(path.read_text(encoding="utf-8"))
+        path.write_text(json.dumps({**state, "gaps": [gap]}), encoding="utf-8")
+        return corpus
+
+    monkeypatch.setattr(judge, "_corpus", busy_corpus)
+    rows = _jsonl(tmp_path / "rows.jsonl", [_excerpt_row(root, corpus)])
+    result = import_judgements(root, [rows], "test")
+    assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]}
+    assert load_verdicts(root)["verdicts"]["2610.11111"]["by"] == "human"
+    assert json.loads(path.read_text(encoding="utf-8"))["gaps"] == [gap]
+
+    path.write_text(json.dumps({**json.loads(path.read_text(encoding="utf-8")), "gaps": []}), encoding="utf-8")
+    monkeypatch.setattr(judge, "_corpus", lambda root: (path.write_text(
+        json.dumps({**json.loads(path.read_text(encoding="utf-8")), "gaps": [gap]}), encoding="utf-8"), corpus)[1])
+    set_verdict(root, "2610.11111", "related-only", "a judge's", "judge:old")
+    result = import_judgements(root, [rows], "test")
+    assert result == {"imported": ["2610.11111"], "rejected": []}
+    stored = _load_state(root)
+    assert stored["gaps"] == [gap] and stored["papers"]["2610.11111"]["verdict"]["by"] == "judge:test"
+
+
 def test_cli_exports_then_imports(watched: tuple[Path, Corpus], tmp_path: Path, capsys) -> None:
     root, _ = watched
     out = tmp_path / "judge"

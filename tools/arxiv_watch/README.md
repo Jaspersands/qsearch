@@ -134,8 +134,10 @@ per paper:
 `{"arxiv_id", "verdict", "reason", "quote", "quote_from", "action", "confidence"}`.
 
 Import checks every row before it writes anything: a missing or unreadable file, a row that
-is not a JSON object, an unknown verdict, or an id that is missing or not stored stops it
-(exit 2). A row is then rejected when
+is not a JSON object, an unknown verdict, an id that is missing or not stored, or a corpus
+index that cannot be opened to check an excerpt quote stops it (exit 2) with nothing written.
+The accepted rows are then merged into fresh copies of the verdicts and collisions files, one
+write each, so a verdict or run recorded meanwhile is kept. A row is rejected when
 
 - its quote is under six words (numbers count; symbols and TeX commands do not), or does not
   appear verbatim in the one text `quote_from` names: the abstract, or the excerpt of one of
