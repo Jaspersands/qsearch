@@ -628,6 +628,41 @@ def _review_verdicts(text: str) -> dict[str, str]:
 SEED_DAY = "2026-10-21"
 
 
+def _review_sources(text: str) -> dict[str, tuple[str, bool]]:
+    """arXiv id -> (the review's "Reason and action" cell, True) or (its "### id, ..." section, False)."""
+    found = {}
+    for line in text.splitlines():
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) == 5 and re.fullmatch(r"\d{4}\.\d{5}", cells[0]):
+            found[cells[0]] = (cells[4], True)
+    for match in re.finditer(r"^### (\d{4}\.\d{5}),", text, re.M):
+        end = re.compile(r"^##", re.M).search(text, match.end())
+        found[match.group(1)] = (text[match.start() : end.start() if end else len(text)], False)
+    return found
+
+
+def _flat(text: str) -> str:
+    return " ".join(text.split())
+
+
+def _words(text: str) -> set[str]:
+    """Words of three letters or more; a file path may gain its research/ prefix."""
+    return {word for word in re.findall(r"[^\W_]+", text.lower()) if len(word) > 2} - {"research"}
+
+
+def _assert_seed_text_follows_review(entry: dict, source: str, cell: bool) -> None:
+    """A table row's reason is a phrase of its cell, and its action uses only the cell's words (the
+    action may name the note's path where the cell says "that note"). A section entry's reason and
+    action are the section's own sentences and clauses."""
+    reason, action = entry["reason"], entry.get("action") or ""
+    if cell:
+        assert _flat(reason) in _flat(source), reason
+        assert _words(action) <= _words(source), action
+        return
+    for piece in re.split(r"(?<=[.;:])\s+", f"{reason} {action}".strip()):
+        assert piece in _flat(source), piece
+
+
 def _assert_seed_matches_review(verdicts: dict, text: str) -> None:
     """The 22 seeded entries still say what the review says.
 
@@ -645,6 +680,9 @@ def _assert_seed_matches_review(verdicts: dict, text: str) -> None:
     assert {arxiv_id: entry["verdict"] for arxiv_id, entry in seed.items()} == {arxiv_id: expected[arxiv_id] for arxiv_id in seed}
     assert all(entry["by"] == "human" and entry["reason"] for entry in seed.values())
     assert {"2610.06753", "2610.03566"} & set(seed) <= {arxiv_id for arxiv_id, entry in seed.items() if entry.get("action_done")}
+    sources = _review_sources(text)
+    for arxiv_id, entry in seed.items():
+        _assert_seed_text_follows_review(entry, *sources[arxiv_id])
 
 
 @pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
@@ -670,3 +708,19 @@ def test_seed_check_allows_later_verdicts_but_not_a_drifted_seed() -> None:
             _assert_seed_matches_review(changed, text)
     with pytest.raises(AssertionError):
         _assert_seed_matches_review({k: v for k, v in seeded.items() if k != "2610.01902"}, text)
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seed_check_catches_a_reworded_reason_or_action() -> None:
+    text = REVIEW.read_text(encoding="utf-8")
+    seeded = load_verdicts(REPO)["verdicts"]
+    for arxiv_id, field, value in (
+        ("2610.00502", "reason", "WRONG " + seeded["2610.00502"]["reason"]),
+        ("2610.00502", "action", "Do nothing."),
+        ("2609.40036", "reason", seeded["2610.06812"]["reason"]),  # another row's reason
+        ("2610.03566", "reason", "Its rejection sampler is per-symbol USD plus Prange, so the negative result stands."),
+        ("2610.06753", "action", "Preprint: cite the cap and reword question 2."),
+    ):
+        changed = {**seeded, arxiv_id: {**seeded[arxiv_id], field: value}}
+        with pytest.raises(AssertionError):
+            _assert_seed_matches_review(changed, text)
