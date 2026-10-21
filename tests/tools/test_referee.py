@@ -517,7 +517,7 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
             R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [_row(tmp_path, stem="OTHER", claims=[]), row])], "j")
     assert not (tmp_path / R.REVIEWS).exists()
 
-    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900)] * 8
+    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900)] * 6
     good = _row(tmp_path, claims=many, summary="s" * 2000)
     stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21")
@@ -544,12 +544,18 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     ("unclear", ["gap"], False),
     ("unsound", ["gap", "holds"], False),
     ("unsound", [], False),
+    ("needs-work", ["holds"], False),
+    ("needs-work", [], False),
+    ("sound", ["holds", "unclear"], False),
+    ("sound", ["unclear", "unclear"], False),
+    ("unclear", ["holds", "holds"], False),
     ("unsound", ["gap", "wrong"], True),
     ("needs-work", ["holds", "gap"], True),
-    ("needs-work", [], True),
-    ("sound", ["holds", "unclear"], True),
+    ("needs-work", ["unclear", "gap"], True),
+    ("sound", ["holds", "holds"], True),
     ("sound", [], True),
     ("unclear", ["unclear", "holds"], True),
+    ("unclear", [], True),
 ])
 def test_import_rejects_an_overall_verdict_that_contradicts_the_claims(tmp_path: Path, overall, verdicts, accepted) -> None:
     _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
@@ -561,6 +567,25 @@ def test_import_rejects_an_overall_verdict_that_contradicts_the_claims(tmp_path:
     else:
         with pytest.raises(ValueError, match="contradicts"):
             R.import_reviews(tmp_path, [answer], "j")
+
+
+def test_import_rejects_more_than_six_claims_and_a_non_boolean_self_check(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    seventh = [_claim("It holds for all twelve saved inputs", verdict="wrong"), _claim("not in the note at all, nowhere", verdict="bogus")]
+    for overall, extra in (("needs-work", seventh[0]), ("unsound", seventh[0]), ("needs-work", seventh[1])):
+        row = _row(tmp_path, overall=overall, claims=[_claim(quote)] * 6 + [extra])
+        with pytest.raises(ValueError, match="7 claims; at most 6"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "seven.jsonl", [row])], "j")
+    for value in ("false", "no", 0, 1, []):
+        row = _row(tmp_path, claims=[_claim(quote, covered_by_self_check=value)])
+        with pytest.raises(ValueError, match="covered_by_self_check"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "self_check.jsonl", [row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+    claims = [_claim(quote, covered_by_self_check=value) for value in (True, False, None)] + [_claim(quote)]
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "ok.jsonl", [_row(tmp_path, claims=claims)])], "j")
+    stored = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"]
+    assert [claim["covered_by_self_check"] for claim in stored] == [True, False, False, False]
 
 
 def test_import_rejects_malformed_rows_and_stems_that_are_paths(tmp_path: Path) -> None:

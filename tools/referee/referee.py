@@ -78,6 +78,8 @@ def select_notes(
 
 CLAIM_VERDICTS = ("holds", "gap", "wrong", "unclear")
 OVERALL = ("sound", "needs-work", "unsound", "unclear")
+WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
+OVERALL_FOR = {"wrong": "unsound", "gap": "needs-work", "unclear": "unclear", "holds": "sound"}  # by worst claim
 
 OUTPUT_FORMAT = (
     '{"stem": "NOTE_STEM", "content_sha": "copied from the packet", "overall": "needs-work", '
@@ -143,9 +145,10 @@ For each note:
    - `needs-work`: at least one gap, nothing shown wrong.
    - `unsound`: a load-bearing claim is wrong.
    - `unclear`: too little is written to judge.
-   The overall must agree with your claims: a `wrong` claim makes it `unsound` (and
-   `unsound` needs one), and a `gap` with nothing wrong makes it `needs-work`. A row that
-   contradicts this rejects your whole output file.
+   The overall must agree with your worst claim: a `wrong` claim makes it `unsound`, else a
+   `gap` makes it `needs-work`, else an `unclear` claim makes it `unclear`, and claims that
+   all hold make it `sound` (with no claims, `sound` or `unclear`). A row that contradicts
+   this, or that has more than 6 claims, rejects your whole output file.
 
 You must not propose new research, new algorithms or next steps: judge only what is
 written. Work from the packet and do not edit any file in the repository.
@@ -310,6 +313,9 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
     verdict = claim.get("verdict")
     if verdict not in CLAIM_VERDICTS:
         raise ValueError(f"{where}: bad claim verdict {verdict!r}")
+    conceded = claim.get("covered_by_self_check")
+    if conceded is not None and not isinstance(conceded, bool):
+        raise ValueError(f"{where}: covered_by_self_check must be true or false, not {conceded!r}")
     quote = str(claim.get("quote", ""))
     span, reason = find_quote(quote, source)
     if span is None and (strict or reason.startswith("quote under")):
@@ -320,20 +326,20 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
         "verdict": verdict,
         "step": str(claim.get("step", ""))[:300],
         "finding": str(claim.get("finding", ""))[:600],
-        "covered_by_self_check": bool(claim.get("covered_by_self_check")),
+        "covered_by_self_check": bool(conceded),
     }
 
 
 def overall_conflict(overall: str, claims: list[dict]) -> str | None:
-    """Why `overall` contradicts the claim verdicts, or None: a wrong claim makes the note
-    unsound, a gap (and nothing wrong) makes it need work, and unsound needs a wrong claim."""
-    verdicts = {claim["verdict"] for claim in claims}
-    if "wrong" in verdicts and overall != "unsound":
-        return "a claim is wrong, so overall must be unsound"
-    if "wrong" not in verdicts and overall == "unsound":
-        return "unsound needs a wrong claim"
-    if "gap" in verdicts and "wrong" not in verdicts and overall != "needs-work":
-        return "the worst claim is a gap, so overall must be needs-work"
+    """Why `overall` contradicts the claim verdicts, or None. The worst claim sets it: a wrong
+    claim makes the note unsound, else a gap needs-work, else an unclear claim unclear, and
+    claims that all hold sound. A row with no claims may be sound or unclear."""
+    if not claims:
+        needs = {"unsound": "a wrong claim", "needs-work": "a gap"}
+        return f"{overall} needs {needs[overall]}" if overall in needs else None
+    worst = max((claim["verdict"] for claim in claims), key=WORST.__getitem__)
+    if overall != OVERALL_FOR[worst]:
+        return f"the worst claim is {worst}, so overall must be {OVERALL_FOR[worst]}"
     return None
 
 
@@ -416,7 +422,9 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                                      "exported packet beside the judge file (miscopied?)")
                 else:
                     strict = False
-            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given[:MAX_CLAIMS]]
+            if len(given) > MAX_CLAIMS:
+                raise ValueError(f"{path}: {stem}: {len(given)} claims; at most {MAX_CLAIMS}")
+            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given]
             conflict = overall_conflict(overall, claims)
             if conflict:
                 raise ValueError(f"{path}: {stem}: overall {overall!r} contradicts the claims: {conflict}")
@@ -445,7 +453,6 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             "skipped": skipped}
 
 
-WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
 FLAGGED = ("unsound", "needs-work")
 QUEUE = "research/audits/REFEREE_QUEUE.md"
 NEXT = 30

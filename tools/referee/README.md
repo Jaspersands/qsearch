@@ -89,10 +89,13 @@ text.
    up to six `claims`, each with a verbatim `quote`, a `verdict` (`holds`, `gap`, `wrong`,
    `unclear`), the `step` at fault, a `finding` (the counterexample or missing condition)
    and `covered_by_self_check`. The judge must not propose new research.
-3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, an
-   `overall` that contradicts the claims (a `wrong` claim requires `unsound` and
-   `unsound` requires a `wrong` claim; a `gap` with nothing wrong requires `needs-work`),
-   a quote under six words, or a quote that is not in the note text. A quote's words (runs
+3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, a
+   `covered_by_self_check` that is not `true` or `false` (omitted or null reads as false),
+   more than six claims, an `overall` that contradicts the claims (the worst claim sets it:
+   `wrong` requires `unsound`, else `gap` requires `needs-work`, else `unclear` requires
+   `unclear`, and claims that all hold require `sound`; a row with no claims may be `sound`
+   or `unclear`), a quote under six words, or a quote that is not in the note text (all
+   claims are checked). A quote's words (runs
    of letters and digits in any script, so Greek variables and superscript exponents count;
    an underscore splits words) must appear consecutively in the note after lower-casing,
    and the symbols between them, before the first and after the last (`<`, `>`, `=`, `+`,
@@ -116,7 +119,7 @@ text.
    the import. Re-importing a note replaces its review, except that a row that is stale
    on arrival (an earlier pass imported again) never replaces a stored review of the
    note's current bytes: import keeps that review and reports the row as skipped. Stored
-   text is capped: summary 1500 characters, finding 600, quote 400, six claims.
+   text is capped: summary 1500 characters, finding 600, step 300, quote 400.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.
