@@ -455,7 +455,7 @@
         "stem": "COHERENT_BPQM_ERASURE",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "As a headline this drops the scope stated in the body. The phase/workspace composition was executed only on the declared M5 code (checks 25,26,12; 12 qubits; gate-reference cap 10 data wires, statevector cap 18 wires), for two orders and two c values. The root programs use explicit herald tables that can be exponential (artifact explicit_herald_tables_can_be_exponential=true, efficient_approximate_reliability_register_implemented=false). The 128-512 wire inputs have no circuit, decoder error or TV (artifact quantum_circuit_compiled_or_executed=false). The decision should say the composition is",
+          "finding": "As a headline this drops the scope stated in the body. The phase/workspace composition was executed only on the declared M5 code (checks 25,26,12; 12 qubits), for two orders and two c values. The root programs use explicit herald tables that can be exponential (artifact explicit_herald_tables_can_be_exponential=true, efficient_approximate_reliability_register_implemented=false). The 128-512 wire inputs have no circuit, decoder error or TV (artifact quantum_circuit_compiled_or_executed=false). The decision should say the composition is checked on that finite control only.",
           "quote": "The coherent erasure stage is now implemented and its phase/workspace\ncomposition is checked",
           "step": "Research Decision And Next Decisive Gate",
           "verdict": "gap",
@@ -507,7 +507,7 @@
         "stem": "EXPLICIT_QUADRATIC_OPI",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be trivial: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76. Rank also requires Nc<=Kt. Only the N127,K90 and the two N31,K19 inputs are certified perfect. The headline keeps none of these conditions.",
+          "finding": "The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be weak: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76, about 0.59. Rank also requires Nc<=Kt. Only the N127,K90 and the two N31,K19 inputs are certified perfect. The headline keeps none of these conditions.",
           "quote": "The high-rate quadratic family has a constructive classical explanation, not\na remaining quantum-advantage candidate",
           "step": "Revised Research Direction",
           "verdict": "gap",
@@ -523,19 +523,6 @@
           "finding": "The norm-pencil section states that the budgets are 'deliberately EXPLICIT but NOT MATCHED' (96 full interpolations against 8192 scored line parameters), and that 'No matched quantum wall-clock/gate comparison is claimed'. The attacks are matched only in using the same input, so the title implies a cost-matched comparison that the body disclaims.",
           "quote": "Folded Norm Source: Phases, Scalar Rank And Matched Attacks",
           "step": "Title",
-          "verdict": "gap",
-          "verified": true
-        }
-      },
-      {
-        "overall": "needs-work",
-        "reviewed_on": "2026-10-22",
-        "stem": "INTERVAL_SOFT_DECODER",
-        "worst_claim": {
-          "covered_by_self_check": false,
-          "finding": "The classical argument behind this cut covers only the KV-certified window d/p<C<=L/p, which forces d<L. At constant L with growing codimension outside that window, the DP costs O(N*L*d*p^d) and is not polynomial, and the body says 'No such conclusion is drawn for growing L or d'. The decision sentence drops that restriction.",
-          "quote": "cut claims of a\nSUPERPOLYNOMIAL quantum-search separation at constant full-RS interval width",
-          "step": "Decision And Next Scientific Question",
           "verdict": "gap",
           "verified": true
         }
@@ -611,7 +598,7 @@
         "stem": "NATIVE_RLWE_SPARSE_WITNESS_AUDIT",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "The certificate covers witnesses of norm <=R with R=2^40, 2^53, 2^66, which equals 2*sqrt(dq) at the three references; the note never shows R is the decoder's passing radius. The rotational decoder accepts up to R0=ceil(t_star/(2E)) = 1478681177790966 (about 2^50.4) at d64, about 2^69.5 at d256 and about 2^89 at d1024 (research/certificates/native_rlwe_subfield_cover_bounds.json). Rerunning inequality (4) at R0 certifies only k=22, 87 and 332 (327 elliptical), not 44/193/796. Sparse witnesses with support 23-44 at d64 and norm in (R,R0] are not excluded. Section 6 lists larger radii as out of ",
+          "finding": "The certificate covers witnesses of norm <=R=2^40, 2^53, 2^66 (2*sqrt(dq) at the three references); the note never shows R is the decoder's passing radius. The rotational decoder accepts up to R0=ceil(t_star/(2E)), about 2^50.4 at d64, 2^69.5 at d256 and 2^89 at d1024 (native_rlwe_subfield_cover_bounds.json). At R0, inequality (4) certifies only k=22, 87 and 332 (327 elliptical), not 44/193/796. Sparse witnesses of support 23-44 at d64 and norm in (R,R0] are not excluded. Section 6 lists larger radii as out of scope; the headline drops both the radius and the three-instance certification.",
           "quote": "On typical native labels this\ndoes not produce a sufficiently short point",
           "step": "1. Decision (headline scope)",
           "verdict": "gap",
@@ -637,7 +624,7 @@
         "stem": "NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "Units cannot leave a native line (Section 2 is general), but whether the two native lines are the wrong search space depends on both fixed-line lower bounds exceeding t^2/E^2. That is checked only on the saved d64 kernel (two lanes). For the zero label the m-line bound is det(I)=1 and the obstruction fails, and Section 2 says units can be 'extremely useful' on a well-scaled orbit. The sentence needs the condition 'on labels where both fixed-line bounds reach t^2/E^2, certified on the saved d64 instance'. Section 7's easy-label control acknowledges the limitation but the sentence does not carry",
+          "finding": "Units cannot leave a native line (Section 2 is general), but whether the two native lines are the wrong search space depends on both fixed-line lower bounds exceeding t^2/E^2. That is checked only on the saved d64 kernel (two lanes). For the zero label the m-line bound is det(I)=1 and the obstruction fails, and Section 2 says units can be 'extremely useful' on a well-scaled orbit. The sentence needs the condition 'on labels where both fixed-line bounds reach t^2/E^2, certified on the saved d64 instance'. Section 7's easy-label control concedes this, but the sentence does not carry it.",
           "quote": "A quantum unit wrapper around the unmodified\nnative generators would be solving the wrong search space",
           "step": "3. Stronger Fixed-Native-Line Obstruction (final paragraph)",
           "verdict": "gap",
@@ -688,10 +675,10 @@
         "reviewed_on": "2026-10-22",
         "stem": "POLAR_SOURCE_DESIGN",
         "worst_claim": {
-          "covered_by_self_check": false,
-          "finding": "The rows shown match the artifact (16/64, 78/256=0.304688, 361/1024=0.352539, 1614/4096=0.394043, with TV uppers 0.0826, 0.0935, 0.0998, 0.0995). However, the artifact also has an N16 instance (max 2 constraints, rate 1/8, TV upper 0.0599) that the table omits, so the table is not 'all coarse controls'.",
-          "quote": "Largest set certified at average TV<=0.1",
-          "step": "Live Outcomes table",
+          "covered_by_self_check": true,
+          "finding": "Only one half-rate length is certified (N32768, G256, r3: 0.0102208<0.010221, matching the artifact). Every coarse half-rate target at N16..4096 is UNKNOWN, and no other length or grid is certified at half rate, so no family over N is constructed. The bound also depends on the review-pending degradation/hybrid derivations. The next sentence concedes that there is no fixed-grid asymptotic theorem.",
+          "quote": "This finite result removes the missing public-set construction premise for\nthe stated half-rate family",
+          "step": "Live Outcomes, N32768 paragraph",
           "verdict": "gap",
           "verified": true
         }
@@ -767,8 +754,8 @@
         "stem": "PRIME_CHARACTER_NORM_ATTACK",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "The previous experiment's artifact also leaves N31,K16 mixed seed71 at 30/31 (r=2, rate 16/31>1/2) and the r=3/r=4 mixed controls below perfect. The norm attack was not run on N31, and its budget K>max(|A|,D) cannot hold there: |A|+|B|=31 forces max(|A|,D)>=16=K. Neither this summary nor 'It does not apply to the saved K39 inputs' reports that case.",
-          "quote": "but left mixed high-rate controls at124/127 and122/127",
+          "finding": "The previous experiment's artifact also leaves N31,K16 mixed seed71 at 30/31 (r=2, rate 16/31>1/2) and the r=3/r=4 mixed controls below perfect. The norm attack was not run on N31, and its budget K>max(|A|,D) cannot hold there: |A|+|B|=31 forces max(|A|,D)>=16=K. Neither this summary nor 'It does not apply to the saved K39 inputs' reports that case. 'Solved common cosets' also overstates it: they were solved only when K>=(r-1)ceil(N/r), and the N127,K39 global inputs score 108/127 and 110/127 (judge E).",
+          "quote": "solved common\ncosets classically but left mixed high-rate controls at124/127 and122/127",
           "step": "Research Decision",
           "verdict": "gap",
           "verified": true

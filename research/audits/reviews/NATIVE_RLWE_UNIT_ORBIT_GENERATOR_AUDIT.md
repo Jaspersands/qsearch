@@ -1,6 +1,6 @@
 # Referee review: NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT
 
-Note: `research/NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -13,7 +13,7 @@ The algebra holds: the minimal multiplier delta_K of (f,k), the invariance of de
 > A quantum unit wrapper around the unmodified native generators would be solving the wrong search space
 
 - Step: 3. Stronger Fixed-Native-Line Obstruction (final paragraph)
-- Finding: Units cannot leave a native line (Section 2 is general), but whether the two native lines are the wrong search space depends on both fixed-line lower bounds exceeding t^2/E^2. That is checked only on the saved d64 kernel (two lanes). For the zero label the m-line bound is det(I)=1 and the obstruction fails, and Section 2 says units can be 'extremely useful' on a well-scaled orbit. The sentence needs the condition 'on labels where both fixed-line bounds reach t^2/E^2, certified on the saved d64 instance'. Section 7's easy-label control acknowledges the limitation but the sentence does not carry
+- Finding: Units cannot leave a native line (Section 2 is general), but whether the two native lines are the wrong search space depends on both fixed-line lower bounds exceeding t^2/E^2. That is checked only on the saved d64 kernel (two lanes). For the zero label the m-line bound is det(I)=1 and the obstruction fails, and Section 2 says units can be 'extremely useful' on a well-scaled orbit. The sentence needs the condition 'on labels where both fixed-line bounds reach t^2/E^2, certified on the saved d64 instance'. Section 7's easy-label control concedes this, but the sentence does not carry it.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

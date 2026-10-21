@@ -1,6 +1,6 @@
 # Referee review: CONJUGATE_CHIRP_REPAIR
 
-Note: `research/CONJUGATE_CHIRP_REPAIR.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/CONJUGATE_CHIRP_REPAIR.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -37,7 +37,7 @@ Both judges agreed that the bilinear identity, the Kloosterman/Salie coordinate 
 > EXPECTED satisfied-fraction advantage over this legal classical baseline vanishes rapidly as p,n grow
 
 - Step: Diagonal Heuristic: Uniform Expected-Score Falsifier
-- Finding: Judge B's gap was dropped. eta=min(1,4sqrt(p)/(p-1)) is below 1 only for p>=19, so the bound is vacuous on the six native controls (artifact advantage uppers 17/20, 25/28, 29/40). The sentence, however, is an asymptotic statement under joint growth of p and n, and for p>=19, n>=2 the bound sqrt((p-1)rho(1-rho))eta^n plus the 1/sqrt(p) classical term tends to 0. The n=1 counterexample keeps n fixed. The stored p101,n16 bound is 9.87e-6, below 1e-4 as stated.
+- Finding: Judge B's gap was dropped. eta=min(1,4sqrt(p)/(p-1)) is below 1 only for p>=19, so the bound is vacuous on the three diagonal native controls (artifact advantage uppers 17/20, 25/28, 29/40; the rank-one controls store no such bound). The sentence, however, is an asymptotic statement under joint growth of p and n, and for p>=19, n>=2 the bound sqrt((p-1)rho(1-rho))eta^n plus the classical term sqrt((p-1)rho(1-rho))p^(-n/2) tends to 0. The n=1 counterexample keeps n fixed. The stored p101,n16 bound is 9.87e-6, below 1e-4 as stated.
 - Conceded by the note's own self-check: no
 
 ### 5. holds

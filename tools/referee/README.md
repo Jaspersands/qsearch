@@ -206,7 +206,7 @@ Round two changed two things in `INSTRUCTIONS.md`. The packet gained an `artifac
 - The new checks also produced three low-value gaps: a table without the N16 row (D), the NORM_ATTACK title (E), and an unnamed fully solved configuration (E). Treat a scope gap with no effect on a conclusion as minor.
 - Both judges rated all four notes needs-work. This batch has no correctly scoped note, so whether the new checks over-flag clean notes is still untested. The next calibration should include one.
 
-The four calibration notes' stored reviews are round-two judge D's.
+The four calibration notes' stored reviews are round-two judge D's, two of them corrected on 2026-10-22 (see Corrections under First pass). NORM_ATTACK's decision gap now also carries E's K39-global overstatement, which D missed; D's other reviews already hold E's real findings. POLAR_SOURCE_DESIGN's N16-row gap no longer quotes "all coarse controls", which the note does not say, and is listed after the family and headline gaps, so the queue and the brief show the family gap as its worst claim.
 
 ## First pass (2026-10-21)
 
@@ -231,3 +231,32 @@ body states (review pending, the sizes actually certified, the inputs where the 
 fails). Read those as wording fixes unless the finding says a conclusion changes. No claim
 was found wrong, so the plan's hand spot-check of two unsound claims had nothing to check;
 the reconciling agent's per-claim checks took its place.
+
+### Corrections (2026-10-22)
+
+An audit of the stored reviews corrected ten of them. Each corrected row is a copy of the
+note's stored judge row (`pass1/out/` or `calibration_r2/out_d/`) with only the audited
+claims, and where needed the overall and summary, changed; quotes are unchanged except
+NORM_ATTACK's, which is lengthened to E's verbatim quote of the same sentence. The rows are
+in `research/audits/reviews/corrections/2026-10-22.jsonl`, imported with
+`--judge audit-correction-2026-10-22`, so for these notes the stored review is that file's
+row, not `out/`'s.
+
+- INTERVAL_SOFT_DECODER: the decision-sentence gap (A's, confirmed by the reconciler) is
+  now holds, and the note is sound. Every quantum guarantee the note cites (d/p<C<=L/p,
+  rate+density>1) needs d<L at constant L, where the DP is polynomial, so the cut of
+  separation claims at constant width needs no window qualifier.
+- COHERENT_BPQM_ERASURE, NATIVE_RLWE_SPARSE_WITNESS_AUDIT and
+  NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions never mention the
+  600-character cap on findings, and import cut these three gap findings mid-sentence
+  without a mark. They are shortened to fit and keep their conclusions.
+- Wrong sentences in four findings, verdicts unchanged: PRIME_CHARACTER_INTERLEAVED_PROBE
+  read the p7 individual mean (.553571, 1/56 below 4/7, as the producer predicts) as
+  contradicting near-uniformity; FOLDED_NORM_SOURCE credited 24/73 to the collision formula
+  (it is M*eps/(1-eps+M*eps), M=3); CONJUGATE_CHIRP_REPAIR said six native controls carry
+  the washout bound (three diagonal ones do) and called the classical term 1/sqrt(p) (it is
+  sqrt((p-1)rho(1-rho))p^(-n/2)); EXPLICIT_QUADRATIC_OPI called a bound of about 0.59
+  trivial.
+- POLAR_SOURCE_DESIGN and PRIME_CHARACTER_NORM_ATTACK: see the end of Calibration.
+
+After the corrections the 30 first-pass notes stand at 24 needs-work and 6 sound.

@@ -1,19 +1,19 @@
 # Referee review: INTERVAL_SOFT_DECODER
 
-Note: `research/INTERVAL_SOFT_DECODER.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/INTERVAL_SOFT_DECODER.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
-Judge A's one gap is in the decision, which cuts superpolynomial separation claims 'at constant full-RS interval width' without the d<L / KV-certified window that the body keeps. I confirmed it, since at constant L with codimension outside that window the DP costs p^d; Judge B instead flagged the title and the receiver table (5 of 8 controls shown); I drop both. The title's 'Actual Receiver' and 'Classical Falsifiers' are accurate names for the executed p=5 receiver and the DP/Babai baselines. The eight-control sentence lists all eight, and the omitted complex and S={0} controls are discussed under 'Decisive controls', with no conclusion resting on the table. The Cauchy ceiling, the 3/2 tuning bound (451/1395, 19/45 recomputed), the pointwise counterexample and the four Babai certificates hold and match the artifact.
+Judge A's one gap, that the decision cuts superpolynomial separation claims 'at constant full-RS interval width' without the d<L, KV-certified window the body keeps, was confirmed on 2026-10-21 and reversed by the 2026-10-22 audit: every quantum guarantee the note cites (d/p<C<=L/p, and rate+density>1) needs d<L at constant L, where the DP is polynomial, so outside that window there is no quantum claim for the cut to remove. Judge B flagged the title and the receiver table (5 of 8 controls shown), and both were dropped. The title's 'Actual Receiver' and 'Classical Falsifiers' are accurate names for the executed p=5 receiver and the DP/Babai baselines, and the omitted complex and S={0} controls are discussed under 'Decisive controls', with no conclusion resting on the table. The Cauchy ceiling, the 3/2 tuning bound (451/1395, 19/45 recomputed), the pointwise counterexample and the four Babai certificates hold and match the artifact.
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
 > cut claims of a SUPERPOLYNOMIAL quantum-search separation at constant full-RS interval width
 
 - Step: Decision And Next Scientific Question
-- Finding: The classical argument behind this cut covers only the KV-certified window d/p<C<=L/p, which forces d<L. At constant L with growing codimension outside that window, the DP costs O(N*L*d*p^d) and is not polynomial, and the body says 'No such conclusion is drawn for growing L or d'. The decision sentence drops that restriction.
+- Finding: A separation needs an efficient quantum algorithm with a guarantee, and every guarantee the note cites lies inside d<L at constant L: Chailloux-Tillich needs d/p<C with C<=L/p for any complex profile, and Sun-Wootters needs rate+density>1, i.e. (1-d/p)+L/p>1, so d<L (and applies only at fixed rates). There the O(N*L*d*p^d) DP is polynomial. Outside d<L the DP costs p^d, but no quantum algorithm has a guarantee there, so the cut drops no separation claim. Carrying 'certified' over from the body would be wording only.
 - Conceded by the note's own self-check: no
 
 ### 2. holds
