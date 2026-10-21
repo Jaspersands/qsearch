@@ -208,8 +208,19 @@ def build_packet(root: Path, path: Path) -> dict:
 
 
 def export_batches(root: Path, out_dir: Path, notes: list[Path], batch_size: int = 5) -> list[Path]:
-    """INSTRUCTIONS.md plus batch_NN.json files of `batch_size` packets, in the given order."""
-    out_dir.mkdir(parents=True, exist_ok=True)
+    """INSTRUCTIONS.md plus batch_NN.json files of `batch_size` packets, in the given order.
+
+    Raises ValueError, before writing anything, when `out_dir` is a file or cannot be made, or
+    already holds batch files: an earlier, larger export's leftovers would be judged again."""
+    if out_dir.exists() and not out_dir.is_dir():
+        raise ValueError(f"{out_dir} is not a folder")
+    earlier = sorted(path.name for path in out_dir.glob("batch_*.json")) if out_dir.is_dir() else []
+    if earlier:
+        raise ValueError(f"{out_dir} already holds {', '.join(earlier)} from an earlier export; use a new folder per pass")
+    try:
+        out_dir.mkdir(parents=True, exist_ok=True)
+    except OSError as error:
+        raise ValueError(f"cannot make {out_dir}: {error.strerror or error}") from error
     (out_dir / "INSTRUCTIONS.md").write_text(REFEREE_INSTRUCTIONS, encoding="utf-8")
     paths = []
     for start in range(0, len(notes), batch_size):
@@ -691,7 +702,11 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
                 parser.error(f"no such note: {', '.join(missing)}")
         else:
             notes = _selected(root, args)
-        paths = export_batches(root, args.out_dir, notes, batch_size=args.batch_size)
+        try:
+            paths = export_batches(root, args.out_dir, notes, batch_size=args.batch_size)
+        except ValueError as error:
+            print(f"error: {error}; nothing exported", file=sys.stderr)
+            return 2
         print(f"{len(notes)} notes in {len(paths)} batches; instructions in {args.out_dir / 'INSTRUCTIONS.md'}")
         return 0
 

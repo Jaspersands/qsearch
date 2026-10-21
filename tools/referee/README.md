@@ -22,7 +22,7 @@ python tools/referee/referee.py status [--json]
 | Command | What it does |
 |---|---|
 | `select` | Lists review-pending notes, newest first, without a current review. |
-| `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status; the name's letter case must match. |
+| `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status; the name's letter case must match. Exit 2, nothing written, when `--out-dir` is a file or already holds `batch_*.json` from an earlier export (use a new folder per pass). |
 | `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
 | `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
 | `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, and stale ones. Used by the agent brief. |

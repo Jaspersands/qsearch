@@ -484,6 +484,30 @@ def test_export_writes_instructions_and_batches_with_artifact_excerpts(tmp_path:
     assert "verbatim" in instructions and "must not propose" in instructions
 
 
+def test_export_refuses_a_folder_with_earlier_batches_and_a_file(tmp_path: Path, capsys) -> None:
+    # A smaller export into an earlier pass's folder left its batch_02.json to be judged again.
+    notes = _export_fixture(tmp_path)
+    out = tmp_path / "pass"
+    R.export_batches(tmp_path, out, notes)
+    before = {path.name: path.read_bytes() for path in out.iterdir()}
+    with pytest.raises(ValueError, match="batch_01.json, batch_02.json"):
+        R.export_batches(tmp_path, out, notes[:1])
+    assert {path.name: path.read_bytes() for path in out.iterdir()} == before
+    (tmp_path / "afile").write_text("kept", encoding="utf-8")
+    for target in (out, tmp_path / "afile", tmp_path / "afile" / "sub"):
+        capsys.readouterr()
+        assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(target), "--note", "OTHER_1"]) == 2, target
+        captured = capsys.readouterr()
+        assert captured.out == "" and len(captured.err.strip().splitlines()) == 1 and "nothing exported" in captured.err
+    assert (tmp_path / "afile").read_text(encoding="utf-8") == "kept"
+    assert {path.name: path.read_bytes() for path in out.iterdir()} == before
+    other = tmp_path / "other"
+    other.mkdir()
+    (other / "notes.txt").write_text("kept", encoding="utf-8")
+    assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(other), "--note", "OTHER_1"]) == 0
+    assert sorted(path.name for path in other.iterdir()) == ["INSTRUCTIONS.md", "batch_01.json", "notes.txt"]
+
+
 def _claim(quote: str, verdict: str = "gap", **extra) -> dict:
     return {"quote": quote, "verdict": verdict, "step": "Question And Result", "finding": "The margin needs a uniform bound.", **extra}
 
