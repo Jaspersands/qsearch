@@ -30,6 +30,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
+from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.arxiv import Client, Paper  # noqa: E402
@@ -116,6 +117,7 @@ _AUTHORED = re.compile(_WE, re.I)
 
 NEAREST_KINDS = ("negative", "dequant", "note", "hypothesis", "theorem")
 LABEL_ORDER = ("possible-kill", "possible-scoop", "related", "already-cited", "unrelated")
+FLAGGED = ("possible-kill", "possible-scoop")
 
 
 @dataclass
@@ -201,6 +203,7 @@ def _stored_paper(arxiv_id: str, record: dict) -> Paper:
 def relabel(root: Path, corpus: Corpus) -> int:
     """Recompute tracks and labels for every stored paper after a rule change; returns how many changed."""
     state = _load_state(root)
+    attach_verdicts(state, load_verdicts(root)["verdicts"])
     changed = 0
     for arxiv_id, record in state["papers"].items():
         paper = _stored_paper(arxiv_id, record)
@@ -213,6 +216,26 @@ def relabel(root: Path, corpus: Corpus) -> int:
     return changed
 
 
+def attach_verdicts(state: dict, verdicts: dict) -> int:
+    """Copy each stored paper's verdict onto its record; returns how many records changed.
+
+    `verdicts` maps arXiv id to entry, as in `load_verdicts(root)["verdicts"]`. A record has a
+    `verdict` key only while the verdicts file holds one for it (a withdrawn verdict is dropped),
+    so a week with no new paper and no new verdict leaves the JSON byte-identical.
+    """
+    changed = 0
+    for arxiv_id, record in state["papers"].items():
+        entry = verdicts.get(arxiv_id)
+        if entry is not None:
+            if record.get("verdict") != entry:
+                record["verdict"] = dict(entry)
+                changed += 1
+        elif "verdict" in record:
+            del record["verdict"]
+            changed += 1
+    return changed
+
+
 # --- state ----------------------------------------------------------------------------------------
 
 
@@ -220,7 +243,7 @@ def _save(root: Path, state: dict) -> None:
     path, digest = _paths(root)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    digest.write_text(render_digest(state), encoding="utf-8")
+    digest.write_text(render_digest(state, verdicts=load_verdicts(root)["verdicts"]), encoding="utf-8")
 
 
 def _paths(root: Path) -> tuple[Path, Path]:
@@ -318,6 +341,9 @@ def run(
         report.new += 1
         report.by_label[label] = report.by_label.get(label, 0) + 1
 
+    # After the fetch, so a paper given a verdict before it was first stored carries it on arrival.
+    changed |= bool(attach_verdicts(state, load_verdicts(root)["verdicts"]))
+
     # A gap stays listed until a run of that track that was not cut short starts at or before it.
     gaps = list(state.get("gaps", []))
     kept = [g for g in gaps if not (g["track"] in windows and g["track"] not in report.truncated and windows[g["track"]] <= g["since"])]
@@ -337,7 +363,14 @@ def run(
     return report
 
 
-def render_digest(state: dict, per_section: int = 40) -> str:
+def _cell(text) -> str:
+    return " ".join(str(text).split()).replace("|", "/")
+
+
+def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = None) -> str:
+    """The markdown digest. `verdicts` (arXiv id -> entry) drives the Reviewed table, and papers
+    with a verdict leave the possible-kill and possible-scoop sections."""
+    verdicts = verdicts or {}
     papers = sorted(state["papers"].values(), key=lambda p: (p["published"], p["arxiv_id"]), reverse=True)
     counts = {label: sum(p["label"] == label for p in papers) for label in LABEL_ORDER}
     lines = [
@@ -351,6 +384,12 @@ def render_digest(state: dict, per_section: int = 40) -> str:
         *[f"| {label} | {counts[label]} |" for label in LABEL_ORDER],
         "",
     ]
+    if verdicts:
+        lines += [
+            "The counts are machine labels. Flagged papers with a reviewed verdict are listed under Reviewed,",
+            "not in the possible-kill and possible-scoop sections.",
+            "",
+        ]
     gaps = state.get("gaps") or []
     if gaps:
         lines += [
@@ -366,7 +405,8 @@ def render_digest(state: dict, per_section: int = 40) -> str:
         ]
     titles = {"possible-kill": "Possible kills", "possible-scoop": "Possible scoops", "related": "Related"}
     for label, heading in titles.items():
-        section = [p for p in papers if p["label"] == label][:per_section]
+        section = [p for p in papers if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts)]
+        section = section[:per_section]
         lines += [f"## {heading}", ""]
         if not section:
             lines += ["None yet.", ""]
@@ -381,6 +421,29 @@ def render_digest(state: dict, per_section: int = 40) -> str:
                 f"| {p['published']} | [{p['arxiv_id']}]({p['url']}) {title} | {', '.join(p['tracks'])} | {cues} | {near} |"
             )
         lines.append("")
+    lines += ["## Reviewed", ""]
+    if not verdicts:
+        lines += ["None yet.", ""]
+        return "\n".join(lines)
+    lines += [
+        f"Verdicts from `{VERDICTS_FILE}`. Labels are triage; verdicts are judgement.",
+        "A paper listed as not stored has a verdict but is not in the collisions file.",
+        "",
+        "| arXiv | Paper | Label | Verdict | By | Reviewed | Reason | Action |",
+        "|---|---|---|---|---|---|---|---|",
+    ]
+    rank = {verdict: index for index, verdict in enumerate(VERDICTS)}
+    for arxiv_id, entry in sorted(verdicts.items(), key=lambda item: (rank.get(item[1].get("verdict"), len(rank)), item[0])):
+        p = state["papers"].get(arxiv_id)
+        paper = f"[{_cell(p['title'])}]({p['url']})" if p else "not stored"
+        action = _cell(entry.get("action") or "")
+        if action and entry.get("action_done"):
+            action += " (done)"
+        lines.append(
+            f"| {arxiv_id} | {paper} | {p['label'] if p else '-'} | {entry.get('verdict')} | {_cell(entry.get('by', ''))} | "
+            f"{entry.get('reviewed_on', '')} | {_cell(entry.get('reason', ''))} | {action} |"
+        )
+    lines.append("")
     return "\n".join(lines)
 
 

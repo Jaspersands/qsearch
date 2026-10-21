@@ -449,3 +449,43 @@ def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
     with pytest.raises(ValueError):
         set_verdict(tmp_path, "2610.11111", "maybe", "unsure", "human")
     assert not (tmp_path / VERDICTS_FILE).exists()
+
+
+def _section(digest: str, heading: str) -> str:
+    """One `## heading` section of the digest, up to the next section."""
+    start = digest.index(f"## {heading}\n")
+    end = digest.find("\n## ", start)
+    return digest[start:] if end == -1 else digest[start:end]
+
+
+def test_paper_with_a_verdict_leaves_the_flagged_list(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    tracks = {"dcp": TRACKS["dcp"]}
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    client = FakeClient([kill])
+    run(fake_repo, client, corpus, tracks=tracks, today="2026-10-19")
+    digest_path = fake_repo / "research" / "audits" / "ARXIV_WATCH.md"
+    assert "2610.11111" in _section(digest_path.read_text(), "Possible kills")
+
+    set_verdict(fake_repo, "2610.11111", "false-alarm", "cue spurious", "human", today="2026-10-21")
+    set_verdict(fake_repo, "2610.99999", "related-only", "never fetched", "human", today="2026-10-21")
+    report = run(fake_repo, client, corpus, tracks=tracks, today="2026-10-26")
+    assert report.new == 0 and report.saved  # the verdict alone rewrites the outputs
+    record = _state(fake_repo)["papers"]["2610.11111"]
+    assert record["verdict"]["verdict"] == "false-alarm" and record["label"] == "possible-kill"
+    digest = digest_path.read_text()
+    assert "2610.11111" not in _section(digest, "Possible kills")
+    reviewed = _section(digest, "Reviewed")
+    assert "| 2610.11111 |" in reviewed and "false-alarm" in reviewed
+    assert "| 2610.99999 | not stored |" in reviewed
+
+    paths = [fake_repo / "research" / "audits" / name for name in ("arxiv_collisions.json", "ARXIV_WATCH.md")]
+    before = [path.read_bytes() for path in paths]
+    assert not run(fake_repo, client, corpus, tracks=tracks, today="2026-11-02").saved
+    assert [path.read_bytes() for path in paths] == before
+
+    (fake_repo / VERDICTS_FILE).write_text(json.dumps({"verdicts": {}}), encoding="utf-8")
+    assert run(fake_repo, client, corpus, tracks=tracks, today="2026-11-09").saved  # a withdrawn verdict is dropped
+    assert "verdict" not in _state(fake_repo)["papers"]["2610.11111"]
+    assert "2610.11111" in _section(digest_path.read_text(), "Possible kills")
