@@ -58,7 +58,10 @@ def pair_report(
     """Pairs of documents of one kind whose cosine is at least `threshold`, highest first.
 
     Within a pair `a < b`. Ties are ordered by id, on scores rounded to four places, so a
-    report is stable across runs. With `per_family`, at most that many pairs whose two ids
+    report is stable across runs on one TF-IDF fit. Documents changed since the last fit are
+    patched in with that fit's IDF, which can move a score by a few hundredths; call
+    `corpus.refit()` first for a report that depends only on the current documents (the
+    CLI does for `--out`). With `per_family`, at most that many pairs whose two ids
     share a family (the id before its last `-<number>`) are kept; other pairs are not capped.
     `total` counts the pairs left after that cap, so a caller can say how many `limit` cut.
     """

@@ -227,7 +227,8 @@ def _duplicates_markdown(payload: dict) -> str:
         "# Near-duplicate negatives" if kind == "negative" else f"# Near-duplicate `{kind}` documents",
         "",
         f"Generated on {payload['generated_on']} by `python tools/corpus/cli.py near-duplicates`: "
-        f"{described} whose TF-IDF cosine is at least {payload['threshold']}{cap}, highest first: {count}",
+        f"{described} whose TF-IDF cosine is at least {payload['threshold']}{cap}, highest first: {count} "
+        f"{payload['documents']} documents were compared, on a TF-IDF fit of the current documents.",
         "",
         "A cosine of 1.000 means the same words in the same proportions. A name that occurs in a single "
         "record is not in the vocabulary, so two records generated from one template for different "
@@ -248,7 +249,21 @@ def _duplicates_markdown(payload: dict) -> str:
 
 
 def cmd_near_duplicates(args: argparse.Namespace) -> int:
+    out = Path(args.out) if args.out else None
+    if out is not None and out.suffix != ".json":
+        print(f"error: --out must name a .json file (FILE.md is written next to it), got {out}", file=sys.stderr)
+        return 1
     corpus = _corpus(args)
+    incomplete = corpus.incomplete()
+    if out is not None and incomplete:
+        print(
+            f"error: INDEX INCOMPLETE: a registry file or record could not be read; not writing {out}. "
+            "Repair the registry and run again.",
+            file=sys.stderr,
+        )
+        return 2
+    if out is not None:
+        corpus.refit()  # scores then depend on the current documents only, so the report reproduces
     report = pair_report(
         corpus, kind=args.kind, threshold=args.threshold, limit=args.limit, per_family=args.per_family
     )
@@ -262,28 +277,39 @@ def cmd_near_duplicates(args: argparse.Namespace) -> int:
         "per_family": args.per_family,
         "limit": args.limit,
         "total": report.total,
+        "documents": report.documents,
         "pairs": [asdict(pair) for pair in pairs],
         "generated_on": dt.date.today().isoformat(),
+        "changed_since_fit": corpus.changed_since_fit(),
+        **_issues_json(corpus),
     }
     count = _pair_count(len(pairs), report.total)
-    if args.out:
-        out = Path(args.out)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    status = 2 if incomplete else 0
+    if out is not None:
         markdown = out.with_name(out.stem.upper() + ".md")
-        markdown.write_text(_duplicates_markdown(payload), encoding="utf-8")
+        try:
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+            markdown.write_text(_duplicates_markdown(payload), encoding="utf-8")
+        except OSError as exc:
+            print(f"error: cannot write {out} and {markdown}: {exc}", file=sys.stderr)
+            return 1
     if args.json:
         print(json.dumps(payload, indent=2))
-    elif args.out:
+        return status
+    if out is not None:
         print(f"{count} at cosine >= {args.threshold}; wrote {out} and {markdown}")
-    else:
-        for index, pair in enumerate(pairs, start=1):
-            print(f"  {index}. {pair.score:.3f}  {_record_label(pair.a)}  ~  {_record_label(pair.b)}")
-            print(f"     {pair.title_a[:160]}")
-            print(f"     {pair.title_b[:160]}")
-        cut = " (raise --limit to see the rest)" if report.total > len(pairs) else ""
-        print(f"\n{count} at TF-IDF cosine >= {args.threshold}{cut}. A pair is a lead to read, not a verdict.")
-    return 0
+        return status
+    if incomplete:
+        print("INDEX INCOMPLETE: a registry file or record could not be read (see the warnings on stderr).")
+        print("Pairs of the records that could not be read are missing below.\n")
+    for index, pair in enumerate(pairs, start=1):
+        print(f"  {index}. {pair.score:.3f}  {_record_label(pair.a)}  ~  {_record_label(pair.b)}")
+        print(f"     {pair.title_a[:160]}")
+        print(f"     {pair.title_b[:160]}")
+    cut = " (raise --limit to see the rest)" if report.total > len(pairs) else ""
+    print(f"\n{count} at TF-IDF cosine >= {args.threshold}{cut}. A pair is a lead to read, not a verdict.")
+    return status
 
 
 def _claim_header(report: ClaimReport, threshold: float) -> str:

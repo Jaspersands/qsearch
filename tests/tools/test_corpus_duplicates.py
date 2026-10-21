@@ -203,8 +203,13 @@ def test_cli_near_duplicates_writes_json_and_markdown(fake_repo: Path, tmp_path:
     out = tmp_path / "dups.json"
     assert main(["--root", str(fake_repo), "near-duplicates", "--threshold", "0.8", "--out", str(out)]) == 0
     payload = json.loads(out.read_text())
-    assert set(payload) == {"kind", "threshold", "per_family", "limit", "total", "pairs", "generated_on"}
+    assert set(payload) == {
+        "kind", "threshold", "per_family", "limit", "total", "pairs", "generated_on",
+        "documents", "changed_since_fit", "index_incomplete", "index_issues",
+    }  # fmt: skip
     assert (payload["kind"], payload["threshold"], payload["per_family"], payload["limit"]) == ("negative", 0.8, None, 200)
+    assert payload["documents"] == len(NEGATIVES) + 1 + 2 and payload["index_incomplete"] is False
+    assert payload["changed_since_fit"] == 0  # --out refits first
     assert payload["total"] == len(payload["pairs"])
     assert (payload["pairs"][0]["a"], payload["pairs"][0]["b"]) == ("negative:NEG-DUP-A", "negative:NEG-DUP-B")
     markdown = (tmp_path / "DUPS.md").read_text()
@@ -213,6 +218,61 @@ def test_cli_near_duplicates_writes_json_and_markdown(fake_repo: Path, tmp_path:
     capsys.readouterr()
     assert main(["--root", str(fake_repo), "near-duplicates", "--json"]) == 0
     assert json.loads(capsys.readouterr().out)["pairs"][0]["b"] == "negative:NEG-DUP-B"
+
+
+def test_cli_near_duplicates_out_refits_so_the_report_does_not_depend_on_patches(
+    fake_repo: Path, tmp_path: Path
+) -> None:
+    corpus = _corpus_with(fake_repo, RESTATEMENT)
+    # One more record is under 5 % of the documents, so the shared TF-IDF state is patched,
+    # keeping the old vocabulary and IDF; a refit weighs "echidna" and "collective" anew.
+    path = fake_repo / "research" / "registry" / "negative_results.json"
+    extra = {"id": "NEG-ECHIDNA-ECHO", "claim": "Echidna collective readout.", "reason_invalid": "Echidna."}
+    path.write_text(json.dumps(NEGATIVES + RESTATEMENT + [extra], indent=2), encoding="utf-8")
+    assert corpus.refresh().refit is False and corpus.changed_since_fit() > 0
+    patched = pair_report(corpus, threshold=0.5).pairs[0].score
+    fresh = Corpus(fake_repo, index_dir=tmp_path / "fresh_index")
+    fresh.refresh()
+    refit = pair_report(fresh, threshold=0.5).pairs[0].score
+    assert patched != refit
+    out = tmp_path / "dups.json"
+    assert main(["--root", str(fake_repo), "near-duplicates", "--threshold", "0.5", "--out", str(out)]) == 0
+    payload = json.loads(out.read_text())
+    assert payload["pairs"][0]["score"] == refit and payload["changed_since_fit"] == 0
+
+
+def test_cli_near_duplicates_refuses_to_write_from_an_incomplete_index(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    negatives = fake_repo / "research" / "registry" / "negative_results.json"
+    text = json.dumps(NEGATIVES + [DUP_A, DUP_B], indent=2)
+    negatives.write_text(text[: len(text) // 2])  # caught half-way through a rewrite
+    out = tmp_path / "dups.json"
+    root = ["--root", str(fake_repo), "near-duplicates", "--threshold", "0.8"]
+    assert main([*root, "--out", str(out)]) == 2
+    assert "INDEX INCOMPLETE" in capsys.readouterr().err
+    assert not out.exists() and not (tmp_path / "DUPS.md").exists()
+    assert main([*root, "--json"]) == 2
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["index_incomplete"] is True and payload["documents"] == 1  # only the quarantined record
+    assert any(issue["path"].endswith("negative_results.json") for issue in payload["index_issues"])
+    assert main(root) == 2
+    assert "INDEX INCOMPLETE" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize("name", ["dups.md", "DUPS.md", "dups.txt", "dups"])
+def test_cli_near_duplicates_out_must_be_a_json_file(fake_repo: Path, tmp_path: Path, capsys, name: str) -> None:
+    folder = tmp_path / "reports"
+    folder.mkdir()
+    assert main(["--root", str(fake_repo), "near-duplicates", "--out", str(folder / name)]) == 1
+    assert "--out must name a .json file" in capsys.readouterr().err
+    assert list(folder.iterdir()) == []
+
+
+def test_cli_near_duplicates_out_reports_an_unwritable_path(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    out = tmp_path / "dups.json"
+    out.mkdir()
+    assert main(["--root", str(fake_repo), "near-duplicates", "--out", str(out)]) == 1
+    assert f"error: cannot write {out}" in capsys.readouterr().err
+    assert not (tmp_path / "DUPS.md").exists()
 
 
 def test_cli_near_duplicates_says_how_many_pairs_the_limit_cut(fake_repo: Path, tmp_path: Path, capsys) -> None:

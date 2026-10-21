@@ -145,7 +145,15 @@ after 2026-10-04, paraphrased blind by a separate agent that saw only the claims
 Two checks for negatives that say what an existing record already says
 (`duplicates.py`). Both score by TF-IDF cosine (`Corpus.cosine`, the index's own word
 unigram and bigram vectors), not by the rank-fusion score a search hit carries, so a score
-is a similarity in [0, 1] whatever else is in the index.
+is a similarity in [0, 1], not a rank. It still depends on the rest of the index through
+the IDF weights, and on the fit history: between refits (see Ranking above: more than 5 %
+of documents changed) changed documents are patched in with the last fit's vocabulary and
+IDF, which can move a score by a few hundredths. On a shared index patched 406 documents past
+its fit, the committed report's `COSET-DISTINGUISHABILITY-DEBT-S10/S8-PARTIAL_MATCHING` pair
+(0.9002 on a fresh fit) fell just under 0.9, and a `check-new` match within a few thousandths
+of 0.6 can flip the same way. `near-duplicates --out` therefore refits first, so the committed report depends only on
+the current documents, and its JSON records `changed_since_fit` (0 after that refit);
+`build --full` refits the shared index for everything else.
 
 ```bash
 python tools/corpus/cli.py near-duplicates --out research/audits/registry_duplicates.json --per-family 3
@@ -157,11 +165,16 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   (default 0.9), highest first, at most `--limit` (200). `--per-family N` keeps at most N
   pairs whose two ids differ only in their last `-<number>` (`...-N48-0-1` and
   `...-N48-0-2`). The output always gives the count before the limit ("200 of 539 pairs"),
-  and the JSON carries it as `total` next to `per_family` and `limit`. `--kind` picks
-  another document kind; a kind with no documents is an error (exit 1). `--out FILE.json`
-  also writes `FILE.md` with the stem upper-cased; the committed report is
+  and the JSON carries it as `total` next to `per_family` and `limit`, with the number of
+  `documents` compared, `changed_since_fit`, `index_incomplete` and `index_issues`. `--kind`
+  picks another document kind; a kind with no documents is an error (exit 1). When a
+  registry file or record cannot be read the command exits 2, like `been-tried`, and with
+  `--out` it writes nothing, so a half-written registry never replaces the committed report
+  with a shorter one. `--out` must name a `.json` file (exit 1 otherwise, or when it cannot be
+  written); it also writes `FILE.md` with the stem upper-cased; the committed report is
   `research/audits/registry_duplicates.json` and `REGISTRY_DUPLICATES.md` (0.9,
-  `--per-family 3`: 167 pairs on 2026-10-21, all of them).
+  `--per-family 3`: 167 pairs on 2026-10-22, all of them, the same pairs and scores as on
+  2026-10-21).
 - `check-new` checks one draft claim against the negative records, retained and
   quarantined, at cosine 0.6. It scores every negative-kind document, not only a search's
   top hits, so no record at or above the threshold is missed; the header gives how many

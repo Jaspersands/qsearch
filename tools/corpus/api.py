@@ -211,6 +211,20 @@ class Corpus:
         self._tfidf, self._kinds, self._dense = tfidf, None, None
         return not patchable
 
+    def refit(self) -> None:
+        """Refit TF-IDF from every stored text now, and save it.
+
+        Between refits, changed documents are patched in with the vocabulary and IDF of the
+        last fit, so cosines depend on that history (by up to a few hundredths). A refit
+        makes them a function of the current documents alone.
+        """
+        self._state()
+        self._sync_tfidf("", "", [], [], force_refit=True)
+
+    def changed_since_fit(self) -> int:
+        """Documents patched into the TF-IDF state since it was last fit (0 right after a refit)."""
+        return self._state().changed_since_fit
+
     def _embedder_or_default(self) -> Embedder:
         if self._embedder is None:
             self._embedder = sentence_transformer_embedder()
