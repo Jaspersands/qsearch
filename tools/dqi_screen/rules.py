@@ -253,6 +253,52 @@ def existential_line(alpha: float, rho: float, q: int) -> float:
     return (lo + hi) / 2
 
 
+_EXACT_TILT_LIMIT = 2**16  # sum over F_q up to here; the von Mises limit beyond
+
+
+def _tilt(t: float, q: int) -> tuple[float, float]:
+    """(D(P_t || uniform), 1 - E_t cos) for P_t(v) proportional to exp(t cos(2 pi v / q)): an exact sum
+    over F_q for small q, else the q -> infinity (von Mises) limit by midpoint quadrature on [0, pi]
+    where exp(t (cos - 1)) is not negligible. With w = exp(t (cos - 1)) and its mean <w>, the
+    divergence is -ln <w> - t (1 - E_t cos)."""
+    import numpy as np
+
+    if q <= _EXACT_TILT_LIMIT:
+        gap = 2 * np.sin(np.pi * np.arange(q) / q) ** 2  # 1 - cos(2 pi v / q)
+        weight = np.exp(-t * gap)
+        mean = weight.mean()
+    else:
+        width = min(math.pi, 40 / math.sqrt(t)) if t > 0 else math.pi
+        points = 4001
+        theta = (np.arange(points) + 0.5) * width / points
+        gap = 2 * np.sin(theta / 2) ** 2
+        weight = np.exp(-t * gap)
+        mean = weight.sum() * width / points / math.pi  # uniform measure on [0, pi]
+    one_minus_mu = float((gap * weight).sum() / weight.sum())
+    return float(-math.log(mean) - t * one_minus_mu), one_minus_mu
+
+
+def cosine_existential_line(alpha: float, q: int) -> float:
+    """Proposition 13(iii): the largest mean of cos(2 pi v / q) over distributions on F_q within
+    relative entropy alpha ln q of uniform, attained by the exponential tilt P_t; t by bisection
+    so that D(P_t || uniform) = alpha ln q (the divergence increases with t)."""
+    budget = _unit("alpha", alpha) * math.log(q)
+    lo, hi = 0.0, 1.0
+    while _tilt(hi, q)[0] < budget:
+        lo, hi = hi, 2 * hi
+        if hi > 1e300:
+            return 1.0
+    for _ in range(200):
+        mid = (lo + hi) / 2 if hi < 4 * max(lo, 1.0) else math.sqrt(max(lo, 1.0) * hi)
+        if _tilt(mid, q)[0] < budget:
+            lo = mid
+        else:
+            hi = mid
+        if hi - lo <= 1e-13 * hi:
+            break
+    return 1 - _tilt((lo + hi) / 2, q)[1]
+
+
 def subfield_rate(alpha: float, b: int, c: int) -> float:
     """R4: rate of the instance read over the subfield, min(1, b alpha / c)."""
     if b < 1 or c < 1:

@@ -143,6 +143,23 @@ def test_cosine_reach_uses_signed_packing_not_hamming_bounds() -> None:
     assert "signed" in S.render(s).splitlines()[-1]
 
 
+def test_cosine_existential_line() -> None:
+    # Proposition 13(iii) and Table 3 of arXiv:2610.06753: Q* ~= 0.726 for MPI (alpha = 0.07, q = 8191).
+    assert R.cosine_existential_line(0.07, 8191) == pytest.approx(0.726, abs=5e-4)
+    # Exact sum over F_q up to 2^16, the von Mises limit beyond: the two agree across the switch.
+    for alpha in (0.01, 0.07, 0.3):
+        assert R.cosine_existential_line(alpha, 65521) == pytest.approx(R.cosine_existential_line(alpha, 65537), abs=1e-4)
+    values = [R.cosine_existential_line(a, 2**61 - 1) for a in (0.001, 0.01, 0.05, 0.1)]
+    assert values == sorted(set(values)) and 0 < values[0] and values[-1] < 1
+    assert R.cosine_existential_line(0.9, 2**61 - 1) == pytest.approx(1)  # 1 - O(q^(-2 alpha)) rounds to 1
+    s, checks = _run("mpi_signed_cosine.json")
+    assert s.quantities["existential_line"] == pytest.approx(0.726, abs=5e-4)
+    assert checks["R3"].passed is True and s.verdict == "viable"
+    for finite in (0.80, 0.99):  # above Q*: no assignment of a typical instance is that good
+        s, checks = _run("mpi_signed_cosine.json", finite_dqi_mean=finite)
+        assert checks["R3"].passed is False and s.verdict == "unknown"
+
+
 def test_cosine_r2_passes_exactly_when_the_margin_is_positive() -> None:
     for n in (6, 70, 420, 2000, 4000):
         for radius in (0, 1, 5, 10, 15, 30, 100, 209, 1000, 2999, 3000, 3500):

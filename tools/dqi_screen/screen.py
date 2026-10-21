@@ -215,7 +215,7 @@ def _quantities(c: Candidate) -> dict[str, float | int | None]:
         "cosine_objective": cos_obj,
         "lambda_crit_cos": None if count else threshold,
         "restart_length": R.restart_length(alpha, mu, 1 if count else 2) if mu is not None else None,
-        "existential_line": R.existential_line(alpha, c.rho, c.q) if count else None,
+        "existential_line": R.existential_line(alpha, c.rho, c.q) if count else R.cosine_existential_line(alpha, c.q),
         "rho_crit": R.rho_crit(alpha) if count else None,
         "alpha_sub": alpha_sub,
         "subfield_baseline": R.subfield_baseline(c.rho, alpha_sub, c.m) if count and subfield else None,
@@ -319,8 +319,7 @@ def _claimed(c: Candidate, qn: dict) -> tuple[float | None, str]:
 
 
 def _check_r3(c: Candidate, qn: dict) -> Check:
-    if c.objective != "count":
-        return Check("R3", None, f"{NOT_APPLICABLE} (count objective only)")
+    """The claimed value against the existential line Q*: Definition 5 (count) or Proposition 13(iii) (cosine)."""
     value, label = _claimed(c, qn)
     if value is None:
         return Check("R3", None, "give radius or finite_dqi_mean")
