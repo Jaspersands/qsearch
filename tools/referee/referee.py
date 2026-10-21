@@ -37,9 +37,41 @@ from tools.referee.extract import DATE, _resolve_artifact, _status_block, artifa
 REVIEWS = "research/audits/reviews/reviews.json"
 
 
+class StoreError(ValueError):
+    """reviews.json cannot be read or does not have the shape import writes."""
+
+
+def _entry_problem(entry) -> str | None:
+    if not isinstance(entry, dict):
+        return "is not a JSON object"
+    claims = entry.get("claims") or []
+    if not isinstance(claims, list) or not all(
+            isinstance(claim, dict) and isinstance(claim.get("quote"), str) and isinstance(claim.get("verdict"), str)
+            for claim in claims):
+        return "has claims that are not objects with a string quote and verdict"
+    if not isinstance(entry.get("summary", ""), str):
+        return "has a summary that is not a string"
+    return None
+
+
 def load_reviews(root: Path) -> dict:
+    """The stored reviews, `{"notes": {}}` before the first import. A store that cannot be read
+    or does not have import's shape (`{"notes": {STEM: entry}}`, each entry an object whose
+    claims are objects with a string quote and verdict) raises StoreError naming the file."""
     path = root / REVIEWS
-    return read_json(path) if path.exists() else {"notes": {}}
+    if not path.exists():
+        return {"notes": {}}
+    try:
+        data = read_json(path)
+    except (OSError, ValueError) as error:  # ValueError covers JSONDecodeError and UnicodeDecodeError
+        raise StoreError(f"{path}: cannot read the review store: {error}") from error
+    if not isinstance(data, dict) or not isinstance(data.get("notes"), dict):
+        raise StoreError(f'{path}: the review store is not a JSON object with a "notes" object')
+    for stem, entry in data["notes"].items():
+        problem = _entry_problem(entry)
+        if problem:
+            raise StoreError(f"{path}: the stored review of {stem!r} {problem}")
+    return data
 
 
 def note_sha(path: Path) -> str:
@@ -455,7 +487,12 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     notes.update(stored)
     store = root / REVIEWS
     store.parent.mkdir(parents=True, exist_ok=True)
-    store.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    tmp = store.with_name(f".{store.name}.{os.getpid()}.tmp")  # replaced in one step, never left half written
+    try:
+        tmp.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+        os.replace(tmp, store)
+    finally:
+        tmp.unlink(missing_ok=True)
     return {"imported": sorted(stored), "stale": sorted(stem for stem, entry in stored.items() if entry["stale"]),
             "skipped": skipped}
 
@@ -471,7 +508,8 @@ def worst_claim(entry: dict) -> dict | None:
 
 
 def stored_reviews(root: Path) -> dict:
-    """Stored reviews whose stem is a note name (import refuses others; this skips hand edits)."""
+    """Stored reviews whose key is a note name: import never writes another, so a hand-added
+    key such as a path is skipped (a malformed entry already failed in load_reviews)."""
     return {stem: entry for stem, entry in load_reviews(root).get("notes", {}).items() if STEM.match(stem)}
 
 
@@ -623,8 +661,15 @@ def main(argv: list[str] | None = None) -> int:
     stat = sub.add_parser("status", parents=[common], help="Flagged and stale reviews.")
     stat.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
-    root = args.root
+    try:
+        return _run(parser, args)
+    except StoreError as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
 
+
+def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
+    root = args.root
     if args.command == "select":
         rows = []
         for path in _selected(root, args):

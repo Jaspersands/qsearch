@@ -128,7 +128,11 @@ Cost: about 100k tokens per batch of five notes.
 
 - `research/audits/reviews/reviews.json`: `{"notes": {STEM: {reviewed_on, judge,
   content_sha, overall, claims, summary, stale}}}`, sorted. Each claim has `quote`,
-  `verified`, `verdict`, `step`, `finding` and `covered_by_self_check`.
+  `verified`, `verdict`, `step`, `finding` and `covered_by_self_check`. Import writes it to
+  a temporary file and renames that over it, so it is never left half written. When it
+  cannot be read or lacks that shape (each entry an object, its claims objects with a
+  string `quote` and `verdict`), every command stops with a one-line error naming the file
+  and exit 2, and import leaves it as it is.
 - `research/audits/reviews/<STEM>.md`: the overall verdict, summary and each claim with its
   quote, verdict, step and finding; marked stale when the note changed since.
 - `research/audits/REFEREE_QUEUE.md`: counts by overall verdict (current reviews) and

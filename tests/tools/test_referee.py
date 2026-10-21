@@ -975,3 +975,42 @@ def test_cli_round_trip(tmp_path: Path, capsys) -> None:
     capsys.readouterr()
     assert R.main(["import", str(bad), "--root", root, "--judge", "test-judge"]) == 2
     assert "bad overall verdict" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize("text", [
+    "", '{"notes": {"FIXTURE_NOTE": ', "[]", '{"notes": []}', '{"reviews": {}}', '{"notes": {"FIXTURE_NOTE": "x"}}',
+    '{"notes": {"FIXTURE_NOTE": {"claims": ["x"]}}}', '{"notes": {"FIXTURE_NOTE": {"claims": [{"quote": 1, "verdict": "gap"}]}}}',
+    '{"notes": {"FIXTURE_NOTE": {"claims": [], "summary": ["s"]}}}',
+])
+def test_a_damaged_store_stops_every_command_with_one_line(tmp_path: Path, capsys, text: str) -> None:
+    _export_fixture(tmp_path)
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(text, encoding="utf-8")
+    answer = _jsonl(tmp_path / "out" / "rows.jsonl", [_row(tmp_path)])
+    for argv in (["status"], ["status", "--json"], ["select"], ["render"], ["export", "--out-dir", str(tmp_path / "o")],
+                 ["import", str(answer), "--judge", "j"]):
+        capsys.readouterr()
+        assert R.main([*argv, "--root", str(tmp_path)]) == 2, argv
+        captured = capsys.readouterr()
+        assert captured.out == "" and "reviews.json" in captured.err and len(captured.err.strip().splitlines()) == 1, argv
+    assert store.read_text(encoding="utf-8") == text
+    assert not (tmp_path / R.QUEUE).exists() and not (tmp_path / "o").exists()
+    with pytest.raises(R.StoreError, match="reviews.json"):
+        R.status(tmp_path)
+
+
+def test_import_replaces_the_store_in_one_step(tmp_path: Path, monkeypatch) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "a.jsonl", [_row(tmp_path)])], "first")
+    store = tmp_path / R.REVIEWS
+    before = store.read_bytes()
+
+    def interrupted(source, target) -> None:
+        raise OSError("interrupted")
+
+    monkeypatch.setattr(R.os, "replace", interrupted)
+    with pytest.raises(OSError, match="interrupted"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "b.jsonl", [_row(tmp_path, overall="sound", claims=[])])], "second")
+    assert store.read_bytes() == before
+    assert sorted(path.name for path in store.parent.iterdir()) == ["reviews.json"]
