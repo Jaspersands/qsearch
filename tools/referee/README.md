@@ -82,8 +82,13 @@ field. The judge is told to work from the full text.
    starts may be kept or dropped. The stored quote is the note's own wording of the
    span, not the judge's copy. A quote lifted from the artifact excerpt fails, because
    it is not in the note. A row whose `content_sha` differs from the note's current hash
-   is stored with `stale: true`. Re-importing a note replaces its review. Stored text is
-   capped: summary 1500 characters, finding 600, quote 400, six claims.
+   (the note was edited after export) is stored with `stale: true`, and its quotes are
+   checked against the text the judge read, taken from the `batch_NN.json` beside the
+   judge file (in its folder or the folder above) when that text's hash matches. When no
+   exported text is found, a quote that is not in the current note is stored as the judge
+   wrote it with `verified: false` instead of rejecting the file. Re-importing a note
+   replaces its review. Stored text is capped: summary 1500 characters, finding 600,
+   quote 400, six claims.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.
@@ -91,7 +96,8 @@ Cost: about 100k tokens per batch of five notes.
 ## Outputs
 
 - `research/audits/reviews/reviews.json`: `{"notes": {STEM: {reviewed_on, judge,
-  content_sha, overall, claims, summary, stale}}}`, sorted.
+  content_sha, overall, claims, summary, stale}}}`, sorted. Each claim has `quote`,
+  `verified`, `verdict`, `step`, `finding` and `covered_by_self_check`.
 - `research/audits/reviews/<STEM>.md`: the overall verdict, summary and each claim with its
   quote, verdict, step and finding; marked stale when the note changed since.
 - `research/audits/REFEREE_QUEUE.md`: counts by overall verdict (current reviews) and

@@ -226,16 +226,19 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     return None, "quote not verbatim in the note"
 
 
-def _claim_entry(where: str, claim: dict, source: str) -> dict:
+def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> dict:
+    """A stored claim. When not `strict` (the judge read a version that is gone), a quote that
+    is not in `source` is kept as the judge wrote it and marked unverified."""
     verdict = claim.get("verdict")
     if verdict not in CLAIM_VERDICTS:
         raise ValueError(f"{where}: bad claim verdict {verdict!r}")
     quote = str(claim.get("quote", ""))
     span, reason = find_quote(quote, source)
-    if span is None:
+    if span is None and (strict or reason.startswith("quote under")):
         raise ValueError(f"{where}: {reason}: {quote[:120]!r}")
     return {
-        "quote": span[:400],
+        "quote": (span or quote)[:400],
+        "verified": span is not None,
         "verdict": verdict,
         "step": str(claim.get("step", ""))[:300],
         "finding": str(claim.get("finding", ""))[:600],
@@ -243,9 +246,35 @@ def _claim_entry(where: str, claim: dict, source: str) -> dict:
     }
 
 
+def exported_texts(paths: list[Path]) -> dict[tuple[str, str], str]:
+    """Note texts the judges read, by (stem, content_sha), from the `batch_NN.json` files in
+    each judge file's folder or its parent (`DIR/out/*.jsonl` sits under `DIR/batch_NN.json`).
+    A text whose hash is not its `content_sha` is ignored."""
+    texts: dict[tuple[str, str], str] = {}
+    folders = {Path(path).resolve().parent for path in paths}
+    for batch in sorted({batch for folder in folders for batch in (*folder.glob("batch_*.json"), *folder.parent.glob("batch_*.json"))}):
+        try:
+            packets = json.loads(batch.read_text(encoding="utf-8")).get("notes") or []
+        except (OSError, ValueError, AttributeError):
+            continue
+        for packet in packets if isinstance(packets, list) else []:
+            if not isinstance(packet, dict) or not isinstance(packet.get("text"), str):
+                continue
+            sha = hashlib.sha256(packet["text"].encode("utf-8")).hexdigest()
+            if sha == packet.get("content_sha"):
+                texts[(str(packet.get("stem")), sha)] = packet["text"]
+    return texts
+
+
 def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None) -> dict:
-    """Verify judge rows against the notes and store them; nothing is written if any row fails."""
+    """Verify judge rows against the notes and store them; nothing is written if any row fails.
+
+    A row for the note's current version is checked against the note. A row for an earlier
+    version (the note changed after export) is checked against the exported text when it is
+    found beside the judge file, and is stored as stale either way; without the exported
+    text, its quotes that are not in the current note are stored unverified."""
     reviewed_on = today or dt.date.today().isoformat()
+    exported = exported_texts(paths)
     entries: dict[str, dict] = {}
     for path in paths:
         for row in _rows(Path(path)):
@@ -256,9 +285,11 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             overall = row.get("overall")
             if overall not in OVERALL:
                 raise ValueError(f"{path}: {stem}: bad overall verdict {overall!r}")
-            source = note.read_bytes().decode("utf-8", errors="replace")
-            claims = [_claim_entry(f"{path}: {stem}", claim, source) for claim in (row.get("claims") or [])[:MAX_CLAIMS]]
-            sha = str(row.get("content_sha") or "")
+            sha, current = str(row.get("content_sha") or ""), note_sha(note)
+            source, strict = note.read_bytes().decode("utf-8", errors="replace"), True
+            if sha != current:
+                source, strict = (exported[(stem, sha)], True) if (stem, sha) in exported else (source, False)
+            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in (row.get("claims") or [])[:MAX_CLAIMS]]
             entries[stem] = {
                 "reviewed_on": reviewed_on,
                 "judge": judge,
@@ -266,7 +297,7 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                 "overall": overall,
                 "claims": claims,
                 "summary": str(row.get("summary", ""))[:1500],
-                "stale": sha != note_sha(note),
+                "stale": sha != current,
             }
     data = load_reviews(root)
     data.setdefault("notes", {}).update(entries)
@@ -335,6 +366,8 @@ def _render_review(stem: str, entry: dict, stale: bool) -> str:
             "",
             f"> {' '.join(claim['quote'].split())}",
             "",
+            *(["- Quote: not found in the current note; the judge read an earlier version, which was not found."]
+              if claim.get("verified") is False else []),
             f"- Step: {claim.get('step') or '-'}",
             f"- Finding: {claim.get('finding') or '-'}",
             f"- Conceded by the note's own self-check: {'yes' if claim.get('covered_by_self_check') else 'no'}",

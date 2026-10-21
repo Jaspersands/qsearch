@@ -334,6 +334,43 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     assert len(data["notes"]["FIXTURE_NOTE"]["claims"]) == 1 and "OTHER" in data["notes"]
 
 
+def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_path: Path) -> None:
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:2])
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    rows = [_row(tmp_path, claims=[_claim(quote)]),
+            _row(tmp_path, stem="OTHER_0", overall="sound", claims=[_claim("A result about the other_0 inputs", verdict="holds")])]
+    answer = _jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", rows)
+    note = notes[0]
+    note.write_text(note.read_text(encoding="utf-8").replace("It holds for all twelve", "It holds for eleven of twelve"), encoding="utf-8")
+
+    result = R.import_reviews(tmp_path, [answer], "j", today="2026-10-21")
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"]}
+    claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
+    assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
+
+    invented = _row(tmp_path, claims=[_claim("It holds for all thirteen saved inputs, with margin")]) | {"content_sha": rows[0]["content_sha"]}
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "invented.jsonl", [invented])], "j")
+
+    elsewhere = _jsonl(tmp_path / "moved" / "batch_01.jsonl", rows)
+    result = R.import_reviews(tmp_path, [elsewhere], "j", today="2026-10-22")
+    assert result["stale"] == ["FIXTURE_NOTE"]
+    claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
+    assert claim["verified"] is False and claim["quote"] == quote
+
+    batch = tmp_path / "pass" / "batch_01.json"
+    tampered = json.loads(batch.read_text(encoding="utf-8"))
+    tampered["notes"][0]["text"] = tampered["notes"][0]["text"].replace("twelve", "thirteen")
+    batch.write_text(json.dumps(tampered), encoding="utf-8")
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "invented.jsonl", [invented])], "j")
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["verified"] is False
+
+    R.render(tmp_path, today="2026-10-22")
+    review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    assert "not found in the current note" in review
+
+
 def test_import_rejects_a_quote_from_the_artifact_excerpt(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     batch = json.loads(R.export_batches(tmp_path, tmp_path / "out", notes[:1])[0].read_text(encoding="utf-8"))
