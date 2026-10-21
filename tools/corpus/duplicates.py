@@ -22,6 +22,9 @@ from tools.corpus.api import Corpus, Hit
 
 _LAST_NUMBER = re.compile(r"-\d+$")
 
+# Default for the committed report (`cli.py near-duplicates`); calibrated in README.md, "Duplicates".
+REPORT_THRESHOLD = 0.9
+
 
 @dataclass(frozen=True)
 class Pair:

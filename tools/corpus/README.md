@@ -26,6 +26,8 @@ verdict on the idea.
 | `get DOC_ID` | Full text and metadata as JSON. |
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
+| `near-duplicates [--threshold 0.9] [--per-family N] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained one. |
 
 Every command except `build` first refreshes the index incrementally: it stats about
 2,100 source files and re-parses only those whose size, mtime and content hash changed.
@@ -42,7 +44,8 @@ before" group then means the registry could not be read, not that the idea is ne
 ## For the research agents (MCP)
 
 `tools/corpus/mcp_server.py` is a stdio MCP server exposing `been_tried`,
-`search_corpus` and `get_doc`. It keeps the index warm and refreshes it at most every 30
+`search_corpus`, `get_doc` and `check_duplicate_negative` (the `check-new` check, below).
+It keeps the index warm and refreshes it at most every 30
 seconds. With the default `--dense auto` it adds the embedding ranker only while every
 document has a vector (after `build --dense`); documents added since then switch it back
 to lexical ranking until the next `build --dense`, because a ranker that cannot see the
@@ -130,3 +133,93 @@ so CPU time is the number to compare; wall time was two to three times larger.
 
 The held-out cases (`tests/tools/fixtures/corpus_heldout.json`) are 20 negatives added
 after 2026-10-04, paraphrased blind by a separate agent that saw only the claims.
+
+## Duplicates
+
+Two checks for negatives that say what an existing record already says
+(`duplicates.py`). Both score by TF-IDF cosine (`Corpus.cosine`, the index's own word
+unigram and bigram vectors), not by the rank-fusion score a search hit carries, so a score
+is a similarity in [0, 1] whatever else is in the index.
+
+```bash
+python tools/corpus/cli.py near-duplicates --out research/audits/registry_duplicates.json --per-family 3
+python tools/corpus/cli.py check-new --file draft_record.json      # exit 2: possible duplicate
+python tools/corpus/cli.py check-new --text "claim. reason it fails."
+```
+
+- `near-duplicates` lists pairs of `negative`-kind documents at or above `--threshold`
+  (default 0.9), highest first, at most `--limit` (200). `--per-family N` keeps at most N
+  pairs whose two ids differ only in their last `-<number>` (`...-N48-0-1` and
+  `...-N48-0-2`). `--out FILE.json` also writes `FILE.md` with the stem upper-cased; the
+  committed report is `research/audits/registry_duplicates.json` and
+  `REGISTRY_DUPLICATES.md` (0.9, `--per-family 3`: 167 pairs on 2026-10-21).
+- `check-new` checks one draft claim against retained negatives at cosine 0.6 and exits 2
+  on any match, 0 otherwise, so it can gate a hook or a script. `--file` takes a text file
+  or a registry record as JSON; a record contributes its `claim` and `reason_invalid`. An
+  unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
+  but does not change the exit code; a hook that must fail closed should check that field.
+  The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches.
+- The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
+  ones (`quarantined:` ids, 12). Both are compared and both can match; no quarantined record
+  is in a pair at 0.7 or above today.
+
+### Calibration (2026-10-21, this tree: 987 negative-kind documents)
+
+| cosine at least | pairs | pairs grouped by `--per-family` (families) | pairs whose ids are equal up to digits |
+|---|---|---|---|
+| 0.7 | 1,286 | 90 (10) | 403 |
+| 0.8 | 601 | 90 (10) | 324 |
+| 0.9 | 207 | 59 (8) | 145 |
+| 0.95 | 67 | 15 (4) | 42 |
+
+57 pairs score 1.000. The report default is 0.9: 207 pairs can be read, the 0.8 list is
+three times longer, and in the hand check below the pairs under 0.9 are also mostly sweep
+siblings. One restatement in the check sits at 0.80, so run `--threshold 0.8` when
+cleaning a specific family.
+
+Hand check of ten pairs across the bands (classes: sweep sibling, one template filled in
+for another instance; true restatement, the same claim about the same object filed twice;
+distinct, different results that share words):
+
+| cosine | pair | class | why |
+|---|---|---|---|
+| 1.000 | `NEG-CODE-GOPPA-SCALING-GOPPA-SCALE-M6-T3-N48-0-1` / `...-0-2` | sweep sibling | Same generated text for two code pairs of one Goppa instance; `--per-family` groups them. |
+| 1.000 | `NEG-CODE-GOPPA-SCALING-GOPPA-SCALE-M6-T3-N48-0-1` / `...-3-4` | sweep sibling | Same template; the ids differ in two numbers, so `--per-family` does not group them. |
+| 1.000 | `LEGACY-BITWISEMAJORITYSECRETFINDING` / `LEGACY-BITWISEXORANDANDSECRETFINDING` | sweep sibling | Two different toy oracles rejected by one template sentence; each name occurs once, so TF-IDF drops it. |
+| 0.978 | `QC-AUTOMORPHISM-EQUIVALENT-QC_INDEX4_TWO_CIRCULANTS_TRIAL_11_PRIOR_0` / `QC-AUTOMORPHISM-REJECTED-...` (same trial) | true restatement | The same trial filed under two id prefixes; every field but the id is identical. |
+| 0.933 | `QUERY-LOWER-BOUND-GAP-CUBIC_CHIRP` / `...-NOISY_CUBIC_CHIRP` | sweep sibling | One query-lower-bound template run on two hidden-shift families. |
+| 0.863 | `COSET-DISTINGUISHABILITY-DEBT-S10-FIXED_POINT_FREE_INVOLUTION` / `...-S16-...` | sweep sibling | One copy-debt template at n = 10 and n = 16; only the evidence numbers differ. |
+| 0.816 | `NEG-QUARANTINE-MUT-CAND-DHS-GOWERS-SIEVE-QUERY-MODEL-HARDENED` / `NEG-QUARANTINE-MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-QUERY-MODEL-HARDENED` | sweep sibling | One interface-audit template for two different mutation candidates. |
+| 0.803 | `CLOSURE-REJECT-CLOSURE_BCH_CODE_SEARCH_BCH_M5_D3_11_S3_D4__BCH_M5_D3_11_S11_D5` / `SCHUR-REJECT-SCHUR_BCH_...` (same pair) | true restatement | The same BCH pair is declared not a hard row twice, by the closure and by the Schur invariant; one record with two reasons would do. |
+| 0.773 | `NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND` / `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` | distinct | Parallel hand-written results for orthogonal and unitary groups, each with its own classical algorithm and density bound. |
+| 0.724 | `CODE-FRONTIER-TRIAGE-CYCLIC_FAMILY_CYCLIC_N15` / `CODE-FRONTIER-TRIAGE-GOPPA_FAMILY_GOPPA_M4_T2` | sweep sibling | One triage template over two code families. |
+
+Seven sweep siblings, two true restatements, one distinct pair.
+
+**Sweep-sibling caveat.** Most of the registry's close pairs are generated records, one
+per instance, whose only difference is the instance name. A name that occurs in a single
+record is not in the TF-IDF vocabulary (`min_df` 2), so such pairs score up to 1.000.
+`--per-family` groups only ids that differ in their last `-<number>`: 59 of the 207 pairs
+at 0.9, while 145 of them have ids that are equal once digits are ignored and others differ
+by a word (`CUBIC_CHIRP` and `NOISY_CUBIC_CHIRP`). Read a pair before merging records; a
+sweep sibling is a separate result and should stay.
+
+**`check-new` threshold.** Each of the 975 retained negatives was checked against itself.
+Its claim plus reason scores at least 0.6 with its own record every time (minimum 0.660,
+median 0.840); its claim alone does so for 92 % (97 % when the reason is at most 300
+characters, 51 % above 300, 16 % above 600, the long hand-written records). End to end
+through `check_claim` on 163 sampled records: own record found from claim plus reason
+163/163, from the claim alone 152/163. Three unrelated claims scored 0.06, 0.12 and 0.16
+against their nearest negative. So 0.6 stays, and the input should be the claim and its reason, as `--file` does with a
+record.
+
+Smoke runs on this checkout (2026-10-21):
+
+| input | exit | top match (cosine) |
+|---|---|---|
+| `--text` claim of `COSET-DISTINGUISHABILITY-DEBT-S10-FIXED_POINT_FREE_INVOLUTION` | 2 | that record (0.701) |
+| `--file` that record | 2 | that record (0.850), then its S8 sibling (0.785) |
+| `--text` claim of `NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER` | 0 | none: a long reason, claim alone below 0.6 |
+| `--file` that record | 2 | that record (0.775) |
+| `--file` `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` | 2 | that record (0.855), then the orthogonal one (0.664) |
+| `--text "Grover search gives a quadratic speedup for unstructured search."` | 0 | none |

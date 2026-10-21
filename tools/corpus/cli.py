@@ -25,7 +25,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
-from tools.corpus.duplicates import check_claim, near_duplicates  # noqa: E402
+from tools.corpus.duplicates import REPORT_THRESHOLD, check_claim, near_duplicates  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -198,9 +198,12 @@ def _duplicates_markdown(payload: dict, per_family: int | None, limit: int) -> s
         f"least {payload['threshold']}{cap}, highest first, {len(pairs)} pairs"
         + (f" (the first {limit})." if len(pairs) >= limit else "."),
         "",
-        "A cosine of 1.000 means the same words in the same proportions. Ids that differ only in a "
-        "trailing number are usually parameter-sweep siblings (the same template run at another size), "
-        "not restatements. A pair is a lead to read, not a verdict.",
+        "A cosine of 1.000 means the same words in the same proportions. A name that occurs in a single "
+        "record is not in the vocabulary, so two records generated from one template for different "
+        "instances (a size, trial, code family or proposal) can score 1.000. Most pairs are such sweep "
+        "siblings, not restatements; the per-family cap only groups ids that differ in their last "
+        "`-<number>`. A pair is a lead to read, not a verdict; see the hand check in "
+        "`tools/corpus/README.md`, \"Duplicates\".",
         "",
         "| cosine | a | b | claim a | claim b |",
         "|---|---|---|---|---|",
@@ -323,7 +326,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     dups = sub.add_parser("near-duplicates", help="Pairs of negatives with a high TF-IDF cosine.")
     dups.add_argument("--kind", default="negative", help="Document kind to compare (default: negative).")
-    dups.add_argument("--threshold", type=float, default=0.8, help="Minimum cosine.")
+    dups.add_argument("--threshold", type=float, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
     dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first.")
     dups.add_argument("--per-family", type=int, help="At most this many pairs of ids differing only in a trailing number.")
     dups.add_argument("--out", help="Write FILE.json and FILE.md (stem upper-cased) next to it.")
