@@ -435,6 +435,16 @@ def test_readme_maps_each_check_to_the_papers_rules() -> None:
     assert "(R2) decoder" in rows["reach"] and "Theorem 6" in rows["R2"] and "(R3) encoder" in rows["R3-encoder"]
 
 
+def test_baseline_catalog_says_where_the_best_of_n_score_comes_from() -> None:
+    # screen.py computes the Prange line and the Theorem 10 length; only prange_restarts runs best-of-N.
+    from tools.corpus.baselines import load_catalog
+
+    entry = next(e for e in load_catalog() if e["id"] == "prange-restarts-opi")
+    assert "computes both" not in entry["summary"]
+    assert "prange_restarts" in entry["summary"] and "restart length" in entry["summary"]
+    assert entry["runnable"]["entry"] == "tools/dqi_screen/prange.py:prange_restarts"
+
+
 def test_corpus_mcp_docs_list_the_screen_tool() -> None:
     from tools.corpus import mcp_server
 
