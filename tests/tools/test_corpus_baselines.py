@@ -127,9 +127,10 @@ def test_a_negative_k_returns_nothing(fake_repo: Path, capsys) -> None:
     corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
     assert len(recommend(corpus, IDEA)) >= 2
     assert recommend(corpus, IDEA, k=0) == recommend(corpus, IDEA, k=-1) == []
-    with pytest.raises(SystemExit):
-        main(["--root", str(fake_repo), "baselines", IDEA, "-k", "-1"])
-    assert "-k must be at least 0" in capsys.readouterr().err
+    for k in ("-1", "0"):  # -k 0 would print that no baseline matches, which is false
+        with pytest.raises(SystemExit):
+            main(["--root", str(fake_repo), "baselines", IDEA, "-k", k])
+        assert "-k must be at least 1" in capsys.readouterr().err
     server = create_server(fake_repo, dense="off")
     assert _call(server, "classical_baselines", {"idea": IDEA, "k": -1})["recommendations"] == []
 

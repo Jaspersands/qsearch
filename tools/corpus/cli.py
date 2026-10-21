@@ -454,8 +454,8 @@ def _allow(value: str) -> str:
 
 def _count(value: str) -> int:
     number = int(value)
-    if number < 0:
-        raise argparse.ArgumentTypeError("-k must be at least 0")
+    if number < 1:  # -k 0 would show nothing and then say that no baseline matches
+        raise argparse.ArgumentTypeError("-k must be at least 1")
     return number
 
 

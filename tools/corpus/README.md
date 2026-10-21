@@ -344,8 +344,9 @@ negative counts on its own, although all of them live in one registry file.
     score = matched keywords / keywords + citing notes and negatives / 10        (rounded to 4 places)
 
 Baselines scoring 0 are left out; the rest are sorted by score, then name, and the first `k`
-(default 5) are shown. The CLI rejects a negative `-k`, and the Python and MCP calls return
-nothing for one. A score can exceed 1. A citing note may name a baseline only to set it
+(default 5) are shown. The CLI rejects a `-k` below 1 (with 0 it would show nothing and then
+say that no baseline matches), and the Python and MCP calls return nothing for one. A score
+can exceed 1. A citing note may name a baseline only to set it
 aside, and keywords are matched without regard to how the idea uses them, so the score orders
 leads to read and run. It is not evidence that the baseline beats the idea, and an empty list
 does not mean that no classical baseline applies.
