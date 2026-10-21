@@ -9,6 +9,7 @@ result. Sections are cut at `## ` headings outside fenced code.
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -179,3 +180,62 @@ def parse_note(path: Path) -> NotePacket:
 
 def to_dict(packet: NotePacket) -> dict:
     return asdict(packet)
+
+
+LIST_ITEMS = 5
+MAX_STRING = 60
+MAX_KEYS = 50
+TRUNCATED = "[truncated]"
+
+
+def _resolve_artifact(root: Path, rel: str) -> Path | None:
+    """Notes write artifacts as `research/x/y.json` or `x/y.json`."""
+    for candidate in (root / rel, root / "research" / rel):
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def _leaves(value, path: str):
+    """Depth-first `path = value` lines in sorted key order: numbers and short strings."""
+    if isinstance(value, dict):
+        for key in sorted(value, key=str):
+            yield from _leaves(value[key], f"{path}.{key}" if path else str(key))
+    elif isinstance(value, list):
+        for index, item in enumerate(value[:LIST_ITEMS]):
+            yield from _leaves(item, f"{path}[{index}]")
+        if len(value) > LIST_ITEMS:
+            yield f"{path or '[]'} ... (+{len(value) - LIST_ITEMS})"
+    elif isinstance(value, bool) or value is None:
+        return
+    elif isinstance(value, (int, float)):
+        yield f"{path} = {value!r}"
+    elif isinstance(value, str) and len(value) <= MAX_STRING:
+        yield f"{path} = {json.dumps(value, ensure_ascii=False)}"
+
+
+def artifact_excerpt(root: Path, packet: NotePacket, max_chars: int = 4000) -> str | None:
+    """A compact view of the producer's JSON artifact, or None when it is absent or unreadable."""
+    rel = (packet.producer or {}).get("artifact")
+    path = _resolve_artifact(root, rel) if rel else None
+    if path is None:
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, ValueError):
+        return None
+    if isinstance(data, dict):
+        keys = sorted(map(str, data))
+        more = f" ... (+{len(keys) - MAX_KEYS})" if len(keys) > MAX_KEYS else ""
+        head = f"keys: {', '.join(keys[:MAX_KEYS])}{more}"
+    else:
+        head = f"keys: none (top level is a {type(data).__name__})"
+    lines, size = [head], len(head)
+    for line in _leaves(data, ""):
+        if size + len(line) + len(TRUNCATED) + 2 > max_chars:
+            lines.append(TRUNCATED)
+            break
+        lines.append(line)
+        size += len(line) + 1
+    text = "\n".join(lines)
+    return text if len(text) <= max_chars else text[: max_chars - len(TRUNCATED) - 1] + "\n" + TRUNCATED

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import textwrap
 from pathlib import Path
 
@@ -175,3 +176,41 @@ def test_parse_note_reads_replacement_bytes_and_long_producer_flags(tmp_path: Pa
     assert packet.producer["flags"] == "--length 32768 --grid 256 --power 3 --write"
     assert packet.producer["artifact"] is None
     assert "within 0.01" in packet.result
+
+
+def _with_artifact(root: Path, artifact: str, payload: str) -> X.NotePacket:
+    path = root / artifact
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(payload, encoding="utf-8")
+    text = FIXTURE_NOTE.replace("research/classical_baselines/fixture_radial.json", artifact.removeprefix("research/"))
+    return X.parse_note(_write(root, "FIXTURE_NOTE", text))
+
+
+def test_artifact_excerpt_lists_keys_and_numeric_leaves(tmp_path: Path) -> None:
+    data = {"status": "ok", "mean": 0.9028, "flag": True, "tail": {"k110": 0.3145, "runs": [1, 2, 3, 4, 5, 6, 7]}}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(data))
+    assert packet.producer["artifact"] == "classical_baselines/fixture_radial.json"
+    excerpt = X.artifact_excerpt(tmp_path, packet)
+    assert excerpt is not None
+    assert excerpt.startswith("keys: flag, mean, status, tail")
+    assert "mean = 0.9028" in excerpt and "tail.k110 = 0.3145" in excerpt
+    assert not any(line.startswith("flag") for line in excerpt.splitlines()[1:])  # booleans are not leaves
+    assert "tail.runs[4] = 5" in excerpt and "tail.runs[5]" not in excerpt and "(+2)" in excerpt
+    assert len(excerpt) <= 4000
+    big = {f"key{i:04d}": i / 7 for i in range(2000)}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(big))
+    short = X.artifact_excerpt(tmp_path, packet, max_chars=500)
+    assert short is not None and len(short) <= 500 and short.endswith("[truncated]")
+
+
+def test_artifact_excerpt_is_none_when_missing_or_invalid(tmp_path: Path) -> None:
+    packet = X.parse_note(_write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE))
+    assert X.artifact_excerpt(tmp_path, packet) is None
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", "{not json")
+    assert X.artifact_excerpt(tmp_path, packet) is None
+    fallback = X.parse_note(_write(tmp_path, "FALLBACK", "# F\n\n2026-10-01. Review pending.\n\n## Result\n\nNo producer.\n"))
+    assert fallback.producer is None and X.artifact_excerpt(tmp_path, fallback) is None
+    assert X._resolve_artifact(tmp_path, "classical_baselines/fixture_radial.json") == (
+        tmp_path / "research/classical_baselines/fixture_radial.json"
+    )
+    assert X._resolve_artifact(tmp_path, "classical_baselines/absent.json") is None
