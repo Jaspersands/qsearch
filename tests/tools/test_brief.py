@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime as dt
 import hashlib
 import json
 import os
@@ -79,6 +80,8 @@ def test_cutoff_is_the_start_of_the_utc_day_not_the_time_of_day(tmp_path: Path) 
     repo = _history_repo(tmp_path)
     since = B.since_commit(repo, since_days=5, today="2026-10-20")  # cutoff 2026-10-15
     assert since is not None and since[1] == "2026-10-01"
+    evening = dt.datetime(2026, 10, 20, 23, 59, tzinfo=dt.timezone.utc)  # a datetime counts as its day
+    assert B.since_commit(repo, since_days=5, today=evening) == since
 
 
 def test_ids_reads_a_list_or_a_records_object() -> None:

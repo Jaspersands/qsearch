@@ -93,8 +93,11 @@ def git_runner(root: Path) -> GitRunner:
 
 
 def _day(today: dt.date | str | None) -> dt.date:
+    """A calendar day: today in UTC when None; a datetime is cut to its date."""
     if today is None:
         return dt.datetime.now(dt.timezone.utc).date()
+    if isinstance(today, dt.datetime):
+        return today.date()
     return today if isinstance(today, dt.date) else dt.date.fromisoformat(today)
 
 
