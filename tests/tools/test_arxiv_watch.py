@@ -3,13 +3,15 @@ from __future__ import annotations
 import datetime as dt
 import json
 import re
+import time
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import pytest
 
 from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
-from tools.arxiv_watch.watch import label_for, replay_seeds, run
+from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, set_verdict
+from tools.arxiv_watch.watch import label_for, recheck_cited, relabel, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
 
@@ -429,3 +431,211 @@ LABEL_CASES = [
 @pytest.mark.parametrize(("arxiv_id", "title", "abstract", "tracks", "expected"), LABEL_CASES, ids=[c[0] for c in LABEL_CASES])
 def test_labels_on_committed_papers(arxiv_id: str, title: str, abstract: str, tracks: list[str], expected: str) -> None:
     assert label_for(_paper(arxiv_id, title, abstract), tracks, cited=False)[0] == expected
+
+
+# --- verdicts -------------------------------------------------------------------------------------
+
+
+def test_verdict_round_trip(tmp_path: Path) -> None:
+    assert load_verdicts(tmp_path) == {"verdicts": {}}
+    entry = set_verdict(tmp_path, "2610.11111", "false-alarm", "cue spurious", "human", today="2026-10-21")
+    expected = {"verdict": "false-alarm", "reason": "cue spurious", "action": None, "by": "human", "reviewed_on": "2026-10-21"}
+    assert entry == expected
+    assert load_verdicts(tmp_path) == {"verdicts": {"2610.11111": expected}}
+    text = (tmp_path / VERDICTS_FILE).read_text(encoding="utf-8")
+    assert text.endswith("}\n") and json.loads(text) == {"verdicts": {"2610.11111": expected}}
+
+
+def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
+    with pytest.raises(ValueError):
+        set_verdict(tmp_path, "2610.11111", "maybe", "unsure", "human")
+    assert not (tmp_path / VERDICTS_FILE).exists()
+
+
+def _section(digest: str, heading: str) -> str:
+    """One `## heading` section of the digest, up to the next section."""
+    start = digest.index(f"## {heading}\n")
+    end = digest.find("\n## ", start)
+    return digest[start:] if end == -1 else digest[start:end]
+
+
+def test_paper_with_a_verdict_leaves_the_flagged_list(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    tracks = {"dcp": TRACKS["dcp"]}
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    client = FakeClient([kill])
+    run(fake_repo, client, corpus, tracks=tracks, today="2026-10-19")
+    digest_path = fake_repo / "research" / "audits" / "ARXIV_WATCH.md"
+    assert "2610.11111" in _section(digest_path.read_text(), "Possible kills")
+
+    set_verdict(fake_repo, "2610.11111", "false-alarm", "cue spurious", "human", today="2026-10-21")
+    set_verdict(fake_repo, "2610.99999", "related-only", "never fetched", "human", today="2026-10-21")
+    report = run(fake_repo, client, corpus, tracks=tracks, today="2026-10-26")
+    assert report.new == 0 and report.saved  # the verdict alone rewrites the outputs
+    record = _state(fake_repo)["papers"]["2610.11111"]
+    assert record["verdict"]["verdict"] == "false-alarm" and record["label"] == "possible-kill"
+    digest = digest_path.read_text()
+    assert "2610.11111" not in _section(digest, "Possible kills")
+    reviewed = _section(digest, "Reviewed")
+    assert "| 2610.11111 |" in reviewed and "false-alarm" in reviewed
+    assert "| 2610.99999 | not stored |" in reviewed
+
+    paths = [fake_repo / "research" / "audits" / name for name in ("arxiv_collisions.json", "ARXIV_WATCH.md")]
+    before = [path.read_bytes() for path in paths]
+    assert not run(fake_repo, client, corpus, tracks=tracks, today="2026-11-02").saved
+    assert [path.read_bytes() for path in paths] == before
+
+    (fake_repo / VERDICTS_FILE).write_text(json.dumps({"verdicts": {}}), encoding="utf-8")
+    assert run(fake_repo, client, corpus, tracks=tracks, today="2026-11-09").saved  # a withdrawn verdict is dropped
+    assert "verdict" not in _state(fake_repo)["papers"]["2610.11111"]
+    assert "2610.11111" in _section(digest_path.read_text(), "Possible kills")
+
+
+def test_verdict_added_by_hand_for_an_unstored_paper_reaches_the_digest(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    tracks = {"dcp": TRACKS["dcp"]}
+    client = FakeClient([_paper("2610.11111", "Dihedral coset note", "Coset states.")])
+    run(fake_repo, client, corpus, tracks=tracks, today="2026-10-19")
+    collisions, digest = (fake_repo / "research" / "audits" / name for name in ("arxiv_collisions.json", "ARXIV_WATCH.md"))
+    assert not run(fake_repo, client, corpus, tracks=tracks, today="2026-10-20").saved
+    stored = collisions.read_bytes()
+
+    entry = {"verdict": "related-only", "reason": "hand", "action": None, "by": "human", "reviewed_on": "2026-10-21"}
+    (fake_repo / VERDICTS_FILE).write_text(json.dumps({"verdicts": {"2610.77777": entry}}), encoding="utf-8")
+    report = run(fake_repo, client, corpus, tracks=tracks, today="2026-10-26")
+    assert report.saved and report.new == 0
+    assert "| 2610.77777 | not stored |" in _section(digest.read_text(), "Reviewed")
+    assert collisions.read_bytes() == stored  # no stored record changed, so only the digest is re-rendered
+
+    rendered = digest.read_bytes()
+    assert not run(fake_repo, client, corpus, tracks=tracks, today="2026-11-02").saved
+    assert digest.read_bytes() == rendered
+
+
+def test_flagged_paper_becomes_already_cited_once_a_note_cites_it(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    tracks = {"dcp": TRACKS["dcp"]}
+    client = FakeClient([
+        _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout."),
+        _paper("2610.33333", "Dequantizing the dihedral coset problem", "An efficient classical algorithm for quantum coset states."),
+    ])
+    assert run(fake_repo, client, corpus, tracks=tracks, today="2026-10-19").relabelled == 0
+    assert {record["label"] for record in _state(fake_repo)["papers"].values()} == {"possible-kill"}
+
+    set_verdict(fake_repo, "2610.33333", "should-cite", "cite it", "human", today="2026-10-20")
+    note = "# Cites Kill\n\nThis note builds on arXiv:2610.11111v1 and on arXiv:2610.33333.\n"
+    (fake_repo / "research" / "CITES_KILL.md").write_text(note, encoding="utf-8")
+    corpus.refresh()
+    report = run(fake_repo, client, corpus, tracks=tracks, today="2026-10-26")
+    assert report.relabelled == 1 and report.new == 0 and report.saved
+    state = _state(fake_repo)
+    cited = state["papers"]["2610.11111"]
+    assert (cited["label"], cited["relabelled_on"], cited["relabelled_from"]) == ("already-cited", "2026-10-26", "possible-kill")
+    reviewed = state["papers"]["2610.33333"]
+    assert reviewed["label"] == "possible-kill" and "relabelled_on" not in reviewed  # a verdict-bearing paper is untouched
+    assert run(fake_repo, client, corpus, tracks=tracks, today="2026-10-27").relabelled == 0
+
+    # --relabel keeps the demotion record while the paper is cited and drops it once it is flagged again.
+    relabel(fake_repo, corpus)
+    cited = _state(fake_repo)["papers"]["2610.11111"]
+    assert (cited["label"], cited["relabelled_on"], cited["relabelled_from"]) == ("already-cited", "2026-10-26", "possible-kill")
+    (fake_repo / "research" / "CITES_KILL.md").unlink()
+    corpus.refresh()
+    assert relabel(fake_repo, corpus) == 2
+    flagged = _state(fake_repo)["papers"]["2610.11111"]
+    assert flagged["label"] == "possible-kill" and "relabelled_on" not in flagged and "relabelled_from" not in flagged
+
+
+def test_recheck_cited_is_fast_for_many_flags_sharing_a_trailing_token(fake_repo: Path) -> None:
+    ids = [f"{24 + i // 12}{i % 12 + 1:02d}.11111" for i in range(30)]
+    (fake_repo / "research" / "CITES_ONE.md").write_text("# Cites One\n\nSee arXiv:2605.11111 for the bound.\n", encoding="utf-8")
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    state = {"papers": {arxiv_id: {"arxiv_id": arxiv_id, "label": "possible-kill"} for arxiv_id in ids}}
+    start = time.perf_counter()
+    assert recheck_cited(state, corpus, "2026-10-26") == 1
+    assert time.perf_counter() - start < 1.0
+    assert state["papers"]["2605.11111"]["label"] == "already-cited"
+
+
+def test_verdict_flag_records_and_rerenders_without_fetching(fake_repo: Path, monkeypatch, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("--verdict must not fetch or build the corpus")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    argv = ["--root", str(fake_repo), "--verdict", "2610.11111", "false-alarm", "--reason", "cue spurious", "--action", "none"]
+    assert watch.main(argv) == 0
+    entry = load_verdicts(fake_repo)["verdicts"]["2610.11111"]
+    assert (entry["verdict"], entry["reason"], entry["action"], entry["by"]) == ("false-alarm", "cue spurious", "none", "human")
+    digest = (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text()
+    assert "| 2610.11111 |" in _section(digest, "Reviewed") and "2610.11111" not in _section(digest, "Possible kills")
+    assert _state(fake_repo)["papers"]["2610.11111"]["verdict"]["verdict"] == "false-alarm"
+
+    assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", "maybe"]) == 2
+    assert "unknown verdict" in capsys.readouterr().err
+    assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["verdict"] == "false-alarm"
+
+
+def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    for ident in ("2610.11111v2", "arXiv:2610.11111", "https://arxiv.org/abs/2610.11111v1"):
+        assert watch.main(["--root", str(fake_repo), "--verdict", ident, "false-alarm", "--reason", "x"]) == 0
+        assert capsys.readouterr().out == "2610.11111: false-alarm; digest re-rendered\n", ident
+        assert set(load_verdicts(fake_repo)["verdicts"]) == {"2610.11111"}
+        assert _state(fake_repo)["papers"]["2610.11111"]["verdict"]["verdict"] == "false-alarm"
+    assert "2610.11111" not in _section((fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text(), "Possible kills")
+
+    assert watch.main(["--root", str(fake_repo), "--verdict", "quant-ph/0501044v2", "related-only"]) == 0
+    assert capsys.readouterr().out == "quant-ph/0501044: related-only (not in the collisions file yet); digest re-rendered\n"
+    for bad in ("2610.111", "see 2610.11111", ""):
+        assert watch.main(["--root", str(fake_repo), "--verdict", bad, "kill"]) == 2
+        assert "not an arXiv id" in capsys.readouterr().err
+    assert set(load_verdicts(fake_repo)["verdicts"]) == {"2610.11111", "quant-ph/0501044"}
+
+
+REPO = Path(__file__).resolve().parents[2]
+REVIEW = REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
+
+
+def _review_verdicts(text: str) -> dict[str, str]:
+    """arXiv id -> verdict from the review's table rows and its "### id, ..." sections."""
+    found = {}
+    for line in text.splitlines():
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) == 5 and re.fullmatch(r"\d{4}\.\d{5}", cells[0]):
+            found[cells[0]] = cells[3].replace(" ", "-")
+    for arxiv_id, verdict in re.findall(r"^### (\d{4}\.\d{5}),[^\n]*\n\nFlagged \w+\. Verdict: \*\*([a-z ]+)\*\*", text, re.M):
+        found[arxiv_id] = verdict.replace(" ", "-")
+    return found
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seeded_verdicts_match_the_reviewed_triage() -> None:
+    text = REVIEW.read_text(encoding="utf-8")
+    reviewed = set(re.findall(r"\b\d{4}\.\d{5}\b", text))
+    expected = _review_verdicts(text)
+    verdicts = load_verdicts(REPO)["verdicts"]
+    assert len(reviewed) == 22 and set(expected) == reviewed and set(verdicts) == reviewed
+    assert {arxiv_id: entry["verdict"] for arxiv_id, entry in verdicts.items()} == expected
+    assert all(entry["by"] == "human" and entry["reason"] for entry in verdicts.values())
+    counts: dict[str, int] = {}
+    for entry in verdicts.values():
+        counts[entry["verdict"]] = counts.get(entry["verdict"], 0) + 1
+    assert counts == {"should-cite": 9, "related-only": 8, "false-alarm": 5}
+    assert {arxiv_id for arxiv_id, entry in verdicts.items() if entry.get("action_done")} == {"2610.06753", "2610.03566"}

@@ -4,16 +4,19 @@
     python tools/arxiv_watch/watch.py --since 2026-09-01 --tracks dcp,dqi_opi
     python tools/arxiv_watch/watch.py --relabel        # re-apply the label rules to stored papers, offline
     python tools/arxiv_watch/watch.py --replay-seeds   # check the track classifier on seed papers
+    python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." [--action "..."]
 
 Each new paper is placed on tracks, matched against the corpus index (nearest negatives,
 notes, theorem modules) and given a triage label from wording cues:
 possible-kill, possible-scoop, related, already-cited or unrelated. Labels are for
-triage only; read the paper before acting on one.
+triage only; read the paper before acting on one. A reviewed verdict (research/audits/
+arxiv_verdicts.json, see verdicts.py) is judgement: it is attached to the stored paper and
+moves it from the flagged sections of the digest to the Reviewed table.
 
 Each track query is paged until results are older than the window start. When the page
 cap stops a query first, the uncovered window is recorded as a gap in the JSON and listed
 in the digest until a later run covers it. The outputs are rewritten only when a run finds
-something new, so a quiet week changes nothing.
+something new (a paper, a gap, a verdict, a citation), so a quiet week changes nothing.
 """
 
 from __future__ import annotations
@@ -30,6 +33,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
+from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, normalize_id, set_verdict  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.arxiv import Client, Paper  # noqa: E402
@@ -116,6 +120,7 @@ _AUTHORED = re.compile(_WE, re.I)
 
 NEAREST_KINDS = ("negative", "dequant", "note", "hypothesis", "theorem")
 LABEL_ORDER = ("possible-kill", "possible-scoop", "related", "already-cited", "unrelated")
+FLAGGED = ("possible-kill", "possible-scoop")
 
 
 @dataclass
@@ -125,6 +130,7 @@ class RunReport:
     by_label: dict = field(default_factory=dict)
     truncated: dict = field(default_factory=dict)
     saved: bool = False
+    relabelled: int = 0
 
 
 def _sentences(text: str) -> list[str]:
@@ -201,6 +207,7 @@ def _stored_paper(arxiv_id: str, record: dict) -> Paper:
 def relabel(root: Path, corpus: Corpus) -> int:
     """Recompute tracks and labels for every stored paper after a rule change; returns how many changed."""
     state = _load_state(root)
+    attach_verdicts(state, load_verdicts(root)["verdicts"])
     changed = 0
     for arxiv_id, record in state["papers"].items():
         paper = _stored_paper(arxiv_id, record)
@@ -209,7 +216,46 @@ def relabel(root: Path, corpus: Corpus) -> int:
         if (label, tracks) != (record.get("label"), record.get("tracks")):
             changed += 1
         record.update({"label": label, "cues": cues, "tracks": tracks})
+        if label != "already-cited":  # recheck_cited's demotion record no longer applies
+            record.pop("relabelled_from", None)
+            record.pop("relabelled_on", None)
     _save(root, state)
+    return changed
+
+
+def attach_verdicts(state: dict, verdicts: dict) -> int:
+    """Copy each stored paper's verdict onto its record; returns how many records changed.
+
+    `verdicts` maps arXiv id to entry, as in `load_verdicts(root)["verdicts"]`. A record has a
+    `verdict` key only while the verdicts file holds one for it (a withdrawn verdict is dropped),
+    so a week with no new paper and no new verdict leaves the JSON byte-identical.
+    """
+    changed = 0
+    for arxiv_id, record in state["papers"].items():
+        entry = verdicts.get(arxiv_id)
+        if entry is not None:
+            if record.get("verdict") != entry:
+                record["verdict"] = dict(entry)
+                changed += 1
+        elif "verdict" in record:
+            del record["verdict"]
+            changed += 1
+    return changed
+
+
+def recheck_cited(state: dict, corpus: Corpus, today: str) -> int:
+    """Demote stored possible kills and scoops to already-cited once a note or record cites them.
+
+    Papers with a verdict are left alone. The record keeps the date and the label it had; returns
+    how many records changed.
+    """
+    changed = 0
+    for arxiv_id, record in sorted(state["papers"].items()):
+        if record.get("label") not in FLAGGED or "verdict" in record:
+            continue
+        if corpus.mentions(arxiv_id):
+            record.update({"label": "already-cited", "relabelled_on": today, "relabelled_from": record["label"]})
+            changed += 1
     return changed
 
 
@@ -220,7 +266,7 @@ def _save(root: Path, state: dict) -> None:
     path, digest = _paths(root)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    digest.write_text(render_digest(state), encoding="utf-8")
+    digest.write_text(render_digest(state, verdicts=load_verdicts(root)["verdicts"]), encoding="utf-8")
 
 
 def _paths(root: Path) -> tuple[Path, Path]:
@@ -318,6 +364,11 @@ def run(
         report.new += 1
         report.by_label[label] = report.by_label.get(label, 0) + 1
 
+    # After the fetch, so a paper given a verdict before it was first stored carries it on arrival.
+    changed |= bool(attach_verdicts(state, load_verdicts(root)["verdicts"]))
+    report.relabelled = recheck_cited(state, corpus, today)
+    changed |= bool(report.relabelled)
+
     # A gap stays listed until a run of that track that was not cut short starts at or before it.
     gaps = list(state.get("gaps", []))
     kept = [g for g in gaps if not (g["track"] in windows and g["track"] not in report.truncated and windows[g["track"]] <= g["since"])]
@@ -334,10 +385,33 @@ def run(
         state.setdefault("tracks_updated", {}).update({name: today for name in tracks})
         _save(root, state)
         report.saved = True
+    else:
+        report.saved = _rerender_stale_digest(root, state)
     return report
 
 
-def render_digest(state: dict, per_section: int = 40) -> str:
+def _rerender_stale_digest(root: Path, state: dict) -> bool:
+    """Rewrite the digest alone when it no longer matches the stored papers and the verdicts file,
+    e.g. after a verdict was added by hand for a paper the watch has not stored. Returns whether it
+    was rewritten; a missing digest is left missing."""
+    _, digest = _paths(root)
+    if not digest.exists():
+        return False
+    text = render_digest(state, verdicts=load_verdicts(root)["verdicts"])
+    if digest.read_text(encoding="utf-8") == text:
+        return False
+    digest.write_text(text, encoding="utf-8")
+    return True
+
+
+def _cell(text) -> str:
+    return " ".join(str(text).split()).replace("|", "/")
+
+
+def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = None) -> str:
+    """The markdown digest. `verdicts` (arXiv id -> entry) drives the Reviewed table, and papers
+    with a verdict leave the possible-kill and possible-scoop sections."""
+    verdicts = verdicts or {}
     papers = sorted(state["papers"].values(), key=lambda p: (p["published"], p["arxiv_id"]), reverse=True)
     counts = {label: sum(p["label"] == label for p in papers) for label in LABEL_ORDER}
     lines = [
@@ -351,6 +425,12 @@ def render_digest(state: dict, per_section: int = 40) -> str:
         *[f"| {label} | {counts[label]} |" for label in LABEL_ORDER],
         "",
     ]
+    if verdicts:
+        lines += [
+            "The counts are machine labels. Flagged papers with a reviewed verdict are listed under Reviewed,",
+            "not in the possible-kill and possible-scoop sections.",
+            "",
+        ]
     gaps = state.get("gaps") or []
     if gaps:
         lines += [
@@ -366,7 +446,8 @@ def render_digest(state: dict, per_section: int = 40) -> str:
         ]
     titles = {"possible-kill": "Possible kills", "possible-scoop": "Possible scoops", "related": "Related"}
     for label, heading in titles.items():
-        section = [p for p in papers if p["label"] == label][:per_section]
+        section = [p for p in papers if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts)]
+        section = section[:per_section]
         lines += [f"## {heading}", ""]
         if not section:
             lines += ["None yet.", ""]
@@ -381,6 +462,29 @@ def render_digest(state: dict, per_section: int = 40) -> str:
                 f"| {p['published']} | [{p['arxiv_id']}]({p['url']}) {title} | {', '.join(p['tracks'])} | {cues} | {near} |"
             )
         lines.append("")
+    lines += ["## Reviewed", ""]
+    if not verdicts:
+        lines += ["None yet.", ""]
+        return "\n".join(lines)
+    lines += [
+        f"Verdicts from `{VERDICTS_FILE}`. Labels are triage; verdicts are judgement.",
+        "A paper listed as not stored has a verdict but is not in the collisions file.",
+        "",
+        "| arXiv | Paper | Label | Verdict | By | Reviewed | Reason | Action |",
+        "|---|---|---|---|---|---|---|---|",
+    ]
+    rank = {verdict: index for index, verdict in enumerate(VERDICTS)}
+    for arxiv_id, entry in sorted(verdicts.items(), key=lambda item: (rank.get(item[1].get("verdict"), len(rank)), item[0])):
+        p = state["papers"].get(arxiv_id)
+        paper = f"[{_cell(p['title'])}]({p['url']})" if p else "not stored"
+        action = _cell(entry.get("action") or "")
+        if action and entry.get("action_done"):
+            action += " (done)"
+        lines.append(
+            f"| {arxiv_id} | {paper} | {p['label'] if p else '-'} | {entry.get('verdict')} | {_cell(entry.get('by', ''))} | "
+            f"{entry.get('reviewed_on', '')} | {_cell(entry.get('reason', ''))} | {action} |"
+        )
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -411,7 +515,28 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-pages", type=int, default=MAX_PAGES, help="Pages per track query before reporting a gap.")
     parser.add_argument("--replay-seeds", action="store_true")
     parser.add_argument("--relabel", action="store_true", help="Recompute labels for stored papers; no fetching.")
+    parser.add_argument(
+        "--verdict", nargs=2, metavar=("ARXIV_ID", "VERDICT"),
+        help=f"Record a reviewed verdict ({', '.join(VERDICTS)}) and re-render the digest; no fetching.",
+    )
+    parser.add_argument("--reason", default="", help="With --verdict: why, in a sentence or two.")
+    parser.add_argument("--action", help="With --verdict: what a named document should change, if anything.")
+    parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
     args = parser.parse_args(argv)
+    if args.verdict:
+        raw_id, verdict = args.verdict
+        try:
+            arxiv_id = normalize_id(raw_id)
+            set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=args.action)
+        except ValueError as error:
+            print(f"error: {error}", file=sys.stderr)
+            return 2
+        state = _load_state(args.root)
+        attach_verdicts(state, load_verdicts(args.root)["verdicts"])
+        _save(args.root, state)
+        stored = "" if arxiv_id in state["papers"] else " (not in the collisions file yet)"
+        print(f"{arxiv_id}: {verdict}{stored}; digest re-rendered")
+        return 0
     if args.relabel:
         corpus = Corpus(args.root)
         corpus.refresh()
@@ -427,6 +552,7 @@ def main(argv: list[str] | None = None) -> int:
     corpus.refresh()
     report = run(args.root, Client(), corpus, since=args.since, tracks=tracks, page_size=args.max, max_pages=args.max_pages)
     print(f"fetched {report.fetched} papers in range, {report.new} new: {report.by_label}")
+    print(f"{report.relabelled} stored possible kills or scoops are now cited and relabelled already-cited")
     for name, cut in report.truncated.items():
         print(
             f"warning: {name} hit the page cap ({cut['results']} results back to {cut['oldest_seen']}); "

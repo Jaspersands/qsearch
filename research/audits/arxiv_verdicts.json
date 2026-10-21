@@ -1,0 +1,160 @@
+{
+  "verdicts": {
+    "2609.35101": {
+      "action": null,
+      "by": "human",
+      "reason": "Already cited as the source framework (`research/CHAIN_SUPPORT_BUDGET.md:12` and two others).",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2609.35239": {
+      "action": null,
+      "by": "human",
+      "reason": "The cue \"classically simulable\" refers to forward Clifford dynamics, which the paper concedes is easy.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "false-alarm"
+    },
+    "2609.36480": {
+      "action": null,
+      "by": "human",
+      "reason": "The project's \"Regev\" is the 2004 DCP reduction, not Regev factoring. The project makes no group-decomposition claim.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "false-alarm"
+    },
+    "2609.37636": {
+      "action": "Cite it as supporting evidence in the fault-tolerance notes, e.g. `research/QUANTUM_ERROR_MITIGATION_EXPONENTIAL_BARRIER.md`.",
+      "by": "human",
+      "reason": "Supports the project's fault-tolerance notes, e.g. `QUANTUM_ERROR_MITIGATION_EXPONENTIAL_BARRIER.md:22`. Framed as \"we argue\".",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2609.40036": {
+      "action": "Cite it in `research/TERNARY_COLORING_BPQM.md` next to Mandal and Pfister, and run the LP decoder before continuing that line.",
+      "by": "human",
+      "reason": "The corpus match (the QAOA and LPN notes) is spurious. The real overlap is `research/TERNARY_COLORING_BPQM.md` (q = 3 cycle codes), which claims no speedup. The paper's LP decoder is a classical baseline that note lacks.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2609.40250": {
+      "action": "Optional: add algorithmic stochastic localization to the classical baselines in `AFFINE_CLUSTER_NATIVE_PROBE.md`.",
+      "by": "human",
+      "reason": "Noncommuting p-spin; the project claims no Gibbs advantage there.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2609.40260": {
+      "action": null,
+      "by": "human",
+      "reason": "No project claim on generating sets or chief series of black-box groups.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2609.40302": {
+      "action": null,
+      "by": "human",
+      "reason": "\"SDP\" matched a note on an LWE-style SDP decoder. The project has no quantum SDP speedup claim.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "false-alarm"
+    },
+    "2610.00502": {
+      "action": "Add the paper to the Literature Update of `research/DCP_BINARY_ERROR_SOURCE_BRIDGE.md` and check which ε the classical result covers.",
+      "by": "human",
+      "reason": "The ternary notes already build on it. The abstract says the m = Ω(n²) regime of Chen, Liu and Zhandry is \"now covered by classical algorithms\". `research/DCP_BINARY_ERROR_SOURCE_BRIDGE.md:15-16` still calls m = εn² \"a potential ... exponential classical separation\".",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2610.01141": {
+      "action": "Scope the QML registry lesson to kernel and variational QML.",
+      "by": "human",
+      "reason": "No theorem breaks. But the QML registry lesson (\"cannot achieve scalable super-polynomial quantum advantage\", `research/registry/negative_results.json:68483`) is broader than its evidence, which covers kernel concentration, projected kernels, QTK and HHL. A factoring-based learning separation contradicts the universal wording.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2610.01902": {
+      "action": null,
+      "by": "human",
+      "reason": "Already the base of the Hermite line and credited as prior art (`research/HERMITE_DECODER_PRIOR_ART.md:37`).",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2610.02079": {
+      "action": "Optional baseline for `RELATIVE_GIBBS_WORLDLINE.md`.",
+      "by": "human",
+      "reason": "Strengthens the classical side that the annealing note already argues.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2610.03566": {
+      "action": "Preprint: cite it near `main.tex:206` and at the product-USD/Prange ceiling sentence. Outreach draft `docs/outreach/02-polar-gibbs.md`: acknowledge the paper; Piveteau is a likely recipient.",
+      "action_done": true,
+      "by": "human",
+      "reason": "It replaces HDQI's classical decoder with quantum decoders over pure-state classical-quantum channels, for uniformly random signs. It does not undercut the project: its rejection sampler appears to be per-symbol USD plus Prange, so `NEG-PARITY-BLOCK-USD-MATCHED-CLASSICAL-PRANGE` stands; BPQM beyond the ceiling is already labelled \"KNOWN MECHANISM\" (`research/BPQM_GIBBS_FRONTIER.md:3`); and the polar bound, E_J TV ≤ 0.010221, is a classical bound at fixed c, so no quantum improvement can invalidate it.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2610.03645": {
+      "action": "Add it to \"Novelty And Attempts To Disprove It\" in `research/HERMITE_STREAMING_COMPOSITION.md`.",
+      "by": "human",
+      "reason": "A second streaming-DQI result for OPI: low rate, O(d log n) qubits against Ω(n) bits. Not the Hermite half-rate decoder.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2610.03697": {
+      "action": "Add it to the prior-art comparison in `research/HDQI_PREDECESSOR_UNIFORM.md`. If the paper contains the radius recurrence, record a rediscovery.",
+      "by": "human",
+      "reason": "\"Redundancy-free\" is the independent-label condition of `research/HDQI_PREDECESSOR_UNIFORM.md:55-57`. Its NP-hardness at large β²d does not contradict the note's exact solver, which is restricted to predecessor-uniform orders.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2610.04597": {
+      "action": null,
+      "by": "human",
+      "reason": "Uses Jucys–Murphy elements for Schur sampling in fidelity testing, a different task from the coset JM label work.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2610.05752": {
+      "action": null,
+      "by": "human",
+      "reason": "The project never claims character-state preparation.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2610.06753": {
+      "action": "Preprint: cite the cap at `main.tex:142` and in the Relation paragraph. Outreach draft `docs/outreach/01-dqi-opi.md`: reword question 2 (lines 72-73) to ask whether decoding beyond half the distance is plausible for explicit characters, and consider adding Mazumder and Niroula as recipients.",
+      "action_done": true,
+      "by": "human",
+      "reason": "It does not weaken Result A. Under worst-case Hamming decoding with 2ℓ+1 < d, DQI's satisfied fraction exceeds Prange completion, ρ + (1−ρ)α, by at most κ(α) = √(u(1−u)) − u, where u = α/2. At N = 127 and K = 39 the cap is about 0.861 and the classical witness of 109/127 already sits at it; the only radius that beats the witness (ℓ = 32) lies outside the cap's hypothesis.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    },
+    "2610.06781": {
+      "action": null,
+      "by": "human",
+      "reason": "Shares only the phrase \"pretty good measurement\" with the coset copy-count ledger.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "false-alarm"
+    },
+    "2610.06812": {
+      "action": null,
+      "by": "human",
+      "reason": "The project makes no claim about one-bit readout, DQC1 or factoring simulability.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "false-alarm"
+    },
+    "2610.08714": {
+      "action": null,
+      "by": "human",
+      "reason": "No project theorem says multivariable synthesis needs bad normalization. The project's normalization no-gos are univariate degree bounds and are explicitly scoped (`DCP_PGM_PROJECTED_ENCODING.md:3-4`).",
+      "reviewed_on": "2026-10-21",
+      "verdict": "related-only"
+    },
+    "2610.16827": {
+      "action": "Cite it wherever the project's S_n class-sum block encodings are presented.",
+      "by": "human",
+      "reason": "Already cited in two notes. The project's S_n class-sum block encodings are special cases of its generic construction, and the project disclaims novelty for them.",
+      "reviewed_on": "2026-10-21",
+      "verdict": "should-cite"
+    }
+  }
+}

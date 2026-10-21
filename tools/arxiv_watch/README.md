@@ -9,6 +9,7 @@ python tools/arxiv_watch/watch.py                 # papers since the last run, w
 python tools/arxiv_watch/watch.py --since 2026-09-18 --tracks dcp,dqi_opi
 python tools/arxiv_watch/watch.py --relabel       # re-apply label rules to stored papers, no fetching
 python tools/arxiv_watch/watch.py --replay-seeds  # classifier consistency check on the seed papers
+python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." --action "..."
 ```
 
 Each track query is sorted newest first and paged (`--max` results per page, default 100)
@@ -21,16 +22,29 @@ it (`--since <start> --tracks <track>`).
 The window starts seven days before each track's previous run. arXiv's `published` date is
 the v1 submission date, and a paper can be listed several days after it is submitted
 (weekends, moderation holds), so a one-day overlap lost papers. Papers already stored are
-recognised by id and never re-labelled or re-reported.
+recognised by id and never re-reported or re-scored, with two exceptions:
 
-Outputs, rewritten only when a run finds a new paper (or a coverage gap opens or closes),
-so a quiet week leaves them byte-for-byte unchanged:
+- A paper with a reviewed verdict (see [Verdicts](#verdicts)) gets the verdict copied onto
+  its record and leaves the possible-kill and possible-scoop sections of the digest for the
+  Reviewed table. Its machine label is unchanged.
+- A stored possible kill or scoop with no verdict is relabelled `already-cited` once a note,
+  record or literature file cites its id. The record keeps `relabelled_from` (the old label)
+  and `relabelled_on`, and the run reports the count. `--relabel` drops both fields when it
+  gives the paper any label but `already-cited`.
+
+Outputs, rewritten only when a run finds a new paper, a coverage gap opens or closes, a
+verdict is added, changed or withdrawn, or a stored flag is relabelled, so a quiet week
+leaves them byte-for-byte unchanged. A verdict for a paper the watch has not stored changes
+no record, so the run re-renders only the digest:
 
 - `research/audits/arxiv_collisions.json`: every paper seen, with tracks, label, wording
-  cues, the five nearest corpus records and the date first seen. Papers already present
-  are never re-scored, so repeated runs only add.
+  cues, the five nearest corpus records, the date first seen and, once reviewed, its
+  verdict. Apart from the two exceptions above, repeated runs only add.
 - `research/audits/ARXIV_WATCH.md`: the digest, newest first, with possible kills,
-  possible scoops and related papers.
+  possible scoops and related papers, then the Reviewed table.
+- `research/audits/arxiv_verdicts.json`: the reviewed verdicts, keyed by arXiv id. Written
+  by `--verdict` and by the judge import (`judge.py`); the source of truth for the Reviewed
+  table.
 
 ## Tracks and labels
 
@@ -59,6 +73,76 @@ regime and a quantum algorithm in another) is labelled a scoop; its cue column s
 Labels are triage, not judgement. A "possible kill" means "read this before the next
 pass on that track".
 
+## Verdicts
+
+Labels are triage, verdicts are judgement. A verdict records what a reader decided after
+reading the paper against the project:
+
+```bash
+python tools/arxiv_watch/watch.py --verdict 2609.40302 false-alarm \
+    --reason '"SDP" matched a note on an LWE-style SDP decoder.' [--action "..."] [--by human]
+```
+
+This writes `research/audits/arxiv_verdicts.json`, copies the verdict onto the stored paper
+and re-renders the digest. It fetches nothing and does not build the corpus index. The id
+may carry a version, an `arXiv:` prefix or the abstract URL (`arXiv:2609.40302v2`); the
+verdict is stored under the bare id the watch uses. An unknown verdict, or an id that is not
+an arXiv id, exits 2.
+
+| Verdict | Meaning |
+|---|---|
+| kill | The paper invalidates a project claim or retained result. |
+| scoop | The paper publishes a result the project presents as new. |
+| should-cite | No conflict, but a named document should cite the paper or narrow a sentence. |
+| related-only | Shared topic; nothing to do. |
+| false-alarm | The wording cue or the corpus match is spurious. |
+
+Each entry holds `verdict`, `reason`, `action` (null when nothing is to be done), `by` and
+`reviewed_on`. `action_done: true` marks an action already carried out. The file is the
+source of truth: every run copies its entries onto the stored records and drops a withdrawn
+one. The digest's Reviewed table lists every entry, by verdict then id, with the paper's
+machine label; an id the collisions file does not hold shows "not stored".
+
+Seeding the file (the 22 verdicts of the 2026-10-21 review) changes every stored record it
+names, so the first weekly run after a seed opens a pull request even when no new paper
+arrives.
+
+## Judging unreviewed flags
+
+New possible kills and scoops arrive every week. `judge.py` hands the unreviewed ones (flagged,
+no verdict) to in-session subagents, in the same export and import loop as `tools/audit/`:
+
+```bash
+python tools/arxiv_watch/judge.py --export DIR --batches 3
+# one fresh subagent per batch reads DIR/INSTRUCTIONS.md and DIR/batch_NN.json, writes DIR/out/batch_NN.jsonl
+python tools/arxiv_watch/judge.py --import DIR/out/*.jsonl --judge claude-subagent-2026-10-27
+```
+
+Each batch item has the paper's title, abstract, label, cues and tracks, and its nearest
+Q-Search records with the first 600 characters of each. Batch files are UTF-8 with no `\u`
+escapes, so the judge sees the characters the quote check compares. The judge writes one row
+per paper:
+`{"arxiv_id", "verdict", "reason", "quote", "quote_from", "action", "confidence"}`.
+
+Import checks every row before it writes anything: a missing or unreadable file, a row that
+is not a JSON object, an unknown verdict, or an id that is missing or not stored stops it
+(exit 2). A row is then rejected when
+
+- its quote is under six words, or does not appear verbatim in the one text `quote_from`
+  names: the abstract, or the excerpt of one of the paper's nearest records. Latin letter
+  case, punctuation (including `-`, `/` and TeX's `$`) and spacing are ignored; Greek letters
+  and math symbols must match, so a quote with `≥` for `≤`, or `Θ` or `ω` for `Ω`, fails. A
+  quote that runs from one text into another, or comes from a record the judge was not
+  shown, is not evidence ("quote not found");
+- the paper already has a verdict recorded by anyone but a judge, including an entry written
+  by hand without `by` ("human verdict exists").
+
+Accepted rows go into `research/audits/arxiv_verdicts.json` with `by: "judge:NAME"`, the
+quote, `quote_from` and `confidence`. A later import may replace a judge's verdict, never a
+human's. The stored records and the digest are then rewritten, and the Reviewed table shows
+who decided. A judge verdict is one model's reading: check a `kill` or `scoop` by hand before
+acting on it, and record the outcome with `watch.py --verdict`.
+
 ## Scheduling
 
 `.github/workflows/arxiv_watch.yml` runs every Monday and on demand. When the digest
@@ -74,8 +158,21 @@ to get CI.
 
 ## Checks
 
-- Unit tests (`tests/tools/test_arxiv_watch.py`) use a recorded arXiv API response and
-  a fake client; nothing in the test suite touches the network.
+- Unit tests (`tests/tools/test_arxiv_watch.py`, `tests/tools/test_arxiv_judge.py`) use a
+  recorded arXiv API response and a fake client; nothing in the test suite touches the
+  network.
+- Verdict smoke run (2026-10-21, after seeding): `watch.py --relabel` on the branch checkout
+  kept all 22 verdicts on their records; the possible-kill and possible-scoop sections were
+  empty and the Reviewed table had 22 rows, none "not stored". The five flags the review calls
+  already cited kept their labels there, because the notes that cite them were not committed
+  yet. Four unflagged papers changed label or tracks under the branch's rules and index
+  (2609.23818 and 2609.35511 to unrelated, 2609.31484 to already-cited, 2610.17711 lost
+  hidden_shift). The relabelled outputs were not committed. A weekly run never recomputes
+  labels: a simulated first weekly run with no new papers wrote only the 22 verdict
+  attachments. The four changes need an explicit `watch.py --relabel` commit.
+  `.github/workflows/arxiv_watch.yml` still says the outputs change only for new papers or a
+  coverage gap, and its PR body says "New papers"; the first PR after seeding holds verdicts
+  only.
 - Seed replay: all 52 seed papers whose tags name a track are placed on it. Nine
   patterns were added after the first replay missed them, so this is a consistency
   check on the seeds, not a held-out accuracy figure.
