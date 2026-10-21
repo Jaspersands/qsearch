@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import os
+import socket
 import subprocess
 import sys
 from pathlib import Path
@@ -30,6 +32,9 @@ def command_audit(args):
 '''
 
 ORDER = [("audit", "qsearch_cli.commands.general", "add_audit")]
+FUNCTIONS = {"command_audit": "qsearch_cli.commands.general"}
+# What every minimal checkout refers to inside qsearch_cli/: the shim's import and the registry's module columns.
+CLI_REFS = {"qsearch_cli/main.py": {"qsearch.py"}, "qsearch_cli/commands/general.py": {"qsearch_cli/registry.py"}}
 AUDIT_ENTRY = {"name": "audit", "aliases": [], "function": "command_audit", "module": "qsearch_cli.commands.general"}
 
 
@@ -53,6 +58,7 @@ def _repo(
     general: str = GENERAL,
     imports: dict | None = None,
     order: list | None = None,
+    functions: dict | None = None,
     dispatch: list | None = None,
     manifest: list | None = None,
     committed: dict[str, str] | None = None,
@@ -63,12 +69,13 @@ def _repo(
     files = {
         "qsearch.py": '"""Shim."""\n\nfrom qsearch_cli.main import main\n',
         "qsearch_cli/__init__.py": "",
+        "qsearch_cli/main.py": "def main():\n    return 0\n",
         "qsearch_cli/imports.py": f"IMPORTS = {imports if imports is not None else {}!r}\n",
         "qsearch_cli/commands/__init__.py": "",
         "qsearch_cli/commands/general.py": general,
         "qsearch_cli/registry.py": (
             f"ORDER = {order if order is not None else ORDER!r}\n\n"
-            "FUNCTIONS = {'command_audit': 'qsearch_cli.commands.general'}\n\n"
+            f"FUNCTIONS = {functions if functions is not None else FUNCTIONS!r}\n\n"
             f"DISPATCH = {dispatch if dispatch is not None else []!r}\n"
         ),
         "research/audits/cli_manifest.json": json.dumps(
@@ -97,6 +104,82 @@ def test_check_json_reports_the_parse_error(tmp_path: Path) -> None:
     assert problems[0].message.startswith("Invalid \\escape: line 1 column")
 
 
+def test_check_json_parses_a_huge_integer_and_reports_deep_nesting(tmp_path: Path) -> None:
+    # Python's int() refuses more than 4300 digits and json recurses per level: neither may end the run.
+    _write(tmp_path / "research" / "audits" / "big.json", "[" + "7" * 5000 + "]\n")
+    _write(tmp_path / "research" / "audits" / "deep.json", "[" * 100_000 + "]" * 100_000)
+    _write(tmp_path / "research" / "registry" / "truncated.json", '{"id": ')
+
+    problems = pf.check_json(tmp_path)
+
+    assert [p.path for p in problems] == ["research/registry/truncated.json", "research/audits/deep.json"]
+    assert "recursion" in problems[1].message
+
+
+def test_check_json_rereads_a_file_caught_mid_rewrite(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # Another agent rewriting a registry file: the first read sees half of it.
+    record = _write(tmp_path / "research" / "registry" / "negative_results.json", '[\n  {"id": "NEG-1"}\n]\n')
+    broken = _write(tmp_path / "research" / "registry" / "broken.json", '{"id": ')
+    real_read_text = Path.read_text
+    reads: dict[str, int] = {}
+
+    def read_text(self: Path, *args, **kwargs) -> str:
+        text = real_read_text(self, *args, **kwargs)
+        reads[self.name] = reads.get(self.name, 0) + 1
+        return text[: len(text) // 2] if self == record and reads[self.name] == 1 else text
+
+    sleeps: list[float] = []
+    monkeypatch.setattr(Path, "read_text", read_text)
+    monkeypatch.setattr(pf.time, "sleep", sleeps.append)
+
+    problems = pf.check_json(tmp_path)
+
+    assert [(p.path, p.message) for p in problems] == [
+        ("research/registry/broken.json", "Expecting value: line 1 column 8 (char 7)")
+    ]
+    assert reads == {"negative_results.json": 2, "broken.json": pf.JSON_RETRIES + 1}
+    assert broken.is_file() and len(sleeps) == 1 + pf.JSON_RETRIES
+
+
+def test_check_json_reports_a_dangling_symlink(tmp_path: Path) -> None:
+    audits = tmp_path / "research" / "audits"
+    _write(audits / "fine.json", "[]\n")
+    (audits / "dangling.json").symlink_to(audits / "deleted.json")
+
+    assert [(p.path, p.message) for p in pf.check_json(tmp_path)] == [("research/audits/dangling.json", "dangling symlink")]
+
+
+def test_check_json_reports_a_directory_it_cannot_list(tmp_path: Path) -> None:
+    locked = tmp_path / "research" / "audits" / "locked"
+    _write(locked / "broken.json", "{")
+    locked.chmod(0)
+    try:
+        if os.access(locked, os.R_OK):
+            pytest.skip("running as a user that can list any directory")
+        problems = pf.check_json(tmp_path)
+    finally:
+        locked.chmod(0o755)
+
+    assert [(p.path, p.message) for p in problems] == [("research/audits/locked", "cannot list: Permission denied")]
+
+
+def test_check_json_reports_non_utf8_bytes_and_reads_only_regular_files(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    audits = tmp_path / "research" / "audits"
+    (audits / "latin1.json").parent.mkdir(parents=True)
+    (audits / "latin1.json").write_bytes('{"name": "Schrödinger"}'.encode("latin-1"))
+    _write(audits / "folder.json" / "inner.json", "{")  # a directory named *.json is walked, not read
+    monkeypatch.chdir(audits)  # AF_UNIX paths are short on macOS: bind a relative one
+    with socket.socket(socket.AF_UNIX) as sock:
+        sock.bind("socket.json")  # neither a file to parse nor a problem
+
+        problems = pf.check_json(tmp_path)
+
+    assert [p.path for p in problems] == ["research/audits/folder.json/inner.json", "research/audits/latin1.json"]
+    assert "codec can't decode byte" in problems[1].message
+
+
 def test_check_json_finds_todays_broken_contract() -> None:
     # Delete this test once the agents fix the contract.
     if not (REPO / "research" / "hypotheses").is_dir():
@@ -109,6 +192,7 @@ def test_problem_paths_are_relative_with_a_relative_root(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
     _write(tmp_path / "research" / "registry" / "nested" / "truncated.json", '{"id": ')
+    _write(tmp_path / "qsearch.py", "")
     monkeypatch.chdir(tmp_path)
 
     problems = pf.check_json(Path("."))
@@ -133,6 +217,7 @@ def test_untracked_and_missing_theorem_modules(tmp_path: Path) -> None:
     _write(repo / "theorems" / "dispatched.py", "def gen():\n    return 0\n")  # named only by DISPATCH
 
     assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
         "theorems/tracked.py": {"qsearch_cli/commands/general.py"},
         "theorems/untracked.py": {"qsearch_cli/commands/general.py"},
         "core/gone.py": {"qsearch_cli/commands/general.py"},
@@ -172,6 +257,7 @@ def test_bare_and_package_style_imports_are_followed(tmp_path: Path) -> None:
 
     # json is stdlib; numpy and qsearch are not files under theorems/ or core/, so they are skipped.
     assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
         "theorems/new_bare_bridge.py": {"qsearch.py"},
         "core/research_registry.py": {"qsearch_cli/commands/general.py"},
         "theorems/pkg_style.py": {"qsearch_cli/commands/general.py"},
@@ -184,6 +270,147 @@ def test_bare_and_package_style_imports_are_followed(tmp_path: Path) -> None:
     }
 
 
+def test_package_style_imports_table_entries_name_the_submodule(tmp_path: Path) -> None:
+    # `migrate.py sweep` turns `from theorems import x` in qsearch.py into ("theorems", "x"),
+    # which qsearch_cli/resolve.py loads as the submodule theorems/x.py.
+    imports = {
+        "tracked_pkg": ("theorems", "tracked_pkg"),
+        "new_pkg": ("theorems", "new_pkg"),
+        "core_pkg": ("core", "core_pkg"),
+        "theorems": ("theorems", None),
+    }
+    repo = _repo(tmp_path, imports=imports, committed={"theorems/tracked_pkg.py": "x = 1\n"})
+    _write(repo / "theorems" / "new_pkg.py", "y = 2\n")
+
+    assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
+        "theorems/tracked_pkg.py": {"qsearch_cli/imports.py"},
+        "theorems/new_pkg.py": {"qsearch_cli/imports.py"},
+        "core/core_pkg.py": {"qsearch_cli/imports.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("theorems/new_pkg.py", "not tracked by git"),
+        ("core/core_pkg.py", "missing on disk"),
+    }
+
+
+def test_cli_modules_the_registry_and_shim_load_are_checked(tmp_path: Path) -> None:
+    # parser.py imports every ORDER module to build --help, so one missing from a clone breaks every command.
+    order = [
+        *ORDER,
+        ("newcmd", "qsearch_cli.commands.newdomain", "add_newcmd"),
+        ("ghost", "qsearch_cli.commands.ghost", "add_ghost"),
+    ]
+    functions = {**FUNCTIONS, "command_fn": "qsearch_cli.commands.fnonly"}
+    # A dotted name that is a package directory loads its __init__.py, not qsearch_cli/commands.py.
+    repo = _repo(tmp_path, general="import qsearch_cli.commands\n\n" + GENERAL, order=order, functions=functions)
+    _write(repo / "qsearch_cli" / "commands" / "newdomain.py", "def add_newcmd(subparsers):\n    pass\n")
+    _write(repo / "qsearch_cli" / "commands" / "fnonly.py", "def command_fn(args):\n    return 0\n")
+    _git(repo, "rm", "-q", "--cached", "qsearch_cli/main.py")
+    _git(repo, "commit", "-qm", "untrack main")
+
+    assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
+        "qsearch_cli/commands/newdomain.py": {"qsearch_cli/registry.py"},
+        "qsearch_cli/commands/ghost.py": {"qsearch_cli/registry.py"},
+        "qsearch_cli/commands/fnonly.py": {"qsearch_cli/registry.py"},
+        "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/general.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("qsearch_cli/main.py", "not tracked by git"),
+        ("qsearch_cli/commands/newdomain.py", "not tracked by git"),
+        ("qsearch_cli/commands/ghost.py", "missing on disk"),
+        ("qsearch_cli/commands/fnonly.py", "not tracked by git"),
+    }
+
+
+TRACKED_WITH_HELPERS = '''\
+"""Uses helpers, but not this one:
+
+from theorems.in_docstring import x
+"""
+QUOTE = "\'\'\'"  # a quote inside a string starts no string
+from helper import h
+from core.helper2 import h2  # import theorems.in_comment
+import os, json
+
+
+def lazy():
+    from helper3 import (
+        h3,
+    )
+    import theorems.gone \\
+        as gone
+    return h3, gone, """
+import theorems.in_string"""
+
+
+a = 1
+'''
+
+
+def test_imports_inside_referenced_modules_are_followed(tmp_path: Path) -> None:
+    # A committed module whose own helper never was: fine in this copy, ModuleNotFoundError in a clone.
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    return a\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": TRACKED_WITH_HELPERS})
+    _write(repo / "theorems" / "helper.py", "from deep import d\n\nh = 1\n")  # bare: theorems/ first
+    _write(repo / "theorems" / "deep.py", "import theorems.tracked\n\nd = 1\n")  # a cycle back
+    _write(repo / "core" / "helper2.py", "h2 = 1\n")
+    _write(repo / "core" / "helper3.py", "h3 = 1\n")
+
+    refs = pf.referenced_modules(repo)
+
+    assert refs["theorems/tracked.py"] == {"qsearch_cli/commands/general.py", "theorems/deep.py"}
+    assert refs["theorems/helper.py"] == {"theorems/tracked.py"}
+    assert refs["theorems/deep.py"] == {"theorems/helper.py"}
+    assert not {"theorems/in_docstring.py", "theorems/in_comment.py", "theorems/in_string.py"} & set(refs)
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("theorems/helper.py", "not tracked by git"),
+        ("theorems/deep.py", "not tracked by git"),
+        ("core/helper2.py", "not tracked by git"),
+        ("core/helper3.py", "not tracked by git"),
+        ("theorems/gone.py", "missing on disk"),
+    }
+
+
+def test_line_scan_finds_what_a_full_parse_finds_on_the_real_checkout() -> None:
+    import ast
+
+    def statements(nodes) -> list[str]:
+        return sorted(ast.unparse(n) for n in nodes if isinstance(n, (ast.Import, ast.ImportFrom)))
+
+    files = [p for d in ("theorems", "core", "qsearch_cli") for p in sorted((REPO / d).rglob("*.py"))]
+    differing = []
+    for path in files:
+        text = path.read_text(encoding="utf-8")
+        if statements(pf._scanned_imports(text)) != statements(ast.walk(ast.parse(text))):
+            differing.append(path.relative_to(REPO).as_posix())
+    assert len(files) > 1000
+    assert differing == []
+
+
+def test_bare_names_resolve_to_theorems_before_core_and_skip_stdlib_and_stars(tmp_path: Path) -> None:
+    # The CLI puts theorems/ on sys.path before core/; the README says standard library names
+    # are skipped, even beside a file of that name, and `import *` names no file.
+    general = (
+        "import json\n"
+        "from dual import f\n"
+        "from theorems import *\n"
+        "\n"
+        "def command_audit(args):\n"
+        "    return json, f\n"
+    )
+    repo = _repo(tmp_path, general=general, imports={"g": ("dual", "g")}, git=False)
+    for directory in ("theorems", "core"):
+        _write(repo / directory / "dual.py", "f = g = 1\n")
+        _write(repo / directory / "json.py", "")
+
+    assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
+        "theorems/dual.py": {"qsearch_cli/commands/general.py", "qsearch_cli/imports.py"},
+    }
+
+
 def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None:
     imports = {
         "os": ("os", None),
@@ -193,7 +420,59 @@ def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None
     }
     repo = _repo(tmp_path, imports=imports, git=False)
 
-    assert pf.referenced_modules(repo) == {"core/table_mod.py": {"qsearch_cli/imports.py"}}
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "core/table_mod.py": {"qsearch_cli/imports.py"}}
+
+
+def test_staged_module_counts_as_tracked_but_intent_to_add_does_not(tmp_path: Path) -> None:
+    # Run before a commit: a plain commit includes a staged file, but leaves out one added with -N.
+    general = "def command_audit(args):\n    from theorems.staged import a\n    from theorems.intent import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general)
+    _write(repo / "theorems" / "staged.py", "a = 1\n")
+    _write(repo / "theorems" / "intent.py", "b = 2\n")
+    _git(repo, "add", "theorems/staged.py")
+    _git(repo, "add", "-N", "theorems/intent.py")
+
+    assert "theorems/staged.py" in pf.tracked_files(repo)
+    assert "theorems/intent.py" not in pf.tracked_files(repo)
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/intent.py", "not tracked by git (intent-to-add only)")
+    ]
+
+
+def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_path: Path) -> None:
+    # Python's import matches case even on macOS, whose file system does not: git add would not help.
+    general = "def command_audit(args):\n    from theorems.Tracked import a\n    from theorems.Gone import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": "a = 1\n"})
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/Gone.py", "missing on disk"),
+        pf.Problem("imports", "theorems/Tracked.py", "missing on disk (case differs: theorems/tracked.py)"),
+    ]
+
+
+@pytest.mark.parametrize(
+    "tables, table",
+    [
+        ({"imports": {"x": (None, "x")}}, "IMPORTS"),
+        ({"imports": [("a", "b")]}, "IMPORTS"),
+        ({"imports": {"x": "ab"}}, "IMPORTS"),  # would unpack into module "a", attribute "b"
+        ({"dispatch": [("f", 3, "g")]}, "DISPATCH"),
+        ({"order": [("audit", None, "add_audit")]}, "ORDER"),
+        ({"functions": ["command_audit"]}, "FUNCTIONS"),
+        ({"functions": {"command_audit": 3}}, "FUNCTIONS"),
+    ],
+)
+def test_a_table_of_the_wrong_shape_is_one_problem(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], tables: dict, table: str
+) -> None:
+    repo = _repo(tmp_path, git=False, **tables)
+
+    assert pf.main(["--root", str(repo)]) == 1
+    lines = capsys.readouterr().out.splitlines()
+    [line] = [line for line in lines if line.startswith("imports: .: cannot read")]
+    assert line.startswith(f"imports: .: cannot read the CLI sources: ValueError: {table} in qsearch_cli/")
+    if table == "ORDER":
+        assert any(line.startswith("manifest: qsearch_cli/registry.py: cannot read ORDER: ValueError: ORDER") for line in lines)
 
 
 def test_real_checkout_has_no_untracked_imports() -> None:
@@ -223,7 +502,22 @@ def test_tree_inside_an_unrelated_repository_is_git_unavailable(
     repo = _repo(outer / "export", general=general, committed={"theorems/tracked.py": "a = 1\n"}, git=False)
 
     assert pf.tracked_files(repo) is None
-    assert pf.check_untracked_imports(repo) == [pf.Problem("imports", ".", "git unavailable")]
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", ".", "git unavailable: the root is not the top of a git work tree (git sees it as export/repo/)")
+    ]
+
+
+def test_a_root_inside_a_checkout_is_named_as_such(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    # Say --root qsearch_cli by mistake: git works there, so "git unavailable" alone would mislead.
+    repo = _repo(tmp_path)
+
+    assert pf.check_untracked_imports(repo / "qsearch_cli") == [
+        pf.Problem("imports", ".", "git unavailable: the root is not the top of a git work tree (git sees it as qsearch_cli/)")
+    ]
+    with pytest.raises(SystemExit) as exit_info:
+        pf.main(["--root", str(repo / "qsearch_cli")])
+    assert exit_info.value.code == 2
+    assert "qsearch_cli is not a Q-Search checkout: it has no qsearch.py" in capsys.readouterr().err
 
 
 def test_manifest_subcommand_missing_from_order(tmp_path: Path) -> None:
@@ -307,6 +601,22 @@ def test_validate_reports_the_issues_printed_on_stdout(tmp_path: Path) -> None:
 
     (repo / "qsearch.py").write_text("raise SystemExit(4)\n", encoding="utf-8")
     assert [p.message for p in pf.check_validate(repo)] == ["exit 4: (no output)"]
+
+    # A crash prints its reason on stderr, after whatever went to stdout: stderr wins.
+    shim = 'import sys\nprint("loading the registry")\nprint("KeyError: id", file=sys.stderr)\nsys.exit(5)\n'
+    (repo / "qsearch.py").write_text(shim, encoding="utf-8")
+    assert [p.message for p in pf.check_validate(repo)] == ["exit 5: KeyError: id"]
+
+
+def test_imports_flag_reports_a_verifier_that_cannot_start(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    def broken_check_imports(root: Path) -> tuple[int, list[str]]:
+        raise RuntimeError("qsearch_cli imported from another checkout")
+
+    monkeypatch.setattr(pf, "_check_imports", broken_check_imports)
+
+    assert pf.check_imports_resolve(tmp_path) == [
+        pf.Problem("resolve", ".", "RuntimeError: qsearch_cli imported from another checkout")
+    ]
 
 
 def test_imports_flag_uses_split_cli_verify(
