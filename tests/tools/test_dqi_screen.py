@@ -4,8 +4,10 @@ import json
 from dataclasses import replace
 from pathlib import Path
 
+import numpy as np
 import pytest
 
+from tools.dqi_screen import prange as P
 from tools.dqi_screen import rules as R
 from tools.dqi_screen import screen as S
 
@@ -158,3 +160,35 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
     assert text.startswith("# DQI screen: candidate") and "| q_prange |" in text and "Verdict:" in text
     assert main(["--objective", "count", "--q", "12", "--m", "100", "--n", "30", "--rho", "0.5"]) == 2
     assert "prime power" in capsys.readouterr().err
+
+
+def test_prange_full_field_scores_one() -> None:
+    B = np.random.default_rng(3).integers(0, 5, size=(6, 3))
+    result = P.prange_restarts(B, [range(5)] * 6, 5, restarts=2, seed=0)
+    assert result["best"] == 1.0
+    assert (result["m"], result["n"], result["q"], result["restarts"], result["singular"]) == (6, 3, 5, 2, 0)
+    B[:, 2] = 0  # rank 2 < n: every draw is singular and scores 0
+    rank_deficient = P.prange_restarts(B, [range(5)] * 6, 5, restarts=2, seed=0)
+    assert rank_deficient["best"] == 0.0 and rank_deficient["singular"] == 2
+    with pytest.raises(ValueError):
+        P.prange_restarts(B, [range(4)] * 6, 4)
+
+
+def test_prange_more_restarts_never_lower_best() -> None:
+    B = np.random.default_rng(5).integers(0, 7, size=(12, 4))
+    accepted = [{0, 1, 2}] * 12
+    three = P.prange_restarts(B, accepted, 7, restarts=3, seed=1)
+    twelve = P.prange_restarts(B, accepted, 7, restarts=12, seed=1)
+    assert three["best"] <= twelve["best"]
+    assert twelve["scores"][:3] == three["scores"]
+    assert all(score >= 4 / 12 for score in twelve["scores"])  # the n targeted rows always hold
+
+
+def test_prange_large_prime_field() -> None:
+    q = 2**61 - 1
+    rng = np.random.default_rng(7)
+    B = rng.integers(1, q, size=(4, 2))  # int64 entries; int64 products would overflow
+    x = [int(v) for v in rng.integers(1, q, size=2)]
+    targets = [(int(B[i, 0]) * x[0] + int(B[i, 1]) * x[1]) % q for i in range(4)]
+    result = P.prange_restarts(B, [{t} for t in targets], q, restarts=3, seed=0)
+    assert result["best"] == 1.0 and result["singular"] == 0
