@@ -19,9 +19,10 @@ python tools/brief/build_brief.py --json                     # also print the br
 python tools/brief/build_brief.py --root ../other-checkout
 ```
 
-It exits 0 whatever it finds; a `--root` that is not a directory or a `--since-days` below 1
-is a usage error (exit 2). The window runs from 00:00 UTC on the day `--since-days` before
-today (default 7).
+It exits 0 whatever it finds; a `--root` that is not a directory or a `--since-days` outside 1
+to 3650 is a usage error (exit 2), and `build()` raises `ValueError` for such a window. The
+window runs from 00:00 UTC on the day `--since-days` before today's UTC date (default 7); a
+`today` passed to `build()` as a datetime counts as its UTC date.
 
 ## Why it exists
 

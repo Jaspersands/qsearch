@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_MD = "research/audits/AGENT_BRIEF.md"
 OUTPUT_JSON = "research/audits/agent_brief.json"
 DEFAULT_SINCE_DAYS = 7
+MAX_SINCE_DAYS = 3650  # ten years: longer than the repository's history, and far from date.min and 1970
 REGISTRY = "research/registry/negative_results.json"
 QUARANTINE = "research/registry/quarantined_campaign_negatives.json"
 ARXIV_STATE = "research/audits/arxiv_collisions.json"
@@ -119,16 +120,21 @@ def git_runner(root: Path) -> GitRunner:
 
 
 def _day(today: dt.date | str | None) -> dt.date:
-    """A calendar day: today in UTC when None; a datetime is cut to its date."""
+    """A calendar day: today in UTC when None; a datetime is cut to its UTC date (a naive one is taken as UTC)."""
     if today is None:
         return dt.datetime.now(dt.timezone.utc).date()
     if isinstance(today, dt.datetime):
-        return today.date()
+        return (today.astimezone(dt.timezone.utc) if today.tzinfo else today).date()
     return today if isinstance(today, dt.date) else dt.date.fromisoformat(today)
 
 
 def cutoff_day(since_days: int, today: dt.date | str | None = None) -> dt.date:
-    """The first day of the window: the brief covers changes from its start (00:00 UTC) on."""
+    """The first day of the window: the brief covers changes from its start (00:00 UTC) on.
+
+    Raises ValueError unless since_days is a whole number from 1 to MAX_SINCE_DAYS.
+    """
+    if isinstance(since_days, bool) or not isinstance(since_days, int) or not 1 <= since_days <= MAX_SINCE_DAYS:
+        raise ValueError(f"since_days must be a whole number of days from 1 to {MAX_SINCE_DAYS}, not {since_days!r}")
     return _day(today) - dt.timedelta(days=since_days)
 
 
@@ -491,9 +497,14 @@ def _registry_section(root: Path, since_days: int, today: dt.date, git: GitRunne
 def build(
     root: Path, since_days: int = DEFAULT_SINCE_DAYS, today: dt.date | str | None = None, git: GitRunner | None = None
 ) -> dict[str, Any]:
-    """Every section of the brief, as one JSON-ready dict. Never raises for a missing or broken source."""
+    """Every section of the brief, as one JSON-ready dict.
+
+    Raises ValueError for a since_days outside 1 to MAX_SINCE_DAYS; never raises for a missing
+    or broken source.
+    """
     root = Path(root).resolve()
     day = _day(today)
+    cutoff = cutoff_day(since_days, day)  # checks since_days before any section runs
     git = git or git_runner(root)
     registry = _section("registry", _registry_section, root, since_days, day, git)
     added = registry.get("added") if registry.get("available") else None
@@ -501,7 +512,7 @@ def build(
         "generated_on": day.isoformat(),
         "since_days": since_days,
         "registry": registry,
-        "arxiv": _section("arxiv", arxiv_section, root, cutoff_day(since_days, day)),
+        "arxiv": _section("arxiv", arxiv_section, root, cutoff),
         "referee": _section("referee", referee_section, root),
         "preflight": _section("preflight", preflight_section, root),
         "inertia": _section("inertia", inertia_section, root),
@@ -686,17 +697,20 @@ def write(root: Path, brief: dict[str, Any], out: Path | None = None) -> tuple[P
     return md, js
 
 
-def _positive(value: str) -> int:
-    number = int(value)
-    if number < 1:
-        raise argparse.ArgumentTypeError("must be at least 1")
+def _since_days_arg(value: str) -> int:
+    try:
+        number = int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"not a whole number of days: {value!r}") from None
+    if not 1 <= number <= MAX_SINCE_DAYS:
+        raise argparse.ArgumentTypeError(f"must be from 1 to {MAX_SINCE_DAYS}")
     return number
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=ROOT, help="Checkout to read (default: this repository).")
-    parser.add_argument("--since-days", type=_positive, default=DEFAULT_SINCE_DAYS,
+    parser.add_argument("--since-days", type=_since_days_arg, default=DEFAULT_SINCE_DAYS,
                         help="Window: changes since this many days ago, from 00:00 UTC.")
     parser.add_argument("--out", type=Path,
                         help="Directory for AGENT_BRIEF.md and agent_brief.json (default: ROOT/research/audits).")

@@ -123,6 +123,20 @@ def test_a_commit_at_midnight_on_the_cutoff_day_is_inside_the_window(tmp_path: P
     assert B.registry_delta(repo, since[0], since_date=since[1])["added"] == ["B"]
 
 
+def test_a_datetime_counts_as_its_utc_day() -> None:
+    sydney = dt.timezone(dt.timedelta(hours=11))
+    morning = dt.datetime(2026, 10, 21, 9, 0, tzinfo=sydney)  # 2026-10-20T22:00Z
+    assert B._day(morning) == dt.date(2026, 10, 20)
+    assert B.cutoff_day(7, morning) == dt.date(2026, 10, 13)
+    assert B._day(dt.datetime(2026, 10, 20, 23, 30)) == dt.date(2026, 10, 20)  # naive: taken as UTC
+
+
+@pytest.mark.parametrize("days", [0, -3, 3651, 1_000_000, 7.5, "7", True])
+def test_build_refuses_a_window_outside_one_day_to_ten_years(tmp_path: Path, days) -> None:
+    with pytest.raises(ValueError, match="since_days"):
+        B.build(tmp_path, since_days=days, today="2026-10-20")
+
+
 def test_ids_reads_a_list_or_a_records_object() -> None:
     assert B._ids([{"id": "A"}, {"id": "B"}, {"no": "id"}, "junk"]) == {"A", "B"}
     assert B._ids({"records": [{"id": "X"}]}) == {"X"}
@@ -652,5 +666,8 @@ def test_main_writes_both_files(tmp_path: Path, capsys) -> None:
     assert payload["since_days"] == 3 and set(SECTIONS) <= set(payload)
     assert (root / B.OUTPUT_MD).is_file() and (root / B.OUTPUT_JSON).is_file()
 
-    with pytest.raises(SystemExit):
-        B.main(["--root", str(root), "--since-days", "0"])
+    for days in ("0", "3651", "1000000", "seven"):  # a usage error, not a traceback
+        with pytest.raises(SystemExit) as exit_info:
+            B.main(["--root", str(root), "--since-days", days])
+        assert exit_info.value.code == 2, days
+    assert B.main(["--root", str(root), "--since-days", "3650", "--out", str(out)]) == 0
