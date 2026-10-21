@@ -46,7 +46,9 @@ A `.json` file that fails to parse is read again up to three times, 25 to 75 ms 
 `tools/corpus/docs.py`'s `read_json` does: an agent rewriting a registry file in place can be
 caught half way. Integers are parsed as text, so one longer than Python's 4300-digit `int()`
 limit parses. Nesting deeper than Python's `json` can follow is reported with its
-`maximum recursion depth exceeded` message.
+`maximum recursion depth exceeded` message. A `.json` symlink to nothing is a `dangling
+symlink` problem, and a directory the walk cannot list is a `cannot list: <reason>` problem,
+so neither is skipped in silence.
 
 The `imports` check collects references from these places:
 

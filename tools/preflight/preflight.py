@@ -59,13 +59,37 @@ def check_json(root: Path) -> list[Problem]:
     root = Path(root).resolve()
     problems = []
     for directory in JSON_DIRS:
-        for path in sorted((root / directory).rglob("*.json")):
-            if not path.is_file():
-                continue
-            error = _json_error(path)
-            if error is not None:
-                problems.append(Problem("json", path.relative_to(root).as_posix(), error))
+        found: list[Problem] = []
+        for path in _json_files(root, directory, found):
+            rel = path.relative_to(root).as_posix()
+            if path.is_symlink() and not path.exists():
+                found.append(Problem("json", rel, "dangling symlink"))
+            elif path.is_file():  # not a FIFO or socket, which would block or fail the read
+                error = _json_error(path)
+                if error is not None:
+                    found.append(Problem("json", rel, error))
+        problems += sorted(found, key=lambda problem: Path(problem.path))
     return problems
+
+
+def _json_files(root: Path, directory: str, problems: list[Problem]) -> list[Path]:
+    """Every *.json name under root/directory, sorted; a directory that cannot be listed is a problem.
+
+    Path.rglob skips such a directory without a word, so this walks with os.walk instead.
+    """
+    base = root / directory
+    if not base.is_dir():
+        return []
+
+    def unlistable(error: OSError) -> None:
+        where = Path(error.filename).relative_to(root).as_posix() if error.filename else directory
+        problems.append(Problem("json", where, f"cannot list: {error.strerror or error}"))
+
+    paths = []
+    for dirpath, dirnames, filenames in os.walk(base, onerror=unlistable):
+        dirnames.sort()
+        paths += [Path(dirpath) / name for name in filenames if name.endswith(".json")]
+    return sorted(paths)
 
 
 def _json_error(path: Path) -> str | None:

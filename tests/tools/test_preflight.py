@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -137,6 +138,28 @@ def test_check_json_rereads_a_file_caught_mid_rewrite(tmp_path: Path, monkeypatc
     ]
     assert reads == {"negative_results.json": 2, "broken.json": pf.JSON_RETRIES + 1}
     assert broken.is_file() and len(sleeps) == 1 + pf.JSON_RETRIES
+
+
+def test_check_json_reports_a_dangling_symlink(tmp_path: Path) -> None:
+    audits = tmp_path / "research" / "audits"
+    _write(audits / "fine.json", "[]\n")
+    (audits / "dangling.json").symlink_to(audits / "deleted.json")
+
+    assert [(p.path, p.message) for p in pf.check_json(tmp_path)] == [("research/audits/dangling.json", "dangling symlink")]
+
+
+def test_check_json_reports_a_directory_it_cannot_list(tmp_path: Path) -> None:
+    locked = tmp_path / "research" / "audits" / "locked"
+    _write(locked / "broken.json", "{")
+    locked.chmod(0)
+    try:
+        if os.access(locked, os.R_OK):
+            pytest.skip("running as a user that can list any directory")
+        problems = pf.check_json(tmp_path)
+    finally:
+        locked.chmod(0o755)
+
+    assert [(p.path, p.message) for p in problems] == [("research/audits/locked", "cannot list: Permission denied")]
 
 
 def test_check_json_finds_todays_broken_contract() -> None:
