@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -160,3 +162,245 @@ def test_git_runner_refuses_other_argument_shapes(tmp_path: Path, args: tuple[st
     assert B.allowed_git_args(args) is False
     with pytest.raises(ValueError, match="read-only"):
         B.git_runner(tmp_path)(*args)
+
+
+# ---------- Task 3.2: the other sections ----------
+
+REPO = Path(__file__).resolve().parents[2]
+SINCE = "2026-10-14"
+
+
+def _write_json(path: Path, data) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    return path
+
+
+def _paper(arxiv_id: str, title: str, label: str, first_seen: str | None) -> dict:
+    record = {"arxiv_id": arxiv_id, "title": title, "label": label, "published": "2026-10-10", "url": "u"}
+    if first_seen is not None:
+        record["first_seen"] = first_seen
+    return record
+
+
+def _verdict(verdict: str, reviewed_on: str | None, action: str | None = None, by: str = "human", **extra) -> dict:
+    return {"verdict": verdict, "reason": "r", "action": action, "by": by, "reviewed_on": reviewed_on, **extra}
+
+
+def _arxiv_files(root: Path, papers: list[dict], verdicts: dict) -> None:
+    _write_json(root / B.ARXIV_STATE, {"updated": "2026-10-19", "papers": {p["arxiv_id"]: p for p in papers}})
+    _write_json(root / B.ARXIV_VERDICTS, {"verdicts": verdicts})
+
+
+def test_arxiv_section_lists_open_flags_new_reviews_and_open_actions(tmp_path: Path) -> None:
+    _arxiv_files(
+        tmp_path,
+        [
+            _paper("2610.11111", "Open new kill", "possible-kill", "2026-10-18"),
+            _paper("2610.22222", "Open old scoop", "possible-scoop", "2026-09-30"),
+            _paper("2610.33333", "Reviewed new kill", "possible-kill", "2026-10-19"),
+            _paper("2610.44444", "Reviewed old scoop", "possible-scoop", "2026-09-30"),
+            _paper("2610.55555", "Related paper", "related", "2026-10-19"),
+        ],
+        {
+            "2610.33333": _verdict("should-cite", "2026-10-20", action="Cite it in research/X.md."),
+            "2610.44444": _verdict("false-alarm", "2026-10-01"),
+            "2610.66666": _verdict("related-only", "2026-10-19", action="Done already.", by="judge:x", action_done=True),
+        },
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["available"] is True
+    assert [(f["id"], f["verdict"]) for f in section["flagged"]] == [
+        ("2610.11111", None), ("2610.22222", None), ("2610.33333", "should-cite")]
+    assert section["flagged"][0] == {
+        "id": "2610.11111", "title": "Open new kill", "label": "possible-kill", "first_seen": "2026-10-18", "verdict": None}
+    assert section["reviewed"] == [
+        {"id": "2610.33333", "verdict": "should-cite", "by": "human", "reviewed_on": "2026-10-20"},
+        {"id": "2610.66666", "verdict": "related-only", "by": "judge:x", "reviewed_on": "2026-10-19"},
+    ]
+    assert section["actions"] == [{"id": "2610.33333", "action": "Cite it in research/X.md.", "by": "human"}]
+
+
+def test_arxiv_section_tolerates_verdicts_for_unknown_papers_and_null_first_seen(tmp_path: Path) -> None:
+    _arxiv_files(
+        tmp_path,
+        [
+            _paper("2610.77777", "Open, date unknown", "possible-kill", None),
+            {**_paper("2610.88888", "Reviewed, date null", "possible-scoop", None), "first_seen": None},
+        ],
+        {
+            "2610.88888": _verdict("false-alarm", None),
+            "2610.99999": _verdict("should-cite", "2026-10-20", action="Cite the unknown paper."),
+        },
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [(f["id"], f["first_seen"]) for f in section["flagged"]] == [("2610.77777", None)]
+    assert [r["id"] for r in section["reviewed"]] == ["2610.99999"]
+    assert section["actions"] == [{"id": "2610.99999", "action": "Cite the unknown paper.", "by": "human"}]
+
+    # Verdicts with no stored papers at all still give the reviews and actions.
+    (tmp_path / B.ARXIV_STATE).unlink()
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["available"] is True and section["flagged"] == []
+    assert [a["id"] for a in section["actions"]] == ["2610.99999"]
+
+
+def test_arxiv_section_missing(tmp_path: Path) -> None:
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["available"] is False and "arxiv_collisions.json" in section["reason"]
+
+
+def test_arxiv_constants_match_the_watch() -> None:
+    from tools.arxiv_watch import verdicts, watch
+
+    assert B.FLAGGED_LABELS == watch.FLAGGED
+    assert B.ARXIV_VERDICTS == verdicts.VERDICTS_FILE
+    assert (REPO / B.ARXIV_STATE) == watch._paths(REPO)[0]
+
+
+def _reviewed_note(root: Path, overall: str = "unsound") -> None:
+    note = root / "research" / "FIXTURE_NOTE.md"
+    note.parent.mkdir(parents=True, exist_ok=True)
+    note.write_text("# Fixture\n\n2026-10-18. REVIEW PENDING.\n\n## Result\n\nIt holds for all twelve saved inputs.\n",
+                    encoding="utf-8")
+    claim = {"quote": "It holds for all twelve saved inputs", "verified": True, "verdict": "wrong", "step": "Result",
+             "finding": "Input 7 fails.", "covered_by_self_check": False}
+    entry = {"reviewed_on": "2026-10-21", "judge": "j", "content_sha": hashlib.sha256(note.read_bytes()).hexdigest(),
+             "overall": overall, "claims": [claim], "summary": "s", "stale": False}
+    _write_json(root / "research/audits/reviews/reviews.json", {"notes": {"FIXTURE_NOTE": entry}})
+
+
+def test_referee_section_reports_flagged_reviews(tmp_path: Path) -> None:
+    _reviewed_note(tmp_path)
+    section = B.referee_section(tmp_path)
+    assert section["available"] is True and section["reviewed"] == 1 and section["stale"] == []
+    assert [f["stem"] for f in section["flagged"]] == ["FIXTURE_NOTE"]
+    assert section["flagged"][0]["worst_claim"]["finding"] == "Input 7 fails."
+
+
+def test_referee_section_missing(tmp_path: Path, monkeypatch) -> None:
+    section = B.referee_section(tmp_path)
+    assert section["available"] is False and "no reviews yet" in section["reason"]
+    monkeypatch.setitem(sys.modules, "tools.referee.referee", None)
+    section = B.referee_section(tmp_path)
+    assert section["available"] is False and section["reason"] == "tools/referee not present"
+
+
+def test_preflight_section_groups_problems_by_check(fake_repo: Path) -> None:
+    (fake_repo / "research" / "hypotheses" / "broken.json").write_text('{"bad": "\\x"}', encoding="utf-8")
+    section = B.preflight_section(fake_repo)
+    assert section["available"] is True
+    # The fake checkout is not a git repository and has no CLI manifest.
+    assert set(section["by_check"]) == {"json", "imports", "manifest"} and section["total"] == 3
+    [problem] = section["by_check"]["json"]
+    assert problem["path"] == "research/hypotheses/broken.json" and problem["message"].startswith("Invalid \\escape")
+    assert section["by_check"]["imports"] == [{"path": ".", "message": "git unavailable"}]
+
+
+def test_preflight_section_missing(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setitem(sys.modules, "tools.preflight.preflight", None)
+    section = B.preflight_section(tmp_path)
+    assert section["available"] is False and section["reason"] == "tools/preflight not present"
+
+
+COCKPIT = {
+    "generated_on": "2026-10-19",
+    "inertia": {
+        "available": True,
+        "threshold": 8,
+        "directions": [],
+        "flags": [
+            {"direction": "opi", "label": "OPI / prime character", "streak": 13, "flag": True, "last_gain": None},
+            {"direction": "dcp", "label": "DCP / dihedral coset", "streak": 32, "flag": True,
+             "last_gain": {"date": "2026-10-12", "records": 3, "ids": ["NEG-X"]}},
+        ],
+        "runs": [],
+    },
+    "warnings": ["Git history is shallow."],
+}
+
+
+def test_inertia_section_reads_the_cockpit_flags(tmp_path: Path) -> None:
+    _write_json(tmp_path / B.COCKPIT, COCKPIT)
+    section = B.inertia_section(tmp_path)
+    assert section["available"] is True
+    assert (section["generated_on"], section["threshold"]) == ("2026-10-19", 8)
+    assert section["warnings"] == ["Git history is shallow."]
+    assert section["flags"] == [
+        {"direction": "opi", "label": "OPI / prime character", "streak": 13, "last_gain": None},
+        {"direction": "dcp", "label": "DCP / dihedral coset", "streak": 32, "last_gain": "2026-10-12"},
+    ]
+
+
+def test_inertia_section_missing(tmp_path: Path) -> None:
+    section = B.inertia_section(tmp_path)
+    assert section["available"] is False and "build_cockpit.py" in section["reason"]
+    _write_json(tmp_path / B.COCKPIT, {**COCKPIT, "inertia": {"available": False, "flags": []}, "warnings": ["no git"]})
+    section = B.inertia_section(tmp_path)
+    assert section["available"] is False and "no git" in section["reason"]
+
+
+def test_duplicates_section_keeps_pairs_that_involve_a_new_record(tmp_path: Path, monkeypatch) -> None:
+    from tools.corpus.duplicates import Pair
+
+    pairs = [
+        Pair("negative:NEG-NEW-1", "negative:NEG-OLD-1", 0.97, "new one", "old one"),
+        Pair("negative:NEG-OLD-2", "quarantined:NEG-NEW-2", 0.91, "old two", "new two"),
+        Pair("negative:NEG-OLD-3", "negative:NEG-OLD-4", 0.99, "old three", "old four"),
+    ]
+    seen = {}
+
+    def fake(corpus, **kwargs):
+        seen.update(kwargs, corpus=corpus)
+        return pairs
+
+    monkeypatch.setattr(B, "_near_duplicates", fake)
+    marker = object()
+    section = B.duplicates_section(tmp_path, ["NEG-NEW-1", "NEG-NEW-2"], corpus=marker)
+    assert section["available"] is True and section["checked"] == 2
+    assert [(p["a"], p["b"], p["new"]) for p in section["pairs"]] == [
+        ("negative:NEG-NEW-1", "negative:NEG-OLD-1", ["NEG-NEW-1"]),
+        ("negative:NEG-OLD-2", "quarantined:NEG-NEW-2", ["NEG-NEW-2"]),
+    ]
+    assert seen["corpus"] is marker and seen["kind"] == "negative" and seen["threshold"] == B.DUPLICATE_THRESHOLD
+
+
+def test_duplicates_section_finds_a_planted_restatement_with_the_real_corpus(fake_repo: Path) -> None:
+    from tests.tools.conftest import NEGATIVES
+    from tests.tools.test_corpus_duplicates import DUP_A, DUP_B
+
+    _write_json(fake_repo / B.REGISTRY, NEGATIVES + [DUP_A, DUP_B])
+    section = B.duplicates_section(fake_repo, ["NEG-DUP-B"])
+    assert [(p["a"], p["b"]) for p in section["pairs"]] == [("negative:NEG-DUP-A", "negative:NEG-DUP-B")]
+    assert section["pairs"][0]["score"] >= B.DUPLICATE_THRESHOLD
+
+
+def test_duplicates_section_missing(tmp_path: Path, monkeypatch) -> None:
+    section = B.duplicates_section(tmp_path, None)
+    assert section["available"] is False and "registry" in section["reason"]
+
+    def no_corpus(root):
+        raise AssertionError("no corpus should be opened when nothing was added")
+
+    monkeypatch.setattr(B, "_open_corpus", no_corpus)
+    section = B.duplicates_section(tmp_path, [])
+    assert section == {"available": True, "checked": 0, "threshold": B.DUPLICATE_THRESHOLD, "pairs": []}
+
+
+def test_commands_section_names_five_commands_that_exist() -> None:
+    section = B.commands_section()
+    assert section["available"] is True
+    assert [c["name"] for c in section["commands"]] == ["oracle", "screener", "baselines", "preflight", "duplicates"]
+    for command in section["commands"]:
+        script = command["command"].split()[1]
+        assert command["command"].startswith("python ") and (REPO / script).is_file(), command
+        assert command["when"]
+
+
+def test_section_turns_an_exception_into_unavailable() -> None:
+    def broken(key):
+        raise KeyError(key)
+
+    assert B._section("broken", broken, "inertia") == {"available": False, "reason": "KeyError: 'inertia'"}
+    assert B._section("odd", lambda: ["not", "a", "dict"])["available"] is False
+    assert B._section("fine", lambda: {"available": True}) == {"available": True}

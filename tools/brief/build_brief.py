@@ -7,11 +7,13 @@ Never imports core/ or theorems/.
 from __future__ import annotations
 
 import datetime as dt
+import importlib
 import json
 import os
 import re
 import subprocess
 import sys
+from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Callable
 
@@ -19,9 +21,15 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.cockpit.build_cockpit import US, utc_day  # noqa: E402
+from tools.corpus.docs import read_json  # noqa: E402
 
 REGISTRY = "research/registry/negative_results.json"
 QUARANTINE = "research/registry/quarantined_campaign_negatives.json"
+ARXIV_STATE = "research/audits/arxiv_collisions.json"
+ARXIV_VERDICTS = "research/audits/arxiv_verdicts.json"
+COCKPIT = "site/data/cockpit.json"
+FLAGGED_LABELS = ("possible-kill", "possible-scoop")  # tools/arxiv_watch/watch.py FLAGGED
+DUPLICATE_THRESHOLD = 0.8  # tools/corpus/README.md "Duplicates": a true restatement sits at 0.80
 
 
 # ---------- Git (read-only) ----------
@@ -170,3 +178,215 @@ def registry_delta(
         "baseline_count": len(baseline),
         "current_count": len(current),
     }
+
+
+# ---------- The other sections ----------
+
+
+def _section(name: str, fn: Callable[..., dict[str, Any]], *args: Any) -> dict[str, Any]:
+    """Run one section; any exception becomes {"available": False, "reason": "ExcType: msg"}."""
+    try:
+        result = fn(*args)
+        if not isinstance(result, dict) or "available" not in result:
+            raise TypeError(f"the {name} section returned {type(result).__name__}, not a dict with 'available'")
+        return result
+    except Exception as error:  # noqa: BLE001 - one broken source must not sink the whole brief
+        return {"available": False, "reason": f"{type(error).__name__}: {error}"}
+
+
+def _import_tool(module: str, label: str) -> tuple[Any, str | None]:
+    """Another tool's module, imported only when its section runs: (module, None) or (None, reason)."""
+    try:
+        return importlib.import_module(module), None
+    except ImportError as error:
+        name = getattr(error, "name", None) or ""
+        if isinstance(error, ModuleNotFoundError) and name and (module == name or module.startswith(name + ".")):
+            return None, f"{label} not present"
+        return None, f"{label} cannot be imported: {type(error).__name__}: {error}"
+
+
+def _iso(day: dt.date | str) -> str:
+    return day.isoformat() if isinstance(day, dt.date) else str(day)
+
+
+def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
+    """Flagged arXiv papers, verdicts recorded since `since_date`, and the actions still open.
+
+    flagged: possible kills and scoops without a verdict (open, however old), then those first
+    seen on or after `since_date` that have one. reviewed: verdicts recorded on or after it.
+    actions: every verdict whose action is not marked `action_done`. Verdicts come from the
+    verdicts file, the source of truth, whether or not the watch has copied them onto its records.
+    """
+    root = Path(root)
+    since = _iso(since_date)
+    verdicts_module, reason = _import_tool("tools.arxiv_watch.verdicts", "tools/arxiv_watch")
+    if verdicts_module is None:
+        return {"available": False, "reason": reason}
+    state_path = root / ARXIV_STATE
+    if not state_path.is_file() and not (root / verdicts_module.VERDICTS_FILE).is_file():
+        return {"available": False, "reason": f"no {ARXIV_STATE} and no {verdicts_module.VERDICTS_FILE} yet"}
+    papers = read_json(state_path).get("papers", {}) if state_path.is_file() else {}
+    verdicts = {
+        arxiv_id: entry
+        for arxiv_id, entry in verdicts_module.load_verdicts(root)["verdicts"].items()
+        if isinstance(entry, dict)
+    }
+
+    flagged = []
+    for arxiv_id, record in papers.items():
+        if not isinstance(record, dict) or record.get("label") not in FLAGGED_LABELS:
+            continue
+        entry = verdicts.get(arxiv_id)
+        first_seen = record.get("first_seen")
+        if entry is None or (isinstance(first_seen, str) and first_seen >= since):
+            flagged.append({
+                "id": arxiv_id,
+                "title": record.get("title", ""),
+                "label": record["label"],
+                "first_seen": first_seen if isinstance(first_seen, str) else None,
+                "verdict": entry.get("verdict") if entry else None,
+            })
+    # Open flags first, newest first within each group, undated last.
+    flagged.sort(key=lambda item: item["id"])
+    flagged.sort(key=lambda item: item["first_seen"] or "", reverse=True)
+    flagged.sort(key=lambda item: item["verdict"] is not None)
+
+    reviewed = [
+        {"id": arxiv_id, "verdict": entry.get("verdict"), "by": entry.get("by"), "reviewed_on": entry["reviewed_on"]}
+        for arxiv_id, entry in sorted(verdicts.items())
+        if isinstance(entry.get("reviewed_on"), str) and entry["reviewed_on"] >= since
+    ]
+    reviewed.sort(key=lambda item: item["reviewed_on"], reverse=True)
+    actions = [
+        {"id": arxiv_id, "action": str(entry["action"]).strip(), "by": entry.get("by")}
+        for arxiv_id, entry in sorted(verdicts.items())
+        if str(entry.get("action") or "").strip() and not entry.get("action_done")
+    ]
+    return {"available": True, "flagged": flagged, "reviewed": reviewed, "actions": actions}
+
+
+def referee_section(root: Path) -> dict[str, Any]:
+    """`tools/referee/referee.py status`: flagged (unsound, needs-work) and stale reviews."""
+    referee, reason = _import_tool("tools.referee.referee", "tools/referee")
+    if referee is None:
+        return {"available": False, "reason": reason}
+    return referee.status(Path(root))
+
+
+def preflight_section(root: Path) -> dict[str, Any]:
+    """The static preflight checks (`tools/preflight/preflight.py`), problems grouped by check."""
+    preflight, reason = _import_tool("tools.preflight.preflight", "tools/preflight")
+    if preflight is None:
+        return {"available": False, "reason": reason}
+    problems = preflight.run(Path(root))
+    by_check: dict[str, list[dict[str, str]]] = {}
+    for problem in problems:
+        by_check.setdefault(problem.check, []).append({"path": problem.path, "message": problem.message})
+    return {"available": True, "by_check": by_check, "total": len(problems)}
+
+
+def inertia_section(root: Path) -> dict[str, Any]:
+    """Directions the cockpit flags as stuck: many sections since the registry last gained a record there."""
+    path = Path(root) / COCKPIT
+    if not path.is_file():
+        return {"available": False, "reason": f"no {COCKPIT} (python tools/cockpit/build_cockpit.py)"}
+    cockpit = read_json(path)
+    inertia = cockpit.get("inertia") or {}
+    warnings = [str(warning) for warning in cockpit.get("warnings") or []]
+    if not inertia.get("available"):
+        why = "; ".join(warnings) or "no registry history"
+        return {"available": False, "reason": f"the cockpit of {cockpit.get('generated_on')} has no inertia measure: {why}"}
+    flags = [
+        {
+            "direction": flag.get("direction"),
+            "label": flag.get("label"),
+            "streak": flag.get("streak"),
+            "last_gain": (flag.get("last_gain") or {}).get("date"),
+        }
+        for flag in inertia.get("flags") or []
+    ]
+    return {
+        "available": True,
+        "generated_on": cockpit.get("generated_on"),
+        "threshold": inertia.get("threshold"),
+        "flags": flags,
+        "warnings": warnings,
+    }
+
+
+def _open_corpus(root: Path) -> Any:
+    from tools.corpus.api import Corpus
+
+    corpus = Corpus(root)
+    corpus.refresh()  # incremental: about 0.15 s when nothing changed; a first build takes minutes
+    return corpus
+
+
+def _near_duplicates(corpus: Any, **kwargs: Any) -> list[Any]:
+    from tools.corpus.duplicates import near_duplicates
+
+    return near_duplicates(corpus, **kwargs)
+
+
+def _bare(doc_id: str) -> str:
+    return doc_id.rsplit(":", 1)[-1]
+
+
+def duplicates_section(root: Path, added_ids: list[str] | None, corpus: Any = None) -> dict[str, Any]:
+    """Near-duplicate pairs (TF-IDF cosine >= DUPLICATE_THRESHOLD) that involve a record added in the window.
+
+    The corpus index is opened only when something was added. `added_ids` None means the
+    registry delta was unavailable, so the section is too.
+    """
+    if added_ids is None:
+        return {"available": False, "reason": "the registry delta is unavailable, so no new records are known"}
+    added = set(added_ids)
+    if not added:
+        return {"available": True, "checked": 0, "threshold": DUPLICATE_THRESHOLD, "pairs": []}
+    corpus = corpus if corpus is not None else _open_corpus(Path(root))
+    pairs = _near_duplicates(corpus, kind="negative", threshold=DUPLICATE_THRESHOLD, limit=sys.maxsize)
+    kept = []
+    for pair in pairs:
+        new = sorted({_bare(pair.a), _bare(pair.b)} & added)
+        if new:
+            kept.append({**asdict(pair), "new": new})
+    return {"available": True, "checked": len(added), "threshold": DUPLICATE_THRESHOLD, "pairs": kept}
+
+
+COMMANDS = (
+    {
+        "name": "oracle",
+        "command": 'python tools/corpus/cli.py been-tried "<one paragraph describing the idea>"',
+        "when": "Before proposing or extending a direction: read the nearest retained negatives and say how "
+                "the idea escapes them (MCP been_tried).",
+    },
+    {
+        "name": "screener",
+        "command": "python tools/dqi_screen/screen.py --params CANDIDATE.json",
+        "when": "Before any DQI claim: exit 1 means not viable under the Mazumder-Niroula soundness rules "
+                "(MCP screen_dqi_candidate).",
+    },
+    {
+        "name": "baselines",
+        "command": 'python tools/corpus/cli.py baselines "<one line describing the idea>"',
+        "when": "Before claiming an advantage: the classical algorithms the idea must be compared against "
+                "(MCP classical_baselines).",
+    },
+    {
+        "name": "preflight",
+        "command": "python tools/preflight/preflight.py",
+        "when": "Before every commit: exit 1 lists research JSON that does not parse and CLI references to "
+                "untracked theorem modules.",
+    },
+    {
+        "name": "duplicates",
+        "command": "python tools/corpus/cli.py check-new --file DRAFT_RECORD.json",
+        "when": "Before filing a negative: exit 2 means a retained or quarantined record already says it "
+                "(MCP check_duplicate_negative).",
+    },
+)
+
+
+def commands_section() -> dict[str, Any]:
+    """The five checks an agent should run, with the moment to run each."""
+    return {"available": True, "commands": [dict(command) for command in COMMANDS]}
