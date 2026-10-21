@@ -18,7 +18,8 @@ flagged sections; a judge's leaves it there, marked, until a person records one.
 Each track query is paged until results are older than the window start. When the page
 cap stops a query first, the uncovered window is recorded as a gap in the JSON and listed
 in the digest until a later run covers it. The outputs are rewritten only when a run finds
-something new (a paper, a gap, a verdict, a citation), so a quiet week changes nothing.
+something new (a paper, a gap opening or closing, a verdict, a citation of a flagged paper, or
+another track's query returning a stored paper), so a quiet week changes nothing.
 """
 
 from __future__ import annotations
@@ -356,7 +357,9 @@ def run(
     changed = False
     report.fetched = len(fetched)
     for arxiv_id, (paper, queried) in sorted(fetched.items()):
-        if arxiv_id in state["papers"]:  # seen before: never re-labelled or re-reported
+        # Seen before: not re-reported or re-scored, only its queried_by can grow. Verdicts and
+        # citations below may still change the record (attach_verdicts, recheck_cited).
+        if arxiv_id in state["papers"]:
             known = state["papers"][arxiv_id]
             merged = sorted(set(known.get("queried_by", [])) | queried)
             if merged != known.get("queried_by"):

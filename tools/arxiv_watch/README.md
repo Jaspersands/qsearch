@@ -35,9 +35,11 @@ recognised by id and never re-reported or re-scored, with two exceptions:
   gives the paper any label but `already-cited`.
 
 Outputs, rewritten only when a run finds a new paper, a coverage gap opens or closes, a
-verdict is added, changed or withdrawn, or a stored flag is relabelled, so a quiet week
-leaves them byte-for-byte unchanged. A verdict for a paper the watch has not stored changes
-no record, so the run re-renders only the digest:
+verdict is added, changed or withdrawn, a stored flag is relabelled, or another track's query
+returns a stored paper (its `queried_by` list grows, as after a `--tracks` backfill), so a
+quiet week leaves them byte-for-byte unchanged. A rewrite also moves `updated`, every run
+track's `tracks_updated` entry and the digest's "Last updated" line to the run date. A verdict
+for a paper the watch has not stored changes no record, so the run re-renders only the digest:
 
 - `research/audits/arxiv_collisions.json`: every paper seen, with tracks, label, wording
   cues, the five nearest corpus records, the date first seen and, once reviewed, its
@@ -195,11 +197,11 @@ to get CI.
   yet. Four unflagged papers changed label or tracks under the branch's rules and index
   (2609.23818 and 2609.35511 to unrelated, 2609.31484 to already-cited, 2610.17711 lost
   hidden_shift). The relabelled outputs were not committed. A weekly run never recomputes
-  labels: a simulated first weekly run with no new papers wrote only the 22 verdict
-  attachments. The four changes need an explicit `watch.py --relabel` commit.
-  `.github/workflows/arxiv_watch.yml` still says the outputs change only for new papers or a
-  coverage gap, and its PR body says "New papers"; the first PR after seeding holds verdicts
-  only.
+  labels: a simulated first weekly run with no new papers changed no label, only the 22
+  verdict attachments and the run dates (`updated`, all 14 `tracks_updated` entries and the
+  digest's "Last updated" line). The four changes need an explicit `watch.py --relabel`
+  commit. The first pull request after seeding therefore holds verdicts and dates and no new
+  paper; the workflow's PR body says what can change.
 - Seed replay: all 52 seed papers whose tags name a track are placed on it. Nine
   patterns were added after the first replay missed them, so this is a consistency
   check on the seeds, not a held-out accuracy figure.
