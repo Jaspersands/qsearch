@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import socket
 import subprocess
 import sys
 from pathlib import Path
@@ -160,6 +161,23 @@ def test_check_json_reports_a_directory_it_cannot_list(tmp_path: Path) -> None:
         locked.chmod(0o755)
 
     assert [(p.path, p.message) for p in problems] == [("research/audits/locked", "cannot list: Permission denied")]
+
+
+def test_check_json_reports_non_utf8_bytes_and_reads_only_regular_files(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    audits = tmp_path / "research" / "audits"
+    (audits / "latin1.json").parent.mkdir(parents=True)
+    (audits / "latin1.json").write_bytes('{"name": "Schrödinger"}'.encode("latin-1"))
+    _write(audits / "folder.json" / "inner.json", "{")  # a directory named *.json is walked, not read
+    monkeypatch.chdir(audits)  # AF_UNIX paths are short on macOS: bind a relative one
+    with socket.socket(socket.AF_UNIX) as sock:
+        sock.bind("socket.json")  # neither a file to parse nor a problem
+
+        problems = pf.check_json(tmp_path)
+
+    assert [p.path for p in problems] == ["research/audits/folder.json/inner.json", "research/audits/latin1.json"]
+    assert "codec can't decode byte" in problems[1].message
 
 
 def test_check_json_finds_todays_broken_contract() -> None:
@@ -371,6 +389,28 @@ def test_line_scan_finds_what_a_full_parse_finds_on_the_real_checkout() -> None:
     assert differing == []
 
 
+def test_bare_names_resolve_to_theorems_before_core_and_skip_stdlib_and_stars(tmp_path: Path) -> None:
+    # The CLI puts theorems/ on sys.path before core/; the README says standard library names
+    # are skipped, even beside a file of that name, and `import *` names no file.
+    general = (
+        "import json\n"
+        "from dual import f\n"
+        "from theorems import *\n"
+        "\n"
+        "def command_audit(args):\n"
+        "    return json, f\n"
+    )
+    repo = _repo(tmp_path, general=general, imports={"g": ("dual", "g")}, git=False)
+    for directory in ("theorems", "core"):
+        _write(repo / directory / "dual.py", "f = g = 1\n")
+        _write(repo / directory / "json.py", "")
+
+    assert pf.referenced_modules(repo) == {
+        **CLI_REFS,
+        "theorems/dual.py": {"qsearch_cli/commands/general.py", "qsearch_cli/imports.py"},
+    }
+
+
 def test_referenced_modules_ignores_stdlib_table_entries(tmp_path: Path) -> None:
     imports = {
         "os": ("os", None),
@@ -561,6 +601,22 @@ def test_validate_reports_the_issues_printed_on_stdout(tmp_path: Path) -> None:
 
     (repo / "qsearch.py").write_text("raise SystemExit(4)\n", encoding="utf-8")
     assert [p.message for p in pf.check_validate(repo)] == ["exit 4: (no output)"]
+
+    # A crash prints its reason on stderr, after whatever went to stdout: stderr wins.
+    shim = 'import sys\nprint("loading the registry")\nprint("KeyError: id", file=sys.stderr)\nsys.exit(5)\n'
+    (repo / "qsearch.py").write_text(shim, encoding="utf-8")
+    assert [p.message for p in pf.check_validate(repo)] == ["exit 5: KeyError: id"]
+
+
+def test_imports_flag_reports_a_verifier_that_cannot_start(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    def broken_check_imports(root: Path) -> tuple[int, list[str]]:
+        raise RuntimeError("qsearch_cli imported from another checkout")
+
+    monkeypatch.setattr(pf, "_check_imports", broken_check_imports)
+
+    assert pf.check_imports_resolve(tmp_path) == [
+        pf.Problem("resolve", ".", "RuntimeError: qsearch_cli imported from another checkout")
+    ]
 
 
 def test_imports_flag_uses_split_cli_verify(
