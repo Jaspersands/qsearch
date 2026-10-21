@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+from tests.tools.conftest import NEGATIVES
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus.baselines import load_catalog, recommend, validate_catalog
@@ -95,6 +96,37 @@ def test_recommend_scores_corpus_mentions_without_keyword_overlap(fake_repo: Pat
     # names match on word boundaries: "Kanga" does not cite a note that says "kangaroo"
     kanga = dict(load_catalog()[0], id="kanga", name="Kanga", aliases=[])
     assert recommend(corpus, "kangaroo hop", catalog=[kanga]) == []
+
+
+KANGAROO_SECTIONS = (
+    "# Kangaroo Hop\n\n"
+    "## Question\n\nThe kangaroo hop question was settled classically by belief propagation.\n\n"
+    "## Method\n\nKangaroo hop messages follow belief propagation on its factor graph.\n\n"
+    "## Verdict\n\nBelief propagation already decodes every kangaroo hop instance.\n"
+)
+KANGAROO_NEGATIVES = [
+    {
+        "id": f"NEG-KANGAROO-HOP-{n}",
+        "claim": f"Kangaroo hop instance {n} needs a quantum decoder.",
+        "reason_invalid": "Belief propagation decodes the kangaroo hop instance classically.",
+        "lesson": "Run belief propagation first.",
+    }
+    for n in (1, 2)
+]
+
+
+def test_a_note_cites_a_baseline_once_however_many_sections_are_near(fake_repo: Path) -> None:
+    registry = fake_repo / "research" / "registry" / "negative_results.json"
+    registry.write_text(json.dumps(NEGATIVES + KANGAROO_NEGATIVES, indent=2), encoding="utf-8")
+    corpus = _corpus_with_note(fake_repo, "KANGAROO_HOP", KANGAROO_SECTIONS)
+    hits = corpus.search("kangaroo hop", kinds=("note", "negative"), k=10)
+    assert sum(hit.path == "research/KANGAROO_HOP.md" for hit in hits) == 3  # three near sections of one note
+    recs = recommend(corpus, "kangaroo hop")
+    assert [rec.baseline["id"] for rec in recs] == ["belief-propagation-ldpc"]
+    # one note and two registry records (one file, but each record is its own source)
+    assert recs[0].score == pytest.approx(0.3)
+    sources = sorted(hit.path if hit.kind == "note" else hit.doc_id for hit in recs[0].evidence)
+    assert sources == ["negative:NEG-KANGAROO-HOP-1", "negative:NEG-KANGAROO-HOP-2", "research/KANGAROO_HOP.md"]
 
 
 def test_cli_baselines_text_and_json(fake_repo: Path, capsys) -> None:

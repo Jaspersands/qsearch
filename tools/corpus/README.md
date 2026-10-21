@@ -266,11 +266,13 @@ with each evidence hit in the `search --json` shape. The MCP tool
 **Score.** `tokens(t)` lower-cases `t`, keeps the runs of `[a-z0-9]` and drops a trailing
 `s` from words longer than three letters ("Gibbs" becomes `gibb` on both sides). A mechanism
 keyword matches when every one of its tokens is among the idea's tokens, in any order. The ten
-notes and negatives that `search` ranks nearest the idea are read in full; one cites a
+note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
-and on word boundaries.
+and on word boundaries. Notes are indexed by section, so a note counts once however many of
+its sections are among the ten, and its nearest citing section is the evidence shown. Each
+negative counts on its own, although all of them live in one registry file.
 
-    score = matched keywords / keywords + citing documents / 10        (rounded to 4 places)
+    score = matched keywords / keywords + citing notes and negatives / 10        (rounded to 4 places)
 
 Baselines scoring 0 are left out; the rest are sorted by score, then name, and the first `k`
 (default 5) are shown. A score can exceed 1. A citing note may name a baseline only to set it
@@ -287,6 +289,12 @@ parity-check code"`:
 | 2 | `usd-prange-rejection-sampler` | 0.5 | gibbs sampling, parity check; named by one registry negative |
 | 3 | `prange-isd` | 0.4 | parity check; named by that negative and `COHERENT_BPQM_ERASURE.md` |
 | 4 | `stochastic-localization-pspin` | 0.2 | gibbs sampling |
+
+`baselines "DQI for max-k-cut on a ternary cycle code" -k 3` ranks `lp-decoding-cycle-codes`
+first (0.4: cycle code, max k cut), then `sdp-relaxation` (0.3: max cut, named by
+`QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md`) and `tensor-network-simulation` (0.1). When
+every section counted, four sections of that one note gave `sdp-relaxation` 0.6 and put it
+above the LP decoder, the baseline this line of work is missing.
 
 **Schema.** `{"baselines": [entry, ...]}`, each entry with every field below:
 

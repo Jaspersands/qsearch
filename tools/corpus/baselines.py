@@ -9,8 +9,9 @@ problem each solves, three to six lowercase mechanism keywords, references (arXi
 research notes by stem) and, when the repository has one, a command that runs it.
 
 A baseline's score is the fraction of its keywords found in the idea, plus a tenth for each
-of the ten notes and negatives nearest the idea that name it (its name or an alias, on word
-boundaries). The score ranks leads to run; it is not a judgement that the baseline wins.
+note or negative among the ten documents nearest the idea that names it (its name or an
+alias, on word boundaries; a note counts once however many of its sections are near). The
+score ranks leads to run; it is not a judgement that the baseline wins.
 """
 
 from __future__ import annotations
@@ -22,7 +23,7 @@ from pathlib import Path
 
 from tools.corpus.api import Corpus, Hit
 
-NEARBY = 10  # notes and negatives searched for citations; each citing one adds 1 / NEARBY
+NEARBY = 10  # note sections and negatives searched for citations; each citing note or negative adds 1 / NEARBY
 CATALOG = Path(__file__).with_name("baselines.json")
 FIELDS = ("id", "name", "aliases", "problem", "mechanisms", "summary", "references", "runnable")
 _TEXT_FIELDS = ("id", "name", "problem", "summary")
@@ -100,12 +101,30 @@ def _name_pattern(baseline: dict) -> re.Pattern[str]:
     return re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?!\w)", re.I)
 
 
+def _source(hit: Hit) -> str:
+    """What a citation counts as: a note file once, however many of its sections are near; each registry record."""
+    return hit.path if hit.kind == "note" else hit.doc_id
+
+
+def _citing(hits: list[Hit], texts: dict[str, str], pattern: re.Pattern[str]) -> list[Hit]:
+    """The nearest hit of each source that names the baseline."""
+    seen: set[str] = set()
+    found: list[Hit] = []
+    for hit in hits:
+        if _source(hit) not in seen and pattern.search(texts[hit.doc_id]):
+            seen.add(_source(hit))
+            found.append(hit)
+    return found
+
+
 def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None = None) -> list[Recommendation]:
     """Catalog baselines for an idea, best first: keyword overlap plus nearby notes that name them.
 
     A keyword matches when every one of its tokens occurs among the idea's tokens. The ten
-    notes and negatives the corpus ranks nearest the idea are read in full; each that names a
-    baseline adds 0.1 to its score and is returned as evidence. Baselines scoring 0 are left out.
+    note sections and negatives the corpus ranks nearest the idea are read in full; each note
+    or negative among them that names a baseline adds 0.1 to its score (a note once, however
+    many of its sections are near) and its nearest hit is returned as evidence. Baselines
+    scoring 0 are left out.
     """
     entries = load_catalog() if catalog is None else catalog
     words = set(tokens(idea))
@@ -118,8 +137,7 @@ def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None 
     for baseline in entries:
         mechanisms = baseline["mechanisms"]
         matched = [m for m in mechanisms if set(tokens(m)) <= words]
-        pattern = _name_pattern(baseline)
-        citing = [hit for hit in hits if pattern.search(texts[hit.doc_id])]
+        citing = _citing(hits, texts, _name_pattern(baseline))
         score = round(len(matched) / len(mechanisms) + len(citing) / NEARBY, 4)
         if score > 0:
             found.append(Recommendation(baseline, score, matched, citing))

@@ -341,9 +341,10 @@ def cmd_baselines(args: argparse.Namespace) -> int:
         print()
     print(
         textwrap.fill(
-            "Score: the share of a baseline's keywords found in the idea, plus 0.1 for each of the ten "
-            "nearest notes and negatives that names it. Run the baseline before claiming an advantage; "
-            "a high score is a lead, not a verdict.",
+            "Score: the share of a baseline's keywords found in the idea, plus 0.1 for each note or "
+            "negative among the ten nearest documents that names it (a note once, however many of its "
+            "sections are near). Run the baseline before claiming an advantage; a high score is a lead, "
+            "not a verdict.",
             width=100,
         )
     )
