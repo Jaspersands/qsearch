@@ -28,7 +28,16 @@ if __package__ in (None, ""):
 
 from tools.corpus.api import Corpus, Hit  # noqa: E402
 from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
-from tools.corpus.duplicates import REPORT_THRESHOLD, claim_report, draft_claim, own_ids, pair_report  # noqa: E402
+from tools.corpus.duplicates import (  # noqa: E402
+    REPORT_THRESHOLD,
+    ClaimReport,
+    DraftError,
+    claim_report,
+    draft_claims,
+    own_ids,
+    pair_report,
+)
+from tools.corpus.ranking import query_terms  # noqa: E402
 
 
 def _status(hit: Hit) -> str:
@@ -275,42 +284,64 @@ def cmd_near_duplicates(args: argparse.Namespace) -> int:
     return 0
 
 
+def _claim_header(report: ClaimReport, threshold: float) -> str:
+    if not report.matches:
+        return f"no negative record (retained or quarantined) has TF-IDF cosine >= {threshold}"
+    of_them = f", {report.quarantined} of them quarantined," if report.quarantined else ""
+    shown = f"; the closest {len(report.matches)} are shown" if report.total > len(report.matches) else ""
+    return f"POSSIBLE DUPLICATE: {report.total} negative record(s){of_them} at TF-IDF cosine >= {threshold}{shown}"
+
+
 def cmd_check_new(args: argparse.Namespace) -> int:
     # Read the draft before touching the index, so an unreadable file fails fast with exit 1, never 0.
     if args.text is not None:
-        text, record_id = args.text, None
+        drafts = [(args.text, None)]
     else:
         try:
-            raw = Path(args.file).read_text(encoding="utf-8")
+            raw = Path(args.file).read_text(encoding="utf-8-sig")
         except (OSError, UnicodeDecodeError) as exc:
             print(f"error: cannot read {args.file}: {exc}", file=sys.stderr)
             return 1
-        text, record_id = draft_claim(raw)
+        try:
+            drafts = draft_claims(raw)
+        except DraftError as exc:
+            print(f"error: {args.file}: {exc}", file=sys.stderr)
+            return 1
+    if not all(query_terms(text) for text, _ in drafts):
+        print("error: the draft claim has no words to compare (it is empty or only stop words).", file=sys.stderr)
+        return 1
     corpus = _corpus(args)
-    report = claim_report(corpus, text, threshold=args.threshold, exclude=own_ids(record_id))
-    matches = report.matches
+    # Each draft leaves out every draft's own record, so a batch gets the same answer once filed.
+    exclude = tuple(doc_id for _, record_id in drafts for doc_id in own_ids(record_id))
+    reports = [
+        (record_id, claim_report(corpus, text, threshold=args.threshold, exclude=exclude)) for text, record_id in drafts
+    ]
+    duplicate = any(report.matches for _, report in reports)
     if args.json:
         payload = {
-            "matches": [_hit_json(h) for h in matches],
-            "total": report.total,
-            "duplicate": bool(matches),
+            "matches": [dict(_hit_json(h), draft_id=record_id) for record_id, report in reports for h in report.matches],
+            "total": sum(report.total for _, report in reports),
+            "drafts": len(reports),
+            "duplicate": duplicate,
             **_issues_json(corpus),
         }
         print(json.dumps(payload, indent=2))
-        return 2 if matches else 0
-    if not matches:
-        print(f"No negative record (retained or quarantined) has TF-IDF cosine >= {args.threshold} with this claim.")
+        return 2 if duplicate else 0
+    for number, (record_id, report) in enumerate(reports, start=1):
+        header = _claim_header(report, args.threshold)
+        if len(reports) == 1:
+            print(header[0].upper() + header[1:] + ("" if report.matches else " with this claim") + ".")
+        else:
+            print(("" if number == 1 else "\n") + f"{record_id or f'record {number}'}: {header}.")
+        if report.matches:
+            print()
+        for index, hit in enumerate(report.matches, start=1):
+            _print_hit(index, hit)
+            print(f"     Cosine: {hit.score:.3f}")
+    if not duplicate:
         if corpus.incomplete():
             print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
         return 0
-    of_them = f", {report.quarantined} of them quarantined," if report.quarantined else ""
-    shown = f"; the closest {len(matches)} are shown" if report.total > len(matches) else ""
-    print(
-        f"POSSIBLE DUPLICATE: {report.total} negative record(s){of_them} at TF-IDF cosine >= {args.threshold}{shown}.\n"
-    )
-    for index, hit in enumerate(matches, start=1):
-        _print_hit(index, hit)
-        print(f"     Cosine: {hit.score:.3f}")
     print("\nRead the record first: extend it, or say how the new claim differs.")
     return 2
 
@@ -421,14 +452,15 @@ def build_parser() -> argparse.ArgumentParser:
     dups.set_defaults(func=cmd_near_duplicates)
 
     check = sub.add_parser(
-        "check-new", help="Exit 2 when a draft claim is close to a negative record, 1 when --file cannot be read."
+        "check-new",
+        help="Exit 2 when a draft claim is close to a negative record, 1 when the draft cannot be read or has no words.",
     )
     source = check.add_mutually_exclusive_group(required=True)
     source.add_argument("--text", help="The draft claim.")
     source.add_argument(
         "--file",
-        help="A text file, or a JSON record whose claim and reason_invalid are checked; "
-        "the record is never matched with its own id.",
+        help="A text file, or a JSON record (or list of records) whose claim and reason_invalid are checked; "
+        "a record is never matched with its own id.",
     )
     check.add_argument("--threshold", type=float, default=0.6, help="Minimum TF-IDF cosine for a match.")
     check.add_argument("--json", action="store_true")

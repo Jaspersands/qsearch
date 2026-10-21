@@ -9,7 +9,15 @@ from tests.tools.conftest import HANDOFF, NEGATIVES, NOTE, QUARANTINED
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus.cli import main
-from tools.corpus.duplicates import check_claim, claim_report, draft_claim, near_duplicates, pair_report
+from tools.corpus.duplicates import (
+    DraftError,
+    check_claim,
+    claim_report,
+    draft_claim,
+    draft_claims,
+    near_duplicates,
+    pair_report,
+)
 from tools.corpus.mcp_server import create_server
 
 HELSTROM = "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
@@ -247,8 +255,46 @@ def test_draft_claim_reads_claim_and_reason_of_a_record() -> None:
     assert draft_claim(json.dumps(record, indent=2)) == (expected, "NEG-DRAFT-HELSTROM")
     assert draft_claim(json.dumps({"claim": "Only a claim."})) == ("Only a claim.", None)
     assert draft_claim("A plain draft claim.\n") == ("A plain draft claim.\n", None)
-    assert draft_claim("[1, 2]") == ("[1, 2]", None)
-    assert draft_claim('{"id": "NEG-NO-CLAIM"}') == ('{"id": "NEG-NO-CLAIM"}', None)
+    assert draft_claim("[1, 2]") == ("[1, 2]", None)  # not a record list: plain text
+
+
+def test_draft_claim_reads_a_quarantined_record_as_filed() -> None:
+    entry = QUARANTINED[0]
+    original = entry["original_record"]
+    expected = (f"{original['claim']} {original['reason_invalid']}", entry["id"])
+    assert draft_claim(json.dumps(entry, indent=2)) == expected
+
+
+def test_draft_claim_normalises_bom_list_and_id() -> None:
+    record = NEGATIVES[0]
+    expected = (f"{record['claim']} {record['reason_invalid']}", record["id"])
+    raw = json.dumps(record, indent=2)
+    assert draft_claim("﻿" + raw) == expected
+    assert draft_claim(json.dumps([record])) == expected
+    assert draft_claim(json.dumps(dict(record, id=f"negative:{record['id']}"))) == expected
+    assert draft_claim(json.dumps(dict(record, id=f"  {record['id']} "))) == expected
+    pair = json.dumps([record, NEGATIVES[1]], indent=2)
+    assert [record_id for _, record_id in draft_claims(pair)] == [record["id"], NEGATIVES[1]["id"]]
+    with pytest.raises(DraftError, match="2 records"):
+        draft_claim(pair)
+
+
+@pytest.mark.parametrize(
+    "raw",
+    [
+        json.dumps(NEGATIVES[0], indent=2)[:-40],  # truncated
+        '{"id": "NEG-NO-CLAIM"}',
+        json.dumps(dict(NEGATIVES[0], claim=["a", "b"])),
+        json.dumps(NEGATIVES[0]).replace(json.dumps(NEGATIVES[0]["claim"]), "NaN"),
+        json.dumps(dict(NEGATIVES[0], claim="   ")),
+        json.dumps(dict(NEGATIVES[0], reason_invalid=["x"])),
+        json.dumps([NEGATIVES[0], "not a record"]),
+        "[]",
+    ],
+)
+def test_draft_claim_rejects_json_that_is_not_a_record(raw: str) -> None:
+    with pytest.raises(DraftError):
+        draft_claims(raw)
 
 
 def test_cli_check_new_exit_code_gates_on_a_match(fake_repo: Path, tmp_path: Path, capsys) -> None:
@@ -301,6 +347,71 @@ def test_cli_check_new_file_does_not_match_the_record_with_itself(fake_repo: Pat
     quarantined = tmp_path / "quarantined.json"
     quarantined.write_text(json.dumps({"id": QUARANTINED[0]["id"], **QUARANTINED[0]["original_record"]}))
     assert main([*root, str(quarantined)]) == 0
+    capsys.readouterr()
+    as_filed = tmp_path / "quarantined_as_filed.json"  # the claim sits under original_record
+    as_filed.write_text(json.dumps(QUARANTINED[0], indent=2))
+    assert main([*root, str(as_filed)]) == 0
+    assert json.loads(capsys.readouterr().out)["matches"] == []
+
+
+def test_cli_check_new_reads_a_record_saved_with_a_bom_or_in_a_list(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    root = ["--root", str(fake_repo), "check-new", "--json", "--file"]
+    bom = tmp_path / "bom.json"
+    bom.write_bytes(b"\xef\xbb\xbf" + json.dumps(NEGATIVES[0], indent=2).encode())
+    assert main([*root, str(bom)]) == 0  # filed: its own id is left out
+    listed = tmp_path / "listed.json"
+    listed.write_text(json.dumps([NEGATIVES[0]], indent=2))
+    assert main([*root, str(listed)]) == 0
+    capsys.readouterr()
+
+
+def test_cli_check_new_checks_a_list_of_records_one_by_one(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    root = ["--root", str(fake_repo), "check-new", "--file"]
+    filed = tmp_path / "filed.json"
+    filed.write_text(json.dumps(NEGATIVES, indent=2))  # both filed: each leaves out both ids
+    assert main([*root, str(filed)]) == 0
+    capsys.readouterr()
+    batch = tmp_path / "batch.json"
+    batch.write_text(json.dumps([UNIQUE, dict(NEGATIVES[0], id="NEG-DRAFT-HELSTROM")], indent=2))
+    assert main([*root, str(batch), "--json"]) == 2
+    payload = json.loads(capsys.readouterr().out)
+    assert [(m["draft_id"], m["doc_id"]) for m in payload["matches"]] == [("NEG-DRAFT-HELSTROM", HELSTROM)]
+    assert payload["total"] == 1 and payload["drafts"] == 2
+    assert main([*root, str(batch)]) == 2
+    out = capsys.readouterr().out
+    assert "NEG-NEW-PLATYPUS-SIEVE: no negative record" in out
+    assert "NEG-DRAFT-HELSTROM: POSSIBLE DUPLICATE: 1 negative record(s)" in out
+
+
+@pytest.mark.parametrize(
+    "content",
+    [json.dumps(NEGATIVES[0], indent=2)[:-40], json.dumps(dict(NEGATIVES[0], claim=["a", "b"])), '{"id": "X"}'],
+)
+def test_cli_check_new_rejects_a_record_it_cannot_read(fake_repo: Path, tmp_path: Path, capsys, content: str) -> None:
+    draft = tmp_path / "draft.json"
+    draft.write_text(content)
+    assert main(["--root", str(fake_repo), "check-new", "--file", str(draft)]) == 1
+    captured = capsys.readouterr()
+    assert captured.err.startswith(f"error: {draft}: ") and captured.out == ""
+
+
+@pytest.mark.parametrize("draft", ["", "   \n", "the of and", json.dumps(dict(UNIQUE, claim="the of", reason_invalid=""))])
+def test_cli_check_new_rejects_a_draft_with_no_words(fake_repo: Path, tmp_path: Path, capsys, draft: str) -> None:
+    root = ["--root", str(fake_repo), "check-new"]
+    path = tmp_path / "draft.txt"
+    path.write_text(draft)
+    assert main([*root, "--file", str(path)]) == 1
+    assert "no words to compare" in capsys.readouterr().err
+    if not draft.startswith("{"):
+        assert main([*root, "--text", draft]) == 1
+        assert "no words to compare" in capsys.readouterr().err
+
+
+def test_check_duplicate_negative_tool_rejects_an_empty_claim(fake_repo: Path) -> None:
+    server = create_server(fake_repo, dense="off")
+    for claim in ("", "the of and"):
+        payload = _call(server, "check_duplicate_negative", {"claim": claim})
+        assert "no words to compare" in payload["error"] and "duplicate" not in payload
 
 
 def test_cli_check_new_unreadable_file_exits_1_before_indexing(fake_repo: Path, tmp_path: Path, capsys) -> None:

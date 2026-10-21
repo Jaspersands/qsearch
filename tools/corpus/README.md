@@ -27,7 +27,7 @@ verdict on the idea.
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
 | `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
-| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the file cannot be read. |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
 Every command except `build` first refreshes the index incrementally: it stats about
@@ -164,17 +164,25 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   top hits, so no record at or above the threshold is missed; the header gives how many
   match, the closest five are listed, and `--json` carries the count as `total`.
   It exits 2 on any match, 0 when there is none, and 1 when
-  the `--file` cannot be read (checked before the index is touched). argparse usage errors
+  the draft cannot be used (checked before the index is touched): a `--file` that cannot be
+  read, text that starts like a JSON record but is not one (bad or truncated JSON, no string
+  `claim`, a `reason_invalid` that is not a string), or a draft with no words to compare
+  (empty or only stop words). argparse usage errors
   also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
-  file or a registry record as JSON; a record contributes its `claim` and `reason_invalid`,
-  and is never matched with its own `id` (`negative:ID` or `quarantined:ID`). The answer is
-  therefore the same before and after the record is filed, and a hook can run on the draft
-  or on the registry edit that files it; a draft that reuses another record's id is not
-  compared with that record. A quarantined match is labelled `(quarantined)`. An
+  file, a registry record as JSON, or a JSON list of records (read as UTF-8, with or without
+  a BOM); a record contributes its `claim` and `reason_invalid` (a quarantined record's are
+  read from its `original_record`), and is never matched with its own `id` (`negative:ID`
+  or `quarantined:ID`; the id is stripped and a `negative:` or `quarantined:` prefix
+  dropped). A list is checked record by record, each leaving out every listed record's id,
+  and `--json` marks each match with its `draft_id`. The answer is
+  therefore the same before and after the records are filed, and a hook can run on the draft
+  or on the new records of the registry edit that files them; a draft that reuses another
+  record's id is not compared with that record, and records of one list are not compared
+  with each other. A quarantined match is labelled `(quarantined)`. An
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
   The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches
-  for a claim's text, with no id left out.
+  for a claim's text, with no id left out, and an `error` for a claim with no words.
 - The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
   ones (`quarantined:` ids, 12). Both are compared and both can match; no quarantined record
   is in a pair at 0.7 or above today.

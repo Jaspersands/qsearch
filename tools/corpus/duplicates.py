@@ -92,22 +92,72 @@ def near_duplicates(
     return pair_report(corpus, kind=kind, threshold=threshold, limit=limit, per_family=per_family).pairs
 
 
-def draft_claim(raw: str) -> tuple[str, str | None]:
-    """The text to check for a draft, and the draft's record id when it has one.
+class DraftError(ValueError):
+    """A draft that looks like a JSON registry record (or a list of them) but is not one."""
 
-    A JSON object with a `claim` is a registry record: its claim and reason_invalid are
-    checked, and its `id` is returned so the record is not matched with itself once filed.
-    Anything else (plain text, other JSON) is checked as it is, with no id.
+
+# An object, or a list that is empty or starts with an object: text a user meant as records.
+_RECORDS = re.compile(r"\s*(?:\{|\[\s*[{\]])")
+_ID_PREFIXES = ("negative", "quarantined")
+
+
+def _record_id(value: object) -> str | None:
+    """A record id as filed: stripped, without a `negative:` or `quarantined:` doc-id prefix."""
+    if value is None:
+        return None
+    text = str(value).strip()
+    prefix, colon, rest = text.partition(":")
+    if colon and prefix.strip() in _ID_PREFIXES:
+        text = rest.strip()
+    return text or None
+
+
+def _record_draft(data: object, label: str) -> tuple[str, str | None]:
+    if not isinstance(data, dict):
+        raise DraftError(f"{label} is not a JSON object")
+    body = data
+    if "claim" not in data and isinstance(data.get("original_record"), dict):
+        body = data["original_record"]  # a quarantined record keeps its claim here, its id on top
+    claim, reason = body.get("claim"), body.get("reason_invalid")
+    if not isinstance(claim, str) or not claim.strip():
+        raise DraftError(f"{label} has no claim string")
+    if reason is not None and not isinstance(reason, str):
+        raise DraftError(f"{label} has a reason_invalid that is not a string")
+    record_id = data.get("id") if data.get("id") is not None else body.get("id")
+    return f"{claim} {reason or ''}".strip(), _record_id(record_id)
+
+
+def draft_claims(raw: str) -> list[tuple[str, str | None]]:
+    """The texts to check for a draft file, each with its record id when it has one.
+
+    A JSON object is a registry record: its claim and reason_invalid are checked (a
+    quarantined record's, under `original_record`, too) and its id is returned, stripped
+    and without a `negative:` or `quarantined:` prefix, so the record is not matched with
+    itself once filed. A JSON list of records gives one draft per record. A leading BOM is
+    ignored. Text that starts like an object or a list of objects but is not one (bad
+    JSON, a truncated file, no string claim) raises DraftError rather than being checked
+    as raw text. Anything else is plain text, checked as it is, with no id.
     """
+    raw = raw.lstrip("﻿")
+    if not _RECORDS.match(raw):
+        return [(raw, None)]
     try:
         data = json.loads(raw)
-    except json.JSONDecodeError:
-        return raw, None
-    if not (isinstance(data, dict) and data.get("claim")):
-        return raw, None
-    record_id = data.get("id")
-    text = f"{data['claim']} {data.get('reason_invalid') or ''}".strip()
-    return text, str(record_id) if record_id else None
+    except json.JSONDecodeError as exc:
+        raise DraftError(f"looks like a JSON record but does not parse ({exc})") from None
+    if isinstance(data, list):
+        if not data:
+            raise DraftError("the JSON list holds no record")
+        return [_record_draft(item, f"record {index}") for index, item in enumerate(data, start=1)]
+    return [_record_draft(data, "the record")]
+
+
+def draft_claim(raw: str) -> tuple[str, str | None]:
+    """The single draft of `draft_claims`; DraftError when the text holds several records."""
+    drafts = draft_claims(raw)
+    if len(drafts) != 1:
+        raise DraftError(f"holds {len(drafts)} records; check them with draft_claims")
+    return drafts[0]
 
 
 def own_ids(record_id: str | None) -> tuple[str, ...]:
