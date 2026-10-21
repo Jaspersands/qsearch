@@ -453,8 +453,9 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
 def test_huge_inputs_are_bad_input_not_a_verdict(capsys, tmp_path) -> None:
     base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
     for key in ("rho", "classical_witness", "finite_dqi_mean"):
-        with pytest.raises(ValueError, match=key):
+        with pytest.raises(ValueError, match=key) as error:
             S.candidate_from_dict({**base, key: 10**400})
+        assert len(str(error.value)) < 100  # names the field, does not echo 400 digits
     huge = {**base, "m": 10**400, "n": 10**400 // 2}
     with pytest.raises(ValueError, match="too large"):
         S.screen(S.candidate_from_dict(huge))  # the MCP tool turns this ValueError into {"error": ...}

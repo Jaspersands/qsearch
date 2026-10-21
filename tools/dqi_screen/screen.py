@@ -96,7 +96,7 @@ def _coerce(key: str, value):
         try:
             return float(value)
         except OverflowError:
-            raise ValueError(f"{key} = {value} is too large for a float") from None
+            raise ValueError(f"{key} is too large for a float (an integer of {len(str(abs(value)))} digits)") from None
     return str(value)
 
 
