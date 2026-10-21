@@ -29,7 +29,8 @@ recognised by id and never re-reported or re-scored, with two exceptions:
   Reviewed table. Its machine label is unchanged.
 - A stored possible kill or scoop with no verdict is relabelled `already-cited` once a note,
   record or literature file cites its id. The record keeps `relabelled_from` (the old label)
-  and `relabelled_on`, and the run reports the count.
+  and `relabelled_on`, and the run reports the count. `--relabel` drops both fields when it
+  gives the paper any label but `already-cited`.
 
 Outputs, rewritten only when a run finds a new paper, a coverage gap opens or closes, a
 verdict is added, changed or withdrawn, or a stored flag is relabelled, so a quiet week

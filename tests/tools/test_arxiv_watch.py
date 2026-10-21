@@ -11,7 +11,7 @@ import pytest
 
 from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
 from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, set_verdict
-from tools.arxiv_watch.watch import label_for, recheck_cited, replay_seeds, run
+from tools.arxiv_watch.watch import label_for, recheck_cited, relabel, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
 
@@ -515,6 +515,16 @@ def test_flagged_paper_becomes_already_cited_once_a_note_cites_it(fake_repo: Pat
     reviewed = state["papers"]["2610.33333"]
     assert reviewed["label"] == "possible-kill" and "relabelled_on" not in reviewed  # a verdict-bearing paper is untouched
     assert run(fake_repo, client, corpus, tracks=tracks, today="2026-10-27").relabelled == 0
+
+    # --relabel keeps the demotion record while the paper is cited and drops it once it is flagged again.
+    relabel(fake_repo, corpus)
+    cited = _state(fake_repo)["papers"]["2610.11111"]
+    assert (cited["label"], cited["relabelled_on"], cited["relabelled_from"]) == ("already-cited", "2026-10-26", "possible-kill")
+    (fake_repo / "research" / "CITES_KILL.md").unlink()
+    corpus.refresh()
+    assert relabel(fake_repo, corpus) == 2
+    flagged = _state(fake_repo)["papers"]["2610.11111"]
+    assert flagged["label"] == "possible-kill" and "relabelled_on" not in flagged and "relabelled_from" not in flagged
 
 
 def test_recheck_cited_is_fast_for_many_flags_sharing_a_trailing_token(fake_repo: Path) -> None:

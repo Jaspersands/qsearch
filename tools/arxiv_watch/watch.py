@@ -216,6 +216,9 @@ def relabel(root: Path, corpus: Corpus) -> int:
         if (label, tracks) != (record.get("label"), record.get("tracks")):
             changed += 1
         record.update({"label": label, "cues": cues, "tracks": tracks})
+        if label != "already-cited":  # recheck_cited's demotion record no longer applies
+            record.pop("relabelled_from", None)
+            record.pop("relabelled_on", None)
     _save(root, state)
     return changed
 
