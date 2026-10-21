@@ -97,6 +97,23 @@ def test_british_and_accented_spellings_match_their_keywords(fake_repo: Path) ->
     assert groebner["groebner-mq"].matched == ["groebner basis"]
 
 
+USD_NOTE = (
+    "# Kangaroo Sampler\n\n"
+    "The product-USD/Prange sampler and the block-Prange decoder sample the kangaroo Gibbs law.\n"
+)
+
+
+def test_a_longer_name_of_another_baseline_is_not_a_citation_of_its_part(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "KANGAROO_SAMPLER", USD_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, "kangaroo Gibbs sampler", k=20)}
+    assert recs["usd-prange-rejection-sampler"].evidence[0].doc_id.startswith("note:KANGAROO_SAMPLER")
+    assert "prange-isd" not in recs  # "Prange" only occurs inside USD-Prange names
+    both = _corpus_with_note(fake_repo, "KANGAROO_SAMPLER", USD_NOTE + "\nPlain Prange decoding fails on kangaroo.\n")
+    recs = {rec.baseline["id"]: rec for rec in recommend(both, "kangaroo Gibbs sampler", k=20)}
+    assert recs["prange-isd"].evidence[0].doc_id.startswith("note:KANGAROO_SAMPLER")
+    assert recs["usd-prange-rejection-sampler"].evidence[0].doc_id.startswith("note:KANGAROO_SAMPLER")
+
+
 def test_spin_glasses_match_the_spin_glass_keyword(fake_repo: Path) -> None:
     corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
     recs = recommend(corpus, "sampling Gibbs states of mean-field spin glasses")

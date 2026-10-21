@@ -161,12 +161,27 @@ def _source(hit: Hit) -> str:
     return hit.path if hit.kind == "note" else hit.doc_id
 
 
-def _citing(hits: list[Hit], texts: dict[str, str], pattern: re.Pattern[str]) -> list[Hit]:
-    """The nearest hit of each source that names the baseline."""
+def _named(text: str, patterns: list[re.Pattern[str]]) -> set[int]:
+    """Indexes of the baselines a text names.
+
+    A mention that lies inside a longer mention of another baseline counts only for that one:
+    "Prange" inside "USD-Prange" or "product-USD/Prange" names the USD-Prange sampler, not
+    Prange information-set decoding.
+    """
+    spans = [(m.start(), m.end(), i) for i, pattern in enumerate(patterns) for m in pattern.finditer(text)]
+    return {
+        i
+        for start, end, i in spans
+        if not any(j != i and s <= start and end <= e and e - s > end - start for s, e, j in spans)
+    }
+
+
+def _citing(hits: list[Hit], named: dict[str, set[int]], index: int) -> list[Hit]:
+    """The nearest hit of each source that names baseline `index`."""
     seen: set[str] = set()
     found: list[Hit] = []
     for hit in hits:
-        if _source(hit) not in seen and pattern.search(texts[hit.doc_id]):
+        if _source(hit) not in seen and index in named[hit.doc_id]:
             seen.add(_source(hit))
             found.append(hit)
     return found
@@ -184,15 +199,17 @@ def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None 
     entries = load_catalog() if catalog is None else catalog
     words = tokens(idea)
     hits = corpus.search(idea, kinds=("note", "negative"), k=NEARBY)
-    texts: dict[str, str] = {}
+    patterns = [_name_pattern(baseline) for baseline in entries]
+    named: dict[str, set[int]] = {}
     for hit in hits:
         doc = corpus.get(hit.doc_id)
-        texts[hit.doc_id] = f"{doc.title}\n{doc.text}" if doc is not None else f"{hit.title}\n{hit.snippet}"
+        text = f"{doc.title}\n{doc.text}" if doc is not None else f"{hit.title}\n{hit.snippet}"
+        named[hit.doc_id] = _named(text, patterns)
     found: list[Recommendation] = []
-    for baseline in entries:
+    for index, baseline in enumerate(entries):
         mechanisms = baseline["mechanisms"]
         matched = [m for m in mechanisms if keyword_matches(tokens(m), words)]
-        citing = _citing(hits, texts, _name_pattern(baseline))
+        citing = _citing(hits, named, index)
         score = round(len(matched) / len(mechanisms) + len(citing) / NEARBY, 4)
         if score > 0:
             found.append(Recommendation(baseline, score, matched, citing))

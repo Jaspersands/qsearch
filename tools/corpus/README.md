@@ -332,7 +332,10 @@ in a keyword stands for a number: such a keyword must occur in a row with a numb
 depth 3". The ten
 note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
-and on word boundaries. Notes are indexed by section, so a note counts once however many of
+and on word boundaries. A mention inside a longer name of another baseline counts only for
+that one: "Prange" inside "USD-Prange" or "product-USD/Prange" cites the USD-Prange sampler,
+not `prange-isd` (on "p-spin Gibbs sampling" such mentions had put `prange-isd` first, at 0.5,
+on citations alone). Notes are indexed by section, so a note counts once however many of
 its sections are among the ten, and its nearest citing section is the evidence shown. Each
 negative counts on its own, although all of them live in one registry file.
 
