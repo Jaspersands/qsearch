@@ -21,13 +21,14 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.audit.rediscovery import _norm, _rows  # noqa: E402
+from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.markdown import JOURNALS, note_status  # noqa: E402
 from tools.referee.extract import DATE, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
@@ -104,8 +105,10 @@ For each note:
 1. Pick up to 6 claims that carry the note's conclusion: the stated result, each bound or
    lemma the result depends on, and each comparison with a classical baseline.
 2. Quote each claim verbatim from the note `text`: at least 6 consecutive words copied
-   exactly (only whitespace and punctuation may differ). Quote from the note text only,
-   never from the artifact excerpt, the flags or these instructions. Every quote is checked
+   exactly. Whitespace, letter case, punctuation and markdown markup may differ, but the
+   symbols <, >, =, +, -, /, ^ and decimal points must be the note's, hyphens included
+   (they are the mathematics; ≤ for <= is fine). Quote from the note text only, never
+   from the artifact excerpt, the flags or these instructions. Every quote is checked
    automatically, and one quote that is not in the note rejects your whole output file.
 3. Give each claim a verdict:
    - `holds`: the note's own derivation or evidence supports it as stated.
@@ -163,9 +166,64 @@ def export_batches(root: Path, out_dir: Path, notes: list[Path], batch_size: int
 MIN_QUOTE_WORDS = 6
 MAX_CLAIMS = 6
 
+# Words are what `_norm` keeps. Between two words, these symbols must match the note: in
+# ASCII-math notes "b<=epsilon" and "b>=epsilon" have the same words.
+WORD = re.compile(r"[A-Za-z0-9]+")
+SYMBOL = re.compile(r"!=|[<>=+\-/^~]")
+SYMBOL_FORMS = str.maketrans({"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "−": "-", "–": "-", "—": "-",
+                              "→": "->", "⇒": "=>", "≈": "~", "∼": "~"})
+LINE_MARKER = re.compile(r"(?m)^[ \t]*(?:[-+*>][ \t]+)+")
+
 
 def _note_path(root: Path, stem: str) -> Path:
     return root / "research" / f"{stem}.md"
+
+
+def _symbols(text: str) -> tuple[str, ...]:
+    """The symbols in each gap between consecutive words; a decimal point counts as one."""
+    text = text.translate(SYMBOL_FORMS)
+    words = list(WORD.finditer(text))
+    gaps = []
+    for left, right in zip(words, words[1:]):
+        gap = text[left.end():right.start()]
+        if gap == "." and left.group()[-1].isdigit() and right.group()[0].isdigit():
+            gaps.append(".")
+        else:
+            gaps.append(re.sub(r"-+", "-", "".join(SYMBOL.findall(gap))))
+    return tuple(gaps)
+
+
+def _symbol_forms(text: str) -> set[tuple[str, ...]]:
+    """With and without list and quote markers at line starts, which a quote may keep or drop."""
+    return {_symbols(text), _symbols(LINE_MARKER.sub("", text))}
+
+
+def find_quote(quote: str, text: str) -> tuple[str | None, str]:
+    """The note's own span for `quote`, or None and why not.
+
+    The words must appear consecutively in `text` (case, whitespace and punctuation aside), and
+    the symbols between them (<, >, =, +, -, /, ^, ~, decimal points) must be the note's.
+    """
+    words = [word.lower() for word in WORD.findall(quote)]
+    if len(words) < MIN_QUOTE_WORDS:
+        return None, f"quote under {MIN_QUOTE_WORDS} words"
+    tokens = list(WORD.finditer(text))
+    joined, starts = " ", {}
+    for index, token in enumerate(tokens):
+        starts[len(joined)] = index
+        joined += token.group().lower() + " "
+    needle, wanted = " " + " ".join(words) + " ", _symbol_forms(quote)
+    found, at = False, joined.find(needle)
+    while at >= 0:
+        found = True
+        first = starts[at + 1]
+        span = text[tokens[first].start():tokens[first + len(words) - 1].end()]
+        if wanted & _symbol_forms(span):
+            return span, ""
+        at = joined.find(needle, at + 1)
+    if found:
+        return None, "quote's symbols (<, >, =, +, -, /, ^, decimal points) differ from the note"
+    return None, "quote not verbatim in the note"
 
 
 def _claim_entry(where: str, claim: dict, source: str) -> dict:
@@ -173,13 +231,11 @@ def _claim_entry(where: str, claim: dict, source: str) -> dict:
     if verdict not in CLAIM_VERDICTS:
         raise ValueError(f"{where}: bad claim verdict {verdict!r}")
     quote = str(claim.get("quote", ""))
-    words = _norm(quote)
-    if len(words.split()) < MIN_QUOTE_WORDS:
-        raise ValueError(f"{where}: quote under {MIN_QUOTE_WORDS} words: {quote!r}")
-    if f" {words} " not in source:
-        raise ValueError(f"{where}: quote not verbatim in the note: {quote[:120]!r}")
+    span, reason = find_quote(quote, source)
+    if span is None:
+        raise ValueError(f"{where}: {reason}: {quote[:120]!r}")
     return {
-        "quote": quote[:400],
+        "quote": span[:400],
         "verdict": verdict,
         "step": str(claim.get("step", ""))[:300],
         "finding": str(claim.get("finding", ""))[:600],
@@ -200,7 +256,7 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             overall = row.get("overall")
             if overall not in OVERALL:
                 raise ValueError(f"{path}: {stem}: bad overall verdict {overall!r}")
-            source = f" {_norm(note.read_bytes().decode('utf-8', errors='replace'))} "
+            source = note.read_bytes().decode("utf-8", errors="replace")
             claims = [_claim_entry(f"{path}: {stem}", claim, source) for claim in (row.get("claims") or [])[:MAX_CLAIMS]]
             sha = str(row.get("content_sha") or "")
             entries[stem] = {

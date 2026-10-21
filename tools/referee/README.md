@@ -74,12 +74,16 @@ field. The judge is told to work from the full text.
    `unclear`), the `step` at fault, a `finding` (the counterexample or missing condition)
    and `covered_by_self_check`. The judge must not propose new research.
 3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, a quote
-   under six words, or a quote that is not in the note text after lower-casing and
-   collapsing punctuation and whitespace (the rediscovery audit's `_norm`, matched on
-   word boundaries). A quote lifted from the artifact excerpt fails, because it is not in
-   the note. A row whose `content_sha` differs from the note's current hash is stored
-   with `stale: true`. Re-importing a note replaces its review. Stored text is capped:
-   summary 1500 characters, finding 600, quote 400, six claims.
+   under six words, or a quote that is not in the note text. A quote's words must appear
+   consecutively in the note after lower-casing (what the rediscovery audit's `_norm`
+   keeps, matched on word boundaries), and the symbols between them (`<`, `>`, `=`, `+`,
+   `-`, `/`, `^`, `~`, decimal points; `≤` and `<=` count as the same) must be the
+   note's, so `b>=epsilon` does not pass for `b<=epsilon`. List and quote markers at line
+   starts may be kept or dropped. The stored quote is the note's own wording of the
+   span, not the judge's copy. A quote lifted from the artifact excerpt fails, because
+   it is not in the note. A row whose `content_sha` differs from the note's current hash
+   is stored with `stale: true`. Re-importing a note replaces its review. Stored text is
+   capped: summary 1500 characters, finding 600, quote 400, six claims.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.

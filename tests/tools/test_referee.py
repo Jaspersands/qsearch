@@ -344,6 +344,61 @@ def test_import_rejects_a_quote_from_the_artifact_excerpt(tmp_path: Path) -> Non
         R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "lifted.jsonl", [row])], "j")
 
 
+MATH_NOTE = textwrap.dedent(
+    """\
+    # Radial Readout
+
+    2026-10-19. REVIEW PENDING.
+
+    ## Result
+
+    For any unit radial superposition u, its bad mass b<=epsilon. Unique-good
+    radial vectors give
+
+        1-epsilon <= ||A u||^2 <= 1+(M-1)*epsilon.
+
+    When 2ell+1<=K, the older exact RS-moment argument already determines every
+    coefficient, with margin 0.031 on all **twelve** inputs.
+
+    - the first listed item holds for every input
+    - the second listed item has a gap of 0.5
+    """
+)
+
+
+def test_import_rejects_quotes_whose_symbols_differ_from_the_note(tmp_path: Path) -> None:
+    _write(tmp_path, "MATH_NOTE", MATH_NOTE)
+    flipped = [
+        "For any unit radial superposition u, its bad mass b>=epsilon.",
+        "When 2ell+1>K, the older exact RS-moment argument already determines every",
+        "1+epsilon >= ||A u||^2 >= 1-(M+1)/epsilon.",
+        "the older exact RS moment argument already determines",
+        "coefficient, with margin 0,031 on all twelve inputs",
+    ]
+    for index, quote in enumerate(flipped):
+        row = _row(tmp_path, stem="MATH_NOTE", overall="unsound", claims=[_claim(quote, verdict="wrong")])
+        with pytest.raises(ValueError, match="symbols"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / f"flip_{index}.jsonl", [row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+
+def test_import_stores_the_note_wording_of_each_quote(tmp_path: Path) -> None:
+    _write(tmp_path, "MATH_NOTE", MATH_NOTE)
+    loose = {
+        "For any unit radial superposition u its bad mass b <= epsilon":
+            "For any unit radial superposition u, its bad mass b<=epsilon",
+        "1 - epsilon ≤ ||A u||^2 ≤ 1 + (M−1)*epsilon": "1-epsilon <= ||A u||^2 <= 1+(M-1)*epsilon",
+        "with margin 0.031 on all twelve inputs": "with margin 0.031 on all **twelve** inputs",
+        "the first listed item holds for every input the second listed item":
+            "the first listed item holds for every input\n- the second listed item",
+        "holds for every input - the second listed item has": "holds for every input\n- the second listed item has",
+    }
+    row = _row(tmp_path, stem="MATH_NOTE", overall="needs-work", claims=[_claim(quote) for quote in loose])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "loose.jsonl", [row])], "j")
+    stored = R.load_reviews(tmp_path)["notes"]["MATH_NOTE"]["claims"]
+    assert [claim["quote"] for claim in stored] == list(loose.values())
+
+
 def _reviewed_repo(root: Path) -> None:
     """FIXTURE_NOTE unsound, EDITED needs-work then edited, SOUND_NOTE sound, OTHER_n unreviewed."""
     _write(root, "FIXTURE_NOTE", FIXTURE_NOTE)
