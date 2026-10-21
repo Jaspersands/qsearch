@@ -128,12 +128,18 @@ Import checks every row before it writes anything: a missing or unreadable file,
 is not a JSON object, an unknown verdict, or an id that is missing or not stored stops it
 (exit 2). A row is then rejected when
 
-- its quote is under six words, or does not appear verbatim in the one text `quote_from`
-  names: the abstract, or the excerpt of one of the paper's nearest records. Latin letter
-  case, punctuation (including `-`, `/` and TeX's `$`) and spacing are ignored; Greek letters
-  and math symbols must match, so a quote with `≥` for `≤`, or `Θ` or `ω` for `Ω`, fails. A
-  quote that runs from one text into another, or comes from a record the judge was not
-  shown, is not evidence ("quote not found");
+- its quote is under six words (numbers count; symbols and TeX commands do not), or does not
+  appear verbatim in the one text `quote_from` names: the abstract, or the excerpt of one of
+  the paper's nearest records. Spacing, the case of ordinary Latin words, sentence punctuation
+  (`. , ; : ?`), quote marks, markdown's `**` and TeX's `$`, `\(`, `\)` and spacing commands
+  are ignored, and every dash and `−` read as `-`. The maths must match: signs, `/`, `!`, `#`,
+  `%`, `^`, `_`, braces and brackets, Greek letters, TeX commands (`\Omega` is not `\omega`)
+  and spelled-out Greek capitals (`Omega` is not `omega`). A superscript reads as its TeX
+  exponent (`2ⁿ` is `2^n`, never `2n`). So a quote with `≥` for `≤`, `0.207` for `-0.207`,
+  `n^{1/2}` for `n^{-1/2}` or `ω` for `Ω` fails, and so does one that starts on a number just
+  after its sign or ends just before an exponent. A quote that runs from one text into
+  another, or comes from a record the judge was not shown, is not evidence ("quote not
+  found");
 - the paper already has a verdict recorded by anyone but a judge, including an entry written
   by hand without `by` ("human verdict exists").
 
