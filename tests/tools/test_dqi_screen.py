@@ -297,6 +297,66 @@ def test_subfield_codimension_must_fit_the_density() -> None:
         == "not viable"  # rho = 1/2 = 2^-1 fits exactly
 
 
+# Each rule's decisive branch, one candidate apiece (a mutant that always passes or never passes a
+# rule, or drops one bound, fails at least one of these).
+LONGER = {"m": 2000, "radius": 248, "min_distance": 500}  # hermite_half_rate at twice the length: viable
+
+
+def test_r1_fails_on_each_asymptotic_reach_bound_alone() -> None:
+    no_radius = {"radius": None, "min_distance": None}
+    cases = (
+        ("sphere-packing", {"q": 2, "n": 100, "rho": 0.1, **no_radius}),  # H_2^-1(0.1) = 0.013 <= 0.0166 < Plotkin
+        ("Plotkin", {"q": 2, "n": 900, **no_radius}),  # Plotkin 0.225 <= 0.282 < H_2^-1(0.9) = 0.316
+        ("distance", {"min_distance": 100, "radius": None}),  # delta/2 = 0.05 <= 0.067 < 0.25
+    )
+    for bound, changes in cases:
+        s, checks = _run("hermite_half_rate.json", **changes)
+        r1 = checks["R1"]
+        assert r1.passed is False and r1.detail.startswith(f"reach bound {bound} "), (bound, r1.detail)
+        assert s.verdict == "not viable"
+    assert _run("hermite_half_rate.json", radius=None)[1]["R1"].passed is True
+
+
+def test_cosine_without_a_threshold_is_not_viable_even_without_a_radius() -> None:
+    for radius in (None, 400):  # alpha = 0.71 >= 1/sqrt(2)
+        s, checks = _run("mpi_signed_cosine.json", m=1000, n=710, radius=radius)
+        assert checks["R1"].passed is False and "1/sqrt(2)" in checks["R1"].detail
+        assert s.verdict == "not viable"
+    assert _run("mpi_signed_cosine.json", m=1000, n=710, radius=400)[1]["R2"].passed is False
+
+
+def test_reach_fails_just_past_the_licensed_radius_alone() -> None:
+    s, checks = _run("hermite_half_rate.json", radius=125)  # (250 - 2) // 2 = 124; every other bound allows 249
+    assert checks["reach"].passed is False and "licensed radius 124" in checks["reach"].detail
+    assert "finite-length radius bound" not in checks["reach"].detail and s.verdict == "not viable"
+
+
+def test_r3_cap_and_restarts_fail_paths() -> None:
+    small = {"q": 7, "m": 2000, "n": 400, "radius": 100, "min_distance": None}  # Q* = 0.909, Q_DQI 0.718
+    s, checks = _run("hermite_half_rate.json", **small)
+    assert checks["R3"].passed is True and s.verdict == "viable", s.reasons
+    s, checks = _run("hermite_half_rate.json", **small, finite_dqi_mean=0.95)
+    assert checks["R3"].passed is False and "existential line" in checks["R3"].detail and s.verdict == "unknown"
+    s, checks = _run("hermite_half_rate.json", **LONGER)
+    assert checks["cap"].passed is True and checks["restarts"].passed is True and s.verdict == "viable"
+    assert _run("hermite_half_rate.json", radius=300)[1]["cap"].passed is False  # lam = 0.3 > alpha/2
+    s, checks = _run("hermite_half_rate.json", **LONGER, finite_dqi_mean=0.6)  # below Q_Pr = 0.625
+    assert checks["restarts"].passed is False and "no length" in checks["restarts"].detail
+    assert s.verdict == "unknown"
+
+
+def test_r4_passes_and_blocks_at_half() -> None:
+    subfield = {**LONGER, "q": 4096, "p": 2, "b": 12}
+    s, checks = _run("hermite_half_rate.json", **subfield, c=12)  # alpha_sub = 0.25: baseline 0.625 < 0.83
+    assert checks["R4"].passed is True and s.verdict == "viable", s.reasons
+    # c = 4: alpha = 0.25 >= 2c^2/(b^2+c^2) = 0.2 blocks every licensed radius, even when a finite
+    # mean 0.9 tops the baseline 0.875.
+    s, checks = _run("hermite_half_rate.json", **subfield, c=4, finite_dqi_mean=0.9)
+    assert s.quantities["subfield_baseline"] == pytest.approx(0.875)
+    assert checks["R4"].passed is False and "blocks every licensed radius" in checks["R4"].detail
+    assert R.subfield_baseline(0.5, 1 / 3, 10) == pytest.approx(0.65)  # floor(10/3) = 3 rows, not 3.33
+
+
 def test_saturated_reach_is_flagged_not_viable() -> None:
     s, checks = _run("hermite_half_rate.json", radius=600)  # lam = 0.6 > 1 - rho
     assert s.quantities["q_dqi"] == 1.0
