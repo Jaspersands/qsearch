@@ -9,6 +9,8 @@ constraint accepts) and a decoder that corrects lam*m Hamming errors in the dual
 - The DQI semicircle law: Q_DQI(lam, rho) = (sqrt(lam(1-rho)) + sqrt(rho(1-lam)))^2,
   saturating at 1 once lam > 1 - rho.
 - DQI beats Prange exactly when lam > lambda_crit(alpha, rho).
+- The cosine objective cos(2 pi v / q) needs only signed {0, +-1} error patterns, so its reach
+  is bounded by signed-pattern packing (Proposition 13), not by the Hamming bounds.
 
 These are asymptotic statements. They screen a candidate; they do not prove it.
 """
@@ -124,6 +126,77 @@ def plotkin_reach(alpha: float, q: int) -> float:
     return (1 - 1 / q) * _unit("alpha", alpha) / 2
 
 
+def plotkin_distance(m: int, n: int, q: int) -> int:
+    """Finite-length Plotkin bound for the dual code, a linear [m, k = m - n] code over F_q: its
+    minimum distance is at most the average nonzero weight, d <= m (q-1) q^(k-1) / (q^k - 1),
+    rounded down. Exact integers; when q^k - 1 > m (q - 1) the bound is floor(m (q - 1) / q)."""
+    if not 0 <= n < m or q < 2:
+        raise ValueError(f"need 0 <= n < m and q >= 2, got m={m}, n={n}, q={q}")
+    k = m - n
+    total = m * (q - 1)
+    if k * math.log2(q) > math.log2(total) + 1:  # q^k > 2 total: the excess over total/q is below one
+        return total // q
+    return total * q ** (k - 1) // (q**k - 1)
+
+
+def binary_entropy(x: float) -> float:
+    """H_2(x) in bits."""
+    return q_ary_entropy(x, 2)
+
+
+def signed_packing_reach(alpha: float, q: int) -> float:
+    """Proposition 13(i): a decoder licensed for {+-1} error patterns at reach lam <= 1/2 needs
+    alpha >= (H_2(lam) + lam) / log_2 q. The largest such lam, by bisection on [0, 1/2]
+    (H_2(lam) + lam increases there); 1/2 when alpha log_2 q >= 3/2. The cosine objective's
+    reach bound: the Hamming bounds above do not limit signed patterns."""
+    budget = _unit("alpha", alpha) * math.log2(q)
+    if budget >= 1.5:
+        return 0.5
+    lo, hi = 0.0, 0.5
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if binary_entropy(mid) + mid < budget:
+            lo = mid
+        else:
+            hi = mid
+        if hi - lo < 1e-15:
+            break
+    return (lo + hi) / 2
+
+
+def _log2_binomial(m: int, k: int) -> float:
+    return (math.lgamma(m + 1) - math.lgamma(k + 1) - math.lgamma(m - k + 1)) / math.log(2)
+
+
+def packing_radius(m: int, n: int, q: int, letters: int) -> int:
+    """Finite-length packing: the largest radius l at which the error patterns of weight l with
+    entries from `letters` nonzero values (q - 1 for Hamming errors, 2 for signed {+-1} ones)
+    number at most q^n, C(m, l) letters^l <= q^n; m when every radius passes. A decoder that
+    recovers each pattern of weight <= l from its syndrome (B^T y in F_q^n) needs them distinct,
+    so a larger radius is impossible at this (m, n, q). The count C(m, l) letters^l rises up to
+    its mode and falls after, and the ball of radius l contains the patterns at the mode once l
+    passes it, so the largest radius is below the mode or is m."""
+    if not 0 <= n <= m or letters < 1:
+        raise ValueError(f"need 0 <= n <= m and letters >= 1, got m={m}, n={n}, letters={letters}")
+    budget = n * math.log2(q)
+    tol = 1e-9 * (1 + budget)  # lgamma rounding: never reject a radius on it
+
+    def fits(k: int) -> bool:
+        return _log2_binomial(m, k) + k * math.log2(letters) <= budget + tol
+
+    mode = min(m, (m + 1) * letters // (letters + 1))
+    if fits(mode):
+        return m
+    lo, hi = 0, mode  # fits(lo), not fits(hi)
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if fits(mid):
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
 # ---------------------------------------------------------------------------
 # Margin cap, cosine objective, finite length, existential and subfield rules.
 
@@ -191,6 +264,52 @@ def existential_line(alpha: float, rho: float, q: int) -> float:
         if hi - lo < 1e-15:
             break
     return (lo + hi) / 2
+
+
+_EXACT_TILT_LIMIT = 2**16  # sum over F_q up to here; the von Mises limit beyond
+
+
+def _tilt(t: float, q: int) -> tuple[float, float]:
+    """(D(P_t || uniform), 1 - E_t cos) for P_t(v) proportional to exp(t cos(2 pi v / q)): an exact sum
+    over F_q for small q, else the q -> infinity (von Mises) limit by midpoint quadrature on [0, pi]
+    where exp(t (cos - 1)) is not negligible. With w = exp(t (cos - 1)) and its mean <w>, the
+    divergence is -ln <w> - t (1 - E_t cos)."""
+    import numpy as np
+
+    if q <= _EXACT_TILT_LIMIT:
+        gap = 2 * np.sin(np.pi * np.arange(q) / q) ** 2  # 1 - cos(2 pi v / q)
+        weight = np.exp(-t * gap)
+        mean = weight.mean()
+    else:
+        width = min(math.pi, 40 / math.sqrt(t)) if t > 0 else math.pi
+        points = 4001
+        theta = (np.arange(points) + 0.5) * width / points
+        gap = 2 * np.sin(theta / 2) ** 2
+        weight = np.exp(-t * gap)
+        mean = weight.sum() * width / points / math.pi  # uniform measure on [0, pi]
+    one_minus_mu = float((gap * weight).sum() / weight.sum())
+    return float(-math.log(mean) - t * one_minus_mu), one_minus_mu
+
+
+def cosine_existential_line(alpha: float, q: int) -> float:
+    """Proposition 13(iii): the largest mean of cos(2 pi v / q) over distributions on F_q within
+    relative entropy alpha ln q of uniform, attained by the exponential tilt P_t; t by bisection
+    so that D(P_t || uniform) = alpha ln q (the divergence increases with t)."""
+    budget = _unit("alpha", alpha) * math.log(q)
+    lo, hi = 0.0, 1.0
+    while _tilt(hi, q)[0] < budget:
+        lo, hi = hi, 2 * hi
+        if hi > 1e300:
+            return 1.0
+    for _ in range(200):
+        mid = (lo + hi) / 2 if hi < 4 * max(lo, 1.0) else math.sqrt(max(lo, 1.0) * hi)
+        if _tilt(mid, q)[0] < budget:
+            lo = mid
+        else:
+            hi = mid
+        if hi - lo <= 1e-13 * hi:
+            break
+    return 1 - _tilt((lo + hi) / 2, q)[1]
 
 
 def subfield_rate(alpha: float, b: int, c: int) -> float:

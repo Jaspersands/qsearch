@@ -27,14 +27,14 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | Field | Meaning |
 |---|---|
 | `name` | label for the report |
-| `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows) |
+| `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows; needs a prime q > 3, as Proposition 13 does) |
 | `q`, `m`, `n` | field size (a prime power), constraints, variables; alpha = n/m |
 | `rho` | accepted density of each constraint |
 | `radius` | claimed decoding radius l; lam = l/m |
 | `min_distance` | minimum distance d of the decoded code, when known; delta = d/m |
 | `decoder_known` | an efficient decoder reaches `radius` |
-| `encoder_known` | the planted encoder is known |
-| `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and the subfield F_(p^c) with c dividing b; needed when q is not prime, and checked against q when given |
+| `encoder_known` | a polynomial-time encoder for the optimizer code im(B) attains the existential line Q* (Proposition 9, R3). Encoder in the lossy-source-coding sense: given the accepted sets it returns a codeword satisfying many rows. The generator map x -> Bx or a known planted solution is not one |
+| `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and c the largest, over the accepted sets, of the smallest F_p-codimension of an affine subspace inside the set (Proposition 9); 1 <= c <= b, and c >= log_p(1/rho) since a set of density rho holds at most rho p^b elements (Appendix A.6). Needed when q is not prime, and checked against q when given |
 | `classical_witness` | best value a classical method has reached: a satisfied fraction in [0, 1] (count), or a mean cosine in [-1, 1] |
 | `finite_dqi_mean` | DQI's mean at this finite size, when computed; same range as the witness |
 
@@ -48,15 +48,30 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 
 | Rule | Kind | Passes when | Formula |
 |---|---|---|---|
-| R1 | hard | every applicable reach bound exceeds the threshold | lambda_crit = (sqrt((1-rho) Q_Pr) - sqrt(rho (1-Q_Pr)))^2; cosine: lambda_crit_cos = (1 - sqrt(1 - 2 alpha^2))/2 |
-| reach | hard | the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and lam <= every reach bound; not saturated (count, lam > 1 - rho) | Singleton alpha/2; distance delta/2; sphere packing H_q^-1(alpha); Plotkin (1 - 1/q) alpha/2 |
+| R1 | hard | every applicable reach bound exceeds the threshold | lambda_crit = (sqrt((1-rho) Q_Pr) - sqrt(rho (1-Q_Pr)))^2 against Singleton alpha/2, distance delta/2, sphere packing H_q^-1(alpha), Plotkin (1 - 1/q) alpha/2; cosine: lambda_crit_cos = (1 - sqrt(1 - 2 alpha^2))/2 against the signed packing reach, the lam <= 1/2 with (H_2(lam) + lam)/log_2 q = alpha (Proposition 13(i)) |
+| reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and l <= every finite-length radius bound; not saturated (lam > 1 - rho, where Eq. (1) already gives Q_DQI = 1: a screen policy, not one of the paper's rules; screen the radius (1 - rho) m instead). Cosine: the radius is inside the signed packing radius | count, for the dual [m, k = m - n] code: Singleton (n-1)//2 (d <= n+1); Plotkin (d_P - 2)//2 with d_P = floor(m (q-1) q^(k-1) / (q^k - 1)); sphere packing, the largest l with C(m, l) (q-1)^l <= q^n. Cosine: the largest l with C(m, l) 2^l <= q^n, so the {+-1} patterns of weight l have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them |
 | R2 | hard | the radius beats the threshold | lam > lambda_crit (count) or lambda_crit_cos (cosine) |
-| R3 | soft | count only: the claimed value (finite mean, else Q_DQI) is at most the existential line | Q* with D_KL(Q* \|\| rho) = alpha ln q when q^alpha rho < 1, else 1 |
-| R3-encoder | hard | the encoder is not known | a known encoder caps the margin at 0 |
+| R3 | soft | the claimed value (finite mean, else Q_DQI or the cosine value) is at most the existential line Q* | count: Q* with D_KL(Q* \|\| rho) = alpha ln q when q^alpha rho < 1, else 1 (Definition 5); cosine: the largest mean of cos(2 pi v/q) within relative entropy alpha ln q of uniform, by exponential tilting (Proposition 13(iii); 0.726 for MPI) |
+| R3-encoder | hard | no polynomial-time encoder attaining Q* is known | such an encoder is a classical baseline with DQI's limiting value, so mu+ <= 0 (Proposition 9) |
 | R4 | hard | prime field: not applicable; prime power: the claimed value beats the subfield baseline | alpha_sub = min(1, b alpha/c); baseline rho + (1-rho) floor(alpha_sub m)/m; at rho = 1/2 blocked when alpha >= 2c^2/(b^2+c^2) |
 | cap | soft | count only: Q_DQI <= q_cap | q_cap = Q_Pr + kappa, kappa = sqrt(u(1-u)) - u, u = alpha/2 (Proposition 8; at most (sqrt 2 - 1)/2) |
-| witness | soft | the classical witness is below q_cap - 0.01 | otherwise no licensed radius beats it by more than 0.01 |
+| witness | soft | the classical witness is below DQI's claimed value (finite mean, else Q_DQI or the cosine value) and, for the count, below q_cap - 0.01 | otherwise the classical method already reaches DQI's claim, or no licensed radius beats it by more than 0.01 |
 | restarts | soft | m >= the restart length | (1-alpha) R^2 ln(N/eta) / (2 mu^2), R = 1 count / 2 cosine, N = 2^40, eta = 0.05 (Theorem 10) |
+
+The check names are the screen's own and do not follow the paper's numbering one to one
+(its Table 1: (R1) reach, (R2) decoder, (R3) encoder, (R4) subfield):
+
+| Screen check | Paper (arXiv:2610.06753) |
+|---|---|
+| R1 | (R1) reach: Corollary 7 (a)-(c) for the count, Proposition 13(i) for the cosine |
+| reach | (R1) applied to the claimed radius at finite length, plus the (R2) decoder rule: `decoder_known` false leaves it open; saturation is a screen policy |
+| R2 | Theorem 6: the claimed radius beats lambda_crit (Proposition 13(ii) for the cosine); not the paper's (R2) |
+| R3 | the existential line Q* (Definition 5, Proposition 13(iii)) as a bound on the claimed value |
+| R3-encoder | (R3) encoder (Proposition 9) |
+| R4 | (R4) subfield (Proposition 9) |
+| cap | Proposition 8 |
+| witness | none: the screen's comparison with a classical result |
+| restarts | Theorem 10 |
 
 mu is the finite margin (`finite_dqi_mean` minus Prange) when given, else the asymptotic one
 (Q_DQI - Q_Pr, or sqrt(2 lam(1-lam)) - alpha for the cosine). With mu <= 0 no length suffices.
@@ -68,15 +83,17 @@ a cosine candidate and the other way round. The report also lists rho_crit(alpha
 
 `prange.py` gives the finite-length baseline on an actual instance:
 `prange_restarts(B, accepted, q, restarts, seed)` runs best-of-N Prange completion over a
-prime field on Python ints (exact for q = 2^61 - 1) and returns the best and every score.
+prime field on Python ints (exact for q = 2^61 - 1) and returns the best and every score, with
+`rank` = rank(B): a rank-deficient B (duplicated columns, the incidence matrix of a graph) runs
+on its image, solving on rank(B) rows.
 
 ## The four examples
 
 | Example | Verdict | Why |
 |---|---|---|
-| `opi_prime_character_r19.json` (q = 2^61 - 1, m = 127, n = 39, l = 19, d = 40) | unknown | witness 0.8583 >= q_cap - 0.01 = 0.8505; restarts need m >= 399.2, m = 127 |
-| `opi_prime_character_r32.json` (same, l = 32) | not viable | outside licensed Hamming reach: 32 > (40-2)//2 = 19, lam = 0.252 beyond Singleton 0.1535 |
-| `mpi_signed_cosine.json` (q = 8191, m = 6000, n = 420, l = 209) | viable | lam = 0.0348 > lambda_crit_cos = 0.00246, inside Plotkin reach 0.035; restarts need 1594.5 <= 6000 |
+| `opi_prime_character_r19.json` (q = 2^61 - 1, m = 127, n = 39, l = 19, d = 40) | unknown | witness 0.8583 >= finite DQI mean 0.8168 and >= q_cap - 0.01 = 0.8505; restarts need m >= 399.2, m = 127 |
+| `opi_prime_character_r32.json` (same, l = 32) | not viable | outside licensed Hamming reach: 32 > (40-2)//2 = 19 and > the Singleton radius (39-1)//2 = 19 |
+| `mpi_signed_cosine.json` (q = 8191, m = 6000, n = 420, l = 209) | viable | lam = 0.0348 > lambda_crit_cos = 0.00246; signed packing reach 0.196 (Table 3), radius 209 inside the signed packing radius 1178; restarts need 1594.5 <= 6000 |
 | `hermite_half_rate.json` (q = 8191, m = 1000, n = 500, l = 124, d = 250) | unknown | restarts need m >= 1212.7, m = 1000; R4 not applicable (prime field) |
 
 Smoke run on the real checkout (2026-10-21):
@@ -86,9 +103,14 @@ exits 1 and the report says "outside licensed Hamming reach".
 ## What it does not prove
 
 - The rules are asymptotic. A "viable" verdict is not a finite-size certificate; compute the
-  finite DQI mean and run `prange_restarts` on the instance.
-- Reach is worst-case Hamming decoding only. A list decoder or an average-case decoder beyond
-  (d-2)//2 is outside these rules, not refuted by them.
+  finite DQI mean and run `prange_restarts` on the instance. Only the reach check is
+  finite-length: short codes beat the asymptotic Plotkin and sphere-packing forms of R1 (the
+  simplex [15, 4, 8] at l = 3), so reach uses the exact finite bounds instead.
+- Reach is worst-case decoding: of Hamming errors for the count objective, of signed {+-1}
+  error patterns for the cosine (Proposition 13: the Hamming-based Singleton, sphere-packing,
+  Plotkin and distance bounds do not limit signed reach, so for the cosine they are only
+  listed). A list decoder or an average-case decoder beyond these is outside the rules, not
+  refuted by them.
 - "unknown" is not "probably fine": read the reasons.
 - The cosine objective is cos(2 pi v / q) with values in [-1, 1]. Its semicircle value is
   sqrt(2 lam(1-lam)) (Proposition 13(ii): standard deviation 1/sqrt(2) times 2 sqrt(lam(1-lam))),

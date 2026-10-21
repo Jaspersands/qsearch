@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from dataclasses import MISSING, asdict, dataclass, fields
 from pathlib import Path
@@ -92,7 +93,10 @@ def _coerce(key: str, value):
                              "give it as an exact integer")
         return int(value)
     if key in _FLOATS:
-        return float(value)
+        try:
+            return float(value)
+        except OverflowError:
+            raise ValueError(f"{key} is too large for a float (an integer of {len(str(abs(value)))} digits)") from None
     return str(value)
 
 
@@ -145,13 +149,20 @@ def _validate(c: Candidate) -> None:
     if root is None:
         raise ValueError(f"q must be a prime power, got {c.q}")
     p, b = root
+    if c.objective == "cosine" and (b != 1 or c.q <= 3):
+        raise ValueError(f"the cosine objective needs a prime q > 3, got q = {c.q}: Proposition 13's law assumes "
+                         "cos(2 pi v / q) has mean 0, variance 1/2 and skewness 0 over F_q")
     field = f"q = {c.q} = {p}^{b}"
     if c.p is not None and c.p != p:
         raise ValueError(f"p = {c.p} does not match {field}: p is the prime with q = p^b")
     if c.b is not None and c.b != b:
         raise ValueError(f"b = {c.b} does not match {field}: b is the degree of F_q over F_p")
-    if c.c is not None and (c.c < 1 or b % c.c):
-        raise ValueError(f"c = {c.c} does not divide b = {b} ({field}): F_(p^c) is a subfield of F_q only when c | b")
+    if c.c is not None and not 1 <= c.c <= b:
+        raise ValueError(f"c = {c.c} must lie in [1, b = {b}] ({field}): c is the F_p-codimension of an affine "
+                         "subspace inside an accepted set")
+    if c.c is not None and p ** -c.c > c.rho * (1 + 1e-9):
+        raise ValueError(f"c = {c.c} is below log_p(1/rho) = {math.log(1 / c.rho, p):.4g} ({field}): a set of density "
+                         f"rho = {c.rho} cannot contain a coset of codimension c, which holds p^(b-c) > rho p^b elements")
 
 
 def _prime_power(q: int) -> tuple[int, int] | None:
@@ -199,23 +210,32 @@ def _quantities(c: Candidate) -> dict[str, float | int | None]:
         "lambda_crit": threshold if count else None,
         "radius_crit": threshold * c.m if threshold is not None else None,
         "licensed_radius": R.licensed_radius(c.min_distance) if c.min_distance is not None else None,
+        "singleton_radius": R.licensed_radius(c.n + 1) if count else None,
+        "plotkin_radius": R.licensed_radius(R.plotkin_distance(c.m, c.n, c.q)) if count else None,
+        "hamming_radius": R.packing_radius(c.m, c.n, c.q, c.q - 1) if count else None,
+        "signed_packing_radius": None if count else R.packing_radius(c.m, c.n, c.q, 2),
         "singleton_reach": R.singleton_reach(alpha),
         "distance_reach": R.distance_reach(delta) if delta is not None else None,
         "sphere_packing_reach": R.sphere_packing_reach(alpha, c.q),
         "plotkin_reach": R.plotkin_reach(alpha, c.q),
+        "signed_packing_reach": None if count else R.signed_packing_reach(alpha, c.q),
         "kappa": kappa,
         "q_cap": q_pr + kappa if count else None,
         "cosine_objective": cos_obj,
         "lambda_crit_cos": None if count else threshold,
         "restart_length": R.restart_length(alpha, mu, 1 if count else 2) if mu is not None else None,
-        "existential_line": R.existential_line(alpha, c.rho, c.q) if count else None,
+        "existential_line": R.existential_line(alpha, c.rho, c.q) if count else R.cosine_existential_line(alpha, c.q),
         "rho_crit": R.rho_crit(alpha) if count else None,
         "alpha_sub": alpha_sub,
         "subfield_baseline": R.subfield_baseline(c.rho, alpha_sub, c.m) if count and subfield else None,
     }
 
 
-def _reach_bounds(qn: dict) -> dict[str, float]:
+def _reach_bounds(c: Candidate, qn: dict) -> dict[str, float]:
+    """Asymptotic upper bounds on lam. The cosine needs only signed {0, +-1} error patterns, which
+    the Hamming bounds do not limit (Proposition 13): its bound is signed-pattern packing."""
+    if c.objective == "cosine":
+        return {"signed packing": qn["signed_packing_reach"]}
     names = {"Singleton": "singleton_reach", "distance": "distance_reach",
              "sphere-packing": "sphere_packing_reach", "Plotkin": "plotkin_reach"}
     return {name: qn[key] for name, key in names.items() if qn[key] is not None}
@@ -226,7 +246,7 @@ def _check_r1(c: Candidate, qn: dict) -> Check:
     if threshold is None:
         return Check("R1", False, f"alpha = {_fmt(qn['alpha'])} >= 1/sqrt(2): no radius beats Prange on the cosine objective")
     name = "lambda_crit" if c.objective == "count" else "lambda_crit_cos"
-    bounds = _reach_bounds(qn)
+    bounds = _reach_bounds(c, qn)
     low = [f"{bound} {_fmt(value)}" for bound, value in bounds.items() if value <= threshold]
     if low:
         return Check("R1", False, f"reach bound {', '.join(low)} <= {name} = {_fmt(threshold)}: "
@@ -235,29 +255,59 @@ def _check_r1(c: Candidate, qn: dict) -> Check:
     return Check("R1", True, f"every reach bound exceeds {name} = {_fmt(threshold)} (tightest: {tight} {_fmt(bounds[tight])})")
 
 
+def _check_reach_signed(c: Candidate, qn: dict) -> Check:
+    """The cosine: the radius must fit signed-pattern packing at this (m, n, q). A Hamming licence
+    (d - 2) // 2 covers signed patterns, but a radius beyond it is not refuted by it."""
+    limit = qn["signed_packing_radius"]
+    if c.radius > limit:
+        return Check("reach", False, f"outside licensed signed-pattern reach: radius {c.radius} > signed packing radius "
+                     f"{limit}: C(m, l) 2^l > q^n, so the {{+-1}} patterns of weight l cannot have distinct syndromes "
+                     "(Proposition 13(i))")
+    inside = f"radius {c.radius} (lam = {_fmt(qn['lam'])}) is inside signed packing radius {limit}"
+    if qn["licensed_radius"] is not None:
+        licence = qn["licensed_radius"]
+        inside += (f", within the Hamming licence (d - 2) // 2 = {licence}, which covers signed patterns"
+                   if c.radius <= licence else
+                   f", beyond the Hamming licence (d - 2) // 2 = {licence}: it needs a decoder licensed for "
+                   "{+-1} patterns (Definition 11)")
+    if not c.decoder_known:
+        return Check("reach", None, inside + ", but no decoder is known to reach it; give decoder_known")
+    return Check("reach", True, inside)
+
+
 def _check_reach(c: Candidate, qn: dict) -> Check:
     lam = qn["lam"]
     if lam is None:
         return Check("reach", None, "give radius")
+    if c.objective == "cosine":
+        return _check_reach_signed(c, qn)
+    # Finite-length bounds only: the asymptotic forms in R1 are beaten by real short codes.
     problems = []
     if qn["licensed_radius"] is not None and c.radius > qn["licensed_radius"]:
         problems.append(f"radius {c.radius} > licensed radius {qn['licensed_radius']} = (d - 2) // 2")
-    bounds = _reach_bounds(qn)
-    over = [f"{bound} {_fmt(value)}" for bound, value in bounds.items() if lam > value]
+    limits = {"Singleton": qn["singleton_radius"], "Plotkin": qn["plotkin_radius"], "sphere-packing": qn["hamming_radius"]}
+    over = [f"{bound} {value}" for bound, value in limits.items() if c.radius > value]
     if over:
-        problems.append(f"lam = {_fmt(lam)} exceeds the reach bound {', '.join(over)}")
+        problems.append(f"radius {c.radius} exceeds the finite-length radius bound {', '.join(over)}")
+    # Saturation is a screen policy, not one of the paper's rules: Eq. (1) gives Q_DQI = 1 from
+    # lam = 1 - rho on, and the margin and restart length would rest on that pinned value.
+    # Compared in integers, so radius (1 - rho) m itself is never saturated by rounding.
+    edge = math.floor(c.m * (1 - c.rho) + 1e-9)
     saturated = None
-    if c.objective == "count" and lam > 1 - c.rho:
-        saturated = (f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, where the semicircle law pins "
-                     "Q_DQI at 1 and says nothing about this radius")
+    if c.radius > edge:
+        saturated = (f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, past radius {edge} = (1 - rho) m, "
+                     "where the semicircle law already reaches Q_DQI = 1; the screen does not credit a radius past "
+                     f"saturation: screen radius {edge} instead")
     if problems:
         detail = "outside licensed Hamming reach: " + "; ".join(problems)
         return Check("reach", False, detail + (f"; also {saturated}" if saturated else ""))
-    tight = min(bounds, key=bounds.get)
+    if qn["licensed_radius"] is not None:
+        limits["(d - 2) // 2"] = qn["licensed_radius"]
+    tight = min(limits, key=limits.get)
     if saturated:
         return Check("reach", False, f"{saturated} (radius {c.radius} is within every reach bound; tightest: "
-                     f"{tight} {_fmt(bounds[tight])})")
-    inside = f"radius {c.radius} (lam = {_fmt(lam)}) is inside licensed Hamming reach (tightest: {tight} {_fmt(bounds[tight])})"
+                     f"{tight} {limits[tight]})")
+    inside = f"radius {c.radius} (lam = {_fmt(lam)}) is inside licensed Hamming reach (tightest: {tight} {limits[tight]})"
     if not c.decoder_known:
         return Check("reach", None, inside + ", but no decoder is known to reach it; give decoder_known")
     return Check("reach", True, inside)
@@ -277,14 +327,16 @@ def _check_r2(c: Candidate, qn: dict) -> Check:
 
 
 def _claimed(c: Candidate, qn: dict) -> tuple[float | None, str]:
+    """DQI's claimed value: the finite mean when given, else the asymptotic one."""
     if c.finite_dqi_mean is not None:
         return c.finite_dqi_mean, "finite DQI mean"
+    if c.objective == "cosine":
+        return qn["cosine_objective"], "cosine value"
     return qn["q_dqi"], "Q_DQI"
 
 
 def _check_r3(c: Candidate, qn: dict) -> Check:
-    if c.objective != "count":
-        return Check("R3", None, f"{NOT_APPLICABLE} (count objective only)")
+    """The claimed value against the existential line Q*: Definition 5 (count) or Proposition 13(iii) (cosine)."""
     value, label = _claimed(c, qn)
     if value is None:
         return Check("R3", None, "give radius or finite_dqi_mean")
@@ -296,9 +348,12 @@ def _check_r3(c: Candidate, qn: dict) -> Check:
 
 
 def _check_encoder(c: Candidate) -> Check:
+    """Proposition 9 (R3): a polynomial-time encoder for im(B) attaining Q* is a classical baseline
+    with DQI's limiting value, so mu+ <= 0."""
     if c.encoder_known:
-        return Check("R3-encoder", False, "the encoder is known, so the margin over Prange is <= 0")
-    return Check("R3-encoder", True, "encoder not known")
+        return Check("R3-encoder", False, "a polynomial-time encoder attains the existential line Q*: it is a classical "
+                     "baseline with the same limiting value, so the margin mu+ <= 0 (Proposition 9)")
+    return Check("R3-encoder", True, "no polynomial-time encoder attaining Q* is known")
 
 
 def _check_r4(c: Candidate, qn: dict) -> Check:
@@ -332,15 +387,31 @@ def _check_cap(c: Candidate, qn: dict) -> Check:
 
 
 def _check_witness(c: Candidate, qn: dict) -> Check:
-    if c.classical_witness is None:
+    """The classical witness against DQI's claimed value (both objectives), then, for the count,
+    against the cap q_cap - WITNESS_GAP that bounds every licensed radius."""
+    witness = c.classical_witness
+    if witness is None:
         return Check("witness", None, f"{NOT_APPLICABLE} (no classical witness given)")
-    if qn["q_cap"] is None:
-        return Check("witness", None, f"{NOT_APPLICABLE} (the cap is for the count objective)")
-    limit = qn["q_cap"] - WITNESS_GAP
-    if c.classical_witness < limit:
-        return Check("witness", True, f"classical witness {_fmt(c.classical_witness)} < q_cap - {WITNESS_GAP} = {_fmt(limit)}")
-    return Check("witness", False, f"classical witness {_fmt(c.classical_witness)} >= q_cap - {WITNESS_GAP} = {_fmt(limit)}: "
-                 f"no licensed radius beats it by more than {WITNESS_GAP}")
+    value, label = _claimed(c, qn)
+    passes, fails = [], []
+    if value is not None:
+        if witness < value:
+            passes.append(f"classical witness {_fmt(witness)} < {label} {_fmt(value)}")
+        else:
+            fails.append(f"classical witness {_fmt(witness)} >= {label} {_fmt(value)}: the classical method already "
+                         "reaches DQI's claimed value")
+    if qn["q_cap"] is not None:
+        limit = qn["q_cap"] - WITNESS_GAP
+        if witness < limit:
+            passes.append(f"classical witness {_fmt(witness)} < q_cap - {WITNESS_GAP} = {_fmt(limit)}")
+        else:
+            fails.append(f"classical witness {_fmt(witness)} >= q_cap - {WITNESS_GAP} = {_fmt(limit)}: "
+                         f"no licensed radius beats it by more than {WITNESS_GAP}")
+    if fails:
+        return Check("witness", False, "; ".join(fails))
+    if value is None and c.objective == "cosine":
+        return Check("witness", None, "give radius or finite_dqi_mean to compare the classical witness with")
+    return Check("witness", True, "; ".join(passes))
 
 
 def _check_restarts(c: Candidate, qn: dict) -> Check:
@@ -369,19 +440,24 @@ def _verdict(checks: list[Check]) -> tuple[str, list[str]]:
 
 
 def screen(c: Candidate) -> Screen:
+    """The quantities, checks and verdict; ValueError on bad input, including integers too large
+    for the floating-point formulas (so a caller never mistakes them for a verdict)."""
     _validate(c)
-    qn = _quantities(c)
-    checks = [
-        _check_r1(c, qn),
-        _check_reach(c, qn),
-        _check_r2(c, qn),
-        _check_r3(c, qn),
-        _check_encoder(c),
-        _check_r4(c, qn),
-        _check_cap(c, qn),
-        _check_witness(c, qn),
-        _check_restarts(c, qn),
-    ]
+    try:
+        qn = _quantities(c)
+        checks = [
+            _check_r1(c, qn),
+            _check_reach(c, qn),
+            _check_r2(c, qn),
+            _check_r3(c, qn),
+            _check_encoder(c),
+            _check_r4(c, qn),
+            _check_cap(c, qn),
+            _check_witness(c, qn),
+            _check_restarts(c, qn),
+        ]
+    except OverflowError as exc:
+        raise ValueError(f"inputs too large to screen in floating point ({exc})") from None
     verdict, reasons = _verdict(checks)
     return Screen(c, qn, checks, verdict, reasons)
 
@@ -423,7 +499,8 @@ def render(s: Screen) -> str:
     ]
     if s.reasons:
         lines += ["", "Reasons:", "", *[f"- {reason}" for reason in s.reasons]]
-    lines += ["", "Asymptotic rules for worst-case Hamming decoding; a screen, not a proof."]
+    errors = "Hamming errors" if c.objective == "count" else "signed {+-1} error patterns"
+    lines += ["", f"Asymptotic rules for worst-case decoding of {errors}; a screen, not a proof."]
     return "\n".join(lines) + "\n"
 
 
@@ -441,7 +518,9 @@ def main(argv: list[str] | None = None) -> int:
     for flag in ("rho", "classical-witness", "finite-dqi-mean"):
         parser.add_argument(f"--{flag}", type=float)
     parser.add_argument("--decoder-known", action="store_true", help="An efficient decoder reaches the radius.")
-    parser.add_argument("--encoder-known", action="store_true", help="The planted encoder is known (R3: margin <= 0).")
+    parser.add_argument("--encoder-known", action="store_true",
+                        help="A polynomial-time encoder for im(B) attains the existential line Q* (R3, Proposition 9: "
+                        "margin <= 0). A generator matrix or a known planted solution is not such an encoder.")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--out", type=Path, help="Write the report here instead of printing it.")
     args = parser.parse_args(argv)
@@ -460,8 +539,12 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     text = json.dumps(asdict(result), indent=1) + "\n" if args.json else render(result)
     if args.out:
-        args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text(text, encoding="utf-8")
+        try:
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            args.out.write_text(text, encoding="utf-8")
+        except OSError as exc:  # exit 1 means "not viable", never a write error
+            print(f"error: cannot write {args.out}: {exc}", file=sys.stderr)
+            return 2
         print(f"{result.verdict}: {args.out}")
     else:
         print(text, end="")
