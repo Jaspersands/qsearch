@@ -29,6 +29,7 @@ if __package__ in (None, ""):
 from tools.corpus.api import Corpus, Hit  # noqa: E402
 from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
 from tools.corpus.duplicates import (  # noqa: E402
+    NO_NEGATIVES,
     REPORT_THRESHOLD,
     ClaimReport,
     DraftError,
@@ -36,6 +37,7 @@ from tools.corpus.duplicates import (  # noqa: E402
     draft_claims,
     own_ids,
     pair_report,
+    valid_threshold,
 )
 from tools.corpus.ranking import query_terms  # noqa: E402
 
@@ -316,6 +318,9 @@ def cmd_check_new(args: argparse.Namespace) -> int:
     reports = [
         (record_id, claim_report(corpus, text, threshold=args.threshold, exclude=exclude)) for text, record_id in drafts
     ]
+    if reports[0][1].documents == 0:
+        print(f"error: {NO_NEGATIVES}; check --root and research/registry/.", file=sys.stderr)
+        return 1
     duplicate = any(report.matches for _, report in reports)
     if args.json:
         payload = {
@@ -390,6 +395,13 @@ def cmd_baselines(args: argparse.Namespace) -> int:
     return 0
 
 
+def _threshold(value: str) -> float:
+    try:
+        return valid_threshold(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from None
+
+
 def _count(value: str) -> int:
     number = int(value)
     if number < 0:
@@ -443,7 +455,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     dups = sub.add_parser("near-duplicates", help="Pairs of negatives with a high TF-IDF cosine.")
     dups.add_argument("--kind", default="negative", help="Document kind to compare (default: negative).")
-    dups.add_argument("--threshold", type=float, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
+    dups.add_argument("--threshold", type=_threshold, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
     dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first; the total is still reported.")
     dups.add_argument("--per-family", type=int, help="At most this many pairs of ids differing only in a trailing number.")
     dups.add_argument("--out", help="Write FILE.json and FILE.md (stem upper-cased) next to it.")
@@ -462,7 +474,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="A text file, or a JSON record (or list of records) whose claim and reason_invalid are checked; "
         "a record is never matched with its own id.",
     )
-    check.add_argument("--threshold", type=float, default=0.6, help="Minimum TF-IDF cosine for a match.")
+    check.add_argument(
+        "--threshold", type=_threshold, default=0.6, help="Minimum TF-IDF cosine for a match, in (0, 1] (default 0.6)."
+    )
     check.add_argument("--json", action="store_true")
     check.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")
     check.set_defaults(func=cmd_check_new)

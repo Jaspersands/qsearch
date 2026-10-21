@@ -27,7 +27,7 @@ from mcp.server.fastmcp import FastMCP  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.baselines import recommend  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
-from tools.corpus.duplicates import claim_report  # noqa: E402
+from tools.corpus.duplicates import NO_NEGATIVES, claim_report, valid_threshold  # noqa: E402
 from tools.corpus.ranking import Embedder, query_terms  # noqa: E402
 from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 
@@ -107,12 +107,19 @@ def create_server(
         it. Returns the retained (and quarantined) negatives whose TF-IDF cosine with the claim
         is at least threshold, highest first; duplicate is true when there is any. Pass the
         claim and its reason. A match is a record to read and extend, not proof of identity;
-        if index_incomplete is true, no match does not mean the claim is new. A claim with no
-        words to compare (empty or only stop words) returns an error."""
+        if index_incomplete is true, no match does not mean the claim is new. threshold must be
+        in (0, 1]. A claim with no words to compare (empty or only stop words), a threshold
+        outside (0, 1] or an index with no negative records returns an error."""
         if not query_terms(claim):
             return {"error": "the claim has no words to compare (it is empty or only stop words)"}
+        try:
+            threshold = valid_threshold(threshold)
+        except ValueError as exc:
+            return {"error": str(exc)}
         ready()
         report = claim_report(corpus, claim, threshold=threshold)
+        if report.documents == 0:
+            return {"error": NO_NEGATIVES, **_issues_json(corpus)}
         return {
             "claim": claim,
             "threshold": threshold,

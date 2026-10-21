@@ -167,8 +167,10 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   the draft cannot be used (checked before the index is touched): a `--file` that cannot be
   read, text that starts like a JSON record but is not one (bad or truncated JSON, no string
   `claim`, a `reason_invalid` that is not a string), or a draft with no words to compare
-  (empty or only stop words). argparse usage errors
-  also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
+  (empty or only stop words); it also exits 1 when the index holds no negative record at
+  all (a `--root` without a registry), rather than calling every claim new. argparse usage
+  errors, among them a `--threshold` that is not a number in (0, 1] (for `near-duplicates`
+  too), also exit 2, so a hook or script should stop on any status but 0. `--file` takes a text
   file, a registry record as JSON, or a JSON list of records (read as UTF-8, with or without
   a BOM); a record contributes its `claim` and `reason_invalid` (a quarantined record's are
   read from its `original_record`), and is never matched with its own `id` (`negative:ID`
@@ -182,7 +184,8 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
   The MCP tool `check_duplicate_negative(claim, threshold=0.6)` returns the same matches
-  for a claim's text, with no id left out, and an `error` for a claim with no words.
+  for a claim's text, with no id left out, and an `error` for a claim with no words, a
+  threshold outside (0, 1] or an index with no negative records.
 - The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
   ones (`quarantined:` ids, 12). Both are compared and both can match; no quarantined record
   is in a pair at 0.7 or above today.

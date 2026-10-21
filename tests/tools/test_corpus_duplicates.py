@@ -407,6 +407,64 @@ def test_cli_check_new_rejects_a_draft_with_no_words(fake_repo: Path, tmp_path: 
         assert "no words to compare" in capsys.readouterr().err
 
 
+def test_cli_check_new_threshold_flag_moves_the_gate(fake_repo: Path, corpus: Corpus, capsys) -> None:
+    cosine = check_claim(corpus, NEAR_CLAIM)[0].score
+    assert 0.6 <= cosine < 0.99
+    root = ["--root", str(fake_repo), "check-new", "--text", NEAR_CLAIM]
+    assert main([*root, "--threshold", "0.99"]) == 0
+    assert "TF-IDF cosine >= 0.99 with this claim." in capsys.readouterr().out
+    assert main([*root, "--threshold", str(cosine - 0.01)]) == 2
+    capsys.readouterr()
+
+
+def test_check_duplicate_negative_tool_passes_its_threshold(fake_repo: Path) -> None:
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "check_duplicate_negative", {"claim": NEAR_CLAIM, "threshold": 0.99})
+    assert payload["duplicate"] is False and payload["matches"] == [] and payload["threshold"] == 0.99
+    assert _call(server, "check_duplicate_negative", {"claim": NEAR_CLAIM, "threshold": 0.5})["duplicate"] is True
+
+
+@pytest.mark.parametrize("value", ["nan", "inf", "1e309", "1.5", "0", "-1", "60"])
+def test_cli_rejects_a_threshold_outside_0_1(fake_repo: Path, capsys, value: str) -> None:
+    for command in (["check-new", "--text", NEAR_CLAIM], ["near-duplicates"]):
+        with pytest.raises(SystemExit) as raised:
+            main(["--root", str(fake_repo), *command, "--threshold", value])
+        assert raised.value.code == 2
+        assert "threshold must be a number in (0, 1]" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize("value", [float("nan"), 1.5, 0.0, -1.0, 60.0])
+def test_check_duplicate_negative_tool_rejects_a_threshold_outside_0_1(fake_repo: Path, value: float) -> None:
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "check_duplicate_negative", {"claim": NEAR_CLAIM, "threshold": value})
+    assert "threshold must be a number in (0, 1]" in payload["error"] and "duplicate" not in payload
+
+
+def test_cli_check_new_says_index_incomplete_on_a_half_written_registry(fake_repo: Path, capsys) -> None:
+    negatives = fake_repo / "research" / "registry" / "negative_results.json"
+    text = negatives.read_text()
+    negatives.write_text(text[: len(text) // 2])
+    root = ["--root", str(fake_repo), "check-new", "--text", NEAR_CLAIM]
+    assert main(root) == 0  # the Helstrom record cannot be read, so nothing matches
+    captured = capsys.readouterr()
+    assert "INDEX INCOMPLETE: a registry could not be read" in captured.out
+    assert "INDEX INCOMPLETE" in captured.err
+    assert main([*root, "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["index_incomplete"] is True
+
+
+def test_check_new_with_no_negative_records_is_an_error(fake_repo: Path, capsys) -> None:
+    registry = fake_repo / "research" / "registry"
+    (registry / "negative_results.json").write_text("[]")
+    (registry / "quarantined_campaign_negatives.json").write_text("[]")
+    assert main(["--root", str(fake_repo), "check-new", "--text", NEAR_CLAIM]) == 1
+    captured = capsys.readouterr()
+    assert "the index has no negative records" in captured.err and "No negative record" not in captured.out
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "check_duplicate_negative", {"claim": NEAR_CLAIM})
+    assert "the index has no negative records" in payload["error"] and "duplicate" not in payload
+
+
 def test_check_duplicate_negative_tool_rejects_an_empty_claim(fake_repo: Path) -> None:
     server = create_server(fake_repo, dense="off")
     for claim in ("", "the of and"):

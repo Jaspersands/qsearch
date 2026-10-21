@@ -15,6 +15,7 @@ how many pairs of one such family are kept, so they do not crowd true restatemen
 from __future__ import annotations
 
 import json
+import math
 import re
 from dataclasses import dataclass
 
@@ -26,6 +27,8 @@ _LAST_NUMBER = re.compile(r"-\d+$")
 
 # Default for the committed report (`cli.py near-duplicates`); calibrated in README.md, "Duplicates".
 REPORT_THRESHOLD = 0.9
+# With no negative-kind document every claim would look new, so the gate refuses to answer.
+NO_NEGATIVES = "the index has no negative records (retained or quarantined), so no claim can be checked"
 
 
 @dataclass(frozen=True)
@@ -165,6 +168,21 @@ def own_ids(record_id: str | None) -> tuple[str, ...]:
     return (f"negative:{record_id}", f"quarantined:{record_id}") if record_id else ()
 
 
+def valid_threshold(value: float) -> float:
+    """A cosine threshold as a float; ValueError unless it is a finite number in (0, 1].
+
+    NaN, an infinity or a value above 1 would match nothing, and 0 or less would match every
+    record, so a gate given one would always pass or always block.
+    """
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        number = math.nan
+    if not (math.isfinite(number) and 0 < number <= 1):
+        raise ValueError(f"threshold must be a number in (0, 1], got {value}")
+    return number
+
+
 @dataclass(frozen=True)
 class ClaimReport:
     matches: list[Hit]  # the first `k` matches, highest first
@@ -181,9 +199,10 @@ def claim_report(
     Every negative-kind document is scored (`Corpus.cosine_hits`), so no record at or above
     the threshold is missed and the closest comes first. A hit's `score` is a cosine in
     [0, 1], not the search's rank-fusion score. Doc ids in `exclude` (say the draft's own
-    record, already filed) are never returned or counted.
+    record, already filed) are never returned or counted. ValueError for a threshold
+    outside (0, 1] (`valid_threshold`).
     """
-    found = corpus.cosine_hits(text, ("negative",), threshold, exclude=exclude)
+    found = corpus.cosine_hits(text, ("negative",), valid_threshold(threshold), exclude=exclude)
     quarantined = sum(hit.doc_id.startswith("quarantined:") for hit in found)
     return ClaimReport(found[: max(k, 0)], len(found), quarantined, corpus.kind_count(("negative",)))
 
