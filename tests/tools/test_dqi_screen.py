@@ -251,6 +251,19 @@ def test_prange_more_restarts_never_lower_best() -> None:
     assert all(score >= 4 / 12 for score in twelve["scores"])  # the n targeted rows always hold
 
 
+def test_prange_reduces_range_accepted_sets_mod_q() -> None:
+    one_row = np.array([[1], [1]])
+    shifted = P.prange_restarts(one_row, [range(5, 7)] * 2, 5, restarts=3, seed=0)["scores"]
+    assert shifted == P.prange_restarts(one_row, [{5, 6}] * 2, 5, restarts=3, seed=0)["scores"] == [1.0] * 3
+    B = np.random.default_rng(5).integers(0, 7, size=(12, 4))
+    for arc, residues in ((range(-1, 2), {6, 0, 1}), (range(5, 9), {5, 6, 0, 1}), (range(7), set(range(7)))):
+        by_range = P.prange_restarts(B, [arc] * 12, 7, restarts=8, seed=2)["scores"]
+        assert by_range == P.prange_restarts(B, [residues] * 12, 7, restarts=8, seed=2)["scores"], arc
+        assert all(score >= 4 / 12 for score in by_range)  # the n targeted rows always hold
+    with pytest.raises(ValueError, match="longer than q"):
+        P.prange_restarts(B, [range(-1, 7)] * 12, 7)
+
+
 def test_prange_large_prime_field() -> None:
     q = 2**61 - 1
     rng = np.random.default_rng(7)

@@ -10,6 +10,10 @@ rows whose (Bx)_i lands in its accepted set. The rows chosen are always satisfie
 expected score is the screen's Q_Pr = rho + (1 - rho) alpha; the best of N restarts is the
 finite-length number DQI has to beat (rule "restarts").
 
+Accepted sets are read mod q. A step-1 range is an arc of residues (range(-1, 2) is
+{q-1, 0, 1}) and is never materialised, so large arcs are cheap when q = 2^61 - 1; it may not
+be longer than q. Any other collection is reduced to a set of residues.
+
 Arithmetic is on Python ints, so q up to 2^61 - 1 does not overflow int64.
 """
 
@@ -18,6 +22,33 @@ from __future__ import annotations
 from collections.abc import Collection, Sequence
 
 import numpy as np
+
+
+class _Arc:
+    """A step-1 range read mod q: the residues start, start + 1, ..., start + len - 1 (mod q).
+
+    It may start below 0 or run past q - 1, and is indexed in increasing residue order, like
+    the sorted pool of the equal set, so a range and its set draw the same targets."""
+
+    def __init__(self, r: range, q: int) -> None:
+        if len(r) > q:
+            raise ValueError(f"accepted range {r} is longer than q = {q}")
+        self.start, self.size, self.q = r.start % q, len(r), q
+        self.wrapped = max(0, self.start + self.size - q)  # residues 0 .. wrapped - 1 come first
+
+    def __len__(self) -> int:
+        return self.size
+
+    def __getitem__(self, k: int) -> int:
+        if not 0 <= k < self.size:
+            raise IndexError(k)
+        return k if k < self.wrapped else self.start + k - self.wrapped
+
+    def __contains__(self, x: object) -> bool:
+        return isinstance(x, int) and (x - self.start) % self.q < self.size
+
+
+_MATERIALIZE_LIMIT = 10**6
 
 
 def _isprime(q: int) -> bool:
@@ -86,10 +117,13 @@ def prange_restarts(
     pools: list[Sequence[int]] = []  # indexable, in a fixed order, for drawing targets
     members: list[Collection[int]] = []  # fast membership, for scoring
     for coll in accepted:
-        if isinstance(coll, range):
-            pools.append(coll)
-            members.append(coll)
+        if isinstance(coll, range) and coll.step == 1:
+            arc = _Arc(coll, q)
+            pools.append(arc)
+            members.append(arc)
         else:
+            if isinstance(coll, range) and len(coll) > _MATERIALIZE_LIMIT:
+                raise ValueError(f"accepted range {coll} has step {coll.step}: give a step-1 range or a set")
             values = sorted({int(v) % q for v in coll})
             pools.append(values)
             members.append(set(values))
