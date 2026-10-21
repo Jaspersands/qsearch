@@ -140,6 +140,72 @@ def test_baseline_ignores_a_side_branch_commit_that_left_the_registry_alone(tmp_
     assert (delta["added"], delta["removed"]) == ([], [])
 
 
+def _merge(repo: Path, branch: str, date: str, registry: list | None = None) -> None:
+    """Merge `branch` into the checked-out branch with --no-ff on `date`; `registry` resolves a conflict."""
+    env = _dated(date)
+    subprocess.run(["git", "-C", str(repo), "-c", "user.name=t", "-c", "user.email=t@t", "merge", "--no-ff",
+                    "--no-commit", branch], capture_output=True, env=env)
+    if registry is not None:
+        (repo / B.REGISTRY).write_text(json.dumps(registry), encoding="utf-8")
+        _git(repo, "add", B.REGISTRY, env=env)
+    _git(repo, "commit", "-qm", f"merge {branch}", env=env)
+
+
+def _merge_delta(repo: Path, today: str = "2026-10-20") -> dict:
+    since = B.since_commit(repo, since_days=7, today=today)  # cutoff 2026-10-13
+    assert since is not None
+    return B.registry_delta(repo, since[0], since_date=since[1])
+
+
+def _forked_repo(tmp_path: Path) -> Path:
+    """main holds [A] from 2026-10-01; the branch `side` starts there."""
+    repo = tmp_path / "git"
+    repo.mkdir()
+    _git(repo, "init", "-q", "-b", "main")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-01")
+    _git(repo, "branch", "side")
+    return repo
+
+
+def test_a_record_merged_in_from_a_side_branch_in_the_window_counts_as_added(tmp_path: Path) -> None:
+    # B was filed on a side branch before the window and reached main in it: the agents on main
+    # first saw it in the window. The baseline is main's own registry at the cutoff, [A].
+    repo = _forked_repo(tmp_path)
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-12")
+    _git(repo, "checkout", "-q", "main")
+    _merge(repo, "side", "2026-10-16")
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-01"
+    assert (delta["added"], delta["removed"]) == (["B"], [])
+
+
+def test_a_merge_of_two_changed_registries_compares_with_the_checked_out_branch(tmp_path: Path) -> None:
+    # main filed X (2026-10-10) and the side branch Y (2026-10-12), both before the window; the
+    # merge in the window keeps both. Only Y is new on main; X was there at the cutoff.
+    repo = _forked_repo(tmp_path)
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "X"}]}, "2026-10-10")
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "Y"}]}, "2026-10-12")
+    _git(repo, "checkout", "-q", "main")
+    _merge(repo, "side", "2026-10-16", registry=[{"id": "A"}, {"id": "X"}, {"id": "Y"}])
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-10"
+    assert (delta["added"], delta["removed"]) == (["Y"], [])
+
+
+def test_an_older_main_change_is_not_reported_because_a_newer_side_change_was_merged(tmp_path: Path) -> None:
+    repo = _forked_repo(tmp_path)
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-05")
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "S"}]}, "2026-10-10")
+    _git(repo, "checkout", "-q", "main")
+    _merge(repo, "side", "2026-10-20", registry=[{"id": "A"}, {"id": "B"}, {"id": "S"}])
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-05"
+    assert (delta["added"], delta["removed"]) == (["S"], [])
+
+
 def test_a_commit_at_midnight_on_the_cutoff_day_is_inside_the_window(tmp_path: Path) -> None:
     # git's --before keeps a commit dated exactly at the limit; the window starts at 00:00 UTC.
     repo = tmp_path / "git"
@@ -325,7 +391,8 @@ LOG = ("--", B.REGISTRY)
 
 
 def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
-    assert B.allowed_git_args(("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG)) is True
+    assert B.allowed_git_args(
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG)) is True
     assert B.allowed_git_args(("show", f"{SHA}:{B.REGISTRY}")) is True
     assert B.allowed_git_args(("ls-tree", "--name-only", SHA, *LOG)) is True
     assert B.allowed_git_args(("rev-parse", "--is-shallow-repository", "--show-prefix")) is True
@@ -334,18 +401,22 @@ def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
 @pytest.mark.parametrize(
     "args",
     [
-        ("log", "-1", "--before=2026-10-12", f"--format=%H{US}%ct", *LOG),
-        ("log", "-1", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct", *LOG),  # git keeps 00:00:00 itself
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct"),  # every commit, not the registry's
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--", "research/registry"),
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG, "--output=/tmp/x"),
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--output=/tmp/x", B.REGISTRY),
-        ("log", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG),
-        ("log", "-1", "--before=yesterday", f"--format=%H{US}%ct", *LOG),
-        ("log", "-1", "--before=٢٠٢٦-١٠-١٢T23:59:59Z",
+        ("log", "-1", "--first-parent", "--before=2026-10-12", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--first-parent", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct", *LOG),  # git keeps 00:00:00
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct"),  # not the registry's
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--", "research/registry"),
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG, "--output=/tmp/x"),
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--output=/tmp/x",
+         B.REGISTRY),
+        ("log", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--first-parent", "--before=yesterday", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--first-parent", "--before=٢٠٢٦-١٠-١٢T23:59:59Z",
          f"--format=%H{US}%ct", *LOG),  # Arabic-Indic digits: \d would take them
-        ("log", "-1", "--before=2026-10-12T23:59:59Z", "--format=%H %s", *LOG),
-        ("log", "-1", f"--format=%H{US}%ct", "--before=2026-10-12T23:59:59Z", *LOG),
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", "--format=%H %s", *LOG),
+        ("log", "-1", "--first-parent", f"--format=%H{US}%ct", "--before=2026-10-12T23:59:59Z", *LOG),
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", "--first-parent", f"--format=%H{US}%ct", *LOG),
+        # Without --first-parent, a merge's other side can stand in for the checked-out branch's registry.
+        ("log", "-1", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG),
         ("show", f"HEAD:{B.REGISTRY}"),
         ("show", f"{SHA}:research/registry/dequantization_checks.json"),
         ("show", f"{SHA}:{B.REGISTRY}", "--output=/tmp/x"),

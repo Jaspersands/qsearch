@@ -57,7 +57,7 @@ there), or when git cannot read it there (a partial clone without that version);
 duplicates section is then unavailable too.
 
 **Git.** Read-only, through an allow-list in the cockpit's style: exactly
-`log -1 --before=YYYY-MM-DDT23:59:59Z --format=%H<US>%ct -- research/registry/negative_results.json`,
+`log -1 --first-parent --before=YYYY-MM-DDT23:59:59Z --format=%H<US>%ct -- research/registry/negative_results.json`,
 `show <full sha>:research/registry/negative_results.json`,
 `ls-tree --name-only <full sha> -- research/registry/negative_results.json` (only after `show`
 fails, to tell a registry absent from that commit from one git cannot read) and
@@ -65,10 +65,14 @@ fails, to tell a registry absent from that commit from one git cannot read) and
 Git runs offline and never prompts: `GIT_NO_LAZY_FETCH=1` stops a partial clone fetching the
 old registry from its remote (git 2.44 and later), `GIT_TERMINAL_PROMPT=0` stops a credential
 prompt, stdin is closed, and a command that runs past 60 s makes the section unavailable.
-The baseline is the registry's last change before the window, not the last commit: the
-path-limited log follows, at each merge, the parent whose registry the merge kept, so a tool
-branch merged with `--no-ff` whose last commit falls just before the cutoff (and whose registry
-is older than main's) cannot stand in for the registry as it was. The limit is the last second
+The baseline is the registry as the checked-out branch had it at the cutoff: its last change
+before the window on the branch's first-parent line, each merge compared with the branch's own
+side of it. So a record merged in from another branch during the window counts as added (and
+one dropped by such a merge as removed), however old its commit on the other branch; and the
+other branch never stands in for this one, whether it is a tool branch merged with `--no-ff`
+that left the registry alone or a branch that changed the registry too. Run it on main for the
+agents' view: on a branch that merges main in, main's registry changes count from the day they
+were merged into that branch. The limit is the last second
 before the cutoff day (00:00 UTC) because `--before` keeps a commit dated exactly at its limit,
 and it names a time because git reads a bare date (`--before=2026-10-12`) as that day at the
 current time of day, so the same command picked a different commit in the morning and in the
