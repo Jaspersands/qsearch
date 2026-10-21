@@ -10,7 +10,7 @@ from urllib.parse import parse_qs, urlparse
 import pytest
 
 from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
-from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, set_verdict
+from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, normalize_id, set_verdict
 from tools.arxiv_watch.watch import label_for, recheck_cited, relabel, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
@@ -452,6 +452,23 @@ def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
     assert not (tmp_path / VERDICTS_FILE).exists()
 
 
+@pytest.mark.parametrize(
+    ("raw", "bare"),
+    [("0704.0001", "0704.0001"), ("1412.9999v2", "1412.9999"), ("1501.00001", "1501.00001"),
+     ("arXiv:2610.06753v2", "2610.06753"), ("quant-ph/0501044v2", "quant-ph/0501044"), ("math.NT/0601001", "math.NT/0601001")],
+)
+def test_normalize_id_accepts_real_ids(raw: str, bare: str) -> None:
+    assert normalize_id(raw) == bare
+
+
+# A dropped or extra digit (four digits after the dot from 1501 on, five before), month 00 or 13,
+# or a new-style id before 0704.
+@pytest.mark.parametrize("raw", ["2610.0675", "1501.1234", "1412.12345", "0704.12345", "2613.06753", "2600.06753", "0612.1234"])
+def test_normalize_id_rejects_impossible_new_style_ids(raw: str) -> None:
+    with pytest.raises(ValueError, match="not an arXiv id"):
+        normalize_id(raw)
+
+
 def _write_verdicts(root: Path, data) -> None:
     (root / VERDICTS_FILE).parent.mkdir(parents=True, exist_ok=True)
     (root / VERDICTS_FILE).write_text(json.dumps(data), encoding="utf-8")
@@ -656,7 +673,7 @@ def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
 
     assert watch.main(["--root", str(fake_repo), "--verdict", "quant-ph/0501044v2", "related-only"]) == 0
     assert capsys.readouterr().out == "quant-ph/0501044: related-only (not in the collisions file yet); digest re-rendered\n"
-    for bad in ("2610.111", "see 2610.11111", ""):
+    for bad in ("2610.111", "see 2610.11111", "", "2610.0675"):
         assert watch.main(["--root", str(fake_repo), "--verdict", bad, "kill"]) == 2
         assert "not an arXiv id" in capsys.readouterr().err
     assert set(load_verdicts(fake_repo)["verdicts"]) == {"2610.11111", "quant-ph/0501044"}

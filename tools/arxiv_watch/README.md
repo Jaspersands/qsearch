@@ -87,7 +87,9 @@ This writes `research/audits/arxiv_verdicts.json`, copies the verdict onto the s
 and re-renders the digest. It fetches nothing and does not build the corpus index. The id
 may carry a version, an `arXiv:` prefix or the abstract URL (`arXiv:2609.40302v2`); the
 verdict is stored under the bare id the watch uses. An unknown verdict, or an id that is not
-an arXiv id, exits 2.
+an arXiv id, exits 2; that includes a new-style id with the wrong number of digits for its
+month (four after the dot up to 1412, five from 1501) or a month outside 01-12, so a typo
+such as `2610.0675` is not recorded.
 
 Keys written into the file by hand are read the same way, so `"arXiv:2609.40302v2"` is the
 verdict for stored paper 2609.40302 and is rewritten bare on the next save. When two keys name

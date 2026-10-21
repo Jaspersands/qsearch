@@ -21,14 +21,23 @@ VERDICTS_FILE = "research/audits/arxiv_verdicts.json"
 JUDGE_PREFIX = "judge:"
 
 _ID_PREFIX = re.compile(r"^(?:https?://arxiv\.org/abs/|arxiv:)", re.I)
-_ID = re.compile(r"^(?:\d{4}\.\d{4,5}|[a-z-]+(?:\.[A-Z]{2})?/\d{7})$")
+_ID = re.compile(r"^(?:(?P<yymm>\d{2}(?P<mm>\d{2}))\.(?P<number>\d{4,5})|[a-z-]+(?:\.[A-Z]{2})?/\d{7})$")
+
+
+def _possible(match: re.Match | None) -> bool:
+    """New-style ids began in April 2007 with four digits after the dot, and have had five since
+    January 2015, so 2610.0675 (a dropped digit) or 2613.06753 (month 13) is no paper."""
+    if match is None or match["yymm"] is None:
+        return match is not None
+    yymm, month = int(match["yymm"]), int(match["mm"])
+    return 1 <= month <= 12 and yymm >= 704 and len(match["number"]) == (5 if yymm >= 1501 else 4)
 
 
 def normalize_id(raw: str) -> str:
     """The bare arXiv id the watch stores papers under: "arXiv:2610.06753v2" or
     "https://arxiv.org/abs/2610.06753v2" -> "2610.06753". ValueError when it is not an arXiv id."""
     arxiv_id = re.sub(r"v\d+$", "", _ID_PREFIX.sub("", str(raw).strip()))
-    if not _ID.match(arxiv_id):
+    if not _possible(_ID.match(arxiv_id)):
         raise ValueError(f"not an arXiv id: {raw!r} (expected e.g. 2610.06753, arXiv:2610.06753v2 or quant-ph/0501044)")
     return arxiv_id
 
