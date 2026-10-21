@@ -6,10 +6,10 @@ from pathlib import Path
 
 import pytest
 
-from tools.arxiv_watch.judge import export_batches, import_judgements, main, pending
+from tools.arxiv_watch.judge import _confidence, _verbatim, export_batches, import_judgements, main, pending
 from tools.arxiv_watch.tracks import TRACKS
 from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, set_verdict
-from tools.arxiv_watch.watch import _load_state, run
+from tools.arxiv_watch.watch import _load_state, attach_verdicts, render_digest, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Paper
 
@@ -98,6 +98,28 @@ def test_import_rejects_unknown_verdict_and_non_verbatim_quote(watched: tuple[Pa
     assert "| 2610.11111 |" in digest and "judge:test" in digest
 
 
+def _flagged_rows(root: Path, heading: str = "Possible kills") -> list[str]:
+    digest = (root / "research" / "audits" / "ARXIV_WATCH.md").read_text(encoding="utf-8")
+    section = digest.split(f"## {heading}\n")[1].split("\n## ")[0]
+    return [line for line in section.splitlines() if line.startswith("| 2")]
+
+
+def test_a_judge_verdict_leaves_the_flag_listed_until_a_person_decides(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
+    from tools.arxiv_watch import watch
+
+    root, corpus = watched
+    dismissal = _row("2610.11111", "A classical algorithm for quantum product readout", verdict="false-alarm")
+    assert import_judgements(root, [_jsonl(tmp_path / "a.jsonl", [dismissal])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    [row] = [line for line in _flagged_rows(root) if "2610.11111" in line]
+    assert "judge: false-alarm" in row
+    digest = (root / "research" / "audits" / "ARXIV_WATCH.md").read_text(encoding="utf-8")
+    assert "| 2610.11111 |" in digest.split("## Reviewed")[1]  # and the Reviewed table shows who decided
+    assert not any("2610.33333" in line for line in _flagged_rows(root))  # a person's verdict moves the flag out
+
+    assert watch.main(["--root", str(root), "--verdict", "2610.11111", "false-alarm", "--reason", "checked it"]) == 0
+    assert not any("2610.11111" in line for line in _flagged_rows(root))
+
+
 def test_judge_never_overwrites_a_human_verdict(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
     root, corpus = watched
     kill = _row("2610.33333", "An efficient classical algorithm for quantum coset states", verdict="kill")
@@ -116,12 +138,23 @@ def test_judge_never_overwrites_a_human_verdict(watched: tuple[Path, Corpus], tm
     result = import_judgements(root, [_jsonl(tmp_path / "d.jsonl", [first])], "three", corpus=corpus)
     assert result["rejected"] == [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]
 
-    # An entry written by hand without `by` is a human's, not a judge's.
+    # An entry written by hand without `by` is a human's, not a judge's, and so is one written by
+    # hand under a versioned or prefixed id.
     hand = {"verdict": "false-alarm", "reason": "read it by hand", "action": None, "reviewed_on": "2026-10-21"}
-    (root / VERDICTS_FILE).write_text(json.dumps({"verdicts": {"2610.11111": hand}}), encoding="utf-8")
-    result = import_judgements(root, [_jsonl(tmp_path / "e.jsonl", [dict(first, verdict="kill")])], "four", corpus=corpus)
-    assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]}
-    assert load_verdicts(root)["verdicts"]["2610.11111"] == hand
+    for key in ("2610.11111", "arXiv:2610.11111v1", "2610.11111v2"):
+        (root / VERDICTS_FILE).write_text(json.dumps({"verdicts": {key: hand}}), encoding="utf-8")
+        assert "2610.11111" not in [arxiv_id for arxiv_id, _ in pending(_attached(root))], key
+        result = import_judgements(root, [_jsonl(tmp_path / "e.jsonl", [dict(first, verdict="kill")])], "four", corpus=corpus)
+        assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]}, key
+        assert load_verdicts(root)["verdicts"] == {"2610.11111": hand}
+        digest = render_digest(_attached(root), verdicts=load_verdicts(root)["verdicts"])
+        assert "| not stored |" not in digest and "2610.11111" not in digest.split("## Possible kills")[1].split("## ")[0], key
+
+
+def _attached(root: Path) -> dict:
+    state = _load_state(root)
+    attach_verdicts(state, load_verdicts(root)["verdicts"])
+    return state
 
 
 def test_quote_crossing_a_chunk_boundary_is_rejected(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
@@ -184,6 +217,72 @@ def test_quote_must_keep_greek_letters_and_math_symbols(math_flag: tuple[Path, C
     assert import_judgements(root, [_jsonl(tmp_path / "ok.jsonl", [loose])], "test", corpus=corpus)["imported"] == ["2610.44444"]
 
 
+PRE, POST = "we prove that the error of the estimator ", " for every instance in the family"
+
+# (source, quote): the quote changes the maths of the source, so it must not count as verbatim.
+CHANGED_MATHS = [
+    ("decays as n^{-1/2}", "decays as n^{1/2}"),  # exponent sign dropped
+    ("is 10^{-3}", "is 10^{3}"),
+    ("is -0.207", "is 0.207"),  # sign dropped
+    ("is $2^{-n}$", "is $2^{n}$"),
+    ("is $\\Omega(n)$", "is $\\omega(n)$"),  # TeX big Omega made little omega
+    ("is Omega(sqrt(n))", "is omega(sqrt(n))"),  # spelled-out Omega made omega
+    ("is $\\Theta(n)$", "is $\\Omega(n)$"),
+    ("is 2ⁿ", "is 2n"),  # a superscript is an exponent, not a digit pair
+    ("is n²", "is n2"),
+    ("is 2/3", "is 2.3"),  # slash dropped
+    ("needs n! queries", "needs n queries"),  # factorial dropped
+    ("is #P-hard", "is P-hard"),
+    ("is O(n/\\log n)", "is O(n log n)"),
+    ("is O(n log n)", "is O(n) log n"),
+    ("is 50%", "is 50"),
+    ("is 0.207", "is 0"),  # a decimal is one number
+    ("is x_{ij}", "is x{ij}"),
+    ("is $2^{n-1}$", "is $2^n - 1$"),  # braces group
+]
+
+# (source, quote): spacing, Latin letter case in words, sentence punctuation, TeX's math delimiters and
+# the spelling of a superscript or a minus sign may differ.
+SAME_MATHS = [
+    ("is κ ≤ 0.207", "is κ≤0.207,"),
+    ("is 2ⁿ", "is 2^n"),
+    ("is 2⁻ⁿ", "is 2^{-n}"),
+    ("is n¹⁰", "is n^{10}"),
+    ("is −0.207", "is -0.207"),
+    ("is $\\Omega(n)$", "is \\(\\Omega(n)\\)"),
+    ("is $O(n\\,\\log n)$", "is $O(n \\log n)$"),
+    ("is “hard” here", 'is "hard" here'),
+    ("is **hard** here", "is hard here"),
+]
+
+
+@pytest.mark.parametrize(("source", "quote"), CHANGED_MATHS, ids=[quote for _, quote in CHANGED_MATHS])
+def test_quote_that_changes_the_maths_is_not_verbatim(source: str, quote: str) -> None:
+    assert _verbatim(PRE + source + POST, PRE + source + POST)
+    assert not _verbatim(PRE + quote + POST, PRE + source + POST)
+
+
+@pytest.mark.parametrize(("source", "quote"), SAME_MATHS, ids=[quote for _, quote in SAME_MATHS])
+def test_quote_may_differ_in_spacing_case_and_sentence_punctuation(source: str, quote: str) -> None:
+    assert _verbatim(PRE.upper() + quote + POST, PRE + source + POST)
+
+
+def test_quote_may_not_start_or_end_inside_a_formula() -> None:
+    source = "we find the margin is -0.207 for every instance and it decays as n^{-1/2} in the family"
+    assert _verbatim("the margin is -0.207 for every instance", source)
+    assert not _verbatim("0.207 for every instance and it decays", source)  # the sign is cut off
+    assert not _verbatim("for every instance and it decays as n", source)  # the exponent is cut off
+    assert _verbatim("for every instance and it decays as n^{-1/2}", source)
+
+
+def test_quote_must_match_whole_words_and_count_six_of_them() -> None:
+    source = "it is impossible to efficiently simulate the circuit family, so the margin satisfies κ ≤ 0.207 here"
+    assert _verbatim("impossible to efficiently simulate the circuit family", source)
+    assert not _verbatim("possible to efficiently simulate the circuit family", source)  # inside "impossible"
+    assert not _verbatim("the margin satisfies κ ≤ 0.207", source)  # five words; "≤" is not a word
+    assert _verbatim("so the margin satisfies κ ≤ 0.207", source)
+
+
 def test_batch_shows_symbols_as_stored_so_a_copied_quote_is_accepted(math_flag: tuple[Path, Corpus], tmp_path: Path) -> None:
     root, corpus = math_flag
     [path] = export_batches(root, tmp_path / "judge", corpus=corpus)
@@ -192,6 +291,87 @@ def test_batch_shows_symbols_as_stored_so_a_copied_quote_is_accepted(math_flag: 
     quote = re.search(r"we prove the margin satisfies [^\"]*? against the bound", raw).group(0)
     result = import_judgements(root, [_jsonl(tmp_path / "copied.jsonl", [_row("2610.44444", quote)])], "test", corpus=corpus)
     assert result == {"imported": ["2610.44444"], "rejected": []}
+
+
+@pytest.mark.parametrize(
+    ("value", "stored"),
+    [(0.7, 0.7), ("0.3", 0.3), (1.5, 1.0), (-0.2, 0.0), (1, 1.0), ("nan", None), (float("nan"), None), ("inf", None),
+     (float("-inf"), None), (True, None), (False, None), ("sure", None), (None, None)],
+)
+def test_confidence_is_a_clamped_finite_number_or_null(value, stored) -> None:
+    assert _confidence(value) == stored
+
+
+def test_bare_nan_confidence_is_stored_as_null(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
+    root, corpus = watched
+    row = json.dumps(_row("2610.11111", "A classical algorithm for quantum product readout")).replace("0.7", "NaN")
+    (tmp_path / "nan.jsonl").write_text(row + "\n", encoding="utf-8")
+    assert import_judgements(root, [tmp_path / "nan.jsonl"], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    assert load_verdicts(root)["verdicts"]["2610.11111"]["confidence"] is None
+
+
+def _excerpt_row(root: Path, corpus: Corpus, arxiv_id: str = "2610.11111") -> dict:
+    """A row whose quote comes from the first nearest record's excerpt, so checking it needs the corpus."""
+    doc_id = _load_state(root)["papers"][arxiv_id]["nearest"][0]["doc_id"]
+    return _row(arxiv_id, " ".join(corpus.get(doc_id).text[:600].split()[2:9]), doc_id)
+
+
+def test_import_writes_nothing_when_a_later_row_fails(watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch, capsys) -> None:
+    import sqlite3
+
+    from tools.arxiv_watch import judge
+
+    root, corpus = watched
+    verdicts, collisions = (root / VERDICTS_FILE).read_bytes(), (root / "research/audits/arxiv_collisions.json").read_bytes()
+    good = _row("2610.11111", "A classical algorithm for quantum product readout")
+
+    # A bad second row stops the import before the first is written.
+    rows = _jsonl(tmp_path / "bad.jsonl", [good, _row("2610.11111", "x", verdict="maybe")])
+    with pytest.raises(ValueError, match="unknown verdict"):
+        import_judgements(root, [rows], "test", corpus=corpus)
+
+    # So does a corpus that cannot be opened while the second row's excerpt quote is checked.
+    def locked(root):
+        raise sqlite3.OperationalError("database is locked")
+
+    monkeypatch.setattr(judge, "_corpus", locked)
+    rows = _jsonl(tmp_path / "locked.jsonl", [good, _excerpt_row(root, corpus)])
+    with pytest.raises(sqlite3.OperationalError):
+        import_judgements(root, [rows], "test")
+    assert main(["--root", str(root), "--import", str(rows), "--judge", "test"]) == 2
+    assert capsys.readouterr().err == "error: database is locked\n"
+    assert (root / VERDICTS_FILE).read_bytes() == verdicts
+    assert (root / "research/audits/arxiv_collisions.json").read_bytes() == collisions
+
+
+def test_import_keeps_what_was_written_while_it_ran(watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch) -> None:
+    from tools.arxiv_watch import judge
+
+    root, corpus = watched
+    path = root / "research/audits/arxiv_collisions.json"
+    gap = {"track": "dcp", "since": "2026-09-01", "until": "2026-09-10", "found_on": "2026-10-23"}
+
+    def busy_corpus(root):  # another writer records a person's verdict and a gap while the rows are checked
+        set_verdict(root, "2610.11111", "false-alarm", "read it", "human", today="2026-10-23")
+        state = json.loads(path.read_text(encoding="utf-8"))
+        path.write_text(json.dumps({**state, "gaps": [gap]}), encoding="utf-8")
+        return corpus
+
+    monkeypatch.setattr(judge, "_corpus", busy_corpus)
+    rows = _jsonl(tmp_path / "rows.jsonl", [_excerpt_row(root, corpus)])
+    result = import_judgements(root, [rows], "test")
+    assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.11111", "why": "human verdict exists"}]}
+    assert load_verdicts(root)["verdicts"]["2610.11111"]["by"] == "human"
+    assert json.loads(path.read_text(encoding="utf-8"))["gaps"] == [gap]
+
+    path.write_text(json.dumps({**json.loads(path.read_text(encoding="utf-8")), "gaps": []}), encoding="utf-8")
+    monkeypatch.setattr(judge, "_corpus", lambda root: (path.write_text(
+        json.dumps({**json.loads(path.read_text(encoding="utf-8")), "gaps": [gap]}), encoding="utf-8"), corpus)[1])
+    set_verdict(root, "2610.11111", "related-only", "a judge's", "judge:old")
+    result = import_judgements(root, [rows], "test")
+    assert result == {"imported": ["2610.11111"], "rejected": []}
+    stored = _load_state(root)
+    assert stored["gaps"] == [gap] and stored["papers"]["2610.11111"]["verdict"]["by"] == "judge:test"
 
 
 def test_cli_exports_then_imports(watched: tuple[Path, Corpus], tmp_path: Path, capsys) -> None:

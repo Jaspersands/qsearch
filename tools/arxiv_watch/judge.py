@@ -19,7 +19,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
+import sqlite3
 import string
 import sys
 import unicodedata
@@ -28,14 +30,15 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.arxiv_watch.verdicts import VERDICTS, load_verdicts, save_verdicts, set_verdict  # noqa: E402
-from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts  # noqa: E402
+from tools.arxiv_watch.verdicts import (  # noqa: E402
+    JUDGE_PREFIX, VERDICTS, by_judge, load_verdicts, save_verdicts, verdict_entry,
+)
+from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts, checkout_error  # noqa: E402
 from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 
 EXCERPT_CHARS = 600
 MIN_QUOTE_WORDS = 6
-JUDGE_PREFIX = "judge:"
 MEANINGS = {
     "kill": "The paper invalidates a project claim or retained result, for example a classical algorithm or bound "
             "that removes a quantum advantage a note claims.",
@@ -77,9 +80,13 @@ For each paper give:
    record's excerpt, supporting the verdict, with `quote_from` set to `"abstract"` or to that
    record's `doc_id`. The quote must lie inside that one text. A quote that runs from the
    abstract into an excerpt, or from one excerpt into the next, is rejected, and so is a quote
-   from a file you opened yourself. Copy Greek letters and math symbols (κ, ≤, Ω, +) exactly
-   as written; only Latin letter case, punctuation and spacing may differ. Quotes are checked
-   automatically; a paper whose quote is not found gets no verdict.
+   from a file you opened yourself. Copy the maths exactly as written: Greek letters (κ, Ω),
+   signs and operators (≤, +, -, /, !, %, #), exponents and subscripts (^, _, ², ₁), braces and
+   TeX commands (`\\Omega` is not `\\omega`, and `Omega` is not `omega`). Only spacing, the case
+   of ordinary Latin words and sentence punctuation (. , ; : ? quote marks, TeX's `$`) may
+   differ. Start and end the quote on whole words, not inside a formula: not on a number just
+   after its minus sign, not just before an exponent. Quotes are checked automatically; a
+   paper whose quote is not found gets no verdict.
 4. `action`: one line naming what a document should change (cite the paper in X, narrow
    sentence Y of note Z), or null when nothing is to be done.
 5. `confidence`: your probability (0 to 1) that the verdict is right.
@@ -156,43 +163,98 @@ def export_batches(root: Path, out_dir: Path, n_batches: int = 3, corpus: Corpus
 
 
 _LOWER_LATIN = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)
-_TOKEN = re.compile(r"[^\W_]+|\S")
+# TeX control words (\Omega, \log), TeX control symbols (\{, \,), decimal numbers, other runs of
+# letters and digits, then any other single character.
+_TOKEN = re.compile(r"\\[A-Za-z]+|\\[^A-Za-z\s]|\d+(?:\.\d+)*(?![^\W_])|[^\W_]+|\S")
+# Sentence punctuation, quote marks, TeX's math delimiters, spacing and line breaks, and a lone
+# backslash. Everything else (signs, /, !, #, %, ^, _, braces, brackets) is maths and kept.
+_DROPPED = frozenset(".,;:?\"'`$\\") | frozenset({"\\(", "\\)", "\\[", "\\]", "\\,", "\\;", "\\:", "\\!", "\\>", "\\\\"})
+# Greek letters whose capital is another symbol; spelled out in ASCII ("Omega", "omega") they keep their case.
+_CASED_GREEK = frozenset({"gamma", "delta", "theta", "lambda", "xi", "pi", "sigma", "upsilon", "phi", "psi", "omega"})
+_SUPERSCRIPTS = "".join(chr(c) for c in range(0x3000) if unicodedata.decomposition(chr(c)).startswith("<super>"))
+_SUBSCRIPTS = "".join(chr(c) for c in range(0x3000) if unicodedata.decomposition(chr(c)).startswith("<sub>"))
+_SCRIPT_RUN = re.compile(f"[{re.escape(_SUPERSCRIPTS)}]+|[{re.escape(_SUBSCRIPTS)}]+")
+# A quote may not cut a formula: start on a number just after its sign or fraction bar, or end
+# just before an exponent or subscript, or on a number just before /, ! or %.
+_CUT_BEFORE_NUMBER = frozenset({"-", "+", "±", "∓", "/", "^", "_"})
+_CUT_AFTER = frozenset({"^", "_"})
+_CUT_AFTER_NUMBER = frozenset({"/", "!", "%"})
+
+
+def _as_tex(match: re.Match) -> str:
+    """A run of superscript or subscript characters as TeX: "ⁿ" -> "^n", "⁻ⁿ" -> "^{-n}", "₁₂" -> "_{12}"."""
+    run = match.group(0)
+    body = unicodedata.normalize("NFKC", run)
+    mark = "^" if run[0] in _SUPERSCRIPTS else "_"
+    return f"{mark}{body}" if len(body) == 1 else f"{mark}{{{body}}}"
 
 
 def _tokens(text: str) -> list[str]:
-    """Words and symbols for the verbatim check, after NFKC.
+    """Words, numbers and symbols for the verbatim check.
 
-    Latin letter case, punctuation (Unicode category P, plus TeX's $ and `) and spacing are
-    dropped. Other letters and every symbol are kept, each symbol as its own token, so
-    "κ ≤ 0.207" and "κ≤0.207" match but "κ ≥ 0.207", "θ" for "Θ" or "Θ" for "Ω" do not.
+    Superscripts and subscripts are first written as TeX exponents and subscripts ("2ⁿ" is
+    "2^n"), then the text is NFKC-normalised. Dropped: spacing, sentence punctuation (. , ; : ?),
+    quote marks, TeX's $, \\( \\), \\[ \\] and spacing commands, and markdown's ** bold. Every
+    other symbol is its own token, and every dash and the minus sign read as "-". Latin letter
+    case is ignored in words, but not in TeX control words (\\Omega, \\omega) or in the spelled-out
+    names of Greek letters with their own capital (Omega, omega). So "κ ≤ 0.207" and "κ≤0.207,"
+    match, but "κ ≥ 0.207", "0.207" for "-0.207", "n^{1/2}" for "n^{-1/2}", "2n" for "2ⁿ" or
+    "\\omega" for "\\Omega" do not.
     """
+    text = unicodedata.normalize("NFKC", _SCRIPT_RUN.sub(_as_tex, text))
     tokens = []
-    for token in _TOKEN.findall(unicodedata.normalize("NFKC", text).translate(_LOWER_LATIN)):
-        if len(token) == 1 and not token.isalnum() and (unicodedata.category(token).startswith("P") or token in "$`"):
+    for token in _TOKEN.findall(re.sub(r"\*{2,}", " ", text)):
+        if token in _DROPPED:
             continue
+        if len(token) == 1 and not token.isalnum():
+            category = unicodedata.category(token)
+            if category in ("Pi", "Pf"):  # curly quote marks
+                continue
+            if category == "Pd" or token == "−":
+                token = "-"
+        elif token[0] != "\\":
+            lower = token.translate(_LOWER_LATIN)
+            token = lower.capitalize() if lower in _CASED_GREEK and token[0].isupper() else lower
         tokens.append(token)
     return tokens
 
 
+def _is_number(token: str) -> bool:
+    return token[:1].isdigit()
+
+
+def _cuts_a_formula(source: list[str], start: int, end: int) -> bool:
+    before = source[start - 1] if start else ""
+    after = source[end] if end < len(source) else ""
+    return (
+        (before in _CUT_BEFORE_NUMBER and _is_number(source[start]))
+        or after in _CUT_AFTER
+        or (after in _CUT_AFTER_NUMBER and _is_number(source[end - 1]))
+    )
+
+
 def _verbatim(quote: str, source: str) -> bool:
-    """At least six words of `quote` appear, with its symbols, as whole tokens in order in `source`."""
+    """At least six words of `quote` (numbers count, symbols and TeX commands do not) appear, with
+    its symbols, as whole tokens in order in `source`, without starting or ending inside a formula."""
     words = _tokens(quote)
-    if not source or sum(token.isalnum() for token in words) < MIN_QUOTE_WORDS:
+    if not source or sum(token[:1].isalnum() for token in words) < MIN_QUOTE_WORDS:
         return False
-    return f" {' '.join(words)} " in f" {' '.join(_tokens(source))} "
-
-
-def _by_judge(entry) -> bool:
-    """A stored verdict a judge may replace: one whose `by` names a judge. An entry without `by`
-    (written by hand) counts as a human's."""
-    return isinstance(entry, dict) and str(entry.get("by") or "").startswith(JUDGE_PREFIX)
+    text = _tokens(source)
+    return any(
+        text[start : start + len(words)] == words and not _cuts_a_formula(text, start, start + len(words))
+        for start in range(len(text) - len(words) + 1)
+    )
 
 
 def _confidence(value) -> float | None:
+    """The judge's confidence clamped to [0, 1]; None unless it is a finite number (not a bool or NaN)."""
+    if isinstance(value, bool):
+        return None
     try:
-        return max(0.0, min(1.0, float(value)))
+        number = float(value)
     except (TypeError, ValueError):
         return None
+    return max(0.0, min(1.0, number)) if math.isfinite(number) else None
 
 
 def import_judgements(
@@ -202,8 +264,11 @@ def import_judgements(
 
     Returns {"imported": [arxiv ids], "rejected": [{"arxiv_id", "why"}]}. Every row is checked
     before anything is written: an unknown verdict, or an arxiv_id that is missing or not a stored
-    paper, raises ValueError. A quote is looked for only in the one text `quote_from` names: the
-    abstract, or the excerpt of one of the paper's nearest records.
+    paper, raises ValueError, and so does nothing get written when the corpus cannot be opened to
+    check an excerpt quote. A quote is looked for only in the one text `quote_from` names: the
+    abstract, or the excerpt of one of the paper's nearest records. The accepted rows are then
+    merged into fresh copies of the verdicts and collisions files in one write each, so a verdict
+    or a run recorded meanwhile is kept, and a person's verdict recorded meanwhile still wins.
     """
     root = Path(root)
     state = _load_state(root)
@@ -216,13 +281,12 @@ def import_judgements(
         if not isinstance(row.get("arxiv_id"), str) or row["arxiv_id"] not in state["papers"]:
             raise ValueError(f"{path}: arxiv_id {row.get('arxiv_id')!r} is missing or not a stored paper")
     existing = load_verdicts(root)["verdicts"]
-    imported: list[str] = []
     rejected: list[dict] = []
-    evidence: dict[str, dict] = {}
+    accepted: dict[str, dict] = {}
     for _, row in rows:
         arxiv_id = row["arxiv_id"]
         record = state["papers"][arxiv_id]
-        if arxiv_id in existing and not _by_judge(existing[arxiv_id]):
+        if arxiv_id in existing and not by_judge(existing[arxiv_id]):
             rejected.append({"arxiv_id": arxiv_id, "why": "human verdict exists"})
             continue
         quote, quote_from = str(row.get("quote") or ""), str(row.get("quote_from") or "abstract")
@@ -237,18 +301,24 @@ def import_judgements(
             rejected.append({"arxiv_id": arxiv_id, "why": "quote not found"})
             continue
         action = row.get("action")
-        set_verdict(
-            root, arxiv_id, row["verdict"], str(row.get("reason") or "")[:600], f"{JUDGE_PREFIX}{judge_name}",
-            action=str(action)[:300] if action else None, today=today,
-        )
-        evidence[arxiv_id] = {"quote": quote[:400], "quote_from": quote_from, "confidence": _confidence(row.get("confidence"))}
-        if arxiv_id not in imported:
+        accepted[arxiv_id] = {
+            **verdict_entry(row["verdict"], str(row.get("reason") or "")[:600], f"{JUDGE_PREFIX}{judge_name}",
+                            action=str(action)[:300] if action else None, today=today),
+            "quote": quote[:400], "quote_from": quote_from, "confidence": _confidence(row.get("confidence")),
+        }
+    imported: list[str] = []
+    if accepted:
+        data = load_verdicts(root)
+        for arxiv_id, entry in accepted.items():
+            current = data["verdicts"].get(arxiv_id)
+            if current is not None and not by_judge(current):
+                rejected.append({"arxiv_id": arxiv_id, "why": "human verdict exists"})
+                continue
+            data["verdicts"][arxiv_id] = entry
             imported.append(arxiv_id)
     if imported:
-        data = load_verdicts(root)
-        for arxiv_id, extra in evidence.items():
-            data["verdicts"][arxiv_id].update(extra)
         save_verdicts(root, data)
+        state = _load_state(root)
         attach_verdicts(state, data["verdicts"])
         _save(root, state)
     return {"imported": imported, "rejected": rejected}
@@ -273,6 +343,10 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("give either --export DIR or --import FILE ...")
     if args.imports and not args.judge:
         parser.error("--import needs --judge NAME")
+    problem = checkout_error(args.root)
+    if problem:
+        print(f"error: {problem}", file=sys.stderr)
+        return 2
     try:
         if args.export:
             paths = export_batches(args.root, args.export, args.batches)
@@ -280,7 +354,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"exported {count} unreviewed flags in {len(paths)} batches; instructions in {args.export / 'INSTRUCTIONS.md'}")
             return 0
         result = import_judgements(args.root, args.imports, args.judge)
-    except (ValueError, OSError) as error:  # a bad row, unreadable JSON, a missing file
+    except (ValueError, OSError, sqlite3.Error) as error:  # a bad row, unreadable JSON, a missing file, a locked index
         print(f"error: {error}", file=sys.stderr)
         return 2
     print(f"imported {len(result['imported'])} verdicts; rejected {len(result['rejected'])}")

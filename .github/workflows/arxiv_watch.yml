@@ -30,9 +30,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # watch.py rewrites the outputs only when it found new papers or a coverage gap.
+          # watch.py rewrites the outputs only when something changed: a new paper, a coverage gap
+          # opening or closing, a verdict attached or withdrawn, a flag demoted to already-cited,
+          # another track's query returning a stored paper, or a stale digest.
           if git diff --quiet -- research/audits; then
-            echo "No new papers."
+            echo "Outputs unchanged."
             exit 0
           fi
           day="$(date -u +%Y-%m-%d)"
@@ -46,4 +48,4 @@ jobs:
           echo "::add-mask::${auth}"
           git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${auth}" push origin "${branch}"
           gh pr create --base main --head "${branch}" --title "arXiv watch ${day}" \
-            --body "New papers from the weekly arXiv watch. Read research/audits/ARXIV_WATCH.md; labels are triage, not judgement. Opened with GITHUB_TOKEN, so CI does not run on this PR until it is pushed to or closed and reopened."
+            --body "Weekly arXiv watch: new papers, coverage gaps, verdicts copied from research/audits/arxiv_verdicts.json, or flags now cited (the run summary is in the job log). Read research/audits/ARXIV_WATCH.md; labels are triage, not judgement. Opened with GITHUB_TOKEN, so CI does not run on this PR until it is pushed to or closed and reopened."

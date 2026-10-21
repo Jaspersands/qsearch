@@ -10,8 +10,8 @@ from urllib.parse import parse_qs, urlparse
 import pytest
 
 from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
-from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, set_verdict
-from tools.arxiv_watch.watch import label_for, recheck_cited, relabel, replay_seeds, run
+from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, normalize_id, set_verdict
+from tools.arxiv_watch.watch import label_for, recheck_cited, relabel, render_digest, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
 
@@ -445,11 +445,102 @@ def test_verdict_round_trip(tmp_path: Path) -> None:
     text = (tmp_path / VERDICTS_FILE).read_text(encoding="utf-8")
     assert text.endswith("}\n") and json.loads(text) == {"verdicts": {"2610.11111": expected}}
 
+    set_verdict(tmp_path, "arXiv:2610.22222v3", "kill", "versioned", "human", today="2026-10-21")
+    assert set(json.loads((tmp_path / VERDICTS_FILE).read_text(encoding="utf-8"))["verdicts"]) == {"2610.11111", "2610.22222"}
+
+
+def test_reviewed_table_is_ordered_by_verdict_then_id_and_marks_done_actions(tmp_path: Path) -> None:
+    def entry(verdict: str, action: str | None = None, done: bool = False) -> dict:
+        base = {"verdict": verdict, "reason": "r", "action": action, "by": "human", "reviewed_on": "2026-10-21"}
+        return {**base, "action_done": True} if done else base
+
+    verdicts = {
+        "2610.55555": entry("false-alarm"),
+        "2610.22222": entry("should-cite", "Cite it in X.", done=True),
+        "2610.44444": entry("kill", "Narrow note Y."),
+        "2610.11111": entry("should-cite", "Cite it in Z."),
+        "2610.33333": entry("related-only"),
+    }
+    digest = render_digest({"updated": "2026-10-21", "papers": {}}, verdicts=verdicts)
+    rows = [line for line in _section(digest, "Reviewed").splitlines() if line.startswith("| 2610.")]
+    assert [row.split(" | ")[0][2:] for row in rows] == ["2610.44444", "2610.11111", "2610.22222", "2610.33333", "2610.55555"]
+    assert rows[1].endswith("| Cite it in Z. |") and rows[2].endswith("| Cite it in X. (done) |")
+
 
 def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
     with pytest.raises(ValueError):
         set_verdict(tmp_path, "2610.11111", "maybe", "unsure", "human")
     assert not (tmp_path / VERDICTS_FILE).exists()
+
+
+@pytest.mark.parametrize(
+    ("raw", "bare"),
+    [("0704.0001", "0704.0001"), ("1412.9999v2", "1412.9999"), ("1501.00001", "1501.00001"),
+     ("arXiv:2610.06753v2", "2610.06753"), ("quant-ph/0501044v2", "quant-ph/0501044"), ("math.NT/0601001", "math.NT/0601001")],
+)
+def test_normalize_id_accepts_real_ids(raw: str, bare: str) -> None:
+    assert normalize_id(raw) == bare
+
+
+# A dropped or extra digit (four digits after the dot from 1501 on, five before), month 00 or 13,
+# or a new-style id before 0704.
+@pytest.mark.parametrize("raw", ["2610.0675", "1501.1234", "1412.12345", "0704.12345", "2613.06753", "2600.06753", "0612.1234"])
+def test_normalize_id_rejects_impossible_new_style_ids(raw: str) -> None:
+    with pytest.raises(ValueError, match="not an arXiv id"):
+        normalize_id(raw)
+
+
+def _write_verdicts(root: Path, data) -> None:
+    (root / VERDICTS_FILE).parent.mkdir(parents=True, exist_ok=True)
+    (root / VERDICTS_FILE).write_text(json.dumps(data), encoding="utf-8")
+
+
+def _hand(verdict: str = "false-alarm", by: str | None = "human") -> dict:
+    entry = {"verdict": verdict, "reason": "read it by hand", "action": None, "reviewed_on": "2026-10-21"}
+    return {**entry, "by": by} if by else entry
+
+
+def test_hand_written_keys_are_read_as_bare_ids(tmp_path: Path) -> None:
+    for key in ("arXiv:2610.11111v1", "2610.11111v2", "https://arxiv.org/abs/2610.11111v3", "quant-ph/0501044v2"):
+        _write_verdicts(tmp_path, {"verdicts": {key: _hand()}})
+        assert set(load_verdicts(tmp_path)["verdicts"]) == {"2610.11111" if "2610" in key else "quant-ph/0501044"}, key
+
+    # Two keys for one paper: a person's verdict outranks a judge's, and two of a kind are ambiguous.
+    judge = _hand("kill", by="judge:x")
+    _write_verdicts(tmp_path, {"verdicts": {"2610.11111": judge, "arXiv:2610.11111v1": _hand()}})
+    assert load_verdicts(tmp_path)["verdicts"] == {"2610.11111": _hand()}
+    _write_verdicts(tmp_path, {"verdicts": {"arXiv:2610.11111v1": _hand(by=None), "2610.11111": judge}})
+    assert load_verdicts(tmp_path)["verdicts"] == {"2610.11111": _hand(by=None)}
+    _write_verdicts(tmp_path, {"verdicts": {"2610.11111": _hand(), "2610.11111v1": _hand("kill")}})
+    with pytest.raises(ValueError, match="2610.11111"):
+        load_verdicts(tmp_path)
+
+
+@pytest.mark.parametrize(
+    "data",
+    [[], {"verdicts": None}, {"verdicts": []}, {"verdicts": {"2610.11111": "false-alarm"}},
+     {"verdicts": {"2610.11111": {"verdict": "maybe"}}}, {"verdicts": {"see 2610.11111": {"verdict": "kill"}}}],
+    ids=["list", "null", "verdicts-list", "string-entry", "unknown-verdict", "bad-key"],
+)
+def test_malformed_verdicts_file_is_a_clean_error(fake_repo: Path, monkeypatch, capsys, data) -> None:
+    from tools.arxiv_watch import judge, watch
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("a malformed verdicts file must stop the watch before it fetches")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    _write_verdicts(fake_repo, data)
+    with pytest.raises(ValueError, match="arxiv_verdicts.json"):
+        load_verdicts(fake_repo)
+    written = (fake_repo / VERDICTS_FILE).read_bytes()
+    for argv in ([], ["--relabel"], ["--verdict", "2610.22222", "related-only", "--reason", "x"]):
+        assert watch.main(["--root", str(fake_repo), *argv]) == 2, argv
+        assert capsys.readouterr().err.startswith("error: research/audits/arxiv_verdicts.json: "), argv
+    assert (fake_repo / VERDICTS_FILE).read_bytes() == written
+    assert not (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").exists()
+    assert judge.main(["--root", str(fake_repo), "--export", str(fake_repo / "judge")]) == 2
+    assert capsys.readouterr().err.startswith("error: research/audits/arxiv_verdicts.json: ")
 
 
 def _section(digest: str, heading: str) -> str:
@@ -549,6 +640,31 @@ def test_flagged_paper_becomes_already_cited_once_a_note_cites_it(fake_repo: Pat
     assert flagged["label"] == "possible-kill" and "relabelled_on" not in flagged and "relabelled_from" not in flagged
 
 
+def test_recheck_cited_demotes_only_flagged_papers(fake_repo: Path) -> None:
+    (fake_repo / "research" / "CITES_ALL.md").write_text(
+        "# Cites All\n\nSee arXiv:2610.11111, arXiv:2610.22222, arXiv:2610.33333 and arXiv:2610.44444.\n", encoding="utf-8"
+    )
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    labels = {"2610.11111": "possible-kill", "2610.22222": "possible-scoop", "2610.33333": "related", "2610.44444": "unrelated"}
+    state = {"papers": {arxiv_id: {"arxiv_id": arxiv_id, "label": label} for arxiv_id, label in labels.items()}}
+    assert recheck_cited(state, corpus, "2026-10-26") == 2
+    assert {arxiv_id: record["label"] for arxiv_id, record in state["papers"].items()} == {
+        "2610.11111": "already-cited", "2610.22222": "already-cited", "2610.33333": "related", "2610.44444": "unrelated"}
+    assert "relabelled_from" not in state["papers"]["2610.33333"]
+
+
+def test_relabel_copies_verdicts_onto_the_records(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    set_verdict(fake_repo, "2610.11111", "false-alarm", "cue spurious", "human", today="2026-10-21")  # by hand, no run since
+    assert "verdict" not in _state(fake_repo)["papers"]["2610.11111"]
+    relabel(fake_repo, corpus)
+    assert _state(fake_repo)["papers"]["2610.11111"]["verdict"]["verdict"] == "false-alarm"
+
+
 def test_recheck_cited_is_fast_for_many_flags_sharing_a_trailing_token(fake_repo: Path) -> None:
     ids = [f"{24 + i // 12}{i % 12 + 1:02d}.11111" for i in range(30)]
     (fake_repo / "research" / "CITES_ONE.md").write_text("# Cites One\n\nSee arXiv:2605.11111 for the bound.\n", encoding="utf-8")
@@ -587,6 +703,44 @@ def test_verdict_flag_records_and_rerenders_without_fetching(fake_repo: Path, mo
     assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["verdict"] == "false-alarm"
 
 
+def test_verdict_flag_keeps_an_earlier_action_and_action_done_marks_it(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    digest = fake_repo / "research" / "audits" / "ARXIV_WATCH.md"
+
+    def verdict(*argv: str) -> dict:
+        assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", *argv]) == 0, argv
+        return load_verdicts(fake_repo)["verdicts"]["2610.11111"]
+
+    entry = verdict("should-cite", "--reason", "r", "--action", "Cite it in X.")
+    assert entry["action"] == "Cite it in X." and "action_done" not in entry
+    capsys.readouterr()
+    assert watch.main(["--root", str(fake_repo), "--action-done", "arXiv:2610.11111v1"]) == 0
+    assert capsys.readouterr().out == "2610.11111: action marked done; digest re-rendered\n"
+    assert load_verdicts(fake_repo)["verdicts"]["2610.11111"]["action_done"] is True
+    assert "Cite it in X. (done) |" in _section(digest.read_text(), "Reviewed")
+
+    # Re-recording without --action keeps the action and whether it was done, and says so.
+    entry = verdict("kill", "--reason", "read the full text")
+    assert (entry["verdict"], entry["action"], entry["action_done"]) == ("kill", "Cite it in X.", True)
+    assert "kept the earlier action" in capsys.readouterr().out
+    entry = verdict("kill", "--reason", "again", "--action", "Cite it in X.")
+    assert entry["action_done"] is True
+    entry = verdict("kill", "--reason", "again", "--action", "Cite it in Y.")  # a new action is not done yet
+    assert entry["action"] == "Cite it in Y." and "action_done" not in entry
+    entry = verdict("kill", "--reason", "again", "--action", "")  # an empty --action clears it
+    assert entry["action"] is None and "action_done" not in entry
+
+    capsys.readouterr()
+    for ident, why in (("2610.11111", "no action"), ("2610.22222", "no verdict"), ("2610.0675", "not an arXiv id")):
+        assert watch.main(["--root", str(fake_repo), "--action-done", ident]) == 2, ident
+        assert why in capsys.readouterr().err, ident
+
+
 def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
     from tools.arxiv_watch import watch
 
@@ -603,14 +757,53 @@ def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
 
     assert watch.main(["--root", str(fake_repo), "--verdict", "quant-ph/0501044v2", "related-only"]) == 0
     assert capsys.readouterr().out == "quant-ph/0501044: related-only (not in the collisions file yet); digest re-rendered\n"
-    for bad in ("2610.111", "see 2610.11111", ""):
+    for bad in ("2610.111", "see 2610.11111", "", "2610.0675"):
         assert watch.main(["--root", str(fake_repo), "--verdict", bad, "kill"]) == 2
         assert "not an arXiv id" in capsys.readouterr().err
     assert set(load_verdicts(fake_repo)["verdicts"]) == {"2610.11111", "quant-ph/0501044"}
 
 
+def test_a_root_that_is_not_a_checkout_is_refused_before_anything_is_written(tmp_path: Path, monkeypatch, capsys) -> None:
+    from tools.arxiv_watch import judge, watch
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("a wrong --root must be refused before fetching")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    a_file = tmp_path / "a_file"
+    a_file.write_text("", encoding="utf-8")
+    for root in (tmp_path / "nope" / "typo", a_file, tmp_path):
+        for argv in (["--verdict", "2610.06753", "should-cite", "--reason", "x"], [], ["--relabel"]):
+            assert watch.main(["--root", str(root), *argv]) == 2, (root, argv)
+            assert "is not a Q-Search checkout" in capsys.readouterr().err
+        assert judge.main(["--root", str(root), "--export", str(tmp_path / "judge")]) == 2
+        assert "is not a Q-Search checkout" in capsys.readouterr().err
+    assert sorted(path.name for path in tmp_path.iterdir()) == ["a_file"]
+
+
+def test_verdict_flag_writes_nothing_when_the_collisions_file_is_unreadable(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    run(fake_repo, FakeClient([_paper("2610.11111", "Dihedral coset note", "Coset states.")]), corpus,
+        tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    collisions = fake_repo / "research" / "audits" / "arxiv_collisions.json"
+    text = collisions.read_text(encoding="utf-8")
+    for broken in (text[: len(text) // 2], "[]", "directory"):
+        if broken == "directory":
+            collisions.unlink()
+            collisions.mkdir()
+        else:
+            collisions.write_text(broken, encoding="utf-8")
+        assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", "false-alarm", "--reason", "x"]) == 2, broken
+        assert capsys.readouterr().err.startswith("error: "), broken
+        assert not (fake_repo / VERDICTS_FILE).exists(), broken
+
+
 REPO = Path(__file__).resolve().parents[2]
-REVIEW = REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
+REVIEW =REPO / "research" / "audits" / "ARXIV_TRIAGE_REVIEWED.md"
 
 
 def _review_verdicts(text: str) -> dict[str, str]:
@@ -625,17 +818,102 @@ def _review_verdicts(text: str) -> dict[str, str]:
     return found
 
 
-@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
-def test_seeded_verdicts_match_the_reviewed_triage() -> None:
-    text = REVIEW.read_text(encoding="utf-8")
+SEED_DAY = "2026-10-21"
+
+
+def _review_sources(text: str) -> dict[str, tuple[str, bool]]:
+    """arXiv id -> (the review's "Reason and action" cell, True) or (its "### id, ..." section, False)."""
+    found = {}
+    for line in text.splitlines():
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) == 5 and re.fullmatch(r"\d{4}\.\d{5}", cells[0]):
+            found[cells[0]] = (cells[4], True)
+    for match in re.finditer(r"^### (\d{4}\.\d{5}),", text, re.M):
+        end = re.compile(r"^##", re.M).search(text, match.end())
+        found[match.group(1)] = (text[match.start() : end.start() if end else len(text)], False)
+    return found
+
+
+def _flat(text: str) -> str:
+    return " ".join(text.split())
+
+
+def _words(text: str) -> set[str]:
+    """Words of three letters or more; a file path may gain its research/ prefix."""
+    return {word for word in re.findall(r"[^\W_]+", text.lower()) if len(word) > 2} - {"research"}
+
+
+def _assert_seed_text_follows_review(entry: dict, source: str, cell: bool) -> None:
+    """A table row's reason is a phrase of its cell, and its action uses only the cell's words (the
+    action may name the note's path where the cell says "that note"). A section entry's reason and
+    action are the section's own sentences and clauses."""
+    reason, action = entry["reason"], entry.get("action") or ""
+    if cell:
+        assert _flat(reason) in _flat(source), reason
+        assert _words(action) <= _words(source), action
+        return
+    for piece in re.split(r"(?<=[.;:])\s+", f"{reason} {action}".strip()):
+        assert piece in _flat(source), piece
+
+
+def _assert_seed_matches_review(verdicts: dict, text: str) -> None:
+    """The 22 seeded entries still say what the review says.
+
+    Only the seed is checked: later verdicts for other papers, an action marked done since, or a
+    seeded paper re-recorded on a later day (its entry is no longer the review's) all pass.
+    """
     reviewed = set(re.findall(r"\b\d{4}\.\d{5}\b", text))
     expected = _review_verdicts(text)
-    verdicts = load_verdicts(REPO)["verdicts"]
-    assert len(reviewed) == 22 and set(expected) == reviewed and set(verdicts) == reviewed
-    assert {arxiv_id: entry["verdict"] for arxiv_id, entry in verdicts.items()} == expected
-    assert all(entry["by"] == "human" and entry["reason"] for entry in verdicts.values())
+    assert len(reviewed) == 22 and set(expected) == reviewed and reviewed <= set(verdicts)
     counts: dict[str, int] = {}
-    for entry in verdicts.values():
-        counts[entry["verdict"]] = counts.get(entry["verdict"], 0) + 1
+    for verdict in expected.values():
+        counts[verdict] = counts.get(verdict, 0) + 1
     assert counts == {"should-cite": 9, "related-only": 8, "false-alarm": 5}
-    assert {arxiv_id for arxiv_id, entry in verdicts.items() if entry.get("action_done")} == {"2610.06753", "2610.03566"}
+    seed = {arxiv_id: verdicts[arxiv_id] for arxiv_id in reviewed if verdicts[arxiv_id].get("reviewed_on") == SEED_DAY}
+    assert {arxiv_id: entry["verdict"] for arxiv_id, entry in seed.items()} == {arxiv_id: expected[arxiv_id] for arxiv_id in seed}
+    assert all(entry["by"] == "human" and entry["reason"] for entry in seed.values())
+    assert {"2610.06753", "2610.03566"} & set(seed) <= {arxiv_id for arxiv_id, entry in seed.items() if entry.get("action_done")}
+    sources = _review_sources(text)
+    for arxiv_id, entry in seed.items():
+        _assert_seed_text_follows_review(entry, *sources[arxiv_id])
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seeded_verdicts_match_the_reviewed_triage() -> None:
+    _assert_seed_matches_review(load_verdicts(REPO)["verdicts"], REVIEW.read_text(encoding="utf-8"))
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seed_check_allows_later_verdicts_but_not_a_drifted_seed() -> None:
+    text = REVIEW.read_text(encoding="utf-8")
+    seeded = load_verdicts(REPO)["verdicts"]
+    later = {
+        "2609.23818": {"verdict": "related-only", "reason": "read it", "action": None, "by": "human", "reviewed_on": "2026-10-27"},
+        "2610.99999": {"verdict": "kill", "reason": "r", "action": "a", "by": "judge:x", "reviewed_on": "2026-10-27",
+                       "quote": "q", "quote_from": "abstract", "confidence": 0.5},
+        "2610.00502": {**seeded["2610.00502"], "action_done": True},  # an agent carried out a seeded action
+        "2610.01141": {**seeded["2610.01141"], "verdict": "kill", "reviewed_on": "2026-11-02"},  # re-recorded since
+    }
+    _assert_seed_matches_review({**seeded, **later}, text)
+    for drift in ({"verdict": "kill"}, {"by": "judge:x"}, {"action_done": False}):
+        changed = {**seeded, "2610.06753": {**seeded["2610.06753"], **drift}}
+        with pytest.raises(AssertionError):
+            _assert_seed_matches_review(changed, text)
+    with pytest.raises(AssertionError):
+        _assert_seed_matches_review({k: v for k, v in seeded.items() if k != "2610.01902"}, text)
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seed_check_catches_a_reworded_reason_or_action() -> None:
+    text = REVIEW.read_text(encoding="utf-8")
+    seeded = load_verdicts(REPO)["verdicts"]
+    for arxiv_id, field, value in (
+        ("2610.00502", "reason", "WRONG " + seeded["2610.00502"]["reason"]),
+        ("2610.00502", "action", "Do nothing."),
+        ("2609.40036", "reason", seeded["2610.06812"]["reason"]),  # another row's reason
+        ("2610.03566", "reason", "Its rejection sampler is per-symbol USD plus Prange, so the negative result stands."),
+        ("2610.06753", "action", "Preprint: cite the cap and reword question 2."),
+    ):
+        changed = {**seeded, arxiv_id: {**seeded[arxiv_id], field: value}}
+        with pytest.raises(AssertionError):
+            _assert_seed_matches_review(changed, text)

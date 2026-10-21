@@ -5,18 +5,21 @@
     python tools/arxiv_watch/watch.py --relabel        # re-apply the label rules to stored papers, offline
     python tools/arxiv_watch/watch.py --replay-seeds   # check the track classifier on seed papers
     python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." [--action "..."]
+    python tools/arxiv_watch/watch.py --action-done 2610.06753  # its action has been carried out
 
 Each new paper is placed on tracks, matched against the corpus index (nearest negatives,
 notes, theorem modules) and given a triage label from wording cues:
 possible-kill, possible-scoop, related, already-cited or unrelated. Labels are for
 triage only; read the paper before acting on one. A reviewed verdict (research/audits/
 arxiv_verdicts.json, see verdicts.py) is judgement: it is attached to the stored paper and
-moves it from the flagged sections of the digest to the Reviewed table.
+listed in the digest's Reviewed table. A person's verdict also moves the paper out of the
+flagged sections; a judge's leaves it there, marked, until a person records one.
 
 Each track query is paged until results are older than the window start. When the page
 cap stops a query first, the uncovered window is recorded as a gap in the JSON and listed
 in the digest until a later run covers it. The outputs are rewritten only when a run finds
-something new (a paper, a gap, a verdict, a citation), so a quiet week changes nothing.
+something new (a paper, a gap opening or closing, a verdict, a citation of a flagged paper, or
+another track's query returning a stored paper), so a quiet week changes nothing.
 """
 
 from __future__ import annotations
@@ -33,7 +36,9 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
-from tools.arxiv_watch.verdicts import VERDICTS, VERDICTS_FILE, load_verdicts, normalize_id, set_verdict  # noqa: E402
+from tools.arxiv_watch.verdicts import (  # noqa: E402
+    VERDICTS, VERDICTS_FILE, by_judge, load_verdicts, mark_action_done, normalize_id, set_verdict,
+)
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.arxiv import Client, Paper  # noqa: E402
@@ -275,10 +280,26 @@ def _paths(root: Path) -> tuple[Path, Path]:
 
 
 def _load_state(root: Path) -> dict:
+    """The collisions file; empty when absent. ValueError, naming the file, when it is not JSON or
+    not an object with a "papers" object."""
     path, _ = _paths(root)
-    if path.exists():
-        return read_json(path)
-    return {"updated": None, "papers": {}}
+    if not path.exists():
+        return {"updated": None, "papers": {}}
+    name = path.relative_to(root)
+    try:
+        state = read_json(path)
+    except ValueError as error:
+        raise ValueError(f"{name}: not valid JSON ({error})") from error
+    if not isinstance(state, dict) or not isinstance(state.get("papers"), dict):
+        raise ValueError(f'{name}: expected an object with a "papers" object')
+    return state
+
+
+def checkout_error(root: Path) -> str | None:
+    """Why `root` cannot be a Q-Search checkout (it has no research/ directory), or None."""
+    if not (Path(root) / "research").is_dir():
+        return f"{root} is not a Q-Search checkout (no research/ directory); check --root"
+    return None
 
 
 def _since_for(state: dict, name: str, today: str) -> str:
@@ -336,7 +357,9 @@ def run(
     changed = False
     report.fetched = len(fetched)
     for arxiv_id, (paper, queried) in sorted(fetched.items()):
-        if arxiv_id in state["papers"]:  # seen before: never re-labelled or re-reported
+        # Seen before: not re-reported or re-scored, only its queried_by can grow. Verdicts and
+        # citations below may still change the record (attach_verdicts, recheck_cited).
+        if arxiv_id in state["papers"]:
             known = state["papers"][arxiv_id]
             merged = sorted(set(known.get("queried_by", [])) | queried)
             if merged != known.get("queried_by"):
@@ -410,7 +433,8 @@ def _cell(text) -> str:
 
 def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = None) -> str:
     """The markdown digest. `verdicts` (arXiv id -> entry) drives the Reviewed table, and papers
-    with a verdict leave the possible-kill and possible-scoop sections."""
+    with a person's verdict leave the possible-kill and possible-scoop sections; a flagged paper
+    with only a judge's verdict stays there with "judge: VERDICT" in its cues."""
     verdicts = verdicts or {}
     papers = sorted(state["papers"].values(), key=lambda p: (p["published"], p["arxiv_id"]), reverse=True)
     counts = {label: sum(p["label"] == label for p in papers) for label in LABEL_ORDER}
@@ -427,8 +451,9 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
     ]
     if verdicts:
         lines += [
-            "The counts are machine labels. Flagged papers with a reviewed verdict are listed under Reviewed,",
-            "not in the possible-kill and possible-scoop sections.",
+            "The counts are machine labels. A flagged paper with a person's verdict is listed under Reviewed,",
+            "not in the possible-kill and possible-scoop sections. One with only a judge's verdict stays in",
+            "its section, marked with that verdict, until a person checks it and records one.",
             "",
         ]
     gaps = state.get("gaps") or []
@@ -446,7 +471,11 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
         ]
     titles = {"possible-kill": "Possible kills", "possible-scoop": "Possible scoops", "related": "Related"}
     for label, heading in titles.items():
-        section = [p for p in papers if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts)]
+        # A judge's verdict is one model's reading: it never moves a flag out of sight by itself.
+        section = [
+            p for p in papers
+            if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts and not by_judge(verdicts[p["arxiv_id"]]))
+        ]
         section = section[:per_section]
         lines += [f"## {heading}", ""]
         if not section:
@@ -458,6 +487,8 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
             near = f"`{nearest['doc_id']}` ({nearest['location']})" if nearest else ""
             title = p["title"].replace("|", "/")
             cues = ", ".join(p.get("cues", [])[:3]).replace("|", "/")
+            if label in FLAGGED and p["arxiv_id"] in verdicts:
+                cues = f"**judge: {_cell(verdicts[p['arxiv_id']].get('verdict'))}**; {cues}"
             lines.append(
                 f"| {p['published']} | [{p['arxiv_id']}]({p['url']}) {title} | {', '.join(p['tracks'])} | {cues} | {near} |"
             )
@@ -520,22 +551,55 @@ def main(argv: list[str] | None = None) -> int:
         help=f"Record a reviewed verdict ({', '.join(VERDICTS)}) and re-render the digest; no fetching.",
     )
     parser.add_argument("--reason", default="", help="With --verdict: why, in a sentence or two.")
-    parser.add_argument("--action", help="With --verdict: what a named document should change, if anything.")
+    parser.add_argument(
+        "--action",
+        help='With --verdict: what a named document should change. Left out, a re-recorded verdict keeps its earlier action; "" clears it.',
+    )
     parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
+    parser.add_argument(
+        "--action-done", metavar="ARXIV_ID", help="Mark a recorded verdict's action as carried out and re-render the digest; no fetching."
+    )
     args = parser.parse_args(argv)
-    if args.verdict:
-        raw_id, verdict = args.verdict
-        try:
-            arxiv_id = normalize_id(raw_id)
-            set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=args.action)
-        except ValueError as error:
+    if args.verdict and args.action_done:
+        parser.error("give --verdict or --action-done, not both")
+    problem = checkout_error(args.root)  # a mistyped --root would otherwise get a fresh research/audits/
+    if problem:
+        print(f"error: {problem}", file=sys.stderr)
+        return 2
+    if not args.replay_seeds:
+        try:  # an unreadable verdicts or collisions file stops every mode before it writes anything
+            load_verdicts(args.root)
+            _load_state(args.root)
+        except (ValueError, OSError) as error:
             print(f"error: {error}", file=sys.stderr)
             return 2
-        state = _load_state(args.root)
-        attach_verdicts(state, load_verdicts(args.root)["verdicts"])
-        _save(args.root, state)
+    if args.verdict or args.action_done:
+        kept = False
+        try:
+            state = _load_state(args.root)
+            if args.verdict:
+                raw_id, verdict = args.verdict
+                arxiv_id = normalize_id(raw_id)
+                previous = load_verdicts(args.root)["verdicts"].get(arxiv_id) or {}
+                action = args.action
+                if action is None and previous.get("action"):  # re-recorded without --action: keep the earlier one
+                    action, kept = previous["action"], True
+                done = bool(previous.get("action_done")) and action == previous.get("action")
+                set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=action, action_done=done)
+                outcome = verdict
+            else:
+                arxiv_id = normalize_id(args.action_done)
+                mark_action_done(args.root, arxiv_id)
+                outcome = "action marked done"
+            attach_verdicts(state, load_verdicts(args.root)["verdicts"])
+            _save(args.root, state)
+        except (ValueError, OSError) as error:
+            print(f"error: {error}", file=sys.stderr)
+            return 2
         stored = "" if arxiv_id in state["papers"] else " (not in the collisions file yet)"
-        print(f"{arxiv_id}: {verdict}{stored}; digest re-rendered")
+        print(f"{arxiv_id}: {outcome}{stored}; digest re-rendered")
+        if kept:
+            print('kept the earlier action and whether it was done (--action "" clears it)')
         return 0
     if args.relabel:
         corpus = Corpus(args.root)
