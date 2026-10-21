@@ -3,11 +3,15 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from tests.tools.conftest import NEGATIVES
 from tools.corpus.api import Corpus
-from tools.corpus.duplicates import near_duplicates
+from tools.corpus.duplicates import check_claim, near_duplicates
 
 HELSTROM = "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
+# The Helstrom record's claim with two words changed ("readout" -> "measurement", "dominates" -> "beats").
+NEAR_CLAIM = "Local Helstrom measurement of each dihedral coset packet beats every product X-basis readout."
 
 DUP_A = {
     "id": "NEG-DUP-A",
@@ -80,3 +84,23 @@ def test_per_family_cap_keeps_a_true_restatement_visible(fake_repo: Path) -> Non
     capped = near_duplicates(corpus, limit=10, per_family=2)
     assert restatement in [(pair.a, pair.b) for pair in capped]
     assert len(capped) == 3 * 2 + 1
+
+
+@pytest.fixture
+def corpus(fake_repo: Path) -> Corpus:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    return corpus
+
+
+def test_check_claim_returns_cosine_scored_negatives_above_threshold(corpus: Corpus) -> None:
+    hits = check_claim(corpus, NEAR_CLAIM)
+    assert hits[0].doc_id == HELSTROM
+    assert 0.6 <= hits[0].score <= 1.0
+    assert all(hit.kind == "negative" and hit.score >= 0.6 for hit in hits)
+    assert check_claim(corpus, "zebrafish migration") == []
+
+
+def test_cosine_of_a_doc_with_itself_is_one(corpus: Corpus) -> None:
+    doc = corpus.get(HELSTROM)
+    assert corpus.cosine(f"{doc.title} {doc.text}", [HELSTROM])[HELSTROM] == pytest.approx(1.0, abs=1e-5)

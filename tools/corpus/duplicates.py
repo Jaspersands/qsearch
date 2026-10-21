@@ -1,7 +1,8 @@
-"""Near-duplicate retained negatives, by TF-IDF cosine over the corpus index.
+"""Near-duplicate retained negatives, and a duplicate check for a draft claim, by TF-IDF cosine.
 
-    from tools.corpus.duplicates import near_duplicates
+    from tools.corpus.duplicates import check_claim, near_duplicates
     pairs = near_duplicates(Corpus(), threshold=0.9, per_family=3)
+    hits = check_claim(Corpus(), "Local Helstrom readout of each coset packet ...")
 
 A score is the cosine of two documents' word unigram and bigram TF-IDF vectors (the
 index's own vectorizer: sublinear tf, English stop words, rows L2-normalized), so 1.0 means
@@ -13,11 +14,11 @@ how many pairs of one such family are kept, so they do not crowd true restatemen
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 import scipy.sparse as sp
 
-from tools.corpus.api import Corpus
+from tools.corpus.api import Corpus, Hit
 
 _LAST_NUMBER = re.compile(r"-\d+$")
 
@@ -69,3 +70,20 @@ def near_duplicates(
         doc = corpus.get(doc_id)
         titles[doc_id] = doc.title if doc is not None else ""
     return [Pair(a, b, score, titles[a], titles[b]) for score, a, b in chosen]
+
+
+def check_claim(corpus: Corpus, text: str, threshold: float = 0.6, k: int = 5) -> list[Hit]:
+    """Retained negatives whose TF-IDF cosine with a draft claim is at least `threshold`.
+
+    The fused search finds candidates; each is re-scored with `Corpus.cosine`, so a hit's
+    `score` here is a cosine in [0, 1], not the search's rank-fusion score.
+    """
+    hits = corpus.search(text, kinds=("negative",), k=max(2 * k, 10))
+    cosines = corpus.cosine(text, [hit.doc_id for hit in hits])
+    scored = [
+        replace(hit, score=round(cosines[hit.doc_id], 4))
+        for hit in hits
+        if cosines.get(hit.doc_id, 0.0) >= threshold
+    ]
+    scored.sort(key=lambda hit: (-hit.score, hit.doc_id))
+    return scored[:k]

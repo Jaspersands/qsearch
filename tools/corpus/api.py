@@ -331,6 +331,21 @@ class Corpus:
     def been_tried(self, idea: str, k: int = 5, dense: bool = False) -> dict[str, list[Hit]]:
         return {name: self.search(idea, kinds=kinds, k=k, dense=dense) for name, kinds in GROUPS.items()}
 
+    def cosine(self, text: str, doc_ids: list[str]) -> dict[str, float]:
+        """TF-IDF cosine between `text` and each listed document; ids not in the index are left out.
+
+        Unlike `Hit.score` (a reciprocal-rank fusion score), this is a true cosine in [0, 1].
+        """
+        state = self._state()
+        scores = state.scores(text)
+        found: dict[str, float] = {}
+        for doc_id in doc_ids:
+            rowid = self.store.row_of(doc_id)
+            position = np.flatnonzero(state.rowids == rowid) if rowid is not None else ()
+            if len(position):
+                found[doc_id] = float(scores[position[0]])
+        return found
+
     def matrix(self, kind: str = "negative") -> tuple[list[str], Any]:
         """Doc ids of one kind and their pairwise TF-IDF cosine similarities (sparse)."""
         state = self._state()
