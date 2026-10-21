@@ -84,7 +84,8 @@ def create_server(
         min_distance, decoder_known, encoder_known, p, b, c, classical_witness, finite_dqi_mean
         (see tools/dqi_screen/examples). Returns the quantities, each rule's check and a verdict:
         "not viable", "unknown" or "viable". This is a soundness screen, not a proof: the rules
-        are asymptotic and assume worst-case Hamming decoding."""
+        are asymptotic and assume worst-case decoding (of Hamming errors for the count objective,
+        of signed {+-1} error patterns for the cosine)."""
         try:
             return asdict(screen(candidate_from_dict(params)))
         except (TypeError, ValueError) as exc:

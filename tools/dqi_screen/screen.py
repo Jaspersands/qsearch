@@ -199,10 +199,12 @@ def _quantities(c: Candidate) -> dict[str, float | int | None]:
         "lambda_crit": threshold if count else None,
         "radius_crit": threshold * c.m if threshold is not None else None,
         "licensed_radius": R.licensed_radius(c.min_distance) if c.min_distance is not None else None,
+        "signed_packing_radius": None if count else R.packing_radius(c.m, c.n, c.q, 2),
         "singleton_reach": R.singleton_reach(alpha),
         "distance_reach": R.distance_reach(delta) if delta is not None else None,
         "sphere_packing_reach": R.sphere_packing_reach(alpha, c.q),
         "plotkin_reach": R.plotkin_reach(alpha, c.q),
+        "signed_packing_reach": None if count else R.signed_packing_reach(alpha, c.q),
         "kappa": kappa,
         "q_cap": q_pr + kappa if count else None,
         "cosine_objective": cos_obj,
@@ -215,7 +217,11 @@ def _quantities(c: Candidate) -> dict[str, float | int | None]:
     }
 
 
-def _reach_bounds(qn: dict) -> dict[str, float]:
+def _reach_bounds(c: Candidate, qn: dict) -> dict[str, float]:
+    """Asymptotic upper bounds on lam. The cosine needs only signed {0, +-1} error patterns, which
+    the Hamming bounds do not limit (Proposition 13): its bound is signed-pattern packing."""
+    if c.objective == "cosine":
+        return {"signed packing": qn["signed_packing_reach"]}
     names = {"Singleton": "singleton_reach", "distance": "distance_reach",
              "sphere-packing": "sphere_packing_reach", "Plotkin": "plotkin_reach"}
     return {name: qn[key] for name, key in names.items() if qn[key] is not None}
@@ -226,7 +232,7 @@ def _check_r1(c: Candidate, qn: dict) -> Check:
     if threshold is None:
         return Check("R1", False, f"alpha = {_fmt(qn['alpha'])} >= 1/sqrt(2): no radius beats Prange on the cosine objective")
     name = "lambda_crit" if c.objective == "count" else "lambda_crit_cos"
-    bounds = _reach_bounds(qn)
+    bounds = _reach_bounds(c, qn)
     low = [f"{bound} {_fmt(value)}" for bound, value in bounds.items() if value <= threshold]
     if low:
         return Check("R1", False, f"reach bound {', '.join(low)} <= {name} = {_fmt(threshold)}: "
@@ -235,14 +241,36 @@ def _check_r1(c: Candidate, qn: dict) -> Check:
     return Check("R1", True, f"every reach bound exceeds {name} = {_fmt(threshold)} (tightest: {tight} {_fmt(bounds[tight])})")
 
 
+def _check_reach_signed(c: Candidate, qn: dict) -> Check:
+    """The cosine: the radius must fit signed-pattern packing at this (m, n, q). A Hamming licence
+    (d - 2) // 2 covers signed patterns, but a radius beyond it is not refuted by it."""
+    limit = qn["signed_packing_radius"]
+    if c.radius > limit:
+        return Check("reach", False, f"outside licensed signed-pattern reach: radius {c.radius} > signed packing radius "
+                     f"{limit}: C(m, l) 2^l > q^n, so the {{+-1}} patterns of weight l cannot have distinct syndromes "
+                     "(Proposition 13(i))")
+    inside = f"radius {c.radius} (lam = {_fmt(qn['lam'])}) is inside signed packing radius {limit}"
+    if qn["licensed_radius"] is not None:
+        licence = qn["licensed_radius"]
+        inside += (f", within the Hamming licence (d - 2) // 2 = {licence}, which covers signed patterns"
+                   if c.radius <= licence else
+                   f", beyond the Hamming licence (d - 2) // 2 = {licence}: it needs a decoder licensed for "
+                   "{+-1} patterns (Definition 11)")
+    if not c.decoder_known:
+        return Check("reach", None, inside + ", but no decoder is known to reach it; give decoder_known")
+    return Check("reach", True, inside)
+
+
 def _check_reach(c: Candidate, qn: dict) -> Check:
     lam = qn["lam"]
     if lam is None:
         return Check("reach", None, "give radius")
+    if c.objective == "cosine":
+        return _check_reach_signed(c, qn)
     problems = []
     if qn["licensed_radius"] is not None and c.radius > qn["licensed_radius"]:
         problems.append(f"radius {c.radius} > licensed radius {qn['licensed_radius']} = (d - 2) // 2")
-    bounds = _reach_bounds(qn)
+    bounds = _reach_bounds(c, qn)
     over = [f"{bound} {_fmt(value)}" for bound, value in bounds.items() if lam > value]
     if over:
         problems.append(f"lam = {_fmt(lam)} exceeds the reach bound {', '.join(over)}")
@@ -423,7 +451,8 @@ def render(s: Screen) -> str:
     ]
     if s.reasons:
         lines += ["", "Reasons:", "", *[f"- {reason}" for reason in s.reasons]]
-    lines += ["", "Asymptotic rules for worst-case Hamming decoding; a screen, not a proof."]
+    errors = "Hamming errors" if c.objective == "count" else "signed {+-1} error patterns"
+    lines += ["", f"Asymptotic rules for worst-case decoding of {errors}; a screen, not a proof."]
     return "\n".join(lines) + "\n"
 
 

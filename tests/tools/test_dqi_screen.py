@@ -86,8 +86,9 @@ def test_example_a_radius_19_numbers() -> None:
     assert s.verdict == "unknown"
     assert list(qn) == [
         "alpha", "lam", "delta", "q_prange", "q_dqi", "q_dqi_finite", "margin", "margin_finite", "lambda_crit",
-        "radius_crit", "licensed_radius", "singleton_reach", "distance_reach", "sphere_packing_reach",
-        "plotkin_reach", "kappa", "q_cap", "cosine_objective", "lambda_crit_cos", "restart_length",
+        "radius_crit", "licensed_radius", "signed_packing_radius", "singleton_reach", "distance_reach",
+        "sphere_packing_reach", "plotkin_reach", "signed_packing_reach", "kappa", "q_cap", "cosine_objective",
+        "lambda_crit_cos", "restart_length",
         "existential_line", "rho_crit", "alpha_sub", "subfield_baseline",
     ]
     assert list(checks) == ["R1", "reach", "R2", "R3", "R3-encoder", "R4", "cap", "witness", "restarts"]
@@ -109,6 +110,37 @@ def test_example_b_cosine_is_viable() -> None:
     assert s.verdict == "viable", s.reasons
     s, checks = _run("mpi_signed_cosine.json", decoder_known=False)
     assert checks["reach"].passed is None and s.verdict == "unknown"
+
+
+def test_signed_packing_reach_hand_values() -> None:
+    # Proposition 13(i) and Table 3 of arXiv:2610.06753: "Signed-pattern packing bound permits reach 0.196" for MPI.
+    assert R.signed_packing_reach(0.07, 8191) == pytest.approx(0.196, abs=5e-4)
+    assert R.signed_packing_reach(0.68, 2**61 - 1) == 0.5  # alpha log2 q >= 3/2: every lam <= 1/2 fits
+    lam = R.signed_packing_reach(0.3, 5)
+    assert (R.binary_entropy(lam) + lam) / R.math.log2(5) == pytest.approx(0.3, abs=1e-9)
+    # Finite length: C(m, l) 2^l <= q^n, the patterns of weight l need distinct syndromes.
+    assert R.packing_radius(6000, 420, 8191, 2) >= 300
+    assert R.packing_radius(15, 11, 2, 1) >= 3 and R.packing_radius(10, 1, 2, 1) == 0
+
+
+def test_cosine_reach_uses_signed_packing_not_hamming_bounds() -> None:
+    # Proposition 13: the Hamming-based Singleton, sphere-packing, Plotkin and distance bounds do not
+    # limit a decoder licensed for {+-1} patterns.
+    s, checks = _run("mpi_signed_cosine.json", radius=300)  # lam = 0.05 > alpha/2 = 0.035
+    assert checks["reach"].passed is True and "signed" in checks["reach"].detail
+    assert s.verdict != "not viable", s.reasons
+    for d in (2, 300):  # a Hamming licence below the radius is not an upper bound on signed reach
+        s, checks = _run("mpi_signed_cosine.json", min_distance=d)
+        assert checks["reach"].passed is True and s.verdict != "not viable", (d, s.reasons)
+    s, checks = _run("mpi_signed_cosine.json", min_distance=420)
+    assert "(d - 2) // 2 = 209" in checks["reach"].detail  # radius 209 inside the Hamming licence
+    s, checks = _run("mpi_signed_cosine.json", q=2**61 - 1, m=1000, n=680, radius=400)
+    assert s.quantities["signed_packing_reach"] == 0.5
+    assert checks["R1"].passed is True and "signed packing" in checks["R1"].detail
+    s, checks = _run("mpi_signed_cosine.json", radius=1500)  # C(6000, 1500) 2^1500 > 8191^420
+    assert checks["reach"].passed is False and "signed packing radius" in checks["reach"].detail
+    assert s.verdict == "not viable"
+    assert "signed" in S.render(s).splitlines()[-1]
 
 
 def test_cosine_r2_passes_exactly_when_the_margin_is_positive() -> None:
