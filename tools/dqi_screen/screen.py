@@ -283,10 +283,15 @@ def _check_reach(c: Candidate, qn: dict) -> Check:
     over = [f"{bound} {value}" for bound, value in limits.items() if c.radius > value]
     if over:
         problems.append(f"radius {c.radius} exceeds the finite-length radius bound {', '.join(over)}")
+    # Saturation is a screen policy, not one of the paper's rules: Eq. (1) gives Q_DQI = 1 from
+    # lam = 1 - rho on, and the margin and restart length would rest on that pinned value.
+    # Compared in integers, so radius (1 - rho) m itself is never saturated by rounding.
+    edge = math.floor(c.m * (1 - c.rho) + 1e-9)
     saturated = None
-    if c.objective == "count" and lam > 1 - c.rho:
-        saturated = (f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, where the semicircle law pins "
-                     "Q_DQI at 1 and says nothing about this radius")
+    if c.radius > edge:
+        saturated = (f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, past radius {edge} = (1 - rho) m, "
+                     "where the semicircle law already reaches Q_DQI = 1; the screen does not credit a radius past "
+                     f"saturation: screen radius {edge} instead")
     if problems:
         detail = "outside licensed Hamming reach: " + "; ".join(problems)
         return Check("reach", False, detail + (f"; also {saturated}" if saturated else ""))

@@ -306,6 +306,19 @@ def test_saturation_alone_fails_reach_inside_every_reach_bound() -> None:
     assert checks["reach"].passed is True
 
 
+@pytest.mark.parametrize("rho", [0.6, 0.7, 0.75, 0.8, 0.9])
+def test_saturation_starts_strictly_past_one_minus_rho(rho: float) -> None:
+    # 1 - 0.9 rounds to 0.09999999999999998: radius (1 - rho) m itself is not saturated.
+    edge = round((1 - rho) * 1000)
+    s, checks = _run("hermite_half_rate.json", q=101, n=900, rho=rho, radius=edge, min_distance=None)
+    assert checks["reach"].passed is True and s.quantities["q_dqi"] == pytest.approx(1.0)
+    s, checks = _run("hermite_half_rate.json", q=101, n=900, rho=rho, radius=edge + 1, min_distance=None)
+    detail = checks["reach"].detail
+    assert checks["reach"].passed is False and "saturated" in detail
+    # Eq. (1) does give Q_DQI = 1 there; the detail says so and names the radius to screen instead.
+    assert "says nothing" not in detail and "Q_DQI = 1" in detail and f"radius {edge} " in detail
+
+
 def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
     base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
     assert S.candidate_from_dict(base).q == 7
