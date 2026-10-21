@@ -115,16 +115,20 @@ python tools/arxiv_watch/judge.py --import DIR/out/*.jsonl --judge claude-subage
 ```
 
 Each batch item has the paper's title, abstract, label, cues and tracks, and its nearest
-Q-Search records with the first 600 characters of each. The judge writes one row per paper:
+Q-Search records with the first 600 characters of each. Batch files are UTF-8 with no `\u`
+escapes, so the judge sees the characters the quote check compares. The judge writes one row
+per paper:
 `{"arxiv_id", "verdict", "reason", "quote", "quote_from", "action", "confidence"}`.
 
 Import checks every row before it writes anything: an unknown verdict, or an id that is
 missing or not stored, stops it (exit 2). A row is then rejected when
 
-- its quote is under six words, or does not appear verbatim (case, punctuation and spacing
-  ignored) in the one text `quote_from` names: the abstract, or the excerpt of one of the
-  paper's nearest records. A quote that runs from one text into another, or comes from a
-  record the judge was not shown, is not evidence ("quote not found");
+- its quote is under six words, or does not appear verbatim in the one text `quote_from`
+  names: the abstract, or the excerpt of one of the paper's nearest records. Latin letter
+  case, punctuation (including `-`, `/` and TeX's `$`) and spacing are ignored; Greek letters
+  and math symbols must match, so a quote with `≥` for `≤`, or `Θ` or `ω` for `Ω`, fails. A
+  quote that runs from one text into another, or comes from a record the judge was not
+  shown, is not evidence ("quote not found");
 - the paper already has a verdict recorded by anyone but a judge, including an entry written
   by hand without `by` ("human verdict exists").
 

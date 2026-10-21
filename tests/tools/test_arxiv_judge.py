@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -144,6 +145,53 @@ def test_quote_crossing_a_chunk_boundary_is_rejected(watched: tuple[Path, Corpus
 
     inside = _row("2610.11111", " ".join(words_1[2:9]), first)
     assert import_judgements(root, [_jsonl(tmp_path / "ok.jsonl", [inside])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+
+
+MATH = _paper(
+    "2610.44444",
+    "Dequantizing Helstrom readout of dihedral coset packets",
+    "A classical algorithm for quantum product readout: we prove the margin satisfies κ ≤ 0.207 against the bound "
+    "Ω(n) for every local measurement we tried.",
+)
+
+
+@pytest.fixture
+def math_flag(fake_repo: Path) -> tuple[Path, Corpus]:
+    """A fake checkout whose watch stored one possible kill with Greek letters and math symbols in its abstract."""
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    run(fake_repo, FakeClient([MATH]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    assert _load_state(fake_repo)["papers"]["2610.44444"]["label"] == "possible-kill"
+    return fake_repo, corpus
+
+
+def test_quote_must_keep_greek_letters_and_math_symbols(math_flag: tuple[Path, Corpus], tmp_path: Path) -> None:
+    root, corpus = math_flag
+    altered = [
+        "we prove the margin satisfies κ ≥ 0.207 against the bound",  # inequality flipped
+        "we prove the margin satisfies ≤ 0.207 against the bound Ω(n)",  # κ dropped
+        "the margin satisfies κ ≤ 0.207 against the bound Θ(n)",  # Ω swapped for Θ
+        "the margin satisfies κ ≤ 0.207 against the bound ω(n)",  # big Omega made little omega
+        "the margin satisfies κ < 0.207 against the bound Ω(n)",  # ≤ made <
+    ]
+    for index, quote in enumerate(altered):
+        result = import_judgements(root, [_jsonl(tmp_path / f"a{index}.jsonl", [_row("2610.44444", quote)])], "test", corpus=corpus)
+        assert result == {"imported": [], "rejected": [{"arxiv_id": "2610.44444", "why": "quote not found"}]}, quote
+    assert load_verdicts(root)["verdicts"] == {}
+
+    # Latin letter case, punctuation and spacing may still differ.
+    loose = _row("2610.44444", "We prove the margin satisfies κ≤0.207, against the bound Ω( n )")
+    assert import_judgements(root, [_jsonl(tmp_path / "ok.jsonl", [loose])], "test", corpus=corpus)["imported"] == ["2610.44444"]
+
+
+def test_batch_shows_symbols_as_stored_so_a_copied_quote_is_accepted(math_flag: tuple[Path, Corpus], tmp_path: Path) -> None:
+    root, corpus = math_flag
+    [path] = export_batches(root, tmp_path / "judge", corpus=corpus)
+    raw = path.read_text(encoding="utf-8")
+    assert "κ ≤ 0.207" in raw and "\\u03ba" not in raw
+    quote = re.search(r"we prove the margin satisfies [^\"]*? against the bound", raw).group(0)
+    result = import_judgements(root, [_jsonl(tmp_path / "copied.jsonl", [_row("2610.44444", quote)])], "test", corpus=corpus)
+    assert result == {"imported": ["2610.44444"], "rejected": []}
 
 
 def test_cli_exports_then_imports(watched: tuple[Path, Corpus], tmp_path: Path, capsys) -> None:

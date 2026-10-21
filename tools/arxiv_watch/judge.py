@@ -19,7 +19,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import string
 import sys
+import unicodedata
 from pathlib import Path
 
 if __package__ in (None, ""):
@@ -27,7 +30,7 @@ if __package__ in (None, ""):
 
 from tools.arxiv_watch.verdicts import VERDICTS, load_verdicts, save_verdicts, set_verdict  # noqa: E402
 from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts  # noqa: E402
-from tools.audit.rediscovery import _norm, _rows  # noqa: E402
+from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 
 EXCERPT_CHARS = 600
@@ -74,8 +77,9 @@ For each paper give:
    record's excerpt, supporting the verdict, with `quote_from` set to `"abstract"` or to that
    record's `doc_id`. The quote must lie inside that one text. A quote that runs from the
    abstract into an excerpt, or from one excerpt into the next, is rejected, and so is a quote
-   from a file you opened yourself. Quotes are checked automatically; a paper whose quote is
-   not found gets no verdict.
+   from a file you opened yourself. Copy Greek letters and math symbols (κ, ≤, Ω, +) exactly
+   as written; only Latin letter case, punctuation and spacing may differ. Quotes are checked
+   automatically; a paper whose quote is not found gets no verdict.
 4. `action`: one line naming what a document should change (cite the paper in X, narrow
    sentence Y of note Z), or null when nothing is to be done.
 5. `confidence`: your probability (0 to 1) that the verdict is right.
@@ -144,15 +148,38 @@ def export_batches(root: Path, out_dir: Path, n_batches: int = 3, corpus: Corpus
         if not papers:
             continue
         path = out_dir / f"batch_{index + 1:02d}.json"
-        path.write_text(json.dumps({"batch": index + 1, "verdicts": MEANINGS, "papers": papers}, indent=1), encoding="utf-8")
+        # Unescaped, so the judge sees the same characters the quote check compares against.
+        batch = {"batch": index + 1, "verdicts": MEANINGS, "papers": papers}
+        path.write_text(json.dumps(batch, indent=1, ensure_ascii=False), encoding="utf-8")
         paths.append(path)
     return paths
 
 
+_LOWER_LATIN = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)
+_TOKEN = re.compile(r"[^\W_]+|\S")
+
+
+def _tokens(text: str) -> list[str]:
+    """Words and symbols for the verbatim check, after NFKC.
+
+    Latin letter case, punctuation (Unicode category P, plus TeX's $ and `) and spacing are
+    dropped. Other letters and every symbol are kept, each symbol as its own token, so
+    "κ ≤ 0.207" and "κ≤0.207" match but "κ ≥ 0.207", "θ" for "Θ" or "Θ" for "Ω" do not.
+    """
+    tokens = []
+    for token in _TOKEN.findall(unicodedata.normalize("NFKC", text).translate(_LOWER_LATIN)):
+        if len(token) == 1 and not token.isalnum() and (unicodedata.category(token).startswith("P") or token in "$`"):
+            continue
+        tokens.append(token)
+    return tokens
+
+
 def _verbatim(quote: str, source: str) -> bool:
-    """At least six words of `quote` appear as whole words, in order, in `source` (case and punctuation ignored)."""
-    words = _norm(quote)
-    return bool(source) and len(words.split()) >= MIN_QUOTE_WORDS and f" {words} " in f" {_norm(source)} "
+    """At least six words of `quote` appear, with its symbols, as whole tokens in order in `source`."""
+    words = _tokens(quote)
+    if not source or sum(token.isalnum() for token in words) < MIN_QUOTE_WORDS:
+        return False
+    return f" {' '.join(words)} " in f" {' '.join(_tokens(source))} "
 
 
 def _by_judge(entry) -> bool:
