@@ -791,6 +791,11 @@ REVIEW_SOURCES = {
     "claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d": "calibration_r2/out_d/batch_*.jsonl",
     "audit-correction-2026-10-22": "corrections/2026-10-22.jsonl",
 }
+# The calibration judges' output, by the letters tools/referee/README.md uses for them.
+CALIBRATION_JUDGES = {
+    "A": "calibration/out", "B": "calibration/out_repeat_b", "C": "calibration/out_repeat_c",
+    "D": "calibration_r2/out_d", "E": "calibration_r2/out_e",
+}
 
 
 def _stored() -> dict:
@@ -886,6 +891,40 @@ def test_corrected_findings_state_the_note_and_artifact_correctly(stem, quote_st
     claim = _stored_claim(stem, quote_start)
     assert claim["verdict"] == verdict
     assert wrong not in claim["finding"] and right in claim["finding"]
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration").is_dir(), reason="the calibration runs are not in this checkout")
+def test_readme_credits_round_one_findings_only_to_judges_whose_reviews_raise_them() -> None:
+    section = _readme_section("### Findings the review history does not contain")
+    rows = [[cell.strip() for cell in line.strip().strip("|").split("|")]
+            for line in section.splitlines() if line.startswith("| ") and not line.startswith(("| Note", "| ---"))]
+    evidence = {"does not resolve": ("PRIME_CHARACTER_OPI", "prime_character_opi.json"),
+                "1038/1080": ("PRIME_CHARACTER_NORM_ATTACK", "1038")}
+    checked = 0
+    for _note, judges, finding, _check in rows:
+        for phrase, (stem, needle) in evidence.items():
+            if phrase not in finding:
+                continue
+            checked += 1
+            for letter in re.findall(r"\b[A-E]\b", judges.split("(")[0]):
+                row = _judge_rows(CALIBRATION_JUDGES[letter] + "/batch_01.jsonl")[stem]
+                assert needle in json.dumps(row), f"judge {letter} is credited with {phrase!r} but never says it"
+    assert checked == 2
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration_r2").is_dir(), reason="the round-two runs are not in this checkout")
+def test_readme_round_two_accounts_for_judge_e_gaps_as_e_wrote_them() -> None:
+    section = _readme_section("### Round two")
+    gaps = [c for row in _judge_rows("calibration_r2/out_e/batch_01.jsonl").values() for c in row["claims"] if c["verdict"] == "gap"]
+    assert len(gaps) == 8 and not any(c["finding"].startswith(("The sixth", "Unnamed")) for c in gaps)
+    assert "unnamed fully solved configuration (E)" not in section and "three low-value gaps" not in section
+    assert "now constructive" in section
+
+
+def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> None:
+    """NATIVE_RLWE_SPARSE_WITNESS_AUDIT's 'add |H|' was confirmed and dropped, not left unconfirmed."""
+    section = _readme_section("## First pass")
+    assert "add |H|" in section and "judged not to affect" in section
 
 
 @needs_reviews
