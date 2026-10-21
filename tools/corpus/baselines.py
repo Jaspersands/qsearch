@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -103,10 +104,51 @@ def _singular(word: str) -> str:
     return word
 
 
+# German umlauts as their usual transcription, so "Gröbner" is "Groebner"; other accents are dropped.
+_UMLAUTS = str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"})
+# One spelling per word on both sides of a match: British spellings, accent-free "Grobner",
+# and the run-together "MaxCut".
+_SPELLINGS = {
+    "colouring": "coloring",
+    "colour": "color",
+    "coloured": "colored",
+    "grobner": "groebner",
+    "maxcut": "max cut",
+}
+# In a keyword, `k` stands for a number: "max k cut" matches "max-3-cut", "Max-q-Cut" and "max-k-cut".
+PLACEHOLDER = "k"
+
+
 def tokens(text: str) -> list[str]:
     """Lowercase alphanumeric words, singular: "sses" becomes "ss", and a final single "s" is
-    dropped from words longer than three letters."""
-    return [_singular(w) for w in re.findall(r"[a-z0-9]+", text.lower())]
+    dropped from words longer than three letters. Umlauts become ae/oe/ue and other accents
+    are dropped ("Gröbner" is `groebner`), and a few spelling variants are folded into one
+    (`_SPELLINGS`: "colouring" is `coloring`, "MaxCut" is `max cut`)."""
+    folded = unicodedata.normalize("NFKD", text.lower().translate(_UMLAUTS))
+    folded = "".join(ch for ch in folded if not unicodedata.combining(ch))
+    words = [_singular(w) for w in re.findall(r"[a-z0-9]+", folded)]
+    return [part for word in words for part in _SPELLINGS.get(word, word).split()]
+
+
+def _number_like(word: str) -> bool:
+    return word.isdigit() or word in {PLACEHOLDER, "q"}
+
+
+def keyword_matches(keyword: list[str], idea: list[str]) -> bool:
+    """Whether a keyword's tokens occur in an idea's tokens.
+
+    In any order, unless the keyword has the `k` placeholder: then its tokens must occur in a
+    row, with a number, k or q in the placeholder's place ("max k cut" matches "max-3-cut"
+    but not "max cut at depth 3").
+    """
+    if PLACEHOLDER not in keyword:
+        return set(keyword) <= set(idea)
+    width = len(keyword)
+
+    def fits(window: list[str]) -> bool:
+        return all(word == token or (token == PLACEHOLDER and _number_like(word)) for token, word in zip(keyword, window))
+
+    return any(fits(idea[i : i + width]) for i in range(len(idea) - width + 1))
 
 
 def _name_pattern(baseline: dict) -> re.Pattern[str]:
@@ -140,7 +182,7 @@ def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None 
     scoring 0 are left out.
     """
     entries = load_catalog() if catalog is None else catalog
-    words = set(tokens(idea))
+    words = tokens(idea)
     hits = corpus.search(idea, kinds=("note", "negative"), k=NEARBY)
     texts: dict[str, str] = {}
     for hit in hits:
@@ -149,7 +191,7 @@ def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None 
     found: list[Recommendation] = []
     for baseline in entries:
         mechanisms = baseline["mechanisms"]
-        matched = [m for m in mechanisms if set(tokens(m)) <= words]
+        matched = [m for m in mechanisms if keyword_matches(tokens(m), words)]
         citing = _citing(hits, texts, _name_pattern(baseline))
         score = round(len(matched) / len(mechanisms) + len(citing) / NEARBY, 4)
         if score > 0:

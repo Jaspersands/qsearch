@@ -58,6 +58,45 @@ def test_tokens_drop_a_plural_s_but_keep_a_double_s() -> None:
     assert tokens("is gas bias") == ["is", "gas", "bia"]  # short words kept; a single final s still dropped
 
 
+def test_tokens_fold_accents_and_spelling_variants() -> None:
+    assert tokens("Gröbner") == tokens("Gröbner") == tokens("Grobner") == tokens("Groebner") == ["groebner"]
+    assert tokens("MaxCut") == tokens("Max-Cut") == ["max", "cut"]
+    assert tokens("graph colouring") == tokens("graph coloring") == ["graph", "coloring"]
+    assert tokens("colourings") == ["coloring"]
+
+
+QAOA_NOTE = (
+    "# QAOA Barrier\n\n"
+    "Goemans-Williamson rounding of the semidefinite relaxation bounds shallow QAOA on max-3-cut.\n"
+)
+
+
+@pytest.mark.parametrize("cut", ["max-3-cut", "Max-q-Cut", "max 3-cut", "max-k-cut"])
+def test_a_concrete_max_k_cut_ranks_the_lp_decoder_first(fake_repo: Path, cut: str) -> None:
+    corpus = _corpus_with_note(fake_repo, "QAOA_BARRIER", QAOA_NOTE)
+    recs = recommend(corpus, f"DQI for {cut} on a ternary cycle code")
+    assert recs[0].baseline["id"] == "lp-decoding-cycle-codes"
+    assert recs[0].matched == ["cycle code", "max k cut"]
+    sdp = next(rec for rec in recs if rec.baseline["id"] == "sdp-relaxation")
+    assert sdp.score < recs[0].score
+
+
+def test_max_k_cut_needs_its_number_between_max_and_cut(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, "QAOA on max cut at depth 3", k=20)}
+    assert "max k cut" not in recs.get("lp-decoding-cycle-codes", recs["sdp-relaxation"]).matched
+    assert recs["sdp-relaxation"].matched == ["max cut", "qaoa"]
+    assert recommend(corpus, "QAOA on MaxCut", k=20)[0].baseline["id"] == "sdp-relaxation"
+
+
+def test_british_and_accented_spellings_match_their_keywords(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    colouring = {rec.baseline["id"]: rec for rec in recommend(corpus, "graph colouring codes", k=20)}
+    assert colouring["lp-decoding-cycle-codes"].matched == ["graph coloring"]
+    groebner = {rec.baseline["id"]: rec for rec in recommend(corpus, "Gröbner basis attack on ternary LWE", k=20)}
+    assert groebner["groebner-mq"].matched == ["groebner basis"]
+
+
 def test_spin_glasses_match_the_spin_glass_keyword(fake_repo: Path) -> None:
     corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
     recs = recommend(corpus, "sampling Gibbs states of mean-field spin glasses")

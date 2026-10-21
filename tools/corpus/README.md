@@ -320,10 +320,16 @@ references and, when the repository can run it, a `run:` command. `--json` print
 with each evidence hit in the `search --json` shape. The MCP tool
 `classical_baselines(idea, k=5)` returns the same object.
 
-**Score.** `tokens(t)` lower-cases `t`, keeps the runs of `[a-z0-9]`, turns a final `sses`
+**Score.** `tokens(t)` lower-cases `t`, writes umlauts as ae/oe/ue and drops other accents,
+keeps the runs of `[a-z0-9]`, turns a final `sses`
 into `ss` and drops a final single `s` from words longer than three letters ("Gibbs" becomes
-`gibb` on both sides; "glasses" and "glass" both become `glass`). A mechanism
-keyword matches when every one of its tokens is among the idea's tokens, in any order. The ten
+`gibb` on both sides; "glasses" and "glass" both become `glass`), then folds a few spelling
+variants into one (`_SPELLINGS`: "colouring" is `coloring`, "Gröbner" and "Grobner" are
+`groebner`, "MaxCut" is `max cut`). A mechanism
+keyword matches when every one of its tokens is among the idea's tokens, in any order. A `k`
+in a keyword stands for a number: such a keyword must occur in a row with a number, `k` or
+`q` in that place, so `max k cut` matches "max-3-cut" and "Max-q-Cut" but not "max cut at
+depth 3". The ten
 note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
 and on word boundaries. Notes are indexed by section, so a note counts once however many of
@@ -353,7 +359,9 @@ parity-check code"`:
 first (0.4: cycle code, max k cut), then `sdp-relaxation` (0.3: max cut, named by
 `QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md`) and `tensor-network-simulation` (0.1). When
 every section counted, four sections of that one note gave `sdp-relaxation` 0.6 and put it
-above the LP decoder, the baseline this line of work is missing.
+above the LP decoder, the baseline this line of work is missing. The same order holds for
+"max-3-cut" (2026-10-22); before the `k` placeholder, that spelling missed `max k cut` and
+put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 
 **Schema.** `{"baselines": [entry, ...]}`, each entry with every field below:
 
