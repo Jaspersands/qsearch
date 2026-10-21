@@ -34,7 +34,9 @@ Every command except `build` first refreshes the index incrementally: it stats a
 2,100 source files and re-parses only those whose size, mtime and content hash changed.
 When nothing changed the refresh only reads (no write lock) and costs 0.05 to 0.15 s of
 CPU. Add `--json` for machine-readable output, `--dense` to add the embedding ranker,
-`--root PATH` (or `QSEARCH_ROOT`) to index another checkout.
+`--root PATH` (or `QSEARCH_ROOT`) to index another checkout. A root that is not a directory
+with a `research/` directory is an error (exit 1) before anything is written, and so is a
+checkout with nothing to index; the MCP server refuses to start on either.
 
 A file or registry record that cannot be parsed is never silent. Every command prints the
 problem on stderr and JSON output carries `index_issues`. When the problem is in

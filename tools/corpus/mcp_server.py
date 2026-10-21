@@ -24,7 +24,7 @@ if __package__ in (None, ""):
 
 from mcp.server.fastmcp import FastMCP  # noqa: E402
 
-from tools.corpus.api import Corpus  # noqa: E402
+from tools.corpus.api import Corpus, CorpusRootError, checkout_root  # noqa: E402
 from tools.corpus.baselines import recommend  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
 from tools.corpus.duplicates import NO_NEGATIVES, claim_report, valid_threshold  # noqa: E402
@@ -35,7 +35,7 @@ from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 def create_server(
     root: Path | None = None, dense: str = "auto", refresh_seconds: float = 30.0, embedder: Embedder | None = None
 ) -> FastMCP:
-    corpus = Corpus(Path(root) if root else None, embedder=embedder)
+    corpus = Corpus(checkout_root(Path(root) if root else None), embedder=embedder)  # CorpusRootError if not a checkout
     last_refresh = [0.0]
 
     def ready() -> bool:
@@ -138,7 +138,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dense", choices=("auto", "on", "off"), default="auto")
     parser.add_argument("--refresh-seconds", type=float, default=30.0)
     args = parser.parse_args(argv)
-    create_server(Path(args.root) if args.root else None, args.dense, args.refresh_seconds).run()
+    try:
+        server = create_server(Path(args.root) if args.root else None, args.dense, args.refresh_seconds)
+    except CorpusRootError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    server.run()
     return 0
 
 

@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 from tools.corpus.cli import main
 
 CLI = Path(__file__).resolve().parents[2] / "tools" / "corpus" / "cli.py"
@@ -96,3 +98,31 @@ def test_corrupt_registry_is_reported_as_incomplete_not_as_novel(fake_repo: Path
     ok = _cli(fake_repo, "been-tried", idea, "--json")
     assert ok.returncode == 0
     assert json.loads(ok.stdout)["index_incomplete"] is False
+
+
+@pytest.mark.parametrize(
+    "command", [["check-new", "--text", "hidden shift sieve"], ["baselines", "hidden shift"], ["near-duplicates"], ["build"]]
+)
+def test_a_root_that_is_not_a_checkout_is_an_error_and_creates_nothing(tmp_path: Path, capsys, command) -> None:
+    missing = tmp_path / "nosuch"
+    assert main(["--root", str(missing), *command]) == 1
+    assert "is not a directory" in capsys.readouterr().err
+    assert not missing.exists()
+    bare = tmp_path / "bare"
+    bare.mkdir()
+    assert main(["--root", str(bare), *command]) == 1
+    assert "is not a Q-Search checkout" in capsys.readouterr().err
+    assert list(bare.iterdir()) == []
+    hollow = tmp_path / "hollow"
+    (hollow / "research").mkdir(parents=True)
+    assert main(["--root", str(hollow), *command]) == 1
+    assert "nothing to index" in capsys.readouterr().err
+
+
+def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> None:
+    from tools.corpus.api import CorpusRootError
+    from tools.corpus.mcp_server import create_server
+
+    with pytest.raises(CorpusRootError, match="is not a directory"):
+        create_server(tmp_path / "nosuch", dense="off")
+    assert not (tmp_path / "nosuch").exists()

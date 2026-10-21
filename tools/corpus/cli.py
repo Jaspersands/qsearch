@@ -26,7 +26,7 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.corpus.api import Corpus, Hit  # noqa: E402
+from tools.corpus.api import Corpus, CorpusRootError, Hit, checkout_root  # noqa: E402
 from tools.corpus.baselines import Recommendation, recommend  # noqa: E402
 from tools.corpus.duplicates import (  # noqa: E402
     NO_NEGATIVES,
@@ -104,7 +104,7 @@ def _issues_json(corpus: Corpus) -> dict:
 
 
 def _corpus(args: argparse.Namespace) -> Corpus:
-    corpus = Corpus(Path(args.root) if args.root else None)
+    corpus = Corpus(checkout_root(Path(args.root) if args.root else None))
     if args.command == "build" or not getattr(args, "no_refresh", False):
         stats = corpus.refresh(full=getattr(args, "full", False), dense=args.command == "build" and args.dense)
         if args.command == "build":
@@ -492,7 +492,11 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    return args.func(args)
+    try:
+        return args.func(args)
+    except CorpusRootError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

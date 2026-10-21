@@ -45,6 +45,24 @@ def default_root() -> Path:
     return Path(os.environ.get("QSEARCH_ROOT", REPO_ROOT)).resolve()
 
 
+class CorpusRootError(ValueError):
+    """The root has nothing to index: it is missing, not a Q-Search checkout, or holds no documents."""
+
+
+def checkout_root(root: Path | None = None) -> Path:
+    """`root` (default: QSEARCH_ROOT or this repository), resolved, once it is known to be a checkout.
+
+    Raises CorpusRootError before anything is written when the path is not a directory or
+    has no research/ directory, so a mistyped --root never leaves an index tree behind.
+    """
+    path = Path(root).resolve() if root else default_root()
+    if not path.is_dir():
+        raise CorpusRootError(f"{path} is not a directory")
+    if not (path / "research").is_dir():
+        raise CorpusRootError(f"{path} is not a Q-Search checkout: it has no research/ directory")
+    return path
+
+
 @dataclass
 class Hit:
     doc_id: str
@@ -185,6 +203,8 @@ class Corpus:
             assert tfidf is not None
             tfidf.patch(set(removed), self.store.texts(added))
         else:
+            if not self.store.count():
+                raise CorpusRootError(f"nothing to index under {self.root}: no registry, note, code or literature file")
             tfidf = TfidfState.fit(self.store.texts())
         tfidf.epoch = current
         tfidf.save(self.tfidf_path)
