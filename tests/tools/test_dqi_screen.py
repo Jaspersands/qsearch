@@ -426,6 +426,15 @@ def test_cli_zero_valued_flags_override_the_params_file(capsys) -> None:
     assert "R2 (hard): FAIL" in capsys.readouterr().out
 
 
+def test_readme_maps_each_check_to_the_papers_rules() -> None:
+    # The screen's "R2" is Theorem 6's threshold; the paper's (R2) decoder rule lives in "reach".
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    table = readme.split("| Screen check | Paper (arXiv:2610.06753) |", 1)[1].split("\n\n", 1)[0]
+    rows = {line.split("|")[1].strip(): line.split("|")[2] for line in table.splitlines() if line.startswith("| ")}
+    assert set(rows) == {"R1", "reach", "R2", "R3", "R3-encoder", "R4", "cap", "witness", "restarts"}
+    assert "(R2) decoder" in rows["reach"] and "Theorem 6" in rows["R2"] and "(R3) encoder" in rows["R3-encoder"]
+
+
 def test_corpus_mcp_docs_list_the_screen_tool() -> None:
     from tools.corpus import mcp_server
 

@@ -58,6 +58,21 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 | witness | soft | the classical witness is below DQI's claimed value (finite mean, else Q_DQI or the cosine value) and, for the count, below q_cap - 0.01 | otherwise the classical method already reaches DQI's claim, or no licensed radius beats it by more than 0.01 |
 | restarts | soft | m >= the restart length | (1-alpha) R^2 ln(N/eta) / (2 mu^2), R = 1 count / 2 cosine, N = 2^40, eta = 0.05 (Theorem 10) |
 
+The check names are the screen's own and do not follow the paper's numbering one to one
+(its Table 1: (R1) reach, (R2) decoder, (R3) encoder, (R4) subfield):
+
+| Screen check | Paper (arXiv:2610.06753) |
+|---|---|
+| R1 | (R1) reach: Corollary 7 (a)-(c) for the count, Proposition 13(i) for the cosine |
+| reach | (R1) applied to the claimed radius at finite length, plus the (R2) decoder rule: `decoder_known` false leaves it open; saturation is a screen policy |
+| R2 | Theorem 6: the claimed radius beats lambda_crit (Proposition 13(ii) for the cosine); not the paper's (R2) |
+| R3 | the existential line Q* (Definition 5, Proposition 13(iii)) as a bound on the claimed value |
+| R3-encoder | (R3) encoder (Proposition 9) |
+| R4 | (R4) subfield (Proposition 9) |
+| cap | Proposition 8 |
+| witness | none: the screen's comparison with a classical result |
+| restarts | Theorem 10 |
+
 mu is the finite margin (`finite_dqi_mean` minus Prange) when given, else the asymptotic one
 (Q_DQI - Q_Pr, or sqrt(2 lam(1-lam)) - alpha for the cosine). With mu <= 0 no length suffices.
 A cosine candidate with alpha >= 1/sqrt(2) has no threshold and is not viable. A check that is
