@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import textwrap
 from pathlib import Path
 
 from tools.referee import extract as X
+from tools.referee import referee as R
 
 
 FIXTURE_NOTE = textwrap.dedent(
@@ -214,3 +216,35 @@ def test_artifact_excerpt_is_none_when_missing_or_invalid(tmp_path: Path) -> Non
         tmp_path / "research/classical_baselines/fixture_radial.json"
     )
     assert X._resolve_artifact(tmp_path, "classical_baselines/absent.json") is None
+
+
+def _dated_note(root: Path, stem: str, status_line: str, mtime: int) -> Path:
+    path = _write(root, stem, f"# {stem}\n\n{status_line}\n\n## Result\n\nA result about the {stem.lower()} inputs.\n")
+    os.utime(path, (mtime, mtime))
+    return path
+
+
+def test_select_notes_orders_by_status_date_then_mtime_and_skips_current_reviews(tmp_path: Path) -> None:
+    _dated_note(tmp_path, "PRIME_OLD", "2026-10-10. REVIEW PENDING.", 4000)
+    _dated_note(tmp_path, "PRIME_NEW", "2026-10-18. REVIEW PENDING.", 1000)
+    _dated_note(tmp_path, "POLAR_UNDATED", "Local derivation, review pending.", 3000)
+    _dated_note(tmp_path, "POLAR_UNDATED_OLDER", "Review pending.", 2000)
+    _dated_note(tmp_path, "SUPERSEDED_ONE", "2026-10-19. SUPERSEDED by the newer note; review pending.", 5000)
+    (tmp_path / "research" / "AGENT_HANDOFF.md").write_text("# Handoff\n\n2026-10-20. Review pending.\n", encoding="utf-8")
+    everything = ["PRIME_NEW", "PRIME_OLD", "POLAR_UNDATED", "POLAR_UNDATED_OLDER"]
+    assert [p.stem for p in R.select_notes(tmp_path)] == everything
+    assert R.load_reviews(tmp_path) == {"notes": {}}
+
+    current = R.note_sha(tmp_path / "research" / "PRIME_NEW.md")
+    reviews = {"notes": {"PRIME_NEW": {"content_sha": current}, "PRIME_OLD": {"content_sha": "0" * 64}}}
+    assert [p.stem for p in R.select_notes(tmp_path, reviews=reviews)] == everything[1:]
+    assert [p.stem for p in R.select_notes(tmp_path, reviews=reviews, exclude_reviewed=False)] == everything
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps(reviews), encoding="utf-8")
+    assert R.load_reviews(tmp_path) == reviews
+    assert [p.stem for p in R.select_notes(tmp_path)] == everything[1:]
+
+    assert [p.stem for p in R.select_notes(tmp_path, prefixes=("PRIME",), exclude_reviewed=False)] == ["PRIME_NEW", "PRIME_OLD"]
+    assert [p.stem for p in R.select_notes(tmp_path, limit=2, exclude_reviewed=False)] == everything[:2]
+    assert [p.stem for p in R.select_notes(tmp_path, statuses=("superseded",))] == ["SUPERSEDED_ONE"]
