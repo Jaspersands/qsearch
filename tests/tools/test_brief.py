@@ -81,6 +81,35 @@ def test_registry_delta_lists_added_and_removed_ids_since_the_cutoff(tmp_path: P
     assert delta["added"] == ["C"] and delta["removed"] == ["A"]
 
 
+def test_registry_delta_rereads_a_file_caught_mid_write(tmp_path: Path, monkeypatch) -> None:
+    # The agents rewrite the registry often; a read that lands mid-write sees half the file.
+    repo = _history_repo(tmp_path)
+    since = B.since_commit(repo, since_days=7, today="2026-10-20")
+    (repo / B.QUARANTINE).write_text(json.dumps([{"id": "A"}]), encoding="utf-8")
+    torn = {repo / B.REGISTRY, repo / B.QUARANTINE}
+    real_text, real_bytes = Path.read_text, Path.read_bytes
+
+    def torn_now(path: Path) -> bool:
+        if path in torn:
+            torn.discard(path)
+            return True
+        return False
+
+    def read_text(self, *args, **kwargs):
+        text = real_text(self, *args, **kwargs)
+        return text[: len(text) // 2] if torn_now(self) else text
+
+    def read_bytes(self):
+        data = real_bytes(self)
+        return data[: len(data) // 2] if torn_now(self) else data
+
+    monkeypatch.setattr(Path, "read_text", read_text)
+    monkeypatch.setattr(Path, "read_bytes", read_bytes)
+    delta = B.registry_delta(repo, since[0], since_date=since[1])
+    assert not torn  # each file was read half-written once
+    assert delta["available"] is True and delta["added"] == ["B", "C"] and delta["quarantined"] == ["A"]
+
+
 def test_cutoff_is_the_start_of_the_utc_day_not_the_time_of_day(tmp_path: Path) -> None:
     # git reads a bare --before=2026-10-15 as 2026-10-15 at the current time of day, so a
     # commit at noon that day would count as "before" in the afternoon and not in the morning.

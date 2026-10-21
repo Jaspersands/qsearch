@@ -213,17 +213,13 @@ def _ids(data: Any) -> set[str]:
     return {record["id"] for record in data if isinstance(record, dict) and isinstance(record.get("id"), str)}
 
 
-def _read_json(path: Path) -> Any:
-    return json.loads(path.read_bytes().decode("utf-8", errors="replace"))
-
-
 def _quarantined_ids(root: Path) -> set[str] | None:
     """Ids in the working copy's quarantine file; empty when it is absent, None when it cannot be read."""
     path = root / QUARANTINE
     if not path.is_file():
         return set()
     try:
-        return _ids(_read_json(path))
+        return _ids(read_json(path))
     except (OSError, ValueError):
         return None
 
@@ -254,7 +250,9 @@ def registry_delta(
     if not path.is_file():
         return {"available": False, "reason": f"{REGISTRY} is missing from the working copy"}
     baseline = _ids(json.loads(committed))
-    current = _ids(_read_json(path))
+    # read_json retries a read that lands while an agent rewrites the file, and reads UTF-8
+    # strictly, as core/research_registry.py and the corpus do.
+    current = _ids(read_json(path))
     removed = baseline - current
     quarantined = _quarantined_ids(root)
     return {
