@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -325,3 +326,33 @@ def test_imports_flag_uses_split_cli_verify(
     assert payload["count"] == 1
     assert payload["problems"] == [{"check": "resolve", "path": "qsearch_cli", "message": "x: ImportError: y"}]
     assert roots == [repo.resolve()]
+
+
+def test_imports_flag_finds_a_tracked_module_that_fails_to_import(tmp_path: Path) -> None:
+    # The real verifier, unpatched. It runs in a fresh process: it imports qsearch_cli from the
+    # checked root, and refuses when this process already imported it from another checkout.
+    repo = _repo(
+        tmp_path,
+        imports={"broken": ("theorems.broken_mod", "f"), "os": ("os", None)},
+        committed={
+            "qsearch_cli/resolve.py": (REPO / "qsearch_cli" / "resolve.py").read_text(encoding="utf-8"),
+            "theorems/__init__.py": "",
+            "theorems/broken_mod.py": "import qsearch_missing_dependency\n\nf = 1\n",
+        },
+    )
+
+    result = subprocess.run(
+        [sys.executable, str(REPO / "tools" / "preflight" / "preflight.py"), "--root", str(repo), "--imports", "--json"],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 1, result.stderr
+    assert json.loads(result.stdout)["problems"] == [
+        {
+            "check": "resolve",
+            "path": "qsearch_cli",
+            "message": "broken: ModuleNotFoundError: No module named 'qsearch_missing_dependency'",
+        }
+    ]
