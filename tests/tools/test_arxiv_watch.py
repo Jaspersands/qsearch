@@ -3,6 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import re
+import time
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
@@ -10,7 +11,7 @@ import pytest
 
 from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
 from tools.arxiv_watch.verdicts import VERDICTS_FILE, load_verdicts, set_verdict
-from tools.arxiv_watch.watch import label_for, replay_seeds, run
+from tools.arxiv_watch.watch import label_for, recheck_cited, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
 
@@ -489,3 +490,40 @@ def test_paper_with_a_verdict_leaves_the_flagged_list(fake_repo: Path) -> None:
     assert run(fake_repo, client, corpus, tracks=tracks, today="2026-11-09").saved  # a withdrawn verdict is dropped
     assert "verdict" not in _state(fake_repo)["papers"]["2610.11111"]
     assert "2610.11111" in _section(digest_path.read_text(), "Possible kills")
+
+
+def test_flagged_paper_becomes_already_cited_once_a_note_cites_it(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    tracks = {"dcp": TRACKS["dcp"]}
+    client = FakeClient([
+        _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout."),
+        _paper("2610.33333", "Dequantizing the dihedral coset problem", "An efficient classical algorithm for quantum coset states."),
+    ])
+    assert run(fake_repo, client, corpus, tracks=tracks, today="2026-10-19").relabelled == 0
+    assert {record["label"] for record in _state(fake_repo)["papers"].values()} == {"possible-kill"}
+
+    set_verdict(fake_repo, "2610.33333", "should-cite", "cite it", "human", today="2026-10-20")
+    note = "# Cites Kill\n\nThis note builds on arXiv:2610.11111v1 and on arXiv:2610.33333.\n"
+    (fake_repo / "research" / "CITES_KILL.md").write_text(note, encoding="utf-8")
+    corpus.refresh()
+    report = run(fake_repo, client, corpus, tracks=tracks, today="2026-10-26")
+    assert report.relabelled == 1 and report.new == 0 and report.saved
+    state = _state(fake_repo)
+    cited = state["papers"]["2610.11111"]
+    assert (cited["label"], cited["relabelled_on"], cited["relabelled_from"]) == ("already-cited", "2026-10-26", "possible-kill")
+    reviewed = state["papers"]["2610.33333"]
+    assert reviewed["label"] == "possible-kill" and "relabelled_on" not in reviewed  # a verdict-bearing paper is untouched
+    assert run(fake_repo, client, corpus, tracks=tracks, today="2026-10-27").relabelled == 0
+
+
+def test_recheck_cited_is_fast_for_many_flags_sharing_a_trailing_token(fake_repo: Path) -> None:
+    ids = [f"{24 + i // 12}{i % 12 + 1:02d}.11111" for i in range(30)]
+    (fake_repo / "research" / "CITES_ONE.md").write_text("# Cites One\n\nSee arXiv:2605.11111 for the bound.\n", encoding="utf-8")
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    state = {"papers": {arxiv_id: {"arxiv_id": arxiv_id, "label": "possible-kill"} for arxiv_id in ids}}
+    start = time.perf_counter()
+    assert recheck_cited(state, corpus, "2026-10-26") == 1
+    assert time.perf_counter() - start < 1.0
+    assert state["papers"]["2605.11111"]["label"] == "already-cited"

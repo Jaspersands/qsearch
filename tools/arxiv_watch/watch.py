@@ -127,6 +127,7 @@ class RunReport:
     by_label: dict = field(default_factory=dict)
     truncated: dict = field(default_factory=dict)
     saved: bool = False
+    relabelled: int = 0
 
 
 def _sentences(text: str) -> list[str]:
@@ -232,6 +233,22 @@ def attach_verdicts(state: dict, verdicts: dict) -> int:
                 changed += 1
         elif "verdict" in record:
             del record["verdict"]
+            changed += 1
+    return changed
+
+
+def recheck_cited(state: dict, corpus: Corpus, today: str) -> int:
+    """Demote stored possible kills and scoops to already-cited once a note or record cites them.
+
+    Papers with a verdict are left alone. The record keeps the date and the label it had; returns
+    how many records changed.
+    """
+    changed = 0
+    for arxiv_id, record in sorted(state["papers"].items()):
+        if record.get("label") not in FLAGGED or "verdict" in record:
+            continue
+        if corpus.mentions(arxiv_id):
+            record.update({"label": "already-cited", "relabelled_on": today, "relabelled_from": record["label"]})
             changed += 1
     return changed
 
@@ -343,6 +360,8 @@ def run(
 
     # After the fetch, so a paper given a verdict before it was first stored carries it on arrival.
     changed |= bool(attach_verdicts(state, load_verdicts(root)["verdicts"]))
+    report.relabelled = recheck_cited(state, corpus, today)
+    changed |= bool(report.relabelled)
 
     # A gap stays listed until a run of that track that was not cut short starts at or before it.
     gaps = list(state.get("gaps", []))
@@ -490,6 +509,7 @@ def main(argv: list[str] | None = None) -> int:
     corpus.refresh()
     report = run(args.root, Client(), corpus, since=args.since, tracks=tracks, page_size=args.max, max_pages=args.max_pages)
     print(f"fetched {report.fetched} papers in range, {report.new} new: {report.by_label}")
+    print(f"{report.relabelled} stored possible kills or scoops are now cited and relabelled already-cited")
     for name, cut in report.truncated.items():
         print(
             f"warning: {name} hit the page cap ({cut['results']} results back to {cut['oldest_seen']}); "
