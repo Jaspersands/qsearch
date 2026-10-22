@@ -313,9 +313,10 @@ def cmd_near_duplicates(args: argparse.Namespace) -> int:
     return status
 
 
-def _claim_header(report: ClaimReport, threshold: float) -> str:
+def _claim_header(report: ClaimReport, threshold: float, outside_list: bool = False) -> str:
     if not report.matches:
-        return f"no negative record (retained or quarantined) has TF-IDF cosine >= {threshold}"
+        where = " outside the list" if outside_list else " (retained or quarantined)"
+        return f"no negative record{where} has TF-IDF cosine >= {threshold}"
     of_them = f", {report.quarantined} of them quarantined," if report.quarantined else ""
     shown = f"; the closest {len(report.matches)} are shown" if report.total > len(report.matches) else ""
     return f"POSSIBLE DUPLICATE: {report.total} negative record(s){of_them} at TF-IDF cosine >= {threshold}{shown}"
@@ -340,11 +341,33 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         print("error: the draft claim has no words to compare (it is empty or only stop words).", file=sys.stderr)
         return 1
     corpus = _corpus(args)
-    # Each draft leaves out every draft's own record, so a batch gets the same answer once filed.
-    exclude = tuple(doc_id for _, record_id in drafts for doc_id in own_ids(record_id))
+    # A listed record already in the index is filed. Each record leaves out its own id. A filed
+    # record also leaves out the other filed records of the list, so a batch gets the same answer
+    # before and after it is filed; a record not yet filed is still compared with a filed record
+    # listed beside it, so a hunk that copies an existing record under a new id is caught.
+    indexed = set(corpus.doc_ids()) if any(record_id for _, record_id in drafts) else set()
+    filed = {record_id for _, record_id in drafts if record_id and indexed.intersection(own_ids(record_id))}
+    listed = tuple(doc_id for record_id in sorted(filed) for doc_id in own_ids(record_id))
+    hides = len(filed) > 1  # a filed record is then left out of another filed record's check
+    if hides:
+        print(
+            f"warning: {len(filed)} of {len(drafts)} listed records are already in the index, and a filed record "
+            "of a list is not compared with the other filed records of it. List only the records an edit adds: "
+            "a new record that restates an older one listed beside it is missed once both are filed.",
+            file=sys.stderr,
+        )
     allow = tuple(args.allow or ())
     reports = [
-        (record_id, claim_report(corpus, text, threshold=args.threshold, exclude=exclude, allow=allow))
+        (
+            record_id,
+            claim_report(
+                corpus,
+                text,
+                threshold=args.threshold,
+                exclude=listed if record_id in filed else own_ids(record_id),
+                allow=allow,
+            ),
+        )
         for text, record_id in drafts
     ]
     if reports[0][1].documents == 0:
@@ -361,13 +384,14 @@ def cmd_check_new(args: argparse.Namespace) -> int:
                 for h in report.allowed
             ],
             "drafts": len(reports),
+            "filed": len(filed),
             "duplicate": duplicate,
             **_issues_json(corpus),
         }
         print(json.dumps(payload, indent=2))
         return 2 if duplicate else 0
     for number, (record_id, report) in enumerate(reports, start=1):
-        header = _claim_header(report, args.threshold)
+        header = _claim_header(report, args.threshold, outside_list=hides and record_id in filed)
         if len(reports) == 1:
             print(header[0].upper() + header[1:] + ("" if report.matches else " with this claim") + ".")
         else:

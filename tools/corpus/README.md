@@ -199,12 +199,18 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   a BOM); a record contributes its `claim` and `reason_invalid` (a quarantined record's are
   read from its `original_record`), and is never matched with its own `id` (`negative:ID`
   or `quarantined:ID`; the id is stripped and a `negative:` or `quarantined:` prefix
-  dropped). A list is checked record by record, each leaving out every listed record's id,
-  and `--json` marks each match with its `draft_id`. The answer is
-  therefore the same before and after the records are filed, and a hook can run on the draft
-  or on the new records of the registry edit that files them; a draft that reuses another
-  record's id is not compared with that record, and records of one list are not compared
-  with each other. A quarantined match is labelled `(quarantined)`. An
+  dropped). A list is checked record by record, and `--json` marks each match with its
+  `draft_id`. A listed record that is not in the index yet is compared with every negative
+  record but its own, filed records listed beside it included, so a hunk that copies an
+  existing record under a new id exits 2. A listed record already in the index (filed) also
+  leaves out the other filed records of the list. Records of one list are therefore not
+  compared with each other, the answer is the same before and after the records are filed,
+  and a hook can run on the draft or on the new records of the registry edit that files them.
+  List only the new records: once a new record is filed, an older record listed beside it is
+  hidden from it. When two or more listed records are already filed the command warns on
+  stderr, says "no negative record outside the list" for them, and `--json` gives the count as
+  `filed`. A draft that reuses another record's id is not compared with that record. A
+  quarantined match is labelled `(quarantined)`. An
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
   `--allow ID` accepts a match the author has read and knows to be a separate result (see

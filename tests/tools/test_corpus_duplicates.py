@@ -443,6 +443,54 @@ def test_cli_check_new_checks_a_list_of_records_one_by_one(fake_repo: Path, tmp_
     assert "NEG-DRAFT-HELSTROM: POSSIBLE DUPLICATE: 1 negative record(s)" in out
 
 
+def test_cli_check_new_compares_a_new_record_with_a_filed_one_listed_beside_it(
+    fake_repo: Path, tmp_path: Path, capsys
+) -> None:
+    # A registry hunk with context: the filed Helstrom record, then a verbatim copy under a new id.
+    # Leaving out every listed id hid the original from its copy, so the copy passed with exit 0.
+    hunk = tmp_path / "hunk.json"
+    hunk.write_text(json.dumps([NEGATIVES[0], dict(NEGATIVES[0], id="NEG-HELSTROM-RESTATED")], indent=2))
+    root = ["--root", str(fake_repo), "check-new", "--file", str(hunk)]
+    assert main([*root, "--json"]) == 2
+    payload = json.loads(capsys.readouterr().out)
+    assert [(m["draft_id"], m["doc_id"]) for m in payload["matches"]] == [("NEG-HELSTROM-RESTATED", HELSTROM)]
+    assert payload["filed"] == 1
+    assert main(root) == 2
+    captured = capsys.readouterr()
+    assert "NEG-DCP-LOCAL-HELSTROM-HIERARCHY: no negative record (retained or quarantined) has" in captured.out
+    assert "NEG-HELSTROM-RESTATED: POSSIBLE DUPLICATE: 1 negative record(s)" in captured.out
+    assert "already in the index" not in captured.err  # one filed record hides nothing
+
+
+def test_cli_check_new_warns_when_filed_records_of_a_list_hide_each_other(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    listed = tmp_path / "registry_copy.json"  # say a hook given the whole registry file
+    listed.write_text(json.dumps(NEGATIVES, indent=2))
+    root = ["--root", str(fake_repo), "check-new", "--file", str(listed)]
+    assert main(root) == 0
+    captured = capsys.readouterr()
+    assert "warning: 2 of 2 listed records are already in the index" in captured.err
+    assert "NEG-DCP-LOCAL-HELSTROM-HIERARCHY: no negative record outside the list has TF-IDF cosine >= 0.6." in captured.out
+    assert main([*root, "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["filed"] == 2
+
+
+def test_cli_check_new_gives_a_batch_the_same_answer_before_and_after_it_is_filed(
+    fake_repo: Path, tmp_path: Path, capsys
+) -> None:
+    batch = tmp_path / "batch.json"
+    batch.write_text(json.dumps([DUP_A, DUP_B], indent=2))
+    root = ["--root", str(fake_repo), "check-new", "--json", "--file"]
+    assert main([*root, str(batch)]) == 0  # not yet filed: records of one list are not compared with each other
+    assert json.loads(capsys.readouterr().out)["filed"] == 0
+    _corpus_with(fake_repo, [DUP_A, DUP_B])
+    assert main([*root, str(batch)]) == 0  # filed: each leaves out the other's id too
+    assert json.loads(capsys.readouterr().out)["filed"] == 2
+    alone = tmp_path / "alone.json"
+    alone.write_text(json.dumps(DUP_A, indent=2))
+    assert main([*root, str(alone)]) == 2  # on its own, the filed record still meets its twin
+    assert [m["doc_id"] for m in json.loads(capsys.readouterr().out)["matches"]] == ["negative:NEG-DUP-B"]
+
+
 @pytest.mark.parametrize(
     "content",
     [json.dumps(NEGATIVES[0], indent=2)[:-40], json.dumps(dict(NEGATIVES[0], claim=["a", "b"])), '{"id": "X"}'],
