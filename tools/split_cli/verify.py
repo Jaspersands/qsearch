@@ -195,8 +195,10 @@ def dispatch_problems(legacy_source: str, dispatch: list) -> list[str]:
 
 def _use_root(root: Path) -> None:
     loaded = sys.modules.get("qsearch_cli")
-    if loaded is not None and not str(Path(loaded.__file__).resolve()).startswith(str(root)):
-        raise RuntimeError("qsearch_cli is already imported from another checkout")
+    if loaded is not None:
+        source = getattr(loaded, "__file__", None)
+        if source is None or Path(source).resolve().parent != (root / "qsearch_cli").resolve():
+            raise RuntimeError("qsearch_cli is already imported from another checkout")
     if str(root) not in sys.path[:1]:
         sys.path.insert(0, str(root))
 

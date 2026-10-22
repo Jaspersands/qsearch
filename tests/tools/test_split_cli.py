@@ -125,6 +125,24 @@ def _run(root: Path, *argv: str) -> subprocess.CompletedProcess:
     return subprocess.run([sys.executable, *argv], cwd=root, capture_output=True, text=True, timeout=120)
 
 
+@pytest.mark.parametrize("package_path", ["repo-other/qsearch_cli", "repo/nested/qsearch_cli"])
+def test_verification_rejects_an_imported_package_from_another_checkout(tmp_path, monkeypatch, package_path):
+    from types import SimpleNamespace
+    from tools.split_cli.verify import _use_root
+    monkeypatch.setitem(sys.modules, "qsearch_cli", SimpleNamespace(__file__=str(tmp_path / package_path / "__init__.py")))
+    with pytest.raises(RuntimeError, match="another checkout"):
+        _use_root(tmp_path / "repo")
+
+
+def test_verification_accepts_its_own_imported_package(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    from tools.split_cli.verify import _use_root
+    monkeypatch.setitem(sys.modules, "qsearch_cli", SimpleNamespace(__file__=str(tmp_path / "qsearch_cli/__init__.py")))
+    monkeypatch.setattr(sys, "path", list(sys.path))
+    _use_root(tmp_path)
+    assert sys.path[0] == str(tmp_path)
+
+
 def test_extract_reads_imports_commands_blocks_and_flags() -> None:
     mono = ex.extract(MONOLITH)
     names = {b.name: b for b in mono.bindings}
