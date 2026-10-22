@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import re
+import shlex
 import subprocess
 import textwrap
 import threading
@@ -570,6 +571,14 @@ def test_instructions_ask_for_scope_and_omission_checks() -> None:
     assert "`artifact_path`" in text
 
 
+def test_instructions_give_every_cap_import_enforces() -> None:
+    # Three first-pass findings ran past 600 characters: no judge had been told the cap.
+    text = " ".join(R.REFEREE_INSTRUCTIONS.split())
+    assert R.CAPS == {"quote": 400, "step": 300, "finding": 600, "summary": 1500}
+    assert "`quote` 400, `step` 300, `finding` 600 and `summary` 1500" in text
+    assert "A longer one rejects your whole output file" in text
+
+
 def test_export_writes_instructions_and_batches_with_artifact_excerpts(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     out = tmp_path / "out"
@@ -653,12 +662,12 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     stale = _row(tmp_path, stem="OTHER", overall="unclear", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21",
                               allow_unverified=True)
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": [], "missing": []}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": [], "missing": [], "cut": []}
     data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
     entry = data["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["reviewed_on"], entry["overall"], entry["stale"]) == ("test-judge", "2026-10-21", "needs-work", False)
-    assert len(entry["claims"]) == 6 and len(entry["claims"][0]["finding"]) == 600 and len(entry["summary"]) == 1500
-    assert len(entry["claims"][0]["step"]) == 300
+    assert len(entry["claims"]) == 6 and entry["claims"][0]["finding"] == "x" * 600 and entry["summary"] == "s" * 1500
+    assert entry["claims"][0]["step"] == "y" * 300
     assert entry["claims"][0]["covered_by_self_check"] is False
     assert data["notes"]["OTHER"]["stale"] is True
 
@@ -789,6 +798,38 @@ def test_import_rejects_more_than_six_claims_and_a_non_boolean_self_check(tmp_pa
     assert [claim["covered_by_self_check"] for claim in stored] == [True, False, False, False]
 
 
+def test_import_rejects_text_over_its_cap_unless_told_to_cut_it(tmp_path: Path, capsys) -> None:
+    # Import cut a 637-character finding at 600 characters without a mark, mid-sentence, and
+    # the judges' instructions never gave the cap; three first-pass findings lost their ends.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    over = {
+        "claim 1: finding is 601 characters": _row(tmp_path, claims=[_claim(quote, finding="f" * 601)]),
+        "claim 2: step is 301 characters": _row(tmp_path, claims=[_claim(quote), _claim(quote, step="s" * 301)]),
+        "summary is 1501 characters": _row(tmp_path, summary="y" * 1501),
+    }
+    for message, row in over.items():
+        answer = _jsonl(tmp_path / "out" / "over.jsonl", [row])
+        capsys.readouterr()
+        assert R.main(["import", str(answer), "--root", str(tmp_path), "--judge", "j"]) == 2, message
+        captured = capsys.readouterr()
+        assert captured.out == "" and f"FIXTURE_NOTE: {message}; at most" in captured.err and "nothing imported" in captured.err
+    assert not (tmp_path / R.REVIEWS).exists()
+
+    # --cut (for judge files written before the instructions gave the caps) stores the text cut
+    # and marked, and names each cut field.
+    long = "The decision should say the composition is review pending and name its missing step. " * 8
+    answer = _jsonl(tmp_path / "out" / "long.jsonl", [_row(tmp_path, claims=[_claim(quote, finding=long)])])
+    assert R.main(["import", str(answer), "--root", str(tmp_path), "--judge", "j", "--cut"]) == 0
+    out = capsys.readouterr().out
+    assert "imported 1 reviews; 0 stale; 1 field cut to its cap and marked [truncated]" in out
+    assert f"FIXTURE_NOTE: claim 1: finding ({len(long)} characters, cap 600)" in out
+    finding = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["finding"]
+    assert len(finding) <= 600 and finding.endswith(" [truncated]") and long.startswith(finding.removesuffix(" [truncated]"))
+    result = R.import_reviews(tmp_path, [answer], "j", cut=True)
+    assert result["cut"] == [f"{answer}: FIXTURE_NOTE: claim 1: finding ({len(long)} characters, cap 600)"]
+
+
 def test_import_rejects_malformed_rows_and_stems_that_are_paths(tmp_path: Path) -> None:
     _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
     (tmp_path / "README.md").write_text("Some words here for a long enough quote to pass the check.\n", encoding="utf-8")
@@ -865,7 +906,7 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     note.write_text(note.read_text(encoding="utf-8").replace("It holds for all twelve", "It holds for eleven of twelve"), encoding="utf-8")
 
     result = R.import_reviews(tmp_path, [answer], "j", today="2026-10-21")
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": [], "missing": []}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": [], "missing": [], "cut": []}
     claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
     assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
 
@@ -914,7 +955,7 @@ def test_import_keeps_a_current_review_over_a_row_that_is_stale_on_arrival(tmp_p
     _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA second version.\n")
     current = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass2" / "out" / "rows.jsonl", [current])], "new", today="2026-10-22")
-    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"], "missing": []}
+    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"], "missing": [], "cut": []}
     entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["overall"], entry["stale"]) == ("new", "unsound", False)
     assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["FIXTURE_NOTE"]
@@ -1209,6 +1250,16 @@ def test_find_quote_tries_every_occurrence_and_import_marks_a_cut_quote(tmp_path
     span = f"[{words}]({target}) holds"
     assert len(quote) <= 400 < len(span) and stored["verified"] is True
     assert stored["quote"] == span[:397] + "..."
+    words = " ".join(f"word{index}" for index in range(120))
+    _write(tmp_path, "LONGER_NOTE", f"# Longer\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
+    row = _row(tmp_path, stem="LONGER_NOTE", claims=[_claim(words)])
+    answer = _jsonl(tmp_path / "out" / "longer.jsonl", [row])
+    with pytest.raises(ValueError, match=f"LONGER_NOTE: claim 1: quote is {len(words)} characters; at most 400"):
+        R.import_reviews(tmp_path, [answer], "j")
+    R.import_reviews(tmp_path, [answer], "j", cut=True)
+    stored = R.load_reviews(tmp_path)["notes"]["LONGER_NOTE"]["claims"][0]
+    assert len(words) > 400 and stored["verified"] is True and len(stored["quote"]) <= 400
+    assert stored["quote"].endswith(" [truncated]") and words.startswith(stored["quote"].removesuffix(" [truncated]"))
 
 
 def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
@@ -1644,6 +1695,7 @@ REVIEW_SOURCES = {
     "claude-opus-5.5-two-judges-reconciled-2026-10-21": "pass1/out/batch_*.jsonl",
     "claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d": "calibration_r2/out_d/batch_*.jsonl",
     "audit-correction-2026-10-22": "corrections/2026-10-22.jsonl",
+    "audit-correction-2026-10-22-r2": "corrections/2026-10-22-r2.jsonl",
 }
 # The calibration judges' output, by the letters tools/referee/README.md uses for them.
 CALIBRATION_JUDGES = {
@@ -1683,7 +1735,8 @@ def _readme_section(heading: str) -> str:
 
 @needs_reviews
 def test_stored_reviews_are_their_judge_rows_whole() -> None:
-    """Import once cut a finding at 600 characters without a mark, so a longer one lost its end."""
+    """Each stored review is its judge row whole: import once cut a finding at 600 characters
+    without a mark, so a longer one lost its end."""
     checked = 0
     for stem, entry in _stored().items():
         pattern = REVIEW_SOURCES.get(entry["judge"])
@@ -1697,6 +1750,35 @@ def test_stored_reviews_are_their_judge_rows_whole() -> None:
         assert stored == given, stem
         checked += 1
     assert checked >= 30
+
+
+@needs_reviews
+def test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path: Path, capsys) -> None:
+    """A re-import replaces a note's review, so re-importing pass1/out after the corrections
+    silently undid all of them; the README must give an order that rebuilds the store."""
+    section = _readme_section("### Corrections (2026-10-22)")
+    block = re.search(r"```bash\n(.*?)```", section, re.S)
+    assert block, "the Corrections section gives no rebuild commands"
+    commands = [shlex.split(line) for line in block.group(1).splitlines() if " import " in line]
+    stored = _stored()
+    # Each note as the judges read it (its exported packet), so a later edit to a note does not
+    # turn this red: the rebuild would rightly store that review stale.
+    texts, _ = R.exported_texts([path for path in REVIEWS_DIR.glob("**/out*/*.jsonl")])
+    (tmp_path / "research").mkdir()
+    for stem, entry in stored.items():
+        (tmp_path / "research" / f"{stem}.md").write_bytes(texts[(stem, entry["content_sha"])].encode("utf-8"))
+    for argv in commands:
+        assert argv[:3] == ["python", "tools/referee/referee.py", "import"], argv
+        args = []
+        for arg in argv[3:]:
+            files = sorted(REPO.glob(arg)) if arg.startswith("research/") else None
+            assert files != [], arg
+            args += [str(path) for path in files] if files else [arg]
+        assert R.main(["import", *args, "--root", str(tmp_path)]) == 0, capsys.readouterr().err
+    rebuilt = R.load_reviews(tmp_path)["notes"]
+    assert sorted(rebuilt) == sorted(stored)
+    for stem, entry in stored.items():
+        assert {**rebuilt[stem], "reviewed_on": None} == {**entry, "reviewed_on": None}, stem
 
 
 @needs_reviews
@@ -1729,6 +1811,16 @@ def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
 
 
 @needs_reviews
+def test_opi_power_completion_quote_keeps_its_degree_condition() -> None:
+    """Cut at 'solved perfectly', the holds quote read as unconditional, but the saved N127,K39
+    global inputs (threshold 64 > 39) score 108/127 and 110/127."""
+    claim = _stored_claim("PRIME_CHARACTER_OPI", "Thus ALL common-coset inputs are solved perfectly")
+    assert claim["verdict"] == "holds"
+    assert " ".join(claim["quote"].split()).endswith("solved perfectly whenever `K >= (r-1)*ceil(N/r)`")
+    assert "K39" in claim["finding"] and "108/127" in claim["finding"] and "110/127" in claim["finding"]
+
+
+@needs_reviews
 @pytest.mark.parametrize("stem, quote_start, verdict, wrong, right", [
     ("PRIME_CHARACTER_INTERLEAVED_PROBE", "The joint product correlation is enhanced", "gap",
      "cannot hold for those reported cases", "do not contradict"),
@@ -1740,6 +1832,13 @@ def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
      "1/sqrt(p) classical term", "sqrt((p-1)rho(1-rho))p^(-n/2)"),
     ("EXPLICIT_QUADRATIC_OPI", "The high-rate quadratic family has a constructive", "gap",
      "can be trivial", "about 0.59"),
+    # The note cites two quantum guarantees and leaves the vanishing-density regime open; it
+    # never says no quantum algorithm has a guarantee outside d<L.
+    ("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation", "holds",
+     "no quantum algorithm has a guarantee", "none of the guarantees the note cites applies there"),
+    # b/(g+b) decreases in g: the bound uses ||G||^2=1-eps, so the ratio grows with eps.
+    ("PRIME_CHARACTER_CAPACITY_SOURCE", "is well defined, and P(unique herald)>=1-epsilon", "holds",
+     "increases in both arguments", "decreases in ||G||^2"),
 ])
 def test_corrected_findings_state_the_note_and_artifact_correctly(stem, quote_start, verdict, wrong, right) -> None:
     claim = _stored_claim(stem, quote_start)
@@ -1775,6 +1874,18 @@ def test_readme_round_two_accounts_for_judge_e_gaps_as_e_wrote_them() -> None:
     assert "now constructive" in section
 
 
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration_r2").is_dir(), reason="the round-two runs are not in this checkout")
+def test_readme_round_two_says_which_round_one_findings_d_and_e_kept() -> None:
+    """A's N1024 Gibbs-sample provenance point, graded real, is in neither D's nor E's review."""
+    section = " ".join(_readme_section("### Round two").split())
+    raised = {letter: json.dumps(_judge_rows(CALIBRATION_JUDGES[letter] + "/batch_01.jsonl")["POLAR_SOURCE_DESIGN"])
+              for letter in "ADE"}
+    assert "361-constraint Gibbs sample" in raised["A"] and "test suite" in raised["A"]
+    assert not any(needle in raised[letter] for letter in "DE" for needle in ("361-constraint", "test suite"))
+    assert "kept every real round-one finding" not in section
+    assert "Neither raised A's N1024 Gibbs-sample provenance point" in section
+
+
 def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> None:
     """NATIVE_RLWE_SPARSE_WITNESS_AUDIT's 'add |H|' was confirmed and dropped, not left unconfirmed."""
     section = _readme_section("## First pass")
@@ -1785,6 +1896,7 @@ def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> No
 def test_readme_records_the_corrections_and_the_stored_first_pass_counts() -> None:
     section = _readme_section("## First pass")
     assert "corrections/2026-10-22.jsonl" in section and "audit-correction-2026-10-22" in section
+    assert "corrections/2026-10-22-r2.jsonl" in section and "audit-correction-2026-10-22-r2" in section
     stems = {p["stem"] for path in sorted((REVIEWS_DIR / "pass1").glob("batch_*.json"))
              for p in json.loads(path.read_text(encoding="utf-8"))["notes"]}
     counts = {o: sum(_stored()[s]["overall"] == o for s in stems) for o in ("needs-work", "sound")}

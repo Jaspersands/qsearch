@@ -14,7 +14,7 @@ The referee never edits `research/*.md`. Its outputs go to `research/audits/`.
 python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--include-reviewed] [--json]
 python tools/referee/referee.py export --out-dir DIR [--limit 30] [--prefix P] [--batch-size 5]
 python tools/referee/referee.py export --out-dir DIR --note PRIME_CHARACTER_OPI --note POLAR_SOURCE_DESIGN
-python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21 [--partial] [--allow-unverified]
+python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21 [--partial] [--allow-unverified] [--cut]
 python tools/referee/referee.py render
 python tools/referee/referee.py status [--json]
 ```
@@ -23,7 +23,7 @@ python tools/referee/referee.py status [--json]
 |---|---|
 | `select` | Lists review-pending notes, newest first, without a current review; `--limit 0` lists them all. |
 | `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status, each once however often it is named; the name's letter case must match. Exit 2, nothing written, when `--out-dir` is a file or already holds `batch_*.json` from an earlier export (use a new folder per pass). |
-| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails, or when a judge file `batch_NN.jsonl` has no row for a note its `batch_NN.json` (beside it or in the folder above) exported; `--partial` imports the rest and names the notes without a row. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
+| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails, or when a judge file `batch_NN.jsonl` has no row for a note its `batch_NN.json` (beside it or in the folder above) exported; `--partial` imports the rest and names the notes without a row. A field over its cap is a failing row too; `--cut` stores it cut and marked instead. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
 | `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
 | `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, unsound before needs-work and each by stem, with the worst claim, and stale ones (a deleted note's review is stale). Used by the agent brief. |
 
@@ -93,7 +93,9 @@ text.
    `content_sha`, `overall` (`sound`, `needs-work`, `unsound`, `unclear`), `summary` and
    up to six `claims`, each with a verbatim `quote`, a `verdict` (`holds`, `gap`, `wrong`,
    `unclear`), the `step` at fault, a `finding` (the counterexample or missing condition)
-   and `covered_by_self_check`. The judge must not propose new research.
+   and `covered_by_self_check`. The judge must not propose new research. The instructions
+   give the caps import enforces (step 3): quote 400 characters, step 300, finding 600,
+   summary 1500.
 3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, a
    `covered_by_self_check` that is not `true` or `false` (omitted or null reads as false),
    more than six claims, an `overall` that contradicts the claims (the worst claim sets it:
@@ -142,9 +144,13 @@ text.
    import (one file or several) reject the import. Re-importing a note replaces its
    review, except that a row that is stale on arrival (an earlier pass imported again)
    never replaces a stored review of the note's current bytes: import keeps that review
-   and reports the row as skipped. The judges are told the caps on their text (summary
-   1500 characters, finding 600, step 300, quote 400), and import never cuts it: a longer
-   one rejects the file, as does a summary, step, finding or quote that is not a string
+   and reports the row as skipped. So importing an older judge file again silently undoes a later
+   correction; the stored reviews are rebuilt in the order given under Corrections in
+   First pass. The judges are told the caps on their text (summary 1500 characters,
+   finding 600, step 300, quote 400), and a longer field rejects the file, naming the
+   field and its length, unless `--cut` is given: that is for judge files written before
+   the instructions gave the caps, and stores such a field cut to its cap and ending in
+   ` [truncated]`, listing each field it cut. Import also rejects a summary, step, finding or quote that is not a string
    (null reads as empty) and a `gap` or `wrong` claim with no finding. The stored quote,
    the note's own span, can run past 400 characters (a link target it left out); it is
    then cut at 400 and ends in `...`.
@@ -250,14 +256,14 @@ Round two changed two things in `INSTRUCTIONS.md`. The packet gained an `artifac
 | One certified length (N32768) called a family | no | yes | no | yes | yes |
 | NORM_ATTACK 1/(2N) fails at N=1 (false positive: the degree budget excludes N=1) | yes | no | no | no | no |
 
-- Both judges found both review-history findings that round one missed. They also kept every real round-one finding and dropped A's N=1 false positive, which they correctly rated holds.
+- Both judges found both review-history findings that round one missed. They also kept the square-coset and one-length-family findings and dropped A's N=1 false positive, which they correctly rated holds. Neither raised A's N1024 Gibbs-sample provenance point (real, provenance only), though the note they read was the same.
 - New, checked as real: neither OPI's open-case list nor NORM_ATTACK's decision mentions the unsolved r=3 N63,K46 (55, 56/63) and r=4 N32,K24 (28, 27/32) mixed inputs, and OPI never reports their scores. NORM_ATTACK also says common cosets were "solved", but the K39 global inputs score 108/127 and 110/127.
 - With `artifact_path`, both judges checked the OPI repair totals, which C could not find in round one.
 - The new checks also produced two low-value gaps: a table without the N16 row (D) and the NORM_ATTACK title (E). E's OPI open-case gap also remarks, in its last sentence, that the fully solved p=65537, N16, K8 configuration is never named. Treat a scope gap with no effect on a conclusion as minor.
 - E also flagged POLAR_SOURCE_DESIGN's research decision ("the matching classical route is now constructive"). Checked: its review-pending part is real and is the polar-headline finding again, in the decision sentence. Its other point, that the m_i/root-fidelity identity is checked numerically only at N2/N4, is low-value: the note cites that identity as known duality (Renes) and claims no new theorem.
 - Both judges rated all four notes needs-work. This batch has no correctly scoped note, so whether the new checks over-flag clean notes is still untested. The next calibration should include one.
 
-The four calibration notes' stored reviews are round-two judge D's, two of them corrected on 2026-10-22 (see Corrections under First pass). NORM_ATTACK's decision gap now also carries E's K39-global overstatement, which D missed; D's other reviews already hold E's real findings. POLAR_SOURCE_DESIGN's N16-row gap no longer quotes "all coarse controls", which the note does not say, and is listed after the family and headline gaps, so the queue and the brief show the family gap as its worst claim.
+The four calibration notes' stored reviews are round-two judge D's, three of them corrected on 2026-10-22 (see Corrections under First pass). NORM_ATTACK's decision gap now also carries E's K39-global overstatement, which D missed; D's other reviews already hold E's real findings. POLAR_SOURCE_DESIGN's N16-row gap no longer quotes "all coarse controls", which the note does not say, and is listed after the family and headline gaps, so the queue and the brief show the family gap as its worst claim. OPI's power-completion claim (holds) quoted only "Thus ALL common-coset inputs are solved perfectly", which reads as unconditional; it now quotes the whole sentence, with its condition `K >= (r-1)*ceil(N/r)`, as C and E did, and its finding names the N127,K39 global inputs below that threshold (108/127 and 110/127).
 
 ## First pass (2026-10-21)
 
@@ -304,7 +310,8 @@ row, not `out/`'s.
   NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions did not mention the
   600-character cap on findings, and import cut these three gap findings mid-sentence
   without a mark. They are shortened to fit and keep their conclusions. The instructions
-  now give every cap, and import rejects longer text instead of cutting it.
+  now give every cap, and import rejects a longer field unless `--cut` is given, which marks
+  the cut.
 - Wrong sentences in four findings, verdicts unchanged: PRIME_CHARACTER_INTERLEAVED_PROBE
   read the p7 individual mean (.553571, 1/56 below 4/7, as the producer predicts) as
   contradicting near-uniformity; FOLDED_NORM_SOURCE credited 24/73 to the collision formula
@@ -314,4 +321,38 @@ row, not `out/`'s.
   trivial.
 - POLAR_SOURCE_DESIGN and PRIME_CHARACTER_NORM_ATTACK: see the end of Calibration.
 
+A second audit the same day corrected three more, verdicts unchanged. Each row is a copy of
+the note's latest row (for INTERVAL_SOFT_DECODER, the first corrections file's) with one
+claim changed. The rows are in `research/audits/reviews/corrections/2026-10-22-r2.jsonl`,
+imported with `--judge audit-correction-2026-10-22-r2`.
+
+- INTERVAL_SOFT_DECODER: the decision claim's finding said no quantum algorithm has a
+  guarantee outside d<L. The note supports only that none of the guarantees it cites
+  applies there, and it leaves the vanishing-density regime open.
+- PRIME_CHARACTER_OPI: see the end of Calibration.
+- PRIME_CHARACTER_CAPACITY_SOURCE: the coherent-error finding said
+  TD^2=||B||^2/(||G||^2+||B||^2) increases in both arguments. It decreases in ||G||^2; the
+  bound follows because it increases with ||B||^2<=M*epsilon_actual and with epsilon_actual
+  (judge B's wording).
+
 After the corrections the 30 first-pass notes stand at 24 needs-work and 6 sound.
+
+Re-importing a note replaces its review (import, step 3 of the judge loop), and
+`pass1/out/` and `calibration_r2/out_d/` still hold the uncorrected rows. Importing either
+of them again on its own, or after the corrections, undoes the corrections without a
+warning. To rebuild `reviews.json` from the judge files (after an importer change, as on
+2026-10-22), import them in this order, the corrections last and each corrections file
+after the ones before it, then render:
+
+```bash
+python tools/referee/referee.py import research/audits/reviews/calibration_r2/out_d/batch_01.jsonl --judge claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d
+python tools/referee/referee.py import research/audits/reviews/pass1/out/batch_*.jsonl --judge claude-opus-5.5-two-judges-reconciled-2026-10-21 --cut
+python tools/referee/referee.py import research/audits/reviews/corrections/2026-10-22.jsonl --judge audit-correction-2026-10-22
+python tools/referee/referee.py import research/audits/reviews/corrections/2026-10-22-r2.jsonl --judge audit-correction-2026-10-22-r2
+python tools/referee/referee.py render
+```
+
+`pass1/out/` needs `--cut` because three of its findings run past 600 characters; the
+first corrections file replaces all three. The rebuild stamps every review with the day's
+date as `reviewed_on` and stores the review of a note edited since as stale; nothing else
+changes. A later corrections file goes at the end.

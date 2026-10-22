@@ -1,6 +1,6 @@
 # Referee review: INTERVAL_SOFT_DECODER
 
-Note: `research/INTERVAL_SOFT_DECODER.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **sound**.
+Note: `research/INTERVAL_SOFT_DECODER.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22-r2. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -13,7 +13,7 @@ Judge A's one gap, that the decision cuts superpolynomial separation claims 'at 
 > cut claims of a SUPERPOLYNOMIAL quantum-search separation at constant full-RS interval width
 
 - Step: Decision And Next Scientific Question
-- Finding: A separation needs an efficient quantum algorithm with a guarantee, and every guarantee the note cites lies inside d<L at constant L: Chailloux-Tillich needs d/p<C with C<=L/p for any complex profile, and Sun-Wootters needs rate+density>1, i.e. (1-d/p)+L/p>1, so d<L (and applies only at fixed rates). There the O(N*L*d*p^d) DP is polynomial. Outside d<L the DP costs p^d, but no quantum algorithm has a guarantee there, so the cut drops no separation claim. Carrying 'certified' over from the body would be wording only.
+- Finding: A separation needs an efficient quantum algorithm with a guarantee, and every guarantee the note cites lies inside d<L at constant L: Chailloux-Tillich needs d/p<C with C<=L/p for any complex profile, and Sun-Wootters needs rate+density>1, i.e. (1-d/p)+L/p>1, so d<L (and applies only at fixed rates). There the O(N*L*d*p^d) DP is polynomial. Outside d<L the DP costs p^d, but none of the guarantees the note cites applies there (both need d<L), so the cut removes only separation claims the note has no basis for. Carrying 'certified' over from the body would be wording only.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

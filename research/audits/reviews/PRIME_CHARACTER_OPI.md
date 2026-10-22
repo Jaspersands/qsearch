@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_OPI
 
-Note: `research/PRIME_CHARACTER_OPI.md`. Reviewed 2026-10-22 by claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_OPI.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22-r2. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -10,10 +10,10 @@ The power-completion and strict zero-avoidance derivations check out: F^(1/r) tr
 
 ### 1. holds
 
-> Thus ALL common-coset inputs are solved perfectly
+> Thus ALL common-coset inputs are solved perfectly whenever `K >= (r-1)*ceil(N/r)`
 
 - Step: Constructive Classical Power Completion
-- Finding: Verified: F=lambda^r X^D(...) so F^(1/r)=R+O(1/X), giving deg(F-R^r)<=(r-1)D-1; Q(a_i)-t_i=beta*R(a_i)^r since W vanishes on selected points. Saved global thresholds hold (N16K8: 8<=8; N31K16: 16<=16; N127K77: 64<=77; r3 N63K46: 42<=46; r4 N32K24: 24<=24) and the artifact reports all of these global sources perfect. Holds in the zero-including mode, which is the section's scope.
+- Finding: Verified: F=lambda^r X^D(...) so F^(1/r)=R+O(1/X), giving deg(F-R^r)<=(r-1)D-1; Q(a_i)-t_i=beta*R(a_i)^r since W vanishes on selected points. Saved global thresholds hold (N16K8: 8<=8; N31K16: 16<=16; N127K77: 64<=77; r3 N63K46: 42<=46; r4 N32K24: 24<=24) and the artifact reports all of these global sources perfect. The N127,K39 global inputs fall below the threshold (64>39) and score 108/127 and 110/127, so the sentence holds only with its condition. Holds in the zero-including mode, which is the section's scope.
 - Conceded by the note's own self-check: no
 
 ### 2. holds
