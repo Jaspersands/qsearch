@@ -553,20 +553,28 @@ def _check_imports(root: Path) -> tuple[int, list[str]]:
 
 def check_imports_resolve(root: Path) -> list[Problem]:
     """Import every IMPORTS name, command function, certificate flag's function and subcommand
-    adder in this process, as the CLI would (slow)."""
+    adder in this process, as the CLI would (slow). Writes no __pycache__ into the checkout."""
     root = Path(root).resolve()
+    dont_write_bytecode, sys.dont_write_bytecode = sys.dont_write_bytecode, True
     try:
         _checked, failures = _check_imports(root)
     except Exception as error:  # noqa: BLE001 - the verifier failing to start is itself the problem
         return [Problem("resolve", ".", f"{type(error).__name__}: {error}")]
+    finally:
+        sys.dont_write_bytecode = dont_write_bytecode
     return [Problem("resolve", "qsearch_cli", failure) for failure in failures]
 
 
 def check_validate(root: Path) -> list[Problem]:
-    """Run ``qsearch.py validate`` as CI does (slow); a non-zero exit is one problem."""
+    """Run ``qsearch.py validate`` as CI does (slow), writing no __pycache__; a non-zero exit is one problem."""
     root = Path(root).resolve()
     result = subprocess.run(
-        [sys.executable, "qsearch.py", "validate"], cwd=root, capture_output=True, text=True, errors="replace"
+        [sys.executable, "qsearch.py", "validate"],
+        cwd=root,
+        capture_output=True,
+        text=True,
+        errors="replace",
+        env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"},
     )
     if result.returncode == 0:
         return []

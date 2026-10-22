@@ -16,7 +16,9 @@ python tools/preflight/preflight.py --root ../other-checkout
 It prints one line per problem, `check: path: message`, then `N problems`. It exits 1 when
 there is any problem and 0 when there is none. A `--root` that is not a directory, or that
 has no `qsearch.py` (say `--root qsearch_cli` by mistake), is a usage error (exit 2). Paths
-are relative to the checked root. It writes nothing.
+are relative to the checked root. It writes nothing: git is asked only through commands that
+never write the index, and the slow checks import the checkout with bytecode writing off, so
+they leave no `__pycache__` in it either.
 
 ## Why it exists
 
@@ -129,7 +131,8 @@ that commit will record, and that index is the one checked.
 | `--imports` | `resolve` | Calls `tools/split_cli/verify.py`'s `check_imports`, which imports every `IMPORTS` name and command function in this process, then imports and looks up the function of every `DISPATCH` certificate flag and the adder of every `ORDER` subcommand, as `qsearch_cli/main.py` and `parser.py` do. It catches a module that exists but fails to import, and a misspelled function or adder. One problem per failing name (`x: ...`, `--flag: ...`, `subcommand x: ...`), under the path `qsearch_cli`. |
 | `--validate` | `validate` | Runs `python qsearch.py validate` in the root, as CI does. A non-zero exit is one problem. Validate prints its report as JSON on stdout, so the message is `exit N: K issues, first: <candidate>: <message>`; when there is no report (a crash) it is `exit N:` and the last line of stderr, else of stdout. |
 
-Both together took about 40 seconds on 2026-10-21.
+Both together took about 17 seconds on 2026-10-22, and `--imports` alone about 11, the
+static checks included.
 
 ## Today's output
 

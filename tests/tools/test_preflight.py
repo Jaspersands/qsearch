@@ -835,6 +835,14 @@ def test_validate_reports_the_issues_printed_on_stdout(tmp_path: Path) -> None:
     assert [p.message for p in pf.check_validate(repo)] == ["exit 5: KeyError: id"]
 
 
+def test_validate_leaves_no_bytecode_in_the_checkout(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("PYTHONDONTWRITEBYTECODE", raising=False)
+    repo = _repo(tmp_path, committed={"qsearch.py": "import qsearch_cli.main\n"})
+
+    assert pf.check_validate(repo) == []
+    assert sorted(repo.rglob("__pycache__")) == []
+
+
 def test_imports_flag_reports_a_verifier_that_cannot_start(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     def broken_check_imports(root: Path) -> tuple[int, list[str]]:
         raise RuntimeError("qsearch_cli imported from another checkout")
@@ -878,11 +886,13 @@ def test_imports_flag_finds_a_tracked_module_that_fails_to_import(tmp_path: Path
         },
     )
 
+    environment = {key: value for key, value in os.environ.items() if key != "PYTHONDONTWRITEBYTECODE"}
     result = subprocess.run(
         [sys.executable, str(REPO / "tools" / "preflight" / "preflight.py"), "--root", str(repo), "--imports", "--json"],
         cwd=tmp_path,
         capture_output=True,
         text=True,
+        env=environment,
     )
 
     assert result.returncode == 1, result.stderr
@@ -893,6 +903,7 @@ def test_imports_flag_finds_a_tracked_module_that_fails_to_import(tmp_path: Path
             "message": "broken: ModuleNotFoundError: No module named 'qsearch_missing_dependency'",
         }
     ]
+    assert sorted(repo.rglob("__pycache__")) == []  # importing the checkout leaves no bytecode in it
 
 
 def test_imports_flag_imports_every_certificate_flag_and_subcommand_adder(tmp_path: Path) -> None:
