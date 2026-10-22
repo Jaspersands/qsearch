@@ -234,7 +234,7 @@ Round two changed two things in `INSTRUCTIONS.md`. The packet gained an `artifac
 - E also flagged POLAR_SOURCE_DESIGN's research decision ("the matching classical route is now constructive"). Checked: its review-pending part is real and is the polar-headline finding again, in the decision sentence. Its other point, that the m_i/root-fidelity identity is checked numerically only at N2/N4, is low-value: the note cites that identity as known duality (Renes) and claims no new theorem.
 - Both judges rated all four notes needs-work. This batch has no correctly scoped note, so whether the new checks over-flag clean notes is still untested. The next calibration should include one.
 
-The four calibration notes' stored reviews are round-two judge D's, two of them corrected on 2026-10-22 (see Corrections under First pass). NORM_ATTACK's decision gap now also carries E's K39-global overstatement, which D missed; D's other reviews already hold E's real findings. POLAR_SOURCE_DESIGN's N16-row gap no longer quotes "all coarse controls", which the note does not say, and is listed after the family and headline gaps, so the queue and the brief show the family gap as its worst claim.
+The four calibration notes' stored reviews are round-two judge D's, three of them corrected on 2026-10-22 (see Corrections under First pass). NORM_ATTACK's decision gap now also carries E's K39-global overstatement, which D missed; D's other reviews already hold E's real findings. POLAR_SOURCE_DESIGN's N16-row gap no longer quotes "all coarse controls", which the note does not say, and is listed after the family and headline gaps, so the queue and the brief show the family gap as its worst claim. OPI's power-completion claim (holds) quoted only "Thus ALL common-coset inputs are solved perfectly", which reads as unconditional; it now quotes the whole sentence, with its condition `K >= (r-1)*ceil(N/r)`, as C and E did, and its finding names the N127,K39 global inputs below that threshold (108/127 and 110/127).
 
 ## First pass (2026-10-21)
 
@@ -291,5 +291,19 @@ row, not `out/`'s.
   sqrt((p-1)rho(1-rho))p^(-n/2)); EXPLICIT_QUADRATIC_OPI called a bound of about 0.59
   trivial.
 - POLAR_SOURCE_DESIGN and PRIME_CHARACTER_NORM_ATTACK: see the end of Calibration.
+
+A second audit the same day corrected three more, verdicts unchanged. Each row is a copy of
+the note's latest row (for INTERVAL_SOFT_DECODER, the first corrections file's) with one
+claim changed. The rows are in `research/audits/reviews/corrections/2026-10-22-r2.jsonl`,
+imported with `--judge audit-correction-2026-10-22-r2`.
+
+- INTERVAL_SOFT_DECODER: the decision claim's finding said no quantum algorithm has a
+  guarantee outside d<L. The note supports only that none of the guarantees it cites
+  applies there, and it leaves the vanishing-density regime open.
+- PRIME_CHARACTER_OPI: see the end of Calibration.
+- PRIME_CHARACTER_CAPACITY_SOURCE: the coherent-error finding said
+  TD^2=||B||^2/(||G||^2+||B||^2) increases in both arguments. It decreases in ||G||^2; the
+  bound follows because it increases with ||B||^2<=M*epsilon_actual and with epsilon_actual
+  (judge B's wording).
 
 After the corrections the 30 first-pass notes stand at 24 needs-work and 6 sound.

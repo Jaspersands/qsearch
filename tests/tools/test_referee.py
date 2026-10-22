@@ -1188,6 +1188,7 @@ REVIEW_SOURCES = {
     "claude-opus-5.5-two-judges-reconciled-2026-10-21": "pass1/out/batch_*.jsonl",
     "claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d": "calibration_r2/out_d/batch_*.jsonl",
     "audit-correction-2026-10-22": "corrections/2026-10-22.jsonl",
+    "audit-correction-2026-10-22-r2": "corrections/2026-10-22-r2.jsonl",
 }
 # The calibration judges' output, by the letters tools/referee/README.md uses for them.
 CALIBRATION_JUDGES = {
@@ -1273,6 +1274,16 @@ def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
 
 
 @needs_reviews
+def test_opi_power_completion_quote_keeps_its_degree_condition() -> None:
+    """Cut at 'solved perfectly', the holds quote read as unconditional, but the saved N127,K39
+    global inputs (threshold 64 > 39) score 108/127 and 110/127."""
+    claim = _stored_claim("PRIME_CHARACTER_OPI", "Thus ALL common-coset inputs are solved perfectly")
+    assert claim["verdict"] == "holds"
+    assert " ".join(claim["quote"].split()).endswith("solved perfectly whenever `K >= (r-1)*ceil(N/r)`")
+    assert "K39" in claim["finding"] and "108/127" in claim["finding"] and "110/127" in claim["finding"]
+
+
+@needs_reviews
 @pytest.mark.parametrize("stem, quote_start, verdict, wrong, right", [
     ("PRIME_CHARACTER_INTERLEAVED_PROBE", "The joint product correlation is enhanced", "gap",
      "cannot hold for those reported cases", "do not contradict"),
@@ -1284,6 +1295,13 @@ def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
      "1/sqrt(p) classical term", "sqrt((p-1)rho(1-rho))p^(-n/2)"),
     ("EXPLICIT_QUADRATIC_OPI", "The high-rate quadratic family has a constructive", "gap",
      "can be trivial", "about 0.59"),
+    # The note cites two quantum guarantees and leaves the vanishing-density regime open; it
+    # never says no quantum algorithm has a guarantee outside d<L.
+    ("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation", "holds",
+     "no quantum algorithm has a guarantee", "none of the guarantees the note cites applies there"),
+    # b/(g+b) decreases in g: the bound uses ||G||^2=1-eps, so the ratio grows with eps.
+    ("PRIME_CHARACTER_CAPACITY_SOURCE", "is well defined, and P(unique herald)>=1-epsilon", "holds",
+     "increases in both arguments", "decreases in ||G||^2"),
 ])
 def test_corrected_findings_state_the_note_and_artifact_correctly(stem, quote_start, verdict, wrong, right) -> None:
     claim = _stored_claim(stem, quote_start)
@@ -1329,6 +1347,7 @@ def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> No
 def test_readme_records_the_corrections_and_the_stored_first_pass_counts() -> None:
     section = _readme_section("## First pass")
     assert "corrections/2026-10-22.jsonl" in section and "audit-correction-2026-10-22" in section
+    assert "corrections/2026-10-22-r2.jsonl" in section and "audit-correction-2026-10-22-r2" in section
     stems = {p["stem"] for path in sorted((REVIEWS_DIR / "pass1").glob("batch_*.json"))
              for p in json.loads(path.read_text(encoding="utf-8"))["notes"]}
     counts = {o: sum(_stored()[s]["overall"] == o for s in stems) for o in ("needs-work", "sound")}

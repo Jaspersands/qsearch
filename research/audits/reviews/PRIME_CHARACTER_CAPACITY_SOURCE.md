@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_CAPACITY_SOURCE
 
-Note: `research/PRIME_CHARACTER_CAPACITY_SOURCE.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_CAPACITY_SOURCE.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22-r2. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -37,7 +37,7 @@ The two judges agree on every claim: the flat 1/(p-1) Fourier spectrum, the sqrt
 > is well defined, and P(unique herald)>=1-epsilon, trace_distance^2 <= M*epsilon/(1-epsilon+M*epsilon)
 
 - Step: Coherent Error Is Not Bad Mass
-- Finding: For orthogonal G and B, TD^2=||B||^2/(||G||^2+||B||^2), which increases in both arguments, giving the bound. The M22, epsilon 0.01 control gives TD=sqrt(0.22/1.21)=0.426, i.e. 42.6 times epsilon, consistent with 'over40 times'.
+- Finding: For orthogonal G and B, TD^2=||B||^2/(||G||^2+||B||^2), which increases with ||B||^2<=M*epsilon_actual and with epsilon_actual (it decreases in ||G||^2=1-epsilon_actual), giving the bound. The M22, epsilon 0.01 control gives TD=sqrt(0.22/1.21)=0.426, i.e. 42.6 times epsilon, consistent with 'over40 times'.
 - Conceded by the note's own self-check: no
 
 ### 5. holds
