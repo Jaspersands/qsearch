@@ -615,11 +615,18 @@ def build(
 
 
 LIST_CAP = 40  # ids or rows shown per list; agent_brief.json has them all
+TITLE_CAP = 120  # characters of a title in the duplicates table; agent_brief.json has it whole
 
 
 def _flat(text: Any) -> str:
     """Text on one line, otherwise verbatim: in a list item or a sentence a pipe is just a character."""
     return " ".join(str(text if text is not None else "").split())
+
+
+def _clip(text: Any) -> str:
+    """A title for the duplicates table: on one line, cut to TITLE_CAP characters and marked "..." when cut."""
+    flat = _flat(text)
+    return flat if len(flat) <= TITLE_CAP else flat[:TITLE_CAP].rstrip() + "..."
 
 
 def _cell(text: Any) -> str:
@@ -788,8 +795,8 @@ def _render_duplicates(section: dict[str, Any], since: str) -> list[str]:
         lines[0] += " Read both records before merging them; a sweep sibling is a separate result and stays."
         lines += ["", "| Cosine | Record | Title | Record | Title |", "|---|---|---|---|---|"]
         for pair in pairs[:LIST_CAP]:
-            lines.append(f"| {pair['score']:.2f} | `{_cell(pair['a'])}` | {_cell(_flat(pair['title_a'])[:120])} | "
-                         f"`{_cell(pair['b'])}` | {_cell(_flat(pair['title_b'])[:120])} |")
+            lines.append(f"| {pair['score']:.2f} | `{_cell(pair['a'])}` | {_cell(_clip(pair['title_a']))} | "
+                         f"`{_cell(pair['b'])}` | {_cell(_clip(pair['title_b']))} |")
         if len(pairs) > LIST_CAP:
             lines += ["", f"And {len(pairs) - LIST_CAP} more in agent_brief.json."]
     return lines

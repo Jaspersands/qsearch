@@ -61,7 +61,9 @@ preflight only helps when someone runs it. The brief puts each of them on one pa
 `agent_brief.json` holds every section in full. The markdown caps each list and table at 40
 entries and then says how many more there are and where (`agent_brief.json`; for the referee,
 `REFEREE_QUEUE.md` too). Text from the sources is kept verbatim on one line: a pipe stays a
-pipe in list items (`|A|+|B|`), and in table cells it is escaped as `\|`.
+pipe in list items (`|A|+|B|`), and in table cells it is escaped as `\|`. The one cut: the
+duplicates table shows the first 120 characters of each title, ending in `...` when the title
+is longer (the titles are negative claims, and about a fifth of them are).
 
 **Degradation rule.** Every section returns `{"available": bool, ...}`. A section whose file
 is missing, whose tool is not in the checkout, or that raises for any reason becomes

@@ -1182,6 +1182,18 @@ def test_render_keeps_pipes_in_list_items_and_escapes_them_in_table_cells() -> N
     assert "x \\| y" in row and row.replace("\\|", "").count("|") == 6
 
 
+def test_render_marks_a_duplicate_title_it_cuts() -> None:
+    # Titles are negative claims, and 189 of the 975 records run past 120 characters; a cut
+    # in mid-word with no marker would pass for the whole claim.
+    long = " ".join(f"word{i}" for i in range(40))
+    page = _page(duplicates={"available": True, "checked": 1, "unchecked": [], "index_issues": [], "threshold": 0.8,
+                             "pairs": [{"a": "negative:A", "b": "negative:B", "score": 0.9, "title_a": long,
+                                        "title_b": "short"}]})
+    row = next(line for line in page["Possible duplicates"].splitlines() if line.startswith("| 0.90 "))
+    assert f"| {long[:B.TITLE_CAP].rstrip()}... |" in row and "| short |" in row
+    assert B.TITLE_CAP == 120 and "120 characters" in (REPO / "tools" / "brief" / "README.md").read_text("utf-8")
+
+
 def test_render_caps_every_list_and_says_how_many_more() -> None:
     assert B.LIST_CAP == 40  # the README's number
     n = 41
