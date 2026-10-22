@@ -5,7 +5,8 @@
     python tools/dqi_screen/screen.py --params cand.json --json --out screen.json
 
 A candidate is a max-LINSAT family: m constraints in F_q whose matrix B has rank n (the
-number of variables when B has full column rank), accepted density rho = |F_i| / q, the objective ("count" of satisfied constraints, or "cosine"), and the claimed decoding
+number of variables when B has full column rank), accepted density rho = |F_i| / q, the
+objective ("count" of satisfied constraints, or "cosine"), and the claimed decoding
 radius. The screen computes the closed-form quantities, runs each rule and gives a verdict:
 "not viable" when a hard rule fails, "unknown" when an input is missing or a soft rule
 flags, else "viable". It is a soundness screen, not a proof.
