@@ -99,6 +99,11 @@ def test_parse_note_flags_only_what_the_claim_checker_raises_on_the_result(tmp_p
     )
     assert X.parse_note(_write(tmp_path, "FLAGGED", text)).flags == ["input_loading"]
     assert X.parse_note(_write(tmp_path, "PLAIN", FIXTURE_NOTE)).flags == []
+    # Only the result's prose: the same words in fenced code or a table row raise nothing.
+    coded = text.replace("The sampler reads the table through QRAM.",
+                         "The sampler matches the law.\n\n```text\nload the table through QRAM\n```\n\n"
+                         "| access | The sampler reads the table through QRAM. |")
+    assert X.parse_note(_write(tmp_path, "CODED", coded)).flags == []
 
 
 def test_parse_note_heading_rules_skip_look_alike_sections(tmp_path: Path) -> None:
@@ -148,6 +153,10 @@ def test_parse_note_heading_rules_skip_look_alike_sections(tmp_path: Path) -> No
         assert X.parse_note(_write(tmp_path, "LOOK_ALIKES", note)).self_check == "A degenerate pencil fails; the repair adds a shift."
     only = text.replace("## Research Decision\n\nStop the pencil line.\n", "")
     assert X.parse_note(_write(tmp_path, "LOOK_ALIKES", only)).decision == "The pencil recovers every saved root."
+    kill_first = text.replace("## Why This Is The Next Question", "## Try To Kill The Claim").replace(
+        "## Try To Disprove The Pencil, Then Repair It", "## Discussion")
+    packet = X.parse_note(_write(tmp_path, "LOOK_ALIKES", kill_first))
+    assert packet.result == "The pencil recovers every saved root." and packet.self_check == "Motivation only."
 
 
 def test_parse_note_falls_back_to_the_first_section_for_result(tmp_path: Path) -> None:
@@ -441,6 +450,7 @@ def test_select_notes_orders_by_status_date_then_stem_and_skips_current_reviews(
 
     assert [p.stem for p in R.select_notes(tmp_path, prefixes=("PRIME",), exclude_reviewed=False)] == ["PRIME_NEW", "PRIME_OLD"]
     assert [p.stem for p in R.select_notes(tmp_path, limit=2, exclude_reviewed=False)] == everything[:2]
+    assert [p.stem for p in R.select_notes(tmp_path, limit=0, exclude_reviewed=False)] == everything  # 0 is all
     assert [p.stem for p in R.select_notes(tmp_path, statuses=("superseded",))] == ["SUPERSEDED_ONE"]
 
 
@@ -555,7 +565,7 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
             R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [_row(tmp_path, stem="OTHER", claims=[]), row])], "j")
     assert not (tmp_path / R.REVIEWS).exists()
 
-    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900)] * 6
+    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900, step="y" * 900)] * 6
     good = _row(tmp_path, claims=many, summary="s" * 2000)
     stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21")
@@ -564,6 +574,7 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     entry = data["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["reviewed_on"], entry["overall"], entry["stale"]) == ("test-judge", "2026-10-21", "needs-work", False)
     assert len(entry["claims"]) == 6 and len(entry["claims"][0]["finding"]) == 600 and len(entry["summary"]) == 1500
+    assert len(entry["claims"][0]["step"]) == 300
     assert entry["claims"][0]["covered_by_self_check"] is False
     assert data["notes"]["OTHER"]["stale"] is True
 
@@ -720,6 +731,14 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     assert result["stale"] == ["FIXTURE_NOTE"]
     claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
     assert claim["verified"] is False and claim["quote"] == quote
+    short = _row(tmp_path, claims=[_claim("It holds for all")]) | {"content_sha": rows[0]["content_sha"]}
+    with pytest.raises(ValueError, match="under 6 words"):  # even where an unfound quote is kept unverified
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "moved" / "short.jsonl", [short])], "j")
+
+    beside = _jsonl(tmp_path / "pass" / "batch_01.jsonl", rows)  # in the batch's own folder, not under out/
+    R.import_reviews(tmp_path, [beside], "j", today="2026-10-22")
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["verified"] is True
+    beside.unlink()
 
     batch = tmp_path / "pass" / "batch_01.json"
     tampered = json.loads(batch.read_text(encoding="utf-8"))
@@ -727,6 +746,10 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     batch.write_text(json.dumps(tampered), encoding="utf-8")
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "invented.jsonl", [invented])], "j")
     assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["verified"] is False
+    # A text that does not hash to its packet's content_sha is never trusted, even by its own hash.
+    forged = invented | {"content_sha": hashlib.sha256(tampered["notes"][0]["text"].encode("utf-8")).hexdigest()}
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "forged.jsonl", [forged])], "j")
 
     R.render(tmp_path, today="2026-10-22")
     review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
@@ -919,6 +942,17 @@ def test_find_quote_reads_letters_in_any_script_and_lets_a_prose_em_dash_go() ->
     assert "em dash" in R.REFEREE_INSTRUCTIONS
 
 
+def test_find_quote_tries_every_occurrence_and_import_caps_the_stored_quote(tmp_path: Path) -> None:
+    note = "First the bound b>=epsilon holds here. Later the bound b<=epsilon holds here."
+    assert R.find_quote("the bound b<=epsilon holds here", note) == ("the bound b<=epsilon holds here", "")
+    words = " ".join(f"word{index}" for index in range(120))
+    _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
+    row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(words)])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "long.jsonl", [row])], "j")
+    stored = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]["claims"][0]
+    assert len(words) > 400 and stored["verified"] is True and stored["quote"] == words[:400]
+
+
 def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
     # x - (-y) is x + y: two signs apart are two signs, so dropping one is a flipped sign.
     note = "We find the shift is x - (-y) for every saved input, and the bound holds — on each."
@@ -928,6 +962,8 @@ def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
     for run in ("and the bound holds -— on each", "and the bound holds —– on each", "and the bound holds --- on each"):
         assert R.find_quote(run, note)[0] == "and the bound holds — on each", run
     assert R.find_quote("and the bound holds - - on each", note)[0] is None
+    doubled = note.replace("—", "——")  # a long prose dash is one dash, too
+    assert R.find_quote("and the bound holds - on each", doubled)[0] == "and the bound holds —— on each"
 
 
 def _reviewed_repo(root: Path) -> None:
@@ -961,12 +997,40 @@ def test_render_writes_a_note_review_and_the_queue(tmp_path: Path) -> None:
     assert "Stale" in (tmp_path / "research/audits/reviews/EDITED.md").read_text(encoding="utf-8")
     queue = (tmp_path / R.QUEUE).read_text(encoding="utf-8")
     assert "| unsound | 1 |" in queue and "| sound | 1 |" in queue and "| stale | 1 |" in queue
+    assert "| needs-work | 0 |" in queue  # EDITED's needs-work review is stale, so it is counted only as stale
     flagged, rest = queue.split("## Flagged", 1)[1].split("## Stale", 1)
     assert "FIXTURE_NOTE" in flagged and "wrong" in flagged and "EDITED" not in flagged
     stale, upcoming = rest.split("## Next 30", 1)
     assert "EDITED" in stale
-    assert [s for s in ("OTHER_0", "OTHER_1", "OTHER_2", "EDITED", "FIXTURE_NOTE", "SOUND_NOTE") if s in upcoming] == [
-        "OTHER_0", "OTHER_1", "OTHER_2", "EDITED"]
+    rows = [line.split("|")[1].strip() for line in upcoming.splitlines() if line.startswith("| ") and "Note" not in line]
+    assert rows == ["EDITED", "OTHER_2", "OTHER_1", "OTHER_0"]
+
+
+def test_a_deleted_reviewed_note_is_stale_and_render_still_runs(tmp_path: Path) -> None:
+    _reviewed_repo(tmp_path)
+    (tmp_path / "research" / "FIXTURE_NOTE.md").unlink()
+    result = R.status(tmp_path)
+    assert (result["reviewed"], result["flagged"], result["stale"]) == (3, [], ["EDITED", "FIXTURE_NOTE"])
+    R.render(tmp_path, today="2026-10-22")
+    assert "**Stale:**" in (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    queue = (tmp_path / R.QUEUE).read_text(encoding="utf-8")
+    assert "- FIXTURE_NOTE (reviewed 2026-10-21, unsound)" in queue and "| unsound | 0 |" in queue
+
+
+def test_status_lists_unsound_first_then_by_stem_and_the_cli_names_the_worst_claim(tmp_path: Path, capsys) -> None:
+    entries = {}
+    for stem, overall, verdict in (("B_NEEDS", "needs-work", "gap"), ("A_NEEDS", "needs-work", "gap"), ("Z_UNSOUND", "unsound", "wrong")):
+        path = _dated_note(tmp_path, stem, "2026-10-12. REVIEW PENDING.", 1000)
+        claims = [{"quote": f"A result about the {stem.lower()} inputs", "verdict": verdict, "step": "Result", "finding": "f"}]
+        entries[stem] = {"content_sha": R.note_sha(path), "overall": overall, "reviewed_on": "2026-10-21", "claims": claims}
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps({"notes": entries}), encoding="utf-8")  # in the order B, A, Z
+    assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["Z_UNSOUND", "A_NEEDS", "B_NEEDS"]
+    assert R.main(["status", "--root", str(tmp_path)]) == 0
+    out = capsys.readouterr().out.splitlines()
+    assert out[0] == "3 reviewed, 3 flagged, 0 stale"
+    assert out[1] == "  unsound    Z_UNSOUND  wrong: A result about the z_unsound inputs"
 
 
 def test_status_returns_only_flagged_non_stale_reviews(tmp_path: Path) -> None:
