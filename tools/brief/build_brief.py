@@ -810,14 +810,48 @@ def render(brief: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def _output_dir(root: Path, out: Path | None) -> Path:
+    return Path(out) if out is not None else Path(root) / Path(OUTPUT_MD).parent
+
+
+def _replace(path: Path, text: str) -> None:
+    """Write text beside path, then rename it over path: a reader sees the old file or the new one, never part of one."""
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")  # per process, so two runs never share one
+    try:
+        tmp.write_text(text, encoding="utf-8")
+        os.replace(tmp, path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
 def write(root: Path, brief: dict[str, Any], out: Path | None = None) -> tuple[Path, Path]:
-    """Write AGENT_BRIEF.md and agent_brief.json into `out` (default: root/research/audits)."""
-    directory = Path(out) if out is not None else Path(root) / Path(OUTPUT_MD).parent
+    """Write agent_brief.json, then AGENT_BRIEF.md, into `out` (default: root/research/audits).
+
+    Each file is replaced whole (written beside it, then renamed), so an agent reading it while
+    the brief is rebuilt never sees it empty or cut short; the two are replaced one after the other.
+    """
+    directory = _output_dir(root, out)
     directory.mkdir(parents=True, exist_ok=True)
     md, js = directory / Path(OUTPUT_MD).name, directory / Path(OUTPUT_JSON).name
-    md.write_text(render(brief), encoding="utf-8")
-    js.write_text(json.dumps(brief, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    text = render(brief)
+    _replace(js, json.dumps(brief, indent=2, sort_keys=True, ensure_ascii=False) + "\n")
+    _replace(md, text)
     return md, js
+
+
+def _out_problem(directory: Path) -> str | None:
+    """Why the output directory cannot take the two files, found before the build; None when it looks writable."""
+    directory = Path(directory).absolute()
+    if directory.exists() and not directory.is_dir():
+        return f"{directory} is not a directory"
+    existing = directory
+    while not existing.exists():  # the directory, or the nearest parent mkdir would create it in
+        existing = existing.parent
+    if not existing.is_dir():
+        return f"{directory} cannot be created: {existing} is not a directory"
+    if not os.access(existing, os.W_OK | os.X_OK):
+        return f"{existing} is not writable"
+    return None
 
 
 def _since_days_arg(value: str) -> int:
@@ -842,8 +876,15 @@ def main(argv: list[str] | None = None) -> int:
     root = args.root.resolve()
     if not root.is_dir():
         parser.error(f"--root {root} is not a directory")
+    problem = _out_problem(_output_dir(root, args.out))  # before the build, not after it
+    if problem is not None:
+        parser.error(f"--out: {problem}" if args.out is not None else f"cannot write the brief: {problem}")
     brief = build(root, since_days=args.since_days)
-    md, js = write(root, brief, args.out)
+    try:
+        md, js = write(root, brief, args.out)
+    except OSError as error:  # what the check above cannot see (a full disk, a read-only mount)
+        print(f"{parser.prog}: error: cannot write the brief: {error}", file=sys.stderr)
+        return 2
     if args.json:
         print(json.dumps(brief, indent=2, sort_keys=True, ensure_ascii=False))
         return 0

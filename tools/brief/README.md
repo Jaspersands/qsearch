@@ -19,8 +19,12 @@ python tools/brief/build_brief.py --json                     # also print the br
 python tools/brief/build_brief.py --root ../other-checkout
 ```
 
-It exits 0 whatever it finds; a `--root` that is not a directory or a `--since-days` outside 1
-to 3650 is a usage error (exit 2), and `build()` raises `ValueError` for such a window. The
+It exits 0 whatever it finds; a `--root` that is not a directory, a `--since-days` outside 1
+to 3650, or an output directory that is not a writable directory (checked before the build) is
+a usage error (exit 2), and `build()` raises `ValueError` for such a window. A write that fails
+anyway (a full disk) also exits 2, with one line. Each file is written beside itself and renamed
+into place, `agent_brief.json` first, so an agent reading the brief while it is rebuilt sees
+the old file or the new one, never an empty or cut-short one. The
 window runs from 00:00 local time on the day `--since-days` before today's local date
 (default 7); a `today` passed to `build()` as a datetime counts as its local date.
 

@@ -1101,3 +1101,88 @@ def test_main_writes_both_files(tmp_path: Path, capsys) -> None:
             B.main(["--root", str(root), "--since-days", days])
         assert exit_info.value.code == 2, days
     assert B.main(["--root", str(root), "--since-days", "3650", "--out", str(out)]) == 0
+
+
+def _bare_brief() -> dict:
+    return {"generated_on": "2026-10-20", "since_days": 7, **{name: {"available": False, "reason": "x"}
+                                                              for name in SECTIONS}}
+
+
+def test_main_refuses_an_out_that_cannot_take_the_files_before_building(tmp_path: Path, monkeypatch, capsys) -> None:
+    root = tmp_path / "empty"
+    root.mkdir()
+    a_file = tmp_path / "a_file"
+    a_file.write_text("x", encoding="utf-8")
+    cases = [a_file, a_file / "below"]
+    locked = tmp_path / "locked"
+    locked.mkdir()
+    locked.chmod(0o555)
+    if os.geteuid() != 0:  # root writes anywhere
+        cases += [locked, locked / "below"]
+    monkeypatch.setattr(B, "build", lambda *args, **kwargs: pytest.fail("built before checking --out"))
+    try:
+        for out in cases:
+            with pytest.raises(SystemExit) as exit_info:
+                B.main(["--root", str(root), "--out", str(out)])
+            assert exit_info.value.code == 2, out
+            err = capsys.readouterr().err
+            assert "--out" in err and "Traceback" not in err, err
+    finally:
+        locked.chmod(0o755)
+
+
+def test_main_reports_a_failed_write_in_one_line(tmp_path: Path, monkeypatch, capsys) -> None:
+    root = tmp_path / "empty"
+    root.mkdir()
+    out = tmp_path / "out"
+
+    def fail(*args, **kwargs):
+        raise PermissionError(13, "Permission denied", str(out / "agent_brief.json"))
+
+    monkeypatch.setattr(B, "write", fail)
+    assert B.main(["--root", str(root), "--out", str(out)]) == 2
+    err = capsys.readouterr().err
+    assert err.count("\n") == 1 and "Permission denied" in err and "agent_brief.json" in err, err
+
+
+def test_write_replaces_each_file_whole_json_first(tmp_path: Path, monkeypatch) -> None:
+    # A reader (an agent starting its session) must see the old file or the new one, never an
+    # empty or half-written one.
+    out = tmp_path / "out"
+    out.mkdir()
+    md, js = out / "AGENT_BRIEF.md", out / "agent_brief.json"
+    md.write_text("old md", encoding="utf-8")
+    js.write_text('{"old": true}', encoding="utf-8")
+    real_replace, real_write_text, replaced, written = os.replace, Path.write_text, [], []
+
+    def spy_replace(src, dst):
+        assert md.read_text(encoding="utf-8") == "old md"  # whole, until it is replaced
+        replaced.append(Path(dst).name)
+        real_replace(src, dst)
+
+    def spy_write_text(self, *args, **kwargs):
+        written.append(self)
+        return real_write_text(self, *args, **kwargs)
+
+    monkeypatch.setattr(B.os, "replace", spy_replace)
+    monkeypatch.setattr(Path, "write_text", spy_write_text)
+    B.write(tmp_path, _bare_brief(), out)
+    monkeypatch.undo()
+    assert replaced == ["agent_brief.json", "AGENT_BRIEF.md"]
+    assert md not in written and js not in written
+    assert sorted(path.name for path in out.iterdir()) == ["AGENT_BRIEF.md", "agent_brief.json"]
+    assert md.read_text(encoding="utf-8").startswith("# Agent brief")
+    assert json.loads(js.read_text(encoding="utf-8"))["since_days"] == 7
+
+    # A write that fails leaves the old files whole and no temporary file behind.
+    md.write_text("old md", encoding="utf-8")
+    js.write_text('{"old": true}', encoding="utf-8")
+
+    def full(src, dst):
+        raise OSError(28, "No space left on device")
+
+    monkeypatch.setattr(B.os, "replace", full)
+    with pytest.raises(OSError):
+        B.write(tmp_path, _bare_brief(), out)
+    assert md.read_text(encoding="utf-8") == "old md" and js.read_text(encoding="utf-8") == '{"old": true}'
+    assert sorted(path.name for path in out.iterdir()) == ["AGENT_BRIEF.md", "agent_brief.json"]
