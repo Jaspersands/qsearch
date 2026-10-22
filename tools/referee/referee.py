@@ -894,6 +894,9 @@ def main(argv: list[str] | None = None) -> int:
     stat = sub.add_parser("status", parents=[common], help="Flagged and stale reviews.")
     stat.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
+    if not (args.root / "research").is_dir():  # a mistyped --root would read as an empty checkout
+        print(f"error: {args.root} has no research/ folder; --root must be a Q-Search checkout", file=sys.stderr)
+        return 2
     try:
         return _run(parser, args)
     except StoreError as error:

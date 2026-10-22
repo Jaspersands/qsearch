@@ -27,6 +27,9 @@ python tools/referee/referee.py status [--json]
 | `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
 | `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, unsound before needs-work and each by stem, with the worst claim, and stale ones (a deleted note's review is stale). Used by the agent brief. |
 
+Every command stops with exit 2 when `--root` (default: this checkout) has no `research/`
+folder, so a mistyped root never reads as a checkout with no notes or reviews.
+
 ## Selection
 
 A note is review pending when the corpus status rule (`note_status` in

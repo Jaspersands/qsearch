@@ -768,6 +768,20 @@ def test_cli_rejects_bad_numbers_and_reports_import_errors_without_a_traceback(t
         assert "nothing imported" in capsys.readouterr().err
 
 
+def test_cli_stops_on_a_root_that_is_not_a_checkout(tmp_path: Path, capsys) -> None:
+    # status said "no reviews yet" and select "0 notes", both exit 0, for a mistyped --root;
+    # render made a fresh research/audits/ there.
+    answer = _jsonl(tmp_path / "rows.jsonl", [{"stem": "FIXTURE_NOTE"}])
+    for root in (tmp_path / "nonexistent", tmp_path):
+        for argv in (["status"], ["status", "--json"], ["select"], ["render"], ["export", "--out-dir", str(tmp_path / "o")],
+                     ["export", "--out-dir", str(tmp_path / "o"), "--note", "FIXTURE_NOTE"], ["import", str(answer), "--judge", "j"]):
+            capsys.readouterr()
+            assert R.main([*argv, "--root", str(root)]) == 2, argv
+            captured = capsys.readouterr()
+            assert captured.out == "" and "no research/ folder" in captured.err, argv
+    assert sorted(path.name for path in tmp_path.iterdir()) == ["rows.jsonl"]
+
+
 def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     R.export_batches(tmp_path, tmp_path / "pass", notes[:2])
