@@ -631,8 +631,8 @@ def test_arxiv_section_lists_open_flags_new_reviews_and_open_actions(tmp_path: P
     assert [(f["id"], f["verdict"]) for f in section["flagged"]] == [
         ("2610.11111", None), ("2610.22222", None), ("2610.33333", "should-cite")]
     assert section["flagged"][0] == {
-        "id": "2610.11111", "title": "Open new kill", "label": "possible-kill", "first_seen": "2026-10-18", "verdict": None,
-        "by": None, "open": True}
+        "id": "2610.11111", "title": "Open new kill", "label": "possible-kill", "first_seen": "2026-10-18",
+        "verdict": None, "by": None, "open": True}
     assert section["reviewed"] == [
         {"id": "2610.33333", "verdict": "should-cite", "by": "human", "reviewed_on": "2026-10-20"},
         {"id": "2610.66666", "verdict": "related-only", "by": "judge:x", "reviewed_on": "2026-10-19"},
@@ -906,6 +906,26 @@ def test_inertia_section_is_unavailable_for_a_malformed_cockpit(tmp_path: Path, 
     _write_json(tmp_path / B.COCKPIT, cockpit)  # json writes NaN and Infinity, and Python reads them back
     section = B._section("inertia", B.inertia_section, tmp_path)
     assert section["available"] is False and field in section["reason"], section
+
+
+@pytest.mark.parametrize("cockpit, why", [
+    ({"generated_on": "2026-10-10", "directions": []}, "has no inertia field"),
+    ({"generated_on": "2026-10-10", "inertia": None}, "has no inertia field"),
+    ({"generated_on": "2026-10-10", "inertia": {}}, "has no inertia field"),
+    # The first committed cockpit (2026-10-19): an inertia block from before `available`.
+    ({"generated_on": "2026-10-19", "inertia": {"threshold": 8, "directions": [], "flags": []}},
+     "inertia field has no `available`"),
+])
+def test_inertia_section_names_no_cause_it_did_not_check(tmp_path: Path, cockpit: dict, why: str) -> None:
+    # "no registry history" is the cockpit's own cause for `available: false`; a cockpit without
+    # the field never said that, and the fix is a rebuild.
+    _write_json(tmp_path / B.COCKPIT, cockpit)
+    section = B.inertia_section(tmp_path)
+    assert section["available"] is False
+    assert why in section["reason"] and "rebuild: python tools/cockpit/build_cockpit.py" in section["reason"]
+    assert "no registry history" not in section["reason"]
+    _write_json(tmp_path / B.COCKPIT, {**cockpit, "inertia": {"available": False}})
+    assert B.inertia_section(tmp_path)["reason"].endswith("has no inertia measure: no registry history")
 
 
 def test_inertia_section_missing(tmp_path: Path) -> None:

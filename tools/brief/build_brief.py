@@ -472,9 +472,17 @@ def inertia_section(root: Path) -> dict[str, Any]:
     cockpit = read_json(path)
     inertia = cockpit.get("inertia") or {}
     warnings = _cockpit_warnings(cockpit.get("warnings"))
-    if not inertia.get("available"):
+    built = cockpit.get("generated_on")
+    rebuild = "rebuild: python tools/cockpit/build_cockpit.py"
+    if not isinstance(inertia, dict):
+        raise TypeError(f"{COCKPIT} inertia is a {type(inertia).__name__}, not an object")
+    if not inertia:
+        return {"available": False, "reason": f"the cockpit of {built} has no inertia field ({rebuild})"}
+    if "available" not in inertia:  # written before build_cockpit gave the measure that field
+        return {"available": False, "reason": f"the cockpit of {built} is older than the brief: its inertia field has "
+                                              f"no `available` ({rebuild})"}
+    if not inertia["available"]:  # build_cockpit sets it false only without registry history
         why = "; ".join(warnings) or "no registry history"
-        built = cockpit.get("generated_on")
         return {"available": False, "reason": f"the cockpit of {built} has no inertia measure: {why}"}
     flags = [
         {
