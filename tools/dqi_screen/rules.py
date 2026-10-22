@@ -140,6 +140,36 @@ def plotkin_distance(m: int, n: int, q: int) -> int:
     return total * q ** (k - 1) // (q**k - 1)
 
 
+def griesmer_distance(m: int, n: int, q: int) -> int:
+    """Largest distance allowed by Griesmer for a linear [m, k=m-n]_q code.
+
+    The exact bound is sum(i=0..k-1, ceil(d/q**i)) <= m. Once a term is one,
+    all remaining terms are one, so the search costs O(log(m) * log_q(m)).
+    """
+    if not 0 <= n < m or q < 2:
+        raise ValueError(f"need 0 <= n < m and q >= 2, got m={m}, n={n}, q={q}")
+    k = m - n
+
+    def fits(distance: int) -> bool:
+        total, term, remaining = 0, distance, k
+        while remaining and term > 1:
+            total += term
+            if total > m:
+                return False
+            term = (term + q - 1) // q
+            remaining -= 1
+        return total + remaining <= m
+
+    lo, hi = 1, n + 2  # distance one fits; Singleton excludes hi
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if fits(mid):
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
 def binary_entropy(x: float) -> float:
     """H_2(x) in bits."""
     return q_ary_entropy(x, 2)
@@ -208,12 +238,18 @@ def _log2_ball(m: int, radius: int, letters: int) -> float:
     """log2 sum_{i <= radius} C(m, i) letters^i in floating point: the sum runs outward from its
     largest term and stops at a term below 2^-100 of it (the at most m terms left beyond are
     smaller still)."""
+    if m > 2**53:
+        raise ValueError("inputs too large to screen in floating point: packing length m exceeds 2^53")
     log2_letters = math.log2(letters)
     top, peak = _ball_peak(m, radius, letters)
     total = 1.0
+    terms = 0
     for step, end in ((-1, -1), (1, radius + 1)):
         i = top + step
         while i != end:
+            terms += 1
+            if terms > 100_000:
+                raise ValueError("inputs too large to screen in floating point: packing sum exceeds 100000 terms")
             rel = _log2_binomial(m, i) + i * log2_letters - peak
             if rel < -100:
                 break
@@ -225,6 +261,8 @@ def _log2_ball(m: int, radius: int, letters: int) -> float:
 def _packing_radius_float(m: int, n: int, q: int, letters: int) -> int:
     """packing_radius in floating point, by bisection on the ball size; it never rejects a
     radius on lgamma rounding (a tolerance of 1e-9 relative)."""
+    if m > 2**53:
+        raise ValueError("inputs too large to screen in floating point: packing length m exceeds 2^53")
     budget = n * math.log2(q)
     tol = 1e-9 * (1 + budget)
     if m * math.log2(letters + 1) <= budget + tol:
@@ -379,7 +417,7 @@ def subfield_baseline(rho: float, alpha_sub: float, m: int) -> float:
     rho = _unit("rho", rho)
     if not 0 <= alpha_sub <= 1 or m < 1:
         raise ValueError(f"need 0 <= alpha_sub <= 1 and m >= 1, got {alpha_sub}, {m}")
-    return rho + (1 - rho) * math.floor(alpha_sub * m + 1e-9) / m
+    return 1 - (1 - rho) * (m - math.floor(alpha_sub * m + 1e-9)) / m
 
 
 def subfield_blocks_at_half(alpha: float, b: int, c: int) -> bool:

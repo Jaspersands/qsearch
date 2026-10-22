@@ -79,6 +79,35 @@ def test_screen_dqi_candidate_tool(fake_repo: Path) -> None:
     assert payload["error"]
 
 
+def test_dqi_exact_string_and_large_input_leave_other_mcp_tools_available(fake_repo: Path) -> None:
+    import subprocess
+    import sys
+
+    # Separate process makes this regression fail promptly if synchronous screening hangs.
+    code = """
+import json, anyio
+from pathlib import Path
+from tools.corpus.mcp_server import create_server
+async def go():
+    server = create_server(Path(ROOT), dense='off')
+    params = json.loads(Path('tools/dqi_screen/examples/opi_prime_character_r19.json').read_text())
+    params['q'] = str(params['q'])
+    def payload(result):
+        return result[1] if isinstance(result, tuple) else json.loads(result[0].text)
+    first = payload(await server.call_tool('screen_dqi_candidate', {'params': params}))
+    assert first['candidate']['q'] == 2305843009213693951
+    assert first['verdict'] == 'unknown'
+    params.update(q=7, m=10**24, n=5*10**23, rho=3/7, min_distance=None, radius=None)
+    large = payload(await server.call_tool('screen_dqi_candidate', {'params': params}))
+    assert 'too large' in large['error']
+    other = payload(await server.call_tool('get_doc', {'doc_id': 'negative:NOPE'}))
+    assert other['error'].startswith('unknown doc_id')
+anyio.run(go)
+""".replace('ROOT', repr(str(fake_repo)))
+    result = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True, timeout=10)
+    assert result.returncode == 0, result.stderr
+
+
 def test_server_sees_files_added_after_start(fake_repo: Path) -> None:
     server = create_server(fake_repo, dense="off", refresh_seconds=0)
     _call(server, "search_corpus", {"query": "warmup"})

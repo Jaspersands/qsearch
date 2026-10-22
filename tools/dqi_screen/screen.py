@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import sys
 from dataclasses import MISSING, asdict, dataclass, fields
 from fractions import Fraction
@@ -83,6 +84,8 @@ def _coerce(key: str, value):
         if not isinstance(value, bool):
             raise ValueError(f"{key} must be true or false, got {value!r}")
         return value
+    if key in _INTS and isinstance(value, str) and re.fullmatch(r"[+-]?[0-9]+", value):
+        return int(value)
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         if key in _INTS | _FLOATS:
             raise ValueError(f"{key} must be a number, got {value!r}")
@@ -92,7 +95,7 @@ def _coerce(key: str, value):
             raise ValueError(f"{key} must be an integer, got {value!r}")
         if isinstance(value, float) and abs(value) >= _EXACT_FLOAT:
             raise ValueError(f"{key} = {value!r} is a float beyond 2^53, which cannot hold every integer: "
-                             "give it as an exact integer")
+                             "give it as an exact integer or decimal string")
         return int(value)
     if key in _FLOATS:
         try:
@@ -173,11 +176,11 @@ def _validate(c: Candidate) -> None:
                              "accepted set holds a whole number of elements between 1 and q - 1 (the nearest is "
                              f"{size}); give rho within 1% of |F_i| / q")
     if c.min_distance is not None:
-        bound = min(c.n + 1, R.plotkin_distance(c.m, c.n, c.q))
+        bound = min(c.n + 1, R.plotkin_distance(c.m, c.n, c.q), R.griesmer_distance(c.m, c.n, c.q))
         if c.min_distance > bound:
             raise ValueError(f"min_distance = {c.min_distance} exceeds {bound}, the most a linear [m, m - n] = "
                              f"[{c.m}, {c.m - c.n}] code over F_q can have (Singleton d <= n + 1 and the finite "
-                             "Plotkin bound)")
+                             "Plotkin and Griesmer bounds)")
 
 
 def _prime_power(q: int) -> tuple[int, int] | None:
@@ -211,8 +214,9 @@ def _quantities(c: Candidate) -> dict[str, float | int | None]:
     threshold = R.lambda_crit(alpha, c.rho) if count else R.lambda_crit_cos(alpha)
     kappa = R.margin_cap(alpha) if count else None
     mu = margin_finite if margin_finite is not None else margin
-    subfield = c.p is not None and c.b is not None and c.c is not None
-    alpha_sub = R.subfield_rate(alpha, c.b, c.c) if subfield else None
+    subfield = c.c is not None
+    degree = _prime_power(c.q)[1]
+    alpha_sub = R.subfield_rate(alpha, degree, c.c) if subfield else None
     return {
         "alpha": alpha,
         "lam": lam,
@@ -227,6 +231,7 @@ def _quantities(c: Candidate) -> dict[str, float | int | None]:
         "licensed_radius": R.licensed_radius(c.min_distance) if c.min_distance is not None else None,
         "singleton_radius": R.licensed_radius(c.n + 1) if count else None,
         "plotkin_radius": R.licensed_radius(R.plotkin_distance(c.m, c.n, c.q)) if count else None,
+        "griesmer_radius": R.licensed_radius(R.griesmer_distance(c.m, c.n, c.q)) if count else None,
         "hamming_radius": R.packing_radius(c.m, c.n, c.q, c.q - 1) if count else None,
         "signed_packing_radius": None if count else R.packing_radius(c.m, c.n, c.q, 2),
         "singleton_reach": R.singleton_reach(alpha),
@@ -300,29 +305,28 @@ def _check_reach(c: Candidate, qn: dict) -> Check:
     problems = []
     if qn["licensed_radius"] is not None and c.radius > qn["licensed_radius"]:
         problems.append(f"radius {c.radius} > licensed radius {qn['licensed_radius']} = (d - 2) // 2")
-    limits = {"Singleton": qn["singleton_radius"], "Plotkin": qn["plotkin_radius"], "sphere-packing": qn["hamming_radius"]}
+    limits = {"Singleton": qn["singleton_radius"], "Plotkin": qn["plotkin_radius"], "sphere-packing": qn["hamming_radius"],
+              "Griesmer": qn["griesmer_radius"]}
     over = [f"{bound} {value}" for bound, value in limits.items() if c.radius > value]
     if over:
         problems.append(f"radius {c.radius} exceeds the finite-length radius bound {', '.join(over)}")
-    # Saturation is a screen policy, not one of the paper's rules: Eq. (1) gives Q_DQI = 1 from
-    # lam = 1 - rho on, and the margin and restart length would rest on that pinned value.
+    # Eq. (1) saturates at one. A decoder reaching a larger radius can use a smaller degree,
+    # so saturation alone cannot refute the candidate.
     # Compared in integers, so radius (1 - rho) m itself is never saturated by rounding.
     edge = math.floor(c.m * (1 - c.rho) + 1e-9)
     saturated = None
     if c.radius > edge:
         saturated = (f"saturated: lam = {_fmt(lam)} > 1 - rho = {_fmt(1 - c.rho)}, past radius {edge} = (1 - rho) m, "
-                     "where the semicircle law already reaches Q_DQI = 1; the screen does not credit a radius past "
-                     f"saturation: screen radius {edge} instead")
+                     "where the semicircle law already reaches Q_DQI = 1; a smaller degree remains available")
     if problems:
         detail = "outside licensed Hamming reach: " + "; ".join(problems)
         return Check("reach", False, detail + (f"; also {saturated}" if saturated else ""))
     if qn["licensed_radius"] is not None:
         limits["(d - 2) // 2"] = qn["licensed_radius"]
     tight = min(limits, key=limits.get)
-    if saturated:
-        return Check("reach", False, f"{saturated} (radius {c.radius} is within every reach bound; tightest: "
-                     f"{tight} {limits[tight]})")
     inside = f"radius {c.radius} (lam = {_fmt(lam)}) is inside licensed Hamming reach (tightest: {tight} {limits[tight]})"
+    if saturated:
+        inside += f"; {saturated}"
     if not c.decoder_known:
         return Check("reach", None, inside + ", but no decoder is known to reach it; give decoder_known")
     return Check("reach", True, inside)
@@ -377,7 +381,7 @@ def _check_r4(c: Candidate, qn: dict) -> Check:
     if _isprime(c.q):
         return Check("R4", None, f"{NOT_APPLICABLE} (prime field)")
     if qn["alpha_sub"] is None:
-        return Check("R4", None, f"q = {c.q} is a prime power: give p, b, c for the subfield rule")
+        return Check("R4", None, f"q = {c.q} is a prime power: give c for the subfield rule (p and b are derived from q)")
     if c.objective != "count":
         return Check("R4", None, "the subfield baseline is stated for the count objective; compare by hand")
     value, label = _claimed(c, qn)
@@ -386,11 +390,16 @@ def _check_r4(c: Candidate, qn: dict) -> Check:
     if value is not None:
         detail = f"{label} {_fmt(value)} against {detail}"
     # Both tests below hold whatever the radius, so they fail R4 before any radius is given.
-    if c.rho == 0.5 and R.subfield_blocks_at_half(qn["alpha"], c.b, c.c):
+    if c.rho == 0.5 and R.subfield_blocks_at_half(qn["alpha"], _prime_power(c.q)[1], c.c):
         return Check("R4", False, detail + "; at rho = 1/2, alpha >= 2c^2/(b^2+c^2) blocks every licensed radius")
     if baseline >= 1:
         return Check("R4", False, detail + ": Prange over the subfield satisfies every row, which no claimed value beats")
     if value is None:
+        limits = [qn[key] for key in ("singleton_radius", "plotkin_radius", "griesmer_radius",
+                                      "hamming_radius", "licensed_radius") if qn[key] is not None]
+        upper = R.q_dqi(max(0, min(limits)) / c.m, c.rho)
+        if upper <= baseline:
+            return Check("R4", False, detail + f"; Q_DQI <= {_fmt(upper)} at every licensed radius")
         return Check("R4", None, "give radius or finite_dqi_mean")
     if value <= baseline:
         return Check("R4", False, detail + ": the subfield baseline is at least as good")
@@ -538,8 +547,8 @@ def main(argv: list[str] | None = None) -> int:
         parser.add_argument(f"--{flag}", type=int)
     for flag in ("rho", "classical-witness", "finite-dqi-mean"):
         parser.add_argument(f"--{flag}", type=float)
-    parser.add_argument("--decoder-known", action="store_true", help="An efficient decoder reaches the radius.")
-    parser.add_argument("--encoder-known", action="store_true",
+    parser.add_argument("--decoder-known", action=argparse.BooleanOptionalAction, default=None, help="An efficient decoder reaches the radius.")
+    parser.add_argument("--encoder-known", action=argparse.BooleanOptionalAction, default=None,
                         help="A polynomial-time encoder for im(B) attains the existential line Q* (R3, Proposition 9: "
                         "margin <= 0). A generator matrix or a known planted solution is not such an encoder.")
     parser.add_argument("--json", action="store_true")
@@ -550,9 +559,9 @@ def main(argv: list[str] | None = None) -> int:
         data = json.loads(args.params.read_text(encoding="utf-8")) if args.params else {}
         if not isinstance(data, dict):
             raise ValueError(f"{args.params} must hold a JSON object")
-        # A value flag counts when given, even as 0; a boolean flag only when set, so it never clears the file's true.
+        # Every explicitly given flag overrides the file, including false and zero.
         data.update({key: getattr(args, key) for key in _FLAGS
-                     if getattr(args, key) is True or (key not in _BOOLS and getattr(args, key) is not None)})
+                     if getattr(args, key) is not None})
         data.setdefault("name", "candidate")
         result = screen(candidate_from_dict(data))
     except (OSError, TypeError, ValueError, RecursionError) as exc:  # RecursionError: JSON nested too deeply

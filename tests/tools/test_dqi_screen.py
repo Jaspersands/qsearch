@@ -87,7 +87,7 @@ def test_example_a_radius_19_numbers() -> None:
     assert s.verdict == "unknown"
     assert list(qn) == [
         "alpha", "lam", "delta", "q_prange", "q_dqi", "q_dqi_finite", "margin", "margin_finite", "lambda_crit",
-        "radius_crit", "licensed_radius", "singleton_radius", "plotkin_radius", "hamming_radius",
+        "radius_crit", "licensed_radius", "singleton_radius", "plotkin_radius", "griesmer_radius", "hamming_radius",
         "signed_packing_radius", "singleton_reach", "distance_reach",
         "sphere_packing_reach", "plotkin_reach", "signed_packing_reach", "kappa", "q_cap", "cosine_objective",
         "lambda_crit_cos", "restart_length",
@@ -190,11 +190,12 @@ def test_reach_uses_finite_singleton_plotkin_and_packing_radii() -> None:
     assert s.quantities["singleton_radius"] == 19
     assert checks["reach"].passed is False and "Singleton 19" in checks["reach"].detail
     assert _run("hermite_half_rate.json", q=2**61 - 1, m=128, n=40, radius=19, min_distance=None)[1]["reach"].passed
-    # Binary [1000, 100]: no such code has d > 500 (Plotkin), though sphere packing and Singleton allow l = 300.
+    # Binary [1000, 100]: Plotkin gives d <= 500; Griesmer tightens this to 453.
     s, checks = _run("hermite_half_rate.json", q=2, n=900, radius=300, min_distance=None)
     assert (s.quantities["plotkin_radius"], s.quantities["singleton_radius"], s.quantities["hamming_radius"]) == \
         (249, 449, 319)
     assert checks["reach"].passed is False and "Plotkin 249" in checks["reach"].detail
+    assert s.quantities["griesmer_radius"] == 225 and "Griesmer 225" in checks["reach"].detail
     # Binary [1000, 500] at l = 200: C(1000, 200) > 2^500, though Singleton and Plotkin allow 249.
     s, checks = _run("hermite_half_rate.json", q=2, radius=200, min_distance=None)
     assert s.quantities["hamming_radius"] == 111 and s.quantities["plotkin_radius"] == 249
@@ -339,7 +340,7 @@ def test_prime_power_q_without_subfield_inputs_is_unknown_not_na() -> None:
     longer = {"m": 2000, "radius": 248, "min_distance": 500}
     assert _run("hermite_half_rate.json", **longer)[0].verdict == "viable"
     s, checks = _run("hermite_half_rate.json", q=4096, **longer)
-    assert checks["R4"].passed is None and "give p, b, c" in checks["R4"].detail
+    assert checks["R4"].passed is None and "give c" in checks["R4"].detail
     assert s.verdict == "unknown"
     s, checks = _run("hermite_half_rate.json", q=4096, p=2, b=12, c=1, **longer)
     assert checks["R4"].passed is False and s.quantities["subfield_baseline"] == 1.0
@@ -481,7 +482,7 @@ def test_boundaries_of_the_signed_reach_existential_lines_witness_and_subfield_f
     assert _run("hermite_half_rate.json", **q32, finite_dqi_mean=0.9165)[1]["R4"].passed is False
 
 
-def test_saturated_reach_is_flagged_not_viable() -> None:
+def test_unlicensed_radius_still_fails_even_when_saturated() -> None:
     s, checks = _run("hermite_half_rate.json", radius=600)  # lam = 0.6 > 1 - rho
     assert s.quantities["q_dqi"] == 1.0
     assert s.verdict == "not viable"
@@ -489,7 +490,7 @@ def test_saturated_reach_is_flagged_not_viable() -> None:
     assert checks["reach"].passed is False and "saturated" in checks["reach"].detail
 
 
-def test_saturation_alone_fails_reach_inside_every_reach_bound() -> None:
+def test_saturation_alone_passes_reach_inside_every_reach_bound() -> None:
     # alpha = 0.9: lam = 0.35 is below Singleton 0.45 and every other bound, but above 1 - rho = 0.3.
     s, checks = _run("hermite_half_rate.json", n=900, rho=0.7, radius=350, min_distance=None)
     assert s.quantities["q_dqi"] == 1.0
@@ -497,9 +498,9 @@ def test_saturation_alone_fails_reach_inside_every_reach_bound() -> None:
                                                            s.quantities["sphere_packing_reach"]))
     assert checks["R1"].passed is True and checks["R2"].passed is True
     reach = checks["reach"]
-    assert reach.passed is False and "saturated" in reach.detail
+    assert reach.passed is True and "saturated" in reach.detail
     assert "outside licensed Hamming reach" not in reach.detail and "exceeds the reach bound" not in reach.detail
-    assert s.verdict == "not viable"
+    assert s.verdict != "not viable"
     s, checks = _run("hermite_half_rate.json", n=900, rho=0.7, radius=290, min_distance=None)  # lam = 0.29 <= 0.3
     assert checks["reach"].passed is True
 
@@ -512,8 +513,8 @@ def test_saturation_starts_strictly_past_one_minus_rho(rho: float) -> None:
     assert checks["reach"].passed is True and s.quantities["q_dqi"] == pytest.approx(1.0)
     s, checks = _run("hermite_half_rate.json", q=101, n=900, rho=rho, radius=edge + 1, min_distance=None)
     detail = checks["reach"].detail
-    assert checks["reach"].passed is False and "saturated" in detail
-    # Eq. (1) does give Q_DQI = 1 there; the detail says so and names the radius to screen instead.
+    assert checks["reach"].passed is True and "saturated" in detail
+    # Eq. (1) gives Q_DQI = 1 there; the detail names the edge without making it a hard failure.
     assert "says nothing" not in detail and "Q_DQI = 1" in detail and f"radius {edge} " in detail
 
 
@@ -556,7 +557,7 @@ def test_densities_and_distances_no_instance_can_have_are_bad_input() -> None:
     for changes in ({"min_distance": 90}, {"min_distance": 32}, {"m": 15, "n": 11, "min_distance": 9, "radius": 3}):
         with pytest.raises(ValueError, match="min_distance"):
             S.screen(S.candidate_from_dict({**base, **changes}))
-    for changes in ({"min_distance": 31}, {"m": 15, "n": 11, "min_distance": 8, "radius": 3}):
+    for changes in ({"min_distance": 16}, {"m": 15, "n": 11, "min_distance": 8, "radius": 3}):
         assert S.screen(S.candidate_from_dict({**base, **changes})).verdict
     # The README's example uses a density the field has.
     readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
@@ -791,3 +792,77 @@ def test_prange_large_prime_field() -> None:
     targets = [(int(B[i, 0]) * x[0] + int(B[i, 1]) * x[1]) % q for i in range(4)]
     result = P.prange_restarts(B, [{t} for t in targets], q, restarts=3, seed=0)
     assert result["best"] == 1.0 and result["rank"] == 2
+
+# Round-three regressions: exact bounds, transport precision, and bounded work.
+@pytest.mark.parametrize('radius, finite', [(None, None), (300, 1.0)])
+def test_full_subfield_baseline_is_exact(radius, finite):
+    cand = S.Candidate('full', 'count', 121, 2000, 1000, 45/121,
+                       radius=radius, finite_dqi_mean=finite, p=11, b=2, c=1, decoder_known=True)
+    result = S.screen(cand)
+    assert result.quantities['subfield_baseline'] == 1
+    assert next(ch for ch in result.checks if ch.rule == 'R4').passed is False
+
+
+def test_griesmer_rules_out_impossible_binary_distance_and_radius():
+    cand = S.Candidate('binary', 'count', 2, 20000, 15000, .5, radius=4000, decoder_known=True)
+    result = S.screen(cand)
+    assert result.verdict == 'not viable'
+    assert result.quantities['griesmer_radius'] == 3751
+    with pytest.raises(ValueError, match='Griesmer'):
+        S.screen(replace(cand, min_distance=8002))
+
+
+def test_griesmer_distance_matches_direct_integer_sum():
+    for q in (2, 3, 4, 7):
+        for m in range(2, 35):
+            for n in range(m):
+                expected = max(d for d in range(1, m+1)
+                               if sum((d + q**i - 1)//q**i for i in range(m-n)) <= m)
+                assert R.griesmer_distance(m, n, q) == expected
+
+
+def test_decimal_string_integers_preserve_large_prime():
+    data = json.loads((EXAMPLES / 'opi_prime_character_r19.json').read_text())
+    expected = S.screen(S.candidate_from_dict(data))
+    data['q'] = str(data['q'])
+    assert S.screen(S.candidate_from_dict(data)).quantities == expected.quantities
+    for bad in ('2.0', '2e3', ' 7', '7 ', '²'):
+        with pytest.raises(ValueError):
+            S.candidate_from_dict({**data, 'q': bad})
+
+
+def test_r4_without_radius_blocks_all_densities_when_upper_bound_loses():
+    cand = S.Candidate('subfield', 'count', 128, 1000, 400, .25, c=4)
+    check = next(ch for ch in S.screen(cand).checks if ch.rule == 'R4')
+    assert check.passed is False
+    assert 'every licensed radius' in check.detail
+
+
+def test_prange_rejects_huge_lazy_collections_before_iteration():
+    class Huge:
+        def __len__(self): return 2**60
+        def __iter__(self): raise AssertionError('must not enumerate')
+        def __contains__(self, value): return True
+    with pytest.raises(ValueError, match='materializ'):
+        P.prange_restarts(np.array([[1], [2]]), [Huge(), Huge()], 2**61-1, restarts=1)
+
+
+def test_huge_count_input_returns_error_with_bounded_work():
+    import subprocess
+    import sys
+    code = ('from tools.dqi_screen.screen import *; '
+            'screen(Candidate("huge", "count", 7, 10**24, 5*10**23, 3/7))')
+    result = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True, timeout=3)
+    assert result.returncode != 0
+    assert 'too large' in result.stderr
+
+
+def test_boolean_cli_flags_can_clear_params(tmp_path, capsys):
+    data = json.loads((EXAMPLES / 'mpi_signed_cosine.json').read_text())
+    data['encoder_known'] = True
+    path = tmp_path / 'candidate.json'
+    path.write_text(json.dumps(data))
+    assert S.main(['--params', str(path), '--no-decoder-known', '--no-encoder-known', '--json']) == 0
+    result = json.loads(capsys.readouterr().out)
+    assert result['candidate']['encoder_known'] is False
+    assert result['candidate']['decoder_known'] is False

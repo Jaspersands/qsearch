@@ -21,7 +21,7 @@ python tools/dqi_screen/screen.py --params cand.json --json --out screen.json
 ```
 
 Exit codes: 0 viable or unknown, 1 not viable, 2 bad input. Flags override the fields of
-`--params`. The same screen is the `screen_dqi_candidate(params)` tool on the corpus MCP
+`--params`, including `--no-decoder-known` and `--no-encoder-known`. The same screen is the `screen_dqi_candidate(params)` tool on the corpus MCP
 server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 
 ## Inputs
@@ -31,17 +31,19 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 | `name` | label for the report |
 | `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows; needs a prime q > 3, as Proposition 13 does) |
 | `q`, `m`, `n` | field size (a prime power); constraints; n = rank(B), the dimension of the optimizer code im(B), which is the number of variables only when B has full column rank; alpha = n/m (Section 4.1). For a rank-deficient B (duplicated columns, the incidence matrix of a graph) give the rank: the variable count overstates Singleton, Plotkin, the packing radii, Q* and Prange's line |
-| `rho` | accepted density \|F_i\|/q of each constraint, within 1% of a ratio k/q with 1 <= k <= q - 1 (q = 7 takes 3/7 = 0.4286, not 0.5; at q = 8191, 0.5 stands for 4095/8191 or 4096/8191). The cosine objective ignores it |
+| `rho` | accepted density \|F_i\|/q of each constraint, within 1% of a ratio k/q with 1 <= k <= q - 1 (q = 7 takes 3/7 = 0.4286, not 0.5; at q = 8191, 0.5 stands for 4095/8191 or 4096/8191). Required for both objectives. The cosine objective ignores it in its formulas, but still validates 0 < rho < 1 and consistency with c when supplied |
 | `radius` | claimed decoding radius l; lam = l/m |
-| `min_distance` | minimum distance d of the decoded code, the dual [m, m - n] code, when known; delta = d/m. At most n + 1 (Singleton) and the finite Plotkin bound below |
+| `min_distance` | minimum distance d of the decoded code, the dual [m, m - n] code, when known; delta = d/m. At most n + 1 (Singleton) and the finite Plotkin and Griesmer bounds below |
 | `decoder_known` | an efficient decoder reaches `radius` |
 | `encoder_known` | a polynomial-time encoder for the optimizer code im(B) attains the existential line Q* (Proposition 9, R3). Encoder in the lossy-source-coding sense: given the accepted sets it returns a codeword satisfying many rows. The generator map x -> Bx or a known planted solution is not one |
-| `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and c the largest, over the accepted sets, of the smallest F_p-codimension of an affine subspace inside the set (Proposition 9); 1 <= c <= b, and c >= log_p(1/rho) since a set of density rho holds at most rho p^b elements (Appendix A.6). Needed when q is not prime, and checked against q when given |
+| `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and c the largest, over the accepted sets, of the smallest F_p-codimension of an affine subspace inside the set (Proposition 9); 1 <= c <= b, and c >= log_p(1/rho) since a set of density rho holds at most rho p^b elements (Appendix A.6). Give c when q is not prime; p and b are derived from q and checked against q when given |
 | `classical_witness` | best value a classical method has reached: a satisfied fraction in [0, 1] (count), or a mean cosine in [-1, 1] |
 | `finite_dqi_mean` | DQI's mean at this finite size, when computed; same range as the witness |
 
 Required fields may not be null, and an integer field sent as a float must be below 2^53 (a
-larger float cannot hold every integer, so `q = 2^61 - 1` has to be sent as an exact integer).
+larger float cannot hold every integer). Integer fields also accept exact decimal strings.
+From JavaScript/JSON-number clients, send `q = 2^61 - 1` as `"2305843009213693951"`;
+writing it as a JSON number loses precision before the server sees it.
 
 ## Rules
 
@@ -51,11 +53,11 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 | Rule | Kind | Passes when | Formula |
 |---|---|---|---|
 | R1 | hard | every applicable reach bound exceeds the threshold | lambda_crit = (sqrt((1-rho) Q_Pr) - sqrt(rho (1-Q_Pr)))^2 against Singleton alpha/2, distance delta/2, sphere packing H_q^-1(alpha), Plotkin (1 - 1/q) alpha/2; cosine: lambda_crit_cos = (1 - sqrt(1 - 2 alpha^2))/2 against the signed packing reach, the lam <= 1/2 with (H_2(lam) + lam)/log_2 q = alpha (Proposition 13(i)) |
-| reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and l <= every finite-length radius bound; not saturated (lam > 1 - rho, where Eq. (1) already gives Q_DQI = 1: a screen policy, not one of the paper's rules; screen the radius (1 - rho) m instead). Cosine: the radius is inside the signed packing radius | count, for the dual [m, k = m - n] code: Singleton (n-1)//2 (d <= n+1); Plotkin (d_P - 2)//2 with d_P = floor(m (q-1) q^(k-1) / (q^k - 1)); sphere packing (the Hamming bound), the largest l whose ball fits, sum_{i <= l} C(m, i) (q-1)^i <= q^n. Cosine: the largest l with sum_{i <= l} C(m, i) 2^i <= q^n, so the {+-1} patterns of weight at most l can all have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them. Both balls are summed in exact integers while q^n has at most 2^15 bits, in floating point beyond |
+| reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and l <= every finite-length radius bound. Saturation (lam > 1 - rho) is informational: Eq. (1) gives Q_DQI = 1, and a decoder can use a smaller degree. Cosine: the radius is inside the signed packing radius | count, for the dual [m, k = m - n] code: Singleton (n-1)//2 (d <= n+1); Plotkin (d_P - 2)//2 with d_P = floor(m (q-1) q^(k-1) / (q^k - 1)); Griesmer (d_G - 2)//2, where d_G is the largest integer with sum_{i=0}^{k-1} ceil(d_G/q^i) <= m; sphere packing (the Hamming bound), the largest l whose ball fits, sum_{i <= l} C(m, i) (q-1)^i <= q^n. Cosine: the largest l with sum_{i <= l} C(m, i) 2^i <= q^n, so the {+-1} patterns of weight at most l can all have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them. Both balls are summed in exact integers while q^n has at most 2^15 bits, in floating point beyond; the floating-point path rejects m > 2^53 or sums exceeding 100000 terms instead of hanging |
 | R2 | hard | the radius beats the threshold | lam > lambda_crit (count) or lambda_crit_cos (cosine) |
 | R3 | soft | the claimed value (finite mean, else Q_DQI or the cosine value) is at most the existential line Q* | count: Q* with D_KL(Q* \|\| rho) = alpha ln q when q^alpha rho < 1, else 1 (Definition 5); cosine: the largest mean of cos(2 pi v/q) within relative entropy alpha ln q of uniform, by exponential tilting (Proposition 13(iii); 0.726 for MPI) |
 | R3-encoder | hard | no polynomial-time encoder attaining Q* is known (not violated; (R3) itself stays unresolved) | such an encoder is a classical baseline with DQI's limiting value, so mu+ <= 0 (Proposition 9) |
-| R4 | hard | prime field: not applicable; prime power: the claimed value beats the subfield baseline | alpha_sub = min(1, b alpha/c); baseline rho + (1-rho) floor(alpha_sub m)/m; at rho = 1/2 blocked when alpha >= 2c^2/(b^2+c^2). A block, or a baseline of 1, fails R4 even before a radius is given |
+| R4 | hard | prime field: not applicable; prime power: the claimed value beats the subfield baseline | alpha_sub = min(1, b alpha/c); baseline rho + (1-rho) floor(alpha_sub m)/m; at rho = 1/2 blocked when alpha >= 2c^2/(b^2+c^2). A block, or a baseline of 1, fails R4 even before a radius is given. For any density, no radius is needed when the semicircle value at the largest finite licensed radius cannot beat the baseline |
 | cap | soft | count only: Q_DQI <= q_cap | q_cap = Q_Pr + kappa, kappa = sqrt(u(1-u)) - u, u = alpha/2 (Proposition 8; at most (sqrt 2 - 1)/2) |
 | witness | soft | the classical witness is below DQI's claimed value (finite mean, else Q_DQI or the cosine value) and, for the count, below q_cap - 0.01 | otherwise the classical method already reaches DQI's claim, or no licensed radius beats it by more than 0.01 |
 | restarts | soft | m >= the restart length | (1-alpha) R^2 ln(N/eta) / (2 mu^2), R = 1 count / 2 cosine, N = 2^40, eta = 0.05 (Theorem 10) |
@@ -66,7 +68,7 @@ The check names are the screen's own and do not follow the paper's numbering one
 | Screen check | Paper (arXiv:2610.06753) |
 |---|---|
 | R1 | (R1) reach: Corollary 7 (a)-(c) for the count, Proposition 13(i) for the cosine |
-| reach | (R1) applied to the claimed radius at finite length, plus the (R2) decoder rule: `decoder_known` false leaves it open; saturation is a screen policy |
+| reach | (R1) applied to the claimed radius at finite length, plus the (R2) decoder rule: `decoder_known` false leaves it open; saturation alone is not a failure |
 | R2 | Theorem 6: the claimed radius beats lambda_crit (Proposition 13(ii) for the cosine); not the paper's (R2) |
 | R3 | the existential line Q* (Definition 5, Proposition 13(iii)) as a bound on the claimed value |
 | R3-encoder | (R3) encoder (Proposition 9) |
@@ -79,7 +81,7 @@ mu is the finite margin (`finite_dqi_mean` minus Prange) when given, else the as
 (Q_DQI - Q_Pr, or sqrt(2 lam(1-lam)) - alpha for the cosine). With mu <= 0 no length suffices.
 A cosine candidate with alpha >= 1/sqrt(2) has no threshold and is not viable. A check that is
 "not applicable" does not affect the verdict; one waiting for an input ("give radius",
-"give p, b, c", or `decoder_known` false) makes it unknown. Count-only quantities are `-` for
+"give c", or `decoder_known` false) makes it unknown. Count-only quantities are `-` for
 a cosine candidate and the other way round. The report also lists rho_crit(alpha) =
 (1 - sqrt(2(1-alpha)/(2-alpha)))/2, the density below which lambda_crit exceeds alpha/2.
 
@@ -87,7 +89,10 @@ a cosine candidate and the other way round. The report also lists rho_crit(alpha
 `prange_restarts(B, accepted, q, restarts, seed)` runs best-of-N Prange completion over a
 prime field on Python ints (exact for q = 2^61 - 1) and returns the best and every score, with
 `rank` = rank(B): a rank-deficient B (duplicated columns, the incidence matrix of a graph) runs
-on its image, solving on rank(B) rows.
+on its image, solving on rank(B) rows. Contiguous modular arcs can be supplied as step-1
+`range` objects without materialization. Other collections are limited to 1,000,000 elements
+and raise `ValueError` before enumeration above that size; huge quadratic-residue sets need
+a separate sampler/membership implementation and are not supported by this helper.
 
 ## The four examples
 
@@ -121,3 +126,5 @@ exits 1 and the report says "outside licensed Hamming reach".
   the law for lam <= 1/2; the screen holds the value at 1/sqrt(2) beyond.
 
 Tests: `python -m pytest -q tests/tools/test_dqi_screen.py`.
+
+The finite Griesmer bound is stated for linear codes in [Ball, Lavrauw and Popatia, Eq. (1)](https://web.mat.upc.edu/simeon.michael.ball/additiveboundfixed.pdf). It is an upper bound on feasible distance, not an existence guarantee.

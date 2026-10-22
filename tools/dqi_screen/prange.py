@@ -150,6 +150,9 @@ def prange_restarts(
         else:
             if isinstance(coll, range) and len(coll) > _MATERIALIZE_LIMIT:
                 raise ValueError(f"accepted range {coll} has step {coll.step}: give a step-1 range or a set")
+            if len(coll) > _MATERIALIZE_LIMIT:
+                raise ValueError(f"accepted collection is too large to materialize (limit {_MATERIALIZE_LIMIT}); "
+                                 "use a step-1 range for a contiguous modular arc")
             values = sorted({_integer(v, "accepted sets") % q for v in coll})
             pools.append(values)
             members.append(set(values))
