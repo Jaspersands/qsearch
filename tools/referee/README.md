@@ -21,7 +21,7 @@ python tools/referee/referee.py status [--json]
 
 | Command | What it does |
 |---|---|
-| `select` | Lists review-pending notes, newest first, without a current review; `--limit 0` lists them all. |
+| `select` | Lists review-pending notes without a current review, plus unclear reviews; dated notes newest first, then undated notes by stem; `--limit 0` lists them all. |
 | `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status, each once however often it is named; the name's letter case must match. Exit 2, nothing written, when `--out-dir` is a file or already holds `batch_*.json` from an earlier export (use a new folder per pass). |
 | `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails, or when a judge file `batch_NN.jsonl` has no row for a note its `batch_NN.json` (beside it or in the folder above) exported; `--partial` imports the rest and names the notes without a row. A field over its cap is a failing row too; `--cut` stores it cut and marked instead. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
 | `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
@@ -63,8 +63,9 @@ skipped unless `--include-reviewed` is given.
 - `result`: the first section whose heading contains Result, Question, Claim or Summary
   and not Not, Cannot, Why, Next ... Question or Kill/Break ... Claim ("What Can And
   Cannot Be Claimed" is not a result), else the first section. `derivations`
-  (Derivation, Lemma, Proof, Bound, Bounds, Bounding, Certificate or a numbered heading;
-  not Bounded or Boundary), `controls` (Controls, Comparison, Classical) and `self_check`
+  (Derivation, Lemma, Proof, Bound, Bounds, Bounding or Certificate;
+  not Bounded, Boundary or an otherwise unqualified numbered heading; sections already
+  used as result or decision are not repeated), `controls` (Controls, Comparison, Classical) and `self_check`
   (the first of Prove ... Wrong, Disprove, Falsifier, Falsification, to/and/can Falsify,
   Refutation, Attempt To Break, Kill, Self-Critique, Red Team) come from the headings
   too. `decision` is the first heading with Decision or Next, passing over a result
@@ -104,7 +105,7 @@ text.
    `wrong` requires `unsound`, else `gap` requires `needs-work`, else `unclear` requires
    `unclear`, and claims that all hold require `sound`; a row with no claims can only be
    `unclear`, since a `sound` row with no quoted claim would take the note out of the
-   queue on no evidence), a quote under six words, or a quote that is not in the note text (all
+   queue on no evidence; unclear reviews remain in select/export and Next 30 for follow-up), a quote under six words, or a quote that is not in the note text (all
    claims are checked). A quote's words (runs
    of letters and digits in any script, so Greek variables and superscript exponents count;
    an underscore splits words) must appear consecutively in the note after lower-casing; a
@@ -143,7 +144,10 @@ text.
    `--allow-unverified` is given: then a quote that is not in the current note is stored
    as the judge wrote it with `verified: false`. A packet that declares the sha but whose
    text does not hash to it gives the same unverified quotes. Two rows for one note in one
-   import (one file or several) reject the import. Re-importing a note replaces its
+   import (one file or several) reject the import. An iCloud copy such as
+   `batch_01 2.jsonl` also matches the shell glob: compare it with the original and remove
+   it from the import arguments if it is redundant. Import rejects duplicate rows rather
+   than guessing which file is authoritative. Re-importing a note replaces its
    review, except that a row that is stale on arrival (an earlier pass imported again)
    never replaces a stored review of the note's current bytes: import keeps that review
    and reports the row as skipped. So importing an older judge file again silently undoes a later
@@ -154,9 +158,13 @@ text.
    the instructions gave the caps, and stores such a field cut to its cap and ending in
    ` [truncated]`, listing each field it cut. Import also rejects a summary, step, finding or quote that is not a string
    (null reads as empty) and a `gap` or `wrong` claim with no finding. The stored quote,
-   the note's own span, can run past 400 characters (a link target it left out); it is
-   then cut at 400 and ends in `...`.
-4. `render` rebuilds the per-note reviews and the queue.
+   the note's own span, can run past 400 characters because of indentation, line breaks,
+   link targets or markup. Long spans first have whitespace collapsed; a span still over
+   the cap is rejected unless `--cut` is given, then marked ` [truncated]` and reported.
+   No part of a claim is silently cut.
+4. `render` rebuilds the per-note reviews and the queue. The Stale section gives an
+   explicit `export --out-dir DIR --note STEM` command for each existing stale note;
+   this also works for unlabelled notes excluded by the default status selection.
 
 Cost: about 100k tokens per batch of five notes.
 

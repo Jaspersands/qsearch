@@ -111,10 +111,11 @@ def select_notes(
         if path.name in JOURNALS or not STEM.match(path.stem) or (prefixes and not path.stem.startswith(tuple(prefixes))):
             continue
         lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
-        if note_status(lines) not in statuses:
-            continue
         review = notes.get(path.stem)
-        if exclude_reviewed and review and review.get("content_sha") == note_sha(path):
+        unclear = review and review.get("overall") == "unclear"
+        if note_status(lines) not in statuses and not (unclear and statuses == ("review-pending",)):
+            continue
+        if exclude_reviewed and review and not unclear and review.get("content_sha") == note_sha(path):
             continue
         ranked.append((_note_date(lines) or "0000", path))
     ranked.sort(key=lambda item: item[0], reverse=True)
@@ -504,9 +505,14 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True,
     if span is None and (strict or reason.startswith("quote under")):
         raise ValueError(f"{where}: {reason}: {quote[:120]!r}")
     stored = span or quote
-    cap = TEXT_CAPS["quote"]  # the note's span of a quote within the cap can run past it (a link target)
-    if len(stored) > cap:  # a judge quote over the cap (import --cut) is marked; a long link target is elided
-        stored = _cut(stored, cap) if len(quote) > cap else stored[:cap - 3] + "..."
+    cap = TEXT_CAPS["quote"]
+    if len(stored) > cap:
+        # Indentation/newlines in the source need not consume the quote's text budget.
+        stored = " ".join(stored.split())
+    if len(stored) > cap:
+        # Link targets and other source markup can still enlarge an otherwise short quote.
+        # Apply the same explicit rejection/--cut contract as for judge-supplied fields.
+        stored = _text(where + " (note span)", "quote", stored, cuts)
     return {
         "quote": stored,
         "verified": span is not None,
@@ -873,8 +879,11 @@ def _render_queue(root: Path, notes: dict, stale: list[str], today: str) -> str:
         lines.append("None.")
     lines += ["", "## Stale", "", "Notes edited after their review; re-run the referee on them.", ""]
     lines += [f"- {stem} (reviewed {notes[stem].get('reviewed_on')}, {notes[stem].get('overall')})" for stem in stale] or ["None."]
+    for stem in stale:
+        if _is_note(_note_path(root, stem)):
+            lines += [f"  Re-review: `python tools/referee/referee.py export --out-dir DIR --note {stem}` (use a fresh DIR)."]
     upcoming = select_notes(root, limit=NEXT)
-    lines += ["", f"## Next {NEXT}", "", "Review-pending notes without a current review, newest first.", ""]
+    lines += ["", f"## Next {NEXT}", "", "Review-pending notes without a current review, plus unclear reviews. Dated notes newest first, then undated notes by stem.", ""]
     if upcoming:
         lines += ["| Note | Date |", "|---|---|"]
         for path in upcoming:

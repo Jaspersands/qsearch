@@ -28,7 +28,7 @@ LIST_MARKER = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+")
 
 RESULT = re.compile(r"Result|Question|Claim|Summary")
 NOT_RESULT = re.compile(r"\b(?:Not|Cannot|Why)\b|\bNext\b.*\bQuestion|\b(?:Kill|Break)\b.*\bClaim")
-DERIVATION = re.compile(r"Derivation|Lemma|Proof|\bBound(?:s|ing)?\b|Certificate|^\d+\.")
+DERIVATION = re.compile(r"Derivation|Lemma|Proof|\bBound(?:s|ing)?\b|Certificate")
 CONTROLS = re.compile(r"Controls|Comparison|Classical")
 SELF_CHECK = re.compile(
     r"Prov(?:e|ing)\b.*\bWrong|Disprove|Falsifi|(?i:to|and|can) Falsify|Refutation|Attempts? To Break|Kill|Self-Critique|Red Team")
@@ -198,7 +198,7 @@ def parse_note(path: Path, raw: bytes | None = None) -> NotePacket:
         not_claimed=_not_claimed(preamble[2]),
         producer=_producer(text, path.parents[1], path.stem),
         result=result,
-        derivations=[_section_dict(s) for s in body if DERIVATION.search(s[0])],
+        derivations=[_section_dict(s) for s in body if DERIVATION.search(s[0]) and s is not chosen and s is not decision],
         controls=[_section_dict(s) for s in body if CONTROLS.search(s[0])],
         self_check=first(SELF_CHECK),
         decision=_section_dict(decision)["text"] if decision else None,

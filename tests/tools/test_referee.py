@@ -416,8 +416,8 @@ def test_parse_note_keeps_fenced_headings_inside_their_section(tmp_path: Path) -
         """
     )
     packet = X.parse_note(_write(tmp_path, "FENCED", text))
-    assert [d["heading"] for d in packet.derivations] == ["2. Derivation"]
-    body = packet.derivations[0]["text"]
+    assert packet.derivations == []  # this fallback result is not repeated as a derivation
+    body = packet.result
     assert "## not a heading" in body and "the bound follows" in body
     assert packet.decision == "Stop here."
 
@@ -1276,11 +1276,15 @@ def test_find_quote_tries_every_occurrence_and_import_marks_a_cut_quote(tmp_path
     _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n[{words}]({target}) holds.\n")
     quote = f"{words} holds"
     row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(quote)])
-    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "long.jsonl", [row])], "j")
+    answer = _jsonl(tmp_path / "out" / "long.jsonl", [row])
+    with pytest.raises(ValueError, match="note span.*quote is"):
+        R.import_reviews(tmp_path, [answer], "j")
+    outcome = R.import_reviews(tmp_path, [answer], "j", cut=True)
+    assert len(outcome["cut"]) == 1 and "note span" in outcome["cut"][0]
     stored = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]["claims"][0]
     span = f"[{words}]({target}) holds"
     assert len(quote) <= 400 < len(span) and stored["verified"] is True
-    assert stored["quote"] == span[:397] + "..."
+    assert stored["quote"] == R._cut(span, 400)
     words = " ".join(f"word{index}" for index in range(120))
     _write(tmp_path, "LONGER_NOTE", f"# Longer\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
     row = _row(tmp_path, stem="LONGER_NOTE", claims=[_claim(words)])
@@ -1784,7 +1788,7 @@ def test_stored_reviews_are_their_judge_rows_whole() -> None:
         given = [(c["verdict"], c["step"], c["finding"], bool(c.get("covered_by_self_check"))) for c in row["claims"]]
         assert stored == given, stem
         checked += 1
-    assert checked >= 30
+    assert checked == sum(entry["judge"] in REVIEW_SOURCES for entry in _stored().values())
 
 
 @needs_reviews
@@ -1795,13 +1799,16 @@ def test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path: Path, ca
     block = re.search(r"```bash\n(.*?)```", section, re.S)
     assert block, "the Corrections section gives no rebuild commands"
     commands = [shlex.split(line) for line in block.group(1).splitlines() if " import " in line]
-    stored = _stored()
+    stored = {stem: entry for stem, entry in _stored().items() if entry["judge"] in REVIEW_SOURCES}
     # Each note as the judges read it (its exported packet), so a later edit to a note does not
     # turn this red: the rebuild would rightly store that review stale.
     texts, _ = R.exported_texts([path for path in REVIEWS_DIR.glob("**/out*/*.jsonl")])
     (tmp_path / "research").mkdir()
-    for stem, entry in stored.items():
-        (tmp_path / "research" / f"{stem}.md").write_bytes(texts[(stem, entry["content_sha"])].encode("utf-8"))
+    source_rows = {}
+    for pattern in REVIEW_SOURCES.values():
+        source_rows.update(_judge_rows(pattern))
+    for stem, row in source_rows.items():
+        (tmp_path / "research" / f"{stem}.md").write_bytes(texts[(stem, row["content_sha"])].encode("utf-8"))
     for argv in commands:
         assert argv[:3] == ["python", "tools/referee/referee.py", "import"], argv
         args = []
@@ -1811,7 +1818,7 @@ def test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path: Path, ca
             args += [str(path) for path in files] if files else [arg]
         assert R.main(["import", *args, "--root", str(tmp_path)]) == 0, capsys.readouterr().err
     rebuilt = R.load_reviews(tmp_path)["notes"]
-    assert sorted(rebuilt) == sorted(stored)
+    assert set(rebuilt) >= set(stored)
     for stem, entry in stored.items():
         assert {**rebuilt[stem], "reviewed_on": None} == {**entry, "reviewed_on": None}, stem
 
@@ -1822,8 +1829,7 @@ def test_interval_soft_decoder_decision_cut_needs_no_window_qualifier() -> None:
     claim = _stored_claim("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation")
     assert claim["verdict"] == "holds"
     assert _stored()["INTERVAL_SOFT_DECODER"]["overall"] == "sound"
-    for page in PAGES:
-        assert "INTERVAL_SOFT_DECODER" not in (REPO / page).read_text(encoding="utf-8"), page
+    assert all(item["stem"] != "INTERVAL_SOFT_DECODER" for item in R.status(REPO)["flagged"])
 
 
 @needs_reviews
@@ -1942,3 +1948,63 @@ def test_readme_records_the_corrections_and_the_first_pass_counts_after_them() -
     stated = re.search(r"stand at (\d+) needs-work and (\d+) sound", " ".join(section.split()))
     assert len(stems) == 30 and stated
     assert (int(stated.group(1)), int(stated.group(2))) == (counts["needs-work"], counts["sound"])
+
+
+
+@pytest.mark.parametrize("with_claim", [False, True])
+def test_unclear_review_remains_in_select_export_and_queue(tmp_path, with_claim):
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    claims = [_claim("Does the radial bound hold for every saved input", verdict="unclear")] if with_claim else []
+    row = _row(tmp_path, overall="unclear", claims=claims)
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/unclear.jsonl", [row])], "j")
+    assert [p.stem for p in R.select_notes(tmp_path)] == ["FIXTURE_NOTE"]
+    R.export_batches(tmp_path, tmp_path / "next", R.select_notes(tmp_path))
+    assert "FIXTURE_NOTE" in (tmp_path / "next/batch_01.json").read_text()
+    R.render(tmp_path)
+    assert "FIXTURE_NOTE" in (tmp_path / R.QUEUE).read_text().split("## Next 30")[1]
+
+
+def test_indented_quote_keeps_its_qualifier_without_silent_truncation(tmp_path):
+    words = " ".join(["the bound holds on the saved input"] * 8) + " but only when the field size is prime"
+    text = "- " + "\n        ".join(words.split(" "))
+    _write(tmp_path, "LONG_NOTE", "# Long\n\nReview pending.\n\n" + text)
+    row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(words)])
+    outcome = R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/long.jsonl", [row])], "j")
+    claim = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]["claims"][0]
+    assert claim["quote"].endswith("field size is prime")
+    assert outcome["cut"] == [] and claim["verified"] is True
+
+
+def test_numbered_sections_are_not_all_derivations(tmp_path):
+    body = "# Example\n\nReview pending.\n\n## 1. Result\n\nA finite result.\n\n## 2. Method\n\nAn experiment.\n\n## 3. Proof\n\nA proof.\n\n## 4. Decision\n\nStop.\n"
+    packet = X.parse_note(_write(tmp_path, "EXAMPLE", body))
+    assert [d["heading"] for d in packet.derivations] == ["3. Proof"]
+
+
+def test_stale_queue_gives_an_explicit_export_for_unlabelled_note(tmp_path):
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path)
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/row.jsonl", [row])], "j")
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE.replace("LOCAL APPLICATION REVIEW PENDING", "Local derivations require review") + "\nChanged.\n")
+    R.render(tmp_path)
+    stale = (tmp_path / R.QUEUE).read_text().split("## Stale")[1].split("## Next")[0]
+    assert "export --out-dir DIR --note FIXTURE_NOTE" in stale
+
+
+@needs_reviews
+@pytest.mark.parametrize("later_stem", ["NEW_REVIEW", "AFFINE_CLUSTER_NATIVE_PROBE"])
+def test_rebuild_check_accepts_later_imports(tmp_path, capsys, monkeypatch, later_stem):
+    import sys
+    module = sys.modules[__name__]
+    stored = _stored()
+    stored[later_stem] = {"judge": "later-pass", "content_sha": "f" * 64}
+    monkeypatch.setattr(module, "_stored", lambda: stored)
+    test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path, capsys)
+
+
+
+def test_explicit_status_selection_does_not_add_unclear_notes_of_other_statuses(tmp_path):
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path, overall="unclear", claims=[])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/unclear.jsonl", [row])], "j")
+    assert R.select_notes(tmp_path, statuses=("superseded",)) == []
