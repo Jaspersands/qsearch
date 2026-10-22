@@ -733,7 +733,7 @@ def test_arxiv_section_orders_flags_and_verdicts_by_date_not_by_id(tmp_path: Pat
         {"2610.33333": _verdict("kill", "2026-10-15"), "2610.44444": _verdict("scoop", "2026-10-20")},
     )
     section = B.arxiv_section(tmp_path, SINCE)
-    assert [f["id"] for f in section["flagged"]] == ["2610.22222", "2610.11111", "2610.00000"]  # undated last
+    assert [f["id"] for f in section["flagged"]] == ["2610.00000", "2610.11111", "2610.22222"]  # kills first; unknown/oldest first
     assert [r["id"] for r in section["reviewed"]] == ["2610.44444", "2610.33333"]  # newest first
 
 
@@ -842,8 +842,8 @@ def test_a_judge_verdict_leaves_a_flag_open_until_a_person_records_one(tmp_path:
     )
     section = B.arxiv_section(tmp_path, SINCE)
     assert [(f["id"], f["verdict"], f["by"], f["open"]) for f in section["flagged"]] == [
-        ("2610.00002", "false-alarm", judge, True),
         ("2610.00001", "false-alarm", judge, True),
+        ("2610.00002", "false-alarm", judge, True),
         ("2610.00003", "related-only", "human", False),
     ]
     text = "\n".join(B._render_arxiv(section, SINCE))
@@ -1184,6 +1184,7 @@ HEADINGS = ("## Registry", "## arXiv watch", "## Referee", "## Preflight", "## I
 def test_build_never_fails_when_every_source_is_missing(tmp_path: Path, monkeypatch) -> None:
     root = tmp_path / "empty"
     root.mkdir()
+    (root / "qsearch.py").write_text("", encoding="utf-8")
     for module in ("tools.preflight.preflight", "tools.referee.referee", "tools.arxiv_watch.verdicts"):
         monkeypatch.setitem(sys.modules, module, None)
     brief = B.build(root, today="2026-10-21")
@@ -1439,6 +1440,7 @@ def test_build_runs_only_allow_listed_git_and_preflight_local_reads(tmp_path: Pa
 def test_main_writes_both_files(tmp_path: Path, capsys) -> None:
     root = tmp_path / "empty"
     root.mkdir()
+    (root / "qsearch.py").write_text("", encoding="utf-8")
     out = tmp_path / "out"
     assert B.main(["--root", str(root), "--out", str(out)]) == 0
     printed = capsys.readouterr().out
@@ -1464,6 +1466,7 @@ def test_main_summary_says_when_the_open_arxiv_flags_are_not_available(tmp_path:
     # is missing; the console line must not read "ok" while the page says the flags are unknown.
     root = tmp_path / "verdicts-only"
     _write_json(root / B.ARXIV_VERDICTS, {"verdicts": {"2610.99999": _verdict("kill", "2026-10-20")}})
+    (root / "qsearch.py").write_text("", encoding="utf-8")
     assert B.main(["--root", str(root), "--out", str(tmp_path / "out")]) == 0
     printed = capsys.readouterr().out
     assert "arXiv watch: ok\n" not in printed
@@ -1478,6 +1481,7 @@ def _bare_brief() -> dict:
 def test_main_refuses_an_out_that_cannot_take_the_files_before_building(tmp_path: Path, monkeypatch, capsys) -> None:
     root = tmp_path / "empty"
     root.mkdir()
+    (root / "qsearch.py").write_text("", encoding="utf-8")
     a_file = tmp_path / "a_file"
     a_file.write_text("x", encoding="utf-8")
     cases = [a_file, a_file / "below"]
@@ -1501,6 +1505,7 @@ def test_main_refuses_an_out_that_cannot_take_the_files_before_building(tmp_path
 def test_main_reports_a_failed_write_in_one_line(tmp_path: Path, monkeypatch, capsys) -> None:
     root = tmp_path / "empty"
     root.mkdir()
+    (root / "qsearch.py").write_text("", encoding="utf-8")
     out = tmp_path / "out"
 
     def fail(*args, **kwargs):
@@ -1572,3 +1577,91 @@ def test_write_replaces_each_file_whole_json_first(tmp_path: Path, monkeypatch) 
         B.write(tmp_path, _bare_brief(), out)
     assert md.read_text(encoding="utf-8") == "old md" and js.read_text(encoding="utf-8") == '{"old": true}'
     assert sorted(path.name for path in out.iterdir()) == ["AGENT_BRIEF.md", "agent_brief.json"]
+
+
+def test_round3_judge_actions_remain_proposals_not_agent_tasks(tmp_path: Path) -> None:
+    _arxiv_files(tmp_path, [_paper('2610.00001', 'Open kill', 'possible-kill', '2026-10-20')], {
+        '2610.00001': _verdict('kill', '2026-10-20', action='Retract the claim.', by='judge:model'),
+        '2610.00002': _verdict('should-cite', '2026-10-20', action='Cite this paper.'),
+    })
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [item['id'] for item in section['actions']] == ['2610.00002']
+    assert section['proposed_actions'][0]['action'] == 'Retract the claim.'
+    text = '\n'.join(B._render_arxiv(section, SINCE))
+    assert 'Judge-only verdicts' in text and 'kill 1' in text
+    assert 'Proposed by judges; awaiting a person' in text
+    open_actions = text.split('Open actions from verdicts')[1].split('Proposed by judges')[0]
+    assert 'Cite this paper.' in open_actions and 'Retract the claim.' not in open_actions
+
+
+def test_round3_watch_coverage_dates_and_gaps_survive_into_brief(tmp_path: Path) -> None:
+    _arxiv_files(tmp_path, [], {})
+    state = json.loads((tmp_path / B.ARXIV_STATE).read_text())
+    state.update(updated='2026-10-01', tracks_updated={'dqi_opi': '2026-09-30'},
+                 gaps=[{'track': 'dqi_opi', 'since': '2026-09-01', 'until': '2026-09-29'}])
+    _write_json(tmp_path / B.ARXIV_STATE, state)
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section['coverage']['stale'] is True
+    text = '\n'.join(B._render_arxiv(section, SINCE))
+    for expected in ['2026-10-01', '2026-09-30', 'dqi_opi', '2026-09-01', '2026-09-29', 'flags may be missing']:
+        assert expected in text
+    assert 'incomplete' in B._summary('arxiv', section)
+    # A fresh track cannot hide another track's stale checkpoint.
+    state.update(updated='2026-10-20', tracks_updated={'dqi_opi': '2026-09-30', 'dcp': '2026-10-20'}, gaps=[])
+    _write_json(tmp_path / B.ARXIV_STATE, state)
+    assert B.arxiv_section(tmp_path, SINCE)['coverage']['stale'] is True
+
+
+def test_round3_old_kill_is_visible_ahead_of_scoop_backlog(tmp_path: Path) -> None:
+    papers = [_paper(f'2610.{i:05d}', 'New scoop', 'possible-scoop', '2026-10-20')
+              for i in range(B.LIST_CAP + 1)]
+    papers.append(_paper('2609.99999', 'Old open kill', 'possible-kill', '2026-09-01'))
+    _arxiv_files(tmp_path, papers, {})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section['flagged'][0]['id'] == '2609.99999'
+    text = '\n'.join(B._render_arxiv(section, SINCE))
+    assert 'Old open kill' in text and '1 possible kills' in text
+
+
+def test_round3_incomplete_duplicate_check_is_not_summarized_as_ok() -> None:
+    section = {'available': True, 'checked': 0, 'unchecked': ['NEG-NEW'], 'index_issues': ['skipped a record']}
+    summary = B._summary('duplicates', section)
+    assert 'incomplete' in summary and '1' in summary
+
+
+def test_round3_cli_refuses_a_noncheckout_before_writing(tmp_path: Path, capsys) -> None:
+    with pytest.raises(SystemExit) as error:
+        B.main(['--root', str(tmp_path)])
+    assert error.value.code == 2
+    assert 'not a Q-Search checkout' in capsys.readouterr().err
+    assert not (tmp_path / 'research').exists()
+
+
+def test_round3_quarantine_parse_problem_marks_comparison_incomplete(fake_repo: Path) -> None:
+    from tests.tools.test_corpus_duplicates import DUP_A, DUP_B
+    _write_json(fake_repo / B.REGISTRY, [DUP_B])
+    _write_json(fake_repo / B.QUARANTINE, [{'id': DUP_A['id'], 'original_record': {**DUP_A, 'applies_to': 7}}])
+    section = B.duplicates_section(fake_repo, [DUP_B['id']])
+    assert any(issue.startswith(B.QUARANTINE + ':') for issue in section['index_issues'])
+    assert 'incomplete' in B._summary('duplicates', section)
+
+
+def test_round3_registry_counts_rows_and_names_duplicate_ids(tmp_path: Path) -> None:
+    repo = _history_repo(tmp_path)
+    _write_json(repo / B.REGISTRY, [{'id': 'B'}, {'id': 'C'}, {'id': 'C'}])
+    since = B.since_commit(repo, since_days=7, today='2026-10-20')
+    section = B.registry_delta(repo, since[0])
+    assert section['current_count'] == 3 and section['duplicate_ids'] == ['C']
+    text = '\n'.join(B._render_registry(section, SINCE))
+    assert 'Duplicate ids' in text and '`C`' in text
+
+
+def test_round3_actions_with_missing_targets_are_blocked_not_tasks(tmp_path: Path) -> None:
+    _arxiv_files(tmp_path, [], {'2610.00001': _verdict(
+        'should-cite', '2026-10-20', action='Edit research/MISSING.md.',
+        action_pending_clarification='Missing research/MISSING.md; identify the intended note.')})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section['actions'] == []
+    assert section['blocked_actions'][0]['id'] == '2610.00001'
+    text = '\n'.join(B._render_arxiv(section, SINCE))
+    assert 'Actions awaiting clarification' in text and 'Missing research/MISSING.md' in text

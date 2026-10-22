@@ -246,13 +246,19 @@ def _unreadable_reason(git: GitRunner, sha: str, date: str | None) -> str:
             "this clone (a partial clone?)")
 
 
-def _ids(data: Any) -> set[str]:
-    """Record ids of a registry: a list of records, or an object with a "records" list."""
+def _records(data: Any) -> list:
+    """Rows of a registry, without collapsing repeated ids."""
     if isinstance(data, dict) and isinstance(data.get("records"), list):
         data = data["records"]
     if not isinstance(data, list):
         raise ValueError(f"unexpected registry shape: {type(data).__name__}")
-    return {record["id"] for record in data if isinstance(record, dict) and isinstance(record.get("id"), str)}
+    return data
+
+
+def _ids(data: Any) -> set[str]:
+    """Record ids of a registry: a list of records, or an object with a "records" list."""
+    return {record["id"] for record in _records(data)
+            if isinstance(record, dict) and isinstance(record.get("id"), str)}
 
 
 def _quarantined_ids(root: Path) -> set[str] | None:
@@ -294,10 +300,19 @@ def registry_delta(
     path = root / REGISTRY
     if not path.is_file():
         return {"available": False, "reason": f"{REGISTRY} is missing from the working copy"}
-    baseline = _ids(json.loads(committed))
+    baseline_rows = _records(json.loads(committed))
+    baseline = _ids(baseline_rows)
     # read_json retries a read that lands while an agent rewrites the file, and reads UTF-8
     # strictly, as core/research_registry.py and the corpus do.
-    current = _ids(read_json(path))
+    current_rows = _records(read_json(path))
+    current = _ids(current_rows)
+    seen, duplicate_ids = set(), set()
+    for row in current_rows:
+        rid = row.get("id") if isinstance(row, dict) else None
+        if isinstance(rid, str):
+            if rid in seen:
+                duplicate_ids.add(rid)
+            seen.add(rid)
     removed = baseline - current
     quarantined = _quarantined_ids(root)
     return {
@@ -307,8 +322,9 @@ def registry_delta(
         "quarantined": sorted(removed & quarantined) if quarantined is not None else None,
         "since_sha": since_sha,
         "since_date": since_date,
-        "baseline_count": len(baseline),
-        "current_count": len(current),
+        "baseline_count": len(baseline_rows),
+        "current_count": len(current_rows),
+        "duplicate_ids": sorted(duplicate_ids),
     }
 
 
@@ -341,17 +357,43 @@ def _iso(day: dt.date | str) -> str:
     return day.isoformat() if isinstance(day, dt.date) else str(day)
 
 
-def _arxiv_papers(path: Path) -> tuple[dict[str, Any] | None, str]:
-    """The watch's stored papers, or (None, why) when the collisions file cannot give them."""
+def _arxiv_state(path: Path) -> tuple[dict[str, Any] | None, str]:
+    """The watch's state, or (None, why) when it cannot supply stored papers."""
     if not path.is_file():
         return None, f"no {ARXIV_STATE}" if not os.path.lexists(path) else f"{ARXIV_STATE} is not a file"
     try:
-        papers = read_json(path).get("papers")
+        state = read_json(path)
+        papers = state.get("papers")
     except (OSError, ValueError, AttributeError) as error:
         return None, f"{ARXIV_STATE} cannot be read ({type(error).__name__}: {error})"
     if not isinstance(papers, dict):
         return None, f'{ARXIV_STATE} has no "papers" object'
-    return papers, ""
+    return state, ""
+
+
+def _arxiv_coverage(state: dict[str, Any], since: str) -> dict[str, Any]:
+    """Keep source checkpoints and missed windows beside the triage counts."""
+    updated = state.get("updated")
+    tracks = state.get("tracks_updated") or {}
+    gaps = state.get("gaps") or []
+    warnings = []
+    if not isinstance(tracks, dict):
+        tracks = {}
+        warnings.append("track checkpoints are unreadable")
+    if not isinstance(gaps, list) or any(not isinstance(gap, dict) for gap in gaps):
+        gaps = []
+        warnings.append("coverage gaps are unreadable")
+    dates = ([updated] if updated is not None else []) + list(tracks.values())
+    valid_dates = []
+    for value in dates:
+        try:
+            valid_dates.append(dt.date.fromisoformat(value).isoformat())
+        except (TypeError, ValueError):
+            warnings.append(f"invalid watch checkpoint: {value!r}")
+    if not dates:
+        warnings.append("watch checkpoint date is unknown")
+    return {"updated": updated, "tracks_updated": tracks, "gaps": gaps,
+            "stale": any(date < since for date in valid_dates), "warnings": warnings}
 
 
 def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
@@ -362,7 +404,8 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     after `since_date` that have a person's verdict; None, with `flagged_reason`, when the
     collisions file is missing or unreadable (open flags live only there), while the verdicts
     and actions are still given. reviewed: verdicts recorded on or after `since_date`. actions:
-    every verdict with an action whose `action_done` is not JSON true. Verdicts come from the
+    every person's verdict with an action whose `action_done` is not JSON true; judge actions
+    remain proposed_actions awaiting a person. Verdicts come from the
     verdicts file, the source of truth, whether or not the watch has copied them onto its records.
     """
     root = Path(root)
@@ -373,7 +416,8 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     state_path = root / ARXIV_STATE
     if not state_path.is_file() and not (root / verdicts_module.VERDICTS_FILE).is_file():
         return {"available": False, "reason": f"no {ARXIV_STATE} and no {verdicts_module.VERDICTS_FILE} yet"}
-    papers, flagged_reason = _arxiv_papers(state_path)
+    state, flagged_reason = _arxiv_state(state_path)
+    papers = state["papers"] if state is not None else None
     verdicts = {
         arxiv_id: entry
         for arxiv_id, entry in verdicts_module.load_verdicts(root)["verdicts"].items()
@@ -386,15 +430,24 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
         if isinstance(entry.get("reviewed_on"), str) and entry["reviewed_on"] >= since
     ]
     reviewed.sort(key=lambda item: item["reviewed_on"], reverse=True)
-    actions = [
-        {"id": arxiv_id, "action": str(entry["action"]).strip(), "by": entry.get("by")}
+    all_actions = [
+        {"id": arxiv_id, "action": str(entry["action"]).strip(), "by": entry.get("by"),
+         **({"action_pending_clarification": entry["action_pending_clarification"]}
+            if entry.get("action_pending_clarification") else {})}
         for arxiv_id, entry in sorted(verdicts.items())
         # Only a JSON true closes an action: action_done is written by hand, and "false" is truthy.
         if str(entry.get("action") or "").strip() and entry.get("action_done") is not True
     ]
+    actions = [item for item in all_actions
+               if not verdicts_module.by_judge(item) and not item.get("action_pending_clarification")]
+    blocked_actions = [item for item in all_actions
+                       if not verdicts_module.by_judge(item) and item.get("action_pending_clarification")]
+    proposed_actions = [item for item in all_actions if verdicts_module.by_judge(item)]
+    extra = {"proposed_actions": proposed_actions, "blocked_actions": blocked_actions,
+             "coverage": _arxiv_coverage(state, since) if state is not None else None}
     if papers is None:
         return {"available": True, "flagged": None, "flagged_reason": flagged_reason, "reviewed": reviewed,
-                "actions": actions}
+                "actions": actions, **extra}
 
     flagged = []
     for arxiv_id, record in papers.items():
@@ -415,11 +468,11 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
                 "by": entry.get("by") if entry else None,
                 "open": is_open,
             })
-    # Open flags first, newest first within each group, undated last.
-    flagged.sort(key=lambda item: item["id"])
-    flagged.sort(key=lambda item: item["first_seen"] or "", reverse=True)
-    flagged.sort(key=lambda item: not item["open"])
-    return {"available": True, "flagged": flagged, "reviewed": reviewed, "actions": actions}
+    # Prioritize possible kills before scoops and the oldest open flag within each label.
+    # Unknown dates come first so an undated kill cannot silently age out of the page.
+    flagged.sort(key=lambda item: (not item["open"], item["label"] != "possible-kill",
+                                   item["first_seen"] or "", item["id"]))
+    return {"available": True, "flagged": flagged, "reviewed": reviewed, "actions": actions, **extra}
 
 
 def referee_section(root: Path) -> dict[str, Any]:
@@ -579,7 +632,8 @@ COMMANDS = (
     {
         "name": "preflight",
         "command": "python tools/preflight/preflight.py",
-        "when": "Before every commit: exit 1 lists research JSON that does not parse, theorems/, core/ and "
+        "when": "Before every commit: exit 1 lists JSON that does not parse under research/hypotheses/, "
+                "research/registry/, research/audits/ and research/classical_baselines/, plus theorems/, core/ and "
                 "qsearch_cli/ modules the CLI refers to that are missing or not tracked by git, and "
                 "research/audits/cli_manifest.json subcommands missing from the CLI registry's ORDER or listed "
                 "there under another module.",
@@ -677,6 +731,9 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
         "",
     ]
     added, removed = section["added"], section["removed"]
+    if section.get("duplicate_ids"):
+        lines += [f"Duplicate ids in the working registry: {_id_list(section['duplicate_ids'])}. "
+                  "The added/removed lists compare distinct ids; fix repeated ids before filing another record.", ""]
     lines.append(f"Added ({len(added)}): {_id_list(added) if added else 'none'}.")
     if not removed:
         lines.append("Removed (0): none.")
@@ -703,7 +760,11 @@ def _by(item: dict[str, Any]) -> str:
 def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     flagged, reviewed, actions = section["flagged"], section["reviewed"], section["actions"]
     counts: dict[str, int] = {}
-    for item in reviewed:
+    from tools.arxiv_watch.verdicts import by_judge
+
+    human_reviews = [item for item in reviewed if not by_judge(item)]
+    judge_reviews = [item for item in reviewed if by_judge(item)]
+    for item in human_reviews:
         counts[_flat(item["verdict"])] = counts.get(_flat(item["verdict"]), 0) + 1
     tally = ", ".join(f"{verdict} {n}" for verdict, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
     if flagged is None:
@@ -716,7 +777,29 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
         lines = [f"Possible kills and scoops with no person's verdict yet: {open_flags}{note}. First seen since "
                  f"{since} and already reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are "
                  "judgement."]
-    lines += [f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."), ""]
+    if flagged is not None:
+        kills = sum(item["open"] and item["label"] == "possible-kill" for item in flagged)
+        scoops = sum(item["open"] and item["label"] == "possible-scoop" for item in flagged)
+        lines.append(f"Open backlog: {kills} possible kills; {scoops} possible scoops (oldest first within each label).")
+    coverage = section.get("coverage")
+    if coverage:
+        lines.append(f"Watch last saved a run on {_flat(coverage.get('updated')) or 'an unknown date'}.")
+        for track, date in sorted(coverage.get("tracks_updated", {}).items()):
+            lines.append(f"- Track {_flat(track)} last covered through {_flat(date)}.")
+        if coverage.get("stale"):
+            lines.append("The watch has checkpoints older than this brief's window; refresh the watch before treating it as current.")
+        for gap in coverage.get("gaps", []):
+            lines.append(f"- Incomplete coverage: {_flat(gap.get('track'))}, {_flat(gap.get('since'))} to "
+                         f"{_flat(gap.get('until'))}; flags may be missing in this window.")
+        lines += [f"- Coverage warning: {_flat(warning)}." for warning in coverage.get("warnings", [])]
+    lines += [f"Verdicts recorded since {since}: {len(human_reviews)}" + (f" ({tally})." if tally else "."), ""]
+    if judge_reviews:
+        judge_counts: dict[str, int] = {}
+        for item in judge_reviews:
+            verdict = _flat(item["verdict"])
+            judge_counts[verdict] = judge_counts.get(verdict, 0) + 1
+        judge_tally = ", ".join(f"{v} {n}" for v, n in sorted(judge_counts.items()))
+        lines += [f"Judge-only verdicts since {since}: {len(judge_reviews)} ({judge_tally}); awaiting a person's review.", ""]
     # Every verdict of the window is named once: in a row the flagged table shows, or here.
     in_table = {item["id"] for item in (flagged or [])[:LIST_CAP]}
     others = [item for item in reviewed if item["id"] not in in_table]
@@ -733,6 +816,15 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     ]
     lines += _bullets([f"- `{item['id']}` ({_by(item)}): {_flat(item['action'])}" for item in actions]) or [
         "- None."]
+    blocked = section.get("blocked_actions") or []
+    if blocked:
+        lines += ["", "Actions awaiting clarification (resolve the target before acting):", ""]
+        lines += _bullets([f"- `{item['id']}`: {_flat(item['action'])} "
+                           f"Pending: {_flat(item['action_pending_clarification'])}" for item in blocked])
+    proposals = section.get("proposed_actions") or []
+    if proposals:
+        lines += ["", "Proposed by judges; awaiting a person (these are not adopted tasks):", ""]
+        lines += _bullets([f"- `{item['id']}` ({_by(item)}): {_flat(item['action'])}" for item in proposals])
     if flagged:
         lines += ["", "| arXiv | Label | First seen | Verdict | Title |", "|---|---|---|---|---|"]
         for item in flagged[:LIST_CAP]:
@@ -942,6 +1034,8 @@ def main(argv: list[str] | None = None) -> int:
     root = args.root.resolve()
     if not root.is_dir():
         parser.error(f"--root {root} is not a directory")
+    if not (root / "qsearch.py").is_file():
+        parser.error(f"--root {root} is not a Q-Search checkout: it has no qsearch.py")
     problem = _out_problem(_output_dir(root, args.out))  # before the build, not after it
     if problem is not None:
         parser.error(f"--out: {problem}" if args.out is not None else f"cannot write the brief: {problem}")
@@ -966,6 +1060,15 @@ def _summary(key: str, section: dict[str, Any]) -> str:
         return f"not available ({section.get('reason')})"
     if key == "arxiv" and section.get("flagged") is None:
         return f"open flags not available ({section.get('flagged_reason')}); verdicts and actions ok"
+    if key == "arxiv":
+        coverage = section.get("coverage") or {}
+        if coverage.get("gaps") or coverage.get("stale") or coverage.get("warnings"):
+            return "coverage incomplete or stale; inspect watch checkpoints and gaps"
+    if key == "duplicates" and (section.get("unchecked") or section.get("index_issues")):
+        return (f"incomplete ({len(section.get('unchecked') or [])} added records not compared; "
+                f"{len(section.get('index_issues') or [])} index issues)")
+    if key == "registry" and section.get("duplicate_ids"):
+        return f"{len(section['duplicate_ids'])} duplicate ids; inspect the registry"
     return "ok"
 
 
