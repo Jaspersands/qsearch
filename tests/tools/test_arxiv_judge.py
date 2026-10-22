@@ -638,3 +638,11 @@ def test_adversarial_math_case_and_named_operand(source,quote) -> None:
 def test_subtraction_is_never_clause_punctuation(formula) -> None:
     source = 'We prove ' + formula + ' is the exact bound today.'
     assert not _verbatim(source.replace(' - ', ' '),source)
+
+@pytest.mark.parametrize('left,right', [('$','$'),('$$','$$'),(r'\[',r'\]'),(r'\(',r'\)')])
+@pytest.mark.parametrize('dash', ['-', '–', '—', '--', '---', '―'])
+def test_explicit_math_never_drops_clause_style_dashes(left,right,dash) -> None:
+    source = f'We prove {left}ab {dash} cd{right} is the exact bound today.'
+    quote = f'We prove {left}ab cd{right} is the exact bound today.'
+    assert _verbatim(source,source)
+    assert not _verbatim(quote,source)

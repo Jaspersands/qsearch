@@ -261,7 +261,17 @@ def _primes(text: str) -> str:
 
 def _math_ranges(text: str) -> list[tuple[int, int]]:
     return [(m.start(), m.end()) for m in re.finditer(
-        r"\$[^$]*(?:\$|$)|\\\([^)]*\\\)|\b(?:O|o|SU|su)\([^)]*\)|[ΩΘωθ]\([^)]*\)", text)]
+        r"\$\$[\s\S]*?(?:\$\$|$)|\$[^$]*(?:\$|$)|\\\([\s\S]*?(?:\\\)|$)|"
+        r"\\\[[\s\S]*?(?:\\\]|$)|\b(?:O|o|SU|su)\([^)]*\)|[ΩΘωθ]\([^)]*\)", text)]
+
+
+def _normalize_dashes(text: str) -> str:
+    """Clause dashes are punctuation only outside mathematical delimiters/expressions."""
+    maths = _math_ranges(text)
+    text = _CLAUSE_DASH.sub(
+        lambda m: m.group() if any(a <= m.start() < b for a, b in maths) else " ", text)
+    maths = _math_ranges(text)
+    return re.sub(r"--", lambda m: m.group() if any(a <= m.start() < b for a, b in maths) else "-", text)
 
 
 def _clause_hyphens(text: str) -> str:
@@ -310,7 +320,7 @@ def _tokens(text: str) -> list[str]:
     text = _MARKDOWN.sub(" ", text)
     text = _clause_hyphens(text)
     text = _SPACING_WITH_LENGTH.sub(" ", re.sub(r"\*{2,}", " ", text))
-    text = _primes(_CLAUSE_DASH.sub(" ", text).replace("--", "-"))
+    text = _primes(_normalize_dashes(text))
     tokens = _TokenList()
     tokens.truncated = truncated
     previous_end = -1
