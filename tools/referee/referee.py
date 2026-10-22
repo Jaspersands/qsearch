@@ -33,7 +33,7 @@ if __package__ in (None, ""):
 from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.markdown import JOURNALS, note_status  # noqa: E402
-from tools.referee.extract import DATE, _resolve_artifact, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
+from tools.referee.extract import DATE, FENCE, _resolve_artifact, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
 
 REVIEWS = "research/audits/reviews/reviews.json"
 
@@ -257,7 +257,8 @@ DASHES = "-−–"  # hyphen, minus sign and en dash all read as a minus; a touc
 SYMBOL = re.compile(rf"!=|<=|>=|[{DASHES}]>|=>|\+/-|[{DASHES}]+|{EM_DASH}|[≤≦≥≧≠→⇒≈∼±∓√<>=+/^~⁻₋⁺₊]")
 SYMBOL_FORMS = {"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "→": "->", "⇒": "=>", "≈": "~", "∼": "~",
                 "+/-": "±", "⁻": "-", "₋": "-", "⁺": "+", "₊": "+"}
-LINE_MARKER = re.compile(r"(?m)^[ \t]*(?:[-+*>][ \t]+)+")
+LINE_MARKER = re.compile(r"[ \t]*(?:[-+*>][ \t]+)*")  # bullets and quote markers at a line start
+NUMBERED = re.compile(r"(\d{1,9})[.)][ \t]+")  # a numbered list marker, after any of those
 SPACE = re.compile(r"\s")
 
 
@@ -322,13 +323,53 @@ def _spread(text: str, start: int, end: int) -> str:
     return text[start:end].rstrip(".,;:")
 
 
+def _unmarked(text: str) -> str:
+    """`text` with the line-start markers a quote may drop blanked, every position kept: bullets
+    (`-`, `+`, `*`) and quote markers (`>`), and a numbered marker (`2.`, `2)`) where a list item
+    can start (after a blank line, inside a list, or numbered 1, which may break a paragraph).
+    Lines of fenced and indented code keep theirs: a `+` or `-` starting a formula line is a sign.
+    An indented line is code after a blank line outside a list, and so are the lines after it."""
+    out: list[str] = []
+    fenced = code = in_list = False
+    blank = True  # the line before is blank, or there is none
+    for line in text.split("\n"):
+        fence = bool(FENCE.match(line))
+        if fenced or fence:
+            fenced ^= fence
+            out.append(line)
+            code = blank = False
+            continue
+        if not line.strip():
+            out.append(line)
+            blank = True
+            continue
+        indent = len(line[:len(line) - len(line.lstrip(" \t"))].expandtabs(4))
+        if indent >= 4 and (code or (blank and not in_list)):
+            out.append(line)
+            code, blank = True, False
+            continue
+        end = LINE_MARKER.match(line).end()
+        item = any(mark in line[:end] for mark in "-+*")  # a bullet, not only a quote marker
+        number = NUMBERED.match(line, end)
+        if number and (blank or in_list or int(number.group(1)) == 1):
+            end, item = number.end(), True
+        if item:
+            in_list = True
+        elif indent == 0 and blank:
+            in_list = False  # a paragraph after a blank line ends the list
+        out.append(" " * end + line[end:])
+        code = blank = False
+    return "\n".join(out)
+
+
 def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     """The note's own span for `quote`, or None and why not.
 
     The words must appear consecutively in `text` (case, whitespace and punctuation aside), and
     the symbols (<, >, =, +, -, /, ^, ~, ±, √, !=, ->, decimal points) between them, before the
     first and after the last must be the note's. A quote may keep or drop the list and quote markers
-    at the note's line starts, and may write a prose em dash as - or leave it out. The span is
+    at the note's line starts outside code (`_unmarked`), and may write a prose em dash as - or
+    leave it out. The span is
     widened to whole whitespace-delimited tokens, so the note's signs and operators next to the
     quote's first and last words are kept.
     """
@@ -340,33 +381,37 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     # quote's em dash could stand for a minus sign next to the note's own em dash.
     wanted = {em: (_gaps(quote, quoted, em), _symbols(quote[:quoted[0].start()], em), _symbols(quote[quoted[-1].end():], em))
               for em in ("-", "")}
-    tokens = list(WORD.finditer(text))
-    unmarked = LINE_MARKER.sub(lambda match: " " * len(match.group()), text)  # same positions
-    joined, starts = " ", {}
-    for index, token in enumerate(tokens):
-        starts[len(joined)] = index
-        joined += token.group().lower() + " "
+    unmarked = _unmarked(text)  # the same positions, so a span in either is a span of `text`
+    versions = (text, unmarked)
     needle = " " + " ".join(words) + " "
-    found, at = False, joined.find(needle)
-    while at >= 0:
-        found = True
-        first = starts[at + 1]
-        last = first + len(words) - 1
-        before = tokens[first - 1].end() if first else 0
-        after = tokens[last + 1].start() if last + 1 < len(tokens) else len(text)
-        for version in (text, unmarked):
-            for em, (want_gaps, want_lead, want_trail) in wanted.items():
-                lead = _symbol_run(version[before:tokens[first].start()], em)
-                trail = _symbol_run(version[tokens[last].end():after], em)
-                gaps = _gaps(version, tokens[first:last + 1], em)
-                if (want_gaps != gaps or len(want_lead) > len(lead) or len(want_trail) > len(trail)
-                        or want_lead != tuple(t for _, _, t in lead[len(lead) - len(want_lead):])
-                        or want_trail != tuple(t for _, _, t in trail[:len(want_trail)])):
-                    continue
-                start = before + lead[-len(want_lead)][0] if want_lead else tokens[first].start()
-                end = tokens[last].end() + trail[len(want_trail) - 1][1] if want_trail else tokens[last].end()
-                return _spread(text, start, end), ""
-        at = joined.find(needle, at + 1)
+    found = False
+    # The words are read with the note's numbered markers (a quote that keeps them) and without.
+    for words_from in versions if unmarked != text else versions[:1]:
+        tokens = list(WORD.finditer(words_from))
+        joined, starts = " ", {}
+        for index, token in enumerate(tokens):
+            starts[len(joined)] = index
+            joined += token.group().lower() + " "
+        at = joined.find(needle)
+        while at >= 0:
+            found = True
+            first = starts[at + 1]
+            last = first + len(words) - 1
+            before = tokens[first - 1].end() if first else 0
+            after = tokens[last + 1].start() if last + 1 < len(tokens) else len(text)
+            for version in versions:
+                for em, (want_gaps, want_lead, want_trail) in wanted.items():
+                    lead = _symbol_run(version[before:tokens[first].start()], em)
+                    trail = _symbol_run(version[tokens[last].end():after], em)
+                    gaps = _gaps(version, tokens[first:last + 1], em)
+                    if (want_gaps != gaps or len(want_lead) > len(lead) or len(want_trail) > len(trail)
+                            or want_lead != tuple(t for _, _, t in lead[len(lead) - len(want_lead):])
+                            or want_trail != tuple(t for _, _, t in trail[:len(want_trail)])):
+                        continue
+                    start = before + lead[-len(want_lead)][0] if want_lead else tokens[first].start()
+                    end = tokens[last].end() + trail[len(want_trail) - 1][1] if want_trail else tokens[last].end()
+                    return _spread(text, start, end), ""
+            at = joined.find(needle, at + 1)
     if found:
         return None, ("quote's symbols (<, >, =, +, -, /, ^, ~, ±, √, !=, ->, decimal points) differ from the note, "
                       "between its words or before or after them")

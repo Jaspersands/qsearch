@@ -111,7 +111,11 @@ text.
    written `-` or left out. The quote's em dashes are read the way the note's are, so a
    quote's em dash never stands for a minus sign beside the note's em dash: `x — (y)` does
    not pass for `x — (-y)`. List and quote markers at the note's line starts may be kept or
-   dropped, but a kept marker must be the note's. The stored quote is the note's own
+   dropped, but a kept marker must be the note's: bullets (`-`, `+`, `*`), quote markers
+   (`>`) and numbered markers (`2.`, `2)`) where a list item can start (after a blank
+   line, inside a list, or numbered 1). In fenced or indented code (an indented line after
+   a blank line outside a list, and the lines after it) a `+` or `-` that starts a line is
+   a sign, not a marker, and must be kept. The stored quote is the note's own
    wording of the span, not the judge's copy, widened to whole whitespace-delimited tokens
    (less a trailing `.`, `,`, `;` or `:`) so that a sign or operator next to the first or
    last word is kept. A quote lifted from the artifact excerpt fails, because

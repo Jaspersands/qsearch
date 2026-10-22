@@ -1043,6 +1043,65 @@ def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
     assert R.find_quote("and the bound holds - on each", doubled)[0] == "and the bound holds —— on each"
 
 
+CODE_NOTE = textwrap.dedent(
+    """\
+    # Code Signs
+
+    2026-10-19. REVIEW PENDING.
+
+    ## Result
+
+    Hence every fixed output has distance at most
+
+        delta_c <= k/(2 sqrt(M))
+           + (1/2) sqrt((2^(c(a-1))-1)/M)
+           - (c/2) sqrt((G-1)/n^a).
+
+    Parity expansion modulo4 gives
+
+    ```text
+    P_i(x) = c_i + (-1)^c_i [sum_j L_ij x_j
+    - 2 sum_{j<k} L_ij L_ik x_j x_k] mod4.
+    ```
+
+    - the first item holds for every input
+        - the nested item holds for every input
+
+    1. the first numbered item holds for every input
+    2. the second numbered item has a gap of 0.5
+
+    The count of saved inputs is
+    12. Then the search stops for every input.
+    """
+)
+
+
+def test_find_quote_compares_a_sign_that_starts_a_line_of_code() -> None:
+    # A '+' or '-' starting a formula continuation line read as a list marker, so a quote
+    # that dropped it passed.
+    for dropped in ("delta_c <= k/(2 sqrt(M)) (1/2) sqrt((2^(c(a-1))-1)/M)",
+                    "sqrt((2^(c(a-1))-1)/M) (c/2) sqrt((G-1)/n^a)",
+                    "L_ij x_j 2 sum_{j<k} L_ij L_ik x_j x_k"):
+        assert R.find_quote(dropped, CODE_NOTE)[0] is None, dropped
+    for kept in ("delta_c <= k/(2 sqrt(M)) + (1/2) sqrt((2^(c(a-1))-1)/M)",
+                 "sqrt((2^(c(a-1))-1)/M) - (c/2) sqrt((G-1)/n^a)",
+                 "L_ij x_j - 2 sum_{j<k} L_ij L_ik x_j x_k",
+                 # a nested list item is no code block, so its marker may still go
+                 "the first item holds for every input the nested item holds"):
+        assert R.find_quote(kept, CODE_NOTE)[0] is not None, kept
+
+
+def test_find_quote_lets_a_numbered_list_marker_go() -> None:
+    # The README lets list markers at line starts be kept or dropped; '2.' could only be kept.
+    for quote in ("the first numbered item holds for every input the second numbered item has",
+                  "the first numbered item holds for every input 2. the second numbered item has"):
+        assert R.find_quote(quote, CODE_NOTE)[0] == (
+            "the first numbered item holds for every input\n2. the second numbered item has"), quote
+    # A number that starts a line inside a paragraph is no list item, so it stays a word.
+    assert R.find_quote("The count of saved inputs is Then the search stops", CODE_NOTE)[0] is None
+    assert R.find_quote("The count of saved inputs is 12. Then the search stops", CODE_NOTE)[0] is not None
+
+
 def test_find_quote_never_reads_a_quotes_em_dash_as_the_notes_minus_sign() -> None:
     # The quote's em dash read as "-" while the note's was left out, so it stood in for the
     # note's own minus sign and a dropped sign passed.
