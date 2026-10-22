@@ -228,8 +228,10 @@ to get CI.
   labels: a simulated first weekly run with no new papers changed no label, only the 22
   verdict attachments and the run dates (`updated`, all 14 `tracks_updated` entries and the
   digest's "Last updated" line). The four changes need an explicit `watch.py --relabel`
-  commit. The first pull request after seeding therefore holds verdicts and dates and no new
-  paper; the workflow's PR body says what can change.
+  commit. Besides any new papers, the first pull request after seeding holds the 22 verdict
+  attachments and the run dates. New papers are all but certain: that run fetches from a week
+  before each track's last fetch (2026-10-11, and 2026-10-12 for number_theory), and the newest
+  stored paper is from 2026-10-16. The workflow's PR body says what can change.
 - Seed replay: all 52 seed papers whose tags name a track are placed on it. Nine
   patterns were added after the first replay missed them, so this is a consistency
   check on the seeds, not a held-out accuracy figure.
@@ -239,8 +241,11 @@ to get CI.
   possible scoops, 96 related, 9 already cited, 56 unrelated. Eight of the eleven old
   kills were positive quantum papers tripped by "lower bound", "limitation" or a
   background "dequantized"; the ninth already-cited paper cites a versioned id.
-- That run predates paging: each track query stopped at 50 results. The number_theory
-  query returned exactly 50 papers covering only 2026-10-13 to 2026-10-15, so its papers
-  from 2026-09-18 to 2026-10-12 were never fetched. The JSON has no gap entry for it (gaps
-  are recorded only by a fetching run); backfill with
-  `watch.py --since 2026-09-18 --tracks number_theory`.
+- That run predates paging: each track query stopped at 50 results, and the number_theory
+  query's 50 covered only 2026-10-13 to 2026-10-15. The backfill of 2026-10-19
+  (`watch.py --since 2026-09-18 --tracks number_theory`, with paging) is committed: that query
+  fetched 620 papers published 2026-09-18 to 2026-10-16, 542 of them new (3 possible kills, 4
+  possible scoops, 54 related, 481 unrelated), and recorded no gap. It need not be run again.
+  The file now holds 718 papers: 7 possible kills, 15 possible scoops, 150 related, 9 already
+  cited, 537 unrelated. Its `tracks_updated` has number_theory at 2026-10-19 and the other 13
+  tracks at 2026-10-18, their last fetch.
