@@ -919,6 +919,17 @@ def test_find_quote_reads_letters_in_any_script_and_lets_a_prose_em_dash_go() ->
     assert "em dash" in R.REFEREE_INSTRUCTIONS
 
 
+def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
+    # x - (-y) is x + y: two signs apart are two signs, so dropping one is a flipped sign.
+    note = "We find the shift is x - (-y) for every saved input, and the bound holds — on each."
+    for flipped in ("We find the shift is x - (y) for every saved input", "We find the shift is x - y for every saved input"):
+        assert R.find_quote(flipped, note)[0] is None, flipped
+    assert R.find_quote("We find the shift is x - (- y) for every", note)[0] == "We find the shift is x - (-y) for every"
+    for run in ("and the bound holds -— on each", "and the bound holds —– on each", "and the bound holds --- on each"):
+        assert R.find_quote(run, note)[0] == "and the bound holds — on each", run
+    assert R.find_quote("and the bound holds - - on each", note)[0] is None
+
+
 def _reviewed_repo(root: Path) -> None:
     """FIXTURE_NOTE unsound, EDITED needs-work then edited, SOUND_NOTE sound, OTHER_n unreviewed."""
     _write(root, "FIXTURE_NOTE", FIXTURE_NOTE)

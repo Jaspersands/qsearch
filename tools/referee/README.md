@@ -102,7 +102,8 @@ text.
    an underscore splits words) must appear consecutively in the note after lower-casing,
    and the symbols between them, before the first and after the last (`<`, `>`, `=`, `+`,
    `-`, `/`, `^`, `~`, `±`, `√`, decimal points; `≤` and `<=` count as the same, and so do
-   `-`, `−`, `–` and a run of them) must be the note's, so `b>=epsilon` does not pass for
+   `-`, `−`, `–` and a touching run of them; signs apart are separate, so `x - (y)` does
+   not pass for `x - (-y)`) must be the note's, so `b>=epsilon` does not pass for
    `b<=epsilon`, nor `>= min(1, ...)` for `<= min(1, ...)`. A prose em dash (`—`) may be
    written `-` or left out. List and quote markers at the note's line starts may be kept or
    dropped, but a kept marker must be the note's. The stored quote is the note's own

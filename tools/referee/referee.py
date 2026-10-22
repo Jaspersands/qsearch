@@ -250,7 +250,7 @@ MAX_CLAIMS = 6
 # "b<=epsilon" and "b>=epsilon" have the same words.
 WORD = re.compile(r"[^\W_]+")
 EM_DASH = "—"
-DASHES = "-−–"  # hyphen, minus sign and en dash all read as a minus; a run of them is one
+DASHES = "-−–"  # hyphen, minus sign and en dash all read as a minus; a touching run of them is one
 SYMBOL = re.compile(rf"!=|<=|>=|->|=>|[{DASHES}]+|{EM_DASH}|[≤≦≥≧≠→⇒≈∼±∓√<>=+/^~]")
 SYMBOL_FORMS = {"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "→": "->", "⇒": "=>", "≈": "~", "∼": "~"}
 LINE_MARKER = re.compile(r"(?m)^[ \t]*(?:[-+*>][ \t]+)+")
@@ -272,13 +272,14 @@ def _is_note(path: Path) -> bool:
 
 
 def _symbol_run(segment: str, em_dash: str) -> list[tuple[int, int, str]]:
-    """(start, end, symbol) for each symbol in `segment`: typographic forms read as ASCII, a run
-    of minus signs as one, and an em dash as `em_dash` ("-", or "" to leave it out)."""
+    """(start, end, symbol) for each symbol in `segment`: typographic forms read as ASCII, a
+    touching run of minus signs as one (in `x - (-y)` the two are two), and an em dash as
+    `em_dash` ("-", or "" to leave it out)."""
     run: list[tuple[int, int, str]] = []
     for match in SYMBOL.finditer(segment):
         token = match.group()
         token = em_dash if token == EM_DASH else "-" if token[0] in DASHES else SYMBOL_FORMS.get(token, token)
-        if token == "-" and run and run[-1][2] == "-":
+        if token == "-" and run and run[-1][2] == "-" and run[-1][1] == match.start():  # touching: "-—" is one
             run[-1] = (run[-1][0], match.end(), "-")
         elif token:
             run.append((match.start(), match.end(), token))
