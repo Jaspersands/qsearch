@@ -284,12 +284,44 @@ def test_hitting_the_page_cap_is_recorded_and_reported(fake_repo: Path) -> None:
     assert gaps == [{"track": "dcp", "since": since, "until": oldest, "found_on": "2026-10-19"}]
     digest = (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text()
     assert "Incomplete coverage" in digest and f"| dcp | {since} to {oldest} |" in digest
+    # A weekly run that is not cut short but starts after the gap, and a run of another track,
+    # leave it listed; so does a backfill that is cut short again.
+    weekly = run(fake_repo, PagedClient(papers), corpus, tracks={"dcp": TRACKS["dcp"]}, page_size=100, max_pages=5, today="2026-10-26")
+    assert weekly.truncated == {} and _state(fake_repo)["gaps"] == gaps
+    other = [_paper("2610.70000", "Decoded quantum interferometry note", "DQI.", "2026-10-25")]
+    assert run(fake_repo, FakeClient(other), corpus, tracks={"dqi_opi": TRACKS["dqi_opi"]}, today="2026-10-26").saved
+    assert _state(fake_repo)["gaps"] == gaps
+    cut = run(fake_repo, PagedClient(papers), corpus, since="2026-07-10", tracks={"dcp": TRACKS["dcp"]},
+              page_size=50, max_pages=2, today="2026-10-27")
+    assert cut.truncated and gaps[0] in _state(fake_repo)["gaps"]
     # A backfill that is not cut short closes the gap.
-    again = run(fake_repo, PagedClient(papers), corpus, since=since, tracks={"dcp": TRACKS["dcp"]},
-                page_size=100, max_pages=5, today="2026-10-20")
-    assert again.truncated == {} and again.new == 82
+    again = run(fake_repo, PagedClient(papers), corpus, since="2026-07-10", tracks={"dcp": TRACKS["dcp"]},
+                page_size=100, max_pages=5, today="2026-10-28")
+    assert again.truncated == {} and again.new == 102
     assert _state(fake_repo)["gaps"] == []
     assert "Incomplete coverage" not in (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text()
+
+
+def test_each_track_window_starts_a_week_before_its_own_last_fetch(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    path = fake_repo / "research" / "audits" / "arxiv_collisions.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"updated": "2026-10-12", "papers": {}}), encoding="utf-8")  # every track ran 10-12
+    dcp, dqi = {"dcp": TRACKS["dcp"]}, {"dqi_opi": TRACKS["dqi_opi"]}
+    assert run(fake_repo, FakeClient([_paper("2610.00001", "Dihedral coset note", "Coset states.", "2026-10-18")]), corpus,
+               tracks=dcp, today="2026-10-19").saved
+    state = _state(fake_repo)
+    assert state["updated"] == "2026-10-19" and state["tracks_updated"]["dcp"] == "2026-10-19"
+    assert state["tracks_updated"]["dqi_opi"] == "2026-10-12"  # recorded before `updated` moved
+    # A --since that starts after a track's usual window leaves its date, so the skipped days come next time.
+    narrow = [_paper("2610.00002", "Decoded quantum interferometry note", "DQI.", "2026-10-20")]
+    assert run(fake_repo, FakeClient(narrow), corpus, since="2026-10-19", tracks=dqi, today="2026-10-21").saved
+    assert _state(fake_repo)["tracks_updated"]["dqi_opi"] == "2026-10-12"
+    # So dqi_opi's next window still starts 2026-10-05, and a paper submitted 10-06 but listed late is found.
+    late = [_paper("2610.00003", "Decoded quantum interferometry again", "DQI.", "2026-10-06")]
+    assert run(fake_repo, FakeClient(late), corpus, tracks=dqi, today="2026-10-26").new == 1
+    assert _state(fake_repo)["tracks_updated"]["dqi_opi"] == "2026-10-26"
 
 
 def test_paging_goes_through_the_paced_client(fake_repo: Path) -> None:

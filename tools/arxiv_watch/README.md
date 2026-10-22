@@ -20,10 +20,16 @@ uncovered window is recorded under `gaps` in the JSON, printed as a warning and 
 "Incomplete coverage" in the digest until a run of that track that was not cut short covers
 it (`--since <start> --tracks <track>`).
 
-The window starts seven days before each track's previous run. arXiv's `published` date is
-the v1 submission date, and a paper can be listed several days after it is submitted
-(weekends, moderation holds), so a one-day overlap lost papers. Papers already stored are
-recognised by id and never re-reported or re-scored, with two exceptions:
+The window starts seven days before each track's previous run (its `tracks_updated` entry;
+14 days back on a track's first run). arXiv's `published` date is the v1 submission date,
+and a paper can be listed several days after it is submitted (weekends, moderation holds),
+so a one-day overlap lost papers. A `--tracks` run moves only the dates of the tracks it ran,
+and a `--since` that starts after a track's usual window start leaves that track's date
+alone, so its next run still fetches the days that run skipped. A collisions file written
+before per-track dates has only `updated`; each track without a date of its own is taken to
+have run then, and the next saving run records that date for it before moving `updated`.
+Papers already stored are recognised by id and never re-reported or re-scored, with two
+exceptions:
 
 - A paper with a reviewed verdict (see [Verdicts](#verdicts)) gets the verdict copied onto
   its record and is listed in the digest's Reviewed table. A person's verdict moves it out of
@@ -37,8 +43,9 @@ recognised by id and never re-reported or re-scored, with two exceptions:
 Outputs, rewritten only when a run finds a new paper, a coverage gap opens or closes, a
 verdict is added, changed or withdrawn, a stored flag is relabelled, or another track's query
 returns a stored paper (its `queried_by` list grows, as after a `--tracks` backfill), so a
-quiet week leaves them byte-for-byte unchanged. A rewrite also moves `updated`, every run
-track's `tracks_updated` entry and the digest's "Last updated" line to the run date. A verdict
+quiet week leaves them byte-for-byte unchanged. A rewrite also moves `updated`, the
+`tracks_updated` entry of every run track whose window started no later than usual, and the
+digest's "Last updated" line to the run date. A verdict
 for a paper the watch has not stored changes no record, so the run re-renders only the digest:
 
 - `research/audits/arxiv_collisions.json`: every paper seen, with tracks, label, wording

@@ -303,6 +303,8 @@ def checkout_error(root: Path) -> str | None:
 
 
 def _since_for(state: dict, name: str, today: str) -> str:
+    """A track's usual window start: a week before its own last fetch. A track with no date of its
+    own (a state written before per-track dates) last ran no later than `updated`."""
     last = (state.get("tracks_updated") or {}).get(name) or state.get("updated")
     if last:
         return (dt.date.fromisoformat(last) - dt.timedelta(days=OVERLAP_DAYS)).isoformat()
@@ -341,9 +343,11 @@ def run(
 
     fetched: dict[str, tuple[Paper, set[str]]] = {}
     windows: dict[str, str] = {}
+    usual: dict[str, str] = {}
     report = RunReport()
     for name, track in tracks.items():
-        start = since or _since_for(state, name, today)
+        usual[name] = _since_for(state, name, today)
+        start = since or usual[name]
         windows[name] = start
         papers, cut = fetch_track(client, track.arxiv_query(), start, page_size, max_pages)
         if cut is not None:
@@ -404,8 +408,16 @@ def run(
         changed = True
 
     if changed:
+        # Every track gets a date of its own before `updated` moves, so a run of some tracks never
+        # shrinks another's window. A track whose --since started after its usual start keeps its
+        # date, so its next run still fetches the days this one skipped.
+        dates = state.get("tracks_updated") or {}
+        if state.get("updated"):
+            for name in sorted({*TRACKS, *tracks}):
+                dates.setdefault(name, state["updated"])
+        dates.update({name: today for name in tracks if windows[name] <= usual[name]})
+        state["tracks_updated"] = dates
         state["updated"] = today
-        state.setdefault("tracks_updated", {}).update({name: today for name in tracks})
         _save(root, state)
         report.saved = True
     else:
