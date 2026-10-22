@@ -911,9 +911,17 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     print(f"wrote {md} and {js}")
     for key, heading, _ in SECTION_HEADINGS:
-        section = brief[key]
-        print(f"{heading}: " + ("ok" if section.get("available") else f"not available ({section.get('reason')})"))
+        print(f"{heading}: {_summary(key, brief[key])}")
     return 0
+
+
+def _summary(key: str, section: dict[str, Any]) -> str:
+    """A section's console summary: ok, or not available and why; the open arXiv flags are reported apart."""
+    if not section.get("available"):
+        return f"not available ({section.get('reason')})"
+    if key == "arxiv" and section.get("flagged") is None:
+        return f"open flags not available ({section.get('flagged_reason')}); verdicts and actions ok"
+    return "ok"
 
 
 if __name__ == "__main__":

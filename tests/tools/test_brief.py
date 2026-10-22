@@ -1208,6 +1208,17 @@ def test_main_writes_both_files(tmp_path: Path, capsys) -> None:
     assert B.main(["--root", str(root), "--since-days", "3650", "--out", str(out)]) == 0
 
 
+def test_main_summary_says_when_the_open_arxiv_flags_are_not_available(tmp_path: Path, capsys) -> None:
+    # The arXiv section stays available for its verdicts and actions when the collisions file
+    # is missing; the console line must not read "ok" while the page says the flags are unknown.
+    root = tmp_path / "verdicts-only"
+    _write_json(root / B.ARXIV_VERDICTS, {"verdicts": {"2610.99999": _verdict("kill", "2026-10-20")}})
+    assert B.main(["--root", str(root), "--out", str(tmp_path / "out")]) == 0
+    printed = capsys.readouterr().out
+    assert "arXiv watch: ok\n" not in printed
+    assert f"arXiv watch: open flags not available (no {B.ARXIV_STATE}); verdicts and actions ok" in printed
+
+
 def _bare_brief() -> dict:
     return {"generated_on": "2026-10-20", "since_days": 7, **{name: {"available": False, "reason": "x"}
                                                               for name in SECTIONS}}
