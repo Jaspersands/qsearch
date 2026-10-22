@@ -380,13 +380,17 @@ def _check_r4(c: Candidate, qn: dict) -> Check:
     if c.objective != "count":
         return Check("R4", None, "the subfield baseline is stated for the count objective; compare by hand")
     value, label = _claimed(c, qn)
+    baseline = qn["subfield_baseline"]
+    detail = f"subfield baseline {_fmt(baseline)} (alpha_sub = {_fmt(qn['alpha_sub'])})"
+    if value is not None:
+        detail = f"{label} {_fmt(value)} against {detail}"
+    # Both tests below hold whatever the radius, so they fail R4 before any radius is given.
+    if c.rho == 0.5 and R.subfield_blocks_at_half(qn["alpha"], c.b, c.c):
+        return Check("R4", False, detail + "; at rho = 1/2, alpha >= 2c^2/(b^2+c^2) blocks every licensed radius")
+    if baseline >= 1:
+        return Check("R4", False, detail + ": Prange over the subfield satisfies every row, which no claimed value beats")
     if value is None:
         return Check("R4", None, "give radius or finite_dqi_mean")
-    baseline = qn["subfield_baseline"]
-    blocks = c.rho == 0.5 and R.subfield_blocks_at_half(qn["alpha"], c.b, c.c)
-    detail = f"{label} {_fmt(value)} against subfield baseline {_fmt(baseline)} (alpha_sub = {_fmt(qn['alpha_sub'])})"
-    if blocks:
-        return Check("R4", False, detail + "; at rho = 1/2, alpha >= 2c^2/(b^2+c^2) blocks every licensed radius")
     if value <= baseline:
         return Check("R4", False, detail + ": the subfield baseline is at least as good")
     return Check("R4", True, detail)

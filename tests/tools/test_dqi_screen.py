@@ -442,6 +442,20 @@ def test_r4_passes_and_blocks_at_half() -> None:
     assert R.subfield_baseline(0.5, 1 / 3, 10) == pytest.approx(0.65)  # floor(10/3) = 3 rows, not 3.33
 
 
+def test_r4_fails_without_a_radius_when_no_radius_can_pass() -> None:
+    no_radius = {"q": 4096, "p": 2, "b": 12, "m": 2000, "radius": None}
+    # alpha = 1/2 >= 2c^2/(b^2+c^2) at rho = 1/2: Proposition 9 blocks every licensed radius.
+    s, checks = _run("hermite_half_rate.json", **no_radius, c=1)
+    assert checks["R4"].passed is False and "blocks every licensed radius" in checks["R4"].detail
+    assert s.verdict == "not viable"
+    # rho = 1/4: the subfield baseline is 1 (alpha_sub = 1), which no claimed value can beat.
+    s, checks = _run("hermite_half_rate.json", **no_radius, c=2, rho=0.25)
+    assert s.quantities["subfield_baseline"] == 1.0 and checks["R4"].passed is False
+    assert "subfield baseline 1" in checks["R4"].detail and s.verdict == "not viable"
+    s, checks = _run("hermite_half_rate.json", **no_radius, c=12)  # baseline 0.625: the radius decides
+    assert checks["R4"].passed is None and "give radius or finite_dqi_mean" in checks["R4"].detail
+
+
 def test_saturated_reach_is_flagged_not_viable() -> None:
     s, checks = _run("hermite_half_rate.json", radius=600)  # lam = 0.6 > 1 - rho
     assert s.quantities["q_dqi"] == 1.0
