@@ -32,7 +32,7 @@ from typing import Any, Callable
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.cockpit.build_cockpit import US, utc_day  # noqa: E402
+from tools.cockpit.build_cockpit import US  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -55,12 +55,12 @@ GitRunner = Callable[..., "str | None"]
 LOG_FORMAT = f"--format=%H{US}%ct"
 # Prints "true"/"false", then root's path below the top of its work tree ("" at the top).
 HISTORY_ARGS = ("rev-parse", "--is-shallow-repository", "--show-prefix")
-# The cutoff is the start of a UTC day. git reads a bare date (--before=2026-10-13) as that day
-# at the current time of day, so the same command would pick different commits morning and
-# evening; and --before keeps a commit dated exactly at its limit. So the limit is the last
-# second before the cutoff (commit dates are whole seconds). [0-9], not \d: \d takes any
-# Unicode digit.
-BEFORE_ARG = re.compile(r"--before=[0-9]{4}-[0-9]{2}-[0-9]{2}T23:59:59Z")
+# The cutoff is the start of a local day (window_start), given to git in UTC. git reads a bare
+# date (--before=2026-10-13) as that day at the current time of day, so the same command would
+# pick different commits morning and evening; and --before keeps a commit dated exactly at its
+# limit. So the limit is the last second before the cutoff (commit dates are whole seconds, and
+# time zones are whole minutes from UTC). [0-9], not \d: \d takes any Unicode digit.
+BEFORE_ARG = re.compile(r"--before=[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:59Z")
 FULL_SHA = re.compile(r"[0-9a-f]{40}(?:[0-9a-f]{24})?")
 SHOW_ARG = re.compile(FULL_SHA.pattern + ":" + re.escape(REGISTRY))
 GIT_TIMEOUT = 60  # seconds per git command; each takes well under one on this repository
@@ -77,7 +77,7 @@ REPOSITORY_ENV = (
 
 
 def _log_args(cutoff: dt.date) -> tuple[str, ...]:
-    """The newest change to the registry before the cutoff, as "<sha><US><unix time>".
+    """The newest change to the registry before the cutoff (00:00 local time), as "<sha><US><unix time>".
 
     Path-limited and along the first parents only: the checked-out branch's own line, each
     merge compared with the branch's side of it. So the registry at the commit found is the
@@ -86,14 +86,15 @@ def _log_args(cutoff: dt.date) -> tuple[str, ...]:
     or newer, never stand in for this branch's registry (a tool branch merged with --no-ff, or
     a branch that changed the registry too).
     """
-    before = f"--before={(cutoff - dt.timedelta(days=1)).isoformat()}T23:59:59Z"
+    limit = window_start(cutoff).astimezone(dt.timezone.utc) - dt.timedelta(seconds=1)
+    before = f"--before={limit:%Y-%m-%dT%H:%M:%S}Z"
     return ("log", "-1", "--first-parent", before, LOG_FORMAT, "--", REGISTRY)
 
 
 def allowed_git_args(args: tuple[str, ...]) -> bool:
     """True only for the brief's own read-only git commands:
 
-    ("log", "-1", "--first-parent", "--before=YYYY-MM-DDT23:59:59Z", "--format=%H<US>%ct", "--", REGISTRY),
+    ("log", "-1", "--first-parent", "--before=YYYY-MM-DDTHH:MM:59Z", "--format=%H<US>%ct", "--", REGISTRY),
     ("show", "<full sha>:" + REGISTRY), ("ls-tree", "--name-only", "<full sha>", "--", REGISTRY)
     and ("rev-parse", "--is-shallow-repository", "--show-prefix").
     """
@@ -137,16 +138,33 @@ def git_runner(root: Path) -> GitRunner:
 
 
 def _day(today: dt.date | str | None) -> dt.date:
-    """A calendar day: today in UTC when None; a datetime is cut to its UTC date (a naive one is taken as UTC)."""
+    """A local calendar day: today when None; an aware datetime is cut to its local date, a naive one is taken as local.
+
+    Local, not UTC: the arXiv watch (first_seen), the verdicts store and the referee
+    (reviewed_on) stamp dt.date.today(), and the brief compares those stamps with its window.
+    """
     if today is None:
-        return dt.datetime.now(dt.timezone.utc).date()
+        return dt.date.today()
     if isinstance(today, dt.datetime):
-        return (today.astimezone(dt.timezone.utc) if today.tzinfo else today).date()
+        return (today.astimezone() if today.tzinfo else today).date()
     return today if isinstance(today, dt.date) else dt.date.fromisoformat(today)
 
 
+def window_start(cutoff: dt.date) -> dt.datetime:
+    """00:00 local time on the cutoff day, with that day's offset from UTC (daylight saving may differ today)."""
+    return dt.datetime.combine(cutoff, dt.time()).astimezone()
+
+
+def _local_day(timestamp: str) -> str | None:
+    """The local calendar date of a git %ct timestamp."""
+    try:
+        return dt.datetime.fromtimestamp(int(timestamp)).date().isoformat()
+    except (ValueError, OverflowError, OSError):
+        return None
+
+
 def cutoff_day(since_days: int, today: dt.date | str | None = None) -> dt.date:
-    """The first day of the window: the brief covers changes from its start (00:00 UTC) on.
+    """The first day of the window: the brief covers changes from its start (00:00 local time) on.
 
     Raises ValueError unless since_days is a whole number from 1 to MAX_SINCE_DAYS.
     """
@@ -158,8 +176,8 @@ def cutoff_day(since_days: int, today: dt.date | str | None = None) -> dt.date:
 def since_commit(
     root: Path, since_days: int = 7, today: dt.date | str | None = None, git: GitRunner | None = None
 ) -> tuple[str, str] | None:
-    """(sha, UTC commit date) of the registry's last change before the cutoff day (00:00 UTC)
-    on the checked-out branch's first-parent line.
+    """(sha, local commit date) of the registry's last change before the cutoff day (00:00
+    local time) on the checked-out branch's first-parent line.
 
     The registry at that commit is the registry as this branch had it at the cutoff. None when git cannot
     answer; when the clone is shallow (its oldest commit is a cut, so the commit before the
@@ -186,7 +204,7 @@ def _baseline(
     if answer is None:
         return None, f"git log could not list the changes to {REGISTRY} before {cutoff.isoformat()}"
     sha, _, stamp = answer.strip().partition(US)
-    day = utc_day(stamp)
+    day = _local_day(stamp)
     return ((sha, day), "") if sha and day else (None, _no_change_reason(cutoff.isoformat()))
 
 
@@ -546,6 +564,7 @@ def build(
     return {
         "generated_on": day.isoformat(),
         "since_days": since_days,
+        "window_start": window_start(cutoff).isoformat(),
         "registry": registry,
         "arxiv": _section("arxiv", arxiv_section, root, cutoff),
         "referee": _section("referee", referee_section, root),
@@ -713,6 +732,19 @@ SECTION_HEADINGS = (
 )
 
 
+def _zone_label(start: Any) -> str:
+    """ "00:00 local time, UTC+11:00" from the window start's ISO time; without it, "00:00 local time"."""
+    try:
+        offset = dt.datetime.fromisoformat(start).utcoffset()
+    except (TypeError, ValueError):
+        offset = None
+    if offset is None:
+        return "00:00 local time"
+    sign, offset = ("-", -offset) if offset < dt.timedelta(0) else ("+", offset)
+    hours, minutes = divmod(int(offset.total_seconds()) // 60, 60)
+    return f"00:00 local time, UTC{sign}{hours:02d}:{minutes:02d}"
+
+
 def render(brief: dict[str, Any]) -> str:
     """The brief as markdown: one fixed heading per section, "Not available: <reason>" when a source is missing."""
     since = cutoff_day(brief["since_days"], brief["generated_on"]).isoformat()
@@ -720,7 +752,7 @@ def render(brief: dict[str, Any]) -> str:
         "# Agent brief",
         "",
         f"Generated {brief['generated_on']} by `python tools/brief/build_brief.py`; covers the {brief['since_days']} "
-        f"days since {since} (00:00 UTC). Do not edit by hand.",
+        f"days since {since} ({_zone_label(brief.get('window_start'))}). Do not edit by hand.",
         "Read it before choosing a direction. \"Not available\" means the source could not be read, not that "
         "there is nothing to report.",
         "",
@@ -760,7 +792,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=ROOT, help="Checkout to read (default: this repository).")
     parser.add_argument("--since-days", type=_since_days_arg, default=DEFAULT_SINCE_DAYS,
-                        help="Window: changes since this many days ago, from 00:00 UTC.")
+                        help="Window: changes since this many days ago, from 00:00 local time.")
     parser.add_argument("--out", type=Path,
                         help="Directory for AGENT_BRIEF.md and agent_brief.json (default: ROOT/research/audits).")
     parser.add_argument("--json", action="store_true", help="Print the brief as JSON instead of a summary.")

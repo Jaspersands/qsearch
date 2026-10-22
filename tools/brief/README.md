@@ -21,8 +21,18 @@ python tools/brief/build_brief.py --root ../other-checkout
 
 It exits 0 whatever it finds; a `--root` that is not a directory or a `--since-days` outside 1
 to 3650 is a usage error (exit 2), and `build()` raises `ValueError` for such a window. The
-window runs from 00:00 UTC on the day `--since-days` before today's UTC date (default 7); a
-`today` passed to `build()` as a datetime counts as its UTC date.
+window runs from 00:00 local time on the day `--since-days` before today's local date
+(default 7); a `today` passed to `build()` as a datetime counts as its local date.
+
+**Local time.** The sources stamp local calendar dates (`dt.date.today()`): the arXiv watch's
+`first_seen`, the verdicts' and the referee's `reviewed_on`, the referee queue's "Generated
+on". The brief compares those stamps with its window, so it dates by the same clock: the page
+never shows a review dated after its own date, and a verdict stamped on the cutoff day is in
+the window. The header names the zone (`00:00 local time, UTC+11:00`), `agent_brief.json` has
+it as `window_start`, and git gets the cutoff converted to UTC, with the offset of the cutoff
+day itself. Run the brief in the zone the stamps were made in; the scheduled watch in CI
+(06:00 UTC on Mondays) stamps the same calendar date as local time anywhere from UTC-06:00 to
+UTC+17:00.
 
 ## Why it exists
 
@@ -57,7 +67,7 @@ there), or when git cannot read it there (a partial clone without that version);
 duplicates section is then unavailable too.
 
 **Git.** Read-only, through an allow-list in the cockpit's style: exactly
-`log -1 --first-parent --before=YYYY-MM-DDT23:59:59Z --format=%H<US>%ct -- research/registry/negative_results.json`,
+`log -1 --first-parent --before=YYYY-MM-DDTHH:MM:59Z --format=%H<US>%ct -- research/registry/negative_results.json`,
 `show <full sha>:research/registry/negative_results.json`,
 `ls-tree --name-only <full sha> -- research/registry/negative_results.json` (only after `show`
 fails, to tell a registry absent from that commit from one git cannot read) and
@@ -75,8 +85,9 @@ one dropped by such a merge as removed), however old its commit on the other bra
 other branch never stands in for this one, whether it is a tool branch merged with `--no-ff`
 that left the registry alone or a branch that changed the registry too. Run it on main for the
 agents' view: on a branch that merges main in, main's registry changes count from the day they
-were merged into that branch. The limit is the last second
-before the cutoff day (00:00 UTC) because `--before` keeps a commit dated exactly at its limit,
+were merged into that branch. The limit is the last second before the cutoff day (00:00 local
+time, in UTC: `2026-10-12T12:59:59Z` for 2026-10-13 at UTC+11:00) because `--before` keeps a
+commit dated exactly at its limit,
 and it names a time because git reads a bare date (`--before=2026-10-12`) as that day at the
 current time of day, so the same command picked a different commit in the morning and in the
 evening. A shallow clone is refused outright: its oldest commit is a cut, so the commit before

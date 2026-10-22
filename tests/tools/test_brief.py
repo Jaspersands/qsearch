@@ -7,6 +7,8 @@ import json
 import os
 import subprocess
 import sys
+import time
+from contextlib import contextmanager
 from pathlib import Path
 
 import pytest
@@ -15,6 +17,33 @@ from tools.brief import build_brief as B
 
 US = "\x1f"
 SHA = "a" * 40
+# POSIX TZ strings: no time-zone database needed. Sydney is UTC+10, UTC+11 from 2026-10-04.
+SYDNEY = "AEST-10AEDT,M10.1.0,M4.1.0/3"
+LOS_ANGELES = "PST8PDT,M3.2.0,M11.1.0"
+
+
+@contextmanager
+def _zone(tz: str):
+    """Run with the process's local time zone set to tz; restore it after."""
+    saved = os.environ.get("TZ")
+    os.environ["TZ"] = tz
+    time.tzset()
+    try:
+        yield
+    finally:
+        if saved is None:
+            os.environ.pop("TZ", None)
+        else:
+            os.environ["TZ"] = saved
+        time.tzset()
+
+
+@pytest.fixture(autouse=True)
+def _utc_clock():
+    # The window is local time (the clock the arXiv watch, the verdicts and the referee stamp
+    # their dates with); every test runs in UTC unless it sets another zone.
+    with _zone("UTC0"):
+        yield
 
 
 def _git(repo: Path, *args: str, env: dict | None = None) -> None:
@@ -111,7 +140,7 @@ def test_registry_delta_rereads_a_file_caught_mid_write(tmp_path: Path, monkeypa
     assert delta["available"] is True and delta["added"] == ["B", "C"] and delta["quarantined"] == ["A"]
 
 
-def test_cutoff_is_the_start_of_the_utc_day_not_the_time_of_day(tmp_path: Path) -> None:
+def test_cutoff_is_the_start_of_the_day_not_the_time_of_day(tmp_path: Path) -> None:
     # git reads a bare --before=2026-10-15 as 2026-10-15 at the current time of day, so a
     # commit at noon that day would count as "before" in the afternoon and not in the morning.
     repo = _history_repo(tmp_path)
@@ -208,7 +237,7 @@ def test_an_older_main_change_is_not_reported_because_a_newer_side_change_was_me
 
 
 def test_a_commit_at_midnight_on_the_cutoff_day_is_inside_the_window(tmp_path: Path) -> None:
-    # git's --before keeps a commit dated exactly at the limit; the window starts at 00:00 UTC.
+    # git's --before keeps a commit dated exactly at the limit; the window starts at 00:00 (UTC here).
     repo = tmp_path / "git"
     repo.mkdir()
     _git(repo, "init", "-q")
@@ -219,12 +248,83 @@ def test_a_commit_at_midnight_on_the_cutoff_day_is_inside_the_window(tmp_path: P
     assert B.registry_delta(repo, since[0], since_date=since[1])["added"] == ["B"]
 
 
-def test_a_datetime_counts_as_its_utc_day() -> None:
-    sydney = dt.timezone(dt.timedelta(hours=11))
-    morning = dt.datetime(2026, 10, 21, 9, 0, tzinfo=sydney)  # 2026-10-20T22:00Z
-    assert B._day(morning) == dt.date(2026, 10, 20)
-    assert B.cutoff_day(7, morning) == dt.date(2026, 10, 13)
-    assert B._day(dt.datetime(2026, 10, 20, 23, 30)) == dt.date(2026, 10, 20)  # naive: taken as UTC
+def test_a_datetime_counts_as_its_local_day() -> None:
+    morning = dt.datetime(2026, 10, 20, 22, 0, tzinfo=dt.timezone.utc)  # 09:00 on 2026-10-21 in Sydney
+    assert B._day(morning) == dt.date(2026, 10, 20)  # in UTC
+    with _zone(SYDNEY):
+        assert B._day(morning) == dt.date(2026, 10, 21)
+        assert B.cutoff_day(7, morning) == dt.date(2026, 10, 14)
+        assert B._day(dt.datetime(2026, 10, 20, 23, 30)) == dt.date(2026, 10, 20)  # naive: taken as local
+    with _zone(LOS_ANGELES):
+        assert B._day(morning) == dt.date(2026, 10, 20)
+
+
+@pytest.mark.parametrize("tz", ["<+14>-14", "<-12>12"])  # 26 hours apart: one is never on UTC's date
+def test_the_brief_dates_by_the_clock_the_sources_stamp_with(tmp_path: Path, tz: str) -> None:
+    # The arXiv watch, the verdicts store and the referee stamp dt.date.today(): local time. A
+    # brief dated by UTC printed "Generated 2026-10-21" above reviews dated 2026-10-22.
+    from tools.arxiv_watch import verdicts
+
+    with _zone(tz):
+        stamped = verdicts.verdict_entry("kill", "r", "human")["reviewed_on"]
+        assert B._day(None).isoformat() == stamped == dt.date.today().isoformat()
+        brief = B.build(tmp_path, today=None)
+        assert brief["generated_on"] == dt.date.today().isoformat()
+
+
+def _boundary_repo(tmp_path: Path, last_before: str, first_in: str) -> Path:
+    """Registry [A] at 2026-10-01; [A, B] at `last_before` and [A, B, C] at `first_in` (UTC times on 2026-10-12/13)."""
+    repo = tmp_path / "git"
+    repo.mkdir()
+    _git(repo, "init", "-q")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}]}, "2026-10-01")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, *last_before.split("T"))
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}, {"id": "C"}]}, *first_in.split("T"))
+    return repo
+
+
+@pytest.mark.parametrize("tz, last_before, first_in, limit", [
+    # 00:00 AEDT on 2026-10-13 is 13:00 UTC on 2026-10-12.
+    (SYDNEY, "2026-10-12T12:59:59", "2026-10-12T13:00:00", "2026-10-12T12:59:59Z"),
+    # 00:00 PDT on 2026-10-13 is 07:00 UTC that day.
+    (LOS_ANGELES, "2026-10-13T06:59:59", "2026-10-13T07:00:00", "2026-10-13T06:59:59Z"),
+])
+def test_the_window_starts_at_local_midnight(tmp_path: Path, tz: str, last_before: str, first_in: str,
+                                             limit: str) -> None:
+    repo = _boundary_repo(tmp_path, last_before, first_in)
+    with _zone(tz):
+        assert B._log_args(dt.date(2026, 10, 13))[3] == f"--before={limit}"
+        assert B.allowed_git_args(B._log_args(dt.date(2026, 10, 13)))
+        since = B.since_commit(repo, since_days=7, today="2026-10-20")  # cutoff 2026-10-13
+        # The baseline is dated by the local calendar too: the day before the cutoff, never on it.
+        assert since is not None and since[1] == "2026-10-12"
+        delta = B.registry_delta(repo, since[0], since_date=since[1])
+        assert (delta["added"], delta["removed"]) == (["C"], [])
+        brief = B.build(repo, today="2026-10-20")
+        assert brief["window_start"] == B.window_start(dt.date(2026, 10, 13)).isoformat()
+        text = B.render(brief)
+    offset = "+11:00" if tz == SYDNEY else "-07:00"
+    assert brief["window_start"] == f"2026-10-13T00:00:00{offset}"
+    assert f"since 2026-10-13 (00:00 local time, UTC{offset})" in text
+
+
+def test_the_window_start_takes_the_offset_of_its_own_day() -> None:
+    with _zone(SYDNEY):  # daylight saving began on 2026-10-04
+        assert B.window_start(dt.date(2026, 10, 1)).isoformat() == "2026-10-01T00:00:00+10:00"
+        assert B._log_args(dt.date(2026, 10, 1))[3] == "--before=2026-09-30T13:59:59Z"
+        assert B.window_start(dt.date(2026, 10, 13)).isoformat() == "2026-10-13T00:00:00+11:00"
+
+
+def test_the_arxiv_window_and_the_generated_date_use_the_local_calendar(tmp_path: Path) -> None:
+    # 08:00 in Sydney on 2026-10-21 is 21:00 UTC on 2026-10-20: the sources stamp 2026-10-21.
+    now = dt.datetime(2026, 10, 20, 21, 0, tzinfo=dt.timezone.utc)
+    _arxiv_files(tmp_path, [], {"2610.11111": _verdict("kill", "2026-10-21"),
+                                "2610.22222": _verdict("scoop", "2026-10-14"),
+                                "2610.33333": _verdict("false-alarm", "2026-10-13")})
+    with _zone(SYDNEY):
+        brief = B.build(tmp_path, today=now)
+    assert brief["generated_on"] == "2026-10-21"
+    assert [r["id"] for r in brief["arxiv"]["reviewed"]] == ["2610.11111", "2610.22222"]
 
 
 @pytest.mark.parametrize("days", [0, -3, 3651, 1_000_000, 7.5, "7", True])
@@ -423,6 +523,8 @@ LOG = ("--", B.REGISTRY)
 def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
     assert B.allowed_git_args(
         ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG)) is True
+    assert B.allowed_git_args(  # 00:00 on 2026-10-13 at UTC+05:45
+        ("log", "-1", "--first-parent", "--before=2026-10-12T18:14:59Z", f"--format=%H{US}%ct", *LOG)) is True
     assert B.allowed_git_args(("show", f"{SHA}:{B.REGISTRY}")) is True
     assert B.allowed_git_args(("ls-tree", "--name-only", SHA, *LOG)) is True
     assert B.allowed_git_args(("rev-parse", "--is-shallow-repository", "--show-prefix")) is True
@@ -433,6 +535,8 @@ def test_allowed_git_args_accepts_only_the_brief_shapes() -> None:
     [
         ("log", "-1", "--first-parent", "--before=2026-10-12", f"--format=%H{US}%ct", *LOG),
         ("log", "-1", "--first-parent", "--before=2026-10-13T00:00:00Z", f"--format=%H{US}%ct", *LOG),  # git keeps 00:00:00
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59+11:00", f"--format=%H{US}%ct", *LOG),
+        ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59", f"--format=%H{US}%ct", *LOG),  # local to git
         ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct"),  # not the registry's
         ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", "--", "research/registry"),
         ("log", "-1", "--first-parent", "--before=2026-10-12T23:59:59Z", f"--format=%H{US}%ct", *LOG, "--output=/tmp/x"),
@@ -778,7 +882,7 @@ def test_build_never_fails_when_every_source_is_missing(tmp_path: Path, monkeypa
     for module in ("tools.preflight.preflight", "tools.referee.referee", "tools.arxiv_watch.verdicts"):
         monkeypatch.setitem(sys.modules, module, None)
     brief = B.build(root, today="2026-10-21")
-    assert set(brief) == {"generated_on", "since_days", *SECTIONS}
+    assert set(brief) == {"generated_on", "since_days", "window_start", *SECTIONS}
     assert (brief["generated_on"], brief["since_days"]) == ("2026-10-21", 7)
     for name in SECTIONS[:-1]:
         assert brief[name]["available"] is False and brief[name]["reason"], name
