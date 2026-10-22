@@ -123,7 +123,9 @@ text.
    rejecting the file. Two rows for one note in one import (one file or several) reject
    the import. Re-importing a note replaces its review, except that a row that is stale
    on arrival (an earlier pass imported again) never replaces a stored review of the
-   note's current bytes: import keeps that review and reports the row as skipped. A field
+   note's current bytes: import keeps that review and reports the row as skipped. So
+   importing an older judge file again silently undoes a later correction; the stored
+   reviews are rebuilt in the order given under Corrections in First pass. A field
    over its cap (summary 1500 characters, finding 600, step 300, quote 400 as the note writes
    it) rejects the file, naming the field and its length. `--cut` is for judge files written
    before the instructions gave the caps: it stores such a field cut to its cap and ending in
@@ -307,3 +309,23 @@ imported with `--judge audit-correction-2026-10-22-r2`.
   (judge B's wording).
 
 After the corrections the 30 first-pass notes stand at 24 needs-work and 6 sound.
+
+Re-importing a note replaces its review (import, step 3 of the judge loop), and
+`pass1/out/` and `calibration_r2/out_d/` still hold the uncorrected rows. Importing either
+of them again on its own, or after the corrections, undoes the corrections without a
+warning. To rebuild `reviews.json` from the judge files (after an importer change, as on
+2026-10-22), import them in this order, the corrections last and in date order, then
+render:
+
+```bash
+python tools/referee/referee.py import research/audits/reviews/calibration_r2/out_d/batch_01.jsonl --judge claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d
+python tools/referee/referee.py import research/audits/reviews/pass1/out/batch_*.jsonl --judge claude-opus-5.5-two-judges-reconciled-2026-10-21 --cut
+python tools/referee/referee.py import research/audits/reviews/corrections/2026-10-22.jsonl --judge audit-correction-2026-10-22
+python tools/referee/referee.py import research/audits/reviews/corrections/2026-10-22-r2.jsonl --judge audit-correction-2026-10-22-r2
+python tools/referee/referee.py render
+```
+
+`pass1/out/` needs `--cut` because three of its findings run past 600 characters; the
+first corrections file replaces all three. The rebuild stamps every review with the day's
+date as `reviewed_on` and stores the review of a note edited since as stale; nothing else
+changes. A later corrections file goes at the end.

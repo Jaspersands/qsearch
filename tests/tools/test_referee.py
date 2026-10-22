@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import re
+import shlex
 import textwrap
 from pathlib import Path
 
@@ -1242,6 +1243,35 @@ def test_stored_reviews_are_their_judge_rows_whole() -> None:
         assert stored == given, stem
         checked += 1
     assert checked >= 30
+
+
+@needs_reviews
+def test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path: Path, capsys) -> None:
+    """A re-import replaces a note's review, so re-importing pass1/out after the corrections
+    silently undid all of them; the README must give an order that rebuilds the store."""
+    section = _readme_section("### Corrections (2026-10-22)")
+    block = re.search(r"```bash\n(.*?)```", section, re.S)
+    assert block, "the Corrections section gives no rebuild commands"
+    commands = [shlex.split(line) for line in block.group(1).splitlines() if " import " in line]
+    stored = _stored()
+    # Each note as the judges read it (its exported packet), so a later edit to a note does not
+    # turn this red: the rebuild would rightly store that review stale.
+    texts, _ = R.exported_texts([path for path in REVIEWS_DIR.glob("**/out*/*.jsonl")])
+    (tmp_path / "research").mkdir()
+    for stem, entry in stored.items():
+        (tmp_path / "research" / f"{stem}.md").write_bytes(texts[(stem, entry["content_sha"])].encode("utf-8"))
+    for argv in commands:
+        assert argv[:3] == ["python", "tools/referee/referee.py", "import"], argv
+        args = []
+        for arg in argv[3:]:
+            files = sorted(REPO.glob(arg)) if arg.startswith("research/") else None
+            assert files != [], arg
+            args += [str(path) for path in files] if files else [arg]
+        assert R.main(["import", *args, "--root", str(tmp_path)]) == 0, capsys.readouterr().err
+    rebuilt = R.load_reviews(tmp_path)["notes"]
+    assert sorted(rebuilt) == sorted(stored)
+    for stem, entry in stored.items():
+        assert {**rebuilt[stem], "reviewed_on": None} == {**entry, "reviewed_on": None}, stem
 
 
 @needs_reviews
