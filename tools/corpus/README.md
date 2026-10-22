@@ -25,7 +25,7 @@ verdict on the idea.
 | `similar DOC_ID` | Documents most like one result. |
 | `get DOC_ID` | Full text and metadata as JSON. |
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
-| `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
+| `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k; `--json` gives each case's rank (null for a miss) and the count retrieved. |
 | `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
 | `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6] [--allow ID]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |

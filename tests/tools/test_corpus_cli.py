@@ -68,6 +68,49 @@ def test_heldout_counts_hits_at_k_and_enforces_minimum(fake_repo: Path, tmp_path
     assert code == 1
 
 
+def test_heldout_json_gives_each_case_its_rank(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    cases = tmp_path / "cases.json"
+    cases.write_text(
+        json.dumps(
+            [
+                {"id": "NEG-OPI-MIXED-COSET-HARDNESS", "query": "quadratic norm solver for OPI"},
+                {"id": "NEG-NO-SUCH-RECORD", "query": "zebrafish migration"},
+            ]
+        )
+    )
+    code, out = run(capsys, "--root", str(fake_repo), "heldout", str(cases), "-k", "5", "--json")
+    payload = json.loads(out)
+    assert code == 0
+    assert payload["cases"][0]["id"] == "negative:NEG-OPI-MIXED-COSET-HARDNESS" and payload["cases"][0]["rank"] >= 1
+    assert payload["cases"][1] == {"id": "negative:NEG-NO-SUCH-RECORD", "rank": None}
+    assert (payload["retrieved"], payload["total"], payload["k"], payload["min"]) == (1, 2, 5, 0)
+    assert "index_incomplete" in payload
+    code, out = run(capsys, "--root", str(fake_repo), "heldout", str(cases), "--json", "--min", "2")
+    assert code == 1 and json.loads(out)["retrieved"] == 1
+
+
+def test_every_command_that_takes_json_prints_json(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    # The README lists these commands as printing machine-readable output; heldout accepted
+    # --json and printed text, which the README check (flag accepted) did not notice.
+    cases = tmp_path / "cases.json"
+    cases.write_text(json.dumps([{"id": "NEG-OPI-MIXED-COSET-HARDNESS", "query": "quadratic norm solver for OPI"}]))
+    arguments = {
+        "search": ["Helstrom readout"],
+        "been-tried": ["Helstrom readout"],
+        "similar": ["negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"],
+        "heldout": [str(cases)],
+        "near-duplicates": [],
+        "check-new": ["--text", "zebrafish migration"],
+        "baselines": ["syndrome decoding of a linear code"],
+    }
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    assert set(arguments) == {c for c in sub.choices if "--json" in _options(c)}
+    for command, args in arguments.items():
+        main(["--root", str(fake_repo), command, *args, "--json"])
+        out = capsys.readouterr().out
+        assert isinstance(json.loads(out), dict), command
+
+
 def test_script_runs_directly_without_package_install(fake_repo: Path) -> None:
     result = subprocess.run(
         [sys.executable, str(CLI), "--root", str(fake_repo), "search", "Helstrom", "--json"],

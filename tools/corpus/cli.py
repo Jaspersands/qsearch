@@ -191,19 +191,29 @@ def cmd_get(args: argparse.Namespace) -> int:
 
 
 def cmd_eval(args: argparse.Namespace) -> int:
-    """Held-out check: each case {"id", "query"} should retrieve its record within the top k."""
+    """Held-out check: each case {"id", "query"} should retrieve its record within the top k.
+
+    `--json` prints {"k", "min", "cases": [{"id", "rank"}], "retrieved", "total", index issues};
+    a rank is null for a miss. The exit code is 1 when fewer than `--min` cases are retrieved.
+    """
     corpus = _corpus(args)
     cases = json.loads(Path(args.cases).read_text(encoding="utf-8"))
-    found = 0
+    results: list[dict] = []
     for case in cases:
         target = case["id"] if ":" in case["id"] else f"negative:{case['id']}"
         hits = corpus.search(case["query"], k=args.k, dense=args.dense, kinds=tuple(case.get("kinds", ())))
         ids = [hit.doc_id for hit in hits]
-        rank = ids.index(target) + 1 if target in ids else None
-        found += rank is not None
-        print(f"{'hit ' + str(rank) if rank else 'MISS ':<6} {target}")
+        results.append({"id": target, "rank": ids.index(target) + 1 if target in ids else None})
+    found = sum(result["rank"] is not None for result in results)
+    status = 0 if found >= args.min else 1
+    if args.json:
+        payload = {"k": args.k, "min": args.min, "cases": results, "retrieved": found, "total": len(cases)}
+        print(json.dumps({**payload, **_issues_json(corpus)}, indent=2))
+        return status
+    for result in results:
+        print(f"{'hit ' + str(result['rank']) if result['rank'] else 'MISS ':<6} {result['id']}")
     print(f"\n{found}/{len(cases)} retrieved in the top {args.k}")
-    return 0 if found >= args.min else 1
+    return status
 
 
 def _cell(text: str, width: int = 160) -> str:
