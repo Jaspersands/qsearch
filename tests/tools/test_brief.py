@@ -974,6 +974,85 @@ def test_render_contains_every_section_heading_and_action_strings(tmp_path: Path
         assert needle in text, needle
 
 
+def _sections(text: str) -> dict[str, str]:
+    """The rendered page split at its "## " headings: heading -> body."""
+    parts = text.split("\n## ")[1:]
+    return {part.split("\n", 1)[0]: part.split("\n", 1)[1] for part in parts}
+
+
+def _registry(added: list[str], removed: list[str], quarantined: list[str] | None) -> dict:
+    return {"available": True, "added": added, "removed": removed, "quarantined": quarantined, "since_sha": SHA,
+            "since_date": "2026-10-01", "baseline_count": len(removed), "current_count": len(added)}
+
+
+def _page(**sections) -> dict[str, str]:
+    brief = {"generated_on": "2026-10-20", "since_days": 7, **{name: {"available": False, "reason": "x"}
+                                                                for name in SECTIONS}, **sections}
+    return _sections(B.render(brief))
+
+
+@pytest.mark.parametrize("quarantined, expected", [
+    (["NEG-B"], "Removed (3): 1 now in the quarantine file: `NEG-B`; 2 not in it: `NEG-A`, `NEG-C`."),
+    (["NEG-A", "NEG-B", "NEG-C"], "Removed (3, all now in the quarantine file): `NEG-A`, `NEG-B`, `NEG-C`."),
+    ([], "Removed (3, none now in the quarantine file): `NEG-A`, `NEG-B`, `NEG-C`."),
+    (None, "Removed (3, the quarantine file could not be read): `NEG-A`, `NEG-B`, `NEG-C`."),
+])
+def test_render_names_which_removed_ids_are_quarantined(quarantined, expected) -> None:
+    page = _page(registry=_registry([], ["NEG-A", "NEG-B", "NEG-C"], quarantined))
+    assert expected in page["Registry"]
+
+
+def test_render_keeps_pipes_in_list_items_and_escapes_them_in_table_cells() -> None:
+    claim = {"quote": "max(|A|,D) <= 9 and |A|+|B|=31", "verdict": "wrong", "finding": "|A| is 12."}
+    page = _page(
+        referee={"available": True, "reviewed": 1, "stale": [],
+                 "flagged": [{"stem": "NOTE", "overall": "unsound", "reviewed_on": "2026-10-20", "worst_claim": claim}]},
+        arxiv={"available": True, "reviewed": [], "actions": [{"id": "2610.1", "action": "Check |x| < 1.", "by": "h"}],
+               "flagged": [{"id": "2610.1", "title": "Bounds on |S| | T", "label": "possible-kill",
+                            "first_seen": "2026-10-19", "verdict": None}]},
+        duplicates={"available": True, "checked": 1, "threshold": 0.8,
+                    "pairs": [{"a": "negative:A", "b": "negative:B", "score": 0.9, "title_a": "x | y", "title_b": "z"}]},
+    )
+    assert '"max(|A|,D) <= 9 and |A|+|B|=31". |A| is 12.' in page["Referee"]
+    assert "- `2610.1` (h): Check |x| < 1." in page["arXiv watch"]
+    row = next(line for line in page["arXiv watch"].splitlines() if line.startswith("| 2610.1 "))
+    assert "Bounds on \\|S\\| \\| T" in row and row.replace("\\|", "").count("|") == 6
+    row = next(line for line in page["Possible duplicates"].splitlines() if line.startswith("| 0.90 "))
+    assert "x \\| y" in row and row.replace("\\|", "").count("|") == 6
+
+
+def test_render_caps_every_list_and_says_how_many_more() -> None:
+    n = B.LIST_CAP + 1
+    ids = [f"{i:02d}" for i in range(n)]
+    worst = {"quote": "q", "verdict": "wrong", "finding": "f"}
+    page = _page(
+        registry=_registry([f"ADD{i}" for i in ids], [f"REM{i}" for i in ids], []),
+        arxiv={"available": True,
+               "flagged": [{"id": f"FLAG{i}", "title": "t", "label": "possible-kill", "first_seen": "2026-10-19",
+                            "verdict": None} for i in ids],
+               "reviewed": [{"id": f"REV{i}", "verdict": "kill", "by": "h", "reviewed_on": "2026-10-19"} for i in ids],
+               "actions": [{"id": f"ACT{i}", "action": "do it", "by": "h"} for i in ids]},
+        referee={"available": True, "reviewed": n, "stale": [f"STALE{i}" for i in ids],
+                 "flagged": [{"stem": f"NOTE{i}", "overall": "unsound", "reviewed_on": "2026-10-20",
+                              "worst_claim": worst} for i in ids]},
+        preflight={"available": True, "total": n,
+                   "by_check": {"json": [{"path": f"PATH{i}", "message": "m"} for i in ids]}},
+        inertia={"available": True, "generated_on": "2026-10-19", "threshold": 8, "warnings": [f"WARN{i}" for i in ids],
+                 "flags": [{"direction": f"DIR{i}", "label": "l", "streak": 9, "last_gain": None} for i in ids]},
+        duplicates={"available": True, "checked": 1, "threshold": 0.8,
+                    "pairs": [{"a": f"DUP{i}", "b": "negative:B", "score": 0.9, "title_a": "x", "title_b": "y"}
+                              for i in ids]},
+    )
+    last, over = f"{B.LIST_CAP - 1:02d}", f"{B.LIST_CAP:02d}"
+    for heading, prefixes in {"Registry": ["ADD", "REM"], "arXiv watch": ["FLAG", "REV", "ACT"],
+                              "Referee": ["NOTE", "STALE"], "Preflight": ["PATH"], "Inertia": ["DIR", "WARN"],
+                              "Possible duplicates": ["DUP"]}.items():
+        body = page[heading]
+        for prefix in prefixes:
+            assert f"{prefix}{last}" in body and f"{prefix}{over}" not in body, (heading, prefix)
+        assert body.count("1 more") == len(prefixes), (heading, body)
+
+
 PREFLIGHT_PY = (REPO / "tools" / "preflight" / "preflight.py").resolve()
 
 

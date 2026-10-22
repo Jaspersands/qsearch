@@ -54,7 +54,10 @@ preflight only helps when someone runs it. The brief puts each of them on one pa
 | Possible duplicates | the corpus index (`tools/corpus/duplicates.py` `near_duplicates`) | pairs at TF-IDF cosine 0.8 or above that involve a negative added in the window |
 | Commands | nothing (static) | `been-tried`, the DQI screener, `baselines`, preflight and `check-new`, each with when to run it |
 
-`agent_brief.json` holds every section in full; the markdown caps each list at 40 entries.
+`agent_brief.json` holds every section in full. The markdown caps each list and table at 40
+entries and then says how many more there are and where (`agent_brief.json`; for the referee,
+`REFEREE_QUEUE.md` too). Text from the sources is kept verbatim on one line: a pipe stays a
+pipe in list items (`|A|+|B|`), and in table cells it is escaped as `\|`.
 
 **Degradation rule.** Every section returns `{"available": bool, ...}`. A section whose file
 is missing, whose tool is not in the checkout, or that raises for any reason becomes

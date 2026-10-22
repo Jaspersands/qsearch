@@ -603,14 +603,26 @@ def build(
 LIST_CAP = 40  # ids or rows shown per list; agent_brief.json has them all
 
 
+def _flat(text: Any) -> str:
+    """Text on one line, otherwise verbatim: in a list item or a sentence a pipe is just a character."""
+    return " ".join(str(text if text is not None else "").split())
+
+
 def _cell(text: Any) -> str:
-    return " ".join(str(text if text is not None else "").split()).replace("|", "/")
+    """Text for a table cell: one line, each pipe escaped as GFM reads it (\\|) so it cannot end the cell."""
+    return _flat(text).replace("|", "\\|")
 
 
 def _id_list(ids: list[str]) -> str:
     shown = ", ".join(f"`{rid}`" for rid in ids[:LIST_CAP])
     more = len(ids) - LIST_CAP
     return shown + (f", and {more} more (see agent_brief.json)" if more > 0 else "")
+
+
+def _bullets(items: list[str], where: str = "agent_brief.json") -> list[str]:
+    """List items, capped at LIST_CAP, then one item saying how many more and where they are."""
+    more = len(items) - LIST_CAP
+    return items[:LIST_CAP] + ([f"- And {more} more in {where}."] if more > 0 else [])
 
 
 def _render_registry(section: dict[str, Any], since: str) -> list[str]:
@@ -627,12 +639,14 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
         return lines
     quarantined = section.get("quarantined")
     if quarantined is None:
-        note = "the quarantine file could not be read"
-    elif len(quarantined) == len(removed):
-        note = "all now in the quarantine file"
-    else:
-        note = f"{len(quarantined)} now in the quarantine file"
-    lines.append(f"Removed ({len(removed)}, {note}): {_id_list(removed)}.")
+        lines.append(f"Removed ({len(removed)}, the quarantine file could not be read): {_id_list(removed)}.")
+    elif not quarantined or len(quarantined) == len(removed):
+        note = "all now" if quarantined else "none now"
+        lines.append(f"Removed ({len(removed)}, {note} in the quarantine file): {_id_list(removed)}.")
+    else:  # say which ones moved to quarantine and which were dropped outright
+        lost = [rid for rid in removed if rid not in set(quarantined)]
+        lines.append(f"Removed ({len(removed)}): {len(quarantined)} now in the quarantine file: "
+                     f"{_id_list(quarantined)}; {len(lost)} not in it: {_id_list(lost)}.")
     return lines
 
 
@@ -643,7 +657,7 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
         counts[str(item["verdict"])] = counts.get(str(item["verdict"]), 0) + 1
     tally = ", ".join(f"{verdict} {n}" for verdict, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
     if flagged is None:
-        lines = [f"Possible kills and scoops: not available: {_cell(section.get('flagged_reason'))}. The verdicts "
+        lines = [f"Possible kills and scoops: not available: {_flat(section.get('flagged_reason'))}. The verdicts "
                  "and actions below come from the verdicts file."]
     else:
         open_flags = sum(1 for item in flagged if item["verdict"] is None)
@@ -656,22 +670,22 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     if others:
         where = "" if flagged is None else " on papers not in the flagged table below"
         lines += [f"Verdicts recorded since {since}{where} ({len(others)}):", ""]
-        lines += [f"- `{item['id']}`: {_cell(item['verdict'])} ({_cell(item['by'])}, {item['reviewed_on']})."
-                  for item in others[:LIST_CAP]]
-        if len(others) > LIST_CAP:
-            lines.append(f"- And {len(others) - LIST_CAP} more in agent_brief.json.")
+        lines += _bullets([f"- `{item['id']}`: {_flat(item['verdict'])} ({_flat(item['by'])}, {item['reviewed_on']})."
+                           for item in others])
         lines.append("")
     lines += [
         f"Open actions from verdicts ({len(actions)}; set `\"action_done\": true` in `{ARXIV_VERDICTS}` once done):",
         "",
     ]
-    lines += [f"- `{item['id']}` ({item['by']}): {_cell(item['action'])}" for item in actions] or ["- None."]
+    lines += _bullets([f"- `{item['id']}` ({_flat(item['by'])}): {_flat(item['action'])}" for item in actions]) or [
+        "- None."]
     if flagged:
         lines += ["", "| arXiv | Label | First seen | Verdict | Title |", "|---|---|---|---|---|"]
         for item in flagged[:LIST_CAP]:
-            verdict = item["verdict"] or "**open**: read it"
+            verdict = _cell(item["verdict"]) if item["verdict"] else "**open**: read it"
             first_seen = item["first_seen"] or "-"
-            lines.append(f"| {item['id']} | {item['label']} | {first_seen} | {verdict} | {_cell(item['title'])} |")
+            lines.append(f"| {_cell(item['id'])} | {_cell(item['label'])} | {_cell(first_seen)} | {verdict} | "
+                         f"{_cell(item['title'])} |")
         if len(flagged) > LIST_CAP:
             lines += ["", f"And {len(flagged) - LIST_CAP} more in agent_brief.json."]
     return lines
@@ -684,13 +698,15 @@ def _render_referee(section: dict[str, Any], since: str) -> list[str]:
         f"{len(stale)} reviews stale (the note changed since). Queue: `research/audits/REFEREE_QUEUE.md`.",
         "",
     ]
-    for item in flagged[:LIST_CAP]:
+    items = []
+    for item in flagged:
         claim = item.get("worst_claim") or {}
         worst = ""
-        if claim:
-            quote, finding = _cell(claim.get("quote")), _cell(claim.get("finding"))
+        if claim:  # the quote verbatim, pipes and all
+            quote, finding = _flat(claim.get("quote")), _flat(claim.get("finding"))
             worst = f" Worst claim ({claim.get('verdict')}): \"{quote}\". {finding}"
-        lines.append(f"- `{item['stem']}` **{item['overall']}** (reviewed {item.get('reviewed_on')}).{worst}")
+        items.append(f"- `{item['stem']}` **{item['overall']}** (reviewed {item.get('reviewed_on')}).{worst}")
+    lines += _bullets(items, "`research/audits/REFEREE_QUEUE.md` and agent_brief.json")
     if stale:
         lines += ["", f"Stale: {_id_list(stale)}."]
     return lines
@@ -703,9 +719,8 @@ def _render_preflight(section: dict[str, Any], since: str) -> list[str]:
     noun = "problem" if total == 1 else "problems"
     lines = [f"{total} {noun} from the static checks of `python tools/preflight/preflight.py`:", ""]
     rows = [(check, problem) for check, problems in section["by_check"].items() for problem in problems]
-    lines += [f"- {check}: `{problem['path']}`: {_cell(problem['message'])}" for check, problem in rows[:LIST_CAP]]
-    if len(rows) > LIST_CAP:
-        lines.append(f"- And {len(rows) - LIST_CAP} more: run the command above.")
+    lines += _bullets([f"- {check}: `{problem['path']}`: {_flat(problem['message'])}" for check, problem in rows],
+                      "agent_brief.json, or run the command above")
     return lines
 
 
@@ -716,12 +731,12 @@ def _render_inertia(section: dict[str, Any], since: str) -> list[str]:
         "",
     ]
     flags = section["flags"]
-    lines += [
-        f"- {_cell(flag['label'])} (`{flag['direction']}`): {flag['streak']} sections since the registry last gained a "
-        f"record here ({flag['last_gain'] or 'never'})."
+    lines += _bullets([
+        f"- {_flat(flag['label'])} (`{flag['direction']}`): {flag['streak']} sections since the registry last gained "
+        f"a record here ({flag['last_gain'] or 'never'})."
         for flag in flags
-    ] or ["- No direction is flagged."]
-    lines += [f"- Warning: {_cell(warning)}" for warning in section.get("warnings") or []]
+    ]) or ["- No direction is flagged."]
+    lines += _bullets([f"- Warning: {_flat(warning)}" for warning in section.get("warnings") or []])
     return lines
 
 
@@ -737,8 +752,10 @@ def _render_duplicates(section: dict[str, Any], since: str) -> list[str]:
         lines[0] += " Read both records before merging them; a sweep sibling is a separate result and stays."
         lines += ["", "| Cosine | Record | Title | Record | Title |", "|---|---|---|---|---|"]
         for pair in pairs[:LIST_CAP]:
-            lines.append(f"| {pair['score']:.2f} | `{pair['a']}` | {_cell(pair['title_a'])[:120]} | `{pair['b']}` | "
-                         f"{_cell(pair['title_b'])[:120]} |")
+            lines.append(f"| {pair['score']:.2f} | `{_cell(pair['a'])}` | {_cell(_flat(pair['title_a'])[:120])} | "
+                         f"`{_cell(pair['b'])}` | {_cell(_flat(pair['title_b'])[:120])} |")
+        if len(pairs) > LIST_CAP:
+            lines += ["", f"And {len(pairs) - LIST_CAP} more in agent_brief.json."]
     return lines
 
 
@@ -786,7 +803,7 @@ def render(brief: dict[str, Any]) -> str:
         section = brief.get(key) or {"available": False, "reason": "missing from the brief"}
         lines += [f"## {heading}", ""]
         if not section.get("available"):
-            lines.append(f"Not available: {_cell(section.get('reason') or 'no reason given')}")
+            lines.append(f"Not available: {_flat(section.get('reason') or 'no reason given')}")
         else:
             lines += render_section(section, since)
         lines.append("")
