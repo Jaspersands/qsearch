@@ -182,13 +182,18 @@ write each, so a verdict or run recorded meanwhile is kept. A row is rejected wh
   prefix (`√`, `\sqrt`, `\log`, `#`, a decimal point), or just before an operator or a
   factorial, percent sign or prime that follows a number or symbol. A quote that runs from one
   text into another, or comes from a record the judge was not shown, is not evidence ("quote
-  not found");
+  not found"). The texts are the ones the judge was shown: an output at `DIR/out/batch_NN.jsonl`
+  is checked against the abstract and excerpts in `DIR/batch_NN.json`, so a note edited or a
+  paper re-fetched after the export neither breaks a faithful quote nor admits one from the new
+  text. A file elsewhere, or a paper missing from its batch, is checked against the stored
+  abstract and today's excerpt. A batch file that is not a JSON object with a list of papers
+  stops the import (exit 2);
 - the paper already has a verdict recorded by anyone but a judge, including an entry written
   by hand without `by` ("human verdict exists").
 
 Accepted rows go into `research/audits/arxiv_verdicts.json` with `by: "judge:NAME"`, the
 quote, `quote_from` and `confidence` (clamped to 0..1; null when it is not a finite number,
-or is `true` or `false`). A later import may replace a judge's verdict, never a
+is an integer too large for one, or is `true` or `false`). A later import may replace a judge's verdict, never a
 human's. The stored records and the digest are then rewritten, and the Reviewed table shows
 who decided. A judge verdict is one model's reading, so it never takes a flag out of the
 possible-kill and possible-scoop sections: the paper stays there, marked `judge: VERDICT`,

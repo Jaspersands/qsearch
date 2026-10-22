@@ -10,7 +10,8 @@ characters of its text, so the judge can compare the paper with what the project
 
 A fresh subagent reads INSTRUCTIONS.md and one batch and writes one JSONL row per paper. Import
 keeps a row only when its quote (at least six words) appears verbatim in the abstract or in the
-one excerpt it names, and never replaces a verdict recorded by anyone but a judge. Kept rows are
+one excerpt it names, as the batch showed them (DIR/out/batch_NN.jsonl is checked against
+DIR/batch_NN.json), and never replaces a verdict recorded by anyone but a judge. Kept rows are
 stored with by = "judge:NAME", copied onto the stored papers and listed in the digest's Reviewed
 table.
 """
@@ -317,9 +318,37 @@ def _confidence(value) -> float | None:
         return None
     try:
         number = float(value)
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):  # OverflowError: an integer too large for a float
         return None
     return max(0.0, min(1.0, number)) if math.isfinite(number) else None
+
+
+_BATCH_OUTPUT = re.compile(r"batch_\d+")
+
+
+def _shown(path: Path) -> dict[str, dict] | None:
+    """The papers in the batch an output answers ({arxiv_id: item}), or None when there is none.
+
+    The documented layout puts DIR/batch_NN.json's answers in DIR/out/batch_NN.jsonl.
+    """
+    batch = path.parent.parent / f"{path.stem}.json"
+    if not _BATCH_OUTPUT.fullmatch(path.stem) or not batch.is_file():
+        return None
+    data = json.loads(batch.read_text(encoding="utf-8"))
+    papers = data.get("papers") if isinstance(data, dict) else None
+    if not isinstance(papers, list) or not all(isinstance(item, dict) for item in papers):
+        raise ValueError(f"{batch}: not a batch file (no list of papers)")
+    return {item.get("arxiv_id"): item for item in papers}
+
+
+def _quoted_text(item: dict, quote_from: str) -> str:
+    """The abstract or the excerpt `quote_from` names, as the batch item showed it."""
+    if quote_from == "abstract":
+        return str(item.get("abstract") or "")
+    for near in item.get("nearest") or []:
+        if isinstance(near, dict) and near.get("doc_id") == quote_from:
+            return str(near.get("excerpt") or "")
+    return ""
 
 
 def import_judgements(
@@ -331,13 +360,18 @@ def import_judgements(
     before anything is written: an unknown verdict, or an arxiv_id that is missing or not a stored
     paper, raises ValueError, and so does nothing get written when the corpus cannot be opened to
     check an excerpt quote. A quote is looked for only in the one text `quote_from` names: the
-    abstract, or the excerpt of one of the paper's nearest records. The accepted rows are then
+    abstract, or the excerpt of one of the paper's nearest records. Those are the texts the judge
+    was shown when its output sits where the README puts it (DIR/out/batch_NN.jsonl beside
+    DIR/batch_NN.json, which holds the paper), so a record edited since the export changes
+    nothing; otherwise they are the stored abstract and today's excerpt. The accepted rows are then
     merged into fresh copies of the verdicts and collisions files in one write each, so a verdict
     or a run recorded meanwhile is kept, and a person's verdict recorded meanwhile still wins.
     """
     root = Path(root)
     state = _load_state(root)
-    rows = [(path, row) for path in paths for row in _rows(Path(path))]
+    paths = [Path(path) for path in paths]
+    rows = [(path, row) for path in paths for row in _rows(path)]
+    shown = {path: _shown(path) for path in paths}
     for path, row in rows:
         if not isinstance(row, dict):
             raise ValueError(f"{path}: each row must be a JSON object, not {row!r:.80}")
@@ -348,14 +382,17 @@ def import_judgements(
     existing = load_verdicts(root)["verdicts"]
     rejected: list[dict] = []
     accepted: dict[str, dict] = {}
-    for _, row in rows:
+    for path, row in rows:
         arxiv_id = row["arxiv_id"]
         record = state["papers"][arxiv_id]
         if arxiv_id in existing and not by_judge(existing[arxiv_id]):
             rejected.append({"arxiv_id": arxiv_id, "why": "human verdict exists"})
             continue
         quote, quote_from = str(row.get("quote") or ""), str(row.get("quote_from") or "abstract")
-        if quote_from == "abstract":
+        item = (shown[path] or {}).get(arxiv_id)
+        if item is not None:
+            source = _quoted_text(item, quote_from)
+        elif quote_from == "abstract":
             source = record.get("abstract", "")
         elif quote_from in {near["doc_id"] for near in record.get("nearest", [])}:
             corpus = corpus or _corpus(root)

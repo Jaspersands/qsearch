@@ -369,10 +369,19 @@ def test_batch_shows_symbols_as_stored_so_a_copied_quote_is_accepted(math_flag: 
 @pytest.mark.parametrize(
     ("value", "stored"),
     [(0.7, 0.7), ("0.3", 0.3), (1.5, 1.0), (-0.2, 0.0), (1, 1.0), ("nan", None), (float("nan"), None), ("inf", None),
-     (float("-inf"), None), (True, None), (False, None), ("sure", None), (None, None)],
+     (float("-inf"), None), (True, None), (False, None), ("sure", None), (None, None), (10**400, None), (-(10**400), None)],
 )
 def test_confidence_is_a_clamped_finite_number_or_null(value, stored) -> None:
     assert _confidence(value) == stored
+
+
+def test_a_huge_integer_confidence_is_stored_as_null(watched: tuple[Path, Corpus], tmp_path: Path, capsys) -> None:
+    root, _ = watched
+    row = json.dumps(_row("2610.11111", "A classical algorithm for quantum product readout")).replace("0.7", "1" + "0" * 400)
+    (tmp_path / "huge.jsonl").write_text(row + "\n", encoding="utf-8")
+    assert main(["--root", str(root), "--import", str(tmp_path / "huge.jsonl"), "--judge", "t"]) == 0
+    assert "imported 1 verdicts" in capsys.readouterr().out
+    assert load_verdicts(root)["verdicts"]["2610.11111"]["confidence"] is None
 
 
 def test_bare_nan_confidence_is_stored_as_null(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
@@ -387,6 +396,67 @@ def _excerpt_row(root: Path, corpus: Corpus, arxiv_id: str = "2610.11111") -> di
     """A row whose quote comes from the first nearest record's excerpt, so checking it needs the corpus."""
     doc_id = _load_state(root)["papers"][arxiv_id]["nearest"][0]["doc_id"]
     return _row(arxiv_id, " ".join(corpus.get(doc_id).text[:600].split()[2:9]), doc_id)
+
+
+def test_excerpt_quotes_are_checked_against_the_excerpt_the_judge_was_shown(
+    watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch
+) -> None:
+    from tools.arxiv_watch import judge
+
+    root, corpus = watched
+    out = tmp_path / "judge"
+    [batch] = export_batches(root, out, corpus=corpus)
+    shown = json.loads(batch.read_text(encoding="utf-8"))["papers"][0]["nearest"][0]
+    faithful = _row("2610.11111", " ".join(shown["excerpt"].split()[2:9]), shown["doc_id"])
+    later = "This record was rewritten after the export and says something else entirely now."
+    monkeypatch.setattr(judge, "_excerpt", lambda corpus, doc_id: later)  # the record changes before the import
+    (out / "out").mkdir()
+    rows = _jsonl(out / "out" / "batch_01.jsonl", [faithful])
+    assert import_judgements(root, [rows], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    unseen = _row("2610.11111", later, shown["doc_id"])  # verbatim in today's text, which the judge never saw
+    rows = _jsonl(out / "out" / "batch_01.jsonl", [unseen])
+    assert import_judgements(root, [rows], "test", corpus=corpus)["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
+    other = json.loads(batch.read_text(encoding="utf-8"))["papers"][0]["nearest"][1]["doc_id"]
+    misnamed = {**faithful, "quote_from": other}  # the right words credited to the next record shown
+    rows = _jsonl(out / "out" / "batch_01.jsonl", [misnamed])
+    assert import_judgements(root, [rows], "test", corpus=corpus)["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
+    # Without its batch file beside the output, a row is checked against today's text.
+    assert import_judgements(root, [_jsonl(tmp_path / "loose.jsonl", [unseen])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+
+
+def test_abstract_quotes_are_checked_against_the_abstract_the_judge_was_shown(
+    watched: tuple[Path, Corpus], tmp_path: Path
+) -> None:
+    root, corpus = watched
+    out = tmp_path / "judge"
+    export_batches(root, out, corpus=corpus)
+    state = _load_state(root)
+    state["papers"]["2610.11111"]["abstract"] = "A second version replaced the abstract with entirely different words after the export."
+    (root / "research" / "audits" / "arxiv_collisions.json").write_text(json.dumps(state), encoding="utf-8")
+    (out / "out").mkdir()
+    shown = _row("2610.11111", "A classical algorithm for quantum product readout")
+    assert import_judgements(root, [_jsonl(out / "out" / "batch_01.jsonl", [shown])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    unseen = _row("2610.11111", "replaced the abstract with entirely different words")
+    result = import_judgements(root, [_jsonl(out / "out" / "batch_01.jsonl", [unseen])], "test", corpus=corpus)
+    assert result["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
+
+
+def test_only_a_batch_named_like_the_output_is_read_and_a_broken_one_stops_the_import(
+    watched: tuple[Path, Corpus], tmp_path: Path
+) -> None:
+    root, corpus = watched
+    row = _row("2610.11111", "A classical algorithm for quantum product readout")
+    (tmp_path / "results.json").write_text("[1, 2]", encoding="utf-8")  # not a batch, and not named like one
+    (tmp_path / "out").mkdir()
+    assert import_judgements(root, [_jsonl(tmp_path / "out" / "results.jsonl", [row])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    before = (root / VERDICTS_FILE).read_bytes()
+    (tmp_path / "batch_02.json").write_text('{"batch": 2}', encoding="utf-8")
+    with pytest.raises(ValueError, match="not a batch file"):
+        import_judgements(root, [_jsonl(tmp_path / "out" / "batch_02.jsonl", [row])], "test", corpus=corpus)
+    (tmp_path / "batch_02.json").write_text('{"papers": [', encoding="utf-8")
+    with pytest.raises(ValueError):
+        import_judgements(root, [_jsonl(tmp_path / "out" / "batch_02.jsonl", [row])], "test", corpus=corpus)
+    assert (root / VERDICTS_FILE).read_bytes() == before
 
 
 def test_import_writes_nothing_when_a_later_row_fails(watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch, capsys) -> None:
