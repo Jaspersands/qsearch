@@ -147,6 +147,27 @@ def test_check_json_rereads_a_file_caught_mid_rewrite(tmp_path: Path, monkeypatc
     assert broken.is_file() and len(sleeps) == 1 + pf.JSON_RETRIES
 
 
+def test_check_json_rereads_a_file_cut_inside_a_multibyte_character(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    # A rewrite caught half way can end inside "ö": that read is a UnicodeDecodeError, not a JSON error.
+    record = _write(tmp_path / "research" / "registry" / "names.json", '{"name": "Schrödinger"}\n')
+    real_read_text = Path.read_text
+    reads: list[Path] = []
+
+    def read_text(self: Path, *args, **kwargs) -> str:
+        reads.append(self)
+        if self == record and len(reads) == 1:
+            raise UnicodeDecodeError("utf-8", "Schrö".encode()[:-1], 4, 5, "unexpected end of data")
+        return real_read_text(self, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "read_text", read_text)
+    monkeypatch.setattr(pf.time, "sleep", lambda seconds: None)
+
+    assert pf.check_json(tmp_path) == []
+    assert reads == [record, record]
+
+
 def test_check_json_reports_a_dangling_symlink(tmp_path: Path) -> None:
     audits = tmp_path / "research" / "audits"
     _write(audits / "fine.json", "[]\n")
@@ -533,6 +554,35 @@ def test_imports_inside_referenced_modules_are_followed(tmp_path: Path) -> None:
     }
 
 
+def test_a_module_that_is_not_utf8_is_checked_but_not_followed(tmp_path: Path) -> None:
+    general = "def command_audit(args):\n    from theorems.latin import a\n    return a\n"
+    repo = _repo(tmp_path, general=general)
+    (repo / "theorems").mkdir()
+    (repo / "theorems" / "latin.py").write_bytes("# Schrödinger\nimport theorems.unfollowed\na = 1\n".encode("latin-1"))
+
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "theorems/latin.py": {GENERAL_PY}}
+    assert pf.check_untracked_imports(repo) == [pf.Problem("imports", "theorems/latin.py", _by("not tracked by git"))]
+
+
+def test_a_dotted_name_for_a_directory_without_init_names_no_file(tmp_path: Path) -> None:
+    # A namespace package: Python imports the directory itself, so there is no theorems/nsdir.py to miss.
+    general = "import theorems.nsdir\nfrom theorems.nsdir.inner import x\n\n" + GENERAL
+    repo = _repo(tmp_path, general=general, committed={"theorems/nsdir/inner.py": "x = 1\n"})
+
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "theorems/nsdir/inner.py": {GENERAL_PY}}
+    assert pf.check_untracked_imports(repo) == []
+
+
+def test_a_registry_that_does_not_parse_is_named(tmp_path: Path) -> None:
+    repo = _repo(tmp_path, git=False)
+    (repo / "qsearch_cli" / "registry.py").write_text("ORDER = [\n", encoding="utf-8")
+
+    [problem] = pf.check_untracked_imports(repo)
+
+    assert problem.path == "qsearch_cli/registry.py"
+    assert problem.message.startswith("cannot read the CLI sources: SyntaxError: ")
+
+
 def test_line_scan_keeps_an_import_whose_line_goes_on_after_a_semicolon() -> None:
     import ast
 
@@ -819,6 +869,22 @@ def test_manifest_subcommand_missing_from_order(tmp_path: Path) -> None:
 
     (moved / pf.MANIFEST).unlink()
     assert [(p.check, p.path, p.message) for p in pf.check_manifest(moved)] == [("manifest", pf.MANIFEST, "missing")]
+
+
+@pytest.mark.parametrize(
+    "manifest, message",
+    [
+        ('{"subcommands": [', "invalid: JSONDecodeError: Expecting value: line 1 column 18 (char 17)"),
+        ('{"commands": []}', "invalid: KeyError: 'subcommands'"),
+        ('{"subcommands": [{"name": "audit"}]}', "invalid: KeyError: 'module'"),
+        ('{"subcommands": 3}', "invalid: TypeError: 'int' object is not iterable"),
+    ],
+)
+def test_an_invalid_manifest_is_one_problem(tmp_path: Path, manifest: str, message: str) -> None:
+    repo = _repo(tmp_path, git=False)
+    (repo / pf.MANIFEST).write_text(manifest, encoding="utf-8")
+
+    assert pf.check_manifest(repo) == [pf.Problem("manifest", pf.MANIFEST, message)]
 
 
 def test_real_manifest_matches_registry() -> None:
