@@ -9,8 +9,10 @@ arXiv flags and verdict actions, referee flags, preflight problems, cockpit iner
 duplicates of the new negatives, and the five commands to run. A section whose source is
 missing or broken says "Not available" and why; it never reads as "nothing to report".
 
-Git is used read-only: only the exact argument lists `allowed_git_args` accepts are ever run.
-Never imports core/ or theorems/.
+Git is used read-only. The brief's own git runs only the exact argument lists
+`allowed_git_args` accepts, offline and with a timeout; the preflight section is the exception,
+since tools/preflight/preflight.py runs its own local reads (rev-parse, ls-files, diff of the
+index) without that runner. Never imports core/ or theorems/.
 """
 
 from __future__ import annotations
@@ -30,7 +32,7 @@ from typing import Any, Callable
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.cockpit.build_cockpit import US, utc_day  # noqa: E402
+from tools.cockpit.build_cockpit import US  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -53,40 +55,54 @@ GitRunner = Callable[..., "str | None"]
 LOG_FORMAT = f"--format=%H{US}%ct"
 # Prints "true"/"false", then root's path below the top of its work tree ("" at the top).
 HISTORY_ARGS = ("rev-parse", "--is-shallow-repository", "--show-prefix")
-# The cutoff is the start of a UTC day. git reads a bare date (--before=2026-10-13) as that day
-# at the current time of day, so the same command would pick different commits morning and
-# evening; and --before keeps a commit dated exactly at its limit. So the limit is the last
-# second before the cutoff (commit dates are whole seconds). [0-9], not \d: \d takes any
-# Unicode digit.
-BEFORE_ARG = re.compile(r"--before=[0-9]{4}-[0-9]{2}-[0-9]{2}T23:59:59Z")
+# The cutoff is the start of a local day (window_start), given to git in UTC. git reads a bare
+# date (--before=2026-10-13) as that day at the current time of day, so the same command would
+# pick different commits morning and evening; and --before keeps a commit dated exactly at its
+# limit. So the limit is the last second before the cutoff (commit dates are whole seconds, and
+# time zones are whole minutes from UTC). [0-9], not \d: \d takes any Unicode digit.
+BEFORE_ARG = re.compile(r"--before=[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:59Z")
 FULL_SHA = re.compile(r"[0-9a-f]{40}(?:[0-9a-f]{24})?")
 SHOW_ARG = re.compile(FULL_SHA.pattern + ":" + re.escape(REGISTRY))
 GIT_TIMEOUT = 60  # seconds per git command; each takes well under one on this repository
+# Variables that point git at a repository, its index, objects or refs, which git exports to
+# hooks and a shell may export too: inherited, they would make git answer from that repository
+# for any -C directory. git's own list (git rev-parse --local-env-vars; GIT_INTERNAL_SUPER_PREFIX
+# from older versions), plus GIT_NAMESPACE.
+REPOSITORY_ENV = (
+    "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_COMMON_DIR", "GIT_CONFIG", "GIT_CONFIG_COUNT", "GIT_CONFIG_PARAMETERS",
+    "GIT_DIR", "GIT_GRAFT_FILE", "GIT_IMPLICIT_WORK_TREE", "GIT_INDEX_FILE", "GIT_INTERNAL_SUPER_PREFIX",
+    "GIT_NAMESPACE", "GIT_NO_REPLACE_OBJECTS", "GIT_OBJECT_DIRECTORY", "GIT_PREFIX", "GIT_REPLACE_REF_BASE",
+    "GIT_SHALLOW_FILE", "GIT_WORK_TREE",
+)
 
 
 def _log_args(cutoff: dt.date) -> tuple[str, ...]:
-    """The newest change to the registry before the cutoff, as "<sha><US><unix time>".
+    """The newest change to the registry before the cutoff (00:00 local time), as "<sha><US><unix time>".
 
-    Path-limited, so git's history simplification follows a merge's parent whose registry is
-    the merge's own: a side branch that never touched the registry (a tool branch merged with
-    --no-ff) cannot stand in for the registry as it was before the cutoff.
+    Path-limited and along the first parents only: the checked-out branch's own line, each
+    merge compared with the branch's side of it. So the registry at the commit found is the
+    registry this branch had at the cutoff. A record merged in from another branch in the
+    window counts as new, however old its commit there; and the other branch's commits, older
+    or newer, never stand in for this branch's registry (a tool branch merged with --no-ff, or
+    a branch that changed the registry too).
     """
-    before = f"--before={(cutoff - dt.timedelta(days=1)).isoformat()}T23:59:59Z"
-    return ("log", "-1", before, LOG_FORMAT, "--", REGISTRY)
+    limit = window_start(cutoff).astimezone(dt.timezone.utc) - dt.timedelta(seconds=1)
+    before = f"--before={limit:%Y-%m-%dT%H:%M:%S}Z"
+    return ("log", "-1", "--first-parent", before, LOG_FORMAT, "--", REGISTRY)
 
 
 def allowed_git_args(args: tuple[str, ...]) -> bool:
     """True only for the brief's own read-only git commands:
 
-    ("log", "-1", "--before=YYYY-MM-DDT23:59:59Z", "--format=%H<US>%ct", "--", REGISTRY),
+    ("log", "-1", "--first-parent", "--before=YYYY-MM-DDTHH:MM:59Z", "--format=%H<US>%ct", "--", REGISTRY),
     ("show", "<full sha>:" + REGISTRY), ("ls-tree", "--name-only", "<full sha>", "--", REGISTRY)
     and ("rev-parse", "--is-shallow-repository", "--show-prefix").
     """
     args = tuple(args)
     if args == HISTORY_ARGS:
         return True
-    if len(args) == 6 and args[:2] == ("log", "-1") and args[3:] == (LOG_FORMAT, "--", REGISTRY):
-        return bool(BEFORE_ARG.fullmatch(args[2]))
+    if len(args) == 7 and args[:3] == ("log", "-1", "--first-parent") and args[4:] == (LOG_FORMAT, "--", REGISTRY):
+        return bool(BEFORE_ARG.fullmatch(args[3]))
     if len(args) == 2 and args[0] == "show":
         return bool(SHOW_ARG.fullmatch(args[1]))
     if len(args) == 5 and args[:2] == ("ls-tree", "--name-only") and args[3:] == ("--", REGISTRY):
@@ -97,11 +113,13 @@ def allowed_git_args(args: tuple[str, ...]) -> bool:
 def git_runner(root: Path) -> GitRunner:
     """Run the brief's read-only git commands in root; return stdout, or None when git fails.
 
-    Offline and non-interactive: a partial clone does not fetch a missing object from its
-    promisor remote (GIT_NO_LAZY_FETCH, git 2.44 and later), git never prompts for credentials,
-    and stdin is closed. Raises RuntimeError when a command runs longer than GIT_TIMEOUT.
+    Against root's own repository: the REPOSITORY_ENV variables are not passed on. Offline and
+    non-interactive: a partial clone does not fetch a missing object from its promisor remote
+    (GIT_NO_LAZY_FETCH, git 2.44 and later), git never prompts for credentials, and stdin is
+    closed. Raises RuntimeError when a command runs longer than GIT_TIMEOUT.
     """
-    env = {**os.environ, "GIT_OPTIONAL_LOCKS": "0", "GIT_NO_LAZY_FETCH": "1", "GIT_TERMINAL_PROMPT": "0"}
+    env = {name: value for name, value in os.environ.items() if name not in REPOSITORY_ENV}
+    env.update(GIT_OPTIONAL_LOCKS="0", GIT_NO_LAZY_FETCH="1", GIT_TERMINAL_PROMPT="0")
 
     def run(*args: str) -> str | None:
         if not allowed_git_args(args):
@@ -120,16 +138,33 @@ def git_runner(root: Path) -> GitRunner:
 
 
 def _day(today: dt.date | str | None) -> dt.date:
-    """A calendar day: today in UTC when None; a datetime is cut to its UTC date (a naive one is taken as UTC)."""
+    """A local calendar day: today when None; an aware datetime is cut to its local date, a naive one is taken as local.
+
+    Local, not UTC: the arXiv watch (first_seen), the verdicts store and the referee
+    (reviewed_on) stamp dt.date.today(), and the brief compares those stamps with its window.
+    """
     if today is None:
-        return dt.datetime.now(dt.timezone.utc).date()
+        return dt.date.today()
     if isinstance(today, dt.datetime):
-        return (today.astimezone(dt.timezone.utc) if today.tzinfo else today).date()
+        return (today.astimezone() if today.tzinfo else today).date()
     return today if isinstance(today, dt.date) else dt.date.fromisoformat(today)
 
 
+def window_start(cutoff: dt.date) -> dt.datetime:
+    """00:00 local time on the cutoff day, with that day's offset from UTC (daylight saving may differ today)."""
+    return dt.datetime.combine(cutoff, dt.time()).astimezone()
+
+
+def _local_day(timestamp: str) -> str | None:
+    """The local calendar date of a git %ct timestamp."""
+    try:
+        return dt.datetime.fromtimestamp(int(timestamp)).date().isoformat()
+    except (ValueError, OverflowError, OSError):
+        return None
+
+
 def cutoff_day(since_days: int, today: dt.date | str | None = None) -> dt.date:
-    """The first day of the window: the brief covers changes from its start (00:00 UTC) on.
+    """The first day of the window: the brief covers changes from its start (00:00 local time) on.
 
     Raises ValueError unless since_days is a whole number from 1 to MAX_SINCE_DAYS.
     """
@@ -141,9 +176,10 @@ def cutoff_day(since_days: int, today: dt.date | str | None = None) -> dt.date:
 def since_commit(
     root: Path, since_days: int = 7, today: dt.date | str | None = None, git: GitRunner | None = None
 ) -> tuple[str, str] | None:
-    """(sha, UTC commit date) of the registry's last change before the cutoff day (00:00 UTC).
+    """(sha, local commit date) of the registry's last change before the cutoff day (00:00
+    local time) on the checked-out branch's first-parent line.
 
-    The registry at that commit is the registry as it stood at the cutoff. None when git cannot
+    The registry at that commit is the registry as this branch had it at the cutoff. None when git cannot
     answer; when the clone is shallow (its oldest commit is a cut, so the commit before the
     cutoff may be missing and an older one would be used silently); when root is not the top of
     its work tree (a copy inside another repository would be compared with that repository's
@@ -168,7 +204,7 @@ def _baseline(
     if answer is None:
         return None, f"git log could not list the changes to {REGISTRY} before {cutoff.isoformat()}"
     sha, _, stamp = answer.strip().partition(US)
-    day = utc_day(stamp)
+    day = _local_day(stamp)
     return ((sha, day), "") if sha and day else (None, _no_change_reason(cutoff.isoformat()))
 
 
@@ -214,10 +250,13 @@ def _ids(data: Any) -> set[str]:
 
 
 def _quarantined_ids(root: Path) -> set[str] | None:
-    """Ids in the working copy's quarantine file; empty when it is absent, None when it cannot be read."""
+    """Ids in the working copy's quarantine file; empty when it is absent, None when it cannot be
+    read (a directory or a dangling link at its path is there, not absent)."""
     path = root / QUARANTINE
-    if not path.is_file():
+    if not os.path.lexists(path):
         return set()
+    if not path.is_file():
+        return None
     try:
         return _ids(read_json(path))
     except (OSError, ValueError):
@@ -296,12 +335,27 @@ def _iso(day: dt.date | str) -> str:
     return day.isoformat() if isinstance(day, dt.date) else str(day)
 
 
+def _arxiv_papers(path: Path) -> tuple[dict[str, Any] | None, str]:
+    """The watch's stored papers, or (None, why) when the collisions file cannot give them."""
+    if not path.is_file():
+        return None, f"no {ARXIV_STATE}" if not os.path.lexists(path) else f"{ARXIV_STATE} is not a file"
+    try:
+        papers = read_json(path).get("papers")
+    except (OSError, ValueError, AttributeError) as error:
+        return None, f"{ARXIV_STATE} cannot be read ({type(error).__name__}: {error})"
+    if not isinstance(papers, dict):
+        return None, f'{ARXIV_STATE} has no "papers" object'
+    return papers, ""
+
+
 def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     """Flagged arXiv papers, verdicts recorded since `since_date`, and the actions still open.
 
     flagged: possible kills and scoops without a verdict (open, however old), then those first
-    seen on or after `since_date` that have one. reviewed: verdicts recorded on or after it.
-    actions: every verdict whose action is not marked `action_done`. Verdicts come from the
+    seen on or after `since_date` that have one; None, with `flagged_reason`, when the
+    collisions file is missing or unreadable (open flags live only there), while the verdicts
+    and actions are still given. reviewed: verdicts recorded on or after `since_date`. actions:
+    every verdict with an action whose `action_done` is not JSON true. Verdicts come from the
     verdicts file, the source of truth, whether or not the watch has copied them onto its records.
     """
     root = Path(root)
@@ -312,12 +366,28 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     state_path = root / ARXIV_STATE
     if not state_path.is_file() and not (root / verdicts_module.VERDICTS_FILE).is_file():
         return {"available": False, "reason": f"no {ARXIV_STATE} and no {verdicts_module.VERDICTS_FILE} yet"}
-    papers = read_json(state_path).get("papers", {}) if state_path.is_file() else {}
+    papers, flagged_reason = _arxiv_papers(state_path)
     verdicts = {
         arxiv_id: entry
         for arxiv_id, entry in verdicts_module.load_verdicts(root)["verdicts"].items()
         if isinstance(entry, dict)
     }
+
+    reviewed = [
+        {"id": arxiv_id, "verdict": entry.get("verdict"), "by": entry.get("by"), "reviewed_on": entry["reviewed_on"]}
+        for arxiv_id, entry in sorted(verdicts.items())
+        if isinstance(entry.get("reviewed_on"), str) and entry["reviewed_on"] >= since
+    ]
+    reviewed.sort(key=lambda item: item["reviewed_on"], reverse=True)
+    actions = [
+        {"id": arxiv_id, "action": str(entry["action"]).strip(), "by": entry.get("by")}
+        for arxiv_id, entry in sorted(verdicts.items())
+        # Only a JSON true closes an action: action_done is written by hand, and "false" is truthy.
+        if str(entry.get("action") or "").strip() and entry.get("action_done") is not True
+    ]
+    if papers is None:
+        return {"available": True, "flagged": None, "flagged_reason": flagged_reason, "reviewed": reviewed,
+                "actions": actions}
 
     flagged = []
     for arxiv_id, record in papers.items():
@@ -337,18 +407,6 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     flagged.sort(key=lambda item: item["id"])
     flagged.sort(key=lambda item: item["first_seen"] or "", reverse=True)
     flagged.sort(key=lambda item: item["verdict"] is not None)
-
-    reviewed = [
-        {"id": arxiv_id, "verdict": entry.get("verdict"), "by": entry.get("by"), "reviewed_on": entry["reviewed_on"]}
-        for arxiv_id, entry in sorted(verdicts.items())
-        if isinstance(entry.get("reviewed_on"), str) and entry["reviewed_on"] >= since
-    ]
-    reviewed.sort(key=lambda item: item["reviewed_on"], reverse=True)
-    actions = [
-        {"id": arxiv_id, "action": str(entry["action"]).strip(), "by": entry.get("by")}
-        for arxiv_id, entry in sorted(verdicts.items())
-        if str(entry.get("action") or "").strip() and not entry.get("action_done")
-    ]
     return {"available": True, "flagged": flagged, "reviewed": reviewed, "actions": actions}
 
 
@@ -372,14 +430,36 @@ def preflight_section(root: Path) -> dict[str, Any]:
     return {"available": True, "by_check": by_check, "total": len(problems)}
 
 
+def _cockpit_warnings(value: Any) -> list[str]:
+    """The cockpit's warnings: a list of strings; one string is one warning, not one per character."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value]
+    if not isinstance(value, list):
+        raise TypeError(f"{COCKPIT} warnings is a {type(value).__name__}, not a list")
+    return [str(warning) for warning in value]
+
+
+def _count(value: Any, what: str) -> int:
+    """A whole number from the cockpit; anything else (NaN, a string, a bool) raises TypeError."""
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise TypeError(f"{COCKPIT} {what} is {value!r}, not a whole number")
+    return value
+
+
 def inertia_section(root: Path) -> dict[str, Any]:
-    """Directions the cockpit flags as stuck: many sections since the registry last gained a record there."""
+    """Directions the cockpit flags as stuck: many sections since the registry last gained a record there.
+
+    A malformed field (warnings not a list, a threshold or streak that is not a whole number)
+    raises, so the section says not available rather than printing garbled values.
+    """
     path = Path(root) / COCKPIT
     if not path.is_file():
         return {"available": False, "reason": f"no {COCKPIT} (python tools/cockpit/build_cockpit.py)"}
     cockpit = read_json(path)
     inertia = cockpit.get("inertia") or {}
-    warnings = [str(warning) for warning in cockpit.get("warnings") or []]
+    warnings = _cockpit_warnings(cockpit.get("warnings"))
     if not inertia.get("available"):
         why = "; ".join(warnings) or "no registry history"
         built = cockpit.get("generated_on")
@@ -388,7 +468,7 @@ def inertia_section(root: Path) -> dict[str, Any]:
         {
             "direction": flag.get("direction"),
             "label": flag.get("label"),
-            "streak": flag.get("streak"),
+            "streak": _count(flag.get("streak"), f"streak of {flag.get('direction')}"),
             "last_gain": (flag.get("last_gain") or {}).get("date"),
         }
         for flag in inertia.get("flags") or []
@@ -396,7 +476,7 @@ def inertia_section(root: Path) -> dict[str, Any]:
     return {
         "available": True,
         "generated_on": cockpit.get("generated_on"),
-        "threshold": inertia.get("threshold"),
+        "threshold": _count(inertia.get("threshold"), "inertia threshold"),
         "flags": flags,
         "warnings": warnings,
     }
@@ -509,6 +589,7 @@ def build(
     return {
         "generated_on": day.isoformat(),
         "since_days": since_days,
+        "window_start": window_start(cutoff).isoformat(),
         "registry": registry,
         "arxiv": _section("arxiv", arxiv_section, root, cutoff),
         "referee": _section("referee", referee_section, root),
@@ -522,14 +603,26 @@ def build(
 LIST_CAP = 40  # ids or rows shown per list; agent_brief.json has them all
 
 
+def _flat(text: Any) -> str:
+    """Text on one line, otherwise verbatim: in a list item or a sentence a pipe is just a character."""
+    return " ".join(str(text if text is not None else "").split())
+
+
 def _cell(text: Any) -> str:
-    return " ".join(str(text if text is not None else "").split()).replace("|", "/")
+    """Text for a table cell: one line, each pipe escaped as GFM reads it (\\|) so it cannot end the cell."""
+    return _flat(text).replace("|", "\\|")
 
 
 def _id_list(ids: list[str]) -> str:
     shown = ", ".join(f"`{rid}`" for rid in ids[:LIST_CAP])
     more = len(ids) - LIST_CAP
     return shown + (f", and {more} more (see agent_brief.json)" if more > 0 else "")
+
+
+def _bullets(items: list[str], where: str = "agent_brief.json") -> list[str]:
+    """List items, capped at LIST_CAP, then one item saying how many more and where they are."""
+    more = len(items) - LIST_CAP
+    return items[:LIST_CAP] + ([f"- And {more} more in {where}."] if more > 0 else [])
 
 
 def _render_registry(section: dict[str, Any], since: str) -> list[str]:
@@ -546,37 +639,54 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
         return lines
     quarantined = section.get("quarantined")
     if quarantined is None:
-        note = "the quarantine file could not be read"
-    elif len(quarantined) == len(removed):
-        note = "all now in the quarantine file"
-    else:
-        note = f"{len(quarantined)} now in the quarantine file"
-    lines.append(f"Removed ({len(removed)}, {note}): {_id_list(removed)}.")
+        lines.append(f"Removed ({len(removed)}, the quarantine file could not be read): {_id_list(removed)}.")
+    elif not quarantined or len(quarantined) == len(removed):
+        note = "all now" if quarantined else "none now"
+        lines.append(f"Removed ({len(removed)}, {note} in the quarantine file): {_id_list(removed)}.")
+    else:  # say which ones moved to quarantine and which were dropped outright
+        moved = set(quarantined)
+        lost = [rid for rid in removed if rid not in moved]
+        lines.append(f"Removed ({len(removed)}): {len(quarantined)} now in the quarantine file: "
+                     f"{_id_list(quarantined)}; {len(lost)} not in it: {_id_list(lost)}.")
     return lines
 
 
 def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     flagged, reviewed, actions = section["flagged"], section["reviewed"], section["actions"]
-    open_flags = sum(1 for item in flagged if item["verdict"] is None)
     counts: dict[str, int] = {}
     for item in reviewed:
         counts[str(item["verdict"])] = counts.get(str(item["verdict"]), 0) + 1
     tally = ", ".join(f"{verdict} {n}" for verdict, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
-    lines = [
-        f"Possible kills and scoops with no verdict yet: {open_flags}. First seen since {since} and already "
-        f"reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are judgement.",
-        f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."),
-        "",
-        f"Open actions from verdicts ({len(actions)}; set `action_done` in `{ARXIV_VERDICTS}` once done):",
+    if flagged is None:
+        lines = [f"Possible kills and scoops: not available: {_flat(section.get('flagged_reason'))}. The verdicts "
+                 "and actions below come from the verdicts file."]
+    else:
+        open_flags = sum(1 for item in flagged if item["verdict"] is None)
+        lines = [f"Possible kills and scoops with no verdict yet: {open_flags}. First seen since {since} and already "
+                 f"reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are judgement."]
+    lines += [f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."), ""]
+    # Every verdict of the window is named once: in the flagged table, or here.
+    in_table = {item["id"] for item in flagged or []}
+    others = [item for item in reviewed if item["id"] not in in_table]
+    if others:
+        where = "" if flagged is None else " on papers not in the flagged table below"
+        lines += [f"Verdicts recorded since {since}{where} ({len(others)}):", ""]
+        lines += _bullets([f"- `{item['id']}`: {_flat(item['verdict'])} ({_flat(item['by'])}, {item['reviewed_on']})."
+                           for item in others])
+        lines.append("")
+    lines += [
+        f"Open actions from verdicts ({len(actions)}; set `\"action_done\": true` in `{ARXIV_VERDICTS}` once done):",
         "",
     ]
-    lines += [f"- `{item['id']}` ({item['by']}): {_cell(item['action'])}" for item in actions] or ["- None."]
+    lines += _bullets([f"- `{item['id']}` ({_flat(item['by'])}): {_flat(item['action'])}" for item in actions]) or [
+        "- None."]
     if flagged:
         lines += ["", "| arXiv | Label | First seen | Verdict | Title |", "|---|---|---|---|---|"]
         for item in flagged[:LIST_CAP]:
-            verdict = item["verdict"] or "**open**: read it"
+            verdict = _cell(item["verdict"]) if item["verdict"] else "**open**: read it"
             first_seen = item["first_seen"] or "-"
-            lines.append(f"| {item['id']} | {item['label']} | {first_seen} | {verdict} | {_cell(item['title'])} |")
+            lines.append(f"| {_cell(item['id'])} | {_cell(item['label'])} | {_cell(first_seen)} | {verdict} | "
+                         f"{_cell(item['title'])} |")
         if len(flagged) > LIST_CAP:
             lines += ["", f"And {len(flagged) - LIST_CAP} more in agent_brief.json."]
     return lines
@@ -589,13 +699,15 @@ def _render_referee(section: dict[str, Any], since: str) -> list[str]:
         f"{len(stale)} reviews stale (the note changed since). Queue: `research/audits/REFEREE_QUEUE.md`.",
         "",
     ]
-    for item in flagged[:LIST_CAP]:
+    items = []
+    for item in flagged:
         claim = item.get("worst_claim") or {}
         worst = ""
-        if claim:
-            quote, finding = _cell(claim.get("quote")), _cell(claim.get("finding"))
+        if claim:  # the quote verbatim, pipes and all
+            quote, finding = _flat(claim.get("quote")), _flat(claim.get("finding"))
             worst = f" Worst claim ({claim.get('verdict')}): \"{quote}\". {finding}"
-        lines.append(f"- `{item['stem']}` **{item['overall']}** (reviewed {item.get('reviewed_on')}).{worst}")
+        items.append(f"- `{item['stem']}` **{item['overall']}** (reviewed {item.get('reviewed_on')}).{worst}")
+    lines += _bullets(items, "`research/audits/REFEREE_QUEUE.md` and agent_brief.json")
     if stale:
         lines += ["", f"Stale: {_id_list(stale)}."]
     return lines
@@ -608,9 +720,8 @@ def _render_preflight(section: dict[str, Any], since: str) -> list[str]:
     noun = "problem" if total == 1 else "problems"
     lines = [f"{total} {noun} from the static checks of `python tools/preflight/preflight.py`:", ""]
     rows = [(check, problem) for check, problems in section["by_check"].items() for problem in problems]
-    lines += [f"- {check}: `{problem['path']}`: {_cell(problem['message'])}" for check, problem in rows[:LIST_CAP]]
-    if len(rows) > LIST_CAP:
-        lines.append(f"- And {len(rows) - LIST_CAP} more: run the command above.")
+    lines += _bullets([f"- {check}: `{problem['path']}`: {_flat(problem['message'])}" for check, problem in rows],
+                      "agent_brief.json, or run the command above")
     return lines
 
 
@@ -621,12 +732,12 @@ def _render_inertia(section: dict[str, Any], since: str) -> list[str]:
         "",
     ]
     flags = section["flags"]
-    lines += [
-        f"- {_cell(flag['label'])} (`{flag['direction']}`): {flag['streak']} sections since the registry last gained a "
-        f"record here ({flag['last_gain'] or 'never'})."
+    lines += _bullets([
+        f"- {_flat(flag['label'])} (`{flag['direction']}`): {flag['streak']} sections since the registry last gained "
+        f"a record here ({flag['last_gain'] or 'never'})."
         for flag in flags
-    ] or ["- No direction is flagged."]
-    lines += [f"- Warning: {_cell(warning)}" for warning in section.get("warnings") or []]
+    ]) or ["- No direction is flagged."]
+    lines += _bullets([f"- Warning: {_flat(warning)}" for warning in section.get("warnings") or []])
     return lines
 
 
@@ -642,8 +753,10 @@ def _render_duplicates(section: dict[str, Any], since: str) -> list[str]:
         lines[0] += " Read both records before merging them; a sweep sibling is a separate result and stays."
         lines += ["", "| Cosine | Record | Title | Record | Title |", "|---|---|---|---|---|"]
         for pair in pairs[:LIST_CAP]:
-            lines.append(f"| {pair['score']:.2f} | `{pair['a']}` | {_cell(pair['title_a'])[:120]} | `{pair['b']}` | "
-                         f"{_cell(pair['title_b'])[:120]} |")
+            lines.append(f"| {pair['score']:.2f} | `{_cell(pair['a'])}` | {_cell(_flat(pair['title_a'])[:120])} | "
+                         f"`{_cell(pair['b'])}` | {_cell(_flat(pair['title_b'])[:120])} |")
+        if len(pairs) > LIST_CAP:
+            lines += ["", f"And {len(pairs) - LIST_CAP} more in agent_brief.json."]
     return lines
 
 
@@ -662,6 +775,19 @@ SECTION_HEADINGS = (
 )
 
 
+def _zone_label(start: Any) -> str:
+    """ "00:00 local time, UTC+11:00" from the window start's ISO time; without it, "00:00 local time"."""
+    try:
+        offset = dt.datetime.fromisoformat(start).utcoffset()
+    except (TypeError, ValueError):
+        offset = None
+    if offset is None:
+        return "00:00 local time"
+    sign, offset = ("-", -offset) if offset < dt.timedelta(0) else ("+", offset)
+    hours, minutes = divmod(int(offset.total_seconds()) // 60, 60)
+    return f"00:00 local time, UTC{sign}{hours:02d}:{minutes:02d}"
+
+
 def render(brief: dict[str, Any]) -> str:
     """The brief as markdown: one fixed heading per section, "Not available: <reason>" when a source is missing."""
     since = cutoff_day(brief["since_days"], brief["generated_on"]).isoformat()
@@ -669,7 +795,7 @@ def render(brief: dict[str, Any]) -> str:
         "# Agent brief",
         "",
         f"Generated {brief['generated_on']} by `python tools/brief/build_brief.py`; covers the {brief['since_days']} "
-        f"days since {since} (00:00 UTC). Do not edit by hand.",
+        f"days since {since} ({_zone_label(brief.get('window_start'))}). Do not edit by hand.",
         "Read it before choosing a direction. \"Not available\" means the source could not be read, not that "
         "there is nothing to report.",
         "",
@@ -678,21 +804,55 @@ def render(brief: dict[str, Any]) -> str:
         section = brief.get(key) or {"available": False, "reason": "missing from the brief"}
         lines += [f"## {heading}", ""]
         if not section.get("available"):
-            lines.append(f"Not available: {_cell(section.get('reason') or 'no reason given')}")
+            lines.append(f"Not available: {_flat(section.get('reason') or 'no reason given')}")
         else:
             lines += render_section(section, since)
         lines.append("")
     return "\n".join(lines)
 
 
+def _output_dir(root: Path, out: Path | None) -> Path:
+    return Path(out) if out is not None else Path(root) / Path(OUTPUT_MD).parent
+
+
+def _replace(path: Path, text: str) -> None:
+    """Write text beside path, then rename it over path: a reader sees the old file or the new one, never part of one."""
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")  # per process, so two runs never share one
+    try:
+        tmp.write_text(text, encoding="utf-8")
+        os.replace(tmp, path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
 def write(root: Path, brief: dict[str, Any], out: Path | None = None) -> tuple[Path, Path]:
-    """Write AGENT_BRIEF.md and agent_brief.json into `out` (default: root/research/audits)."""
-    directory = Path(out) if out is not None else Path(root) / Path(OUTPUT_MD).parent
+    """Write agent_brief.json, then AGENT_BRIEF.md, into `out` (default: root/research/audits).
+
+    Each file is replaced whole (written beside it, then renamed), so an agent reading it while
+    the brief is rebuilt never sees it empty or cut short; the two are replaced one after the other.
+    """
+    directory = _output_dir(root, out)
     directory.mkdir(parents=True, exist_ok=True)
     md, js = directory / Path(OUTPUT_MD).name, directory / Path(OUTPUT_JSON).name
-    md.write_text(render(brief), encoding="utf-8")
-    js.write_text(json.dumps(brief, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    text = render(brief)
+    _replace(js, json.dumps(brief, indent=2, sort_keys=True, ensure_ascii=False) + "\n")
+    _replace(md, text)
     return md, js
+
+
+def _out_problem(directory: Path) -> str | None:
+    """Why the output directory cannot take the two files, found before the build; None when it looks writable."""
+    directory = Path(directory).absolute()
+    if directory.exists() and not directory.is_dir():
+        return f"{directory} is not a directory"
+    existing = directory
+    while not existing.exists():  # the directory, or the nearest parent mkdir would create it in
+        existing = existing.parent
+    if not existing.is_dir():
+        return f"{directory} cannot be created: {existing} is not a directory"
+    if not os.access(existing, os.W_OK | os.X_OK):
+        return f"{existing} is not writable"
+    return None
 
 
 def _since_days_arg(value: str) -> int:
@@ -709,7 +869,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=ROOT, help="Checkout to read (default: this repository).")
     parser.add_argument("--since-days", type=_since_days_arg, default=DEFAULT_SINCE_DAYS,
-                        help="Window: changes since this many days ago, from 00:00 UTC.")
+                        help="Window: changes since this many days ago, from 00:00 local time.")
     parser.add_argument("--out", type=Path,
                         help="Directory for AGENT_BRIEF.md and agent_brief.json (default: ROOT/research/audits).")
     parser.add_argument("--json", action="store_true", help="Print the brief as JSON instead of a summary.")
@@ -717,8 +877,15 @@ def main(argv: list[str] | None = None) -> int:
     root = args.root.resolve()
     if not root.is_dir():
         parser.error(f"--root {root} is not a directory")
+    problem = _out_problem(_output_dir(root, args.out))  # before the build, not after it
+    if problem is not None:
+        parser.error(f"--out: {problem}" if args.out is not None else f"cannot write the brief: {problem}")
     brief = build(root, since_days=args.since_days)
-    md, js = write(root, brief, args.out)
+    try:
+        md, js = write(root, brief, args.out)
+    except OSError as error:  # what the check above cannot see (a full disk, a read-only mount)
+        print(f"{parser.prog}: error: cannot write the brief: {error}", file=sys.stderr)
+        return 2
     if args.json:
         print(json.dumps(brief, indent=2, sort_keys=True, ensure_ascii=False))
         return 0
