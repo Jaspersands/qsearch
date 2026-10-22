@@ -94,11 +94,12 @@ def select_notes(
     """Notes with one of `statuses`, newest status-block date first (undated last), then by stem.
 
     Not by mtime: mtimes follow checkout and copy order, so the same commit would give a
-    different queue (and a different cut at `limit`) on another machine."""
+    different queue (and a different cut at `limit`) on another machine. A file whose stem is
+    not a note name (see `unnamed_notes`) is skipped: import would refuse its review."""
     notes = (reviews if reviews is not None else load_reviews(root)).get("notes", {})
     ranked = []
     for path in sorted((root / "research").glob("*.md"), key=lambda path: path.stem):  # kept by the stable sort below
-        if path.name in JOURNALS or (prefixes and not path.stem.startswith(tuple(prefixes))):
+        if path.name in JOURNALS or not STEM.match(path.stem) or (prefixes and not path.stem.startswith(tuple(prefixes))):
             continue
         lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
         if note_status(lines) not in statuses:
@@ -110,6 +111,20 @@ def select_notes(
     ranked.sort(key=lambda item: item[0], reverse=True)
     paths = [path for _, path in ranked]
     return paths[:limit] if limit else paths
+
+
+def unnamed_notes(root: Path) -> list[str]:
+    """`research/*.md` files whose stem import refuses as a note name, such as the copy iCloud
+    saves as `NOTE 2.md`; select, export and the queue skip them."""
+    return sorted(f"research/{path.name}" for path in (root / "research").glob("*.md")
+                  if path.name not in JOURNALS and not STEM.match(path.stem))
+
+
+def _warn_unnamed(root: Path) -> None:
+    unnamed = unnamed_notes(root)
+    if unnamed:
+        print(f"warning: skipped {len(unnamed)} file(s) not named as a note (letters, digits, _, . and -), "
+              f"which import would refuse: {', '.join(unnamed)}", file=sys.stderr)
 
 
 CLAIM_VERDICTS = ("holds", "gap", "wrong", "unclear")
@@ -686,6 +701,7 @@ def main(argv: list[str] | None = None) -> int:
 def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
     root = args.root
     if args.command == "select":
+        _warn_unnamed(root)
         rows = []
         for path in _selected(root, args):
             date = _note_date(path.read_text(encoding="utf-8", errors="replace").splitlines())
@@ -701,10 +717,14 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
     if args.command == "export":
         if args.note:
             notes = [_note_path(root, Path(stem).name.removesuffix(".md")) for stem in args.note]
+            unnamed = [path.stem for path in notes if not STEM.match(path.stem)]
+            if unnamed:
+                parser.error(f"not a note name: {', '.join(unnamed)} (import takes letters, digits, _, . and -)")
             missing = [path.stem for path in notes if not _is_note(path)]
             if missing:
                 parser.error(f"no such note: {', '.join(missing)}")
         else:
+            _warn_unnamed(root)
             notes = _selected(root, args)
         try:
             paths = export_batches(root, args.out_dir, notes, batch_size=args.batch_size)
@@ -727,6 +747,7 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
         return 0
 
     if args.command == "render":
+        _warn_unnamed(root)
         render(root)
         print(f"wrote {len(stored_reviews(root))} reviews and {QUEUE}")
         return 0

@@ -638,6 +638,37 @@ def test_import_and_export_take_only_a_notes_exact_name(tmp_path: Path, capsys) 
     assert (R.status(tmp_path)["stale"], R.status(tmp_path)["flagged"]) == (["bar_note"], [])
 
 
+def test_select_export_and_the_queue_skip_a_file_import_would_refuse(tmp_path: Path, capsys) -> None:
+    # iCloud saves a sync conflict as "NOTE 2.md". Import takes only note names, so a judge row
+    # for the copy (the instructions say not to skip notes) would refuse the whole judge file.
+    _export_fixture(tmp_path)
+    research = tmp_path / "research"
+    (research / "FIXTURE_NOTE 2.md").write_bytes((research / "FIXTURE_NOTE.md").read_bytes())
+    root = str(tmp_path)
+    assert "FIXTURE_NOTE 2" not in [p.stem for p in R.select_notes(tmp_path, limit=0)]
+    assert "FIXTURE_NOTE" in [p.stem for p in R.select_notes(tmp_path, limit=0)]
+    assert R.main(["select", "--root", root, "--json"]) == 0
+    out, err = capsys.readouterr()
+    assert "FIXTURE_NOTE 2" not in out and "research/FIXTURE_NOTE 2.md" in err
+    assert R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--limit", "0"]) == 0
+    assert "research/FIXTURE_NOTE 2.md" in capsys.readouterr().err
+    rows = [n for path in sorted((tmp_path / "o").glob("batch_*.json"))
+            for n in json.loads(path.read_text(encoding="utf-8"))["notes"]]
+    assert "FIXTURE_NOTE" in [n["stem"] for n in rows] and all(R.STEM.match(n["stem"]) for n in rows)
+    answer = _jsonl(tmp_path / "out" / "all.jsonl", [_row(tmp_path, stem=n["stem"], overall="sound", claims=[]) for n in rows])
+    assert R.main(["import", str(answer), "--root", root, "--judge", "j"]) == 0
+    with pytest.raises(SystemExit):
+        R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o2"), "--note", "FIXTURE_NOTE 2"])
+    assert "not a note name: FIXTURE_NOTE 2" in capsys.readouterr().err
+    assert not (tmp_path / "o2").exists()
+    _dated_note(tmp_path, "PENDING", "2026-10-20. REVIEW PENDING.", 1000)
+    (research / "PENDING 2.md").write_bytes((research / "PENDING.md").read_bytes())
+    assert R.main(["render", "--root", root]) == 0
+    assert "research/PENDING 2.md" in capsys.readouterr().err
+    queue = (tmp_path / R.QUEUE).read_text(encoding="utf-8")
+    assert "| PENDING |" in queue and "PENDING 2" not in queue
+
+
 def test_import_rejects_more_than_six_claims_and_a_non_boolean_self_check(tmp_path: Path) -> None:
     _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
     quote = "It holds for all twelve saved inputs, with margin at least 0.031"
