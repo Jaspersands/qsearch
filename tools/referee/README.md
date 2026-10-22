@@ -37,7 +37,9 @@ A note is review pending when the corpus status rule (`note_status` in
 "review pending" and nothing more decisive (quarantined, superseded, retracted,
 rejected). Notes that say "require review" instead are `unlabelled`, so export them with
 `--note`. The two journals (`AGENT_HANDOFF.md`, `MECHANICAL_FOLLOW_UP_PLAN.md`) are never
-selected. Notes are ordered by the first date in the status block (the first paragraph
+selected, and neither is a file whose name import would refuse as a note name, such as the
+copy iCloud saves as `NOTE 2.md`: `select`, `export` and `render` skip it and name it in a
+warning on stderr, and `export --note` refuses it. Notes are ordered by the first date in the status block (the first paragraph
 after the title), undated last, then by stem. File modification times are not used: they
 follow checkout and copy order, so every checkout of one commit gets the same queue and
 the same cut at `--limit`. A note whose stored review has its current content hash is
