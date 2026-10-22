@@ -222,6 +222,26 @@ def test_a_record_merged_in_from_a_side_branch_in_the_window_counts_as_added(tmp
     assert (delta["added"], delta["removed"]) == (["B"], [])
 
 
+def test_a_fast_forward_in_the_window_counts_from_the_commit_dates(tmp_path: Path) -> None:
+    # The documented limit: a fast-forward leaves no merge commit and git records nowhere when it
+    # happened, so the side branch's commits become main's own line with their own dates. B,
+    # committed 2026-10-10 and fast-forwarded into main on 2026-10-16, counts from 2026-10-10:
+    # before the window, so not added. Merged with --no-ff (the test above), it is added.
+    repo = _forked_repo(tmp_path)
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-10")
+    _git(repo, "checkout", "-q", "main")
+    _git(repo, "merge", "--ff-only", "-q", "side", env=_dated("2026-10-16"))
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-10"
+    assert (delta["added"], delta["removed"]) == ([], [])
+    readme = " ".join((REPO / "tools" / "brief" / "README.md").read_text(encoding="utf-8").split())
+    assert "**Merge with `--no-ff`.** A fast-forward" in readme
+    assert "counts from the date of its commit" in readme
+    for function in (B._log_args, B.since_commit):
+        assert "fast-forward" in function.__doc__ and "--no-ff" in function.__doc__, function
+
+
 def test_a_merge_of_two_changed_registries_compares_with_the_checked_out_branch(tmp_path: Path) -> None:
     # main filed X (2026-10-10) and the side branch Y (2026-10-12), both before the window; the
     # merge in the window keeps both. Only Y is new on main; X was there at the cutoff.

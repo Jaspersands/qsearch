@@ -80,11 +80,15 @@ def _log_args(cutoff: dt.date) -> tuple[str, ...]:
     """The newest change to the registry before the cutoff (00:00 local time), as "<sha><US><unix time>".
 
     Path-limited and along the first parents only: the checked-out branch's own line, each
-    merge compared with the branch's side of it. So the registry at the commit found is the
-    registry this branch had at the cutoff. A record merged in from another branch in the
-    window counts as new, however old its commit there; and the other branch's commits, older
-    or newer, never stand in for this branch's registry (a tool branch merged with --no-ff, or
-    a branch that changed the registry too).
+    merge commit compared with the branch's side of it. So a record merged in from another
+    branch in the window by a merge commit counts as new, however old its commit there; and
+    the other branch's commits, older or newer, never stand in for this branch's registry (a
+    tool branch merged with --no-ff, or a branch that changed the registry too).
+
+    A fast-forward is the limit: it leaves no merge commit, and git records nowhere when it
+    happened. The other branch's commits become this branch's own first-parent line with their
+    own dates, so a record that arrived by a fast-forward in the window counts from its
+    commit's date (one committed before the window is not reported as added). Merge with --no-ff.
     """
     limit = window_start(cutoff).astimezone(dt.timezone.utc) - dt.timedelta(seconds=1)
     before = f"--before={limit:%Y-%m-%dT%H:%M:%S}Z"
@@ -179,7 +183,9 @@ def since_commit(
     """(sha, local commit date) of the registry's last change before the cutoff day (00:00
     local time) on the checked-out branch's first-parent line.
 
-    The registry at that commit is the registry as this branch had it at the cutoff. None when git cannot
+    The registry at that commit is the registry as this branch had it at the cutoff, except
+    after a fast-forward in the window, which history cannot date (see _log_args: commits that
+    arrived that way count from their own dates, so merge with --no-ff). None when git cannot
     answer; when the clone is shallow (its oldest commit is a cut, so the commit before the
     cutoff may be missing and an older one would be used silently); when root is not the top of
     its work tree (a copy inside another repository would be compared with that repository's

@@ -88,13 +88,20 @@ Git always reads `--root`'s own repository: variables such as `GIT_DIR`, `GIT_WO
 `GIT_INDEX_FILE` (git exports them to hooks, and a shell may export them) are not passed on, so
 a root that is not a checkout says so instead of being compared with another repository's history.
 The baseline is the registry as the checked-out branch had it at the cutoff: its last change
-before the window on the branch's first-parent line, each merge compared with the branch's own
-side of it. So a record merged in from another branch during the window counts as added (and
-one dropped by such a merge as removed), however old its commit on the other branch; and the
-other branch never stands in for this one, whether it is a tool branch merged with `--no-ff`
-that left the registry alone or a branch that changed the registry too. Run it on main for the
-agents' view: on a branch that merges main in, main's registry changes count from the day they
-were merged into that branch. The limit is the last second before the cutoff day (00:00 local
+before the window on the branch's first-parent line, each merge commit compared with the
+branch's own side of it. So a record merged in from another branch during the window by a
+merge commit counts as added (and one dropped by such a merge as removed), however old its
+commit on the other branch; and the other branch never stands in for this one, whether it is a
+tool branch merged with `--no-ff` that left the registry alone or a branch that changed the
+registry too. **Merge with `--no-ff`.** A fast-forward (`git merge --ff-only`, or a plain
+`git merge` when the checked-out branch has not moved since the fork) leaves no merge commit,
+and git records nowhere when it happened: the other branch's commits become this branch's own
+first-parent line with their own dates. A record that arrived that way counts from the date of
+its commit, so one committed before the window is not reported as added, and the duplicates
+section does not compare it. (A reflog could date the fast-forward, but only in the clone that
+made it and only until the entry expires, so two clones would print different briefs.) Run it
+on main for the agents' view: on a branch that merges main in, main's registry changes count
+from the day they were merged into that branch. The limit is the last second before the cutoff day (00:00 local
 time, in UTC: `2026-10-12T12:59:59Z` for 2026-10-13 at UTC+11:00) because `--before` keeps a
 commit dated exactly at its limit,
 and it names a time because git reads a bare date (`--before=2026-10-12`) as that day at the
