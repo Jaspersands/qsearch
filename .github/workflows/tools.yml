@@ -35,6 +35,8 @@ on:
       - "tests/__init__.py"
       - "qsearch.py"
       - "qsearch_cli/**"
+      # The held-out retrieval check fits the whole research corpus.
+      - "research/**"
       - "theorems/**"
       - "core/**"
       - "research/audits/cli_manifest.json"
@@ -102,6 +104,8 @@ on:
       - "tests/__init__.py"
       - "qsearch.py"
       - "qsearch_cli/**"
+      # The held-out retrieval check fits the whole research corpus.
+      - "research/**"
       - "theorems/**"
       - "core/**"
       - "research/audits/cli_manifest.json"

@@ -164,6 +164,15 @@ def test_tools_workflow_runs_when_the_referee_or_the_brief_rewrites_its_pages() 
     assert [path for path in outputs if not any(pattern.fullmatch(path) for pattern in patterns)] == []
 
 
+def test_heldout_step_runs_when_its_corpus_changes() -> None:
+    patterns = [_regex(pattern) for pattern in _filters(WORKFLOW.read_text(encoding="utf-8"))["pull_request"]]
+    # The lexical ranker fits the complete source corpus: a newly added note or a
+    # quarantine move can change retrieval even without changing a held-out query.
+    sources = ["research/registry/negative_results.json", "research/registry/quarantined_campaign_negatives.json",
+               "research/A_NEW_NOTE.md", "research/literature/a_new_paper.json"]
+    assert [path for path in sources if not any(pattern.fullmatch(path) for pattern in patterns)] == []
+
+
 def test_filter_globs_follow_github_semantics() -> None:
     assert _regex("tools/corpus/**").fullmatch("tools/corpus/sources/arxiv.py")
     assert _regex("theorems/**").fullmatch("theorems/sub/module.py")
