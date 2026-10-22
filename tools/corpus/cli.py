@@ -459,6 +459,22 @@ def _count(value: str) -> int:
     return number
 
 
+def _at_least_zero(flag: str):
+    """An argparse type for a whole number >= 0. A negative --limit printed "0 of N pairs" and was
+    stored in the report; a negative --per-family dropped every sibling pair, as 0 does."""
+
+    def parse(value: str) -> int:
+        try:
+            number = int(value)
+        except ValueError:
+            number = -1
+        if number < 0:
+            raise argparse.ArgumentTypeError(f"{flag} must be a whole number of at least 0, got {value}")
+        return number
+
+    return parse
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", help="Q-Search checkout to index (default: QSEARCH_ROOT or this repo).")
@@ -506,8 +522,17 @@ def build_parser() -> argparse.ArgumentParser:
     dups = sub.add_parser("near-duplicates", help="Pairs of negatives with a high TF-IDF cosine.")
     dups.add_argument("--kind", default="negative", help="Document kind to compare (default: negative).")
     dups.add_argument("--threshold", type=_threshold, default=REPORT_THRESHOLD, help="Minimum cosine (default 0.9).")
-    dups.add_argument("--limit", type=int, default=200, help="Pairs to keep, highest first; the total is still reported.")
-    dups.add_argument("--per-family", type=int, help="At most this many pairs of ids differing only in a trailing number.")
+    dups.add_argument(
+        "--limit",
+        type=_at_least_zero("--limit"),
+        default=200,
+        help="Pairs to keep, highest first (0 or more); the total is still reported.",
+    )
+    dups.add_argument(
+        "--per-family",
+        type=_at_least_zero("--per-family"),
+        help="At most this many pairs of ids differing only in a trailing number (0 or more).",
+    )
     dups.add_argument("--out", help="Write FILE.json and FILE.md (stem upper-cased) next to it.")
     dups.add_argument("--json", action="store_true")
     dups.add_argument("--no-refresh", action="store_true", help="Skip the incremental index refresh.")

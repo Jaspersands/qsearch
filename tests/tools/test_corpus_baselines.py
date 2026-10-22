@@ -243,9 +243,16 @@ def test_catalog_note_references_name_their_baseline() -> None:
     assert silent == []
 
 
+def test_readme_says_the_runnable_check_runs_now_that_dqi_screen_is_merged() -> None:
+    # tools/dqi_screen/ was merged in e4e2c6c8, so the check below runs; it skips only in a checkout without it.
+    readme = " ".join((REPO / "tools" / "corpus" / "README.md").read_text(encoding="utf-8").split())
+    assert "is merged)" not in readme
+    assert "(it skips only in a checkout without `tools/dqi_screen/`)" in readme
+
+
 def test_runnables_run_as_printed_or_name_an_existing_function() -> None:
     if not (REPO / "tools" / "dqi_screen").is_dir():
-        pytest.skip("Project 1 not merged")
+        pytest.skip("tools/dqi_screen/ is not in this checkout")
     runnable = [entry["runnable"] for entry in load_catalog() if entry["runnable"]]
     assert runnable
     for item in runnable:

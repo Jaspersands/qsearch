@@ -493,6 +493,29 @@ def test_cli_rejects_a_threshold_outside_0_1(fake_repo: Path, capsys, value: str
         assert "threshold must be a number in (0, 1]" in capsys.readouterr().err
 
 
+@pytest.mark.parametrize("flag", ["--limit", "--per-family"])
+@pytest.mark.parametrize("value", ["-3", "-1", "2.5", "many"])
+def test_cli_near_duplicates_rejects_a_negative_limit_or_per_family(fake_repo: Path, capsys, flag: str, value: str) -> None:
+    # --limit -3 printed "0 of 57 pairs ... (raise --limit to see the rest)" and stored "limit": -3;
+    # --per-family -1 silently dropped every sibling pair, as 0 does.
+    with pytest.raises(SystemExit) as raised:
+        main(["--root", str(fake_repo), "near-duplicates", flag, value])
+    assert raised.value.code == 2
+    assert f"argument {flag}: {flag} must be a whole number of at least 0, got {value}" in capsys.readouterr().err
+    assert not (fake_repo / "research" / "corpus_index").exists()  # rejected before the index is touched
+
+
+def test_cli_near_duplicates_accepts_a_zero_limit_and_per_family(fake_repo: Path, capsys) -> None:
+    _corpus_with(fake_repo, _sweep_records() + RESTATEMENT)
+    root = ["--root", str(fake_repo), "near-duplicates", "--threshold", "0.8", "--json"]
+    assert main([*root, "--limit", "0"]) == 0  # the count alone
+    payload = json.loads(capsys.readouterr().out)
+    assert (payload["limit"], payload["pairs"], payload["total"]) == (0, [], 136)
+    assert main([*root, "--per-family", "0"]) == 0  # no sweep siblings, only the restatement
+    payload = json.loads(capsys.readouterr().out)
+    assert (payload["per_family"], payload["total"]) == (0, 1)
+
+
 @pytest.mark.parametrize("value", [float("nan"), 1.5, 0.0, -1.0, 60.0])
 def test_check_duplicate_negative_tool_rejects_a_threshold_outside_0_1(fake_repo: Path, value: float) -> None:
     server = create_server(fake_repo, dense="off")

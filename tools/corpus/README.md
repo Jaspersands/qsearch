@@ -170,7 +170,9 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
 - `near-duplicates` lists pairs of `negative`-kind documents at or above `--threshold`
   (default 0.9), highest first, at most `--limit` (200). `--per-family N` keeps at most N
   pairs whose two ids differ only in their last `-<number>` (`...-N48-0-1` and
-  `...-N48-0-2`). The output always gives the count before the limit ("200 of 539 pairs"),
+  `...-N48-0-2`). Both take a whole number of at least 0 (argparse exits 2 otherwise):
+  `--limit 0` prints the count alone, `--per-family 0` leaves out every such sibling
+  pair. The output always gives the count before the limit ("200 of 539 pairs"),
   and the JSON carries it as `total` next to `per_family` and `limit`, with the number of
   `documents` compared, `changed_since_fit`, `index_incomplete` and `index_issues`. `--kind`
   picks another document kind; a kind with no documents is an error (exit 1). When a
@@ -400,7 +402,7 @@ a catalog with any such problem, or one that cannot be read or parsed as
 returns `{"error"}`. The tests also check that every note reference
 exists as `research/<STEM>.md` and names its baseline (its name or an alias), that every
 runnable entry is a function defined in that file, and that every runnable command exits 0
-when run from the repository root (that check skips until `tools/dqi_screen/` is merged).
+when run from the repository root (it skips only in a checkout without `tools/dqi_screen/`).
 
 Three entries cite no note: no committed note discusses stochastic localization, Prange
 completion as a finite-length OPI baseline, or LP decoding of cycle codes
