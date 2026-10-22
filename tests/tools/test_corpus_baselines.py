@@ -4,6 +4,7 @@ import json
 import re
 import shlex
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -98,6 +99,17 @@ def test_catalog_is_well_formed() -> None:
         ({"mechanisms": ["gibbs sampling", "χ² test", "code"]}, 'mechanism "χ² test" has letters the matcher ignores (χ); spell it in ASCII'),
         ({"mechanisms": ["gibbs sampling", "parity check", 3]}, "mechanism 3 must be a string"),
         ({"mechanisms": ["Gibbs sampling", "parity check", "code"]}, 'mechanism "Gibbs sampling" must be lowercase'),
+        # a note is a bare research/<STEM>.md stem and an arXiv id has no version, matched in full
+        *(
+            ({"references": [ref]}, f"malformed reference {json.dumps(ref)}")
+            for ref in (
+                {"note": "PRIME_CHARACTER_OPI.md"},
+                {"note": "research/PRIME_CHARACTER_OPI"},
+                {"note": "prime_character_opi"},
+                {"arxiv": "2610.06753v2"},
+                {"arxiv": "arXiv:2610.06753"},
+            )
+        ),
     ],
 )
 def test_validate_catalog_names_each_broken_rule(change: dict, problem: str) -> None:
@@ -347,18 +359,50 @@ def test_low_norm_construction_a_lattices_do_not_cite_the_norm_search(fake_repo:
     assert "norm-search-fp2" not in {rec.baseline["id"] for rec in recommend(corpus, idea, k=20)}
 
 
+def _runnable_problems(item: dict) -> list[str]:
+    """Why a catalog `runnable` does not work as printed: an entry that is not a function
+    defined in its file, or a command that does not exit 0 from the repository root."""
+    problems: list[str] = []
+    if item.get("entry"):
+        path, _, name = item["entry"].partition(":")
+        if not re.search(rf"^def {re.escape(name)}\(", (REPO / path).read_text(encoding="utf-8"), re.M):
+            problems.append(f"{item['entry']}: no such function")
+    if item.get("command"):  # the CLI prints it as "run:", so it must run from the repository root
+        done = subprocess.run(shlex.split(item["command"]), cwd=REPO, capture_output=True, text=True, timeout=120)
+        if done.returncode:
+            problems.append(f"{item['command']}: exit {done.returncode}: {done.stderr[-500:]}")
+    return problems
+
+
 def test_runnables_run_as_printed_or_name_an_existing_function() -> None:
     if not (REPO / "tools" / "dqi_screen").is_dir():
         pytest.skip("tools/dqi_screen/ is not in this checkout")
     runnable = [entry["runnable"] for entry in load_catalog() if entry["runnable"]]
     assert runnable
-    for item in runnable:
-        if item.get("entry"):
-            path, _, name = item["entry"].partition(":")
-            assert re.search(rf"^def {re.escape(name)}\(", (REPO / path).read_text(encoding="utf-8"), re.M)
-        if item.get("command"):  # the CLI prints it as "run:", so it must run from the repository root
-            done = subprocess.run(shlex.split(item["command"]), cwd=REPO, capture_output=True, text=True, timeout=120)
-            assert done.returncode == 0, (item["command"], done.stderr[-500:])
+    assert [problem for item in runnable for problem in _runnable_problems(item)] == []
+
+
+def test_the_runnable_check_runs_each_command_and_reads_each_entry() -> None:
+    # No catalog entry has a command today, so the check above never ran that branch.
+    python = shlex.quote(sys.executable)
+    assert _runnable_problems({"command": f"{python} -c pass"}) == []
+    assert "exit 3" in _runnable_problems({"command": f"{python} -c 'raise SystemExit(3)'"})[0]
+    assert _runnable_problems({"entry": "tools/corpus/baselines.py:recommend"}) == []
+    assert _runnable_problems({"entry": "tools/corpus/baselines.py:no_such_function"}) == [
+        "tools/corpus/baselines.py:no_such_function: no such function"
+    ]
+
+
+def test_baselines_with_equal_scores_are_ordered_by_name(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    template = load_catalog()[1]
+    catalog = [
+        dict(template, id=f"tie-{name.lower()}", name=f"{name} zebra decoder", aliases=[], mechanisms=["zebra stripe", "okapi", "tapir"])
+        for name in ("Beta", "Alpha", "Gamma")
+    ]
+    recs = recommend(corpus, "counting zebra stripes", catalog=catalog)
+    assert len({rec.score for rec in recs}) == 1
+    assert [rec.baseline["name"] for rec in recs] == ["Alpha zebra decoder", "Beta zebra decoder", "Gamma zebra decoder"]
 
 
 def test_prange_ranks_first_when_a_note_mentions_it(fake_repo: Path) -> None:
@@ -416,6 +460,13 @@ def test_a_note_cites_a_baseline_once_however_many_sections_are_near(fake_repo: 
     assert recs[0].score == pytest.approx(0.3)
     sources = sorted(hit.path if hit.kind == "note" else hit.doc_id for hit in recs[0].evidence)
     assert sources == ["negative:NEG-KANGAROO-HOP-1", "negative:NEG-KANGAROO-HOP-2", "research/KANGAROO_HOP.md"]
+    # the evidence is each source's nearest hit, nearest source first
+    nearest: dict[str, str] = {}
+    for hit in hits:
+        source = hit.path if hit.kind == "note" else hit.doc_id
+        if source in sources:
+            nearest.setdefault(source, hit.doc_id)
+    assert [hit.doc_id for hit in recs[0].evidence] == list(nearest.values())
 
 
 def test_cli_baselines_text_and_json(fake_repo: Path, capsys) -> None:

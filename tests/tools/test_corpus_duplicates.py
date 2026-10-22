@@ -690,11 +690,39 @@ def test_cli_check_new_allow_accepts_known_siblings(fake_repo: Path, tmp_path: P
     assert "--allow" in capsys.readouterr().err
 
 
+def test_cli_check_new_allowed_list_counts_what_it_cuts_and_names_the_draft(
+    fake_repo: Path, tmp_path: Path, capsys
+) -> None:
+    _corpus_with(fake_repo, _sweep_records() + [dict(GOPPA_SIBLING, id="NEG-GOPPA-SCALE-M6-T3-N48-0-12")])
+    draft = tmp_path / "sibling.json"
+    draft.write_text(json.dumps(GOPPA_SIBLING))
+    root = ["--root", str(fake_repo), "check-new", "--file", str(draft), "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-*"]
+    assert main(root) == 0
+    line = next(line for line in capsys.readouterr().out.splitlines() if line.startswith("Not counted:"))
+    assert line.startswith("Not counted: 11 matching record(s) allowed by --allow: ")
+    assert line.endswith(", and 1 more.") and line.count(" (") == 10  # ten named with their cosines
+    assert main([*root, "--json"]) == 0
+    allowed = json.loads(capsys.readouterr().out)["allowed"]
+    assert len(allowed) == 11 and {entry["draft_id"] for entry in allowed} == {GOPPA_SIBLING["id"]}
+
+
+def test_allow_accepts_a_quarantined_record(fake_repo: Path, capsys) -> None:
+    original = QUARANTINED[0]["original_record"]
+    root = ["--root", str(fake_repo), "check-new", "--text", f"{original['claim']} {original['reason_invalid']}", "--json"]
+    quarantined = f"quarantined:{QUARANTINED[0]['id']}"
+    for pattern in (QUARANTINED[0]["id"], quarantined, "NEG-ANNEALING-*"):
+        assert main([*root, "--allow", pattern]) == 0
+        payload = json.loads(capsys.readouterr().out)
+        assert payload["matches"] == [] and [entry["doc_id"] for entry in payload["allowed"]] == [quarantined]
+
+
 def test_check_duplicate_negative_tool_allow(fake_repo: Path) -> None:
     _corpus_with(fake_repo, _sweep_records())
     server = create_server(fake_repo, dense="off")
     claim = f"{GOPPA_SIBLING['claim']} {GOPPA_SIBLING['reason_invalid']}"
-    assert _call(server, "check_duplicate_negative", {"claim": claim})["duplicate"] is True
+    payload = _call(server, "check_duplicate_negative", {"claim": claim})
+    assert payload["duplicate"] is True
+    assert payload["total"] == 10 and len(payload["matches"]) == 5  # the closest five; total counts them all
     payload = _call(server, "check_duplicate_negative", {"claim": claim, "allow": ["NEG-GOPPA-SCALE-M6-T3-N48-0-*"]})
     assert payload["duplicate"] is False and len(payload["allowed"]) == 10
     assert "error" in _call(server, "check_duplicate_negative", {"claim": claim, "allow": ["*"]})
