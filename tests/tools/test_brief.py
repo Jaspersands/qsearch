@@ -103,6 +103,15 @@ def test_registry_delta_lists_added_and_removed_ids_since_the_cutoff(tmp_path: P
     assert B.registry_delta(repo, since[0])["quarantined"] == ["A"]
     (repo / B.QUARANTINE).write_text("[{not json", encoding="utf-8")
     assert B.registry_delta(repo, since[0])["quarantined"] is None
+    # Something that is there but is no regular file cannot be read either; it is not "absent".
+    (repo / B.QUARANTINE).unlink()
+    (repo / B.QUARANTINE).mkdir()
+    assert B.registry_delta(repo, since[0])["quarantined"] is None
+    (repo / B.QUARANTINE).rmdir()
+    (repo / B.QUARANTINE).symlink_to(repo / "nowhere.json")
+    assert B.registry_delta(repo, since[0])["quarantined"] is None
+    (repo / B.QUARANTINE).unlink()
+    assert B.registry_delta(repo, since[0])["quarantined"] == []
 
     # A shorter window starts from the 2026-10-15 commit instead.
     later = B.since_commit(repo, since_days=3, today="2026-10-20")  # cutoff 2026-10-17
@@ -793,6 +802,33 @@ def test_inertia_section_reads_the_cockpit_flags(tmp_path: Path) -> None:
         {"direction": "opi", "label": "OPI / prime character", "streak": 13, "last_gain": None},
         {"direction": "dcp", "label": "DCP / dihedral coset", "streak": 32, "last_gain": "2026-10-12"},
     ]
+
+
+def test_inertia_section_takes_a_string_of_warnings_as_one_warning(tmp_path: Path) -> None:
+    _write_json(tmp_path / B.COCKPIT, {**COCKPIT, "warnings": "registry history unavailable"})
+    assert B.inertia_section(tmp_path)["warnings"] == ["registry history unavailable"]
+    _write_json(tmp_path / B.COCKPIT, {**COCKPIT, "inertia": {"available": False}, "warnings": "no git"})
+    section = B.inertia_section(tmp_path)
+    assert section["available"] is False and section["reason"].endswith("has no inertia measure: no git")
+
+
+@pytest.mark.parametrize("field, value", [
+    ("warnings", {"a": "b"}), ("warnings", 3),
+    ("threshold", float("nan")), ("threshold", "8"), ("threshold", True), ("threshold", 8.5),
+    ("streak", float("inf")), ("streak", None), ("streak", "13"),
+])
+def test_inertia_section_is_unavailable_for_a_malformed_cockpit(tmp_path: Path, field: str, value) -> None:
+    # Only a hand-edited or corrupted cockpit.json gets here; a garbled section must not pass as data.
+    cockpit = json.loads(json.dumps(COCKPIT))
+    if field == "warnings":
+        cockpit["warnings"] = value
+    elif field == "threshold":
+        cockpit["inertia"]["threshold"] = value
+    else:
+        cockpit["inertia"]["flags"][0]["streak"] = value
+    _write_json(tmp_path / B.COCKPIT, cockpit)  # json writes NaN and Infinity, and Python reads them back
+    section = B._section("inertia", B.inertia_section, tmp_path)
+    assert section["available"] is False and field in section["reason"], section
 
 
 def test_inertia_section_missing(tmp_path: Path) -> None:

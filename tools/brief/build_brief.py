@@ -250,10 +250,13 @@ def _ids(data: Any) -> set[str]:
 
 
 def _quarantined_ids(root: Path) -> set[str] | None:
-    """Ids in the working copy's quarantine file; empty when it is absent, None when it cannot be read."""
+    """Ids in the working copy's quarantine file; empty when it is absent, None when it cannot be
+    read (a directory or a dangling link at its path is there, not absent)."""
     path = root / QUARANTINE
-    if not path.is_file():
+    if not os.path.lexists(path):
         return set()
+    if not path.is_file():
+        return None
     try:
         return _ids(read_json(path))
     except (OSError, ValueError):
@@ -427,14 +430,36 @@ def preflight_section(root: Path) -> dict[str, Any]:
     return {"available": True, "by_check": by_check, "total": len(problems)}
 
 
+def _cockpit_warnings(value: Any) -> list[str]:
+    """The cockpit's warnings: a list of strings; one string is one warning, not one per character."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value]
+    if not isinstance(value, list):
+        raise TypeError(f"{COCKPIT} warnings is a {type(value).__name__}, not a list")
+    return [str(warning) for warning in value]
+
+
+def _count(value: Any, what: str) -> int:
+    """A whole number from the cockpit; anything else (NaN, a string, a bool) raises TypeError."""
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise TypeError(f"{COCKPIT} {what} is {value!r}, not a whole number")
+    return value
+
+
 def inertia_section(root: Path) -> dict[str, Any]:
-    """Directions the cockpit flags as stuck: many sections since the registry last gained a record there."""
+    """Directions the cockpit flags as stuck: many sections since the registry last gained a record there.
+
+    A malformed field (warnings not a list, a threshold or streak that is not a whole number)
+    raises, so the section says not available rather than printing garbled values.
+    """
     path = Path(root) / COCKPIT
     if not path.is_file():
         return {"available": False, "reason": f"no {COCKPIT} (python tools/cockpit/build_cockpit.py)"}
     cockpit = read_json(path)
     inertia = cockpit.get("inertia") or {}
-    warnings = [str(warning) for warning in cockpit.get("warnings") or []]
+    warnings = _cockpit_warnings(cockpit.get("warnings"))
     if not inertia.get("available"):
         why = "; ".join(warnings) or "no registry history"
         built = cockpit.get("generated_on")
@@ -443,7 +468,7 @@ def inertia_section(root: Path) -> dict[str, Any]:
         {
             "direction": flag.get("direction"),
             "label": flag.get("label"),
-            "streak": flag.get("streak"),
+            "streak": _count(flag.get("streak"), f"streak of {flag.get('direction')}"),
             "last_gain": (flag.get("last_gain") or {}).get("date"),
         }
         for flag in inertia.get("flags") or []
@@ -451,7 +476,7 @@ def inertia_section(root: Path) -> dict[str, Any]:
     return {
         "available": True,
         "generated_on": cockpit.get("generated_on"),
-        "threshold": inertia.get("threshold"),
+        "threshold": _count(inertia.get("threshold"), "inertia threshold"),
         "flags": flags,
         "warnings": warnings,
     }
