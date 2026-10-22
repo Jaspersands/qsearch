@@ -18,7 +18,7 @@ The construction, the AM-GM headroom gate, the threshold theta>5/19, the max-den
 
 ### 2. gap
 
-> has probability at most 1/U, where U=#R_q
+> has probability at most 1/U, where U=#R_q^*
 
 - Step: 4. Stronger Source Falsifier For Actual Affine Points
 - Finding: The bound, and the union over 'ALL q-1 scalar labels', needs every nonzero t to be invertible mod q so that t*v is uniform on R_q^*. Section 2 introduces q only as 'the native modulus'. For composite q a zero-divisor t concentrates t*v on fewer residues and the 1/U bound fails. The three reference moduli are prime (they satisfy U=(q^(d/2)-1)^2), so the finite tables are unaffected; the general statement lacks the hypothesis 'q prime'.

@@ -21,8 +21,8 @@ Unsound and needs-work reviews of notes that have not changed since.
 | [AFFINE_CLUSTER_NATIVE_PROBE](reviews/AFFINE_CLUSTER_NATIVE_PROBE.md) | needs-work | 2026-10-22 | gap: "The BPQM tree certificate survives, but a classical separation is STILL UNESTABLISHED" Headline scope (both judges). Every experiment in this note is a classical sampler or exact contraction on finite graphs; none tests the tree certificate, so 'survives' reports no evidence. The dec... |
 | [BPQM_GIBBS_FRONTIER](reviews/BPQM_GIBBS_FRONTIER.md) | needs-work | 2026-10-22 | gap: "It supplies a specified decoder family, public input, rigorous local test and known sampling reduction" Headline scope (both judges). The 'rigorous local test' rests on a degradation argument the note says 'remains review pending'; it certifies a beyond-ceiling tree condition only at (dv,dc)=(3,6), c... |
 | [COHERENT_BPQM_ERASURE](reviews/COHERENT_BPQM_ERASURE.md) | needs-work | 2026-10-22 | gap: "The coherent erasure stage is now implemented and its phase/workspace composition is checked" As a headline this drops the scope stated in the body. The phase/workspace composition was executed only on the declared M5 code (checks 25,26,12; 12 qubits), for two orders and two c values. The r... |
-| [CONJUGATE_CHIRP_REPAIR](reviews/CONJUGATE_CHIRP_REPAIR.md) | needs-work | 2026-10-22 | gap: "m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as exp(Omega(n log n" The producer sets A^2=max(rho/(1-rho),(1-rho)/rho) (theorems/conjugate_chirp_repair.py, postselection_bound), so H<=(1+A^2)^m=exp(O(n)) needs list densities bounded away from 0 and 1. Every density... |
-| [DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT](reviews/DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT.md) | needs-work | 2026-10-22 | gap: "coincidence pruning strictly purifies the phase error" The sign statement is algebraically correct: the numerator p(1-p)(2-3p)(1-cos(2pi/q))/2 is positive for 0<p<2/3. It is, however, a statement about the conditional posterior of classical latent erro... |
+| [CONJUGATE_CHIRP_REPAIR](reviews/CONJUGATE_CHIRP_REPAIR.md) | needs-work | 2026-10-22 | gap: "m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as exp(Omega(n log n))" The producer sets A^2=max(rho/(1-rho),(1-rho)/rho) (theorems/conjugate_chirp_repair.py, postselection_bound), so H<=(1+A^2)^m=exp(O(n)) needs list densities bounded away from 0 and 1. Every density... |
+| [DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT](reviews/DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT.md) | needs-work | 2026-10-22 | gap: "(coincidence pruning strictly purifies the phase error)" The sign statement is algebraically correct: the numerator p(1-p)(2-3p)(1-cos(2pi/q))/2 is positive for 0<p<2/3. It is, however, a statement about the conditional posterior of classical latent erro... |
 | [EXPLICIT_CUBIC_OPI](reviews/EXPLICIT_CUBIC_OPI.md) | needs-work | 2026-10-22 | gap: "Explicit Cubic-Target OPI: A Structural Classical Falsifier" The headline drops the body's scope: the 'falsifier' is a finite, seeded, best-of-four classical score against a one-shot quantum mean at four sizes, with no matched tails or runtime, and the narro... |
 | [EXPLICIT_QUADRATIC_OPI](reviews/EXPLICIT_QUADRATIC_OPI.md) | needs-work | 2026-10-22 | gap: "The high-rate quadratic family has a constructive classical explanation, not a remaining quantum-advantage candidate" The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note its... |
 | [FOLDED_NORM_SOURCE](reviews/FOLDED_NORM_SOURCE.md) | needs-work | 2026-10-22 | gap: "Folded Norm Source: Phases, Scalar Rank And Matched Attacks" The norm-pencil section states that the budgets are 'deliberately EXPLICIT but NOT MATCHED' (96 full interpolations against 8192 scored line parameters), and that 'No matched quantum wall-clock/gat... |
@@ -42,7 +42,7 @@ Unsound and needs-work reviews of notes that have not changed since.
 | [PRIME_CHARACTER_EXTERIOR_BOUND](reviews/PRIME_CHARACTER_EXTERIOR_BOUND.md) | needs-work | 2026-10-22 | gap: "This is a genuinely enlarged fixed-input guarantee, not an empirical seed-success estimate" The guarantee rests on the imported compact-support trace formula, Hc0/Hc2 vanishing and the weight application. 'Attempts To Disprove It' item 4 says these 'still need independent review', and the... |
 | [PRIME_CHARACTER_FINITE_READOUT](reviews/PRIME_CHARACTER_FINITE_READOUT.md) | needs-work | 2026-10-22 | gap: "radius32, the certified normalized mean is about 0.9028547353515506" The value matches the artifact (ell32 heralded mean lower bound) and recomputation (127*0.9028547=114.66). But the Result calls it 'certified' without saying that the Gram/readout application and t... |
 | [PRIME_CHARACTER_INTERLEAVED_PROBE](reviews/PRIME_CHARACTER_INTERLEAVED_PROBE.md) | needs-work | 2026-10-22 | gap: "A Fast Interleaved Decoder Does Not Preserve This DQI Objective" The body says 'The decoder ingredient WORKS' and that the attempted quantum repair (shared support, separate QFTs, selection among original rows) fails, at the single parameter set N127, K39, ell32... |
-| [PRIME_CHARACTER_MORSE_ATTACK](reviews/PRIME_CHARACTER_MORSE_ATTACK.md) | needs-work | 2026-10-22 | gap: "A sufficient condition for >=1/(2n) is p>=max(64G^2,4*R_branch*h" No derivation is given. p>=64G^2 gives 2G*sqrt(p)<=p/4, but the bound uses ceil(sqrt p), so 2G*ceil(sqrt p)<=p/4+2G. With R*h<=p/4 the numerator is then only at least p/2+1-2G, which is below p/2. ... |
+| [PRIME_CHARACTER_MORSE_ATTACK](reviews/PRIME_CHARACTER_MORSE_ATTACK.md) | needs-work | 2026-10-22 | gap: "A sufficient condition for >=1/(2n) is p>=max(64G^2,4*R_branch*h)" No derivation is given. p>=64G^2 gives 2G*sqrt(p)<=p/4, but the bound uses ceil(sqrt p), so 2G*ceil(sqrt p)<=p/4+2G. With R*h<=p/4 the numerator is then only at least p/2+1-2G, which is below p/2. ... |
 | [PRIME_CHARACTER_NORM_ATTACK](reviews/PRIME_CHARACTER_NORM_ATTACK.md) | needs-work | 2026-10-22 | gap: "solved common cosets classically but left mixed high-rate controls at124/127 and122/127" The previous experiment's artifact also leaves N31,K16 mixed seed71 at 30/31 (r=2, rate 16/31>1/2) and the r=3/r=4 mixed controls below perfect. The norm attack was not run on N31, and its budget K... |
 | [PRIME_CHARACTER_OPI](reviews/PRIME_CHARACTER_OPI.md) | needs-work | 2026-10-22 | gap: "all25 native polynomials fail perfect strict satisfaction" The coset orientation is not stated, and the claim depends on it. Exhaustive check: with the common square coset (orientation 0, the one tests/test_prime_character_opi.py uses), 0/25 polynomials ar... |
 | [PRIME_CHARACTER_PHASE_FEEDBACK](reviews/PRIME_CHARACTER_PHASE_FEEDBACK.md) | needs-work | 2026-10-22 | gap: "There is a concrete interference-restoring action, verified on full native states and locally bounded without selecti..." Full native-state verification exists only for the four two-row controls at p7/11, N4, K2, ell1, plus one three-row test. At N127, K39, ell32 the restoration is an analytic certificate that 'additi... |
@@ -59,33 +59,33 @@ Review-pending notes without a current review, newest first.
 
 | Note | Date |
 |---|---|
-| NATIVE_RLWE_SINGLE_WITNESS_TARGET | 2026-10-04 |
-| NATIVE_RLWE_ROTATIONAL_WITNESS_REDUCTION | 2026-10-04 |
-| NATIVE_RLWE_PRELABEL_PIP_FALSIFIER | 2026-10-04 |
-| NATIVE_RLWE_NORM_LIFT_AUDIT | 2026-10-04 |
-| NATIVE_RLWE_NONUNIT_WITNESS_AUDIT | 2026-10-04 |
-| NATIVE_RLWE_HOMOGENEOUS_DGS_REDUCTION | 2026-10-04 |
-| NATIVE_RLWE_GAUSSIAN_COOLING_AUDIT | 2026-10-04 |
-| NATIVE_RLWE_COHERENT_READOUT_AUDIT | 2026-10-04 |
 | NATIVE_RLWE_CHOSEN_PREIMAGE_REDUCTION | 2026-10-04 |
-| NATIVE_RLWE_SAMPLE_ACCESS_AUDIT | 2026-09-29 |
-| NATIVE_RLWE_PHASE_DECODER_TARGET | 2026-09-29 |
-| NATIVE_RLWE_GAUSSIAN_SAMPLER_AUDIT | 2026-09-29 |
-| NATIVE_RLWE_COVARIANT_DECODER_TARGET | 2026-09-29 |
+| NATIVE_RLWE_COHERENT_READOUT_AUDIT | 2026-10-04 |
+| NATIVE_RLWE_GAUSSIAN_COOLING_AUDIT | 2026-10-04 |
+| NATIVE_RLWE_HOMOGENEOUS_DGS_REDUCTION | 2026-10-04 |
+| NATIVE_RLWE_NONUNIT_WITNESS_AUDIT | 2026-10-04 |
+| NATIVE_RLWE_NORM_LIFT_AUDIT | 2026-10-04 |
+| NATIVE_RLWE_PRELABEL_PIP_FALSIFIER | 2026-10-04 |
+| NATIVE_RLWE_ROTATIONAL_WITNESS_REDUCTION | 2026-10-04 |
+| NATIVE_RLWE_SINGLE_WITNESS_TARGET | 2026-10-04 |
 | KNOWN_PHASE_SIEVE_DEQUANTIZATION | 2026-09-29 |
-| STRUCTURED_EDCP_SMALL_SECRET_TARGET | 2026-09-28 |
-| STRUCTURED_EDCP_POLYNOMIAL_LIFT_AUDIT | 2026-09-28 |
-| STRUCTURED_EDCP_GAUSSIAN_SUPERPOSITION_AUDIT | 2026-09-28 |
-| STRUCTURED_EDCP_CONDITIONAL_METRIC_AUDIT | 2026-09-28 |
+| NATIVE_RLWE_COVARIANT_DECODER_TARGET | 2026-09-29 |
+| NATIVE_RLWE_GAUSSIAN_SAMPLER_AUDIT | 2026-09-29 |
+| NATIVE_RLWE_PHASE_DECODER_TARGET | 2026-09-29 |
+| NATIVE_RLWE_SAMPLE_ACCESS_AUDIT | 2026-09-29 |
 | STRUCTURED_EDCP_ARCHIMEDEAN_GAUSSIAN_AUDIT | 2026-09-28 |
-| STRUCTURED_EDCP_SOURCE_HARDNESS_AUDIT | 2026-09-27 |
-| STRUCTURED_EDCP_SHEAR_ALIAS_DECODER | 2026-09-27 |
-| STRUCTURED_EDCP_NONLINEAR_CHIRP_AUDIT | 2026-09-27 |
-| STRUCTURED_EDCP_MODULE_GLUING_AUDIT | 2026-09-27 |
-| STRUCTURED_EDCP_IDEAL_COLLISION_CORE | 2026-09-27 |
+| STRUCTURED_EDCP_CONDITIONAL_METRIC_AUDIT | 2026-09-28 |
+| STRUCTURED_EDCP_GAUSSIAN_SUPERPOSITION_AUDIT | 2026-09-28 |
+| STRUCTURED_EDCP_POLYNOMIAL_LIFT_AUDIT | 2026-09-28 |
+| STRUCTURED_EDCP_SMALL_SECRET_TARGET | 2026-09-28 |
 | STRUCTURED_EDCP_FOURIER_ERASURE_AUDIT | 2026-09-27 |
-| STRUCTURED_EDCP_WIDE_PHASE_INFORMATION | 2026-09-26 |
-| STRUCTURED_EDCP_PHASE_SOURCE_MOMENTS | 2026-09-26 |
+| STRUCTURED_EDCP_IDEAL_COLLISION_CORE | 2026-09-27 |
+| STRUCTURED_EDCP_MODULE_GLUING_AUDIT | 2026-09-27 |
+| STRUCTURED_EDCP_NONLINEAR_CHIRP_AUDIT | 2026-09-27 |
+| STRUCTURED_EDCP_SHEAR_ALIAS_DECODER | 2026-09-27 |
+| STRUCTURED_EDCP_SOURCE_HARDNESS_AUDIT | 2026-09-27 |
 | STRUCTURED_EDCP_DIRECT_PHASE_SOURCE | 2026-09-26 |
-| STRUCTURED_EDCP_UPSTREAM_MIXING_AUDIT | 2026-09-25 |
-| STRUCTURED_EDCP_PROFILE_LIST_DECODER | 2026-09-25 |
+| STRUCTURED_EDCP_PHASE_SOURCE_MOMENTS | 2026-09-26 |
+| STRUCTURED_EDCP_WIDE_PHASE_INFORMATION | 2026-09-26 |
+| STRUCTURED_EDCP_CLASSICAL_READOUT_SIMULATION | 2026-09-25 |
+| STRUCTURED_EDCP_CONDITIONAL_CORE_BARRIERS | 2026-09-25 |

@@ -26,7 +26,7 @@ Both judges rated the note needs-work for the same title gap and agreed on every
 
 ### 3. holds
 
-> min(1, N * 2^t * [t-1 choose d]_2 * 2^(-D3(d
+> <= min(1, N * 2^t * [t-1 choose d]_2 * 2^(-D3(d)))
 
 - Step: Why The Quadratic Rank Argument Does Not Automatically Transfer
 - Finding: 2^(t-1-d)[t-1 choose d]_2 base flats times 2^(d+1) heights times 2^-D3(d); at t=3, d=2, N=1 this is 8/16=1/2 and D3(20)=1351, as in the artifact.
@@ -42,7 +42,7 @@ Both judges rated the note needs-work for the same title gap and agreed on every
 
 ### 5. holds
 
-> Pr(best pool score >= k) <= min(1, S * Pr(Binomial(N-E,1/2) >= k-E
+> Pr(best pool score >= k) <= min(1, S * Pr(Binomial(N-E,1/2) >= k-E))
 
 - Step: Why This Does Not Settle The Asymptotic Question
 - Finding: Union bound over a prefix-fixed pool of IID Bernoulli(1/2) suffixes; recomputed at E=51, S=2048, k=104 as 0.78293, matching the artifact, and vacuous at the other sizes as the note admits.

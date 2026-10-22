@@ -18,7 +18,7 @@ Both judges rated the note sound and agreed on every claim, so there was no disa
 
 ### 2. holds
 
-> minor with EXACT determinant -4200-8400*omega, nonzero in Z[omega
+> minor with EXACT determinant -4200-8400*omega, nonzero in Z[omega]
 
 - Step: Result 1
 - Finding: H^2|0> reshaped 9x9 at cut 2 has rank 4, its (0,1,3,6) minor is -7274.61i = -4200-8400*omega, and the one-directional A^2|0> has rank 3.

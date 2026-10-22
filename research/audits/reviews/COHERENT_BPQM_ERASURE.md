@@ -18,7 +18,7 @@ Both judges reached the same verdicts: the erasure rank criterion, the explicit 
 
 ### 2. holds
 
-> Recovery is possible exactly when rank Q_S=k, equivalently rank H_B=|B
+> Recovery is possible exactly when rank Q_S=k, equivalently rank H_B=|B|
 
 - Step: Exact Public Erasure Criterion
 - Finding: Both conditions are equivalent to there being no nonzero codeword supported on B, given that G has full column rank. Both judges agree.

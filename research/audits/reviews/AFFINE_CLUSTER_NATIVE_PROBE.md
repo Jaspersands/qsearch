@@ -18,7 +18,7 @@ The nullspace identities (1)-(4), the Dirichlet-form identity (5) with its Rayle
 
 ### 2. holds
 
-> Consequently, with r=rank(B_S), Pr(y=x | S) = 2^(r-n
+> Consequently, with r=rank(B_S), Pr(y=x | S) = 2^(r-n)
 
 - Step: Exact Nullspace Instrument, (1)-(4)
 - Finding: y = x XOR z with z uniform on ker(B_S) of size 2^(n-r), so Pr(y=x|S) = 2^(r-n); E[chi_a(z)] = 1[a in rowspace], and in RREF e_v is in the rowspace iff it is a row, giving (4). The countercontrol (rank 15, nullspace {0,1^16}) gives hold 1/2 and jump 8. Both judges agree.

@@ -10,7 +10,7 @@ Both judges agreed that P_acc=1-2p+3p^2/2, the visibility-gain factorisation, th
 
 ### 1. gap
 
-> coincidence pruning strictly purifies the phase error
+> (coincidence pruning strictly purifies the phase error)
 
 - Step: Theorem 1 heading and item 2, first bullet
 - Finding: The sign statement is algebraically correct: the numerator p(1-p)(2-3p)(1-cos(2pi/q))/2 is positive for 0<p<2/3. It is, however, a statement about the conditional posterior of classical latent errors under assumed exact equality access. The status block says no phase-qubit equality instrument exists and that this is not quantum purification, and Section 3 says these are not a derived error channel on phase qubits. Calling p*=2/3 a 'Purification Threshold' and the result purification of 'the phase error' drops that condition from the theorem statement.

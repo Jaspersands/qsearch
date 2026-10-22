@@ -42,7 +42,7 @@ The classification holds: saturation makes alpha a unit of O_0, the cited signat
 
 ### 5. holds
 
-> Complete controls: d4/q3 gives56 ratios in8 classes (two size4, six size8
+> Complete controls: d4/q3 gives56 ratios in8 classes (two size4, six size8)
 
 - Step: 3. Exact Source Counts
 - Finding: My own enumeration of F_3[X]/(X^4+1) gives 56 generic ratios in orbits {4:2, 8:6}. Both judges also reproduced d8/q3 (6320 ratios, 396 classes, {8:2, 16:394}). These match artifact complete_finite_source_orbits, and the d64 orbit size 128=2d matches same_saved_native_d64_kernel.orbit_size.

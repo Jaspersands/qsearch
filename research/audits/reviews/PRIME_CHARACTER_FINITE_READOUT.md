@@ -26,7 +26,7 @@ The radial near-isometry, the 2delta/(1-delta) one-extra-radius bound and the sh
 
 ### 3. holds
 
-> mu_ideal-mu0| <= 2delta/(1-delta), provided delta<1
+> |mu_ideal-mu0| <= 2delta/(1-delta), provided delta<1
 
 - Step: The Score Reaches One Extra Radius
 - Finding: The numerator u*(G-I)Tu - mu0(u*Gu-1) is at most delta+delta, using ||T||<=1 and mu0 in [0,1]. The denominator is at least 1-delta. The stated mean correction 2.054e-49 is 2*1.027e-49, consistent with this bound for small delta.

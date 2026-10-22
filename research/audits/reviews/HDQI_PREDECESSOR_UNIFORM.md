@@ -26,7 +26,7 @@ Both judges rated the note sound with identical holds on the radius recurrence, 
 
 ### 3. holds
 
-> R_j = sqrt(R_(j-1)^2 + c_j^2
+> R_j = sqrt(R_(j-1)^2 + c_j^2)
 
 - Step: Local Radius Derivation
 - Finding: Anticommutation with all predecessors cancels the cross terms, giving H_j^2=H_(j-1)^2+c_j^2 I.
@@ -34,7 +34,7 @@ Both judges rated the note sound with identical holds on the radius recurrence, 
 
 ### 4. holds
 
-> so interval width is at most (number of root steps)*2^(-b
+> so interval width is at most (number of root steps)*2^(-b)
 
 - Step: Local Radius Derivation
 - Finding: Commuting additions shift both endpoints equally and keep the width a grid multiple; each 1-Lipschitz outward-rounded root adds at most one grid step. Artifact: width 165/2^79=330*2^-80 with 341 root steps.
@@ -42,7 +42,7 @@ Both judges rated the note sound with identical holds on the radius recurrence, 
 
 ### 5. holds
 
-> applies exp(-i theta Z_<j Y_j/2), theta=-atan2(c_j,R_(j-1
+> applies exp(-i theta Z_<j Y_j/2), theta=-atan2(c_j,R_(j-1))
 
 - Step: Constructive Native Ground-State Check
 - Finding: On the block [[-R,c],[c,R]], tan(theta/2)=-c/(R+sqrt(R^2+c^2)) gives the lower eigenvector.

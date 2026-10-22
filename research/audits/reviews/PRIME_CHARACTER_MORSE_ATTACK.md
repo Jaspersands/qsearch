@@ -10,7 +10,7 @@ Both judges agree on every verdict, and I confirm each one: the S_n monodromy ar
 
 ### 1. gap
 
-> A sufficient condition for >=1/(2n) is p>=max(64G^2,4*R_branch*h
+> A sufficient condition for >=1/(2n) is p>=max(64G^2,4*R_branch*h)
 
 - Step: An Explicit Fixed-Input Fiber Count
 - Finding: No derivation is given. p>=64G^2 gives 2G*sqrt(p)<=p/4, but the bound uses ceil(sqrt p), so 2G*ceil(sqrt p)<=p/4+2G. With R*h<=p/4 the numerator is then only at least p/2+1-2G, which is below p/2. The claim needs the unstated inequality 16G^2>=R_branch*h+2G-1. It is true (quartic: 1296>=120+17; checked for all even n in 4..38) but not argued. The exterior follow-up handles the same term explicitly with 4(R+A).

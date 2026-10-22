@@ -34,7 +34,7 @@ Judge A rated the note sound; judge B flagged the opening 'superseding' paragrap
 
 ### 4. holds
 
-> It satisfies e_t+e_(-t)=2 and sum e_t=phi(d
+> It satisfies e_t+e_(-t)=2 and sum e_t=phi(d)
 
 - Step: Ideal And Valuation Conventions
 - Finding: S_(-t)=3d-S_t and d does not divide S_t when a+b+c is nonzero mod d, so the two floors sum to 1 and e_t+e_(-t)=2; summing over phi(d)/2 pairs gives phi(d).

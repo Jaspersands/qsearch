@@ -13,7 +13,7 @@
     {
      "covered_by_self_check": false,
      "finding": "y = x XOR z with z uniform on ker(B_S) of size 2^(n-r), so Pr(y=x|S) = 2^(r-n); E[chi_a(z)] = 1[a in rowspace], and in RREF e_v is in the rowspace iff it is a row, giving (4). The countercontrol (rank 15, nullspace {0,1^16}) gives hold 1/2 and jump 8. Both judges agree.",
-     "quote": "Consequently, with r=rank(B_S),\n\n    Pr(y=x | S) = 2^(r-n",
+     "quote": "Consequently, with r=rank(B_S),\n\n    Pr(y=x | S) = 2^(r-n)",
      "step": "Exact Nullspace Instrument, (1)-(4)",
      "verdict": "holds",
      "verified": true
@@ -79,7 +79,7 @@
     {
      "covered_by_self_check": false,
      "finding": "p+c+ + p-|c-| = (a+b)/2 + |a-b|/2 = max(a,b) <= a+b for a,b >= 0; equality multiplies independent means, giving F_(l+1) <= c((dc-1)F_l)^(dv-1) = A F_l^p. Both judges agree.",
-     "quote": "the parity output's mean absolute overlap\nis E[max(a,b)] <= E[a]+E[b",
+     "quote": "the parity output's mean absolute overlap\nis E[max(a,b)] <= E[a]+E[b]",
      "step": "Exact Binary Tree Calculation",
      "verdict": "holds",
      "verified": true
@@ -187,7 +187,7 @@
     {
      "covered_by_self_check": false,
      "finding": "Both conditions are equivalent to there being no nonzero codeword supported on B, given that G has full column rank. Both judges agree.",
-     "quote": "Recovery is possible exactly when rank Q_S=k, equivalently rank H_B=|B",
+     "quote": "Recovery is possible exactly when rank Q_S=k, equivalently rank H_B=|B|",
      "step": "Exact Public Erasure Criterion",
      "verdict": "holds",
      "verified": true
@@ -295,7 +295,7 @@
     {
      "covered_by_self_check": false,
      "finding": "The producer sets A^2=max(rho/(1-rho),(1-rho)/rho) (theorems/conjugate_chirp_repair.py, postselection_bound), so H<=(1+A^2)^m=exp(O(n)) needs list densities bounded away from 0 and 1. Every density is trivially bounded, so 'bounded' states no condition. For singleton lists rho=1/p, A^2=p-1 and H>=binom(m,ell)(p-1)^ell. The bound is stated for arbitrary degree ell (the code accepts ell up to m), so with ell>=n the ratio H/p^n need not be small. The 'not polynomial' conclusion needs either densities in [delta,1-delta] or ell<=(1-Omega(1))n, and the note states neither.",
-     "quote": "m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as\nexp(Omega(n log n",
+     "quote": "m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as\nexp(Omega(n log n))",
      "step": "Projecting The Extra Register To Zero Does Not Repair Efficiency",
      "verdict": "gap",
      "verified": true
@@ -303,7 +303,7 @@
     {
      "covered_by_self_check": false,
      "finding": "For symmetric C, (x+z)^T C (x-z)=x^T C x-z^T C z, and (x,z)->(x-z,x+z) is invertible because 2 is a unit mod odd p. Both judges agree.",
-     "quote": "With r=x-z, u=x+z (a bijection in odd characteristic",
+     "quote": "With r=x-z, u=x+z (a bijection in odd characteristic)",
      "step": "Proposed Constructive Mechanism",
      "verdict": "holds",
      "verified": true
@@ -353,7 +353,7 @@
     {
      "covered_by_self_check": true,
      "finding": "The sign statement is algebraically correct: the numerator p(1-p)(2-3p)(1-cos(2pi/q))/2 is positive for 0<p<2/3. It is, however, a statement about the conditional posterior of classical latent errors under assumed exact equality access. The status block says no phase-qubit equality instrument exists and that this is not quantum purification, and Section 3 says these are not a derived error channel on phase qubits. Calling p*=2/3 a 'Purification Threshold' and the result purification of 'the phase error' drops that condition from the theorem statement.",
-     "quote": "coincidence pruning strictly purifies the phase error",
+     "quote": "(coincidence pruning strictly purifies the phase error)",
      "step": "Theorem 1 heading and item 2, first bullet",
      "verdict": "gap",
      "verified": true
@@ -427,7 +427,7 @@
     {
      "covered_by_self_check": false,
      "finding": "2^(t-1-d)[t-1 choose d]_2 base flats times 2^(d+1) heights times 2^-D3(d); at t=3, d=2, N=1 this is 8/16=1/2 and D3(20)=1351, as in the artifact.",
-     "quote": "min(1, N * 2^t * [t-1 choose d]_2 * 2^(-D3(d",
+     "quote": "<= min(1, N * 2^t * [t-1 choose d]_2 * 2^(-D3(d)))",
      "step": "Why The Quadratic Rank Argument Does Not Automatically Transfer",
      "verdict": "holds",
      "verified": true
@@ -443,7 +443,7 @@
     {
      "covered_by_self_check": false,
      "finding": "Union bound over a prefix-fixed pool of IID Bernoulli(1/2) suffixes; recomputed at E=51, S=2048, k=104 as 0.78293, matching the artifact, and vacuous at the other sizes as the note admits.",
-     "quote": "Pr(best pool score >= k) <= min(1, S * Pr(Binomial(N-E,1/2) >= k-E",
+     "quote": "Pr(best pool score >= k) <= min(1, S * Pr(Binomial(N-E,1/2) >= k-E))",
      "step": "Why This Does Not Settle The Asymptotic Question",
      "verdict": "holds",
      "verified": true
@@ -601,7 +601,7 @@
     {
      "covered_by_self_check": false,
      "finding": "Anticommutation with all predecessors cancels the cross terms, giving H_j^2=H_(j-1)^2+c_j^2 I.",
-     "quote": "R_j = sqrt(R_(j-1)^2 + c_j^2",
+     "quote": "R_j = sqrt(R_(j-1)^2 + c_j^2)",
      "step": "Local Radius Derivation",
      "verdict": "holds",
      "verified": true
@@ -609,7 +609,7 @@
     {
      "covered_by_self_check": false,
      "finding": "Commuting additions shift both endpoints equally and keep the width a grid multiple; each 1-Lipschitz outward-rounded root adds at most one grid step. Artifact: width 165/2^79=330*2^-80 with 341 root steps.",
-     "quote": "so interval width is at most\n(number of root steps)*2^(-b",
+     "quote": "so interval width is at most\n(number of root steps)*2^(-b)",
      "step": "Local Radius Derivation",
      "verdict": "holds",
      "verified": true
@@ -617,7 +617,7 @@
     {
      "covered_by_self_check": false,
      "finding": "On the block [[-R,c],[c,R]], tan(theta/2)=-c/(R+sqrt(R^2+c^2)) gives the lower eigenvector.",
-     "quote": "applies exp(-i theta Z_<j Y_j/2), theta=-atan2(c_j,R_(j-1",
+     "quote": "applies exp(-i theta Z_<j Y_j/2), theta=-atan2(c_j,R_(j-1))",
      "step": "Constructive Native Ground-State Check",
      "verdict": "holds",
      "verified": true
@@ -651,7 +651,7 @@
     {
      "covered_by_self_check": false,
      "finding": "H^2|0> reshaped 9x9 at cut 2 has rank 4, its (0,1,3,6) minor is -7274.61i = -4200-8400*omega, and the one-directional A^2|0> has rank 3.",
-     "quote": "minor with EXACT determinant -4200-8400*omega, nonzero in Z[omega",
+     "quote": "minor with EXACT determinant -4200-8400*omega, nonzero in Z[omega]",
      "step": "Result 1",
      "verdict": "holds",
      "verified": true
@@ -841,7 +841,7 @@
     {
      "covered_by_self_check": false,
      "finding": "S_(-t)=3d-S_t and d does not divide S_t when a+b+c is nonzero mod d, so the two floors sum to 1 and e_t+e_(-t)=2; summing over phi(d)/2 pairs gives phi(d).",
-     "quote": "It satisfies e_t+e_(-t)=2 and sum e_t=phi(d",
+     "quote": "It satisfies e_t+e_(-t)=2 and sum e_t=phi(d)",
      "step": "Ideal And Valuation Conventions",
      "verdict": "holds",
      "verified": true
@@ -965,7 +965,7 @@
     {
      "covered_by_self_check": false,
      "finding": "My own enumeration of F_3[X]/(X^4+1) gives 56 generic ratios in orbits {4:2, 8:6}. Both judges also reproduced d8/q3 (6320 ratios, 396 classes, {8:2, 16:394}). These match artifact complete_finite_source_orbits, and the d64 orbit size 128=2d matches same_saved_native_d64_kernel.orbit_size.",
-     "quote": "Complete controls: d4/q3 gives56 ratios in8 classes (two size4, six size8",
+     "quote": "Complete controls: d4/q3 gives56 ratios in8 classes (two size4, six size8)",
      "step": "3. Exact Source Counts",
      "verdict": "holds",
      "verified": true
@@ -1173,7 +1173,7 @@
     {
      "covered_by_self_check": false,
      "finding": "The bound, and the union over 'ALL q-1 scalar labels', needs every nonzero t to be invertible mod q so that t*v is uniform on R_q^*. Section 2 introduces q only as 'the native modulus'. For composite q a zero-divisor t concentrates t*v on fewer residues and the 1/U bound fails. The three reference moduli are prime (they satisfy U=(q^(d/2)-1)^2), so the finite tables are unaffected; the general statement lacks the hypothesis 'q prime'.",
-     "quote": "has probability at most 1/U, where U=#R_q",
+     "quote": "has probability at most 1/U, where U=#R_q^*",
      "step": "4. Stronger Source Falsifier For Actual Affine Points",
      "verdict": "gap",
      "verified": true
@@ -1521,7 +1521,7 @@
     {
      "covered_by_self_check": false,
      "finding": "With tau_p=i*sqrt(p), |eta+s*chi*i*sqrt(p)|^2=1+p, so each probability is (p+1)/(p^2-1)=1/(p-1). At p=5 (tau real), (1+sqrt5)^2-(1-sqrt5)^2=4sqrt5 over 24 gives the stated sqrt(5)/6 spread.",
-     "quote": "Consequently EVERY nonzero Fourier probability is exactly1/(p-1",
+     "quote": "Consequently EVERY nonzero Fourier probability is exactly1/(p-1)",
      "step": "Exact Local Source",
      "verdict": "holds",
      "verified": true
@@ -1537,7 +1537,7 @@
     {
      "covered_by_self_check": false,
      "finding": "For orthogonal G and B, TD^2=||B||^2/(||G||^2+||B||^2), which increases in both arguments, giving the bound. The M22, epsilon 0.01 control gives TD=sqrt(0.22/1.21)=0.426, i.e. 42.6 times epsilon, consistent with 'over40 times'.",
-     "quote": "is well defined, and\n\n    P(unique herald)>=1-epsilon,\n    trace_distance^2 <= M*epsilon/(1-epsilon+M*epsilon",
+     "quote": "is well defined, and\n\n    P(unique herald)>=1-epsilon,\n    trace_distance^2 <= M*epsilon/(1-epsilon+M*epsilon)",
      "step": "Coherent Error Is Not Bad Mass",
      "verdict": "holds",
      "verified": true
@@ -1595,7 +1595,7 @@
     {
      "covered_by_self_check": false,
      "finding": "det(1-t*sigma|V)=prod(1-t^l_i)/(1-t) is n at t=1 for an n-cycle and 0 otherwise. Expanding det(1-M) as sum (-1)^j Tr(wedge^j M) gives the identity. The stored character sums satisfy n*I: 101+1+39+19=160=4*40 and 10005+1+107-1=10112=4*2528.",
-     "quote": "therefore gives the EXACT identity\n\n    n*1_(n-cycle)(sigma)\n       = sum_(j=0)^(n-1) (-1)^j chi_j(sigma",
+     "quote": "therefore gives the EXACT identity\n\n    n*1_(n-cycle)(sigma)\n       = sum_(j=0)^(n-1) (-1)^j chi_j(sigma)",
      "step": "Exact Cycle Indicator",
      "verdict": "holds",
      "verified": true
@@ -1603,7 +1603,7 @@
     {
      "covered_by_self_check": false,
      "finding": "Summing (R-2)C(n-1,j)sqrt(p) over j>=1 gives A*sqrt(p), and #U(Fp)>=p+1-R. Recomputed: p1009 gives 333/4036 and p10007 gives 3941/20014, matching the artifact and below the observed 264/1009 and 2528/10007. This holds under the imported cohomological facts, which the note flags as review pending.",
-     "quote": "A = (R-2)*(2^(n-1)-1),\n    I/p >= max(0, (p+1-R-A*ceil(sqrt(p)))/(n*p",
+     "quote": "A = (R-2)*(2^(n-1)-1),\n    I/p >= max(0, (p+1-R-A*ceil(sqrt(p)))/(n*p))",
      "step": "Trace Bound And Its Dependencies",
      "verdict": "holds",
      "verified": true
@@ -1645,7 +1645,7 @@
     {
      "covered_by_self_check": false,
      "finding": "The numerator u*(G-I)Tu - mu0(u*Gu-1) is at most delta+delta, using ||T||<=1 and mu0 in [0,1]. The denominator is at least 1-delta. The stated mean correction 2.054e-49 is 2*1.027e-49, consistent with this bound for small delta.",
-     "quote": "mu_ideal-mu0| <= 2delta/(1-delta),  provided delta<1",
+     "quote": "|mu_ideal-mu0| <= 2delta/(1-delta),  provided delta<1",
      "step": "The Score Reaches One Extra Radius",
      "verdict": "holds",
      "verified": true
@@ -1745,7 +1745,7 @@
     {
      "covered_by_self_check": false,
      "finding": "No derivation is given. p>=64G^2 gives 2G*sqrt(p)<=p/4, but the bound uses ceil(sqrt p), so 2G*ceil(sqrt p)<=p/4+2G. With R*h<=p/4 the numerator is then only at least p/2+1-2G, which is below p/2. The claim needs the unstated inequality 16G^2>=R_branch*h+2G-1. It is true (quartic: 1296>=120+17; checked for all even n in 4..38) but not argued. The exterior follow-up handles the same term explicitly with 4(R+A).",
-     "quote": "A sufficient condition for >=1/(2n) is\n\n    p>=max(64G^2,4*R_branch*h",
+     "quote": "A sufficient condition for >=1/(2n) is\n\n    p>=max(64G^2,4*R_branch*h)",
      "step": "An Explicit Fixed-Input Fiber Count",
      "verdict": "gap",
      "verified": true

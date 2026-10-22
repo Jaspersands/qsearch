@@ -10,7 +10,7 @@ Both judges agreed that the bilinear identity, the Kloosterman/Salie coordinate 
 
 ### 1. gap
 
-> m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as exp(Omega(n log n
+> m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as exp(Omega(n log n))
 
 - Step: Projecting The Extra Register To Zero Does Not Repair Efficiency
 - Finding: The producer sets A^2=max(rho/(1-rho),(1-rho)/rho) (theorems/conjugate_chirp_repair.py, postselection_bound), so H<=(1+A^2)^m=exp(O(n)) needs list densities bounded away from 0 and 1. Every density is trivially bounded, so 'bounded' states no condition. For singleton lists rho=1/p, A^2=p-1 and H>=binom(m,ell)(p-1)^ell. The bound is stated for arbitrary degree ell (the code accepts ell up to m), so with ell>=n the ratio H/p^n need not be small. The 'not polynomial' conclusion needs either densities in [delta,1-delta] or ell<=(1-Omega(1))n, and the note states neither.
@@ -18,7 +18,7 @@ Both judges agreed that the bilinear identity, the Kloosterman/Salie coordinate 
 
 ### 2. holds
 
-> With r=x-z, u=x+z (a bijection in odd characteristic
+> With r=x-z, u=x+z (a bijection in odd characteristic)
 
 - Step: Proposed Constructive Mechanism
 - Finding: For symmetric C, (x+z)^T C (x-z)=x^T C x-z^T C z, and (x,z)->(x-z,x+z) is invertible because 2 is a unit mod odd p. Both judges agree.

@@ -34,7 +34,7 @@ Both judges agree that the cycle-indicator identity, the S_(n-1) invariant argum
 
 ### 4. holds
 
-> therefore gives the EXACT identity n*1_(n-cycle)(sigma) = sum_(j=0)^(n-1) (-1)^j chi_j(sigma
+> therefore gives the EXACT identity n*1_(n-cycle)(sigma) = sum_(j=0)^(n-1) (-1)^j chi_j(sigma)
 
 - Step: Exact Cycle Indicator
 - Finding: det(1-t*sigma|V)=prod(1-t^l_i)/(1-t) is n at t=1 for an n-cycle and 0 otherwise. Expanding det(1-M) as sum (-1)^j Tr(wedge^j M) gives the identity. The stored character sums satisfy n*I: 101+1+39+19=160=4*40 and 10005+1+107-1=10112=4*2528.
@@ -42,7 +42,7 @@ Both judges agree that the cycle-indicator identity, the S_(n-1) invariant argum
 
 ### 5. holds
 
-> A = (R-2)*(2^(n-1)-1), I/p >= max(0, (p+1-R-A*ceil(sqrt(p)))/(n*p
+> A = (R-2)*(2^(n-1)-1), I/p >= max(0, (p+1-R-A*ceil(sqrt(p)))/(n*p))
 
 - Step: Trace Bound And Its Dependencies
 - Finding: Summing (R-2)C(n-1,j)sqrt(p) over j>=1 gives A*sqrt(p), and #U(Fp)>=p+1-R. Recomputed: p1009 gives 333/4036 and p10007 gives 3941/20014, matching the artifact and below the observed 264/1009 and 2528/10007. This holds under the imported cohomological facts, which the note flags as review pending.

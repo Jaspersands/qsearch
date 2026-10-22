@@ -18,7 +18,7 @@ The two judges agree on every claim: the flat 1/(p-1) Fourier spectrum, the sqrt
 
 ### 2. holds
 
-> Consequently EVERY nonzero Fourier probability is exactly1/(p-1
+> Consequently EVERY nonzero Fourier probability is exactly1/(p-1)
 
 - Step: Exact Local Source
 - Finding: With tau_p=i*sqrt(p), |eta+s*chi*i*sqrt(p)|^2=1+p, so each probability is (p+1)/(p^2-1)=1/(p-1). At p=5 (tau real), (1+sqrt5)^2-(1-sqrt5)^2=4sqrt5 over 24 gives the stated sqrt(5)/6 spread.
@@ -34,7 +34,7 @@ The two judges agree on every claim: the flat 1/(p-1) Fourier spectrum, the sqrt
 
 ### 4. holds
 
-> is well defined, and P(unique herald)>=1-epsilon, trace_distance^2 <= M*epsilon/(1-epsilon+M*epsilon
+> is well defined, and P(unique herald)>=1-epsilon, trace_distance^2 <= M*epsilon/(1-epsilon+M*epsilon)
 
 - Step: Coherent Error Is Not Bad Mass
 - Finding: For orthogonal G and B, TD^2=||B||^2/(||G||^2+||B||^2), which increases in both arguments, giving the bound. The M22, epsilon 0.01 control gives TD=sqrt(0.22/1.21)=0.426, i.e. 42.6 times epsilon, consistent with 'over40 times'.

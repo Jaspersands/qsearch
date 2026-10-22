@@ -26,7 +26,7 @@ The local mathematics checks: the heralded parity mean overlap is exactly E[max(
 
 ### 3. holds
 
-> the parity output's mean absolute overlap is E[max(a,b)] <= E[a]+E[b
+> the parity output's mean absolute overlap is E[max(a,b)] <= E[a]+E[b]
 
 - Step: Exact Binary Tree Calculation
 - Finding: p+c+ + p-|c-| = (a+b)/2 + |a-b|/2 = max(a,b) <= a+b for a,b >= 0; equality multiplies independent means, giving F_(l+1) <= c((dc-1)F_l)^(dv-1) = A F_l^p. Both judges agree.
