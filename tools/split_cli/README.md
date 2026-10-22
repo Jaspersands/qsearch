@@ -150,3 +150,5 @@ These were already so before the split:
 These came from the monolith importing every module at start:
 - `theorems/coset_typical_modular_gap_bound.py` calls `sys.set_int_max_str_digits(100_000)` when imported, so every command could turn integers of up to 100,000 digits into text. Python's default is 4,300. The shim sets the same limit itself, without the import.
 - Importing the monolith left 12 warnings filters; importing the shim leaves Python's 5. The other 7 come from numpy (three "size changed" ignores, `RankWarning` always), scipy ("the matrix subclass" ignore, `SpecialFunctionWarning` always) and sympy (`SymPyDeprecationWarning` once). A command now gets them when it first imports those packages, so a warning raised before that could print differently. None of the compared runs changed.
+
+Verification imports current source with a fresh temporary bytecode-cache location and bytecode writes disabled. Same-size edits made in one filesystem timestamp tick cannot be hidden by an older `.pyc` file.

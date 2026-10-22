@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -760,6 +761,7 @@ def test_verify_compares_flag_dispatch_with_the_legacy_main(tmp_path: Path, edit
     clean = _run(root, str(MIGRATE), "verify", "--root", str(root), "--legacy", str(legacy))
     assert clean.returncode == 0, clean.stdout
     registry = root / "qsearch_cli/registry.py"
+    stamp = registry.stat()
     text = registry.read_text()
     first = '    ("other_flag", "theorems.fake_cert", "generate_other"),\n'
     second = '    ("cert_flag", "theorems.fake_cert", "generate_cert"),\n'
@@ -770,6 +772,9 @@ def test_verify_compares_flag_dispatch_with_the_legacy_main(tmp_path: Path, edit
         "module": first + second.replace('"theorems.fake_cert"', '"theorems.fake_mod"'),
     }[edit]
     registry.write_text(text.replace(first + second, changed))
+    # Preserve the timestamp to deterministically reproduce Python's same-second,
+    # same-size stale bytecode case after the clean verification warmed the cache.
+    os.utime(registry, ns=(stamp.st_atime_ns, stamp.st_mtime_ns))
     check = _run(root, str(MIGRATE), "verify", "--root", str(root), "--legacy", str(legacy))
     assert check.returncode == 1 and "DISPATCH" in check.stdout, check.stdout
 
