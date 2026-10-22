@@ -97,7 +97,8 @@ Each table is read from its last top-level assignment, the one Python keeps, ann
 not. A CLI source or command module that does not parse or is not UTF-8, a table of the
 wrong shape (an `IMPORTS` entry whose module is `None`, an `ORDER` that is a dict), or a
 table that is not one literal (`IMPORTS = dict(...)`, or `IMPORTS |= ...`,
-`IMPORTS[k] = ...` or `IMPORTS.update(...)` after it) is one `imports` problem, `cannot read
+`IMPORTS[k] = ...` or `IMPORTS.update(...)` after it, including direct changes in
+module-level branches/loops, class bodies and function defaults/decorators) is one `imports` problem, `cannot read
 the CLI sources: ...`, and the other checks still run. Its path is the file that cannot be
 read, or `.` for a table.
 

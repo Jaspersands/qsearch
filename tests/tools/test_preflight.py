@@ -1119,3 +1119,15 @@ def test_import_side_effects_preserve_json_and_other_problems(tmp_path, source):
         assert any('side: SystemExit:' in p['message'] for p in problems)
     else:
         assert 'loaded' in result.stderr
+
+
+@pytest.mark.parametrize('statement', [
+    "class Extras:\n    IMPORTS.update({'missing': ('theorems.gone', 'f')})\n",
+    "def extra(x=IMPORTS.update({'missing': ('theorems.gone', 'f')})):\n    pass\n",
+    "extra = lambda x=IMPORTS.update({'missing': ('theorems.gone', 'f')}): None\n",
+    "@IMPORTS.pop('decorator', lambda f: f)\ndef extra():\n    pass\n",
+])
+def test_definition_time_table_mutations_are_not_deferred(tmp_path, statement):
+    repo = _repo(tmp_path)
+    (repo / pf.IMPORTS_FILE).write_text('IMPORTS = {}\n' + statement)
+    assert any('literal' in problem.message for problem in pf.check_untracked_imports(repo))

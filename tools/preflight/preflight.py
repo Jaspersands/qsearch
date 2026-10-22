@@ -167,14 +167,27 @@ def _literal(root: Path, rel: str, name: str):
             return any(touches(item) for item in target.elts)
         return False
 
+    future_annotations = any(isinstance(node, ast.ImportFrom) and node.module == "__future__"
+                             and any(alias.name == "annotations" for alias in node.names) for node in tree.body)
+
     def executed_nodes(node):
-        # Function/class bodies are deferred or have their own namespace; do not claim to
-        # evaluate arbitrary Python. Generated CLI tables must be module-level literals.
-        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.Lambda)):
-            return
+        # Function bodies are deferred, but defaults/decorators and class bodies execute
+        # when defined. This is a conservative literal-table guard, not Python evaluation.
         yield node
-        for child in ast.iter_child_nodes(node):
-            yield from executed_nodes(child)
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda)):
+            children = [*node.args.defaults, *node.args.kw_defaults, *getattr(node, "decorator_list", [])]
+            if not future_annotations:
+                args = [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs,
+                        node.args.vararg, node.args.kwarg]
+                children += [arg.annotation for arg in args if arg is not None]
+                children.append(getattr(node, "returns", None))
+        elif isinstance(node, ast.AnnAssign) and future_annotations:
+            children = [node.target, node.value]
+        else:
+            children = ast.iter_child_nodes(node)
+        for child in children:
+            if child is not None:
+                yield from executed_nodes(child)
 
     value = None
     for node in tree.body:
