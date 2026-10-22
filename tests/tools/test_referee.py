@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import textwrap
 from pathlib import Path
 
@@ -45,6 +46,12 @@ FIXTURE_NOTE = textwrap.dedent(
     Keep the bound; next test the 32-radius inputs.
     """
 )
+
+
+def _git(repo: Path, *args: str) -> None:
+    env = {name: value for name, value in os.environ.items() if not name.startswith("GIT_")}
+    subprocess.run(["git", "-C", str(repo), "-c", "user.name=t", "-c", "user.email=t@t", "-c", "commit.gpgsign=false",
+                    "-c", "core.hooksPath=/dev/null", *args], check=True, capture_output=True, env=env)
 
 
 def _write(root: Path, stem: str, text: str | bytes) -> Path:
@@ -569,7 +576,8 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900, step="y" * 900)] * 6
     good = _row(tmp_path, claims=many, summary="s" * 2000)
     stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
-    result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21")
+    result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21",
+                              allow_unverified=True)
     assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": []}
     data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
     entry = data["notes"]["FIXTURE_NOTE"]
@@ -727,14 +735,17 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     with pytest.raises(ValueError, match="not verbatim"):
         R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "invented.jsonl", [invented])], "j")
 
+    # Away from its packets and outside git, nothing shows the sha was ever the note's.
     elsewhere = _jsonl(tmp_path / "moved" / "batch_01.jsonl", rows)
-    result = R.import_reviews(tmp_path, [elsewhere], "j", today="2026-10-22")
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [elsewhere], "j", today="2026-10-22")
+    result = R.import_reviews(tmp_path, [elsewhere], "j", today="2026-10-22", allow_unverified=True)
     assert result["stale"] == ["FIXTURE_NOTE"]
     claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
     assert claim["verified"] is False and claim["quote"] == quote
     short = _row(tmp_path, claims=[_claim("It holds for all")]) | {"content_sha": rows[0]["content_sha"]}
     with pytest.raises(ValueError, match="under 6 words"):  # even where an unfound quote is kept unverified
-        R.import_reviews(tmp_path, [_jsonl(tmp_path / "moved" / "short.jsonl", [short])], "j")
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "moved" / "short.jsonl", [short])], "j", allow_unverified=True)
 
     beside = _jsonl(tmp_path / "pass" / "batch_01.jsonl", rows)  # in the batch's own folder, not under out/
     R.import_reviews(tmp_path, [beside], "j", today="2026-10-22")
@@ -758,10 +769,13 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
 
 
 def test_import_keeps_a_current_review_over_a_row_that_is_stale_on_arrival(tmp_path: Path, capsys) -> None:
-    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    path = _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    R.export_batches(tmp_path, tmp_path / "pass1", [path])  # pass 1 judged this version
+    holds = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="holds")]
+    older = _jsonl(tmp_path / "pass1" / "out" / "batch_01.jsonl", [_row(tmp_path, overall="sound", claims=holds)])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA second version.\n")
     current = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass2" / "out" / "rows.jsonl", [current])], "new", today="2026-10-22")
-    older = _jsonl(tmp_path / "pass1" / "out" / "rows.jsonl", [_row(tmp_path, overall="sound", claims=[]) | {"content_sha": "0" * 64}])
     assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"]}
     entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["overall"], entry["stale"]) == ("new", "unsound", False)
@@ -770,9 +784,71 @@ def test_import_keeps_a_current_review_over_a_row_that_is_stale_on_arrival(tmp_p
     assert "1 skipped (a current review is stored): FIXTURE_NOTE" in capsys.readouterr().out
 
     # Once the note changes, the stored review is stale too, and a stale row replaces it.
-    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nAn added paragraph.\n")
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA third version.\n")
     assert R.import_reviews(tmp_path, [older], "old")["stale"] == ["FIXTURE_NOTE"]
     assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["judge"] == "old"
+
+
+def test_import_rejects_a_miscopied_sha_with_no_packet_beside_it(tmp_path: Path, capsys) -> None:
+    # A correction row (research/audits/reviews/corrections/ has no batch beside it) whose sha was
+    # one hex digit off had its quotes left unchecked: an invented quote was stored unverified and
+    # the unchanged note reported stale, or the row was skipped behind the review it corrected.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    stored = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "rows.jsonl", [stored])], "judge")
+    sha = stored["content_sha"]
+    typo = sha[:-1] + ("0" if sha[-1] != "0" else "1")
+    invented = _row(tmp_path, overall="sound", claims=[
+        _claim("the radial bound fails on input seven of twelve", verdict="holds")]) | {"content_sha": typo}
+    correction = _jsonl(tmp_path / "corrections" / "2026-10-22.jsonl", [invented])
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [correction], "audit")
+    capsys.readouterr()
+    assert R.main(["import", str(correction), "--root", str(tmp_path), "--judge", "audit"]) == 2
+    assert "--allow-unverified" in capsys.readouterr().err
+    entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
+    assert (entry["judge"], entry["overall"], entry["stale"]) == ("judge", "unsound", False)
+    # Only when told to does import take such a row: stale, its quotes unchecked.
+    _write(tmp_path, "UNREVIEWED", FIXTURE_NOTE)
+    unreviewed = _jsonl(tmp_path / "corrections" / "u.jsonl", [invented | {"stem": "UNREVIEWED"}])
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [unreviewed], "audit")
+    assert R.main(["import", str(unreviewed), "--root", str(tmp_path), "--judge", "audit", "--allow-unverified"]) == 0
+    claim = R.load_reviews(tmp_path)["notes"]["UNREVIEWED"]["claims"][0]
+    assert claim["verified"] is False and R.load_reviews(tmp_path)["notes"]["UNREVIEWED"]["stale"] is True
+
+
+def test_import_checks_a_row_for_an_earlier_committed_version_against_that_version(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    _git(tmp_path, "init", "-q")
+    _git(tmp_path, "add", "research/FIXTURE_NOTE.md")
+    _git(tmp_path, "commit", "-q", "-m", "first version")
+    earlier = _row(tmp_path, claims=[_claim("It holds for all twelve saved inputs, with margin at least 0.031")])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE.replace("It holds for all twelve", "It holds for eleven of twelve"))
+    result = R.import_reviews(tmp_path, [_jsonl(tmp_path / "corrections" / "c.jsonl", [earlier])], "audit")
+    assert result["stale"] == ["FIXTURE_NOTE"]
+    claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
+    assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
+    invented = earlier | {"claims": [_claim("It holds for all thirteen saved inputs, with margin")]}
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "corrections" / "d.jsonl", [invented])], "audit")
+
+
+def test_import_checks_each_row_against_the_packets_beside_its_own_file(tmp_path: Path) -> None:
+    # The packets beside one judge file were applied to the rows of every file in the import.
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:2])  # FIXTURE_NOTE and OTHER_0
+    other = _jsonl(tmp_path / "pass" / "out" / "rows.jsonl", [
+        _row(tmp_path, stem="OTHER_0", overall="sound", claims=[_claim("A result about the other_0 inputs", verdict="holds")])])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA later version.\n")
+    correction = _jsonl(tmp_path / "corrections" / "c.jsonl", [_row(tmp_path) | {"content_sha": "a" * 64}])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nThe current version.\n")
+    assert R.import_reviews(tmp_path, [correction], "audit", allow_unverified=True)["stale"] == ["FIXTURE_NOTE"]
+    result = R.import_reviews(tmp_path, [other, correction], "audit", allow_unverified=True)
+    assert result["imported"] == ["FIXTURE_NOTE", "OTHER_0"]
+    with pytest.raises(ValueError, match="miscopied"):  # beside the pass's own packets, that sha is a miscopy
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "c.jsonl", [_row(tmp_path) | {"content_sha": "a" * 64}])],
+                         "audit", allow_unverified=True)
 
 
 def test_import_rejects_two_rows_for_one_note(tmp_path: Path) -> None:

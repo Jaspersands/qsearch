@@ -2,7 +2,7 @@
 
     python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--json]
     python tools/referee/referee.py export --out-dir DIR [--limit 30] [--note STEM ...]
-    python tools/referee/referee.py import DIR/out/*.jsonl --judge NAME
+    python tools/referee/referee.py import DIR/out/*.jsonl --judge NAME [--allow-unverified]
     python tools/referee/referee.py render
     python tools/referee/referee.py status [--json]
 
@@ -23,6 +23,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -423,21 +424,67 @@ def exported_texts(paths: list[Path]) -> tuple[dict[tuple[str, str], str], dict[
     return texts, declared
 
 
-def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None) -> dict:
+GIT_TIMEOUT = 60
+
+
+def committed_texts(root: Path, stem: str) -> dict[str, str]:
+    """Every version of `research/<stem>.md` that git holds (each commit that changed it, and the
+    index), by the SHA-256 of its bytes; empty when `root` is not a git checkout or git fails.
+    Read-only and offline: git never fetches, prompts or takes optional locks."""
+    rel = f"./research/{stem}.md"
+    env = {name: value for name, value in os.environ.items() if not name.startswith("GIT_")}
+    env.update(GIT_OPTIONAL_LOCKS="0", GIT_NO_LAZY_FETCH="1", GIT_TERMINAL_PROMPT="0")
+
+    def git(*args: str, feed: bytes = b"") -> bytes | None:
+        try:
+            result = subprocess.run(["git", "-C", str(root), *args], input=feed, capture_output=True, env=env,
+                                    timeout=GIT_TIMEOUT)
+        except (OSError, subprocess.SubprocessError):
+            return None
+        return result.stdout if result.returncode == 0 else None
+
+    log = git("log", "--format=%H", "--", rel)
+    if log is None:
+        return {}
+    names = [f"{commit}:{rel}" for commit in log.decode("ascii", errors="replace").split()] + [f":{rel}"]
+    out = git("cat-file", "--batch", feed="".join(f"{name}\n" for name in names).encode("utf-8"))
+    texts: dict[str, str] = {}
+    at = 0
+    while out and at < len(out):  # "<oid> blob <size>\n<bytes>\n", or "<name> missing\n"
+        end = out.find(b"\n", at)
+        if end < 0:
+            break
+        header, at = out[at:end].split(), end + 1
+        if len(header) != 3 or header[1] != b"blob" or not header[2].isdigit():
+            continue
+        blob, at = out[at:at + int(header[2])], at + int(header[2]) + 1
+        texts[hashlib.sha256(blob).hexdigest()] = blob.decode("utf-8", errors="replace")
+    return texts
+
+
+def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None,
+                   allow_unverified: bool = False) -> dict:
     """Verify judge rows against the notes and store them; nothing is written if any row fails.
 
     A row's `content_sha` must be 64 lower-case hex digits. A row for the note's current version
     is checked against the note. A row for an earlier version (the note changed after export)
-    is checked against the exported text when it is found beside the judge file, and is stored
-    as stale either way; a sha that no packet for the note beside the judge file declares is a
-    miscopy and rejected. With no exported packet for the note at all, quotes that are not in
-    the current note are stored unverified."""
+    is stored as stale, and its quotes are checked against the text the judge read: the exported
+    packet's beside the judge file, else the version git holds. When packets for the note sit
+    beside the judge file and none declares the sha, it is a miscopy and rejected; so is a sha
+    that no packet and no committed version has, unless `allow_unverified`, which stores the
+    row's quotes that are not in the current note unverified. A packet that declares the sha
+    but whose text is not that version leaves its quotes unverified too."""
     reviewed_on = today or dt.date.today().isoformat()
-    exported, declared = exported_texts(paths)
+    beside: dict[Path, tuple[dict[tuple[str, str], str], dict[str, set[str]]]] = {}
+    committed: dict[str, dict[str, str]] = {}
     entries: dict[str, dict] = {}
     currents: dict[str, str] = {}
     seen: dict[str, str] = {}
     for path in paths:
+        folder = Path(path).resolve().parent
+        if folder not in beside:  # each judge file is checked against the packets beside it, not another's
+            beside[folder] = exported_texts([Path(path)])
+        exported, declared = beside[folder]
         try:
             rows = _rows(Path(path))
         except OSError as error:
@@ -469,13 +516,22 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             current = hashlib.sha256(raw).hexdigest()
             source, strict = raw.decode("utf-8", errors="replace"), True
             if sha != current:
-                if (stem, sha) in exported:
-                    source = exported[(stem, sha)]
-                elif sha not in declared.get(stem, {sha}):
+                if stem in declared and sha not in declared[stem]:
                     raise ValueError(f"{path}: {stem}: content_sha {sha[:12]}... is neither the note's nor that of its "
                                      "exported packet beside the judge file (miscopied?)")
-                else:
+                earlier = exported.get((stem, sha))
+                if earlier is None:
+                    if stem not in committed:
+                        committed[stem] = committed_texts(root, stem)
+                    earlier = committed[stem].get(sha)
+                if earlier is not None:
+                    source = earlier
+                elif stem in declared or allow_unverified:
                     strict = False
+                else:
+                    raise ValueError(f"{path}: {stem}: content_sha {sha[:12]}... is not the note's, no exported packet "
+                                     "beside the judge file has it and no committed version of the note hashes to it "
+                                     "(miscopied?); --allow-unverified stores the row with its quotes unchecked")
             if len(given) > MAX_CLAIMS:
                 raise ValueError(f"{path}: {stem}: {len(given)} claims; at most {MAX_CLAIMS}")
             claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given]
@@ -672,6 +728,9 @@ def main(argv: list[str] | None = None) -> int:
     imp = sub.add_parser("import", parents=[common], help="Verify and store judge reviews (JSONL).")
     imp.add_argument("files", nargs="+", type=Path)
     imp.add_argument("--judge", required=True, help="Judge name stored with each review.")
+    imp.add_argument("--allow-unverified", action="store_true",
+                     help="Store a row for an earlier note version that neither a packet beside the judge file nor "
+                          "git holds, with its quotes unchecked (stale).")
     sub.add_parser("render", parents=[common], help="Write reviews/<STEM>.md and REFEREE_QUEUE.md.")
     stat = sub.add_parser("status", parents=[common], help="Flagged and stale reviews.")
     stat.add_argument("--json", action="store_true")
@@ -716,7 +775,7 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
 
     if args.command == "import":
         try:
-            result = import_reviews(root, args.files, args.judge)
+            result = import_reviews(root, args.files, args.judge, allow_unverified=args.allow_unverified)
         except ValueError as error:
             print(f"error: {error}; nothing imported", file=sys.stderr)
             return 2

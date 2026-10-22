@@ -14,7 +14,7 @@ The referee never edits `research/*.md`. Its outputs go to `research/audits/`.
 python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--include-reviewed] [--json]
 python tools/referee/referee.py export --out-dir DIR [--limit 30] [--prefix P] [--batch-size 5]
 python tools/referee/referee.py export --out-dir DIR --note PRIME_CHARACTER_OPI --note POLAR_SOURCE_DESIGN
-python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21
+python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21 [--allow-unverified]
 python tools/referee/referee.py render
 python tools/referee/referee.py status [--json]
 ```
@@ -113,15 +113,19 @@ text.
    it is not in the note. A `content_sha` must be 64 lower-case hex digits. A row whose
    `content_sha` differs from the note's current hash (the note was edited after export)
    is stored with `stale: true`, and its quotes are checked against the text the judge
-   read, taken from the `batch_NN.json` beside the judge file (in its folder or the folder
-   above) when that text's hash matches. When packets for the note sit beside the judge
-   file but none of them has the row's `content_sha`, the sha was miscopied and the file
-   is rejected. Only when no exported packet for the note is found is a quote that is not
-   in the current note stored as the judge wrote it with `verified: false` instead of
-   rejecting the file. Two rows for one note in one import (one file or several) reject
-   the import. Re-importing a note replaces its review, except that a row that is stale
-   on arrival (an earlier pass imported again) never replaces a stored review of the
-   note's current bytes: import keeps that review and reports the row as skipped. Stored
+   read: the one in a `batch_NN.json` beside that row's own judge file (in its folder or
+   the folder above) when that text's hash matches, else the committed version of the
+   note (any commit that changed it, or the index) whose hash matches. When packets for
+   the note sit beside the judge file but none of them has the row's `content_sha`, the
+   sha was miscopied and the file is rejected. So is a sha that no packet beside the file
+   and no committed version has (a hand-built correction row with a typo), unless
+   `--allow-unverified` is given: then a quote that is not in the current note is stored
+   as the judge wrote it with `verified: false`. A packet that declares the sha but whose
+   text does not hash to it gives the same unverified quotes. Two rows for one note in one
+   import (one file or several) reject the import. Re-importing a note replaces its
+   review, except that a row that is stale on arrival (an earlier pass imported again)
+   never replaces a stored review of the note's current bytes: import keeps that review
+   and reports the row as skipped. Stored
    text is capped: summary 1500 characters, finding 600, step 300, quote 400.
 4. `render` rebuilds the per-note reviews and the queue.
 
