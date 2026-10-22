@@ -351,8 +351,9 @@ def _arxiv_papers(path: Path) -> tuple[dict[str, Any] | None, str]:
 def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     """Flagged arXiv papers, verdicts recorded since `since_date`, and the actions still open.
 
-    flagged: possible kills and scoops without a verdict (open, however old), then those first
-    seen on or after `since_date` that have one; None, with `flagged_reason`, when the
+    flagged: possible kills and scoops without a person's verdict (open, however old; as in the
+    watch's digest, a judge's verdict alone leaves a flag open), then those first seen on or
+    after `since_date` that have a person's verdict; None, with `flagged_reason`, when the
     collisions file is missing or unreadable (open flags live only there), while the verdicts
     and actions are still given. reviewed: verdicts recorded on or after `since_date`. actions:
     every verdict with an action whose `action_done` is not JSON true. Verdicts come from the
@@ -394,19 +395,24 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
         if not isinstance(record, dict) or record.get("label") not in FLAGGED_LABELS:
             continue
         entry = verdicts.get(arxiv_id)
+        # As in the watch's digest: a judge's verdict is one model's reading, so only a
+        # person's verdict closes a flag; one with only a judge's stays open, marked with it.
+        is_open = entry is None or verdicts_module.by_judge(entry)
         first_seen = record.get("first_seen")
-        if entry is None or (isinstance(first_seen, str) and first_seen >= since):
+        if is_open or (isinstance(first_seen, str) and first_seen >= since):
             flagged.append({
                 "id": arxiv_id,
                 "title": record.get("title", ""),
                 "label": record["label"],
                 "first_seen": first_seen if isinstance(first_seen, str) else None,
                 "verdict": entry.get("verdict") if entry else None,
+                "by": entry.get("by") if entry else None,
+                "open": is_open,
             })
     # Open flags first, newest first within each group, undated last.
     flagged.sort(key=lambda item: item["id"])
     flagged.sort(key=lambda item: item["first_seen"] or "", reverse=True)
-    flagged.sort(key=lambda item: item["verdict"] is not None)
+    flagged.sort(key=lambda item: not item["open"])
     return {"available": True, "flagged": flagged, "reviewed": reviewed, "actions": actions}
 
 
@@ -661,9 +667,12 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
         lines = [f"Possible kills and scoops: not available: {_flat(section.get('flagged_reason'))}. The verdicts "
                  "and actions below come from the verdicts file."]
     else:
-        open_flags = sum(1 for item in flagged if item["verdict"] is None)
-        lines = [f"Possible kills and scoops with no verdict yet: {open_flags}. First seen since {since} and already "
-                 f"reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are judgement."]
+        open_flags = sum(1 for item in flagged if item["open"])
+        judged = sum(1 for item in flagged if item["open"] and item["verdict"] is not None)
+        note = f" ({judged} of them with only a judge's verdict, which leaves a flag open)" if judged else ""
+        lines = [f"Possible kills and scoops with no person's verdict yet: {open_flags}{note}. First seen since "
+                 f"{since} and already reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are "
+                 "judgement."]
     lines += [f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."), ""]
     # Every verdict of the window is named once: in the flagged table, or here.
     in_table = {item["id"] for item in flagged or []}
@@ -683,7 +692,12 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     if flagged:
         lines += ["", "| arXiv | Label | First seen | Verdict | Title |", "|---|---|---|---|---|"]
         for item in flagged[:LIST_CAP]:
-            verdict = _cell(item["verdict"]) if item["verdict"] else "**open**: read it"
+            if not item["open"]:
+                verdict = _cell(item["verdict"])
+            elif item["verdict"] is not None:  # a judge's verdict only
+                verdict = f"**open** (judge: {_cell(item['verdict'])}): read it"
+            else:
+                verdict = "**open**: read it"
             first_seen = item["first_seen"] or "-"
             lines.append(f"| {_cell(item['id'])} | {_cell(item['label'])} | {_cell(first_seen)} | {verdict} | "
                          f"{_cell(item['title'])} |")

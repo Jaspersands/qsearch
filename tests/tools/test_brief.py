@@ -631,7 +631,8 @@ def test_arxiv_section_lists_open_flags_new_reviews_and_open_actions(tmp_path: P
     assert [(f["id"], f["verdict"]) for f in section["flagged"]] == [
         ("2610.11111", None), ("2610.22222", None), ("2610.33333", "should-cite")]
     assert section["flagged"][0] == {
-        "id": "2610.11111", "title": "Open new kill", "label": "possible-kill", "first_seen": "2026-10-18", "verdict": None}
+        "id": "2610.11111", "title": "Open new kill", "label": "possible-kill", "first_seen": "2026-10-18", "verdict": None,
+        "by": None, "open": True}
     assert section["reviewed"] == [
         {"id": "2610.33333", "verdict": "should-cite", "by": "human", "reviewed_on": "2026-10-20"},
         {"id": "2610.66666", "verdict": "related-only", "by": "judge:x", "reviewed_on": "2026-10-19"},
@@ -682,7 +683,7 @@ def test_arxiv_open_flags_are_not_available_without_a_readable_collisions_file(t
     assert [a["id"] for a in section["actions"]] == ["2610.99999"]
     assert [r["id"] for r in section["reviewed"]] == ["2610.99999"]
     text = "\n".join(B._render_arxiv(section, SINCE))
-    assert "no verdict yet: 0" not in text and "already reviewed: 0" not in text
+    assert "verdict yet: 0" not in text and "already reviewed: 0" not in text
     assert f"Possible kills and scoops: not available: {section['flagged_reason']}" in text
     assert "`2610.99999`: should-cite (human, 2026-10-20)" in text  # the verdict is still named
     assert "Cite it." in text
@@ -705,6 +706,35 @@ def test_arxiv_names_a_verdict_in_the_window_on_a_paper_first_seen_before_it(tmp
     assert "`2610.00002`: kill (human, 2026-10-20)" in text
     assert "`2610.33333`: false-alarm" not in text  # already in the table
     assert "2610.44444" not in text
+
+
+def test_a_judge_verdict_leaves_a_flag_open_until_a_person_records_one(tmp_path: Path) -> None:
+    # The watch's rule (tools/arxiv_watch/README.md): a judge's verdict is one model's reading
+    # and never takes a flag out of the possible-kill and possible-scoop sections. The brief
+    # counted it as closing the flag, and dropped an older judged flag from the page.
+    judge = "judge:claude-subagent"
+    _arxiv_files(
+        tmp_path,
+        [_paper("2610.00001", "Old kill, judged a false alarm", "possible-kill", "2026-10-01"),
+         _paper("2610.00002", "New kill, judged a false alarm", "possible-kill", "2026-10-20"),
+         _paper("2610.00003", "New scoop, a person's verdict", "possible-scoop", "2026-10-19")],
+        {"2610.00001": _verdict("false-alarm", "2026-10-02", by=judge),
+         "2610.00002": _verdict("false-alarm", "2026-10-20", by=judge),
+         "2610.00003": _verdict("related-only", "2026-10-19")},
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [(f["id"], f["verdict"], f["by"], f["open"]) for f in section["flagged"]] == [
+        ("2610.00002", "false-alarm", judge, True),
+        ("2610.00001", "false-alarm", judge, True),
+        ("2610.00003", "related-only", "human", False),
+    ]
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert ("Possible kills and scoops with no person's verdict yet: 2 (2 of them with only a judge's verdict, "
+            "which leaves a flag open)." in text)
+    assert "already reviewed: 1." in text
+    assert "| 2610.00001 | possible-kill | 2026-10-01 | **open** (judge: false-alarm): read it |" in text
+    assert "| 2610.00002 | possible-kill | 2026-10-20 | **open** (judge: false-alarm): read it |" in text
+    assert "| 2610.00003 | possible-scoop | 2026-10-19 | related-only |" in text
 
 
 @pytest.mark.parametrize("done", ["false", "no", 1, "true"])
@@ -983,7 +1013,8 @@ def test_render_shows_what_each_section_found(tmp_path: Path, monkeypatch) -> No
     registry, arxiv = page["Registry"], page["arXiv watch"]
     assert "Added (2): `B`, `C`." in registry
     assert "Removed (1, none now in the quarantine file): `A`." in registry
-    assert "Possible kills and scoops with no verdict yet: 1. First seen since 2026-10-13 and already reviewed: 0." in arxiv
+    assert ("Possible kills and scoops with no person's verdict yet: 1. First seen since 2026-10-13 and already "
+            "reviewed: 0." in arxiv)
     assert "Verdicts recorded since 2026-10-13: 1 (should-cite 1)." in arxiv
     assert "- `2610.33333`: should-cite (human, 2026-10-19)." in arxiv  # not in the flagged table
     assert "| 2610.11111 | possible-kill | 2026-10-18 | **open**: read it | Open new kill |" in arxiv
@@ -1046,7 +1077,7 @@ def test_render_keeps_pipes_in_list_items_and_escapes_them_in_table_cells() -> N
                  "flagged": [{"stem": "NOTE", "overall": "unsound", "reviewed_on": "2026-10-20", "worst_claim": claim}]},
         arxiv={"available": True, "reviewed": [], "actions": [{"id": "2610.1", "action": "Check |x| < 1.", "by": "h"}],
                "flagged": [{"id": "2610.1", "title": "Bounds on |S| | T", "label": "possible-kill",
-                            "first_seen": "2026-10-19", "verdict": None}]},
+                            "first_seen": "2026-10-19", "verdict": None, "by": None, "open": True}]},
         duplicates={"available": True, "checked": 1, "threshold": 0.8,
                     "pairs": [{"a": "negative:A", "b": "negative:B", "score": 0.9, "title_a": "x | y", "title_b": "z"}]},
     )
@@ -1067,7 +1098,7 @@ def test_render_caps_every_list_and_says_how_many_more() -> None:
         registry=_registry([f"ADD{i}" for i in ids], [f"REM{i}" for i in ids], []),
         arxiv={"available": True,
                "flagged": [{"id": f"FLAG{i}", "title": "t", "label": "possible-kill", "first_seen": "2026-10-19",
-                            "verdict": None} for i in ids],
+                            "verdict": None, "by": None, "open": True} for i in ids],
                "reviewed": [{"id": f"REV{i}", "verdict": "kill", "by": "h", "reviewed_on": "2026-10-19"} for i in ids],
                "actions": [{"id": f"ACT{i}", "action": "do it", "by": "h"} for i in ids]},
         referee={"available": True, "reviewed": n, "stale": [f"STALE{i}" for i in ids],
