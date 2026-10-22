@@ -2,7 +2,7 @@
 
     python tools/preflight/preflight.py              # before every commit; static, a few seconds
     python tools/preflight/preflight.py --json
-    python tools/preflight/preflight.py --imports    # also import every CLI name (slow)
+    python tools/preflight/preflight.py --imports    # also import every CLI name, command and flag (slow)
     python tools/preflight/preflight.py --validate   # also run qsearch.py validate (slow)
 
 JSON files under research/hypotheses, research/registry, research/audits and
@@ -528,13 +528,32 @@ def check_manifest(root: Path) -> list[Problem]:
 
 
 def _check_imports(root: Path) -> tuple[int, list[str]]:
+    """How many names were looked up, and one line per failure.
+
+    tools/split_cli/verify.py's check_imports resolves every IMPORTS name and command function.
+    Then every DISPATCH function and ORDER adder is imported and looked up, as qsearch_cli/main.py
+    does for a certificate flag and qsearch_cli/parser.py for every subcommand.
+    """
+    import importlib
+
     from tools.split_cli.verify import check_imports  # imports the CLI and every theorem module it names
 
-    return check_imports(root)
+    checked, failures = check_imports(root)
+    from qsearch_cli.registry import DISPATCH, ORDER  # the root's own: check_imports put it first on sys.path
+
+    lookups = [(f"--{dest.replace('_', '-')}", module, function) for dest, module, function in DISPATCH]
+    lookups += [(f"subcommand {name}", module, adder) for name, module, adder in ORDER]
+    for label, module, attribute in lookups:
+        try:
+            getattr(importlib.import_module(module), attribute)
+        except Exception as error:  # noqa: BLE001 - report every kind of import failure
+            failures.append(f"{label}: {type(error).__name__}: {error}")
+    return checked + len(lookups), failures
 
 
 def check_imports_resolve(root: Path) -> list[Problem]:
-    """Resolve every IMPORTS name and command function in this process, as the CLI would (slow)."""
+    """Import every IMPORTS name, command function, certificate flag's function and subcommand
+    adder in this process, as the CLI would (slow)."""
     root = Path(root).resolve()
     try:
         _checked, failures = _check_imports(root)
@@ -588,7 +607,10 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", default=str(REPO), help="Checkout to check (default: this repository).")
     parser.add_argument("--json", action="store_true")
-    parser.add_argument("--imports", action="store_true", help="Also import every CLI name and command (slow).")
+    parser.add_argument(
+        "--imports", action="store_true",
+        help="Also import every CLI name, command, certificate flag and subcommand adder (slow).",
+    )
     parser.add_argument("--validate", action="store_true", help="Also run qsearch.py validate (slow).")
     args = parser.parse_args(argv)
     root = Path(args.root).resolve()

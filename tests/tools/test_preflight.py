@@ -893,3 +893,39 @@ def test_imports_flag_finds_a_tracked_module_that_fails_to_import(tmp_path: Path
             "message": "broken: ModuleNotFoundError: No module named 'qsearch_missing_dependency'",
         }
     ]
+
+
+def test_imports_flag_imports_every_certificate_flag_and_subcommand_adder(tmp_path: Path) -> None:
+    # main.py imports a DISPATCH module only when its flag is given, and parser.py looks up
+    # each ORDER adder: neither is an IMPORTS name or a command function.
+    order = [("audit", "qsearch_cli.commands.general", "add_audti")]
+    dispatch = [
+        ("broken_cert", "theorems.broken_cert", "generate_broken_certificate"),
+        ("misnamed_cert", "theorems.good_cert", "generate_misnamed_certificate"),
+        ("good_cert", "theorems.good_cert", "generate_good_certificate"),
+    ]
+    repo = _repo(
+        tmp_path,
+        order=order,
+        dispatch=dispatch,
+        committed={
+            "qsearch_cli/resolve.py": (REPO / "qsearch_cli" / "resolve.py").read_text(encoding="utf-8"),
+            "theorems/__init__.py": "",
+            "theorems/broken_cert.py": "import qsearch_missing_dependency\n",
+            "theorems/good_cert.py": "def generate_good_certificate():\n    return {}\n",
+        },
+    )
+
+    result = subprocess.run(
+        [sys.executable, str(REPO / "tools" / "preflight" / "preflight.py"), "--root", str(repo), "--imports", "--json"],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 1, result.stderr
+    assert [p["message"] for p in json.loads(result.stdout)["problems"] if p["check"] == "resolve"] == [
+        "--broken-cert: ModuleNotFoundError: No module named 'qsearch_missing_dependency'",
+        "--misnamed-cert: AttributeError: module 'theorems.good_cert' has no attribute 'generate_misnamed_certificate'",
+        "subcommand audit: AttributeError: module 'qsearch_cli.commands.general' has no attribute 'add_audti'",
+    ]
