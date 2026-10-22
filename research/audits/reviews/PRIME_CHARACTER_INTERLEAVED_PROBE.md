@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_INTERLEAVED_PROBE
 
-Note: `research/PRIME_CHARACTER_INTERLEAVED_PROBE.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_INTERLEAVED_PROBE.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -13,7 +13,7 @@ Each judge found one scope gap the other missed: A in the Result's 'each origina
 > A Fast Interleaved Decoder Does Not Preserve This DQI Objective
 
 - Step: Title
-- Finding: The body says 'The decoder ingredient WORKS' and that the attempted quantum repair (shared support, separate QFTs, selection among original rows) fails, at the single parameter set N127, K39, ell32, c=5/8, under review-pending bounds. It also says 'Do NOT infer that all interleaved sources or joint quantum processing fail'. The title instead attributes the failure to the decoder and drops these conditions.
+- Finding: The body says 'The decoder ingredient WORKS' and that the attempted quantum repair (shared support, separate QFTs, selection among original rows) fails, at N127, K39, ell32 with c=5 and c=8 rows, under review-pending bounds. It also says 'Do NOT infer that all interleaved sources or joint quantum processing fail'. The title instead attributes the failure to the decoder and drops these conditions.
 - Conceded by the note's own self-check: no
 
 ### 2. gap

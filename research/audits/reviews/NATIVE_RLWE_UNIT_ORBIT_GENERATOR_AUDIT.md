@@ -1,19 +1,19 @@
 # Referee review: NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT
 
-Note: `research/NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
+Note: `research/NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
-The algebra holds: the minimal multiplier delta_K of (f,k), the invariance of det(A) under common units, the AM-GM bound on Gamma and the all-scalars bounds on the two fixed native lines, and I reproduced both d64 fixed-line inequalities in both lanes from native_rlwe_scalar_orbit_d64.json. Judge B rated the note sound; judge A raised one scope gap on the sentence that a quantum unit wrapper around the native generators solves the wrong search space. I kept A's gap: that sentence carries no label condition, yet the obstruction is certified only on the saved d64 kernel, and the producer's own easy zero-label control (det(I+M^TM)=1) is there precisely to stop it being read as an ensemble statement. Everything else both judges marked holds survived my check.
+The prior scope gap is withdrawn after checking the full surrounding passage: the unit-wrapper sentence follows the explicit saved native d64 scope and fixed-line conditions. The zero-label countercontrol remains, so no ensemble obstruction is claimed. The unchanged algebraic claims concern the determinant multiplier, common-unit invariance and fixed-line AM-GM bounds, with the two saved d64 obstructions. This corrects the review's reading of scope; it is not a new formal proof or a claim of general hardness.
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
 > A quantum unit wrapper around the unmodified native generators would be solving the wrong search space
 
 - Step: 3. Stronger Fixed-Native-Line Obstruction (final paragraph)
-- Finding: Units cannot leave a native line (Section 2 is general), but whether the two native lines are the wrong search space depends on both fixed-line lower bounds exceeding t^2/E^2. That is checked only on the saved d64 kernel (two lanes). For the zero label the m-line bound is det(I)=1 and the obstruction fails, and Section 2 says units can be 'extremely useful' on a well-scaled orbit. The sentence needs the condition 'on labels where both fixed-line bounds reach t^2/E^2, certified on the saved d64 instance'. Section 7's easy-label control concedes this, but the sentence does not carry it.
+- Finding: The surrounding passage explicitly starts 'On the saved native d64 kernel, both lanes pass the EXACT obstruction'. The preceding paragraph states the required fixed-line lower-bound conditions, and Section 7 retains the easy zero-label countercontrol. Within that stated saved-instance scope, units cannot escape the two obstructed native lines. The earlier review incorrectly demanded a qualifier already supplied by the paragraph; this does not certify an ensemble obstruction.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

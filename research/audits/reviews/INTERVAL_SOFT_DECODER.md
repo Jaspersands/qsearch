@@ -1,10 +1,10 @@
 # Referee review: INTERVAL_SOFT_DECODER
 
-Note: `research/INTERVAL_SOFT_DECODER.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22-r2. Overall: **sound**.
+Note: `research/INTERVAL_SOFT_DECODER.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
-Judge A's one gap, that the decision cuts superpolynomial separation claims 'at constant full-RS interval width' without the d<L, KV-certified window the body keeps, was confirmed on 2026-10-21 and reversed by the 2026-10-22 audit: every quantum guarantee the note cites (d/p<C<=L/p, and rate+density>1) needs d<L at constant L, where the DP is polynomial, so outside that window there is no quantum claim for the cut to remove. Judge B flagged the title and the receiver table (5 of 8 controls shown), and both were dropped. The title's 'Actual Receiver' and 'Classical Falsifiers' are accurate names for the executed p=5 receiver and the DP/Babai baselines, and the omitted complex and S={0} controls are discussed under 'Decisive controls', with no conclusion resting on the table. The Cauchy ceiling, the 3/2 tuning bound (451/1395, 19/45 recomputed), the pointwise counterexample and the four Babai certificates hold and match the artifact.
+Judge A's one gap, that the decision cuts superpolynomial separation claims 'at constant full-RS interval width' without the d<L, KV-certified window the body keeps, was confirmed on 2026-10-21 and reversed by the 2026-10-22 audit: every quantum guarantee the note cites (d/p<C<=L/p, and rate+density>1) needs d<L at constant L, where the DP is polynomial, so outside that window there is no quantum claim for the cut to remove. Judge B flagged the title and the receiver table (5 of 8 controls shown), and both were dropped. The title's 'Actual Receiver' and 'Classical Falsifiers' are accurate names for the executed p=5 receiver and the DP/Babai baselines, and the S={0} control is discussed under 'Decisive controls'. The complex control appears there only through its phase-drop TV; its decoder success .472314 and worst-target validity .405823 are not reported, nor is the d1 (1,2,1) table row. No conclusion rests on these omitted receiver numbers. The Cauchy ceiling, the 3/2 tuning bound (451/1395, 19/45 recomputed), the pointwise counterexample and the four Babai certificates hold and match the artifact.
 
 ## Claims
 

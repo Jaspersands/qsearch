@@ -1,6 +1,6 @@
 # Referee review: BPQM_LOG_RELIABILITY
 
-Note: `research/BPQM_LOG_RELIABILITY.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
+Note: `research/BPQM_LOG_RELIABILITY.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -45,7 +45,7 @@ Every load-bearing step checks: the gradient l1-norm equals max(|tanh(x+y)|,|tan
 > ideal source, b=17 suffices under the stated assumptions
 
 - Step: Range, Examples And What Changed
-- Finding: 2*6*9*2^-17 = 27/32768 ~ 8.24e-4 < 1/1000, equal to the artifact's logical_rotation_readout_TV_perturbation_upper; b=16 gives 27/16384 > 1/1000. Register 5*25405/32768 + 4*2^-17 = 63513/16384 needs 4 signed integer bits, so 21 bits, matching the artifact. Both judges agree.
+- Finding: 2*6*9*2^-17 = 27/32768 ~ 8.24e-4 < 1/1000, equal to the artifact's logical_rotation_readout_TV_perturbation_upper; b=16 gives 27/16384 > 1/1000. Register 5*25405/32768 + 4*2^-17 = 63513/16384 is below 4, so 3 signed integer bits would suffice. The producer's conservative rule allocates 4 signed integer bits plus 17 fractional bits, matching the note's sufficient 21-bit register. Both judges agree.
 - Conceded by the note's own self-check: no
 
 ### 6. holds

@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_OPI
 
-Note: `research/PRIME_CHARACTER_OPI.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22-r2. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_OPI.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -26,13 +26,21 @@ The power-completion and strict zero-avoidance derivations check out: F^(1/r) tr
 
 ### 3. gap
 
+> K39 and general fixed-input/asymptotic solvability remain open
+
+- Step: Header / Live Controls summary
+- Finding: The open-case list names only K39, but other saved high-rate mixed sources are also not perfect in the artifact. N31,K16 mixed seed71 is best 30/31 (r=2, R+rho=16/31+1/2>1, so in the published perfect-search regime). The r=3 N63,K46 mixed sources are 55/63 and 56/63 (R+rho~1.06>1), and the r=4 N32,K24 mixed sources are 28/32 and 27/32. The superseding norm attack covers only N127,K77. The Live Controls paragraph also reports only the r=3/r=4 global controls ('also perfect') and omits these mixed scores.
+- Conceded by the note's own self-check: no
+
+### 4. gap
+
 > all25 native polynomials fail perfect strict satisfaction
 
 - Step: Tight degree paragraph (p5,N4,K2,r2, shifts (0,0,0,1))
 - Finding: The coset orientation is not stated, and the claim depends on it. Exhaustive check: with the common square coset (orientation 0, the one tests/test_prime_character_opi.py uses), 0/25 polynomials are perfect. With the common nonsquare coset beta=2, the constant Q=3 gives residuals (3,3,3,2), all nonzero nonsquares, so 1/25 is perfect at K2. The counterexample needs 'square coset' added.
 - Conceded by the note's own self-check: no
 
-### 4. holds
+### 5. holds
 
 > Uniform proposals therefore succeed with probability>=1/3
 
@@ -40,18 +48,10 @@ The power-completion and strict zero-avoidance derivations check out: F^(1/r) tr
 - Finding: sum_z chi(z^2+a/beta)=-1 for a!=0 gives an accepted count of (p-chi(beta/beta_i)+Z)/2>=(p-1)/2, and (p-1)/(2p)>=1/3 for every odd p>=3. The degree bookkeeping (h=max(0,2D-K+1), deg(2R0L+L^2)<K) also checks out.
 - Conceded by the note's own self-check: no
 
-### 5. holds
+### 6. holds
 
 > For N127,K77,118/118 improves to124/122
 
 - Step: Adaptive Root-Value Exchange Is Now Executed
 - Finding: Matches the artifact: K77 mixed 118->124 (seed29) and 118->122 (seed71); K39 102->109 for both seeds; 16 repair stages, 1934 proposals, 11 accepted moves and 116319 Horner evaluations; 344 retained witnesses (=4 r2 configs x4 sources x17 + 2 higher-r configs x4 x9). The pass bound N-initial_score+1 follows from strict improvements.
-- Conceded by the note's own self-check: no
-
-### 6. gap
-
-> K39 and general fixed-input/asymptotic solvability remain open
-
-- Step: Header / Live Controls summary
-- Finding: The open-case list names only K39, but other saved high-rate mixed sources are also not perfect in the artifact. N31,K16 mixed seed71 is best 30/31 (r=2, R+rho=16/31+1/2>1, so in the published perfect-search regime). The r=3 N63,K46 mixed sources are 55/63 and 56/63 (R+rho~1.06>1), and the r=4 N32,K24 mixed sources are 28/32 and 27/32. The superseding norm attack covers only N127,K77. The Live Controls paragraph also reports only the r=3/r=4 global controls ('also perfect') and omits these mixed scores.
 - Conceded by the note's own self-check: no
