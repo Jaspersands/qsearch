@@ -456,6 +456,31 @@ def test_r4_fails_without_a_radius_when_no_radius_can_pass() -> None:
     assert checks["R4"].passed is None and "give radius or finite_dqi_mean" in checks["R4"].detail
 
 
+def test_boundaries_of_the_signed_reach_existential_lines_witness_and_subfield_floor() -> None:
+    # Proposition 13(i) between alpha log2 q = 1 and 3/2: a bisected reach below 1/2, not the 1/2 of the budget switch.
+    lam = R.signed_packing_reach(0.1, 2039)
+    assert lam == pytest.approx(0.2651, abs=5e-4) and (R.binary_entropy(lam) + lam) / math.log2(2039) == pytest.approx(0.1)
+    # The count line is exactly 1 as soon as q^alpha rho >= 1 (here by 0.028 nats), not a bisection to 1 - 4e-16.
+    assert R.existential_line(0.45, 3 / 7, 7) == 1.0
+    # Small q sums F_q exactly: 0.8059 at q = 5, where the von Mises limit gives 0.7963.
+    assert R.cosine_existential_line(0.5, 5) == pytest.approx(0.8059, abs=5e-4)
+    # R3 at the line: a claimed value equal to Q* or just below it passes, one just above fails (both objectives).
+    small = {"q": 7, "m": 2000, "n": 400, "rho": 3 / 7, "radius": 100, "min_distance": None}
+    for example, changes in (("hermite_half_rate.json", small), ("mpi_signed_cosine.json", {})):
+        line = _run(example, **changes)[0].quantities["existential_line"]
+        assert line < 1
+        for finite, passed in ((line, True), (line - 1e-4, True), (line + 1e-9, False)):
+            assert _run(example, **changes, finite_dqi_mean=finite)[1]["R3"].passed is passed, (example, finite)
+    # A classical witness equal to DQI's claimed value already reaches it.
+    s, checks = _run("hermite_half_rate.json", **LONGER, classical_witness=0.80, finite_dqi_mean=0.80)
+    assert checks["witness"].passed is False and "already reaches" in checks["witness"].detail
+    # R4 uses floor(alpha_sub m) rows: 0.9166 beats the floored baseline 0.9165, not the unfloored 0.91667.
+    q32 = {**LONGER, "n": 1000, "q": 32, "p": 2, "b": 5, "c": 3}  # alpha_sub = 5/6, 1666 of 2000 rows
+    s, checks = _run("hermite_half_rate.json", **q32, finite_dqi_mean=0.9166)
+    assert s.quantities["subfield_baseline"] == pytest.approx(0.9165) and checks["R4"].passed is True
+    assert _run("hermite_half_rate.json", **q32, finite_dqi_mean=0.9165)[1]["R4"].passed is False
+
+
 def test_saturated_reach_is_flagged_not_viable() -> None:
     s, checks = _run("hermite_half_rate.json", radius=600)  # lam = 0.6 > 1 - rho
     assert s.quantities["q_dqi"] == 1.0
