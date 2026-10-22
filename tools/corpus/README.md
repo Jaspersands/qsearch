@@ -296,8 +296,9 @@ exit 2, 15 of them siblings inside the `NEG-SELF-DUAL-WREATH` program (0.60 to 0
 the orthogonal and unitary parabolic pair classed distinct above. Raising the threshold does
 not fix this (0.7 still blocks 284) and costs claim-alone recall. Instead, after reading a
 sibling, pass `--allow ID`, or `--allow PREFIX*` for its family (repeatable; the MCP tool takes
-`allow`): its matches are then listed as allowed and do not count toward the exit code. A
-bare `*` is rejected.
+`allow`): its matches are then listed as allowed, each with its cosine, and do not count toward
+the exit code. When every match is allowed the header says that no record outside `--allow`
+reaches the threshold and how many allowed ones do. A bare `*` is rejected.
 
 Smoke runs on this checkout (2026-10-21):
 

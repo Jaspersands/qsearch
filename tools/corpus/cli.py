@@ -313,10 +313,14 @@ def cmd_near_duplicates(args: argparse.Namespace) -> int:
     return status
 
 
-def _claim_header(report: ClaimReport, threshold: float, outside_list: bool = False) -> str:
+def _claim_header(report: ClaimReport, threshold: float, outside_list: bool = False, subject: str = "") -> str:
+    """The first line for one draft, without its final period; `subject` follows a no-match line."""
     if not report.matches:
-        where = " outside the list" if outside_list else " (retained or quarantined)"
-        return f"no negative record{where} has TF-IDF cosine >= {threshold}"
+        outside = [name for name, on in (("the list", outside_list), ("--allow", bool(report.allowed))) if on]
+        where = f" outside {' and '.join(outside)}" if outside else " (retained or quarantined)"
+        count = len(report.allowed)
+        allowed = f" ({count} allowed match{'' if count == 1 else 'es'}, listed below)" if count else ""
+        return f"no negative record{where} has TF-IDF cosine >= {threshold}{subject}{allowed}"
     of_them = f", {report.quarantined} of them quarantined," if report.quarantined else ""
     shown = f"; the closest {len(report.matches)} are shown" if report.total > len(report.matches) else ""
     return f"POSSIBLE DUPLICATE: {report.total} negative record(s){of_them} at TF-IDF cosine >= {threshold}{shown}"
@@ -391,13 +395,14 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         print(json.dumps(payload, indent=2))
         return 2 if duplicate else 0
     for number, (record_id, report) in enumerate(reports, start=1):
-        header = _claim_header(report, args.threshold, outside_list=hides and record_id in filed)
         if len(reports) == 1:
-            print(header[0].upper() + header[1:] + ("" if report.matches else " with this claim") + ".")
+            header = _claim_header(report, args.threshold, subject=" with this claim")
+            print(header[0].upper() + header[1:] + ".")
         else:
+            header = _claim_header(report, args.threshold, outside_list=hides and record_id in filed)
             print(("" if number == 1 else "\n") + f"{record_id or f'record {number}'}: {header}.")
         if report.allowed:
-            names = [_record_label(hit.doc_id) for hit in report.allowed]
+            names = [f"{_record_label(hit.doc_id)} ({hit.score:.3f})" for hit in report.allowed]
             more = f", and {len(names) - 10} more" if len(names) > 10 else ""
             print(f"Not counted: {len(names)} matching record(s) allowed by --allow: {', '.join(names[:10])}{more}.")
         if report.matches:

@@ -614,18 +614,25 @@ GOPPA_SIBLING = {
 
 
 def test_cli_check_new_allow_accepts_known_siblings(fake_repo: Path, tmp_path: Path, capsys) -> None:
-    _corpus_with(fake_repo, _sweep_records())
+    corpus = _corpus_with(fake_repo, _sweep_records())
     draft = tmp_path / "sibling.json"
     draft.write_text(json.dumps(GOPPA_SIBLING))
+    cosine = claim_report(corpus, draft_claim(draft.read_text())[0]).matches[0].score
     root = ["--root", str(fake_repo), "check-new", "--file", str(draft)]
     assert main(root) == 2
     assert capsys.readouterr().out.startswith("POSSIBLE DUPLICATE: 10 negative record(s)")
     assert main([*root, "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-1"]) == 2  # one sibling allowed, nine left
-    assert capsys.readouterr().out.startswith("POSSIBLE DUPLICATE: 9 negative record(s)")
+    out = capsys.readouterr().out
+    assert out.startswith("POSSIBLE DUPLICATE: 9 negative record(s)")
+    allowed_one = f"NEG-GOPPA-SCALE-M6-T3-N48-0-1 ({cosine:.3f})"
+    assert f"\nNot counted: 1 matching record(s) allowed by --allow: {allowed_one}.\n" in out
     assert main([*root, "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-*"]) == 0
     out = capsys.readouterr().out
-    assert out.startswith("No negative record (retained or quarantined) has TF-IDF cosine >= 0.6")
-    assert "\nNot counted: 10 matching record(s) allowed by --allow: NEG-GOPPA-SCALE-M6-T3-N48-0-1," in out
+    # Every match allowed: the header must not say that no record reaches the threshold.
+    assert out.startswith(
+        "No negative record outside --allow has TF-IDF cosine >= 0.6 with this claim (10 allowed matches, listed below).\n"
+    )
+    assert f"\nNot counted: 10 matching record(s) allowed by --allow: {allowed_one}," in out
     assert main([*root, "--allow", "negative:NEG-GOPPA-SCALE-M6-T3-N48-0-*", "--json"]) == 0
     payload = json.loads(capsys.readouterr().out)
     assert payload["duplicate"] is False and payload["matches"] == [] and len(payload["allowed"]) == 10
