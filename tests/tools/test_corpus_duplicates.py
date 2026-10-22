@@ -478,7 +478,7 @@ def test_cli_check_new_checks_a_list_of_records_one_by_one(fake_repo: Path, tmp_
     root = ["--root", str(fake_repo), "check-new", "--file"]
     filed = tmp_path / "filed.json"
     filed.write_text(json.dumps(NEGATIVES, indent=2))  # both filed: each leaves out both ids
-    assert main([*root, str(filed)]) == 0
+    assert main([*root, str(filed)]) == 1
     capsys.readouterr()
     batch = tmp_path / "batch.json"
     batch.write_text(json.dumps([UNIQUE, dict(NEGATIVES[0], id="NEG-DRAFT-HELSTROM")], indent=2))
@@ -515,15 +515,15 @@ def test_cli_check_new_warns_when_filed_records_of_a_list_hide_each_other(fake_r
     listed = tmp_path / "registry_copy.json"  # say a hook given the whole registry file
     listed.write_text(json.dumps(NEGATIVES, indent=2))
     root = ["--root", str(fake_repo), "check-new", "--file", str(listed)]
-    assert main(root) == 0
+    assert main(root) == 1
     captured = capsys.readouterr()
     assert "warning: 2 of 2 listed records are already in the index" in captured.err
     assert "NEG-DCP-LOCAL-HELSTROM-HIERARCHY: no negative record outside the list has TF-IDF cosine >= 0.6." in captured.out
-    assert main([*root, "--json"]) == 0
+    assert main([*root, "--json"]) == 1
     assert json.loads(capsys.readouterr().out)["filed"] == 2
 
 
-def test_cli_check_new_gives_a_batch_the_same_answer_before_and_after_it_is_filed(
+def test_cli_check_new_marks_filed_batches_unreliable(
     fake_repo: Path, tmp_path: Path, capsys
 ) -> None:
     batch = tmp_path / "batch.json"
@@ -532,7 +532,7 @@ def test_cli_check_new_gives_a_batch_the_same_answer_before_and_after_it_is_file
     assert main([*root, str(batch)]) == 0  # not yet filed: records of one list are not compared with each other
     assert json.loads(capsys.readouterr().out)["filed"] == 0
     _corpus_with(fake_repo, [DUP_A, DUP_B])
-    assert main([*root, str(batch)]) == 0  # filed: each leaves out the other's id too
+    assert main([*root, str(batch)]) == 1  # filed: excluding one another now fails closed
     assert json.loads(capsys.readouterr().out)["filed"] == 2
     alone = tmp_path / "alone.json"
     alone.write_text(json.dumps(DUP_A, indent=2))
@@ -757,3 +757,28 @@ def test_check_duplicate_negative_tool(fake_repo: Path) -> None:
     assert payload["duplicate"] is True and payload["threshold"] == 0.6 and payload["claim"] == NEAR_CLAIM
     assert payload["matches"][0]["doc_id"] == HELSTROM and "index_incomplete" in payload
     assert _call(server, "check_duplicate_negative", {"claim": "zebrafish migration"})["duplicate"] is False
+
+
+
+def test_filed_hunk_with_copy_fails_closed_and_names_its_blind_spot(fake_repo, tmp_path, capsys):
+    copy = dict(NEGATIVES[0], id="NEG-HELSTROM-RESTATED")
+    _corpus_with(fake_repo, [copy])
+    hunk = tmp_path / "hunk.json"
+    hunk.write_text(json.dumps([NEGATIVES[0], copy]))
+    assert main(["--root", str(fake_repo), "check-new", "--file", str(hunk), "--json"]) == 1
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["hidden_by_list"] is True and payload["reliable"] is False
+    assert payload["filed_ids"] == sorted([NEGATIVES[0]["id"], copy["id"]])
+
+
+def test_paraphrase_gate_returns_advisory_search_hits_in_cli_and_mcp(fake_repo, capsys):
+    claim = "Helstrom measurement of dihedral packets beats the product X basis?"
+    assert main(["--root", str(fake_repo), "check-new", "--text", claim, "--threshold", "1", "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["matches"] == []
+    assert payload["nearest"][0]["doc_id"] == HELSTROM
+    assert payload["nearest"][0]["search_rank"] == 1
+    assert 0 <= payload["nearest"][0]["cosine"] < 1
+    assert "paraphrase" in payload["limitation"]
+    payload = _call(create_server(fake_repo, dense="off"), "check_duplicate_negative", {"claim": claim, "threshold": 1})
+    assert payload["nearest"][0]["doc_id"] == HELSTROM and "paraphrase" in payload["limitation"]

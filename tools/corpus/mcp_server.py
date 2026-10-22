@@ -27,7 +27,7 @@ from mcp.server.fastmcp import FastMCP  # noqa: E402
 from tools.corpus.api import Corpus, CorpusRootError, checkout_root  # noqa: E402
 from tools.corpus.baselines import CatalogError, recommend  # noqa: E402
 from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
-from tools.corpus.duplicates import NO_NEGATIVES, allow_patterns, claim_report, valid_threshold  # noqa: E402
+from tools.corpus.duplicates import NO_NEGATIVES, PARAPHRASE_LIMITATION, allow_patterns, claim_report, nearest_negatives, valid_threshold  # noqa: E402
 from tools.corpus.ranking import Embedder, query_terms  # noqa: E402
 from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 
@@ -113,8 +113,9 @@ def create_server(
 
     @server.tool()
     def check_duplicate_negative(claim: str, threshold: float = 0.6, allow: list[str] | None = None) -> dict:
-        """Before filing a new negative result, check whether a retained negative already says
-        it. Returns the retained (and quarantined) negatives whose TF-IDF cosine with the claim
+        """Before filing a new negative result, check whether a retained negative is worded
+        closely to it. Paraphrases can pass: nearest gives advisory search leads on no match,
+        with search_rank and cosine; read them or run been_tried. Returns the retained (and quarantined) negatives whose TF-IDF cosine with the claim
         is at least threshold, highest first (the closest five; total counts them all);
         duplicate is true when there is any. Pass the claim and its reason. A match is a record
         to read and extend, not proof of identity: most matches of generated records are sweep
@@ -144,6 +145,8 @@ def create_server(
             "total": report.total,
             "allowed": [{"doc_id": h.doc_id, "score": h.score} for h in report.allowed],
             "duplicate": bool(report.matches),
+            "nearest": nearest_negatives(corpus, claim) if not report.matches else [],
+            "limitation": PARAPHRASE_LIMITATION,
             **_issues_json(corpus),
         }
 

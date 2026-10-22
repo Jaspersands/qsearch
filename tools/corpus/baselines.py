@@ -180,6 +180,13 @@ _SPELLINGS = {
     "lpn": "learning parity with noise",
     "cvp": "closest vector",
     "usd": "unambiguous state discrimination",
+    "rs": "reed solomon",
+    "sdp": "semidefinite programming",
+    "fft": "fourier transform",
+    "bp": "belief propagation",
+    "bpqm": "belief propagation",
+    "sampler": "sampling",
+    "decoder": "decoding",
 }
 # Each variant's replacement as tokens, made singular like every other word ("unambiguou").
 _SPELLING_TOKENS = {word: [_singular(part) for part in spelling.split()] for word, spelling in _SPELLINGS.items()}
@@ -229,7 +236,7 @@ def keyword_matches(keyword: list[str], idea: list[str]) -> bool:
 
 def _name_pattern(baseline: dict) -> re.Pattern[str]:
     names = [baseline["name"], *baseline.get("aliases", [])]
-    return re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?!\w)", re.I)
+    return re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?:s|es)?(?!\w)", re.I)
 
 
 def _source(hit: Hit) -> str:

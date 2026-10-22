@@ -229,3 +229,29 @@ def test_readme_names_the_commands_that_take_json_dense_and_no_refresh() -> None
     assert {"check-new", "near-duplicates", "baselines"}.isdisjoint(with_dense)  # they reject --dense (exit 2)
     assert all("--no-refresh" in _options(c) for c in commands - {"build"})
     assert "Every command but `build` takes `--no-refresh`" in readme
+
+
+
+def test_similar_json_reports_registry_parse_problems(fake_repo, capsys):
+    (fake_repo / "research/registry/negative_results.json").write_text("[broken")
+    code, out = run(capsys, "--root", str(fake_repo), "similar", "dequant:DEQ-POLAR-GIBBS-SOURCE", "--json")
+    assert code == 0
+    payload = json.loads(out)
+    assert payload["index_incomplete"] is True and payload["index_issues"]
+
+
+@pytest.mark.parametrize("raw", [None, "{", "{}", '[{"query":"no id"}]'])
+def test_heldout_rejects_unreadable_or_malformed_cases(fake_repo, tmp_path, capsys, raw):
+    path = tmp_path / "cases.json"
+    if raw is not None:
+        path.write_text(raw)
+    assert main(["--root", str(fake_repo), "heldout", str(path)]) == 1
+    assert "error: cannot read cases" in capsys.readouterr().err
+
+
+def test_empty_registry_reports_empty_documents_not_missing_files(tmp_path, capsys):
+    registry = tmp_path / "research/registry/negative_results.json"
+    registry.parent.mkdir(parents=True)
+    registry.write_text("[]")
+    assert main(["--root", str(tmp_path), "check-new", "--text", "coset packet"]) == 1
+    assert "source files hold no documents" in capsys.readouterr().err

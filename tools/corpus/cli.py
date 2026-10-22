@@ -30,6 +30,8 @@ from tools.corpus.api import Corpus, CorpusRootError, Hit, checkout_root  # noqa
 from tools.corpus.baselines import CatalogError, Recommendation, recommend  # noqa: E402
 from tools.corpus.duplicates import (  # noqa: E402
     NO_NEGATIVES,
+    PARAPHRASE_LIMITATION,
+    nearest_negatives,
     REPORT_THRESHOLD,
     ClaimReport,
     DraftError,
@@ -173,7 +175,7 @@ def cmd_similar(args: argparse.Namespace) -> int:
         print(f"unknown doc_id {args.doc_id}", file=sys.stderr)
         return 1
     if args.json:
-        print(json.dumps({"doc_id": args.doc_id, "hits": [_hit_json(h) for h in hits]}, indent=2))
+        print(json.dumps({"doc_id": args.doc_id, "hits": [_hit_json(h) for h in hits], **_issues_json(corpus)}, indent=2))
         return 0
     for index, hit in enumerate(hits, start=1):
         _print_hit(index, hit)
@@ -197,7 +199,19 @@ def cmd_eval(args: argparse.Namespace) -> int:
     a rank is null for a miss. The exit code is 1 when fewer than `--min` cases are retrieved.
     """
     corpus = _corpus(args)
-    cases = json.loads(Path(args.cases).read_text(encoding="utf-8"))
+    try:
+        cases = json.loads(Path(args.cases).read_text(encoding="utf-8"))
+        if not isinstance(cases, list) or not all(
+            isinstance(case, dict) and isinstance(case.get("id"), str) and case["id"].strip()
+            and isinstance(case.get("query"), str)
+            and isinstance(case.get("kinds", []), list)
+            and all(isinstance(kind, str) for kind in case.get("kinds", []))
+            for case in cases
+        ):
+            raise ValueError('expected a list of cases with string "id", "query" and optional string-list "kinds"')
+    except (OSError, ValueError) as exc:
+        print(f"error: cannot read cases {args.cases}: {exc}", file=sys.stderr)
+        return 1
     results: list[dict] = []
     for case in cases:
         target = case["id"] if ":" in case["id"] else f"negative:{case['id']}"
@@ -355,10 +369,8 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         print("error: the draft claim has no words to compare (it is empty or only stop words).", file=sys.stderr)
         return 1
     corpus = _corpus(args)
-    # A listed record already in the index is filed. Each record leaves out its own id. A filed
-    # record also leaves out the other filed records of the list, so a batch gets the same answer
-    # before and after it is filed; a record not yet filed is still compared with a filed record
-    # listed beside it, so a hunk that copies an existing record under a new id is caught.
+    # Filed records of a list exclude one another. That can hide a hunk's copied original
+    # after the edit is saved, so a no-match answer for such a list must fail closed.
     indexed = set(corpus.doc_ids()) if any(record_id for _, record_id in drafts) else set()
     filed = {record_id for _, record_id in drafts if record_id and indexed.intersection(own_ids(record_id))}
     listed = tuple(doc_id for record_id in sorted(filed) for doc_id in own_ids(record_id))
@@ -388,6 +400,13 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         print(f"error: {NO_NEGATIVES}; check --root and research/registry/.", file=sys.stderr)
         return 1
     duplicate = any(report.matches for _, report in reports)
+    nearest = [dict(hit, draft_id=record_id)
+               for (text, record_id), (_, report) in zip(drafts, reports) if not report.matches and not hides
+               for hit in nearest_negatives(corpus, text, exclude=own_ids(record_id))]
+    if filed:
+        print("note: already-filed ids are checked against other records, not as new ids: "
+              + ", ".join(sorted(filed)), file=sys.stderr)
+    exit_status = 2 if duplicate else 1 if hides else 0
     if args.json:
         payload = {
             "matches": [dict(_hit_json(h), draft_id=record_id) for record_id, report in reports for h in report.matches],
@@ -399,11 +418,16 @@ def cmd_check_new(args: argparse.Namespace) -> int:
             ],
             "drafts": len(reports),
             "filed": len(filed),
+            "filed_ids": sorted(filed),
+            "hidden_by_list": hides,
+            "reliable": not hides and not corpus.incomplete(),
+            "nearest": nearest,
+            "limitation": PARAPHRASE_LIMITATION,
             "duplicate": duplicate,
             **_issues_json(corpus),
         }
         print(json.dumps(payload, indent=2))
-        return 2 if duplicate else 0
+        return exit_status
     for number, (record_id, report) in enumerate(reports, start=1):
         if len(reports) == 1:
             header = _claim_header(report, args.threshold, subject=" with this claim")
@@ -420,10 +444,19 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         for index, hit in enumerate(report.matches, start=1):
             _print_hit(index, hit)
             print(f"     Cosine: {hit.score:.3f}")
+    if nearest:
+        print("\nNearest negatives to read (advisory search, not duplicate matches):")
+        for hit in nearest:
+            draft = f"{hit['draft_id']}: " if hit["draft_id"] else ""
+            print(f"  {draft}{hit['doc_id']}  search rank {hit['search_rank']}, cosine {hit['cosine']:.3f}")
+            print(f"     {hit['location']}  {hit['title'][:220]}")
+    print(PARAPHRASE_LIMITATION)
     if not duplicate:
+        if hides:
+            print("UNRELIABLE LIST: filed records hide one another. Check one record at a time or run near-duplicates.")
         if corpus.incomplete():
             print("INDEX INCOMPLETE: a registry could not be read, so no match does not mean the claim is new.")
-        return 0
+        return exit_status
     print(
         "\nRead the record first: extend it, or say how the new claim differs. A sweep sibling you have "
         "read and that should stay a separate record can be accepted with --allow ID."

@@ -502,3 +502,25 @@ def test_classical_baselines_tool(fake_repo: Path) -> None:
     assert [rec["baseline"]["id"] for rec in payload["recommendations"]] == ["prange-isd", "isd-pinning-fft"]
     assert payload["recommendations"][0]["evidence"][0]["doc_id"].startswith("note:PRANGE_SYNDROME")
     assert _call(server, "classical_baselines", {"idea": "zebrafish migration"})["recommendations"] == []
+
+
+@pytest.mark.parametrize(("idea", "keyword"), [
+    ("Gibbs samplers", "gibbs sampling"), ("syndrome decoder", "syndrome decoding"),
+    ("LP decoder", "lp decoding"), ("rejection sampler", "rejection sampling"),
+    ("SDP relaxation", "semidefinite"), ("RS codes", "reed solomon"),
+    ("FFT enumeration", "fourier transform"), ("BP decoder", "belief propagation"),
+    ("BPQM decoding", "belief propagation"),
+])
+def test_agent_vocabulary_matches_the_spelled_out_mechanism(idea, keyword):
+    assert keyword_matches(tokens(keyword), tokens(idea))
+
+
+def test_citation_aliases_distinguish_algorithms_and_accept_plurals():
+    entries = {entry["id"]: entry for entry in load_catalog()}
+    assert not _name_pattern(entries["lll-babai-dcp"]).search(
+        "Babai (STOC 2016, Graph Isomorphism in Quasipolynomial Time)")
+    assert _name_pattern(entries["lll-babai-dcp"]).search("Babai nearest-plane rounding")
+    assert not _name_pattern(entries["prange-isd"]).search("block-Prange sampling and Prange rank ceilings")
+    assert _name_pattern(entries["prange-isd"]).search("Prange decoding")
+    assert _name_pattern(entries["tensor-network-simulation"]).search("tensor networks")
+    assert _name_pattern(entries["sdp-relaxation"]).search("SDP relaxations")

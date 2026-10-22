@@ -3,14 +3,12 @@
     {
       "id": "prange-isd",
       "name": "Prange information-set decoding",
-      "aliases": ["Prange", "information-set decoding", "information set decoding"],
+      "aliases": ["Prange decoding", "Prange ISD", "information-set decoding", "information set decoding"],
       "problem": "Syndrome decoding of a linear code: find a low-weight error, or a word satisfying many parity checks, from a parity-check matrix and a syndrome.",
       "mechanisms": ["syndrome decoding", "information set", "linear code", "parity check", "gaussian elimination"],
       "summary": "Choose a random information set, solve the parity checks on it by Gaussian elimination and keep the candidate when the remaining coordinates have low weight or satisfy enough checks; repeat. The generic decoder any quantum decoding, DQI or Gibbs-sampling route must beat. The referenced notes match product-USD quantum decoders with Prange-style classical samplers and measure BPQM against the Prange rank ceiling.",
       "references": [
-        {"note": "PARITY_BLOCK_USD_PRANGE"},
-        {"note": "BPQM_GIBBS_FRONTIER"},
-        {"note": "LINEAR_ERASURE_PRANGE_DUALITY"}
+        {"note": "PARITY_BLOCK_USD_PRANGE"}
       ],
       "runnable": null
     },
@@ -141,7 +139,7 @@
     {
       "id": "lll-babai-dcp",
       "name": "LLL reduction with Babai rounding",
-      "aliases": ["LLL", "Babai", "nearest plane", "Kannan embedding"],
+      "aliases": ["LLL", "Babai rounding", "Babai nearest-plane", "Babai nearest plane", "nearest plane", "Kannan embedding"],
       "problem": "Closest-vector and bounded-distance decoding in a lattice: modular subset sum, affine lattices derived from DCP, native ternary records.",
       "mechanisms": ["lattice", "closest vector", "lll", "babai", "subset sum"],
       "summary": "LLL-reduce the basis, then round with Babai's nearest-plane algorithm or coordinate rounding, optionally with small repair menus or a Kannan embedding; polynomial time, and exact when the target lies within the Gram-Schmidt decoding radius. The baseline for any lattice or subset-sum reduction of DCP or ternary decoding.",

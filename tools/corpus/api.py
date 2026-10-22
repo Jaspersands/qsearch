@@ -216,7 +216,7 @@ class Corpus:
             tfidf.patch(set(removed), self.store.texts(added))
         else:
             if not self.store.count():
-                raise CorpusRootError(f"nothing to index under {self.root}: no registry, note, code or literature file")
+                raise CorpusRootError(f"nothing to index under {self.root}: source files hold no documents")
             tfidf = TfidfState.fit(self.store.texts())
         tfidf.epoch = current
         tfidf.save(self.tfidf_path)

@@ -249,3 +249,20 @@ def check_claim(
 ) -> list[Hit]:
     """The matches of `claim_report`, without the counts."""
     return claim_report(corpus, text, threshold=threshold, k=k, exclude=exclude).matches
+
+
+PARAPHRASE_LIMITATION = (
+    "TF-IDF cosine is a near-copy check, not a novelty verdict: paraphrases can pass. "
+    "Read the nearest negative records or run been-tried before filing."
+)
+
+
+def nearest_negatives(corpus: Corpus, text: str, exclude: tuple[str, ...] = (), k: int = 3) -> list[dict]:
+    """Advisory fused-search leads, with independent cosines; these never set duplicate."""
+    hits = corpus.search(text, kinds=("negative",), k=k, exclude=exclude)
+    cosines = corpus.cosine(text, [hit.doc_id for hit in hits])
+    return [
+        {"doc_id": hit.doc_id, "title": hit.title, "location": hit.location,
+         "search_rank": rank, "cosine": round(cosines[hit.doc_id], 4)}
+        for rank, hit in enumerate(hits, start=1)
+    ]

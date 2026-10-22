@@ -42,7 +42,9 @@ duplicate status, so a script should read `duplicate` from `--json` rather than 
 code alone. `--root PATH` (or `QSEARCH_ROOT`), given before the command, indexes another
 checkout. A root that is not a directory
 with a `research/` directory is an error (exit 1) before anything is written, and so is a
-checkout with nothing to index; the MCP server refuses to start on either.
+checkout with no source file the corpus indexes; the MCP server refuses to start on either.
+Source files may themselves hold no documents (for example an empty registry). That case
+is detected on refresh, after index storage is opened, with "source files hold no documents".
 
 A file or registry record that cannot be parsed is never silent. Every command prints the
 problem on stderr and JSON output carries `index_issues`. When the problem is in
@@ -192,7 +194,8 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   quarantined, at cosine 0.6. It scores every negative-kind document, not only a search's
   top hits, so no record at or above the threshold is missed; the header gives how many
   match, the closest five are listed, and `--json` carries the count as `total`.
-  It exits 2 on any match, 0 when there is none, and 1 when
+  It exits 2 on any match, 1 when a multi-filed list hides comparisons, otherwise 0 when
+  there is no match. A match takes precedence over the unreliable-list status. It also exits 1 when
   the draft cannot be used (checked before the index is touched): a `--file` that cannot be
   read, text that starts like a JSON record but is not one (bad or truncated JSON, no string
   `claim`, a `reason_invalid` that is not a string), or a draft with no words to compare
@@ -208,13 +211,15 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   `draft_id`. A listed record that is not in the index yet is compared with every negative
   record but its own, filed records listed beside it included, so a hunk that copies an
   existing record under a new id exits 2. A listed record already in the index (filed) also
-  leaves out the other filed records of the list. Records of one list are therefore not
-  compared with each other, the answer is the same before and after the records are filed,
-  and a hook can run on the draft or on the new records of the registry edit that files them.
-  List only the new records: once a new record is filed, an older record listed beside it is
-  hidden from it. When two or more listed records are already filed the command warns on
-  stderr, says "no negative record outside the list" for them, and `--json` gives the count as
-  `filed`. A draft that reuses another record's id is not compared with that record. A
+  leaves out the other filed records of the list. Thus the comparison can change after
+  filing: a hunk with its original and copy may hide the duplicate. When two or more listed
+  records are already filed, the command warns, marks `hidden_by_list: true` and
+  `reliable: false` in JSON, and exits 1 if no visible match already requires exit 2.
+  Check one record at a time, or run `near-duplicates` on the saved registry. A batch of
+  unfiled records is compared only against the index, not against other unfiled drafts.
+  `filed` counts the already-filed ids; `filed_ids` names them, and stderr explains that
+  these are checked against other records, not as new ids. A draft that reuses another
+  record's id is not compared with that record. A
   quarantined match is labelled `(quarantined)`. An
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
@@ -223,15 +228,23 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   The MCP tool `check_duplicate_negative(claim, threshold=0.6, allow=None)` returns the same matches
   for a claim's text, with no id left out, and an `error` for a claim with no words, a
   threshold outside (0, 1] or an index with no negative records.
+  On no match (except an unreliable multi-filed list), CLI and MCP return `nearest`:
+  up to three advisory fused-search negative
+  records, each with `search_rank` and independent `cosine`, and a `limitation` explaining
+  that paraphrases can pass. They do not affect the duplicate status. Read these records
+  or run `been-tried` before filing: exit 0 is not a novelty verdict.
 - The `negative` kind holds retained records (`negative:` ids, 975 today) and quarantined
   ones (`quarantined:` ids, 12). Both are compared and both can match; no quarantined record
   is in a pair at 0.7 or above today.
 
-### Calibration (2026-10-21, this tree: 987 negative-kind documents)
+### Calibration (2026-10-21 snapshot: 987 negative-kind documents)
+
+Counts below use four-place rounded cosines (0.7 count corrected in the round-three audit).
+They describe this snapshot, not a contract for future registry edits.
 
 | cosine at least | pairs | pairs grouped by `--per-family` (families) | pairs whose ids are equal up to digits |
 |---|---|---|---|
-| 0.7 | 1,286 | 90 (10) | 403 |
+| 0.7 | 1,287 | 90 (10) | 403 |
 | 0.8 | 601 | 90 (10) | 324 |
 | 0.9 | 207 | 59 (8) | 145 |
 | 0.95 | 67 | 15 (4) | 42 |
@@ -351,7 +364,9 @@ otherwise a final single `s` is dropped from words longer than three letters ("G
 spelling variants and abbreviations into one (`_SPELLINGS`: "colouring" is `coloring`,
 "Gröbner" and "Grobner" are `groebner`, "MaxCut" is `max cut`, and the notes' OPI, MQ, LPN,
 CVP and USD are the phrases the keywords spell out, so "mixed-coset OPI" matches `optimal
-polynomial intersection`). A mechanism
+polynomial intersection`). SDP, RS, FFT, BP and BPQM expand to semidefinite programming,
+Reed-Solomon, Fourier transform and belief propagation. Sampler(s) and decoder(s) fold to
+sampling and decoding, so "Gibbs sampler" and "syndrome decoder" find their mechanisms. A mechanism
 keyword matches when every one of its tokens is among the idea's tokens, in any order. A `k`
 in a keyword stands for a number: such a keyword must occur in a row with a number, `k` or
 `q` in that place, so `max k cut` matches "max-3-cut" and "Max-q-Cut" but not "max cut at
@@ -359,10 +374,11 @@ depth 3". Any other keyword with a word of one letter or digit must occur in a r
 `p spin` matches "p-spin" but not "QAOA at depth p on a spin chain". The ten
 note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
-and on word boundaries. A mention inside a longer name of another baseline counts only for
-that one: "Prange" inside "USD-Prange" or "product-USD/Prange" cites the USD-Prange sampler,
-not `prange-isd` (on "p-spin Gibbs sampling" such mentions had put `prange-isd` first, at 0.5,
-on citations alone). Notes are indexed by section, so a note counts once however many of
+and on word boundaries, including plural mentions such as "tensor networks". A mention
+inside a longer name of another baseline counts only for that one. Bare surnames are
+ambiguous: the catalog uses "Prange decoding" and "Babai rounding" rather than "Prange"
+and "Babai", so USD/block-Prange sampling and Babai's graph-isomorphism result do not
+supply those generic decoder/lattice citations. Notes are indexed by section, so a note counts once however many of
 its sections are among the ten, and its nearest citing section is the evidence shown. Each
 negative counts on its own, although all of them live in one registry file.
 
@@ -439,3 +455,10 @@ it is committed:
 | `CUBIC_ORBIT_DECODER` | not chosen | Read the note first. |
 
 `FOLDED_NORM_MQ` was the fourth such note; it is committed now and `groebner-mq` cites it.
+
+
+The check-new calibration above measures wording overlap, not semantic novelty. Round-three
+checks of the twenty held-out paraphrases found none at cosine 0.6 (their target-record
+scores ranged from 0.000 to 0.249 on that snapshot), even though the target was the highest
+cosine hit for thirteen. Those scores overlap unrelated claims. Lowering the threshold
+cannot turn this into a semantic duplicate detector; use the advisory nearest records.
