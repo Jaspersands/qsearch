@@ -169,6 +169,78 @@ def test_parse_note_heading_rules_skip_look_alike_sections(tmp_path: Path) -> No
     assert packet.result == "The pencil recovers every saved root." and packet.self_check == "Motivation only."
 
 
+def test_parse_note_takes_certificate_and_comparison_headings(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Headings
+
+        2026-10-16. REVIEW PENDING.
+
+        ## Result
+
+        The sampler matches.
+
+        ## Certificate Check
+
+        The certificate verifies.
+
+        ## Comparison With Prange
+
+        Prange reaches 0.6.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "HEADINGS", text))
+    assert [d["heading"] for d in packet.derivations] == ["Certificate Check"]
+    assert [c["heading"] for c in packet.controls] == ["Comparison With Prange"]
+
+
+def test_not_claimed_takes_whole_bullets_and_sentences_with_not_or_no(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Scope
+
+        2026-10-16. REVIEW PENDING. This is a classical check. No speedup is claimed.
+
+        - Not a proof of the bound,
+          only a numerical check. It runs fast.
+        - A bullet that claims something.
+        - The table below has no hidden rows.
+
+        | not | a table row |
+
+        ```text
+        not in a fence either
+        ```
+
+        ## Result
+
+        Done.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "SCOPE", text))
+    assert packet.not_claimed == ["No speedup is claimed.", "Not a proof of the bound, only a numerical check. It runs fast.",
+                                  "The table below has no hidden rows."]
+
+
+def test_prose_drops_code_tables_and_headings_and_strips_list_markers() -> None:
+    text = ("Intro sentence.\n    indented code line\n\ttabbed code line\n| a | b |\n# Heading\n- a listed item\n"
+            "2. a numbered item\n```\nfenced line\n```\nLast sentence.")
+    assert X.prose(text) == "Intro sentence.\na listed item\na numbered item\nLast sentence."
+
+
+def test_artifact_excerpt_caps_the_key_list_and_takes_only_short_strings(tmp_path: Path) -> None:
+    data = {f"k{i:02d}": i for i in range(55)} | {"s_short": "x" * 60, "s_long": "y" * 61}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(data))
+    lines = X.artifact_excerpt(tmp_path, packet).splitlines()
+    assert lines[0] == "keys: " + ", ".join(f"k{i:02d}" for i in range(50)) + " ... (+7)"
+    assert f's_short = "{"x" * 60}"' in lines and not any(line.startswith("s_long") for line in lines)
+    # A path that resolves both at the root and under research/ is the root's.
+    for where in (tmp_path, tmp_path / "research"):
+        (where / "classical_baselines").mkdir(parents=True, exist_ok=True)
+        (where / "classical_baselines" / "both.json").write_text("{}", encoding="utf-8")
+    assert X._resolve_artifact(tmp_path, "classical_baselines/both.json") == tmp_path / "classical_baselines" / "both.json"
+
+
 def test_parse_note_falls_back_to_the_first_section_for_result(tmp_path: Path) -> None:
     text = textwrap.dedent(
         """\
@@ -977,6 +1049,9 @@ def test_import_rejects_a_malformed_or_miscopied_content_sha(tmp_path: Path) -> 
         row |= {} if value == "missing" else {"content_sha": value}
         with pytest.raises(ValueError, match="content_sha"):
             R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [row])], "j")
+    for value in (sha + "0", sha + "\n", " " + sha):  # exactly 64 digits, nothing around them
+        with pytest.raises(ValueError, match="64 lower-case hex digits"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [good | {"content_sha": value}])], "j")
     with pytest.raises(ValueError, match="not verbatim"):
         R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [good])], "j")
     assert not (tmp_path / R.REVIEWS).exists()
@@ -1272,6 +1347,42 @@ def test_find_quote_reads_arrows_superscript_signs_and_plus_minus(note: str, quo
     assert (span is not None) is accepted, reason
 
 
+@pytest.mark.parametrize("note, quote, accepted", [
+    # Each compared symbol, dropped from the quote, rejects it.
+    ("It holds when a != b for every saved input.", "It holds when a = b for every saved input", False),
+    ("It holds when a != b for every saved input.", "It holds when a ≠ b for every saved input", True),
+    ("The runtime grows as 2^n for every saved input.", "The runtime grows as 2 n for every saved input", False),
+    ("The runtime is ~ 2^n on every saved input.", "The runtime is 2^n on every saved input", False),
+    ("The runtime is ~ 2^n on every saved input.", "The runtime is ≈ 2^n on every saved input", True),
+    ("The margin is 0.5 ± 0.1 on every saved input.", "The margin is 0.5 0.1 on every saved input", False),
+    ("The error is √n on every saved input here.", "The error is n on every saved input here", False),
+    # An arrow at either end is one symbol, not a minus and a '>'.
+    ("Then x_n -> 0 as n grows for every input.", "→ 0 as n grows for every input", True),
+    ("Then x_n -> 0 as n grows for every input.", "> 0 as n grows for every input", False),
+    # Only a dot between digits is a decimal point.
+    ("The inner product u.v is at most one here.", "The inner product u v is at most one", True),
+    # A quote marker at a line start may go, as a list marker may.
+    ("Intro line here.\n> the quoted claim holds for every input.", "Intro line here the quoted claim holds for every input", True),
+    # An em dash the note does not have is punctuation.
+    ("the bound holds on all saved inputs here.", "the bound holds — on all saved inputs here", True),
+    # The symbols next to the quote's ends must be the note's nearest ones.
+    ("where x <= -0.5 is the smallest gap here.", "<= 0.5 is the smallest gap here", False),
+    ("where x <= -0.5 is the smallest gap here.", "- 0.5 is the smallest gap here", True),
+    ("the smallest gap here is 0.5 >= -x for all.", "the smallest gap here is 0.5 -", False),
+    ("the smallest gap here is 0.5 >= -x for all.", "the smallest gap here is 0.5 >=", True),
+    # An underscore splits words.
+    ("the unit set R_q^* holds every saved unit.", "the unit set R q^* holds every saved unit", True),
+])
+def test_find_quote_compares_each_documented_symbol(note: str, quote: str, accepted: bool) -> None:
+    span, reason = R.find_quote(quote, note)
+    assert (span is not None) is accepted, reason
+
+
+def test_find_quote_keeps_the_operator_next_to_the_last_word() -> None:
+    note = "the smallest gap here is 0.5 >= -x for all."
+    assert R.find_quote("the smallest gap here is 0.5 >=", note)[0] == "the smallest gap here is 0.5 >="
+
+
 def test_instructions_and_readme_name_every_symbol_the_check_compares() -> None:
     # The judges were told <, >, =, +, -, /, ^, ±, √ and decimal points; the check also compares
     # ~, != and ->, and a judge may drop a '~' or the '!' of '!=' as punctuation.
@@ -1349,6 +1460,13 @@ def test_status_lists_unsound_first_then_by_stem_and_the_cli_names_the_worst_cla
     out = capsys.readouterr().out.splitlines()
     assert out[0] == "3 reviewed, 3 flagged, 0 stale"
     assert out[1] == "  unsound    Z_UNSOUND  wrong: A result about the z_unsound inputs"
+    # Flagged means unsound or needs-work: an unclear or sound review is not flagged.
+    for stem, overall, verdict in (("C_UNCLEAR", "unclear", "unclear"), ("D_SOUND", "sound", "holds")):
+        path = _dated_note(tmp_path, stem, "2026-10-12. REVIEW PENDING.", 1000)
+        claims = [{"quote": f"A result about the {stem.lower()} inputs", "verdict": verdict, "step": "Result", "finding": ""}]
+        entries[stem] = {"content_sha": R.note_sha(path), "overall": overall, "reviewed_on": "2026-10-21", "claims": claims}
+    store.write_text(json.dumps({"notes": entries}), encoding="utf-8")
+    assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["Z_UNSOUND", "A_NEEDS", "B_NEEDS"]
 
 
 def test_queue_and_status_keep_the_bars_of_an_absolute_value(tmp_path: Path, capsys) -> None:
@@ -1391,6 +1509,11 @@ def test_cli_round_trip(tmp_path: Path, capsys) -> None:
     selected = json.loads(capsys.readouterr().out)
     assert isinstance(selected, list) and [s["stem"] for s in selected][:2] == ["FIXTURE_NOTE", "OTHER_0"]
     assert selected[0] == {"stem": "FIXTURE_NOTE", "path": "research/FIXTURE_NOTE.md", "date": "2026-10-18"}
+
+    sized = tmp_path / "sized"
+    assert R.main(["export", "--root", root, "--out-dir", str(sized), "--limit", "5", "--batch-size", "2"]) == 0
+    assert capsys.readouterr().out.startswith("5 notes in 3 batches")
+    assert [len(json.loads((sized / f"batch_0{n}.json").read_text(encoding="utf-8"))["notes"]) for n in (1, 2, 3)] == [2, 2, 1]
 
     out = tmp_path / "batches"
     assert R.main(["export", "--root", root, "--out-dir", str(out), "--limit", "2"]) == 0
