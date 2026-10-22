@@ -99,8 +99,12 @@ text.
    or `unclear`), a quote under six words, or a quote that is not in the note text (all
    claims are checked). A quote's words (runs
    of letters and digits in any script, so Greek variables and superscript exponents count;
-   an underscore splits words) must appear consecutively in the note after lower-casing,
-   and the symbols between them, before the first and after the last (`<`, `>`, `=`, `+`,
+   an underscore splits words) must appear consecutively in the note after lower-casing; a
+   space between a letter and a digit may be added or left out (`classical105` and
+   `classical 105` read the same, though the six words are counted as the quote writes
+   them), and a markdown link's target (a URL, `#anchor` or file name) may be left out, so
+   `[Decker and Wocjan](https://...) show` may be quoted `Decker and Wocjan show`. The
+   symbols between the words, before the first and after the last (`<`, `>`, `=`, `+`,
    `-`, `/`, `^`, `~`, `±`, `√`, `!=`, `->`, decimal points; `≤` and `<=` count as the
    same, as do `≠` and `!=`, `→` and `->`, `≈` and `~`, `±` and `+/-`, a superscript or
    subscript `⁻` and `-` (`⁺` and `+`), and `-`, `−`, `–` and a touching run of them; a

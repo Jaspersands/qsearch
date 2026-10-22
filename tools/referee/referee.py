@@ -247,10 +247,16 @@ MIN_QUOTE_WORDS = 6
 MAX_CLAIMS = 6
 
 # Words are runs of letters and digits in any script (Greek variables and superscript
-# exponents included; an underscore splits words). Between two words and before the first and
+# exponents included; an underscore splits words), and a quote needs six of them. They are
+# matched as runs of letters or of digits, so a space between a letter and a digit may be added
+# or left out ("classical105" is "classical 105"). Between two words and before the first and
 # after the last word of a quote, the symbols must match the note: in ASCII-math notes
 # "b<=epsilon" and "b>=epsilon" have the same words.
-WORD = re.compile(r"[^\W_]+")
+RUN = re.compile(r"[^\W_]+")
+WORD = re.compile(r"[^\W\d_]+|\d+")
+# A markdown link's target, which a quote may leave out: a URL, an anchor or a file name, never
+# a bracket's parenthesis in mathematics such as 1_[0,1](x).
+LINK_TARGET = re.compile(r"(?<=\])\((?:[A-Za-z][\w+.-]*://[^()\s]*|#[^()\s]*|[^()\s]*\.[A-Za-z]\w{0,4}(?:#[^()\s]*)?)\)")
 EM_DASH = "—"
 DASHES = "-−–"  # hyphen, minus sign and en dash all read as a minus; a touching run of them is one
 # A dash before '>' is an arrow, never a minus; '+/-' is '±'; superscript and subscript signs are signs.
@@ -362,6 +368,11 @@ def _unmarked(text: str) -> str:
     return "\n".join(out)
 
 
+def _unlinked(text: str) -> str:
+    """`text` with each markdown link target blanked, every position kept."""
+    return LINK_TARGET.sub(lambda match: " " * len(match.group()), text)
+
+
 def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     """The note's own span for `quote`, or None and why not.
 
@@ -373,20 +384,22 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     widened to whole whitespace-delimited tokens, so the note's signs and operators next to the
     quote's first and last words are kept.
     """
+    if len(RUN.findall(quote)) < MIN_QUOTE_WORDS:
+        return None, f"quote under {MIN_QUOTE_WORDS} words"
     quoted = list(WORD.finditer(quote))
     words = [word.group().lower() for word in quoted]
-    if len(words) < MIN_QUOTE_WORDS:
-        return None, f"quote under {MIN_QUOTE_WORDS} words"
     # By em dash reading: the quote's em dashes are read as the note's are, since read apart a
     # quote's em dash could stand for a minus sign next to the note's own em dash.
     wanted = {em: (_gaps(quote, quoted, em), _symbols(quote[:quoted[0].start()], em), _symbols(quote[quoted[-1].end():], em))
               for em in ("-", "")}
-    unmarked = _unmarked(text)  # the same positions, so a span in either is a span of `text`
-    versions = (text, unmarked)
+    # Readings of the note with and without the markers and link targets a quote may leave out,
+    # all at the same positions, so a span in any of them is a span of `text`. The words are read
+    # from each too: a numbered marker and a link target hold words.
+    unmarked = _unmarked(text)
+    versions = list(dict.fromkeys((text, unmarked, _unlinked(text), _unlinked(unmarked))))
     needle = " " + " ".join(words) + " "
     found = False
-    # The words are read with the note's numbered markers (a quote that keeps them) and without.
-    for words_from in versions if unmarked != text else versions[:1]:
+    for words_from in versions:
         tokens = list(WORD.finditer(words_from))
         joined, starts = " ", {}
         for index, token in enumerate(tokens):

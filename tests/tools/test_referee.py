@@ -1102,6 +1102,33 @@ def test_find_quote_lets_a_numbered_list_marker_go() -> None:
     assert R.find_quote("The count of saved inputs is 12. Then the search stops", CODE_NOTE)[0] is not None
 
 
+def test_find_quote_takes_a_space_inside_a_glued_token_and_a_dropped_link_target() -> None:
+    # The judges are told whitespace and markdown markup may differ, yet a quote that wrote
+    # 'classical105' as 'classical 105', or left out a link's URL, was rejected.
+    note = ("Thus classical105/127 and104/127 remain verified witnesses. As [Decker and Wocjan]"
+            "(https://arxiv.org/abs/quant-ph/0703195v3) show, the walk mixes in time n2 for every input. "
+            "See the [kernel audit](NATIVE_RLWE_QUATERNION_KERNEL_AUDIT.md) for every saved case.\n"
+            "- The indicator 1_[0,1](x) is one on every saved input.\n")
+    glued = "Thus classical105/127 and104/127 remain verified witnesses"
+    decker = "As [Decker and Wocjan](https://arxiv.org/abs/quant-ph/0703195v3) show, the walk mixes in time"
+    accepted = {
+        "Thus classical 105/127 and 104/127 remain verified witnesses": glued,
+        glued: glued,
+        "As Decker and Wocjan show, the walk mixes in time": decker,
+        decker: decker,
+        "the walk mixes in time n 2 for every input": "the walk mixes in time n2 for every input",
+        "See the kernel audit for every saved case": "See the [kernel audit](NATIVE_RLWE_QUATERNION_KERNEL_AUDIT.md) for every saved case",
+        "every saved case The indicator 1_[0,1](x) is one": "every saved case.\n- The indicator 1_[0,1](x) is one",
+    }
+    for quote, span in accepted.items():
+        assert R.find_quote(quote, note)[0] == span, quote
+    # A bracket followed by a parenthesis that is no link target keeps it: '(x)' is the mathematics.
+    assert R.find_quote("The indicator 1_[0,1] is one on every saved input", note)[0] is None
+    # Six words are still runs of letters and digits: 'classical105' is one of them.
+    assert R.find_quote("Thus classical105/127 and104/127", note) == (None, "quote under 6 words")
+    assert R.find_quote("Thus classical 105/127 and 104/127", note)[0] == "Thus classical105/127 and104/127"
+
+
 def test_find_quote_never_reads_a_quotes_em_dash_as_the_notes_minus_sign() -> None:
     # The quote's em dash read as "-" while the note's was left out, so it stood in for the
     # note's own minus sign and a dropped sign passed.
