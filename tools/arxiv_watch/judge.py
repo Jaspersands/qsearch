@@ -270,17 +270,30 @@ _SHORT_PROSE = frozenset({"a", "we", "is", "of", "to", "by", "in", "an", "as", "
 
 
 def _between_operands(text: str, start: int, end: int) -> bool:
-    left = re.search(r"([^\W_]+|[)\]}])\s*$", text[:start])
-    right = re.match(r"\s*([^\W_]+|[(\[{])", text[end:])
+    atom = r"\\[A-Za-z]+|[^\W_]+(?:\.[0-9]+)*|\.[0-9]+"
+    left = re.search(rf"({atom}|[)\]}}])\s*$", text[:start])
+    right = re.match(rf"\s*({atom}|[(\[{{])", text[end:])
+    greek_names = _CASED_GREEK | {"alpha", "beta", "epsilon", "zeta", "eta", "iota", "kappa", "mu", "nu", "rho", "tau", "chi"}
+    functions = {"log", "ln", "exp", "sqrt", "sin", "cos", "tan"}
     def operand(word):
-        if word in "()[]{}" or word.isdigit() or any("GREEK" in unicodedata.name(c, "") for c in word):
+        if word.lower() in greek_names | functions or word.startswith("\\"):
+            return True
+        if word in "()[]{}" or any(c.isdigit() or "GREEK" in unicodedata.name(c, "") for c in word):
             return True
         if len(word) == 1:
             return True
         return ((len(word) <= 2 and word.lower() not in _SHORT_PROSE)
-                or (word.isupper() and len(word) <= 4)
+                or word.isupper()
                 or (not word.islower() and not word.istitle() and not word.isupper()))
-    return bool(left and right and operand(left.group(1)) and operand(right.group(1)))
+    if left and operand(left.group(1)):
+        return True
+    if right and operand(right.group(1)):
+        word = right.group(1)
+        # Preserve the established prose convention "fast—5 times faster". A spaced
+        # numeric operand, or a mathematical left context, instead retains its unary sign.
+        numeric = word[:1].isdigit() or word.startswith(".")
+        return not numeric or text[end:end + 1].isspace() or not text[:start].strip()
+    return False
 
 
 def _prose_sub(pattern: re.Pattern, replacement: str, text: str, *, protect_operands: bool = False) -> str:

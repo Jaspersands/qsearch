@@ -661,3 +661,21 @@ def test_explicit_math_is_not_markdown(formula,changed) -> None:
     source=f'We prove {formula} is the exact bound today.'
     assert _verbatim(source,source)
     assert not _verbatim(f'We prove {changed} is the exact bound today.',source)
+
+@pytest.mark.parametrize('expression', ['x – delta','alpha – beta','– 0.207','— 5','-- 3','x – threshold'])
+def test_named_and_unary_operand_dashes_cannot_disappear(expression) -> None:
+    source=f'We prove {expression} is the exact bound today.'
+    altered=re.sub(r'(?:–|—|--)\s*','',source)
+    assert _verbatim(source,source)
+    assert not _verbatim(altered,source)
+
+@pytest.mark.parametrize('left,right', [('x','threshold'),('threshold','x'),('kN','boundary'),('boundary','kN'),('alpha','beta'),('0.207','threshold'),('threshold','0.207'),('q2','threshold'),('log','x'),('', 'x'),('', '0.207'),('',r'\log n')])
+@pytest.mark.parametrize('dash', ['-', '–', '—', '--', '---', '―'])
+def test_operand_class_dash_grid(left,right,dash) -> None:
+    prefix='We prove '
+    source=f'{prefix}{left} {dash} {right} is the exact bound today.'
+    deleted=f'{prefix}{left} {right} is the exact bound today.'
+    changed=f'{prefix}{left} + {right} is the exact bound today.'
+    assert _verbatim(source,source)
+    assert not _verbatim(deleted,source)
+    assert not _verbatim(changed,source)

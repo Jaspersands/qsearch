@@ -212,7 +212,11 @@ write each, so a verdict or run recorded meanwhile is kept. A row is rejected wh
   never `2n`). So a quote with `≥` for `≤`, `0.207` for `-0.207`, `n^{1/2}` for `n^{-1/2}`,
   `ω` for `Ω` or `o(n)` for `O(n)` fails. So does one that starts or ends inside a formula or
   a hyphenated word. Inside `$...$`, `$$...$$`, `\(...\)` and `\[...\]`, clause-style
-  dashes remain mathematical signs rather than disappearing as punctuation. Cuts are refused just after an operator (a sign, `-`, `/`, `=`, `×`, `\cdot`, ...) or a
+  dashes remain mathematical signs rather than disappearing as punctuation. Bare symbols,
+  mixed-case products, Greek names and mathematical functions also protect adjacent dashes;
+  spaced numeric operands protect unary signs. The established unspaced prose convention
+  `fast—5 times faster` still permits the clause dash. This is a lexical check, not a complete
+  mathematical parser; use explicit math delimiters for ambiguous prose/formulas. Cuts are refused just after an operator (a sign, `-`, `/`, `=`, `×`, `\cdot`, ...) or a
   prefix (`√`, `\sqrt`, `\log`, `#`, a decimal point), or just before an operator or a
   factorial, percent sign or prime that follows a number or symbol. A quote that runs from one
   text into another, or comes from a record the judge was not shown, is not evidence ("quote
