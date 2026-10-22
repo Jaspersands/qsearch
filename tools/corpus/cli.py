@@ -579,7 +579,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     check = sub.add_parser(
         "check-new",
-        help="Exit 2 when a draft claim is close to a negative record, 1 when the draft cannot be read or has no words.",
+        help="Exit 2 when a draft claim is close to a negative record, 1 when the draft cannot be read or has no words "
+        "or the index has no negative record.",
     )
     source = check.add_mutually_exclusive_group(required=True)
     source.add_argument("--text", help="The draft claim.")

@@ -27,7 +27,7 @@ verdict on the idea.
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
 | `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k; `--json` gives each case's rank (null for a miss) and the count retrieved. |
 | `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
-| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6] [--allow ID]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words. |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6] [--allow ID]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words or the index has no negative record. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
 Every command except `build` first refreshes the index incrementally: it stats about
@@ -149,8 +149,10 @@ after 2026-10-04, paraphrased blind by a separate agent that saw only the claims
 ## Duplicates
 
 Two checks for negatives that say what an existing record already says
-(`duplicates.py`). Both score by TF-IDF cosine (`Corpus.cosine`, the index's own word
-unigram and bigram vectors), not by the rank-fusion score a search hit carries, so a score
+(`duplicates.py`). Both score by TF-IDF cosine on the index's own word unigram and bigram
+vectors (`check-new` with `Corpus.cosine_hits`, which scores every negative-kind document,
+and `near-duplicates` with `Corpus.matrix`, the pairwise cosines of one kind), not by the
+rank-fusion score a search hit carries, so a score
 is a similarity in [0, 1], not a rank. A threshold is compared with the cosine rounded to four
 places, the score shown, so a float32 cosine of 0.9999997 counts at `--threshold 1` (57 pairs
 show 1.000; before this rule `--threshold 1` found 18 of them). Ties in the pair report are

@@ -201,6 +201,23 @@ def _named_commands(readme: str, lead: str) -> set[str]:
     return set(re.findall(r"`([a-z-]+)`", match.group(1)))
 
 
+def test_check_new_help_names_every_exit_1_case() -> None:
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    summary = next(choice.help for choice in sub._choices_actions if choice.dest == "check-new")
+    assert "the draft cannot be read or has no words" in summary
+    assert "the index has no negative record" in summary  # cmd_check_new returns 1 on NO_NEGATIVES
+
+
+def test_readme_names_the_corpus_methods_the_duplicate_checks_call() -> None:
+    from tools.corpus import duplicates
+
+    called = set(re.findall(r"corpus\.(\w+)\(", Path(duplicates.__file__).read_text(encoding="utf-8")))
+    readme = (CLI.parent / "README.md").read_text(encoding="utf-8")
+    section = readme.split("## Duplicates")[1].split("### Calibration")[0]
+    named = set(re.findall(r"`Corpus\.(\w+)`", section))
+    assert named and named <= called, named - called
+
+
 def test_readme_names_the_commands_that_take_json_dense_and_no_refresh() -> None:
     readme = " ".join((CLI.parent / "README.md").read_text(encoding="utf-8").split())  # one line per paragraph
     sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
