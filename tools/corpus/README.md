@@ -338,11 +338,15 @@ with each evidence hit in the `search --json` shape. The MCP tool
 `classical_baselines(idea, k=5)` returns the same object.
 
 **Score.** `tokens(t)` lower-cases `t`, writes umlauts as ae/oe/ue and drops other accents,
-keeps the runs of `[a-z0-9]`, turns a final `sses`
-into `ss` and drops a final single `s` from words longer than three letters ("Gibbs" becomes
-`gibb` on both sides; "glasses" and "glass" both become `glass`), then folds a few spelling
-variants into one (`_SPELLINGS`: "colouring" is `coloring`, "Gröbner" and "Grobner" are
-`groebner`, "MaxCut" is `max cut`). A mechanism
+keeps the runs of `[a-z0-9]` and makes each word singular:
+a final `sses` becomes `ss`, a final `ies` becomes `y` in words longer than four letters
+("parities" is `parity`), "bases" is `basis` and a word ending in `sis` keeps its `s`, and
+otherwise a final single `s` is dropped from words longer than three letters ("Gibbs" becomes
+`gibb` on both sides; "glasses" and "glass" both become `glass`). It then folds a few
+spelling variants and abbreviations into one (`_SPELLINGS`: "colouring" is `coloring`,
+"Gröbner" and "Grobner" are `groebner`, "MaxCut" is `max cut`, and the notes' OPI, MQ, LPN,
+CVP and USD are the phrases the keywords spell out, so "mixed-coset OPI" matches `optimal
+polynomial intersection`). A mechanism
 keyword matches when every one of its tokens is among the idea's tokens, in any order. A `k`
 in a keyword stands for a number: such a keyword must occur in a row with a number, `k` or
 `q` in that place, so `max k cut` matches "max-3-cut" and "Max-q-Cut" but not "max cut at

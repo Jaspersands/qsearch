@@ -136,10 +136,19 @@ class Recommendation:
     evidence: list[Hit]
 
 
+# Plurals of "-sis" words, which the rules below would not undo ("bases" would be "base").
+_IRREGULAR = {"bases": "basis", "analyses": "analysis", "hypotheses": "hypothesis", "syntheses": "synthesis"}
+
+
 def _singular(word: str) -> str:
-    """'glasses' -> 'glass', 'codes' -> 'code', 'gibbs' -> 'gibb'; 'glass' and words of three letters stay."""
-    if word.endswith("sses"):
-        return word[:-2]
+    """'glasses' -> 'glass', 'parities' -> 'parity', 'bases' -> 'basis', 'codes' -> 'code',
+    'gibbs' -> 'gibb'; 'glass', 'basis' and words of three letters stay."""
+    if word in _IRREGULAR:
+        return _IRREGULAR[word]
+    if word.endswith(("sses", "sis")):
+        return word[:-2] if word.endswith("sses") else word
+    if len(word) > 4 and word.endswith("ies"):
+        return word[:-3] + "y"
     if len(word) > 3 and word.endswith("s") and not word.endswith("ss"):
         return word[:-1]
     return word
@@ -148,25 +157,35 @@ def _singular(word: str) -> str:
 # German umlauts as their usual transcription, so "Gröbner" is "Groebner"; other accents are dropped.
 _UMLAUTS = str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"})
 # One spelling per word on both sides of a match: British spellings, accent-free "Grobner",
-# and the run-together "MaxCut".
+# the run-together "MaxCut", and the abbreviations the repository's notes use for problems
+# that catalog keywords spell out ("OPI" is "optimal polynomial intersection").
 _SPELLINGS = {
     "colouring": "coloring",
     "colour": "color",
     "coloured": "colored",
     "grobner": "groebner",
     "maxcut": "max cut",
+    "opi": "optimal polynomial intersection",
+    "mq": "multivariate quadratic",
+    "lpn": "learning parity with noise",
+    "cvp": "closest vector",
+    "usd": "unambiguous state discrimination",
 }
+# Each variant's replacement as tokens, made singular like every other word ("unambiguou").
+_SPELLING_TOKENS = {word: [_singular(part) for part in spelling.split()] for word, spelling in _SPELLINGS.items()}
 # In a keyword, `k` stands for a number: "max k cut" matches "max-3-cut", "Max-q-Cut" and "max-k-cut".
 PLACEHOLDER = "k"
 
 
 def tokens(text: str) -> list[str]:
-    """Lowercase alphanumeric words, singular: "sses" becomes "ss", and a final single "s" is
-    dropped from words longer than three letters. Umlauts become ae/oe/ue and other accents
-    are dropped ("Gröbner" is `groebner`), and a few spelling variants are folded into one
-    (`_SPELLINGS`: "colouring" is `coloring`, "MaxCut" is `max cut`)."""
+    """Lowercase alphanumeric words, singular: "sses" becomes "ss", "ies" becomes "y" in words
+    longer than four letters, "bases" is `basis` and a "-sis" word keeps its s, and otherwise a
+    final single "s" is dropped from words longer than three letters. Umlauts become ae/oe/ue
+    and other accents are dropped ("Gröbner" is `groebner`), and a few spelling variants and
+    abbreviations are folded into one (`_SPELLINGS`: "colouring" is `coloring`, "MaxCut" is
+    `max cut`, "OPI" is `optimal polynomial intersection`)."""
     words = [_singular(w) for w in re.findall(r"[a-z0-9]+", _fold(text))]
-    return [part for word in words for part in _SPELLINGS.get(word, word).split()]
+    return [part for word in words for part in _SPELLING_TOKENS.get(word, [word])]
 
 
 def _fold(text: str) -> str:

@@ -147,6 +147,44 @@ def test_tokens_drop_a_plural_s_but_keep_a_double_s() -> None:
     assert tokens("is gas bias") == ["is", "gas", "bia"]  # short words kept; a single final s still dropped
 
 
+def test_tokens_fold_ies_plurals_and_bases() -> None:
+    assert tokens("learning parities with noise") == tokens("learning parity with noise")
+    assert tokens("sparse parities, signed parities") == ["sparse", "parity", "signed", "parity"]
+    assert tokens("Gröbner bases") == tokens("groebner basis") == ["groebner", "basis"]
+    assert tokens("lattice bases and analyses") == ["lattice", "basis", "and", "analysis"]
+    assert tokens("ties lies") == ["tie", "lie"]  # four letters: only the final s goes
+
+
+def test_tokens_expand_the_repository_abbreviations() -> None:
+    assert tokens("mixed-coset OPI") == ["mixed", "coset", "optimal", "polynomial", "intersection"]
+    assert tokens("MQ") == ["multivariate", "quadratic"]
+    assert tokens("LPN") == tokens("learning parity with noise")
+    assert tokens("CVP") == ["closest", "vector"]
+    assert tokens("USD") == tokens("unambiguous state discrimination") == ["unambiguou", "state", "discrimination"]
+
+
+@pytest.mark.parametrize(
+    ("idea", "baseline", "keywords"),
+    [
+        ("MQ equations where classical Gröbner bases stall", "groebner-mq", ["multivariate quadratic", "groebner basis"]),
+        ("learning parities with noise from sparse samples", "isd-pinning-fft", ["learning parity with noise"]),
+        ("LPN samples", "isd-pinning-fft", ["learning parity with noise"]),
+        ("signed parities on a polar code", "polar-sc-source-shaping", ["polar code", "signed parity"]),
+        ("DQI margin over Prange on low-rate prime-character OPI", "prange-restarts-opi", ["optimal polynomial intersection"]),
+        ("DQI for OPI on explicit RS inputs", "prange-restarts-opi", ["optimal polynomial intersection"]),
+        ("reduces to a CVP instance", "lll-babai-dcp", ["closest vector"]),
+        ("a USD decoder for signed XOR models", "usd-prange-rejection-sampler", ["unambiguous state discrimination"]),
+    ],
+)
+def test_ideas_in_the_repository_wording_match_their_keywords(
+    fake_repo: Path, idea: str, baseline: str, keywords: list[str]
+) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, idea, k=20)}
+    assert baseline in recs
+    assert set(keywords) <= set(recs[baseline].matched)
+
+
 def test_tokens_fold_accents_and_spelling_variants() -> None:
     assert tokens("Gröbner") == tokens("Gröbner") == tokens("Grobner") == tokens("Groebner") == ["groebner"]
     assert tokens("MaxCut") == tokens("Max-Cut") == ["max", "cut"]
