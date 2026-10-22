@@ -573,14 +573,17 @@ COMMANDS = (
     {
         "name": "preflight",
         "command": "python tools/preflight/preflight.py",
-        "when": "Before every commit: exit 1 lists research JSON that does not parse and CLI references to "
-                "untracked theorem modules.",
+        "when": "Before every commit: exit 1 lists research JSON that does not parse, theorems/, core/ and "
+                "qsearch_cli/ modules the CLI refers to that are missing or not tracked by git, and "
+                "research/audits/cli_manifest.json subcommands missing from the CLI registry's ORDER or listed "
+                "there under another module.",
     },
     {
         "name": "duplicates",
         "command": "python tools/corpus/cli.py check-new --file DRAFT_RECORD.json",
-        "when": "Before filing a negative: exit 2 means a retained or quarantined record already says it "
-                "(MCP check_duplicate_negative).",
+        "when": "Before filing a negative: exit 2 means a retained or quarantined record is close (TF-IDF cosine "
+                "0.6 or above). A match is a record to read, not proof: extend it, say how the draft differs, or "
+                "pass --allow ID for a sweep sibling you have read (MCP check_duplicate_negative).",
     },
 )
 

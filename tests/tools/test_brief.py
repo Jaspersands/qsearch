@@ -1050,6 +1050,20 @@ def test_commands_section_names_five_commands_that_exist() -> None:
         assert command["when"]
 
 
+def test_commands_section_says_what_check_new_and_preflight_report() -> None:
+    # check-new's exit 2 is a draft close to a record (cosine >= its default threshold), a
+    # record to read, not proof that it already says the claim. preflight checks modules in
+    # theorems/, core/ and qsearch_cli/, missing or untracked, and the CLI manifest.
+    from tools.corpus.cli import build_parser
+
+    when = {command["name"]: command["when"] for command in B.commands_section()["commands"]}
+    check_new = build_parser().parse_args(["check-new", "--text", "x"])
+    assert f"cosine {check_new.threshold} or above" in when["duplicates"]
+    assert "already says it" not in when["duplicates"] and "--allow" in when["duplicates"]
+    for needle in ("theorems/", "core/", "qsearch_cli/", "missing", "not tracked", "cli_manifest.json"):
+        assert needle in when["preflight"], needle
+
+
 def test_section_turns_an_exception_into_unavailable() -> None:
     def broken(key):
         raise KeyError(key)
