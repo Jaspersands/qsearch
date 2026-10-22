@@ -10,7 +10,8 @@ characters of its text, so the judge can compare the paper with what the project
 
 A fresh subagent reads INSTRUCTIONS.md and one batch and writes one JSONL row per paper. Import
 keeps a row only when its quote (at least six words) appears verbatim in the abstract or in the
-one excerpt it names, and never replaces a verdict recorded by anyone but a judge. Kept rows are
+one excerpt it names, as the batch showed them (DIR/out/batch_NN.jsonl is checked against
+DIR/batch_NN.json), and never replaces a verdict recorded by anyone but a judge. Kept rows are
 stored with by = "judge:NAME", copied onto the stored papers and listed in the digest's Reviewed
 table.
 """
@@ -81,12 +82,15 @@ For each paper give:
    record's `doc_id`. The quote must lie inside that one text. A quote that runs from the
    abstract into an excerpt, or from one excerpt into the next, is rejected, and so is a quote
    from a file you opened yourself. Copy the maths exactly as written: Greek letters (κ, Ω),
-   signs and operators (≤, +, -, /, !, %, #), exponents and subscripts (^, _, ², ₁), braces and
-   TeX commands (`\\Omega` is not `\\omega`, and `Omega` is not `omega`). Only spacing, the case
-   of ordinary Latin words and sentence punctuation (. , ; : ? quote marks, TeX's `$`) may
-   differ. Start and end the quote on whole words, not inside a formula: not on a number just
-   after its minus sign, not just before an exponent. Quotes are checked automatically; a
-   paper whose quote is not found gets no verdict.
+   signs and operators (≤, +, -, /, !, %, #, ×), exponents and subscripts (^, _, ², ₁), primes
+   (`W'`, `f'(x)`), decimal points, braces and TeX commands (`\\Omega` is not `\\omega`, and
+   `Omega` is not `omega`), and the case of one-letter symbols (`O(n)` is not `o(n)`, `N` is
+   not `n`). Only spacing, the case of ordinary words, and punctuation between words (. , ; : ?
+   quote marks, apostrophes, a dash between clauses, TeX's `$`) may differ. Start and end the
+   quote on whole words, not inside a formula or a hyphenated word: not just after a sign, an
+   operator, a fraction bar, a root or a function such as `\\log`, and not just before an
+   operator, an exponent, a factorial, a percent sign or a prime. Quotes are checked
+   automatically; a paper whose quote is not found gets no verdict.
 4. `action`: one line naming what a document should change (cite the paper in X, narrow
    sentence Y of note Z), or null when nothing is to be done.
 5. `confidence`: your probability (0 to 1) that the verdict is right.
@@ -163,22 +167,42 @@ def export_batches(root: Path, out_dir: Path, n_batches: int = 3, corpus: Corpus
 
 
 _LOWER_LATIN = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)
-# TeX control words (\Omega, \log), TeX control symbols (\{, \,), decimal numbers, other runs of
-# letters and digits, then any other single character.
-_TOKEN = re.compile(r"\\[A-Za-z]+|\\[^A-Za-z\s]|\d+(?:\.\d+)*(?![^\W_])|[^\W_]+|\S")
-# Sentence punctuation, quote marks, TeX's math delimiters, spacing and line breaks, and a lone
-# backslash. Everything else (signs, /, !, #, %, ^, _, braces, brackets) is maths and kept.
-_DROPPED = frozenset(".,;:?\"'`$\\") | frozenset({"\\(", "\\)", "\\[", "\\]", "\\,", "\\;", "\\:", "\\!", "\\>", "\\\\"})
+# A decimal point before its digits (".5") and a ratio's colon ("1:2"), both kept; TeX control
+# words (\Omega, \log), TeX control symbols (\{, \,), decimal numbers, other runs of letters and
+# digits, then any other single character.
+_TOKEN = re.compile(r"(?P<kept>\.(?=\d)|(?<=\d):(?=\d))|\\[A-Za-z]+|\\[^A-Za-z\s]|\d+(?:\.\d+)*|[^\W_]+|\S")
+# Sentence punctuation, quote marks, TeX's math delimiters, spacing commands and line breaks, and a
+# lone backslash. Everything else (signs, /, !, #, %, ^, _, braces, brackets, primes) is maths and kept.
+_DROPPED = frozenset(".,;:?\"'`$\\") | frozenset({
+    "\\(", "\\)", "\\[", "\\]", "\\,", "\\;", "\\:", "\\!", "\\>", "\\\\", "\\quad", "\\qquad", "\\enspace",
+    "\\enskip", "\\thinspace", "\\medspace", "\\thickspace", "\\negthinspace", "\\negmedspace",
+    "\\negthickspace", "\\space", "\\nobreakspace", "\\hfill",
+})
+# Spacing commands that take a length: \hspace{1em}, \hspace*{2pt}, \kern 1pt, \mkern3mu.
+_SPACING_WITH_LENGTH = re.compile(r"\\(?:hspace\*?|hskip|mskip|mspace|kern|mkern)\s*(?:\{[^{}]*\}|-?\d*\.?\d+\s*[a-z]{2})")
+# An em dash ("—", TeX's "---") or a spaced en dash (" – ", " -- ") between clauses is punctuation;
+# an unspaced "--" is TeX's en dash, one dash like "–" (a range, a name pair).
+_CLAUSE_DASH = re.compile(r"---|[\u2014\u2015\u2e3a\u2e3b]|(?<=\s)(?:--|\u2013)(?=\s)")
+_QUOTE_MARKS = re.compile(r"[\u2018`]+|['\u2019]+")
+_WORD_BEFORE = re.compile(r"(\\?)([^\W\d_]+)$")
 # Greek letters whose capital is another symbol; spelled out in ASCII ("Omega", "omega") they keep their case.
 _CASED_GREEK = frozenset({"gamma", "delta", "theta", "lambda", "xi", "pi", "sigma", "upsilon", "phi", "psi", "omega"})
 _SUPERSCRIPTS = "".join(chr(c) for c in range(0x3000) if unicodedata.decomposition(chr(c)).startswith("<super>"))
 _SUBSCRIPTS = "".join(chr(c) for c in range(0x3000) if unicodedata.decomposition(chr(c)).startswith("<sub>"))
 _SCRIPT_RUN = re.compile(f"[{re.escape(_SUPERSCRIPTS)}]+|[{re.escape(_SUBSCRIPTS)}]+")
-# A quote may not cut a formula: start on a number just after its sign or fraction bar, or end
-# just before an exponent or subscript, or on a number just before /, ! or %.
-_CUT_BEFORE_NUMBER = frozenset({"-", "+", "±", "∓", "/", "^", "_"})
-_CUT_AFTER = frozenset({"^", "_"})
-_CUT_AFTER_NUMBER = frozenset({"/", "!", "%"})
+# A quote may not cut a formula: start just after an operator or a prefix (a root, a function, a
+# font, a decimal point, #), or end just before an operator, or before a postfix (factorial,
+# percent, prime) that follows a number or symbol. A hyphen counts: half a compound is a cut too.
+_OPERATORS = frozenset("-+±∓/^_=<>≤≥≠≈∼≪≫·⋅×*÷∘⊗⊕:") | frozenset({
+    "\\pm", "\\mp", "\\times", "\\cdot", "\\div", "\\circ", "\\otimes", "\\oplus", "\\le", "\\leq", "\\ge",
+    "\\geq", "\\neq", "\\ne", "\\approx", "\\sim", "\\ll", "\\gg", "\\lt", "\\gt", "\\equiv", "\\propto",
+})
+_PREFIXES = frozenset("√∛.#") | frozenset({
+    "\\sqrt", "\\log", "\\ln", "\\exp", "\\frac", "\\tilde", "\\widetilde", "\\hat", "\\widehat", "\\bar",
+    "\\overline", "\\mathbb", "\\mathcal", "\\mathrm", "\\mathbf", "\\mathsf", "\\mathfrak", "\\operatorname",
+    "\\Pr", "\\det", "\\sin", "\\cos",
+})
+_POSTFIXES = frozenset("!%′")
 
 
 def _as_tex(match: re.Match) -> str:
@@ -189,21 +213,58 @@ def _as_tex(match: re.Match) -> str:
     return f"{mark}{body}" if len(body) == 1 else f"{mark}{{{body}}}"
 
 
+def _primes(text: str) -> str:
+    """Write each ASCII ' or ’ that marks a prime as ′, so "W'" matches "W′" and not "W".
+
+    A run of them is a prime after a digit, a closing bracket, a one-letter symbol or a TeX control
+    word (W', f''(x), (x+y)', \\alpha'). It is an apostrophe inside a word (Shor's) or after a longer
+    one (the players'), and a quote mark when it opens a quotation (after a space or an opening
+    bracket) or closes one opened by ‘, ` or '; those stay and are dropped as punctuation.
+    """
+    out, last, quoting = [], 0, False
+    for match in _QUOTE_MARKS.finditer(text):
+        run, start, end = match.group(0), match.start(), match.end()
+        before = text[start - 1] if start else " "
+        after = text[end] if end < len(text) else " "
+        if run[0] in "‘`" or before.isspace() or before in "([{\"“":
+            quoting = True
+        elif len(run) == 1 and before.isalpha() and after.isalpha():
+            pass  # an apostrophe inside a word
+        elif quoting:
+            quoting = False
+        else:
+            word = _WORD_BEFORE.search(text[max(0, start - 60) : start])
+            if before.isdigit() or before in ")]}′" or (word and (word.group(1) or len(word.group(2)) == 1)):
+                out += [text[last:start], "′" * len(run)]
+                last = end
+    return "".join(out) + text[last:]
+
+
 def _tokens(text: str) -> list[str]:
     """Words, numbers and symbols for the verbatim check.
 
     Superscripts and subscripts are first written as TeX exponents and subscripts ("2ⁿ" is
     "2^n"), then the text is NFKC-normalised. Dropped: spacing, sentence punctuation (. , ; : ?),
-    quote marks, TeX's $, \\( \\), \\[ \\] and spacing commands, and markdown's ** bold. Every
-    other symbol is its own token, and every dash and the minus sign read as "-". Latin letter
-    case is ignored in words, but not in TeX control words (\\Omega, \\omega) or in the spelled-out
-    names of Greek letters with their own capital (Omega, omega). So "κ ≤ 0.207" and "κ≤0.207,"
-    match, but "κ ≥ 0.207", "0.207" for "-0.207", "n^{1/2}" for "n^{-1/2}", "2n" for "2ⁿ" or
-    "\\omega" for "\\Omega" do not.
+    quote marks and apostrophes, an em dash or spaced en dash between clauses, TeX's $, \\( \\),
+    \\[ \\] and spacing commands (\\, \\quad \\hspace{1em} ...), and markdown's ** bold. Every other
+    symbol is its own token: every other dash and the minus sign read as "-", an ASCII prime as
+    ′ (see _primes), and a decimal point before its digits (".5") and a ratio's colon ("1:2") are
+    kept. Latin letter case is ignored in words of two or more letters and in the word "a", but
+    not in other one-letter symbols (O, N, d, I), TeX control words (\\Omega, \\omega) or the
+    spelled-out names of Greek letters with their own capital (Omega, omega). Whether a letter
+    sits inside TeX maths does not matter, since a quote may drop the $ or start inside a formula.
+    So "κ ≤ 0.207" and "κ≤0.207," match, but "κ ≥ 0.207", "0.207" for "-0.207", "n^{1/2}" for
+    "n^{-1/2}", "2n" for "2ⁿ", "o(n)" for "O(n)", "W" for "W'" or "\\omega" for "\\Omega" do not.
     """
     text = unicodedata.normalize("NFKC", _SCRIPT_RUN.sub(_as_tex, text))
+    text = _SPACING_WITH_LENGTH.sub(" ", re.sub(r"\*{2,}", " ", text))
+    text = _primes(_CLAUSE_DASH.sub(" ", text).replace("--", "-"))
     tokens = []
-    for token in _TOKEN.findall(re.sub(r"\*{2,}", " ", text)):
+    for match in _TOKEN.finditer(text):
+        token = match.group(0)
+        if match.lastgroup == "kept":
+            tokens.append(token)
+            continue
         if token in _DROPPED:
             continue
         if len(token) == 1 and not token.isalnum():
@@ -214,22 +275,27 @@ def _tokens(text: str) -> list[str]:
                 token = "-"
         elif token[0] != "\\":
             lower = token.translate(_LOWER_LATIN)
-            token = lower.capitalize() if lower in _CASED_GREEK and token[0].isupper() else lower
+            if lower in _CASED_GREEK and token[0].isupper():
+                token = lower.capitalize()
+            elif len(token) > 1 or lower == "a":  # the article; any other one-letter symbol keeps its case
+                token = lower
         tokens.append(token)
     return tokens
 
 
-def _is_number(token: str) -> bool:
-    return token[:1].isdigit()
+def _operand(token: str) -> bool:
+    """What a postfix binds: a number, a one-letter symbol, a TeX command, a closing bracket or a prime."""
+    return token[:1].isdigit() or token[:1] == "\\" or (len(token) == 1 and token.isalpha()) or token in (")", "]", "}", "′")
 
 
 def _cuts_a_formula(source: list[str], start: int, end: int) -> bool:
     before = source[start - 1] if start else ""
     after = source[end] if end < len(source) else ""
     return (
-        (before in _CUT_BEFORE_NUMBER and _is_number(source[start]))
-        or after in _CUT_AFTER
-        or (after in _CUT_AFTER_NUMBER and _is_number(source[end - 1]))
+        before in _OPERATORS
+        or before in _PREFIXES
+        or after in _OPERATORS
+        or (after in _POSTFIXES and _operand(source[end - 1]))
     )
 
 
@@ -252,9 +318,37 @@ def _confidence(value) -> float | None:
         return None
     try:
         number = float(value)
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):  # OverflowError: an integer too large for a float
         return None
     return max(0.0, min(1.0, number)) if math.isfinite(number) else None
+
+
+_BATCH_OUTPUT = re.compile(r"batch_\d+")
+
+
+def _shown(path: Path) -> dict[str, dict] | None:
+    """The papers in the batch an output answers ({arxiv_id: item}), or None when there is none.
+
+    The documented layout puts DIR/batch_NN.json's answers in DIR/out/batch_NN.jsonl.
+    """
+    batch = path.parent.parent / f"{path.stem}.json"
+    if not _BATCH_OUTPUT.fullmatch(path.stem) or not batch.is_file():
+        return None
+    data = json.loads(batch.read_text(encoding="utf-8"))
+    papers = data.get("papers") if isinstance(data, dict) else None
+    if not isinstance(papers, list) or not all(isinstance(item, dict) for item in papers):
+        raise ValueError(f"{batch}: not a batch file (no list of papers)")
+    return {item.get("arxiv_id"): item for item in papers}
+
+
+def _quoted_text(item: dict, quote_from: str) -> str:
+    """The abstract or the excerpt `quote_from` names, as the batch item showed it."""
+    if quote_from == "abstract":
+        return str(item.get("abstract") or "")
+    for near in item.get("nearest") or []:
+        if isinstance(near, dict) and near.get("doc_id") == quote_from:
+            return str(near.get("excerpt") or "")
+    return ""
 
 
 def import_judgements(
@@ -266,13 +360,18 @@ def import_judgements(
     before anything is written: an unknown verdict, or an arxiv_id that is missing or not a stored
     paper, raises ValueError, and so does nothing get written when the corpus cannot be opened to
     check an excerpt quote. A quote is looked for only in the one text `quote_from` names: the
-    abstract, or the excerpt of one of the paper's nearest records. The accepted rows are then
+    abstract, or the excerpt of one of the paper's nearest records. Those are the texts the judge
+    was shown when its output sits where the README puts it (DIR/out/batch_NN.jsonl beside
+    DIR/batch_NN.json, which holds the paper), so a record edited since the export changes
+    nothing; otherwise they are the stored abstract and today's excerpt. The accepted rows are then
     merged into fresh copies of the verdicts and collisions files in one write each, so a verdict
     or a run recorded meanwhile is kept, and a person's verdict recorded meanwhile still wins.
     """
     root = Path(root)
     state = _load_state(root)
-    rows = [(path, row) for path in paths for row in _rows(Path(path))]
+    paths = [Path(path) for path in paths]
+    rows = [(path, row) for path in paths for row in _rows(path)]
+    shown = {path: _shown(path) for path in paths}
     for path, row in rows:
         if not isinstance(row, dict):
             raise ValueError(f"{path}: each row must be a JSON object, not {row!r:.80}")
@@ -283,14 +382,17 @@ def import_judgements(
     existing = load_verdicts(root)["verdicts"]
     rejected: list[dict] = []
     accepted: dict[str, dict] = {}
-    for _, row in rows:
+    for path, row in rows:
         arxiv_id = row["arxiv_id"]
         record = state["papers"][arxiv_id]
         if arxiv_id in existing and not by_judge(existing[arxiv_id]):
             rejected.append({"arxiv_id": arxiv_id, "why": "human verdict exists"})
             continue
         quote, quote_from = str(row.get("quote") or ""), str(row.get("quote_from") or "abstract")
-        if quote_from == "abstract":
+        item = (shown[path] or {}).get(arxiv_id)
+        if item is not None:
+            source = _quoted_text(item, quote_from)
+        elif quote_from == "abstract":
             source = record.get("abstract", "")
         elif quote_from in {near["doc_id"] for near in record.get("nearest", [])}:
             corpus = corpus or _corpus(root)

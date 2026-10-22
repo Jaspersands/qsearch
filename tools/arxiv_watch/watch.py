@@ -37,7 +37,7 @@ if __package__ in (None, ""):
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
 from tools.arxiv_watch.verdicts import (  # noqa: E402
-    VERDICTS, VERDICTS_FILE, by_judge, load_verdicts, mark_action_done, normalize_id, set_verdict,
+    VERDICTS, VERDICTS_FILE, by_judge, load_verdicts, mark_action_done, normalize_id, set_verdict, verdict_entry,
 )
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
@@ -303,6 +303,8 @@ def checkout_error(root: Path) -> str | None:
 
 
 def _since_for(state: dict, name: str, today: str) -> str:
+    """A track's usual window start: a week before its own last fetch. A track with no date of its
+    own (a state written before per-track dates) last ran no later than `updated`."""
     last = (state.get("tracks_updated") or {}).get(name) or state.get("updated")
     if last:
         return (dt.date.fromisoformat(last) - dt.timedelta(days=OVERLAP_DAYS)).isoformat()
@@ -341,9 +343,11 @@ def run(
 
     fetched: dict[str, tuple[Paper, set[str]]] = {}
     windows: dict[str, str] = {}
+    usual: dict[str, str] = {}
     report = RunReport()
     for name, track in tracks.items():
-        start = since or _since_for(state, name, today)
+        usual[name] = _since_for(state, name, today)
+        start = since or usual[name]
         windows[name] = start
         papers, cut = fetch_track(client, track.arxiv_query(), start, page_size, max_pages)
         if cut is not None:
@@ -404,8 +408,16 @@ def run(
         changed = True
 
     if changed:
+        # Every track gets a date of its own before `updated` moves, so a run of some tracks never
+        # shrinks another's window. A track whose --since started after its usual start keeps its
+        # date, so its next run still fetches the days this one skipped.
+        dates = state.get("tracks_updated") or {}
+        if state.get("updated"):
+            for name in sorted({*TRACKS, *tracks}):
+                dates.setdefault(name, state["updated"])
+        dates.update({name: today for name in tracks if windows[name] <= usual[name]})
+        state["tracks_updated"] = dates
         state["updated"] = today
-        state.setdefault("tracks_updated", {}).update({name: today for name in tracks})
         _save(root, state)
         report.saved = True
     else:
@@ -434,7 +446,8 @@ def _cell(text) -> str:
 def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = None) -> str:
     """The markdown digest. `verdicts` (arXiv id -> entry) drives the Reviewed table, and papers
     with a person's verdict leave the possible-kill and possible-scoop sections; a flagged paper
-    with only a judge's verdict stays there with "judge: VERDICT" in its cues."""
+    with only a judge's verdict stays there with "judge: VERDICT" in its cues. Those two sections
+    list every paper; Related lists the newest `per_section` and counts the rest."""
     verdicts = verdicts or {}
     papers = sorted(state["papers"].values(), key=lambda p: (p["published"], p["arxiv_id"]), reverse=True)
     counts = {label: sum(p["label"] == label for p in papers) for label in LABEL_ORDER}
@@ -476,13 +489,14 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
             p for p in papers
             if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts and not by_judge(verdicts[p["arxiv_id"]]))
         ]
-        section = section[:per_section]
+        # Every flag is listed, however long the backlog: the oldest unreviewed kill matters most.
+        shown = section if label in FLAGGED else section[:per_section]
         lines += [f"## {heading}", ""]
-        if not section:
+        if not shown:
             lines += ["None yet.", ""]
             continue
         lines += ["| Date | Paper | Tracks | Cues | Nearest Q-Search record |", "|---|---|---|---|---|"]
-        for p in section:
+        for p in shown:
             nearest = p["nearest"][0] if p["nearest"] else None
             near = f"`{nearest['doc_id']}` ({nearest['location']})" if nearest else ""
             title = p["title"].replace("|", "/")
@@ -493,6 +507,8 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
                 f"| {p['published']} | [{p['arxiv_id']}]({p['url']}) {title} | {', '.join(p['tracks'])} | {cues} | {near} |"
             )
         lines.append("")
+        if len(section) > len(shown):
+            lines += [f"And {len(section) - len(shown)} more {label} papers, older, in `research/audits/arxiv_collisions.json`.", ""]
     lines += ["## Reviewed", ""]
     if not verdicts:
         lines += ["None yet.", ""]
@@ -537,23 +553,55 @@ def replay_seeds(root: Path) -> dict:
     return {"checked": checked, "matched": matched, "misses": misses}
 
 
+def _iso_date(text: str) -> str:
+    """A YYYY-MM-DD date, compared as text with arXiv's `published` dates."""
+    try:
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
+            return dt.date.fromisoformat(text).isoformat()
+    except ValueError:
+        pass
+    raise argparse.ArgumentTypeError(f"expected a date such as 2026-09-18, not {text!r}")
+
+
+def _positive(text: str) -> int:
+    try:
+        value = int(text)
+    except ValueError:
+        value = 0
+    if value < 1:
+        raise argparse.ArgumentTypeError(f"expected a whole number of at least 1, not {text!r}")
+    return value
+
+
+def _track_names(text: str) -> list[str]:
+    """Comma-separated track names; spaces and empty names are ignored."""
+    names = [name.strip() for name in text.split(",") if name.strip()]
+    unknown = [name for name in names if name not in TRACKS]
+    if not names or unknown:
+        raise argparse.ArgumentTypeError(f"unknown track {', '.join(unknown) or text!r}; choose from {', '.join(TRACKS)}")
+    return names
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
-    parser.add_argument("--since", help=f"ISO date; default is {OVERLAP_DAYS} days before each track's last run.")
-    parser.add_argument("--tracks", help=f"Comma list from: {', '.join(TRACKS)}")
-    parser.add_argument("--max", type=int, default=PAGE_SIZE, help="Results per page of a track query.")
-    parser.add_argument("--max-pages", type=int, default=MAX_PAGES, help="Pages per track query before reporting a gap.")
+    parser.add_argument("--since", type=_iso_date, help=f"ISO date; default is {OVERLAP_DAYS} days before each track's last run.")
+    parser.add_argument("--tracks", type=_track_names, help=f"Comma list from: {', '.join(TRACKS)}")
+    parser.add_argument("--max", type=_positive, default=PAGE_SIZE, help="Results per page of a track query.")
+    parser.add_argument("--max-pages", type=_positive, default=MAX_PAGES, help="Pages per track query before reporting a gap.")
     parser.add_argument("--replay-seeds", action="store_true")
     parser.add_argument("--relabel", action="store_true", help="Recompute labels for stored papers; no fetching.")
     parser.add_argument(
         "--verdict", nargs=2, metavar=("ARXIV_ID", "VERDICT"),
         help=f"Record a reviewed verdict ({', '.join(VERDICTS)}) and re-render the digest; no fetching.",
     )
-    parser.add_argument("--reason", default="", help="With --verdict: why, in a sentence or two.")
+    parser.add_argument(
+        "--reason",
+        help="With --verdict: why, in a sentence or two. Left out, a person's verdict re-recorded unchanged keeps its reason.",
+    )
     parser.add_argument(
         "--action",
-        help='With --verdict: what a named document should change. Left out, a re-recorded verdict keeps its earlier action; "" clears it.',
+        help='With --verdict: what a named document should change. Left out, a person\'s re-recorded verdict keeps its earlier action; "" clears it.',
     )
     parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
     parser.add_argument(
@@ -574,18 +622,41 @@ def main(argv: list[str] | None = None) -> int:
             print(f"error: {error}", file=sys.stderr)
             return 2
     if args.verdict or args.action_done:
-        kept = False
+        notes: list[str] = []
         try:
             state = _load_state(args.root)
             if args.verdict:
                 raw_id, verdict = args.verdict
                 arxiv_id = normalize_id(raw_id)
+                verdict_entry(verdict, "", args.by)  # an unknown verdict is reported before a missing reason
                 previous = load_verdicts(args.root)["verdicts"].get(arxiv_id) or {}
-                action = args.action
-                if action is None and previous.get("action"):  # re-recorded without --action: keep the earlier one
-                    action, kept = previous["action"], True
-                done = bool(previous.get("action_done")) and action == previous.get("action")
-                set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=action, action_done=done)
+                # Only a person's own earlier entry is carried over: a judge's reason and action
+                # are one model's reading, not the person's.
+                own = bool(previous) and not by_judge(previous)
+                reason, action = args.reason, args.action
+                if reason is None:
+                    if own and previous.get("verdict") == verdict and previous.get("reason"):
+                        reason = previous["reason"]
+                        notes.append("kept the earlier reason (--reason replaces it)")
+                    elif previous.get("reason"):
+                        raise ValueError(
+                            f"{arxiv_id} has a {previous.get('verdict')} verdict by {previous.get('by') or 'hand'} "
+                            "with its own reason; give --reason for this one"
+                        )
+                    else:
+                        reason = ""
+                if action is None and previous.get("action"):
+                    if own:
+                        action = previous["action"]
+                    else:
+                        notes.append(f"did not keep the judge's action ({previous['action']}); give --action to adopt it")
+                done = own and bool(previous.get("action_done")) and action == previous.get("action")
+                if own and args.action is None and action:
+                    notes.append(
+                        f"kept the earlier action ({action}) and whether it was done ({'done' if done else 'not done'});"
+                        ' --action "" clears it'
+                    )
+                set_verdict(args.root, arxiv_id, verdict, reason, args.by, action=action, action_done=done)
                 outcome = verdict
             else:
                 arxiv_id = normalize_id(args.action_done)
@@ -598,8 +669,8 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         stored = "" if arxiv_id in state["papers"] else " (not in the collisions file yet)"
         print(f"{arxiv_id}: {outcome}{stored}; digest re-rendered")
-        if kept:
-            print('kept the earlier action and whether it was done (--action "" clears it)')
+        for note in notes:
+            print(note)
         return 0
     if args.relabel:
         corpus = Corpus(args.root)
@@ -611,7 +682,7 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(result, indent=2))
         print(f"\n{result['matched']}/{result['checked']} seed papers land on a track their tags name.")
         return 0
-    tracks = {name: TRACKS[name] for name in args.tracks.split(",")} if args.tracks else TRACKS
+    tracks = {name: TRACKS[name] for name in args.tracks} if args.tracks else TRACKS
     corpus = Corpus(args.root)
     corpus.refresh()
     report = run(args.root, Client(), corpus, since=args.since, tracks=tracks, page_size=args.max, max_pages=args.max_pages)

@@ -64,7 +64,7 @@ def load_verdicts(root: Path) -> dict:
         data = read_json(path)
     except ValueError as error:
         raise ValueError(f"{VERDICTS_FILE}: not valid JSON ({error})") from error
-    if not isinstance(data, dict) or not isinstance(data.setdefault("verdicts", {}), dict):
+    if not isinstance(data, dict) or not isinstance(data.get("verdicts"), dict):  # {} or a misspelled key too
         raise ValueError(f'{VERDICTS_FILE}: expected an object {{"verdicts": {{arXiv id: entry, ...}}}}')
     verdicts: dict[str, dict] = {}
     keys: dict[str, str] = {}

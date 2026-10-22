@@ -239,6 +239,25 @@ CHANGED_MATHS = [
     ("is 0.207", "is 0"),  # a decimal is one number
     ("is x_{ij}", "is x{ij}"),
     ("is $2^{n-1}$", "is $2^n - 1$"),  # braces group
+    # A one-letter symbol keeps its case (only the word "a" does not).
+    ("uses O(n) queries", "uses o(n) queries"),
+    ("is N = 2^n", "is n = 2^n"),
+    ("is $\\log N$", "is $\\log n$"),
+    ("is $\\mathbb{N}$", "is $\\mathbb{n}$"),
+    ("has d = 3", "has D = 3"),
+    ("is $I - P$", "is $i - P$"),
+    # A prime is maths: dropped, added or moved, it changes the formula.
+    ("is $W'$", "is $W$"),
+    ("is f'(x)", "is f(x)"),
+    ("is H' of G", "is H of G"),
+    ("is n' >= n", "is n >= n'"),
+    ("is f''(x)", "is f'(x)"),
+    ("is $\\alpha'$", "is $\\alpha$"),
+    ("is (x+y)' here", "is (x+y) here"),
+    # A decimal point is part of its number, and a ratio's colon is maths.
+    ("is 2.5x", "is 2, 5x"),
+    ("is .5", "is 5"),
+    ("is 1:2", "is 1 2"),
 ]
 
 # (source, quote): spacing, Latin letter case in words, sentence punctuation, TeX's math delimiters and
@@ -253,6 +272,23 @@ SAME_MATHS = [
     ("is $O(n\\,\\log n)$", "is $O(n \\log n)$"),
     ("is “hard” here", 'is "hard" here'),
     ("is **hard** here", "is hard here"),
+    ("is ‘hard’ here", "is 'hard' here"),
+    ("is ``hard'' here", 'is "hard" here'),
+    ("is A hard one", "is a hard one"),  # the word a, not a symbol
+    ("is $(I-O(\\log n))$ bits", "is (I-O(\\log n)) bits"),  # with or without TeX's $
+    ("is $O(n)$ bits", "is O(n)$ bits"),  # or from inside a formula
+    ("is Shor's and the players' choice", "is Shor’s and the players’ choice"),  # apostrophes are not primes
+    ("is Bayes' rule", "is Bayes rule"),
+    ("is O'Donnell's bound", "is O Donnell's bound"),  # nor is one after a one-letter word inside a name
+    ("is ``P'' here", 'is "P" here'),  # a quoted letter keeps no prime
+    ("is f′(x)", "is f'(x)"),  # an ASCII prime is a prime
+    ("is 2.9x", "is 2.9 x"),
+    ("is $a \\quad b \\qquad c$", "is $a b c$"),  # TeX spacing commands
+    ("is $a\\hspace{1em}b$", "is $a b$"),
+    ("is fast—so", "is fast, so"),  # an em dash between clauses is punctuation
+    ("is fast---so", "is fast so"),
+    ("is fast -- so", "is fast so"),
+    ("is Erdős--Rényi", "is Erdős–Rényi"),  # a range or name-pair dash is one dash however it is typed
 ]
 
 
@@ -273,6 +309,43 @@ def test_quote_may_not_start_or_end_inside_a_formula() -> None:
     assert not _verbatim("0.207 for every instance and it decays", source)  # the sign is cut off
     assert not _verbatim("for every instance and it decays as n", source)  # the exponent is cut off
     assert _verbatim("for every instance and it decays as n^{-1/2}", source)
+
+
+# (source, quote): the quote appears verbatim in the source but starts or ends inside a formula.
+FORMULA_CUTS = [
+    ("so the bound is -n log n for every instance", "n log n for every instance"),  # a sign before a letter
+    ("we show that the algorithm needs n! queries", "we show that the algorithm needs n"),  # a factorial
+    ("we show that the algorithm needs 5! queries", "we show that the algorithm needs 5"),
+    ("we show that the algorithm needs n/2 queries", "we show that the algorithm needs n"),  # a fraction bar
+    ("we prove that it fails on 2/3 of the instances", "we prove that it fails on 2"),
+    ("it fails on 2/3 of the instances in the family", "3 of the instances in the family"),
+    ("we prove that it fails on 50% of the instances", "we prove that it fails on 50"),  # a percent sign
+    ("we prove that the ratio is 1 - 1/e here", "we prove that the ratio is 1"),  # a minus between terms
+    ("we show that it gains a factor of 3 × 10^5 here", "we show that it gains a factor of 3"),  # a product
+    ("we show that it gains a factor of 3 \\times 10^5 here", "we show that it gains a factor of 3"),
+    ("we show that it gains a factor of 3 \\cdot 10^5 here", "we show that it gains a factor of 3"),
+    ("we prove the claim when n = 5 for all instances", "we prove the claim when n"),  # an equation
+    ("only √n queries suffice for every instance here", "n queries suffice for every instance here"),  # a root
+    ("only \\sqrt n queries suffice for every instance here", "n queries suffice for every instance here"),
+    ("about n \\log n queries suffice for every instance here", "n queries suffice for every instance here"),  # a function
+    ("a ratio of $(1-1/e)$ for every instance in the family", "e)$ for every instance in the family"),
+    ("we find that only .5 of the instances are hard", "5 of the instances are hard"),  # a leading decimal point
+    ("we find a ratio of 1:2 of the instances are hard", "2 of the instances are hard"),  # a ratio
+    ("we prove that the subgroup H' of G is normal", "we prove that the subgroup H"),  # a prime
+    ("here we give a new quantum-inspired algorithm", "here we give a new quantum"),  # half a hyphenated word
+]
+
+
+@pytest.mark.parametrize(("source", "quote"), FORMULA_CUTS, ids=[quote for _, quote in FORMULA_CUTS])
+def test_quote_that_cuts_a_formula_is_not_verbatim(source: str, quote: str) -> None:
+    assert quote.replace("$", "") in source.replace("$", "") or quote in source
+    assert not _verbatim(quote, source)
+
+
+def test_quote_may_start_after_a_clause_dash_and_end_before_an_exclamation() -> None:
+    source = "it is fast—5 times faster than belief propagation on every instance, and it works!"
+    assert _verbatim("5 times faster than belief propagation on every instance", source)
+    assert _verbatim("on every instance, and it works", source)
 
 
 def test_quote_must_match_whole_words_and_count_six_of_them() -> None:
@@ -296,10 +369,19 @@ def test_batch_shows_symbols_as_stored_so_a_copied_quote_is_accepted(math_flag: 
 @pytest.mark.parametrize(
     ("value", "stored"),
     [(0.7, 0.7), ("0.3", 0.3), (1.5, 1.0), (-0.2, 0.0), (1, 1.0), ("nan", None), (float("nan"), None), ("inf", None),
-     (float("-inf"), None), (True, None), (False, None), ("sure", None), (None, None)],
+     (float("-inf"), None), (True, None), (False, None), ("sure", None), (None, None), (10**400, None), (-(10**400), None)],
 )
 def test_confidence_is_a_clamped_finite_number_or_null(value, stored) -> None:
     assert _confidence(value) == stored
+
+
+def test_a_huge_integer_confidence_is_stored_as_null(watched: tuple[Path, Corpus], tmp_path: Path, capsys) -> None:
+    root, _ = watched
+    row = json.dumps(_row("2610.11111", "A classical algorithm for quantum product readout")).replace("0.7", "1" + "0" * 400)
+    (tmp_path / "huge.jsonl").write_text(row + "\n", encoding="utf-8")
+    assert main(["--root", str(root), "--import", str(tmp_path / "huge.jsonl"), "--judge", "t"]) == 0
+    assert "imported 1 verdicts" in capsys.readouterr().out
+    assert load_verdicts(root)["verdicts"]["2610.11111"]["confidence"] is None
 
 
 def test_bare_nan_confidence_is_stored_as_null(watched: tuple[Path, Corpus], tmp_path: Path) -> None:
@@ -314,6 +396,67 @@ def _excerpt_row(root: Path, corpus: Corpus, arxiv_id: str = "2610.11111") -> di
     """A row whose quote comes from the first nearest record's excerpt, so checking it needs the corpus."""
     doc_id = _load_state(root)["papers"][arxiv_id]["nearest"][0]["doc_id"]
     return _row(arxiv_id, " ".join(corpus.get(doc_id).text[:600].split()[2:9]), doc_id)
+
+
+def test_excerpt_quotes_are_checked_against_the_excerpt_the_judge_was_shown(
+    watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch
+) -> None:
+    from tools.arxiv_watch import judge
+
+    root, corpus = watched
+    out = tmp_path / "judge"
+    [batch] = export_batches(root, out, corpus=corpus)
+    shown = json.loads(batch.read_text(encoding="utf-8"))["papers"][0]["nearest"][0]
+    faithful = _row("2610.11111", " ".join(shown["excerpt"].split()[2:9]), shown["doc_id"])
+    later = "This record was rewritten after the export and says something else entirely now."
+    monkeypatch.setattr(judge, "_excerpt", lambda corpus, doc_id: later)  # the record changes before the import
+    (out / "out").mkdir()
+    rows = _jsonl(out / "out" / "batch_01.jsonl", [faithful])
+    assert import_judgements(root, [rows], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    unseen = _row("2610.11111", later, shown["doc_id"])  # verbatim in today's text, which the judge never saw
+    rows = _jsonl(out / "out" / "batch_01.jsonl", [unseen])
+    assert import_judgements(root, [rows], "test", corpus=corpus)["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
+    other = json.loads(batch.read_text(encoding="utf-8"))["papers"][0]["nearest"][1]["doc_id"]
+    misnamed = {**faithful, "quote_from": other}  # the right words credited to the next record shown
+    rows = _jsonl(out / "out" / "batch_01.jsonl", [misnamed])
+    assert import_judgements(root, [rows], "test", corpus=corpus)["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
+    # Without its batch file beside the output, a row is checked against today's text.
+    assert import_judgements(root, [_jsonl(tmp_path / "loose.jsonl", [unseen])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+
+
+def test_abstract_quotes_are_checked_against_the_abstract_the_judge_was_shown(
+    watched: tuple[Path, Corpus], tmp_path: Path
+) -> None:
+    root, corpus = watched
+    out = tmp_path / "judge"
+    export_batches(root, out, corpus=corpus)
+    state = _load_state(root)
+    state["papers"]["2610.11111"]["abstract"] = "A second version replaced the abstract with entirely different words after the export."
+    (root / "research" / "audits" / "arxiv_collisions.json").write_text(json.dumps(state), encoding="utf-8")
+    (out / "out").mkdir()
+    shown = _row("2610.11111", "A classical algorithm for quantum product readout")
+    assert import_judgements(root, [_jsonl(out / "out" / "batch_01.jsonl", [shown])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    unseen = _row("2610.11111", "replaced the abstract with entirely different words")
+    result = import_judgements(root, [_jsonl(out / "out" / "batch_01.jsonl", [unseen])], "test", corpus=corpus)
+    assert result["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
+
+
+def test_only_a_batch_named_like_the_output_is_read_and_a_broken_one_stops_the_import(
+    watched: tuple[Path, Corpus], tmp_path: Path
+) -> None:
+    root, corpus = watched
+    row = _row("2610.11111", "A classical algorithm for quantum product readout")
+    (tmp_path / "results.json").write_text("[1, 2]", encoding="utf-8")  # not a batch, and not named like one
+    (tmp_path / "out").mkdir()
+    assert import_judgements(root, [_jsonl(tmp_path / "out" / "results.jsonl", [row])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    before = (root / VERDICTS_FILE).read_bytes()
+    (tmp_path / "batch_02.json").write_text('{"batch": 2}', encoding="utf-8")
+    with pytest.raises(ValueError, match="not a batch file"):
+        import_judgements(root, [_jsonl(tmp_path / "out" / "batch_02.jsonl", [row])], "test", corpus=corpus)
+    (tmp_path / "batch_02.json").write_text('{"papers": [', encoding="utf-8")
+    with pytest.raises(ValueError):
+        import_judgements(root, [_jsonl(tmp_path / "out" / "batch_02.jsonl", [row])], "test", corpus=corpus)
+    assert (root / VERDICTS_FILE).read_bytes() == before
 
 
 def test_import_writes_nothing_when_a_later_row_fails(watched: tuple[Path, Corpus], tmp_path: Path, monkeypatch, capsys) -> None:
