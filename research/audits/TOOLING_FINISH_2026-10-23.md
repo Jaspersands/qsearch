@@ -7,8 +7,9 @@ work, not rejected findings. No round-three fixers had completed before the hand
 
 Work was completed in a full local clone outside iCloud. The Desktop source, its four
 historical worktrees, and the in-progress project migration were preserved. The migration
-worker was paused while making the local clone, then resumed. Nothing has been merged
-to main or pushed by this continuation.
+worker was paused while making the local clone, then resumed. At completion of the local
+audit, the branch had not been merged or pushed. The user subsequently approved both;
+publication checks are recorded below.
 
 ## Scope and disposition
 
@@ -68,8 +69,8 @@ They were fixed before final verification; the audit does not count that run as 
 ## Validation
 
 - `python -m pytest -q tests/tools --durations=10`: **1,515 passed in 96.20 seconds**
-  on final code head `da26d045`, including the regenerated outputs. No test was skipped
-  or left failing in that run. Later changes only finish this audit record.
+  on local-audit code head `da26d045`, including the regenerated outputs. No test was
+  skipped or left failing in that run.
 
 - `python tools/preflight/preflight.py --imports --validate --json`: zero problems.
 - Full lexical corpus rebuild: 2,233 source files and 10,614 documents; held-out retrieval
@@ -83,6 +84,26 @@ They were fixed before final verification; the audit does not count that run as 
   34 reviewed, 27 flagged, seven sound, zero stale.
 - `git diff --check`: clean. Remote main was fetched at `f18baf61` and is an ancestor
   of this branch. The 261 commits from main through round-two head are preserved.
+
+## Publication checks
+
+The user approved merging and pushing. Main was fast-forwarded to `d07413aa` and the
+remote ref was verified. The first push's CLI checks and Pages deployment passed, but
+its Tools and research-snapshot jobs exposed two additional integration issues:
+
+- The unconstrained `mcp>=1.16` dependency installed MCP 2, which removes the FastMCP v1
+  import used by the server. `requirements-tools.txt` now constrains the supported major
+  version to `mcp>=1.16,<2`. A new Python 3.13 environment installed MCP 1.30.0 and the
+  latest compatible dependencies for verification; the earlier local environment had 1.16.0.
+- `research/progress_snapshot.json` still counted 976 negative results. Regenerating it
+  gives the current 975. Repeated snapshot/site generation reproduces the saved files.
+
+The clean tools-only environment passes 1,511 tests in 92.00 seconds with four existing
+optional-dependency skips; the full research environment passed all 1,515 earlier.
+Its fresh corpus rebuild also retains 18/20 held-out retrieval with no index issues.
+The website's 25 Python tests and seven JavaScript tests pass, JavaScript syntax checks
+pass, and `tools/check_site.py` passes. Remote CI is checked again after publication of
+this correction rather than inferred from the local results.
 
 ## Remaining scope limits
 
