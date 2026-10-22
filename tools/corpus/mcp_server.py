@@ -80,15 +80,17 @@ def create_server(
     @server.tool()
     def screen_dqi_candidate(params: dict) -> dict:
         """Screen a DQI candidate against the Mazumder-Niroula soundness rules (arXiv:2610.06753).
-        params: name, objective ("count" or "cosine"), q, m, n, rho, and optionally radius,
+        params: name, objective ("count" or "cosine"), q, m, n (rank(B), the optimizer-code
+        dimension), rho (|F_i|/q; the cosine objective ignores it), and optionally radius,
         min_distance, decoder_known, encoder_known (a polynomial-time encoder attains Q*), p, b, c,
         classical_witness, finite_dqi_mean (see tools/dqi_screen/README.md and examples). Returns the quantities, each rule's check and a verdict:
-        "not viable", "unknown" or "viable". This is a soundness screen, not a proof: the rules
+        "not viable", "unknown" or "viable" ("viable" leaves the paper's (R3) encoder rule
+        unresolved when no encoder is known). This is a soundness screen, not a proof: the rules
         are asymptotic and assume worst-case decoding (of Hamming errors for the count objective,
         of signed {+-1} error patterns for the cosine)."""
         try:
             return asdict(screen(candidate_from_dict(params)))
-        except (TypeError, ValueError) as exc:
+        except (TypeError, ValueError, ArithmeticError, RecursionError) as exc:
             return {"error": str(exc)}
 
     @server.tool()

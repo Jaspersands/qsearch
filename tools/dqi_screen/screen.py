@@ -1,11 +1,12 @@
 """Screen a DQI candidate against the Mazumder-Niroula soundness rules (arXiv:2610.06753).
 
     python tools/dqi_screen/screen.py --params tools/dqi_screen/examples/opi_prime_character_r19.json
-    python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.5 --radius 5 --min-distance 20 --decoder-known
+    python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.4286 --radius 5 --min-distance 20 --decoder-known
     python tools/dqi_screen/screen.py --params cand.json --json --out screen.json
 
-A candidate is a max-LINSAT family: m constraints over n variables in F_q, accepted density
-rho, the objective ("count" of satisfied constraints, or "cosine"), and the claimed decoding
+A candidate is a max-LINSAT family: m constraints in F_q whose matrix B has rank n (the
+number of variables when B has full column rank), accepted density rho = |F_i| / q, the
+objective ("count" of satisfied constraints, or "cosine"), and the claimed decoding
 radius. The screen computes the closed-form quantities, runs each rule and gives a verdict:
 "not viable" when a hard rule fails, "unknown" when an input is missing or a soft rule
 flags, else "viable". It is a soundness screen, not a proof.
@@ -20,6 +21,7 @@ import json
 import math
 import sys
 from dataclasses import MISSING, asdict, dataclass, fields
+from fractions import Fraction
 from pathlib import Path
 
 if __package__ in (None, ""):
@@ -160,9 +162,22 @@ def _validate(c: Candidate) -> None:
     if c.c is not None and not 1 <= c.c <= b:
         raise ValueError(f"c = {c.c} must lie in [1, b = {b}] ({field}): c is the F_p-codimension of an affine "
                          "subspace inside an accepted set")
-    if c.c is not None and p ** -c.c > c.rho * (1 + 1e-9):
+    if c.c is not None and c.c * math.log(p) < math.log(1 / c.rho) - 1e-9:  # p^-c > rho, in logs (p may be huge)
         raise ValueError(f"c = {c.c} is below log_p(1/rho) = {math.log(1 / c.rho, p):.4g} ({field}): a set of density "
                          f"rho = {c.rho} cannot contain a coset of codimension c, which holds p^(b-c) > rho p^b elements")
+    if c.objective == "count":  # the cosine objective does not use rho
+        accepted = Fraction(c.rho) * c.q  # rho q = |F_i|, exactly (q may be huge)
+        size = min(c.q - 1, max(1, round(accepted)))
+        if abs(accepted - size) > accepted / 100:
+            raise ValueError(f"rho = {c.rho} is not a density |F_i| / q: rho q = {float(accepted):.4g}, but an "
+                             "accepted set holds a whole number of elements between 1 and q - 1 (the nearest is "
+                             f"{size}); give rho within 1% of |F_i| / q")
+    if c.min_distance is not None:
+        bound = min(c.n + 1, R.plotkin_distance(c.m, c.n, c.q))
+        if c.min_distance > bound:
+            raise ValueError(f"min_distance = {c.min_distance} exceeds {bound}, the most a linear [m, m - n] = "
+                             f"[{c.m}, {c.m - c.n}] code over F_q can have (Singleton d <= n + 1 and the finite "
+                             "Plotkin bound)")
 
 
 def _prime_power(q: int) -> tuple[int, int] | None:
@@ -261,8 +276,8 @@ def _check_reach_signed(c: Candidate, qn: dict) -> Check:
     limit = qn["signed_packing_radius"]
     if c.radius > limit:
         return Check("reach", False, f"outside licensed signed-pattern reach: radius {c.radius} > signed packing radius "
-                     f"{limit}: C(m, l) 2^l > q^n, so the {{+-1}} patterns of weight l cannot have distinct syndromes "
-                     "(Proposition 13(i))")
+                     f"{limit}: sum_(i <= l) C(m, i) 2^i > q^n, so the {{+-1}} patterns of weight at most l cannot all "
+                     "have distinct syndromes (Proposition 13(i))")
     inside = f"radius {c.radius} (lam = {_fmt(qn['lam'])}) is inside signed packing radius {limit}"
     if qn["licensed_radius"] is not None:
         licence = qn["licensed_radius"]
@@ -349,11 +364,13 @@ def _check_r3(c: Candidate, qn: dict) -> Check:
 
 def _check_encoder(c: Candidate) -> Check:
     """Proposition 9 (R3): a polynomial-time encoder for im(B) attaining Q* is a classical baseline
-    with DQI's limiting value, so mu+ <= 0."""
+    with DQI's limiting value, so mu+ <= 0. Without one the rule is not violated but, as the paper
+    says, (R3) stays unresolved: the check passes so the verdict can still be "viable"."""
     if c.encoder_known:
         return Check("R3-encoder", False, "a polynomial-time encoder attains the existential line Q*: it is a classical "
                      "baseline with the same limiting value, so the margin mu+ <= 0 (Proposition 9)")
-    return Check("R3-encoder", True, "no polynomial-time encoder attaining Q* is known")
+    return Check("R3-encoder", True, "not violated (unresolved: no polynomial-time encoder attaining Q* is known, "
+                 "Proposition 9)")
 
 
 def _check_r4(c: Candidate, qn: dict) -> Check:
@@ -364,13 +381,17 @@ def _check_r4(c: Candidate, qn: dict) -> Check:
     if c.objective != "count":
         return Check("R4", None, "the subfield baseline is stated for the count objective; compare by hand")
     value, label = _claimed(c, qn)
+    baseline = qn["subfield_baseline"]
+    detail = f"subfield baseline {_fmt(baseline)} (alpha_sub = {_fmt(qn['alpha_sub'])})"
+    if value is not None:
+        detail = f"{label} {_fmt(value)} against {detail}"
+    # Both tests below hold whatever the radius, so they fail R4 before any radius is given.
+    if c.rho == 0.5 and R.subfield_blocks_at_half(qn["alpha"], c.b, c.c):
+        return Check("R4", False, detail + "; at rho = 1/2, alpha >= 2c^2/(b^2+c^2) blocks every licensed radius")
+    if baseline >= 1:
+        return Check("R4", False, detail + ": Prange over the subfield satisfies every row, which no claimed value beats")
     if value is None:
         return Check("R4", None, "give radius or finite_dqi_mean")
-    baseline = qn["subfield_baseline"]
-    blocks = c.rho == 0.5 and R.subfield_blocks_at_half(qn["alpha"], c.b, c.c)
-    detail = f"{label} {_fmt(value)} against subfield baseline {_fmt(baseline)} (alpha_sub = {_fmt(qn['alpha_sub'])})"
-    if blocks:
-        return Check("R4", False, detail + "; at rho = 1/2, alpha >= 2c^2/(b^2+c^2) blocks every licensed radius")
     if value <= baseline:
         return Check("R4", False, detail + ": the subfield baseline is at least as good")
     return Check("R4", True, detail)
@@ -440,10 +461,10 @@ def _verdict(checks: list[Check]) -> tuple[str, list[str]]:
 
 
 def screen(c: Candidate) -> Screen:
-    """The quantities, checks and verdict; ValueError on bad input, including integers too large
-    for the floating-point formulas (so a caller never mistakes them for a verdict)."""
-    _validate(c)
+    """The quantities, checks and verdict; ValueError on bad input, including numbers too large or
+    too small for the floating-point formulas (so a caller never mistakes them for a verdict)."""
     try:
+        _validate(c)
         qn = _quantities(c)
         checks = [
             _check_r1(c, qn),
@@ -456,8 +477,8 @@ def screen(c: Candidate) -> Screen:
             _check_witness(c, qn),
             _check_restarts(c, qn),
         ]
-    except OverflowError as exc:
-        raise ValueError(f"inputs too large to screen in floating point ({exc})") from None
+    except ArithmeticError as exc:  # OverflowError, ZeroDivisionError
+        raise ValueError(f"inputs too large or too small to screen in floating point ({exc})") from None
     verdict, reasons = _verdict(checks)
     return Screen(c, qn, checks, verdict, reasons)
 
@@ -534,7 +555,7 @@ def main(argv: list[str] | None = None) -> int:
                      if getattr(args, key) is True or (key not in _BOOLS and getattr(args, key) is not None)})
         data.setdefault("name", "candidate")
         result = screen(candidate_from_dict(data))
-    except (OSError, TypeError, ValueError) as exc:
+    except (OSError, TypeError, ValueError, RecursionError) as exc:  # RecursionError: JSON nested too deeply
         print(f"error: {exc}", file=sys.stderr)
         return 2
     text = json.dumps(asdict(result), indent=1) + "\n" if args.json else render(result)

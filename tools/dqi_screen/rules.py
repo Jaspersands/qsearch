@@ -1,8 +1,9 @@
 """Closed-form soundness rules for Decoded Quantum Interferometry (DQI) candidates.
 
 Mazumder and Niroula, arXiv:2610.06753. Notation: a max-LINSAT instance has m constraints
-over n variables in F_q, rate alpha = n/m, accepted density rho (the fraction of F_q each
-constraint accepts) and a decoder that corrects lam*m Hamming errors in the dual code.
+in F_q whose matrix B has rank n (the number of variables when B has full column rank), rate
+alpha = n/m, accepted density rho (the fraction of F_q each constraint accepts) and a decoder
+that corrects lam*m Hamming errors in the dual code.
 
 - Prange completion satisfies n constraints exactly and the rest at random:
   Q_Pr = rho + (1 - rho) alpha.
@@ -168,26 +169,76 @@ def _log2_binomial(m: int, k: int) -> float:
     return (math.lgamma(m + 1) - math.lgamma(k + 1) - math.lgamma(m - k + 1)) / math.log(2)
 
 
+_EXACT_BITS = 2**15  # packing_radius sums exact integers while q^n has at most this many bits
+
+
 def packing_radius(m: int, n: int, q: int, letters: int) -> int:
-    """Finite-length packing: the largest radius l at which the error patterns of weight l with
-    entries from `letters` nonzero values (q - 1 for Hamming errors, 2 for signed {+-1} ones)
-    number at most q^n, C(m, l) letters^l <= q^n; m when every radius passes. A decoder that
-    recovers each pattern of weight <= l from its syndrome (B^T y in F_q^n) needs them distinct,
-    so a larger radius is impossible at this (m, n, q). The count C(m, l) letters^l rises up to
-    its mode and falls after, and the ball of radius l contains the patterns at the mode once l
-    passes it, so the largest radius is below the mode or is m."""
-    if not 0 <= n <= m or letters < 1:
-        raise ValueError(f"need 0 <= n <= m and letters >= 1, got m={m}, n={n}, letters={letters}")
+    """Finite-length sphere packing (the Hamming bound): the largest radius l whose ball, the
+    error patterns of weight at most l with entries from `letters` nonzero values (q - 1 for
+    Hamming errors, 2 for signed {+-1} ones), holds at most q^n patterns:
+    sum_{i <= l} C(m, i) letters^i <= q^n; m when all (letters + 1)^m patterns fit. A decoder
+    that recovers each pattern of weight <= l from its syndrome (B^T y in F_q^n) needs them all
+    distinct, so a larger radius is impossible at this (m, n, q). Exact integers while q^n has at
+    most _EXACT_BITS bits; beyond, the floating-point ball of _packing_radius_float."""
+    if not 0 <= n <= m or q < 2 or letters < 1:
+        raise ValueError(f"need 0 <= n <= m, q >= 2 and letters >= 1, got m={m}, n={n}, q={q}, letters={letters}")
     budget = n * math.log2(q)
-    tol = 1e-9 * (1 + budget)  # lgamma rounding: never reject a radius on it
-
-    def fits(k: int) -> bool:
-        return _log2_binomial(m, k) + k * math.log2(letters) <= budget + tol
-
-    mode = min(m, (m + 1) * letters // (letters + 1))
-    if fits(mode):
+    if m * math.log2(letters + 1) < budget - 1:  # every pattern fits, with a margin for rounding
         return m
-    lo, hi = 0, mode  # fits(lo), not fits(hi)
+    if budget > _EXACT_BITS:
+        return _packing_radius_float(m, n, q, letters)
+    # The ball outgrows q^n by l ~ budget (C(m, l) >= 2^l for l <= m/2), so the scan stays short.
+    cap, total, term = q**n, 0, 1  # term = C(m, l) letters^l
+    for radius in range(m + 1):
+        total += term
+        if total > cap:
+            return radius - 1
+        term = term * (m - radius) * letters // (radius + 1)
+    return m
+
+
+def _ball_peak(m: int, radius: int, letters: int) -> tuple[int, float]:
+    """The index and log2 of the largest term C(m, i) letters^i with i <= radius: the terms rise
+    up to the mode floor((m + 1) letters / (letters + 1)) and fall after it."""
+    top = min(radius, (m + 1) * letters // (letters + 1))
+    return top, _log2_binomial(m, top) + top * math.log2(letters)
+
+
+def _log2_ball(m: int, radius: int, letters: int) -> float:
+    """log2 sum_{i <= radius} C(m, i) letters^i in floating point: the sum runs outward from its
+    largest term and stops at a term below 2^-100 of it (the at most m terms left beyond are
+    smaller still)."""
+    log2_letters = math.log2(letters)
+    top, peak = _ball_peak(m, radius, letters)
+    total = 1.0
+    for step, end in ((-1, -1), (1, radius + 1)):
+        i = top + step
+        while i != end:
+            rel = _log2_binomial(m, i) + i * log2_letters - peak
+            if rel < -100:
+                break
+            total += 2.0**rel
+            i += step
+    return peak + math.log2(total)
+
+
+def _packing_radius_float(m: int, n: int, q: int, letters: int) -> int:
+    """packing_radius in floating point, by bisection on the ball size; it never rejects a
+    radius on lgamma rounding (a tolerance of 1e-9 relative)."""
+    budget = n * math.log2(q)
+    tol = 1e-9 * (1 + budget)
+    if m * math.log2(letters + 1) <= budget + tol:
+        return m
+
+    def fits(radius: int) -> bool:
+        peak = _ball_peak(m, radius, letters)[1]
+        if peak > budget + tol:
+            return False
+        if peak + math.log2(radius + 1) <= budget:  # radius + 1 terms, none above the peak
+            return True
+        return _log2_ball(m, radius, letters) <= budget + tol
+
+    lo, hi = 0, m  # fits(lo), not fits(hi)
     while hi - lo > 1:
         mid = (lo + hi) // 2
         if fits(mid):
@@ -233,11 +284,15 @@ def lambda_crit_cos(alpha: float) -> float | None:
 def restart_length(alpha: float, mu: float, R: float, N: float = 2**40, eta: float = 0.05) -> float | None:
     """Theorem 10: the instance length m needed before N Prange restarts (objective range R:
     1 count, 2 cosine) fail to close DQI's margin mu, at confidence 1 - eta:
-    (1-alpha) R^2 ln(N/eta) / (2 mu^2). None when mu <= 0 (no length suffices)."""
+    (1-alpha) R^2 ln(N/eta) / (2 mu^2). None when mu <= 0 (no length suffices); OverflowError
+    when mu is so small that the length is beyond a float."""
     alpha = _unit("alpha", alpha)
     if mu <= 0:
         return None
-    return (1 - alpha) * R * R * math.log(N / eta) / (2 * mu * mu)
+    length = (1 - alpha) * R * R * math.log(N / eta) / 2 / mu / mu  # never mu * mu, which underflows to 0
+    if not math.isfinite(length):
+        raise OverflowError(f"the restart length overflows a float at margin mu = {mu:.3g}")
+    return length
 
 
 def _kl(x: float, rho: float) -> float:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import replace
 from pathlib import Path
 
@@ -108,7 +109,71 @@ def test_finite_reach_bounds_hand_values() -> None:
     assert R.plotkin_distance(1000, 900, 2) == 500
     assert R.plotkin_distance(127, 39, 2**61 - 1) == 126  # m (1 - 1/q), rounded down
     assert R.plotkin_distance(3, 1, 7) == 2  # [3, 2] over F_7: 3 * 6 * 7 / 48 = 2.625
-    assert R.packing_radius(23, 11, 2, 1) >= 3  # the perfect Golay [23, 12, 7] decodes 3 errors
+    assert R.packing_radius(23, 11, 2, 1) == 3  # the perfect Golay [23, 12, 7]: its radius-3 ball is 2^11 exactly
+
+
+def _ball_radius(m: int, n: int, q: int, letters: int) -> int:
+    """The largest l with sum_{i <= l} C(m, i) letters^i <= q^n, by exact integers."""
+    total, cap, term = 0, q**n, 1  # term = C(m, radius) letters^radius
+    for radius in range(m + 1):
+        total += term
+        if total > cap:
+            return radius - 1
+        term = term * (m - radius) * letters // (radius + 1)
+    return m
+
+
+def test_packing_radius_counts_the_whole_ball_not_one_weight() -> None:
+    # Every pattern of weight <= l needs its own syndrome: the ball, not the patterns of weight exactly l.
+    assert R.packing_radius(24, 11, 2, 1) == 2  # 1 + 24 + 276 + 2024 = 2325 > 2^11: binary [24, 13] cannot reach 3
+    assert R.packing_radius(15, 11, 2, 1) == 4 and R.packing_radius(10, 1, 2, 1) == 0
+    assert R.packing_radius(2000, 779, 3, 2) == 224
+    assert R.packing_radius(1000, 681, 5, 2) == 644  # one weight alone would allow every radius
+    assert R.packing_radius(20, 19, 3, 2) == 11
+    assert R.packing_radius(6000, 420, 8191, 2) == 1178  # MPI: the README's signed packing radius
+    assert R.packing_radius(1000, 680, 2**61 - 1, 2) == 1000  # 3^1000 < q^680: every pattern fits
+    for q in (2, 3, 4, 5, 7):
+        for m in range(1, 31):
+            for n in range(m + 1):
+                for letters in sorted({q - 1, 2}):
+                    assert R.packing_radius(m, n, q, letters) == _ball_radius(m, n, q, letters), (m, n, q, letters)
+
+
+@pytest.mark.parametrize("m, n, q, letters", [
+    (1000, 600, 2**61 - 1, 2**61 - 2),  # count over a huge field: the ball is its last term
+    (30000, 779, 2**61 - 1, 2),  # signed patterns: the radius sits just below the mode, 20000
+    (20677, 14114, 5, 2),  # q^n tops the half of 3^m up to the mode: the radius is past the mode
+    (60000, 40000, 2, 1),  # binary, far below the mode
+])
+def test_packing_radius_beyond_exact_integers_matches_the_ball(m: int, n: int, q: int, letters: int) -> None:
+    assert n * math.log2(q) > R._EXACT_BITS  # the floating-point ball
+    assert R.packing_radius(m, n, q, letters) == _ball_radius(m, n, q, letters)
+
+
+def test_floating_point_ball_matches_exact_integers() -> None:
+    for q in (2, 3, 5, 7):
+        for m in range(1, 31):
+            for n in range(m + 1):
+                for letters in sorted({q - 1, 2}):
+                    assert R._packing_radius_float(m, n, q, letters) == _ball_radius(m, n, q, letters), (m, n, q)
+
+
+def test_reach_fails_one_past_the_ball_radius() -> None:
+    # sum_{i <= 225} C(2000, i) 2^i > 3^779: radius 225 is impossible for a ternary [2000, 1221] code.
+    third = {"q": 3, "m": 2000, "n": 779, "rho": 1 / 3, "min_distance": None}
+    s, checks = _run("hermite_half_rate.json", **third, radius=225)
+    assert s.quantities["hamming_radius"] == 224
+    assert checks["reach"].passed is False and "sphere-packing 224" in checks["reach"].detail
+    assert s.verdict == "not viable"
+    assert _run("hermite_half_rate.json", **third, radius=224)[1]["reach"].passed is True
+    s, checks = _run("hermite_half_rate.json", q=2, m=24, n=11, radius=3, min_distance=None)  # binary [24, 13]
+    assert checks["reach"].passed is False and "sphere-packing 2" in checks["reach"].detail
+    # The cosine: radius 1178 is the largest whose signed ball fits 8191^420 (MPI).
+    s, checks = _run("mpi_signed_cosine.json", radius=1178)
+    assert s.quantities["signed_packing_radius"] == 1178 and checks["reach"].passed is True
+    s, checks = _run("mpi_signed_cosine.json", radius=1179)
+    assert checks["reach"].passed is False and "signed packing radius 1178" in checks["reach"].detail
+    assert s.verdict == "not viable"
 
 
 @pytest.mark.parametrize("m, n", [(15, 11), (16, 11), (24, 12)])  # simplex, RM(1, 4), extended Golay; d = 8
@@ -127,12 +192,12 @@ def test_reach_uses_finite_singleton_plotkin_and_packing_radii() -> None:
     assert _run("hermite_half_rate.json", q=2**61 - 1, m=128, n=40, radius=19, min_distance=None)[1]["reach"].passed
     # Binary [1000, 100]: no such code has d > 500 (Plotkin), though sphere packing and Singleton allow l = 300.
     s, checks = _run("hermite_half_rate.json", q=2, n=900, radius=300, min_distance=None)
-    assert (s.quantities["plotkin_radius"], s.quantities["singleton_radius"]) == (249, 449)
-    assert s.quantities["hamming_radius"] >= 300
+    assert (s.quantities["plotkin_radius"], s.quantities["singleton_radius"], s.quantities["hamming_radius"]) == \
+        (249, 449, 319)
     assert checks["reach"].passed is False and "Plotkin 249" in checks["reach"].detail
     # Binary [1000, 500] at l = 200: C(1000, 200) > 2^500, though Singleton and Plotkin allow 249.
     s, checks = _run("hermite_half_rate.json", q=2, radius=200, min_distance=None)
-    assert s.quantities["hamming_radius"] < 200 <= s.quantities["plotkin_radius"]
+    assert s.quantities["hamming_radius"] == 111 and s.quantities["plotkin_radius"] == 249
     assert checks["reach"].passed is False and "sphere-packing" in checks["reach"].detail
 
 
@@ -153,9 +218,8 @@ def test_signed_packing_reach_hand_values() -> None:
     assert R.signed_packing_reach(0.68, 2**61 - 1) == 0.5  # alpha log2 q >= 3/2: every lam <= 1/2 fits
     lam = R.signed_packing_reach(0.3, 5)
     assert (R.binary_entropy(lam) + lam) / R.math.log2(5) == pytest.approx(0.3, abs=1e-9)
-    # Finite length: C(m, l) 2^l <= q^n, the patterns of weight l need distinct syndromes.
-    assert R.packing_radius(6000, 420, 8191, 2) >= 300
-    assert R.packing_radius(15, 11, 2, 1) >= 3 and R.packing_radius(10, 1, 2, 1) == 0
+    # Finite length: sum_{i <= l} C(m, i) 2^i <= q^n, the patterns of weight <= l need distinct syndromes.
+    assert R.packing_radius(6000, 420, 8191, 2) == 1178
 
 
 def test_cosine_reach_uses_signed_packing_not_hamming_bounds() -> None:
@@ -255,6 +319,21 @@ def test_encoder_known_is_documented_as_a_polynomial_time_encoder_attaining_q_st
     assert "planted encoder is known" not in row and "polynomial-time" in row and "Q*" in row
 
 
+def test_r3_encoder_pass_says_the_rule_stays_unresolved() -> None:
+    # arXiv:2610.06753: without a known encoder attaining Q*, (R3) "stays unresolved" (Table 3: MPI unresolved).
+    s, checks = _run("mpi_signed_cosine.json")
+    encoder = checks["R3-encoder"]
+    assert encoder.passed is True and s.verdict == "viable"  # not violated: the verdict logic is unchanged
+    assert encoder.detail.startswith("not violated (unresolved: ") and "Proposition 9" in encoder.detail
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    viable = readme.split("- **viable**", 1)[1].split("\n\n", 1)[0]  # the verdict's bullet
+    assert "(R3)" in viable and "unresolved" in viable
+    row = next(line for line in readme.splitlines() if line.startswith("| R3-encoder | hard"))
+    assert "unresolved" in row
+    source = (REPO / "tools/corpus/mcp_server.py").read_text(encoding="utf-8")
+    assert "unresolved" in source.split("def screen_dqi_candidate", 1)[1].split('"""')[1]  # the tool's docstring
+
+
 def test_prime_power_q_without_subfield_inputs_is_unknown_not_na() -> None:
     # Example (c) at twice the length is viable over the prime field F_8191.
     longer = {"m": 2000, "radius": 248, "min_distance": 500}
@@ -305,7 +384,6 @@ LONGER = {"m": 2000, "radius": 248, "min_distance": 500}  # hermite_half_rate at
 def test_r1_fails_on_each_asymptotic_reach_bound_alone() -> None:
     no_radius = {"radius": None, "min_distance": None}
     cases = (
-        ("sphere-packing", {"q": 2, "n": 100, "rho": 0.1, **no_radius}),  # H_2^-1(0.1) = 0.013 <= 0.0166 < Plotkin
         ("Plotkin", {"q": 2, "n": 900, **no_radius}),  # Plotkin 0.225 <= 0.282 < H_2^-1(0.9) = 0.316
         ("distance", {"min_distance": 100, "radius": None}),  # delta/2 = 0.05 <= 0.067 < 0.25
     )
@@ -315,6 +393,13 @@ def test_r1_fails_on_each_asymptotic_reach_bound_alone() -> None:
         assert r1.passed is False and r1.detail.startswith(f"reach bound {bound} "), (bound, r1.detail)
         assert s.verdict == "not viable"
     assert _run("hermite_half_rate.json", radius=None)[1]["R1"].passed is True
+    # Sphere packing binds alone only at a density no field has (q = 2, rho = 0.1: H_2^-1(0.1) = 0.013 <= 0.0166
+    # < Plotkin; no k/q with q <= 32 does it), so the screen rejects the input, but R1 itself names the bound.
+    cand = replace(S.load_candidate(EXAMPLES / "hermite_half_rate.json"), q=2, n=100, rho=0.1, **no_radius)
+    with pytest.raises(ValueError, match="rho"):
+        S.screen(cand)
+    r1 = S._check_r1(cand, S._quantities(cand))
+    assert r1.passed is False and r1.detail.startswith("reach bound sphere-packing "), r1.detail
 
 
 def test_cosine_without_a_threshold_is_not_viable_even_without_a_radius() -> None:
@@ -332,7 +417,7 @@ def test_reach_fails_just_past_the_licensed_radius_alone() -> None:
 
 
 def test_r3_cap_and_restarts_fail_paths() -> None:
-    small = {"q": 7, "m": 2000, "n": 400, "radius": 100, "min_distance": None}  # Q* = 0.909, Q_DQI 0.718
+    small = {"q": 7, "m": 2000, "n": 400, "rho": 3 / 7, "radius": 100, "min_distance": None}  # Q* = 0.854, Q_DQI 0.651
     s, checks = _run("hermite_half_rate.json", **small)
     assert checks["R3"].passed is True and s.verdict == "viable", s.reasons
     s, checks = _run("hermite_half_rate.json", **small, finite_dqi_mean=0.95)
@@ -355,6 +440,45 @@ def test_r4_passes_and_blocks_at_half() -> None:
     assert s.quantities["subfield_baseline"] == pytest.approx(0.875)
     assert checks["R4"].passed is False and "blocks every licensed radius" in checks["R4"].detail
     assert R.subfield_baseline(0.5, 1 / 3, 10) == pytest.approx(0.65)  # floor(10/3) = 3 rows, not 3.33
+
+
+def test_r4_fails_without_a_radius_when_no_radius_can_pass() -> None:
+    no_radius = {"q": 4096, "p": 2, "b": 12, "m": 2000, "radius": None}
+    # alpha = 1/2 >= 2c^2/(b^2+c^2) at rho = 1/2: Proposition 9 blocks every licensed radius.
+    s, checks = _run("hermite_half_rate.json", **no_radius, c=1)
+    assert checks["R4"].passed is False and "blocks every licensed radius" in checks["R4"].detail
+    assert s.verdict == "not viable"
+    # rho = 1/4: the subfield baseline is 1 (alpha_sub = 1), which no claimed value can beat.
+    s, checks = _run("hermite_half_rate.json", **no_radius, c=2, rho=0.25)
+    assert s.quantities["subfield_baseline"] == 1.0 and checks["R4"].passed is False
+    assert "subfield baseline 1" in checks["R4"].detail and s.verdict == "not viable"
+    s, checks = _run("hermite_half_rate.json", **no_radius, c=12)  # baseline 0.625: the radius decides
+    assert checks["R4"].passed is None and "give radius or finite_dqi_mean" in checks["R4"].detail
+
+
+def test_boundaries_of_the_signed_reach_existential_lines_witness_and_subfield_floor() -> None:
+    # Proposition 13(i) between alpha log2 q = 1 and 3/2: a bisected reach below 1/2, not the 1/2 of the budget switch.
+    lam = R.signed_packing_reach(0.1, 2039)
+    assert lam == pytest.approx(0.2651, abs=5e-4) and (R.binary_entropy(lam) + lam) / math.log2(2039) == pytest.approx(0.1)
+    # The count line is exactly 1 as soon as q^alpha rho >= 1 (here by 0.028 nats), not a bisection to 1 - 4e-16.
+    assert R.existential_line(0.45, 3 / 7, 7) == 1.0
+    # Small q sums F_q exactly: 0.8059 at q = 5, where the von Mises limit gives 0.7963.
+    assert R.cosine_existential_line(0.5, 5) == pytest.approx(0.8059, abs=5e-4)
+    # R3 at the line: a claimed value equal to Q* or just below it passes, one just above fails (both objectives).
+    small = {"q": 7, "m": 2000, "n": 400, "rho": 3 / 7, "radius": 100, "min_distance": None}
+    for example, changes in (("hermite_half_rate.json", small), ("mpi_signed_cosine.json", {})):
+        line = _run(example, **changes)[0].quantities["existential_line"]
+        assert line < 1
+        for finite, passed in ((line, True), (line - 1e-4, True), (line + 1e-9, False)):
+            assert _run(example, **changes, finite_dqi_mean=finite)[1]["R3"].passed is passed, (example, finite)
+    # A classical witness equal to DQI's claimed value already reaches it.
+    s, checks = _run("hermite_half_rate.json", **LONGER, classical_witness=0.80, finite_dqi_mean=0.80)
+    assert checks["witness"].passed is False and "already reaches" in checks["witness"].detail
+    # R4 uses floor(alpha_sub m) rows: 0.9166 beats the floored baseline 0.9165, not the unfloored 0.91667.
+    q32 = {**LONGER, "n": 1000, "q": 32, "p": 2, "b": 5, "c": 3}  # alpha_sub = 5/6, 1666 of 2000 rows
+    s, checks = _run("hermite_half_rate.json", **q32, finite_dqi_mean=0.9166)
+    assert s.quantities["subfield_baseline"] == pytest.approx(0.9165) and checks["R4"].passed is True
+    assert _run("hermite_half_rate.json", **q32, finite_dqi_mean=0.9165)[1]["R4"].passed is False
 
 
 def test_saturated_reach_is_flagged_not_viable() -> None:
@@ -394,7 +518,7 @@ def test_saturation_starts_strictly_past_one_minus_rho(rho: float) -> None:
 
 
 def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
-    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 3 / 7}
     assert S.candidate_from_dict(base).q == 7
     for bad in ({**base, "radiuss": 3}, {**base, "objective": "max"}, {"objective": "count"}, {**base, "q": 12}):
         with pytest.raises(ValueError):
@@ -417,8 +541,41 @@ def test_cosine_objective_needs_a_prime_above_three() -> None:
     assert S.main(["--objective", "cosine", "--q", "2", "--m", "1000", "--n", "300", "--rho", "0.5"]) == 2
 
 
+def test_densities_and_distances_no_instance_can_have_are_bad_input() -> None:
+    base = {"name": "x", "objective": "count", "q": 2, "m": 100, "n": 30, "rho": 0.5, "radius": 10,
+            "decoder_known": True}
+    # rho = |F_i| / q for a whole number 1 <= |F_i| <= q - 1, up to 1% rounding.
+    for q, rho in ((2, 0.3), (7, 0.5), (7, 0.45), (2, 0.1), (3, 0.1), (7, 0.9999), (2**61 - 1, 1e-30)):
+        with pytest.raises(ValueError, match=r"rho = .* \|F_i\|"):
+            S.screen(S.candidate_from_dict({**base, "q": q, "rho": rho}))
+    for q, rho in ((7, 3 / 7), (7, 0.4286), (3, 0.333), (101, 0.6), (8191, 0.5), (2**61 - 1, 0.5)):
+        assert S.screen(S.candidate_from_dict({**base, "q": q, "rho": rho})).verdict
+    cosine = {**base, "objective": "cosine", "q": 7, "rho": 0.5}  # the cosine objective ignores rho
+    assert S.screen(S.candidate_from_dict(cosine)).quantities["q_prange"] is None
+    # d <= n + 1 (Singleton) and d <= the finite Plotkin bound of the dual [m, m - n] code.
+    for changes in ({"min_distance": 90}, {"min_distance": 32}, {"m": 15, "n": 11, "min_distance": 9, "radius": 3}):
+        with pytest.raises(ValueError, match="min_distance"):
+            S.screen(S.candidate_from_dict({**base, **changes}))
+    for changes in ({"min_distance": 31}, {"m": 15, "n": 11, "min_distance": 8, "radius": 3}):
+        assert S.screen(S.candidate_from_dict({**base, **changes})).verdict
+    # The README's example uses a density the field has.
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    assert "--q 7 --m 100 --n 30 --rho 0.5 " not in readme and "--rho 0.5 " not in S.__doc__
+    assert S.main(["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5"]) == 2
+
+
+def test_docs_say_n_is_the_rank_of_b_and_the_cosine_ignores_rho() -> None:
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    rows = {line.split("|")[1].strip(): line for line in readme.splitlines() if line.startswith("| `")}
+    assert "rank(B)" in rows["`q`, `m`, `n`"] and "variables; alpha" not in rows["`q`, `m`, `n`"]
+    assert "cosine objective ignores" in rows["`rho`"] and "Plotkin" in rows["`min_distance`"]
+    source = (REPO / "tools/corpus/mcp_server.py").read_text(encoding="utf-8")
+    doc = source.split("def screen_dqi_candidate", 1)[1].split('"""')[1]
+    assert "rank(B)" in doc and "ignores" in doc
+
+
 def test_claimed_values_must_be_finite_and_in_the_objective_range() -> None:
-    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5, "radius": 5}
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 3 / 7, "radius": 5}
     for key in ("finite_dqi_mean", "classical_witness"):
         for value in (float("nan"), float("inf"), -0.1, 1.5):
             with pytest.raises(ValueError, match=key):
@@ -439,7 +596,7 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
     assert main(["--params", str(EXAMPLES / "opi_prime_character_r32.json"), "--out", str(out)]) == 1
     assert "outside licensed Hamming reach" in out.read_text() and "# DQI screen: opi-prime-character-r32" in out.read_text()
     assert capsys.readouterr().out == f"not viable: {out}\n"
-    assert main(["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5", "--radius", "5", "--min-distance", "20", "--decoder-known"]) == 0
+    assert main(["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.4286", "--radius", "5", "--min-distance", "20", "--decoder-known"]) == 0
     text = capsys.readouterr().out
     assert text.startswith("# DQI screen: candidate") and "| q_prange |" in text and "Verdict:" in text
     assert main(["--objective", "count", "--q", "12", "--m", "100", "--n", "30", "--rho", "0.5"]) == 2
@@ -451,7 +608,7 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
 
 
 def test_huge_inputs_are_bad_input_not_a_verdict(capsys, tmp_path) -> None:
-    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 3 / 7}
     for key in ("rho", "classical_witness", "finite_dqi_mean"):
         with pytest.raises(ValueError, match=key) as error:
             S.candidate_from_dict({**base, key: 10**400})
@@ -464,6 +621,52 @@ def test_huge_inputs_are_bad_input_not_a_verdict(capsys, tmp_path) -> None:
         path.write_text(json.dumps(data))
         assert S.main(["--params", str(path)]) == 2
         assert capsys.readouterr().err.startswith("error: ")
+
+
+def _mcp_screen(root: Path, params: dict) -> dict:
+    import anyio
+
+    from tools.corpus.mcp_server import create_server
+
+    server = create_server(root, dense="off")
+
+    async def go():
+        return await server.call_tool("screen_dqi_candidate", {"params": params})
+
+    result = anyio.run(go)
+    if isinstance(result, tuple):  # FastMCP: (content blocks, structured result)
+        return result[1].get("result", result[1])
+    return json.loads(result[0].text)
+
+
+def test_degenerate_inputs_never_crash_into_exit_1(capsys, tmp_path, fake_repo) -> None:
+    # Exit 1 means "not viable": a traceback must never look like a verdict, nor the MCP tool raise.
+    import sympy
+
+    big = int(sympy.nextprime(10**400))
+    huge_field = {"name": "x", "objective": "count", "q": big, "m": 100, "n": 30, "rho": 0.5, "p": big, "b": 1, "c": 1}
+    s = S.screen(S.candidate_from_dict(huge_field))  # p^-c is compared in log space: no float overflow
+    assert s.verdict == "unknown" and s.checks[5].detail == "not applicable (prime field)"
+    path = tmp_path / "x.json"
+    path.write_text(json.dumps(huge_field))
+    assert S.main(["--params", str(path)]) == 0
+    assert _mcp_screen(fake_repo, huge_field)["verdict"] == "unknown"
+    capsys.readouterr()
+    cosine = {"name": "x", "objective": "cosine", "q": 8191, "m": 10**220, "n": 10, "rho": 0.5}
+    for mean in (2e-200, 1e-160):  # mu^2 underflows to 0; the restart length overflows to inf
+        data = {**cosine, "finite_dqi_mean": mean}
+        with pytest.raises(ValueError, match="floating point"):
+            S.screen(S.candidate_from_dict(data))
+        path.write_text(json.dumps(data))
+        assert S.main(["--params", str(path), "--json"]) == 2
+        captured = capsys.readouterr()
+        assert captured.err.startswith("error: ") and "Infinity" not in captured.out
+        assert "floating point" in _mcp_screen(fake_repo, data)["error"]
+    with pytest.raises(OverflowError):
+        R.restart_length(0.5, 1e-160, 2)
+    path.write_text("[" * 200000 + "]" * 200000)  # nested too deeply for the JSON decoder
+    assert S.main(["--params", str(path)]) == 2
+    assert capsys.readouterr().err.startswith("error: ")
 
 
 def test_cli_write_errors_exit_2_not_1(capsys, tmp_path) -> None:
@@ -482,7 +685,7 @@ def test_cli_zero_valued_flags_override_the_params_file(capsys) -> None:
     candidate = json.loads(capsys.readouterr().out)["candidate"]
     assert (candidate["radius"], candidate["classical_witness"], candidate["finite_dqi_mean"]) == (0, 0.0, 0.0)
     assert candidate["decoder_known"] is True  # an absent boolean flag keeps the file's value
-    flags = ["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5", "--min-distance", "20"]
+    flags = ["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.4286", "--min-distance", "20"]
     assert main([*flags, "--radius", "0", "--decoder-known"]) == 1  # lam = 0 cannot beat Prange
     assert "R2 (hard): FAIL" in capsys.readouterr().out
 

@@ -9,11 +9,13 @@ The answer is a verdict with the failing rule named:
 
 - **not viable**: a hard rule fails;
 - **unknown**: an input is missing, or a soft rule flags;
-- **viable**: every rule passes or does not apply.
+- **viable**: every rule passes or does not apply. R3-encoder passes when no polynomial-time
+  encoder attaining Q* is known: the rule is not violated, but the paper's (R3) stays
+  unresolved, so a viable candidate still leaves (R3) open.
 
 ```bash
 python tools/dqi_screen/screen.py --params tools/dqi_screen/examples/opi_prime_character_r19.json
-python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.5 \
+python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.4286 \
     --radius 5 --min-distance 20 --decoder-known
 python tools/dqi_screen/screen.py --params cand.json --json --out screen.json
 ```
@@ -28,10 +30,10 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 |---|---|
 | `name` | label for the report |
 | `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows; needs a prime q > 3, as Proposition 13 does) |
-| `q`, `m`, `n` | field size (a prime power), constraints, variables; alpha = n/m |
-| `rho` | accepted density of each constraint |
+| `q`, `m`, `n` | field size (a prime power); constraints; n = rank(B), the dimension of the optimizer code im(B), which is the number of variables only when B has full column rank; alpha = n/m (Section 4.1). For a rank-deficient B (duplicated columns, the incidence matrix of a graph) give the rank: the variable count overstates Singleton, Plotkin, the packing radii, Q* and Prange's line |
+| `rho` | accepted density \|F_i\|/q of each constraint, within 1% of a ratio k/q with 1 <= k <= q - 1 (q = 7 takes 3/7 = 0.4286, not 0.5; at q = 8191, 0.5 stands for 4095/8191 or 4096/8191). The cosine objective ignores it |
 | `radius` | claimed decoding radius l; lam = l/m |
-| `min_distance` | minimum distance d of the decoded code, when known; delta = d/m |
+| `min_distance` | minimum distance d of the decoded code, the dual [m, m - n] code, when known; delta = d/m. At most n + 1 (Singleton) and the finite Plotkin bound below |
 | `decoder_known` | an efficient decoder reaches `radius` |
 | `encoder_known` | a polynomial-time encoder for the optimizer code im(B) attains the existential line Q* (Proposition 9, R3). Encoder in the lossy-source-coding sense: given the accepted sets it returns a codeword satisfying many rows. The generator map x -> Bx or a known planted solution is not one |
 | `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and c the largest, over the accepted sets, of the smallest F_p-codimension of an affine subspace inside the set (Proposition 9); 1 <= c <= b, and c >= log_p(1/rho) since a set of density rho holds at most rho p^b elements (Appendix A.6). Needed when q is not prime, and checked against q when given |
@@ -49,11 +51,11 @@ Notation: Q_Pr = rho + (1 - rho) alpha is Prange completion. Q_DQI(lam, rho) =
 | Rule | Kind | Passes when | Formula |
 |---|---|---|---|
 | R1 | hard | every applicable reach bound exceeds the threshold | lambda_crit = (sqrt((1-rho) Q_Pr) - sqrt(rho (1-Q_Pr)))^2 against Singleton alpha/2, distance delta/2, sphere packing H_q^-1(alpha), Plotkin (1 - 1/q) alpha/2; cosine: lambda_crit_cos = (1 - sqrt(1 - 2 alpha^2))/2 against the signed packing reach, the lam <= 1/2 with (H_2(lam) + lam)/log_2 q = alpha (Proposition 13(i)) |
-| reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and l <= every finite-length radius bound; not saturated (lam > 1 - rho, where Eq. (1) already gives Q_DQI = 1: a screen policy, not one of the paper's rules; screen the radius (1 - rho) m instead). Cosine: the radius is inside the signed packing radius | count, for the dual [m, k = m - n] code: Singleton (n-1)//2 (d <= n+1); Plotkin (d_P - 2)//2 with d_P = floor(m (q-1) q^(k-1) / (q^k - 1)); sphere packing, the largest l with C(m, l) (q-1)^l <= q^n. Cosine: the largest l with C(m, l) 2^l <= q^n, so the {+-1} patterns of weight l have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them |
+| reach | hard | count: the radius is inside licensed Hamming reach: l <= (d-2)//2 when d is given, and l <= every finite-length radius bound; not saturated (lam > 1 - rho, where Eq. (1) already gives Q_DQI = 1: a screen policy, not one of the paper's rules; screen the radius (1 - rho) m instead). Cosine: the radius is inside the signed packing radius | count, for the dual [m, k = m - n] code: Singleton (n-1)//2 (d <= n+1); Plotkin (d_P - 2)//2 with d_P = floor(m (q-1) q^(k-1) / (q^k - 1)); sphere packing (the Hamming bound), the largest l whose ball fits, sum_{i <= l} C(m, i) (q-1)^i <= q^n. Cosine: the largest l with sum_{i <= l} C(m, i) 2^i <= q^n, so the {+-1} patterns of weight at most l can all have distinct syndromes; a Hamming licence (d-2)//2 covers signed patterns but does not cap them. Both balls are summed in exact integers while q^n has at most 2^15 bits, in floating point beyond |
 | R2 | hard | the radius beats the threshold | lam > lambda_crit (count) or lambda_crit_cos (cosine) |
 | R3 | soft | the claimed value (finite mean, else Q_DQI or the cosine value) is at most the existential line Q* | count: Q* with D_KL(Q* \|\| rho) = alpha ln q when q^alpha rho < 1, else 1 (Definition 5); cosine: the largest mean of cos(2 pi v/q) within relative entropy alpha ln q of uniform, by exponential tilting (Proposition 13(iii); 0.726 for MPI) |
-| R3-encoder | hard | no polynomial-time encoder attaining Q* is known | such an encoder is a classical baseline with DQI's limiting value, so mu+ <= 0 (Proposition 9) |
-| R4 | hard | prime field: not applicable; prime power: the claimed value beats the subfield baseline | alpha_sub = min(1, b alpha/c); baseline rho + (1-rho) floor(alpha_sub m)/m; at rho = 1/2 blocked when alpha >= 2c^2/(b^2+c^2) |
+| R3-encoder | hard | no polynomial-time encoder attaining Q* is known (not violated; (R3) itself stays unresolved) | such an encoder is a classical baseline with DQI's limiting value, so mu+ <= 0 (Proposition 9) |
+| R4 | hard | prime field: not applicable; prime power: the claimed value beats the subfield baseline | alpha_sub = min(1, b alpha/c); baseline rho + (1-rho) floor(alpha_sub m)/m; at rho = 1/2 blocked when alpha >= 2c^2/(b^2+c^2). A block, or a baseline of 1, fails R4 even before a radius is given |
 | cap | soft | count only: Q_DQI <= q_cap | q_cap = Q_Pr + kappa, kappa = sqrt(u(1-u)) - u, u = alpha/2 (Proposition 8; at most (sqrt 2 - 1)/2) |
 | witness | soft | the classical witness is below DQI's claimed value (finite mean, else Q_DQI or the cosine value) and, for the count, below q_cap - 0.01 | otherwise the classical method already reaches DQI's claim, or no licensed radius beats it by more than 0.01 |
 | restarts | soft | m >= the restart length | (1-alpha) R^2 ln(N/eta) / (2 mu^2), R = 1 count / 2 cosine, N = 2^40, eta = 0.05 (Theorem 10) |
