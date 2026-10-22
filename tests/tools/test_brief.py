@@ -347,6 +347,25 @@ def test_the_window_start_takes_the_offset_of_its_own_day() -> None:
         assert B.window_start(dt.date(2026, 10, 13)).isoformat() == "2026-10-13T00:00:00+11:00"
 
 
+@pytest.mark.parametrize("start, label", [
+    ("2026-10-13T00:00:00+05:30", "00:00 local time, UTC+05:30"),  # India
+    ("2026-10-13T00:00:00+05:45", "00:00 local time, UTC+05:45"),  # Nepal
+    ("2026-10-13T00:00:00-03:30", "00:00 local time, UTC-03:30"),  # Newfoundland
+    ("2026-10-13T00:00:00+00:00", "00:00 local time, UTC+00:00"),
+    ("2026-10-13T00:00:00", "00:00 local time"),  # no offset to name
+    ("not a time", "00:00 local time"),
+    (None, "00:00 local time"),
+])
+def test_the_zone_label_names_the_offset_to_the_minute(start, label: str) -> None:
+    assert B._zone_label(start) == label
+
+
+def test_the_header_names_a_zone_that_is_not_a_whole_hour_from_utc(tmp_path: Path) -> None:
+    with _zone("<+0545>-5:45"):
+        text = B.render(B.build(tmp_path, today="2026-10-20"))
+    assert "since 2026-10-13 (00:00 local time, UTC+05:45)" in text
+
+
 def test_the_arxiv_window_and_the_generated_date_use_the_local_calendar(tmp_path: Path) -> None:
     # 08:00 in Sydney on 2026-10-21 is 21:00 UTC on 2026-10-20: the sources stamp 2026-10-21.
     now = dt.datetime(2026, 10, 20, 21, 0, tzinfo=dt.timezone.utc)
@@ -549,6 +568,23 @@ def test_git_reads_the_root_not_an_inherited_git_dir(tmp_path: Path, monkeypatch
     assert calls[0]["GIT_NO_LAZY_FETCH"] == "1"
 
 
+def test_git_runner_drops_every_variable_git_lists_as_local(tmp_path: Path, monkeypatch) -> None:
+    # git's own list (git rev-parse --local-env-vars) names the variables that point git at a
+    # repository, its config or objects; a parent git exports GIT_CONFIG_PARAMETERS (its -c
+    # settings) to hooks, and core.worktree or a replace-ref setting there would steer the reads.
+    listed = subprocess.run(["git", "rev-parse", "--local-env-vars"], cwd=tmp_path, capture_output=True, text=True,
+                            check=True).stdout.split()
+    assert "GIT_CONFIG_PARAMETERS" in listed
+    assert set(listed) <= set(B.REPOSITORY_ENV), set(listed) - set(B.REPOSITORY_ENV)
+    for name in listed:
+        monkeypatch.setenv(name, "x")
+    calls = []
+    monkeypatch.setattr(B.subprocess, "run", lambda command, **kw: calls.append(kw["env"]) or
+                        subprocess.CompletedProcess(command, 0, b"false\n\n", b""))
+    B.git_runner(tmp_path)(*B.HISTORY_ARGS)
+    assert not set(listed) & set(calls[0])
+
+
 LOG = ("--", B.REGISTRY)
 
 
@@ -687,7 +723,28 @@ def test_arxiv_section_tolerates_verdicts_for_unknown_papers_and_null_first_seen
     assert [a["id"] for a in section["actions"]] == ["2610.99999"]
 
 
-@pytest.mark.parametrize("state", ["missing", "directory", "no papers", "not json"])
+def test_arxiv_section_orders_flags_and_verdicts_by_date_not_by_id(tmp_path: Path) -> None:
+    # Ids here run against their dates, so an order that fell back to ids would show.
+    _arxiv_files(
+        tmp_path,
+        [_paper("2610.00000", "Open, date unknown", "possible-kill", None),
+         _paper("2610.11111", "Open, older", "possible-kill", "2026-10-01"),
+         _paper("2610.22222", "Open, newer", "possible-scoop", "2026-10-18")],
+        {"2610.33333": _verdict("kill", "2026-10-15"), "2610.44444": _verdict("scoop", "2026-10-20")},
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [f["id"] for f in section["flagged"]] == ["2610.22222", "2610.11111", "2610.00000"]  # undated last
+    assert [r["id"] for r in section["reviewed"]] == ["2610.44444", "2610.33333"]  # newest first
+
+
+def test_arxiv_action_text_is_trimmed_and_a_blank_one_is_no_action(tmp_path: Path) -> None:
+    # Actions are written by hand: whitespace alone is not something left to do.
+    _arxiv_files(tmp_path, [], {"2610.11111": _verdict("kill", "2026-10-20", action="   \n "),
+                                "2610.22222": _verdict("kill", "2026-10-20", action="\n  Cite it.  \n")})
+    assert B.arxiv_section(tmp_path, SINCE)["actions"] == [{"id": "2610.22222", "action": "Cite it.", "by": "human"}]
+
+
+@pytest.mark.parametrize("state", ["missing", "directory", "no papers", "not json", "a list"])
 def test_arxiv_open_flags_are_not_available_without_a_readable_collisions_file(tmp_path: Path, state: str) -> None:
     # Open flags live only in the collisions file; without it "0 open" would be a guess.
     _arxiv_files(tmp_path, [_paper("2610.11111", "Open kill", "possible-kill", "2026-09-01")],
@@ -700,6 +757,8 @@ def test_arxiv_open_flags_are_not_available_without_a_readable_collisions_file(t
         _write_json(path, {"updated": "2026-10-19"})
     elif state == "not json":
         path.write_text("{not json", encoding="utf-8")
+    elif state == "a list":  # JSON, but no object to hold "papers": the verdicts must still show
+        _write_json(path, [])
     section = B.arxiv_section(tmp_path, SINCE)
     assert section["available"] is True and section["flagged"] is None
     assert B.ARXIV_STATE in section["flagged_reason"]
@@ -845,6 +904,25 @@ def test_referee_section_missing(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setitem(sys.modules, "tools.referee.referee", None)
     section = B.referee_section(tmp_path)
     assert section["available"] is False and section["reason"] == "tools/referee not present"
+
+
+def test_import_tool_tells_a_missing_tool_from_a_broken_one(tmp_path: Path, monkeypatch) -> None:
+    # "not present" only when the tool's own module (or its package) is absent; a tool whose
+    # dependency is missing is in the checkout but broken, and the reason must say why.
+    package = tmp_path / "brief_fixture_pkg"
+    package.mkdir()
+    (package / "__init__.py").write_text("", encoding="utf-8")
+    (package / "broken.py").write_text("import brief_fixture_missing_dependency\n", encoding="utf-8")
+    monkeypatch.syspath_prepend(str(tmp_path))
+    try:
+        assert B._import_tool("brief_fixture_pkg.absent", "tools/x") == (None, "tools/x not present")
+        assert B._import_tool("brief_fixture_no_pkg.tool", "tools/x") == (None, "tools/x not present")
+        module, reason = B._import_tool("brief_fixture_pkg.broken", "tools/x")
+        assert module is None and reason.startswith("tools/x cannot be imported: ModuleNotFoundError")
+        assert "brief_fixture_missing_dependency" in reason
+    finally:
+        for name in [name for name in sys.modules if name.startswith("brief_fixture_pkg")]:
+            del sys.modules[name]
 
 
 def test_preflight_section_groups_problems_by_check(fake_repo: Path) -> None:
@@ -1432,6 +1510,25 @@ def test_main_reports_a_failed_write_in_one_line(tmp_path: Path, monkeypatch, ca
     assert B.main(["--root", str(root), "--out", str(out)]) == 2
     err = capsys.readouterr().err
     assert err.count("\n") == 1 and "Permission denied" in err and "agent_brief.json" in err, err
+
+
+def test_two_runs_at_once_never_share_a_temporary_file(tmp_path: Path, monkeypatch) -> None:
+    # An agent's run and the scheduled one can overlap: with one shared temporary name, one run
+    # could rename the other's half-written file into place, or unlink it before its rename.
+    written = []
+    real_write_text = Path.write_text
+
+    def spy_write_text(self, *args, **kwargs):
+        written.append(self.name)
+        return real_write_text(self, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "write_text", spy_write_text)
+    for pid in (101, 202):
+        monkeypatch.setattr(B.os, "getpid", lambda pid=pid: pid)
+        B._replace(tmp_path / "AGENT_BRIEF.md", f"run {pid}")
+    monkeypatch.undo()
+    assert len(written) == 2 and written[0] != written[1] and "AGENT_BRIEF.md" not in written
+    assert (tmp_path / "AGENT_BRIEF.md").read_text(encoding="utf-8") == "run 202"
 
 
 def test_write_replaces_each_file_whole_json_first(tmp_path: Path, monkeypatch) -> None:
