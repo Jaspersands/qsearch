@@ -21,11 +21,11 @@ python tools/referee/referee.py status [--json]
 
 | Command | What it does |
 |---|---|
-| `select` | Lists review-pending notes, newest first, without a current review. |
-| `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status. |
-| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path. |
+| `select` | Lists review-pending notes, newest first, without a current review; `--limit 0` lists them all. |
+| `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status; the name's letter case must match. Exit 2, nothing written, when `--out-dir` is a file or already holds `batch_*.json` from an earlier export (use a new folder per pass). |
+| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
 | `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
-| `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, and stale ones. Used by the agent brief. |
+| `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, unsound before needs-work and each by stem, with the worst claim, and stale ones (a deleted note's review is stale). Used by the agent brief. |
 
 ## Selection
 
@@ -35,8 +35,10 @@ A note is review pending when the corpus status rule (`note_status` in
 rejected). Notes that say "require review" instead are `unlabelled`, so export them with
 `--note`. The two journals (`AGENT_HANDOFF.md`, `MECHANICAL_FOLLOW_UP_PLAN.md`) are never
 selected. Notes are ordered by the first date in the status block (the first paragraph
-after the title), undated last, then by file modification time. A note whose stored
-review has its current content hash is skipped unless `--include-reviewed` is given.
+after the title), undated last, then by stem. File modification times are not used: they
+follow checkout and copy order, so every checkout of one commit gets the same queue and
+the same cut at `--limit`. A note whose stored review has its current content hash is
+skipped unless `--include-reviewed` is given.
 
 ## The packet
 
@@ -46,10 +48,12 @@ review has its current content hash is skipped unless `--include-reviewed` is gi
 - `date`, `status`, and `not_claimed`: preamble sentences or bullets containing "not" or
   "no".
 - `producer`: the note's own `python theorems/<stem in lower case>.py <flags>` when the
-  note runs it, else the first `python theorems/<module>.py <flags>` anywhere in the note,
-  with its JSON `artifact`: an `x/y.json` path in the note named after the script, else
-  the `REPORT = "...json"` constant in the script's source when that file exists, else
-  the first `x/y.json` path in the note, else `REPORT`. Paths resolve against the
+  note runs it, else the first `python theorems/<module>.py <flags>` anywhere in the note.
+  A note that runs no command but has a stem script `theorems/<stem in lower case>.py`
+  gets that script with `command: null`. The JSON `artifact` is an `x/y.json` path in the
+  note named after the script, else the script's own `REPORT = "...json"` constant (a
+  line starting `REPORT =` or `REPORT: ... =`, never `BASE_REPORT`) when that file exists,
+  else the first `x/y.json` path in the note, else `REPORT`. Paths resolve against the
   repository root, then against `research/`.
 - `result`: the first section whose heading contains Result, Question, Claim or Summary
   and not Not, Cannot, Why, Next ... Question or Kill/Break ... Claim ("What Can And
@@ -87,24 +91,38 @@ text.
    up to six `claims`, each with a verbatim `quote`, a `verdict` (`holds`, `gap`, `wrong`,
    `unclear`), the `step` at fault, a `finding` (the counterexample or missing condition)
    and `covered_by_self_check`. The judge must not propose new research.
-3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, an
-   `overall` that contradicts the claims (a `wrong` claim requires `unsound` and
-   `unsound` requires a `wrong` claim; a `gap` with nothing wrong requires `needs-work`),
-   a quote under six words, or a quote that is not in the note text. A quote's words must appear
-   consecutively in the note after lower-casing (what the rediscovery audit's `_norm`
-   keeps, matched on word boundaries), and the symbols between them (`<`, `>`, `=`, `+`,
-   `-`, `/`, `^`, `~`, decimal points; `≤` and `<=` count as the same) must be the
-   note's, so `b>=epsilon` does not pass for `b<=epsilon`. List and quote markers at line
-   starts may be kept or dropped. The stored quote is the note's own wording of the
-   span, not the judge's copy. A quote lifted from the artifact excerpt fails, because
-   it is not in the note. A row whose `content_sha` differs from the note's current hash
-   (the note was edited after export) is stored with `stale: true`, and its quotes are
-   checked against the text the judge read, taken from the `batch_NN.json` beside the
-   judge file (in its folder or the folder above) when that text's hash matches. When no
-   exported text is found, a quote that is not in the current note is stored as the judge
-   wrote it with `verified: false` instead of rejecting the file. Re-importing a note
-   replaces its review. Stored text is capped: summary 1500 characters, finding 600,
-   quote 400, six claims.
+3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, a
+   `covered_by_self_check` that is not `true` or `false` (omitted or null reads as false),
+   more than six claims, an `overall` that contradicts the claims (the worst claim sets it:
+   `wrong` requires `unsound`, else `gap` requires `needs-work`, else `unclear` requires
+   `unclear`, and claims that all hold require `sound`; a row with no claims may be `sound`
+   or `unclear`), a quote under six words, or a quote that is not in the note text (all
+   claims are checked). A quote's words (runs
+   of letters and digits in any script, so Greek variables and superscript exponents count;
+   an underscore splits words) must appear consecutively in the note after lower-casing,
+   and the symbols between them, before the first and after the last (`<`, `>`, `=`, `+`,
+   `-`, `/`, `^`, `~`, `±`, `√`, decimal points; `≤` and `<=` count as the same, and so do
+   `-`, `−`, `–` and a touching run of them; signs apart are separate, so `x - (y)` does
+   not pass for `x - (-y)`) must be the note's, so `b>=epsilon` does not pass for
+   `b<=epsilon`, nor `>= min(1, ...)` for `<= min(1, ...)`. A prose em dash (`—`) may be
+   written `-` or left out. List and quote markers at the note's line starts may be kept or
+   dropped, but a kept marker must be the note's. The stored quote is the note's own
+   wording of the span, not the judge's copy, widened to whole whitespace-delimited tokens
+   (less a trailing `.`, `,`, `;` or `:`) so that a sign or operator next to the first or
+   last word is kept. A quote lifted from the artifact excerpt fails, because
+   it is not in the note. A `content_sha` must be 64 lower-case hex digits. A row whose
+   `content_sha` differs from the note's current hash (the note was edited after export)
+   is stored with `stale: true`, and its quotes are checked against the text the judge
+   read, taken from the `batch_NN.json` beside the judge file (in its folder or the folder
+   above) when that text's hash matches. When packets for the note sit beside the judge
+   file but none of them has the row's `content_sha`, the sha was miscopied and the file
+   is rejected. Only when no exported packet for the note is found is a quote that is not
+   in the current note stored as the judge wrote it with `verified: false` instead of
+   rejecting the file. Two rows for one note in one import (one file or several) reject
+   the import. Re-importing a note replaces its review, except that a row that is stale
+   on arrival (an earlier pass imported again) never replaces a stored review of the
+   note's current bytes: import keeps that review and reports the row as skipped. Stored
+   text is capped: summary 1500 characters, finding 600, step 300, quote 400.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.
@@ -113,7 +131,11 @@ Cost: about 100k tokens per batch of five notes.
 
 - `research/audits/reviews/reviews.json`: `{"notes": {STEM: {reviewed_on, judge,
   content_sha, overall, claims, summary, stale}}}`, sorted. Each claim has `quote`,
-  `verified`, `verdict`, `step`, `finding` and `covered_by_self_check`.
+  `verified`, `verdict`, `step`, `finding` and `covered_by_self_check`. Import writes it to
+  a temporary file and renames that over it, so it is never left half written. When it
+  cannot be read or lacks that shape (each entry an object, its claims objects with a
+  string `quote` and `verdict`), every command stops with a one-line error naming the file
+  and exit 2, and import leaves it as it is.
 - `research/audits/reviews/<STEM>.md`: the overall verdict, summary and each claim with its
   quote, verdict, step and finding; marked stale when the note changed since.
 - `research/audits/REFEREE_QUEUE.md`: counts by overall verdict (current reviews) and

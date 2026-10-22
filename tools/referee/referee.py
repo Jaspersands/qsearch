@@ -21,6 +21,7 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -36,9 +37,41 @@ from tools.referee.extract import DATE, _resolve_artifact, _status_block, artifa
 REVIEWS = "research/audits/reviews/reviews.json"
 
 
+class StoreError(ValueError):
+    """reviews.json cannot be read or does not have the shape import writes."""
+
+
+def _entry_problem(entry) -> str | None:
+    if not isinstance(entry, dict):
+        return "is not a JSON object"
+    claims = entry.get("claims") or []
+    if not isinstance(claims, list) or not all(
+            isinstance(claim, dict) and isinstance(claim.get("quote"), str) and isinstance(claim.get("verdict"), str)
+            for claim in claims):
+        return "has claims that are not objects with a string quote and verdict"
+    if not isinstance(entry.get("summary", ""), str):
+        return "has a summary that is not a string"
+    return None
+
+
 def load_reviews(root: Path) -> dict:
+    """The stored reviews, `{"notes": {}}` before the first import. A store that cannot be read
+    or does not have import's shape (`{"notes": {STEM: entry}}`, each entry an object whose
+    claims are objects with a string quote and verdict) raises StoreError naming the file."""
     path = root / REVIEWS
-    return read_json(path) if path.exists() else {"notes": {}}
+    if not path.exists():
+        return {"notes": {}}
+    try:
+        data = read_json(path)
+    except (OSError, ValueError) as error:  # ValueError covers JSONDecodeError and UnicodeDecodeError
+        raise StoreError(f"{path}: cannot read the review store: {error}") from error
+    if not isinstance(data, dict) or not isinstance(data.get("notes"), dict):
+        raise StoreError(f'{path}: the review store is not a JSON object with a "notes" object')
+    for stem, entry in data["notes"].items():
+        problem = _entry_problem(entry)
+        if problem:
+            raise StoreError(f"{path}: the stored review of {stem!r} {problem}")
+    return data
 
 
 def note_sha(path: Path) -> str:
@@ -58,10 +91,13 @@ def select_notes(
     reviews: dict | None = None,
     statuses: tuple[str, ...] = ("review-pending",),
 ) -> list[Path]:
-    """Notes with one of `statuses`, newest status-block date first, then newest mtime."""
+    """Notes with one of `statuses`, newest status-block date first (undated last), then by stem.
+
+    Not by mtime: mtimes follow checkout and copy order, so the same commit would give a
+    different queue (and a different cut at `limit`) on another machine."""
     notes = (reviews if reviews is not None else load_reviews(root)).get("notes", {})
     ranked = []
-    for path in sorted((root / "research").glob("*.md")):
+    for path in sorted((root / "research").glob("*.md"), key=lambda path: path.stem):  # kept by the stable sort below
         if path.name in JOURNALS or (prefixes and not path.stem.startswith(tuple(prefixes))):
             continue
         lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
@@ -70,7 +106,7 @@ def select_notes(
         review = notes.get(path.stem)
         if exclude_reviewed and review and review.get("content_sha") == note_sha(path):
             continue
-        ranked.append(((_note_date(lines) or "0000", path.stat().st_mtime), path))
+        ranked.append((_note_date(lines) or "0000", path))
     ranked.sort(key=lambda item: item[0], reverse=True)
     paths = [path for _, path in ranked]
     return paths[:limit] if limit else paths
@@ -78,6 +114,8 @@ def select_notes(
 
 CLAIM_VERDICTS = ("holds", "gap", "wrong", "unclear")
 OVERALL = ("sound", "needs-work", "unsound", "unclear")
+WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
+OVERALL_FOR = {"wrong": "unsound", "gap": "needs-work", "unclear": "unclear", "holds": "sound"}  # by worst claim
 
 OUTPUT_FORMAT = (
     '{"stem": "NOTE_STEM", "content_sha": "copied from the packet", "overall": "needs-work", '
@@ -110,8 +148,10 @@ For each note:
    from step 5.
 2. Quote each claim verbatim from the note `text`: at least 6 consecutive words copied
    exactly. Whitespace, letter case, punctuation and markdown markup may differ, but the
-   symbols <, >, =, +, -, /, ^ and decimal points must be the note's, hyphens included
-   (they are the mathematics; ≤ for <= is fine). Quote from the note text only, never
+   letters in any script (Greek variables, superscript exponents) and the symbols <, >, =,
+   +, -, /, ^, ±, √ and decimal points must be the note's, hyphens included, also before
+   your first word and after your last (they are the mathematics; ≤ for <= is fine, and a
+   prose em dash — may be written - or left out). Quote from the note text only, never
    from the artifact excerpt, the flags or these instructions. Every quote is checked
    automatically, and one quote that is not in the note rejects your whole output file.
 3. Give each claim a verdict:
@@ -141,9 +181,10 @@ For each note:
    - `needs-work`: at least one gap, nothing shown wrong.
    - `unsound`: a load-bearing claim is wrong.
    - `unclear`: too little is written to judge.
-   The overall must agree with your claims: a `wrong` claim makes it `unsound` (and
-   `unsound` needs one), and a `gap` with nothing wrong makes it `needs-work`. A row that
-   contradicts this rejects your whole output file.
+   The overall must agree with your worst claim: a `wrong` claim makes it `unsound`, else a
+   `gap` makes it `needs-work`, else an `unclear` claim makes it `unclear`, and claims that
+   all hold make it `sound` (with no claims, `sound` or `unclear`). A row that contradicts
+   this, or that has more than 6 claims, rejects your whole output file.
 
 You must not propose new research, new algorithms or next steps: judge only what is
 written. Work from the packet and do not edit any file in the repository.
@@ -156,8 +197,9 @@ Write one JSON object per line (JSONL), one line per note, to your output path. 
 
 
 def build_packet(root: Path, path: Path) -> dict:
-    packet = parse_note(path)
-    text = path.read_bytes().decode("utf-8", errors="replace")
+    raw = path.read_bytes()  # one read, so content_sha is the hash of `text`
+    packet = parse_note(path, raw)
+    text = raw.decode("utf-8", errors="replace")
     rel = (packet.producer or {}).get("artifact")
     found = _resolve_artifact(root, rel) if rel else None
     return {
@@ -169,8 +211,19 @@ def build_packet(root: Path, path: Path) -> dict:
 
 
 def export_batches(root: Path, out_dir: Path, notes: list[Path], batch_size: int = 5) -> list[Path]:
-    """INSTRUCTIONS.md plus batch_NN.json files of `batch_size` packets, in the given order."""
-    out_dir.mkdir(parents=True, exist_ok=True)
+    """INSTRUCTIONS.md plus batch_NN.json files of `batch_size` packets, in the given order.
+
+    Raises ValueError, before writing anything, when `out_dir` is a file or cannot be made, or
+    already holds batch files: an earlier, larger export's leftovers would be judged again."""
+    if out_dir.exists() and not out_dir.is_dir():
+        raise ValueError(f"{out_dir} is not a folder")
+    earlier = sorted(path.name for path in out_dir.glob("batch_*.json")) if out_dir.is_dir() else []
+    if earlier:
+        raise ValueError(f"{out_dir} already holds {', '.join(earlier)} from an earlier export; use a new folder per pass")
+    try:
+        out_dir.mkdir(parents=True, exist_ok=True)
+    except OSError as error:
+        raise ValueError(f"cannot make {out_dir}: {error.strerror or error}") from error
     (out_dir / "INSTRUCTIONS.md").write_text(REFEREE_INSTRUCTIONS, encoding="utf-8")
     paths = []
     for start in range(0, len(notes), batch_size):
@@ -191,66 +244,120 @@ def export_batches(root: Path, out_dir: Path, notes: list[Path], batch_size: int
 MIN_QUOTE_WORDS = 6
 MAX_CLAIMS = 6
 
-# Words are what `_norm` keeps. Between two words, these symbols must match the note: in
-# ASCII-math notes "b<=epsilon" and "b>=epsilon" have the same words.
-WORD = re.compile(r"[A-Za-z0-9]+")
-SYMBOL = re.compile(r"!=|[<>=+\-/^~]")
-SYMBOL_FORMS = str.maketrans({"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "−": "-", "–": "-", "—": "-",
-                              "→": "->", "⇒": "=>", "≈": "~", "∼": "~"})
+# Words are runs of letters and digits in any script (Greek variables and superscript
+# exponents included; an underscore splits words). Between two words and before the first and
+# after the last word of a quote, the symbols must match the note: in ASCII-math notes
+# "b<=epsilon" and "b>=epsilon" have the same words.
+WORD = re.compile(r"[^\W_]+")
+EM_DASH = "—"
+DASHES = "-−–"  # hyphen, minus sign and en dash all read as a minus; a touching run of them is one
+SYMBOL = re.compile(rf"!=|<=|>=|->|=>|[{DASHES}]+|{EM_DASH}|[≤≦≥≧≠→⇒≈∼±∓√<>=+/^~]")
+SYMBOL_FORMS = {"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "→": "->", "⇒": "=>", "≈": "~", "∼": "~"}
 LINE_MARKER = re.compile(r"(?m)^[ \t]*(?:[-+*>][ \t]+)+")
+SPACE = re.compile(r"\s")
 
 
 STEM = re.compile(r"^[A-Za-z0-9_][A-Za-z0-9_.-]*$")  # a file name in research/, never a path
+SHA = re.compile(r"[0-9a-f]{64}")
 
 
 def _note_path(root: Path, stem: str) -> Path:
     return root / "research" / f"{stem}.md"
 
 
-def _symbols(text: str) -> tuple[str, ...]:
+def _is_note(path: Path) -> bool:
+    """`path` is a file under exactly its own name: on a case-insensitive file system (macOS)
+    `research/bar_note.md` also opens `research/BAR_NOTE.md`."""
+    return path.is_file() and path.name in os.listdir(path.parent)
+
+
+def _symbol_run(segment: str, em_dash: str) -> list[tuple[int, int, str]]:
+    """(start, end, symbol) for each symbol in `segment`: typographic forms read as ASCII, a
+    touching run of minus signs as one (in `x - (-y)` the two are two), and an em dash as
+    `em_dash` ("-", or "" to leave it out)."""
+    run: list[tuple[int, int, str]] = []
+    for match in SYMBOL.finditer(segment):
+        token = match.group()
+        token = em_dash if token == EM_DASH else "-" if token[0] in DASHES else SYMBOL_FORMS.get(token, token)
+        if token == "-" and run and run[-1][2] == "-" and run[-1][1] == match.start():  # touching: "-—" is one
+            run[-1] = (run[-1][0], match.end(), "-")
+        elif token:
+            run.append((match.start(), match.end(), token))
+    return run
+
+
+def _symbols(segment: str, em_dash: str) -> tuple[str, ...]:
+    return tuple(token for _, _, token in _symbol_run(segment, em_dash))
+
+
+def _gaps(text: str, words: list[re.Match], em_dash: str) -> tuple[str, ...]:
     """The symbols in each gap between consecutive words; a decimal point counts as one."""
-    text = text.translate(SYMBOL_FORMS)
-    words = list(WORD.finditer(text))
     gaps = []
     for left, right in zip(words, words[1:]):
         gap = text[left.end():right.start()]
         if gap == "." and left.group()[-1].isdigit() and right.group()[0].isdigit():
             gaps.append(".")
         else:
-            gaps.append(re.sub(r"-+", "-", "".join(SYMBOL.findall(gap))))
+            gaps.append("".join(_symbols(gap, em_dash)))
     return tuple(gaps)
 
 
-def _symbol_forms(text: str) -> set[tuple[str, ...]]:
-    """With and without list and quote markers at line starts, which a quote may keep or drop."""
-    return {_symbols(text), _symbols(LINE_MARKER.sub("", text))}
+def _spread(text: str, start: int, end: int) -> str:
+    """text[start:end] widened to whole whitespace-delimited tokens, less trailing .,;: marks."""
+    while start > 0 and not text[start - 1].isspace():
+        start -= 1
+    while end < len(text) and not text[end].isspace():
+        end += 1
+    return text[start:end].rstrip(".,;:")
 
 
 def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     """The note's own span for `quote`, or None and why not.
 
     The words must appear consecutively in `text` (case, whitespace and punctuation aside), and
-    the symbols between them (<, >, =, +, -, /, ^, ~, decimal points) must be the note's.
+    the symbols (<, >, =, +, -, /, ^, ~, ±, √, decimal points) between them, before the first
+    and after the last must be the note's. A quote may keep or drop the list and quote markers
+    at the note's line starts, and may write a prose em dash as - or leave it out. The span is
+    widened to whole whitespace-delimited tokens, so the note's signs and operators next to the
+    quote's first and last words are kept.
     """
-    words = [word.lower() for word in WORD.findall(quote)]
+    quoted = list(WORD.finditer(quote))
+    words = [word.group().lower() for word in quoted]
     if len(words) < MIN_QUOTE_WORDS:
         return None, f"quote under {MIN_QUOTE_WORDS} words"
+    wanted = [(_gaps(quote, quoted, em), _symbols(quote[:quoted[0].start()], em), _symbols(quote[quoted[-1].end():], em))
+              for em in ("-", "")]
     tokens = list(WORD.finditer(text))
+    unmarked = LINE_MARKER.sub(lambda match: " " * len(match.group()), text)  # same positions
     joined, starts = " ", {}
     for index, token in enumerate(tokens):
         starts[len(joined)] = index
         joined += token.group().lower() + " "
-    needle, wanted = " " + " ".join(words) + " ", _symbol_forms(quote)
+    needle = " " + " ".join(words) + " "
     found, at = False, joined.find(needle)
     while at >= 0:
         found = True
         first = starts[at + 1]
-        span = text[tokens[first].start():tokens[first + len(words) - 1].end()]
-        if wanted & _symbol_forms(span):
-            return span, ""
+        last = first + len(words) - 1
+        before = tokens[first - 1].end() if first else 0
+        after = tokens[last + 1].start() if last + 1 < len(tokens) else len(text)
+        for version in (text, unmarked):
+            for em in ("-", ""):
+                lead = _symbol_run(version[before:tokens[first].start()], em)
+                trail = _symbol_run(version[tokens[last].end():after], em)
+                gaps = _gaps(version, tokens[first:last + 1], em)
+                for want_gaps, want_lead, want_trail in wanted:
+                    if (want_gaps != gaps or len(want_lead) > len(lead) or len(want_trail) > len(trail)
+                            or want_lead != tuple(t for _, _, t in lead[len(lead) - len(want_lead):])
+                            or want_trail != tuple(t for _, _, t in trail[:len(want_trail)])):
+                        continue
+                    start = before + lead[-len(want_lead)][0] if want_lead else tokens[first].start()
+                    end = tokens[last].end() + trail[len(want_trail) - 1][1] if want_trail else tokens[last].end()
+                    return _spread(text, start, end), ""
         at = joined.find(needle, at + 1)
     if found:
-        return None, "quote's symbols (<, >, =, +, -, /, ^, decimal points) differ from the note"
+        return None, ("quote's symbols (<, >, =, +, -, /, ^, ~, ±, √, decimal points) differ from the note, "
+                      "between its words or before or after them")
     return None, "quote not verbatim in the note"
 
 
@@ -260,6 +367,9 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
     verdict = claim.get("verdict")
     if verdict not in CLAIM_VERDICTS:
         raise ValueError(f"{where}: bad claim verdict {verdict!r}")
+    conceded = claim.get("covered_by_self_check")
+    if conceded is not None and not isinstance(conceded, bool):
+        raise ValueError(f"{where}: covered_by_self_check must be true or false, not {conceded!r}")
     quote = str(claim.get("quote", ""))
     span, reason = find_quote(quote, source)
     if span is None and (strict or reason.startswith("quote under")):
@@ -270,28 +380,30 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
         "verdict": verdict,
         "step": str(claim.get("step", ""))[:300],
         "finding": str(claim.get("finding", ""))[:600],
-        "covered_by_self_check": bool(claim.get("covered_by_self_check")),
+        "covered_by_self_check": bool(conceded),
     }
 
 
 def overall_conflict(overall: str, claims: list[dict]) -> str | None:
-    """Why `overall` contradicts the claim verdicts, or None: a wrong claim makes the note
-    unsound, a gap (and nothing wrong) makes it need work, and unsound needs a wrong claim."""
-    verdicts = {claim["verdict"] for claim in claims}
-    if "wrong" in verdicts and overall != "unsound":
-        return "a claim is wrong, so overall must be unsound"
-    if "wrong" not in verdicts and overall == "unsound":
-        return "unsound needs a wrong claim"
-    if "gap" in verdicts and "wrong" not in verdicts and overall != "needs-work":
-        return "the worst claim is a gap, so overall must be needs-work"
+    """Why `overall` contradicts the claim verdicts, or None. The worst claim sets it: a wrong
+    claim makes the note unsound, else a gap needs-work, else an unclear claim unclear, and
+    claims that all hold sound. A row with no claims may be sound or unclear."""
+    if not claims:
+        needs = {"unsound": "a wrong claim", "needs-work": "a gap"}
+        return f"{overall} needs {needs[overall]}" if overall in needs else None
+    worst = max((claim["verdict"] for claim in claims), key=WORST.__getitem__)
+    if overall != OVERALL_FOR[worst]:
+        return f"the worst claim is {worst}, so overall must be {OVERALL_FOR[worst]}"
     return None
 
 
-def exported_texts(paths: list[Path]) -> dict[tuple[str, str], str]:
+def exported_texts(paths: list[Path]) -> tuple[dict[tuple[str, str], str], dict[str, set[str]]]:
     """Note texts the judges read, by (stem, content_sha), from the `batch_NN.json` files in
-    each judge file's folder or its parent (`DIR/out/*.jsonl` sits under `DIR/batch_NN.json`).
-    A text whose hash is not its `content_sha` is ignored."""
+    each judge file's folder or its parent (`DIR/out/*.jsonl` sits under `DIR/batch_NN.json`),
+    and the `content_sha` each exported packet declares, by stem. A text whose hash is not its
+    `content_sha` is left out of the texts."""
     texts: dict[tuple[str, str], str] = {}
+    declared: dict[str, set[str]] = {}
     folders = {Path(path).resolve().parent for path in paths}
     batches = {batch for folder in folders for near in (folder, folder.parent) for batch in near.glob("batch_*.json")}
     for batch in sorted(batches):
@@ -300,24 +412,31 @@ def exported_texts(paths: list[Path]) -> dict[tuple[str, str], str]:
         except (OSError, ValueError, AttributeError):
             continue
         for packet in packets if isinstance(packets, list) else []:
-            if not isinstance(packet, dict) or not isinstance(packet.get("text"), str):
+            if not isinstance(packet, dict):
+                continue
+            declared.setdefault(str(packet.get("stem")), set()).add(str(packet.get("content_sha")))
+            if not isinstance(packet.get("text"), str):
                 continue
             sha = hashlib.sha256(packet["text"].encode("utf-8")).hexdigest()
             if sha == packet.get("content_sha"):
                 texts[(str(packet.get("stem")), sha)] = packet["text"]
-    return texts
+    return texts, declared
 
 
 def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None) -> dict:
     """Verify judge rows against the notes and store them; nothing is written if any row fails.
 
-    A row for the note's current version is checked against the note. A row for an earlier
-    version (the note changed after export) is checked against the exported text when it is
-    found beside the judge file, and is stored as stale either way; without the exported
-    text, its quotes that are not in the current note are stored unverified."""
+    A row's `content_sha` must be 64 lower-case hex digits. A row for the note's current version
+    is checked against the note. A row for an earlier version (the note changed after export)
+    is checked against the exported text when it is found beside the judge file, and is stored
+    as stale either way; a sha that no packet for the note beside the judge file declares is a
+    miscopy and rejected. With no exported packet for the note at all, quotes that are not in
+    the current note are stored unverified."""
     reviewed_on = today or dt.date.today().isoformat()
-    exported = exported_texts(paths)
+    exported, declared = exported_texts(paths)
     entries: dict[str, dict] = {}
+    currents: dict[str, str] = {}
+    seen: dict[str, str] = {}
     for path in paths:
         try:
             rows = _rows(Path(path))
@@ -331,8 +450,11 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             stem = str(row.get("stem") or "")
             if not STEM.match(stem):
                 raise ValueError(f"{path}: row {number}: bad note stem {stem!r}")
+            if stem in seen:
+                raise ValueError(f"{path}: {stem}: a second row for this note in one import (the first is in {seen[stem]})")
+            seen[stem] = f"{path} row {number}"
             note = _note_path(root, stem)
-            if not note.is_file():
+            if not _is_note(note):
                 raise ValueError(f"{path}: unknown note {stem!r}")
             overall = row.get("overall")
             if overall not in OVERALL:
@@ -340,14 +462,27 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             given = row.get("claims") or []
             if not isinstance(given, list) or not all(isinstance(claim, dict) for claim in given):
                 raise ValueError(f"{path}: {stem}: claims must be a list of JSON objects")
-            sha, current = str(row.get("content_sha") or ""), note_sha(note)
-            source, strict = note.read_bytes().decode("utf-8", errors="replace"), True
+            sha = row.get("content_sha")
+            if not isinstance(sha, str) or not SHA.fullmatch(sha):
+                raise ValueError(f"{path}: {stem}: content_sha must be the packet's 64 lower-case hex digits, not {sha!r}")
+            raw = note.read_bytes()  # one read, so the quotes are checked against the bytes hashed
+            current = hashlib.sha256(raw).hexdigest()
+            source, strict = raw.decode("utf-8", errors="replace"), True
             if sha != current:
-                source, strict = (exported[(stem, sha)], True) if (stem, sha) in exported else (source, False)
-            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given[:MAX_CLAIMS]]
+                if (stem, sha) in exported:
+                    source = exported[(stem, sha)]
+                elif sha not in declared.get(stem, {sha}):
+                    raise ValueError(f"{path}: {stem}: content_sha {sha[:12]}... is neither the note's nor that of its "
+                                     "exported packet beside the judge file (miscopied?)")
+                else:
+                    strict = False
+            if len(given) > MAX_CLAIMS:
+                raise ValueError(f"{path}: {stem}: {len(given)} claims; at most {MAX_CLAIMS}")
+            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given]
             conflict = overall_conflict(overall, claims)
             if conflict:
                 raise ValueError(f"{path}: {stem}: overall {overall!r} contradicts the claims: {conflict}")
+            currents[stem] = current
             entries[stem] = {
                 "reviewed_on": reviewed_on,
                 "judge": judge,
@@ -358,14 +493,25 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                 "stale": sha != current,
             }
     data = load_reviews(root)
-    data.setdefault("notes", {}).update(entries)
+    notes = data.setdefault("notes", {})
+    # A row that is stale on arrival (an earlier pass, re-imported) never replaces a review of
+    # the note's current bytes.
+    skipped = sorted(stem for stem, entry in entries.items() if entry["stale"]
+                     and isinstance(notes.get(stem), dict) and notes[stem].get("content_sha") == currents[stem])
+    stored = {stem: entry for stem, entry in entries.items() if stem not in skipped}
+    notes.update(stored)
     store = root / REVIEWS
     store.parent.mkdir(parents=True, exist_ok=True)
-    store.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-    return {"imported": sorted(entries), "stale": sorted(stem for stem, entry in entries.items() if entry["stale"])}
+    tmp = store.with_name(f".{store.name}.{os.getpid()}.tmp")  # replaced in one step, never left half written
+    try:
+        tmp.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+        os.replace(tmp, store)
+    finally:
+        tmp.unlink(missing_ok=True)
+    return {"imported": sorted(stored), "stale": sorted(stem for stem, entry in stored.items() if entry["stale"]),
+            "skipped": skipped}
 
 
-WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
 FLAGGED = ("unsound", "needs-work")
 QUEUE = "research/audits/REFEREE_QUEUE.md"
 NEXT = 30
@@ -377,14 +523,15 @@ def worst_claim(entry: dict) -> dict | None:
 
 
 def stored_reviews(root: Path) -> dict:
-    """Stored reviews whose stem is a note name (import refuses others; this skips hand edits)."""
+    """Stored reviews whose key is a note name: import never writes another, so a hand-added
+    key such as a path is skipped (a malformed entry already failed in load_reviews)."""
     return {stem: entry for stem, entry in load_reviews(root).get("notes", {}).items() if STEM.match(stem)}
 
 
 def is_stale(root: Path, stem: str, entry: dict) -> bool:
     """True when the note is gone or its bytes differ from the version the judge read."""
     path = _note_path(root, stem)
-    return not path.is_file() or note_sha(path) != entry.get("content_sha")
+    return not _is_note(path) or note_sha(path) != entry.get("content_sha")
 
 
 def status(root: Path) -> dict:
@@ -529,8 +676,15 @@ def main(argv: list[str] | None = None) -> int:
     stat = sub.add_parser("status", parents=[common], help="Flagged and stale reviews.")
     stat.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
-    root = args.root
+    try:
+        return _run(parser, args)
+    except StoreError as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
 
+
+def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
+    root = args.root
     if args.command == "select":
         rows = []
         for path in _selected(root, args):
@@ -547,12 +701,16 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "export":
         if args.note:
             notes = [_note_path(root, Path(stem).name.removesuffix(".md")) for stem in args.note]
-            missing = [path.stem for path in notes if not path.is_file()]
+            missing = [path.stem for path in notes if not _is_note(path)]
             if missing:
                 parser.error(f"no such note: {', '.join(missing)}")
         else:
             notes = _selected(root, args)
-        paths = export_batches(root, args.out_dir, notes, batch_size=args.batch_size)
+        try:
+            paths = export_batches(root, args.out_dir, notes, batch_size=args.batch_size)
+        except ValueError as error:
+            print(f"error: {error}; nothing exported", file=sys.stderr)
+            return 2
         print(f"{len(notes)} notes in {len(paths)} batches; instructions in {args.out_dir / 'INSTRUCTIONS.md'}")
         return 0
 
@@ -563,7 +721,9 @@ def main(argv: list[str] | None = None) -> int:
             print(f"error: {error}; nothing imported", file=sys.stderr)
             return 2
         stale = f": {', '.join(result['stale'])}" if result["stale"] else ""
-        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}")
+        skipped = (f"; {len(result['skipped'])} skipped (a current review is stored): {', '.join(result['skipped'])}"
+                   if result["skipped"] else "")
+        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}{skipped}")
         return 0
 
     if args.command == "render":

@@ -21,7 +21,8 @@ DATE = re.compile(r"20\d\d-\d\d-\d\d")
 NEGATION = re.compile(r"\b(not|no)\b", re.I)
 PRODUCER = re.compile(r"python (theorems/\w+\.py)([^`\n]*)")
 ARTIFACT = re.compile(r"(?:research/)?[a-z_]+/[\w./-]+\.json")
-REPORT = re.compile(r"REPORT\s*=.*?[\"']([^\"']+\.json)[\"']")
+# The script's own REPORT constant, not a prefixed one such as BASE_REPORT.
+REPORT = re.compile(r"^[ \t]*REPORT\s*(?::[^=\n]*)?=.*?[\"']([^\"']+\.json)[\"']", re.M)
 FENCE = re.compile(r"^\s*(```|~~~)")
 LIST_MARKER = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+")
 
@@ -127,16 +128,22 @@ def _not_claimed(preamble: list[str]) -> list[str]:
 
 
 def _producer(text: str, root: Path, stem: str = "") -> dict | None:
-    """The note's own command (`theorems/<stem lower>.py`) if it runs one, else the first.
+    """The note's own command (`theorems/<stem lower>.py`) if it runs one, else the first;
+    with no command, the stem script `theorems/<stem lower>.py` when it exists (command None).
 
     Its artifact: a JSON path in the note named after the script, else the script's
     `REPORT` when that file exists, else the first JSON path in the note, else `REPORT`."""
     commands = list(PRODUCER.finditer(text))
     named = [match.group(0) for match in ARTIFACT.finditer(text)]
-    if not commands:
+    own_script = f"theorems/{stem.lower()}.py"
+    if commands:
+        command = next((match for match in commands if match.group(1) == own_script), commands[0])
+        script, flags = command.group(1), command.group(2).strip()
+        line = f"python {script} {flags}".strip()
+    elif stem and (root / own_script).is_file():
+        script, flags, line = own_script, "", None
+    else:
         return None if not named else {"command": None, "script": None, "flags": "", "artifact": named[0]}
-    command = next((match for match in commands if match.group(1) == f"theorems/{stem.lower()}.py"), commands[0])
-    script, flags = command.group(1), command.group(2).strip()
     source = root / script
     found = REPORT.search(source.read_text(encoding="utf-8", errors="replace")) if source.is_file() else None
     report = found.group(1) if found else None
@@ -147,7 +154,7 @@ def _producer(text: str, root: Path, stem: str = "") -> dict | None:
         artifact = report
     else:
         artifact = named[0] if named else report
-    return {"command": f"python {script} {flags}".strip(), "script": script, "flags": flags, "artifact": artifact}
+    return {"command": line, "script": script, "flags": flags, "artifact": artifact}
 
 
 def _section_dict(section: tuple[str, int, list[str]]) -> dict:
@@ -155,8 +162,9 @@ def _section_dict(section: tuple[str, int, list[str]]) -> dict:
     return {"heading": heading, "line": line, "text": "\n".join(body).strip()}
 
 
-def parse_note(path: Path) -> NotePacket:
-    raw = path.read_bytes()
+def parse_note(path: Path, raw: bytes | None = None) -> NotePacket:
+    """The packet for the note at `path`, parsed from `raw` (its bytes, read once) when given."""
+    raw = path.read_bytes() if raw is None else raw
     text = raw.decode("utf-8", errors="replace")
     lines = text.splitlines()
     title = next((line[2:].strip() for line in lines if line.startswith("# ")), path.stem)
