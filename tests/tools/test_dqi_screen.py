@@ -866,3 +866,11 @@ def test_boolean_cli_flags_can_clear_params(tmp_path, capsys):
     result = json.loads(capsys.readouterr().out)
     assert result['candidate']['encoder_known'] is False
     assert result['candidate']['decoder_known'] is False
+
+
+@pytest.mark.parametrize('m,n,q,letters', [
+    (2**53, 36000, 3, 2), (2**53, 40000, 3, 2),
+    (10**15, 36000, 3, 2), (10**12, 36000, 2, 1),
+])
+def test_large_length_small_radius_packing_matches_exact_ball(m, n, q, letters):
+    assert R.packing_radius(m, n, q, letters) == _ball_radius(m, n, q, letters)

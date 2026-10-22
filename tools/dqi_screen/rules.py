@@ -196,7 +196,26 @@ def signed_packing_reach(alpha: float, q: int) -> float:
 
 
 def _log2_binomial(m: int, k: int) -> float:
-    return (math.lgamma(m + 1) - math.lgamma(k + 1) - math.lgamma(m - k + 1)) / math.log(2)
+    """log2 C(m,k) without subtracting nearly equal lgamma values at large m.
+
+    Small k uses a short product in log space. Otherwise combine the leading Stirling
+    terms algebraically into positive entropy terms, using log1p for small k/m.
+    The factorial correction through n^-5 has remainder below 1/(1680 n^7)
+    for positive n (DLMF 5.11.1, 5.11(ii)); all arguments here are at least 32.
+    """
+    k = min(k, m - k)
+    if k < 32:
+        return math.fsum(math.log2((m - i) / (i + 1)) for i in range(k))
+    rest = m - k
+
+    def correction(n: int) -> float:
+        inverse = 1 / n
+        return inverse / 12 - inverse**3 / 360 + inverse**5 / 1260
+
+    value = math.fsum((k * math.log(m / k), -rest * math.log1p(-k / m),
+                      0.5 * (math.log(m) - math.log(k) - math.log(rest) - math.log(2 * math.pi)),
+                      correction(m), -correction(k), -correction(rest)))
+    return value / math.log(2)
 
 
 _EXACT_BITS = 2**15  # packing_radius sums exact integers while q^n has at most this many bits

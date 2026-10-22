@@ -128,3 +128,8 @@ exits 1 and the report says "outside licensed Hamming reach".
 Tests: `python -m pytest -q tests/tools/test_dqi_screen.py`.
 
 The finite Griesmer bound is stated for linear codes in [Ball, Lavrauw and Popatia, Eq. (1)](https://web.mat.upc.edu/simeon.michael.ball/additiveboundfixed.pdf). It is an upper bound on feasible distance, not an existence guarantee.
+
+Floating packing uses a cancellation-free log-binomial evaluation (short products or the
+Stirling expansion in [NIST DLMF 5.11](https://dlmf.nist.gov/5.11)). Its 1e-9 relative
+comparison tolerance remains conservative; it is not a promise of exact integer boundaries
+for arbitrarily large inputs.
