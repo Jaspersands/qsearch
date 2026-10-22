@@ -389,7 +389,7 @@ put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 | field | content |
 |---|---|
 | `id` | unique kebab-case id |
-| `name`, `aliases` | the names a note would use; matched on word boundaries, so avoid short common words |
+| `name`, `aliases` | the names a note would use; matched case-insensitively on word boundaries, and a hyphen is a boundary, so avoid short common words and phrases that occur in other terms ("norm construction" matched "low-norm Construction-A", so the alias is "classical norm construction") |
 | `problem` | the problem the algorithm solves, one sentence |
 | `mechanisms` | 3 to 6 lowercase keywords an idea would contain |
 | `summary` | what the algorithm does and what it is the baseline for |

@@ -55,7 +55,7 @@
     {
       "id": "norm-search-fp2",
       "name": "Quadratic-extension norm search",
-      "aliases": ["norm search", "norm attack", "quadratic-extension norm", "norm construction"],
+      "aliases": ["norm search", "norm attack", "quadratic-extension norm", "classical norm construction"],
       "problem": "Prime-field optimal polynomial intersection with mixed square and non-square (quadratic character) coset constraints.",
       "mechanisms": ["quadratic extension", "norm map", "quadratic residue", "power character", "mixed coset"],
       "summary": "Factor a target polynomial over F_p and F_{p^2} to write it as a norm from the quadratic extension (a monic polynomial is a norm exactly when every odd-degree irreducible factor has even multiplicity); the norm gives a polynomial within the degree budget that meets the mixed square and non-square constraints. Standard factorization and norm machinery. In the referenced note it solves both saved N127, K77 mixed inputs perfectly; it does not reach the K39 inputs under its degree budget.",

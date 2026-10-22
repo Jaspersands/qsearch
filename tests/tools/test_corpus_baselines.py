@@ -250,6 +250,30 @@ def test_readme_says_the_runnable_check_runs_now_that_dqi_screen_is_merged() -> 
     assert "(it skips only in a checkout without `tools/dqi_screen/`)" in readme
 
 
+CONSTRUCTION_A = {
+    "id": "NEG-CODE-SELF-DUAL-CONSTRUCTION-A-LOCAL-SELF-DUAL-K32",
+    "claim": "Low-norm Construction-A invariants separate self-dual-k32.",
+    "reason_invalid": "All sampled instances share determinant, parity, minimum norm, and norm-two vector count.",
+    "lesson": "Compare coset-state collective measurement of self-dual codes against lattice invariants.",
+}
+
+
+def test_low_norm_construction_a_lattices_do_not_cite_the_norm_search(fake_repo: Path) -> None:
+    # The alias "norm construction" matched "low-norm Construction-A" (a hyphen is a word boundary),
+    # so self-dual code negatives were credited to the prime-field quadratic-extension norm search.
+    norm = next(entry for entry in load_catalog() if entry["id"] == "norm-search-fp2")
+    assert _name_pattern(norm).search("## Classical Norm Construction")  # PRIME_CHARACTER_NORM_ATTACK's heading
+    assert _name_pattern(norm).search(CONSTRUCTION_A["claim"]) is None
+    registry = fake_repo / "research" / "registry" / "negative_results.json"
+    # NEGATIVES[1] names the "quadratic-extension norm" itself, a true citation, so it is left out here.
+    registry.write_text(json.dumps([NEGATIVES[0], CONSTRUCTION_A], indent=2), encoding="utf-8")
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    idea = "coset-state collective measurement for self-dual code equivalence k32"
+    assert corpus.search(idea, kinds=("note", "negative"), k=1)[0].doc_id == f"negative:{CONSTRUCTION_A['id']}"
+    assert "norm-search-fp2" not in {rec.baseline["id"] for rec in recommend(corpus, idea, k=20)}
+
+
 def test_runnables_run_as_printed_or_name_an_existing_function() -> None:
     if not (REPO / "tools" / "dqi_screen").is_dir():
         pytest.skip("tools/dqi_screen/ is not in this checkout")
