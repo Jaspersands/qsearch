@@ -55,7 +55,7 @@ preflight only helps when someone runs it. The brief puts each of them on one pa
 | Referee | `tools/referee/referee.py` `status()` over `research/audits/reviews/reviews.json` | notes flagged unsound or needs-work with their worst claim, and stale reviews |
 | Preflight | `tools/preflight/preflight.py` `run()`, the static checks only | problems grouped by check (`json`, `imports`, `manifest`) |
 | Inertia | `site/data/cockpit.json` (`inertia.flags`, `warnings`) | directions with many handoff sections since the registry last gained a record in them; the cockpit's build date. A `warnings` string counts as one warning; warnings that are not a list, or a threshold or streak that is not a whole number, make the section not available |
-| Possible duplicates | the corpus index (`tools/corpus/duplicates.py` `near_duplicates`) | pairs at TF-IDF cosine 0.8 or above that involve a negative added in the window |
+| Possible duplicates | the corpus index (`tools/corpus/duplicates.py` `near_duplicates`) | pairs at TF-IDF cosine 0.8 or above that involve a negative added in the window, all of them (not `near_duplicates`' default top 200); an added record the index does not hold (it skips one it cannot parse) is named as not compared rather than counted, and the problems the index recorded for the negative registry files are printed, since a skipped record can hide a pair |
 | Commands | nothing (static) | `been-tried`, the DQI screener, `baselines`, preflight and `check-new`, each with when to run it |
 
 `agent_brief.json` holds every section in full. The markdown caps each list and table at 40

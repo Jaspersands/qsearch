@@ -920,14 +920,70 @@ def test_duplicates_section_keeps_pairs_that_involve_a_new_record(tmp_path: Path
         return pairs
 
     monkeypatch.setattr(B, "_near_duplicates", fake)
-    marker = object()
+    marker = _Indexed()
     section = B.duplicates_section(tmp_path, ["NEG-NEW-1", "NEG-NEW-2"], corpus=marker)
     assert section["available"] is True and section["checked"] == 2
+    assert (section["unchecked"], section["index_issues"]) == ([], [])
     assert [(p["a"], p["b"], p["new"]) for p in section["pairs"]] == [
         ("negative:NEG-NEW-1", "negative:NEG-OLD-1", ["NEG-NEW-1"]),
         ("negative:NEG-OLD-2", "quarantined:NEG-NEW-2", ["NEG-NEW-2"]),
     ]
     assert seen["corpus"] is marker and seen["kind"] == "negative" and seen["threshold"] == B.DUPLICATE_THRESHOLD
+
+
+class _Indexed:
+    """A corpus stand-in whose index holds every document and recorded no parse problem."""
+
+    def get(self, doc_id: str) -> object:
+        return object()
+
+    def issues(self) -> list[dict[str, str]]:
+        return []
+
+
+def test_duplicates_section_keeps_a_new_record_pair_below_the_default_limit(tmp_path: Path, monkeypatch) -> None:
+    # near_duplicates keeps its top `limit` pairs (200 by default) before the brief filters for
+    # new records. On the real index 599 pairs reach 0.8 and the 200th scores 0.90, so the
+    # default would drop every 0.80-0.90 pair, where true restatements sit.
+    from tools.corpus.duplicates import Pair, near_duplicates
+
+    default = inspect.signature(near_duplicates).parameters["limit"].default
+    pairs = [Pair(f"negative:NEG-OLD-{i}", f"negative:NEG-OLD-{i}-X", 0.99, "old", "old") for i in range(default)]
+    pairs.append(Pair("negative:NEG-NEW", "negative:NEG-OLD-0", 0.85, "new", "old"))
+
+    def fake(corpus, *, kind, threshold, limit=default, **kwargs):
+        return pairs[:limit]  # the real function's cut
+
+    monkeypatch.setattr(B, "_near_duplicates", fake)
+    section = B.duplicates_section(tmp_path, ["NEG-NEW"], corpus=_Indexed())
+    assert [(p["a"], p["score"]) for p in section["pairs"]] == [("negative:NEG-NEW", 0.85)]
+
+
+def test_duplicates_section_does_not_count_a_record_the_index_skipped(fake_repo: Path) -> None:
+    # The corpus skips a record it cannot parse (here applies_to is not a list), so no pair can
+    # involve it: "0 pairs involve the 1 negative added" would be a guess, not a finding.
+    from tests.tools.conftest import NEGATIVES
+    from tests.tools.test_corpus_duplicates import DUP_A, DUP_B
+
+    _write_json(fake_repo / B.REGISTRY, NEGATIVES + [DUP_A, {**DUP_B, "applies_to": 7}])
+    section = B.duplicates_section(fake_repo, ["NEG-DUP-B"])
+    assert section["available"] is True
+    assert (section["checked"], section["unchecked"], section["pairs"]) == (0, ["NEG-DUP-B"], [])
+    [issue] = section["index_issues"]
+    assert issue.startswith(f"{B.REGISTRY}: skipped 1 malformed record(s): NEG-DUP-B")
+    text = "\n".join(B._render_duplicates(section, SINCE))
+    assert "No negative was added" not in text and "0 pairs" not in text
+    assert "Not compared (1): `NEG-DUP-B`" in text
+    assert "a pair may be missing" in text and "skipped 1 malformed record(s)" in text
+
+    # The old record skipped instead: the new one is compared, but its pair cannot be found.
+    _write_json(fake_repo / B.REGISTRY, NEGATIVES + [{**DUP_A, "applies_to": 7}, DUP_B])
+    section = B.duplicates_section(fake_repo, ["NEG-DUP-B"])
+    assert (section["checked"], section["unchecked"], section["pairs"]) == (1, [], [])
+    assert section["index_issues"]
+    text = "\n".join(B._render_duplicates(section, SINCE))
+    assert "0 pairs at TF-IDF cosine 0.8 or above involve one of the 1 negatives added" in text
+    assert "a pair may be missing" in text
 
 
 def test_duplicates_section_finds_a_planted_restatement_with_the_real_corpus(fake_repo: Path) -> None:
@@ -949,7 +1005,8 @@ def test_duplicates_section_missing(tmp_path: Path, monkeypatch) -> None:
 
     monkeypatch.setattr(B, "_open_corpus", no_corpus)
     section = B.duplicates_section(tmp_path, [])
-    assert section == {"available": True, "checked": 0, "threshold": B.DUPLICATE_THRESHOLD, "pairs": []}
+    assert section == {"available": True, "checked": 0, "unchecked": [], "index_issues": [],
+                       "threshold": B.DUPLICATE_THRESHOLD, "pairs": []}
 
 
 def test_commands_section_names_five_commands_that_exist() -> None:
@@ -1011,7 +1068,7 @@ def _full_repo(tmp_path: Path, monkeypatch) -> Path:
     _reviewed_note(repo)
     from tools.corpus.duplicates import Pair
 
-    monkeypatch.setattr(B, "_open_corpus", lambda root: "corpus")
+    monkeypatch.setattr(B, "_open_corpus", lambda root: _Indexed())
     monkeypatch.setattr(B, "_near_duplicates", lambda corpus, **kw: [
         Pair("negative:A", "negative:C", 0.93, "the old claim", "the new claim")])
     return repo

@@ -512,21 +512,29 @@ def duplicates_section(root: Path, added_ids: list[str] | None, corpus: Any = No
     """Near-duplicate pairs (TF-IDF cosine >= DUPLICATE_THRESHOLD) that involve a record added in the window.
 
     The corpus index is opened only when something was added. `added_ids` None means the
-    registry delta was unavailable, so the section is too.
+    registry delta was unavailable, so the section is too. `checked` counts the added records
+    the index holds; `unchecked` names those it does not (it skips a record it cannot parse,
+    and reads a registry that is not a list as raw text), and `index_issues` the problems it
+    recorded for the negative registry files, any of which can hide a pair.
     """
     if added_ids is None:
         return {"available": False, "reason": "the registry delta is unavailable, so no new records are known"}
     added = set(added_ids)
     if not added:
-        return {"available": True, "checked": 0, "threshold": DUPLICATE_THRESHOLD, "pairs": []}
+        return {"available": True, "checked": 0, "unchecked": [], "index_issues": [], "threshold": DUPLICATE_THRESHOLD,
+                "pairs": []}
     corpus = corpus if corpus is not None else _open_corpus(Path(root))
+    unchecked = sorted(rid for rid in added if corpus.get(f"negative:{rid}") is None)
+    index_issues = [f"{issue['path']}: {issue['message']}" for issue in corpus.issues()
+                    if issue["path"] in (REGISTRY, QUARANTINE)]
     pairs = _near_duplicates(corpus, kind="negative", threshold=DUPLICATE_THRESHOLD, limit=sys.maxsize)
     kept = []
     for pair in pairs:
         new = sorted({_bare(pair.a), _bare(pair.b)} & added)
         if new:
             kept.append({**asdict(pair), "new": new})
-    return {"available": True, "checked": len(added), "threshold": DUPLICATE_THRESHOLD, "pairs": kept}
+    return {"available": True, "checked": len(added) - len(unchecked), "unchecked": unchecked,
+            "index_issues": index_issues, "threshold": DUPLICATE_THRESHOLD, "pairs": kept}
 
 
 COMMANDS = (
@@ -762,13 +770,20 @@ def _render_inertia(section: dict[str, Any], since: str) -> list[str]:
 
 
 def _render_duplicates(section: dict[str, Any], since: str) -> list[str]:
-    if not section["checked"]:
+    unchecked, issues = section.get("unchecked") or [], section.get("index_issues") or []
+    if not section["checked"] and not unchecked:
         return ["No negative was added in the window, so there is nothing to compare."]
     pairs = section["pairs"]
-    lines = [
-        f"{len(pairs)} pairs at TF-IDF cosine {section['threshold']} or above involve one of the "
-        f"{section['checked']} negatives added in the window."
-    ]
+    lines = []
+    if section["checked"]:
+        lines.append(f"{len(pairs)} pairs at TF-IDF cosine {section['threshold']} or above involve one of the "
+                     f"{section['checked']} negatives added in the window.")
+    if unchecked:
+        lines.append(f"Not compared ({len(unchecked)}): {_id_list(unchecked)}: added in the window, but the corpus "
+                     "index has no document for them, so no pair with them was looked for.")
+    if issues:
+        lines.append("The corpus index could not read all of the negative registry, so a pair may be missing: "
+                     + "; ".join(_flat(issue) for issue in issues) + ".")
     if pairs:
         lines[0] += " Read both records before merging them; a sweep sibling is a separate result and stays."
         lines += ["", "| Cosine | Record | Title | Record | Title |", "|---|---|---|---|---|"]
