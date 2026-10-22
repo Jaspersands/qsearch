@@ -974,6 +974,43 @@ def test_render_contains_every_section_heading_and_action_strings(tmp_path: Path
         assert needle in text, needle
 
 
+def test_render_shows_what_each_section_found(tmp_path: Path, monkeypatch) -> None:
+    # Each actionable line, checked under its own heading: a renderer that printed "nothing to
+    # report" (no open flag, no problem, no flagged direction) where there is something must fail.
+    repo = _full_repo(tmp_path, monkeypatch)
+    _write_json(repo / B.COCKPIT, COCKPIT)
+    page = _sections(B.render(B.build(repo, today="2026-10-20")))
+    registry, arxiv = page["Registry"], page["arXiv watch"]
+    assert "Added (2): `B`, `C`." in registry
+    assert "Removed (1, none now in the quarantine file): `A`." in registry
+    assert "Possible kills and scoops with no verdict yet: 1. First seen since 2026-10-13 and already reviewed: 0." in arxiv
+    assert "Verdicts recorded since 2026-10-13: 1 (should-cite 1)." in arxiv
+    assert "- `2610.33333`: should-cite (human, 2026-10-19)." in arxiv  # not in the flagged table
+    assert "| 2610.11111 | possible-kill | 2026-10-18 | **open**: read it | Open new kill |" in arxiv
+    assert "- `FIXTURE_NOTE` **unsound** (reviewed 2026-10-21)." in page["Referee"]
+    preflight = page["Preflight"]
+    assert "No problems" not in preflight
+    assert "- manifest: `research/audits/cli_manifest.json`: missing" in preflight
+    inertia = page["Inertia"]
+    assert "built 2026-10-19" in inertia and "flagged after 8 handoff sections" in inertia
+    assert "- OPI / prime character (`opi`): 13 sections since the registry last gained a record here (never)." in inertia
+    assert "- DCP / dihedral coset (`dcp`): 32 sections since the registry last gained a record here (2026-10-12)." in inertia
+    assert "- Warning: Git history is shallow." in inertia and "No direction is flagged" not in inertia
+    assert "| 0.93 | `negative:A` | the old claim | `negative:C` | the new claim |" in page["Possible duplicates"]
+
+
+def test_the_window_includes_its_first_day(tmp_path: Path) -> None:
+    _arxiv_files(
+        tmp_path,
+        [_paper("2610.11111", "First day", "possible-kill", SINCE),
+         _paper("2610.22222", "Day before", "possible-scoop", "2026-10-13")],
+        {"2610.11111": _verdict("false-alarm", SINCE), "2610.22222": _verdict("false-alarm", "2026-10-13")},
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [f["id"] for f in section["flagged"]] == ["2610.11111"]
+    assert [r["id"] for r in section["reviewed"]] == ["2610.11111"]
+
+
 def _sections(text: str) -> dict[str, str]:
     """The rendered page split at its "## " headings: heading -> body."""
     parts = text.split("\n## ")[1:]
@@ -1022,7 +1059,8 @@ def test_render_keeps_pipes_in_list_items_and_escapes_them_in_table_cells() -> N
 
 
 def test_render_caps_every_list_and_says_how_many_more() -> None:
-    n = B.LIST_CAP + 1
+    assert B.LIST_CAP == 40  # the README's number
+    n = 41
     ids = [f"{i:02d}" for i in range(n)]
     worst = {"quote": "q", "verdict": "wrong", "finding": "f"}
     page = _page(
@@ -1043,7 +1081,7 @@ def test_render_caps_every_list_and_says_how_many_more() -> None:
                     "pairs": [{"a": f"DUP{i}", "b": "negative:B", "score": 0.9, "title_a": "x", "title_b": "y"}
                               for i in ids]},
     )
-    last, over = f"{B.LIST_CAP - 1:02d}", f"{B.LIST_CAP:02d}"
+    last, over = "39", "40"
     for heading, prefixes in {"Registry": ["ADD", "REM"], "arXiv watch": ["FLAG", "REV", "ACT"],
                               "Referee": ["NOTE", "STALE"], "Preflight": ["PATH"], "Inertia": ["DIR", "WARN"],
                               "Possible duplicates": ["DUP"]}.items():
