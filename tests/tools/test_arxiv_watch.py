@@ -575,9 +575,10 @@ def test_hand_written_keys_are_read_as_bare_ids(tmp_path: Path) -> None:
 
 @pytest.mark.parametrize(
     "data",
-    [[], {"verdicts": None}, {"verdicts": []}, {"verdicts": {"2610.11111": "false-alarm"}},
-     {"verdicts": {"2610.11111": {"verdict": "maybe"}}}, {"verdicts": {"see 2610.11111": {"verdict": "kill"}}}],
-    ids=["list", "null", "verdicts-list", "string-entry", "unknown-verdict", "bad-key"],
+    [[], {}, {"verdict": {"2610.11111": {"verdict": "kill"}}}, {"verdicts": None}, {"verdicts": []},
+     {"verdicts": {"2610.11111": "false-alarm"}}, {"verdicts": {"2610.11111": {"verdict": "maybe"}}},
+     {"verdicts": {"see 2610.11111": {"verdict": "kill"}}}],
+    ids=["list", "empty-object", "misspelled-key", "null", "verdicts-list", "string-entry", "unknown-verdict", "bad-key"],
 )
 def test_malformed_verdicts_file_is_a_clean_error(fake_repo: Path, monkeypatch, capsys, data) -> None:
     from tools.arxiv_watch import judge, watch
@@ -796,6 +797,49 @@ def test_verdict_flag_keeps_an_earlier_action_and_action_done_marks_it(fake_repo
     for ident, why in (("2610.11111", "no action"), ("2610.22222", "no verdict"), ("2610.0675", "not an arXiv id")):
         assert watch.main(["--root", str(fake_repo), "--action-done", ident]) == 2, ident
         assert why in capsys.readouterr().err, ident
+
+
+def test_re_recording_without_reason_keeps_it_only_for_the_same_persons_verdict(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+
+    def verdict(*argv: str) -> int:
+        return watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", *argv])
+
+    def stored() -> dict:
+        return load_verdicts(fake_repo)["verdicts"]["2610.11111"]
+
+    assert verdict("should-cite", "--reason", "It proves the bound note X uses.", "--action", "Cite it in X.") == 0
+    capsys.readouterr()
+    assert verdict("should-cite", "--action", "Cite it in Y.") == 0  # only the action changes
+    assert (stored()["reason"], stored()["action"]) == ("It proves the bound note X uses.", "Cite it in Y.")
+    assert "kept the earlier reason" in capsys.readouterr().out
+    before = stored()
+    assert verdict("kill") == 2  # a changed verdict needs its own reason
+    assert "--reason" in capsys.readouterr().err and stored() == before
+
+
+def test_a_person_recording_over_a_judge_keeps_neither_its_reason_nor_its_action(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    kill = _paper("2610.11111", "Dequantizing Helstrom readout of dihedral coset packets", "A classical algorithm for quantum product readout.")
+    run(fake_repo, FakeClient([kill]), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    judged = set_verdict(fake_repo, "2610.11111", "kill", "the judge's reading", "judge:x", action="Retract Result A in research/X.md")
+    argv = ["--root", str(fake_repo), "--verdict", "2610.11111"]
+    for again in ("kill", "false-alarm"):  # the judge's reason is not the person's, even for the same verdict
+        assert watch.main([*argv, again]) == 2, again
+        assert "--reason" in capsys.readouterr().err and load_verdicts(fake_repo)["verdicts"]["2610.11111"] == judged
+    assert watch.main([*argv, "false-alarm", "--reason", "checked it"]) == 0
+    entry = load_verdicts(fake_repo)["verdicts"]["2610.11111"]
+    assert (entry["verdict"], entry["reason"], entry["action"], entry["by"]) == ("false-alarm", "checked it", None, "human")
+    assert "action_done" not in entry
+    assert "did not keep the judge's action" in capsys.readouterr().out
 
 
 def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:

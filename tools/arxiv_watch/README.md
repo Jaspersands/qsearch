@@ -124,8 +124,13 @@ They do the same when `arxiv_collisions.json` cannot be read, and when `--root` 
 Each entry holds `verdict`, `reason`, `action` (null when nothing is to be done), `by` and
 `reviewed_on`. `action_done: true` marks an action already carried out; set it with
 `watch.py --action-done ID` (exit 2 when the paper has no verdict or its verdict no action).
-Re-recording a verdict without `--action` keeps the earlier action and its `action_done`, and
-says so; a different `--action` starts not done, and `--action ""` clears it. The file is the
+Re-recording a person's verdict without `--action` keeps the earlier action and its
+`action_done`, and says so; a different `--action` starts not done, and `--action ""` clears
+it. Without `--reason` the earlier reason is kept, and the output says so, only when the
+verdict is unchanged; a changed verdict with a stored reason needs its own `--reason` (exit 2
+otherwise). A person recording over a judge's verdict keeps neither the judge's reason nor its
+action: `--reason` is needed, and the output names the judge's action so `--action` can adopt
+it. The file is the
 source of truth: every run copies its entries onto the stored records and drops a withdrawn
 one. The digest's Reviewed table lists every entry, by verdict then id, with the paper's
 machine label; an id the collisions file does not hold shows "not stored".

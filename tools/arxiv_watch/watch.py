@@ -37,7 +37,7 @@ if __package__ in (None, ""):
 
 from tools.arxiv_watch.tracks import TRACKS, Track, classify  # noqa: E402
 from tools.arxiv_watch.verdicts import (  # noqa: E402
-    VERDICTS, VERDICTS_FILE, by_judge, load_verdicts, mark_action_done, normalize_id, set_verdict,
+    VERDICTS, VERDICTS_FILE, by_judge, load_verdicts, mark_action_done, normalize_id, set_verdict, verdict_entry,
 )
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
@@ -591,10 +591,13 @@ def main(argv: list[str] | None = None) -> int:
         "--verdict", nargs=2, metavar=("ARXIV_ID", "VERDICT"),
         help=f"Record a reviewed verdict ({', '.join(VERDICTS)}) and re-render the digest; no fetching.",
     )
-    parser.add_argument("--reason", default="", help="With --verdict: why, in a sentence or two.")
+    parser.add_argument(
+        "--reason",
+        help="With --verdict: why, in a sentence or two. Left out, a person's verdict re-recorded unchanged keeps its reason.",
+    )
     parser.add_argument(
         "--action",
-        help='With --verdict: what a named document should change. Left out, a re-recorded verdict keeps its earlier action; "" clears it.',
+        help='With --verdict: what a named document should change. Left out, a person\'s re-recorded verdict keeps its earlier action; "" clears it.',
     )
     parser.add_argument("--by", default="human", help="With --verdict: who decided (default: human).")
     parser.add_argument(
@@ -615,18 +618,41 @@ def main(argv: list[str] | None = None) -> int:
             print(f"error: {error}", file=sys.stderr)
             return 2
     if args.verdict or args.action_done:
-        kept = False
+        notes: list[str] = []
         try:
             state = _load_state(args.root)
             if args.verdict:
                 raw_id, verdict = args.verdict
                 arxiv_id = normalize_id(raw_id)
+                verdict_entry(verdict, "", args.by)  # an unknown verdict is reported before a missing reason
                 previous = load_verdicts(args.root)["verdicts"].get(arxiv_id) or {}
-                action = args.action
-                if action is None and previous.get("action"):  # re-recorded without --action: keep the earlier one
-                    action, kept = previous["action"], True
-                done = bool(previous.get("action_done")) and action == previous.get("action")
-                set_verdict(args.root, arxiv_id, verdict, args.reason, args.by, action=action, action_done=done)
+                # Only a person's own earlier entry is carried over: a judge's reason and action
+                # are one model's reading, not the person's.
+                own = bool(previous) and not by_judge(previous)
+                reason, action = args.reason, args.action
+                if reason is None:
+                    if own and previous.get("verdict") == verdict and previous.get("reason"):
+                        reason = previous["reason"]
+                        notes.append("kept the earlier reason (--reason replaces it)")
+                    elif previous.get("reason"):
+                        raise ValueError(
+                            f"{arxiv_id} has a {previous.get('verdict')} verdict by {previous.get('by') or 'hand'} "
+                            "with its own reason; give --reason for this one"
+                        )
+                    else:
+                        reason = ""
+                if action is None and previous.get("action"):
+                    if own:
+                        action = previous["action"]
+                    else:
+                        notes.append(f"did not keep the judge's action ({previous['action']}); give --action to adopt it")
+                done = own and bool(previous.get("action_done")) and action == previous.get("action")
+                if own and args.action is None and action:
+                    notes.append(
+                        f"kept the earlier action ({action}) and whether it was done ({'done' if done else 'not done'});"
+                        ' --action "" clears it'
+                    )
+                set_verdict(args.root, arxiv_id, verdict, reason, args.by, action=action, action_done=done)
                 outcome = verdict
             else:
                 arxiv_id = normalize_id(args.action_done)
@@ -639,8 +665,8 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         stored = "" if arxiv_id in state["papers"] else " (not in the collisions file yet)"
         print(f"{arxiv_id}: {outcome}{stored}; digest re-rendered")
-        if kept:
-            print('kept the earlier action and whether it was done (--action "" clears it)')
+        for note in notes:
+            print(note)
         return 0
     if args.relabel:
         corpus = Corpus(args.root)
