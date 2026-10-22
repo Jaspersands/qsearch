@@ -404,7 +404,9 @@ put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 **Adding an entry.** Append it to `baselines.json`, raise the count in
 `test_catalog_is_well_formed`, then run `python -m pytest -q tests/tools/test_corpus_baselines.py`.
 `validate_catalog` reports an entry that is not an object, a duplicate id, a missing or
-mistyped field, a blank name or alias, fewer than 3 or more than 6 keywords, a keyword that
+mistyped field, a blank name or alias, a name or alias with no word of two letters or digits
+outside the English stop words (".", "x" or "the" would cite almost every note), fewer than 3
+or more than 6 keywords, a keyword that
 is not lowercase or that `tokens` cannot match as written (`"-"` has no word and would match
 every idea; the `χ` of `"χ² test"` would be dropped, so spell keywords in ASCII, although
 accents fold and `"gröbner basis"` is fine), a `runnable` other than `null` or

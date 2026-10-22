@@ -25,6 +25,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from tools.corpus.api import Corpus, Hit
+from tools.corpus.ranking import query_terms
 
 NEARBY = 10  # note sections and negatives searched for citations; each citing note or negative adds 1 / NEARBY
 CATALOG = Path(__file__).with_name("baselines.json")
@@ -113,6 +114,15 @@ def validate_catalog(entries: list[dict]) -> list[str]:
             problems.extend(f"{label}: {problem}" for m in mechanisms if (problem := _keyword_problem(m)))
         if isinstance(entry.get("aliases"), list) and not all(isinstance(a, str) and a.strip() for a in entry["aliases"]):
             problems.append(f"{label}: aliases must be non-empty strings")
+        names = [("name", entry.get("name"))] + [
+            ("alias", a) for a in (entry["aliases"] if isinstance(entry.get("aliases"), list) else ())
+        ]
+        problems.extend(
+            f"{label}: {field} {json.dumps(value, ensure_ascii=False)} has no word to match, "
+            "so it would cite almost every note"
+            for field, value in names
+            if isinstance(value, str) and value.strip() and not query_terms(_fold(value))
+        )
         for ref in entry.get("references") if isinstance(entry.get("references"), list) else ():
             if not _reference_ok(ref):
                 problems.append(f"{label}: malformed reference {json.dumps(ref)}")

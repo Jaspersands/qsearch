@@ -72,6 +72,12 @@ def test_catalog_is_well_formed() -> None:
         ({"aliases": "Prange"}, "aliases must be a list"),
         ({"aliases": ["Prange", " "]}, "aliases must be non-empty strings"),
         ({"name": "  "}, "name must be a non-empty string"),
+        # a name or alias with no word of two letters or digits outside the stop words cites almost every note
+        *(
+            ({"aliases": ["Prange", alias]}, f"alias {json.dumps(alias)} has no word to match, so it would cite almost every note")
+            for alias in (".", "-", " (", "a", "x", "the", "of")
+        ),
+        ({"name": "-"}, 'name "-" has no word to match, so it would cite almost every note'),
         ({"summary": 3}, "summary must be a non-empty string"),
         (
             {"runnable": "python tools/dqi_screen/screen.py"},
