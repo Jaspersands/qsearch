@@ -25,7 +25,15 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
+from contextlib import contextmanager
 from pathlib import Path
+from typing import Iterator
+
+try:
+    import fcntl
+except ImportError:  # not on Windows
+    fcntl = None
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -515,6 +523,23 @@ def exported_texts(paths: list[Path]) -> tuple[dict[tuple[str, str], str], dict[
     return texts, declared
 
 
+@contextmanager
+def _store_lock(folder: Path) -> Iterator[None]:
+    """An exclusive lock on the review store's folder, held by import from reading the store to
+    replacing it, so imports run at once take turns instead of dropping each other's reviews. The
+    folder, not reviews.json: the rename replaces the file a lock on it would be held on."""
+    folder.mkdir(parents=True, exist_ok=True)
+    if fcntl is None:
+        yield
+        return
+    handle = os.open(folder, os.O_RDONLY)
+    try:
+        fcntl.flock(handle, fcntl.LOCK_EX)
+        yield
+    finally:
+        os.close(handle)  # releases the lock
+
+
 JUDGE_FILE = re.compile(r"batch_\d+")
 
 
@@ -676,22 +701,26 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                 "summary": summary,
                 "stale": sha != current,
             }
-    data = load_reviews(root)
-    notes = data.setdefault("notes", {})
-    # A row that is stale on arrival (an earlier pass, re-imported) never replaces a review of
-    # the note's current bytes.
-    skipped = sorted(stem for stem, entry in entries.items() if entry["stale"]
-                     and isinstance(notes.get(stem), dict) and notes[stem].get("content_sha") == currents[stem])
-    stored = {stem: entry for stem, entry in entries.items() if stem not in skipped}
-    notes.update(stored)
     store = root / REVIEWS
-    store.parent.mkdir(parents=True, exist_ok=True)
-    tmp = store.with_name(f".{store.name}.{os.getpid()}.tmp")  # replaced in one step, never left half written
-    try:
-        tmp.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-        os.replace(tmp, store)
-    finally:
-        tmp.unlink(missing_ok=True)
+    with _store_lock(store.parent):
+        data = load_reviews(root)
+        notes = data.setdefault("notes", {})
+        # A row that is stale on arrival (an earlier pass, re-imported) never replaces a review of
+        # the note's current bytes.
+        skipped = sorted(stem for stem, entry in entries.items() if entry["stale"]
+                         and isinstance(notes.get(stem), dict) and notes[stem].get("content_sha") == currents[stem])
+        stored = {stem: entry for stem, entry in entries.items() if stem not in skipped}
+        notes.update(stored)
+        # Replaced in one step, so never left half written; the temp name is this write's own.
+        handle, name = tempfile.mkstemp(prefix=f".{store.name}.", suffix=".tmp", dir=store.parent)
+        tmp = Path(name)
+        try:
+            with os.fdopen(handle, "w", encoding="utf-8") as out:
+                out.write(json.dumps(data, indent=1, sort_keys=True) + "\n")
+            os.chmod(tmp, store.stat().st_mode & 0o777 if store.exists() else 0o644)  # mkstemp makes it 0600
+            os.replace(tmp, store)
+        finally:
+            tmp.unlink(missing_ok=True)
     return {"imported": sorted(stored), "stale": sorted(stem for stem, entry in stored.items() if entry["stale"]),
             "skipped": skipped, "missing": sorted(missing)}
 

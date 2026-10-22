@@ -6,6 +6,8 @@ import os
 import re
 import subprocess
 import textwrap
+import threading
+import time
 from pathlib import Path
 
 import pytest
@@ -1430,6 +1432,44 @@ def test_import_replaces_the_store_in_one_step(tmp_path: Path, monkeypatch) -> N
         R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "b.jsonl", [_row(tmp_path, overall="unclear", claims=[])])], "second")
     assert store.read_bytes() == before
     assert sorted(path.name for path in store.parent.iterdir()) == ["reviews.json"]
+
+
+def test_imports_at_once_keep_each_others_reviews(tmp_path: Path, monkeypatch) -> None:
+    # Two overlapping imports each read the old store, the later rename dropped the other's
+    # review, and both reported it imported; in one process they also shared a temp file name.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    _dated_note(tmp_path, "OTHER", "2026-10-11. REVIEW PENDING.", 1000)
+    files = {"first": _jsonl(tmp_path / "a" / "rows.jsonl", [_row(tmp_path)]),
+             "second": _jsonl(tmp_path / "b" / "rows.jsonl", [_row(tmp_path, stem="OTHER", overall="unclear", claims=[])])}
+    load, loaded = R.load_reviews, threading.Event()
+    temps: list[str] = []
+    replace = os.replace
+
+    def slow_load(root: Path) -> dict:
+        data = load(root)
+        if threading.current_thread().name == "first":
+            loaded.set()
+            time.sleep(0.5)  # the second import starts while the first holds the store it read
+        return data
+
+    def recording_replace(source, target) -> None:
+        temps.append(Path(source).name)
+        replace(source, target)
+
+    monkeypatch.setattr(R, "load_reviews", slow_load)
+    monkeypatch.setattr(R.os, "replace", recording_replace)
+    results: dict[str, dict] = {}
+    threads = {name: threading.Thread(target=lambda name=name: results.update({name: R.import_reviews(tmp_path, [files[name]], name)}),
+                                      name=name) for name in files}
+    threads["first"].start()
+    assert loaded.wait(10)
+    threads["second"].start()
+    for thread in threads.values():
+        thread.join(10)
+    assert (results["first"]["imported"], results["second"]["imported"]) == (["FIXTURE_NOTE"], ["OTHER"])
+    store = tmp_path / R.REVIEWS
+    assert set(json.loads(store.read_text(encoding="utf-8"))["notes"]) == {"FIXTURE_NOTE", "OTHER"}
+    assert len(set(temps)) == 2 and sorted(path.name for path in store.parent.iterdir()) == ["reviews.json"]
 
 
 # ---------- the committed reviews (research/audits/reviews) ----------
