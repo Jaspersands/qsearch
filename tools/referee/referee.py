@@ -451,8 +451,8 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     is checked against the exported text when it is found beside the judge file, and is stored
     as stale either way; a sha that no packet for the note beside the judge file declares is a
     miscopy and rejected. With no exported packet for the note at all, quotes that are not in
-    the current note are stored unverified. A field over its cap (CAPS) rejects the row, or with
-    `cut` is stored cut and marked, and listed under "cut" in the result."""
+    the current note are stored unverified. A field over its cap (CAPS) rejects the import, or
+    with `cut` is stored cut and marked, and listed under "cut" in the result."""
     reviewed_on = today or dt.date.today().isoformat()
     exported, declared = exported_texts(paths)
     entries: dict[str, dict] = {}

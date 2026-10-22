@@ -314,8 +314,8 @@ Re-importing a note replaces its review (import, step 3 of the judge loop), and
 `pass1/out/` and `calibration_r2/out_d/` still hold the uncorrected rows. Importing either
 of them again on its own, or after the corrections, undoes the corrections without a
 warning. To rebuild `reviews.json` from the judge files (after an importer change, as on
-2026-10-22), import them in this order, the corrections last and in date order, then
-render:
+2026-10-22), import them in this order, the corrections last and each corrections file
+after the ones before it, then render:
 
 ```bash
 python tools/referee/referee.py import research/audits/reviews/calibration_r2/out_d/batch_01.jsonl --judge claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d
