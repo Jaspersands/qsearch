@@ -12,11 +12,11 @@ Every theorems/, core/ or qsearch_cli/ module the CLI refers to must exist and b
 git: the same merge carried 24 imports of modules that were only in one working copy. Module
 references are read statically, never imported: AST imports in qsearch.py,
 qsearch_cli/imports.py and qsearch_cli/commands/*.py (theorems.x, qsearch_cli.x, from core
-import y, and bare names that resolve to a file in theorems/ or core/), the IMPORTS table,
-the module column of DISPATCH, and the module columns of ORDER and FUNCTIONS; then the
-imports inside each module found, by a line scan, until no new module turns up. Every
-subcommand in research/audits/cli_manifest.json must still be in the registry's ORDER, in
-the same module.
+import y, relative imports, and bare names that resolve to a file in theorems/ or core/),
+the IMPORTS table, the module column of DISPATCH, and the module columns of ORDER and
+FUNCTIONS; then the imports inside each module found, by a line scan, until no new module
+turns up. Every subcommand in research/audits/cli_manifest.json must still be in the
+registry's ORDER, in the same module.
 
 Prints one line per problem and the count; exits 1 when there is any problem, else 0.
 """
@@ -46,6 +46,7 @@ MANIFEST = "research/audits/cli_manifest.json"
 IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE, "qsearch_cli/commands/*.py")
 PACKAGES = ("theorems", "core")  # on the CLI's sys.path in this order
 CLI_PACKAGE = "qsearch_cli"
+TOP_PACKAGES = (*PACKAGES, CLI_PACKAGE)
 MODULE_PREFIXES = ("theorems.", "core.", "qsearch_cli.")
 
 
@@ -179,31 +180,68 @@ def _dotted_path(root: Path, name: str) -> str | None:
 
 def _module_path(root: Path, module: str) -> str | None:
     """The theorems/, core/ or qsearch_cli/ file a table entry loads; None for the standard library,
-    other dotted names and the packages themselves.
+    other dotted names, the three packages themselves and a module at the top of the checkout
+    (the qsearch.py shim).
 
-    A bare name resolves as the CLI's sys.path does: theorems/ first, then core/.
+    A bare name resolves as the CLI's sys.path does: theorems/ first, then core/, then the root.
     """
     if module.startswith(MODULE_PREFIXES):
         return _dotted_path(root, module)
-    if "." in module or module in sys.stdlib_module_names or module in PACKAGES:
+    if "." in module or module in sys.stdlib_module_names or module in TOP_PACKAGES:
         return None
-    return f"theorems/{module}.py" if (root / "theorems" / f"{module}.py").is_file() else f"core/{module}.py"
+    for directory in PACKAGES:
+        if (root / directory / f"{module}.py").is_file():
+            return f"{directory}/{module}.py"
+    if (root / f"{module}.py").is_file() or (root / module).is_dir():
+        return None
+    return f"core/{module}.py"
 
 
-def _import_paths(root: Path, node: ast.AST) -> list[str]:
-    """The theorems/, core/ or qsearch_cli/ files one import statement loads.
+def _submodule_path(root: Path, package: str, name: str) -> str | None:
+    """The file ``from package import name`` loads when ``package`` is a package and ``name`` a
+    submodule: package/name.py, or its __init__.py when it is a directory.
+
+    theorems, core and qsearch_cli define no names of their own, so there the submodule is
+    named present or not. In a package below them, name may be something its __init__.py
+    defines, so it counts only when the file or directory exists. None for a module that is
+    not a package, and for any other dotted name.
+    """
+    if package not in TOP_PACKAGES:
+        if not package.startswith(MODULE_PREFIXES) or not (root / package.replace(".", "/")).is_dir():
+            return None
+    path = _dotted_path(root, f"{package}.{name}")
+    if package in TOP_PACKAGES or path is None or (root / path).is_file():
+        return path
+    return None
+
+
+def _absolute_module(node: ast.ImportFrom, importer: str) -> str | None:
+    """The module a ``from`` import names, with a relative one made absolute against the
+    importing file (the CLI loads theorem modules as ``theorems.x``); None when it names none."""
+    if not node.level:
+        return node.module
+    package = importer.split("/")[:-1]
+    if node.level > len(package):
+        return None  # qsearch.py is in no package; past the top package is an ImportError
+    return ".".join([*package[: len(package) - node.level + 1], *([node.module] if node.module else [])])
+
+
+def _import_paths(root: Path, node: ast.AST, importer: str = "") -> list[str]:
+    """The theorems/, core/ or qsearch_cli/ files one import statement in ``importer`` loads.
 
     ``theorems.x``, ``qsearch_cli.x`` and ``from core import y`` name their file, present or
     not. A bare name (``from x import f``) counts only when theorems/x.py or core/x.py exists,
     the order the CLI puts them on sys.path; a bare name with neither file is a third-party
-    package.
+    package. A relative import is read against the importer's package. ``from package import
+    name`` also names the submodule, as _submodule_path says.
     """
-    if isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
-        if node.module in PACKAGES:
-            return [f"{node.module}/{alias.name}.py" for alias in node.names if alias.name != "*"]
-        names = [node.module]
+    if isinstance(node, ast.ImportFrom):
+        module = _absolute_module(node, importer)
+        if not module:
+            return []
+        names = [module]
     elif isinstance(node, ast.Import):
-        names = [alias.name for alias in node.names]
+        module, names = None, [alias.name for alias in node.names]
     else:
         return []
     paths = []
@@ -214,12 +252,17 @@ def _import_paths(root: Path, node: ast.AST) -> list[str]:
                 paths.append(path)
             continue
         top = name.split(".")[0]
-        if top in sys.stdlib_module_names or top in PACKAGES:
+        if top in sys.stdlib_module_names or top in TOP_PACKAGES:
             continue
         for directory in PACKAGES:
             if (root / directory / f"{top}.py").is_file():
                 paths.append(f"{directory}/{top}.py")
                 break
+    if module is not None:
+        for alias in node.names:
+            path = None if alias.name == "*" else _submodule_path(root, module, alias.name)
+            if path is not None:
+                paths.append(path)
     return paths
 
 
@@ -278,13 +321,12 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
             rel = path.relative_to(root).as_posix()
             parsed.add(rel)
             for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"), filename=rel)):
-                for module_path in _import_paths(root, node):
+                for module_path in _import_paths(root, node, rel):
                     add(module_path, rel)
     for module, attribute in (_table(root, "IMPORTS") or {}).values():
-        if module in PACKAGES and attribute:  # ("theorems", "x"): `from theorems import x`, as sweep writes it
-            add(f"{module}/{attribute}.py", IMPORTS_FILE)
-        else:
-            add(_module_path(root, module), IMPORTS_FILE)
+        add(_module_path(root, module), IMPORTS_FILE)
+        if attribute:  # ("theorems", "x"): `from theorems import x`, as sweep writes it
+            add(_submodule_path(root, module, attribute), IMPORTS_FILE)
     for _flag, module, _function in _table(root, "DISPATCH") or []:
         add(_module_path(root, module), REGISTRY)
     # parser.py imports every ORDER module to build the parser; resolve.py imports FUNCTIONS' on use.
@@ -303,7 +345,7 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         except (OSError, UnicodeDecodeError):
             continue  # its own path is still checked; only its imports go unfollowed
         for node in _scanned_imports(text):
-            for module_path in _import_paths(root, node):
+            for module_path in _import_paths(root, node, rel):
                 if module_path not in refs:
                     queue.append(module_path)
                 add(module_path, rel)

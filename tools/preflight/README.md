@@ -54,17 +54,23 @@ The `imports` check collects references from these places:
 
 - Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and
   `qsearch_cli/commands/*.py`, including the lazy imports inside command bodies.
-  `import theorems.x`, `from core.y import z`, `from qsearch_cli.main import main` and `from
-  theorems import x` name their file, whether or not it exists. A bare name, `from x import
-  f` (the usual style here, and the one an old-style addition to `qsearch.py` uses), counts
-  when `theorems/x.py` exists, else when `core/x.py` exists. Standard library names are
-  skipped.
+  `import theorems.x`, `from core.y import z`, `from qsearch_cli.main import main`, `from
+  theorems import x` and `from qsearch_cli import x` name their file, whether or not it
+  exists. A dotted name that is a directory names its `__init__.py`, and so does `from
+  theorems import sub` when `theorems/sub/` is a directory. A bare name, `from x import f`
+  (the usual style here, and the one an old-style addition to `qsearch.py` uses), counts when
+  `theorems/x.py` exists, else when `core/x.py` exists. Standard library names are skipped.
+  A relative import is read against the importing file's package, since the CLI loads
+  theorem modules as `theorems.x`: in `theorems/x.py`, `from .helper import h` and `from .
+  import helper` name `theorems/helper.py`.
 - The `IMPORTS` table in `qsearch_cli/imports.py`, read with `ast.literal_eval`. A dotted
-  `theorems.x` maps to `theorems/x.py`. A package-style entry, `("theorems", "x")` or
-  `("core", "x")`, which is what `tools/split_cli/migrate.py sweep` writes for `from theorems
-  import x`, maps to `theorems/x.py` or `core/x.py`. A bare name maps to `theorems/<name>.py`
-  when that file exists, else `core/<name>.py`, the order the CLI puts them on `sys.path`.
-  Standard library names (`os`, `json`, ...) are skipped.
+  `theorems.x` maps to `theorems/x.py`. A package-style entry, `("theorems", "x")`,
+  `("core", "x")` or `("qsearch_cli", "x")`, which is what `tools/split_cli/migrate.py
+  sweep` writes for `from theorems import x`, maps to `theorems/x.py`, `core/x.py` or
+  `qsearch_cli/x.py` by the same rules. A bare name maps to `theorems/<name>.py` when that
+  file exists, else `core/<name>.py`, the order the CLI puts them on `sys.path`. Standard
+  library names (`os`, `json`, ...), the packages themselves and a module at the top of the
+  checkout (`("qsearch", "main")`, the shim) are skipped.
 - The module column of `DISPATCH` in `qsearch_cli/registry.py`.
 - The module columns of `ORDER` and `FUNCTIONS` in `qsearch_cli/registry.py`, say
   `qsearch_cli/commands/general.py`. `qsearch_cli/parser.py` imports every `ORDER` module to
@@ -144,6 +150,11 @@ error. Delete that test once the agents fix the file.
 - In a module reached through another module, the line scan misses an import in a one-line
   compound statement (`if x: import y`) or after a semicolon. A module that is not valid
   UTF-8 is checked itself, but its imports are not followed.
+- `from pkg import x`, where `pkg` is a package below `theorems/`, `core/` or `qsearch_cli/`
+  (say `qsearch_cli.commands`), counts `x` as a module only when `pkg/x.py` or `pkg/x/`
+  exists, since `x` may be a name `pkg/__init__.py` defines. So a missing `x` there is not
+  reported. In `theorems`, `core` and `qsearch_cli` themselves, whose `__init__.py` files
+  define nothing to import, `x` is always read as the module `x`.
 - A bare third-party name added to `IMPORTS` (say `numpy`) would be reported as a missing
   `core/numpy.py`. Today the table holds only `theorems/` and `core/` modules and six
   standard library names.

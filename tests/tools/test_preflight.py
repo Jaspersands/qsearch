@@ -294,6 +294,97 @@ def test_package_style_imports_table_entries_name_the_submodule(tmp_path: Path) 
     }
 
 
+def test_relative_imports_name_the_module_they_load(tmp_path: Path) -> None:
+    # The CLI loads theorem modules as theorems.x, so `from .helper import h` loads theorems/helper.py.
+    module = (
+        "if __package__:\n"
+        "    from .rel_helper import h\n"
+        "    from . import rel_sibling, rel_pkg\n"
+        "    from .rel_pkg.inner import i\n"
+        "    from ..beyond_the_top import b\n"  # past the top package: an ImportError, no file
+        "f = 1\n"
+    )
+    command = "from . import other_cmd\nfrom ..cli_helper import c\n\n" + GENERAL
+    general = "def command_audit(args):\n    from theorems.mod import f\n    return f\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/mod.py": module, "qsearch_cli/commands/dcp.py": command})
+    _write(repo / "theorems" / "rel_helper.py", "h = 1\n")
+    _write(repo / "theorems" / "beyond_the_top.py", "b = 1\n")
+    _write(repo / "theorems" / "rel_pkg" / "__init__.py", "")
+    _write(repo / "theorems" / "rel_pkg" / "inner.py", "i = 1\n")
+    _write(repo / "qsearch_cli" / "cli_helper.py", "c = 1\n")
+    _write(repo / "qsearch_cli" / "commands" / "other_cmd.py", "")
+    order = [*ORDER, ("dcp-audit", "qsearch_cli.commands.dcp", "add_audit")]
+    (repo / "qsearch_cli" / "registry.py").write_text(f"ORDER = {order!r}\n\nFUNCTIONS = {FUNCTIONS!r}\n", encoding="utf-8")
+
+    refs = pf.referenced_modules(repo)
+
+    assert {path: refs[path] for path in set(refs) - set(CLI_REFS)} == {
+        "theorems/mod.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/commands/dcp.py": {"qsearch_cli/registry.py"},
+        "theorems/rel_helper.py": {"theorems/mod.py"},
+        "theorems/rel_sibling.py": {"theorems/mod.py"},
+        "theorems/rel_pkg/__init__.py": {"theorems/mod.py"},
+        "theorems/rel_pkg/inner.py": {"theorems/mod.py"},
+        "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/dcp.py"},
+        "qsearch_cli/commands/other_cmd.py": {"qsearch_cli/commands/dcp.py"},
+        "qsearch_cli/cli_helper.py": {"qsearch_cli/commands/dcp.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("theorems/rel_helper.py", "not tracked by git"),
+        ("theorems/rel_sibling.py", "missing on disk"),
+        ("theorems/rel_pkg/__init__.py", "not tracked by git"),
+        ("theorems/rel_pkg/inner.py", "not tracked by git"),
+        ("qsearch_cli/commands/other_cmd.py", "not tracked by git"),
+        ("qsearch_cli/cli_helper.py", "not tracked by git"),
+    }
+
+
+def test_package_style_imports_of_qsearch_cli_and_of_subpackages(tmp_path: Path) -> None:
+    # `from qsearch_cli import helpers` loads qsearch_cli/helpers.py; `from theorems import sub`,
+    # with sub a directory, loads theorems/sub/__init__.py, not a theorems/sub.py.
+    general = (
+        "from qsearch_cli import helpers, ghost\n"
+        "from qsearch_cli.commands import wip, defined_in_init\n"
+        "from theorems import sub\n"
+        "\n" + GENERAL
+    )
+    imports = {
+        "parser": ("qsearch_cli", "parser"),
+        "qsearch_cli": ("qsearch_cli", None),
+        "main": ("qsearch", "main"),
+        "subpkg": ("theorems", "subpkg"),
+        "g": ("theorems.subpkg", "g"),
+        "deep": ("theorems.subpkg", "deep"),
+    }
+    repo = _repo(tmp_path, general=general, imports=imports, committed={"qsearch_cli/parser.py": ""})
+    _write(repo / "qsearch_cli" / "helpers.py", "")
+    _write(repo / "qsearch_cli" / "commands" / "wip.py", "")
+    _write(repo / "theorems" / "sub" / "__init__.py", "")
+    _write(repo / "theorems" / "subpkg" / "__init__.py", "g = 1\n")
+    _write(repo / "theorems" / "subpkg" / "deep.py", "")
+
+    refs = pf.referenced_modules(repo)
+
+    assert {path: refs[path] for path in set(refs) - set(CLI_REFS)} == {
+        "qsearch_cli/helpers.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/ghost.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/commands/wip.py": {"qsearch_cli/commands/general.py"},
+        "theorems/sub/__init__.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/parser.py": {"qsearch_cli/imports.py"},
+        "theorems/subpkg/__init__.py": {"qsearch_cli/imports.py"},
+        "theorems/subpkg/deep.py": {"qsearch_cli/imports.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("qsearch_cli/helpers.py", "not tracked by git"),
+        ("qsearch_cli/ghost.py", "missing on disk"),
+        ("qsearch_cli/commands/wip.py", "not tracked by git"),
+        ("theorems/sub/__init__.py", "not tracked by git"),
+        ("theorems/subpkg/__init__.py", "not tracked by git"),
+        ("theorems/subpkg/deep.py", "not tracked by git"),
+    }
+
+
 def test_cli_modules_the_registry_and_shim_load_are_checked(tmp_path: Path) -> None:
     # parser.py imports every ORDER module to build --help, so one missing from a clone breaks every command.
     order = [
