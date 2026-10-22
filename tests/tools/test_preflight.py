@@ -12,7 +12,6 @@ import pytest
 from tools.preflight import preflight as pf
 
 REPO = Path(__file__).resolve().parents[2]
-BROKEN_CONTRACT = "research/hypotheses/dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge_contract.json"
 
 GENERAL = '''\
 def add_audit(subparsers):
@@ -205,14 +204,6 @@ def test_check_json_reports_non_utf8_bytes_and_reads_only_regular_files(
 
     assert [p.path for p in problems] == ["research/audits/folder.json/inner.json", "research/audits/latin1.json"]
     assert "codec can't decode byte" in problems[1].message
-
-
-def test_check_json_finds_todays_broken_contract() -> None:
-    # Delete this test once the agents fix the contract.
-    if not (REPO / "research" / "hypotheses").is_dir():
-        pytest.skip("no research/hypotheses in this checkout")
-    found = {p.path: p.message for p in pf.check_json(REPO)}
-    assert found[BROKEN_CONTRACT].startswith("Invalid \\escape: line 7 column 167")
 
 
 def test_problem_paths_are_relative_with_a_relative_root(
@@ -1062,3 +1053,69 @@ def test_imports_flag_imports_every_certificate_flag_and_subcommand_adder(tmp_pa
         "--misnamed-cert: AttributeError: module 'theorems.good_cert' has no attribute 'generate_misnamed_certificate'",
         "subcommand audit: AttributeError: module 'qsearch_cli.commands.general' has no attribute 'add_audti'",
     ]
+
+
+def test_main_checkout_ignores_linked_worktree_index(tmp_path, monkeypatch):
+    repo = _repo(tmp_path, general='def command_audit(args):\n    from theorems.newmod import f\n')
+    worktree = tmp_path / 'linked'
+    _git(repo, 'worktree', 'add', '-b', 'linked', str(worktree))
+    _write(repo / 'theorems/newmod.py', 'f = 1\n')
+    _write(worktree / 'theorems/newmod.py', 'f = 1\n')
+    _git(worktree, 'add', 'theorems/newmod.py')
+    monkeypatch.setenv('GIT_INDEX_FILE', str(repo / '.git/worktrees/linked/index'))
+    assert any(p.path == 'theorems/newmod.py' and 'not tracked' in p.message for p in pf.check_untracked_imports(repo))
+
+
+@pytest.mark.parametrize('source', [b'# caf\xe9\nORDER=[]\n', b'ORDER=[]\x00\n'])
+def test_registry_decode_and_null_errors_name_the_source(tmp_path, source):
+    repo = _repo(tmp_path)
+    (repo / pf.REGISTRY).write_bytes(source)
+    [problem] = pf.check_untracked_imports(repo)
+    assert problem.path == pf.REGISTRY
+    assert pf.check_manifest(repo)[0].path == pf.REGISTRY
+
+
+@pytest.mark.parametrize('statement', [
+    "for key in ('f',):\n    IMPORTS[key] = ('theorems.missing', 'f')\n",
+    "if True:\n    IMPORTS.update({'f': ('theorems.missing', 'f')})\n",
+    "if True:\n    IMPORTS = {'f': ('theorems.missing', 'f')}\n",
+])
+def test_compound_cli_table_changes_are_reported(tmp_path, statement):
+    repo = _repo(tmp_path)
+    (repo / pf.IMPORTS_FILE).write_text('IMPORTS = {}\n' + statement)
+    assert any('literal' in p.message for p in pf.check_untracked_imports(repo))
+
+
+def test_readonly_table_methods_and_deferred_changes_are_allowed(tmp_path):
+    repo = _repo(tmp_path)
+    (repo / pf.IMPORTS_FILE).write_text("IMPORTS = {}\nIMPORTS.get('f')\ndef later():\n    IMPORTS.update({})\n")
+    assert pf.check_untracked_imports(repo) == []
+
+
+@pytest.mark.parametrize('via_table', [True, False])
+def test_bare_package_references_follow_init_imports(tmp_path, via_table):
+    repo = _repo(tmp_path,
+                 imports={'f': ('subpkg', 'f')} if via_table else {},
+                 general=GENERAL if via_table else 'from subpkg import f\n' + GENERAL,
+                 committed={'theorems/subpkg/__init__.py': 'from theorems.gone import f\n'})
+    refs = pf.referenced_modules(repo)
+    assert 'theorems/subpkg/__init__.py' in refs
+    assert any(p.path == 'theorems/gone.py' for p in pf.check_untracked_imports(repo))
+
+
+@pytest.mark.parametrize('source', ["print('loaded')\nf = 1\n", "raise SystemExit(0)\n", "raise SystemExit(2)\n"])
+def test_import_side_effects_preserve_json_and_other_problems(tmp_path, source):
+    repo = _repo(tmp_path, imports={'side': ('theorems.side', 'f')}, committed={
+        'qsearch_cli/resolve.py': (REPO / 'qsearch_cli/resolve.py').read_text(),
+        'theorems/__init__.py': '', 'theorems/side.py': source,
+        'research/hypotheses/broken.json': '{invalid',
+    })
+    result = subprocess.run([sys.executable, str(REPO / 'tools/preflight/preflight.py'),
+                             '--root', str(repo), '--imports', '--json'], capture_output=True, text=True)
+    assert result.returncode == 1
+    problems = json.loads(result.stdout)['problems']
+    assert any(p['check'] == 'json' for p in problems)
+    if 'SystemExit' in source:
+        assert any('side: SystemExit:' in p['message'] for p in problems)
+    else:
+        assert 'loaded' in result.stderr

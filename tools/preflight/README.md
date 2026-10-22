@@ -124,7 +124,7 @@ export/)`.
 
 Git is asked about the root's own repository. Variables that point git elsewhere, such as
 the `GIT_DIR` and `GIT_INDEX_FILE` a hook of another repository or worktree exports, are
-dropped. The one exception is a `GIT_INDEX_FILE` inside the root's own git directory: a
+dropped. The one exception is a `GIT_INDEX_FILE` directly in the root's own git directory (not a nested worktree directory): a
 pre-commit hook of this checkout under `git commit -a` or `git commit <paths>` gets the index
 that commit will record, and that index is the one checked.
 
@@ -132,29 +132,28 @@ that commit will record, and that index is the one checked.
 
 | Flag | Check | What it does |
 |---|---|---|
-| `--imports` | `resolve` | Calls `tools/split_cli/verify.py`'s `check_imports`, which imports every `IMPORTS` name and command function in this process, then imports and looks up the function of every `DISPATCH` certificate flag and the adder of every `ORDER` subcommand, as `qsearch_cli/main.py` and `parser.py` do. It catches a module that exists but fails to import, and a misspelled function or adder. One problem per failing name (`x: ...`, `--flag: ...`, `subcommand x: ...`), under the path `qsearch_cli`. |
+| `--imports` | `resolve` | Uses the same root selection and table lookups as `tools/split_cli/verify.py`: imports every `IMPORTS` name and command function in this process, then imports and looks up the function of every `DISPATCH` certificate flag and the adder of every `ORDER` subcommand, as `qsearch_cli/main.py` and `parser.py` do. For those table lookups it catches import failures and misspelled functions or adders. It does not execute command bodies or check their lazy imported names. One problem per failing name (`x: ...`, `--flag: ...`, `subcommand x: ...`), under the path `qsearch_cli`. |
 | `--validate` | `validate` | Runs `python qsearch.py validate` in the root, as CI does. A non-zero exit is one problem. Validate prints its report as JSON on stdout, so the message is `exit N: K issues, first: <candidate>: <message>`; when there is no report (a crash) it is `exit N:` and the last line of stderr, else of stdout. |
+
+Import-time stdout is redirected to stderr so `--json` remains valid. Imports see only the
+shim path in `sys.argv`, and `SystemExit` (including exit 0) is reported as a resolve failure.
+These checks execute trusted checkout code in this process; they are not a sandbox.
 
 Both together took about 17 seconds on 2026-10-22, and `--imports` alone about 11, the
 static checks included.
 
-## Today's output
+## Contract repair
 
-On this checkout on 2026-10-21 (also with `--imports --validate`):
-
-```
-json: research/hypotheses/dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge_contract.json: Invalid \escape: line 7 column 167 (char 635)
-1 problems
-```
-
-Preflight reports the contract and does not fix it. The agents own `research/hypotheses/`.
-`tests/tools/test_preflight.py::test_check_json_finds_todays_broken_contract` pins this
-error. Delete that test once the agents fix the file.
+The malformed carry-injection hypothesis contract reported on 2026-10-21 was repaired on
+2026-10-23 by escaping its LaTeX backslash in JSON. The live-data test that pinned the
+syntax error was removed; fixture tests continue to cover invalid escapes. Preflight
+reports malformed files and does not rewrite them.
 
 ## Limits
 
 - A bare import statement whose module is in neither `theorems/` nor `core/` is skipped,
-  since it may be a third-party package. So a bare import of a module that was never
+  since it may be a third-party package. Bare packages with an `__init__.py` under either
+  directory are followed in the same order as bare modules. So a bare import of a module that was never
   written, or was deleted, is not reported. `--imports` does not catch one inside a command
   body either: it resolves command functions without running them. A dotted or `from
   theorems import x` import of a missing module is reported.
@@ -170,8 +169,8 @@ error. Delete that test once the agents fix the file.
 - A bare third-party name added to `IMPORTS` (say `numpy`) would be reported as a missing
   `core/numpy.py`. Today the table holds only `theorems/` and `core/` modules and six
   standard library names.
-- The `json` check parses only. It does not check any schema. `qsearch.py validate` checks
-  the registries.
+- The `json` check parses only. It does not check schemas or uniqueness of registry IDs.
+  A syntactically valid registry with duplicate IDs passes this check.
 - The `json` check reads only its four directories: 550 of the 1711 tracked
   `research/**/*.json` files on 2026-10-22. It does not read `research/representation`
   (619), `research/reductions` (231), `research/phase_workbench` (162),
@@ -179,4 +178,4 @@ error. Delete that test once the agents fix the file.
   `research/certificates` (26), `research/coset_workbench` (15), `research/scaling`,
   `research/quarantine`, or the 25 files at the top of `research/` such as
   `research/proof_obligations.json`. A broken file there passes. Parsing all of them on
-  2026-10-22 found only the contract above.
+  2026-10-22 found only the subsequently repaired carry-injection contract.

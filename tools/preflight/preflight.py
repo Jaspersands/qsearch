@@ -31,6 +31,7 @@ import re
 import subprocess
 import sys
 import time
+from contextlib import redirect_stdout
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
@@ -138,20 +139,51 @@ def _literal(root: Path, rel: str, name: str):
     def is_name(node: ast.AST) -> bool:
         return isinstance(node, ast.Name) and node.id == name
 
+    try:
+        tree = ast.parse(path.read_text(encoding="utf-8"), filename=rel)
+    except (OSError, ValueError, SyntaxError) as error:
+        raise UnreadableSource(rel, error) from error
+
+    mutators = {"update", "setdefault", "pop", "popitem", "clear", "append", "extend", "insert",
+                "remove", "reverse", "sort", "add", "discard", "difference_update",
+                "intersection_update", "symmetric_difference_update", "__setitem__", "__delitem__"}
+
+    def targets(node):
+        if isinstance(node, (ast.Assign, ast.Delete)):
+            return node.targets
+        if isinstance(node, (ast.AnnAssign, ast.AugAssign, ast.NamedExpr)):
+            return [node.target]
+        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+                and node.func.attr in mutators):
+            return [node.func]
+        return []
+
+    def touches(target):
+        if is_name(target):
+            return True
+        if isinstance(target, (ast.Subscript, ast.Attribute)):
+            return touches(target.value)
+        if isinstance(target, (ast.Tuple, ast.List)):
+            return any(touches(item) for item in target.elts)
+        return False
+
+    def executed_nodes(node):
+        # Function/class bodies are deferred or have their own namespace; do not claim to
+        # evaluate arbitrary Python. Generated CLI tables must be module-level literals.
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.Lambda)):
+            return
+        yield node
+        for child in ast.iter_child_nodes(node):
+            yield from executed_nodes(child)
+
     value = None
-    for node in ast.parse(path.read_text(encoding="utf-8"), filename=rel).body:
-        if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign, ast.Delete)):
-            targets = node.targets if isinstance(node, (ast.Assign, ast.Delete)) else [node.target]
-        elif isinstance(node, ast.Expr) and isinstance(node.value, ast.Call):
-            targets = [node.value.func]  # name.update(...)
-        else:
-            continue
-        if isinstance(node, (ast.Assign, ast.AnnAssign)) and node.value is not None and any(map(is_name, targets)):
+    for node in tree.body:
+        if (isinstance(node, (ast.Assign, ast.AnnAssign)) and node.value is not None
+                and any(is_name(t) for t in targets(node))):
             value = node.value
-        elif (isinstance(node, ast.AugAssign) and is_name(node.target)) or any(
-            isinstance(t, (ast.Subscript, ast.Attribute)) and is_name(t.value) for t in targets
-        ):
-            raise ValueError(f"{name} in {rel} is changed in place; preflight reads one literal")
+            continue
+        if any(touches(t) for child in executed_nodes(node) for t in targets(child)):
+            raise ValueError(f"{name} in {rel} is changed in place or conditionally; preflight reads one literal")
     if value is None:
         return None
     try:
@@ -215,6 +247,8 @@ def _module_path(root: Path, module: str) -> str | None:
     if "." in module or module in sys.stdlib_module_names or module in TOP_PACKAGES:
         return None
     for directory in PACKAGES:
+        if (root / directory / module / "__init__.py").is_file():
+            return f"{directory}/{module}/__init__.py"
         if (root / directory / f"{module}.py").is_file():
             return f"{directory}/{module}.py"
     if (root / f"{module}.py").is_file() or (root / module).is_dir():
@@ -280,6 +314,11 @@ def _import_paths(root: Path, node: ast.AST, importer: str = "") -> list[str]:
         if top in sys.stdlib_module_names or top in TOP_PACKAGES:
             continue
         for directory in PACKAGES:
+            if (root / directory / top / "__init__.py").is_file():
+                path = _dotted_path(root, f"{directory}.{name}")
+                if path is not None:
+                    paths.append(path)
+                break
             if (root / directory / f"{top}.py").is_file():
                 paths.append(f"{directory}/{top}.py")
                 break
@@ -420,7 +459,7 @@ def _git_env(root: Path, git_dir: str | None = None) -> dict[str, str]:
     index = os.environ.get("GIT_INDEX_FILE")
     if index and git_dir:
         path = (root / index).resolve()  # git -C root reads a relative one from root
-        if path.is_relative_to(Path(git_dir).resolve()):
+        if path.parent == Path(git_dir).resolve():
             env["GIT_INDEX_FILE"] = str(path)
     return env
 
@@ -539,7 +578,7 @@ def check_manifest(root: Path) -> list[Problem]:
         return [Problem("manifest", MANIFEST, f"invalid: {type(error).__name__}: {error}")]
     try:
         order = registry_order(root)
-    except (OSError, SyntaxError, ValueError, TypeError) as error:
+    except (OSError, SyntaxError, ValueError, TypeError, UnreadableSource) as error:
         return [Problem("manifest", REGISTRY, f"cannot read ORDER: {type(error).__name__}: {error}")]
     problems = []
     for name, module in expected.items():
@@ -553,23 +592,36 @@ def check_manifest(root: Path) -> list[Problem]:
 def _check_imports(root: Path) -> tuple[int, list[str]]:
     """How many names were looked up, and one line per failure.
 
-    tools/split_cli/verify.py's check_imports resolves every IMPORTS name and command function.
+    Like tools/split_cli/verify.py, resolve every IMPORTS name and command function.
     Then every DISPATCH function and ORDER adder is imported and looked up, as qsearch_cli/main.py
     does for a certificate flag and qsearch_cli/parser.py for every subcommand.
     """
     import importlib
 
-    from tools.split_cli.verify import check_imports  # imports the CLI and every theorem module it names
+    from tools.split_cli.verify import _use_root
 
-    checked, failures = check_imports(root)
-    from qsearch_cli.registry import DISPATCH, ORDER  # the root's own: check_imports put it first on sys.path
+    _use_root(root)
+    for extra in (root / "core", root / "theorems"):
+        if str(extra) not in sys.path:
+            sys.path.insert(0, str(extra))
+    from qsearch_cli.imports import IMPORTS
+    from qsearch_cli.registry import DISPATCH, ORDER, FUNCTIONS
+    from qsearch_cli.resolve import resolve
+
+    names = list(IMPORTS) + [name for name in FUNCTIONS if name not in IMPORTS]
+    checked, failures = len(names), []
+    for name in names:
+        try:
+            resolve(name)
+        except (Exception, SystemExit) as error:
+            failures.append(f"{name}: {type(error).__name__}: {error}")
 
     lookups = [(f"--{dest.replace('_', '-')}", module, function) for dest, module, function in DISPATCH]
     lookups += [(f"subcommand {name}", module, adder) for name, module, adder in ORDER]
     for label, module, attribute in lookups:
         try:
             getattr(importlib.import_module(module), attribute)
-        except Exception as error:  # noqa: BLE001 - report every kind of import failure
+        except (Exception, SystemExit) as error:  # import-time exits are failures, including exit(0)
             failures.append(f"{label}: {type(error).__name__}: {error}")
     return checked + len(lookups), failures
 
@@ -579,11 +631,14 @@ def check_imports_resolve(root: Path) -> list[Problem]:
     adder in this process, as the CLI would (slow). Writes no __pycache__ into the checkout."""
     root = Path(root).resolve()
     dont_write_bytecode, sys.dont_write_bytecode = sys.dont_write_bytecode, True
+    argv, sys.argv = sys.argv, [str(root / "qsearch.py")]
     try:
-        _checked, failures = _check_imports(root)
-    except Exception as error:  # noqa: BLE001 - the verifier failing to start is itself the problem
+        with redirect_stdout(sys.stderr):
+            _checked, failures = _check_imports(root)
+    except (Exception, SystemExit) as error:  # noqa: BLE001 - the verifier failing to start is itself the problem
         return [Problem("resolve", ".", f"{type(error).__name__}: {error}")]
     finally:
+        sys.argv = argv
         sys.dont_write_bytecode = dont_write_bytecode
     return [Problem("resolve", "qsearch_cli", failure) for failure in failures]
 
