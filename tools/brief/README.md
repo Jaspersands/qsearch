@@ -126,6 +126,13 @@ Measured on this checkout on 2026-10-21:
 | 10-day window (33 negatives added), corpus index already built | 11.4 s wall; the duplicates section 4.4 s, almost all of it the index refresh |
 | 10-day window in a fresh worktree with no index | 31.5 s wall; building the lexical index took 26 s |
 
+Again on 2026-10-22, after preflight began following the CLI's imports transitively (1092
+modules), on a machine under heavy load (load average 150): the default window took 3.0 to
+4.7 s wall and 2.2 to 2.5 s CPU over three runs, and later up to 16 s wall as the load grew.
+The preflight section is still almost all of it: in-process, its JSON parse took 1.3 to 2.0 s
+and its import walk 1.2 to 1.8 s. A 10-day window (19 negatives added) took 14.7 s in a fresh
+worktree, building the index included, and 12.9 s with it built.
+
 The index lives in the git-ignored `research/corpus_index/`. In the main checkout it already
 exists, and the corpus MCP server keeps it current.
 

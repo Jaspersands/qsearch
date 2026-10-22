@@ -644,7 +644,8 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
         note = "all now" if quarantined else "none now"
         lines.append(f"Removed ({len(removed)}, {note} in the quarantine file): {_id_list(removed)}.")
     else:  # say which ones moved to quarantine and which were dropped outright
-        lost = [rid for rid in removed if rid not in set(quarantined)]
+        moved = set(quarantined)
+        lost = [rid for rid in removed if rid not in moved]
         lines.append(f"Removed ({len(removed)}): {len(quarantined)} now in the quarantine file: "
                      f"{_id_list(quarantined)}; {len(lost)} not in it: {_id_list(lost)}.")
     return lines
