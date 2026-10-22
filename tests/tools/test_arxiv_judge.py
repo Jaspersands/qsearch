@@ -239,6 +239,25 @@ CHANGED_MATHS = [
     ("is 0.207", "is 0"),  # a decimal is one number
     ("is x_{ij}", "is x{ij}"),
     ("is $2^{n-1}$", "is $2^n - 1$"),  # braces group
+    # A one-letter symbol keeps its case (only the word "a" does not).
+    ("uses O(n) queries", "uses o(n) queries"),
+    ("is N = 2^n", "is n = 2^n"),
+    ("is $\\log N$", "is $\\log n$"),
+    ("is $\\mathbb{N}$", "is $\\mathbb{n}$"),
+    ("has d = 3", "has D = 3"),
+    ("is $I - P$", "is $i - P$"),
+    # A prime is maths: dropped, added or moved, it changes the formula.
+    ("is $W'$", "is $W$"),
+    ("is f'(x)", "is f(x)"),
+    ("is H' of G", "is H of G"),
+    ("is n' >= n", "is n >= n'"),
+    ("is f''(x)", "is f'(x)"),
+    ("is $\\alpha'$", "is $\\alpha$"),
+    ("is (x+y)' here", "is (x+y) here"),
+    # A decimal point is part of its number, and a ratio's colon is maths.
+    ("is 2.5x", "is 2, 5x"),
+    ("is .5", "is 5"),
+    ("is 1:2", "is 1 2"),
 ]
 
 # (source, quote): spacing, Latin letter case in words, sentence punctuation, TeX's math delimiters and
@@ -253,6 +272,23 @@ SAME_MATHS = [
     ("is $O(n\\,\\log n)$", "is $O(n \\log n)$"),
     ("is “hard” here", 'is "hard" here'),
     ("is **hard** here", "is hard here"),
+    ("is ‘hard’ here", "is 'hard' here"),
+    ("is ``hard'' here", 'is "hard" here'),
+    ("is A hard one", "is a hard one"),  # the word a, not a symbol
+    ("is $(I-O(\\log n))$ bits", "is (I-O(\\log n)) bits"),  # with or without TeX's $
+    ("is $O(n)$ bits", "is O(n)$ bits"),  # or from inside a formula
+    ("is Shor's and the players' choice", "is Shor’s and the players’ choice"),  # apostrophes are not primes
+    ("is Bayes' rule", "is Bayes rule"),
+    ("is O'Donnell's bound", "is O Donnell's bound"),  # nor is one after a one-letter word inside a name
+    ("is ``P'' here", 'is "P" here'),  # a quoted letter keeps no prime
+    ("is f′(x)", "is f'(x)"),  # an ASCII prime is a prime
+    ("is 2.9x", "is 2.9 x"),
+    ("is $a \\quad b \\qquad c$", "is $a b c$"),  # TeX spacing commands
+    ("is $a\\hspace{1em}b$", "is $a b$"),
+    ("is fast—so", "is fast, so"),  # an em dash between clauses is punctuation
+    ("is fast---so", "is fast so"),
+    ("is fast -- so", "is fast so"),
+    ("is Erdős--Rényi", "is Erdős–Rényi"),  # a range or name-pair dash is one dash however it is typed
 ]
 
 
@@ -273,6 +309,43 @@ def test_quote_may_not_start_or_end_inside_a_formula() -> None:
     assert not _verbatim("0.207 for every instance and it decays", source)  # the sign is cut off
     assert not _verbatim("for every instance and it decays as n", source)  # the exponent is cut off
     assert _verbatim("for every instance and it decays as n^{-1/2}", source)
+
+
+# (source, quote): the quote appears verbatim in the source but starts or ends inside a formula.
+FORMULA_CUTS = [
+    ("so the bound is -n log n for every instance", "n log n for every instance"),  # a sign before a letter
+    ("we show that the algorithm needs n! queries", "we show that the algorithm needs n"),  # a factorial
+    ("we show that the algorithm needs 5! queries", "we show that the algorithm needs 5"),
+    ("we show that the algorithm needs n/2 queries", "we show that the algorithm needs n"),  # a fraction bar
+    ("we prove that it fails on 2/3 of the instances", "we prove that it fails on 2"),
+    ("it fails on 2/3 of the instances in the family", "3 of the instances in the family"),
+    ("we prove that it fails on 50% of the instances", "we prove that it fails on 50"),  # a percent sign
+    ("we prove that the ratio is 1 - 1/e here", "we prove that the ratio is 1"),  # a minus between terms
+    ("we show that it gains a factor of 3 × 10^5 here", "we show that it gains a factor of 3"),  # a product
+    ("we show that it gains a factor of 3 \\times 10^5 here", "we show that it gains a factor of 3"),
+    ("we show that it gains a factor of 3 \\cdot 10^5 here", "we show that it gains a factor of 3"),
+    ("we prove the claim when n = 5 for all instances", "we prove the claim when n"),  # an equation
+    ("only √n queries suffice for every instance here", "n queries suffice for every instance here"),  # a root
+    ("only \\sqrt n queries suffice for every instance here", "n queries suffice for every instance here"),
+    ("about n \\log n queries suffice for every instance here", "n queries suffice for every instance here"),  # a function
+    ("a ratio of $(1-1/e)$ for every instance in the family", "e)$ for every instance in the family"),
+    ("we find that only .5 of the instances are hard", "5 of the instances are hard"),  # a leading decimal point
+    ("we find a ratio of 1:2 of the instances are hard", "2 of the instances are hard"),  # a ratio
+    ("we prove that the subgroup H' of G is normal", "we prove that the subgroup H"),  # a prime
+    ("here we give a new quantum-inspired algorithm", "here we give a new quantum"),  # half a hyphenated word
+]
+
+
+@pytest.mark.parametrize(("source", "quote"), FORMULA_CUTS, ids=[quote for _, quote in FORMULA_CUTS])
+def test_quote_that_cuts_a_formula_is_not_verbatim(source: str, quote: str) -> None:
+    assert quote.replace("$", "") in source.replace("$", "") or quote in source
+    assert not _verbatim(quote, source)
+
+
+def test_quote_may_start_after_a_clause_dash_and_end_before_an_exclamation() -> None:
+    source = "it is fast—5 times faster than belief propagation on every instance, and it works!"
+    assert _verbatim("5 times faster than belief propagation on every instance", source)
+    assert _verbatim("on every instance, and it works", source)
 
 
 def test_quote_must_match_whole_words_and_count_six_of_them() -> None:

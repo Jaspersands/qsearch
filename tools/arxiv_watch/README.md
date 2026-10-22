@@ -165,16 +165,24 @@ write each, so a verdict or run recorded meanwhile is kept. A row is rejected wh
 
 - its quote is under six words (numbers count; symbols and TeX commands do not), or does not
   appear verbatim in the one text `quote_from` names: the abstract, or the excerpt of one of
-  the paper's nearest records. Spacing, the case of ordinary Latin words, sentence punctuation
-  (`. , ; : ?`), quote marks, markdown's `**` and TeX's `$`, `\(`, `\)` and spacing commands
-  are ignored, and every dash and `−` read as `-`. The maths must match: signs, `/`, `!`, `#`,
-  `%`, `^`, `_`, braces and brackets, Greek letters, TeX commands (`\Omega` is not `\omega`)
-  and spelled-out Greek capitals (`Omega` is not `omega`). A superscript reads as its TeX
-  exponent (`2ⁿ` is `2^n`, never `2n`). So a quote with `≥` for `≤`, `0.207` for `-0.207`,
-  `n^{1/2}` for `n^{-1/2}` or `ω` for `Ω` fails, and so does one that starts on a number just
-  after its sign or ends just before an exponent. A quote that runs from one text into
-  another, or comes from a record the judge was not shown, is not evidence ("quote not
-  found");
+  the paper's nearest records. Spacing, the case of ordinary Latin words (two or more letters,
+  and the word "a"), sentence punctuation (`. , ; : ?`), quote marks and apostrophes, an em
+  dash (`—`, `---`) or spaced en dash (` – `, ` -- `) between clauses, markdown's `**` and
+  TeX's `$`, `\(`, `\)` and spacing commands (`\,`, `\quad`, `\qquad`, `\hspace{1em}` and the
+  like) are ignored; every other dash, `--` and `−` read as `-`. The maths must match: signs,
+  `/`, `!`, `#`, `%`, `^`, `_`, `×`, braces and brackets, Greek letters, TeX commands (`\Omega`
+  is not `\omega`), spelled-out Greek capitals (`Omega` is not `omega`), the case of every
+  other one-letter symbol (`O(n)` is not `o(n)`, `N` is not `n`), primes (`W'` is `W′`, never
+  `W`; an `'` is a prime after a digit, a closing bracket, a one-letter symbol or a TeX command,
+  and an apostrophe or quote mark otherwise), a decimal point (`.5` is not `5`, `2.9x` is
+  `2.9 x`) and a ratio's colon (`1:2`). A superscript reads as its TeX exponent (`2ⁿ` is `2^n`,
+  never `2n`). So a quote with `≥` for `≤`, `0.207` for `-0.207`, `n^{1/2}` for `n^{-1/2}`,
+  `ω` for `Ω` or `o(n)` for `O(n)` fails. So does one that starts or ends inside a formula or
+  a hyphenated word: just after an operator (a sign, `-`, `/`, `=`, `×`, `\cdot`, ...) or a
+  prefix (`√`, `\sqrt`, `\log`, `#`, a decimal point), or just before an operator or a
+  factorial, percent sign or prime that follows a number or symbol. A quote that runs from one
+  text into another, or comes from a record the judge was not shown, is not evidence ("quote
+  not found");
 - the paper already has a verdict recorded by anyone but a judge, including an entry written
   by hand without `by` ("human verdict exists").
 
