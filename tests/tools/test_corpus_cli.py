@@ -162,6 +162,7 @@ def test_a_root_that_is_not_a_checkout_is_an_error_and_creates_nothing(tmp_path:
     (hollow / "research").mkdir(parents=True)
     assert main(["--root", str(hollow), *command]) == 1
     assert "nothing to index" in capsys.readouterr().err
+    assert list((hollow / "research").iterdir()) == []  # no corpus_index/ left behind
 
 
 def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> None:
@@ -171,6 +172,22 @@ def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> Non
     with pytest.raises(CorpusRootError, match="is not a directory"):
         create_server(tmp_path / "nosuch", dense="off")
     assert not (tmp_path / "nosuch").exists()
+    # A checkout with nothing to index: the server started, wrote an index, and failed every call.
+    hollow = tmp_path / "hollow"
+    (hollow / "research").mkdir(parents=True)
+    with pytest.raises(CorpusRootError, match="nothing to index"):
+        create_server(hollow, dense="off")
+    assert list((hollow / "research").iterdir()) == []
+
+
+def test_mcp_server_main_exits_1_on_a_checkout_with_nothing_to_index(tmp_path: Path, capsys) -> None:
+    from tools.corpus.mcp_server import main as server_main
+
+    hollow = tmp_path / "hollow"
+    (hollow / "research" / "registry").mkdir(parents=True)
+    (hollow / "research" / "registry" / "notes.txt").write_text("not a registry file")
+    assert server_main(["--root", str(hollow), "--dense", "off"]) == 1
+    assert "nothing to index" in capsys.readouterr().err
 
 
 def _options(command: str) -> set[str]:

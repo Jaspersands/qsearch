@@ -23,7 +23,7 @@ from tools.corpus.ranking import (
     snippet,
     top_rows,
 )
-from tools.corpus.sources import discover, parse_source
+from tools.corpus.sources import GLOBS, _parser_for, discover, parse_source
 from tools.corpus.store import Store
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -52,15 +52,27 @@ class CorpusRootError(ValueError):
 def checkout_root(root: Path | None = None) -> Path:
     """`root` (default: QSEARCH_ROOT or this repository), resolved, once it is known to be a checkout.
 
-    Raises CorpusRootError before anything is written when the path is not a directory or
-    has no research/ directory, so a mistyped --root never leaves an index tree behind.
+    Raises CorpusRootError before anything is written when the path is not a directory, has
+    no research/ directory or holds no file the corpus indexes, so a mistyped --root never
+    leaves an index tree behind and the MCP server does not start on it.
     """
     path = Path(root).resolve() if root else default_root()
     if not path.is_dir():
         raise CorpusRootError(f"{path} is not a directory")
     if not (path / "research").is_dir():
         raise CorpusRootError(f"{path} is not a Q-Search checkout: it has no research/ directory")
+    if not _has_sources(path):
+        raise CorpusRootError(f"nothing to index under {path}: no registry, note, code or literature file")
     return path
+
+
+def _has_sources(root: Path) -> bool:
+    """Whether `root` holds a file `discover` would return; stops at the first, so it costs far less."""
+    for pattern in GLOBS:
+        for path in root.glob(pattern):
+            if path.is_file() and _parser_for(path.relative_to(root).as_posix()) is not None:
+                return True
+    return False
 
 
 @dataclass
