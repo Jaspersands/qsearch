@@ -83,7 +83,8 @@ def create_server(
         params: name, objective ("count" or "cosine"), q, m, n, rho, and optionally radius,
         min_distance, decoder_known, encoder_known (a polynomial-time encoder attains Q*), p, b, c,
         classical_witness, finite_dqi_mean (see tools/dqi_screen/README.md and examples). Returns the quantities, each rule's check and a verdict:
-        "not viable", "unknown" or "viable". This is a soundness screen, not a proof: the rules
+        "not viable", "unknown" or "viable" ("viable" leaves the paper's (R3) encoder rule
+        unresolved when no encoder is known). This is a soundness screen, not a proof: the rules
         are asymptotic and assume worst-case decoding (of Hamming errors for the count objective,
         of signed {+-1} error patterns for the cosine)."""
         try:

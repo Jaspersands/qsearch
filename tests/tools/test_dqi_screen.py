@@ -319,6 +319,21 @@ def test_encoder_known_is_documented_as_a_polynomial_time_encoder_attaining_q_st
     assert "planted encoder is known" not in row and "polynomial-time" in row and "Q*" in row
 
 
+def test_r3_encoder_pass_says_the_rule_stays_unresolved() -> None:
+    # arXiv:2610.06753: without a known encoder attaining Q*, (R3) "stays unresolved" (Table 3: MPI unresolved).
+    s, checks = _run("mpi_signed_cosine.json")
+    encoder = checks["R3-encoder"]
+    assert encoder.passed is True and s.verdict == "viable"  # not violated: the verdict logic is unchanged
+    assert encoder.detail.startswith("not violated (unresolved: ") and "Proposition 9" in encoder.detail
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    viable = readme.split("- **viable**", 1)[1].split("\n\n", 1)[0]  # the verdict's bullet
+    assert "(R3)" in viable and "unresolved" in viable
+    row = next(line for line in readme.splitlines() if line.startswith("| R3-encoder | hard"))
+    assert "unresolved" in row
+    source = (REPO / "tools/corpus/mcp_server.py").read_text(encoding="utf-8")
+    assert "unresolved" in source.split("def screen_dqi_candidate", 1)[1].split('"""')[1]  # the tool's docstring
+
+
 def test_prime_power_q_without_subfield_inputs_is_unknown_not_na() -> None:
     # Example (c) at twice the length is viable over the prime field F_8191.
     longer = {"m": 2000, "radius": 248, "min_distance": 500}

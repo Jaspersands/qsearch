@@ -349,11 +349,13 @@ def _check_r3(c: Candidate, qn: dict) -> Check:
 
 def _check_encoder(c: Candidate) -> Check:
     """Proposition 9 (R3): a polynomial-time encoder for im(B) attaining Q* is a classical baseline
-    with DQI's limiting value, so mu+ <= 0."""
+    with DQI's limiting value, so mu+ <= 0. Without one the rule is not violated but, as the paper
+    says, (R3) stays unresolved: the check passes so the verdict can still be "viable"."""
     if c.encoder_known:
         return Check("R3-encoder", False, "a polynomial-time encoder attains the existential line Q*: it is a classical "
                      "baseline with the same limiting value, so the margin mu+ <= 0 (Proposition 9)")
-    return Check("R3-encoder", True, "no polynomial-time encoder attaining Q* is known")
+    return Check("R3-encoder", True, "not violated (unresolved: no polynomial-time encoder attaining Q* is known, "
+                 "Proposition 9)")
 
 
 def _check_r4(c: Candidate, qn: dict) -> Check:
