@@ -1431,7 +1431,7 @@ def test_build_runs_only_allow_listed_git_and_preflight_local_reads(tmp_path: Pa
     assert preflight, "the preflight section ran no git"
     readme = (REPO / "tools" / "brief" / "README.md").read_text(encoding="utf-8")
     for args in preflight:
-        assert args[0] in {"rev-parse", "ls-files", "diff"}, args  # local reads: none contacts a remote
+        assert args[0] in {"rev-parse", "ls-files", "diff-files"}, args  # local reads: none writes or contacts a remote
         assert f"`git {args[0]}" in readme, args
     assert "preflight" in B.__doc__.split("Git is used read-only")[1].split("\n\n")[0]
 

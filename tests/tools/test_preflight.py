@@ -27,7 +27,7 @@ LAZY_IMPORTS = '''\
 def command_audit(args):
     from theorems.tracked import a
     from theorems.untracked import b
-    import core.gone
+    if args: import core.gone  # a command module is parsed in full: the line scan misses this
     return a, b, core.gone
 '''
 
@@ -36,6 +36,12 @@ FUNCTIONS = {"command_audit": "qsearch_cli.commands.general"}
 # What every minimal checkout refers to inside qsearch_cli/: the shim's import and the registry's module columns.
 CLI_REFS = {"qsearch_cli/main.py": {"qsearch.py"}, "qsearch_cli/commands/general.py": {"qsearch_cli/registry.py"}}
 AUDIT_ENTRY = {"name": "audit", "aliases": [], "function": "command_audit", "module": "qsearch_cli.commands.general"}
+GENERAL_PY = "qsearch_cli/commands/general.py"
+
+
+def _by(reason: str, referrer: str = GENERAL_PY) -> str:
+    """An imports problem's message: why, then the (first) file that refers to the module."""
+    return f"{reason}; referred to by {referrer}"
 
 
 def _write(path: Path, text: str) -> Path:
@@ -141,6 +147,27 @@ def test_check_json_rereads_a_file_caught_mid_rewrite(tmp_path: Path, monkeypatc
     assert broken.is_file() and len(sleeps) == 1 + pf.JSON_RETRIES
 
 
+def test_check_json_rereads_a_file_cut_inside_a_multibyte_character(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    # A rewrite caught half way can end inside "ö": that read is a UnicodeDecodeError, not a JSON error.
+    record = _write(tmp_path / "research" / "registry" / "names.json", '{"name": "Schrödinger"}\n')
+    real_read_text = Path.read_text
+    reads: list[Path] = []
+
+    def read_text(self: Path, *args, **kwargs) -> str:
+        reads.append(self)
+        if self == record and len(reads) == 1:
+            raise UnicodeDecodeError("utf-8", "Schrö".encode()[:-1], 4, 5, "unexpected end of data")
+        return real_read_text(self, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "read_text", read_text)
+    monkeypatch.setattr(pf.time, "sleep", lambda seconds: None)
+
+    assert pf.check_json(tmp_path) == []
+    assert reads == [record, record]
+
+
 def test_check_json_reports_a_dangling_symlink(tmp_path: Path) -> None:
     audits = tmp_path / "research" / "audits"
     _write(audits / "fine.json", "[]\n")
@@ -228,10 +255,10 @@ def test_untracked_and_missing_theorem_modules(tmp_path: Path) -> None:
 
     assert {p.check for p in problems} == {"imports"}
     assert {(p.path, p.message) for p in problems} == {
-        ("theorems/untracked.py", "not tracked by git"),
-        ("theorems/table_mod.py", "not tracked by git"),
-        ("theorems/dispatched.py", "not tracked by git"),
-        ("core/gone.py", "missing on disk"),
+        ("theorems/untracked.py", _by("not tracked by git")),
+        ("theorems/table_mod.py", _by("not tracked by git", "qsearch_cli/imports.py")),
+        ("theorems/dispatched.py", _by("not tracked by git", "qsearch_cli/registry.py")),
+        ("core/gone.py", _by("missing on disk")),
     }
 
 
@@ -264,9 +291,9 @@ def test_bare_and_package_style_imports_are_followed(tmp_path: Path) -> None:
         "core/gone_pkg.py": {"qsearch_cli/commands/general.py"},
     }
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("theorems/new_bare_bridge.py", "not tracked by git"),
-        ("theorems/pkg_style.py", "not tracked by git"),
-        ("core/gone_pkg.py", "missing on disk"),
+        ("theorems/new_bare_bridge.py", _by("not tracked by git", "qsearch.py")),
+        ("theorems/pkg_style.py", _by("not tracked by git")),
+        ("core/gone_pkg.py", _by("missing on disk")),
     }
 
 
@@ -289,8 +316,100 @@ def test_package_style_imports_table_entries_name_the_submodule(tmp_path: Path) 
         "core/core_pkg.py": {"qsearch_cli/imports.py"},
     }
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("theorems/new_pkg.py", "not tracked by git"),
-        ("core/core_pkg.py", "missing on disk"),
+        ("theorems/new_pkg.py", _by("not tracked by git", "qsearch_cli/imports.py")),
+        ("core/core_pkg.py", _by("missing on disk", "qsearch_cli/imports.py")),
+    }
+
+
+def test_relative_imports_name_the_module_they_load(tmp_path: Path) -> None:
+    # The CLI loads theorem modules as theorems.x, so `from .helper import h` loads theorems/helper.py.
+    module = (
+        "if __package__:\n"
+        "    from .rel_helper import h\n"
+        "    from . import rel_sibling, rel_pkg\n"
+        "    from .rel_pkg.inner import i\n"
+        "    from ..beyond_the_top import b\n"  # past the top package: an ImportError, no file
+        "f = 1\n"
+    )
+    command = "from . import other_cmd\nfrom ..cli_helper import c\n\n" + GENERAL
+    general = "def command_audit(args):\n    from theorems.mod import f\n    return f\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/mod.py": module, "qsearch_cli/commands/dcp.py": command})
+    _write(repo / "theorems" / "rel_helper.py", "h = 1\n")
+    _write(repo / "theorems" / "beyond_the_top.py", "b = 1\n")
+    _write(repo / "theorems" / "rel_pkg" / "__init__.py", "")
+    _write(repo / "theorems" / "rel_pkg" / "inner.py", "i = 1\n")
+    _write(repo / "qsearch_cli" / "cli_helper.py", "c = 1\n")
+    _write(repo / "qsearch_cli" / "commands" / "other_cmd.py", "")
+    order = [*ORDER, ("dcp-audit", "qsearch_cli.commands.dcp", "add_audit")]
+    (repo / "qsearch_cli" / "registry.py").write_text(f"ORDER = {order!r}\n\nFUNCTIONS = {FUNCTIONS!r}\n", encoding="utf-8")
+
+    refs = pf.referenced_modules(repo)
+
+    assert {path: refs[path] for path in set(refs) - set(CLI_REFS)} == {
+        "theorems/mod.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/commands/dcp.py": {"qsearch_cli/registry.py"},
+        "theorems/rel_helper.py": {"theorems/mod.py"},
+        "theorems/rel_sibling.py": {"theorems/mod.py"},
+        "theorems/rel_pkg/__init__.py": {"theorems/mod.py"},
+        "theorems/rel_pkg/inner.py": {"theorems/mod.py"},
+        "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/dcp.py"},
+        "qsearch_cli/commands/other_cmd.py": {"qsearch_cli/commands/dcp.py"},
+        "qsearch_cli/cli_helper.py": {"qsearch_cli/commands/dcp.py"},
+    }
+    dcp = "qsearch_cli/commands/dcp.py"
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("theorems/rel_helper.py", _by("not tracked by git", "theorems/mod.py")),
+        ("theorems/rel_sibling.py", _by("missing on disk", "theorems/mod.py")),
+        ("theorems/rel_pkg/__init__.py", _by("not tracked by git", "theorems/mod.py")),
+        ("theorems/rel_pkg/inner.py", _by("not tracked by git", "theorems/mod.py")),
+        ("qsearch_cli/commands/other_cmd.py", _by("not tracked by git", dcp)),
+        ("qsearch_cli/cli_helper.py", _by("not tracked by git", dcp)),
+    }
+
+
+def test_package_style_imports_of_qsearch_cli_and_of_subpackages(tmp_path: Path) -> None:
+    # `from qsearch_cli import helpers` loads qsearch_cli/helpers.py; `from theorems import sub`,
+    # with sub a directory, loads theorems/sub/__init__.py, not a theorems/sub.py.
+    general = (
+        "from qsearch_cli import helpers, ghost\n"
+        "from qsearch_cli.commands import wip, defined_in_init\n"
+        "from theorems import sub\n"
+        "\n" + GENERAL
+    )
+    imports = {
+        "parser": ("qsearch_cli", "parser"),
+        "qsearch_cli": ("qsearch_cli", None),
+        "main": ("qsearch", "main"),
+        "subpkg": ("theorems", "subpkg"),
+        "g": ("theorems.subpkg", "g"),
+        "deep": ("theorems.subpkg", "deep"),
+    }
+    repo = _repo(tmp_path, general=general, imports=imports, committed={"qsearch_cli/parser.py": ""})
+    _write(repo / "qsearch_cli" / "helpers.py", "")
+    _write(repo / "qsearch_cli" / "commands" / "wip.py", "")
+    _write(repo / "theorems" / "sub" / "__init__.py", "")
+    _write(repo / "theorems" / "subpkg" / "__init__.py", "g = 1\n")
+    _write(repo / "theorems" / "subpkg" / "deep.py", "")
+
+    refs = pf.referenced_modules(repo)
+
+    assert {path: refs[path] for path in set(refs) - set(CLI_REFS)} == {
+        "qsearch_cli/helpers.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/ghost.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/commands/wip.py": {"qsearch_cli/commands/general.py"},
+        "theorems/sub/__init__.py": {"qsearch_cli/commands/general.py"},
+        "qsearch_cli/parser.py": {"qsearch_cli/imports.py"},
+        "theorems/subpkg/__init__.py": {"qsearch_cli/imports.py"},
+        "theorems/subpkg/deep.py": {"qsearch_cli/imports.py"},
+    }
+    assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
+        ("qsearch_cli/helpers.py", _by("not tracked by git")),
+        ("qsearch_cli/ghost.py", _by("missing on disk")),
+        ("qsearch_cli/commands/wip.py", _by("not tracked by git")),
+        ("theorems/sub/__init__.py", _by("not tracked by git")),
+        ("theorems/subpkg/__init__.py", _by("not tracked by git", "qsearch_cli/imports.py")),
+        ("theorems/subpkg/deep.py", _by("not tracked by git", "qsearch_cli/imports.py")),
     }
 
 
@@ -316,12 +435,61 @@ def test_cli_modules_the_registry_and_shim_load_are_checked(tmp_path: Path) -> N
         "qsearch_cli/commands/fnonly.py": {"qsearch_cli/registry.py"},
         "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/general.py"},
     }
+    registry = "qsearch_cli/registry.py"
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("qsearch_cli/main.py", "not tracked by git"),
-        ("qsearch_cli/commands/newdomain.py", "not tracked by git"),
-        ("qsearch_cli/commands/ghost.py", "missing on disk"),
-        ("qsearch_cli/commands/fnonly.py", "not tracked by git"),
+        ("qsearch_cli/main.py", _by("not tracked by git", "qsearch.py")),
+        ("qsearch_cli/commands/newdomain.py", _by("not tracked by git", registry)),
+        ("qsearch_cli/commands/ghost.py", _by("missing on disk", registry)),
+        ("qsearch_cli/commands/fnonly.py", _by("not tracked by git", registry)),
     }
+
+
+def test_command_files_the_cli_never_loads_are_not_read(tmp_path: Path) -> None:
+    # iCloud duplicates and scratch files beside the command modules: no table names them,
+    # so neither parser.py nor resolve.py nor main.py ever imports them.
+    repo = _repo(tmp_path)
+    commands = repo / "qsearch_cli" / "commands"
+    _write(commands / "general 2.py", "import theorems.renamed_away\n")
+    _write(commands / "general 3.py", "def broken(:\n")
+    (commands / "legacy_notes.py").write_bytes("# Schrödinger\nimport theorems.gone\n".encode("latin-1"))
+    _write(commands / "wip.py", "from theorems.wip_mod import f\n")
+    _write(repo / "theorems" / "wip_mod.py", "f = 1\n")
+
+    assert pf.referenced_modules(repo) == CLI_REFS
+    assert pf.check_untracked_imports(repo) == []
+
+
+@pytest.mark.parametrize(
+    "content, error",
+    [(b"def add_audit(:\n", "SyntaxError: "), ("# Schrödinger\n".encode("latin-1"), "UnicodeDecodeError: ")],
+)
+def test_a_command_module_that_cannot_be_read_is_named(tmp_path: Path, content: bytes, error: str) -> None:
+    repo = _repo(tmp_path)
+    (repo / "qsearch_cli" / "commands" / "general.py").write_bytes(content)
+
+    [problem] = pf.check_untracked_imports(repo)
+
+    assert problem.path == "qsearch_cli/commands/general.py"
+    assert problem.message.startswith(f"cannot read the CLI sources: {error}")
+
+
+def test_each_problem_names_a_file_that_refers_to_the_module(tmp_path: Path) -> None:
+    general = "def command_audit(args):\n    from theorems.gone import a\n    from theorems.shared import s\n    return a, s\n"
+    repo = _repo(
+        tmp_path,
+        general=general,
+        imports={"s": ("theorems.shared", "s")},
+        committed={"theorems/user.py": "from theorems.shared import s\n"},
+        dispatch=[("flag", "theorems.user", "gen")],
+    )
+    _write(repo / "theorems" / "shared.py", "s = 1\n")
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/gone.py", "missing on disk; referred to by qsearch_cli/commands/general.py"),
+        pf.Problem(
+            "imports", "theorems/shared.py", "not tracked by git; referred to by qsearch_cli/commands/general.py and 2 more"
+        ),
+    ]
 
 
 TRACKED_WITH_HELPERS = '''\
@@ -333,6 +501,15 @@ QUOTE = "\'\'\'"  # a quote inside a string starts no string
 from helper import h
 from core.helper2 import h2  # import theorems.in_comment
 import os, json
+# a comment holding """ opens no string either
+import theorems.after_comment
+OPEN = '"""'  # nor does a triple quote in a single-quoted string
+import theorems.between_single
+CLOSE = '"""'
+QUOTE2 = "\'\'\'"  # would close one opened in QUOTE, hiding every import between them
+NOTES = \'\'\'
+import theorems.in_single_triple
+\'\'\'
 
 
 def lazy():
@@ -363,14 +540,61 @@ def test_imports_inside_referenced_modules_are_followed(tmp_path: Path) -> None:
     assert refs["theorems/tracked.py"] == {"qsearch_cli/commands/general.py", "theorems/deep.py"}
     assert refs["theorems/helper.py"] == {"theorems/tracked.py"}
     assert refs["theorems/deep.py"] == {"theorems/helper.py"}
-    assert not {"theorems/in_docstring.py", "theorems/in_comment.py", "theorems/in_string.py"} & set(refs)
+    hidden = {"theorems/in_docstring.py", "theorems/in_comment.py", "theorems/in_string.py", "theorems/in_single_triple.py"}
+    assert not hidden & set(refs)
+    tracked = "theorems/tracked.py"
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("theorems/helper.py", "not tracked by git"),
-        ("theorems/deep.py", "not tracked by git"),
-        ("core/helper2.py", "not tracked by git"),
-        ("core/helper3.py", "not tracked by git"),
-        ("theorems/gone.py", "missing on disk"),
+        ("theorems/helper.py", _by("not tracked by git", tracked)),
+        ("theorems/deep.py", _by("not tracked by git", "theorems/helper.py")),
+        ("core/helper2.py", _by("not tracked by git", tracked)),
+        ("core/helper3.py", _by("not tracked by git", tracked)),
+        ("theorems/gone.py", _by("missing on disk", tracked)),
+        ("theorems/after_comment.py", _by("missing on disk", tracked)),
+        ("theorems/between_single.py", _by("missing on disk", tracked)),
     }
+
+
+def test_a_module_that_is_not_utf8_is_checked_but_not_followed(tmp_path: Path) -> None:
+    general = "def command_audit(args):\n    from theorems.latin import a\n    return a\n"
+    repo = _repo(tmp_path, general=general)
+    (repo / "theorems").mkdir()
+    (repo / "theorems" / "latin.py").write_bytes("# Schrödinger\nimport theorems.unfollowed\na = 1\n".encode("latin-1"))
+
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "theorems/latin.py": {GENERAL_PY}}
+    assert pf.check_untracked_imports(repo) == [pf.Problem("imports", "theorems/latin.py", _by("not tracked by git"))]
+
+
+def test_a_dotted_name_for_a_directory_without_init_names_no_file(tmp_path: Path) -> None:
+    # A namespace package: Python imports the directory itself, so there is no theorems/nsdir.py to miss.
+    general = "import theorems.nsdir\nfrom theorems.nsdir.inner import x\n\n" + GENERAL
+    repo = _repo(tmp_path, general=general, committed={"theorems/nsdir/inner.py": "x = 1\n"})
+
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "theorems/nsdir/inner.py": {GENERAL_PY}}
+    assert pf.check_untracked_imports(repo) == []
+
+
+def test_a_registry_that_does_not_parse_is_named(tmp_path: Path) -> None:
+    repo = _repo(tmp_path, git=False)
+    (repo / "qsearch_cli" / "registry.py").write_text("ORDER = [\n", encoding="utf-8")
+
+    [problem] = pf.check_untracked_imports(repo)
+
+    assert problem.path == "qsearch_cli/registry.py"
+    assert problem.message.startswith("cannot read the CLI sources: SyntaxError: ")
+
+
+def test_line_scan_keeps_an_import_whose_line_goes_on_after_a_semicolon() -> None:
+    import ast
+
+    text = (
+        'import theorems.semi; NAME = "x""y"\n'  # two adjacent strings must not blank to one """"
+        "from core.after import y; z = '''a\nb'''\n"
+        "import theorems.last; w = f'{y}'\n"
+    )
+
+    found = [ast.unparse(n) for n in pf._scanned_imports(text) if isinstance(n, (ast.Import, ast.ImportFrom))]
+
+    assert found == ["import theorems.semi", "from core.after import y", "import theorems.last"]
 
 
 def test_line_scan_finds_what_a_full_parse_finds_on_the_real_checkout() -> None:
@@ -435,8 +659,55 @@ def test_staged_module_counts_as_tracked_but_intent_to_add_does_not(tmp_path: Pa
     assert "theorems/staged.py" in pf.tracked_files(repo)
     assert "theorems/intent.py" not in pf.tracked_files(repo)
     assert pf.check_untracked_imports(repo) == [
-        pf.Problem("imports", "theorems/intent.py", "not tracked by git (intent-to-add only)")
+        pf.Problem("imports", "theorems/intent.py", _by("not tracked by git (intent-to-add only)"))
     ]
+
+
+def test_an_unstaged_edit_is_not_intent_to_add(tmp_path: Path) -> None:
+    # The usual state before a commit: committed modules edited, not yet staged.
+    general = "def command_audit(args):\n    from theorems.edited import a\n    from theorems.intent import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/edited.py": "a = 1\n"})
+    _write(repo / "theorems" / "edited.py", "a = 2\n")
+    _write(repo / "qsearch_cli" / "commands" / "general.py", general + "\n# edited\n")
+    _write(repo / "theorems" / "intent.py", "b = 2\n")
+    _git(repo, "add", "-N", "theorems/intent.py")
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/intent.py", _by("not tracked by git (intent-to-add only)"))
+    ]
+
+
+def test_a_renamed_module_marked_intent_to_add_is_still_not_tracked(tmp_path: Path) -> None:
+    # Rename detection would pair the new name with the deleted old one and hide it from --diff-filter=A.
+    general = "def command_audit(args):\n    from theorems.new_name import a\n    return a\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/old_name.py": "a = 1\n" * 20})
+    (repo / "theorems" / "old_name.py").rename(repo / "theorems" / "new_name.py")
+    _git(repo, "add", "-N", "theorems/new_name.py")
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/new_name.py", _by("not tracked by git (intent-to-add only)"))
+    ]
+
+
+def test_the_imports_check_never_writes_the_git_index(tmp_path: Path) -> None:
+    # Porcelain `git diff` refreshes stale stat data and rewrites .git/index under index.lock,
+    # which fails another agent's `git add` or `git commit` in the same checkout.
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    from theorems.intent import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": "a = 1\n", "core/c.py": "c = 1\n"})
+    _write(repo / "theorems" / "intent.py", "b = 2\n")
+    _git(repo, "add", "-N", "theorems/intent.py")
+    for rel in ("theorems/tracked.py", "core/c.py", "qsearch_cli/commands/general.py"):
+        path = repo / rel
+        path.write_bytes(path.read_bytes())  # same content, new stat data
+        stat = path.stat()
+        os.utime(path, ns=(stat.st_atime_ns, stat.st_mtime_ns + 5_000_000_000))
+    index = repo / ".git" / "index"
+    before = (index.read_bytes(), index.stat().st_mtime_ns, index.stat().st_ino)
+
+    problems = pf.check_untracked_imports(repo)
+
+    assert [p.path for p in problems] == ["theorems/intent.py"]
+    assert (index.read_bytes(), index.stat().st_mtime_ns, index.stat().st_ino) == before
 
 
 def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_path: Path) -> None:
@@ -445,8 +716,8 @@ def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_pa
     repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": "a = 1\n"})
 
     assert pf.check_untracked_imports(repo) == [
-        pf.Problem("imports", "theorems/Gone.py", "missing on disk"),
-        pf.Problem("imports", "theorems/Tracked.py", "missing on disk (case differs: theorems/tracked.py)"),
+        pf.Problem("imports", "theorems/Gone.py", _by("missing on disk")),
+        pf.Problem("imports", "theorems/Tracked.py", _by("missing on disk (case differs: theorems/tracked.py)")),
     ]
 
 
@@ -473,6 +744,36 @@ def test_a_table_of_the_wrong_shape_is_one_problem(
     assert line.startswith(f"imports: .: cannot read the CLI sources: ValueError: {table} in qsearch_cli/")
     if table == "ORDER":
         assert any(line.startswith("manifest: qsearch_cli/registry.py: cannot read ORDER: ValueError: ORDER") for line in lines)
+
+
+def test_a_table_is_read_from_its_last_assignment_as_python_keeps_it(tmp_path: Path) -> None:
+    repo = _repo(tmp_path, git=False)
+    imports = repo / "qsearch_cli" / "imports.py"
+    imports.write_text(
+        'IMPORTS = {"old": ("theorems.dropped", "old")}\n'
+        'IMPORTS: dict[str, tuple] = {"f": ("theorems.newmod", "f")}\n',  # annotated: still an assignment
+        encoding="utf-8",
+    )
+
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "theorems/newmod.py": {"qsearch_cli/imports.py"}}
+
+
+@pytest.mark.parametrize(
+    "source, reason",
+    [
+        ('IMPORTS = dict(f=("theorems.x", "f"))\n', "is not a literal"),
+        ('IMPORTS = {}\nIMPORTS |= {"f": ("theorems.x", "f")}\n', "is changed in place"),
+        ('IMPORTS = {}\nIMPORTS["f"] = ("theorems.x", "f")\n', "is changed in place"),
+        ('IMPORTS = {}\nIMPORTS.update(f=("theorems.x", "f"))\n', "is changed in place"),
+    ],
+)
+def test_a_table_that_is_not_one_literal_is_one_problem(tmp_path: Path, source: str, reason: str) -> None:
+    repo = _repo(tmp_path, git=False)
+    (repo / "qsearch_cli" / "imports.py").write_text(source, encoding="utf-8")
+
+    [problem] = pf.check_untracked_imports(repo)
+
+    assert problem.message.startswith(f"cannot read the CLI sources: ValueError: IMPORTS in qsearch_cli/imports.py {reason}")
 
 
 def test_real_checkout_has_no_untracked_imports() -> None:
@@ -507,6 +808,38 @@ def test_tree_inside_an_unrelated_repository_is_git_unavailable(
     ]
 
 
+def test_git_variables_of_another_repository_are_ignored(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # A hook of another repository or worktree exports its own GIT_DIR and GIT_INDEX_FILE.
+    other = _repo(tmp_path / "other")
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    return a\n"
+    repo = _repo(tmp_path / "mine", general=general, committed={"theorems/tracked.py": "a = 1\n"})
+    monkeypatch.setenv("GIT_DIR", str(other / ".git"))
+    monkeypatch.setenv("GIT_INDEX_FILE", str(other / ".git" / "index"))
+
+    assert pf.check_untracked_imports(repo) == []
+
+
+def test_the_index_a_hook_of_this_checkout_commits_is_used(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # `git commit -a` or `git commit <paths>` runs the pre-commit hook with GIT_INDEX_FILE set to
+    # the index it is about to commit, which can track more than .git/index does.
+    general = "def command_audit(args):\n    from theorems.new import a\n    return a\n"
+    repo = _repo(tmp_path, general=general)
+    _write(repo / "theorems" / "new.py", "a = 1\n")
+    next_index = repo / ".git" / "next-index-1.lock"
+    next_index.write_bytes((repo / ".git" / "index").read_bytes())
+    subprocess.run(
+        ["git", "-C", str(repo), "add", "theorems/new.py"],
+        env={**os.environ, "GIT_INDEX_FILE": str(next_index)},
+        check=True,
+    )
+    assert [p.path for p in pf.check_untracked_imports(repo)] == ["theorems/new.py"]
+
+    monkeypatch.setenv("GIT_DIR", str(repo / ".git"))
+    monkeypatch.setenv("GIT_INDEX_FILE", ".git/next-index-1.lock")  # relative to the work tree, as git exports it
+
+    assert pf.check_untracked_imports(repo) == []
+
+
 def test_a_root_inside_a_checkout_is_named_as_such(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     # Say --root qsearch_cli by mistake: git works there, so "git unavailable" alone would mislead.
     repo = _repo(tmp_path)
@@ -538,6 +871,22 @@ def test_manifest_subcommand_missing_from_order(tmp_path: Path) -> None:
     assert [(p.check, p.path, p.message) for p in pf.check_manifest(moved)] == [("manifest", pf.MANIFEST, "missing")]
 
 
+@pytest.mark.parametrize(
+    "manifest, message",
+    [
+        ('{"subcommands": [', "invalid: JSONDecodeError: Expecting value: line 1 column 18 (char 17)"),
+        ('{"commands": []}', "invalid: KeyError: 'subcommands'"),
+        ('{"subcommands": [{"name": "audit"}]}', "invalid: KeyError: 'module'"),
+        ('{"subcommands": 3}', "invalid: TypeError: 'int' object is not iterable"),
+    ],
+)
+def test_an_invalid_manifest_is_one_problem(tmp_path: Path, manifest: str, message: str) -> None:
+    repo = _repo(tmp_path, git=False)
+    (repo / pf.MANIFEST).write_text(manifest, encoding="utf-8")
+
+    assert pf.check_manifest(repo) == [pf.Problem("manifest", pf.MANIFEST, message)]
+
+
 def test_real_manifest_matches_registry() -> None:
     assert pf.check_manifest(REPO) == []
 
@@ -549,7 +898,7 @@ def test_main_prints_problems_and_exits_one(tmp_path: Path, capsys: pytest.Captu
 
     assert pf.main(["--root", str(dirty)]) == 1
     assert capsys.readouterr().out.splitlines() == [
-        "imports: theorems/untracked.py: not tracked by git",
+        "imports: theorems/untracked.py: not tracked by git; referred to by qsearch_cli/commands/general.py",
         "1 problems",
     ]
 
@@ -608,6 +957,14 @@ def test_validate_reports_the_issues_printed_on_stdout(tmp_path: Path) -> None:
     assert [p.message for p in pf.check_validate(repo)] == ["exit 5: KeyError: id"]
 
 
+def test_validate_leaves_no_bytecode_in_the_checkout(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("PYTHONDONTWRITEBYTECODE", raising=False)
+    repo = _repo(tmp_path, committed={"qsearch.py": "import qsearch_cli.main\n"})
+
+    assert pf.check_validate(repo) == []
+    assert sorted(repo.rglob("__pycache__")) == []
+
+
 def test_imports_flag_reports_a_verifier_that_cannot_start(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     def broken_check_imports(root: Path) -> tuple[int, list[str]]:
         raise RuntimeError("qsearch_cli imported from another checkout")
@@ -651,11 +1008,13 @@ def test_imports_flag_finds_a_tracked_module_that_fails_to_import(tmp_path: Path
         },
     )
 
+    environment = {key: value for key, value in os.environ.items() if key != "PYTHONDONTWRITEBYTECODE"}
     result = subprocess.run(
         [sys.executable, str(REPO / "tools" / "preflight" / "preflight.py"), "--root", str(repo), "--imports", "--json"],
         cwd=tmp_path,
         capture_output=True,
         text=True,
+        env=environment,
     )
 
     assert result.returncode == 1, result.stderr
@@ -665,4 +1024,41 @@ def test_imports_flag_finds_a_tracked_module_that_fails_to_import(tmp_path: Path
             "path": "qsearch_cli",
             "message": "broken: ModuleNotFoundError: No module named 'qsearch_missing_dependency'",
         }
+    ]
+    assert sorted(repo.rglob("__pycache__")) == []  # importing the checkout leaves no bytecode in it
+
+
+def test_imports_flag_imports_every_certificate_flag_and_subcommand_adder(tmp_path: Path) -> None:
+    # main.py imports a DISPATCH module only when its flag is given, and parser.py looks up
+    # each ORDER adder: neither is an IMPORTS name or a command function.
+    order = [("audit", "qsearch_cli.commands.general", "add_audti")]
+    dispatch = [
+        ("broken_cert", "theorems.broken_cert", "generate_broken_certificate"),
+        ("misnamed_cert", "theorems.good_cert", "generate_misnamed_certificate"),
+        ("good_cert", "theorems.good_cert", "generate_good_certificate"),
+    ]
+    repo = _repo(
+        tmp_path,
+        order=order,
+        dispatch=dispatch,
+        committed={
+            "qsearch_cli/resolve.py": (REPO / "qsearch_cli" / "resolve.py").read_text(encoding="utf-8"),
+            "theorems/__init__.py": "",
+            "theorems/broken_cert.py": "import qsearch_missing_dependency\n",
+            "theorems/good_cert.py": "def generate_good_certificate():\n    return {}\n",
+        },
+    )
+
+    result = subprocess.run(
+        [sys.executable, str(REPO / "tools" / "preflight" / "preflight.py"), "--root", str(repo), "--imports", "--json"],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 1, result.stderr
+    assert [p["message"] for p in json.loads(result.stdout)["problems"] if p["check"] == "resolve"] == [
+        "--broken-cert: ModuleNotFoundError: No module named 'qsearch_missing_dependency'",
+        "--misnamed-cert: AttributeError: module 'theorems.good_cert' has no attribute 'generate_misnamed_certificate'",
+        "subcommand audit: AttributeError: module 'qsearch_cli.commands.general' has no attribute 'add_audti'",
     ]

@@ -2,7 +2,7 @@
 
     python tools/preflight/preflight.py              # before every commit; static, a few seconds
     python tools/preflight/preflight.py --json
-    python tools/preflight/preflight.py --imports    # also import every CLI name (slow)
+    python tools/preflight/preflight.py --imports    # also import every CLI name, command and flag (slow)
     python tools/preflight/preflight.py --validate   # also run qsearch.py validate (slow)
 
 JSON files under research/hypotheses, research/registry, research/audits and
@@ -10,13 +10,13 @@ research/classical_baselines must parse: an invalid hypothesis contract broke th
 2026-10-19. Other research/ directories are not read.
 Every theorems/, core/ or qsearch_cli/ module the CLI refers to must exist and be tracked by
 git: the same merge carried 24 imports of modules that were only in one working copy. Module
-references are read statically, never imported: AST imports in qsearch.py,
-qsearch_cli/imports.py and qsearch_cli/commands/*.py (theorems.x, qsearch_cli.x, from core
-import y, and bare names that resolve to a file in theorems/ or core/), the IMPORTS table,
-the module column of DISPATCH, and the module columns of ORDER and FUNCTIONS; then the
-imports inside each module found, by a line scan, until no new module turns up. Every
-subcommand in research/audits/cli_manifest.json must still be in the registry's ORDER, in
-the same module.
+references are read statically, never imported: AST imports in qsearch.py and
+qsearch_cli/imports.py (theorems.x, qsearch_cli.x, from core import y, relative imports, and
+bare names that resolve to a file in theorems/ or core/), the IMPORTS table, the module
+column of DISPATCH, and the module columns of ORDER and FUNCTIONS; then the imports inside
+each module found until no new module turns up, by AST for the command modules in
+qsearch_cli/commands/ and by a line scan for the rest. Every subcommand in
+research/audits/cli_manifest.json must still be in the registry's ORDER, in the same module.
 
 Prints one line per problem and the count; exits 1 when there is any problem, else 0.
 """
@@ -43,9 +43,11 @@ JSON_RETRIES, JSON_RETRY_SECONDS = 3, 0.025  # as tools/corpus/docs.py:read_json
 IMPORTS_FILE = "qsearch_cli/imports.py"
 REGISTRY = "qsearch_cli/registry.py"
 MANIFEST = "research/audits/cli_manifest.json"
-IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE, "qsearch_cli/commands/*.py")
+IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE)  # always loaded: the entry point, and the table resolve.py reads
+COMMANDS_DIR = "qsearch_cli/commands/"  # a command module found is parsed in full, like the sources
 PACKAGES = ("theorems", "core")  # on the CLI's sys.path in this order
 CLI_PACKAGE = "qsearch_cli"
+TOP_PACKAGES = (*PACKAGES, CLI_PACKAGE)
 MODULE_PREFIXES = ("theorems.", "core.", "qsearch_cli.")
 
 
@@ -54,6 +56,14 @@ class Problem:
     check: str
     path: str  # relative to the checked root, posix
     message: str
+
+
+class UnreadableSource(Exception):
+    """A CLI source or command module that cannot be read or parsed; ``path`` is relative to the root."""
+
+    def __init__(self, path: str, error: Exception):
+        super().__init__(f"{type(error).__name__}: {error}")
+        self.path = path
 
 
 def check_json(root: Path) -> list[Problem]:
@@ -115,23 +125,39 @@ def _json_error(path: Path) -> str | None:
 
 
 def _literal(root: Path, rel: str, name: str):
-    """The literal assigned to ``name`` at the top level of root/rel; None when absent. Never imported."""
+    """The literal last assigned to ``name`` at the top level of root/rel, the one Python keeps;
+    None when absent. Never imported.
+
+    ValueError when that value is not a literal, or when the module changes it in place
+    (``name |= ...``, ``name[key] = ...``, ``del name[key]``, ``name.update(...)``).
+    """
     path = root / rel
     if not path.is_file():
         return None
+
+    def is_name(node: ast.AST) -> bool:
+        return isinstance(node, ast.Name) and node.id == name
+
+    value = None
     for node in ast.parse(path.read_text(encoding="utf-8"), filename=rel).body:
-        if isinstance(node, ast.Assign):
-            targets = node.targets
-        elif isinstance(node, ast.AnnAssign):
-            targets = [node.target]
+        if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign, ast.Delete)):
+            targets = node.targets if isinstance(node, (ast.Assign, ast.Delete)) else [node.target]
+        elif isinstance(node, ast.Expr) and isinstance(node.value, ast.Call):
+            targets = [node.value.func]  # name.update(...)
         else:
             continue
-        if any(isinstance(t, ast.Name) and t.id == name for t in targets) and node.value is not None:
-            try:
-                return ast.literal_eval(node.value)
-            except ValueError:
-                raise ValueError(f"{name} in {rel} is not a literal") from None
-    return None
+        if isinstance(node, (ast.Assign, ast.AnnAssign)) and node.value is not None and any(map(is_name, targets)):
+            value = node.value
+        elif (isinstance(node, ast.AugAssign) and is_name(node.target)) or any(
+            isinstance(t, (ast.Subscript, ast.Attribute)) and is_name(t.value) for t in targets
+        ):
+            raise ValueError(f"{name} in {rel} is changed in place; preflight reads one literal")
+    if value is None:
+        return None
+    try:
+        return ast.literal_eval(value)
+    except ValueError:
+        raise ValueError(f"{name} in {rel} is not a literal") from None
 
 
 # Each CLI table: (file, container, row width, shape). Width 0: a dict whose values are module names.
@@ -179,31 +205,68 @@ def _dotted_path(root: Path, name: str) -> str | None:
 
 def _module_path(root: Path, module: str) -> str | None:
     """The theorems/, core/ or qsearch_cli/ file a table entry loads; None for the standard library,
-    other dotted names and the packages themselves.
+    other dotted names, the three packages themselves and a module at the top of the checkout
+    (the qsearch.py shim).
 
-    A bare name resolves as the CLI's sys.path does: theorems/ first, then core/.
+    A bare name resolves as the CLI's sys.path does: theorems/ first, then core/, then the root.
     """
     if module.startswith(MODULE_PREFIXES):
         return _dotted_path(root, module)
-    if "." in module or module in sys.stdlib_module_names or module in PACKAGES:
+    if "." in module or module in sys.stdlib_module_names or module in TOP_PACKAGES:
         return None
-    return f"theorems/{module}.py" if (root / "theorems" / f"{module}.py").is_file() else f"core/{module}.py"
+    for directory in PACKAGES:
+        if (root / directory / f"{module}.py").is_file():
+            return f"{directory}/{module}.py"
+    if (root / f"{module}.py").is_file() or (root / module).is_dir():
+        return None
+    return f"core/{module}.py"
 
 
-def _import_paths(root: Path, node: ast.AST) -> list[str]:
-    """The theorems/, core/ or qsearch_cli/ files one import statement loads.
+def _submodule_path(root: Path, package: str, name: str) -> str | None:
+    """The file ``from package import name`` loads when ``package`` is a package and ``name`` a
+    submodule: package/name.py, or its __init__.py when it is a directory.
+
+    theorems, core and qsearch_cli define nothing the CLI imports from them, so there the
+    submodule is named present or not. In a package below them, name may be something its __init__.py
+    defines, so it counts only when the file or directory exists. None for a module that is
+    not a package, and for any other dotted name.
+    """
+    if package not in TOP_PACKAGES:
+        if not package.startswith(MODULE_PREFIXES) or not (root / package.replace(".", "/")).is_dir():
+            return None
+    path = _dotted_path(root, f"{package}.{name}")
+    if package in TOP_PACKAGES or path is None or (root / path).is_file():
+        return path
+    return None
+
+
+def _absolute_module(node: ast.ImportFrom, importer: str) -> str | None:
+    """The module a ``from`` import names, with a relative one made absolute against the
+    importing file (the CLI loads theorem modules as ``theorems.x``); None when it names none."""
+    if not node.level:
+        return node.module
+    package = importer.split("/")[:-1]
+    if node.level > len(package):
+        return None  # qsearch.py is in no package; past the top package is an ImportError
+    return ".".join([*package[: len(package) - node.level + 1], *([node.module] if node.module else [])])
+
+
+def _import_paths(root: Path, node: ast.AST, importer: str = "") -> list[str]:
+    """The theorems/, core/ or qsearch_cli/ files one import statement in ``importer`` loads.
 
     ``theorems.x``, ``qsearch_cli.x`` and ``from core import y`` name their file, present or
     not. A bare name (``from x import f``) counts only when theorems/x.py or core/x.py exists,
     the order the CLI puts them on sys.path; a bare name with neither file is a third-party
-    package.
+    package. A relative import is read against the importer's package. ``from package import
+    name`` also names the submodule, as _submodule_path says.
     """
-    if isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
-        if node.module in PACKAGES:
-            return [f"{node.module}/{alias.name}.py" for alias in node.names if alias.name != "*"]
-        names = [node.module]
+    if isinstance(node, ast.ImportFrom):
+        module = _absolute_module(node, importer)
+        if not module:
+            return []
+        names = [module]
     elif isinstance(node, ast.Import):
-        names = [alias.name for alias in node.names]
+        module, names = None, [alias.name for alias in node.names]
     else:
         return []
     paths = []
@@ -214,16 +277,22 @@ def _import_paths(root: Path, node: ast.AST) -> list[str]:
                 paths.append(path)
             continue
         top = name.split(".")[0]
-        if top in sys.stdlib_module_names or top in PACKAGES:
+        if top in sys.stdlib_module_names or top in TOP_PACKAGES:
             continue
         for directory in PACKAGES:
             if (root / directory / f"{top}.py").is_file():
                 paths.append(f"{directory}/{top}.py")
                 break
+    if module is not None:
+        for alias in node.names:
+            path = None if alias.name == "*" else _submodule_path(root, module, alias.name)
+            if path is not None:
+                paths.append(path)
     return paths
 
 
-# Strings and comments, blanked before the line scan below (a triple-quoted string keeps its newlines).
+# Strings and comments, blanked before the line scan below: a string becomes an empty one, a
+# comment nothing, and a triple-quoted string keeps its newlines.
 _STRING_OR_COMMENT = re.compile(
     r'"""(?:\\[\s\S]|[^\\])*?"""'
     r"|'''(?:\\[\s\S]|[^\\])*?'''"
@@ -240,9 +309,15 @@ def _scanned_imports(text: str) -> list[ast.stmt]:
     Parsing every module the CLI reaches through other modules adds about three seconds to a
     run; this scan adds a fraction of one. It sees an import that starts a line, outside
     strings and comments, with its parenthesised or backslash-continued names. It misses a
-    one-line compound statement (``if x: import y``) and an import after a semicolon.
+    one-line compound statement (``if x: import y``) and an import after a semicolon. A
+    string becomes ``""`` rather than nothing, so ``import x; name = "y"`` still parses.
     """
-    code = _STRING_OR_COMMENT.sub(lambda m: "\n" * m.group().count("\n"), text)
+
+    def blank(match: re.Match) -> str:
+        kept = "" if match.group().startswith("#") else '"" '  # the space: "a""b" is not """"
+        return kept + "\n" * match.group().count("\n")
+
+    code = _STRING_OR_COMMENT.sub(blank, text)
     nodes: list[ast.stmt] = []
     for match in _IMPORT_LINE.finditer(code):
         end = match.start()
@@ -264,6 +339,9 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
     """Every theorems/, core/ or qsearch_cli/ file the CLI refers to, mapped to the files that refer to it.
 
     Imports inside those files are followed too, since the CLI loads a module's imports with it.
+    A file in qsearch_cli/commands/ is read only when something refers to it (the registry's
+    tables do for every command module): a stray copy there is never loaded. UnreadableSource
+    when a source or a command module cannot be parsed.
     """
     root = Path(root).resolve()
     refs: dict[str, set[str]] = {}
@@ -273,18 +351,22 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         if module_path is not None:
             refs.setdefault(module_path, set()).add(source)
 
-    for pattern in IMPORT_SOURCES:
-        for path in sorted(root.glob(pattern)):
-            rel = path.relative_to(root).as_posix()
+    def parse(rel: str) -> ast.AST:
+        try:
+            return ast.parse((root / rel).read_text(encoding="utf-8"), filename=rel)
+        except (OSError, SyntaxError, ValueError) as error:  # ValueError: UnicodeDecodeError, null bytes
+            raise UnreadableSource(rel, error) from None
+
+    for rel in IMPORT_SOURCES:
+        if (root / rel).is_file():
             parsed.add(rel)
-            for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"), filename=rel)):
-                for module_path in _import_paths(root, node):
+            for node in ast.walk(parse(rel)):
+                for module_path in _import_paths(root, node, rel):
                     add(module_path, rel)
     for module, attribute in (_table(root, "IMPORTS") or {}).values():
-        if module in PACKAGES and attribute:  # ("theorems", "x"): `from theorems import x`, as sweep writes it
-            add(f"{module}/{attribute}.py", IMPORTS_FILE)
-        else:
-            add(_module_path(root, module), IMPORTS_FILE)
+        add(_module_path(root, module), IMPORTS_FILE)
+        if attribute:  # ("theorems", "x"): `from theorems import x`, as sweep writes it
+            add(_submodule_path(root, module, attribute), IMPORTS_FILE)
     for _flag, module, _function in _table(root, "DISPATCH") or []:
         add(_module_path(root, module), REGISTRY)
     # parser.py imports every ORDER module to build the parser; resolve.py imports FUNCTIONS' on use.
@@ -298,25 +380,49 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         if rel in parsed or not (root / rel).is_file():
             continue
         parsed.add(rel)
-        try:
-            text = (root / rel).read_text(encoding="utf-8")
-        except (OSError, UnicodeDecodeError):
-            continue  # its own path is still checked; only its imports go unfollowed
-        for node in _scanned_imports(text):
-            for module_path in _import_paths(root, node):
+        if rel.startswith(COMMANDS_DIR):
+            nodes = list(ast.walk(parse(rel)))
+        else:
+            try:
+                nodes = _scanned_imports((root / rel).read_text(encoding="utf-8"))
+            except (OSError, UnicodeDecodeError):
+                continue  # its own path is still checked; only its imports go unfollowed
+        for node in nodes:
+            for module_path in _import_paths(root, node, rel):
                 if module_path not in refs:
                     queue.append(module_path)
                 add(module_path, rel)
     return refs
 
 
-def _git_output(root: Path, *args: str) -> str | None:
+# Variables that point git at a repository. A hook exports them for its own repository, which
+# need not be the root's: git -C root would then read that repository's index for root.
+GIT_REPOSITORY_VARIABLES = (
+    "GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE", "GIT_OBJECT_DIRECTORY",
+    "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_IMPLICIT_WORK_TREE", "GIT_PREFIX",
+)
+
+
+def _git_output(root: Path, *args: str, env: dict[str, str] | None = None) -> str | None:
     """stdout of ``git -C root args``; None when git is missing or fails."""
     try:
-        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True)
+        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, env=env)
     except OSError:
         return None
     return result.stdout.decode("utf-8", errors="replace") if result.returncode == 0 else None
+
+
+def _git_env(root: Path, git_dir: str | None = None) -> dict[str, str]:
+    """The environment for git about root: none of the inherited repository variables, except an
+    index file inside root's own git directory (a hook of this checkout committing that index)."""
+    env = {key: value for key, value in os.environ.items() if key not in GIT_REPOSITORY_VARIABLES}
+    env["GIT_OPTIONAL_LOCKS"] = "0"
+    index = os.environ.get("GIT_INDEX_FILE")
+    if index and git_dir:
+        path = (root / index).resolve()  # git -C root reads a relative one from root
+        if path.is_relative_to(Path(git_dir).resolve()):
+            env["GIT_INDEX_FILE"] = str(path)
+    return env
 
 
 def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
@@ -326,19 +432,25 @@ def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
     git can tell only when root is the top of its own work tree. A tree that sits inside some
     other repository (an export unpacked under a dotfiles repository) is not that repository's.
     A staged file is tracked: the commit will include it. One added with ``git add -N`` is
-    listed by ls-files, but a plain commit leaves it out; ``git diff`` shows it as added.
+    listed by ls-files, but a plain commit leaves it out; ``git diff-files`` shows it as added.
+    Only plumbing runs, which never writes the index: porcelain ``git diff`` refreshes stale
+    stat data, rewriting .git/index under index.lock, and so can fail another agent's commit.
+    diff-files detects no renames, so a renamed module marked with -N is still added.
     """
     root = Path(root).resolve()
-    prefix = _git_output(root, "rev-parse", "--show-prefix")
-    if prefix is None:
+    env = _git_env(root)  # no inherited repository variables: git finds root's own repository
+    found = _git_output(root, "rev-parse", "--show-prefix", "--absolute-git-dir", env=env)
+    if found is None:
         return "git unavailable"
+    prefix, _, git_dir = found.partition("\n")
     if prefix.strip():
         return f"git unavailable: the root is not the top of a git work tree (git sees it as {prefix.strip()})"
+    env = _git_env(root, git_dir.strip())
     pathspec = ("--", *PACKAGES, CLI_PACKAGE)
-    listing = _git_output(root, "ls-files", "-z", *pathspec)
+    listing = _git_output(root, "ls-files", "-z", *pathspec, env=env)
     if listing is None:
         return "git unavailable"
-    added = _git_output(root, "diff", "--no-ext-diff", "--no-renames", "--name-only", "-z", "--diff-filter=A", *pathspec)
+    added = _git_output(root, "diff-files", "--name-only", "-z", "--diff-filter=A", *pathspec, env=env)
     intent = {p for p in (added or "").split("\0") if p}
     return {p for p in listing.split("\0") if p} - intent, intent
 
@@ -378,7 +490,9 @@ def check_untracked_imports(root: Path) -> list[Problem]:
     root = Path(root).resolve()
     try:
         refs = referenced_modules(root)
-    except (OSError, SyntaxError, ValueError, TypeError) as error:
+    except UnreadableSource as error:
+        return [Problem("imports", error.path, f"cannot read the CLI sources: {error}")]
+    except (OSError, SyntaxError, ValueError, TypeError) as error:  # a CLI table
         where = error.filename if isinstance(error, SyntaxError) and error.filename else "."
         return [Problem("imports", where, f"cannot read the CLI sources: {type(error).__name__}: {error}")]
     index = _git_index(root)
@@ -388,13 +502,18 @@ def check_untracked_imports(root: Path) -> list[Problem]:
     for module_path in sorted(refs):
         on_disk = _spelled_on_disk(root, module_path, listings)
         if on_disk is None:
-            problems.append(Problem("imports", module_path, "missing on disk"))
+            reason = "missing on disk"
         elif on_disk != module_path:
-            problems.append(Problem("imports", module_path, f"missing on disk (case differs: {on_disk})"))
+            reason = f"missing on disk (case differs: {on_disk})"
         elif module_path in intent:
-            problems.append(Problem("imports", module_path, "not tracked by git (intent-to-add only)"))
+            reason = "not tracked by git (intent-to-add only)"
         elif tracked is not None and module_path not in tracked:
-            problems.append(Problem("imports", module_path, "not tracked by git"))
+            reason = "not tracked by git"
+        else:
+            continue
+        first, *others = sorted(refs[module_path])
+        more = f" and {len(others)} more" if others else ""
+        problems.append(Problem("imports", module_path, f"{reason}; referred to by {first}{more}"))
     if isinstance(index, str):
         problems.append(Problem("imports", ".", index))
     return problems
@@ -432,26 +551,53 @@ def check_manifest(root: Path) -> list[Problem]:
 
 
 def _check_imports(root: Path) -> tuple[int, list[str]]:
+    """How many names were looked up, and one line per failure.
+
+    tools/split_cli/verify.py's check_imports resolves every IMPORTS name and command function.
+    Then every DISPATCH function and ORDER adder is imported and looked up, as qsearch_cli/main.py
+    does for a certificate flag and qsearch_cli/parser.py for every subcommand.
+    """
+    import importlib
+
     from tools.split_cli.verify import check_imports  # imports the CLI and every theorem module it names
 
-    return check_imports(root)
+    checked, failures = check_imports(root)
+    from qsearch_cli.registry import DISPATCH, ORDER  # the root's own: check_imports put it first on sys.path
+
+    lookups = [(f"--{dest.replace('_', '-')}", module, function) for dest, module, function in DISPATCH]
+    lookups += [(f"subcommand {name}", module, adder) for name, module, adder in ORDER]
+    for label, module, attribute in lookups:
+        try:
+            getattr(importlib.import_module(module), attribute)
+        except Exception as error:  # noqa: BLE001 - report every kind of import failure
+            failures.append(f"{label}: {type(error).__name__}: {error}")
+    return checked + len(lookups), failures
 
 
 def check_imports_resolve(root: Path) -> list[Problem]:
-    """Resolve every IMPORTS name and command function in this process, as the CLI would (slow)."""
+    """Import every IMPORTS name, command function, certificate flag's function and subcommand
+    adder in this process, as the CLI would (slow). Writes no __pycache__ into the checkout."""
     root = Path(root).resolve()
+    dont_write_bytecode, sys.dont_write_bytecode = sys.dont_write_bytecode, True
     try:
         _checked, failures = _check_imports(root)
     except Exception as error:  # noqa: BLE001 - the verifier failing to start is itself the problem
         return [Problem("resolve", ".", f"{type(error).__name__}: {error}")]
+    finally:
+        sys.dont_write_bytecode = dont_write_bytecode
     return [Problem("resolve", "qsearch_cli", failure) for failure in failures]
 
 
 def check_validate(root: Path) -> list[Problem]:
-    """Run ``qsearch.py validate`` as CI does (slow); a non-zero exit is one problem."""
+    """Run ``qsearch.py validate`` as CI does (slow), writing no __pycache__; a non-zero exit is one problem."""
     root = Path(root).resolve()
     result = subprocess.run(
-        [sys.executable, "qsearch.py", "validate"], cwd=root, capture_output=True, text=True, errors="replace"
+        [sys.executable, "qsearch.py", "validate"],
+        cwd=root,
+        capture_output=True,
+        text=True,
+        errors="replace",
+        env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"},
     )
     if result.returncode == 0:
         return []
@@ -492,7 +638,10 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", default=str(REPO), help="Checkout to check (default: this repository).")
     parser.add_argument("--json", action="store_true")
-    parser.add_argument("--imports", action="store_true", help="Also import every CLI name and command (slow).")
+    parser.add_argument(
+        "--imports", action="store_true",
+        help="Also import every CLI name, command, certificate flag and subcommand adder (slow).",
+    )
     parser.add_argument("--validate", action="store_true", help="Also run qsearch.py validate (slow).")
     args = parser.parse_args(argv)
     root = Path(args.root).resolve()
