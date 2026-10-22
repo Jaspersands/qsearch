@@ -275,7 +275,8 @@ def _import_paths(root: Path, node: ast.AST, importer: str = "") -> list[str]:
     return paths
 
 
-# Strings and comments, blanked before the line scan below (a triple-quoted string keeps its newlines).
+# Strings and comments, blanked before the line scan below: a string becomes an empty one, a
+# comment nothing, and a triple-quoted string keeps its newlines.
 _STRING_OR_COMMENT = re.compile(
     r'"""(?:\\[\s\S]|[^\\])*?"""'
     r"|'''(?:\\[\s\S]|[^\\])*?'''"
@@ -292,9 +293,15 @@ def _scanned_imports(text: str) -> list[ast.stmt]:
     Parsing every module the CLI reaches through other modules adds about three seconds to a
     run; this scan adds a fraction of one. It sees an import that starts a line, outside
     strings and comments, with its parenthesised or backslash-continued names. It misses a
-    one-line compound statement (``if x: import y``) and an import after a semicolon.
+    one-line compound statement (``if x: import y``) and an import after a semicolon. A
+    string becomes ``""`` rather than nothing, so ``import x; name = "y"`` still parses.
     """
-    code = _STRING_OR_COMMENT.sub(lambda m: "\n" * m.group().count("\n"), text)
+
+    def blank(match: re.Match) -> str:
+        kept = "" if match.group().startswith("#") else '"" '  # the space: "a""b" is not """"
+        return kept + "\n" * match.group().count("\n")
+
+    code = _STRING_OR_COMMENT.sub(blank, text)
     nodes: list[ast.stmt] = []
     for match in _IMPORT_LINE.finditer(code):
         end = match.start()

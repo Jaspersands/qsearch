@@ -154,9 +154,10 @@ error. Delete that test once the agents fix the file.
   written, or was deleted, is not reported. `--imports` does not catch one inside a command
   body either: it resolves command functions without running them. A dotted or `from
   theorems import x` import of a missing module is reported.
-- In a module reached through another module, the line scan misses an import in a one-line
-  compound statement (`if x: import y`) or after a semicolon. A module that is not valid
-  UTF-8 is checked itself, but its imports are not followed.
+- In a module reached through another module, other than a command module, the line scan
+  misses an import in a one-line compound statement (`if x: import y`) or after a semicolon
+  (`x = 1; import y`). An import that starts a line is found whatever follows it. A module
+  that is not valid UTF-8 is checked itself, but its imports are not followed.
 - `from pkg import x`, where `pkg` is a package below `theorems/`, `core/` or `qsearch_cli/`
   (say `qsearch_cli.commands`), counts `x` as a module only when `pkg/x.py` or `pkg/x/`
   exists, since `x` may be a name `pkg/__init__.py` defines. So a missing `x` there is not

@@ -480,6 +480,15 @@ QUOTE = "\'\'\'"  # a quote inside a string starts no string
 from helper import h
 from core.helper2 import h2  # import theorems.in_comment
 import os, json
+# a comment holding """ opens no string either
+import theorems.after_comment
+OPEN = '"""'  # nor does a triple quote in a single-quoted string
+import theorems.between_single
+CLOSE = '"""'
+QUOTE2 = "\'\'\'"  # would close one opened in QUOTE, hiding every import between them
+NOTES = \'\'\'
+import theorems.in_single_triple
+\'\'\'
 
 
 def lazy():
@@ -510,7 +519,8 @@ def test_imports_inside_referenced_modules_are_followed(tmp_path: Path) -> None:
     assert refs["theorems/tracked.py"] == {"qsearch_cli/commands/general.py", "theorems/deep.py"}
     assert refs["theorems/helper.py"] == {"theorems/tracked.py"}
     assert refs["theorems/deep.py"] == {"theorems/helper.py"}
-    assert not {"theorems/in_docstring.py", "theorems/in_comment.py", "theorems/in_string.py"} & set(refs)
+    hidden = {"theorems/in_docstring.py", "theorems/in_comment.py", "theorems/in_string.py", "theorems/in_single_triple.py"}
+    assert not hidden & set(refs)
     tracked = "theorems/tracked.py"
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
         ("theorems/helper.py", _by("not tracked by git", tracked)),
@@ -518,7 +528,23 @@ def test_imports_inside_referenced_modules_are_followed(tmp_path: Path) -> None:
         ("core/helper2.py", _by("not tracked by git", tracked)),
         ("core/helper3.py", _by("not tracked by git", tracked)),
         ("theorems/gone.py", _by("missing on disk", tracked)),
+        ("theorems/after_comment.py", _by("missing on disk", tracked)),
+        ("theorems/between_single.py", _by("missing on disk", tracked)),
     }
+
+
+def test_line_scan_keeps_an_import_whose_line_goes_on_after_a_semicolon() -> None:
+    import ast
+
+    text = (
+        'import theorems.semi; NAME = "x""y"\n'  # two adjacent strings must not blank to one """"
+        "from core.after import y; z = '''a\nb'''\n"
+        "import theorems.last; w = f'{y}'\n"
+    )
+
+    found = [ast.unparse(n) for n in pf._scanned_imports(text) if isinstance(n, (ast.Import, ast.ImportFrom))]
+
+    assert found == ["import theorems.semi", "from core.after import y", "import theorems.last"]
 
 
 def test_line_scan_finds_what_a_full_parse_finds_on_the_real_checkout() -> None:
