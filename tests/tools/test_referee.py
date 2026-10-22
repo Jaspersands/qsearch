@@ -1167,6 +1167,10 @@ REPO = Path(__file__).resolve().parents[2]
 REVIEWS_DIR = REPO / "research" / "audits" / "reviews"
 STORED = REVIEWS_DIR / "reviews.json"
 README = REPO / "tools" / "referee" / "README.md"
+# The generated pages and the note these tests read besides REVIEWS_DIR; test_tools_workflow
+# checks that a change to any of them runs the Tools workflow.
+PAGES = (R.QUEUE, "research/audits/AGENT_BRIEF.md")
+POLAR_NOTE = REPO / "research" / "POLAR_SOURCE_DESIGN.md"
 needs_reviews = pytest.mark.skipif(not STORED.exists(), reason="the committed reviews are not in this checkout")
 
 # The judge files each stored judge name was imported from; a later import of a note replaces it.
@@ -1235,7 +1239,7 @@ def test_interval_soft_decoder_decision_cut_needs_no_window_qualifier() -> None:
     claim = _stored_claim("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation")
     assert claim["verdict"] == "holds"
     assert _stored()["INTERVAL_SOFT_DECODER"]["overall"] == "sound"
-    for page in ("research/audits/REFEREE_QUEUE.md", "research/audits/AGENT_BRIEF.md"):
+    for page in PAGES:
         assert "INTERVAL_SOFT_DECODER" not in (REPO / page).read_text(encoding="utf-8"), page
 
 
@@ -1244,7 +1248,7 @@ def test_polar_source_design_leads_with_its_family_gap_and_quotes_only_the_note(
     entry = _stored()["POLAR_SOURCE_DESIGN"]
     assert "for the stated half-rate family" in " ".join(R.worst_claim(entry)["quote"].split())
     assert _stored_claim("POLAR_SOURCE_DESIGN", "Largest set certified at average TV")["verdict"] == "gap"
-    note = " ".join((REPO / "research" / "POLAR_SOURCE_DESIGN.md").read_text(encoding="utf-8").lower().split())
+    note = " ".join(POLAR_NOTE.read_text(encoding="utf-8").lower().split())
     for claim in entry["claims"]:
         for phrase in re.findall(r"'([^']+)'", claim["finding"]):
             assert " ".join(phrase.lower().split()) in note, phrase
@@ -1311,13 +1315,17 @@ def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> No
     assert "add |H|" in section and "judged not to affect" in section
 
 
-@needs_reviews
-def test_readme_records_the_corrections_and_the_stored_first_pass_counts() -> None:
+@pytest.mark.skipif(not (REVIEWS_DIR / "pass1").is_dir(), reason="the first pass is not in this checkout")
+def test_readme_records_the_corrections_and_the_first_pass_counts_after_them() -> None:
+    # Counted from the judge rows, not the store: a later re-review of a first-pass note
+    # (import, then render) replaces its stored review, but not what the first pass found.
     section = _readme_section("## First pass")
     assert "corrections/2026-10-22.jsonl" in section and "audit-correction-2026-10-22" in section
     stems = {p["stem"] for path in sorted((REVIEWS_DIR / "pass1").glob("batch_*.json"))
              for p in json.loads(path.read_text(encoding="utf-8"))["notes"]}
-    counts = {o: sum(_stored()[s]["overall"] == o for s in stems) for o in ("needs-work", "sound")}
+    rows = _judge_rows(REVIEW_SOURCES["claude-opus-5.5-two-judges-reconciled-2026-10-21"])
+    rows |= _judge_rows(REVIEW_SOURCES["audit-correction-2026-10-22"])
+    counts = {o: sum(rows[s]["overall"] == o for s in stems) for o in ("needs-work", "sound")}
     stated = re.search(r"stand at (\d+) needs-work and (\d+) sound", " ".join(section.split()))
     assert len(stems) == 30 and stated
     assert (int(stated.group(1)), int(stated.group(2))) == (counts["needs-work"], counts["sound"])

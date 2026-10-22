@@ -1,9 +1,10 @@
 """The Tools workflow runs on any change that can turn a tests/tools test red.
 
 Besides the tests and the tool packages they import, some tests read the real checkout: the
-seeded arXiv verdicts, the hypothesis contract preflight reports as broken, the notes the
-baseline catalog cites, the CLI with every theorem and core module, the classical package's
-upstream modules and committed reports, and the paper's numbers with the reports behind them.
+seeded arXiv verdicts, the hypothesis contract preflight reports as broken, the referee's
+committed reviews with the queue and brief pages they decide, the notes the baseline catalog
+cites, the CLI with every theorem and core module, the classical package's upstream modules
+and committed reports, and the paper's numbers with the reports behind them.
 A change to one of those files alone must trigger .github/workflows/tools.yml; otherwise the
 red appears later, on an unrelated tools change or in the nightly full run. The lists below
 come from the same constants the reading tests use, so a new reference fails here until
@@ -16,10 +17,12 @@ import json
 import re
 from pathlib import Path
 
-from tests.tools import test_arxiv_watch, test_classical_package, test_paper_numbers, test_preflight
+from tests.tools import test_arxiv_watch, test_classical_package, test_paper_numbers, test_preflight, test_referee
 from tools.arxiv_watch.verdicts import VERDICTS_FILE
+from tools.brief.build_brief import OUTPUT_MD
 from tools.corpus.baselines import load_catalog
 from tools.preflight.preflight import MANIFEST
+from tools.referee.referee import QUEUE, REVIEWS
 
 REPO = Path(__file__).resolve().parents[2]
 WORKFLOW = REPO / ".github" / "workflows" / "tools.yml"
@@ -107,6 +110,12 @@ def real_checkout_reads() -> dict[str, list[str]]:
         "pytest (the root conftest and the tests package)": ["conftest.py", "tests/__init__.py"],
         "test_arxiv_watch seed checks": [VERDICTS_FILE, _rel(test_arxiv_watch.REVIEW)],
         "test_preflight broken contract": [test_preflight.BROKEN_CONTRACT],
+        "test_referee committed reviews, the pages they decide and the note it quotes": [
+            *_files(test_referee.REVIEWS_DIR),
+            _rel(test_referee.STORED),
+            *test_referee.PAGES,
+            _rel(test_referee.POLAR_NOTE),
+        ],
         CLI_AND_MODULES: ["qsearch.py", MANIFEST, *modules],
         "test_corpus_baselines note references": sorted(
             {f"research/{ref['note']}.md" for entry in load_catalog() for ref in entry["references"] if "note" in ref}
@@ -143,6 +152,16 @@ def test_tools_workflow_runs_on_every_file_a_test_reads_from_the_checkout() -> N
         if unmatched:
             missed[reader] = unmatched[:5] + ([f"... and {len(unmatched) - 5} more"] if len(unmatched) > 5 else [])
     assert missed == {}
+
+
+def test_tools_workflow_runs_when_the_referee_or_the_brief_rewrites_its_pages() -> None:
+    """A routine `referee.py import` then `render`, or a brief rebuild, changes only those tools'
+    outputs, which test_referee reads; a first review of a note adds a page that is not there yet."""
+    patterns = [_regex(pattern) for pattern in _filters(WORKFLOW.read_text(encoding="utf-8"))["pull_request"]]
+    reviews = Path(REVIEWS).parent.as_posix()
+    outputs = [REVIEWS, QUEUE, OUTPUT_MD, f"{reviews}/NOTE_NOT_YET_REVIEWED.md", f"{reviews}/pass2/out/batch_01.jsonl"]
+    assert set(test_referee.PAGES) <= set(outputs)
+    assert [path for path in outputs if not any(pattern.fullmatch(path) for pattern in patterns)] == []
 
 
 def test_filter_globs_follow_github_semantics() -> None:

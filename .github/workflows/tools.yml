@@ -4,8 +4,9 @@ name: Tools
 # checkout itself: pytest's root conftest, the CLI and every theorem and core module
 # (preflight's line scan and import check, split_cli, the classical package), the CLI
 # manifest, the seeded arXiv verdicts and their review, the contract preflight reports as
-# broken, the notes the baseline catalog cites, the classical package's committed reports,
-# and the paper's numbers with the reports behind them. A change to one of them alone runs
+# broken, the referee's committed reviews with the queue and brief pages they decide, the
+# notes the baseline catalog cites, the classical package's committed reports, and the
+# paper's numbers with the reports behind them. A change to one of them alone runs
 # this workflow on its own pull request. tests/tools/test_tools_workflow.py fails when a test
 # starts reading a file these filters miss; keep push and pull_request identical.
 
@@ -39,6 +40,9 @@ on:
       - "research/audits/cli_manifest.json"
       - "research/audits/arxiv_verdicts.json"
       - "research/audits/ARXIV_TRIAGE_REVIEWED.md"
+      - "research/audits/reviews/**"
+      - "research/audits/REFEREE_QUEUE.md"
+      - "research/audits/AGENT_BRIEF.md"
       - "research/hypotheses/dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge_contract.json"
       - "research/AGENT_HANDOFF.md"
       - "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
@@ -103,6 +107,9 @@ on:
       - "research/audits/cli_manifest.json"
       - "research/audits/arxiv_verdicts.json"
       - "research/audits/ARXIV_TRIAGE_REVIEWED.md"
+      - "research/audits/reviews/**"
+      - "research/audits/REFEREE_QUEUE.md"
+      - "research/audits/AGENT_BRIEF.md"
       - "research/hypotheses/dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge_contract.json"
       - "research/AGENT_HANDOFF.md"
       - "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
