@@ -657,6 +657,11 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
     return lines
 
 
+def _by(item: dict[str, Any]) -> str:
+    """Who recorded a verdict; an entry without `by` was written by hand (verdicts.by_judge counts it as a person's)."""
+    return _flat(item.get("by")) or "by hand"
+
+
 def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     flagged, reviewed, actions = section["flagged"], section["reviewed"], section["actions"]
     counts: dict[str, int] = {}
@@ -674,20 +679,21 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
                  f"{since} and already reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are "
                  "judgement."]
     lines += [f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."), ""]
-    # Every verdict of the window is named once: in the flagged table, or here.
-    in_table = {item["id"] for item in flagged or []}
+    # Every verdict of the window is named once: in a row the flagged table shows, or here.
+    in_table = {item["id"] for item in (flagged or [])[:LIST_CAP]}
     others = [item for item in reviewed if item["id"] not in in_table]
     if others:
-        where = "" if flagged is None else " on papers not in the flagged table below"
+        where = " on papers not in the flagged table below" if flagged else ""
         lines += [f"Verdicts recorded since {since}{where} ({len(others)}):", ""]
-        lines += _bullets([f"- `{item['id']}`: {_flat(item['verdict'])} ({_flat(item['by'])}, {item['reviewed_on']})."
+        lines += _bullets([f"- `{item['id']}`: {_flat(item['verdict'])} ({_by(item)}, {item['reviewed_on']})."
                            for item in others])
         lines.append("")
     lines += [
-        f"Open actions from verdicts ({len(actions)}; set `\"action_done\": true` in `{ARXIV_VERDICTS}` once done):",
+        f"Open actions from verdicts ({len(actions)}; once one is done, run "
+        "`python tools/arxiv_watch/watch.py --action-done ID`):",
         "",
     ]
-    lines += _bullets([f"- `{item['id']}` ({_flat(item['by'])}): {_flat(item['action'])}" for item in actions]) or [
+    lines += _bullets([f"- `{item['id']}` ({_by(item)}): {_flat(item['action'])}" for item in actions]) or [
         "- None."]
     if flagged:
         lines += ["", "| arXiv | Label | First seen | Verdict | Title |", "|---|---|---|---|---|"]

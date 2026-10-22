@@ -708,6 +708,42 @@ def test_arxiv_names_a_verdict_in_the_window_on_a_paper_first_seen_before_it(tmp
     assert "2610.44444" not in text
 
 
+def test_arxiv_names_a_verdict_of_the_window_whose_row_the_capped_table_hides(tmp_path: Path) -> None:
+    # Open flags sort first, so with more than LIST_CAP of them a reviewed flag of the window
+    # falls past the table's last row; it must still be named, not only tallied.
+    papers = [_paper(f"2610.{i:05d}", "Open old kill", "possible-kill", "2026-10-01") for i in range(B.LIST_CAP + 1)]
+    papers.append(_paper("2610.99999", "Reviewed new kill", "possible-kill", "2026-10-18"))
+    _arxiv_files(tmp_path, papers, {"2610.99999": _verdict("kill", "2026-10-20")})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["flagged"][-1]["id"] == "2610.99999"
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "| 2610.99999 |" not in text and "And 2 more in agent_brief.json." in text
+    assert "- `2610.99999`: kill (human, 2026-10-20)." in text
+
+
+def test_arxiv_says_by_hand_for_a_verdict_without_by_and_points_at_no_missing_table(tmp_path: Path) -> None:
+    # verdicts.by_judge: an entry without `by` was written by hand, and counts as a person's.
+    entry = {"verdict": "kill", "reason": "r", "action": "Retract research/X.md.", "reviewed_on": "2026-10-20"}
+    _arxiv_files(tmp_path, [], {"2610.12345": entry})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["flagged"] == []
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "- `2610.12345`: kill (by hand, 2026-10-20)." in text
+    assert "- `2610.12345` (by hand): Retract research/X.md." in text
+    assert "()" not in text and "(," not in text
+    assert f"Verdicts recorded since {SINCE} (1):" in text and "table" not in text  # no flagged table is drawn
+
+
+def test_arxiv_names_the_watch_command_that_closes_an_action() -> None:
+    # watch.py --action-done validates the id, copies the flag onto the stored record and
+    # re-renders the digest; a hand edit does none of that, and a slip breaks the whole section.
+    section = {"available": True, "flagged": [], "reviewed": [],
+               "actions": [{"id": "2610.1", "action": "Cite it.", "by": "human"}]}
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "`python tools/arxiv_watch/watch.py --action-done ID`" in text
+    assert "action_done\": true" not in text
+
+
 def test_a_judge_verdict_leaves_a_flag_open_until_a_person_records_one(tmp_path: Path) -> None:
     # The watch's rule (tools/arxiv_watch/README.md): a judge's verdict is one model's reading
     # and never takes a flag out of the possible-kill and possible-scoop sections. The brief
