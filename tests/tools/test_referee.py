@@ -489,6 +489,15 @@ def test_instructions_ask_for_scope_and_omission_checks() -> None:
     assert "`artifact_path`" in text
 
 
+def test_instructions_give_every_cap_import_enforces() -> None:
+    # Three first-pass findings ran past 600 characters: no judge had been told the cap.
+    text = " ".join(R.REFEREE_INSTRUCTIONS.split())
+    assert R.CAPS == {"quote": 400, "step": 300, "finding": 600, "summary": 1500}
+    assert ("each `quote` to at most 400 characters (as the note writes it), each `step` to 300, "
+            "each `finding` to 600 and the `summary` to 1500") in text
+    assert "longer field rejects your whole output file" in text
+
+
 def test_export_writes_instructions_and_batches_with_artifact_excerpts(tmp_path: Path) -> None:
     notes = _export_fixture(tmp_path)
     out = tmp_path / "out"
@@ -566,16 +575,16 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
             R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [_row(tmp_path, stem="OTHER", claims=[]), row])], "j")
     assert not (tmp_path / R.REVIEWS).exists()
 
-    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900, step="y" * 900)] * 6
-    good = _row(tmp_path, claims=many, summary="s" * 2000)
+    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 600, step="y" * 300)] * 6
+    good = _row(tmp_path, claims=many, summary="s" * 1500)
     stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21")
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": []}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": [], "cut": []}
     data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
     entry = data["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["reviewed_on"], entry["overall"], entry["stale"]) == ("test-judge", "2026-10-21", "needs-work", False)
-    assert len(entry["claims"]) == 6 and len(entry["claims"][0]["finding"]) == 600 and len(entry["summary"]) == 1500
-    assert len(entry["claims"][0]["step"]) == 300
+    assert len(entry["claims"]) == 6 and entry["claims"][0]["finding"] == "x" * 600 and entry["summary"] == "s" * 1500
+    assert entry["claims"][0]["step"] == "y" * 300
     assert entry["claims"][0]["covered_by_self_check"] is False
     assert data["notes"]["OTHER"]["stale"] is True
 
@@ -657,6 +666,38 @@ def test_import_rejects_more_than_six_claims_and_a_non_boolean_self_check(tmp_pa
     assert [claim["covered_by_self_check"] for claim in stored] == [True, False, False, False]
 
 
+def test_import_rejects_text_over_its_cap_unless_told_to_cut_it(tmp_path: Path, capsys) -> None:
+    # Import cut a 637-character finding at 600 characters without a mark, mid-sentence, and
+    # the judges' instructions never gave the cap; three first-pass findings lost their ends.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    over = {
+        "claim 1 finding is 601 characters": _row(tmp_path, claims=[_claim(quote, finding="f" * 601)]),
+        "claim 2 step is 301 characters": _row(tmp_path, claims=[_claim(quote), _claim(quote, step="s" * 301)]),
+        "summary is 1501 characters": _row(tmp_path, summary="y" * 1501),
+    }
+    for message, row in over.items():
+        answer = _jsonl(tmp_path / "out" / "over.jsonl", [row])
+        capsys.readouterr()
+        assert R.main(["import", str(answer), "--root", str(tmp_path), "--judge", "j"]) == 2, message
+        captured = capsys.readouterr()
+        assert captured.out == "" and f"FIXTURE_NOTE: {message}; at most" in captured.err and "nothing imported" in captured.err
+    assert not (tmp_path / R.REVIEWS).exists()
+
+    # --cut (for judge files written before the instructions gave the caps) stores the text cut
+    # and marked, and names each cut field.
+    long = "The decision should say the composition is review pending and name its missing step. " * 8
+    answer = _jsonl(tmp_path / "out" / "long.jsonl", [_row(tmp_path, claims=[_claim(quote, finding=long)])])
+    assert R.main(["import", str(answer), "--root", str(tmp_path), "--judge", "j", "--cut"]) == 0
+    out = capsys.readouterr().out
+    assert "imported 1 reviews; 0 stale; 1 field cut to its cap and marked [truncated]" in out
+    assert f"FIXTURE_NOTE: claim 1 finding ({len(long)} characters, cap 600)" in out
+    finding = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["finding"]
+    assert len(finding) <= 600 and finding.endswith(" [truncated]") and long.startswith(finding.removesuffix(" [truncated]"))
+    result = R.import_reviews(tmp_path, [answer], "j", cut=True)
+    assert result["cut"] == [f"{answer}: FIXTURE_NOTE: claim 1 finding ({len(long)} characters, cap 600)"]
+
+
 def test_import_rejects_malformed_rows_and_stems_that_are_paths(tmp_path: Path) -> None:
     _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
     (tmp_path / "README.md").write_text("Some words here for a long enough quote to pass the check.\n", encoding="utf-8")
@@ -719,7 +760,7 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     note.write_text(note.read_text(encoding="utf-8").replace("It holds for all twelve", "It holds for eleven of twelve"), encoding="utf-8")
 
     result = R.import_reviews(tmp_path, [answer], "j", today="2026-10-21")
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": []}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": [], "cut": []}
     claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
     assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
 
@@ -762,7 +803,7 @@ def test_import_keeps_a_current_review_over_a_row_that_is_stale_on_arrival(tmp_p
     current = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass2" / "out" / "rows.jsonl", [current])], "new", today="2026-10-22")
     older = _jsonl(tmp_path / "pass1" / "out" / "rows.jsonl", [_row(tmp_path, overall="sound", claims=[]) | {"content_sha": "0" * 64}])
-    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"]}
+    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"], "cut": []}
     entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["overall"], entry["stale"]) == ("new", "unsound", False)
     assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["FIXTURE_NOTE"]
@@ -949,9 +990,13 @@ def test_find_quote_tries_every_occurrence_and_import_caps_the_stored_quote(tmp_
     words = " ".join(f"word{index}" for index in range(120))
     _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
     row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(words)])
-    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "long.jsonl", [row])], "j")
+    answer = _jsonl(tmp_path / "out" / "long.jsonl", [row])
+    with pytest.raises(ValueError, match=f"LONG_NOTE: claim 1 quote is {len(words)} characters; at most 400"):
+        R.import_reviews(tmp_path, [answer], "j")
+    R.import_reviews(tmp_path, [answer], "j", cut=True)
     stored = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]["claims"][0]
-    assert len(words) > 400 and stored["verified"] is True and stored["quote"] == words[:400]
+    assert len(words) > 400 and stored["verified"] is True and len(stored["quote"]) <= 400
+    assert stored["quote"].endswith(" [truncated]") and words.startswith(stored["quote"].removesuffix(" [truncated]"))
 
 
 def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
@@ -1182,7 +1227,7 @@ def _readme_section(heading: str) -> str:
 
 @needs_reviews
 def test_stored_reviews_are_their_judge_rows_whole() -> None:
-    """Import cuts a finding at 600 characters without a mark, so a longer one loses its end."""
+    """Each stored review is its judge row whole: no field cut, nothing else changed."""
     checked = 0
     for stem, entry in _stored().items():
         pattern = REVIEW_SOURCES.get(entry["judge"])

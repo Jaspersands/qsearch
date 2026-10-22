@@ -14,7 +14,7 @@ The referee never edits `research/*.md`. Its outputs go to `research/audits/`.
 python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--include-reviewed] [--json]
 python tools/referee/referee.py export --out-dir DIR [--limit 30] [--prefix P] [--batch-size 5]
 python tools/referee/referee.py export --out-dir DIR --note PRIME_CHARACTER_OPI --note POLAR_SOURCE_DESIGN
-python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21
+python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21 [--cut]
 python tools/referee/referee.py render
 python tools/referee/referee.py status [--json]
 ```
@@ -23,7 +23,7 @@ python tools/referee/referee.py status [--json]
 |---|---|
 | `select` | Lists review-pending notes, newest first, without a current review; `--limit 0` lists them all. |
 | `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status; the name's letter case must match. Exit 2, nothing written, when `--out-dir` is a file or already holds `batch_*.json` from an earlier export (use a new folder per pass). |
-| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
+| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails, a field over its cap included (`--cut` stores that field cut and marked instead). A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
 | `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
 | `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, unsound before needs-work and each by stem, with the worst claim, and stale ones (a deleted note's review is stale). Used by the agent brief. |
 
@@ -90,7 +90,9 @@ text.
    `content_sha`, `overall` (`sound`, `needs-work`, `unsound`, `unclear`), `summary` and
    up to six `claims`, each with a verbatim `quote`, a `verdict` (`holds`, `gap`, `wrong`,
    `unclear`), the `step` at fault, a `finding` (the counterexample or missing condition)
-   and `covered_by_self_check`. The judge must not propose new research.
+   and `covered_by_self_check`. The judge must not propose new research. The instructions
+   give the caps import enforces (step 3): quote 400 characters, step 300, finding 600,
+   summary 1500.
 3. `import out/*.jsonl --judge NAME` rejects the whole file on an unknown verdict, a
    `covered_by_self_check` that is not `true` or `false` (omitted or null reads as false),
    more than six claims, an `overall` that contradicts the claims (the worst claim sets it:
@@ -121,8 +123,11 @@ text.
    rejecting the file. Two rows for one note in one import (one file or several) reject
    the import. Re-importing a note replaces its review, except that a row that is stale
    on arrival (an earlier pass imported again) never replaces a stored review of the
-   note's current bytes: import keeps that review and reports the row as skipped. Stored
-   text is capped: summary 1500 characters, finding 600, step 300, quote 400.
+   note's current bytes: import keeps that review and reports the row as skipped. A field
+   over its cap (summary 1500 characters, finding 600, step 300, quote 400 as the note writes
+   it) rejects the file, naming the field and its length. `--cut` is for judge files written
+   before the instructions gave the caps: it stores such a field cut to its cap and ending in
+   ` [truncated]`, and import lists each field it cut.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.
@@ -275,7 +280,9 @@ row, not `out/`'s.
 - COHERENT_BPQM_ERASURE, NATIVE_RLWE_SPARSE_WITNESS_AUDIT and
   NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions never mention the
   600-character cap on findings, and import cut these three gap findings mid-sentence
-  without a mark. They are shortened to fit and keep their conclusions.
+  without a mark. They are shortened to fit and keep their conclusions. The instructions
+  now give every cap, and import rejects a longer field unless `--cut` is given, which marks
+  the cut.
 - Wrong sentences in four findings, verdicts unchanged: PRIME_CHARACTER_INTERLEAVED_PROBE
   read the p7 individual mean (.553571, 1/56 below 4/7, as the producer predicts) as
   contradicting near-uniformity; FOLDED_NORM_SOURCE credited 24/73 to the collision formula

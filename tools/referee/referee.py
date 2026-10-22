@@ -2,7 +2,7 @@
 
     python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--json]
     python tools/referee/referee.py export --out-dir DIR [--limit 30] [--note STEM ...]
-    python tools/referee/referee.py import DIR/out/*.jsonl --judge NAME
+    python tools/referee/referee.py import DIR/out/*.jsonl --judge NAME [--cut]
     python tools/referee/referee.py render
     python tools/referee/referee.py status [--json]
 
@@ -32,7 +32,7 @@ if __package__ in (None, ""):
 from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
 from tools.corpus.sources.markdown import JOURNALS, note_status  # noqa: E402
-from tools.referee.extract import DATE, _resolve_artifact, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
+from tools.referee.extract import DATE, TRUNCATED, _resolve_artifact, _status_block, artifact_excerpt, parse_note, to_dict  # noqa: E402
 
 REVIEWS = "research/audits/reviews/reviews.json"
 
@@ -116,6 +116,10 @@ CLAIM_VERDICTS = ("holds", "gap", "wrong", "unclear")
 OVERALL = ("sound", "needs-work", "unsound", "unclear")
 WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
 OVERALL_FOR = {"wrong": "unsound", "gap": "needs-work", "unclear": "unclear", "holds": "sound"}  # by worst claim
+# Characters a stored field may hold (a quote as the note writes it). A longer field rejects the
+# judge's file, unless import is told to cut it, and then the cut is marked.
+CAPS = {"quote": 400, "step": 300, "finding": 600, "summary": 1500}
+CUT_MARK = f" {TRUNCATED}"
 
 OUTPUT_FORMAT = (
     '{"stem": "NOTE_STEM", "content_sha": "copied from the packet", "overall": "needs-work", '
@@ -190,7 +194,9 @@ You must not propose new research, new algorithms or next steps: judge only what
 written. Work from the packet and do not edit any file in the repository.
 
 Write one JSON object per line (JSONL), one line per note, to your output path. Copy
-`stem` and `content_sha` from the packet. Do not skip notes.
+`stem` and `content_sha` from the packet. Do not skip notes. Keep each `quote` to at most
+{CAPS['quote']} characters (as the note writes it), each `step` to {CAPS['step']}, each `finding` to {CAPS['finding']} and the
+`summary` to {CAPS['summary']}: one longer field rejects your whole output file.
 
 {OUTPUT_FORMAT}
 """
@@ -361,9 +367,23 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     return None, "quote not verbatim in the note"
 
 
-def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> dict:
+def _fit(where: str, field: str, text: str, cuts: list[str] | None) -> str:
+    """`text` when it is within its cap. A longer one raises ValueError, or, when `cuts` is a
+    list, is cut and marked so the cut is never silent, and recorded in `cuts`."""
+    cap = CAPS[field.rsplit(" ", 1)[-1]]
+    if len(text) <= cap:
+        return text
+    if cuts is None:
+        raise ValueError(f"{where}: {field} is {len(text)} characters; at most {cap}")
+    cuts.append(f"{where}: {field} ({len(text)} characters, cap {cap})")
+    return text[:cap - len(CUT_MARK)].rstrip() + CUT_MARK
+
+
+def _claim_entry(where: str, claim: dict, source: str, strict: bool = True, number: int = 1,
+                 cuts: list[str] | None = None) -> dict:
     """A stored claim. When not `strict` (the judge read a version that is gone), a quote that
-    is not in `source` is kept as the judge wrote it and marked unverified."""
+    is not in `source` is kept as the judge wrote it and marked unverified. A field over its
+    cap raises ValueError unless `cuts` is a list (see _fit)."""
     verdict = claim.get("verdict")
     if verdict not in CLAIM_VERDICTS:
         raise ValueError(f"{where}: bad claim verdict {verdict!r}")
@@ -375,11 +395,11 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
     if span is None and (strict or reason.startswith("quote under")):
         raise ValueError(f"{where}: {reason}: {quote[:120]!r}")
     return {
-        "quote": (span or quote)[:400],
+        "quote": _fit(where, f"claim {number} quote", span or quote, cuts),
         "verified": span is not None,
         "verdict": verdict,
-        "step": str(claim.get("step", ""))[:300],
-        "finding": str(claim.get("finding", ""))[:600],
+        "step": _fit(where, f"claim {number} step", str(claim.get("step", "")), cuts),
+        "finding": _fit(where, f"claim {number} finding", str(claim.get("finding", "")), cuts),
         "covered_by_self_check": bool(conceded),
     }
 
@@ -423,7 +443,7 @@ def exported_texts(paths: list[Path]) -> tuple[dict[tuple[str, str], str], dict[
     return texts, declared
 
 
-def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None) -> dict:
+def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None, cut: bool = False) -> dict:
     """Verify judge rows against the notes and store them; nothing is written if any row fails.
 
     A row's `content_sha` must be 64 lower-case hex digits. A row for the note's current version
@@ -431,12 +451,14 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     is checked against the exported text when it is found beside the judge file, and is stored
     as stale either way; a sha that no packet for the note beside the judge file declares is a
     miscopy and rejected. With no exported packet for the note at all, quotes that are not in
-    the current note are stored unverified."""
+    the current note are stored unverified. A field over its cap (CAPS) rejects the row, or with
+    `cut` is stored cut and marked, and listed under "cut" in the result."""
     reviewed_on = today or dt.date.today().isoformat()
     exported, declared = exported_texts(paths)
     entries: dict[str, dict] = {}
     currents: dict[str, str] = {}
     seen: dict[str, str] = {}
+    cuts: dict[str, list[str]] = {}
     for path in paths:
         try:
             rows = _rows(Path(path))
@@ -478,7 +500,9 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                     strict = False
             if len(given) > MAX_CLAIMS:
                 raise ValueError(f"{path}: {stem}: {len(given)} claims; at most {MAX_CLAIMS}")
-            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given]
+            where, cut_here = f"{path}: {stem}", [] if cut else None
+            claims = [_claim_entry(where, claim, source, strict, number, cut_here)
+                      for number, claim in enumerate(given, start=1)]
             conflict = overall_conflict(overall, claims)
             if conflict:
                 raise ValueError(f"{path}: {stem}: overall {overall!r} contradicts the claims: {conflict}")
@@ -489,9 +513,10 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                 "content_sha": sha,
                 "overall": overall,
                 "claims": claims,
-                "summary": str(row.get("summary", ""))[:1500],
+                "summary": _fit(where, "summary", str(row.get("summary", "")), cut_here),
                 "stale": sha != current,
             }
+            cuts[stem] = cut_here or []
     data = load_reviews(root)
     notes = data.setdefault("notes", {})
     # A row that is stale on arrival (an earlier pass, re-imported) never replaces a review of
@@ -509,7 +534,7 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     finally:
         tmp.unlink(missing_ok=True)
     return {"imported": sorted(stored), "stale": sorted(stem for stem, entry in stored.items() if entry["stale"]),
-            "skipped": skipped}
+            "skipped": skipped, "cut": [field for stem in sorted(stored) for field in cuts[stem]]}
 
 
 FLAGGED = ("unsound", "needs-work")
@@ -672,6 +697,9 @@ def main(argv: list[str] | None = None) -> int:
     imp = sub.add_parser("import", parents=[common], help="Verify and store judge reviews (JSONL).")
     imp.add_argument("files", nargs="+", type=Path)
     imp.add_argument("--judge", required=True, help="Judge name stored with each review.")
+    imp.add_argument("--cut", action="store_true",
+                     help=f"Store a field over its cap cut and marked {TRUNCATED} instead of rejecting the file "
+                          "(for judge files written before the instructions gave the caps).")
     sub.add_parser("render", parents=[common], help="Write reviews/<STEM>.md and REFEREE_QUEUE.md.")
     stat = sub.add_parser("status", parents=[common], help="Flagged and stale reviews.")
     stat.add_argument("--json", action="store_true")
@@ -716,14 +744,19 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
 
     if args.command == "import":
         try:
-            result = import_reviews(root, args.files, args.judge)
+            result = import_reviews(root, args.files, args.judge, cut=args.cut)
         except ValueError as error:
             print(f"error: {error}; nothing imported", file=sys.stderr)
             return 2
         stale = f": {', '.join(result['stale'])}" if result["stale"] else ""
         skipped = (f"; {len(result['skipped'])} skipped (a current review is stored): {', '.join(result['skipped'])}"
                    if result["skipped"] else "")
-        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}{skipped}")
+        count = len(result["cut"])
+        noun, caps = ("field", "its cap") if count == 1 else ("fields", "their caps")
+        cut = f"; {count} {noun} cut to {caps} and marked {TRUNCATED}:" if count else ""
+        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}{skipped}{cut}")
+        for field in result["cut"]:
+            print(f"  {field}")
         return 0
 
     if args.command == "render":
