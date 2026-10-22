@@ -57,8 +57,10 @@ def pair_report(
 ) -> PairReport:
     """Pairs of documents of one kind whose cosine is at least `threshold`, highest first.
 
-    Within a pair `a < b`. Ties are ordered by id, on scores rounded to four places, so a
-    report is stable across runs on one TF-IDF fit. Documents changed since the last fit are
+    Within a pair `a < b`. Scores are rounded to four places, and a pair is kept when its
+    rounded score is at least `threshold` (so a float32 cosine of 0.9999997, reported as 1.0,
+    counts at a threshold of 1). Ties are ordered by id, so a report is stable across runs on
+    one TF-IDF fit and the per-family cap keeps a family's lowest ids. Documents changed since the last fit are
     patched in with that fit's IDF, which can move a score by a few hundredths; call
     `corpus.refit()` first for a report that depends only on the current documents (the
     CLI does for `--out`). With `per_family`, at most that many pairs whose two ids
@@ -67,12 +69,14 @@ def pair_report(
     """
     ids, sims = corpus.matrix(kind)
     upper = sp.triu(sims, k=1).tocoo()
-    keep = upper.data >= threshold
-    found = sorted(
-        (round(float(score), 4), *sorted((ids[i], ids[j])))
-        for i, j, score in zip(upper.row[keep], upper.col[keep], upper.data[keep])
-    )
-    found.sort(key=lambda item: -item[0])  # stable: ids stay ascending within a score
+    near = upper.data >= threshold - 1e-4  # a loose cut; the threshold applies to the rounded score
+    found: list[tuple[float, str, str]] = []
+    for i, j, raw in zip(upper.row[near], upper.col[near], upper.data[near]):
+        score = round(float(raw), 4)
+        if score >= threshold:
+            a, b = sorted((ids[i], ids[j]))
+            found.append((score, a, b))
+    found.sort(key=lambda item: (-item[0], item[1], item[2]))
     per: dict[str, int] = {}
     capped: list[tuple[float, str, str]] = []
     for score, a, b in found:

@@ -3,7 +3,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import numpy as np
 import pytest
+import scipy.sparse as sp
 
 from tests.tools.conftest import HANDOFF, NEGATIVES, NOTE, QUARANTINED
 from tests.tools.test_corpus_mcp import _call
@@ -144,6 +146,53 @@ def test_pair_report_counts_the_pairs_cut_by_the_limit(fake_repo: Path) -> None:
     assert pair_report(corpus, limit=10, per_family=2).total == 3 * 2 + 1
     assert pair_report(corpus, limit=-1).pairs == []
     assert pair_report(corpus, kind="nosuchkind").documents == 0
+
+
+def test_pair_report_orders_ties_by_id_so_the_family_cap_keeps_the_lowest_ids(fake_repo: Path) -> None:
+    # Ids -1 to -9 differ in one digit, which TF-IDF ignores, so their texts score 1.000 together.
+    # They are filed in reverse, so the index order is not the id order.
+    corpus = _corpus_with(fake_repo, [r for r in _sweep_records() if not r["id"].endswith("-10")][::-1])
+    report = pair_report(corpus, threshold=0.99, limit=1000)
+    assert report.total == 3 * 36 and {pair.score for pair in report.pairs} == {1.0}
+    assert [(p.a, p.b) for p in report.pairs] == sorted((p.a, p.b) for p in report.pairs)
+    capped = pair_report(corpus, threshold=0.99, limit=1000, per_family=2)
+    expected = [(f"negative:{family}-1", f"negative:{family}-{n}") for family in sorted(SWEEPS) for n in (2, 3)]
+    assert [(p.a, p.b) for p in capped.pairs] == expected
+
+
+def _fixed_matrix(corpus: Corpus, monkeypatch, ids: list[str], dense: list[list[float]]) -> None:
+    sims = sp.csr_matrix(np.array(dense, dtype=np.float32))
+    monkeypatch.setattr(corpus, "matrix", lambda kind="negative": (ids, sims))
+
+
+def test_pair_report_rounds_scores_to_four_places_before_ordering(corpus: Corpus, monkeypatch) -> None:
+    # 0.99999 and 0.99996 both show as 1.000, so the pairs tie and go by id, not by the raw score.
+    ids = ["negative:NEG-C", "negative:NEG-A", "negative:NEG-B"]
+    _fixed_matrix(corpus, monkeypatch, ids, [[1, 0.99999, 0.5], [0.99999, 1, 0.99996], [0.5, 0.99996, 1]])
+    pairs = [(p.a, p.b, p.score) for p in pair_report(corpus, threshold=0.9).pairs]
+    assert pairs == [("negative:NEG-A", "negative:NEG-B", 1.0), ("negative:NEG-A", "negative:NEG-C", 1.0)]
+
+
+def test_a_pair_shown_as_1_000_counts_at_threshold_1(corpus: Corpus, monkeypatch) -> None:
+    # float32 cosines of identical texts can be 0.9999997: shown as 1.000, they were missed at --threshold 1.
+    ids = ["negative:NEG-A", "negative:NEG-B", "negative:NEG-C"]
+    _fixed_matrix(corpus, monkeypatch, ids, [[1, 0.9999997, 0.99994], [0.9999997, 1, 0.5], [0.99994, 0.5, 1]])
+    assert [(p.a, p.b, p.score) for p in pair_report(corpus, threshold=1).pairs] == [
+        ("negative:NEG-A", "negative:NEG-B", 1.0)
+    ]
+    assert [p.score for p in pair_report(corpus, threshold=0.9999).pairs] == [1.0, 0.9999]
+
+
+def test_a_claim_shown_as_1_000_matches_at_threshold_1(corpus: Corpus, monkeypatch) -> None:
+    doc = corpus.get(HELSTROM)
+    text = f"{doc.title} {doc.text}"
+    state = corpus._state()
+    exact = state.scores
+    monkeypatch.setattr(state, "scores", lambda query: exact(query) * np.float32(1 - 3e-7))
+    assert float(state.scores(text)[np.flatnonzero(state.rowids == corpus.store.row_of(HELSTROM))[0]]) < 1
+    shown = claim_report(corpus, text, threshold=0.99).matches
+    assert (shown[0].doc_id, shown[0].score) == (HELSTROM, 1.0)
+    assert [hit.doc_id for hit in claim_report(corpus, text, threshold=1).matches] == [HELSTROM]
 
 
 @pytest.fixture

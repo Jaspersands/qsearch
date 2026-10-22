@@ -387,18 +387,22 @@ class Corpus:
 
         Exhaustive: each document of those kinds is scored, unlike `search`, whose rank fusion
         can leave a close document out of its top k. A hit's `score` is the cosine rounded to
-        four places; ties are ordered by doc id. Doc ids in `exclude` are left out.
+        four places, and that rounded score is what is compared with `minimum`, so a float32
+        cosine of 0.9999997, shown as 1.0, matches a minimum of 1. Ties are ordered by doc id.
+        Doc ids in `exclude` are left out.
         """
         state = self._state()
         scores = state.scores(text)
-        keep = np.flatnonzero(np.isin(self._row_kinds(), list(kinds)) & (scores >= minimum))
+        near = np.flatnonzero(np.isin(self._row_kinds(), list(kinds)) & (scores >= minimum - 1e-4))
+        rounded = {int(i): round(float(scores[i]), 4) for i in near}
+        keep = [i for i, score in rounded.items() if score >= minimum]
         rows = self.store.rows(int(state.rowids[i]) for i in keep)
         hits: list[Hit] = []
         for i in keep:
             doc = rows.get(int(state.rowids[i]))
             if doc is None or doc.doc_id in exclude:
                 continue
-            score = round(float(scores[i]), 4)
+            score = rounded[i]
             hits.append(Hit(doc.doc_id, doc.kind, doc.path, doc.line, doc.title, score, snippet(doc.text, text), doc.meta))
         hits.sort(key=lambda hit: (-hit.score, hit.doc_id))
         return hits
