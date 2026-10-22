@@ -1665,3 +1665,19 @@ def test_round3_actions_with_missing_targets_are_blocked_not_tasks(tmp_path: Pat
     assert section['blocked_actions'][0]['id'] == '2610.00001'
     text = '\n'.join(B._render_arxiv(section, SINCE))
     assert 'Actions awaiting clarification' in text and 'Missing research/MISSING.md' in text
+
+
+def test_round4_partial_watch_track_map_cannot_look_complete(tmp_path: Path) -> None:
+    _write_json(tmp_path / B.ARXIV_STATE, {'updated': '2026-10-23', 'papers': {},
+                                        'tracks_updated': {'dqi_opi': '2026-10-23'}})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert any('dcp' in warning and 'checkpoint' in warning for warning in section['coverage']['warnings'])
+    assert B._summary('arxiv', section) != 'ok'
+
+
+@pytest.mark.parametrize('field,value', [('gaps', {}), ('tracks_updated', []), ('tracks_updated', None)])
+def test_round4_falsey_malformed_coverage_is_not_silently_empty(tmp_path: Path, field: str, value) -> None:
+    _write_json(tmp_path / B.ARXIV_STATE, {'updated': '2026-10-23', 'papers': {}, field: value})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section['coverage']['warnings']
+    assert B._summary('arxiv', section) != 'ok'

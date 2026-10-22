@@ -374,8 +374,8 @@ def _arxiv_state(path: Path) -> tuple[dict[str, Any] | None, str]:
 def _arxiv_coverage(state: dict[str, Any], since: str) -> dict[str, Any]:
     """Keep source checkpoints and missed windows beside the triage counts."""
     updated = state.get("updated")
-    tracks = state.get("tracks_updated") or {}
-    gaps = state.get("gaps") or []
+    tracks = state.get("tracks_updated", {})
+    gaps = state.get("gaps", [])
     warnings = []
     if not isinstance(tracks, dict):
         tracks = {}
@@ -383,6 +383,12 @@ def _arxiv_coverage(state: dict[str, Any], since: str) -> dict[str, Any]:
     if not isinstance(gaps, list) or any(not isinstance(gap, dict) for gap in gaps):
         gaps = []
         warnings.append("coverage gaps are unreadable")
+    if "tracks_updated" in state:
+        from tools.arxiv_watch.tracks import TRACKS
+
+        missing = sorted(set(TRACKS) - tracks.keys())
+        if missing:
+            warnings.append("no watch checkpoint for configured tracks: " + ", ".join(missing))
     dates = ([updated] if updated is not None else []) + list(tracks.values())
     valid_dates = []
     for value in dates:
