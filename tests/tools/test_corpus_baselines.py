@@ -4,6 +4,7 @@ import json
 import re
 import shlex
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -12,7 +13,15 @@ from tests.tools.conftest import NEGATIVES
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus import baselines as baselines_module
-from tools.corpus.baselines import CatalogError, _name_pattern, load_catalog, recommend, tokens, validate_catalog
+from tools.corpus.baselines import (
+    CatalogError,
+    _name_pattern,
+    keyword_matches,
+    load_catalog,
+    recommend,
+    tokens,
+    validate_catalog,
+)
 from tools.corpus.cli import main
 from tools.corpus.mcp_server import create_server
 
@@ -64,6 +73,12 @@ def test_catalog_is_well_formed() -> None:
         ({"aliases": "Prange"}, "aliases must be a list"),
         ({"aliases": ["Prange", " "]}, "aliases must be non-empty strings"),
         ({"name": "  "}, "name must be a non-empty string"),
+        # a name or alias with no word of two letters or digits outside the stop words cites almost every note
+        *(
+            ({"aliases": ["Prange", alias]}, f"alias {json.dumps(alias)} has no word to match, so it would cite almost every note")
+            for alias in (".", "-", " (", "a", "x", "the", "of")
+        ),
+        ({"name": "-"}, 'name "-" has no word to match, so it would cite almost every note'),
         ({"summary": 3}, "summary must be a non-empty string"),
         (
             {"runnable": "python tools/dqi_screen/screen.py"},
@@ -84,6 +99,17 @@ def test_catalog_is_well_formed() -> None:
         ({"mechanisms": ["gibbs sampling", "χ² test", "code"]}, 'mechanism "χ² test" has letters the matcher ignores (χ); spell it in ASCII'),
         ({"mechanisms": ["gibbs sampling", "parity check", 3]}, "mechanism 3 must be a string"),
         ({"mechanisms": ["Gibbs sampling", "parity check", "code"]}, 'mechanism "Gibbs sampling" must be lowercase'),
+        # a note is a bare research/<STEM>.md stem and an arXiv id has no version, matched in full
+        *(
+            ({"references": [ref]}, f"malformed reference {json.dumps(ref)}")
+            for ref in (
+                {"note": "PRIME_CHARACTER_OPI.md"},
+                {"note": "research/PRIME_CHARACTER_OPI"},
+                {"note": "prime_character_opi"},
+                {"arxiv": "2610.06753v2"},
+                {"arxiv": "arXiv:2610.06753"},
+            )
+        ),
     ],
 )
 def test_validate_catalog_names_each_broken_rule(change: dict, problem: str) -> None:
@@ -147,6 +173,44 @@ def test_tokens_drop_a_plural_s_but_keep_a_double_s() -> None:
     assert tokens("is gas bias") == ["is", "gas", "bia"]  # short words kept; a single final s still dropped
 
 
+def test_tokens_fold_ies_plurals_and_bases() -> None:
+    assert tokens("learning parities with noise") == tokens("learning parity with noise")
+    assert tokens("sparse parities, signed parities") == ["sparse", "parity", "signed", "parity"]
+    assert tokens("Gröbner bases") == tokens("groebner basis") == ["groebner", "basis"]
+    assert tokens("lattice bases and analyses") == ["lattice", "basis", "and", "analysis"]
+    assert tokens("ties lies") == ["tie", "lie"]  # four letters: only the final s goes
+
+
+def test_tokens_expand_the_repository_abbreviations() -> None:
+    assert tokens("mixed-coset OPI") == ["mixed", "coset", "optimal", "polynomial", "intersection"]
+    assert tokens("MQ") == ["multivariate", "quadratic"]
+    assert tokens("LPN") == tokens("learning parity with noise")
+    assert tokens("CVP") == ["closest", "vector"]
+    assert tokens("USD") == tokens("unambiguous state discrimination") == ["unambiguou", "state", "discrimination"]
+
+
+@pytest.mark.parametrize(
+    ("idea", "baseline", "keywords"),
+    [
+        ("MQ equations where classical Gröbner bases stall", "groebner-mq", ["multivariate quadratic", "groebner basis"]),
+        ("learning parities with noise from sparse samples", "isd-pinning-fft", ["learning parity with noise"]),
+        ("LPN samples", "isd-pinning-fft", ["learning parity with noise"]),
+        ("signed parities on a polar code", "polar-sc-source-shaping", ["polar code", "signed parity"]),
+        ("DQI margin over Prange on low-rate prime-character OPI", "prange-restarts-opi", ["optimal polynomial intersection"]),
+        ("DQI for OPI on explicit RS inputs", "prange-restarts-opi", ["optimal polynomial intersection"]),
+        ("reduces to a CVP instance", "lll-babai-dcp", ["closest vector"]),
+        ("a USD decoder for signed XOR models", "usd-prange-rejection-sampler", ["unambiguous state discrimination"]),
+    ],
+)
+def test_ideas_in_the_repository_wording_match_their_keywords(
+    fake_repo: Path, idea: str, baseline: str, keywords: list[str]
+) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, idea, k=20)}
+    assert baseline in recs
+    assert set(keywords) <= set(recs[baseline].matched)
+
+
 def test_tokens_fold_accents_and_spelling_variants() -> None:
     assert tokens("Gröbner") == tokens("Gröbner") == tokens("Grobner") == tokens("Groebner") == ["groebner"]
     assert tokens("MaxCut") == tokens("Max-Cut") == ["max", "cut"]
@@ -176,6 +240,27 @@ def test_max_k_cut_needs_its_number_between_max_and_cut(fake_repo: Path) -> None
     assert "max k cut" not in recs.get("lp-decoding-cycle-codes", recs["sdp-relaxation"]).matched
     assert recs["sdp-relaxation"].matched == ["max cut", "qaoa"]
     assert recommend(corpus, "QAOA on MaxCut", k=20)[0].baseline["id"] == "sdp-relaxation"
+
+
+def test_a_one_letter_word_of_a_keyword_must_sit_beside_the_rest() -> None:
+    p_spin = tokens("p spin")
+    assert keyword_matches(p_spin, tokens("the quantum p-spin model"))
+    assert not keyword_matches(p_spin, tokens("QAOA at depth p on a transverse-field spin chain"))
+    assert not keyword_matches(p_spin, tokens("Fourier sampling of a spin representation of SL(2, F_p)"))
+    assert keyword_matches(tokens("3-sat"), tokens("a random 3-SAT instance"))
+    assert not keyword_matches(tokens("3-sat"), tokens("a SAT solver for 3 colourings"))
+    assert keyword_matches(tokens("spin glass"), tokens("glass of spin"))  # longer words: any order
+
+
+@pytest.mark.parametrize(
+    "idea", ["QAOA at depth p on a transverse-field spin chain", "Fourier sampling of a spin representation of SL(2, F_p)"]
+)
+def test_a_stray_p_and_spin_do_not_match_p_spin(fake_repo: Path, idea: str) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, idea, k=20)}
+    assert "stochastic-localization-pspin" not in recs
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, "Gibbs sampling of the quantum p-spin model", k=20)}
+    assert recs["stochastic-localization-pspin"].matched == ["gibbs sampling", "p spin"]
 
 
 def test_british_and_accented_spellings_match_their_keywords(fake_repo: Path) -> None:
@@ -250,18 +335,74 @@ def test_readme_says_the_runnable_check_runs_now_that_dqi_screen_is_merged() -> 
     assert "(it skips only in a checkout without `tools/dqi_screen/`)" in readme
 
 
+CONSTRUCTION_A = {
+    "id": "NEG-CODE-SELF-DUAL-CONSTRUCTION-A-LOCAL-SELF-DUAL-K32",
+    "claim": "Low-norm Construction-A invariants separate self-dual-k32.",
+    "reason_invalid": "All sampled instances share determinant, parity, minimum norm, and norm-two vector count.",
+    "lesson": "Compare coset-state collective measurement of self-dual codes against lattice invariants.",
+}
+
+
+def test_low_norm_construction_a_lattices_do_not_cite_the_norm_search(fake_repo: Path) -> None:
+    # The alias "norm construction" matched "low-norm Construction-A" (a hyphen is a word boundary),
+    # so self-dual code negatives were credited to the prime-field quadratic-extension norm search.
+    norm = next(entry for entry in load_catalog() if entry["id"] == "norm-search-fp2")
+    assert _name_pattern(norm).search("## Classical Norm Construction")  # PRIME_CHARACTER_NORM_ATTACK's heading
+    assert _name_pattern(norm).search(CONSTRUCTION_A["claim"]) is None
+    registry = fake_repo / "research" / "registry" / "negative_results.json"
+    # NEGATIVES[1] names the "quadratic-extension norm" itself, a true citation, so it is left out here.
+    registry.write_text(json.dumps([NEGATIVES[0], CONSTRUCTION_A], indent=2), encoding="utf-8")
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    idea = "coset-state collective measurement for self-dual code equivalence k32"
+    assert corpus.search(idea, kinds=("note", "negative"), k=1)[0].doc_id == f"negative:{CONSTRUCTION_A['id']}"
+    assert "norm-search-fp2" not in {rec.baseline["id"] for rec in recommend(corpus, idea, k=20)}
+
+
+def _runnable_problems(item: dict) -> list[str]:
+    """Why a catalog `runnable` does not work as printed: an entry that is not a function
+    defined in its file, or a command that does not exit 0 from the repository root."""
+    problems: list[str] = []
+    if item.get("entry"):
+        path, _, name = item["entry"].partition(":")
+        if not re.search(rf"^def {re.escape(name)}\(", (REPO / path).read_text(encoding="utf-8"), re.M):
+            problems.append(f"{item['entry']}: no such function")
+    if item.get("command"):  # the CLI prints it as "run:", so it must run from the repository root
+        done = subprocess.run(shlex.split(item["command"]), cwd=REPO, capture_output=True, text=True, timeout=120)
+        if done.returncode:
+            problems.append(f"{item['command']}: exit {done.returncode}: {done.stderr[-500:]}")
+    return problems
+
+
 def test_runnables_run_as_printed_or_name_an_existing_function() -> None:
     if not (REPO / "tools" / "dqi_screen").is_dir():
         pytest.skip("tools/dqi_screen/ is not in this checkout")
     runnable = [entry["runnable"] for entry in load_catalog() if entry["runnable"]]
     assert runnable
-    for item in runnable:
-        if item.get("entry"):
-            path, _, name = item["entry"].partition(":")
-            assert re.search(rf"^def {re.escape(name)}\(", (REPO / path).read_text(encoding="utf-8"), re.M)
-        if item.get("command"):  # the CLI prints it as "run:", so it must run from the repository root
-            done = subprocess.run(shlex.split(item["command"]), cwd=REPO, capture_output=True, text=True, timeout=120)
-            assert done.returncode == 0, (item["command"], done.stderr[-500:])
+    assert [problem for item in runnable for problem in _runnable_problems(item)] == []
+
+
+def test_the_runnable_check_runs_each_command_and_reads_each_entry() -> None:
+    # No catalog entry has a command today, so the check above never ran that branch.
+    python = shlex.quote(sys.executable)
+    assert _runnable_problems({"command": f"{python} -c pass"}) == []
+    assert "exit 3" in _runnable_problems({"command": f"{python} -c 'raise SystemExit(3)'"})[0]
+    assert _runnable_problems({"entry": "tools/corpus/baselines.py:recommend"}) == []
+    assert _runnable_problems({"entry": "tools/corpus/baselines.py:no_such_function"}) == [
+        "tools/corpus/baselines.py:no_such_function: no such function"
+    ]
+
+
+def test_baselines_with_equal_scores_are_ordered_by_name(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    template = load_catalog()[1]
+    catalog = [
+        dict(template, id=f"tie-{name.lower()}", name=f"{name} zebra decoder", aliases=[], mechanisms=["zebra stripe", "okapi", "tapir"])
+        for name in ("Beta", "Alpha", "Gamma")
+    ]
+    recs = recommend(corpus, "counting zebra stripes", catalog=catalog)
+    assert len({rec.score for rec in recs}) == 1
+    assert [rec.baseline["name"] for rec in recs] == ["Alpha zebra decoder", "Beta zebra decoder", "Gamma zebra decoder"]
 
 
 def test_prange_ranks_first_when_a_note_mentions_it(fake_repo: Path) -> None:
@@ -319,6 +460,13 @@ def test_a_note_cites_a_baseline_once_however_many_sections_are_near(fake_repo: 
     assert recs[0].score == pytest.approx(0.3)
     sources = sorted(hit.path if hit.kind == "note" else hit.doc_id for hit in recs[0].evidence)
     assert sources == ["negative:NEG-KANGAROO-HOP-1", "negative:NEG-KANGAROO-HOP-2", "research/KANGAROO_HOP.md"]
+    # the evidence is each source's nearest hit, nearest source first
+    nearest: dict[str, str] = {}
+    for hit in hits:
+        source = hit.path if hit.kind == "note" else hit.doc_id
+        if source in sources:
+            nearest.setdefault(source, hit.doc_id)
+    assert [hit.doc_id for hit in recs[0].evidence] == list(nearest.values())
 
 
 def test_cli_baselines_text_and_json(fake_repo: Path, capsys) -> None:

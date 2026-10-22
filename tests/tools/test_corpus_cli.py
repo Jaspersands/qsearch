@@ -68,6 +68,49 @@ def test_heldout_counts_hits_at_k_and_enforces_minimum(fake_repo: Path, tmp_path
     assert code == 1
 
 
+def test_heldout_json_gives_each_case_its_rank(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    cases = tmp_path / "cases.json"
+    cases.write_text(
+        json.dumps(
+            [
+                {"id": "NEG-OPI-MIXED-COSET-HARDNESS", "query": "quadratic norm solver for OPI"},
+                {"id": "NEG-NO-SUCH-RECORD", "query": "zebrafish migration"},
+            ]
+        )
+    )
+    code, out = run(capsys, "--root", str(fake_repo), "heldout", str(cases), "-k", "5", "--json")
+    payload = json.loads(out)
+    assert code == 0
+    assert payload["cases"][0]["id"] == "negative:NEG-OPI-MIXED-COSET-HARDNESS" and payload["cases"][0]["rank"] >= 1
+    assert payload["cases"][1] == {"id": "negative:NEG-NO-SUCH-RECORD", "rank": None}
+    assert (payload["retrieved"], payload["total"], payload["k"], payload["min"]) == (1, 2, 5, 0)
+    assert "index_incomplete" in payload
+    code, out = run(capsys, "--root", str(fake_repo), "heldout", str(cases), "--json", "--min", "2")
+    assert code == 1 and json.loads(out)["retrieved"] == 1
+
+
+def test_every_command_that_takes_json_prints_json(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    # The README lists these commands as printing machine-readable output; heldout accepted
+    # --json and printed text, which the README check (flag accepted) did not notice.
+    cases = tmp_path / "cases.json"
+    cases.write_text(json.dumps([{"id": "NEG-OPI-MIXED-COSET-HARDNESS", "query": "quadratic norm solver for OPI"}]))
+    arguments = {
+        "search": ["Helstrom readout"],
+        "been-tried": ["Helstrom readout"],
+        "similar": ["negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"],
+        "heldout": [str(cases)],
+        "near-duplicates": [],
+        "check-new": ["--text", "zebrafish migration"],
+        "baselines": ["syndrome decoding of a linear code"],
+    }
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    assert set(arguments) == {c for c in sub.choices if "--json" in _options(c)}
+    for command, args in arguments.items():
+        main(["--root", str(fake_repo), command, *args, "--json"])
+        out = capsys.readouterr().out
+        assert isinstance(json.loads(out), dict), command
+
+
 def test_script_runs_directly_without_package_install(fake_repo: Path) -> None:
     result = subprocess.run(
         [sys.executable, str(CLI), "--root", str(fake_repo), "search", "Helstrom", "--json"],
@@ -119,6 +162,7 @@ def test_a_root_that_is_not_a_checkout_is_an_error_and_creates_nothing(tmp_path:
     (hollow / "research").mkdir(parents=True)
     assert main(["--root", str(hollow), *command]) == 1
     assert "nothing to index" in capsys.readouterr().err
+    assert list((hollow / "research").iterdir()) == []  # no corpus_index/ left behind
 
 
 def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> None:
@@ -128,6 +172,22 @@ def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> Non
     with pytest.raises(CorpusRootError, match="is not a directory"):
         create_server(tmp_path / "nosuch", dense="off")
     assert not (tmp_path / "nosuch").exists()
+    # A checkout with nothing to index: the server started, wrote an index, and failed every call.
+    hollow = tmp_path / "hollow"
+    (hollow / "research").mkdir(parents=True)
+    with pytest.raises(CorpusRootError, match="nothing to index"):
+        create_server(hollow, dense="off")
+    assert list((hollow / "research").iterdir()) == []
+
+
+def test_mcp_server_main_exits_1_on_a_checkout_with_nothing_to_index(tmp_path: Path, capsys) -> None:
+    from tools.corpus.mcp_server import main as server_main
+
+    hollow = tmp_path / "hollow"
+    (hollow / "research" / "registry").mkdir(parents=True)
+    (hollow / "research" / "registry" / "notes.txt").write_text("not a registry file")
+    assert server_main(["--root", str(hollow), "--dense", "off"]) == 1
+    assert "nothing to index" in capsys.readouterr().err
 
 
 def _options(command: str) -> set[str]:
@@ -139,6 +199,23 @@ def _named_commands(readme: str, lead: str) -> set[str]:
     match = re.search(re.escape(lead) + r" (.*?) \(", readme, re.S)
     assert match, f"README no longer says {lead!r}"
     return set(re.findall(r"`([a-z-]+)`", match.group(1)))
+
+
+def test_check_new_help_names_every_exit_1_case() -> None:
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    summary = next(choice.help for choice in sub._choices_actions if choice.dest == "check-new")
+    assert "the draft cannot be read or has no words" in summary
+    assert "the index has no negative record" in summary  # cmd_check_new returns 1 on NO_NEGATIVES
+
+
+def test_readme_names_the_corpus_methods_the_duplicate_checks_call() -> None:
+    from tools.corpus import duplicates
+
+    called = set(re.findall(r"corpus\.(\w+)\(", Path(duplicates.__file__).read_text(encoding="utf-8")))
+    readme = (CLI.parent / "README.md").read_text(encoding="utf-8")
+    section = readme.split("## Duplicates")[1].split("### Calibration")[0]
+    named = set(re.findall(r"`Corpus\.(\w+)`", section))
+    assert named and named <= called, named - called
 
 
 def test_readme_names_the_commands_that_take_json_dense_and_no_refresh() -> None:

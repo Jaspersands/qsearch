@@ -35,6 +35,21 @@ def test_server_lists_its_tools(fake_repo: Path) -> None:
     ]
 
 
+def test_module_docstring_lists_every_tool_with_its_parameters(fake_repo: Path) -> None:
+    import re
+
+    from tools.corpus import mcp_server
+
+    server = create_server(fake_repo, dense="off")
+
+    async def tools():
+        return await server.list_tools()
+
+    summary = mcp_server.__doc__.split("Tools:")[1].split("The index refreshes")[0]
+    listed = {name: [p.strip() for p in params.split(",") if p.strip()] for name, params in re.findall(r"(\w+)\(([^)]*)\)", summary)}
+    assert listed == {tool.name: list(tool.inputSchema["properties"]) for tool in anyio.run(tools)}
+
+
 def test_been_tried_tool_returns_grouped_hits(fake_repo: Path) -> None:
     server = create_server(fake_repo, dense="off")
     payload = _call(server, "been_tried", {"idea": "quadratic extension norm for mixed coset OPI", "k": 2})

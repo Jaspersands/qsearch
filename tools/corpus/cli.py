@@ -191,19 +191,29 @@ def cmd_get(args: argparse.Namespace) -> int:
 
 
 def cmd_eval(args: argparse.Namespace) -> int:
-    """Held-out check: each case {"id", "query"} should retrieve its record within the top k."""
+    """Held-out check: each case {"id", "query"} should retrieve its record within the top k.
+
+    `--json` prints {"k", "min", "cases": [{"id", "rank"}], "retrieved", "total", index issues};
+    a rank is null for a miss. The exit code is 1 when fewer than `--min` cases are retrieved.
+    """
     corpus = _corpus(args)
     cases = json.loads(Path(args.cases).read_text(encoding="utf-8"))
-    found = 0
+    results: list[dict] = []
     for case in cases:
         target = case["id"] if ":" in case["id"] else f"negative:{case['id']}"
         hits = corpus.search(case["query"], k=args.k, dense=args.dense, kinds=tuple(case.get("kinds", ())))
         ids = [hit.doc_id for hit in hits]
-        rank = ids.index(target) + 1 if target in ids else None
-        found += rank is not None
-        print(f"{'hit ' + str(rank) if rank else 'MISS ':<6} {target}")
+        results.append({"id": target, "rank": ids.index(target) + 1 if target in ids else None})
+    found = sum(result["rank"] is not None for result in results)
+    status = 0 if found >= args.min else 1
+    if args.json:
+        payload = {"k": args.k, "min": args.min, "cases": results, "retrieved": found, "total": len(cases)}
+        print(json.dumps({**payload, **_issues_json(corpus)}, indent=2))
+        return status
+    for result in results:
+        print(f"{'hit ' + str(result['rank']) if result['rank'] else 'MISS ':<6} {result['id']}")
     print(f"\n{found}/{len(cases)} retrieved in the top {args.k}")
-    return 0 if found >= args.min else 1
+    return status
 
 
 def _cell(text: str, width: int = 160) -> str:
@@ -313,9 +323,14 @@ def cmd_near_duplicates(args: argparse.Namespace) -> int:
     return status
 
 
-def _claim_header(report: ClaimReport, threshold: float) -> str:
+def _claim_header(report: ClaimReport, threshold: float, outside_list: bool = False, subject: str = "") -> str:
+    """The first line for one draft, without its final period; `subject` follows a no-match line."""
     if not report.matches:
-        return f"no negative record (retained or quarantined) has TF-IDF cosine >= {threshold}"
+        outside = [name for name, on in (("the list", outside_list), ("--allow", bool(report.allowed))) if on]
+        where = f" outside {' and '.join(outside)}" if outside else " (retained or quarantined)"
+        count = len(report.allowed)
+        allowed = f" ({count} allowed match{'' if count == 1 else 'es'}, listed below)" if count else ""
+        return f"no negative record{where} has TF-IDF cosine >= {threshold}{subject}{allowed}"
     of_them = f", {report.quarantined} of them quarantined," if report.quarantined else ""
     shown = f"; the closest {len(report.matches)} are shown" if report.total > len(report.matches) else ""
     return f"POSSIBLE DUPLICATE: {report.total} negative record(s){of_them} at TF-IDF cosine >= {threshold}{shown}"
@@ -340,11 +355,33 @@ def cmd_check_new(args: argparse.Namespace) -> int:
         print("error: the draft claim has no words to compare (it is empty or only stop words).", file=sys.stderr)
         return 1
     corpus = _corpus(args)
-    # Each draft leaves out every draft's own record, so a batch gets the same answer once filed.
-    exclude = tuple(doc_id for _, record_id in drafts for doc_id in own_ids(record_id))
+    # A listed record already in the index is filed. Each record leaves out its own id. A filed
+    # record also leaves out the other filed records of the list, so a batch gets the same answer
+    # before and after it is filed; a record not yet filed is still compared with a filed record
+    # listed beside it, so a hunk that copies an existing record under a new id is caught.
+    indexed = set(corpus.doc_ids()) if any(record_id for _, record_id in drafts) else set()
+    filed = {record_id for _, record_id in drafts if record_id and indexed.intersection(own_ids(record_id))}
+    listed = tuple(doc_id for record_id in sorted(filed) for doc_id in own_ids(record_id))
+    hides = len(filed) > 1  # a filed record is then left out of another filed record's check
+    if hides:
+        print(
+            f"warning: {len(filed)} of {len(drafts)} listed records are already in the index, and a filed record "
+            "of a list is not compared with the other filed records of it. List only the records an edit adds: "
+            "a new record that restates an older one listed beside it is missed once both are filed.",
+            file=sys.stderr,
+        )
     allow = tuple(args.allow or ())
     reports = [
-        (record_id, claim_report(corpus, text, threshold=args.threshold, exclude=exclude, allow=allow))
+        (
+            record_id,
+            claim_report(
+                corpus,
+                text,
+                threshold=args.threshold,
+                exclude=listed if record_id in filed else own_ids(record_id),
+                allow=allow,
+            ),
+        )
         for text, record_id in drafts
     ]
     if reports[0][1].documents == 0:
@@ -361,19 +398,21 @@ def cmd_check_new(args: argparse.Namespace) -> int:
                 for h in report.allowed
             ],
             "drafts": len(reports),
+            "filed": len(filed),
             "duplicate": duplicate,
             **_issues_json(corpus),
         }
         print(json.dumps(payload, indent=2))
         return 2 if duplicate else 0
     for number, (record_id, report) in enumerate(reports, start=1):
-        header = _claim_header(report, args.threshold)
         if len(reports) == 1:
-            print(header[0].upper() + header[1:] + ("" if report.matches else " with this claim") + ".")
+            header = _claim_header(report, args.threshold, subject=" with this claim")
+            print(header[0].upper() + header[1:] + ".")
         else:
+            header = _claim_header(report, args.threshold, outside_list=hides and record_id in filed)
             print(("" if number == 1 else "\n") + f"{record_id or f'record {number}'}: {header}.")
         if report.allowed:
-            names = [_record_label(hit.doc_id) for hit in report.allowed]
+            names = [f"{_record_label(hit.doc_id)} ({hit.score:.3f})" for hit in report.allowed]
             more = f", and {len(names) - 10} more" if len(names) > 10 else ""
             print(f"Not counted: {len(names)} matching record(s) allowed by --allow: {', '.join(names[:10])}{more}.")
         if report.matches:
@@ -540,7 +579,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     check = sub.add_parser(
         "check-new",
-        help="Exit 2 when a draft claim is close to a negative record, 1 when the draft cannot be read or has no words.",
+        help="Exit 2 when a draft claim is close to a negative record, 1 when the draft cannot be read or has no words "
+        "or the index has no negative record.",
     )
     source = check.add_mutually_exclusive_group(required=True)
     source.add_argument("--text", help="The draft claim.")

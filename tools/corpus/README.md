@@ -25,9 +25,9 @@ verdict on the idea.
 | `similar DOC_ID` | Documents most like one result. |
 | `get DOC_ID` | Full text and metadata as JSON. |
 | `build [--full] [--dense]` | Build or update the index; `--dense` adds local sentence embeddings. |
-| `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k. |
+| `heldout CASES.json [--min N]` | Retrieval check: each `{id, query}` must find its record in the top k; `--json` gives each case's rank (null for a miss) and the count retrieved. |
 | `near-duplicates [--threshold 0.9] [--per-family N] [--limit 200] [--out FILE.json]` | Pairs of negatives with a high TF-IDF cosine (see Duplicates). |
-| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6] [--allow ID]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words. |
+| `check-new --text CLAIM \| --file RECORD.json [--threshold 0.6] [--allow ID]` | Exit 2 when a draft negative is close to a retained or quarantined one, 1 when the draft cannot be read or has no words or the index has no negative record. |
 | `baselines IDEA [-k 5]` | Classical baselines the idea should be compared against (see Baselines). |
 
 Every command except `build` first refreshes the index incrementally: it stats about
@@ -149,10 +149,15 @@ after 2026-10-04, paraphrased blind by a separate agent that saw only the claims
 ## Duplicates
 
 Two checks for negatives that say what an existing record already says
-(`duplicates.py`). Both score by TF-IDF cosine (`Corpus.cosine`, the index's own word
-unigram and bigram vectors), not by the rank-fusion score a search hit carries, so a score
-is a similarity in [0, 1], not a rank. It still depends on the rest of the index through
-the IDF weights, and on the fit history: between refits (see Ranking above: more than 5 %
+(`duplicates.py`). Both score by TF-IDF cosine on the index's own word unigram and bigram
+vectors (`check-new` with `Corpus.cosine_hits`, which scores every negative-kind document,
+and `near-duplicates` with `Corpus.matrix`, the pairwise cosines of one kind), not by the
+rank-fusion score a search hit carries, so a score is a similarity in [0, 1], not a rank. A
+threshold is compared with the cosine rounded to four places, the score shown, so a float32
+cosine of 0.9999997 counts at `--threshold 1` (57 pairs show 1.000; before this rule
+`--threshold 1` found 18 of them). Ties in the pair report are ordered by id, so
+`--per-family` keeps a family's lowest ids. A score still depends on the rest of the index
+through the IDF weights, and on the fit history: between refits (see Ranking above: more than 5 %
 of documents changed) changed documents are patched in with the last fit's vocabulary and
 IDF, which can move a score by a few hundredths. On a shared index patched 406 documents past
 its fit, the committed report's `COSET-DISTINGUISHABILITY-DEBT-S10/S8-PARTIAL_MATCHING` pair
@@ -199,12 +204,18 @@ python tools/corpus/cli.py check-new --text "claim. reason it fails."
   a BOM); a record contributes its `claim` and `reason_invalid` (a quarantined record's are
   read from its `original_record`), and is never matched with its own `id` (`negative:ID`
   or `quarantined:ID`; the id is stripped and a `negative:` or `quarantined:` prefix
-  dropped). A list is checked record by record, each leaving out every listed record's id,
-  and `--json` marks each match with its `draft_id`. The answer is
-  therefore the same before and after the records are filed, and a hook can run on the draft
-  or on the new records of the registry edit that files them; a draft that reuses another
-  record's id is not compared with that record, and records of one list are not compared
-  with each other. A quarantined match is labelled `(quarantined)`. An
+  dropped). A list is checked record by record, and `--json` marks each match with its
+  `draft_id`. A listed record that is not in the index yet is compared with every negative
+  record but its own, filed records listed beside it included, so a hunk that copies an
+  existing record under a new id exits 2. A listed record already in the index (filed) also
+  leaves out the other filed records of the list. Records of one list are therefore not
+  compared with each other, the answer is the same before and after the records are filed,
+  and a hook can run on the draft or on the new records of the registry edit that files them.
+  List only the new records: once a new record is filed, an older record listed beside it is
+  hidden from it. When two or more listed records are already filed the command warns on
+  stderr, says "no negative record outside the list" for them, and `--json` gives the count as
+  `filed`. A draft that reuses another record's id is not compared with that record. A
+  quarantined match is labelled `(quarantined)`. An
   unreadable registry is reported on stderr and as `index_incomplete` in `--json` output,
   but does not change the exit code; a hook that must fail closed should check that field.
   `--allow ID` accepts a match the author has read and knows to be a separate result (see
@@ -290,8 +301,9 @@ exit 2, 15 of them siblings inside the `NEG-SELF-DUAL-WREATH` program (0.60 to 0
 the orthogonal and unitary parabolic pair classed distinct above. Raising the threshold does
 not fix this (0.7 still blocks 284) and costs claim-alone recall. Instead, after reading a
 sibling, pass `--allow ID`, or `--allow PREFIX*` for its family (repeatable; the MCP tool takes
-`allow`): its matches are then listed as allowed and do not count toward the exit code. A
-bare `*` is rejected.
+`allow`): its matches are then listed as allowed, each with its cosine, and do not count toward
+the exit code. When every match is allowed the header says that no record outside `--allow`
+reaches the threshold and how many allowed ones do. A bare `*` is rejected.
 
 Smoke runs on this checkout (2026-10-21):
 
@@ -331,15 +343,20 @@ with each evidence hit in the `search --json` shape. The MCP tool
 `classical_baselines(idea, k=5)` returns the same object.
 
 **Score.** `tokens(t)` lower-cases `t`, writes umlauts as ae/oe/ue and drops other accents,
-keeps the runs of `[a-z0-9]`, turns a final `sses`
-into `ss` and drops a final single `s` from words longer than three letters ("Gibbs" becomes
-`gibb` on both sides; "glasses" and "glass" both become `glass`), then folds a few spelling
-variants into one (`_SPELLINGS`: "colouring" is `coloring`, "Gröbner" and "Grobner" are
-`groebner`, "MaxCut" is `max cut`). A mechanism
+keeps the runs of `[a-z0-9]` and makes each word singular:
+a final `sses` becomes `ss`, a final `ies` becomes `y` in words longer than four letters
+("parities" is `parity`), "bases" is `basis` and a word ending in `sis` keeps its `s`, and
+otherwise a final single `s` is dropped from words longer than three letters ("Gibbs" becomes
+`gibb` on both sides; "glasses" and "glass" both become `glass`). It then folds a few
+spelling variants and abbreviations into one (`_SPELLINGS`: "colouring" is `coloring`,
+"Gröbner" and "Grobner" are `groebner`, "MaxCut" is `max cut`, and the notes' OPI, MQ, LPN,
+CVP and USD are the phrases the keywords spell out, so "mixed-coset OPI" matches `optimal
+polynomial intersection`). A mechanism
 keyword matches when every one of its tokens is among the idea's tokens, in any order. A `k`
 in a keyword stands for a number: such a keyword must occur in a row with a number, `k` or
 `q` in that place, so `max k cut` matches "max-3-cut" and "Max-q-Cut" but not "max cut at
-depth 3". The ten
+depth 3". Any other keyword with a word of one letter or digit must occur in a row too, so
+`p spin` matches "p-spin" but not "QAOA at depth p on a spin chain". The ten
 note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
 and on word boundaries. A mention inside a longer name of another baseline counts only for
@@ -382,7 +399,7 @@ put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 | field | content |
 |---|---|
 | `id` | unique kebab-case id |
-| `name`, `aliases` | the names a note would use; matched on word boundaries, so avoid short common words |
+| `name`, `aliases` | the names a note would use; matched case-insensitively on word boundaries, and a hyphen is a boundary, so avoid short common words and phrases that occur in other terms ("norm construction" matched "low-norm Construction-A", so the alias is "classical norm construction") |
 | `problem` | the problem the algorithm solves, one sentence |
 | `mechanisms` | 3 to 6 lowercase keywords an idea would contain |
 | `summary` | what the algorithm does and what it is the baseline for |
@@ -392,7 +409,9 @@ put `sdp-relaxation` (0.3) above the LP decoder (0.2).
 **Adding an entry.** Append it to `baselines.json`, raise the count in
 `test_catalog_is_well_formed`, then run `python -m pytest -q tests/tools/test_corpus_baselines.py`.
 `validate_catalog` reports an entry that is not an object, a duplicate id, a missing or
-mistyped field, a blank name or alias, fewer than 3 or more than 6 keywords, a keyword that
+mistyped field, a blank name or alias, a name or alias with no word of two letters or digits
+outside the English stop words (".", "x" or "the" would cite almost every note), fewer than 3
+or more than 6 keywords, a keyword that
 is not lowercase or that `tokens` cannot match as written (`"-"` has no word and would match
 every idea; the `χ` of `"χ² test"` would be dropped, so spell keywords in ASCII, although
 accents fold and `"gröbner basis"` is fine), a `runnable` other than `null` or

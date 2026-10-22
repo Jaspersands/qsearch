@@ -3,7 +3,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import numpy as np
 import pytest
+import scipy.sparse as sp
 
 from tests.tools.conftest import HANDOFF, NEGATIVES, NOTE, QUARANTINED
 from tests.tools.test_corpus_mcp import _call
@@ -144,6 +146,53 @@ def test_pair_report_counts_the_pairs_cut_by_the_limit(fake_repo: Path) -> None:
     assert pair_report(corpus, limit=10, per_family=2).total == 3 * 2 + 1
     assert pair_report(corpus, limit=-1).pairs == []
     assert pair_report(corpus, kind="nosuchkind").documents == 0
+
+
+def test_pair_report_orders_ties_by_id_so_the_family_cap_keeps_the_lowest_ids(fake_repo: Path) -> None:
+    # Ids -1 to -9 differ in one digit, which TF-IDF ignores, so their texts score 1.000 together.
+    # They are filed in reverse, so the index order is not the id order.
+    corpus = _corpus_with(fake_repo, [r for r in _sweep_records() if not r["id"].endswith("-10")][::-1])
+    report = pair_report(corpus, threshold=0.99, limit=1000)
+    assert report.total == 3 * 36 and {pair.score for pair in report.pairs} == {1.0}
+    assert [(p.a, p.b) for p in report.pairs] == sorted((p.a, p.b) for p in report.pairs)
+    capped = pair_report(corpus, threshold=0.99, limit=1000, per_family=2)
+    expected = [(f"negative:{family}-1", f"negative:{family}-{n}") for family in sorted(SWEEPS) for n in (2, 3)]
+    assert [(p.a, p.b) for p in capped.pairs] == expected
+
+
+def _fixed_matrix(corpus: Corpus, monkeypatch, ids: list[str], dense: list[list[float]]) -> None:
+    sims = sp.csr_matrix(np.array(dense, dtype=np.float32))
+    monkeypatch.setattr(corpus, "matrix", lambda kind="negative": (ids, sims))
+
+
+def test_pair_report_rounds_scores_to_four_places_before_ordering(corpus: Corpus, monkeypatch) -> None:
+    # 0.99999 and 0.99996 both show as 1.000, so the pairs tie and go by id, not by the raw score.
+    ids = ["negative:NEG-C", "negative:NEG-A", "negative:NEG-B"]
+    _fixed_matrix(corpus, monkeypatch, ids, [[1, 0.99999, 0.5], [0.99999, 1, 0.99996], [0.5, 0.99996, 1]])
+    pairs = [(p.a, p.b, p.score) for p in pair_report(corpus, threshold=0.9).pairs]
+    assert pairs == [("negative:NEG-A", "negative:NEG-B", 1.0), ("negative:NEG-A", "negative:NEG-C", 1.0)]
+
+
+def test_a_pair_shown_as_1_000_counts_at_threshold_1(corpus: Corpus, monkeypatch) -> None:
+    # float32 cosines of identical texts can be 0.9999997: shown as 1.000, they were missed at --threshold 1.
+    ids = ["negative:NEG-A", "negative:NEG-B", "negative:NEG-C"]
+    _fixed_matrix(corpus, monkeypatch, ids, [[1, 0.9999997, 0.99994], [0.9999997, 1, 0.5], [0.99994, 0.5, 1]])
+    assert [(p.a, p.b, p.score) for p in pair_report(corpus, threshold=1).pairs] == [
+        ("negative:NEG-A", "negative:NEG-B", 1.0)
+    ]
+    assert [p.score for p in pair_report(corpus, threshold=0.9999).pairs] == [1.0, 0.9999]
+
+
+def test_a_claim_shown_as_1_000_matches_at_threshold_1(corpus: Corpus, monkeypatch) -> None:
+    doc = corpus.get(HELSTROM)
+    text = f"{doc.title} {doc.text}"
+    state = corpus._state()
+    exact = state.scores
+    monkeypatch.setattr(state, "scores", lambda query: exact(query) * np.float32(1 - 3e-7))
+    assert float(state.scores(text)[np.flatnonzero(state.rowids == corpus.store.row_of(HELSTROM))[0]]) < 1
+    shown = claim_report(corpus, text, threshold=0.99).matches
+    assert (shown[0].doc_id, shown[0].score) == (HELSTROM, 1.0)
+    assert [hit.doc_id for hit in claim_report(corpus, text, threshold=1).matches] == [HELSTROM]
 
 
 @pytest.fixture
@@ -443,6 +492,54 @@ def test_cli_check_new_checks_a_list_of_records_one_by_one(fake_repo: Path, tmp_
     assert "NEG-DRAFT-HELSTROM: POSSIBLE DUPLICATE: 1 negative record(s)" in out
 
 
+def test_cli_check_new_compares_a_new_record_with_a_filed_one_listed_beside_it(
+    fake_repo: Path, tmp_path: Path, capsys
+) -> None:
+    # A registry hunk with context: the filed Helstrom record, then a verbatim copy under a new id.
+    # Leaving out every listed id hid the original from its copy, so the copy passed with exit 0.
+    hunk = tmp_path / "hunk.json"
+    hunk.write_text(json.dumps([NEGATIVES[0], dict(NEGATIVES[0], id="NEG-HELSTROM-RESTATED")], indent=2))
+    root = ["--root", str(fake_repo), "check-new", "--file", str(hunk)]
+    assert main([*root, "--json"]) == 2
+    payload = json.loads(capsys.readouterr().out)
+    assert [(m["draft_id"], m["doc_id"]) for m in payload["matches"]] == [("NEG-HELSTROM-RESTATED", HELSTROM)]
+    assert payload["filed"] == 1
+    assert main(root) == 2
+    captured = capsys.readouterr()
+    assert "NEG-DCP-LOCAL-HELSTROM-HIERARCHY: no negative record (retained or quarantined) has" in captured.out
+    assert "NEG-HELSTROM-RESTATED: POSSIBLE DUPLICATE: 1 negative record(s)" in captured.out
+    assert "already in the index" not in captured.err  # one filed record hides nothing
+
+
+def test_cli_check_new_warns_when_filed_records_of_a_list_hide_each_other(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    listed = tmp_path / "registry_copy.json"  # say a hook given the whole registry file
+    listed.write_text(json.dumps(NEGATIVES, indent=2))
+    root = ["--root", str(fake_repo), "check-new", "--file", str(listed)]
+    assert main(root) == 0
+    captured = capsys.readouterr()
+    assert "warning: 2 of 2 listed records are already in the index" in captured.err
+    assert "NEG-DCP-LOCAL-HELSTROM-HIERARCHY: no negative record outside the list has TF-IDF cosine >= 0.6." in captured.out
+    assert main([*root, "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["filed"] == 2
+
+
+def test_cli_check_new_gives_a_batch_the_same_answer_before_and_after_it_is_filed(
+    fake_repo: Path, tmp_path: Path, capsys
+) -> None:
+    batch = tmp_path / "batch.json"
+    batch.write_text(json.dumps([DUP_A, DUP_B], indent=2))
+    root = ["--root", str(fake_repo), "check-new", "--json", "--file"]
+    assert main([*root, str(batch)]) == 0  # not yet filed: records of one list are not compared with each other
+    assert json.loads(capsys.readouterr().out)["filed"] == 0
+    _corpus_with(fake_repo, [DUP_A, DUP_B])
+    assert main([*root, str(batch)]) == 0  # filed: each leaves out the other's id too
+    assert json.loads(capsys.readouterr().out)["filed"] == 2
+    alone = tmp_path / "alone.json"
+    alone.write_text(json.dumps(DUP_A, indent=2))
+    assert main([*root, str(alone)]) == 2  # on its own, the filed record still meets its twin
+    assert [m["doc_id"] for m in json.loads(capsys.readouterr().out)["matches"]] == ["negative:NEG-DUP-B"]
+
+
 @pytest.mark.parametrize(
     "content",
     [json.dumps(NEGATIVES[0], indent=2)[:-40], json.dumps(dict(NEGATIVES[0], claim=["a", "b"])), '{"id": "X"}'],
@@ -566,18 +663,25 @@ GOPPA_SIBLING = {
 
 
 def test_cli_check_new_allow_accepts_known_siblings(fake_repo: Path, tmp_path: Path, capsys) -> None:
-    _corpus_with(fake_repo, _sweep_records())
+    corpus = _corpus_with(fake_repo, _sweep_records())
     draft = tmp_path / "sibling.json"
     draft.write_text(json.dumps(GOPPA_SIBLING))
+    cosine = claim_report(corpus, draft_claim(draft.read_text())[0]).matches[0].score
     root = ["--root", str(fake_repo), "check-new", "--file", str(draft)]
     assert main(root) == 2
     assert capsys.readouterr().out.startswith("POSSIBLE DUPLICATE: 10 negative record(s)")
     assert main([*root, "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-1"]) == 2  # one sibling allowed, nine left
-    assert capsys.readouterr().out.startswith("POSSIBLE DUPLICATE: 9 negative record(s)")
+    out = capsys.readouterr().out
+    assert out.startswith("POSSIBLE DUPLICATE: 9 negative record(s)")
+    allowed_one = f"NEG-GOPPA-SCALE-M6-T3-N48-0-1 ({cosine:.3f})"
+    assert f"\nNot counted: 1 matching record(s) allowed by --allow: {allowed_one}.\n" in out
     assert main([*root, "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-*"]) == 0
     out = capsys.readouterr().out
-    assert out.startswith("No negative record (retained or quarantined) has TF-IDF cosine >= 0.6")
-    assert "\nNot counted: 10 matching record(s) allowed by --allow: NEG-GOPPA-SCALE-M6-T3-N48-0-1," in out
+    # Every match allowed: the header must not say that no record reaches the threshold.
+    assert out.startswith(
+        "No negative record outside --allow has TF-IDF cosine >= 0.6 with this claim (10 allowed matches, listed below).\n"
+    )
+    assert f"\nNot counted: 10 matching record(s) allowed by --allow: {allowed_one}," in out
     assert main([*root, "--allow", "negative:NEG-GOPPA-SCALE-M6-T3-N48-0-*", "--json"]) == 0
     payload = json.loads(capsys.readouterr().out)
     assert payload["duplicate"] is False and payload["matches"] == [] and len(payload["allowed"]) == 10
@@ -586,11 +690,39 @@ def test_cli_check_new_allow_accepts_known_siblings(fake_repo: Path, tmp_path: P
     assert "--allow" in capsys.readouterr().err
 
 
+def test_cli_check_new_allowed_list_counts_what_it_cuts_and_names_the_draft(
+    fake_repo: Path, tmp_path: Path, capsys
+) -> None:
+    _corpus_with(fake_repo, _sweep_records() + [dict(GOPPA_SIBLING, id="NEG-GOPPA-SCALE-M6-T3-N48-0-12")])
+    draft = tmp_path / "sibling.json"
+    draft.write_text(json.dumps(GOPPA_SIBLING))
+    root = ["--root", str(fake_repo), "check-new", "--file", str(draft), "--allow", "NEG-GOPPA-SCALE-M6-T3-N48-0-*"]
+    assert main(root) == 0
+    line = next(line for line in capsys.readouterr().out.splitlines() if line.startswith("Not counted:"))
+    assert line.startswith("Not counted: 11 matching record(s) allowed by --allow: ")
+    assert line.endswith(", and 1 more.") and line.count(" (") == 10  # ten named with their cosines
+    assert main([*root, "--json"]) == 0
+    allowed = json.loads(capsys.readouterr().out)["allowed"]
+    assert len(allowed) == 11 and {entry["draft_id"] for entry in allowed} == {GOPPA_SIBLING["id"]}
+
+
+def test_allow_accepts_a_quarantined_record(fake_repo: Path, capsys) -> None:
+    original = QUARANTINED[0]["original_record"]
+    root = ["--root", str(fake_repo), "check-new", "--text", f"{original['claim']} {original['reason_invalid']}", "--json"]
+    quarantined = f"quarantined:{QUARANTINED[0]['id']}"
+    for pattern in (QUARANTINED[0]["id"], quarantined, "NEG-ANNEALING-*"):
+        assert main([*root, "--allow", pattern]) == 0
+        payload = json.loads(capsys.readouterr().out)
+        assert payload["matches"] == [] and [entry["doc_id"] for entry in payload["allowed"]] == [quarantined]
+
+
 def test_check_duplicate_negative_tool_allow(fake_repo: Path) -> None:
     _corpus_with(fake_repo, _sweep_records())
     server = create_server(fake_repo, dense="off")
     claim = f"{GOPPA_SIBLING['claim']} {GOPPA_SIBLING['reason_invalid']}"
-    assert _call(server, "check_duplicate_negative", {"claim": claim})["duplicate"] is True
+    payload = _call(server, "check_duplicate_negative", {"claim": claim})
+    assert payload["duplicate"] is True
+    assert payload["total"] == 10 and len(payload["matches"]) == 5  # the closest five; total counts them all
     payload = _call(server, "check_duplicate_negative", {"claim": claim, "allow": ["NEG-GOPPA-SCALE-M6-T3-N48-0-*"]})
     assert payload["duplicate"] is False and len(payload["allowed"]) == 10
     assert "error" in _call(server, "check_duplicate_negative", {"claim": claim, "allow": ["*"]})

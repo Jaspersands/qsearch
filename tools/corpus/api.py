@@ -23,7 +23,7 @@ from tools.corpus.ranking import (
     snippet,
     top_rows,
 )
-from tools.corpus.sources import discover, parse_source
+from tools.corpus.sources import GLOBS, _parser_for, discover, parse_source
 from tools.corpus.store import Store
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -52,15 +52,27 @@ class CorpusRootError(ValueError):
 def checkout_root(root: Path | None = None) -> Path:
     """`root` (default: QSEARCH_ROOT or this repository), resolved, once it is known to be a checkout.
 
-    Raises CorpusRootError before anything is written when the path is not a directory or
-    has no research/ directory, so a mistyped --root never leaves an index tree behind.
+    Raises CorpusRootError before anything is written when the path is not a directory, has
+    no research/ directory or holds no file the corpus indexes, so a mistyped --root never
+    leaves an index tree behind and the MCP server does not start on it.
     """
     path = Path(root).resolve() if root else default_root()
     if not path.is_dir():
         raise CorpusRootError(f"{path} is not a directory")
     if not (path / "research").is_dir():
         raise CorpusRootError(f"{path} is not a Q-Search checkout: it has no research/ directory")
+    if not _has_sources(path):
+        raise CorpusRootError(f"nothing to index under {path}: no registry, note, code or literature file")
     return path
+
+
+def _has_sources(root: Path) -> bool:
+    """Whether `root` holds a file `discover` would return; stops at the first, so it costs far less."""
+    for pattern in GLOBS:
+        for path in root.glob(pattern):
+            if path.is_file() and _parser_for(path.relative_to(root).as_posix()) is not None:
+                return True
+    return False
 
 
 @dataclass
@@ -387,18 +399,22 @@ class Corpus:
 
         Exhaustive: each document of those kinds is scored, unlike `search`, whose rank fusion
         can leave a close document out of its top k. A hit's `score` is the cosine rounded to
-        four places; ties are ordered by doc id. Doc ids in `exclude` are left out.
+        four places, and that rounded score is what is compared with `minimum`, so a float32
+        cosine of 0.9999997, shown as 1.0, matches a minimum of 1. Ties are ordered by doc id.
+        Doc ids in `exclude` are left out.
         """
         state = self._state()
         scores = state.scores(text)
-        keep = np.flatnonzero(np.isin(self._row_kinds(), list(kinds)) & (scores >= minimum))
+        near = np.flatnonzero(np.isin(self._row_kinds(), list(kinds)) & (scores >= minimum - 1e-4))
+        rounded = {int(i): round(float(scores[i]), 4) for i in near}
+        keep = [i for i, score in rounded.items() if score >= minimum]
         rows = self.store.rows(int(state.rowids[i]) for i in keep)
         hits: list[Hit] = []
         for i in keep:
             doc = rows.get(int(state.rowids[i]))
             if doc is None or doc.doc_id in exclude:
                 continue
-            score = round(float(scores[i]), 4)
+            score = rounded[i]
             hits.append(Hit(doc.doc_id, doc.kind, doc.path, doc.line, doc.title, score, snippet(doc.text, text), doc.meta))
         hits.sort(key=lambda hit: (-hit.score, hit.doc_id))
         return hits

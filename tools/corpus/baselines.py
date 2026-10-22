@@ -25,6 +25,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from tools.corpus.api import Corpus, Hit
+from tools.corpus.ranking import query_terms
 
 NEARBY = 10  # note sections and negatives searched for citations; each citing note or negative adds 1 / NEARBY
 CATALOG = Path(__file__).with_name("baselines.json")
@@ -113,6 +114,15 @@ def validate_catalog(entries: list[dict]) -> list[str]:
             problems.extend(f"{label}: {problem}" for m in mechanisms if (problem := _keyword_problem(m)))
         if isinstance(entry.get("aliases"), list) and not all(isinstance(a, str) and a.strip() for a in entry["aliases"]):
             problems.append(f"{label}: aliases must be non-empty strings")
+        names = [("name", entry.get("name"))] + [
+            ("alias", a) for a in (entry["aliases"] if isinstance(entry.get("aliases"), list) else ())
+        ]
+        problems.extend(
+            f"{label}: {field} {json.dumps(value, ensure_ascii=False)} has no word to match, "
+            "so it would cite almost every note"
+            for field, value in names
+            if isinstance(value, str) and value.strip() and not query_terms(_fold(value))
+        )
         for ref in entry.get("references") if isinstance(entry.get("references"), list) else ():
             if not _reference_ok(ref):
                 problems.append(f"{label}: malformed reference {json.dumps(ref)}")
@@ -136,10 +146,19 @@ class Recommendation:
     evidence: list[Hit]
 
 
+# Plurals of "-sis" words, which the rules below would not undo ("bases" would be "base").
+_IRREGULAR = {"bases": "basis", "analyses": "analysis", "hypotheses": "hypothesis", "syntheses": "synthesis"}
+
+
 def _singular(word: str) -> str:
-    """'glasses' -> 'glass', 'codes' -> 'code', 'gibbs' -> 'gibb'; 'glass' and words of three letters stay."""
-    if word.endswith("sses"):
-        return word[:-2]
+    """'glasses' -> 'glass', 'parities' -> 'parity', 'bases' -> 'basis', 'codes' -> 'code',
+    'gibbs' -> 'gibb'; 'glass', 'basis' and words of three letters stay."""
+    if word in _IRREGULAR:
+        return _IRREGULAR[word]
+    if word.endswith(("sses", "sis")):
+        return word[:-2] if word.endswith("sses") else word
+    if len(word) > 4 and word.endswith("ies"):
+        return word[:-3] + "y"
     if len(word) > 3 and word.endswith("s") and not word.endswith("ss"):
         return word[:-1]
     return word
@@ -148,25 +167,35 @@ def _singular(word: str) -> str:
 # German umlauts as their usual transcription, so "Gröbner" is "Groebner"; other accents are dropped.
 _UMLAUTS = str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"})
 # One spelling per word on both sides of a match: British spellings, accent-free "Grobner",
-# and the run-together "MaxCut".
+# the run-together "MaxCut", and the abbreviations the repository's notes use for problems
+# that catalog keywords spell out ("OPI" is "optimal polynomial intersection").
 _SPELLINGS = {
     "colouring": "coloring",
     "colour": "color",
     "coloured": "colored",
     "grobner": "groebner",
     "maxcut": "max cut",
+    "opi": "optimal polynomial intersection",
+    "mq": "multivariate quadratic",
+    "lpn": "learning parity with noise",
+    "cvp": "closest vector",
+    "usd": "unambiguous state discrimination",
 }
+# Each variant's replacement as tokens, made singular like every other word ("unambiguou").
+_SPELLING_TOKENS = {word: [_singular(part) for part in spelling.split()] for word, spelling in _SPELLINGS.items()}
 # In a keyword, `k` stands for a number: "max k cut" matches "max-3-cut", "Max-q-Cut" and "max-k-cut".
 PLACEHOLDER = "k"
 
 
 def tokens(text: str) -> list[str]:
-    """Lowercase alphanumeric words, singular: "sses" becomes "ss", and a final single "s" is
-    dropped from words longer than three letters. Umlauts become ae/oe/ue and other accents
-    are dropped ("Gröbner" is `groebner`), and a few spelling variants are folded into one
-    (`_SPELLINGS`: "colouring" is `coloring`, "MaxCut" is `max cut`)."""
+    """Lowercase alphanumeric words, singular: "sses" becomes "ss", "ies" becomes "y" in words
+    longer than four letters, "bases" is `basis` and a "-sis" word keeps its s, and otherwise a
+    final single "s" is dropped from words longer than three letters. Umlauts become ae/oe/ue
+    and other accents are dropped ("Gröbner" is `groebner`), and a few spelling variants and
+    abbreviations are folded into one (`_SPELLINGS`: "colouring" is `coloring`, "MaxCut" is
+    `max cut`, "OPI" is `optimal polynomial intersection`)."""
     words = [_singular(w) for w in re.findall(r"[a-z0-9]+", _fold(text))]
-    return [part for word in words for part in _SPELLINGS.get(word, word).split()]
+    return [part for word in words for part in _SPELLING_TOKENS.get(word, [word])]
 
 
 def _fold(text: str) -> str:
@@ -182,11 +211,13 @@ def _number_like(word: str) -> bool:
 def keyword_matches(keyword: list[str], idea: list[str]) -> bool:
     """Whether a keyword's tokens occur in an idea's tokens.
 
-    In any order, unless the keyword has the `k` placeholder: then its tokens must occur in a
-    row, with a number, k or q in the placeholder's place ("max k cut" matches "max-3-cut"
-    but not "max cut at depth 3").
+    In any order, unless the keyword has a word of one letter or digit (the `k` placeholder
+    among them): then its tokens must occur in a row, so "p spin" matches "p-spin" but not
+    "depth p on a spin chain" and "3-sat" matches "3-SAT" but not "SAT for 3 colourings". The
+    placeholder takes a number, k or q in its place ("max k cut" matches "max-3-cut" but not
+    "max cut at depth 3").
     """
-    if PLACEHOLDER not in keyword:
+    if not any(len(token) == 1 for token in keyword):
         return set(keyword) <= set(idea)
     width = len(keyword)
 
@@ -235,7 +266,9 @@ def _citing(hits: list[Hit], named: dict[str, set[int]], index: int) -> list[Hit
 def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None = None) -> list[Recommendation]:
     """Catalog baselines for an idea, best first: keyword overlap plus nearby notes that name them.
 
-    A keyword matches when every one of its tokens occurs among the idea's tokens. The ten
+    A keyword matches when its tokens occur among the idea's tokens (`keyword_matches`): in
+    any order, or in a row when the keyword has a word of one character, such as the `k`
+    placeholder that stands for a number ("max k cut") or the p of "p spin". The ten
     note sections and negatives the corpus ranks nearest the idea are read in full; each note
     or negative among them that names a baseline adds 0.1 to its score (a note once, however
     many of its sections are near) and its nearest hit is returned as evidence. Baselines
