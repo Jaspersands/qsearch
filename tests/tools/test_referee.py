@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import textwrap
 from pathlib import Path
 
@@ -1127,3 +1128,165 @@ def test_import_replaces_the_store_in_one_step(tmp_path: Path, monkeypatch) -> N
         R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "b.jsonl", [_row(tmp_path, overall="sound", claims=[])])], "second")
     assert store.read_bytes() == before
     assert sorted(path.name for path in store.parent.iterdir()) == ["reviews.json"]
+
+
+# ---------- the committed reviews (research/audits/reviews) ----------
+
+REPO = Path(__file__).resolve().parents[2]
+REVIEWS_DIR = REPO / "research" / "audits" / "reviews"
+STORED = REVIEWS_DIR / "reviews.json"
+README = REPO / "tools" / "referee" / "README.md"
+needs_reviews = pytest.mark.skipif(not STORED.exists(), reason="the committed reviews are not in this checkout")
+
+# The judge files each stored judge name was imported from; a later import of a note replaces it.
+REVIEW_SOURCES = {
+    "claude-opus-5.5-two-judges-reconciled-2026-10-21": "pass1/out/batch_*.jsonl",
+    "claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d": "calibration_r2/out_d/batch_*.jsonl",
+    "audit-correction-2026-10-22": "corrections/2026-10-22.jsonl",
+}
+# The calibration judges' output, by the letters tools/referee/README.md uses for them.
+CALIBRATION_JUDGES = {
+    "A": "calibration/out", "B": "calibration/out_repeat_b", "C": "calibration/out_repeat_c",
+    "D": "calibration_r2/out_d", "E": "calibration_r2/out_e",
+}
+
+
+def _stored() -> dict:
+    return json.loads(STORED.read_text(encoding="utf-8"))["notes"]
+
+
+def _judge_rows(pattern: str) -> dict[str, dict]:
+    rows = {}
+    for path in sorted(REVIEWS_DIR.glob(pattern)):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                row = json.loads(line)
+                rows[row["stem"]] = row
+    return rows
+
+
+def _stored_claim(stem: str, quote_start: str) -> dict:
+    found = [c for c in _stored()[stem]["claims"] if " ".join(c["quote"].split()).startswith(quote_start)]
+    assert len(found) == 1, f"{stem}: {len(found)} claims quote {quote_start!r}"
+    return found[0]
+
+
+def _readme_section(heading: str) -> str:
+    """From `heading` to the next heading of the same or a higher level."""
+    text = README.read_text(encoding="utf-8")
+    start = text.index(heading)
+    level = len(heading.split(" ")[0])
+    ends = [at for n in range(1, level + 1) if (at := text.find("\n" + "#" * n + " ", start + len(heading))) >= 0]
+    return text[start:min(ends)] if ends else text[start:]
+
+
+@needs_reviews
+def test_stored_reviews_are_their_judge_rows_whole() -> None:
+    """Import cuts a finding at 600 characters without a mark, so a longer one loses its end."""
+    checked = 0
+    for stem, entry in _stored().items():
+        pattern = REVIEW_SOURCES.get(entry["judge"])
+        if pattern is None:
+            continue
+        row = _judge_rows(pattern).get(stem)
+        assert row is not None, f"{stem}: no row in {pattern}"
+        assert (entry["overall"], entry["summary"]) == (row["overall"], row["summary"]), stem
+        stored = [(c["verdict"], c["step"], c["finding"], c["covered_by_self_check"]) for c in entry["claims"]]
+        given = [(c["verdict"], c["step"], c["finding"], bool(c.get("covered_by_self_check"))) for c in row["claims"]]
+        assert stored == given, stem
+        checked += 1
+    assert checked >= 30
+
+
+@needs_reviews
+def test_interval_soft_decoder_decision_cut_needs_no_window_qualifier() -> None:
+    """Every quantum guarantee the note cites needs d<L at constant L, where the DP is polynomial."""
+    claim = _stored_claim("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation")
+    assert claim["verdict"] == "holds"
+    assert _stored()["INTERVAL_SOFT_DECODER"]["overall"] == "sound"
+    for page in ("research/audits/REFEREE_QUEUE.md", "research/audits/AGENT_BRIEF.md"):
+        assert "INTERVAL_SOFT_DECODER" not in (REPO / page).read_text(encoding="utf-8"), page
+
+
+@needs_reviews
+def test_polar_source_design_leads_with_its_family_gap_and_quotes_only_the_note() -> None:
+    entry = _stored()["POLAR_SOURCE_DESIGN"]
+    assert "for the stated half-rate family" in " ".join(R.worst_claim(entry)["quote"].split())
+    assert _stored_claim("POLAR_SOURCE_DESIGN", "Largest set certified at average TV")["verdict"] == "gap"
+    note = " ".join((REPO / "research" / "POLAR_SOURCE_DESIGN.md").read_text(encoding="utf-8").lower().split())
+    for claim in entry["claims"]:
+        for phrase in re.findall(r"'([^']+)'", claim["finding"]):
+            assert " ".join(phrase.lower().split()) in note, phrase
+
+
+@needs_reviews
+def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
+    """Judge E's finding, checked as real in the README's round two: K39 global inputs score 108 and 110 of 127."""
+    claim = _stored_claim("PRIME_CHARACTER_NORM_ATTACK", "solved common cosets classically but left mixed")
+    assert claim["verdict"] == "gap"
+    assert "K39" in claim["finding"] and "108/127" in claim["finding"] and "110/127" in claim["finding"]
+
+
+@needs_reviews
+@pytest.mark.parametrize("stem, quote_start, verdict, wrong, right", [
+    ("PRIME_CHARACTER_INTERLEAVED_PROBE", "The joint product correlation is enhanced", "gap",
+     "cannot hold for those reported cases", "do not contradict"),
+    ("FOLDED_NORM_SOURCE", "Exact countercontrol p5,n2,m2,K3,ell1", "holds",
+     "gives 8/57 and 24/73", "M*eps/(1-eps+M*eps)"),
+    ("CONJUGATE_CHIRP_REPAIR", "EXPECTED satisfied-fraction advantage", "holds",
+     "six native controls", "three diagonal native controls"),
+    ("CONJUGATE_CHIRP_REPAIR", "EXPECTED satisfied-fraction advantage", "holds",
+     "1/sqrt(p) classical term", "sqrt((p-1)rho(1-rho))p^(-n/2)"),
+    ("EXPLICIT_QUADRATIC_OPI", "The high-rate quadratic family has a constructive", "gap",
+     "can be trivial", "about 0.59"),
+])
+def test_corrected_findings_state_the_note_and_artifact_correctly(stem, quote_start, verdict, wrong, right) -> None:
+    claim = _stored_claim(stem, quote_start)
+    assert claim["verdict"] == verdict
+    assert wrong not in claim["finding"] and right in claim["finding"]
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration").is_dir(), reason="the calibration runs are not in this checkout")
+def test_readme_credits_round_one_findings_only_to_judges_whose_reviews_raise_them() -> None:
+    section = _readme_section("### Findings the review history does not contain")
+    rows = [[cell.strip() for cell in line.strip().strip("|").split("|")]
+            for line in section.splitlines() if line.startswith("| ") and not line.startswith(("| Note", "| ---"))]
+    evidence = {"does not resolve": ("PRIME_CHARACTER_OPI", "prime_character_opi.json"),
+                "1038/1080": ("PRIME_CHARACTER_NORM_ATTACK", "1038")}
+    checked = 0
+    for _note, judges, finding, _check in rows:
+        for phrase, (stem, needle) in evidence.items():
+            if phrase not in finding:
+                continue
+            checked += 1
+            for letter in re.findall(r"\b[A-E]\b", judges.split("(")[0]):
+                row = _judge_rows(CALIBRATION_JUDGES[letter] + "/batch_01.jsonl")[stem]
+                assert needle in json.dumps(row), f"judge {letter} is credited with {phrase!r} but never says it"
+    assert checked == 2
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration_r2").is_dir(), reason="the round-two runs are not in this checkout")
+def test_readme_round_two_accounts_for_judge_e_gaps_as_e_wrote_them() -> None:
+    section = _readme_section("### Round two")
+    gaps = [c for row in _judge_rows("calibration_r2/out_e/batch_01.jsonl").values() for c in row["claims"] if c["verdict"] == "gap"]
+    assert len(gaps) == 8 and not any(c["finding"].startswith(("The sixth", "Unnamed")) for c in gaps)
+    assert "unnamed fully solved configuration (E)" not in section and "three low-value gaps" not in section
+    assert "now constructive" in section
+
+
+def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> None:
+    """NATIVE_RLWE_SPARSE_WITNESS_AUDIT's 'add |H|' was confirmed and dropped, not left unconfirmed."""
+    section = _readme_section("## First pass")
+    assert "add |H|" in section and "judged not to affect" in section
+
+
+@needs_reviews
+def test_readme_records_the_corrections_and_the_stored_first_pass_counts() -> None:
+    section = _readme_section("## First pass")
+    assert "corrections/2026-10-22.jsonl" in section and "audit-correction-2026-10-22" in section
+    stems = {p["stem"] for path in sorted((REVIEWS_DIR / "pass1").glob("batch_*.json"))
+             for p in json.loads(path.read_text(encoding="utf-8"))["notes"]}
+    counts = {o: sum(_stored()[s]["overall"] == o for s in stems) for o in ("needs-work", "sound")}
+    stated = re.search(r"stand at (\d+) needs-work and (\d+) sound", " ".join(section.split()))
+    assert len(stems) == 30 and stated
+    assert (int(stated.group(1)), int(stated.group(2))) == (counts["needs-work"], counts["sound"])

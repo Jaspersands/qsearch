@@ -1,10 +1,10 @@
 # Referee review: PRIME_CHARACTER_NORM_ATTACK
 
-Note: `research/PRIME_CHARACTER_NORM_ATTACK.md`. Reviewed 2026-10-22 by claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_NORM_ATTACK.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
-The norm criterion, the K>max(|A|,D) budget, the Cayley strict-root rotation, the rho=1 all-parameter counterexample and the IID-shift first-trial bound all check out. I recomputed D0=(0,4,14,16) with roots 0,9,16, and confirmed that Q=13 is strict-perfect with nu=5 a nonsquare. The artifact matches the executed claims: perfect 127/127 in 1 and 15 trials, degrees 69 and 64, sufficient dimensions 70 and 65, and K39 not applicable. The research-decision summary of what the previous experiment left open omits the N31,K16 mixed seed71 source (30/31) and the r=3/r=4 mixed controls. The norm budget can never hold at N31,K16, so 'does not apply to the saved K39 inputs' is not the full list of inapplicable saved inputs.
+The norm criterion, the K>max(|A|,D) budget, the Cayley strict-root rotation, the rho=1 all-parameter counterexample and the IID-shift first-trial bound all check out. I recomputed D0=(0,4,14,16) with roots 0,9,16, and confirmed that Q=13 is strict-perfect with nu=5 a nonsquare. The artifact matches the executed claims: perfect 127/127 in 1 and 15 trials, degrees 69 and 64, sufficient dimensions 70 and 65, and K39 not applicable. The research-decision summary of what the previous experiment left open omits the N31,K16 mixed seed71 source (30/31) and the r=3/r=4 mixed controls, and its 'solved common cosets' passes over the N127,K39 global inputs at 108/127 and 110/127. The norm budget can never hold at N31,K16, so 'does not apply to the saved K39 inputs' is not the full list of inapplicable saved inputs.
 
 ## Claims
 
@@ -50,8 +50,8 @@ The norm criterion, the K>max(|A|,D) budget, the Cayley strict-root rotation, th
 
 ### 6. gap
 
-> but left mixed high-rate controls at124/127 and122/127
+> solved common cosets classically but left mixed high-rate controls at124/127 and122/127
 
 - Step: Research Decision
-- Finding: The previous experiment's artifact also leaves N31,K16 mixed seed71 at 30/31 (r=2, rate 16/31>1/2) and the r=3/r=4 mixed controls below perfect. The norm attack was not run on N31, and its budget K>max(|A|,D) cannot hold there: |A|+|B|=31 forces max(|A|,D)>=16=K. Neither this summary nor 'It does not apply to the saved K39 inputs' reports that case.
+- Finding: The previous experiment's artifact also leaves N31,K16 mixed seed71 at 30/31 (r=2, rate 16/31>1/2) and the r=3/r=4 mixed controls below perfect. The norm attack was not run on N31, and its budget K>max(|A|,D) cannot hold there: |A|+|B|=31 forces max(|A|,D)>=16=K. Neither this summary nor 'It does not apply to the saved K39 inputs' reports that case. 'Solved common cosets' also overstates it: they were solved only when K>=(r-1)ceil(N/r), and the N127,K39 global inputs score 108/127 and 110/127 (judge E).
 - Conceded by the note's own self-check: no

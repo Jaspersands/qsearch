@@ -1,6 +1,6 @@
 # Referee review: EXPLICIT_QUADRATIC_OPI
 
-Note: `research/EXPLICIT_QUADRATIC_OPI.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/EXPLICIT_QUADRATIC_OPI.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -13,7 +13,7 @@ Both judges confirmed the balanced-predicate score formula, the accepted-flat de
 > The high-rate quadratic family has a constructive classical explanation, not a remaining quantum-advantage candidate
 
 - Step: Revised Research Direction
-- Finding: The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be trivial: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76. Rank also requires Nc<=Kt. Only the N127,K90 and the two N31,K19 inputs are certified perfect. The headline keeps none of these conditions.
+- Finding: The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be weak: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76, about 0.59. Rank also requires Nc<=Kt. Only the N127,K90 and the two N31,K19 inputs are certified perfect. The headline keeps none of these conditions.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

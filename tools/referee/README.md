@@ -188,8 +188,8 @@ Of the four findings that matter most for this calibration, two turned out to be
 | NORM_ATTACK | A (B and C disagree) | The "at least 1/(2N)" corollary fails at N=1. | **Doubtful.** N=1 with D=2 needs K≥3>N, which is outside an RS code of length N. With K≤N the bound holds. At most the note should state K≤N. |
 | POLAR_SOURCE_DESIGN | B | One certified length (N32768) is called a half-rate "family". | **Real, in wording.** Every coarse half-rate design from N16 to N4096 fails, and the premise needs ε_F→0. The preprint keeps "For this polar family …" (main.tex line 239). |
 | POLAR_SOURCE_DESIGN | A | The N1024, 361-constraint Gibbs sample exists only in the tests. | **Real, provenance only.** The artifact's N1024 row has no samples. `tests/test_polar_source_design.py:151-160` runs the sample. |
-| OPI | A, B, C | The artifact path `classical_baselines/prime_character_opi.json` does not resolve. | **The path problem is real; C's "not in the repository" is wrong.** The file is under `research/`, and the numbers C marked unclear match it. |
-| NORM_ATTACK | B | The artifact stores seeds 1038/1080, not 29/71. | **Real, trivial.** The producer uses seed+1009. |
+| OPI | C | The artifact path `classical_baselines/prime_character_opi.json` does not resolve. | **The path problem is real; C's "not in the repository" is wrong.** The file is under `research/`, and the numbers C marked unclear match it. A and B checked numbers against the artifact and did not mention the path. |
+| NORM_ATTACK | none | The artifact stores seeds 1038/1080, not 29/71. | **Real, trivial.** Found while checking the judges' numbers; no judge raised it (B and C quote "seeds29/71" without remark). The producer uses seed+1009. |
 
 ### What the referee missed
 
@@ -206,7 +206,7 @@ Of the four findings that matter most for this calibration, two turned out to be
 ### What this says about using the referee
 
 - It works as an independent check of derivations and numbers. All three runs found the same real OPI defect, re-derived every load-bearing argument, and matched every number they checked.
-- A finding raised by only one run is a lead, not a verdict. Of the two such findings here, one is real and one is doubtful. Use at least two runs, and verify any finding raised by only one.
+- A finding raised by only one run is a lead, not a verdict. Of the two such findings that split the overall verdicts, one is real and one is doubtful. Use at least two runs, and verify any finding raised by only one.
 - It reviews notes in isolation. It cannot catch what a preprint adds at drafting, and 19 of the 21 mapped review items were of that kind. It is no substitute for a check of the preprint against its notes.
 - It judges whether each quoted claim follows. It does not check what a note leaves out of its summaries, or whether a headline sentence keeps the note's own conditions, and it missed both note-level findings for those reasons. The packet builder should fix the defects above before the next run.
 
@@ -225,10 +225,11 @@ Round two changed two things in `INSTRUCTIONS.md`. The packet gained an `artifac
 - Both judges found both review-history findings that round one missed. They also kept every real round-one finding and dropped A's N=1 false positive, which they correctly rated holds.
 - New, checked as real: neither OPI's open-case list nor NORM_ATTACK's decision mentions the unsolved r=3 N63,K46 (55, 56/63) and r=4 N32,K24 (28, 27/32) mixed inputs, and OPI never reports their scores. NORM_ATTACK also says common cosets were "solved", but the K39 global inputs score 108/127 and 110/127.
 - With `artifact_path`, both judges checked the OPI repair totals, which C could not find in round one.
-- The new checks also produced three low-value gaps: a table without the N16 row (D), the NORM_ATTACK title (E), and an unnamed fully solved configuration (E). Treat a scope gap with no effect on a conclusion as minor.
+- The new checks also produced two low-value gaps: a table without the N16 row (D) and the NORM_ATTACK title (E). E's OPI open-case gap also remarks, in its last sentence, that the fully solved p=65537, N16, K8 configuration is never named. Treat a scope gap with no effect on a conclusion as minor.
+- E also flagged POLAR_SOURCE_DESIGN's research decision ("the matching classical route is now constructive"). Checked: its review-pending part is real and is the polar-headline finding again, in the decision sentence. Its other point, that the m_i/root-fidelity identity is checked numerically only at N2/N4, is low-value: the note cites that identity as known duality (Renes) and claims no new theorem.
 - Both judges rated all four notes needs-work. This batch has no correctly scoped note, so whether the new checks over-flag clean notes is still untested. The next calibration should include one.
 
-The four calibration notes' stored reviews are round-two judge D's.
+The four calibration notes' stored reviews are round-two judge D's, two of them corrected on 2026-10-22 (see Corrections under First pass). NORM_ATTACK's decision gap now also carries E's K39-global overstatement, which D missed; D's other reviews already hold E's real findings. POLAR_SOURCE_DESIGN's N16-row gap no longer quotes "all coarse controls", which the note does not say, and is listed after the family and headline gaps, so the queue and the brief show the family gap as its worst claim.
 
 ## First pass (2026-10-21)
 
@@ -236,8 +237,11 @@ The four calibration notes' stored reviews are round-two judge D's.
 notes, made with the revised instructions. Each batch of five went to two independent
 judges (`out_a/`, `out_b/`). A third agent then checked, against the note, its artifact and
 small recomputations, every claim either judge marked gap, wrong or unclear and every claim
-on which they disagreed. It dropped what it could not confirm and wrote the stored review
-(`out/`).
+on which they disagreed. It dropped what it could not confirm or judged not to affect the
+claim, and wrote the stored review (`out/`). One dropped item was a confirmed slip:
+NATIVE_RLWE_SPARSE_WITNESS_AUDIT says "add |H| to the 2*beta term", which read literally
+makes bound (2) vacuous; the reconciler dropped judge A's gap because the note's worked
+catalogue charges the multiplicative factor (4e-8 for |H|=2), and says so in the review.
 
 | Overall | Notes |
 |---|---|
@@ -253,3 +257,32 @@ body states (review pending, the sizes actually certified, the inputs where the 
 fails). Read those as wording fixes unless the finding says a conclusion changes. No claim
 was found wrong, so the plan's hand spot-check of two unsound claims had nothing to check;
 the reconciling agent's per-claim checks took its place.
+
+### Corrections (2026-10-22)
+
+An audit of the stored reviews corrected ten of them. Each corrected row is a copy of the
+note's stored judge row (`pass1/out/` or `calibration_r2/out_d/`) with only the audited
+claims, and where needed the overall and summary, changed; quotes are unchanged except
+NORM_ATTACK's, which is lengthened to E's verbatim quote of the same sentence. The rows are
+in `research/audits/reviews/corrections/2026-10-22.jsonl`, imported with
+`--judge audit-correction-2026-10-22`, so for these notes the stored review is that file's
+row, not `out/`'s.
+
+- INTERVAL_SOFT_DECODER: the decision-sentence gap (A's, confirmed by the reconciler) is
+  now holds, and the note is sound. Every quantum guarantee the note cites (d/p<C<=L/p,
+  rate+density>1) needs d<L at constant L, where the DP is polynomial, so the cut of
+  separation claims at constant width needs no window qualifier.
+- COHERENT_BPQM_ERASURE, NATIVE_RLWE_SPARSE_WITNESS_AUDIT and
+  NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions never mention the
+  600-character cap on findings, and import cut these three gap findings mid-sentence
+  without a mark. They are shortened to fit and keep their conclusions.
+- Wrong sentences in four findings, verdicts unchanged: PRIME_CHARACTER_INTERLEAVED_PROBE
+  read the p7 individual mean (.553571, 1/56 below 4/7, as the producer predicts) as
+  contradicting near-uniformity; FOLDED_NORM_SOURCE credited 24/73 to the collision formula
+  (it is M*eps/(1-eps+M*eps), M=3); CONJUGATE_CHIRP_REPAIR said six native controls carry
+  the washout bound (three diagonal ones do) and called the classical term 1/sqrt(p) (it is
+  sqrt((p-1)rho(1-rho))p^(-n/2)); EXPLICIT_QUADRATIC_OPI called a bound of about 0.59
+  trivial.
+- POLAR_SOURCE_DESIGN and PRIME_CHARACTER_NORM_ATTACK: see the end of Calibration.
+
+After the corrections the 30 first-pass notes stand at 24 needs-work and 6 sound.

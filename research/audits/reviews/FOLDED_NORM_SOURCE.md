@@ -1,6 +1,6 @@
 # Referee review: FOLDED_NORM_SOURCE
 
-Note: `research/FOLDED_NORM_SOURCE.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/FOLDED_NORM_SOURCE.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -29,7 +29,7 @@ Both judges agree on the two gaps, and I confirmed each. The title says 'Matched
 > Exact countercontrol p5,n2,m2,K3,ell1: each support has24 nonzero errors
 
 - Step: Correct Whole-Ball Collision Bound
-- Finding: Q-1=24, and only j=r=1 is admissible, giving (5-1)/24=1/6. The same formula gives 8/57 and 24/73 at p7, matching physical_controls (both judges recomputed this).
+- Finding: Q-1=24, and only j=r=1 is admissible, giving (5-1)/24=1/6. At p7 the same formula gives 8/57 (48/342), and the squared pure-distance bound M*eps/(1-eps+M*eps) with M=3, eps=8/57 gives 24/73; both match physical_controls. Both judges checked the collision bound.
 - Conceded by the note's own self-check: no
 
 ### 4. holds
