@@ -160,7 +160,7 @@ def _validate(c: Candidate) -> None:
     if c.c is not None and not 1 <= c.c <= b:
         raise ValueError(f"c = {c.c} must lie in [1, b = {b}] ({field}): c is the F_p-codimension of an affine "
                          "subspace inside an accepted set")
-    if c.c is not None and p ** -c.c > c.rho * (1 + 1e-9):
+    if c.c is not None and c.c * math.log(p) < math.log(1 / c.rho) - 1e-9:  # p^-c > rho, in logs (p may be huge)
         raise ValueError(f"c = {c.c} is below log_p(1/rho) = {math.log(1 / c.rho, p):.4g} ({field}): a set of density "
                          f"rho = {c.rho} cannot contain a coset of codimension c, which holds p^(b-c) > rho p^b elements")
 
@@ -440,10 +440,10 @@ def _verdict(checks: list[Check]) -> tuple[str, list[str]]:
 
 
 def screen(c: Candidate) -> Screen:
-    """The quantities, checks and verdict; ValueError on bad input, including integers too large
-    for the floating-point formulas (so a caller never mistakes them for a verdict)."""
-    _validate(c)
+    """The quantities, checks and verdict; ValueError on bad input, including numbers too large or
+    too small for the floating-point formulas (so a caller never mistakes them for a verdict)."""
     try:
+        _validate(c)
         qn = _quantities(c)
         checks = [
             _check_r1(c, qn),
@@ -456,8 +456,8 @@ def screen(c: Candidate) -> Screen:
             _check_witness(c, qn),
             _check_restarts(c, qn),
         ]
-    except OverflowError as exc:
-        raise ValueError(f"inputs too large to screen in floating point ({exc})") from None
+    except ArithmeticError as exc:  # OverflowError, ZeroDivisionError
+        raise ValueError(f"inputs too large or too small to screen in floating point ({exc})") from None
     verdict, reasons = _verdict(checks)
     return Screen(c, qn, checks, verdict, reasons)
 
@@ -534,7 +534,7 @@ def main(argv: list[str] | None = None) -> int:
                      if getattr(args, key) is True or (key not in _BOOLS and getattr(args, key) is not None)})
         data.setdefault("name", "candidate")
         result = screen(candidate_from_dict(data))
-    except (OSError, TypeError, ValueError) as exc:
+    except (OSError, TypeError, ValueError, RecursionError) as exc:  # RecursionError: JSON nested too deeply
         print(f"error: {exc}", file=sys.stderr)
         return 2
     text = json.dumps(asdict(result), indent=1) + "\n" if args.json else render(result)

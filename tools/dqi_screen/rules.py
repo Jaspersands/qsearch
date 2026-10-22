@@ -283,11 +283,15 @@ def lambda_crit_cos(alpha: float) -> float | None:
 def restart_length(alpha: float, mu: float, R: float, N: float = 2**40, eta: float = 0.05) -> float | None:
     """Theorem 10: the instance length m needed before N Prange restarts (objective range R:
     1 count, 2 cosine) fail to close DQI's margin mu, at confidence 1 - eta:
-    (1-alpha) R^2 ln(N/eta) / (2 mu^2). None when mu <= 0 (no length suffices)."""
+    (1-alpha) R^2 ln(N/eta) / (2 mu^2). None when mu <= 0 (no length suffices); OverflowError
+    when mu is so small that the length is beyond a float."""
     alpha = _unit("alpha", alpha)
     if mu <= 0:
         return None
-    return (1 - alpha) * R * R * math.log(N / eta) / (2 * mu * mu)
+    length = (1 - alpha) * R * R * math.log(N / eta) / 2 / mu / mu  # never mu * mu, which underflows to 0
+    if not math.isfinite(length):
+        raise OverflowError(f"the restart length overflows a float at margin mu = {mu:.3g}")
+    return length
 
 
 def _kl(x: float, rho: float) -> float:

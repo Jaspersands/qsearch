@@ -530,6 +530,52 @@ def test_huge_inputs_are_bad_input_not_a_verdict(capsys, tmp_path) -> None:
         assert capsys.readouterr().err.startswith("error: ")
 
 
+def _mcp_screen(root: Path, params: dict) -> dict:
+    import anyio
+
+    from tools.corpus.mcp_server import create_server
+
+    server = create_server(root, dense="off")
+
+    async def go():
+        return await server.call_tool("screen_dqi_candidate", {"params": params})
+
+    result = anyio.run(go)
+    if isinstance(result, tuple):  # FastMCP: (content blocks, structured result)
+        return result[1].get("result", result[1])
+    return json.loads(result[0].text)
+
+
+def test_degenerate_inputs_never_crash_into_exit_1(capsys, tmp_path, fake_repo) -> None:
+    # Exit 1 means "not viable": a traceback must never look like a verdict, nor the MCP tool raise.
+    import sympy
+
+    big = int(sympy.nextprime(10**400))
+    huge_field = {"name": "x", "objective": "count", "q": big, "m": 100, "n": 30, "rho": 0.5, "p": big, "b": 1, "c": 1}
+    s = S.screen(S.candidate_from_dict(huge_field))  # p^-c is compared in log space: no float overflow
+    assert s.verdict == "unknown" and s.checks[5].detail == "not applicable (prime field)"
+    path = tmp_path / "x.json"
+    path.write_text(json.dumps(huge_field))
+    assert S.main(["--params", str(path)]) == 0
+    assert _mcp_screen(fake_repo, huge_field)["verdict"] == "unknown"
+    capsys.readouterr()
+    cosine = {"name": "x", "objective": "cosine", "q": 8191, "m": 10**220, "n": 10, "rho": 0.5}
+    for mean in (2e-200, 1e-160):  # mu^2 underflows to 0; the restart length overflows to inf
+        data = {**cosine, "finite_dqi_mean": mean}
+        with pytest.raises(ValueError, match="floating point"):
+            S.screen(S.candidate_from_dict(data))
+        path.write_text(json.dumps(data))
+        assert S.main(["--params", str(path), "--json"]) == 2
+        captured = capsys.readouterr()
+        assert captured.err.startswith("error: ") and "Infinity" not in captured.out
+        assert "floating point" in _mcp_screen(fake_repo, data)["error"]
+    with pytest.raises(OverflowError):
+        R.restart_length(0.5, 1e-160, 2)
+    path.write_text("[" * 200000 + "]" * 200000)  # nested too deeply for the JSON decoder
+    assert S.main(["--params", str(path)]) == 2
+    assert capsys.readouterr().err.startswith("error: ")
+
+
 def test_cli_write_errors_exit_2_not_1(capsys, tmp_path) -> None:
     args = ["--params", str(EXAMPLES / "hermite_half_rate.json"), "--out"]
     blocker = tmp_path / "file"

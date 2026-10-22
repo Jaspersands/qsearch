@@ -88,7 +88,7 @@ def create_server(
         of signed {+-1} error patterns for the cosine)."""
         try:
             return asdict(screen(candidate_from_dict(params)))
-        except (TypeError, ValueError) as exc:
+        except (TypeError, ValueError, ArithmeticError, RecursionError) as exc:
             return {"error": str(exc)}
 
     @server.tool()
