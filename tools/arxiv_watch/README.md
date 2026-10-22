@@ -18,7 +18,9 @@ until a page reaches back past the window start, at most `--max-pages` pages (de
 with arXiv's three-second pause between requests. If the page cap stops a query first, the
 uncovered window is recorded under `gaps` in the JSON, printed as a warning and listed under
 "Incomplete coverage" in the digest until a run of that track that was not cut short covers
-it (`--since <start> --tracks <track>`).
+it (`--since <start> --tracks <track>`). A `--since` that is not a `YYYY-MM-DD` date, a
+`--max` or `--max-pages` below 1, or a track name not in `tracks.py` exits 2 before anything
+is fetched.
 
 The window starts seven days before each track's previous run (its `tracks_updated` entry;
 14 days back on a track's first run). arXiv's `published` date is the v1 submission date,

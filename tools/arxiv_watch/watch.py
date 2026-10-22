@@ -549,13 +549,42 @@ def replay_seeds(root: Path) -> dict:
     return {"checked": checked, "matched": matched, "misses": misses}
 
 
+def _iso_date(text: str) -> str:
+    """A YYYY-MM-DD date, compared as text with arXiv's `published` dates."""
+    try:
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
+            return dt.date.fromisoformat(text).isoformat()
+    except ValueError:
+        pass
+    raise argparse.ArgumentTypeError(f"expected a date such as 2026-09-18, not {text!r}")
+
+
+def _positive(text: str) -> int:
+    try:
+        value = int(text)
+    except ValueError:
+        value = 0
+    if value < 1:
+        raise argparse.ArgumentTypeError(f"expected a whole number of at least 1, not {text!r}")
+    return value
+
+
+def _track_names(text: str) -> list[str]:
+    """Comma-separated track names; spaces and empty names are ignored."""
+    names = [name.strip() for name in text.split(",") if name.strip()]
+    unknown = [name for name in names if name not in TRACKS]
+    if not names or unknown:
+        raise argparse.ArgumentTypeError(f"unknown track {', '.join(unknown) or text!r}; choose from {', '.join(TRACKS)}")
+    return names
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
-    parser.add_argument("--since", help=f"ISO date; default is {OVERLAP_DAYS} days before each track's last run.")
-    parser.add_argument("--tracks", help=f"Comma list from: {', '.join(TRACKS)}")
-    parser.add_argument("--max", type=int, default=PAGE_SIZE, help="Results per page of a track query.")
-    parser.add_argument("--max-pages", type=int, default=MAX_PAGES, help="Pages per track query before reporting a gap.")
+    parser.add_argument("--since", type=_iso_date, help=f"ISO date; default is {OVERLAP_DAYS} days before each track's last run.")
+    parser.add_argument("--tracks", type=_track_names, help=f"Comma list from: {', '.join(TRACKS)}")
+    parser.add_argument("--max", type=_positive, default=PAGE_SIZE, help="Results per page of a track query.")
+    parser.add_argument("--max-pages", type=_positive, default=MAX_PAGES, help="Pages per track query before reporting a gap.")
     parser.add_argument("--replay-seeds", action="store_true")
     parser.add_argument("--relabel", action="store_true", help="Recompute labels for stored papers; no fetching.")
     parser.add_argument(
@@ -623,7 +652,7 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(result, indent=2))
         print(f"\n{result['matched']}/{result['checked']} seed papers land on a track their tags name.")
         return 0
-    tracks = {name: TRACKS[name] for name in args.tracks.split(",")} if args.tracks else TRACKS
+    tracks = {name: TRACKS[name] for name in args.tracks} if args.tracks else TRACKS
     corpus = Corpus(args.root)
     corpus.refresh()
     report = run(args.root, Client(), corpus, since=args.since, tracks=tracks, page_size=args.max, max_pages=args.max_pages)

@@ -324,6 +324,31 @@ def test_each_track_window_starts_a_week_before_its_own_last_fetch(fake_repo: Pa
     assert _state(fake_repo)["tracks_updated"]["dqi_opi"] == "2026-10-26"
 
 
+@pytest.mark.parametrize(
+    "argv",
+    [["--since", "2026-9-18"], ["--since", "yesterday"], ["--since", "2026-02-30"], ["--max", "0"], ["--max", "-5"],
+     ["--max-pages", "0"], ["--max-pages", "x"], ["--tracks", ","], ["--tracks", "DCP"], ["--tracks", "dcp,numbertheory"]],
+)
+def test_bad_run_arguments_are_usage_errors(fake_repo: Path, monkeypatch, capsys, argv: list[str]) -> None:
+    from tools.arxiv_watch import watch
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("a bad argument must stop the watch before it fetches")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    with pytest.raises(SystemExit) as stop:
+        watch.main(["--root", str(fake_repo), *argv])
+    assert stop.value.code == 2 and f"argument {argv[0]}" in capsys.readouterr().err
+    assert not (fake_repo / "research" / "audits").exists()
+
+
+def test_track_list_ignores_spaces_and_empty_names() -> None:
+    from tools.arxiv_watch.watch import _track_names
+
+    assert _track_names(" dcp, dqi_opi,") == ["dcp", "dqi_opi"]
+
+
 def test_paging_goes_through_the_paced_client(fake_repo: Path) -> None:
     urls: list[str] = []
     sleeps: list[float] = []
