@@ -229,7 +229,7 @@ Round two changed two things in `INSTRUCTIONS.md`. The packet gained an `artifac
 | One certified length (N32768) called a family | no | yes | no | yes | yes |
 | NORM_ATTACK 1/(2N) fails at N=1 (false positive: the degree budget excludes N=1) | yes | no | no | no | no |
 
-- Both judges found both review-history findings that round one missed. They also kept every real round-one finding and dropped A's N=1 false positive, which they correctly rated holds.
+- Both judges found both review-history findings that round one missed. They also kept the square-coset and one-length-family findings and dropped A's N=1 false positive, which they correctly rated holds. Neither raised A's N1024 Gibbs-sample provenance point (real, provenance only), though the note they read was the same.
 - New, checked as real: neither OPI's open-case list nor NORM_ATTACK's decision mentions the unsolved r=3 N63,K46 (55, 56/63) and r=4 N32,K24 (28, 27/32) mixed inputs, and OPI never reports their scores. NORM_ATTACK also says common cosets were "solved", but the K39 global inputs score 108/127 and 110/127.
 - With `artifact_path`, both judges checked the OPI repair totals, which C could not find in round one.
 - The new checks also produced two low-value gaps: a table without the N16 row (D) and the NORM_ATTACK title (E). E's OPI open-case gap also remarks, in its last sentence, that the fully solved p=65537, N16, K8 configuration is never named. Treat a scope gap with no effect on a conclusion as minor.

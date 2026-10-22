@@ -1367,6 +1367,18 @@ def test_readme_round_two_accounts_for_judge_e_gaps_as_e_wrote_them() -> None:
     assert "now constructive" in section
 
 
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration_r2").is_dir(), reason="the round-two runs are not in this checkout")
+def test_readme_round_two_says_which_round_one_findings_d_and_e_kept() -> None:
+    """A's N1024 Gibbs-sample provenance point, graded real, is in neither D's nor E's review."""
+    section = " ".join(_readme_section("### Round two").split())
+    raised = {letter: json.dumps(_judge_rows(CALIBRATION_JUDGES[letter] + "/batch_01.jsonl")["POLAR_SOURCE_DESIGN"])
+              for letter in "ADE"}
+    assert "361-constraint Gibbs sample" in raised["A"] and "test suite" in raised["A"]
+    assert not any(needle in raised[letter] for letter in "DE" for needle in ("361-constraint", "test suite"))
+    assert "kept every real round-one finding" not in section
+    assert "Neither raised A's N1024 Gibbs-sample provenance point" in section
+
+
 def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> None:
     """NATIVE_RLWE_SPARSE_WITNESS_AUDIT's 'add |H|' was confirmed and dropped, not left unconfirmed."""
     section = _readme_section("## First pass")
