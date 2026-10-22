@@ -201,11 +201,13 @@ def _number_like(word: str) -> bool:
 def keyword_matches(keyword: list[str], idea: list[str]) -> bool:
     """Whether a keyword's tokens occur in an idea's tokens.
 
-    In any order, unless the keyword has the `k` placeholder: then its tokens must occur in a
-    row, with a number, k or q in the placeholder's place ("max k cut" matches "max-3-cut"
-    but not "max cut at depth 3").
+    In any order, unless the keyword has a word of one letter or digit (the `k` placeholder
+    among them): then its tokens must occur in a row, so "p spin" matches "p-spin" but not
+    "depth p on a spin chain" and "3-sat" matches "3-SAT" but not "SAT for 3 colourings". The
+    placeholder takes a number, k or q in its place ("max k cut" matches "max-3-cut" but not
+    "max cut at depth 3").
     """
-    if PLACEHOLDER not in keyword:
+    if not any(len(token) == 1 for token in keyword):
         return set(keyword) <= set(idea)
     width = len(keyword)
 
@@ -254,7 +256,9 @@ def _citing(hits: list[Hit], named: dict[str, set[int]], index: int) -> list[Hit
 def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None = None) -> list[Recommendation]:
     """Catalog baselines for an idea, best first: keyword overlap plus nearby notes that name them.
 
-    A keyword matches when every one of its tokens occurs among the idea's tokens. The ten
+    A keyword matches when its tokens occur among the idea's tokens (`keyword_matches`): in
+    any order, or in a row when the keyword has a word of one character, such as the `k`
+    placeholder that stands for a number ("max k cut") or the p of "p spin". The ten
     note sections and negatives the corpus ranks nearest the idea are read in full; each note
     or negative among them that names a baseline adds 0.1 to its score (a note once, however
     many of its sections are near) and its nearest hit is returned as evidence. Baselines

@@ -12,7 +12,15 @@ from tests.tools.conftest import NEGATIVES
 from tests.tools.test_corpus_mcp import _call
 from tools.corpus.api import Corpus
 from tools.corpus import baselines as baselines_module
-from tools.corpus.baselines import CatalogError, _name_pattern, load_catalog, recommend, tokens, validate_catalog
+from tools.corpus.baselines import (
+    CatalogError,
+    _name_pattern,
+    keyword_matches,
+    load_catalog,
+    recommend,
+    tokens,
+    validate_catalog,
+)
 from tools.corpus.cli import main
 from tools.corpus.mcp_server import create_server
 
@@ -214,6 +222,27 @@ def test_max_k_cut_needs_its_number_between_max_and_cut(fake_repo: Path) -> None
     assert "max k cut" not in recs.get("lp-decoding-cycle-codes", recs["sdp-relaxation"]).matched
     assert recs["sdp-relaxation"].matched == ["max cut", "qaoa"]
     assert recommend(corpus, "QAOA on MaxCut", k=20)[0].baseline["id"] == "sdp-relaxation"
+
+
+def test_a_one_letter_word_of_a_keyword_must_sit_beside_the_rest() -> None:
+    p_spin = tokens("p spin")
+    assert keyword_matches(p_spin, tokens("the quantum p-spin model"))
+    assert not keyword_matches(p_spin, tokens("QAOA at depth p on a transverse-field spin chain"))
+    assert not keyword_matches(p_spin, tokens("Fourier sampling of a spin representation of SL(2, F_p)"))
+    assert keyword_matches(tokens("3-sat"), tokens("a random 3-SAT instance"))
+    assert not keyword_matches(tokens("3-sat"), tokens("a SAT solver for 3 colourings"))
+    assert keyword_matches(tokens("spin glass"), tokens("glass of spin"))  # longer words: any order
+
+
+@pytest.mark.parametrize(
+    "idea", ["QAOA at depth p on a transverse-field spin chain", "Fourier sampling of a spin representation of SL(2, F_p)"]
+)
+def test_a_stray_p_and_spin_do_not_match_p_spin(fake_repo: Path, idea: str) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, idea, k=20)}
+    assert "stochastic-localization-pspin" not in recs
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, "Gibbs sampling of the quantum p-spin model", k=20)}
+    assert recs["stochastic-localization-pspin"].matched == ["gibbs sampling", "p spin"]
 
 
 def test_british_and_accented_spellings_match_their_keywords(fake_repo: Path) -> None:

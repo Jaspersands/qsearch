@@ -350,7 +350,8 @@ polynomial intersection`). A mechanism
 keyword matches when every one of its tokens is among the idea's tokens, in any order. A `k`
 in a keyword stands for a number: such a keyword must occur in a row with a number, `k` or
 `q` in that place, so `max k cut` matches "max-3-cut" and "Max-q-Cut" but not "max cut at
-depth 3". The ten
+depth 3". Any other keyword with a word of one letter or digit must occur in a row too, so
+`p spin` matches "p-spin" but not "QAOA at depth p on a spin chain". The ten
 note sections and negatives that `search` ranks nearest the idea are read in full; one cites a
 baseline when the baseline's name or an alias occurs in its title or text, case-insensitively
 and on word boundaries. A mention inside a longer name of another baseline counts only for
