@@ -404,7 +404,21 @@ def _dated_note(root: Path, stem: str, status_line: str, mtime: int) -> Path:
     return path
 
 
-def test_select_notes_orders_by_status_date_then_mtime_and_skips_current_reviews(tmp_path: Path) -> None:
+def test_select_notes_breaks_date_ties_by_stem_whatever_the_mtimes(tmp_path: Path) -> None:
+    # Ten real notes share 2026-09-25 around the cut at 30, and mtimes follow checkout and copy
+    # order, so REFEREE_QUEUE.md's Next 30 came out different from a git archive of one commit.
+    stems = ("TIE", "TIE-2", "TIE_A", "TIE_B")  # by stem; by file name TIE-2.md sorts before TIE.md
+    for mtimes in ((1000, 2000, 3000, 4000), (4000, 3000, 2000, 1000), (5000, 5000, 5000, 5000)):
+        for stem, mtime in zip(stems, mtimes):
+            _dated_note(tmp_path, stem, "2026-09-25. REVIEW PENDING.", mtime)
+        _dated_note(tmp_path, "NEWER", "2026-09-26. REVIEW PENDING.", mtimes[0])
+        _dated_note(tmp_path, "UNDATED_B", "Review pending.", mtimes[0])
+        _dated_note(tmp_path, "UNDATED_A", "Review pending.", mtimes[-1])
+        assert [p.stem for p in R.select_notes(tmp_path)] == ["NEWER", *stems, "UNDATED_A", "UNDATED_B"], mtimes
+        assert [p.stem for p in R.select_notes(tmp_path, limit=2)] == ["NEWER", "TIE"], mtimes
+
+
+def test_select_notes_orders_by_status_date_then_stem_and_skips_current_reviews(tmp_path: Path) -> None:
     _dated_note(tmp_path, "PRIME_OLD", "2026-10-10. REVIEW PENDING.", 4000)
     _dated_note(tmp_path, "PRIME_NEW", "2026-10-18. REVIEW PENDING.", 1000)
     _dated_note(tmp_path, "POLAR_UNDATED", "Local derivation, review pending.", 3000)

@@ -91,10 +91,13 @@ def select_notes(
     reviews: dict | None = None,
     statuses: tuple[str, ...] = ("review-pending",),
 ) -> list[Path]:
-    """Notes with one of `statuses`, newest status-block date first, then newest mtime."""
+    """Notes with one of `statuses`, newest status-block date first (undated last), then by stem.
+
+    Not by mtime: mtimes follow checkout and copy order, so the same commit would give a
+    different queue (and a different cut at `limit`) on another machine."""
     notes = (reviews if reviews is not None else load_reviews(root)).get("notes", {})
     ranked = []
-    for path in sorted((root / "research").glob("*.md")):
+    for path in sorted((root / "research").glob("*.md"), key=lambda path: path.stem):  # kept by the stable sort below
         if path.name in JOURNALS or (prefixes and not path.stem.startswith(tuple(prefixes))):
             continue
         lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
@@ -103,7 +106,7 @@ def select_notes(
         review = notes.get(path.stem)
         if exclude_reviewed and review and review.get("content_sha") == note_sha(path):
             continue
-        ranked.append(((_note_date(lines) or "0000", path.stat().st_mtime), path))
+        ranked.append((_note_date(lines) or "0000", path))
     ranked.sort(key=lambda item: item[0], reverse=True)
     paths = [path for _, path in ranked]
     return paths[:limit] if limit else paths

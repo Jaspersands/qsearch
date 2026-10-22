@@ -35,8 +35,10 @@ A note is review pending when the corpus status rule (`note_status` in
 rejected). Notes that say "require review" instead are `unlabelled`, so export them with
 `--note`. The two journals (`AGENT_HANDOFF.md`, `MECHANICAL_FOLLOW_UP_PLAN.md`) are never
 selected. Notes are ordered by the first date in the status block (the first paragraph
-after the title), undated last, then by file modification time. A note whose stored
-review has its current content hash is skipped unless `--include-reviewed` is given.
+after the title), undated last, then by stem. File modification times are not used: they
+follow checkout and copy order, so every checkout of one commit gets the same queue and
+the same cut at `--limit`. A note whose stored review has its current content hash is
+skipped unless `--include-reviewed` is given.
 
 ## The packet
 
