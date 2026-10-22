@@ -446,7 +446,8 @@ def _cell(text) -> str:
 def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = None) -> str:
     """The markdown digest. `verdicts` (arXiv id -> entry) drives the Reviewed table, and papers
     with a person's verdict leave the possible-kill and possible-scoop sections; a flagged paper
-    with only a judge's verdict stays there with "judge: VERDICT" in its cues."""
+    with only a judge's verdict stays there with "judge: VERDICT" in its cues. Those two sections
+    list every paper; Related lists the newest `per_section` and counts the rest."""
     verdicts = verdicts or {}
     papers = sorted(state["papers"].values(), key=lambda p: (p["published"], p["arxiv_id"]), reverse=True)
     counts = {label: sum(p["label"] == label for p in papers) for label in LABEL_ORDER}
@@ -488,13 +489,14 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
             p for p in papers
             if p["label"] == label and not (label in FLAGGED and p["arxiv_id"] in verdicts and not by_judge(verdicts[p["arxiv_id"]]))
         ]
-        section = section[:per_section]
+        # Every flag is listed, however long the backlog: the oldest unreviewed kill matters most.
+        shown = section if label in FLAGGED else section[:per_section]
         lines += [f"## {heading}", ""]
-        if not section:
+        if not shown:
             lines += ["None yet.", ""]
             continue
         lines += ["| Date | Paper | Tracks | Cues | Nearest Q-Search record |", "|---|---|---|---|---|"]
-        for p in section:
+        for p in shown:
             nearest = p["nearest"][0] if p["nearest"] else None
             near = f"`{nearest['doc_id']}` ({nearest['location']})" if nearest else ""
             title = p["title"].replace("|", "/")
@@ -505,6 +507,8 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
                 f"| {p['published']} | [{p['arxiv_id']}]({p['url']}) {title} | {', '.join(p['tracks'])} | {cues} | {near} |"
             )
         lines.append("")
+        if len(section) > len(shown):
+            lines += [f"And {len(section) - len(shown)} more {label} papers, older, in `research/audits/arxiv_collisions.json`.", ""]
     lines += ["## Reviewed", ""]
     if not verdicts:
         lines += ["None yet.", ""]

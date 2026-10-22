@@ -524,6 +524,24 @@ def test_reviewed_table_is_ordered_by_verdict_then_id_and_marks_done_actions(tmp
     assert rows[1].endswith("| Cite it in Z. |") and rows[2].endswith("| Cite it in X. (done) |")
 
 
+def test_digest_lists_every_flag_and_counts_the_related_papers_it_leaves_out() -> None:
+    def record(index: int, label: str) -> dict:
+        arxiv_id = f"2610.{index:05d}"
+        return {"arxiv_id": arxiv_id, "label": label, "published": f"2026-{9 + index % 2:02d}-{1 + index % 28:02d}",
+                "title": f"Paper {index}", "url": f"https://arxiv.org/abs/{arxiv_id}", "tracks": ["dcp"], "nearest": [], "cues": []}
+
+    papers = {}
+    for offset, label in enumerate(("possible-kill", "possible-scoop", "related")):
+        papers.update({f"2610.{offset * 100 + i:05d}": record(offset * 100 + i, label) for i in range(45)})
+    digest = render_digest({"updated": "2026-10-26", "papers": papers}, per_section=40)
+    for heading in ("Possible kills", "Possible scoops"):
+        assert len([line for line in _section(digest, heading).splitlines() if line.startswith("| 2026-")]) == 45, heading
+        assert "more" not in _section(digest, heading)
+    related = _section(digest, "Related")
+    assert len([line for line in related.splitlines() if line.startswith("| 2026-")]) == 40
+    assert "And 5 more related papers, older, in `research/audits/arxiv_collisions.json`." in related
+
+
 def test_set_verdict_rejects_unknown_value(tmp_path: Path) -> None:
     with pytest.raises(ValueError):
         set_verdict(tmp_path, "2610.11111", "maybe", "unsure", "human")
@@ -883,14 +901,24 @@ def test_a_root_that_is_not_a_checkout_is_refused_before_anything_is_written(tmp
     assert sorted(path.name for path in tmp_path.iterdir()) == ["a_file"]
 
 
-def test_verdict_flag_writes_nothing_when_the_collisions_file_is_unreadable(fake_repo: Path, capsys) -> None:
-    from tools.arxiv_watch import watch
+def test_every_mode_writes_nothing_when_the_collisions_file_is_unreadable(fake_repo: Path, monkeypatch, capsys) -> None:
+    from tools.arxiv_watch import judge, watch
 
     corpus = Corpus(fake_repo)
     corpus.refresh()
     run(fake_repo, FakeClient([_paper("2610.11111", "Dihedral coset note", "Coset states.")]), corpus,
         tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
-    collisions = fake_repo / "research" / "audits" / "arxiv_collisions.json"
+
+    def refuse(*args, **kwargs):
+        raise AssertionError("an unreadable collisions file must stop the watch before it fetches")
+
+    monkeypatch.setattr(watch, "Client", refuse)
+    monkeypatch.setattr(watch, "Corpus", refuse)
+    audits = fake_repo / "research" / "audits"
+    collisions, digest = audits / "arxiv_collisions.json", audits / "ARXIV_WATCH.md"
+    rendered = digest.read_bytes()
+    rows = audits.parent.parent / "rows.jsonl"
+    rows.write_text(json.dumps({"arxiv_id": "2610.11111", "verdict": "kill", "quote": "q"}) + "\n", encoding="utf-8")
     text = collisions.read_text(encoding="utf-8")
     for broken in (text[: len(text) // 2], "[]", "directory"):
         if broken == "directory":
@@ -898,9 +926,27 @@ def test_verdict_flag_writes_nothing_when_the_collisions_file_is_unreadable(fake
             collisions.mkdir()
         else:
             collisions.write_text(broken, encoding="utf-8")
-        assert watch.main(["--root", str(fake_repo), "--verdict", "2610.11111", "false-alarm", "--reason", "x"]) == 2, broken
-        assert capsys.readouterr().err.startswith("error: "), broken
-        assert not (fake_repo / VERDICTS_FILE).exists(), broken
+        for argv in ([], ["--relabel"], ["--verdict", "2610.11111", "false-alarm", "--reason", "x"], ["--action-done", "2610.11111"]):
+            assert watch.main(["--root", str(fake_repo), *argv]) == 2, (broken, argv)
+            err = capsys.readouterr().err
+            assert err.startswith("error: ") and "arxiv_collisions.json" in err, (broken, argv)
+        for argv in (["--import", str(rows), "--judge", "t"], ["--export", str(fake_repo / "judge")]):
+            assert judge.main(["--root", str(fake_repo), *argv]) == 2, (broken, argv)
+            err = capsys.readouterr().err
+            assert err.startswith("error: ") and "arxiv_collisions.json" in err, (broken, argv)
+        assert not (fake_repo / VERDICTS_FILE).exists() and digest.read_bytes() == rendered, broken
+
+
+def test_a_missing_digest_is_left_missing_by_a_quiet_run(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    client = FakeClient([_paper("2610.11111", "Dihedral coset note", "Coset states.")])
+    run(fake_repo, client, corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    digest = fake_repo / "research" / "audits" / "ARXIV_WATCH.md"
+    digest.unlink()
+    set_verdict(fake_repo, "2610.77777", "related-only", "never fetched", "human", today="2026-10-20")  # would re-render a stale one
+    assert not run(fake_repo, client, corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-26").saved
+    assert not digest.exists()
 
 
 REPO = Path(__file__).resolve().parents[2]

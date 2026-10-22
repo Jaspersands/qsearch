@@ -54,7 +54,8 @@ for a paper the watch has not stored changes no record, so the run re-renders on
   cues, the five nearest corpus records, the date first seen and, once reviewed, its
   verdict. Apart from the two exceptions above, repeated runs only add.
 - `research/audits/ARXIV_WATCH.md`: the digest, newest first, with possible kills,
-  possible scoops and related papers, then the Reviewed table.
+  possible scoops and related papers, then the Reviewed table. Every possible kill and scoop
+  is listed; the Related section shows the newest 40 and says how many more the JSON holds.
 - `research/audits/arxiv_verdicts.json`: the reviewed verdicts, keyed by arXiv id. Written
   by `--verdict` and by the judge import (`judge.py`); the source of truth for the Reviewed
   table.
