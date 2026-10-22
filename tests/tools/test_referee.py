@@ -561,21 +561,22 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     _dated_note(tmp_path, "OTHER", "2026-10-11. REVIEW PENDING.", 1000)
     out = tmp_path / "out"
     bad_rows = [
-        _row(tmp_path, claims=[_claim("It holds for all twelve saved inputs", verdict="maybe")]),
-        _row(tmp_path, overall="fine"),
-        _row(tmp_path, claims=[_claim("the radial bound holds")]),
-        _row(tmp_path, claims=[_claim("It holds for all thirteen saved inputs")]),
-        _row(tmp_path, claims=[_claim("olds for all twelve saved inputs")]),
-        _row(tmp_path, stem="OTHER") | {"stem": "MISSING_NOTE"},
+        (_row(tmp_path, claims=[_claim("It holds for all twelve saved inputs", verdict="maybe")]), "bad claim verdict"),
+        (_row(tmp_path, overall="fine"), "bad overall verdict"),
+        (_row(tmp_path, claims=[_claim("the radial bound holds")]), "under 6 words"),
+        (_row(tmp_path, claims=[_claim("It holds for all thirteen saved inputs")]), "not verbatim"),
+        (_row(tmp_path, claims=[_claim("olds for all twelve saved inputs")]), "not verbatim"),
+        (_row(tmp_path, stem="OTHER") | {"stem": "MISSING_NOTE"}, "unknown note"),
     ]
-    for index, row in enumerate(bad_rows):
-        with pytest.raises(ValueError):
-            R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [_row(tmp_path, stem="OTHER", claims=[]), row])], "j")
+    beside = _row(tmp_path, stem="OTHER", overall="unclear", claims=[])  # a good row before each bad one
+    for index, (row, reason) in enumerate(bad_rows):
+        with pytest.raises(ValueError, match=reason):
+            R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [beside, row])], "j")
     assert not (tmp_path / R.REVIEWS).exists()
 
     many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 600, step="y" * 300)] * 6
     good = _row(tmp_path, claims=many, summary="s" * 1500)
-    stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
+    stale = _row(tmp_path, stem="OTHER", overall="unclear", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21",
                               allow_unverified=True)
     assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": []}
@@ -660,7 +661,7 @@ def test_import_reads_null_text_as_empty_and_rejects_other_types(tmp_path: Path)
     ("needs-work", ["holds", "gap"], True),
     ("needs-work", ["unclear", "gap"], True),
     ("sound", ["holds", "holds"], True),
-    ("sound", [], True),
+    ("sound", [], False),  # a sound verdict rests on at least one quoted claim that holds
     ("unclear", ["unclear", "holds"], True),
     ("unclear", [], True),
 ])
@@ -1248,7 +1249,7 @@ def _reviewed_repo(root: Path) -> None:
                    finding="Input 7 has margin -0.002 in the excerpt."),
         ]),
         _row(root, stem="EDITED", claims=[_claim(quote + ".")]),
-        _row(root, stem="SOUND_NOTE", overall="sound", claims=[]),
+        _row(root, stem="SOUND_NOTE", overall="sound", claims=[_claim("A result about the sound_note inputs", verdict="holds")]),
     ]
     R.import_reviews(root, [_jsonl(root / "out" / "rows.jsonl", rows)], "test-judge", today="2026-10-21")
     edited.write_text(edited.read_text(encoding="utf-8") + "\nAn added paragraph.\n", encoding="utf-8")
@@ -1391,7 +1392,7 @@ def test_import_replaces_the_store_in_one_step(tmp_path: Path, monkeypatch) -> N
 
     monkeypatch.setattr(R.os, "replace", interrupted)
     with pytest.raises(OSError, match="interrupted"):
-        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "b.jsonl", [_row(tmp_path, overall="sound", claims=[])])], "second")
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "b.jsonl", [_row(tmp_path, overall="unclear", claims=[])])], "second")
     assert store.read_bytes() == before
     assert sorted(path.name for path in store.parent.iterdir()) == ["reviews.json"]
 

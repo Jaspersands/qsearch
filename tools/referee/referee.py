@@ -188,7 +188,7 @@ For each note:
    - `unclear`: too little is written to judge.
    The overall must agree with your worst claim: a `wrong` claim makes it `unsound`, else a
    `gap` makes it `needs-work`, else an `unclear` claim makes it `unclear`, and claims that
-   all hold make it `sound` (with no claims, `sound` or `unclear`). A row that contradicts
+   all hold make it `sound`; with no claims it can only be `unclear`. A row that contradicts
    this, or that has more than 6 claims, rejects your whole output file.
 
 You must not propose new research, new algorithms or next steps: judge only what is
@@ -478,9 +478,10 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
 def overall_conflict(overall: str, claims: list[dict]) -> str | None:
     """Why `overall` contradicts the claim verdicts, or None. The worst claim sets it: a wrong
     claim makes the note unsound, else a gap needs-work, else an unclear claim unclear, and
-    claims that all hold sound. A row with no claims may be sound or unclear."""
+    claims that all hold sound. A row with no claims can only be unclear: a sound verdict with
+    no quoted claim would take the note out of the queue on no evidence."""
     if not claims:
-        needs = {"unsound": "a wrong claim", "needs-work": "a gap"}
+        needs = {"unsound": "a wrong claim", "needs-work": "a gap", "sound": "a quoted claim that holds"}
         return f"{overall} needs {needs[overall]}" if overall in needs else None
     worst = max((claim["verdict"] for claim in claims), key=WORST.__getitem__)
     if overall != OVERALL_FOR[worst]:

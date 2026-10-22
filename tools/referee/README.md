@@ -95,8 +95,9 @@ text.
    `covered_by_self_check` that is not `true` or `false` (omitted or null reads as false),
    more than six claims, an `overall` that contradicts the claims (the worst claim sets it:
    `wrong` requires `unsound`, else `gap` requires `needs-work`, else `unclear` requires
-   `unclear`, and claims that all hold require `sound`; a row with no claims may be `sound`
-   or `unclear`), a quote under six words, or a quote that is not in the note text (all
+   `unclear`, and claims that all hold require `sound`; a row with no claims can only be
+   `unclear`, since a `sound` row with no quoted claim would take the note out of the
+   queue on no evidence), a quote under six words, or a quote that is not in the note text (all
    claims are checked). A quote's words (runs
    of letters and digits in any script, so Greek variables and superscript exponents count;
    an underscore splits words) must appear consecutively in the note after lower-casing; a
