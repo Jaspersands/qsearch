@@ -306,11 +306,12 @@ the reconciling agent's per-claim checks took its place.
 
 An audit of the stored reviews corrected ten of them. Each corrected row is a copy of the
 note's stored judge row (`pass1/out/` or `calibration_r2/out_d/`) with only the audited
-claims, and where needed the overall and summary, changed; quotes are unchanged except
+claims (and, for POLAR_SOURCE_DESIGN, their order), and where needed the overall and summary,
+changed; quotes are unchanged except
 NORM_ATTACK's, which is lengthened to E's verbatim quote of the same sentence. The rows are
 in `research/audits/reviews/corrections/2026-10-22.jsonl`, imported with
-`--judge audit-correction-2026-10-22`, so for these notes the stored review is that file's
-row, not `out/`'s.
+`--judge audit-correction-2026-10-22`. These rows replace `out/`'s; later correction files
+replace them again where named below (including INTERVAL_SOFT_DECODER).
 
 - INTERVAL_SOFT_DECODER: the decision-sentence gap (A's, confirmed by the reconciler) is
   now holds, and the note is sound. Every quantum guarantee the note cites (d/p<C<=L/p,
@@ -345,7 +346,34 @@ imported with `--judge audit-correction-2026-10-22-r2`.
   bound follows because it increases with ||B||^2<=M*epsilon_actual and with epsilon_actual
   (judge B's wording).
 
-After the corrections the 30 first-pass notes stand at 24 needs-work and 6 sound.
+After those corrections the 30 first-pass notes stood at 24 needs-work and 6 sound.
+
+### Continuation audit (2026-10-23)
+
+The recovered round-three reviews covered all 28 then-flagged notes and the six sound
+notes. Seven stored rows were corrected after checking the cited source passages and
+artifacts. The append-only rows are in `corrections/2026-10-23-r3.jsonl`, imported as
+`codex-audit-correction-2026-10-23-r3`:
+
+- PRIME_CHARACTER_OPI and FOLDED_NORM_SOURCE put their substantive baseline/open-case
+  gaps before wording gaps of the same rank, so the queue displays the consequential finding.
+- NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT's sole gap is withdrawn: the surrounding passage
+  explicitly scopes the unit-wrapper statement to the saved native d64 obstruction, with
+  the required fixed-line conditions and easy zero-label countercontrol. The review now
+  says sound within that scope; no ensemble obstruction is certified.
+- EXPLICIT_QUADRATIC_OPI also names the perfect low-rate N7,K3 controls;
+  PRIME_CHARACTER_INTERLEAVED_PROBE says c=5 and c=8 rows, not the fraction 5/8.
+- BPQM_LOG_RELIABILITY's 21-bit register is sufficient and conservative; its magnitude
+  63513/16384 fits three signed integer bits plus 17 fractional bits too.
+- INTERVAL_SOFT_DECODER's summary now distinguishes the complex control's discussed
+  phase-drop TV from its unreported receiver numbers (.472314 decoder success, .405823
+  worst-target validity). The conclusion and sound verdict are unchanged.
+
+The first-pass notes now stand at 23 needs-work and 7 sound; with the four calibration
+notes, the store has 27 flagged and 7 sound, with no stale reviews at this audit. The
+NATIVE_RLWE_PRIMAL_BABAI_CERTIFICATE wording issue was already explicitly recorded in
+its summary, so no extra gap was added. This audit does not substitute for independent
+proof or literature review of the underlying research.
 
 Re-importing a note replaces its review (import, step 3 of the judge loop), and
 `pass1/out/` and `calibration_r2/out_d/` still hold the uncorrected rows. Importing either
@@ -359,6 +387,7 @@ python tools/referee/referee.py import research/audits/reviews/calibration_r2/ou
 python tools/referee/referee.py import research/audits/reviews/pass1/out/batch_*.jsonl --judge claude-opus-5.5-two-judges-reconciled-2026-10-21 --cut
 python tools/referee/referee.py import research/audits/reviews/corrections/2026-10-22.jsonl --judge audit-correction-2026-10-22
 python tools/referee/referee.py import research/audits/reviews/corrections/2026-10-22-r2.jsonl --judge audit-correction-2026-10-22-r2
+python tools/referee/referee.py import research/audits/reviews/corrections/2026-10-23-r3.jsonl --judge codex-audit-correction-2026-10-23-r3
 python tools/referee/referee.py render
 ```
 
