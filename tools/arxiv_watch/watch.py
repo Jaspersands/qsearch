@@ -27,8 +27,13 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
+import tempfile
 import re
 import sys
+import sqlite3
+import urllib.error
+import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
@@ -41,7 +46,7 @@ from tools.arxiv_watch.verdicts import (  # noqa: E402
 )
 from tools.corpus.api import Corpus  # noqa: E402
 from tools.corpus.docs import read_json  # noqa: E402
-from tools.corpus.sources.arxiv import Client, Paper  # noqa: E402
+from tools.corpus.sources.arxiv import Client, Paper, SearchPage  # noqa: E402
 
 # arXiv's `published` is the v1 submission date; a paper can be listed days later (weekends,
 # holds), so each run re-reads a week before the previous one and dedupes by id.
@@ -209,6 +214,11 @@ def _stored_paper(arxiv_id: str, record: dict) -> Paper:
     )
 
 
+def abstract_is_truncated(record: dict) -> bool:
+    """Old records silently capped abstracts at 1500 characters; never infer lost text."""
+    return record.get("abstract_complete") is not True and len(record.get("abstract", "")) == 1500
+
+
 def relabel(root: Path, corpus: Corpus) -> int:
     """Recompute tracks and labels for every stored paper after a rule change; returns how many changed."""
     state = _load_state(root)
@@ -218,6 +228,13 @@ def relabel(root: Path, corpus: Corpus) -> int:
         paper = _stored_paper(arxiv_id, record)
         tracks = classify(f"{paper.title}. {paper.abstract}")
         label, cues = label_for(paper, tracks, cited=bool(corpus.mentions(arxiv_id)))
+        if abstract_is_truncated(record):
+            # The visible prefix can add relevance but cannot retract evidence in the missing tail.
+            tracks = sorted(set(tracks) | set(record.get("tracks", [])))
+            cues = list(dict.fromkeys(record.get("cues", []) + cues))
+            label = record.get("label", "unrelated")
+            if label == "unrelated" and tracks:
+                label = "related"
         if (label, tracks) != (record.get("label"), record.get("tracks")):
             changed += 1
         record.update({"label": label, "cues": cues, "tracks": tracks})
@@ -267,6 +284,17 @@ def recheck_cited(state: dict, corpus: Corpus, today: str) -> int:
 # --- state ----------------------------------------------------------------------------------------
 
 
+def _atomic_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as stream:
+            stream.write(text)
+        os.replace(temporary, path)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
+
+
 def _save(root: Path, state: dict) -> None:
     path, digest = _paths(root)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -292,6 +320,26 @@ def _load_state(root: Path) -> dict:
         raise ValueError(f"{name}: not valid JSON ({error})") from error
     if not isinstance(state, dict) or not isinstance(state.get("papers"), dict):
         raise ValueError(f'{name}: expected an object with a "papers" object')
+    def date(value, field, nullable=False):
+        if nullable and value is None:
+            return
+        try:
+            _iso_date(value) if isinstance(value, str) else (_ for _ in ()).throw(ValueError())
+        except (ValueError, argparse.ArgumentTypeError):
+            raise ValueError(f"{name}: {field} must be a YYYY-MM-DD date") from None
+    date(state.get("updated"), "updated", nullable=True)
+    if "tracks_updated" in state:
+        if not isinstance(state["tracks_updated"], dict):
+            raise ValueError(f"{name}: tracks_updated must be an object")
+        for track, value in state["tracks_updated"].items():
+            date(value, f"tracks_updated.{track}")
+    if not isinstance(state.get("gaps", []), list):
+        raise ValueError(f"{name}: gaps must be a list")
+    for gap in state.get("gaps", []):
+        if not isinstance(gap, dict) or not isinstance(gap.get("track"), str):
+            raise ValueError(f"{name}: each gap must name a track")
+        for field in ("since", "until", "found_on"):
+            date(gap.get(field), f"gaps.{field}")
     return state
 
 
@@ -305,26 +353,50 @@ def checkout_error(root: Path) -> str | None:
 def _since_for(state: dict, name: str, today: str) -> str:
     """A track's usual window start: a week before its own last fetch. A track with no date of its
     own (a state written before per-track dates) last ran no later than `updated`."""
-    last = (state.get("tracks_updated") or {}).get(name) or state.get("updated")
-    if last:
-        return (dt.date.fromisoformat(last) - dt.timedelta(days=OVERLAP_DAYS)).isoformat()
-    return (dt.date.fromisoformat(today) - dt.timedelta(days=FIRST_RUN_DAYS)).isoformat()
+    last = state["tracks_updated"].get(name) if "tracks_updated" in state else state.get("updated")
+    start = (dt.date.fromisoformat(last) - dt.timedelta(days=OVERLAP_DAYS)).isoformat() if last else (
+        dt.date.fromisoformat(today) - dt.timedelta(days=FIRST_RUN_DAYS)).isoformat()
+    # An incomplete or deliberately narrowed first run must not let its skipped dates age out.
+    return min([start] + [g["since"] for g in state.get("gaps", []) if g["track"] == name])
 
 
 def fetch_track(client, query: str, since: str, page_size: int = PAGE_SIZE, max_pages: int = MAX_PAGES):
-    """Page a newest-first query until a page reaches back past `since`.
-
-    Returns (papers, cut): `cut` is None when the window was covered, else a description of
-    where the page cap stopped the query. Pacing between requests is the client's job.
-    """
+    """Page a newest-first query, retrying incomplete pages before recording a coverage gap."""
+    if not 1 <= page_size <= 2000 or max_pages < 1:
+        raise ValueError("page_size must be 1..2000 and max_pages must be positive")
     papers: list[Paper] = []
+    reason = "page cap"
+    first_total = None
+    seen: set[str] = set()
     for page in range(max_pages):
-        batch = client.search(query, max_results=page_size, start=page * page_size)
-        papers.extend(batch)
-        if len(batch) < page_size or min(p.published for p in batch) < since:
+        start = page * page_size
+        for attempt in range(3):
+            batch = client.search(query, max_results=page_size, start=start)
+            total = getattr(batch, "total_results", None)
+            if page == 0 and first_total is None:
+                first_total = total
+            consistent = total == first_total
+            complete = total is not None and consistent and start + len(batch) >= total
+            short = len(batch) < page_size
+            ids = [paper.arxiv_id for paper in batch]
+            repeated = len(set(ids)) < len(ids) or bool(seen.intersection(ids))
+            incomplete = repeated or not consistent or (short and not complete and (isinstance(batch, SearchPage) or not batch))
+            if not incomplete:
+                break
+            if attempt < 2 and hasattr(client, "invalidate_search"):
+                client.invalidate_search(query, max_results=page_size, start=start)
+        for paper in batch:
+            if paper.arxiv_id not in seen:
+                papers.append(paper)
+                seen.add(paper.arxiv_id)
+        if incomplete:
+            reason = "incomplete API page after 3 attempts"
+            break
+        if complete or (batch and min(p.published for p in batch) < since) or short:
             return papers, None
     oldest = min((p.published for p in papers), default=since)
-    return papers, {"pages": max_pages, "page_size": page_size, "results": len(papers), "oldest_seen": oldest}
+    return papers, {"pages": page + 1, "page_size": page_size, "results": len(papers),
+                    "oldest_seen": oldest, "reason": reason}
 
 
 def run(
@@ -365,6 +437,10 @@ def run(
         # citations below may still change the record (attach_verdicts, recheck_cited).
         if arxiv_id in state["papers"]:
             known = state["papers"][arxiv_id]
+            if (abstract_is_truncated(known) and paper.version == known.get("version")
+                    and len(paper.abstract) > len(known["abstract"]) and paper.abstract.startswith(known["abstract"])):
+                known.update(abstract=paper.abstract, abstract_complete=True)
+                changed = True
             merged = sorted(set(known.get("queried_by", [])) | queried)
             if merged != known.get("queried_by"):
                 known["queried_by"] = merged
@@ -377,7 +453,8 @@ def run(
         nearest = corpus.search(text, kinds=NEAREST_KINDS, k=5)
         state["papers"][arxiv_id] = {
             **{key: value for key, value in asdict(paper).items() if key != "abstract"},
-            "abstract": paper.abstract[:1500],
+            "abstract": paper.abstract,
+            "abstract_complete": True,
             "tracks": tracks_found,
             "queried_by": sorted(queried),
             "label": label,
@@ -400,9 +477,14 @@ def run(
     gaps = list(state.get("gaps", []))
     kept = [g for g in gaps if not (g["track"] in windows and g["track"] not in report.truncated and windows[g["track"]] <= g["since"])]
     for name, cut in report.truncated.items():
-        gap = {"track": name, "since": cut["since"], "until": cut["oldest_seen"], "found_on": today}
+        gap = {"track": name, "since": cut["since"], "until": cut["oldest_seen"] if cut["results"] else today, "found_on": today}
         if gap not in kept:
             kept.append(gap)
+    for name in tracks:
+        if windows[name] > usual[name]:
+            gap = {"track": name, "since": usual[name], "until": windows[name], "found_on": today}
+            if not any(g["track"] == name and g["since"] <= gap["since"] and g["until"] >= gap["until"] for g in kept):
+                kept.append(gap)
     if kept != gaps:
         state["gaps"] = kept
         changed = True
@@ -412,10 +494,10 @@ def run(
         # shrinks another's window. A track whose --since started after its usual start keeps its
         # date, so its next run still fetches the days this one skipped.
         dates = state.get("tracks_updated") or {}
-        if state.get("updated"):
+        if "tracks_updated" not in state and state.get("updated"):
             for name in sorted({*TRACKS, *tracks}):
                 dates.setdefault(name, state["updated"])
-        dates.update({name: today for name in tracks if windows[name] <= usual[name]})
+        dates.update({name: today for name in tracks if windows[name] <= usual[name] and name not in report.truncated})
         state["tracks_updated"] = dates
         state["updated"] = today
         _save(root, state)
@@ -474,7 +556,7 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
         lines += [
             "## Incomplete coverage",
             "",
-            "These track queries hit the page cap, so papers in the window below may be missing.",
+            "These track queries were incomplete or used a narrowed window; papers below may be missing.",
             "Backfill with `watch.py --since SINCE --tracks TRACK --max-pages N`.",
             "",
             "| Track | Missing window | Found on |",
@@ -525,7 +607,9 @@ def render_digest(state: dict, per_section: int = 40, verdicts: dict | None = No
         p = state["papers"].get(arxiv_id)
         paper = f"[{_cell(p['title'])}]({p['url']})" if p else "not stored"
         action = _cell(entry.get("action") or "")
-        if action and entry.get("action_done"):
+        if entry.get("action_pending_clarification"):
+            action = "**Pending clarification:** " + _cell(entry["action_pending_clarification"]) + " Original action: " + action
+        if action and entry.get("action_done") is True:
             action += " (done)"
         lines.append(
             f"| {arxiv_id} | {paper} | {p['label'] if p else '-'} | {entry.get('verdict')} | {_cell(entry.get('by', ''))} | "
@@ -573,6 +657,13 @@ def _positive(text: str) -> int:
     return value
 
 
+def _page_size(text: str) -> int:
+    value = _positive(text)
+    if value > 2000:
+        raise argparse.ArgumentTypeError("arXiv allows at most 2000 results per page")
+    return value
+
+
 def _track_names(text: str) -> list[str]:
     """Comma-separated track names; spaces and empty names are ignored."""
     names = [name.strip() for name in text.split(",") if name.strip()]
@@ -587,9 +678,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--since", type=_iso_date, help=f"ISO date; default is {OVERLAP_DAYS} days before each track's last run.")
     parser.add_argument("--tracks", type=_track_names, help=f"Comma list from: {', '.join(TRACKS)}")
-    parser.add_argument("--max", type=_positive, default=PAGE_SIZE, help="Results per page of a track query.")
+    parser.add_argument("--max", type=_page_size, default=PAGE_SIZE, help="Results per page of a track query.")
     parser.add_argument("--max-pages", type=_positive, default=MAX_PAGES, help="Pages per track query before reporting a gap.")
     parser.add_argument("--replay-seeds", action="store_true")
+    parser.add_argument("--render", action="store_true", help="Re-render the digest only; no source writes, fetching or relabelling.")
     parser.add_argument("--relabel", action="store_true", help="Recompute labels for stored papers; no fetching.")
     parser.add_argument(
         "--verdict", nargs=2, metavar=("ARXIV_ID", "VERDICT"),
@@ -608,6 +700,8 @@ def main(argv: list[str] | None = None) -> int:
         "--action-done", metavar="ARXIV_ID", help="Mark a recorded verdict's action as carried out and re-render the digest; no fetching."
     )
     args = parser.parse_args(argv)
+    if sum(bool(mode) for mode in (args.verdict, args.action_done, args.render, args.relabel, args.replay_seeds)) > 1:
+        parser.error("choose only one of --render, --relabel, --replay-seeds, --verdict, --action-done")
     if args.verdict and args.action_done:
         parser.error("give --verdict or --action-done, not both")
     problem = checkout_error(args.root)  # a mistyped --root would otherwise get a fresh research/audits/
@@ -621,6 +715,12 @@ def main(argv: list[str] | None = None) -> int:
         except (ValueError, OSError) as error:
             print(f"error: {error}", file=sys.stderr)
             return 2
+    if args.render:
+        state = _load_state(args.root)
+        _, digest = _paths(args.root)
+        _atomic_text(digest, render_digest(state, verdicts=load_verdicts(args.root)["verdicts"]))
+        print("Digest re-rendered from stored state and verdicts; source files unchanged.")
+        return 0
     if args.verdict or args.action_done:
         notes: list[str] = []
         try:
@@ -632,7 +732,7 @@ def main(argv: list[str] | None = None) -> int:
                 previous = load_verdicts(args.root)["verdicts"].get(arxiv_id) or {}
                 # Only a person's own earlier entry is carried over: a judge's reason and action
                 # are one model's reading, not the person's.
-                own = bool(previous) and not by_judge(previous)
+                own = bool(previous) and not by_judge(previous) and (previous.get("by") or "human") == args.by
                 reason, action = args.reason, args.action
                 if reason is None:
                     if own and previous.get("verdict") == verdict and previous.get("reason"):
@@ -649,14 +749,16 @@ def main(argv: list[str] | None = None) -> int:
                     if own:
                         action = previous["action"]
                     else:
-                        notes.append(f"did not keep the judge's action ({previous['action']}); give --action to adopt it")
-                done = own and bool(previous.get("action_done")) and action == previous.get("action")
+                        notes.append(f"did not keep the earlier reviewer's action ({previous['action']}); give --action to adopt it")
+                done = own and previous.get("action_done") is True and action == previous.get("action")
                 if own and args.action is None and action:
                     notes.append(
                         f"kept the earlier action ({action}) and whether it was done ({'done' if done else 'not done'});"
                         ' --action "" clears it'
                     )
-                set_verdict(args.root, arxiv_id, verdict, reason, args.by, action=action, action_done=done)
+                pending = previous.get("action_pending_clarification") if action == previous.get("action") else None
+                set_verdict(args.root, arxiv_id, verdict, reason, args.by, action=action, action_done=done,
+                            action_pending_clarification=pending)
                 outcome = verdict
             else:
                 arxiv_id = normalize_id(args.action_done)
@@ -685,12 +787,16 @@ def main(argv: list[str] | None = None) -> int:
     tracks = {name: TRACKS[name] for name in args.tracks} if args.tracks else TRACKS
     corpus = Corpus(args.root)
     corpus.refresh()
-    report = run(args.root, Client(), corpus, since=args.since, tracks=tracks, page_size=args.max, max_pages=args.max_pages)
+    try:
+        report = run(args.root, Client(), corpus, since=args.since, tracks=tracks, page_size=args.max, max_pages=args.max_pages)
+    except (ValueError, OSError, urllib.error.URLError, ET.ParseError, sqlite3.Error) as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
     print(f"fetched {report.fetched} papers in range, {report.new} new: {report.by_label}")
     print(f"{report.relabelled} stored possible kills or scoops are now cited and relabelled already-cited")
     for name, cut in report.truncated.items():
         print(
-            f"warning: {name} hit the page cap ({cut['results']} results back to {cut['oldest_seen']}); "
+            f"warning: {name}: {cut.get('reason', 'page cap')} ({cut['results']} results back to {cut['oldest_seen']}); "
             f"papers from {cut['since']} to {cut['oldest_seen']} may be missing",
             file=sys.stderr,
         )

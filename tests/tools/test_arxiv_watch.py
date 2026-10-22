@@ -288,17 +288,17 @@ def test_hitting_the_page_cap_is_recorded_and_reported(fake_repo: Path) -> None:
     # A weekly run that is not cut short but starts after the gap, and a run of another track,
     # leave it listed; so does a backfill that is cut short again.
     weekly = run(fake_repo, PagedClient(papers), corpus, tracks={"dcp": TRACKS["dcp"]}, page_size=100, max_pages=5, today="2026-10-26")
-    assert weekly.truncated == {} and _state(fake_repo)["gaps"] == gaps
+    assert weekly.truncated == {} and _state(fake_repo)["gaps"] == []  # first incomplete run is automatically backfilled
     other = [_paper("2610.70000", "Decoded quantum interferometry note", "DQI.", "2026-10-25")]
     assert run(fake_repo, FakeClient(other), corpus, tracks={"dqi_opi": TRACKS["dqi_opi"]}, today="2026-10-26").saved
-    assert _state(fake_repo)["gaps"] == gaps
+    assert _state(fake_repo)["gaps"] == []
     cut = run(fake_repo, PagedClient(papers), corpus, since="2026-07-10", tracks={"dcp": TRACKS["dcp"]},
               page_size=50, max_pages=2, today="2026-10-27")
-    assert cut.truncated and gaps[0] in _state(fake_repo)["gaps"]
+    assert cut.truncated and _state(fake_repo)["gaps"][0]["since"] == "2026-07-10"
     # A backfill that is not cut short closes the gap.
     again = run(fake_repo, PagedClient(papers), corpus, since="2026-07-10", tracks={"dcp": TRACKS["dcp"]},
                 page_size=100, max_pages=5, today="2026-10-28")
-    assert again.truncated == {} and again.new == 102
+    assert again.truncated == {} and again.new == 20
     assert _state(fake_repo)["gaps"] == []
     assert "Incomplete coverage" not in (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text()
 
@@ -378,8 +378,8 @@ def test_paging_goes_through_the_paced_client(fake_repo: Path) -> None:
     client = Client(opener=opener, sleep=sleeps.append, delay=3.0)
     # The fixture's five entries reach back to 2025-12-01, so a full page asks for the next one.
     run(fake_repo, client, corpus, since="2025-06-01", tracks={"dcp": TRACKS["dcp"]}, page_size=5, today="2026-10-19")
-    assert [parse_qs(urlparse(u).query)["start"] for u in urls] == [["0"], ["5"]]
-    assert sleeps == [3.0]
+    assert [parse_qs(urlparse(u).query)["start"] for u in urls] == [["0"], ["5"], ["5"], ["5"]]
+    assert sleeps == [3.0, 3.0, 3.0]
 
 
 def test_paper_announced_after_the_last_run_is_still_recorded(fake_repo: Path) -> None:
@@ -858,7 +858,7 @@ def test_a_person_recording_over_a_judge_keeps_neither_its_reason_nor_its_action
     entry = load_verdicts(fake_repo)["verdicts"]["2610.11111"]
     assert (entry["verdict"], entry["reason"], entry["action"], entry["by"]) == ("false-alarm", "checked it", None, "human")
     assert "action_done" not in entry
-    assert "did not keep the judge's action" in capsys.readouterr().out
+    assert "did not keep the earlier reviewer's action" in capsys.readouterr().out
 
 
 def test_verdict_flag_stores_the_bare_id(fake_repo: Path, capsys) -> None:
@@ -1118,3 +1118,251 @@ def test_seed_check_catches_a_table_row_cut_short_without_the_digests() -> None:
         _assert_seed_text_follows_review(seeded[arxiv_id], *sources[arxiv_id])
         with pytest.raises(AssertionError, match="leaves out"):
             _assert_seed_text_follows_review({**seeded[arxiv_id], field: value}, *sources[arxiv_id])
+
+# Round three regressions: incomplete feeds must never advance coverage.
+def test_atom_rejects_arxiv_error_feed_and_exposes_total() -> None:
+    with pytest.raises(ValueError, match="arXiv"):
+        parse_atom(b'<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>http://arxiv.org/api/errors#bad</id><summary>bad query</summary></entry></feed>')
+    assert parse_atom(FIXTURE.read_bytes()).total_results == 29
+
+
+def test_incomplete_page_retries_and_preserves_track_date(fake_repo: Path) -> None:
+    from tools.arxiv_watch.watch import fetch_track
+    from tools.corpus.sources.arxiv import SearchPage
+    papers = _daily(6)
+    class Incomplete:
+        calls = []
+        def search(self, query, max_results, start):
+            self.calls.append(start)
+            return SearchPage(papers[:2] if start == 0 else [], total_results=6)
+    client = Incomplete()
+    fetched, cut = fetch_track(client, "q", "2026-10-01", page_size=2)
+    assert len(fetched) == 2 and cut and client.calls == [0, 2, 2, 2]
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    path = fake_repo / 'research/audits/arxiv_collisions.json'
+    path.parent.mkdir(exist_ok=True)
+    path.write_text(json.dumps({'updated':'2026-10-19','tracks_updated':{'dcp':'2026-10-19'},'papers':{}}))
+    report = run(fake_repo, Incomplete(), corpus, tracks={'dcp':TRACKS['dcp']}, page_size=2, today='2026-10-26')
+    assert report.truncated and _state(fake_repo)['tracks_updated']['dcp'] == '2026-10-19'
+    assert _state(fake_repo)['gaps'][0]['since'] == '2026-10-12'
+
+
+def test_transient_empty_page_recovers_and_total_zero_is_complete() -> None:
+    from tools.arxiv_watch.watch import fetch_track
+    from tools.corpus.sources.arxiv import SearchPage
+    class Retry:
+        calls = 0
+        def search(self, *args, **kwargs):
+            self.calls += 1
+            return SearchPage([] if self.calls == 1 else _daily(1), total_results=1)
+    client = Retry()
+    found, cut = fetch_track(client, 'q', '2026-10-01')
+    assert len(found) == 1 and cut is None and client.calls == 2
+    class Empty:
+        def search(self, *args, **kwargs):
+            return SearchPage([], total_results=0)
+    assert fetch_track(Empty(), 'q', '2026-10-01') == ([], None)
+
+
+def test_full_abstract_survives_relabel_and_legacy_cut_is_preserved(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    abstract = 'Context about the dihedral coset problem. ' * 42 + 'We give an efficient classical algorithm for quantum inputs.'
+    paper = _paper('2610.11111', 'Quantum dihedral coset states revisited', abstract)
+    run(fake_repo, FakeClient([paper]), corpus, tracks={'dcp':TRACKS['dcp']}, today='2026-10-19')
+    assert _state(fake_repo)['papers'][paper.arxiv_id]['abstract'] == abstract
+    assert relabel(fake_repo, corpus) == 0
+    state = _state(fake_repo)
+    state['papers'][paper.arxiv_id]['abstract'] = abstract[:1500]
+    state['papers'][paper.arxiv_id].pop('abstract_complete', None)
+    path = fake_repo / 'research/audits/arxiv_collisions.json'
+    path.write_text(json.dumps(state))
+    relabel(fake_repo, corpus)
+    assert _state(fake_repo)['papers'][paper.arxiv_id]['label'] == 'possible-kill'
+
+
+def test_first_track_window_does_not_inherit_other_track_date() -> None:
+    from tools.arxiv_watch.watch import _since_for
+    state = {'updated':'2026-10-25','tracks_updated':{'dcp':'2026-10-25'}}
+    assert _since_for(state, 'new_track', '2026-10-26') == '2026-10-12'
+    assert _since_for({'updated':'2026-10-25'}, 'dcp', '2026-10-26') == '2026-10-18'
+
+
+def test_first_narrow_run_keeps_its_original_window(fake_repo: Path) -> None:
+    from tools.arxiv_watch.watch import _since_for
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    run(fake_repo, FakeClient(_daily(1, newest='2026-10-20')), corpus, since='2026-10-19', tracks={'dcp':TRACKS['dcp']}, today='2026-10-21')
+    assert _since_for(_state(fake_repo), 'dcp', '2026-10-28') <= '2026-10-07'
+
+
+@pytest.mark.parametrize('text', ["Shor's elliptic-curve discrete-logarithm algorithm", "Shor order-finding", "integer factorization", "integer factorisation"])
+def test_number_theory_spelling_variants(text) -> None:
+    assert 'number_theory' in classify(text)
+
+
+def test_render_mode_is_offline_and_preserves_labels_and_dates(fake_repo: Path, monkeypatch) -> None:
+    from tools.arxiv_watch import watch
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    run(fake_repo, FakeClient(_daily(1)), corpus, tracks={'dcp':TRACKS['dcp']}, today='2026-10-19')
+    before = _state(fake_repo)
+    def refuse(*args, **kwargs):
+        raise AssertionError('render must be offline without a corpus')
+    monkeypatch.setattr(watch, 'Corpus', refuse)
+    monkeypatch.setattr(watch, 'Client', refuse)
+    (fake_repo / 'research/audits/ARXIV_WATCH.md').write_text('stale')
+    assert watch.main(['--root',str(fake_repo),'--render']) == 0
+    assert _state(fake_repo) == before
+    assert (fake_repo / 'research/audits/ARXIV_WATCH.md').read_text() == render_digest(before)
+
+
+def test_another_person_does_not_inherit_reason_or_action(fake_repo: Path, capsys) -> None:
+    from tools.arxiv_watch import watch
+    set_verdict(fake_repo,'2610.11111','should-cite','Alice reason','alice',action='Alice action')
+    args = ['--root',str(fake_repo),'--verdict','2610.11111','should-cite','--by','bob']
+    assert watch.main(args) == 2
+    assert watch.main(args+['--reason','Bob reason']) == 0
+    entry = load_verdicts(fake_repo)['verdicts']['2610.11111']
+    assert entry['reason'] == 'Bob reason' and entry['action'] is None
+
+
+def test_string_false_is_not_a_done_action() -> None:
+    entry = {'verdict':'should-cite','action':'Cite it','action_done':'false'}
+    assert '(done)' not in render_digest({'papers':{}},verdicts={'2610.11111':entry})
+
+
+@pytest.mark.parametrize('field,value', [('updated','2026-10-1'),('tracks_updated',{'dcp':'oops'}),('gaps',[{'track':'dcp','since':'bad'}])])
+def test_invalid_coverage_state_is_a_clean_error(fake_repo: Path, capsys, field, value) -> None:
+    from tools.arxiv_watch import watch
+    path = fake_repo / 'research/audits/arxiv_collisions.json'
+    path.parent.mkdir(exist_ok=True)
+    path.write_text(json.dumps({'papers':{},field:value}))
+    assert watch.main(['--root',str(fake_repo)]) == 2
+    assert 'error: research/audits/arxiv_collisions.json' in capsys.readouterr().err
+
+
+def test_network_failure_is_a_clean_error(fake_repo: Path, monkeypatch, capsys) -> None:
+    from tools.arxiv_watch import watch
+    from urllib.error import URLError
+    monkeypatch.setattr(watch.Client,'search',lambda *a, **k: (_ for _ in ()).throw(URLError('offline')))
+    assert watch.main(['--root',str(fake_repo),'--tracks','dcp']) == 2
+    assert 'error:' in capsys.readouterr().err
+
+
+def test_page_size_over_arxiv_limit_is_rejected(fake_repo: Path) -> None:
+    from tools.arxiv_watch import watch
+    with pytest.raises(SystemExit) as exc:
+        watch.main(['--root',str(fake_repo),'--max','2001'])
+    assert exc.value.code == 2
+
+
+def test_shrinking_feed_count_does_not_claim_complete_coverage() -> None:
+    from tools.arxiv_watch.watch import fetch_track
+    from tools.corpus.sources.arxiv import SearchPage
+    class Shrinking:
+        def search(self,query,max_results,start):
+            return SearchPage(_daily(2),total_results=6) if start == 0 else SearchPage([],total_results=0)
+    _,cut = fetch_track(Shrinking(),'q','2026-10-01',page_size=2)
+    assert cut is not None
+
+
+def test_pending_action_cannot_be_completed_or_silently_lost(fake_repo: Path) -> None:
+    from tools.arxiv_watch import watch
+    from tools.arxiv_watch.verdicts import mark_action_done
+    entry = set_verdict(fake_repo,'2610.11111','should-cite','r','human',action='Cite missing file')
+    entry['action_pending_clarification'] = 'Missing file; identify the intended target.'
+    _write_verdicts(fake_repo,{'verdicts':{'2610.11111':entry}})
+    with pytest.raises(ValueError,match='clarification'):
+        mark_action_done(fake_repo,'2610.11111')
+    args=['--root',str(fake_repo),'--verdict','2610.11111','should-cite']
+    assert watch.main(args) == 0
+    assert load_verdicts(fake_repo)['verdicts']['2610.11111']['action_pending_clarification']
+    assert watch.main(args+['--action','Cite verified file']) == 0
+    assert 'action_pending_clarification' not in load_verdicts(fake_repo)['verdicts']['2610.11111']
+
+
+def test_legacy_cut_can_gain_a_track_without_losing_old_evidence(fake_repo: Path) -> None:
+    corpus=Corpus(fake_repo)
+    corpus.refresh()
+    paper=_paper('2610.11111','The factorization of RSA-155','integer factorization ' * 100)
+    run(fake_repo,FakeClient([paper]),corpus,tracks={'number_theory':TRACKS['number_theory']},today='2026-10-19')
+    state=_state(fake_repo)
+    rec=state['papers'][paper.arxiv_id]
+    rec.update(abstract=paper.abstract[:1500],tracks=[],label='unrelated',cues=['lost tail evidence'])
+    rec.pop('abstract_complete',None)
+    (fake_repo/'research/audits/arxiv_collisions.json').write_text(json.dumps(state))
+    relabel(fake_repo,corpus)
+    rec=_state(fake_repo)['papers'][paper.arxiv_id]
+    assert rec['tracks'] == ['number_theory'] and rec['label'] == 'related'
+    assert 'lost tail evidence' in rec['cues']
+
+
+def test_fetch_can_restore_matching_legacy_abstract_without_changing_verdict(fake_repo: Path) -> None:
+    corpus=Corpus(fake_repo)
+    corpus.refresh()
+    paper=_paper('2610.11111','Dihedral coset states','Coset states. ' * 150)
+    run(fake_repo,FakeClient([paper]),corpus,tracks={'dcp':TRACKS['dcp']},today='2026-10-19')
+    state=_state(fake_repo)
+    rec=state['papers'][paper.arxiv_id]
+    rec['abstract']=paper.abstract[:1500]
+    rec.pop('abstract_complete',None)
+    (fake_repo/'research/audits/arxiv_collisions.json').write_text(json.dumps(state))
+    set_verdict(fake_repo,paper.arxiv_id,'related-only','prior reasoning','human',today='2026-10-19')
+    report=run(fake_repo,FakeClient([paper]),corpus,since='2026-10-01',tracks={'dcp':TRACKS['dcp']},today='2026-10-26')
+    rec=_state(fake_repo)['papers'][paper.arxiv_id]
+    assert report.new == 0 and report.saved
+    assert rec['abstract']==paper.abstract and rec['abstract_complete'] is True
+    assert rec['first_seen']=='2026-10-19' and rec['verdict']['reason']=='prior reasoning'
+
+
+def test_repeated_page_cannot_complete_coverage() -> None:
+    from tools.arxiv_watch.watch import fetch_track
+    from tools.corpus.sources.arxiv import SearchPage
+    class Repeated:
+        calls=[]
+        def search(self,query,max_results,start):
+            self.calls.append(start)
+            return SearchPage(_daily(2),total_results=4)
+    client=Repeated()
+    papers,cut=fetch_track(client,'q','2026-10-01',page_size=2)
+    assert cut and len(papers)==2 and client.calls==[0,2,2,2]
+
+
+def test_render_preserves_source_bytes_even_with_unattached_verdict(fake_repo: Path) -> None:
+    from tools.arxiv_watch import watch
+    corpus=Corpus(fake_repo)
+    corpus.refresh()
+    run(fake_repo,FakeClient(_daily(1)),corpus,tracks={'dcp':TRACKS['dcp']},today='2026-10-19')
+    set_verdict(fake_repo,'2610.50000','related-only','r','human',today='2026-10-19')
+    state=fake_repo/'research/audits/arxiv_collisions.json'
+    state.write_text(json.dumps(json.loads(state.read_text())))  # deliberately not _save's formatting
+    before=state.read_bytes(),(fake_repo/VERDICTS_FILE).read_bytes()
+    assert watch.main(['--root',str(fake_repo),'--render'])==0
+    assert before==(state.read_bytes(),(fake_repo/VERDICTS_FILE).read_bytes())
+    assert 'related-only' in (fake_repo/'research/audits/ARXIV_WATCH.md').read_text()
+
+
+def test_incomplete_cached_page_retries_the_service(tmp_path: Path) -> None:
+    from tools.arxiv_watch.watch import fetch_track
+    import xml.etree.ElementTree as ET
+    atom='{http://www.w3.org/2005/Atom}'
+    search='{http://a9.com/-/spec/opensearch/1.1/}'
+    tree=ET.fromstring(FIXTURE.read_bytes())
+    for entry in tree.findall(atom+'entry')[2:]: tree.remove(entry)
+    tree.find(search+'totalResults').text='2'
+    complete=ET.tostring(tree)
+    tree.remove(tree.findall(atom+'entry')[1])
+    incomplete=ET.tostring(tree)
+    calls=[]
+    class Response:
+        def __enter__(self): return self
+        def __exit__(self,*args): pass
+        def read(self): return incomplete if len(calls)==1 else complete
+    def opener(request,timeout):
+        calls.append(request.full_url)
+        return Response()
+    client=Client(opener=opener,sleep=lambda _:None,cache_dir=tmp_path)
+    found,cut=fetch_track(client,'q','2020-01-01',page_size=2)
+    assert len(calls)==2 and len(found)==2 and cut is None

@@ -112,9 +112,13 @@ def set_verdict(
     action: str | None = None,
     today: str | None = None,
     action_done: bool = False,
+    action_pending_clarification: str | None = None,
 ) -> dict:
     """Record (or replace) one paper's verdict under its bare id (see normalize_id) and return the stored entry."""
     entry = verdict_entry(verdict, reason, by, action=action, today=today, action_done=action_done)
+    if action_pending_clarification and action:
+        entry["action_pending_clarification"] = action_pending_clarification
+        entry.pop("action_done", None)
     arxiv_id = normalize_id(arxiv_id)
     data = load_verdicts(root)
     data["verdicts"][arxiv_id] = entry
@@ -132,6 +136,8 @@ def mark_action_done(root: Path, arxiv_id: str) -> dict:
         raise ValueError(f"no verdict recorded for {arxiv_id}")
     if not entry.get("action"):
         raise ValueError(f"the verdict for {arxiv_id} has no action to mark done")
+    if entry.get("action_pending_clarification"):
+        raise ValueError(f"the action for {arxiv_id} needs clarification: {entry['action_pending_clarification']}")
     entry["action_done"] = True
     save_verdicts(root, data)
     return entry

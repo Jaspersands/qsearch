@@ -10,7 +10,7 @@ characters of its text, so the judge can compare the paper with what the project
 
 A fresh subagent reads INSTRUCTIONS.md and one batch and writes one JSONL row per paper. Import
 keeps a row only when its quote (at least six words) appears verbatim in the abstract or in the
-one excerpt it names, as the batch showed them (DIR/out/batch_NN.jsonl is checked against
+one excerpt it names; abstracts use the stored paper and excerpts use a verified export (DIR/out/batch_NN.jsonl is checked against
 DIR/batch_NN.json), and never replaces a verdict recorded by anyone but a judge. Kept rows are
 stored with by = "judge:NAME", copied onto the stored papers and listed in the digest's Reviewed
 table.
@@ -19,6 +19,7 @@ table.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import re
@@ -34,12 +35,13 @@ if __package__ in (None, ""):
 from tools.arxiv_watch.verdicts import (  # noqa: E402
     JUDGE_PREFIX, VERDICTS, by_judge, load_verdicts, save_verdicts, verdict_entry,
 )
-from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts, checkout_error  # noqa: E402
+from tools.arxiv_watch.watch import FLAGGED, _load_state, _save, attach_verdicts, checkout_error, abstract_is_truncated  # noqa: E402
 from tools.audit.rediscovery import _rows  # noqa: E402
 from tools.corpus.api import Corpus  # noqa: E402
 
 EXCERPT_CHARS = 600
 MIN_QUOTE_WORDS = 6
+TRUNCATED = " [truncated]"
 MEANINGS = {
     "kill": "The paper invalidates a project claim or retained result, for example a classical algorithm or bound "
             "that removes a quantum advantage a note claims.",
@@ -58,7 +60,9 @@ decide what it means for the Q-Search project.
 
 Each paper comes with its title, abstract, label, the cues that raised the label, its tracks
 and its nearest Q-Search records (`nearest`), each with a `doc_id`, a `title` and an `excerpt`
-(the first 600 characters of the record). You may read the repository (notes under
+(the first 600 characters of the record). A cut text ends with `[truncated]`; never quote
+through that boundary or infer its missing continuation. Some legacy abstracts are cut too.
+You may read the repository (notes under
 `research/`, the registry under `research/registry/`) to check what the project claims. Write
 nothing except your output file, and do not search the web.
 
@@ -119,14 +123,14 @@ def _corpus(root: Path) -> Corpus:
 
 def _excerpt(corpus: Corpus, doc_id: str) -> str:
     doc = corpus.get(doc_id)
-    return doc.text[:EXCERPT_CHARS] if doc is not None else ""
+    return (doc.text[:EXCERPT_CHARS] + (TRUNCATED if len(doc.text) > EXCERPT_CHARS else "")) if doc is not None else ""
 
 
 def _item(arxiv_id: str, record: dict, corpus: Corpus) -> dict:
     return {
         "arxiv_id": arxiv_id,
         "title": record["title"],
-        "abstract": record.get("abstract", ""),
+        "abstract": record.get("abstract", "") + (TRUNCATED if abstract_is_truncated(record) else ""),
         "label": record["label"],
         "cues": record.get("cues", []),
         "tracks": record.get("tracks", []),
@@ -145,6 +149,8 @@ def export_batches(root: Path, out_dir: Path, n_batches: int = 3, corpus: Corpus
     if n_batches < 1:
         raise ValueError("n_batches must be at least 1")
     root, out_dir = Path(root), Path(out_dir)
+    if out_dir.exists() and (list(out_dir.glob("batch_*.json")) or list((out_dir / "out").glob("*.jsonl"))):
+        raise ValueError(f"{out_dir}: export directory already has batches or outputs; use a fresh directory")
     state = _load_state(root)
     attach_verdicts(state, load_verdicts(root)["verdicts"])
     flags = pending(state)
@@ -163,6 +169,13 @@ def export_batches(root: Path, out_dir: Path, n_batches: int = 3, corpus: Corpus
         batch = {"batch": index + 1, "verdicts": MEANINGS, "papers": papers}
         path.write_text(json.dumps(batch, indent=1, ensure_ascii=False), encoding="utf-8")
         paths.append(path)
+    # Keep hashes outside the judge's output directory, so an edited input cannot supply evidence.
+    receipt = root / "tmp" / "arxiv-judge-export-hashes.json"
+    hashes = json.loads(receipt.read_text(encoding="utf-8")) if receipt.exists() else {}
+    for path in paths:
+        hashes[str(path.resolve())] = hashlib.sha256(path.read_bytes()).hexdigest()
+    receipt.parent.mkdir(parents=True, exist_ok=True)
+    receipt.write_text(json.dumps(hashes, indent=2) + "\n", encoding="utf-8")
     return paths
 
 
@@ -170,7 +183,7 @@ _LOWER_LATIN = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)
 # A decimal point before its digits (".5") and a ratio's colon ("1:2"), both kept; TeX control
 # words (\Omega, \log), TeX control symbols (\{, \,), decimal numbers, other runs of letters and
 # digits, then any other single character.
-_TOKEN = re.compile(r"(?P<kept>\.(?=\d)|(?<=\d):(?=\d))|\\[A-Za-z]+|\\[^A-Za-z\s]|\d+(?:\.\d+)*|[^\W_]+|\S")
+_TOKEN = re.compile(r"(?P<kept>\.(?=\d)|(?<=\d):(?=\d))|\\[A-Za-z]+|\\[^A-Za-z\s]|\d+(?:\.\d+)*|[^\W\d_]+|\S")
 # Sentence punctuation, quote marks, TeX's math delimiters, spacing commands and line breaks, and a
 # lone backslash. Everything else (signs, /, !, #, %, ^, _, braces, brackets, primes) is maths and kept.
 _DROPPED = frozenset(".,;:?\"'`$\\") | frozenset({
@@ -183,6 +196,9 @@ _SPACING_WITH_LENGTH = re.compile(r"\\(?:hspace\*?|hskip|mskip|mspace|kern|mkern
 # An em dash ("—", TeX's "---") or a spaced en dash (" – ", " -- ") between clauses is punctuation;
 # an unspaced "--" is TeX's en dash, one dash like "–" (a range, a name pair).
 _CLAUSE_DASH = re.compile(r"---|[\u2014\u2015\u2e3a\u2e3b]|(?<=\s)(?:--|\u2013)(?=\s)")
+# Preserve mathematical minus/product signs; only unambiguous prose/markdown is punctuation.
+_MARKDOWN = re.compile(r"(?m)(?:^|(?<=[.!?:] ))[ \t]*[-*][ \t]+|(?<!\w)\#{1,6}[ \t]+")
+_PROSE_DASH = re.compile(r"(?<=[^\W\d_]{2} )-(?= [^\W\d_]{2,}\b)")
 _QUOTE_MARKS = re.compile(r"[\u2018`]+|['\u2019]+")
 _WORD_BEFORE = re.compile(r"(\\?)([^\W\d_]+)$")
 # Greek letters whose capital is another symbol; spelled out in ASCII ("Omega", "omega") they keep their case.
@@ -221,6 +237,9 @@ def _primes(text: str) -> str:
     one (the players'), and a quote mark when it opens a quotation (after a space or an opening
     bracket) or closes one opened by ‘, ` or '; those stay and are dropped as punctuation.
     """
+    # TeX's paired ``quotes'' are distinct from Markdown's symmetric code delimiters.
+    text = re.sub(r"``(.*?)''", r"“\1”", text)
+    text = text.replace("`", "")
     out, last, quoting = [], 0, False
     for match in _QUOTE_MARKS.finditer(text):
         run, start, end = match.group(0), match.start(), match.end()
@@ -240,6 +259,34 @@ def _primes(text: str) -> str:
     return "".join(out) + text[last:]
 
 
+def _math_ranges(text: str) -> list[tuple[int, int]]:
+    return [(m.start(), m.end()) for m in re.finditer(
+        r"\$[^$]*(?:\$|$)|\\\([^)]*\\\)|\b(?:O|o|SU|su)\([^)]*\)|[ΩΘωθ]\([^)]*\)", text)]
+
+
+def _clause_hyphens(text: str) -> str:
+    maths = _math_ranges(text)
+    def replace(match):
+        if any(start <= match.start() < end for start, end in maths):
+            return match.group()
+        before = _WORD_BEFORE.search(text[:match.start()].rstrip())
+        after = re.match(r"\s*([^\W\d_]+)", text[match.end():])
+        words = [before.group(2), after.group(1)] if before and after else []
+        if not words or any(not (w.islower() or (len(w) > 2 and w.istitle())) for w in words):
+            return match.group()
+        return " "
+    return _PROSE_DASH.sub(replace, text)
+
+
+class _TokenList(list):
+    def __init__(self):
+        super().__init__()
+        self.glued: set[int] = set()
+        self.truncated = False
+        self.raw = []
+        self.math_sensitive: set[int] = set()
+
+
 def _tokens(text: str) -> list[str]:
     """Words, numbers and symbols for the verbatim check.
 
@@ -249,21 +296,36 @@ def _tokens(text: str) -> list[str]:
     \\[ \\] and spacing commands (\\, \\quad \\hspace{1em} ...), and markdown's ** bold. Every other
     symbol is its own token: every other dash and the minus sign read as "-", an ASCII prime as
     ′ (see _primes), and a decimal point before its digits (".5") and a ratio's colon ("1:2") are
-    kept. Latin letter case is ignored in words of two or more letters and in the word "a", but
-    not in other one-letter symbols (O, N, d, I), TeX control words (\\Omega, \\omega) or the
-    spelled-out names of Greek letters with their own capital (Omega, omega). Whether a letter
-    sits inside TeX maths does not matter, since a quote may drop the $ or start inside a formula.
+    kept. Ordinary prose folds Latin case; mixed-case products, short nonword symbols and
+    Greek names retain it. Explicit TeX maths and asymptotic/function notation additionally
+    compare original letter case. Token adjacency records implicit products and numbers so
+    a quote cannot drop the 2 from 2n or the exponent from 1e-6. Truncated text has no clean end.
     So "κ ≤ 0.207" and "κ≤0.207," match, but "κ ≥ 0.207", "0.207" for "-0.207", "n^{1/2}" for
     "n^{-1/2}", "2n" for "2ⁿ", "o(n)" for "O(n)", "W" for "W'" or "\\omega" for "\\Omega" do not.
     """
+    truncated = text.endswith(TRUNCATED)
+    if truncated:
+        text = text[:-len(TRUNCATED)]
     text = unicodedata.normalize("NFKC", _SCRIPT_RUN.sub(_as_tex, text))
+    text = _MARKDOWN.sub(" ", text)
+    text = _clause_hyphens(text)
     text = _SPACING_WITH_LENGTH.sub(" ", re.sub(r"\*{2,}", " ", text))
     text = _primes(_CLAUSE_DASH.sub(" ", text).replace("--", "-"))
-    tokens = []
+    tokens = _TokenList()
+    tokens.truncated = truncated
+    previous_end = -1
+    # Case folding applies to prose, never explicit maths or asymptotic/function notation.
+    math_ranges = _math_ranges(text)
     for match in _TOKEN.finditer(text):
         token = match.group(0)
+        raw = token
+        sensitive = any(start <= match.start() < end for start, end in math_ranges)
         if match.lastgroup == "kept":
+            tokens.raw.append(raw)
+            if sensitive:
+                tokens.math_sensitive.add(len(tokens))
             tokens.append(token)
+            previous_end = match.end()
             continue
         if token in _DROPPED:
             continue
@@ -277,9 +339,17 @@ def _tokens(text: str) -> list[str]:
             lower = token.translate(_LOWER_LATIN)
             if lower in _CASED_GREEK and token[0].isupper():
                 token = lower.capitalize()
-            elif len(token) > 1 or lower == "a":  # the article; any other one-letter symbol keeps its case
+            elif lower in {"a", "we", "is", "of", "to", "by", "in", "an", "as", "at", "be", "do", "go", "he", "if", "it", "me", "my", "no", "on", "or", "so", "up", "us"} or (len(token) > 1 and token.isascii() and token.isalpha()
+                                  and lower not in {"log", "sin", "cos", "exp"}
+                                  and (token.islower() or (len(token) > 2 and (token.istitle() or token.isupper())))):
                 token = lower
+        if tokens and match.start() == previous_end and tokens[-1][-1:].isalnum() and token[:1].isalnum():
+            tokens.glued.add(len(tokens))
+        tokens.raw.append(raw if token[:1].isalpha() else token)
+        if sensitive:
+            tokens.math_sensitive.add(len(tokens))
         tokens.append(token)
+        previous_end = match.end()
     return tokens
 
 
@@ -292,7 +362,10 @@ def _cuts_a_formula(source: list[str], start: int, end: int) -> bool:
     before = source[start - 1] if start else ""
     after = source[end] if end < len(source) else ""
     return (
-        before in _OPERATORS
+        start in getattr(source, "glued", set())
+        or end in getattr(source, "glued", set())
+        or (end == len(source) and getattr(source, "truncated", False))
+        or before in _OPERATORS
         or before in _PREFIXES
         or after in _OPERATORS
         or (after in _POSTFIXES and _operand(source[end - 1]))
@@ -307,7 +380,9 @@ def _verbatim(quote: str, source: str) -> bool:
         return False
     text = _tokens(source)
     return any(
-        text[start : start + len(words)] == words and not _cuts_a_formula(text, start, start + len(words))
+        text[start : start + len(words)] == words
+        and all(text.raw[i] == words.raw[i - start] for i in text.math_sensitive if start <= i < start + len(words))
+        and not _cuts_a_formula(text, start, start + len(words))
         for start in range(len(text) - len(words) + 1)
     )
 
@@ -326,11 +401,12 @@ def _confidence(value) -> float | None:
 _BATCH_OUTPUT = re.compile(r"batch_\d+")
 
 
-def _shown(path: Path) -> dict[str, dict] | None:
+def _shown(path: Path, root: Path | None = None) -> dict[str, dict] | None:
     """The papers in the batch an output answers ({arxiv_id: item}), or None when there is none.
 
     The documented layout puts DIR/batch_NN.json's answers in DIR/out/batch_NN.jsonl.
     """
+    path = path.resolve()
     batch = path.parent.parent / f"{path.stem}.json"
     if not _BATCH_OUTPUT.fullmatch(path.stem) or not batch.is_file():
         return None
@@ -338,6 +414,15 @@ def _shown(path: Path) -> dict[str, dict] | None:
     papers = data.get("papers") if isinstance(data, dict) else None
     if not isinstance(papers, list) or not all(isinstance(item, dict) for item in papers):
         raise ValueError(f"{batch}: not a batch file (no list of papers)")
+    if root is not None:
+        receipt = root / "tmp" / "arxiv-judge-export-hashes.json"
+        hashes = json.loads(receipt.read_text(encoding="utf-8")) if receipt.exists() else {}
+        digest = hashes.get(str(batch))
+        if digest is None:
+            print(f"note: {batch}: no export receipt; checking current stored texts", file=sys.stderr)
+            return None
+        if hashlib.sha256(batch.read_bytes()).hexdigest() != digest:
+            raise ValueError(f"{batch}: exported batch changed (integrity hash mismatch)")
     return {item.get("arxiv_id"): item for item in papers}
 
 
@@ -360,10 +445,9 @@ def import_judgements(
     before anything is written: an unknown verdict, or an arxiv_id that is missing or not a stored
     paper, raises ValueError, and so does nothing get written when the corpus cannot be opened to
     check an excerpt quote. A quote is looked for only in the one text `quote_from` names: the
-    abstract, or the excerpt of one of the paper's nearest records. Those are the texts the judge
-    was shown when its output sits where the README puts it (DIR/out/batch_NN.jsonl beside
-    DIR/batch_NN.json, which holds the paper), so a record edited since the export changes
-    nothing; otherwise they are the stored abstract and today's excerpt. The accepted rows are then
+    stored abstract, or the excerpt of one of the paper's nearest records. Excerpts use an
+    unmodified export when its output sits at DIR/out/batch_NN.jsonl and the repository's export
+    receipt verifies DIR/batch_NN.json. Otherwise they use today's excerpt; changed exports fail. The accepted rows are then
     merged into fresh copies of the verdicts and collisions files in one write each, so a verdict
     or a run recorded meanwhile is kept, and a person's verdict recorded meanwhile still wins.
     """
@@ -371,7 +455,7 @@ def import_judgements(
     state = _load_state(root)
     paths = [Path(path) for path in paths]
     rows = [(path, row) for path in paths for row in _rows(path)]
-    shown = {path: _shown(path) for path in paths}
+    shown = {path: _shown(path, root) for path in paths}
     for path, row in rows:
         if not isinstance(row, dict):
             raise ValueError(f"{path}: each row must be a JSON object, not {row!r:.80}")
@@ -390,10 +474,10 @@ def import_judgements(
             continue
         quote, quote_from = str(row.get("quote") or ""), str(row.get("quote_from") or "abstract")
         item = (shown[path] or {}).get(arxiv_id)
-        if item is not None:
+        if quote_from == "abstract":
+            source = record.get("abstract", "") + (TRUNCATED if abstract_is_truncated(record) else "")
+        elif item is not None:
             source = _quoted_text(item, quote_from)
-        elif quote_from == "abstract":
-            source = record.get("abstract", "")
         elif quote_from in {near["doc_id"] for near in record.get("nearest", [])}:
             corpus = corpus or _corpus(root)
             source = _excerpt(corpus, quote_from)
@@ -423,6 +507,9 @@ def import_judgements(
         state = _load_state(root)
         attach_verdicts(state, data["verdicts"])
         _save(root, state)
+    for path in paths:
+        if shown[path] is None and _BATCH_OUTPUT.fullmatch(path.stem):
+            print(f"note: {path}: no authenticated batch; checking current stored texts", file=sys.stderr)
     return {"imported": imported, "rejected": rejected}
 
 

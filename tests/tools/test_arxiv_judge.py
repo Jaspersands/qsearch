@@ -424,7 +424,7 @@ def test_excerpt_quotes_are_checked_against_the_excerpt_the_judge_was_shown(
     assert import_judgements(root, [_jsonl(tmp_path / "loose.jsonl", [unseen])], "test", corpus=corpus)["imported"] == ["2610.11111"]
 
 
-def test_abstract_quotes_are_checked_against_the_abstract_the_judge_was_shown(
+def test_abstract_quotes_are_checked_against_the_stored_abstract(
     watched: tuple[Path, Corpus], tmp_path: Path
 ) -> None:
     root, corpus = watched
@@ -435,10 +435,10 @@ def test_abstract_quotes_are_checked_against_the_abstract_the_judge_was_shown(
     (root / "research" / "audits" / "arxiv_collisions.json").write_text(json.dumps(state), encoding="utf-8")
     (out / "out").mkdir()
     shown = _row("2610.11111", "A classical algorithm for quantum product readout")
-    assert import_judgements(root, [_jsonl(out / "out" / "batch_01.jsonl", [shown])], "test", corpus=corpus)["imported"] == ["2610.11111"]
+    assert import_judgements(root, [_jsonl(out / "out" / "batch_01.jsonl", [shown])], "test", corpus=corpus)["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
     unseen = _row("2610.11111", "replaced the abstract with entirely different words")
     result = import_judgements(root, [_jsonl(out / "out" / "batch_01.jsonl", [unseen])], "test", corpus=corpus)
-    assert result["rejected"] == [{"arxiv_id": "2610.11111", "why": "quote not found"}]
+    assert result["imported"] == ["2610.11111"]
 
 
 def test_only_a_batch_named_like_the_output_is_read_and_a_broken_one_stops_the_import(
@@ -547,3 +547,94 @@ def test_cli_exits_2_on_unusable_input(watched: tuple[Path, Corpus], tmp_path: P
         main(["--root", str(root), "--export", str(tmp_path / "out"), "--batches", "0"])
     assert stop.value.code == 2 and "--batches" in capsys.readouterr().err
     assert set(load_verdicts(root)["verdicts"]) == {"2610.33333"}
+
+@pytest.mark.parametrize('source,quote', [('O(kN)','O(kn)'),('O(Nd)','O(nd)'),('Ω(nT)','Ω(Nt)'),('O(εN)','O(εn)'),('N2','n2'),('$Wd$','$wD$'),('SU(2)','su(2)'),('O(Log n)','O(log n)')])
+def test_glued_symbol_case_is_not_prose(source, quote) -> None:
+    assert not _verbatim(PRE + quote + POST, PRE + source + POST)
+
+
+@pytest.mark.parametrize('source,quote', [('2n qubits suffice for every input in this family','n qubits suffice for every input in this family'),('3k queries suffice for every input in this family','k queries suffice for every input in this family'),('we prove the error is below 1e-6 for every input','we prove the error is below 1'),('2D<d is equivalent for every instance in this family','D<d is equivalent for every instance in this family')])
+def test_glued_product_or_number_cannot_be_cut(source, quote) -> None:
+    assert not _verbatim(quote, source)
+
+
+@pytest.mark.parametrize('prefix', ['Quantum walks are powerful - ', 'Results: - ', 'Results:\n* ', '### ', 'Earlier result. ### '])
+def test_prose_bullet_or_heading_is_not_a_formula(prefix) -> None:
+    quote = 'we show the map is unitary for every input'
+    assert _verbatim(quote, prefix + quote + '.')
+    assert not _verbatim('y is enough for every input in the family', 'x - y is enough for every input in the family')
+
+
+def test_code_backticks_do_not_consume_the_next_prime() -> None:
+    source = "Checked by `theorems/coset_pgm.py`. The map W' is unitary and the bound holds for all inputs."
+    assert _verbatim("The map W' is unitary and the bound holds for all inputs", source)
+    assert not _verbatim('The map W is unitary and the bound holds for all inputs', source)
+
+
+def test_reused_export_directory_is_rejected_without_overwriting(watched, tmp_path) -> None:
+    root, corpus = watched
+    out = tmp_path/'judge'
+    paths = export_batches(root,out,corpus=corpus)
+    before = paths[0].read_bytes()
+    with pytest.raises(ValueError, match='fresh|empty|already|reuse'):
+        export_batches(root,out,n_batches=1,corpus=corpus)
+    assert paths[0].read_bytes() == before
+
+
+def test_relative_output_uses_exported_excerpt(watched,tmp_path,monkeypatch) -> None:
+    from tools.arxiv_watch import judge
+    root, corpus = watched
+    out = tmp_path/'judge'
+    [batch] = export_batches(root,out,corpus=corpus)
+    near = json.loads(batch.read_text())['papers'][0]['nearest'][0]
+    row = _row('2610.11111',' '.join(near['excerpt'].split()[2:9]),near['doc_id'])
+    (out/'out').mkdir()
+    _jsonl(out/'out/batch_01.jsonl',[row])
+    monkeypatch.setattr(judge,'_excerpt',lambda *args:'different content now')
+    monkeypatch.chdir(out/'out')
+    assert import_judgements(root,[Path('batch_01.jsonl')],'test',corpus=corpus)['imported'] == ['2610.11111']
+
+
+def test_tampered_batch_cannot_supply_quote_evidence(watched,tmp_path) -> None:
+    root, corpus = watched
+    out = tmp_path/'judge'
+    [batch] = export_batches(root,out,corpus=corpus)
+    data = json.loads(batch.read_text())
+    fabricated = 'This invented sentence refutes all the project claims entirely.'
+    data['papers'][0]['abstract'] = fabricated
+    batch.write_text(json.dumps(data))
+    (out/'out').mkdir()
+    row = _row('2610.11111',fabricated)
+    with pytest.raises(ValueError, match='changed|integrity|hash'):
+        import_judgements(root,[_jsonl(out/'out/batch_01.jsonl',[row])],'test',corpus=corpus)
+
+
+def test_truncated_text_is_marked_and_quote_cannot_end_at_cut(watched,tmp_path) -> None:
+    from tools.arxiv_watch import judge
+    root, corpus = watched
+    state = _load_state(root)
+    prefix = ' '.join(f'uniqueword{i}' for i in range(300))
+    state['papers']['2610.11111']['abstract'] = prefix[:1500]
+    state['papers']['2610.11111'].pop('abstract_complete',None)
+    (root/'research/audits/arxiv_collisions.json').write_text(json.dumps(state))
+    [batch] = export_batches(root,tmp_path/'judge',corpus=corpus)
+    item = json.loads(batch.read_text())['papers'][0]
+    assert item['abstract'].endswith('[truncated]')
+    quote = ' '.join(prefix[:1500].split()[-10:])
+    assert not _verbatim(quote,item['abstract'])
+    class Doc:
+        text = prefix
+    class CorpusStub:
+        def get(self, _): return Doc()
+    excerpt = judge._excerpt(CorpusStub(),'id')
+    assert excerpt.endswith('[truncated]')
+    assert not _verbatim(' '.join(excerpt.removesuffix(' [truncated]').split()[-10:]),excerpt)
+
+@pytest.mark.parametrize('source,quote', [('is $WE$ here','is $we$ here'),('uses O(ABC) queries','uses O(abc) queries'),('is $Alpha$ here','is $alpha$ here'),('has x - delta here','has x delta here')])
+def test_adversarial_math_case_and_named_operand(source,quote) -> None:
+    assert not _verbatim(PRE + quote + POST, PRE + source + POST)
+
+@pytest.mark.parametrize('formula', ['$AB - CD$', 'AB - CD', '$alpha - beta$'])
+def test_subtraction_is_never_clause_punctuation(formula) -> None:
+    source = 'We prove ' + formula + ' is the exact bound today.'
+    assert not _verbatim(source.replace(' - ', ' '),source)

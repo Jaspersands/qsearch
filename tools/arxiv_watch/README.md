@@ -7,6 +7,7 @@ each one at the nearest retained negative, note or theorem module in the corpus 
 pip install "scikit-learn>=1.4"                   # all watch.py needs (numpy, scipy come with it)
 python tools/arxiv_watch/watch.py                 # papers since the last run, with a 7-day overlap
 python tools/arxiv_watch/watch.py --since 2026-09-18 --tracks dcp,dqi_opi
+python tools/arxiv_watch/watch.py --render        # refresh digest only; source files unchanged
 python tools/arxiv_watch/watch.py --relabel       # re-apply label rules to stored papers, no fetching
 python tools/arxiv_watch/watch.py --replay-seeds  # classifier consistency check on the seed papers
 python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." --action "..."
@@ -15,7 +16,11 @@ python tools/arxiv_watch/watch.py --action-done 2610.06753   # that verdict's ac
 
 Each track query is sorted newest first and paged (`--max` results per page, default 100)
 until a page reaches back past the window start, at most `--max-pages` pages (default 10),
-with arXiv's three-second pause between requests. If the page cap stops a query first, the
+with arXiv's three-second pause between requests. `--max` is capped at 2000. The feed's
+`totalResults` determines exhaustion; an empty/short page before that total a repeated page, or a changing
+count is retried twice (bypassing its cached response), then recorded as incomplete. An
+explicit zero-result feed is complete; an empty feed without a total is not. API error
+entries fail the run with a clean error. If the page cap or an incomplete page stops a query, the
 uncovered window is recorded under `gaps` in the JSON, printed as a warning and listed under
 "Incomplete coverage" in the digest until a run of that track that was not cut short covers
 it (`--since <start> --tracks <track>`). A `--since` that is not a `YYYY-MM-DD` date, a
@@ -30,6 +35,9 @@ and a `--since` that starts after a track's usual window start leaves that track
 alone, so its next run still fetches the days that run skipped. A collisions file written
 before per-track dates has only `updated`; each track without a date of its own is taken to
 have run then, and the next saving run records that date for it before moving `updated`.
+Once `tracks_updated` exists, a missing track is a first run. Outstanding gaps extend the
+next default window back to the earliest skipped date, including a narrow first `--since`.
+Neither a page cap nor an incomplete page advances that track's date.
 Papers already stored are recognised by id and never re-reported or re-scored, with two
 exceptions:
 
@@ -46,7 +54,7 @@ Outputs, rewritten only when a run finds a new paper, a coverage gap opens or cl
 verdict is added, changed or withdrawn, a stored flag is relabelled, or another track's query
 returns a stored paper (its `queried_by` list grows, as after a `--tracks` backfill), so a
 quiet week leaves them byte-for-byte unchanged. A rewrite also moves `updated`, the
-`tracks_updated` entry of every run track whose window started no later than usual, and the
+`tracks_updated` entry of every fully covered track whose window started no later than usual, and the
 digest's "Last updated" line to the run date. A verdict
 for a paper the watch has not stored changes no record, so the run re-renders only the digest:
 
@@ -59,6 +67,16 @@ for a paper the watch has not stored changes no record, so the run re-renders on
 - `research/audits/arxiv_verdicts.json`: the reviewed verdicts, keyed by arXiv id. Written
   by `--verdict` and by the judge import (`judge.py`); the source of truth for the Reviewed
   table.
+
+New records store the full abstract. Older 1500-character abstracts may have lost their
+ends: `--relabel` retains their existing labels, tracks and cues; it can add tracks found in
+the visible text and promote `unrelated` to `related`, but cannot remove evidence or infer
+a new kill/scoop from that incomplete text. Judge exports mark such cuts `[truncated]`.
+`--render` atomically writes only the digest; both source JSON files remain byte-for-byte
+unchanged, with no fetching or corpus build. It also creates a missing digest. A later fetch
+can restore a legacy abstract when its version matches and the full text starts with the
+stored prefix, preserving labels, first-seen date and verdicts; `--relabel` can then use the
+recovered text.
 
 ## Tracks and labels
 
@@ -125,8 +143,8 @@ They do the same when `arxiv_collisions.json` cannot be read, and when `--root` 
 Each entry holds `verdict`, `reason`, `action` (null when nothing is to be done), `by` and
 `reviewed_on`. `action_done: true` marks an action already carried out; set it with
 `watch.py --action-done ID` (exit 2 when the paper has no verdict or its verdict no action).
-Re-recording a person's verdict without `--action` keeps the earlier action and its
-`action_done`, and says so; a different `--action` starts not done, and `--action ""` clears
+Re-recording the same person's verdict without `--action` keeps the earlier action and its
+`action_done` (only JSON `true` counts), and says so; a different `--action` starts not done, and `--action ""` clears
 it. Without `--reason` the earlier reason is kept, and the output says so, only when the
 verdict is unchanged; a changed verdict with a stored reason needs its own `--reason` (exit 2
 otherwise). A person recording over a judge's verdict keeps neither the judge's reason nor its
@@ -140,6 +158,12 @@ Seeding the file (the 22 verdicts of the 2026-10-21 review) changes every stored
 names, so the first weekly run after a seed opens a pull request even when no new paper
 arrives.
 
+An `action_pending_clarification` string means the original reviewed action cannot yet be
+executed (for example, its note path does not exist). The original reviewer, reason, action,
+and review date remain intact. Digest and brief show the clarification. `--action-done`
+refuses it; re-recording the same action keeps the clarification, while replacing or clearing
+that action removes it. Resolve the intended target before recording a replacement.
+
 ## Judging unreviewed flags
 
 New possible kills and scoops arrive every week. `judge.py` hands the unreviewed ones (flagged,
@@ -151,8 +175,15 @@ python tools/arxiv_watch/judge.py --export DIR --batches 3
 python tools/arxiv_watch/judge.py --import DIR/out/*.jsonl --judge claude-subagent-2026-10-27
 ```
 
+Use a fresh export directory each time. An existing `batch_*.json` or `out/*.jsonl` makes
+export fail before overwriting anything, so a smaller export cannot reuse old outputs.
+Export records SHA-256 receipts in the repository's ignored
+`tmp/arxiv-judge-export-hashes.json`, outside the judge's output directory. Keep that receipt
+until import; it detects changed batches, rather than authenticating the reviewer.
+
 Each batch item has the paper's title, abstract, label, cues and tracks, and its nearest
-Q-Search records with the first 600 characters of each. Batch files are UTF-8 with no `\u`
+Q-Search records with the first 600 characters of each. Truncated abstracts/excerpts end
+with `[truncated]`; a quote cannot end at that cut or include the marker. Batch files are UTF-8 with no `\u`
 escapes, so the judge sees the characters the quote check compares. The judge writes one row
 per paper:
 `{"arxiv_id", "verdict", "reason", "quote", "quote_from", "action", "confidence"}`.
@@ -165,14 +196,16 @@ write each, so a verdict or run recorded meanwhile is kept. A row is rejected wh
 
 - its quote is under six words (numbers count; symbols and TeX commands do not), or does not
   appear verbatim in the one text `quote_from` names: the abstract, or the excerpt of one of
-  the paper's nearest records. Spacing, the case of ordinary Latin words (two or more letters,
-  and the word "a"), sentence punctuation (`. , ; : ?`), quote marks and apostrophes, an em
-  dash (`—`, `---`) or spaced en dash (` – `, ` -- `) between clauses, markdown's `**` and
+  the paper's nearest records. Spacing, the case of ordinary Latin prose words, sentence punctuation (`. , ; : ?`), quote marks and apostrophes, an em
+  dash (`—`, `---`), spaced en dash (` – `, ` -- `), or spaced ASCII
+  hyphen between multi-letter prose words; Markdown headings/list markers and `**` and
   TeX's `$`, `\(`, `\)` and spacing commands (`\,`, `\quad`, `\qquad`, `\hspace{1em}` and the
   like) are ignored; every other dash, `--` and `−` read as `-`. The maths must match: signs,
   `/`, `!`, `#`, `%`, `^`, `_`, `×`, braces and brackets, Greek letters, TeX commands (`\Omega`
   is not `\omega`), spelled-out Greek capitals (`Omega` is not `omega`), the case of every
-  other one-letter symbol (`O(n)` is not `o(n)`, `N` is not `n`), primes (`W'` is `W′`, never
+  other one-letter symbol (`O(n)` is not `o(n)`, `N` is not `n`), glued
+  products such as `kN`, `Wd`, `N2` and short symbols such as `SU`. Explicit TeX maths and
+  asymptotic/function expressions also preserve original letter case, primes (`W'` is `W′`, never
   `W`; an `'` is a prime after a digit, a closing bracket, a one-letter symbol or a TeX command,
   and an apostrophe or quote mark otherwise), a decimal point (`.5` is not `5`, `2.9x` is
   `2.9 x`) and a ratio's colon (`1:2`). A superscript reads as its TeX exponent (`2ⁿ` is `2^n`,
@@ -182,12 +215,11 @@ write each, so a verdict or run recorded meanwhile is kept. A row is rejected wh
   prefix (`√`, `\sqrt`, `\log`, `#`, a decimal point), or just before an operator or a
   factorial, percent sign or prime that follows a number or symbol. A quote that runs from one
   text into another, or comes from a record the judge was not shown, is not evidence ("quote
-  not found"). The texts are the ones the judge was shown: an output at `DIR/out/batch_NN.jsonl`
-  is checked against the abstract and excerpts in `DIR/batch_NN.json`, so a note edited or a
-  paper re-fetched after the export neither breaks a faithful quote nor admits one from the new
-  text. A file elsewhere, or a paper missing from its batch, is checked against the stored
-  abstract and today's excerpt. A batch file that is not a JSON object with a list of papers
-  stops the import (exit 2);
+  not found"). Abstract quotes always use the stored paper. Excerpts use the exported batch
+  at `DIR/batch_NN.json` for `DIR/out/batch_NN.jsonl` only when its repository receipt matches
+  (relative output paths are resolved first). A changed batch stops import. Unreceipted or
+  missing batches fall back to today's stored texts, with a note for batch-named outputs.
+  A batch file that is not a JSON object with a list of papers stops import (exit 2);
 - the paper already has a verdict recorded by anyone but a judge, including an entry written
   by hand without `by` ("human verdict exists").
 
@@ -218,20 +250,11 @@ to get CI.
 - Unit tests (`tests/tools/test_arxiv_watch.py`, `tests/tools/test_arxiv_judge.py`) use a
   recorded arXiv API response and a fake client; nothing in the test suite touches the
   network.
-- Verdict smoke run (2026-10-21, after seeding): `watch.py --relabel` on the branch checkout
-  kept all 22 verdicts on their records; the possible-kill and possible-scoop sections were
-  empty and the Reviewed table had 22 rows, none "not stored". The five flags the review calls
-  already cited kept their labels there, because the notes that cite them were not committed
-  yet. Four unflagged papers changed label or tracks under the branch's rules and index
-  (2609.23818 and 2609.35511 to unrelated, 2609.31484 to already-cited, 2610.17711 lost
-  hidden_shift). The relabelled outputs were not committed. A weekly run never recomputes
-  labels: a simulated first weekly run with no new papers changed no label, only the 22
-  verdict attachments and the run dates (`updated`, all 14 `tracks_updated` entries and the
-  digest's "Last updated" line). The four changes need an explicit `watch.py --relabel`
-  commit. Besides any new papers, the first pull request after seeding holds the 22 verdict
-  attachments and the run dates. New papers are all but certain: that run fetches from a week
-  before each track's last fetch (2026-10-11, and 2026-10-12 for number_theory), and the newest
-  stored paper is from 2026-10-16. The workflow's PR body says what can change.
+- The earlier 2026-10-21 relabel smoke run reported four changes. Three were artefacts of
+  truncated abstracts (2609.23818, 2609.35511 and 2610.17711), not changed rules. Relabel now
+  preserves that missing-tail evidence. Only 2609.31484's `already-cited` change was a
+  genuine citation-index difference. The current digest is regenerated offline with
+  `--render`; its dates describe stored fetches, not this rendering time.
 - Seed replay: all 52 seed papers whose tags name a track are placed on it. Nine
   patterns were added after the first replay missed them, so this is a consistency
   check on the seeds, not a held-out accuracy figure.

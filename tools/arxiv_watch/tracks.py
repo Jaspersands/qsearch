@@ -106,8 +106,8 @@ TRACKS: dict[str, Track] = {
         frozenset({"lattice", "unique-svp"}),
     ),
     "number_theory": Track(
-        ("factoring", "discrete logarithm", "principal ideal", "class group", "Pell equation"),
-        (r"factoring", r"discrete log", r"principal ideal", r"class (group|number)", r"unit group", r"\bpell", r"regulator", r"regev"),
+        ("factoring", "discrete logarithm", "discrete-logarithm", "integer factorization", "integer factorisation", "Shor", "order finding", "principal ideal", "class group", "Pell equation"),
+        (r"factoring", r"\bshor\b", r"order[- ]finding", r"integer factori[sz]ation", r"factori[sz]ation of (?:RSA|[0-9])", r"discrete[- ]log", r"principal ideal", r"class (group|number)", r"unit group", r"\bpell", r"regulator", r"regev"),
         frozenset({"number-theory", "principal-ideal"}),
     ),
     "state_discrimination": Track(
