@@ -825,6 +825,7 @@ def test_referee_section_missing(tmp_path: Path, monkeypatch) -> None:
 
 
 def test_preflight_section_groups_problems_by_check(fake_repo: Path) -> None:
+    (fake_repo / "qsearch.py").write_text("", encoding="utf-8")  # a checkout, as preflight.py requires
     (fake_repo / "research" / "hypotheses" / "broken.json").write_text('{"bad": "\\x"}', encoding="utf-8")
     section = B.preflight_section(fake_repo)
     assert section["available"] is True
@@ -833,6 +834,16 @@ def test_preflight_section_groups_problems_by_check(fake_repo: Path) -> None:
     [problem] = section["by_check"]["json"]
     assert problem["path"] == "research/hypotheses/broken.json" and problem["message"].startswith("Invalid \\escape")
     assert section["by_check"]["imports"] == [{"path": ".", "message": "git unavailable"}]
+
+
+def test_preflight_section_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> None:
+    # preflight.py's own command line refuses such a root (exit 2): every check would report a
+    # problem only the wrong root causes ("git unavailable", a missing manifest).
+    section = B.preflight_section(tmp_path)
+    assert section == {"available": False,
+                       "reason": f"{tmp_path} is not a Q-Search checkout: it has no qsearch.py"}
+    (tmp_path / "qsearch.py").mkdir()
+    assert B.preflight_section(tmp_path)["available"] is False
 
 
 def test_preflight_section_missing(tmp_path: Path, monkeypatch) -> None:
@@ -1060,6 +1071,7 @@ def test_build_never_fails_when_every_source_is_missing(tmp_path: Path, monkeypa
 
 def _full_repo(tmp_path: Path, monkeypatch) -> Path:
     repo = _history_repo(tmp_path)
+    (repo / "qsearch.py").write_text("", encoding="utf-8")  # a checkout, for the preflight section
     _arxiv_files(
         repo,
         [_paper("2610.11111", "Open new kill", "possible-kill", "2026-10-18")],

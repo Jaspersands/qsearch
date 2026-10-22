@@ -425,10 +425,16 @@ def referee_section(root: Path) -> dict[str, Any]:
 
 
 def preflight_section(root: Path) -> dict[str, Any]:
-    """The static preflight checks (`tools/preflight/preflight.py`), problems grouped by check."""
+    """The static preflight checks (`tools/preflight/preflight.py`), problems grouped by check.
+
+    Not available for a root without qsearch.py, which preflight.py's own command line refuses:
+    every check would report a problem that only the wrong root causes.
+    """
     preflight, reason = _import_tool("tools.preflight.preflight", "tools/preflight")
     if preflight is None:
         return {"available": False, "reason": reason}
+    if not (Path(root) / "qsearch.py").is_file():
+        return {"available": False, "reason": f"{root} is not a Q-Search checkout: it has no qsearch.py"}
     problems = preflight.run(Path(root))
     by_check: dict[str, list[dict[str, str]]] = {}
     for problem in problems:
