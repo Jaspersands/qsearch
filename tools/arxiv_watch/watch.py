@@ -230,7 +230,7 @@ def relabel(root: Path, corpus: Corpus) -> int:
         label, cues = label_for(paper, tracks, cited=bool(corpus.mentions(arxiv_id)))
         if abstract_is_truncated(record):
             # The visible prefix can add relevance but cannot retract evidence in the missing tail.
-            tracks = sorted(set(tracks) | set(record.get("tracks", [])))
+            tracks = list(dict.fromkeys(record.get("tracks", []) + tracks))
             cues = list(dict.fromkeys(record.get("cues", []) + cues))
             label = record.get("label", "unrelated")
             if label == "unrelated" and tracks:

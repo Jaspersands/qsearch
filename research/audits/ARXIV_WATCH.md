@@ -7,9 +7,9 @@ Labels come from wording cues and are for triage only. Read a paper before actin
 |---|---|
 | possible-kill | 7 |
 | possible-scoop | 15 |
-| related | 150 |
-| already-cited | 9 |
-| unrelated | 537 |
+| related | 154 |
+| already-cited | 10 |
+| unrelated | 532 |
 
 The counts are machine labels. A flagged paper with a person's verdict is listed under Reviewed,
 not in the possible-kill and possible-scoop sections. One with only a judge's verdict stays in
@@ -39,6 +39,7 @@ None yet.
 | 2026-10-13 | [2610.18589](https://arxiv.org/abs/2610.18589) $T$-efficient unitary synthesis via block-sparse Hamiltonian simulation | qsvt |  | `note:SINGER_SHOR_ACCESS_CLOSURE#paid-coordinate-conversion` (research/SINGER_SHOR_ACCESS_CLOSURE.md:51) |
 | 2026-10-13 | [2610.18491](https://arxiv.org/abs/2610.18491) Some applications of the quasi-Riemann hypothesis to class groups and small generators of number fields | number_theory |  | `note:ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER#7-references-literature-demarcation` (research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md:173) |
 | 2026-10-13 | [2610.18482](https://arxiv.org/abs/2610.18482) Lifting: Quantum State Discrimination Framework for Mid-Circuit Measurements | state_discrimination |  | `note:DCP_BELL_INFERENCE_KERNEL#why-the-noise-gate-is-not-a-fundamental-obstruction` (research/DCP_BELL_INFERENCE_KERNEL.md:200) |
+| 2026-10-13 | [2610.18245](https://arxiv.org/abs/2610.18245) Experimental Benchmarking of a 256-Qubit Room-Temperature NV-Diamond Quantum Processor with an Optically Programmable Biomolecular Quantum Bus | number_theory |  | `note:QUANTUM_SUPREMACY_RCS_ANTICONCENTRATION_BARRIER#3-linear-cross-entropy-benchmarking-xeb-and-physical-noise-decay` (research/QUANTUM_SUPREMACY_RCS_ANTICONCENTRATION_BARRIER.md:64) |
 | 2026-10-13 | [2610.18239](https://arxiv.org/abs/2610.18239) River ribbon tableaux and symmetric group characters | representation |  | `theorem:self_dual_wreath_two_partition_ribbon_surface` (theorems/self_dual_wreath_two_partition_ribbon_surface.py:1) |
 | 2026-10-13 | [2610.17711](https://arxiv.org/abs/2610.17711) Local Leakage Resilience of Shamir Secret Sharing: Below Half Threshold Rate | hidden_shift, code_equivalence |  | `note:DCP_SIEVE_BUCKET_COLLISION_BIRTHDAY_TRADEOFF_AUDIT#1-exact-results` (research/DCP_SIEVE_BUCKET_COLLISION_BIRTHDAY_TRADEOFF_AUDIT.md:3) |
 | 2026-10-13 | [2610.17649](https://arxiv.org/abs/2610.17649) The local structure of refined class groups in cyclotomic Iwasawa theory | number_theory |  | `note:NATIVE_HIGHER_CALL_PRIME_POWER_SURVIVAL_CLOSED_FORM#1-motivation-and-scope` (research/NATIVE_HIGHER_CALL_PRIME_POWER_SURVIVAL_CLOSED_FORM.md:3) |
@@ -66,9 +67,8 @@ None yet.
 | 2026-10-07 | [2610.09584](https://arxiv.org/abs/2610.09584) Quantum Approximation Complexity of Classical Optimization Problems | number_theory |  | `negative:NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER` (research/registry/negative_results.json:68412) |
 | 2026-10-07 | [2610.09319](https://arxiv.org/abs/2610.09319) Derived Picard reconstruction for graded surfaces with stops | number_theory |  | `theorem:self_dual_wreath_target_survival_surface_seed` (theorems/self_dual_wreath_target_survival_surface_seed.py:1) |
 | 2026-10-06 | [2610.08664](https://arxiv.org/abs/2610.08664) Algorithms for Sampling Self-Orthogonal and Totally Self-Orthogonal Codes in Odd Characteristic | code_equivalence | We give an algorithm | `note:LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER#` (research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md:1) |
-| 2026-10-06 | [2610.08216](https://arxiv.org/abs/2610.08216) Quantum Entangled Multimodal Fusion Networks (QEMFN): Resource-Aware Hybrid Vision-Language Fusion via Trainable Entanglement | dequantization |  | `theorem:self_dual_wreath_gpe_fusion_tree_cs_boundary` (theorems/self_dual_wreath_gpe_fusion_tree_cs_boundary.py:1) |
 
-And 110 more related papers, older, in `research/audits/arxiv_collisions.json`.
+And 114 more related papers, older, in `research/audits/arxiv_collisions.json`.
 
 ## Reviewed
 
