@@ -60,8 +60,8 @@ def pair_report(
     Within a pair `a < b`. Scores are rounded to four places, and a pair is kept when its
     rounded score is at least `threshold` (so a float32 cosine of 0.9999997, reported as 1.0,
     counts at a threshold of 1). Ties are ordered by id, so a report is stable across runs on
-    one TF-IDF fit and the per-family cap keeps a family's lowest ids. Documents changed since the last fit are
-    patched in with that fit's IDF, which can move a score by a few hundredths; call
+    one TF-IDF fit and the per-family cap keeps a family's lowest ids. Documents changed
+    since the last fit are patched in with that fit's IDF, which can move a score by a few hundredths; call
     `corpus.refit()` first for a report that depends only on the current documents (the
     CLI does for `--out`). With `per_family`, at most that many pairs whose two ids
     share a family (the id before its last `-<number>`) are kept; other pairs are not capped.

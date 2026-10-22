@@ -152,12 +152,12 @@ Two checks for negatives that say what an existing record already says
 (`duplicates.py`). Both score by TF-IDF cosine on the index's own word unigram and bigram
 vectors (`check-new` with `Corpus.cosine_hits`, which scores every negative-kind document,
 and `near-duplicates` with `Corpus.matrix`, the pairwise cosines of one kind), not by the
-rank-fusion score a search hit carries, so a score
-is a similarity in [0, 1], not a rank. A threshold is compared with the cosine rounded to four
-places, the score shown, so a float32 cosine of 0.9999997 counts at `--threshold 1` (57 pairs
-show 1.000; before this rule `--threshold 1` found 18 of them). Ties in the pair report are
-ordered by id, so `--per-family` keeps a family's lowest ids. A score still depends on the rest of the index through
-the IDF weights, and on the fit history: between refits (see Ranking above: more than 5 %
+rank-fusion score a search hit carries, so a score is a similarity in [0, 1], not a rank. A
+threshold is compared with the cosine rounded to four places, the score shown, so a float32
+cosine of 0.9999997 counts at `--threshold 1` (57 pairs show 1.000; before this rule
+`--threshold 1` found 18 of them). Ties in the pair report are ordered by id, so
+`--per-family` keeps a family's lowest ids. A score still depends on the rest of the index
+through the IDF weights, and on the fit history: between refits (see Ranking above: more than 5 %
 of documents changed) changed documents are patched in with the last fit's vocabulary and
 IDF, which can move a score by a few hundredths. On a shared index patched 406 documents past
 its fit, the committed report's `COSET-DISTINGUISHABILITY-DEBT-S10/S8-PARTIAL_MATCHING` pair
