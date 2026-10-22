@@ -106,6 +106,12 @@ untracked. When git works but the root is not the top of the work tree, the prob
 so: `git unavailable: the root is not the top of a git work tree (git sees it as
 export/)`.
 
+Git is asked about the root's own repository. Variables that point git elsewhere, such as
+the `GIT_DIR` and `GIT_INDEX_FILE` a hook of another repository or worktree exports, are
+dropped. The one exception is a `GIT_INDEX_FILE` inside the root's own git directory: a
+pre-commit hook of this checkout under `git commit -a` or `git commit <paths>` gets the index
+that commit will record, and that index is the one checked.
+
 ## Slow checks
 
 | Flag | Check | What it does |

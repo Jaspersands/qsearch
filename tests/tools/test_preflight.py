@@ -554,6 +554,38 @@ def test_tree_inside_an_unrelated_repository_is_git_unavailable(
     ]
 
 
+def test_git_variables_of_another_repository_are_ignored(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # A hook of another repository or worktree exports its own GIT_DIR and GIT_INDEX_FILE.
+    other = _repo(tmp_path / "other")
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    return a\n"
+    repo = _repo(tmp_path / "mine", general=general, committed={"theorems/tracked.py": "a = 1\n"})
+    monkeypatch.setenv("GIT_DIR", str(other / ".git"))
+    monkeypatch.setenv("GIT_INDEX_FILE", str(other / ".git" / "index"))
+
+    assert pf.check_untracked_imports(repo) == []
+
+
+def test_the_index_a_hook_of_this_checkout_commits_is_used(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # `git commit -a` or `git commit <paths>` runs the pre-commit hook with GIT_INDEX_FILE set to
+    # the index it is about to commit, which can track more than .git/index does.
+    general = "def command_audit(args):\n    from theorems.new import a\n    return a\n"
+    repo = _repo(tmp_path, general=general)
+    _write(repo / "theorems" / "new.py", "a = 1\n")
+    next_index = repo / ".git" / "next-index-1.lock"
+    next_index.write_bytes((repo / ".git" / "index").read_bytes())
+    subprocess.run(
+        ["git", "-C", str(repo), "add", "theorems/new.py"],
+        env={**os.environ, "GIT_INDEX_FILE": str(next_index)},
+        check=True,
+    )
+    assert [p.path for p in pf.check_untracked_imports(repo)] == ["theorems/new.py"]
+
+    monkeypatch.setenv("GIT_DIR", str(repo / ".git"))
+    monkeypatch.setenv("GIT_INDEX_FILE", ".git/next-index-1.lock")  # relative to the work tree, as git exports it
+
+    assert pf.check_untracked_imports(repo) == []
+
+
 def test_a_root_inside_a_checkout_is_named_as_such(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     # Say --root qsearch_cli by mistake: git works there, so "git unavailable" alone would mislead.
     repo = _repo(tmp_path)

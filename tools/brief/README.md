@@ -104,7 +104,7 @@ repository's history and registry.
 
 **Preflight's git.** All of the above is the brief's own git. The preflight section calls
 `tools/preflight/preflight.py` `run()`, which runs its own git outside this allow-list,
-environment and timeout: `git rev-parse --show-prefix`, `git ls-files -z` and
+environment and timeout: `git rev-parse --show-prefix --absolute-git-dir`, `git ls-files -z` and
 `git diff-files --name-only -z --diff-filter=A`, the last two over `theorems/`, `core/` and
 `qsearch_cli/`. They read the local index and work tree, never write the index and never
 contact a remote; they are the commands preflight runs before every commit.

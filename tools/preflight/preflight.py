@@ -310,13 +310,34 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
     return refs
 
 
-def _git_output(root: Path, *args: str) -> str | None:
+# Variables that point git at a repository. A hook exports them for its own repository, which
+# need not be the root's: git -C root would then read that repository's index for root.
+GIT_REPOSITORY_VARIABLES = (
+    "GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE", "GIT_OBJECT_DIRECTORY",
+    "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_IMPLICIT_WORK_TREE", "GIT_PREFIX",
+)
+
+
+def _git_output(root: Path, *args: str, env: dict[str, str] | None = None) -> str | None:
     """stdout of ``git -C root args``; None when git is missing or fails."""
     try:
-        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True)
+        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, env=env)
     except OSError:
         return None
     return result.stdout.decode("utf-8", errors="replace") if result.returncode == 0 else None
+
+
+def _git_env(root: Path, git_dir: str | None = None) -> dict[str, str]:
+    """The environment for git about root: none of the inherited repository variables, except an
+    index file inside root's own git directory (a hook of this checkout committing that index)."""
+    env = {key: value for key, value in os.environ.items() if key not in GIT_REPOSITORY_VARIABLES}
+    env["GIT_OPTIONAL_LOCKS"] = "0"
+    index = os.environ.get("GIT_INDEX_FILE")
+    if index and git_dir:
+        path = (root / index).resolve()  # git -C root reads a relative one from root
+        if path.is_relative_to(Path(git_dir).resolve()):
+            env["GIT_INDEX_FILE"] = str(path)
+    return env
 
 
 def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
@@ -332,16 +353,19 @@ def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
     diff-files detects no renames, so a renamed module marked with -N is still added.
     """
     root = Path(root).resolve()
-    prefix = _git_output(root, "rev-parse", "--show-prefix")
-    if prefix is None:
+    env = _git_env(root)  # no inherited repository variables: git finds root's own repository
+    found = _git_output(root, "rev-parse", "--show-prefix", "--absolute-git-dir", env=env)
+    if found is None:
         return "git unavailable"
+    prefix, _, git_dir = found.partition("\n")
     if prefix.strip():
         return f"git unavailable: the root is not the top of a git work tree (git sees it as {prefix.strip()})"
+    env = _git_env(root, git_dir.strip())
     pathspec = ("--", *PACKAGES, CLI_PACKAGE)
-    listing = _git_output(root, "ls-files", "-z", *pathspec)
+    listing = _git_output(root, "ls-files", "-z", *pathspec, env=env)
     if listing is None:
         return "git unavailable"
-    added = _git_output(root, "diff-files", "--name-only", "-z", "--diff-filter=A", *pathspec)
+    added = _git_output(root, "diff-files", "--name-only", "-z", "--diff-filter=A", *pathspec, env=env)
     intent = {p for p in (added or "").split("\0") if p}
     return {p for p in listing.split("\0") if p} - intent, intent
 
