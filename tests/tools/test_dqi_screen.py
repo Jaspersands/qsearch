@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import replace
 from pathlib import Path
 
@@ -108,7 +109,71 @@ def test_finite_reach_bounds_hand_values() -> None:
     assert R.plotkin_distance(1000, 900, 2) == 500
     assert R.plotkin_distance(127, 39, 2**61 - 1) == 126  # m (1 - 1/q), rounded down
     assert R.plotkin_distance(3, 1, 7) == 2  # [3, 2] over F_7: 3 * 6 * 7 / 48 = 2.625
-    assert R.packing_radius(23, 11, 2, 1) >= 3  # the perfect Golay [23, 12, 7] decodes 3 errors
+    assert R.packing_radius(23, 11, 2, 1) == 3  # the perfect Golay [23, 12, 7]: its radius-3 ball is 2^11 exactly
+
+
+def _ball_radius(m: int, n: int, q: int, letters: int) -> int:
+    """The largest l with sum_{i <= l} C(m, i) letters^i <= q^n, by exact integers."""
+    total, cap, term = 0, q**n, 1  # term = C(m, radius) letters^radius
+    for radius in range(m + 1):
+        total += term
+        if total > cap:
+            return radius - 1
+        term = term * (m - radius) * letters // (radius + 1)
+    return m
+
+
+def test_packing_radius_counts_the_whole_ball_not_one_weight() -> None:
+    # Every pattern of weight <= l needs its own syndrome: the ball, not the patterns of weight exactly l.
+    assert R.packing_radius(24, 11, 2, 1) == 2  # 1 + 24 + 276 + 2024 = 2325 > 2^11: binary [24, 13] cannot reach 3
+    assert R.packing_radius(15, 11, 2, 1) == 4 and R.packing_radius(10, 1, 2, 1) == 0
+    assert R.packing_radius(2000, 779, 3, 2) == 224
+    assert R.packing_radius(1000, 681, 5, 2) == 644  # one weight alone would allow every radius
+    assert R.packing_radius(20, 19, 3, 2) == 11
+    assert R.packing_radius(6000, 420, 8191, 2) == 1178  # MPI: the README's signed packing radius
+    assert R.packing_radius(1000, 680, 2**61 - 1, 2) == 1000  # 3^1000 < q^680: every pattern fits
+    for q in (2, 3, 4, 5, 7):
+        for m in range(1, 31):
+            for n in range(m + 1):
+                for letters in sorted({q - 1, 2}):
+                    assert R.packing_radius(m, n, q, letters) == _ball_radius(m, n, q, letters), (m, n, q, letters)
+
+
+@pytest.mark.parametrize("m, n, q, letters", [
+    (1000, 600, 2**61 - 1, 2**61 - 2),  # count over a huge field: the ball is its last term
+    (30000, 779, 2**61 - 1, 2),  # signed patterns: the radius sits just below the mode, 20000
+    (20677, 14114, 5, 2),  # q^n tops the half of 3^m up to the mode: the radius is past the mode
+    (60000, 40000, 2, 1),  # binary, far below the mode
+])
+def test_packing_radius_beyond_exact_integers_matches_the_ball(m: int, n: int, q: int, letters: int) -> None:
+    assert n * math.log2(q) > R._EXACT_BITS  # the floating-point ball
+    assert R.packing_radius(m, n, q, letters) == _ball_radius(m, n, q, letters)
+
+
+def test_floating_point_ball_matches_exact_integers() -> None:
+    for q in (2, 3, 5, 7):
+        for m in range(1, 31):
+            for n in range(m + 1):
+                for letters in sorted({q - 1, 2}):
+                    assert R._packing_radius_float(m, n, q, letters) == _ball_radius(m, n, q, letters), (m, n, q)
+
+
+def test_reach_fails_one_past_the_ball_radius() -> None:
+    # sum_{i <= 225} C(2000, i) 2^i > 3^779: radius 225 is impossible for a ternary [2000, 1221] code.
+    third = {"q": 3, "m": 2000, "n": 779, "rho": 1 / 3, "min_distance": None}
+    s, checks = _run("hermite_half_rate.json", **third, radius=225)
+    assert s.quantities["hamming_radius"] == 224
+    assert checks["reach"].passed is False and "sphere-packing 224" in checks["reach"].detail
+    assert s.verdict == "not viable"
+    assert _run("hermite_half_rate.json", **third, radius=224)[1]["reach"].passed is True
+    s, checks = _run("hermite_half_rate.json", q=2, m=24, n=11, radius=3, min_distance=None)  # binary [24, 13]
+    assert checks["reach"].passed is False and "sphere-packing 2" in checks["reach"].detail
+    # The cosine: radius 1178 is the largest whose signed ball fits 8191^420 (MPI).
+    s, checks = _run("mpi_signed_cosine.json", radius=1178)
+    assert s.quantities["signed_packing_radius"] == 1178 and checks["reach"].passed is True
+    s, checks = _run("mpi_signed_cosine.json", radius=1179)
+    assert checks["reach"].passed is False and "signed packing radius 1178" in checks["reach"].detail
+    assert s.verdict == "not viable"
 
 
 @pytest.mark.parametrize("m, n", [(15, 11), (16, 11), (24, 12)])  # simplex, RM(1, 4), extended Golay; d = 8
@@ -127,12 +192,12 @@ def test_reach_uses_finite_singleton_plotkin_and_packing_radii() -> None:
     assert _run("hermite_half_rate.json", q=2**61 - 1, m=128, n=40, radius=19, min_distance=None)[1]["reach"].passed
     # Binary [1000, 100]: no such code has d > 500 (Plotkin), though sphere packing and Singleton allow l = 300.
     s, checks = _run("hermite_half_rate.json", q=2, n=900, radius=300, min_distance=None)
-    assert (s.quantities["plotkin_radius"], s.quantities["singleton_radius"]) == (249, 449)
-    assert s.quantities["hamming_radius"] >= 300
+    assert (s.quantities["plotkin_radius"], s.quantities["singleton_radius"], s.quantities["hamming_radius"]) == \
+        (249, 449, 319)
     assert checks["reach"].passed is False and "Plotkin 249" in checks["reach"].detail
     # Binary [1000, 500] at l = 200: C(1000, 200) > 2^500, though Singleton and Plotkin allow 249.
     s, checks = _run("hermite_half_rate.json", q=2, radius=200, min_distance=None)
-    assert s.quantities["hamming_radius"] < 200 <= s.quantities["plotkin_radius"]
+    assert s.quantities["hamming_radius"] == 111 and s.quantities["plotkin_radius"] == 249
     assert checks["reach"].passed is False and "sphere-packing" in checks["reach"].detail
 
 
@@ -153,9 +218,8 @@ def test_signed_packing_reach_hand_values() -> None:
     assert R.signed_packing_reach(0.68, 2**61 - 1) == 0.5  # alpha log2 q >= 3/2: every lam <= 1/2 fits
     lam = R.signed_packing_reach(0.3, 5)
     assert (R.binary_entropy(lam) + lam) / R.math.log2(5) == pytest.approx(0.3, abs=1e-9)
-    # Finite length: C(m, l) 2^l <= q^n, the patterns of weight l need distinct syndromes.
-    assert R.packing_radius(6000, 420, 8191, 2) >= 300
-    assert R.packing_radius(15, 11, 2, 1) >= 3 and R.packing_radius(10, 1, 2, 1) == 0
+    # Finite length: sum_{i <= l} C(m, i) 2^i <= q^n, the patterns of weight <= l need distinct syndromes.
+    assert R.packing_radius(6000, 420, 8191, 2) == 1178
 
 
 def test_cosine_reach_uses_signed_packing_not_hamming_bounds() -> None:

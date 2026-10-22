@@ -261,8 +261,8 @@ def _check_reach_signed(c: Candidate, qn: dict) -> Check:
     limit = qn["signed_packing_radius"]
     if c.radius > limit:
         return Check("reach", False, f"outside licensed signed-pattern reach: radius {c.radius} > signed packing radius "
-                     f"{limit}: C(m, l) 2^l > q^n, so the {{+-1}} patterns of weight l cannot have distinct syndromes "
-                     "(Proposition 13(i))")
+                     f"{limit}: sum_(i <= l) C(m, i) 2^i > q^n, so the {{+-1}} patterns of weight at most l cannot all "
+                     "have distinct syndromes (Proposition 13(i))")
     inside = f"radius {c.radius} (lam = {_fmt(qn['lam'])}) is inside signed packing radius {limit}"
     if qn["licensed_radius"] is not None:
         licence = qn["licensed_radius"]
