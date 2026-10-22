@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import re
 import time
@@ -990,14 +991,39 @@ def _words(text: str) -> set[str]:
     return {word for word in re.findall(r"[^\W_]+", text.lower()) if len(word) > 2} - {"research"}
 
 
+# sha256 of json.dumps([reason, action]), first 12 hex digits, for each seeded entry as written on
+# SEED_DAY from the review. The word checks below allow a truncated section sentence or a negation
+# built from the cell's own words; these pin the text itself.
+SEED_DIGESTS = {
+    "2609.35101": "2d3638054276", "2609.35239": "c35b2c8d7e95", "2609.36480": "ccfc1b1aae9c",
+    "2609.37636": "ccbd8dd60271", "2609.40036": "bda605f614e4", "2609.40250": "4803b0cc1e85",
+    "2609.40260": "b3f782300a6a", "2609.40302": "42dcc7250804", "2610.00502": "5793c5e96c0e",
+    "2610.01141": "e4207c597e7c", "2610.01902": "ee582a5a3e5f", "2610.02079": "062d6c8918c0",
+    "2610.03566": "226f5ddd0022", "2610.03645": "3a4331d0d033", "2610.03697": "dd6a93bdafc8",
+    "2610.04597": "094cfa0d5091", "2610.05752": "d207a781dae6", "2610.06753": "d17593cec27c",
+    "2610.06781": "a391870e6d41", "2610.06812": "e1051bca772e", "2610.08714": "e82f52599956",
+    "2610.16827": "58d50f9a0eb8",
+}
+# Words of a cell an entry may leave out: "that note", "there" and "those" become the note's path.
+REFERENCE_WORDS = {"note", "that", "there", "those"}
+
+
+def _seed_digest(entry: dict) -> str:
+    text = json.dumps([entry["reason"], entry.get("action")], ensure_ascii=False)
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:12]
+
+
 def _assert_seed_text_follows_review(entry: dict, source: str, cell: bool) -> None:
-    """A table row's reason is a phrase of its cell, and its action uses only the cell's words (the
-    action may name the note's path where the cell says "that note"). A section entry's reason and
-    action are the section's own sentences and clauses."""
+    """A table row's reason is a phrase of its cell, its action uses only the cell's words (the
+    action may name the note's path where the cell says "that note"), and together they leave out
+    none of the cell's words but those references. A section entry's reason and action are the
+    section's own sentences and clauses."""
     reason, action = entry["reason"], entry.get("action") or ""
     if cell:
         assert _flat(reason) in _flat(source), reason
         assert _words(action) <= _words(source), action
+        missing = _words(source) - _words(f"{reason} {action}")
+        assert missing <= REFERENCE_WORDS, f"the seeded text leaves out {sorted(missing)}"
         return
     for piece in re.split(r"(?<=[.;:])\s+", f"{reason} {action}".strip()):
         assert piece in _flat(source), piece
@@ -1021,8 +1047,10 @@ def _assert_seed_matches_review(verdicts: dict, text: str) -> None:
     assert all(entry["by"] == "human" and entry["reason"] for entry in seed.values())
     assert {"2610.06753", "2610.03566"} & set(seed) <= {arxiv_id for arxiv_id, entry in seed.items() if entry.get("action_done")}
     sources = _review_sources(text)
+    assert set(SEED_DIGESTS) == reviewed
     for arxiv_id, entry in seed.items():
         _assert_seed_text_follows_review(entry, *sources[arxiv_id])
+        assert _seed_digest(entry) == SEED_DIGESTS[arxiv_id], f"{arxiv_id}: the seeded reason or action changed"
 
 
 @pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
@@ -1060,7 +1088,33 @@ def test_seed_check_catches_a_reworded_reason_or_action() -> None:
         ("2609.40036", "reason", seeded["2610.06812"]["reason"]),  # another row's reason
         ("2610.03566", "reason", "Its rejection sampler is per-symbol USD plus Prange, so the negative result stands."),
         ("2610.06753", "action", "Preprint: cite the cap and reword question 2."),
+        # Cut short, or turned round with the review's own words: each still passes the word checks.
+        ("2610.03566", "action", seeded["2610.03566"]["action"].split(" Outreach draft")[0]),  # drops the outreach step
+        ("2610.06753", "action", "Preprint: cite the cap at `main.tex:142` and in the Relation paragraph."),
+        ("2610.06753", "reason", "It does not weaken Result A."),
+        ("2610.03566", "reason", "This is the highest priority among the Gibbs papers."),
+        ("2610.03697", "action", "Do not add it to the prior-art comparison in `research/HDQI_PREDECESSOR_UNIFORM.md`. "
+                                 "If the paper contains the radius recurrence, record a rediscovery."),
+        ("2609.40036", "reason", "The corpus match (the QAOA and LPN notes) is spurious."),
     ):
         changed = {**seeded, arxiv_id: {**seeded[arxiv_id], field: value}}
         with pytest.raises(AssertionError):
             _assert_seed_matches_review(changed, text)
+
+
+@pytest.mark.skipif(not REVIEW.exists(), reason="the reviewed triage is not in this checkout")
+def test_seed_check_catches_a_table_row_cut_short_without_the_digests() -> None:
+    text = REVIEW.read_text(encoding="utf-8")
+    seeded = load_verdicts(REPO)["verdicts"]
+    sources = _review_sources(text)
+    for arxiv_id, field, value in (
+        ("2609.40036", "action", "Cite it."),
+        ("2610.00502", "reason", "The"),
+        ("2610.01141", "action", None),
+        ("2610.01141", "action", ""),
+        ("2610.06812", "reason", "The project makes"),
+        ("2610.01141", "reason", "No theorem"),
+    ):
+        _assert_seed_text_follows_review(seeded[arxiv_id], *sources[arxiv_id])
+        with pytest.raises(AssertionError, match="leaves out"):
+            _assert_seed_text_follows_review({**seeded[arxiv_id], field: value}, *sources[arxiv_id])
