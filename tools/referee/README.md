@@ -14,7 +14,7 @@ The referee never edits `research/*.md`. Its outputs go to `research/audits/`.
 python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--include-reviewed] [--json]
 python tools/referee/referee.py export --out-dir DIR [--limit 30] [--prefix P] [--batch-size 5]
 python tools/referee/referee.py export --out-dir DIR --note PRIME_CHARACTER_OPI --note POLAR_SOURCE_DESIGN
-python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21
+python tools/referee/referee.py import DIR/out/*.jsonl --judge claude-subagent-2026-10-21 [--partial] [--allow-unverified]
 python tools/referee/referee.py render
 python tools/referee/referee.py status [--json]
 ```
@@ -22,10 +22,13 @@ python tools/referee/referee.py status [--json]
 | Command | What it does |
 |---|---|
 | `select` | Lists review-pending notes, newest first, without a current review; `--limit 0` lists them all. |
-| `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status; the name's letter case must match. Exit 2, nothing written, when `--out-dir` is a file or already holds `batch_*.json` from an earlier export (use a new folder per pass). |
-| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
+| `export` | Writes `INSTRUCTIONS.md` and `batch_NN.json` (five note packets each) for the judges. `--note STEM` (repeatable) exports exactly those notes whatever their status, each once however often it is named; the name's letter case must match. Exit 2, nothing written, when `--out-dir` is a file or already holds `batch_*.json` from an earlier export (use a new folder per pass). |
+| `import` | Checks judge rows and stores them in `reviews.json`. Exit 2, nothing stored, when a file cannot be read or a row fails, or when a judge file `batch_NN.jsonl` has no row for a note its `batch_NN.json` (beside it or in the folder above) exported; `--partial` imports the rest and names the notes without a row. A `stem` must be a note name (letters, digits, `_`, `.`, `-`), never a path, spelled as the file is, letter case included (macOS would open `BAR_NOTE.md` for `bar_note`). |
 | `render` | Writes one `reviews/<STEM>.md` per review and `REFEREE_QUEUE.md`. |
 | `status` | Flagged (unsound or needs-work) reviews whose note is unchanged, unsound before needs-work and each by stem, with the worst claim, and stale ones (a deleted note's review is stale). Used by the agent brief. |
+
+Every command stops with exit 2 when `--root` (default: this checkout) has no `research/`
+folder, so a mistyped root never reads as a checkout with no notes or reviews.
 
 ## Selection
 
@@ -95,34 +98,56 @@ text.
    `covered_by_self_check` that is not `true` or `false` (omitted or null reads as false),
    more than six claims, an `overall` that contradicts the claims (the worst claim sets it:
    `wrong` requires `unsound`, else `gap` requires `needs-work`, else `unclear` requires
-   `unclear`, and claims that all hold require `sound`; a row with no claims may be `sound`
-   or `unclear`), a quote under six words, or a quote that is not in the note text (all
+   `unclear`, and claims that all hold require `sound`; a row with no claims can only be
+   `unclear`, since a `sound` row with no quoted claim would take the note out of the
+   queue on no evidence), a quote under six words, or a quote that is not in the note text (all
    claims are checked). A quote's words (runs
    of letters and digits in any script, so Greek variables and superscript exponents count;
-   an underscore splits words) must appear consecutively in the note after lower-casing,
-   and the symbols between them, before the first and after the last (`<`, `>`, `=`, `+`,
-   `-`, `/`, `^`, `~`, `±`, `√`, decimal points; `≤` and `<=` count as the same, and so do
-   `-`, `−`, `–` and a touching run of them; signs apart are separate, so `x - (y)` does
+   an underscore splits words) must appear consecutively in the note after lower-casing; a
+   space between a letter and a digit may be added or left out (`classical105` and
+   `classical 105` read the same, though the six words are counted as the quote writes
+   them), and a markdown link's target (a URL, `#anchor` or file name) may be left out, so
+   `[Decker and Wocjan](https://...) show` may be quoted `Decker and Wocjan show`. The
+   symbols between the words, before the first and after the last (`<`, `>`, `=`, `+`,
+   `-`, `/`, `^`, `~`, `±`, `√`, `!=`, `->`, decimal points; `≤` and `<=` count as the
+   same, as do `≠` and `!=`, `→` and `->`, `≈` and `~`, `±` and `+/-`, a superscript or
+   subscript `⁻` and `-` (`⁺` and `+`), and `-`, `−`, `–` and a touching run of them; a
+   dash before `>` is the arrow `->`, never a minus, so `x-1` does not pass for `x->1`;
+   signs apart are separate, so `x - (y)` does
    not pass for `x - (-y)`) must be the note's, so `b>=epsilon` does not pass for
    `b<=epsilon`, nor `>= min(1, ...)` for `<= min(1, ...)`. A prose em dash (`—`) may be
-   written `-` or left out. List and quote markers at the note's line starts may be kept or
-   dropped, but a kept marker must be the note's. The stored quote is the note's own
+   written `-` or left out. The quote's em dashes are read the way the note's are, so a
+   quote's em dash never stands for a minus sign beside the note's em dash: `x — (y)` does
+   not pass for `x — (-y)`. List and quote markers at the note's line starts may be kept or
+   dropped, but a kept marker must be the note's: bullets (`-`, `+`, `*`), quote markers
+   (`>`) and numbered markers (`2.`, `2)`) where a list item can start (after a blank
+   line, inside a list, or numbered 1). In fenced or indented code (an indented line after
+   a blank line outside a list, and the lines after it) a `+` or `-` that starts a line is
+   a sign, not a marker, and must be kept. The stored quote is the note's own
    wording of the span, not the judge's copy, widened to whole whitespace-delimited tokens
    (less a trailing `.`, `,`, `;` or `:`) so that a sign or operator next to the first or
    last word is kept. A quote lifted from the artifact excerpt fails, because
    it is not in the note. A `content_sha` must be 64 lower-case hex digits. A row whose
    `content_sha` differs from the note's current hash (the note was edited after export)
    is stored with `stale: true`, and its quotes are checked against the text the judge
-   read, taken from the `batch_NN.json` beside the judge file (in its folder or the folder
-   above) when that text's hash matches. When packets for the note sit beside the judge
-   file but none of them has the row's `content_sha`, the sha was miscopied and the file
-   is rejected. Only when no exported packet for the note is found is a quote that is not
-   in the current note stored as the judge wrote it with `verified: false` instead of
-   rejecting the file. Two rows for one note in one import (one file or several) reject
-   the import. Re-importing a note replaces its review, except that a row that is stale
-   on arrival (an earlier pass imported again) never replaces a stored review of the
-   note's current bytes: import keeps that review and reports the row as skipped. Stored
-   text is capped: summary 1500 characters, finding 600, step 300, quote 400.
+   read: the one in a `batch_NN.json` beside that row's own judge file (in its folder or
+   the folder above) when that text's hash matches, else the committed version of the
+   note (any commit that changed it, or the index) whose hash matches. When packets for
+   the note sit beside the judge file but none of them has the row's `content_sha`, the
+   sha was miscopied and the file is rejected. So is a sha that no packet beside the file
+   and no committed version has (a hand-built correction row with a typo), unless
+   `--allow-unverified` is given: then a quote that is not in the current note is stored
+   as the judge wrote it with `verified: false`. A packet that declares the sha but whose
+   text does not hash to it gives the same unverified quotes. Two rows for one note in one
+   import (one file or several) reject the import. Re-importing a note replaces its
+   review, except that a row that is stale on arrival (an earlier pass imported again)
+   never replaces a stored review of the note's current bytes: import keeps that review
+   and reports the row as skipped. The judges are told the caps on their text (summary
+   1500 characters, finding 600, step 300, quote 400), and import never cuts it: a longer
+   one rejects the file, as does a summary, step, finding or quote that is not a string
+   (null reads as empty) and a `gap` or `wrong` claim with no finding. The stored quote,
+   the note's own span, can run past 400 characters (a link target it left out); it is
+   then cut at 400 and ends in `...`.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.
@@ -132,10 +157,13 @@ Cost: about 100k tokens per batch of five notes.
 - `research/audits/reviews/reviews.json`: `{"notes": {STEM: {reviewed_on, judge,
   content_sha, overall, claims, summary, stale}}}`, sorted. Each claim has `quote`,
   `verified`, `verdict`, `step`, `finding` and `covered_by_self_check`. Import writes it to
-  a temporary file and renames that over it, so it is never left half written. When it
+  a temporary file of its own and renames that over it, so it is never left half written,
+  and holds a lock on the `reviews/` folder from reading the store to the rename, so
+  imports run at once take turns and none drops another's reviews. When it
   cannot be read or lacks that shape (each entry an object, its claims objects with a
-  string `quote` and `verdict`), every command stops with a one-line error naming the file
-  and exit 2, and import leaves it as it is.
+  string `quote` and `verdict`), every command that reads it stops with a one-line error
+  naming the file and exit 2 (all but `export --note`, which exports the named notes
+  without reading reviews), and import leaves it as it is.
 - `research/audits/reviews/<STEM>.md`: the overall verdict, summary and each claim with its
   quote, verdict, step and finding; marked stale when the note changed since.
 - `research/audits/REFEREE_QUEUE.md`: counts by overall verdict (current reviews) and
@@ -273,9 +301,10 @@ row, not `out/`'s.
   rate+density>1) needs d<L at constant L, where the DP is polynomial, so the cut of
   separation claims at constant width needs no window qualifier.
 - COHERENT_BPQM_ERASURE, NATIVE_RLWE_SPARSE_WITNESS_AUDIT and
-  NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions never mention the
+  NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions did not mention the
   600-character cap on findings, and import cut these three gap findings mid-sentence
-  without a mark. They are shortened to fit and keep their conclusions.
+  without a mark. They are shortened to fit and keep their conclusions. The instructions
+  now give every cap, and import rejects longer text instead of cutting it.
 - Wrong sentences in four findings, verdicts unchanged: PRIME_CHARACTER_INTERLEAVED_PROBE
   read the p7 individual mean (.553571, 1/56 below 4/7, as the producer predicts) as
   contradicting near-uniformity; FOLDED_NORM_SOURCE credited 24/73 to the collision formula
