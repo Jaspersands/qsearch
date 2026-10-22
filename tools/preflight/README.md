@@ -39,7 +39,7 @@ nothing. A run takes a few seconds, most of it parsing about 250 MB of
 | Check | Catches | Message |
 |---|---|---|
 | `json` | Any `*.json` under `research/hypotheses`, `research/registry`, `research/audits` or `research/classical_baselines` that does not parse, including non-UTF-8 bytes | the parser's own error, e.g. `Invalid \escape: line 7 column 167 (char 635)` |
-| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `missing on disk (case differs: theorems/x.py)`, `not tracked by git`, `not tracked by git (intent-to-add only)`, or one `git unavailable` (with the reason when the root is inside a work tree) |
+| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `missing on disk (case differs: theorems/x.py)`, `not tracked by git` or `not tracked by git (intent-to-add only)`, each followed by `; referred to by <file>` (the first such file, and `and N more`); or one `git unavailable` (with the reason when the root is inside a work tree) |
 | `manifest` | A subcommand in `research/audits/cli_manifest.json` that is no longer in `ORDER` in `qsearch_cli/registry.py`, or that moved module | `subcommand X missing from ORDER`, `X: manifest says A, ORDER says B` |
 
 A `.json` file that fails to parse is read again up to three times, 25 to 75 ms apart, as
@@ -52,9 +52,11 @@ so neither is skipped in silence.
 
 The `imports` check collects references from these places:
 
-- Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and
-  `qsearch_cli/commands/*.py`, including the lazy imports inside command bodies.
-  `import theorems.x`, `from core.y import z`, `from qsearch_cli.main import main`, `from
+- Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and every command
+  module found below (`qsearch_cli/commands/<domain>.py`, which the registry names),
+  including the lazy imports inside command bodies. A file in `qsearch_cli/commands/` that
+  nothing refers to, such as an iCloud copy `general 2.py` or a scratch file, is never
+  loaded by the CLI and is not read. `import theorems.x`, `from core.y import z`, `from qsearch_cli.main import main`, `from
   theorems import x` and `from qsearch_cli import x` name their file, whether or not it
   exists. A dotted name that is a directory names its `__init__.py`, and so does `from
   theorems import sub` when `theorems/sub/` is a directory. A bare name, `from x import f`
@@ -81,15 +83,17 @@ The `imports` check collects references from these places:
   works in the working copy and fails with `ModuleNotFoundError` in a clone. On 2026-10-22
   the CLI's sources named 962 modules directly and 1092 with their imports.
 
-  These modules are scanned line by line rather than parsed, which keeps the check at about
-  one second instead of four: an `import` or `from ... import` that starts a line, outside
+  These modules, other than command modules, are scanned line by line rather than parsed,
+  which keeps the check at about one second instead of four: an `import` or `from ...
+  import` that starts a line, outside
   strings and comments, with its bracketed or backslash-continued names. On 2026-10-22 the
   scan found exactly the import statements a full parse finds in every one of the 1281 files
   under `theorems/`, `core/` and `qsearch_cli/`.
 
-A CLI source that does not parse, or a table of the wrong shape (an `IMPORTS` entry whose
-module is `None`, an `ORDER` that is a dict), is one `imports` problem, `cannot read the
-CLI sources: ...`, and the other checks still run.
+A CLI source or command module that does not parse or is not UTF-8, or a table of the
+wrong shape (an `IMPORTS` entry whose module is `None`, an `ORDER` that is a dict), is one
+`imports` problem, `cannot read the CLI sources: ...`, and the other checks still run. Its
+path is the file that cannot be read, or `.` for a table of the wrong shape.
 
 A module named in another case than its file (`theorems.Foo` for `theorems/foo.py`) is
 missing: Python's import matches case even on macOS, whose file system does not. The

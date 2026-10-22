@@ -27,7 +27,7 @@ LAZY_IMPORTS = '''\
 def command_audit(args):
     from theorems.tracked import a
     from theorems.untracked import b
-    import core.gone
+    if args: import core.gone  # a command module is parsed in full: the line scan misses this
     return a, b, core.gone
 '''
 
@@ -36,6 +36,12 @@ FUNCTIONS = {"command_audit": "qsearch_cli.commands.general"}
 # What every minimal checkout refers to inside qsearch_cli/: the shim's import and the registry's module columns.
 CLI_REFS = {"qsearch_cli/main.py": {"qsearch.py"}, "qsearch_cli/commands/general.py": {"qsearch_cli/registry.py"}}
 AUDIT_ENTRY = {"name": "audit", "aliases": [], "function": "command_audit", "module": "qsearch_cli.commands.general"}
+GENERAL_PY = "qsearch_cli/commands/general.py"
+
+
+def _by(reason: str, referrer: str = GENERAL_PY) -> str:
+    """An imports problem's message: why, then the (first) file that refers to the module."""
+    return f"{reason}; referred to by {referrer}"
 
 
 def _write(path: Path, text: str) -> Path:
@@ -228,10 +234,10 @@ def test_untracked_and_missing_theorem_modules(tmp_path: Path) -> None:
 
     assert {p.check for p in problems} == {"imports"}
     assert {(p.path, p.message) for p in problems} == {
-        ("theorems/untracked.py", "not tracked by git"),
-        ("theorems/table_mod.py", "not tracked by git"),
-        ("theorems/dispatched.py", "not tracked by git"),
-        ("core/gone.py", "missing on disk"),
+        ("theorems/untracked.py", _by("not tracked by git")),
+        ("theorems/table_mod.py", _by("not tracked by git", "qsearch_cli/imports.py")),
+        ("theorems/dispatched.py", _by("not tracked by git", "qsearch_cli/registry.py")),
+        ("core/gone.py", _by("missing on disk")),
     }
 
 
@@ -264,9 +270,9 @@ def test_bare_and_package_style_imports_are_followed(tmp_path: Path) -> None:
         "core/gone_pkg.py": {"qsearch_cli/commands/general.py"},
     }
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("theorems/new_bare_bridge.py", "not tracked by git"),
-        ("theorems/pkg_style.py", "not tracked by git"),
-        ("core/gone_pkg.py", "missing on disk"),
+        ("theorems/new_bare_bridge.py", _by("not tracked by git", "qsearch.py")),
+        ("theorems/pkg_style.py", _by("not tracked by git")),
+        ("core/gone_pkg.py", _by("missing on disk")),
     }
 
 
@@ -289,8 +295,8 @@ def test_package_style_imports_table_entries_name_the_submodule(tmp_path: Path) 
         "core/core_pkg.py": {"qsearch_cli/imports.py"},
     }
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("theorems/new_pkg.py", "not tracked by git"),
-        ("core/core_pkg.py", "missing on disk"),
+        ("theorems/new_pkg.py", _by("not tracked by git", "qsearch_cli/imports.py")),
+        ("core/core_pkg.py", _by("missing on disk", "qsearch_cli/imports.py")),
     }
 
 
@@ -329,13 +335,14 @@ def test_relative_imports_name_the_module_they_load(tmp_path: Path) -> None:
         "qsearch_cli/commands/other_cmd.py": {"qsearch_cli/commands/dcp.py"},
         "qsearch_cli/cli_helper.py": {"qsearch_cli/commands/dcp.py"},
     }
+    dcp = "qsearch_cli/commands/dcp.py"
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("theorems/rel_helper.py", "not tracked by git"),
-        ("theorems/rel_sibling.py", "missing on disk"),
-        ("theorems/rel_pkg/__init__.py", "not tracked by git"),
-        ("theorems/rel_pkg/inner.py", "not tracked by git"),
-        ("qsearch_cli/commands/other_cmd.py", "not tracked by git"),
-        ("qsearch_cli/cli_helper.py", "not tracked by git"),
+        ("theorems/rel_helper.py", _by("not tracked by git", "theorems/mod.py")),
+        ("theorems/rel_sibling.py", _by("missing on disk", "theorems/mod.py")),
+        ("theorems/rel_pkg/__init__.py", _by("not tracked by git", "theorems/mod.py")),
+        ("theorems/rel_pkg/inner.py", _by("not tracked by git", "theorems/mod.py")),
+        ("qsearch_cli/commands/other_cmd.py", _by("not tracked by git", dcp)),
+        ("qsearch_cli/cli_helper.py", _by("not tracked by git", dcp)),
     }
 
 
@@ -376,12 +383,12 @@ def test_package_style_imports_of_qsearch_cli_and_of_subpackages(tmp_path: Path)
         "theorems/subpkg/deep.py": {"qsearch_cli/imports.py"},
     }
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("qsearch_cli/helpers.py", "not tracked by git"),
-        ("qsearch_cli/ghost.py", "missing on disk"),
-        ("qsearch_cli/commands/wip.py", "not tracked by git"),
-        ("theorems/sub/__init__.py", "not tracked by git"),
-        ("theorems/subpkg/__init__.py", "not tracked by git"),
-        ("theorems/subpkg/deep.py", "not tracked by git"),
+        ("qsearch_cli/helpers.py", _by("not tracked by git")),
+        ("qsearch_cli/ghost.py", _by("missing on disk")),
+        ("qsearch_cli/commands/wip.py", _by("not tracked by git")),
+        ("theorems/sub/__init__.py", _by("not tracked by git")),
+        ("theorems/subpkg/__init__.py", _by("not tracked by git", "qsearch_cli/imports.py")),
+        ("theorems/subpkg/deep.py", _by("not tracked by git", "qsearch_cli/imports.py")),
     }
 
 
@@ -407,12 +414,61 @@ def test_cli_modules_the_registry_and_shim_load_are_checked(tmp_path: Path) -> N
         "qsearch_cli/commands/fnonly.py": {"qsearch_cli/registry.py"},
         "qsearch_cli/commands/__init__.py": {"qsearch_cli/commands/general.py"},
     }
+    registry = "qsearch_cli/registry.py"
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("qsearch_cli/main.py", "not tracked by git"),
-        ("qsearch_cli/commands/newdomain.py", "not tracked by git"),
-        ("qsearch_cli/commands/ghost.py", "missing on disk"),
-        ("qsearch_cli/commands/fnonly.py", "not tracked by git"),
+        ("qsearch_cli/main.py", _by("not tracked by git", "qsearch.py")),
+        ("qsearch_cli/commands/newdomain.py", _by("not tracked by git", registry)),
+        ("qsearch_cli/commands/ghost.py", _by("missing on disk", registry)),
+        ("qsearch_cli/commands/fnonly.py", _by("not tracked by git", registry)),
     }
+
+
+def test_command_files_the_cli_never_loads_are_not_read(tmp_path: Path) -> None:
+    # iCloud duplicates and scratch files beside the command modules: no table names them,
+    # so neither parser.py nor resolve.py nor main.py ever imports them.
+    repo = _repo(tmp_path)
+    commands = repo / "qsearch_cli" / "commands"
+    _write(commands / "general 2.py", "import theorems.renamed_away\n")
+    _write(commands / "general 3.py", "def broken(:\n")
+    (commands / "legacy_notes.py").write_bytes("# Schrödinger\nimport theorems.gone\n".encode("latin-1"))
+    _write(commands / "wip.py", "from theorems.wip_mod import f\n")
+    _write(repo / "theorems" / "wip_mod.py", "f = 1\n")
+
+    assert pf.referenced_modules(repo) == CLI_REFS
+    assert pf.check_untracked_imports(repo) == []
+
+
+@pytest.mark.parametrize(
+    "content, error",
+    [(b"def add_audit(:\n", "SyntaxError: "), ("# Schrödinger\n".encode("latin-1"), "UnicodeDecodeError: ")],
+)
+def test_a_command_module_that_cannot_be_read_is_named(tmp_path: Path, content: bytes, error: str) -> None:
+    repo = _repo(tmp_path)
+    (repo / "qsearch_cli" / "commands" / "general.py").write_bytes(content)
+
+    [problem] = pf.check_untracked_imports(repo)
+
+    assert problem.path == "qsearch_cli/commands/general.py"
+    assert problem.message.startswith(f"cannot read the CLI sources: {error}")
+
+
+def test_each_problem_names_a_file_that_refers_to_the_module(tmp_path: Path) -> None:
+    general = "def command_audit(args):\n    from theorems.gone import a\n    from theorems.shared import s\n    return a, s\n"
+    repo = _repo(
+        tmp_path,
+        general=general,
+        imports={"s": ("theorems.shared", "s")},
+        committed={"theorems/user.py": "from theorems.shared import s\n"},
+        dispatch=[("flag", "theorems.user", "gen")],
+    )
+    _write(repo / "theorems" / "shared.py", "s = 1\n")
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/gone.py", "missing on disk; referred to by qsearch_cli/commands/general.py"),
+        pf.Problem(
+            "imports", "theorems/shared.py", "not tracked by git; referred to by qsearch_cli/commands/general.py and 2 more"
+        ),
+    ]
 
 
 TRACKED_WITH_HELPERS = '''\
@@ -455,12 +511,13 @@ def test_imports_inside_referenced_modules_are_followed(tmp_path: Path) -> None:
     assert refs["theorems/helper.py"] == {"theorems/tracked.py"}
     assert refs["theorems/deep.py"] == {"theorems/helper.py"}
     assert not {"theorems/in_docstring.py", "theorems/in_comment.py", "theorems/in_string.py"} & set(refs)
+    tracked = "theorems/tracked.py"
     assert {(p.path, p.message) for p in pf.check_untracked_imports(repo)} == {
-        ("theorems/helper.py", "not tracked by git"),
-        ("theorems/deep.py", "not tracked by git"),
-        ("core/helper2.py", "not tracked by git"),
-        ("core/helper3.py", "not tracked by git"),
-        ("theorems/gone.py", "missing on disk"),
+        ("theorems/helper.py", _by("not tracked by git", tracked)),
+        ("theorems/deep.py", _by("not tracked by git", "theorems/helper.py")),
+        ("core/helper2.py", _by("not tracked by git", tracked)),
+        ("core/helper3.py", _by("not tracked by git", tracked)),
+        ("theorems/gone.py", _by("missing on disk", tracked)),
     }
 
 
@@ -526,7 +583,7 @@ def test_staged_module_counts_as_tracked_but_intent_to_add_does_not(tmp_path: Pa
     assert "theorems/staged.py" in pf.tracked_files(repo)
     assert "theorems/intent.py" not in pf.tracked_files(repo)
     assert pf.check_untracked_imports(repo) == [
-        pf.Problem("imports", "theorems/intent.py", "not tracked by git (intent-to-add only)")
+        pf.Problem("imports", "theorems/intent.py", _by("not tracked by git (intent-to-add only)"))
     ]
 
 
@@ -540,7 +597,7 @@ def test_an_unstaged_edit_is_not_intent_to_add(tmp_path: Path) -> None:
     _git(repo, "add", "-N", "theorems/intent.py")
 
     assert pf.check_untracked_imports(repo) == [
-        pf.Problem("imports", "theorems/intent.py", "not tracked by git (intent-to-add only)")
+        pf.Problem("imports", "theorems/intent.py", _by("not tracked by git (intent-to-add only)"))
     ]
 
 
@@ -552,7 +609,7 @@ def test_a_renamed_module_marked_intent_to_add_is_still_not_tracked(tmp_path: Pa
     _git(repo, "add", "-N", "theorems/new_name.py")
 
     assert pf.check_untracked_imports(repo) == [
-        pf.Problem("imports", "theorems/new_name.py", "not tracked by git (intent-to-add only)")
+        pf.Problem("imports", "theorems/new_name.py", _by("not tracked by git (intent-to-add only)"))
     ]
 
 
@@ -583,8 +640,8 @@ def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_pa
     repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": "a = 1\n"})
 
     assert pf.check_untracked_imports(repo) == [
-        pf.Problem("imports", "theorems/Gone.py", "missing on disk"),
-        pf.Problem("imports", "theorems/Tracked.py", "missing on disk (case differs: theorems/tracked.py)"),
+        pf.Problem("imports", "theorems/Gone.py", _by("missing on disk")),
+        pf.Problem("imports", "theorems/Tracked.py", _by("missing on disk (case differs: theorems/tracked.py)")),
     ]
 
 
@@ -719,7 +776,7 @@ def test_main_prints_problems_and_exits_one(tmp_path: Path, capsys: pytest.Captu
 
     assert pf.main(["--root", str(dirty)]) == 1
     assert capsys.readouterr().out.splitlines() == [
-        "imports: theorems/untracked.py: not tracked by git",
+        "imports: theorems/untracked.py: not tracked by git; referred to by qsearch_cli/commands/general.py",
         "1 problems",
     ]
 

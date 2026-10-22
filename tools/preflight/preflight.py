@@ -10,12 +10,12 @@ research/classical_baselines must parse: an invalid hypothesis contract broke th
 2026-10-19. Other research/ directories are not read.
 Every theorems/, core/ or qsearch_cli/ module the CLI refers to must exist and be tracked by
 git: the same merge carried 24 imports of modules that were only in one working copy. Module
-references are read statically, never imported: AST imports in qsearch.py,
-qsearch_cli/imports.py and qsearch_cli/commands/*.py (theorems.x, qsearch_cli.x, from core
-import y, relative imports, and bare names that resolve to a file in theorems/ or core/),
-the IMPORTS table, the module column of DISPATCH, and the module columns of ORDER and
-FUNCTIONS; then the imports inside each module found, by a line scan, until no new module
-turns up. Every subcommand in research/audits/cli_manifest.json must still be in the
+references are read statically, never imported: AST imports in qsearch.py and
+qsearch_cli/imports.py (theorems.x, qsearch_cli.x, from core import y, relative imports, and
+bare names that resolve to a file in theorems/ or core/), the IMPORTS table, the module
+column of DISPATCH, and the module columns of ORDER and FUNCTIONS; then the imports inside
+each module found until no new module turns up, by AST for the command modules in
+qsearch_cli/commands/ and by a line scan for the rest. Every subcommand in research/audits/cli_manifest.json must still be in the
 registry's ORDER, in the same module.
 
 Prints one line per problem and the count; exits 1 when there is any problem, else 0.
@@ -43,7 +43,8 @@ JSON_RETRIES, JSON_RETRY_SECONDS = 3, 0.025  # as tools/corpus/docs.py:read_json
 IMPORTS_FILE = "qsearch_cli/imports.py"
 REGISTRY = "qsearch_cli/registry.py"
 MANIFEST = "research/audits/cli_manifest.json"
-IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE, "qsearch_cli/commands/*.py")
+IMPORT_SOURCES = ("qsearch.py", IMPORTS_FILE)  # always loaded: the entry point, and the table resolve.py reads
+COMMANDS_DIR = "qsearch_cli/commands/"  # a command module found is parsed in full, like the sources
 PACKAGES = ("theorems", "core")  # on the CLI's sys.path in this order
 CLI_PACKAGE = "qsearch_cli"
 TOP_PACKAGES = (*PACKAGES, CLI_PACKAGE)
@@ -55,6 +56,14 @@ class Problem:
     check: str
     path: str  # relative to the checked root, posix
     message: str
+
+
+class UnreadableSource(Exception):
+    """A CLI source or command module that cannot be read or parsed; ``path`` is relative to the root."""
+
+    def __init__(self, path: str, error: Exception):
+        super().__init__(f"{type(error).__name__}: {error}")
+        self.path = path
 
 
 def check_json(root: Path) -> list[Problem]:
@@ -307,6 +316,9 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
     """Every theorems/, core/ or qsearch_cli/ file the CLI refers to, mapped to the files that refer to it.
 
     Imports inside those files are followed too, since the CLI loads a module's imports with it.
+    A file in qsearch_cli/commands/ is read only when something refers to it (the registry's
+    tables do for every command module): a stray copy there is never loaded. UnreadableSource
+    when a source or a command module cannot be parsed.
     """
     root = Path(root).resolve()
     refs: dict[str, set[str]] = {}
@@ -316,11 +328,16 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         if module_path is not None:
             refs.setdefault(module_path, set()).add(source)
 
-    for pattern in IMPORT_SOURCES:
-        for path in sorted(root.glob(pattern)):
-            rel = path.relative_to(root).as_posix()
+    def parse(rel: str) -> ast.AST:
+        try:
+            return ast.parse((root / rel).read_text(encoding="utf-8"), filename=rel)
+        except (OSError, SyntaxError, ValueError) as error:  # ValueError: UnicodeDecodeError, null bytes
+            raise UnreadableSource(rel, error) from None
+
+    for rel in IMPORT_SOURCES:
+        if (root / rel).is_file():
             parsed.add(rel)
-            for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"), filename=rel)):
+            for node in ast.walk(parse(rel)):
                 for module_path in _import_paths(root, node, rel):
                     add(module_path, rel)
     for module, attribute in (_table(root, "IMPORTS") or {}).values():
@@ -340,11 +357,14 @@ def referenced_modules(root: Path) -> dict[str, set[str]]:
         if rel in parsed or not (root / rel).is_file():
             continue
         parsed.add(rel)
-        try:
-            text = (root / rel).read_text(encoding="utf-8")
-        except (OSError, UnicodeDecodeError):
-            continue  # its own path is still checked; only its imports go unfollowed
-        for node in _scanned_imports(text):
+        if rel.startswith(COMMANDS_DIR):
+            nodes = list(ast.walk(parse(rel)))
+        else:
+            try:
+                nodes = _scanned_imports((root / rel).read_text(encoding="utf-8"))
+            except (OSError, UnicodeDecodeError):
+                continue  # its own path is still checked; only its imports go unfollowed
+        for node in nodes:
             for module_path in _import_paths(root, node, rel):
                 if module_path not in refs:
                     queue.append(module_path)
@@ -447,7 +467,9 @@ def check_untracked_imports(root: Path) -> list[Problem]:
     root = Path(root).resolve()
     try:
         refs = referenced_modules(root)
-    except (OSError, SyntaxError, ValueError, TypeError) as error:
+    except UnreadableSource as error:
+        return [Problem("imports", error.path, f"cannot read the CLI sources: {error}")]
+    except (OSError, SyntaxError, ValueError, TypeError) as error:  # a CLI table
         where = error.filename if isinstance(error, SyntaxError) and error.filename else "."
         return [Problem("imports", where, f"cannot read the CLI sources: {type(error).__name__}: {error}")]
     index = _git_index(root)
@@ -457,13 +479,18 @@ def check_untracked_imports(root: Path) -> list[Problem]:
     for module_path in sorted(refs):
         on_disk = _spelled_on_disk(root, module_path, listings)
         if on_disk is None:
-            problems.append(Problem("imports", module_path, "missing on disk"))
+            reason = "missing on disk"
         elif on_disk != module_path:
-            problems.append(Problem("imports", module_path, f"missing on disk (case differs: {on_disk})"))
+            reason = f"missing on disk (case differs: {on_disk})"
         elif module_path in intent:
-            problems.append(Problem("imports", module_path, "not tracked by git (intent-to-add only)"))
+            reason = "not tracked by git (intent-to-add only)"
         elif tracked is not None and module_path not in tracked:
-            problems.append(Problem("imports", module_path, "not tracked by git"))
+            reason = "not tracked by git"
+        else:
+            continue
+        first, *others = sorted(refs[module_path])
+        more = f" and {len(others)} more" if others else ""
+        problems.append(Problem("imports", module_path, f"{reason}; referred to by {first}{more}"))
     if isinstance(index, str):
         problems.append(Problem("imports", ".", index))
     return problems
