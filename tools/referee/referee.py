@@ -761,9 +761,15 @@ def status(root: Path) -> dict:
     return {"available": True, "reviewed": len(notes), "flagged": flagged, "stale": stale}
 
 
-def _cell(text: str, limit: int = 160) -> str:
-    flat = " ".join(str(text).split()).replace("|", "/")
+def _flat(text: str, limit: int) -> str:
+    """`text` on one line, cut at `limit` characters with a mark."""
+    flat = " ".join(str(text).split())
     return flat if len(flat) <= limit else flat[: limit - 3] + "..."
+
+
+def _cell(text: str, limit: int = 160) -> str:
+    """A Markdown table cell: `_flat`, with each `|` escaped, so |x - y| keeps its bars."""
+    return _flat(text, limit).replace("|", "\\|")
 
 
 def _render_review(stem: str, entry: dict, stale: bool) -> str:
@@ -965,7 +971,7 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
     print(f"{result['reviewed']} reviewed, {len(result['flagged'])} flagged, {len(result['stale'])} stale")
     for item in result["flagged"]:
         worst = item["worst_claim"]
-        detail = f"  {worst['verdict']}: {_cell(worst['quote'], 100)}" if worst else ""
+        detail = f"  {worst['verdict']}: {_flat(worst['quote'], 100)}" if worst else ""
         print(f"  {item['overall']:<10} {item['stem']}{detail}")
     for stem in result["stale"]:
         print(f"  stale      {stem}")

@@ -1351,6 +1351,24 @@ def test_status_lists_unsound_first_then_by_stem_and_the_cli_names_the_worst_cla
     assert out[1] == "  unsound    Z_UNSOUND  wrong: A result about the z_unsound inputs"
 
 
+def test_queue_and_status_keep_the_bars_of_an_absolute_value(tmp_path: Path, capsys) -> None:
+    # Both replaced '|' with '/', so |x - y| read /x - y/ and Pr(y=x | S) read as a division.
+    path = _dated_note(tmp_path, "BARS", "2026-10-12. REVIEW PENDING.", 1000)
+    claims = [{"quote": "the bound |x - y| <= 1 holds for every input", "verdict": "wrong", "step": "Result",
+               "finding": "Here |a| > 1 and Pr(y=x | S) is 0.4."}]
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps({"notes": {"BARS": {"content_sha": R.note_sha(path), "overall": "unsound",
+                                                    "reviewed_on": "2026-10-21", "claims": claims}}}), encoding="utf-8")
+    R.render(tmp_path, today="2026-10-22")
+    row = next(line for line in (tmp_path / R.QUEUE).read_text(encoding="utf-8").splitlines() if line.startswith("| [BARS]"))
+    assert r"the bound \|x - y\| <= 1 holds" in row and r"Here \|a\| > 1 and Pr(y=x \| S) is 0.4." in row
+    assert len(re.findall(r"(?<!\\)\|", row)) == 5  # still four cells
+    capsys.readouterr()
+    assert R.main(["status", "--root", str(tmp_path)]) == 0
+    assert "  unsound    BARS  wrong: the bound |x - y| <= 1 holds for every input" in capsys.readouterr().out.splitlines()
+
+
 def test_status_returns_only_flagged_non_stale_reviews(tmp_path: Path) -> None:
     assert R.status(tmp_path)["available"] is False
     _reviewed_repo(tmp_path)
