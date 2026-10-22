@@ -646,3 +646,18 @@ def test_explicit_math_never_drops_clause_style_dashes(left,right,dash) -> None:
     quote = f'We prove {left}ab cd{right} is the exact bound today.'
     assert _verbatim(source,source)
     assert not _verbatim(quote,source)
+
+@pytest.mark.parametrize('operands', [('AB','CD'),('x','y'),('α','β'),('2','3'),('ab','cd')])
+@pytest.mark.parametrize('dash', ['-', '–', '—', '--', '---'])
+def test_bare_symbol_operands_keep_their_dash(operands,dash) -> None:
+    left,right=operands
+    source=f'We prove {left} {dash} {right} is the exact bound today.'
+    assert _verbatim(source,source)
+    assert not _verbatim(source.replace(f' {dash} ',' '),source)
+
+
+@pytest.mark.parametrize('formula,changed', [('$$\n- x + y\n$$','$$\nx + y\n$$'),(r'$AB ** CD$',r'$AB CD$'),('$$\n# P\n$$','$$\nP\n$$')])
+def test_explicit_math_is_not_markdown(formula,changed) -> None:
+    source=f'We prove {formula} is the exact bound today.'
+    assert _verbatim(source,source)
+    assert not _verbatim(f'We prove {changed} is the exact bound today.',source)

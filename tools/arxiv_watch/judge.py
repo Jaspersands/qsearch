@@ -265,19 +265,42 @@ def _math_ranges(text: str) -> list[tuple[int, int]]:
         r"\\\[[\s\S]*?(?:\\\]|$)|\b(?:O|o|SU|su)\([^)]*\)|[ΩΘωθ]\([^)]*\)", text)]
 
 
+_SHORT_PROSE = frozenset({"a", "we", "is", "of", "to", "by", "in", "an", "as", "at", "be", "do", "go", "he",
+                          "if", "it", "me", "my", "no", "on", "or", "so", "up", "us"})
+
+
+def _between_operands(text: str, start: int, end: int) -> bool:
+    left = re.search(r"([^\W_]+|[)\]}])\s*$", text[:start])
+    right = re.match(r"\s*([^\W_]+|[(\[{])", text[end:])
+    def operand(word):
+        if word in "()[]{}" or word.isdigit() or any("GREEK" in unicodedata.name(c, "") for c in word):
+            return True
+        if len(word) == 1:
+            return True
+        return ((len(word) <= 2 and word.lower() not in _SHORT_PROSE)
+                or (word.isupper() and len(word) <= 4)
+                or (not word.islower() and not word.istitle() and not word.isupper()))
+    return bool(left and right and operand(left.group(1)) and operand(right.group(1)))
+
+
+def _prose_sub(pattern: re.Pattern, replacement: str, text: str, *, protect_operands: bool = False) -> str:
+    maths = _math_ranges(text)
+    return pattern.sub(lambda m: m.group() if (
+        any(a <= m.start() < b for a, b in maths)
+        or (protect_operands and _between_operands(text, m.start(), m.end()))) else replacement, text)
+
+
 def _normalize_dashes(text: str) -> str:
-    """Clause dashes are punctuation only outside mathematical delimiters/expressions."""
-    maths = _math_ranges(text)
-    text = _CLAUSE_DASH.sub(
-        lambda m: m.group() if any(a <= m.start() < b for a, b in maths) else " ", text)
-    maths = _math_ranges(text)
-    return re.sub(r"--", lambda m: m.group() if any(a <= m.start() < b for a, b in maths) else "-", text)
+    """Clause dashes are punctuation only outside maths and adjacent bare operands."""
+    text = _prose_sub(_CLAUSE_DASH, " ", text, protect_operands=True)
+    return _prose_sub(re.compile(r"--"), "-", text, protect_operands=True)
 
 
 def _clause_hyphens(text: str) -> str:
     maths = _math_ranges(text)
     def replace(match):
-        if any(start <= match.start() < end for start, end in maths):
+        if (any(start <= match.start() < end for start, end in maths)
+                or _between_operands(text, match.start(), match.end())):
             return match.group()
         before = _WORD_BEFORE.search(text[:match.start()].rstrip())
         after = re.match(r"\s*([^\W\d_]+)", text[match.end():])
@@ -317,9 +340,9 @@ def _tokens(text: str) -> list[str]:
     if truncated:
         text = text[:-len(TRUNCATED)]
     text = unicodedata.normalize("NFKC", _SCRIPT_RUN.sub(_as_tex, text))
-    text = _MARKDOWN.sub(" ", text)
+    text = _prose_sub(_MARKDOWN, " ", text)
     text = _clause_hyphens(text)
-    text = _SPACING_WITH_LENGTH.sub(" ", re.sub(r"\*{2,}", " ", text))
+    text = _SPACING_WITH_LENGTH.sub(" ", _prose_sub(re.compile(r"\*{2,}"), " ", text, protect_operands=True))
     text = _primes(_normalize_dashes(text))
     tokens = _TokenList()
     tokens.truncated = truncated
@@ -349,7 +372,7 @@ def _tokens(text: str) -> list[str]:
             lower = token.translate(_LOWER_LATIN)
             if lower in _CASED_GREEK and token[0].isupper():
                 token = lower.capitalize()
-            elif lower in {"a", "we", "is", "of", "to", "by", "in", "an", "as", "at", "be", "do", "go", "he", "if", "it", "me", "my", "no", "on", "or", "so", "up", "us"} or (len(token) > 1 and token.isascii() and token.isalpha()
+            elif lower in _SHORT_PROSE or (len(token) > 1 and token.isascii() and token.isalpha()
                                   and lower not in {"log", "sin", "cos", "exp"}
                                   and (token.islower() or (len(token) > 2 and (token.istitle() or token.isupper())))):
                 token = lower
