@@ -11,8 +11,8 @@ missing or broken says "Not available" and why; it never reads as "nothing to re
 
 Git is used read-only. The brief's own git runs only the exact argument lists
 `allowed_git_args` accepts, offline and with a timeout; the preflight section is the exception,
-since tools/preflight/preflight.py runs its own local reads (rev-parse, ls-files, diff of the
-index) without that runner. Never imports core/ or theorems/.
+since tools/preflight/preflight.py runs its own local reads (rev-parse, ls-files, diff-files)
+without that runner; none of them writes the index. Never imports core/ or theorems/.
 """
 
 from __future__ import annotations

@@ -439,6 +439,31 @@ def test_staged_module_counts_as_tracked_but_intent_to_add_does_not(tmp_path: Pa
     ]
 
 
+def test_preflight_never_rewrites_the_git_index(tmp_path: Path) -> None:
+    # Porcelain `git diff` refreshes the stat data of an entry whose file was touched but not
+    # changed, and writes .git/index back under index.lock, which a concurrent `git add` or
+    # `git commit` then fails on. Preflight writes nothing, so its git must only read.
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    from theorems.intent import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": "a = 1\n"})
+    _write(repo / "theorems" / "intent.py", "b = 2\n")
+    _git(repo, "add", "-N", "theorems/intent.py")
+    for rel in ("theorems/tracked.py", "qsearch_cli/main.py"):
+        os.utime(repo / rel, (1_000_000_000, 1_000_000_000))  # same bytes, stale stat data in the index
+    index = repo / ".git" / "index"
+
+    def snapshot() -> tuple:
+        info = index.stat()
+        return index.read_bytes(), info.st_ino, info.st_mtime_ns
+
+    before = snapshot()
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/intent.py", "not tracked by git (intent-to-add only)")
+    ]
+    pf.run(repo)
+    assert snapshot() == before
+    assert not (repo / ".git" / "index.lock").exists()
+
+
 def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_path: Path) -> None:
     # Python's import matches case even on macOS, whose file system does not: git add would not help.
     general = "def command_audit(args):\n    from theorems.Tracked import a\n    from theorems.Gone import b\n    return a, b\n"

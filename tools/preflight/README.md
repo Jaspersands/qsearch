@@ -16,7 +16,8 @@ python tools/preflight/preflight.py --root ../other-checkout
 It prints one line per problem, `check: path: message`, then `N problems`. It exits 1 when
 there is any problem and 0 when there is none. A `--root` that is not a directory, or that
 has no `qsearch.py` (say `--root qsearch_cli` by mistake), is a usage error (exit 2). Paths
-are relative to the checked root. It writes nothing.
+are relative to the checked root. It writes nothing, `.git/index` included: its git commands
+only read and never take `index.lock`.
 
 ## Why it exists
 
@@ -92,7 +93,7 @@ platform.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
 One marked with `git add -N` (intent to add) does not: `git ls-files` lists it, but a plain
-`git commit` leaves it out. Preflight asks `git diff` for those and reports them as `not
+`git commit` leaves it out. Preflight asks `git diff-files` for those and reports them as `not
 tracked by git (intent-to-add only)`.
 
 Git is asked only when the root is the top of its own work tree. Without that (no git, a

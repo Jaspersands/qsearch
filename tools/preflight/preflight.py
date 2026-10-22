@@ -326,7 +326,8 @@ def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
     git can tell only when root is the top of its own work tree. A tree that sits inside some
     other repository (an export unpacked under a dotfiles repository) is not that repository's.
     A staged file is tracked: the commit will include it. One added with ``git add -N`` is
-    listed by ls-files, but a plain commit leaves it out; ``git diff`` shows it as added.
+    listed by ls-files, but a plain commit leaves it out; ``git diff-files`` shows it as added.
+    All three commands only read the index; none takes index.lock.
     """
     root = Path(root).resolve()
     prefix = _git_output(root, "rev-parse", "--show-prefix")
@@ -338,7 +339,9 @@ def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
     listing = _git_output(root, "ls-files", "-z", *pathspec)
     if listing is None:
         return "git unavailable"
-    added = _git_output(root, "diff", "--no-ext-diff", "--no-renames", "--name-only", "-z", "--diff-filter=A", *pathspec)
+    # Plumbing diff-files, not `git diff`: porcelain diff refreshes stale stat data and writes
+    # .git/index back under index.lock, even with GIT_OPTIONAL_LOCKS=0.
+    added = _git_output(root, "diff-files", "--name-only", "-z", "--diff-filter=A", *pathspec)
     intent = {p for p in (added or "").split("\0") if p}
     return {p for p in listing.split("\0") if p} - intent, intent
 

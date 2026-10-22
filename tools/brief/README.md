@@ -105,9 +105,10 @@ repository's history and registry.
 **Preflight's git.** All of the above is the brief's own git. The preflight section calls
 `tools/preflight/preflight.py` `run()`, which runs its own git outside this allow-list,
 environment and timeout: `git rev-parse --show-prefix`, `git ls-files -z` and
-`git diff --name-only -z --diff-filter=A`, the last two over `theorems/`, `core/` and
-`qsearch_cli/`. They read the local index and work tree and never contact a remote; they are
-the commands preflight runs before every commit.
+`git diff-files --name-only -z --diff-filter=A`, the last two over `theorems/`, `core/` and
+`qsearch_cli/`. They read the local index and work tree, never write the index or take
+`index.lock` (porcelain `git diff` would refresh stale stat data and write it back), and never
+contact a remote; they are the commands preflight runs before every commit.
 
 **Duplicates threshold.** 0.8, not the 0.9 of the committed registry report: the brief only
 compares the window's new records, so the list stays short, and the corpus README's hand check
