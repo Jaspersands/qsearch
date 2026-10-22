@@ -696,6 +696,36 @@ def test_a_table_of_the_wrong_shape_is_one_problem(
         assert any(line.startswith("manifest: qsearch_cli/registry.py: cannot read ORDER: ValueError: ORDER") for line in lines)
 
 
+def test_a_table_is_read_from_its_last_assignment_as_python_keeps_it(tmp_path: Path) -> None:
+    repo = _repo(tmp_path, git=False)
+    imports = repo / "qsearch_cli" / "imports.py"
+    imports.write_text(
+        'IMPORTS = {"old": ("theorems.dropped", "old")}\n'
+        'IMPORTS: dict[str, tuple] = {"f": ("theorems.newmod", "f")}\n',  # annotated: still an assignment
+        encoding="utf-8",
+    )
+
+    assert pf.referenced_modules(repo) == {**CLI_REFS, "theorems/newmod.py": {"qsearch_cli/imports.py"}}
+
+
+@pytest.mark.parametrize(
+    "source, reason",
+    [
+        ('IMPORTS = dict(f=("theorems.x", "f"))\n', "is not a literal"),
+        ('IMPORTS = {}\nIMPORTS |= {"f": ("theorems.x", "f")}\n', "is changed in place"),
+        ('IMPORTS = {}\nIMPORTS["f"] = ("theorems.x", "f")\n', "is changed in place"),
+        ('IMPORTS = {}\nIMPORTS.update(f=("theorems.x", "f"))\n', "is changed in place"),
+    ],
+)
+def test_a_table_that_is_not_one_literal_is_one_problem(tmp_path: Path, source: str, reason: str) -> None:
+    repo = _repo(tmp_path, git=False)
+    (repo / "qsearch_cli" / "imports.py").write_text(source, encoding="utf-8")
+
+    [problem] = pf.check_untracked_imports(repo)
+
+    assert problem.message.startswith(f"cannot read the CLI sources: ValueError: IMPORTS in qsearch_cli/imports.py {reason}")
+
+
 def test_real_checkout_has_no_untracked_imports() -> None:
     assert pf.check_untracked_imports(REPO) == []
 

@@ -125,23 +125,39 @@ def _json_error(path: Path) -> str | None:
 
 
 def _literal(root: Path, rel: str, name: str):
-    """The literal assigned to ``name`` at the top level of root/rel; None when absent. Never imported."""
+    """The literal last assigned to ``name`` at the top level of root/rel, the one Python keeps;
+    None when absent. Never imported.
+
+    ValueError when that value is not a literal, or when the module changes it in place
+    (``name |= ...``, ``name[key] = ...``, ``del name[key]``, ``name.update(...)``).
+    """
     path = root / rel
     if not path.is_file():
         return None
+
+    def is_name(node: ast.AST) -> bool:
+        return isinstance(node, ast.Name) and node.id == name
+
+    value = None
     for node in ast.parse(path.read_text(encoding="utf-8"), filename=rel).body:
-        if isinstance(node, ast.Assign):
-            targets = node.targets
-        elif isinstance(node, ast.AnnAssign):
-            targets = [node.target]
+        if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign, ast.Delete)):
+            targets = node.targets if isinstance(node, (ast.Assign, ast.Delete)) else [node.target]
+        elif isinstance(node, ast.Expr) and isinstance(node.value, ast.Call):
+            targets = [node.value.func]  # name.update(...)
         else:
             continue
-        if any(isinstance(t, ast.Name) and t.id == name for t in targets) and node.value is not None:
-            try:
-                return ast.literal_eval(node.value)
-            except ValueError:
-                raise ValueError(f"{name} in {rel} is not a literal") from None
-    return None
+        if isinstance(node, (ast.Assign, ast.AnnAssign)) and node.value is not None and any(map(is_name, targets)):
+            value = node.value
+        elif (isinstance(node, ast.AugAssign) and is_name(node.target)) or any(
+            isinstance(t, (ast.Subscript, ast.Attribute)) and is_name(t.value) for t in targets
+        ):
+            raise ValueError(f"{name} in {rel} is changed in place; preflight reads one literal")
+    if value is None:
+        return None
+    try:
+        return ast.literal_eval(value)
+    except ValueError:
+        raise ValueError(f"{name} in {rel} is not a literal") from None
 
 
 # Each CLI table: (file, container, row width, shape). Width 0: a dict whose values are module names.

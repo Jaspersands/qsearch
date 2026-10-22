@@ -92,10 +92,13 @@ The `imports` check collects references from these places:
   scan found exactly the import statements a full parse finds in every one of the 1281 files
   under `theorems/`, `core/` and `qsearch_cli/`.
 
-A CLI source or command module that does not parse or is not UTF-8, or a table of the
-wrong shape (an `IMPORTS` entry whose module is `None`, an `ORDER` that is a dict), is one
-`imports` problem, `cannot read the CLI sources: ...`, and the other checks still run. Its
-path is the file that cannot be read, or `.` for a table of the wrong shape.
+Each table is read from its last top-level assignment, the one Python keeps, annotated or
+not. A CLI source or command module that does not parse or is not UTF-8, a table of the
+wrong shape (an `IMPORTS` entry whose module is `None`, an `ORDER` that is a dict), or a
+table that is not one literal (`IMPORTS = dict(...)`, or `IMPORTS |= ...`,
+`IMPORTS[k] = ...` or `IMPORTS.update(...)` after it) is one `imports` problem, `cannot read
+the CLI sources: ...`, and the other checks still run. Its path is the file that cannot be
+read, or `.` for a table.
 
 A module named in another case than its file (`theorems.Foo` for `theorems/foo.py`) is
 missing: Python's import matches case even on macOS, whose file system does not. The
