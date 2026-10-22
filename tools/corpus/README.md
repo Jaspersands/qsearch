@@ -402,7 +402,7 @@ a catalog with any such problem, or one that cannot be read or parsed as
 returns `{"error"}`. The tests also check that every note reference
 exists as `research/<STEM>.md` and names its baseline (its name or an alias), that every
 runnable entry is a function defined in that file, and that every runnable command exits 0
-when run from the repository root (that check skips until `tools/dqi_screen/` is merged).
+when run from the repository root (it skips only in a checkout without `tools/dqi_screen/`).
 
 Three entries cite no note: no committed note discusses stochastic localization, Prange
 completion as a finite-length OPI baseline, or LP decoding of cycle codes
