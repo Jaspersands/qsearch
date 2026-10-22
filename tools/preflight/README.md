@@ -92,8 +92,11 @@ platform.
 
 A module that is staged with `git add` counts as tracked, since the commit will include it.
 One marked with `git add -N` (intent to add) does not: `git ls-files` lists it, but a plain
-`git commit` leaves it out. Preflight asks `git diff` for those and reports them as `not
-tracked by git (intent-to-add only)`.
+`git commit` leaves it out. Preflight asks `git diff-files --diff-filter=A` for those and
+reports them as `not tracked by git (intent-to-add only)`. Only plumbing commands run, and
+none of them writes the index: porcelain `git diff` refreshes stale stat data, rewriting
+`.git/index` under `index.lock`, which would fail another agent's `git add` or `git commit`
+in the same checkout.
 
 Git is asked only when the root is the top of its own work tree. Without that (no git, a
 directory that is not a repository, or an exported tree sitting inside some other

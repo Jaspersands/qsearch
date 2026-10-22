@@ -326,7 +326,10 @@ def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
     git can tell only when root is the top of its own work tree. A tree that sits inside some
     other repository (an export unpacked under a dotfiles repository) is not that repository's.
     A staged file is tracked: the commit will include it. One added with ``git add -N`` is
-    listed by ls-files, but a plain commit leaves it out; ``git diff`` shows it as added.
+    listed by ls-files, but a plain commit leaves it out; ``git diff-files`` shows it as added.
+    Only plumbing runs, which never writes the index: porcelain ``git diff`` refreshes stale
+    stat data, rewriting .git/index under index.lock, and so can fail another agent's commit.
+    diff-files detects no renames, so a renamed module marked with -N is still added.
     """
     root = Path(root).resolve()
     prefix = _git_output(root, "rev-parse", "--show-prefix")
@@ -338,7 +341,7 @@ def _git_index(root: Path) -> tuple[set[str], set[str]] | str:
     listing = _git_output(root, "ls-files", "-z", *pathspec)
     if listing is None:
         return "git unavailable"
-    added = _git_output(root, "diff", "--no-ext-diff", "--no-renames", "--name-only", "-z", "--diff-filter=A", *pathspec)
+    added = _git_output(root, "diff-files", "--name-only", "-z", "--diff-filter=A", *pathspec)
     intent = {p for p in (added or "").split("\0") if p}
     return {p for p in listing.split("\0") if p} - intent, intent
 

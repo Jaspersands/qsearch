@@ -439,6 +439,53 @@ def test_staged_module_counts_as_tracked_but_intent_to_add_does_not(tmp_path: Pa
     ]
 
 
+def test_an_unstaged_edit_is_not_intent_to_add(tmp_path: Path) -> None:
+    # The usual state before a commit: committed modules edited, not yet staged.
+    general = "def command_audit(args):\n    from theorems.edited import a\n    from theorems.intent import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/edited.py": "a = 1\n"})
+    _write(repo / "theorems" / "edited.py", "a = 2\n")
+    _write(repo / "qsearch_cli" / "commands" / "general.py", general + "\n# edited\n")
+    _write(repo / "theorems" / "intent.py", "b = 2\n")
+    _git(repo, "add", "-N", "theorems/intent.py")
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/intent.py", "not tracked by git (intent-to-add only)")
+    ]
+
+
+def test_a_renamed_module_marked_intent_to_add_is_still_not_tracked(tmp_path: Path) -> None:
+    # Rename detection would pair the new name with the deleted old one and hide it from --diff-filter=A.
+    general = "def command_audit(args):\n    from theorems.new_name import a\n    return a\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/old_name.py": "a = 1\n" * 20})
+    (repo / "theorems" / "old_name.py").rename(repo / "theorems" / "new_name.py")
+    _git(repo, "add", "-N", "theorems/new_name.py")
+
+    assert pf.check_untracked_imports(repo) == [
+        pf.Problem("imports", "theorems/new_name.py", "not tracked by git (intent-to-add only)")
+    ]
+
+
+def test_the_imports_check_never_writes_the_git_index(tmp_path: Path) -> None:
+    # Porcelain `git diff` refreshes stale stat data and rewrites .git/index under index.lock,
+    # which fails another agent's `git add` or `git commit` in the same checkout.
+    general = "def command_audit(args):\n    from theorems.tracked import a\n    from theorems.intent import b\n    return a, b\n"
+    repo = _repo(tmp_path, general=general, committed={"theorems/tracked.py": "a = 1\n", "core/c.py": "c = 1\n"})
+    _write(repo / "theorems" / "intent.py", "b = 2\n")
+    _git(repo, "add", "-N", "theorems/intent.py")
+    for rel in ("theorems/tracked.py", "core/c.py", "qsearch_cli/commands/general.py"):
+        path = repo / rel
+        path.write_bytes(path.read_bytes())  # same content, new stat data
+        stat = path.stat()
+        os.utime(path, ns=(stat.st_atime_ns, stat.st_mtime_ns + 5_000_000_000))
+    index = repo / ".git" / "index"
+    before = (index.read_bytes(), index.stat().st_mtime_ns, index.stat().st_ino)
+
+    problems = pf.check_untracked_imports(repo)
+
+    assert [p.path for p in problems] == ["theorems/intent.py"]
+    assert (index.read_bytes(), index.stat().st_mtime_ns, index.stat().st_ino) == before
+
+
 def test_a_module_named_in_the_wrong_case_is_missing_on_every_file_system(tmp_path: Path) -> None:
     # Python's import matches case even on macOS, whose file system does not: git add would not help.
     general = "def command_audit(args):\n    from theorems.Tracked import a\n    from theorems.Gone import b\n    return a, b\n"
