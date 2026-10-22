@@ -161,8 +161,9 @@ Cost: about 100k tokens per batch of five notes.
   and holds a lock on the `reviews/` folder from reading the store to the rename, so
   imports run at once take turns and none drops another's reviews. When it
   cannot be read or lacks that shape (each entry an object, its claims objects with a
-  string `quote` and `verdict`), every command stops with a one-line error naming the file
-  and exit 2, and import leaves it as it is.
+  string `quote` and `verdict`), every command that reads it stops with a one-line error
+  naming the file and exit 2 (all but `export --note`, which exports the named notes
+  without reading reviews), and import leaves it as it is.
 - `research/audits/reviews/<STEM>.md`: the overall verdict, summary and each claim with its
   quote, verdict, step and finding; marked stale when the note changed since.
 - `research/audits/REFEREE_QUEUE.md`: counts by overall verdict (current reviews) and

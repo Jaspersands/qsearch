@@ -1448,6 +1448,10 @@ def test_a_damaged_store_stops_every_command_with_one_line(tmp_path: Path, capsy
     assert not (tmp_path / R.QUEUE).exists() and not (tmp_path / "o").exists()
     with pytest.raises(R.StoreError, match="reviews.json"):
         R.status(tmp_path)
+    # `export --note` never reads the store, and the README says only the commands that read it stop.
+    assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(tmp_path / "n"), "--note", "OTHER_1"]) == 0
+    outputs = " ".join(_readme_section("## Outputs").split())
+    assert "every command that reads it stops" in outputs and "every command stops" not in outputs
 
 
 def test_import_replaces_the_store_in_one_step(tmp_path: Path, monkeypatch) -> None:
