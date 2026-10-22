@@ -384,7 +384,6 @@ LONGER = {"m": 2000, "radius": 248, "min_distance": 500}  # hermite_half_rate at
 def test_r1_fails_on_each_asymptotic_reach_bound_alone() -> None:
     no_radius = {"radius": None, "min_distance": None}
     cases = (
-        ("sphere-packing", {"q": 2, "n": 100, "rho": 0.1, **no_radius}),  # H_2^-1(0.1) = 0.013 <= 0.0166 < Plotkin
         ("Plotkin", {"q": 2, "n": 900, **no_radius}),  # Plotkin 0.225 <= 0.282 < H_2^-1(0.9) = 0.316
         ("distance", {"min_distance": 100, "radius": None}),  # delta/2 = 0.05 <= 0.067 < 0.25
     )
@@ -394,6 +393,13 @@ def test_r1_fails_on_each_asymptotic_reach_bound_alone() -> None:
         assert r1.passed is False and r1.detail.startswith(f"reach bound {bound} "), (bound, r1.detail)
         assert s.verdict == "not viable"
     assert _run("hermite_half_rate.json", radius=None)[1]["R1"].passed is True
+    # Sphere packing binds alone only at a density no field has (q = 2, rho = 0.1: H_2^-1(0.1) = 0.013 <= 0.0166
+    # < Plotkin; no k/q with q <= 32 does it), so the screen rejects the input, but R1 itself names the bound.
+    cand = replace(S.load_candidate(EXAMPLES / "hermite_half_rate.json"), q=2, n=100, rho=0.1, **no_radius)
+    with pytest.raises(ValueError, match="rho"):
+        S.screen(cand)
+    r1 = S._check_r1(cand, S._quantities(cand))
+    assert r1.passed is False and r1.detail.startswith("reach bound sphere-packing "), r1.detail
 
 
 def test_cosine_without_a_threshold_is_not_viable_even_without_a_radius() -> None:
@@ -411,7 +417,7 @@ def test_reach_fails_just_past_the_licensed_radius_alone() -> None:
 
 
 def test_r3_cap_and_restarts_fail_paths() -> None:
-    small = {"q": 7, "m": 2000, "n": 400, "radius": 100, "min_distance": None}  # Q* = 0.909, Q_DQI 0.718
+    small = {"q": 7, "m": 2000, "n": 400, "rho": 3 / 7, "radius": 100, "min_distance": None}  # Q* = 0.854, Q_DQI 0.651
     s, checks = _run("hermite_half_rate.json", **small)
     assert checks["R3"].passed is True and s.verdict == "viable", s.reasons
     s, checks = _run("hermite_half_rate.json", **small, finite_dqi_mean=0.95)
@@ -473,7 +479,7 @@ def test_saturation_starts_strictly_past_one_minus_rho(rho: float) -> None:
 
 
 def test_candidate_from_dict_rejects_unknown_keys_and_objectives() -> None:
-    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 3 / 7}
     assert S.candidate_from_dict(base).q == 7
     for bad in ({**base, "radiuss": 3}, {**base, "objective": "max"}, {"objective": "count"}, {**base, "q": 12}):
         with pytest.raises(ValueError):
@@ -496,8 +502,41 @@ def test_cosine_objective_needs_a_prime_above_three() -> None:
     assert S.main(["--objective", "cosine", "--q", "2", "--m", "1000", "--n", "300", "--rho", "0.5"]) == 2
 
 
+def test_densities_and_distances_no_instance_can_have_are_bad_input() -> None:
+    base = {"name": "x", "objective": "count", "q": 2, "m": 100, "n": 30, "rho": 0.5, "radius": 10,
+            "decoder_known": True}
+    # rho = |F_i| / q for a whole number 1 <= |F_i| <= q - 1, up to 1% rounding.
+    for q, rho in ((2, 0.3), (7, 0.5), (7, 0.45), (2, 0.1), (3, 0.1), (7, 0.9999), (2**61 - 1, 1e-30)):
+        with pytest.raises(ValueError, match=r"rho = .* \|F_i\|"):
+            S.screen(S.candidate_from_dict({**base, "q": q, "rho": rho}))
+    for q, rho in ((7, 3 / 7), (7, 0.4286), (3, 0.333), (101, 0.6), (8191, 0.5), (2**61 - 1, 0.5)):
+        assert S.screen(S.candidate_from_dict({**base, "q": q, "rho": rho})).verdict
+    cosine = {**base, "objective": "cosine", "q": 7, "rho": 0.5}  # the cosine objective ignores rho
+    assert S.screen(S.candidate_from_dict(cosine)).quantities["q_prange"] is None
+    # d <= n + 1 (Singleton) and d <= the finite Plotkin bound of the dual [m, m - n] code.
+    for changes in ({"min_distance": 90}, {"min_distance": 32}, {"m": 15, "n": 11, "min_distance": 9, "radius": 3}):
+        with pytest.raises(ValueError, match="min_distance"):
+            S.screen(S.candidate_from_dict({**base, **changes}))
+    for changes in ({"min_distance": 31}, {"m": 15, "n": 11, "min_distance": 8, "radius": 3}):
+        assert S.screen(S.candidate_from_dict({**base, **changes})).verdict
+    # The README's example uses a density the field has.
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    assert "--q 7 --m 100 --n 30 --rho 0.5 " not in readme and "--rho 0.5 " not in S.__doc__
+    assert S.main(["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5"]) == 2
+
+
+def test_docs_say_n_is_the_rank_of_b_and_the_cosine_ignores_rho() -> None:
+    readme = (REPO / "tools/dqi_screen/README.md").read_text(encoding="utf-8")
+    rows = {line.split("|")[1].strip(): line for line in readme.splitlines() if line.startswith("| `")}
+    assert "rank(B)" in rows["`q`, `m`, `n`"] and "variables; alpha" not in rows["`q`, `m`, `n`"]
+    assert "cosine objective ignores" in rows["`rho`"] and "Plotkin" in rows["`min_distance`"]
+    source = (REPO / "tools/corpus/mcp_server.py").read_text(encoding="utf-8")
+    doc = source.split("def screen_dqi_candidate", 1)[1].split('"""')[1]
+    assert "rank(B)" in doc and "ignores" in doc
+
+
 def test_claimed_values_must_be_finite_and_in_the_objective_range() -> None:
-    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5, "radius": 5}
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 3 / 7, "radius": 5}
     for key in ("finite_dqi_mean", "classical_witness"):
         for value in (float("nan"), float("inf"), -0.1, 1.5):
             with pytest.raises(ValueError, match=key):
@@ -518,7 +557,7 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
     assert main(["--params", str(EXAMPLES / "opi_prime_character_r32.json"), "--out", str(out)]) == 1
     assert "outside licensed Hamming reach" in out.read_text() and "# DQI screen: opi-prime-character-r32" in out.read_text()
     assert capsys.readouterr().out == f"not viable: {out}\n"
-    assert main(["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5", "--radius", "5", "--min-distance", "20", "--decoder-known"]) == 0
+    assert main(["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.4286", "--radius", "5", "--min-distance", "20", "--decoder-known"]) == 0
     text = capsys.readouterr().out
     assert text.startswith("# DQI screen: candidate") and "| q_prange |" in text and "Verdict:" in text
     assert main(["--objective", "count", "--q", "12", "--m", "100", "--n", "30", "--rho", "0.5"]) == 2
@@ -530,7 +569,7 @@ def test_cli_json_and_markdown(capsys, tmp_path) -> None:
 
 
 def test_huge_inputs_are_bad_input_not_a_verdict(capsys, tmp_path) -> None:
-    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 0.5}
+    base = {"name": "x", "objective": "count", "q": 7, "m": 100, "n": 30, "rho": 3 / 7}
     for key in ("rho", "classical_witness", "finite_dqi_mean"):
         with pytest.raises(ValueError, match=key) as error:
             S.candidate_from_dict({**base, key: 10**400})
@@ -607,7 +646,7 @@ def test_cli_zero_valued_flags_override_the_params_file(capsys) -> None:
     candidate = json.loads(capsys.readouterr().out)["candidate"]
     assert (candidate["radius"], candidate["classical_witness"], candidate["finite_dqi_mean"]) == (0, 0.0, 0.0)
     assert candidate["decoder_known"] is True  # an absent boolean flag keeps the file's value
-    flags = ["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.5", "--min-distance", "20"]
+    flags = ["--objective", "count", "--q", "7", "--m", "100", "--n", "30", "--rho", "0.4286", "--min-distance", "20"]
     assert main([*flags, "--radius", "0", "--decoder-known"]) == 1  # lam = 0 cannot beat Prange
     assert "R2 (hard): FAIL" in capsys.readouterr().out
 

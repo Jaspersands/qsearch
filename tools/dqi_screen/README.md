@@ -15,7 +15,7 @@ The answer is a verdict with the failing rule named:
 
 ```bash
 python tools/dqi_screen/screen.py --params tools/dqi_screen/examples/opi_prime_character_r19.json
-python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.5 \
+python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.4286 \
     --radius 5 --min-distance 20 --decoder-known
 python tools/dqi_screen/screen.py --params cand.json --json --out screen.json
 ```
@@ -30,10 +30,10 @@ server (`tools/corpus/mcp_server.py`); bad input returns `{"error": ...}`.
 |---|---|
 | `name` | label for the report |
 | `objective` | `count` (satisfied constraints) or `cosine` (sum of cos(2 pi v / q) over the rows; needs a prime q > 3, as Proposition 13 does) |
-| `q`, `m`, `n` | field size (a prime power), constraints, variables; alpha = n/m |
-| `rho` | accepted density of each constraint |
+| `q`, `m`, `n` | field size (a prime power); constraints; n = rank(B), the dimension of the optimizer code im(B), which is the number of variables only when B has full column rank; alpha = n/m (Section 4.1). For a rank-deficient B (duplicated columns, the incidence matrix of a graph) give the rank: the variable count overstates Singleton, Plotkin, the packing radii, Q* and Prange's line |
+| `rho` | accepted density \|F_i\|/q of each constraint, within 1% of a ratio k/q with 1 <= k <= q - 1 (q = 7 takes 3/7 = 0.4286, not 0.5; at q = 8191, 0.5 stands for 4095/8191 or 4096/8191). The cosine objective ignores it |
 | `radius` | claimed decoding radius l; lam = l/m |
-| `min_distance` | minimum distance d of the decoded code, when known; delta = d/m |
+| `min_distance` | minimum distance d of the decoded code, the dual [m, m - n] code, when known; delta = d/m. At most n + 1 (Singleton) and the finite Plotkin bound below |
 | `decoder_known` | an efficient decoder reaches `radius` |
 | `encoder_known` | a polynomial-time encoder for the optimizer code im(B) attains the existential line Q* (Proposition 9, R3). Encoder in the lossy-source-coding sense: given the accepted sets it returns a codeword satisfying many rows. The generator map x -> Bx or a known planted solution is not one |
 | `p`, `b`, `c` | subfield parameters for R4: q = p^b with p prime, and c the largest, over the accepted sets, of the smallest F_p-codimension of an affine subspace inside the set (Proposition 9); 1 <= c <= b, and c >= log_p(1/rho) since a set of density rho holds at most rho p^b elements (Appendix A.6). Needed when q is not prime, and checked against q when given |

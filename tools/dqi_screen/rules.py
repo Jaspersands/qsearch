@@ -1,8 +1,9 @@
 """Closed-form soundness rules for Decoded Quantum Interferometry (DQI) candidates.
 
 Mazumder and Niroula, arXiv:2610.06753. Notation: a max-LINSAT instance has m constraints
-over n variables in F_q, rate alpha = n/m, accepted density rho (the fraction of F_q each
-constraint accepts) and a decoder that corrects lam*m Hamming errors in the dual code.
+in F_q whose matrix B has rank n (the number of variables when B has full column rank), rate
+alpha = n/m, accepted density rho (the fraction of F_q each constraint accepts) and a decoder
+that corrects lam*m Hamming errors in the dual code.
 
 - Prange completion satisfies n constraints exactly and the rest at random:
   Q_Pr = rho + (1 - rho) alpha.

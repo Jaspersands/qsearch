@@ -1,11 +1,11 @@
 """Screen a DQI candidate against the Mazumder-Niroula soundness rules (arXiv:2610.06753).
 
     python tools/dqi_screen/screen.py --params tools/dqi_screen/examples/opi_prime_character_r19.json
-    python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.5 --radius 5 --min-distance 20 --decoder-known
+    python tools/dqi_screen/screen.py --objective count --q 7 --m 100 --n 30 --rho 0.4286 --radius 5 --min-distance 20 --decoder-known
     python tools/dqi_screen/screen.py --params cand.json --json --out screen.json
 
-A candidate is a max-LINSAT family: m constraints over n variables in F_q, accepted density
-rho, the objective ("count" of satisfied constraints, or "cosine"), and the claimed decoding
+A candidate is a max-LINSAT family: m constraints in F_q whose matrix B has rank n (the
+number of variables when B has full column rank), accepted density rho = |F_i| / q, the objective ("count" of satisfied constraints, or "cosine"), and the claimed decoding
 radius. The screen computes the closed-form quantities, runs each rule and gives a verdict:
 "not viable" when a hard rule fails, "unknown" when an input is missing or a soft rule
 flags, else "viable". It is a soundness screen, not a proof.
@@ -20,6 +20,7 @@ import json
 import math
 import sys
 from dataclasses import MISSING, asdict, dataclass, fields
+from fractions import Fraction
 from pathlib import Path
 
 if __package__ in (None, ""):
@@ -163,6 +164,19 @@ def _validate(c: Candidate) -> None:
     if c.c is not None and c.c * math.log(p) < math.log(1 / c.rho) - 1e-9:  # p^-c > rho, in logs (p may be huge)
         raise ValueError(f"c = {c.c} is below log_p(1/rho) = {math.log(1 / c.rho, p):.4g} ({field}): a set of density "
                          f"rho = {c.rho} cannot contain a coset of codimension c, which holds p^(b-c) > rho p^b elements")
+    if c.objective == "count":  # the cosine objective does not use rho
+        accepted = Fraction(c.rho) * c.q  # rho q = |F_i|, exactly (q may be huge)
+        size = min(c.q - 1, max(1, round(accepted)))
+        if abs(accepted - size) > accepted / 100:
+            raise ValueError(f"rho = {c.rho} is not a density |F_i| / q: rho q = {float(accepted):.4g}, but an "
+                             "accepted set holds a whole number of elements between 1 and q - 1 (the nearest is "
+                             f"{size}); give rho within 1% of |F_i| / q")
+    if c.min_distance is not None:
+        bound = min(c.n + 1, R.plotkin_distance(c.m, c.n, c.q))
+        if c.min_distance > bound:
+            raise ValueError(f"min_distance = {c.min_distance} exceeds {bound}, the most a linear [m, m - n] = "
+                             f"[{c.m}, {c.m - c.n}] code over F_q can have (Singleton d <= n + 1 and the finite "
+                             "Plotkin bound)")
 
 
 def _prime_power(q: int) -> tuple[int, int] | None:
