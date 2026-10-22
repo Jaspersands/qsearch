@@ -1757,10 +1757,33 @@ def _judge_rows(pattern: str) -> dict[str, dict]:
     return rows
 
 
-def _stored_claim(stem: str, quote_start: str) -> dict:
-    found = [c for c in _stored()[stem]["claims"] if " ".join(c["quote"].split()).startswith(quote_start)]
+def _historical_reviews() -> dict:
+    """The immutable first-pass and round-two corrections these regressions document.
+
+    A later live review may select entirely different claims or change its verdict.
+    The separate rebuild comparison checks live entries only while their source matches.
+    """
+    rows = {}
+    for pattern in ("pass1/out/batch_*.jsonl", "calibration_r2/out_d/batch_*.jsonl",
+                    "corrections/2026-10-22.jsonl", "corrections/2026-10-22-r2.jsonl"):
+        rows.update(_judge_rows(pattern))
+    return rows
+
+
+def _historical_note(stem: str) -> str:
+    row = _historical_reviews()[stem]
+    texts, _ = R.exported_texts(list(REVIEWS_DIR.glob("**/out*/*.jsonl")))
+    return texts[(stem, row["content_sha"])]
+
+
+def _historical_claim(stem: str, quote_start: str) -> dict:
+    found = [c for c in _historical_reviews()[stem]["claims"] if " ".join(c["quote"].split()).startswith(quote_start)]
     assert len(found) == 1, f"{stem}: {len(found)} claims quote {quote_start!r}"
-    return found[0]
+    # Import stores the source span, which may restore Markdown/signs omitted in the
+    # judge row. Reconstruct that span against the archived text, not the live note.
+    span, reason = R.find_quote(found[0]["quote"], _historical_note(stem))
+    assert span is not None, f"{stem}: {reason}"
+    return {**found[0], "quote": span}
 
 
 def _readme_section(heading: str) -> str:
@@ -1826,18 +1849,17 @@ def test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path: Path, ca
 @needs_reviews
 def test_interval_soft_decoder_decision_cut_needs_no_window_qualifier() -> None:
     """Every quantum guarantee the note cites needs d<L at constant L, where the DP is polynomial."""
-    claim = _stored_claim("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation")
+    claim = _historical_claim("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation")
     assert claim["verdict"] == "holds"
-    assert _stored()["INTERVAL_SOFT_DECODER"]["overall"] == "sound"
-    assert all(item["stem"] != "INTERVAL_SOFT_DECODER" for item in R.status(REPO)["flagged"])
+    assert _historical_reviews()["INTERVAL_SOFT_DECODER"]["overall"] == "sound"
 
 
 @needs_reviews
 def test_polar_source_design_leads_with_its_family_gap_and_quotes_only_the_note() -> None:
-    entry = _stored()["POLAR_SOURCE_DESIGN"]
+    entry = _historical_reviews()["POLAR_SOURCE_DESIGN"]
     assert "for the stated half-rate family" in " ".join(R.worst_claim(entry)["quote"].split())
-    assert _stored_claim("POLAR_SOURCE_DESIGN", "Largest set certified at average TV")["verdict"] == "gap"
-    note = " ".join(POLAR_NOTE.read_text(encoding="utf-8").lower().split())
+    assert _historical_claim("POLAR_SOURCE_DESIGN", "Largest set certified at average TV")["verdict"] == "gap"
+    note = " ".join(_historical_note("POLAR_SOURCE_DESIGN").lower().split())
     for claim in entry["claims"]:
         for phrase in re.findall(r"'([^']+)'", claim["finding"]):
             assert " ".join(phrase.lower().split()) in note, phrase
@@ -1846,7 +1868,7 @@ def test_polar_source_design_leads_with_its_family_gap_and_quotes_only_the_note(
 @needs_reviews
 def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
     """Judge E's finding, checked as real in the README's round two: K39 global inputs score 108 and 110 of 127."""
-    claim = _stored_claim("PRIME_CHARACTER_NORM_ATTACK", "solved common cosets classically but left mixed")
+    claim = _historical_claim("PRIME_CHARACTER_NORM_ATTACK", "solved common cosets classically but left mixed")
     assert claim["verdict"] == "gap"
     assert "K39" in claim["finding"] and "108/127" in claim["finding"] and "110/127" in claim["finding"]
 
@@ -1855,7 +1877,7 @@ def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
 def test_opi_power_completion_quote_keeps_its_degree_condition() -> None:
     """Cut at 'solved perfectly', the holds quote read as unconditional, but the saved N127,K39
     global inputs (threshold 64 > 39) score 108/127 and 110/127."""
-    claim = _stored_claim("PRIME_CHARACTER_OPI", "Thus ALL common-coset inputs are solved perfectly")
+    claim = _historical_claim("PRIME_CHARACTER_OPI", "Thus ALL common-coset inputs are solved perfectly")
     assert claim["verdict"] == "holds"
     assert " ".join(claim["quote"].split()).endswith("solved perfectly whenever `K >= (r-1)*ceil(N/r)`")
     assert "K39" in claim["finding"] and "108/127" in claim["finding"] and "110/127" in claim["finding"]
@@ -1882,7 +1904,7 @@ def test_opi_power_completion_quote_keeps_its_degree_condition() -> None:
      "increases in both arguments", "decreases in ||G||^2"),
 ])
 def test_corrected_findings_state_the_note_and_artifact_correctly(stem, quote_start, verdict, wrong, right) -> None:
-    claim = _stored_claim(stem, quote_start)
+    claim = _historical_claim(stem, quote_start)
     assert claim["verdict"] == verdict
     assert wrong not in claim["finding"] and right in claim["finding"]
 
@@ -2008,3 +2030,21 @@ def test_explicit_status_selection_does_not_add_unclear_notes_of_other_statuses(
     row = _row(tmp_path, overall="unclear", claims=[])
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/unclear.jsonl", [row])], "j")
     assert R.select_notes(tmp_path, statuses=("superseded",)) == []
+
+
+@needs_reviews
+def test_historical_correction_checks_do_not_pin_later_reviews_or_note_edits(monkeypatch, tmp_path):
+    import sys
+    module = sys.modules[__name__]
+    # A routine later review may quote different claims, and an edited note legitimately
+    # changes both its current review and what the queue flags. Historical checks use the
+    # saved judge rows and packets, never this mutable state.
+    monkeypatch.setattr(module, "_stored", lambda: {})
+    monkeypatch.setattr(module, "POLAR_NOTE", tmp_path / "later-note.md")
+    test_interval_soft_decoder_decision_cut_needs_no_window_qualifier()
+    test_polar_source_design_leads_with_its_family_gap_and_quotes_only_the_note()
+    test_norm_attack_review_keeps_the_k39_global_overstatement()
+    test_opi_power_completion_quote_keeps_its_degree_condition()
+    test_corrected_findings_state_the_note_and_artifact_correctly(
+        "PRIME_CHARACTER_INTERLEAVED_PROBE", "The joint product correlation is enhanced", "gap",
+        "cannot hold for those reported cases", "do not contradict")

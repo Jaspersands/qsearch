@@ -43,7 +43,9 @@ warning on stderr, and `export --note` refuses it. Notes are ordered by the firs
 after the title), undated last, then by stem. File modification times are not used: they
 follow checkout and copy order, so every checkout of one commit gets the same queue and
 the same cut at `--limit`. A note whose stored review has its current content hash is
-skipped unless `--include-reviewed` is given.
+skipped unless `--include-reviewed` is given, except that an `unclear` review remains
+queued for follow-up. The default selection includes unclear unlabelled notes too;
+an explicit nondefault status selection still restricts notes to those statuses.
 
 ## The packet
 
