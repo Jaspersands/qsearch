@@ -698,7 +698,7 @@ def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     flagged, reviewed, actions = section["flagged"], section["reviewed"], section["actions"]
     counts: dict[str, int] = {}
     for item in reviewed:
-        counts[str(item["verdict"])] = counts.get(str(item["verdict"]), 0) + 1
+        counts[_flat(item["verdict"])] = counts.get(_flat(item["verdict"]), 0) + 1
     tally = ", ".join(f"{verdict} {n}" for verdict, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
     if flagged is None:
         lines = [f"Possible kills and scoops: not available: {_flat(section.get('flagged_reason'))}. The verdicts "

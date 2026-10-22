@@ -98,8 +98,11 @@ def test_registry_delta_lists_added_and_removed_ids_since_the_cutoff(tmp_path: P
     assert (delta["baseline_count"], delta["current_count"]) == (1, 2)
     assert delta["quarantined"] == []
 
-    # A removed record that moved to the quarantine file is named as quarantined, not lost.
-    (repo / B.QUARANTINE).write_text(json.dumps([{"id": "A", "status": "QUARANTINED"}]), encoding="utf-8")
+    # A removed record that moved to the quarantine file is named as quarantined, not lost. The
+    # file gathers ids over time (12 in it, 3 removed in the window of 2026-10-21): only the
+    # window's removed ids count, or "all now in the quarantine file" could hide a lost record.
+    (repo / B.QUARANTINE).write_text(json.dumps([{"id": "A", "status": "QUARANTINED"}, {"id": "OLD-Q"}]),
+                                     encoding="utf-8")
     assert B.registry_delta(repo, since[0])["quarantined"] == ["A"]
     (repo / B.QUARANTINE).write_text("[{not json", encoding="utf-8")
     assert B.registry_delta(repo, since[0])["quarantined"] is None
@@ -1226,6 +1229,41 @@ def test_render_keeps_pipes_in_list_items_and_escapes_them_in_table_cells() -> N
     assert "Bounds on \\|S\\| \\| T" in row and row.replace("\\|", "").count("|") == 6
     row = next(line for line in page["Possible duplicates"].splitlines() if line.startswith("| 0.90 "))
     assert "x \\| y" in row and row.replace("\\|", "").count("|") == 6
+
+
+def test_render_keeps_multi_line_source_text_on_one_line() -> None:
+    # 116 of the stored referee claims hold newlines, and quotes are verbatim markdown: unflattened,
+    # a line of source text could open a heading, a list item or a table row of its own.
+    text = "first line\n## Injected heading\n- injected item\n| injected | row |\n\n    indented"
+    one_line = "first line ## Injected heading - injected item | injected | row | indented"
+    brief = {
+        "generated_on": "2026-10-20", "since_days": 7,
+        "registry": {"available": False, "reason": text},
+        "arxiv": {"available": True,
+                  "flagged": [{"id": "2610.1", "title": text, "label": "possible-kill", "first_seen": "2026-10-19",
+                               "verdict": None, "by": None, "open": True}],
+                  "reviewed": [{"id": "2610.2", "verdict": text, "by": text, "reviewed_on": "2026-10-19"}],
+                  "actions": [{"id": "2610.2", "action": text, "by": text}]},
+        "referee": {"available": True, "reviewed": 1, "stale": [],
+                    "flagged": [{"stem": "NOTE", "overall": "unsound", "reviewed_on": "2026-10-20",
+                                 "worst_claim": {"quote": text, "verdict": "wrong", "finding": text}}]},
+        "preflight": {"available": True, "total": 1, "by_check": {"json": [{"path": "p.json", "message": text}]}},
+        "inertia": {"available": True, "generated_on": "2026-10-19", "threshold": 8, "warnings": [text],
+                    "flags": [{"direction": "d", "label": text, "streak": 9, "last_gain": None}]},
+        "duplicates": {"available": True, "checked": 1, "unchecked": [], "index_issues": [text], "threshold": 0.8,
+                       "pairs": [{"a": "negative:A", "b": "negative:B", "score": 0.9, "title_a": text,
+                                  "title_b": text}]},
+        "commands": {"available": False, "reason": text},
+    }
+    page = B.render(brief)
+    assert [line for line in page.splitlines() if line.startswith("#")] == ["# Agent brief", *HEADINGS]
+    for line in page.splitlines():
+        assert not line.startswith(("- injected", "| injected", "    indented")), line
+    for heading, body in _sections(page).items():
+        assert "first line" in body, heading
+        for line in body.splitlines():  # wherever the text is, all of it is on that line
+            assert "first line" not in line or "indented" in line, (heading, line)
+    assert f"Not available: {one_line}" in page and f'"{one_line}". {one_line}' in page
 
 
 def test_render_marks_a_duplicate_title_it_cuts() -> None:
