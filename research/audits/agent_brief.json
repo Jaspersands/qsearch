@@ -7,11 +7,6 @@
         "id": "2609.37636"
       },
       {
-        "action": "Cite it in `research/TERNARY_COLORING_BPQM.md` next to Mandal and Pfister, and run the LP decoder before continuing that line.",
-        "by": "human",
-        "id": "2609.40036"
-      },
-      {
         "action": "Optional: add algorithmic stochastic localization to the classical baselines in `AFFINE_CLUSTER_NATIVE_PROBE.md`.",
         "by": "human",
         "id": "2609.40250"
@@ -27,16 +22,6 @@
         "id": "2610.01141"
       },
       {
-        "action": "Optional baseline for `RELATIVE_GIBBS_WORLDLINE.md`.",
-        "by": "human",
-        "id": "2610.02079"
-      },
-      {
-        "action": "Add it to \"Novelty And Attempts To Disprove It\" in `research/HERMITE_STREAMING_COMPOSITION.md`.",
-        "by": "human",
-        "id": "2610.03645"
-      },
-      {
         "action": "Add it to the prior-art comparison in `research/HDQI_PREDECESSOR_UNIFORM.md`. If the paper contains the radius recurrence, record a rediscovery.",
         "by": "human",
         "id": "2610.03697"
@@ -48,162 +33,249 @@
       }
     ],
     "available": true,
+    "blocked_actions": [
+      {
+        "action": "Cite it in `research/TERNARY_COLORING_BPQM.md` next to Mandal and Pfister, and run the LP decoder before continuing that line.",
+        "action_pending_clarification": "The reviewed target research/TERNARY_COLORING_BPQM.md is absent from this checkout. Ask the reviewer to identify or restore the intended note before carrying out the original action.",
+        "by": "human",
+        "id": "2609.40036"
+      },
+      {
+        "action": "Optional baseline for `RELATIVE_GIBBS_WORLDLINE.md`.",
+        "action_pending_clarification": "The reviewed target research/RELATIVE_GIBBS_WORLDLINE.md is absent from this checkout. Ask the reviewer to identify or restore the intended note before carrying out the original action.",
+        "by": "human",
+        "id": "2610.02079"
+      },
+      {
+        "action": "Add it to \"Novelty And Attempts To Disprove It\" in `research/HERMITE_STREAMING_COMPOSITION.md`.",
+        "action_pending_clarification": "The reviewed target research/HERMITE_STREAMING_COMPOSITION.md is absent from this checkout. Ask the reviewer to identify or restore the intended note before carrying out the original action.",
+        "by": "human",
+        "id": "2610.03645"
+      }
+    ],
+    "coverage": {
+      "gaps": [],
+      "stale": false,
+      "tracks_updated": {
+        "algorithm_discovery": "2026-10-18",
+        "bpqm_gibbs": "2026-10-18",
+        "code_equivalence": "2026-10-18",
+        "dcp": "2026-10-18",
+        "dequantization": "2026-10-18",
+        "dqi_opi": "2026-10-18",
+        "hidden_shift": "2026-10-18",
+        "lattice": "2026-10-18",
+        "nonabelian_hsp": "2026-10-18",
+        "number_theory": "2026-10-19",
+        "qsvt": "2026-10-18",
+        "query_and_fourier": "2026-10-18",
+        "representation": "2026-10-18",
+        "state_discrimination": "2026-10-18"
+      },
+      "updated": "2026-10-19",
+      "warnings": []
+    },
     "flagged": [
       {
-        "first_seen": "2026-10-19",
-        "id": "2609.35239",
-        "label": "possible-kill",
-        "title": "Computational Complexity of Clifford Template Compilation: Are Quantum Computers Useful for Compiling Quantum Circuits?",
-        "verdict": "false-alarm"
-      },
-      {
-        "first_seen": "2026-10-19",
-        "id": "2609.36480",
-        "label": "possible-scoop",
-        "title": "Improved Quantum Algorithms for Black-Box Abelian Group Decomposition",
-        "verdict": "false-alarm"
-      },
-      {
-        "first_seen": "2026-10-19",
-        "id": "2609.37636",
-        "label": "possible-scoop",
-        "title": "Resonance Breaking in Noisy Shor's Algorithm",
-        "verdict": "should-cite"
-      },
-      {
-        "first_seen": "2026-10-19",
-        "id": "2610.01141",
-        "label": "possible-scoop",
-        "title": "Classical Hardness of Learning Functions of Hamiltonians",
-        "verdict": "should-cite"
-      },
-      {
-        "first_seen": "2026-10-19",
-        "id": "2610.02079",
-        "label": "possible-kill",
-        "title": "A computational phase diagram for the transverse field Ising model",
-        "verdict": "related-only"
-      },
-      {
-        "first_seen": "2026-10-19",
-        "id": "2610.06812",
-        "label": "possible-kill",
-        "title": "Protecting Quantum Computers against Untrusted Users",
-        "verdict": "false-alarm"
-      },
-      {
-        "first_seen": "2026-10-19",
-        "id": "2610.08714",
-        "label": "possible-scoop",
-        "title": "Quantum Algorithms for Multivariable Polynomial Transformations: From Efficient Synthesis to Quantum Channel Transformations",
-        "verdict": "related-only"
-      },
-      {
-        "first_seen": "2026-10-18",
-        "id": "2609.35101",
-        "label": "possible-scoop",
-        "title": "From Simple Sources to Quantum Advantage: Homomorphic Polynomial Transduction via Relative Decoding",
-        "verdict": "related-only"
-      },
-      {
+        "by": "human",
         "first_seen": "2026-10-18",
         "id": "2609.40036",
         "label": "possible-kill",
+        "open": false,
         "title": "Cycle Codes and Decoded Quantum Interferometry",
         "verdict": "should-cite"
       },
       {
+        "by": "human",
         "first_seen": "2026-10-18",
         "id": "2609.40250",
         "label": "possible-kill",
+        "open": false,
         "title": "An (almost) efficient classical algorithm for sampling from typical Gibbs states",
         "verdict": "related-only"
       },
       {
-        "first_seen": "2026-10-18",
-        "id": "2609.40260",
-        "label": "possible-scoop",
-        "title": "Quantum Algorithms for Minimum Generating Set",
-        "verdict": "related-only"
-      },
-      {
+        "by": "human",
         "first_seen": "2026-10-18",
         "id": "2609.40302",
         "label": "possible-kill",
+        "open": false,
         "title": "Solving Sparse SDPs in Sublinear Time: A Classical Algorithm Inspired by the Quantum OR Lemma",
         "verdict": "false-alarm"
       },
       {
-        "first_seen": "2026-10-18",
-        "id": "2610.00502",
-        "label": "possible-scoop",
-        "title": "Quantum Algorithms for OPI Variants Beyond Locality and Classical Decodability",
-        "verdict": "should-cite"
-      },
-      {
-        "first_seen": "2026-10-18",
-        "id": "2610.01902",
-        "label": "possible-scoop",
-        "title": "Exponential quantum advantages for decoded quantum interferometry in the streaming setting",
-        "verdict": "related-only"
-      },
-      {
-        "first_seen": "2026-10-18",
-        "id": "2610.03566",
-        "label": "possible-scoop",
-        "title": "Gibbs state preparation through quantum decoding",
-        "verdict": "should-cite"
-      },
-      {
-        "first_seen": "2026-10-18",
-        "id": "2610.03645",
-        "label": "possible-scoop",
-        "title": "Exponential quantum space advantage in random data streams",
-        "verdict": "should-cite"
-      },
-      {
-        "first_seen": "2026-10-18",
-        "id": "2610.03697",
-        "label": "possible-scoop",
-        "title": "On The Complexity of Redundancy-Free Quantum Hamiltonians",
-        "verdict": "should-cite"
-      },
-      {
-        "first_seen": "2026-10-18",
-        "id": "2610.04597",
-        "label": "possible-scoop",
-        "title": "Efficient Quantum State Identity Testing",
-        "verdict": "related-only"
-      },
-      {
-        "first_seen": "2026-10-18",
-        "id": "2610.05752",
-        "label": "possible-scoop",
-        "title": "An efficient Hamiltonian-based quantum algorithm for characters of the symmetric group",
-        "verdict": "related-only"
-      },
-      {
+        "by": "human",
         "first_seen": "2026-10-18",
         "id": "2610.06753",
         "label": "possible-kill",
+        "open": false,
         "title": "Discovering New Problems for Decoded Quantum Interferometry",
         "verdict": "should-cite"
       },
       {
+        "by": "human",
+        "first_seen": "2026-10-19",
+        "id": "2609.35239",
+        "label": "possible-kill",
+        "open": false,
+        "title": "Computational Complexity of Clifford Template Compilation: Are Quantum Computers Useful for Compiling Quantum Circuits?",
+        "verdict": "false-alarm"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-19",
+        "id": "2610.02079",
+        "label": "possible-kill",
+        "open": false,
+        "title": "A computational phase diagram for the transverse field Ising model",
+        "verdict": "related-only"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-19",
+        "id": "2610.06812",
+        "label": "possible-kill",
+        "open": false,
+        "title": "Protecting Quantum Computers against Untrusted Users",
+        "verdict": "false-alarm"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2609.35101",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "From Simple Sources to Quantum Advantage: Homomorphic Polynomial Transduction via Relative Decoding",
+        "verdict": "related-only"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2609.40260",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Quantum Algorithms for Minimum Generating Set",
+        "verdict": "related-only"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2610.00502",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Quantum Algorithms for OPI Variants Beyond Locality and Classical Decodability",
+        "verdict": "should-cite"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2610.01902",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Exponential quantum advantages for decoded quantum interferometry in the streaming setting",
+        "verdict": "related-only"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2610.03566",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Gibbs state preparation through quantum decoding",
+        "verdict": "should-cite"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2610.03645",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Exponential quantum space advantage in random data streams",
+        "verdict": "should-cite"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2610.03697",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "On The Complexity of Redundancy-Free Quantum Hamiltonians",
+        "verdict": "should-cite"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2610.04597",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Efficient Quantum State Identity Testing",
+        "verdict": "related-only"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-18",
+        "id": "2610.05752",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "An efficient Hamiltonian-based quantum algorithm for characters of the symmetric group",
+        "verdict": "related-only"
+      },
+      {
+        "by": "human",
         "first_seen": "2026-10-18",
         "id": "2610.06781",
         "label": "possible-scoop",
+        "open": false,
         "title": "Pretty good shadow tomography",
         "verdict": "false-alarm"
       },
       {
+        "by": "human",
         "first_seen": "2026-10-18",
         "id": "2610.16827",
         "label": "possible-scoop",
+        "open": false,
         "title": "The Quantum Character Transform",
         "verdict": "should-cite"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-19",
+        "id": "2609.36480",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Improved Quantum Algorithms for Black-Box Abelian Group Decomposition",
+        "verdict": "false-alarm"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-19",
+        "id": "2609.37636",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Resonance Breaking in Noisy Shor's Algorithm",
+        "verdict": "should-cite"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-19",
+        "id": "2610.01141",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Classical Hardness of Learning Functions of Hamiltonians",
+        "verdict": "should-cite"
+      },
+      {
+        "by": "human",
+        "first_seen": "2026-10-19",
+        "id": "2610.08714",
+        "label": "possible-scoop",
+        "open": false,
+        "title": "Quantum Algorithms for Multivariable Polynomial Transformations: From Efficient Synthesis to Quantum Channel Transformations",
+        "verdict": "related-only"
       }
     ],
+    "proposed_actions": [],
     "reviewed": [
       {
         "by": "human",
@@ -360,22 +432,24 @@
       {
         "command": "python tools/preflight/preflight.py",
         "name": "preflight",
-        "when": "Before every commit: exit 1 lists research JSON that does not parse and CLI references to untracked theorem modules."
+        "when": "Before every commit: exit 1 lists JSON that does not parse under research/hypotheses/, research/registry/, research/audits/ and research/classical_baselines/, plus theorems/, core/ and qsearch_cli/ modules the CLI refers to that are missing or not tracked by git, and research/audits/cli_manifest.json subcommands missing from the CLI registry's ORDER or listed there under another module."
       },
       {
         "command": "python tools/corpus/cli.py check-new --file DRAFT_RECORD.json",
         "name": "duplicates",
-        "when": "Before filing a negative: exit 2 means a retained or quarantined record already says it (MCP check_duplicate_negative)."
+        "when": "Before filing a negative: exit 2 means a retained or quarantined record is close (TF-IDF cosine 0.6 or above). A match is a record to read, not proof: extend it, say how the draft differs, or pass --allow ID for a sweep sibling you have read (MCP check_duplicate_negative)."
       }
     ]
   },
   "duplicates": {
     "available": true,
     "checked": 0,
+    "index_issues": [],
     "pairs": [],
-    "threshold": 0.8
+    "threshold": 0.8,
+    "unchecked": []
   },
-  "generated_on": "2026-10-22",
+  "generated_on": "2026-10-23",
   "inertia": {
     "available": true,
     "flags": [
@@ -410,15 +484,8 @@
   },
   "preflight": {
     "available": true,
-    "by_check": {
-      "json": [
-        {
-          "message": "Invalid \\escape: line 7 column 167 (char 635)",
-          "path": "research/hypotheses/dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge_contract.json"
-        }
-      ]
-    },
-    "total": 1
+    "by_check": {},
+    "total": 0
   },
   "referee": {
     "available": true,
@@ -503,11 +570,11 @@
       },
       {
         "overall": "needs-work",
-        "reviewed_on": "2026-10-22",
+        "reviewed_on": "2026-10-23",
         "stem": "EXPLICIT_QUADRATIC_OPI",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be weak: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76, about 0.59. Rank also requires Nc<=Kt. Only the N127,K90 and the two N31,K19 inputs are certified perfect. The headline keeps none of these conditions.",
+          "finding": "The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be weak: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76, about 0.59. Rank also requires Nc<=Kt. Saved perfect inputs include N127,K90, both N31,K19, and the low-rate N7,K3 cases. The headline keeps none of these conditions.",
           "quote": "The high-rate quadratic family has a constructive classical explanation, not\na remaining quantum-advantage candidate",
           "step": "Revised Research Direction",
           "verdict": "gap",
@@ -516,13 +583,13 @@
       },
       {
         "overall": "needs-work",
-        "reviewed_on": "2026-10-22",
+        "reviewed_on": "2026-10-23",
         "stem": "FOLDED_NORM_SOURCE",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "The norm-pencil section states that the budgets are 'deliberately EXPLICIT but NOT MATCHED' (96 full interpolations against 8192 scored line parameters), and that 'No matched quantum wall-clock/gate comparison is claimed'. The attacks are matched only in using the same input, so the title implies a cost-matched comparison that the body disclaims.",
-          "quote": "Folded Norm Source: Phases, Scalar Rank And Matched Attacks",
-          "step": "Title",
+          "finding": "The 'Classical Best' column (21/53/99) omits the norm-pencil results the note reports later (25/57/104, matching folded_norm_attacks.json). Those results solve the 25-block input and put the 65-block input at 57, above its 56.698728 floor. Read alone, the table suggests the classical baseline lies below every quantum floor, which holds only at 127 blocks.",
+          "quote": "Each classical record uses32 complete-block fits plus64 repair proposals",
+          "step": "Same-Input Classical Results And Limits (table)",
           "verdict": "gap",
           "verified": true
         }
@@ -621,19 +688,6 @@
       {
         "overall": "needs-work",
         "reviewed_on": "2026-10-22",
-        "stem": "NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT",
-        "worst_claim": {
-          "covered_by_self_check": false,
-          "finding": "Units cannot leave a native line (Section 2 is general), but whether the two native lines are the wrong search space depends on both fixed-line lower bounds exceeding t^2/E^2. That is checked only on the saved d64 kernel (two lanes). For the zero label the m-line bound is det(I)=1 and the obstruction fails, and Section 2 says units can be 'extremely useful' on a well-scaled orbit. The sentence needs the condition 'on labels where both fixed-line bounds reach t^2/E^2, certified on the saved d64 instance'. Section 7's easy-label control concedes this, but the sentence does not carry it.",
-          "quote": "A quantum unit wrapper around the unmodified\nnative generators would be solving the wrong search space",
-          "step": "3. Stronger Fixed-Native-Line Obstruction (final paragraph)",
-          "verdict": "gap",
-          "verified": true
-        }
-      },
-      {
-        "overall": "needs-work",
-        "reviewed_on": "2026-10-22",
         "stem": "OPI_FILTER_TAIL_CERTIFICATE",
         "worst_claim": {
           "covered_by_self_check": false,
@@ -724,11 +778,11 @@
       },
       {
         "overall": "needs-work",
-        "reviewed_on": "2026-10-22",
+        "reviewed_on": "2026-10-23",
         "stem": "PRIME_CHARACTER_INTERLEAVED_PROBE",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "The body says 'The decoder ingredient WORKS' and that the attempted quantum repair (shared support, separate QFTs, selection among original rows) fails, at the single parameter set N127, K39, ell32, c=5/8, under review-pending bounds. It also says 'Do NOT infer that all interleaved sources or joint quantum processing fail'. The title instead attributes the failure to the decoder and drops these conditions.",
+          "finding": "The body says 'The decoder ingredient WORKS' and that the attempted quantum repair (shared support, separate QFTs, selection among original rows) fails, at N127, K39, ell32 with c=5 and c=8 rows, under review-pending bounds. It also says 'Do NOT infer that all interleaved sources or joint quantum processing fail'. The title instead attributes the failure to the decoder and drops these conditions.",
           "quote": "A Fast Interleaved Decoder Does Not Preserve This DQI Objective",
           "step": "Title",
           "verdict": "gap",
@@ -763,13 +817,13 @@
       },
       {
         "overall": "needs-work",
-        "reviewed_on": "2026-10-22",
+        "reviewed_on": "2026-10-23",
         "stem": "PRIME_CHARACTER_OPI",
         "worst_claim": {
           "covered_by_self_check": false,
-          "finding": "The coset orientation is not stated, and the claim depends on it. Exhaustive check: with the common square coset (orientation 0, the one tests/test_prime_character_opi.py uses), 0/25 polynomials are perfect. With the common nonsquare coset beta=2, the constant Q=3 gives residuals (3,3,3,2), all nonzero nonsquares, so 1/25 is perfect at K2. The counterexample needs 'square coset' added.",
-          "quote": "all25 native polynomials fail perfect strict satisfaction",
-          "step": "Tight degree paragraph (p5,N4,K2,r2, shifts (0,0,0,1))",
+          "finding": "The open-case list names only K39, but other saved high-rate mixed sources are also not perfect in the artifact. N31,K16 mixed seed71 is best 30/31 (r=2, R+rho=16/31+1/2>1, so in the published perfect-search regime). The r=3 N63,K46 mixed sources are 55/63 and 56/63 (R+rho~1.06>1), and the r=4 N32,K24 mixed sources are 28/32 and 27/32. The superseding norm attack covers only N127,K77. The Live Controls paragraph also reports only the r=3/r=4 global controls ('also perfect') and omits these mixed scores.",
+          "quote": "K39 and general fixed-input/asymptotic solvability remain open",
+          "step": "Header / Live Controls summary",
           "verdict": "gap",
           "verified": true
         }
@@ -796,6 +850,7 @@
     "available": true,
     "baseline_count": 978,
     "current_count": 975,
+    "duplicate_ids": [],
     "quarantined": [
       "NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER",
       "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
@@ -806,9 +861,9 @@
       "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
       "NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER"
     ],
-    "since_date": "2026-10-14",
-    "since_sha": "91b193dc678f804e6581220e2ec78318fa60daa9"
+    "since_date": "2026-10-15",
+    "since_sha": "1dbaf2cd2fa76e34ff12dd940f0cb0db242337d2"
   },
   "since_days": 7,
-  "window_start": "2026-10-15T00:00:00+11:00"
+  "window_start": "2026-10-16T00:00:00+11:00"
 }

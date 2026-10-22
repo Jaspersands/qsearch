@@ -54,7 +54,7 @@ None.
 
 ## Next 30
 
-Review-pending notes without a current review, newest first.
+Review-pending notes without a current review, plus unclear reviews. Dated notes newest first, then undated notes by stem.
 
 | Note | Date |
 |---|---|
