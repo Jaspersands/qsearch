@@ -15,8 +15,8 @@ qsearch_cli/imports.py (theorems.x, qsearch_cli.x, from core import y, relative 
 bare names that resolve to a file in theorems/ or core/), the IMPORTS table, the module
 column of DISPATCH, and the module columns of ORDER and FUNCTIONS; then the imports inside
 each module found until no new module turns up, by AST for the command modules in
-qsearch_cli/commands/ and by a line scan for the rest. Every subcommand in research/audits/cli_manifest.json must still be in the
-registry's ORDER, in the same module.
+qsearch_cli/commands/ and by a line scan for the rest. Every subcommand in
+research/audits/cli_manifest.json must still be in the registry's ORDER, in the same module.
 
 Prints one line per problem and the count; exits 1 when there is any problem, else 0.
 """
@@ -226,8 +226,8 @@ def _submodule_path(root: Path, package: str, name: str) -> str | None:
     """The file ``from package import name`` loads when ``package`` is a package and ``name`` a
     submodule: package/name.py, or its __init__.py when it is a directory.
 
-    theorems, core and qsearch_cli define no names of their own, so there the submodule is
-    named present or not. In a package below them, name may be something its __init__.py
+    theorems, core and qsearch_cli define nothing the CLI imports from them, so there the
+    submodule is named present or not. In a package below them, name may be something its __init__.py
     defines, so it counts only when the file or directory exists. None for a module that is
     not a package, and for any other dotted name.
     """

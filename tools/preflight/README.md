@@ -58,12 +58,13 @@ The `imports` check collects references from these places:
   module found below (`qsearch_cli/commands/<domain>.py`, which the registry names),
   including the lazy imports inside command bodies. A file in `qsearch_cli/commands/` that
   nothing refers to, such as an iCloud copy `general 2.py` or a scratch file, is never
-  loaded by the CLI and is not read. `import theorems.x`, `from core.y import z`, `from qsearch_cli.main import main`, `from
-  theorems import x` and `from qsearch_cli import x` name their file, whether or not it
-  exists. A dotted name that is a directory names its `__init__.py`, and so does `from
-  theorems import sub` when `theorems/sub/` is a directory. A bare name, `from x import f`
-  (the usual style here, and the one an old-style addition to `qsearch.py` uses), counts when
-  `theorems/x.py` exists, else when `core/x.py` exists. Standard library names are skipped.
+  loaded by the CLI and is not read. `import theorems.x`, `from core.y import z`, `from
+  qsearch_cli.main import main`, `from theorems import x` and `from qsearch_cli import x`
+  name their file, whether or not it exists. A dotted name that is a directory names its
+  `__init__.py`, and so does `from theorems import sub` when `theorems/sub/` is a
+  directory. A bare name, `from x import f` (the usual style here, and the one an old-style
+  addition to `qsearch.py` uses), counts when `theorems/x.py` exists, else when `core/x.py`
+  exists. Standard library names are skipped.
   A relative import is read against the importing file's package, since the CLI loads
   theorem modules as `theorems.x`: in `theorems/x.py`, `from .helper import h` and `from .
   import helper` name `theorems/helper.py`.
@@ -87,10 +88,10 @@ The `imports` check collects references from these places:
 
   These modules, other than command modules, are scanned line by line rather than parsed,
   which keeps the check at about one second instead of four: an `import` or `from ...
-  import` that starts a line, outside
-  strings and comments, with its bracketed or backslash-continued names. On 2026-10-22 the
-  scan found exactly the import statements a full parse finds in every one of the 1281 files
-  under `theorems/`, `core/` and `qsearch_cli/`.
+  import` that starts a line, outside strings and comments, with its bracketed or
+  backslash-continued names. On 2026-10-22 the scan found exactly the import statements a
+  full parse finds in every one of the 1281 files under `theorems/`, `core/` and
+  `qsearch_cli/`.
 
 Each table is read from its last top-level assignment, the one Python keeps, annotated or
 not. A CLI source or command module that does not parse or is not UTF-8, a table of the
@@ -165,7 +166,7 @@ error. Delete that test once the agents fix the file.
   (say `qsearch_cli.commands`), counts `x` as a module only when `pkg/x.py` or `pkg/x/`
   exists, since `x` may be a name `pkg/__init__.py` defines. So a missing `x` there is not
   reported. In `theorems`, `core` and `qsearch_cli` themselves, whose `__init__.py` files
-  define nothing to import, `x` is always read as the module `x`.
+  define nothing the CLI imports from them, `x` is always read as the module `x`.
 - A bare third-party name added to `IMPORTS` (say `numpy`) would be reported as a missing
   `core/numpy.py`. Today the table holds only `theorems/` and `core/` modules and six
   standard library names.
