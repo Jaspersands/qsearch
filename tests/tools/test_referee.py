@@ -1043,6 +1043,19 @@ def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
     assert R.find_quote("and the bound holds - on each", doubled)[0] == "and the bound holds —— on each"
 
 
+def test_find_quote_never_reads_a_quotes_em_dash_as_the_notes_minus_sign() -> None:
+    # The quote's em dash read as "-" while the note's was left out, so it stood in for the
+    # note's own minus sign and a dropped sign passed.
+    note = "We find the shift is x — (-y) for every saved input, and the gap — -0.5 is the smallest."
+    for dropped in ("We find the shift is x — (y) for every saved input", "and the gap — 0.5 is the smallest",
+                    "and the gap —— 0.5 is the smallest"):
+        assert R.find_quote(dropped, note)[0] is None, dropped
+    for kept in ("We find the shift is x — (-y) for every saved input", "We find the shift is x (-y) for every saved input",
+                 "We find the shift is x - (-y) for every saved input", "and the gap — -0.5 is the smallest",
+                 "and the gap -0.5 is the smallest", "and the gap - -0.5 is the smallest"):
+        assert R.find_quote(kept, note)[0] is not None, kept
+
+
 @pytest.mark.parametrize("note, quote, accepted", [
     # An arrow is not a minus sign: '->' read as '-' let a quote drop the '>' and refused '→'.
     ("Then x->1 holds for every saved input.", "Then x-1 holds for every saved input", False),

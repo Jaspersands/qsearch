@@ -108,7 +108,9 @@ text.
    signs apart are separate, so `x - (y)` does
    not pass for `x - (-y)`) must be the note's, so `b>=epsilon` does not pass for
    `b<=epsilon`, nor `>= min(1, ...)` for `<= min(1, ...)`. A prose em dash (`—`) may be
-   written `-` or left out. List and quote markers at the note's line starts may be kept or
+   written `-` or left out. The quote's em dashes are read the way the note's are, so a
+   quote's em dash never stands for a minus sign beside the note's em dash: `x — (y)` does
+   not pass for `x — (-y)`. List and quote markers at the note's line starts may be kept or
    dropped, but a kept marker must be the note's. The stored quote is the note's own
    wording of the span, not the judge's copy, widened to whole whitespace-delimited tokens
    (less a trailing `.`, `,`, `;` or `:`) so that a sign or operator next to the first or

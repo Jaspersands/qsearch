@@ -336,8 +336,10 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     words = [word.group().lower() for word in quoted]
     if len(words) < MIN_QUOTE_WORDS:
         return None, f"quote under {MIN_QUOTE_WORDS} words"
-    wanted = [(_gaps(quote, quoted, em), _symbols(quote[:quoted[0].start()], em), _symbols(quote[quoted[-1].end():], em))
-              for em in ("-", "")]
+    # By em dash reading: the quote's em dashes are read as the note's are, since read apart a
+    # quote's em dash could stand for a minus sign next to the note's own em dash.
+    wanted = {em: (_gaps(quote, quoted, em), _symbols(quote[:quoted[0].start()], em), _symbols(quote[quoted[-1].end():], em))
+              for em in ("-", "")}
     tokens = list(WORD.finditer(text))
     unmarked = LINE_MARKER.sub(lambda match: " " * len(match.group()), text)  # same positions
     joined, starts = " ", {}
@@ -353,18 +355,17 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
         before = tokens[first - 1].end() if first else 0
         after = tokens[last + 1].start() if last + 1 < len(tokens) else len(text)
         for version in (text, unmarked):
-            for em in ("-", ""):
+            for em, (want_gaps, want_lead, want_trail) in wanted.items():
                 lead = _symbol_run(version[before:tokens[first].start()], em)
                 trail = _symbol_run(version[tokens[last].end():after], em)
                 gaps = _gaps(version, tokens[first:last + 1], em)
-                for want_gaps, want_lead, want_trail in wanted:
-                    if (want_gaps != gaps or len(want_lead) > len(lead) or len(want_trail) > len(trail)
-                            or want_lead != tuple(t for _, _, t in lead[len(lead) - len(want_lead):])
-                            or want_trail != tuple(t for _, _, t in trail[:len(want_trail)])):
-                        continue
-                    start = before + lead[-len(want_lead)][0] if want_lead else tokens[first].start()
-                    end = tokens[last].end() + trail[len(want_trail) - 1][1] if want_trail else tokens[last].end()
-                    return _spread(text, start, end), ""
+                if (want_gaps != gaps or len(want_lead) > len(lead) or len(want_trail) > len(trail)
+                        or want_lead != tuple(t for _, _, t in lead[len(lead) - len(want_lead):])
+                        or want_trail != tuple(t for _, _, t in trail[:len(want_trail)])):
+                    continue
+                start = before + lead[-len(want_lead)][0] if want_lead else tokens[first].start()
+                end = tokens[last].end() + trail[len(want_trail) - 1][1] if want_trail else tokens[last].end()
+                return _spread(text, start, end), ""
         at = joined.find(needle, at + 1)
     if found:
         return None, ("quote's symbols (<, >, =, +, -, /, ^, ~, ±, √, !=, ->, decimal points) differ from the note, "
