@@ -98,8 +98,11 @@ def test_registry_delta_lists_added_and_removed_ids_since_the_cutoff(tmp_path: P
     assert (delta["baseline_count"], delta["current_count"]) == (1, 2)
     assert delta["quarantined"] == []
 
-    # A removed record that moved to the quarantine file is named as quarantined, not lost.
-    (repo / B.QUARANTINE).write_text(json.dumps([{"id": "A", "status": "QUARANTINED"}]), encoding="utf-8")
+    # A removed record that moved to the quarantine file is named as quarantined, not lost. The
+    # file gathers ids over time (12 in it, 3 removed in the window of 2026-10-21): only the
+    # window's removed ids count, or "all now in the quarantine file" could hide a lost record.
+    (repo / B.QUARANTINE).write_text(json.dumps([{"id": "A", "status": "QUARANTINED"}, {"id": "OLD-Q"}]),
+                                     encoding="utf-8")
     assert B.registry_delta(repo, since[0])["quarantined"] == ["A"]
     (repo / B.QUARANTINE).write_text("[{not json", encoding="utf-8")
     assert B.registry_delta(repo, since[0])["quarantined"] is None
@@ -219,6 +222,26 @@ def test_a_record_merged_in_from_a_side_branch_in_the_window_counts_as_added(tmp
     assert (delta["added"], delta["removed"]) == (["B"], [])
 
 
+def test_a_fast_forward_in_the_window_counts_from_the_commit_dates(tmp_path: Path) -> None:
+    # The documented limit: a fast-forward leaves no merge commit and git records nowhere when it
+    # happened, so the side branch's commits become main's own line with their own dates. B,
+    # committed 2026-10-10 and fast-forwarded into main on 2026-10-16, counts from 2026-10-10:
+    # before the window, so not added. Merged with --no-ff (the test above), it is added.
+    repo = _forked_repo(tmp_path)
+    _git(repo, "checkout", "-q", "side")
+    _commit(repo, {B.REGISTRY: [{"id": "A"}, {"id": "B"}]}, "2026-10-10")
+    _git(repo, "checkout", "-q", "main")
+    _git(repo, "merge", "--ff-only", "-q", "side", env=_dated("2026-10-16"))
+    delta = _merge_delta(repo)
+    assert delta["since_date"] == "2026-10-10"
+    assert (delta["added"], delta["removed"]) == ([], [])
+    readme = " ".join((REPO / "tools" / "brief" / "README.md").read_text(encoding="utf-8").split())
+    assert "**Merge with `--no-ff`.** A fast-forward" in readme
+    assert "counts from the date of its commit" in readme
+    for function in (B._log_args, B.since_commit):
+        assert "fast-forward" in function.__doc__ and "--no-ff" in function.__doc__, function
+
+
 def test_a_merge_of_two_changed_registries_compares_with_the_checked_out_branch(tmp_path: Path) -> None:
     # main filed X (2026-10-10) and the side branch Y (2026-10-12), both before the window; the
     # merge in the window keeps both. Only Y is new on main; X was there at the cutoff.
@@ -322,6 +345,25 @@ def test_the_window_start_takes_the_offset_of_its_own_day() -> None:
         assert B.window_start(dt.date(2026, 10, 1)).isoformat() == "2026-10-01T00:00:00+10:00"
         assert B._log_args(dt.date(2026, 10, 1))[3] == "--before=2026-09-30T13:59:59Z"
         assert B.window_start(dt.date(2026, 10, 13)).isoformat() == "2026-10-13T00:00:00+11:00"
+
+
+@pytest.mark.parametrize("start, label", [
+    ("2026-10-13T00:00:00+05:30", "00:00 local time, UTC+05:30"),  # India
+    ("2026-10-13T00:00:00+05:45", "00:00 local time, UTC+05:45"),  # Nepal
+    ("2026-10-13T00:00:00-03:30", "00:00 local time, UTC-03:30"),  # Newfoundland
+    ("2026-10-13T00:00:00+00:00", "00:00 local time, UTC+00:00"),
+    ("2026-10-13T00:00:00", "00:00 local time"),  # no offset to name
+    ("not a time", "00:00 local time"),
+    (None, "00:00 local time"),
+])
+def test_the_zone_label_names_the_offset_to_the_minute(start, label: str) -> None:
+    assert B._zone_label(start) == label
+
+
+def test_the_header_names_a_zone_that_is_not_a_whole_hour_from_utc(tmp_path: Path) -> None:
+    with _zone("<+0545>-5:45"):
+        text = B.render(B.build(tmp_path, today="2026-10-20"))
+    assert "since 2026-10-13 (00:00 local time, UTC+05:45)" in text
 
 
 def test_the_arxiv_window_and_the_generated_date_use_the_local_calendar(tmp_path: Path) -> None:
@@ -526,6 +568,23 @@ def test_git_reads_the_root_not_an_inherited_git_dir(tmp_path: Path, monkeypatch
     assert calls[0]["GIT_NO_LAZY_FETCH"] == "1"
 
 
+def test_git_runner_drops_every_variable_git_lists_as_local(tmp_path: Path, monkeypatch) -> None:
+    # git's own list (git rev-parse --local-env-vars) names the variables that point git at a
+    # repository, its config or objects; a parent git exports GIT_CONFIG_PARAMETERS (its -c
+    # settings) to hooks, and core.worktree or a replace-ref setting there would steer the reads.
+    listed = subprocess.run(["git", "rev-parse", "--local-env-vars"], cwd=tmp_path, capture_output=True, text=True,
+                            check=True).stdout.split()
+    assert "GIT_CONFIG_PARAMETERS" in listed
+    assert set(listed) <= set(B.REPOSITORY_ENV), set(listed) - set(B.REPOSITORY_ENV)
+    for name in listed:
+        monkeypatch.setenv(name, "x")
+    calls = []
+    monkeypatch.setattr(B.subprocess, "run", lambda command, **kw: calls.append(kw["env"]) or
+                        subprocess.CompletedProcess(command, 0, b"false\n\n", b""))
+    B.git_runner(tmp_path)(*B.HISTORY_ARGS)
+    assert not set(listed) & set(calls[0])
+
+
 LOG = ("--", B.REGISTRY)
 
 
@@ -631,7 +690,8 @@ def test_arxiv_section_lists_open_flags_new_reviews_and_open_actions(tmp_path: P
     assert [(f["id"], f["verdict"]) for f in section["flagged"]] == [
         ("2610.11111", None), ("2610.22222", None), ("2610.33333", "should-cite")]
     assert section["flagged"][0] == {
-        "id": "2610.11111", "title": "Open new kill", "label": "possible-kill", "first_seen": "2026-10-18", "verdict": None}
+        "id": "2610.11111", "title": "Open new kill", "label": "possible-kill", "first_seen": "2026-10-18",
+        "verdict": None, "by": None, "open": True}
     assert section["reviewed"] == [
         {"id": "2610.33333", "verdict": "should-cite", "by": "human", "reviewed_on": "2026-10-20"},
         {"id": "2610.66666", "verdict": "related-only", "by": "judge:x", "reviewed_on": "2026-10-19"},
@@ -663,7 +723,28 @@ def test_arxiv_section_tolerates_verdicts_for_unknown_papers_and_null_first_seen
     assert [a["id"] for a in section["actions"]] == ["2610.99999"]
 
 
-@pytest.mark.parametrize("state", ["missing", "directory", "no papers", "not json"])
+def test_arxiv_section_orders_flags_and_verdicts_by_date_not_by_id(tmp_path: Path) -> None:
+    # Ids here run against their dates, so an order that fell back to ids would show.
+    _arxiv_files(
+        tmp_path,
+        [_paper("2610.00000", "Open, date unknown", "possible-kill", None),
+         _paper("2610.11111", "Open, older", "possible-kill", "2026-10-01"),
+         _paper("2610.22222", "Open, newer", "possible-scoop", "2026-10-18")],
+        {"2610.33333": _verdict("kill", "2026-10-15"), "2610.44444": _verdict("scoop", "2026-10-20")},
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [f["id"] for f in section["flagged"]] == ["2610.22222", "2610.11111", "2610.00000"]  # undated last
+    assert [r["id"] for r in section["reviewed"]] == ["2610.44444", "2610.33333"]  # newest first
+
+
+def test_arxiv_action_text_is_trimmed_and_a_blank_one_is_no_action(tmp_path: Path) -> None:
+    # Actions are written by hand: whitespace alone is not something left to do.
+    _arxiv_files(tmp_path, [], {"2610.11111": _verdict("kill", "2026-10-20", action="   \n "),
+                                "2610.22222": _verdict("kill", "2026-10-20", action="\n  Cite it.  \n")})
+    assert B.arxiv_section(tmp_path, SINCE)["actions"] == [{"id": "2610.22222", "action": "Cite it.", "by": "human"}]
+
+
+@pytest.mark.parametrize("state", ["missing", "directory", "no papers", "not json", "a list"])
 def test_arxiv_open_flags_are_not_available_without_a_readable_collisions_file(tmp_path: Path, state: str) -> None:
     # Open flags live only in the collisions file; without it "0 open" would be a guess.
     _arxiv_files(tmp_path, [_paper("2610.11111", "Open kill", "possible-kill", "2026-09-01")],
@@ -676,13 +757,15 @@ def test_arxiv_open_flags_are_not_available_without_a_readable_collisions_file(t
         _write_json(path, {"updated": "2026-10-19"})
     elif state == "not json":
         path.write_text("{not json", encoding="utf-8")
+    elif state == "a list":  # JSON, but no object to hold "papers": the verdicts must still show
+        _write_json(path, [])
     section = B.arxiv_section(tmp_path, SINCE)
     assert section["available"] is True and section["flagged"] is None
     assert B.ARXIV_STATE in section["flagged_reason"]
     assert [a["id"] for a in section["actions"]] == ["2610.99999"]
     assert [r["id"] for r in section["reviewed"]] == ["2610.99999"]
     text = "\n".join(B._render_arxiv(section, SINCE))
-    assert "no verdict yet: 0" not in text and "already reviewed: 0" not in text
+    assert "verdict yet: 0" not in text and "already reviewed: 0" not in text
     assert f"Possible kills and scoops: not available: {section['flagged_reason']}" in text
     assert "`2610.99999`: should-cite (human, 2026-10-20)" in text  # the verdict is still named
     assert "Cite it." in text
@@ -705,6 +788,71 @@ def test_arxiv_names_a_verdict_in_the_window_on_a_paper_first_seen_before_it(tmp
     assert "`2610.00002`: kill (human, 2026-10-20)" in text
     assert "`2610.33333`: false-alarm" not in text  # already in the table
     assert "2610.44444" not in text
+
+
+def test_arxiv_names_a_verdict_of_the_window_whose_row_the_capped_table_hides(tmp_path: Path) -> None:
+    # Open flags sort first, so with more than LIST_CAP of them a reviewed flag of the window
+    # falls past the table's last row; it must still be named, not only tallied.
+    papers = [_paper(f"2610.{i:05d}", "Open old kill", "possible-kill", "2026-10-01") for i in range(B.LIST_CAP + 1)]
+    papers.append(_paper("2610.99999", "Reviewed new kill", "possible-kill", "2026-10-18"))
+    _arxiv_files(tmp_path, papers, {"2610.99999": _verdict("kill", "2026-10-20")})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["flagged"][-1]["id"] == "2610.99999"
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "| 2610.99999 |" not in text and "And 2 more in agent_brief.json." in text
+    assert "- `2610.99999`: kill (human, 2026-10-20)." in text
+
+
+def test_arxiv_says_by_hand_for_a_verdict_without_by_and_points_at_no_missing_table(tmp_path: Path) -> None:
+    # verdicts.by_judge: an entry without `by` was written by hand, and counts as a person's.
+    entry = {"verdict": "kill", "reason": "r", "action": "Retract research/X.md.", "reviewed_on": "2026-10-20"}
+    _arxiv_files(tmp_path, [], {"2610.12345": entry})
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert section["flagged"] == []
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "- `2610.12345`: kill (by hand, 2026-10-20)." in text
+    assert "- `2610.12345` (by hand): Retract research/X.md." in text
+    assert "()" not in text and "(," not in text
+    assert f"Verdicts recorded since {SINCE} (1):" in text and "table" not in text  # no flagged table is drawn
+
+
+def test_arxiv_names_the_watch_command_that_closes_an_action() -> None:
+    # watch.py --action-done validates the id, copies the flag onto the stored record and
+    # re-renders the digest; a hand edit does none of that, and a slip breaks the whole section.
+    section = {"available": True, "flagged": [], "reviewed": [],
+               "actions": [{"id": "2610.1", "action": "Cite it.", "by": "human"}]}
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert "`python tools/arxiv_watch/watch.py --action-done ID`" in text
+    assert "action_done\": true" not in text
+
+
+def test_a_judge_verdict_leaves_a_flag_open_until_a_person_records_one(tmp_path: Path) -> None:
+    # The watch's rule (tools/arxiv_watch/README.md): a judge's verdict is one model's reading
+    # and never takes a flag out of the possible-kill and possible-scoop sections. The brief
+    # counted it as closing the flag, and dropped an older judged flag from the page.
+    judge = "judge:claude-subagent"
+    _arxiv_files(
+        tmp_path,
+        [_paper("2610.00001", "Old kill, judged a false alarm", "possible-kill", "2026-10-01"),
+         _paper("2610.00002", "New kill, judged a false alarm", "possible-kill", "2026-10-20"),
+         _paper("2610.00003", "New scoop, a person's verdict", "possible-scoop", "2026-10-19")],
+        {"2610.00001": _verdict("false-alarm", "2026-10-02", by=judge),
+         "2610.00002": _verdict("false-alarm", "2026-10-20", by=judge),
+         "2610.00003": _verdict("related-only", "2026-10-19")},
+    )
+    section = B.arxiv_section(tmp_path, SINCE)
+    assert [(f["id"], f["verdict"], f["by"], f["open"]) for f in section["flagged"]] == [
+        ("2610.00002", "false-alarm", judge, True),
+        ("2610.00001", "false-alarm", judge, True),
+        ("2610.00003", "related-only", "human", False),
+    ]
+    text = "\n".join(B._render_arxiv(section, SINCE))
+    assert ("Possible kills and scoops with no person's verdict yet: 2 (2 of them with only a judge's verdict, "
+            "which leaves a flag open)." in text)
+    assert "already reviewed: 1." in text
+    assert "| 2610.00001 | possible-kill | 2026-10-01 | **open** (judge: false-alarm): read it |" in text
+    assert "| 2610.00002 | possible-kill | 2026-10-20 | **open** (judge: false-alarm): read it |" in text
+    assert "| 2610.00003 | possible-scoop | 2026-10-19 | related-only |" in text
 
 
 @pytest.mark.parametrize("done", ["false", "no", 1, "true"])
@@ -758,7 +906,27 @@ def test_referee_section_missing(tmp_path: Path, monkeypatch) -> None:
     assert section["available"] is False and section["reason"] == "tools/referee not present"
 
 
+def test_import_tool_tells_a_missing_tool_from_a_broken_one(tmp_path: Path, monkeypatch) -> None:
+    # "not present" only when the tool's own module (or its package) is absent; a tool whose
+    # dependency is missing is in the checkout but broken, and the reason must say why.
+    package = tmp_path / "brief_fixture_pkg"
+    package.mkdir()
+    (package / "__init__.py").write_text("", encoding="utf-8")
+    (package / "broken.py").write_text("import brief_fixture_missing_dependency\n", encoding="utf-8")
+    monkeypatch.syspath_prepend(str(tmp_path))
+    try:
+        assert B._import_tool("brief_fixture_pkg.absent", "tools/x") == (None, "tools/x not present")
+        assert B._import_tool("brief_fixture_no_pkg.tool", "tools/x") == (None, "tools/x not present")
+        module, reason = B._import_tool("brief_fixture_pkg.broken", "tools/x")
+        assert module is None and reason.startswith("tools/x cannot be imported: ModuleNotFoundError")
+        assert "brief_fixture_missing_dependency" in reason
+    finally:
+        for name in [name for name in sys.modules if name.startswith("brief_fixture_pkg")]:
+            del sys.modules[name]
+
+
 def test_preflight_section_groups_problems_by_check(fake_repo: Path) -> None:
+    (fake_repo / "qsearch.py").write_text("", encoding="utf-8")  # a checkout, as preflight.py requires
     (fake_repo / "research" / "hypotheses" / "broken.json").write_text('{"bad": "\\x"}', encoding="utf-8")
     section = B.preflight_section(fake_repo)
     assert section["available"] is True
@@ -767,6 +935,16 @@ def test_preflight_section_groups_problems_by_check(fake_repo: Path) -> None:
     [problem] = section["by_check"]["json"]
     assert problem["path"] == "research/hypotheses/broken.json" and problem["message"].startswith("Invalid \\escape")
     assert section["by_check"]["imports"] == [{"path": ".", "message": "git unavailable"}]
+
+
+def test_preflight_section_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> None:
+    # preflight.py's own command line refuses such a root (exit 2): every check would report a
+    # problem only the wrong root causes ("git unavailable", a missing manifest).
+    section = B.preflight_section(tmp_path)
+    assert section == {"available": False,
+                       "reason": f"{tmp_path} is not a Q-Search checkout: it has no qsearch.py"}
+    (tmp_path / "qsearch.py").mkdir()
+    assert B.preflight_section(tmp_path)["available"] is False
 
 
 def test_preflight_section_missing(tmp_path: Path, monkeypatch) -> None:
@@ -831,6 +1009,26 @@ def test_inertia_section_is_unavailable_for_a_malformed_cockpit(tmp_path: Path, 
     assert section["available"] is False and field in section["reason"], section
 
 
+@pytest.mark.parametrize("cockpit, why", [
+    ({"generated_on": "2026-10-10", "directions": []}, "has no inertia field"),
+    ({"generated_on": "2026-10-10", "inertia": None}, "has no inertia field"),
+    ({"generated_on": "2026-10-10", "inertia": {}}, "has no inertia field"),
+    # The first committed cockpit (2026-10-19): an inertia block from before `available`.
+    ({"generated_on": "2026-10-19", "inertia": {"threshold": 8, "directions": [], "flags": []}},
+     "inertia field has no `available`"),
+])
+def test_inertia_section_names_no_cause_it_did_not_check(tmp_path: Path, cockpit: dict, why: str) -> None:
+    # "no registry history" is the cockpit's own cause for `available: false`; a cockpit without
+    # the field never said that, and the fix is a rebuild.
+    _write_json(tmp_path / B.COCKPIT, cockpit)
+    section = B.inertia_section(tmp_path)
+    assert section["available"] is False
+    assert why in section["reason"] and "rebuild: python tools/cockpit/build_cockpit.py" in section["reason"]
+    assert "no registry history" not in section["reason"]
+    _write_json(tmp_path / B.COCKPIT, {**cockpit, "inertia": {"available": False}})
+    assert B.inertia_section(tmp_path)["reason"].endswith("has no inertia measure: no registry history")
+
+
 def test_inertia_section_missing(tmp_path: Path) -> None:
     section = B.inertia_section(tmp_path)
     assert section["available"] is False and "build_cockpit.py" in section["reason"]
@@ -854,14 +1052,70 @@ def test_duplicates_section_keeps_pairs_that_involve_a_new_record(tmp_path: Path
         return pairs
 
     monkeypatch.setattr(B, "_near_duplicates", fake)
-    marker = object()
+    marker = _Indexed()
     section = B.duplicates_section(tmp_path, ["NEG-NEW-1", "NEG-NEW-2"], corpus=marker)
     assert section["available"] is True and section["checked"] == 2
+    assert (section["unchecked"], section["index_issues"]) == ([], [])
     assert [(p["a"], p["b"], p["new"]) for p in section["pairs"]] == [
         ("negative:NEG-NEW-1", "negative:NEG-OLD-1", ["NEG-NEW-1"]),
         ("negative:NEG-OLD-2", "quarantined:NEG-NEW-2", ["NEG-NEW-2"]),
     ]
     assert seen["corpus"] is marker and seen["kind"] == "negative" and seen["threshold"] == B.DUPLICATE_THRESHOLD
+
+
+class _Indexed:
+    """A corpus stand-in whose index holds every document and recorded no parse problem."""
+
+    def get(self, doc_id: str) -> object:
+        return object()
+
+    def issues(self) -> list[dict[str, str]]:
+        return []
+
+
+def test_duplicates_section_keeps_a_new_record_pair_below_the_default_limit(tmp_path: Path, monkeypatch) -> None:
+    # near_duplicates keeps its top `limit` pairs (200 by default) before the brief filters for
+    # new records. On the real index 599 pairs reach 0.8 and the 200th scores 0.90, so the
+    # default would drop every 0.80-0.90 pair, where true restatements sit.
+    from tools.corpus.duplicates import Pair, near_duplicates
+
+    default = inspect.signature(near_duplicates).parameters["limit"].default
+    pairs = [Pair(f"negative:NEG-OLD-{i}", f"negative:NEG-OLD-{i}-X", 0.99, "old", "old") for i in range(default)]
+    pairs.append(Pair("negative:NEG-NEW", "negative:NEG-OLD-0", 0.85, "new", "old"))
+
+    def fake(corpus, *, kind, threshold, limit=default, **kwargs):
+        return pairs[:limit]  # the real function's cut
+
+    monkeypatch.setattr(B, "_near_duplicates", fake)
+    section = B.duplicates_section(tmp_path, ["NEG-NEW"], corpus=_Indexed())
+    assert [(p["a"], p["score"]) for p in section["pairs"]] == [("negative:NEG-NEW", 0.85)]
+
+
+def test_duplicates_section_does_not_count_a_record_the_index_skipped(fake_repo: Path) -> None:
+    # The corpus skips a record it cannot parse (here applies_to is not a list), so no pair can
+    # involve it: "0 pairs involve the 1 negative added" would be a guess, not a finding.
+    from tests.tools.conftest import NEGATIVES
+    from tests.tools.test_corpus_duplicates import DUP_A, DUP_B
+
+    _write_json(fake_repo / B.REGISTRY, NEGATIVES + [DUP_A, {**DUP_B, "applies_to": 7}])
+    section = B.duplicates_section(fake_repo, ["NEG-DUP-B"])
+    assert section["available"] is True
+    assert (section["checked"], section["unchecked"], section["pairs"]) == (0, ["NEG-DUP-B"], [])
+    [issue] = section["index_issues"]
+    assert issue.startswith(f"{B.REGISTRY}: skipped 1 malformed record(s): NEG-DUP-B")
+    text = "\n".join(B._render_duplicates(section, SINCE))
+    assert "No negative was added" not in text and "0 pairs" not in text
+    assert "Not compared (1): `NEG-DUP-B`" in text
+    assert "a pair may be missing" in text and "skipped 1 malformed record(s)" in text
+
+    # The old record skipped instead: the new one is compared, but its pair cannot be found.
+    _write_json(fake_repo / B.REGISTRY, NEGATIVES + [{**DUP_A, "applies_to": 7}, DUP_B])
+    section = B.duplicates_section(fake_repo, ["NEG-DUP-B"])
+    assert (section["checked"], section["unchecked"], section["pairs"]) == (1, [], [])
+    assert section["index_issues"]
+    text = "\n".join(B._render_duplicates(section, SINCE))
+    assert "0 pairs at TF-IDF cosine 0.8 or above involve one of the 1 negatives added" in text
+    assert "a pair may be missing" in text
 
 
 def test_duplicates_section_finds_a_planted_restatement_with_the_real_corpus(fake_repo: Path) -> None:
@@ -883,7 +1137,8 @@ def test_duplicates_section_missing(tmp_path: Path, monkeypatch) -> None:
 
     monkeypatch.setattr(B, "_open_corpus", no_corpus)
     section = B.duplicates_section(tmp_path, [])
-    assert section == {"available": True, "checked": 0, "threshold": B.DUPLICATE_THRESHOLD, "pairs": []}
+    assert section == {"available": True, "checked": 0, "unchecked": [], "index_issues": [],
+                       "threshold": B.DUPLICATE_THRESHOLD, "pairs": []}
 
 
 def test_commands_section_names_five_commands_that_exist() -> None:
@@ -894,6 +1149,20 @@ def test_commands_section_names_five_commands_that_exist() -> None:
         script = command["command"].split()[1]
         assert command["command"].startswith("python ") and (REPO / script).is_file(), command
         assert command["when"]
+
+
+def test_commands_section_says_what_check_new_and_preflight_report() -> None:
+    # check-new's exit 2 is a draft close to a record (cosine >= its default threshold), a
+    # record to read, not proof that it already says the claim. preflight checks modules in
+    # theorems/, core/ and qsearch_cli/, missing or untracked, and the CLI manifest.
+    from tools.corpus.cli import build_parser
+
+    when = {command["name"]: command["when"] for command in B.commands_section()["commands"]}
+    check_new = build_parser().parse_args(["check-new", "--text", "x"])
+    assert f"cosine {check_new.threshold} or above" in when["duplicates"]
+    assert "already says it" not in when["duplicates"] and "--allow" in when["duplicates"]
+    for needle in ("theorems/", "core/", "qsearch_cli/", "missing", "not tracked", "cli_manifest.json"):
+        assert needle in when["preflight"], needle
 
 
 def test_section_turns_an_exception_into_unavailable() -> None:
@@ -937,6 +1206,7 @@ def test_build_never_fails_when_every_source_is_missing(tmp_path: Path, monkeypa
 
 def _full_repo(tmp_path: Path, monkeypatch) -> Path:
     repo = _history_repo(tmp_path)
+    (repo / "qsearch.py").write_text("", encoding="utf-8")  # a checkout, for the preflight section
     _arxiv_files(
         repo,
         [_paper("2610.11111", "Open new kill", "possible-kill", "2026-10-18")],
@@ -945,7 +1215,7 @@ def _full_repo(tmp_path: Path, monkeypatch) -> Path:
     _reviewed_note(repo)
     from tools.corpus.duplicates import Pair
 
-    monkeypatch.setattr(B, "_open_corpus", lambda root: "corpus")
+    monkeypatch.setattr(B, "_open_corpus", lambda root: _Indexed())
     monkeypatch.setattr(B, "_near_duplicates", lambda corpus, **kw: [
         Pair("negative:A", "negative:C", 0.93, "the old claim", "the new claim")])
     return repo
@@ -983,7 +1253,8 @@ def test_render_shows_what_each_section_found(tmp_path: Path, monkeypatch) -> No
     registry, arxiv = page["Registry"], page["arXiv watch"]
     assert "Added (2): `B`, `C`." in registry
     assert "Removed (1, none now in the quarantine file): `A`." in registry
-    assert "Possible kills and scoops with no verdict yet: 1. First seen since 2026-10-13 and already reviewed: 0." in arxiv
+    assert ("Possible kills and scoops with no person's verdict yet: 1. First seen since 2026-10-13 and already "
+            "reviewed: 0." in arxiv)
     assert "Verdicts recorded since 2026-10-13: 1 (should-cite 1)." in arxiv
     assert "- `2610.33333`: should-cite (human, 2026-10-19)." in arxiv  # not in the flagged table
     assert "| 2610.11111 | possible-kill | 2026-10-18 | **open**: read it | Open new kill |" in arxiv
@@ -1046,7 +1317,7 @@ def test_render_keeps_pipes_in_list_items_and_escapes_them_in_table_cells() -> N
                  "flagged": [{"stem": "NOTE", "overall": "unsound", "reviewed_on": "2026-10-20", "worst_claim": claim}]},
         arxiv={"available": True, "reviewed": [], "actions": [{"id": "2610.1", "action": "Check |x| < 1.", "by": "h"}],
                "flagged": [{"id": "2610.1", "title": "Bounds on |S| | T", "label": "possible-kill",
-                            "first_seen": "2026-10-19", "verdict": None}]},
+                            "first_seen": "2026-10-19", "verdict": None, "by": None, "open": True}]},
         duplicates={"available": True, "checked": 1, "threshold": 0.8,
                     "pairs": [{"a": "negative:A", "b": "negative:B", "score": 0.9, "title_a": "x | y", "title_b": "z"}]},
     )
@@ -1058,6 +1329,53 @@ def test_render_keeps_pipes_in_list_items_and_escapes_them_in_table_cells() -> N
     assert "x \\| y" in row and row.replace("\\|", "").count("|") == 6
 
 
+def test_render_keeps_multi_line_source_text_on_one_line() -> None:
+    # 116 of the stored referee claims hold newlines, and quotes are verbatim markdown: unflattened,
+    # a line of source text could open a heading, a list item or a table row of its own.
+    text = "first line\n## Injected heading\n- injected item\n| injected | row |\n\n    indented"
+    one_line = "first line ## Injected heading - injected item | injected | row | indented"
+    brief = {
+        "generated_on": "2026-10-20", "since_days": 7,
+        "registry": {"available": False, "reason": text},
+        "arxiv": {"available": True,
+                  "flagged": [{"id": "2610.1", "title": text, "label": "possible-kill", "first_seen": "2026-10-19",
+                               "verdict": None, "by": None, "open": True}],
+                  "reviewed": [{"id": "2610.2", "verdict": text, "by": text, "reviewed_on": "2026-10-19"}],
+                  "actions": [{"id": "2610.2", "action": text, "by": text}]},
+        "referee": {"available": True, "reviewed": 1, "stale": [],
+                    "flagged": [{"stem": "NOTE", "overall": "unsound", "reviewed_on": "2026-10-20",
+                                 "worst_claim": {"quote": text, "verdict": "wrong", "finding": text}}]},
+        "preflight": {"available": True, "total": 1, "by_check": {"json": [{"path": "p.json", "message": text}]}},
+        "inertia": {"available": True, "generated_on": "2026-10-19", "threshold": 8, "warnings": [text],
+                    "flags": [{"direction": "d", "label": text, "streak": 9, "last_gain": None}]},
+        "duplicates": {"available": True, "checked": 1, "unchecked": [], "index_issues": [text], "threshold": 0.8,
+                       "pairs": [{"a": "negative:A", "b": "negative:B", "score": 0.9, "title_a": text,
+                                  "title_b": text}]},
+        "commands": {"available": False, "reason": text},
+    }
+    page = B.render(brief)
+    assert [line for line in page.splitlines() if line.startswith("#")] == ["# Agent brief", *HEADINGS]
+    for line in page.splitlines():
+        assert not line.startswith(("- injected", "| injected", "    indented")), line
+    for heading, body in _sections(page).items():
+        assert "first line" in body, heading
+        for line in body.splitlines():  # wherever the text is, all of it is on that line
+            assert "first line" not in line or "indented" in line, (heading, line)
+    assert f"Not available: {one_line}" in page and f'"{one_line}". {one_line}' in page
+
+
+def test_render_marks_a_duplicate_title_it_cuts() -> None:
+    # Titles are negative claims, and 189 of the 975 records run past 120 characters; a cut
+    # in mid-word with no marker would pass for the whole claim.
+    long = " ".join(f"word{i}" for i in range(40))
+    page = _page(duplicates={"available": True, "checked": 1, "unchecked": [], "index_issues": [], "threshold": 0.8,
+                             "pairs": [{"a": "negative:A", "b": "negative:B", "score": 0.9, "title_a": long,
+                                        "title_b": "short"}]})
+    row = next(line for line in page["Possible duplicates"].splitlines() if line.startswith("| 0.90 "))
+    assert f"| {long[:B.TITLE_CAP].rstrip()}... |" in row and "| short |" in row
+    assert B.TITLE_CAP == 120 and "120 characters" in (REPO / "tools" / "brief" / "README.md").read_text("utf-8")
+
+
 def test_render_caps_every_list_and_says_how_many_more() -> None:
     assert B.LIST_CAP == 40  # the README's number
     n = 41
@@ -1067,7 +1385,7 @@ def test_render_caps_every_list_and_says_how_many_more() -> None:
         registry=_registry([f"ADD{i}" for i in ids], [f"REM{i}" for i in ids], []),
         arxiv={"available": True,
                "flagged": [{"id": f"FLAG{i}", "title": "t", "label": "possible-kill", "first_seen": "2026-10-19",
-                            "verdict": None} for i in ids],
+                            "verdict": None, "by": None, "open": True} for i in ids],
                "reviewed": [{"id": f"REV{i}", "verdict": "kill", "by": "h", "reviewed_on": "2026-10-19"} for i in ids],
                "actions": [{"id": f"ACT{i}", "action": "do it", "by": "h"} for i in ids]},
         referee={"available": True, "reviewed": n, "stale": [f"STALE{i}" for i in ids],
@@ -1141,6 +1459,17 @@ def test_main_writes_both_files(tmp_path: Path, capsys) -> None:
     assert B.main(["--root", str(root), "--since-days", "3650", "--out", str(out)]) == 0
 
 
+def test_main_summary_says_when_the_open_arxiv_flags_are_not_available(tmp_path: Path, capsys) -> None:
+    # The arXiv section stays available for its verdicts and actions when the collisions file
+    # is missing; the console line must not read "ok" while the page says the flags are unknown.
+    root = tmp_path / "verdicts-only"
+    _write_json(root / B.ARXIV_VERDICTS, {"verdicts": {"2610.99999": _verdict("kill", "2026-10-20")}})
+    assert B.main(["--root", str(root), "--out", str(tmp_path / "out")]) == 0
+    printed = capsys.readouterr().out
+    assert "arXiv watch: ok\n" not in printed
+    assert f"arXiv watch: open flags not available (no {B.ARXIV_STATE}); verdicts and actions ok" in printed
+
+
 def _bare_brief() -> dict:
     return {"generated_on": "2026-10-20", "since_days": 7, **{name: {"available": False, "reason": "x"}
                                                               for name in SECTIONS}}
@@ -1181,6 +1510,25 @@ def test_main_reports_a_failed_write_in_one_line(tmp_path: Path, monkeypatch, ca
     assert B.main(["--root", str(root), "--out", str(out)]) == 2
     err = capsys.readouterr().err
     assert err.count("\n") == 1 and "Permission denied" in err and "agent_brief.json" in err, err
+
+
+def test_two_runs_at_once_never_share_a_temporary_file(tmp_path: Path, monkeypatch) -> None:
+    # An agent's run and the scheduled one can overlap: with one shared temporary name, one run
+    # could rename the other's half-written file into place, or unlink it before its rename.
+    written = []
+    real_write_text = Path.write_text
+
+    def spy_write_text(self, *args, **kwargs):
+        written.append(self.name)
+        return real_write_text(self, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "write_text", spy_write_text)
+    for pid in (101, 202):
+        monkeypatch.setattr(B.os, "getpid", lambda pid=pid: pid)
+        B._replace(tmp_path / "AGENT_BRIEF.md", f"run {pid}")
+    monkeypatch.undo()
+    assert len(written) == 2 and written[0] != written[1] and "AGENT_BRIEF.md" not in written
+    assert (tmp_path / "AGENT_BRIEF.md").read_text(encoding="utf-8") == "run 202"
 
 
 def test_write_replaces_each_file_whole_json_first(tmp_path: Path, monkeypatch) -> None:

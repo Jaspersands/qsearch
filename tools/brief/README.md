@@ -51,17 +51,19 @@ preflight only helps when someone runs it. The brief puts each of them on one pa
 | Section | Reads | Shows |
 |---|---|---|
 | Registry | `research/registry/negative_results.json` in the working copy and at its last change before the window (git) | ids added and removed; removed ids now in `quarantined_campaign_negatives.json` are named as quarantined (when that file cannot be read, or a directory or dangling link sits at its path, the page says so rather than "0 now in the quarantine file") |
-| arXiv watch | `research/audits/arxiv_collisions.json`, `research/audits/arxiv_verdicts.json` (via `tools/arxiv_watch/verdicts.py`) | possible kills and scoops with no verdict (however old), flagged papers first seen in the window with their verdict, every verdict recorded in the window by id (in the flagged table, or in a list after the tally for papers the table does not show, such as a kill on a paper first seen before the window), and every verdict action not marked `"action_done": true` (only a JSON `true` closes one). Without a readable `arxiv_collisions.json` the flag counts and table say not available, and the verdicts and actions still show |
+| arXiv watch | `research/audits/arxiv_collisions.json`, `research/audits/arxiv_verdicts.json` (via `tools/arxiv_watch/verdicts.py`) | possible kills and scoops with no person's verdict (however old; as in the watch's digest, a judge's verdict alone leaves a flag open, and the table marks it `**open** (judge: VERDICT)`), flagged papers first seen in the window with a person's verdict, every verdict recorded in the window by id (in the flagged table, or in a list after the tally for papers the table does not show, such as a kill on a paper first seen before the window or a row past the 40-row cap; a verdict without `by` reads "by hand"), and every verdict action not marked `"action_done": true` (only a JSON `true` closes one; the page says to close one with `python tools/arxiv_watch/watch.py --action-done ID`, which also re-renders the digest). Without a readable `arxiv_collisions.json` the flag counts and table say not available, and the verdicts and actions still show |
 | Referee | `tools/referee/referee.py` `status()` over `research/audits/reviews/reviews.json` | notes flagged unsound or needs-work with their worst claim, and stale reviews |
-| Preflight | `tools/preflight/preflight.py` `run()`, the static checks only | problems grouped by check (`json`, `imports`, `manifest`) |
-| Inertia | `site/data/cockpit.json` (`inertia.flags`, `warnings`) | directions with many handoff sections since the registry last gained a record in them; the cockpit's build date. A `warnings` string counts as one warning; warnings that are not a list, or a threshold or streak that is not a whole number, make the section not available |
-| Possible duplicates | the corpus index (`tools/corpus/duplicates.py` `near_duplicates`) | pairs at TF-IDF cosine 0.8 or above that involve a negative added in the window |
+| Preflight | `tools/preflight/preflight.py` `run()`, the static checks only | problems grouped by check (`json`, `imports`, `manifest`); not available for a root without `qsearch.py`, which preflight's own command line refuses (every check would report a problem only the wrong root causes) |
+| Inertia | `site/data/cockpit.json` (`inertia.flags`, `warnings`) | directions with many handoff sections since the registry last gained a record in them; the cockpit's build date. A `warnings` string counts as one warning; warnings that are not a list, or a threshold or streak that is not a whole number, make the section not available. "No registry history" is given only when the cockpit says `"available": false`; a cockpit with no inertia field, or one older than that field, says so and asks for a rebuild |
+| Possible duplicates | the corpus index (`tools/corpus/duplicates.py` `near_duplicates`) | pairs at TF-IDF cosine 0.8 or above that involve a negative added in the window, all of them (not `near_duplicates`' default top 200); an added record the index does not hold (it skips one it cannot parse) is named as not compared rather than counted, and the problems the index recorded for the negative registry files are printed, since a skipped record can hide a pair |
 | Commands | nothing (static) | `been-tried`, the DQI screener, `baselines`, preflight and `check-new`, each with when to run it |
 
 `agent_brief.json` holds every section in full. The markdown caps each list and table at 40
 entries and then says how many more there are and where (`agent_brief.json`; for the referee,
 `REFEREE_QUEUE.md` too). Text from the sources is kept verbatim on one line: a pipe stays a
-pipe in list items (`|A|+|B|`), and in table cells it is escaped as `\|`.
+pipe in list items (`|A|+|B|`), and in table cells it is escaped as `\|`. The one cut: the
+duplicates table shows the first 120 characters of each title, ending in `...` when the title
+is longer (the titles are negative claims, and about a fifth of them are).
 
 **Degradation rule.** Every section returns `{"available": bool, ...}`. A section whose file
 is missing, whose tool is not in the checkout, or that raises for any reason becomes
@@ -86,13 +88,20 @@ Git always reads `--root`'s own repository: variables such as `GIT_DIR`, `GIT_WO
 `GIT_INDEX_FILE` (git exports them to hooks, and a shell may export them) are not passed on, so
 a root that is not a checkout says so instead of being compared with another repository's history.
 The baseline is the registry as the checked-out branch had it at the cutoff: its last change
-before the window on the branch's first-parent line, each merge compared with the branch's own
-side of it. So a record merged in from another branch during the window counts as added (and
-one dropped by such a merge as removed), however old its commit on the other branch; and the
-other branch never stands in for this one, whether it is a tool branch merged with `--no-ff`
-that left the registry alone or a branch that changed the registry too. Run it on main for the
-agents' view: on a branch that merges main in, main's registry changes count from the day they
-were merged into that branch. The limit is the last second before the cutoff day (00:00 local
+before the window on the branch's first-parent line, each merge commit compared with the
+branch's own side of it. So a record merged in from another branch during the window by a
+merge commit counts as added (and one dropped by such a merge as removed), however old its
+commit on the other branch; and the other branch never stands in for this one, whether it is a
+tool branch merged with `--no-ff` that left the registry alone or a branch that changed the
+registry too. **Merge with `--no-ff`.** A fast-forward (`git merge --ff-only`, or a plain
+`git merge` when the checked-out branch has not moved since the fork) leaves no merge commit,
+and git records nowhere when it happened: the other branch's commits become this branch's own
+first-parent line with their own dates. A record that arrived that way counts from the date of
+its commit, so one committed before the window is not reported as added, and the duplicates
+section does not compare it. (A reflog could date the fast-forward, but only in the clone that
+made it and only until the entry expires, so two clones would print different briefs.) Run it
+on main for the agents' view: on a branch that merges main in, main's registry changes count
+from the day they were merged into that branch. The limit is the last second before the cutoff day (00:00 local
 time, in UTC: `2026-10-12T12:59:59Z` for 2026-10-13 at UTC+11:00) because `--before` keeps a
 commit dated exactly at its limit,
 and it names a time because git reads a bare date (`--before=2026-10-12`) as that day at the

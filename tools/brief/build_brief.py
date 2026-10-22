@@ -80,11 +80,15 @@ def _log_args(cutoff: dt.date) -> tuple[str, ...]:
     """The newest change to the registry before the cutoff (00:00 local time), as "<sha><US><unix time>".
 
     Path-limited and along the first parents only: the checked-out branch's own line, each
-    merge compared with the branch's side of it. So the registry at the commit found is the
-    registry this branch had at the cutoff. A record merged in from another branch in the
-    window counts as new, however old its commit there; and the other branch's commits, older
-    or newer, never stand in for this branch's registry (a tool branch merged with --no-ff, or
-    a branch that changed the registry too).
+    merge commit compared with the branch's side of it. So a record merged in from another
+    branch in the window by a merge commit counts as new, however old its commit there; and
+    the other branch's commits, older or newer, never stand in for this branch's registry (a
+    tool branch merged with --no-ff, or a branch that changed the registry too).
+
+    A fast-forward is the limit: it leaves no merge commit, and git records nowhere when it
+    happened. The other branch's commits become this branch's own first-parent line with their
+    own dates, so a record that arrived by a fast-forward in the window counts from its
+    commit's date (one committed before the window is not reported as added). Merge with --no-ff.
     """
     limit = window_start(cutoff).astimezone(dt.timezone.utc) - dt.timedelta(seconds=1)
     before = f"--before={limit:%Y-%m-%dT%H:%M:%S}Z"
@@ -179,7 +183,9 @@ def since_commit(
     """(sha, local commit date) of the registry's last change before the cutoff day (00:00
     local time) on the checked-out branch's first-parent line.
 
-    The registry at that commit is the registry as this branch had it at the cutoff. None when git cannot
+    The registry at that commit is the registry as this branch had it at the cutoff, except
+    after a fast-forward in the window, which history cannot date (see _log_args: commits that
+    arrived that way count from their own dates, so merge with --no-ff). None when git cannot
     answer; when the clone is shallow (its oldest commit is a cut, so the commit before the
     cutoff may be missing and an older one would be used silently); when root is not the top of
     its work tree (a copy inside another repository would be compared with that repository's
@@ -351,8 +357,9 @@ def _arxiv_papers(path: Path) -> tuple[dict[str, Any] | None, str]:
 def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
     """Flagged arXiv papers, verdicts recorded since `since_date`, and the actions still open.
 
-    flagged: possible kills and scoops without a verdict (open, however old), then those first
-    seen on or after `since_date` that have one; None, with `flagged_reason`, when the
+    flagged: possible kills and scoops without a person's verdict (open, however old; as in the
+    watch's digest, a judge's verdict alone leaves a flag open), then those first seen on or
+    after `since_date` that have a person's verdict; None, with `flagged_reason`, when the
     collisions file is missing or unreadable (open flags live only there), while the verdicts
     and actions are still given. reviewed: verdicts recorded on or after `since_date`. actions:
     every verdict with an action whose `action_done` is not JSON true. Verdicts come from the
@@ -394,19 +401,24 @@ def arxiv_section(root: Path, since_date: dt.date | str) -> dict[str, Any]:
         if not isinstance(record, dict) or record.get("label") not in FLAGGED_LABELS:
             continue
         entry = verdicts.get(arxiv_id)
+        # As in the watch's digest: a judge's verdict is one model's reading, so only a
+        # person's verdict closes a flag; one with only a judge's stays open, marked with it.
+        is_open = entry is None or verdicts_module.by_judge(entry)
         first_seen = record.get("first_seen")
-        if entry is None or (isinstance(first_seen, str) and first_seen >= since):
+        if is_open or (isinstance(first_seen, str) and first_seen >= since):
             flagged.append({
                 "id": arxiv_id,
                 "title": record.get("title", ""),
                 "label": record["label"],
                 "first_seen": first_seen if isinstance(first_seen, str) else None,
                 "verdict": entry.get("verdict") if entry else None,
+                "by": entry.get("by") if entry else None,
+                "open": is_open,
             })
     # Open flags first, newest first within each group, undated last.
     flagged.sort(key=lambda item: item["id"])
     flagged.sort(key=lambda item: item["first_seen"] or "", reverse=True)
-    flagged.sort(key=lambda item: item["verdict"] is not None)
+    flagged.sort(key=lambda item: not item["open"])
     return {"available": True, "flagged": flagged, "reviewed": reviewed, "actions": actions}
 
 
@@ -419,10 +431,16 @@ def referee_section(root: Path) -> dict[str, Any]:
 
 
 def preflight_section(root: Path) -> dict[str, Any]:
-    """The static preflight checks (`tools/preflight/preflight.py`), problems grouped by check."""
+    """The static preflight checks (`tools/preflight/preflight.py`), problems grouped by check.
+
+    Not available for a root without qsearch.py, which preflight.py's own command line refuses:
+    every check would report a problem that only the wrong root causes.
+    """
     preflight, reason = _import_tool("tools.preflight.preflight", "tools/preflight")
     if preflight is None:
         return {"available": False, "reason": reason}
+    if not (Path(root) / "qsearch.py").is_file():
+        return {"available": False, "reason": f"{root} is not a Q-Search checkout: it has no qsearch.py"}
     problems = preflight.run(Path(root))
     by_check: dict[str, list[dict[str, str]]] = {}
     for problem in problems:
@@ -460,9 +478,17 @@ def inertia_section(root: Path) -> dict[str, Any]:
     cockpit = read_json(path)
     inertia = cockpit.get("inertia") or {}
     warnings = _cockpit_warnings(cockpit.get("warnings"))
-    if not inertia.get("available"):
+    built = cockpit.get("generated_on")
+    rebuild = "rebuild: python tools/cockpit/build_cockpit.py"
+    if not isinstance(inertia, dict):
+        raise TypeError(f"{COCKPIT} inertia is a {type(inertia).__name__}, not an object")
+    if not inertia:
+        return {"available": False, "reason": f"the cockpit of {built} has no inertia field ({rebuild})"}
+    if "available" not in inertia:  # written before build_cockpit gave the measure that field
+        return {"available": False, "reason": f"the cockpit of {built} is older than the brief: its inertia field has "
+                                              f"no `available` ({rebuild})"}
+    if not inertia["available"]:  # build_cockpit sets it false only without registry history
         why = "; ".join(warnings) or "no registry history"
-        built = cockpit.get("generated_on")
         return {"available": False, "reason": f"the cockpit of {built} has no inertia measure: {why}"}
     flags = [
         {
@@ -506,21 +532,29 @@ def duplicates_section(root: Path, added_ids: list[str] | None, corpus: Any = No
     """Near-duplicate pairs (TF-IDF cosine >= DUPLICATE_THRESHOLD) that involve a record added in the window.
 
     The corpus index is opened only when something was added. `added_ids` None means the
-    registry delta was unavailable, so the section is too.
+    registry delta was unavailable, so the section is too. `checked` counts the added records
+    the index holds; `unchecked` names those it does not (it skips a record it cannot parse,
+    and reads a registry that is not a list as raw text), and `index_issues` the problems it
+    recorded for the negative registry files, any of which can hide a pair.
     """
     if added_ids is None:
         return {"available": False, "reason": "the registry delta is unavailable, so no new records are known"}
     added = set(added_ids)
     if not added:
-        return {"available": True, "checked": 0, "threshold": DUPLICATE_THRESHOLD, "pairs": []}
+        return {"available": True, "checked": 0, "unchecked": [], "index_issues": [], "threshold": DUPLICATE_THRESHOLD,
+                "pairs": []}
     corpus = corpus if corpus is not None else _open_corpus(Path(root))
+    unchecked = sorted(rid for rid in added if corpus.get(f"negative:{rid}") is None)
+    index_issues = [f"{issue['path']}: {issue['message']}" for issue in corpus.issues()
+                    if issue["path"] in (REGISTRY, QUARANTINE)]
     pairs = _near_duplicates(corpus, kind="negative", threshold=DUPLICATE_THRESHOLD, limit=sys.maxsize)
     kept = []
     for pair in pairs:
         new = sorted({_bare(pair.a), _bare(pair.b)} & added)
         if new:
             kept.append({**asdict(pair), "new": new})
-    return {"available": True, "checked": len(added), "threshold": DUPLICATE_THRESHOLD, "pairs": kept}
+    return {"available": True, "checked": len(added) - len(unchecked), "unchecked": unchecked,
+            "index_issues": index_issues, "threshold": DUPLICATE_THRESHOLD, "pairs": kept}
 
 
 COMMANDS = (
@@ -545,14 +579,17 @@ COMMANDS = (
     {
         "name": "preflight",
         "command": "python tools/preflight/preflight.py",
-        "when": "Before every commit: exit 1 lists research JSON that does not parse and CLI references to "
-                "untracked theorem modules.",
+        "when": "Before every commit: exit 1 lists research JSON that does not parse, theorems/, core/ and "
+                "qsearch_cli/ modules the CLI refers to that are missing or not tracked by git, and "
+                "research/audits/cli_manifest.json subcommands missing from the CLI registry's ORDER or listed "
+                "there under another module.",
     },
     {
         "name": "duplicates",
         "command": "python tools/corpus/cli.py check-new --file DRAFT_RECORD.json",
-        "when": "Before filing a negative: exit 2 means a retained or quarantined record already says it "
-                "(MCP check_duplicate_negative).",
+        "when": "Before filing a negative: exit 2 means a retained or quarantined record is close (TF-IDF cosine "
+                "0.6 or above). A match is a record to read, not proof: extend it, say how the draft differs, or "
+                "pass --allow ID for a sweep sibling you have read (MCP check_duplicate_negative).",
     },
 )
 
@@ -601,11 +638,18 @@ def build(
 
 
 LIST_CAP = 40  # ids or rows shown per list; agent_brief.json has them all
+TITLE_CAP = 120  # characters of a title in the duplicates table; agent_brief.json has it whole
 
 
 def _flat(text: Any) -> str:
     """Text on one line, otherwise verbatim: in a list item or a sentence a pipe is just a character."""
     return " ".join(str(text if text is not None else "").split())
+
+
+def _clip(text: Any) -> str:
+    """A title for the duplicates table: on one line, cut to TITLE_CAP characters and marked "..." when cut."""
+    flat = _flat(text)
+    return flat if len(flat) <= TITLE_CAP else flat[:TITLE_CAP].rstrip() + "..."
 
 
 def _cell(text: Any) -> str:
@@ -651,39 +695,53 @@ def _render_registry(section: dict[str, Any], since: str) -> list[str]:
     return lines
 
 
+def _by(item: dict[str, Any]) -> str:
+    """Who recorded a verdict; an entry without `by` was written by hand (verdicts.by_judge counts it as a person's)."""
+    return _flat(item.get("by")) or "by hand"
+
+
 def _render_arxiv(section: dict[str, Any], since: str) -> list[str]:
     flagged, reviewed, actions = section["flagged"], section["reviewed"], section["actions"]
     counts: dict[str, int] = {}
     for item in reviewed:
-        counts[str(item["verdict"])] = counts.get(str(item["verdict"]), 0) + 1
+        counts[_flat(item["verdict"])] = counts.get(_flat(item["verdict"]), 0) + 1
     tally = ", ".join(f"{verdict} {n}" for verdict, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
     if flagged is None:
         lines = [f"Possible kills and scoops: not available: {_flat(section.get('flagged_reason'))}. The verdicts "
                  "and actions below come from the verdicts file."]
     else:
-        open_flags = sum(1 for item in flagged if item["verdict"] is None)
-        lines = [f"Possible kills and scoops with no verdict yet: {open_flags}. First seen since {since} and already "
-                 f"reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are judgement."]
+        open_flags = sum(1 for item in flagged if item["open"])
+        judged = sum(1 for item in flagged if item["open"] and item["verdict"] is not None)
+        note = f" ({judged} of them with only a judge's verdict, which leaves a flag open)" if judged else ""
+        lines = [f"Possible kills and scoops with no person's verdict yet: {open_flags}{note}. First seen since "
+                 f"{since} and already reviewed: {len(flagged) - open_flags}. Labels are triage; verdicts are "
+                 "judgement."]
     lines += [f"Verdicts recorded since {since}: {len(reviewed)}" + (f" ({tally})." if tally else "."), ""]
-    # Every verdict of the window is named once: in the flagged table, or here.
-    in_table = {item["id"] for item in flagged or []}
+    # Every verdict of the window is named once: in a row the flagged table shows, or here.
+    in_table = {item["id"] for item in (flagged or [])[:LIST_CAP]}
     others = [item for item in reviewed if item["id"] not in in_table]
     if others:
-        where = "" if flagged is None else " on papers not in the flagged table below"
+        where = " on papers not in the flagged table below" if flagged else ""
         lines += [f"Verdicts recorded since {since}{where} ({len(others)}):", ""]
-        lines += _bullets([f"- `{item['id']}`: {_flat(item['verdict'])} ({_flat(item['by'])}, {item['reviewed_on']})."
+        lines += _bullets([f"- `{item['id']}`: {_flat(item['verdict'])} ({_by(item)}, {item['reviewed_on']})."
                            for item in others])
         lines.append("")
     lines += [
-        f"Open actions from verdicts ({len(actions)}; set `\"action_done\": true` in `{ARXIV_VERDICTS}` once done):",
+        f"Open actions from verdicts ({len(actions)}; once one is done, run "
+        "`python tools/arxiv_watch/watch.py --action-done ID`):",
         "",
     ]
-    lines += _bullets([f"- `{item['id']}` ({_flat(item['by'])}): {_flat(item['action'])}" for item in actions]) or [
+    lines += _bullets([f"- `{item['id']}` ({_by(item)}): {_flat(item['action'])}" for item in actions]) or [
         "- None."]
     if flagged:
         lines += ["", "| arXiv | Label | First seen | Verdict | Title |", "|---|---|---|---|---|"]
         for item in flagged[:LIST_CAP]:
-            verdict = _cell(item["verdict"]) if item["verdict"] else "**open**: read it"
+            if not item["open"]:
+                verdict = _cell(item["verdict"])
+            elif item["verdict"] is not None:  # a judge's verdict only
+                verdict = f"**open** (judge: {_cell(item['verdict'])}): read it"
+            else:
+                verdict = "**open**: read it"
             first_seen = item["first_seen"] or "-"
             lines.append(f"| {_cell(item['id'])} | {_cell(item['label'])} | {_cell(first_seen)} | {verdict} | "
                          f"{_cell(item['title'])} |")
@@ -742,19 +800,26 @@ def _render_inertia(section: dict[str, Any], since: str) -> list[str]:
 
 
 def _render_duplicates(section: dict[str, Any], since: str) -> list[str]:
-    if not section["checked"]:
+    unchecked, issues = section.get("unchecked") or [], section.get("index_issues") or []
+    if not section["checked"] and not unchecked:
         return ["No negative was added in the window, so there is nothing to compare."]
     pairs = section["pairs"]
-    lines = [
-        f"{len(pairs)} pairs at TF-IDF cosine {section['threshold']} or above involve one of the "
-        f"{section['checked']} negatives added in the window."
-    ]
+    lines = []
+    if section["checked"]:
+        lines.append(f"{len(pairs)} pairs at TF-IDF cosine {section['threshold']} or above involve one of the "
+                     f"{section['checked']} negatives added in the window.")
+    if unchecked:
+        lines.append(f"Not compared ({len(unchecked)}): {_id_list(unchecked)}: added in the window, but the corpus "
+                     "index has no document for them, so no pair with them was looked for.")
+    if issues:
+        lines.append("The corpus index could not read all of the negative registry, so a pair may be missing: "
+                     + "; ".join(_flat(issue) for issue in issues) + ".")
     if pairs:
         lines[0] += " Read both records before merging them; a sweep sibling is a separate result and stays."
         lines += ["", "| Cosine | Record | Title | Record | Title |", "|---|---|---|---|---|"]
         for pair in pairs[:LIST_CAP]:
-            lines.append(f"| {pair['score']:.2f} | `{_cell(pair['a'])}` | {_cell(_flat(pair['title_a'])[:120])} | "
-                         f"`{_cell(pair['b'])}` | {_cell(_flat(pair['title_b'])[:120])} |")
+            lines.append(f"| {pair['score']:.2f} | `{_cell(pair['a'])}` | {_cell(_clip(pair['title_a']))} | "
+                         f"`{_cell(pair['b'])}` | {_cell(_clip(pair['title_b']))} |")
         if len(pairs) > LIST_CAP:
             lines += ["", f"And {len(pairs) - LIST_CAP} more in agent_brief.json."]
     return lines
@@ -891,9 +956,17 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     print(f"wrote {md} and {js}")
     for key, heading, _ in SECTION_HEADINGS:
-        section = brief[key]
-        print(f"{heading}: " + ("ok" if section.get("available") else f"not available ({section.get('reason')})"))
+        print(f"{heading}: {_summary(key, brief[key])}")
     return 0
+
+
+def _summary(key: str, section: dict[str, Any]) -> str:
+    """A section's console summary: ok, or not available and why; the open arXiv flags are reported apart."""
+    if not section.get("available"):
+        return f"not available ({section.get('reason')})"
+    if key == "arxiv" and section.get("flagged") is None:
+        return f"open flags not available ({section.get('flagged_reason')}); verdicts and actions ok"
+    return "ok"
 
 
 if __name__ == "__main__":
