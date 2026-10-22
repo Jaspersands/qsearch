@@ -118,10 +118,13 @@ OVERALL = ("sound", "needs-work", "unsound", "unclear")
 WORST = {"wrong": 3, "gap": 2, "unclear": 1, "holds": 0}
 OVERALL_FOR = {"wrong": "unsound", "gap": "needs-work", "unclear": "unclear", "holds": "sound"}  # by worst claim
 
+TEXT_CAPS = {"quote": 400, "step": 300, "finding": 600, "summary": 1500}  # characters
+
 OUTPUT_FORMAT = (
     '{"stem": "NOTE_STEM", "content_sha": "copied from the packet", "overall": "needs-work", '
-    '"summary": "...", "claims": [{"quote": "at least six words copied verbatim from the note text", '
-    '"verdict": "gap", "step": "...", "finding": "...", "covered_by_self_check": false}]}'
+    '"summary": "at most 1500 characters", "claims": [{"quote": "at least six words copied verbatim from the '
+    'note text, at most 400 characters", "verdict": "gap", "step": "at most 300 characters", '
+    '"finding": "at most 600 characters", "covered_by_self_check": false}]}'
 )
 
 REFEREE_INSTRUCTIONS = f"""\
@@ -192,7 +195,9 @@ You must not propose new research, new algorithms or next steps: judge only what
 written. Work from the packet and do not edit any file in the repository.
 
 Write one JSON object per line (JSONL), one line per note, to your output path. Copy
-`stem` and `content_sha` from the packet. Do not skip notes.
+`stem` and `content_sha` from the packet. Do not skip notes. Text has caps, in characters:
+`quote` {TEXT_CAPS["quote"]}, `step` {TEXT_CAPS["step"]}, `finding` {TEXT_CAPS["finding"]} and `summary` {TEXT_CAPS["summary"]}. A longer one rejects your whole
+output file, so shorten it yourself and keep its conclusion.
 
 {OUTPUT_FORMAT}
 """
@@ -431,6 +436,18 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     return None, "quote not verbatim in the note"
 
 
+def _text(where: str, field: str, value) -> str:
+    """A judge's text field: null or absent reads as empty. Anything but a string, or a string
+    over its cap (the instructions give the caps), is rejected: import never cuts the judge's text."""
+    if value is None:
+        return ""
+    if not isinstance(value, str):
+        raise ValueError(f"{where}: {field} must be a string, not {type(value).__name__}")
+    if len(value) > TEXT_CAPS[field]:
+        raise ValueError(f"{where}: {field} is {len(value)} characters; at most {TEXT_CAPS[field]}")
+    return value
+
+
 def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> dict:
     """A stored claim. When not `strict` (the judge read a version that is gone), a quote that
     is not in `source` is kept as the judge wrote it and marked unverified."""
@@ -440,16 +457,20 @@ def _claim_entry(where: str, claim: dict, source: str, strict: bool = True) -> d
     conceded = claim.get("covered_by_self_check")
     if conceded is not None and not isinstance(conceded, bool):
         raise ValueError(f"{where}: covered_by_self_check must be true or false, not {conceded!r}")
-    quote = str(claim.get("quote", ""))
+    quote, step, finding = (_text(where, field, claim.get(field)) for field in ("quote", "step", "finding"))
+    if verdict in ("gap", "wrong") and not finding.strip():
+        raise ValueError(f"{where}: a {verdict} claim needs a finding (the counterexample or the missing condition)")
     span, reason = find_quote(quote, source)
     if span is None and (strict or reason.startswith("quote under")):
         raise ValueError(f"{where}: {reason}: {quote[:120]!r}")
+    stored = span or quote
+    cap = TEXT_CAPS["quote"]  # the note's span of a quote within the cap can run past it (a link target)
     return {
-        "quote": (span or quote)[:400],
+        "quote": stored if len(stored) <= cap else stored[:cap - 3] + "...",
         "verified": span is not None,
         "verdict": verdict,
-        "step": str(claim.get("step", ""))[:300],
-        "finding": str(claim.get("finding", ""))[:600],
+        "step": step,
+        "finding": finding,
         "covered_by_self_check": bool(conceded),
     }
 
@@ -603,7 +624,9 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                                      "(miscopied?); --allow-unverified stores the row with its quotes unchecked")
             if len(given) > MAX_CLAIMS:
                 raise ValueError(f"{path}: {stem}: {len(given)} claims; at most {MAX_CLAIMS}")
-            claims = [_claim_entry(f"{path}: {stem}", claim, source, strict) for claim in given]
+            summary = _text(f"{path}: {stem}", "summary", row.get("summary"))
+            claims = [_claim_entry(f"{path}: {stem}: claim {index}", claim, source, strict)
+                      for index, claim in enumerate(given, start=1)]
             conflict = overall_conflict(overall, claims)
             if conflict:
                 raise ValueError(f"{path}: {stem}: overall {overall!r} contradicts the claims: {conflict}")
@@ -614,7 +637,7 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
                 "content_sha": sha,
                 "overall": overall,
                 "claims": claims,
-                "summary": str(row.get("summary", ""))[:1500],
+                "summary": summary,
                 "stale": sha != current,
             }
     data = load_reviews(root)

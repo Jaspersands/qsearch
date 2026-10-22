@@ -138,8 +138,12 @@ text.
    import (one file or several) reject the import. Re-importing a note replaces its
    review, except that a row that is stale on arrival (an earlier pass imported again)
    never replaces a stored review of the note's current bytes: import keeps that review
-   and reports the row as skipped. Stored
-   text is capped: summary 1500 characters, finding 600, step 300, quote 400.
+   and reports the row as skipped. The judges are told the caps on their text (summary
+   1500 characters, finding 600, step 300, quote 400), and import never cuts it: a longer
+   one rejects the file, as does a summary, step, finding or quote that is not a string
+   (null reads as empty) and a `gap` or `wrong` claim with no finding. The stored quote,
+   the note's own span, can run past 400 characters (a link target it left out); it is
+   then cut at 400 and ends in `...`.
 4. `render` rebuilds the per-note reviews and the queue.
 
 Cost: about 100k tokens per batch of five notes.
@@ -290,9 +294,10 @@ row, not `out/`'s.
   rate+density>1) needs d<L at constant L, where the DP is polynomial, so the cut of
   separation claims at constant width needs no window qualifier.
 - COHERENT_BPQM_ERASURE, NATIVE_RLWE_SPARSE_WITNESS_AUDIT and
-  NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions never mention the
+  NATIVE_RLWE_UNIT_ORBIT_GENERATOR_AUDIT: the judges' instructions did not mention the
   600-character cap on findings, and import cut these three gap findings mid-sentence
-  without a mark. They are shortened to fit and keep their conclusions.
+  without a mark. They are shortened to fit and keep their conclusions. The instructions
+  now give every cap, and import rejects longer text instead of cutting it.
 - Wrong sentences in four findings, verdicts unchanged: PRIME_CHARACTER_INTERLEAVED_PROBE
   read the p7 individual mean (.553571, 1/56 below 4/7, as the producer predicts) as
   contradicting near-uniformity; FOLDED_NORM_SOURCE credited 24/73 to the collision formula

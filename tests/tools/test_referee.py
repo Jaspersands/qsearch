@@ -573,8 +573,8 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
             R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [_row(tmp_path, stem="OTHER", claims=[]), row])], "j")
     assert not (tmp_path / R.REVIEWS).exists()
 
-    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 900, step="y" * 900)] * 6
-    good = _row(tmp_path, claims=many, summary="s" * 2000)
+    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 600, step="y" * 300)] * 6
+    good = _row(tmp_path, claims=many, summary="s" * 1500)
     stale = _row(tmp_path, stem="OTHER", overall="sound", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21",
                               allow_unverified=True)
@@ -592,6 +592,55 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
     assert data["notes"]["FIXTURE_NOTE"]["overall"] == "unsound" and data["notes"]["FIXTURE_NOTE"]["judge"] == "second-judge"
     assert len(data["notes"]["FIXTURE_NOTE"]["claims"]) == 1 and "OTHER" in data["notes"]
+
+
+@pytest.mark.parametrize("field, cap", [("finding", 600), ("step", 300), ("summary", 1500), ("quote", 400)])
+def test_import_rejects_text_over_its_cap_and_the_judges_are_told_the_caps(tmp_path: Path, field: str, cap: int) -> None:
+    # Import cut three first-pass findings mid-sentence without a mark, and the judges were
+    # never told the cap.
+    assert str(cap) in R.REFEREE_INSTRUCTIONS and str(cap) in R.OUTPUT_FORMAT
+    words = " ".join(f"word{index}" for index in range(120))
+    _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
+    verbatim = words[:cap].rsplit(" ", 1)[0]
+    for length, accepted in ((cap, True), (cap + 1, False)):
+        text = verbatim.ljust(length) if field == "quote" else "x" * length
+        claim = _claim(" ".join(words.split()[:8])) | ({field: text} if field != "summary" else {})
+        row = _row(tmp_path, stem="LONG_NOTE", claims=[claim], **({"summary": text} if field == "summary" else {}))
+        answer = _jsonl(tmp_path / "out" / f"{field}_{length}.jsonl", [row])
+        if not accepted:
+            with pytest.raises(ValueError, match=f"{field} is {cap + 1} characters; at most {cap}"):
+                R.import_reviews(tmp_path, [answer], "j")
+            continue
+        R.import_reviews(tmp_path, [answer], "j")
+        entry = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]
+        stored = entry["summary"] if field == "summary" else entry["claims"][0][field]
+        assert stored == (text.rstrip() if field == "quote" else text)
+
+
+def test_import_reads_null_text_as_empty_and_rejects_other_types(tmp_path: Path) -> None:
+    # A null step, finding or summary was stored and rendered as the string "None".
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    row = _row(tmp_path, summary=None, claims=[_claim(quote, step=None), _claim(quote, verdict="holds", step=None, finding=None)])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "nulls.jsonl", [row])], "j")
+    entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
+    assert entry["summary"] == "" and [(c["step"], c["finding"]) for c in entry["claims"]] == [
+        ("", "The margin needs a uniform bound."), ("", "")]
+    R.render(tmp_path, today="2026-10-22")
+    review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    assert "None" not in review and "- Step: -" in review and "- Finding: -" in review
+    for field, value in (("summary", {"a": 1}), ("step", 42), ("finding", ["x", "y"]), ("quote", 7)):
+        claim = _claim(quote) | ({field: value} if field != "summary" else {})
+        bad = _row(tmp_path, claims=[claim], **({"summary": value} if field == "summary" else {}))
+        with pytest.raises(ValueError, match=f"{field} must be a string"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / f"{field}.jsonl", [bad])], "j")
+    # The instructions ask a gap or wrong claim for its counterexample or missing condition.
+    for verdict, overall in (("gap", "needs-work"), ("wrong", "unsound")):
+        for finding in (None, "", "  "):
+            bad = _row(tmp_path, overall=overall, claims=[_claim(quote, verdict=verdict, finding=finding)])
+            with pytest.raises(ValueError, match=f"a {verdict} claim needs a finding"):
+                R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "empty.jsonl", [bad])], "j")
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"] == entry
 
 
 @pytest.mark.parametrize("overall, verdicts, accepted", [
@@ -1019,15 +1068,21 @@ def test_find_quote_reads_letters_in_any_script_and_lets_a_prose_em_dash_go() ->
     assert "em dash" in R.REFEREE_INSTRUCTIONS
 
 
-def test_find_quote_tries_every_occurrence_and_import_caps_the_stored_quote(tmp_path: Path) -> None:
+def test_find_quote_tries_every_occurrence_and_import_marks_a_cut_quote(tmp_path: Path) -> None:
     note = "First the bound b>=epsilon holds here. Later the bound b<=epsilon holds here."
     assert R.find_quote("the bound b<=epsilon holds here", note) == ("the bound b<=epsilon holds here", "")
-    words = " ".join(f"word{index}" for index in range(120))
-    _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
-    row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(words)])
+    # The note's span of a quote within its cap can run past it (here a link target); it is cut
+    # with a mark.
+    words = " ".join(f"word{index}" for index in range(50))
+    target = "https://example.org/" + "a" * 200
+    _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n[{words}]({target}) holds.\n")
+    quote = f"{words} holds"
+    row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(quote)])
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "long.jsonl", [row])], "j")
     stored = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]["claims"][0]
-    assert len(words) > 400 and stored["verified"] is True and stored["quote"] == words[:400]
+    span = f"[{words}]({target}) holds"
+    assert len(quote) <= 400 < len(span) and stored["verified"] is True
+    assert stored["quote"] == span[:397] + "..."
 
 
 def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
@@ -1393,7 +1448,7 @@ def _readme_section(heading: str) -> str:
 
 @needs_reviews
 def test_stored_reviews_are_their_judge_rows_whole() -> None:
-    """Import cuts a finding at 600 characters without a mark, so a longer one loses its end."""
+    """Import once cut a finding at 600 characters without a mark, so a longer one lost its end."""
     checked = 0
     for stem, entry in _stored().items():
         pattern = REVIEW_SOURCES.get(entry["judge"])
