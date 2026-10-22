@@ -150,8 +150,9 @@ For each note:
 2. Quote each claim verbatim from the note `text`: at least 6 consecutive words copied
    exactly. Whitespace, letter case, punctuation and markdown markup may differ, but the
    letters in any script (Greek variables, superscript exponents) and the symbols <, >, =,
-   +, -, /, ^, ±, √ and decimal points must be the note's, hyphens included, also before
-   your first word and after your last (they are the mathematics; ≤ for <= is fine, and a
+   +, -, /, ^, ~, ±, √, !=, -> and decimal points must be the note's, hyphens and
+   superscript signs included, also before your first word and after your last (they are
+   the mathematics; ≤ for <=, ≠ for !=, → for ->, ≈ for ~ and ± for +/- are fine, and a
    prose em dash — may be written - or left out). Quote from the note text only, never
    from the artifact excerpt, the flags or these instructions. Every quote is checked
    automatically, and one quote that is not in the note rejects your whole output file.
@@ -252,8 +253,10 @@ MAX_CLAIMS = 6
 WORD = re.compile(r"[^\W_]+")
 EM_DASH = "—"
 DASHES = "-−–"  # hyphen, minus sign and en dash all read as a minus; a touching run of them is one
-SYMBOL = re.compile(rf"!=|<=|>=|->|=>|[{DASHES}]+|{EM_DASH}|[≤≦≥≧≠→⇒≈∼±∓√<>=+/^~]")
-SYMBOL_FORMS = {"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "→": "->", "⇒": "=>", "≈": "~", "∼": "~"}
+# A dash before '>' is an arrow, never a minus; '+/-' is '±'; superscript and subscript signs are signs.
+SYMBOL = re.compile(rf"!=|<=|>=|[{DASHES}]>|=>|\+/-|[{DASHES}]+|{EM_DASH}|[≤≦≥≧≠→⇒≈∼±∓√<>=+/^~⁻₋⁺₊]")
+SYMBOL_FORMS = {"≤": "<=", "≦": "<=", "≥": ">=", "≧": ">=", "≠": "!=", "→": "->", "⇒": "=>", "≈": "~", "∼": "~",
+                "+/-": "±", "⁻": "-", "₋": "-", "⁺": "+", "₊": "+"}
 LINE_MARKER = re.compile(r"(?m)^[ \t]*(?:[-+*>][ \t]+)+")
 SPACE = re.compile(r"\s")
 
@@ -274,12 +277,19 @@ def _is_note(path: Path) -> bool:
 
 def _symbol_run(segment: str, em_dash: str) -> list[tuple[int, int, str]]:
     """(start, end, symbol) for each symbol in `segment`: typographic forms read as ASCII, a
-    touching run of minus signs as one (in `x - (-y)` the two are two), and an em dash as
-    `em_dash` ("-", or "" to leave it out)."""
+    touching run of minus signs as one (in `x - (-y)` the two are two), any dash before `>` as
+    the arrow `->`, and an em dash as `em_dash` ("-", or "" to leave it out)."""
     run: list[tuple[int, int, str]] = []
     for match in SYMBOL.finditer(segment):
         token = match.group()
-        token = em_dash if token == EM_DASH else "-" if token[0] in DASHES else SYMBOL_FORMS.get(token, token)
+        if token == EM_DASH:
+            token = em_dash
+        elif all(char in DASHES for char in token):
+            token = "-"
+        elif token[0] in DASHES:
+            token = "->"  # ->, −> and –>
+        else:
+            token = SYMBOL_FORMS.get(token, token)
         if token == "-" and run and run[-1][2] == "-" and run[-1][1] == match.start():  # touching: "-—" is one
             run[-1] = (run[-1][0], match.end(), "-")
         elif token:
@@ -316,8 +326,8 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
     """The note's own span for `quote`, or None and why not.
 
     The words must appear consecutively in `text` (case, whitespace and punctuation aside), and
-    the symbols (<, >, =, +, -, /, ^, ~, ±, √, decimal points) between them, before the first
-    and after the last must be the note's. A quote may keep or drop the list and quote markers
+    the symbols (<, >, =, +, -, /, ^, ~, ±, √, !=, ->, decimal points) between them, before the
+    first and after the last must be the note's. A quote may keep or drop the list and quote markers
     at the note's line starts, and may write a prose em dash as - or leave it out. The span is
     widened to whole whitespace-delimited tokens, so the note's signs and operators next to the
     quote's first and last words are kept.
@@ -357,7 +367,7 @@ def find_quote(quote: str, text: str) -> tuple[str | None, str]:
                     return _spread(text, start, end), ""
         at = joined.find(needle, at + 1)
     if found:
-        return None, ("quote's symbols (<, >, =, +, -, /, ^, ~, ±, √, decimal points) differ from the note, "
+        return None, ("quote's symbols (<, >, =, +, -, /, ^, ~, ±, √, !=, ->, decimal points) differ from the note, "
                       "between its words or before or after them")
     return None, "quote not verbatim in the note"
 

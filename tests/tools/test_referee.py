@@ -1043,6 +1043,42 @@ def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
     assert R.find_quote("and the bound holds - on each", doubled)[0] == "and the bound holds —— on each"
 
 
+@pytest.mark.parametrize("note, quote, accepted", [
+    # An arrow is not a minus sign: '->' read as '-' let a quote drop the '>' and refused '→'.
+    ("Then x->1 holds for every saved input.", "Then x-1 holds for every saved input", False),
+    ("Then x-1 holds for every saved input.", "Then x->1 holds for every saved input", False),
+    ("Then x->1 holds for every saved input.", "Then x→1 holds for every saved input", True),
+    ("Then x→1 holds for every saved input.", "Then x->1 holds for every saved input", True),
+    ("Then x->1 holds for every saved input.", "Then x −> 1 holds for every saved input", True),
+    ("Then x->1 holds for every saved input.", "Then x->1 holds for every saved input", True),
+    # Superscript and subscript signs are signs.
+    ("the error decays as n⁻¹ for every saved input.", "the error decays as n⁺¹ for every saved input", False),
+    ("the error decays as n⁻¹ for every saved input.", "the error decays as n¹ for every saved input", False),
+    ("the error decays as n⁻¹ for every saved input.", "the error decays as n⁻¹ for every saved input", True),
+    ("the index runs over x₊₁ for every saved input.", "the index runs over x₋₁ for every saved input", False),
+    # '+/-' is written '±' as '<=' is written '≤', and neither is a '+' or a '-'.
+    ("The margin is 0.5 +/- 0.1 on every saved input.", "The margin is 0.5 ± 0.1 on every saved input", True),
+    ("The margin is 0.5 ± 0.1 on every saved input.", "The margin is 0.5 +/- 0.1 on every saved input", True),
+    ("The margin is 0.5 +/- 0.1 on every saved input.", "The margin is 0.5 + 0.1 on every saved input", False),
+    ("The margin is 0.5 +/- 0.1 on every saved input.", "The margin is 0.5 - 0.1 on every saved input", False),
+])
+def test_find_quote_reads_arrows_superscript_signs_and_plus_minus(note: str, quote: str, accepted: bool) -> None:
+    span, reason = R.find_quote(quote, note)
+    assert (span is not None) is accepted, reason
+
+
+def test_instructions_and_readme_name_every_symbol_the_check_compares() -> None:
+    # The judges were told <, >, =, +, -, /, ^, ±, √ and decimal points; the check also compares
+    # ~, != and ->, and a judge may drop a '~' or the '!' of '!=' as punctuation.
+    sentence = " ".join(R.REFEREE_INSTRUCTIONS.split())
+    readme = " ".join(README.read_text(encoding="utf-8").split())
+    for symbol in ("<", ">", "=", "+", "-", "/", "^", "~", "±", "√", "!=", "->"):
+        assert f"{symbol}," in sentence or f"{symbol} " in sentence, symbol
+        assert f"`{symbol}`" in readme, symbol
+    for typographic in ("≤ for <=", "≠ for !=", "→ for ->", "≈ for ~", "± for +/-"):
+        assert typographic in sentence, typographic
+
+
 def _reviewed_repo(root: Path) -> None:
     """FIXTURE_NOTE unsound, EDITED needs-work then edited, SOUND_NOTE sound, OTHER_n unreviewed."""
     _write(root, "FIXTURE_NOTE", FIXTURE_NOTE)

@@ -101,8 +101,11 @@ text.
    of letters and digits in any script, so Greek variables and superscript exponents count;
    an underscore splits words) must appear consecutively in the note after lower-casing,
    and the symbols between them, before the first and after the last (`<`, `>`, `=`, `+`,
-   `-`, `/`, `^`, `~`, `±`, `√`, decimal points; `≤` and `<=` count as the same, and so do
-   `-`, `−`, `–` and a touching run of them; signs apart are separate, so `x - (y)` does
+   `-`, `/`, `^`, `~`, `±`, `√`, `!=`, `->`, decimal points; `≤` and `<=` count as the
+   same, as do `≠` and `!=`, `→` and `->`, `≈` and `~`, `±` and `+/-`, a superscript or
+   subscript `⁻` and `-` (`⁺` and `+`), and `-`, `−`, `–` and a touching run of them; a
+   dash before `>` is the arrow `->`, never a minus, so `x-1` does not pass for `x->1`;
+   signs apart are separate, so `x - (y)` does
    not pass for `x - (-y)`) must be the note's, so `b>=epsilon` does not pass for
    `b<=epsilon`, nor `>= min(1, ...)` for `<= min(1, ...)`. A prose em dash (`—`) may be
    written `-` or left out. List and quote markers at the note's line starts may be kept or
