@@ -2,7 +2,7 @@
 
     python tools/referee/referee.py select [--prefix PRIME] [--limit 30] [--json]
     python tools/referee/referee.py export --out-dir DIR [--limit 30] [--note STEM ...]
-    python tools/referee/referee.py import DIR/out/*.jsonl --judge NAME [--allow-unverified]
+    python tools/referee/referee.py import DIR/out/*.jsonl --judge NAME [--partial] [--allow-unverified]
     python tools/referee/referee.py render
     python tools/referee/referee.py status [--json]
 
@@ -515,6 +515,29 @@ def exported_texts(paths: list[Path]) -> tuple[dict[tuple[str, str], str], dict[
     return texts, declared
 
 
+JUDGE_FILE = re.compile(r"batch_\d+")
+
+
+def own_batch(path: Path) -> tuple[Path, list[str]] | None:
+    """The `batch_NN.json` a judge file `batch_NN.jsonl` answers (beside it or in the folder above)
+    and the stems it exported, or None when there is none or it cannot be read."""
+    path = Path(path)
+    if not JUDGE_FILE.fullmatch(path.stem):
+        return None
+    folder = path.resolve().parent
+    for near in (folder, folder.parent):
+        batch = near / f"{path.stem}.json"
+        if batch.is_file():
+            try:
+                packets = json.loads(batch.read_text(encoding="utf-8")).get("notes")
+            except (OSError, ValueError, AttributeError):
+                return None
+            if not isinstance(packets, list):
+                return None
+            return batch, [str(packet.get("stem")) for packet in packets if isinstance(packet, dict)]
+    return None
+
+
 GIT_TIMEOUT = 60
 
 
@@ -554,7 +577,7 @@ def committed_texts(root: Path, stem: str) -> dict[str, str]:
 
 
 def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None = None,
-                   allow_unverified: bool = False) -> dict:
+                   allow_unverified: bool = False, allow_partial: bool = False) -> dict:
     """Verify judge rows against the notes and store them; nothing is written if any row fails.
 
     A row's `content_sha` must be 64 lower-case hex digits. A row for the note's current version
@@ -564,13 +587,17 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     beside the judge file and none declares the sha, it is a miscopy and rejected; so is a sha
     that no packet and no committed version has, unless `allow_unverified`, which stores the
     row's quotes that are not in the current note unverified. A packet that declares the sha
-    but whose text is not that version leaves its quotes unverified too."""
+    but whose text is not that version leaves its quotes unverified too.
+
+    A judge file `batch_NN.jsonl` must have a row for every note its `batch_NN.json` exported;
+    with `allow_partial` the rest are imported and the missing notes returned."""
     reviewed_on = today or dt.date.today().isoformat()
     beside: dict[Path, tuple[dict[tuple[str, str], str], dict[str, set[str]]]] = {}
     committed: dict[str, dict[str, str]] = {}
     entries: dict[str, dict] = {}
     currents: dict[str, str] = {}
     seen: dict[str, str] = {}
+    missing: list[str] = []
     for path in paths:
         folder = Path(path).resolve().parent
         if folder not in beside:  # each judge file is checked against the packets beside it, not another's
@@ -582,6 +609,14 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
             raise ValueError(f"{path}: cannot read: {error.strerror or error}") from error
         except ValueError as error:
             raise ValueError(f"{path}: not JSON lines: {error}") from error
+        answers = own_batch(Path(path))
+        if answers:
+            answered = {str(row.get("stem")) for row in rows if isinstance(row, dict)}
+            skipped_here = [stem for stem in dict.fromkeys(answers[1]) if stem not in answered]
+            if skipped_here and not allow_partial:
+                raise ValueError(f"{path}: no row for {', '.join(skipped_here)} exported in {answers[0]} (did the judge "
+                                 "skip them?); --partial imports the rest")
+            missing += skipped_here
         for number, row in enumerate(rows, start=1):
             if not isinstance(row, dict):
                 raise ValueError(f"{path}: row {number} is not a JSON object")
@@ -658,7 +693,7 @@ def import_reviews(root: Path, paths: list[Path], judge: str, today: str | None 
     finally:
         tmp.unlink(missing_ok=True)
     return {"imported": sorted(stored), "stale": sorted(stem for stem, entry in stored.items() if entry["stale"]),
-            "skipped": skipped}
+            "skipped": skipped, "missing": sorted(missing)}
 
 
 FLAGGED = ("unsound", "needs-work")
@@ -824,6 +859,8 @@ def main(argv: list[str] | None = None) -> int:
     imp.add_argument("--allow-unverified", action="store_true",
                      help="Store a row for an earlier note version that neither a packet beside the judge file nor "
                           "git holds, with its quotes unchecked (stale).")
+    imp.add_argument("--partial", action="store_true",
+                     help="Import a batch_NN.jsonl that lacks rows for some notes its batch_NN.json exported.")
     sub.add_parser("render", parents=[common], help="Write reviews/<STEM>.md and REFEREE_QUEUE.md.")
     stat = sub.add_parser("status", parents=[common], help="Flagged and stale reviews.")
     stat.add_argument("--json", action="store_true")
@@ -851,8 +888,8 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
         return 0
 
     if args.command == "export":
-        if args.note:
-            notes = [_note_path(root, Path(stem).name.removesuffix(".md")) for stem in args.note]
+        if args.note:  # a note named twice (STEM, STEM.md, research/STEM.md) is exported once
+            notes = list(dict.fromkeys(_note_path(root, Path(stem).name.removesuffix(".md")) for stem in args.note))
             missing = [path.stem for path in notes if not _is_note(path)]
             if missing:
                 parser.error(f"no such note: {', '.join(missing)}")
@@ -868,14 +905,17 @@ def _run(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
 
     if args.command == "import":
         try:
-            result = import_reviews(root, args.files, args.judge, allow_unverified=args.allow_unverified)
+            result = import_reviews(root, args.files, args.judge, allow_unverified=args.allow_unverified,
+                                    allow_partial=args.partial)
         except ValueError as error:
             print(f"error: {error}; nothing imported", file=sys.stderr)
             return 2
         stale = f": {', '.join(result['stale'])}" if result["stale"] else ""
         skipped = (f"; {len(result['skipped'])} skipped (a current review is stored): {', '.join(result['skipped'])}"
                    if result["skipped"] else "")
-        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}{skipped}")
+        missing = (f"; {len(result['missing'])} exported notes have no row: {', '.join(result['missing'])}"
+                   if result["missing"] else "")
+        print(f"imported {len(result['imported'])} reviews; {len(result['stale'])} stale{stale}{skipped}{missing}")
         return 0
 
     if args.command == "render":

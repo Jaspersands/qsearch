@@ -579,7 +579,7 @@ def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp
     stale = _row(tmp_path, stem="OTHER", overall="unclear", claims=[]) | {"content_sha": "0" * 64}
     result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21",
                               allow_unverified=True)
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": []}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": [], "missing": []}
     data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
     entry = data["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["reviewed_on"], entry["overall"], entry["stale"]) == ("test-judge", "2026-10-21", "needs-work", False)
@@ -777,7 +777,7 @@ def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_
     note.write_text(note.read_text(encoding="utf-8").replace("It holds for all twelve", "It holds for eleven of twelve"), encoding="utf-8")
 
     result = R.import_reviews(tmp_path, [answer], "j", today="2026-10-21")
-    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": []}
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": [], "missing": []}
     claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
     assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
 
@@ -826,7 +826,7 @@ def test_import_keeps_a_current_review_over_a_row_that_is_stale_on_arrival(tmp_p
     _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA second version.\n")
     current = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
     R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass2" / "out" / "rows.jsonl", [current])], "new", today="2026-10-22")
-    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"]}
+    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"], "missing": []}
     entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
     assert (entry["judge"], entry["overall"], entry["stale"]) == ("new", "unsound", False)
     assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["FIXTURE_NOTE"]
@@ -899,6 +899,40 @@ def test_import_checks_each_row_against_the_packets_beside_its_own_file(tmp_path
     with pytest.raises(ValueError, match="miscopied"):  # beside the pass's own packets, that sha is a miscopy
         R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "c.jsonl", [_row(tmp_path) | {"content_sha": "a" * 64}])],
                          "audit", allow_unverified=True)
+
+
+def test_import_names_exported_notes_its_judge_file_has_no_row_for(tmp_path: Path, capsys) -> None:
+    # An empty or partial out/batch_NN.jsonl imported with exit 0, so the notes a judge skipped
+    # went unmentioned.
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:3])  # FIXTURE_NOTE, OTHER_0 and OTHER_1
+    answer = tmp_path / "pass" / "out" / "batch_01.jsonl"
+    _jsonl(answer, [])
+    with pytest.raises(ValueError, match="no row for FIXTURE_NOTE, OTHER_0, OTHER_1"):
+        R.import_reviews(tmp_path, [answer], "j")
+    _jsonl(answer, [_row(tmp_path)])
+    with pytest.raises(ValueError, match=r"no row for OTHER_0, OTHER_1 .*batch_01\.json"):
+        R.import_reviews(tmp_path, [answer], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+    root = str(tmp_path)
+    capsys.readouterr()
+    assert R.main(["import", str(answer), "--root", root, "--judge", "j"]) == 2
+    assert "--partial" in capsys.readouterr().err
+    assert R.main(["import", str(answer), "--root", root, "--judge", "j", "--partial"]) == 0
+    assert "2 exported notes have no row: OTHER_0, OTHER_1" in capsys.readouterr().out
+    assert R.load_reviews(tmp_path)["notes"].keys() == {"FIXTURE_NOTE"}
+    result = R.import_reviews(tmp_path, [answer], "j", allow_partial=True)
+    assert (result["imported"], result["missing"]) == (["FIXTURE_NOTE"], ["OTHER_0", "OTHER_1"])
+
+
+def test_export_takes_a_note_named_twice_once(tmp_path: Path, capsys) -> None:
+    # The judge then wrote one row per packet, and import rejected the second row for the note.
+    _export_fixture(tmp_path)
+    out = tmp_path / "twice"
+    assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(out),
+                   "--note", "OTHER_1", "--note", "OTHER_1.md", "--note", "research/OTHER_1.md", "--note", "OTHER_2"]) == 0
+    assert capsys.readouterr().out.startswith("2 notes in 1 batches")
+    assert [n["stem"] for n in json.loads((out / "batch_01.json").read_text(encoding="utf-8"))["notes"]] == ["OTHER_1", "OTHER_2"]
 
 
 def test_import_rejects_two_rows_for_one_note(tmp_path: Path) -> None:
@@ -1330,10 +1364,11 @@ def test_cli_round_trip(tmp_path: Path, capsys) -> None:
     batch = json.loads((out / "batch_01.json").read_text(encoding="utf-8"))
     assert [n["stem"] for n in batch["notes"]] == ["FIXTURE_NOTE", "OTHER_0"]
 
-    answer = _jsonl(out / "out" / "batch_01.jsonl", [_row(tmp_path, overall="unsound", claims=[
-        _claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="wrong")])])
+    answer = _jsonl(out / "out" / "batch_01.jsonl", [
+        _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="wrong")]),
+        _row(tmp_path, stem="OTHER_0", overall="sound", claims=[_claim("A result about the other_0 inputs", verdict="holds")])])
     assert R.main(["import", str(answer), "--root", root, "--judge", "test-judge"]) == 0
-    assert "imported 1" in capsys.readouterr().out
+    assert "imported 2" in capsys.readouterr().out
     assert R.main(["render", "--root", root]) == 0
     assert (tmp_path / R.QUEUE).exists() and (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").exists()
     capsys.readouterr()
