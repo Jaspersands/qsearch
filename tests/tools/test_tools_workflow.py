@@ -1,7 +1,7 @@
 """The Tools workflow runs on any change that can turn a tests/tools test red.
 
 Besides the tests and the tool packages they import, some tests read the real checkout: the
-seeded arXiv verdicts, the hypothesis contract preflight reports as broken, the referee's
+seeded arXiv verdicts, the referee's
 committed reviews with the queue and brief pages they decide, the notes the baseline catalog
 cites, the CLI with every theorem and core module, the classical package's upstream modules
 and committed reports, and the paper's numbers with the reports behind them.
@@ -17,7 +17,7 @@ import json
 import re
 from pathlib import Path
 
-from tests.tools import test_arxiv_watch, test_classical_package, test_paper_numbers, test_preflight, test_referee
+from tests.tools import test_arxiv_watch, test_classical_package, test_paper_numbers, test_referee
 from tools.arxiv_watch.verdicts import VERDICTS_FILE
 from tools.brief.build_brief import OUTPUT_MD
 from tools.corpus.baselines import load_catalog
@@ -109,7 +109,6 @@ def real_checkout_reads() -> dict[str, list[str]]:
         ],
         "pytest (the root conftest and the tests package)": ["conftest.py", "tests/__init__.py"],
         "test_arxiv_watch seed checks": [VERDICTS_FILE, _rel(test_arxiv_watch.REVIEW)],
-        "test_preflight broken contract": [test_preflight.BROKEN_CONTRACT],
         "test_referee committed reviews, the pages they decide and the note it quotes": [
             *_files(test_referee.REVIEWS_DIR),
             _rel(test_referee.STORED),

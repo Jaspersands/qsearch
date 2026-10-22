@@ -377,6 +377,8 @@ NATIVE_RLWE_PRIMAL_BABAI_CERTIFICATE wording issue was already explicitly record
 its summary, so no extra gap was added. This audit does not substitute for independent
 proof or literature review of the underlying research.
 
+### Rebuilding the corrected store
+
 Re-importing a note replaces its review (import, step 3 of the judge loop), and
 `pass1/out/` and `calibration_r2/out_d/` still hold the uncorrected rows. Importing either
 of them again on its own, or after the corrections, undoes the corrections without a

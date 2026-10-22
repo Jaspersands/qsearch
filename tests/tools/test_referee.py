@@ -1735,6 +1735,7 @@ REVIEW_SOURCES = {
     "claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d": "calibration_r2/out_d/batch_*.jsonl",
     "audit-correction-2026-10-22": "corrections/2026-10-22.jsonl",
     "audit-correction-2026-10-22-r2": "corrections/2026-10-22-r2.jsonl",
+    "codex-audit-correction-2026-10-23-r3": "corrections/2026-10-23-r3.jsonl",
 }
 # The calibration judges' output, by the letters tools/referee/README.md uses for them.
 CALIBRATION_JUDGES = {
@@ -1818,7 +1819,7 @@ def test_stored_reviews_are_their_judge_rows_whole() -> None:
 def test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path: Path, capsys) -> None:
     """A re-import replaces a note's review, so re-importing pass1/out after the corrections
     silently undid all of them; the README must give an order that rebuilds the store."""
-    section = _readme_section("### Corrections (2026-10-22)")
+    section = _readme_section("### Rebuilding the corrected store")
     block = re.search(r"```bash\n(.*?)```", section, re.S)
     assert block, "the Corrections section gives no rebuild commands"
     commands = [shlex.split(line) for line in block.group(1).splitlines() if " import " in line]
@@ -1959,7 +1960,7 @@ def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> No
 def test_readme_records_the_corrections_and_the_first_pass_counts_after_them() -> None:
     # Counted from the judge rows, not the store: a later re-review of a first-pass note
     # (import, then render) replaces its stored review, but not what the first pass found.
-    section = _readme_section("## First pass")
+    section = _readme_section("### Corrections (2026-10-22)")
     assert "corrections/2026-10-22.jsonl" in section and "audit-correction-2026-10-22" in section
     assert "corrections/2026-10-22-r2.jsonl" in section and "audit-correction-2026-10-22-r2" in section
     stems = {p["stem"] for path in sorted((REVIEWS_DIR / "pass1").glob("batch_*.json"))
@@ -1967,7 +1968,7 @@ def test_readme_records_the_corrections_and_the_first_pass_counts_after_them() -
     rows = _judge_rows(REVIEW_SOURCES["claude-opus-5.5-two-judges-reconciled-2026-10-21"])
     rows |= _judge_rows(REVIEW_SOURCES["audit-correction-2026-10-22"])
     counts = {o: sum(rows[s]["overall"] == o for s in stems) for o in ("needs-work", "sound")}
-    stated = re.search(r"stand at (\d+) needs-work and (\d+) sound", " ".join(section.split()))
+    stated = re.search(r"stood at (\d+) needs-work and (\d+) sound", " ".join(section.split()))
     assert len(stems) == 30 and stated
     assert (int(stated.group(1)), int(stated.group(2))) == (counts["needs-work"], counts["sound"])
 
