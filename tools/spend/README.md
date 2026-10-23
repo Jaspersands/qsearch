@@ -105,7 +105,9 @@ are counted apart in the report.
   CPU time and peak RSS come from `wait4` on the command itself: user plus system time of the
   command and the children it waited for (it can exceed wall time with threads), and the
   largest resident set among those processes. They do not include earlier children of
-  whatever called `run_timed`. The registry delta counts every writer during the run,
+  whatever called `run_timed`. On Linux, that process-lifetime high-water mark may include
+  memory inherited from the launcher before exec; it does not isolate allocations after
+  exec. The registry delta counts every writer during the run,
   including other agents working at the same time, so it is a raw count change, not a count
   of retained negatives. Days without a timed run show `wall_seconds` 0.0 and `cpu_seconds`
   null: unmeasured, not free.

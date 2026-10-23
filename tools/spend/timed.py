@@ -8,7 +8,9 @@ wrapper exits with the command's exit code (128+N if a signal N killed it, 127 i
 command was not found, 126 if it could not be executed), and writes a ledger line in every
 case. It records wall-clock time, the command's own CPU time and peak RSS (from wait4 on the
 child, so they cover the command and the processes it waited for, not earlier children of
-the caller), the exit code, and the record counts of every research/registry/*.json before
+the caller). On Linux the process-lifetime RSS high-water mark may include memory inherited
+from the launcher before exec; it is not an isolated post-exec allocation measurement.
+It also records the exit code and the record counts of every research/registry/*.json before
 and after the run. The registry delta covers every writer during the run window, including
 other agents.
 

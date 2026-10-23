@@ -277,8 +277,9 @@ def test_timed_run_records_fields_and_passes_stdout_through(fake_repo: Path, tmp
     assert isinstance(event["wall_seconds"], float) and event["wall_seconds"] > 0
     assert isinstance(event["cpu_seconds"], float) and event["cpu_seconds"] >= 0
     assert event["cpu_seconds"] == pytest.approx(event["cpu_user_seconds"] + event["cpu_system_seconds"], abs=2e-3)
-    # `python -c 'print(1)'` peaks at a few tens of MB at most.
-    assert isinstance(event["peak_rss_bytes"], int) and 1_000_000 < event["peak_rss_bytes"] < 200_000_000
+    # Linux may include memory inherited from this pytest process before exec, so a
+    # small command does not imply a small OS-reported process-lifetime high-water mark.
+    assert isinstance(event["peak_rss_bytes"], int) and event["peak_rss_bytes"] > 1_000_000
     assert event["timestamp"] <= event["ended_at"]
     assert event["registry_before"] == event["registry_after"] == common.registry_counts(fake_repo)
     assert event["registry_delta"] == {}
@@ -471,10 +472,25 @@ def test_timed_forwards_sigint_sent_to_the_wrapper_only(fake_repo: Path, tmp_pat
 
 
 def test_timed_peak_rss_is_the_childs_own_not_an_earlier_childs(fake_repo: Path, tmp_path: Path) -> None:
-    # An earlier, larger child of the same process (as other tests in one pytest run are).
-    subprocess.run([sys.executable, "-c", "b = bytearray(300 * 1024 * 1024); b[::4096] = b'x' * len(b[::4096])"], check=True)
-    code, event = timed.run_timed([sys.executable, "-c", "pass"], root=fake_repo, ledger=tmp_path / "ledger.jsonl")
-    assert code == 0
+    # Use a light parent: Linux can carry the launcher's pre-exec RSS into wait4's
+    # high-water mark. The earlier large child must still never contaminate this child.
+    script = """
+import json, subprocess, sys
+from pathlib import Path
+from tools.spend import timed
+subprocess.run([sys.executable, '-c',
+    "b = bytearray(300 * 1024 * 1024); b[::4096] = b'x' * len(b[::4096])"], check=True)
+code, event = timed.run_timed([sys.executable, '-c', 'pass'],
+    root=Path(sys.argv[1]), ledger=Path(sys.argv[2]))
+assert code == 0
+print(json.dumps(event))
+"""
+    out = tmp_path / "ledger.jsonl"
+    result = subprocess.run([sys.executable, "-c", script, str(fake_repo), str(out)],
+                            cwd=REPO_ROOT, capture_output=True, text=True, timeout=30)
+    assert result.returncode == 0, result.stderr
+    event = json.loads(result.stdout)
+    assert _lines(out) == [event]
     assert 1_000_000 < event["peak_rss_bytes"] < 150 * 1024 * 1024
 
 
