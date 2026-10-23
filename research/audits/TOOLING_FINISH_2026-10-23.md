@@ -105,6 +105,37 @@ The website's 25 Python tests and seven JavaScript tests pass, JavaScript syntax
 pass, and `tools/check_site.py` passes. Remote CI is checked again after publication of
 this correction rather than inferred from the local results.
 
+The next push passed snapshot validation and deployment, but Linux exposed five
+platform-dependent test failures after collection succeeded:
+
+- Three report comparisons required bit-for-bit floating-point reproduction. Measured
+  Linux/amd64 versus macOS/arm64 differences were at most `3.35e-14` for capacity-source
+  floats and `6.67e-16` for polar controls. The recursive comparison now allows absolute
+  and relative float tolerances of `1e-13`, while requiring exact types, structure,
+  integers, strings and finite values. Finite-readout eigenvector proposals differed by
+  at most `1.55e-15`; they are checked against that same tolerance before replaying the
+  saved exact radial weights. Every resulting rational certificate is still compared
+  exactly. Adversarial checks reject a `1e-10` proposal change and even a `1e-60` change
+  to an exact Rayleigh bound. Scientific source and saved reports are unchanged.
+- Two spend tests assumed a small command must have a small process-lifetime RSS. Linux
+  can include memory inherited from the launcher before exec. Measurement still uses
+  `wait4` for the specific child; the documentation now states this limit. The regression
+  against earlier-child contamination runs in a light subprocess. Both tests pass with
+  a 350 MiB launcher, and a deliberately incorrect cumulative accounting control still
+  fails the regression bound (330.3 MB versus 17.9 MB with correct accounting).
+
+The numerical reproduction and comparator checks pass all 49 tests on macOS and Linux
+amd64. The native Linux arm64 spend suite passes 60 tests with one existing optional
+`zstandard` skip. Emulated amd64 produced a separate ENOEXEC/ENOENT discrepancy for a
+plain-text executable, so native Linux and the actual GitHub runner are used for the
+complete suite rather than changing command-error handling to accommodate emulation.
+
+After integration, the complete tools suite passes **1,537 tests in 118.78 seconds**
+on macOS with the full research environment, and **1,533 tests in 82.41 seconds** on
+native Linux arm64 with four existing optional-dependency skips (NetworkX and
+zstandard). These runs include the new comparator regressions. The final remote CI
+result is retained with the publication evidence after pushing this report.
+
 ## Remaining scope limits
 
 - The 27 flagged research notes remain research work. This audit fixes tools and review
