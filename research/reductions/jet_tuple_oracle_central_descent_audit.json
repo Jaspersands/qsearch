@@ -1,0 +1,141 @@
+{
+  "schema_version": "jet_tuple_oracle_central_descent_audit_v1",
+  "module": "theorems/jet_tuple_oracle_central_descent_audit.py",
+  "scope": {
+    "nondestructive_central_instrument_verified": true,
+    "dropped_central_phase_quotient_falsified": true,
+    "non_dilation_invariant_subgroup_falsified": true,
+    "tuple_oracle_to_grade1_abelian_recovery_verified": true,
+    "arbitrary_h_filtered_chart_rebuild_verified": true,
+    "lie_closure_enforced_on_subalgebra_outputs": true,
+    "ut7_trace_callbacks_are_verification_oracles_not_quantum_receivers": true,
+    "quantum_abelian_or_image_recovery_executed": false,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "nondestructive_central_instrument_audit": {
+    "p": 7,
+    "degree_d": 2,
+    "group_size_G": 343,
+    "quotient_size_Q": 49,
+    "active_sde_scales": [
+      1,
+      4,
+      5
+    ],
+    "discarded_zero_scale_slots": 1,
+    "nondestructive_vs_target_frobenius_error": 2.4550618647693435e-15,
+    "nondestructive_vs_twisted_quotient_frobenius_error": 2.5791078482248537e-15,
+    "dropped_phase_fallacy_frobenius_error": 0.34992711,
+    "non_preserved_subgroup_surviving_support_size": 1,
+    "preserved_subgroup_support_size": 7
+  },
+  "ut3_tuple_oracle_to_abelian_recovery_audit": {
+    "p": 5,
+    "simplex_queries_ell": 4,
+    "jet_dimension": 4,
+    "grade1_dimension_r1": 3,
+    "grade2_dimension_r2": 1,
+    "terminal_abelian_dimension_m_plus_r1": 5,
+    "hf_subgroup_size": 5,
+    "dilation_invariant_all_nonzero_scales": true,
+    "recovered_grade1_generator": [
+      1,
+      2,
+      3,
+      2,
+      1
+    ],
+    "recovered_quotient_image_U_generator": [
+      1,
+      2
+    ]
+  },
+  "unrolled_ut7_arbitrary_h_rebuild_trace": {
+    "status": "SUCCESS",
+    "top_ambient_class": 6,
+    "rebuilt_tuple_oracle_calls": 5,
+    "abelian_base_calls": 3,
+    "lie_closure_enforced_count": 5,
+    "n_in_normalizer_flags": [
+      true,
+      false
+    ],
+    "recovered_generator_count": 2,
+    "rebuilt_chart_log": [
+      {
+        "ambient_dim_S": 15,
+        "class_before": 3,
+        "rebuilt_weights": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "quotient_width_m": 9,
+        "jet_dimension_J": 121,
+        "simplex_queries_ell": 66,
+        "class_after": 2
+      },
+      {
+        "ambient_dim_S": 7,
+        "class_before": 2,
+        "rebuilt_weights": [
+          2
+        ],
+        "quotient_width_m": 6,
+        "jet_dimension_J": 8,
+        "simplex_queries_ell": 8,
+        "class_after": 1
+      },
+      {
+        "ambient_dim_S": 16,
+        "class_before": 5,
+        "rebuilt_weights": [
+          5,
+          4,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "quotient_width_m": 6,
+        "jet_dimension_J": 710,
+        "simplex_queries_ell": 330,
+        "class_after": 3
+      },
+      {
+        "ambient_dim_S": 11,
+        "class_before": 3,
+        "rebuilt_weights": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "quotient_width_m": 7,
+        "jet_dimension_J": 72,
+        "simplex_queries_ell": 45,
+        "class_after": 2
+      },
+      {
+        "ambient_dim_S": 5,
+        "class_before": 2,
+        "rebuilt_weights": [
+          2
+        ],
+        "quotient_width_m": 4,
+        "jet_dimension_J": 6,
+        "simplex_queries_ell": 6,
+        "class_after": 1
+      }
+    ]
+  }
+}

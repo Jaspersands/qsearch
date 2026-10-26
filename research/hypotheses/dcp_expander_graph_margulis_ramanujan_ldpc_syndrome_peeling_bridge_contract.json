@@ -1,11 +1,12 @@
 {
   "subsystem_id": "dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge",
   "subsystem_number": 152,
-  "hypothesis": "Ramanujan d-regular parity-check graphs satisfy |lambda_2| <= 2 sqrt(d-1), yielding a monotonically increasing spectral gap d - 2 sqrt(d-1) and Tanner vertex expansion d^2 / (lambda_2^2 + (d^2 - lambda_2^2) alpha).",
+  "hypothesis": "Ramanujan d-regular graphs satisfy |lambda_2| <= 2 sqrt(d-1), yielding a monotonically increasing unnormalized spectral gap d - 2 sqrt(d-1) and Tanner vertex expansion d^2 / (lambda_2^2 + (d^2 - lambda_2^2) alpha) that remains strictly below the d/2 majority-peeling threshold.",
   "required_checks": [
     "spectral_gap_d_minus_2sqrt_d_minus_1_strictly_increasing",
     "tanner_vertex_expansion_exceeds_1_45_for_d_ge_5",
     "tanner_expansion_monotone_increasing_with_degree_d",
-    "d10_ramanujan_lambda2_equals_6_exact"
+    "d10_ramanujan_lambda2_equals_6_exact",
+    "naive_tanner_bound_strictly_below_half_degree_peeling_threshold"
   ]
 }

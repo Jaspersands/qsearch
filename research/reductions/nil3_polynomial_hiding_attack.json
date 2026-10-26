@@ -1,0 +1,65 @@
+{
+  "actual_orbit_checks": 704,
+  "classical_polynomial_time_under_stated_promises": true,
+  "coefficient_reference": {
+    "basis": [
+      [
+        9,
+        7,
+        5,
+        3,
+        1
+      ]
+    ],
+    "coefficient_rows": 12,
+    "degree": 3,
+    "exact_under_degree_and_characteristic_promises": true,
+    "rank": 4
+  },
+  "dimension": 5,
+  "fixture_hidden_generator": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "id": "NIL3-POLYNOMIAL-VALUED-HIDING-CLASSICAL-ATTACK",
+  "novelty_claimed_for_derivative_method": false,
+  "opaque_label_attack_claimed": false,
+  "p": 11,
+  "promises": [
+    "Hiding outputs are canonical Fp vectors, not opaque names or an unknown hash.",
+    "A trusted total-degree bound e in public Lie coordinates, with p>2(e+1).",
+    "Explicit class<=3 Lie presentation and chosen classical evaluator access.",
+    "For recovering H itself, the evaluator really separates gH cosets (right action)."
+  ],
+  "research_decision": "Reject polynomial-valued explicit hiding functions in this characteristic regime as evidence of a new quantum speedup. Preserve the arbitrary-label HSP candidate.",
+  "small_characteristic_attack_claimed": false,
+  "source_phase_polynomial_alone_does_not_enable_attack": true,
+  "status": "scoped-classical-recovery-not-general-hsp-dequantization",
+  "value_only_attack": {
+    "basis": [
+      [
+        9,
+        7,
+        5,
+        3,
+        1
+      ]
+    ],
+    "bound_not_a_certificate_for_fixed_seed": true,
+    "chosen_evaluator_queries": 1200,
+    "coefficients_or_hidden_generator_read": false,
+    "degree_bound": 3,
+    "exact_instance_certificate": false,
+    "false_negative_probability_under_promises": "0",
+    "fixed_seed_reproducibility_control": true,
+    "ideal_uniform_sampling_failure_bound": "1/4096",
+    "output_width": 4,
+    "queries_per_point": 16,
+    "random_points": 75,
+    "rank": 4
+  },
+  "wrong_left_action_rank": 5
+}

@@ -1,0 +1,20 @@
+{
+  "basis_artifact_sha256": "3279278c9d2d965a467756cd87afaac7db87311758c9ea48c9e8e4934bdf6a53",
+  "input_artifact_sha256": "bd0b8d4819b14d58ab6042785102745dc89cfe566bb9aa26022d38f889ec1b8e",
+  "dimension": 1024,
+  "method": "FLINT LLL",
+  "delta": 0.99,
+  "eta": 0.51,
+  "wall_seconds": 1232.2298389999778,
+  "producer_sha256": "324c77bfa0ac25f72a1b20908be3178b702c0740b322541db52efb2e45c1e5f7",
+  "prior_incomplete_verification_attempts": [
+    {
+      "reason": "Stopped the generic exact verifier after identifying an exact orthogonal-coordinate elimination; completed basis retained unchanged.",
+      "last_reported_schur_rows": 64,
+      "full_process_elapsed_seconds_observed_lower": 1507,
+      "elapsed_scope": "Includes the LLL time above and basis serialization; do not add the LLL time again to this observed total. Process elapsed was observed immediately before SIGTERM.",
+      "verification_completed": false,
+      "process_exit_code": 143
+    }
+  ]
+}

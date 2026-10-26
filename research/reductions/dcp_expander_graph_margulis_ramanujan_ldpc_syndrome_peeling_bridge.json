@@ -1,11 +1,12 @@
 {
   "all_checks_passed": true,
-  "domain": "expander_graphs_ramanujan_spectral_gap_ldpc_peeling",
+  "domain": "expander_graphs_ramanujan_spectral_gap_tanner_arithmetic_audit",
   "falsification_status": {
     "accepted_speedup_candidate": false,
     "new_active_negative_result_created": false,
     "novelty_claim": false
   },
+  "peeling_decoding_threshold_certified": false,
   "ramanujan_degree_sweep": [
     {
       "degree_d": 3,
@@ -60,6 +61,7 @@
   "subsystem_number": 152,
   "theorem_checks": {
     "d10_ramanujan_lambda2_equals_6_exact": true,
+    "naive_tanner_bound_strictly_below_half_degree_peeling_threshold": true,
     "spectral_gap_d_minus_2sqrt_d_minus_1_strictly_increasing": true,
     "tanner_expansion_monotone_increasing_with_degree_d": true,
     "tanner_vertex_expansion_exceeds_1_45_for_d_ge_5": true

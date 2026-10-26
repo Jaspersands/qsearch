@@ -6,6 +6,13 @@ This extends `CYCLIC_CENTRE_STATE_HSP_RECEIVER.md`. Implemented control flow
 and finite literal instruments do not replace external mathematical review
 or a scalable hardware backend.
 
+2026-10-21 scope update: STATE_SYMMETRY_COSET_TRANSFER.md supplies a
+different, generic strict-gap source reduction. Combined with known nil-2
+HSP, it avoids identical-sector acquisition and extends the WRITTEN
+asymptotic interface beyond characteristic three. This does not replace
+the finite instrument verification below with an executed generic solver.
+Keep its IID, controlled-action and global-gap premises explicit.
+
 ## Source And Proposed Escape
 
 Use a PUBLIC bilinear extension G=F3^d x F3^k with vector cocycle B:

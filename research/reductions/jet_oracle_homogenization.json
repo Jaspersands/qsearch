@@ -1,0 +1,69 @@
+{
+  "schema": "jet_oracle_homogenization_v1",
+  "status": "public query compiler and provisional written oracle reduction",
+  "profiles": [
+    {
+      "p": 43,
+      "class_bound": 9,
+      "quotient_width": 2,
+      "jet_dimension": 994,
+      "grade_dimensions": {
+        "1": 344,
+        "2": 249,
+        "3": 171,
+        "4": 110,
+        "5": 65,
+        "6": 34,
+        "7": 15,
+        "8": 5,
+        "9": 1
+      },
+      "queries_per_lifted_oracle": 165,
+      "retained_original_label_registers": 165,
+      "alignment_retries": 0,
+      "spectator_measurements": 0,
+      "abelian_samples": 354,
+      "original_queries_ceil_log2": 1763,
+      "interpretation": "conditional sufficient single-image query upper bound, not runtime",
+      "access": "ordinary coherent function oracle; not source-only access",
+      "coherent_circuit_implemented": false,
+      "general_sde_implemented": false
+    },
+    {
+      "p": 170141183460469231731687303715884105727,
+      "class_bound": 9,
+      "quotient_width": 2,
+      "jet_dimension": 994,
+      "grade_dimensions": {
+        "1": 344,
+        "2": 249,
+        "3": 171,
+        "4": 110,
+        "5": 65,
+        "6": 34,
+        "7": 15,
+        "8": 5,
+        "9": 1
+      },
+      "queries_per_lifted_oracle": 165,
+      "retained_original_label_registers": 165,
+      "alignment_retries": 0,
+      "spectator_measurements": 0,
+      "abelian_samples": 475,
+      "original_queries_ceil_log2": 1763,
+      "interpretation": "conditional sufficient single-image query upper bound, not runtime",
+      "access": "ordinary coherent function oracle; not source-only access",
+      "coherent_circuit_implemented": false,
+      "general_sde_implemented": false
+    }
+  ],
+  "not_established": [
+    "novelty",
+    "whole quantum algorithm",
+    "hard application",
+    "coherent circuit refinement",
+    "general SDE backend"
+  ],
+  "hidden_potential_evaluated": false,
+  "requires_transverse_hidden_subgroup": true
+}

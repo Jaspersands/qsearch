@@ -1,0 +1,215 @@
+{
+  "schema_version": "rees_cover_and_nontransverse_descent_audit_v1",
+  "module": "theorems/rees_cover_and_nontransverse_descent_audit.py",
+  "scope": {
+    "carnot_cover_dimension_lower_bound_verified": true,
+    "associated_graded_grade1_loss_falsified": true,
+    "extension_field_fp2_nonlinearity_falsified": true,
+    "nontransverse_central_multiplicity_cancellation_verified": true,
+    "ut3_rees_descent_is_single_stage": true,
+    "multistage_rees_descent_tested_in_this_module": false,
+    "p5_degree2_witness_uses_exhaustive_test_fixture": true,
+    "bezout_sde_fail_closed_and_rank_arity_verified": true,
+    "left_translation_nonnormal_h_falsified": true,
+    "omega1_once_restriction_falsified": true,
+    "small_prime_d4_omega1_non_subgroup_falsified": true,
+    "formal_rees_draft_compiler_checked": false,
+    "coherent_quantum_receiver_implemented": false,
+    "outer_black_box_reduction_implemented": false,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "dimension_optimality_and_associated_graded_audit": {
+    "ut4_p": 7,
+    "ut4_gamma_dimensions": [
+      6,
+      3,
+      1
+    ],
+    "ut4_rees_cover_dimension": 10,
+    "carnot_grade1_generates_all_grades": true,
+    "derived_hidden_subalgebra_dim": 2,
+    "associated_graded_grade1_hidden_dim": 0,
+    "rees_cover_grade1_hidden_dim": 2,
+    "rees_cover_lifted_grade_dims": [
+      2,
+      2,
+      1
+    ],
+    "fp_scalars_preserve_fp_subgroup_in_fp2": true,
+    "extension_scalar_preserves_fp_subgroup_in_fp2": false,
+    "class9_witness_gamma_dimensions": [
+      19,
+      17,
+      16,
+      14,
+      12,
+      9,
+      6,
+      3,
+      1
+    ],
+    "class9_witness_rees_cover_dimension": 97
+  },
+  "nontransverse_rees_descent_and_translation_audit": {
+    "p": 5,
+    "nilpotency_class": 2,
+    "central_descent_stages": 1,
+    "rees_cover_size": 625,
+    "grade1_quotient_size": 125,
+    "cases": [
+      {
+        "subgroup_name": "nonnormal_transverse",
+        "hidden_dim": 1,
+        "central_intersection_size_K2": 1,
+        "positive_mass_label_count": 5,
+        "allowed_branch_mass": 0.2,
+        "max_coefficient_allowed_trace_error": 3.510833468576701e-16,
+        "sde_sample_labels": [
+          1,
+          1,
+          2
+        ],
+        "sde_witness_weights": [
+          1,
+          1,
+          2
+        ],
+        "sde_witness_source": "exhaustive_scale_fixture_p5_test_only",
+        "quotient_coset_frobenius_error": 1.3646256065448125e-16,
+        "fourier_perp_support_size": 25,
+        "recovered_basis_matches_exact_h": true
+      },
+      {
+        "subgroup_name": "pure_central_nontransverse",
+        "hidden_dim": 1,
+        "central_intersection_size_K2": 5,
+        "positive_mass_label_count": 1,
+        "allowed_branch_mass": 1.0,
+        "max_coefficient_allowed_trace_error": 4.440892098500626e-16,
+        "sde_sample_labels": [
+          0,
+          0,
+          0
+        ],
+        "sde_witness_weights": [
+          0,
+          0,
+          1
+        ],
+        "sde_witness_source": "exhaustive_scale_fixture_p5_test_only",
+        "quotient_coset_frobenius_error": 3.332294986461068e-17,
+        "fourier_perp_support_size": 25,
+        "recovered_basis_matches_exact_h": true
+      },
+      {
+        "subgroup_name": "mixed_nontransverse",
+        "hidden_dim": 2,
+        "central_intersection_size_K2": 5,
+        "positive_mass_label_count": 1,
+        "allowed_branch_mass": 1.0,
+        "max_coefficient_allowed_trace_error": 4.440892098500626e-16,
+        "sde_sample_labels": [
+          0,
+          0,
+          0
+        ],
+        "sde_witness_weights": [
+          0,
+          0,
+          1
+        ],
+        "sde_witness_source": "exhaustive_scale_fixture_p5_test_only",
+        "quotient_coset_frobenius_error": 3.4720047262489504e-16,
+        "fourier_perp_support_size": 5,
+        "recovered_basis_matches_exact_h": true
+      }
+    ],
+    "left_vs_right_translation_nonnormal_falsifier": {
+      "subgroup_name": "nonnormal_transverse",
+      "right_translation_frobenius_error": 1.3646256065448125e-16,
+      "left_translation_frobenius_error": 0.17888544,
+      "left_translation_off_diagonal_frobenius_norm": 0.0,
+      "left_translation_breaks_nonnormal_coset_invariance": true
+    },
+    "bezout_sde_fail_closed_and_arity_audit": {
+      "p5_degree2_bezout_solver_fails_closed": true,
+      "p5_degree3_bijective_arity_rank1": 2,
+      "p5_degree3_weights": [
+        2,
+        1
+      ],
+      "p7_degree2_required_arity_rank1": 4,
+      "p7_degree2_required_arity_rank2": 9,
+      "p7_degree2_under_arity_fails_closed": true,
+      "p7_degree2_rank1_weights": [
+        0,
+        0,
+        4,
+        1
+      ],
+      "p7_degree2_rank2_weights": [
+        0,
+        0,
+        0,
+        1,
+        4,
+        1,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "outer_reduction_falsifiers_and_resource_comparison": {
+    "z25_omega1_once_falsifier": {
+      "group_order": 25,
+      "true_hidden_subgroup_order": 25,
+      "omega1_once_recovered_order": 5,
+      "two_step_outer_enlargement_recovered_order": 25,
+      "omega1_once_misses_higher_exponent_layers": true
+    },
+    "d4_small_prime_omega1_falsifier": {
+      "group_order": 8,
+      "nilpotency_class": 2,
+      "prime": 2,
+      "omega1_element_count": 6,
+      "d4_omega1_is_subgroup": false
+    },
+    "class9_witness_four_way_resource_comparison": {
+      "single_image_multivariate_jet": {
+        "lifted_dimension": 994,
+        "queries_per_leaf": 165,
+        "original_queries_ceil_log2": 1763,
+        "covers_arbitrary_h": false
+      },
+      "whole_recovery_multivariate_jet": {
+        "total_recursive_calls": 16,
+        "tuple_queries_per_leaf_bound": 3108105,
+        "query_dimension_exponent": 473,
+        "original_queries_ceil_log2": 2922,
+        "normalizer_recursion_required": true
+      },
+      "positive_rees_cover_core": {
+        "cover_dimension": 97,
+        "queries_per_leaf": 9,
+        "query_dimension_exponent": 145,
+        "original_queries_ceil_log2": 1573,
+        "normalizer_recursion_required": false,
+        "transversality_required": false
+      },
+      "conditional_black_box_large_prime_outer_envelope": {
+        "encoding_bits": 104,
+        "large_prime_call_cap": 10920,
+        "query_dimension_exponent": 147,
+        "original_queries_ceil_log2": 2194,
+        "conditional_on_rees_core": true,
+        "outer_reduction_implemented": false,
+        "covers_small_prime_queries": false,
+        "covers_group_preprocessing_cost": false,
+        "is_total_gate_bound": false
+      }
+    }
+  }
+}

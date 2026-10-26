@@ -1,0 +1,983 @@
+{
+  "status": "LOCAL_PER_INSTANCE_DERIVATION_REVIEW_PENDING",
+  "new_quantum_mechanism": false,
+  "speedup_established": false,
+  "generic_decoder_implemented": false,
+  "source": "explicit reciprocal trace, not a random oracle or hidden table",
+  "source_sha256": "f4ef1fc1b3dfae6cbf561422130d968124e6b6a91161405c06d63e8de892c267",
+  "proof_sha256": "b442e9e9d970d6ad7b525bce9ff38ebe1582a522dfb3b75997d3d5b7f5a528f0",
+  "budgets": [
+    {
+      "bits": 17,
+      "length": 289,
+      "decoder_dimension": 36,
+      "native_dimension": 253,
+      "radius": 173,
+      "agreement": 116,
+      "distance": 254,
+      "list_cap": 7,
+      "required_nonzero_hits": 81,
+      "gs_multiplicity": 4,
+      "gs_interpolation_monomials": 3311,
+      "gs_interpolation_constraints": 2890,
+      "beta_upper": {
+        "diagnostic_log2_abs": -7.494188446080406,
+        "exact_upper_power_of_two": -7,
+        "exact_zero": false,
+        "numerator_hex": "0x2d7",
+        "denominator_hex": "0x20000"
+      },
+      "nonzero_point_mass_upper": {
+        "diagnostic_log2_abs": -15.0,
+        "exact_upper_power_of_two": -15,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8000"
+      },
+      "tail_mass": {
+        "diagnostic_log2_abs": -11.653723624101076,
+        "exact_upper_power_of_two": -11,
+        "exact_zero": false,
+        "numerator_hex": "0x28ae4955b3ff5cbb61179e959ff6200035e179ae9d215a703ed51f296245658654e4d",
+        "denominator_hex": "0x200000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "coherent_tail_excess": {
+        "diagnostic_log2_abs": -1291.523865304423,
+        "exact_upper_power_of_two": -1291,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "ambiguous_mass_upper": {
+        "diagnostic_log2_abs": -359.92586569543244,
+        "exact_upper_power_of_two": -359,
+        "exact_zero": false,
+        "numerator_hex": "0x10d7fa85e09f2d7b9df6fb02688277778e21576b53e2e30f122a55691981cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffef28057a1f60d284620904fd977d888871dea894ac1d1cf0edd5aa96e67e3",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "herald_lower": {
+        "diagnostic_log2_abs": -0.00044783864973396703,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0xffeba8db55260051a24f7430b53004efffe50f4328b16f52c7e095706b4edd4d3cd58d97fffffffffffffffffef28057a1f60d284620904fd977d888871dea894ac1d1cf0edd5aa96e67e30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010d7fa85e09f2d7b9df6fb02688277778e21576b53e2e30f122a55691981d",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "ideal_arithmetic_failure_upper": {
+        "diagnostic_log2_abs": -10.068761123379772,
+        "exact_upper_power_of_two": -10,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "full_quantum_receiver_implemented": false,
+      "classical_hardness_established": false,
+      "independently_verified": false
+    },
+    {
+      "bits": 31,
+      "length": 961,
+      "decoder_dimension": 120,
+      "native_dimension": 841,
+      "radius": 576,
+      "agreement": 385,
+      "distance": 842,
+      "list_cap": 7,
+      "required_nonzero_hits": 266,
+      "gs_multiplicity": 4,
+      "gs_interpolation_monomials": 10738,
+      "gs_interpolation_constraints": 9610,
+      "beta_upper": {
+        "diagnostic_log2_abs": -14.499982877768367,
+        "exact_upper_power_of_two": -14,
+        "exact_zero": false,
+        "numerator_hex": "0x16a0b",
+        "denominator_hex": "0x80000000"
+      },
+      "nonzero_point_mass_upper": {
+        "diagnostic_log2_abs": -29.0,
+        "exact_upper_power_of_two": -29,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x20000000"
+      },
+      "tail_mass": {
+        "diagnostic_log2_abs": -31.84960135246604,
+        "exact_upper_power_of_two": -31,
+        "exact_zero": false,
+        "numerator_hex": "0x23841ae895743fb5db04a01f4b7949524dfdf0b7c96b5b80611b8ec118d065e2854cea95e9df18e9a8e90b49814b66a31206f86929c5a699e162319f3cdc9270cab1115261feba089e6a6af4d2a765d3e7ec96673b250009f017070797f7a51a900bbc435d7174812810c109a0d8c18ef571e3235",
+        "denominator_hex": "0x2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "coherent_tail_excess": {
+        "diagnostic_log2_abs": -8488.985583080965,
+        "exact_upper_power_of_two": -8488,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "ambiguous_mass_upper": {
+        "diagnostic_log2_abs": -3181.264018178501,
+        "exact_upper_power_of_two": -3181,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "herald_lower": {
+        "diagnostic_log2_abs": -3.728928277269006e-10,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "ideal_arithmetic_failure_upper": {
+        "diagnostic_log2_abs": -30.264638851745985,
+        "exact_upper_power_of_two": -30,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "full_quantum_receiver_implemented": false,
+      "classical_hardness_established": false,
+      "independently_verified": false
+    },
+    {
+      "bits": 61,
+      "length": 3721,
+      "decoder_dimension": 465,
+      "native_dimension": 3256,
+      "radius": 2232,
+      "agreement": 1489,
+      "distance": 3257,
+      "list_cap": 7,
+      "required_nonzero_hits": 1025,
+      "gs_multiplicity": 4,
+      "gs_interpolation_monomials": 41236,
+      "gs_interpolation_constraints": 37210,
+      "beta_upper": {
+        "diagnostic_log2_abs": -29.499999999513584,
+        "exact_upper_power_of_two": -29,
+        "exact_zero": false,
+        "numerator_hex": "0xb504f335",
+        "denominator_hex": "0x2000000000000000"
+      },
+      "nonzero_point_mass_upper": {
+        "diagnostic_log2_abs": -59.0,
+        "exact_upper_power_of_two": -59,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x800000000000000"
+      },
+      "tail_mass": {
+        "diagnostic_log2_abs": -112.977962584961,
+        "exact_upper_power_of_two": -112,
+        "exact_zero": false,
+        "numerator_hex": "0x81f86117fccb9563a79861e20c62258e68dbf35076cd5752377495ca0eda8aa0681f3a21ddbb40bf3e7fdcd1bd95a1cf05fd0599266456d5acf0f428b0a2ea3f6b4023556ef0bb747d06ec66b8d6970b0fec89c889045b297d727b7b9518644255222c5c478586a9f38d9e018e1e2265636ede8fd543a791dcdc2393237518829f82e90ec7594fac965e238b8f81aa152108ebcf55428076127e865a00f34e87aeef5111fd12ed25ce0022a21f5668049db9e78161e01f31c04b9338a5aabe90c8cf281c6903e8ce0ae483687078d0a5f6f43df485c01b935c2997aae9d0a697de97df6ea073d41c689d2331437585ef539acbf13a40fb5d4fd3ea4dab5b1fef5b2e8ee682a2ccac2a2fc071ca29af6324f250f3be42af27623885316049f5aaa073a1a04aecfaa38f7d7f511a4d29a9336ecc1e14f804d41678b308b06c0d16bba0e93d747323a3c2604dd5a6728f22269defe5c400e0dd39d866eecd1fe92bd5fb5b023afec2bb4b36f7dadd3e4fd3ffd48f75b99cbdecf58b2f0ba1f65a56cc2e0f001ef2357f0527e22fb2bfc278dcc033d62c2a0d9bb0e8b11a08bc6ab33645d121262b225189e486a21a10a513767bfa3f441b60dc932b6692a4fa071105613",
+        "denominator_hex": "0x100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "coherent_tail_excess": {
+        "diagnostic_log2_abs": -67716.49999841575,
+        "exact_upper_power_of_two": -67716,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "ambiguous_mass_upper": {
+        "diagnostic_log2_abs": -28956.236769967094,
+        "exact_upper_power_of_two": -28956,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "herald_lower": {
+        "diagnostic_log2_abs": 0.0,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "ideal_arithmetic_failure_upper": {
+        "diagnostic_log2_abs": -111.39300008423743,
+        "exact_upper_power_of_two": -111,
+        "exact_zero": false,
+        "rational_replay": "Recompute from recorded parameters; only the rigorous dyadic bound is serialized."
+      },
+      "full_quantum_receiver_implemented": false,
+      "classical_hardness_established": false,
+      "independently_verified": false
+    }
+  ],
+  "finite_controls": [
+    {
+      "bits": 3,
+      "length": 4,
+      "dimension": 1,
+      "radius": 1,
+      "field_modulus_coefficients": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "evaluation_points": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "enumerated_error_words": 4096,
+      "enumerated_codewords": 8,
+      "valid_native_witness_count": 40,
+      "herald_probability": {
+        "diagnostic_log2_abs": -1.6780719051126378,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x10"
+      },
+      "tail_probability": {
+        "diagnostic_log2_abs": -0.5405683813627027,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0xb",
+        "denominator_hex": "0x10"
+      },
+      "ambiguous_source_mass": {
+        "diagnostic_log2_abs": null,
+        "exact_upper_power_of_two": null,
+        "exact_zero": true,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "maximum_complete_list_size": 1,
+      "retained_ball_mass": {
+        "diagnostic_log2_abs": -1.6780719051126378,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x10"
+      },
+      "retained_ball_coalesced_norm_squared": {
+        "diagnostic_log2_abs": -1.6780719051126378,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x10"
+      },
+      "valid_output_probability_per_attempt": {
+        "diagnostic_log2_abs": -3.034215715337913,
+        "exact_upper_power_of_two": -3,
+        "exact_zero": false,
+        "numerator_hex": "0x7d",
+        "denominator_hex": "0x400"
+      },
+      "conditional_valid_probability": {
+        "diagnostic_log2_abs": -1.3561438102252756,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x19",
+        "denominator_hex": "0x40"
+      },
+      "full_filter_norm_squared": {
+        "diagnostic_log2_abs": 0.3219280948873622,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x4"
+      },
+      "support_mask_excess_bound": {
+        "diagnostic_log2_abs": -1.1926450779423958,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x10"
+      },
+      "support_mask_controls": [
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -0.0931094043914813,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0xf",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": 0.20945336562895012,
+            "exact_upper_power_of_two": 1,
+            "exact_zero": false,
+            "numerator_hex": "0x25",
+            "denominator_hex": "0x20"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -0.5405683813627027,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0xb",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -0.35614381022527564,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0x19",
+            "denominator_hex": "0x20"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.6780719051126378,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -1.6780719051126378,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x10"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -4.0,
+            "exact_upper_power_of_two": -4,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -4.0,
+            "exact_upper_power_of_two": -4,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x10"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.0,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -0.6780719051126378,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x8"
+          }
+        }
+      ],
+      "phase_stripped_norm_squared": {
+        "diagnostic_log2_abs": 0.5235619560570131,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0x17",
+        "denominator_hex": "0x10"
+      },
+      "decoder": "EXHAUSTIVE_FINITE_REFERENCE_NOT_GURUSWAMI_SUDAN"
+    },
+    {
+      "bits": 3,
+      "length": 4,
+      "dimension": 1,
+      "radius": 2,
+      "field_modulus_coefficients": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "evaluation_points": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "enumerated_error_words": 4096,
+      "enumerated_codewords": 8,
+      "valid_native_witness_count": 40,
+      "herald_probability": {
+        "diagnostic_log2_abs": -0.7520724865564148,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0x13",
+        "denominator_hex": "0x20"
+      },
+      "tail_probability": {
+        "diagnostic_log2_abs": -1.6780719051126378,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x10"
+      },
+      "ambiguous_source_mass": {
+        "diagnostic_log2_abs": -3.415037499278844,
+        "exact_upper_power_of_two": -3,
+        "exact_zero": false,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x20"
+      },
+      "maximum_complete_list_size": 2,
+      "retained_ball_mass": {
+        "diagnostic_log2_abs": -0.5405683813627027,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0xb",
+        "denominator_hex": "0x10"
+      },
+      "retained_ball_coalesced_norm_squared": {
+        "diagnostic_log2_abs": -0.35614381022527564,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0x19",
+        "denominator_hex": "0x20"
+      },
+      "valid_output_probability_per_attempt": {
+        "diagnostic_log2_abs": -1.4415792867313364,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x179",
+        "denominator_hex": "0x400"
+      },
+      "conditional_valid_probability": {
+        "diagnostic_log2_abs": -0.6895068001749216,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0x179",
+        "denominator_hex": "0x260"
+      },
+      "full_filter_norm_squared": {
+        "diagnostic_log2_abs": 0.3219280948873622,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x4"
+      },
+      "support_mask_excess_bound": {
+        "diagnostic_log2_abs": -1.1926450779423958,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x10"
+      },
+      "support_mask_controls": [
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -0.0931094043914813,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0xf",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": 0.20945336562895012,
+            "exact_upper_power_of_two": 1,
+            "exact_zero": false,
+            "numerator_hex": "0x25",
+            "denominator_hex": "0x20"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -0.5405683813627027,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0xb",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -0.35614381022527564,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0x19",
+            "denominator_hex": "0x20"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.6780719051126378,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -1.6780719051126378,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x10"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -4.0,
+            "exact_upper_power_of_two": -4,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -4.0,
+            "exact_upper_power_of_two": -4,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x10"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.0,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -0.6780719051126378,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x8"
+          }
+        }
+      ],
+      "phase_stripped_norm_squared": {
+        "diagnostic_log2_abs": 0.5235619560570131,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0x17",
+        "denominator_hex": "0x10"
+      },
+      "decoder": "EXHAUSTIVE_FINITE_REFERENCE_NOT_GURUSWAMI_SUDAN"
+    },
+    {
+      "bits": 3,
+      "length": 4,
+      "dimension": 1,
+      "radius": 3,
+      "field_modulus_coefficients": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "evaluation_points": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "enumerated_error_words": 4096,
+      "enumerated_codewords": 8,
+      "valid_native_witness_count": 40,
+      "herald_probability": {
+        "diagnostic_log2_abs": -4.0,
+        "exact_upper_power_of_two": -4,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10"
+      },
+      "tail_probability": {
+        "diagnostic_log2_abs": -4.0,
+        "exact_upper_power_of_two": -4,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10"
+      },
+      "ambiguous_source_mass": {
+        "diagnostic_log2_abs": -0.19264507794239583,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x8"
+      },
+      "maximum_complete_list_size": 4,
+      "retained_ball_mass": {
+        "diagnostic_log2_abs": -0.0931094043914813,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0xf",
+        "denominator_hex": "0x10"
+      },
+      "retained_ball_coalesced_norm_squared": {
+        "diagnostic_log2_abs": 0.20945336562895012,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0x25",
+        "denominator_hex": "0x20"
+      },
+      "valid_output_probability_per_attempt": {
+        "diagnostic_log2_abs": -7.678071905112638,
+        "exact_upper_power_of_two": -7,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x400"
+      },
+      "conditional_valid_probability": {
+        "diagnostic_log2_abs": -3.678071905112638,
+        "exact_upper_power_of_two": -3,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x40"
+      },
+      "full_filter_norm_squared": {
+        "diagnostic_log2_abs": 0.3219280948873622,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0x5",
+        "denominator_hex": "0x4"
+      },
+      "support_mask_excess_bound": {
+        "diagnostic_log2_abs": -1.1926450779423958,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x10"
+      },
+      "support_mask_controls": [
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -0.0931094043914813,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0xf",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": 0.20945336562895012,
+            "exact_upper_power_of_two": 1,
+            "exact_zero": false,
+            "numerator_hex": "0x25",
+            "denominator_hex": "0x20"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -0.5405683813627027,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0xb",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -0.35614381022527564,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0x19",
+            "denominator_hex": "0x20"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.6780719051126378,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -1.6780719051126378,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x10"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -4.0,
+            "exact_upper_power_of_two": -4,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x10"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -4.0,
+            "exact_upper_power_of_two": -4,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x10"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.0,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -0.6780719051126378,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0x5",
+            "denominator_hex": "0x8"
+          }
+        }
+      ],
+      "phase_stripped_norm_squared": {
+        "diagnostic_log2_abs": 0.5235619560570131,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0x17",
+        "denominator_hex": "0x10"
+      },
+      "decoder": "EXHAUSTIVE_FINITE_REFERENCE_NOT_GURUSWAMI_SUDAN"
+    },
+    {
+      "bits": 4,
+      "length": 3,
+      "dimension": 1,
+      "radius": 1,
+      "field_modulus_coefficients": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "evaluation_points": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "enumerated_error_words": 4096,
+      "enumerated_codewords": 16,
+      "valid_native_witness_count": 24,
+      "herald_probability": {
+        "diagnostic_log2_abs": -1.0,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "tail_probability": {
+        "diagnostic_log2_abs": -1.0,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "ambiguous_source_mass": {
+        "diagnostic_log2_abs": null,
+        "exact_upper_power_of_two": null,
+        "exact_zero": true,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "maximum_complete_list_size": 1,
+      "retained_ball_mass": {
+        "diagnostic_log2_abs": -1.0,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "retained_ball_coalesced_norm_squared": {
+        "diagnostic_log2_abs": -1.0,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "valid_output_probability_per_attempt": {
+        "diagnostic_log2_abs": -2.415037499278844,
+        "exact_upper_power_of_two": -2,
+        "exact_zero": false,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x10"
+      },
+      "conditional_valid_probability": {
+        "diagnostic_log2_abs": -1.415037499278844,
+        "exact_upper_power_of_two": -1,
+        "exact_zero": false,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x8"
+      },
+      "full_filter_norm_squared": {
+        "diagnostic_log2_abs": -0.4150374992788439,
+        "exact_upper_power_of_two": 0,
+        "exact_zero": false,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x4"
+      },
+      "support_mask_excess_bound": {
+        "diagnostic_log2_abs": 0.9068905956085187,
+        "exact_upper_power_of_two": 1,
+        "exact_zero": false,
+        "numerator_hex": "0xf",
+        "denominator_hex": "0x8"
+      },
+      "support_mask_controls": [
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -0.19264507794239583,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0x7",
+            "denominator_hex": "0x8"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -0.5405683813627027,
+            "exact_upper_power_of_two": 0,
+            "exact_zero": false,
+            "numerator_hex": "0xb",
+            "denominator_hex": "0x10"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.0,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -1.0,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -3.0,
+            "exact_upper_power_of_two": -3,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x8"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -3.0,
+            "exact_upper_power_of_two": -3,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x8"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": null,
+            "exact_upper_power_of_two": null,
+            "exact_zero": true,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          }
+        },
+        {
+          "source_mass": {
+            "diagnostic_log2_abs": -1.0,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "coalesced_norm_squared": {
+            "diagnostic_log2_abs": -1.415037499278844,
+            "exact_upper_power_of_two": -1,
+            "exact_zero": false,
+            "numerator_hex": "0x3",
+            "denominator_hex": "0x8"
+          }
+        }
+      ],
+      "phase_stripped_norm_squared": {
+        "diagnostic_log2_abs": 1.5999128421871278,
+        "exact_upper_power_of_two": 2,
+        "exact_zero": false,
+        "numerator_hex": "0x61",
+        "denominator_hex": "0x20"
+      },
+      "decoder": "EXHAUSTIVE_FINITE_REFERENCE_NOT_GURUSWAMI_SUDAN"
+    }
+  ],
+  "classical_line_control": {
+    "status": "VERIFIED_CLASSICAL_WITNESS",
+    "rank": 3,
+    "witness": [
+      6,
+      7,
+      5,
+      4
+    ],
+    "reciprocal_scalar": 3
+  }
+}

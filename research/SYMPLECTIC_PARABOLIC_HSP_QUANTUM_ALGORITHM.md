@@ -1,5 +1,14 @@
 # The Symplectic Parabolic Hidden Subgroup Problem: Algebraic Structure, Classical Transvection Upper Bound, and Oracle Gaps
 
+2026-10-23: the retraction of the OLD whole-Lie field-oracle construction
+below remains in force. SYMPLECTIC_FIELD_CHART_REDUCTION.md now proposes a
+DIFFERENT field-only graph-chart/HPGP route with a final rejection
+certificate and a scoped Omega(sqrt(q)) opaque-label classical query bound.
+SYMPLECTIC_PRIME_SQUARE_REDUCTION.md treats a separate ring input. Neither
+revives the old oracle map or its false lower bound; no free field-to-ring
+extension is allowed. See PARABOLIC_CUT_LIST_CORRECTION.md before applying
+downstream blanket dequantization or gate-lower-bound claims.
+
 **Investigation**: Investigation 26 (Symplectic Groups & Geometric Non-Abelian HSP)  
 **Date**: 2026-10-11  
 **Status**: AUDITED & RETRACTED (Speedup claim and lower bound retracted; algebraic structure preserved)  
@@ -17,7 +26,7 @@
 >    For any non-zero vector $v \in \mathbb{F}_q^{2n}$, the symplectic transvection $T_v(x) = x + \Omega(x, v) v$ is in $Sp(2n, \mathbb{F}_q)$ in every characteristic.
 >    Testing $f(I) = f(T_v)$ holds if and only if $v \in W$.
 >    Since $v \in W$ with probability $\frac{q^n - 1}{q^{2n} - 1} = \frac{1}{q^n + 1}$, testing random vectors finds $n$ linearly independent vectors in $W$ in $O(n q^n)$ expected queries.
->    For all $n \ge 3$, $n q^n \ll q^{n(n+1)/4}$ asymptotically.
+>    For each fixed $n \ge 4$, $n q^n \ll q^{n(n+1)/4}$ as $q$ grows. At $n=3$ the exponents are equal, so this comparison alone is not a refutation there.
 > 2. **Missing Quantum Multiplicative-to-Additive Oracle Reduction (UNESTABLISHED)**:
 >    The standard HSP oracle $f$ provides evaluations on the multiplicative group $Sp(2n, \mathbb{F}_q)$.
 >    The proposed Fourier sampler assumed an oracle on the additive group $(\mathfrak{sp}(2n, \mathbb{F}_q), +)$ whose fibers are additive cosets of $\mathfrak{p}_W$.

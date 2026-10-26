@@ -1,0 +1,54 @@
+{
+  "status": "provisional_fixed_class_Lazard_HSP_composition_not_discovery",
+  "profiles": [
+    {
+      "dimension_bound": 19,
+      "class_bound": 9,
+      "prime": 43,
+      "intersection_classes": [
+        9,
+        4,
+        2,
+        1
+      ],
+      "image_calls": 12,
+      "abelian_calls": 4,
+      "total_calls": 16,
+      "query_dimension_exponent": 473,
+      "original_queries_ceil_log2": 2922,
+      "sde_calls_ceil_log2": 2289,
+      "per_instrument_error_bits": 2904,
+      "rank_failure_bound": "8/38829",
+      "total_error_bound": "25910/116487",
+      "interpretation": "loose conditional whole-recovery upper bound, not time or executed performance"
+    },
+    {
+      "dimension_bound": 19,
+      "class_bound": 9,
+      "prime": 170141183460469231731687303715884105727,
+      "intersection_classes": [
+        9,
+        4,
+        2,
+        1
+      ],
+      "image_calls": 12,
+      "abelian_calls": 4,
+      "total_calls": 16,
+      "query_dimension_exponent": 473,
+      "original_queries_ceil_log2": 2922,
+      "sde_calls_ceil_log2": 2289,
+      "per_instrument_error_bits": 2904,
+      "rank_failure_bound": "8/14474011154664524427946373126085988481403536308014366657334667045415315046401",
+      "total_error_bound": "3216446923258783206210305139130219662534119179558748146074370454536736676986/14474011154664524427946373126085988481403536308014366657334667045415315046401",
+      "interpretation": "loose conditional whole-recovery upper bound, not time or executed performance"
+    }
+  ],
+  "input_model": "explicit F_p Lie structure constants, fixed class c<p, coherent ordinary hiding function",
+  "formal_module": "formal/Formal/RecursiveOracleReduction.lean",
+  "research_note": "research/RECURSIVE_JET_RECOVERY.md",
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "independent_correctness_or_novelty_review": false,
+  "speedup_claim_allowed": false
+}

@@ -4,6 +4,7 @@ import Formal.CrossCheck
 import Formal.PermTrace
 import Formal.StdRepExterior
 import Formal.FieldThreshold
+import Formal.BalancedSigned
 
 /-!
 # Axiom audit
@@ -129,3 +130,39 @@ would `lake build`.
 /-- info: 'QSearch.irreducible_rate_ge_traceBound' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms QSearch.irreducible_rate_ge_traceBound
+
+/-- info: 'QSearch.BalancedSigned.rational_separation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.rational_separation
+
+/-- info: 'QSearch.BalancedSigned.box_injective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.box_injective
+
+/-- info: 'QSearch.BalancedSigned.positive_readout_separation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.positive_readout_separation
+
+/-- info: 'QSearch.BalancedSigned.negative_readout_separation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.negative_readout_separation
+
+/-- info: 'QSearch.BalancedSigned.integer_label_encoding' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.integer_label_encoding
+
+/-- info: 'QSearch.BalancedSigned.integer_label_separation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.integer_label_separation
+
+/-- info: 'QSearch.BalancedSigned.budget_guard_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.budget_guard_iff
+
+/-- info: 'QSearch.BalancedSigned.readout_guard_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.readout_guard_counterexample
+
+/-- info: 'QSearch.BalancedSigned.counterexample_points_valid' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.BalancedSigned.counterexample_points_valid

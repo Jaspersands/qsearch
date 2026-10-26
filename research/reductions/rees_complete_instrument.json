@@ -1,0 +1,193 @@
+{
+  "status": "bounded_end_to_end_falsifier_not_a_quantum_implementation",
+  "coefficient_convention": "rho=sum_g coefficient[g]*R_g/group_order",
+  "arithmetic": "exact_F5_F7_group_operations_with_floating_point_character_phases",
+  "cases": [
+    {
+      "hidden_fixture": "X+W",
+      "original_group_order": 625,
+      "cover_order": 78125,
+      "cover_dimension": 7,
+      "tuple_evaluations": 3,
+      "all_tuple_fibers_checked": true,
+      "tuple_fiber_count": 15625,
+      "lifted_subgroup_order": 5,
+      "stages": [
+        {
+          "degree": 3,
+          "center_rank": 1,
+          "positive_labels": 5,
+          "tested_label_tuples": 25,
+          "distinct_label_tuples": 25,
+          "all_positive_label_tuples_checked": true,
+          "raw_input_arity": 2,
+          "maximum_regular_coefficient_error": 2.31099097676919e-16,
+          "output_regular_support_size": 5
+        },
+        {
+          "degree": 2,
+          "center_rank": 2,
+          "positive_labels": 25,
+          "tested_label_tuples": 57,
+          "distinct_label_tuples": 57,
+          "all_positive_label_tuples_checked": false,
+          "raw_input_arity": 5,
+          "maximum_regular_coefficient_error": 1.4594045128210092e-15,
+          "output_regular_support_size": 5
+        }
+      ],
+      "full_original_subspace_recovered": true,
+      "recovered_basis": [
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "final_fourier_support_size": 125,
+      "twelve_sample_recoveries": 32,
+      "sampling_trials": 32,
+      "lifted_copies_per_final_packet": 10,
+      "ideal_original_oracle_queries_per_final_packet": 30
+    },
+    {
+      "hidden_fixture": "Z+W",
+      "original_group_order": 625,
+      "cover_order": 78125,
+      "cover_dimension": 7,
+      "tuple_evaluations": 3,
+      "all_tuple_fibers_checked": true,
+      "tuple_fiber_count": 3125,
+      "lifted_subgroup_order": 25,
+      "stages": [
+        {
+          "degree": 3,
+          "center_rank": 1,
+          "positive_labels": 5,
+          "tested_label_tuples": 25,
+          "distinct_label_tuples": 25,
+          "all_positive_label_tuples_checked": true,
+          "raw_input_arity": 2,
+          "maximum_regular_coefficient_error": 2.31099097676919e-16,
+          "output_regular_support_size": 25
+        },
+        {
+          "degree": 2,
+          "center_rank": 2,
+          "positive_labels": 5,
+          "tested_label_tuples": 37,
+          "distinct_label_tuples": 37,
+          "all_positive_label_tuples_checked": false,
+          "raw_input_arity": 5,
+          "maximum_regular_coefficient_error": 1.1266352898792319e-15,
+          "output_regular_support_size": 5
+        }
+      ],
+      "full_original_subspace_recovered": true,
+      "recovered_basis": [
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "final_fourier_support_size": 125,
+      "twelve_sample_recoveries": 32,
+      "sampling_trials": 32,
+      "lifted_copies_per_final_packet": 10,
+      "ideal_original_oracle_queries_per_final_packet": 30
+    }
+  ],
+  "nonbijective_cubic_controls": [
+    {
+      "prime": 7,
+      "hidden_fixture": "X+W",
+      "initial_regular_support_size": 7,
+      "original_input_is_explicit_finite_coset_density": true,
+      "tuple_oracle_source_replayed": false,
+      "cubic_method": "three_coset_collision",
+      "cubic_collision_nodes": 51,
+      "cubic_root_calls": 2,
+      "selected_nonzero_records_not_iid_sampling": true,
+      "all_label_tuples_checked": false,
+      "stages": [
+        {
+          "degree": 3,
+          "raw_conditional_input_count": 80,
+          "nonzero_scales": 2,
+          "maximum_regular_coefficient_error": 4.606715503265579e-16,
+          "output_regular_support_size": 7
+        },
+        {
+          "degree": 2,
+          "raw_conditional_input_count": 9,
+          "nonzero_scales": 5,
+          "maximum_regular_coefficient_error": 3.791847904898513e-15,
+          "output_regular_support_size": 7
+        }
+      ],
+      "recovered_basis": [
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "final_fourier_support_size": 343,
+      "full_original_subspace_recovered": true,
+      "fourier_mass": 0.9999999999999979
+    },
+    {
+      "prime": 7,
+      "hidden_fixture": "Z+W",
+      "initial_regular_support_size": 49,
+      "original_input_is_explicit_finite_coset_density": true,
+      "tuple_oracle_source_replayed": false,
+      "cubic_method": "three_coset_collision",
+      "cubic_collision_nodes": 51,
+      "cubic_root_calls": 2,
+      "selected_nonzero_records_not_iid_sampling": true,
+      "all_label_tuples_checked": false,
+      "stages": [
+        {
+          "degree": 3,
+          "raw_conditional_input_count": 80,
+          "nonzero_scales": 2,
+          "maximum_regular_coefficient_error": 4.606715503265579e-16,
+          "output_regular_support_size": 49
+        },
+        {
+          "degree": 2,
+          "raw_conditional_input_count": 9,
+          "nonzero_scales": 2,
+          "maximum_regular_coefficient_error": 1.1138228924905091e-15,
+          "output_regular_support_size": 7
+        }
+      ],
+      "recovered_basis": [
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "final_fourier_support_size": 343,
+      "full_original_subspace_recovered": true,
+      "fourier_mass": 0.9999999999999996
+    }
+  ],
+  "full_regular_operator_kernels_checked_per_tested_record": true,
+  "all_second_stage_label_tuples_checked": false,
+  "quadratic_witness_search": "bounded_exhaustive_F5_fixture_only",
+  "tuple_source_emulation": "exhaustive_5_to_7_address_enumeration_not_an_efficient_backend",
+  "independent_review": false,
+  "formal_verification": false,
+  "asymptotic_runtime_tested": false,
+  "quantum_receiver_implemented": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false
+}

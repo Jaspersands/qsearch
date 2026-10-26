@@ -1,0 +1,181 @@
+{
+  "schema_version": "class_three_ambient_frontend_v2",
+  "module": "theorems/class_three_ambient_frontend.py",
+  "scope": {
+    "ambient_filtration_and_center_certifier": true,
+    "class_two_empty_B_branch_supported": true,
+    "proper_center_subspace_rejected": true,
+    "normalizer_quotient_M_over_K_without_N_in_M": true,
+    "unrolled_solve_recursion_verified": true,
+    "two_tree_resource_audit_with_full_D_second_erasure": true,
+    "class_four_normal_frequency_motion_obstruction": true,
+    "lower_class_three_intersection_dependency_explicit": true,
+    "coherent_quantum_circuit_compiler": false,
+    "general_prime_sde_backend": false,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "ut7_ambient_certification": {
+    "prime": 19,
+    "ambient_dimension": 21,
+    "ambient_class": 6,
+    "quotient_width_m": 6,
+    "derived_dimension": 15,
+    "derived_class": 3,
+    "a_width_r": 9,
+    "b_width_s": 2,
+    "c_width_z": 4,
+    "jet_degree_D": 4,
+    "weighted_phase_degree_e": 12,
+    "full_jet_width_J": 1080,
+    "center_exact": true,
+    "gamma_c_minus_1_in_center": true,
+    "b_is_empty_class_two_branch": false
+  },
+  "ut6_class_two_empty_B_certification": {
+    "prime": 17,
+    "ambient_dimension": 15,
+    "ambient_class": 5,
+    "quotient_width_m": 5,
+    "derived_dimension": 10,
+    "derived_class": 2,
+    "a_width_r": 6,
+    "b_width_s": 0,
+    "c_width_z": 4,
+    "jet_degree_D": 3,
+    "full_jet_width_J": 168,
+    "b_is_empty_class_two_branch": true
+  },
+  "ut7_unrolled_solve_recursion": {
+    "status": "SUCCESS",
+    "top_ambient_class": 6,
+    "top_derived_class": 3,
+    "abelian_hsp_calls": 3,
+    "max_allowed_abelian_calls": 3,
+    "image_calls": 5,
+    "max_allowed_image_calls": 7,
+    "normalizer_n_in_m_flags": [
+      true,
+      false
+    ],
+    "image_branch_log": [
+      {
+        "branch": "SCALAR_METABELIAN_IMAGE",
+        "ambient_dim": 15,
+        "ambient_class": 3,
+        "derived_dim": 6,
+        "derived_class": 1,
+        "preimage_dim": 7,
+        "preimage_class": 2
+      },
+      {
+        "branch": "SCALAR_METABELIAN_IMAGE",
+        "ambient_dim": 7,
+        "ambient_class": 2,
+        "derived_dim": 1,
+        "derived_class": 1,
+        "preimage_dim": 2,
+        "preimage_class": 1
+      },
+      {
+        "branch": "FULL_JET_CLASS_TWO_NORMAL_IMAGE",
+        "ambient_dim": 16,
+        "ambient_class": 5,
+        "derived_dim": 10,
+        "derived_class": 2,
+        "preimage_dim": 11,
+        "preimage_class": 3
+      },
+      {
+        "branch": "SCALAR_METABELIAN_IMAGE",
+        "ambient_dim": 11,
+        "ambient_class": 3,
+        "derived_dim": 4,
+        "derived_class": 1,
+        "preimage_dim": 5,
+        "preimage_class": 2
+      },
+      {
+        "branch": "SCALAR_METABELIAN_IMAGE",
+        "ambient_dim": 5,
+        "ambient_class": 2,
+        "derived_dim": 1,
+        "derived_class": 1,
+        "preimage_dim": 2,
+        "preimage_class": 1
+      }
+    ],
+    "recovered_generator_count": 2
+  },
+  "ut7_two_tree_resource_audit": {
+    "p": 19,
+    "ambient_class": 6,
+    "jet_degree_D": 4,
+    "weighted_phase_degree_e": 12,
+    "class_two_weighted_degree_comparison": 7,
+    "quotient_width_m": 6,
+    "a_width_r": 9,
+    "b_width_s": 2,
+    "c_width_z": 4,
+    "scalar_feature_count_ell": 120,
+    "full_jet_width_J": 1080,
+    "matrix_batch_sources_b0": 607,
+    "matrix_batch_rank_failure_bound": "3265264538840284780304173988078300145722626524751761788020985146198192262572853609763698577517870156153897818785438850844024804515785313892380493345525/25193890670416658862223326742931326960747112439389918932949883298936678019530473386054954163012065780603830766067785839493327615338205595417219922511154151806105576473036907709884197818793531415097416253434697799193900950643152018479009966008375525770758610192766785698181294480847195561550738281938428211769183066120065774766365238229508618352840066402051069025212664043885535610523195361010961427473928101786284922512873785119771313231363604361046496091519308554829824",
+    "base_parameter_count_h": 6006,
+    "lifted_parameter_count_Hlift": 18045028,
+    "weighted_equation_bound_Ew": 108906030114887220423584350342340544,
+    "ordinary_equation_bound_Eo": 3789455880,
+    "second_erasure_degrees": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "weighted_erasure_degrees": [
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "log2_weighted_tree_leaves": 35748.46,
+    "log2_ordinary_tree_leaves_full_D": 779.35,
+    "log2_ordinary_tree_leaves_wrong_D_minus_1": 361.52,
+    "log2_total_matrix_leaves_M": 36530.82,
+    "log2_raw_queries_upper_bound": 36555.22,
+    "log2_class_two_tree_leaves_comparison": 6354.54,
+    "full_jet_tree_exceeds_class_two_tree": true,
+    "max_image_calls_c_plus_1": 7,
+    "max_abelian_hsp_calls": 3,
+    "arbitrary_H_intersection_requires_class_three_receiver": true,
+    "known_nil2_intersection_sufficient": false
+  },
+  "class_four_normal_obstruction_control": {
+    "prime": 11,
+    "normal_group_class": 4,
+    "carrier_x0_to_mu1_shift": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10
+    },
+    "distinct_mu1_shifts_across_carrier_x0": 11,
+    "x_independent_translation_holds": false,
+    "obstruction": "In class-4 N, [A, [A, B_1]] <= C = Z(N) couples carrier x in A and y_1 in B_1 into C, so negative Fourier on B_1 shifts mu_1 by a carrier-dependent term proportional to lambda * a_0 * x_0 rather than a pure displacement D_lambda(a)."
+  }
+}

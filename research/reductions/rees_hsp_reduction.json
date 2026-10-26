@@ -1,0 +1,122 @@
+{
+  "status": "provisional_Rees_homogenization_and_general_central_descent_not_discovery",
+  "input_model": "explicit odd-prime F_p Lie constants, fixed class c<p, coherent ordinary hiding function",
+  "profile": {
+    "original_dimension": 19,
+    "cover_dimension": 97,
+    "class": 9,
+    "grade_dimensions": [
+      19,
+      17,
+      16,
+      14,
+      12,
+      9,
+      6,
+      3,
+      1
+    ],
+    "queries_per_leaf": 9,
+    "final_fourier_samples": 20,
+    "query_dimension_exponent": 145,
+    "final_fourier_readout_calls": 20,
+    "classical_sde_attempts_per_call": 1081,
+    "classical_restart_extra_source_copies": 0,
+    "original_queries_ceil_log2": 1573,
+    "complete_instrument_calls_ceil_log2": 1570,
+    "instrument_error_per_call": "1/261402681256039014299384353402387949825555221776134706665137261162334667903346450134719925495588192239516322097306499074705911952954999126444322435386542849166531058087585616157882241138064323893475166133998610045112095358594282235038954887838559846936702771185685636291264010838778515230968224595735359852524370721678366372321061039159498398069267742468818052221463038257358338531210026032487567099671123568880999871975790197508271858193314132582570905641962295293977981800",
+    "classical_sde_abort_bound_per_call": "1/25907488423335759149119404380021415302343251169810191149683373827511083464703404402170929113783951935383945966632551924657895518385381565038977715192414529269954230307400494254651764190987931691678690262844511368775936957878360665423117229523092423211623687233581922502698677070749504324119849921106688801703386590859967332352",
+    "readout_included_in_instrument_budget": true,
+    "total_error_bound": "1207/5418"
+  },
+  "hidden_advice_inputs": [],
+  "normalizer_recursion_required": false,
+  "transversality_required": false,
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "formal_draft": "formal/drafts/ReesHomogenization.lean",
+  "formal_compiler_checked": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false,
+  "conditional_black_box_scope": "fixed-class finite nilpotent groups via paid published reductions; proof under review",
+  "large_prime_outer_envelope": {
+    "encoding_bits": 104,
+    "fixed_class_bound": 9,
+    "large_prime_call_cap": 10920,
+    "small_prime_call_cap": 9,
+    "uniform_fourier_slack": 19,
+    "large_prime_query_dimension_exponent": 147,
+    "conditional_on_rees_core": true,
+    "outer_normalizer_recursion_required": true,
+    "outer_reduction_implemented": false,
+    "covers_small_prime_queries": false,
+    "covers_group_preprocessing_cost": false,
+    "is_total_gate_bound": false,
+    "large_prime_original_queries_ceil_log2": 2194,
+    "status": "conditional_worst_case_envelope_not_executed_group_algorithm",
+    "scope_audit": "research/REES_WHOLE_PROOF_SCOPE_AUDIT.md"
+  },
+  "copy_only_outer_envelope": {
+    "encoding_bits": 104,
+    "fixed_class_bound": 9,
+    "large_prime_local_call_cap": 10920,
+    "small_prime_hsmc_call_cap": 10920,
+    "small_primes": [
+      2,
+      3,
+      5,
+      7
+    ],
+    "small_prime_zero_sum_arities": [
+      [
+        2,
+        105
+      ],
+      [
+        3,
+        486202500
+      ],
+      [
+        5,
+        123410307017276135571456000000000000
+      ],
+      [
+        7,
+        250157570547723886839203857785473616350441124705337344000000000000000000
+      ]
+    ],
+    "small_prime_descent_depth_bound": 8,
+    "final_fourier_samples_per_call": 123,
+    "large_prime_copy_dimension_exponent": 147,
+    "small_prime_copy_dimension_exponent": 147,
+    "preprocessing_error_allocation": "1/12",
+    "chart_error_per_large_prime_call": "1/131040",
+    "large_prime_error_per_call": "1/131040",
+    "small_prime_error_per_hsmc_call": "1/131040",
+    "unused_small_prime_error_allocation": "0",
+    "local_rank_failure_bound": "1/524288",
+    "total_error_allocation": "1/3",
+    "source_contract": "fresh_IID_exact_mixed_coset_states_in_original_unique_group_encoding",
+    "ordinary_hiding_function_required": false,
+    "unknown_source_preparation_inverse_required": false,
+    "coherent_public_group_operations_required": true,
+    "public_presentation_and_coordinate_acquisition_charged": true,
+    "normalizer_recursion_required": true,
+    "conditional_on_rees_core": true,
+    "all_hidden_source_copy_calls_covered": true,
+    "public_group_operation_count_included": false,
+    "general_diagonal_solver_implemented": false,
+    "quantum_receiver_implemented": false,
+    "outer_reduction_implemented": false,
+    "is_total_gate_bound": false,
+    "speedup_claim_allowed": false,
+    "large_prime_original_copies_ceil_log2": 2194,
+    "small_prime_original_copies_ceil_log2": 1918,
+    "total_original_copies_ceil_log2": 2194,
+    "status": "conditional_copy_only_scope_correction_not_executed_receiver",
+    "scope_audit": "research/REES_COPY_ONLY_OUTER_REDUCTION.md"
+  },
+  "review_manuscript": "research/manuscripts/rees_hsp_review.tex",
+  "research_note": "research/REES_HSP_REDUCTION.md"
+}

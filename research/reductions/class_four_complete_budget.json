@@ -1,0 +1,245 @@
+{
+  "scope": "analytic-envelopes-for-UT5-dimensions-not-quantum-runs",
+  "examples": [
+    {
+      "status": "conditional-resource-envelope-not-executed-algorithm",
+      "p": 7,
+      "m": 4,
+      "w": 2,
+      "z": 4,
+      "ambient_dimension": 10,
+      "jet_dimension": 10,
+      "scalar_width": 14,
+      "base_parameter_counts": {
+        "noncentral": 30,
+        "central": 280
+      },
+      "lifted_parameter_count": 776,
+      "homogeneous_equation_caps": {
+        "1": 10864,
+        "2": 81480,
+        "3": 434560
+      },
+      "scalar_arities": {
+        "linear": 10865,
+        "quadratic": 6639153361,
+        "cubic": 2215717830055031681
+      },
+      "quartic_relation_arity": 25,
+      "quartic_arity_source": "square-root reduction",
+      "relation_blocks": 26,
+      "normal_source_slots_per_attempt": 650,
+      "erased_fourier_roots": 16,
+      "matrix_scalar_leaf_slots": 2557271664771573331113857971559440,
+      "scalar_sde_merges": 1154150420450096,
+      "label_draw_cap_per_slot": 2,
+      "matrix_attempt_cap_per_leaf": 58,
+      "block_multiplier_draw_cap": 12,
+      "alignment_method": "deterministic-symplectic-isometry-extension",
+      "alignment_failure_bound": "0",
+      "alignment_transvection_cap": 24,
+      "minimum_carrier_qudits": 12,
+      "matrix_attempt_failure_bound": "121/700",
+      "source_query_cap": 192818283523776629165984891055581776000,
+      "target_error": "1/3",
+      "failure_terms": {
+        "fourier_rank": "113037178808/33232930569601",
+        "matrix_attempt_exhaustion": "159829479048223333194616123222465/5192296858534827628530496329220096",
+        "scalar_sde_reserved": "1/12",
+        "joint_instrument_reserved": "1/12"
+      },
+      "failure_union_bound": "103973194204045221259594389086685217699172586947/517665722989335936177949018238482933744127705088",
+      "quantum_execution": false,
+      "source_correctness_certified": false,
+      "full_hsp_cost_included": false,
+      "speedup_claim_allowed": false,
+      "excluded_costs": [
+        "Optional black-box Lie-basis acquisition via known abelian HSP",
+        "Initial and final known nil-2 HSP calls and their error budgets",
+        "Class-three quotient-image completion",
+        "Classical field/SDE/symbolic/alignment work and native gate synthesis",
+        "Public chart conversion, subgroup/quotient lifts and oracle gate cost"
+      ]
+    },
+    {
+      "status": "conditional-resource-envelope-not-executed-algorithm",
+      "p": 11,
+      "m": 4,
+      "w": 2,
+      "z": 4,
+      "ambient_dimension": 10,
+      "jet_dimension": 10,
+      "scalar_width": 14,
+      "base_parameter_counts": {
+        "noncentral": 30,
+        "central": 280
+      },
+      "lifted_parameter_count": 776,
+      "homogeneous_equation_caps": {
+        "1": 10864,
+        "2": 81480,
+        "3": 434560
+      },
+      "scalar_arities": {
+        "linear": 10865,
+        "quadratic": 6639153361,
+        "cubic": 434561
+      },
+      "quartic_relation_arity": 25,
+      "quartic_arity_source": "square-root reduction",
+      "relation_blocks": 26,
+      "normal_source_slots_per_attempt": 650,
+      "erased_fourier_roots": 16,
+      "matrix_scalar_leaf_slots": 501548760785663130640,
+      "scalar_sde_merges": 1154150420450096,
+      "label_draw_cap_per_slot": 2,
+      "matrix_attempt_cap_per_leaf": 37,
+      "block_multiplier_draw_cap": 12,
+      "alignment_method": "deterministic-symplectic-isometry-extension",
+      "alignment_failure_bound": "0",
+      "alignment_transvection_cap": 24,
+      "minimum_carrier_qudits": 12,
+      "matrix_attempt_failure_bound": "133/1100",
+      "source_query_cap": 24124495393790396583784000,
+      "target_error": "1/3",
+      "failure_terms": {
+        "fourier_rank": "37974983358324/45949729863572161",
+        "matrix_attempt_exhaustion": "31346797549103945665/1180591620717411303424",
+        "scalar_sde_reserved": "1/12",
+        "joint_instrument_reserved": "1/12"
+      },
+      "failure_union_bound": "31579562505438344017648868918537389955/162743598153485676405890465159071137792",
+      "quantum_execution": false,
+      "source_correctness_certified": false,
+      "full_hsp_cost_included": false,
+      "speedup_claim_allowed": false,
+      "excluded_costs": [
+        "Optional black-box Lie-basis acquisition via known abelian HSP",
+        "Initial and final known nil-2 HSP calls and their error budgets",
+        "Class-three quotient-image completion",
+        "Classical field/SDE/symbolic/alignment work and native gate synthesis",
+        "Public chart conversion, subgroup/quotient lifts and oracle gate cost"
+      ]
+    },
+    {
+      "status": "conditional-resource-envelope-not-executed-algorithm",
+      "p": 13,
+      "m": 4,
+      "w": 2,
+      "z": 4,
+      "ambient_dimension": 10,
+      "jet_dimension": 10,
+      "scalar_width": 14,
+      "base_parameter_counts": {
+        "noncentral": 30,
+        "central": 280
+      },
+      "lifted_parameter_count": 776,
+      "homogeneous_equation_caps": {
+        "1": 10864,
+        "2": 81480,
+        "3": 434560
+      },
+      "scalar_arities": {
+        "linear": 10865,
+        "quadratic": 6639153361,
+        "cubic": 2215717830055031681
+      },
+      "quartic_relation_arity": 16777216000000000000,
+      "quartic_arity_source": "IS collision recurrence G(4,z)^3",
+      "relation_blocks": 26,
+      "normal_source_slots_per_attempt": 436207616000000000000,
+      "erased_fourier_roots": 15,
+      "matrix_scalar_leaf_slots": 2397442185723349997919241848336975,
+      "scalar_sde_merges": 1082016019171965,
+      "label_draw_cap_per_slot": 6,
+      "matrix_attempt_cap_per_leaf": 58,
+      "block_multiplier_draw_cap": 12,
+      "alignment_method": "deterministic-symplectic-isometry-extension",
+      "alignment_failure_bound": "0",
+      "alignment_transvection_cap": 24,
+      "minimum_carrier_qudits": 12,
+      "matrix_attempt_failure_bound": "139/1300",
+      "source_query_cap": 363932324035609684867833191622295889431756800000000000000,
+      "target_error": "1/3",
+      "failure_terms": {
+        "fourier_rank": "328114698808274/51185893014090757",
+        "matrix_attempt_exhaustion": "2397442185723349997919241848336975/83076749736557242056487941267521536",
+        "scalar_sde_reserved": "1/12",
+        "joint_instrument_reserved": "1/12"
+      },
+      "failure_union_bound": "2576100577817958131710860829935885204469351974508193/12757072871921434419498401495753380712167697868128256",
+      "quantum_execution": false,
+      "source_correctness_certified": false,
+      "full_hsp_cost_included": false,
+      "speedup_claim_allowed": false,
+      "excluded_costs": [
+        "Optional black-box Lie-basis acquisition via known abelian HSP",
+        "Initial and final known nil-2 HSP calls and their error budgets",
+        "Class-three quotient-image completion",
+        "Classical field/SDE/symbolic/alignment work and native gate synthesis",
+        "Public chart conversion, subgroup/quotient lifts and oracle gate cost"
+      ]
+    },
+    {
+      "status": "conditional-resource-envelope-not-executed-algorithm",
+      "p": 17,
+      "m": 4,
+      "w": 2,
+      "z": 4,
+      "ambient_dimension": 10,
+      "jet_dimension": 10,
+      "scalar_width": 14,
+      "base_parameter_counts": {
+        "noncentral": 30,
+        "central": 280
+      },
+      "lifted_parameter_count": 776,
+      "homogeneous_equation_caps": {
+        "1": 10864,
+        "2": 81480,
+        "3": 434560
+      },
+      "scalar_arities": {
+        "linear": 10865,
+        "quadratic": 6639153361,
+        "cubic": 434561
+      },
+      "quartic_relation_arity": 16777216000000000000,
+      "quartic_arity_source": "IS collision recurrence G(4,z)^3",
+      "relation_blocks": 26,
+      "normal_source_slots_per_attempt": 436207616000000000000,
+      "erased_fourier_roots": 15,
+      "matrix_scalar_leaf_slots": 470201963236559184975,
+      "scalar_sde_merges": 1082016019171965,
+      "label_draw_cap_per_slot": 5,
+      "matrix_attempt_cap_per_leaf": 37,
+      "block_multiplier_draw_cap": 12,
+      "alignment_method": "deterministic-symplectic-isometry-extension",
+      "alignment_failure_bound": "0",
+      "alignment_transvection_cap": 24,
+      "minimum_carrier_qudits": 12,
+      "matrix_attempt_failure_bound": "151/1700",
+      "source_query_cap": 37944550323058738332356837376000000000000000,
+      "target_error": "1/3",
+      "failure_terms": {
+        "fourier_rank": "10523614159962558/2862423051509815793",
+        "matrix_attempt_exhaustion": "470201963236559184975/18889465931478580854784",
+        "scalar_sde_reserved": "1/12",
+        "joint_instrument_reserved": "1/12"
+      },
+      "failure_union_bound": "31668928525239221065129679327454776864797/162208928138920873214112724760940968411136",
+      "quantum_execution": false,
+      "source_correctness_certified": false,
+      "full_hsp_cost_included": false,
+      "speedup_claim_allowed": false,
+      "excluded_costs": [
+        "Optional black-box Lie-basis acquisition via known abelian HSP",
+        "Initial and final known nil-2 HSP calls and their error budgets",
+        "Class-three quotient-image completion",
+        "Classical field/SDE/symbolic/alignment work and native gate synthesis",
+        "Public chart conversion, subgroup/quotient lifts and oracle gate cost"
+      ]
+    }
+  ]
+}

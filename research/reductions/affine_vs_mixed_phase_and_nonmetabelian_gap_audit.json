@@ -1,0 +1,65 @@
+{
+  "schema_version": "affine_vs_mixed_phase_and_nonmetabelian_gap_audit_v1",
+  "module": "theorems/affine_vs_mixed_phase_and_nonmetabelian_gap_audit.py",
+  "scope": {
+    "pure_affine_support_reduction_to_learning_frame_verified": true,
+    "outside_support_polynomial_coefficients_unidentifiable": true,
+    "mixed_coherence_computational_measurement_blindness_verified": true,
+    "parallel_affine_phase_erasure_recovers_u_verified": true,
+    "translation_phase_group_is_metabelian_verified": true,
+    "ut5_nonmetabelian_derived_commutator_verified": true,
+    "analytic_cauchy_schwarz_orbit_gap_verified": true,
+    "promotes_polynomial_phase_as_rees_application": false,
+    "classical_dequantization_claim": false,
+    "coherent_quantum_receiver_implemented": false,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "pure_affine_support_and_unidentifiability_audit": {
+    "p": 7,
+    "ambient_dim_n": 3,
+    "affine_support_dim_k": 2,
+    "degree_d": 3,
+    "ambient_nonconstant_monomials": 19,
+    "restricted_nonconstant_monomials": 9,
+    "f1_and_f2_agree_on_affine_support": true,
+    "f1_and_f2_differ_on_outside_points": 294,
+    "pure_state_trace_distance_between_f1_and_f2": 0.0,
+    "dimension_free_rank_failure_bound_s3": "1/2058",
+    "learned_support_basis_matches_exact_u": true,
+    "learning_frame_eliminated_parameters": 9,
+    "learning_frame_recovered_restricted_polynomial_exactly": true
+  },
+  "mixed_coherence_vs_parallel_affine_erasure_audit": {
+    "p": 11,
+    "width_n": 2,
+    "hidden_direction_u": [
+      1,
+      3
+    ],
+    "computational_measurement_tvd_from_uniform": 0.0,
+    "u_zero_trace_distance_across_distinct_f": 0.0,
+    "stage3_cubic_compressed_rank": 1,
+    "stage2_quadratic_compressed_rank": 3,
+    "stage1_linear_compressed_rank": 5,
+    "final_erased_packet_degree": 0,
+    "final_state_phase_spread_on_u": 2e-15,
+    "qft_support_matches_u_perp": true,
+    "recovered_u_basis_matches_exact_u": true
+  },
+  "metabelian_vs_nonmetabelian_orbit_gap_audit": {
+    "p": 7,
+    "translation_phase_derived_translations_all_zero": true,
+    "translation_phase_derived_is_abelian": true,
+    "ut5_nilpotency_class": 4,
+    "ut5_derived_dimension": 6,
+    "ut5_second_derived_dimension": 1,
+    "ut5_derived_is_abelian": false,
+    "cubic_orbit_gap_r": 2,
+    "analytic_cauchy_schwarz_gap_fraction": "3/14",
+    "analytic_cauchy_schwarz_gap_float": 0.21428571,
+    "empirical_min_orbit_gap": 0.62203553,
+    "empirical_gap_exceeds_analytic_bound": true
+  }
+}

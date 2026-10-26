@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "status": "REVERSIBLE_VARIABLE_WEIGHT_CORDIC_ROTATION_REVIEW_PENDING",
+  "source_sha256": {
+    "theorems/ternary_cordic_step.py": "2a3812d0bafffe7f1702635288c10b52195ef16ad038ee4343044f50a651d8d9",
+    "theorems/ternary_coherent_reliability.py": "c8b74f9cd4fb9d84e60e3aaa698586834c9a94086c21e11fddd22b7196629d55"
+  },
+  "exhaustive_clean_small_input_cases": 64,
+  "resources": [
+    {
+      "signed_coefficient_width": 2,
+      "weight_width": 1,
+      "iteration": 0,
+      "next_coefficient_width": 4,
+      "actual_qubits_including_retained_inputs_outputs_and_scratch": 80,
+      "actual_controlled_X_gates": 1387,
+      "actual_maximum_X_controls": 3,
+      "header_or_weight_truth_table_used": false,
+      "unsigned_comparison_handles_zero_and_negative_coefficients": true
+    },
+    {
+      "signed_coefficient_width": 4,
+      "weight_width": 4,
+      "iteration": 2,
+      "next_coefficient_width": 8,
+      "actual_qubits_including_retained_inputs_outputs_and_scratch": 155,
+      "actual_controlled_X_gates": 3687,
+      "actual_maximum_X_controls": 3,
+      "header_or_weight_truth_table_used": false,
+      "unsigned_comparison_handles_zero_and_negative_coefficients": true
+    },
+    {
+      "signed_coefficient_width": 8,
+      "weight_width": 8,
+      "iteration": 4,
+      "next_coefficient_width": 14,
+      "actual_qubits_including_retained_inputs_outputs_and_scratch": 295,
+      "actual_controlled_X_gates": 11111,
+      "actual_maximum_X_controls": 3,
+      "header_or_weight_truth_table_used": false,
+      "unsigned_comparison_handles_zero_and_negative_coefficients": true
+    }
+  ],
+  "exact_variable_weight_decision_update_gates_implemented": true,
+  "coherent_variable_weight_rotation_controls": [
+    {
+      "weight_width": 2,
+      "CORDIC_steps": 3,
+      "pair": [
+        0,
+        1
+      ],
+      "coherent_source_basis_words": 16,
+      "actual_qubits": 268,
+      "actual_logical_gates": 27834,
+      "full_state_reference_residual_numeric": 9.278743829052813e-17,
+      "arithmetic_garbage_probability_numeric": 0,
+      "inverse_recovery_residual_numeric": 8.9914292229964e-17,
+      "dense_many_qubit_statevector_or_ideal_arithmetic_oracle_used": false
+    },
+    {
+      "weight_width": 2,
+      "CORDIC_steps": 3,
+      "pair": [
+        0,
+        2
+      ],
+      "coherent_source_basis_words": 16,
+      "actual_qubits": 268,
+      "actual_logical_gates": 27834,
+      "full_state_reference_residual_numeric": 8.838582090426453e-17,
+      "arithmetic_garbage_probability_numeric": 0,
+      "inverse_recovery_residual_numeric": 1.4072727022636908e-16,
+      "dense_many_qubit_statevector_or_ideal_arithmetic_oracle_used": false
+    }
+  ],
+  "whole_CORDIC_history_and_rotation_composition_compiled": true,
+  "large_rotation_cost_prediction": {
+    "weight_bits": 64,
+    "steps": 52,
+    "predicted_logical_gates": 5048480990,
+    "predicted_qubits": 91545,
+    "large_circuit_allocated_or_executed": false,
+    "fault_tolerant_synthesis_included": false
+  },
+  "whole_LDPC_receiver_compiled": false,
+  "speedup_claim_allowed": false
+}

@@ -1,0 +1,525 @@
+{
+  "status": "KNOWN_DETERMINISTIC_BINARY_GS_BACKEND_NOT_COMPILED_QUANTUM_RECEIVER",
+  "source_sha256": "f65a3172a11f3c512059badb75a60b90c9ae72630dc02f3e1d6f6b1c761bb1d2",
+  "proof_sha256": "935bc8570135cd1a29ba37fb79a7a857fb49e0d60df84423238681afea3015df",
+  "random_factorization_required": false,
+  "coherent_receiver_implemented": false,
+  "quantum_speedup_established": false,
+  "complete_list_controls": [
+    {
+      "bits": 2,
+      "length": 3,
+      "dimension": 1,
+      "radius": 1,
+      "received_words_checked": 64,
+      "list_size_histogram": {
+        "0": 24,
+        "1": 40
+      },
+      "retained_pairs_erased_exactly": 40,
+      "exhaustive_reference_not_scalable": true
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "dimension": 2,
+      "radius": 1,
+      "received_words_checked": 64,
+      "list_size_histogram": {
+        "1": 16,
+        "3": 48
+      },
+      "retained_pairs_erased_exactly": 16,
+      "exhaustive_reference_not_scalable": true
+    },
+    {
+      "bits": 2,
+      "length": 4,
+      "dimension": 2,
+      "radius": 1,
+      "received_words_checked": 256,
+      "list_size_histogram": {
+        "0": 48,
+        "1": 208
+      },
+      "retained_pairs_erased_exactly": 208,
+      "exhaustive_reference_not_scalable": true
+    }
+  ],
+  "large_field_controls": [
+    {
+      "bits": 17,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "received": [
+        43691,
+        52430,
+        26210,
+        0,
+        78642,
+        87380,
+        131070
+      ],
+      "field_modulus": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "planted_message": [
+        43690,
+        26214
+      ],
+      "decoded_messages": [
+        [
+          43690,
+          26214
+        ]
+      ],
+      "ledger": {
+        "layout": {
+          "multiplicity": 1,
+          "weighted_degree": 3,
+          "Y_degree_cap": 3,
+          "interpolation_rows": 7,
+          "interpolation_columns": 10,
+          "rr_node_cap": 7,
+          "rr_X_degree_cap": 9
+        },
+        "rr": {
+          "Y_degree": 2,
+          "X_degree_cap": 7,
+          "level_widths": [
+            1,
+            2,
+            2
+          ],
+          "specialization_degree_budgets": [
+            2,
+            2
+          ],
+          "visited_nodes": 5,
+          "node_cap": 5,
+          "root_calls": 3,
+          "all_roots_verified": true
+        },
+        "interpolation_terms": [
+          [
+            0,
+            0,
+            122332
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            117965
+          ],
+          [
+            1,
+            1,
+            65543
+          ],
+          [
+            2,
+            0,
+            33410
+          ],
+          [
+            2,
+            1,
+            65540
+          ],
+          [
+            3,
+            0,
+            13107
+          ]
+        ],
+        "algebraic_roots_before_distance_filter": 1,
+        "complete_list_claim": "KNOWN_GS_RR_THEOREM_WITH_VERIFIED_INTERPOLANT",
+        "random_factorization_used": false,
+        "field_table_enumerated": false,
+        "coherent_receiver_executed": false
+      },
+      "native_large_code_executed": false,
+      "planted_decoder_regression_only": true
+    },
+    {
+      "bits": 31,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "received": [
+        715827883,
+        858993457,
+        429496732,
+        1,
+        1288490190,
+        1431655767,
+        2147483644
+      ],
+      "field_modulus": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "planted_message": [
+        715827882,
+        429496729
+      ],
+      "decoded_messages": [
+        [
+          715827882,
+          429496729
+        ]
+      ],
+      "ledger": {
+        "layout": {
+          "multiplicity": 1,
+          "weighted_degree": 3,
+          "Y_degree_cap": 3,
+          "interpolation_rows": 7,
+          "interpolation_columns": 10,
+          "rr_node_cap": 7,
+          "rr_X_degree_cap": 9
+        },
+        "rr": {
+          "Y_degree": 2,
+          "X_degree_cap": 7,
+          "level_widths": [
+            1,
+            2,
+            2
+          ],
+          "specialization_degree_budgets": [
+            2,
+            2
+          ],
+          "visited_nodes": 5,
+          "node_cap": 5,
+          "root_calls": 3,
+          "all_roots_verified": true
+        },
+        "interpolation_terms": [
+          [
+            0,
+            0,
+            572662310
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1932735282
+          ],
+          [
+            1,
+            1,
+            1073741831
+          ],
+          [
+            2,
+            0,
+            618980581
+          ],
+          [
+            2,
+            1,
+            1073741828
+          ],
+          [
+            3,
+            0,
+            1288490184
+          ]
+        ],
+        "algebraic_roots_before_distance_filter": 1,
+        "complete_list_claim": "KNOWN_GS_RR_THEOREM_WITH_VERIFIED_INTERPOLANT",
+        "random_factorization_used": false,
+        "field_table_enumerated": false,
+        "coherent_receiver_executed": false
+      },
+      "native_large_code_executed": false,
+      "planted_decoder_regression_only": true
+    },
+    {
+      "bits": 61,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "received": [
+        768614336404564651,
+        922337203685477582,
+        461168601842738786,
+        0,
+        1383505805528216370,
+        1537228672809129300,
+        2305843009213693950
+      ],
+      "field_modulus": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "planted_message": [
+        768614336404564650,
+        461168601842738790
+      ],
+      "decoded_messages": [
+        [
+          768614336404564650,
+          461168601842738790
+        ]
+      ],
+      "ledger": {
+        "layout": {
+          "multiplicity": 1,
+          "weighted_degree": 3,
+          "Y_degree_cap": 3,
+          "interpolation_rows": 7,
+          "interpolation_columns": 10,
+          "rr_node_cap": 7,
+          "rr_X_degree_cap": 9
+        },
+        "rr": {
+          "Y_degree": 2,
+          "X_degree_cap": 7,
+          "level_widths": [
+            1,
+            2,
+            2
+          ],
+          "specialization_degree_budgets": [
+            2,
+            2
+          ],
+          "visited_nodes": 5,
+          "node_cap": 5,
+          "root_calls": 3,
+          "all_roots_verified": true
+        },
+        "interpolation_terms": [
+          [
+            0,
+            0,
+            307445734561825806
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            2075258708292324557
+          ],
+          [
+            1,
+            1,
+            1152921504606846992
+          ],
+          [
+            2,
+            0,
+            1130315200594948024
+          ],
+          [
+            2,
+            1,
+            1152921504606846995
+          ],
+          [
+            3,
+            0,
+            230584300921369395
+          ]
+        ],
+        "algebraic_roots_before_distance_filter": 1,
+        "complete_list_claim": "KNOWN_GS_RR_THEOREM_WITH_VERIFIED_INTERPOLANT",
+        "random_factorization_used": false,
+        "field_table_enumerated": false,
+        "coherent_receiver_executed": false
+      },
+      "native_large_code_executed": false,
+      "planted_decoder_regression_only": true
+    }
+  ],
+  "native_layouts_not_executed": [
+    {
+      "bits": 17,
+      "multiplicity": 4,
+      "weighted_degree": 463,
+      "Y_degree_cap": 13,
+      "interpolation_rows": 2890,
+      "interpolation_columns": 3311,
+      "rr_node_cap": 469,
+      "rr_X_degree_cap": 931
+    },
+    {
+      "bits": 31,
+      "multiplicity": 4,
+      "weighted_degree": 1539,
+      "Y_degree_cap": 12,
+      "interpolation_rows": 9610,
+      "interpolation_columns": 10738,
+      "rr_node_cap": 1441,
+      "rr_X_degree_cap": 2979
+    },
+    {
+      "bits": 61,
+      "multiplicity": 4,
+      "weighted_degree": 5955,
+      "Y_degree_cap": 12,
+      "interpolation_rows": 37210,
+      "interpolation_columns": 41236,
+      "rr_node_cap": 5581,
+      "rr_X_degree_cap": 11535
+    }
+  ]
+}

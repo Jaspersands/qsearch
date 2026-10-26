@@ -1,7 +1,7 @@
 # Clean DCP & Coherent Syndrome Peeling Section Wrap-Up Report (106 Verified Subsystems)
 
 - **Section Status**: Completed & Verified (`106 / 106` subsystems)
-- **Aggregate Master Merkle Digest (`SHA-256_16`)**: `04d57d057eabeb2a`
+- **Aggregate Master Merkle Digest (`SHA-256_16`)**: `29038268b2389be5`
 - **Checkpoint File**: [`.research_checkpoint.json`](../.research_checkpoint.json)
 - **Top-Level Driver**: [`qsearch.py`](../qsearch.py)
 - **Scientific Guardrails**: [`research/RESEARCH_PRIORITY_DECISION.md`](RESEARCH_PRIORITY_DECISION.md)
@@ -116,10 +116,10 @@
 | 97 | `dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge` | `d4da96101f2b78ef` | [`theorems/dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge.py`](../theorems/dcp_quantum_wasserstein_ornstein_uhlenbeck_cooling_dissipative_peeling_bridge.py) |
 | 98 | `dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge` | `442f3649e394baaa` | [`theorems/dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge.py`](../theorems/dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge.py) |
 | 99 | `dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_bridge` | `90e05117f7c32bd1` | [`theorems/dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_bridge.py`](../theorems/dcp_quantum_network_distributed_teleportation_bell_pair_cnot_peeling_bridge.py) |
-| 100 | `dcp_centennial_100_subsystem_master_audit_and_completeness_bridge` | `63f79cd1bb7c5773` | [`theorems/dcp_centennial_100_subsystem_master_audit_and_completeness_bridge.py`](../theorems/dcp_centennial_100_subsystem_master_audit_and_completeness_bridge.py) |
+| 100 | `dcp_centennial_100_subsystem_master_audit_and_completeness_bridge` | `b28f89667a3e2866` | [`theorems/dcp_centennial_100_subsystem_master_audit_and_completeness_bridge.py`](../theorems/dcp_centennial_100_subsystem_master_audit_and_completeness_bridge.py) |
 | 101 | `dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_bridge` | `05827e5ed52a9015` | [`theorems/dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_bridge.py`](../theorems/dcp_quantum_renyi_petz_sandwiched_divergence_hypothesis_bridge.py) |
-| 102 | `dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge` | `3874615b7ce001be` | [`theorems/dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge.py`](../theorems/dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge.py) |
+| 102 | `dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge` | `ea7fa413ff2519fd` | [`theorems/dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge.py`](../theorems/dcp_expander_graph_margulis_ramanujan_ldpc_syndrome_peeling_bridge.py) |
 | 103 | `dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_bridge` | `dda9a450b44739f3` | [`theorems/dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_bridge.py`](../theorems/dcp_quantum_kramers_kronig_causal_susceptibility_phase_dispersion_bridge.py) |
 | 104 | `dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_bridge` | `38aada7b39f94e87` | [`theorems/dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_bridge.py`](../theorems/dcp_representation_theory_schur_weyl_symmetric_subspace_permutation_bridge.py) |
-| 105 | `dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge` | `68ac9037d1e58bbe` | [`theorems/dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge.py`](../theorems/dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge.py) |
+| 105 | `dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge` | `bb22a5f106754f2b` | [`theorems/dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge.py`](../theorems/dcp_topological_surface_code_lattice_surgery_zz_merge_split_cnot_bridge.py) |
 | 106 | `dcp_bernstein_vazirani_fourier_sampling_vs_nonlinear_bent_walsh_bridge` | `a2ae09f943b91ad9` | [`theorems/dcp_bernstein_vazirani_fourier_sampling_vs_nonlinear_bent_walsh_bridge.py`](../theorems/dcp_bernstein_vazirani_fourier_sampling_vs_nonlinear_bent_walsh_bridge.py) |

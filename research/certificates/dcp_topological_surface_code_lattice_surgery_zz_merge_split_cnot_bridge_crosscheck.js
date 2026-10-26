@@ -9,6 +9,9 @@ const d7 = cert.distance_scaling_sweep.find(r => r.code_distance_d === 7);
 if (d7.three_patch_cnot_footprint_qubits !== 3 * 49 || d7.syndrome_rounds_per_logical_cnot !== 14) {
   throw new Error("Distance-7 lattice surgery resource counts mismatch");
 }
+if (cert.byproduct_verification.outcomes_checked !== 8 || cert.byproduct_verification.naive_two_bit_formula_failing_branches !== 6) {
+  throw new Error("Expected 8 three-bit Kraus branches and 6 naive two-bit failures");
+}
 if (!cert.all_checks_passed) {
   throw new Error("Subsystem 155 certificate checks failed");
 }

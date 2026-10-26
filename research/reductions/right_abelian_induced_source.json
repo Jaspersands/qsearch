@@ -1,0 +1,105 @@
+{
+  "schema": "right_abelian_induced_source_v1",
+  "status": "conditional source/scope proposal; not an executed quantum receiver",
+  "scope_witnesses": [
+    {
+      "p": 43,
+      "ambient_class": 9,
+      "normal_class": 4,
+      "ambient_lcs_dimensions": [
+        19,
+        17,
+        16,
+        14,
+        12,
+        9,
+        6,
+        3,
+        1,
+        0
+      ],
+      "normal_lcs_dimensions": [
+        17,
+        10,
+        5,
+        1,
+        0
+      ],
+      "derived_dimensions": [
+        19,
+        17,
+        10,
+        0
+      ],
+      "word": "ad_[X,Y]^3([X,[X,Y]])=-1680*E_1,10",
+      "coefficient_mod_p": 40,
+      "new_source_scope_only": true,
+      "receiver_executed": false
+    },
+    {
+      "p": 170141183460469231731687303715884105727,
+      "ambient_class": 9,
+      "normal_class": 4,
+      "ambient_lcs_dimensions": [
+        19,
+        17,
+        16,
+        14,
+        12,
+        9,
+        6,
+        3,
+        1,
+        0
+      ],
+      "normal_lcs_dimensions": [
+        17,
+        10,
+        5,
+        1,
+        0
+      ],
+      "derived_dimensions": [
+        19,
+        17,
+        10,
+        0
+      ],
+      "word": "ad_[X,Y]^3([X,[X,Y]])=-1680*E_1,10",
+      "coefficient_mod_p": 170141183460469231731687303715884104047,
+      "new_source_scope_only": true,
+      "receiver_executed": false
+    }
+  ],
+  "symbolic_cocycle_checks": [
+    {
+      "normal_class": 3,
+      "max_cocycle_total_degree": 3
+    },
+    {
+      "normal_class": 4,
+      "max_cocycle_total_degree": 4
+    },
+    {
+      "normal_class": 5,
+      "max_cocycle_total_degree": 5
+    },
+    {
+      "normal_class": 7,
+      "max_cocycle_total_degree": 7
+    }
+  ],
+  "generic_cocycle_word": {
+    "existing_certificate": "ambient_section_potential.section_word_certificate",
+    "substitution": "(X,Y,Z)=(-A-x,A,B)",
+    "word": "log(exp(-A-x) exp(A+B) exp(x))",
+    "receiver_has_hidden_evaluator": false
+  },
+  "not_established": [
+    "novelty",
+    "whole HSP algorithm correctness",
+    "general induced-phase compiler",
+    "general SDE backend",
+    "useful hard application"
+  ]
+}

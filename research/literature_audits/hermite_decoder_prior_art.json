@@ -1,0 +1,83 @@
+{
+  "id": "HERMITE-DECODER-EXACT-PRIOR-ART",
+  "date": "2026-10-21",
+  "status": "NOVELTY_SCOPE_NARROWED_REVIEW_PENDING",
+  "note": "research/HERMITE_DECODER_PRIOR_ART.md",
+  "controls": "tests/test_hermite_prior_art_interface.py",
+  "sources": [
+    {
+      "id": "KRSW-ECCC-TR18-091-REV2",
+      "url": "https://eccc.weizmann.ac.il/report/2018/091/revision/2/download/",
+      "version_date": "2023-02-22",
+      "download_sha256": "9b0f51d2547724f60df87aeccd00129ccf2723e4da2cb2c880cc144d9d5fff33",
+      "pages": 53,
+      "locations": [
+        "Theorems 3.7 and 3.8, page 21",
+        "Lemma 3.1 and PRUNE, pages 17-20",
+        "Appendix A, pages 44-47"
+      ],
+      "not_interchangeable_with": "arXiv:1805.01498v1 theorem numbering"
+    },
+    {
+      "id": "GURUSWAMI-WANG-1106.3951V1",
+      "url": "https://arxiv.org/pdf/1106.3951",
+      "locations": [
+        "Section 4.2, Theorem 9 and Remark 3"
+      ],
+      "scope": "Large-characteristic noiseless side information; not directly the high-degree case"
+    },
+    {
+      "id": "WU-YANG-2610.01902V1",
+      "url": "https://arxiv.org/html/2610.01902v1",
+      "locations": [
+        "Theorems 1.5 and 1.6",
+        "Section 1.4",
+        "Section 5"
+      ]
+    }
+  ],
+  "known_ingredients": [
+    "Deterministic polynomial-time construction of a small-characteristic differential decoding space",
+    "Random-coordinate pruning of an affine space",
+    "Noiseless side information to avoid enumerating a decoding list"
+  ],
+  "local_inferences": [
+    "Polynomial-time polynomial-workspace decoding after retained pins is not a credible new mechanism, even for growing multiplicity.",
+    "The remaining possible contribution is the exact compact coherent streaming implementation, not general multiplicity decoding.",
+    "A polynomial with a nonzero highest derivative coefficient need not have a regular base-field point in the high-degree regime.",
+    "The existing highest-degree coefficient argument avoids that unsupported regular-point premise."
+  ],
+  "counterexample": {
+    "scope": "One Appendix A proof step, not the dimension theorem",
+    "q": 17,
+    "multiplicity": 8,
+    "message_degree_bound": 63,
+    "derivative_count": 2,
+    "error_fraction": "1/4",
+    "interpolation_degree_budget": 88,
+    "operator": "(X^17-X)*f^[1]",
+    "regular_base_field_points": 0,
+    "actual_kernel_dimension": 4,
+    "free_coefficient_indices": [0, 17, 34, 51]
+  },
+  "obligations": [
+    "Independent review of the hybrid reversible workspace schedule",
+    "No identification of incomplete-list singleton with full guarded uniqueness",
+    "Charge the extra error when padding the punctured domain",
+    "Retain target-dependent constants, multiplicity threshold and total input-read time",
+    "Compare a new constructive direction before extending Hermite controls"
+  ],
+  "published_dimension_theorem_refuted": false,
+  "new_decoding_mechanism_established": false,
+  "same_space_quantum_theorem_independently_verified": false,
+  "native_quantum_execution": false,
+  "shor_level_result": false,
+  "central_claim_admission": false,
+  "verification": {
+    "new_tests_passed": 8,
+    "connected_tests_passed": 112,
+    "runtime_warnings_fatal": true,
+    "full_repository_suite_run": false,
+    "existing_hermite_producers_and_reports_changed": false
+  }
+}

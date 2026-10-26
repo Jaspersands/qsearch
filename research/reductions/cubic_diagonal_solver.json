@@ -1,0 +1,71 @@
+{
+  "status": "PUBLISHED_CUBIC_SDE_BACKEND_NOT_NEW_ALGORITHM",
+  "cases": [
+    {
+      "prime": 7,
+      "input_columns": 399,
+      "input_equations": 2,
+      "compressed_rank": 2,
+      "method": "three_coset_collision",
+      "nonzero_scales": 2,
+      "collision_nodes": 153,
+      "root_calls": 2,
+      "checked_axis_relations": 274,
+      "nonresidue_draws": 2,
+      "nonresidue_abort_bound": "1/11790184577738583171520872861412518665678211592275841109096961",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 43,
+      "input_columns": 1120,
+      "input_equations": 3,
+      "compressed_rank": 3,
+      "method": "three_coset_collision",
+      "nonzero_scales": 2,
+      "collision_nodes": 309,
+      "root_calls": 14,
+      "checked_axis_relations": 475,
+      "nonresidue_draws": 1,
+      "nonresidue_abort_bound": "1/11790184577738583171520872861412518665678211592275841109096961",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "input_columns": 1120,
+      "input_equations": 3,
+      "compressed_rank": 3,
+      "method": "three_coset_collision",
+      "nonzero_scales": 4,
+      "collision_nodes": 309,
+      "root_calls": 953,
+      "checked_axis_relations": 475,
+      "nonresidue_draws": 1,
+      "nonresidue_abort_bound": "1/11790184577738583171520872861412518665678211592275841109096961",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 11,
+      "input_columns": 4,
+      "input_equations": 3,
+      "compressed_rank": 3,
+      "method": "bijective_cube",
+      "nonzero_scales": 4,
+      "collision_nodes": 0,
+      "root_calls": 0,
+      "checked_axis_relations": 0,
+      "nonresidue_draws": 0,
+      "nonresidue_abort_bound": "0",
+      "exact_original_moment_verified": true
+    }
+  ],
+  "source": "https://arxiv.org/pdf/1503.09016",
+  "source_scope": "Proposition10",
+  "cubic_all_prime_backend_implemented": true,
+  "general_degree_backend_implemented": false,
+  "finite_field_root_dependency": "FLINT degree-three roots; exact output verification",
+  "field_enumeration_used": false,
+  "full_quantum_receiver_implemented": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false
+}

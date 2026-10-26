@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-23",
+  "status": "STRONG_INPUT_CLASSICAL_BASELINE",
+  "proof_status": "REVIEW_PENDING",
+  "note": "research/SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK.md",
+  "implementation": "theorems/endomorphism_transport_recovery.py",
+  "tests": "tests/test_endomorphism_transport_recovery.py",
+  "required_extra_input": [
+    "full target End(B) lattice with exact basis evaluators",
+    "target Rosati Gram matrix in that basis",
+    "known source basis and compatible split presentation at ell",
+    "paid full auxiliary torsion data with one common unit per level"
+  ],
+  "live_arithmetic_replay": {
+    "fixture": "M2 quaternion order i2=-1 j2=-11; phi=diag(6+5i,6-5i)",
+    "input_dimension": 16,
+    "auxiliary_primes": [3, 5, 7, 13],
+    "product_level": 1365,
+    "max_coordinate_bound": 202,
+    "transport_status": "UNIQUE_BOUNDED_TRANSPORT",
+    "matches_reference_transport": true,
+    "kernel_status": "RECOVERED_UNDER_INPUT_PROMISES",
+    "stabilizer_dimension": 12,
+    "annihilator_dimension": 4,
+    "kernel_basis": [[1, 50, 0, 0], [0, 0, 1, 11]],
+    "matches_reference_kernel": true
+  },
+  "verification": {
+    "new_tests_passed": 32,
+    "selected_tests_passed": 103,
+    "python_syntax_passed": true,
+    "full_repository_tests_run": false
+  },
+  "geometric_evaluation_executed": false,
+  "target_ring_constructed": false,
+  "hom_lattice_supplied": false,
+  "quantum_execution": false,
+  "original_weak_source_dequantized": false,
+  "breakthrough_claim": false
+}

@@ -5,6 +5,13 @@ This extends the existing collective carrier-instrument calculations to
 It is a calibration and falsification workbench. No three-copy candidate or
 new scalable algorithm is proposed.
 
+2026-10-20 scope clarification: `RECTANGULAR_CHARACTER_SAMPLER.md` implements
+a classical sampler for QCT readout on a PUBLIC conjugacy-class basis state
+of type `k^m`. That law is `chi_lambda(k^m)^2/(k^m m!)`, not the coset-state
+or joint-carrier label law used here. A degree-four test proves the mismatch.
+Do not use the new sampler to mark this workbench's quantum front end
+classically replaced.
+
 Run `python qsearch.py coset-binary-carrier-instruments` or
 `python qsearch.py run EXP-COSET-BINARY-CARRIER-INSTRUMENTS`.
 The artifact is `research/representation/coset_binary_carrier_instruments.json`.

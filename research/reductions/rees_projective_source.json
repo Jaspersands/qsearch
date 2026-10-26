@@ -1,0 +1,94 @@
+{
+  "status": "proposed_copy_only_projective_Rees_source_not_discovery",
+  "design_controls": [
+    {
+      "p": 43,
+      "class": 9,
+      "method": "verified_small_cyclic_subgroup",
+      "copies_per_block": 14,
+      "moments": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "distinct_points": 14
+    },
+    {
+      "p": 170141183460469231731687303715884105727,
+      "class": 9,
+      "method": "verified_small_cyclic_subgroup",
+      "copies_per_block": 14,
+      "moments": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "distinct_points": 14
+    },
+    {
+      "p": 13,
+      "class": 4,
+      "method": "scalar_certificate_multiplicative_convolution",
+      "copies_per_block": 36,
+      "moments": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "distinct_points": 12,
+      "small_cyclic_fast_path_disabled": true
+    },
+    {
+      "p": 340282366920938463463374607431768211181,
+      "class": 4,
+      "method": "scalar_certificate_multiplicative_convolution",
+      "copies_per_block": 60,
+      "moments": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "distinct_points": 30,
+      "small_cyclic_fast_path_disabled": true
+    }
+  ],
+  "profile": {
+    "cover_dimension": 97,
+    "hypothetical_gap": "1/10, not a measured state-family promise",
+    "blocks_per_leaf": 21010,
+    "total_fresh_copies_ceil_log2": 1588,
+    "total_error_bound": "3052137088831198819507386088864268956100991106294044172818934791946067424864237605145876189356592100828232200165587614126625709457419011352558013697246678282170641572851833005721740117536908393130695257907826638089938386387903770802064133410794202941060786533376106887066767065630671982051476128387354739986806303483397199532221930241369828784534269989037518556091957918319821485359658159219490346430173628533442515690212541698352584489547573028245993924096690239843121259/13693430245944883481072969209831915114995616283224695361730478721367345251110763617294853247455567174252956657343372942314715034619594496231012159369660037397567867057885303766052343432513321293839491821960814614619946923965155500857818397202223080831040267374866029683824642373887777284696415435885079529433762705843172236483591226302028343182661077127110256580569109775648262924786937223650794743254207611898384556475221489427011358300942767565351159638543216752090677248"
+  },
+  "access_and_status": {
+    "ordinary_hiding_oracle_required": false,
+    "conjugate_state_required": false,
+    "preparation_inverse_required": false,
+    "iid_copies_required": true,
+    "controlled_linear_action_required": true,
+    "gap_is_supplied_not_certified": true,
+    "quantum_receiver_implemented": false,
+    "mixed_conjugation_symmetry_covered": false,
+    "speedup_claim_allowed": false
+  },
+  "scalar_fermat_backend_implemented": true,
+  "general_many_equation_sde_backend_implemented": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "formal_compiler_checked": false,
+  "natural_hard_state_family_established": false,
+  "research_note": "research/REES_PROJECTIVE_STATE_SOURCE.md"
+}

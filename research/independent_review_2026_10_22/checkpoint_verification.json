@@ -1,0 +1,553 @@
+{
+  "witnesses": {
+    "artifact_sha256": "b2d9f4627ccb13582a126edd51c6b3c0e2bc0cfcf459e3ee5b248a5ca7231608",
+    "cases": [
+      {
+        "n": 17,
+        "N": 289,
+        "K": 36,
+        "modulus": 131081,
+        "irreducible": true,
+        "native_valid": true,
+        "bad_trace_positions": [],
+        "nonzero_syndromes": 0,
+        "input_and_witness_sha256": "dc5cb70ab34f9a776ed5ea6d6a5bdd53c7ec9939675258087e9883257221d0d3"
+      },
+      {
+        "n": 31,
+        "N": 961,
+        "K": 120,
+        "modulus": 2147483657,
+        "irreducible": true,
+        "native_valid": true,
+        "bad_trace_positions": [],
+        "nonzero_syndromes": 0,
+        "input_and_witness_sha256": "14c781a8b48694911bd9e8aaed113b70ed74e0f9c36cfdcb4b39b7cb13277c00"
+      }
+    ],
+    "scope": "Verification of existing witnesses, not rerunning construction"
+  },
+  "quantum_budgets": [
+    {
+      "n": 17,
+      "N": 289,
+      "K": 36,
+      "w": 173,
+      "s": 4,
+      "L": 7,
+      "monomials": 3311,
+      "constraints": 2890,
+      "tail_log2_upper": -11,
+      "ambiguity_log2_upper": -359,
+      "coherent_excess_log2_upper": -1291,
+      "failure_log2_upper": -10,
+      "scope": "Exact rational mathematical bound, not a quantum run"
+    },
+    {
+      "n": 31,
+      "N": 961,
+      "K": 120,
+      "w": 576,
+      "s": 4,
+      "L": 7,
+      "monomials": 10738,
+      "constraints": 9610,
+      "tail_log2_upper": -31,
+      "ambiguity_log2_upper": -3181,
+      "coherent_excess_log2_upper": -8488,
+      "failure_log2_upper": -30,
+      "scope": "Exact rational mathematical bound, not a quantum run"
+    },
+    {
+      "n": 61,
+      "N": 3721,
+      "K": 465,
+      "w": 2232,
+      "s": 4,
+      "L": 7,
+      "monomials": 41236,
+      "constraints": 37210,
+      "tail_log2_upper": -112,
+      "ambiguity_log2_upper": -28956,
+      "coherent_excess_log2_upper": -67716,
+      "failure_log2_upper": -111,
+      "scope": "Exact rational mathematical bound, not a quantum run"
+    }
+  ],
+  "tiny_mixture": {
+    "n": 3,
+    "N": 4,
+    "K": 1,
+    "M": 3,
+    "enumerated_codewords": 512,
+    "targets_checked": 16,
+    "rows": [
+      {
+        "target": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      },
+      {
+        "target": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      },
+      {
+        "target": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      },
+      {
+        "target": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      },
+      {
+        "target": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      },
+      {
+        "target": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      },
+      {
+        "target": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      },
+      {
+        "target": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "solution_count": 24,
+        "systematic_success": [
+          3,
+          8
+        ],
+        "truncated_mixture_success": [
+          13,
+          64
+        ],
+        "pi_success": [
+          27,
+          112
+        ],
+        "tv": [
+          17,
+          448
+        ],
+        "discarded_joint_mass": [
+          1,
+          21
+        ]
+      },
+      {
+        "target": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "solution_count": 40,
+        "systematic_success": [
+          5,
+          8
+        ],
+        "truncated_mixture_success": [
+          65,
+          192
+        ],
+        "pi_success": [
+          81,
+          208
+        ],
+        "tv": [
+          127,
+          2496
+        ],
+        "discarded_joint_mass": [
+          1,
+          13
+        ]
+      }
+    ],
+    "scope": "Exact finite formula falsifier only"
+  },
+  "checker_sha256": "dc39bad41c682adaec8d03ab3dbb3aa09bb9f7b2bc132f1853f2eaa3767e5bc4"
+}

@@ -1,5 +1,14 @@
 # Unitary Parabolic HSP Obstruction, Hermitian Invariant Demarcation, and Classical Dequantization in $\mathrm{U}(n, \mathbb{F}_{q^2})$ and $\mathrm{SU}(n, \mathbb{F}_{q^2})$
 
+2026-10-23 OVERRIDING CORRECTION: Theorem 2's claimed full-complement
+reconstruction fails for maximal isotropic U in odd Hermitian dimension:
+every accepted isotropic vector in Uperp lies in U, so their span cannot
+be Uperp. The q^(2k) bound is also not polynomial in log(q) without a
+parameter restriction. Generic density/commutant dimension does not give
+the asserted gate lower bounds. Read PARABOLIC_CUT_LIST_CORRECTION.md;
+the historical blanket dequantization below is withdrawn, not promoted
+to a speedup. Other sections and downstream reports remain unreviewed.
+
 **Investigation**: Investigation 31  
 **Date**: 2026-10-11  
 **Status**: PROVED MATHEMATICAL THEOREMS & COMPLETE CLASSICAL QUADRUMVIRATE DEMARCATION (Zero Speedup Retained)  

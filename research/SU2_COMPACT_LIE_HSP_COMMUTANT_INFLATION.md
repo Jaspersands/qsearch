@@ -1,6 +1,12 @@
 # Compact Non-Abelian Lie Group Hidden Subgroup Problem: $SU(2)$ / $SO(3)$ Wigner-D Matrix Character Blindness, Spin-Coherent Projection, and Multi-Copy Commutant Inflation
 
-**Status**: Formally Proved & Computationally Verified  
+Status: SUPERSEDED / QUARANTINED_OVERBROAD_NO_GO (2026-10-19).
+The spin-one Catalan formula is false; commutant dimension does not establish a
+circuit lower bound or exclusion from BQP. Zero weight is not spin coherent.
+Read [the counterchecks and retained scopes](NONABELIAN_BARRIER_SCOPE_AUDIT.md).
+The historical text below is preserved as provenance, not endorsed mathematics.
+
+**Historical Status (RETRACTED)**: Formally Proved & Computationally Verified
 **Invariants Enforced**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
 **Classification**: Algebraic Quantum Algorithms / Non-Abelian Continuous Lie Groups / Representation Obstructions  
 **Negative Result ID**: `NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION` (970 negative results total)

@@ -2,8 +2,10 @@
 
 2026-10-19. Local mathematical derivation REVIEW PENDING. No new quantum
 algorithm, novelty, classical hardness or speedup is asserted. This is a
-DIFFERENT explicit full-support task, not a solution of the unresolved
-punctured folded-norm problem. No accepted candidate or central negative.
+DIFFERENT explicit moment-square task, not a solution of the unresolved
+punctured folded-norm problem. The initial full-support probe is followed by
+explicitly scoped sparse-support extensions below. No accepted candidate or
+central negative.
 
 ## Scientific Question And Portfolio Decision
 
@@ -233,7 +235,8 @@ python -m pytest -q tests/test_outer_coded_chirp_probe.py
 ```
 
 Routine optional qsearch/EXP exposure should call this actual producer and
-preserve the search-only/full-support/no-quantum-compiler scope. No central
+preserve the search-only/explicit-support/no-quantum-compiler scope, separating
+the dense and sparse classical guarantees below. No central
 negative/proof/candidate admission is needed for an unadmitted proposal.
 
 ## Full Coherent Instrument: Bounded Execution Completed
@@ -334,4 +337,287 @@ attacks. The average identity is useful but does not supply that decoder or
 classical hardness. The separate folded-norm global classical question remains
 open; no reduction between these two explicit tasks is asserted.
 
-This is a clean pause point. No additional research pass is started.
+The coherence pass ended at a clean pause point. The user subsequently resumed
+work and requested that Claude's notes be read; the next pass follows.
+
+## Sparse Barycentric Completion: Sparsity Alone Is Not An Escape
+
+2026-10-19 resumed pass, local derivation REVIEW PENDING. No novelty claim.
+Claude's merged corpus/rediscovery/failure-mode audits recommend checking
+retained failures before building another receiver. Corpus queries for sparse
+RS chirp completion and barycentric square-class completion retrieve the dense
+formal-root attack and the existing Lagrange-weight identity, but not this
+all-target construction. Retrieval is not a novelty certificate. Related
+classical machinery is standard [GRS duality](https://users.math.msu.edu/users/halljo/classes/codenotes/GRS.pdf)
+and [self-dual GRS evaluation-set construction](https://arxiv.org/abs/2005.11732).
+The latter includes subgroup/coset constructions; no new code duality is claimed.
+
+The previous dense proof needed p<2L because it enumerated missing field points.
+That guard remains correct for THAT algorithm. The new algorithm never uses
+the complement: it has a different, explicitly testable support condition.
+
+### Exact Claim And Algorithm
+
+Let p=3 mod4 be prime, S contain L distinct nonzero ORIGINAL points, and
+A(X)=product_(a in S)(X-a). Suppose all A'(a) have the SAME quadratic character.
+For EVERY target b in F_p^r with1<=r<=floor(L/2), a deterministic classical
+algorithm polynomial in L and log p returns a nontrivial native vector solving
+
+```text
+sum_(a in S) a^k*x_a^2=b_k,  0<=k<r.
+```
+
+Choose kappa=A'(a_0). Each kappa/A'(a) is square; compute its verified root
+s_a by exponent(p+1)/4. Define the linear functional
+
+```text
+T(P)=sum_(a in S) P(a)/A'(a).
+```
+
+Lagrange interpolation gives T(X^j)=0 for j<L-1 and T(X^(L-1))=1.
+Compute its further moments only through degree L+r-2. A triangular solve
+chooses B supported in degrees L-r,...,L-1 so T(X^k B)=b_k/kappa.
+Explicitly, choose B_(L-1-k) in increasing k; its coefficient in the kth
+equation is1 and lower-index coefficients do not contribute.
+
+Set d=ceil(L/2), choose the monic even-degree polynomial
+
+```text
+F=A+B       if L is even,
+F=X*A+B     if L is odd,
+```
+
+and let R be its formal-square polynomial part at infinity, deg R=d.
+Then deg(R^2-F)<d and F(a)=B(a). For k<r, d+r<=L implies
+deg(X^k*(R^2-F))<=d+r-2<=L-2, so T annihilates this residual.
+Finally return x_a=s_a R(a), retaining the original support, coefficient field,
+moment equations and target. Indeed
+
+```text
+sum a^k*x_a^2 = kappa*T(X^k R^2)
+               = kappa*T(X^k B) = b_k.
+```
+
+Since R is monic of degree d<L and each s_a is nonzero, the returned vector
+cannot be identically zero, including when b=0. The algorithm needs degree
+O(L) polynomials, O(L*(L+r)) quadrature products, L modular square roots and
+native replay; there is no array, loop, generator search or factorization
+whose size is the ambient p. The reference arithmetic counts are not complete
+bit-operation or wall-time claims.
+
+The strict all-coordinates-nonzero version is ALSO classically solved when
+r<floor(L/2). Choose a scalar c avoiding the L forbidden values -R(a), using
+at most L+1 public candidates; L<p guarantees one exists. Replacing R by R+c
+changes its square by degree at most d. Since d+r<L, quadrature still
+annihilates that change for every required moment. Thus the same target is
+preserved and every coordinate is nonzero. The implementation verifies this
+directly. At r=floor(L/2), it deliberately refuses the strict guarantee;
+the last equation can change. This is a degree boundary, not infeasibility.
+
+### Why It Is A Meaningful Sparse Attack
+
+Any odd-order multiplicative subgroup, nonzero scalar coset, or affine image
+avoiding0 satisfies this condition: its vanishing polynomial is
+(X-h)^L-c, whose derivative at a is L*(a-h)^(L-1). The power factor is square
+because L-1 is even. The solver takes the public support and verifies the
+condition; subgroup recognition or a discrete-log oracle is unnecessary.
+
+The live controls use p=2^61-1 and L155, with (rank,strict)=(38,true),
+(77,false),(76,true): the local decoder's proposed quarter-rate window,
+the half-rate algebraic boundary, and a strict near-boundary case. They
+preserve all155 native variables and verify every original equation.
+Support generation for the control factors ONLY155=5*31 and tries explicit
+public bases2,3 with modular order checks, which are recorded and charged.
+An affine-shifted/scaled support checks that special full-field power sums
+are not silently being used. All7 targets at p7,L3,r1 and all121 targets at
+p11,L4,r2 are also replayed, including homogeneous ones.
+
+### Attempts To Break The Argument And Scope
+
+- Without the common derivative square class, some s_a do not exist in F_p.
+  The implementation refuses this case instead of using F_(p^2), changing
+  signs or claiming hardness. The support(1,2,3,4) at p11 is a countercontrol.
+- The multipliers are necessary: returning R(a) WITHOUT s_a solves a different
+  weighted problem and fails an explicit native target. Tests replay scalings
+  using products of point differences, independently of polynomial derivatives.
+- The half-rate boundary is from annihilating the residual's degree, not from
+  Chevalley-Warning existence or finite experiments. Above it the function
+  refuses; refusal is not an UNSAT certificate.
+- The p3mod4 restriction is an implemented deterministic-square-root boundary,
+  not a mathematical assertion that the construction fails for other primes.
+- This supplies search witnesses, not uniform/exact quantum solution sampling.
+  It does not solve arbitrary sparse support, arbitrary simultaneous quadrics,
+  the old folded m31 norm problem, or a hidden-shift oracle problem.
+
+Research decision: do not rescue the rejected dense candidate by moving it
+onto an odd-order subgroup or a support meeting this derivative criterion.
+Those sparse native search families also have a uniform classical solver.
+Generic sparse supports with mixed derivative classes still need their OWN
+classical attacks and a constructive scalable decoder; neither their hardness
+nor a quantum speedup follows from this scoped result.
+
+### Further Hard Check: Mixed Classes Do Not All Escape, Either
+
+There is a derived extension, NOT YET IMPLEMENTED by this pass. Choose the
+majority derivative class and let M be the minority points, |M|=m. Multiply
+by W=product_(a in M)(X-a): replace the formal root R0 by
+R=W*quotient(R0,W). The removed remainder has degree<m, so
+deg(R^2-F)<=d+m-1. The same quadrature proof works if
+
+```text
+r <= floor(L/2)-m.
+```
+
+Set minority coordinates exactly0 and use the native square scalings on
+majority coordinates. This is still a solution of the original zero-allowing
+equations, not deletion of those equations. It does NOT yield a strict
+all-coordinates-nonzero witness when m>0. This construction and its finite
+tests belong in the mechanical follow-up only after preserving this contract.
+
+An actual direct point-difference calculation at p=2^61-1, S=(1,...,127)
+gives71 nonsquare and56 square derivatives. This extension would cover only
+r<=63-56=7, NOT the quarter-rate rank31 question. Thus it does not justify
+declaring general sparse RS solved. The original folded-norm input is a
+different system and is not addressed by this calculation at all.
+
+## Polynomial Decoder Certificate And The OPI Equivalence
+
+The next hard check replaces an assumed exponential ML table by a specified
+polynomial classical decoder at the theorem level. This is an analytic
+certificate, NOT execution of a quantum state or a new implementation of GS.
+[Chatterjee--Harsha--Kumar, Theorem1.1](https://arxiv.org/html/2511.05176v2)
+supplies deterministic list decoding in poly(L,log p) at integer agreement
+t>sqrt(L*(r-1)). It avoids a hidden randomized-factorization assumption for
+coherent decoding over large prime fields. The local application still needs
+independent review and a full quantum precision/resource contract.
+
+### A Decoder With No Hidden List-Selection Advice
+
+List every degree<r polynomial agreeing with the received word at least t
+times. Choose greatest agreement, canonical ties, and label0 if the list is
+empty. Do not ask for the true message or original target to select a list item.
+
+For p3mod4 the actual product chirp readout is memoryless q-ary symmetric:
+q0>1/2 and each particular wrong symbol has q1<1/(2*(p-1)). For ANY transmitted
+codeword, bound its probability of fewer than t correct positions by
+
+```text
+E_true <= 2^(-L) * sum_(j=0)^(t-1) binom(L,j).
+```
+
+Any other degree<r polynomial agrees with the true one on at most r-1
+positions. To obtain t agreements it needs u=t-r+1 accidental matches.
+Independence and a union bound over position subsets and ALL other words give
+
+```text
+E_wrong <= (p^r-1)*binom(L,u) / [2*(p-1)]^u,
+epsilon <= min(1,E_true+E_wrong).
+```
+
+No words are enumerated by this calculation. If the true word reaches t and
+no other word does, selection is uniquely correct. The bound holds for every
+basis label, and the earlier full-channel identity consequently gives
+uniform-target mean paid ORIGINAL validity >=max(0,1-2*epsilon). It is not a
+worst-target guarantee. For any fixed rate R<1/4 choose sqrt(R)<t/L<1/2;
+then t/L>2R, so the true-word tail is exp(-Omega(L)) and the competitor bound
+is exp(-Omega(L log p)) as L grows with L<p. This is an algorithmic reduction
+using known decoding results, not evidence for classical hardness or novelty.
+
+The v5 artifact evaluates exact rational bounds, rounded OUTWARD to96 dyadic
+bits. Rounding a very small positive bound upward is deliberate, never0.
+At p=2^61-1:
+
+| L | r | t | Decoder-error upper bound (approximate display) |
+|---|---|---|---|
+| 512 | 64 | 200 | 2.67e-7 |
+| 1024 | 128 | 400 | 8.36e-13 |
+
+These are symbolic guarantees under the ideal specified instrument, not runs
+at those quantum register counts. A uniform full-flagged implementation trace
+error delta must be subtracted from the mean validity bound. For p3mod4 a
+public nonsquare can be -1, not an assumed free nonresidue search; local C
+can be built using reversible squaring, canonical modular square roots and
+a conditional Hadamard on the root sign. Source/QFT phases, approximate
+uniform field states, reversible decoder workspace cleanup and total error
+still require an explicit costed implementation. Tests/report gates keep
+those obligations OPEN. No central proof or candidate is promoted.
+
+### This Is An Existing OPI Route In Different Coordinates
+
+Before treating that mechanism as new, apply standard GRS duality. For ANY
+distinct support S, construct the same target lift B but without dividing b by
+kappa. Then all solutions z to sum a^k*z_a=b_k are EXACTLY
+
+```text
+z_a=(B(a)+P(a))/A'(a),    deg(P)<K=L-r.
+```
+
+The inclusion follows from quadrature on degree<=L-2 polynomials; equality
+follows since the nullspace and the polynomial space both have dimension K.
+The native square problem is therefore OPI with public shift -B(a),
+orientation equal to the quadratic character of A'(a), and degree bound K.
+Square-root each accepted native z_a to recover x_a in the ORIGINAL field.
+Conversely, interpolating A'(a)*x_a^2-B(a) gives such a degree<K polynomial
+for every native solution. This is a bijection on square-coordinate solutions,
+not necessarily on their multiple choices of square-root signs.
+
+Thus r/L<1/4 is a HIGH-RATE K/L>3/4 explicit-character OPI problem, not an
+independent new quantum primitive. The [soft-decoder framework](https://arxiv.org/html/2411.12553v2)
+already supplies the relevant inhomogeneous reduction paradigm. Its stated
+full-support convention is not a reason to overlook GRS-dual weights on a
+punctured input. A new name does not remove the repo's classical OPI attacks.
+
+The new wrapper calls the EXISTING norm solver, without editing or replacing
+it, on one fixed p=2^61-1, S=(1,...,127), r31 input. The equivalent OPI has
+K96,56 square orientations and71 nonsquare orientations. Public seed6611 and
+cap128 produce a perfect OPI witness in16 charged base-field factorizations,
+then127 native square roots satisfy ALL31 original moment equations. All127
+coordinates happen to be nonzero; the control did not request a strict-mode
+population guarantee. Every rejected norm target and the winning polynomial
+are saved. This refutes the finite control as advantage evidence, NOT every
+target, every sparse input or the old folded extension-norm problem.
+
+### A Correct Average-Case Transfer, With An Important Limit
+
+There is a further exact distinction from the old fixed-input norm analysis.
+Let b be uniform in F_p^r and let M be an INDEPENDENT uniform polynomial of
+degree<K. The high-r-coefficient triangular construction of B_b and the low-K
+coefficient space are complementary. Therefore
+
+```text
+(b,M) -> B_b+M -> its L evaluations -> negative OPI shifts
+```
+
+is a linear bijection onto F_p^L: the induced shifts really ARE IID uniform.
+Adding M preserves the native syndrome, since it is in the kernel. Running
+OPI on shifts -(B_b+M) and recovering x from (B_b+M+P)/A' never rerolls the
+original b. Consequently the existing norm attack's one-trial IID population
+lower bound transfers to UNIFORM native targets plus independent kernel masks,
+when its explicit degree and field hypotheses hold. For the above support,
+D72 and K96 meet those hypotheses; the exact lower bound I_p(72)/p^72 is
+saved. The seeded fixed-input witness did NOT execute that population process.
+
+For a FIXED b, random M reaches only p^K shifts, not p^L; it is not IID.
+Also E_b[q(b)]>=1/poly does NOT prove high-probability success on most b,
+nor justify replacing E_b[(1-q(b))^T] by (1-E_b q(b))^T. This removes a claim
+of negligible classical population success but does not fully match the
+quantum mean bound. The distribution of q(b), rather than more finite seeds,
+is the next meaningful probability question. All source/IID/amplification
+gates remain explicit and independent review is pending.
+
+FOLLOW-UP: [native-variable masking](MOMENT_TARGET_MASKING.md) now BYPASSES
+that probability gap for certified splits, rather than claiming the old
+unmasked q(b) is well behaved. It reserves ORIGINAL coordinates, uses their
+exact MDS/Gauss near-uniform moment law, then applies a kernel mask and the
+existing norm solver to the residual target. At the same p61,L127,r31,
+reserving32 coordinates yields a local fixed-b floor>=0.0208117541, with two
+actual witnesses in6 attempts each. Its separate artifact and review-pending
+proof do not retroactively change the v5 unmasked protocol's status flags.
+
+Final resumed-pass verification:124 connected tests passed6.44s, including
+the existing OPI norm-attack tests and exhaustive bidirectional reduction /
+uniform-target-plus-mask checks. This is not the full repository suite.
+The live schema v5 binds the producer and three dependencies. Registry
+validation valid:true/issues:[], Python compilation, recursive site JavaScript
+syntax, site checks and whitespace checks pass. No commits or central claim
+promotions were made; unrelated concurrent arXiv-watch changes were preserved.

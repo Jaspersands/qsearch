@@ -1,0 +1,111 @@
+{
+  "status": "NONSPLIT_CLASS_THREE_CONSTRUCTIVE_DERIVATION_REVIEW_PENDING",
+  "prime": 47,
+  "quotient_dimension": 2,
+  "derived_dimension": 3,
+  "source_seed": 20261022,
+  "receiver_seed": 20261023,
+  "group": "free class-three Lie algebra on two generators, BCH group",
+  "split_over_derived_ideal": false,
+  "generator_fixture": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "learned_direction": [
+    24,
+    1
+  ],
+  "learned_normal_coordinate": [
+    25,
+    20,
+    15
+  ],
+  "recovered_log_generator": [
+    24,
+    1,
+    25,
+    2,
+    26
+  ],
+  "recovered_same_hidden_subgroup": true,
+  "original_coset_copies": 15226,
+  "quotient_erasure": {
+    "source_copies": 15200,
+    "zero_fourier_labels": 0,
+    "merges": {
+      "3": 3800,
+      "2": 38,
+      "1": 2
+    },
+    "single_active_merges": {
+      "3": 0,
+      "2": 0,
+      "1": 0
+    },
+    "max_equation_rank": {
+      "3": 3,
+      "2": 9,
+      "1": 18
+    },
+    "fourier_samples": [
+      [
+        0,
+        0
+      ],
+      [
+        28,
+        33
+      ]
+    ],
+    "max_final_phase_error": 6.21221602262305e-14
+  },
+  "known_quadratic_hpgp": {
+    "source_copies": 26,
+    "zero_coefficient_packets": 0,
+    "zero_equation_outputs": 0,
+    "equations": [
+      {
+        "remaining_dimension_before": 3,
+        "coefficients": [
+          8,
+          32,
+          31
+        ],
+        "value": 36
+      },
+      {
+        "remaining_dimension_before": 2,
+        "coefficients": [
+          30,
+          39
+        ],
+        "value": 10
+      },
+      {
+        "remaining_dimension_before": 1,
+        "coefficients": [
+          3
+        ],
+        "value": 45
+      }
+    ],
+    "quadratic_merges": 2,
+    "direct_linear_packets": 1
+  },
+  "new_phase_erasure_controller_changed": false,
+  "hidden_data_supplied_to_controllers": false,
+  "full_finite_generator_recovery_executed": true,
+  "compiled_quantum_algorithm_executed": false,
+  "novelty_established": false,
+  "external_problem_reduction_established": false,
+  "scope": "explicit adapted class-three Lie presentation, cyclic H outside derived ideal, p=11mod12 controller",
+  "not_claimed": [
+    "black-box group to Lie-presentation algorithm",
+    "arbitrary hidden subgroup reduction implemented",
+    "general nilpotent or DCP algorithm",
+    "classical runtime advantage from finite sparse simulation"
+  ]
+}

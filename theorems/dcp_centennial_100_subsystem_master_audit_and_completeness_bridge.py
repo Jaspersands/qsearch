@@ -1,15 +1,17 @@
 r"""
-Subsystem 150: Centennial 100-Verified-Subsystem Master Audit & Completeness Bridge.
+Subsystem 150: Centennial 100-Subsystem Integration & File-Presence Ledger Audit.
 
-Audits all 99 preceding verified subsystems in `.research_checkpoint.json` plus itself
-(100 verified subsystems in total) across the Quantum Algorithm Search repository:
-  1. Verifies that every preceding subsystem (99/99) has its reduction JSON certificate
-     present on disk in `research/reductions/<id>.json`, parses cleanly, and has a
-     deterministic 16-hex SHA-256 certificate digest.
-  2. Verifies that all 100 subsystems have their Python theorem module `theorems/<id>.py`
-     and unit test `tests/test_<id>.py` present on disk.
-  3. Synthesizes the 10-pillar mathematical taxonomy spanning all 100 verified subsystems,
-     confirming zero unverified novelty claims and 100% theorem-contract compliance.
+Audits the file-presence and JSON schema integration of the first 100 entries in
+`completed_subsystems` (as well as reporting the full 106-entry checkpoint length)
+in `.research_checkpoint.json`:
+  1. Verifies that all 99 preceding subsystems in the 100-subsystem centennial slice
+     have their reduction JSON file, Python module, and test file present on disk,
+     and records their deterministic 16-hex SHA-256 digests.
+  2. Explicitly separates integration/file-presence counts from mathematical proof
+     review: file existence and SHA-256 hashes do NOT certify mathematical correctness
+     or theorem claims (`independent_mathematical_review_certified_by_hashes = False`).
+  3. Verifies that none of the audited reduction records sets `accepted_speedup_candidate`
+     or `novelty_claim` to True.
 """
 
 from __future__ import annotations
@@ -20,17 +22,19 @@ from typing import Any, Dict, List
 
 
 def generate_dcp_centennial_100_subsystem_master_audit_and_completeness_certificate() -> Dict[str, Any]:
-    """Generate the Centennial 100-Verified-Subsystem Master Audit Certificate."""
+    """Generate the Centennial 100-Subsystem Integration & File-Presence Audit Certificate."""
     root = Path(__file__).resolve().parent.parent
     cp_path = root / ".research_checkpoint.json"
     cp = json.loads(cp_path.read_text())
-    completed: List[str] = cp["completed_subsystems"][:100]
+    all_completed: List[str] = cp["completed_subsystems"]
+    centennial_slice: List[str] = all_completed[:100]
 
     self_id = "dcp_centennial_100_subsystem_master_audit_and_completeness_bridge"
-    preceding = [s for s in completed if s != self_id]
+    preceding = [s for s in centennial_slice if s != self_id]
 
     verified_entries: List[Dict[str, Any]] = []
     all_files_present = True
+    no_novelty_or_speedup_overclaims = True
     for idx, sub_id in enumerate(preceding, start=1):
         thm_file = root / "theorems" / f"{sub_id}.py"
         tst_file = root / "tests" / f"test_{sub_id}.py"
@@ -38,6 +42,9 @@ def generate_dcp_centennial_100_subsystem_master_audit_and_completeness_certific
         if not (thm_file.exists() and tst_file.exists() and red_file.exists()):
             all_files_present = False
         raw = json.loads(red_file.read_text())
+        f_status = raw.get("falsification_status", {})
+        if f_status.get("accepted_speedup_candidate", False) or f_status.get("novelty_claim", False):
+            no_novelty_or_speedup_overclaims = False
         sha16 = hashlib.sha256(json.dumps(raw, sort_keys=True).encode("utf-8")).hexdigest()[:16]
         verified_entries.append({
             "index": idx,
@@ -62,9 +69,11 @@ def generate_dcp_centennial_100_subsystem_master_audit_and_completeness_certific
     }
 
     theorem_checks = {
-        "exact_100_verified_subsystems_in_checkpoint": bool(len(completed) == 100),
+        "exact_100_verified_subsystems_in_checkpoint": bool(
+            len(centennial_slice) == 100 and len(all_completed) >= 100
+        ),
         "all_99_preceding_reductions_and_tests_present_on_disk": bool(
-            len(verified_entries) == 99 and all_files_present
+            len(verified_entries) == 99 and all_files_present and no_novelty_or_speedup_overclaims
         ),
         "ten_pillar_taxonomy_sums_to_100": bool(sum(pillar_taxonomy.values()) == 100),
         "ledger_merkle_digest_nonempty_16_hex": bool(len(ledger_merkle_sha16) == 16),
@@ -74,8 +83,11 @@ def generate_dcp_centennial_100_subsystem_master_audit_and_completeness_certific
         "subsystem_id": self_id,
         "subsystem_number": 150,
         "domain": "centennial_100_subsystem_master_audit_and_completeness_ledger",
-        "total_verified_subsystems": len(completed),
+        "total_verified_subsystems": len(centennial_slice),
+        "total_checkpoint_subsystems": len(all_completed),
         "preceding_verified_count": len(verified_entries),
+        "integration_audit_only_not_proof_verification": True,
+        "independent_mathematical_review_certified_by_hashes": False,
         "ledger_merkle_sha256_16": ledger_merkle_sha16,
         "ten_pillar_taxonomy_counts": pillar_taxonomy,
         "preceding_ledger_sample_tail_10": verified_entries[-10:],

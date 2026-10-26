@@ -1,0 +1,104 @@
+{
+  "commuting_order_p_common_algebra_falsifier": {
+    "all_generators_order_dividing_p": true,
+    "common_algebra_dimension": 24,
+    "common_algebra_nilpotency_index": 9,
+    "dimension": 25,
+    "generators_commute": true,
+    "guard_passed": false,
+    "guard_status": "COMMON_ALGEBRA_INDEX_EXCEEDS_PRIME",
+    "individual_truncated_logs_additive": false,
+    "individual_x_fifth_power_zero": true,
+    "individual_y_fifth_power_zero": true,
+    "prime": 5,
+    "solver_fails_closed": true
+  },
+  "elementary_stabilizer_recovery_controls": {
+    "conjugated_ut4_f7": {
+      "all_recovered_elements_fix_moore_form": true,
+      "ambient_lie_dimension": 6,
+      "dimension": 4,
+      "nilpotency_index": 4,
+      "prime": 7,
+      "recovered_subgroup_order": 49,
+      "stabilizer_lie_dimension": 2,
+      "stabilizer_lie_is_subalgebra": true,
+      "status": "STABILIZER_GENERATORS_RECOVERED"
+    },
+    "five_block_ut10_f43_canonical_lie_basis": {
+      "all_180_exponentiated_generators_fix_moore_form": true,
+      "ambient_lie_dimension": 225,
+      "dimension": 50,
+      "prime": 43,
+      "proved_orbit_rank": 100000,
+      "stabilizer_lie_dimension": 180
+    },
+    "two_block_ut10_f43": {
+      "algebra_dimension": 90,
+      "all_generators_fix_moore_form": true,
+      "ambient_lie_dimension": 90,
+      "dimension": 20,
+      "nilpotency_index": 10,
+      "prime": 43,
+      "proved_orbit_rank": 100,
+      "stabilizer_lie_dimension": 72,
+      "stabilizer_lie_is_subalgebra": true,
+      "status": "STABILIZER_GENERATORS_RECOVERED"
+    },
+    "two_block_ut3_f5": {
+      "ambient_lie_dimension": 6,
+      "dimension": 6,
+      "group_order": 15625,
+      "matches_exact_stabilizer_subgroup": true,
+      "nilpotency_index": 3,
+      "orbit_rank": 9,
+      "prime": 5,
+      "recovered_subgroup_order": 25,
+      "stabilizer_lie_dimension": 2,
+      "status": "STABILIZER_GENERATORS_RECOVERED"
+    },
+    "ut3_f5": {
+      "all_generators_fix_moore_form": true,
+      "ambient_lie_dimension": 3,
+      "dimension": 3,
+      "group_order": 125,
+      "matches_exact_stabilizer_subgroup": true,
+      "nilpotency_index": 3,
+      "prime": 5,
+      "recovered_subgroup_order": 5,
+      "stabilizer_lie_dimension": 1,
+      "status": "STABILIZER_GENERATORS_RECOVERED"
+    }
+  },
+  "module": "theorems/moore_common_algebra_stabilizer_backend.py",
+  "polynomial_graph_vs_rees_cover_prior_art": {
+    "ambient_lie_dimension": 6,
+    "central_line_associated_graded_grade1_dim": 0,
+    "central_line_rees_grade1_dim": 1,
+    "naive_dilation_is_lie_automorphism": false,
+    "naive_dilation_on_bare_lie_algebra_failures": 8,
+    "nonhomogeneous_line_recovered_in_rees_grade1": true,
+    "prime": 7,
+    "prior_art_comparison": {
+      "abelian_polynomial_graph_tuple_evaluation_scope": "Abelian shift groups F_q^{m+k} where tuple evaluation linearizes polynomial graphs (Childs-Schulman-Vazirani 2007; Decker-Draisma-Wocjan 2009)",
+      "rees_cover_nonabelian_homogenization_scope": "Nonabelian exponent-p Lazard groups exp(L) of class c < p where bare scalar dilation is not a homomorphism and associated graded loses derived directions in grade 1, whereas A = sum_{r=1}^c t^r gamma_r(L) provides exact Lie evaluation homomorphisms E_s : A -> L and retains all of L in A_1 = t L"
+    },
+    "rees_cover_dimension": 10,
+    "rees_evaluation_homomorphism_failures": 0,
+    "rees_evaluations_are_exact_lie_homomorphisms": true
+  },
+  "schema_version": "moore_common_algebra_stabilizer_backend_v1",
+  "scope": {
+    "accepted_speedup_candidate": false,
+    "common_j_nilpotency_guard_enforced": true,
+    "elementary_common_algebra_backend_executed": true,
+    "formal_proof_verified": false,
+    "general_luks_group_stabilizer_implemented": false,
+    "independently_reviewed": false,
+    "novelty_claim": false,
+    "public_circuit_required": true,
+    "quantum_copies_only_covered": false,
+    "speedup_claim_allowed": false,
+    "weak_order_p_or_abstract_class_guard_rejected": true
+  }
+}

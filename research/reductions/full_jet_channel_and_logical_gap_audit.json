@@ -1,0 +1,99 @@
+{
+  "schema_version": "full_jet_channel_and_logical_gap_audit_v1",
+  "module": "theorems/full_jet_channel_and_logical_gap_audit.py",
+  "scope": {
+    "class_three_partial_fourier_density_verified": true,
+    "full_jet_alignment_spectator_density_verified": true,
+    "full_taylor_transport_mixed_branch_density_verified": true,
+    "population_singular_value_gap_bound_verified": true,
+    "access_matched_classical_and_pauli_baselines_audited": true,
+    "admitted_logical_gate_speedup_candidate": false,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "class_three_partial_fourier_density": {
+    "p": 5,
+    "unitarity_frobenius_error": 6.806380765432592e-15,
+    "max_sector_action_frobenius_error": 3.3932577746994533e-15,
+    "max_cross_sector_frobenius_error": 1.316917730860316e-15,
+    "sector_marginal_probabilities": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "max_nonzero_lambda_mu_traced_frobenius_norm": 4.4162340946138805e-16
+  },
+  "full_jet_alignment_spectator_density": {
+    "p": 5,
+    "degree": 2,
+    "class_two_carrier_width_R": 8,
+    "class_two_jet_width_J": 6,
+    "scalar_split_carrier_width_R": 4,
+    "scalar_split_jet_width_J": 3,
+    "scalar_split_spectator_width_S": 1,
+    "includes_top_degree_k_eq_D": true,
+    "spectator_branch_traces": [
+      0.19999999999999996,
+      0.19999999999999996,
+      0.19999999999999996,
+      0.19999999999999996,
+      0.19999999999999996
+    ],
+    "max_spectator_branch_frobenius_error": 0.0
+  },
+  "full_taylor_transport_mixed_branch_density": {
+    "p": 5,
+    "degree": 2,
+    "hilbert_dim_V_times_J": 625,
+    "mixed_branch_frobenius_error": 3.250701292686016e-23,
+    "max_fourier_residual_frobenius_error": 1.8558551796703594e-17,
+    "max_residual_polynomial_degree": 2,
+    "attains_top_degree_D_on_k_eq_D_fourier_character": true
+  },
+  "logical_gate_population_gap_and_baseline_audit": {
+    "p": 5,
+    "marked_vs_balanced_population_gap_table": [
+      {
+        "logical_dim_d": 4,
+        "marked_exact_gamma": 0.139255338157,
+        "marked_population_bound": 0.097169485166,
+        "marked_choi_copy_lower_bound_2_3": 1,
+        "balanced_exact_gamma": 0.190983005625,
+        "balanced_population_bound": 0.086372875703,
+        "balanced_bound_satisfied": true,
+        "classical_basis_tomography_forward_calls": 4
+      },
+      {
+        "logical_dim_d": 8,
+        "marked_exact_gamma": 0.07867081479,
+        "marked_population_bound": 0.06612923296,
+        "marked_choi_copy_lower_bound_2_3": 1,
+        "balanced_exact_gamma": 0.190983005625,
+        "balanced_population_bound": 0.086372875703,
+        "balanced_bound_satisfied": true,
+        "classical_basis_tomography_forward_calls": 8
+      },
+      {
+        "logical_dim_d": 16,
+        "marked_exact_gamma": 0.041341860188,
+        "marked_population_bound": 0.037956830143,
+        "marked_choi_copy_lower_bound_2_3": 1,
+        "balanced_exact_gamma": 0.190983005625,
+        "balanced_population_bound": 0.086372875703,
+        "balanced_bound_satisfied": true,
+        "classical_basis_tomography_forward_calls": 16
+      }
+    ],
+    "conjugated_pauli_heisenberg_nilpotency_class": 2,
+    "pauli_conjugation_raises_nilpotency_class": false,
+    "nonnormal_diagonal_fiber_particular": [
+      1,
+      2,
+      3
+    ],
+    "nonnormal_diagonal_fiber_vertical_kernel_dim": 1
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "scope": "Exact rational probability calculations, not Markov-chain runs or new witnesses",
+  "bounds": "Multiply native probability by lambda_b; Gibbs baseline by lambda_b/Lambda_M; TV tail by (1+eta)/(1-eta). Log2 upper bounds are exact outward integer bounds.",
+  "tiny_F8_target_0101_native_probability": [
+    65,
+    192
+  ],
+  "cases": [
+    {
+      "n": 17,
+      "N": 289,
+      "K": 36,
+      "M": 12,
+      "native_probability_divided_by_lambda_log2_upper": -39,
+      "ideal_gibbs_baseline_log2_upper": -33,
+      "relative_witness_ratio_divided_by_Lambda_log2_upper": -6,
+      "discarded_binomial_mass_log2_upper": -3
+    },
+    {
+      "n": 31,
+      "N": 961,
+      "K": 120,
+      "M": 12,
+      "native_probability_divided_by_lambda_log2_upper": -127,
+      "ideal_gibbs_baseline_log2_upper": -110,
+      "relative_witness_ratio_divided_by_Lambda_log2_upper": -17,
+      "discarded_binomial_mass_log2_upper": -7
+    },
+    {
+      "n": 61,
+      "N": 3721,
+      "K": 465,
+      "M": 12,
+      "native_probability_divided_by_lambda_log2_upper": -487,
+      "ideal_gibbs_baseline_log2_upper": -429,
+      "relative_witness_ratio_divided_by_Lambda_log2_upper": -57,
+      "discarded_binomial_mass_log2_upper": -22
+    }
+  ]
+}

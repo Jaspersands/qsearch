@@ -1,0 +1,137 @@
+{
+  "black_box_presentation_acquisition_executed": false,
+  "cases_executed": [
+    {
+      "dispatched_case": "TRIVIAL",
+      "expected_case": "TRIVIAL",
+      "generator_fixture": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "hpgp_copies": 0,
+      "normal_samples": 5,
+      "oracle_calls_consumed": 9560,
+      "public_setup_collection_calls": 1847,
+      "quotient_erasure_copies": 9555,
+      "quotient_erasure_outputs": 5,
+      "recovered_exact_subgroup": true,
+      "returned_generators": [],
+      "status": "SUCCESS"
+    },
+    {
+      "dispatched_case": "NORMAL_CYCLIC",
+      "expected_case": "NORMAL_CYCLIC",
+      "generator_fixture": [
+        0,
+        2,
+        0,
+        5
+      ],
+      "hpgp_copies": 0,
+      "normal_samples": 5,
+      "oracle_calls_consumed": 5,
+      "public_setup_collection_calls": 1847,
+      "quotient_erasure_copies": 0,
+      "quotient_erasure_outputs": 0,
+      "recovered_exact_subgroup": true,
+      "returned_generators": [
+        [
+          0,
+          7,
+          0,
+          1
+        ]
+      ],
+      "status": "SUCCESS"
+    },
+    {
+      "dispatched_case": "TRANSVERSE_CYCLIC",
+      "expected_case": "TRANSVERSE_CYCLIC",
+      "generator_fixture": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "hpgp_copies": 7,
+      "normal_samples": 5,
+      "oracle_calls_consumed": 9567,
+      "public_setup_collection_calls": 1847,
+      "quotient_erasure_copies": 9555,
+      "quotient_erasure_outputs": 5,
+      "recovered_exact_subgroup": true,
+      "returned_generators": [
+        [
+          6,
+          10,
+          1,
+          8
+        ]
+      ],
+      "status": "SUCCESS"
+    },
+    {
+      "dispatched_case": "ABELIAN_TRIVIAL",
+      "expected_case": "ABELIAN_TRIVIAL",
+      "generator_fixture": [
+        0,
+        0,
+        0
+      ],
+      "hpgp_copies": 0,
+      "normal_samples": 6,
+      "oracle_calls_consumed": 6,
+      "public_setup_collection_calls": 729,
+      "quotient_erasure_copies": 0,
+      "quotient_erasure_outputs": 0,
+      "recovered_exact_subgroup": true,
+      "returned_generators": [],
+      "status": "SUCCESS"
+    },
+    {
+      "dispatched_case": "ABELIAN_CYCLIC",
+      "expected_case": "ABELIAN_CYCLIC",
+      "generator_fixture": [
+        2,
+        5,
+        7
+      ],
+      "hpgp_copies": 0,
+      "normal_samples": 6,
+      "oracle_calls_consumed": 6,
+      "public_setup_collection_calls": 729,
+      "quotient_erasure_copies": 0,
+      "quotient_erasure_outputs": 0,
+      "recovered_exact_subgroup": true,
+      "returned_generators": [
+        [
+          5,
+          7,
+          1
+        ]
+      ],
+      "status": "SUCCESS"
+    }
+  ],
+  "full_nil3_hsp_claim_admitted": false,
+  "full_rank_m_permitted_for_trivial_H": true,
+  "general_prime_sde_backend_executed": false,
+  "id": "NIL3-GUARDED-CYCLIC-DISPATCH",
+  "ideal_learned_direction_injected": false,
+  "incomplete_rank_recorded_as_failure": true,
+  "iss_outer_normalizer_recursion_executed": false,
+  "large_prime_127bit_backend_control": {
+    "conic_attempt_cap": 128,
+    "conic_failure_dyadic_upper_bound": "1/340282366920938463463374607431768211456",
+    "conic_failure_exact_16_trials": "7524389324549354450012295667238056649073480949305225858041149133580740788020062117581914761729229193286493480793028416066985124483488984672619015653316004575496647910844273432395527101552272871796776532894714312666149207059724303953184077601972100670432156616741295814929336841687739481817156257769346629621607023183432963233015788252425425213210303385964877284813793151014994568420391053703344695413474835139790083270120575402537311387299751469810357254101094846780711823319293422255609479318060481665914085456361754273978363789394048089133454697219509061316759787842010233871668293726217611029335024599041/493118378773666493236005808848113280600052276976474479784474331501103761280818137916086529791702846444559690471477916069237852996165386663670676758513851620448387285390984731674280525683635763800915309305873416683399682094297871094220681792266955430899619848317161878987670112205901779677107537029176811040697885173551899124035673115678365961897330076101591735816009220770444497451864651784445120420900095573083727246910513166493307055179485423110225656941706582111694893153823377992846098595485056766215465641469570376565275328822535648411661788051942517854077481008605781225138412302215956326258260912856104961",
+    "prime_bits": 127,
+    "rank_tested": 3,
+    "square_relation_verified": true
+  },
+  "novelty_established": false,
+  "prime": 11,
+  "status": "standalone-guarded-cyclic-dispatch-executed-review-pending",
+  "stops_at_m_minus_one_on_trivial_H": false
+}

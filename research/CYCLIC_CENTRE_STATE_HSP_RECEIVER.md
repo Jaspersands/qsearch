@@ -6,6 +6,14 @@ Shor-level algorithm, novelty claim, general central-extension solver,
 DHSP solver or new classical-hardness separation. Independent human review
 and a broader priority search remain required.
 
+2026-10-21 scope update: STATE_SYMMETRY_COSET_TRANSFER.md gives a separate
+tensor-amplified source reduction to ordinary restricted coset states,
+using the same strict global gap and IID copies/controlled action. With
+the KNOWN nil-2 solver it removes this construction's polynomial-in-p
+sector-bucketing bottleneck at the written asymptotic level. No native
+implementation or new nil-2 novelty follows. Do not extend this older
+p-copy construction merely to obtain a growing-prime scope claim.
+
 ## A Different Constructive Target
 
 [Holt--Subramanian v1](https://arxiv.org/html/2609.38085v1) supplies projective

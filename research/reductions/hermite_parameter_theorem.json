@@ -1,0 +1,548 @@
+{
+  "status": "UNIFORM_PARAMETER_THEOREM_REVIEW_PENDING",
+  "arithmetic_only_examples": [
+    {
+      "status": "FINITE_ARITHMETIC_VERIFIED_GENERAL_PROOF_REVIEW_PENDING",
+      "q": 15932207,
+      "ell": 2304,
+      "m": 3,
+      "parameters": {
+        "p": 15932207,
+        "n": 15932206,
+        "ell": 2304,
+        "k": 18353901312,
+        "order": 22,
+        "radius": 7302263,
+        "a": 750141355,
+        "identity_degree": 19104042666,
+        "constraints": 36357294092,
+        "unknowns": 36357294108,
+        "kernel_dimension_bound": 25344,
+        "unique_decoding_radius": 3983051
+      },
+      "lambda": {
+        "numerator": "5",
+        "denominator": "12",
+        "float": 0.4166666666666667
+      },
+      "tau": {
+        "numerator": "11",
+        "denominator": "24",
+        "float": 0.4583333333333333
+      },
+      "target": {
+        "numerator": "8",
+        "denominator": "9",
+        "float": 0.8888888888888888
+      },
+      "source_cap": 7302261,
+      "strict_guarded_root_slack": 589487260,
+      "affine_dimension_upper": 25344,
+      "pins": 202944,
+      "security_bits": 24,
+      "pin_sampler_trials_per_draw": 42,
+      "pin_score_loss": {
+        "numerator": "101472",
+        "denominator": "7966103",
+        "float": 0.012737972381225801
+      },
+      "source_tail_and_pin_failure_each_upper": {
+        "numerator": "1",
+        "denominator": "16777216",
+        "float": 5.960464477539063e-08
+      },
+      "pin_sampler_abort_upper": {
+        "numerator": "3171",
+        "denominator": "68719476736",
+        "float": 4.614412318915129e-08
+      },
+      "required_total_synthesis_tv": {
+        "numerator": "1",
+        "denominator": "16777216",
+        "float": 5.960464477539063e-08
+      },
+      "score_gap_lower": {
+        "numerator": "772022190869143",
+        "denominator": "9138067342511112",
+        "float": 0.0844841870750532
+      },
+      "accepted_bad_joint_upper": {
+        "numerator": "1476498750501735544785641591553",
+        "denominator": "39060652896707639071326178800369664",
+        "float": 3.780015542510779e-05
+      },
+      "unconditional_failure_upper": {
+        "numerator": "1557435000136829948271557843866505619",
+        "denominator": "40958063171818109346854919261776420798464",
+        "float": 3.8025113482623115e-05
+      },
+      "uniform_failure_upper_22m4_over_n": {
+        "numerator": "891",
+        "denominator": "7966103",
+        "float": 0.00011184891784602835
+      },
+      "checks": {
+        "strict_guarded_root_bound": true,
+        "small_characteristic_order": true,
+        "nonnegative_unclamped_interpolation_budget": true,
+        "finite_multiplicity_penalty": true,
+        "two_block_guard_penalty": true,
+        "pin_count_within_population": true,
+        "pin_score_loss": true,
+        "finite_alphabet_loss": true,
+        "source_tail_exponent": true,
+        "pin_chernoff_budget": true,
+        "pin_sampler_abort_budget": true,
+        "inverse_n_failure_budget": true,
+        "positive_score_gap": true,
+        "unconditional_failure_upper": true,
+        "at_least_99_percent_success": true
+      },
+      "issues": [],
+      "finite_parameter_conditions_verified": true,
+      "module_rank": 24,
+      "uniform_module_basis_coefficient_upper": 31513648553280,
+      "uniform_reduced_echelon_coefficient_upper": 642343680,
+      "reversible_space": "O(m^2*q*ell*log(q)*log(q*ell)); absolute constants",
+      "preprocessing_update_postprocessing_time": "poly(q,ell,m); fixed polynomial degree",
+      "total_time_includes_full_stream": true,
+      "native_decoder_or_quantum_execution": false,
+      "new_quantum_algorithm_claim_allowed": false
+    },
+    {
+      "status": "FINITE_ARITHMETIC_VERIFIED_GENERAL_PROOF_REVIEW_PENDING",
+      "q": 67125263,
+      "ell": 4096,
+      "m": 4,
+      "parameters": {
+        "p": 67125263,
+        "n": 67125262,
+        "ell": 4096,
+        "k": 137472536576,
+        "order": 30,
+        "radius": 31464968,
+        "a": 4233086820,
+        "identity_degree": 141705623395,
+        "constraints": 272931315292,
+        "unknowns": 272931315312,
+        "kernel_dimension_bound": 61440,
+        "unique_decoding_radius": 16781315
+      },
+      "lambda": {
+        "numerator": "7",
+        "denominator": "16",
+        "float": 0.4375
+      },
+      "tau": {
+        "numerator": "15",
+        "denominator": "32",
+        "float": 0.46875
+      },
+      "target": {
+        "numerator": "15",
+        "denominator": "16",
+        "float": 0.9375
+      },
+      "source_cap": 31464966,
+      "strict_guarded_root_slack": 3289132009,
+      "affine_dimension_upper": 61440,
+      "pins": 491736,
+      "security_bits": 27,
+      "pin_sampler_trials_per_draw": 46,
+      "pin_score_loss": {
+        "numerator": "245868",
+        "denominator": "33562631",
+        "float": 0.007325647384437769
+      },
+      "source_tail_and_pin_failure_each_upper": {
+        "numerator": "1",
+        "denominator": "134217728",
+        "float": 7.450580596923828e-09
+      },
+      "pin_sampler_abort_upper": {
+        "numerator": "61467",
+        "denominator": "8796093022208",
+        "float": 6.9879888542345725e-09
+      },
+      "required_total_synthesis_tv": {
+        "numerator": "1",
+        "denominator": "134217728",
+        "float": 7.450580596923828e-09
+      },
+      "score_gap_lower": {
+        "numerator": "13657792601011551",
+        "denominator": "288371255404409984",
+        "float": 0.04736183771804146
+      },
+      "accepted_bad_joint_upper": {
+        "numerator": "6344140473814280032376600488721",
+        "denominator": "382024291803639536692568955751630848",
+        "float": 1.6606641540677647e-05
+      },
+      "unconditional_failure_upper": {
+        "numerator": "27296015953482601469105007136186773846491",
+        "denominator": "1640781839574192663867175671178125590824747008",
+        "float": 1.6635981271322653e-05
+      },
+      "uniform_failure_upper_22m4_over_n": {
+        "numerator": "2816",
+        "denominator": "33562631",
+        "float": 8.39028382488846e-05
+      },
+      "checks": {
+        "strict_guarded_root_bound": true,
+        "small_characteristic_order": true,
+        "nonnegative_unclamped_interpolation_budget": true,
+        "finite_multiplicity_penalty": true,
+        "two_block_guard_penalty": true,
+        "pin_count_within_population": true,
+        "pin_score_loss": true,
+        "finite_alphabet_loss": true,
+        "source_tail_exponent": true,
+        "pin_chernoff_budget": true,
+        "pin_sampler_abort_budget": true,
+        "inverse_n_failure_budget": true,
+        "positive_score_gap": true,
+        "unconditional_failure_upper": true,
+        "at_least_99_percent_success": true
+      },
+      "issues": [],
+      "finite_parameter_conditions_verified": true,
+      "module_rank": 32,
+      "uniform_module_basis_coefficient_upper": 420253544313856,
+      "uniform_reduced_echelon_coefficient_upper": 3774935040,
+      "reversible_space": "O(m^2*q*ell*log(q)*log(q*ell)); absolute constants",
+      "preprocessing_update_postprocessing_time": "poly(q,ell,m); fixed polynomial degree",
+      "total_time_includes_full_stream": true,
+      "native_decoder_or_quantum_execution": false,
+      "new_quantum_algorithm_claim_allowed": false
+    },
+    {
+      "status": "FINITE_ARITHMETIC_VERIFIED_GENERAL_PROOF_REVIEW_PENDING",
+      "q": 6553856017,
+      "ell": 25600,
+      "m": 10,
+      "parameters": {
+        "p": 6553856017,
+        "n": 6553856016,
+        "ell": 25600,
+        "k": 83889357004800,
+        "order": 78,
+        "radius": 3195004809,
+        "a": 1042226952905,
+        "identity_degree": 84931583957704,
+        "constraints": 167267513240352,
+        "unknowns": 167267513240360,
+        "kernel_dimension_bound": 998400,
+        "unique_decoding_radius": 1638464004
+      },
+      "lambda": {
+        "numerator": "19",
+        "denominator": "40",
+        "float": 0.475
+      },
+      "tau": {
+        "numerator": "39",
+        "denominator": "80",
+        "float": 0.4875
+      },
+      "target": {
+        "numerator": "99",
+        "denominator": "100",
+        "float": 0.99
+      },
+      "source_cap": 3195004807,
+      "strict_guarded_root_slack": 793016547350,
+      "affine_dimension_upper": 998400,
+      "pins": 7987464,
+      "security_bits": 33,
+      "pin_sampler_trials_per_draw": 56,
+      "pin_score_loss": {
+        "numerator": "36979",
+        "denominator": "30341926",
+        "float": 0.0012187426730920115
+      },
+      "source_tail_and_pin_failure_each_upper": {
+        "numerator": "1",
+        "denominator": "8589934592",
+        "float": 1.1641532182693481e-10
+      },
+      "pin_sampler_abort_upper": {
+        "numerator": "998433",
+        "denominator": "9007199254740992",
+        "float": 1.1084833051455689e-10
+      },
+      "required_total_synthesis_tv": {
+        "numerator": "1",
+        "denominator": "8589934592",
+        "float": 1.1641532182693481e-10
+      },
+      "score_gap_lower": {
+        "numerator": "599056121190812997",
+        "denominator": "79542645712987496800",
+        "float": 0.007531257174326058
+      },
+      "accepted_bad_joint_upper": {
+        "numerator": "194157764536078263758773642064958471875",
+        "denominator": "20320233468360213972585251273706138224295936",
+        "float": 9.55489831543487e-06
+      },
+      "unconditional_failure_upper": {
+        "numerator": "833941403556152161028602472519398622178062165123",
+        "denominator": "87274738193691769759815894792510208387806557745709056",
+        "float": 9.555358409730865e-06
+      },
+      "uniform_failure_upper_22m4_over_n": {
+        "numerator": "13750",
+        "denominator": "409616001",
+        "float": 3.35680246045857e-05
+      },
+      "checks": {
+        "strict_guarded_root_bound": true,
+        "small_characteristic_order": true,
+        "nonnegative_unclamped_interpolation_budget": true,
+        "finite_multiplicity_penalty": true,
+        "two_block_guard_penalty": true,
+        "pin_count_within_population": true,
+        "pin_score_loss": true,
+        "finite_alphabet_loss": true,
+        "source_tail_exponent": true,
+        "pin_chernoff_budget": true,
+        "pin_sampler_abort_budget": true,
+        "inverse_n_failure_budget": true,
+        "positive_score_gap": true,
+        "unconditional_failure_upper": true,
+        "at_least_99_percent_success": true
+      },
+      "issues": [],
+      "finite_parameter_conditions_verified": true,
+      "module_rank": 80,
+      "uniform_module_basis_coefficient_upper": 1607403969568979200,
+      "uniform_reduced_echelon_coefficient_upper": 996803558400,
+      "reversible_space": "O(m^2*q*ell*log(q)*log(q*ell)); absolute constants",
+      "preprocessing_update_postprocessing_time": "poly(q,ell,m); fixed polynomial degree",
+      "total_time_includes_full_stream": true,
+      "native_decoder_or_quantum_execution": false,
+      "new_quantum_algorithm_claim_allowed": false
+    },
+    {
+      "status": "FINITE_ARITHMETIC_VERIFIED_GENERAL_PROOF_REVIEW_PENDING",
+      "q": 655360256000011,
+      "ell": 2560000,
+      "m": 100,
+      "parameters": {
+        "p": 655360256000011,
+        "n": 655360256000010,
+        "ell": 2560000,
+        "k": 838861127680012800000,
+        "order": 798,
+        "radius": 326860927680006,
+        "a": 1047922687744655591,
+        "identity_degree": 839909050367757455590,
+        "constraints": 1677199277875737592020,
+        "unknowns": 1677199277875737592400,
+        "kernel_dimension_bound": 1021440000,
+        "unique_decoding_radius": 163840064000002
+      },
+      "lambda": {
+        "numerator": "199",
+        "denominator": "400",
+        "float": 0.4975
+      },
+      "tau": {
+        "numerator": "399",
+        "denominator": "800",
+        "float": 0.49875
+      },
+      "target": {
+        "numerator": "9999",
+        "denominator": "10000",
+        "float": 0.9999
+      },
+      "source_cap": 326860927680004,
+      "strict_guarded_root_slack": 787087667453421218,
+      "affine_dimension_upper": 1021440000,
+      "pins": 8171520400,
+      "security_bits": 50,
+      "pin_sampler_trials_per_draw": 83,
+      "pin_score_loss": {
+        "numerator": "817152040",
+        "denominator": "65536025600001",
+        "float": 1.2468745739747567e-05
+      },
+      "source_tail_and_pin_failure_each_upper": {
+        "numerator": "1",
+        "denominator": "1125899906842624",
+        "float": 8.881784197001252e-16
+      },
+      "pin_sampler_abort_upper": {
+        "numerator": "510720025",
+        "denominator": "604462909807314587353088",
+        "float": 8.449154062451952e-16
+      },
+      "required_total_synthesis_tv": {
+        "numerator": "1",
+        "denominator": "1125899906842624",
+        "float": 8.881784197001252e-16
+      },
+      "score_gap_lower": {
+        "numerator": "257805627985810128653967920077",
+        "denominator": "3435976521155194388523008000880000",
+        "float": 7.503125425872655e-05
+      },
+      "accepted_bad_joint_upper": {
+        "numerator": "875319752529515957170456212248254692856219344456002804527265625",
+        "denominator": "1141838389966643102615932154558325982094743652466064033835133945511936",
+        "float": 7.66588126849621e-07
+      },
+      "unconditional_failure_upper": {
+        "numerator": "30797576010694547617591472967800301133704510094328429378330174653356518419969",
+        "denominator": "40174866777899226371189970144320122205012013554444982478141339662362305311908298752",
+        "float": 7.665881303590716e-07
+      },
+      "uniform_failure_upper_22m4_over_n": {
+        "numerator": "20000000",
+        "denominator": "5957820509091",
+        "float": 3.356932282448276e-06
+      },
+      "checks": {
+        "strict_guarded_root_bound": true,
+        "small_characteristic_order": true,
+        "nonnegative_unclamped_interpolation_budget": true,
+        "finite_multiplicity_penalty": true,
+        "two_block_guard_penalty": true,
+        "pin_count_within_population": true,
+        "pin_score_loss": true,
+        "finite_alphabet_loss": true,
+        "source_tail_exponent": true,
+        "pin_chernoff_budget": true,
+        "pin_sampler_abort_budget": true,
+        "inverse_n_failure_budget": true,
+        "positive_score_gap": true,
+        "unconditional_failure_upper": true,
+        "at_least_99_percent_success": true
+      },
+      "issues": [],
+      "finite_parameter_conditions_verified": true,
+      "module_rank": 800,
+      "uniform_module_basis_coefficient_upper": 1610278659555680250893440000,
+      "uniform_reduced_echelon_coefficient_upper": 1043339674621440000,
+      "reversible_space": "O(m^2*q*ell*log(q)*log(q*ell)); absolute constants",
+      "preprocessing_update_postprocessing_time": "poly(q,ell,m); fixed polynomial degree",
+      "total_time_includes_full_stream": true,
+      "native_decoder_or_quantum_execution": false,
+      "new_quantum_algorithm_claim_allowed": false
+    }
+  ],
+  "outside_scope_controls": [
+    {
+      "status": "OUTSIDE_SUFFICIENT_REGION_NOT_A_NO_GO",
+      "q": 6553856017,
+      "ell": 1,
+      "m": 10,
+      "issues": [
+        "MULTIPLICITY_BELOW_SUFFICIENT_REGION"
+      ],
+      "finite_parameter_conditions_verified": false,
+      "new_quantum_algorithm_claim_allowed": false
+    },
+    {
+      "status": "OUTSIDE_SUFFICIENT_REGION_NOT_A_NO_GO",
+      "q": 1000000007,
+      "ell": 25600,
+      "m": 10,
+      "issues": [
+        "FIELD_BELOW_SUFFICIENT_REGION"
+      ],
+      "finite_parameter_conditions_verified": false,
+      "new_quantum_algorithm_claim_allowed": false
+    }
+  ],
+  "growing_families": [
+    {
+      "ell": "floor(q^a)",
+      "m": "floor(q^(a/4))",
+      "a": {
+        "numerator": "1",
+        "denominator": "4",
+        "float": 0.25
+      },
+      "multiplicity_condition_margin_exponent": {
+        "numerator": "1",
+        "denominator": "8",
+        "float": 0.125
+      },
+      "field_condition_margin_exponent": {
+        "numerator": "9",
+        "denominator": "16",
+        "float": 0.5625
+      },
+      "target_shortfall_exponent": {
+        "numerator": "-1",
+        "denominator": "8",
+        "float": -0.125
+      },
+      "failure_upper_exponent": {
+        "numerator": "-3",
+        "denominator": "4",
+        "float": -0.75
+      },
+      "quantum_space_power_of_q_excluding_logs": {
+        "numerator": "11",
+        "denominator": "8",
+        "float": 1.375
+      },
+      "scope": "asymptotic arithmetic exponents, not an executed family",
+      "polylog_N_total_runtime_claim": false,
+      "classical_comparison_requires_unknown_external_constant": true
+    },
+    {
+      "ell": "floor(q^a)",
+      "m": "floor(q^(a/4))",
+      "a": {
+        "numerator": "1",
+        "denominator": "2",
+        "float": 0.5
+      },
+      "multiplicity_condition_margin_exponent": {
+        "numerator": "1",
+        "denominator": "4",
+        "float": 0.25
+      },
+      "field_condition_margin_exponent": {
+        "numerator": "1",
+        "denominator": "8",
+        "float": 0.125
+      },
+      "target_shortfall_exponent": {
+        "numerator": "-1",
+        "denominator": "4",
+        "float": -0.25
+      },
+      "failure_upper_exponent": {
+        "numerator": "-1",
+        "denominator": "2",
+        "float": -0.5
+      },
+      "quantum_space_power_of_q_excluding_logs": {
+        "numerator": "7",
+        "denominator": "4",
+        "float": 1.75
+      },
+      "scope": "asymptotic arithmetic exponents, not an executed family",
+      "polylog_N_total_runtime_claim": false,
+      "classical_comparison_requires_unknown_external_constant": true
+    }
+  ],
+  "classical_comparison": {
+    "source": "https://arxiv.org/html/2610.01902v1",
+    "target": "FIXED alpha_c in (3/4,1), not the growing quantum target",
+    "kappa": "(4*alpha_c-3)/(4*alpha_c-2)",
+    "external_constant": "C_alpha_c > 0, unknown and not fitted",
+    "sufficient_exponent_choice": "0 < a <= min(1/2,kappa/(4*C_alpha_c))",
+    "asymptotic_classical_space_pass_product": ">= N^(kappa/2), conditional on the published lower bound",
+    "numerical_classical_separation_certified": false
+  },
+  "uniformity_proof_in": "research/HERMITE_PARAMETER_THEOREM.md",
+  "new_quantum_algorithm_claim_allowed": false
+}

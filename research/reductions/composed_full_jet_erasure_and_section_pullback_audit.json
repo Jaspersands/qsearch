@@ -1,0 +1,77 @@
+{
+  "schema_version": "composed_full_jet_erasure_and_section_pullback_audit_v1",
+  "module": "theorems/composed_full_jet_erasure_and_section_pullback_audit.py",
+  "scope": {
+    "composed_degree_reduced_branch_verified": true,
+    "terminal_kernel_unit_character_cancellation_verified": true,
+    "terminal_kernel_nonunit_character_falsified": true,
+    "non_homomorphic_section_pullback_invariance_verified": true,
+    "erroneous_k_section_pullback_falsified": true,
+    "twisted_section_character_covariance_verified": true,
+    "adaptive_across_step_additive_within_tree_multiplicative_verified": true,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "composed_degree_reduced_branch_and_terminal_kernel": {
+    "p": 5,
+    "degree": 2,
+    "hilbert_dim_V_times_J": 625,
+    "degree_reduced_branch_frobenius_error": 4.126297102472334e-23,
+    "merged_weighted_degree_after_stage2": 1,
+    "terminal_weighted_degree_after_stage1": 0,
+    "terminal_constant_residual_value_mod_p": 3,
+    "terminal_kernel_unit_character_frobenius_error": 1.3702604499570363e-18,
+    "terminal_kernel_nonunit_character_frobenius_error": 0.92936575
+  },
+  "non_homomorphic_section_pullback_audit": {
+    "p": 11,
+    "non_homomorphic_section_pairs_out_of_25": 23,
+    "valid_k_in_h_right_invariance_checks": 30,
+    "violated_k_not_in_h_mismatches_out_of_30": 24
+  },
+  "twisted_section_character_covariance_audit": {
+    "p": 11,
+    "valid_character_covariance_trials": 25,
+    "mislearned_character_mismatches_out_of_25": 25
+  },
+  "adaptive_recursion_resource_composition_ledger": {
+    "p": 19,
+    "per_step_tree_budgets": [
+      {
+        "step": 1,
+        "ambient_class": 6,
+        "jet_degree_D": 4,
+        "weighted_degree_e": 12,
+        "matrix_batch_sources_b0": 607,
+        "log2_total_matrix_leaves_M": 36530.82,
+        "log2_raw_queries_upper_bound": 36555.22,
+        "reversible_lift_gates_per_b0_batch": 50988
+      },
+      {
+        "step": 2,
+        "ambient_class": 5,
+        "jet_degree_D": 3,
+        "weighted_degree_e": 9,
+        "matrix_batch_sources_b0": 112,
+        "log2_total_matrix_leaves_M": 10947.16,
+        "log2_raw_queries_upper_bound": 10967.38,
+        "reversible_lift_gates_per_b0_batch": 7616
+      },
+      {
+        "step": 3,
+        "ambient_class": 4,
+        "jet_degree_D": 2,
+        "weighted_degree_e": 6,
+        "matrix_batch_sources_b0": 32,
+        "log2_total_matrix_leaves_M": 2338.99,
+        "log2_raw_queries_upper_bound": 2355.19,
+        "reversible_lift_gates_per_b0_batch": 1792
+      }
+    ],
+    "total_b0_sources_across_steps": 751,
+    "additive_across_steps_log2_queries_bound": 36556.805,
+    "forbid_across_step_product_log2_queries": 49877.79,
+    "total_reversible_lift_overhead_gates_per_b0_batch": 60396
+  }
+}

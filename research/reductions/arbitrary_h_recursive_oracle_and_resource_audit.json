@@ -1,0 +1,181 @@
+{
+  "schema_version": "arbitrary_h_recursive_oracle_and_resource_audit_v1",
+  "module": "theorems/arbitrary_h_recursive_oracle_and_resource_audit.py",
+  "scope": {
+    "reversible_representative_cleanup_verified": true,
+    "leaked_representative_workspace_falsified": true,
+    "distinct_sections_equal_labels_verified": true,
+    "advice_free_black_box_oracle_pullback_verified": true,
+    "uses_exhaustive_finite_group_scans_not_quantum_receiver": true,
+    "quantum_receiver_implemented": false,
+    "target_h_advice_passed_to_solver": false,
+    "complete_instrument_tree_budget_verified": true,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "representative_cleanup_vs_leaked_workspace_audit": {
+    "p": 5,
+    "quotient_size_Q": 25,
+    "section_labels_equal_across_distinct_sections": true,
+    "cleaned_kernel_vs_target_frobenius_error": 0.0,
+    "leaked_kernel_off_diagonal_frobenius_norm": 0.0,
+    "leaked_kernel_vs_maximally_mixed_frobenius_error": 0.0,
+    "leaked_kernel_vs_target_frobenius_error": 0.4
+  },
+  "advice_free_ut4_black_box_recovery": {
+    "p": 5,
+    "status": "SUCCESS",
+    "top_ambient_class": 3,
+    "total_clean_oracle_queries": 776,
+    "workspace_cleanup_failures": 0,
+    "rebuilt_tuple_oracle_steps": 1,
+    "abelian_base_steps": 2,
+    "max_nested_section_depth": 2,
+    "n_in_normalizer_flags": [
+      true
+    ],
+    "recovered_generators": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "arbitrary_h_recursive_resource_and_tree_budget": {
+    "recursion_profiles_by_prime": [
+      {
+        "prime_bits": 6,
+        "sequential_image_steps": 5,
+        "abelian_base_steps": 3,
+        "sum_simplex_queries_across_steps": 455,
+        "max_single_step_queries_ceil_log2": 253,
+        "total_additive_recursion_queries_ceil_log2_bound": 256,
+        "steps": [
+          {
+            "step_name": "N_derived_top",
+            "class_bound": 3,
+            "quotient_width_m": 9,
+            "jet_dimension": 121,
+            "queries_per_lifted_oracle": 66,
+            "nested_section_cleanup_operations_per_lifted_call": 132,
+            "single_step_original_queries_ceil_log2": 47
+          },
+          {
+            "step_name": "N_derived_restricted",
+            "class_bound": 2,
+            "quotient_width_m": 6,
+            "jet_dimension": 8,
+            "queries_per_lifted_oracle": 8,
+            "nested_section_cleanup_operations_per_lifted_call": 32,
+            "single_step_original_queries_ceil_log2": 14
+          },
+          {
+            "step_name": "M_mod_K0_top",
+            "class_bound": 5,
+            "quotient_width_m": 6,
+            "jet_dimension": 710,
+            "queries_per_lifted_oracle": 330,
+            "nested_section_cleanup_operations_per_lifted_call": 1320,
+            "single_step_original_queries_ceil_log2": 253
+          },
+          {
+            "step_name": "M_mod_K0_mid",
+            "class_bound": 3,
+            "quotient_width_m": 7,
+            "jet_dimension": 72,
+            "queries_per_lifted_oracle": 45,
+            "nested_section_cleanup_operations_per_lifted_call": 180,
+            "single_step_original_queries_ceil_log2": 44
+          },
+          {
+            "step_name": "M_mod_K0_bot",
+            "class_bound": 2,
+            "quotient_width_m": 4,
+            "jet_dimension": 6,
+            "queries_per_lifted_oracle": 6,
+            "nested_section_cleanup_operations_per_lifted_call": 24,
+            "single_step_original_queries_ceil_log2": 13
+          }
+        ]
+      },
+      {
+        "prime_bits": 127,
+        "sequential_image_steps": 5,
+        "abelian_base_steps": 3,
+        "sum_simplex_queries_across_steps": 455,
+        "max_single_step_queries_ceil_log2": 253,
+        "total_additive_recursion_queries_ceil_log2_bound": 256,
+        "steps": [
+          {
+            "step_name": "N_derived_top",
+            "class_bound": 3,
+            "quotient_width_m": 9,
+            "jet_dimension": 121,
+            "queries_per_lifted_oracle": 66,
+            "nested_section_cleanup_operations_per_lifted_call": 132,
+            "single_step_original_queries_ceil_log2": 48
+          },
+          {
+            "step_name": "N_derived_restricted",
+            "class_bound": 2,
+            "quotient_width_m": 6,
+            "jet_dimension": 8,
+            "queries_per_lifted_oracle": 8,
+            "nested_section_cleanup_operations_per_lifted_call": 32,
+            "single_step_original_queries_ceil_log2": 17
+          },
+          {
+            "step_name": "M_mod_K0_top",
+            "class_bound": 5,
+            "quotient_width_m": 6,
+            "jet_dimension": 710,
+            "queries_per_lifted_oracle": 330,
+            "nested_section_cleanup_operations_per_lifted_call": 1320,
+            "single_step_original_queries_ceil_log2": 253
+          },
+          {
+            "step_name": "M_mod_K0_mid",
+            "class_bound": 3,
+            "quotient_width_m": 7,
+            "jet_dimension": 72,
+            "queries_per_lifted_oracle": 45,
+            "nested_section_cleanup_operations_per_lifted_call": 180,
+            "single_step_original_queries_ceil_log2": 45
+          },
+          {
+            "step_name": "M_mod_K0_bot",
+            "class_bound": 2,
+            "quotient_width_m": 4,
+            "jet_dimension": 6,
+            "queries_per_lifted_oracle": 6,
+            "nested_section_cleanup_operations_per_lifted_call": 24,
+            "single_step_original_queries_ceil_log2": 16
+          }
+        ]
+      }
+    ],
+    "sample_three_stage_tree_budget": {
+      "source_leaves": 240,
+      "stage_calls": [
+        24,
+        4,
+        1
+      ],
+      "total_instrument_calls": 269,
+      "trace_distance_bound": "53/10000"
+    }
+  }
+}

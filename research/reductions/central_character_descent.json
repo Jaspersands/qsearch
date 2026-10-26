@@ -1,0 +1,36 @@
+{
+  "status": "mixed_channel_identity_with_explicit_contracts_not_discovery",
+  "controls": [
+    {
+      "prime": 3,
+      "complete_label_tuples": 27,
+      "zero_scale_branches": 25,
+      "maximum_entry_error": 2.2210744981039633e-16,
+      "maximum_label_mass_error": 5.551115123125783e-17
+    },
+    {
+      "prime": 5,
+      "complete_label_tuples": 125,
+      "zero_scale_branches": 117,
+      "maximum_entry_error": 1.4892977156041714e-16,
+      "maximum_label_mass_error": 5.551115123125783e-17
+    }
+  ],
+  "nonpreserved_hidden_subgroup_falsifier": {
+    "prime": 5,
+    "complete_label_tuples": 125,
+    "zero_scale_branches": 117,
+    "maximum_entry_error": 0.0760845213036124,
+    "maximum_label_mass_error": 5.551115123125783e-17
+  },
+  "formal_module": "formal/Formal/CentralCharacterDescent.lean",
+  "research_note": "research/CENTRAL_CHARACTER_DESCENT.md",
+  "no_general_sde_implementation": true,
+  "no_speedup_claim": true,
+  "remaining": [
+    "arbitrary-H recursion refinement",
+    "independent whole-proof and novelty review",
+    "hard application and classical comparison",
+    "quantum synthesis and SDE implementation"
+  ]
+}

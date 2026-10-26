@@ -1,0 +1,173 @@
+{
+  "schema_version": "twisted_relative_recursion_v1",
+  "module": "theorems/twisted_relative_recursion.py",
+  "scope": {
+    "character_normalizer_quotient_verified": true,
+    "plain_normalizer_k0_non_ideal_obstruction_verified": true,
+    "relative_abelian_quadratic_phase_erasure_verified": true,
+    "character_attached_weighted_erasure_verified": true,
+    "unrolled_relative_scalar_center_recursion_verified": true,
+    "original_copy_character_learning_enforced": true,
+    "rare_sector_error_division_forbidden": true,
+    "coherent_quantum_state_receiver_implemented": false,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "heisenberg_character_normalizer_controls": [
+    {
+      "prime_bits": 3,
+      "plain_normalizer_dim": 3,
+      "m_chi_dim": 2,
+      "k0_dim": 1,
+      "scalar_center_width": 1,
+      "m_chi_strictly_smaller": true,
+      "k0_ideal_in_plain_normalizer": false,
+      "k0_ideal_in_m_chi": true,
+      "z_new_central_in_quotient": true,
+      "relative_quotient_class": 0
+    },
+    {
+      "prime_bits": 127,
+      "plain_normalizer_dim": 3,
+      "m_chi_dim": 2,
+      "k0_dim": 1,
+      "scalar_center_width": 1,
+      "m_chi_strictly_smaller": true,
+      "k0_ideal_in_plain_normalizer": false,
+      "k0_ideal_in_m_chi": true,
+      "z_new_central_in_quotient": true,
+      "relative_quotient_class": 0
+    }
+  ],
+  "relative_abelian_base_audit": {
+    "p": 7,
+    "hidden_quotient_subspace_generator": [
+      1,
+      5
+    ],
+    "expected_annihilator_generator": [
+      2,
+      1
+    ],
+    "naive_fourier_mass_outside_annihilator": 0.857142857143,
+    "theoretical_naive_leakage_1_minus_1_over_p": 0.8571428571428571,
+    "erased_packet_final_degree": 0,
+    "erased_fourier_mass_outside_annihilator": 0.0,
+    "erased_fourier_mass_inside_annihilator": 1.0,
+    "degree_2_witness_sample": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "degree_1_witness_sample": [
+      6,
+      1,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "character_attached_weighted_cascade_audit": {
+    "p": 23,
+    "quotient_width": 1,
+    "base_parameter_count": 19,
+    "twisted_parameter_count": 20,
+    "character_parameter_indices": [
+      19
+    ],
+    "character_term_weights": [
+      1
+    ],
+    "affine_sector_label_probability": "1/23",
+    "stage1_weight1_active_equations": 63,
+    "stage1_weight1_compressed_rank": 2,
+    "erased_root_weighted_degree": 0,
+    "post_fourier_residual_ordinary_degree": 2,
+    "post_fourier_residual_contains_character_params": false
+  },
+  "unrolled_ut7_twisted_solve": {
+    "status": "SUCCESS",
+    "top_ambient_class": 6,
+    "top_relative_class": 6,
+    "image_and_base_calls": 6,
+    "max_allowed_image_and_base_calls": 10,
+    "character_learning_batches": 3,
+    "max_allowed_character_batches": 3,
+    "original_copies_for_characters": 5,
+    "m_chi_strict_shrink_flags": [
+      false,
+      false
+    ],
+    "recovered_generator_count": 3,
+    "recovered_character_on_generators": [
+      7,
+      5,
+      2
+    ],
+    "branch_log": [
+      {
+        "branch": "RELATIVE_ABELIAN_SCALAR_BASE",
+        "ambient_dim": 6,
+        "relative_class": 1,
+        "scalar_center_dim": 0,
+        "recovered_dim": 0
+      },
+      {
+        "branch": "TWISTED_SCALAR_METABELIAN_IMAGE",
+        "ambient_dim": 15,
+        "relative_class_before": 3,
+        "normal_n_s_dim": 6,
+        "normal_n_s_class": 1,
+        "scalar_center_dim": 0,
+        "preimage_dim": 8,
+        "relative_class_after": 1
+      },
+      {
+        "branch": "RELATIVE_ABELIAN_SCALAR_BASE",
+        "ambient_dim": 8,
+        "relative_class": 1,
+        "scalar_center_dim": 0,
+        "recovered_dim": 2
+      },
+      {
+        "branch": "TWISTED_SCALAR_METABELIAN_IMAGE",
+        "ambient_dim": 13,
+        "relative_class_before": 3,
+        "normal_n_s_dim": 6,
+        "normal_n_s_class": 1,
+        "scalar_center_dim": 1,
+        "preimage_dim": 7,
+        "relative_class_after": 2
+      },
+      {
+        "branch": "TWISTED_SCALAR_METABELIAN_IMAGE",
+        "ambient_dim": 7,
+        "relative_class_before": 2,
+        "normal_n_s_dim": 2,
+        "normal_n_s_class": 1,
+        "scalar_center_dim": 1,
+        "preimage_dim": 3,
+        "relative_class_after": 1
+      },
+      {
+        "branch": "RELATIVE_ABELIAN_SCALAR_BASE",
+        "ambient_dim": 3,
+        "relative_class": 1,
+        "scalar_center_dim": 1,
+        "recovered_dim": 2
+      }
+    ]
+  },
+  "source_transfer_127bit_ledger": {
+    "prime_bits": 127,
+    "copies_per_label": 20472,
+    "total_preparation_uses_bound": 20472000,
+    "hybrid_error_bound": "75897864906234402334928305691107634330186882322598962561494038393402075503402196028681496372387076638211189449292558317657965187549582699802901316501050944561047642161831464154772180875728678181128415402900888688336450995729254786178371705607517031077910285473642284559311626193853082506664456756543234554735954593498109736271073364712184705341738997166794345563128605609368589547660783123358514414869486310569741392062690288081238248550226388850410135808084990531700773880751534723571185392371608526090134515316007754450591588224195102376198658263246737705973802886033092889109922897449792427657477047783072981674267961348258225262788023282477929699392986841703387925629755823405215125257406088115773960154718705761711554559375/39792339795959822331374891534179439392382587222765931673900586118122890435298965032098413061992118010347299367475669242764574986870151931285591397477978474133780952934088340788486571108809188911219745057648548109357104986449198977452091086685965205416245872626805872323273000798548955972746025923117534579888623820821012168312700390293874309141804871651113038521631842193842828566169528196975819087047831791305371642828884444779653869120450362067540188573920536313303760765672255199144137476768828532319424269645739147494590973382579814608881072629308046979658464309481292035489437632771645830479986100299210413466494380907722854990863095015814236089770755552598398949452011361578177640630115948163330694074806828722390210579529728"
+  }
+}

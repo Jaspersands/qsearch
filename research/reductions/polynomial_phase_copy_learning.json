@@ -1,0 +1,107 @@
+{
+  "status": "KNOWN_TECHNIQUE_ADAPTATION_UNDER_REVIEW",
+  "source": "fresh full-domain unknown Fp polynomial-phase copies; p>fixed degree",
+  "baseline": "random coordinate restriction plus Ivanyos-Santha section 5 elimination",
+  "decision": "do not promote this family as needing the Rees receiver",
+  "classical_dequantization": false,
+  "novelty_established": false,
+  "quantum_learner_implemented": false,
+  "general_sde_backend_implemented": false,
+  "asymptotic_theorem_independently_verified": false,
+  "global_constant_recoverable": false,
+  "profiles": [
+    {
+      "prime": 5,
+      "variables": 2,
+      "degree": 3,
+      "unknown_coefficients_mod_constant": 9,
+      "line_acceptance_lower_bound": {
+        "numerator": 3,
+        "denominator": 5
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "sde_arities": {
+        "2": 40000,
+        "3": 729000000
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 683437500000000,
+        "denominator": 1
+      },
+      "original_copy_abort_cap": 4100625000000000,
+      "abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 6
+      }
+    },
+    {
+      "prime": 101,
+      "variables": 8,
+      "degree": 3,
+      "unknown_coefficients_mod_constant": 164,
+      "line_acceptance_lower_bound": {
+        "numerator": 99,
+        "denominator": 101
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 100,
+        "denominator": 101
+      },
+      "sde_arities": {
+        "2": 2964802500,
+        "3": 14710627334390625
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 7443886396139149455459984375,
+        "denominator": 1
+      },
+      "original_copy_abort_cap": 44663318376834896732759906250,
+      "abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 6
+      }
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "variables": 8,
+      "degree": 3,
+      "unknown_coefficients_mod_constant": 164,
+      "line_acceptance_lower_bound": {
+        "numerator": 170141183460469231731687303715884105725,
+        "denominator": 170141183460469231731687303715884105727
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 170141183460469231731687303715884105726,
+        "denominator": 170141183460469231731687303715884105727
+      },
+      "sde_arities": {
+        "2": 2964802500,
+        "3": 14710627334390625
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 483249740502725179491255170247845625911716372549573717248046506846326590024066430923713341473081757682252652223333725565415329686635937500,
+        "denominator": 67561739019880794259737723079807293901678069309230143916355109077716205523959548864160216769537320712571120269
+      },
+      "original_copy_abort_cap": 42916279022408546400937500001,
+      "abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 6
+      }
+    }
+  ]
+}

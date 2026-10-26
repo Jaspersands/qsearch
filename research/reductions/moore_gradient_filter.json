@@ -1,0 +1,67 @@
+{
+  "status": "CLASSICAL_RECOGNITION_FILTER_UNDER_REVIEW",
+  "examples": [
+    {
+      "prime": 5,
+      "dimension": 6,
+      "moore_rank": 5,
+      "polynomial_degree": 781,
+      "circuit_nodes": 305,
+      "syntactic_degree_bound": 2501,
+      "status": "MOORE_FORM_MONTE_CARLO",
+      "recovered_correct_space": true,
+      "extension_degree": 10,
+      "gradient_probes": 6,
+      "identity_tests": 1,
+      "ideal_random_error_bound": "31248/9765625",
+      "randomness": "seeded_diagnostic"
+    },
+    {
+      "prime": 43,
+      "dimension": 50,
+      "moore_rank": 5,
+      "polynomial_degree": 3500201,
+      "circuit_nodes": 449,
+      "syntactic_degree_bound": 13675205,
+      "status": "MOORE_FORM_MONTE_CARLO",
+      "recovered_correct_space": true,
+      "extension_degree": 52,
+      "gradient_probes": 50,
+      "identity_tests": 1,
+      "ideal_random_error_bound": "5836827147023778610703018191107709833371402136678734942984210097322983350243128688/8716852357376396141345672820866202504614545137119176888505149764190543096407324764401",
+      "randomness": "seeded_diagnostic"
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "dimension": 6,
+      "moore_rank": 2,
+      "polynomial_degree": 170141183460469231731687303715884105728,
+      "circuit_nodes": 520,
+      "syntactic_degree_bound": 170141183460469231731687303715884105728,
+      "status": "MOORE_FORM_MONTE_CARLO",
+      "recovered_correct_space": true,
+      "extension_degree": 6,
+      "gradient_probes": 6,
+      "identity_tests": 1,
+      "ideal_random_error_bound": "1140610154405548804660292901425072831196491510952254788445650079478407099547486429028668177428381680337918054629885676543890837916340607846192717411063826763207806131243455576600691869644488704/24258095192198577111702804507226602425033386401644222945552468418088241512319728323745191335744853269306074679035459409317886668660871978661060350371151189092225710338662324770693094232821346927839739349758015342131134175943589889",
+      "randomness": "seeded_diagnostic"
+    }
+  ],
+  "scalable_family": {
+    "group": "UT_10(F_p)^m, p>9",
+    "class_bound": 9,
+    "dimension": "10*m",
+    "moore_rank": "m",
+    "orbit_rank": "10**m",
+    "rank_argument": "exact symbolic exterior-coordinate proof, not a fitted exponent",
+    "live_example_m": 5,
+    "live_example_orbit_rank": 100000
+  },
+  "public_circuit_required": true,
+  "quantum_copies_only_covered": false,
+  "stabilizer_solver_executed": false,
+  "formal_proof_verified": false,
+  "independently_reviewed": false,
+  "novel_algorithm_claimed": false,
+  "quantum_advantage_claimed": false
+}

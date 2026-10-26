@@ -1,17 +1,14 @@
-"""Test suite for Investigation 44: SU(2) / SO(3) Compact Non-Abelian Lie Group HSP.
+"""Retained SU(2) identities; the historical general HSP no-go was retracted.
 
-Verifies:
-1. Wigner character formula and exact conjugacy invariance chi_j(g h g^-1) == chi_j(h).
-2. Weak Fourier sampling orientation blindness: TV distance identically 0.000 across torus orientations.
-3. Subgroup projector for U(1)_n onto V_1: strictly rank 1 onto pure spin-coherent state |1, n, 0>.
-4. Multi-copy Catalan commutant algebra dimension growth: C_M = (1/(M+1)) binom(2M, M) ~ 4^M / M^1.5.
-5. Finite binary polyhedral subgroups (binary tetrahedral 2T): weak character TV blindness under rotations.
-6. Epistemic invariants and continuous abelian vs non-abelian complexity demarcation.
+Character identities and zero-weight projectors do not establish measurement
+circuit lower bounds. Catalan dimensions below concern spin HALF, not spin one.
+See test_nonabelian_barrier_scope_audit.py for actual countercontrols.
 """
 
 import math
 import numpy as np
 import pytest
+from theorems.nonabelian_barrier_scope_audit import commutant_dimension, collective_generators
 
 # Pauli matrices
 SX = np.array([[0, 1], [1, 0]], dtype=complex)
@@ -59,38 +56,25 @@ def test_wigner_character_formula_and_conjugacy_invariance():
             assert np.isclose(c_orig, c_conj, atol=1e-10)
 
 
-def test_weak_fourier_sampling_orientation_blindness():
-    """Verify that weak Fourier sampling distribution is identically invariant across torus orientations."""
-    # For any torus U(1)_n:
-    # int_0^{2pi} chi_j(theta) dtheta / (2pi) is 1 for integer j and 0 for half-integer j
-    spins = [0, 0.5, 1, 1.5, 2, 2.5, 3]
-
-    def torus_irrep_prob(axis, j):
-        # Numerical integration over SU(2) maximal torus angle phi in [0, 4*pi)
-        n_steps = 1000
-        angles = np.linspace(0, 4.0 * np.pi, n_steps, endpoint=False)
-        char_sum = sum(wigner_character(j, phi / 2.0) for phi in angles) / n_steps
-        return np.real(char_sum)
-
-    # Compare torus aligned with z-axis vs arbitrary axis [1, 1, 1]
-    axis_z = np.array([0.0, 0.0, 1.0])
-    axis_diag = np.array([1.0, 1.0, 1.0])
-
-    probs_z = [torus_irrep_prob(axis_z, j) for j in spins]
-    probs_diag = [torus_irrep_prob(axis_diag, j) for j in spins]
-
-    for p_z, p_diag, j in zip(probs_z, probs_diag, spins):
-        expected = 1.0 if (int(2 * j) % 2 == 0 and int(j) == j) else 0.0
-        assert np.isclose(p_z, expected, atol=1e-6)
-        assert np.isclose(p_diag, expected, atol=1e-6)
-
-    # TV distance between distributions
-    tv = 0.5 * sum(abs(pz - pd) for pz, pd in zip(probs_z, probs_diag))
-    assert tv < 1e-6, f"TV distance between torus orientations non-zero: {tv}"
+def test_torus_invariant_multiplicity_is_orientation_independent_not_a_probability_law():
+    """Actually rotate generators; Haar projectors are not normalized irrep laws."""
+    angles = np.linspace(0, 4*np.pi, 256, endpoint=False)
+    for twice_spin in (1, 2):
+        J = collective_generators(twice_spin, 1)
+        traces = []
+        for axis in (np.array([0., 0., 1.]), np.ones(3)/np.sqrt(3)):
+            generator = sum(a*operator for a, operator in zip(axis, J))
+            eigenvalues, eigenvectors = np.linalg.eigh(generator)
+            phases = np.exp(-1j*angles[:, None]*eigenvalues).mean(axis=0)
+            projector = (eigenvectors*phases) @ eigenvectors.conj().T
+            assert np.allclose(projector @ projector, projector, atol=1e-12)
+            assert np.trace(projector) == pytest.approx(0 if twice_spin == 1 else 1)
+            traces.append(np.trace(projector))
+        assert traces[0] == pytest.approx(traces[1])
 
 
-def test_spin_coherent_subgroup_projector_rank_one():
-    """Verify that the subgroup projector for U(1)_n in V_1 is strictly rank 1 onto spin-coherent state."""
+def test_zero_weight_torus_subgroup_projector_rank_one():
+    """Torus invariance selects zero weight, not an extremal coherent state."""
     # Spin-1 generators
     jz = np.diag([1.0, 0.0, -1.0])
     jx = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]]) / np.sqrt(2.0)
@@ -107,9 +91,10 @@ def test_spin_coherent_subgroup_projector_rank_one():
     # Find eigenvector with eigenvalue 0
     zero_idx = np.argmin(np.abs(eigvals))
     assert np.isclose(eigvals[zero_idx], 0.0, atol=1e-12)
-    psi_coherent = eigvecs[:, zero_idx]
+    psi_zero_weight = eigvecs[:, zero_idx]
 
-    pi_n = np.outer(psi_coherent, psi_coherent.conj())
+    pi_n = np.outer(psi_zero_weight, psi_zero_weight.conj())
+    assert np.allclose(jn @ psi_zero_weight, 0, atol=1e-12)
 
     # Verify Hermitian and idempotent
     assert np.allclose(pi_n, pi_n.conj().T, atol=1e-12)
@@ -121,8 +106,8 @@ def test_spin_coherent_subgroup_projector_rank_one():
     assert rank == 1
 
 
-def test_catalan_commutant_algebra_dimension_growth():
-    """Verify that multi-copy commutant dimension grows as Catalan numbers C_M ~ 4^M / M^1.5."""
+def test_spin_half_not_spin_one_catalan_commutant_growth():
+    """Tie Catalan arithmetic to the actual representation multiplicities."""
     def catalan(m):
         return math.comb(2 * m, m) // (m + 1)
 
@@ -130,6 +115,10 @@ def test_catalan_commutant_algebra_dimension_growth():
     for m in range(1, 11):
         c_m = catalan(m)
         assert c_m == expected_catalan[m - 1]
+        assert commutant_dimension(1, m) == c_m
+
+    assert commutant_dimension(2, 2) == 3 != catalan(2)
+    assert commutant_dimension(2, 3) == 15 != catalan(3)
 
     # Check asymptotic scaling 4^M / M^1.5
     for m in [5, 10, 15, 20]:
@@ -165,16 +154,8 @@ def test_finite_binary_polyhedral_subgroups_weak_blindness():
         assert np.isclose(char_sum, round(char_sum), atol=1e-10)
 
 
-def test_epistemic_invariants_and_demarcation():
-    """Verify strict epistemic invariants and continuous abelian vs non-abelian demarcation."""
-    invariants = {
-        "speedup_claim_allowed": False,
-        "accepted_speedup_candidate": False,
-        "continuous_abelian_status": "BQP Solvable via 1D character orthogonality (Investigations 42, 43)",
-        "continuous_nonabelian_status": "Exponential Commutant Inflation Barrier (Investigation 44)",
-    }
-
-    assert invariants["speedup_claim_allowed"] is False
-    assert invariants["accepted_speedup_candidate"] is False
-    assert "BQP" in invariants["continuous_abelian_status"]
-    assert "Barrier" in invariants["continuous_nonabelian_status"]
+def test_countercheck_does_not_claim_an_optimal_hsp_receiver():
+    from theorems.nonabelian_barrier_scope_audit import invariant_swap_control
+    control = invariant_swap_control(4)
+    assert control["gate_count"] == 2
+    assert not control["arbitrary_optimal_HSP_measurement_compiled"]

@@ -1,0 +1,4475 @@
+{
+  "status": "CONSTRUCTIVE_MODERATE_TEMPERATURE_SAMPLER_NOT_FULL_SEARCH",
+  "source_hashes": {
+    "theorems/native_latent_sampler.py": "ed549f033f2ac7d0a25b68b7e8ae5645e76303f5ab787e9b30e76dac869df4a7",
+    "research/NATIVE_LATENT_SAMPLER.md": "fc4b0a14dc72aa9d65338ce610b18d0cbd0c300b8c0cb9aca7c0f6f458722eaf",
+    "theorems/balanced_filter_channel_audit.py": "f41d4996a199ac2320344148b1ca5a600f74704e81284a161c66a35113d0ce77",
+    "theorems/folded_balanced_filter.py": "075f5024e77666813d4a26598b195e30fd4438763119b6130a17ad48d40fae59",
+    "theorems/inverse_trace_gibbs_target.py": "48a6758d9bc48b35bf546141bee5361c5f4f7a1e3ab3ebcd88a58be45124dbef"
+  },
+  "review_origin": "research/independent_review_2026_10_22/CLASSICAL_SAMPLING.md",
+  "classical_full_search_solved": false,
+  "quantum_advantage_established": false,
+  "native_certificates": [
+    {
+      "family": "scalar",
+      "bits": 17,
+      "length": 289,
+      "remaining": 36,
+      "base": 2,
+      "tv_upper_power2": -272,
+      "native_success_upper_power2": -169,
+      "relative_native_event_capture_upper_power2": 0,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 17,
+      "length": 289,
+      "remaining": 36,
+      "base": 10,
+      "tv_upper_power2": -8,
+      "native_success_upper_power2": -43,
+      "relative_native_event_capture_upper_power2": -3,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        370982509156751476422359879,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        9343164479199268536404315,
+        85070591730234615865843651857942052864
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 17,
+      "length": 289,
+      "remaining": 36,
+      "base": 289,
+      "tv_upper_power2": 0,
+      "native_success_upper_power2": -36,
+      "relative_native_event_capture_upper_power2": -34,
+      "retained_latent_mass_upper_power2": -108,
+      "ideal_gibbs_native_success_lower": [
+        125399154657777865320141928690869224289,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        2415804001571565629206129185,
+        170141183460469231731687303715884105728
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 17,
+      "length": 289,
+      "remaining": 109,
+      "base": 2,
+      "tv_upper_power2": -78,
+      "native_success_upper_power2": -169,
+      "relative_native_event_capture_upper_power2": 0,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 17,
+      "length": 289,
+      "remaining": 109,
+      "base": 3,
+      "tv_upper_power2": -16,
+      "native_success_upper_power2": -123,
+      "relative_native_event_capture_upper_power2": -3,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        265,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        9,
+        170141183460469231731687303715884105728
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 17,
+      "length": 289,
+      "remaining": 109,
+      "base": 289,
+      "tv_upper_power2": 0,
+      "native_success_upper_power2": -109,
+      "relative_native_event_capture_upper_power2": -107,
+      "retained_latent_mass_upper_power2": -512,
+      "ideal_gibbs_native_success_lower": [
+        125399154657777865320141928690869224289,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        521293,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 31,
+      "length": 961,
+      "remaining": 120,
+      "base": 2,
+      "tv_upper_power2": -889,
+      "native_success_upper_power2": -562,
+      "relative_native_event_capture_upper_power2": 0,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 31,
+      "length": 961,
+      "remaining": 120,
+      "base": 10,
+      "tv_upper_power2": -20,
+      "native_success_upper_power2": -139,
+      "relative_native_event_capture_upper_power2": -7,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 31,
+      "length": 961,
+      "remaining": 120,
+      "base": 961,
+      "tv_upper_power2": 0,
+      "native_success_upper_power2": -120,
+      "relative_native_event_capture_upper_power2": -118,
+      "retained_latent_mass_upper_power2": -554,
+      "ideal_gibbs_native_success_lower": [
+        125247990333471440000249844340268075003,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        255,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 31,
+      "length": 961,
+      "remaining": 361,
+      "base": 2,
+      "tv_upper_power2": -250,
+      "native_success_upper_power2": -562,
+      "relative_native_event_capture_upper_power2": 0,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 31,
+      "length": 961,
+      "remaining": 361,
+      "base": 3,
+      "tv_upper_power2": -47,
+      "native_success_upper_power2": -407,
+      "relative_native_event_capture_upper_power2": -8,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 31,
+      "length": 961,
+      "remaining": 361,
+      "base": 961,
+      "tv_upper_power2": 0,
+      "native_success_upper_power2": -361,
+      "relative_native_event_capture_upper_power2": -359,
+      "retained_latent_mass_upper_power2": -2305,
+      "ideal_gibbs_native_success_lower": [
+        125247990333471440000249844340268075003,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 61,
+      "length": 3721,
+      "remaining": 465,
+      "base": 2,
+      "tv_upper_power2": -3419,
+      "native_success_upper_power2": -2176,
+      "relative_native_event_capture_upper_power2": 0,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 61,
+      "length": 3721,
+      "remaining": 465,
+      "base": 10,
+      "tv_upper_power2": -68,
+      "native_success_upper_power2": -532,
+      "relative_native_event_capture_upper_power2": -20,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "scalar",
+      "bits": 61,
+      "length": 3721,
+      "remaining": 465,
+      "base": 3721,
+      "tv_upper_power2": 0,
+      "native_success_upper_power2": -465,
+      "relative_native_event_capture_upper_power2": -463,
+      "retained_latent_mass_upper_power2": -3036,
+      "ideal_gibbs_native_success_lower": [
+        125199706235084336543250373790452508013,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 61,
+      "length": 3721,
+      "remaining": 1396,
+      "base": 2,
+      "tv_upper_power2": -957,
+      "native_success_upper_power2": -2176,
+      "relative_native_event_capture_upper_power2": 0,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 61,
+      "length": 3721,
+      "remaining": 1396,
+      "base": 3,
+      "tv_upper_power2": -174,
+      "native_success_upper_power2": -1568,
+      "relative_native_event_capture_upper_power2": -24,
+      "retained_latent_mass_upper_power2": 0,
+      "ideal_gibbs_native_success_lower": [
+        0,
+        1
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    },
+    {
+      "family": "odd_folded_s67",
+      "bits": 61,
+      "length": 3721,
+      "remaining": 1396,
+      "base": 3721,
+      "tv_upper_power2": 0,
+      "native_success_upper_power2": -1396,
+      "relative_native_event_capture_upper_power2": -1394,
+      "retained_latent_mass_upper_power2": -11619,
+      "ideal_gibbs_native_success_lower": [
+        125199706235084336543250373790452508013,
+        340282366920938463463374607431768211456
+      ],
+      "native_success_upper": [
+        1,
+        340282366920938463463374607431768211456
+      ],
+      "direct_latent_draw_is_polynomial_bit_cost": true,
+      "native_large_sampler_executed": false
+    }
+  ],
+  "finite_controls": [
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        1,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        0,
+        1
+      ],
+      "native_success": [
+        1,
+        4
+      ],
+      "ideal_gibbs_native_success": [
+        1,
+        4
+      ],
+      "relative_native_event_capture": [
+        1,
+        1
+      ],
+      "partition_ratio": [
+        1,
+        1
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        124,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        3,
+        2
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2,
+        217
+      ],
+      "tv_upper": [
+        1,
+        63
+      ],
+      "native_success": [
+        13,
+        31
+      ],
+      "ideal_gibbs_native_success": [
+        3,
+        7
+      ],
+      "relative_native_event_capture": [
+        91,
+        93
+      ],
+      "partition_ratio": [
+        126,
+        125
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 0,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 1,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        0,
+        1
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": 0,
+      "ideal_gibbs_native_success": 0,
+      "relative_native_event_capture": null,
+      "partition_ratio": [
+        602,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 2,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    },
+    {
+      "bits": 2,
+      "length": 3,
+      "checks": 1,
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base": [
+        10,
+        1
+      ],
+      "offset": 3,
+      "enumerated_codewords": 16,
+      "relative_fiber_error": [
+        1,
+        1
+      ],
+      "tv_exact": [
+        2187,
+        31003
+      ],
+      "tv_upper": [
+        729,
+        1030
+      ],
+      "native_success": [
+        271,
+        301
+      ],
+      "ideal_gibbs_native_success": [
+        100,
+        103
+      ],
+      "relative_native_event_capture": [
+        27913,
+        30100
+      ],
+      "partition_ratio": [
+        2060,
+        1331
+      ],
+      "pointwise_likelihood_ratios_checked": true,
+      "all_tractable_active_sets_checked": true,
+      "reference_has_polynomial_complexity": false
+    }
+  ]
+}

@@ -1,8 +1,14 @@
 # Graph Isomorphism & Symmetric Group $S_n$ Hidden Subgroup Obstruction: Weak Fourier Blindness, Gel'fand Collapse, and the Multi-Copy Kronecker-Racah Commutant Barrier
 
+Status: SUPERSEDED / QUARANTINED_OVERBROAD_NO_GO (2026-10-19).
+The universal single-copy bound and dimension-to-gate lower bound are invalid.
+MRS applies to its hard long-involution ensemble, not all hidden transpositions.
+Read [the counterchecks and retained scopes](NONABELIAN_BARRIER_SCOPE_AUDIT.md).
+The historical text below is preserved as provenance, not endorsed mathematics.
+
 **Investigation**: Investigation 34  
 **Date**: 2026-10-12  
-**Status**: PROVED MATHEMATICAL OBSTRUCTION & MULTI-COPY KRONECKER-RACAH COMMUTANT BARRIER (Zero Speedup Retained)  
+**Historical Status (RETRACTED)**: PROVED MATHEMATICAL OBSTRUCTION & MULTI-COPY KRONECKER-RACAH COMMUTANT BARRIER (Zero Speedup Retained)
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
 **Cross-References**:
 - Investigation 13: Kronecker Multiplicities & Racah Circuits (`research/UNIVERSAL_QUANTUM_HIDDEN_STRUCTURE_CLASSIFICATION.md`)

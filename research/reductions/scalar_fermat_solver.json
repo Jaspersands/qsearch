@@ -1,0 +1,106 @@
+{
+  "status": "KNOWN_SCALAR_FERMAT_BACKEND_IMPLEMENTED",
+  "controls": [
+    {
+      "p": 13,
+      "degree": 4,
+      "weights": [
+        1,
+        2,
+        4,
+        0,
+        0
+      ],
+      "method": "degree_bounded_dynamic_program",
+      "trials": 0,
+      "root_calls": 0,
+      "enumerated_field_elements": 13,
+      "success_probability_lower_bound": "1",
+      "capped_abort_bound": "0",
+      "root_runtime_locally_clocked": false
+    },
+    {
+      "p": 101,
+      "degree": 4,
+      "weights": [
+        30,
+        0,
+        91,
+        69,
+        45
+      ],
+      "method": "weil_certified_random_root",
+      "trials": 3,
+      "root_calls": 1,
+      "enumerated_field_elements": 0,
+      "success_probability_lower_bound": "1/8",
+      "capped_abort_bound": "1487815647197611695910312681741273570332356717154798949898498305086387315423300999654757561928633305897036801/39402006196394479212279040100143613805079739270465446667948293404245721771497210611414266254884915640806627990306816",
+      "root_runtime_locally_clocked": false
+    },
+    {
+      "p": 257,
+      "degree": 6,
+      "weights": [
+        120,
+        1,
+        67,
+        30,
+        101,
+        99,
+        1
+      ],
+      "method": "weil_certified_random_root",
+      "trials": 2,
+      "root_calls": 1,
+      "enumerated_field_elements": 0,
+      "success_probability_lower_bound": "1/12",
+      "capped_abort_bound": "19873012250342044933876323243536725795573361572335445760471484541737760392533800435569122898705703960201510224425798062253366862190081/1365210104749935188661229533709701721249511737885146321670698635579350978186664116487286492188065715081609508117276650596643981892041834496",
+      "root_runtime_locally_clocked": false
+    },
+    {
+      "p": 340282366920938463463374607431768211181,
+      "degree": 4,
+      "weights": [
+        153462894390707444941388838594071125193,
+        125073894259013175681452258338884409516,
+        161624859643045089425596576189027457807,
+        327785884562454020522941613264766428785,
+        58911879179149472651540017796817080910
+      ],
+      "method": "weil_certified_random_root",
+      "trials": 3,
+      "root_calls": 1,
+      "enumerated_field_elements": 0,
+      "success_probability_lower_bound": "1/8",
+      "capped_abort_bound": "1487815647197611695910312681741273570332356717154798949898498305086387315423300999654757561928633305897036801/39402006196394479212279040100143613805079739270465446667948293404245721771497210611414266254884915640806627990306816",
+      "root_runtime_locally_clocked": false
+    },
+    {
+      "p": 340282366920938463463374607431768211181,
+      "degree": 8,
+      "weights": [
+        153462894390707444941388838594071125193,
+        125073894259013175681452258338884409516,
+        161624859643045089425596576189027457807,
+        327785884562454020522941613264766428785,
+        22206127262297363922786595878267871121,
+        76233250547931424972595294398219839416,
+        113590765734547442810304216695628518910,
+        148615288018690313048437718238708582875,
+        19723812925087810190340153870070984651
+      ],
+      "method": "weil_certified_random_root",
+      "trials": 2,
+      "root_calls": 1,
+      "enumerated_field_elements": 0,
+      "success_probability_lower_bound": "1/16",
+      "capped_abort_bound": "3464823841570940447511989197632600142600357270938450628136751668972148475371287127017463688665854485527890158948205456823643544339574873447418212890625/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+      "root_runtime_locally_clocked": false
+    }
+  ],
+  "large_prime_enumeration": false,
+  "general_many_equation_sde_implemented": false,
+  "quantum_receiver_implemented": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false
+}

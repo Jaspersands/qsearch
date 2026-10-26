@@ -1,0 +1,235 @@
+{
+  "status": "CONDITIONAL_GIBBS_ATTACK_SMALL_BLOCK_WORST_CASE_MIXING_OBSTRUCTED",
+  "source_sha256": "48a6758d9bc48b35bf546141bee5361c5f4f7a1e3ab3ebcd88a58be45124dbef",
+  "proof_sha256": "69177e7cd0c6df98692a24ef34822e8101b8ab63b80b624f8f9d9ba25bdc122c",
+  "full_native_classical_solver_established": false,
+  "quantum_speedup_established": false,
+  "sampler_total_variation_bound_proved": false,
+  "local_mixing_derivation_external_review_pending": true,
+  "native_finite_controls_executed": false,
+  "independent_pair_controls_executed": true,
+  "native_certificates": [
+    {
+      "bits": 17,
+      "length": 289,
+      "checks": 36,
+      "beta_upper": [
+        727,
+        131072
+      ],
+      "fiber_relative_error_power2_upper": -1553,
+      "M": 512,
+      "ideal_native_success_lower": [
+        193615289410643981304529617478217287711,
+        340282366920938463463374607431768211456
+      ],
+      "assumed_sampler_tv_upper": [
+        1,
+        10
+      ],
+      "conditional_native_success_lower": [
+        79793526359275067479096078367520233283,
+        170141183460469231731687303715884105728
+      ],
+      "uniform_all_targets_and_syndromes": true,
+      "polynomial_mixing_proved": false,
+      "native_large_chain_executed": false
+    },
+    {
+      "bits": 31,
+      "length": 961,
+      "checks": 120,
+      "beta_upper": [
+        92683,
+        2147483648
+      ],
+      "fiber_relative_error_power2_upper": -10214,
+      "M": 1024,
+      "ideal_native_success_lower": [
+        66593698984027584372345512194768011765,
+        170141183460469231731687303715884105728
+      ],
+      "assumed_sampler_tv_upper": [
+        1,
+        10
+      ],
+      "conditional_native_success_lower": [
+        99159161275961322398353563646359202385,
+        340282366920938463463374607431768211456
+      ],
+      "uniform_all_targets_and_syndromes": true,
+      "polynomial_mixing_proved": false,
+      "native_large_chain_executed": false
+    },
+    {
+      "bits": 61,
+      "length": 3721,
+      "checks": 465,
+      "beta_upper": [
+        3037000501,
+        2305843009213693952
+      ],
+      "fiber_relative_error_power2_upper": -81404,
+      "M": 4096,
+      "ideal_native_success_lower": [
+        137199953265057938555613755751565843791,
+        340282366920938463463374607431768211456
+      ],
+      "assumed_sampler_tv_upper": [
+        1,
+        10
+      ],
+      "conditional_native_success_lower": [
+        103171716572964092209276295008389022645,
+        340282366920938463463374607431768211456
+      ],
+      "uniform_all_targets_and_syndromes": true,
+      "polynomial_mixing_proved": false,
+      "native_large_chain_executed": false
+    }
+  ],
+  "small_block_mixing_certificates": [
+    {
+      "bits": 17,
+      "length": 289,
+      "checks": 36,
+      "block_bits": 3,
+      "M": 512,
+      "native_displacement_distance": 37,
+      "pair_beta_upper": [
+        3784730344957205016390036815894385243,
+        170141183460469231731687303715884105728
+      ],
+      "overlap_factor_upper": [
+        67612455,
+        134217728
+      ],
+      "pair_relative_error_power2_upper": -974,
+      "mean_solution_escape_power2_upper": -33,
+      "stationary_native_success_upper": [
+        6050477794082624415766550546194290241,
+        10633823966279326983230456482242756608
+      ],
+      "worst_start_tv_quarter_steps_lower": 2695231160,
+      "nontrivial_mixing_obstruction": true,
+      "mixing_scope": "WORST_INITIAL_STATE_ONLY",
+      "uniform_all_targets_and_distinct_evaluation_points": true,
+      "requires_state_independent_block_selection": true,
+      "uniform_initial_witness_hitting_lower_bound": false,
+      "all_classical_algorithms_excluded": false,
+      "native_large_chain_executed": false
+    },
+    {
+      "bits": 31,
+      "length": 961,
+      "checks": 120,
+      "block_bits": 3,
+      "M": 1024,
+      "native_displacement_distance": 121,
+      "pair_beta_upper": [
+        29330694560403803781468776790904205,
+        170141183460469231731687303715884105728
+      ],
+      "overlap_factor_upper": [
+        2201265555955,
+        4398046511104
+      ],
+      "pair_relative_error_power2_upper": -8294,
+      "mean_solution_escape_power2_upper": -118,
+      "stationary_native_success_upper": [
+        133187397968055168744691024389536023531,
+        340282366920938463463374607431768211456
+      ],
+      "worst_start_tv_quarter_steps_lower": 120387687666249958236432685439959049,
+      "nontrivial_mixing_obstruction": true,
+      "mixing_scope": "WORST_INITIAL_STATE_ONLY",
+      "uniform_all_targets_and_distinct_evaluation_points": true,
+      "requires_state_independent_block_selection": true,
+      "uniform_initial_witness_hitting_lower_bound": false,
+      "all_classical_algorithms_excluded": false,
+      "native_large_chain_executed": false
+    },
+    {
+      "bits": 61,
+      "length": 3721,
+      "checks": 465,
+      "block_bits": 3,
+      "M": 4096,
+      "native_displacement_distance": 466,
+      "pair_beta_upper": [
+        896036158776243033851263673327,
+        170141183460469231731687303715884105728
+      ],
+      "overlap_factor_upper": [
+        9447038821185021181129,
+        18889465931478580854784
+      ],
+      "pair_relative_error_power2_upper": -73964,
+      "mean_solution_escape_power2_upper": -463,
+      "stationary_native_success_upper": [
+        8574997079066121159725859734472865237,
+        21267647932558653966460912964485513216
+      ],
+      "worst_start_tv_quarter_steps_lower": 8424852266742071611507830017386753455610221930893150872899630742490124410207067681324362234248069623962847880316623155544905095096588892523,
+      "nontrivial_mixing_obstruction": true,
+      "mixing_scope": "WORST_INITIAL_STATE_ONLY",
+      "uniform_all_targets_and_distinct_evaluation_points": true,
+      "requires_state_independent_block_selection": true,
+      "uniform_initial_witness_hitting_lower_bound": false,
+      "all_classical_algorithms_excluded": false,
+      "native_large_chain_executed": false
+    }
+  ],
+  "pair_spectrum_controls": [
+    {
+      "bits": 2,
+      "field_size": 4,
+      "displacement_frequency_pairs": 12,
+      "public_reference_modulus": "x^2 + x + 1",
+      "backend": "independent FLINT finite-field reference, not native solver",
+      "weighted_displacement_target_controls": 18,
+      "maximum_absolute_correlation": 4,
+      "maximum_absolute_twisted_sum": 0,
+      "zero_extensions_and_infinity_terms_checked": true,
+      "reference_is_polynomial_in_field_bits": false
+    },
+    {
+      "bits": 3,
+      "field_size": 8,
+      "displacement_frequency_pairs": 56,
+      "public_reference_modulus": "x^3 + x + 1",
+      "backend": "independent FLINT finite-field reference, not native solver",
+      "weighted_displacement_target_controls": 42,
+      "maximum_absolute_correlation": 8,
+      "maximum_absolute_twisted_sum": 8,
+      "zero_extensions_and_infinity_terms_checked": true,
+      "reference_is_polynomial_in_field_bits": false
+    },
+    {
+      "bits": 4,
+      "field_size": 16,
+      "displacement_frequency_pairs": 240,
+      "public_reference_modulus": "x^4 + x + 1",
+      "backend": "independent FLINT finite-field reference, not native solver",
+      "weighted_displacement_target_controls": 90,
+      "maximum_absolute_correlation": 8,
+      "maximum_absolute_twisted_sum": 16,
+      "zero_extensions_and_infinity_terms_checked": true,
+      "reference_is_polynomial_in_field_bits": false
+    },
+    {
+      "bits": 5,
+      "field_size": 32,
+      "displacement_frequency_pairs": 992,
+      "public_reference_modulus": "x^5 + x^2 + 1",
+      "backend": "independent FLINT finite-field reference, not native solver",
+      "weighted_displacement_target_controls": 186,
+      "maximum_absolute_correlation": 8,
+      "maximum_absolute_twisted_sum": 16,
+      "zero_extensions_and_infinity_terms_checked": true,
+      "reference_is_polynomial_in_field_bits": false
+    }
+  ],
+  "all_fiber_controls": [],
+  "kernel_controls": []
+}

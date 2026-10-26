@@ -1,0 +1,61 @@
+{
+  "schema_version": "full_jet_complement_and_weighted_pullback_audit_v1",
+  "module": "theorems/full_jet_complement_and_weighted_pullback_audit.py",
+  "scope": {
+    "public_left_inverse_residual_split_verified": true,
+    "changed_complement_phase_pullback_verified": true,
+    "stale_complement_phase_falsified": true,
+    "weighted_triangular_matrix_law_verified": true,
+    "equal_weight_off_diagonal_perturbation_falsified": true,
+    "constant_after_weight_one_and_merged_character_verified": true,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "complement_and_phase_pullback_controls": [
+    {
+      "prime_bits": 4,
+      "carrier_width_R": 12,
+      "jet_width_J": 6,
+      "spectator_width_S": 6,
+      "residual_kernel_checks_passed": 10,
+      "pivot_complement_exact_matches": 16,
+      "stale_complement_phase_mismatches": 13,
+      "updated_complement_phase_matches": 16
+    },
+    {
+      "prime_bits": 127,
+      "carrier_width_R": 12,
+      "jet_width_J": 6,
+      "spectator_width_S": 6,
+      "residual_kernel_checks_passed": 10,
+      "pivot_complement_exact_matches": 16,
+      "stale_complement_phase_mismatches": 16,
+      "updated_complement_phase_matches": 16
+    }
+  ],
+  "weighted_triangular_and_merged_character_controls": [
+    {
+      "prime_bits": 5,
+      "degree": 2,
+      "hdiag_verified": true,
+      "hupper_verified": true,
+      "entry_on_or_above_verified": true,
+      "merged_character_exponent_matches": 12,
+      "constant_after_weight_one_verified": true,
+      "equal_weight_perturbation_diagonal_matches": true,
+      "equal_weight_perturbation_rejected_by_merge": true
+    },
+    {
+      "prime_bits": 127,
+      "degree": 3,
+      "hdiag_verified": true,
+      "hupper_verified": true,
+      "entry_on_or_above_verified": true,
+      "merged_character_exponent_matches": 12,
+      "constant_after_weight_one_verified": true,
+      "equal_weight_perturbation_diagonal_matches": true,
+      "equal_weight_perturbation_rejected_by_merge": true
+    }
+  ]
+}

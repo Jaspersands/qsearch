@@ -1,0 +1,153 @@
+{
+  "schema": "nonabelian_jet_homogenization_v1",
+  "status": "provisional written reduction with exact algebraic controls",
+  "profiles": [
+    {
+      "class_bound": 9,
+      "quotient_width": 2,
+      "p": 43,
+      "normal_dimension": 17,
+      "jet_dimension": 994,
+      "semidirect_dimension": 996,
+      "grade_dimensions": {
+        "1": 344,
+        "2": 249,
+        "3": 171,
+        "4": 110,
+        "5": 65,
+        "6": 34,
+        "7": 15,
+        "8": 5,
+        "9": 1
+      },
+      "scalar_features": 165,
+      "batch_sources": 998,
+      "stages": [
+        {
+          "degree": 9,
+          "equations": 1,
+          "arity_ceil_log2": 493
+        },
+        {
+          "degree": 8,
+          "equations": 5,
+          "arity_ceil_log2": 419
+        },
+        {
+          "degree": 7,
+          "equations": 15,
+          "arity_ceil_log2": 261
+        },
+        {
+          "degree": 6,
+          "equations": 34,
+          "arity_ceil_log2": 209
+        },
+        {
+          "degree": 5,
+          "equations": 65,
+          "arity_ceil_log2": 161
+        },
+        {
+          "degree": 4,
+          "equations": 110,
+          "arity_ceil_log2": 118
+        },
+        {
+          "degree": 3,
+          "equations": 171,
+          "arity_ceil_log2": 55
+        },
+        {
+          "degree": 2,
+          "equations": 249,
+          "arity_ceil_log2": 34
+        }
+      ],
+      "abelian_samples": 354,
+      "alignment_retries_per_leaf": 1763,
+      "original_queries_ceil_log2": 1776,
+      "interpretation": "sufficient conditional upper bound for one transverse image call",
+      "receiver_executed": false,
+      "general_sde_implemented": false
+    },
+    {
+      "class_bound": 9,
+      "quotient_width": 2,
+      "p": 170141183460469231731687303715884105727,
+      "normal_dimension": 17,
+      "jet_dimension": 994,
+      "semidirect_dimension": 996,
+      "grade_dimensions": {
+        "1": 344,
+        "2": 249,
+        "3": 171,
+        "4": 110,
+        "5": 65,
+        "6": 34,
+        "7": 15,
+        "8": 5,
+        "9": 1
+      },
+      "scalar_features": 165,
+      "batch_sources": 21084,
+      "stages": [
+        {
+          "degree": 9,
+          "equations": 1,
+          "arity_ceil_log2": 493
+        },
+        {
+          "degree": 8,
+          "equations": 5,
+          "arity_ceil_log2": 419
+        },
+        {
+          "degree": 7,
+          "equations": 15,
+          "arity_ceil_log2": 261
+        },
+        {
+          "degree": 6,
+          "equations": 34,
+          "arity_ceil_log2": 209
+        },
+        {
+          "degree": 5,
+          "equations": 65,
+          "arity_ceil_log2": 161
+        },
+        {
+          "degree": 4,
+          "equations": 110,
+          "arity_ceil_log2": 118
+        },
+        {
+          "degree": 3,
+          "equations": 171,
+          "arity_ceil_log2": 55
+        },
+        {
+          "degree": 2,
+          "equations": 249,
+          "arity_ceil_log2": 34
+        }
+      ],
+      "abelian_samples": 475,
+      "alignment_retries_per_leaf": 1885,
+      "original_queries_ceil_log2": 1781,
+      "interpretation": "sufficient conditional upper bound for one transverse image call",
+      "receiver_executed": false,
+      "general_sde_implemented": false
+    }
+  ],
+  "not_established": [
+    "end-to-end physical receiver",
+    "independent proof review",
+    "novelty",
+    "hard external application",
+    "arbitrary-H recursion refinement"
+  ],
+  "hidden_evaluator_available": false,
+  "requires_metabelian_normal": false
+}

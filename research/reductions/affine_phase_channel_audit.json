@@ -1,0 +1,50 @@
+{
+  "errors": {
+    "all_outcome_posterior_error": 1.423741994347138e-16,
+    "all_outcome_probability_error": 3.469446951953614e-18,
+    "all_zero_output_vs_uniform_pure_error": 2.7755575615628914e-17,
+    "dephased_output_vs_maximally_mixed_error": 0.0,
+    "explicit_kraus_vs_address_error": 2.168404344971009e-19,
+    "kraus_completeness_error": 2.220446049250313e-16,
+    "mixed_hsp_partial_qft_posterior_error": 2.805217581634226e-17,
+    "mixed_hsp_partial_qft_probability_error": 0.0
+  },
+  "id": "AFFINE-PHASE-MIXED-CHANNEL-AUDIT",
+  "instrument": {
+    "all_outcomes_retained": true,
+    "hidden_data_supplied_to_kraus_operator": false,
+    "inputs": 2,
+    "nonzero_scale_required": true,
+    "outcomes_checked": 81,
+    "p": 3,
+    "width": 2
+  },
+  "negative_controls": {
+    "all_zero_scales_return_uniform_pure_not_coset_mixture": true,
+    "correlated_coset_sources_violate_uniform_transcript_promise": true,
+    "correlated_nonzero_outcome_probability": 0.037037037037037056,
+    "correlated_zero_probability_outcomes": 54,
+    "dephased_sources_lose_line_information": true
+  },
+  "scope": {
+    "arbitrary_external_reference_decoupling_proved": false,
+    "black_box_to_lie_bridge_audited": false,
+    "compiled_quantum_algorithm_executed": false,
+    "existing_receiver_prime_congruence_restriction_unchanged": true,
+    "general_prime_sde_solver_implemented_here": false,
+    "novelty_established": false,
+    "symbolic_all_prime_schedule_uses_published_sde_solvers": true
+  },
+  "source": {
+    "constructed_from_mixed_hsp_edges": true,
+    "group_order": 3125,
+    "partial_qft_labels_checked": 125,
+    "pure_state_receiver_used": false
+  },
+  "source_assumptions": [
+    "Independent standard mixed coset inputs, with unused oracle labels discarded.",
+    "A single fixed subgroup and potential, with measured Fourier labels retained.",
+    "Public adaptivity on prior transcript; disjoint source batches."
+  ],
+  "status": "local-exact-derivation-with-independent-finite-controls"
+}

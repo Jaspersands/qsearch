@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "status": "EXACT_HEADER_GATES_AND_INTEGER_CORDIC_CONTRACT_REVIEW_PENDING",
+  "source_sha256": {
+    "theorems/ternary_coherent_reliability.py": "c8b74f9cd4fb9d84e60e3aaa698586834c9a94086c21e11fddd22b7196629d55",
+    "theorems/ternary_coloring_bpqm.py": "49bcee9f2c916192991c739e453ac207bc05dd21381d20b17a1a0d28aa2c1942"
+  },
+  "qiskit_version": "2.3.0",
+  "exhaustive_gate_checks": [
+    {
+      "node": "bit",
+      "exhaustive_one_bit_inputs_including_unused_selector": 256
+    },
+    {
+      "node": "check",
+      "exhaustive_one_bit_inputs_including_unused_selector": 256
+    },
+    {
+      "node": "fiber",
+      "exhaustive_one_bit_inputs_including_unused_selector": 256
+    }
+  ],
+  "actual_circuit_scaling": [
+    {
+      "input_weight_width": 1,
+      "node": "bit",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 4,
+      "qubits_including_all_inputs_outputs_and_scratch": 25,
+      "actual_controlled_X_gates": 342,
+      "actual_maximum_X_controls": 3,
+      "primitive_gate_counts": {
+        "ccx": 162,
+        "cx": 144,
+        "mcx": 36
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 1,
+      "node": "check",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 4,
+      "qubits_including_all_inputs_outputs_and_scratch": 25,
+      "actual_controlled_X_gates": 366,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "mcx": 252,
+        "ccx": 90,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 1,
+      "node": "fiber",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 4,
+      "qubits_including_all_inputs_outputs_and_scratch": 25,
+      "actual_controlled_X_gates": 366,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "mcx": 252,
+        "ccx": 90,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 2,
+      "node": "bit",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 6,
+      "qubits_including_all_inputs_outputs_and_scratch": 39,
+      "actual_controlled_X_gates": 792,
+      "actual_maximum_X_controls": 3,
+      "primitive_gate_counts": {
+        "ccx": 432,
+        "cx": 216,
+        "mcx": 144
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 2,
+      "node": "check",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 6,
+      "qubits_including_all_inputs_outputs_and_scratch": 39,
+      "actual_controlled_X_gates": 816,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "mcx": 468,
+        "ccx": 324,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 2,
+      "node": "fiber",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 6,
+      "qubits_including_all_inputs_outputs_and_scratch": 39,
+      "actual_controlled_X_gates": 816,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "mcx": 468,
+        "ccx": 324,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 4,
+      "node": "bit",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 10,
+      "qubits_including_all_inputs_outputs_and_scratch": 67,
+      "actual_controlled_X_gates": 2340,
+      "actual_maximum_X_controls": 3,
+      "primitive_gate_counts": {
+        "ccx": 1404,
+        "mcx": 576,
+        "cx": 360
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 4,
+      "node": "check",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 10,
+      "qubits_including_all_inputs_outputs_and_scratch": 67,
+      "actual_controlled_X_gates": 2364,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "ccx": 1224,
+        "mcx": 1116,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 4,
+      "node": "fiber",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 10,
+      "qubits_including_all_inputs_outputs_and_scratch": 67,
+      "actual_controlled_X_gates": 2364,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "ccx": 1224,
+        "mcx": 1116,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 8,
+      "node": "bit",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 18,
+      "qubits_including_all_inputs_outputs_and_scratch": 123,
+      "actual_controlled_X_gates": 8028,
+      "actual_maximum_X_controls": 3,
+      "primitive_gate_counts": {
+        "ccx": 5076,
+        "mcx": 2304,
+        "cx": 648
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 8,
+      "node": "check",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 18,
+      "qubits_including_all_inputs_outputs_and_scratch": 123,
+      "actual_controlled_X_gates": 8052,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "ccx": 4752,
+        "mcx": 3276,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 8,
+      "node": "fiber",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 18,
+      "qubits_including_all_inputs_outputs_and_scratch": 123,
+      "actual_controlled_X_gates": 8052,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "ccx": 4752,
+        "mcx": 3276,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 16,
+      "node": "bit",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 34,
+      "qubits_including_all_inputs_outputs_and_scratch": 235,
+      "actual_controlled_X_gates": 29772,
+      "actual_maximum_X_controls": 3,
+      "primitive_gate_counts": {
+        "ccx": 19332,
+        "mcx": 9216,
+        "cx": 1224
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 16,
+      "node": "check",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 34,
+      "qubits_including_all_inputs_outputs_and_scratch": 235,
+      "actual_controlled_X_gates": 29796,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "ccx": 18720,
+        "mcx": 11052,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    },
+    {
+      "input_weight_width": 16,
+      "node": "fiber",
+      "coefficient_signs": [
+        1,
+        1
+      ],
+      "output_weight_width": 34,
+      "qubits_including_all_inputs_outputs_and_scratch": 235,
+      "actual_controlled_X_gates": 29796,
+      "actual_maximum_X_controls": 4,
+      "primitive_gate_counts": {
+        "ccx": 18720,
+        "mcx": 11052,
+        "x": 24
+      },
+      "upstream_herald_history_enumeration_used": false,
+      "arbitrary_clean_input_weights_no_overflow": true
+    }
+  ],
+  "rare_and_dark_rotation_controls": [
+    {
+      "weights": [
+        "0",
+        "0",
+        "0"
+      ],
+      "steps": 32,
+      "compression_residual_numeric": 0.0,
+      "signed_coefficient_width_sufficient": 500,
+      "zero_pairs_disabled": [
+        true,
+        true
+      ]
+    },
+    {
+      "weights": [
+        "0",
+        "1",
+        "1"
+      ],
+      "steps": 32,
+      "compression_residual_numeric": 1.330819335326225e-10,
+      "signed_coefficient_width_sufficient": 500,
+      "zero_pairs_disabled": [
+        false,
+        false
+      ]
+    },
+    {
+      "weights": [
+        "1",
+        "0",
+        "0"
+      ],
+      "steps": 32,
+      "compression_residual_numeric": 1.8324870593411176e-10,
+      "signed_coefficient_width_sufficient": 500,
+      "zero_pairs_disabled": [
+        false,
+        false
+      ]
+    },
+    {
+      "weights": [
+        "1",
+        "2",
+        "3"
+      ],
+      "steps": 32,
+      "compression_residual_numeric": 1.509164787774564e-10,
+      "signed_coefficient_width_sufficient": 500,
+      "zero_pairs_disabled": [
+        false,
+        false
+      ]
+    },
+    {
+      "weights": [
+        "1",
+        "179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639474124377767893424865485276302219601246094119453082952085005768838150682342462881473913110540827237163350510684586298239947245938479716304835356329624224137216",
+        "1"
+      ],
+      "steps": 32,
+      "compression_residual_numeric": 1.832488120992222e-10,
+      "signed_coefficient_width_sufficient": 500,
+      "zero_pairs_disabled": [
+        false,
+        false
+      ]
+    }
+  ],
+  "example_whole_program_precision_budget": {
+    "compression_occurrences_including_A_and_Adjoint_and_root_inverses": 1000000000000,
+    "CORDIC_steps_sufficient": 52,
+    "uniform_ideal_constant_rotation_operator_error_upper": "244140625/274877906944",
+    "source_trace_error_assumed": "0",
+    "total_gate_operator_error_assumed": "0",
+    "total_output_TV_perturbation_upper": "244140625/274877906944",
+    "target_TV": "1/1000",
+    "herald_branches_are_not_summed": true,
+    "weight_arithmetic_must_be_exact_and_uncomputed": true,
+    "error_relative_to_ideal_decoder_not_native_target": true,
+    "gate_synthesis_budget_has_been_implemented": false
+  },
+  "exact_message_header_circuits_implemented": true,
+  "digit_controlled_rotation_gates_implemented": true,
+  "coherent_CORDIC_digit_generation_compiled": false,
+  "full_LDPC_receiver_compiled": false,
+  "quantum_speedup_or_classical_hardness_established": false,
+  "local_derivation_independently_reviewed": false
+}

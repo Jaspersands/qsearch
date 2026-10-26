@@ -1,6 +1,8 @@
 """Test an outer-coded quadratic-phase receiver against native classical search.
 
 Dense RS moment families have a deterministic formal-square completion.
+Sparse supports with a common derivative square class admit barycentric
+completion in polynomial actual-input size, without ambient field tables.
 This does not solve the different folded extension-norm inputs, assert a new
 quantum algorithm, or rule out receivers based on other codes.
 """
@@ -12,7 +14,7 @@ from fractions import Fraction
 import hashlib
 from itertools import product
 import json
-from math import isqrt
+from math import comb, isqrt
 from pathlib import Path
 import random
 import sys
@@ -27,7 +29,7 @@ from theorems.bpqm_gibbs_frontier import integer
 from theorems.prime_character_opi import ring, root_at_infinity
 
 REPORT = ROOT / "research/classical_baselines/outer_coded_chirp_probe.json"
-DEPENDENCIES = ("prime_character_opi.py", "bpqm_gibbs_frontier.py")
+DEPENDENCIES = ("prime_character_opi.py", "bpqm_gibbs_frontier.py", "prime_character_norm_attack.py")
 
 
 def sha256(path):
@@ -138,6 +140,298 @@ def complete_moment_squares(p, target, *, points=None):
         "dense_unweighted_prime_field_puncturing_covered": bool(missing),
         "accepted_speedup_candidate": False,
     }
+
+
+def complete_barycentric_moment_squares(p, target, *, points, require_nonzero=False):
+    """Solve every target when A'(a) share a square class and r<=floor(L/2).
+
+    Uses only the ORIGINAL support, not its ambient-field complement. The
+    p3mod4 gate gives deterministic modular square roots without field scans.
+    This is a local application of classical GRS duality/formal-root identities.
+    """
+    if points is None:
+        raise ValueError("explicit ORIGINAL support required; no ambient expansion")
+    C = ring(p)
+    points, target = support_points(p, points), tuple(target)
+    length, rank = len(points), len(target)
+    if p % 4 != 3:
+        raise ValueError("p3mod4 modular-square-root implementation only")
+    if not 1 <= rank <= length // 2:
+        raise ValueError("barycentric rank boundary is 1<=r<=floor(L/2)")
+    if type(require_nonzero) is not bool:
+        raise ValueError("require_nonzero must be a boolean")
+    if require_nonzero and rank >= length // 2:
+        raise ValueError("strict nonzero guarantee needs r<floor(L/2); boundary is not declared infeasible")
+    if any(type(b) is not int or not 0 <= b < p for b in target):
+        raise ValueError("canonical ORIGINAL base-field target required")
+    A = C([1])
+    for a in points:
+        A *= C([-a, 1])
+    derivative = A.derivative()
+    derivatives = [int(derivative(a)) for a in points]
+    kappa = derivatives[0]
+    weights = [pow(value, -1, p) for value in derivatives]
+    squared_scales = [kappa * w % p for w in weights]
+    if any(pow(v, (p - 1) // 2, p) != 1 for v in squared_scales):
+        raise ValueError("UNKNOWN: derivative square classes differ; not a hardness or infeasibility claim")
+    scales = [pow(v, (p + 1) // 4, p) for v in squared_scales]
+    if any(s * s % p != v for s, v in zip(scales, squared_scales)):
+        raise ArithmeticError("native square-scale replay failed")
+    # Lagrange quadrature: s_j=0 below L-1 and s_(L-1)=1. Higher
+    # moments make a triangular lift for the specified inhomogeneous target.
+    sums = [0] * (length + rank - 1)
+    for a, weight in zip(points, weights):
+        term = weight
+        for j in range(len(sums)):
+            sums[j] = (sums[j] + term) % p
+            term = term * a % p
+    if any(sums[:length - 1]) or sums[length - 1] != 1:
+        raise ArithmeticError("barycentric quadrature identity failed")
+    coefficients = [0] * length
+    inverse_kappa = pow(kappa, -1, p)
+    for k, b in enumerate(target):
+        j = length - 1 - k
+        coefficients[j] = (b * inverse_kappa - sum(
+            coefficients[i] * sums[k + i] for i in range(j + 1, length))) % p
+    B = C(coefficients)
+    d = (length + 1) // 2
+    F = A * (C.gen() if length % 2 else C([1])) + B
+    R, certificate = root_at_infinity(p, F, 2, d)
+    residual_degree = (R * R - F).degree()
+    if residual_degree >= d or d + rank > length:
+        raise ArithmeticError("formal root exceeds the quadrature annihilation degree")
+    constant_shift = 0
+    if require_nonzero:
+        forbidden = {-int(R(a)) % p for a in points}
+        constant_shift = next(c for c in range(length + 1) if c not in forbidden)
+        R += constant_shift
+    final_residual_degree = (R * R - F).degree()
+    if final_residual_degree + rank >= length:
+        raise ArithmeticError("final square residual is not annihilated by native quadrature")
+    values = [int(R(a)) * s % p for a, s in zip(points, scales)]
+    observed = native_moments(p, values, rank, points=points)
+    if observed != list(target) or not any(values):
+        raise ArithmeticError("ORIGINAL moment-square equations reject barycentric completion")
+    if require_nonzero and not all(values):
+        raise ArithmeticError("strict native coordinates contain zero")
+    return {
+        "status": "CLASSICAL_ALL_TARGET_BARYCENTRIC_SQUARE_WITNESS",
+        "prime": p, "ORIGINAL_support_points": list(points), "rank_r": rank,
+        "variables_L": length, "ORIGINAL_target": list(target),
+        "native_square_roots_x": values, "replayed_moments": observed,
+        "vanishing_polynomial_coefficients": list(map(int, A.coeffs())),
+        "derivative_values": derivatives, "common_square_class_representative": kappa,
+        "native_square_scales": scales, "target_lift_coefficients": coefficients,
+        "root_polynomial_coefficients": list(map(int, R.coeffs())),
+        "root_degree": d, "formal_square_residual_degree": residual_degree,
+        "formal_square_residual_degree_is_BEFORE_constant_shift": True,
+        "final_square_residual_degree": final_residual_degree,
+        "require_nonzero": require_nonzero, "root_constant_shift": constant_shift,
+        "formal_root_certificate": certificate,
+        "all_targets_under_stated_support_and_rank_conditions": True,
+        "local_derivation_independent_mathematical_review_pending": True,
+        "coefficient_or_field_relaxation": False, "source_rerolls": 0,
+        "costs": {"ambient_field_points_enumerated": 0,
+                  "derivative_evaluations": length,
+                  "modular_inverse_calls": length + 1,
+                  "quadratic_character_tests": length,
+                  "modular_square_root_exponentiations": length,
+                  "quadrature_field_products": length * len(sums),
+                  "native_moment_products": length * rank,
+                  "native_polynomial_evaluations": length,
+                  "strict_avoidance_evaluations": length if require_nonzero else 0,
+                  "strict_public_constant_candidates_at_most": length + 1 if require_nonzero else 0,
+                  "polynomial_degrees_at_most": 2 * d,
+                  "polynomial_in_actual_L_and_log_p_not_in_p": True,
+                  "expression_counts_not_a_complete_bit_budget": True},
+        "arbitrary_sparse_support_or_folded_norm_problem_solved": False,
+        "exact_sampling_guaranteed": False,
+        "all_coordinates_nonzero_guaranteed": require_nonzero,
+        "accepted_speedup_candidate": False,
+    }
+
+
+def sparse_barycentric_controls():
+    """Actual public-support controls, with paid generator search kept explicit."""
+    exhaustive = []
+    for p, points, rank in ((7, (1, 2, 4), 1), (11, (1, 2, 3, 6), 2)):
+        for target in product(range(p), repeat=rank):
+            complete_barycentric_moment_squares(p, target, points=points)
+        exhaustive.append({"prime": p, "ORIGINAL_points": list(points), "rank": rank,
+                           "ALL_targets_verified": p ** rank})
+    p, length = (1 << 61) - 1, 155
+    # Only L is factored here (155=5*31); no factorization of p-1,
+    # full-field generator, discrete logarithm or ambient table is needed.
+    attempted = []
+    for h in range(2, 258):
+        g = pow(h, (p - 1) // length, p)
+        attempted.append(h)
+        if pow(g, length, p) == 1 and all(pow(g, length // q, p) != 1 for q in (5, 31)):
+            break
+    else:
+        raise RuntimeError("UNKNOWN: bounded public-support generator budget")
+    subgroup = [pow(g, j, p) for j in range(length)]
+    rows = []
+    for offset, scale, rank, strict in ((0, 1, 38, True), (0, 1, 77, False), (17, 9, 76, True)):
+        points = tuple((offset + scale * a) % p for a in subgroup)
+        target = [(j * j * 101 + j * 17 + 29) % p for j in range(rank)]
+        row = complete_barycentric_moment_squares(p, target, points=points, require_nonzero=strict)
+        row["public_support_generation"] = {
+            "generator_order": length, "order_prime_divisors": [5, 31],
+            "generator": g, "attempted_bases": attempted,
+            "modular_powers_per_attempt_at_most": 4,
+            "point_generation_modular_powers": length,
+            "affine_offset": offset, "affine_scale": scale,
+            "support_search_budget_exhaustion_would_be_UNKNOWN": True}
+        rows.append(row)
+    return {"exhaustive_targets": exhaustive, "large_native_witnesses": rows,
+            "scope": "UNIFORM_DERIVATIVE_SQUARE_CLASS_SUPPORTS_ONLY_NOT_ARBITRARY_SPARSE_RS"}
+
+
+def sparse_list_decoder_certificate(p, length, rank, agreement, *, bits=96):
+    """Analytic, NOT executed, list-to-singleton decoder/error certificate.
+
+    For ANY distinct public RS support, the true word has Bin(L,q0) matches,
+    q0>1/2. A wrong word needs at least t-r+1 accidental matches, each with
+    probability q1<1/(2(p-1)). A union bound covers ALL p^r-1 competitors;
+    it does not enumerate them. The GS theorem supplies the polynomial list.
+    """
+    ring(p)
+    integer(length, "explicit support length", 2, 4096)
+    integer(rank, "RS dimension", 1, length - 1)
+    integer(agreement, "integer list agreement threshold", 1, length)
+    integer(bits, "outward dyadic rounding bits", 32, 256)
+    if p % 4 != 3 or length >= p:
+        raise ValueError("p3mod4 and L<p required for the stated native channel")
+    if agreement * agreement <= length * (rank - 1):
+        raise ValueError("strict GS agreement condition t^2>L*(r-1) required")
+    accidental = agreement - rank + 1
+    if accidental < 1:
+        raise ValueError("positive accidental-agreement count required")
+    scale = 1 << bits
+
+    def upper(value):
+        value = min(Fraction(1), value)
+        return Fraction((value.numerator * scale + value.denominator - 1) // value.denominator, scale)
+
+    low_matches = Fraction(sum(comb(length, j) for j in range(agreement)), 1 << length)
+    collisions = Fraction((p ** rank - 1) * comb(length, accidental),
+                          (2 * (p - 1)) ** accidental)
+    low_upper, collision_upper = upper(low_matches), upper(collisions)
+    epsilon = min(Fraction(1), low_upper + collision_upper)
+    return {
+        "prime": p, "length": length, "rank": rank, "agreement_threshold": agreement,
+        "accidental_agreements_per_wrong_word_at_least": accidental,
+        "low_true_agreement_probability_upper_exact": str(low_upper),
+        "any_wrong_word_above_threshold_probability_upper_exact": str(collision_upper),
+        "decoder_error_upper_exact": str(epsilon), "outward_rounding_bits": bits,
+        "ideal_instrument_mean_paid_native_validity_lower_exact": str(max(Fraction(0), 1 - 2 * epsilon)),
+        "fraction_targets_below_999_1000_paid_success_upper_exact": str(min(Fraction(1), 2000 * epsilon)),
+        "deterministic_list_decoder_reference": "https://arxiv.org/html/2511.05176v2",
+        "decoder_rule": "list all degree<r words with >=t matches; choose greatest agreement, canonical tie; zero label if empty",
+        "scope": "ANY_DISTINCT_PUBLIC_RS_SUPPORT_UNIFORM_TARGET_AVERAGE_IDEAL_INSTRUMENT_ONLY",
+        "costs": {"codewords_enumerated_by_certificate": 0,
+                  "received_words_enumerated_by_certificate": 0,
+                  "binomial_terms_evaluated": agreement,
+                  "field_size_bit_length": p.bit_length(),
+                  "symbolic_polynomial_decoder_theorem_used_not_implemented_here": True},
+        "ideal_decoder_reduction_local_review_pending": True,
+        "polynomial_list_decoder_executed": False,
+        "quantum_compiler_or_scaling_execution": False,
+        "full_implementation_phase_and_trace_error_budget_resolved": False,
+        "worst_target_guarantee_or_classical_hardness_proved": False,
+        "accepted_speedup_or_general_no_go_claim": False,
+    }
+
+
+def consecutive_moment_opi_reduction(p, target, *, length):
+    """Exact GRS-duality reduction, not a new problem or IID-shift assumption.
+
+    x_i^2=(B(i)+P(i))/A'(i), deg(P)<L-r. OPI orientations are
+    the derivative characters and its shifts are -B(i), NOT fresh IID data.
+    """
+    from theorems.prime_character_opi import PrimeCharacterOPI
+
+    C, target = ring(p), tuple(target)
+    integer(length, "original consecutive support size", 2, min(4096, p - 1))
+    if p % 4 != 3 or not 1 <= len(target) < length:
+        raise ValueError("p3mod4 and 1<=r<L required for this native reduction")
+    if any(type(b) is not int or not 0 <= b < p for b in target):
+        raise ValueError("canonical ORIGINAL target required")
+    rank, points = len(target), tuple(range(1, length + 1))
+    A = C([1])
+    for a in points:
+        A *= C([-a, 1])
+    derivatives = [int(A.derivative()(a)) for a in points]
+    weights = [pow(v, -1, p) for v in derivatives]
+    sums = [sum(w * pow(a, j, p) for a, w in zip(points, weights)) % p
+            for j in range(length + rank - 1)]
+    if any(sums[:length - 1]) or sums[length - 1] != 1:
+        raise ArithmeticError("native GRS-duality quadrature failed")
+    coefficients = [0] * length
+    for k, b in enumerate(target):
+        j = length - 1 - k
+        coefficients[j] = (b - sum(coefficients[i] * sums[k + i] for i in range(j + 1, length))) % p
+    B = C(coefficients)
+    orientations = tuple(0 if pow(v, (p - 1) // 2, p) == 1 else 1 for v in derivatives)
+    problem = PrimeCharacterOPI(p, length - rank, 2, p - 1,
+                                tuple(-int(B(a)) % p for a in points), orientations)
+    return problem, {
+        "prime": p, "ORIGINAL_support_points": list(points), "ORIGINAL_target": list(target),
+        "rank": rank, "OPI_dimension": length - rank,
+        "target_lift_coefficients": coefficients, "derivative_values": derivatives,
+        "vanishing_polynomial_coefficients": list(map(int, A.coeffs())),
+        "standard_GRS_duality_local_application_review_pending": True,
+        "OPI_shifts_are_IID_or_resampled": False, "coefficient_or_field_relaxation": False,
+        "costs": {"ambient_field_points_enumerated": 0,
+                  "quadrature_terms_evaluated": length * len(sums),
+                  "modular_inverse_calls": length,
+                  "modular_power_calls_in_quadrature": length * len(sums),
+                  "derivative_evaluations": length,
+                  "expression_counts_not_a_complete_bit_budget": True},
+    }
+
+
+def consecutive_moment_norm_control():
+    """One fixed native sparse input attacked via the EXISTING OPI solver."""
+    from theorems.prime_character_norm_attack import attack
+
+    p, length, rank = (1 << 61) - 1, 127, 31
+    target = [(j * j * 101 + j * 17 + 29) % p for j in range(rank)]
+    problem, reduction = consecutive_moment_opi_reduction(p, target, length=length)
+    result = attack(problem, 6611, trials=128)
+    row = {"reduction": reduction, "existing_classical_norm_attack": result,
+           "status": "INCONCLUSIVE_PAID_NORM_BUDGET", "native_square_roots_x": None,
+           "fixed_input_or_uniform_target_distribution_success_theorem": False,
+           "original_folded_norm_problem_solved": False, "accepted_speedup_candidate": False}
+    population = result["one_trial_IID_source_bound"]
+    row["uniform_original_target_population_transfer"] = {
+        "requires_uniform_original_b_AND_independent_uniform_degree_below_L_minus_r_mask": True,
+        "linear_bijection": "(b,mask) -> B_b+mask -> all L evaluations -> IID OPI shifts",
+        "source_rerolls_required": False,
+        "one_trial_average_success_lower_exact": population.get("success_probability_lower_exact"),
+        "bound_requires_existing_norm_degree_and_source_hypotheses": True,
+        "uniform_kernel_mask_used_in_THIS_seeded_fixed_input_control": False,
+        "fixed_target_probability_or_high_probability_amplification_proved": False,
+        "inverse_polynomial_population_success_is_NOT_a_high_probability_dequantization": True,
+        "local_linear_reduction_review_pending": True,
+    }
+    if result["status"] == "CLASSICAL_NATIVE_PERFECT_WITNESS":
+        Q, B = ring(p)(result["polynomial_coefficients"]), ring(p)(reduction["target_lift_coefficients"])
+        values = []
+        for a, derivative in zip(reduction["ORIGINAL_support_points"], reduction["derivative_values"]):
+            square = (int(Q(a)) + int(B(a))) * pow(derivative, -1, p) % p
+            x = pow(square, (p + 1) // 4, p)
+            if x * x % p != square:
+                raise ArithmeticError("OPI witness does not lift to an ORIGINAL native square")
+            values.append(x)
+        observed = native_moments(p, values, rank, points=reduction["ORIGINAL_support_points"])
+        if observed != target:
+            raise ArithmeticError("GRS/OPI reduction changed an ORIGINAL moment equation")
+        row.update({"status": "CLASSICAL_NATIVE_SPARSE_MOMENT_WITNESS_VIA_EXISTING_OPI",
+                    "native_square_roots_x": values, "replayed_moments": observed,
+                    "observed_nonzero_coordinates": sum(bool(x) for x in values)})
+    return row
 
 
 def local_chirp_unitary(p):
@@ -479,14 +773,21 @@ def run_controls():
         "wrong_transpose": coherent_chirp_target(inverse_model, [1], wrong_transpose_inverse=True),
         "normalization_and_herald_alone_do_not_certify_native_output": True,
     }
+    sparse = sparse_barycentric_controls()
+    decoder_certificates = [sparse_list_decoder_certificate((1 << 61) - 1, L, r, t)
+                            for L, r, t in ((512, 64, 200), (1024, 128, 400))]
+    consecutive_norm = consecutive_moment_norm_control()
     if sha256(__file__) != source_hash or any(sha256(ROOT / "theorems" / k) != v for k, v in deps.items()):
         raise RuntimeError("producer/dependency changed during the run")
     return {
-        "schema_version": "outer-coded-chirp-probe-v2", "source_sha256": source_hash,
+        "schema_version": "outer-coded-chirp-probe-v5", "source_sha256": source_hash,
         "dependency_sha256": deps, "exhaustive_native_targets": exhaustive,
         "classical_native_controls": controls, "local_physical_controls": physical,
         "full_flagged_coherent_controls": coherent,
         "inverse_readout_countercontrol": inverse_control,
+        "sparse_barycentric_controls": sparse,
+        "sparse_polynomial_list_decoder_certificates_NOT_quantum_executions": decoder_certificates,
+        "consecutive_sparse_moment_OPI_norm_control": consecutive_norm,
         "generic_coherence_countercontrols": [generic_coherence_counterexample(17, dense_check=True),
                                                 generic_coherence_counterexample(1 << 20)],
         "scientific_decision": "DENSE_RS_MOMENT_SEARCH_ROUTE_CLASSICALLY_SOLVED_FOR_r<|S|-(p-1)/2",
@@ -507,7 +808,11 @@ def main():
     print(json.dumps({"decision": report["scientific_decision"],
                       "native_controls": [{"N": c["variables_N"], "r": c["rank_r"], "status": c["status"]}
                                           for c in report["classical_native_controls"]],
-                      "exhaustive": report["exhaustive_native_targets"]}))
+                      "exhaustive": report["exhaustive_native_targets"],
+                      "sparse_barycentric": [{"L": c["variables_L"], "r": c["rank_r"],
+                                               "strict": c["require_nonzero"], "status": c["status"]}
+                                              for c in report["sparse_barycentric_controls"]["large_native_witnesses"]],
+                      "consecutive_sparse_norm_status": report["consecutive_sparse_moment_OPI_norm_control"]["status"]}))
 
 
 if __name__ == "__main__":

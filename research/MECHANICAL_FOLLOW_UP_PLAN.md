@@ -1,5 +1,4001 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-10-23 Endomorphism-Transport Baseline Is Strong-Input Only
+
+Read SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK.md. The new coordinate-level
+module is NOT a natural isogeny backend or a candidate for automatic
+admission. No immediate CLI/UI wiring is warranted without actual input.
+
+- Keep full evaluable End(B), target Rosati Gram, source basis/split and
+  exact basis correspondence as explicit inputs. Do not infer them from
+  a PPAV model, abstract order, or geometric converter name.
+- Record M and actual Gram-derived coordinate bounds. Insufficient M or
+  failed norm/structure checks mean UNKNOWN, never a hardness certificate.
+- Retain auxiliary scalar cancellation, source/target orientation, and
+  secret-prime saturation assumptions. Auxiliary full rank is insufficient.
+- Returned kernel vectors are abstract source coordinates, NOT points on
+  large-prime torsion. No Hom module or coherent quantum execution occurs.
+- If later supplied real geometric data, charge every torsion field,
+  pairing/discrete-log, exact basis evaluation and coordinate conversion.
+
+32 new controls;103 selected tests PASS in0.73s. Replay with
+PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1:
+tests/test_endomorphism_transport_recovery.py,
+tests/test_projective_lattice_reconstruction.py,
+tests/test_siegel_repolarization.py and tests/test_siegel_marked_source.py.
+Do not report these as a full-repository validation or a weak-source attack.
+
+## 2026-10-23 Siegel Digit Queries Are Not A Quantum Learner
+
+Read SYMPLECTIC_CHAIN_RING_DIGIT_REDUCTION.md before any later integration.
+The new symplectic_prime_power_digits module has an integer prime-power
+backend only. It does not recover unknown digits from oracle access.
+Do not expose supplied-answer reconstruction as an algorithm experiment.
+
+- Retain certified residue chart and prefix provenance. Query constructors
+  receive the known prefix, never the next hidden digit.
+- Compute the prefix action and subtraction at FULL ring precision. Use
+  scalar probes only for 1<=r<e-1 and elementary probes at r=e-1.
+- Learn the actual one-dimensional intermediate kernel, normalize a
+  nonzero t coordinate, and require the two-query digit certificate.
+- At the final digit retain degree-two coefficients, the HPGP minus sign,
+  both t=1,-1 oracle tests and all-column consistency.
+- Do not reuse the field's unipotent-only final certificate or its
+  transvection membership interpretation over rings. Keep their falsifiers.
+- Charge full HSP/HPGP copy counts, original queries, reversible arithmetic,
+  error budgets and all-history caps. General chain-ring arithmetic and
+  extension-field residue coordinates need a real backend before execution.
+- Keep the opaque-label query bound separate from natural-source hardness.
+  No candidate admission or UI speedup claim is licensed by this note.
+
+39 new controls;213 selected tests PASS in7.55s; new-file syntax PASS.
+The selected run includes tests/test_symplectic_prime_power_digits.py,
+test_symplectic_socle_probes.py, test_symplectic_field_chart.py,
+test_bounded_codimension_reduction.py, test_uniform_bch_rees.py,
+test_succinct_polynomial_stabilizer.py and test_polynomial_orbit_module.py.
+Use PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache and disable pytest plugin
+autoload for the bounded replay. No full-repository check is claimed.
+
+No qsearch/UI/central-registry/Git changes or iCloud repairs were made.
+The useful next task is not mechanical wiring without a source or learner.
+
+## 2026-10-23 Bounded-Codimension Integration Must Retain Its Preconditions
+
+Read BOUNDED_CODIMENSION_HSP_REDUCTION.md before using the new public
+algebra helper. No CLI/registry promotion is currently warranted. If a
+real source and validated receiver are later supplied, mechanical wiring
+must retain the following distinction:
+
+- Actual coherent f queries use the same validated Lie/BCH law; a frozen
+  basis table does not certify an unrelated nonlinear callback or oracle.
+- Learn ALL of h intersect A. Membership-verified partial subspaces are
+  not enough. Keep the incomplete-intersection counterexample in tests.
+- Restrict to N_L(K) before quotienting K; retain arbitrary-section fiber
+  correctness, current codimension bound and pullback chain.
+- Charge approximate Fourier error, sample completeness, all-query caps,
+  reversible arithmetic and fresh terminal Rees trees. No copy-only or
+  opaque black-box growing-class conversion is supplied by this pass.
+- Log classical collision/rejection costs. Small-prime arithmetic fixtures
+  must not be counted as evidence of a quantum advantage.
+
+37 new controls and125 selected tests PASS in3.32s; syntax PASS:
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q tests/test_bounded_codimension_reduction.py tests/test_uniform_bch_rees.py tests/test_succinct_polynomial_stabilizer.py tests/test_polynomial_orbit_module.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile theorems/bounded_codimension_reduction.py tests/test_bounded_codimension_reduction.py
+
+Live public n8/17/24 reductions produced quotient dimension1. Ground-truth
+hidden intersections were supplied, NOT discovered. No central admission,
+UI claim, Git operation, hydration, cache repair or relocation was performed.
+
+The succinct-polynomial source extension is only a conditional theorem
+target. Do not wire it as a surviving candidate or disable any existing
+classical filter because the ambient class is no longer fixed.
+
+## 2026-10-23 Residual Search And Sampling Must Remain Distinct
+
+Read INVERSE_TRACE_COMPLETION_TRANSFER.md before implementing a residual
+attack. It supplies a sampling-transfer proof, not a residual solver.
+Keep original public points, field, inverse-zero convention and target
+bits; fix U before the prefix draw and retain its exact residual syndrome.
+For a sampler claim, use a fixed capped kernel with fresh coins and charge
+all aborts. An average guarantee on planted syndromes or a prefix-adaptive
+kernel is not the required uniform-syndrome guarantee. Search-only outputs
+must remain search-only, even when many distinct witnesses are found.
+
+Bounded calibration may enumerate exact residual fibers, but that cost is
+exponential and must never be reported as the scalable backend. The new
+test-only histogram code uses F16, not a native large-n sampling experiment.
+38 new controls and65 selected tests PASS in1.32s; new-file syntax PASS:
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q tests/test_inverse_trace_completion_transfer.py tests/test_inverse_trace_mask_closure.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile tests/test_inverse_trace_completion_transfer.py
+
+No central admission or UI claim is licensed by this conditional reduction.
+No commits, pushes, hydration, cache repair, move or live background job.
+
+## 2026-10-23 Masked Inverse-Trace Classical Attack: Integration Contract
+
+Read INVERSE_TRACE_MASK_CLOSURE.md before integrating. New arithmetic
+helpers in theorems/binary_subspace_correction.py do not certify accepted
+subspaces, field presentations, MDS structure or probability promises.
+Gemini's bounded wiring task, when assigned:
+
+- Preserve the original matrix, syndrome, mask matrices, centers, offsets
+  and targets. Construct accepted-subspace bases from a proved field model.
+- Solve the actual expanded binary correction system. A consistent result
+  must pass original parity and masked-predicate verification. Inconsistent
+  ansatz means UNKNOWN; do not label it a surviving quantum advantage.
+- For distributional bounds record mask independence/uniformity, H fixed
+  before masks, effective zero support, and whether the support is adaptive.
+  Do not substitute raw target zero counts or drop the adaptive union factor.
+- Keep witness search separate from exact/uniform conditional sampling.
+  Scalar/Frobenius normalization must update H and the affine syndrome.
+  Totalized fractional-linear poles require their own contract.
+- Do not admit a candidate from numeric probability parameters alone.
+  Keep the review's stronger unmasked attack; this rank-only method can
+  fail on instances that the unmasked multi-buffer algorithm solves.
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_inverse_trace_mask_closure.py tests/test_uniform_bch_rees.py tests/test_coset_bank_refresh.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile theorems/binary_subspace_correction.py tests/test_inverse_trace_mask_closure.py
+
+Verified here:27 new tests PASS in0.17s;75 selected tests PASS in0.56s;
+new Python syntax PASS. This is not full integration or quantum execution.
+The iCloud folder is unchanged: metadata-check before reading and skip
+compressed,dataless dependencies rather than forcing a download.
+
+## 2026-10-23 Elementary Repolarization: Keep The Unimplemented Gap Visible
+
+Read SIEGEL_ELEMENTARY_REPOLARIZATION.md. The new focused test module
+tests/test_siegel_repolarization.py contains proof controls only, not a
+curve/isogeny backend. No registry acceptance or UI claim should follow.
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_siegel_repolarization.py tests/test_siegel_marked_source.py tests/test_symplectic_field_chart.py tests/test_symplectic_socle_probes.py tests/test_parabolic_cut_scope.py tests/test_prime_power_rees_descent.py tests/test_uniform_bch_rees.py tests/test_coset_bank_refresh.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile tests/test_siegel_repolarization.py
+
+Final selected milestone:179 tests PASS in1.99s, including22 new controls.
+Changed/new Python syntax and targeted whitespace checks PASS. Not a full
+repository, geometric-model or quantum-execution validation.
+
+Do not wire a raw polarization program or torsion-coordinate normal form
+as an HSP label: both fail exact equality contracts in the new controls.
+Do not replace missing target module/ring data with the reference fixture.
+Future implementation must retain an actual geometric polarization model,
+one joint isomorphism across all marks, charged point fields and uniform
+coherent evaluation. Full2026/1142 theorem review remains theory work;
+the paper's abstract alone does not certify this source conversion.
+
+## 2026-10-23 Marked Isogeny Source: Arithmetic Is Not Feasibility
+
+Read SIEGEL_MARKED_SOURCE_RIGIDITY.md before using the new
+theorems/siegel_marked_source.py. separation_budget checks sufficient
+integer inequalities and coprimality ONLY. Its strict_separation field must
+never be used as a source-acceptance, candidate-admission or speedup flag.
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_siegel_marked_source.py tests/test_symplectic_field_chart.py tests/test_symplectic_socle_probes.py tests/test_parabolic_cut_scope.py tests/test_prime_power_rees_descent.py tests/test_uniform_bch_rees.py tests/test_coset_bank_refresh.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile theorems/siegel_marked_source.py tests/test_siegel_marked_source.py
+
+New focused suite:26 tests PASS. Combined selected milestone:157 tests
+PASS in1.84s. New-file py_compile and targeted whitespace checks PASS.
+This is not a repo-wide suite or an executed quantum/geometric workflow.
+Mechanical requirements for ANY later source implementation:
+- Keep polarization multiplier d distinct from geometric degree d^g.
+- Use full ordered torsion bases at coprime auxiliary orders avoiding p*d;
+  count point construction, field extensions and weak evaluations.
+- Unknown scalars must be units and common to the whole basis at one order.
+  Use the PROJECTIVE bound, not the exact-evaluation bound. Nonunit data
+  can collapse every label even when the numeric certificate passes.
+- Canonicalize the entire POLARIZED marked object using ONE codomain
+  isomorphism across ALL levels. Per-level canonicalization is false, and
+  dropping polarization fails at arbitrarily large marking level.
+- Do not enumerate the large CRT product or form a huge compositum field
+  merely to combine the marks; separate accessible CRT bases suffice.
+- The four Gaussian automorphisms in the fixtures are countercontrols,
+  not a general polarized-variety canonicalizer or automorphism solver.
+- No actual quotient/point/oracle/quantum execution is evidenced by these
+  matrix tests. Source construction and matched classical attacks remain
+  theory work, not tasks to paper over with simulated labels.
+
+No central registry, CLI/UI, Git, hydration, relocation or agents changed.
+
+## 2026-10-23 Field-Chart Reduction: Preserve Source And Rejection Contracts
+
+Read SYMPLECTIC_FIELD_CHART_REDUCTION.md. New public arithmetic is in
+theorems/symplectic_field_chart.py; no HPGP receiver or chart sampler is
+implemented. Do not relabel its tests as an executed quantum algorithm.
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_symplectic_field_chart.py tests/test_symplectic_socle_probes.py tests/test_parabolic_cut_scope.py tests/test_prime_power_rees_descent.py tests/test_uniform_bch_rees.py tests/test_coset_bank_refresh.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile theorems/symplectic_field_chart.py tests/test_symplectic_field_chart.py
+
+131 combined tests pass (26 new); new-file syntax passes. FLINT0.9.0 is
+installed and used for independent prime-field RREF and F9 arithmetic.
+Mechanical follow-up, only after proof review and when integration is useful:
+- Keep field and ring query constructors separate: field graphs [S;I] use
+  B=ES+SE^T; ring graphs [I;pS] have different orientation/sign formulas.
+- Connect only CORRECT HPGP output with Q=-P converted. Truth-derived
+  graph_polynomial is a reference helper, never the learner implementation.
+- For F_(p^a), use a genuine finite-field backend and t in F_p; flatten
+  symmetric entries into a*m prime-field output coordinates. Do not pass
+  p^a to an API whose parameter requires a verified prime.
+- Mandatory final verification is against the original oracle and uses
+  T=C*[[S_hat,-I],[I,0]]. Local checks alone are unsound on bad charts.
+- Charge source copies, all failed charts and capped HPGP runs. Return ABORT
+  after the global clock. Do not report failed trials as no-go theorems.
+- m field-basis verifier queries work by F_q-linear invariance. Actual
+  subgroup GENERATORS require the full F_p basis and paid unit generators.
+- Keep random-label query hardness separate from explicit-input hardness.
+  No candidate admission or speedup flag is authorized by these checks.
+- Read SIEGEL_NATURAL_SOURCE_AUDIT.md before attaching an isogeny source.
+  Accessible full-torsion evaluation already has an abelian quantum
+  baseline; unmarked quotients fail the exact-label promise in a concrete
+  product example. The new torsion test is not an isogeny implementation.
+
+No central registry, qsearch/UI, Git writes, hydration or relocation in
+this pass. Existing download/move arrangement is unchanged.
+
+## 2026-10-23 Symplectic Prime-Square Reduction And Invalid Exclusions
+
+Read SYMPLECTIC_PRIME_SQUARE_REDUCTION.md and PARABOLIC_CUT_LIST_CORRECTION.md.
+Do NOT label this a compiled quantum algorithm or admit a speedup. The new
+module only constructs public query/verification matrices and postprocesses
+provided HPGP answers. The published HPGP implementation is not in this pass.
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_symplectic_socle_probes.py tests/test_parabolic_cut_scope.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile theorems/symplectic_socle_probes.py tests/test_symplectic_socle_probes.py tests/test_parabolic_cut_scope.py
+
+30 focused checks and105 combined milestone checks pass; Python syntax
+checks pass. Mechanical follow-up for Gemini:
+- Trace NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND and the orthogonal,
+  unitary, density and commutant descendants. Preserve valid narrow bounds,
+  supersede invalid blanket exclusions, and regenerate affected reports.
+- negative_results.json is NOW resident, but was not opened/changed by GPT.
+  Check each file's metadata before access; some dependencies remain dataless.
+- Add the two new suites to the relevant existing test selection. Do not
+  manufacture a receiver result from their finite matrix/fiber checks.
+- Any later HPGP integration must keep Q=-P sign conversion, m=n(n+1)/2,
+  both t=1,-1 certificate pairs, failed attempts and capped retries. Do not
+  replace coset-label queries with membership-only access or assume an
+  embedding F_p->Z/p^2. No field-only Sp oracle can call these ring queries.
+- Retain n>=2, odd VERIFIED p, and free Lagrangian direct-summand promises.
+  New rank-one and characteristic-two scope requires new mathematics.
+
+No Git writes, UI/qsearch edits, central admissions, relocation or hydration
+were performed. The user's future folder move remains their task.
+
+## 2026-10-23 Prime-Power Phase-Lift Controls
+
+Read PRIME_POWER_REES_DESCENT.md before any wiring. The new
+prime_power_rees_descent module is a witness verifier/lifter and theoretical
+clock, NOT a ring SDE solver or quantum receiver. No registry promotion.
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_prime_power_rees_descent.py tests/test_uniform_bch_rees.py tests/test_coset_bank_refresh.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile theorems/prime_power_rees_descent.py tests/test_prime_power_rees_descent.py
+
+75 tests pass(27 new), syntax/whitespace checks pass, manuscript compiles.
+Test enumeration is deliberately confined to finite countercontrols, NOT
+presented as the published scalar solver. Large-modulus lifts do not enumerate.
+
+For later Gemini integration, if this alternate route is actually needed:
+- Use complete mixed-order module charts/relations, never mod-p vector-space
+  substitution. Derived cyclic rank does not bound class as it does in fields.
+- Do not call bch_via_ode with a prime power in its prime parameter. A ring
+  adapter must validate c<p and all mixed-order relations first; the shared
+  mathematical recurrence only inverts units. That adapter is not implemented.
+- Wire plan_batch to consume ALL batch inputs, discard on retry, and accept
+  only zero-or-unit scales. lift_batch_witness requires an independently
+  obtained, verified scalar FIELD witness. It does not generate one.
+- Use the GLOBAL raw-source cap and count failed subtrees, final QFTs and
+  complete-channel errors. Do not assign constant retries to every node or
+  treat an expected resource count as a worst-case clock.
+- Amplify only canonical HNF outputs with independent complete runs. Source
+  bank/setup errors need their own joint budget; repetition does not cure them.
+
+The old receiver imports remain cloud-offloaded. Recheck metadata before
+reading or testing them; no hydration or relocation was requested. Do not
+replace the previous outer reduction: it has the better unrestricted-rank
+fixed-class bound. No UI work, native execution claim, central admission,
+Git action, agents or outreach is needed for this theoretical result.
+
+## 2026-10-23 Uniform BCH And Derived-Rank Extension
+
+Theory/code are complete as a bounded standalone pass. Read
+DERIVED_RANK_REES_EXTENSION.md; no native receiver or scalar solver is
+implemented, and no registry acceptance should follow from these tests.
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_uniform_bch_rees.py tests/test_coset_bank_refresh.py
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m py_compile theorems/uniform_bch_rees.py tests/test_uniform_bch_rees.py
+
+48 focused tests pass(39 new); manuscript compilation and targeted whitespace
+checks pass. The scalar-line budget explicitly counts all consumed targets,
+and lift_scalar_witness only verifies/converts an EXISTING witness. It is
+not an equation solver. The BCH callback requires validated genuine Lie
+constants and a correct class bound; vector checks do not establish them.
+
+OPTIONAL Gemini wiring, only after dependencies have actually downloaded:
+1. Inspect flags before reading/importing. jet_oracle_homogenization.py and
+   prime_character_opi.py are still compressed,dataless. Do not hydrate or
+   move the folder on the user's behalf or claim a full-suite pass now.
+2. Integrate bch_via_ode with the existing frozen/validated Rees algebra,
+   preserving the verified actual class and canonical field coordinates.
+   Compare against the old independent matrix controls before replacement.
+3. Expose scalar_line_budget as an ALTERNATIVE explicit-input schedule,
+   never silently changing old fixed-grade counts or the black-box bound.
+   Include leaves, conversions, terminal readout and error allocation.
+4. Rerun connected Rees tests once imports are resident. A real scalar
+   solver remains separate work; do not substitute finite enumeration or
+   an arbitrary callback and then claim the theorem is implemented.
+
+Do not add a UI campaign, central registry promotion, new agents or outreach.
+No implementation task here establishes novelty, practicality, hardness or
+an application. GPT should now return to the unresolved scientific question,
+not spend more theory usage packaging these controls.
+
+## 2026-10-22 Coset-Bank Source Qualification
+
+Theory is in REES_COPY_ONLY_OUTER_REDUCTION.md Section2a and the updated
+manuscripts/rees_hsp_review.tex. There is NO new production module to wire.
+The existing controlled-discard transport already implements the required
+refresh; do not add another decoder, candidate or registry acceptance flag.
+
+Independent finite verification, with no offloaded theorem imports:
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_coset_bank_refresh.py
+
+9 tests pass. Python syntax and desktop LaTeX compilation pass. The full
+copy-only suite was NOT run because prime_character_opi.py is dataless;
+do not mistake the standalone NumPy audit for testing that integration.
+After hydration, the existing test_rees_copy_only_outer.py and related Rees
+tests remain the integration checks; inspect flags before importing them.
+
+Any future concrete source must justify its JOINT coset-diagonal promise
+or the stated joint right-action moments. Correct one-copy marginals and
+separability do not suffice. Use independent source-private translation
+coins and ignore those records; one shared translation is not a refresh.
+All actual source copies remain consumed. No current source admission,
+native receiver run, Git write or qsearch/UI/registry update is requested.
+
+## 2026-10-22 Exact Pattern And Classical Latent Sampler: Completed Theory Passes
+
+Read EXACT_PREDICATE_CHANNEL.md and NATIVE_LATENT_SAMPLER.md first.
+The same independent review also found direct prior art for full-list
+projection; preserve that attribution and the absence of hardness/novelty
+claims. Do not restore old triangle bounds as the current native certificate.
+
+Completed workflows (all use the external pycache prefix):
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m theorems.balanced_filter_channel_audit --write
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m theorems.folded_balanced_filter --write
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m theorems.native_latent_sampler --write
+
+113 connected tests PASS,11 unavailable native tests excluded.15 report hash
+bindings match; Python and12 site-JS checks pass. New exact-pattern tests
+include128 fixed target/syndrome cases and648 signed masks. New classical
+tests exhaust224 active-set/target/syndrome configurations and their random
+free choices, plus96 exact Gibbs-mixture controls. Native scaling certificates
+are mathematical bounds, NOT measurements from a large sampler or circuit.
+
+The available connected test files are test_native_latent_sampler.py,
+test_exact_predicate_channel.py, test_folded_balanced_filter.py,
+test_balanced_filter_channel_audit.py and test_inverse_trace_gibbs_target.py.
+Only the Gibbs checks matching these five expressions were excluded:
+mds_expression_equals_direct; every_target_and_syndrome;
+agrees_with_all_exact_finite_partition; native_binary_block_kernel;
+empty_finite_solution. Recheck file flags before full integration; do not
+hydrate compressed,dataless sources repeatedly or repair/relocate the cloud
+folder. The user intends relocation after download. No qsearch validation
+success or full-test success is claimed.
+
+Mechanical pilot specification, if separately run after hydration:
+use the caller's actual public field/points/syndrome with scalar_conditional_draw;
+sample active sets with draw_active_set, not rare rejection; retain T, active
+count, field/bit work, all ABORTs, native verification and success denominators.
+Compare against accepted completion on the SAME native input. A moderate-
+temperature Gibbs score/TV bound is not a full-witness search result. The
+folded conditional sampler is proved but not implemented here; do not silently
+use E-linear Gaussian elimination for its F_q-scalar parity system.
+
+No new CLI/UI/registry integration, decoder implementation, circuit build,
+commit/push or agents are requested from GPT. The next substantive work is
+near-complete conditioning/adaptive completion or a meaningful reduction.
+
+
+## 2026-10-22 Folded Balanced Construction: Replay, Do Not Build A New Decoder
+
+Read FOLDED_BALANCED_FILTER.md. New standalone workflow and21 new tests:
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m theorems.folded_balanced_filter --write
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_folded_balanced_filter.py
+
+80 available connected tests PASS,11 native-backend checks deselected. The
+live report binds its source, note and upstream channel proof. Python/site-JS
+syntax passes. This is NOT full registry/integration validation. The old
+folded_rs_decoder.py, explicit_quadratic_opi.py and negative registry remain
+iCloud dataless; do not read placeholders repeatedly, repair cloud settings,
+move the repository or replace unavailable sources.
+
+No new decoder port, circuit compiler or candidate admission is requested.
+The finite pruner is a proof fixture: it starts from a supplied affine space,
+not from the native interpolation algorithm, and enumerates ALL27 block-index
+sequences. Both actual close messages are retained; rank/inconsistency failures
+are charged. The independent512-message comparator is not the decoding method.
+The known scalable deterministic FRS component is explicitly literature-linked.
+
+Preserve the changed-input warning, F_q scalar versus E block rank, trace-dual
+basis, strict radius, primitive-generator requirement for the sharp cap, and
+fixed public padding P. Do not assert that the old scalar problem now admits
+rate3/8, use an E-linear MDS formula, or omit rejected projection probability.
+
+The classical subfield witness and accepted-completion identity are important
+countercontrols, not decorative baselines. The former solves a real mixed-
+target even-fold subclass; the latter has expected attempts about2^(3N/8),
+not2^N. No classical lower bound or native quantum execution was established.
+The next high-reasoning task is odd-folded classical completion or a meaningful
+reduction/application. Leave qsearch/UI/central registries/Git/agents untouched.
+
+## 2026-10-22 Full-List Channel Audit: Preserve The Probability Ledger
+
+Read BALANCED_FILTER_CHANNEL_AUDIT.md. This pass is complete:
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m theorems.balanced_filter_channel_audit --write
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_balanced_filter_channel_audit.py
+
+24 new tests PASS; the available Gibbs-plus-channel set gives59 PASS with11
+native-backend tests deselected. Native large circuits did NOT run. Independent
+FLINT fixtures are capped exponential references, not the GS implementation.
+Python/site-JS syntax and the new live artifact/hash replay pass. The old
+native backend/registry are still dataless; no relocation/cache/cloud repair.
+
+Preserve the new full-list mechanism: one PUBLIC fixed P, distinct padded
+messages, reversible lookup, Hadamard index projection, complete uncomputation,
+and the explicit1/P probability factor. All failed index outcomes are charged.
+Do not replace P by the actual branch list length, truncate the list, erase
+garbage by assignment, or report conditional success without its herald cost.
+The false-singleton countercontrol can improve a finite score despite failed
+erasure; its nonzero residual is a proof failure, not a performance improvement.
+
+No gate/circuit project or new candidate admission is requested. Once the
+old sources are local, cross-reference the new variant from the original
+balanced-filter note ONLY together with regeneration of its bound artifact
+and dependent proof hashes. The older singleton protocol remains valid; the
+new variant removes its ambiguity premise but trades for a paid projection.
+Do not represent that as a native runtime improvement or established speedup.
+
+The next GPT work is theory about a useful code/source pair, reduction, or
+classical attack. Keep UI/qsearch/central registries/Git/agents untouched.
+
+## 2026-10-22 Small-Block Pilot Scope And Cloud Availability
+
+Read the added mixing section of INVERSE_TRACE_GIBBS_TARGET.md before running
+the earlier pilot specification. A local, review-pending character-sum proof
+now rules out polynomial WORST-START TV mixing for fixed small native binary
+blocks. It does NOT rule out uniform-start first-witness hitting. Keep that
+metric, exact native verification, censored failures and paid work counts.
+Do not label a first-hit plot a mixing measurement or a failed pilot hardness.
+
+Current completed workflow:
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m theorems.inverse_trace_gibbs_target --skip-native-controls --write
+
+This records exact rational budgets and independent scalar FLINT checks.
+It explicitly records native_finite_controls_executed=false. There are35
+passing selected tests;11 native-backend replays are deselected. Python and
+site-JS syntax pass. The full connected set/registry validation is NOT passed.
+
+The user has confirmed they will relocate the iCloud-managed Desktop repo
+after downloads finish. Do not move it, hydrate placeholders by repeated
+blocked reads, repair caches/sync, or change the environment. The shared
+explicit_quadratic_opi.py backend and negative registry were still dataless
+at the last metadata check. Bounded stalled jobs have been stopped/reaped.
+
+Once those files are genuinely local, rerun the original full workflow:
+
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m theorems.inverse_trace_gibbs_target --write
+    PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache python -m pytest -q tests/test_inverse_trace_gibbs_target.py
+
+Then run the connected set listed in the preceding handoff and registry
+validation, reporting actual outcomes. Do not claim the independent scalar
+modulus is a native-input run. No new framework, central registry/UI/qsearch
+changes, Git writes, agents, automation or background work is requested.
+
+## 2026-10-22 Binary GS: Replay Only, No Gate-Synthesis Project
+
+BINARY_GS_DECODER.md documents the known deterministic binary-field decoder
+route. `python -m theorems.binary_gs_decoder --write` is implemented and
+complete. Its39 tests bring the connected set to214 PASS, with the SAME old
+cubic artifact replay excluded. Use PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache.
+Python/site-JS syntax and live artifact/hash replay pass. The original balanced
+filter note and artifact are updated; its live workflow passes as well.
+
+Preserve zero-polynomial rejection, squarefree split extraction, every public
+trace cut, repeated roots, X-content normalization, the full RR width ledger,
+full formal root checks, exact distance filtering and canonical complete lists.
+Never turn a returned single VALID candidate into a complete-list singleton.
+Do not add early stopping at Q(X,0)=0 or silently use randomized roots/factor.
+
+The dense interpolation reference has a matrix-cell cap. Large n17/31/61
+fixtures use N7, NOT native N=n^2. Native layouts are polynomial resource
+budgets, not actual circuit runs. The field modulus/basis must remain public
+and fixed. A gate implementation would need fixed padded loops, all arithmetic,
+canonical root sorting and full clean uncomputation; this is NOT requested now.
+
+No decoder optimization/circuit synthesis task is needed to answer the present
+research question. The bounded native Gibbs pilot below remains the useful
+mechanical work. Do not alter registry/UI/qsearch/Git or repair unavailable
+cloud files. No background process or automation is requested.
+
+## 2026-10-22 Gemini: Bounded Native Gibbs Pilot, No Framework Work
+
+Read INVERSE_TRACE_GIBBS_TARGET.md first. The exact proof-budget/reference pass
+is complete. Replay `python -m theorems.inverse_trace_gibbs_target --write`
+using PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache. Its27 tests plus the seven
+previous files give175 PASS with the SAME one old cubic artifact exclusion.
+Python/site-JS syntax and live artifact/hash replay pass. qsearch validation
+was not retried against the still compressed,dataless negative-results file.
+Do not repair sync/cache or claim a full-suite pass.
+
+The next useful mechanical implementation is ONE matrix-free native kernel,
+not a point counter, generic MCMC framework, UI or registry integration:
+
+1. Reuse support_word to create public systematic native-code directions,
+   expanded in the existing binary field basis. Update k=1,2,3 BITS, evaluate
+   M^-defects, and use paid integer categorical draws. M is the next power
+   of two at least N. Preserve all stays and explicit fixed-clock ABORTs.
+2. Freeze a small pilot manifest before execution: n17/31 as regression sizes,
+   n61 only under a fixed work cap; independently generated target vectors,
+   public points/moduli, basis, RNG seeds and candidate-evaluation budgets.
+   Store the actual targets. No target reselection or known-witness starts.
+3. Start from uniform systematic bits. Implement/compare the matched root
+   proposal: sample each free coordinate from its own trace-inverse root set,
+   solve K pivots, then verify all constraints. Retain accepted-flat results
+   as a separate baseline, including their previously documented scope.
+4. Report FULL-native-witness first hitting times, censored runs, field
+   inversions, candidate evaluations, setup, restarts and categorical ABORTs.
+   Include defect/mobility traces for diagnosing freezing, not as success.
+   Small distribution controls must reproduce the exact reference kernel.
+5. Stop a nonmoving capped pilot; do not spend unlimited seeds on it. Seek a
+   justified basis/tempering move or theory change before expanding. Failure
+   of one basis is not all-MCMC failure. Empirical hitting is not TV mixing.
+
+No native large sampler has run in this pass. The proved constant stationary
+mass is not a runtime theorem. If implementing this pilot, keep it standalone
+with tests/artifacts; no central admission, qsearch/UI/Git action, background
+process, agent, automation or outreach is requested. GPT's next work should
+remain the unresolved theory rather than mechanical wiring/running.
+
+## 2026-10-22 Source Access: No Point-Counter Build Requested Yet
+
+Read RECIPROCAL_TRACE_SOURCE_ACCESS.md. The reduction and capped reference
+are complete: `python -m theorems.reciprocal_trace_source_access --write`.
+The connected set now adds test_reciprocal_trace_source_access.py to the
+six files below:148 PASS, with the same ONE old cubic artifact exclusion.
+Use PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache. New artifact/hash replay,
+Python syntax and site JavaScript syntax pass. Registry validation is still
+blocked by the dataless read; do not repair the environment.
+
+A future concrete classical readout attack may justify attaching an existing
+characteristic-two point counter. It must use the SAME public irreducible
+polynomial/basis, exact integer curve orders, zero-frequency special handling,
+all signed coefficients, and paid clock/ABORT outcomes. Hasse/divisibility
+checks alone do not certify a plausible wrong count. The current O(q^2)
+reference MUST NOT be relabeled as scalable or run outside its explicit cap.
+No custom Schoof/SEA implementation, seed campaign, registry admission,
+qsearch/UI wiring, Git action, or background process is requested now.
+
+## 2026-10-22 Two Algebraic Audits: Replay Only
+
+Read INVERSE_TRACE_ALGEBRAIC_AUDIT.md and INVERSE_TRACE_QUADRATIC_CLOSURE.md.
+The standalone workflows are implemented:
+`python -m theorems.inverse_trace_algebraic_audit --write` and
+`python -m theorems.inverse_trace_quadratic_closure --write`.
+Use PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache for Python in this workspace.
+
+Run their two test files with reciprocal_trace_flats, reciprocal_affine_pencil,
+balanced_codeword_filter and cubic_rs_affine_flats. This gives134 PASS with
+ONLY test_cubic_rs_affine_flats.py::test_live_artifact_native_witnesses_not_an_asymptotic_speedup_claim
+deselected for the previously documented cloud-artifact stall. New artifact
+source/proof hashes, selected graph points and coupled product tables replay.
+Do not promote a formal product table to a native witness or interpret its
+binary covariance as a real probability distribution. Higher-degree/general
+classical attacks are explicitly NOT excluded.
+
+Python/site-JS syntax pass. qsearch validate again stopped/reaped at30s;
+negative_results.json remains compressed,dataless. No cache/sync repair or
+broad rerun is requested. No central admissions, wiring, UI, Git, agents,
+automations or parameter campaigns. There is no unfinished mechanical task
+in these passes; the next task is substantive theory, not a generic solver.
+
+## 2026-10-22 Reciprocal-Trace Classical Attacks: Replay, Not Wiring
+
+Read RECIPROCAL_AFFINE_PENCIL.md and RECIPROCAL_TRACE_FLATS.md. Two standalone
+workflows are now implemented and have generated their live artifacts:
+`python -m theorems.reciprocal_affine_pencil --write` and
+`python -m theorems.reciprocal_trace_flats --write`.
+Use PYTHONPYCACHEPREFIX=/tmp/qsearch-rees-pycache in this workspace.
+
+Connected tests: test_reciprocal_affine_pencil.py, test_reciprocal_trace_flats.py,
+test_balanced_codeword_filter.py, test_cubic_rs_affine_flats.py give83 PASS,
+with ONLY test_cubic_rs_affine_flats.py::test_live_artifact_native_witnesses_not_an_asymptotic_speedup_claim
+deselected after its bounded stall. New source/proof hashes and both new
+artifact replays ARE tested, including independent binary-field verification
+of the n17/n31 witnesses. Do not repair cloud sync or invoke a broad suite
+merely to remove the documented old-artifact exclusion.
+
+Preserve all pole/zero cases, root-completeness certificates, native moduli,
+local attempt caps, scoped failures and the actual global matrix ranks.
+The two live classical witnesses do NOT prove every target easy or an
+asymptotic break. The fixed-family rank bound is NOT adaptive hardness.
+Do not import the random-cubic flat distribution into inverse trace.
+
+Python/site-JS syntax pass. qsearch validate stopped/reaped after30 seconds;
+research/registry/negative_results.json is compressed,dataless. Treat this
+as blocked coverage, not a passed validator or a request for environment
+repair. No registry/UI/qsearch changes, commits/pushes, agents, automations,
+or parameter campaigns are requested. Next theory work is target-adaptive
+algebraic solving or independent proof review, not additional wiring.
+
+## 2026-10-22 Balanced-Codeword Filter: Bounded Replay, No Campaign
+
+Read BALANCED_CODEWORD_FILTER.md. Replay
+`python -m theorems.balanced_codeword_filter --write` and
+`python -m pytest -q tests/test_balanced_codeword_filter.py` (26 PASS).
+The connected five-file set gives98 PASS after deselecting ONLY
+test_prime_character_finite_readout.py::test_artifact_replays_and_classical_comparisons_match_the_actual_input,
+whose old JSON is iCloud dataless. Do not repair sync/cache or claim full
+coverage. Python/site-JS syntax and qsearch validation pass.
+
+Preserve exact signed amplitudes, balance, support-only masks, all herald
+failures, the native dual-code convention, and explicit field-zero checks.
+The reference enumerates q^N and q^K; never present it as scalable GS.
+Large rational failure certificates are not gate budgets or quantum runs.
+No registry, dashboard, qsearch, Git or automation work is requested.
+
+After a theory review requests it, a bounded GS adapter can use the
+recorded multiplicity/monomial/constraint certificate, return a COMPLETE
+verified list, and crosscheck finite cases against the exhaustive reference.
+Keep randomized factorization failure/clock and reversible workspace
+obligations separate. Do not merely pick the first list element, measure
+the list/codeword, or measure exact error weight. Classical witness replay
+must verify Hx=0 and all Tr(inv0(x_i)) bits, with inv0(0)=0. Stronger
+rational-interpolation attacks and proof review are substantive theory
+tasks, not a request to spend compute on a broad seed campaign.
+
+## 2026-10-22 Scalar Fermat Design Backend: Completed Replay
+
+Replay `python -m theorems.scalar_fermat_solver --write` and
+`python -m theorems.rees_projective_source --write`. Both pass. Connected
+tests scalar_fermat_solver /rees_projective_source /state_symmetry_coset_transfer
+/rees_noisy_state_source /rees_hsp_reduction /rees_complete_instrument:
+85 PASS. Python/site-JS syntax and registry validation pass. No wiring needed.
+
+Preserve the exact large-field guard, degree-bounded enumeration, nonzero
+witness checks, bad RNG/root rejection, and the separate sampling-vs-root-
+runtime distinction. Source-budget error assumes a certified design; account
+for preprocessing separately as documented in SCALAR_FERMAT_DESIGN_BACKEND.md.
+Do not turn scalar_fermat_backend_implemented into a many-equation SDE or
+quantum receiver flag. No commits, registry admissions or UI work requested.
+
+## 2026-10-22 Universal Public Words: Replay Only, No Campaign
+
+Run `python -m theorems.universal_lazard_words --write` and
+`python -m theorems.free_lazard_pullback --write`. Both pass. The 27 new
+tests plus free/nongradable/Rees/copy-only/class-four/section-potential
+controls give133 PASS. Python/site-JS syntax, registry validation and
+manuscript compilation pass. No wiring, commits or registry admissions.
+
+Read UNIVERSAL_LAZARD_WORD_COMPILER.md. The old c<=4 backend limitation in
+the preceding free-pullback handoff is superseded; an exact general compiler
+now handles fixed c<p, with tested free-map integration at class five.
+Do not remove shorter class-four formulas: they are cheaper on their valid
+range. Preserve exact Fraction arithmetic, typed cache validation, wrong-
+class/denominator falsifiers, paid multiplication caps and zero quantum
+receiver/speedup flags. The all-class termination proof is not a claim that
+every class was executed. Next theory review is not a mechanical task.
+
+## 2026-10-22 Free Lazard Pullback Is Ready For Replay
+
+Replay `python -m theorems.free_lazard_pullback --write` and the 14 tests in
+tests/test_free_lazard_pullback.py. Connected set with nongradable, Rees,
+copy-only outer and class-four words: 89 PASS. Python/site-JS syntax,
+registry validation and manuscript compilation pass. No wiring is needed.
+Do not claim full recovery: the compiler evaluates a public noninjective
+map and only projects a SEPARATELY recovered full preimage. Do not pass
+reference target coordinates/kernel fixtures to that compiler. Preserve
+the mixed-degree kernel, wrong exponent and leaked-workspace falsifiers.
+The c<=4,p>4 backend cap and larger free-dimension cost are intentional.
+Read FREE_LAZARD_PULLBACK.md. No Git/registry/UI/qsearch action requested.
+
+## 2026-10-22 Nongradable Rees Input Certificate
+
+Replay `python -m theorems.rees_nongradable_control --write` and the
+18 cases in tests/test_rees_nongradable_control.py. The 48 connected
+tests with test_rees_hsp_reduction and test_rees_copy_only_outer pass.
+Integer row certificates, not rational-nullspace specialization, establish
+the all-p>3 implication. Preserve actual small-prime exceptions, the
+finite involution countercontrol, and the cross-factor diagonal hidden H.
+No full density/instrument runs on this input are claimed. No registry,
+dashboard, campaign, Git, or qsearch plumbing requested. Proof and scope:
+REES_NONGRADABLE_INPUT.md. Next substantive theory task is the free
+nilpotent-cover input bridge identified in RESEARCH_PRIORITY_DECISION.md.
+
+## 2026-10-22 Noisy Coset Access Boundary
+
+Replay `python -m theorems.noisy_coset_lpn_boundary --write` and
+`python -m pytest tests/test_noisy_coset_lpn_boundary.py -q`.
+Read NOISY_COSET_LPN_BOUNDARY.md before reusing any noise claim.
+
+- Binary visibility v corresponds to LPN flip rate (1-v)/2, not1-v.
+  The odd-prime noise is uniform contamination, not Gaussian LWE.
+- sample_to_fourier_label accepts ONLY observed samples; hidden secrets
+  occur in bounded reference fixtures, never in the conversion API.
+- Keep classical sample simulability separate from classical polynomial
+  decoding. Arbitrary quantum postprocessing is not dequantized by fiat.
+- The balanced symmetric-tree cost is a LOWER bound for that protocol.
+  Collision filtering is separately costed and is not a generic optimality
+  claim. Do not normalize rho^k without paying its physical success cost.
+- Preserve the dense cap125. The64-bit dimension example uses symbolic
+  rational spectra and log2 raw-copy bounds, not a simulated large state.
+- 29 new cases/68 connected cases pass; Python/site-JS syntax, live replay
+  and registry validation pass. No registry candidate, dashboard
+  campaign, generic noisy receiver, Git action or plumbing expansion is
+  requested. The next decoder mechanism is substantive theory work.
+
+## 2026-10-22 Cubic Collision Backend And F7 Replay
+
+Read CUBIC_DIAGONAL_SOLVER.md. New CLI:
+`python -m theorems.cubic_diagonal_solver --write`.
+Also replay rees_complete_instrument and weighted_two_erasure_cascade with
+their existing --write workflows. All three completed this pass.
+
+- cubic_weights accepts only public field columns, preserving every input
+  index and checking the uncompressed moment. Keep cube roots, tensor-axis
+  relations and the distinguished nonempty cell checked.
+- The3^-K nonresidue bound assumes independent uniform nonzero draws.
+  FLINT roots are an expected-time dependency; this is not a complete
+  enforced runtime clock. Any global receiver needs per-call failure
+  allocations and propagation of the nonresidue cap through its wrappers.
+- The Bezout adapter supports g=1, g=2 at p=3 mod4, and g=3. Keep g>3
+  and the unimplemented quadratic regime rejected. Do not declare general
+  SDE complete or replace its conservative global budget with a finite run.
+- F7 controls start from explicit lifted mixed densities and selected
+  nonzero records. Do not relabel them ordinary-oracle source replays,
+  exhaustive tuple coverage, IID trial statistics or free postselection.
+- Every zero-scale input remains paid/consumed. Lower observed equation
+  rank does not make the earlier quantum bank free.
+- 31 dedicated/121 connected tests pass, including a final test-only
+  regression covered by the dedicated rerun; syntax and live artifacts pass.
+  Broader symbolic tests and qsearch validation were stopped on dataless
+  files. Rerun only after those files are resident; no cache/sync repair.
+- No UI/qsearch/central-registry admission or Git work requested. Higher
+  collision plumbing is delegable work, not a new theorem or GPT priority
+  without a specific further scientific falsifier.
+
+## 2026-10-22 HPGP Interface Audit Replay
+
+Read HPGP_COSET_INTERFACE_AUDIT.md. Replay
+`python -m theorems.hpgp_coset_interface --write` and
+`python -m pytest tests/test_hpgp_coset_interface.py -q`.
+The standalone JSON is research/reductions/hpgp_coset_interface.json.
+
+- Keep the exact chart-coverage bound separate from the approximate-state
+  bound. The latter is an AVERAGE over hidden parameters for ONE fixed
+  injective fibre chart, not an adaptive or collective quantum lower bound.
+- The quotient countercontrol constructs rho_H and performs the actual
+  partial trace. Do not substitute an expected quotient kernel by hand.
+- Preserve the p<=7 dense cap. Analytic growing-prime bounds and symbolic
+  equation elimination are not exhaustive large-group simulation.
+- The binary matrix-power helper is required for arbitrary-size exponents;
+  FLINT's direct exponent wrapper overflowed at the127-bit prime control.
+- All correctness, novelty, algorithm and general-reduction-exclusion flags
+  remain false. No registry/UI/CLI admission, new campaign or Git work.
+
+21 dedicated/123 connected tests pass; syntax, registry validation and live
+replay pass. Full suite and Lean not run. Theory priority is constructive
+work outside these scoped shortcut failures, not additional nearby fixtures.
+
+## 2026-10-22 Semantic Moore-Form Classical Filter
+
+Read MOORE_GRADIENT_CLASSICAL_FILTER.md. Replay
+`python -m theorems.moore_gradient_filter --write` and
+`python -m pytest tests/test_moore_gradient_filter.py -q`.
+
+- The recognizer accepts only ordinary binary arithmetic DAGs. Do not
+  feed lifted independent Frobenius variables as original derivatives.
+- Expand extension-valued gradients over F_p, not over the extension.
+- Keep independent gradient probes, scalar anchor and final PIT point.
+  Inseparable additions can have identically zero derivative and must
+  still fail the full polynomial identity.
+- Keep the determinant character for general GL matrices. Dropping it
+  is justified only after the characteristic-p p-group promise.
+- The general group-stabilizer backend is NOT executed. Do not relabel
+  matrix membership checks or cited algorithms as an implemented solver.
+- Seeded runs are diagnostics, not random certificates. The rank100,000
+  statement for the live class-nine family is proved, not enumerated.
+- No central candidate/negative admission, UI work, benchmark expansion,
+  commit, or independent-review claim is requested.
+
+Optional substantive backend task for Gemini, after reading Section6:
+compute the COMMON nonunital matrix algebra J generated by g_i-I, verify
+J^nu=0 with nu<=p, close the Lie span of their logs, solve W*A*N=0, and
+exponentiate a kernel basis. Never replace the J guard by checking only
+g_i^p=I or the abstract group class. The exact commuting p5,D25 regression
+shows that individual matrix logs can fail additivity without that guard.
+This avoids implementing general Luks machinery for the UT10^m family;
+the mathematical reduction is written, generator recovery is still absent.
+
+Verified:20 new tests;102 connected tests PASS, Python/site-JS syntax,
+registry validation and the live workflow. Full repository suite/Lean not
+run. No owned process remains running.
+
+## 2026-10-22 Rees Readout Certificate And Review Draft
+
+Entry point: research/manuscripts/rees_hsp_review.tex. Desktop compilation
+succeeded; do not call that formal mathematical verification. No formatting,
+publication, outreach or new UI/registry task is requested.
+
+- Replay `python -m theorems.rees_hsp_reduction --write` and
+  `python -m pytest tests/test_rees_hsp_reduction.py -q`.
+- Preserve N_instrument=N_leaf+N_merge+N_final_readout. The final QFT and
+  measurement do not become exact because preceding source maps are exact.
+- The classical retry certificate assumes a uniform expected time T for a
+  VERIFIED SDE solver. Each attempt has a2T clock and a fresh classical seed.
+  Never reprepare the quantum bank, rerun central measurement, or apply a
+  guessed dilation during these retries. An exhausted clock means ABORT.
+- Existing independent source banks and all-zero-witness rejection stay
+  mandatory. These fields do not implement the general backend or clear
+  any formal/correctness/novelty status.
+- The live class-nine profile records20 final readouts and1081 classical
+  attempts per SDE call. Its original source-query count is unchanged.
+
+Verified:220 connected tests PASS (64.63s), syntax, registry validation,
+live artifact assertions and whitespace. Full repository suite/Lean not run.
+All owned commands finished; no background work or Git changes scheduled.
+
+## 2026-10-22 Direct Polynomial-Phase Baseline Replay
+
+Read POLYNOMIAL_PHASE_COPY_LEARNING_BASELINE.md. Run
+`python -m theorems.polynomial_phase_copy_learning --write` and
+`python -m pytest tests/test_polynomial_phase_copy_learning.py -q`.
+The live report is research/reductions/polynomial_phase_copy_learning.json.
+
+- Preserve the distinction between a QUANTUM baseline and classical
+  dequantization. Do not promote it to the central candidate registry.
+- LearningFrame contains only public affine coefficient maps and known
+  corrections. Do not add hidden eta or an F evaluator to its controller.
+- Coordinate outcomes are measured random slices, not chosen source calls.
+  Distinct maps are allowed. Pay rejected slices, rejected merges and every
+  fresh child packet. A zero Fourier VALUE can be informative; a zero
+  coefficient ROW is not. Zero-degree failed packets must be retried.
+- erase_line_degree checks a supplied witness; it does not implement the
+  published general SDE solver. Never replace that backend by field-sized
+  enumeration while retaining a poly(log p) flag.
+- The selected two-stage branch has mass5^-6 and uses4 independent copies.
+  Preserve its mass and actual intermediate state. Reusing its classical
+  simulated amplitudes represents independently prepared conditional copies,
+  not permission to clone or reuse one quantum target.
+- No new UI/qsearch wiring, central negative, Git task or cache repair is
+  requested. Independent mathematical scrutiny remains a theory task.
+
+Verification:219 connected tests PASS (116.43s), including11 new tests;
+Python/12 site-JS syntax, qsearch validate, --write and whitespace pass.
+Full repository suite and Lean were not run. All owned commands finished.
+
+## 2026-10-22 Complete Finite Rees Replay
+
+Run `python -m theorems.rees_complete_instrument --write` and
+`python -m pytest tests/test_rees_complete_instrument.py -q`.
+The live artifact is research/reductions/rees_complete_instrument.json.
+Read REES_HSP_REDUCTION.md Section8 before interpreting it.
+
+- Preserve rho=(sum c(g)R_g)/|G|, two-sided projector multiplication,
+  measured branch normalization and every complex phase. Coefficients are
+  NOT probabilities. The independent dense countercontrol must retain its
+  nontrivial phase; taking magnitudes manufactures a false coset source.
+- The quotient contraction uses whole sparse-support intersections and
+  checks central-fiber constancy. Do not substitute the expected H kernel,
+  provide H to this channel, or insert expected densities between stages.
+- All5^7 tuple inputs and all first-stage label pairs are checked. The
+  second-stage rank-two tuple space is only sampled, as the flags state.
+  Retain both tested/distinct record counts; don't promote finite success.
+- The F5 quadratic search and the full tuple-oracle enumeration are TEST
+  procedures, not scalable backend implementations. Thirty ideal f calls
+  per packet is a finite source-tree count, not the simulator's query cost.
+- No central registry/CLI/UI admission or Git work is requested. Existing
+  concurrent audit repair remains separate and was not silently validated.
+
+5 new/119 connected tests pass after final edits; syntax, registry validation,
+live replay and whitespace pass. Full suite and Lean remain unrun. Further
+similar fixtures are not the next GPT priority; see the research decision.
+
+## 2026-10-22 Two-Stage Control Replay
+
+Run `python -m pytest tests/test_multistage_graded_descent.py -q`.
+Seven new controls compose TWO actual physical central instruments on
+the class-three graded filiform F5 group. Section 7 of
+REES_COPY_ONLY_OUTER_REDUCTION.md describes the precise scope.
+
+Preserve the nonhomogeneous-line falsifier: failing record mass and
+record-averaged trace distance must both equal8/25. Do not normalize away
+bad records, substitute the expected source between stages, or declare the
+final abelian image to be the original hidden subgroup. Fresh-copy arities
+multiply. The F5 quadratic search is finite TEST enumeration, not backend
+support. Existing central_character_descent matrix-size caps remain intact.
+
+114 connected tests pass after final edits. Full suite/Lean remain unrun.
+No new CLI/UI/central-registry/Git wiring is requested. The older concurrent
+audit mismatch below still needs independent mechanical repair; these tests
+do not silently certify its module or the whole Rees algorithm.
+
+## 2026-10-22 Copy-Only Scope And Audit Replay
+
+Read REES_COPY_ONLY_OUTER_REDUCTION.md. Replay:
+`python -m theorems.rees_hsp_reduction --write` and
+`python -m pytest tests/test_rees_copy_only_outer.py -q`.
+
+- black_box_copy_budget covers ORIGINAL hidden-source copies in both prime
+  branches, not group-operation gates or public preprocessing queries.
+  Preserve all false implementation/discovery flags and separate large/small
+  clocks. The new top-level copy envelope does not change the old core's
+  explicit-Lie compiler input or make its numerical profile a gate estimate.
+- Controlled original-group right actions use fresh copies, a common retained
+  address and CLEANED public representative workspace. No H membership is
+  passed to the channel. Quotient kernels must be known subgroups of H and
+  normal in the current group; the section need not be homomorphic.
+- binary_zero_sum_support checks a supplied degree-(p-1) witness. It is NOT
+  a zero-sum/SDE search implementation. Selecting its nonzero support is
+  different from applying arbitrary odd-prime linear weights to targets.
+- Use bounded-error Fourier sampling in the small-prime branch. Do not
+  import the exact algorithm's source inverse or purifying-unitary interface
+  from a bag of mixed copies. Public group-operation inverses remain paid.
+- Concurrent audit repair is NOT complete: rees_cover_and_nontransverse_
+  descent_audit.py passes vectors to a columns API and expects a .weights
+  attribute on a tuple. Review p5 backend support and required rank-dependent
+  arity as well. Unsupported solvers must fail closed, not become exhaustive
+  production backends. Its UT3 check is single-stage; correct that scope.
+
+14 new tests,107 connected tests pass; Python/12 site-JS syntax, registry
+validation, whitespace and live workflow pass. Full suite/Lean NOT run.
+No UI, qsearch admission, Git or cache-repair tasks requested. Independent
+whole-proof review and actual multistage testing remain scientific work.
+
+## 2026-10-22 Noisy-Source Purification Contract
+
+Read REES_NOISY_STATE_SOURCE.md. Independent replay:
+`python -m theorems.rees_noisy_state_source --write`.
+
+- This is the KNOWN recursive SWAP protocol, not a new algorithm. The
+  accepted one-register state is (rho+rho^2)/(1+Tr rho^2), NOT normalized
+  rho^2. Keep the symmetric herald; ignoring it gives rho again.
+- symmetric_merge consumes BOTH input tokens, returns ONE retained
+  target on success and None on rejection. Discard the second target even
+  on success; do not return its correlated state as another fresh copy.
+- Every acquisition is IID with the same rho. Correct one-copy marginals
+  and high herald success do not establish that contract.
+- The target is rho's nondegenerate principal eigenvector. A supplied
+  spectral gap Delta is NOT the target orbit gap gamma. No arbitrary
+  pre-noise state recovery, general mixed conjugation, or local-noise
+  threshold follows. Delta may shrink, but the charged bound then worsens.
+- Use one GLOBAL raw-copy clock across all outputs. Rejections count;
+  exhausting the clock aborts the entire run, even if some outputs were
+  already consumed. Do not reset a cap per source-tree node or keep a
+  partial subgroup after ABORT. Clean remaining live stack registers.
+- Apply a complete-circuit trace-distance hybrid to the ideal pure-copy
+  receiver. Never claim finite full-rank purified states regain exact H.
+- Charge SWAP gates, herald measurements and memory. The per-operation
+  error allowance is for the complete instrument; further divide it among
+  native gates. A Python opaque-token controller is not a quantum backend.
+- Keep false receiver/backend/novelty/discovery flags. The c9 cap2^3199
+  is an upper bound at hypothetical gaps, not measured runtime.
+
+12 new tests and93 connected tests pass. No UI, qsearch admission, Git,
+cache repair or expanded campaign requested. The next GPT priority is
+whole-theorem review or a justified application, not mechanical backend
+wiring or refining purification constants.
+
+## 2026-10-22 Copy-Only Rees Source Contract
+
+Read REES_PROJECTIVE_STATE_SOURCE.md. Standalone artifact workflow:
+`python -m theorems.rees_projective_source --write`.
+
+- MomentDesign validates an immutable nonzero multiset, all moments,
+  distinct-point coverage and the prime-independent fixed-class copy cap.
+  Duplicate points mean fresh physical copies, not free field weights.
+- Public scalar rows must each have <=r+1 entries and a nonzero solution
+  to sum x^r=0. No hidden subgroup or state data is used by the compiler.
+  General scalar solving is a published dependency, NOT an implemented
+  backend. Preserve fail-closed behavior for unsupported/capped cases.
+- Each evaluation is a homomorphism on the positive Rees cover. Do not
+  replace it with nonabelian powering or inverse action on the same copy.
+- Controlled LINEAR action, IID copies and a global gap are INPUT promises.
+  Pure ray symmetry and mixed scalar-support symmetry are covered; general
+  mixed conjugation and projective R require different contracts.
+- Sequentially process M*k fresh targets on one retained uniform address;
+  discard each target after its action and clean evaluation workspace.
+  Never reuse the same unknown copy across evaluations or source leaves.
+- Feed reduced address states directly to graded descent on this cover.
+  Do not construct a second cover or restore character-normalizer recursion.
+  Source replacement errors apply to complete instruments, not conditioned
+  rare branches. Charge M*k*B actions/copies over the entire source tree.
+- The 2^1588 profile is a sufficient theoretical copy ceiling at an ASSUMED
+  gap, not measured performance or practical feasibility. Preserve every
+  false discovery/novelty/formal/receiver/application flag in the artifact.
+- No new UI, qsearch, central admission or Git tasks requested. Implementing
+  a general scalar backend or circuit receiver is separate mechanical work,
+  not evidence that the proposed whole theorem or its novelty is verified.
+
+Validation: 185 connected tests plus 30 older twisted-source/recursion
+tests pass. All 11 new tests were rerun after late input-freezing/copy-cap
+changes. Existing tests/test_state_symmetry_coset_transfer.py is iCloud
+dataless and was not run; no GPT hydration/cache-repair pass was started.
+The next GPT task is whole-proof scrutiny or meaningful application search,
+not an expansion of the reference-fixture collection.
+
+## 2026-10-22 Whole-Proof Scope Contract
+
+Read REES_WHOLE_PROOF_SCOPE_AUDIT.md before extending the Rees input model.
+The broader fixed-class nilpotent corollary is conditional theory, not a
+new implemented backend. Do not treat black_box_large_prime_budget as a
+solver, total query budget, or total gate bound. It excludes small-prime
+queries and all group/coordinate preprocessing costs. Preserve its flags.
+
+The live artifact separates normalizer-free exponent-p CORE from the
+normalizer-based general-exponent OUTER reduction. No hidden subgroup,
+free coordinate decoder, field-sized search or uncharged state inverse
+may be supplied to fill an implementation gap. Published reduction and
+small-prime branches must be implemented/costed explicitly if pursued.
+Do not substitute a ring for F_p inside the existing Rees/SDE code.
+
+No additional UI, qsearch, central admission or Git work requested. The
+new theory priority is an actual nonabelian application or falsification
+of the complete Rees mechanism. The earlier unverified Lean draft's
+compile/guard follow-up remains a mechanical task, not completed work.
+
+## 2026-10-22 Positive Rees Cover Contract
+
+Read REES_HSP_REDUCTION.md. Standalone artifact workflow:
+`python -m theorems.rees_hsp_reduction --write`.
+
+- Public make_rees_cover takes public Lie constants/basis ONLY. It freezes
+  basis brackets, checks alternation/Jacobi/closure, computes the actual
+  lower central series, and rejects class>=p. It is not quantum software.
+- Use sum gamma_r(L)t^r, NOT the associated graded and NOT truncated L[t]
+  with arbitrary coefficients. Keep the full original L in grade one.
+- Coherently query original f at c nonzero points, cleaning each evaluation
+  workspace. Never supply h, its intersections, or a reference decoder.
+- Central labels need not be uniform. Zero-mass branches must not be
+  normalized. For allowed labels, divide the old projected source by
+  |H intersect Z|. This factor is a proof quantity, not operational advice.
+- The source converter only needs observed labels and public operations.
+  Validate the exact SDE moment and nonempty active support; consume every
+  input and use fresh disjoint recursive sources.
+- A future receiver needs one graded descent tree, then ordinary abelian
+  sampling on L. Do not mechanically wire in the superseded normalizer
+  recursion or multivariate potential compiler for this input model.
+- Keep all discovery/novelty flags false pending whole-proof review. The
+  profile's2^1573 sufficient bound is not measured runtime or feasibility.
+- No UI, qsearch wiring, Git, or central-registry admission requested in
+  this pass. Prioritize independent proof scrutiny before implementation.
+
+Local validation encountered iCloud dataless files. Temporary Python
+cache `/tmp/qsearch-rees-pycache` bypassed offloaded bytecode; resident
+bytecode copies there remained timestamp-checked by Python. Targeted
+`brctl download` requests restored required source/cache files without
+changing their contents. Do not rebuild Mathlib to repair offloaded caches.
+The Lean draft is formal/drafts/ReesHomogenization.lean, OUTSIDE the default
+build and NOT compiler checked. Once dependencies are actually local, run
+`lake env lean -E warning drafts/ReesHomogenization.lean` from formal/.
+Fix errors, add standard-axiom guards, and only after a successful check
+move it into Formal/ and import it. The existing full cached build was
+not rerun because its dependencies were likewise offloaded. Never label
+the written proof or172 passing Python tests as a completed formal check.
+
+The concurrently added arbitrary_h_recursive_oracle_and_resource_audit.py
+was read, not edited. Its advice-free callable uses exhaustive p^k scans
+in both the abelian and transverse-image callbacks. That is a useful
+finite oracle/cleanup control, NOT an implemented quantum receiver.
+
+## 2026-10-22 Whole-Recovery Oracle And Resource Contract
+
+Read RECURSIVE_JET_RECOVERY.md. Independent workflow:
+`python -m theorems.recursive_jet_recovery --write`.
+
+- PublicLinearSection composes representative matrices without oracle
+  calls. Its zero-input case returns a full-width zero ambient vector.
+  It does NOT certify kernel containment in H or group homomorphism.
+- Compute representative, call original f ONCE, uncompute representative.
+  Never discard that workspace. Nested sections do not multiply previous
+  query budgets; image-source trees still multiply their own leaf counts.
+- Enforce derived-intersection/Lie closure, normalizer quotient and strict
+  class drop. Original recursive ambient dimensions stay<=n. Never call
+  Solve on the larger internal J semidirect V as another ambient recursion.
+- Bound total image/base calls by2c-popcount(c), and cap every history.
+  Source errors are complete-instrument errors; the profile is NOT an
+  elementary-gate or physical memory estimate.
+- The old controller can return SUCCESS on an incorrect image callback.
+  Do not surface that as verified hidden-subgroup recovery. Known-H
+  callbacks and dense small controls remain reference implementations.
+- No new UI/CLI/admission work requested. SDE/controller implementation
+  remains mechanical follow-up only after whole-proof scrutiny. Next GPT
+  work should challenge novelty/correctness/application, not more local
+  matrix fixtures or marginal resource-number optimizations.
+
+## 2026-10-22 Mixed Central Descent Contract
+
+Read CENTRAL_CHARACTER_DESCENT.md. Independent workflow:
+`python -m theorems.central_character_descent --write`.
+
+- The operational controlled channel receives public permutations and
+  observed labels, never H. Known-H density/expected-output functions are
+  fixtures. Exhaustive scales are a capped falsifier, NOT a solver backend.
+- Restore the full central Fourier register before right multiplication,
+  or implement its explicit twisted compressed action. All labels stay.
+- Validate EVERY coordinate of sum lambda_i*s_i^d=0 and nonempty active
+  support. Consume zero-scale children; do not reuse them.
+- Disjoint fresh preparations are required even if marginals and all label
+  probabilities look correct. The new shared-source test defeats both checks.
+- Stage errors mean COMPLETE instruments with records and abort outcomes.
+  Use tree_budget counts, not depth or success-conditioned branch errors.
+- The general SDE controller needs a capped-runtime/abort contract and
+  exact witness validation. No uncharged source reversal is needed locally.
+- Milestone23 reference callbacks use target_H. Keep them labelled as
+  verification oracles; they do not implement abelian/image quantum recovery.
+- No new CLI/UI/admission requested. Next theory work is full arbitrary-H
+  recursion/resource refinement and external-prior-art comparison, not
+  additional central matrix examples or cosmetic count reductions.
+
+## 2026-10-22 Deterministic Tuple-Oracle Contract
+
+Read JET_ORACLE_HOMOGENIZATION.md. The independent command is
+`python -m theorems.jet_oracle_homogenization --write`.
+
+- For ordinary coherent f, use make_oracle_plan and its deterministic
+  simplex points. Do NOT build the prior random alignment/spectator
+  pipeline first. Source-only access remains a different contract.
+- input_at returns log(E_i(a)*section(Y_i+s_i*q)), normal FIRST.
+  It receives no hidden potential, image U or subgroup H.
+- Compute each query input reversibly, query f into its own output
+  register, and uncompute public scratch. Keep the full ordered label
+  tuple. Exact cost is ell original queries plus public arithmetic and
+  ell copies of the original label width. No label hashing/sorting.
+- The graph theorem REQUIRES H intersect L'=1. Run intersection and
+  normalizer recursion first when needed; rebuild the actual filtered
+  chart after every quotient/restriction. This is not inferred from L.
+- New deterministic algebra accepts p>c. Do not relax p>2c on the OLD
+  randomized resource bound, whose proof is different.
+- Central Fourier measurement must leave the FULL projected source
+  available for right multiplication. Record the Fourier label and
+  inverse-transform the central coordinate, or explicitly implement the
+  equivalent twisted quotient action. Do not drop its phase.
+- The compiler is classical control; evaluate_fixture is not a quantum
+  receiver. General SDE/controller/synthesis follow after proof review.
+- 192 connected tests and full3470-job Lean build pass. No requested
+  qsearch/UI/central admission/Git work. Keep theory review the priority.
+
+## 2026-10-22 Nonabelian Jet Lift Contract
+
+Read NONABELIAN_JET_HOMOGENIZATION.md. Independent command:
+`python -m theorems.nonabelian_jet_homogenization --write`.
+This is a provisional reduction with exact controls, not a receiver.
+
+- Use ambient_jet_certificate for the actual flag. The normal tensor
+  alone does not certify the origin of its degree weights. No N''=0 guard.
+- Never supply normalized_curve_fixture or any P evaluator to public
+  alignment, factorization, scaling, SDE or quantum state preparation.
+- FilteredEvaluation factors x=E(j)*exp(k), not exp(k)*E(j). Its subgroup
+  can be NONNORMAL. Do not replace its filtered complement with generic GL.
+- Retain every spectator, every central character and the full record.
+  Consume fresh sources on rank failures and discard zero SDE scales.
+- Central descent requires only the current degree-d moment because
+  Delta_s(H_F)=H_F has been DERIVED for the new graph group. This does
+  not license generic original-H dilation, whose negative test still fails.
+- Keep registers in the new group, including its J coordinates, until
+  the final abelian stage; then project the recovered subgroup to V.
+- The new resource profile is a conditional single-image query UPPER
+  bound. It does not charge all arbitrary-H recursion, synthesis or SDE
+  bit operations, and is not a measured running time.
+- Highest-value next work is independent proof review. General SDE and
+  coherent-controller wiring remain mechanical follow-up only after that
+  review. No requested qsearch/UI/central registry changes or Git actions.
+
+## 2026-10-22 Ambient-Filtered Compiler Contract
+
+Read AMBIENT_FILTERED_INDUCED_RECEIVER.md. Independent workflow:
+`python -m theorems.ambient_filtered_induced --write`. No CLI/UI/admission.
+
+- Use ambient_filtration_certificate to obtain the ACTUAL adapted
+  N=A+N' basis and weight labels. FilteredNormalChart alone checks its
+  bracket tensor, not the ambient embedding or potential degree origin.
+- FilteredFullJetChart retains the complete Taylor indices separately
+  through each A degree. Do not pad missing degrees and then treat them
+  as independent physical coordinates. Its feature_count is the largest
+  scalar design, NOT total jet width divided by carrier dimension.
+- Preserve component-separated alignment and Taylor transport. A generic
+  GL change may preserve invertibility yet violate the filtered bound.
+- Potential coefficients have unequal degree caps. Keep the full filtered
+  schema across pullback/merge; inherited uniform counts are insufficient.
+  The shared compiler now preserves packet type using dataclass replacement.
+- Do not reuse original ambient weights after a normalizer quotient.
+  Recompute the current public filtration in each recursion call.
+- The new conservative image guard is p>2c. Do not merely relax the old
+  p>kc guard on uniform jets; that is a different, larger-degree compiler.
+- General SDE, fresh physical source control, all-record error accounting,
+  oracle cleanup and synthesis remain required. This pass implements
+  public algebra and conditional clocks, not a receiver or a speedup.
+- Coordinate-degree Lean lemmas prove their actual filtration premise;
+  no end-to-end formal quantum program is extracted from them.
+
+## 2026-10-22 Orbit-Module Classical Filter Contract
+
+Read POLYNOMIAL_ORBIT_MODULE_CLASSICAL_FILTER.md. The independent command
+is `python -m theorems.polynomial_orbit_module --write`. No CLI/UI or
+central candidate admission is requested by this pass.
+
+- The input is a public FORMAL polynomial circuit evaluable over
+  extensions, with a valid degree bound. Never wrap a fixed-field hiding
+  oracle and assume that it supplies this access.
+- Solve sketch coordinates over F_p, not over the extension field.
+  Fix inferred coefficients before drawing the fresh validation point.
+- RANK_CAP_EXCEEDED is an exact independence lower bound, NOT hardness.
+  CLOSED_MONTE_CARLO is not a formal certificate for arbitrary circuits.
+  Moore controls alone have an additional exact exterior-power checker.
+- Keep the original matrix block in the faithful representation, including
+  for zero, constant and invariant polynomials. The orbit action may lose
+  the entire group. Project a future solver's generators onto that block.
+- Seeded runs are diagnostics; ideal-random error bounds do not certify
+  hand-selected seeds. Replayable evaluation rank only checks independence,
+  not the generator identities needed for closure.
+- General solvable matrix vector-stabilizer backend and a capped field
+  constructor remain implementation tasks. Implementing them does not
+  create a quantum advantage. They are lower priority for the main model.
+- New live artifact and30 tests added;114 connected tests pass. No quantum
+  receiver was executed. Leave other agents' changes untouched.
+
+## 2026-10-22 Complete Receiver Composition Contract
+
+Read INDUCED_RECEIVER_COMPOSITION_THEOREM.md before controller work.
+No new CLI/UI/central admission follows from this theorem draft.
+
+- The published SDE returns a nonzero VECTOR. Discard zero-scale inputs
+  before the weighted channel. Its physical branch exponent is the
+  active count, not the allocated arity. Existing algebra API accepts
+  canonical dummy outcomes for discarded entries; these are not measured
+  outcomes or additional factors in the branch probability.
+- New Lean active_relation and active_degree_reduced_branch justify the
+  restriction at positive degree; tensor_curve_trace_one and
+  discard_independent_curve_sources justify tracing independent inputs.
+- Keep the complete classical record and consume disjoint physical
+  children exactly once. Correct marginal kernels, matching schemas and
+  correct outcome probabilities do not establish independence: the new
+  exact shared-randomness counterexample gives the wrong Fourier law.
+- Keep one formal coefficient basis and hidden instance per image call.
+  Never merge packets from different calls merely because schemas match.
+- General recursion needs full Lie-subalgebra bases. If given only group
+  generators, compute Lie closure, not merely the linear span of logs.
+- Original f -> induced source -> weighted erasure -> jet Fourier ->
+  ordinary erasure -> image -> normalizer recursion is now written out.
+  The current class<=3 callback frontend is NOT that executable receiver.
+  Do not remove its guards or pass known H as evidence of implementation.
+- General all-input SDE, the physical adaptive controller, synthesis and
+  extracted/formal program refinement are still implementation work.
+  A published dependency can support a theorem without being implemented
+  locally; a stub callback cannot stand in for the theorem's construction.
+- Ten new composition controls pass; 549 connected tests pass with
+  RuntimeWarning fatal; full cached Lean build passes3467jobs. No complete
+  quantum receiver was executed.
+
+## 2026-10-22 Closed Induced-Cocycle Compiler Contract
+
+Read INDUCED_COCYCLE_UNIVERSAL_REFINEMENT.md. No new CLI/UI/admission.
+
+- cocycle_template now uses commuting-adjoint operator coefficients.
+  lie_word_cocycle_template is the independent exp/log reference. Keep
+  the latter for auditing; it is not a runtime fallback or circuit search.
+- R and S commute on the ABELIAN IDEAL, not necessarily on the full Lie
+  algebra. The nonsplit extension test forbids assuming A is a subalgebra.
+- All divisions are scalar factorial coefficients. Never invert nilpotent
+  R/S matrices or substitute a hidden Q evaluator into the public compiler.
+- Complete universal word certificates are generated for k1..7; the
+  separate k64 ODE check is not a full word certificate at that class.
+- New Lean rules justify specialization/truncation, not the exponential
+  or Lazard bridge, extracted compiler or entire quantum controller.
+- Keep source sign, all labels/spectators and the previous support checks.
+  The quantum resource certificate and erasure-tree counts are unchanged.
+- 539 connected tests and the full3467-job Lean build pass. Two final
+  strengthened c9 witness checks pass. No whole-algorithm or speedup claim.
+
+## 2026-10-22 Induced Resource Certificate Contract
+
+Read INDUCED_END_TO_END_RESOURCE_AUDIT.md. No admission/UI/CLI wiring.
+
+- Use induced_resource_certificate.py for the higher-degree route, not
+  the old quadratic source certificate. Exact input promises are checked;
+  dimension integers do NOT certify an actual Lie algebra or source.
+- Packet support is now parameter-degree h>=1, q degree<=hD,
+  jet degree<=k-h, at most one I coefficient, pure-A h<k. Generic
+  weight-preserving cross-block substitutions can violate this contract.
+- Generated JSON exposes CEIL-log2 sufficient upper envelopes. Exact
+  counts are reconstructed from input/factory; never label these as
+  measured runtimes, lower bounds or evidence of practical speedup.
+- The generic comparison changes only weighted support and uses the
+  same ordinary stage. Source-support savings do not remove the tree.
+- General-H c+k-2/three-abelian-call accounting is a WRITTEN argument;
+  JSON is single-call. Global uniform caps and first-error budgets are
+  required. Add original-oracle query costs across recursion, not multiply.
+- General SDE, physical source consumption/freshness controller and
+  synthesis are NOT implemented by the certificate. Keep all records,
+  all labels and complete-instrument ABORT normalization.
+- 519 connected tests and full cached Lean build pass. Full Python repo
+  suite not run; no new Lean theorem or speedup claim. Prioritize actual
+  solver/controller refinement only under its precise mathematical contract.
+
+## 2026-10-22 Formal Right-Fiber Source Contract
+
+Read RIGHT_FIBER_SOURCE_REFINEMENT.md. No admission/UI/CLI wiring follows.
+
+- CentralRegularSource's historical namespace now takes RightAbelianChart:
+  n=section(x)*fiber(z). The source instrument does not assume centrality
+  or normality. Do not restore the left-fiber assumption.
+- VectorCentralSource.centralChart directly returns the right-chart type.
+  CentralChart.toRightAbelianChart is explicit, with no coercion instance.
+- InducedRegularSource.AdditiveChart adds a quotient HOMOMORPHISM and
+  projection identity. It does not assume a homomorphic section.
+- The original-oracle aligned branch depends only on PUBLIC charts,
+  f, labels, GL and spectator outcome. Potential/U/curve are proof-only.
+- Preserve the NEGATIVE cocycle phase and factors1/|I|,1/|spectator|;
+  in a sheared batch additionally keep |V|^-b and all individual labels.
+- Raw logarithmic (a,b,c) is not the noncentral right-fiber chart:
+  the fiber coordinate is (b,c-delta(a,b)/2).
+- New exact tests use a diagnostic direct-product source, not a new hard
+  oracle candidate or a proof that its selected N equals the ambient G'.
+- General Lie compiler refinement, whole receiver composition, general
+  SDE execution and synthesis are still gaps. Do not promote them from
+  these local Lean identities or from passing coefficient tests.
+
+## 2026-10-22 General Induced-Phase Compiler Contract
+
+NEW standalone metabelian_induced_phase.py, its test module, research note
+METABELIAN_INDUCED_PHASE_COMPILER.md and reductions/metabelian_induced_phase.json.
+No qsearch/UI/central registry promotion follows from this coefficient audit.
+
+- Use the separate InducedPhasePacket and public cocycle compiler. Keep
+  the legacy quadratic multiplication rejection intact.
+- All log-Q coefficients through D are FORMAL and shared across sources.
+  Never add hidden values to compile_induced_phase or alignment inputs.
+- Zero Fourier labels and spectators are retained. Verify full displacement
+  equality, not just total degree. Public constants remain in the phase.
+- Enforce at most one ideal coefficient and pure-A parameter degree <=k-1.
+  Parameter cap k and weighted cap kD are DIFFERENT; do not lower both
+  just because I=N' permits a smaller hidden-parameter bound.
+- Current merge functions verify supplied coefficientwise relations only.
+  They do not search SDE solutions or enforce physical source consumption,
+  freshness, shared hidden instance, adaptive instrument laws or synthesis.
+- Full aligned diagnostics have D2. The real c9 ambient witness is checked
+  at the universal cocycle level. No full D9 receiver has been executed.
+- Old quadratic numerical resource certificates do not apply to this
+  source. General-H recursion uses c+k-2 image calls, not c+1.
+
+## 2026-10-22 Metabelian-Derived Source Contract
+
+New standalone note/module/artifact: METABELIAN_DERIVED_HSP.md,
+right_abelian_induced_source.py and reductions/right_abelian_induced_source.json.
+No CLI/UI or central admission is authorized by these diagnostics.
+
+- Coordinate order is n=r(x)exp(i). Left-fiber coordinates move characters
+  and fail the fixed-label source test. Normality alone does not fix this.
+- Fourier labels range over ALL I*, including zero. Normalize by |I|,
+  not the center, scalar image of the character, or irrep dimension.
+- Known-element cocycle evaluators are fixture functions ONLY. Never add
+  a hidden potential or hidden logarithm argument to an operational source.
+- Reuse section_word_certificate(k) with (-A0-X,A0,B0) for the universal
+  induced cocycle. The next compiler must use FORMAL unknown coefficients,
+  public brackets/chart/alignment/outcomes, and no hidden-value fitting.
+- Preserve parameter monomials through degree k. Existing quadratic
+  multiplication correctly raises on required cubic terms. Do not disable
+  the guard, silently truncate, or use the old source-support envelope.
+- Conservative scope: fixed c, k=class(L') with L' metabelian, D=c,
+  e=k*c, p>k*c for k>=2. Generalize neither scope nor classical-hardness
+  claims. The complete faithful pure-translation ansatz excludes N''!=0.
+- General-H cap becomes c+k-2 image calls, not c+1. Recompute derived
+  ideals in normalizer quotients; N need not be in the normalizer.
+- The source fixture's selected N is not ambient G'. The separate ut_10
+  Lie witness has genuine c9,k4,derived dimensions19,17,10,0. Keep these
+  evidence roles distinct. 484 connected tests, cached Lean build and
+  standard checks pass; full Python suite not run. No new Lean theorem.
+
+## 2026-10-22 Source-Support And Exact-Resource Contract
+
+See FULL_JET_ADAPTIVE_RESOURCE_THEOREM.md and the standalone
+full_jet_resource_certificate.py. No CLI/UI or central admission needed.
+
+- The preferred schedule uses three source-specific q/jet/parameter
+  blocks. Check the declared coefficient schema, not just degree<=e.
+  compile_full_jet_phase now enforces this on its actual output.
+- Only the ACTUAL block-separated Taylor map preserves the sharper
+  bounds. A lower-weight t<-t+q change can violate them while preserving
+  every old weighted-degree test. Do not generalize this certificate.
+- Use stage-specific equations and product-of-later-arities node counts.
+  Retain the full ordinary D,...,1 tree. Zero-scale inputs are consumed.
+- The frontend's historical comparison explicitly uses the GENERIC
+  envelope. A later mechanical report refresh may show both schedules,
+  but must not relabel the older generated frontend artifact as refreshed.
+- All clocks must use exact arithmetic. Large counts serialize as hex;
+  floor-log2 values are display only, not caps or actual runtimes.
+- Precision applies to COMPLETE instruments with ABORT and classical
+  outcomes. No conditional-error division or IID accepted-label premise.
+- The general deterministic SDE theorem is a published dependency, not
+  supplied by the partial g<=2 executable backend.
+- Source-support improvement is written proof plus exact tests, not a
+  new Lean theorem. 469 connected tests and full cached Lean build pass;
+  standard checks pass; all owned processes terminal. Full Python suite
+  not run. No GPT Git/CLI/UI/registry promotion or agents.
+
+## 2026-10-21 Vector-Center Source Composition Contract
+
+VectorCentralSource.lean composes the original hiding-output trace, actual
+vector-center group/chart, central instrument and coherent B transform.
+Ten guards, 413 connected tests, full lake build --wfail (3465 jobs) and
+standard checks pass. All owned processes terminal. Full Python suite
+not run. No CLI/UI/admission needed.
+
+- The operational oracleBranch only takes public charts, f and Fourier
+  data. Do not expose the proof-only potential/retraction/lift as APIs.
+- Use original_source and retained_sector_formula together: the first
+  supplies the actual W(g(q))^dag W(g(r)) density, the second its exact
+  displacement and phase. Representation unitarity is derived.
+- Preserve the physical C and its 1/|C| mass, including lambda=0.
+- Scalar projections may be nonfaithful. Checking a single projected
+  Jacobi tensor cannot validate the original input (new negative control).
+- The generic source theorem does not prove C=Z(N) or N=L'. Keep those
+  downstream input/degree obligations and p>max(c,3(c-2)).
+- Reuse the source with MatrixBatchShear, FullJetAlignment and the phase
+  compiler. Any mismatch deserves a precise counterexample; otherwise
+  wrappers are mechanical follow-up, not a new scientific direction.
+- Rank/freshness/error/resource/recursion and independent whole-result
+  falsification or novelty comparison are the next substantive tasks.
+
+## 2026-10-21 Retained Fourier And Source-Provenance Contract
+
+RetainedFourier.lean adds complete coherent B Fourier indexing and the
+actual BCH contraction. No production API, CLI/UI or registry wiring needed.
+
+- Keep ALL mu, including zero. Mu is quantum, not a measured label.
+- Fixed base chi must be nontrivial. This does not exclude lambda=0.
+- Keep the shifted output frequency in the phase, not the input mu.
+- Do not replace the physical vector center C by lambda(C). The scalar
+  representation maps do not change the branch mass 1/|C|.
+- The central-instrument audit v2 now starts from genuine gH labels.
+  Never validate an ordinary source merely by constructing its desired
+  potential kernel. Specify group, H and public chart independently.
+- Its nonlinear section only tests the GENERIC instrument. It is not a
+  certificate of the full algorithm's linear-section degree premises.
+- Seven new controls and 409 connected tests pass, followed by all seven
+  focused tests with the final scalar-image mass negative control. Full
+  lake build --wfail passes (3464 jobs, eight guards); standard checks pass.
+  All owned processes are terminal. Full Python suite not run.
+- Next is universal vector-center/source-to-alignment composition or
+  adaptive rank/freshness/error proofs, not more local Fourier fixtures.
+
+## 2026-10-21 Ambient Potential Certificate Contract
+
+The new standalone universal word verifier and Lean filtration theorem
+address the origin of D=c-2. No qsearch/UI or central admission is needed.
+
+- Exact source order: exp(X) exp(Y+Z) exp(-X-Y), with LINEAR X,Y,Z and
+  Z in N. Keep one common proof-only projection/lift across all batches.
+- Certificates are rational free-associative identities checked against
+  the actual exp/log word. Never replace them with sampled interpolation.
+- Keep the full C=Z(N). In UT7, E16/30 at degree five is central in N but
+  not in L, so using Z(L) would violate the D=4 noncentral bound.
+- Require the actual input class bound and prime p>c, as well as the
+  stronger p>3D condition of the receiver. Truncation does not certify class.
+- evaluate_section_fixture and polynomial_section_fixture consume known
+  witnesses for diagnostic tests ONLY. They must not become receiver access.
+- PublicLieAlgebra is a promised-Lie interface; its arbitrary callback
+  does not prove bilinearity/Jacobi. Do not advertise the frontend as a
+  certificate of those axioms unless explicit structure data is checked.
+- 17 new controls, 395 connected tests and the full warning-as-error Lean
+  build pass, including five guards. Standard checks pass; all owned
+  processes are terminal.
+- The Python coefficient checker/BCH-group bridge and all quantum stages
+  are not a single Lean theorem. Next work is substantive composition,
+  not new CLI commands or result promotion.
+
+## 2026-10-21 Universal Source Compiler Contract
+
+ClassThreePhaseBounds.lean derives both compiler bounds from public input
+schemas, with eight standard-axiom guards. The full warning-as-error Lean
+build, 378 connected tests and final eight focused exact-rational controls
+pass. No runtime API change is needed. All owned processes are terminal.
+
+- Keep one fixed formal hidden-coefficient basis across source blocks.
+  Public character coefficients do not introduce new unknown parameters.
+- Include spectator offsets in every row of L^-1(t,zeta), and retain the
+  shifted frequency mu+lambda*delta(a,-)/2. The full phase is checked.
+- Require public affine carrier rows. Symbolic hidden coefficients in the
+  alignment can raise parameter degree to three; a negative control shows it.
+- Weighted source bound is max(c,3D); both branches can be tight. The
+  parameter lift remains quadratic. Do not truncate cubic terms to force it.
+- Eight new independent SymPy controls use unrestricted expansion and
+  disable the hidden-value fixture evaluator during compilation.
+- This theorem assumes the potential component degrees D,D,c. Ambient
+  filtration/full-center certification and whole quantum composition
+  remain mathematical work, not CLI/UI or registry plumbing.
+- Do not promote a candidate or claim an end-to-end speedup from these tests.
+
+## 2026-10-21 Complete Central Instrument Contract
+
+CentralRegularSource.lean is in the normal build with seven axiom guards.
+Full warning-as-error build and connected tests pass. No new wiring needed.
+
+- Invert the NORMAL group coordinate before positive central Fourier.
+  For exponential Lie coordinates this is equivalent to negative central
+  Fourier plus negating the remaining logarithmic coordinates.
+- Keep every central label, including zero. For the TRANSVERSE source,
+  branch mass is 1/|C|, not d^2/|N| for the reducible retained carrier.
+- A nontrivial H intersect C can give zero-mass labels. The new negative
+  control forbids bypassing intersection learning/transverse preprocessing.
+- The operational source uses the original hiding function and public
+  charts. Hidden potential/projection values remain proof witnesses.
+- The generic theorem permits a central subgroup, but the source degree
+  argument elsewhere still needs C=Z(N). Do not weaken that premise.
+- Exact character completeness does not implement efficient field QFT
+  gates, error budgets, adaptive freshness or the full HSP controller.
+- Do not request broad CLI/UI/registry work from this local proof milestone.
+
+## 2026-10-21 Composed Full-Jet Erasure Contract
+
+FullJetWeightedErasure.lean closes the coefficient/channel bridge in the
+normal build. Eight guards, full warning-as-error build, 32 focused and
+366 connected tests pass. No runtime API change is requested.
+
+- Rows are OUTPUT coefficients; columns are INPUT auxiliary monomials.
+  Increasing auxiliary scale power means lower-weight input dependence.
+- Use the exact k>0, |alpha|+k<=D register, including k=D. The theorem
+  handles arbitrary register vectors, not only points on the hidden curve.
+- Preserve the full phase pullback, offsets, lower terms and parameter
+  products. Four new tests compare it with independent substitution.
+- degree_reduced_branch assumes nonempty active nonzero scales, bounded
+  phases, a verified relation and tensor-product same-curve inputs.
+  It is not permission to recycle sources or fit hidden coefficients.
+- Constant residuals cancel only with unit-character phase normalization,
+  as explicitly checked by terminal_kernel.
+- The original oracle/source/compiler and adaptive resource composition
+  still require mathematical review. Do not replace these obligations
+  with routine CLI/UI wiring or central candidate promotion.
+
+## 2026-10-21 Weighted Phase-Erasure Contract
+
+WeightedPhaseErasure.lean is in the normal build with nine axiom guards.
+Full warning-as-error build, 356 connected tests and standard checks pass.
+
+- Require M[j,j]=s^w_j and M[j,k]=0 for j!=k and w_k>=w_j.
+  Correct diagonal entries alone do NOT certify the leading-weight law.
+- Solve coefficientwise over the fixed public parameter-lift basis before
+  outcomes. Never fit cancellation by evaluating hidden parameters.
+- Multiply source phases by ADDING their polynomial pullbacks. Keep all
+  lower-weight and spectator-dependent terms for subsequent stages.
+- Zero scales are algebraically harmless but are NOT valid active
+  quantum transports. Discard those inputs before invoking the channel.
+- Same hidden curve, fresh source ownership and nonempty active input
+  sets remain protocol obligations, not facts proved by this algebra.
+- Six exact controls in test_weighted_phase_erasure_law.py include a
+  forbidden equal-weight perturbation and disable hidden evaluation.
+- No new runtime API, CLI/UI, registry admission or broad sweep is needed.
+  The remaining Taylor-matrix/composition proof is mathematical work,
+  not something that routine wiring can certify.
+
+## 2026-10-21 Public Full-Jet Alignment Contract
+
+FullJetAlignment.lean is in the default build with seven axiom guards.
+Full warning-as-error build and 350 connected Python tests pass.
+
+- Scalar feature rank lifts through the identity A blocks of every
+  D_lambda. Do not impose a nonzero-label or irreducible-sector filter.
+- A left inverse P alone is NOT a unitary. Keep the residual
+  x-T*P*x in ker(P); the full inverse is (j,k)->T*j+k.
+- The existing pivot-minor complement is a basis of that residual space.
+  Six new controls check alternative complements and exact phase pullback.
+- On a changed public complement, evaluate gamma at the NEW L^-1(t,zeta).
+  Keeping a prior phase while updating only translation is invalid.
+- No new runtime API is needed. Rank probability, weighted erasure,
+  full source/oracle composition and SDE are not settled by this theorem.
+- No CLI/UI, central admission, or claim of a speedup is requested.
+
+## 2026-10-21 Full Taylor Transport Interface
+
+Formal/FullTaylorTransport.lean is in the default build with six guards.
+Full warning-as-error build and 344 connected Python tests pass.
+
+- The finite register contains exactly Y^alpha s^k, k>0, |alpha|+k<=D.
+  Include k=D. Do not revert to the older truncated chart.
+- Public A(z,t) acts by P(Y,s)->P(Y+s*z,s*t); the inverse is
+  A(-z/t,1/t). Q never appears in the operational map.
+- Composition is A(z,t) A(w,u)=A(z+t*w,t*u). The transpose is wrong.
+- Rows of weight k use columns of weight at most k. The independent
+  matrix-column controls live in tests/test_full_taylor_transport.py.
+- The vector-valued actual channel contraction is now proved without
+  assuming its Taylor-transport premises. This is not GL/rank, weighted
+  phase erasure, SDE execution, quantum circuits or a full HSP proof.
+- Characteristic-free transport algebra does not weaken p>3D elsewhere.
+- No CLI/UI or central-registry changes are requested. Routine wiring
+  cannot substitute for the remaining mathematical obligations.
+
+## 2026-10-21 Checked Class-Three Monomial Interface
+
+Formal/ClassThreeMonomial.lean is now in the default build with seven
+axiom guards; lake build --wfail and 322 connected Python tests pass.
+
+- Its phase convention is R0-(mu+ell)(d), not R0-mu(d) and not a Weyl
+  phase with an extra -X.Z/2. Frequency mu stays quantum.
+- Its unknown-parameter lift is justified by bundled linear/bilinear maps,
+  not by small-field fits. Six regressions pin the Python formula to it.
+- Do not feed proof variables g/ell to a production controller as advice.
+- No source/algorithm field guard is weakened: char!=2,3 proves this
+  algebra only, while the receiver still requires p>3D and other premises.
+- Taylor transport, GL/rank, SDE, full central-source/gate implementation
+  and end-to-end HSP composition are NOT proved by this module.
+- No new CLI/UI or registry work is requested from this formal milestone.
+
+## 2026-10-21 Logical-Gate Source Guard
+
+LOGICAL_GATE_STATE_HSP_APPLICATION.md is an application audit, not a request
+for a new campaign. New logical_gate_source.py contains known-subgroup
+fiber algebra and exact bounds for a COUNTEREXAMPLE encoder only.
+
+- Keep the Choi reference and use A tensor conjugate(B), not transpose(B).
+  V inverse/conjugate access is not required or granted.
+- known_logical_fiber consumes an already correctly learned subgroup.
+  Preserve vertical ambiguity; returned affine coordinates are Lie logs.
+- Require a GLOBAL normalized phase-optimized Frobenius gap. Code distance,
+  transversality and worst-case operator error cannot substitute for it.
+- MarkedEncoderGap is a falsifier, not a candidate generator. Its p^2
+  overlap penalty is not a p^2 lower bound on Choi-copy discrimination.
+- No code-design sweep, registry promotion or routine UI/CLI wiring is
+  justified without the missing structured population-gap theorem.
+
+## 2026-10-21 Twisted State Source Contract
+
+Read TWISTED_STATE_SYMMETRY_RECEIVER.md before wiring anything. This is a
+new proposed input interface, not an implemented solver or registry claim.
+
+- Keep the character in the source. Existing ordinary-coset controllers
+  cannot consume it unchanged; conjugate access is not implied by copies.
+- Use character_normalizer only on independently learned K and chi_K.
+  Public subalgebra/character consistency does not certify hidden K.
+- Quotient ker chi in M_chi, not in the plain normalizer; carry K/ker chi
+  as a known faithful scalar center. Learn chi using ORIGINAL copies.
+- Central labels obey lambda|Z=k*chi_Z. Keep all affine labels, including
+  zero/fixed ones; never divide a source-error bound by rare-sector mass.
+- attach_linear_character appends unknown coefficients, not phase advice.
+  Run it once per matrix leaf with its paid tensor powers reduced mod p.
+- The relative abelian base can retain a quadratic central-extension phase.
+  Do not dispatch it to ordinary abelian HSP without a proved conversion.
+- Existing source-budget arithmetic applies by the separate twisted-source
+  lemma, not by setting a flag and asserting an ordinary hiding source.
+- Broad controller/CLI/UI/registry work is NOT requested before the whole
+  algorithm and novelty review. 18 new mathematical controls pass.
+
+302 connected tests and standard checks PASS; full Python suite and new
+Lean compilation were not run. No GPT Git action or central admission.
+
+## 2026-10-21 Unified Recursion Contract
+
+CLASS_THREE_MONOMIAL_FULL_JET.md Sections 7.1-7.3 supersede the opaque
+lower-class subroutine discussion below. No new dispatcher is implemented.
+
+- ClassThreeStructure now permits B=0, beta=(), delta with empty rows.
+  The full-jet GL compiler then covers nonabelian class-two N. Abelian N
+  still uses scalar erasure; abelian ambient groups use abelian HSP.
+- Do not construct N/K when K is only normalized by M. Use M/K and
+  recompute its derived ideal inside (N intersect M)/K. N<=M is FALSE
+  in the supplied UT7 regression.
+- Solve(N,f|N) strictly lowers ambient class. Unroll it to the abelian
+  base case; do not implement a callback that receives hidden K as advice.
+- The written call budget is <=c+1 images plus three abelian HSP calls.
+  Do not multiply source costs across group restrictions or erase the
+  legitimate multiplicative costs within each phase-erasure tree.
+- Every public lift must be computed/uncomputed around the original f;
+  a quotient section need not be a homomorphism. K<=H is the correctness
+  premise, not something guaranteed by checking a few memberships.
+- Keep all paths bounded on incorrect prior answers. Lie/class checks
+  do not validate hidden-subgroup completeness or SDE implementation.
+
+19 focused/257 connected tests and standard checks PASS. No full Python
+suite, new Lean build, GPT Git/CLI/UI, registry promotion or outreach.
+
+## 2026-10-21 Class-Three Monomial Full-Jet Contract
+
+Read CLASS_THREE_MONOMIAL_FULL_JET.md. This is public control algebra and
+a proposed extension, not a request for infrastructure or claim promotion.
+
+- Use class_three_monomial_jet.py only with its actual central/B-Fourier
+  source. Mu remains quantum; lambda alone is measured, with mass p^-z.
+- FullTaylorJetChart includes k=D. Do not pass it to the old K/J Weyl
+  compiler, omit its highest coordinate, or reuse the D-1 residual budget.
+- The GL alignment receives no hidden potential coefficients. Its maps
+  are ordinary carrier-coordinate permutations, not generic symplectic
+  transformations. Compile Phi directly; do not add a Weyl phase twice.
+- Validate full feature rank. No source label relation is required, but
+  independent nonzero scales/fresh uniform Y and consumed failed batches
+  still belong in the physical controller.
+- Weighted phase degree is max(c,3D), and the second erasure starts at D.
+  Source-level savings do not imply smaller total erasure-tree resources.
+- ClassThreeStructure checks Jacobi, not C=Z(N) or ambient filtration.
+  The actual group frontend must certify those before applying D=c-2.
+- Known-element fixture evaluators are NOT hidden-gauge controller inputs.
+  A partial SDE heuristic cannot stand in for the cited all-input solver.
+- Arbitrary-H reduction requires the lower-class-three receiver. Do not
+  label it a known nil-2 call. No new quantum or Lean implementation exists.
+
+16 new/193 connected tests and standard checks PASS. Main-model next work
+is full-result scrutiny and application/novelty, not routine wiring.
+No GPT Git, extra registry artifacts, CLI/UI or outreach requested.
+
+## 2026-10-21 Central Regular Source Contract
+
+The preferred source is now CENTRAL_REGULAR_JET_SOURCE.md, implemented as
+public algebra in central_regular_jet.py. This is not a request for extra
+CLI/UI/registry infrastructure or a generic backend claimed from fixtures.
+
+- Negative center Fourier MUST be followed by noncentral coordinate
+  negation in this convention. Probability is p^-z, never d^2/|N| for the
+  retained reducible carrier. Keep zero labels; do not measure radicals.
+- Use regular_jet_maps and compile_regular_scalar_packet together. The
+  old irreducible compiler validates a different physical source and must
+  not be called with fake radical metadata or padded irrep dimensions.
+- Verify cancellation on B_lambda, equivalently on [N,N], not necessarily
+  the entire center. Uncancelled central phases remain in the phase table.
+- Full scalar Phi rank is the sufficient acceptance condition. Fixed
+  scales can fail despite valid isotropy. Fresh block rescaling/outcomes
+  must be independent and chosen AFTER the public witness is fixed.
+- Physical R equals active_count*w and needs no mixed padding once this
+  feature check passes. More carrier qudits than an irrep can be retained;
+  do not claim a universal resource improvement from proof simplification.
+- Generic weighted degree and two-erasure costs remain. No new SDE or
+  source-ownership manager exists. 11 new/177 connected tests pass.
+
+The next main-model question is a constructive non-Weyl source/combiner for
+class-three N, not routine wiring. No GPT Git action or central promotion.
+
+## 2026-10-21 Full Controller Specification, Not An Execution Claim
+
+NONLINEAR_JET_HSP_RECEIVER.md Section 10 supplies the written composition
+contract. No production controller or generic SDE backend was implemented.
+Main-model work remains theoretical; routine wiring is not requested here.
+
+- Use one fixed hidden instance/chart per image call and retain the FULL
+  public history. Correlated coefficient tables are allowed; correlated
+  quantum copies or reused leaves are not.
+- The rank theorem applies to fresh trials BEFORE their rank test, not
+  conditional on every observed new label or accepted transcript.
+- The deterministic SDE existence theorem cannot certify a partial local
+  solver's capped success rate. Canonical rows and all-input polynomial
+  guarantees are both required for the stated controller.
+- Fixed-tree node counts multiply arities AFTER each level in bottom-up
+  order. Count raw oracle calls from zero labels and failed whole batches.
+- Budget bounded binary field sampling and joint instrument errors before
+  conditioning. Keep all jet Fourier outcomes and the second erasure.
+- Source-register storage is not total gate workspace. Add arithmetic,
+  synthesis and oracle ancillas; do not advertise a physical resource win.
+- 65 exact arithmetic cases and 71 connected tests passed. These are not
+  quantum executions or a full formal proof; no new public API was added.
+
+Do not promote this to the central registry or outreach drafts. The next
+main-model question is substantive scope/impact, not another controller
+fixture. No GPT commit/push, CLI/UI or extra infrastructure requested.
+
+## 2026-10-21 Nonlinear Formal Contract
+
+Read NonlinearJetChannel.lean and NONLINEAR_JET_HSP_RECEIVER.md Sections
+9.1-9.3. The normal Lean build includes this module and nine axiom guards.
+No new wiring or central promotion is requested.
+
+- Do not call the nonlinear support a linear graph. The curve is an
+  unknown proof witness; only public A(Y,s) belongs in the Kraus map.
+- The mixed-branch theorem uses a nonempty tensor product of ACTIVE
+  inputs, one common curve and nonzero scales. Discard zero-scale leaves
+  first; identical Python schemas do not certify quantum independence.
+- The transport identity is a Lean hypothesis. The module does not prove
+  Taylor closure, polynomial cancellation, selection/runtime guarantees,
+  gate synthesis or all-stage composition. Do not advertise a full proof.
+- Fourier residuals keep every character; the second phase erasure is
+  still necessary. A complete Fourier-family circuit is a separate input.
+- U=0/gauge nonidentifiability forbids general coefficient learning from
+  this source, not all HSP-to-HPGP reductions. The prior-art oracle/state
+  distinction must remain explicit in any summary.
+- VERIFIED: normal lake build --wfail (3317 jobs), 158 connected Python
+  tests (37.17s) and standard checks pass. No full Python suite, quantum
+  execution or general SDE implementation. All owned processes terminal.
+
+Next main-model work is the complete receiver/access argument, not more
+mechanical expansions. No GPT commit/push, CLI/UI, registry or outreach.
+
+## 2026-10-21 Nonlinear Jet Contract
+
+Read NONLINEAR_JET_HSP_RECEIVER.md and the standalone public algebra module.
+Do not promote this proposal or replace the old class-four budget artifacts.
+
+- The new scope needs fixed c, class-two L', and p>max(c,2(c-2)). The
+  old quadratic route still requires its own stronger structural condition.
+- Keep ALL jet coordinates (alpha,k,a), with weight k. Transport requires
+  A(Y,s), including Y-dependent lower-weight terms; t->s*t is wrong.
+- The higher maps reuse geometric K/J fields named quadratic/linear. Those
+  historical protocol names do not make the new displacement quadratic or
+  its common support linear. Use the new compiler, not the cubic-only one.
+- Select scales from weighted leading public maps before outcomes. Two
+  fresh coherent registers, disjoint source trees, fixed hidden chart and
+  discarded zero-scale leaves are physical premises. Raw algebra helpers
+  do not enforce source ownership or prove independence.
+- Fourier on the retained jet is legal only AFTER weighted erasure. Keep
+  every eta. Then erase the ordinary residual degree D-1 phase; do not
+  postselect eta=0 or claim it immediately gives a subgroup state.
+- A general fixed-degree SDE backend, bounded equivariant selection and
+  full coherent receiver remain unimplemented. Reuse the published solver
+  theorem; never disguise fixture witnesses or truth-specific values as one.
+- 20 new/158 connected tests pass. The initial broader run exposed five
+  concurrent scalar-adapter failures, now fixed by other edits and rerun.
+  Standard checks pass; no new Lean theorem/build or full-repo suite.
+
+Main-model next work is correctness/novelty review, not more wiring or
+nearby examples. No new CLI/UI/campaign/registry or GPT Git action requested.
+
+## 2026-10-21 Sparse Clifford Baseline Scope
+
+Read the new sparse-Pauli subsection of CLASS_THREE_APPLICATION_AUDIT.md.
+No new campaign, full stabilizer backend or central promotion is requested.
+
+- Encode actual coefficient phases as (v,t), with the linear phase row
+  retained. Tableau multiplication has a semidirect phase law, not plain
+  row addition. Ignoring phases or coefficient colors gives false symmetries.
+- Amplitude colors require canonical nonzero phase classes; coefficient
+  values are NOT reduced modulo p. Coalesce equal Pauli labels first.
+- The classical theorem applies to supplied sparse lists and faithful
+  defining-characteristic p-group tableaux. Do not give an unknown state
+  free coefficients, purification or a free kernel-lifting procedure.
+- A coherent controlled family of Clifford actions need not be Clifford.
+  Do not use Gottesman--Knill as a blanket unknown-state dequantization.
+- Seven new/89 connected tests pass. No production Luks implementation,
+  new Lean proof, CLI/UI/Git action or full HSP execution was supplied.
+
+## 2026-10-21 State-Symmetry Transfer Contract
+
+Read STATE_SYMMETRY_COSET_TRANSFER.md. This is a source-access audit,
+not an instruction to admit a candidate or claim solver execution.
+
+- Reuse state_symmetry_coset_transfer.plan_orbit_state_transfer. Its cap B
+  must include the WHOLE algorithm, not just the live image-query report.
+  The helper checks exact arithmetic, not the global gap or actual access.
+- Copy-only composition requires fresh IID copies and controlled R, with
+  all hiding outputs discarded. Public quotient representatives are legal
+  only after the needed subgroup has actually been learned. Bad histories
+  still need bounded clocks and public chart/encoding guards.
+- Do not assume inverse preparation, purification or reusable unknown
+  sources. Conjugate pairing additionally needs actual conjugate-source
+  and conjugate-action access, with both preparations/actions charged.
+- Approximate source error is additional to the receiver/gate budget.
+  Include rejection and all trials in the channel comparison; never
+  claim the same error after arbitrary postselection renormalization.
+- Do not import the phase-graph absolute-gap assertion or the phase-zero
+  generator-filter shortcut. Use a real subgroup kernel calculation.
+- 19 new/247 connected tests and standard checks pass; no generic quantum
+  receiver or new Lean proof was implemented. Tensor amplification is
+  prior art, and the nil-2 corollary uses an existing algorithm.
+- No central promotion, GPT CLI/UI/Git work or additional finite-fixture
+  campaign. Next main-model work should challenge impact/full correctness.
+
+## 2026-10-21 Conditional Higher-Class Contract
+
+Read QUADRATIC_NONCENTRAL_HSP_SCOPE.md before any integration. This is a
+written extension under review, not an instruction to admit a new claim.
+
+- Explicit Lie coordinates, FIXED c, p>c and [gamma_3(L),L']=0 are required.
+  Publicly check the latter using bracket-space bases. Class-two L' alone
+  fails on UT6; neither arbitrary higher class nor state-only input follows.
+- Reuse the existing quadratic noncentral parameter schema, rank law,
+  mixed padding, deterministic alignment and exactly phased Clifford.
+  The central symbolic parameter table needs degree c, not degree four.
+- For c>=5, erase scalar degrees c through one. Quartic cancellation does
+  NOT remove all higher central terms or their translated quartic terms.
+  Keep one common parameter lift and support across every disjoint tree.
+- The arbitrary-H finish uses up to c-2 image calls, first matrix then
+  scalar, with two known nil-2 calls. Preserve off-promise clocks and
+  canonical-output amplification. Do not reuse the two-image claim blindly.
+- Existing cubic-only backends and live budget artifacts remain class-four.
+  Higher-class execution, general field solver and independent full proof
+  review are not delivered by this pass. 12 new/162 connected tests pass.
+- No new CLI/UI work, central promotion or GPT Git actions. Main-model work
+  should challenge the complete result, not repeat these matrix fixtures.
+
+## 2026-10-21 Mixed Frobenius Filter Contract
+
+Read the mixed-level subsection of SUCCINCT_POLYNOMIAL_STABILIZER_AUDIT.md.
+Reuse frobenius_circuit_lift.py; no new campaign or central admission.
+
+- A frob gate MEANS p-th power and costs O(log p) ordinary multiplications.
+  It is not an unchecked claim that an unrelated circuit has this structure.
+- Keep every D-variable block, even unused coordinates. Matrix action can
+  mix coordinates. Constants and identical block matrices must lie in F_p.
+- Require lifted degree delta<p and p>max(D,(D-1)*delta) before invoking
+  the sufficient classical attack. A failed guard is not hardness evidence.
+- Reverse differentiation acts on independent lifted variables, not on
+  their Frobenius specialization. Extension-field sample coordinates must
+  be independent for the written rank/PIT argument.
+- The group Lie algebra has at most D^2 unknown coefficients. Do not
+  replace it with arbitrary independent transformations of each block.
+- No full group-basis/PIT/stabilizer backend or semantic circuit-root
+  extraction is implemented. Keep stabilizer_solver_executed=false.
+- 17 new/94 connected tests pass. Main-model work returns to the complete
+  theorem and impact case; no GPT CLI/UI/Git work is requested.
+
+## 2026-10-21 Deterministic Alignment Contract
+
+Read DETERMINISTIC_JET_ALIGNMENT.md and reuse the implemented controller.
+Do not create another alignment campaign or promote the full HSP claim.
+
+- align_public_jets and align_variable_jets no longer take rng/attempts/
+  draw_cap. The random completion helper is deleted, with no fallback.
+- JetAlignment.transvections counts field-level isometry operations, NOT
+  native quantum gates. Feed the verified symplectic matrix to the existing
+  exactly phased Clifford compiler and retain its gate/precision costs.
+- Alignment has zero failure on valid rank/isotropy/dimension input; the
+  preceding random design still can fail. Mixed padding remains physical
+  I/p. The current sufficient target width is D+w, not D+w+2.
+- The written sharper threshold D+w-rank(K^T Omega J) is not an implemented
+  padding backend or a reason to relax the current checked controller.
+- Keep the independent block-multiplier rejection cap and 1/100 allocation;
+  removing Lagrangian randomness does not remove all classical sampling.
+- Both live artifacts, 325 connected tests and standard validation pass.
+  Complete quantum execution and source correctness are not certified.
+  No new CLI/UI wiring, claim admission or GPT Git work is requested.
+
+## 2026-10-21 Prime-Power Input Contract
+
+Read CLASS_FOUR_PRIME_POWER_INPUT.md. No new campaign, central promotion,
+CLI/UI wiring or GPT Git work is requested. The main-model priority remains
+the full receiver/application, not more input-conversion controls.
+
+- ClassFourGroupWords accepts exponent_bound=M, a promised annihilating
+  p-power. The default p is valid only for exponent-p inputs. Every inverse,
+  rational power and multiplication cap must use M and its bit length.
+- Acquire the complete additive relation kernel before claiming a cyclic
+  decomposition. Amplification uses canonical relation-lattice HNF in a
+  fixed domain, not arbitrary SNF bases or generator strings.
+- p_torsion_from_decomposition checks exact orders, not direct-sum
+  independence/spanning. Do not use arbitrary irredundant group generators
+  or one common high power to construct Omega_1.
+- Large-prime normalizers and quotients are mixed-order module operations,
+  not naive finite-field elimination. The p=2,3 branches use an existing
+  solver with charged state-preparation unitary AND inverse.
+- The written single-global-chart reduction is not implemented quantum
+  setup or a module backend. 311 connected tests pass; the complete core
+  stays UNDER REVIEW and no useful external speedup is established.
+
+## 2026-10-21 Conditional Selection Contract
+
+Reuse Formal/EquivariantLabelSelection.lean. This is not a request for
+another selection campaign or central claim promotion.
+
+- Solver acceptance, caps, witness and active index must depend only on
+  invariant canonical relation data and independent seeds. Witness
+  verification alone cannot justify an input-dependent abort policy.
+- The finite weighted proof includes invariant record conditioning, not
+  conditioning on arbitrary raw labels, ranks or radical-character data.
+  Retain those records for physical source correctness; marginalize them
+  for the fresh-block rank probability calculation.
+- Separate block preparation/local acceptance and product input law are
+  required for multiplying bad-event bounds. Uniform individual marginals
+  are insufficient. Do not use coupled retry/acceptance rules without a
+  new proof, or treat repeated metadata as independent physical packets.
+- Eight guards, full Lean build and 285 connected Python tests pass. The
+  GL transitivity/hyperplane count, SDE success bounds and full source
+  instantiation remain mathematical dependencies, not discharged code.
+- No new CLI/UI wiring, solver execution claim, GPT Git work or external
+  communication is requested. Main-model work returns to the entire claim.
+
+## 2026-10-21 Succinct Polynomial Scope Contract
+
+Read SUCCINCT_POLYNOMIAL_STABILIZER_AUDIT.md. No campaign, CLI/UI wiring,
+central promotion or Git work is requested from this pass.
+
+- plan_orbit_fingerprint uses an exact ALL-PAIRS orbit bound. The one
+  public random extension-field point must stay fixed for the oracle.
+  Base-field evaluation is not formal polynomial identity testing.
+- Budget field construction, matrix operations, circuit evaluation,
+  input-coordinate acquisition and receiver error separately. The helper
+  neither creates an oracle nor validates its circuit/degree promises.
+- The derivative guard requires p>max(D,(D-1)*Delta), public circuit
+  gradients and a supplied matrix p-group. Its written algorithm uses
+  explicit matrix log/bracket closure and extension-field linear equations.
+  No production circuit-gradient or stabilizer backend was implemented.
+- A failed guard is NOT a positive quantum signal. Exposed Frobenius or
+  Artin--Schreier lifts preserve the base polynomial's stabilizer and need
+  deflation. The small shear/UT3 tests are countercontrols, not candidates.
+- 19 new/101 connected tests and standard checks pass. No useful hard
+  family, complete quantum execution or independent proof review exists.
+  The next main-model task is scientific, not more finite fixtures.
+
+## 2026-10-21 Black-Box Setup Contract
+
+Read CLASS_FOUR_BLACK_BOX_INPUT.md. This is not a request to wire a new
+campaign, UI or claimed solver. The main model should attack the theorem.
+
+- Reuse ClassFourGroupWords for ADD_4/BRACKET_4, bracket spanning and forward
+  combinations. It does not validate the group/class/exponent promises or
+  implement coherent operations, quantum basis acquisition or HSP.
+- Group generators are NOT an additive basis. The bracket family is only
+  a spanning family until its relation kernel is genuinely acquired.
+- Known abelian-HSP calls for the basis and bracket coordinates must be
+  charged. Do not replace them with a fixture's private matrix logarithm.
+- Pull back f by computing E(x), querying f, and uncomputing public encoder
+  workspace while retaining x and the hiding output. No E^-1 is needed.
+- Keep the acquired chart fixed for receiver-output amplification. Setup
+  kernel amplification uses canonical subspaces in each fixed public domain.
+- Apply polynomial clocks and malformed-input/class checks on ALL histories,
+  including those after an erroneous initial K. Verification of supplied
+  generators alone cannot certify the hidden subgroup's completeness.
+- 65 connected tests and standard validation pass. No quantum setup/full
+  algorithm, independent review, central promotion or GPT Git work.
+
+## 2026-10-21 Complete Class-Four Contract And Budget
+
+Read CLASS_FOUR_HSP_THEOREM_DRAFT.md before integrating. Main-model work
+is whole-proof/impact review, not more nearby fixtures or routine wiring.
+
+- Reuse class_four_complete_budget.quotient_image_budget for exact ANALYTIC
+  caps; it is not a source executor or total HSP/gate estimator. The live
+  artifact covers four prime regimes at UT5 dimensions, not quantum runs.
+- General quartic arity uses G(4,e)^3, not the ambiguous compact logarithmic
+  comparison. Keep the SDE solver's input/rank/abort invariance contract.
+- The written finish has two quotient-image and two known nil-2 calls.
+  Quotient representatives need not form a homomorphic section, but their
+  reversible encoding and original-oracle costs must be charged.
+- The class-four potential has an exact universal coefficient certificate;
+  its projection and linear lift are STILL hidden proof witnesses. Do not
+  inject these into a controller or interpret the test as a quantum source.
+- The class-five cubic obstruction forbids an unchanged quadratic-jet
+  extension. It is not evidence of a no-go theorem for other receivers.
+- Canonicalize complete original-coordinate subgroup outputs for majority
+  amplification. Generator membership alone does not certify completeness.
+- 121 connected plus four symbolic transport checks pass. No complete
+  algorithm, independent review, external application or central promotion.
+  No new CLI/UI work, campaign, commit or push is requested.
+
+## 2026-10-21 Common Jet And Audited Sparse Adapter
+
+Reuse Formal/CommonQuadraticJet.lean and the existing scalar adapter.
+No new campaign, UI/CLI wiring, claim admission or further fixture sweep
+is requested. Main-model successor work is the full theorem review.
+
+- Fix one oracle, quotient/normal chart, proof-only potential and ordered
+  coefficient basis for a whole erasure forest. The common-jet theorem
+  permits varying labels/carrier sizes, not different unknown potentials.
+- Give each physical root disjoint fresh leaves and retain the entire
+  public transcript. Wrapper identity guards catch obvious reuse but are
+  not physical freshness certificates; copied metadata is not a new state.
+- Existing exact helpers are _canonical/_dependence from
+  graded_hsp_phase_descent; square_weights_capped takes conic_attempt_cap.
+  The previously imported names/keyword did not exist.
+- Square solving requires (rank+1)^2 sources. The corrected standalone
+  reference uses arities 7/169/7 and counts 8281 descriptors. Do not restore
+  the broken 25-input rank-8 square stage or the old 1400-leaf claim.
+- Keep oracle_to_erased_fourier_executed false and
+  diagnostic_samplers_use_hidden_fixture true for the current report.
+  Conditional class-descent tests do not implement the needed sampler.
+- The standalone report, 673 connected tests and full 3315-job Lean build
+  pass. Full-repository Python tests were not run. No claim was admitted.
+
+## 2026-10-21 Public Clifford Backend Contract
+
+Reuse prime_clifford_realization.compile_alignment for a verified public
+alignment. This does not request wiring, a new campaign or claim admission.
+
+- Primitives are chronological and use omega^(b*t^2/2), not t(t-1)/2.
+  A matching symplectic tableau is insufficient to certify Weyl phases.
+- Exact covariance leaves the unknown scalar psi unchanged. The hidden
+  gauge is never an operation or supplied coefficient vector.
+- Charge mixed padding, carrier layout, modular gates and approximate
+  Fourier/phase synthesis. The primitive count is not native qubit depth.
+- The written universal proof and dense controls are separate from Lean;
+  preserve the formal covariance premise until genuinely discharged there.
+- The new 30 tests are included in the 652-test connected milestone. No
+  full-repo Python or new Lean build was run for this Python/doc-only pass.
+
+## 2026-10-21 Checked Matrix-Batch Contract
+
+Reuse Formal/MatrixBatchShear.lean in any later integration. This does
+not request CLI/UI wiring, a new campaign or claim admission.
+
+- Inputs must be independent conditioned on their FULL public transcript
+  and share the same hidden U. Correct individual marginals do not suffice.
+- Prepare a fresh COHERENT uniform quotient. A mixed fresh register has
+  the same outcome rates but erases support. An old pivot has a different
+  outcome law and cannot be substituted without redoing the rank argument.
+- Measured active Y_i are independent uniform. If zero-weight sources
+  are discarded first, count only active inputs in the branch probability;
+  do not pretend a discarded slot produced a uniform measurement outcome.
+- Zero-weight carriers factor as mixed identities; all-zero weights are
+  not successful merges. Wasted queries and consumed sources stay charged.
+- Physical carrier C acts ONCE. Conjugated unknown gauges are a proof
+  rewrite, not callable operations. Never inject hidden coefficients.
+- A finite-field symplectic/rank certificate does not establish the exact
+  Hilbert-space gauge identity. Preserve the Weyl half-phase, actual
+  Clifford realization, carrier ordering, padding and common-T contracts.
+- The theorem composes conditional interfaces, not the full adaptive HSP
+  algorithm. Keep external-application and novelty claims blocked.
+
+## 2026-10-21 Complete Normal-Fourier Reference Contract
+
+Use the expanded Complete Fourier Factorization section in
+CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md for any eventual backend.
+This is not a request for wiring or admission of an algorithm claim.
+
+- Negative central/radical/momentum Fourier signs, the -a.b/2 phase
+  and final i=a+j are coupled conventions. Unitarity alone misses errors.
+- Measure lambda early, compute its public basis, keep all alpha, then
+  trace i and retain j. Never substitute measurement of a or original v.
+- The label-dependent layout always occupies w field registers. Rank-zero
+  nonzero labels remain valid. This QFT requires no carrier padding.
+- Dense test matrices are diagnostic only. Use cyclic QFTs and reversible
+  field arithmetic, with one joint error budget including labels/ABORT.
+- Reference tests and the written completeness argument do not constitute
+  a gate backend, a Lean completeness theorem, or full HSP composition.
+
+## 2026-10-21 Linear-Action Baseline Scope
+
+The large-prime section of CLASS_THREE_APPLICATION_AUDIT.md supersedes
+the earlier unresolved-prime gap for explicit nilpotent matrix
+stabilizers. Its fallback is CLASSICAL PLUS KNOWN ABELIAN QUANTUM, not
+fully classical. Do not mark generic large-prime problems dequantized,
+infer transporters from stabilizers, or create a new claim/campaign.
+The test arithmetic is not a production nilpotence checker or solver.
+
+## 2026-10-21 Ordinary Matrix-Source Contract
+
+Reuse Formal/CosetMatrixSource.lean's actual-source interface in any later
+integration. This is not a request for CLI/UI wiring or claim admission.
+
+- Trace the hiding-output register. A selected output retains only one
+  affine quotient coset and is not the mixed source used in the rank law.
+- Preserve normal-first RIGHT multiplication n*F(q)^-1*F(q+u), conjugated
+  Fourier amplitudes and a full row TRACE. Do not silently switch sides.
+- The normalized sector coefficient is 1/(|V|d); before normalization its
+  trace is d^2/|N|. Keep dimension factors and actual label costs.
+- Certify the whole chosen normal QFT, not merely each representation's
+  unitarity. The fixed-sector identity even holds for a reducible example
+  whose putative probability is 4/3 and whose map is not a contraction.
+- Section, projection, whole-H parametrization and potential are proof
+  witnesses; never replace ordinary queries with free potential evaluation.
+- The formal source theorem is not a generic efficient QFT, class-four
+  polynomial compiler, batch-shear proof or full HSP execution guarantee.
+
+## 2026-10-21 Checked Spectator-Measurement Contract
+
+The new Formal/WeylSourceScalarization.lean is in the normal Lean build.
+Reuse its interface; no CLI/UI integration or registry admission is requested.
+
+- After public alignment, the physical X displacement must be (a+Tq,b)
+  with constant spectator b. Checking only outcome probabilities or
+  normalization cannot establish this: leakage Lq keeps U intersect ker L.
+- Keep J and measure only S, accepting every outcome. Full carrier readout
+  keeps U intersect ker T and can erase all useful quotient coherence.
+- The scalar phase is conjugate gamma(q,(j,s)), where gamma includes
+  psi+A.B/2+B.t. Omitting the Weyl half-phase remains incorrect.
+- Normalized outputs have the exact AffineSupportErasure rho interface.
+  Preserve common oracle/chart/U/T across packets even if S has different
+  dimensions or the public phases vary across batches.
+- The Lean theorem does not implement or certify normal QFT preparation,
+  batch shear, Clifford covariance phases, polynomial maps or runtime.
+  Do not mark those execution obligations complete from the library build.
+
+## 2026-10-21 Generic Compiler Exists; Full Execution Does Not
+
+Use class_four_scalar_phase_compiler.compile_variable_scalar_packet for
+the generic public schema, not the UT5-specific coordinate ordering.
+Read Sections 4 and 6 of CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md first.
+This does not request a new campaign, CLI/UI work or claim admission.
+
+- Pin instance, chart and parameter ordering before combining packets.
+  Matching descriptor dimensions is insufficient. Do not substitute
+  diagnostic coefficient values into a production controller.
+- Preserve radical phases, even in nonzero-label zero-Weyl sectors.
+  Sparse pairwise products involve only noncentral coefficients; the
+  larger existing lifted_parameter_count is conservative, not incorrect.
+- The documented Q_source bound includes capped label/full attempts and
+  zero-scale waste. Charge classical solver/gate work separately. Retry
+  classical witnesses before merging; never reuse consumed quantum input.
+- Implement finite square/field arithmetic only with a proved failure
+  bound, not a timeout relabeled as success probability. Its current
+  conic loop remains uncapped and machine-word limited.
+- Preserve symmetric-Weyl Clifford phases and one TOTAL adaptive error
+  budget including ABORT. A verified S is not a gate implementation.
+- Schur controls establish reference normalization, not a general G oracle
+  runner. The generic compiler is still not connected to scalar erasure.
+
+Full proof review remains the priority. Do not interrupt another bounded
+task or treat this list as authorization to promote the proposal.
+
+## 2026-10-21 Variable-Radical Contract For Future Generic Work
+
+Read CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md before integrating the new
+class_four_matrix_source controller. This is not an instruction to
+interrupt an existing bounded task or promote a registry claim.
+
+- Preserve canonical row-space-only diagonal-witness selection. Using
+  Weyl rank, radical labels or preferred coordinates can bias active
+  labels and invalidate the <=2/p per-block argument.
+- Use fresh independent relation blocks, independent nonzero block
+  multipliers and all uniform shear outcomes. Rank-check [K|J] publicly.
+- Keep singular and zero-Weyl-rank sectors with nonzero central labels.
+  Retain their radical characters in the scalar phase.
+- Padding means independent I/p qudits made by discarding fresh partners,
+  not pure |0> registers or reusable classical seeds.
+- The generic symbolic compiler must use quadratic Q_W, quartic Q_Z,
+  radical-character phases, fixed lifted parameter products and variable
+  carrier widths. Do not reuse UT5's coordinate/degree ordering unchanged.
+- Known nil-2 intersection solving, quotient representative computation,
+  initial correctness probability, all caps and total source/gate errors
+  remain charged dependencies. A successful controller test is not an
+  implementation of them.
+
+The general source proof still needs independent review. No CLI/UI
+integration or central claim admission is requested by this pass.
+
+## 2026-10-21 UT5 Matrix-Source Contract For Future Integration
+
+Read UT5_MATRIX_PHASE_ALIGNMENT.md. The exact public jet controller and
+sparse symbolic compiler exist; a coherent algorithm does not. This is
+not a request to interrupt an already bounded task or admit a registry
+claim. No CLI/UI addition is needed for this mathematical pass.
+
+- Keep H intersect G'=1, p>4, p>=2r and the ordinary-oracle interface
+  explicit. Do not silently generalize to arbitrary intersections/quotients.
+- Preserve the canonical (SK)_X=0, (SJ)_X=(I_D,0) checks. Isotropy alone
+  does not ensure the same hidden support across independent packets.
+- Bind packets to the same hidden instance, chart and ordered symbolic
+  parameter basis. Sparse keys represent unknown base coefficients and
+  their pairwise products, not values to be learned by interpolation.
+- The initial quartic label witness also cancels the scalar quartic.
+  Actual UT5 output is cubic; do not add an unnecessary fourth erasure
+  stage or over-relax the (4,3,2,3) log-center degree bounds.
+- Future sparse erasure integration must retain the common lifted
+  parameter semantics and all-zero/malformed cancellation rejection.
+- Charge label acceptance, initial diagonal witnesses, shear rank
+  rejection, Clifford retries, consumed zero scales, fresh-copy leaves
+  and global approximation. No preferred rare outcome is free.
+- Arbitrary-precision/capped square witnesses and a phase-correct
+  elementary Clifford compiler are still absent. A verified symplectic
+  matrix is a classical control certificate, not an executed circuit.
+
+## 2026-10-21 Preferred Future Dispatcher: Certified Class Descent
+
+Read Section 4 of BOUNDED_CLASS_METABELIAN_HSP.md before future
+general-controller work. This supersedes the assumption that every
+general-class implementation needs a cyclic-complement HPGP finisher.
+Do not interrupt an already bounded task or delete the valid existing
+line-finisher implementation; it remains an optional route.
+
+- Normalize/quotient the verified initial normal intersection once.
+- In each current group, form the public preimage of the erased-Fourier
+  nullspace and compute its actual lower central series.
+- Accept a strict CLASS decrease, not just a dimension decrease.
+  A strict superset of the true image can legitimately pass.
+- Repeat with fresh sources in the known smaller subgroup, new chart
+  and parameter basis. Never carry quantum packets across levels or
+  obtain the new source by uncharged subgroup postselection.
+- There are at most c-1 nonabelian restrictions. Charge copy costs as
+  a sum of per-level budgets, retaining each level's erasure-tree cost.
+- Finish with an abelian Fourier nullspace and original-oracle basis
+  checks; lift and include K. The alternative line route's projected-
+  span equality check is NOT the descent route's acceptance condition.
+- Keep all caps and global error accounting. Public class/membership
+  checks alone do not detect an approximate-source underestimate.
+
+The six matrix-reference tests are not a production dispatcher. No
+CLI/UI/registry integration is requested by this mathematical pass.
+
+## 2026-10-21 Application Filter Contract
+
+The existing sampled_stabilizer in nil3_polynomial_hiding_attack now
+supports class_bound=c with a public lower-central check and full
+Bernoulli vector field. Its dense coefficient reference and live CLI
+fixture remain class three. Do not relabel those as general-class.
+The public Lie axioms and original evaluator's degree promise remain
+assumptions; an integer hash is not a certified polynomial oracle.
+Record public class-check brackets separately from chosen F queries.
+
+Preserve the new independent matrix and false-truncation controls.
+No refresh/admission of a central negative result is needed for this
+audit, and no new CLI/UI workflow is requested. Do not interrupt an
+already bounded backend task. The added 127-bit classical control does
+not repair machine-word field arithmetic elsewhere in the project.
+
+Application proposals must now pass the bounded-class derivative
+filter, the fixed-class wreath check, and explicit transporter access
+costs. Never treat a target coset or efficient whole-orbit canonicalizer
+as free input. These are specific filters, not generic no-go statuses.
+
+## 2026-10-21 Checked Composition Contract
+
+Future controller work should follow Checked Adaptive Composition in
+BOUNDED_CLASS_METABELIAN_HSP.md. This is not a request to interrupt a
+currently bounded task or to mark the general dispatcher implemented.
+
+- Pin the hiding instance, quotient group, chart and parameter basis
+  for every tree. Dimensions alone do not establish compatibility.
+- Trace source hiding outputs. Uncompute public lifting scratch, NOT
+  the hiding-function output whose dephasing creates the mixed source.
+- Verify nonzero SDE scales against the original coefficient rows;
+  timeout/malformed/all-zero results abort rather than enter a merge.
+- Cap off-promise finisher calls. Check returned original-oracle labels
+  and projected span; always include the certified normal intersection.
+- The acceptance proof assumes exact-source supersets. Never set an
+  unconditional noisy-source certificate flag from membership checks.
+- Retain explicit ABORT and a retry cap. Charge all source/circuit errors
+  jointly, not conditional on an exponentially rare outcome.
+- Stream depth first, but charge every fresh leaf and every merge.
+  Live packet storage is 2+sum(a_j-1), plus separately counted workspace;
+  copy cost is still product(a_j). No measured-copy reuse.
+
+Preserve the eleven new acceptance/error/schedule regression controls.
+No new CLI/UI/registry wiring is needed for this mathematical audit.
+
+## 2026-10-21 Public Coordinate Compiler Contract
+
+Read Public Coordinate Cost Audit in BOUNDED_CLASS_METABELIAN_HSP.md.
+Do not relabel NormalWordLieBridge as general-class: its current ADD
+and BRACKET formulas can silently give wrong class-four coordinates.
+New test-only class-four corrections are exact reference certificates,
+not a new production backend or authorization for a larger campaign.
+
+For eventual wiring, reuse established inverse-BCH algorithms. Track
+the actual table's maximum covered weight and enforce it against the
+public class bound. GAP LieRing's inspected tables cover weight 14;
+checking only class<p is insufficient to establish table coverage.
+Rational powers must reduce denominators modulo p and use integer
+powering. Do not introduce a DLog/root oracle.
+
+The flag-peeling logic only requires successive normality, not global
+centrality; preserve the refined-noncentral regression. Forward and
+inverse coordinate maps must both be available to erase work registers.
+Keep collector calls/arithmetic in the budget and reject unsupported
+input promises. The 127-bit matrix test does not make nmod_mat arbitrary
+precision. No new CLI/UI/registry task is needed for this proof audit.
+
+## 2026-10-21 Fixed-Class Metabelian Extension Contract
+
+BOUNDED_CLASS_METABELIAN_HSP.md is a new WRITTEN scope audit, not a
+request to interrupt an existing bounded implementation task.
+Preserve the current restricted receiver flags and all previous caps.
+
+For a later generalization, after review:
+- Use full truncated exp(ad q) on the abelian normal register. The old
+  first-order action is wrong at class four.
+- Represent all unknown potential coefficients through degree c;
+  max_degree support in initial_packet is not a degree-c SDE solver.
+  cancellation_weights still rejects degree four, deliberately.
+- Existing all-rank mixed-source and erasure specifications remain
+  conditional on the general-class group-source construction.
+- Do not call nil-2 completion above class three. Use the published
+  split cyclic-complement solver on known basis lines inside U.
+- Expose and charge the public general-class coordinate compiler; do
+  not silently reuse the class-three normal-word compiler.
+- Keep c fixed in any polynomial-cost statement. No new all-nilpotent,
+  DCP, novelty or speedup flag follows.
+
+The ten new tests in tests/test_metabelian_phase_extension.py are
+independent correctness/failure controls, not a production matrix
+engine or oracle application. No CLI/UI/registry task is needed for
+this written extension. Finish already-scoped backend work before
+starting new higher-degree wiring or a simulation campaign.
+
+## 2026-10-21 Universal Lie-Identity Contract
+
+Formal/ClassThreePotential.lean is imported by Formal.lean and passes
+the warning-as-error library build. Preserve its four local axiom
+guards and explicit field restrictions. It proves the BCH chart,
+cubic increment, linear-section action and multilinear degree
+decomposition; do not add the increment as a new unproved assumption.
+
+The normal space is the span of actual brackets. The hidden NORMAL
+LIFTS commute; their quotient-coordinate lifts need not. The two new
+negative controls in tests/test_nil3_arbitrary_subgroup_interface.py
+must stay: noncommuting fake graph, and failed quadratic truncation.
+459 connected tests pass; no new production or scientific JSON output.
+
+Do not change full-algorithm, general-prime, general-H, novelty or
+speedup flags from these proofs. They do not execute the dispatcher
+or certify a concrete finite-group/Lazard compiler. Existing backend
+tasks remain separately scoped. No CLI/UI/registry task is needed
+for this mathematical module.
+
+## 2026-10-21 General-H Contract And Source Formalization
+
+Read the new Direct Arbitrary-Subgroup Route section of the SAME
+CLASS_THREE_HSP_THEOREM_DRAFT.md before expanding receiver scope.
+This is a future implementation contract, not an instruction to
+interrupt a running bounded task:
+
+- Original normal-register samples learn K=H intersect N at arbitrary
+  rank after Phi(-q). With exact samples Khat contains K; check original
+  oracle membership on its basis before normalization/quotienting.
+- Only this intersection K is guaranteed normal in H. Preserve the
+  earlier arbitrary-K normalizer counterexample.
+- The support controller must allow every nullity. It can finish when
+  the public preimage of the observed nullspace is class two, with the
+  fixed rank batch as a cap. No hidden support/phase checks are physical
+  decisions, and approximate-QFT failure remains charged.
+- A published nil-2 completion is a valid mathematical subroutine, not
+  an already implemented local call. Alternatively, the existing graph
+  relabeling works on each learned basis line inside U.
+- Keep current implementation flags honest: restricted prime, machine
+  word, nontrivial line, no executed general-H controller. The old cyclic
+  copy-budget report is not a general-H execution or exact new cap.
+
+NEW Formal/CosetSourceFourier.lean is in the library build, with three
+local axiom guards. Its inputs include the full coordinate-action law;
+do not remove this hypothesis or claim the class-three Lie construction
+is formalized. The normal --wfail build and 457 connected Python tests
+pass, including 22 new arbitrary-H interface controls.
+No new CLI/UI/registry dispatch task is introduced by these proof files.
+
+## 2026-10-21 Formal Instrument Contract
+
+The core instrument now has a machine-checked specification in
+formal/Formal/AffineSupportErasure.lean, imported by Formal.lean.
+Build with `lake build --wfail` from formal/. In this shell, lake is
+at /Users/jaspersands/.elan/bin/lake. Keep the four local axiom guards.
+
+Preserve these implementation assumptions:
+- PRODUCT mixed kernels with the same submodule U over a field.
+- At least one nonzero scale for support preservation.
+- All outcomes retained, with the D^-k branch weight.
+- Kraus operators depend only on public scales/outcomes.
+- Zero-scale inputs are charged/discarded; no cloning or reuse.
+
+The proof does not certify state-source generation, general-prime
+backend execution, recursive dispatch, complexity or theorem novelty.
+Normal library build and 84 source/channel tests pass. This adds no
+CLI/UI task and does not supersede the bounded dispatcher work below.
+
+## 2026-10-21 General-Prime Backend Contract
+
+The complete theorem draft's Solver Interface And Bit Complexity
+section is now explicit. Preserve the 16 added controls in
+tests/test_affine_phase_erasure.py. 435 connected tests pass.
+
+For later backend implementation, not a new campaign:
+- Replace machine-word nmod_mat paths where arbitrary-prime support
+  is claimed. A direct independent_columns call at p=2^127-1 currently
+  raises OverflowError. Include arbitrary-precision regression tests.
+- Keep every physical input column when row-compressing the equations.
+  Arbitrary column basis changes do not preserve power coefficients.
+- Published quadratic/cubic SDE routines accept adversarial columns;
+  do not add a false random-label/rank promise.
+- Reuse verified nonresidues; cap their sampling with the existing
+  error budget. Use the deterministic conic subroutine or account
+  explicitly for any capped randomized replacement.
+- No general DLog or factorization oracle may be hidden inside roots.
+  The test-only smooth-primary root derivation is a correctness control,
+  not a completed SDE backend.
+
+The guarded cyclic dispatcher remains the immediate bounded task.
+Do not mark ISS recursion, general-prime execution or full-theorem
+admission complete from these interface checks.
+
+## 2026-10-21 Recursive Interface Corrections
+
+Read the expanded recursive section of CLASS_THREE_HSP_THEOREM_DRAFT.md
+before any later ISS integration. Tests:
+tests/test_nil3_recursive_oracle_interface.py (nine new controls).
+
+- Retain original Sylow G. Recompute N_G(K)/K there after growing K;
+  do not recursively freeze the ambient at the previous normalizer.
+- For exponent reduction, compute the p-kernel in invariant-factor
+  coordinates of the abelianization, lift it, and include the derived
+  subgroup. Arbitrary minimal-generator powers can discard H.
+- Bound the small-prime exponent BEFORE the bounded-exponent branch.
+  The order-p filter is not a subgroup constructor at p=2 or 3.
+- Implement f_K=f composed with a public section, uncomputing the lift
+  workspace. Sections need not split the quotient as a group.
+- Flatten local generator lifts to original normal words; count the
+  original oracle query and public collection work.
+
+419 connected tests pass. No recursive solver execution or theorem
+admission is implied. The guarded cyclic dispatcher below remains the
+immediate implementation task; this note does not expand it into a
+new infrastructure campaign.
+
+## 2026-10-21 Application Baseline Boundary
+
+Read CLASS_THREE_APPLICATION_AUDIT.md before proposing graph/code
+applications of the class-three receiver. Supplied solvable permutation
+ambient groups already admit classical code subspace stabilization,
+including large hulls. No fresh high-hull search campaign is warranted.
+The ordinary odd-prime swap wreath reduction leaves nilpotency.
+
+Preserve tests/test_nil3_application_reductions.py: eight exact
+reduction controls, not an implementation of the published classical
+algorithm. 410 connected tests pass. The existing guarded-dispatch task
+below remains useful; no new CLI, UI, registry campaign or application
+claim is requested by this audit.
+
+## 2026-10-21 Attribution And Input-Model Checks
+
+The same CLASS_THREE_HSP_THEOREM_DRAFT.md now contains a precise
+prior-art comparison and an expanded cubic potential. The shear itself
+is published DHIS phase linearization, not a new primitive. Do not
+promote novelty or full-algorithm execution from this review.
+
+Preserve the seven added controls in test_nil3_cocycle_receiver.py and
+test_affine_phase_channel_audit.py: exact increment coefficients,
+arbitrary-functional/gauge checks, Baer-norm scope, unidentifiable full
+polynomial, and coherence loss under a wrong known-line restriction.
+396 connected tests pass. No production or result artifact changed.
+
+The bounded guarded-dispatch task below remains the implementation
+priority for Gemini. Do not bypass unknown-support learning by treating
+the mixed source as a full-domain HPGP oracle. Main-model work moves to
+external computational relevance and further attacks on the theorem.
+
+## 2026-10-21 Complete Theorem Draft And Explicit Retry Budgets
+
+Read CLASS_THREE_HSP_THEOREM_DRAFT.md before implementing the guarded
+dispatcher. Its finite rank/retry schedule replaces arbitrary attempt
+caps and permits rankm fortrivialH.
+Replay: `python -m theorems.nil3_complete_budget --write`.
+Tests: tests/test_nil3_complete_budget.py.
+
+- The budget artifact is NOT an executed quantum algorithm. Keep actual
+  consumption null and dispatcher/recursion flags false until truly run.
+- Its 8512121-copy example is a loose general-prime theoretical envelope,
+  not a request for a large finite-amplitude campaign.
+- Do not use sparse-state support/phase assertions as physical decisions.
+- All retries use fresh original copies and count failed attempts.
+- The theorem's generalprime route uses known solvers; existingbackend
+  remains p11mod12. Do not conflate these implementation scopes.
+- 14new/389connectedtestsPASS; fullreposuiteNOT run.
+- Main-model nexttask is an independent attack on the SINGLE theorem
+  draft and a useful externalreduction, not moreaccountingmodules.
+
+## 2026-10-21 Classical Polynomial-Valued Hiding Baseline
+
+Read NIL3_POLYNOMIAL_HIDING_ATTACK.md. Replay:
+`python -m theorems.nil3_polynomial_hiding_attack --write`.
+Tests: tests/test_nil3_polynomial_hiding_attack.py.
+
+- Keep degree/characteristic/access promises explicit. This attack needs
+  ORIGINAL polynomial-valued F, not just the low-degree quantum phase Q.
+- Charge the 1+d*e evaluator calls per gradient point. No free gradients.
+- Fixed seeds are reproduction controls, not worst-case error guarantees.
+- Never label the sampled nullspace an exact certificate.
+- Preserve small-characteristic Frobenius and wrong-action controls.
+- Do not record a global class3HSP negative or reopen legacy toy search.
+- 14new/375connectedtestsPASS; priorconstructivereceivers unchanged.
+
+## 2026-10-21 Normal-Word Bridge And Next Bounded Implementation
+
+Read NIL3_NORMAL_WORD_BRIDGE.md. Replay:
+`python -m theorems.nil3_normal_word_bridge --write`.
+Tests: tests/test_nil3_normal_word_bridge.py.
+
+- Public inputs are normal words plus a collector, not a hidden logarithm.
+  Preserve the commutator convention and both triple corrections.
+- Group promises are exponentp,class<=3,p>3 and a VALID refined
+  polycyclic presentation. Random tests do not certify an arbitrary oracle.
+- Reversible compilation is a written argument, not executed gates.
+- Preserve the non-globally-central Heisenberg flag control.
+- 11new/361connectedtestsPASS. No centralclaim/CLI/UI promotion.
+
+Useful bounded next implementation for Gemini:
+add a standalone guarded trivial/normal/transverse cyclic-H dispatch.
+Follow the five-step algorithm and sample bound in the new note.
+Do not call learn_quotient_line on trivialH: it currently stops at
+rankm-1. Collect a fixed sufficient batch, permit fullrankm, and record
+incomplete rank as failure. Test true trivialH, HinsideN, transverseH,
+and abelianambientG from ACTUALoriginalcosets. Count every sourcecopy.
+Reuse the publicnormalword bridge; do not inject ideal learned directions.
+This is not authorization to advertise the unexecuted ISSrecursion,
+blackbox acquisition, generalprimeSDEbackend or fullnil3HSP as completed.
+
+Main-model work remains independent proof/novelty/external-reduction
+analysis. Morefiniteparametercampaigns are not the priority.
+
+## 2026-10-21 Mixed-Input Channel Audit
+
+Read AFFINE_PHASE_MIXED_CHANNEL_AUDIT.md. Replay:
+`python -m theorems.affine_phase_channel_audit --write`.
+Tests: tests/test_affine_phase_channel_audit.py.
+
+- Preserve the independent density/Kraus implementation. Do not replace
+  its source with the expected pure polynomial-phase fixture.
+- Keep mixed-iid, fixed-pure-coset and correlated-source laws distinct.
+- All-zero scales are a valid channel but fail the receiver invariant.
+- Transcript decoupling means classical transcript, not arbitrary quantum
+  reference. Do not add an unsupported environmental-decoupling claim.
+- All-prime schedule is WRITTEN using known SDE solvers. The code remains
+  restricted-prime. Do not change flags or promote central claims.
+- 12new/350connected testsPASS; fullrepo suiteNOT run.
+- Next hard work is the public-presentation/reduction bridge and
+  independent proof/novelty review, not another finite parameter sweep.
+
+## 2026-10-21 Non-Split Class-Three Receiver
+
+Read NIL3_COCYCLE_RECEIVER.md. Replay:
+`python -m theorems.nil3_cocycle_receiver --write`.
+Tests: tests/test_nil3_cocycle_receiver.py.
+
+- Do not replace a non-split extension with a semidirect product.
+  The exact C(q,r) and its subtraction in graph relabeling are essential.
+- The public group constructor validates Jacobi, derived-ideal placement,
+  abelian derivedideal and class<=3. Do not disable these checks.
+- Keep source and receiver RNGs separate. Generator/representatives are
+  fixture-only; controllers receive coset copies, public data and outcomes.
+- Count every source call, including zero/dependent quotient frequencies
+  and uninformative HPGP outputs. The live first7600-copybatch giveszero.
+- The final quadratic HPGP learner is known machinery. Credit it; do not
+  advertise a new generic polynomial decoder.
+- Keep free3-generator(dim14), independentfree-associative, rank2,
+  omittedcocycle, wrongdirection and actualsource controls.
+- 19new/338connectedtestsPASS. Nofullrepo suite. No CLI/UI/registryclaim
+  promotionrequested. Preserve prioraffine/UT4producers andhashes.
+- Main-model nextwork: proof/novelty audit and explicitpresentation scope.
+  All-prime/publicblack-boxbridges andexternalproblemreductions are
+  NOT established by this finite run. Do not launch moreparametercampaigns.
+
+## 2026-10-21 Collective Affine-Support Phase Erasure
+
+Read UT4_AFFINE_PHASE_RECEIVER.md. Replay:
+`python -m theorems.ut4_affine_phase_receiver --write`.
+Tests: tests/test_affine_phase_erasure.py.
+
+- The controller receives formal public phase maps, labels and outcomes.
+  Do not pass potential_fixture, a hidden direction, phase coefficients
+  or a coset representative to cancellation_weights.
+- Preserve the nonzero grade-two source and all-outcome coordinate shear.
+  The fresh ambient uniform register and every original copy are charged.
+- Public rank bounds are UPPER BOUNDS, not equalities every seed must attain.
+- Keep zero-label and single-active-input counts. The fixedp23 control has
+  none; do not filter source labels or select seeds to manufacture success.
+- Preserve exhaustive branch, symbolic cocycle, rank-two shared-parameter,
+  dephased-input and nonparallel-support negative controls.
+- QFT on N and known-direction HPGP relabeling are public operations.
+  The latter only receives a direction AFTER it has been learned.
+- No full quantum gate compiler or HPGP solver was executed. Do not relabel
+  the sparse classical simulator as a quantum runtime measurement.
+- Keep novelty/external-reduction/full-receiver flags false. Central
+  admission, qsearch/UI wiring and campaigns are NOT requested.
+- Main-model next task is proof/prior-art review and possibly non-split
+  class-three cocycles, not more small parameter instances.
+
+## 2026-10-21 Graded Class-Three Phase Descent
+
+Read GRADED_HSP_PHASE_DESCENT.md. Replay:
+`python -m theorems.graded_hsp_phase_descent --write`.
+Tests: tests/test_graded_hsp_phase_descent.py.
+
+- The polynomial public solver takes measured labels only. Never replace
+  them with secret-dependent weights, ideal learned generators or phase
+  samples synthesized directly from a hidden parameter.
+- The group is UT4(Fp)^r with a common order-p hidden generator across
+  factors, p>3,p=2mod3. Grade2 of LOGh iszero in the positive promise.
+  Zero second-superdiagonal MATRIX entries are a different condition.
+- Sparse state/kernel enumeration is only a bounded circuit diagnostic.
+  The physical recipe is controlled group right action and central QFT,
+  not an amplitude-table oracle or a free Gram inverse.
+- Retain cubic-only phase failure, unequal-scale grade2 support failure,
+  all-scalar-moments failure, AND successful common public rescaling.
+- The complete receiver is written using known nil-2/abelian components,
+  not executed. Its final subgroup restriction uses the original HSP
+  oracle; do not advertise it as supplied-state-only functionality.
+- All novelty, external-reduction and central-promotion flags stayfalse.
+- 19new/289connected tests, syntax/site/registry validation pass.
+  No fullrepo test run, CLI/UI wiring, centraladmission or commit requested.
+- No campaign or more scalar moments. The next main-model task is actual
+  noncentral grade2 handling or a prior-art reduction of this promise.
+
+## 2026-10-21 Hermite Prior-Art Scope Correction
+
+Read HERMITE_DECODER_PRIOR_ART.md and
+literature_audits/hermite_decoder_prior_art.json.
+
+- Attribute the differential-space construction and random/noiseless
+  pinning to prior work. Do not advertise a new general decoder.
+- Exact source version: ECCC TR18-091 Revision2, February22,2023.
+  Older arXiv theorem numbers are not interchangeable.
+- New controls: tests/test_hermite_prior_art_interface.py.
+- The regular-point counterexample concerns one printed proof step,
+  NOT a counterexample to the published dimension theorem.
+- Do not replace polynomial coefficient identities by base-field values
+  or full guarded uniqueness by a singleton incomplete randomized list.
+- Preserve all existing producer/report hashes. No producer changes,
+  CLI/UI integration, campaigns, outreach or central admission requested.
+- Main-model work should compare a new constructive direction before
+  spending further effort on the Hermite implementation.
+
+## 2026-10-21 Hybrid Reversible Workspace
+
+Read HERMITE_REVERSIBLE_WORKSPACE.md. Replay:
+`python -m theorems.hermite_reversible_workspace`.
+Tests: reversible + parameter + modulecertificate + composition + compact
++ pinned + folded-RS suites,104total.
+
+- Retain cache tails and all required row-history records. Deleting a
+  Python list is not a coherent garbage-erasure operation.
+- Fixed-width multiplication is moduloX^L; it equals ordinary polynomial
+  multiplication only on the valid no-overflow degree range.
+- History is not an authentication scheme. A changed nonzerofactor can
+  encode a different valid preimage; compare restored input as well.
+- Nativeleadingprofiles agree up to roworder, not byte-identical basisrows.
+- Clean row-oracle scratch must be zero between checkpoint transitions.
+  Never copy the large K-vector into every checkpoint.
+- Only PUBLIC bounds control allocation/padding. Do not measure rank,
+  zero-pivot locations or the chosen interpolation row.
+- The nativeq31ell24control is outside the sufficient logarithm-absorption
+  region. It tests reversal, not the tighter asymptotic parameter theorem.
+- Five prior Hermite producers/reports unchanged; preserve their hashes.
+- 12new/104connected tests pass42.52s; syntax/site/registry checks pass.
+  Fullrepo suite not run. No complete quantum circuit has been compiled.
+- Main-model next work is clean-transition proof/novelty review.
+  No campaign, CLI/UI wiring or centralpromotion is requested.
+
+## 2026-10-21 Uniform Hermite Parameters
+
+Read HERMITE_PARAMETER_THEOREM.md. Replay:
+`python -m theorems.hermite_parameter_theorem`.
+Tests: parameter + modulecertificate + composition + compact + pinned
++ folded-RS suites,92total.
+
+- Exact integer/Fraction arithmetic only. Do NOT run the decoder or
+  allocate input tables at the enormous parameter examples.
+- Preserve growing-order m^2 workspace cost, two-block guard, all four
+  failure contributions and total-N input time.
+- Out-of-region is NOT a no-go; the conditions are only sufficient.
+- Keep classical alpha_c fixed. C_alpha_c is unknown, so a=.25/.5
+  examples do not certify classical separations.
+- KRZSW small-characteristic spaces/pruning and GW side information are
+  prior art. No new generic-decoding or advantage claim.
+- Previous four Hermite producers/reports unchanged; hashes in handoff.
+- 13new/92connected tests pass40.25s; syntax/site/registry checks pass.
+  Fullrepo suite not run. No CLI/UI wiring, campaign or central admission.
+- Main-model next work is end-to-end proof/novelty review. Stronger
+  whole-field pruning requires an explicit Fq* sampling adaptation.
+
+## 2026-10-21 Independent Hermite Module Certificate
+
+Read HERMITE_MODULE_CERTIFICATE.md. Replay:
+`python -m theorems.hermite_module_certificate`.
+Tests: modulecertificate + composition + compact + pinned + folded-RS,79total.
+
+- Full basis and received word are saved; recompute the certificate.
+  Do not trust a stored success boolean.
+- Every local equation PLUS distinctleadingpositions PLUS determinant
+  codimension equality are needed to certify completeness.
+- Keep the all-constraints-valid but determinant601 negative.
+- Dense interpolation/Hasseidentity matrices are diagnostic only;
+  never include them in the small-workspace algorithm.
+- Prior Hermite producers/reports are unchanged; preserve those references.
+- 9new/79connected tests pass40.80s; syntax/site/registry checks pass.
+  Full repository suite not run; all ownedjobs terminal.
+- No general novelty, peer-review, quantumexecution or advantage claim.
+- Nextmainmodel work is the full theorem and explicitparameterrange,
+  not more generic audit infrastructure or routine integration.
+
+## 2026-10-21 Hermite Streaming Composition
+
+Read HERMITE_STREAMING_COMPOSITION.md after the two decoder notes.
+Replay: `python -m theorems.hermite_streaming_composition`.
+Tests: composition + compact + pinned + folded-RS suites,70total.
+
+- Keep prior decoder producers/reports unchanged; hashes are in handoff.
+- Keep pin-sampler abort, herald rejection, accepted-bad probability and
+  synthesisTV separate. Do not condition away failures or use a biased
+  fallback subset when random draws exhaust their cap.
+- Source statevector/stream validation allocatesfulltables for diagnostics;
+  it is NOT the small-space quantum implementation.
+- Sparse actual-decoder instrument is NOT the full product source.
+- Use additive(F_q)^ell Fourier transforms, not cyclicZ/(q^ell).
+- Preserve the odd-halfset selector rotation and the error-garbage negative.
+- Per-entry exact gates refer to logical synthesis, not noiselesshardware.
+- Total time includesNentries. Retain Bennett's logworkspaceoverhead.
+- 15new/70connected tests pass32.77s; syntax/site/registry validationpass.
+  Fullrepo suite not run. All owned jobs terminal; no centralpromotion.
+- Independent theorem/novelty review is the next main-model task.
+  No larger source simulation, campaign, CLI/UI work or outreach requested.
+
+## 2026-10-21 Compact Hermite Decoder
+
+Read HERMITE_COMPACT_DECODER.md and the preceding pinned note.
+Replay: `python -m theorems.hermite_compact_decoder`.
+Tests: compact + pinned + folded-RS suites,55total.
+
+- Keep the dense pinned implementation/report unchanged as a reference.
+- Do not cache the full scalar interpolation matrix, right inverse or
+  K-by-z affine basis. The compact proof relies on recomputation and
+  constraint batches bounded by2Kfield entries.
+- Do not choose the shortest interpolant blindly: savednativeeight-pin
+  failure leaves4dimensions. The selected row minimizes a certified
+  zero-pivot bound among degree-valid rows, independently ofR.
+- Recheck ALL identity coefficients/pins after early rank completion.
+- Space counters are component counts, not measuredqubits or totalRSS.
+  Retain Bennett's logarithmic overhead, applied only afterstream.
+- All quantum/novelty promotion gates remainfalse. Noell1 extension,
+  noexactlinearquantumspaceclaim, no genericblackbox solver requested.
+- 18new/55connected tests pass32.63s; Python/site syntax, site and
+  registry validation pass. Full repo suite not run; all owned jobs terminal.
+- Main-model next task is theorem-level correctness/novelty review.
+  Do not turn this into size/seed campaigns or routine wiring.
+
+## 2026-10-21 Pinned Hermite Decoder Review Packet
+
+Read HERMITE_PINNED_DECODER.md first. Reproduce with
+`python -m theorems.hermite_pinned_decoder`; scoped verification is
+`python -m pytest -q tests/test_hermite_pinned_decoder.py tests/test_folded_rs_decoder.py -W error::RuntimeWarning`.
+
+- New isolated producer/report. Preserve fixed syndrome right inverse and
+  interpolant independence from random pins. Pins are true error blocks,
+  NOT assumed-correct blocks of the noisy received word.
+- Preserve small-characteristic Frobenius directions, strict integer root
+  inequality, source capd, and entire B_(d+2) uniqueness.
+- The native radius7 counterexample has matching norm/first moment but
+  second moment8->12. Do not simplify validation to source injectivity.
+- Theq1b resource ledger is arithmetic only. Native execution isq31.
+  Keep source tail, pin rejection, score loss and synthesis error separate.
+- Reversible workspace is polynomial, NOT the original tight linear bound.
+  Growing-multiplicity polylogN consequence is written/review pending.
+- Guruswami--Wang2011already has side-information derivative decoding.
+  Do not advertise this general idea as novel.
+- 26new/37connected tests pass11.82s; syntax/site/registry checks pass.
+  Full repository tests not run. All owned processes terminal.
+- No routine wiring, central proof promotion or outreach requested.
+  Main-model priority is independent mathematical/novelty audit.
+
+## 2026-10-20 Graph Reduction And Exact Padded-Law Baseline
+
+Read TERNARY_GRAPH_REDUCTION.md. Reproduce with
+`python -m theorems.ternary_graph_reduction`.
+
+- New files are isolated; do not overwrite TERNARY_COLORING_BPQM reports.
+  Their unresolved collective receivers are NOT excluded by this result.
+- Full cycle-code Schur square makes the specified linear relaxation
+  uninformative. Keep the saved edge-detour witnesses and actual nullity.
+- The classical sampler matches the entire expanded-coloring law, not a
+  surrogate score. Preserve exact integer random choices, path bridge
+  counts, bounded abort and the global color gauge.
+- Original endpoint constraints are a DIFFERENT task from ordinary
+  subdivision coloring. Keep K4's empty restored target and the
+  exponentially-small colorable counterexample.
+- Restored block states have the original complex trine Gram and invalid
+  coordinatewise pair lists. Do not silently replace this by L copies.
+- Native quantum execution is false. The saved5120edge classical sample
+  is a seeded replay, not a statistical uniformity or asymptotic proof.
+- 31new/209connected tests pass5.17s. Syntax/site/registry checks pass;
+  full repository suite not run and all owned processes are terminal.
+- No routine wiring, central admission or graph-size campaign requested.
+  Independent mathematical review is useful. Further main-model work
+  needs a genuinely different receiver or a different useful target.
+
+## 2026-10-20 Biased Ternary Type Transfer
+
+Read TERNARY_TILTED_TYPE.md. Reproduce with
+`python -m theorems.ternary_tilted_type`; the matching test suite plus the
+balanced transfer, decoder-filter and quotient-decoder suites total100tests.
+
+- Preserve the explicit local erasure outcome, its phase, and inverse.
+  A conclusive coordinate cannot be substituted for a failed one at no cost.
+- Recover the projection v inD. Uniqueness of auxiliary w inD*D is NOT
+  required or guaranteed. Keep the free-auxiliary regression test.
+- The sample cap includes coherent amplification, weighted normalization,
+  circuit error and final rejection. Tiny rounded acceptance must not
+  silently produce a cap. The artifact uses outward rational bounds.
+- The native exact-type target has affine constant RHS1. It does not solve
+  the incompatible homogeneous system.
+- The728-coordinate calibration is polynomial-time classically samplable.
+  Native quantum execution and advantage are false. The small256dimension
+  circuit is an identity control, with visible nonzero decoding/output error.
+- 33new/100connected tests pass3.68s; Python/site/registry checks pass.
+  Full repository tests were not run; no owned producer is still running.
+- No routine wiring, central admission or parameter campaign requested.
+  Independent proof review is useful. Hard-input selection and classical
+  attacks, not more easy histograms, are the next main-model priority.
+
+## 2026-10-20 Ternary Type Transfer
+
+Read TERNARY_TYPE_TRANSFER.md. Reproduce with
+`python theorems/ternary_type_transfer.py`; connected tests include the
+new `test_ternary_type_transfer.py` plus the existing ternary decoder-filter
+and quotient-decoder suites.
+
+- Keep constant-direction quotienting separate from implementing a decoder.
+  Fixed-type Gram rank collapses before quotienting; local product lists
+  are NOT valid on the entangled source.
+- The alternative uses a proved near-uniform OUTPUT distribution, not
+  an arbitrary full-support witness. Keep the3^kcoherent-error factor,
+  normalization, circuit precision and charged rejection cap.
+- The native728-coordinate code is a classically easy algebraic
+  calibration. Native quantum compilation/sampling was NOT executed.
+  The bounded dense PGM receiver tests identities only.
+- Numerical parameter ledgers do not certify an arbitrary matrix's
+  distance. The native matrix has a separate algebraic distance proof.
+- 32new/67connected tests pass3.43s. Python/site syntax, site checks and
+  registry validation pass; full repository suite not run, no jobs remain.
+- No routine wiring or parameter campaign requested. Independent review is
+  useful. Main-model work should target a real constructive mechanism for
+  useful hard inputs, not repackage central-type postselection as novelty.
+
+## 2026-10-20 Planted MIS Source Scope And Star Certificate
+
+Read PLANTED_MIS_SOURCE_SCOPE.md. Reproduce the NEW artifact with
+`python theorems/planted_mis_star_certificate.py`; tests are in
+`tests/test_planted_mis_star_certificate.py`.
+
+- The new generator deliberately DOES NOT preserve the old clique cover.
+  Keep the old control/report intact; the new one deletes11cover edges.
+- Graph-only recovery is unchanged. The structural witness is consumed
+  only after solving. Verify actual graph deletions form disjoint stars,
+  protected edges survive, and |S|>max_block_cliques+1.
+- Unique optimality follows from the written cardinality proof, not
+  merely matching the planted set. The new bound is NOT Lean-formalized.
+- Official source archive and member hashes/lines are in the note/report.
+  No author benchmark files were found. No original-file reproduction
+  or cross-paper timing ratio. Broader2025GIC remains outside scope.
+- Keep the join(S3,C10), deleted-triangle/four-cycle and strict-margin
+  countercontrols.21new/135focused+scope-audit tests pass1.81s.
+- Python/site syntax, site checks, registry validation and diff check pass.
+  Full repository suite not run; all owned jobs terminal.
+- Independent review or exact original-data replay is useful. Routine
+  wiring, central claim admission, external outreach and another parameter
+  campaign are not requested. The broad annealing negative stays quarantined.
+
+## 2026-10-20 Protected Planted MIS Recovery
+
+Read PLANTED_MIS_PAIR_CLOSURE.md. Reproduce with
+`python theorems/planted_mis_pair_closure.py`; test with
+`python -m pytest -q tests/test_planted_mis_pair_closure.py`.
+From formal/, the standalone proof command is
+`/Users/jaspersands/.elan/bin/lake env lean Formal/PlantedMISPairClosure.lean`.
+
+- Solver accepts ONLY adjacency, examines every nonedge, and never receives
+  planted vertices, blocks, target size or the posthoc clique cover.
+- Native572vertices/optimum38 are NEW synthetic inputs. They are not the
+  authors' graph files. Preserve the extra cover-preservation restriction,
+  lack of uniqueness claim, and prohibition on cross-paper timing ratios.
+- Written theorem covers arbitrary outside-outside modifications when the
+  protected planted-set promise holds. Modifying planted-outside edges
+  requires a fresh argument. Preserve the C10 general-MIS countercontrol.
+- Both Lean statements compiled with standard axioms/no sorry. They do not
+  verify Python, runtime, maximum-set planting, or paper interpretation.
+  No changes were made to the central Lean imports/audit.
+- 38new/114focused+scope-audit tests pass1.46s; syntax/site/registry checks
+  pass. Full repo tests/full Lean build not run. No owned jobs remain.
+- Independent source review or replay on original author files is substantive.
+  No routine wiring, external outreach, central claim admission, or additional
+  graph campaign is requested. Do not reinstate the broad annealing negative.
+
+## 2026-10-20 Sine-Box Argument Ready For Review
+
+Read INTEGER_CHARACTER_SINE_BOX.md. Reproduce the bounded report with
+`python theorems/integer_character_sine_box.py`.
+
+- Preserve the NEW modulus guard and max-coordinate contract. This is
+  not a better score on the old fixed-modulus benchmark.
+- Decoder must handle all exponents in [-w,w], recover from syndrome
+  alone, and erase the word coherently. Never reuse the signed-trit-only
+  decoder or trace out the unerased register.
+- Source preparation is O(mw), not the exponential product table.
+  Complexity is polynomial in 1/epsilon, NOT log(1/epsilon).
+- Save the classical falsifier: all32coordinates, full basis and exact
+  all-target certificate. Native finite success does not establish
+  an asymptotic classical theorem, but rules out native advantage.
+- Do NOT construct the illustrative20000-coordinate parameter set with
+  the current quadratic-memory lifting routine. Its description already
+  exceeds2.28TB of fixed-width labels. The saved native dimension is32.
+- 30new/167connected tests PASS97.54s; syntax/site/registry checks pass.
+  Full repository suite not run. All owned jobs terminal.
+- No routine wiring or parameter sweep requested. Independent mathematical
+  and novelty review, or a useful external reduction, is the next gate.
+  No compiled native quantum circuit or quantum sample exists.
+
+## 2026-10-20 Rectangular QCT Column Sampler
+
+Read RECTANGULAR_CHARACTER_SAMPLER.md. Reproduce with
+`python theorems/rectangular_character_sampler.py`.
+
+- Actual public classical sampler, not a label-scoring wrapper. It uses
+  established colored-permutation/RSK/quotient combinatorics. Preserve
+  prior-art attribution and do not claim a new algorithm.
+- Contract is QCT of one normalized public class basis state k^m followed
+  by irrep-label measurement. Output law chi^2/(k^m m!), NOT HSP
+  weak-Fourier or binary-carrier labels. The S4 mismatch is an exact test.
+- Native64samples each at degrees4096/4095 saved with seeds and first
+  point-mass certificates; .21548/.10994s sampling phases. No full
+  partition/group enumeration or rejection over output labels.
+- Polynomial-in-n complexity and ideal uniform randomness are explicit.
+  Do not turn either into polynomial-in-log(n) or a PRNG randomness proof.
+- 35new/202connected tests PASS100.61s; syntax/site/registry validation
+  pass. Full repository suite not run. No owned jobs remain.
+- No central admission or routine integration requested by this pass.
+  Preserve the interference and mixed-cycle countercontrols. Do not
+  mark the existing HSP front end dequantized or start a parameter campaign.
+
+## 2026-10-20 Coherent Gibbs Readout Handoff
+
+Read COHERENT_GIBBS_READOUT.md. Reproduce with
+`python theorems/coherent_gibbs_readout.py`.
+
+- Preserve scope: conditional-product quantum blocks, public central
+  parities, specified two-sided Pauli expectation. Not all TFD readouts
+  and not interacting Hamiltonians.
+- Preserve the paired denominator w(z)+w(z xor v), B transpose, central
+  Y phases, and zero for mismatched central flip masks. The unpaired
+  estimator is NOT bounded. Never discard dependent-pin abstentions.
+- New JSON includes interval mean, TV bias, fair-coin confidence bound,
+  and independent even-parity reference. Native .7552556 vs .7558248,
+  4096 samples, .91453s including tables/certificate/sampling.
+  The repetition-kernel calibration is intentionally classically easy.
+- Pin probability rounding and 2^nullity certification costs are charged.
+  Do not turn the written distance premise into an unchecked CLI input.
+- 30new/533connected tests pass35.70s; 111 dependency deprecation warnings.
+  Python/site syntax, site checks, registry validation also pass.
+  Full suite not run. No jobs remain.
+- Independent mathematical review is valuable; CLI/UI integration is
+  optional routine work. Do not promote a speedup, claim a new general
+  simulation theorem, or start a parameter sweep. Main-model successor
+  needs a concrete useful quantum mechanism, not another adjacent barrier.
+
+## 2026-10-20 Certified Primitive-Coset Classical Attack
+
+Read INTEGER_CHARACTER_PRIMITIVE_COSET.md. Reproduce with
+`python theorems/integer_character_primitive_coset.py`.
+It creates a NEW 42-dimensional basis, not the earlier 1024D LLL basis.
+The full basis and exact certificate are stored in the new classical_baselines
+JSON; earlier artifacts remain unchanged.
+
+- Fixed rule: minimal prime prefix with 3/4 of harmonic weight; native 42
+  primes through 191. Exact primitive coset x=1 mod 3. One LLL, one Babai.
+- Complete 1024-coordinate score .7606472331. Conservative all-prefix-target
+  bound >.5047 with all unoptimized primes charged at -1. Preserve this
+  stronger falsifier alongside the historical 2/32 random control.
+- LLL .65009s plus certificate/full verifier .09285s; public preprocessing,
+  loading and label revalidation remain charged. Do not call these phases
+  total end-to-end runtime or reuse old basis costs for this attack.
+- The saved all-target bound is exact but FINITE. The separate asymptotic
+  construction uses exact CVP with 2^O(d) cost, d=B^o(1). Exact CVP was not
+  run; neither result establishes polynomial-time dequantization.
+- This weighted task is not the old uniform-weight CVP. Do not transfer scores,
+  hardnesslabels or guarantees between them.
+- 21 new/357 connected tests PASS in 53.90s, including every native Gram
+  minor independently computed, plus Python/site syntax, site checks and
+  registry validation. Full repository suite not run. No owned jobs remain.
+- No automatic request for prefix sweeps or constant refinements. The main
+  model should now choose an independent constructive mechanism or useful reduction.
+
+## 2026-10-20 Primitive Resonance Application Available For Review
+
+Read INTEGER_CHARACTER_RESONANCE.md. Reproduce with
+`python theorems/integer_character_resonance.py`.
+This reuses and verifies existing public J16 labels. It does NOT reuse
+the random CVP centers, regenerate LLL, or execute quantum sampling.
+
+- Preserve the complete prime prefix except3, weights1/p, threshold1/4,
+  zero centers and exact primitivity x mod3!=0. Principal and
+  small-conductor characters are invalid outputs even with a high score.
+- The stronger M/3 height license is essential to the written projection
+  proof. Do not infer it from the previous first-moment license.
+- The frozen32-label classical control has TWO successes, at indices2,24;
+  bestscore .3236971958. Retain all failures. Do not present a native
+  advantage or interpret a random control as the best classical method.
+- The analytic implication concerns sigma=1+1/bit_length(B), NOT s=1.
+  Its native full-L lowerbound is below1. The finite Euler-product values
+  are distinct artifacts, not computed full L-function values.
+- The meaningful open work is a primitive-coset/3-adic constructive
+  classical attack or algorithmic resonance comparison, with complete
+  weighted scoring and all preprocessing charged. A native miss alone
+  must not upgrade the status.
+- No automatic main-model request for constant tuning, another local
+  concentration estimate or a nearby sweep. Independent mathematical
+  review and a substantive external consequence matter more.
+- 21new/336connected tests PASS45.90s, Python/site syntax, site checks and
+  qsearch validation pass. Full repository suite not run. No owned jobs
+  remain. No candidate admission, qsearch/UI change or GPT commit/push.
+
+## 2026-10-20 Exact Feedback Attack Available
+
+Read INTEGER_CHARACTER_FEEDBACK.md. Reproduce with
+`python theorems/integer_character_feedback.py`.
+It reuses the saved paid basis and independently recomputes the exact
+profile; it does not rerun LLL or mutate earlier artifacts.
+
+- The fixed24-level/radius4 experiment found NO improvement over the
+  .06266165019 seed.193distinct proposals include five new successful
+  D<=.065 witnesses. Do not describe these as independent samples.
+- Full-target branch selection is genuinely implemented and tested, but
+  the native run retained its incumbent at every level. Do not claim an
+  observed feedback benefit.
+- All216proposal scores, parent assignments and selected states are saved.
+  Exact complete basis/canonical witnesses and inherited cost records are
+  included. New phase times:10.88s load/profile,26.30s search.
+- Keeping only a greedy winner can miss useful paths. Beam search,
+  multilevel moves and target-aware bases remain possible mechanical
+  comparators, not automatically approved new main-model theory tasks.
+  Freeze any expanded campaign before scoring fresh targets and retain
+  unsuccessful runs. Do not change the input threshold to recover a gap.
+- The visited count is NOT a blind-pool bound. For fixed depth the complete
+  policy tree still supplies a much larger pool; distinguish this from
+  growing-depth policies. Neither gives a convergence theorem by itself.
+- 8new/313connected tests PASS39.52s; Python/site syntax, site checks and
+  qsearch validate pass. Full repository suite not run; no jobs remain.
+- The next main-model pass must not be more radius/depth tuning or another
+  local barrier. Require a substantive external reduction, different
+  mechanism or independently motivated concrete quantum candidate.
+
+## 2026-10-20 Preserve The Read-Set Bound's Scope
+
+Read INTEGER_CHARACTER_READSET.md. Native threshold success is still
+classically established. The new conditional scaling bound is1 at those
+parameters and is NOT evidence for an advantage or a hard instance.
+
+- Reproduce `python theorems/integer_character_readset.py`; this replays
+  existing provenance/prefix/witness facts, not LLL or a scaling campaign.
+- For fresh-target campaigns freeze the candidate factory, its
+  hyperparameters and target-independent preprocessing first. Record the
+  actual coordinate prefix and candidate-generation read set.
+- Count the entire conditional candidate pool when applying this theorem.
+  An adaptive search visitingK points can have a much larger possible pool;
+  charging onlyK can invalidate the bound. Target-aware bases and guided
+  full-target searches are not excluded.
+- Independent uniform centers are required. Uniform marginals, code masks
+  and correlated offsets are insufficient. The report is not a p-value for
+  the frozen native seed and does not certify program information flow.
+- The m>=20000,r>=.95m,K<=m^4 regime is a conditional theorem with exact
+  constant checks, not measured large LLL behavior. Do not label it as a
+  native experiment or unrestricted classical lowerbound.
+- 18new/305connected tests PASS35.36s; Python/site syntax, site checks and
+  qsearch validate pass. Full repository suite not run; no jobs remain.
+- Do not request more nearby bounds from the main model. Its next task is
+  a genuinely full-target-aware algorithm, substantive external reduction
+  or independently motivated constructive quantum mechanism.
+
+## 2026-10-20 Native Integer-Character Falsifier And Next Campaign
+
+Completed: the SAME1024-coordinate J16 input is solved classically at the
+declared D<=13/200 threshold. Exact Babai alone gives .06884104458;
+offset-17 in a fixed65-branch last-plane search gives .06266165019.
+Do not report a surviving native threshold gap or move the target.
+See INTEGER_CHARACTER_BABAI.md and the full classical_baselines artifact.
+
+- Reuse the saved basis with
+  `python theorems/integer_character_babai.py --reuse-basis`.
+  Its provenance charges the1232.23s LLL run and records the interrupted
+  first verifier. Basis reuse is not free preprocessing. A default run
+  regenerates LLL and writes new basis, provenance and report artifacts.
+- All1024 coordinates remain in the score. The190-dimensional exact core
+  follows from834leading signed coordinate vectors, not a proxy problem.
+  Never substitute an unweighted projected score for the original target.
+- The native test verifies every saved branch assignment, complete winning
+  point and coefficients, bound arithmetic, first8original and first8core
+  Gram pivots, all eliminated coordinate rows and artifact hashes.
+  The producer, not the quick regression test, recomputes the full profile.
+- Predeclare a small multi-length/multi-center classical campaign, keeping
+  J16, cap=floor(7m/200), all public generation and threshold costs visible.
+  Check the quantum certificate separately at each finite length; do not
+  apply the uniform m>=20000 statement to smaller inputs without its
+  finite certificate. Preserve each input before attack tuning.
+- Compare plain Babai, bounded last-plane branching, multilevel branches
+  and stronger lattice bases. Include every failed/partial run and basis
+  preprocessing in costs. Retain exact witnesses, not floating summaries.
+- These branches are correlated. One success in65 on one center is not an
+  estimate of independent success probability or an asymptotic theorem.
+  No quantum execution or classical match to expectation .05949507 exists.
+- No central claim promotion, outreach, new native quantum-advantage label,
+  or GPT commit/push. Gemini owns routine campaign wiring. Main-model work
+  should address structural scaling or a meaningful external reduction.
+- Verification:10new/287connected tests PASS32.47s with RuntimeWarning
+  fatal; Python/site syntax, site checks and qsearch validate all pass.
+  The full repository suite was not run. No owned background job remains.
+
+## 2026-10-20 Matched Absolute-Distance Lattice Attack
+
+Read INTEGER_CHARACTER_NEAR_VECTOR.md. The new J16 instance is separate
+from the earlier first-moment cosine task.
+
+- Use research/reductions/integer_character_near_vector.json:1024rows,
+  cap35,k706,1119-bit N, full centers frozen atseed2026102016. Every
+  public label, center, prime and height license is present.
+- Target D=sum(centered_residue^2)/(m*N^2)<=13/200 on ALL1024rows.
+  The ideal quantum mean bound .05949507 is not an achieved witness.
+  The savedx0 control is not a serious classical comparator.
+- Construct Gamma's integer numerator basis: firstrowa, remaining
+  rowsN*e_i fori>1. Divide byN only conceptually. Keep integer lattice
+  operations exact; use sufficiently precise arithmetic for reduction
+  and nearest-plane/randomized rounding. Never cast raw big integers
+  through int64 or float64.
+- Prioritize LLL/BKZ plus nearest-plane/randomized rounding, p-adic
+  digit/block and nonlocal search. Freeze budgets and starts; charge
+  label construction, basis construction/reduction and all retries.
+- Save complete x and lattice numerators. Use witness/recover_assignment
+  in integer_character_near_vector.py to check membership and exact
+  full-dimensional distance. A good row-subset residual is NOT success.
+  Numerically proposed lattice coefficients must be replayed as integers.
+- Do not compare this modulus with the old924-bit cosine instance.
+  The latter lacks the J16 height license. Keep both datasets explicitly
+  distinct if both are attacked.
+- For arbitrary rational targets, preserve the integer translation from
+  rational_target_centers and its <=1/(2N) coordinate rounding error.
+  The theorem gives absolute radius .26sqrt(m), NOT a CVP factor.
+- No general-lattice, LWE, classical-hardness or speedup claim from a
+  failed bounded campaign. This is a structured family with known
+  quantum-transference ingredients; novelty still needs review.
+- Reproduce with `python theorems/integer_character_near_vector.py`.
+  Keep the cosine/distance counterexample, third-harmonic alias, source
+  hashes and explicit no-optimizer-execution flags.
+
+## 2026-10-20 Integer-Character Verification And Scope
+
+- Read INTEGER_CHARACTER_UNIFORM.md before treating the constructor's
+  ideal mean as an executable algorithm. The uniform argument is
+  review-pending; it is not a compiled circuit or a quantum run.
+- The native1024-row instance and the all-length m>=20000 theorem use
+  DIFFERENT source certificates. Do not replace the native bound by the
+  theorem without satisfying its range and cap rule.
+- Reuse score_interval/verify_score from integer_character_uniform.py
+  for every native classical witness. Preserve arbitrary-size integers.
+  Acceptance requires an interval LOWER bound>=.3; an overlapping
+  interval is not accepted. A failed precision budget raises an error.
+- The saved quantum resource counts are abstract qutrit/phase blocks,
+  NOT qubit/T counts. A future compiler must preserve the CRT output
+  relabeling, total syndrome-only decoder and membership-only herald.
+  Measure neither the error word nor its separate counts.
+- No uncharged retries: the conservative uniform bound is16000*b total
+  preparations for failure<=2^-b. Native bounds can be used directly,
+  but do not spend a campaign merely tuning these constants.
+- Reproduce `python theorems/integer_character_uniform.py` after the
+  source constructor artifact. Keep source hashes, error specifications
+  and explicit false execution/advantage flags.
+- Highest-value routine follow-up remains the matched classical attack
+  campaign below, not circuit-demo construction. Main-model work owns
+  structural attacks, independent proof critique and useful reductions.
+
+## 2026-10-20 Attack The Integer-Character Family
+
+Read INTEGER_CHARACTER_INTERPOLATION.md and its phase_workbench artifact.
+This is a NEW problem instance, not the old finite-field MPI portfolio.
+
+- Freeze independent uniform native centers modulo the saved 924-bit N,
+  plus seeds, input hashes, starts and total budgets before optimization.
+  No native center vector or optimizer result exists in the constructor.
+- Implement p-adic digit and short-block updates for
+  x=u+3^(k-1)*e, with ternary u and binary e. Compare exact subgroup moves
+  of polynomial-size orders and tempering/restarts on identical centers.
+  Exhausting a small subgroup is not exhausting the full group.
+- Construct the explicit lattice a*Z+N*Z^m. Because a_1=1, rows a and
+  N*e_i for i>1 form a full-rank basis with determinant N^(m-1).
+  Use precision-safe LLL/BKZ/nearest-plane attacks. Charge construction,
+  reduction, preprocessing and failed starts, not only final queries.
+- NEVER put 924-bit labels or centers through int64. Compute integer
+  modular residues first, then use floating or interval trigonometry.
+  Save full decimal x values and independently replay every claimed score.
+- Target the saved pilot's exact mean/success bound, not the old MPI
+  .342 guarantee. Merely beating a random-start baseline proves nothing.
+- Separate score search from sampling claims. State-dependent proposals
+  need an explicit stationary-law argument or acceptance correction.
+- A failed finite portfolio does not establish hardness. A successful
+  portfolio is a finite falsifier, not automatically asymptotic
+  dequantization. Preserve every tested instance and failure.
+- Replay with `python theorems/integer_character_interpolation.py`.
+  Keep its known-decoder attribution, readout countercontrol, public
+  exponentiation checks and exact source bound. No claim promotion,
+  outreach or UI badge without independent review and substantive results.
+
+## 2026-10-20 Change The Product-Target Move Set
+
+Read BALANCED_MPI_HEATBATH_TRAP.md BEFORE starting the previous campaign.
+
+- The saved native warm start is a certified trap for ORIGINAL-coordinate
+  cold heat baths: all420lines have exit<=2^-256. Do not spend a long run
+  rediscovering this. Retain it as a deterministic regression/control.
+- The systematic I0 basis is a different chain. Column238,step2539 has
+  rigorously certified exit probability>.00001445 at the same state.
+  Replay the exact direction and inverse identity from the artifact.
+  This proves possible escape, not rapid mixing or target-score success.
+- Prioritize adaptive information-set bases, tempering, blocks or
+  nonlocal proposals. Log the proposal and basis-update law precisely.
+  State-dependent basis choices need a detailed-balance/stationarity
+  argument or an appropriate acceptance correction; being a heat bath
+  along each individually selected line is not enough by itself.
+- Report original-coordinate updates, basis updates, sweeps and replica
+  exchanges separately. Keep first-exit, score-hitting and sampling
+  convergence measurements separate.
+- No TV bound from autocorrelation, multiple-chain agreement or hitting
+  a score. Compare exact stationary probabilities on small controls.
+- Preserve the finite/fixed-start qualification. Neither the trap nor
+  its systematic escape certifies asymptotic behavior or performance
+  from a typical random start.
+- Reproduce the certificate with
+  `python theorems/balanced_mpi_heatbath_trap.py`. It uses interval
+  arithmetic plus an analytic harmonic tail, not floating peak estimates.
+  Its default source is the current portfolio; any changed input must
+  remain visibly distinct from the frozen witness in the saved artifact.
+
+## 2026-10-20 Matched Balanced-MPI Product-Target Campaign
+
+Read BALANCED_MPI_PRODUCT_TARGET.md and its saved classical-baseline
+artifact. This is the next useful routine implementation, not a new badge.
+
+- Freeze public points, field presentation, matrix, centers, seeds and
+  budgets before running. The saved native line uses m6000,n420,N8191,
+  point encodings0..5999 and6000..6419, center seed20261020. It is only a
+  conditional-density control, not a classical optimization result.
+- Target t1/20, cap209 and score>=.3. Do NOT substitute the old13/200
+  pilot's mean>.342 as an achieved classical threshold. Keep both pilots
+  in reports with their actual density and exact transfer bounds.
+- Reuse `harmonic_line_log_weights` for coordinate-line heat baths;
+  current residuals and each direction's slopes must be maintained and
+  charged. L9 has a uniform stationaryTV bound<.000096. The reference
+  supports composite groups without inverting individual slopes.
+- Implement categorical sampling, fixed predeclared burn-in/checkpoints,
+  independent chains and a bounded tempering comparator. Charge full
+  matrix/log-table construction and all rejected moves. Do not conceal
+  chains or inputs that stall. No claim that the chosen schedule mixes.
+- Check exact small stationary distributions against histograms, test
+  detailed balance, and compare FFT conditionals with direct log weights.
+  Track numerical errors separately; the analytic harmonic certificate
+  does not certify floating FFT or categorical roundoff.
+- On native runs save every best full x and replay the ORIGINAL cosine
+  score using an independent matrix product. Search success is evidence
+  about search, not proof of sampling TV, mixing or asymptotic speedup.
+- The conditional reduction assumes independent uniform FULL centers.
+  Masking a fixed instance by c+Bz cannot provide that assumption, since
+  it leaves the transfer error unchanged. Do not silently switch to
+  planted centers, easier code rate, or a lower effective dimension.
+- Compare against the existing phase/information-set/lattice portfolios
+  on identical centers and total budgets. No qsearch/UI admission or
+  claimed dequantization without substantive matched results and review.
+- Main-model theory remains mixing/landscape analysis or a different
+  classical sampler. New seed/degree tables alone are not that result.
+
+## 2026-10-20 Lean Verification Scope
+
+- `formal/Formal/BalancedSigned.lean` is the checked field-polynomial
+  separation core. Reproduce with `lake build --wfail` in `formal/`;
+  toolchain and Mathlib are pinned. `Formal/Audit.lean` checks all nine
+  principal statements for unexpected axioms.
+- Keep this separate from the Python decoder and full quantum algorithm.
+  Their correctness/complexity, the log-to-syndrome and Fourier bridges,
+  numerical mean certificate and coherent precision budget are not
+  covered by the Lean build. Do not mark them proved by association.
+- The formal ZMod11 counterexample and executable F16 counterexample are
+  different controls. Preserve both and their respective assumptions.
+- Existing source-paper FFT coordinate scoring is a comparator to reuse,
+  not a new research result. Matched native portfolios remain useful
+  routine work; no further main-model source-curve sweep is requested.
+
+## 2026-10-20 Balanced Signed MPI
+
+Read BALANCED_SIGNED_MPI.md.17new/189connected tests pass. This is a
+review-pending source/readout extension using known public decoding, not
+an admitted speedup. Do NOT add it to outreach or a central progress badge.
+
+- Reproduce with `python theorems/balanced_signed_mpi.py`; preserve exact
+  multinomial/root bounds, composite controls, readout alias and source hash.
+  The old radial ceiling and new mean are COSINE values, not satisfaction
+  fractions. The target mean>=.3 has an ideal probability lower bound>.06.
+- The native decoder replay is NOT the author's optimization seed. Before
+  a matched attack, freeze full public field/points/centers/matrix data from
+  an authorized public source or declare a new preselected instance.
+  Verify its actual rank for primeN, module invariants for compositeN.
+- Highest useful routine campaign: matched row-subset LLL/BKZ and phase/
+  information-set portfolios against the new threshold. Retain all budget
+  exhaustion/failures and score full original assignments, not local subsets.
+  Do not quietly change group, centers or effective optimizer dimension.
+- Use `log_cauchy_product` for exact public matrix products when the field
+  is O(m+n). Crosscheck its zero-extension/restriction against the explicit
+  matrix before using it in an attack. It does NOT itself optimize anything.
+  Dense preprocessing/log tables and transform work remain charged.
+- No free postselection: source count weights are conditioned explicitly.
+  Optional heralded preparation has a recorded1/Z cost. Decoder failure
+  accounting is separate. Preserve magnitude-two observable checks.
+- Do not interpret nonzero composite determinants as invertible, or run
+  elimination over a nonexistent fieldF_(2^h-1). Do not infer rank of a
+  restricted matrix from the full convolution's two zero eigenvalues.
+- Main-model theory next: independent balanced-box/readout review and a
+  structural classical attack or natural-problem reduction, not more
+  degree/seed sweeps or UI/CLI wiring.
+
+## 2026-10-20 Original Chain Support-Budget Certificate
+
+Read CHAIN_SUPPORT_BUDGET.md.15new/152connected tests pass. No central
+promotion, quantum badge, UI work or parameter sweep is requested.
+
+- Reproduction: `python theorems/chain_support_budget.py`. The artifact has
+  rational guide coefficients and exact principal minors, not just floats.
+  Preserve source hashes and rerun the saved-artifact replay test.
+- Keep K100 (two-moment independence allowance) and K101 (mean only)
+  separate. Do NOT square the Ritz matrix to manufacture a second moment.
+- Scope the upper bound to V_K exactly. It is not a classical lower bound,
+  a no-go for all Fourier-support states, or a bound on every DQI method.
+- The cycle is an operator relaxation of the ORIGINAL path cost, not a
+  changed cyclic input problem. Local Fourier branches can interfere.
+- Next main-model work must change the scientific mechanism/reduction.
+  Larger block-window certificates or shell scans are low priority unless
+  needed by an independently motivated new candidate.
+
+## 2026-10-20 Polynomial Degree-Reduction Baseline
+
+Read CUBIC_DEGREE_REDUCTION.md.13new/79connected tests pass. This is a
+known local algebraic method with a scoped average-case global derivation,
+not a new quantum algorithm. No central promotion or UI badge.
+
+- Prefer `cubic_degree_reduction.zero_flat` when the fixed guaranteed
+  dimension is sufficient. It has polynomial local work and certificate
+  size. Keep the rejection-based method as a distinct finite comparator
+  when its larger flats are necessary.
+- Rates are NOT interchangeable. The new native n32 witness usesr64;
+  the prior polarized witness usesr120. At n64 the easy-region theorem
+  usesr256,k5, whereas the earlier proposed stronger campaign usesr480,k8.
+  Report the actual matrix and never relabel one as the other.
+- The n64 degree-reduction test still covers only16local blocks, not all
+  4096 blocks or the global code. Analytical n128..1024 rows are not runs.
+  Expanding the inherited64bit reference coefficient limit is routine
+  implementation work, not evidence of an asymptotic result by itself.
+- Retain the low-weight ANF certificate, independent native field replay,
+  all caps/failures, and source/input-report hashes. Do not restore 2^k
+  span enumeration or certify a cubic from only its linear coefficients.
+- Probability calculations must use conservative dyadic bounds. Do not
+  construct denominators of size2^S(n) just to display tiny probabilities.
+- No further main-model parameter sweep is requested. The main model
+  should pursue a new global mechanism/reduction or review the proof.
+
+## 2026-10-20 Native Random Cubic / Dual-RS Attack
+
+Read CUBIC_RS_AFFINE_FLATS.md and CUBIC_FLAT_POLARIZATION.md first.
+This is Boolean degree-three, NOT the earlier triple-orbit task.
+25new/45focused tests pass; both saved n16/n32 native inputs are solved.
+No quantum badge, central admission, or novelty claim.
+
+- Highest useful mechanical run: one PREDECLARED complete n64,m4096,r480,
+  targetk8 instance at the same alpha113/128. Use dense uniform ANFs and
+  the polarization method. Save every attempted block, all failures, full
+  coefficients/modulus, all budgets and the original full native witness.
+  The existing16-block local check is not a substitute for4096 blocks.
+- The compressed global matrix has30720 rows and32768 columns. Reuse the
+  bit-packed solver or an established exact binary backend. Avoid expanding
+  it into Python scalar matrices. Optimize construction/elimination only
+  after exact small crosschecks against the current implementation.
+- Choose the seed and caps BEFORE execution. Keep input failures and
+  UNKNOWN outcomes. Do not silently retry hard inputs, select an easier
+  code rate, thin cubic coefficients, or change field/point conventions.
+- T4096 gives a ZERO conservative global success lower bound atn64 even
+  though16 local controls succeeded. Report observed native success as a
+  finite witness, not as a probability/asymptotic certificate. A larger
+  cap must charge the whole attempt budget and keep failures.
+- Retain the independent ANF and bit-polynomial field verifier. Membership
+  in saved flats or a compressed-system solution alone is insufficient.
+- Optional matched timing work should separate coefficient preparation,
+  tensor contraction, local solves/search, global construction/elimination,
+  and native replay. Predicate-evaluation counts omit linear work and
+  must not become a wall-time comparison against the quantum algorithm.
+- Rerun the second producer whenever the first report is regenerated:
+  it records the first report's SHA256, including diagnostic timing changes.
+  Never edit a running producer or its dependencies.
+- Previous unrelated inventory regression is now resolved in the shared
+  worktree: tests/test_nonlinear_residual_lift.py:182 passes against the
+  restored native.frozen_witness_and_attack_inventory field. The main model
+  did not edit that artifact or weaken the test. Preserve its evidence checks.
+
+Main-model work is the proof/reduction question, not these routine campaigns.
+No automatic new chat or external message has been sent.
+
+## 2026-10-20 Triple-Orbit Candidate: Preserve Task And Square Consistency
+
+Read CUBIC_ORBIT_DECODER.md. Producer and native report are complete;
+23new/245connected tests pass. No central admission, quantum badge or GPT commit.
+
+- This is a different task from the paired632/1026 run. Use the saved cubic
+  orbit map,eta,b_i,actual first684 tables and n204. Do not recycle scores.
+- Reuse existing classical portfolio patterns. All returned witnesses must
+  be ORIGINAL P coefficients independently evaluated at the three actual
+  points. Charge information sets, preprocessing,restarts and failed runs.
+- The lift uses T(Q)=Q-etaQ(zetaX), which is an invertible coefficient-wise
+  map. `recover_orbit_norm` checks its inverse square exactly. A lifted
+  solution must also haveQ=P^2 for the SAME P/sign in the linear term.
+- The native polynomial-norm round trip is planted calibration only, not a
+  found high-score witness. Do not report it as a classical optimization win.
+- Preserve the source Gauss minus sign and capD+1; probabilities alone do
+  not validate the coherent preparation. Full circuit compilation and error
+  budgets are not implemented.
+- Do not initiate an m-sweep or build another UI panel. Next theory is a
+  decisive square-consistent attack/reduction and independent proof review;
+  mechanical follow-up is a stronger, fully accounted same-input portfolio.
+
+## 2026-10-20 Paired Classical Intrinsic Search Is Ready
+
+Read PAIRED_RESIDUAL_CLASSICAL.md. The producer now supplies exact quartic
+root moves and quadratic allowed-residual moves on the native polynomial.
+One predeclared native run scores632/1026 from536, with zero restarts and a
+complete two-sweep fixed point.12 new/222 connected tests pass.
+
+- Reuse this implementation for the paired task instead of building a
+  second incompatible scorer. Full tables are public and their cost is
+  charged. Preserve original coefficients, all budgets and witness replay.
+- Useful mechanical extensions are multiple information sets, escaping
+  fixed points, block moves and an existing annealing/tempering portfolio.
+  Specify budgets before runs and retain failures, not just best seeds.
+- Keep full_classical_portfolio_complete false until genuinely matched
+  stronger work exists.632 is not a classical ceiling and the ideal quantum
+  mean is not a wall-time/resource result.
+- The new uniform-component mean bound excludes adaptive/selected search.
+  Do not apply it to these campaigns or export it as a hardness certificate.
+- Main-model follow-up is conditional list recovery and proof review, not
+  routine CLI/UI wiring. No central admission or GPT commits are requested.
+
+## 2026-10-20 Paired Single-Polynomial Candidate
+
+Read PAIRED_RESIDUAL_DECODER.md. This is a CHANGED task on+a,-a pairs, not
+the original overlapping chain.22 new/226 connected tests pass. No central
+admission or quantum-advantage badge; proof/novelty review remains pending.
+
+- The next useful Gemini task is adapting the EXISTING feasible classical
+  portfolio to this task, not another generic workbench or UI panel. Score
+  original polynomial coefficients, keep full budgets/restarts, and compare
+  the SAME saved transformed instances. Do not recycle chain witness scores.
+- Start from the E/O formulation P(X)=E(X^2)+X O(X^2),degE,degO<n/2.
+  All proposals must preserve that original polynomial; reject auxiliary
+  Q=E^2/EO/O^2 scores unless identities and native scores replay exactly.
+- The536 information-set control is only a verified weak baseline. Keep
+  strong_classical_portfolio_NOT_run true until genuine matched work exists.
+- Optional independent producer replay uses frozen RDQINumerics data/reference;
+  the first1026 halfsets/multipliers are reused with new pairing and n204.
+  Preserve hashes, CC-BY-4.0 credit, original116/120 archive caveat, and the
+  explicit changed-problem flag. No author code is imported.
+- Keep the WHOLE capD+1 uniqueness check. Right-zero vectors are outside the
+  pilot but must remain in the decoder's competing ball for observable safety.
+  More moments require more margin. Do not turn a source mean into a full
+  target law or a gate-cost comparison.
+- The main model owns proof critique and the possiblem-root-orbit extension.
+  No m-sweep, new claimed theorem, central promotion or GPT commits before
+  the source law and classical norm/algebraic attacks are resolved.
+
+## 2026-10-20 Quadratic-Lift Evidence Is Complete
+
+Read NONLINEAR_RESIDUAL_LIFT.md;23 new/204 connected tests pass. Do not treat
+the relaxed1353 score as a classical witness: actual P scores1011 and all409
+square-defect coefficients fail. No additional lift-seed campaign is needed.
+
+- Optional independent replay: use the frozen RDQINumerics v1.0.0
+  data/reference directory with the producer's --reference and --write flags.
+  The release index/metadata/array hashes are checked. Credit Shang/Franca
+  and CC BY4.0; do not vendor the whole external repository unnecessarily.
+- Do not remove the full-rank gate or whole-residual replay. Singular lifts
+  can have both valid and invalid representatives of the same residual.
+- The random-halfset projection-mean identity is an ensemble theorem with
+  ideal uniform member choices. No fixed-input/PRNG certificate or general
+  bound on optimized lifts has been established.
+- Frozen witness verification remains available as Gemini work: all880
+  coefficients, original scoring, no invented missing trajectories. Preserve
+  the116/120 original raw-batch caveat. No new central negative or GPT commit.
+- Theory now owns the actual-pilot structured-decoder question, including
+  moment transfer, coherent cleanup and known decoding literature. More
+  qsearch/UI wiring is not a prerequisite for that work.
+
+## 2026-10-20 Nonlinear Residual-Chain Candidate
+
+Read NONLINEAR_FILTER_PINNING.md. The producer and live artifact are complete;
+41 new/181 connected tests pass. No further mean/tail scan is requested.
+
+- Optional Gemini task: inspect the versioned authors' package at
+  https://zenodo.org/records/22975424 and verify final witnesses directly
+  from polynomial coefficients, actual evaluation order, multipliers and
+  half-set tables. Record file hashes/license and the116/120 raw-batch
+  coverage caveat. Do not rerun missing batches and call them original data.
+- Inventory actual implemented classical attacks before proposing another
+  benchmark. Full-table access and preprocessing belong in the cost ledger;
+  no folded-oracle lower bound applies to these scalar public tables.
+- Preserve the rational filter and pairwise cutoff2(2D+r)<=n. The source
+  binomial law only supplies allowed moments, not the target's full law.
+- Five executions atTVerror0.01 is a CONDITIONAL attempt bound, not an
+  implemented quantum program or matched runtime. The100-error control is
+  basis-only decoding and not a sampled native pilot distribution.
+- The pin-mixture barrier is source-representation-specific. Keep the
+  target-only completion and general adaptive classical-search escapes open.
+- No new candidate admission, central negative, GPT commit or UI changes.
+  Mathematical attack design and independent proof review take priority.
+
+## 2026-10-20 Relative Gibbs Sampling Comparison
+
+Read RELATIVE_GIBBS_WORLDLINE.md and the newest handoff. Producer:
+`python theorems/relative_gibbs_worldline.py --write`. The live artifact exists;
+51 new/360 connected tests pass. Routine qsearch/UI wiring is not needed now.
+
+- Preserve the COMPUTATIONAL-BASIS output scope, unproved novelty, and pending
+  independent review. Never relabel this as classical TFD preparation or a
+  negative result against every relative-decoding algorithm.
+- Keep correlated source worldlines, path-dependent pin probabilities, all
+  free affine bits and explicit ABSTAIN. No success-only reporting or retries.
+- Distance is a supplied proof premise. The repetition control verifies its
+  own distance but is a known easy calibration, not a discovered candidate.
+- Source mixing and target Trotter errors are different terms. The reported
+  epsilon budgets mixing/Trotter/numerics; pinning adds its separately stated
+  error. Do not attach an unconditional requested-epsilon badge to the sum.
+- Optional precision work: outward interval logistic/periodic-path sampling
+  with total conditional TV at most the reserved per-update budget. Current
+  floating samples and PRNGs are NOT certified random-bit distributions.
+- No central admission, extra calibration sweeps, GPT commits or producer
+  edits during a live run. Independent mathematical review and selecting a
+  task that escapes this matched sampler are the next high-reasoning work.
+
+## 2026-10-20 Pair-Conditioned Source Contract
+
+Read TERNARY_PAIR_CONDITIONING.md. Producer:
+`python theorems/ternary_pair_conditioning.py --write`; its live artifact is
+already saved.24 new/284 connected tests pass. No additional duplicate-pair
+campaign, UI panel or central admission is needed.
+
+- Pair selection is from H; decoder/source may depend on local input
+  differences t, NOT on the residual syndrome being averaged.
+- Keep exact local weights, empty support, all original gauges and actual
+  SUM/shift expansion. This is known-source preparation, not a received-state
+  transformation or a free normalized-fiber oracle.
+- Input-syndrome probabilities are NOT Born herald probabilities. Keep the
+  wrong-weight, wrong-adjoint and residual-adaptive countercontrols visible.
+- Preserve the matched classical full output law, not just acceptance counts.
+  Product readout can sample better than BPQM; word error is not necessary.
+- Native16 removes one coordinate; native32 removes none. No generic residual
+  decoder or finite-N guarantee is supplied. Do not relabel this as the
+  repaired global algorithm. GPT should now compare independent constructive
+  mechanisms; optional mechanical exposure remains secondary.
+
+## 2026-10-20 Preserve The Sparse-Reduction Scope
+
+Read TERNARY_SPARSE_REDUCTION.md and newest handoff. Producer:
+`python theorems/ternary_sparse_reduction.py --write`. The source-bound report
+already exists;35 new/182 connected tests pass. No additional tiny sweep is
+needed. Do not feed the gadgetized matrix to the old random-LDPC certificate
+or average-offset sampler and inherit its guarantee. Equal columns give a
+checked short subcode; the exact quotient is the original dense code.
+
+Any future wiring must retain: bijective original/auxiliary solutions, explicit
+code lift/projection, correlated-offset flag, any-measurement WORD-error scope,
+and the counterexample to treating decoding error as universal sampling error.
+The same-input basis scrambles are NOT hard random dense instances. No central
+negative/proof/preprint promotion without independent review. No GPT commits.
+
+## 2026-10-20 Native Conditional Sampling Competitors
+
+Read TERNARY_CONDITIONED_SAMPLING.md. Producer:
+`python theorems/ternary_conditioned_sampling.py --timeout 30 --write`.
+47 focused/147 connected tests pass. No routine rerun of the same two inputs
+is needed; their source-bound artifact already records both completed methods.
+
+- Rank rejection is exact CONDITIONAL on acceptance with full gauge sampling.
+  Charge all computed batches. Keep the fixed cap and ABSTAIN; do not use an
+  output-dependent time cap while retaining the fixed-trial TV certificate.
+- Hash isolation uses the ANNEALED window, not the preexisting exact count.
+  Uniqueness requires exhausted second-model search. Preserve zero/dependent
+  hashes and unique auxiliary extension. No first-witness sampling shortcut.
+- A wall timeout leaves extra UNKNOWN mass, even when other traces finish.
+  Do not discard slow cells, select successful seeds, or label the capped law
+  certified using an uncapped SAT-oracle bound. Save every native input.
+- A larger campaign must test exact native HASHED instances near the entropy
+  hash rank, including empty-cell proof costs, not merely unconditioned SAT.
+  Keep deterministic trial budgets distinct from experimental wall budgets.
+- Full-weight decoding competitors need multiplicity/output-bias accounting.
+  Do not import dense-code hardness into the sparse-generator native code.
+- Optional split-domain CLI exposure is secondary. No central promotion or
+  edits to any producer/dependency during a live run. No GPT commits/pushes.
+
+## 2026-10-20 Lower The Checked Ternary Header DAG
+
+Read TERNARY_BPQM_BLOCK.md, especially its cleanup lemma and final compiler
+recipe. New source: theorems/ternary_bpqm_block.py. Live artifact and28 new
+tests exist;269 connected tests pass. Known global method, no novelty claim.
+
+- `root_schedule` is the uniform, topology/edge/coefficient checked header
+  DAG. `root_transform` is only the bounded exponential-table reference.
+  Do not ship the latter as a scalable decoder or inject its classical digits.
+- Lower check/bit/fiber nodes with existing actual message_program and
+  variable_rotation circuits. Check heralds remain immutable. Uncompute each
+  temporary fiber BEFORE t changes; clean persistent headers in reverse DAG
+  order WITHOUT undoing physical gates. Keep all READOUT records.
+- Preserve raw socket multiplicities, fixed outgoing-SOCKET root policy,
+  dark headers, total unused encodings and F3 signs. Do not silently convert
+  compile caps or unsupported unit checks into graph erasures.
+- Replay arbitrary complex physical inputs and the whole retained-record
+  sampler against the new Givens reference, not the old Householder output
+  law. Verify exactly zero arithmetic work and inverse behavior on dirty
+  estimate/record registers. Bound controlled relative phases, not only norm.
+- The source16 depth1 rank failure and source32 depth1 rank success remain
+  in the live artifact. Rank is NOT accuracy. The asymptotic schedule leaves
+  an unknown finite-N rank-failure term; do not hide it in an accuracy badge.
+- Budget four root-unitary occurrences per sampler, all arithmetic and source
+  preparation, and finite-set synthesis. The certificate's enormous tree size
+  is a genuine sufficient-resource warning, not permission to clone leaves.
+
+No central claim promotion, UI polish or GPT commits. Optional split-domain
+CLI exposure is secondary to equivalence of the actual lowering. Do not
+mutate a producer or dependency during a live artifact run.
+
+## 2026-10-20 Coherent Integer Headers And Variable-Weight Rotation
+
+Read TERNARY_COHERENT_RELIABILITY.md, TERNARY_CORDIC_STEP.md and newest handoff.
+Live producers: `python theorems/ternary_coherent_reliability.py --write` and
+`python theorems/ternary_cordic_step.py --write`. Artifacts have matching names
+under research/phase_workbench.48 new focused tests pass; expanded regression
+result is recorded in the final handoff checkpoint.
+
+- First-module classical cordic_digits is ONLY a test oracle. Actual coherent
+  digit generation/rotation/uncomputation is in the second module. Do not
+  wire classical sign lists as advice for a superposition of weight headers.
+- Preserve total dark/unused qutrit blocks, coefficient signs, all inputs and
+  retained histories. No cutoff, reset, branch dropping or header dephasing.
+- Sparse gate execution is NOT hardware/dense simulation. Exact logical gate
+  counts exclude universal synthesis; keep separate rounding/synthesis budgets.
+- Keep reference caps and analytical cost disclosure: w64/B52 predicts
+  5,048,480,990 logical gates and91,545 qubits for one rotation, NOT executed.
+- CLI exposure, if requested, belongs in the existing split-domain module and
+  ORDER/FUNCTIONS, not new qsearch.py top-level imports. No UI polish or
+  automatic candidate/proof/negative/preprint promotion.
+
+The next main-model task is global tree/erasure construction and consistency
+with the known q-ary block theorem; root/fiber assembly may follow its reviewed
+specification. A generic global theorem already exists: do not rebuild its
+tree-neighborhood/erasure-recovery idea as a novelty claim. No all-roots tree
+assumption, no repeated unknown-channel copies, no inherited Householder
+global output law without replaying the new completion.
+
+## 2026-10-20 Matched Classical Uniform Sampling And Count Scope
+
+Read TERNARY_CLASSICAL_SAMPLING.md and newest handoff. Producer:
+`python theorems/ternary_classical_sampling.py --backend-python tmp/unigen-venv/bin/python --backend-arch x86_64 --samples 128 --timeout 30 --write`.
+Report: research/classical_baselines/ternary_classical_sampling.json. Native
+pycosat is already available; optional pyunigen is isolated, not a core import.
+
+- Preserve original16/32 source inputs, bijective encoding and full original
+  sampling support. Do not drop a gauge spin or introduce auxiliary-model
+  multiplicity. Recheck EVERY model against native constraints.
+- Complete PicoSAT pools contain67/10092 solutions; completed-pool sampling
+  is exact under fair index coins, but storage/enumeration costs are real.
+  Model/propagation/time caps must NOT turn a visited prefix into a sample.
+- Keep native32 UniGen timeout UNKNOWN, not a hardness or UNSAT result.
+  Count epsilon is not sampling TV; finite histograms are not an accuracy
+  certificate. Preserve all independent-runtime/binary hashes and failures.
+- Keep annealed count/quiet-planting implications separate from prescribed-
+  input sampling and prefix-conditioned counts. No decoder-offset adaptation
+  in the prior Parseval bound: A must stay independent of original J.
+- 21 focused/336 connected tests pass, not the full suite. Current source and
+  report hashes are in newest handoff. No automatic central claim admission.
+
+Optional split-CLI exposure belongs in its domain module and ORDER/FUNCTIONS,
+not qsearch.py imports. Longer seed/size batches or self-reduction are NOT a
+license to announce asymptotic dequantization. The next scientific task must
+change conditional sampling capability or compile the actual coherent receiver,
+not append more count-signal panels or successful small examples.
+
+## 2026-10-20 Full Q-Ary Decoder-To-Sampler Reference
+
+Read TERNARY_DECODED_SAMPLER.md and newest handoff. Producer:
+`python theorems/ternary_decoded_sampler.py --write`; artifact:
+research/reductions/ternary_decoded_sampler.json. Optional split-CLI exposure
+belongs in the relevant domain module plus ORDER/FUNCTIONS, not qsearch.py
+top-level imports. No central claim admission or large-LDPC execution follows.
+
+- Keep actual blank-state preparation, all public bilinear phases, modular
+  subtraction, coherent heralds, total dark-branch completions and A-dagger.
+- Preserve EVERY offset, empty target, work register and ABSTAIN. Never
+  normalize the proof's comparison vector as an INPUT, postselect cleared
+  labels or call an abstention a certified UNSAT result.
+- Gaussian postprocessing is the actual polynomial affine_lift routine;
+  the full histogram/fiber truth census is bounded exponential verification.
+- Keep wrong-adjoint and constant-output-shift countercontrols. Word error
+  is sufficient, not necessary; norm alone does not verify the reduction.
+- Include the STRONGER uniform-original-spin rejection baseline as well as
+  the no-decoder classical shadow. Conditional accepted uniformity does not
+  make rejection cost free. SAT search/timeout is not a sampling comparison.
+- 37 focused/315 connected tests pass, not the full suite. Current report
+  fingerprints are in newest handoff. Other source reports stay unchanged.
+
+Next scientific work is strong matched classical sampling/approximate counting,
+then coherent reliability arithmetic and precision if the target survives.
+Do not convert the dephased grid comparison into a purported receiver, add
+another threshold-plot subsystem or promote bounded examples into a candidate.
+
+## 2026-10-20 Exact Signed-Trine BPQM Convergence Reference
+
+Producer: `python theorems/ternary_bpqm_certificate.py --write`.
+Read TERNARY_BPQM_CERTIFICATE.md and newest handoff before optional split-CLI
+exposure. Artifact: research/phase_workbench/ternary_bpqm_certificate.json.
+This is the NEW dv3/dc6 branching ensemble, not the dv2 graph-coloring code.
+
+- Keep physical simplex degradation, exact mass/lost-mass accounting and
+  independent uniform F3-star socket coefficients. Do not replace these with
+  nearest-grid overlap rounding or Monte Carlo confidence intervals.
+- A real analytic ideal-tree error/fidelity tail is certified at level13;
+  no finite-block circuit, sampler, precision/gate budget or speedup follows.
+  Flags are deliberately dephased ONLY for a CQ comparison, not for the
+  algorithm's eventual coherent decoder/uncompute stage.
+- Preserve all empty/UNKNOWN/SAT outcomes on ORIGINAL native sockets and
+  offsets. SAT search is not uniform sampling; one-second timeout is not
+  hardness. Anti-trine capacity excludes only that specified record decoder.
+- Optional commands belong in a qsearch_cli domain module and ORDER/FUNCTIONS,
+  not top-level imports or restoration of any legacy circuit search.
+- 27 new tests/229 connected pass. Current fingerprints are in newest handoff.
+  No automatic candidate/proof/negative/preprint promotion. New q-ary sampling
+  reduction and phase-correct receiver are scientific tasks, not wiring tasks.
+
+## 2026-10-20 Ternary Coloring Reference And Exact Support Recursion
+
+Read TERNARY_COLORING_BPQM.md and newest handoff. Optional split-CLI exposure
+of `python theorems/ternary_coloring_bpqm.py --write` belongs in the relevant
+domain command module plus ORDER/FUNCTIONS, not top-level qsearch.py imports.
+Report: research/phase_workbench/ternary_coloring_bpqm.json, schema2.
+
+- Preserve NEGATIVE overlap -1/2, singular spectrum and fixed native basis
+  bridge; two-copy sources change the coloring target. Keep herald phases.
+- Keep empty sectors, original offsets, all SAT/UNSAT/UNKNOWN outcomes and
+  no colorability rerolls. Z3 is optional in requirements-research-optimization.
+- Compressed-shift zeros are between nonempty targets: the binary root-gap
+  lemma does not apply. The six-regular word/UNIFORM-offset first-moment bounds
+  are not impossibility claims for arbitrary coloring or all quantum receivers.
+- Support recursion and its d4/d5 all-depth decay are NOT symbol/word-error
+  convergence. Exact density caps are UNKNOWN, never a threshold certificate.
+  Scalar levels do not execute the exponentially growing distinct tree outputs.
+- Preserve no-admission flags; no automatic central candidate, proof, negative,
+  preprint or outreach promotion. Full graph decoder/reduction remains unbuilt.
+- 78 focused/251 connected tests pass. Not the full suite. Live fingerprints
+  are in the newest handoff. Routine wiring cannot resolve the next scientific
+  task; do not create more theory placeholders to make this look implemented.
+
+## 2026-10-20 Gram Access Added To The SAME Gibbs Reference
+
+The existing producer/report now uses schema v2. No new CLI command or
+accepted candidate is necessary. If exposing it, include the actual source-
+SWAP/unprepare and LCU controls, all-code normalization certificate, scalar
+scaling rows and direct-native pair-reflection countercontrol.
+
+Do NOT label the inverse-adjoint quantity floor a lower bound on all quantum
+algorithms or a measured QLS runtime. No QLS solver was executed. The bound
+audits two specified encodings and the cited source-aware cost expression.
+Do NOT describe k1024 as a Gram/source/reflection execution. The pair-family
+native reflection and exact classical sampler deliberately show why generic
+encoding failure is not intrinsic hardness. Preserve all non-admission flags.
+
+97 focused tests within246 connected tests pass. Read the newest handoff for
+current producer/report hashes; old schema-v1 fingerprints are historical.
+Stronger affine dilation/preconditioning is a mathematical construction task,
+not a wiring request. Stop adjacent generic Gram/parent variants by inertia.
+
+## 2026-10-20 Spectral Gibbs Repair: Finished Reference, Not An Efficient Decoder
+
+Read GIBBS_ORBIT_PARENT.md and the newest handoff. Optional exposure belongs
+with the existing Gibbs commands in the split CLI, not top-level imports in
+qsearch.py. Producer: `python theorems/gibbs_orbit_parent.py --write`.
+Report: `research/phase_workbench/gibbs_orbit_parent.json`.
+
+- Preserve the distinction: root sign synthesis has a uniform conditional
+  gap, but the required orbit reflection is NOT efficiently compiled.
+- Dense parent/spectral matrices are bounded exponential references. All128
+  complete readouts retain records/source labels and use NO postselection.
+- Local-parent gap equals the CLASSICAL QUOTIENT heat-bath gap. Retain zero
+  and dependent check rows; do not equate the entire gauge-spin spectrum.
+- The actual128-clause classical trace ran256 updates, not the95-digit
+  sufficient mixing budget. Do not label its output a certified Gibbs draw.
+- No generic quantum circuit lower bound, all-BPQM dequantization or new
+  speedup/candidate/proof promotion follows. Keep all non-admission flags.
+- New73-test focused suite and222-test connected suite pass; final134-test
+  check also covers the preceding nonabelian corrections. Not the full suite.
+
+Any new public reflection/receiver construction is a mathematical task, not
+routine wiring. Do not add adjacent parent/gap variants or more huge ledgers.
+No GPT commit/push; preserve the existing multi-agent dirty worktree.
+
+## 2026-10-19 Nonabelian Retractions: Preserve The Corrected Search Space
+
+Read NONABELIAN_BARRIER_SCOPE_AUDIT.md and the top of AGENT_HANDOFF.md before
+using old nonabelian campaign records. Two reviewed negatives are quarantined,
+with full originals and hashes. Do not rerun old producers to reinstate them.
+Active973/quarantined14. The published negative list and map already match.
+
+If wiring the standalone countercheck into the split CLI, use the appropriate
+`qsearch_cli/commands/` domain module plus registry `ORDER`/`FUNCTIONS`, not
+top-level theorem imports in qsearch.py. Default execution must be read-only;
+never silently quarantine new IDs. Preserve source hash binding, changed-data
+refusal, archive-before-remove, idempotence and concurrent-update safeguards.
+
+The report is a falsifier of overbroad NO-GO claims, not a quantum candidate.
+Retain both `speedup_claim_allowed=false` and `accepted_speedup_candidate=false`.
+Do not call the transposition control a hard oracle problem; M+1 classical
+queries solve that same family. Do not turn spin-half Catalan growth, exact
+coefficient hardness or the HRS copy bound into a gate lower bound. Keep
+numerical/dense controls distinct from analytic large-n formulas.
+
+225 connected tests pass, including the old SU2 test rewrite that removes
+the self-declared BQP demarcation. Full repository tests were NOT run. No
+GPT commit/push. Any genuinely new GI receiver or literature interpretation
+needs mathematical review before promotion; routine wiring cannot supply it.
+
+## Uniform Canonical Family Closure: Preserve Quantifiers, Not Just Samples
+
+Same producer now emits schema v2. `uniform_family_parameters` is scalar
+arithmetic ONLY; `attack_uniform` chooses a mathematically specified split,
+not a seed/prime/support search. Uniform scope: p3mod4,p>L>=64,
+1<=r<=floor(L/4), unweighted consecutive native moments, zeros allowed,
+nontrivial output. Local proof gives gamma>=1/(4L); independent review remains
+open. Do not label this a new quantum algorithm or a formal accepted proof.
+
+- Actual new witnesses:127/r31 auto split s33 takes18/17 attempts; separate
+  p8191,L320/r80 auto split s90 takes24. All original equations replay.
+- L1024/r256 andL4096/r1024 are PARAMETER CERTIFICATES, NOT solver/state runs.
+- On UNKNOWN certificates, failure_probability_at_most is null. A positive
+  certificate's2^-f guarantee requires the stated number of independent
+  uniform complete attempts; a seeded or shorter run does not verify it.
+- Keep automatic split, degree/profile conditions, full failed trial costs
+  and directed precision intact in optional split-CLI native/EXP exposure.
+- Freeze further canonical search/threshold variants. The minority-projection
+  backlog is lower priority unless a concrete different candidate needs it.
+  No automatic central negative/candidate/proof or preprint promotion.
+
+## Native Moment Masking: Fixed-Target Classical Solver Contract
+
+Read MOMENT_TARGET_MASKING.md and the newest handoff. Actual producer:
+`OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python theorems/moment_target_masking.py --write`.
+It reserves ORIGINAL variables, commits their exact moments, masks only the
+remaining kernel, calls the existing norm attack ONCE per paid attempt, then
+replays the unchanged full target. Two61-bit,L127,r31,s32 targets get witnesses
+in6 attempts each. Certificates have a local-review-pending uniform fixed-b
+floor; this is NOT an inference from those seeds.
+
+Mechanical follow-up:
+- Optional qsearch/EXP integration belongs in qsearch_cli/commands/native.py;
+  reuse this producer, not a duplicate solver or a new giant dispatch block.
+- Keep original target/support/field, prefix values and ALL failed attempts.
+  A failed partial assignment is not a source reroll. Never replace it with a
+  freshly generated easier input or silently add variables.
+- Check norm degree AND positive gamma before showing a certified bound.
+  UNKNOWN, bad degree budgets and seeded runtime failures are NOT negatives.
+- Genuine probability guarantees require independent uniform prefix values,
+  independent uniform full degree<K masks, and independent norm coins. Keep
+  seeded transcripts explicitly non-statistical. The exact dyadic bounds are
+  directed: population DOWN, TV and zero-prefix loss UP.
+- Local review remains open. Do not export this as an accepted theorem or
+  add it to Claude's preprint/outreach without independent review.
+- This is a biased classical SEARCH solver, not a uniform sampler or a
+  strict-all-coordinates-nonzero solver. Do not mark those tasks dequantized.
+- Deprioritize the older minority-projection extension below unless it kills
+  a concrete candidate not already handled. Do not accumulate more modules
+  or high-rate threshold variants to keep the pipeline busy.
+
+## 2026-10-19 Resumed Sparse-Chirp Mathematical Contracts
+
+The user resumed; older pause text is historical. Read the NEW top entry in
+AGENT_HANDOFF.md and the sparse/OPI sections of OUTER_CODED_CHIRP_PROBE.md.
+Run `OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python theorems/outer_coded_chirp_probe.py --write`.
+Schema v5 includes real sparse native witnesses, analytic polynomial-decoder
+certificates labelled NOT quantum executions, and the EXISTING OPI norm attack
+lifted back to the unchanged consecutive-support moment equations.
+
+Low-judgment follow-up, NOT permission for mathematical claim promotion:
+- Optional CLI/EXP exposure belongs in qsearch_cli/commands/native.py, using
+  the split-CLI rules below, NOT top-level theorem imports in qsearch.py.
+  Reuse the producer; distinguish actual witnesses from analytic bounds.
+- Do not call the polynomial GS decoder implemented: only its published
+  theorem and a finite rational error bound are used here. No dense quantum
+  run took place atL512 orL1024. Full synthesis/trace/gate debt remains open.
+- Do not call the16-trial norm witness a uniform solver. It is ONE fixed input,
+  not an IID experiment or the original folded-norm system. Keep all failed
+  targets and base/extension factorization costs, native roots and replay.
+- Population masking needs uniform ORIGINAL b AND an independent uniform
+  degree<K mask. A fixed b plus random mask is NOT an IID-shift source. Never
+  replace an average q(b) by a fixed-instance or high-probability guarantee.
+- Derived mixed-class extension, separate from the implemented all-one-class
+  function: choose majority derivative class, m minority points, W their
+  vanishing polynomial; R=W*quotient(R0,W). Degree error<=ceil(L/2)+m-1,
+  so only accept1<=r<=floor(L/2)-m. Put minority coordinates0; scale majority
+  ones by sqrt(kappa/A'). No extension-field square roots, changed moments or
+  dropped equations. Reject strict all-nonzero mode when m>0. Refusal is
+  UNKNOWN, not hardness/UNSAT. Test all small admitted targets, the degree
+  boundary, and explicit minority-zero/native-equation replay. On p61,S1..127
+  class counts71/56 yield ONLY r<=7, not the quantum quarter-rate r31. Do NOT
+  present this derived extension as already implemented or uniformly reviewed.
+- Do not add these new claims to Claude's preprint/outreach drafts without
+  independent mathematical review. Nothing has been sent by Codex.
+
 ## CLI Wiring Change: qsearch.py Is Now A Shim (2026-10-19)
 
 The subcommands moved out of `qsearch.py` into `qsearch_cli/`. `python qsearch.py <command>`, every option and every README command work as before. `qsearch.command_x`, `from qsearch import x` and `monkeypatch.setattr(qsearch, name, ...)` also still work.

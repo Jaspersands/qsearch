@@ -1,0 +1,39 @@
+{
+  "status": "known_purification_composed_with_unreviewed_Rees_receiver",
+  "profile": {
+    "purification_depth": 1599,
+    "burn_in_levels": 6,
+    "tail_levels": 1593,
+    "purifier_live_register_cap": 1600,
+    "ideal_target_copies_ceil_log2": 1588,
+    "expected_total_raw_copies_bound_ceil_log2": 3194,
+    "raw_copy_cap_ceil_log2": 3199,
+    "hypothetical_target_orbit_gap": "1/10, not measured or certified",
+    "hypothetical_input_spectral_gap": "3/4, e.g. global depolarization <=1/4",
+    "total_error_within_one_third": true
+  },
+  "scope": {
+    "spectral_gap_is_supplied_not_certified": true,
+    "target_orbit_gap_is_supplied_not_certified": true,
+    "target_is_principal_eigenstate": true,
+    "iid_raw_copies_required": true,
+    "purifier_herald_controller_implemented": true,
+    "purifier_quantum_backend_implemented": false,
+    "quantum_receiver_implemented": false,
+    "arbitrary_noise_correction": false,
+    "mixed_state_conjugation_covered": false,
+    "preparation_inverse_required": false,
+    "conjugate_state_required": false,
+    "efficient_for_arbitrary_vanishing_spectral_gap": false,
+    "novel_purification_protocol": false,
+    "speedup_claim_allowed": false
+  },
+  "independent_review": false,
+  "formal_compiler_checked": false,
+  "natural_hard_state_family_established": false,
+  "literature": [
+    "https://arxiv.org/abs/2309.16387",
+    "https://arxiv.org/abs/2503.22644"
+  ],
+  "research_note": "research/REES_NOISY_STATE_SOURCE.md"
+}

@@ -1,0 +1,131 @@
+{
+  "status": "ACCESS_REDUCTION_AND_SCOPED_PURIFICATION_LOWER_BOUND_UNDER_REVIEW",
+  "binary_lpn_equivalence_is_known": true,
+  "dense_controls": [
+    {
+      "prime": 2,
+      "secret_dimension": 3,
+      "group_order": 16,
+      "visibility": "3/4",
+      "nonzero_error_probability": "1/8",
+      "density_identity_max_error": 3.827021247335479e-18,
+      "fourier_diagonal_max_error": 6.697287182837089e-18,
+      "pairwise_commutator_max_error": 0.0,
+      "trace_distance_error": 0.0,
+      "every_nonzero_line_generator_decoded": true,
+      "actual_top_multiplicity": 8,
+      "clean_rank": 8
+    },
+    {
+      "prime": 3,
+      "secret_dimension": 2,
+      "group_order": 27,
+      "visibility": "3/4",
+      "nonzero_error_probability": "1/6",
+      "density_identity_max_error": 1.5640257779588094e-17,
+      "fourier_diagonal_max_error": 5.551115123125783e-17,
+      "pairwise_commutator_max_error": 0.0,
+      "trace_distance_error": 2.7755575615628914e-17,
+      "every_nonzero_line_generator_decoded": true,
+      "actual_top_multiplicity": 9,
+      "clean_rank": 9
+    },
+    {
+      "prime": 5,
+      "secret_dimension": 2,
+      "group_order": 125,
+      "visibility": "3/4",
+      "nonzero_error_probability": "1/5",
+      "density_identity_max_error": 1.9081958235744878e-17,
+      "fourier_diagonal_max_error": 6.245004513516506e-17,
+      "pairwise_commutator_max_error": 0.0,
+      "trace_distance_error": 5.551115123125783e-17,
+      "every_nonzero_line_generator_decoded": true,
+      "actual_top_multiplicity": 25,
+      "clean_rank": 25
+    }
+  ],
+  "coherent_example_countercontrol": {
+    "same_classical_sample_diagonal": true,
+    "coherent_secret_and_label_one_probability": 0.49999999999999983,
+    "dephased_secret_and_label_one_probability": 0.12499999999999996,
+    "dephased_fourier_uniform_max_error": 4.163336342344337e-17,
+    "coherent_error_model": "one common label flip per coherent example; not local hardware noise"
+  },
+  "symbolic_rank_costs": [
+    {
+      "prime": 2,
+      "secret_dimension": 8,
+      "clean_rank": 256,
+      "initial_trace_error": "1/8",
+      "target_trace_error": "1/16",
+      "symmetric_levels_lower_bound": 137,
+      "log2_raw_copies_lower_bound_for_symmetric_tree": 137,
+      "two_label_collision": {
+        "copies_per_attempt": 2,
+        "success_probability": "25/8192",
+        "output_error": "1/50",
+        "expected_raw_copies": "16384/25"
+      }
+    },
+    {
+      "prime": 2,
+      "secret_dimension": 32,
+      "clean_rank": 4294967296,
+      "initial_trace_error": "1/8",
+      "target_trace_error": "1/16",
+      "symmetric_levels_lower_bound": 2290649225,
+      "log2_raw_copies_lower_bound_for_symmetric_tree": 2290649225,
+      "two_label_collision": {
+        "copies_per_attempt": 2,
+        "success_probability": "25/137438953472",
+        "output_error": "1/50",
+        "expected_raw_copies": "274877906944/25"
+      }
+    },
+    {
+      "prime": 2,
+      "secret_dimension": 64,
+      "clean_rank": 18446744073709551616,
+      "initial_trace_error": "1/8",
+      "target_trace_error": "1/16",
+      "symmetric_levels_lower_bound": 9838263505978427529,
+      "log2_raw_copies_lower_bound_for_symmetric_tree": 9838263505978427529,
+      "two_label_collision": {
+        "copies_per_attempt": 2,
+        "success_probability": "25/590295810358705651712",
+        "output_error": "1/50",
+        "expected_raw_copies": "1180591620717411303424/25"
+      }
+    },
+    {
+      "prime": 3,
+      "secret_dimension": 32,
+      "clean_rank": 1853020188851841,
+      "initial_trace_error": "1/6",
+      "target_trace_error": "1/16",
+      "symmetric_levels_lower_bound": 1235346792567894,
+      "log2_raw_copies_lower_bound_for_symmetric_tree": 1235346792567894,
+      "two_label_collision": {
+        "copies_per_attempt": 2,
+        "success_probability": "17/44472484532444184",
+        "output_error": "1/51",
+        "expected_raw_copies": "88944969064888368/17"
+      }
+    }
+  ],
+  "classical_sample_simulation": true,
+  "classical_polynomial_decoder_implied": false,
+  "quantum_polynomial_decoder_implemented": false,
+  "gaussian_lwe_reduction_established": false,
+  "all_purification_protocols_ruled_out": false,
+  "noiseless_rees_claim_refuted": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false,
+  "sources": [
+    "https://arxiv.org/pdf/1910.00802",
+    "https://arxiv.org/pdf/1407.5088",
+    "https://arxiv.org/abs/2503.22644"
+  ]
+}

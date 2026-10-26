@@ -1,0 +1,89 @@
+{
+  "schema": "integer_character_uniform_v1",
+  "status": "uniform_algorithm_argument_pending_independent_review_not_a_speedup",
+  "producer_sha256": "423d1c64dd509ba911ea8d8572646fd31e64601671906e33a8214797e171a4a2",
+  "input_artifact_sha256": "9e37cfacc6cdb21af28af789395efbec3b56646f84633306ca003cb3fc4d060f",
+  "uniform_constants": {
+    "minimum_length": 20000,
+    "cap_rule": "floor(7*m/200)",
+    "active_probability": "1/20",
+    "positive_gap_comparison_slope": "1/20000",
+    "positive_gap_comparison_intercept": "-39/40",
+    "edge_tail_upper_coefficient_over_m": "19500000/39601",
+    "edge_mass_lower": "39/40",
+    "mean_squared_lower": "28899/320000",
+    "mean_cosine_lower": "601/2000",
+    "scope": "rational constants in a written all-length proof; not formal verification"
+  },
+  "boundary_tail_bounds": {
+    "length": 20000,
+    "cap_each_sign": 700,
+    "retained_mass_lower": "13142/13467",
+    "edge_mass_lower": "192322177041299/197101246264461",
+    "method": "union bound and separate binomial variances; no independence of sign counts"
+  },
+  "uniform_error_budget": {
+    "target_score": "3/10",
+    "ideal_mean_lower": "601/2000",
+    "source_state_norm_error_budget": "1/80000",
+    "qft_operator_norm_error_budget": "1/20000",
+    "conditional_output_tv_upper": "1/10000",
+    "verifier_absolute_error": "1/100000",
+    "robust_score_threshold": "15001/50000",
+    "herald_probability_lower": "1599920001/6400000000",
+    "accepted_given_herald_probability_lower": "205001/349990000",
+    "accepted_per_trial_probability_lower": "327985200125001/2239936000000000000",
+    "cost_model": "each rejected source preparation is a charged trial"
+  },
+  "uniform_repetition_certificate": {
+    "per_trial_success_lower": "1/16000",
+    "trials_per_failure_bit": 16000,
+    "failure_bits": 20,
+    "maximum_trials": 320000,
+    "failure_probability_upper": "1/1048576",
+    "argument": "(1-p)^r <= 1/(1+r*p) <= 1/2 for r=16000, p>=1/16000"
+  },
+  "native_error_budget": {
+    "target_score": "3/10",
+    "ideal_mean_lower": "103459735555315854118905218338947109819/340282366920938463463374607431768211456",
+    "source_state_norm_error_budget": "1/80000",
+    "qft_operator_norm_error_budget": "1/20000",
+    "conditional_output_tv_upper": "1/10000",
+    "verifier_absolute_error": "1/100000",
+    "robust_score_threshold": "15001/50000",
+    "herald_probability_lower": "1599920001/6400000000",
+    "accepted_given_herald_probability_lower": "2625782708156571211050897112298832239658951/465216506244762706357603433027517798154240000",
+    "accepted_per_trial_probability_lower": "4201042273059644120141122518960044789173981123578951/2977385639966481320688661971376113908187136000000000000",
+    "cost_model": "each rejected source preparation is a charged trial"
+  },
+  "native_resource_structure": {
+    "length": 1024,
+    "modulus_bits": 925,
+    "cyclic_order_bits": 924,
+    "source_local_qutrit_unitaries": 1024,
+    "source_per_local_operator_error": "1/81920000",
+    "qft_binary_hadamards": 1,
+    "qft_ternary_fourier_blocks": 582,
+    "qft_two_qutrit_controlled_phase_blocks": 169071,
+    "qft_digit_reversal_swaps": 291,
+    "qft_per_block_operator_error": "1/3393080000",
+    "classical_public_preprocessing_bit_bound": "O(m*L^3), L=bit_length(3^k)",
+    "reversible_arithmetic_bit_circuit_bound": "O((m+L)*L^2 + m*log(m))",
+    "rotation_synthesis_overhead": "polylog((m+L)/epsilon) per fixed-dimension block",
+    "arithmetic_model": "schoolbook integer arithmetic; reversible computation with saved history",
+    "qft_primitive_counts_are_compiled_gate_counts": false,
+    "concrete_qubit_or_T_count_claimed": false,
+    "qft_domain_enumerated": false,
+    "qft_implementation_source": "https://arxiv.org/abs/2003.03011"
+  },
+  "quantum_optimizer_executed": false,
+  "coherent_circuit_compiled": false,
+  "kernel_checked_proof": false,
+  "classical_hardness_or_speedup_proved": false,
+  "blocked": [
+    "independent proof and novelty review",
+    "matched structural classical attacks",
+    "meaningful external reduction",
+    "concrete reversible compiler and fault-tolerant resource estimate"
+  ]
+}

@@ -1,0 +1,1106 @@
+{
+  "status": "FOLDED_BLOCK_RELATION_CONSTRUCTION_REVIEW_PENDING",
+  "source_hashes": {
+    "theorems/folded_balanced_filter.py": "075f5024e77666813d4a26598b195e30fd4438763119b6130a17ad48d40fae59",
+    "research/FOLDED_BALANCED_FILTER.md": "9e28f8ceea8949dd85f833282496ca2fe28bf3171babf480bedc8c9bfdce3fc9",
+    "research/BALANCED_FILTER_CHANNEL_AUDIT.md": "fc575b6538e880203679b70b766a9a91c75c188e5657758ee8b270a86e391a76",
+    "theorems/balanced_filter_channel_audit.py": "f41d4996a199ac2320344148b1ca5a600f74704e81284a161c66a35113d0ce77",
+    "research/EXACT_PREDICATE_CHANNEL.md": "a6417f58f1b615165dc81a229c28f387ec7169502db4d3c0c70502738896ecc8"
+  },
+  "native_budgets": [
+    {
+      "bits": 17,
+      "fold": 67,
+      "length": 289,
+      "scalar_dimension": 7261,
+      "block_rate": [
+        7261,
+        19363
+      ],
+      "radius": 147,
+      "order": 8,
+      "interpolation_degree": 1120,
+      "strict_radius_threshold": [
+        20158,
+        39015
+      ],
+      "affine_dimension_cap": 7,
+      "zero_block_cap": 108,
+      "per_candidate_sequence_success_lower": [
+        128,
+        410338673
+      ],
+      "complete_pruning_sequence_count": 168377826559400929,
+      "fallback_list_cap": 3205770,
+      "fallback_padding": 4194304,
+      "primitive_generator_list_cap": 8,
+      "primitive_generator_padding": 8,
+      "block_field_bits": 1139,
+      "eta_power_of_two_upper_exponent": -40137,
+      "eta_outward_rounded_upper": [
+        1,
+        115792089237316195423570985008687907853269984665640564039457584007913129639936
+      ],
+      "tail_exact": [
+        90040336799774045549444229445984497669923107052625568097980709899888478058132952841359,
+        248661618204893321077691124073410420050228075398673858720231988446579748506266687766528
+      ],
+      "base_multiplicative_order_is_prime_certified": true,
+      "public_irreducible_field_and_basis_still_required": true,
+      "padding_used": 8,
+      "native_success_per_attempt_lower": [
+        2913411283497914777674258176719633540106693231489182138789601629344098234854763005678700836793765816723805058088221460155630584743313253775230601893007924299023870667353322657523555947876739913332378222845605909777642079515592119701083213449718933535,
+        57277807836949922408837567867349676981443478344341305058882899404622128010705808318690568531649256750858719018437999440148793721514146753400890052083129159241025748615958424204533602522957957552490080016463490494951861107213475167230717574212948590592
+      ],
+      "native_success_lower_exceeds_one_over_64": true,
+      "ideal_output_conditioned_on_native_success_is_uniform": true,
+      "classical_accepted_completion_remaining_blocks": 109,
+      "classical_accepted_completion_success_lower": [
+        115792089237316195423570985008687907853269984665640564039457584007913129639935,
+        75153362648762663292463379097258784876021841565066235862633311089030688803667470190838367948312598497021919232
+      ],
+      "classical_accepted_completion_expected_attempts_upper": [
+        75153362648762663292463379097258784876021841565066235862633311089030688803667470190838367948312598497021919232,
+        115792089237316195423570985008687907853269984665640564039457584007913129639935
+      ],
+      "raw_value_register_bits": 329171,
+      "message_register_bits": 123437,
+      "complete_pruning_executed": false,
+      "native_receiver_executed": false,
+      "worst_case_classical_hardness_established": false
+    },
+    {
+      "bits": 31,
+      "fold": 67,
+      "length": 961,
+      "scalar_dimension": 24145,
+      "block_rate": [
+        24145,
+        64387
+      ],
+      "radius": 490,
+      "order": 8,
+      "interpolation_degree": 3724,
+      "strict_radius_threshold": [
+        13406,
+        25947
+      ],
+      "affine_dimension_cap": 7,
+      "zero_block_cap": 360,
+      "per_candidate_sequence_success_lower": [
+        207616015289871,
+        756943935220796320321
+      ],
+      "complete_pruning_sequence_count": 756943935220796320321,
+      "fallback_list_cap": 3645884,
+      "fallback_padding": 4194304,
+      "primitive_generator_list_cap": 8,
+      "primitive_generator_padding": 8,
+      "block_field_bits": 2077,
+      "eta_power_of_two_upper_exponent": -246140,
+      "eta_outward_rounded_upper": [
+        1,
+        115792089237316195423570985008687907853269984665640564039457584007913129639936
+      ],
+      "tail_exact": [
+        316018537057212140856939727664782265076433112319929475193738106076983083673618513819140835414242373733115203192399241827162947614737948400837162349341692289153967562407633183436568779074778717919436922079947757599689587403156931302514022014402385023323939994180949402509693992454729192361,
+        1218164251424999885044172798484398538859528357199375940858488307151618586345803262808201883235251282403163114528926083522932396233150386755822248412039081677441409712494559128733848706936256706044099949184902297359210699740674359368218295451933620701603467350388034693385228573748989263872
+      ],
+      "base_multiplicative_order_is_prime_certified": true,
+      "public_irreducible_field_and_basis_still_required": true,
+      "padding_used": 8,
+      "native_success_per_attempt_lower": [
+        94239347548638213259127841177926751466092268572139289100081141200055717712265083006168018734496414848586491025054087389155423417831001827960384931906051844703044513626454806191878172304258152953475376301596389620594504651780969993032826095369801193711508262767901199580594829764516991076671110923756670752681418703898380272500619948875561637359328898254321757330085208141118008782331871950155957203110977963399915093010241484267467064759708768259438276930210859133394272403946246863324360282957747498768521216069078349105067698634545451661018528465503515279671584379057100376544139362703733784012568798978319275400897978983209500741069822175478207937135,
+        1374613414718006025147529898898100234858753294994281395476098373977998549005090211869596817576688983834114398370959312168211922830678763978010475044446317051068843529665311944580074487243863033372281990037561775757915805455504759632608482459856696641932961197002054648689773349929236071925128776359459605655582072988891759799234552734704988957130942883799433123480271307849917970940674151898951221759148785725841752173783851282212213093250688923073794785280396088187191084420603400187259748589238412837008847377660614198175094590343986705413312203672330400790413819773656008978964726044994441306123310235843664521919553046965984199646683284715982544699392
+      ],
+      "native_success_lower_exceeds_one_over_64": true,
+      "ideal_output_conditioned_on_native_success_is_uniform": true,
+      "classical_accepted_completion_remaining_blocks": 361,
+      "classical_accepted_completion_success_lower": [
+        115792089237316195423570985008687907853269984665640564039457584007913129639935,
+        543885304644369509058138323509727874385503352552480689356230797517213245297512696564902402319594788524942673393916417039714897241756372213155348458256985448390483221335442656288489603072
+      ],
+      "classical_accepted_completion_expected_attempts_upper": [
+        543885304644369509058138323509727874385503352552480689356230797517213245297512696564902402319594788524942673393916417039714897241756372213155348458256985448390483221335442656288489603072,
+        115792089237316195423570985008687907853269984665640564039457584007913129639935
+      ],
+      "raw_value_register_bits": 1995997,
+      "message_register_bits": 748495,
+      "complete_pruning_executed": false,
+      "native_receiver_executed": false,
+      "worst_case_classical_hardness_established": false
+    },
+    {
+      "bits": 61,
+      "fold": 67,
+      "length": 3721,
+      "scalar_dimension": 93490,
+      "block_rate": [
+        93490,
+        249307
+      ],
+      "radius": 1897,
+      "order": 8,
+      "interpolation_degree": 14419,
+      "strict_radius_threshold": [
+        51908,
+        100467
+      ],
+      "affine_dimension_cap": 7,
+      "zero_block_cap": 1395,
+      "per_candidate_sequence_success_lower": [
+        2674244093655815109,
+        9876832533361318095112441
+      ],
+      "complete_pruning_sequence_count": 9876832533361318095112441,
+      "fallback_list_cap": 3693317,
+      "fallback_padding": 4194304,
+      "primitive_generator_list_cap": 8,
+      "primitive_generator_padding": 8,
+      "block_field_bits": 4087,
+      "eta_power_of_two_upper_exponent": -1887950,
+      "eta_outward_rounded_upper": [
+        1,
+        115792089237316195423570985008687907853269984665640564039457584007913129639936
+      ],
+      "tail_exact": [
+        5965994454676661486444727250974342610193894990837625332466484015118796712295340657191956674305184434562537827308479233441873102138882795978416065231813578604639576557408578855007788201743121175633594556715605318487043522796343725215655203666273880134121783867158260866419764488323044122523404127645994607008045469843286055452967725002077665731091888478472828873866078718503033884844922601537844892817926094639752964092563052988086422065831220585047118554289651648039397181664208605339534461125853292452751426125703529559438889264752882152990100074345665673624830708359476984411700448665766970710097428042164229612419548462276385509499496203636221438626335819085440861883644046749316707056926050226973958438627523446047355546734712930992169265727121597239739325723807433439247826886965387909468232948221344093871689177990115055517965610293894242552198492884144643349115614753717425788777300444073418526466145318744332306446728103515027336204207901706323370383871379634251457723020296532080741169683092137349623297106697373843551070880847196588478322393970889132135641246917587076047736438031912241050693647070689495151,
+        53011964731314639360170211948944612964704102539734029726489124561294504015911946159546600129546616582963686747580297614112539484367985917450348142164324479806664791755121261307082907400871008789637247661119651509692039792807470747939375057064652404230895696250498153019693037270075500145947185742012497137762341187603993810780342751781066415020030854412546101526061213859287087970134446210330531222307912639519713558202409997545945974290594682478446905781928619834106212867030902653244998157330014042622049124771863130593894113369924880293659151097629295423969359637174269958687311277493322449002501444105518888295419048006500031564348836566009998778068252026426575989164661803420268518371668415529666173159040783223084467238758535589487870699423357464258378641284552952654453813850208224121092383173756478787343283350549338900394576562244966662748241423551249690179956160560366141531351832783336434676173527012791311738766106240195615564804992735124670490648976167391935267318509459583610715725525545793272873249974372976022146124194947837868488697844608115267025917699612067770289012133451821190233555300668713992192
+      ],
+      "base_multiplicative_order_is_prime_certified": true,
+      "public_irreducible_field_and_basis_still_required": true,
+      "padding_used": 8,
+      "native_success_per_attempt_lower": [
+        256285331295979935889314145111536436103998990154270050830345782467483972884406469484107752266240942964988409371847471311388476247707592676082677177158277502635013598740260960081860011674264042532213142690678635790413348238009321407879668185790541977280309994132448226838851552390334529226986138156995629067624986025188606349574272643698434839501795009945970739180453909771298355938587073146201517811915880010833766850292740340609675515995142842419289755548190424676619723097961309137186095970935695941725954550926778022090169321103009264701688291462443061570696862807680692594165635636729251808478455489666953812329415431976127743807908393236964695291829472250791398533585208670659687788125280418452861517111223291812428326631120057325161367397809625767292956782245436978392536213512129188882033776822733865297900030465823938902744346954590590181837124192529035608743808918817316773416013130842493415277995413673094047692857730084377815287903918526437080880260808204271561315538039318298373436954183213037214173071480686851280992798954012171329918959026323993995688149578681698434600035892283861263907025544019240802869465837923464156568588892573473278508551724184720130997110104622844878638638923574143643141364648903935411787191267545860161122004474813765327624291462840433167734287523813851559237682730541575545062033286397136904862130407610746462746051443857516323257794335702231310052628310170363272792204178757018852297982861848261264557510084058270306945674469160813090332206274158593154837362298861452823906251847108804890468502419777600784367842642749167220782074108547782483477131681070227704437300668257724592714956170013430206015083270130488641075680802493098121907240788789465131319866671321898053013802043384038553374890723193187509997674688748585334747866930093777696733011011212135027570116288307302122512565267718402389012931809264192005900729572097991900178497813275800825496501805178321611151100073564094039119140628190639383743249322567952560072883273715672290849100999167318008418930002808748495351007802232668576552248730102306162152511221174113226451421127172650112344313791382494412287722730649102952046293584829885845693728661210378062476171739917061749609439505838633828725924748263718957171008704739641496012196155004631772840140772005403413381249722732659023522867580586781433330720735,
+        2603254799158712599400657208153746267350997680843989009818467170510516967973872446955866790415184133791525377116528982791718355304757950674046086580364686955751153483052192213973965365248892450650394369281802407203865463235641898911573237172680374123896733031011065929348771067524028549207571797592376356939462253744593595286946581779426092453492107538299316875412280686614748722221529743318594807186359496985577166504915030578046843584909259875139829987480591078400388721376234599041558498983414776324074270218498284819353470910229681011957626684553334023337198072652750215211025346093433537626598997620996052598113966316295078596481498552765159601852411939696042430453526248355155480962293018573965516393213491399516294312860630027271604900632954032593350912509703316137733118998272819138638675552938238063567340523001099002015346910239316297119555063053283767614922428563503158807613145334045568691401473889963770719660124839048692143622447563996284528685120376905879797776776750027793872622060518535354682425630212926533035780083790200613952508480345541447660574733276904321816180217393198823566644138094849060944599096167237523306885601837572613259160623546431961991803519707722211892926777006814330141947825328035572225997047130846145293369312910510739255236862221268932904640478756365459223250795967011317855371327622941416293830721645815898096810956651330751686566516600103164203188891312775729050135067949827400334191609917745083416991895148651472040701365681030676474500618984737426439642609294686662366872701102847876249174969509230222379713136569654861823384689484746405232144344909731254710529207689206544934872376185772446281767624315528384907747199617591163778164415942580647515807705284187039681900296097398087069359955954802406586016051870868056392801396638754906584217968235251000286667531540444519392071410348856321571978879509016989474677783042111854367851079644081172582452727296238635696698626174669396407612989497869748589567326427452220487476023136116874784922804261292032334816906022425178728037380985544841448359789957046333288326435060679970699079770708984776659402629509042997976127830652832287209585220406425647387975353561618799573504208535558862404550718637484459890455305306932382874960094956556829411430003745939085393249004491829047690702940182529352184100764175135630190425669632
+      ],
+      "native_success_lower_exceeds_one_over_64": true,
+      "ideal_output_conditioned_on_native_success_is_uniform": true,
+      "classical_accepted_completion_remaining_blocks": 1396,
+      "classical_accepted_completion_success_lower": [
+        115792089237316195423570985008687907853269984665640564039457584007913129639935,
+        200240922278232540849726515714730105038764536157843263241326864298519047086231933562215273496668093761041298528851042454791718235007112055416804169406575605100764623261288130588677796500228528044698813583690949772195586530110453666181106726392988391933338624598551178940006428705885666391817448577237735079022976862093871595317972290488337912810585672738520226426701152908988601426931493420002806674621154831296729211701424192805704157770375663448827029891741801092565772509222301608766470405226496
+      ],
+      "classical_accepted_completion_expected_attempts_upper": [
+        200240922278232540849726515714730105038764536157843263241326864298519047086231933562215273496668093761041298528851042454791718235007112055416804169406575605100764623261288130588677796500228528044698813583690949772195586530110453666181106726392988391933338624598551178940006428705885666391817448577237735079022976862093871595317972290488337912810585672738520226426701152908988601426931493420002806674621154831296729211701424192805704157770375663448827029891741801092565772509222301608766470405226496,
+        115792089237316195423570985008687907853269984665640564039457584007913129639935
+      ],
+      "raw_value_register_bits": 15207727,
+      "message_register_bits": 5702890,
+      "complete_pruning_executed": false,
+      "native_receiver_executed": false,
+      "worst_case_classical_hardness_established": false
+    }
+  ],
+  "finite_controls": [
+    {
+      "bits": 3,
+      "fold": 2,
+      "length": 2,
+      "dimension": 1,
+      "radius": 1,
+      "extension_modulus": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "base_gamma_in_extension": 22,
+      "primal_basis": [
+        1,
+        2
+      ],
+      "dual_basis": [
+        45,
+        22
+      ],
+      "trace_dual_native_annihilator_checked": true,
+      "wrong_basis_native_membership_disagreements": 896,
+      "not_extension_field_linear": true,
+      "zero_block_nonzero_message_counts": [
+        7,
+        0,
+        0
+      ],
+      "weighted_enumerator_at_one_third": [
+        7,
+        9
+      ],
+      "one_block_zero_fourier_probability": [
+        1,
+        2
+      ],
+      "old_scalar_predicates_folded_zero_probability": [
+        1,
+        4
+      ],
+      "all_targets": [
+        {
+          "targets": [
+            0,
+            0
+          ],
+          "reference_padding": 8,
+          "native_success": [
+            315,
+            4096
+          ],
+          "herald": [
+            51,
+            512
+          ],
+          "projected_rejection": [
+            333,
+            512
+          ],
+          "full_native_norm": [
+            35,
+            32
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 256,
+          "classical_completion_success_exact": [
+            35,
+            64
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              315,
+              4096
+            ],
+            [
+              29,
+              4096
+            ],
+            [
+              29,
+              4096
+            ],
+            [
+              35,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            140
+          ]
+        },
+        {
+          "targets": [
+            0,
+            1
+          ],
+          "reference_padding": 8,
+          "native_success": [
+            261,
+            4096
+          ],
+          "herald": [
+            45,
+            512
+          ],
+          "projected_rejection": [
+            339,
+            512
+          ],
+          "full_native_norm": [
+            29,
+            32
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 256,
+          "classical_completion_success_exact": [
+            29,
+            64
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              35,
+              4096
+            ],
+            [
+              29,
+              4096
+            ],
+            [
+              261,
+              4096
+            ],
+            [
+              35,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            116
+          ]
+        },
+        {
+          "targets": [
+            1,
+            0
+          ],
+          "reference_padding": 8,
+          "native_success": [
+            261,
+            4096
+          ],
+          "herald": [
+            45,
+            512
+          ],
+          "projected_rejection": [
+            339,
+            512
+          ],
+          "full_native_norm": [
+            29,
+            32
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 256,
+          "classical_completion_success_exact": [
+            29,
+            64
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              35,
+              4096
+            ],
+            [
+              261,
+              4096
+            ],
+            [
+              29,
+              4096
+            ],
+            [
+              35,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            116
+          ]
+        },
+        {
+          "targets": [
+            1,
+            1
+          ],
+          "reference_padding": 8,
+          "native_success": [
+            315,
+            4096
+          ],
+          "herald": [
+            51,
+            512
+          ],
+          "projected_rejection": [
+            333,
+            512
+          ],
+          "full_native_norm": [
+            35,
+            32
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 256,
+          "classical_completion_success_exact": [
+            35,
+            64
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              35,
+              4096
+            ],
+            [
+              29,
+              4096
+            ],
+            [
+              29,
+              4096
+            ],
+            [
+              315,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            140
+          ]
+        }
+      ],
+      "efficient_decoder_executed": false
+    },
+    {
+      "bits": 3,
+      "fold": 2,
+      "length": 2,
+      "dimension": 2,
+      "radius": 1,
+      "extension_modulus": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "base_gamma_in_extension": 22,
+      "primal_basis": [
+        1,
+        2
+      ],
+      "dual_basis": [
+        45,
+        22
+      ],
+      "trace_dual_native_annihilator_checked": true,
+      "wrong_basis_native_membership_disagreements": 126,
+      "not_extension_field_linear": true,
+      "zero_block_nonzero_message_counts": [
+        63,
+        0,
+        0
+      ],
+      "weighted_enumerator_at_one_third": [
+        7,
+        1
+      ],
+      "one_block_zero_fourier_probability": [
+        1,
+        2
+      ],
+      "old_scalar_predicates_folded_zero_probability": [
+        1,
+        4
+      ],
+      "all_targets": [
+        {
+          "targets": [
+            0,
+            0
+          ],
+          "reference_padding": 64,
+          "native_success": [
+            45,
+            4096
+          ],
+          "herald": [
+            7,
+            512
+          ],
+          "projected_rejection": [
+            377,
+            512
+          ],
+          "full_native_norm": [
+            5,
+            4
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 32,
+          "classical_completion_success_exact": [
+            5,
+            8
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              45,
+              4096
+            ],
+            [
+              3,
+              4096
+            ],
+            [
+              3,
+              4096
+            ],
+            [
+              5,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            20
+          ]
+        },
+        {
+          "targets": [
+            0,
+            1
+          ],
+          "reference_padding": 64,
+          "native_success": [
+            27,
+            4096
+          ],
+          "herald": [
+            5,
+            512
+          ],
+          "projected_rejection": [
+            379,
+            512
+          ],
+          "full_native_norm": [
+            3,
+            4
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 32,
+          "classical_completion_success_exact": [
+            3,
+            8
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              5,
+              4096
+            ],
+            [
+              3,
+              4096
+            ],
+            [
+              27,
+              4096
+            ],
+            [
+              5,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            12
+          ]
+        },
+        {
+          "targets": [
+            1,
+            0
+          ],
+          "reference_padding": 64,
+          "native_success": [
+            27,
+            4096
+          ],
+          "herald": [
+            5,
+            512
+          ],
+          "projected_rejection": [
+            379,
+            512
+          ],
+          "full_native_norm": [
+            3,
+            4
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 32,
+          "classical_completion_success_exact": [
+            3,
+            8
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              5,
+              4096
+            ],
+            [
+              27,
+              4096
+            ],
+            [
+              3,
+              4096
+            ],
+            [
+              5,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            12
+          ]
+        },
+        {
+          "targets": [
+            1,
+            1
+          ],
+          "reference_padding": 64,
+          "native_success": [
+            45,
+            4096
+          ],
+          "herald": [
+            7,
+            512
+          ],
+          "projected_rejection": [
+            377,
+            512
+          ],
+          "full_native_norm": [
+            5,
+            4
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 32,
+          "classical_completion_success_exact": [
+            5,
+            8
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              5,
+              4096
+            ],
+            [
+              3,
+              4096
+            ],
+            [
+              3,
+              4096
+            ],
+            [
+              45,
+              4096
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            20
+          ]
+        }
+      ],
+      "efficient_decoder_executed": false
+    },
+    {
+      "bits": 2,
+      "fold": 3,
+      "length": 1,
+      "dimension": 2,
+      "radius": 0,
+      "extension_modulus": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "base_gamma_in_extension": 14,
+      "primal_basis": [
+        1,
+        2,
+        4
+      ],
+      "dual_basis": [
+        37,
+        54,
+        18
+      ],
+      "trace_dual_native_annihilator_checked": true,
+      "wrong_basis_native_membership_disagreements": 6,
+      "not_extension_field_linear": true,
+      "zero_block_nonzero_message_counts": [
+        15,
+        0
+      ],
+      "weighted_enumerator_at_one_third": [
+        5,
+        1
+      ],
+      "one_block_zero_fourier_probability": [
+        1,
+        2
+      ],
+      "old_scalar_predicates_folded_zero_probability": [
+        1,
+        8
+      ],
+      "all_targets": [
+        {
+          "targets": [
+            0
+          ],
+          "reference_padding": 16,
+          "native_success": [
+            1,
+            64
+          ],
+          "herald": [
+            1,
+            32
+          ],
+          "projected_rejection": [
+            15,
+            32
+          ],
+          "full_native_norm": [
+            1,
+            1
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 4,
+          "classical_completion_success_exact": [
+            1,
+            2
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              1,
+              64
+            ],
+            [
+              1,
+              64
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            2
+          ]
+        },
+        {
+          "targets": [
+            1
+          ],
+          "reference_padding": 16,
+          "native_success": [
+            1,
+            64
+          ],
+          "herald": [
+            1,
+            32
+          ],
+          "projected_rejection": [
+            15,
+            32
+          ],
+          "full_native_norm": [
+            1,
+            1
+          ],
+          "classical_completion_remaining_blocks": 1,
+          "classical_completion_conditioned_codewords": 4,
+          "classical_completion_success_exact": [
+            1,
+            2
+          ],
+          "predicate_pattern_probabilities_per_attempt": [
+            [
+              1,
+              64
+            ],
+            [
+              1,
+              64
+            ]
+          ],
+          "exact_pattern_amplitudes_checked": true,
+          "conditional_probability_per_native_witness": [
+            1,
+            2
+          ]
+        }
+      ],
+      "efficient_decoder_executed": false
+    }
+  ],
+  "even_fold_classical_controls": [
+    {
+      "targets": [
+        0,
+        0,
+        0
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 3,
+      "full_row_rank_guarantee": true,
+      "status": "CLASSICAL_NATIVE_WITNESS",
+      "classical_advantage_claim": false,
+      "solution": [
+        0,
+        0,
+        0
+      ],
+      "syndrome": [
+        0,
+        0
+      ],
+      "predicate_values": [
+        0,
+        0,
+        0
+      ],
+      "rank": 2,
+      "zero_subfield_elements_checked": 8,
+      "zero_subfield_trace_identity_verified": true
+    },
+    {
+      "targets": [
+        0,
+        0,
+        1
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 2,
+      "full_row_rank_guarantee": true,
+      "status": "CLASSICAL_NATIVE_WITNESS",
+      "classical_advantage_claim": false,
+      "solution": [
+        22,
+        23,
+        2
+      ],
+      "syndrome": [
+        0,
+        0
+      ],
+      "predicate_values": [
+        0,
+        0,
+        1
+      ],
+      "rank": 2,
+      "zero_subfield_elements_checked": 8,
+      "zero_subfield_trace_identity_verified": true
+    },
+    {
+      "targets": [
+        0,
+        1,
+        0
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 2,
+      "full_row_rank_guarantee": true,
+      "status": "CLASSICAL_NATIVE_WITNESS",
+      "classical_advantage_claim": false,
+      "solution": [
+        35,
+        2,
+        34
+      ],
+      "syndrome": [
+        0,
+        0
+      ],
+      "predicate_values": [
+        0,
+        1,
+        0
+      ],
+      "rank": 2,
+      "zero_subfield_elements_checked": 8,
+      "zero_subfield_trace_identity_verified": true
+    },
+    {
+      "targets": [
+        0,
+        1,
+        1
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 1,
+      "full_row_rank_guarantee": false,
+      "status": "SUBFIELD_COMPLETION_INCONCLUSIVE",
+      "classical_advantage_claim": false
+    },
+    {
+      "targets": [
+        1,
+        0,
+        0
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 2,
+      "full_row_rank_guarantee": true,
+      "status": "CLASSICAL_NATIVE_WITNESS",
+      "classical_advantage_claim": false,
+      "solution": [
+        2,
+        23,
+        22
+      ],
+      "syndrome": [
+        0,
+        0
+      ],
+      "predicate_values": [
+        1,
+        0,
+        0
+      ],
+      "rank": 2,
+      "zero_subfield_elements_checked": 8,
+      "zero_subfield_trace_identity_verified": true
+    },
+    {
+      "targets": [
+        1,
+        0,
+        1
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 1,
+      "full_row_rank_guarantee": false,
+      "status": "SUBFIELD_COMPLETION_INCONCLUSIVE",
+      "classical_advantage_claim": false
+    },
+    {
+      "targets": [
+        1,
+        1,
+        0
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 1,
+      "full_row_rank_guarantee": false,
+      "status": "SUBFIELD_COMPLETION_INCONCLUSIVE",
+      "classical_advantage_claim": false
+    },
+    {
+      "targets": [
+        1,
+        1,
+        1
+      ],
+      "base_bits": 3,
+      "fold": 2,
+      "length": 3,
+      "dimension": 2,
+      "zero_target_free_base_coordinates": 0,
+      "full_row_rank_guarantee": false,
+      "status": "SUBFIELD_COMPLETION_INCONCLUSIVE",
+      "classical_advantage_claim": false
+    }
+  ],
+  "complete_pruning_control": {
+    "public_received_word": [
+      0,
+      0,
+      0,
+      0,
+      35,
+      22
+    ],
+    "points": [
+      1,
+      22,
+      35,
+      34,
+      52,
+      23
+    ],
+    "affine_dimension": 3,
+    "sequences_charged": 27,
+    "per_message_probability_floor": [
+      1,
+      27
+    ],
+    "complete_list_matches_independent_enumeration": true,
+    "results": [
+      {
+        "message": [
+          0,
+          0,
+          0
+        ],
+        "successful_sequences": 8
+      },
+      {
+        "message": [
+          22,
+          23,
+          1
+        ],
+        "successful_sequences": 8
+      }
+    ],
+    "failed_sequences": {
+      "inconsistent": 8,
+      "rank_unresolved": 3,
+      "outside_radius": 0
+    },
+    "field_enumeration_in_pruner": false,
+    "exhaustive_reference_message_count": 512
+  },
+  "external_dependencies": [
+    {
+      "url": "https://arxiv.org/html/2408.15925v3",
+      "use": "sharp list cap with verified primitive generator and strict radius"
+    },
+    {
+      "url": "https://arxiv.org/html/2508.12548v2",
+      "use": "known deterministic bit-polynomial pruning alternative, not implemented"
+    },
+    {
+      "url": "https://eccc.weizmann.ac.il/report/2012/073/",
+      "use": "known affine folded interpolation"
+    },
+    {
+      "url": "https://eccc.weizmann.ac.il/report/2018/091/",
+      "use": "received-block pruning argument"
+    }
+  ],
+  "not_a_new_decoder": true,
+  "native_quantum_execution": false,
+  "classical_hardness": false,
+  "same_as_old_scalar_problem": false
+}

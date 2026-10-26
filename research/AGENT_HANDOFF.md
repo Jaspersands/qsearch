@@ -1,5 +1,8616 @@
 # Research Agent Handoff
 
+## 2026-10-23 Classical Recovery From Target Endomorphism Transport
+
+Read SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK.md. New local classical deduction,
+REVIEW PENDING: a full EVALUABLE target End(B) basis plus its Rosati Gram
+and existing weak torsion data already recover the abstract ell-kernel.
+This is a stronger-input attack, not a break of the original weak source.
+No Hom(A,B) basis/module is constructed or needed. Prior notes that End(B)
+does not automatically supply a Hom module remain true but are not security.
+
+On each small auxiliary prime, ell*W*a*W^-1 cancels the unknown common
+unit and gives exact residues of F_a=phi*a*phi^dagger. Squared norm is
+ell^2*||a||^2. CRT with M>2*max floor(sqrt(S_a*(G^-1)_jj)) reconstructs
+the integral coefficient matrix; no projective scalar search or LLL.
+Modulo ell, its kernel is P_K={a:aK subset K}, dimension3g^2. Under Tr(XY),
+P_K^perp has dimensiong^2 and joint imageK. Keep the transpose in this
+trace pairing and verify preservation and Lagrangianity, not only ranks.
+
+theorems/endomorphism_transport_recovery.py and32 new tests implement
+coordinate-level reconstruction/recovery only. Small-prime rank checks do
+NOT certify fullness at ell. A nonsaturated suborder passes auxiliary
+checks yet fails secret-prime divisibility. Reversing phi and its adjoint
+can give a valid but WRONG kernel; source/target provenance remains vital.
+Independent masks per point are outside the input promise. A bare abstract
+order or weakly evaluable basis does not supply the required exact maps.
+
+103 selected tests PASS in0.73s, including Hom-lattice, repolarization and
+marking suites. Natural geometry, original weak-source hardness, novelty
+and the unavailable full2026/1142 theorem remain unresolved. No CLI/UI,
+central registry, commits/pushes, agents, hydration or relocation changes.
+Next pass must avoid both full Hom and target End lattice shortcuts.
+
+Live receipt: research/classical_baselines/endomorphism_transport_recovery.json.
+Primes3,5,7,13 giveM1365>2*202; the exact quaternion replay recovers kernel
+rows(1,50,0,0),(0,0,1,11) modulo61. New-file Python syntax also passes.
+
+## 2026-10-23 Siegel HSP Digit Recovery Over Odd-Residue Chain Rings
+
+Read SYMPLECTIC_CHAIN_RING_DIGIT_REDUCTION.md. Proposed local theorem,
+REVIEW PENDING: recover a free Lagrangian stabilizer from the ORIGINAL
+Sp_(2n)(R) oracle for effective odd-residue chain rings, n>=2. No field
+oracle extension or quotient-ring oracle is granted. One socle HSP learns
+Wbar; the known symplectic chart makes W=image[I;S], S in pi*Sym.
+For digit r<e-1 use A=(1+pi^(e-1-r)*t)I and subtract the FULL R-valued
+action on the known prefix. The labels become F0(X-2t*S_r), so ONE abelian
+HSP learns the whole digit. The final digit uses the old elementary-Levi
+quadratic HPGP construction. t is always in F_p, outputs use the residue
+field's F_p basis. This route does not depend on the proposed Rees core.
+
+theorems/symplectic_prime_power_digits.py implements Z/p^e public arithmetic:
+digit queries, exact verification pairs, kernel-vector postprocessing and
+symplectic Hensel lifting. Hidden digits are supplied ONLY in reference
+tests. No quantum learner or generic chain-ring backend was implemented.
+Omitting a prefix correction or reducing it modulo p destroys the fibers.
+The field unipotent-only final certificate and primitive-transvection
+membership equivalence both fail over rings; exact countercontrols added.
+
+For deepest-digit T uniform in Sym_n(k), any full-group query outside the
+common stabilizer fixes at most 1/q of the family. The common stabilizer
+is C=0 over R and Abar=+-I, NOT merely the center. Independent-path coupling
+gives success <=q^-m+Q(Q-1)/(2q) with random opaque coset labels. The bound
+has no exponential force at fixed q, does not imply efficient-source
+hardness, and is not independently certified or a discovery admission.
+
+39 new controls and213 selected tests PASS in7.55s; syntax PASS. Tests
+include all small fibers, depth7, 127-bit primes, supplied-answer recovery,
+equal-characteristic truncated-polynomial identities with nonhomomorphic
+lifts, and full residue fixed-point counts. Live Z/11^5 rank3 arithmetic
+replay recovered four digits with nine exact matrix-image pairs, using
+SUPPLIED learning answers, not an implemented HSP/HPGP solver.
+
+Next: actual source/reduction or independent proof/prior-art review. Do
+not keep extending nearby rings while the natural-source gap survives.
+No CLI/UI/central-registry changes, commits/pushes, agents or hydration.
+Lean dependencies checked by metadata remain dataless and were not read.
+
+## 2026-10-23 Bounded-Codimension Public HSP Reduction
+
+Read BOUNDED_CODIMENSION_HSP_REDUCTION.md. Local proof, REVIEW PENDING:
+explicit Lazard inputs with codim(h)<=k reduce through ordinary abelian
+HSP intersections and classical normalizers to dimension <=k(k+1)/2,
+class <=2k-1. The original class may grow but must remain below p. The
+conditional scalar-line Rees cost is 2^O(k^3 log(k+2))*poly(n,log p).
+For k<=2 use known nil-2 HSP instead of relying on the proposed Rees core.
+No growing-class black-box input conversion, novel algorithm certification,
+natural application or classical hardness was established.
+
+theorems/bounded_codimension_reduction.py implements public exact algebra
+only: frozen validated structure constants, maximal abelian ideal flags,
+normalizers, quotient tables, sections/projections and answer pullbacks.
+reduce_at_known_intersection REQUIRES the exact unknown intersection.
+Proper subsets can satisfy all public checks and lose genuine hidden
+directions. Do not advertise public checks as completeness certification.
+Exact Fourier-sample containment plus membership is a different contract;
+approximate samples require an explicit total error budget.
+
+37 new tests and125 selected tests PASS in3.32s; new-file syntax PASS.
+Includes changed coordinates, UT4/UT5, class23, noncentral K, section
+nonhomomorphism, bad Jacobi/Lazard inputs and a class-three terminal case.
+The first n3 fixture assumed a unique maximal ideal; it was corrected and
+retained as an explicit nonuniqueness control, not patched in the algorithm.
+Live n8/17/24 arithmetic returns dimension1; no hidden learner was run.
+
+The note also extends the existing succinct-polynomial stabilizer source
+to supplied matrix p-groups with p>max(D,4) and [Gamma:H]<=p^k. Matrix
+logarithm closure and the SAME globally fixed fingerprint give the input
+bridge. Existing derivative/Frobenius/Moore/orbit-module attacks remain
+mandatory; their fingerprint and orbit-module tests were rerun. No hard
+family was found. For k=1 ordinary abelian HSP already suffices.
+
+Classical collision baseline p^(k/2)*poly(n,log p) makes fixed k and
+polynomial-size p uninteresting for a superpolynomial claim. Slowly growing
+k requires an actual exponent comparison. Next work needs a useful source
+in a favorable parameter regime and novelty/proof review, not another
+parameter note or an inferred lower bound from these upper bounds.
+GPT changed no CLI/UI/central registry, made no commits/pushes, launched
+no agents and did not hydrate, repair caches or move the iCloud folder.
+
+## 2026-10-23 Native Completion Sampling Transfer
+
+Read INVERSE_TRACE_COMPLETION_TRANSFER.md. New local proof, REVIEW PENDING:
+the residual restriction transfers approximate UNIFORM sampling, not just
+search. Exact residual completion yields full TV<=sqrt(v_U)/2+sqrt(v_U*v_T).
+A fixed capped residual kernel with average error epsilon under UNIFORM
+syndromes adds epsilon+sqrt(v_T)/2 for the actual prefix-induced law.
+All aborts remain in the output distribution. No completion counts are
+assumed available. A witness-only solver cannot be substituted.
+
+New tests/test_inverse_trace_completion_transfer.py has38 exact controls,
+including empty full fibers, empty residuals, biased deterministic witnesses,
+prefix-adaptive bad kernels and genuine bounded F16 Vandermonde histograms.
+65 selected tests PASS in1.32s; new-file syntax PASS. The output-level test
+initially attempted to normalize an empty target fixture; it now explicitly
+asserts no target/ABORT. No scalable residual sampler was implemented.
+Bound-only n17/31/61 calculations are NOT native executions.
+
+Cheng2610.06445v1 concerns sums of inverses, not pointwise inverse traces;
+it does not construct the missing correction spaces. Previously read
+odd-field norm attacks and reciprocal parametrizations do not close the
+prime-degree residual task. Next useful work must deliver a solver or an
+independently validated useful source, not another adjacent counting bound.
+GPT made no CLI/UI/central-registry/Git changes and started no agents or
+background jobs. Required Lean dependencies remain dataless; no hydration,
+cache repair or relocation. The user's download/move plan is unchanged.
+
+## 2026-10-23 Classical Projective Reconstruction With A Supplied Hom Lattice
+
+Read SIEGEL_HOM_LATTICE_BASELINE.md. A full evaluable Hom(A,B) lattice and
+positive integral Rosati Gram matrix turn weak auxiliary torsion images
+into projective coefficient congruences. Integer lattice reduction plus
+the strict exterior-product certificate M^2>S*W recovers the primitive
+isogeny coefficients up to one global sign. The input-independent LLL
+budget is M^2>2^(D-1)*S^2. This is a classical attack on THAT STRONGER INPUT,
+not a break of the original weak model lacking the Hom lattice.
+
+With compatible right End(A)-module action, compute alpha -> phi*alpha
+modell. Its kernel consists of matrices with columns in ker(phi); their
+column span recovers the abstract kernel. Do not swap multiplication order,
+grant target module data for free, or equate compact evaluation with a
+geometric large-prime torsion basis. The note supplies the exact additional
+module-construction contract; no geometric module backend was implemented.
+
+New theorems/projective_lattice_reconstruction.py checks Gram positivity
+and LLL certificates in EXACT rational arithmetic, then checks primitive
+marks, norm and strict separation. UNKNOWN does not imply hardness.
+23 new tests and71 selected tests PASS (0.47s); new-file syntax PASS.
+Live16-coordinate quaternion fixture: M440895, norm244, expected coefficients
+recovered. No full-repo, geometric or quantum execution; no CLI/UI/registry,
+Git, agent, hydration, cache-repair or relocation changes. No live job remains.
+
+The full2026/1142 conversion theorem remains unread/unavailable; all three
+author pages link back to ePrint. Do not convert that into inapplicability.
+The existing formal/ project and ~/.elan toolchain were located; Lean is
+outside PATH and requisite Mathlib artifacts are still dataless. Do not
+claim a missing installation or compiled Rees proof. The user's download
+and later folder-move plan remains unchanged. Gemini may integrate this
+baseline only behind its explicit supplied-lattice input contract.
+
+## 2026-10-23 Quadratic Rank-One Source Audit: A Dihedral Problem Remains
+
+Read REES_QUADRATIC_SOURCE_TRIAGE.md. The public isometry-group hiding
+tuple uses d(d+1)/2 evaluations of the original hidden quadratic function,
+with inverses fixing the left-coset convention. This source construction
+alone is NOT a solver. Its symmetric rank-one probe has hidden subgroup
+{I,reflection}; the full scalar-affine probe and generalized dihedral HSP
+simulate one another with one query and polynomial field arithmetic.
+Odd-characteristic inversion prevents nilpotency. The alternating-form
+contrast hides an abelian line and is not a new primitive.
+
+New tests/test_quadratic_rank_one_probe.py checks exact intersections,
+both directions of the coset-coordinate equivalence, and the lower-central
+obstruction.16 new tests;91 selected tests PASS in0.72s; syntax PASS.
+No executed quantum algorithm, fresh oracle benchmark, candidate admission,
+qsearch/UI/Git write, new agent, hydration or relocation. No live job remains.
+
+Do not wire this probe into the Rees receiver as a solved application.
+The core audit found no new flaw but did not independently certify Rees.
+Existing HDQI predecessor/qutrit notes already cover the other source
+ideas checked in this pass. Continue with a materially new constructive
+bridge, the native residual solver, or independent/formal proof validation;
+avoid adding another nearby source wrapper without removing its blocker.
+
+## 2026-10-23 Mask-Robust Classical Attack And Completed Independent Review
+
+Read INVERSE_TRACE_MASK_CLOSURE.md and the independent review's final
+FINDINGS.md (review closed03:27:20 Sydney). The review's existing native
+attacks are historical results, not newly executed scripts in this pass.
+
+New deduction: for H MDS over F_(2^n), independent uniform binary coordinate
+masks, and known accepted m-subspaces on z zero-target coordinates, the
+expanded classical correction map is full rank except with probability
+<=2^(nK-mz). For even n, m=n/2 from the proper subfield. The exact first
+moment uses the MDS weight enumerator; all syndromes are covered once rank
+is full. Adaptive zero supports pay a binomial factor. H must be fixed
+independently of the mask draw. A deterministic rank test remains valid on
+arbitrary masks; failure of this ansatz is UNKNOWN, not hardness.
+
+Scalar/Frobenius/translation masks also inherit the review's stronger
+unmasked guarantees by exact normalization. Arbitrary totalized Mobius
+maps do NOT automatically inherit them: the pole can change the bit.
+Native-size masked fixtures n=6,8,10 verify original parity and predicates;
+small exhaustive controls verify the first moment and its assumptions.
+
+New files: research/INVERSE_TRACE_MASK_CLOSURE.md,
+theorems/binary_subspace_correction.py, tests/test_inverse_trace_mask_closure.py.
+27 new tests PASS (0.17s); 75 selected tests PASS (0.56s); new-file syntax
+PASS. No whole-repo, geometric or quantum execution, central admission,
+qsearch/UI/Git writes, agents, hydration or relocation. Gemini integration
+contract is at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+Next theory: a constructive residual solver or useful native reduction,
+not another mask/barrier variant. The proposed Rees parameter extension
+was already covered; do not count it twice. Isogeny repolarization still
+needs a verified model-conversion theorem, not an abstract-only citation.
+
+## 2026-10-23 Elementary Action Lifts: Missing Polarized Model, Not Smooth Lifting
+
+Read SIEGEL_ELEMENTARY_REPOLARIZATION.md. For A=E^g, g>=2, known End(E),
+Sp_(2g)(F_ell) matrices lift to actual degree-one UNPOLARIZED automorphisms
+by cross-factor quaternion elementary matrices and same-factor commutators.
+The transformed map psi=phi*sigma^(-1) is easy to evaluate weakly. Its
+correct principal polarization on the SAME underlying B is lambda_B*H,
+where T=(sigma^dagger*sigma-I)/ell is integral and H=I+phi*T*phi^dagger.
+Unknown common unit scalars cancel in H's accessible-torsion conjugation.
+This is a proposed constructive source lemma, NOT a complete hiding oracle.
+
+New22 exact quaternion tests cover lifts/inverses, corrected polarizations,
+scalar cancellation and two failed labels. Raw H/markings can change even
+for identical kernels; arbitrary local torsion/pairing isomorphisms exist
+even for different kernels, while the proposed global map has an actual
+ell-adic denominator. Neither shortcut supplies exact coset labels.
+Combined selected validation:179 tests PASS in1.99s; Python syntax and
+targeted whitespace checks PASS. No full-repository or geometric run.
+
+NEXT: full theorem audit of2026/1142 (Corte-Real Santos/Piasecki/Wesolowski)
+for conversion from this polarization evaluator to an efficient PPAV model.
+Its abstract and author's earlier slides were read; the paper PDF returned
+403, so neither applicability nor inapplicability is established.2026/276
+requires target module data;2601.18050 distinguishes good/effective target
+ring data. Do not silently grant either. No more nearby lift/marking variants
+unless they close this exact conversion. If it needs the secret target data,
+pivot to an independent constructive direction. Gemini handles integration;
+no central admission, UI/qsearch/Git writes, hydration or relocation here.
+
+## 2026-10-23 Constructive Marked-Source Rigidity, Not An Oracle Compiler
+
+Read SIEGEL_MARKED_SOURCE_RIGIDITY.md. New source-separation deductions:
+for principally polarized g-folds and multiplier-d isogenies (degree d^g),
+full exact auxiliary CRT markings distinguish kernels when M^2>8*g*d.
+For unknown common UNIT scalars per full basis/order, projective markings
+work at M^2>8*g^3*d^2. The latter proof removes the scalar component of
+alpha=phi^dagger*u^(-1)*psi via beta=2g*alpha-Tr(alpha)*I, then uses positive
+integral Rosati norm and M-divisibility. These are proof objects, NOT free
+inputs to a learner. Markings avoid the secret large-prime torsion, but
+their own availability and all evaluator costs must still be paid.
+
+Three sharp countercontrols constrain an implementation. Gaussian maps
+6+5i and6-5i (multiplier61) have different kernels but identical weak marks
+at orders(4,3,5), despite passing the EXACT threshold. Adding11 passes the
+strong PROJECTIVE threshold, yet canonicalizing each order independently
+still merges them by incompatible codomain automorphisms. Finally, dropping
+polarization allows actual degree-one Gaussian automorphisms to match
+EXACT markings for ANY auxiliary M coprime to61*101; an explicit elementary
+matrix formula supplies them. One shared POLARIZED isomorphism across all
+levels is essential. Per-point scalars or nonunit scalars are also unsound.
+
+New theorems/siegel_marked_source.py is only an integer bound/coprimality
+checker. strict_separation is NOT an oracle-feasibility or admission flag.
+New tests/test_siegel_marked_source.py has26 exact FLINT controls; no actual
+quotient variety, torsion point, isogeny oracle or quantum learner was run.
+The combined selected milestone passes157 tests (26 new); new-file syntax
+and targeted whitespace checks pass. This is not full-repository validation.
+
+Source papers rechecked: Milne I.10.9/I.10.20/I.14.3 for integral trace and
+Rosati positivity; Chen et al.2305.19897 for weak representations/action
+separation; Robert2024/1071 Cor5.22/AppA for known HD representations and
+accessible CRT torsion. No novelty claim. Efficient elliptic interpolation
+is not a new algorithm here, nor automatically an explicit large-prime
+kernel basis. Random-label hardness does not transfer to geometric labels.
+
+NEXT: attempt a genuine transformed polarized-quotient evaluator plus a
+single jointly marked canonicalizer from a concrete weak-input model.
+Audit changed polarizations under proposed action lifts first. If no such
+construction emerges, stop extending nearby rigidity bounds and pivot to
+an independent constructive direction. No qsearch/UI/central-registry/Git
+writes, new agents, hydration or relocation. iCloud download plan unchanged.
+
+## 2026-10-23 Field-Only Siegel Reduction And Full-Oracle Classical Bound
+
+Follow-on SOURCE AUDIT: read SIEGEL_NATURAL_SOURCE_AUDIT.md. Accessible
+torsion basis + coherent isogeny evaluation already allows abelian HSP
+kernel recovery. Unmarked quotient codomains do NOT universally label
+kernels injectively: a polarized automorphism of E x E at 3-torsion moves
+a Lagrangian while inducing isomorphic quotients. The linear witness is
+tested; no numerical isogeny evaluator was run. A concrete weak-input
+marked-label source lemma is the next useful question, not a new benchmark.
+
+Read SYMPLECTIC_FIELD_CHART_REDUCTION.md. A proposed constructive route now
+addresses Sp_(2n)(F_q), n>=2, q odd, directly: randomize the hidden Lagrangian
+into the graph chart [S;I] (probability >1/2), query actual U_X D_t matrices,
+and learn n degree-two hidden polynomial graphs. For q=p^a use t in F_p and
+a*m output coordinates, m=n(n+1)/2, so the published Ivanyos--Santha Cor6
+applies without an extension-field theorem. Source Q=-P; negate before
+row recovery. This is NOT the old invalid additive whole-Lie oracle and
+does not require the prime-square input or the unreviewed Rees theorem.
+
+Bad charts can pass EVERY local polynomial certificate: W'=L0 makes all
+probe labels constant. Mandatory final certificate queries the unipotent
+radical of the C*[S_hat;I] candidate against f(I). Invariance of an n-space
+under these operators forces it to be that candidate. m field-basis
+queries plus f(I) suffice even over extensions, by F_q-LINEAR invariance;
+do NOT claim the m elements generate the entire additive radical over F_p.
+Bad-chart HPGP runs need polynomial caps; retry with independent charts.
+
+New proposed classical lower bound permits arbitrary adaptive queries
+anywhere in Sp, not only the chosen probes. A noncentral block matrix fixes
+at most 2/q of the uniform symmetric graph secrets, by a degree-two
+polynomial identity. Independent lazy-label coupling, quotienting out
+the known center, gives success <= q^(-m)+Q*(Q-1)/q. Thus Omega(sqrt(q))
+queries are needed for random opaque labels. This is strong for growing q,
+NOT at fixed q, and NOT for labels exposing the image subspace. A natural
+efficient oracle/source and a meaningful computational reduction remain
+missing. No novelty, cryptanalytic result or central speedup admission.
+
+New theorems/symplectic_field_chart.py is public arithmetic/certificates,
+NOT a quantum solver. tests/test_symplectic_field_chart.py has26 exact
+checks: full small fibers, all40 rank-two F3 Lagrangians including bad
+charts, extension F9 arithmetic via FLINT, large primes, and center-aware
+classical-bound controls.131 combined milestone tests and new-file syntax
+checks PASS. No full-repository or quantum execution claim.
+
+Next theory work: independent entire-proof/prior-art review and an explicit
+useful input source. Do not substitute more nearby group variants or a
+synthetic random-label benchmark. Mechanical integration remains Gemini's
+task; see MECHANICAL_FOLLOW_UP_PLAN.md. User's iCloud download/move plan is
+unchanged; no relocation/hydration, Git writes, agents, UI/qsearch edits or
+central registry mutations were performed.
+
+## 2026-10-23 Prime-Square Symplectic Reduction And Cut-List Corrections
+
+Read SYMPLECTIC_PRIME_SQUARE_REDUCTION.md and PARABOLIC_CUT_LIST_CORRECTION.md.
+This is a CONSTRUCTIVE proposed algorithm for a different structured input,
+not another Rees bound variant: Sp_(2n)(Z/p^2), odd prime p, n>=2, ordinary
+oracle hiding a FREE Lagrangian stabilizer. The actual socle map X->I+pX
+gives an abelian oracle for the reduced stabilizer algebra. Trace duality
+recovers Wbar; a checked symplectic lift standardizes it. Legal elementary
+Levi queries then give F0(X+tB+t^2C) with INJECTIVE F0, so the PUBLISHED
+growing-output-dimension HPGP theorem (Ivanyos--Santha Corollary6) learns
+the remaining symmetric graph matrix. n calls suffice, each costing its
+full polynomial HPGP budget. No dependence on the unreviewed Rees theorem.
+
+There are exact ordinary-oracle verifiers for the learned Wbar and each
+degree-two polynomial. Test both t=1,-1, not just one. Ring representatives
+are NOT a homomorphism; the proof uses actual orbit fibers instead. Rank
+one is excluded for a real reason: distinct lines over Z/9 have identical
+SL2 stabilizers. Characteristic two, nonsplit modules, and field-only
+oracles are outside this result. No novelty/classical hardness/cryptographic
+application or full quantum execution is claimed.
+
+NEW public arithmetic module theorems/symplectic_socle_probes.py and two
+standalone test files: test_symplectic_socle_probes.py (23 checks) and
+test_parabolic_cut_scope.py (7 checks). These validate query matrices,
+full small fibers, exact verifiers, and falsifiers. They are NOT HSP/HPGP
+solvers. The actual source P has the opposite sign to HPGP's Q=-P.
+
+The old October11 cut list contains real errors: q^k is not polynomial in
+log(q) in general; the orthogonal maximal-isotropic reflection sampler
+accepts nothing; the unitary odd-dimensional maximal-isotropic sampler
+cannot span the claimed complement. Commutant dimension and per-outcome
+Fourier bounds do not establish the asserted general gate lower bounds.
+Four historical notes now carry overriding corrections. Gemini must trace
+and correct affected registry/report claims; no central record was edited.
+
+The native conic/restriction/Fourier-sampler review notes were read; they
+did not yield a new classical inverse-trace solver. Coherent decoder hygiene
+was already covered by a deterministic construction and was not rebuilt.
+Do not present that preliminary exploration as a new result.
+
+iCloud note retained: user plans to move the folder after downloading.
+Some files are now resident, including negative_results.json and
+prime_character_opi.py; jet_oracle_homogenization.py is still dataless.
+No hydration/relocation, Git writes, UI/qsearch edits, agents or outreach.
+Validation:30 new focused checks,105 combined milestone checks (including
+the preceding75 Rees/source checks), and Python syntax pass. No full
+repository integration or quantum execution claim.
+
+## 2026-10-23 Direct Prime-Power Descent With Paid Rejection
+
+Read PRIME_POWER_REES_DESCENT.md and manuscript Section "Direct descent
+for explicit prime-power Lie rings". This is a proposed direct explicit
+Lie-ring route, NOT an extension of the already claimed unrestricted-rank
+fixed-class outer theorem. Its distinct bound is fixed-parameter time in
+(class c, derived ADDITIVE generator rank r), uniform in additive exponent:
+[4(c+1)]^((c-1)r)*poly(explicit bits,log(1/epsilon)). No novelty or useful
+application claim. The older outer method remains preferable at large r.
+
+Key mechanism: highest-grade cyclic factors have labels uniform on a cyclic
+annihilator. Use a zero label, or a batch of nonzero equal-valuation labels.
+Normalize measured integers, solve the known scalar FIELD equation and
+Hensel-lift one regular unit coordinate. Other batches are discarded and
+paid. Acceptance>=1/4 independent of exponent. Successful complete records
+give exactly the same quotient source. The whole random tree has a global
+Markov cap, not uncharged per-node retries; canonical HNF repetition gives
+logarithmic error amplification. This is NOT a general ring SDE solver.
+
+New exact countercontrols matter: a nonunit scale can cancel phase but give
+a false whole-group output at trace distance2/3; (1,3,9) modulo27 has NO
+unit/zero cancellation at degree2; reducing divisible labels directly modp
+is wrong. Mixed-order Rees interpolation retains a nonfree grade of order3
+inside a Z/9 Lie ring. Derived cyclic rank1 does NOT bound class: [x,y]=5y
+overZ/5^4 has class4. Do not reuse the field c<=r+1 bound or vector ranks.
+
+NEW theorems/prime_power_rees_descent.py and tests/test_prime_power_rees_descent.py.
+The module plans batches, verifies/lifts PROVIDED field witnesses, computes
+exact ideal probabilities, and reports conservative clocks. No scalar
+solver, general ring chart compiler or receiver is implemented.27 new tests;
+75 combined tests PASS(0.59s), syntax/whitespace checks pass, manuscript
+compiles after one stale-project retry. The first test run only exposed a
+NumPy Fraction-vs-float comparison issue; the actual distance was2/3.
+Standalone clock calculation: p5,c3,ranks(2,1),7 terminal samples gives
+24,192 expected-original-input upper bound and387,072 per-run hard cap.
+These are theoretical bounds, NOT measured quantum execution or success.
+
+Dependencies prime_character_opi.py and jet_oracle_homogenization.py remain
+compressed,dataless. No hydration, relocation, full integration claim,
+Git writes, qsearch/UI/central-registry admission, agents or outreach.
+The existing prime-field BCH API must NOT receive p^E as its "prime".
+
+The native classical fixed-numerator question was examined first this pass;
+the Patterson/key-equation analogy did not supply its unknown coupled
+reconstruction. No solver or general negative claim resulted. This ring
+extension does not fill that gap. Do not continue producing label variants
+or resource-bound variants by inertia; an actual application, decisive
+classical construction, or independent whole-proof refutation remains needed.
+
+## 2026-10-23 Uniform Derived-Dimension Corollary
+
+Completed a substantive but LIMITED extension of the proposed Rees argument.
+Read DERIVED_RANK_REES_EXTENSION.md and the new section in the review
+manuscript. For EXPLICIT Lie input, r=dim[L,L], c<p, public scalar-line
+central descent gives 2^O(r^2 log(r+2))*poly(input,log(1/epsilon)) time,
+with polynomial exponent independent of r. It does not prove unrestricted
+growing-class efficiency or transfer to the opaque-input outer reduction.
+
+Per-final-source factor is product_(d=2..c)(gcd(d,p-1)+1)^dim(gamma_d).
+The generic bound uses d+1 instead. Every public line in the highest
+remaining grade is central and dilation invariant; the all-record descent
+lemma covers unknown central intersections. The dependency is the known
+UNIFORM scalar diagonal theorem (Ivanyos--Santha Fact2), not an unjustified
+uniform import of their fixed-degree multi-equation theorem. A new BCH
+evaluator uses polynomial bracket convolution and the standard inverse-dexp
+ODE, with exactly(c-1)c(c+1)(c+2)/6 bracket calls. No free-Lie word expansion.
+
+NEW theorems/uniform_bch_rees.py and tests/test_uniform_bch_rees.py contain
+that public arithmetic, scalar-witness verification/conversion, exact
+fresh-source tree budgets and independent matrix controls. These are NOT
+a scalar solver or quantum receiver.39 new tests pass, including genuine
+class12 and a127-bit prime; with9 previous source-bank tests,48 pass(0.42s).
+Python syntax and targeted whitespace checks pass; the manuscript compiles.
+No complete receiver integration is claimed. Both prime_character_opi.py
+and jet_oracle_homogenization.py remain compressed,dataless; no import or
+hydration was attempted during validation. No Git writes, qsearch/UI or
+central-registry changes, agents, automations, outreach or cloud relocation.
+
+Do NOT overstate this: r bounds c already, so fixed-r tractability follows
+in weaker form from the old fixed-class result. The contribution here is
+uniform explicit parameter dependence and arithmetic, not a new primitive
+or novelty certificate. Small-commutator enumeration costs polynomial in
+p^r, which is a different bound, but this comparison is not a literature
+exhaustion. The class12 example still costs over3e28 original inputs for16
+final sources at p47. Padding with abelian directions is not an application.
+
+Next work should return to an actual algorithmic consequence or decisive
+native classical construction. Do NOT start a scalar-line benchmark,
+parameter-optimization, or nearby-wrapper campaign merely because these
+controls pass. Gemini integration instructions are in the newest mechanical
+follow-up entry; central admission remains prohibited without real evidence.
+
+## 2026-10-22 Coset-Center Correlations: A Precise Source Extension
+
+Constructive source-contract correction in REES_COPY_ONLY_OUTER_REDUCTION.md
+Section2a, cross-linked from REES_HSP_REDUCTION.md and included in the review
+manuscript. Independent uniform LEFT translations turn any coset-diagonal
+bank into IID rho_H, even for biased/identical/classically correlated centers.
+The proof includes quantum side information when the whole joint state has
+the specified coset-diagonal form. No H, source inverse, new source copies or
+index postselection is needed. Public uniform group sampling is charged;
+translation coins are independent of the source and ignored afterward.
+
+The existing uniform-address controlled-right-action/target-discard channel
+IS this left twirl on every input operator. Its multi-target lift already
+ignores classical coset-center correlations. The extension can therefore
+reuse the existing IID proof and copy budgets; no new production module,
+CLI, registry gate or decoder was added. It is standard twirling, NOT a
+new algorithmic primitive or independent verification of the Rees theorem.
+
+Important falsifier: a SEPARABLE mixture of opposite Fourier charges over
+C_p has exact rho_{0} marginals, is unchanged by independent left twirls,
+yet produces |G><G| rather than I/p under the two-evaluation lift. Exact
+trace-distance error is1-1/p. Thus separability and one-copy tomography
+are insufficient; this is not merely an entanglement problem. Shared coins,
+retained conditioning records and right rather than left twirls also fail.
+The promise is not automatically certified for any existing source.
+
+NEW tests/test_coset_bank_refresh.py:9 independent NumPy channel tests PASS
+(0.23s), including all64 complex D8 matrix units and nonnormal H, correlated
+centers with quantum side information, two p3/p5 character-bank controls,
+and joint-error accounting. Python syntax passes. The review manuscript
+compiled successfully in the desktop compiler. Its compile is document
+validation, NOT formal proof. One initial guessed wrong-side distance
+threshold failed; the exact D8 distance1/4 is now asserted and passes.
+
+No full receiver/integration suite was run: prime_character_opi.py is now
+compressed,dataless. It was not imported or hydrated. No existing source
+claim was promoted, no native receiver ran, and no Git/CLI/UI/central-registry,
+cloud relocation/repair, agent or outreach action was taken. The raw bank
+still must supply ALL consumed registers; this does not clone samples or
+fix a coherent/frozen-noise source. Next substantive work should seek an
+actual algorithm/application or a decisive native classical construction,
+not another source-wrapper variant without a specific need.
+
+## 2026-10-22 Follow-On Theory Checkpoint
+
+Read the newest RESEARCH_PRIORITY_DECISION.md entry. This pass found NO new
+native solver, hardness result, or flaw in the proposed Rees composition.
+It checked normality/accepted-flat imports, fixed-numerator reconstruction,
+the Rees proof and its diagonal-solver dependency, and the scope of the
+recent cyclotomic-coset result. It did not create an implementation merely
+to package these inconclusive checks. No algorithm/status admission follows.
+
+Important: a constant flat in one predicate level set is not a construction
+for both arbitrary target bits; sufficient local dimensions are not global
+syndrome rank. The F32 no-3-flat control does not exclude floor(n/2) flats
+generally. No missing scalable accepted-flat theorem was found or disproved.
+The target-dependent fixed-numerator reconstruction remains unresolved.
+
+Only this handoff and RESEARCH_PRIORITY_DECISION.md changed at this checkpoint.
+No tests or native workflows were rerun; the113-test checkpoint below belongs
+to the preceding implementation pass. No Git, CLI/UI/registry, cloud repair,
+relocation, agent, automation or outreach action was taken. Respect the user's
+plan to move the directory after download; skip compressed,dataless files.
+
+## 2026-10-22 Exact Uniform Output, Fixed Syndromes, And A Classical Sampler
+
+Two completed theory passes. Read EXACT_PREDICATE_CHANNEL.md and
+NATIVE_LATENT_SAMPLER.md before the older entries. The separate review in
+independent_review_2026_10_22 supplied the exact pattern identity and the
+native latent-mixture idea; it was independently reconstructed and tested,
+not treated as authority. Those review files were NOT edited.
+
+QUANTUM RESULT: on the 2^N support-pattern subspace, the compressed Gram
+operator has eigenvalues lambda_c=M*2^N*|A_c|/V. For a support mask m,
+paid pattern mass is lambda_c*|k_m(b+c)|^2/P. With radius retained mass tau,
+native success is EXACTLY lambda_b*tau^2/P and its ideal conditional output
+is exactly uniform on A_b. This is a charged fixed-P full-list construction,
+not free coalescence. Scalar native bounds now exceed1/9; folded bounds are
+.0508646/.0685570/.0984480, all>1/20. The old weaker bounds below are valid
+historical estimates, not the current certificate. NO native circuit ran.
+
+The public-offset construction extends this to EVERY FIXED syndrome Hx=y:
+solve Hx0=y, translate accepted roots before Fourier preparation, run the same
+decoder/projection, then add x0 to the readout. This preserves the bounds
+and uniformity; it is not syndrome averaging or supplied witness advice.
+All128 target/syndrome pairs of F4,N3,K2 are checked at signed-amplitude
+level. Also checked648 signed support masks, every compressed-Gram entry,
+empty/zero-amplitude fibers, equivalent offsets, and physical countercontrols
+where branch-dependent padding or label-dependent filtering breaks uniformity.
+The existing32 scalar and10 folded target controls now check every amplitude.
+
+NOVELTY CORRECTION: primary papers checked online this pass confirm that
+Jo arXiv2607.16541v2 Theorem5.2/Remark5.3 ALREADY supplies fixed-padded list
+projection and its normalization warning. Horinaga--Yamakawa arXiv2607.14650
+Theorem5.1 is a generic worst-case prime-power theorem whose hypotheses the
+scalar estimates provide. Do not call the primitive or generic mechanism
+new. The explicit predicate analysis is at most a candidate specialization;
+its novelty/significance are not established. Folded codes must retain the
+F_q-scalar/E-block distinction, not silently import an E-linear theorem.
+
+CLASSICAL RESULT: sample the exact latent active-constraint law truncated
+to at most N-m constraints, where m=K scalar or ceil(K/s) folded. MDS gives
+exactly uniform projections; trace-hyperplane draws and a public pivot solve
+give uniform conditional native words. The scalar sampler is executable
+without a field table. Direct integer truncated-binomial sampling is polynomial
+even when the retained mass is tiny: only OPTIONAL rejection sampling costs
+its reciprocal. The failure near search temperature is wrong output law,
+not inability to draw the truncated latent distribution.
+
+Writing p=(T-1)/(T+1), theta=(T-1)/T for temperature base T, t=Pr[Bin(N,p)
+<=N-m], h=Pr[Bin(N,theta)<=N-m], Zbar the exact partition ratio:
+TV<= (1+eta)*(1-t)/(1+eta*(1-t)); native-event capture ratio is Zbar*h/t.
+The sampler's success is <=lambda_b*2^-m, never better than systematic
+accepted completion. At scalar effective rate1/8, 8<T<15 is a witness-blind
+window: exponentially accurate TV yet exponentially vanishing relative
+native-event capture. Folded rate3/8 gives8/3<T<13/3. At n61 the certificates
+give scalar T10 TV<=2^-68/capture<=2^-20; folded T3 TV<=2^-174/capture<=2^-24.
+At T=N the ideal native event is constant but the sampler's is exponential.
+This is NOT an all-classical lower bound, nor a full dequantization of search.
+
+IMPLEMENTED / UPDATED:
+- theorems/balanced_filter_channel_audit.py: exact law, fixed-syndrome registers,
+  sharper budgets; research/reductions/balanced_filter_channel_audit.json.
+- theorems/folded_balanced_filter.py: exact signed-amplitude checks and bounds;
+  research/reductions/folded_balanced_filter.json.
+- NEW theorems/native_latent_sampler.py and
+  research/classical_baselines/native_latent_sampler.json: exact certificates,
+  constructive scalar completion,96 finite mixture controls,18 native budgets.
+- NEW tests/test_exact_predicate_channel.py (18 tests) and
+  tests/test_native_latent_sampler.py (15 tests); existing channel/folded tests
+  updated. Both new proof notes and the earlier channel/folded notes updated.
+
+VERIFIED:113 available connected tests PASS,11 native-backend checks excluded
+(29.31s). The scalar conditional sampler exhausts224 choices of active set,
+target and syndrome, and ALL their random free choices; no frequency plot
+substitutes for uniformity. Three live reports regenerated;15 source/proof
+hash bindings match. Python compile and all12 site-JS syntax checks pass.
+Full suite/qsearch registry validation NOT passed: explicit_quadratic_opi.py
+and negative_results.json remain compressed,dataless. No cloud repair,
+relocation, Git writes, qsearch/UI/central-registry edits, agents or native-size
+receiver/sampler runs. The user will move the repo after its cloud download.
+
+NEXT SCIENCE: a constructive conditional solver when N-O(1) native predicates
+are active, a useful adaptive transport/completion method, or a meaningful
+natural reduction/application. The theorem does NOT exclude these. No more
+mask/rate/padding constants, reimplementation of known decoders, generic
+sampler infrastructure or nearby restricted barriers by inertia. A correct
+ideal sampler for an engineered total relation is not a Shor-level result.
+
+
+## 2026-10-22 Folded Balanced Relation: Rate3/8, Classical Caveats
+
+Completed FOLDED_BALANCED_FILTER.md, theorems/folded_balanced_filter.py,
+tests/test_folded_balanced_filter.py and reductions/folded_balanced_filter.json.
+This resolves the PREVIOUS UNVERIFIED folded sketch as a local constructive
+proof with independent finite checks, not a speedup/novelty claim. External
+mathematical review is still pending. It is a DIFFERENT explicit input family:
+ONE inverse-trace predicate per extension-field block, not folded old scalar
+predicates. The older prime-character folded source/decoder already exists;
+do not duplicate it. Its source file is currently dataless, not read/replayed.
+
+Native E=F_(q^s), q=2^n, H has K scalar Vandermonde rows on sN powers of gamma.
+Primal block basis B and decoder basis B* MUST be trace-dual. D is F_q-linear,
+not generally E-linear. Fixing t zero blocks leaves q^max(K-st,0)-1 nonzero
+messages. Thus eta<=q^K*(beta+(1-beta)/q^s)^N with beta~2/sqrt(q^s), allowing
+every fixed decoder rate K/(sN)<1/2 in the norm bound. The paid full-list
+projection handles ambiguity; no nonzero-symbol point-mass premise is used.
+
+Known folded interpolation yields an affine space of dimension<=r-1.
+Enumerate ALL N^(r-1) received-block sequences to prune it completely, not
+q^(r-1) message coefficients. For a agreeing blocks, Z=floor((K-1)/s),
+p=(a-Z)/N, the existing pruning argument bounds list size by floor(p^-(r-1)).
+This bound is constant at fixed gaps; cap it by q^K before padding. It is a
+sufficiency proof, not a new decoder or an executed native receiver.
+
+Literature refresh: Chen--Zhang arXiv2408.15925v3 gives sharper list cap r
+at the stated strict FRS radius; retain a verified PRIMITIVE gamma for that
+import. Ashvinkumar--Habib--Srivastava arXiv2508.12548v2 Theorem3.5 supplies
+a known deterministic bit-polynomial pruning alternative. Do not reimplement
+it as GPT work. Exact Lucas--Lehmer certificates show 2^n-1 prime at n17/31/61,
+so any degree-n irreducible binary polynomial generator is primitive there.
+The public field/tower/basis must still be supplied and validated.
+
+Concrete revised choice s67 (ODD), r8, N=n^2, K=floor(3sN/8), w=floor(.51N).
+P8 gives native success floors .0172375/.0300723/.0484324 at n17/31/61,
+all>1/64. Raw value registers alone have329171/1995997/15207727 bits.
+These are mathematical budgets, NOT native circuits, runtime experiments,
+or feasible devices. eta exponents<=-40137/-246140/-1887950 are safely rounded
+UP to2^-256 when used in the reported rational success calculations.
+
+CLASSICAL REVISIONS, not optional caveats:
+1. The even s64 sketch has a subfield completion attack. In an adapted basis,
+   s/2 free F_q coordinates per target-zero block always satisfy its inverse
+   trace. Fix accepted target-one values, then solve H if those free columns
+   number>=K. At R3/8 this covers ones density<=1/4. The same-input q8,s2,N3,K2
+   controls verify all three placements of one target-one block. For arbitrary
+   bases test actual rank; do not assume it from variable counts. Odd s67 and
+   odd n remove this automatic quadratic-subfield shortcut, not all attacks.
+2. Even without subfields, accepted-set completion is stronger than uniform
+   rejection. Pivot first K scalar columns, freely sample accepted values on
+   last N-ceil(K/s) blocks, fill remaining nonsolved partial-block coordinates,
+   solve H, and check only ceil(K/s) remaining predicates. Its exact success
+   is 2^-ceil(K/s)*||Aa||^2. Thus expected attempts<=2^ceil(K/s)/(1-eta), about
+   2^(3N/8), NOT2^N. This is a classical algorithm, not a hardness lower bound.
+
+21 new tests;80 available connected tests PASS,11 native-backend checks
+deselected (16.81s). New live artifact, proof/source hashes, Python and site-JS
+syntax pass. All10 targets in three bounded block-code fixtures were checked;
+wrong trace basis changes native membership, and the code is NOT E-linear.
+All27 block-pruning sequences recover both close messages;3 rank failures and
+8 inconsistent sequences remain charged. All512 messages are enumerated only
+by the independent comparison, never by that pruner. Full suite/registry and
+old folded decoder integration have NOT passed this turn. No Git writes,
+qsearch/UI/central-registry admissions, agents, cloud repair or native receiver.
+
+NEXT: a constructive polynomial classical completion for the arbitrary-target
+odd-folded relation, or a meaningful natural reduction/application. Do NOT
+continue rate improvements or more decoder wrappers by inertia. The code-
+source construction is now sufficiently explicit that classical difficulty
+and relevance are the important deficits. Even a correct quantum solver of
+this engineered total relation is not a Shor-level algorithm or evidence of
+cryptanalytic applicability. Keep source access and hidden advice charged.
+
+## 2026-10-22 Physical Filter Audit And A Paid Full-List Construction
+
+New BALANCED_FILTER_CHANNEL_AUDIT.md/module/tests/report audit the physical
+register operations independently of the old abstract coalescence evaluator.
+Complete lists, code addition, XOR erasure, retained records and Fourier
+readout are represented with exact integer amplitudes/rational probabilities.
+All32 target inputs in three bounded code families are covered. The new
+implementation also reproduces all four OLD finite controls, with matching
+public moduli, points and proof/source hashes. This is not a scalable receiver.
+
+Exact fault identity: retaining a which-message/codeword record preserves the
+herald probability but divides the probability of ANY native-code subset by
+q^K. Exact-weight/support records and stripped phases also pass herald-only
+tests while spoiling native success. An incomplete decoder can score better
+on a finite input while leaving a nonzero message residual. Do not promote
+its score to validation of the claimed clean-erasure theorem.
+
+CONSTRUCTIVE RESULT: unique decoding is not required by a different, paid
+protocol. Pad each COMPLETE radius list to the SAME PUBLIC power-of-two P
+using distinct dummy message labels; invert the lookup, apply log2(P)
+Hadamards to its index, project index0, and uncompute all list work from z.
+The successful state is exactly A(1_ball a)/sqrt(P). Padding/lookup is polynomial
+in P,nK; no q^K scan, source-amplitude oracle or arbitrary rotation is used.
+The reference accounts for all rejected Hadamard outcomes, not free
+renormalization. Actual list size must not change the branch normalization.
+
+The existing signed support-mask bound supplies ||Aa||^2>=1-eta and coherent
+tail norm^2<=delta+eta. Therefore full-native success per attempt is at least
+max(0,(1-2delta-3eta)/(2P)); invalid projected mass is <=(delta+eta)/P.
+There is NO ambiguity/maximum-nonzero-symbol-probability premise. For the old
+native n17/31/61 parameters P8 gives success>1/17 and failure<=2^-11 after128
+fresh, verified attempts. These are ideal arithmetic budgets, NOT executed
+native circuits. The old singleton construction has a better sufficient
+success bound on these specific inputs; no runtime/rate improvement claimed.
+The value is a more general provable mechanism. Local proof review is pending;
+standard reversible primitives are not claimed as a new discovery.
+
+24 new tests PASS. Combined with available Gibbs tests:59 PASS,11 unavailable
+native-backend tests deselected. Python/site-JS syntax, live new workflow and
+exact source/proof-bound replay pass. Full old connected/registry validation
+remains unavailable due to iCloud dataless files. No cloud repair, relocation,
+registry/UI/qsearch changes, commits, agents or background jobs.
+
+NEXT: seek a code/source pair that benefits from full-list projection, or a
+constructive native classical attack. Folded capacity-approaching codes are
+a concrete question, not a theorem here. Charge polynomial dependence on
+log(q), not q; do not silently enumerate q^r affine candidates. Folding old
+independent scalar predicates changes zero-error mass from1/2 to2^-s; one
+balanced predicate per folded block is a DIFFERENT native input family and
+must be named/accounted for. Keep classical hardness and natural applications
+open. Do not spend the next pass on more record-retention barriers or circuits.
+
+UNVERIFIED NEXT THEORY SKETCH, not an implementation instruction: a folded-RS
+linear interpolation decoder may leave a constant-dimensional affine space
+of degree<K polynomials. If an actual candidate agrees on at least K DISTINCT
+unfolded evaluation points, those agreement constraints span its parameter
+space: otherwise a nonzero degree<K difference vanishes at >=K points.
+Enumerating constant-size subsets of evaluation positions could therefore
+prune in (sN)^O(r) time instead of q^r. Check the interpolation dimension,
+strict agreement threshold and completeness before relying on this.
+
+For ONE balanced inverse-trace predicate per folded block over F_(q^s),
+codeword translations are still additive and the support-mask identity still
+has a plausible route. Fixing t zero blocks imposes st distinct RS zeros,
+so a prospective weighted enumerator uses q^(K-st)-1 when st<K and zero
+otherwise. Its binomial envelope would be q^K*(beta+(1-beta)/q^s)^N.
+With beta about(q^s)^(-1/2), this suggests examining block rate K/(sN)<1/2,
+subject to an ACTUAL bit-polynomial capacity decoder and paid list cap.
+This is not established by the current tests. Supply/check the field tower,
+trace-dual basis and evaluation-element order; do not assume a free primitive
+element or silently retain the old scalar-predicate task. Classical attacks
+on this changed structured relation would still have to be investigated.
+
+Possible concrete FRS proof target (UNVERIFIED): fold s64 consecutive powers
+of a public gamma, interpolate Q=A0(X)+sum_(i=1)^r Ai(X)Yi with r8 sliding
+windows per type (s-r+1 windows per block). Take deg Ai<=D for i>=1 and
+deg A0<=D+K-1, where D=floor((N*(s-r+1)-K+1)/(r+1)). Candidate agreement
+a blocks forces Q(X,f(X),...,f(gamma^(r-1)X))=0 when
+a*(s-r+1)>D+K-1. After removing common X content, either the constant
+equation is inconsistent or B(T)=sum Ai(0)T^(i-1) is nonzero. Distinct
+gamma^j for j<K then suggest at most r-1 free message coefficients.
+Check every higher-degree coefficient equation too, not just the recurrence.
+The agreement-subset pruning argument above could give a full list in
+(sN)^O(r) bit-polynomial time. At block rate3/8, the limiting agreement
+threshold is83/171<0.49<1/2, suggesting a possible rate beyond ordinary
+RS's1/4 for the CHANGED block-predicate task. This is a next-pass proof target,
+not a claimed algorithm/result. Charge the potentially large polynomial
+list cap and projection repetitions. Verify gamma's required finite order;
+primitive-element assumptions and q-sized enumeration must not be hidden.
+
+## 2026-10-22 Native Gibbs: Worst-Start Mixing Obstructed, Hitting Still Open
+
+Extended the EXISTING INVERSE_TRACE_GIBBS_TARGET.md/module/tests/artifact;
+no new research subsystem, registry/UI admission, Git write or background job.
+Known Artin-Schreier genus-one/two bounds, with both inv0 endpoints and the
+infinity corrections, bound the weighted overlap of a solution with any
+fixed nonzero native-code displacement. The MDS expansion then gives
+mean solution escape <= (2^k-1)*(1+eta_pair)/(1-eta)*theta^(K+1).
+Native C has distance K+1; the Fourier RS code has distance N-K+1.
+Do NOT interchange them. theta tends to1/2 in the native N=n^2 regime.
+
+Conditioning a stationary path on initially being in the solution set gives
+TV >= 1-p_upper-t*escape. For k3, exact rational worst-start TV1/4 update
+lower bounds are >=2,695,231,160 at n17, >=1.20e35 at n31, >=8.42e138 at n61.
+The local derivation awaits independent review. These are NOT chain runs.
+It covers state-independent mixtures of fixed binary subspaces (even across
+public bases), not arbitrary adaptive proposals, tempering or all MCMC.
+The obstructing starts ARE SOLUTIONS. It does NOT lower-bound first-witness
+hitting from uniform initialization, and it is NOT classical hardness.
+
+35 selected tests PASS;11 native-backend tests explicitly deselected.
+Independent FLINT controls check5332 displacement/frequency pairs across
+n2..6 and all128 target/displacement weighted sums on a bounded native code.
+The live artifact records1300 pairs across n2..5, rational native budgets,
+source/proof hashes, and native_finite_controls_executed=false. It does not
+carry forward old finite controls as newly executed. Python/site-JS syntax
+and scope-aware artifact replay pass. Full connected tests and registry
+validation have NOT passed in this turn.
+
+Availability note requested by the user: Desktop is iCloud-managed, confirmed
+by Apple's FileProvider metadata. explicit_quadratic_opi.py and the negative
+registry remain compressed,dataless. Bounded imports stalled on that backend
+and were killed/reaped; a bounded corpus refresh also timed out. Do not infer
+a negative literature result from that timeout. The earlier retrieved corpus
+context remains the available context. The user will move the repository
+after downloads finish; do NOT relocate it or repair cloud/cache settings.
+Rational certificates now import independently of the finite-field backend;
+small scalar identities use installed FLINT directly with a recorded modulus.
+This is an independent mathematical check, NOT a replacement native backend.
+
+NEXT: do not spend a pass proving more nearby local-move barriers. Gemini's
+bounded uniform-start FIRST-HITTING pilot is still scientifically meaningful,
+but cannot certify worst-start TV sampling. GPT should seek a constructive
+stronger classical attack or independently review the full coherent filter.
+No quantum advantage or new hardness assumption has been established. An added
+native countercontrol makes this concrete: b=0 has the immediate witness x=0,
+while the same worst-start mixing lower bound still applies.
+
+## 2026-10-22 Deterministic Binary GS Closes The Random-Decoder Obligation
+
+BINARY_GS_DECODER.md and theorems/binary_gs_decoder.py combine KNOWN
+Berlekamp trace splitting, GS interpolation and Roth-Ruckenstein extraction.
+This is not a new algorithm or proof of advantage. In characteristic two,
+gcd(f,Y^q-Y) followed by the n public trace-basis cuts lists every distinct
+base-field root in polynomial bit time, with no randomized factorization
+or q-element scan. Repeated/inseparable and non-base-field factors are handled.
+
+The RR ledger gives at most deg_Y(Q) nodes at every noninitial depth and
+1+K*deg_Y(Q) overall: after gamma substitution and X-content removal, the
+child specialization degree is at most gamma's parent-root multiplicity.
+Do not stop at an already visible zero root: Q=Y(Y+X) would lose X. Full
+formal root verification rejects Q=Y+X^K's misleading length-K zero prefix.
+Canonical complete-list filtering and reversible compute/copy/uncompute
+give a polynomial clean singleton-erasure route, without a random tape.
+Only the singleton flag is measured; message/list/path/work records must
+be cleaned. The public field modulus is supplied, not random advice.
+
+Executable controls match exhaustive lists on ALL384 bounded received words,
+including ambiguous lists, and check264 successful message erasures. Small
+N7 planted decoder fixtures run over n17/31/61 without field enumeration.
+They are regression tests, NOT native N=n^2 runs or quantum evidence.
+The native layouts have RR node caps469/1441/5581; dense interpolation is
+still expensive. No quantum circuit or large native decoder was executed.
+
+214 connected tests PASS, one pre-existing dataless cubic artifact replay
+deselected. Python/site-JS syntax and live standalone artifacts/hash replay
+pass. BALANCED_CODEWORD_FILTER.md is updated and its artifact regenerated.
+Registry validation remains blocked coverage by the unavailable registry,
+not a validator pass; no sync/cache repair. No qsearch/UI, central admission,
+Git writes, agents, automations, background jobs or outreach.
+
+NEXT scientific issue is still classical solvability of the explicit native
+relation and independent review of the whole quantum theorem. The coherent
+decoder now has a known deterministic route; do not spend GPT passes on
+Gaussian-elimination optimization, gate synthesis or more decoder wrappers.
+Gemini's bounded native Gibbs pilot specification remains the useful pending
+mechanical task. A completed decoder does not establish classical hardness.
+
+## 2026-10-22 Native Gibbs Target: Constant Solution Mass, Sampling Still Open
+
+INVERSE_TRACE_GIBBS_TARGET.md gives a direct conditional CLASSICAL attack on
+the same inverse-trace dual-RS input. This does not use or simulate the Fourier
+source, coherent erasure, or a supplied witness. Known character orthogonality
+and the MDS weight enumerator yield a uniform EVERY-target/EVERY-syndrome
+fiber estimate. The positive enumerator expression is proved locally and
+checked against actual codes; its closed bound improves the minimum-distance
+union bound and is asymptotically small for every fixed K/N<1/2.
+
+On native C=ker H, use pi(x) proportional to M^-defects, with the next power
+of two M>=N. The proved stationary full-native-witness probability exceeds
+1/5 whenever eta<=1/4. A classical sampler within TV1/10 would give constant
+native success. The TV comparison includes ABORT and all clock/precision
+errors, not a renormalized accepted distribution. At n17/n31/n61 the exact
+outward ideal-success bounds all exceed39%. These are budgets, NOT executed
+large chains or a polynomial sampler. Efficient weight evaluation is not
+efficient sampling, and arbitrary pinning eventually invalidates the small
+relative-error guarantee.
+
+The exact reference validates all1312 target/syndrome pairs across three
+bounded fields/codes and64-state bit-block kernels at k1/2/3. Every native
+parity equation, transition row, self-loop, single-bit reachability and
+detailed-balance equality is checked. k means BITS: q^k field enumeration is
+exponential in n and cannot be hidden in a constant-block claim. The source,
+note, tests and standalone artifact are complete. Reuse support_word.
+
+175 connected tests PASS, with the same ONE pre-existing cubic artifact
+replay deselected. New artifact replay/source/proof hashes, Python syntax
+and site JavaScript syntax pass. The live standalone workflow passes.
+Registry validation was NOT rerun: negative_results.json is still explicitly
+compressed,dataless, and prior bounded attempts stalled. No sync/cache repair,
+full-suite claim, central admission, qsearch/UI edit, Git write, background
+work, agents, automation or outreach. All owned reads/runs were stopped or
+completed and reaped. Failed unavailable-note reads supplied no evidence.
+
+NEXT: Gemini has a bounded matrix-free bit-block native experiment spec in
+MECHANICAL_FOLLOW_UP_PLAN.md and the theorem note. GPT should work on an actual
+mixing/hitting-time argument or independent quantum composition review, NOT
+add more stationary-distribution certificates. Any apparent sampler success
+must pass FULL native checks and matched root/Prange and accepted-flat
+baselines. Score thresholds or failure of one basis are not a verdict.
+
+## 2026-10-22 Classical Fourier-Source Access Removes Another False Hardness Premise
+
+Third completed pass: RECIPROCAL_TRACE_SOURCE_ACCESS.md. This uses KNOWN
+binary elliptic-curve point counting, not a new quantum or classical solver.
+For u!=0, E_u:v^2+z*v=z^3+u has #E_u=q+W(u), with W the actual
+zero-extended inverse-trace Walsh coefficient. Thus signed amplitudes and
+probabilities are classically polynomial-time evaluable using an established
+characteristic-two point counter. u=0 is handled separately, never as a
+nonsingular elliptic curve. Source probabilities do not depend on target b;
+the nonzero amplitude signs do.
+
+Uniform-frequency rejection with threshold W(u)^2/(8q) accepts with exact
+probability1/8 and produces the conditional nonzero source law. Expected
+trials8; a B-trial clock aborts with probability(7/8)^B. Mixing a half-mass
+zero atom and this capped sampler must retain ABORT: normalizing the accepted
+full mixture would bias it toward zero. No free point counter, discarded
+signs, or unconditional exact-sampling claim from capped output.
+
+The scalable point counter is an explicit UNIMPLEMENTED software dependency
+on known algorithms. The reference counts actual curve pairs only at n2..5
+and verifies all56 nonsingular curves against direct Fourier sums. It is
+exponential and capped. Do not spend GPT effort implementing Schoof/SEA.
+The small sampler/reduction, note, test and standalone JSON artifact are done.
+
+148 connected tests PASS, one old cubic-flat artifact replay DESELECTED.
+All three new artifacts replay and bind source/proof hashes. Python/site-JS
+syntax pass. Registry validation remains BLOCKED after a stopped/reaped30s
+attempt; negative_results.json is still compressed,dataless. No owned tests
+or workflows remain running. No full suite, central registry, qsearch/UI,
+Git writes, sync repair, agents, automations or outreach.
+
+NEXT scientific question is now narrower: can classical source sample/query
+access AND the public code decoder simulate native witness readout, or is
+there a defect in the proposed coherent composition? Neither is established.
+Do not call source accessibility a full dequantization, claim the source is
+classically hard, or continue the local-relaxation hierarchy by inertia.
+The two preceding exact algebraic passes are summarized immediately below.
+
+## 2026-10-22 Inverse-Trace Algebraic Audit And Coupled Quadratic Closure
+
+Continuation PROGRESS, not a quantum discovery or a classical lower bound.
+Read INVERSE_TRACE_ALGEBRAIC_AUDIT.md and INVERSE_TRACE_QUADRATIC_CLOSURE.md.
+Two theory passes replace vague low-degree-attack speculation with exact
+models and explicit countercertificates. The earlier native classical
+n17/n31 witnesses remain valid; neither pass disproves them or the proposed
+balanced-codeword quantum construction.
+
+FIRST: known inverse-trace multipliers give degrees7/10/14 at n17/31/61,
+but multiplying by x^r admits false zeros for target1. The exact zero-complete
+Boolean-quadratic graph is x^2*y=x AND x*y^2=y. Five sparse field identities
+are compiled without a truth table. The unconditioned inverse graph has
+full affine hull for n>=3, so independent-monomial LOCAL linearization plus
+raw global equations is vacuous. This statement alone did NOT include
+multiplied global constraints.
+
+SECOND: the stronger gap is now addressed. For n>=5, the SAME-TARGET inverse
+graph has exactly the affine hull Tr(y)=b, by a conservative Kloosterman
+bound. For N>=2K+1, use two native minimum-support dual-RS codewords whose
+supports intersect only at one coordinate. Their symmetric tensor products
+extend arbitrary local alternating xx covariances; native code columns
+extend xy blocks; trace-annihilating yy blocks complete the construction.
+Every linearly legal projection extends to a formal quadratic product table
+satisfying ALL target-local quadratic identities and EVERY original linear
+equation times EVERY variable. Linear elimination first does not fix it.
+The formal table is over F_2, NOT a probability distribution/PSD moment matrix.
+
+Thus a plain degree-two linearization still admits x=0 for every nonzero b.
+This is not a solving-degree theorem, and does NOT exclude higher-degree
+closure, rank/product enforcement, nonlinear factoring, branching, or
+adaptive native algorithms. Stop adding local equations or equation-count
+campaigns without a specific constructive solving mechanism.
+
+NEW: inverse_trace_algebraic_audit.py and inverse_trace_quadratic_closure.py,
+two tests, two proof notes and two classical_baselines JSON artifacts.
+The coupled finite controls check248/765/2772 linear-or-multiplied equations
+at (n,N,K)=(5,3,1),(5,5,2),(7,7,3), all with false native projections.
+Large n17/31/61 controls verify LOCAL slice ranks34/62/122 only; no large
+global matrix or quantum receiver was run. All-size statements are proofs
+awaiting independent review, not inferences from those controls.
+
+134 connected tests PASS, one previously documented old cubic artifact
+replay DESELECTED. Both new artifacts bind source/proof hashes and replay
+actual data. Python/site-JS syntax PASS. qsearch validate again stopped and
+reaped at30s; negative_results.json remains cloud-dataless. No sync repair,
+full-suite claim, central admission, qsearch/UI/Git changes or new agents.
+
+NEXT: a concrete higher-degree/product-consistent attack or independent
+review of the complete quantum argument. The reread of coherent singleton
+erasure found no concrete contradiction, but is NOT independent validation.
+Do not spend another pass merely extending this relaxation hierarchy.
+
+## 2026-10-22 Reciprocal-Trace Classical Counterchecks, Two Passes Complete
+
+Continuation PROGRESS, not a quantum breakthrough or a general classical
+dequantization. Read RECIPROCAL_AFFINE_PENCIL.md and RECIPROCAL_TRACE_FLATS.md.
+The earlier balanced-codeword quantum argument remains review-pending.
+
+FIRST: exact classical search on any supplied reciprocal-affine pencil
+y_i=a_i*u+c_i, x_i=inv0(y_i). Trace equations are binary linear. Group poles,
+clear denominators, gcd parity numerators, and find ALL regular field roots.
+Certify the root list with gcd(G,U^q-U), using modular powering. Check every
+pole separately: a native witness CAN occur where a denominator vanishes.
+Formal identity pencils reduce to independently kernel-supported pole groups.
+A fixed formally code-valued inverse-affine family in arbitrarily many
+parameters has <=floor(N/(K+1)) nonconstant groups, hence target rank <=n
+times that count. This does NOT rule out target-adaptive families. A test
+explicitly exhibits an empty pencil with a witness elsewhere in the same
+native instance. The odd-prime norm attack was NOT blindly transferred.
+
+SECOND, more important: construct accepted local affine flats without
+exponential trial-and-error. For A=a+V avoiding0, |V|=M=2^d<n, solve
+Tr(lambda/z)=b for every z in A, then use A/lambda. A logarithmic-derivative
+root count proves local sufficient-test failure <=
+[M+(M-2)*2^(M-1)+1]/2^n. No enumeration of the 2^M subsets in that proof.
+Compose the flats with the ORIGINAL dual-RS parity equations and solve by
+existing binary elimination. Do NOT assume the restricted matrix has rank.
+
+Two cases fixed before execution, N=n^2,K=floor(N/8), points0..N-1,
+b_i=popcount(i) mod2, seeds1000*n+22, BOTH produced native classical witnesses:
+- n17,d3: 867 variables,612 equations,observed rank612.
+- n31,d4: 3844 variables,3720 equations,observed rank3720.
+Every witness is independently replayed with binary polynomial arithmetic,
+not FLINT's field evaluator. Complete moduli/flats/witnesses are in the new
+standalone artifacts. These are two explicit inputs, NOT all-target theorems.
+They defeat using those finite parameter sizes alone as evidence of advantage.
+At n61,d5,18605 variables<28365 equations is only a count, not an attack
+execution, flat-absence theorem, or hardness result. Fixed positive code
+rate eventually outgrows this guaranteed logarithmic-flat method.
+
+NEW: two theorem modules reciprocal_affine_pencil.py /reciprocal_trace_flats.py,
+their two tests, two proof notes, and two classical_baselines JSON artifacts.
+83 connected tests PASS, ONE older cubic-flat artifact replay DESELECTED
+after a120-second stall. New artifact hash/replay tests are included.
+Python/site-JS syntax PASS. qsearch validate BLOCKED: stopped/reaped at30s;
+research/registry/negative_results.json is currently compressed,dataless.
+An old source/test is also dataless. No sync/cache repair or full-suite claim.
+Scoped git inspection stalled and was stopped; no commits/pushes/Git writes.
+No central registry admission, qsearch/UI changes, new agents or automations.
+
+NEXT substantive question: can TARGET-ADAPTIVE algebraic/flat constructions
+solve the larger fixed-rate family? The published Feng-Gong abstract gives
+inverse-trace algebraic immunity ceil(2*sqrt(n))-2 and warns of fast algebraic
+weaknesses; the full paper/proof was not obtained. Translate an annihilator
+into a native coupled-code attack before making any claim. Alternatively
+independently review the support-mask/coherent-composition proof. Do not
+mistake pencil rigidity or insufficient flat variables for a lower bound,
+import the random-cubic orientation law, or start a GS backend/seed campaign
+just because these two restricted attacks lack an asymptotic theorem.
+
+## 2026-10-22 Constructive Balanced-Codeword Filter, Review Pending
+
+Continuation PROGRESS. Read BALANCED_CODEWORD_FILTER.md before extending.
+The semantic low-Frobenius-degree idea was only a corollary of the existing
+orbit-module filter, so no new module was built for it. No variable-class
+Rees shortcut or new natural Rees application was established. The Rees
+manuscript/status is unchanged. This pass instead derives a concrete,
+explicit-input specialization of known decoded quantum interference.
+
+Native task: Hx=0 for the [N,K] RS GENERATOR H, with answer code D^perp,
+and Tr(inv0(x_i))=b_i over F_(2^n). No hidden tables or oracle generation.
+For a balanced local root state, the Fourier sum over y!=0,d of
+a(y)*a(y+d) is EXACTLY zero. This proves a support-mask near-isometry:
+coherent norm differs from source mass by <=(|D|-1)*beta^distance(D).
+It pays the previously dangerous weight-tail amplification. Combine it
+with complete GS lists, nonzero-symbol collision counting and paid
+singleton heralding. The proposed per-instance construction works at
+fixed decoder rate K/N<1/4, N=n^2, growing n, subject to proof review.
+Known Kloosterman/Weil bounds supply the explicit reciprocal-trace source;
+the 0^-1=0 term needs an extra1 in the Walsh bound. No hardness or novelty
+is established. This is NOT a claim about standard cryptosystems.
+
+NEW theorems/balanced_codeword_filter.py, tests, proof note and standalone
+reductions/balanced_codeword_filter.json. 26 dedicated tests PASS. Exact
+budgets at n17/31/61 give ideal-arithmetic failure <=2^-10/2^-30/2^-111,
+with checked GS interpolation multiplicity4. These are rational bounds,
+NOT large quantum executions or gate-error budgets. Four capped coherent
+maps retain failures and verify every native Fourier output; their small
+conditional valid probabilities are deliberately recorded, not hidden.
+A public-codeword projective-line attack returns native classical witnesses.
+No general GS backend, reversible decoder or hardness benchmark is implemented.
+
+98 connected tests PASS, ONE older artifact replay deselected because
+research/classical_baselines/prime_character_finite_readout.json is iCloud
+dataless. The initial broad run was stopped/reaped at120 seconds; no sync
+or cache repair. New/live workflow, Python/site-JS syntax and qsearch
+validation (valid=true, issues=[]) pass. No full suite/Lean, central-registry
+admission, qsearch/UI/Git changes, new agent/chat, or external outreach.
+FLINT's zero object is truthy; native field checks use explicit ==0.
+
+NEXT substantive priority: try to solve the SAME reciprocal-trace codeword
+task classically via rational interpolation or the bilinear system
+x_i*y_i=1, Tr(y_i)=b_i, Hx=0, with legal zero-coordinate handling. An
+adaptive projective/multi-line attack is not excluded by the fixed-line
+count. Also independently review the support-mask lemma and full coherent
+composition. Small Walsh coefficients alone do NOT establish hardness.
+Do not inflate the pass into a seed campaign, another dashboard, or a
+speedup flag. Mechanical follow-up is separately listed below.
+
+## 2026-10-22 Scalar Fermat Gap In State-Source Designs Closed
+
+Continuation PROGRESS. SCALAR_FERMAT_DESIGN_BACKEND.md implements the
+missing equal-coefficient scalar rows for REES_PROJECTIVE_STATE_SOURCE.md.
+The state-source conversion itself was ALREADY present; rediscovering it
+was not a new contribution. Known finite-field arithmetic now replaces
+NotImplementedError on previously unsupported valid even degrees/primes.
+
+For large p, a character-sum count proves >=1/(2d) success per random
+d-coordinate prefix plus a checked root of X^d-value. Exact regime test:
+p^(d-1)>=16(d-1)^(2d+2). Outside it, p<16(d-1)^4, so a guarded O(d*p^2)
+residue DP is polynomial in d. This explicitly bounded small-field
+enumeration must NOT be described as no enumeration whatsoever. All
+accepted witnesses/design moments/coverage are verified. Sampling ABORT
+and an exact cap are reported; FLINT's root runtime is not locally clocked.
+The source budget assumes a certified design: give its preprocessing a
+separate error allocation when composing an end-to-end algorithm.
+
+NEW theorems/scalar_fermat_solver.py, 22 tests, proof note and standalone
+reductions/scalar_fermat_solver.json. Modified rees_projective_source.py,
+its regression test/note and live report. Forced quartic fallback yields
+36 copies/block at p13 and60 at the128-bit prime 2^128-275. At that prime
+-1 is not a fourth power, ruling out the easy two-term Fermat shortcut.
+Existing cheaper root-of-unity and odd/quadratic paths remain intact.
+
+85 connected tests PASS (14.11s), including state transfer, noisy-source,
+Rees core and complete instrument controls. Both live --write workflows,
+Python/site-JS syntax and registry validation (valid=true, issues=[]) PASS.
+No full suite/Lean, quantum receiver, central-registry admissions, qsearch/UI
+edits or Git action. All owned workflows completed. General MANY-EQUATION
+SDE is still incomplete; do not confuse it with this scalar Fermat solver.
+
+The preliminary whole-proof reread found no fatal error in the reviewed
+central-branch/support/cancellation steps. This is not independent review,
+formal proof or novelty verification. The copy-only action route and the
+polynomial-phase application baselines were already in the corpus. Next
+prioritize a genuinely new application or a concrete main-theorem falsifier;
+do not continue public-arithmetic implementation by inertia.
+
+## 2026-10-22 General Inverse-BCH Word Gap Closed
+
+Continuation PROGRESS. UNIVERSAL_LAZARD_WORD_COMPILER.md implements known
+Lazard word construction for any FIXED c<p, using homogeneous correction
+and exact Dynkin projection. Rational instructions stay in Z[1/c!]; exact
+free-associative replay checks every stage and complete output identity.
+This is known public algebra, NOT a new quantum algorithm. Compiler cost
+can grow badly with c; no uniform polynomial-in-class claim or p enumeration.
+
+NEW theorems/universal_lazard_words.py, 27 tests, proof note and standalone
+reductions/universal_lazard_words.json. FreeLazardPullback now uses it beyond
+class four or at p=3, retaining the shorter old words where valid. The
+preceding handoff's general-word implementation blocker is SUPERSEDED.
+Public multiplication caps are computed from actual word instructions.
+Exact certificates checked through class eight; independently multiplied
+opaque unitriangular matrices test classes1..6 and a127-bit prime. A
+class-five free pullback checks top-degree images and its homomorphism law.
+Wrong-class words and forged certificates fail. Initial cache-type collision
+was fixed with typed caching; all algebraic controls passed on that run.
+
+133 connected tests PASS (55.57s): universal/free/nongradable/Rees/copy-only/
+class-four/section-potential. Python and site-JS syntax, both live --write
+workflows, registry validation (valid=true, issues=[]), and manuscript
+compilation PASS. No full suite/Lean, native quantum circuit, general SDE
+solver or full receiver. No central-registry admission, qsearch/UI change,
+Git action, cache/sync repair or external delegation. Owned runs finished.
+
+NEXT: return to adversarial proof/novelty scrutiny of the WHOLE Rees
+composition, then a motivated application. Do not drift into optimizing
+known words, generating more nearby matrix controls, or calling public
+compiler completion evidence of a speedup. The core source, conditioning,
+adaptive resource accounting and outer general-exponent promises remain
+the substantive review surface. General SDE evaluation remains incomplete.
+
+## 2026-10-22 Free Pullback Removes Local Target-Chart Acquisition
+
+Continuation PROGRESS. FREE_LAZARD_PULLBACK.md proves the local exponent-p
+bridge through the public free class-c Lie algebra on the supplied group
+generators. Its unknown target kernel stays in the hidden preimage; no
+target relation kernel or Lie coordinates are learned. One ordinary query
+or one fresh mixed coset copy pulls back, with paid public evaluation and
+workspace cleanup, no inverse map and no kernel-index success loss. Rees
+must recover the FULL preimage before projecting generators back to G.
+This is a conditional composition of standard ingredients, not novelty.
+
+NEW theorems/free_lazard_pullback.py, 14 tests, proof note and standalone
+reductions/free_lazard_pullback.json. Updated manuscript, whole-proof audit
+and copy-only outer note. The opaque compiler is c<=4,p>4; higher-class
+inverse-BCH remains written only. Free dimension can exceed target encoding
+width: old b-based chart budgets do NOT transfer. The free grading does not
+preserve an arbitrary kernel/preimage, explicitly falsified by the mixed-
+degree Dixmier--Lister relation. General-exponent/small-prime reductions
+remain separate. No new quantum receiver or target recovery is implemented.
+
+89 connected tests PASS (38.10s), including nongradable/Rees/outer/word
+controls. Actual matrix multiplication tests class four; a bounded actual
+partial-trace test checks the noninjective copy pullback and workspace
+leakage. A 127-bit opaque target and wrong-exponent falsifier pass. Python
+and site-JS syntax, live --write, registry validation (valid=true, issues=[])
+and desktop LaTeX compilation PASS. No full suite/Lean, central-registry
+admissions, qsearch/UI edits or Git action. No running test processes remain.
+
+Next substantive check: corpus audit of a universal filtration-correction
+compiler for inverse-BCH group words, beyond the hard-coded class-four
+backend. Do not replace this with another nearby fixture campaign.
+
+## 2026-10-22 Rees Input Need Not Have Any Positive Grading
+
+Continuation PROGRESS. Read REES_NONGRADABLE_INPUT.md. The existing full
+finite instruments used naturally graded ambients. The known class-three
+Dixmier--Lister algebra provides a different, legitimate input: over EVERY
+p>3, all derivations have cube zero. New integer certificates give 32 exact
+row identities with multipliers 1,3,6 forcing D(L)<=L'. Thus no positive
+integer grading exists, in any basis or field extension of allowed
+characteristic. This is known algebra plus a replayable local certificate,
+not a new algebra, HSP algorithm or novelty claim. Primes 2,3 are excluded.
+
+The obstruction persists for all m-fold direct sums. The public Rees cover
+still has dimensions (8m,4m,2m), correct evaluation homomorphisms and its
+own dilations. Original lower-central coordinate weights fail. A checked
+order-two automorphism prevents the overclaim that ALL finite symmetries
+are impossible. A diagonal hidden subgroup across two same-prime factors
+also defeats factorwise restriction while its full grade-one image survives.
+
+NEW theorems/rees_nongradable_control.py, tests, proof note and standalone
+reductions/rees_nongradable_control.json. Updated whole-proof audit and
+manuscript. 48 connected tests PASS (9.89s), including 18 dedicated cases;
+Python/site-JS syntax, live --write and registry validation PASS. No whole
+quantum channel was executed on this large new cover. The actual coset
+oracle tests are bounded fixtures, not an algorithmic enumeration backend.
+No full suite/Lean, central registry, qsearch/UI edit or Git action.
+
+NEXT CONSTRUCTIVE TARGET: remove the local exponent-p input's Lie-chart
+acquisition by pulling the oracle/copies back along a public surjection
+from the FREE class-c Lie algebra on the supplied group generators.
+Universal inverse-BCH words can evaluate that map without hidden relations.
+Its kernel should join the hidden preimage, not require separate learning.
+Recover preimage generators using Rees and project them to the original
+group. Charge the larger O(s^c) free dimension and all word operations;
+do not claim the backend/general reduction implemented until checked.
+Corpus searches did not find this exact bridge. Standard free-object and
+copy-pullback facts are prior art; any contribution would be the checked
+composition. This is preferable to more nearby nongradable fixtures.
+
+## 2026-10-22 Public Torsion Descent Now Has A Complete Construction
+
+Continuation PROGRESS. Read SEMI_ELEMENTARY_TORSION_REPAIR.md. The literal
+arbitrary-generator top-power interpretation of the imported small-prime
+semi-elementary reduction is insufficient. The mixed-generator example
+in C_(p^2) x C_p was ALREADY recorded in CLASS_FOUR_PRIME_POWER_INPUT.md;
+this pass applies that known warning to the current outer reduction and
+implements a complete relation-lattice replacement. It does not refute
+the source paper's main theorem or establish novelty.
+
+Given COMPLETE public row relations R for A=K/B, compute a basis of
+{a in F_p^k:aR=0}, then lift the INTEGER words aR/p. These generate all
+A[p]. Retain every generator of B=K' H0 when taking the preimage L. The
+written proof shows H intersect L>H0 whenever H intersect K>H0. A[p]=A
+means no strict torsion descent. The arithmetic quotient by B is NOT
+permission to quotient the hidden source by B, which need not lie in H.
+
+NEW theorems/abelian_quotient_torsion.py, its test file, the proof note and
+standalone reductions/abelian_quotient_torsion.json. Updated the copy-only
+outer note, whole-proof audit, old prime-power note and review manuscript.
+Public relation acquisition/completeness remain external paid obligations;
+no hidden-source reads, field enumeration, factorization or quantum outer
+implementation was added. No theorem/candidate admission flags change.
+
+53 connected tests PASS (final rerun 6.36s), including 23 dedicated tests: exhaustive
+small abelian and nonabelian UT3(Z/p^2) controls, missing-kernel falsifiers,
+127-bit arithmetic, redundant generators and relation-basis changes. The
+late nontrivial-H0 control confirms that retaining only H0 instead of B
+can erase all progress above H0; the final rerun includes this addition.
+Python/site-JS syntax, live --write workflow, scoped whitespace check,
+registry validation (valid=true, issues=[]) and desktop LaTeX compilation
+PASS. No full repository suite, Lean, Git commit, UI/qsearch edit or central
+registry change. An offloaded git-status read was interrupted and reaped;
+no sync/cache repair was attempted. Owned test/workflow processes finished.
+
+The whole-proof audit also records the newly inspected Imran preprint
+arXiv2610.28368v2 (October21), Theorem1.1 and input interface: a full-GL
+parabolic hiding oracle is not an arbitrary nilpotent-subgroup oracle.
+Rees nonzero evaluation is a Lie map, not a ring evaluation of truncated
+polynomials. These delimit direct subsumption/transport, not all possible
+reductions. No exhaustive novelty review or review of that paper is claimed.
+
+NEXT: no more nearby torsion fixtures. The general theorem still needs
+independent correctness/novelty scrutiny and a consequential application.
+Public presentation acquisition is a mechanical implementation dependency,
+not evidence that a hidden-source inverse is needed. Preserve the new
+preimage qualification in every restatement of the small-prime branch.
+
+## 2026-10-22 Noisy Mixed Cosets Have A Real Learning Obligation
+
+Continuation PROGRESS, scoped to preventing an unsupported noise extension.
+Read NOISY_COSET_LPN_BOUNDARY.md. The binary noisy-Simon/LPN connection is
+PRIOR ART (May--Schlieper--Schwinger); no new decoder is claimed. This pass
+supplies an exact density-level interface: one observed classical sample
+(a,b) prepares F-dagger|a,b>, whose mixture is v*rho_H+(1-v)*I/N for
+H=span((s,-1)). Fourier measurement reverses it, and a nonzero generator
+recovers s by pivot normalization. No secret/error flag/preparation inverse.
+
+Binary tau=(1-v)/2 is standard LPN. Odd primes instead have the SPECIFIED
+law v*delta0+(1-v)*Uniform(F_p), not Gaussian LWE or inherited lattice
+hardness. Commutativity removes extra source information, NOT quantum
+computational advantage on classical samples. Coherent example oracles
+are a different resource, checked by a same-diagonal countercontrol.
+
+For rank-r flat coset support, balanced recursive symmetric purification
+needs Omega(r) LEVELS for a fixed error improvement, hence at least
+2^Omega(r) raw copies even without failed heralds. This follows from the
+exact odds recurrence and a rational lower bound. A separate known-basis
+two-label collision filter improves error faster but costs Theta(r) raw
+copies. Neither is a lower bound on ALL possible decoders/purification.
+The existing nondegenerate principal-state purifier remains valid in its
+own contract. Clean Rees correctness/novelty/application flags are unchanged.
+
+NEW theorems/noisy_coset_lpn_boundary.py, its test file, this research note,
+and standalone reductions JSON. A crosslink was added to the noisy-state
+source note. 29 dedicated cases are included in the 68 connected tests
+PASS (23.99s); Python and site-JS syntax and live --write workflow pass.
+The first bounded registry validation timed out; after the previously
+offloaded negative-result file became resident, retry PASSED valid=true,
+issues=[]. No sync repair was performed. No full suite/Lean, Git, UI,
+qsearch edits or central-registry admission. All owned processes stopped.
+
+NEXT: do not expand nearby noisy fixtures or call this a new LPN result.
+Any generic noisy receiver must supply an actual decoder on this access-
+matched abelian family. Main theory effort remains a substantive attack
+on the proposed clean theorem or a motivated application outside existing
+filters. An infinite-group extension was screened, not established; do
+not infer a deficient-rank or lattice application from finite-index periods.
+
+## 2026-10-22 Genuine Cubic Arithmetic Now Drives The Rees Control
+
+Continuation PROGRESS. Read CUBIC_DIAGONAL_SOLVER.md. The old complete F5
+replay only exercised bijective cubing. NEW theorems/cubic_diagonal_solver.py
+implements the published Ivanyos--Santha Proposition10 construction at
+p=1 mod3, using (r+1)(3r+1)(9r+1) columns of equation rank r. It is NOT a
+new algorithm. All tensor-axis identities, a nonempty distinguished cell,
+finite-field roots and the final ORIGINAL moments are checked. Public
+labels alone are inputs; no hidden potential, subgroup or expected answer.
+
+Nonresidue sampling has a3^-K exhaustion bound under independent uniform
+draws. FLINT degree-three roots remain an expected-time dependency, not a
+locally enforced total clock. Seeded replays are diagnostics. No field,
+p-1 factorization or discrete-log enumeration is used. A rank-three,
+1120-column control runs at the127-bit Mersenne prime with exact moments.
+
+The existing Bezout adapter now handles g=gcd(d,p-1)=3, including tested
+original degrees3,9,15. g>3 and g=2 at p=1 mod4 STILL reject. Two F7
+controls use solver-produced scales in actual mixed central instruments
+and final Fourier recovery of the nonnormal X+W and Z+W lines. They start
+from explicit lifted coset densities; they do NOT replay F7 tuple-oracle
+fibers. Selected nonzero records are legal test branches, not IID success
+statistics or free postselection. Actual outputs feed the next stage.
+
+31 dedicated tests PASS (12.72s);121 connected tests PASS (143.26s). The
+connected run preceded the last added test-only regression; the dedicated
+rerun covers it. Python/site-JS syntax and three live --write workflows pass.
+The larger run including test_symbolic_scalar_phase_erasure.py was stopped
+during collection on dataless tests/test_metabelian_phase_extension.py.
+qsearch validate was stopped reading dataless registry/negative_results.json.
+These are NOT passes. No full repository suite/Lean, sync repair, commit,
+qsearch, UI or central-registry change. Preserve other agents' work.
+
+NEXT: this removes a specific arithmetic blind spot, not the theorem's
+independent correctness/novelty or application obligations. Do not expand
+nearby prime/fixture benchmarks by inertia. General collision plumbing and
+clock propagation are suitable mechanical follow-ups; GPT theory effort
+should return to a substantive end-to-end claim or motivated application.
+
+## 2026-10-22 Polynomial Cosets Are Not Automatically HPGP Inputs
+
+Continuation PROGRESS. Read HPGP_COSET_INTERFACE_AUDIT.md. The inspected
+HPGP papers require translates of ONE common graph, not merely polynomial
+coset curves. A local written lemma shows that the good transverse subgroup
+parameters of a fixed public fibre-preserving injective chart lie in one
+abelian coset of the normal factor. For a class-three family N^m semidirect
+C_p this gives tight coverage p^(-m); K charts cover at most K/p^m.
+
+A separate stability argument uses the commuting probability, rather than
+assuming exact failure implies approximate failure. For one fixed chart,
+average trace distance to any valid graph-state mixture is at least
+(1-1/p)*(1-cp(N)^m)/8, with cp(N)=2/p^2-1/p^4. This is NOT a lower bound
+on adaptive, collective, non-fibre-preserving or general quantum reductions.
+All these arguments remain under review; no novelty flag changes.
+
+An independent actual mixed-state control shows that simply tracing an
+unknown quotient kernel is not valid source conversion: the UT3 family
+retains only (2p-1)/p^2 of the desired quotient Fourier support. The known
+K-contained-in-H promise cannot be dropped. This does not exclude costed
+multi-copy central erasure, including the proposed Rees construction.
+
+NEW: theorems/hpgp_coset_interface.py, tests/test_hpgp_coset_interface.py,
+research/HPGP_COSET_INTERFACE_AUDIT.md and its standalone reductions JSON.
+Crosslinks in the whole-proof audit and class-three draft preserve scope.
+Binary matrix powering avoids the FLINT wrapper's machine-sized exponent
+limit; exact controls include a127-bit prime. No general HPGP solver added.
+
+VERIFIED:21 dedicated tests;123 connected tests PASS (23.91s), Python syntax,
+site-JS syntax, qsearch validate valid=true/issues=[] and live --write replay.
+Full repository suite/Lean not run. No Git, qsearch, UI or central-registry
+edits. Existing concurrent backend work is not included in this validation.
+
+NEXT: a constructive access-preserving application or substantive attack on
+the whole Rees theorem. Do not grow this chart-obstruction fixture campaign
+or infer novelty from ruling out two shortcuts. Independent correctness,
+novelty and a major application are still unresolved.
+
+## 2026-10-22 High Orbit Rank Moore Forms Still Collapse Classically
+
+Continuation PROGRESS. The renewed application search found no natural hard
+classical-input family. It did identify and close a concrete escape route:
+scalar Moore determinants can have huge degree AND exponential cyclic orbit
+rank while still admitting a semantic classical attack from their public
+arithmetic circuit. Read MOORE_GRADIENT_CLASSICAL_FILTER.md.
+
+For F=a*det(ell_j(x)^(p^i)), ordinary gradient coefficient rows span exactly
+W=span{ell_j}. Independent extension evaluations recover W without exposed
+Frobenius gates, hidden row advice, factorization, or coefficient expansion.
+A NEW anchor fixes the scalar and a further independent PIT test verifies
+the whole polynomial. This check is essential: F=x0+x1^p has the same
+gradient as x0 but different finite symmetries. No-gradient is inconclusive.
+
+Exact general-GL symmetry requires W*g^-1=W AND determinant one on W.
+The determinant condition is automatic only for a promised p-group over
+F_p. The resulting subspace-stabilizer problem has the cited classical
+matrix-group backend; this pass does NOT implement that general backend.
+Public circuit input is essential; unknown quantum copies are not covered.
+
+The scalable control UT10(F_p)^m has class9 and exact polynomial orbit
+rank10^m, proved using independent block rows and distinct Moore-minor
+supports. At p43,m5,D50, the 449-node binary circuit has degree3,500,201,
+orbit rank100,000, and recovered row rank5. The orbit rank is symbolic,
+not a measured/enumerated scaling result. A small two-UT3 control verifies
+rank9 independently and shows the old cap4 failing before recognition.
+
+NEW: theorems/moore_gradient_filter.py, tests/test_moore_gradient_filter.py,
+research/MOORE_GRADIENT_CLASSICAL_FILTER.md and live reductions JSON.
+The compiler uses a standard division-free Berkowitz recurrence, tested
+against independent FLINT determinants/cofactors, including singular points
+and dimension exceeding characteristic. Other controls cover dense rows,
+all125 UT3 matrices, non-p-group determinant characters, inseparable
+perturbations, bad randomness, and a127-bit prime. No novelty is claimed.
+
+Section6 also derives an elementary generator-recovery route when the
+COMMON associative algebra J generated by g_i-I has J^nu=0 with nu<=p.
+Close the Lie span of logs, solve the linear W*A*N=0 constraints, then
+exponentiate the kernel. It covers UT10^m independently of ambient D.
+This backend is written, not implemented; Gemini has a precise follow-up.
+Two additional exact controls verify all UT3 log/subspace decisions and
+show that commuting order-p matrices can have NONADDITIVE individual
+matrix logs when the common-J guard fails (p5,D25). Do not weaken it.
+
+VERIFIED:20 new tests;102 connected tests PASS (15.96s); Python syntax,
+all site-JS syntax checks, qsearch validate valid=true/issues=[], live
+workflow and whitespace checks. Full repository suite/Lean were not run.
+All owned commands terminal. No Git, qsearch, central registry or UI edits.
+
+NEXT: do not enlarge the Moore campaign. Its classical reduction is now
+explicit even beyond low orbit rank. A genuine Rees application still
+needs independent motivation; arbitrary high-degree circuits remain
+unclassified, not known hard. A targeted comparison with known hidden
+polynomial graph/curve algorithms is a useful further novelty falsifier
+for the HSP theorem, not another source of planted oracle benchmarks.
+
+## 2026-10-22 Standalone Rees Review Draft And Readout Budget Correction
+
+Continuation PROGRESS. Rechecked the universal Rees composition and primary
+sources; no new counterexample or novelty determination. NEW standalone
+research/manuscripts/rees_hsp_review.tex makes the proposed explicit-Lie
+theorem, copy-only lift, all-K normalized central instrument, arbitrary-record
+quotient conversion and imported general nilpotent extension reviewable in
+one document. It includes exact input promises, fresh-copy tree/error clocks,
+public coordinate acquisition, small-prime separation, failure controls and
+an explicit UT9 scope witness. This is a proof DRAFT, not independent review.
+
+Concrete correction: recovery_budget in theorems/rees_hsp_reduction.py now
+counts final QFT/measurement separately, so N_inst=N_leaf+N_merge+N_readout.
+Previously final readout approximation was not explicitly allocated. Source
+and original-query counts stay unchanged; per-instrument precision tightens.
+Even an abelian no-merge instance needs preparation AND readout allowances.
+
+The certificate also specifies classical SDE clocks. Given a UNIFORM expected
+time bound T including witness verification, use fresh-seed attempts capped
+at2T and R=ceil(log2(3*N_merge/epsilon)). Each attempt fails with probability
+at most1/2. Saved measured labels and untouched conditioned targets are reused;
+no dilation occurs before a valid witness. These CLASSICAL restarts require
+zero additional quantum copies. This is not a solver implementation or a
+physical memory-noise guarantee. The class-nine report records1081 attempts
+per SDE call and20 final readouts; source-query exponent/count is unchanged.
+
+One new epsilon=2^-4096 regression and strengthened class-nine/abelian tests
+check logarithmic confidence and the complete error sum. An assertion was
+initially misplaced across test boundaries, then restored; final rerun below
+is authoritative, not the earlier failed run. Live Rees/projective/noisy
+workflows were replayed; all discovery/formal/backend flags remain false.
+
+VERIFIED after final code edits:220 connected tests PASS (64.63s), Python
+syntax, all12 site-JS syntax checks, qsearch validate valid=true/issues=[],
+live JSON assertion checks and whitespace pass. The desktop LaTeX compiler
+confirmed SUCCESS after an initial runtime-download timeout. Compilation is
+only document rendering, NOT Lean or theorem verification. The editor open
+request was queued. Full repository suite/Lean were not run. All owned
+processes are terminal. No Git, central registry, qsearch or website edits.
+
+NEXT: attack a substantive universal lemma or a motivated application;
+the manuscript is the entry point for independent review. Do not spend the
+next theory pass polishing its layout, extending a nearby finite fixture,
+or claiming that repeated self-audits are independent validation. The known
+phase-learning baseline below remains a filter, not a new hard application.
+
+## 2026-10-22 Polynomial Phase Application Meets A Direct Quantum Baseline
+
+Continuation PROGRESS. Read POLYNOMIAL_PHASE_COPY_LEARNING_BASELINE.md.
+The proposed application was unknown full-domain F_p multivariate degree-d
+phase copies, fixed d<p with growing n/log p. A written polarization gap
+argument makes it a viable Rees input, and its ray Lie graph exposes the
+nonlinear coefficients. BUT an access-matched adaptation of Ivanyos--Santha
+1503.09016 Section5 learns these phases directly. Do not promote this as
+the first efficient learner or as requiring the Rees receiver.
+
+The direct front end measures random coordinate slices, uses their DIFFERENT
+public coefficient maps, cancels degree via known SDE phase elimination,
+Fourier-reads a nonzero parameter equation, and substitutes it into the
+remaining public polynomial basis. It needs no chosen slice, F oracle,
+conjugate copies, source inverse or hidden coefficients in the controller.
+Local retries cost at most p/(p-1) per degree. The rational whole-copy
+envelope includes rejected slices, all source-tree leaves, N parameter
+rounds and a Markov abort cap; it does not rely on tree_size/p being small.
+
+NEW theorems/polynomial_phase_copy_learning.py reuses PhasePacket and the
+existing translate_combine; implements public restriction, affine parameter
+substitution, checked erasure and a conditional resource certificate.
+NEW tests/test_polynomial_phase_copy_learning.py has11 passing controls,
+including all25 cubic records, all125 records for DISTINCT public maps,
+actual two-stage contraction then QFT, a tight slice rejection bound,
+and127-bit-prime arithmetic. The selected two-stage branch costs4 original
+copies and has mass5^-6; it is NOT a complete learner or free postselection.
+Live report: research/reductions/polynomial_phase_copy_learning.json.
+
+Pure unknown AFFINE support does not rescue the application: computational
+samples reveal the support, then a known affine transform gives full-domain
+phase copies. Only the phase restricted to that support is identifiable.
+Mixed coset coherence is different: its diagonal can be ambient-uniform,
+and U=0 removes ALL phase information. Do not erase that old obstruction.
+
+Corrected an overbroad prior citation in REES_NOISY_STATE_SOURCE.md and
+CLASS_THREE_APPLICATION_AUDIT.md:2208.07851 has an efficient BINARY separable
+learner, not a stated efficient generalized-phase learner. Its domain is
+Boolean, not the growing-prime qudit domain used here.
+
+This is a known-technique QUANTUM baseline adaptation under review, NOT
+classical dequantization, novelty certification, independent proof or an
+implemented scalable quantum learner. General SDE backend remains absent.
+VERIFIED after final code edits:219 connected tests PASS (116.43s), including
+11 new tests and the existing phase-erasure/resource/Rees controls. Python
+syntax, all12 site-JS checks, qsearch validate valid=true/issues=[], live
+--write and whitespace checks pass. Full repository suite/Lean NOT run.
+All owned command processes are terminal; no background work was scheduled.
+Next: independent scrutiny or a natural application outside full-domain/
+pure-affine fixed-degree phase learning. No new candidate/central-negative,
+qsearch/UI/Git changes. Mechanical replay is documented separately.
+
+## 2026-10-22 Complete Finite Rees Source-To-Answer Control
+
+Continuation PROGRESS. The closest-paper audit did not establish novelty
+or find a theorem-level refutation; do not treat search absence as novelty.
+It exposed a concrete coverage gap: earlier tests checked the lift and
+two-stage descent separately, not their composition for nonhomogeneous H.
+
+NEW theorems/rees_complete_instrument.py closes that finite gap. For the
+class-three filiform F5 group, it verifies every tuple-oracle fiber on the
+78125-element positive Rees cover, applies degree3 then degree2 central
+instruments, and reconstructs the ORIGINAL hidden Lie line. Both nonnormal,
+nonhomogeneous cases X+W and Z+W succeed. The latter lies wholly in the
+original derived algebra and would be lost by ordinary abelianization.
+Original hidden data is only used for fixture input/expected answers.
+
+The faithful regular group algebra stores rho=(sum c(g)R_g)/|G|. Actual
+projector products are convolutions; trace masses are identity coefficients.
+Controlled-action contraction checks the FULL sparse support and every
+central fiber before constructing the quotient operator. No expected density
+is inserted between stages. An independent dense C5^2 control retains a
+nontrivial leftover phase, preventing a magnitude-only/desired-kernel fake.
+Another test compares the explicit cover law with the actual Rees compiler
+and BCH coordinates. Read Section8 of REES_HSP_REDUCTION.md for the proof
+of this finite operator-compression check and its limits.
+
+Both cases test all25 first-stage label pairs. Second center has rank2;
+57 and37 distinct second-stage tuples are checked, NOT every possible tuple.
+Maximum coefficient errors <2e-15. Final Fourier support has125 elements;
+all32 seeded trials of12 samples recover the correct line in each case.
+The finite tree uses10 lifted inputs/30 ideal f queries per final packet,
+but the CLASSICAL SIMULATOR enumerates5^7 addresses. Its timing is not a
+quantum resource result. Quadratic F5 witnesses use bounded exhaustive
+TEST search; no general solver/backend was added.
+
+VERIFIED after final code edits:119 connected tests PASS (58.72s), including
+5 new tests. Python syntax, all12 site-JS syntax checks, qsearch validate
+(valid=true/issues=[]), whitespace and the live --write workflow pass.
+Artifact: research/reductions/rees_complete_instrument.json. Full repo
+suite/Lean NOT run; no UI, qsearch admission, central negative or Git edits.
+The unrelated offloaded file read was terminated; no cache repair performed.
+All owned processes terminal. The older concurrent audit remains unmodified.
+
+NEXT: universal-proof/novelty review or an actual motivated application
+surviving the classical filters. Do not expand this finite test family by
+inertia. The whole black-box reduction, asymptotic implementation, independent
+review and hard application remain open; every discovery flag stays false.
+
+## 2026-10-22 Genuine Two-Stage Instrument Follow-Up
+
+Continuation PROGRESS, following the copy-only correction below. Added
+tests/test_multistage_graded_descent.py (7 tests) and Section 7 of
+REES_COPY_ONLY_OUTER_REDUCTION.md. This is an actual class-three graded
+filiform F5 group, size625, with public semidirect multiplication independently
+checked against affine matrices. Physical central projectors and target
+partial traces produce the first quotient, then that ACTUAL density enters
+a second central instrument. No expected-output substitution between stages.
+
+Four homogeneous H cases (X,XW,XZW,Z) cover nonnormal and nonabelian hidden
+groups and changing central intersections. All positive record tuples agree
+with the target source. First/second branch counts are respectively
+(25,125),(1,125),(1,1),(25,1). Fresh arities2 then3 charge six original copies.
+Cubic F5 uses the supported real solver API; quadratic F5 is explicitly
+bounded exhaustive TEST DATA, never an implemented general backend.
+
+Decisive negative control: H={(t,0,0,t)} is valid but not dilation invariant.
+Bare cubic erasure leaves a linear hidden phase. Exactly8/25 record mass
+fails, and the COMPLETE record-averaged output has trace distance8/25
+from the intended source. This supports the necessity of homogenization
+for this single-moment mechanism, not a universal no-go for other algorithms.
+X,XW,XZW also give identical final abelian-image sources despite orders
+5,25,125: this component alone is HSMC, NOT full subgroup recovery.
+
+VERIFIED after final code edits: 114 connected tests PASS (74.69s); Python
+syntax, qsearch validate valid=true/issues=[], whitespace pass. The earlier
+12 site-JS syntax checks remain applicable; no frontend edits. Full repo
+suite and Lean NOT run. No Git or central candidate/negative admission.
+All owned processes terminal. The older concurrent audit mismatch remains
+unmodified and is NOT included in this passing test claim.
+
+NEXT: whole-Rees correctness/novelty scrutiny or a justified application.
+This finite graded control does NOT execute the arbitrary-H Rees cover,
+full black-box outer reduction, general SDE backend or compiled receiver.
+Do not use it to clear those obligations or keep adding similar fixtures.
+
+## 2026-10-22 Copy-Only General-Group Scope Correction
+
+Continuation PROGRESS. Whole-proof scrutiny found a FALSE access blocker,
+not a flaw in the proposed central character identity: the earlier audit
+applied the EXACT small-prime algorithm's source-inverse requirement to
+its bounded-error counterpart. Imran--Ivanyos 2304.08376 Proposition 3
+uses forward source calls; Lemma 2 consumes copies. Section 2.4 already
+contains copy-level restriction/quotient conversions. These are prior art.
+
+NEW REES_COPY_ONLY_OUTER_REDUCTION.md gives the conditional all-fixed-class
+nilpotent corollary from fresh IID mixed coset copies plus paid public
+group operations. Controlled right translation and target discard give
+out[q,r]=1_H(sigma(r)^-1 sigma(q))/|Q|. Public restriction costs ONE copy;
+quotient sections may be nonhomomorphic but their known kernel MUST lie
+in H. Flattened sections avoid nested copy overhead and a source decoder.
+The Rees lift consumes c copies with no moment design or orbit gap.
+
+For bounded p<=c, a degree-(p-1) diagonal witness has binary Fermat support
+and gives a nonempty zero-sum subset. This supplies an explicit conservative
+small-prime copy envelope without a Lazard substitution. No general solver
+backend was implemented. Added black_box_copy_budget and the witness
+checker binary_zero_sum_support to theorems/rees_hsp_reduction.py; the
+existing standalone --write workflow emits the new all-prime envelope.
+Corrected the overbroad inverse wording in REES_WHOLE_PROOF_SCOPE_AUDIT.md.
+
+14 new tests exercise literal controlled-action/partial-trace channels:
+nonnormal D8 restriction, nonhomomorphic quotients, flattened maps, invalid
+kernel containment, wrong action orientation, correlated banks, exact Rees
+source kernels, and characteristic-2 central erasure outside c<p. Connected
+suite: 107 PASS. Python syntax, qsearch validate (valid=true/issues=[]), all
+12 site JS syntax checks, whitespace and live artifact workflow pass.
+Full repository suite and Lean NOT run. No UI, registry admission or Git.
+
+The b104/c9 worst-case all-prime source envelope has ceil-log2 copies2194
+(small-prime part1918). It is an impractical upper bound, NOT performance
+of an executed receiver. Public-group gate counts are excluded numerically
+but remain paid polynomial-time obligations. Discovery/novelty/formal/
+receiver flags stay false. Exact unknown-source inverses are not supplied.
+
+Concurrent audit warning, NOT repaired here: theorems/
+rees_cover_and_nontransverse_descent_audit.py currently calls
+solve_bezout_sde_weights(..., vectors=...) and reads .weights. The actual
+API requires columns and returns a tuple. Signature binding reproduces
+the mismatch. Its default p5 quadratic call also needs backend/arity review;
+changing a keyword alone does not validate it. Its UT3 descent has ONE
+central stage despite the multistage label. Do not count its unrun tests
+or title as independent/full multistage verification.
+
+NEXT: independent whole-Rees proof scrutiny, actual multistage instrument
+composition, or a meaningful nonabelian application surviving classical
+filters. Do not keep extending input wrappers by inertia. All owned run
+handles from this pass reached terminal states.
+
+## 2026-10-22 Noisy Copies Through Paid Streaming Purification
+
+Continuation PROGRESS. Found and addressed a genuine source-model issue:
+ANY full-rank admixture makes exact scalar-support symmetry depend only
+on scalar operators of the representation, not on the intended pure state.
+Even finite purification leaves this exact subgroup unchanged. The valid
+repair is a DIFFERENT target: the nondegenerate principal eigenstate psi.
+
+REES_NOISY_STATE_SOURCE.md composes the KNOWN recursive SWAP purification
+protocol (Childs et al. 2309.16387; Grier et al. 2503.22644) with the
+proposed Rees receiver. A promised constant spectral gap Delta gives
+dimension-independent O_Delta(1/delta) expected copies per delta-accurate
+output, without a state inverse, conjugate, eigenvector oracle or reflection.
+The target's orbit gap gamma remains a SEPARATE global promise. Global
+depolarization eta<=eta_max<1 preserves psi and supplies Delta>=1-eta_max.
+Coherent/local/arbitrary noise need not. No new purification novelty claim.
+
+For T total ideal copies, allocate delta=epsilon/(8T), cap ALL raw reads
+with one clock using Markov, and compare complete circuits including ABORT.
+Expected raw cost is O_Delta(T^2/epsilon); hard cap O_Delta(T^2/epsilon^2).
+Do not use per-leaf clocks or pretend every finite purified state satisfies
+the exact symmetry promise. The explicit conservative burn-in worsens
+rapidly as Delta shrinks; no uniform efficiency claim for vanishing gap.
+
+NEW module theorems/rees_noisy_state_source.py implements exact bounds and
+an opaque-token streaming herald controller, NOT physical gates or the
+quantum receiver. Added 12 tests, proof/scope note and live reductions/
+rees_noisy_state_source.json. Controls use actual symmetric projection and
+partial trace; reject unheralded/virtual-distillation substitutions, shared
+source correlations, degenerate spectra and coherent target rotation.
+The noisy nonnormal UT3 source approaches the ideal coset packet only via
+the trace-distance hybrid, not an exact-stabilizer assertion.
+
+VERIFIED: 93 connected tests pass, including all 12 new controls; Python
+syntax, qsearch validate and whitespace pass. Full repo suite and Lean
+NOT run. The live c9 profile has purification depth1599 and raw-copy-cap
+ceil-log2 3199 at HYPOTHETICAL spectral/orbit gaps 3/4 and1/10. Impractical
+upper bounds, not measured performance. No UI, central admission or Git.
+
+The initial polynomial-phase application screen did not yield a candidate:
+translation-plus-polynomial-phase groups have abelian derived subgroup,
+and known fixed-degree phase-state learners remain serious baselines. Do
+not overextend binary learner theorems to all growing-prime inputs, but no
+justified separation or new higher-class application was found here.
+
+NEXT: independent whole-receiver scrutiny or a motivated nonabelian
+principal-state application with BOTH gaps proved. No natural hard family,
+classical separation, independent/formal verification or Shor-level result.
+Do not spend the next theory pass adding another noisy planted family or
+polishing this known purification protocol.
+
+## 2026-10-22 Copy-Only Rees Phase Erasure
+
+Continuation PROGRESS. REES_PROJECTIVE_STATE_SOURCE.md gives a new WRITTEN
+conversion from unknown IID state copies and a controlled LINEAR action
+of an explicit exponent-p Lazard group of fixed class c<p. It learns ray
+stabilizers (pure states), or scalar action on the entire occupied support
+(mixed states), CONDITIONALLY on the existing unimplemented Rees receiver.
+It does not cover arbitrary mixed-state conjugation or arbitrary projective
+representations. A global inverse-polynomial overlap gap remains a promise.
+
+The new public zero-moment design uses at most (c+1)! fresh copies per
+block, independent of the numeric prime. Multiply nonzero scalar Fermat
+solution rows to kill every power moment through c. Vandermonde proves
+enough distinct evaluation points automatically, including c=p-1. Tensor
+actions at these genuine Rees evaluation HOMOMORPHISMS erase the unknown
+character exactly. The lifted scalar-support stabilizer becomes a Bose
+stabilizer, with no loss of the original outside-subgroup overlap gap.
+No conjugate copies, preparation inverse, ordinary f, measured character,
+second Rees lift or character-normalizer recursion is needed here.
+
+NEW: theorems/rees_projective_source.py, 11 tests, the full proof note and
+research/reductions/rees_projective_source.json. The implemented compiler
+checks public certificates and has capped small-root/quadratic fast paths;
+the GENERAL scalar diagonal backend is not implemented. Unsupported cases
+fail closed, never scan the field. Physical multiplicities count copies.
+Class-nine controls at p=43 and p=2^127-1 both use 14 points. The n19/D97
+profile at HYPOTHETICAL gap 1/10 needs 21010 blocks per leaf and has total
+copy ceil-log2 bound 1588. This is not a practical resource estimate.
+
+FALSIFIERS: ordinary points 1,...,c retain even-grade character phases;
+one reused copy invents symmetries despite a valid moment certificate;
+mixed conjugation is strictly different from scalar-support symmetry.
+Actual regular-action controls cover nonnormal and nonabelian subgroups,
+plus nonorthogonal orbit amplification. Planted fixtures are NOT candidates.
+
+VERIFIED: 185 connected tests pass; another 30 older twisted-source and
+relative-recursion tests pass. Late immutability/copy-cap edits were rerun
+against all 11 new tests. Python syntax, qsearch validate, site JS/site
+checks, whitespace and live artifact workflow pass. Full repo suite and
+Lean NOT run; the state-transfer test file is iCloud dataless and was not
+hydrated. No UI/qsearch admission, Git, outreach or cache-repair work.
+
+STATUS: no natural hard state family, demonstrated classical separation,
+independent correctness review, formal verification or novelty verdict.
+The source lemma simplifies the proposed quantum-input route, not the
+large resource burden of the receiver. NEXT: attack the complete argument
+or identify a motivated nonabelian quantum-input application surviving
+classical structure learning. Do not replace that question with more
+planted fixtures or mechanical wiring. Details and scope in the new note.
+
+## 2026-10-22 Rees Whole-Proof Audit And Conditional Black-Box Scope
+
+Continuation PROGRESS. REES_WHOLE_PROOF_SCOPE_AUDIT.md rechecks the short
+core and derives a CONDITIONAL corollary for ordinary HSP in uniquely
+encoded finite nilpotent groups of ANY FIXED class, without a bound on
+primes or exponent. This is local theory under review, NOT an independently
+verified result or implemented general-group algorithm. Lazard subgroup
+linearity and fixed-degree SDE promises were checked against primary texts.
+
+The public-coordinate bridge generalizes the existing class-four proof:
+universal fixed-class inverse-BCH words, bracket spanning, paid abelian
+kernel learning, bracket-coordinate acquisition, and forward encoding with
+cleanup. No coherent inverse encoder is assumed. Published outer reduction
+handles arbitrary exponents; p<=c uses the known bounded-prime algorithm.
+Do NOT implement a new ring-valued SDE by inertia. Normalizer recursion is
+absent only INSIDE the exponent-p Rees core; it remains in the imported
+general-exponent outer controller. Ordinary f, not a bag of states, is needed.
+
+Added exact black_box_large_prime_budget and2 tests. The b(b+1) outer call
+cap and four-way error allocation are explicit. Its c9 query-dimension
+exponent147 is only a LARGE-PRIME CORE query envelope, not the whole gate
+runtime; small-prime queries and group setup are explicitly excluded.
+Live Rees artifact preserves all discovery/novelty/formal/receiver flags
+false and separates core from outer scope.174 connected tests PASS23.91s;
+Python syntax, qsearch validate, site JS syntax and whitespace checks pass.
+Full Python suite and Lean build NOT run. Lean draft remains unverified
+outside build; no cache repair, GPT Git, UI/CLI admission or outreach.
+
+Application screening also read Grigoriev1997's stated quantum polynomial
+shift-self-equivalence result and Dvir--Oliveira--Shpilka2014's classical
+degree/characteristic restrictions. Pure translations are abelian and do
+not demonstrate a new nonabelian application. Exponential-degree/small-
+characteristic cases are not automatically covered by those classical
+theorems, but failing their premises is not hardness. No candidate admitted.
+
+NEXT: meaningful succinct-input NONABELIAN application surviving all
+white-box/module/factorization attacks, or a specific universal flaw in
+the Rees cover plus central conversion. Do not substitute more finite
+fixtures, another input-wrapper implementation, or Lean-cache work for
+that question. Independent correctness and novelty remain unresolved.
+
+## 2026-10-22 Positive Rees Cover Removes Hidden-Potential Recursion
+
+Continuation PROGRESS. REES_HSP_REDUCTION.md gives a much shorter
+PROVISIONAL whole algorithm for explicit odd-prime F_p Lie input, fixed
+class c<p, and coherent ordinary f. Public A=sum gamma_r(L)t^r has
+dimension<=cn. The ordered tuple of c nonzero evaluations of original f
+hides EXACTLY sum (h intersect gamma_r(L))t^r by Vandermonde interpolation.
+It is homogeneous for EVERY H. Grade one retains ALL of L; central descent
+then abelian sampling recovers all of h. No unknown section potential,
+normalizer quotient, transversality, or arbitrary-H recursion is needed.
+This replaces the preferred ordinary-oracle composition, not state-only
+access contracts or growing-class barriers. No discovery admission.
+
+The decisive normalization extension: for K=H intersect Z, a label has
+probability |K|/|Z| on K-perp and zero elsewhere. The normalized projected
+state has denominator |G||K|; |K| equal decompositions of g=h*z cancel
+that factor. Its right correlation remains chi(z) on HZ and zero outside.
+Every positive-probability label tuple yields the same quotient source
+under a valid nonzero SDE witness and fresh inputs. Uniform labels are
+not needed; conditioning zero-mass branches or reusing correlated sources
+remains invalid. The written argument also gives dimension minimality
+within the public graded-cover/degree-one-surjection ansatz, not globally.
+
+NEW public compiler theorems/rees_hsp_reduction.py,13 tests, complete proof
+note and live reductions/rees_hsp_reduction.json. Tests cover all19
+subgroups of UT3(F3), nonabelian UT5 hidden subalgebras,127-bit primes,
+nonuniform central instruments with diagonal/full K, omitted evaluations,
+fake truncation, actual class-nine resource accounting, and UT9 with
+NONMETABELIAN DERIVED algebra. The c9/n19 cover has97 coordinates,
+9 queries per raw source, query-dimension exponent145, and a still absurd
+sufficient whole-run ceil-log2 query count1573. Not measured performance.
+
+VERIFIED:172 connected tests PASS26.76s, including13 new tests; Python
+syntax, formal gen_crosscheck, qsearch validate, site JS/site checks,
+whitespace and live --write workflow pass. Full Python suite not run.
+No quantum receiver or general SDE implementation; no independent
+correctness/novelty review or application-level advantage established.
+
+FORMAL LIMITATION: draft formal/drafts/ReesHomogenization.lean is NOT
+compiler checked and is NOT in Formal.lean/default build. Multiple checks
+stopped during import loading: iCloud dataless .olean/.ir/.ir.sig caches
+blocked or returned invalid headers. Targeted hydration restored some
+files but not enough; do not infer proof validity from these failures or
+from the Python fixtures. No Mathlib rebuild was attempted. Existing full
+cached Lean build was not rerun this pass. Gemini's precise compile/guard/
+integration follow-up is at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+All owned validation/hydration processes were stopped or completed before
+handoff. No GPT Git, UI/qsearch/central admission, agents or outreach.
+
+Primary comparison:0707.1260 already has automorphism-twisted tensor
+cancellation;1503.09016 supplies fixed-degree SDE;2304.08376 already has
+arbitrary-H central conversion. None of those ingredients is claimed new.
+The proposed new composition is the ordinary-f Rees homogenization and
+full grade-one recovery. Search failure is NOT novelty evidence. The
+concurrent advice-free recursive oracle audit was read; its p^k scans
+are finite classical controls, not an implemented quantum decoder.
+
+NEXT HIGH-VALUE THEORY: independently attack the SHORT complete proof,
+especially subgroup/log correspondence, evaluation homomorphisms, all-K
+source law, fresh recursive composition, and prior-art scope. Then seek
+a meaningful application surviving public linear/module and low-degree
+attacks. Do not resume expanding the old multivariate potential recursion
+or add more small fixtures by inertia. Goal remains ACTIVE.
+
+## 2026-10-22 Arbitrary-H Jet Recovery And Whole-Run Accounting
+
+Continuation PROGRESS. RECURSIVE_JET_RECOVERY.md assembles a provisional
+whole-algorithm claim for EXPLICIT F_p Lie input, fixed class c<p,
+exponent-p Lazard group and coherent ordinary f. No N''=0 restriction.
+This is not arbitrary black-box/prime-power/growing-class/StateHSP input,
+an independent proof review, an executed receiver or a discovery admission.
+
+The arbitrary-H recursion has just one recursive call on S', whose class
+halves. After the normalizer quotient, each transverse image restriction
+strictly drops class. I(c)+A(c)<=2c-popcount(c)<2c; atc9 at most12 image
+and4 abelian calls. Nested public quotient sections keep one ORIGINAL
+f call per inherited call, so recovery query costs ADD. The new whole-run
+certificate charges all image trees, base samples, SDE abort caps and
+complete-instrument errors. Its deliberately loose n19/c9 query bound has
+ceil-log2=2922 and dimension exponent473: still impractical, not a measured
+runtime or a comparison to the previous single-image bound1763.
+
+NEW recursive_jet_recovery.py implements public linear-section composition
+and exact global bounds, not hidden-subgroup recovery. NEW
+Formal/RecursiveOracleReduction.lean proves quotient hiding with ker(pi)<=H,
+section independence/composition, a reversible compute/query/uncompute
+identity, and the fact that discarding uncomputed representative workspace
+destroys all subgroup coherence. Three standard-axiom guards; default import.
+
+13 new tests include proper NONABELIAN H atp7 and2^127-1, an actual UT9
+nonmetabelian-derived ambient, nonhomomorphic sections, wrong kernels,
+cleanup, and exact global probabilities. Existing Milestone23 was reused,
+not edited. Its reference callbacks still have known H. A wrong-zero-image
+callback passes ALL public guards and returns SUCCESS with WRONG H:
+neither status nor a correct class trace is a decoder correctness proof.
+
+VERIFIED:159 connected tests PASS56.72s (RuntimeWarning fatal), full cached
+lake build --wfail PASS3472jobs, syntax, formal crosscheck, qsearch validate,
+site JS/site checks, whitespace and live artifact workflow pass. All owned
+processes terminal. Full Python suite not run. No GPT Git, UI/CLI/central
+admission, agents or outreach. Goal ACTIVE; concurrent work preserved.
+
+NEXT: independent whole-proof/novelty audit of the universal nonabelian
+degree/tuple-hiding construction, or a meaningful application surviving
+classical orbit-module/low-degree attacks. Do NOT add another local
+instrument/callback verifier by inertia. New code is not a reason to
+declare the provisional theorem established. Fresh primary check of
+arXiv2608.05321v2 introduction/AppendixA.3 still distinguishes class-two
+from bounded-prime constant-class scope; this is not exhaustive novelty.
+
+## 2026-10-22 Complete Mixed Central-Character Descent
+
+Continuation PROGRESS. CENTRAL_CHARACTER_DESCENT.md now derives the full
+central spectral instrument from the original mixed coset projector,
+including all labels and their masses, restored full-register Fourier
+measurement, controlled-action Kraus contraction, zero-scale consumption,
+fresh conditional tensor recursion, and unconditional approximation costs.
+The output is the correct quotient coset matrix on EVERY ideal label
+tuple under the explicit preservation/transversality/SDE premises. This
+is a local channel theorem, not independent validation of the entire HSP
+route and not a new discovery admission.
+
+NEW theorems/central_character_descent.py,12 tests, reduction JSON and
+Formal/CentralCharacterDescent.lean. The Lean module derives the source
+coefficient/trace and literal controlled-action completeness/output,
+tensor factorization and conditional quotient kernel. Five axiom guards
+use only standard axioms. Full projector completeness, concrete jet/SDE
+instantiation and trace-distance composition remain written proofs, not
+claimed as fully formalized. Default Formal.lean imports the module.
+
+All27/125 central-label tuples atp3/5 pass the actual matrix controls.
+Wrong compression and nonpreserved H fail. A new correlated-source
+counterexample has correct one-copy marginals AND independent uniform
+central labels, but the quotient output is wrong by trace distance2/3.
+Freshness cannot be inferred from either observation. Exact tree counts
+charge all consumed sources and every complete instrument, not just depth.
+The exhaustive fixture scale search is capped, NOT a general SDE backend.
+
+VERIFIED:167 connected tests PASS67.07s, including12 new tests and the
+concurrently present five-test jet_tuple_oracle_central_descent_audit;
+Python syntax, formal crosscheck, qsearch validate, site JS/site checks,
+whitespace and live --write workflow pass. Full Python suite not run.
+Full cached lake build --wfail PASS3471jobs, including five standard-axiom
+guards for the new module. All owned processes are terminal.
+No GPT Git, UI/CLI/central admission, agents or outreach. Goal ACTIVE.
+
+Read the concurrent Milestone23 verifier without editing it. Its arbitrary-H
+callbacks explicitly use target_H in the reference fixture. That is valid
+for checking rebuild/normalizer bookkeeping, NOT an implemented decoder.
+NEXT: audit/refine the full arbitrary-H theorem, quotient representative
+cleanup, termination, all recursive resources, then independent novelty
+and a hard application. Do not add another small central fixture or
+return to random alignment for ordinary-f access. Recent prior-art lead:
+arXiv2608.05321v2 (scalar-action semidirect and quasi-Hamiltonian cases);
+only its abstract/scope was checked here, not its full proofs.
+
+## 2026-10-22 Deterministic Oracle Homogenization
+
+Continuation PROGRESS. Adversarial audit of the preceding jet lift found
+a stronger interface, not a counterexample to its algebra. With the
+ACTUAL ordinary coherent f input, construct f_hat(a,q) as the ORDERED
+tuple f(E_i(a)*section(Y_i+s_i*q)). A deterministic lower-simplex Newton
+grid has ell=binom(m+c,m+1) nonzero-scale points and injective evaluation.
+The original section-word relation proves that this tuple hides exactly
+H_F in J semidirect V. P is never evaluated. This removes random source
+alignment, nonnormal factorization and spectator measurement from the
+preferred ordinary-oracle algorithm. The older state-only route stays
+separately labelled; there is no promotion of samples to function access.
+
+NEW JET_ORACLE_HOMOGENIZATION.md, jet_oracle_homogenization.py and live
+reductions/jet_oracle_homogenization.json. The public compiler returns
+original query logarithms; it is not synthesized quantum software.
+Public jet algebra and ambient certificate now accept p>c. The OLD random
+resource profile still requires p>2c. The deterministic profile uses165
+original queries per lifted call on the c9 control, no retries/spectators,
+and a still-impractical sufficient single-image ceil-log2 bound1763.
+
+Thirteen new tests include all15,625 inputs of a lifted UT3 oracle:
+every label fiber equals the actual graph-subgroup coset. UT5 nonabelian
+normal controls match independent matrix exp/log atp5,17,2^127-1.
+Omitting a grid point creates false collisions even for original H=1.
+H=N violates the transverse graph conclusion, so arbitrary-H intersection
+recursion cannot be skipped. Public compilation succeeds with its hidden
+potential fixture disabled. No finite control is a quantum benchmark.
+
+NEW Formal/JetOracleHomogenization.lean proves the actual pointwise
+normalized cocycle/scaling identities, graph cosets in Mathlib's semidirect
+product, and exact tuple-oracle hiding under explicit input contracts.
+Operational tupleOracle has no P/F/H argument. Two headline axiom guards
+use only standard axioms. Actual Lie/polynomial instantiation, simplex
+unisolvence and quantum central descent are not thereby formalized.
+
+Primary comparison: arXiv1107.2189 already has strong-base tuple-query
+reductions and abelian-valued function-graph groups. Those ingredients are
+NOT new. Possible novelty is the nonabelian graded homogenization plus
+its whole nilpotent-HSP composition; no independent novelty verdict.
+Rechecked SDE Theorem11/Section3.3 against the existing arity formula.
+
+VERIFIED:192 connected Python tests PASS49.31s, RuntimeWarning fatal;
+full cached lake build --wfail PASS3470jobs; syntax, formal crosscheck,
+qsearch validate, site JS/site checks and live workflow pass. All owned
+processes terminal. Full repository Python suite not run. No GPT Git,
+CLI/UI/central admission/agents/outreach; concurrent changes preserved.
+
+NEXT: audit/prove the complete mixed central-character instrument and
+fresh recursive descent, then arbitrary-H recursion/novelty/application.
+After recording a central Fourier label, RESTORE the full projected group
+register before ordinary right multiplication; alternatively implement
+the explicit twisted action on a compressed carrier. Plain quotient
+multiplication after dropping the central coordinate is not the proof.
+Do not return to aligning sources for ordinary-f input or manufacture
+more local polynomial examples/resource integers instead of this audit.
+
+## 2026-10-22 Nonabelian Jet Homogenization
+
+Continuation PROGRESS, not a discovery admission. Read
+NONABELIAN_JET_HOMOGENIZATION.md before extending the old erasure trees.
+New proposed mechanism: retain the ENTIRE normal regular register,
+align it into a public polynomial-map group J, and regard its normalized
+curve graph as an ordinary hidden subgroup in J semidirect V.
+F(q)(u,t)=P(u)^-1 P(u+t*q) is a proof witness only. Public dilation
+preserves this hidden graph EXACTLY, unlike generic original H. Central
+character descent then needs only degree-d SDE on r_d observed labels,
+not formal unknown coefficient cancellation and two scalar erasure trees.
+
+NEW nonabelian_jet_homogenization.py implements universal checked BCH,
+polynomial group/substitution algebra, an actual ambient flag certificate
+WITHOUT the old N''=0 restriction, and public nonnormal-subgroup
+factorization x=E(j)*exp(k). Component-separated projections make BCH
+inversion triangular. E(J) need NOT be normal; never take N^B/E(J) as a
+group quotient. Every spectator and central label is retained. The same
+F/J survives every successful evaluation transcript without evaluating P.
+
+Twenty new tests cover a nonmetabelian normal N=gamma2(ut9), independent
+matrix exp/log at a127-bit prime, reversed normalization failure, bad
+ambient weights/Jacobi/rank rejection, nonnormal spectator factorization,
+an exhaustive register permutation, actual nonhomogeneous original H,
+and the complete mixed-density central conversion including all labels.
+Direct dilation still fails the old support control; no barrier is erased
+by declaration. The final connected run passes179 tests, including20 new
+tests, in26.65s with RuntimeWarning fatal.
+
+Live reductions/nonabelian_jet_homogenization.json is a CONDITIONAL
+single-image resource profile. Actual previous c9/m2 weights give J994,
+K996, eight central stages, query CEIL-log2 upper bounds1776 atp43 and
+1781 at2^127-1. Still impractical. Published general SDE, physical source
+control and synthesis are NOT implemented. No novelty/application claim.
+The note includes an arbitrary-H recursion ARGUMENT, not its refinement.
+Syntax, qsearch validate, site JS/site checks pass. No Lean edits or full
+repository Python run. All owned processes are terminal.
+No GPT Git/CLI/UI/admission/agents/outreach; concurrent work preserved.
+
+NEXT MAIN-MODEL TASK: independent whole-reduction attack, especially
+ordinary source -> same lifted coset mixture -> mixed-state descent and
+arbitrary-H recursion. Compare polynomial-graph/semidirect literature.
+Do not use the new module as an implemented quantum algorithm or spend
+another pass merely collecting local examples and smaller resource integers.
+
+## 2026-10-22 Ambient-Filtered Induced Receiver
+
+Continuation PROGRESS. Inspected the receiver/resources, queried the
+corpus on cancellation and filtration, and rechecked the primary SDE and
+Lazard dependencies. NEW AMBIENT_FILTERED_INDUCED_RECEIVER.md changes the
+source representation: adapt N=A+I to the ACTUAL ambient lower-central
+flag, I=N'. Coordinate i has potential degree<=ambient weight w_i.
+Bracket weights add, so the aligned scalar phase has weight<=c rather
+than kc. Heterogeneous full jets and component-preserving GL/Taylor
+maps make this a constructive refinement, not just smaller integers.
+
+NEW ambient_filtered_induced.py provides the public flag certificate,
+heterogeneous chart, filtered packet compiler, invariant-support DP and
+recomputed finite resource schedule. Existing metabelian compiler shares
+its exact substitution core; pullback/merge preserve the actual packet
+type and complete schema. full_jet_rank_schedule now uses feature_count,
+not J/r: that old quotient is WRONG for heterogeneous component degrees.
+The uniform route remains a conservative research comparator.
+
+The actual c9/k4 witness has A weights(6,5,4,4,3,3,2), I weights
+(9,8,8,7,7,7,6,6,5,5). With m2, jets1155 ->155, weighted degree36 ->9,
+ordinary degree9 ->6, stages45 ->15, formal coefficients935 ->456.
+Live reductions/ambient_filtered_induced.json gives sufficient query
+CEIL-log2 bounds333018 ->4496 at p43 and333022 ->4501 at2^127-1.
+Still impractical UPPER bounds for one transverse call, not timings,
+lower bounds, a new SDE solver, or an executed quantum receiver.
+
+Twelve new tests include actual matrix witnesses at p19,43,2^127-1,
+independent Lie-word template agreement, heterogeneous transport and
+composition, a complete independent semidirect coefficient comparison,
+schema-preserving weighted cancellation and independent support counts.
+An actual UT5 falsifier mixes CENTRAL-to-N coordinates E14 and E24:
+the normal bracket tensor still passes, but the ambient flag fails and
+a degree-three term leaks into the advertised degree-two coordinate.
+Thus compatible weight integers alone DO NOT certify source degrees.
+
+A separate actual c9,m2 coefficient stress run used57 rank-complete
+sources, zero spectators and only the last source label nonzero. It
+compiled393009 terms, maximum weight9, over456 parameters and155 jet
+variables. This is not a success-probability estimate for that transcript.
+
+AmbientPotentialFiltration.lean now proves adapted-coordinate word,
+monomial and polynomial degree bounds via KillsAboveWeight. Two new
+headline guards permit only propext, Classical.choice and Quot.sound.
+They formalize the degree origin, NOT the whole filtered quantum compiler.
+
+Python verification:561 connected tests PASS156.72s, RuntimeWarning fatal.
+After the final count-property/rank-helper fixes,46 and66 focused tests
+PASS. Syntax, formal crosscheck, qsearch validate and site JS/site checks
+pass. Full cached lake build --wfail PASS3467jobs; live workflow rerun.
+All owned processes terminal. Full repository Python suite not run.
+No GPT Git, CLI/UI, central
+admission, agents or outreach; concurrent changes preserved.
+
+NEXT: independent whole-receiver/novelty review or a different mechanism
+that avoids the remaining huge SDE tree. Canonical absorption of Z(N)
+into the abelian fiber may simplify the carrier further, but is not
+implemented by this I=N' certificate. A genuinely motivated application
+must still survive the public-circuit/orbit-module classical filters.
+Never infer a Shor-level contribution merely from these smaller bounds.
+
+## 2026-10-22 Classical Orbit-Module Application Filter
+
+Continuation PROGRESS, a negative application result rather than an
+algorithm claim. Read the application/receiver notes, queried the corpus
+for both novelty and orbit-span directions, and rechecked Luks' primary
+solvable-matrix-group vector-stabilizer theorem. NEW
+POLYNOMIAL_ORBIT_MODULE_CLASSICAL_FILTER.md gives a capped public-circuit
+orbit-span learner with a first-error PIT proof and faithful stabilizer
+reduction. Degree need only have small BIT length. No derivative/no-carry,
+p>D, class bound or monomial expansion is required by this filter.
+
+NEW theorems/polynomial_orbit_module.py stores translated public matrices,
+solves F_p coordinates of extension evaluations, fixes each relation
+BEFORE a fresh test point, and outputs either Monte Carlo closure or
+R+1 EXACTLY independent translates. Evaluation witnesses are replayable.
+Retaining diag(g,rho(g)) avoids losing the action kernel. General
+matrix-group stabilizer solving remains a PUBLISHED, UNIMPLEMENTED
+dependency. The degree/evaluator/p-group contracts are not inferred.
+
+NEW classical_baselines/polynomial_orbit_module.json: Moore-minor controls
+have ranks3,3,10 at p5, p2^127-1, p43. The last uses the ACTUAL class-nine
+19-dimensional Lie ambient, whose derived group is metabelian class4.
+Degree11,966,490,760,401 compresses to rank10 in21 candidate translates
+and197 evaluator calls; it reduces to a faithful20-dimensional vector
+stabilizer. Every generator identity is independently checked EXACTLY
+using exterior-power coefficients, not another random point. Older
+derivative guards fail on two controls. These are not hard applications.
+
+Opposite control x0^126 on UT3(F127) exceeds cap5 with six certified
+independent translates but has the elementary stabilizer a=c=0. Thus
+rank-cap failure is NOT evidence of quantum hardness. Adversarial forced
+zero samples show that exact independence alone does NOT certify closure.
+Noncommuting/all125 UT3 stabilizer comparisons, zero/constant circuits,
+nonfaithful actions, base-field aliasing and 127-bit coordinates are tested.
+The degenerate test caught and fixed FLINT field-element truthiness in
+the new determinant evaluator; zero tests now use is_zero explicitly.
+
+VERIFIED:114 connected Python tests PASS90.09s, including30 new tests,
+RuntimeWarning fatal. Live workflow --write, syntax, qsearch validate,
+all site JS syntax/site checks and whitespace PASS. No Lean code changed;
+full repository Python suite and Lean build not rerun this pass. All
+owned processes terminal. No GPT Git, CLI/UI, central admission, agents
+or outreach; unrelated concurrent work preserved.
+
+NEXT: a genuinely motivated application surviving ALL classical filters,
+an independent whole-theorem/novelty review, or a concrete tree-avoiding
+receiver mechanism. Do not manufacture more high-degree determinant
+families, interpret missing backend wiring as hardness, or mistake this
+classical reduction for a breakthrough. Fresh literature checks did not
+establish a new hard application or an exhaustive novelty certificate.
+
+## 2026-10-22 Complete Written Receiver Composition
+
+Continuation PROGRESS. Inspected the current source/compiler/recursion,
+queried the corpus, and checked primary diagonal-solver and August2026
+HSP literature. NEW INDUCED_RECEIVER_COMPOSITION_THEOREM.md gives one
+provisional public procedure from ordinary f to arbitrary hidden H:
+proof-only potential, all-label right-fiber source, full-jet alignment,
+weighted erasure, negative jet Fourier, ordinary erasure, image recovery,
+normalizer recursion and a complete-history/first-error complexity proof.
+Scalar/abelian branches, public section cleanup and full Lie-basis output
+are explicit. Group-generator logs need Lie closure, not just linear span.
+
+Closed a formal interface omission: published SDE returns a nonzero
+VECTOR, possibly with zero coordinates. NEW FullJetWeightedErasure
+active_relation and active_degree_reduced_branch restrict to the active
+subtype at positive degree and use its cardinality in normalization.
+NEW NonlinearJetChannel tensor_curve_trace_one and
+discard_independent_curve_sources justify tracing inactive independent
+normalized factors. Four new axiom guards allow only propext,
+Classical.choice and Quot.sound; no proof placeholders.
+
+NEW tests/test_induced_receiver_composition.py has10 cases. The strongest
+falsifier is SEPARABLE shared randomness: Gamma=p^-1 sum_l rho_l tensor
+rho_l, rho_l=|+_l><+_l|, has correct I/p marginals for U=0. Merge scales
+(1,-1) give the correct p^-2 branch masses but WRONG pure uniform output,
+hence wrong Fourier law. Matching packets/marginals/probabilities cannot
+certify conditional tensor freshness. Other controls cover zero-scale
+discard normalization, singleton support, all-zero/stage-zero rejection
+and different hidden assignments under identical symbolic schemas.
+
+VERIFIED: 549 connected Python tests PASS155.91s, RuntimeWarning fatal.
+Full cached lake build --wfail PASS3467jobs. Syntax, formal crosscheck,
+site JavaScript/site checks, qsearch validate and whitespace PASS.
+All owned processes terminal. Full Python repository suite not run.
+Updated formal README, main research note, priority and mechanical plan.
+Corrected gH terminology to LEFT cosets in the prior resource note.
+
+This is a complete WRITTEN composition under review, not independent
+verification, an extracted program, a physical receiver or a speedup.
+The existing recursion still uses ideal image callbacks and rejects
+class(N)>3; general SDE/controller/synthesis remain unimplemented.
+The new scalar-semiproduct/quasi-Hamiltonian paper does not subsume the
+nonabelian exponent-p scope by the elementary comparisons in the note;
+no exhaustive novelty certificate or useful hard application is claimed.
+No GPT Git, CLI/UI, central admission, agents or outreach. Concurrent
+changes preserved. Next prioritize substantive novelty/application review
+or a justified mechanism avoiding the huge erasure tree, not more nearby
+filiform fixtures, bookkeeping modules or wrappers.
+
+## 2026-10-22 Universal Induced-Cocycle Refinement
+
+Continuation PROGRESS. Read the current compiler/source/resource records,
+ran the corpus check, and read Kurlin's primary metabelian BCH paper.
+NEW INDUCED_COCYCLE_UNIVERSAL_REFINEMENT.md supplies a direct formal-series
+derivation for ALL admissible nilpotent Lie algebras, not just filiform:
+with R=ad(A)|I, S=ad(X)|I, C=[A,X], the B coefficient of R^i S^j is
+(-1)^(i+j)/((i+1)!j!), and the C coefficient divides this by i+j+2.
+Truncate at i+j<=k-1 for B and <=k-2 for C. R,S commute ONLY on I.
+No inverse of R/S, homomorphic section or hidden coefficients are used.
+
+NEW induced_cocycle_formula.py and reductions/induced_cocycle_formula.json:
+normal-form algebra with universal basis A,X,B_ij,C_ij, dimension k^2+2.
+It specializes homomorphically to arbitrary inputs by commuting adjoints
+and lower-central truncation. Full rational coefficient identities agree
+with the independent free-associative exp/log certificate for k1..7;
+k7 has49 operator terms instead of1468 right-nested terms. A separate
+ODE coefficient recurrence check runs through k64, NOT a word expansion
+at k64. Denominators divide k!, allowing reduction at p>k.
+
+Compiler cocycle_template now uses the closed formula. Old independent
+lie_word_cocycle_template is retained as a research verifier, NOT legacy
+circuit search or a fallback. Complete coefficient checks include a
+nonsplit universal extension and changed public sections/ideal bases.
+ut_5 with nonabelian I=N' gives an exact formula counterexample, so the
+abelian-ideal premise cannot be weakened. Existing phase outputs unchanged.
+
+NEW InducedCocycleOperators.lean is in the normal build: commuting
+restricted adjoints, normal-form action/bracket rules, ad(A+B) iterates,
+coordinate bracket and lower-central cutoff. Six guards use only propext
+and Quot.sound. No proof placeholders. Full build --wfail PASS3467jobs;
+539 connected Python tests PASS157.18s, including20 new tests, with
+RuntimeWarning fatal. Syntax, formal crosscheck, site JS/site, registry
+validation and whitespace pass. Full Python repository suite not run.
+Final strengthened c9 witness checks compare ALL public template
+coefficients between both backends at p43 and p2^127-1: two tests PASS
+in3.78s. All owned processes terminal. Both live artifacts regenerated.
+
+The general source-to-cocycle/substitution refinement now has a written
+universal proof, exact certificates and formal specialization lemmas.
+Still NOT a single Lean proof of Lazard/exponential differentiation,
+Python checker/compiler extraction or the full adaptive quantum receiver.
+The smaller compiler does NOT reduce quantum tree arities or samples.
+General SDE execution, synthesis, independent novelty and a useful hard
+application remain. No GPT Git, CLI/UI, central admission, agents or outreach.
+
+NEXT: independent complete receiver composition/correctness review, or
+a justified mechanism avoiding its giant erasure tree. Do not spend the
+next pass repeating local cocycle examples or merely adding wrappers.
+
+## 2026-10-22 Higher-Degree Support And End-To-End Resource Audit
+
+Continuation PROGRESS. Read current handoffs, compiler, source proofs and
+corpus; rechecked the primary diagonal-solver paper. NEW
+INDUCED_END_TO_END_RESOURCE_AUDIT.md records input/access assumptions,
+support proof, exact schedule, conditional freshness/error argument,
+bit-cost dependencies, c+k-2 recursion accounting and attempted falsifiers.
+No hidden nonresidue/factor-p-1 oracle is needed by the PUBLISHED solver;
+the repo's executable g<=2 subset is still not that solver.
+
+NEW induced_resource_certificate.py and tests. For parameter degree h,
+actual source support has q degree<=hD, jet degree<=k-h, at most one I
+coefficient, and pure-A h<k. No parameter-free terms. Actual separated
+Taylor transport preserves this; arbitrary weight-triangular maps do not.
+The compiler packet now rejects violations. Exact generating-function DP
+counts weighted jet monomials at arbitrary fixed carrier degree. Every
+stage has its own equation count, arity and suffix-product node count.
+
+Live reductions/induced_resource_certificate.json: c9,k4,m2,r7,b10,
+epsilon1/8. Query sufficient ceil-log2 envelopes generic1081434 ->
+supported333018 at p43, generic1081439 ->333022 at 2^127-1. All are
+enormous UPPER bounds, not measurements or lower bounds. Integers are
+reconstructible from exact inputs/factory; no receiver was executed.
+Do not confuse these CEIL logs with the prior certificate's floor logs.
+Logical data-register count excludes oracle/arithmetic/solver/transcript
+workspace. Certificate covers ONE transverse call, not the whole recursion.
+
+VERIFIED: 519 connected tests PASS (206.56s, RuntimeWarning fatal),
+including 18 new tests. Full cached lake build --wfail PASS (3466 jobs).
+Python syntax, formal crosscheck, site JS/site checks, qsearch validate
+and whitespace PASS. All owned processes terminal. Full repository
+Python suite not run. No new Lean theorem, GPT Git/CLI/UI/registry
+admission, agents or outreach. Unrelated concurrent changes preserved.
+
+NEXT: one universal Lie/Lazard-to-public-polynomial refinement and complete
+receiver proof, or a justified mechanism eliminating the large tree.
+General SDE execution and uniform physical synthesis remain distinct
+implementation gaps. No novelty certificate or access-matched hard
+application. Do not repeat nearby source/degree examples, promote this
+resource arithmetic to a speedup, or wire a new dashboard.
+
+## 2026-10-22 Noncentral Source-To-Scalar Refinement
+
+Continuation PROGRESS. Read current source/compiler/corpus and primary
+QFT/nilpotent-HSP literature. Generalized CentralRegularSource.lean at
+the CHART boundary: RightAbelianChart uses n=section(x)*fiber(z), with
+NO centrality or normality premise. All original completeness, regular
+contraction, unitary representation, branch mass and ordinary-oracle
+source proofs now apply. Historical namespace retained. CentralChart has
+an EXPLICIT conversion; avoid implicit coercions in downstream proofs.
+VectorCentralSource.centralChart now directly constructs the right chart.
+
+NEW InducedRegularSource.lean: additive quotient proves translation,
+cocycle composition, W(gq)^dag W(gr) monomial kernel, actual original-
+oracle-to-matrix identity, public GL/spectator Kraus contraction to
+curveRho, NEGATIVE cocycle phase and physical mass1/(|I|*|spectator|).
+Operational alignedOracleBranch has no hidden potential/U/curve input.
+Eight headline axiom guards use only standard axioms. A concrete
+noncentral vector-BCH fiber B+C uses (a,(b,c-delta(a,b)/2)); nonzero
+delta explicitly witnesses noncentrality. This is not a renamed central
+example. The additive quotient assumption, unlike the instrument alone,
+does restrict the source to the metabelian translation setting.
+
+NEW exact test_induced_source_compiler_composition.py starts from actual
+canonical gH labels in Fp^2 x class-four filiform N (p11, proper U),
+contracts by exact phase counts, then batch shear, GL and spectators.
+It matches the public higher-degree compiler sign and keeps ALL factors:
+1/(|V|*|G|^b) = 1/(|I|^b*|V|^b*|Z|) * 1/(|V|*|J|).
+A wrong retained address kills coherence even when its hidden value is
+zero. The selected normal factor here is not ambient G'; actual quotient
+translation is linear inside D2. No high-degree hardness inference.
+
+VERIFIED: full lake build --wfail PASS (3466 jobs), eight new guarded
+claims and no proof placeholders. 84 connected Python tests PASS (34.63s,
+RuntimeWarning fatal); final strengthened composition test PASS (5.49s).
+Python syntax, formal crosscheck, site JS/site, qsearch validate and
+whitespace PASS. All owned processes terminal. Full Python suite not run.
+
+NEXT: one independent end-to-end audit and new uniform resource envelope
+for the metabelian-derived route. Explicit Lie/Lazard chart and universal
+compiler refinement, all-record batch/erasure composition and SDE/synthesis
+execution remain open. Do not repeat local examples or relabel this as
+a whole-algorithm proof. No GPT Git/CLI/UI, central admission or outreach.
+
+## 2026-10-22 General Induced-Phase Compiler
+
+Continuation PROGRESS on the stated public-algebra blocker, not a speedup.
+NEW metabelian_induced_phase.py: explicit public N=A+I structure tensor
+checks alternation/Jacobi/nilpotency, I abelian and N'<=I. Universal
+section-word expansion at (-A0-X,A0,B0) gives all induced-cocycle
+coefficients. A separate full-jet GL alignment is label independent and
+keeps zero labels. Compiler verifies the entire shared displacement jet
+and outputs -sum lambda*kappa(Q(Y+s*q),L^-1(t,zeta)), retaining spectators.
+No hidden coefficients enter an operational function. Old quadratic guard
+unchanged. New weighted pullback/leading-column/merge algebra handles
+parameter degree through k, with no truncation or hidden-value fitting.
+
+Sharper WRITTEN support argument: abelian I implies at most one I
+coefficient; pure-A terms need a carrier factor, so have parameter degree
+<=k-1. A public lift envelope is (1+hI)*binom(hA+k-1,k-1), enforced by
+template/packet checks. I=N' further permits total parameter degree k-1,
+but that refinement is not separately optimized; weight bound stays kD.
+Class-four I=N' diagnostics have cubic dependence; a larger noncentral
+abelian fiber has genuinely quartic dependence. Both are necessary tests.
+
+NEW METABELIAN_INDUCED_PHASE_COMPILER.md, tests, standalone JSON. Complete
+rational semidirect cocycle comparisons through k7; full aligned and
+Taylor-pulled-back coefficient comparisons; actual c9 ambient-derived
+N17/class4 matrix exp/log checks at p43 and p2^127-1. Smaller aligned
+fixtures use D2 arbitrary formal potentials, NOT ambient HSP sources.
+The actual ambient D9 full packet is not expanded. Do not conflate them.
+Live class-four diagnostics lower weight8 to7 with a SUPPLIED relation;
+generic3876 parameter columns become260 or840 by fiber support. These
+counts are not runtimes or algorithmic separations.
+
+VERIFIED: 500 connected tests PASS (180.07s, RuntimeWarning fatal),
+including 16 new tests. Full cached lake build --wfail PASS (3465 jobs).
+Python syntax, formal crosscheck, all site JS syntax, site checks,
+qsearch validate and whitespace PASS. Standalone --write audit completed.
+All owned processes terminal. Full repository Python suite not run.
+
+NEXT: complete right-fiber source/phase refinement and adapt the resource
+theorem to new support/c+k-2 recursion, then whole-proposal falsification
+and prior-art/application review. No general SDE execution, physical
+freshness controller, synthesis backend, new Lean theorem or admitted
+algorithm. No GPT Git, qsearch/UI, registry admission, agents or outreach.
+
+## 2026-10-22 Right-Fiber Source And Metabelian-Derived Scope
+
+Continuation PROGRESS. Started with whole-proposal/novelty inspection,
+read corpus and primary literature, then found a constructive alternative
+not already represented in the repo. NEW METABELIAN_DERIVED_HSP.md:
+for metabelian N=L' choose abelian I=N', A=N/I and a PUBLIC linear
+Lie section. Use n=r(x)exp(i), with I on the RIGHT. After normal inversion,
+positive Fourier on i gives a complete fixed-label induced block
+W_lambda(g)|x>=omega^(lambda*kappa(g,x))|x+a(g)>.
+Centrality is unnecessary; the side of the fiber is essential. All labels,
+including zero, have physical mass1/|I| under transverse original HSP input.
+Induced representations are prior art, not a novelty claim.
+
+The actual cocycle is log(exp(-A0-X)exp(A0+B0)exp(X)). Reuse the existing
+universal section-word certificate via (Xold,Yold,Zold)=(-A0-X,A0,B0).
+Its total degree is <=k=class(N). Conservative D=c,e=k*c and hidden
+parameter lift through degree k suggest a fixed-class polynomial route
+for L'''=0, p>k*c, beyond class(N)<=3. This is UNDER REVIEW, not an
+executed receiver or a new Lean theorem. General source-to-phase compiler,
+all-input SDE execution, synthesis, complete formal composition, novelty
+and a useful hard application remain missing.
+
+NEW right_abelian_induced_source.py and tests: actual class-four filiform
+right-fiber group/chart, original gH-label trace with proper projected U,
+wrong-left-fiber cross-character interference, correct I normalization,
+exact symbolic cocycles through k7, and generic word versus matrix exp/log.
+The direct-product oracle fixture tests the GENERIC source, not N=G'.
+A SEPARATE exact ambient witness supplies the larger input scope:
+L=<sum E_i,i+1, sum i^2 E_i,i+1> inside ut_10 has c9,k4 and derived
+dimensions19,17,10,0 at p43 and 2^127-1. The universal commutator
+ad_[X,Y]^3([X,[X,Y]])=-1680E_1,10 and filtration show the classes and
+metabelian N for every prime p>9. Old frontend correctly rejects k4.
+
+LIMIT: a COMPLETE FAITHFUL decomposition into fixed-label additive-
+translation monomial blocks forces N metabelian: N' is diagonal, hence
+N'' acts trivially. ut_9 has N'' containing E19 and is excluded. This is
+not a barrier to arbitrary quantum algorithms. The old early-mu warning
+is unchanged; nu=mu-ell_lambda(x) is a DIFFERENT invariant label.
+
+VERIFIED: 484 connected tests PASS (155.20s, RuntimeWarning fatal),
+full cached lake build --wfail PASS (3465 jobs), syntax/crosscheck/site
+JS/site/qsearch validate/whitespace PASS. Live standalone JSON generated.
+Final 15 focused tests PASS (6.41s), including explicit original-oracle
+right-H invariance and subgroup order. All owned processes terminal.
+No full Python suite, GPT Git/CLI/UI, registry admission, agents or outreach.
+
+NEXT: the actual new phases have hidden-parameter and carrier degree>2.
+The existing multiplier CORRECTLY raises on cubic parameter products;
+do not suppress that guard. Build/audit a public general-lift compiler
+from the universal cocycle word, compare whole symbolic coefficients to
+actual right-fiber sources, and retain all outcomes. Do not reuse the
+new quadratic source-support certificate or the old c+1 recursion cap:
+the enlarged route needs up to c+k-2 image calls. D=c-2 requires the
+OPTIONAL I=N'+Z(N) improvement; with I=N' the proposal uses D=c.
+
+## 2026-10-22 Adaptive Resource Audit And Smaller Source-Support Envelope
+
+Continuation PROGRESS. Read current handoffs/code and corpus; rechecked
+Ivanyos--Santha Theorem 11/Section 3.3. No hidden large-prime cost found
+under the stated fixed-class/source/SDE promises. General SDE execution
+is still missing; the g<=2 backend is not the cited all-input solver.
+
+NEW FULL_JET_ADAPTIVE_RESOURCE_THEOREM.md gives one explicit conditional
+freshness/rank/retry/field-sampling/complete-instrument error argument.
+The substantive refinement is three invariant phase blocks: central-linear
+coefficients have (q-degree,jet-degree)<=(c,0); A/B-linear <=(D,2);
+A*A or A*B <=(2D,1). No B*B/central products. Actual Taylor transport is
+block-separated in q,t, so these survive every pullback and phase sum.
+After curve Fourier readout, ordinary phase depends linearly only on A.
+Exact stage-specific equation counts replace the all-monomial envelope.
+This is a WRITTEN proof and symbolic checks, not a new Lean theorem.
+
+NEW full_jet_resource_certificate.py: integer/rational clocks, stage/node
+counts, consumed-source caps, binary rejection, joint error allocation,
+logical-register envelope and exact hexadecimal report. Default uses
+source structure; generic comparison is explicit. Existing frontend's
+historical comparison now uses exact generic caps, no rounded clocks or
+enormous rank-fraction decimal expansion. Compiler checks source support
+and coefficient-schema dimensions; no hidden evaluations were added.
+
+LIVE artifact: research/reductions/full_jet_adaptive_resource_certificate.json.
+For c6,m6,r9,s2,z4,epsilon1/8: generic query cap floor(log2)36555 becomes
+14641 at p19; 36559 becomes14645 at 2^127-1. Both are impractical sufficient
+UPPER caps, not achieved runtimes, lower bounds or a new speedup claim.
+The capped schedule's total failure allowance is <=3*epsilon/4.
+
+New controls include count enumeration, actual compiler/pullback/merge,
+forbidden supports, q-to-t cross-block counterexample, extra unknown
+coefficients, float-log undercap, correlated retries, forgotten records
+and rare-outcome error amplification. 469 connected tests PASS (92.27s,
+RuntimeWarning fatal), full lake build --wfail PASS (3465 cached jobs),
+syntax/crosscheck/site JS/site/qsearch validate/whitespace PASS.
+All owned processes terminal; full Python suite not run. No GPT Git,
+CLI/UI, central registry admission, agents or outreach.
+
+NEXT: prioritize independent whole-proposal correctness/novelty review
+and genuinely hard application/synthesis questions. Do not repeat local
+source, rank, or degree fixtures by inertia. The new support bound cannot
+be applied to arbitrary weighted packets or general weight-triangular
+maps. Complete physical synthesis, general SDE execution and a single
+end-to-end formal controller remain absent. Routine report/wiring tasks
+belong to the mechanical follow-up, not another GPT research pass.
+
+## 2026-10-21 Vector-Center Original-Oracle Source Composed
+
+Continuation PROGRESS. Inspected live source, retained Fourier, compiler
+and corpus; rechecked the Weyl-Heisenberg literature as prior-art context,
+not novelty evidence. The missing interface was the ACTUAL vector-center
+group/chart, not another partial-Fourier calculation.
+
+NEW Formal/VectorCentralSource.lean builds the group A x B x C from
+vector-valued beta/gamma/delta and Jacobi, requiring characteristic not
+two or three. Every linear projection preserves the scalar BCH product.
+ALL linear functionals separate vectors, so scalar associativity derives
+the vector group law; one character is not assumed faithful. Identity
+and inverse are checked directly. The central chart, section and central
+embedding are constructed and checked.
+
+central_complete reindexes the complete physical instrument by every
+linear label lambda, including zero. retained_sector_formula derives the
+actual coherent B contraction. representation_unitary and
+retained_potential_gauge derive W(a^-1*b)=W(a)^dag W(b). original_source
+starts with the ORIGINAL hiding-output trace and ends with
+|C|^-1 [r-q in U] (|V||A||B|)^-1 W(g(q))^dag W(g(r)). Its operational
+definition has no hidden subgroup, retraction, lift or potential argument.
+Those remain correctness witnesses for the ambient normal-first chart.
+carrier_card proves |A x B*|=|A x B|. Ten standard-axiom guards pass.
+
+NEW tests/test_vector_central_source.py: four exact controls at small and
+127-bit primes. Vector multiplication/associativity agree with scalar
+projections, but distinct central elements collapse under any chosen
+label. A bad Jacobi tensor is rejected even though its zero-label scalar
+projection looks valid. The earlier genuine gH source tests are reused.
+
+VERIFICATION: 413 connected tests PASS (93.15s, RuntimeWarning fatal),
+11 focused PASS (4.89s); syntax, generated crosscheck, site JS/site,
+qsearch validate (valid=true, issues=[]), whitespace pass. Full
+lake build --wfail PASS (3465 jobs, cached Mathlib): new module/ten guards
+47s, aggregate 50s. All owned processes terminal.
+No full Python suite, GPT Git/CLI/UI, registry admission, agents or outreach.
+
+NEXT: stop redoing central normalization/vector scalarization/B Fourier.
+Prioritize an independent whole-proposal/novelty audit or the probabilistic
+rank, adaptive freshness and joint error/resource proof. Batch-shear/GL/
+phase-compiler wrappers should reuse the existing exact source and lemmas;
+do not turn routine type glue into repeated research passes unless it
+exposes an actual mathematical mismatch. C=FULL Z(N), N=L', ambient
+input-to-chart refinement, arbitrary-H preprocessing, executable SDE and
+a useful hard application remain distinct obligations. No complete
+controller, new hardness claim, or novelty result established.
+See VECTOR_CENTRAL_ORACLE_SOURCE.md; main note/formal README updated.
+
+## 2026-10-21 Retained Fourier And Independent Source Validation
+
+Continuation PROGRESS. Corpus inspection found no existing complete
+linear-frequency/B-character bridge. NEW Formal/RetainedFourier.lean
+identifies mu:B->F with ALL additive characters via a fixed nontrivial
+base chi. Scaled inputs and primitive-character injectivity handle even
+extension fields, where chi itself need not be injective. Finite dual
+cardinalities give surjectivity. Both row/column orthogonality hold.
+
+Actual BCH multiplication supplies modulation and translation; the full
+two-sum Fourier contraction equals ClassThreeMonomial's displacement and
+phase, with OUTPUT frequency nu=mu+ell. Eight standard-axiom guards; normal
+import. This is not an irreducible QFT or a measurement of mu. Zero measured
+CENTRAL labels remain valid: they are not the fixed Fourier base chi.
+
+NEW tests/test_retained_fourier.py: seven controls, including actual gH
+labels with class-three N and scalar/vector centers, public section,
+central inversion/Fourier plus coherent B Fourier, and correct branch
+mass. Wrong old-frequency phases, dephasing mu, dropping zero frequency,
+trivial base chi and normalization by lambda(C) instead of C fail. These
+direct-product controls do NOT assert that the chosen N is ambient L'.
+
+ALSO repaired the newly added central_instrument_and_dual_weight_bounds
+audit: its v1 source was directly filled from a chosen nonlinear potential
+without a compatible group/subgroup/chart. V2 constructs actual direct-
+product cosets, checks H/chart/right action, and THEN derives the potential.
+The source is class TWO, not the earlier claimed class-three/semidirect
+source. A nonlinear public section is valid for the generic instrument,
+but not the linear-section degree proof. Full algorithm input premises
+remain explicitly false. This is a fixture/provenance correction, not a
+refutation of the independent CentralRegularSource theorem.
+
+VERIFICATION: 409 connected tests PASS (120.83s, RuntimeWarning fatal),
+followed by seven focused PASS (3.86s) with the final scalar-image mass
+negative control. Syntax, crosscheck, site JS/site, registry validation
+and whitespace pass. Full lake build --wfail PASS (3464 jobs, cached
+Mathlib), including all eight standard-axiom guards; module 122s, aggregate
+89s. All owned processes terminal. No full Python suite,
+GPT Git/CLI/UI, central admission, agents or outreach.
+
+NEXT: compose the actual VECTOR-center BCH chart and original oracle
+source with this B transform and GL alignment. Scalar character projection
+must preserve the physical |C| and remain valid at lambda=0. Reuse
+linearCharacter_bijective for character indexing; do not enumerate fields
+as a proposed efficient implementation. Other substantive alternatives
+are probabilistic rank/adaptive freshness and joint error/resource proofs,
+or independent whole-result falsification/application comparison.
+No complete algorithm, executable SDE, new hardness or novelty established.
+Details: RETAINED_FOURIER_SOURCE.md; main note and formal README updated.
+
+## 2026-10-21 Ambient Section Potential Degree Origin
+
+Continuation PROGRESS. Inspected current frontend, compiler, application
+audit and corpus. The frontend's center/filtration calculation did NOT
+certify the degree of the original section word. The previous phase
+compiler theorem still required D,D,c. Targeted current literature checks
+found no direct subsumption by Morales's stated families or the bounded-
+prime nilpotent result; this is NOT a novelty certificate.
+
+NEW research/AMBIENT_SECTION_POTENTIAL.md gives the exact argument:
+X=s(q-pi(q)), Y=s(pi(q)), Z=a(pi(q)); Q=log(exp(X)exp(Y+Z)exp(-X-Y)).
+The linear part is Z in N. Length-k Lie words from linear inputs have
+degree k and coefficients in gamma_k(L). Degrees >=c-1 centralize
+N=[L,L] and belong to it; projection away from the FULL C=Z(N) kills them.
+Thus A,B degrees <=c-2 and C degree <=c. Published BCH/Lazard is used
+explicitly, not represented as a new theorem or hidden-potential oracle.
+
+NEW formal/Formal/AmbientPotentialFiltration.lean proves actual LCS word
+membership, centrality against the span of brackets, and projected/full
+scalar polynomial bounds. Five standard-axiom guards; normal build.
+NEW theorems/ambient_section_potential.py computes the rational FREE
+associative exp/log source word, proposes a right-nested Lie expansion,
+then verifies every coefficient by independent AB-BA expansion. It also
+checks that the target is the actual word, not an arbitrary certificate.
+Live certificates for c=4..7; tests also c=1..3. No finite-grid fitting.
+
+NEW tests/test_ambient_section_potential.py: 17 tests, including independent
+UT5..UT8 matrix exp/log at small and 127-bit primes, exact coefficient
+filtration membership, and adversarial certificates. In UT7, the degree-
+five coefficient E16/30 is in Z(N) but NOT Z(L); using the ambient center
+would break D=4. Noncentral degree four and central degree six are both
+attained. Nonlinear input substitution and an underreported input class
+also fail. Known-witness evaluators are diagnostic functions only.
+
+VERIFIED: 395 connected tests PASS (122.62s, RuntimeWarning fatal), 17
+focused PASS (7.30s), full lake build --wfail PASS (3463 jobs, cached
+Mathlib), including five standard-axiom guards. Syntax, generated
+crosscheck, site JS/site, qsearch validate (valid=true, issues=[]) and
+whitespace PASS. All owned processes terminal; full Python suite not run.
+No Git/CLI/UI/registry promotion, agents or outreach.
+
+NEXT: stop repeating the compiler/input-degree estimate. Prioritize the
+combined original-oracle -> central/B-Fourier -> GL -> erasure composition,
+probabilistic rank, adaptive source freshness and full resource/error bounds,
+or independent whole-result falsification/application comparison. The
+Python universal coefficient checker and BCH-to-group dependency are NOT
+Lean-refined. PublicLieAlgebra's callable alone does not certify Lie axioms;
+the input model must promise them or use verified explicit structure data.
+SDE execution, useful hard application and novelty remain open.
+
+## 2026-10-21 Universal Source Compiler Degree Bounds
+
+Continuation PROGRESS. Corpus inspection found the phase compiler and
+written max(c,3D) estimate, but no universal polynomial-substitution proof.
+The existing linear-plus-bilinear decomposition only held at fixed carrier.
+The SDE dependency was rechecked against Ivanyos--Santha arXiv:1503.09016;
+its fixed-degree assumption remains essential and no backend was added.
+
+NEW formal/Formal/ClassThreePhaseBounds.lean lifts the actual public
+structure maps to polynomial coefficients. Evaluation recovers the exact
+ClassThreeMonomial.phase, including shifted-frequency terms. It constructs
+public shifted potential sums over a fixed shared parameter set and public
+affine carrier rows with spectator offsets. The actual NEGATIVE batch sum
+has operational weighted degree <=max(c,3D) and parameter degree <=2,
+for every hidden-parameter assignment. Neither phase bound is assumed.
+The potential component degrees D,D,c ARE assumptions, as they must be.
+
+Eight standard-axiom guards; imported in the normal build. NEW
+tests/test_class_three_phase_bounds.py has eight independent symbolic
+controls. SymPy expands without the production quadratic-lift cutoff and
+matches the ENTIRE compiler expression for vector centers, nonzero gamma,
+zero labels, spectators and a 127-bit prime. Both 3D and c>3D are attained.
+The filiform phase -h^2*q^(2D)*t/6 becomes cubic in h if a hidden-dependent
+carrier substitutes t=h. Publicness is a real mathematical premise.
+
+VERIFIED: full lake build --wfail PASS (3441 jobs, cached Mathlib), with
+eight standard-axiom guards; 378 connected Python tests PASS (131.11s,
+RuntimeWarning fatal); final eight focused PASS (2.29s) after adding an
+explicit rational-coefficient check. Syntax, generated crosscheck, site
+JS/site, qsearch validate (valid=true, issues=[]) and whitespace PASS.
+All owned processes terminal.
+Full Python suite not run. No production API, GPT Git/CLI/UI, registry
+admission, agents or outreach. Main note and formal README updated.
+
+NEXT: derive the ambient input-to-chart and degree-D,D,c statements, or
+independently falsify the full proposed oracle algorithm. The central
+instrument, shifted-frequency law, GL alignment, weighted transport,
+source polynomial bound and local erasure are separately checked; they
+are not yet ONE composed theorem. Rank probability, adaptive fresh-source
+composition, effective gate/error budgets, executable SDE and hard useful
+application remain. Do not repeat the just-proved compiler estimate or
+claim a quantum speedup. The abstract polynomial identity does NOT relax
+the physical source's characteristic or full-center restrictions.
+
+## 2026-10-21 Complete Central Regular Source From Ordinary Cosets
+
+Continuation PROGRESS. Inspection found the original hiding-output trace
+and section-word identity ALREADY in CosetMatrixSource. They were reused,
+not rediscovered. The real remaining distinction was the reducible central
+instrument used by the full-jet replacement, rather than the old
+irreducible-sector d^2/|N| normalization.
+
+NEW formal/Formal/CentralRegularSource.lean derives a complete instrument
+from a public central chart N=T x C with commuting central embedding.
+K_chi[x,n]=|C|^-1/2 [x=pr_T(n^-1)] chi(pr_C(n^-1)); ALL characters occur.
+Finite-abelian dual orthogonality proves sum K^dag K=I. The actual two-sum
+contraction takes the right-regular relation to the left-action monomial
+sector. Its representation and unitarity are derived, not assumed, giving
+W(g(q)^-1*g(r))=W(g(q))^dag W(g(r)). Seven standard-axiom guards; normal build.
+
+oracle_source_from_normal_chart starts with the actual hiding amplitudes
+and traces the output. It reuses the common section word to derive the
+source action. The subnormalized sector is |G|^-1 [r-q in U] W(increment),
+with trace 1/|C| including the trivial character. No full nonabelian QFT,
+Schur-family assumption, irreducibility or hidden-potential oracle enters.
+Hidden retraction, lift, whole-H parametrization and potential are proof
+witnesses; the two PUBLIC charts must still be valid for the input.
+
+NEW tests/test_central_regular_source.py has four tests. Three use actual
+gH labels (right H action), nonlinear public sections and proper U, at
+class-three, vector-center and abelian controls. All sectors and two
+projection gauges agree; cross-sector leakage, omitted inversion and
+wrong d^2/|N| mass are checked. The fourth deliberately has H intersect C
+nontrivial: incompatible characters have ZERO mass. Do not assume uniform
+labels before transverse preprocessing. These are fixtures, not candidates.
+
+VERIFIED: full lake build --wfail PASS (3440 jobs, cached Mathlib);
+369 connected tests PASS (92.89s, RuntimeWarning fatal), followed by all
+four source tests PASS (2.04s) after adding the nontransverse negative
+control. Syntax, generated crosscheck, site JS/site, qsearch validate
+(valid=true, issues=[]) and whitespace PASS. All owned processes terminal.
+Full Python suite not run. No GPT Git/CLI/UI, central admission, agents or
+outreach. Main note/formal README updated; no production API changes.
+
+NEXT: universal input-to-chart and polynomial/parameter-degree bounds,
+the combined extra-B-Fourier/source compiler, probabilistic rank and full
+adaptive source/resource/error composition remain open. Generic finite
+character completeness is not extracted efficient gates or a certificate
+for the OLD irreducible QFT. The abstract theorem permits a central
+subgroup, but the proposed degree bound still requires the full Z(N).
+Novelty and a useful hard application are unresolved. Do not repeat the
+already checked oracle trace, section word or central normalization, and
+do not call this a complete quantum algorithm or speedup.
+
+## 2026-10-21 Full Taylor Transport Composed With Weighted Erasure
+
+Continuation PROGRESS. NEW formal/Formal/FullJetWeightedErasure.lean is
+in the default build. It derives the strict coefficient-matrix pattern
+from actual auxiliary substitution, not an assumed binomial/matrix law:
+transport(Y^alpha s^k)-t^k Y^alpha s^k has only scale powers >k.
+Thus output weight j uses input weights <=j, with only its OWN coordinate
+at equal weight. The matrix is not interchangeable with its transpose.
+
+Finite coefficient reconstruction is exact on k>0, |alpha|+k<=D. Matrix
+action equals finiteTransport on ARBITRARY register contents, not just
+unknown jet points. Quotient/vector-jet coordinate evaluation now matches
+the actual publicPoint in NonlinearJetChannel. The cancellation law and
+actual tensor-input Kraus contraction compose into degree_reduced_branch:
+same hidden curve, same normalization, explicit phase of weight <d.
+Public lift-column cancellation is sufficient for every theta assignment.
+At weight <1, unit-character constant phase cancels from the density
+kernel exactly. Eight guards permit only standard Lean axioms.
+
+Four new exact controls in tests/test_full_taylor_transport.py compare
+ENTIRE symbolic phase pullbacks with independent auxiliary substitution
+of arbitrary register vectors, including lower terms/offsets and quadratic
+parameter lifts, with hidden evaluation disabled. That file now has 26
+cases. No production API or original field/source guard is changed.
+
+VERIFIED: full lake build --wfail PASS (3326 jobs, cached Mathlib);
+32 focused and 366 connected Python tests PASS (53.68s connected), with
+RuntimeWarning fatal. Includes the six existing full-jet density/logical
+gap audit tests. Syntax, generated crosscheck, site JS/site, qsearch
+validate (valid=true, issues=[]) and whitespace PASS. All owned processes
+terminal. Full Python suite not run. No GPT Git/CLI/UI, registry admission,
+agents or outreach. The SDE prior-art dependency was rechecked, not
+implemented or counted as new research.
+
+NEXT: prioritize the ordinary-hiding-oracle to common-source composition,
+the universal source phase/parameter-degree bound, probabilistic rank,
+and full adaptive source/error accounting or independent whole-result
+falsification. Do not repeat now-proved local matrix/cancellation examples.
+The degree-reduced branch assumes fresh independent same-curve sources,
+bounded input phases and a verified diagonal relation. It does NOT prove
+their original preparation or provide an SDE solver. The closed binomial
+entry formula/count and formal Python refinement remain separate from the
+proved triangular pattern. Novelty, a hard useful application and a full
+efficient quantum algorithm remain unresolved; no speedup is admitted.
+
+## 2026-10-21 Universal Weighted Phase Cancellation Checked
+
+Continuation PROGRESS. NEW formal/Formal/WeightedPhaseErasure.lean proves
+the filtered-polynomial erasure law over any commutative coefficient ring,
+including formal hidden parameters. A variable of weight w must map to
+s^w times itself plus STRICTLY lower-weight terms. Then every top-weight-d
+coefficient scales by s^d. Verified public coefficientwise diagonal
+relations make the sum of pullbacks drop below d for ALL outcomes.
+
+The directly checkable affine-matrix corollary forbids off-diagonal
+equal/higher-weight entries. A parameter-lift lemma covers constants,
+linear unknowns and products without evaluating them. The final positive-
+weight stage leaves a constant, and an additive-character identity matches
+the actual product phase to the summed polynomial. Nine axiom guards;
+no sorry, custom axiom or native_decide. Imported by the normal build.
+
+NEW tests/test_weighted_phase_erasure_law.py has six exact controls over
+small/127-bit primes, full jets D=2,3, all lift types, mixed weights and
+zero-scale discards. Hidden evaluation is forbidden. An outcome-dependent
+equal-weight mixing counterexample passes the diagonal witness but is
+correctly rejected by actual degree descent. No production API change.
+
+VERIFIED: full lake build --wfail PASS (3325 jobs, cached Mathlib);
+356 connected tests PASS (92.60s, RuntimeWarning fatal), plus the final
+six-test rerun after adding explicit matrix-condition checks PASS (2.76s).
+Syntax, generated crosscheck, site JS/site, qsearch validate (valid=true,
+issues=[]) and whitespace PASS. All owned processes terminal. Full Python
+suite not run. No GPT Git/CLI/UI, central admission, agents or outreach.
+
+NOT closed: the coefficient-level Lean bridge from actual full Taylor
+transport to these matrix conditions; probabilistic rank; executable SDE;
+complete oracle/source/scheduling/recursion composition; novelty and a
+useful hard application. Algebraic zero scales do NOT authorize physical
+zero-scale transport: discard them, require active inputs and independent
+same-curve sources. Neither finite tests nor this theorem certify source
+ownership. A review of the written common projection/section potential
+found no NEW hidden-coordinate obstruction; it is not a new proof of
+the entire source reduction. Next remove a load-bearing composition gap
+or independently audit the whole proposal, not more finite cancellation
+fixtures. No complete quantum algorithm or speedup is claimed.
+
+## 2026-10-21 Public Full-Jet Alignment And Source Conversion Checked
+
+Continuation PROGRESS. NEW formal/Formal/FullJetAlignment.lean is in the
+default build. It derives public feature evaluation from Q(Y+s*q)-Q(Y),
+then lifts scalar-feature injectivity to the stacked map T through its
+identity A blocks. Labels may be zero, fixed or correlated. Random rank
+success is NOT proved by this deterministic implication.
+
+For any public verified P*T=I, the explicit linear equivalence is
+L(x)=(P*x,x-T*P*x) in J x ker(P), inverse (j,k)->T*j+k. A left inverse
+exists from feature injectivity without using Q. The SAME hidden jet and
+constant spectator displacement follow from polynomial evaluation, not
+an assumed alignment identity. Existence uses classical linear algebra;
+this is not extracted efficient elimination or a formal Python refinement.
+
+Actual two-sum permutation conjugation and spectator contraction now give
+the nonlinear common-jet density with EXACT gamma(q,L^-1(t,zeta)) phase
+pullback. Seven guards allow only standard Lean axioms. Six new exact
+Python controls connect pivot-minor complements to the kernel residual,
+including zero/fixed labels and a falsifier: correct translation plus
+the old complement's phase is an incorrect channel.
+
+VERIFIED: full lake build --wfail PASS (3320 jobs, cached Mathlib),
+31 focused and 350 connected Python tests PASS (64.05s for connected),
+RuntimeWarning fatal; syntax, generated crosscheck, site JS/site,
+qsearch validate (valid=true, issues=[]) and whitespace PASS. All owned
+processes terminal. Full Python suite not run. No compiler API changes,
+quantum execution, central admission, GPT Git/CLI/UI, agents or outreach.
+
+The initial whole-controller review found no NEW rank-timing or SDE
+obstruction; the published deterministic fixed-degree dependency was
+rechecked, not counted as a new discovery. Main note/formal README and
+the older truncated-jet note now distinguish proved replacement pieces.
+
+NEXT: the probabilistic feature-rank bound, universal weighted-degree
+cancellation and oracle-to-final-output composition still need stronger
+checking. Mathlib has RingTheory/MvPolynomial/WeightedHomogeneous.lean
+and Algebra/MvPolynomial/SchwartzZippel.lean if one removes a real proof
+gap. Do not repeat rank-lift/complement fixtures or call this a complete
+oracle algorithm. SDE execution, novelty and a useful hard application
+remain unresolved; the overarching research goal stays active.
+
+## 2026-10-21 Full Taylor Transport Now Kernel-Checked
+
+Continuation PROGRESS on the next load-bearing premise. NEW
+formal/Formal/FullTaylorTransport.lean is in the default build. The full
+jet is represented by coefficients of Q(Y+s*q)-Q(Y), and the PUBLIC
+operator is P(Y,s)->P(Y+s*z,s*t). Q is a proof witness, never advice.
+
+Proved: exact composition order; inverse (-z/t,1/t) for t!=0;
+degree-nonincreasing substitution; zero-s projection; exact support
+k>0, |alpha|+k<=D; finite dimensionality; a linear equivalence on that
+same finite space. Thus no hidden coefficients or infinite register
+are introduced. Scalar and vector-valued corollaries discharge BOTH
+transport premises of NonlinearJetChannel, including the actual mixed
+branch contraction. Six guards allow only standard Lean axioms.
+
+The binomial matrix-entry formula and J=r*binom(m+D,m+1) are explained
+in CLASS_THREE_MONOMIAL_FULL_JET.md, not separately kernel-checked.
+22 new Python controls compare all matrix columns to independent
+coefficient substitution for D=2,3,4 and p=5,11,2^127-1. They check the
+hidden-parameter schema, composition/inverse, weight triangularity and
+transpose falsifier. This is not a formal Python-to-Lean refinement.
+Production Python code and all original field/source guards are unchanged.
+
+VERIFIED: full lake build --wfail PASS (3319 jobs, cached Mathlib),
+344 connected Python tests PASS (52.38s), RuntimeWarning fatal; syntax,
+formal crosscheck, site JS/site, qsearch validate (valid=true, issues=[])
+and whitespace PASS. All owned processes terminal. No full Python suite,
+quantum execution, central admission, GPT Git/CLI/UI, agents or outreach.
+
+NEXT: public full-jet GL alignment and its label-independent finite-field
+rank bound remain unformalized. Weighted phase cancellation/SDE,
+whole-recursion/error composition, novelty and a useful hard application
+also remain open. Choose a substantive unresolved premise or independent
+whole-proof audit; do not repeat Taylor fixtures or confuse this transport
+linear equivalence with the source-to-common-jet GL alignment theorem.
+
+## 2026-10-21 Class-Three Source Algebra Now Kernel-Checked
+
+Continuation PROGRESS on a load-bearing proof gap. NEW
+formal/Formal/ClassThreeMonomial.lean is included in Formal.lean and the
+normal warning-as-error build. Its hypotheses are bundled bilinear maps,
+alternation and Jacobi, NOT the desired representation/action law.
+
+Checked: class-three coordinate product associativity/identity/inverse;
+translation composition and bijectivity; exact scalar phase composition
+and inverse cancellation; additive-character amplitude composition. The
+phase-composition residual is Jacobi/6. No nonzero central label, positive
+B dimension, irreducibility or extra commutativity premise is assumed.
+
+The phase also has a bundled linear-plus-diagonal-bilinear decomposition
+in the UNKNOWN group parameters. This checks the quadratic coefficient
+lift universally rather than by finite interpolation. The separate actual
+two-sum F_- W F_-^dag contraction derives nu=mu+ell and the phase evaluated
+at that shifted frequency. Unknown g/ell remain proof witnesses, not
+receiver inputs or permission to evaluate a hidden potential.
+
+Seven headline axiom guards permit only standard Lean axioms. No `sorry`,
+native_decide or new axiom was added. The field algebra excludes only
+characteristics 2 and 3; this does NOT remove the algorithm's stronger
+p>3D, ambient-filtration and source-access obligations. Full character
+indexing/QFT circuit synthesis and the complete central-source instrument
+are not formalized by this module.
+
+Six new Python cases pin the current source formula to the checked
+decomposition at small/127-bit primes, with gamma!=0, lambda=0 and B=0.
+They are not a formal Python-to-Lean refinement. The existing compiler
+implementation is unchanged. Research note and formal README are updated.
+
+VERIFIED: full lake build --wfail PASS (3318 jobs, cached Mathlib);
+25 focused and 322 connected Python tests PASS (53.30s for connected),
+RuntimeWarning fatal. Syntax, generated formal crosscheck, site JS/site,
+qsearch validate (valid=true, issues=[]) and whitespace PASS. All owned
+processes terminal. No full Python suite, quantum execution, central
+promotion, GPT Git/CLI/UI, agents or outreach.
+
+NEXT substantive proof target: derive FULL Taylor transport/invertibility
+and public GL alignment from the actual polynomial coefficient schema,
+so NonlinearJetChannel's curve-transport premises are not merely assumed.
+Weighted-degree/SDE guarantees, full recursion/composition, novelty and a
+useful hard application also remain open. Do not repeat source finite
+fixtures or promote the whole HSP proposal from these local Lean theorems.
+
+## 2026-10-21 Logical-Gate Application Audited, Automatic Gap Rejected
+
+Continuation PROGRESS through a concrete application and a decisive
+falsifier, not more receiver infrastructure. Read
+LOGICAL_GATE_STATE_HSP_APPLICATION.md. For an encoding isometry V and
+public linear physical/logical families A,B, its normalized Choi state
+under A tensor conjugate(B) has ray stabilizer
+H={(a,b):A(a)V=phase V B(b)}. One forward encoder call prepares a copy;
+no V inverse/conjugate is used. This is a standard correspondence, not
+claimed novelty. Unknown encoders and known conjugate(B) are distinct access.
+
+The conditional receiver would learn a possibly NONNORMAL logical-relation
+subgroup. New known_logical_fiber performs exact post-learning Lie linear
+algebra, returning all logical logarithms for a physical element, including
+vertical ambiguity. It never learns H or certifies an input basis.
+
+The required global gap is half the normalized, phase-optimized squared
+Frobenius residual, not worst-case logical error. A marked-word encoder
+V_f|x>=|x,f(x)> changes the exact scalar-symmetry group while its smallest
+gap is Theta(1/(d*p^2)). IID Choi discrimination needs Omega(d) copies;
+even arbitrary coherent encoder queries inherit search's Omega(sqrt(d))
+bound. The p^2 gap factor is NOT claimed to be a p^2 copy lower bound.
+This is a counterexample, never an admitted toy-oracle candidate.
+
+Crucially, composing V_f with a supplied parent error-correcting encoder
+preserves Knill--Laflamme conditions AND this bad gap. For a stabilizer
+parent, the flag-Z representative can be a transversal physical Pauli.
+Thus large distance and transversality do not establish efficient exact
+logical-symmetry learning. The finite KL test is abstract syndrome algebra,
+not a growing-distance code implementation. White-box f can be easy;
+the search lower bound concerns the stated oracle model only.
+
+NEW theorems/logical_gate_source.py and 14 tests; 78 connected tests PASS
+(8.69s), RuntimeWarning fatal, including the physical-marginal control.
+Syntax, generated formal crosscheck, site JS/site and qsearch validate
+(valid=true, issues=[]) and whitespace PASS. All owned processes terminal.
+No full Python suite, new Lean theorem,
+quantum execution, central admission, GPT CLI/UI/Git, agents or outreach.
+
+NEXT: no code-design sweep without an independently motivated family and
+a GLOBAL population-gap proof plus same-input classical/tensor/known
+quantum baselines. If absent, return to independent core-theorem validation;
+do not invent planted codes or repeat this gap counterexample. The core
+HSP proposal is not refuted by this application audit.
+
+## 2026-10-21 Character-Twisted State Symmetry Extension
+
+Continuation PROGRESS on a real access restriction, still UNDER REVIEW.
+Read TWISTED_STATE_SYMMETRY_RECEIVER.md. Unknown mixed copies plus controlled
+LINEAR R produce character-twisted coset sources for scalar left-action
+symmetry. Tensor amplification preserves the character; conjugate copies
+are not silently supplied. The full-jet receiver's label-independent rank
+bound suggests a way to retain and erase it without that extra resource.
+
+NEW theorems/twisted_state_source.py: public character-preserving normalizer
+M_chi={x:[x,K]<=ker chi}, affine central-character sector constraints and
+a wrapper adding UNKNOWN linear character coefficients to the scalar phase
+table. No state learner, SDE backend or quantum receiver is implemented.
+Known K and chi must have been learned by separately charged procedures.
+
+The written relative recursion retains a known faithful scalar center Z
+of dimension zero or one. Learn K=H intersect G'Z recursively, learn its
+character from ORIGINAL copies, quotient ker chi in M_chi, then use image
+and class-drop loops. Relative abelian bases are scalar quadratic-phase
+problems, NOT unchanged ordinary abelian HSP. At most c+4 image/base calls
+and two known-K character-learning batches in the stated scope; erasure
+tree costs and global source gap still dominate. These are proof-outline
+bounds, not an executed controller or a new resource advantage claim.
+
+18 new tests PASS. Controls include actual mixed-copy Gram kernels, a
+sparse regular state realizing the character, direct transformed class-three
+source entries and normalization with affine sectors, k=0 mod p, fixed-label
+compilation and 127-bit public arithmetic. The Heisenberg character normalizer
+is strictly smaller than the ordinary normalizer. A Schrodinger/chirp base
+shows naive quotient Fourier sampling has 1-1/p mass OUTSIDE the correct
+annihilator; the central-extension phase cannot be omitted.
+
+VERIFIED: 302 connected tests PASS (49.12s), RuntimeWarning fatal. Owned
+syntax, generated formal crosscheck, site JS/site, qsearch validate
+(valid=true, issues=[]) and whitespace PASS. No full Python suite or new
+Lean build. All owned test processes terminated normally.
+
+Known literature on phase symmetries, abelian projective actions and
+copy-versus-preparation-query models is linked. No novelty or useful
+classical separation claimed. No GPT Git/CLI/UI, central admission,
+new agents, outreach or modifications to concurrent ambient-frontend work.
+
+NEXT: independently validate this as one source/recursive/erasure algorithm
+and compare its precise nonnormal, growing-prime scope with existing
+state-symmetry algorithms. Find an access-matched useful state application;
+do not add more nearby fixtures or declare conjugation removed for general
+groups/projective representations/mixed conjugation symmetry.
+
+## 2026-10-21 Full-Jet Arbitrary-H Recursion Unrolled
+
+Continuation PROGRESS on whole-result validity. Re-read the raw ordinary
+source/section identity, nonlinear channel and metabelian/class-three
+completion. CLASS_THREE_MONOMIAL_FULL_JET.md Sections 7.1-7.3 now give
+ONE well-founded Solve(L,f) recursion instead of assuming an opaque
+ambient-class-three HSP solver for K=H intersect L'. Its intersection
+callee has class <=3 and its own derived ideal is abelian. All base calls
+are ordinary abelian HSP. This is a written composition, NOT execution
+or independent validation of the proposed new image primitive.
+
+The SAME compiler now handles class-two normal groups with B=0, beta=(),
+and empty delta rows. No phantom register, label relation or older
+symplectic-source branch is needed. Three added tests check this at p=7
+and a 127-bit prime, and expose an important normalizer restriction:
+N need not be contained in M=N_L(K). In UT7, H=<E12,E13>, K=<E13>,
+E35 is in N but not M. The legitimate quotient is M/K; its derived
+ideal lies in (N intersect M)/K. Never use an undefined N/K here.
+
+The strict class-drop proof includes [N,N] rather than silently assuming
+N abelian. Transversality persists through restrictions, so no new
+normalizer call is needed in the image loop. The complete recursion has
+at most c+1 image calls and three abelian HSP calls; query costs ADD
+across those calls, with genuine erasure-tree products retained inside
+each image. Public sections compose into clean original-f wrappers.
+First-error accounting and capped bad-answer branches remain explicit.
+
+Prior-art check includes Morales arXiv:2608.05321v2 (September 2026),
+Theorems B/C. Its scalar-action abelian-by-cyclic and structured
+quasi-Hamiltonian families do not directly contain UT7: nonmetabelian
+derived group and nonpermuting E12/E23 cyclic subgroups distinguish it.
+This is NOT an exhaustive novelty certificate or no-reduction theorem.
+Opaque-oracle hardness inherited from abelian subfamilies would not
+establish a useful new nonabelian application.
+
+VERIFIED: 19 focused tests; 257 connected tests PASS (46.90s) with
+RuntimeWarning fatal. Syntax, generated formal crosscheck, site JS/site,
+registry validate (valid=true, issues=[]) and whitespace PASS. No full
+Python suite/new Lean build. All owned processes terminal. No GPT Git,
+CLI/UI, central registry admission, new agents or outreach.
+
+NEXT: the written recursion is no longer an unexplained dependency.
+Attack remaining genuinely substantive proof obligations or the
+application/novelty gap; do not repeat the normalizer or budget audit.
+The Taylor/weighted compiler identities remain outside the formal proof,
+as do the complete source/algorithm composition and generic SDE backend.
+No independent review or Shor-level result exists yet.
+
+## 2026-10-21 Class-Three Normal Source With Full-Jet Alignment
+
+Continuation PROGRESS: NEW CLASS_THREE_MONOMIAL_FULL_JET.md gives a
+constructive replacement beyond the old Weyl boundary. For class-three
+N, split C=Z(N), B=(N'+C)/C, A=N/(N'+C). After the central-only source,
+NEGATIVE Fourier on B, WITHOUT measuring its frequency mu, changes the
+gauge to pure translation (a,lambda*delta(a,-)/2) plus an explicit quadratic
+carrier phase. It still has nonscalar commutators; old Weyl no-go stands.
+
+Retain ALL Taylor coordinates including k=D. A public GL permutation
+aligns the whole displacement to (F(q),0), without isotropy, a source-label
+SDE, mixed padding or hidden coefficients. Scalar feature rank is sufficient
+conditional on arbitrary center labels. The scalar compiler verifies the
+full jet identity and retains all quadratic coefficient products.
+
+NEW theorems/class_three_monomial_jet.py and 16 tests. Actual regular
+coset kernels verify every center sector and normalization; independently
+exponentiated UT4 matrices check BCH including gamma!=0. The actual UT7
+derived algebra has (r,s,z)=(9,2,4), nonzero nested bracket, and passes
+BCH/action checks. Exact multivariate/large-prime GL and transport controls,
+phase compilation, weighted erasure and premature-mu-measurement falsifier
+pass. These are identity controls, not new toy-oracle candidates.
+
+CHANGED COSTS: full J=r*binom(m+D,m+1); weighted erasure degree
+e=max(c,3D); SECOND ordinary erasure D,...,1, not D-1,...,1. Matrix
+attempt needs b0=(J/r+1)*bit_length(p)+2 raw sources, but the larger
+erasure trees can dominate. No universal cost improvement claimed.
+Proposed scope: explicit fixed-class L, class(L')<=3, p>max(c,3(c-2));
+includes ambient classes <=7 only IF the whole proof validates.
+
+Arbitrary-H preprocessing now depends on the repository's proposed
+ambient-class-three receiver for H intersect N, NOT the known nil-2
+solver. This lower-class dependency is not circular but is under review.
+No generic SDE backend, new Lean theorem or quantum execution supplied.
+Prior art and sparse-object classical filters remain; no useful external
+application or novelty certificate. No central admission/CLI/UI/GPT Git.
+
+VERIFIED: 193 connected Python tests PASS (39.85s), RuntimeWarning fatal;
+syntax, generated formal crosscheck, site JS/site and qsearch validate
+(valid=true, issues=[]) PASS. No full Python suite or new Lean build.
+All owned processes terminal; unrelated work preserved.
+
+NEXT independently audit this as ONE source/recursion/two-tree algorithm
+and compare access-matched prior art. Do not just add more finite gauges
+or assume arbitrary constant-class scope. Class-four N can retain
+carrier-dependent frequency motion after the same partial Fourier; that
+is a separate open mechanism question. Useful impact still needs a hard
+application surviving the existing classical filters.
+
+## 2026-10-21 Central-Only Regular Source Replaces Irrep Dependency
+
+Continuation PROGRESS on a constructive simplification. Read the NEW
+CENTRAL_REGULAR_JET_SOURCE.md first. Fourier-transform only the center of
+the class-two normal group, measure lambda, and NEGATE the remaining
+coordinates. Retain all w regular-carrier registers and ALL labels.
+Direct contraction from ordinary cosets gives probability p^-z and gauge
+W_lambda(v,c)=omega^(lambda(c))*D(v,-B_lambda*v/2). It is reducible: the
+irrep d^2/|N| probability is invalid here. No row/radical register is traced.
+
+Its identity X block makes the feature rank scalar: Phi consists of all
+degree <=D-1 monomials in (s,Y), times s. Full Phi rank lifts to rank[K J]
+and implies enough physical carrier width WITHOUT mixed padding. Fresh
+block rescaling gives a rank bound CONDITIONAL on arbitrary prior labels/
+verified witnesses, so GL_z-equivariant selection and common-radical
+hyperplane arguments are unnecessary. No future-outcome selection allowed.
+
+Only lambda restricted to [N,N] must satisfy the degree-2D relation.
+The other central phases remain paid in e=max(c,2D-1). The new matrix
+trial uses T=B*a_(2D)(dim[N,N]) raw sources, no zero-label rejection,
+with B=(J/w+2)*bit_length(p)+2. Keep the generic two-erasure budget;
+do not overwrite old class-four cubic-only resource artifacts.
+
+NEW theorems/central_regular_jet.py and 11 tests: direct full central-only
+transform of actual group cosets, all sectors/zero labels, wrong sign and
+normalization falsifiers, injective Gram maps even with singular forms,
+cubic alignment/phase compilation including a 127-bit prime, exact feature
+checks, and uncancelled characters outside [N,N]. The nonlinear compiler's
+final contraction is shared, not duplicated. No source manager, SDE backend,
+quantum execution or new Lean theorem was delivered.
+
+VERIFIED: 177 connected Python tests PASS (35.13s), RuntimeWarning fatal;
+syntax, formal generated crosscheck, site JS/site, qsearch validate and
+whitespace PASS. No full Python suite/new Lean build. All owned processes
+terminal. No central admission, GPT CLI/UI/Git or outreach. The older
+irrep proof is retained as useful comparison, not a preferred dependency.
+
+NEXT genuine boundary: in UT7, elements E13,E35,E57 of G' have a nonzero
+nested commutator. A central-only regular carrier then has nonscalar
+commutators, so unchanged Weyl alignment cannot cover class-three N.
+Derive whether BCH yields a usable Clifford-valued (affine permutation,
+quadratic phase) source there, then seek a PUBLIC combining mechanism or
+a decisive obstruction. That is a new question, not an established scope
+extension. Full novelty/independent validation and useful impact stay open.
+
+## 2026-10-21 Complete Two-Erasure Controller Audit
+
+Continuation PROGRESS on the written composition proof, not a new backend
+or admitted algorithm. Re-read the actual nonlinear/source/rank/scalar
+modules, queried corpus and checked primary SDE/nil-2 literature. Section
+10 of NONLINEAR_JET_HSP_RECEIVER.md now gives ONE bounded controller and
+CQ induction through both erasure stages, matrix rank retries, arbitrary-H
+descent, field sampling and complete-instrument error. No new failure found
+under its explicit ordinary-oracle and fixed-chart promises.
+
+Main distinction: condition the QUANTUM state on the complete controller
+record, but average FRESH labels/scales/Y for the RANK bound before
+postselection. Classical coefficient maps need not be IID. Disjoint local
+operations preserve the conditional product of live quantum registers;
+discard/retry consumes inputs. Every fully erased root is the SAME rho(U,0)
+on each successful transcript, which justifies final Fourier sampling.
+This is not decoupling from arbitrary external quantum purifications.
+
+The matrix controller uses the known deterministic all-input SDE solver
+on canonical rows, independent bounded lambda/tau rejection, and public
+rank checking. No missing solver-success allowance is charged away: a
+partial heuristic backend needs its own guarantee. Bounds now include
+M*R*T*r_lambda source queries, less than M scalar merges, depth-first
+logical-register storage, binary random-sampling truncation, and a joint
+error budget before any conditioning. Descent sums image costs rather than
+multiplying them; within-tree products remain. Gate workspace is separate.
+
+VERIFIED: 65 one-off exact-arithmetic schedule checks (c=4..7 and one
+127-bit prime); 71 connected Python tests PASS (2.75s), RuntimeWarning
+fatal; syntax, qsearch validate (valid=true, issues=[]), and whitespace
+PASS. No new Lean build or full Python suite; this pass changes research
+notes only. All owned processes terminal. No central admission, GPT
+CLI/UI/Git action, outreach or routine implementation handed to GPT.
+
+NEXT: do not repeat the same transcript discussion or add nearby fixtures.
+The entire proposal still lacks independent validation and a useful hard
+application. The next substantive scope question is whether the nonabelian
+derived-group obstruction beyond class two admits a constructive replacement
+for the translation/Weyl interface, rather than merely another conditional
+lemma. Search prior work first; the present proof cannot be reused unchanged
+there. Keep this result UNDER REVIEW, preserve the ordinary-oracle boundary,
+and compare impact before continuing broader nilpotent work by inertia.
+
+## 2026-10-21 Nonlinear Channel Formalization And HPGP Interface Audit
+
+Continuation PROGRESS on proof debt, not an established new algorithm.
+Read NONLINEAR_JET_HSP_RECEIVER.md Sections 9.1-9.3 and formal/README.md.
+NEW Formal/NonlinearJetChannel.lean proves the nonlinear support equivalence,
+actual mixed Kraus contraction/completeness, uniform branch probability,
+Weyl-spectator conversion and all-character Fourier residual. It is imported
+by Formal.lean with nine exact standard-axiom guards. No hidden curve is an
+input to the instrument; Y-dependent public A is retained. Nonzero active
+scales, common curve, product source and the transport law are hypotheses.
+
+Also proves abstract source nonidentifiability: U=0 gives maximally mixed
+input for every curve/unit phase; adding a curve offset constant on U-cosets
+leaves the source unchanged. Do NOT turn this into a lower bound against
+all HSP reductions: actual group potentials have additional constraints.
+
+Prior-art comparison now explicitly includes the existing multivariate
+scalar-output HPGP ORACLE algorithm (1107.2189, Theorem 5), as well as the
+full-domain univariate STATE algorithms (1305.1543 and 1503.09016). Our
+unknown proper-U source does not automatically supply either interface.
+Random line restriction retains coherence only with probability
+(p^dim(U)-1)/(p^dim(V)-1), potentially exponentially small. Translation
+closure and phase cancellation themselves are prior art. Source-level SDE
+review found no new dependency obstruction; no generic backend delivered.
+
+VERIFIED: normal lake build --wfail PASS, 3317 jobs; all nine new guards
+PASS; 158 connected Python tests PASS (37.17s), RuntimeWarning fatal.
+Syntax, generated formal crosscheck, site JS/site checks, qsearch validate
+(valid=true, issues=[]), and whitespace PASS. No full Python repository
+suite. All owned processes terminal. Unrelated dirty work preserved.
+
+Still NOT formalized: Taylor/weighted polynomial identities, full rank/SDE
+argument, production of independent sources in one hidden chart, efficient
+gates, complete Fourier family, arbitrary-H recursion or entire runtime.
+No general density-operator positivity proof; no quantum execution, external
+application or exhaustive novelty certificate. No central admission, GPT
+CLI/UI/Git action or outreach. Keep the goal ACTIVE and claims UNDER REVIEW.
+
+NEXT audit the full common-potential/independent-block selection/adaptive
+two-erasure proof chain or produce an access-matched prior-art reduction.
+Use that decision to continue or falsify the receiver; do not substitute
+another nearby finite-fixture campaign for resolving the whole argument.
+
+## 2026-10-21 Nonlinear Jet And Two-Erasure Receiver
+
+Continuation PROGRESS on a constructive mechanism, NOT an established new
+algorithm. Read NONLINEAR_JET_HSP_RECEIVER.md. The old quadratic noncentral
+restriction can potentially be replaced by a translation-closed homogeneous
+Taylor jet. Its public triangular action satisfies F(Y+s*q)=F(Y)+A(Y,s)F(q)
+without knowing F. After degree-2D label alignment, weighted phase erasure
+preserves the nonlinear graph. Fourier-measuring every jet outcome leaves
+an ordinary polynomial phase, which needs a SECOND erasure before learning U.
+
+Proposed scope: explicit Lie coordinates, fixed class c, class-two L',
+p>max(c,2(c-2)), ordinary coherent HSP and arbitrary H. This includes all
+class-five algebras; the old UT6 cubic counterexample remains valid against
+the UNCHANGED quadratic route. A marginal independent-block rank bound and
+full two-stage source count are written. They do not validate an actual
+high-degree SDE implementation, quantum execution or all adaptive premises.
+
+NEW theorems/nonlinear_jet_erasure.py implements public Taylor transport,
+higher K/J maps using the existing deterministic alignment, a symbolic
+scalar compiler checking the complete common jet, weighted witness checks/
+pullbacks, Fourier residual maps and a conditional rank-bound calculator.
+It never evaluates hidden coefficients. It is algebra, not a physical
+source manager or generic high-degree SDE solver. Common instance/chart,
+disjoint fresh sources and before-outcome scale selection remain obligations.
+
+NEW tests/test_nonlinear_jet_erasure.py has 20 controls: multivariate exact
+identities including 127-bit arithmetic; separate-batch cubic alignment;
+variable radicals/zero-rank irreps; symbolic phase compilation; actual Weyl
+spectator contraction; two-step Kraus branches and exhaustive completeness;
+all-outcome Fourier residual phases. Wrong transport cross-terms, ordinary
+degree witnesses, truth-specific cancellation, different hidden curves and
+premature Fourier readout have explicit falsifiers. These are proof controls,
+not new toy oracle candidates or full HSP runs.
+
+VERIFIED: 158 connected Python tests PASS (33.89s), RuntimeWarning fatal;
+syntax, generated formal crosscheck, site JS/site, qsearch validate and
+whitespace PASS. The first broad run had five scalar-adapter failures; that
+UNTOUCHED file changed concurrently, adding its packet-alias guard and
+removing an obsolete rng argument. Reran the complete connected selection
+against the current file and obtained the passing count above. No claim of
+authorship for those concurrent fixes. No full-repo suite or new Lean build.
+
+No central admission, CLI/UI changes, commit, push or outreach. All owned
+processes terminal. No useful application, independent theorem review or
+novelty certificate. NEXT independently challenge the full nonlinear source/
+selection/composition argument and prior art, not more nearby fixtures.
+The new field/scope/resource formulas must not overwrite class-four reports.
+
+## 2026-10-21 Sparse Clifford-Object Application Filter
+
+Continuation PROGRESS. Re-read the matrix-to-scalar/common-parameter and
+adaptive erasure argument and found no new defect under its written
+premises. This is not an independent proof or a new correctness certificate.
+Then tested the state-symmetry application against stronger baselines.
+
+CLASS_THREE_APPLICATION_AUDIT.md now derives a PHASE-COLORED field-set
+encoding of sparse Pauli operators under supplied odd-prime Clifford
+tableaux. The exact action is (v,t)->(Mv,t+ell(v)); ell is linear but
+composes as ell_UV=ell_V+ell_U*M_V. One-hot amplitude classes preserve
+coefficient equality without expanding p^(2n) operator coordinates.
+The task becomes Luks Theorem 3.2(6) finite-set stabilization. For a
+defining-characteristic p-group it is classically polynomial even at
+growing p and nonabelian derived group. General nilpotent tableau groups
+have the already-written classical/known-abelian Hall fallback.
+
+Input restrictions are real: sparse explicit coefficients, coalesced
+unique labels, canonical nonzero amplitude classes modulo p-th roots,
+and faithful supplied tableau actions (otherwise charge kernel/lifting).
+No arbitrary-complex coefficient normalization or unknown-copy tomography
+is supplied. General Clifford symmetry/graph automorphism is not solved.
+Recent Hamiltonian symmetry and structured-state learners were consulted;
+their stronger and different promises are not silently generalized.
+
+Important counterboundary: Clifford R(g) alone does NOT classically
+simulate arbitrary-state StateHSP. Controlled P^a has cubic joint phase
+a*t^2/2, and is non-Clifford. Conjugation symmetry also differs from
+Bose symmetry. Keep these exceptions rather than closing quantum-input
+learning with an invalid Gottesman--Knill argument.
+
+NEW tests/test_clifford_sparse_object_baseline.py: seven tests check dense
+conjugation at p=3,5,7, phase composition, phase/color-dropping falsifiers,
+and a faithful class-four UT5 tableau at a 127-bit prime without Hilbert
+expansion. They are reduction controls, not an implementation of Luks.
+89 connected tests and standard syntax/formal-crosscheck/site/registry/
+whitespace checks PASS. No full-repo suite or new Lean build; all owned
+processes terminal. No central admission, CLI/UI/Git or outreach.
+
+NEXT: stop extending explicit sparse Clifford examples. A genuine
+quantum/succinct application still needs paid controlled access and a
+global gap, or return to a genuinely unresolved whole-receiver obligation.
+Another magic/entanglement benchmark is insufficient. No useful speedup
+or new quantum algorithm was established; the main claim stays UNDER REVIEW.
+
+## 2026-10-21 State-Symmetry Source Transfer
+
+Continuation PROGRESS on the access/application audit, NOT a new algorithm.
+NEW STATE_SYMMETRY_COSET_TRANSFER.md supplies a costed mixed-copy source
+lemma: k IID copies plus controlled R produce address kernel
+Tr(rho R(b)^dagger R(a))^k. A GLOBAL strict absolute-overlap gap gamma
+makes this close to an ordinary reduced coset source in trace distance.
+Public restrictions and nonhomomorphic quotient representatives work too;
+no unknown subgroup, preparation inverse or identical central sectors are
+supplied. The known nil-2 dependency was inspected at its source interface.
+
+Conditional on the complete ordinary receiver, this yields a Bose-symmetry
+application for the explicit-chart class-four/structural higher-class scope.
+The known nil-2 algorithm already covers the corresponding class-two case.
+Bouland--Giurgica-Tiron--Wright Fact 3.3 already uses tensor orthogonality
+amplification: do NOT label the mechanism a new discovery. Older cyclic/
+vector-centre notes now point to this more general asymptotic interface;
+their existing finite implementations are not relabeled as generic runs.
+
+The new exact planner charges k=O((log N+log B+log(1/delta))/gamma), where
+B caps ALL original calls in the WHOLE workflow, including failed trials
+and nil-2 finishes. It is arithmetic only, not source/solver execution or
+promise verification. The optional pure-preparer polar comparison gives
+close full hiding unitaries/inverses, but NOT a classical XOR oracle.
+Projective pairing needs actual conjugate copies AND controlled action;
+inverse access alone does not provide them. Mixed conjugation symmetry
+is a different task. IID marginals without joint independence are unsafe.
+
+Found two local dependency traps in Holt--Subramanian v2 Section 8.2:
+the phase-graph reduction does not preserve the asserted absolute gap
+(identity,nonzero phase suffices), and filtering zero-phase generators
+does not compute the kernel. Exact controls record these, plus the failure
+of inverse-pairing on nonnormal cosets. No broad paper-rejection claim or
+external communication was made.
+
+VERIFIED: 19 new controls; 247 connected Python tests PASS (11.82s,
+RuntimeWarning fatal), syntax, formal generated crosscheck, site JS/site,
+qsearch validate and whitespace PASS. All owned processes terminal. No new
+Lean proof/build or full-repository test run. No central admission, CLI/UI
+work, commit or push; unrelated edits preserved.
+
+NEXT: full-receiver correctness/impact, or a genuinely motivated state
+family with paid controlled action, nonnormal higher-class symmetry,
+inverse-polynomial GLOBAL gap and access-matched classical baselines.
+Do not spend another pass extending small symmetry fixtures or rediscovering
+tensor amplification. The growing-prime claim remains UNDER REVIEW and
+there is still no demonstrated useful external speedup. Goal stays active.
+
+## 2026-10-21 Structural Scope Beyond Class Four
+
+Continuation PROGRESS. Audited the published SDE dependency against the
+whole-receiver contract; found no new runtime obstruction. The general
+fixed-degree construction is deterministic and supplies the unrounded
+arity. The known Imran--Ivanyos zero-sum exponent grows with p, so it
+cannot be promoted to a poly(n,p) baseline without a new result.
+
+NEW QUADRATIC_NONCENTRAL_HSP_SCOPE.md derives a conditional extension to
+every FIXED class c<p with [gamma_3(L),L']=0. This publicly checkable
+identity gives class-two L' and a quadratic noncentral potential, while
+the central potential may have degree c. Existing variable-radical QFT,
+rank, deterministic alignment and common-jet interfaces apply at the
+written-proof level; they do not depend on c=4 once this identity holds.
+
+Two changes are REQUIRED: degree-c scalar erasure, and up to c-2 total
+image calls before the final nil-2 solve. The old cubic backend and
+two-image finish are NOT a higher-class implementation. The structural
+property is closed under subalgebras/quotients; after the first image call
+the ambient derived subgroup is abelian, so the remaining calls are scalar.
+The note gives a fixed-c product resource envelope, not an updated live
+class-four budget artifact or a practical complexity estimate.
+
+NEW tests/test_quadratic_noncentral_scope.py: coupled UT5/abelian-chain
+families of classes 5,6,8 have nonabelian derived groups and satisfy the
+identity. Exact potential computations show a genuinely degree-c central
+term. A valid quartic witness fails to remove it, including a translated
+quartic coefficient. An explicit UT6 counterexample shows that class-two
+L' ALONE is insufficient. Class-descent examples require more than the
+old two-image finish. These are theorem/falsifier controls, not hard inputs.
+
+VERIFIED: 12 new controls, 162 connected Python tests PASS (37.24s,
+RuntimeWarning fatal), syntax, formal generated crosscheck, site JS/site,
+qsearch validate and whitespace PASS. No new Lean proof/build or full-repo
+test run. All owned processes terminal. No central admission, CLI/UI work,
+commit or push. Unrelated changes preserved.
+
+The claim remains UNDER REVIEW, conditional on the complete receiver
+composition; no novelty certification or useful external speedup. NEXT
+attack the structural theorem and impact, not more high-class matrix
+fixtures or a silent relaxation of the commutation identity. Generalizing
+the cubic-only symbolic backend is mechanical follow-up, not GPT's next
+scientific task. Do not overwrite class-four resource reports as if this
+higher-class receiver had run. The active goal is not complete.
+
+## 2026-10-21 Mixed Frobenius Circuit Filter
+
+Continuation PROGRESS on the application challenge, not a quantum result.
+SUCCINCT_POLYNOMIAL_STABILIZER_AUDIT.md now derives a stronger white-box
+classical filter. Exposed p-th-power gates over F_p lift to independent
+Frobenius-level variables with at most s(E+1) DAG nodes. If lifted degree
+delta<p, base-p digit uniqueness makes specialization injective and
+preserves the finite stabilizer. Under p>max(D,(D-1)*delta), the existing
+Lie/gradient attack applies to the lift with only D^2 unknown coefficients,
+even when the original polynomial degree is exponentially large.
+
+NEW theorems/frobenius_circuit_lift.py implements the iterative lift,
+syntactic bounds, reverse differentiation and sufficient attack guard.
+It does NOT implement a full stabilizer solver or semantic Frobenius-root
+extraction from arbitrary circuits. Identical block action requires
+matrices over F_p; differentiating through specialization is invalid.
+At delta=p, carries can change the stabilizer, with an exact countercontrol.
+
+The nonabelian UT3 control recovers finite symmetries missed by the raw
+derivative and checks against every group element. A 127-bit-prime/shared
+DAG control has 40 Frobenius levels and lifted degree 2^50; a 1500-level
+chain checks nonrecursive traversal. These are falsifiers/baseline controls,
+not new hard instances. The guard retains stabilizer_solver_executed=false.
+
+VERIFIED: 17 new controls and 94 connected Python tests PASS (2.97s,
+RuntimeWarning fatal); syntax, generated formal crosscheck, site JS/site,
+qsearch validate and whitespace PASS. All owned processes terminal.
+No new Lean source/build or full-repository test run.
+No central admission, UI/CLI wiring, commit or push. Unrelated edits kept.
+
+NEXT: independent whole-receiver correctness/novelty review or a genuinely
+motivated external application. Do not add more Frobenius fixtures, turn
+guard failures into candidates, or implement routine solver wiring merely
+to fill out the subsystem. No useful external speedup is established.
+
+## 2026-10-21 Deterministic Jet Alignment Removes A Probabilistic Step
+
+Continuation PROGRESS. Re-audited the variable-radical rank law and found
+no new defect under its stated invariance/product premises; did not add
+another nearby rank fixture. Instead removed the RANDOM Lagrangian
+completion dependency. NEW DETERMINISTIC_JET_ALIGNMENT.md gives an
+explicit equal-Gram target embedding for K,J and a deterministic Witt
+extension using at most two transvections per prescribed column.
+The proof handles degenerate restricted Gram matrices, fixes earlier
+targets pointwise and never enumerates field elements. This uses known
+symplectic geometry, not a new Witt theorem or an HSP novelty claim.
+
+REPLACED ut5_matrix_phase_alignment's randomized completion and retry
+interface. extend_symplectic_isometry is exact public finite-field code;
+align_jet_maps builds targets, extends them and verifies all identities.
+Both source controllers now have NO rng/attempts/draw_cap parameters.
+JetAlignment records transvections, not attempts. Variable-radical mixed
+padding is max(R0,D+w), two qudits below the prior conservative schedule.
+The note also derives the sharper R>=D+w-rank(K^T Omega J) criterion;
+the uniform backend does not yet use that optional padding refinement.
+
+The attempt-failure bound drops to 3/100+1/p; alignment contributes ZERO.
+Do not delete all classical randomness: nonzero block multipliers still
+need capped exact-uniform sampling, with their third 1/100 allocation.
+Updated resource calculator and live class-four budget artifact accordingly.
+Updated scalar-reference caller, tests and live scalar artifact; its
+oracle_to_erased_fourier_executed flag remains FALSE and its diagnostic
+hidden-fixture flag TRUE. This is not complete quantum execution.
+
+VERIFIED: 14 new extension controls; 111 focused and 325 connected Python
+tests PASS (47.83s connected, RuntimeWarning fatal), including complete
+source/channel, common-parameter and exactly phased Clifford controls.
+The budget and symbolic-scalar standalone --write workflows PASS.
+Python syntax, formal generated crosscheck, site JS/site checks, qsearch
+validate and whitespace PASS. No new Lean source/build or full-repo test
+run. All owned processes terminal. No central admission, UI/CLI wiring,
+commit or push. Unrelated worktree changes preserved.
+
+NEXT whole-receiver/application challenge. Do not restore random alignment,
+repeat finite geometry fixtures or treat the removed failure term as a
+proved full algorithm. The growing-prime core stays UNDER REVIEW and has
+no established useful external speedup. The active goal is not complete.
+
+## 2026-10-21 Prime-Power Input And Conditional General Class Four
+
+Continuation PROGRESS. NEW CLASS_FOUR_PRIME_POWER_INPUT.md extends the
+input transport to class<=4 p-groups, p>4, arbitrary exponent. Inverse-BCH
+denominators must be inverted modulo an annihilating p-power M, not p.
+Unique b-bit encodings permit the loose bound M=p^b. Known abelian HSP
+on the bracket-spanning family's forward additive encoder, followed by
+integer normal forms, acquires a genuine mixed-order cyclic decomposition.
+No arbitrary-string recognizer or coherent logarithm is assumed.
+
+The stronger written consequence is ONE global Lie-ring chart per
+large-prime Sylow. Bracket coordinates use known abelian kernel calls;
+later normalizers are linear integer congruences, quotients use module
+normal forms, and local Omega_1 is the additive p-torsion. This replaces
+an assumed public polycyclic collector for the large-prime branch. Reuse
+the existing original-ambient ISS recursion and clean oracle proof.
+Known Sylow projection and the existing Imran--Ivanyos small-prime solver
+give a conditional general-class-four corollary. Their setup, unitary
+state preparation/inverse, gate precision and adaptive errors are charged.
+Nothing here proves the proposed exponent-p core or a useful application.
+
+EXTENDED class_four_group_words.py with exponent_bound and
+p_torsion_from_decomposition. It checks individual orders but deliberately
+does NOT certify independence/completeness. Countercontrols show common
+high powers erase short cyclic factors, irredundant exact-order generators
+can still give duplicate torsion generators, and reducing module
+coordinates modulo p can erase a real subgroup and corrupt its normalizer.
+Prime-power UT5 controls include a 127-bit prime and nonabelian Omega_1.
+
+VERIFIED: 311 connected Python tests PASS (52.31s, RuntimeWarning fatal),
+including the 27 public-word controls and existing recursive-oracle tests.
+Python syntax, generated formal crosscheck, site JS/site checks, qsearch
+validate and whitespace PASS. No Lean changes or new Lean/full-repository
+test run. Quantum decomposition, general module backend, coherent compiler
+and full receiver are NOT implemented. No central admission, CLI/UI wiring,
+commit or push; unrelated edits preserved. The image-query budget artifact
+has NOT been relabeled as a complete general-group resource estimate.
+
+NEXT whole-receiver or application challenge. Do not repeat prime-power
+word fixtures or implement a large routine module backend just to call
+the conditional theorem finished. The active goal is not complete.
+
+## 2026-10-21 Conditional Label Law Checked
+
+Continuation PROGRESS. Audited the full rank argument and did not find a
+counterexample under its stated invariance/freshness premises. NEW
+formal/Formal/EquivariantLabelSelection.lean checks eight guarded
+headlines: invariant accepted-label mass, uniform conditional law only
+for nonzero accepted mass, invariant-record conditioning, separate local
+postselection factorization, invertible-postcomposition kernel invariance,
+kernel-controller selected-column equivariance and the final numerical
+block-schedule inequality. It is in the normal build; no sorry/extra axioms.
+
+Important boundary now explicit in CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md:
+the FULL new physical transcript is not an invariant conditioning record.
+Observed labels, rank/radical information cannot be conditioned on while
+still claiming uniform labels. The rank estimate averages fresh labels
+conditional on the prior valid chart/history. The quantum source proof
+separately retains the full transcript. These are compatible proof uses,
+not permission to substitute one probability law for the other.
+
+Two exact Python controls reject (1) valid quartic witnesses filtered by
+a label-dependent abort rule and (2) uniform single-block marginals with
+correlation/global acceptance that defeats multiplying failure bounds.
+Existing GL2 orbit checks and physical matrix-source tests are retained.
+No full rank-probability theorem is machine-checked: GL transitivity,
+hyperplane counts, SDE success/runtime and actual source instantiation
+remain written dependencies. This is not a new algorithm or admission.
+
+Primary-source novelty refresh also checked Inui--Le Gall: its "class 4"
+is a taxonomy entry, not nilpotency class four. Recorded that scope trap;
+excluding a false-positive search hit does not establish novelty.
+
+VERIFIED: normal lake build --wfail PASS (3316 jobs), all eight guards;
+31 focused and 285 connected Python tests PASS (54.77s connected,
+RuntimeWarning fatal), syntax, formal crosscheck, site checks, qsearch
+validate and whitespace PASS. Full-repository Python tests NOT run.
+All owned processes terminal. No registry admission, UI/CLI wiring,
+commit, push, new agents or outreach. Existing unrelated edits preserved.
+
+NEXT whole-algorithm proof/impact work. Do not repeat conditional-balance,
+batch-shear or common-jet fixtures. The proposed growing-prime class-four
+claim remains UNDER REVIEW with no useful external speedup. The goal is
+active, not complete.
+
+## 2026-10-21 Succinct Polynomial Application And White-Box Filter
+
+Continuation PROGRESS. NEW SUCCINCT_POLYNOMIAL_STABILIZER_AUDIT.md tests
+the previously uncovered succinct-circuit input regime. For an explicit
+division-free circuit F and supplied exponent-p/class<=4 matrix group,
+one fixed random z over a sufficiently large extension field makes
+g -> F(g^-1 z) an ordinary hiding oracle for the FORMAL stabilizer with
+bounded global failure. Field bit length, construction, reversible
+evaluation and black-box setup are charged. This is a conditional
+application corollary, NOT a useful hard family or receiver validation.
+
+The main scientific addition is a stronger classical attack. Given the
+PUBLIC circuit, automatic differentiation avoids black-box interpolation
+and numeric-degree expansion. For p>max(D,(D-1)*Delta), explicit matrix
+logarithms and bracket closure give log(Gamma); sampled gradient equations
+find its infinitesimal stabilizer; a degree-in-t argument proves that
+this is exactly log(H) for the finite group. The written derivation works
+for matrix p-groups generally in this characteristic regime, not just
+class four. It is not independently reviewed or a novelty claim.
+
+Two shear controls prove that removing the characteristic guard can
+either enlarge OR shrink the predicted finite stabilizer. But simple
+coordinatewise Frobenius/Artin--Schreier substitutions preserve the base
+polynomial's stabilizer exactly, so exposed lifts must be deflated.
+The surviving high-degree/low-relative-characteristic region is merely
+uncovered, not hard. The literature audit checks Dvir--Oliveira--Shpilka's
+degree/characteristic bounds and rejects importing sparse-orbit hardness.
+
+NEW theorems/succinct_polynomial_stabilizer.py is exact fingerprint-budget
+and derivative-guard arithmetic, not a solver. NEW tests have 19 controls,
+including actual UT3 left-coset fibres, base-field aliasing, two-sided
+derivative failures, equivariant deflation and a 127-bit prime.
+VERIFIED: 101 connected tests PASS (2.51s, RuntimeWarning fatal), Python
+syntax, formal generated crosscheck, site JS/site checks, qsearch validate
+and whitespace PASS. No Lean/full-repo test run; no central registry
+admission, UI/CLI wiring, commit or push. All owned processes terminal.
+
+NEXT: a real external family surviving these filters, a stronger general
+classical attack, or whole-theorem review. Do not spend another pass
+turning the easy control polynomials into a benchmark campaign. A
+costed reduction with no hard family is not the Shor-level objective.
+The active goal is not complete.
+
+## 2026-10-21 Forward-Only Black-Box Input Reduction
+
+Continuation PROGRESS. The adaptive-source induction was already explicit
+in BOUNDED_CLASS_METABELIAN_HSP.md and AFFINE_PHASE_MIXED_CHANNEL_AUDIT.md;
+re-read it instead of adding another generic transcript fixture. The main
+class-four draft now links it and explicitly requires fixed polynomial
+clocks even after an incorrect earlier subgroup estimate. No new quantum
+composition theorem is claimed from this review.
+
+NEW CLASS_FOUR_BLACK_BOX_INPUT.md gives a conditional input reduction for
+unique-encoding black-box exponent-p/class<=4 groups, known p>4, supplied
+generators/identity and coherent multiplication. Corrected inverse-BCH
+words make the additive Lie group accessible. Right-nested Lie brackets
+through length four give a polynomial spanning family; known abelian HSP
+learns its relation kernel, then a basis and the public bracket table.
+Setup needs ZERO original hiding-function queries, but its quantum group
+operations are charged. No supplied normal-word collector is assumed.
+
+Only FORWARD coordinate encoding is needed for f o E: compute E(x), query
+f, then uncompute E(x) while retaining x and the hiding label. No coherent
+arbitrary-element logarithm/decoder is supplied or required. Subsequent
+normalizers and quotients use the acquired Lie table. This does not work
+from state-only access. Keep ONE acquired chart fixed during receiver
+amplification; majority-voting generator strings from unrelated acquired
+bases is invalid. Amplify each setup relation kernel in its fixed domain.
+
+NEW theorems/class_four_group_words.py implements only public opaque-
+element words, bracket spanning and forward linear combinations, with
+explicit O(log p) multiplication caps. It never reads matrix/normal-word
+coordinates or the hiding oracle. Tests show the four standard UT5 group
+generators have additive rank four, not ten; bracket closure is essential.
+Opaque-object controls include a 127-bit prime, noninjective spanning
+families and failure of ordinary multiplication as additive encoding.
+
+VERIFIED: ten new tests and 65 connected tests PASS (8.87s, RuntimeWarning
+fatal). Python syntax, generated formal crosscheck, site JS/site checks,
+qsearch validate and whitespace PASS. Budget artifact regenerated with
+black-box basis setup explicitly EXCLUDED from its image-query envelope.
+No new Lean source/build or full-repository test run. All owned processes
+terminal; no central admission, UI/CLI wiring, commit, push or outreach.
+
+This is known-method input transport, not novelty or an executed quantum
+setup/receiver. The complete class-four claim remains UNDER REVIEW and
+has no useful external application yet. NEXT whole-theorem/impact attack;
+do not repeat inverse-BCH examples or the existing transcript induction.
+The active goal is not complete.
+
+## 2026-10-21 Complete Class-Four Draft, Cost And Transport Audit
+
+Continuation PROGRESS. Read NEW CLASS_FOUR_HSP_THEOREM_DRAFT.md before
+extending this line. It states the exact proposed ordinary-HSP claim for
+supplied exponent-p Lie coordinates, p>4, class <=4 and arbitrary H.
+This is NOT an admitted theorem, executed algorithm or novelty certificate.
+The proof chain includes the common source/jet/parameter contracts and a
+shorter finish: initial nil-2 intersection, normalizer quotient, class-four
+image, class-three image, final nil-2 recovery. No generic metabelian
+controller or truth-supplied Fourier sampler is needed by this argument.
+
+NEW theorems/class_four_complete_budget.py evaluates exact conditional
+query/error caps in all four prime-residue regimes. Use the unrounded
+Ivanyos--Santha quartic recurrence G(4,e)^3=4^18*(e+1)^12; the literal
+compact log2 comparison is smaller for e>=128. This does not refute their
+fixed-degree polynomial-time theorem. Conservative image-query exponents
+are 46/70/56/80 for p=11/7/5/1 mod12, omitting retry logarithms, NOT gate
+exponents, lower bounds or practical resource estimates. The generated
+reductions/class_four_complete_budget.json explicitly excludes the other
+HSP calls and marks source correctness/execution/speedup claims false.
+
+The second audit step gives the FULL universal potential, verified over
+rationals in all 49 weighted free associative words through degree four.
+It proves Q mod Z(L') = A+[X,Y]/2, with Q of polynomial degree <=4.
+No interpolation or hidden coefficient evaluation is used. A valid
+class-five free-group example has a cubic coefficient that does NOT
+commute with L'; the unchanged quadratic-jet receiver cannot cover it.
+This is a scoped boundary, not a class-five HSP no-go theorem. Written
+exp/log adjoint transport proves the linear normalizer condition and
+legitimate quotient-oracle fibers without a split section. Canonical-output
+majority amplification avoids treating an inverse-polynomial-precision
+QFT theorem as an arbitrary-precision cost claim. These are written
+proofs/exact symbolic checks, not new Lean theorems.
+
+VERIFIED: 121 connected resource/source/adapter Python tests PASS (37.74s)
+and four new universal transport checks PASS (0.98s), RuntimeWarning fatal.
+Touched Python syntax, formal generated crosscheck, site JS/site checks,
+qsearch validate and tracked whitespace PASS. Standalone budget workflow
+regenerated its live artifact. Full-repository Python and Lean build were
+NOT rerun; Lean unchanged, preceding full 3315-job build remains the last
+milestone. No central admission, UI/CLI wiring, commit or push. Existing
+unrelated changes preserved; all pass-owned processes terminal.
+
+NEXT: adversarial review of the ENTIRE proposed algorithm, especially
+conditional label selection/rank, complete adaptive channels and useful
+external reductions. The universal class-four potential/normalizer issue
+now has an explicit argument: do not spend another pass on nearby examples.
+No independent review or useful external application has been established.
+General-prime backend integration remains mechanical, not theorem evidence.
+The active goal is not complete.
+
+## 2026-10-21 Common Jet Proof And Sparse-Adapter Audit
+
+Continuation PROGRESS. NEW formal/Formal/CommonQuadraticJet.lean is in
+the normal build with SEVEN guarded headline theorems. For one fixed
+Q_W(q)=a+L(q)+B(q,q), it derives v(q)=v(0)+J(Tq)+K(B(q,q)), where
+Tq=(Lq,B(q,-)+B(-,q)). Public AK=0, AJ(j)=(j,0) then imply the exact
+retained jet and constant spectator. Different batches may have different
+carrier dimensions and source counts, but their derivative is the SAME T.
+The quadratic_source_to_scalar theorem composes that derived identity
+with the actual spectator Kraus theorem: graph(-T on U) is common.
+
+The unknown potential/jet is a proof witness, never an operational input.
+The physical source, genuine shared quadratic potential, public alignment
+identities, coordinate ordering and exact Clifford covariance still have
+their own obligations. This is not an entire oracle-to-output proof.
+Read the new common-jet/shared-parameter sections of the class-four note.
+The written binomial proof shows translation/addition preserve one fixed
+parameter lift; cancelling every public leading row lowers degree for
+every theta. Conditional source independence needs disjoint fresh leaves
+and the FULL transcript. Metadata strings cannot certify that premise.
+
+Audited the existing untracked symbolic_scalar_phase_erasure adapter;
+its tests initially could not import nonexistent _canonical_vec and
+_dependence_exact, and its conic keyword did not match the actual API.
+Reused the existing exact helpers and corrected the keyword. Found and
+fixed same-wrapper duplication inside one merge (consumed checks alone
+missed it). Identical public maps from distinct fresh wrappers stay legal.
+The report's 25-input quadratic stage had rank 8 and needed at least 81
+for this solver; use the public safe bound 169, and linear arity 7.
+The full symbolic reference now counts 8281 descriptors, not 1400.
+Two old descent tests repeated one Fourier row instead of spanning the
+intended annihilator; they now cycle the basis, retaining their intended
+strict-overestimate and terminal-membership falsifiers. No controller
+acceptance predicate was weakened.
+
+NEW tests/test_common_quadratic_jet.py has four controls: mixed multivariate
+jets across variable carriers at p=7 and a 127-bit prime, wrong-chart
+support despite identical public transcript, and rejection of a diagonal
+witness that works only at one diagnostic theta. Five adapter regressions
+cover same-wrapper rejection and legitimate identical-map fresh sources.
+
+VERIFIED: normal lake build --wfail PASS (3315 jobs), all seven guards
+standard axiom subsets; 21 focused and 673 connected Python tests PASS
+(136.33s, RuntimeWarning fatal). Touched Python syntax, formal generated
+crosscheck, site JS/site check, qsearch validate and whitespace PASS.
+Full-repository Python suite NOT run. Standalone
+python -m theorems.symbolic_scalar_phase_erasure --write PASS, emitting
+research/reductions/symbolic_scalar_phase_erasure.json and its Markdown.
+The report explicitly labels hidden-fixture Fourier samplers and symbolic
+descriptors: no end-to-end quantum execution, novelty or speedup claimed.
+All owned sessions terminal. No central admission, UI/CLI wiring, commit
+or push. Existing unrelated changes preserved; goal remains ACTIVE.
+
+NEXT: a decisive full class-four theorem/dependency/cost and prior-art
+review. Do not keep proving generic local source identities by inertia.
+The common-T algebraic gap is now checked; source independence/provenance,
+class-four potential transport, capped general-prime solvers and adaptive
+approximation remain distinct from metadata checks or passing tests.
+The preceding explicit-application filters remain in force.
+
+## 2026-10-21 Public Correctly Phased Clifford Plan
+
+Continuation PROGRESS. NEW theorems/prime_clifford_realization.py compiles
+any public odd-prime symplectic S into at most 4R^2+3R modular one/two-qudit
+primitives, including singular X/X blocks. Deterministic elimination and
+exact tableau replay use O(R^3) field operations and O(R^2) storage, without
+enumerating the field or Hilbert space. compile_alignment first verifies
+the existing variable-radical or UT5 alignment. No hidden data are inputs.
+
+Read PRIME_CLIFFORD_REALIZATION.md. The universal primitive proof fixes
+D(x,z)|t>=omega^(x.z/2+z.t)|t+x> and gives EXACT D(v)->D(Sv), not only
+projective covariance. A gate using t(t-1)/2 instead of t^2/2 has the right
+tableau but an unwanted displacement-dependent character; tests catch it.
+Thus the existing scalar phase formula needs no additional compiler phase.
+This is known modular Clifford synthesis, not novelty or a new algorithm.
+It is not a Lean-certified compiler or a native-qubit backend. Mixed
+padding/layout, common parameters and complete adaptive execution retain
+their own obligations. No claim, registry, UI or CLI was changed.
+
+VERIFIED: 30 new controls; 652 connected Python tests PASS (81.46s,
+RuntimeWarning fatal). Controls cover every one-qudit symplectic at p=3,5,
+independent two-qudit frames, actual variable-radical alignments at p=7
+and a 127-bit prime, plus invalid-input and wrong-phase falsifiers.
+Touched Python syntax, formal generated crosscheck, site JS/site check,
+qsearch validate and whitespace PASS. Full-repository Python and Lean
+build NOT rerun; no Lean source changed. All pass-owned jobs terminal.
+No commit/push. NEXT common-support/common-parameter cancellation proof
+and decisive whole-theorem review, not more generic Clifford fixtures.
+
+## 2026-10-21 Matrix Batch Shear And Conditional Alignment Composition
+
+Continuation PROGRESS. NEW formal/Formal/MatrixBatchShear.lean is imported
+by Formal.lean and has EIGHT guarded headline results. Read its README
+section and the Formal Matrix-Batch Channel section of the class-four note.
+
+The proof starts with independent matrix-source kernels sharing U, with
+arbitrary different finite carriers C_i. Actual Kraus operators prepare
+fresh coherent uniform q, shear old quotients, measure all old quotients
+and retain carriers. Their two sums equal |Q|^-n rho(U,W_Y), where
+W_Y(q)=tensor_i W_i(Y_i+s_i*q). At least one scale must be nonzero.
+Tensor-kernel multiplication and dimension normalizers are proved, not
+assumed. Every outcome has probability |Q|^-n; the whole instrument is
+complete even with all-zero weights or arbitrary inputs. A zero-weight
+carrier is mixed and discardable. All-zero weights instead produce
+full-support uniform q coherence and lose U.
+
+Actual carrier conjugation gives gauges C_Y W_Y(q) C_Y^dagger. The
+aligned_branch_identity composes this with the batch channel. Separately,
+conjugation_to_scalar composes carrier conjugation and spectator Kraus
+sums with the existing scalar graph-support theorem, conditional on the
+EXACT aligned monomial gauge. Only C_Y is physically applied; unknown
+gauge functions and T are proof witnesses, never operational advice.
+
+This does NOT turn the finite-field symplectic S into a Hilbert-space
+Clifford C_Y. Correct phase conventions, gate realization, mixed padding,
+carrier reindexing and common unknown parameter provenance across batches
+are not all composed/formalized. The normal QFT has its separate written
+factorization/reference checks. No full algorithm, novelty or external
+application is claimed, and no central claim or registry was changed.
+
+NEW tests/test_matrix_batch_shear.py supplies ten controls, including
+every outcome for several weight patterns and different carrier sizes,
+plus physical shear -> carrier unitary -> spectator composition. Four
+adversarial cases show why the premises matter: correlated correct
+marginals violate independent Y; different U intersect; mixed fresh q
+destroys support despite uniform Y; an old pivot fixes one Y to zero.
+Left-only gauge multiplication is also rejected as a representation of
+physical conjugation. These are interface falsifiers, not no-go campaigns.
+
+VERIFIED: normal lake build --wfail PASS (3314 jobs), all eight guards
+restricted to propext/Classical.choice/Quot.sound; 79 focused and 622
+connected Python tests PASS (75.28s, RuntimeWarning fatal). New Python
+syntax, formal generated crosscheck, site JS/site check, qsearch validate
+and whitespace PASS. Full-repository Python suite NOT run. All owned
+sessions terminated. No CLI/UI work, commit or push.
+
+NEXT: a correctly phased public Clifford realization and the shared-
+parameter/cancellation composition, or a decisive full theorem/impact
+audit. Do not reprove these generic batch/source identities with more
+fixtures. The preceding application filters remain in force.
+
+## 2026-10-21 Complete Class-Two Normal Fourier Instrument
+
+Continuation PROGRESS. The circuit sketch already in
+CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md is now expanded into a complete
+amplitude, unitarity and cost argument. This is known-method dependency
+verification, not a new QFT or a full class-four HSP algorithm.
+
+For B_lambda=D^T Omega D, write (a,b,t)=(Dv,Rv), r=rank(B)/2,
+k=w-2r. Negative Fourier on c, invertible v-coordinate change, phase
+omega^(-a.b/2), negative Fourier on b/t and i=a+j produce exactly
+sqrt(p^r/|N|)*conjugate(rho_(lambda,alpha)(v,c)_(i,j)). Every stage
+is unitary, and k+2r=w for every label: the full family is complete.
+The note also gives irreducibility/distinctness and measured execution.
+Lambda can be measured immediately, so public elimination runs only on
+the observed label. No exponential label table or representation matrix
+is operationally required. Keep alpha; only the row is traced.
+
+NEW tests/test_class_two_fourier_instrument.py applies the actual FFT,
+permutation, diagonal-phase and addition stages, independently comparing
+with representation coefficients. Six tests cover moving radicals,
+rank 0/2/4, nonzero labels of zero Weyl rank and actual ordinary cosets.
+The half-phase countercontrol stays unitary but fails the representation
+law: a unitary matrix alone is not a source/convention certificate.
+
+Cost is polynomial in w,z,log p,log(1/eta) under the explicit BCH promise,
+using standard approximate cyclic QFTs and reversible field arithmetic.
+Allocate joint instrument error across Q_source capped uses, including
+labels and ABORT; do not divide by a rare branch probability. Dense
+test matrices are exponential diagnostics, NEVER the claimed runtime.
+The written completeness proof is not yet Lean-checked or gate-compiled.
+Input transport, batch shear, Clifford covariance and full adaptive
+composition still need to meet their respective contracts.
+
+VERIFIED: 6 focused tests PASS (1.52s), 612 connected Python tests PASS
+(74.38s, RuntimeWarning fatal), touched Python syntax, formal crosscheck,
+site JS/site checks, qsearch validate and whitespace PASS. Full-repository
+Python suite and Lean build NOT rerun; no Lean changed. All owned sessions
+terminated. No registry/claim admission, UI/CLI, commit or push.
+NEXT attack matrix batch-shear/alignment/common-parameter composition,
+not another QFT fixture. The preceding explicit-application audit still
+leaves no demonstrated external algorithmic advantage.
+
+## 2026-10-21 Large Cross-Characteristic Primes Are An Abelian Fallback
+
+Continuation PROGRESS: the application audit now closes its previously
+open large-prime gap for EXPLICIT nilpotent matrix stabilizers. This is
+an impact filter, not a new solver, classical dequantization or general
+no-go theorem. No central claim or registry entry was changed.
+
+Read CLASS_THREE_APPLICATION_AUDIT.md's new large-prime section. The
+dimension lemma p>D implies abelian cross-characteristic p-subgroups
+of GL(D,q); Luks Section 5 already uses this. The note supplies a torus/
+Sylow-order proof over arbitrary finite fields and a constructive CRT
+split using the known GL order, without factoring its large-prime part.
+For nilpotent Gamma=B x A the large-prime factor A is central abelian,
+mu(B)<=D, and every stabilizer H splits as its two intersections.
+Classical bounded-mu methods solve the B stabilizer, and standard abelian
+HSP over C_(M_large)^s solves the A stabilizer with redundant generators.
+
+The input model, original object size, canonical evaluator, exponent
+length and approximate abelian QFT cost are charged. Do not generalize
+to arbitrary solvable groups, unknown ambients, succinct nonlinear
+actions, abstract nonfaithful representations or transporter recovery.
+Defining-characteristic primes may be large and nonabelian but belong
+to B; mu excludes them. The nonabelian oracle proposal remains live.
+
+NEW tests/test_nilpotent_linear_action_baseline.py has 19 controls:
+prime/extension-field torus orders; CRT trivial-factor cases; actual
+UT_3(F_11) x C_5^2 matrix stabilizer splitting; the D=p Weyl boundary;
+defining-characteristic, nonnilpotent, noncoprime and transporter
+countercontrols; redundant abelian-domain coset fibres. Helpers are
+test-only, not a field/group validator or a Luks/QFT implementation.
+
+VERIFIED: 33 focused tests and 606 connected Python tests PASS (66.08s,
+RuntimeWarning fatal). New Python syntax, formal generated crosscheck,
+site JS/site check, qsearch validate and whitespace PASS. Full repository
+Python suite and Lean build NOT rerun in this pass; no Lean code changed.
+All owned sessions terminated at this milestone. No UI/CLI, commit/push.
+
+NEXT: resolve a real source/composition gap, or identify an explicit
+problem outside these filters. Large p alone is no longer an application
+lead here. Do not convert this scoped fallback into a broad HSP negative.
+
+## 2026-10-21 Ordinary Mixed Cosets To The Matrix Source
+
+Continuation PROGRESS. New formal/Formal/CosetMatrixSource.lean is in
+the normal library build with NINE guarded headline theorems. This is
+source correctness work, not a new family, algorithm claim or QFT backend.
+Read its formal README section and Formal Ordinary-Source Derivation in
+CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md.
+
+The proof now starts with a coset-separating hiding function: tracing its
+uniform-query amplitudes gives the actual mixed group kernel. A universal
+group-word identity constructs F(q)=s(q-pi(q))h(pi(q))s(q)^-1 and proves
+its hidden-direction increment. Quotient compatibility puts F in N;
+an actual normal-first chart transports the right action. The complete
+hidden parametrization and homomorphic lift are structural hypotheses,
+not queried unknown coefficients. The normal coordinate need not be abelian.
+
+The useful simplification is to trace the irrep row BEFORE demanding the
+full Schur block. Unitarity and representation multiplication alone give
+sum_i conjugate(rho(n)_ij) rho(nt)_ik = rho(t)_jk. The fixed-sector
+source is d/|G| times the potential-increment matrix; its trace is
+d^2/|N|. Normalization gives exactly (|V|d)^-1 W(q)^dagger W(q') on U.
+source_from_normal_chart composes the section-word/chart/source proofs;
+the desired action law and density kernel are not added as axioms there.
+
+CRITICAL boundary: this does NOT prove completeness of the entire QFT
+family. A reducible unitary representation can give a putative sector
+trace >1. The explicit countercontrol uses two trivial C_3 copies and
+gets 4/3, proving that the fixed-sector theorem alone is not a physical
+measurement certificate. Preserve the general class-two QFT obligation.
+
+New tests/test_coset_matrix_source.py builds a complete normal QFT and
+actual ordinary cosets in a group with nonabelian normal N and a proper
+quotient support. Every traced sector matches. Reversing the normal
+multiplication fails; conditioning on one hiding-output value keeps one
+proper affine coset instead of the uniform mixed-source diagonal. These
+are finite source falsifiers, not new toy-oracle candidates.
+
+VERIFIED: normal lake build --wfail PASS (3313 jobs), all nine guards
+restricted to standard axiom subsets. 587 connected Python tests PASS
+(70.87s, RuntimeWarning fatal), including 63 focused tests. New Python
+syntax, existing formal crosscheck, site JS/site checks, qsearch validate
+and whitespace checks PASS. Full repo Python suite NOT run. All owned
+sessions terminated. No central claim, registry change, CLI/UI work,
+commit or push. Known Fourier/coset methods remain prior art.
+
+NEXT: address the remaining batch-shear/covariance/common-parameter
+composition or subject a precise end-to-end statement to an impact test.
+Do not reprove these fixed-sector identities with more finite examples.
+Effective input transport, full normal-QFT realization, polynomial degree,
+adaptive costs, independent review and external application remain real
+obligations. The theorem permits arbitrary normal groups algebraically;
+that is NOT an efficient general nonabelian HSP algorithm.
+
+## 2026-10-21 Universal Matrix-To-Scalar Measurement Bridge
+
+Continuation PROGRESS. New formal/Formal/WeylSourceScalarization.lean
+checks the conditional physical measurement interface, rather than adding
+another source family. It is imported by Formal.lean. Read the new formal
+README section and the Formal Measurement Bridge subsection of
+CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md.
+
+The input is an explicit normalized matrix source with monomial gauges
+W(q)[r,t]=[r=A(q)+t] gamma(q,t), not an assumed target scalar state.
+W^dagger W and both sums of K_s rho K_s^dagger are evaluated. For
+A(q)=(a+Tq,b), constant spectator b, every branch equals
+|S|^-1 rho(graph(-T on U), conjugate gamma restricted to s). Its trace
+is |S|^-1 and the whole Kraus family is complete. The output uses the
+EXACT rho definition in AffineSupportErasure. Phases, field dimensions
+and hidden U are arbitrary; no small-prime interpolation is in the proof.
+The measurement contains no hidden U,T or phase data as operational input.
+
+The sharper falsifier is also formal: spectator displacement b+Lq gives
+graph(-T on U intersect ker L). Outcome probabilities remain uniform!
+Full carrier readout keeps only U intersect ker T and is fully dephasing
+when T is injective. This rules out validating a measurement using only
+normalization or uniform label/outcome rates. Global L=0 is sufficient;
+low rank of L is not. Three new independent density controls cover proper
+support, leaking spectators and a noninjective full-readout jet.
+
+Seven headline axiom guards permit only propext, Classical.choice and
+Quot.sound. The ordinary library lake build --wfail PASSED (3312 jobs).
+585 connected Python tests PASS (69.11s, RuntimeWarning fatal), including
+61 focused tests. Touched Python syntax, existing formal crosscheck, site
+JS/site checks, qsearch validate (valid:true, issues:[]) and whitespace
+checks PASS. Full repository Python suite NOT run. All owned sessions
+terminated. No central claim, CLI/UI, registry changes, commit or push.
+
+Boundary: this is NOT a formal group-to-source proof, positivity proof,
+batch-shear theorem, Clifford compiler/covariance proof, degree argument,
+same-instance certificate, runtime proof or complete HSP algorithm.
+The conditional normal source and common U,T are upstream premises.
+Standard modular Clifford decomposition is prior art (Hostens--Dehaene--
+De Moor, quant-ph/0408190), not a local algorithmic novelty. Independent
+review, external impact and execution still remain unresolved.
+
+NEXT: attack the remaining ordinary-source/batch-shear/common-potential
+composition or state the precise end-to-end theorem with an impact test.
+Do not recheck spectator measurement with more fixtures or expand class
+by analogy. Preserve the distinction between a proved interface and a
+proved new quantum algorithm. Routine backend wiring is not the preferred
+use of the next theory pass.
+
+## 2026-10-21 Generic Symbolic Compiler And Adversarial Source/Cost Audit
+
+Continuation PROGRESS, not a completed or admitted algorithm. Read the
+updated CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md, especially Sections 6-7.
+The internal audit retained the proposed variable-radical construction
+but made its actual source normalization and finite cost contract explicit.
+This is not independent peer review or a novelty certificate.
+
+New theorems/class_four_scalar_phase_compiler.py consumes only checked
+public transcripts. It handles varying Weyl dimensions, including zero
+rank, keeps radical-character phases, and compiles a common cubic scalar
+potential with symbolic hidden coefficients. Its shared Weyl conversion
+was extracted from ut5_scalar_phase_compiler.py; source-specific schemas
+are not conflated. Only Q_W coefficients need pairwise products; Q_Z enters
+linearly. The current packet property retains a safe larger lift bound.
+The compiler never calls diagnostic hidden-parameter evaluation.
+
+The ordinary mixed coset source, conjugated normal QFT and row trace give
+irrep probability d^2/|N| and kernel W(q)^dagger W(q')/(|V|d). Direct
+Schur controls check positive- and zero-Weyl sectors without assuming a
+pure coset state. Equal symbolic bases do NOT certify one hidden instance:
+a new countercontrol defeats formal cancellation using different unknown
+coefficient assignments. Pin the oracle, chart and basis for each tree.
+
+The written finite schedule charges M=t*a1*a2*a3 matrix packets, T=B*A4(z)
+accepted labels per attempt, capped label retries and capped full attempts.
+Q_source<=M*r_mat*T*r_label; scalar/initial SDE work, coherent gates and
+initial/final group calls are additional costs. Four error allocations
+cover Fourier rank, source aborts, scalar solver aborts and TOTAL adaptive
+channel approximation. ABORT remains part of the channel. The uncapped
+machine-word square backend and absent coherent compiler do NOT meet the
+contract just because a finite schedule has been written.
+
+Primary-source review: known diagonal cancellation, nil-2 HSP and quotient
+restriction are dependencies. Full-oracle multivariate HPGP line queries
+are not automatically available from mixed states on unknown U_jet. This
+interface distinction does not establish novelty or external significance.
+No concrete application has survived the existing classical-input filter.
+
+12 new controls; 58 focused and 582 connected Python tests PASS (65.83s,
+RuntimeWarning fatal). Touched syntax, existing formal crosscheck, site
+JS/site checks, qsearch validate and whitespace checks PASS. Full repo
+Python tests/new Lean build NOT run. No central claim, registry artifact,
+CLI/UI integration, commit or push. All owned test sessions terminated.
+
+NEXT: attack the physical matrix-to-scalar/common-parameter erasure
+composition, or isolate a precise theorem with a credible impact route.
+Do not keep increasing dimensions/seeds or extend nilpotency class by
+analogy. A phase-correct coherent Clifford, general bounded arithmetic,
+full source execution, formal composition and independent novelty review
+remain separate obligations. Prefer a decisive mathematical test over
+routine backend wiring, which remains appropriate for the other agent.
+
+## 2026-10-21 Variable-Radical Source Repair Beyond Direct-Product UT5
+
+Continuation PROGRESS. Investigated the actual normalizer/quotient
+restriction rather than assuming the UT5 representation family survives.
+Read CLASS_FOUR_VARIABLE_RADICAL_SOURCE.md. Every individual alternating
+form can be singular even though their common radical is zero. The free
+class-four Lie algebra on three generators supplies a real derived-group
+example with odd noncentral width three; a generic nondegenerate label
+does not exist. This invalidates simply reusing the old invertible D_i.
+
+The proposed repair is constructive. Central Plancherel labels for a
+class-two normal group are uniform regardless of irrep rank. Canonical
+row-space preprocessing of a quartic witness makes its selected active
+label uniform under GL_z symmetry, even conditional on the witness.
+Independent block multipliers and uniform shear outcomes give bad-vector
+probability <=2/p per block. With L=w(m+2), B=2L+2 blocks, a union bound
+gives public jet-rank failure <=1/p. Label-dependent or zero Weyl ranks
+are allowed; radical characters must be retained. Only lambda=0 is
+discarded, not every label with a zero component or singular form.
+
+New class_four_matrix_source.py implements public alternating-form
+factorization, varying-height jet maps, padding accounting and the exact
+rank-bound formula. The checked geometry is shared with the prior UT5
+controller. Genuine maximally mixed padding supplies Lagrangian slack;
+it is not |0> padding or a retained purification. Canonical alignment
+again gives the SAME hidden jet graph in every batch. Quartic central
+phases cancel, while radical-character terms are at most quadratic, so
+the resulting scalar source is cubic.
+
+This suggests a conditional arbitrary-H class-four core: solve the
+initial intersection with the known nil-2 HSP algorithm, restrict to its
+normalizer, quotient with a charged original-oracle implementation,
+apply the GENERIC source, then descend to class three. Correct initial
+K needs the solver's success/error guarantee; membership tests alone
+do not certify completeness. No full generic coherent solver, generic
+symbolic compiler, formal proof or novelty claim was produced.
+
+17 new controls include the free-Lie structural example, exhaustive
+small-form ranks, all 2016 GL_2(F_7) witness transformations, a biased
+selector countercontrol, exact one-block probability counts, variable
+radical alignment, five-qudit mixed padding accounting, zero-Weyl-rank
+sectors, QFT radical characters, actual class-two representation products
+and cubic scalar-phase checks. VERIFIED: 570 connected tests PASS
+(64.54s, RuntimeWarning fatal), 46 focused tests, Python syntax, existing
+formal crosscheck, site syntax/site checks and qsearch validate PASS.
+Full repository Python suite/new Lean build NOT run. No central claim,
+registry JSON, CLI/UI work, commit or push.
+
+NEXT: adversarial full source/cost/novelty review of the generic proposed
+composition. Do not merely increase seeds or call the specialized UT5
+symbolic compiler generic. The row-space-only selection rule, independent
+block multipliers, radical phases, mixed-source trace and mixed padding
+are mathematical obligations, not optional optimizations. No concrete
+non-oracle application or Shor-level significance has been established.
+
+## 2026-10-21 UT5 Matrix Source To A Fixed Cubic Scalar Support
+
+Continuation PROGRESS, not an admitted algorithm or novelty claim. Read
+UT5_MATRIX_PHASE_ALIGNMENT.md. The old scalar-normal-register proof stops
+at abelian derived groups. This pass develops a separate proposed route
+for G=UT_5(F_p)^r, p>4, p>=2r, H intersect G'=1, with the ordinary hiding
+oracle. The group and prime may grow. Nontransverse H, arbitrary quotients,
+general class-four groups and external applications remain outside scope.
+
+The actual partial normal QFT yields matrix kernels W(q)^dagger W(q')
+with W a tensor Weyl displacement times a scalar polynomial phase.
+Its noncentral displacement has degree <=2. A quartic label relation
+sum s_i^4 lambda_i=0 makes the quadratic coefficient image isotropic.
+Public affine-outcome rank and Lagrangian-transversality checks then
+construct S with (SK)_X=0 and (SJ)_X=(I_D,0). Crucially, the retained
+hidden support is graph(u -> -Tu) with the SAME unknown T across fresh
+batches; the controller receives no hidden potential or subgroup.
+
+New theorems/ut5_matrix_phase_alignment.py implements the bounded public
+symplectic controller and exact verification, including arbitrary-size
+prime arithmetic. New ut5_scalar_phase_compiler.py compiles sparse public
+maps against fixed unknown coefficients AND their pairwise products.
+A linear-only unknown-parameter compiler is falsified by a mixed finite
+difference. Public transcript compatibility is checked.
+
+A second mathematical simplification emerged while testing: UT5 log
+center coordinates (15,14,24,25) have degree bounds (4,3,2,3). Only the
+corner can be quartic, and the SAME label relation cancels its top scalar
+phase. The output source is CUBIC, not quartic. Do not add a mandatory
+quartic scalar-erasure stage. The initial quartic label witness is still
+needed; for p=3 mod4 it comes from the existing square construction.
+For p=11 mod12 the following cubic/square/linear arithmetic interfaces
+match the current backends, but a full bounded large-prime coherent
+algorithm is NOT implemented. Existing square arithmetic/caps, sparse
+packet integration, Clifford gate compilation and joint error accounting
+remain real execution obligations.
+
+29 new tests cover actual matrix words and log-center conventions,
+Heisenberg QFT orientation and label law, matrix-source shears with every
+outcome, one/two-factor public algebra, stable hidden jets, 127-bit primes,
+scalar density kernels, symbolic unknown-parameter lifting, exact removal
+of scalar quartics, source/rank rejection and bounded aborts. Concrete
+negative controls show why all-carrier measurement, nontransverse H,
+constant scales and illicit cubic noncentral terms fail. The source and
+compiler do not depend on full-field tables; dense matrices are test-only.
+
+VERIFIED: 553 connected Python tests PASS (62.19s, RuntimeWarning
+fatal), including all 29 new controls. Touched Python syntax, existing
+formal crosscheck, site JS/site checks and qsearch validate (valid:true,
+issues:[]) PASS. Full repository Python suite and a new Lean build were
+NOT run. The new mathematical derivation is not formally certified.
+
+NEXT: independently attack the full source-to-scalar/composition proof
+and precise cost before promoting the restricted theorem. Use existing
+quartic/SDE and cubic erasure results with their actual promises. Do not
+mistake the proved class drop of HN for closure under arbitrary normalizer
+quotients. No useful non-oracle application has survived the polynomial
+label/transporter filters. No claim admission, CLI/UI, new Lean theorem,
+registry JSON, commit or push was performed in this pass.
+
+## 2026-10-21 Certified Class Descent Removes The Mandatory HPGP Finish
+
+Continuation PROGRESS. Started with theorem-level source/prior-art
+review, not another application campaign. Re-read ISS Theorem 2 via
+arXiv:0707.1260, IS 1503.09016v2 Theorem 3 and Proposition 7/Corollary 8,
+DISW 1107.2189v2, Imran--Ivanyos 2304.08376 and Morales 2608.05321.
+The old line-finisher promises fit; no novelty certificate follows.
+Morales's scalar-action and quasi-Hamiltonian conditions do not cover
+the nonabelian exponent-p core. The generic restriction principle is
+already prior art. These checks led to a constructive simplification.
+
+The SAME BOUNDED_CLASS_METABELIAN_HSP.md now makes certified class
+descent the preferred completion. For current S of class r>=2,
+N=S' abelian, H intersect N=1 implies H abelian. Thus
+(HN)'=[H,N]<=gamma_3(S), and gamma_j(HN)<=gamma_(j+1)(S) for j>=2.
+Consequently class(HN)<=r-1. At most c-1 repetitions reach an abelian
+ambient. No cyclic-complement HSP/HPGP finisher is required, although
+the existing valid route remains an optional alternative.
+
+Crucially, exact intermediate U is unnecessary. Exact erased Fourier
+samples give U<=Uhat; its public preimage contains H. Recurse as soon
+as the PUBLIC lower-central calculation shows strictly smaller class.
+A strict support overestimate can pass legitimately. After the first
+normalizer quotient, all later derived subgroups lie inside its original
+derived subgroup, preserving transversality. No further normalizer
+quotients are needed. End with abelian Fourier nullspace Rhat>=H and
+original-oracle basis membership checks; include the original K when
+lifting. Do NOT require final projected span to equal an intermediate
+overestimate, which would wrongly reject correct descent outputs.
+
+The ordinary-oracle access boundary is explicit: prepare directly in
+each public subgroup, not by rare postselection from older cosets.
+Use fresh charts, parameter bases and packets at each level. Costs SUM
+over at most c-1 levels, with the usual product of arities INSIDE each
+sample; no previous erasure tree is a new oracle. Global approximation
+and bounded-retry accounting remain necessary. Corrupted frequencies
+can lose H while public class and terminal membership tests pass.
+Degree-one cancellation now explicitly uses E+1 linear-dependence
+inputs rather than the higher-degree theorem's degenerate d=1 bound.
+
+Six new exact controls in tests/test_metabelian_phase_extension.py:
+actual 4->3->2->1 matrix descent (dimensions 8,7,4,2) and terminal
+original labels; a legal strict support overestimate; a dimension-only
+nondecrease; a false-frequency loss of H; missing transversality/rank
+progress; rejection of a nonabelian derived ideal. The PUBLIC predicate
+receives only ambient matrices and Fourier rows. Truth H appears only
+in ideal test-data generation and expected answers. No full quantum
+controller or new production module was implemented.
+
+VERIFIED: 524 connected Python tests PASS (60.33s, RuntimeWarning
+fatal), Python syntax, existing formal crosscheck, site JS/site checks,
+qsearch validate (valid:true, issues:[]) and whitespace checks PASS.
+Full Python repo suite NOT run; no new Lean proof, central claim,
+registry JSON, CLI/UI work, commit or push.
+
+NEXT: the proposal's critical novel interface remains the common
+bounded-degree source plus unknown-support phase erasure, not group
+restriction, abelian Fourier sampling or the optional HPGP solver.
+Do not extend these descent fixtures by inertia. Independent full-proof
+and novelty review, general execution, and useful external impact are
+still unresolved. Any broader nonmetabelian direction needs an actual
+replacement for the scalar normal-register source, not just recursion.
+
+## 2026-10-21 Bounded-Class Application Filters And Transporter Cost
+
+Continuation PROGRESS, but not a new quantum algorithm or application.
+Inspected current notes/code, ran corpus been-tried, and rechecked the
+primary polynomial-shift and amplitude-amplification references. Extended
+the SAME polynomial-hiding attack and application audit; no new campaign,
+candidate, scientific registry claim, CLI/UI task, commit or push.
+
+The chosen-value derivative attack extends to class<=c with
+D=max(1,2*floor((c-1)/2)) and, for degree e>0,
+p>max(c,e*D,2*(e-1+D)). It does not require metabelianness.
+The full right field uses B_r(1)/r! ad(z)^r. Class four has no new
+field term; class five first needs -ad(z)^4/720. Omitting it actually
+removes a true stabilizer direction in a new negative control.
+The BCH orbit-degree/Schwartz-Zippel proof and characteristic limits
+are explicit in NIL3_POLYNOMIAL_HIDING_ATTACK.md. No opaque-label or
+small-characteristic attack is claimed.
+
+sampled_stabilizer now accepts an explicit class_bound, checks the
+public lower central series BEFORE any hiding query, and reports
+degree bounds, public bracket checks and charged chosen queries.
+It still assumes genuine Lie axioms and the semantic degree promise;
+numeric output types do not prove either. Independent matrix exp/log
+controls cover classes 2..7; value-only recovery covers classes 4..6
+and a 127-bit prime. A bounded class is verified, not silently asserted.
+Dense symbolic reference/CLI fixture remain class three; no quantum
+backend was extended. The low-level field helper trusts its class bound.
+
+The application audit also proves two precise transporter boundaries:
+- C_p wr C_p is metabelian but has class p and exponent p^2. It embeds
+  in G wr C_p whenever C_p<=G. Regular p-wreaths do not repair the
+  fixed-class/large-prime loss of the usual swap-wreath reduction.
+- Directly postselecting g.x=y costs success probability 1/|orbit|.
+  Generic amplification costs order sqrt(|orbit|); small orbits already
+  permit classical generator-only traversal. Once target preparation
+  succeeds, measuring g already solves the transporter problem. A
+  single such state is not the ordinary HSP oracle interface either.
+These reject specific reductions, not all transporter algorithms.
+
+31 controls added across the two existing test files. VERIFIED:
+518 connected Python tests PASS (61.22s, RuntimeWarning fatal), Python
+syntax, existing formal crosscheck, site JavaScript syntax/site checks,
+qsearch validate (valid:true, issues:[]) and whitespace checks PASS.
+Live existing attack CLI recovered its subgroup in 1200 charged queries
+and now reports 50 separate public class-check brackets. It was run
+WITHOUT --write, preserving the scientific JSON artifact. Full Python
+repo suite NOT run; no new Lean proof or full metabelian execution.
+
+NEXT: do not keep adding higher-class polynomial or wreath fixtures.
+The broader scope has no useful external application established. The
+highest-value work is an independent theorem-level correctness/prior-art
+comparison of the complete oracle proposal, or an actual pre-existing
+problem with a costed reduction that survives these filters. Uncovered
+high-degree or cross-characteristic inputs are leads, not hardness
+evidence. Preserve ongoing mechanical work and restricted backend flags.
+
+## 2026-10-21 Checked Adaptive Composition And Bounded Retry
+
+Continuation PROGRESS. Read the current complete extension, existing
+source/channel tests and corpus. Added Checked Adaptive Composition to
+the SAME BOUNDED_CLASS_METABELIAN_HSP.md and linked its applicability
+from the class-three draft. No new producer, registry claim or dispatcher.
+
+The key constructive improvement is an IDEAL-MODEL acceptance condition:
+exact Fourier samples give K<=Khat and U<=Uhat. First certify K by
+original-oracle basis checks. Finally require original-oracle membership
+of every returned generator, include K, and require the projected span
+to equal Uhat. Then image(R)=Uhat<=U<=Uhat and ker intersect H=K,
+so R=H. Off-promise line-finishers and mistaken HPGP outputs cannot
+cause wrong ACCEPTED ideal answers; they can cause detected aborts and
+must be time/output-size capped. The check needs ordinary oracle access,
+not only coset states, and does not read hidden generators as advice.
+
+The boundary is explicit: one spurious Fourier frequency can make Uhat
+too small, after which a proper subgroup passes all these public checks.
+Thus this is NOT an unconditional exact/noisy-source certificate.
+Four per-attempt failure allowances of 1/16 give ideal abort <=1/4.
+Use R=ceil(log_4(2/epsilon)) attempts, retain ABORT as an output and
+charge <=epsilon/2 global channel error. Wrong output OR final ABORT
+then has probability <=epsilon. No rare-branch normalization or
+unchecked repeat-until-success. General ISS core-call budgets stay
+separately allocated. Standard trace/channel framework checked against
+Watrous Chapter 3; no new claim for that mathematics.
+
+The adaptive invariant now specifies legal controller records and
+fresh disjoint packet ancestry. Trace the source hiding output; do not
+condition on it or undo its dephasing. Uncompute public lift workspace,
+not that hiding output. Verify every nonzero diagonal witness in the
+original coefficient system. Fully erased roots decouple from the
+record, justifying uniform Fourier samples under later adaptivity.
+
+Depth-first scheduling has product_j a_j leaves but only
+2+sum_j(a_j-1) live quotient-packet registers, plus separately charged
+source/arithmetic workspace. This does not reduce copy count or recycle
+measured/zero-scale inputs. All tree nodes, not only depth, receive
+solver/error budget. No hardware memory estimate is claimed.
+
+Eleven new controls: five final-subgroup guard/failure cases in the
+arbitrary-H tests; four ancestry/peak tree schedules and two exact
+probability controls in the channel audit tests. VERIFIED: 487 connected
+Python tests PASS (59.20s, RuntimeWarning fatal), Python syntax,
+existing formal crosscheck, site syntax/checks and qsearch validate
+PASS (valid:true, issues:[]). Full Python repo suite NOT run. No new
+Lean proof, production execution, central admission, CLI/UI, commit
+or push.
+
+NEXT: stop extending controller fixtures by inertia. The core proposal
+now has a written composition and explicit falsifiers. Reassess useful
+applications of the broader fixed-class metabelian scope against the
+classical polynomial-output attack and stabilizer/transporter distinction.
+Do not manufacture an opaque toy oracle as an application. Independent
+full-proof/prior-art review and actual general execution remain open.
+
+## 2026-10-21 Public Input Cost And Inverse-BCH Audit
+
+Continuation PROGRESS. Inspected the current extension, actual bridge
+code and corpus. Added Public Coordinate Cost Audit to the SAME
+BOUNDED_CLASS_METABELIAN_HSP.md, not another candidate/result record.
+Read GAP LieRing's actual lazard.gi and manual at commit
+be141828a1997e796c484d34d965c461203e98d1. Its inverse-BCH operations,
+coordinate peeling and forward/inverse maps are prior art. The stored
+tables stop at weight 14. This is not an arbitrary-class executable
+backend or a newly invented conversion. No GAP install/code vendoring.
+
+The written input-cost argument now constructs ADD_c/BRACKET_c by
+successive homogeneous corrections in the TWO-generator free Lie
+algebra, with denominators in Z[1/c!]. For fixed c the word size W_c
+is a constant independent of actual dimension/p. Rational powers are
+ordinary modular integer powers, not root/DLog oracles. Refined-flag
+peeling costs O(d W_c log p) collector calls per coordinate map;
+structure constants cost O(d^3 W_c log p). The normal-first chart,
+inverse, clean reversible compilation and quotient-oracle uncomputation
+are explicit. Collector and arithmetic costs remain charged. No claim
+of a polynomial bound uniform in growing class or free black-box setup.
+
+Found a concrete compiler reuse failure: the class-three addition and
+bracket words have nonzero weight-four errors. Derived exact central
+corrections, certified in the rational truncated free associative algebra,
+then checked by ordinary group powers at p=5,7,11 and 2^127-1. Two
+independent UT5 normal-word tests show the unmodified class-three
+coordinates are WRONG; test-only corrected words make existing generic
+peeling/element maps agree with matrix log. Both central and merely
+refined (not globally normal) flags pass.
+
+Seven new controls in tests/test_metabelian_phase_extension.py, now 17.
+No production compiler, general-degree backend or quantum circuit was
+implemented. The 127-bit matrix control does NOT fix the production
+nmod_mat limitation. No new Lean source or certification.
+
+VERIFIED: 476 connected Python tests PASS (59.18s, RuntimeWarning fatal).
+Python syntax, existing formal crosscheck, site syntax/checks and qsearch
+validate PASS (valid:true, issues:[]). Full Python repo suite NOT run.
+No central claim, CLI/UI wiring, commit or push.
+
+NEXT: the constructive theorem now has a written public-input closure,
+not merely an assumed Lie-coordinate oracle. Stop extending conversion
+fixtures by inertia. Prioritize an adversarial review of the FULL
+composition and exact prior-art overlap, then seek a concrete application
+that survives existing classical input-model filters. Full independent
+review, general execution and useful external impact remain unresolved.
+
+## 2026-10-21 Fixed-Class Metabelian Scope Extension
+
+Continuation PROGRESS. Reassessed the class-three boundary, ran the
+corpus query, and rechecked ISS Theorem 2 and Ivanyos--Santha 2016
+Theorem 3 / Proposition 7 / Corollary 8. New written audit:
+BOUNDED_CLASS_METABELIAN_HSP.md. Linked it from the existing theorem
+draft; no production receiver, registry result or central claim changed.
+
+Constructive extension proposed: arbitrary H in exponent-p metabelian
+groups of ANY FIXED nilpotency class c, p>c. Learn K=H intersect N,
+normalize and quotient once. For transverse H, choose proof-only
+u=pi(q), r=q-u and define
+
+  Q(q)=log(exp(r) exp(u+a(u)) exp(-q)).
+
+Q lies in the abelian derived ideal and has degree <=c by truncated
+Lie-word length, not by composing naive degree bounds. The group-word
+identity gives the required additive right-action increment. The
+existing arbitrary-phase/all-rank instrument then applies. A conservative
+parameter/equation count and constant-depth tree establish a written
+polynomial bound for fixed c using the published fixed-degree SDE theorem.
+
+Two class-three shortcuts FAIL and are explicitly replaced:
+- conjugation must use the FULL exp(ad q), not 1+ad q;
+- HN need not be nil-2. Finish on each recovered basis line using the
+  published split cyclic-complement HSP promise, not an overbroad
+  arbitrary-subgroup reading of Corollary 8.
+
+NEW tests/test_metabelian_phase_extension.py: 10 independent controls.
+Uses actual matrices of the truncated free associative algebra on two
+generators, not the class-three BCH engine. The class-four fixture is
+metabelian but has no abelian index-p subgroup. Actual right actions,
+quartic potential and its NON-coset-constant quartic term, split-line
+completion, and failed class-three shortcuts pass. UT5 supplies a
+nonmetabelian exclusion. Public packet arithmetic passes a restricted
+quartic cancellation witness; production degree-four solving is still
+explicitly rejected.
+
+VERIFIED: 469 connected Python tests PASS (55.24s; RuntimeWarning fatal),
+then 10 strengthened local controls PASS (0.83s). Python syntax, existing
+formal crosscheck, site syntax/checks and qsearch validate PASS
+(valid:true, issues:[]). Full Python suite NOT run. No Lean source changed
+or new Lean certification claimed. No commits, pushes, CLI/UI wiring or
+registry admission.
+
+BOUNDARY: this is a written scope extension, not independent review,
+general-degree execution, a general-class formal proof, or novelty.
+The public general-class Lie compiler remains explicit implementation/
+review debt. Metabelian and FIXED class are essential to this argument;
+no all-nilpotent or DCP conclusion. No useful external application.
+
+NEXT: try to break the universal section-word source/degree argument
+or adaptive controller cost. If it survives independent review, merge
+the stronger scope into one theorem rather than count two results.
+Do not run a larger class-four fixture campaign or spend GPT on routine
+backend wiring. Mechanical follow-up is separately scoped.
+
+## 2026-10-21 Universal Class-Three Chart And Cubic Potential
+
+Continuation PROGRESS. Read the current source bridge, theorem draft,
+receiver and corpus. Added formal/Formal/ClassThreePotential.lean and
+imported it into the normal library build. No production receiver or
+result artifact changed.
+
+The new module starts from Mathlib LieRing/LieAlgebra over a field,
+with the explicit class-three premise [x,[y,[z,w]]]=0. N is DEFINED as
+the span of all brackets. It proves N abelian and [L,[L,N]]=0 by span
+induction; these are not extra assumptions.
+
+Four locally axiom-guarded headline results:
+- chart_product derives the normal-first BCH chart and the stated
+  Phi/C formulas. Field elements 2 and 3 must be nonzero.
+- potential_increment proves the cubic increment for arbitrary q,u,v
+  and normal a,b, assuming only that the hidden lifts u+a,v+b commute.
+  It does NOT assume that projected u,v commute or assume the increment.
+- section_right_action constructs one fixed proof-witness potential
+  from a linear projection onto U and a normal linear section. The
+  log-coordinate version of the previous Fourier source action law
+  is now a conclusion of the Lie calculation.
+- section_cubic_decomposition expresses that potential as a linear
+  map plus diagonal evaluations of BUNDLED bilinear/trilinear maps.
+  This is an actual structural degree certificate, not finite
+  interpolation, scaling tests, or an assumed degree bound.
+
+All four guards admit exactly propext, Classical.choice, Quot.sound.
+No sorry, extra axiom or native_decide. Standalone warning-as-error and
+lake build --wfail PASS (3311 jobs). Added two finite negative controls
+to the existing arbitrary-H test file: a noncommuting linear graph is
+not a subgroup, and dropping the cubic term breaks the correct source
+increment. It now has 24 controls.
+
+VERIFIED: 459 connected Python tests PASS (56.68s, RuntimeWarning
+fatal), existing Python/Lean crosscheck, Python/site syntax, site
+checks and qsearch validate (valid:true, issues:[]) PASS. Full Python
+repo suite NOT run. No central claims, CLI/UI, commits or pushes.
+
+Updated formal/README.md and the SAME complete theorem draft. Added
+explicit attribution to Cicalo--de Graaf--Vaughan-Lee 2012 for effective
+BCH/inverse-BCH conversion. The publisher abstract confirms that scope;
+full paper access was unavailable in this pass, so no detailed runtime
+or quantum implementation premise was imported from it.
+
+BOUNDARY: the module does not construct a BCH group/Lazard equivalence
+or prove the normal-word compiler. Existence of the hidden linear graph
+from an actual group H, the concrete finite coordinate bijection, and
+typed composition with CosetSourceFourier remain outside Lean. The
+normalizer reduction, diagonal solvers and circuit complexity are not
+machine-checked. The current Python receiver remains line-only and
+restricted-prime; general-H/general-prime execution is still absent.
+No claim of a completed algorithm, novelty or useful application.
+
+NEXT: reassess the end-to-end theorem and prior-art scope now that the
+central Lie identities and cubic certificate survive universal checking.
+Do not count more ancillary formal lemmas or larger finite fixtures as
+algorithmic progress. If composing the remaining group-source interfaces,
+reuse the established Lazard theorem rather than re-proving that theory
+from scratch without a specific suspected gap. Seek a decisive flaw or
+constructive scope improvement; keep external application/dequantization
+requirements unchanged.
+
+## 2026-10-21 Arbitrary-H Reduction And Formal Group-Source Bridge
+
+Continuation PROGRESS. Re-read current theory/code and corpus, and
+checked ISS 2010 Theorem 1 and Ivanyos-Santha 1503.09016v2. Expanded the
+SAME CLASS_THREE_HSP_THEOREM_DRAFT.md with a direct arbitrary-H route for
+exponent-p class-three groups at p>3:
+
+- Learn K=H intersect N by measuring q and undoing Phi(q). This works
+  for arbitrary rank. Exact Fourier samples give Khat containing K;
+  original-oracle membership checks on its basis certify equality.
+- K is normal in H, so H is wholly contained in N_G(K). Restrict there
+  and quotient by K ONCE. The hidden subgroup becomes transverse to the
+  new derived ideal. This does NOT justify freezing a normalizer for an
+  arbitrary known K; the earlier counterexample remains valid.
+- Transverse H is abelian; log H is a linear graph over an arbitrary
+  subspace U. A proof-only projection pi gives one common cubic Q.
+  Derived the actual mixed-source blocks from group edges, retaining all
+  characters, not by assuming a phase oracle.
+- The existing erasure lemma works for every submodule U. Fixed-batch
+  Fourier sampling may return any nullity, not just one.
+- The public preimage of U is HN and has class <=2; finish with the
+  published nil-2 solver. An overestimated Uhat is already sufficient
+  if its public preimage tests as class two. This can stop BEFORE exact
+  support recovery. Known basis-line slices also retain the existing
+  univariate quadratic HPGP interface.
+
+NEW formal/Formal/CosetSourceFourier.lean, imported by Formal.lean:
+coset_relation derives group-coset membership from the coordinate
+right-action law; mixed_source_identity evaluates the TWO normal-QFT
+sums; label_probability proves trace 1/|N| for each unit character.
+It does not assume the target phase-kernel formula. The coordinate
+equivalence, parametrization of all H, and action law are EXPLICIT
+HYPOTHESES. Their class-three construction is still a written proof.
+The coset lemma uses propext/Quot.sound; the two matrix lemmas use the
+standard three axioms. Local guards, no sorry/extra axiom/native_decide.
+Physical source preparation, QFT completeness, complexity and the
+full algorithm are not certified by this module.
+
+NEW tests/test_nil3_arbitrary_subgroup_interface.py: 22 controls.
+The class-three fixture has [X,Y]=Z,[X,Z]=A,[Y,E]=A; a rank-two
+transverse H has NONCOMMUTING quotient lifts whose normal components
+cancel their bracket. Tests cover all actual Fourier blocks, projection
+gauges, nonnormal K with a proper normalizer, both membership/rank
+guard boundaries, class-two completion and known-line graph slices.
+A nontransverse source explicitly fails uniform-character sampling.
+
+VERIFIED: 457 connected Python tests PASS (55.75s, RuntimeWarning
+fatal); standalone Lean warning-as-error and lake build --wfail PASS
+(3309 jobs); existing Python/Lean crosscheck, Python/site syntax,
+site checks and qsearch validate (valid:true, issues:[]) PASS.
+Full Python repo suite NOT run. No production receiver, scientific
+result JSON, central claim, CLI/UI wiring, commit or push changed.
+
+SCOPE: this removes cyclic-only recursion only INSIDE the exponent-p
+case. General finite-group exponent reduction is still needed.
+Current receiver remains nontrivial-line/p11mod12, and the backend
+still has machine-word/general-prime limitations. No arbitrary-H
+dispatcher was executed, and the old cyclic budget is not its new
+resource certificate. No useful external application or novelty claim.
+
+NEXT: attack/instantiate the universal class-three coordinate-action
+and cubic-potential hypotheses, rather than add another finite fixture.
+The formal bridge now isolates exactly what the group construction
+must supply. Keep the constructive general-H reduction and its public
+class-two stopping rule in view; do not return to cyclic recursion by
+inertia. Gemini's backend/dispatcher work remains separately bounded.
+
+## 2026-10-21 Kernel-Checked Unknown-Support Instrument
+
+Continuation PROGRESS. Inspected the pinned Lean workspace and corpus,
+then added formal/Formal/AffineSupportErasure.lean and imported it from
+Formal.lean. Existing unrelated formal changes were preserved. No new
+toolchain/dependency or quantum-production module.
+
+Four headline results are now proved universally by Lean:
+- mixed_branch_identity starts from the TWO KRAUS SUMS and derives
+  D^-k rho(U,product_i phase_i(y_i+c_i*x)) for every outcome, provided
+  some public scale is nonzero.
+- branch_probability is D^-k when the input phases have unit modulus.
+- kraus_complete gives sum_y K_y^dagger K_y=I for ANY scales.
+- all_zero_scale_branch gives full uniform coherence regardless of U,
+  explicitly showing why nonzero scale is needed for support preservation.
+
+The Kraus definitions do not depend on U or the phases. Inputs are
+explicitly PRODUCT kernels with one common linear submodule over a
+FIELD. Correlated sources and nonunit multipliers in composite rings
+are not smuggled into the statement. No polynomial-phase assumption is
+needed for this lemma; cancellation is a separate obligation.
+
+All four local #guard_msgs axiom audits permit exactly propext,
+Classical.choice, Quot.sound. No sorry, extra axiom or native_decide.
+Standalone warning-as-error check and lake build --wfail both PASS.
+Python source/channel tests: 84 PASS (20.02s). Existing Python/Lean
+crosscheck, site syntax/checks, qsearch validate (valid:true, issues:[])
+and whitespace checks PASS. Full Python repo suite NOT run.
+
+Updated formal/README.md and the SAME complete theorem draft with the
+precise boundary. The formalization does NOT prove the group source
+conversion, cubic potential, source independence, positivity/coset-mixture
+representation, diagonal solver, recursion, complexity or novelty.
+It is a mathematical specification, not an executable quantum algorithm.
+No scientific result JSON, central claim, commit or push changed.
+
+NEXT: audit the actual HSP-source-to-kernel conversion against this
+formal interface, ideally proving its universal normalization and
+phase relation rather than adding more finite parameter fixtures.
+Do not confuse a certified channel lemma with the full class-three
+theorem or a useful external application.
+
+## 2026-10-21 Diagonal-Solver And Adaptive Bit-Cost Audit
+
+Continuation PROGRESS. Re-read Ivanyos-Santha 1503.09016v2,
+Propositions 9/10 and field-setup discussion, the controller, and corpus.
+The SDE theorem accepts arbitrary coefficients, not random columns;
+adaptive/correlated packet maps do not invalidate its input contract.
+
+The SAME complete theorem draft now gives an exact factorization
+A_j=T_j M of leading coefficient matrices through public translation
+moments M(a,gamma)=sum lambda_a*b^j*a^gamma, |gamma|<=3-j.
+T_j is injective at p>3, so rank equality holds, not just an estimated
+bound. Flattened affine translations preserve this representation.
+Compress equation ROWS only. Arbitrary column changes need not lift
+through square/cube powers; exact F5/F7 counterexamples are included.
+
+Also derived root extraction using the 2- or 3-primary subgroup with
+at most three choices per logarithm digit. No factorization of the
+coprime part, field-size enumeration or general DLog oracle is needed.
+Two bounded, reusable nonresidue setups fit the existing eta budget.
+Dense symbolic maps have O(n*binom(m+3,3)^2) field entries. Translation,
+SDE and modular shear operations have polynomial bit cost, distinct
+from the stated copy exponent.
+
+IMPORTANT IMPLEMENTATION LIMIT: independent_columns currently uses
+nmod_mat and raises OverflowError at p=2^127-1. The production controller
+also remains restricted-prime with an uncapped conic loop. These were
+NOT changed. Arbitrary-precision/general-prime execution is not complete.
+Test-only root arithmetic at 127 bits does not change that status.
+
+Added 16 exact controls to existing test_affine_phase_erasure.py.
+VERIFIED: 46 focused / 435 connected tests PASS (52.71s);
+Python/site syntax, site checks, qsearch validate (valid:true,
+issues:[]) and whitespace checks PASS. Full repo suite NOT run.
+No new production module, result JSON, claims, commits or pushes.
+
+NEXT: inspect the existing formal workspace for a machine-checked
+proof of the core unknown-support channel identity. This would test
+the actual proposed contribution more deeply than another parameter
+fixture. Preserve the distinction between certifying one lemma and
+independent review of the entire theorem, novelty or useful application.
+Gemini's bounded dispatch task remains separately documented.
+
+## 2026-10-21 Recursive Oracle Interface Audit
+
+Continuation PROGRESS. Re-read ISS Theorem 2/Lemmas 1-3 and the current
+complete theorem draft; checked the corpus before work. Expanded the
+SAME draft's recursive interface, with no new production module.
+
+Three explicit hazards now have constructive replacements:
+- Recompute N_G(K) in the ORIGINAL Sylow ambient G after every growth
+  of known K. Do not stay in the first normalizer. In the free rank-two
+  class-three exponent-p group, <X> has normalizer tower with orders
+  p,p^3,p^4,p^5. H=G is missed by a permanently shrinking ambient.
+- Use the preimage of ker(p:L/[L,L]->L/[L,L]) for exponent reduction.
+  Powers of arbitrary irredundant generators are not sufficient:
+  x=(1,0),y=(1,1) in C_(p^2) x C_p both have order p^2, but their
+  p-th powers miss <(0,1)>. The literal recipe in ISS Lemma 3 needs
+  invariant-factor coordinates. This repairs an implementation/formula
+  assumption, NOT a refutation of its reducibility theorem.
+- A public quotient section need not be homomorphic, but its workspace
+  must be uncomputed around the one original f query. Tracing out the
+  populated lift destroys within-coset coherence.
+
+The small-prime bounded-exponent branch occurs AFTER abelianization
+restriction. Order-p elements need not form a subgroup at p=2 or 3:
+UT_(p+1)(F_p) supplies exact countercontrols. Do not feed those groups
+through the p>3 Lie or Omega_1 branch.
+
+NEW tests/test_nil3_recursive_oracle_interface.py: nine controls,
+including all-element BCH normalizers at p=5 and a nonhomomorphic
+section for a nonnormal known K. VERIFIED: 23 focused / 419 connected
+tests PASS (52.60s); Python/site syntax, site checks, registry validation
+(valid:true, issues:[]) and whitespace checks PASS. Full repo suite NOT
+run. No producers/results, central claims, CLI/UI, commits or pushes.
+
+This is still a WRITTEN composition, not executed ISS recursion or a
+full dispatcher. Next hard review target: the general-prime diagonal
+solver and adaptive-rank/circuit-complexity interface. Avoid another
+generic fixture or accounting module. The existing Gemini dispatch
+task remains bounded and clearly separated from theorem admission.
+
+## 2026-10-21 External Application Filter: Solvable Actions
+
+Continuation PROGRESS: CLASS_THREE_APPLICATION_AUDIT.md rejects the
+natural graph/code stabilizer applications in a SUPPLIED solvable
+permutation group as sources of superpolynomial advantage. Primary-source
+check: Luks 1992, Theorem 3.2(7) and Section 6.3, solves subspace
+stabilizers/transporters in poly(D,log q,mu). Permutation groups on N
+coordinates have mu<=N. This includes LARGE-HULL and SELF-DUAL codes;
+no codeword enumeration or hull-shortening argument is necessary.
+Graph/color stabilizers have their own known polynomial baseline.
+
+Also derived the exact scope failure of the ordinary two-object wreath
+reduction: if the base contains an element of odd prime order, swap
+inverts r=(a,a^-1), and repeated commutators r^((-2)^j) never vanish.
+The wreath ambient is not nilpotent. Preserve the p=2 exception.
+Unknown nilpotent stabilizer is NOT a supplied nilpotent ambient group.
+These are application/reduction exclusions, NOT a global HSP negative.
+
+Added tests/test_nil3_application_reductions.py: eight exact controls
+for a genuine class-three dihedral code action, a dimension-three hull,
+rowspace coset orientation/matrix equivalence, and the wreath calculation.
+Updated the SAME theorem draft's significance boundary. No scientific
+producer, result JSON, central claim, CLI or UI changed.
+
+VERIFIED: 14 focused tests and 410 connected tests pass (51.97s,
+RuntimeWarning fatal); Python/site syntax, site checks, qsearch validate
+(valid:true, issues:[]), and whitespace checks pass. Full repo suite
+NOT run. No commits, pushes, agents or outreach.
+
+NEXT: attack the single complete theorem's arbitrary-subgroup recursion
+and unknown-support interface. A useful external application remains
+missing; do not spend the next pass on a large-hull campaign under a
+supplied nilpotent permutation group, or invent an opaque oracle to
+manufacture relevance. The theorem's independent correctness/novelty
+review and complete dispatcher execution are still outstanding.
+
+## 2026-10-21 Prior-Art Attribution And Direct Potential Review
+
+Continuation PROGRESS, with a narrower claim rather than an algorithm
+promotion. Read the existing theorem and receivers, checked the corpus,
+and compared six primary-source interfaces. Updated the SAME
+CLASS_THREE_HSP_THEOREM_DRAFT.md; no new infrastructure or producer.
+
+IMPORTANT ATTRIBUTION: the uniform fresh register, shear and measurement
+are already DHIS phase linearization (1305.1543v2, Section 2.1).
+Do not describe that operation, the SDE solvers, or final HPGP learning
+as new. The possible contribution remains its unknown-affine-support
+invariant plus the non-split class-three common-potential conversion.
+The reviewed papers did not directly settle that composition. This is
+NOT proof of novelty or an independent verification of the full theorem.
+
+Added the expanded cubic potential and direct increment derivation:
+for log(h)=v+a, tau=ell(q),
+Q=tau*a-tau^2*[v,a]/2+tau*[q,a]+tau*[q,v]/2
+  +tau*[q,[q,v]]/3-tau^2*[v,[q,v]]/6.
+Here a is the Lie ideal coordinate, NOT the normal chart coordinate.
+Its increment under q -> q+t*v is exactly Phi(q)g(t)+C(q,t*v).
+An exact rational-coefficient test and independent finite evaluations
+check the formula, including arbitrary ell and gauge invariance.
+
+Two specific HPGP shortcuts are invalid:
+- rho(U,P+R)=rho(U,P) whenever R is constant on U-cosets. Full P is
+  not identifiable from this source. The test contrasts identical mixed
+  sources with distinct full-domain phase states, for every public label.
+- Measuring cosets of a known W and forgetting the outcome gives
+  rho(U intersect W,P). Distinct lines destroy the coherence, even when
+  the uniformly random measured label is retained. This does NOT rule
+  out other reductions, gauge learning, or the proposed collective shear.
+
+Coverage checks: DISW multivariate HPGP requires the appropriate graph
+oracle; FIMSS smoothness is not automatic from abelian G'; known 2016
+HPGP covers the final learner and cyclic-quotient split groups; 2024
+bounded-prime nilpotent HSP does not cover growing primes. Also read
+Holt-Subramanian 2609.38085v2: its normal-core/poly-near-Hamiltonian
+results do not directly cover arbitrary class-three H. Derived
+Baer(G)=Z(G) in the exponent-p class-three case; the free rank-two
+example has index p^3. Verified the p=5 example by actual conjugation.
+These are scope checks, not lower bounds against those algorithms.
+
+VERIFIED: seven added tests; 396 connected tests pass in 38.47s with
+RuntimeWarning fatal. Python/site syntax, site checks, registry validation
+(valid:true, issues:[]) pass. Full repository suite NOT run. No scientific
+producer or result JSON changed; receiver/controller/channel-audit hashes
+match the previous pass. No full dispatcher, recursion or general-prime
+backend executed. No central claims, commits, pushes, agents or outreach.
+
+NEXT: a concrete useful external problem reduction that survives
+NIL3_POLYNOMIAL_HIDING_ATTACK.md, plus continued attempts to break the
+single theorem. Start by checking known classical algorithms for the
+chosen problem and specify its actual input encoding. Do not create an
+opaque oracle solely to manufacture an application, conflate StateHSP
+copies with HSP query access, or add another nearby accounting campaign.
+The independent full-proof/novelty review remains outstanding.
+
+## 2026-10-21 Complete Class-Three Theorem Draft And Uniform Budget
+
+Continuation PROGRESS. Inspected latestreceiver code andhandoff,
+checked corpus andprimarysources. Consolidated the locallemmas into
+ONE proposed bounded-errorclass3HSP theorem in the ISSnormalword/
+oraclemodel. This is a LOCALDRAFT, not independentproofreview,
+noveltyadmission or an executedcompletealgorithm.
+
+NEW: research/CLASS_THREE_HSP_THEOREM_DRAFT.md,
+theorems/nil3_complete_budget.py,
+tests/test_nil3_complete_budget.py,
+research/reductions/nil3_complete_budget.json.
+Existingreceiverhash UNCHANGED. No dispatcher/ISSrecursion implemented.
+
+DRAFTCOVERS: validpublicRPP andefficientcollector; knownISSreduction;
+separatesmallp<=3 bounded-exponentroute; publicLiebridge onlyAFTER
+exponentp reduction; n0abelianroute; normalintersectionmeasurement;
+trivialvsnonzeroquotientline; actualmixedlambda.Qsource; complete
+publicshear andadaptivepublicrankbounds; generalprimeSDEbatchsizes;
+knownquadraticHPGPcompletion; legalnormalizerquotientoraclelifts.
+Thelaststage MUSTNOT infergraphsupport fromamplitudedictionaries.
+Suchassertionsarefinitecontrols, notphysicaltestsor repairs.
+
+UNIFORMSCHEDULE: eta=epsilon/8,
+tN=n+ceil(log_p1/eta)+1,tV=m+ceil(log_p1/eta)+1,
+C=sum_(k1..n)(k+1)^2,R=ceil(log_p(n/eta)),
+A=ceil(log_p(R*C/eta)).
+Originalcopycap=tN+tV*S_general+R*A*C.
+Rankfailures<=eta; packetcollection<=RC/p^A<=eta;
+allzeroequationretries<=n/p^R<=eta.
+ReserveetaeachforSDEsetup,classicalrandombitcutoff,fullinstrumenterror:
+total<=7eta<epsilon. TheseareDERIVEDuniformcaps, notsimulator32tries.
+Fixedsourcepromise andfreshoriginalcopiesusedateveryretry.
+
+EXACTSTOPPINGFALSIFIER: t=m-1 samplesfromfullrankm distribution
+have rankfailure1. Currentlearn_quotient_line returnsanartificialline
+ontrivialH onceitreachesthatthreshold. ItremainsvalidONLYunderits
+nontrivialtransversepromise. CompletehandlerMUSTallowrankm.
+ISSrecursion: aftertrivialintersectioninpreviousindexpchainmember,
+nextintersectionhasorder<=p. KnownfoundsubgroupliesinH; publiclifts
+makequotientoraclelegal. Atmostb(b+1)promisecalls forb>=log2|G|;
+allocatepercallerror epsilon/[b(b+1)] viafirst-errorunionbound.
+
+LIVEBUDGETEXAMPLE:p47,m2,n3,target1/3: tN5,tV4,
+S_general2128000,R2,A2,HPGPcap116,total8512121originalcopies.
+THIS IS A LOOSE THEORETICAL CAP, NOT actualconsumption or requested
+finiteamplitudecampaign. Existingp11mod12cubeinversion ismuchcheaper.
+actual_quantum_copy_consumption=null, allfullexecutionflagsfalse.
+
+VERIFIED:14new/389connectedtestsPASS38.53s, RuntimeWarningfatal.
+Exhaustiveodd-prime rankmatrices match exactformula; allfailureterms/
+copychargeschecked. Initialbinarytestusedanodd-prime-onlyhelper and
+was correctedtoodd-primefixtures; no productionhelperwas changed.
+Live --writecomplete; Python/site syntax, sitechecks,
+registryvalid:true/issues[], whitespacepass. FullreposuiteNOT run.
+Allownedjobs terminal. Noagents/outreach/commit/push. GoalACTIVE.
+Producer/reportSHA256:
+6ca91a2da556e1afbefbbeb2e439e57ffd855def148b4caeb21223cd9b36c83b /
+8de49c4752c7f8497acdfbb49f289ef0f11d07c4a9bcbfc1ba06837c25570f7e.
+
+NEXT: use the single theorem draft for a freshproof/novelty attack.
+Do notcontinueadding nearbyaccountingmodules. Mostimportantpossible
+failurepoints are commoncubicpotential, adaptivecoefficientrank,
+andrecursiveoracleinterfaces. Then seek aconcrete usefulproblem
+reduction surviving the polynomial-valued classicalattack. Noexternal
+reduction or independentnoveltyevidenceestablished. Gemini dispatch
+taskremainsdocumented, notrun; no fullsolverclaimfrombudgetchecks.
+
+## 2026-10-21 Polynomial-Valued Hiding Classical Attack
+
+Continuation PROGRESS. Inspected latestnormalword/mixedstate work and
+corpus; read Dvir-Oliveira-Shpilka1401.3714 Theorem1.6/Section4.
+Before extending quantumcomposition to an application, derived a
+stronger classical baseline for explicitly POLYNOMIAL-VALUED oracles.
+This is NOT a dequantization of arbitrary-label class3HSP.
+
+NEW: theorems/nil3_polynomial_hiding_attack.py,
+tests/test_nil3_polynomial_hiding_attack.py,
+research/NIL3_POLYNOMIAL_HIDING_ATTACK.md,
+research/reductions/nil3_polynomial_hiding_attack.json.
+Existingconstructivereceivers unchanged. No centraladmission/wiring.
+
+SCOPE: publicclass<=3Lie/BCH, F:Fp^d->Fp^s, trustedtotaldegree<=e,
+p>2(e+1), chosenclassicalevaluatoraccess. FieldvaluesNOTopaquehashes.
+RightactionpathBCH(z,tX) hasvectorfield
+V_X(z)=X+[z,X]/2+[z,[z,X]]/12.
+Theidentities gradientF.V_X=0 areLINEAR inX, degree<=e+1 inz.
+They exactlycharacterizeglobalrightstabilizer underdegree/charpromise:
+q_z(t)=F(BCH(z,tX)) hasdeg<=2e<p, sozeroderivativeiffconstant.
+IfFseparatesgHcosets, recoveredstabilizerisH, ofANYdimension.
+DoNOTcallgH rightcosets; theyareleftcosets underrightaction.
+
+STRONGERTHANDENSEINTERPOLATION: sampledattackreadsONLYFvalues.
+Atuniformz, partialderivatives viaF(z+t*e_j),t=0..e, exactweights;
+sharedbasepoint gives1+d*equeries perrandompoint. Everydeficient
+sampledmatrix gainsrankwithprob>1/2 becauseanonzeroD_XF hasdegree
+<=e+1. T=d*ceil(log2(d/delta)) uniformpoints givesfailure<=delta.
+Polynomialtimeevenforpolynomiallygrowinge. Alwayscontains truekernel;
+errorcanonlyaddspuriousdirections. Fixedseed isREPRODUCIBILITYONLY,
+notanadversarialrandomizedguarantee. Liveartifactmarks this explicitly.
+
+CONTROL: samenonsplitfreeclass3dim5,p11,hlog(1,2,3,4,5).
+FixtureF(z)=BCH(z,-z0*hlog) withzerofirstcoordinateomitted.
+Thisdegree3maptrulyseparatesgHcosets. Value-onlyattackuses75points/
+1200queries, recovers(9,7,5,3,1)=9*hlog; exactcoeffsystemrank4,
+12rowsagrees. 704actualorbitschecked. WrongLEFTactionfindsonlyzero.
+Alsoidentity/trivialH, constant/fullH, derived3D stabilizer controls.
+Frobeniusz0^5 atp5 haszeroderivativebutisnonconstant; guardREJECTS.
+Opaqueoutputtypeandcanonicalfield checks; semanticdegreepromiseNOT
+certifiedbyfinitequeries. Nohiddenparametersreadbyattack.
+
+RESEARCHDECISION: eliminatebounded-degreefield-valuedexplicit
+applicationsintheregimeabove asnewquantum-speedupevidence.
+Thepost-QFTphase lambda.Q beinglowdegreeDOESNOTimplyoriginalF
+meetsinputpromise. Preservearbitraryopaque-label quantumcandidate.
+Hashingdoesnotrescue anapplicationwhenclassicalalgorithmcanaccess
+theunderlyingpolynomial/circuit. Noexternalhardproblemreductionfound.
+
+VERIFIED:14new/375connectedtestsPASS39.20s, RuntimeWarningfatal.
+Live --writecomplete; Python/site syntax, sitechecks,
+registryvalid:true/issues[], whitespacepass. FullreposuiteNOT run.
+Allownedjobs terminal. Noagents/outreach/commit/push. GoalACTIVE.
+Producer/reportSHA256:
+8544733a5cd9f0c04f37704929c7de6d15cfe3ac597ba9af7a586199d79aaf87 /
+8c9ce9688c6314ead1dc334738a638cc77be6944fba11fb04b25e8c6a5444e9b.
+
+NEXT MAIN-MODEL: consolidate/attack the COMPLETE class3 oracle theorem
+and priorart beforeclaimingnovelty; then identify a genuinelyuseful
+reduction that doesnot handclassicalalgorithmthispolynomialaccess.
+DoNOTrepeatnearbybarrierfixtures or moredim/primecampaigns.
+Gemini'sguardedtrivial/normal/transverse dispatch taskremains in
+MECHANICAL_FOLLOW_UP_PLAN.md; itwasNOTexecuted inthispass.
+
+## 2026-10-21 Public Normal-Word To Lie Bridge
+
+Continuation PROGRESS, second completed scientific pass in this turn.
+Read ISS author-hosted March2,2010 Section3/Theorem2 and Lemmas1-3.
+The reduction supplies UNIQUE REFINED POLYCYCLIC NORMAL WORDS with
+efficient collection, not a magical Lie-coordinate oracle. Derived an
+explicit public bridge using group words and normal-word digit peeling.
+
+NEW: theorems/nil3_normal_word_bridge.py,
+tests/test_nil3_normal_word_bridge.py,
+research/NIL3_NORMAL_WORD_BRIDGE.md,
+research/reductions/nil3_normal_word_bridge.json.
+Existing affine controller and nil3 receiver hashes UNCHANGED.
+
+EXACT PUBLIC OPERATIONS, exponentp,class<=3,p>3:
+w=[g,h]_grp=g^-1*h^-1*g*h.
+Bracket(g,h)=w*[g,w]^(1/2)*[h,w]^(1/2).
+Add(g,h)=g*h*w^(-1/2)*[g,w]^(-1/12)*[h,w]^(1/12).
+They representexp([X,Y]) andexp(X+Y); denominatorsmodp.
+No logarithm/evaluator/hiddenH is an algorithm input.
+Peel coordinates alongpolycyclicflag: readcurrentithdigit a_i,
+current=Add(current,g_i^-a_i). Eachstep descendsGi->Gi+1.
+InverseAdd-sums generators. O(dlogp) collectioncalls eachway.
+Pairbrackets+peeling compute structureconstants, rowreduction gives
+derived-adaptedbasis. PublicsetupO(d3logp) collectioncalls plusfieldwork.
+Both directions deterministicpolytime => clean reversiblecompile
+argument, NOT an executedquantumcompiler. Blackbox->normalwords
+acquisition andISSnormalizerrecursionNOT implemented.
+
+CONTROLS: independentassociativematrixlog atp5/7/11 verifiesAdd/bracket;
+omittingtriplecommutatorcorrectionsFAILS; inversecoordinates andcomputed
+BCH products; abelianrouting; characteristic/canonicalvalidation.
+Heisenbergnormalwords X^a Z^b Y^c verifyonlyREFINEDflagrequired:
+tail<Y> isNOTnormalinwholeG, derivedcoordinateinthemiddleisreordered.
+Livep5,d6,64pairs,0failures,4889publicsetupcollectioncalls.
+No hiddenoracle accessed; no coordinateenumeration/discretelog.
+
+IMPORTANT REMAINING DISPATCH GAP: existing learn_quotient_line assumes
+nontrivialtransverseH andstopsatannihilatorrankm-1. It isNOT a trivial-H
+solver. Writtencompletepromisehandler:
+measureq onfreshcosets, undoPhi(q) onN -> abelianHintersectN samples;
+ifnontrivial, wholeH foundundertheorderp promise. Otherwise runerasure;
+trivialH givesrho(L=0,P)=I/D, transverseH givesrho(line,0). Takeenough
+Fouriersamples allowingrankm, notm-1; rankm=>trivial; codim1=>knownHPGP;
+largernullspace=>incompleterun. t=m+ceil(log_p1/eps)+1 suffices.
+ThisdispatchisWRITTEN, NOT executed. ISSrecursiveoraclecomposition
+andnoveltyneedindependentreviewbeforegeneralnil3claims.
+
+VERIFIED:11new/361connectedtestsPASS38.17s, RuntimeWarningfatal.
+Live --writecomplete, Python/site syntax, sitechecks,
+registryvalid:true/issues[], whitespacepass. FullreposuiteNOT run.
+Allownedjobs terminal; nocentraladmission/CLI/UI/agents/commit/push.
+Producer/reportSHA256:
+ede8bc08cee92b505e9d04145ca5679e7a70299395fe745216456ae8ebb20d1b /
+d7458333a687677d50abf7524a188208afb39741aba0df2cd402e3722b34afcc.
+GoalACTIVE.
+
+NEXT MAIN-MODEL: attack the COMPLETE proposed class3 composition and
+prior-art overlap, not anotherparameterfamily. Exact mixed-source and
+publicencoding obligations nowhaveexplicitderivations. Check whether
+any externalcomputationalproblem genuinely reduces here and whether
+classicalexplicit-evaluator methods already solve it. Gemini mayexecute
+the specified trivial/normal/transverse dispatch controls without adding
+centralclaim flags. No Shor-level, DCP, lattice, GI orcryptographicclaim.
+
+## 2026-10-21 Mixed-Input Complete-Instrument Audit
+
+Continuation PROGRESS. Audited the collective shear on actual mixed HSP
+inputs, not another pure-state fixture. NEW:
+theorems/affine_phase_channel_audit.py,
+tests/test_affine_phase_channel_audit.py,
+research/AFFINE_PHASE_MIXED_CHANNEL_AUDIT.md,
+research/reductions/affine_phase_channel_audit.json.
+Added a follow-up pointer to NIL3_COCYCLE_RECEIVER.md. Existing affine
+controller, nil3 receiver and nil3 live artifact hashes are UNCHANGED.
+
+EXACT LOCAL LEMMA: D=|Fp^m|,
+rho(L,P)_(x,x')=D^-1*1[x-x' in L]*omega^(P(x)-P(x')).
+Public K_y=D^-1/2 sum_x |x><y_i+c_i*x for all i| is complete.
+For INDEPENDENT inputs sharing L and at least one nonzero scale,
+K_y(tensor_i rho(L,P_i))K_y^dagger=D^-k*rho(L,sum_i P_i(y_i+c_i*x)).
+Every mixed-input outcome is uniform, including adaptive public weights.
+After phase cancellation the output is independent of the CLASSICAL
+transcript. No arbitrary external quantum-reference decoupling claimed.
+The fixed-pure-coset branch law is different; do not conflate them.
+
+ACTUAL SOURCE: enumerated rho_H edges g->g*h^t in non-split order3125
+group, partial-QFT transformed normal differences, checked all125labels.
+Every label has probability1/125 and posterior rho(L,lambda.Q).
+No pure-state phase receiver used to construct this mixed source.
+NEGATIVES: dephasing gives I/D; allzero scales give ambient pure uniform
+state (validCPTP but wronginvariant); different supports give intersection;
+correlated same-coset copies have54impossible outcomes among81 instead
+of iiduniform transcript. Source independence/discarded oracle names
+and retained measured Fourier labels are explicit assumptions.
+
+ALL-PRIME WRITTEN SCOPE: verified1503.09016v2Propositions9/10.
+Published randomizedpoly(R,logp) SDEsolvers give B3=(9n+1)(3n+1)(n+1),
+B2=(n(m+1)+1)^2,B1=n*C(m+2,2)+1. HenceO(n6m4)<=O(d10) copies
+per quotient output for allp>3 in SAMEexplicitLie/cyclictransverse
+promise. This is a derived schedule using PRIOR ART, not newSDEcode.
+Implementedcontroller remains p11mod12/O(d8). No gate exponent claimed.
+Blackboxpresentation bridge, novelty and externalapplication stillOPEN.
+
+VERIFIED:12new/350connectedtestsPASS36.61s, RuntimeWarningfatal.
+Liveproducer --writecomplete, maximumfiniteerror2.23e-16.
+Python/site syntax, sitechecks, registryvalid:true/issues[], whitespacepass.
+Fullrepo suiteNOT run. All ownedjobs terminal. No centraladmission,
+qsearch/UI, agents/outreach, commit or push. GoalACTIVE.
+Audit producer/reportSHA256:
+816ea4ae0714326cf9e262e45e0f1e31381919f16cbd7186e302e05408fe90c5 /
+03509e54afb5fd4714cbfe7ab7e83ea2d306a65bd513f3cc00d9fa163b116454.
+
+NEXT: inspect exact ISS2010 classical-reduction presentation interface
+and independently attack complete explicit-presentation theorem.
+Author-hosted iss12.pdf is accessible again, datedMarch2,2010.
+Do not equate a mathematical Lazard correspondence with an implemented
+efficient coherent encoding conversion. No moreprime/rankcampaigns.
+
+## 2026-10-21 Non-Split Class-Three End-To-End Control
+
+Continuation PROGRESS. Reviewed current affine-support code/report and
+hashes, searched corpus and primary nilpotent/SDE literature. The prior
+split-extension assumption can be removed in an EXPLICIT Lie/BCH model.
+Implemented the final known quadratic HPGP learning step as an actual
+end-to-end interface control, not more quotient-only parameter fixtures.
+
+NEW: theorems/nil3_cocycle_receiver.py,
+tests/test_nil3_cocycle_receiver.py,
+research/NIL3_COCYCLE_RECEIVER.md,
+research/reductions/nil3_cocycle_receiver.json.
+Previous affine controller, UT4 producer and UT4 artifact hashes UNCHANGED.
+No qsearch/UI/centralintegration, agents, outreach, commit or push.
+
+DERIVATION: public class<=3 Lie algebra, p>3, basis L=V+N withN=[L,L].
+N is abelian. In exp(n)exp(q) coordinates,
+Phi(q)n=n+[q,n],
+C(q,r)=[q,r]/2+[q,[q,r]]/3+[r,[q,r]]/6.
+The product is(n+Phi(q)n'+C(q,r),q+r), not a split semidirect product.
+For h^t=(g(t),tv), choose UNKNOWN proof-onlyell(v)=1 and set
+Q(q)=Phi(q-ell(q)v)g(ell(q))+C(q-ell(q)v,ell(q)v).
+Then Q(q+tv)-Q(q)=Phi(q)g(t)+C(q,tv). Q isglobally cubic.
+PartialQFT ofN gives the SAME fixed-potential affine-line source as
+lastpass, so its all-outcome phase-erasure controller is reused unchanged.
+Implementedcancellation stillp=11mod12. WrittenqueryboundO(d8) per
+quotient sample whenm,n<=d; this is NOT a gatecomplexity exponent.
+
+COMPLETION ACTUALLY EXECUTED: learn quotientline using ordinaryFourier
+samples. With learnedv, measure r=q-ell(q)v and sendn to
+Phi(-r)(n-C(r,ell(q)v)). This gives univariategraphstates withfixed
+g_v(t)=t*w+(t²-t)D_v*w/2, D_v=[v,.] known. Maintainaffinespace
+w=w0+B*eta, remove knownoffsetphase, use publicquadraticSDEs, Fourier
+read exactlinear equations. This is KNOWN HPGP phaselearning, not a
+new decoder claim. Allzero/informative retries and sourcecallscharged.
+Written expectedfinalcostO(n3); finitecontrollerhasexplicitattemptcaps.
+
+DECISIVE NEGATIVE: omittingC fromgraphrelabeling fails. Atp47,hlog
+(1,2,3,4,5),representative(0,1,0,0,0),v=(1,2),t1normal shouldbe
+(3,29,8); omissiongives(26,21,0), so no common graphpolynomial.
+Freeclass3 on2generators is NONSPLIT overitsderivedideal: brackets
+of all lifts of quotientX,Y have nonzeroZ componentmodgamma3.
+
+LIVE:p47,source/receiverseeds20261022/20261023. 15200originals for
+twoquotientoutputs,26more forknownHPGP=15226total. Firstquotient
+Fouriersample(0,0) wasuninformativeandFULLYCHARGED;second(28,33).
+Learnedv=(24,1),normalw=(25,20,15),recoveredlog=(24,1,25,2,26)
+=24*(1,2,3,4,5)mod47, hence sameH. 3800cubic/38quadratic/2linear
+erasuremerges, ranks3/9/18. ZEROzeroFourierlabels orsingle-input
+merge shortcuts. Maxphaseerror6.22e-14. Finallearning2quadraticmerges
+and1directlinearpacket. No hiddenparameters suppliedtoreceivers.
+
+CONTROLS: independent truncatedfree-associative-algebra exp product
+checksBCH; class4/invalidpresentationsrejected; chart/cocycleidentities;
+sharedparameter rank2; FREE THREE-GENERATOR class3 Liealgebra dim14
+(not justproductof2-generatorcases), globalcubicpotential; actualQFT
+probabilities; missingC andwrongdirectionnegatives; sixHPGPseeds.
+VERIFIED:19new/338connected testsPASS36.05s, RuntimeWarningfatal.
+Liveproducer --writecomplete; Python/site syntax, sitechecks,
+registryvalid:true/issues[], whitespacepass. Fullrepo suiteNOT run.
+Allownedjobs terminal. GoalACTIVE.
+
+SCOPE: written constructivealgorithm forcyclicH outsideN in explicit
+adaptedLie/BCHpresentations, REVIEWPENDING. Finitefullgeneratorrecovery
+executed; compiledquantumalgorithmNOT executed. Novelty/external
+reductionUNESTABLISHED. DoNOT promoteallnil3, arbitraryH, black-box
+groups, lattice, GI, cryptographic orShor-level claims.
+Primarysources:1503.09016v2Sections4.1/5;0707.1260cyclic-exponentp
+reduction;Lazard1954forBCHbackground. Onepublisherfulltextfetch403;
+doNOTclaim aneffectiveblack-boxLazardbridgewasread/verified.
+
+NEXT: independently audit the collective channel/proof and exact
+prior-art overlap. Check the public-presentation/ISS-reduction bridge
+and all-prime SDE scope before any generalnil3statement. DoNOT grow
+to class4, addprime/rankcampaigns, orwiresite/CLI byinertia. Even if
+the algebra survives, externalcomputational relevance stillneeds a
+realreduction, not opaqueoraclehardness. Ifsubsumed byknownwork, sayso
+and compare independenthigh-upside directions.
+
+Producer/reportSHA256:
+d3fc82ac4015239731e779840b137b2107819f9b974551527a2a046bae4e1e98 /
+654be62e202376711e0b3fe2f58ef9fb262add92e4251710fd39bb685862d2dd.
+
+## 2026-10-21 Collective Affine-Support Phase Erasure
+
+Continuation PROGRESS. Read current handoff, checked corpus twice and
+read Ivanyos-Santha1503.09016v2 Section4.1/5 and nearby nilpotent work.
+Instead of another scalar-moment barrier, derived a collective operation
+that avoids the previous product/dilation support intersection.
+
+NEW: theorems/affine_phase_erasure.py,
+theorems/ut4_affine_phase_receiver.py,
+tests/test_affine_phase_erasure.py,
+research/UT4_AFFINE_PHASE_RECEIVER.md,
+research/reductions/ut4_affine_phase_receiver.json.
+No previous producer was changed. No central admission/CLI/UI wiring.
+
+TARGET: cyclic H in UT4(Fp)^r, nonzero projection to A=Fp^(2r), with
+abelian normal N=Fp^(4r). Logarithmic grade-two terms may be NONZERO.
+Implemented public controller p=11mod12. Partial QFT on N gives a
+random affine line decorated by lambda.Q(q), where lambda is the actual
+public Fourier label and Q is ONE FIXED unknown vector-valued cubic.
+Proof witness Q(q)=Phi(q-ell(q)v)g(ell(q)), ell(v)=1, is NEVER read by
+the receiver. The cocycle identity is checked symbolically and at rank2.
+
+PHYSICAL MERGE: add a fresh uniform AMBIENT vector x; subtract c_i*x
+from each active source coordinate; measure old coordinates y_i.
+Their support intersection is a NONEMPTY coset of the SAME unknown line
+on EVERY possible outcome. The retained phase is sum P_i(y_i+c_i*x).
+Public diagonal equations cancel successive degrees3,2,1. Coefficients
+are formal linear maps of fixed unknown potential coefficients; no
+hidden direction, representative or phase evaluator is supplied.
+Zero-scale inputs are discarded and charged. No postselection.
+
+WRITTEN COST: m=2r,n=4r; public rank bounds R_d=n*C(m+3-d,3-d).
+Copy schedule (n+1)*(n*(m+1)+1)^2*(n*C(m+2,2)+1)=O(r8) per
+phase-free quotient state. SDE handles every batch, including correlated
+later labels. Approximate instrument errors add without rare-branch
+division. Local FLINT backend is machine-word-prime; this does not
+constitute a gate implementation. Sparse simulations are exponential
+in logp and not counted as quantum runtime.
+
+COMPLETION: learn the quotient line by abelian Fourier sampling.
+On fresh ORIGINAL cosets, measure q_perp=q-ell(q)v, apply Phi(-q_perp)
+to N and retain ell(q). This produces the known univariate HPGP-prime
+input, with uniform unknown output offset. Public relabeling tested,
+full known HPGP solver NOT executed. No restricted oracle is needed.
+H<=N can be handled by measuring q and undoing Phi(q), followed by
+abelian learning; the public intersection conversion is tested too.
+
+LIVE: p23,r1,logh=(1,2,3,4,5,6),seed20261021; 21125 originals,
+4225 cubic/25 quadratic/1 linear merges. Ranks4,12,24.
+ZERO zero Fourier labels; ZERO single-active-input shortcuts.
+23-point output; relative phaseerror8.21e-14; outside-annihilator
+Fouriermass1.64e-27. An earlier p11 check motivated the explicit
+easy-sector confound control. No label/branch/seed rejection.
+
+CLASSICAL AUDIT: opaque random coset names, uniform cyclicH outsideN:
+M=(p^(6r)-p^(4r))/(p-1), success<=min(1,(C(T,2)+1)/M).
+Each distinct query pair tests at most one cyclicH. NOT a lower bound
+for structured explicit evaluators; smallp test is NOT a runtime win.
+Dephased source control loses annihilator information. The old dilation
+no-go remains correct FOR THAT ARCHITECTURE, not for this merge.
+
+STATUS: constructive derivation REVIEW PENDING. No novelty, arbitrary
+nilpotent-group algorithm, lattice/code/GI/cryptographic reduction or
+Shor-level result admitted. Known SDE/HPGP machinery must be attributed.
+VERIFIED:30new/319connected tests PASS24.75s, RuntimeWarningfatal.
+Liveproducer --write completed. Python/site syntax, sitechecks,
+registryvalid:true/issues[] and whitespace checks pass.
+Fullrepo suite NOT run. All ownedjobs terminal.
+No agents/outreach/commit/push. GoalACTIVE.
+
+Controller/adapter/report SHA256:
+a56571b92749ea391512473596a78f70ece11f0ea3d7c22b0a86389381c0bd78 /
+5eb094787137aca9ee66aeb911ad962f90b1027d4702e72dc649f53d4b43a006 /
+e1c6aa6e15b349f2ffebb155f71f1e9ac9f4813d2a52b9284c6b67ea88e740a4.
+
+NEXT MAIN-MODEL TASK: independently attack the affine-support lemma,
+uniform resource bounds and exact prior-art overlap. A possible next
+constructive extension is NON-SPLIT class-three exponent-p groups:
+G' is abelian, BCH/section coordinates give a degree-three cocycle.
+Test whether the same global potential exists there before claiming
+anything about general nil-3 HSP. This extension is NOT established here.
+Do not add parameter sweeps, generic certificates or routine wiring.
+
+## 2026-10-21 Constructive Graded Class-Three Central Conversion
+
+Continuation PROGRESS. Prior turn was a completed novelty correction.
+Inspected current handoff, graph/BPQM and nilpotent notes, existing
+semidirect module, queried corpus for both receiver and graded-HSP routes.
+Compared graph receiver, periodic/rank BDD and graded central conversion.
+BDD has a matching classical result2203.05019; graph trees still do not
+supply a whole-input receiver. Selected a precise class-three operation.
+
+NEW: theorems/graded_hsp_phase_descent.py, matching tests,
+research/GRADED_HSP_PHASE_DESCENT.md,
+research/reductions/graded_hsp_phase_descent.json.
+No prior producer was changed. No qsearch/UI/centralintegration.
+
+CONSTRUCTION: G=UT4(Fp)^r, p>3,p=2mod3, hidden cyclicH oforderp,
+logh=X1+X3 withX1nonzero andX3central. This is a SUBSTANTIAL promise:
+grade2 ofLOGh must bezero, not second-superdiagonal matrix entries.
+Public T=(r+1)^2 central labels admit nonzero weights satisfying
+sumu_i c_i=sumu_i c_i^3=0. Solve cubic-zero blocks using linear dependence
+and the bijective cubemap, then a linear dependence between block sums.
+All inputs are public labels; no coefficient/subset enumeration.
+
+PHYSICAL MAP: project original unknown-coset states onto central
+characters, then use controlled tensor_i R_delta_ci(g). For h^t z,
+delta_c(h^t z)=h^(ct) exp((c^3-c)tX3) delta_c(z).
+Both public moments remove the unknown phase. Supports outsideHZ are
+orthogonal. Written Gram<F(y)|F(x)>=1[y^-1 x inHZ] creates the actual
+quotient subgroup-state mixture onG/Z. No unknown representative is read.
+Every label batch is handled; no postselection of rare fixed labels.
+
+WRITTEN END-TO-END PROMISED COMPOSITION: newconversion -> known nil2
+algorithm onG/Z -> abelian Fourier samples learnspanX1 -> restrict the
+ORIGINAL hidingoracle to explicit abelianK=exp(spanX1+Z) -> recoverH.
+ConservativeO(r5) originalcosets per intermediateabeliansample using
+knownmixedquadraticsolver. Full receiver and gatecompiler NOT executed.
+Do not silently grant original-oracle restriction in a copies-only model.
+Novelty and a useful external computational reduction remain absent.
+
+SCOPED NECESSITY: genericnonzeroX2 changes support, not justphase.
+The quotient lines span(c^-1 X1+c^-2 X2) agree only for equalactivec.
+Unequal active scales therefore force the productkernel intoZ.
+Even ALL scalar moments cancelling does notrepair this. Equalc is only
+a PUBLIC invertible relabeling, notlostinformation; it requires the
+ordinary unweighted zero-sum label condition. This is a boundary of the
+specific product/dilation architecture, NOT a general quantum no-go.
+
+EXECUTED: p11,r1,logh=(1,2,3,0,0,4), labels1,2,3,4,weights7,10,8,1.
+Original central projections eachprobability1/11. ProductGram matches
+all121HZentries withmaxerror1.8e-14. Cubic-only weights leavephase
+0.4154-0.9096i onh. Adding grade2u=1 yieldsonly11centralentries.
+All-moments-cancel negative also yieldsZ; common-scale positive yields
+the correct publicly rescaledHZ. p5 all15625group elements are checked
+against direct controlledactions. p5,r2 checksone sharedhiddenparameter
+and125HZentries. Publicmoment algebra tested throughp1000000007,r8.
+Sparse diagnostic costs are EXPONENTIAL in loggrouporder, not quantum
+runtime. Exact group/weight arithmetic; complex amplitudes are numeric.
+
+VERIFIED:19new/289connected tests PASS17.69s, RuntimeWarningfatal.
+Liveproducer --write completed. Python/site syntax, sitechecks,
+registryvalid:true/issues[] pass. Fullrepo suite NOT run.
+All ownedjobs terminal. No agents/outreach/commit/push. GoalACTIVE.
+
+NEXT: a lawful collective operation handling noncentralgrade2
+translations, or prior-art reduction that subsumes the promised case.
+Do not grow the suite with prime/rank sweeps, more scalar moments,
+genericcertificate modules or routine integration.
+Primary sources:2304.08376 Section4; ISS nil2paperSections4-5.
+
+Producer/report SHA256:
+c990f814cc229d0147804a9126a8db2b4a51a881de456012c7a50e5197fe9700 /
+b8040fa64a7e2457f14f0a414cc41e1344bd3cfcd917d16de929212f22a35f99.
+
+## 2026-10-21 Hermite Prior-Art Audit Narrows The Contribution
+
+Continuation PROGRESS, primarily a novelty correction. Read current
+handoff/code, queried corpus, and checked the EXACT cited KRSW version:
+ECCC TR18-091 Revision2, February22,2023. Its Theorems3.7/3.8 and
+AppendixA differ from the earlier arXiv1805.01498v1 audit.
+The streaming source explicitly cites this revised version.
+
+NEW: research/HERMITE_DECODER_PRIOR_ART.md,
+research/literature_audits/hermite_decoder_prior_art.json,
+tests/test_hermite_prior_art_interface.py.
+No theorem producer changed. All SIX Hermite producer/report pairs
+retain their previous SHA256 fingerprints.
+
+DECISION: polynomial-time polynomial-workspace decoding with retained
+pins is NOT a credible new mechanism, even for growing multiplicity.
+The known deterministic differential-space construction plus true pin
+equations avoids enumerating its potentially large list. GW2011
+Section4.2 already uses noiseless derivative side information in large
+characteristic. The only surviving possible addition here is the exact
+compact coherent streaming composition. It remains review-pending,
+target-dependent and restricted to sufficiently large multiplicity.
+No claim to solve ordinaryOPI, every fixedell, or exactoptimization.
+
+PRINTED PROOF ISSUE: AppendixA p46 assumes the highest derivative
+coefficient has a nonzero value at some base-field point. Its degree
+premise does not follow for high-degree messages. Explicit admissible
+q17,multiplicity8,message degree63,derivative count2,radius1/4:
+interpolation degree88, A=B0=0,B1=X^17-X, allzero receivedword.
+Every local constraint and degreebudget holds, but no regular point
+exists. This is NOT a counterexample to the dimension theorem.
+The existing highest-degree coefficient argument supplies a repair:
+R(T)=sum lc(B_j)*binom(T,j) on maximaldeg(B_j)-j is nonzero,
+degree<=s, and permits descending recurrence except at its periodic
+roots. The example's exact kernel dimension is4, with degrees0,17,34,51.
+
+OTHER CONTROLS: a nonzero coefficient residual can vanish at EVERY
+field point; do not replace polynomial identities with value tests.
+A singleton incomplete randomized list does not prove full guarded
+uniqueness. Explicit F5 length2jets, polynomials0/(X-1)^2, witness
+the ambiguity. The affine check retains it until an informativepin.
+Padding Fq* toFq costs ONE extra error; gap formula is in the note.
+Bad randomized decoder outcomes might be bounded separately, but may
+not be silently treated as exact certificates.
+
+VERIFIED:8new/112connected tests PASS42.73s, RuntimeWarningfatal.
+Python/site syntax, sitechecks, registry valid:true/issues[] pass.
+Fullrepo suite NOT run. All ownedjobs terminal.
+No CLI/UI wiring, centraladmission, outreach, agents or commit/push.
+GoalACTIVE. SourcePDF SHA256 recorded in the literatureaudit.
+
+NEXT: compare a new constructive direction before extending Hermite.
+No further arithmetic examples, q/seed sweeps or generic certificates.
+Potential review of the compact schedule remains useful, but do not
+confuse an implementation of known decoding ideas with a new mechanism.
+Useful external reductions, ordinaryOPI beyond this decoder, and a
+different native receiver on the unpadded graph remain genuinely open;
+none is supplied by merely changing parameters.
+
+## 2026-10-21 Hybrid Reversible Hermite Workspace
+
+Continuation PROGRESS. Read current handoff/code and queried corpus twice
+(moment-transfer audit, then hybrid reversible workspace). Source2610.01902
+Claim5.4/eq5.8 explicitly covers EVERY vector on isolated labels: restricting
+to our conservative accepted subset preserves the identity, provided its
+additional rejected mass is paid. No new moment theorem was necessary.
+
+NEW: theorems/hermite_reversible_workspace.py, matching tests,
+research/HERMITE_REVERSIBLE_WORKSPACE.md and
+research/reductions/hermite_reversible_workspace.json.
+The five preceding Hermite producers/reports are unchanged, hashes checked.
+
+SUBSTANTIVE PROPOSAL: replace blanket Bennett on the full decoder with
+explicit interpolation history, clean vector generation and checkpoints
+ONLY of the small streamed echelon state. Bound:
+O(((s+2)^2*q*ell+s^2*ell^2*log(q*ell))*logq).
+If ell*ceil(log2(q*ell))<=q, this isO((s+2)^2*q*ell*logq).
+For fixed accuracy and sufficiently high fixed multiplicity this restores
+the original asymptotic space scale, with accuracy-dependent constants.
+It does NOT coverell1, allfixedell, allnear-linear growingell, or remove
+every logarithm unconditionally. Generalproof/noveltyreview pending.
+
+EXPLICIT HISTORY: each interpolation constraint retains pivot/factors and
+shifted-away local-cache tails. At mostM=n(ell-s) records, O((s+2)M)
+field entries. Weak-Popov cancellations have a potential bound
+(s+2)^2(M+K); store one factor and constant indices per record.
+Undo rows, recompute original choices, clear records. Fixed-width
+multiplication byX-a MODX^L is a bijection for nonzeroa, agrees with
+ordinary multiplication on valid degree-bounded states. Zeroa excluded.
+Choice scans must be coherent, padded and uncomputed before basis updates.
+
+HYBRID CHECKPOINTS: cardinal/dual coefficients are PUBLIC and generated
+classically within charged workspace. Triangular vectors compute downward
+and clear upward; clean row oracle scratchO(K) is reused, not checkpointed.
+Only z-by-(z+1) echelon state withz<=sceil(K/q) is checkpointed.
+Binary reversible scheduling hasO(logE) live checkpoints and3^ceil(log2E)
+leaf evaluations. Row-oracle workspace iszero between leaves.
+Allocation uses PUBLIC bounds; never measure an input-dependent rank.
+This full scheduling network is WRITTEN, not a compiled/executed quantum
+circuit. Native classical trace does not establish physicalqubits.
+
+NATIVE: sameq31ell24K360s4guard10 fixture. All600records reverse, identity
+basis restored,60cache boundaries verified, CRTleadingprofile agrees
+up to roworder. Offset plus12provisional directions match reference and
+clear scratch. No finalweak-Popov cancellation needed on thisinput;
+separate finite controls exercise that reversal.
+Nativeparameters doNOT satisfylogabsorptioncondition; reversal control
+is not a finite instance of the asymptotictightspace theorem.
+
+NEGATIVES: losing a cachedtail breaks cleanup; zero point breaks the
+fixedwidth inverse; truncation is not an ordinaryproduct off the valid
+degree subspace. History is NOTauthentication: a modified nonzerofactor
+may reconstruct a DIFFERENT valid input. Initial tests incorrectly
+expected every alteration to be rejected and required identical roworder;
+corrected those assumptions. Actualnative restoration had passed.
+
+VERIFIED:12new/104connected tests PASS42.52s, RuntimeWarningfatal.
+Python/site syntax, sitechecks, registry valid:true/issues[] and whitespace
+pass. Fullrepo suite NOT run. All ownedjobs terminal.
+No central admission, CLI/UI wiring, agents, commit/push. GoalACTIVE.
+
+NEXT: adversarial review of this clean-transition/read-only-input schedule
+and the EXACT same-space theorem versus priorart. Do not add generic
+certificates, bigger native examples or numerical parameter sweeps.
+If the application is already an immediate known corollary, record that
+and compare a new constructive direction. No Shor-level/practical claim.
+
+Producer/report SHA256:
+e1c8106cd09f7f814918a30b259c59fd02d59ff5912940327399baeea6f969e9 /
+96f3ab3a2345fad2c96fc3451a6f22ad970afee8d07c633cca0607c3ddcd32cf.
+
+## 2026-10-21 Explicit Uniform Hermite Parameter Theorem
+
+Continuation PROGRESS. Re-read current decoder/composition code, queried
+corpus, checked the streaming lower bound and performed a targeted
+prior-art challenge. No prior Hermite producer/report was changed.
+
+NEW: theorems/hermite_parameter_theorem.py, matching tests,
+research/HERMITE_PARAMETER_THEOREM.md and
+research/reductions/hermite_parameter_theorem.json.
+This executable uses exact arithmetic ONLY, not large code matrices,
+input tables, a native decoder run or a quantum simulation.
+
+EXPLICIT SUFFICIENT REGION: integer m>=2, ell>=256m^2 and
+n=q-1>=256m^3(ell+1), q prime. lambda=1/2-1/(4m),
+tau=1/2-1/(8m), s=8m-2, d=floor(tau*n).
+Proposed target1-1/m^2, unconditional failure<=22m^4/n<.01.
+Root margin, d+2 guard, pin loss, source tail, capped sampler abort
+and total synthesis error are all paid. Out-of-region means insufficient
+conditions, not a no-go. General proof review remains pending.
+
+UNIFORMITY: growing s invalidates blindly reusing O_s notation.
+Audit charges module rank8m, O(m^2 qell) field entries and a
+fixed-degree polynomial runtime. Weak-Popov cancellations bounded by
+O((s+2)^2(M+K)); recomputation avoids storing all affine directions.
+Bennett ONLY afterstream gives O(m^2 qell logq log(qell)) space.
+The finite-alphabet source-mean correction is also uniform in m.
+
+GROWING TARGET: ell=floor(q^a), m=floor(q^(a/4)), 0<a<4/7,
+eventually meets the conditions. Target1-Theta(q^(-a/2)),
+failureO(q^(a-1)), spaceO(q^(1+3a/2)log^2q).
+Memory and pre/per-update/post time are polylogN; total time readsN.
+Not exact optimum, ell1, all fixedell, hardware fault tolerance or
+unrestricted classical time advantage.
+
+CLASSICAL: use FIXED alpha_c in(.75,1), not the growing quantum
+target inside the unknown C_alpha. With
+0<a<=min(1/2,kappa/(4C_alpha_c)), the external lowerbound gives
+p*S>=N^(kappa/2) eventually. Unknown C prevents numerical classical
+separation claims for the artifact's a=.25/.5 upperbound examples.
+
+NOVELTY CORRECTION: KRZSW1805.01498 Sections4.2-4.6 already treat
+small-characteristic differential spaces, X^q closure, qdimension
+and random-jet pruning. These ingredients are NOT new here.
+Its Theorem4.8 might sharpen the pin budget, but averages over ALLFq.
+Our Fq* without-replacement domain must be rechecked before importing it.
+GW2011 sideinformation and Venkitesh2024 different-encoding
+divided-difference constructions are also relevant existing methods.
+Possible novelty is only the exact compact coherent streaming application,
+and may still collapse under broader review.
+
+VERIFIED:13new/92connected tests PASS40.25s, RuntimeWarningfatal.
+Python/site syntax, sitechecks and registry valid:true/issues[] pass.
+Fullrepo suite NOT run. All ownedjobs terminal. No central admission,
+qsearch/UI wiring, agents, commit or push. GoalACTIVE.
+
+NEXT: prioritize adversarial review of the complete moment-transfer/
+streaming theorem and novelty; do not add more arithmetic-only examples.
+The known X^q-closed-space pruning is a concrete alternative to examine
+if reducing accuracy-dependent pins becomes necessary.
+All quantum/novelty gates remainfalse.
+
+Producer/report SHA256:
+c32f7b5f24051f344d9bbf8f15b22c5fc0f4668e8f7dd3ef61f5d2c7160788a6 /
+c439fa10a208ed23b6be535ae4742b6efe012125ef2b63cb4133ddf6e9180b01.
+
+## 2026-10-21 Independent Hermite Module Certificate
+
+Continuation PROGRESS. Queried corpus, read current compact decoder,
+and checked derivative-code/row-reduction/streaming literature before work.
+Highest unresolved question: full interpolation-module completeness,
+not merely whether the chosen row satisfies its local equations.
+
+NEW: theorems/hermite_module_certificate.py, matching tests,
+research/HERMITE_MODULE_CERTIFICATE.md and
+research/reductions/hermite_module_certificate.json.
+All previous Hermite producers/reports remain UNCHANGED, hashes checked.
+
+INDEPENDENT CONSTRUCTION: FLINT-polynomial CRT triangular basis with
+P=product_(a!=0)(X-a)^(ell-s) and local received-derivative polynomials R_j.
+The module is kernel(Q0+sum QjRj mod P). Q0 makes this map surjective,
+so its quotient dimension is M=n(ell-s). Independent row cancellation,
+not the original incremental interpolation or row reducer.
+
+GENERAL CERTIFICATE: every row satisfies all local constraints; distinct
+shifted leading positions; sum(row degrees)-sum(shifts)=M. Distinct
+positions give degree(det B) by a noncancelling leading term.
+Index/codimension equality then proves the rows span the FULL module.
+Known polynomial-module principles, not a new normal-form claim.
+
+DECISIVE NEGATIVE: multiply one row by (X-1). ALL local constraints still
+pass and leading positions remain distinct, but determinant degree is
+601 versus required 600. The certificate rejects this smaller module.
+A verified short interpolant retains its individual root guarantee;
+the completeness issue concerns uniform existence for all inputs.
+
+NATIVE: q31, ell24, K360, s4, guard10. Six leading pairs:
+(11,5),(12,4),(13,3),(14,2),(81,1),(100,0). Degree sum 231, shift sum -369,
+determinant degree 600. The ORIGINAL producer has the SAME profile.
+At shifted bounds 37,38,39, Hilbert dimensions 102,106,110 match separate
+dense nullities. The artifact includes basis, received word and fixture hash.
+Dense diagnostics are NOT claimed workspace bounds.
+
+DIFFERENTIAL CHECK: construct Hasse columns as FLINT polynomials, extract
+ALL coefficient rows and pin jets, and perform exact dense augmented RREF.
+Never calls the production coefficient helper, operator_matrix or
+affine_solution. Native unpinned dimension 1; original eight pins uniquely
+recover each original polynomial and match the compact solver.
+Frobenius dimensions, wrong pins and high-degree inconsistencies retained.
+No quantum circuit or full source execution.
+
+NOVELTY: GW side information and large-characteristic decoding are prior
+art. This does NOT solve ordinary small-characteristic list decoding
+without pins. Plain folded-RS substitution is not a new general mechanism:
+2610.01902 Table 1 already lists time/space advantages for its codeword
+search problem. Exact Hermite-substitution novelty remains unestablished.
+
+VERIFIED: 9 new/79 connected tests PASS in 40.80s, RuntimeWarning fatal.
+Python/site syntax, site check, registry validation and whitespace pass.
+Full repo suite NOT run. All owned jobs terminal. No central admission,
+agents, qsearch/UI wiring, commit/push. Goal ACTIVE.
+
+NEXT: stop adding generic certificates or larger examples. State explicit
+fixed-target parameter conditions and review the complete upper bound
+against the classical streaming comparison. A useful analytic margin:
+gamma=(1/2-tau)-1/(2(s+2))>0; the finite-ell penalty is
+s(s+1)/(2(s+2)(ell-s)); the two-block guard costs 2/n.
+For fixed ell>=ell0, r=O_s(ell+log q) and inverse-polynomial failure suffice.
+Keep ell1, all fixed ell, exact optimum and tight linear space excluded.
+Outside proof/novelty review remains pending; finite certificates are not that.
+
+Producer/report SHA256:
+a7fb5cee58049fd897c1f58c83c8347d23dbd0ef711e69f727ae59c8b2c6c6d6 /
+f268dbbbf76ae39a93b7afe5614500d07bae0bb02df460a3232d6b3fe329ac94.
+
+## 2026-10-21 Hermite Streaming Composition Audit
+
+Continuation PROGRESS. Read both prior Hermite implementations and queried
+corpus before work. Re-read2610.01902v1 source/guard sections, checked
+prime-order QFT construction and finite-gate compilation, and compared
+2607.16541v1 complete-list DQI prior art. No novelty certification.
+
+NEW: theorems/hermite_streaming_composition.py, matching tests,
+research/HERMITE_STREAMING_COMPOSITION.md and
+research/reductions/hermite_streaming_composition.json.
+Both prior Hermite producers/reports are UNCHANGED, hashes verified.
+
+COMPOSITION: explicit compute/herald/uncompute/erase sequence, with no
+input-dependent garbage. The deterministic decoder may reject more than
+the full isolation projector; its pointwise pin bound still controls
+average rejected mass. Full B_(d+2) isolation preserves neighbor moments.
+The earlier same-code8->12 missing-guard negative remains mandatory.
+
+SOURCE CONTROLS: one pass, arbitrary entry ordering, additive vector-group
+Fourier transform, public odd-halfset selector cleanup. Omitting cleanup
+leaves exactlylambda/q^(2ell) selector mass. These are bounded statevector
+identities, not a small-space implementation or a quantum advantage.
+Sparse actual-decoder instrument accepts2/3mass and retains1/3heraldfailure;
+leaving error garbage halves its zero-character interference contribution.
+It is NOT the full product-source performance experiment.
+
+ACCOUNTING REPAIR: capped uniform pin sampling can abort; this is now
+explicitly added to the unconditional failure bound. Conditional on no
+abort the subset is exactly uniform. Atq1000000007/ell256/s15, the
+arithmetic-only ledger uses4301pins and53trials/draw; total failure upper
+3.9865175597947084e-5. No matrices or circuit at these parameters.
+
+PRECISION: per-entry updates are EXACT logical Boolean-controlledZ gates.
+Approximate preparation/Fourier/cleanup gates occur only polynomially many
+times outside the stream. Use uniform prime-order Fourier circuits and
+incremental compilation, not dense matrices or cached gate lists.
+Hardware noise is not covered. Bennett applies ONLY afterstream;
+O_s(qell logq log(qell)) reversible workspace remains, not tightlinear.
+TOTAL time isN*poly_s(q,ell), NOTpolylogN.
+
+THEOREM PROPOSAL: fixedalpha<1, sufficiently largeell>=ell0(alpha),
+ell=o(q), all arbitrary explicit promised tables/order. Poly(q,ell)
+pre/update/post time with the retained logarithmic workspace overhead.
+Includes sufficiently high fixedell; NOTell1/allfixedell/exactoptimum.
+Proof and novelty review remain pending; all claim gatesfalse.
+
+VERIFIED:15new/70connected tests PASS32.77s with RuntimeWarningfatal.
+Python/site syntax, sitecheck, registryvalidate valid:true/issues[] pass.
+Full repository suite NOT run. All owned jobs terminal. No central
+admission, agents, qsearch/UI wiring, commit/push or prior-producer edits.
+Goal remains ACTIVE.
+
+NEXT: independently challenge the module's completeness, differential
+residual consistency and resulting upper-bound novelty. A useful alternative
+completeness check is the determinant/codimension identity for a full
+weak-Popov basis: sum shifted rowdegrees minus sum shifts must equal
+n(ell-s), since Q0 alone realizes every local constraint. Compare bounded
+Hilbert dimensions against independent dense interpolation if useful.
+Do not replace mathematical review with bigger source simulations.
+
+Producer/report SHA256:
+2696bf3c0cfd146da7555fd8a0162d93a7d2f6013f33d5231992224ccb0066ac /
+40c9735271b320610ddc33ae9f5a0c798e018f2b28a2ce4f694ed95feef57125.
+
+## 2026-10-21 Compact Hermite Decoder And Interpolant Selection
+
+Continuation PROGRESS. Read the pinned producer/report and queried corpus
+before work. Considered Wiedemann but did NOT add a generic linear-algebra
+subsystem: a fixed-rank polynomial module exploits this problem's structure
+and avoids probabilistic rank claims. Read Mulders--Storjohann, KNH
+interpolation and Bennett's reversible simulation.
+
+NEW: theorems/hermite_compact_decoder.py, matching tests,
+research/HERMITE_COMPACT_DECODER.md and
+research/reductions/hermite_compact_decoder.json.
+The preceding dense pinned producer/report remain UNCHANGED as references.
+
+ACTUAL ALGORITHM: Hermite cardinal polynomials compute the same fixed
+syndrome right inverse one polynomial at a time. Local discrepancy updates
+maintain a rank(s+2) polynomial module; shifted weak-Popov reduction supplies
+eligible interpolants. Descending Hasse pivots parametrize all possible
+solutions, but directions are recomputed rather than stored as aK-by-z
+basis. Constraint batches hold<=2Kfield entries; reduced echelon usesz(z+1).
+Every original identity coefficient, pin, syndrome and guarded distance
+is checked before acceptance, including rows skipped after full rank.
+
+USEFUL FAILURE AND REPAIR: the SHORTEST eligible module row leaves24
+affine dimensions; the same eight pins leave4. Initial native replay
+correctly ABSTAINED. An independent dense solve confirms this dimension,
+so it was NOT a false-negative implementation bug.
+Deterministically selecting among degree-valid rows by the certified
+zero-pivot count uses only the unaugmented syndrome, independent ofR.
+Native profiles (shifted degree, free bound): (14,12),(13,24),(12,24),(11,35).
+The selected row leaves one actual affine dimension before pins; the
+original eight pins recover BOTH weight8errors sharing a syndrome.
+Shortest-row failure is retained in the artifact and tests, not hidden
+by increasing the pin budget. This selection is not claimed optimal.
+
+SAME NATIVE INPUT:q31,ell24,n30,K360,d8,guard10,unique radius7.
+Maximum observed MODULE BASIS component3609coefficients versus the
+dense600x603interpolation matrix. Selected reduced echelon156entries,
+constraint batch<=720. These are component counts, NOT total RSS/qubits.
+Full four-decode replay21.13s, not a quantum/runtime advantage.
+
+WRITTEN SPACE PROOF: module row degrees<=M+K-1, M=n(ell-s);
+fixed rank(s+2) meansO_s(qell) coefficients. z<=sceil(K/q), so
+z^2=O_s(ell^2)<=O_s(qell) for ell<q. Cardinal polynomials, localdual
+blocks and recomputation scratch fit the same bound. All time is polynomial.
+Classical spaceO_s(qell logq). Apply Bennett ONLY to postprocessing,
+not the lengthNstream: reversible spaceO_s(qell logq log(qell)),
+polynomial time. The extra logarithm is NOT removed.
+
+THEOREM PROPOSAL: for fixed targetalpha<1, sufficiently largeell>=ell0(alpha)
+and ell=o(q), the previous source/pin/moment argument composes with this
+decoder. Covers sufficiently high fixedell and growingell=q^a.
+Does NOT coverell1, allfixedell, or the exact original linear-quantum-space
+bound. Written proof and novelty review pending. Module interpolation,
+side-information decoding and reversible simulation are prior art.
+All new quantum claim gates remainfalse; no native quantum circuit.
+
+VERIFIED:18new/55connected tests PASS32.63s, RuntimeWarningfatal.
+Python/site syntax, site check and registry validate valid:true/issues[]
+pass; full repo suite NOT run. Whitespace checks pass.
+All owned processes terminal, including initial failed native replay and
+independent diagnostic runs. No central admission, agents, CLI/UI wiring,
+commit/push or changes to previous producers. Goal stays ACTIVE.
+
+NEXT: audit the exact composed theorem and novelty, especially polynomial
+module spanning, all-row consistency after early full rank, source loading
+and Bennett's post-stream-only use. The same-code8->12 guard negative
+from the previous pass remains mandatory. Do NOT add size/seed campaigns
+or generic black-box solvers. A theorem-level review is now higher impact
+than more implementation plumbing.
+
+Producer/report SHA256:
+96ab64ba0b601c31b1df278ed7fec368d797ce3d28d73005e160987b37da149e /
+705c7ac38870b7a9e83d7cac0bd01822a8badbcd6313f5e1d6edd4c414c731e7.
+
+## 2026-10-21 Pinned Hermite Decoder: Constructive Streaming Candidate
+
+Continuation PROGRESS. Compared the latest graph result with independent
+directions; selected the exponential postprocessing in2610.01902v1.
+Read the paper,2311.17841v4, and1106.3951Section4.2. Queried corpus first;
+existing folded_rs_decoder supplies exact modular affine solving but NOT
+this small-characteristic syndrome/pin composition.
+
+NEW: theorems/hermite_pinned_decoder.py, matching tests,
+research/HERMITE_PINNED_DECODER.md and
+research/reductions/hermite_pinned_decoder.json.
+No previous producer changes, central admission, CLI/UI wiring or agents.
+
+CONSTRUCTIVE DECODER: explicit residue-pairing blockdualT; fixed syndrome
+right inverse independent ofR; linear Hasse interpolation with strict
+integer root bound; exact coefficient-affine solving; true error-coordinate
+pins converted into polynomial jets; return only a unique affine solution
+that verifies syndrome, pins and guarded distance. No q^dimension enumeration,
+hidden support, planted message, list oracle or original table access.
+
+WRITTEN SMALL-CHARACTERISTIC LEMMA: a nonzero order-s operator withs<q has
+kernel dimension<=s*ceil(K/q). Highest-degree pivots are a nonzero polynomial
+in t modq of degree<=s. The F5,degree<17 f'=0 control has dimension4,
+not1. Retain Frobenius directions.
+
+WRITTEN PIN LEMMA: random uniform coordinate restriction lowers any
+remaining nonzero direction space with probability>=1/2, since a nonzero
+degree<K polynomial has zero full jets on<n/2points. Thus
+Pr[ambiguity]<=Pr[Bin(r,1/2)<dimension]. r=O(s*ell+logn) suffices.
+Interpolant and source MUST be independent ofR. This is NOT ordinary
+received-block guessing with potentially erroneous values.
+
+NATIVE:q31,ell24,n30,K360, two different weight8errors SAME syndrome.
+Guaranteed unique radius7. Guard radius10. Interpolant dimension1;
+unpinned decoder ABSTAINS, eight fixed public pin positions recover either
+error. Fixed source cap8 and exact equality herald accept both.
+Full G*T*G^T checked. Native classical replay5.73s, not a quantum timing.
+
+IMPORTANT NATIVE NEGATIVE: two weight7labels each unique inB7 have source
+norm2 and first moment0 preserved by the unpinned Fourier map, but a
+one-block local observable's second moment changes8->12. Their neighbors
+collide. The pinned guarded labels have second moment8->8. These are exact
+sparse character-Gram checks, not native quantum gate simulation.
+
+COMPOSITION: accepted labels isolated in ENTIRE B_(d+2) give an isometry on
+their one-block neighborhoods. Written second-moment perturbation argument
+retains source tail, expected pin rejection, at mostr lost score terms,
+and total synthesisTV. For fixed target<1, sufficiently large growingell
+and fixed interpolation order, decoder time AND reversible workspace are
+poly(q,ell), hence polylogN for ell=floor(q^a). This SACRIFICES tight
+O(q*ell*logq) workspace. It does NOT settle the paper's fixed-ell,
+similar-space question, and does NOT solve ordinaryOPI.
+
+ARITHMETIC LEDGER ONLY:q1000000007,ell256,s15,lambda.42,tau.43,
+worst-case dimension1920,4301pins. Conditional99% score failure upper
+3.9866e-5 with total synthesisTV2^-40. Matrices/circuit at these parameters
+NOT executed; do not present this enormous-input ledger as an experiment.
+Classical streaming lower bound is external, with unknown C_alpha retained.
+
+PRIOR ART: Guruswami--Wang2011already uses derivative side information to
+avoid list enumeration under large-characteristic assumptions. No novelty
+claim for interpolation or side-information decoding. The possible value
+is the small-characteristic guarded streaming composition. Independent
+proof and novelty review pending; all new quantum claim gates remainfalse.
+
+VERIFIED:26new/37connected tests PASS11.82s, RuntimeWarningfatal.
+Python/site syntax, site check, registry validate valid:true/issues[],
+and whitespace checks pass. Full repo suite NOT run.
+All owned runs terminal. No commit/push. Goal stays ACTIVE.
+
+NEXT: independently audit the exact pivot/rank-exposure/composition proofs,
+or formalize a meaningful lemma; inspect side-information and streaming
+prior art further. Do not add q/seed sweeps or routine wiring. If the proof
+survives, specify the actual relaxed-workspace theorem with all quantifiers
+and assess its significance before any central promotion/outreach.
+
+Producer/report SHA256:
+7e1807a90a8ea256314a303ddeb20a291e247370663ec05830f084216180d8ee /
+fa21bf3ae8435268a063ac0ef1e2c6396999bfb89254382c06afdb5a5116925a.
+
+## 2026-10-20 Graph Coloring Bridge: Full Square Or Easy Padding
+
+Continuation PROGRESS. Selected a useful target, not another type sweep:
+can the published two-fold decoder fill the missing whole-input receiver
+in TERNARY_COLORING_BPQM.md? Read that existing source/reduction audit,
+the corpus,2610.00502v1 Sections5-6 and the standard tension/coloring
+correspondence. NEW theorems/ternary_graph_reduction.py, tests, note and
+research/reductions/ternary_graph_reduction.json.
+
+WRITTEN STRUCTURE: for a graph's ternary cycle codeD, D*D is the span of
+nonbridge series-class indicators. Contract a series class to one edge;
+two edge-disjoint detours give cycles whose product is its indicator.
+Loops after contraction give the indicator by squaring a cycle.
+Independent review pending. Actual ranks match on142connected simple
+graphs through6vertices. This census is a control, NOT an all-size proof.
+
+NATIVE CORE:40vertices,80edges,4regular, cycle dimension41, square80.
+Every edge has saved, verified cycle-product unit-vector witnesses.
+Thus the pair-list relaxation leaves EVERY v inD possible, by choosing
+w coordinatewise. Actual projected elimination leaves41free variables.
+This kills THIS linear relaxation, not arbitrary collective/BPQM decoding.
+
+SUBDIVISION REPAIR AUDITED: lengthL gives repeated trines per edge.
+A path is unresolved with probabilityr=2^(1-L). If unresolved core edges
+form a forest, flow conservation recovers them. For full core square,
+this is also necessary; all64patterns onK4 checked for two codewords.
+delta<=binom(M,3)r^3 and TV<=4sqrt(3^k delta)+circuitTV retain all costs.
+But the output task is coloring the SUBDIVIDED graph, not the original.
+
+MATCHED CLASSICAL SAMPLER: N_L(0)=(2^L+2(-1)^L)/3,
+N_L(1)=N_L(2)=(2^L-(-1)^L)/3. Uniform core-color proposal, exact
+product rejection, and three-state uniform path bridges sample the FULL
+padded-coloring law exactly conditional on declared non-abort.
+Per-trial acceptance>=max(0,1-M/Nmax), so logarithmic padding suffices.
+Seeded PRNG replay is not distributional proof; exact law is a written
+argument with independent finite enumeration/transition controls.
+
+LIVE:L64 yields5080vertices/5120edges, all paths verified in one trial.
+Classical replay .00533s, NOT a quantum timing comparison. Classical
+16-trial abort bound6.74e-271; conditional quantumTVbound2.473e-16
+at circuitTV2^-64. Native quantum circuit NOT executed.
+Returned core colors are NOT proper. No input-coloring advice was supplied.
+
+RESTORING THE OLD TASK: require each path sum nonzero. Its phase-state
+ensemble is a public isometric copy of the original single trine, with
+off-diagonal Gram -1/2, not (-1/2)^L. Old independent coordinate lists
+then falsely exclude the true symbol (probability1/3 atL2).
+K4 has ZERO restored-target probability. Colorable complete tripartite
+K_(t,t,t) at evenL gives acceptance<=6/3^(3t), below3e-14 att10.
+This easy family falsifies a universal rejection guarantee, not hardness.
+
+VERIFIED:31new/209connected tests PASS5.17s, RuntimeWarningfatal.
+Python/site syntax, site checks and registry validate valid:true/issues[]
+pass. Full repo suite not run. All owned jobs terminal. No prior producer
+edits, CLI/UI wiring, central admission, commit/push or agents.
+DECISION: no graph-size/subdivision campaign. New work needs an actual
+different receiver on the original input, or a different useful task with
+small Schur square. Degree-four/five collective decoding remains unresolved.
+Do not convert this scoped failure into a general quantum-coloring no-go.
+
+Producer/report SHA256:
+031934a631422b8ce23482050503e438909fec8e9ba224d0aa62a5af7e314535 /
+48a7b8a2a85ddd06bd788b4551af50d51d2f8c8068db273697fd479009226707.
+
+## 2026-10-20 Tilted Ternary Types With Paid Decoder Erasures
+
+Continuation PROGRESS. Read current priorities, existing controls, the corpus,
+the parity-block classical falsifier, and2610.00502v1. NEW
+theorems/ternary_tilted_type.py, matching tests, TERNARY_TILTED_TYPE.md and
+reductions JSON. Existing producers/reports untouched. No commit/push,
+central admission, CLI/UI wiring or agent. No owned jobs remain.
+
+QUESTION: can a prescribed type exponentially rare under the UNIFORM
+product source be reached with polynomial overhead? WRITTEN CONDITIONAL
+ANSWER: bias the product source to p=h/m, then change the decoder and
+explicitly retain its erasures. This is not applying independent lists to
+an entangled fixed-type source, and not merely changing the rejection target.
+
+LOCAL RECEIVER: a label-independent diagonal filter succeeds with
+rho=2min(p,1-p), yielding the uniform trine. Each valid exclusion outcome
+has unconditional probability q=min(p,1-p); the remaining outcome is an
+erasure. Four-outcome isometry and its inverse preserve failure phases.
+The Schur-square linear decoder requires unique v inD, NOT unique auxiliary
+w inD*D. A control recovers v with a genuinely free w component.
+Union-bound error delta<=3^(k+s2)*(1-q)^dstar is written and review pending.
+
+TRANSFER: retain 3^k coherent amplification in
+eta<=4sqrt(3^k*delta)+circuitTV. Full weighted kernel count error uses
+beta=sqrt(1-3p(1-p)); exact-type error uses unequal-symbol pair bound
+alpha=1-p(1-p). Withr=min(floor(m/2),dstar),
+p0>=(binom(m,h)p^h(1-p)^(m-h)-(3^k-1)alpha^r)/
+(1+(3^k-1)beta^dstar). Verify outputs; capceil(b/(p0-eta)) uses
+outward-rounded acceptance, charges every base call, and gives failure2^-b.
+Accepted output has TV<=2eta/(p0-eta) from the uniform fixed-type law.
+Numerical parameters DO NOT certify a code's distance.
+
+CALIBRATION ONLY: punctured simplex m728,k6,s2rank21,d485,h243.
+Uniform type probability4.90758e-20 versus tilted.03134208662555;
+1277full sampler calls suffice in the conditional budget for failure2^-40
+and circuitTV2^-64. The appended constant row MUST have RHS1, not0.
+This family is classically easy via3^k=m+1syndrome/count dynamic programming.
+No native quantum circuit was executed and no speedup is established.
+
+ACTUAL BOUNDED CONTROL: four coordinates,256work dimensions, local
+receiver plus projected RLS and coherent label erasure. Decoder error
+.255144 and outputTV.241930 are measured, not called a successful native
+sampler. Always-zero decoder gives the product law and TV16/27.
+All workspace/failure branches remain. Extreme tilt h1 and excessive
+circuit error correctly yield no certified sampler cap.
+
+VERIFIED:33new/100connected tests PASS3.68s with RuntimeWarningfatal.
+Python/site syntax, site checks and qsearch validate valid:true/issues[]
+pass. Full repository suite not run. Independent proof and novelty review
+pending. Do NOT start a tilt/histogram/alphabet campaign or promote this
+easy calibration. Next substantive question: useful explicit inputs in a
+two-fold regime surviving classical three-fold and other sampling attacks,
+or a useful external reduction.
+
+Producer/report SHA256:
+241b760c1344cff367c064ff56170ad82e2d5cca284650c6de575a55beb4dc86 /
+120d8193fb0b726e9e5660962d5e2bb47b5f9ba3e16c06753fef19de70edc134.
+
+## 2026-10-20 Balanced Ternary Type Transfer, Not A New Decoder
+
+Continuation PROGRESS: compared independent routes after closing the MIS
+falsifier. The composite-modulus MPI extension already exists; did not
+rebuild it. Read2610.00502v1's open question about combining two-fold quantum
+decoding with global constraints. NEW theorems/ternary_type_transfer.py,
+matching tests, research/TERNARY_TYPE_TRANSFER.md and reductions JSON.
+No old producer changes, central admission, CLI/UI wiring, commit/push or agent.
+
+QUESTION: does exact integer balance of ternary full-support kernel words
+require an entangled decoder? WRITTEN ANSWER under explicit margins: no,
+the known product decoder plus coherent erasure, near-uniform output and
+charged rejection suffices. Independent proof/novelty review pending.
+This does NOT settle the general growing-alphabet/rare-constraint question.
+
+FIRST OBSTRUCTION: a fixed-type Fourier signal is unchanged up to global
+phase under adding a constant word to its codeword label. Full decoding
+therefore fails on constant cosets; quotient that direction. Product
+unambiguous local lists also become invalid on the fixed-type state.
+Neither statement is a no-go after quotienting.
+
+TRANSFER: D has dimensionk and every nonzero word has distance>=d from
+every constant. L=3^k,r=min(m/2,d),p=binom(m,m/2)/2^m.
+Character counting gives full-support relative error e0=(L-1)2^-d and
+balanced absolute error e1=(L-1)(3/4)^r. Hence the balanced fraction among
+uniform full-support solutions is >=(p-e1)/(1+e0). Published two-fold
+decoder error delta<=3^(k+s2)2^-d gives unconditional outputTV
+<=4sqrt(L delta)+circuit_error through charged U/U-inverse erasure.
+The L factor and ideal-state normalization are not dropped. Verify every
+output and repeat with the actual positive margin; all calls are charged.
+
+CALIBRATION ONLY: explicit linear-form code on nonzeroF3^6 points,
+m728,k6,s2rank21,d485, with an added constant constraint. Exact counts
+give balanced fraction.0295614159482646. At circuitTVbudget2^-64,
+1354base calls suffice for failure<=2^-40 under the inherited decoder
+theorem. This is a resource certificate, NOT executed quantum sampling.
+The family is CLASSICALLY EASY: syndromeDP has3^k=m+1states.
+
+FINITE CONTROL: actual3-label/16-basis coherent erasure retains all
+branches; delta.001898, unnormalizedideal normSquared9/8. The good dense
+PGM control matches uniform solutions; always-zero decoder instead has
+TV5/8 and verifiedbalanced probability1/4. Dense PGM is an identity test,
+not a scalable decoder. Also exact character/census, Gram-rank3collapse,
+local-list failure, precision and postselection-error countercontrols.
+
+VERIFIED:32new/67connected tests PASS3.43s, RuntimeWarningfatal.
+Python/site syntax, site checks and qsearch validate valid:true/issues[]
+pass. Full repository suite not run. All owned jobs terminal.
+
+DECISION: do not build an entangled-decoder subsystem solely for a central
+balanced ternary histogram or promote this calibration. A successor needs
+a useful hard family or a global target outside polynomial-mass rejection,
+with an actual paid receiver. Do not start an alphabet/type-count sweep.
+No underlying two-fold dequantization or speedup is proved.
+
+Producer/report SHA256:
+678a8f467f311e8869e9e2c45698d3d993d64bd43bbbaac8992ce2ffbb546d5f /
+9f6158d4ee5d50bf9ca1fe1d3b3e5e12fb93227afc31a032e95004f92956ea7f.
+
+## 2026-10-20 Planted MIS Optimality Without A Cover Guard
+
+Continuation PROGRESS: closes the extra-control-restriction gap from the
+preceding pass. NEW theorems/planted_mis_star_certificate.py, matching
+tests, research/PLANTED_MIS_SOURCE_SCOPE.md and classical_baselines JSON.
+The old graph-only solver, producer, report and Lean proofs are unchanged.
+No central admission, CLI/UI wiring, commit, push or new agent.
+
+WRITTEN THEOREM: protected block planting plus a deleted-edge STAR FOREST
+gives a unique optimum S when |S|>b+1, where b is the largest block's clique
+count. Sets meeting S in two blocks lie within S; those meeting S in one
+block have size<=b. Outside-only sets cannot occupy three blocks (deleted
+triangle) or two blocks with two vertices each (deleted four-cycle), so
+size<=b+1. Table1 has |S|=10+4k, b=8+4k for every k>=0. New uniqueness proof
+is NOT Lean-formalized; previous recovery proofs are. Independent review
+pending. A verifier reconstructs deletions from the ACTUAL graph and
+rejects broken premises rather than trusting the generator/prose.
+
+SOURCE AUDIT: downloaded2601.17686v1 official source,30members, no author
+graph/generator files found. Results0123.tex supports protected planting,
+outside-only thinning and single participation. Full hashes/line references
+saved. The broader2509.16263v1 GIC definition DOES NOT imply these premises.
+Do not claim all GIC graphs solved. No author contact or original-file replay.
+
+NATIVE: new572-vertex synthetic control,seed2026102051,15thinning steps,
+332deleted edges, including11of the old cover's edges. Graph-only solver
+examines65756pairs/465independent closures and returnsS38in.08137s.
+Setup.13664s, separate certificate.05731s. Upper bounds36singleblock/
+37outsideS prove UNIQUE38optimum. No cross-paper runtime ratio.
+
+VERIFIED:21new/135focused+scope-audit tests PASS1.81s. Explicit join(S3,C10)
+counterexample separates planted recovery from optimality; triangle,
+four-cycle and zero-margin controls prevent overstating the theorem.
+Native graph/rules/certificate replay included. Full repo tests not run.
+Python/site syntax, site checks, qsearch validate valid:true/issues[] and
+git diff --check pass. All owned jobs terminal.
+
+DECISION: source audit and optimality gap are now addressed locally.
+No more graph campaigns. Independent review/original-data replay remain
+valid gates; another optimization route needs both an actual quantum
+construction and resistance to constant-size seed attacks. Preserve the
+quarantined general annealing negative; this is an objective solver only.
+
+Producer/report SHA256:
+b328f2f3f2adfabe1e13cd9b89db4a7921f3c213a45205c98844ac61a1e3dedd /
+0fcfbebc79ab3ef5bb423b86bc3ee9affad492b10c3e7effe71dcd873447fbcc.
+
+## 2026-10-20 Protected Planted MIS Has A Graph-Only Polynomial Solver
+
+Continuation PROGRESS: independently tested the explicit non-stoquastic MIS
+direction after the arithmetic route failed to establish advantage.
+NEW theorems/planted_mis_pair_closure.py, matching tests,
+research/PLANTED_MIS_PAIR_CLOSURE.md, classical_baselines JSON and
+formal/Formal/PlantedMISPairClosure.lean. No central admission, CLI/UI
+wiring, modification of existing producers, commit, push or new agent.
+
+KEY RESULT: if independent S has two seeds a,b such that every outside
+vertex is adjacent to at least one seed, V minus (N(a) union N(b)) equals S.
+Enumerate ALL nonedges, retain the largest independent closure: O(n^4)
+Boolean operations, graph-only input. When S is maximum, recovery is exact.
+The protected block construction stated in2601.17686v1 Section2.1 supplies
+such seeds in different blocks. Thinning only outside-outside edges cannot
+remove this property. General seed/common-neighborhood methods are prior art.
+Two recovery lemmas compiled in Lean with only standard axioms, no sorry.
+Source interpretation remains independently review-pending; no author outreach.
+
+NATIVE: newly generated572-vertex graph,38-vertex optimum, seed2026102047.
+15anchored thinning steps remove332edges; labels fully shuffled.
+ALL65756nonedgepairs examined,437independent closures. Solver only sees
+adjacency; succeeds in.07847s. Setup/premise checks.20650s, separate
+certificate.03344s. A38-clique partition proves optimality AFTER solving.
+That extra preserved-cover restriction is a CONTROL, not reproduction of
+the author's graph files. No uniqueness or cross-paper timing-ratio claim.
+
+VERIFIED: all4096outside-edge patterns atn9, independent exhaustive checks,
+shuffled fixtures, forged-input rejection, native full-graph replay and C10
+general-MIS countercontrol.38new/114focused+scope-audit tests PASS1.46s.
+Python/site syntax, site checks, qsearch validate valid:true/issues[] pass.
+Full repository tests/Lean library build not run. All owned jobs terminal.
+
+DECISION: no quantum compilation or parameter sweep for this protected family
+as an exponential optimization separation. The written graph theorem, not
+finite solver timings, supplies the polynomial competitor. This does NOT
+reinstate the quarantined general annealing no-go. Useful next work is
+independent source-scope review/original-file replay when available; another
+quantum family must justify both its path and resistance to constant-size seeds.
+
+Producer/report/Lean SHA256:
+e44e720c46be267bb993fbd2a356b26341ed92f01941cd31e4a8487491289d87 /
+b29f876ee9e7bffab528be4c55f32d05d3bfb2c8929f221ddbf36d76dd80cec6 /
+e124975ee929a9ab53066e46a7a187ae6a574b8782d4d52d0cbc78bb452e077a.
+
+## 2026-10-20 Constructive Sine-Box Algorithm, No Native Advantage
+
+Continuation PROGRESS: returned to the explicit arithmetic algorithm
+and strengthened the OUTPUT contract from average cosine to simultaneous
+phase accuracy. NEW theorems/integer_character_sine_box.py, matching tests,
+research/INTEGER_CHARACTER_SINE_BOX.md and phase_workbench JSON.
+No older producer/report rewrite, central admission, CLI/UI wiring,
+commit, push or new agent.
+
+WRITTEN ARGUMENT, pending independent review: for m public primes !=3,
+epsilon in (0,1/2), set w=ceil(sqrt(m)/epsilon), P=(product p)^w,
+M=3^k>2P^2 max(p), N=2*3^(k-1). Public ternary logarithms define a.
+Prepare product sine amplitudes on [-w,w], with public center phases;
+rational reconstruction/public trial division erase the actual word
+from syndrome a.y mod N; QFT outputs x. Each coordinate cosine mean is
+cos(pi/(2w+2)). Markov on SUM of squared torus distances gives
+max-coordinate error<=epsilon with ideal success>27/32, paid>13/16.
+b full verified trials fail<(1/2)^b. No source herald or uncharged advice.
+Cost polynomial in m,1/epsilon,log B,b, NOT log(1/epsilon).
+Generic decoder/Fourier mechanism, sine preparation and log lattice are
+known techniques; novelty and a useful external reduction remain open.
+
+NATIVE: m32,epsilon1/4,w23,M8014bits. Public construction126.50s,
+12actual decoder controls15.53s. The matched full-dimensional classical
+LLL/Babai attack succeeds; max error2.86945e-76, certified ALL-target
+squared Euclidean radius<=1.00975e-28. LLL3.68s, certificate.60s plus
+public preprocessing. No native quantum sampling or compiled circuit.
+This kills finite advantage evidence, NOT the quantum existence claim
+or the unresolved asymptotic classical complexity.
+
+RESOURCE WARNING: m20000,epsilon1/10 needs roughly916million modulus
+bits and over2.28TB of fixed-width public labels. Current lifting cache
+has still larger quadratic-bit storage. Only this description-size bound
+was computed, not the giant instance. Do not report practical feasibility.
+
+VERIFIED:30new/167connected tests PASS97.54s, RuntimeWarningfatal.
+Whole-law comparisons, decoder corners, un-erased-word failure control,
+exact verifier and full native classical certificate replay included.
+Python/site syntax, site checks, qsearch validate valid:true/issues[] pass.
+Full repository suite not run; all owned jobs terminal.
+
+DECISION: a reviewable constructive argument, not an advantage candidate.
+Do not launch width/tolerance sweeps or move scores between moduli.
+Next useful work is an independent proof/novelty audit, an asymptotic
+matched classical construction, or an independently useful reduction.
+If those cannot yield a concrete new mechanism, leave this track.
+FOLLOW-UP REVIEW: Regev Lemma3.14 explicitly contains decoder erasure
+and dual Fourier sampling; DQISection7 attributes the lineage. The note
+now gives the exact kernel/dual-lattice interpretation. Generic novelty
+is excluded; novelty of this precise finite instantiation is unsettled.
+No reduction to genericCVP/LWE follows from a special prime-log family.
+
+Producer/report SHA256:
+dac1f8b23910e983495ddd985d1a18125186c607705eac1fd2ef1f16662fe1b9 /
+f93153720117f811c78f0d50f482bad0b55ab50a88d0464dd14511f20b737ab8.
+
+## 2026-10-20 Whole-Law Classical QCT Column Sampler
+
+Continuation PROGRESS: investigated an independent representation-theoretic
+primitive after the scoped Gibbs falsifier. NEW
+theorems/rectangular_character_sampler.py, matching tests,
+research/RECTANGULAR_CHARACTER_SAMPLER.md and classical_baselines JSON.
+Binary-carrier note has a scope clarification. No existing producer/report
+rewritten, central admission, CLI/UI wiring, commit, push or new agent.
+
+QUESTION: can readout of a public S_(km) class-basis state k^m through the
+quantum character transform supply a new hard sampling primitive?
+ANSWER: no. Known Stanton--White rim-hook correspondence, Littlewood
+quotient and ordinary RSK give an exact polynomial classical sampler
+for the ENTIRE law chi_lambda(k^m)^2/(k^m m!), not just its moments.
+The sampling algorithm and combinatorial identities are PRIOR ART;
+the repository contribution is a matched implementation and scope audit.
+
+RULE: draw one uniform permutation of m and m independent uniform
+k-colors; split the word by colors; RSK each subword; assemble the empty
+k-core quotient by an equal-runner abacus. Invert the assembly on every
+sample. Conditional color counts are multinomial and relative subword
+orders are independent uniform, giving the exact character-square law.
+No character evaluation, all-partition table, n! group enumeration or
+irrep-label postselection in the sampler. Polynomial in degree n=km,
+NOT log n for a succinct descriptor. Ideal uniform randomness theorem;
+seeded PRNG only supplies replay.
+
+NATIVE: 64 samples each at n4096,k2,m2048 and n4095,k3,m1365.
+Sampling times .21548s and .10994s include source, RSK, abacus and inverse
+checks, but exclude startup and the separate exact point-mass certificate.
+Class sizes have21622/28822bits. All output partitions saved; first
+point masses stored as exact hexadecimal fractions. No quantum run.
+
+CONTROLS: all50rectangular columns through degree16,3635partition/column
+pairs agree with independent Murnaghan--Nakayama; actual colored-source
+enumeration agrees for five complete small source spaces.
+QCT column vs HSP weak-Fourier law has TV1/4 atS4. Coherent class
+superposition vs incoherent column mixture has TV1/2 atS2.
+Mixed cycle type(2,1,1),shape(2,2) has2unsignedpaths butcharacter0.
+These prevent false generalization to HSP, coherence or all mixed columns.
+
+VERIFIED:35new/202connected tests PASS100.61s, RuntimeWarningfatal.
+Python/site syntax, site checks, qsearch validate valid:true/issues[] pass.
+Full repository suite not run. All owned jobs terminal.
+
+DECISION: remove rectangular-column sampling as a putative new hard
+primitive. This does not refute QCT, replace the binary-carrier front end,
+or solveGI. Do not start a mixed-cycle parameter campaign by inertia.
+A successor needs an actual useful task plus interference or another
+output law and paid source/measurement costs, not merely surviving
+coherence or a formal exponential representation dimension.
+
+Producer/report SHA256:
+750c696b702ac8d508dd13a583b9e222f0245e4bd72bcc1471458fc040977453 /
+c2f5e40a3316d5a5dedaa18455db18b12fb9c4eba60f4d91f34c83108d60fce9.
+
+## 2026-10-20 Coherent TFD Pauli Readout: A Matched Classical Falsifier
+
+Continuation PROGRESS. Independent of the arithmetic-prefix route, tested
+the unresolved coherent-output loophole in the HDQI/Gibbs direction.
+NEW theorems/coherent_gibbs_readout.py, matching tests,
+research/COHERENT_GIBBS_READOUT.md and classical_baselines JSON.
+The relative-worldline note links the scoped follow-up. No old producer
+or artifact rewritten, no central admission, qsearch/UI wiring, commit,
+push or new agent.
+
+MODEL: public binary central parities c_i(z), and local blocks
+a_i X_i + (b_i+h_i c_i(z)) Z_i + e_i c_i(z) I.
+Noncommuting within each block; conditional products across blocks.
+NO quantum-block interactions. Target is one supplied two-sided Pauli
+expectation on the canonical TFD, not full coherent-output sampling.
+
+KEY ARGUMENT: equal central Pauli flip masks induce z'=z xor v.
+Let G(z)=phase Tr(F_z^dagger A F_z' B^T), w_z=||F_z||_F^2.
+Sample p(z)=w_z/Z and use 2 Re G(z)/(w_z+w_z').
+Hermitian pairing proves unbiasedness; Cauchy-Schwarz proves absolute
+sample bound ONE. Unequal central flip masks give exact zero.
+The local traces factorize; no partition oracle or Hilbert table.
+The unpaired ratio may be exponentially large and is NOT used.
+This is an application of established classical-simulation ideas
+(0911.1624/1310.6749), not a new general theorem or algorithm.
+
+ACTUAL SAMPLER: independent signed-bias pins, exact binary affine solve,
+ABSTAIN on dependent selections. Charge all abstentions as estimator zero.
+Kernel weight sum A gives TV <= A+2A/(1-A); cap at one.
+Arb bias intervals, explicit dyadic coin probabilities and union-bounded
+rounding error. Kernel enumeration cost 2^nullity charged, default cap12.
+No unchecked distance certificate. Written distance/high-temperature
+extension remains conditional on an independently justified distance.
+Interval mean + Hoeffding radius + 2TV gives the error ledger.
+Probability theorem assumes fair coins; seeded PRNG only enables replay.
+
+NATIVE CALIBRATION: 128 blocks/127 central bits, repetition-kernel F,
+a=1,b=1/3,h=1/2,e=1/5,beta=1/8, 510 TFD qubits never instantiated.
+Central X on BOTH copies, 4096 samples, seed2026102031.
+Mean .7552555560; independent O(N) even-parity reference .7558247605.
+99% fair-coin interval [.7043923,.8061188], TV <=2.907e-18,
+zero abstentions. Tables/certificate/sampling .91453s, excluding reference
+and process startup. This deliberately easy calibration is NOT hardness
+evidence or an executed quantum algorithm.
+
+VERIFIED: all256 minimal two-copy Pauli operators against the dense TFD;
+dependent labels, Y transposes, zero masks, extreme ratios, exact pin laws,
+and a quantum-interaction counterexample. 30new/533connected tests PASS
+35.70s, RuntimeWarning fatal. 111 existing dependency deprecation warnings.
+Python/site syntax, site checks, qsearch validate valid:true/issues[] pass.
+Full repository suite not run. All owned jobs terminal.
+
+DECISION: close this specific readout loophole. Do not launch a nearby
+temperature/observable sweep, and do not declare all TFDs classical.
+A constructive successor must specify a useful task outside efficiently
+contractible readout AND a paid quantum source/decoder/measurement.
+Interacting coherent outputs remain unresolved, not automatically useful.
+Choose a fresh concrete mechanism before adding another local barrier.
+
+Producer/report SHA256:
+88923115b864614209164625dc9f4e36f5919f9ec4b22973f5cee6d5b5b19b9e /
+508ebca6d31d46b12ec32ba60930cf8a419e314cfddbdcbd37e983c32f6c6c08.
+
+## 2026-10-20 Primitive Resonance Defeated By A Certified Classical Construction
+
+Continuation PROGRESS: a substantive constructive falsifier, not a sweep.
+NEW theorems/integer_character_primitive_coset.py, matching tests,
+research/INTEGER_CHARACTER_PRIMITIVE_COSET.md and its classical_baselines
+JSON. The resonance note now points to this stronger follow-up. Existing
+producers/JSON preserved; no central admission, qsearch/UI wiring, GPT
+commit/push or new agents.
+
+RULE FIXED BEFORE RUN: smallest prime prefix containing 3/4 of the full
+harmonic weight. The native 1024 primes through 8167 give 42 through 191.
+Every omitted prime is charged at -1, not assumed random or dropped.
+Use Gamma0=Z^d+(3a/N)Z, Q=N/3, numerator basis [a mod Q; Qe2; ...].
+Round to -a/3 and output x=1+3v1 mod N. Thus x mod 3=1 by construction.
+One FLINT LLL basis, one exact rational Babai call; no seeds or sweep.
+
+NATIVE RESULT: full weighted score .7606472331. Exact conservative score
+with ALL omitted coordinates worst-case exceeds .5047288356.
+The SAME basis gives an all-prefix-target guarantee exceeding .5047.
+Threshold remains 1/4; inherited ideal quantum mean .3040408367 is not
+executed or a maximum. This decisively solves the native weighted task
+classically. It is NOT the earlier uniform-weight CVP benchmark.
+
+CERTIFICATE: row membership, full index, exact normalized GS and
+rational-target rounding checked. Store the full 42x42 basis, coefficients,
+point, primitive assignment, errors, pivots and complete Arb score.
+Prefix error squared: 6.0244e-16; all-target R^2 upper: 1.5354e-15.
+LLL .65009s, certificate/full verifier .09285s, plus public preprocessing,
+loading and label revalidation. No prior 1024D LLL basis or free advice.
+
+ASYMPTOTIC WRITTEN ROUTE: harmonic weights give d=exp(O((log B)^(3/4))).
+An integer dual relation requires U-V divisible by M/3, giving
+lambda1(Gamma0*)>log(M/3)/(sqrt(d)*logz).
+Known transference gives covering radius O(d^(3/2)*logz/log(M/3)),
+which is B^(-1+o(1)). Existing exact CVP therefore constructs a primitive
+accepted output for sufficiently large B in 2^O(d)*poly(m,log M).
+This guaranteed bound is NOT polynomial in log M. Exact CVP was NOT
+executed; native Babai quality is not an all-length theorem.
+Independent review is still needed.
+
+VERIFIED: 21 new/357 connected tests PASS in 53.90s, RuntimeWarning fatal.
+Independent Fraction/Bareiss controls include both primitive classes,
+signed/permuted/sheared bases, integer prefixes, dense cores and huge centers.
+ALL 42 native Gram pivots independently verified via leading determinants.
+Python/site syntax, check_site, qsearch validate valid:true/issues[] and
+git diff --check pass. Full repository suite not run. No owned jobs remain.
+
+DECISION: no prefix-quota/threshold tuning or adjacent benchmark campaign.
+Matching the quantum sampling law is unnecessary to defeat its search task.
+The weighted application is lower priority after this strong classical
+construction. Preserve the asymptotic upper bound and reject unproved
+polynomial-time conclusions. The next main-model pass needs an independent
+constructive quantum mechanism or a genuinely useful external reduction,
+not another neighboring arithmetic bound.
+
+Producer/report SHA256:
+02bd24d894654a9cd79dd1d2d42ae2d83f89dcc5e5d7e0ca3293be742af86432 /
+694a5dfe0c3adbdb5d8105713f5ed03dec9caba57e4ffd0ffc6ac3e75960c853.
+
+## 2026-10-20 Primitive-Character Application And Classical Control
+
+Continuation PROGRESS: tested an external mathematical use of the guarded
+sampler, not another CVP radius/depth extension. NEW
+theorems/integer_character_resonance.py, matching tests,
+research/INTEGER_CHARACTER_RESONANCE.md and its reductions JSON.
+No central admission, qsearch/UI wiring, GPT commit/push or new agents.
+Earlier producers and artifacts are unchanged.
+
+TASK: all primes p<=B except3; chi_x(p)=exp(2*pi*i*a_p*x/N), M=3^k,
+N=2*3^(k-1). Find a PRIMITIVE character, x mod3!=0, with
+S/W>=1/4, S=sum Re(chi_x(p))/p and W=sum1/p. Centers are ZERO.
+This is a new weighted problem, not the saved random-target CVP.
+
+WRITTEN ARGUMENT: enforce the height guard also modulo M/3:
+M/3>2B^(2cap+1). Source overlaps shifted by N/3 or2N/3 vanish,
+including mixed first-moment shifts. Hence each x mod3 class hasmass1/3
+and the same cosine mean. Primitive filtering preserves the inherited
+mu>601/2000 uniform mean for m>=20000. Source rejection, primitivity,
+TVerror and score verification are charged: success>1/256 per trial.
+256b trials fail with probability<=2^-b. Independent review still needed;
+no circuit was compiled or quantum optimizer executed.
+
+EXTERNAL IMPLICATION: with h=bit_length(B), sigma=1+1/h, an accepted
+witness satisfies log|L(sigma,chi)|>=log(log(B+1))/4-43. The note gives
+an elementary uniform Euler-product/tail argument. This is NOT s=1 or
+the critical strip, and the bound is too loose to imply |L|>1 natively.
+Existing resonance literature proves stronger existence results; neither
+algorithmic novelty nor classical difficulty is established.
+
+FINITE FALSIFIER: fixedseed2026102027,32primitive classical labels,
+same J16 public labels, all1024primes, B8167,k706,N1119bits.
+TWO pass, at zero-based indices2,24. Bestscore .3236971958,
+S .6885637432,W2.1271847642, logtruncatedproduct .7571841716.
+Inherited ideal quantum mean .3040408367 is not an executed result.
+All32complete scores and failures saved. No native separation remains
+for this task, and random trials are NOT the strongest classical baseline
+or an asymptotic probability estimate.
+
+VERIFIED:21new tests;336connected tests PASS45.90s with RuntimeWarningfatal.
+Exact conductor-descent controls, small Fourier projection identities,
+an unlicensed projection counterexample, complete-prefix/public-label
+checks, principal-character rejection, interval scoring and full artifact
+replay. py_compile, site JS syntax, check_site and qsearch validate
+valid:true/issues[] PASS. Full repository suite not run. No jobs remain.
+
+DECISION: preserve this as a review-pending constructive application.
+Do NOT spend another pass improving the analytic constant or running a
+nearby weighted-score sweep. A worthwhile next question is a polynomial
+classical primitive-resonator construction or a useful external reduction.
+Weighted small-prime lattice attacks, 3-adic conductor lifting and
+constructive resonance are live threats. If no substantive path emerges,
+pivot to an independently motivated end-to-end quantum candidate.
+
+Producer/report SHA256:
+25134948393d1356ccfa598a982dfa448a66a418613d279b7c62db25f851ab54 /
+00b504007fb85e9a9454b6acf0539584513c232486173652bec721555957e333.
+
+## 2026-10-20 Full-Target Feedback Attack Tested Without Improvement
+
+Continuation PROGRESS: implemented and falsified the improvement
+hypothesis for one predeclared greedy attack on the actual native input.
+NEW theorems/integer_character_feedback.py, matching tests,
+research/INTEGER_CHARACTER_FEEDBACK.md and its classical_baselines JSON.
+Existing Babai/read-set producers and artifacts unchanged. No central
+admission, qsearch/UI wiring, GPT commit/push or new agents.
+
+CONSTRUCTION: start from the saved65-branch winner, freeze higher core
+coefficients, branch at one plane around its nearest integer, exactly
+complete all lower rows, score ALL1024coordinates and retain the best
+complete witness. The chosen state guides the next plane. Fixed schedule:
+core188down to165,24levels, offsets0,+/-1,...,+/-4,216proposals.
+The incumbent is explicitly retained, even for nongreedy/repeated starts.
+This is a standard nearest-plane heuristic adaptation, not a new algorithm
+or an inherited Lindner--Peikert exhaustive-search guarantee.
+
+NATIVE RESULT:193distinct assignments among216proposals; six distinct
+assignments meetD<=.065, including the seed, so five additional witnesses.
+Best new nonzero-offset proposal .06344063498. NONE beats the incumbent
+.06266165019; all24steps retain it. The quantum expected upper .05949507
+is not matched, but that miss does not imply hardness or advantage.
+The modulus, seed2026102016, all1024rows and originalthreshold are unchanged.
+No adaptive parameter expansion, target restarts or post-hoc threshold move.
+
+SCOPE: exact small controls prove that changing only prefix centers can
+change later feedback proposals, whereas the old fixed list is invariant.
+But the native run accepted no update, so it provides no evidence that
+feedback helped. Visited216 is not a target-blind pool size. Conversely,
+the full fixed-depth policy can still be unrolled into at most65*10^24
+conditional candidates (including incumbent choices). No blanket escape
+from read-set bounds follows. Growing depth may make that pool exponential
+while visited work stays polynomial, but no convergence theorem is given.
+
+COST: inherited1232.23s LLL and seed work remain charged. This run:
+basis load/exact profile10.88s; feedback search26.30s, plus seed validation.
+The inherited interrupted-run elapsed includes LLL; do not double-add it.
+All216scores, parent/selected assignments, exact final coefficients,
+basis point and centered point are saved.
+
+VERIFIED:8new/313connected tests PASS39.52s, RuntimeWarningfatal.
+Independent full-dimensional Fraction/Bareiss checks cover forced tails,
+large integers, signed coordinate rows and nonunit labels. All native
+proposal scores, selection monotonicity and final witnesses replay.
+py_compile,12JSsyntax,check_site,qsearch validate valid:true/issues[] PASS.
+No full-repository suite claim. All owned jobs terminal.
+
+DECISION: do NOT immediately increase radius/depth or add another nearby
+bound. Gemini owns any preregistered empirical extension. Main-model
+investment in this family now needs a substantive external reduction or
+genuinely different algorithmic mechanism; otherwise pivot to an
+independently motivated concrete quantum candidate. No advantage claim.
+
+Producer/report SHA256:
+6d55f2207078b63a35985aaba9feb6fc58d277dd7ff8cf45d50821891c9e87bd /
+2a41bd98b24d00ccb86140a4e38094a26d3a8cb71584e615e68049c69c88f342.
+
+## 2026-10-20 Scope Of The Classical Native Falsifier
+
+Continuation PROGRESS. NEW theorems/integer_character_readset.py,
+matching tests, research/INTEGER_CHARACTER_READSET.md and
+classical_baselines/integer_character_readset.json. No new candidate,
+central admission, qsearch/UI wiring, GPT commit/push or new agent.
+Existing Babai producer and its successful native witness are unchanged.
+
+QUESTION: does65-branch native success already give an asymptotic
+classical competitor? No. The actual scalar list depends on only190target
+coordinates. The834integer-prefix coordinates affect rounding and final
+ranking but not candidate scalars. Exact small counterfactual tests cover
+signed/permuted prefixes, including elimination of the a1=1 coordinate.
+The native basis/input hashes and successful witness are rechecked.
+
+CONDITIONAL ARGUMENT: if r independent uniform centers modulo evenN are
+unread during formation of an ENTIRE pool of at mostK candidates, each
+unread normalized squared residue hasmean mu=1/12+1/(6N^2),range[0,1/4].
+Withdelta=mu-m*tau/r>0, success<=min(1,K*exp(-32r*delta^2)).
+Ranking may read all centers; candidates need not be independent.
+This is an input-dependence limit, NOT a classical-computation lowerbound.
+It also applies to a quantum factory satisfying the same restriction.
+Information flow is a written assumption, not automatically certified.
+
+AT NATIVE PARAMETERS the bound is1: VACUOUS. The .06266165 classical
+threshold success is retained, not explained away or relabeled quantum.
+For polynomialK and tau13/200, ignoring more than78% of coordinates by
+a fixed margin gives exponentially vanishing success asymptotically.
+Concrete checked regime: m>=20000,r>=.95m,K<=m^4 =>success<=2^(-m/300).
+NO evidence establishes that actual LLL profiles satisfy this regime.
+No general classical hardness, asymptotic separation or formal Lean claim.
+
+SCOPE FALSIFIERS: adaptive x=c at m1,N2 succeeds surely, contradicting the
+misapplied one-visited-candidate bound2/3; charging its full two-point pool
+gives1. Ten equal uniform target bits havezero-distance probability1/2,
+not the1/32 bound obtained by falsely assuming coordinate independence.
+Do not apply the result to adaptive visited counts or uniform marginals.
+
+VERIFIED:18new/305connected tests PASS35.36s, RuntimeWarningfatal.
+py_compile,12JSsyntax,check_site,qsearch validate valid:true/issues[] PASS.
+No full-repository suite claim. All owned jobs terminal.
+
+DECISION: Gemini can record actual read fractions/pool sizes during
+preregistered scaling and test full-target-aware classical competitors.
+Do not extrapolate one basis, move the threshold, or tighten this bound
+as the next main-model pass. Select a substantive full-target-aware
+algorithm, meaningful external reduction or independent concrete quantum
+mechanism; do not generate another neighboring barrier by inertia.
+
+Producer/report SHA256:
+257cdf132d7a3e4c1f43d3d088e64fde515bcaba130e0ccc8b184e12ec554c4e /
+0ed1ceadf5ffe84923029c6b7b350aae1dbafa224e8aa2864d464e86e83ad929.
+
+## 2026-10-20 Native Integer-Character Threshold Matched Classically
+
+Continuation PROGRESS: a concrete finite falsifier, not another source
+refinement. NEW theorems/integer_character_babai.py, matching tests,
+research/INTEGER_CHARACTER_BABAI.md, classical_baselines report, complete
+compressed reduced basis and its provenance. No central admission,
+qsearch/UI wiring, GPT commit/push or new agents.
+
+SAME FROZEN INPUT: J16, m1024, cap35, 1119-bit cyclic order, independent
+centers seed2026102016. No subset objective, reduced modulus, planted
+target or replacement seed. Ordinary exact Babai gives D=.06884104458
+and misses the declared13/200=.065 target.
+
+DECISIVE STRONGER ATTACK: enumerate last-plane coefficient offsets
+0,+1,-1,...,+32,-32, then exactly reround ALL earlier coordinates.
+65 distinct assignments; offset-17 givesD=.06266165019405616<.065.
+Exactly one of65 succeeds. Every assignment is scored exactly; the
+winning full basis coefficients, lattice point and scalar are saved.
+This FALSIFIES THE NATIVE THRESHOLD GAP. It does not match the quantum
+expectation upper .05949507, prove an asymptotic classical algorithm or
+invalidate the quantum source/reduction. No IID inference from65branches.
+
+EXACT MATH: membership in aZ+NZ^m is checked row by row. Gram minors have
+known N^(2k-2) factors from rank one moduloN; normalized fraction-free
+elimination checks full index via terminal pivot1. The LLL basis has834
+leading signed N-coordinate rows. Eliminate them analytically, solve the
+190-dimensional Schur core, and recover ALL834 coefficients by exact
+rounding. This retains all1024constraints. It is not a row-subset proxy.
+Small controls cross-check against independent ordinary Bareiss/Fraction
+Babai, including nonunit labels, huge integers, shears, ties, signs and
+coordinate permutations.
+
+Last normalized GS squared length is1.9489268e-7. Offsetu adds at most
+(u^2+abs(u))*g_last/m to the raw all-target bound; max32 costs<2.01e-7.
+The actual all-target upper is .206409343, NOT a useful covering
+certificate. Continuous-Haar mean .068803114 is not a discrete guarantee.
+
+COST: full FLINT LLL1232.23s. Its generic verifier was interrupted after
+64reported rows, at process elapsed>=1507s INCLUDING LLL/serialization.
+Basis retained unchanged before editing code. Final saved-basis load.56s,
+exact full verification10.29s,65branch search8.15s. Keep incomplete-run
+cost visible; do not add the old LLL twice. Compressed basis31,035,167bytes.
+Reproduce with python theorems/integer_character_babai.py --reuse-basis;
+without that flag it reruns and charges LLL. The earlier completed
+ordinary-Babai-only replay also cost10.81s verification/.57s loading.
+
+VERIFIED:10new/287connected tests PASS32.47s, RuntimeWarningfatal.
+Full native winning coefficients/point and all65scalar scores replayed;
+all834coordinate rows checked, first8original and first8nontrivial core
+Gram pivots independently checked. Full profile recomputation is done by
+the producer, not the quick test. py_compile,12JSsyntax,check_site,
+qsearch validate valid:true/issues[] and git diff --check PASS.
+No full-repository suite claim. All owned jobs terminal.
+
+NEXT: Gemini owns a preregistered multi-length/multi-center scaling test
+with stronger rounding/blocks and full costs. Do NOT move the threshold
+after this result, count65correlated branches asIID, or mark the entire
+family dequantized from one input. Main-model work needs a structural
+classical scaling argument or a substantive external application, not
+another pilot/constant/source refinement. No native advantage claim.
+
+Producer/report SHA256:
+75663748487abe60e41067aa43631a5f0ea13ab6ca025d6aefbb6bfe22de150b /
+61d30b651da345d86ab3876823869d6cf0b3f8bea7e7c713effda6fe3e3a19c9.
+Basis SHA256:
+3279278c9d2d965a467756cd87afaac7db87311758c9ea48c9e8e4934bdf6a53.
+
+## 2026-10-20 Guarded Integer-Character Near-Vector Reduction
+
+Continuation PROGRESS. NEW theorems/integer_character_near_vector.py,
+matching tests, research/INTEGER_CHARACTER_NEAR_VECTOR.md and
+research/reductions/integer_character_near_vector.json.
+No claim admission, qsearch/UI wiring, GPT commit/push or new agents.
+
+SCIENTIFIC GAP: cosine>.3 alone does NOT imply a useful Euclidean bound.
+A50-coordinate residual vector with33zeros and17half-periods has cosine
+.32 but mean square .085>1/12. Also the FIRST-moment-licensed M729,
+primes(2,5,7),cap1 instance has a THIRD-harmonic alias:
+5^4*7=1+6*729. Both controls are saved and tested.
+
+NEW GUARANTEE UNDER REVIEW: strengthen the height condition to
+M>2*B^(2cap+16). For the signed product source, mu1 is the prior mean,
+mu2=(t/2)*Pr_(m-1)[P,Q<=cap-1]/Z, and mu3...mu16 vanish.
+The periodic squared-distance Fourier series plus its unlicensed tail
+<=1/(16*pi^2) gives a bound on actual normalized squared distance.
+For m>=20000,cap=floor(7m/200),t1/20, the exact rational upper is
+.05988684851<.06 for EVERY center vector.
+
+LATTICE MEANING: L={y:a dot y=0modN}; Gamma=L*=Z^m+(a/N)Z.
+Explicit bases satisfy B_Gamma_numerator * B_L^T = N*I exactly.
+Gamma has determinant1/N. Any x produces a verified lattice numerator
+v=c+r with centered residuesr; D=sumr^2/(mN^2). Conversely x=v1modN
+becausea1=1, and ALL coordinates must pass modular membership.
+Composite/nonunit labels are allowed and tested.
+
+PAID SEARCH: idealPr[D<=13/200]>=1/13. WithTV1e-4 and herald>1/8,
+per-trial success>1/128;128*b charged trials givefailure<=2^-b.
+Exact rational target rounding adds<=1/(2N) per coordinate. ForN>=100,
+this gives ABSOLUTE radius .26sqrt(m) for arbitrary rational targets.
+NOT a relative CVP factor or general-lattice hardness reduction.
+
+NATIVE SEPARATE INSTANCE:1024rows,cap35,J16,k706,1119-bit cyclic order.
+All labels generated/verified and70signed errors decoded from syndrome.
+Full independent uniform centers frozen atseed2026102016 BEFORE any
+optimization. Ideal mean-square upper .05949506995 and ideal grid-success
+lower .08469123. The x0 integer-rounding control hasD .08417206568.
+That is only a control, NOT a competitive classical portfolio.
+No native quantum or serious classical optimizer was executed.
+The OLD924-bit cosine modulus fails the J16 guard; comparisons cannot
+be inherited or mixed across these instances.
+
+NOVELTY CRITIQUE: checked Regev qcrypto.pdf Section3.2; auxiliary-register
+erasure plus Fourier sampling is already known. This is an explicit
+source/readout specialization, not an invented quantum transference
+mechanism. Classical difficulty and an external application remain open.
+
+VERIFIED:14new/277connected tests PASS30.55s, RuntimeWarningfatal;
+includes full native input/witness replay, exact dual bases, higher-moment
+controls, rational target translation and provenance checks.
+py_compile,12JSsyntax,check_site,qsearch validate PASS valid:true/issues[].
+No full-repository test claim. All owned jobs terminal.
+Producer/report SHA256:
+f9d380c88b1df199abc84d10cc1a2c69e760a9355d38eca44c464f53cd885a51 /
+bd0b8d4819b14d58ab6042785102745dc89cfe566bb9aa26022d38f889ec1b8e.
+
+NEXT: strong precision-safe CLASSICAL lattice/p-adic attacks on the
+frozen J16 instance and structural theory, or a substantive external
+reduction. No more pilot, moment-budget or constant tuning passes.
+Gemini owns routine portfolios; main-model work must address that risk.
+
+## 2026-10-20 Uniform Integer-Character Algorithm And Error Budget
+
+Continuation PROGRESS. NEW theorems/integer_character_uniform.py,
+matching tests, research/INTEGER_CHARACTER_UNIFORM.md and its
+phase_workbench JSON. This is a written algorithm argument plus exact
+constant certificates, NOT a compiled circuit, kernel-checked theorem,
+quantum execution, novelty determination or speedup.
+
+UNIFORM CLAIM UNDER REVIEW: for every m>=20000, cap=floor(7m/200),
+t1/20 and the licensed public integer family, EVERY center vector has a
+polynomial-time quantum procedure finding mean cosine>=.3. Binomial
+variance/union bounds give Z>1/4 and R>39/40, hence ideal mean>601/2000.
+The proof handles floor rounding and does not assume independent sign
+counts. Native m1024 uses its separate exact certificate, not this range.
+
+NO FREE SOURCE: prepare local signed qutrits, count both signs, herald
+only box membership, uncompute counts. Pay rejected trials. Compute the
+syndrome, reversibly recover y FROM s, erase y, uncompute work, and QFT.
+CRT output is x=3^(k-1)*e+2*v modN, not an unchecked inverse CRT map.
+Exact small character tests verify this relabeling.
+
+PAID ACCURACY: source norm error<=epsilon/8, QFT operator error<=epsilon/2
+give conditional TV<=epsilon using Z>=1/4. With epsilon1e-4 and rigorous
+score error1e-5, robust conditional search probability>1/2000, herald
+probability>1/8, total per-trial success>1/16000. At most16000*b charged
+trials give failure<=2^-b. Counts/arithmetic are exact logical operations;
+invalid qutrit encodings and leakage cannot be silently renormalized.
+
+RESOURCE MODEL: O(mL^3) classical public-label preprocessing and
+O((m+L)L^2+m logm) reversible arithmetic before rotation synthesis,
+L=bit_length(M)=O(m bit_length(B)). QFT has O(L^2) fixed-dimension blocks.
+Native group924bits has582 qutrit Fourier and169071 controlled-phase
+blocks. These are NOT compiled gate, qubit or T counts.
+
+IMPLEMENTED VERIFIER: score_interval/verify_score computes exact big-int
+residues before Arb cosine, checks enclosure width, and accepts only a
+rigorous score lower bound>=.3. Constructed positive/negative controls
+are validation, NOT native optimizer successes.
+
+VERIFIED:27new/263connected tests PASS33.47s, RuntimeWarningfatal.
+py_compile,12JSsyntax,check_site and qsearch validate PASS valid:true/issues[].
+No full-repository suite claim. All owned jobs finished.
+Producer/report SHA256:
+423d1c64dd509ba911ea8d8572646fd31e64601671906e33a8214797e171a4a2 /
+e3037a5f7090a070defd41088003b567725ba696e3e4ffb5dd8fa828310c27d9.
+
+NEXT: independent algebra/resource review and strong CLASSICAL p-adic/
+lattice attacks, or a meaningful external reduction. Do not optimize
+these conservative constants, start a new pilot sweep, or treat a
+polynomial quantum procedure as evidence of a quantum advantage.
+No central admission, qsearch/UI changes, GPT commit/push or new agents.
+
+## 2026-10-20 Public Integer-Character Interpolation
+
+NEW theorems/integer_character_interpolation.py, matching tests,
+research/INTEGER_CHARACTER_INTERPOLATION.md and
+research/phase_workbench/integer_character_interpolation.json.
+This is a different public-input family, not another finite-field pilot
+curve or an admitted speedup. The prime-product lattice/rational decoder
+is known from Ducas--Pierrot (2018); the source/readout application needs
+independent proof and novelty review.
+
+ACCESS: M=3^k, N=2*3^(k-1), distinct public primes other than3.
+All labels a_i=log_2(p_i) modN are CLASSICALLY generated by ternary lifting
+and verified by exponentiation. No Shor preprocessing or exponential log
+table. The task is to find x with large mean cos(2*pi*(a_i*x-c_i)/N).
+Both solvers get labels and centers. One cyclic coordinate still has
+logN output bits; old finite-field comparisons do not transfer.
+
+ALGEBRA: M>2*B^(2cap+1) licenses the full signed box and its score
+readout, including magnitude-two transitions. Rational reconstruction
+plus trial division over PUBLIC primes decodes from the syndrome alone.
+A cap-one control modulo27 is norm-injective but fails readout.
+
+NATIVE:1024public primes, cap35,924-bit cyclic order,70signed errors
+decoded exactly. All labels saved and verified. A36-positive control is
+rejected. Ideal mean lower bound .3040408367. This is a construction and
+decoder check: NO native centers, classical optimizer or quantum optimizer
+were executed. Full coherent compilation/precision remains open.
+
+VERIFIED:17new/236connected tests PASS27.59s, RuntimeWarningfatal.
+py_compile,12site JS syntax checks,check_site and qsearch validate PASS;
+validation valid:true/issues[]. No full-repository test claim.
+Producer/report SHA256:
+d96d8380a55c612ac88211eb8253713cd319b1f91414457a4cff4ff045a089c0 /
+9e37cfacc6cdb21af28af789395efbec3b56646f84633306ca003cb3fc4d060f.
+
+DECISION: large group order removes full-group enumeration, not classical
+optimization. Smooth-order p-adic digit/block attacks and precision-safe
+lattice attacks are mandatory. Gemini owns matched campaigns; main-model
+work should resolve structural attacks, uniform algorithmic resources or
+a meaningful reduction. No central admission, CLI/UI wiring or GPT commit.
+
+## 2026-10-20 Native Coordinate Heat-Bath Trap And Basis Countercheck
+
+Prior goal turn PROGRESS. This pass resolves a concrete sampler risk, not
+general classical hardness. NEW theorems/balanced_mpi_heatbath_trap.py,
+matching tests, research/BALANCED_MPI_HEATBATH_TRAP.md,
+research/classical_baselines/balanced_mpi_heatbath_trap.json.
+No central admission, qsearch/UI wiring, GPT commit/push or new agents.
+
+INPUT: inherited the other agent's systematic-basis cosine portfolio
+witness on m6000,n420,N8191, centerseed261006753, score.1166489027.
+No new starting-state search. The artifact freezes all6000centers and
+420assignment coordinates, field presentation and source-artifact hash.
+Explicit and fast public matrix products agree. Target is the SAME
+positive product law att1/20, NOT the original13/200 quantum pilot.
+
+CERTIFIED: Arb complex-ball DFTs at96bits evaluate all8191points on ALL
+420 ORIGINAL-coordinate lines. Exact outward harmonic-tail accounting
+plus interval roundoff gives max log exit upper−253.149257615...
+Predeclared bound q_j<=2^-256 holds for every coordinate.
+All row maps are surjective, verified by exactgcd. Jensen and the odd-N
+root-product identity bound the stationary mass of this state:
+logpi<=−3333.928277937..., hencepi<=2^-256 without full-column-rank advice.
+
+Therefore atT=2^250 SINGLE-coordinate updates, the original random-scan
+heat-bath chain from this state hasTV>=63/64−2^-256>.98.
+This is a FINITE FIXED-START obstruction, not typical-start or asymptotic
+mixing hardness, and not evidence against every classical algorithm.
+No chain was simulated for2^250steps. No Lean formalization claimed.
+
+SELF-CRITIQUE COUNTERCONTROL: scanned all420 systematic I0 directions
+with the floating diagnostic, then independently interval-replayed the
+selected column238,step2539. Exact inverse identity verified.
+True loggain in[-11.144316988,-11.144125715]; conditional exit probability
+>=.000014457005595>2^-17. The systematic random-scan chain's expected
+FIRST EXIT from this particular state is<29.1million updates, and in
+particular<=420*2^17. NOT a mixing upper bound or successful optimizer.
+This explicitly invalidates extending the2^250 claim to that basis.
+
+VERIFIED:8new/219connected tests PASS16.58s, RuntimeWarningfatal. Includes
+native input/score replay, original and systematic interval-line replay,
+prime/composite DFT controls and a nontrap that fails certification.
+py_compile,12JSsyntax,check_site,qsearch validate valid:true/issues[] PASS.
+No full-repository suite claim. All owned jobs terminal.
+Producer/report SHA256:
+d24427ae496631a2d081006e458804c37701d23850911d2264b868d50d186c94 /
+e5e85baca80e5d6b3d389fd653c3e2a501aa0f28c86cf3f54fd81502a0ec018f.
+
+DECISION: do not fund a long cold original-coordinate Gibbs campaign from
+this warm start. Keep it as a trap control. Stronger/adaptive bases,
+tempering, blocks and nonlocal proposals remain open; Gemini owns empirical
+campaigns. Main-model work needs a constructive escape/mixing mechanism
+or a meaningful algorithmic reduction, not more neighboring trap examples.
+Do not relabel score hitting-time diagnostics as total-variation mixing.
+
+## 2026-10-20 Balanced MPI: Product-Target Classical Attack Reduction
+
+NEW theorems/balanced_mpi_product_target.py, matching tests,
+research/BALANCED_MPI_PRODUCT_TARGET.md,
+research/classical_baselines/balanced_mpi_product_target.json.
+No new sampler or speedup claim, central admission, GPT commit/push,
+qsearch/UI wiring or edits to other agents' producers.
+
+SCIENTIFIC QUESTION: can a classical sampler reproduce the useful signed
+pilot without evaluating its expensive truncated amplitude? Derived an
+AVERAGE-CENTER transfer to the simple positive product density
+prod_i [sqrt(1-t)+sqrt(2t)*cos(theta_i)]^2 for0<t<1/3.
+Let Z be retained source mass, delta=1-Z, G retained and H discarded
+target amplitudes. Source injectivity gives||G||^2=Z; independent uniform
+centers giveE||H||^2=delta. Projection yields pointwiseTV<=sqrt(||H||^2/Z),
+hence averageTV<=sqrt(delta/Z). This does NOT assume contraction under
+the colliding syndrome map. Proof review pending; not Lean-verified.
+
+NATIVE same m6000,n420,cap209,N8191, but t1/20 instead of13/200:
+discardedmass~3.17978e-6, averageTV<=.0017831971, quantummean>.308.
+If a CLASSICAL SAMPLER approximates the product law to averagedTV<=.001,
+joint random-center search probability at score>=.3 is>.00896037.
+No such sampler/mixing theorem is supplied. The old13/200 pilot comparator
+has ZERO useful success lower bound under this transfer, not dequantization.
+
+FAST ATTACK PRIMITIVE: withr=sqrt(2t)/(sqrt(1-t)+sqrt(1-3t)), log weights
+have coefficients4(-1)^(k+1)r^k/k. Accumulate +/-k*line_slopes into cyclic
+FFT bins, O(mL+NlogN) after charged direction/residual preparation.
+Zero/nonunit slopes are legal; composite controls15and21 pass.
+Uniform log-tail<=4m*r^(L+1)/((L+1)(1-r)); derive conservative rational
+stationaryTV<=2epsilon/(1-2epsilon).
+
+At nativeL9:108000coefficient accumulations, FFT8191, stationaryTV bound
+.00009564506. One whole native line computed;12predeclared direct checks
+have maxlogerror8.01683e-7<certifiedanalyticbound4.78180e-5.
+Floating roundoff is NOT certified; residual error budget remains.
+Native point ranges0..5999 and6000..6419; declaredcenterseed20261020;
+not the author's optimizer seed, a chain run or an optimizer witness.
+
+COUNTERCHECKS: a generic colliding all-ones map has source loss<.01 but
+fixed-centerTV=.66186. This is NOT an MPI no-go. Code shiftsc->c+Bz merely
+translate both distributions, preservingTV; they cannot replace independent
+center randomization. Exact-center averaging on125controls, prime/composite
+target states, all-line FFT controls and exact native bounds are tested.
+
+VERIFIED:20new/210connected tests PASS16.84s, RuntimeWarningfatal,
+including exact native certificate replay. A concurrent agent added
+classical portfolio code to balanced_signed_mpi.py and one connected test.
+The first final replay caught its changed dependency hash; inspected the
+unchanged source-mass/mean functions and regenerated ONLY this new artifact.
+No concurrent work reverted or claimed as ours.
+Compile,12JSsyntax,check_site,qsearch validate valid:true/issues[] PASS;
+full Lean build --wfail also passes again. No full-repository Python-suite
+claim. All owned jobs finished.
+Producer/report SHA256:
+bc64564834b3d0707c004a128cba7e4b9ca83826f28c9939534ac38ba34357cc /
+b87bd293f25ae1d8b79a7b688aa87e040e97467246eef364dac51e9b82da5bce.
+Current balanced producer dependency:
+c34f50718f56772798afeb1f6292c87cd5482fb3a4bae4cb359cc1d63506f789.
+
+NEXT: Gemini runs matched exact/harmonic block-Gibbs/tempering versus the
+existing portfolios. Keep full assignments, centers and all budgets.
+Main-model task is now mixing/landscape analysis or a different sampler,
+not another source-density sweep. A successful search witness does not
+certify TV or asymptotic dequantization. Full task in mechanical plan.
+
+## 2026-10-20 Balanced Signed MPI: Kernel-Checked Separation
+
+Continuation of the constructive candidate, not central claim admission.
+NEW formal/Formal/BalancedSigned.lean; imports/audits in Formal.lean and
+Formal/Audit.lean; scoped documentation in formal/README.md and
+research/BALANCED_SIGNED_MPI.md. Python producers and saved data unchanged.
+No GPT commit/push, CLI/UI wiring, or edits to other agents' work.
+
+CHECKED: rational separation over any field with distinct evaluation
+points, pole exclusion and strict cross-degree bound; balanced-box
+injectivity; positive/negative readout shifts including repeated roots
+and cancellation; actual integer-array encoding and separation; budget
+guard equivalence; a ZMod11 alias and its distinct pole-free points.
+No squarefree/reduced-fraction or prime group-order assumption.
+
+All9 audited statements have only propext, Classical.choice, Quot.sound.
+Full pinned Lean4.35.0/Mathlib4.35.0 `lake build --wfail` PASS, including
+axiom guards and existing crosschecks. Generated crosscheck source is
+current.189connected Python tests PASS16.54s, RuntimeWarningfatal;
+py_compile,12JSsyntax,check_site,qsearch validate valid:true/issues[] PASS.
+No full Python repository-suite claim. No owned jobs left running.
+
+NOT FORMALIZED: discrete-log/syndrome bridge, quantum Fourier transfer,
+preparation, numerical mean bound, executable Euclidean decoder or its
+cost, full coherent gate/precision accounting, classical hardness.
+Independent review and novelty assessment of the FULL candidate remain
+pending. A checked algebraic lemma is not a quantum speedup.
+
+Lean source SHA256:
+952b438569f9ba8f8de7128f6ae787f248c2ee383d5f12507ee661a557f4c27f.
+Audit SHA256:
+cdaea4943ee05761cdd60bf701ee2012e976010a6028ddc4e94ebe73087df054.
+
+CLASSICAL LITERATURE CHECK: arxiv2610.06753v1 D.1 already gives FFT line
+scoring and systematic-basis updates. Reimplementing these is routine
+baseline work, not a new attack. arxiv2607.28120v1 supplies DQI MCMC
+counterpressure but not a matched dequantization of this candidate.
+Next theory work remains a structural attack or meaningful reduction.
+Do not substitute more pilot curves for this missing scientific test.
+
+## 2026-10-20 Balanced Signed MPI: Constructive Readout Extension
+
+Second pass after the chain ceiling. Goal ACTIVE. No GPT commit/push,
+central admission, qsearch/UI wiring, new agents or unrelated edits.
+All owned jobs finished.
+
+NEW: theorems/balanced_signed_mpi.py, tests/test_balanced_signed_mpi.py,
+research/BALANCED_SIGNED_MPI.md,
+research/phase_workbench/balanced_signed_mpi.json.
+PRIMARY arxiv2610.06753v1 Sections6.2/B.2: known public log-Cauchy/rational
+decoder, not our invention. Its wider random-sign recovery guarantee
+explicitly does not supply a wider exact score-readout guarantee.
+
+CONSTRUCTIVE PROOF CANDIDATE: use the FULL box E_(a,b) of signed0,+1,-1
+patterns withpositive count<=a andnegative count<=b. Equal syndromes give
+rational cross-product degree<=a+b, so n>a+b gives norm/decoder injectivity.
+A score frequency changes one coordinate by+/-1, possibly making+/-2;
+comparison with any box element has cross-degree<=a+b+1. Thus n>=a+b+2
+gives EXACT readout for the whole box, not just low TOTAL weight.
+Unique factorization handles multiplicities. Independent proof review
+and novelty check are pending.
+
+The exponent group can be Z_(2^h-1), COMPOSITE allowed. Only field rational
+functions and cyclic-character orthogonality are used; no fictitious prime
+field or full-column-rank assumption. Choosing2^h=O(m+n) gives a polynomial
+explicit log table and avoids Mersenne-prime infinitude. Oversized fields
+would change that cost. Rank/module assumptions for classical comparators
+must still be checked, not inferred from distinct points.
+
+SOURCE: product amplitudes sqrt(1-t),sqrt(t/2),sqrt(t/2), restricted to
+countsP,Q<=ell. Z=Pr_m[box], R=Pr_(m-1)[P<=ell-1,Q<=ell].
+Exact mean=sqrt(2t(1-t))*R/Z. Integer multinomial recurrences and rational
+root intervals certify it. Prepare conditional count weights and uniform
+ternary arrangements; optional heralding costs1/Z, not free postselection.
+For n/m->alpha and fixedt<alpha, mean->sqrt(2t(1-t)); no endpoint tail
+claim. Full coherent gates/precision budget remains absent.
+
+NATIVE m6000,n420,ell209,h13,t13/200: ideal mean>=.3421279344361546,
+versus certified<.259029641 for the OLD radial total-degree209 guide.
+Z~.72788323; Pr[mean cosine>=.3]>.06018 from the mean alone.
+Syndrome-only Euclidean rational reconstruction recovers190positive+
+190negative=380errors. Positive-only210 controlREJECTS. This is NOT an
+optimizer execution, same-paper-seed reproduction, or a classical gap.
+Decoder control uses deterministic disjoint field point ranges.
+
+ADVERSARIAL CONTROLS: n3,cap1 overF16 has21injective box patterns but a
+score alias: support0,1,2,3, eval4,8,14, shifted(-1,-1,0,0) aliases
+(0,0,-1,1). Fourth coordinate prevents it. Guarded order7/order15 target
+states and3528observable comparisons replay; compositecase50625assignments.
+First native run failed due to truthy fq_default(0); explicit zero
+comparisons fixed root validation. Final-degree checks occur AFTER gcd
+cancellation; exhaustive tests include unbalanced signs.
+
+CLASSICAL STRUCTURE: complete log matrix as additive-field convolution,
+L(0)=0. Frobenius gives sum_x(-1)^Tr(x)L(x)=0 modN; rescaling yields
+Walsh_trace(L)(s)=L(s) modN for every s. q=N+1=1modN makes the trace
+Walsh transform its own inverse. Implemented exact O(q logq) matrix
+products, all8192native spectral checks and direct-vs-fast syndrome replay.
+This is NOT an optimizer, arbitrary-submatrix rank proof, or dequantization.
+No novelty claim for this algebraic identity.
+
+VERIFIED:17new/189connected tests PASS15.68s, RuntimeWarningfatal. Compile,
+12JSsyntax,check_site,qsearch validate valid:true/issues[] PASS.
+No full-repository test claim. Producer/report SHA256:
+e2dafbfcc499e4144b698678d62cf1d5745188d721db20ae42e8856ed7b86465 /
+8dca797d6d97a1bf7b9508f8c004f9c430d028c03c5c9a634c9cb7830618f54f.
+
+NEXT SINGLE SCIENTIFIC QUESTION: can the PUBLIC additive-convolution
+structure support a classical optimizer/reduction that matches this
+stronger pilot, or does a useful source-preserving hard-problem bridge
+survive? Independently challenge the box/readout/composite proof first.
+Do not just optimize another pilot curve or call the mean gap a speedup.
+Gemini can run matched native lattice/phase portfolios with the new exact
+fast matvec; retain centers, module/rank data, budgets and native witnesses.
+No external outreach or central badge without independent review.
+
+## 2026-10-20 Original Chain Support Geometry: Small Gain, Certified Ceiling
+
+Goal ACTIVE. No GPT commit/push, central admission, qsearch/UI wiring,
+new agents, or unrelated edits. All owned jobs finished.
+
+NEW: theorems/chain_support_budget.py, tests/test_chain_support_budget.py,
+research/CHAIN_SUPPORT_BUDGET.md,
+research/reductions/chain_support_budget.json.
+
+SAME original nonlinear residual chain from arxiv2609.35101v1, NOT a new
+paired/orbit task. A selection with d edges and r runs covers d+r vertices.
+Use V_K=span of centered-predicate products with coverage<=K, then the SAME
+whole-cap Hamming Prony decoder. Momentj transfers if2K+2j<=n. Source terms
+can interfere in Fourier space; do not replace them by independent errors.
+
+CONSTRUCTIVE: exact degree/run class counts and edge-flip totals give a
+2501-dimensional sparse Ritz compression atK100. Numerical eigenvectors
+only propose rational coefficients; saved norm and mean replay exactly.
+The space contains the prior radial degree50 guide. Efficient ideal source
+preparation uses class weights, run/gap unranking, local orthonormal maps,
+the residual bijection and QFT; full gates/error budget still missing.
+Compressed-matrix squaring is NOT a valid second-moment computation.
+
+NATIVEp2053,M2051,n205: samecapK100 mean.6439395549989568 versus
+.6431342271562736, gainonly.0805328percentage points. Mean-onlyK101 gives
+.6447097820946768; its second moment is NOT certified.
+
+UNIVERSAL CLASS CEILING, independent proof review pending: close the path
+cost into a smaller cyclic cost, use a nonnegative Lagrange penalty, and
+decompose the operator into translated4site windows. Replace sqrt(rho(1-rho))
+by1/2 via Perron monotonicity, NOT PSD ordering. Exact16leading principal
+minors prove the local eigenvalue bound atlambda8/5,mu7761/100000.
+EVERY complex guide inV100 has meanfraction<.655377181; V101<.656157288.
+No source translation invariance or occupancy independence is assumed.
+This excludes neither other basis functions/canceling high-cost terms,
+stronger decoders nor speedups below this ceiling. NOT an all-DQI no-go.
+
+DECISION: stop nearby guide tuning. The best next main-model work must
+change a real mechanism or provide a meaningful natural-problem reduction;
+do not respond with another degree/orbit/seed scan or larger infrastructure.
+The original chain is not thereby classically solved or globally ruled out.
+
+VERIFIED:15new/152connected tests PASS3.75s, RuntimeWarningfatal. Python
+compile,12JSsyntax,check_site,qsearch validate valid:true/issues[] PASS.
+No full-repository test claim. Source/report SHA256:
+da361a477f692a73287c10d40638327565f73407c8800ca4efcbc63818457143 /
+36631e48da811ba7093b29066b4504f83b797d0e279d787539d4da25edb971e1.
+
+## 2026-10-20 Polynomial-Time Local Flats And An Asymptotic Easy Region
+
+Previous turn PROGRESS: native classical witnesses plus finite probability
+accounting. This pass independently checked the logic and replaced exponential
+local rejection/span enumeration with a known degree-reduction construction.
+Goal ACTIVE. No GPT commit/push, central admission, qsearch/UI, or new agents.
+
+NEW: theorems/cubic_degree_reduction.py, tests/test_cubic_degree_reduction.py,
+research/CUBIC_DEGREE_REDUCTION.md,
+research/classical_baselines/cubic_degree_reduction.json. Added explicit
+Cohen--Tal attribution to CUBIC_FLAT_POLARIZATION.md. Primary:
+https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX-RANDOM.2015.680
+Sections4/B. Local primitives are KNOWN, no novelty claim. Existing
+explicit_cubic_opi.py cites these results but assumes balanced graph
+predicates; its guarantees cannot replace the uniform-cubic input model.
+
+CONSTRUCTION: ell=floor((1+sqrt(8n-7))/2), k=floor((ell-1)/2). Find an
+accepted origin; grow an ell-space annihilating the cubic third polar via
+linear equations. At stepj the kernel dimension>=n-binom(j,2)>j, so a
+uniform draw escapes the old span with probability>=1/2. Use2n draws/stage,
+64n origin draws. No exponential span list. Restricted f is quadratic;
+alternating Gram-Schmidt gives a bilinear-isotropic subspace, and one
+linear kernel leaves at leastk zero directions. Retain EXACTLYk.
+Independent original-ANF evaluations at coefficient words of weight<=3
+certify the entire zero flat in polynomial work; no2^k certification.
+
+THEOREM DERIVATION, REVIEW PENDING: ideal independent uniform cubic inputs
+and affine-equivariant random transitions imply conditional uniform local
+direction spaces. Pay forconstant-one inputs, origin caps, all direction
+caps, and MDS rank deficiency:
+failure <=m*2^-S(n)+m*2^-8n+m*ell*2^-2n+min(1,2^(rn-mk)).
+Withm=n^2,r=n(k-1)=Theta(n^1.5), slackn^2 gives a polynomial-time classical
+solver with high probability for this SHRINKING-CHECK-RATE subfamily.
+It does NOT refute the fixed-positive-check-rate conjecture. This is not
+a probability statement about a fixed PRNG seed. Global combination and
+equivariance argument need independent review before external claims.
+
+NATIVE: SAME prior n16/n32 ANFs and field points but CHANGED check counts:
+n16 r30->16, flatk2, rank256/512columns; n32 r120->64, flatk3,
+rank2048/3072columns. All original cubics and actual new code checks replay.
+Do not call this an improvement on the harder r120 task. Conservative
+failure bounds2^-19,2^-49. Same16n64 cubics yield5D local zero flats.
+No fulln64 global solve. n128..1024 rows are ANALYTICAL, not executions;
+inherited reference input format currentlycaps64bits.
+
+VERIFIED:13new/79connected tests PASS25.96s, RuntimeWarningfatal. Compile,
+12JS,check_site,qsearch validate valid:true/issues[],source/input hashes
+PASS. The prior unrelated nonlinear_residual_lift inventory mismatch has
+been corrected in the shared worktree; its specific regression nowPASS1.56s.
+We did not edit that artifact or weaken its test. No full-repo test claim.
+One initial analytic-bound test was interrupted after10passes because
+Fraction attempted enormous denominators; replaced with rigorous dyadic
+ceilings and reran successfully. All owned jobs are finished.
+
+Producer/report SHA256:
+d6609409f18f6ea5451692035ec7c7b59030f31e5f39634178a3bc6aee2783a4 /
+7356cee02541eb520bc481dd51e9c0333b40bc0dd4ff131a936e1ae13b22f62f.
+
+NEXT: no credible fixed-rate route beyond one flat per block was established.
+Do not spend another main-model pass generating flat success tables.
+Choose a genuinely different global mechanism or meaningful reduction for
+the quantum relation, or compare an independent high-upside direction.
+The known quantum algorithm is not our discovery; no oracle lower bound,
+general MQ hardness, or ECDSA relevance transfers. Mechanical scaling and
+reference-format expansion remain Gemini work with explicit rate changes.
+
+## 2026-10-20 Published Cubic/RS Family: Native Classical Witnesses
+
+Two research passes completed. Goal ACTIVE. No GPT commit/push, central
+admission, qsearch/UI wiring, new agent, or unrelated artifact edits.
+
+Read CUBIC_RS_AFFINE_FLATS.md and CUBIC_FLAT_POLARIZATION.md. New producers:
+theorems/cubic_rs_affine_flats.py and cubic_flat_polarization.py, matching
+tests, and research/classical_baselines JSON reports. This is NOT the
+earlier three-point "cubic orbit" task; cubic here means Boolean degree3.
+
+PRIMARY: arxiv2509.07276v1, Briaud et al., Sections3/5.1/A.3/B. Existing
+quantum algorithm, conjectural classical hardness, not our discovery.
+Input: m=n^2 independent uniform degree<=3 Boolean ANFs, n bits/block,
+H[j,i]=gamma_i^j overF_(2^n), find ALL f_i(x_i)=0 and Hx=0. Full coefficients,
+field modulus, original witnesses and work counts are saved. No oracle or
+planted witness, no input resampling. Both native cases use alpha113/128.
+
+FINITE CLASSICAL RESULT: n16,m256,r30,k3 and n32,m1024,r120,k4 both solved.
+The latter has32768 original bits,1024 cubics,3840 binary checks. Compressed
+systemrank3840 with256 freebits; independent ANF and separate bit-polynomial
+field arithmetic replay every original constraint. Naive search304774
+evaluations. One-dimension-smaller SAME-flat control is inconsistent atn32,
+not evidence that the native system is unsatisfiable.
+
+SECOND PASS: T(u,v,w)=D_u D_v D_w f(0) gives linear constraints on a new
+directionw. Solvebinom(k,2) homogeneous polar equations; on their kernel the
+extension needs onlyk+1 evaluations. Same full n32 input again solved with
+56995 search evaluations,3072 polar contractions,4096 local linear solves.
+Last run12.99s diagnostic.16 predeclared n64 blocks all have verified8D
+zero flats; all256points/block replay. This is LOCAL ONLY, not a complete
+n64,m4096 solve. Small controls retain genuine greedy failures.
+
+PROOFS, REVIEW PENDING:
+- Independent uniformk-direction spaces plus MDS imply global rank failure
+  <=2^(rn-km), via exact RS zero-set counting, not IID binary-row assumptions.
+  Affine-equivariant local search has this direction law conditional on
+  success under IDEAL independent randomness; not a fixed-PRNG certificate.
+- On a D-dimensional polar kernel, common-zero indicator degree<=2k+3 and
+  nonzero at0. Boolean minimum weight gives extension density
+  >=max(0,2^(-2k-3)-2^(k-D)), D>=n-binom(k,2).
+- Charge constant-one input, origin failure, every capped stage, and global
+  rank failure. T4096 gives ensemble success lower bounds999/1000(n16),
+  499/1000(n32), rounded DOWN exactly. Atn64 samecap givesZERO lowerbound.
+- Zero-flat first moment obstructs linear-dimensional flats asymptotically.
+  This is finite classical counterpressure, NOT a refuted hardness conjecture,
+  generic MQ/cryptosystem attack, novelty claim, or Shor-level result.
+
+VERIFIED:25new+20existing focused tests PASS(45,22.56s), RuntimeWarningfatal.
+Compile5files,12JS,check_site,qsearch validate valid:true/issues[],diffcheck
+PASS. Broader regression earlier:287PASS/1FAIL. The unrelated existing
+tests/test_nonlinear_residual_lift.py:182 expects native field
+frozen_witness_and_attack_inventory, absent in its current saved JSON.
+Left that shared artifact untouched; no full-green/full-repo test claim.
+
+Producer/report SHA256:
+cubic_rs_affine_flats:
+6daa14a63df163b4a96f2f5302a8d8c4613de24a9a88e1fd8c3d6334b20bb2fd /
+05676cded00ef05e97e8c4ff7e6e0b30e1f708e5c92cc43bb9f1dc7570932904.
+cubic_flat_polarization:
+d53bda3cb35e8887bd0ded458089572d0fcbdaf733517bf62f96d5532b61c72e /
+93fa47381849acd9b12f2727e177ca764c79ba69dfd0fd294186d500262b62dd.
+All owned jobs finished. Second report depends on first report hash.
+
+NEXT: independently challenge the combined success proof, then choose a
+substantive route beyond one local flat per block or a useful reduction for
+the quantum relation. Do not turn this into an endless finite seed sweep.
+Fulln64 native replay and routine implementation optimization are specified
+for Gemini in MECHANICAL_FOLLOW_UP_PLAN.md. The paired/orbit quantum
+candidates remain open but have neither classical hardness nor a meaningful
+external problem reduction; do not return to increasing ideal-score curves
+on freshly changed tasks by inertia.
+
+## 2026-10-20 Three-Point Orbit Decoder And Its Classical Square Inverse
+
+Completed a second research pass after the paired632 baseline. New:
+theorems/cubic_orbit_decoder.py,tests/test_cubic_orbit_decoder.py,
+research/CUBIC_ORBIT_DECODER.md,research/phase_workbench/cubic_orbit_decoder.json.
+Goal ACTIVE. No GPT commit/push, central admission, UI/CLI or unrelated edits.
+
+CHANGED TASK: p=1mod3,disjoint(a,zeta*a,zeta^2*a),eta nonsquare,
+r_i=P(zeta^2*a)+b_i*(P(a)^2-eta*P(zeta*a)^2), ONE deg<n=3K polynomial.
+Nativep2053,M684,n204 usesfirst684 frozen public tables. Chain/paired scores
+are NOT comparable. Known DQI/Gauss/collaborative-RS ingredients; novelty and
+independent proof review PENDING. No oracle lower bound or speedup admitted.
+
+ACTUAL SOURCE: v!=0 follows the fixed halfset spectrum; u0,u1 IIDuniform
+conditional onv. Coherent Fourier coefficient is-hhat(v)/p times phase
+(-u0^2+eta^-1*u1^2)/(4bv). The minus sign matters relative to inactive
+orbits; a direct3DFFT and empty-plus-active countercontrol check it.
+Support bits erase fromv!=0; no exponential per-orbit postselection.
+Primary2510.08061v2's invalidStep7 is explicitly NOT imported/repaired.
+
+ONE syndrome splits into three rows s_(3j+r). The folded rows are correlated.
+GENERAL RANK DERIVATION: L=n-mC>=D; for nullvector supportt, random-column
+rankr=min(L,(m-1)t), admissible-vector dimensiond=t-min(L,mt)+r.
+Failure<=sum_t binom(D,t)(p^d-1)/((p-1)p^r). Includes saturated A, not a
+false full-column-rank assumption. m2 reduces to earlier bound exactly.
+C=D+1 gives accepted score-operator identity by whole-cap uniqueness.
+Local mathematical derivation needs independent review.
+
+LIVE:50orbits/150nonzero scalar errors recovered fromsyndrome alone, generic
+scalarPronyfails; all-three-frequencies-equal source controlABSTAINS.
+D50,C51:failure<=2.43225e-7, ideal one-attempt mean>=.741947714 and
+Pr[score>=493/684]>.08068. Generic degree33 same-task source mean.695087.
+NOT a quantum execution, gate count, measured failure rate or classical gap.
+Smallp19 13-vertexkernel control preservesnorm1 but unsafe meanerror.00139769;
+cap3 rejects offending labels, retainsmass.5, restores meanidentityerror0.
+
+SELF-CRITIQUE CHANGED THE CLASSICAL PLAN: anisotropic local predicates contain
+no completeFp-affine line, but their local norm is surjective/easy. Generic
+polynomial norm factorization need not preserveV(X)=U(zetaX); an explicit
+counterexample is saved. HOWEVER this is not a new hard factor-choice problem:
+T(Q)=Q-etaQ(zetaX) is invertible diagonal coefficient scaling, and orbitnorm
+=T(P^2). Implemented exact inverse+ordinary polynomial square root, with
+all169small linear inputs and a planted204-coefficient native round trip.
+The full residual lift is linear in(P,Q) withQ=P^2, at most3n-1variables.
+Square consistency including the sign ofP remains essential. No full
+optimization dequantization or generic norm-factor-selection hardness claimed.
+
+VERIFIED:23 new/245 connected tests PASS10.35s, RuntimeWarning fatal.
+Compile,12JS,check_site,validate valid:true/issues[],dependency hashes PASS.
+Producer/reportSHA256:
+09aa91ddd817d60c58b3c5f23642ee36d2d56493e54ae0da2db60a7546e02541 /
+371de7496998d5ad4df122729784af12b2f202edaaf31dca4e2c3537d05f2fdd.
+All owned producers/tests finished. No full repository test claim.
+
+NEXT: square-consistent lifted optimization/native manifold attacks or a
+meaningful reduction for these explicit tasks, plus independent source/
+guard proof review. Do NOT spend another pass on an m-sweep: for m>=4,
+quadratic sources acquire isotropic directions and need new classical work.
+The goal is an actual end-to-end candidate, not an increasing ideal score
+on successively changed tasks. Gemini can run stronger matched portfolios;
+the main model should choose a decisive mathematical attack or reduction.
+
+## 2026-10-20 Feasible Classical Attack On The Paired Candidate
+
+New files: theorems/paired_residual_classical.py,
+tests/test_paired_residual_classical.py,research/PAIRED_RESIDUAL_CLASSICAL.md,
+research/classical_baselines/paired_residual_classical.json. Goal ACTIVE.
+No GPT commit/push, central admission, UI/qsearch changes or unrelated edits.
+
+SAME paired input and saved536 starting polynomial as the decoder report.
+Exact information coordinatesx_j=P(a_j),r_j=P(-a_j)+b_j*x_j^2 inF_j give a
+bijection to original polynomials passingK=n/2 selected pairs. Root moves
+preserve r_j with the FULL quadratic displacement, yielding quartic outside
+residuals; allowed-residual moves yield quadratic residuals. Exhaustive
+single-coordinate scans, strict improvements only, no uncharged restarts.
+This adapts a known intrinsic-search idea, not a novelty claim.
+
+LIVE:536 ->632/1026, three strict improvements, second full pass unchanged.
+628116 proposals,644447016 predicate lookups,408 scans,9.16s reference time.
+All original204 coefficients reconstructed and independently Horner-scored.
+Fixed point only for these move types. Full classical portfolio NOT complete;
+no wall-time comparison, classical hardness or quantum advantage inferred.
+
+NEW SCOPED DERIVATION, REVIEW PENDING: each outside paired interpolation
+block is invertible. Conditional on any information residual vector, each
+nonzero Fourier coefficient of the outside pair law is <=p^(-K/2), via
+independent quadratic Gauss factors. Thus chi-square<=(p^2-1)/p^K and a
+uniform conditioned component has mean<=K/M+(1-K/M)*(rho+TV), below.55
+at native parameters. For fewer thanK pins, each outside pair is exactly
+uniform. Input-dependent POSITIVE mixtures inherit this bound, but adaptive
+search, score rejection, restarts selected by score and >K pins DO NOT.
+Our actual adaptive632 witness deliberately lies outside that comparator.
+No complete local nonconstantFp-affine line fits a parabolic halfset, so the
+earlier binary accepted-flat attack cannot directly transfer. Not hardness.
+
+VERIFIED:12 new/222 connected tests PASS10.01s, RuntimeWarning fatal.
+Compile,12 JS checks,check_site,validate valid:true/issues[],dependency
+hashes PASS. Not full repo suite. Producer/report SHA256:
+8af5dbe15d512cfd3034e217cc55db1fc3740a3c2f86d00607723fee938245ba /
+82664fe9676ad76e258ea9c0569cac6aa324ee7525f2afac17a10fc58fbb9138.
+
+NEXT HIGH-REASONING: conditional list recovery after fixing E or O; stronger
+code-aware attacks and independent quantum proof review. Gemini may vary
+information sets, add block moves or use an existing annealing portfolio,
+with full budgets and actual witness replay. Do not run an indefinite seed
+campaign or promote the gap to a speedup. m-root-orbit extensions still owe
+an isotropic-flat/norm attack check before implementation.
+
+## 2026-10-20 Constructive Single-Polynomial Paired Decoder
+
+Previous turn PROGRESS: square-blind lift falsified on native input. This
+pass supplies a constructive application, not another generic barrier.
+New producer/tests/note/report: paired_residual_decoder.py under theorems/
+and tests/test_paired_residual_decoder.py, research/PAIRED_RESIDUAL_DECODER.md,
+research/phase_workbench/paired_residual_decoder.json. Goal ACTIVE. No GPT
+commit/push, central admission, UI/CLI work or edits to other agents' files.
+
+CHANGED TASK: p odd, disjoint evaluation pairs a,-a, explicit nonzero b_i
+and halfsets F_i; maximize1[P(-a)+b_i P(a)^2 inF_i] for ONE deg<n polynomial.
+Do NOT compare published chain scores or import oracle lower bounds.
+Known DQI/relative-DQI/collaborative RS primitives; novelty UNESTABLISHED.
+Read primary2609.35101 Section5,cs/0610074,1612.07854,2411.12553 and2610.02145.
+
+ACTUAL SOURCE: each centered-predicate Fourier law has v!=0, v distributed
+by the fixed table spectrum, and u UNIFORM conditional onv. Pair-subset
+Fourier supports are disjoint; radial source law is exact, not random-input
+averaging. Withz=a^2, one syndrome splits into rows A=u+v, B=a(u-v).
+Reuse existing decode_burst on public zero-padded square nodes, then unfold.
+No extra quantum states/which-support packets/individual-marginal readout.
+
+KEY DERIVATION, REVIEW PENDING: forcapC, m=n-2C>=D, factored rank matrix has
+columns u_i V_m(a_i)+v_i V_m(-a_i). Fixed nonzero v and distinct +/-nodes
+give failure<=sum_(t>m/2)^D binom(D,t)(p^(2t-m)-1)/((p-1)p^t), by projective
+nullvector counting. Uniform over EVERY support/right-frequency vector.
+The zero-right countercontrol violates the premise and exceeds the bound.
+
+GUARDED READOUT: useC=D+1. Each accepted label is unique against the WHOLE
+cap ball, including v=0 neighbors. Any one-pair score shift of a source
+label remains in that ball, so accepted source/target score operators agree
+EXACTLY. No full bad-fiber norm/target law is needed. Reject massb<=epsilon;
+conditionalmean>=mu-sqrt(epsilon), unconditionalwithABSTAIN0>=
+(1-epsilon)(mu-sqrt(epsilon)). Extra circuitTVerror must be subtracted.
+Higher moments require larger caps and new rank budgets.
+
+LIVE: p2053,M1026,n204,D67,C68: badmass<=2.45247e-7, ideal mathematical
+one-attempt mean>=.73222660 and Pr[score>=719]>.108. Generic pairwise D50
+source mean~.700204 on THIS problem. Native67-pair/134-scalar-error basis
+draw is recovered fromsyndromes only; ordinaryscalarProny fails. u=v bad
+controlABSTAINS. Not a large quantum execution or failure-rate measurement.
+Small p11,n8 nonradial pure-state control has norm1 but unsafe meanerror
+1.101928e-5; C3 guarding restores meanidentitywithin1.67e-16, retains10/121
+failure. Do not discard this observable-margin counterexample.
+
+Classical one-information-set comparator is FEASIBLE and scores536/1026,
+forcing102 pairs. It is WEAK, not advantage evidence; strong portfolio NOTrun.
+New input reuses first1026 halfsets/multipliers from fixed frozen author
+data, with transformed point pairing/dimension explicitly recorded.
+
+VERIFIED:22 new/226 connected PASS6.59s, RuntimeWarning fatal. Compile,
+qsearch validate valid:true/issues[],check_site and dependency hashes PASS.
+Not entire repo suite. Producer/reportSHA256
+1fa10aa444e9d4e7ab8955fa9132c1b8f643ff1cf03baa0fc3dba50d04e2decd /
+cf454d3a2d2c6499a50c04a8c90596c2a05a521415ab25d43fc7f80a442efbf7.
+
+NEXT HIGH-REASONING: independently challenge the guarded proof, then attack
+the classical two-polynomial formP(X)=E(X^2)+XO(X^2). A further m-root-orbit
+proposal could supplym rows fromone syndrome with m-1 conditionally uniform
+frequencies anddegree~n/(m+1); UNIMPLEMENTED/UNPROVED here. Check norm/quadratic
+classical reconstruction before funding it; source simplicity can destroy
+hardness. Gemini can port existing feasible classical kernels to the paired
+task with complete accounting. No weak-baseline quantum-advantage narrative.
+
+## 2026-10-20 Quadratic Lift Produces A Native False Positive
+
+Continued the previous code-aware attack question, not a new infrastructure
+pass. New: theorems/nonlinear_residual_lift.py, tests/test_nonlinear_residual_lift.py,
+research/NONLINEAR_RESIDUAL_LIFT.md and
+research/classical_baselines/nonlinear_residual_lift.json. Goal ACTIVE.
+No GPT commit/push, central admission, UI/qsearch wiring or unrelated edits.
+
+Inspected the frozen RDQINumerics v1.0.0 author source/data at commit
+d9de27218b594925fcd60d8b6c6115a1c74397c7; checkout lives in
+/tmp/qsearch-RDQINumerics-v1. No author code imported/executed. Release index
+and selected metadata/npz hashes are pinned/checked; retain CC-BY-4.0 credit.
+The first indexed2053/205 input has natural point order and first614 lift
+rows of exact rank614. This is not an ordinary409-dimensional RS collapse.
+
+ACTUAL FALSIFIER: force614 allowed residuals, solve (P,Q), seed48211 once.
+Relaxed score1353/2051 EXCEEDS the ideal quantum mean, but native P scores
+1011/2051. All409 coefficients ofQ-P^2 are nonzero. Full rank certifies that
+no other native P gives that entire relaxed residual; it does NOT rule out
+a different high-score polynomial. Whole residuals/coefficients are retained.
+
+EXACT NARROW ENSEMBLE RESULT: independent random halfsets + uniform allowed
+member per basis row make the lift uniform. Its score law is
+614+Bin(1437,1026/2053), mean1332.1500 and Pr[score>=1299]>0.96210.
+DiscardingQ has only native mean1025.0005. On each forced row, agreement
+probability1/p gives pass1/p+(1-1/p)(h-1)/(p-1)=h/p. Square consistency is
+2053^-409. NOT a lower bound for optimized/correlated lifts or all repairs;
+not a fixed-input/fixed-PRNG-seed theorem or a full native score law.
+
+The exact image inverse refuses singular bases. Constant-multiplier control
+has both valid and invalid lifted representatives of zero residual; accepting
+an arbitrary defective representative as an infeasibility proof is unsound.
+Odd-characteristic polarization shows native residuals span the full lift.
+
+VERIFIED:23 new/204 connected tests PASS8.97s, RuntimeWarning fatal. Python
+compile,12 JS syntax checks, check_site, validate valid:true/issues[], hashes
+and diff checks PASS. Not the full repo suite or an author campaign replay.
+Producer/report SHA25618389353c18e400de1559bd25d3fae5dbe9d09ce8efe285d425690bcf74cde1b /
+99a342c0cd354a03b99966ccad8685e5581a5ba70dbaece7ddc4b7e790e3846e.
+
+NEXT: stop unconstrained-lift score campaigns. Test a constructive decoder
+on the actual relative-DQI pilot's adjacent-edge-union support, with coherent
+cleanup, failure-law and moment/Gram control. Support counting alone is NOT
+a decoder; improving decoding does NOT automatically extend trace transfer.
+Known folded/list/interleaved decoding must be checked before inventing one.
+If no constructive path survives, compare an independent direction. Gemini
+may independently replay the artifact and verify the880 author witnesses;
+this pass has NOT done that and preserves116/120 raw-batch incompleteness.
+
+## 2026-10-20 Explicit Nonlinear Optimization Survives The Sparse-Pin Comparator
+
+Previous turn PROGRESS: matched classical relative-Gibbs sampling. This pass
+compared coherent-TFD tasks, nonstoquastic source changes and the published
+nonlinear residual-chain optimization task. Selected the last because it has
+explicit public inputs, a constructive known quantum procedure and verifiable
+polynomial witnesses. No blanket tensor-network conclusion was inferred.
+Read primary2609.35101 Section5/AppendixF and reused existing OPI tail and
+prime-character/Prony machinery rather than duplicating a pipeline.
+
+New: theorems/nonlinear_filter_pinning.py,
+tests/test_nonlinear_filter_pinning.py, research/NONLINEAR_FILTER_PINNING.md,
+research/reductions/nonlinear_filter_pinning.json. Goal ACTIVE. No GPT
+commit/push, central admission, UI/qsearch wiring or changes to other agents'
+work. The quantum algorithm is PUBLISHED, not our discovery.
+
+EXACT READOUT: biased elementary-symmetric shell recurrence, explicit rational
+guide, exact first two moments, support-wide verified quadratic tail minorant.
+At p2053,n205,D50,M2051, mean fraction0.6431342271562736 and success at1299
+tests >=0.4752317594. Five independent executions would exceed95% success IF
+each compiled circuit has TVerror<=0.01. Attempts are NOT gate budgets.
+Pairwise transfer requires2(2D+r)<=n; three moments are forbidden here.
+p7,n4 exhaustive2401-polynomial countercontrol preserves norm but rejects
+the next mean outside its budget. No full target binomial law is assumed.
+
+METHOD-SPECIFIC ESCAPE: a uniform SOURCE conditioned on at mostK residual
+values/pass outcomes has score tail <=Pr[K+Bin(M-K,rho)>=1299]. AtK100 this
+is <=1.44818e-24; K204 gives<=6.15420e-16. Any normalized signed mixture of
+these components approximating the guide withinTV0.01 needs absolute weight
+>=6.425e23 /1.5119e15 respectively. Positive variable-size mixtures must put
+>0.4652 mass above the cap. A fixed-rate argument makes the norm exponential.
+
+IMPORTANT: this is NOT a lower bound on general classical algorithms,
+code-restricted positive completions, adaptive primal search, or every Monte
+Carlo estimator. The source guide itself is EASY to sample classically; the
+unresolved step is obtaining a feasible RS polynomial. Source functions can
+differ yet coincide on the code. The folded random-membership-oracle lower
+bound2610.02145 does NOT transfer to these explicit scalar tables.
+
+ACTUAL DECODER CONTROL: existing syndrome-only Prony decoder reconstructs100
+nonzero errors on2052 positions from205 public syndromes. Support/error not
+supplied; whole syndrome replay succeeds. This is a BASIS control, not a
+native pilot-law draw, coherent execution or fault-tolerant resource count.
+The authors' benchmark/witness files were NOT downloaded or reproduced.
+
+VERIFIED:41 new tests;181 connected PASS9.27s, RuntimeWarning fatal.
+Python compile,12 JS syntax checks, check_site and qsearch validate
+valid:true/issues[] PASS. Not the entire repository suite. Producer/report
+SHA256ed90aa3b0cd948f564714f498c09a6cdbe568248fe477f48618d6091b831ba2a /
+a139890fb7a27e2d5656c211f0519f537842c6852a5218d2c8b803cdc01187f3.
+
+NEXT GPT QUESTION: can a code-aware arithmetic method evade this source-pin
+restriction? Examine the lift Q=P^2: residual = shifted evaluations ofP +
+diag(a)*evaluations ofQ. The linear relaxation has about3n dimensions, but
+Q=P^2 must be enforced; an arbitrary lifted OPI solution is not a witness.
+Alternatively supply a genuinely improved coherent decoder with its true
+source law. Do NOT run more tail/filter/seed scans or claim general hardness.
+Gemini can independently verify the frozen authors' witnesses and inventory
+existing attacks, preserving missing raw batches and all preprocessing costs.
+
+## 2026-10-20 Relative Gibbs Transduction Has A Correlated Classical Comparator
+
+Compared a genuinely different constructive route rather than extending the
+ternary pair calibration. Read 2610.06667 full primary PDF,2609.35101 and the
+2002.02232 worldline paper; queried the corpus and reused our block-Prange
+GF2 solver. Central-quotient structure is ALREADY Proposition B.7 of the
+new paper, not our result. AG/Hermitian DQI is also already published.
+
+New files: theorems/relative_gibbs_worldline.py,
+tests/test_relative_gibbs_worldline.py, research/RELATIVE_GIBBS_WORLDLINE.md,
+research/classical_baselines/relative_gibbs_worldline.json. Goal ACTIVE.
+No GPT commit/push, central admission, qsearch/UI wiring or edits to Claude's
+formal/arXiv/negative-registry work. The next pass should read the new note.
+
+CONSTRUCTIVE LOCAL RESULT, INDEPENDENT REVIEW PENDING: for the paper's chain
+with public parity-controlled longitudinal fields, sample the easy identity-
+parity SOURCE's complete worldlines classically. Given paths q, independently
+pin each parity with probability tanh(beta*abs(e_i+h_i*mean(q_i))), then
+uniformly solve all selected GF2 constraints. Dependent pin sets ABSTAIN,
+even if consistent. No retries, codeword decoder, target pool or count oracle.
+
+FULL LAW: let A=sum_(nonzero z in ker F) product_(i in support z) p_i, bounded
+uniformly over source paths. E_T(2^nullity(F_T)-1)=A. Algorithm failure u<=A,
+unnormalized bad target mass b<=2A, so full TV<=A+2A/(1-A). Source correlations
+and all free affine coordinates are essential. Postselecting successful pins
+does NOT give an exact sampler; explicit finite controls retain that bias.
+
+SCOPED ASYMPTOTIC CONSEQUENCE: in the published beta<tau/(5J0),d>2tau*N
+window, N*tanh(2beta J0)/d<1/5 and A<=(5/4)*(e/5)^d. The source block
+influence is <0.3. Thus this chain family's COMPUTATIONAL-BASIS samples have
+a polynomial classical method at inverse-polynomial accuracy for sufficiently
+large N, independently of target degree. This is NOT a classical TFD or
+Gibbs-density-operator preparation, arbitrary-measurement simulation, all-
+transduction no-go, or bound on improved/lower-temperature quantum methods.
+
+IMPLEMENTATION: O(M) periodic two-state path sampling, logistic central
+updates, exact FLINT affine solves, direct target comparator, exhaustive
+conditional/transition/output-law checks. Symmetric-Trotter log/relative-
+entropy argument gives diagonal-TV bound sqrt((beta K)^3*exp(2beta K/M)/(3M^2)).
+Source PATH mixing, pinning and TARGET Trotter errors are charged separately.
+Float/PRNG update errors are NOT certified; their per-update allowance is
+reported. The algorithm's mathematical error bound is not a rounded-run proof.
+
+LIVE: native 24-site regular-incidence control direct alpha0.59947,691
+updates,346 slices,~0.89s. Known-easy repetition-code calibration N32 has
+direct target alpha1.85783 (fails), source alpha0.089973,532 updates,491
+slices,~0.70s. Its distance32 has a rank/all-ones kernel witness; pinning
+error bound2.30e-39, total analytic bound excluding roundoff0.045553.
+Repetition is NOT a research candidate. Bounded correlated-source beta0.08
+TV0.000264852 including failure0.000198705; bound0.00742089. At beta0.7 the
+bound correctly becomes uninformative. No large quantum simulation occurred.
+
+VERIFIED:51 new tests;360 connected tests PASS5.49s, RuntimeWarning fatal.
+Python compilation, check_site and qsearch validate valid:true/issues[] PASS.
+Not the full repository suite. Producer/report SHA256 respectively
+a762978b2c9244cf7a7fcf47b15711c66e2c8f327b8194e4c83e75fae9549f20 and
+00c54edb034986c9b9ce515e0dd8dc3f5a16b6556a50a57fd0dd8656a8e07c00.
+
+NEXT: independent proof review before any central negative/preprint promotion.
+Do not increase target degree or compile this already matched diagonal task.
+Theory should specify a useful COHERENT-output task or a source outside the
+positive-worldline pinning model, then check tensor-network/high-temperature
+classical competitors and the ACTUAL decoder/temperature constants. A
+frustrated X/XX/ZZ source is only a question, not an accepted candidate.
+Numerical interval lowering and ordinary exposure remain Gemini work.
+
+## 2026-10-20 Constructive Pair-Conditioned Quotient Sampler
+
+Previous turn PROGRESS: stronger classical sampling plus a checked rejection
+of ordinary sparsification's guarantee transfer. This pass constructed the
+previously open local escape. New producer/tests/note/report:
+theorems/ternary_pair_conditioning.py, tests/test_ternary_pair_conditioning.py,
+research/TERNARY_PAIR_CONDITIONING.md,
+research/reductions/ternary_pair_conditioning.json. Goal ACTIVE. No GPT
+commit/push, central admission or UI/CLI work. Existing polar/source-design
+falsifier was read rather than rebuilt. Corpus and primary sources checked.
+
+CONSTRUCTIVE SOURCE CHANGE: for disjoint equal columns p,q, original words
+already satisfy y_q=y_p-t with t=J_p-J_q. Compute three weights
+mu_p(a)*mu_q(a-t), normalize LOCALLY, delete q, and expand it with actual
+SUM/shift gates at the end. This preserves original spin weights up to a
+known constant and requires no rare-event postselection. Zero local mass is
+an actual empty supported target. It is known-source preparation, NOT an
+allowed replacement of arbitrary unknown DCP states.
+
+COHERENT QUOTIENT SAMPLER: now only ker(Hbar) labels need decoding. For each
+fixed t, build ONE decoder independent of residual syndrome s. The same
+retained-register A/subtract/A-adjoint construction has conditional Parseval
+identity E_s distance^2=2delta_t and average TV<=2sqrt(2delta_t), assuming
+s uniform conditional on t. The implementation actually prepares the source,
+runs heterogeneous three-wire BPQM gates, expands physical pairs and lifts
+with ORIGINAL H,J. General residual decoding remains unsolved. Derivation
+REVIEW PENDING; no novelty or speedup claim.
+
+IMPORTANT SOURCE LAW: t comes from INPUT offsets, not a Born measurement.
+Native uniform-input weights are(1/3,1/3,1/3), not(1/2,1/4,1/4). The measured
+error averages0.565435 versus0.533338 under the incorrect weighting. No
+automatic DE-threshold inheritance. A residual-offset adaptive decoder also
+breaks Parseval by0.08291454; a wrong adjoint breaks it by0.98093635 while
+preserving norm. Correct cases have identity residual<9e-16.
+
+CLASSICAL COMPARATOR: local conditioning is equally available classically.
+Product draws plus original Gaussian lift are exact conditional samples,
+with mean acceptance3^-r for r remaining checks. The no-decoder quantum
+output equals this entire classical law, including ABSTAIN. All small target
+laws/countercontrols are kept. Product readout sometimes samples better than
+BPQM despite worse word recovery: word error is sufficient, not necessary.
+
+HARSH NATIVE LIMIT: exact source16 has one disjoint duplicate pair and residual
+dimension15 rather than16. Source32 has none, residual dimension32 unchanged.
+No native quantum receiver was executed. For the large equality-gadget
+construction, removing the point-spectrum additions recovers the original
+dense problem, not a new sparse-code guarantee. This closes a local source
+interface but does NOT resolve the main constructive decoder bottleneck.
+
+VERIFIED:24 new tests;284 connected tests PASS4.36s, RuntimeWarning fatal.
+Python compile, check_site and qsearch validate valid:true/issues[] PASS.
+Source/report hashes match; all live producers and tests finished. Not the
+full repository suite. Producer SHA2564e7fb2792712b0cc0e78d33da823958fd5a32ddf90f425c0e722a06fee5a4dce;
+report SHA2569779d36e9457d577f5eebbf0d8995bd05e53e7fee87f9f5c1cba37114f5a1793.
+
+NEXT: do NOT expand this pair calibration into another subsystem or repeat
+threshold scans. Compare different constructive source/decoder families.
+Any tractable-subcode extension must pay classical/coherent local preparation,
+prove the CONDITIONAL residual source law and supply a genuinely easier
+residual decoder, while beating the same classical preprocessing. Ordinary
+exposure and larger classical campaigns remain Gemini work. Do not resurrect
+the already matched polar/Prange routes or generic normalized-Gram shortcuts.
+
+## 2026-10-20 Dense-To-Sparse Guarantee Transfer Tested And Rejected
+
+Second connected pass after the stronger classical samplers below. Read
+TERNARY_SPARSE_REDUCTION.md. New producer/tests/artifact:
+theorems/ternary_sparse_reduction.py, tests/test_ternary_sparse_reduction.py,
+research/reductions/ternary_sparse_reduction.json. Goal ACTIVE. No GPT
+commit/push, central admission or routine CLI/UI changes. Corpus searched;
+primary q-ary BPQM, binary Gibbs-DQI and Eldar--Forney sources checked.
+
+CONCRETE HYPOTHESIS TESTED: import a dense problem through standard partial-
+sum sparsification, then use the existing sparse quantum decoding guarantee.
+The reduction REALLY preserves every native solution with one auxiliary
+extension: enforce E=t-a*x-b*y=0 by E+1!=0 and E+2!=0. Uniform sampling and
+all original gauges survive. But the two equal columns create e_p-e_q in
+the decoding kernel; g gadgets give g independent disjoint short words.
+
+ANY-MEASUREMENT BOUND, LOCAL DERIVATION REVIEW PENDING: reveal the coset of
+this subcode, leaving g independent pairs psi_c tensor psi_-c. Their spectrum
+is(1/2,1/4,1/4). Fourier measurement and explicit SDP dual agree at success
+s=(3+2sqrt(2))/6. Tensor primal/dual certificates and genie information imply
+full-code word success<=s^g, for ANY joint receiver, not only BPQM. Outward
+rational bounds, physical Gram checks and independent complete-code controls
+verify the calculation. This blocks the SMALL-WORD-ERROR premise, not every
+sampler. Word-error necessity is explicitly refuted by an easy countercontrol.
+
+SOURCE AND ESCAPE: ordered gadget offsets differ by1; their source has TV
+distance>=1-3^-g from IID offsets conditional on H. Character orthogonality
+used in the earlier sampler bound fails. Quotienting out the gadget subcode
+recovers the ORIGINAL dense code, with explicit tested lift/projection and
+rank(H')=rank(H)+g. No free sparse decoder results. Different gadgets or a
+source-aware quotient sampler remain logically open, requiring new analysis.
+
+SAME-INPUT LIVE CONTROL: invertibly scramble the saved16/32 spin coordinates,
+preserving their kernels and solutions, then actually sparsify. This is NOT
+a newly hard dense input. g256/g1201 give expanded272/1233 spins and any-
+receiver word success<=0.000594882/7.372e-16. Existing samples replay through
+the public inverse basis and every new constraint. No big quantum simulation.
+
+VERIFIED:35 new focused tests;182 connected tests PASS2.29s with RuntimeWarning
+fatal (includes both new passes). Python compile,12 site JS checks, check_site,
+qsearch validate valid:true/issues[] and source hashes PASS. Not the full
+repository suite. Live producers and all owned test sessions finished.
+Producer SHA25630440515fa74ffdf9ca3390302749e924d675da00fa99a392d697710f53030da;
+report SHA256ea24eb79d903b4898221f8b8e25cdf0bd9363d269f93e5ff9e72159a35579257.
+
+NEXT MAIN-MODEL TASK MUST BE CONSTRUCTIVE: a sampler-specific quotient
+receiver would need an actual coherent operation and a bound for ORIGINAL
+correlated offsets without normalized-fiber advice or recovering all nuisance
+labels. Otherwise compare a different source/decoder pair rather than continue
+adding nearby barriers. Original-source useful finite-N decoding remains open;
+large hashed-SAT campaigns and ordinary compiler lowering are Gemini work.
+
+## 2026-10-20 Classical Conditional Sampling Without Pools Or Prefix Counters
+
+Read TERNARY_CONDITIONED_SAMPLING.md. New producer/tests/report:
+theorems/ternary_conditioned_sampling.py, tests/test_ternary_conditioned_sampling.py,
+research/classical_baselines/ternary_conditioned_sampling.json. Updated the
+prior classical note's next decision. Goal ACTIVE; no GPT commit/push, central
+admission, UI/CLI churn or changes to other agents' work.
+
+TWO KNOWN MECHANISMS, NEW NATIVE ACCOUNTING: exact column-basis conditioning
+samples an affine chart, then uniformly lifts all gauge coordinates. Every
+native solution has exactly one proposal preimage; acceptance Z/(2^r 3^g),
+an exact (3/2)^r improvement over plain rejection on each nonempty input.
+Still exponential at the current rate. Fixed proposal-cap ABSTAIN mass has
+outward rational bounds. No complete pool or SAT/count oracle is used.
+
+GLOBAL COUNT CORRECTION: a constant-factor total-count window suffices for
+near-uniform sampling through ternary pairwise hash isolation and EXACT cell
+solves. Prefix counters are NOT necessary. The same quantum count-concentration
+premise supplies that window on most inputs. Dense hash equations have a
+polynomial-size unique-extension CNF; finding one witness is not uniqueness.
+All rank-deficient/zero hashes remain. Exact SAT time and empty-cell proofs
+are paid, not assumed polynomial. Runtime-capped traces have UNKNOWN extra
+timeout mass EVEN WHEN A TRACE FINISHES; uncapped TV bounds do not transfer.
+
+SAME INPUTS: both samplers return verified original16/32-spin samples without
+enumerating pools. Rank first-success proposals215/23883 (~0.02/~0.04s), but
+expected proposals from independent prior counts are~978/~425581: the second
+trace is lucky, not a runtime estimate. Hash isolation takes11/3 cells, outer
+~0.46/~2.44s. Old counts verify the preselected windows only AFTER sampling.
+Fixed2^24 proposal-cap TV upper bounds2.94e-39/~7.57e-18 assume complete counts
+and independent fair coins. PRNG traces are not distribution proofs.
+
+CODING SCOPE: exact full-weight syndrome bridge Gy=GJ, y in{1,2}^N, with all
+3^g native lifts. But ker(G)=rowspan(H) has public weight<=6 generators. The
+uniform dense-code probability of even one such word is<=1.37e-6 at N64/r32.
+Generic dense-code/Wave hardness DOES NOT transfer to this LDGM distribution.
+Neither that distinguishability nor known decoding-search algorithms settle
+uniform conditional sampling. No asymptotic dequantization or advantage.
+
+VERIFIED:47 focused and147 connected tests PASS (connected2.10s), RuntimeWarning
+fatal. Python compile, check_site and qsearch validate PASS valid:true/issues[].
+Source hashes match. Not the full repository suite. All live runs completed.
+Producer SHA256e2f784d7992f32795c28a48f42482217c580e3fb03add2fe619c4c77cd4d2330;
+report SHA2568ee89a0ba02ac06b125d7c476cacf4ff188991acbda9b7cb7d33c4209e16a807.
+
+NEXT SCIENCE: audit novelty and source scope against known DQI/q-ary BPQM
+results before adding more compiler machinery. Stronger native hashed-SAT
+scaling is a live falsifier, not a theorem. Useful finite-N quantum guarantees
+or a source-preserving bridge to a harder ensemble would change the decision.
+Growing-size repetitive campaigns and optional CLI exposure belong to Gemini.
+
+## 2026-10-20 Ternary Global Composition And Conditional Sampling Bound
+
+Continued from actual local arithmetic. Read the known q-ary paper's exact
+extrinsic policy and prior binary erasure implementation; queried Claude's
+corpus before extending. New: theorems/ternary_bpqm_block.py, matching tests,
+research/TERNARY_BPQM_BLOCK.md and phase_workbench/ternary_bpqm_block.json.
+Goal ACTIVE. No GPT commit/push, central admission, UI/CLI churn or changes
+to other agents' arXiv/formal work.
+
+POLYNOMIAL PIECES: raw F3 socket validation, fixed outgoing-SOCKET extrinsic
+tree traversal, coefficient/physical-wire checked header DAG, exact erasure
+left inverse or nonzero kernel witness. Parallel sockets survive even when
+their coefficients cancel in H. Rank failures are not timeouts. Wrong record
+values pass through a TOTAL linear map; no consistency postselection.
+
+NEW COMPOSITION LEMMA, REVIEW PENDING: check heralds are immutable through
+the forward tree. Persistent exact headers depend only on those heralds;
+temporary fiber headers depend on t but are uncomputed before t changes.
+Reverse the persistent header DAG WITHOUT reversing physical operations.
+This makes a clean full-domain root interface possible and permits scratch
+reuse after U/copy/U-adjoint. Do not confuse cleared ARITHMETIC with erased
+READOUT RECORDS or reversed measurement disturbance. The schedule is real;
+its whole arithmetic gate lowering is NOT assembled yet. See the precise
+next-compiler instructions at the end of the new note.
+
+BOUNDED ACTUAL INSTRUMENT: new Givens completion, exact and finite CORDIC
+reference angles, fixed-order sequential root SUM/adjoints, retained records
+and actual F3 modular recovery. Full sampler includes all offsets, empty
+targets, source/estimate/readout registers and Gaussian gauge lift. This
+bounded compiler ENUMERATES herald tables and admits that exponential cost;
+it is not the uniform arithmetic compiler. All-offset Parseval residuals
+<2e-15. Wrong outer adjoint preserves norm but fails identity by0.99334.
+Nested five-wire/nonuniform-channel control also matches independent CQ law.
+
+CONDITIONAL ASYMPTOTIC SYNTHESIS, NOT A NOVEL ALGORITHM CLAIM:
+E_(H,J) TV <= Pr[rank(H_B)<|B|] +8 sqrt(N F_l)+implementation_error.
+Rank depends on coefficients: drop its indicator BEFORE the unconditioned DE
+average; do not condition the channel law on successful recovery. From the
+existing REVIEW-PENDING level13 f/lambda<1/3 certificate, take the least t
+with3^(2^t)>=N^6 and l=13+t. Then F_l<=3f/N^6, giving the conditional bound
+Pr[rank failure]+sqrt(192f/N^5)+1/N with the charged synthesis budget. Known
+ensemble distance/tree arguments make rank failure vanish asymptotically;
+no finite-N probability is certified. Header cleanup gives a constructive
+polynomial lowering specification; full gate-set synthesis remains unpaid.
+
+HARSH LIVE RESULTS on EXACT prior inputs:16 spins/seed711 has good counts
+32,9,0 at depths0,1,2; depth1 rank16 on23 erased columns FAILS.32 spins/seed712
+has64,33,0; depth1 rank31 on31 erased columns PASSES (accuracy unknown).
+Both depth2 fail. No native quantum root was executed. Both inputs already
+have exact classical pools. Level13 alone needs11,111,111,111,111 original
+outputs per tree. The conservative sufficient schedule has NO possible good
+root at N32,64 or10^6. This is a sufficient-bound limitation, not a no-go for
+better decoders. No useful finite-size algorithm or classical hardness shown.
+
+VERIFIED:28 new tests;269 connected tests PASS21.44s with RuntimeWarning fatal.
+34 preexisting Qiskit/IBM deprecation warnings only. py_compile,12 site JS
+checks, check_site, whitespace and actual qsearch validate PASS with issues[].
+Not the entire repository suite. All live producers finished and source-bound
+artifacts generated; central counts unchanged. All owned sessions terminal.
+Producer SHA2560e7b09fa873b2f0076da6638bf5d533bf4f64e7e1f95844465d4b436b3951ace;
+report SHA256c53b7f875d54a129ed5981f00172590629fcc8e28875f276ce6561442d3bdc8d.
+
+NEXT: Gemini can lower the now-explicit header DAG and run gate/reference
+equivalence. Main-model work should challenge the conditional sampling route
+with stronger classical THEORY or derive a genuinely useful finite-N decoder
+certificate. Do not keep adding threshold tables or claim known q-ary BPQM
+as a breakthrough. Keep all finite-size failures and retained-record costs.
+
+## 2026-10-20 Exact Ternary Headers And Actual Variable-Weight Rotation Gates
+
+Resumed from the classical-sampling comparison. Read Claude's corpus README,
+rediscovery/failure-mode/spend audit notes; queried been-tried before extending
+the binary classical-only log contract. Primary CDKM/BPQM/CORDIC sources checked.
+Known q-ary block theorem2609.05857 already uses tree roots plus erasure recovery;
+do NOT claim that global method as new. Goal ACTIVE, no GPT commit/push or
+central admission. Other agents' arXiv/formal changes preserved.
+
+TWO CONNECTED CONSTRUCTION PASSES, not a new algorithm:
+1. theorems/ternary_coherent_reliability.py, corresponding tests/doc and
+   research/phase_workbench/ternary_coherent_reliability.json.
+2. theorems/ternary_cordic_step.py, corresponding tests/doc and
+   research/phase_workbench/ternary_cordic_step.json.
+
+EXACT HEADERS: unnormalized nonnegative integer triples. Bit nodes convolve;
+check/fiber nodes multiply selected entries. Capacity product of original leaf
+denominators bounds the sum; physical T-leaf headers need T+1 bits. Zero
+headers remain DARK, no division/gauge/dephasing or branch deletion. Numerical
+headers do NOT certify distinct physical leaves/no cloning; schedule must.
+Actual uniform arithmetic circuits use Qiskit's nondeprecated CDKM synthesis,
+standard shift/add multiplication and full scratch uncomputation, not history
+tables. Arbitrary b-bit inputs use output2b+2 and14b+11 total qubits; maximum
+four X controls, O(b^2) logical gates. All768 one-bit domain cases replayed.
+
+INTEGER CORDIC: sign(P sqrt(b)-Q sqrt(a)) evaluated via exact sign/zero handling
+and P^2 b versus Q^2 a. Coefficients update P'=2^i P-sigma Q,
+Q'=2^i Q+sigma P. Uniform B-step angle error<=2^(1-B), no rare-probability
+factor. Two Givens per compression error<=2^(2-B). E occurrences across the
+ENTIRE A/subtract/Adjoint program give TV perturbation<=E*2^(2-B)+source+
+gate-operator errors, assuming exact arithmetic and coherent uncomputation.
+Local derivation REVIEW PENDING. Constant-angle finite synthesis is unpaid.
+
+The second pass ACTUALLY compiles signed comparisons, every coefficient update,
+retained history, variable qutrit rotation and complete history uncomputation.
+No classical digits injected as advice. 64 small step cases include minimum
+negative integers, ties and zero products. Both qutrit pairs at w2/B3 use
+268 qubits and27834 logical gates; complex superpositions across16 source
+basis words give norm residuals<2e-16, exactly zero garbage probability.
+Independent small full-statevector checks verify sparse-gate simulation/phase
+conventions. Many-work-qubit execution is sparse, not hardware or dense.
+
+HARSH RESOURCE CHECK: exact count formulas predict5,048,480,990 logical gates
+and91,545 qubits for ONE w64/B52 rotation. That large circuit was NOT allocated
+or executed. Polynomial existence is not practical advantage. No full LDPC
+receiver, native sampler, finite-N guarantee or classical hardness follows.
+The first report's false digit-compilation flag describes THAT module only;
+the newer second report records the completed local variable-weight interface.
+
+VERIFIED:48 new focused tests PASS3.69s; expanded connected502 PASS203.77s.
+Existing binary Qiskit deprecation warnings remain; no RuntimeWarning. Python
+compile,12 site JS syntax checks, check_site, whitespace and qsearch validate
+PASS valid:true/issues:[]. Central registry counts/admissions unchanged.
+Producers/reports bind source hashes; both live producer runs completed. Not
+the full repository suite. All owned jobs terminal at this pass boundary.
+Header report SHA256380a7d43d13033163e5588e4397219edfb7b3dfffd1d013b30e72e007b5a2e9e;
+rotation report SHA256cf8f9b92d55de6b8368e978a58fe1194945cbe962047edb824f92e7d1de83e8e.
+
+NEXT SCIENCE: instantiate/check the KNOWN two-stage q-ary block construction
+on this ensemble, with actual root-tree selection and classical erasure
+recovery. Do not require every loopy-graph root to be a tree or clone repeated
+channel outputs. Compose fiber headers/two Givens with root gates and test
+their changed dark-space completion in the unconditional sampler. Preserve
+the stronger classical conditional-sampling comparison. No more threshold
+tables, generic Gram routes, or silent reuse of old Householder global laws.
+
+Routine CLI exposure remains Gemini work. No automatic candidate/negative/
+proof promotion or use in Claude's preprint before independent review.
+
+## 2026-10-20 Strong Classical Uniform Sampling And A Count-Metric Correction
+
+Previous pass PROGRESS: unconditional q-ary reduction plus bounded actual
+BPQM gates. This pass tried stronger classical samplers on the EXACT saved
+native inputs before funding a large quantum receiver. Goal ACTIVE. No GPT
+commit/push, UI or central candidate/proof/negative promotion. Other agents'
+arXiv-watch/formal work is preserved. Corpus and primary backend sources read.
+
+Read TERNARY_CLASSICAL_SAMPLING.md. New producer/tests/live artifact:
+theorems/ternary_classical_sampling.py, tests/test_ternary_classical_sampling.py,
+research/classical_baselines/ternary_classical_sampling.json. New OPTIONAL
+requirements-research-sampling.txt. Native research Python unchanged; UniGen
+installed only in git-ignored tmp/unigen-venv using EXISTING x86_64 Python3.12
+and Rosetta. Main pycosat0.6.6 was already installed. No SDK/container/service.
+
+BIJECTIVE MODEL: three one-hot Boolean flags per ORIGINAL spin, native forbidden
+triples as CNF clauses, NO auxiliaries. Sampling the first TWO flags of EVERY
+spin still bijects to all native assignments; no gauge/unused-spin freezing.
+Every returned sample replays against the unchanged source in worker AND
+parent. Matrices/offsets/seeds16/711 and32/712 are read from the prior artifact,
+not regenerated or SAT-filtered. All timeouts and partial failures remain.
+
+ACTUAL RESULT: UniGen returns128 valid native16-spin samples (~0.30s outer
+wall), count67; native32 times out30s and stays UNKNOWN. Independent PicoSAT
+COMPLETE enumeration finds67 and10,092 solutions respectively (~0.073s and
+8.60s outer wall), then returns128 EXACT-POOL uniform samples each. This
+already defeats a hardness inference from old Z3/SAT timeouts on these inputs.
+Uniformity is conditional on complete solver census and fair independent
+index coins. A model cap/timeout NEVER licenses sampling the visited prefix.
+No propagation limit is used: pycosat explicitly warns its limited iterator
+can stop before a complete census. Storage/every verified solution is charged.
+At32 spins the complete pool occupies322944 native trits before overhead.
+This is NOT an asymptotic polynomial sampler; pool size can grow exponentially.
+
+THEORETICAL METRIC CORRECTION, LOCAL REVIEW PENDING: the prior comparison norm
+is R_J=Z_J/Zbar, Zbar=3^V(2/3)^M. Thus E(sqrt(R)-1)^2<=2delta; relative-count
+tail<=2delta/(sqrt(1+eta)-1)^2. Under the SAME known asymptotic decoding premise,
+the annealed mean is therefore ALREADY a polynomial CLASSICAL count predictor
+on most original inputs. Do not market global count/partition estimation as
+the quantum advantage here. This supplies neither prefix-conditional counts
+nor a sampler. Quiet planting has densityR and TV<=sqrt(2delta), but generating
+(instance,solution) does not provide a solution for a GIVEN original instance.
+Direct joint census and all prior source controls replay this distinction.
+
+Exact pool marginals illustrate it: native32 first four spins are TV
+18607/136242 from flat IID despite total count near its annealed mean. Count
+concentration is NOT a license for IID decimation. Prefix-conditioned sources
+change the ensemble. The earlier reduction note now EXPLICITLY requires the
+SAME decoder A independent of offset J; actual code already met this by
+building A once before its offset loop. J-adaptive receivers need another
+error argument, not the same Parseval claim.
+
+SCOPE: UniGen's count epsilon is NOT sampling TV, and output histograms do not
+certify its output law. No arbitrary-TV or independently audited backend
+guarantee is claimed. Upstream master has a nonliteral-fair-bit hash generator;
+matching that source to this wheel/quantifying its effect is NOT established.
+The exact-pool method is independent. Locked-CSP and old native-frequency
+walk no-gos do NOT automatically apply to this affine-exclusion model.
+
+VERIFIED:21 focused tests,336 connected PASS9.58s; final focused21 PASS0.39s.
+RuntimeWarning fatal. Python compile,12 JS syntax, site/whitespace, isolated
+venv pip check and actual qsearch validate PASS valid:true/issues:[]. Not the
+full suite. Central registry counts/admissions unchanged. Live report226164
+bytes SHA256 `3c50992afc7cd717d4e5fe3eb0f483f23cfa552a1a5882ef1d9de348897f555c`;
+producer SHA256 `ec7bfd1f6de4761f1c73123691958eb232e66269b64a75d356ab50bdad5fd2ee`.
+Report also binds the two original source/reduction artifacts. All jobs terminal.
+
+NEXT: any surviving advantage concerns UNIFORM CONDITIONAL SAMPLING, not global
+counts or finite SAT search. A stronger classical count-to-sample method must
+pay actual conditioned-prefix counts, error budgets and SAT costs; no uniform
+input mean reuse or truncated pools. Alternatively construct the known q-ary
+receiver's coherent reliability/rotation arithmetic with charged precision,
+not the dephased comparison as a circuit. No more count/entropy signal plots,
+small-size hardness claims, or generic Gram variants. Routine CLI exposure
+remains Gemini work; no automatic candidate/negative/preprint admission.
+
+## 2026-10-20 Unconditional Q-Ary Sampler Reduction And Actual Bounded BPQM Gates
+
+Previous pass PROGRESS: a signed-trine ideal-tree convergence premise for a
+known q-ary block theorem. This pass removes the next Fourier/sampling gap
+at the LOCAL DERIVATION REVIEW-PENDING level. Goal ACTIVE, no GPT commit/push,
+UI, central claim promotion or changes to other agents' work.
+
+Read TERNARY_DECODED_SAMPLER.md and its actual producer/tests/artifact:
+theorems/ternary_decoded_sampler.py, tests/test_ternary_decoded_sampler.py,
+research/reductions/ternary_decoded_sampler.json. Corpus and actual DQI/BPQM
+primary sections were checked first. This is known coherent-decoding/Fourier
+methodology with an explicit local q-ary error argument, NOT a novelty claim.
+
+GENERAL ARGUMENT: for ANY public H, C=ker H, G its basis, codeword uG and
+known product source phi, prepare uniform coherent u with public phase
+chi(uG.(y-J)). Apply known unitary decoder A, subtract its estimate from u
+MODULO q, then A-dagger. Keep ALL registers. For uniform ORIGINAL offsets J,
+E_J ||actual_J-comparison_J||^2=2*delta, where delta is mean word error.
+Comparison is sqrt(q^k)*phi restricted to Gy=GJ and is NOT normalized.
+Normalizing only in the proof gives average native-output TV<=2*sqrt(2delta).
+Empty targets produce ABSTAIN, never a fabricated normalized state or UNSAT
+oracle. Uniform Gaussian gauge lifting gives the ORIGINAL spin distribution,
+including dependent/zero H rows. No worst-case-J, DCP or LWE claim follows.
+
+ACTUAL GATES, NOT A FREE PGM OR SOURCE: bounded three-wire signed-check BPQM
+uses coefficient permutations, SUM-check, HERALD-CONTROLLED Householders,
+inverse F3, estimate SUM and adjoints. Every herald phase remains coherent;
+dark/zero-probability source branches get total unitary completions. Initial
+state executes local product rotations, label Fourier and public G bilinear
+phases from a blank. The actual polynomial FLINT affine postprocessor is
+also implemented/tested at32 spins/64 equations, outside the quantum cap.
+The complete statevector/fiber/coin histogram is exponential reference cost.
+
+FALSIFIERS:7 good-adjoint cases retain ALL27 offsets each. Native bounded
+word error0.43704639, TV0.19444444 overall /0.25 on nonempty targets, empty
+fraction2/9, valid-output mass7/12. Its generic TV bound is VACUOUS, not a
+reliable finite decoder. A constant decoder-output shift worsens word error
+to0.96679827 but leaves the full data distribution unchanged: sufficient
+metric, NOT necessary. WRONG adjoint preserves norm yet violates the exact
+mean-error identity by0.98093635. Changed full-support/perfect sources are
+classically easy CALIBRATIONS, not free copies or changed native targets.
+
+CLASSICAL: no-decoder circuit is exactly product-y proposal plus affine solve,
+mean acceptance3^-k. STRONGER original-spin rejection is also included, mean
+acceptance(2/3)^M natively:8/27 vs1/9 in the bounded example. Acceptance/retries
+are NOT free; both are exponential at M2V,k~V. This is NOT a classical lower
+bound. Prior Z3 witness/timeout records do not settle uniform sampling.
+
+VERIFIED:37 focused tests within315 connected PASS9.08s, RuntimeWarning fatal.
+Python compile,12 JS syntax, site/whitespace and actual qsearch validate PASS
+valid:true/issues:[]. Not the full suite. Registry admissions unchanged.
+Live report197248 bytes SHA256
+`712cf8b1a2b75d811e729851166d55b948e7d47353b607c16d589d138e999286`;
+producer SHA256
+`ba74d9acc2229cdce314ad6b26393e41ab9842123eb6a0a6f64a32b3ba8a20ff`.
+The existing convergence note now points to this follow-up. All owned jobs
+terminal; prior report source hashes still match unchanged dependencies.
+
+NEXT: first investigate stronger CLASSICAL UNIFORM sampling/approximate
+counting on the SAME dv3/dc6 random-coefficient native CSP, before investing
+in a large receiver. If it survives, implement coherent reliability/rotation
+arithmetic and its precision/error budget, not exponential angle tables or
+the dephased grid comparison as a circuit. A growing LDPC A remains uncompiled.
+No finer DE plots, small success-curve proliferation or generic Gram variants.
+Routine split-CLI/registry exposure stays with Gemini; no automatic candidate,
+accepted proof, negative-result or preprint promotion.
+
+## 2026-10-20 Signed Trine Enters A Known Q-Ary BPQM Success Region
+
+Previous pass PROGRESS: graph-source and support checks distinguished rank
+from decoding. This pass changes the CODE mechanism from dv2 graph cycles
+to dv3/dc6 random-coefficient LDPC branching. Goal ACTIVE. Corpus and actual
+primary sources checked before extending; no GPT commit/push, UI or registry
+promotion. No arXiv-watch, Claude formal or earlier owned files overwritten.
+
+Read TERNARY_BPQM_CERTIFICATE.md. New standalone producer/tests/live report:
+theorems/ternary_bpqm_certificate.py, tests/test_ternary_bpqm_certificate.py,
+research/phase_workbench/ternary_bpqm_certificate.json. Known BPQM operations
+and q-ary block theorem2609.05857 are PRIOR ART; no novelty/speedup claim.
+
+CONSTRUCTIVE LOCAL COMPARISON, REVIEW PENDING: mu=sum_h p_h nu_h is an exact
+Gram identity with explicit frequency-controlled flag isometry. Dephasing
+the flag is a physical DEGRADATION, not nearest-grid rounding. Three-vertex
+simplex interpolation and integer node weights yield exact G24 laws; ALL
+dyadic lost mass goes to the uninformative channel. Actual amplitude/block
+controls cover negative source, unequal full-rank and off-grid singular cases.
+Independent F3-star socket coefficient averaging is included, not granted
+fixed/chosen signs. This is a CQ performance bound, NOT a coherent compiler
+that may discard its reliability flags during uncomputation.
+
+ACTUAL CERTIFICATE: signed overlap -1/2, mu=(0,1/2,1/2), dv3/dc6,80-bit
+probability/root precision. First exact fidelity961/2048 independently
+replays. Level13 upper F0.006332239 and published q-ary tail lambda<0.333064
+certify double-exponential ORIGINAL ideal-tree fidelity decay, unlike the
+last pass's support-only statement.169750 exact pair visits, at most32 saved
+message types. The11,111,111,111,111 distinct tree outputs are COUNTED only,
+not constructed/cloned. Same-rate dv4/dc8 and short-budget controls are
+UNKNOWN, not no-go results. No finer threshold scan is needed next.
+
+Theorem30 already covers q-ary random-coefficient dv>=3 ensembles conditional
+on this success-region premise; do not re-prove a fictitious binary-only
+extension. Its source/finite-graph/asymptotic assumptions still apply. No
+numerical finite-block error, compiled whole-block circuit, paid precision
+ledger or q-ary natural sampling reduction has been executed here.
+
+CLASSICAL: native public CSP is J+H^T*x entrywise nonzero, with all original
+signed sockets/parallel cancellations retained. Z3 verifies a V16/M32 witness
+on seed711; V32/M64 seed712 hits1s and stays UNKNOWN. No SAT filtering,
+timeout-as-hardness claim or inference from SEARCH to uniform sampling.
+Actual anti-trine POVM gives exclusion channel capacity log2(3)-1 below this
+code's rate; Fano obstructs ONLY THAT measured-record decoder, not general
+classical CSP algorithms, samplers or other measurements.
+
+VERIFIED:27 focused tests within229 connected PASS5.29s, RuntimeWarning fatal.
+Python compile,12 JS syntax checks, site/whitespace and actual qsearch validate
+PASS valid:true/issues:[]. Not the full suite. Registry admissions unchanged.
+Live report78334 bytes SHA256
+`47cfe849923a15fbabbb58001a6dce797fa5fc921a5cd05050242f35088f9bf4`;
+producer SHA256
+`7003607994c5453f6dde41f77b35b9d79aebb957e33807613ba50544e127f48c`.
+Report also binds the preceding ternary producer and binary helper hashes.
+
+NEXT SCIENTIFIC TASK: derive/test the full unconditional q-ary decoder-to-
+constrained-product sampler on this actual sparse ensemble, retaining empty
+targets, unnormalized comparison vectors and every work register. Binary
+positive-temperature DQI cannot simply be cited as a signed q-ary theorem.
+Then construct the actual phase-correct receiver/precision budget OR kill the
+target with a stronger matched classical sampler. No more threshold plots,
+larger DE bags or generic Gram-reflection variants. Routine split-CLI exposure
+stays with Gemini. All owned processes terminal.
+
+## 2026-10-20 Natural Ternary Coloring: Source Checked, Global Receiver Still Missing
+
+Read Claude's merged corpus/audit/CLI/Lean notes; used been-tried before
+extending. Corpus similarities are leads, not theorem certificates. Partial
+Lean results do not prove the whole imported exterior-bound argument. No
+Claude/formal/arXiv-watch files edited. Goal ACTIVE. No GPT commit/push.
+
+New standalone producer/tests/note/live artifact: ternary_coloring_bpqm.py,
+test_ternary_coloring_bpqm.py, TERNARY_COLORING_BPQM.md and
+phase_workbench/ternary_coloring_bpqm.json. Optional optimization requirements
+now include z3-solver. No CLI/UI/central registry admission by GPT.
+
+INDEPENDENT NATURAL MECHANISM: q3 BPQM on graph cycle codes. Connected graph
+incidence B gives C=ker B; full-support words in a Fourier coset are exactly
+original shifted graph three-colorings after one fixed global gauge. The
+physical channel is the SIGNED trine, overlap -1/2, normalized spectrum
+(0,1/2,1/2). A fixed public Fourier/phase gate maps the existing signed source
+to it. Replacing the overlap by +1/2 or silently using two copies is invalid.
+Known q-ary BPQM is prior art; actual local SUM/Householder gates, complex
+herald phases, zero branches and independent mixed-state controls all replay.
+
+FALSIFIERS: K4 retains its empty ordinary target and rank26/27 Gram. Twelve
+NONEMPTY-to-NONEMPTY compressed physical shifts have a genuine kernel, even
+on extendible information coordinates. Thus the binary uniform root-gap
+repair does NOT transfer to this qutrit source. For every six-regular graph,
+ANY uniform single-copy word decoder has success <=(8/9)^V/3. Uniform original
+offsets have expected coloring count equal to that ratio, so their colorability
+also tends to zero. Neither result is a general coloring/quantum no-go, nor
+a statement about arbitrary fixed offsets or a SAT-conditioned ensemble.
+
+CONSTRUCTIVE LOCAL SUPPORT LEMMA, review pending: a singular extrinsic output
+must be a rotated physical trine. Its EXACT mass evolves as
+p_next=1-2*(1-p/2)^(d-1)+(1-p)^(d-1). Twenty actual branch controls and all
+available full density laws agree. Monotonic outward rounding and a quadratic
+union bound certify double-exponential support-mass decay after levels0/2/10
+for d3/d4/d5. A written global d5 factor1681/1728<1 proves eventual entry;
+d6 instead preserves p>=1/2 at ALL depths. Rank recovery is NOT error decay,
+a condition-number bound or a coherent cyclic receiver. Large tree outputs
+are counted, not constructed or cloned. Capped full density laws stay UNKNOWN.
+
+CLASSICAL: Z3 works on ORIGINAL shifted constraints and replays every SAT
+witness. Seeded d4,V16/32 and d5,V32 inputs are SAT; d5,V16 solver-UNSAT is
+retained without an independent general proof. No input filtering and no
+quantum decoder run on these graphs. Ordinary degree-three coloring is
+classically low-ceiling; do not transfer Brooks to shifted offsets for free.
+
+VERIFIED:78 focused tests within251 connected PASS7.55s, RuntimeWarning fatal.
+Python compile,12 JS syntax checks, site check, whitespace and actual qsearch
+validate PASS valid:true/issues:[]. Not the entire repository suite. Registry
+unchanged8 candidates/796 experiments/807 results/973 negatives/14 quarantined.
+Live schema2 report79742 bytes SHA256
+`a5cd6b5c4fc5b2d0ac90bda61b86183a08db2ab43f368f27306eb16d2b362767`;
+producer SHA256
+`49bcee9f2c916192991c739e453ac207bc05dd21381d20b17a1a0d28aa2c1942`.
+
+NEXT: stop six-regular reliable-word work, binary-gap transplants and bigger
+density bags. A d4/d5 return requires an actual phase-correct whole-input
+receiver and unconditional source/reduction guarantee, or a specific new
+construction avoiding reliable word recovery, plus matched classical attacks.
+Rank support alone does not supply this. If no such construction is available,
+pivot rather than generate adjacent conditional interfaces. Routine exposure
+belongs to Gemini's split-CLI handoff, not a GPT wiring pass. All owned jobs
+terminal. Previous Gibbs/OPI/nonabelian scope corrections remain in force.
+
+## 2026-10-20 Tested A Source-Aware Gram Route; Normalization Still Matters
+
+Previous goal turn was PROGRESS: spectral root repair works conditional on
+an orbit reflection; its local-parent gap is classically matched. This pass
+compared fresh literature and tested ONE actual alternative: construct the
+reflection through the public codeword Gram matrix and newer source-aware
+linear solvers. Same producer/test/note, no new theorem-module garden.
+Goal ACTIVE. No GPT commit/push, UI work or central registry promotion.
+
+Read the new Gram-access section of GIBBS_ORBIT_PARENT.md. Primary paper
+Dalzell/Li/Su2607.07691v2 was checked in the actual normalized-access model.
+Their filtering cost includes ||A^(-dagger)x||/(||x||*epsilon). A source-aware
+solver is not free rescaling, a new affine dilation, or a coherent reflection.
+Corpus checked before extending; nearest normalization negatives were read
+as scoped leads, not an excuse for a universal circuit lower bound.
+
+ACTUAL PUBLIC ACCESS: source-prep/SWAP/unprep yields Gamma/2^k; product-channel
+LCU yields Gamma/(1+c)^M. Nine bounded controls execute/check these circuits
+and normalizations, not just a precomputed Gram matrix. All original spectral
+repair and full unconditional Gibbs controls remain and pass.
+
+ALL-CODE BOUND, local review pending: Gamma_uv=c^wt(G(u+v)); its largest
+eigenvalue is W=sum_u c^wt(Gu). Public systematic form gives wt(Gu)>=wt(u),
+so W<=(1+c)^k. Thus the two encoded norms are at most(1+c)^(-r) and
+((1+c)/2)^k, r=M-k. BOTH are exponentially small at fixed0<c<1 and linear
+k,r. No typical-RHS window retains eigenvalues above an inverse-poly cutoff.
+The filtering theorem's COST EXPRESSION consequently does not certify a
+polynomial implementation; this is NOT a runtime/query lower bound derived
+from an upper bound and NOT an exclusion of all span reflections.
+
+Atc13/20,M2k, the better encoding gives quantity>=(40/33)^k for EVERY normalized
+solution. Actual128-clause source k64: conservative floor222304 before accuracy
+and other costs. k16/64/256/1024 rows are SCALAR ANALYTIC ONLY, no Gram table.
+
+COUNTERCONTROL: disjoint equality pairs have exact W=(1+c^2)^k and poor generic
+purification access (about2.96e9 quantity at k64), yet admit an O(k) direct
+native reflection: local two-wire readouts, reversible-AND flag phase, adjoints.
+Bounded k1/2/3 matrices verify precisely2P-I. Their Gibbs law also has an exact
+independent classical sampler. c0/k0/r0 endpoints have bound1 under the better
+encoding. These controls explicitly forbid turning an encoding failure into
+intrinsic quantum hardness or a speedup on the easy family.
+
+VERIFIED:97 focused tests within246 connected PASS86.20s. Existing Qiskit
+deprecation warnings remain; no RuntimeWarning. Python compile,12 site/root
+JS syntax checks, site/whitespace checks and qsearch validate PASS valid:true,
+issues:[], unchanged8 candidates/796 experiments/807 results/973 negatives/
+14 quarantined/104 proof statuses. Not the full repository suite.
+Live schema v2 report152926 bytes SHA256
+`ba3d2c9b6d38425d17ac9b48f05a0b0af424ff4daf4ca7f52d139cdb3c83e48b`;
+producer SHA256
+`3a9ed7032c1822d6a24710953e00bfc974b4feb9b1223f09ae6fb94e59f7bfe6`.
+These supersede the preceding section's schema-v1 fingerprints.
+
+NEXT: stop generic Gram/parent variants. Re-entry requires an explicitly
+constructed stronger native encoding, preconditioner/reflection or joint
+dilation with a scope-matched cost argument, not a paper title. Otherwise
+choose an independent natural mechanism. Routine split-CLI wiring stays with
+Gemini; no automatic candidate/proof/negative admission. All owned jobs are
+terminal; unrelated arXiv-watch changes and Claude's formal files are untouched.
+
+## 2026-10-20 Spectral Gibbs Repair Works; Its Local Parent Is Classically Matched
+
+Previous goal turn was PROGRESS: two false nonabelian no-go records were
+quarantined. This turn compared the portfolio and primary sources, then
+tested ONE constructive fix for cyclic BPQM orbit-span leakage. Goal ACTIVE,
+no external decision blocker. No GPT commit/push or central claim promotion.
+
+Read GIBBS_ORBIT_PARENT.md. New producer/tests/live source-bound artifact:
+`theorems/gibbs_orbit_parent.py`, `tests/test_gibbs_orbit_parent.py`,
+`research/phase_workbench/gibbs_orbit_parent.json`.
+The QCT paper2610.16827 has now been read in its restriction/central-shadow
+sections; it is not an orientation receiver. Existing BPQM tree, erasure,
+native cluster/tempering and exact-factor work was read before extending it.
+Corpus checked the proposed parent/heat-bath mechanism; standard PGM/QSVT and
+stochastic-Hamiltonian methods remain prior art, not novelty certificates.
+
+CONSTRUCTIVE LOCAL LEMMA, REVIEW PENDING: on the exact product-channel orbit
+span P, the compressed physical information bit C_i=P X_i P pairs positive
+normalized coset vectors with coefficient alpha in[sqrt(1-c^2),1] for EVERY
+code/sector at0<=c<1. Its sign is therefore the global PGM bit reflection.
+The sign-normalized roots commute although raw compressions need not. Two
+ancillas block-encode C_i using two controlled R_P=2P-I calls, normalization1.
+Known QSVT supplies conditional sign synthesis; no efficient R_P is supplied.
+This is specific to the positive binary source, NOT a DCP decoder.
+
+ACTUAL full source/A/label-XOR/A-adjoint/final-readout reference passes ALL128
+sign cases across two cyclic/dependent-check inputs and two temperatures.
+Worst unconditional Gibbs TV7.63e-16. Atc13/20 word error0.0393922 stays
+positive, and the source label does NOT always clear. No postselection.
+Raw compressed commutator norm0.115704 becomes zero within numerical tolerance
+after spectral normalization. The bounded reference obtains P by EXPONENTIAL
+dense parent diagonalization, not an efficient quantum span-reflection circuit.
+
+DECISIVE CLASSICAL COMPARISON: local deformed-check orthogonal projectors have
+this span as their joint kernel. On EACH Fourier coset, their normalized mean
+L is EXACTLY I-D_pi^(1/2) K D_pi^(-1/2), where K is legal quotient heat bath
+using only public local weight ratios. Thus parent sector gap=classical gap.
+Polynomial parent gap would ALSO give polynomial classical Gibbs sampling.
+Dependent/zero checks remain; uniform affine gauge lifting recovers full spins.
+The full spin spectrum is NOT identical when gauge degrees exist.
+
+60 sector controls and independent deformed-code/local-gate constructions
+agree. A real unfiltered(3,6)64-spin/128-clause input runs256 classical local
+updates,1476 tested factor bits and a verified native lift. NO stationary/TV
+guarantee is claimed for that short seeded trace. The conservative all-input
+gap floor rho^(M+d)/R gives a95-digit sufficient mixing budget, saved but NOT
+executed; this is NOT a slow-mixing or classical-hardness proof.
+
+VERIFICATION:73 focused tests within222 connected PASS86.38s; old Qiskit
+deprecation warnings remain, no RuntimeWarning. After the final report refresh,
+134 focused/previous-audit/CLI tests PASS1.42s. This is NOT the full repository
+suite. Python compile,12 root/site JS syntax checks, site check, whitespace and
+actual qsearch validate PASS valid:true/issues:[]. Registry remains8 candidates,
+796 experiments,807 results,973 negatives,14 quarantined,104 proof statuses.
+Producer SHA256 `1a23e1dcd7d29f2a7907c516b8d31c660572aba52e3e62d4a13d90bccffd7002`;
+report96481 bytes SHA256
+`f2fddedc684bb04e2a03ce31b52b303501d70b6b4258478f9c989e60f5e5f38f`.
+
+DECISION/NEXT: retain spectral root normalization, but DO NOT build a large
+gap-based parent filter assuming locality makes P cheap. A genuinely different
+public reflection/transport construction might avoid that gap dependence;
+the comparison is NOT a universal circuit lower bound or a BPQM dequantization.
+Re-entry needs ONE explicit construction and matched classical test. If none
+is available, pivot; no more adjacent parent/gap variants or conditional
+interfaces merely to keep this track busy. Gemini may wire the finished
+reference; the main model should resolve a scientific question, not CLI work.
+All owned jobs are terminal. Unrelated arXiv-watch changes are preserved.
+
+## 2026-10-19 Two False Nonabelian No-Go Records Removed From Active Search
+
+Previous pass was PROGRESS on a CLASSICAL falsifier, not quantum algorithm
+discovery. Canonical unweighted consecutive moment search remains retired in
+the certified regime; its local proof still requires independent review.
+This pass instead corrected two active registry claims that could wrongly
+exclude constructive nonabelian work. Goal ACTIVE; no outside decision blocker.
+No GPT commit/push, outreach, central candidate or proof-status promotion.
+
+Read NONABELIAN_BARRIER_SCOPE_AUDIT.md and the actual producer/report:
+`theorems/nonabelian_barrier_scope_audit.py`,
+`research/representation/nonabelian_barrier_scope_audit.json`.
+Corpus checked before extending; Claude's corpus warns that retrieval matches
+are leads, not verdicts. Its existing malformed hypothesis warning is preserved.
+
+EXACT public measurement countercontrol: for rho_h=(I+R_h)/|G| and a PUBLIC
+involution t, the Hadamard test of R_t has P(+)=1 if h=t, else1/2. For uniform
+hidden transpositions M=binom(n,2), mutual information lies between1/M-2/M^2
+and1/M, NOT universally poly(n)/n!. The measurement uses ceil(log2 n)
+controlled word swaps, two H gates and one ancilla; no hidden h is supplied.
+All12,162 sparse branches across S3..S6 and an independent dense mixed-state
+S4 circuit verify. Large-n records are analytic ONLY. Classical enumeration
+of the SAME transposition candidates needs at mostM+1 queries: NO speedup.
+MRS's GI hard ensemble has n/2 disjoint transpositions, NOT this easy family.
+
+Exact SU2 Clebsch-Gordan recurrence: spin-one commutant dimensions atM2/M3
+are3/15, not Catalan2/5. Catalan is correct for spin HALF. Independent dense
+commutator nullspaces give3/5 for spin-one M2/qubit M3 (nonzero singular gap
+sqrt2). A two-gate Bell readout measures SWAP(1,2) tensorI despite an
+exponentially large qubit commutant. This disproves DIMENSION-ONLY circuit
+inferences, NOT any specific lower bound for the optimal GI measurement.
+The torus invariant is zero weight, not an extremal spin-coherent state.
+
+INDIVIDUALLY REVIEWED AND QUARANTINED, complete hash-bound originals retained:
+`NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER` and
+`NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION`.
+Source notes now lead with retractions; old bodies are historical provenance.
+Website negative list/map were regenerated ONLY to remove those false active
+barriers; no UI polish or wholesale progress rewrite.973 active negatives,
+14 quarantined; other counts unchanged. Changed evidence/duplicates fail
+closed; archive-before-remove, idempotence and concurrent-update preservation
+are tested. Do not reinstate these IDs using old arithmetic tests.
+
+PRIMARY LITERATURE RETAINED: weak labels cannot identify conjugate orientations;
+MRS obstructs specified single-coset GI measurements; Hallgren/Roetteler/Sen
+requires Omega(nlogn) jointly measured GI coset states. EHK is a polynomial
+QUERY upper bound, not the copy lower bound or polynomial-time algorithm.
+Bacon/Chuang/Harrow efficient Schur/CG circuits do NOT supply a general
+symmetric-group Kronecker transform or optimal GI POVM. No continuous-HSP
+BQP exclusion is supported without an explicit input/precision model.
+
+VERIFIED:225 connected tests PASS4.21s, including corrected old SU2 tests,
+earlier quarantine audits, site exporters and CLI parser. This is NOT the
+full repository suite. Python compile,12 site/root JS syntax checks, site
+checks and actual qsearch validate PASS (valid:true/issues:[]). No new
+algorithm, receiver, oracle candidate, general circuit lower bound or speedup.
+
+NEXT: do not expand this into another universal-barrier campaign. A GI/code
+equivalence re-entry needs an explicitly compiled PUBLIC joint effect with
+useful mass on its NATURAL hard ensemble and matched classical contractions.
+The arXiv-watch lead2610.16827 (Quantum Character Transform) was verified at
+the primary abstract: it concerns CENTRAL class-function information, not
+an established orientation receiver; full-paper review is still needed before
+extending it. Do not infer a breakthrough from a search-space correction.
+Routine CLI/EXP wiring remains with Gemini; mathematical receiver selection
+stays with the main model. Unrelated arXiv-watch dirty changes are preserved.
+
+## 2026-10-19 Uniform Consecutive Family Closed Locally; Stop This Search Line
+
+Previous turn was PROGRESS: native prefix masking gave a fixed-target success
+certificate for one public split. This pass audited the probability argument,
+compared DCP/lattice, sampling, folded norms and cyclic/dynamics alternatives,
+then finished ONE remaining substantive quantifier gap before retiring the
+canonical moment-search direction. Goal ACTIVE, no outside decision blocker.
+No GPT commit/push, UI work, new theorem module or central proof promotion.
+
+In the SAME moment_target_masking.py: `uniform_family_parameters` and
+`attack_uniform`. New exact reflection lemma: for EVEN n consecutive points,
+A_n'(n+1-a)=-A_n'(a). With p3mod4 this gives EXACTLY n/2 square and n/2
+nonsquare derivative values for EVERY p>n. No favorable-profile/seed assumption.
+Arbitrary-support and p1mod4 countercontrols are retained.
+
+Exact scalar split: ell=ceil_log2 L, h=floor_log2 p-1,
+t=ceil((r+2ell+6)/h), s=r+t plus at most1 to make n=L-s even.
+Require L>=16,p>L,p3mod4,n>=2r+4. Then the mask energy<=1/(64L^2),
+TV<=1/(16L), zero-prefix loss<=1/(16L). Standard irreducible counting gives
+mu>=1/(2D)>=1/(2L). With2^B>=64L, all directed-rounding losses total<=3/(64L),
+so actual gamma>=21/(64L)>1/(4L). Expected attempts<=4L and4Lf fresh
+independent COMPLETE attempts fail with probability<2^-f. Source/primality,
+poly arithmetic and standard expected-poly finite-field factoring remain paid.
+
+UNIFORM QUANTIFIER CLOSURE, local review pending: EVERY L>=64, prime p>L,
+p3mod4 and1<=r<=floor(L/4) automatically satisfies the split gate. Proof:
+h>=5,ell<=L/8 imply s<=7L/20+16/5 and n>=13L/20-16/5>=2r+4.
+Thus the WHOLE proposed canonical unweighted consecutive quarter-rate native
+SEARCH family has a locally derived classical expected-polynomial solver,
+not just the saved127-vector. More generally each fixed r/L<1/3 eventually
+passes as L grows. This is NOT an optimal threshold or general diagonal MQ,
+weighted/arbitrary support, exact sampling, strict-all-nonzero or folded-norm
+claim. Do NOT infer hardness above1/3 or novelty from retrieval failure.
+
+ACTUAL new uniform-split witnesses: p61,L127,r31,s33,n94,groups47/47;
+nonzero and homogeneous targets take18 and17 paid attempts. Separate p8191,
+L320,r80,s90,n230,groups115/115 target takes24 attempts; all80 native equations
+and320 ORIGINAL coordinates replay. Earlier manual s32 /6-attempt witnesses
+remain saved. L1024/r256 andL4096/r1024 records are explicitly SCALAR PARAMETER
+ARITHMETIC ONLY: no matrix, norm solver or quantum state ran at those sizes.
+
+REFERENCE LIMITS: removed arbitrary4096-attempt cap so a valid declared budget
+is not silently truncated. The reference4096-coordinate limit remains an
+operational implementation boundary, not a mathematical/hardness assertion.
+Unknown certificates now have no2^-f failure claim; that bound only applies
+after the stated independent-coin budget. Seeded transcripts remain NON-IID.
+
+VERIFICATION:26 focused masking tests within150 connected tests PASS6.37s.
+Exact reflection products/classes, parameter inequalities, derivative-free
+analytic construction, smallest eligible primes atL64..512, native witnesses,
+unknown gates and all earlier Gauss/TV/IID/reduction tests pass. This is NOT
+the full repository suite. Python compile, recursive site JS syntax, site
+checks and actual qsearch validate PASS, valid:true/issues:[], unchanged
+registry counts. Live schema v2 report2256768 bytes, source SHA256
+`c886a0575f0b49b3ba530d3d748f25fa0aabd08b361ae5c2a1d91d699ed93db0`,
+report SHA256 `d1ecf82281c9cb5b08de71b0cfab5fc2d1a95f0d318b69cb7290d279e00e0348`.
+Full proof / portfolio review: MOMENT_TARGET_MASKING.md, final sections.
+
+NEXT: STOP canonical unweighted consecutive moment-search receiver/threshold
+work. Independent proof review is still required before scholarly/accepted
+proof claims. Sampling is NOT automatically dequantized, but must first earn
+re-entry with a natural reduction and stronger classical sampling baselines;
+do not rename an easy-search family as a hard-sampling candidate by default.
+DCP/GI need an actual new constructive receiver, not another conditional
+interface. Select a genuinely independent mechanism from primary literature
+and corpus-check it before building; routine CLI/EXP wiring stays with Gemini.
+No usage is to be spent on more named high-rate OPI bridges or parameter scans.
+
+## 2026-10-19 Native Variable Masking Bypasses The Fixed-Target Gap
+
+Previous turn was PROGRESS: an all-target structured-support solver and
+GRS/OPI reduction were implemented, and the existing norm attack solved one
+fixed sparse input. This turn resolves the next scientific question in a
+SPECIFIED regime, not by incorrectly amplifying its population mean.
+Goal remains ACTIVE; no GPT commit/push or central proof/negative promotion.
+
+NEW `theorems/moment_target_masking.py`, focused tests and actual live report
+`research/classical_baselines/moment_target_masking.json`. Read the complete
+derivation and scope in `research/MOMENT_TARGET_MASKING.md`.
+
+For any s distinct native points, r<=s, independent uniform ORIGINAL values u
+give square-moment syndrome D with EXACT chi-square divergence from uniform:
+E=p^-s*sum_(j<r) binom(s,j)*(p-1)^j*(p^(r-j)-1). Quadratic Gauss magnitudes,
+Vandermonde subset ranks and Parseval prove it; TV<=sqrt(E)/2. No Fourier-label
+or ambient-field enumeration. Reserve those variables, commit their values as
+part of the output, solve residual b-D on the OTHER original variables, and
+concatenate. The requested b, field, support and equations are NEVER rerolled.
+
+For residual support n=L-s,K=n-r, an independent uniform degree<K kernel mask
+completes an exactly uniform residual syndrome to IID OPI shifts. Near-uniform
+cost is at most delta=TV. Existing norm-population success mu=I_p(Dnorm)/p^Dnorm
+therefore gives for EVERY fixed b a success floor gamma=mu-delta-p^-s, the last
+loss rejecting all-zero reserved assignments to ensure nontrivial homogeneous
+outputs. Code rounds mu DOWN and losses UP. Require BOTH the norm degree gate
+and gamma>0; otherwise UNKNOWN. Fresh independent COMPLETE attempts may now
+be amplified: expected<=1/gamma, failure<=(1-gamma)^T. Seeded transcripts are
+NOT a confidence certificate. This is a NEW reduction around the old norm
+solver; the old unmasked q(b) distribution is not being asserted uniform.
+
+ACTUAL original p=2^61-1,L127,r31,s32 control: remaining n95,K64,orientation
+counts48/47,Dnorm48. delta<=2.15792e-5, gamma>=0.0208117541, expected attempts
+<=48.04977,481 independent complete attempts suffice for the stated2^-10
+bound. TWO unchanged targets (one nonzero, one homogeneous) get independently
+verified127-variable/31-equation native witnesses in6 paid attempts EACH.
+Every prefix/kernel/norm failure is retained. This closes the fixed-field
+probability gap for THIS certified split under the local derivation, not the
+older N127,K77 OPI task, arbitrary sparse quadrics, strict-all-nonzero roots
+or the folded m31 extension-norm input. No uniform sampling claim.
+
+Small exact control:2401 directly evaluated F7 target/prefix/quadratic-mask
+cases, representing49 lower-degree mask choices apiece. EVERY target obeys
+the floor; without prefix masking target5 has0/7 monic irreducible hits despite
+a simple native witness. This is a countercontrol to illegal mean amplification,
+not a universal norm-solver impossibility. Additional tests independently
+recover the Fourier energy from enumerated native collision distributions.
+
+All mathematical claims are LOCAL REVIEW PENDING, standard ingredients/local
+combination, no novelty claim. Factorization has standard expected-polynomial
+complexity, not a certified low-level implementation bound. The literature
+refresh found Horinaga--Yamakawa arXiv2607.14650's known worst-case OPI route;
+it is not an excuse to turn the old generic average bound into a targetwise
+theorem. Do not build another high-rate OPI quantum bridge by renaming it.
+
+FINAL VERIFICATION:14 focused masking tests within138 connected tests PASS
+6.39s. Includes exact native collision/Fourier identities, directed TV root,
+cross-check with the OLD norm-population theorem, every small fixed target,
+missing-prefix countercontrol, degree rejection, forced budget failures,
+actual61-bit witnesses and producer/dependency bindings. Python compilation,
+recursive site JS syntax, site check, tracked AND new-file whitespace checks,
+and actual `python qsearch.py validate` PASS; valid:true/issues:[], unchanged
+central registry counts. This is NOT the full repository suite.
+
+Actual report350344 bytes, SHA256
+`c63b0ddf93b9ae7cdca107bf777e2affd9c8feb8dfe184aa08d525780f8707b9`;
+producer SHA256
+`64a9e75a81711bc1162c6757f49eb270930c631552f19309fc60d8532f597abc`.
+All jobs started for this pass are terminal; no GPT commit/push. Unrelated
+concurrent arXiv-watch changes are preserved.
+
+NEXT: independent proof review of the masking transfer, then compare a
+genuinely different constructive direction or natural exact-sampling task;
+search advantage is not supported in this certified family. Routine CLI/EXP
+wiring belongs to Gemini with the split CLI rules. Do not implement additional
+minority-projection/threshold variants merely to accumulate modules. No new
+outside decision or genuine blocker is present.
+
+## 2026-10-19 Resumed: Claude Notes Read, Sparse Route Linked Back To Classical OPI
+
+User explicitly resumed work and asked for Claude's notes. This supersedes
+the older pause instruction below; goal ACTIVE, not completed. Read the merged
+CLI-split instructions, corpus README, rediscovery/failure-mode audits, draft
+preprint review history and unsent open-problem/outreach notes. Used the new
+`tools/corpus/cli.py been-tried` BEFORE extending the direction. Retrieval and
+model-labelled audits are leads, not mathematical or novelty certificates.
+No outreach was sent, manuscript edited, GPT commit/push, UI polish, legacy
+circuit search, new central candidate or proof/negative promotion.
+
+Hard question: does a sparse support actually evade the dense classical
+completion, and can its chirp receiver replace exponential ML with a known
+polynomial decoder? Three mathematical results, all local review pending:
+
+1. SAME producer `theorems/outer_coded_chirp_probe.py` now includes
+   `complete_barycentric_moment_squares`. Let A=product(X-a), L=|S|, all A'(a)
+   in one quadratic class, p3mod4, r<=floor(L/2). Lagrange quadrature plus the
+   formal square root of A+B (even L) or X*A+B (odd L) gives a deterministic
+   classical witness for EVERY ORIGINAL target in poly(L,log p), without
+   ambient enumeration. Scale R(a) by sqrt(kappa/A'(a)); those scales cannot
+   be dropped. Below the half-rate boundary, a constant avoiding -R(a) makes
+   EVERY coordinate nonzero without changing the target. Actual155-variable
+   61-bit witnesses at (r,strict)=(38,true),(77,false),(76,true), plus128
+   exhaustive small targets. Thus sparse odd-order subgroup/coset/affine-image
+   supports do not rescue this search candidate. Generic support NOT solved.
+
+2. `sparse_list_decoder_certificate` specifies a target-independent GS-list
+   maximum-agreement selector. The actual q-ary symmetric channel has q0>1/2,
+   q1<1/(2(p-1)). For t^2>L(r-1), u=t-r+1,
+   epsilon<=2^-L*sum_(j<t) binom(L,j)+(p^r-1)*binom(L,u)/(2(p-1))^u.
+   Bound all terms outward with exact96-bit dyadics. The deterministic
+   polynomial decoder is supplied at THEOREM level by Chatterjee--Harsha--Kumar
+   arXiv2511.05176v2, Theorem1.1; NOT implemented/executed here. Ideal native
+   validity mean>=1-2epsilon follows from the existing full flagged identity,
+   NOT a worst-target guarantee. AnalyticL512/r64/t200 andL1024/r128/t400
+   records are NOT quantum executions. Full phase/trace/gate budget remains
+   open. Do not promote rational certificate arithmetic into a quantum run.
+
+3. More decisively, standard GRS duality identifies this as EXISTING OPI:
+   z_a=x_a^2=(B_b(a)+P(a))/A'(a), deg(P)<K=L-r. OPI shifts=-B_b(a),
+   orientations=character(A'(a)). The proposed r/L<1/4 window is high-rate
+   K/L>3/4 OPI, not an independent quantum idea. New exact wrapper reuses the
+   EXISTING `prime_character_norm_attack.attack` on ONE fixed p61,S1..127,r31
+   input, K96. Public seed6611, cap128: perfect witness after16 charged base
+   factorizations, degree72. Converted it back to127 ORIGINAL F_p square
+   variables and replayed ALL31 equations;127 coordinates observed nonzero.
+   All rejected norm targets retained. Not a uniform all-target solver or a
+   solution of the separate folded m31 extension-norm input.
+
+Important additional probability derivation: for uniform ORIGINAL b and an
+independent uniform mask M of degree<K, (b,M)->B_b+M->L evaluations is a
+linear bijection onto F_p^L. Therefore the old norm solver's one-trial IID-shift
+population lower bound DOES transfer to uniform native targets with a kernel
+mask, without rerolling b, when its degree/field premises hold. Saved exact
+I_p(72)/p^72 bound. The fixed seeded control did NOT sample that population.
+For FIXED b the mask reaches only p^K shifts, NOT IID. Do NOT amplify a
+population mean into high probability on most targets. E_b[(1-q(b))^T] is
+not (1-E_b q(b))^T. This is not a full high-probability dequantization.
+
+Full derivations, falsifiers, finite/native versus symbolic scope and primary
+references are in `research/OUTER_CODED_CHIRP_PROBE.md`. Actual live report
+schema v5: `research/classical_baselines/outer_coded_chirp_probe.json`,531919
+bytes; SHA256 `c349e1bca757c7a19b1435ed51f7361c21e6fe92930d3da817e2563266f151a2`
+is the verified final report digest. Producer SHA256 is
+`a1ed9c1cd20c08e43cf5d0f545b008b2bcb216a4a475e54794adba25d0c32c48`.
+All THREE dependencies are also bound; reports are generated, never patched.
+
+Next HIGH-REASONING question: bound the distribution of fixed-target norm
+success q(b), or find a genuinely different mechanism outside this known OPI
+reduction. The already derived polynomial decoding bound is not a reason to
+build another named quantum bridge. Compare independent directions before
+another long OPI pass if no precise q(b) lemma is available. No classical
+hardness, novel speedup, worst-target theorem or universal no-go established.
+The derived mixed-derivative projection extension and routine CLI/EXP wiring
+are in the mechanical plan; preserve their exact degree/source conditions.
+
+Final verification:124 connected tests PASS6.44s across outer chirps,
+prime-character OPI, its existing norm attack, conjugate-chirp repair and CLI
+integrity. Two initial tests passed tuples to FLINT's list-only constructor;
+fixed the test inputs and reran the entire connected set. Native bidirectional
+GRS reduction and uniform-target/kernel-mask bijection are exhaustively
+checked at small lengths, separately from the61-bit native witness. Python
+compilation, recursive site JS syntax, site checks, git whitespace and actual
+`python qsearch.py validate` PASS; valid:true/issues:[], central counts
+unchanged. No full-repo pass is asserted. All jobs started for this pass are
+terminal. Concurrent arXiv-watch changes were not made or reverted by Codex.
+
 ## 2026-10-19 User-Requested Pause: Coherent Chirp Pass Complete
 
 This entry supersedes the ACTIVE/next-pass instructions below. The user asked

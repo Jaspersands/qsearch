@@ -432,5 +432,81 @@
     "review": "research/NATIVE_HISTORY_ERASURE_DEQUANTIZATION.md",
     "reviewed_on": "2026-10-19",
     "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+        "SYMMETRIC-GROUP-HSP",
+        "GRAPH-ISOMORPHISM-QUANTUM-BARRIER",
+        "KRONECKER-RACAH-BARRIER",
+        "MULTI-COPY-COMMUTANT-EXPLOSION"
+      ],
+      "claim": "Quantum algorithms can solve the Hidden Subgroup Problem in symmetric groups S_n efficiently using weak Fourier sampling, single-copy strong Fourier sampling, or multi-copy collective measurements.",
+      "evidence": {
+        "classical_query_lower_bound": "Omega(sqrt(n! / 2)) = 2^{Omega(n log n)}",
+        "gelfand_collapse_multiplicities": "(S_4, H) Hecke algebra non-commutative, transpositions dim 7, matchings dim 8, irrep multiplicity > 1",
+        "kronecker_racah_complexity": "Kronecker positivity NP-hard, computation #P-hard, Racah matrix rank 2^{Omega(n)}",
+        "multi_copy_commutant_explosion": "dim(C_M) >= (n!)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n)",
+        "single_copy_mutual_info": "I(H : M) <= poly(n) / n! = 2^{-Omega(n log n)}",
+        "speedup_claim_allowed": false,
+        "weak_fourier_blindness": "TV distance identically 0.000 for conjugate subgroups in S_n"
+      },
+      "id": "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER",
+      "lesson": "The Hidden Subgroup Problem in the symmetric group S_n (and hence the standard quantum approach to Graph Isomorphism) is obstructed at every measurement tier. Weak Fourier sampling produces identical output distributions for conjugate subgroups (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing mutual information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant algebra of factorial dimension 2^{Omega(n^2 log^2 n)} governed by #P-hard Kronecker-Racah Clebsch-Gordan coefficients.",
+      "reason_invalid": "Characters of S_n are class functions, so chi_lambda(H_1) = chi_lambda(H_2) for all conjugate hidden subgroups, proving p(lambda | H_1) = p(lambda | H_2) and TV = 0.000 identically (weak Fourier blindness). For single-copy states, Moore, Russell, and Schulman proved that any POVM yields mutual information at most poly(n) / n! = 2^{-Omega(n log n)}. (S_n, H) is not a Gel'fand pair for n >= 4 (irrep [3,1] has multiplicity 2 for transpositions, and [2,2] has multiplicity 2 for matchings in S_4), inducing non-commutative Hecke algebras of dimension 7 and 8. For M copies, the commutant dimension dim(C_M) = (1/n!) sum chi_perm(g)^{2M} >= (n!)^{2M-1} / 2^{2M}; at the Ettinger-Hoyer-Knill information threshold M = Omega(n log n), this exceeds 2^{Omega(n^2 log^2 n)}, requiring at least 2^{Omega(n^2 log^2 n)} quantum gates. Furthermore, decomposing multi-copy states is equivalent to computing Kronecker coefficients and Racah 6j/3nj symbols, which are #P-hard and require diagonalizing exponential-rank matrices.",
+      "source": "research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md"
+    },
+    "original_sha256": "0e9f13606c9c368f56b8f47f8362c46e06439aa42e6d7103208e095e3759bac6",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "MRS studies the long-involution GI ensemble, not all transposition subgroups.",
+      "A public candidate Hadamard test has Theta(1/n^2) information for a uniform hidden transposition.",
+      "Commutant dimension is not a quantum gate lower bound; worst-case coefficient hardness does not supply that reduction.",
+      "EHK is a query upper bound, not the cited copy lower bound or a polynomial-time receiver."
+    ],
+    "review": "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md",
+    "reviewed_on": "2026-10-19",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "SU2-HSP",
+        "SO3-HSP",
+        "COMPACT-LIE-GROUP",
+        "WIGNER-D-MATRICES",
+        "CATALAN-COMMUTANT-INFLATION"
+      ],
+      "claim": "The Hidden Subgroup Problem over the compact Lie group SU(2) or SO(3) can be solved in polynomial time by standard quantum Fourier sampling.",
+      "evidence": {
+        "catalan_commutant_inflation": "Commutant dimension of V_1^{otimes M} scales as Catalan number C_M = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}), exceeding 6.5 billion for M=20",
+        "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+        "racah_recoupling_hardness": "Diagonalizing multi-copy commutant requires evaluating 3nj-symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009)",
+        "speedup_claim_allowed": false,
+        "spin_coherent_projector": "Strong Fourier projection for torus U(1)_n onto integer spin j yields rank-1 spin-coherent state |j, n, 0>, but extracting n requires entangling measurements across M = Omega(1/eps^2) copies",
+        "weak_fourier_orientation_blindness": "Wigner characters chi_j(theta) = sin((2j+1)theta) / sin(theta) are class functions; weak Fourier sampling TV distance across all orientations is identically 0.000",
+        "wigner_character_conjugacy_invariance": "chi_j(g h g^{-1}) == chi_j(h) identically for all g, h in SU(2)"
+      },
+      "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
+      "lesson": "The Hidden Subgroup Problem over compact non-abelian Lie groups such as SU(2) and SO(3) cannot be solved by quantum Fourier sampling. Irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
+      "reason_invalid": "In SU(2), irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) = sin((2j+1)theta) / sin(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
+      "source": "research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md"
+    },
+    "original_sha256": "6baeff6e7033b74b8353c70f82010cc64b3b01da74b84365725695645119580c",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Catalan dimensions apply to tensor powers of spin half, not spin one: spin-one counts at M=2,3 are 3,15.",
+      "Exponential commutant dimension does not imply exponentially costly measurements or recoupling circuits.",
+      "The torus zero-weight state is not an extremal spin-coherent state.",
+      "No specified continuous-input precision model or valid reduction proves exclusion from BQP."
+    ],
+    "review": "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md",
+    "reviewed_on": "2026-10-19",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   }
 ]

@@ -1,0 +1,78 @@
+{
+  "status": "HYBRID_REVERSIBLE_WORKSPACE_PROPOSAL_REVIEW_PENDING",
+  "fixture": {
+    "path": "research/reductions/hermite_module_certificate.json",
+    "sha256": "f268dbbbf76ae39a93b7afe5614500d07bae0bb02df460a3232d6b3fe329ac94"
+  },
+  "native_trace": {
+    "basis_restored_to_identity": true,
+    "history_records_recomputed_and_clearable": 600,
+    "cache_boundaries_verified": 60,
+    "native_quantum_gate_execution": false,
+    "leading_pairs": [
+      [
+        11,
+        5
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        13,
+        3
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        81,
+        1
+      ],
+      [
+        100,
+        0
+      ]
+    ],
+    "matches_independent_crt_profile": true,
+    "interpolation_records": 600,
+    "cancellation_records": 0,
+    "triangular_vectors_checked": 13,
+    "all_vector_scratch_cleared": true,
+    "all_vectors_match_reference": true
+  },
+  "native_workspace_ledger": {
+    "parameters": {
+      "p": 31,
+      "n": 30,
+      "ell": 24,
+      "k": 360,
+      "order": 4,
+      "radius": 10,
+      "a": 38,
+      "identity_degree": 397,
+      "constraints": 600,
+      "unknowns": 603,
+      "kernel_dimension_bound": 48,
+      "unique_decoding_radius": 7
+    },
+    "basis_field_slots_upper": 34596,
+    "interpolation_history_field_slots_upper": 7200,
+    "interpolation_history_index_slots_upper": 600,
+    "row_reduction_records_upper": 34560,
+    "row_reduction_record_contents": "one field factor, two row indices, one degree shift; public padded slots",
+    "checkpoint_state_field_slots_upper_up_to_constants": 2352,
+    "checkpoint_log_scale_not_exact_depth": 10,
+    "clean_row_oracle_scratch": "O(q*ell) field elements, NOT included in each checkpoint",
+    "hybrid_reversible_bits": "O(((s+2)^2*q*ell + s^2*ell^2*log(q*ell))*log(q))",
+    "sufficient_log_absorption_condition": false,
+    "log_absorption_condition": "ell*ceil(log2(q*ell)) <= q",
+    "tight_region_bits": "O((s+2)^2*q*ell*log(q)); fixed s gives O_s(q*ell*log(q))",
+    "whole_decoder_bennett_bound_replaced_only_in_proposal": true,
+    "complete_quantum_circuit_compiled": false,
+    "new_quantum_algorithm_claim_allowed": false
+  },
+  "scope": "classical field-operation reversal controls, not a quantum circuit or a measured space advantage",
+  "new_quantum_algorithm_claim_allowed": false
+}

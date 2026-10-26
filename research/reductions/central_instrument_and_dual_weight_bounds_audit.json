@@ -1,0 +1,96 @@
+{
+  "schema_version": "central_instrument_and_dual_weight_bounds_audit_v2",
+  "module": "theorems/central_instrument_and_dual_weight_bounds_audit.py",
+  "scope": {
+    "central_regular_instrument_completeness_verified": true,
+    "normal_inversion_vs_lie_negation_equivalence_verified": true,
+    "transverse_uniform_1_over_C_branch_mass_verified": true,
+    "ordinary_hiding_source_and_public_chart_verified": true,
+    "full_jet_algorithm_input_premises_verified": false,
+    "nontrivial_h_intersect_c_zero_mass_obstruction_verified": true,
+    "dual_weight_operational_and_parameter_bounds_verified": true,
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "central_regular_instrument_audit": {
+    "p": 5,
+    "normal_group_size": 125,
+    "carrier_size_T": 25,
+    "center_size_C": 5,
+    "group_model": "direct_product_Fp_times_Heisenberg",
+    "source_construction": "ordinary_gH_label_equality_after_public_chart",
+    "hidden_subgroup_closure_verified": true,
+    "hidden_intersection_normal_trivial_verified": true,
+    "nonlinear_public_section_verified": true,
+    "ordinary_coset_label_count": 125,
+    "ordinary_coset_fiber_size": 5,
+    "public_chart_right_action_checks": 3125,
+    "potential_is_group_homomorphism": false,
+    "inversion_vs_neg_fourier_frobenius_error": 0.0,
+    "instrument_completeness_frobenius_error": 2.3082582737174105e-15,
+    "max_regular_branch_frobenius_error": 1.0007415106216803e-15,
+    "max_oracle_source_frobenius_error": 6.938980337991108e-18,
+    "sector_traces_all_labels_including_zero": [
+      0.20000000000000004,
+      0.20000000000000004,
+      0.20000000000000004,
+      0.20000000000000004,
+      0.20000000000000004
+    ],
+    "wrong_reducible_plancherel_d2_over_N": 5.0
+  },
+  "nontrivial_central_intersection_obstruction_audit": {
+    "p": 5,
+    "center_size_C": 25,
+    "h_intersect_c_generator": [
+      1,
+      2
+    ],
+    "zero_mass_label_count": 20,
+    "surviving_annihilator_label_count": 5,
+    "max_zero_mass_label_probability": 4.634268928681786e-34,
+    "surviving_label_probability": 0.2
+  },
+  "dual_weight_phase_bounds_controls": [
+    {
+      "prime_bits": 4,
+      "jet_degree_D": 2,
+      "central_degree_c": 4,
+      "operational_weight_bound_max_c_3D": 6,
+      "attained_max_operational_weight": 6,
+      "parameter_weight_bound": 2,
+      "attained_parameter_weights": [
+        1,
+        2
+      ],
+      "central_parameters_appear_in_quadratic_parameter_lifts": false
+    },
+    {
+      "prime_bits": 5,
+      "jet_degree_D": 3,
+      "central_degree_c": 5,
+      "operational_weight_bound_max_c_3D": 9,
+      "attained_max_operational_weight": 9,
+      "parameter_weight_bound": 2,
+      "attained_parameter_weights": [
+        1,
+        2
+      ],
+      "central_parameters_appear_in_quadratic_parameter_lifts": false
+    },
+    {
+      "prime_bits": 127,
+      "jet_degree_D": 2,
+      "central_degree_c": 4,
+      "operational_weight_bound_max_c_3D": 6,
+      "attained_max_operational_weight": 6,
+      "parameter_weight_bound": 2,
+      "attained_parameter_weights": [
+        1,
+        2
+      ],
+      "central_parameters_appear_in_quadratic_parameter_lifts": false
+    }
+  ]
+}

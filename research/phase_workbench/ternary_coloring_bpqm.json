@@ -1,0 +1,3455 @@
+{
+  "schema_version": 2,
+  "status": "NATURAL_TERNARY_COLORING_REDUCTION_DECODER_UNPROVED",
+  "producer_sha256": "49bcee9f2c916192991c739e453ac207bc05dd21381d20b17a1a0d28aa2c1942",
+  "dependency_sha256": {
+    "bpqm_gibbs_frontier.py": "2a04051490619942a146a9cdf835bc2ef46039de2effa854263059c100b118b5"
+  },
+  "physical_normalized_Gram_spectrum": [
+    "0",
+    "1/2",
+    "1/2"
+  ],
+  "physical_overlap_exact": "-1/2",
+  "local_unitary_controls": [
+    {
+      "mu": [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      "nu": [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      "amplitude_identity_max_residual": 6.435853379824137e-16,
+      "unitarity_max_residual": 2.220446049250313e-16,
+      "zero_heralds_omitted_only_when_exactly_zero": true,
+      "herald_phase_OMEGA_to_x_h_retained": true,
+      "large_coherent_reliability_compiler_supplied": false
+    },
+    {
+      "mu": [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      "nu": [
+        "1/2",
+        "1/4",
+        "1/4"
+      ],
+      "amplitude_identity_max_residual": 4.746583942459921e-16,
+      "unitarity_max_residual": 2.220446049250313e-16,
+      "zero_heralds_omitted_only_when_exactly_zero": true,
+      "herald_phase_OMEGA_to_x_h_retained": true,
+      "large_coherent_reliability_compiler_supplied": false
+    },
+    {
+      "mu": [
+        "1",
+        "0",
+        "0"
+      ],
+      "nu": [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      "amplitude_identity_max_residual": 7.373710276520457e-16,
+      "unitarity_max_residual": 0.0,
+      "zero_heralds_omitted_only_when_exactly_zero": true,
+      "herald_phase_OMEGA_to_x_h_retained": true,
+      "large_coherent_reliability_compiler_supplied": false
+    },
+    {
+      "mu": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "nu": [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      "amplitude_identity_max_residual": 5.285887968120153e-16,
+      "unitarity_max_residual": 2.220446049250313e-16,
+      "zero_heralds_omitted_only_when_exactly_zero": true,
+      "herald_phase_OMEGA_to_x_h_retained": true,
+      "large_coherent_reliability_compiler_supplied": false
+    }
+  ],
+  "signed_native_source_basis_control": {
+    "fixed_basis_change_residual": 3.775166431889533e-16,
+    "basis_change": "diag(1,-i,i) times positive-sign ternary Fourier transform",
+    "extra_copies_or_postselection_used": false,
+    "two_identical_copies_normalized_spectrum": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "duplicating_source_changes_zero_temperature_target": true
+  },
+  "compressed_shift_nonempty_target_countercontrol": {
+    "vertices": 4,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "cycle_basis_rows": [
+      [
+        1,
+        0,
+        2,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "all_zero_transitions_between_NONEMPTY_sectors": [
+      {
+        "source_syndrome": [
+          2,
+          1,
+          1
+        ],
+        "target_syndrome": [
+          0,
+          1,
+          1
+        ],
+        "edge": 4,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          4
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          1,
+          2,
+          2
+        ],
+        "target_syndrome": [
+          1,
+          2,
+          0
+        ],
+        "edge": 3,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          1,
+          2,
+          2
+        ],
+        "target_syndrome": [
+          1,
+          0,
+          2
+        ],
+        "edge": 5,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          5
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          0,
+          1,
+          1
+        ],
+        "target_syndrome": [
+          2,
+          0,
+          1
+        ],
+        "edge": 2,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          2,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          1,
+          0,
+          2
+        ],
+        "target_syndrome": [
+          0,
+          2,
+          2
+        ],
+        "edge": 2,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          2,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          1,
+          2,
+          0
+        ],
+        "target_syndrome": [
+          1,
+          0,
+          2
+        ],
+        "edge": 1,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          2,
+          0,
+          1
+        ],
+        "target_syndrome": [
+          2,
+          1,
+          0
+        ],
+        "edge": 1,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          2,
+          0,
+          1
+        ],
+        "target_syndrome": [
+          2,
+          1,
+          1
+        ],
+        "edge": 5,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          5
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          0,
+          2,
+          2
+        ],
+        "target_syndrome": [
+          1,
+          2,
+          0
+        ],
+        "edge": 0,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          0,
+          2,
+          2
+        ],
+        "target_syndrome": [
+          1,
+          2,
+          2
+        ],
+        "edge": 4,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          4
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          2,
+          1,
+          0
+        ],
+        "target_syndrome": [
+          0,
+          1,
+          1
+        ],
+        "edge": 0,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      },
+      {
+        "source_syndrome": [
+          2,
+          1,
+          0
+        ],
+        "target_syndrome": [
+          2,
+          1,
+          1
+        ],
+        "edge": 3,
+        "source_valid_count": 2,
+        "target_valid_count": 2,
+        "information_coordinate_extension": [
+          0,
+          1,
+          3
+        ],
+        "actual_compressed_shift_norm_numeric": 0.0
+      }
+    ],
+    "binary_uniform_gap_lemma_extends_to_this_ternary_source": false,
+    "all_quantum_coloring_or_BPQM_algorithms_excluded": false,
+    "exponential_calibration_span_is_NOT_given_to_the_algorithm": true
+  },
+  "exact_graph_source_controls": [
+    {
+      "vertices": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "code_dimension": 1,
+      "cycle_basis_rows": [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "all_sector_rows": [
+        {
+          "syndrome": [
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/4",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            1
+          ],
+          "gauge_fixed_colorings": 3,
+          "source_sector_probability_exact": "3/8",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            2
+          ],
+          "gauge_fixed_colorings": 3,
+          "source_sector_probability_exact": "3/8",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        }
+      ],
+      "physical_product_source_Gram_residual": 1.3322676295501878e-15,
+      "total_nonzero_source_words": 8,
+      "actual_Gram_dimension": 3,
+      "Gram_rank_exact_from_all_sectors": 3,
+      "spectral_identity_max_residual": 2.220446049250313e-16,
+      "uniform_original_offset_colorability_probability_exact": "1",
+      "ANY_uniform_codeword_decoder_error_lower_exact": "0",
+      "optimal_collective_word_error_NUMERICAL": 0.008418376202803834,
+      "ordinary_graph_gauge_fixed_colorings": 2,
+      "exponential_reference_not_an_efficient_decoder_or_sampler": true,
+      "all_empty_sectors_retained_not_rerolled": true
+    },
+    {
+      "vertices": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "code_dimension": 3,
+      "cycle_basis_rows": [
+        [
+          1,
+          0,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "all_sector_rows": [
+        {
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge_fixed_colorings": 0,
+          "source_sector_probability_exact": "0",
+          "status": "EMPTY_TARGET_NO_NORMALIZED_COLORING_LAW"
+        },
+        {
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            0,
+            0,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            0,
+            1,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            0,
+            2,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            0,
+            2,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            2
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            0,
+            2,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            0,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            1,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "gauge_fixed_colorings": 4,
+          "source_sector_probability_exact": "1/16",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            1,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            1,
+            1
+          ],
+          "gauge_fixed_colorings": 4,
+          "source_sector_probability_exact": "1/16",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            2,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            2,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "gauge_fixed_colorings": 4,
+          "source_sector_probability_exact": "1/16",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            1,
+            2,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            1,
+            2
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            0,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            0,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            0,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            2,
+            0
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            1,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            1
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            1,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            1
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            1,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1
+          ],
+          "gauge_fixed_colorings": 4,
+          "source_sector_probability_exact": "1/16",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            2,
+            0
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          "gauge_fixed_colorings": 2,
+          "source_sector_probability_exact": "1/32",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            2,
+            1
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2
+          ],
+          "gauge_fixed_colorings": 4,
+          "source_sector_probability_exact": "1/16",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        },
+        {
+          "syndrome": [
+            2,
+            2,
+            2
+          ],
+          "representative_offsets": [
+            0,
+            0,
+            0,
+            2,
+            2,
+            2
+          ],
+          "gauge_fixed_colorings": 4,
+          "source_sector_probability_exact": "1/16",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        }
+      ],
+      "physical_product_source_Gram_residual": 2.4424906541753444e-15,
+      "total_nonzero_source_words": 64,
+      "actual_Gram_dimension": 27,
+      "Gram_rank_exact_from_all_sectors": 26,
+      "spectral_identity_max_residual": 1.5546287248840528e-15,
+      "uniform_original_offset_colorability_probability_exact": "26/27",
+      "ANY_uniform_codeword_decoder_error_lower_exact": "1/27",
+      "optimal_collective_word_error_NUMERICAL": 0.060866603044510637,
+      "ordinary_graph_gauge_fixed_colorings": 0,
+      "exponential_reference_not_an_efficient_decoder_or_sampler": true,
+      "all_empty_sectors_retained_not_rerolled": true
+    },
+    {
+      "vertices": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "code_dimension": 0,
+      "cycle_basis_rows": [],
+      "all_sector_rows": [
+        {
+          "syndrome": [],
+          "representative_offsets": [
+            0,
+            0,
+            0
+          ],
+          "gauge_fixed_colorings": 8,
+          "source_sector_probability_exact": "1",
+          "status": "VALID_UNIFORM_COLORING_REFERENCE"
+        }
+      ],
+      "physical_product_source_Gram_residual": 2.220446049250313e-16,
+      "total_nonzero_source_words": 8,
+      "actual_Gram_dimension": 1,
+      "Gram_rank_exact_from_all_sectors": 1,
+      "spectral_identity_max_residual": 0.0,
+      "uniform_original_offset_colorability_probability_exact": "1",
+      "ANY_uniform_codeword_decoder_error_lower_exact": "0",
+      "optimal_collective_word_error_NUMERICAL": 0.0,
+      "ordinary_graph_gauge_fixed_colorings": 8,
+      "exponential_reference_not_an_efficient_decoder_or_sampler": true,
+      "all_empty_sectors_retained_not_rerolled": true
+    }
+  ],
+  "extrinsic_tree_density_probes": [
+    {
+      "variable_degree": 2,
+      "check_degree": 3,
+      "status": "BOUNDED_EXACT_TREE_NOT_A_BLOCK_DECODER",
+      "history": [
+        {
+          "level": 1,
+          "exact_message_types": 2,
+          "distinct_original_tree_outputs": 3,
+          "symbol_error_lower_exact": "1669102044467359551/9223372036854775808",
+          "symbol_error_upper_exact": "2503653066701039327/13835058055282163712",
+          "singular_message_mass_exact": "1/2",
+          "mean_squared_overlap_exact": "5/32",
+          "probability_mass_exact": "1"
+        },
+        {
+          "level": 2,
+          "exact_message_types": 6,
+          "distinct_original_tree_outputs": 7,
+          "symbol_error_lower_exact": "30957298970734621223/442721857769029238784",
+          "symbol_error_upper_exact": "30957298970734621261/442721857769029238784",
+          "singular_message_mass_exact": "1/8",
+          "mean_squared_overlap_exact": "219/2560",
+          "probability_mass_exact": "1"
+        },
+        {
+          "level": 3,
+          "exact_message_types": 51,
+          "distinct_original_tree_outputs": 15,
+          "symbol_error_lower_exact": "2809956888147217445741/113336795588871485128704",
+          "symbol_error_upper_exact": "2809956888147217457621/113336795588871485128704",
+          "singular_message_mass_exact": "1/128",
+          "mean_squared_overlap_exact": "197782875061/4599323688960",
+          "probability_mass_exact": "1"
+        }
+      ],
+      "costs": {
+        "message_pair_visits": 100
+      },
+      "cyclic_graph_channels_reused_or_cloned": false,
+      "cyclic_gauge_used_for_density_ONLY": true,
+      "convergence_or_finite_block_error_proved": false
+    },
+    {
+      "variable_degree": 2,
+      "check_degree": 4,
+      "status": "UNKNOWN_EXACT_DENSITY_SUPPORT_CAP; no mass dropped or renormalized",
+      "history": [
+        {
+          "level": 1,
+          "exact_message_types": 2,
+          "distinct_original_tree_outputs": 4,
+          "symbol_error_lower_exact": "14230678170256854461/55340232221128654848",
+          "symbol_error_upper_exact": "2371779695042809077/9223372036854775808",
+          "singular_message_mass_exact": "3/4",
+          "mean_squared_overlap_exact": "13/64",
+          "probability_mass_exact": "1"
+        },
+        {
+          "level": 2,
+          "exact_message_types": 10,
+          "distinct_original_tree_outputs": 13,
+          "symbol_error_lower_exact": "1843841433340407864165/9444732965739290427392",
+          "symbol_error_upper_exact": "921920716670203932289/4722366482869645213696",
+          "singular_message_mass_exact": "135/256",
+          "mean_squared_overlap_exact": "5519/32768",
+          "probability_mass_exact": "1"
+        }
+      ],
+      "costs": {
+        "message_pair_visits": 260
+      },
+      "cyclic_graph_channels_reused_or_cloned": false,
+      "cyclic_gauge_used_for_density_ONLY": true,
+      "convergence_or_finite_block_error_proved": false
+    },
+    {
+      "variable_degree": 2,
+      "check_degree": 5,
+      "status": "UNKNOWN_EXACT_DENSITY_SUPPORT_CAP; no mass dropped or renormalized",
+      "history": [
+        {
+          "level": 1,
+          "exact_message_types": 2,
+          "distinct_original_tree_outputs": 5,
+          "symbol_error_lower_exact": "10892474081322135359/36893488147419103232",
+          "symbol_error_upper_exact": "16338711121983203039/55340232221128654848",
+          "singular_message_mass_exact": "7/8",
+          "mean_squared_overlap_exact": "29/128",
+          "probability_mass_exact": "1"
+        },
+        {
+          "level": 2,
+          "exact_message_types": 13,
+          "distinct_original_tree_outputs": 21,
+          "symbol_error_lower_exact": "3982573360715953992064451/14507109835375550096474112",
+          "symbol_error_upper_exact": "1327524453571984664107649/4835703278458516698824704",
+          "singular_message_mass_exact": "26215/32768",
+          "mean_squared_overlap_exact": "297758309/1384120320",
+          "probability_mass_exact": "1"
+        }
+      ],
+      "costs": {
+        "message_pair_visits": 324
+      },
+      "cyclic_graph_channels_reused_or_cloned": false,
+      "cyclic_gauge_used_for_density_ONLY": true,
+      "convergence_or_finite_block_error_proved": false
+    },
+    {
+      "variable_degree": 2,
+      "check_degree": 6,
+      "status": "UNKNOWN_EXACT_DENSITY_SUPPORT_CAP; no mass dropped or renormalized",
+      "history": [
+        {
+          "level": 1,
+          "exact_message_types": 2,
+          "distinct_original_tree_outputs": 6,
+          "symbol_error_lower_exact": "69570910391385509309/221360928884514619392",
+          "symbol_error_upper_exact": "11595151731897584885/36893488147419103232",
+          "singular_message_mass_exact": "15/16",
+          "mean_squared_overlap_exact": "61/256",
+          "probability_mass_exact": "1"
+        },
+        {
+          "level": 2,
+          "exact_message_types": 17,
+          "distinct_original_tree_outputs": 31,
+          "symbol_error_lower_exact": "286101906683989405785089135/928455029464035206174343168",
+          "symbol_error_upper_exact": "2288815253471915246333953273/7427640235712281649394745344",
+          "singular_message_mass_exact": "15357375/16777216",
+          "mean_squared_overlap_exact": "8472036903893/36069135351808",
+          "probability_mass_exact": "1"
+        }
+      ],
+      "costs": {
+        "message_pair_visits": 198
+      },
+      "cyclic_graph_channels_reused_or_cloned": false,
+      "cyclic_gauge_used_for_density_ONLY": true,
+      "convergence_or_finite_block_error_proved": false
+    }
+  ],
+  "actual_singular_support_controls": [
+    {
+      "input_channels": [
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 0,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "singular_inputs": 1,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 0,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 1,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "singular_inputs": 2,
+      "actual_singular_output_mass_exact": "1/2",
+      "support_count_prediction_exact": "1/2",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 0,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 1,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 2,
+      "actual_singular_output_mass_exact": "1/2",
+      "support_count_prediction_exact": "1/2",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "singular_inputs": 3,
+      "actual_singular_output_mass_exact": "3/4",
+      "support_count_prediction_exact": "3/4",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 0,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 1,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 2,
+      "actual_singular_output_mass_exact": "1/2",
+      "support_count_prediction_exact": "1/2",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 3,
+      "actual_singular_output_mass_exact": "3/4",
+      "support_count_prediction_exact": "3/4",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "singular_inputs": 4,
+      "actual_singular_output_mass_exact": "7/8",
+      "support_count_prediction_exact": "7/8",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 0,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 1,
+      "actual_singular_output_mass_exact": "0",
+      "support_count_prediction_exact": "0",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 2,
+      "actual_singular_output_mass_exact": "1/2",
+      "support_count_prediction_exact": "1/2",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 3,
+      "actual_singular_output_mass_exact": "3/4",
+      "support_count_prediction_exact": "3/4",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/3",
+          "1/6"
+        ]
+      ],
+      "singular_inputs": 4,
+      "actual_singular_output_mass_exact": "7/8",
+      "support_count_prediction_exact": "7/8",
+      "full_branch_mass_exact": "1"
+    },
+    {
+      "input_channels": [
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "singular_inputs": 5,
+      "actual_singular_output_mass_exact": "15/16",
+      "support_count_prediction_exact": "15/16",
+      "full_branch_mass_exact": "1"
+    }
+  ],
+  "all_depth_tree_support_certificates": [
+    {
+      "degree": 3,
+      "recursion": "p_next=1-2*(1-p/2)^(d-1)+(1-p)^(d-1)",
+      "outward_rounding_bits": 64,
+      "history": [],
+      "contraction": {
+        "level": 0,
+        "singular_mass_upper_exact": "1",
+        "quadratic_constant_exact": "1/2",
+        "lambda_upper_exact": "1/2",
+        "all_later_ideal_tree_bound": "f*lambda^(2^t-1)",
+        "decoding_error_or_block_guarantee_inferred": false
+      },
+      "global_geometric_factor_upper_exact": "1/2",
+      "all_depth_singular_mass_lower_exact": "0",
+      "six_regular_half_mass_invariant_step_exact": null,
+      "singular_mass_vanishes_certified": true,
+      "word_or_symbol_error_vanishes_inferred": false,
+      "cyclic_or_finite_block_receiver_constructed": false
+    },
+    {
+      "degree": 4,
+      "recursion": "p_next=1-2*(1-p/2)^(d-1)+(1-p)^(d-1)",
+      "outward_rounding_bits": 64,
+      "history": [
+        {
+          "level": 1,
+          "singular_mass_upper_exact": "3/4"
+        },
+        {
+          "level": 2,
+          "singular_mass_upper_exact": "135/256"
+        }
+      ],
+      "contraction": {
+        "level": 2,
+        "singular_mass_upper_exact": "135/256",
+        "quadratic_constant_exact": "3/2",
+        "lambda_upper_exact": "405/512",
+        "all_later_ideal_tree_bound": "f*lambda^(2^t-1)",
+        "decoding_error_or_block_guarantee_inferred": false
+      },
+      "global_geometric_factor_upper_exact": "3/4",
+      "all_depth_singular_mass_lower_exact": "0",
+      "six_regular_half_mass_invariant_step_exact": null,
+      "singular_mass_vanishes_certified": true,
+      "word_or_symbol_error_vanishes_inferred": false,
+      "cyclic_or_finite_block_receiver_constructed": false
+    },
+    {
+      "degree": 5,
+      "recursion": "p_next=1-2*(1-p/2)^(d-1)+(1-p)^(d-1)",
+      "outward_rounding_bits": 64,
+      "history": [
+        {
+          "level": 1,
+          "singular_mass_upper_exact": "7/8"
+        },
+        {
+          "level": 2,
+          "singular_mass_upper_exact": "26215/32768"
+        },
+        {
+          "level": 3,
+          "singular_mass_upper_exact": "6847571909871751975/9223372036854775808"
+        },
+        {
+          "level": 4,
+          "singular_mass_upper_exact": "6380284596179981299/9223372036854775808"
+        },
+        {
+          "level": 5,
+          "singular_mass_upper_exact": "741176940008573361/1152921504606846976"
+        },
+        {
+          "level": 6,
+          "singular_mass_upper_exact": "5462413774146367481/9223372036854775808"
+        },
+        {
+          "level": 7,
+          "singular_mass_upper_exact": "9900462669449061163/18446744073709551616"
+        },
+        {
+          "level": 8,
+          "singular_mass_upper_exact": "8724609605037024835/18446744073709551616"
+        },
+        {
+          "level": 9,
+          "singular_mass_upper_exact": "7331990823729216943/18446744073709551616"
+        },
+        {
+          "level": 10,
+          "singular_mass_upper_exact": "2835298682401306379/9223372036854775808"
+        }
+      ],
+      "contraction": {
+        "level": 10,
+        "singular_mass_upper_exact": "2835298682401306379/9223372036854775808",
+        "quadratic_constant_exact": "3",
+        "lambda_upper_exact": "8505896047203919137/9223372036854775808",
+        "all_later_ideal_tree_bound": "f*lambda^(2^t-1)",
+        "decoding_error_or_block_guarantee_inferred": false
+      },
+      "global_geometric_factor_upper_exact": "1681/1728",
+      "all_depth_singular_mass_lower_exact": "0",
+      "six_regular_half_mass_invariant_step_exact": null,
+      "singular_mass_vanishes_certified": true,
+      "word_or_symbol_error_vanishes_inferred": false,
+      "cyclic_or_finite_block_receiver_constructed": false
+    },
+    {
+      "degree": 6,
+      "recursion": "p_next=1-2*(1-p/2)^(d-1)+(1-p)^(d-1)",
+      "outward_rounding_bits": 64,
+      "history": [
+        {
+          "level": 1,
+          "singular_mass_upper_exact": "15/16"
+        },
+        {
+          "level": 2,
+          "singular_mass_upper_exact": "15357375/16777216"
+        },
+        {
+          "level": 3,
+          "singular_mass_upper_exact": "16716186941507433197/18446744073709551616"
+        },
+        {
+          "level": 4,
+          "singular_mass_upper_exact": "16641714744957295283/18446744073709551616"
+        },
+        {
+          "level": 5,
+          "singular_mass_upper_exact": "16608186061980738739/18446744073709551616"
+        },
+        {
+          "level": 6,
+          "singular_mass_upper_exact": "16592930646377248661/18446744073709551616"
+        },
+        {
+          "level": 7,
+          "singular_mass_upper_exact": "4146489097089427831/4611686018427387904"
+        },
+        {
+          "level": 8,
+          "singular_mass_upper_exact": "4145690270310049283/4611686018427387904"
+        },
+        {
+          "level": 9,
+          "singular_mass_upper_exact": "8290647838720459471/9223372036854775808"
+        },
+        {
+          "level": 10,
+          "singular_mass_upper_exact": "16580623321733790751/18446744073709551616"
+        },
+        {
+          "level": 11,
+          "singular_mass_upper_exact": "8290157383837654419/9223372036854775808"
+        },
+        {
+          "level": 12,
+          "singular_mass_upper_exact": "16580173154095308469/18446744073709551616"
+        },
+        {
+          "level": 13,
+          "singular_mass_upper_exact": "8290054078228816131/9223372036854775808"
+        },
+        {
+          "level": 14,
+          "singular_mass_upper_exact": "8290039161658403179/9223372036854775808"
+        },
+        {
+          "level": 15,
+          "singular_mass_upper_exact": "1036254039383400975/1152921504606846976"
+        },
+        {
+          "level": 16,
+          "singular_mass_upper_exact": "16580058345042290931/18446744073709551616"
+        },
+        {
+          "level": 17,
+          "singular_mass_upper_exact": "8290027730107734449/9223372036854775808"
+        },
+        {
+          "level": 18,
+          "singular_mass_upper_exact": "8290027068046379031/9223372036854775808"
+        },
+        {
+          "level": 19,
+          "singular_mass_upper_exact": "8290026764163030067/9223372036854775808"
+        },
+        {
+          "level": 20,
+          "singular_mass_upper_exact": "1036253328085229737/1152921504606846976"
+        },
+        {
+          "level": 21,
+          "singular_mass_upper_exact": "8290026560660545795/9223372036854775808"
+        },
+        {
+          "level": 22,
+          "singular_mass_upper_exact": "8290026531275035527/9223372036854775808"
+        },
+        {
+          "level": 23,
+          "singular_mass_upper_exact": "1036253314723400837/1152921504606846976"
+        },
+        {
+          "level": 24,
+          "singular_mass_upper_exact": "16580053023192696931/18446744073709551616"
+        },
+        {
+          "level": 25,
+          "singular_mass_upper_exact": "8290026508754769865/9223372036854775808"
+        },
+        {
+          "level": 26,
+          "singular_mass_upper_exact": "4145013253725248455/4611686018427387904"
+        },
+        {
+          "level": 27,
+          "singular_mass_upper_exact": "4145013253425920479/4611686018427387904"
+        },
+        {
+          "level": 28,
+          "singular_mass_upper_exact": "16580053013154120649/18446744073709551616"
+        },
+        {
+          "level": 29,
+          "singular_mass_upper_exact": "16580053012901874275/18446744073709551616"
+        },
+        {
+          "level": 30,
+          "singular_mass_upper_exact": "16580053012786094221/18446744073709551616"
+        },
+        {
+          "level": 31,
+          "singular_mass_upper_exact": "16580053012732951649/18446744073709551616"
+        },
+        {
+          "level": 32,
+          "singular_mass_upper_exact": "8290026506354279713/9223372036854775808"
+        },
+        {
+          "level": 33,
+          "singular_mass_upper_exact": "16580053012697363495/18446744073709551616"
+        },
+        {
+          "level": 34,
+          "singular_mass_upper_exact": "16580053012692224609/18446744073709551616"
+        },
+        {
+          "level": 35,
+          "singular_mass_upper_exact": "16580053012689865881/18446744073709551616"
+        },
+        {
+          "level": 36,
+          "singular_mass_upper_exact": "16580053012688783235/18446744073709551616"
+        },
+        {
+          "level": 37,
+          "singular_mass_upper_exact": "16580053012688286305/18446744073709551616"
+        },
+        {
+          "level": 38,
+          "singular_mass_upper_exact": "2072506626586007277/2305843009213693952"
+        },
+        {
+          "level": 39,
+          "singular_mass_upper_exact": "4145013253171988381/4611686018427387904"
+        },
+        {
+          "level": 40,
+          "singular_mass_upper_exact": "16580053012687905471/18446744073709551616"
+        },
+        {
+          "level": 41,
+          "singular_mass_upper_exact": "16580053012687883415/18446744073709551616"
+        },
+        {
+          "level": 42,
+          "singular_mass_upper_exact": "16580053012687873291/18446744073709551616"
+        },
+        {
+          "level": 43,
+          "singular_mass_upper_exact": "4145013253171967161/4611686018427387904"
+        },
+        {
+          "level": 44,
+          "singular_mass_upper_exact": "16580053012687866511/18446744073709551616"
+        },
+        {
+          "level": 45,
+          "singular_mass_upper_exact": "4145013253171966383/4611686018427387904"
+        },
+        {
+          "level": 46,
+          "singular_mass_upper_exact": "16580053012687865083/18446744073709551616"
+        },
+        {
+          "level": 47,
+          "singular_mass_upper_exact": "16580053012687864877/18446744073709551616"
+        },
+        {
+          "level": 48,
+          "singular_mass_upper_exact": "8290026506343932391/9223372036854775808"
+        },
+        {
+          "level": 49,
+          "singular_mass_upper_exact": "8290026506343932369/9223372036854775808"
+        },
+        {
+          "level": 50,
+          "singular_mass_upper_exact": "8290026506343932359/9223372036854775808"
+        },
+        {
+          "level": 51,
+          "singular_mass_upper_exact": "16580053012687864709/18446744073709551616"
+        },
+        {
+          "level": 52,
+          "singular_mass_upper_exact": "16580053012687864705/18446744073709551616"
+        },
+        {
+          "level": 53,
+          "singular_mass_upper_exact": "16580053012687864703/18446744073709551616"
+        },
+        {
+          "level": 54,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 55,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 56,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 57,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 58,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 59,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 60,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 61,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 62,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 63,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        },
+        {
+          "level": 64,
+          "singular_mass_upper_exact": "8290026506343932351/9223372036854775808"
+        }
+      ],
+      "contraction": null,
+      "global_geometric_factor_upper_exact": null,
+      "all_depth_singular_mass_lower_exact": "1/2",
+      "six_regular_half_mass_invariant_step_exact": "285/512",
+      "singular_mass_vanishes_certified": false,
+      "word_or_symbol_error_vanishes_inferred": false,
+      "cyclic_or_finite_block_receiver_constructed": false
+    }
+  ],
+  "regular_family_word_rank_bounds_ANALYTIC_ONLY": [
+    {
+      "vertices": 64,
+      "degree": 4,
+      "edges": 128,
+      "cycle_code_dimension": 65,
+      "mode": "SCALAR_ONLY_NO_GRAPH_OR_STATE_CONSTRUCTION",
+      "ANY_uniform_word_decoder_success_upper_exact": "1",
+      "uniform_original_offset_colorability_upper_exact": "1",
+      "expected_gauge_fixed_colorings_uniform_offsets_exact": "340282366920938463463374607431768211456/10301051460877537453973547267843",
+      "arbitrary_fixed_offset_colorability_bound_inferred": false,
+      "coloring_or_sampling_impossibility_inferred": false,
+      "six_regular_success_bound_equals_one_third_times_8_over_9_to_n": false
+    },
+    {
+      "vertices": 64,
+      "degree": 5,
+      "edges": 160,
+      "cycle_code_dimension": 97,
+      "mode": "SCALAR_ONLY_NO_GRAPH_OR_STATE_CONSTRUCTION",
+      "ANY_uniform_word_decoder_success_upper_exact": "1",
+      "uniform_original_offset_colorability_upper_exact": "1",
+      "expected_gauge_fixed_colorings_uniform_offsets_exact": "1461501637330902918203684832716283019655932542976/19088056323407827075424486287615602692670648963",
+      "arbitrary_fixed_offset_colorability_bound_inferred": false,
+      "coloring_or_sampling_impossibility_inferred": false,
+      "six_regular_success_bound_equals_one_third_times_8_over_9_to_n": false
+    },
+    {
+      "vertices": 64,
+      "degree": 6,
+      "edges": 192,
+      "cycle_code_dimension": 129,
+      "mode": "SCALAR_ONLY_NO_GRAPH_OR_STATE_CONSTRUCTION",
+      "ANY_uniform_word_decoder_success_upper_exact": "6277101735386680763835789423207666416102355444464034512896/35370553733215749514562618584237555997034634776827523327290883",
+      "uniform_original_offset_colorability_upper_exact": "6277101735386680763835789423207666416102355444464034512896/35370553733215749514562618584237555997034634776827523327290883",
+      "expected_gauge_fixed_colorings_uniform_offsets_exact": "6277101735386680763835789423207666416102355444464034512896/35370553733215749514562618584237555997034634776827523327290883",
+      "arbitrary_fixed_offset_colorability_bound_inferred": false,
+      "coloring_or_sampling_impossibility_inferred": false,
+      "six_regular_success_bound_equals_one_third_times_8_over_9_to_n": true
+    },
+    {
+      "vertices": 256,
+      "degree": 6,
+      "edges": 768,
+      "cycle_code_dimension": 513,
+      "mode": "SCALAR_ONLY_NO_GRAPH_OR_STATE_CONSTRUCTION",
+      "ANY_uniform_word_decoder_success_upper_exact": "1552518092300708935148979488462502555256886017116696611139052038026050952686376886330878408828646477950487730697131073206171580044114814391444287275041181139204454976020849905550265285631598444825262999193716468750892846853816057856/57970049496866745316362206166058743166204397284809985650553612886707400239246611000053818289358088063170246987883758358515460527303998822652294121436185918627681650401182198448334186967222117014363130199004726829775374513976957648985817309624323",
+      "uniform_original_offset_colorability_upper_exact": "1552518092300708935148979488462502555256886017116696611139052038026050952686376886330878408828646477950487730697131073206171580044114814391444287275041181139204454976020849905550265285631598444825262999193716468750892846853816057856/57970049496866745316362206166058743166204397284809985650553612886707400239246611000053818289358088063170246987883758358515460527303998822652294121436185918627681650401182198448334186967222117014363130199004726829775374513976957648985817309624323",
+      "expected_gauge_fixed_colorings_uniform_offsets_exact": "1552518092300708935148979488462502555256886017116696611139052038026050952686376886330878408828646477950487730697131073206171580044114814391444287275041181139204454976020849905550265285631598444825262999193716468750892846853816057856/57970049496866745316362206166058743166204397284809985650553612886707400239246611000053818289358088063170246987883758358515460527303998822652294121436185918627681650401182198448334186967222117014363130199004726829775374513976957648985817309624323",
+      "arbitrary_fixed_offset_colorability_bound_inferred": false,
+      "coloring_or_sampling_impossibility_inferred": false,
+      "six_regular_success_bound_equals_one_third_times_8_over_9_to_n": true
+    },
+    {
+      "vertices": 1024,
+      "degree": 6,
+      "edges": 3072,
+      "cycle_code_dimension": 2049,
+      "mode": "SCALAR_ONLY_NO_GRAPH_OR_STATE_CONSTRUCTION",
+      "ANY_uniform_word_decoder_success_upper_exact": "5809605995369958062859502533304574370686975176362895236661486152287203730997110225737336044533118407251326157754980517443990529594540047121662885672187032401032111639706440498844049850989051627200244765807041812394729680540024104827976584369381522292361208779044769892743225751738076979568811309579125511333093243519553784816306381580161860200247492568448150242515304449577187604136428738580990172551573934146255830366405915000869643732053218566832545291107903722831634138599586406690325959725187447169059540805012310209639011750748760017095360734234945757416272994856013308616958529958304677637019181594088528345061285863898271763457294883546638879554311615446446330199254382340016292057090751175533888161918987295591531536698701292267685465517437915790823154844634780260102891718032495396075041899485513811126977307478969074857043710716150121315922024556759241239013152919710956468406379442914941614357107914462567329693696/418264418118710374406205863901047121697818696341994560279286852849609744802197982270455007428054883644081622974373740020868807366674284126846076993043712048301356204754187320080185765844473507426051246345923843315405864113702299634393681917422834020906092465050080167604840782116954060748535871107735056571908755328119226304154554422933251205308633979393636590888086393963409450157608911857757029079938042397456644923807541782701324667084830494575867018395789132379332177909726571620485259019983127957929631131710274314699771685261588783672372078829170919362558702864304999864530146301468202774987885712069777972903143897753349372825488641543628206584456686782451524118534430766411198415524046671138311751180204687429992059918438926980682349964533304007984310693953602552993239851197920270454183932844253604956123983609835309771047694293214708207168289306766541457516906294905570713783864114192931327755851799769213718245819920453922130400752176282490536822988464040028296110083",
+      "uniform_original_offset_colorability_upper_exact": "5809605995369958062859502533304574370686975176362895236661486152287203730997110225737336044533118407251326157754980517443990529594540047121662885672187032401032111639706440498844049850989051627200244765807041812394729680540024104827976584369381522292361208779044769892743225751738076979568811309579125511333093243519553784816306381580161860200247492568448150242515304449577187604136428738580990172551573934146255830366405915000869643732053218566832545291107903722831634138599586406690325959725187447169059540805012310209639011750748760017095360734234945757416272994856013308616958529958304677637019181594088528345061285863898271763457294883546638879554311615446446330199254382340016292057090751175533888161918987295591531536698701292267685465517437915790823154844634780260102891718032495396075041899485513811126977307478969074857043710716150121315922024556759241239013152919710956468406379442914941614357107914462567329693696/418264418118710374406205863901047121697818696341994560279286852849609744802197982270455007428054883644081622974373740020868807366674284126846076993043712048301356204754187320080185765844473507426051246345923843315405864113702299634393681917422834020906092465050080167604840782116954060748535871107735056571908755328119226304154554422933251205308633979393636590888086393963409450157608911857757029079938042397456644923807541782701324667084830494575867018395789132379332177909726571620485259019983127957929631131710274314699771685261588783672372078829170919362558702864304999864530146301468202774987885712069777972903143897753349372825488641543628206584456686782451524118534430766411198415524046671138311751180204687429992059918438926980682349964533304007984310693953602552993239851197920270454183932844253604956123983609835309771047694293214708207168289306766541457516906294905570713783864114192931327755851799769213718245819920453922130400752176282490536822988464040028296110083",
+      "expected_gauge_fixed_colorings_uniform_offsets_exact": "5809605995369958062859502533304574370686975176362895236661486152287203730997110225737336044533118407251326157754980517443990529594540047121662885672187032401032111639706440498844049850989051627200244765807041812394729680540024104827976584369381522292361208779044769892743225751738076979568811309579125511333093243519553784816306381580161860200247492568448150242515304449577187604136428738580990172551573934146255830366405915000869643732053218566832545291107903722831634138599586406690325959725187447169059540805012310209639011750748760017095360734234945757416272994856013308616958529958304677637019181594088528345061285863898271763457294883546638879554311615446446330199254382340016292057090751175533888161918987295591531536698701292267685465517437915790823154844634780260102891718032495396075041899485513811126977307478969074857043710716150121315922024556759241239013152919710956468406379442914941614357107914462567329693696/418264418118710374406205863901047121697818696341994560279286852849609744802197982270455007428054883644081622974373740020868807366674284126846076993043712048301356204754187320080185765844473507426051246345923843315405864113702299634393681917422834020906092465050080167604840782116954060748535871107735056571908755328119226304154554422933251205308633979393636590888086393963409450157608911857757029079938042397456644923807541782701324667084830494575867018395789132379332177909726571620485259019983127957929631131710274314699771685261588783672372078829170919362558702864304999864530146301468202774987885712069777972903143897753349372825488641543628206584456686782451524118534430766411198415524046671138311751180204687429992059918438926980682349964533304007984310693953602552993239851197920270454183932844253604956123983609835309771047694293214708207168289306766541457516906294905570713783864114192931327755851799769213718245819920453922130400752176282490536822988464040028296110083",
+      "arbitrary_fixed_offset_colorability_bound_inferred": false,
+      "coloring_or_sampling_impossibility_inferred": false,
+      "six_regular_success_bound_equals_one_third_times_8_over_9_to_n": true
+    }
+  ],
+  "classical_original_input_baselines": [
+    {
+      "degree": 4,
+      "vertices": 16,
+      "graph_seed": 29,
+      "ensemble": "NetworkX_seeded_simple_regular_generator_not_an_IID_certificate",
+      "source_conditioned_on_colorability_or_success": false,
+      "code_dimension": 17,
+      "quantum_decoder_executed": false,
+      "result": {
+        "solver": "Z3",
+        "version": "4.15.3",
+        "timeout_ms": 1000,
+        "solve_seconds": 0.004700666002463549,
+        "Boolean_variables": 48,
+        "status": "CLASSICAL_ORIGINAL_COLORING_WITNESS",
+        "quantum_advantage_inferred": false,
+        "original_offsets": [
+          0,
+          1,
+          0,
+          2,
+          0,
+          2,
+          1,
+          2,
+          2,
+          1,
+          0,
+          1,
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        "original_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            14
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            11,
+            14
+          ],
+          [
+            13,
+            15
+          ]
+        ],
+        "colors": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "degree": 4,
+      "vertices": 32,
+      "graph_seed": 71,
+      "ensemble": "NetworkX_seeded_simple_regular_generator_not_an_IID_certificate",
+      "source_conditioned_on_colorability_or_success": false,
+      "code_dimension": 33,
+      "quantum_decoder_executed": false,
+      "result": {
+        "solver": "Z3",
+        "version": "4.15.3",
+        "timeout_ms": 1000,
+        "solve_seconds": 0.0005032500193919986,
+        "Boolean_variables": 96,
+        "status": "CLASSICAL_ORIGINAL_COLORING_WITNESS",
+        "quantum_advantage_inferred": false,
+        "original_offsets": [
+          0,
+          2,
+          1,
+          1,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          2,
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          2,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0,
+          0,
+          2,
+          1,
+          1
+        ],
+        "original_edges": [
+          [
+            0,
+            19
+          ],
+          [
+            0,
+            24
+          ],
+          [
+            0,
+            25
+          ],
+          [
+            0,
+            28
+          ],
+          [
+            1,
+            14
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            26
+          ],
+          [
+            1,
+            29
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            2,
+            23
+          ],
+          [
+            2,
+            31
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            17
+          ],
+          [
+            3,
+            24
+          ],
+          [
+            3,
+            26
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            29
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            20
+          ],
+          [
+            5,
+            21
+          ],
+          [
+            6,
+            15
+          ],
+          [
+            6,
+            16
+          ],
+          [
+            6,
+            27
+          ],
+          [
+            6,
+            30
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            20
+          ],
+          [
+            8,
+            21
+          ],
+          [
+            8,
+            23
+          ],
+          [
+            9,
+            19
+          ],
+          [
+            9,
+            25
+          ],
+          [
+            9,
+            27
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            10,
+            22
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            11,
+            26
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            12,
+            20
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            13,
+            22
+          ],
+          [
+            13,
+            29
+          ],
+          [
+            15,
+            31
+          ],
+          [
+            16,
+            28
+          ],
+          [
+            17,
+            29
+          ],
+          [
+            17,
+            30
+          ],
+          [
+            18,
+            30
+          ],
+          [
+            18,
+            31
+          ],
+          [
+            19,
+            21
+          ],
+          [
+            21,
+            31
+          ],
+          [
+            22,
+            24
+          ],
+          [
+            22,
+            30
+          ],
+          [
+            23,
+            25
+          ],
+          [
+            23,
+            26
+          ],
+          [
+            24,
+            27
+          ],
+          [
+            25,
+            28
+          ],
+          [
+            27,
+            28
+          ]
+        ],
+        "colors": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          2,
+          0,
+          2,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          2,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "degree": 5,
+      "vertices": 16,
+      "graph_seed": 29,
+      "ensemble": "NetworkX_seeded_simple_regular_generator_not_an_IID_certificate",
+      "source_conditioned_on_colorability_or_success": false,
+      "code_dimension": 25,
+      "quantum_decoder_executed": false,
+      "result": {
+        "solver": "Z3",
+        "version": "4.15.3",
+        "timeout_ms": 1000,
+        "solve_seconds": 0.00038362498162314296,
+        "Boolean_variables": 48,
+        "status": "SOLVER_UNSAT_NOT_AN_INDEPENDENT_GENERAL_PROOF",
+        "quantum_advantage_inferred": false,
+        "original_offsets": [
+          0,
+          1,
+          0,
+          2,
+          0,
+          2,
+          1,
+          2,
+          2,
+          1,
+          0,
+          1,
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "original_edges": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            12
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            14
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            4,
+            15
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            14
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            15
+          ]
+        ]
+      }
+    },
+    {
+      "degree": 5,
+      "vertices": 32,
+      "graph_seed": 71,
+      "ensemble": "NetworkX_seeded_simple_regular_generator_not_an_IID_certificate",
+      "source_conditioned_on_colorability_or_success": false,
+      "code_dimension": 49,
+      "quantum_decoder_executed": false,
+      "result": {
+        "solver": "Z3",
+        "version": "4.15.3",
+        "timeout_ms": 1000,
+        "solve_seconds": 0.0005387080018408597,
+        "Boolean_variables": 96,
+        "status": "CLASSICAL_ORIGINAL_COLORING_WITNESS",
+        "quantum_advantage_inferred": false,
+        "original_offsets": [
+          0,
+          2,
+          1,
+          1,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          2,
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          2,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0,
+          0,
+          2,
+          1,
+          1,
+          1,
+          0,
+          2,
+          2,
+          1,
+          1,
+          0,
+          1,
+          0,
+          2,
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        "original_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            21
+          ],
+          [
+            0,
+            29
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            21
+          ],
+          [
+            1,
+            23
+          ],
+          [
+            1,
+            27
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            2,
+            18
+          ],
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            18
+          ],
+          [
+            3,
+            26
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            19
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            4,
+            23
+          ],
+          [
+            4,
+            30
+          ],
+          [
+            5,
+            19
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            5,
+            27
+          ],
+          [
+            5,
+            28
+          ],
+          [
+            5,
+            31
+          ],
+          [
+            6,
+            16
+          ],
+          [
+            6,
+            20
+          ],
+          [
+            6,
+            24
+          ],
+          [
+            6,
+            29
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            21
+          ],
+          [
+            7,
+            31
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            24
+          ],
+          [
+            9,
+            26
+          ],
+          [
+            10,
+            14
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            10,
+            17
+          ],
+          [
+            10,
+            23
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            24
+          ],
+          [
+            11,
+            26
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            12,
+            22
+          ],
+          [
+            12,
+            26
+          ],
+          [
+            13,
+            26
+          ],
+          [
+            13,
+            27
+          ],
+          [
+            13,
+            31
+          ],
+          [
+            14,
+            17
+          ],
+          [
+            14,
+            28
+          ],
+          [
+            14,
+            29
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            23
+          ],
+          [
+            15,
+            25
+          ],
+          [
+            15,
+            31
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            31
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            18,
+            28
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            27
+          ],
+          [
+            20,
+            29
+          ],
+          [
+            21,
+            29
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            22,
+            28
+          ],
+          [
+            25,
+            30
+          ],
+          [
+            27,
+            30
+          ],
+          [
+            28,
+            30
+          ]
+        ],
+        "colors": [
+          0,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          1,
+          1,
+          0,
+          2,
+          1,
+          0,
+          2,
+          2,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      }
+    }
+  ],
+  "natural_family_word_decoder_implemented": false,
+  "zero_temperature_sampling_reduction_executed": false,
+  "no_global_decoder_from_density_evolution_assumed": true,
+  "speedup_claim_allowed": false,
+  "accepted_speedup_candidate": false,
+  "no_central_registry_promotion": true,
+  "literature": [
+    "https://arxiv.org/abs/2601.21330",
+    "https://arxiv.org/abs/2609.40321"
+  ]
+}

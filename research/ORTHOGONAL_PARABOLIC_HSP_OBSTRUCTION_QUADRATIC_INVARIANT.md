@@ -1,5 +1,14 @@
 # Orthogonal Parabolic HSP Obstruction, Quadratic Invariant Demarcation, and Bireflection Classical Dequantization in $\mathrm{O}(d, \mathbb{F}_q)$ and $\mathrm{SO}(d, \mathbb{F}_q)$
 
+2026-10-23 OVERRIDING CORRECTION: Theorem 2 is FALSE as stated. For a
+maximal totally singular subspace in a split even-dimensional quadratic
+space, Uperp=U has NO nonsingular vectors; the claimed reflection sampler
+never accepts. The polynomial-in-log(q) and uniform subexponential claims
+also drop field-size dependence. The density and commutant arguments do
+not supply general quantum gate lower bounds. Read
+PARABOLIC_CUT_LIST_CORRECTION.md; do not use the historical claims below
+as blanket exclusion certificates. Other sections remain unreviewed.
+
 **Investigation**: Investigation 30  
 **Date**: 2026-10-11  
 **Status**: PROVED MATHEMATICAL THEOREMS & CLASSICAL DEQUANTIZATION (Zero Speedup Retained)  

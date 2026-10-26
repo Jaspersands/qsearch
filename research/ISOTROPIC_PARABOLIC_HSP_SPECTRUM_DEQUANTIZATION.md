@@ -1,5 +1,12 @@
 # The Isotropic Parabolic HSP Spectrum: Polynomial Dequantization, Heisenberg Unipotent Duality, and Gel'fand Commutant Collapse in $Sp(2n, \mathbb{F}_q)$
 
+2026-10-23 OVERRIDING CORRECTION: the O(n q^k) transvection upper bound
+does NOT give a polynomial-in-log(q) algorithm for arbitrary growing q,
+even at k=1. The sufficient regime is k<=C log_q(n), not simply O(log n).
+The blanket dequantization, uniform subexponential conversion, and claimed
+complete resolution below are withdrawn. Read PARABOLIC_CUT_LIST_CORRECTION.md.
+Other historical claims and downstream reports are NOT newly validated.
+
 **Investigation**: Investigation 28 (Non-Abelian Matrix HSP & Lie-Type Representation Theory)  
 **Date**: 2026-10-11  
 **Status**: PROVED MATHEMATICAL THEOREMS & DEQUANTIZATION BOUNDS  

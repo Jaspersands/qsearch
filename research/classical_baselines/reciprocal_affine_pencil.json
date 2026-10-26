@@ -1,0 +1,690 @@
+{
+  "status": "EXACT_RESTRICTED_CLASSICAL_ATTACK_AND_RIGIDITY_REVIEW_PENDING",
+  "speedup_established": false,
+  "general_classical_solver": false,
+  "classical_hardness_established": false,
+  "flint_version": "0.9.0",
+  "factorization_runtime": "IMPORTED_FINITE_FIELD_BACKEND_NO_LOCAL_WORST_CASE_CLOCK",
+  "source_sha256": "c61fbd371b214191279d1be4f0f16fd666247e71e9b38111515e49625fe47340",
+  "proof_sha256": "4863b875fe2ebc42ffea7b13420e6426126fd37120b54ee4dc9efa0cada6bb66",
+  "controls": [
+    {
+      "input": {
+        "bits": 3,
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "dimension": 1,
+        "slopes": [
+          1,
+          5,
+          7,
+          4
+        ],
+        "offsets": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "targets": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "field_modulus": 11
+      },
+      "scope": "ONE_SUPPLIED_RECIPROCAL_AFFINE_PENCIL_ONLY",
+      "status": "VERIFIED_CLASSICAL_WITNESS",
+      "witness": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "trace_system": {
+        "rank": 3,
+        "consistent": true,
+        "rref": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pivots": [
+          0,
+          1,
+          2
+        ],
+        "free": []
+      },
+      "solution_parameter_count": 1,
+      "parameters": null,
+      "formal_code_identity": true,
+      "root_completeness_checked": false,
+      "field_table_enumerated": false,
+      "full_native_problem_decided": false,
+      "distinct_poles": 1,
+      "pole_groups": [
+        {
+          "pole": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "denominator_coefficients": [
+        0,
+        1
+      ],
+      "numerator_coefficients": [
+        []
+      ],
+      "parameter": 0,
+      "reason": "ALL_PARAMETERS_IN_RECORDED_TRACE_AFFINE_SYSTEM",
+      "target_image_rank": 3
+    },
+    {
+      "input": {
+        "bits": 3,
+        "points": [
+          0,
+          1,
+          2
+        ],
+        "dimension": 1,
+        "slopes": [
+          1,
+          1,
+          0
+        ],
+        "offsets": [
+          0,
+          1,
+          1
+        ],
+        "targets": [
+          0,
+          1,
+          1
+        ],
+        "field_modulus": 11
+      },
+      "scope": "ONE_SUPPLIED_RECIPROCAL_AFFINE_PENCIL_ONLY",
+      "status": "VERIFIED_CLASSICAL_WITNESS",
+      "witness": [
+        0,
+        1,
+        1
+      ],
+      "trace_system": {
+        "rank": 1,
+        "consistent": true,
+        "rref": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pivots": [
+          0
+        ],
+        "free": [
+          1,
+          2
+        ]
+      },
+      "solution_parameter_count": 1,
+      "parameters": [
+        0
+      ],
+      "formal_code_identity": false,
+      "root_completeness_checked": true,
+      "field_table_enumerated": false,
+      "full_native_problem_decided": false,
+      "distinct_poles": 2,
+      "pole_groups": [
+        {
+          "pole": 0,
+          "indices": [
+            0
+          ]
+        },
+        {
+          "pole": 1,
+          "indices": [
+            1
+          ]
+        }
+      ],
+      "denominator_coefficients": [
+        0,
+        1,
+        1
+      ],
+      "numerator_coefficients": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "gcd_coefficients": [
+        1,
+        1,
+        1
+      ],
+      "gcd_degree": 2,
+      "base_field_linear_part": [
+        1
+      ],
+      "regular_parameters_checked": [],
+      "exceptional_parameters_checked": [
+        0,
+        1
+      ],
+      "parameter_checks": 2,
+      "reason": "COMPLETE_REGULAR_ROOTS_AND_ALL_POLES_CHECKED",
+      "parameter": 0
+    },
+    {
+      "input": {
+        "bits": 61,
+        "points": [
+          0,
+          1
+        ],
+        "dimension": 1,
+        "slopes": [
+          1,
+          0
+        ],
+        "offsets": [
+          0,
+          1
+        ],
+        "targets": [
+          1,
+          1
+        ],
+        "field_modulus": 2305843009213693991
+      },
+      "scope": "ONE_SUPPLIED_RECIPROCAL_AFFINE_PENCIL_ONLY",
+      "status": "VERIFIED_CLASSICAL_WITNESS",
+      "witness": [
+        1,
+        1
+      ],
+      "trace_system": {
+        "rank": 1,
+        "consistent": true,
+        "rref": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pivots": [
+          0
+        ],
+        "free": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60
+        ]
+      },
+      "solution_parameter_count": 1,
+      "parameters": [
+        1
+      ],
+      "formal_code_identity": false,
+      "root_completeness_checked": true,
+      "field_table_enumerated": false,
+      "full_native_problem_decided": false,
+      "distinct_poles": 1,
+      "pole_groups": [
+        {
+          "pole": 0,
+          "indices": [
+            0
+          ]
+        }
+      ],
+      "denominator_coefficients": [
+        0,
+        1
+      ],
+      "numerator_coefficients": [
+        [
+          1,
+          1
+        ]
+      ],
+      "gcd_coefficients": [
+        1,
+        1
+      ],
+      "gcd_degree": 1,
+      "base_field_linear_part": [
+        1,
+        1
+      ],
+      "regular_parameters_checked": [
+        1
+      ],
+      "exceptional_parameters_checked": [
+        0
+      ],
+      "parameter_checks": 2,
+      "reason": "COMPLETE_REGULAR_ROOTS_AND_ALL_POLES_CHECKED",
+      "parameter": 1
+    },
+    {
+      "input": {
+        "bits": 5,
+        "points": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "dimension": 2,
+        "slopes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "offsets": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "targets": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "field_modulus": 37
+      },
+      "scope": "ONE_SUPPLIED_RECIPROCAL_AFFINE_PENCIL_ONLY",
+      "status": "NO_NATIVE_POINT_ON_THIS_PENCIL",
+      "witness": null,
+      "trace_system": {
+        "rank": 3,
+        "consistent": true,
+        "rref": [
+          [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pivots": [
+          0,
+          1,
+          2
+        ],
+        "free": [
+          3,
+          4
+        ]
+      },
+      "solution_parameter_count": 0,
+      "parameters": [],
+      "formal_code_identity": false,
+      "root_completeness_checked": true,
+      "field_table_enumerated": false,
+      "full_native_problem_decided": false,
+      "distinct_poles": 1,
+      "pole_groups": [
+        {
+          "pole": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "denominator_coefficients": [
+        0,
+        1
+      ],
+      "numerator_coefficients": [
+        [
+          31
+        ],
+        [
+          17
+        ]
+      ],
+      "gcd_coefficients": [
+        1
+      ],
+      "gcd_degree": 0,
+      "base_field_linear_part": [
+        1
+      ],
+      "regular_parameters_checked": [],
+      "exceptional_parameters_checked": [
+        0
+      ],
+      "parameter_checks": 1,
+      "reason": "COMPLETE_REGULAR_ROOTS_AND_ALL_POLES_CHECKED"
+    }
+  ],
+  "fixed_identity_family_budgets": [
+    {
+      "bits": 17,
+      "length": 289,
+      "dimension": 36,
+      "minimum_nonconstant_group_size": 37,
+      "max_nonconstant_groups": 7,
+      "target_image_rank_upper": 119,
+      "uniform_target_hit_probability_upper_power_of_two": -170,
+      "scope": "ONE_FIXED_FORMAL_INVERSE_AFFINE_FAMILY_NOT_ADAPTIVE_ATTACKS",
+      "classical_hardness_established": false
+    },
+    {
+      "bits": 31,
+      "length": 961,
+      "dimension": 120,
+      "minimum_nonconstant_group_size": 121,
+      "max_nonconstant_groups": 7,
+      "target_image_rank_upper": 217,
+      "uniform_target_hit_probability_upper_power_of_two": -744,
+      "scope": "ONE_FIXED_FORMAL_INVERSE_AFFINE_FAMILY_NOT_ADAPTIVE_ATTACKS",
+      "classical_hardness_established": false
+    },
+    {
+      "bits": 61,
+      "length": 3721,
+      "dimension": 465,
+      "minimum_nonconstant_group_size": 466,
+      "max_nonconstant_groups": 7,
+      "target_image_rank_upper": 427,
+      "uniform_target_hit_probability_upper_power_of_two": -3294,
+      "scope": "ONE_FIXED_FORMAL_INVERSE_AFFINE_FAMILY_NOT_ADAPTIVE_ATTACKS",
+      "classical_hardness_established": false
+    }
+  ]
+}

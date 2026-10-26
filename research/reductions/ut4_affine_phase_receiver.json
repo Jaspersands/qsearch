@@ -1,0 +1,71 @@
+{
+  "status": "CONSTRUCTIVE_QUOTIENT_LINE_CONVERSION_REVIEW_PENDING",
+  "scope": "cyclic H not in N for UT4(Fp)^r; implemented controller p=11 mod12",
+  "prime": 23,
+  "rank": 1,
+  "seed": 20261021,
+  "log_generator_fixture": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "public_input_model": "original coset states and measured Fourier labels; no hidden advice",
+  "copy_budget": {
+    "3": 5,
+    "2": 169,
+    "1": 25,
+    "original_cosets_per_output": 21125
+  },
+  "counts": {
+    "source_cosets": 21125,
+    "merges": {
+      "3": 4225,
+      "2": 25,
+      "1": 1
+    },
+    "max_equation_rank": {
+      "3": 4,
+      "2": 12,
+      "1": 24
+    },
+    "zero_fourier_labels": 0,
+    "single_active_input_merges": {
+      "3": 0,
+      "2": 0,
+      "1": 0
+    }
+  },
+  "outputs": [
+    {
+      "support_size": 23,
+      "symbolic_degree": 0,
+      "relative_phase_error": 8.210615735076904e-14,
+      "fourier_mass_outside_annihilator": 1.6340081701872186e-27
+    }
+  ],
+  "max_partial_fourier_probability_error": 1.2705494208814505e-21,
+  "max_relative_phase_error": 8.210615735076904e-14,
+  "all_outcomes_retained": true,
+  "rare_label_postselection": false,
+  "diagnostic_enumeration_is_quantum_runtime": false,
+  "classical_query_audit": {
+    "model": "uniform cyclic H outside N, independent opaque injective coset names",
+    "subgroup_count": 6716184,
+    "queries": 64,
+    "success_upper_bound_fraction": "2017/6716184",
+    "general_bound": "min(1,(binom(T,2)+1)/((p^(6r)-p^(4r))/(p-1)))",
+    "not_a_lower_bound_for_structured_explicit_evaluators": true,
+    "finite_example_shows_runtime_advantage": false
+  },
+  "full_hsp_receiver_executed": false,
+  "novelty_established": false,
+  "external_computational_reduction": null,
+  "remaining": [
+    "Independent proof and prior-art review of the collective affine-support extension.",
+    "Public copies-only reduction to known univariate HPGP is tested; the HPGP solver is not executed.",
+    "No cryptographic, lattice, graph or other external problem reduction established."
+  ]
+}
