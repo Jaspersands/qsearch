@@ -1,0 +1,526 @@
+from __future__ import annotations
+
+import json
+import re
+import shlex
+import subprocess
+import sys
+from pathlib import Path
+
+import pytest
+
+from tests.tools.conftest import NEGATIVES
+from tests.tools.test_corpus_mcp import _call
+from tools.corpus.api import Corpus
+from tools.corpus import baselines as baselines_module
+from tools.corpus.baselines import (
+    CatalogError,
+    _name_pattern,
+    keyword_matches,
+    load_catalog,
+    recommend,
+    tokens,
+    validate_catalog,
+)
+from tools.corpus.cli import main
+from tools.corpus.mcp_server import create_server
+
+REPO = Path(__file__).resolve().parents[2]
+IDEA = "syndrome decoding of a random linear code"
+PRANGE_NOTE = (
+    "# Prange Syndrome\n\n"
+    "Prange information-set decoding already solves syndrome decoding of this random linear code.\n"
+)
+KANGAROO_NOTE = (
+    "# Kangaroo Hop\n\n"
+    "The kangaroo hop question was settled classically by belief propagation on its factor graph.\n"
+)
+
+
+def _corpus_with_note(root: Path, stem: str, text: str) -> Corpus:
+    (root / "research" / f"{stem}.md").write_text(text, encoding="utf-8")
+    corpus = Corpus(root)
+    corpus.refresh()
+    return corpus
+
+
+def test_catalog_is_well_formed() -> None:
+    entries = load_catalog()
+    assert len(entries) == 15
+    assert validate_catalog(entries) == []
+    first, second = entries[0], entries[1]
+    broken = [
+        first,
+        dict(first),  # same id again
+        {key: value for key, value in second.items() if key != "summary"},
+        dict(second, id="too-few", mechanisms=["one", "two"]),
+        dict(second, id="bad-ref", references=[{"doi": "10.1/x"}, {"arxiv": "not-an-id"}]),
+    ]
+    problems = validate_catalog(broken)
+    assert any("duplicate id" in p for p in problems)
+    assert any(p.startswith(f"{second['id']}: missing field") and "summary" in p for p in problems)
+    assert any(p.startswith("too-few: mechanisms") for p in problems)
+    assert sum(p.startswith("bad-ref: malformed reference") for p in problems) == 2
+    assert validate_catalog([first, "oops", None]) == ["entry 2: must be an object", "entry 3: must be an object"]
+
+
+@pytest.mark.parametrize(
+    ("change", "problem"),
+    [
+        ({"mechanisms": ["a", "b", "c", "d", "e", "f", "g"]}, "mechanisms must be 3 to 6 keywords, found 7"),
+        ({"mechanisms": "gibbs sampling"}, "mechanisms must be a list"),
+        ({"references": {"arxiv": "2610.06753"}}, "references must be a list"),
+        ({"aliases": "Prange"}, "aliases must be a list"),
+        ({"aliases": ["Prange", " "]}, "aliases must be non-empty strings"),
+        ({"name": "  "}, "name must be a non-empty string"),
+        # a name or alias with no word of two letters or digits outside the stop words cites almost every note
+        *(
+            ({"aliases": ["Prange", alias]}, f"alias {json.dumps(alias)} has no word to match, so it would cite almost every note")
+            for alias in (".", "-", " (", "a", "x", "the", "of")
+        ),
+        ({"name": "-"}, 'name "-" has no word to match, so it would cite almost every note'),
+        ({"summary": 3}, "summary must be a non-empty string"),
+        (
+            {"runnable": "python tools/dqi_screen/screen.py"},
+            "runnable must be null or {command?, entry?} with at least one, entry path.py:name",
+        ),
+        ({"runnable": {}}, "runnable must be null or {command?, entry?} with at least one, entry path.py:name"),
+        (
+            {"runnable": {"entry": "prange_restarts"}},
+            "runnable must be null or {command?, entry?} with at least one, entry path.py:name",
+        ),
+        (
+            {"runnable": {"command": "python x.py", "script": "x.py"}},
+            "runnable must be null or {command?, entry?} with at least one, entry path.py:name",
+        ),
+        # a keyword with no word the matcher keeps would match every idea
+        ({"mechanisms": ["gibbs sampling", "parity check", "-"]}, 'mechanism "-" has no letter or digit, so it would match every idea'),
+        ({"mechanisms": ["gibbs sampling", "parity check", "格"]}, 'mechanism "格" has letters the matcher ignores (格); spell it in ASCII'),
+        ({"mechanisms": ["gibbs sampling", "χ² test", "code"]}, 'mechanism "χ² test" has letters the matcher ignores (χ); spell it in ASCII'),
+        ({"mechanisms": ["gibbs sampling", "parity check", 3]}, "mechanism 3 must be a string"),
+        ({"mechanisms": ["Gibbs sampling", "parity check", "code"]}, 'mechanism "Gibbs sampling" must be lowercase'),
+        # a note is a bare research/<STEM>.md stem and an arXiv id has no version, matched in full
+        *(
+            ({"references": [ref]}, f"malformed reference {json.dumps(ref)}")
+            for ref in (
+                {"note": "PRIME_CHARACTER_OPI.md"},
+                {"note": "research/PRIME_CHARACTER_OPI"},
+                {"note": "prime_character_opi"},
+                {"arxiv": "2610.06753v2"},
+                {"arxiv": "arXiv:2610.06753"},
+            )
+        ),
+    ],
+)
+def test_validate_catalog_names_each_broken_rule(change: dict, problem: str) -> None:
+    entry = dict(load_catalog()[1], id="broken", **change)
+    assert validate_catalog([entry]) == [f"broken: {problem}"]
+
+
+def test_accented_and_numbered_keywords_are_valid() -> None:
+    entry = dict(load_catalog()[1], id="fine", mechanisms=["gröbner basis", "max k cut", "3-sat"])
+    assert validate_catalog([entry]) == []
+
+
+def test_recommend_refuses_an_invalid_catalog(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    every_idea = dict(load_catalog()[1], id="every-idea", mechanisms=["格", "-", "χ²"])
+    with pytest.raises(CatalogError, match="every-idea: mechanism"):
+        recommend(corpus, "Shor factoring of RSA moduli", catalog=[every_idea])  # scored 0.6667 on any idea
+    with pytest.raises(CatalogError, match="found 0"):  # was ZeroDivisionError
+        recommend(corpus, IDEA, catalog=[dict(load_catalog()[1], id="none", mechanisms=[])])
+
+
+@pytest.mark.parametrize(
+    ("content", "message"),
+    [
+        (None, "cannot read the baseline catalog"),
+        ('{"baselines": [', "is not valid JSON"),
+        ('{"entries": []}', 'must be an object with a "baselines" list'),
+        ("[]", 'must be an object with a "baselines" list'),
+        ('{"baselines": [{"id": "lonely"}]}', "invalid baseline catalog"),
+    ],
+)
+def test_a_broken_catalog_file_is_a_clean_error(
+    fake_repo: Path, tmp_path: Path, monkeypatch, capsys, content: str | None, message: str
+) -> None:
+    catalog = tmp_path / "catalog" / "baselines.json"
+    if content is not None:
+        catalog.parent.mkdir()
+        catalog.write_text(content, encoding="utf-8")
+    monkeypatch.setattr(baselines_module, "CATALOG", catalog)
+    assert main(["--root", str(fake_repo), "baselines", IDEA]) == 1
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert captured.err.startswith("error: ") and message in captured.err and str(catalog) in captured.err
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "classical_baselines", {"idea": IDEA})
+    assert set(payload) == {"error"} and message in payload["error"]
+
+
+def test_a_citation_matches_the_name_in_any_case(fake_repo: Path) -> None:
+    shout = "# PRANGE SHOUT\n\nPRANGE decoding already solves syndrome decoding of this random linear code.\n"
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SHOUT", shout)
+    recs = recommend(corpus, IDEA)
+    assert recs[0].baseline["id"] == "prange-isd"
+    assert recs[0].evidence[0].doc_id.startswith("note:PRANGE_SHOUT")
+    assert recs[0].score == pytest.approx(2 / 5 + 1 / 10)
+
+
+def test_tokens_drop_a_plural_s_but_keep_a_double_s() -> None:
+    assert tokens("spin glasses") == tokens("spin glass") == ["spin", "glass"]
+    assert tokens("Gibbs codes processes") == ["gibb", "code", "process"]
+    assert tokens("is gas bias") == ["is", "gas", "bia"]  # short words kept; a single final s still dropped
+
+
+def test_tokens_fold_ies_plurals_and_bases() -> None:
+    assert tokens("learning parities with noise") == tokens("learning parity with noise")
+    assert tokens("sparse parities, signed parities") == ["sparse", "parity", "signed", "parity"]
+    assert tokens("Gröbner bases") == tokens("groebner basis") == ["groebner", "basis"]
+    assert tokens("lattice bases and analyses") == ["lattice", "basis", "and", "analysis"]
+    assert tokens("ties lies") == ["tie", "lie"]  # four letters: only the final s goes
+
+
+def test_tokens_expand_the_repository_abbreviations() -> None:
+    assert tokens("mixed-coset OPI") == ["mixed", "coset", "optimal", "polynomial", "intersection"]
+    assert tokens("MQ") == ["multivariate", "quadratic"]
+    assert tokens("LPN") == tokens("learning parity with noise")
+    assert tokens("CVP") == ["closest", "vector"]
+    assert tokens("USD") == tokens("unambiguous state discrimination") == ["unambiguou", "state", "discrimination"]
+
+
+@pytest.mark.parametrize(
+    ("idea", "baseline", "keywords"),
+    [
+        ("MQ equations where classical Gröbner bases stall", "groebner-mq", ["multivariate quadratic", "groebner basis"]),
+        ("learning parities with noise from sparse samples", "isd-pinning-fft", ["learning parity with noise"]),
+        ("LPN samples", "isd-pinning-fft", ["learning parity with noise"]),
+        ("signed parities on a polar code", "polar-sc-source-shaping", ["polar code", "signed parity"]),
+        ("DQI margin over Prange on low-rate prime-character OPI", "prange-restarts-opi", ["optimal polynomial intersection"]),
+        ("DQI for OPI on explicit RS inputs", "prange-restarts-opi", ["optimal polynomial intersection"]),
+        ("reduces to a CVP instance", "lll-babai-dcp", ["closest vector"]),
+        ("a USD decoder for signed XOR models", "usd-prange-rejection-sampler", ["unambiguous state discrimination"]),
+    ],
+)
+def test_ideas_in_the_repository_wording_match_their_keywords(
+    fake_repo: Path, idea: str, baseline: str, keywords: list[str]
+) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, idea, k=20)}
+    assert baseline in recs
+    assert set(keywords) <= set(recs[baseline].matched)
+
+
+def test_tokens_fold_accents_and_spelling_variants() -> None:
+    assert tokens("Gröbner") == tokens("Gröbner") == tokens("Grobner") == tokens("Groebner") == ["groebner"]
+    assert tokens("MaxCut") == tokens("Max-Cut") == ["max", "cut"]
+    assert tokens("graph colouring") == tokens("graph coloring") == ["graph", "coloring"]
+    assert tokens("colourings") == ["coloring"]
+
+
+QAOA_NOTE = (
+    "# QAOA Barrier\n\n"
+    "Goemans-Williamson rounding of the semidefinite relaxation bounds shallow QAOA on max-3-cut.\n"
+)
+
+
+@pytest.mark.parametrize("cut", ["max-3-cut", "Max-q-Cut", "max 3-cut", "max-k-cut"])
+def test_a_concrete_max_k_cut_ranks_the_lp_decoder_first(fake_repo: Path, cut: str) -> None:
+    corpus = _corpus_with_note(fake_repo, "QAOA_BARRIER", QAOA_NOTE)
+    recs = recommend(corpus, f"DQI for {cut} on a ternary cycle code")
+    assert recs[0].baseline["id"] == "lp-decoding-cycle-codes"
+    assert recs[0].matched == ["cycle code", "max k cut"]
+    sdp = next(rec for rec in recs if rec.baseline["id"] == "sdp-relaxation")
+    assert sdp.score < recs[0].score
+
+
+def test_max_k_cut_needs_its_number_between_max_and_cut(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, "QAOA on max cut at depth 3", k=20)}
+    assert "max k cut" not in recs.get("lp-decoding-cycle-codes", recs["sdp-relaxation"]).matched
+    assert recs["sdp-relaxation"].matched == ["max cut", "qaoa"]
+    assert recommend(corpus, "QAOA on MaxCut", k=20)[0].baseline["id"] == "sdp-relaxation"
+
+
+def test_a_one_letter_word_of_a_keyword_must_sit_beside_the_rest() -> None:
+    p_spin = tokens("p spin")
+    assert keyword_matches(p_spin, tokens("the quantum p-spin model"))
+    assert not keyword_matches(p_spin, tokens("QAOA at depth p on a transverse-field spin chain"))
+    assert not keyword_matches(p_spin, tokens("Fourier sampling of a spin representation of SL(2, F_p)"))
+    assert keyword_matches(tokens("3-sat"), tokens("a random 3-SAT instance"))
+    assert not keyword_matches(tokens("3-sat"), tokens("a SAT solver for 3 colourings"))
+    assert keyword_matches(tokens("spin glass"), tokens("glass of spin"))  # longer words: any order
+
+
+@pytest.mark.parametrize(
+    "idea", ["QAOA at depth p on a transverse-field spin chain", "Fourier sampling of a spin representation of SL(2, F_p)"]
+)
+def test_a_stray_p_and_spin_do_not_match_p_spin(fake_repo: Path, idea: str) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, idea, k=20)}
+    assert "stochastic-localization-pspin" not in recs
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, "Gibbs sampling of the quantum p-spin model", k=20)}
+    assert recs["stochastic-localization-pspin"].matched == ["gibbs sampling", "p spin"]
+
+
+def test_british_and_accented_spellings_match_their_keywords(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    colouring = {rec.baseline["id"]: rec for rec in recommend(corpus, "graph colouring codes", k=20)}
+    assert colouring["lp-decoding-cycle-codes"].matched == ["graph coloring"]
+    groebner = {rec.baseline["id"]: rec for rec in recommend(corpus, "Gröbner basis attack on ternary LWE", k=20)}
+    assert groebner["groebner-mq"].matched == ["groebner basis"]
+
+
+USD_NOTE = (
+    "# Kangaroo Sampler\n\n"
+    "The product-USD/Prange sampler and the block-Prange decoder sample the kangaroo Gibbs law.\n"
+)
+
+
+def test_a_longer_name_of_another_baseline_is_not_a_citation_of_its_part(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "KANGAROO_SAMPLER", USD_NOTE)
+    recs = {rec.baseline["id"]: rec for rec in recommend(corpus, "kangaroo Gibbs sampler", k=20)}
+    assert recs["usd-prange-rejection-sampler"].evidence[0].doc_id.startswith("note:KANGAROO_SAMPLER")
+    assert "prange-isd" not in recs  # "Prange" only occurs inside USD-Prange names
+    both = _corpus_with_note(fake_repo, "KANGAROO_SAMPLER", USD_NOTE + "\nPlain Prange decoding fails on kangaroo.\n")
+    recs = {rec.baseline["id"]: rec for rec in recommend(both, "kangaroo Gibbs sampler", k=20)}
+    assert recs["prange-isd"].evidence[0].doc_id.startswith("note:KANGAROO_SAMPLER")
+    assert recs["usd-prange-rejection-sampler"].evidence[0].doc_id.startswith("note:KANGAROO_SAMPLER")
+
+
+def test_spin_glasses_match_the_spin_glass_keyword(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = recommend(corpus, "sampling Gibbs states of mean-field spin glasses")
+    assert recs[0].baseline["id"] == "stochastic-localization-pspin"
+    assert recs[0].matched == ["gibbs sampling", "spin glass"]
+
+
+def test_a_negative_k_returns_nothing(fake_repo: Path, capsys) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    assert len(recommend(corpus, IDEA)) >= 2
+    assert recommend(corpus, IDEA, k=0) == recommend(corpus, IDEA, k=-1) == []
+    for k in ("-1", "0"):  # -k 0 would print that no baseline matches, which is false
+        with pytest.raises(SystemExit):
+            main(["--root", str(fake_repo), "baselines", IDEA, "-k", k])
+        assert "-k must be at least 1" in capsys.readouterr().err
+    server = create_server(fake_repo, dense="off")
+    assert _call(server, "classical_baselines", {"idea": IDEA, "k": -1})["recommendations"] == []
+
+
+def test_catalog_note_references_exist() -> None:
+    if not (REPO / "research" / "registry").is_dir():
+        pytest.skip("no research registry in this checkout")
+    stems = [ref["note"] for entry in load_catalog() for ref in entry["references"] if "note" in ref]
+    assert stems
+    assert [stem for stem in stems if not (REPO / "research" / f"{stem}.md").is_file()] == []
+
+
+def test_catalog_note_references_name_their_baseline() -> None:
+    if not (REPO / "research" / "registry").is_dir():
+        pytest.skip("no research registry in this checkout")
+    silent = [
+        f"{entry['id']}: {ref['note']}"
+        for entry in load_catalog()
+        for ref in entry["references"]
+        if "note" in ref
+        and not _name_pattern(entry).search((REPO / "research" / f"{ref['note']}.md").read_text(encoding="utf-8"))
+    ]
+    assert silent == []
+
+
+def test_readme_says_the_runnable_check_runs_now_that_dqi_screen_is_merged() -> None:
+    # tools/dqi_screen/ was merged in e4e2c6c8, so the check below runs; it skips only in a checkout without it.
+    readme = " ".join((REPO / "tools" / "corpus" / "README.md").read_text(encoding="utf-8").split())
+    assert "is merged)" not in readme
+    assert "(it skips only in a checkout without `tools/dqi_screen/`)" in readme
+
+
+CONSTRUCTION_A = {
+    "id": "NEG-CODE-SELF-DUAL-CONSTRUCTION-A-LOCAL-SELF-DUAL-K32",
+    "claim": "Low-norm Construction-A invariants separate self-dual-k32.",
+    "reason_invalid": "All sampled instances share determinant, parity, minimum norm, and norm-two vector count.",
+    "lesson": "Compare coset-state collective measurement of self-dual codes against lattice invariants.",
+}
+
+
+def test_low_norm_construction_a_lattices_do_not_cite_the_norm_search(fake_repo: Path) -> None:
+    # The alias "norm construction" matched "low-norm Construction-A" (a hyphen is a word boundary),
+    # so self-dual code negatives were credited to the prime-field quadratic-extension norm search.
+    norm = next(entry for entry in load_catalog() if entry["id"] == "norm-search-fp2")
+    assert _name_pattern(norm).search("## Classical Norm Construction")  # PRIME_CHARACTER_NORM_ATTACK's heading
+    assert _name_pattern(norm).search(CONSTRUCTION_A["claim"]) is None
+    registry = fake_repo / "research" / "registry" / "negative_results.json"
+    # NEGATIVES[1] names the "quadratic-extension norm" itself, a true citation, so it is left out here.
+    registry.write_text(json.dumps([NEGATIVES[0], CONSTRUCTION_A], indent=2), encoding="utf-8")
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    idea = "coset-state collective measurement for self-dual code equivalence k32"
+    assert corpus.search(idea, kinds=("note", "negative"), k=1)[0].doc_id == f"negative:{CONSTRUCTION_A['id']}"
+    assert "norm-search-fp2" not in {rec.baseline["id"] for rec in recommend(corpus, idea, k=20)}
+
+
+def _runnable_problems(item: dict) -> list[str]:
+    """Why a catalog `runnable` does not work as printed: an entry that is not a function
+    defined in its file, or a command that does not exit 0 from the repository root."""
+    problems: list[str] = []
+    if item.get("entry"):
+        path, _, name = item["entry"].partition(":")
+        if not re.search(rf"^def {re.escape(name)}\(", (REPO / path).read_text(encoding="utf-8"), re.M):
+            problems.append(f"{item['entry']}: no such function")
+    if item.get("command"):  # the CLI prints it as "run:", so it must run from the repository root
+        done = subprocess.run(shlex.split(item["command"]), cwd=REPO, capture_output=True, text=True, timeout=120)
+        if done.returncode:
+            problems.append(f"{item['command']}: exit {done.returncode}: {done.stderr[-500:]}")
+    return problems
+
+
+def test_runnables_run_as_printed_or_name_an_existing_function() -> None:
+    if not (REPO / "tools" / "dqi_screen").is_dir():
+        pytest.skip("tools/dqi_screen/ is not in this checkout")
+    runnable = [entry["runnable"] for entry in load_catalog() if entry["runnable"]]
+    assert runnable
+    assert [problem for item in runnable for problem in _runnable_problems(item)] == []
+
+
+def test_the_runnable_check_runs_each_command_and_reads_each_entry() -> None:
+    # No catalog entry has a command today, so the check above never ran that branch.
+    python = shlex.quote(sys.executable)
+    assert _runnable_problems({"command": f"{python} -c pass"}) == []
+    assert "exit 3" in _runnable_problems({"command": f"{python} -c 'raise SystemExit(3)'"})[0]
+    assert _runnable_problems({"entry": "tools/corpus/baselines.py:recommend"}) == []
+    assert _runnable_problems({"entry": "tools/corpus/baselines.py:no_such_function"}) == [
+        "tools/corpus/baselines.py:no_such_function: no such function"
+    ]
+
+
+def test_baselines_with_equal_scores_are_ordered_by_name(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    template = load_catalog()[1]
+    catalog = [
+        dict(template, id=f"tie-{name.lower()}", name=f"{name} zebra decoder", aliases=[], mechanisms=["zebra stripe", "okapi", "tapir"])
+        for name in ("Beta", "Alpha", "Gamma")
+    ]
+    recs = recommend(corpus, "counting zebra stripes", catalog=catalog)
+    assert len({rec.score for rec in recs}) == 1
+    assert [rec.baseline["name"] for rec in recs] == ["Alpha zebra decoder", "Beta zebra decoder", "Gamma zebra decoder"]
+
+
+def test_prange_ranks_first_when_a_note_mentions_it(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    recs = recommend(corpus, IDEA)
+    assert recs[0].baseline["id"] == "prange-isd"
+    assert "syndrome decoding" in recs[0].matched
+    assert recs[0].evidence[0].doc_id.startswith("note:PRANGE_SYNDROME")
+    # "syndrome decoding" and "linear code" of five keywords, plus one citing hit of ten
+    assert recs[0].matched == ["syndrome decoding", "linear code"]
+    assert recs[0].score == pytest.approx(2 / 5 + 1 / 10)
+    assert [rec.score for rec in recs] == sorted((rec.score for rec in recs), reverse=True)
+    assert all(rec.score > 0 for rec in recs)
+    assert len(recommend(corpus, IDEA, k=1)) == 1
+
+
+def test_recommend_scores_corpus_mentions_without_keyword_overlap(fake_repo: Path) -> None:
+    corpus = _corpus_with_note(fake_repo, "KANGAROO_HOP", KANGAROO_NOTE)
+    recs = recommend(corpus, "kangaroo hop")
+    assert [rec.baseline["id"] for rec in recs] == ["belief-propagation-ldpc"]
+    assert recs[0].matched == []
+    assert recs[0].score == pytest.approx(0.1)
+    assert recs[0].evidence[0].doc_id.startswith("note:KANGAROO_HOP")
+    # names match on word boundaries: "Kanga" does not cite a note that says "kangaroo"
+    kanga = dict(load_catalog()[0], id="kanga", name="Kanga", aliases=[])
+    assert recommend(corpus, "kangaroo hop", catalog=[kanga]) == []
+
+
+KANGAROO_SECTIONS = (
+    "# Kangaroo Hop\n\n"
+    "## Question\n\nThe kangaroo hop question was settled classically by belief propagation.\n\n"
+    "## Method\n\nKangaroo hop messages follow belief propagation on its factor graph.\n\n"
+    "## Verdict\n\nBelief propagation already decodes every kangaroo hop instance.\n"
+)
+KANGAROO_NEGATIVES = [
+    {
+        "id": f"NEG-KANGAROO-HOP-{n}",
+        "claim": f"Kangaroo hop instance {n} needs a quantum decoder.",
+        "reason_invalid": "Belief propagation decodes the kangaroo hop instance classically.",
+        "lesson": "Run belief propagation first.",
+    }
+    for n in (1, 2)
+]
+
+
+def test_a_note_cites_a_baseline_once_however_many_sections_are_near(fake_repo: Path) -> None:
+    registry = fake_repo / "research" / "registry" / "negative_results.json"
+    registry.write_text(json.dumps(NEGATIVES + KANGAROO_NEGATIVES, indent=2), encoding="utf-8")
+    corpus = _corpus_with_note(fake_repo, "KANGAROO_HOP", KANGAROO_SECTIONS)
+    hits = corpus.search("kangaroo hop", kinds=("note", "negative"), k=10)
+    assert sum(hit.path == "research/KANGAROO_HOP.md" for hit in hits) == 3  # three near sections of one note
+    recs = recommend(corpus, "kangaroo hop")
+    assert [rec.baseline["id"] for rec in recs] == ["belief-propagation-ldpc"]
+    # one note and two registry records (one file, but each record is its own source)
+    assert recs[0].score == pytest.approx(0.3)
+    sources = sorted(hit.path if hit.kind == "note" else hit.doc_id for hit in recs[0].evidence)
+    assert sources == ["negative:NEG-KANGAROO-HOP-1", "negative:NEG-KANGAROO-HOP-2", "research/KANGAROO_HOP.md"]
+    # the evidence is each source's nearest hit, nearest source first
+    nearest: dict[str, str] = {}
+    for hit in hits:
+        source = hit.path if hit.kind == "note" else hit.doc_id
+        if source in sources:
+            nearest.setdefault(source, hit.doc_id)
+    assert [hit.doc_id for hit in recs[0].evidence] == list(nearest.values())
+
+
+def test_cli_baselines_text_and_json(fake_repo: Path, capsys) -> None:
+    _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    root = ["--root", str(fake_repo)]
+    assert main([*root, "baselines", IDEA]) == 0
+    out = capsys.readouterr().out
+    assert "1. Prange information-set decoding" in out
+    assert "why: matched syndrome decoding, linear code; cited by research/PRANGE_SYNDROME.md" in out
+    assert "references: research/PARITY_BLOCK_USD_PRANGE.md" in out
+    assert main([*root, "baselines", "optimal polynomial intersection over a prime field"]) == 0
+    out = capsys.readouterr().out
+    assert "call: tools/dqi_screen/prange.py:prange_restarts (a library function; it needs an instance)" in out
+    assert "run:" not in out and "screener computes both" not in out
+    assert main([*root, "baselines", "zebrafish migration"]) == 0
+    assert "No catalog baseline" in capsys.readouterr().out
+    assert main([*root, "baselines", IDEA, "--json", "-k", "1"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert set(payload) == {"idea", "recommendations", "index_incomplete", "index_issues"}
+    assert payload["idea"] == IDEA and len(payload["recommendations"]) == 1
+    top = payload["recommendations"][0]
+    assert set(top) == {"baseline", "score", "matched", "evidence"}
+    assert top["baseline"]["id"] == "prange-isd" and top["score"] == pytest.approx(0.5)
+    assert top["matched"] == ["syndrome decoding", "linear code"]
+    assert top["evidence"][0]["doc_id"].startswith("note:PRANGE_SYNDROME")
+
+
+def test_classical_baselines_tool(fake_repo: Path) -> None:
+    _corpus_with_note(fake_repo, "PRANGE_SYNDROME", PRANGE_NOTE)
+    server = create_server(fake_repo, dense="off")
+    payload = _call(server, "classical_baselines", {"idea": IDEA, "k": 2})
+    assert payload["idea"] == IDEA and "index_incomplete" in payload
+    assert [rec["baseline"]["id"] for rec in payload["recommendations"]] == ["prange-isd", "isd-pinning-fft"]
+    assert payload["recommendations"][0]["evidence"][0]["doc_id"].startswith("note:PRANGE_SYNDROME")
+    assert _call(server, "classical_baselines", {"idea": "zebrafish migration"})["recommendations"] == []
+
+
+@pytest.mark.parametrize(("idea", "keyword"), [
+    ("Gibbs samplers", "gibbs sampling"), ("syndrome decoder", "syndrome decoding"),
+    ("LP decoder", "lp decoding"), ("rejection sampler", "rejection sampling"),
+    ("SDP relaxation", "semidefinite"), ("RS codes", "reed solomon"),
+    ("FFT enumeration", "fourier transform"), ("BP decoder", "belief propagation"),
+    ("BPQM decoding", "belief propagation"),
+])
+def test_agent_vocabulary_matches_the_spelled_out_mechanism(idea, keyword):
+    assert keyword_matches(tokens(keyword), tokens(idea))
+
+
+def test_citation_aliases_distinguish_algorithms_and_accept_plurals():
+    entries = {entry["id"]: entry for entry in load_catalog()}
+    assert not _name_pattern(entries["lll-babai-dcp"]).search(
+        "Babai (STOC 2016, Graph Isomorphism in Quasipolynomial Time)")
+    assert _name_pattern(entries["lll-babai-dcp"]).search("Babai nearest-plane rounding")
+    assert not _name_pattern(entries["prange-isd"]).search("block-Prange sampling and Prange rank ceilings")
+    assert _name_pattern(entries["prange-isd"]).search("Prange decoding")
+    assert _name_pattern(entries["tensor-network-simulation"]).search("tensor networks")
+    assert _name_pattern(entries["sdp-relaxation"]).search("SDP relaxations")

@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
 
-from tools.corpus.cli import main
+import pytest
+
+from tools.corpus.cli import build_parser, main
 
 CLI = Path(__file__).resolve().parents[2] / "tools" / "corpus" / "cli.py"
 
@@ -64,6 +68,49 @@ def test_heldout_counts_hits_at_k_and_enforces_minimum(fake_repo: Path, tmp_path
     assert code == 1
 
 
+def test_heldout_json_gives_each_case_its_rank(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    cases = tmp_path / "cases.json"
+    cases.write_text(
+        json.dumps(
+            [
+                {"id": "NEG-OPI-MIXED-COSET-HARDNESS", "query": "quadratic norm solver for OPI"},
+                {"id": "NEG-NO-SUCH-RECORD", "query": "zebrafish migration"},
+            ]
+        )
+    )
+    code, out = run(capsys, "--root", str(fake_repo), "heldout", str(cases), "-k", "5", "--json")
+    payload = json.loads(out)
+    assert code == 0
+    assert payload["cases"][0]["id"] == "negative:NEG-OPI-MIXED-COSET-HARDNESS" and payload["cases"][0]["rank"] >= 1
+    assert payload["cases"][1] == {"id": "negative:NEG-NO-SUCH-RECORD", "rank": None}
+    assert (payload["retrieved"], payload["total"], payload["k"], payload["min"]) == (1, 2, 5, 0)
+    assert "index_incomplete" in payload
+    code, out = run(capsys, "--root", str(fake_repo), "heldout", str(cases), "--json", "--min", "2")
+    assert code == 1 and json.loads(out)["retrieved"] == 1
+
+
+def test_every_command_that_takes_json_prints_json(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    # The README lists these commands as printing machine-readable output; heldout accepted
+    # --json and printed text, which the README check (flag accepted) did not notice.
+    cases = tmp_path / "cases.json"
+    cases.write_text(json.dumps([{"id": "NEG-OPI-MIXED-COSET-HARDNESS", "query": "quadratic norm solver for OPI"}]))
+    arguments = {
+        "search": ["Helstrom readout"],
+        "been-tried": ["Helstrom readout"],
+        "similar": ["negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"],
+        "heldout": [str(cases)],
+        "near-duplicates": [],
+        "check-new": ["--text", "zebrafish migration"],
+        "baselines": ["syndrome decoding of a linear code"],
+    }
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    assert set(arguments) == {c for c in sub.choices if "--json" in _options(c)}
+    for command, args in arguments.items():
+        main(["--root", str(fake_repo), command, *args, "--json"])
+        out = capsys.readouterr().out
+        assert isinstance(json.loads(out), dict), command
+
+
 def test_script_runs_directly_without_package_install(fake_repo: Path) -> None:
     result = subprocess.run(
         [sys.executable, str(CLI), "--root", str(fake_repo), "search", "Helstrom", "--json"],
@@ -96,3 +143,115 @@ def test_corrupt_registry_is_reported_as_incomplete_not_as_novel(fake_repo: Path
     ok = _cli(fake_repo, "been-tried", idea, "--json")
     assert ok.returncode == 0
     assert json.loads(ok.stdout)["index_incomplete"] is False
+
+
+@pytest.mark.parametrize(
+    "command", [["check-new", "--text", "hidden shift sieve"], ["baselines", "hidden shift"], ["near-duplicates"], ["build"]]
+)
+def test_a_root_that_is_not_a_checkout_is_an_error_and_creates_nothing(tmp_path: Path, capsys, command) -> None:
+    missing = tmp_path / "nosuch"
+    assert main(["--root", str(missing), *command]) == 1
+    assert "is not a directory" in capsys.readouterr().err
+    assert not missing.exists()
+    bare = tmp_path / "bare"
+    bare.mkdir()
+    assert main(["--root", str(bare), *command]) == 1
+    assert "is not a Q-Search checkout" in capsys.readouterr().err
+    assert list(bare.iterdir()) == []
+    hollow = tmp_path / "hollow"
+    (hollow / "research").mkdir(parents=True)
+    assert main(["--root", str(hollow), *command]) == 1
+    assert "nothing to index" in capsys.readouterr().err
+    assert list((hollow / "research").iterdir()) == []  # no corpus_index/ left behind
+
+
+def test_mcp_server_refuses_a_root_that_is_not_a_checkout(tmp_path: Path) -> None:
+    from tools.corpus.api import CorpusRootError
+    from tools.corpus.mcp_server import create_server
+
+    with pytest.raises(CorpusRootError, match="is not a directory"):
+        create_server(tmp_path / "nosuch", dense="off")
+    assert not (tmp_path / "nosuch").exists()
+    # A checkout with nothing to index: the server started, wrote an index, and failed every call.
+    hollow = tmp_path / "hollow"
+    (hollow / "research").mkdir(parents=True)
+    with pytest.raises(CorpusRootError, match="nothing to index"):
+        create_server(hollow, dense="off")
+    assert list((hollow / "research").iterdir()) == []
+
+
+def test_mcp_server_main_exits_1_on_a_checkout_with_nothing_to_index(tmp_path: Path, capsys) -> None:
+    from tools.corpus.mcp_server import main as server_main
+
+    hollow = tmp_path / "hollow"
+    (hollow / "research" / "registry").mkdir(parents=True)
+    (hollow / "research" / "registry" / "notes.txt").write_text("not a registry file")
+    assert server_main(["--root", str(hollow), "--dense", "off"]) == 1
+    assert "nothing to index" in capsys.readouterr().err
+
+
+def _options(command: str) -> set[str]:
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    return {option for action in sub.choices[command]._actions for option in action.option_strings}
+
+
+def _named_commands(readme: str, lead: str) -> set[str]:
+    match = re.search(re.escape(lead) + r" (.*?) \(", readme, re.S)
+    assert match, f"README no longer says {lead!r}"
+    return set(re.findall(r"`([a-z-]+)`", match.group(1)))
+
+
+def test_check_new_help_names_every_exit_1_case() -> None:
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    summary = next(choice.help for choice in sub._choices_actions if choice.dest == "check-new")
+    assert "the draft cannot be read or has no words" in summary
+    assert "the index has no negative record" in summary  # cmd_check_new returns 1 on NO_NEGATIVES
+
+
+def test_readme_names_the_corpus_methods_the_duplicate_checks_call() -> None:
+    from tools.corpus import duplicates
+
+    called = set(re.findall(r"corpus\.(\w+)\(", Path(duplicates.__file__).read_text(encoding="utf-8")))
+    readme = (CLI.parent / "README.md").read_text(encoding="utf-8")
+    section = readme.split("## Duplicates")[1].split("### Calibration")[0]
+    named = set(re.findall(r"`Corpus\.(\w+)`", section))
+    assert named and named <= called, named - called
+
+
+def test_readme_names_the_commands_that_take_json_dense_and_no_refresh() -> None:
+    readme = " ".join((CLI.parent / "README.md").read_text(encoding="utf-8").split())  # one line per paragraph
+    sub = next(action for action in build_parser()._actions if isinstance(action, argparse._SubParsersAction))
+    commands = set(sub.choices)
+    with_json = {c for c in commands if "--json" in _options(c)}
+    with_dense = {c for c in commands - {"build"} if "--dense" in _options(c)}
+    assert _named_commands(readme, "`--json` prints machine-readable output from") == with_json
+    assert _named_commands(readme, "`--dense` adds the embedding ranker to") == with_dense
+    assert {"check-new", "near-duplicates", "baselines"}.isdisjoint(with_dense)  # they reject --dense (exit 2)
+    assert all("--no-refresh" in _options(c) for c in commands - {"build"})
+    assert "Every command but `build` takes `--no-refresh`" in readme
+
+
+
+def test_similar_json_reports_registry_parse_problems(fake_repo, capsys):
+    (fake_repo / "research/registry/negative_results.json").write_text("[broken")
+    code, out = run(capsys, "--root", str(fake_repo), "similar", "dequant:DEQ-POLAR-GIBBS-SOURCE", "--json")
+    assert code == 0
+    payload = json.loads(out)
+    assert payload["index_incomplete"] is True and payload["index_issues"]
+
+
+@pytest.mark.parametrize("raw", [None, "{", "{}", '[{"query":"no id"}]'])
+def test_heldout_rejects_unreadable_or_malformed_cases(fake_repo, tmp_path, capsys, raw):
+    path = tmp_path / "cases.json"
+    if raw is not None:
+        path.write_text(raw)
+    assert main(["--root", str(fake_repo), "heldout", str(path)]) == 1
+    assert "error: cannot read cases" in capsys.readouterr().err
+
+
+def test_empty_registry_reports_empty_documents_not_missing_files(tmp_path, capsys):
+    registry = tmp_path / "research/registry/negative_results.json"
+    registry.parent.mkdir(parents=True)
+    registry.write_text("[]")
+    assert main(["--root", str(tmp_path), "check-new", "--text", "coset packet"]) == 1
+    assert "source files hold no documents" in capsys.readouterr().err

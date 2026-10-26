@@ -15,6 +15,8 @@ import builtins
 import importlib
 import sys
 import types
+import tempfile
+from contextlib import contextmanager
 from pathlib import Path
 
 from tools.split_cli import extract as ex
@@ -22,6 +24,22 @@ from tools.split_cli import extract as ex
 
 class _Captured(Exception):
     pass
+
+
+@contextmanager
+def _source_imports():
+    """Verification reads current source even after same-size, same-second edits.
+
+    A fresh cache prefix prevents reads of timestamp-valid but stale .pyc files;
+    disabling bytecode writes keeps verification read-only in the checkout.
+    """
+    prefix, no_write = sys.pycache_prefix, sys.dont_write_bytecode
+    with tempfile.TemporaryDirectory(prefix="qsearch-verify-") as directory:
+        sys.pycache_prefix, sys.dont_write_bytecode = directory, True
+        try:
+            yield
+        finally:
+            sys.pycache_prefix, sys.dont_write_bytecode = prefix, no_write
 
 
 def capture_parser(main) -> argparse.ArgumentParser:
@@ -177,12 +195,15 @@ def dispatch_problems(legacy_source: str, dispatch: list) -> list[str]:
 
 def _use_root(root: Path) -> None:
     loaded = sys.modules.get("qsearch_cli")
-    if loaded is not None and not str(Path(loaded.__file__).resolve()).startswith(str(root)):
-        raise RuntimeError("qsearch_cli is already imported from another checkout")
+    if loaded is not None:
+        source = getattr(loaded, "__file__", None)
+        if source is None or Path(source).resolve().parent != (root / "qsearch_cli").resolve():
+            raise RuntimeError("qsearch_cli is already imported from another checkout")
     if str(root) not in sys.path[:1]:
         sys.path.insert(0, str(root))
 
 
+@_source_imports()
 def check_imports(root: Path) -> tuple[int, list[str]]:
     """Resolve every name in IMPORTS and every command function, as the monolith's start did.
 
@@ -207,6 +228,7 @@ def check_imports(root: Path) -> tuple[int, list[str]]:
     return len(names), failures
 
 
+@_source_imports()
 def compare(root: Path, legacy_path: Path) -> tuple[list[str], list[str]]:
     root = root.resolve()
     _use_root(root)

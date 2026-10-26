@@ -7,30 +7,76 @@ each one at the nearest retained negative, note or theorem module in the corpus 
 pip install "scikit-learn>=1.4"                   # all watch.py needs (numpy, scipy come with it)
 python tools/arxiv_watch/watch.py                 # papers since the last run, with a 7-day overlap
 python tools/arxiv_watch/watch.py --since 2026-09-18 --tracks dcp,dqi_opi
+python tools/arxiv_watch/watch.py --render        # refresh digest only; source files unchanged
 python tools/arxiv_watch/watch.py --relabel       # re-apply label rules to stored papers, no fetching
 python tools/arxiv_watch/watch.py --replay-seeds  # classifier consistency check on the seed papers
+python tools/arxiv_watch/watch.py --verdict 2610.06753 should-cite --reason "..." --action "..."
+python tools/arxiv_watch/watch.py --action-done 2610.06753   # that verdict's action is carried out
 ```
 
 Each track query is sorted newest first and paged (`--max` results per page, default 100)
 until a page reaches back past the window start, at most `--max-pages` pages (default 10),
-with arXiv's three-second pause between requests. If the page cap stops a query first, the
+with arXiv's three-second pause between requests. `--max` is capped at 2000. The feed's
+`totalResults` determines exhaustion; an empty/short page before that total a repeated page, or a changing
+count is retried twice (bypassing its cached response), then recorded as incomplete. An
+explicit zero-result feed is complete; an empty feed without a total is not. API error
+entries fail the run with a clean error. If the page cap or an incomplete page stops a query, the
 uncovered window is recorded under `gaps` in the JSON, printed as a warning and listed under
 "Incomplete coverage" in the digest until a run of that track that was not cut short covers
-it (`--since <start> --tracks <track>`).
+it (`--since <start> --tracks <track>`). A `--since` that is not a `YYYY-MM-DD` date, a
+`--max` or `--max-pages` below 1, or a track name not in `tracks.py` exits 2 before anything
+is fetched.
 
-The window starts seven days before each track's previous run. arXiv's `published` date is
-the v1 submission date, and a paper can be listed several days after it is submitted
-(weekends, moderation holds), so a one-day overlap lost papers. Papers already stored are
-recognised by id and never re-labelled or re-reported.
+The window starts seven days before each track's previous run (its `tracks_updated` entry;
+14 days back on a track's first run). arXiv's `published` date is the v1 submission date,
+and a paper can be listed several days after it is submitted (weekends, moderation holds),
+so a one-day overlap lost papers. A `--tracks` run moves only the dates of the tracks it ran,
+and a `--since` that starts after a track's usual window start leaves that track's date
+alone, so its next run still fetches the days that run skipped. A collisions file written
+before per-track dates has only `updated`; each track without a date of its own is taken to
+have run then, and the next saving run records that date for it before moving `updated`.
+Once `tracks_updated` exists, a missing track is a first run. Outstanding gaps extend the
+next default window back to the earliest skipped date, including a narrow first `--since`.
+Neither a page cap nor an incomplete page advances that track's date.
+Papers already stored are recognised by id and never re-reported or re-scored, with two
+exceptions:
 
-Outputs, rewritten only when a run finds a new paper (or a coverage gap opens or closes),
-so a quiet week leaves them byte-for-byte unchanged:
+- A paper with a reviewed verdict (see [Verdicts](#verdicts)) gets the verdict copied onto
+  its record and is listed in the digest's Reviewed table. A person's verdict moves it out of
+  the possible-kill and possible-scoop sections; a judge's leaves it there, marked
+  `judge: VERDICT`, until a person records one. Its machine label is unchanged.
+- A stored possible kill or scoop with no verdict is relabelled `already-cited` once a note,
+  record or literature file cites its id. The record keeps `relabelled_from` (the old label)
+  and `relabelled_on`, and the run reports the count. `--relabel` drops both fields when it
+  gives the paper any label but `already-cited`.
+
+Outputs, rewritten only when a run finds a new paper, a coverage gap opens or closes, a
+verdict is added, changed or withdrawn, a stored flag is relabelled, or another track's query
+returns a stored paper (its `queried_by` list grows, as after a `--tracks` backfill), so a
+quiet week leaves them byte-for-byte unchanged. A rewrite also moves `updated`, the
+`tracks_updated` entry of every fully covered track whose window started no later than usual, and the
+digest's "Last updated" line to the run date. A verdict
+for a paper the watch has not stored changes no record, so the run re-renders only the digest:
 
 - `research/audits/arxiv_collisions.json`: every paper seen, with tracks, label, wording
-  cues, the five nearest corpus records and the date first seen. Papers already present
-  are never re-scored, so repeated runs only add.
+  cues, the five nearest corpus records, the date first seen and, once reviewed, its
+  verdict. Apart from the two exceptions above, repeated runs only add.
 - `research/audits/ARXIV_WATCH.md`: the digest, newest first, with possible kills,
-  possible scoops and related papers.
+  possible scoops and related papers, then the Reviewed table. Every possible kill and scoop
+  is listed; the Related section shows the newest 40 and says how many more the JSON holds.
+- `research/audits/arxiv_verdicts.json`: the reviewed verdicts, keyed by arXiv id. Written
+  by `--verdict` and by the judge import (`judge.py`); the source of truth for the Reviewed
+  table.
+
+New records store the full abstract. Older 1500-character abstracts may have lost their
+ends: `--relabel` retains their existing labels, tracks and cues; it can add tracks found in
+the visible text and promote `unrelated` to `related`, but cannot remove evidence or infer
+a new kill/scoop from that incomplete text. Judge exports mark such cuts `[truncated]`.
+`--render` atomically writes only the digest; both source JSON files remain byte-for-byte
+unchanged, with no fetching or corpus build. It also creates a missing digest. A later fetch
+can restore a legacy abstract when its version matches and the full text starts with the
+stored prefix, preserving labels, first-seen date and verdicts; `--relabel` can then use the
+recovered text.
 
 ## Tracks and labels
 
@@ -59,6 +105,138 @@ regime and a quantum algorithm in another) is labelled a scoop; its cue column s
 Labels are triage, not judgement. A "possible kill" means "read this before the next
 pass on that track".
 
+## Verdicts
+
+Labels are triage, verdicts are judgement. A verdict records what a reader decided after
+reading the paper against the project:
+
+```bash
+python tools/arxiv_watch/watch.py --verdict 2609.40302 false-alarm \
+    --reason '"SDP" matched a note on an LWE-style SDP decoder.' [--action "..."] [--by human]
+```
+
+This writes `research/audits/arxiv_verdicts.json`, copies the verdict onto the stored paper
+and re-renders the digest. It fetches nothing and does not build the corpus index. The id
+may carry a version, an `arXiv:` prefix or the abstract URL (`arXiv:2609.40302v2`); the
+verdict is stored under the bare id the watch uses. An unknown verdict, or an id that is not
+an arXiv id, exits 2; that includes a new-style id with the wrong number of digits for its
+month (four after the dot up to 1412, five from 1501) or a month outside 01-12, so a typo
+such as `2610.0675` is not recorded.
+
+Keys written into the file by hand are read the same way, so `"arXiv:2609.40302v2"` is the
+verdict for stored paper 2609.40302 and is rewritten bare on the next save. When two keys name
+one paper, a person's entry outranks a judge's. Every mode of `watch.py` (but
+`--replay-seeds`) and `judge.py` reads the file first and exits 2 without writing anything when
+it is not JSON, is not `{"verdicts": {...}}`, an entry is not an object with one of the five
+verdicts, a key is not an arXiv id, or two people's (or two judges') entries name one paper.
+They do the same when `arxiv_collisions.json` cannot be read, and when `--root` has no
+`research/` directory, so a mistyped `--root` never gets a fresh `research/audits/`.
+
+| Verdict | Meaning |
+|---|---|
+| kill | The paper invalidates a project claim or retained result. |
+| scoop | The paper publishes a result the project presents as new. |
+| should-cite | No conflict, but a named document should cite the paper or narrow a sentence. |
+| related-only | Shared topic; nothing to do. |
+| false-alarm | The wording cue or the corpus match is spurious. |
+
+Each entry holds `verdict`, `reason`, `action` (null when nothing is to be done), `by` and
+`reviewed_on`. `action_done: true` marks an action already carried out; set it with
+`watch.py --action-done ID` (exit 2 when the paper has no verdict or its verdict no action).
+Re-recording the same person's verdict without `--action` keeps the earlier action and its
+`action_done` (only JSON `true` counts), and says so; a different `--action` starts not done, and `--action ""` clears
+it. Without `--reason` the earlier reason is kept, and the output says so, only when the
+verdict is unchanged; a changed verdict with a stored reason needs its own `--reason` (exit 2
+otherwise). A person recording over a judge's verdict keeps neither the judge's reason nor its
+action: `--reason` is needed, and the output names the judge's action so `--action` can adopt
+it. The file is the
+source of truth: every run copies its entries onto the stored records and drops a withdrawn
+one. The digest's Reviewed table lists every entry, by verdict then id, with the paper's
+machine label; an id the collisions file does not hold shows "not stored".
+
+Seeding the file (the 22 verdicts of the 2026-10-21 review) changes every stored record it
+names, so the first weekly run after a seed opens a pull request even when no new paper
+arrives.
+
+An `action_pending_clarification` string means the original reviewed action cannot yet be
+executed (for example, its note path does not exist). The original reviewer, reason, action,
+and review date remain intact. Digest and brief show the clarification. `--action-done`
+refuses it; re-recording the same action keeps the clarification, while replacing or clearing
+that action removes it. Resolve the intended target before recording a replacement.
+
+## Judging unreviewed flags
+
+New possible kills and scoops arrive every week. `judge.py` hands the unreviewed ones (flagged,
+no verdict) to in-session subagents, in the same export and import loop as `tools/audit/`:
+
+```bash
+python tools/arxiv_watch/judge.py --export DIR --batches 3
+# one fresh subagent per batch reads DIR/INSTRUCTIONS.md and DIR/batch_NN.json, writes DIR/out/batch_NN.jsonl
+python tools/arxiv_watch/judge.py --import DIR/out/*.jsonl --judge claude-subagent-2026-10-27
+```
+
+Use a fresh export directory each time. An existing `batch_*.json` or `out/*.jsonl` makes
+export fail before overwriting anything, so a smaller export cannot reuse old outputs.
+Export records SHA-256 receipts in the repository's ignored
+`tmp/arxiv-judge-export-hashes.json`, outside the judge's output directory. Keep that receipt
+until import; it detects changed batches, rather than authenticating the reviewer.
+
+Each batch item has the paper's title, abstract, label, cues and tracks, and its nearest
+Q-Search records with the first 600 characters of each. Truncated abstracts/excerpts end
+with `[truncated]`; a quote cannot end at that cut or include the marker. Batch files are UTF-8 with no `\u`
+escapes, so the judge sees the characters the quote check compares. The judge writes one row
+per paper:
+`{"arxiv_id", "verdict", "reason", "quote", "quote_from", "action", "confidence"}`.
+
+Import checks every row before it writes anything: a missing or unreadable file, a row that
+is not a JSON object, an unknown verdict, an id that is missing or not stored, or a corpus
+index that cannot be opened to check an excerpt quote stops it (exit 2) with nothing written.
+The accepted rows are then merged into fresh copies of the verdicts and collisions files, one
+write each, so a verdict or run recorded meanwhile is kept. A row is rejected when
+
+- its quote is under six words (numbers count; symbols and TeX commands do not), or does not
+  appear verbatim in the one text `quote_from` names: the abstract, or the excerpt of one of
+  the paper's nearest records. Spacing, the case of ordinary Latin prose words, sentence punctuation (`. , ; : ?`), quote marks and apostrophes, an em
+  dash (`—`, `---`), spaced en dash (` – `, ` -- `), or spaced ASCII
+  hyphen between multi-letter prose words; Markdown headings/list markers and `**` and
+  TeX's `$`, `\(`, `\)` and spacing commands (`\,`, `\quad`, `\qquad`, `\hspace{1em}` and the
+  like) are ignored; every other dash, `--` and `−` read as `-`. The maths must match: signs,
+  `/`, `!`, `#`, `%`, `^`, `_`, `×`, braces and brackets, Greek letters, TeX commands (`\Omega`
+  is not `\omega`), spelled-out Greek capitals (`Omega` is not `omega`), the case of every
+  other one-letter symbol (`O(n)` is not `o(n)`, `N` is not `n`), glued
+  products such as `kN`, `Wd`, `N2` and short symbols such as `SU`. Explicit TeX maths and
+  asymptotic/function expressions also preserve original letter case, primes (`W'` is `W′`, never
+  `W`; an `'` is a prime after a digit, a closing bracket, a one-letter symbol or a TeX command,
+  and an apostrophe or quote mark otherwise), a decimal point (`.5` is not `5`, `2.9x` is
+  `2.9 x`) and a ratio's colon (`1:2`). A superscript reads as its TeX exponent (`2ⁿ` is `2^n`,
+  never `2n`). So a quote with `≥` for `≤`, `0.207` for `-0.207`, `n^{1/2}` for `n^{-1/2}`,
+  `ω` for `Ω` or `o(n)` for `O(n)` fails. So does one that starts or ends inside a formula or
+  a hyphenated word. Inside `$...$`, `$$...$$`, `\(...\)` and `\[...\]`, clause-style
+  dashes remain mathematical signs rather than disappearing as punctuation. Bare symbols,
+  mixed-case products, Greek names and mathematical functions also protect adjacent dashes;
+  spaced numeric operands protect unary signs. The established unspaced prose convention
+  `fast—5 times faster` still permits the clause dash. This is a lexical check, not a complete
+  mathematical parser; use explicit math delimiters for ambiguous prose/formulas. Cuts are refused just after an operator (a sign, `-`, `/`, `=`, `×`, `\cdot`, ...) or a
+  prefix (`√`, `\sqrt`, `\log`, `#`, a decimal point), or just before an operator or a
+  factorial, percent sign or prime that follows a number or symbol. A quote that runs from one
+  text into another, or comes from a record the judge was not shown, is not evidence ("quote
+  not found"). Abstract quotes always use the stored paper. Excerpts use the exported batch
+  at `DIR/batch_NN.json` for `DIR/out/batch_NN.jsonl` only when its repository receipt matches
+  (relative output paths are resolved first). A changed batch stops import. Unreceipted or
+  missing batches fall back to today's stored texts, with a note for batch-named outputs.
+  A batch file that is not a JSON object with a list of papers stops import (exit 2);
+- the paper already has a verdict recorded by anyone but a judge, including an entry written
+  by hand without `by` ("human verdict exists").
+
+Accepted rows go into `research/audits/arxiv_verdicts.json` with `by: "judge:NAME"`, the
+quote, `quote_from` and `confidence` (clamped to 0..1; null when it is not a finite number,
+is an integer too large for one, or is `true` or `false`). A later import may replace a judge's verdict, never a
+human's. The stored records and the digest are then rewritten, and the Reviewed table shows
+who decided. A judge verdict is one model's reading, so it never takes a flag out of the
+possible-kill and possible-scoop sections: the paper stays there, marked `judge: VERDICT`,
+until a person checks it (a `false-alarm` or `related-only` as much as a `kill` or `scoop`)
+and records the outcome with `watch.py --verdict`.
+
 ## Scheduling
 
 `.github/workflows/arxiv_watch.yml` runs every Monday and on demand. When the digest
@@ -74,8 +252,14 @@ to get CI.
 
 ## Checks
 
-- Unit tests (`tests/tools/test_arxiv_watch.py`) use a recorded arXiv API response and
-  a fake client; nothing in the test suite touches the network.
+- Unit tests (`tests/tools/test_arxiv_watch.py`, `tests/tools/test_arxiv_judge.py`) use a
+  recorded arXiv API response and a fake client; nothing in the test suite touches the
+  network.
+- The earlier 2026-10-21 relabel smoke run reported four changes. Three were artefacts of
+  truncated abstracts (2609.23818, 2609.35511 and 2610.17711), not changed rules. Relabel now
+  preserves that missing-tail evidence. Only 2609.31484's `already-cited` change was a
+  genuine citation-index difference. The current digest is regenerated offline with
+  `--render`; its dates describe stored fetches, not this rendering time.
 - Seed replay: all 52 seed papers whose tags name a track are placed on it. Nine
   patterns were added after the first replay missed them, so this is a consistency
   check on the seeds, not a held-out accuracy figure.
@@ -85,8 +269,11 @@ to get CI.
   possible scoops, 96 related, 9 already cited, 56 unrelated. Eight of the eleven old
   kills were positive quantum papers tripped by "lower bound", "limitation" or a
   background "dequantized"; the ninth already-cited paper cites a versioned id.
-- That run predates paging: each track query stopped at 50 results. The number_theory
-  query returned exactly 50 papers covering only 2026-10-13 to 2026-10-15, so its papers
-  from 2026-09-18 to 2026-10-12 were never fetched. The JSON has no gap entry for it (gaps
-  are recorded only by a fetching run); backfill with
-  `watch.py --since 2026-09-18 --tracks number_theory`.
+- That run predates paging: each track query stopped at 50 results, and the number_theory
+  query's 50 covered only 2026-10-13 to 2026-10-15. The backfill of 2026-10-19
+  (`watch.py --since 2026-09-18 --tracks number_theory`, with paging) is committed: that query
+  fetched 620 papers published 2026-09-18 to 2026-10-16, 542 of them new (3 possible kills, 4
+  possible scoops, 54 related, 481 unrelated), and recorded no gap. It need not be run again.
+  The file now holds 718 papers: 7 possible kills, 15 possible scoops, 150 related, 9 already
+  cited, 537 unrelated. Its `tracks_updated` has number_theory at 2026-10-19 and the other 13
+  tracks at 2026-10-18, their last fetch.

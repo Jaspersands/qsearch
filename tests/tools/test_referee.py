@@ -1,0 +1,2051 @@
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import re
+import shlex
+import subprocess
+import textwrap
+import threading
+import time
+from pathlib import Path
+
+import pytest
+
+from tools.referee import extract as X
+from tools.referee import referee as R
+
+
+FIXTURE_NOTE = textwrap.dedent(
+    """\
+    # Fixture Radial Bound
+
+    2026-10-18. LOCAL APPLICATION REVIEW PENDING. No speedup is claimed. Not a new algorithm.
+    Producer: `python theorems/fixture_radial.py --write --seed 3`.
+    Output: `research/classical_baselines/fixture_radial.json`.
+
+    ## Question And Result
+
+    Does the radial bound hold for every saved input? It holds for all twelve
+    saved inputs, with margin at least 0.031.
+
+    ## 1. Lemma: Radial Bound
+
+    For every radius r at least 1 the weight enumerator is bounded by the
+    radial sum, by the triangle inequality applied term by term.
+
+    ## Decisive Controls
+
+    The Prange completion baseline reaches 0.654 on the same inputs.
+
+    ## Try To Kill It
+
+    We searched 10000 random inputs for a counterexample to the radial bound
+    and found none.
+
+    ## Decision And Next
+
+    Keep the bound; next test the 32-radius inputs.
+    """
+)
+
+
+def _git(repo: Path, *args: str) -> None:
+    env = {name: value for name, value in os.environ.items() if not name.startswith("GIT_")}
+    subprocess.run(["git", "-C", str(repo), "-c", "user.name=t", "-c", "user.email=t@t", "-c", "commit.gpgsign=false",
+                    "-c", "core.hooksPath=/dev/null", *args], check=True, capture_output=True, env=env)
+
+
+def _write(root: Path, stem: str, text: str | bytes) -> Path:
+    path = root / "research" / f"{stem}.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if isinstance(text, bytes):
+        path.write_bytes(text)
+    else:
+        path.write_text(text, encoding="utf-8")
+    return path
+
+
+def test_parse_note_reads_every_field(tmp_path: Path) -> None:
+    path = _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    packet = X.parse_note(path)
+    assert (packet.stem, packet.status, packet.date) == ("FIXTURE_NOTE", "review-pending", "2026-10-18")
+    assert packet.path == "research/FIXTURE_NOTE.md"
+    assert packet.title == "Fixture Radial Bound"
+    assert packet.producer == {
+        "command": "python theorems/fixture_radial.py --write --seed 3",
+        "script": "theorems/fixture_radial.py",
+        "flags": "--write --seed 3",
+        "artifact": "research/classical_baselines/fixture_radial.json",
+    }
+    assert "No speedup is claimed." in packet.not_claimed
+    assert "Not a new algorithm." in packet.not_claimed
+    assert "##" not in packet.result and "twelve" in packet.result
+    assert [d["heading"] for d in packet.derivations] == ["1. Lemma: Radial Bound"]
+    assert "triangle inequality" in packet.derivations[0]["text"]
+    assert [c["heading"] for c in packet.controls] == ["Decisive Controls"]
+    assert packet.self_check is not None and "counterexample" in packet.self_check
+    assert packet.decision is not None and "32-radius" in packet.decision
+    assert packet.content_sha == hashlib.sha256(path.read_bytes()).hexdigest()
+    assert isinstance(packet.flags, list)
+    assert X.to_dict(packet)["stem"] == "FIXTURE_NOTE"
+
+
+def test_parse_note_flags_only_what_the_claim_checker_raises_on_the_result(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Flagged
+
+        2026-10-17. REVIEW PENDING.
+
+        ## Result
+
+        The sampler reads the table through QRAM. No membership oracle is supplied.
+
+        ## Discussion
+
+        This is an oracle separation heuristic.
+        """
+    )
+    assert X.parse_note(_write(tmp_path, "FLAGGED", text)).flags == ["input_loading"]
+    assert X.parse_note(_write(tmp_path, "PLAIN", FIXTURE_NOTE)).flags == []
+    # Only the result's prose: the same words in fenced code or a table row raise nothing.
+    coded = text.replace("The sampler reads the table through QRAM.",
+                         "The sampler matches the law.\n\n```text\nload the table through QRAM\n```\n\n"
+                         "| access | The sampler reads the table through QRAM. |")
+    assert X.parse_note(_write(tmp_path, "CODED", coded)).flags == []
+
+
+def test_parse_note_heading_rules_skip_look_alike_sections(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Look Alikes
+
+        2026-10-16. REVIEW PENDING.
+
+        ## Why This Is The Next Question
+
+        Motivation only.
+
+        ## What Can And Cannot Be Claimed
+
+        Scope only.
+
+        ## Question And Decision
+
+        The pencil recovers every saved root.
+
+        ## Full Coherent Instrument: Bounded Execution Completed
+
+        Ran to completion.
+
+        ## Independently Verifiable Tail Bounds
+
+        The tail is at most 0.01.
+
+        ## Try To Disprove The Pencil, Then Repair It
+
+        A degenerate pencil fails; the repair adds a shift.
+
+        ## Research Decision
+
+        Stop the pencil line.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "LOOK_ALIKES", text))
+    assert packet.result == "The pencil recovers every saved root."
+    assert [d["heading"] for d in packet.derivations] == ["Independently Verifiable Tail Bounds"]
+    assert packet.self_check == "A degenerate pencil fails; the repair adds a shift."
+    assert packet.decision == "Stop the pencil line."
+    for heading in ("Attempt To Prove The Rejection Wrong", "Attempts To Disprove It And Remaining Debt",
+                    "Execute And Falsify", "Attempted Refutations And Scope", "Attempts To Break The Reduction"):
+        note = text.replace("Try To Disprove The Pencil, Then Repair It", heading)
+        assert X.parse_note(_write(tmp_path, "LOOK_ALIKES", note)).self_check == "A degenerate pencil fails; the repair adds a shift."
+    only = text.replace("## Research Decision\n\nStop the pencil line.\n", "")
+    assert X.parse_note(_write(tmp_path, "LOOK_ALIKES", only)).decision == "The pencil recovers every saved root."
+    kill_first = text.replace("## Why This Is The Next Question", "## Try To Kill The Claim").replace(
+        "## Try To Disprove The Pencil, Then Repair It", "## Discussion")
+    packet = X.parse_note(_write(tmp_path, "LOOK_ALIKES", kill_first))
+    assert packet.result == "The pencil recovers every saved root." and packet.self_check == "Motivation only."
+
+
+def test_parse_note_takes_certificate_and_comparison_headings(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Headings
+
+        2026-10-16. REVIEW PENDING.
+
+        ## Result
+
+        The sampler matches.
+
+        ## Certificate Check
+
+        The certificate verifies.
+
+        ## Comparison With Prange
+
+        Prange reaches 0.6.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "HEADINGS", text))
+    assert [d["heading"] for d in packet.derivations] == ["Certificate Check"]
+    assert [c["heading"] for c in packet.controls] == ["Comparison With Prange"]
+
+
+def test_not_claimed_takes_whole_bullets_and_sentences_with_not_or_no(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Scope
+
+        2026-10-16. REVIEW PENDING. This is a classical check. No speedup is claimed.
+
+        - Not a proof of the bound,
+          only a numerical check. It runs fast.
+        - A bullet that claims something.
+        - The table below has no hidden rows.
+
+        | not | a table row |
+
+        ```text
+        not in a fence either
+        ```
+
+        ## Result
+
+        Done.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "SCOPE", text))
+    assert packet.not_claimed == ["No speedup is claimed.", "Not a proof of the bound, only a numerical check. It runs fast.",
+                                  "The table below has no hidden rows."]
+
+
+def test_prose_drops_code_tables_and_headings_and_strips_list_markers() -> None:
+    text = ("Intro sentence.\n    indented code line\n\ttabbed code line\n| a | b |\n# Heading\n- a listed item\n"
+            "2. a numbered item\n```\nfenced line\n```\nLast sentence.")
+    assert X.prose(text) == "Intro sentence.\na listed item\na numbered item\nLast sentence."
+
+
+def test_artifact_excerpt_caps_the_key_list_and_takes_only_short_strings(tmp_path: Path) -> None:
+    data = {f"k{i:02d}": i for i in range(55)} | {"s_short": "x" * 60, "s_long": "y" * 61}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(data))
+    lines = X.artifact_excerpt(tmp_path, packet).splitlines()
+    assert lines[0] == "keys: " + ", ".join(f"k{i:02d}" for i in range(50)) + " ... (+7)"
+    assert f's_short = "{"x" * 60}"' in lines and not any(line.startswith("s_long") for line in lines)
+    # A path that resolves both at the root and under research/ is the root's.
+    for where in (tmp_path, tmp_path / "research"):
+        (where / "classical_baselines").mkdir(parents=True, exist_ok=True)
+        (where / "classical_baselines" / "both.json").write_text("{}", encoding="utf-8")
+    assert X._resolve_artifact(tmp_path, "classical_baselines/both.json") == tmp_path / "classical_baselines" / "both.json"
+
+
+def test_parse_note_falls_back_to_the_first_section_for_result(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Fallback
+
+        2026-10-12. Review pending.
+
+        ## Setup And Inputs
+
+        The saved inputs are the N127 instances.
+
+        ## Discussion
+
+        Later text.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "FALLBACK", text))
+    assert "N127 instances" in packet.result
+    assert "Later text" not in packet.result
+    assert packet.derivations == [] and packet.controls == []
+    assert packet.self_check is None and packet.decision is None
+    assert packet.producer is None
+
+
+def test_parse_note_reads_producer_from_the_reproduce_block_at_the_end(tmp_path: Path) -> None:
+    (tmp_path / "theorems").mkdir()
+    (tmp_path / "theorems" / "end_block.py").write_text(
+        'ROOT = None\nREPORT = ROOT / "research/classical_baselines/end_block.json"\n', encoding="utf-8"
+    )
+    text = textwrap.dedent(
+        """\
+        # End Block
+
+        2026-10-14. REVIEW PENDING.
+
+        ## Claim
+
+        A claim with no artifact path in the text.
+
+        ## Reproduce
+
+        ```text
+        python theorems/end_block.py --write
+        ```
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "END_BLOCK", text))
+    assert packet.producer == {
+        "command": "python theorems/end_block.py --write",
+        "script": "theorems/end_block.py",
+        "flags": "--write",
+        "artifact": "research/classical_baselines/end_block.json",
+    }
+
+
+def test_parse_note_prefers_the_notes_own_producer_and_its_artifact(tmp_path: Path) -> None:
+    (tmp_path / "theorems").mkdir()
+    for stem in ("own_design", "own_simulation", "report_only"):
+        (tmp_path / "theorems" / f"{stem}.py").write_text(f'REPORT = ROOT / "research/classical_baselines/{stem}.json"\n', encoding="utf-8")
+    (tmp_path / "research" / "classical_baselines").mkdir(parents=True)
+    for stem in ("own_design", "report_only"):
+        (tmp_path / "research" / "classical_baselines" / f"{stem}.json").write_text("{}", encoding="utf-8")
+    own_design = textwrap.dedent(
+        """\
+        # Own Design
+
+        2026-10-14. REVIEW PENDING.
+
+        ## Result
+
+        The sampler from `research/classical_baselines/sampler.json` is reused.
+
+        ## Reproduce
+
+        ```text
+        python theorems/sampler.py --write
+        python theorems/own_design.py --write
+        python theorems/own_design.py --length 32768 --write
+        ```
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "OWN_DESIGN", own_design))
+    assert packet.producer == {"command": "python theorems/own_design.py --write", "script": "theorems/own_design.py",
+                               "flags": "--write", "artifact": "research/classical_baselines/own_design.json"}
+
+    own_simulation = textwrap.dedent(
+        """\
+        # Own Simulation
+
+        2026-10-14. REVIEW PENDING.
+
+        ## Result
+
+        Sources are in `research/literature_audits/instrument_sources.json`.
+
+        ```text
+        python theorems/own_simulation.py
+        ```
+
+        Report: `research/classical_baselines/own_simulation.json`.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "OWN_SIMULATION", own_simulation))
+    assert packet.producer["artifact"] == "research/classical_baselines/own_simulation.json"
+
+    report_only = own_simulation.replace("own_simulation.py", "report_only.py").replace(
+        "Report: `research/classical_baselines/own_simulation.json`.", "")
+    packet = X.parse_note(_write(tmp_path, "REPORT_ONLY_NOTE", report_only))
+    assert packet.producer["artifact"] == "research/classical_baselines/report_only.json"
+    unresolved = own_simulation.replace("Report: `research/classical_baselines/own_simulation.json`.", "")
+    packet = X.parse_note(_write(tmp_path, "UNRESOLVED_NOTE", unresolved))
+    assert packet.producer["artifact"] == "research/literature_audits/instrument_sources.json"
+
+
+def test_parse_note_reads_the_scripts_own_report_not_a_prefixed_one(tmp_path: Path) -> None:
+    # theorems/ternary_observable_moment_lift.py sets BASE_REPORT (its parent's JSON) before REPORT.
+    (tmp_path / "theorems").mkdir()
+    (tmp_path / "theorems" / "lift.py").write_text(
+        'BASE_REPORT = ROOT / "research/classical_baselines/base.json"\n'
+        'REPORT: Path = ROOT / "research/classical_baselines/lift.json"\n', encoding="utf-8")
+    (tmp_path / "research" / "classical_baselines").mkdir(parents=True)
+    for stem in ("base", "lift"):
+        (tmp_path / "research" / "classical_baselines" / f"{stem}.json").write_text("{}", encoding="utf-8")
+    text = "# Lift\n\n2026-10-14. REVIEW PENDING.\n\n## Result\n\nRun `python theorems/lift.py --write`.\n"
+    packet = X.parse_note(_write(tmp_path, "LIFT", text))
+    assert packet.producer["artifact"] == "research/classical_baselines/lift.json"
+
+
+def test_parse_note_falls_back_to_the_stem_script_when_the_note_runs_none(tmp_path: Path) -> None:
+    # 46 review-pending notes name neither a command nor a JSON path, but their stem script's
+    # REPORT resolves (DCP_AFFINE_CUBE_HIERARCHY: "Module/test/report stem: ...").
+    (tmp_path / "theorems").mkdir()
+    (tmp_path / "theorems" / "stem_only.py").write_text('REPORT = ROOT / "research/phase_workbench/stem_only.json"\n',
+                                                         encoding="utf-8")
+    artifact = tmp_path / "research" / "phase_workbench" / "stem_only.json"
+    artifact.parent.mkdir(parents=True)
+    artifact.write_text('{"mean": 0.5}', encoding="utf-8")
+    text = "# Stem Only\n\n2026-10-14. REVIEW PENDING.\n\n## Result\n\nModule/test/report stem: `stem_only`.\n"
+    path = _write(tmp_path, "STEM_ONLY", text)
+    packet = X.parse_note(path)
+    assert packet.producer == {"command": None, "script": "theorems/stem_only.py", "flags": "",
+                               "artifact": "research/phase_workbench/stem_only.json"}
+    assert "mean = 0.5" in X.artifact_excerpt(tmp_path, packet)
+    assert R.build_packet(tmp_path, path)["artifact_path"] == "research/phase_workbench/stem_only.json"
+    named = _write(tmp_path, "STEM_ONLY", text + "\nSee `classical_baselines/other.json`.\n")
+    artifact.unlink()
+    assert X.parse_note(named).producer["artifact"] == "classical_baselines/other.json"
+    assert X.parse_note(_write(tmp_path, "NO_SCRIPT", text)).producer is None
+
+
+def test_parse_note_keeps_fenced_headings_inside_their_section(tmp_path: Path) -> None:
+    text = textwrap.dedent(
+        """\
+        # Fenced
+
+        2026-10-15. Review pending.
+
+        ## 2. Derivation
+
+        The exact table is
+
+        ```text
+        ## not a heading
+        k = 3
+        ```
+
+        and the bound follows.
+
+        ## Decision
+
+        Stop here.
+        """
+    )
+    packet = X.parse_note(_write(tmp_path, "FENCED", text))
+    assert packet.derivations == []  # this fallback result is not repeated as a derivation
+    body = packet.result
+    assert "## not a heading" in body and "the bound follows" in body
+    assert packet.decision == "Stop here."
+
+
+def test_parse_note_reads_replacement_bytes_and_long_producer_flags(tmp_path: Path) -> None:
+    raw = (
+        b"# Bytes \xff Note\n\n2026-10-16. REVIEW PENDING. No hardness claim.\n\n"
+        b"## Result\n\nThe sampler matches the target law \xfe within 0.01.\n\n## Execute\n\n"
+        b"```\npython theorems/polar_source_design.py --length 32768 --grid 256 --power 3 --write\n```\n"
+    )
+    path = _write(tmp_path, "BYTES_NOTE", raw)
+    packet = X.parse_note(path)
+    assert packet.content_sha == hashlib.sha256(raw).hexdigest()
+    assert "�" in packet.title
+    assert packet.producer is not None
+    assert packet.producer["flags"] == "--length 32768 --grid 256 --power 3 --write"
+    assert packet.producer["artifact"] is None
+    assert "within 0.01" in packet.result
+
+
+def _with_artifact(root: Path, artifact: str, payload: str) -> X.NotePacket:
+    path = root / artifact
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(payload, encoding="utf-8")
+    text = FIXTURE_NOTE.replace("research/classical_baselines/fixture_radial.json", artifact.removeprefix("research/"))
+    return X.parse_note(_write(root, "FIXTURE_NOTE", text))
+
+
+def test_artifact_excerpt_lists_keys_and_numeric_leaves(tmp_path: Path) -> None:
+    data = {"status": "ok", "mean": 0.9028, "flag": True, "tail": {"k110": 0.3145, "runs": [1, 2, 3, 4, 5, 6, 7]}}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(data))
+    assert packet.producer["artifact"] == "classical_baselines/fixture_radial.json"
+    excerpt = X.artifact_excerpt(tmp_path, packet)
+    assert excerpt is not None
+    assert excerpt.startswith("keys: flag, mean, status, tail")
+    assert "mean = 0.9028" in excerpt and "tail.k110 = 0.3145" in excerpt
+    assert not any(line.startswith("flag") for line in excerpt.splitlines()[1:])  # booleans are not leaves
+    assert "tail.runs[4] = 5" in excerpt and "tail.runs[5]" not in excerpt and "(+2)" in excerpt
+    assert len(excerpt) <= 4000
+    big = {f"key{i:04d}": i / 7 for i in range(2000)}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(big))
+    short = X.artifact_excerpt(tmp_path, packet, max_chars=500)
+    assert short is not None and len(short) <= 500 and short.endswith("[truncated]")
+
+
+def test_artifact_excerpt_shares_the_budget_across_top_level_keys(tmp_path: Path) -> None:
+    data = {"a_large": {f"k{i:03d}": i / 7 for i in range(300)}, "b_small": {"x": 1.5}, "c_list": [7, 8], "d_flag": True}
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", json.dumps(data))
+    excerpt = X.artifact_excerpt(tmp_path, packet, max_chars=600)
+    assert excerpt is not None and len(excerpt) <= 600 and excerpt.endswith("[truncated]")
+    lines = excerpt.splitlines()
+    assert lines[0] == "keys: a_large, b_small, c_list, d_flag"
+    assert "b_small.x = 1.5" in lines and "c_list[0] = 7" in lines and "c_list[1] = 8" in lines
+    body = lines[1:-1]
+    assert body[0] == "a_large.k000 = 0.0" and sum(line.startswith("a_large.") for line in body) > 5
+    keys = [line.split(".")[0].split("[")[0] for line in body]
+    assert keys == sorted(keys)  # grouped by key, in key order
+
+
+def test_artifact_excerpt_is_none_when_missing_or_invalid(tmp_path: Path) -> None:
+    packet = X.parse_note(_write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE))
+    assert X.artifact_excerpt(tmp_path, packet) is None
+    packet = _with_artifact(tmp_path, "research/classical_baselines/fixture_radial.json", "{not json")
+    assert X.artifact_excerpt(tmp_path, packet) is None
+    fallback = X.parse_note(_write(tmp_path, "FALLBACK", "# F\n\n2026-10-01. Review pending.\n\n## Result\n\nNo producer.\n"))
+    assert fallback.producer is None and X.artifact_excerpt(tmp_path, fallback) is None
+    assert X._resolve_artifact(tmp_path, "classical_baselines/fixture_radial.json") == (
+        tmp_path / "research/classical_baselines/fixture_radial.json"
+    )
+    assert X._resolve_artifact(tmp_path, "classical_baselines/absent.json") is None
+
+
+def _dated_note(root: Path, stem: str, status_line: str, mtime: int) -> Path:
+    path = _write(root, stem, f"# {stem}\n\n{status_line}\n\n## Result\n\nA result about the {stem.lower()} inputs.\n")
+    os.utime(path, (mtime, mtime))
+    return path
+
+
+def test_select_notes_breaks_date_ties_by_stem_whatever_the_mtimes(tmp_path: Path) -> None:
+    # Ten real notes share 2026-09-25 around the cut at 30, and mtimes follow checkout and copy
+    # order, so REFEREE_QUEUE.md's Next 30 came out different from a git archive of one commit.
+    stems = ("TIE", "TIE-2", "TIE_A", "TIE_B")  # by stem; by file name TIE-2.md sorts before TIE.md
+    for mtimes in ((1000, 2000, 3000, 4000), (4000, 3000, 2000, 1000), (5000, 5000, 5000, 5000)):
+        for stem, mtime in zip(stems, mtimes):
+            _dated_note(tmp_path, stem, "2026-09-25. REVIEW PENDING.", mtime)
+        _dated_note(tmp_path, "NEWER", "2026-09-26. REVIEW PENDING.", mtimes[0])
+        _dated_note(tmp_path, "UNDATED_B", "Review pending.", mtimes[0])
+        _dated_note(tmp_path, "UNDATED_A", "Review pending.", mtimes[-1])
+        assert [p.stem for p in R.select_notes(tmp_path)] == ["NEWER", *stems, "UNDATED_A", "UNDATED_B"], mtimes
+        assert [p.stem for p in R.select_notes(tmp_path, limit=2)] == ["NEWER", "TIE"], mtimes
+
+
+def test_select_notes_orders_by_status_date_then_stem_and_skips_current_reviews(tmp_path: Path) -> None:
+    _dated_note(tmp_path, "PRIME_OLD", "2026-10-10. REVIEW PENDING.", 4000)
+    _dated_note(tmp_path, "PRIME_NEW", "2026-10-18. REVIEW PENDING.", 1000)
+    _dated_note(tmp_path, "POLAR_UNDATED", "Local derivation, review pending.", 3000)
+    _dated_note(tmp_path, "POLAR_UNDATED_OLDER", "Review pending.", 2000)
+    _dated_note(tmp_path, "SUPERSEDED_ONE", "2026-10-19. SUPERSEDED by the newer note; review pending.", 5000)
+    (tmp_path / "research" / "AGENT_HANDOFF.md").write_text("# Handoff\n\n2026-10-20. Review pending.\n", encoding="utf-8")
+    everything = ["PRIME_NEW", "PRIME_OLD", "POLAR_UNDATED", "POLAR_UNDATED_OLDER"]
+    assert [p.stem for p in R.select_notes(tmp_path)] == everything
+    assert R.load_reviews(tmp_path) == {"notes": {}}
+
+    current = R.note_sha(tmp_path / "research" / "PRIME_NEW.md")
+    reviews = {"notes": {"PRIME_NEW": {"content_sha": current}, "PRIME_OLD": {"content_sha": "0" * 64}}}
+    assert [p.stem for p in R.select_notes(tmp_path, reviews=reviews)] == everything[1:]
+    assert [p.stem for p in R.select_notes(tmp_path, reviews=reviews, exclude_reviewed=False)] == everything
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps(reviews), encoding="utf-8")
+    assert R.load_reviews(tmp_path) == reviews
+    assert [p.stem for p in R.select_notes(tmp_path)] == everything[1:]
+
+    assert [p.stem for p in R.select_notes(tmp_path, prefixes=("PRIME",), exclude_reviewed=False)] == ["PRIME_NEW", "PRIME_OLD"]
+    assert [p.stem for p in R.select_notes(tmp_path, limit=2, exclude_reviewed=False)] == everything[:2]
+    assert [p.stem for p in R.select_notes(tmp_path, limit=0, exclude_reviewed=False)] == everything  # 0 is all
+    assert [p.stem for p in R.select_notes(tmp_path, statuses=("superseded",))] == ["SUPERSEDED_ONE"]
+
+
+def _export_fixture(root: Path) -> list[Path]:
+    artifact = root / "research" / "classical_baselines" / "fixture_radial.json"
+    artifact.parent.mkdir(parents=True, exist_ok=True)
+    artifact.write_text(json.dumps({"mean": 0.9028, "status": "certificate verified for every saved input"}), encoding="utf-8")
+    notes = [_write(root, "FIXTURE_NOTE", FIXTURE_NOTE)]
+    for i in range(5):
+        notes.append(_dated_note(root, f"OTHER_{i}", f"2026-10-0{5 - i}. REVIEW PENDING.", 1000 + i))
+    return notes
+
+
+def test_packet_gives_the_artifact_path_that_resolves(tmp_path: Path) -> None:
+    # The calibration's OPI note writes its artifact without the research/ prefix; a judge
+    # given only that path concluded the file did not exist.
+    artifact = tmp_path / "research" / "classical_baselines" / "fixture_radial.json"
+    artifact.parent.mkdir(parents=True)
+    artifact.write_text('{"mean": 0.9028}', encoding="utf-8")
+    short = _write(tmp_path, "SHORT_PATH", FIXTURE_NOTE.replace("research/classical_baselines/", "classical_baselines/"))
+    packet = R.build_packet(tmp_path, short)
+    assert packet["producer"]["artifact"] == "classical_baselines/fixture_radial.json"
+    assert packet["artifact_path"] == "research/classical_baselines/fixture_radial.json"
+    artifact.unlink()
+    assert R.build_packet(tmp_path, short)["artifact_path"] is None
+
+
+def test_instructions_ask_for_scope_and_omission_checks() -> None:
+    # Calibration on 2026-10-21 missed both note-level findings of the preprint's review
+    # history: a headline that drops the note's own conditions, and a summary that leaves out
+    # an input the note reports elsewhere.
+    text = R.REFEREE_INSTRUCTIONS
+    assert "Scope of headline sentences" in text and "review-pending" in text
+    assert "Omissions in summaries" in text
+    assert "`artifact_path`" in text
+
+
+def test_instructions_give_every_cap_import_enforces() -> None:
+    # Three first-pass findings ran past 600 characters: no judge had been told the cap.
+    text = " ".join(R.REFEREE_INSTRUCTIONS.split())
+    assert R.CAPS == {"quote": 400, "step": 300, "finding": 600, "summary": 1500}
+    assert "`quote` 400, `step` 300, `finding` 600 and `summary` 1500" in text
+    assert "A longer one rejects your whole output file" in text
+
+
+def test_export_writes_instructions_and_batches_with_artifact_excerpts(tmp_path: Path) -> None:
+    notes = _export_fixture(tmp_path)
+    out = tmp_path / "out"
+    paths = R.export_batches(tmp_path, out, notes)
+    assert [p.name for p in paths] == ["batch_01.json", "batch_02.json"]
+    first, second = (json.loads(p.read_text(encoding="utf-8")) for p in paths)
+    assert (first["batch"], len(first["notes"]), second["batch"], len(second["notes"])) == (1, 5, 2, 1)
+    assert [n["stem"] for n in first["notes"] + second["notes"]] == [p.stem for p in notes]
+    assert first["claim_verdicts"] == list(R.CLAIM_VERDICTS) and first["overall_verdicts"] == list(R.OVERALL)
+    assert '"claims"' in first["output_format"]
+    packet = first["notes"][0]
+    assert "mean = 0.9028" in packet["artifact_excerpt"]
+    assert packet["text"] == FIXTURE_NOTE and packet["content_sha"] == R.note_sha(notes[0])
+    assert all(n["artifact_excerpt"] is None for n in first["notes"][1:] + second["notes"])
+    instructions = (out / "INSTRUCTIONS.md").read_text(encoding="utf-8")
+    for word in R.CLAIM_VERDICTS + R.OVERALL:
+        assert f"`{word}`" in instructions
+    assert "verbatim" in instructions and "must not propose" in instructions
+
+
+def test_export_refuses_a_folder_with_earlier_batches_and_a_file(tmp_path: Path, capsys) -> None:
+    # A smaller export into an earlier pass's folder left its batch_02.json to be judged again.
+    notes = _export_fixture(tmp_path)
+    out = tmp_path / "pass"
+    R.export_batches(tmp_path, out, notes)
+    before = {path.name: path.read_bytes() for path in out.iterdir()}
+    with pytest.raises(ValueError, match="batch_01.json, batch_02.json"):
+        R.export_batches(tmp_path, out, notes[:1])
+    assert {path.name: path.read_bytes() for path in out.iterdir()} == before
+    (tmp_path / "afile").write_text("kept", encoding="utf-8")
+    for target in (out, tmp_path / "afile", tmp_path / "afile" / "sub"):
+        capsys.readouterr()
+        assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(target), "--note", "OTHER_1"]) == 2, target
+        captured = capsys.readouterr()
+        assert captured.out == "" and len(captured.err.strip().splitlines()) == 1 and "nothing exported" in captured.err
+    assert (tmp_path / "afile").read_text(encoding="utf-8") == "kept"
+    assert {path.name: path.read_bytes() for path in out.iterdir()} == before
+    other = tmp_path / "other"
+    other.mkdir()
+    (other / "notes.txt").write_text("kept", encoding="utf-8")
+    assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(other), "--note", "OTHER_1"]) == 0
+    assert sorted(path.name for path in other.iterdir()) == ["INSTRUCTIONS.md", "batch_01.json", "notes.txt"]
+
+
+def _claim(quote: str, verdict: str = "gap", **extra) -> dict:
+    return {"quote": quote, "verdict": verdict, "step": "Question And Result", "finding": "The margin needs a uniform bound.", **extra}
+
+
+def _row(root: Path, stem: str = "FIXTURE_NOTE", overall: str = "needs-work", claims: list[dict] | None = None, **extra) -> dict:
+    sha = R.note_sha(root / "research" / f"{stem}.md")
+    claims = claims if claims is not None else [_claim("It holds for all twelve saved inputs, with margin at least 0.031")]
+    return {"stem": stem, "content_sha": sha, "overall": overall, "summary": "One gap in the margin.", "claims": claims, **extra}
+
+
+def _jsonl(path: Path, rows: list[dict]) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("".join(json.dumps(row) + "\n" for row in rows), encoding="utf-8")
+    return path
+
+
+def test_import_rejects_bad_verdicts_and_non_verbatim_quotes_and_marks_stale(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    _dated_note(tmp_path, "OTHER", "2026-10-11. REVIEW PENDING.", 1000)
+    out = tmp_path / "out"
+    bad_rows = [
+        (_row(tmp_path, claims=[_claim("It holds for all twelve saved inputs", verdict="maybe")]), "bad claim verdict"),
+        (_row(tmp_path, overall="fine"), "bad overall verdict"),
+        (_row(tmp_path, claims=[_claim("the radial bound holds")]), "under 6 words"),
+        (_row(tmp_path, claims=[_claim("It holds for all thirteen saved inputs")]), "not verbatim"),
+        (_row(tmp_path, claims=[_claim("olds for all twelve saved inputs")]), "not verbatim"),
+        (_row(tmp_path, stem="OTHER") | {"stem": "MISSING_NOTE"}, "unknown note"),
+    ]
+    beside = _row(tmp_path, stem="OTHER", overall="unclear", claims=[])  # a good row before each bad one
+    for index, (row, reason) in enumerate(bad_rows):
+        with pytest.raises(ValueError, match=reason):
+            R.import_reviews(tmp_path, [_jsonl(out / f"bad_{index}.jsonl", [beside, row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+    many = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", finding="x" * 600, step="y" * 300)] * 6
+    good = _row(tmp_path, claims=many, summary="s" * 1500)
+    stale = _row(tmp_path, stem="OTHER", overall="unclear", claims=[]) | {"content_sha": "0" * 64}
+    result = R.import_reviews(tmp_path, [_jsonl(out / "good.jsonl", [good, stale])], "test-judge", today="2026-10-21",
+                              allow_unverified=True)
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER"], "stale": ["OTHER"], "skipped": [], "missing": [], "cut": []}
+    data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
+    entry = data["notes"]["FIXTURE_NOTE"]
+    assert (entry["judge"], entry["reviewed_on"], entry["overall"], entry["stale"]) == ("test-judge", "2026-10-21", "needs-work", False)
+    assert len(entry["claims"]) == 6 and entry["claims"][0]["finding"] == "x" * 600 and entry["summary"] == "s" * 1500
+    assert entry["claims"][0]["step"] == "y" * 300
+    assert entry["claims"][0]["covered_by_self_check"] is False
+    assert data["notes"]["OTHER"]["stale"] is True
+
+    again = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    R.import_reviews(tmp_path, [_jsonl(out / "again.jsonl", [again])], "second-judge", today="2026-10-22")
+    data = json.loads((tmp_path / R.REVIEWS).read_text(encoding="utf-8"))
+    assert data["notes"]["FIXTURE_NOTE"]["overall"] == "unsound" and data["notes"]["FIXTURE_NOTE"]["judge"] == "second-judge"
+    assert len(data["notes"]["FIXTURE_NOTE"]["claims"]) == 1 and "OTHER" in data["notes"]
+
+
+@pytest.mark.parametrize("field, cap", [("finding", 600), ("step", 300), ("summary", 1500), ("quote", 400)])
+def test_import_rejects_text_over_its_cap_and_the_judges_are_told_the_caps(tmp_path: Path, field: str, cap: int) -> None:
+    # Import cut three first-pass findings mid-sentence without a mark, and the judges were
+    # never told the cap.
+    assert str(cap) in R.REFEREE_INSTRUCTIONS and str(cap) in R.OUTPUT_FORMAT
+    words = " ".join(f"word{index}" for index in range(120))
+    _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
+    verbatim = words[:cap].rsplit(" ", 1)[0]
+    for length, accepted in ((cap, True), (cap + 1, False)):
+        text = verbatim.ljust(length) if field == "quote" else "x" * length
+        claim = _claim(" ".join(words.split()[:8])) | ({field: text} if field != "summary" else {})
+        row = _row(tmp_path, stem="LONG_NOTE", claims=[claim], **({"summary": text} if field == "summary" else {}))
+        answer = _jsonl(tmp_path / "out" / f"{field}_{length}.jsonl", [row])
+        if not accepted:
+            with pytest.raises(ValueError, match=f"{field} is {cap + 1} characters; at most {cap}"):
+                R.import_reviews(tmp_path, [answer], "j")
+            continue
+        R.import_reviews(tmp_path, [answer], "j")
+        entry = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]
+        stored = entry["summary"] if field == "summary" else entry["claims"][0][field]
+        assert stored == (text.rstrip() if field == "quote" else text)
+
+
+def test_import_reads_null_text_as_empty_and_rejects_other_types(tmp_path: Path) -> None:
+    # A null step, finding or summary was stored and rendered as the string "None".
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    row = _row(tmp_path, summary=None, claims=[_claim(quote, step=None), _claim(quote, verdict="holds", step=None, finding=None)])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "nulls.jsonl", [row])], "j")
+    entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
+    assert entry["summary"] == "" and [(c["step"], c["finding"]) for c in entry["claims"]] == [
+        ("", "The margin needs a uniform bound."), ("", "")]
+    R.render(tmp_path, today="2026-10-22")
+    review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    assert "None" not in review and "- Step: -" in review and "- Finding: -" in review
+    for field, value in (("summary", {"a": 1}), ("step", 42), ("finding", ["x", "y"]), ("quote", 7)):
+        claim = _claim(quote) | ({field: value} if field != "summary" else {})
+        bad = _row(tmp_path, claims=[claim], **({"summary": value} if field == "summary" else {}))
+        with pytest.raises(ValueError, match=f"{field} must be a string"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / f"{field}.jsonl", [bad])], "j")
+    # The instructions ask a gap or wrong claim for its counterexample or missing condition.
+    for verdict, overall in (("gap", "needs-work"), ("wrong", "unsound")):
+        for finding in (None, "", "  "):
+            bad = _row(tmp_path, overall=overall, claims=[_claim(quote, verdict=verdict, finding=finding)])
+            with pytest.raises(ValueError, match=f"a {verdict} claim needs a finding"):
+                R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "empty.jsonl", [bad])], "j")
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"] == entry
+
+
+@pytest.mark.parametrize("overall, verdicts, accepted", [
+    ("sound", ["wrong"], False),
+    ("sound", ["holds", "gap"], False),
+    ("needs-work", ["gap", "wrong"], False),
+    ("unclear", ["wrong"], False),
+    ("unclear", ["gap"], False),
+    ("unsound", ["gap", "holds"], False),
+    ("unsound", [], False),
+    ("needs-work", ["holds"], False),
+    ("needs-work", [], False),
+    ("sound", ["holds", "unclear"], False),
+    ("sound", ["unclear", "unclear"], False),
+    ("unclear", ["holds", "holds"], False),
+    ("unsound", ["gap", "wrong"], True),
+    ("needs-work", ["holds", "gap"], True),
+    ("needs-work", ["unclear", "gap"], True),
+    ("sound", ["holds", "holds"], True),
+    ("sound", [], False),  # a sound verdict rests on at least one quoted claim that holds
+    ("unclear", ["unclear", "holds"], True),
+    ("unclear", [], True),
+])
+def test_import_rejects_an_overall_verdict_that_contradicts_the_claims(tmp_path: Path, overall, verdicts, accepted) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    row = _row(tmp_path, overall=overall, claims=[_claim(quote, verdict=verdict) for verdict in verdicts])
+    answer = _jsonl(tmp_path / "out" / "rows.jsonl", [row])
+    if accepted:
+        assert R.import_reviews(tmp_path, [answer], "j")["imported"] == ["FIXTURE_NOTE"]
+    else:
+        with pytest.raises(ValueError, match="contradicts"):
+            R.import_reviews(tmp_path, [answer], "j")
+
+
+def test_import_and_export_take_only_a_notes_exact_name(tmp_path: Path, capsys) -> None:
+    # On a case-insensitive file system research/bar_note.md opens research/BAR_NOTE.md.
+    _write(tmp_path, "BAR_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path, stem="BAR_NOTE") | {"stem": "bar_note"}
+    with pytest.raises(ValueError, match="unknown note 'bar_note'"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "case.jsonl", [row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+    with pytest.raises(SystemExit):
+        R.main(["export", "--root", str(tmp_path), "--out-dir", str(tmp_path / "o"), "--note", "bar_note"])
+    assert "no such note: bar_note" in capsys.readouterr().err
+    assert not (tmp_path / "o").exists()
+    # A wrong-case key already in the store reads as a note that is gone, as on Linux.
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    entry = {"content_sha": R.note_sha(tmp_path / "research" / "BAR_NOTE.md"), "overall": "unsound", "claims": []}
+    store.write_text(json.dumps({"notes": {"bar_note": entry}}), encoding="utf-8")
+    assert (R.status(tmp_path)["stale"], R.status(tmp_path)["flagged"]) == (["bar_note"], [])
+
+
+def test_select_export_and_the_queue_skip_a_file_import_would_refuse(tmp_path: Path, capsys) -> None:
+    # iCloud saves a sync conflict as "NOTE 2.md". Import takes only note names, so a judge row
+    # for the copy (the instructions say not to skip notes) would refuse the whole judge file.
+    _export_fixture(tmp_path)
+    research = tmp_path / "research"
+    (research / "FIXTURE_NOTE 2.md").write_bytes((research / "FIXTURE_NOTE.md").read_bytes())
+    root = str(tmp_path)
+    assert "FIXTURE_NOTE 2" not in [p.stem for p in R.select_notes(tmp_path, limit=0)]
+    assert "FIXTURE_NOTE" in [p.stem for p in R.select_notes(tmp_path, limit=0)]
+    assert R.main(["select", "--root", root, "--json"]) == 0
+    out, err = capsys.readouterr()
+    assert "FIXTURE_NOTE 2" not in out and "research/FIXTURE_NOTE 2.md" in err
+    assert R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--limit", "0"]) == 0
+    assert "research/FIXTURE_NOTE 2.md" in capsys.readouterr().err
+    rows = [n for path in sorted((tmp_path / "o").glob("batch_*.json"))
+            for n in json.loads(path.read_text(encoding="utf-8"))["notes"]]
+    assert "FIXTURE_NOTE" in [n["stem"] for n in rows] and all(R.STEM.match(n["stem"]) for n in rows)
+    answer = _jsonl(tmp_path / "out" / "all.jsonl", [_row(tmp_path, stem=n["stem"], overall="unclear", claims=[]) for n in rows])
+    assert R.main(["import", str(answer), "--root", root, "--judge", "j"]) == 0
+    with pytest.raises(SystemExit):
+        R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o2"), "--note", "FIXTURE_NOTE 2"])
+    assert "not a note name: FIXTURE_NOTE 2" in capsys.readouterr().err
+    assert not (tmp_path / "o2").exists()
+    _dated_note(tmp_path, "PENDING", "2026-10-20. REVIEW PENDING.", 1000)
+    (research / "PENDING 2.md").write_bytes((research / "PENDING.md").read_bytes())
+    assert R.main(["render", "--root", root]) == 0
+    assert "research/PENDING 2.md" in capsys.readouterr().err
+    queue = (tmp_path / R.QUEUE).read_text(encoding="utf-8")
+    assert "| PENDING |" in queue and "PENDING 2" not in queue
+
+
+def test_import_rejects_more_than_six_claims_and_a_non_boolean_self_check(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    seventh = [_claim("It holds for all twelve saved inputs", verdict="wrong"), _claim("not in the note at all, nowhere", verdict="bogus")]
+    for overall, extra in (("needs-work", seventh[0]), ("unsound", seventh[0]), ("needs-work", seventh[1])):
+        row = _row(tmp_path, overall=overall, claims=[_claim(quote)] * 6 + [extra])
+        with pytest.raises(ValueError, match="7 claims; at most 6"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "seven.jsonl", [row])], "j")
+    for value in ("false", "no", 0, 1, []):
+        row = _row(tmp_path, claims=[_claim(quote, covered_by_self_check=value)])
+        with pytest.raises(ValueError, match="covered_by_self_check"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "self_check.jsonl", [row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+    claims = [_claim(quote, covered_by_self_check=value) for value in (True, False, None)] + [_claim(quote)]
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "ok.jsonl", [_row(tmp_path, claims=claims)])], "j")
+    stored = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"]
+    assert [claim["covered_by_self_check"] for claim in stored] == [True, False, False, False]
+
+
+def test_import_rejects_text_over_its_cap_unless_told_to_cut_it(tmp_path: Path, capsys) -> None:
+    # Import cut a 637-character finding at 600 characters without a mark, mid-sentence, and
+    # the judges' instructions never gave the cap; three first-pass findings lost their ends.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    over = {
+        "claim 1: finding is 601 characters": _row(tmp_path, claims=[_claim(quote, finding="f" * 601)]),
+        "claim 2: step is 301 characters": _row(tmp_path, claims=[_claim(quote), _claim(quote, step="s" * 301)]),
+        "summary is 1501 characters": _row(tmp_path, summary="y" * 1501),
+    }
+    for message, row in over.items():
+        answer = _jsonl(tmp_path / "out" / "over.jsonl", [row])
+        capsys.readouterr()
+        assert R.main(["import", str(answer), "--root", str(tmp_path), "--judge", "j"]) == 2, message
+        captured = capsys.readouterr()
+        assert captured.out == "" and f"FIXTURE_NOTE: {message}; at most" in captured.err and "nothing imported" in captured.err
+    assert not (tmp_path / R.REVIEWS).exists()
+
+    # --cut (for judge files written before the instructions gave the caps) stores the text cut
+    # and marked, and names each cut field.
+    long = "The decision should say the composition is review pending and name its missing step. " * 8
+    answer = _jsonl(tmp_path / "out" / "long.jsonl", [_row(tmp_path, claims=[_claim(quote, finding=long)])])
+    assert R.main(["import", str(answer), "--root", str(tmp_path), "--judge", "j", "--cut"]) == 0
+    out = capsys.readouterr().out
+    assert "imported 1 reviews; 0 stale; 1 field cut to its cap and marked [truncated]" in out
+    assert f"FIXTURE_NOTE: claim 1: finding ({len(long)} characters, cap 600)" in out
+    finding = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["finding"]
+    assert len(finding) <= 600 and finding.endswith(" [truncated]") and long.startswith(finding.removesuffix(" [truncated]"))
+    result = R.import_reviews(tmp_path, [answer], "j", cut=True)
+    assert result["cut"] == [f"{answer}: FIXTURE_NOTE: claim 1: finding ({len(long)} characters, cap 600)"]
+
+
+def test_import_rejects_malformed_rows_and_stems_that_are_paths(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    (tmp_path / "README.md").write_text("Some words here for a long enough quote to pass the check.\n", encoding="utf-8")
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    out = tmp_path / "out"
+    malformed = {
+        "list": '[["a"]]\n',
+        "scalar": "5\n",
+        "claims_object": json.dumps(_row(tmp_path) | {"claims": {"quote": quote}}) + "\n",
+        "claim_string": json.dumps(_row(tmp_path) | {"claims": [quote]}) + "\n",
+        "traversal": json.dumps({"stem": "../README", "content_sha": "x", "overall": "unsound", "claims": [
+            {"quote": "Some words here for a long enough quote", "verdict": "wrong"}]}) + "\n",
+        "bad_json": '{"stem": \n',
+    }
+    for name, text in malformed.items():
+        path = out / f"{name}.jsonl"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        with pytest.raises(ValueError):
+            R.import_reviews(tmp_path, [path], "j")
+    with pytest.raises(ValueError, match="cannot read"):
+        R.import_reviews(tmp_path, [out / "absent" / "*.jsonl"], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps({"notes": {"../README": {"overall": "unsound", "content_sha": "x", "claims": []}}}), encoding="utf-8")
+    R.render(tmp_path, today="2026-10-21")
+    assert not (tmp_path / "research/audits/README.md").exists()
+    assert sorted(p.name for p in (tmp_path / "research/audits/reviews").iterdir()) == ["reviews.json"]
+
+
+def test_cli_rejects_bad_numbers_and_reports_import_errors_without_a_traceback(tmp_path: Path, capsys) -> None:
+    _export_fixture(tmp_path)
+    root = str(tmp_path)
+    for argv in (["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--batch-size", "0"],
+                 ["select", "--root", root, "--limit", "-1"]):
+        with pytest.raises(SystemExit) as exit_info:
+            R.main(argv)
+        assert exit_info.value.code == 2
+    assert R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--note", "research/OTHER_3.md"]) == 0
+    assert [n["stem"] for n in json.loads((tmp_path / "o" / "batch_01.json").read_text(encoding="utf-8"))["notes"]] == ["OTHER_3"]
+    with pytest.raises(SystemExit):
+        R.main(["export", "--root", root, "--out-dir", str(tmp_path / "o"), "--note", "../README"])
+    capsys.readouterr()
+    rows = _jsonl(tmp_path / "rows.jsonl", [_row(tmp_path) | {"claims": {"quote": "x"}}])
+    for files in ([str(tmp_path / "nonexistent" / "*.jsonl")], [str(rows)]):
+        assert R.main(["import", *files, "--root", root, "--judge", "j"]) == 2
+        assert "nothing imported" in capsys.readouterr().err
+
+
+def test_cli_stops_on_a_root_that_is_not_a_checkout(tmp_path: Path, capsys) -> None:
+    # status said "no reviews yet" and select "0 notes", both exit 0, for a mistyped --root;
+    # render made a fresh research/audits/ there.
+    answer = _jsonl(tmp_path / "rows.jsonl", [{"stem": "FIXTURE_NOTE"}])
+    for root in (tmp_path / "nonexistent", tmp_path):
+        for argv in (["status"], ["status", "--json"], ["select"], ["render"], ["export", "--out-dir", str(tmp_path / "o")],
+                     ["export", "--out-dir", str(tmp_path / "o"), "--note", "FIXTURE_NOTE"], ["import", str(answer), "--judge", "j"]):
+            capsys.readouterr()
+            assert R.main([*argv, "--root", str(root)]) == 2, argv
+            captured = capsys.readouterr()
+            assert captured.out == "" and "no research/ folder" in captured.err, argv
+    assert sorted(path.name for path in tmp_path.iterdir()) == ["rows.jsonl"]
+
+
+def test_import_checks_a_note_edited_after_export_against_the_exported_text(tmp_path: Path) -> None:
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:2])
+    quote = "It holds for all twelve saved inputs, with margin at least 0.031"
+    rows = [_row(tmp_path, claims=[_claim(quote)]),
+            _row(tmp_path, stem="OTHER_0", overall="sound", claims=[_claim("A result about the other_0 inputs", verdict="holds")])]
+    answer = _jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", rows)
+    note = notes[0]
+    note.write_text(note.read_text(encoding="utf-8").replace("It holds for all twelve", "It holds for eleven of twelve"), encoding="utf-8")
+
+    result = R.import_reviews(tmp_path, [answer], "j", today="2026-10-21")
+    assert result == {"imported": ["FIXTURE_NOTE", "OTHER_0"], "stale": ["FIXTURE_NOTE"], "skipped": [], "missing": [], "cut": []}
+    claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
+    assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
+
+    invented = _row(tmp_path, claims=[_claim("It holds for all thirteen saved inputs, with margin")]) | {"content_sha": rows[0]["content_sha"]}
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "invented.jsonl", [invented])], "j")
+
+    # Away from its packets and outside git, nothing shows the sha was ever the note's.
+    elsewhere = _jsonl(tmp_path / "moved" / "batch_01.jsonl", rows)
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [elsewhere], "j", today="2026-10-22")
+    result = R.import_reviews(tmp_path, [elsewhere], "j", today="2026-10-22", allow_unverified=True)
+    assert result["stale"] == ["FIXTURE_NOTE"]
+    claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
+    assert claim["verified"] is False and claim["quote"] == quote
+    short = _row(tmp_path, claims=[_claim("It holds for all")]) | {"content_sha": rows[0]["content_sha"]}
+    with pytest.raises(ValueError, match="under 6 words"):  # even where an unfound quote is kept unverified
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "moved" / "short.jsonl", [short])], "j", allow_unverified=True)
+
+    beside = _jsonl(tmp_path / "pass" / "batch_01.jsonl", rows)  # in the batch's own folder, not under out/
+    R.import_reviews(tmp_path, [beside], "j", today="2026-10-22")
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["verified"] is True
+    beside.unlink()
+
+    batch = tmp_path / "pass" / "batch_01.json"
+    tampered = json.loads(batch.read_text(encoding="utf-8"))
+    tampered["notes"][0]["text"] = tampered["notes"][0]["text"].replace("twelve", "thirteen")
+    batch.write_text(json.dumps(tampered), encoding="utf-8")
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "invented.jsonl", [invented])], "j")
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["verified"] is False
+    # A text that does not hash to its packet's content_sha is never trusted, even by its own hash.
+    forged = invented | {"content_sha": hashlib.sha256(tampered["notes"][0]["text"].encode("utf-8")).hexdigest()}
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "forged.jsonl", [forged])], "j")
+
+    R.render(tmp_path, today="2026-10-22")
+    review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    assert "not found in the current note" in review
+
+
+def test_import_keeps_a_current_review_over_a_row_that_is_stale_on_arrival(tmp_path: Path, capsys) -> None:
+    path = _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    R.export_batches(tmp_path, tmp_path / "pass1", [path])  # pass 1 judged this version
+    holds = [_claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="holds")]
+    older = _jsonl(tmp_path / "pass1" / "out" / "batch_01.jsonl", [_row(tmp_path, overall="sound", claims=holds)])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA second version.\n")
+    current = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass2" / "out" / "rows.jsonl", [current])], "new", today="2026-10-22")
+    assert R.import_reviews(tmp_path, [older], "old") == {"imported": [], "stale": [], "skipped": ["FIXTURE_NOTE"], "missing": [], "cut": []}
+    entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
+    assert (entry["judge"], entry["overall"], entry["stale"]) == ("new", "unsound", False)
+    assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["FIXTURE_NOTE"]
+    assert R.main(["import", str(older), "--root", str(tmp_path), "--judge", "old"]) == 0
+    assert "1 skipped (a current review is stored): FIXTURE_NOTE" in capsys.readouterr().out
+
+    # Once the note changes, the stored review is stale too, and a stale row replaces it.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA third version.\n")
+    assert R.import_reviews(tmp_path, [older], "old")["stale"] == ["FIXTURE_NOTE"]
+    assert R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["judge"] == "old"
+
+
+def test_import_rejects_a_miscopied_sha_with_no_packet_beside_it(tmp_path: Path, capsys) -> None:
+    # A correction row (research/audits/reviews/corrections/ has no batch beside it) whose sha was
+    # one hex digit off had its quotes left unchecked: an invented quote was stored unverified and
+    # the unchanged note reported stale, or the row was skipped behind the review it corrected.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    stored = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "rows.jsonl", [stored])], "judge")
+    sha = stored["content_sha"]
+    typo = sha[:-1] + ("0" if sha[-1] != "0" else "1")
+    invented = _row(tmp_path, overall="sound", claims=[
+        _claim("the radial bound fails on input seven of twelve", verdict="holds")]) | {"content_sha": typo}
+    correction = _jsonl(tmp_path / "corrections" / "2026-10-22.jsonl", [invented])
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [correction], "audit")
+    capsys.readouterr()
+    assert R.main(["import", str(correction), "--root", str(tmp_path), "--judge", "audit"]) == 2
+    assert "--allow-unverified" in capsys.readouterr().err
+    entry = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]
+    assert (entry["judge"], entry["overall"], entry["stale"]) == ("judge", "unsound", False)
+    # Only when told to does import take such a row: stale, its quotes unchecked.
+    _write(tmp_path, "UNREVIEWED", FIXTURE_NOTE)
+    unreviewed = _jsonl(tmp_path / "corrections" / "u.jsonl", [invented | {"stem": "UNREVIEWED"}])
+    with pytest.raises(ValueError, match="miscopied"):
+        R.import_reviews(tmp_path, [unreviewed], "audit")
+    assert R.main(["import", str(unreviewed), "--root", str(tmp_path), "--judge", "audit", "--allow-unverified"]) == 0
+    claim = R.load_reviews(tmp_path)["notes"]["UNREVIEWED"]["claims"][0]
+    assert claim["verified"] is False and R.load_reviews(tmp_path)["notes"]["UNREVIEWED"]["stale"] is True
+
+
+def test_import_checks_a_row_for_an_earlier_committed_version_against_that_version(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    _git(tmp_path, "init", "-q")
+    _git(tmp_path, "add", "research/FIXTURE_NOTE.md")
+    _git(tmp_path, "commit", "-q", "-m", "first version")
+    earlier = _row(tmp_path, claims=[_claim("It holds for all twelve saved inputs, with margin at least 0.031")])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE.replace("It holds for all twelve", "It holds for eleven of twelve"))
+    result = R.import_reviews(tmp_path, [_jsonl(tmp_path / "corrections" / "c.jsonl", [earlier])], "audit")
+    assert result["stale"] == ["FIXTURE_NOTE"]
+    claim = R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]
+    assert claim["verified"] is True and claim["quote"] == "It holds for all twelve\nsaved inputs, with margin at least 0.031"
+    invented = earlier | {"claims": [_claim("It holds for all thirteen saved inputs, with margin")]}
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "corrections" / "d.jsonl", [invented])], "audit")
+
+
+def test_import_checks_each_row_against_the_packets_beside_its_own_file(tmp_path: Path) -> None:
+    # The packets beside one judge file were applied to the rows of every file in the import.
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:2])  # FIXTURE_NOTE and OTHER_0
+    other = _jsonl(tmp_path / "pass" / "out" / "rows.jsonl", [
+        _row(tmp_path, stem="OTHER_0", overall="sound", claims=[_claim("A result about the other_0 inputs", verdict="holds")])])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nA later version.\n")
+    correction = _jsonl(tmp_path / "corrections" / "c.jsonl", [_row(tmp_path) | {"content_sha": "a" * 64}])
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE + "\nThe current version.\n")
+    assert R.import_reviews(tmp_path, [correction], "audit", allow_unverified=True)["stale"] == ["FIXTURE_NOTE"]
+    result = R.import_reviews(tmp_path, [other, correction], "audit", allow_unverified=True)
+    assert result["imported"] == ["FIXTURE_NOTE", "OTHER_0"]
+    with pytest.raises(ValueError, match="miscopied"):  # beside the pass's own packets, that sha is a miscopy
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "c.jsonl", [_row(tmp_path) | {"content_sha": "a" * 64}])],
+                         "audit", allow_unverified=True)
+
+
+def test_import_names_exported_notes_its_judge_file_has_no_row_for(tmp_path: Path, capsys) -> None:
+    # An empty or partial out/batch_NN.jsonl imported with exit 0, so the notes a judge skipped
+    # went unmentioned.
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:3])  # FIXTURE_NOTE, OTHER_0 and OTHER_1
+    answer = tmp_path / "pass" / "out" / "batch_01.jsonl"
+    _jsonl(answer, [])
+    with pytest.raises(ValueError, match="no row for FIXTURE_NOTE, OTHER_0, OTHER_1"):
+        R.import_reviews(tmp_path, [answer], "j")
+    _jsonl(answer, [_row(tmp_path)])
+    with pytest.raises(ValueError, match=r"no row for OTHER_0, OTHER_1 .*batch_01\.json"):
+        R.import_reviews(tmp_path, [answer], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+    root = str(tmp_path)
+    capsys.readouterr()
+    assert R.main(["import", str(answer), "--root", root, "--judge", "j"]) == 2
+    assert "--partial" in capsys.readouterr().err
+    assert R.main(["import", str(answer), "--root", root, "--judge", "j", "--partial"]) == 0
+    assert "2 exported notes have no row: OTHER_0, OTHER_1" in capsys.readouterr().out
+    assert R.load_reviews(tmp_path)["notes"].keys() == {"FIXTURE_NOTE"}
+    result = R.import_reviews(tmp_path, [answer], "j", allow_partial=True)
+    assert (result["imported"], result["missing"]) == (["FIXTURE_NOTE"], ["OTHER_0", "OTHER_1"])
+
+
+def test_export_takes_a_note_named_twice_once(tmp_path: Path, capsys) -> None:
+    # The judge then wrote one row per packet, and import rejected the second row for the note.
+    _export_fixture(tmp_path)
+    out = tmp_path / "twice"
+    assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(out),
+                   "--note", "OTHER_1", "--note", "OTHER_1.md", "--note", "research/OTHER_1.md", "--note", "OTHER_2"]) == 0
+    assert capsys.readouterr().out.startswith("2 notes in 1 batches")
+    assert [n["stem"] for n in json.loads((out / "batch_01.json").read_text(encoding="utf-8"))["notes"]] == ["OTHER_1", "OTHER_2"]
+
+
+def test_import_rejects_two_rows_for_one_note(tmp_path: Path) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    unsound = _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs", verdict="wrong")])
+    sound = _row(tmp_path, overall="sound", claims=[])
+    with pytest.raises(ValueError, match="FIXTURE_NOTE: a second row"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "both.jsonl", [unsound, sound])], "j")
+    first, second = _jsonl(tmp_path / "out" / "a.jsonl", [unsound]), _jsonl(tmp_path / "out" / "b.jsonl", [sound])
+    with pytest.raises(ValueError, match="a second row"):
+        R.import_reviews(tmp_path, [first, second], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+
+def test_import_rejects_a_malformed_or_miscopied_content_sha(tmp_path: Path) -> None:
+    # A sha one hex digit off once turned off quote checking: an artifact-excerpt quote and an
+    # invented one were stored unverified, and the unchanged note was reported stale.
+    notes = _export_fixture(tmp_path)
+    R.export_batches(tmp_path, tmp_path / "pass", notes[:1])
+    claims = [_claim("certificate verified for every saved input", verdict="holds"),
+              _claim("the radial bound fails on input seven of twelve", verdict="holds")]
+    good = _row(tmp_path, overall="sound", claims=claims)
+    sha = good["content_sha"]
+    for value in (sha[:-1] + ("0" if sha[-1] != "0" else "1"), sha.upper(), "", None, 7, "missing"):
+        row = {key: item for key, item in good.items() if not (key == "content_sha" and value == "missing")}
+        row |= {} if value == "missing" else {"content_sha": value}
+        with pytest.raises(ValueError, match="content_sha"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [row])], "j")
+    for value in (sha + "0", sha + "\n", " " + sha):  # exactly 64 digits, nothing around them
+        with pytest.raises(ValueError, match="64 lower-case hex digits"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [good | {"content_sha": value}])], "j")
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "pass" / "out" / "batch_01.jsonl", [good])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+
+def test_packet_and_import_hash_the_bytes_they_read(tmp_path: Path, monkeypatch) -> None:
+    # The note is edited between two reads of one export or import.
+    path = _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    edited = FIXTURE_NOTE.replace("It holds for all twelve", "It holds for eleven of twelve")
+    parse_note, note_sha = R.parse_note, R.note_sha
+
+    def parse_then_edit(note: Path, *args, **kwargs):
+        packet = parse_note(note, *args, **kwargs)
+        note.write_text(edited, encoding="utf-8")
+        return packet
+
+    monkeypatch.setattr(R, "parse_note", parse_then_edit)
+    packet = R.build_packet(tmp_path, path)
+    assert packet["content_sha"] == hashlib.sha256(packet["text"].encode("utf-8")).hexdigest()
+
+    def hash_then_edit(note: Path) -> str:
+        sha = note_sha(note)
+        note.write_text(edited, encoding="utf-8")
+        return sha
+
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path)
+    monkeypatch.setattr(R, "note_sha", hash_then_edit)
+    result = R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "rows.jsonl", [row])], "j")
+    assert result["stale"] == [] and R.load_reviews(tmp_path)["notes"]["FIXTURE_NOTE"]["claims"][0]["verified"] is True
+
+
+def test_import_rejects_a_quote_from_the_artifact_excerpt(tmp_path: Path) -> None:
+    notes = _export_fixture(tmp_path)
+    batch = json.loads(R.export_batches(tmp_path, tmp_path / "out", notes[:1])[0].read_text(encoding="utf-8"))
+    lifted = "certificate verified for every saved input"
+    assert lifted in batch["notes"][0]["artifact_excerpt"]
+    row = _row(tmp_path, claims=[_claim(lifted, verdict="holds")])
+    with pytest.raises(ValueError, match="not verbatim"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "lifted.jsonl", [row])], "j")
+
+
+MATH_NOTE = textwrap.dedent(
+    """\
+    # Radial Readout
+
+    2026-10-19. REVIEW PENDING.
+
+    ## Result
+
+    For any unit radial superposition u, its bad mass b<=epsilon. Unique-good
+    radial vectors give
+
+        1-epsilon <= ||A u||^2 <= 1+(M-1)*epsilon.
+
+    When 2ell+1<=K, the older exact RS-moment argument already determines every
+    coefficient, with margin 0.031 on all **twelve** inputs.
+
+    - the first listed item holds for every input
+    - the second listed item has a gap of 0.5
+    """
+)
+
+
+def test_import_rejects_quotes_whose_symbols_differ_from_the_note(tmp_path: Path) -> None:
+    _write(tmp_path, "MATH_NOTE", MATH_NOTE)
+    flipped = [
+        "For any unit radial superposition u, its bad mass b>=epsilon.",
+        "When 2ell+1>K, the older exact RS-moment argument already determines every",
+        "1+epsilon >= ||A u||^2 >= 1-(M+1)/epsilon.",
+        "the older exact RS moment argument already determines",
+        "coefficient, with margin 0,031 on all twelve inputs",
+        "holds for every input\n+ the second listed item has",  # a flipped sign kept at a line start
+    ]
+    for index, quote in enumerate(flipped):
+        row = _row(tmp_path, stem="MATH_NOTE", overall="unsound", claims=[_claim(quote, verdict="wrong")])
+        with pytest.raises(ValueError, match="symbols"):
+            R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / f"flip_{index}.jsonl", [row])], "j")
+    assert not (tmp_path / R.REVIEWS).exists()
+
+
+def test_import_stores_the_note_wording_of_each_quote(tmp_path: Path) -> None:
+    _write(tmp_path, "MATH_NOTE", MATH_NOTE)
+    loose = {
+        "For any unit radial superposition u its bad mass b <= epsilon":
+            "For any unit radial superposition u, its bad mass b<=epsilon",
+        "1 - epsilon ≤ ||A u||^2 ≤ 1 + (M−1)*epsilon": "1-epsilon <= ||A u||^2 <= 1+(M-1)*epsilon",
+        "with margin 0.031 on all twelve inputs": "with margin 0.031 on all **twelve** inputs",
+        "the first listed item holds for every input the second listed item":
+            "the first listed item holds for every input\n- the second listed item",
+        "holds for every input - the second listed item has": "holds for every input\n- the second listed item has",
+    }
+    row = _row(tmp_path, stem="MATH_NOTE", overall="needs-work", claims=[_claim(quote) for quote in loose])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "loose.jsonl", [row])], "j")
+    stored = R.load_reviews(tmp_path)["notes"]["MATH_NOTE"]["claims"]
+    assert [claim["quote"] for claim in stored] == list(loose.values())
+
+
+EDGE_NOTE = textwrap.dedent(
+    """\
+    # Edge Symbols
+
+    2026-10-19. REVIEW PENDING.
+
+    ## Result
+
+    The success probability is <= min(1, N * 2^t * 2^(-D)) for every input.
+    The gap -0.5 is the smallest one for every graph. The unit group is U=#R_q^*
+    and the bound holds — on all saved inputs here.
+    DQI keeps O(n²) samples with λ > 1 - ρ in all runs.
+    """
+)
+
+
+def _find(quote: str) -> tuple[str | None, str]:
+    return R.find_quote(quote, EDGE_NOTE)
+
+
+def test_find_quote_compares_the_symbols_at_both_ends_and_stores_whole_tokens() -> None:
+    for flipped in (">= min(1, N * 2^t * 2^(-D)) for every input", "+0.5 is the smallest one for every graph",
+                    "the smallest one for every graph. The unit group is U=#R_q/",
+                    "keeps O(n²) samples with λ > 1 + ρ"):
+        assert _find(flipped)[0] is None and "symbols" in _find(flipped)[1], flipped
+    assert _find("min(1, N * 2^t * 2^(-D)) for every input") == ("min(1, N * 2^t * 2^(-D)) for every input", "")
+    assert _find("<= min(1, N * 2^t * 2^(-D)) for every input")[0] == "<= min(1, N * 2^t * 2^(-D)) for every input"
+    assert _find("is ≤ min(1, N * 2^t * 2^(-D)) for")[0] == "is <= min(1, N * 2^t * 2^(-D)) for"
+    assert _find("0.5 is the smallest one for every graph")[0] == "-0.5 is the smallest one for every graph"
+    assert _find("smallest one for every graph. The unit group is U=#R_q")[0] == (
+        "smallest one for every graph. The unit group is U=#R_q^*")
+
+
+def test_find_quote_reads_letters_in_any_script_and_lets_a_prose_em_dash_go() -> None:
+    for altered in ("DQI keeps O(n³) samples with λ > 1 - ρ", "DQI keeps O(n²) samples with α > 1 - ρ"):
+        assert _find(altered) == (None, "quote not verbatim in the note"), altered
+    assert _find("DQI keeps O(n²) samples with λ > 1 - ρ")[0] == "DQI keeps O(n²) samples with λ > 1 - ρ"
+    for dash in ("the bound holds, on all saved inputs here", "the bound holds -- on all saved inputs here",
+                 "the bound holds — on all saved inputs here"):
+        assert _find(dash)[0] == "the bound holds — on all saved inputs here", dash
+    assert _find("the bound holds + on all saved inputs here")[0] is None
+    assert "em dash" in R.REFEREE_INSTRUCTIONS
+
+
+def test_find_quote_tries_every_occurrence_and_import_marks_a_cut_quote(tmp_path: Path) -> None:
+    note = "First the bound b>=epsilon holds here. Later the bound b<=epsilon holds here."
+    assert R.find_quote("the bound b<=epsilon holds here", note) == ("the bound b<=epsilon holds here", "")
+    # The note's span of a quote within its cap can run past it (here a link target); it is cut
+    # with a mark.
+    words = " ".join(f"word{index}" for index in range(50))
+    target = "https://example.org/" + "a" * 200
+    _write(tmp_path, "LONG_NOTE", f"# Long\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n[{words}]({target}) holds.\n")
+    quote = f"{words} holds"
+    row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(quote)])
+    answer = _jsonl(tmp_path / "out" / "long.jsonl", [row])
+    with pytest.raises(ValueError, match="note span.*quote is"):
+        R.import_reviews(tmp_path, [answer], "j")
+    outcome = R.import_reviews(tmp_path, [answer], "j", cut=True)
+    assert len(outcome["cut"]) == 1 and "note span" in outcome["cut"][0]
+    stored = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]["claims"][0]
+    span = f"[{words}]({target}) holds"
+    assert len(quote) <= 400 < len(span) and stored["verified"] is True
+    assert stored["quote"] == R._cut(span, 400)
+    words = " ".join(f"word{index}" for index in range(120))
+    _write(tmp_path, "LONGER_NOTE", f"# Longer\n\n2026-10-19. REVIEW PENDING.\n\n## Result\n\n{words}.\n")
+    row = _row(tmp_path, stem="LONGER_NOTE", claims=[_claim(words)])
+    answer = _jsonl(tmp_path / "out" / "longer.jsonl", [row])
+    with pytest.raises(ValueError, match=f"LONGER_NOTE: claim 1: quote is {len(words)} characters; at most 400"):
+        R.import_reviews(tmp_path, [answer], "j")
+    R.import_reviews(tmp_path, [answer], "j", cut=True)
+    stored = R.load_reviews(tmp_path)["notes"]["LONGER_NOTE"]["claims"][0]
+    assert len(words) > 400 and stored["verified"] is True and len(stored["quote"]) <= 400
+    assert stored["quote"].endswith(" [truncated]") and words.startswith(stored["quote"].removesuffix(" [truncated]"))
+
+
+def test_find_quote_reads_only_touching_minus_signs_as_one() -> None:
+    # x - (-y) is x + y: two signs apart are two signs, so dropping one is a flipped sign.
+    note = "We find the shift is x - (-y) for every saved input, and the bound holds — on each."
+    for flipped in ("We find the shift is x - (y) for every saved input", "We find the shift is x - y for every saved input"):
+        assert R.find_quote(flipped, note)[0] is None, flipped
+    assert R.find_quote("We find the shift is x - (- y) for every", note)[0] == "We find the shift is x - (-y) for every"
+    for run in ("and the bound holds -— on each", "and the bound holds —– on each", "and the bound holds --- on each"):
+        assert R.find_quote(run, note)[0] == "and the bound holds — on each", run
+    assert R.find_quote("and the bound holds - - on each", note)[0] is None
+    doubled = note.replace("—", "——")  # a long prose dash is one dash, too
+    assert R.find_quote("and the bound holds - on each", doubled)[0] == "and the bound holds —— on each"
+
+
+CODE_NOTE = textwrap.dedent(
+    """\
+    # Code Signs
+
+    2026-10-19. REVIEW PENDING.
+
+    ## Result
+
+    Hence every fixed output has distance at most
+
+        delta_c <= k/(2 sqrt(M))
+           + (1/2) sqrt((2^(c(a-1))-1)/M)
+           - (c/2) sqrt((G-1)/n^a).
+
+    Parity expansion modulo4 gives
+
+    ```text
+    P_i(x) = c_i + (-1)^c_i [sum_j L_ij x_j
+    - 2 sum_{j<k} L_ij L_ik x_j x_k] mod4.
+    ```
+
+    - the first item holds for every input
+        - the nested item holds for every input
+
+    1. the first numbered item holds for every input
+    2. the second numbered item has a gap of 0.5
+
+    The count of saved inputs is
+    12. Then the search stops for every input.
+    """
+)
+
+
+def test_find_quote_compares_a_sign_that_starts_a_line_of_code() -> None:
+    # A '+' or '-' starting a formula continuation line read as a list marker, so a quote
+    # that dropped it passed.
+    for dropped in ("delta_c <= k/(2 sqrt(M)) (1/2) sqrt((2^(c(a-1))-1)/M)",
+                    "sqrt((2^(c(a-1))-1)/M) (c/2) sqrt((G-1)/n^a)",
+                    "L_ij x_j 2 sum_{j<k} L_ij L_ik x_j x_k"):
+        assert R.find_quote(dropped, CODE_NOTE)[0] is None, dropped
+    for kept in ("delta_c <= k/(2 sqrt(M)) + (1/2) sqrt((2^(c(a-1))-1)/M)",
+                 "sqrt((2^(c(a-1))-1)/M) - (c/2) sqrt((G-1)/n^a)",
+                 "L_ij x_j - 2 sum_{j<k} L_ij L_ik x_j x_k",
+                 # a nested list item is no code block, so its marker may still go
+                 "the first item holds for every input the nested item holds"):
+        assert R.find_quote(kept, CODE_NOTE)[0] is not None, kept
+
+
+def test_find_quote_lets_a_numbered_list_marker_go() -> None:
+    # The README lets list markers at line starts be kept or dropped; '2.' could only be kept.
+    for quote in ("the first numbered item holds for every input the second numbered item has",
+                  "the first numbered item holds for every input 2. the second numbered item has"):
+        assert R.find_quote(quote, CODE_NOTE)[0] == (
+            "the first numbered item holds for every input\n2. the second numbered item has"), quote
+    # A number that starts a line inside a paragraph is no list item, so it stays a word.
+    assert R.find_quote("The count of saved inputs is Then the search stops", CODE_NOTE)[0] is None
+    assert R.find_quote("The count of saved inputs is 12. Then the search stops", CODE_NOTE)[0] is not None
+
+
+def test_find_quote_takes_a_space_inside_a_glued_token_and_a_dropped_link_target() -> None:
+    # The judges are told whitespace and markdown markup may differ, yet a quote that wrote
+    # 'classical105' as 'classical 105', or left out a link's URL, was rejected.
+    note = ("Thus classical105/127 and104/127 remain verified witnesses. As [Decker and Wocjan]"
+            "(https://arxiv.org/abs/quant-ph/0703195v3) show, the walk mixes in time n2 for every input. "
+            "See the [kernel audit](NATIVE_RLWE_QUATERNION_KERNEL_AUDIT.md) for every saved case.\n"
+            "- The indicator 1_[0,1](x) is one on every saved input.\n")
+    glued = "Thus classical105/127 and104/127 remain verified witnesses"
+    decker = "As [Decker and Wocjan](https://arxiv.org/abs/quant-ph/0703195v3) show, the walk mixes in time"
+    accepted = {
+        "Thus classical 105/127 and 104/127 remain verified witnesses": glued,
+        glued: glued,
+        "As Decker and Wocjan show, the walk mixes in time": decker,
+        decker: decker,
+        "the walk mixes in time n 2 for every input": "the walk mixes in time n2 for every input",
+        "See the kernel audit for every saved case": "See the [kernel audit](NATIVE_RLWE_QUATERNION_KERNEL_AUDIT.md) for every saved case",
+        "every saved case The indicator 1_[0,1](x) is one": "every saved case.\n- The indicator 1_[0,1](x) is one",
+    }
+    for quote, span in accepted.items():
+        assert R.find_quote(quote, note)[0] == span, quote
+    # A bracket followed by a parenthesis that is no link target keeps it: '(x)' is the mathematics.
+    assert R.find_quote("The indicator 1_[0,1] is one on every saved input", note)[0] is None
+    # Six words are still runs of letters and digits: 'classical105' is one of them.
+    assert R.find_quote("Thus classical105/127 and104/127", note) == (None, "quote under 6 words")
+    assert R.find_quote("Thus classical 105/127 and 104/127", note)[0] == "Thus classical105/127 and104/127"
+
+
+def test_find_quote_never_reads_a_quotes_em_dash_as_the_notes_minus_sign() -> None:
+    # The quote's em dash read as "-" while the note's was left out, so it stood in for the
+    # note's own minus sign and a dropped sign passed.
+    note = "We find the shift is x — (-y) for every saved input, and the gap — -0.5 is the smallest."
+    for dropped in ("We find the shift is x — (y) for every saved input", "and the gap — 0.5 is the smallest",
+                    "and the gap —— 0.5 is the smallest"):
+        assert R.find_quote(dropped, note)[0] is None, dropped
+    for kept in ("We find the shift is x — (-y) for every saved input", "We find the shift is x (-y) for every saved input",
+                 "We find the shift is x - (-y) for every saved input", "and the gap — -0.5 is the smallest",
+                 "and the gap -0.5 is the smallest", "and the gap - -0.5 is the smallest"):
+        assert R.find_quote(kept, note)[0] is not None, kept
+
+
+@pytest.mark.parametrize("note, quote, accepted", [
+    # An arrow is not a minus sign: '->' read as '-' let a quote drop the '>' and refused '→'.
+    ("Then x->1 holds for every saved input.", "Then x-1 holds for every saved input", False),
+    ("Then x-1 holds for every saved input.", "Then x->1 holds for every saved input", False),
+    ("Then x->1 holds for every saved input.", "Then x→1 holds for every saved input", True),
+    ("Then x→1 holds for every saved input.", "Then x->1 holds for every saved input", True),
+    ("Then x->1 holds for every saved input.", "Then x −> 1 holds for every saved input", True),
+    ("Then x->1 holds for every saved input.", "Then x->1 holds for every saved input", True),
+    # Superscript and subscript signs are signs.
+    ("the error decays as n⁻¹ for every saved input.", "the error decays as n⁺¹ for every saved input", False),
+    ("the error decays as n⁻¹ for every saved input.", "the error decays as n¹ for every saved input", False),
+    ("the error decays as n⁻¹ for every saved input.", "the error decays as n⁻¹ for every saved input", True),
+    ("the index runs over x₊₁ for every saved input.", "the index runs over x₋₁ for every saved input", False),
+    # '+/-' is written '±' as '<=' is written '≤', and neither is a '+' or a '-'.
+    ("The margin is 0.5 +/- 0.1 on every saved input.", "The margin is 0.5 ± 0.1 on every saved input", True),
+    ("The margin is 0.5 ± 0.1 on every saved input.", "The margin is 0.5 +/- 0.1 on every saved input", True),
+    ("The margin is 0.5 +/- 0.1 on every saved input.", "The margin is 0.5 + 0.1 on every saved input", False),
+    ("The margin is 0.5 +/- 0.1 on every saved input.", "The margin is 0.5 - 0.1 on every saved input", False),
+])
+def test_find_quote_reads_arrows_superscript_signs_and_plus_minus(note: str, quote: str, accepted: bool) -> None:
+    span, reason = R.find_quote(quote, note)
+    assert (span is not None) is accepted, reason
+
+
+@pytest.mark.parametrize("note, quote, accepted", [
+    # Each compared symbol, dropped from the quote, rejects it.
+    ("It holds when a != b for every saved input.", "It holds when a = b for every saved input", False),
+    ("It holds when a != b for every saved input.", "It holds when a ≠ b for every saved input", True),
+    ("The runtime grows as 2^n for every saved input.", "The runtime grows as 2 n for every saved input", False),
+    ("The runtime is ~ 2^n on every saved input.", "The runtime is 2^n on every saved input", False),
+    ("The runtime is ~ 2^n on every saved input.", "The runtime is ≈ 2^n on every saved input", True),
+    ("The margin is 0.5 ± 0.1 on every saved input.", "The margin is 0.5 0.1 on every saved input", False),
+    ("The error is √n on every saved input here.", "The error is n on every saved input here", False),
+    # An arrow at either end is one symbol, not a minus and a '>'.
+    ("Then x_n -> 0 as n grows for every input.", "→ 0 as n grows for every input", True),
+    ("Then x_n -> 0 as n grows for every input.", "> 0 as n grows for every input", False),
+    # Only a dot between digits is a decimal point.
+    ("The inner product u.v is at most one here.", "The inner product u v is at most one", True),
+    # A quote marker at a line start may go, as a list marker may.
+    ("Intro line here.\n> the quoted claim holds for every input.", "Intro line here the quoted claim holds for every input", True),
+    # An em dash the note does not have is punctuation.
+    ("the bound holds on all saved inputs here.", "the bound holds — on all saved inputs here", True),
+    # The symbols next to the quote's ends must be the note's nearest ones.
+    ("where x <= -0.5 is the smallest gap here.", "<= 0.5 is the smallest gap here", False),
+    ("where x <= -0.5 is the smallest gap here.", "- 0.5 is the smallest gap here", True),
+    ("the smallest gap here is 0.5 >= -x for all.", "the smallest gap here is 0.5 -", False),
+    ("the smallest gap here is 0.5 >= -x for all.", "the smallest gap here is 0.5 >=", True),
+    # An underscore splits words.
+    ("the unit set R_q^* holds every saved unit.", "the unit set R q^* holds every saved unit", True),
+])
+def test_find_quote_compares_each_documented_symbol(note: str, quote: str, accepted: bool) -> None:
+    span, reason = R.find_quote(quote, note)
+    assert (span is not None) is accepted, reason
+
+
+def test_find_quote_keeps_the_operator_next_to_the_last_word() -> None:
+    note = "the smallest gap here is 0.5 >= -x for all."
+    assert R.find_quote("the smallest gap here is 0.5 >=", note)[0] == "the smallest gap here is 0.5 >="
+
+
+def test_instructions_and_readme_name_every_symbol_the_check_compares() -> None:
+    # The judges were told <, >, =, +, -, /, ^, ±, √ and decimal points; the check also compares
+    # ~, != and ->, and a judge may drop a '~' or the '!' of '!=' as punctuation.
+    sentence = " ".join(R.REFEREE_INSTRUCTIONS.split())
+    readme = " ".join(README.read_text(encoding="utf-8").split())
+    for symbol in ("<", ">", "=", "+", "-", "/", "^", "~", "±", "√", "!=", "->"):
+        assert f"{symbol}," in sentence or f"{symbol} " in sentence, symbol
+        assert f"`{symbol}`" in readme, symbol
+    for typographic in ("≤ for <=", "≠ for !=", "→ for ->", "≈ for ~", "± for +/-"):
+        assert typographic in sentence, typographic
+
+
+def _reviewed_repo(root: Path) -> None:
+    """FIXTURE_NOTE unsound, EDITED needs-work then edited, SOUND_NOTE sound, OTHER_n unreviewed."""
+    _write(root, "FIXTURE_NOTE", FIXTURE_NOTE)
+    edited = _dated_note(root, "EDITED", "2026-10-12. REVIEW PENDING.", 1000)
+    _dated_note(root, "SOUND_NOTE", "2026-10-13. REVIEW PENDING.", 1000)
+    for i in range(3):
+        _dated_note(root, f"OTHER_{i}", f"2026-10-0{i + 1}. REVIEW PENDING.", 1000)
+    quote = "A result about the edited inputs"
+    rows = [
+        _row(root, overall="unsound", claims=[
+            _claim("We searched 10000 random inputs for a counterexample", verdict="holds"),
+            _claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="wrong",
+                   finding="Input 7 has margin -0.002 in the excerpt."),
+        ]),
+        _row(root, stem="EDITED", claims=[_claim(quote + ".")]),
+        _row(root, stem="SOUND_NOTE", overall="sound", claims=[_claim("A result about the sound_note inputs", verdict="holds")]),
+    ]
+    R.import_reviews(root, [_jsonl(root / "out" / "rows.jsonl", rows)], "test-judge", today="2026-10-21")
+    edited.write_text(edited.read_text(encoding="utf-8") + "\nAn added paragraph.\n", encoding="utf-8")
+
+
+def test_render_writes_a_note_review_and_the_queue(tmp_path: Path) -> None:
+    _reviewed_repo(tmp_path)
+    R.render(tmp_path, today="2026-10-21")
+    review = (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    assert review.startswith("# Referee review: FIXTURE_NOTE")
+    for needle in ("**unsound**", "It holds for all twelve saved inputs", "wrong", "Question And Result", "Input 7 has margin"):
+        assert needle in review
+    assert "Stale" in (tmp_path / "research/audits/reviews/EDITED.md").read_text(encoding="utf-8")
+    queue = (tmp_path / R.QUEUE).read_text(encoding="utf-8")
+    assert "| unsound | 1 |" in queue and "| sound | 1 |" in queue and "| stale | 1 |" in queue
+    assert "| needs-work | 0 |" in queue  # EDITED's needs-work review is stale, so it is counted only as stale
+    flagged, rest = queue.split("## Flagged", 1)[1].split("## Stale", 1)
+    assert "FIXTURE_NOTE" in flagged and "wrong" in flagged and "EDITED" not in flagged
+    stale, upcoming = rest.split("## Next 30", 1)
+    assert "EDITED" in stale
+    rows = [line.split("|")[1].strip() for line in upcoming.splitlines() if line.startswith("| ") and "Note" not in line]
+    assert rows == ["EDITED", "OTHER_2", "OTHER_1", "OTHER_0"]
+
+
+def test_a_deleted_reviewed_note_is_stale_and_render_still_runs(tmp_path: Path) -> None:
+    _reviewed_repo(tmp_path)
+    (tmp_path / "research" / "FIXTURE_NOTE.md").unlink()
+    result = R.status(tmp_path)
+    assert (result["reviewed"], result["flagged"], result["stale"]) == (3, [], ["EDITED", "FIXTURE_NOTE"])
+    R.render(tmp_path, today="2026-10-22")
+    assert "**Stale:**" in (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").read_text(encoding="utf-8")
+    queue = (tmp_path / R.QUEUE).read_text(encoding="utf-8")
+    assert "- FIXTURE_NOTE (reviewed 2026-10-21, unsound)" in queue and "| unsound | 0 |" in queue
+
+
+def test_status_lists_unsound_first_then_by_stem_and_the_cli_names_the_worst_claim(tmp_path: Path, capsys) -> None:
+    entries = {}
+    for stem, overall, verdict in (("B_NEEDS", "needs-work", "gap"), ("A_NEEDS", "needs-work", "gap"), ("Z_UNSOUND", "unsound", "wrong")):
+        path = _dated_note(tmp_path, stem, "2026-10-12. REVIEW PENDING.", 1000)
+        claims = [{"quote": f"A result about the {stem.lower()} inputs", "verdict": verdict, "step": "Result", "finding": "f"}]
+        entries[stem] = {"content_sha": R.note_sha(path), "overall": overall, "reviewed_on": "2026-10-21", "claims": claims}
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps({"notes": entries}), encoding="utf-8")  # in the order B, A, Z
+    assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["Z_UNSOUND", "A_NEEDS", "B_NEEDS"]
+    assert R.main(["status", "--root", str(tmp_path)]) == 0
+    out = capsys.readouterr().out.splitlines()
+    assert out[0] == "3 reviewed, 3 flagged, 0 stale"
+    assert out[1] == "  unsound    Z_UNSOUND  wrong: A result about the z_unsound inputs"
+    # Flagged means unsound or needs-work: an unclear or sound review is not flagged.
+    for stem, overall, verdict in (("C_UNCLEAR", "unclear", "unclear"), ("D_SOUND", "sound", "holds")):
+        path = _dated_note(tmp_path, stem, "2026-10-12. REVIEW PENDING.", 1000)
+        claims = [{"quote": f"A result about the {stem.lower()} inputs", "verdict": verdict, "step": "Result", "finding": ""}]
+        entries[stem] = {"content_sha": R.note_sha(path), "overall": overall, "reviewed_on": "2026-10-21", "claims": claims}
+    store.write_text(json.dumps({"notes": entries}), encoding="utf-8")
+    assert [item["stem"] for item in R.status(tmp_path)["flagged"]] == ["Z_UNSOUND", "A_NEEDS", "B_NEEDS"]
+
+
+def test_queue_and_status_keep_the_bars_of_an_absolute_value(tmp_path: Path, capsys) -> None:
+    # Both replaced '|' with '/', so |x - y| read /x - y/ and Pr(y=x | S) read as a division.
+    path = _dated_note(tmp_path, "BARS", "2026-10-12. REVIEW PENDING.", 1000)
+    claims = [{"quote": "the bound |x - y| <= 1 holds for every input", "verdict": "wrong", "step": "Result",
+               "finding": "Here |a| > 1 and Pr(y=x | S) is 0.4."}]
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(json.dumps({"notes": {"BARS": {"content_sha": R.note_sha(path), "overall": "unsound",
+                                                    "reviewed_on": "2026-10-21", "claims": claims}}}), encoding="utf-8")
+    R.render(tmp_path, today="2026-10-22")
+    row = next(line for line in (tmp_path / R.QUEUE).read_text(encoding="utf-8").splitlines() if line.startswith("| [BARS]"))
+    assert r"the bound \|x - y\| <= 1 holds" in row and r"Here \|a\| > 1 and Pr(y=x \| S) is 0.4." in row
+    assert len(re.findall(r"(?<!\\)\|", row)) == 5  # still four cells
+    capsys.readouterr()
+    assert R.main(["status", "--root", str(tmp_path)]) == 0
+    assert "  unsound    BARS  wrong: the bound |x - y| <= 1 holds for every input" in capsys.readouterr().out.splitlines()
+
+
+def test_status_returns_only_flagged_non_stale_reviews(tmp_path: Path) -> None:
+    assert R.status(tmp_path)["available"] is False
+    _reviewed_repo(tmp_path)
+    result = R.status(tmp_path)
+    assert result["available"] is True and result["reviewed"] == 3
+    assert [f["stem"] for f in result["flagged"]] == ["FIXTURE_NOTE"]
+    flagged = result["flagged"][0]
+    assert (flagged["overall"], flagged["reviewed_on"]) == ("unsound", "2026-10-21")
+    assert flagged["worst_claim"]["verdict"] == "wrong"
+    assert result["stale"] == ["EDITED"]
+    entry = R.load_reviews(tmp_path)["notes"]["EDITED"]
+    assert R.is_stale(tmp_path, "EDITED", entry) is True
+    assert R.worst_claim({"claims": []}) is None
+
+
+def test_cli_round_trip(tmp_path: Path, capsys) -> None:
+    _export_fixture(tmp_path)
+    root = str(tmp_path)
+    assert R.main(["select", "--root", root, "--json"]) == 0
+    selected = json.loads(capsys.readouterr().out)
+    assert isinstance(selected, list) and [s["stem"] for s in selected][:2] == ["FIXTURE_NOTE", "OTHER_0"]
+    assert selected[0] == {"stem": "FIXTURE_NOTE", "path": "research/FIXTURE_NOTE.md", "date": "2026-10-18"}
+
+    sized = tmp_path / "sized"
+    assert R.main(["export", "--root", root, "--out-dir", str(sized), "--limit", "5", "--batch-size", "2"]) == 0
+    assert capsys.readouterr().out.startswith("5 notes in 3 batches")
+    assert [len(json.loads((sized / f"batch_0{n}.json").read_text(encoding="utf-8"))["notes"]) for n in (1, 2, 3)] == [2, 2, 1]
+
+    out = tmp_path / "batches"
+    assert R.main(["export", "--root", root, "--out-dir", str(out), "--limit", "2"]) == 0
+    assert str(out / "INSTRUCTIONS.md") in capsys.readouterr().out
+    batch = json.loads((out / "batch_01.json").read_text(encoding="utf-8"))
+    assert [n["stem"] for n in batch["notes"]] == ["FIXTURE_NOTE", "OTHER_0"]
+
+    answer = _jsonl(out / "out" / "batch_01.jsonl", [
+        _row(tmp_path, overall="unsound", claims=[_claim("It holds for all twelve saved inputs, with margin at least 0.031", verdict="wrong")]),
+        _row(tmp_path, stem="OTHER_0", overall="sound", claims=[_claim("A result about the other_0 inputs", verdict="holds")])])
+    assert R.main(["import", str(answer), "--root", root, "--judge", "test-judge"]) == 0
+    assert "imported 2" in capsys.readouterr().out
+    assert R.main(["render", "--root", root]) == 0
+    assert (tmp_path / R.QUEUE).exists() and (tmp_path / "research/audits/reviews/FIXTURE_NOTE.md").exists()
+    capsys.readouterr()
+    assert R.main(["status", "--root", root, "--json"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert [f["stem"] for f in payload["flagged"]] == ["FIXTURE_NOTE"]
+
+    assert R.main(["select", "--root", root, "--json"]) == 0
+    assert "FIXTURE_NOTE" not in [s["stem"] for s in json.loads(capsys.readouterr().out)]
+    assert R.main(["select", "--root", root, "--json", "--include-reviewed", "--prefix", "FIX"]) == 0
+    assert [s["stem"] for s in json.loads(capsys.readouterr().out)] == ["FIXTURE_NOTE"]
+
+    _write(tmp_path, "UNLABELLED", "# U\n\n2026-10-20. Local derivations require review.\n\n## Result\n\nSomething.\n")
+    cal = tmp_path / "calibration"
+    assert R.main(["export", "--root", root, "--out-dir", str(cal), "--note", "UNLABELLED", "--note", "OTHER_3"]) == 0
+    batch = json.loads((cal / "batch_01.json").read_text(encoding="utf-8"))
+    assert [(n["stem"], n["status"]) for n in batch["notes"]] == [("UNLABELLED", "unlabelled"), ("OTHER_3", "review-pending")]
+
+    bad = _jsonl(out / "out" / "bad.jsonl", [_row(tmp_path, overall="fine")])
+    capsys.readouterr()
+    assert R.main(["import", str(bad), "--root", root, "--judge", "test-judge"]) == 2
+    assert "bad overall verdict" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize("text", [
+    "", '{"notes": {"FIXTURE_NOTE": ', "[]", '{"notes": []}', '{"reviews": {}}', '{"notes": {"FIXTURE_NOTE": "x"}}',
+    '{"notes": {"FIXTURE_NOTE": {"claims": ["x"]}}}', '{"notes": {"FIXTURE_NOTE": {"claims": [{"quote": 1, "verdict": "gap"}]}}}',
+    '{"notes": {"FIXTURE_NOTE": {"claims": [], "summary": ["s"]}}}',
+])
+def test_a_damaged_store_stops_every_command_with_one_line(tmp_path: Path, capsys, text: str) -> None:
+    _export_fixture(tmp_path)
+    store = tmp_path / R.REVIEWS
+    store.parent.mkdir(parents=True)
+    store.write_text(text, encoding="utf-8")
+    answer = _jsonl(tmp_path / "out" / "rows.jsonl", [_row(tmp_path)])
+    for argv in (["status"], ["status", "--json"], ["select"], ["render"], ["export", "--out-dir", str(tmp_path / "o")],
+                 ["import", str(answer), "--judge", "j"]):
+        capsys.readouterr()
+        assert R.main([*argv, "--root", str(tmp_path)]) == 2, argv
+        captured = capsys.readouterr()
+        assert captured.out == "" and "reviews.json" in captured.err and len(captured.err.strip().splitlines()) == 1, argv
+    assert store.read_text(encoding="utf-8") == text
+    assert not (tmp_path / R.QUEUE).exists() and not (tmp_path / "o").exists()
+    with pytest.raises(R.StoreError, match="reviews.json"):
+        R.status(tmp_path)
+    # `export --note` never reads the store, and the README says only the commands that read it stop.
+    assert R.main(["export", "--root", str(tmp_path), "--out-dir", str(tmp_path / "n"), "--note", "OTHER_1"]) == 0
+    outputs = " ".join(_readme_section("## Outputs").split())
+    assert "every command that reads it stops" in outputs and "every command stops" not in outputs
+
+
+def test_import_replaces_the_store_in_one_step(tmp_path: Path, monkeypatch) -> None:
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "a.jsonl", [_row(tmp_path)])], "first")
+    store = tmp_path / R.REVIEWS
+    before = store.read_bytes()
+
+    def interrupted(source, target) -> None:
+        raise OSError("interrupted")
+
+    monkeypatch.setattr(R.os, "replace", interrupted)
+    with pytest.raises(OSError, match="interrupted"):
+        R.import_reviews(tmp_path, [_jsonl(tmp_path / "out" / "b.jsonl", [_row(tmp_path, overall="unclear", claims=[])])], "second")
+    assert store.read_bytes() == before
+    assert sorted(path.name for path in store.parent.iterdir()) == ["reviews.json"]
+
+
+def test_imports_at_once_keep_each_others_reviews(tmp_path: Path, monkeypatch) -> None:
+    # Two overlapping imports each read the old store, the later rename dropped the other's
+    # review, and both reported it imported; in one process they also shared a temp file name.
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    _dated_note(tmp_path, "OTHER", "2026-10-11. REVIEW PENDING.", 1000)
+    files = {"first": _jsonl(tmp_path / "a" / "rows.jsonl", [_row(tmp_path)]),
+             "second": _jsonl(tmp_path / "b" / "rows.jsonl", [_row(tmp_path, stem="OTHER", overall="unclear", claims=[])])}
+    load, loaded = R.load_reviews, threading.Event()
+    temps: list[str] = []
+    replace = os.replace
+
+    def slow_load(root: Path) -> dict:
+        data = load(root)
+        if threading.current_thread().name == "first":
+            loaded.set()
+            time.sleep(0.5)  # the second import starts while the first holds the store it read
+        return data
+
+    def recording_replace(source, target) -> None:
+        temps.append(Path(source).name)
+        replace(source, target)
+
+    monkeypatch.setattr(R, "load_reviews", slow_load)
+    monkeypatch.setattr(R.os, "replace", recording_replace)
+    results: dict[str, dict] = {}
+    threads = {name: threading.Thread(target=lambda name=name: results.update({name: R.import_reviews(tmp_path, [files[name]], name)}),
+                                      name=name) for name in files}
+    threads["first"].start()
+    assert loaded.wait(10)
+    threads["second"].start()
+    for thread in threads.values():
+        thread.join(10)
+    assert (results["first"]["imported"], results["second"]["imported"]) == (["FIXTURE_NOTE"], ["OTHER"])
+    store = tmp_path / R.REVIEWS
+    assert set(json.loads(store.read_text(encoding="utf-8"))["notes"]) == {"FIXTURE_NOTE", "OTHER"}
+    assert len(set(temps)) == 2 and sorted(path.name for path in store.parent.iterdir()) == ["reviews.json"]
+
+
+# ---------- the committed reviews (research/audits/reviews) ----------
+
+REPO = Path(__file__).resolve().parents[2]
+REVIEWS_DIR = REPO / "research" / "audits" / "reviews"
+STORED = REVIEWS_DIR / "reviews.json"
+README = REPO / "tools" / "referee" / "README.md"
+# The generated pages and the note these tests read besides REVIEWS_DIR; test_tools_workflow
+# checks that a change to any of them runs the Tools workflow.
+PAGES = (R.QUEUE, "research/audits/AGENT_BRIEF.md")
+POLAR_NOTE = REPO / "research" / "POLAR_SOURCE_DESIGN.md"
+needs_reviews = pytest.mark.skipif(not STORED.exists(), reason="the committed reviews are not in this checkout")
+
+# The judge files each stored judge name was imported from; a later import of a note replaces it.
+REVIEW_SOURCES = {
+    "claude-opus-5.5-two-judges-reconciled-2026-10-21": "pass1/out/batch_*.jsonl",
+    "claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d": "calibration_r2/out_d/batch_*.jsonl",
+    "audit-correction-2026-10-22": "corrections/2026-10-22.jsonl",
+    "audit-correction-2026-10-22-r2": "corrections/2026-10-22-r2.jsonl",
+    "codex-audit-correction-2026-10-23-r3": "corrections/2026-10-23-r3.jsonl",
+}
+# The calibration judges' output, by the letters tools/referee/README.md uses for them.
+CALIBRATION_JUDGES = {
+    "A": "calibration/out", "B": "calibration/out_repeat_b", "C": "calibration/out_repeat_c",
+    "D": "calibration_r2/out_d", "E": "calibration_r2/out_e",
+}
+
+
+def _stored() -> dict:
+    return json.loads(STORED.read_text(encoding="utf-8"))["notes"]
+
+
+def _judge_rows(pattern: str) -> dict[str, dict]:
+    rows = {}
+    for path in sorted(REVIEWS_DIR.glob(pattern)):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                row = json.loads(line)
+                rows[row["stem"]] = row
+    return rows
+
+
+def _historical_reviews() -> dict:
+    """The immutable first-pass and round-two corrections these regressions document.
+
+    A later live review may select entirely different claims or change its verdict.
+    The separate rebuild comparison checks live entries only while their source matches.
+    """
+    rows = {}
+    for pattern in ("pass1/out/batch_*.jsonl", "calibration_r2/out_d/batch_*.jsonl",
+                    "corrections/2026-10-22.jsonl", "corrections/2026-10-22-r2.jsonl"):
+        rows.update(_judge_rows(pattern))
+    return rows
+
+
+def _historical_note(stem: str) -> str:
+    row = _historical_reviews()[stem]
+    texts, _ = R.exported_texts(list(REVIEWS_DIR.glob("**/out*/*.jsonl")))
+    return texts[(stem, row["content_sha"])]
+
+
+def _historical_claim(stem: str, quote_start: str) -> dict:
+    found = [c for c in _historical_reviews()[stem]["claims"] if " ".join(c["quote"].split()).startswith(quote_start)]
+    assert len(found) == 1, f"{stem}: {len(found)} claims quote {quote_start!r}"
+    # Import stores the source span, which may restore Markdown/signs omitted in the
+    # judge row. Reconstruct that span against the archived text, not the live note.
+    span, reason = R.find_quote(found[0]["quote"], _historical_note(stem))
+    assert span is not None, f"{stem}: {reason}"
+    return {**found[0], "quote": span}
+
+
+def _readme_section(heading: str) -> str:
+    """From `heading` to the next heading of the same or a higher level."""
+    text = README.read_text(encoding="utf-8")
+    start = text.index(heading)
+    level = len(heading.split(" ")[0])
+    ends = [at for n in range(1, level + 1) if (at := text.find("\n" + "#" * n + " ", start + len(heading))) >= 0]
+    return text[start:min(ends)] if ends else text[start:]
+
+
+@needs_reviews
+def test_stored_reviews_are_their_judge_rows_whole() -> None:
+    """Each stored review is its judge row whole: import once cut a finding at 600 characters
+    without a mark, so a longer one lost its end."""
+    checked = 0
+    for stem, entry in _stored().items():
+        pattern = REVIEW_SOURCES.get(entry["judge"])
+        if pattern is None:
+            continue
+        row = _judge_rows(pattern).get(stem)
+        assert row is not None, f"{stem}: no row in {pattern}"
+        assert (entry["overall"], entry["summary"]) == (row["overall"], row["summary"]), stem
+        stored = [(c["verdict"], c["step"], c["finding"], c["covered_by_self_check"]) for c in entry["claims"]]
+        given = [(c["verdict"], c["step"], c["finding"], bool(c.get("covered_by_self_check"))) for c in row["claims"]]
+        assert stored == given, stem
+        checked += 1
+    assert checked == sum(entry["judge"] in REVIEW_SOURCES for entry in _stored().values())
+
+
+@needs_reviews
+def test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path: Path, capsys) -> None:
+    """A re-import replaces a note's review, so re-importing pass1/out after the corrections
+    silently undid all of them; the README must give an order that rebuilds the store."""
+    section = _readme_section("### Rebuilding the corrected store")
+    block = re.search(r"```bash\n(.*?)```", section, re.S)
+    assert block, "the Corrections section gives no rebuild commands"
+    commands = [shlex.split(line) for line in block.group(1).splitlines() if " import " in line]
+    stored = {stem: entry for stem, entry in _stored().items() if entry["judge"] in REVIEW_SOURCES}
+    # Each note as the judges read it (its exported packet), so a later edit to a note does not
+    # turn this red: the rebuild would rightly store that review stale.
+    texts, _ = R.exported_texts([path for path in REVIEWS_DIR.glob("**/out*/*.jsonl")])
+    (tmp_path / "research").mkdir()
+    source_rows = {}
+    for pattern in REVIEW_SOURCES.values():
+        source_rows.update(_judge_rows(pattern))
+    for stem, row in source_rows.items():
+        (tmp_path / "research" / f"{stem}.md").write_bytes(texts[(stem, row["content_sha"])].encode("utf-8"))
+    for argv in commands:
+        assert argv[:3] == ["python", "tools/referee/referee.py", "import"], argv
+        args = []
+        for arg in argv[3:]:
+            files = sorted(REPO.glob(arg)) if arg.startswith("research/") else None
+            assert files != [], arg
+            args += [str(path) for path in files] if files else [arg]
+        assert R.main(["import", *args, "--root", str(tmp_path)]) == 0, capsys.readouterr().err
+    rebuilt = R.load_reviews(tmp_path)["notes"]
+    assert set(rebuilt) >= set(stored)
+    for stem, entry in stored.items():
+        assert {**rebuilt[stem], "reviewed_on": None} == {**entry, "reviewed_on": None}, stem
+
+
+@needs_reviews
+def test_interval_soft_decoder_decision_cut_needs_no_window_qualifier() -> None:
+    """Every quantum guarantee the note cites needs d<L at constant L, where the DP is polynomial."""
+    claim = _historical_claim("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation")
+    assert claim["verdict"] == "holds"
+    assert _historical_reviews()["INTERVAL_SOFT_DECODER"]["overall"] == "sound"
+
+
+@needs_reviews
+def test_polar_source_design_leads_with_its_family_gap_and_quotes_only_the_note() -> None:
+    entry = _historical_reviews()["POLAR_SOURCE_DESIGN"]
+    assert "for the stated half-rate family" in " ".join(R.worst_claim(entry)["quote"].split())
+    assert _historical_claim("POLAR_SOURCE_DESIGN", "Largest set certified at average TV")["verdict"] == "gap"
+    note = " ".join(_historical_note("POLAR_SOURCE_DESIGN").lower().split())
+    for claim in entry["claims"]:
+        for phrase in re.findall(r"'([^']+)'", claim["finding"]):
+            assert " ".join(phrase.lower().split()) in note, phrase
+
+
+@needs_reviews
+def test_norm_attack_review_keeps_the_k39_global_overstatement() -> None:
+    """Judge E's finding, checked as real in the README's round two: K39 global inputs score 108 and 110 of 127."""
+    claim = _historical_claim("PRIME_CHARACTER_NORM_ATTACK", "solved common cosets classically but left mixed")
+    assert claim["verdict"] == "gap"
+    assert "K39" in claim["finding"] and "108/127" in claim["finding"] and "110/127" in claim["finding"]
+
+
+@needs_reviews
+def test_opi_power_completion_quote_keeps_its_degree_condition() -> None:
+    """Cut at 'solved perfectly', the holds quote read as unconditional, but the saved N127,K39
+    global inputs (threshold 64 > 39) score 108/127 and 110/127."""
+    claim = _historical_claim("PRIME_CHARACTER_OPI", "Thus ALL common-coset inputs are solved perfectly")
+    assert claim["verdict"] == "holds"
+    assert " ".join(claim["quote"].split()).endswith("solved perfectly whenever `K >= (r-1)*ceil(N/r)`")
+    assert "K39" in claim["finding"] and "108/127" in claim["finding"] and "110/127" in claim["finding"]
+
+
+@needs_reviews
+@pytest.mark.parametrize("stem, quote_start, verdict, wrong, right", [
+    ("PRIME_CHARACTER_INTERLEAVED_PROBE", "The joint product correlation is enhanced", "gap",
+     "cannot hold for those reported cases", "do not contradict"),
+    ("FOLDED_NORM_SOURCE", "Exact countercontrol p5,n2,m2,K3,ell1", "holds",
+     "gives 8/57 and 24/73", "M*eps/(1-eps+M*eps)"),
+    ("CONJUGATE_CHIRP_REPAIR", "EXPECTED satisfied-fraction advantage", "holds",
+     "six native controls", "three diagonal native controls"),
+    ("CONJUGATE_CHIRP_REPAIR", "EXPECTED satisfied-fraction advantage", "holds",
+     "1/sqrt(p) classical term", "sqrt((p-1)rho(1-rho))p^(-n/2)"),
+    ("EXPLICIT_QUADRATIC_OPI", "The high-rate quadratic family has a constructive", "gap",
+     "can be trivial", "about 0.59"),
+    # The note cites two quantum guarantees and leaves the vanishing-density regime open; it
+    # never says no quantum algorithm has a guarantee outside d<L.
+    ("INTERVAL_SOFT_DECODER", "cut claims of a SUPERPOLYNOMIAL quantum-search separation", "holds",
+     "no quantum algorithm has a guarantee", "none of the guarantees the note cites applies there"),
+    # b/(g+b) decreases in g: the bound uses ||G||^2=1-eps, so the ratio grows with eps.
+    ("PRIME_CHARACTER_CAPACITY_SOURCE", "is well defined, and P(unique herald)>=1-epsilon", "holds",
+     "increases in both arguments", "decreases in ||G||^2"),
+])
+def test_corrected_findings_state_the_note_and_artifact_correctly(stem, quote_start, verdict, wrong, right) -> None:
+    claim = _historical_claim(stem, quote_start)
+    assert claim["verdict"] == verdict
+    assert wrong not in claim["finding"] and right in claim["finding"]
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration").is_dir(), reason="the calibration runs are not in this checkout")
+def test_readme_credits_round_one_findings_only_to_judges_whose_reviews_raise_them() -> None:
+    section = _readme_section("### Findings the review history does not contain")
+    rows = [[cell.strip() for cell in line.strip().strip("|").split("|")]
+            for line in section.splitlines() if line.startswith("| ") and not line.startswith(("| Note", "| ---"))]
+    evidence = {"does not resolve": ("PRIME_CHARACTER_OPI", "prime_character_opi.json"),
+                "1038/1080": ("PRIME_CHARACTER_NORM_ATTACK", "1038")}
+    checked = 0
+    for _note, judges, finding, _check in rows:
+        for phrase, (stem, needle) in evidence.items():
+            if phrase not in finding:
+                continue
+            checked += 1
+            for letter in re.findall(r"\b[A-E]\b", judges.split("(")[0]):
+                row = _judge_rows(CALIBRATION_JUDGES[letter] + "/batch_01.jsonl")[stem]
+                assert needle in json.dumps(row), f"judge {letter} is credited with {phrase!r} but never says it"
+    assert checked == 2
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration_r2").is_dir(), reason="the round-two runs are not in this checkout")
+def test_readme_round_two_accounts_for_judge_e_gaps_as_e_wrote_them() -> None:
+    section = _readme_section("### Round two")
+    gaps = [c for row in _judge_rows("calibration_r2/out_e/batch_01.jsonl").values() for c in row["claims"] if c["verdict"] == "gap"]
+    assert len(gaps) == 8 and not any(c["finding"].startswith(("The sixth", "Unnamed")) for c in gaps)
+    assert "unnamed fully solved configuration (E)" not in section and "three low-value gaps" not in section
+    assert "now constructive" in section
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "calibration_r2").is_dir(), reason="the round-two runs are not in this checkout")
+def test_readme_round_two_says_which_round_one_findings_d_and_e_kept() -> None:
+    """A's N1024 Gibbs-sample provenance point, graded real, is in neither D's nor E's review."""
+    section = " ".join(_readme_section("### Round two").split())
+    raised = {letter: json.dumps(_judge_rows(CALIBRATION_JUDGES[letter] + "/batch_01.jsonl")["POLAR_SOURCE_DESIGN"])
+              for letter in "ADE"}
+    assert "361-constraint Gibbs sample" in raised["A"] and "test suite" in raised["A"]
+    assert not any(needle in raised[letter] for letter in "DE" for needle in ("361-constraint", "test suite"))
+    assert "kept every real round-one finding" not in section
+    assert "Neither raised A's N1024 Gibbs-sample provenance point" in section
+
+
+def test_readme_first_pass_names_a_confirmed_slip_the_reconciler_dropped() -> None:
+    """NATIVE_RLWE_SPARSE_WITNESS_AUDIT's 'add |H|' was confirmed and dropped, not left unconfirmed."""
+    section = _readme_section("## First pass")
+    assert "add |H|" in section and "judged not to affect" in section
+
+
+@pytest.mark.skipif(not (REVIEWS_DIR / "pass1").is_dir(), reason="the first pass is not in this checkout")
+def test_readme_records_the_corrections_and_the_first_pass_counts_after_them() -> None:
+    # Counted from the judge rows, not the store: a later re-review of a first-pass note
+    # (import, then render) replaces its stored review, but not what the first pass found.
+    section = _readme_section("### Corrections (2026-10-22)")
+    assert "corrections/2026-10-22.jsonl" in section and "audit-correction-2026-10-22" in section
+    assert "corrections/2026-10-22-r2.jsonl" in section and "audit-correction-2026-10-22-r2" in section
+    stems = {p["stem"] for path in sorted((REVIEWS_DIR / "pass1").glob("batch_*.json"))
+             for p in json.loads(path.read_text(encoding="utf-8"))["notes"]}
+    rows = _judge_rows(REVIEW_SOURCES["claude-opus-5.5-two-judges-reconciled-2026-10-21"])
+    rows |= _judge_rows(REVIEW_SOURCES["audit-correction-2026-10-22"])
+    counts = {o: sum(rows[s]["overall"] == o for s in stems) for o in ("needs-work", "sound")}
+    stated = re.search(r"stood at (\d+) needs-work and (\d+) sound", " ".join(section.split()))
+    assert len(stems) == 30 and stated
+    assert (int(stated.group(1)), int(stated.group(2))) == (counts["needs-work"], counts["sound"])
+
+
+
+@pytest.mark.parametrize("with_claim", [False, True])
+def test_unclear_review_remains_in_select_export_and_queue(tmp_path, with_claim):
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    claims = [_claim("Does the radial bound hold for every saved input", verdict="unclear")] if with_claim else []
+    row = _row(tmp_path, overall="unclear", claims=claims)
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/unclear.jsonl", [row])], "j")
+    assert [p.stem for p in R.select_notes(tmp_path)] == ["FIXTURE_NOTE"]
+    R.export_batches(tmp_path, tmp_path / "next", R.select_notes(tmp_path))
+    assert "FIXTURE_NOTE" in (tmp_path / "next/batch_01.json").read_text()
+    R.render(tmp_path)
+    assert "FIXTURE_NOTE" in (tmp_path / R.QUEUE).read_text().split("## Next 30")[1]
+
+
+def test_indented_quote_keeps_its_qualifier_without_silent_truncation(tmp_path):
+    words = " ".join(["the bound holds on the saved input"] * 8) + " but only when the field size is prime"
+    text = "- " + "\n        ".join(words.split(" "))
+    _write(tmp_path, "LONG_NOTE", "# Long\n\nReview pending.\n\n" + text)
+    row = _row(tmp_path, stem="LONG_NOTE", claims=[_claim(words)])
+    outcome = R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/long.jsonl", [row])], "j")
+    claim = R.load_reviews(tmp_path)["notes"]["LONG_NOTE"]["claims"][0]
+    assert claim["quote"].endswith("field size is prime")
+    assert outcome["cut"] == [] and claim["verified"] is True
+
+
+def test_numbered_sections_are_not_all_derivations(tmp_path):
+    body = "# Example\n\nReview pending.\n\n## 1. Result\n\nA finite result.\n\n## 2. Method\n\nAn experiment.\n\n## 3. Proof\n\nA proof.\n\n## 4. Decision\n\nStop.\n"
+    packet = X.parse_note(_write(tmp_path, "EXAMPLE", body))
+    assert [d["heading"] for d in packet.derivations] == ["3. Proof"]
+
+
+def test_stale_queue_gives_an_explicit_export_for_unlabelled_note(tmp_path):
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path)
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/row.jsonl", [row])], "j")
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE.replace("LOCAL APPLICATION REVIEW PENDING", "Local derivations require review") + "\nChanged.\n")
+    R.render(tmp_path)
+    stale = (tmp_path / R.QUEUE).read_text().split("## Stale")[1].split("## Next")[0]
+    assert "export --out-dir DIR --note FIXTURE_NOTE" in stale
+
+
+@needs_reviews
+@pytest.mark.parametrize("later_stem", ["NEW_REVIEW", "AFFINE_CLUSTER_NATIVE_PROBE"])
+def test_rebuild_check_accepts_later_imports(tmp_path, capsys, monkeypatch, later_stem):
+    import sys
+    module = sys.modules[__name__]
+    stored = _stored()
+    stored[later_stem] = {"judge": "later-pass", "content_sha": "f" * 64}
+    monkeypatch.setattr(module, "_stored", lambda: stored)
+    test_readme_rebuild_commands_reproduce_the_stored_reviews(tmp_path, capsys)
+
+
+
+def test_explicit_status_selection_does_not_add_unclear_notes_of_other_statuses(tmp_path):
+    _write(tmp_path, "FIXTURE_NOTE", FIXTURE_NOTE)
+    row = _row(tmp_path, overall="unclear", claims=[])
+    R.import_reviews(tmp_path, [_jsonl(tmp_path / "out/unclear.jsonl", [row])], "j")
+    assert R.select_notes(tmp_path, statuses=("superseded",)) == []
+
+
+@needs_reviews
+def test_historical_correction_checks_do_not_pin_later_reviews_or_note_edits(monkeypatch, tmp_path):
+    import sys
+    module = sys.modules[__name__]
+    # A routine later review may quote different claims, and an edited note legitimately
+    # changes both its current review and what the queue flags. Historical checks use the
+    # saved judge rows and packets, never this mutable state.
+    monkeypatch.setattr(module, "_stored", lambda: {})
+    monkeypatch.setattr(module, "POLAR_NOTE", tmp_path / "later-note.md")
+    test_interval_soft_decoder_decision_cut_needs_no_window_qualifier()
+    test_polar_source_design_leads_with_its_family_gap_and_quotes_only_the_note()
+    test_norm_attack_review_keeps_the_k39_global_overstatement()
+    test_opi_power_completion_quote_keeps_its_degree_condition()
+    test_corrected_findings_state_the_note_and_artifact_correctly(
+        "PRIME_CHARACTER_INTERLEAVED_PROBE", "The joint product correlation is enhanced", "gap",
+        "cannot hold for those reported cases", "do not contradict")

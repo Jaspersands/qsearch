@@ -1,0 +1,307 @@
+"""The classical baselines a quantum proposal should be compared against, and a recommender.
+
+    from tools.corpus.baselines import recommend, validate_catalog, load_catalog
+    recs = recommend(Corpus(), "sampling the Gibbs law of a signed parity-check code")
+    problems = validate_catalog(load_catalog())
+
+The catalog (`baselines.json`, next to this module) lists named classical algorithms: the
+problem each solves, three to six lowercase mechanism keywords, references (arXiv ids and
+research notes by stem) and, when the repository has one, a command that runs it or the
+library function that computes it.
+
+A baseline's score is the fraction of its keywords found in the idea, plus a tenth for each
+note or negative among the ten documents nearest the idea that names it (its name or an
+alias, on word boundaries; a note counts once however many of its sections are near). The
+score ranks leads to run; it is not a judgement that the baseline wins.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+import string
+import unicodedata
+from dataclasses import dataclass
+from pathlib import Path
+
+from tools.corpus.api import Corpus, Hit
+from tools.corpus.ranking import query_terms
+
+NEARBY = 10  # note sections and negatives searched for citations; each citing note or negative adds 1 / NEARBY
+CATALOG = Path(__file__).with_name("baselines.json")
+FIELDS = ("id", "name", "aliases", "problem", "mechanisms", "summary", "references", "runnable")
+_TEXT_FIELDS = ("id", "name", "problem", "summary")
+_LIST_FIELDS = ("aliases", "mechanisms", "references")
+_ARXIV = re.compile(r"\d{4}\.\d{4,5}")
+_STEM = re.compile(r"[A-Z0-9_]+")
+_ENTRY = re.compile(r"[\w./-]+\.py:\w+")
+
+
+class CatalogError(ValueError):
+    """The baseline catalog cannot be read or is not well formed."""
+
+
+def load_catalog(path: Path | None = None) -> list[dict]:
+    """The catalog's entries, not yet validated (see `validate_catalog`; `recommend` refuses an
+    invalid catalog). CatalogError when the file cannot be read, is not JSON or has no
+    "baselines" list."""
+    path = Path(CATALOG if path is None else path)
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except OSError as exc:
+        raise CatalogError(f"cannot read the baseline catalog {path}: {exc.strerror or exc}") from exc
+    except ValueError as exc:  # JSONDecodeError, or bytes that are not UTF-8
+        raise CatalogError(f"the baseline catalog {path} is not valid JSON: {exc}") from exc
+    if not isinstance(data, dict) or not isinstance(data.get("baselines"), list):
+        raise CatalogError(f'the baseline catalog {path} must be an object with a "baselines" list')
+    return data["baselines"]
+
+
+def _reference_ok(ref: object) -> bool:
+    """{"arxiv": "2609.40036"} or {"note": "PRIME_CHARACTER_OPI"} (a research/<STEM>.md file)."""
+    if not isinstance(ref, dict) or len(ref) != 1:
+        return False
+    (key, value), = ref.items()
+    pattern = {"arxiv": _ARXIV, "note": _STEM}.get(key)
+    return pattern is not None and isinstance(value, str) and pattern.fullmatch(value) is not None
+
+
+def _keyword_problem(keyword: object) -> str | None:
+    """Why a mechanism keyword cannot be matched as written, or None.
+
+    Keywords are lowercase and matched on the ASCII words `tokens` keeps. One with no such word
+    ("-") would match every idea, and a letter `tokens` drops (the "χ" of "χ² test") would
+    quietly widen the keyword to the rest of it.
+    """
+    shown = json.dumps(keyword, ensure_ascii=False)
+    if not isinstance(keyword, str):
+        return f"mechanism {shown} must be a string"
+    ignored = sorted(set(re.findall(r"[^\W\d_]", _fold(keyword))) - set(string.ascii_lowercase))
+    if ignored:
+        return f"mechanism {shown} has letters the matcher ignores ({''.join(ignored)}); spell it in ASCII"
+    if not tokens(keyword):
+        return f"mechanism {shown} has no letter or digit, so it would match every idea"
+    if keyword != keyword.lower():
+        return f"mechanism {shown} must be lowercase"
+    return None
+
+
+def validate_catalog(entries: list[dict]) -> list[str]:
+    """Problems with catalog entries, one line each; an empty list means the catalog is usable."""
+    problems: list[str] = []
+    seen: set[str] = set()
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            problems.append(f"entry {index + 1}: must be an object")
+            continue
+        label = str(entry.get("id") or f"entry {index + 1}")
+        missing = [name for name in FIELDS if name not in entry]
+        if missing:
+            problems.append(f"{label}: missing field {', '.join(missing)}")
+        for name in _TEXT_FIELDS:
+            if name in entry and not (isinstance(entry[name], str) and entry[name].strip()):
+                problems.append(f"{label}: {name} must be a non-empty string")
+        for name in _LIST_FIELDS:
+            if name in entry and not isinstance(entry[name], list):
+                problems.append(f"{label}: {name} must be a list")
+        if label in seen:
+            problems.append(f"{label}: duplicate id")
+        seen.add(label)
+        mechanisms = entry.get("mechanisms")
+        if isinstance(mechanisms, list):
+            if not 3 <= len(mechanisms) <= 6:
+                problems.append(f"{label}: mechanisms must be 3 to 6 keywords, found {len(mechanisms)}")
+            problems.extend(f"{label}: {problem}" for m in mechanisms if (problem := _keyword_problem(m)))
+        if isinstance(entry.get("aliases"), list) and not all(isinstance(a, str) and a.strip() for a in entry["aliases"]):
+            problems.append(f"{label}: aliases must be non-empty strings")
+        names = [("name", entry.get("name"))] + [
+            ("alias", a) for a in (entry["aliases"] if isinstance(entry.get("aliases"), list) else ())
+        ]
+        problems.extend(
+            f"{label}: {field} {json.dumps(value, ensure_ascii=False)} has no word to match, "
+            "so it would cite almost every note"
+            for field, value in names
+            if isinstance(value, str) and value.strip() and not query_terms(_fold(value))
+        )
+        for ref in entry.get("references") if isinstance(entry.get("references"), list) else ():
+            if not _reference_ok(ref):
+                problems.append(f"{label}: malformed reference {json.dumps(ref)}")
+        runnable = entry.get("runnable")
+        if runnable is not None and not (
+            isinstance(runnable, dict)
+            and runnable
+            and set(runnable) <= {"command", "entry"}
+            and all(isinstance(runnable.get(key, "x"), str) and runnable.get(key, "x").strip() for key in runnable)
+            and ("entry" not in runnable or _ENTRY.fullmatch(runnable["entry"]))
+        ):
+            problems.append(f"{label}: runnable must be null or {{command?, entry?}} with at least one, entry path.py:name")
+    return problems
+
+
+@dataclass
+class Recommendation:
+    baseline: dict
+    score: float
+    matched: list[str]
+    evidence: list[Hit]
+
+
+# Plurals of "-sis" words, which the rules below would not undo ("bases" would be "base").
+_IRREGULAR = {"bases": "basis", "analyses": "analysis", "hypotheses": "hypothesis", "syntheses": "synthesis"}
+
+
+def _singular(word: str) -> str:
+    """'glasses' -> 'glass', 'parities' -> 'parity', 'bases' -> 'basis', 'codes' -> 'code',
+    'gibbs' -> 'gibb'; 'glass', 'basis' and words of three letters stay."""
+    if word in _IRREGULAR:
+        return _IRREGULAR[word]
+    if word.endswith(("sses", "sis")):
+        return word[:-2] if word.endswith("sses") else word
+    if len(word) > 4 and word.endswith("ies"):
+        return word[:-3] + "y"
+    if len(word) > 3 and word.endswith("s") and not word.endswith("ss"):
+        return word[:-1]
+    return word
+
+
+# German umlauts as their usual transcription, so "Gröbner" is "Groebner"; other accents are dropped.
+_UMLAUTS = str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"})
+# One spelling per word on both sides of a match: British spellings, accent-free "Grobner",
+# the run-together "MaxCut", and the abbreviations the repository's notes use for problems
+# that catalog keywords spell out ("OPI" is "optimal polynomial intersection").
+_SPELLINGS = {
+    "colouring": "coloring",
+    "colour": "color",
+    "coloured": "colored",
+    "grobner": "groebner",
+    "maxcut": "max cut",
+    "opi": "optimal polynomial intersection",
+    "mq": "multivariate quadratic",
+    "lpn": "learning parity with noise",
+    "cvp": "closest vector",
+    "usd": "unambiguous state discrimination",
+    "rs": "reed solomon",
+    "sdp": "semidefinite programming",
+    "fft": "fourier transform",
+    "bp": "belief propagation",
+    "bpqm": "belief propagation",
+    "sampler": "sampling",
+    "decoder": "decoding",
+}
+# Each variant's replacement as tokens, made singular like every other word ("unambiguou").
+_SPELLING_TOKENS = {word: [_singular(part) for part in spelling.split()] for word, spelling in _SPELLINGS.items()}
+# In a keyword, `k` stands for a number: "max k cut" matches "max-3-cut", "Max-q-Cut" and "max-k-cut".
+PLACEHOLDER = "k"
+
+
+def tokens(text: str) -> list[str]:
+    """Lowercase alphanumeric words, singular: "sses" becomes "ss", "ies" becomes "y" in words
+    longer than four letters, "bases" is `basis` and a "-sis" word keeps its s, and otherwise a
+    final single "s" is dropped from words longer than three letters. Umlauts become ae/oe/ue
+    and other accents are dropped ("Gröbner" is `groebner`), and a few spelling variants and
+    abbreviations are folded into one (`_SPELLINGS`: "colouring" is `coloring`, "MaxCut" is
+    `max cut`, "OPI" is `optimal polynomial intersection`)."""
+    words = [_singular(w) for w in re.findall(r"[a-z0-9]+", _fold(text))]
+    return [part for word in words for part in _SPELLING_TOKENS.get(word, [word])]
+
+
+def _fold(text: str) -> str:
+    """Lowercase, umlauts as ae/oe/ue, other accents dropped and compatibility forms unfolded ("²" is "2")."""
+    folded = unicodedata.normalize("NFKD", text.lower().translate(_UMLAUTS))
+    return "".join(ch for ch in folded if not unicodedata.combining(ch))
+
+
+def _number_like(word: str) -> bool:
+    return word.isdigit() or word in {PLACEHOLDER, "q"}
+
+
+def keyword_matches(keyword: list[str], idea: list[str]) -> bool:
+    """Whether a keyword's tokens occur in an idea's tokens.
+
+    In any order, unless the keyword has a word of one letter or digit (the `k` placeholder
+    among them): then its tokens must occur in a row, so "p spin" matches "p-spin" but not
+    "depth p on a spin chain" and "3-sat" matches "3-SAT" but not "SAT for 3 colourings". The
+    placeholder takes a number, k or q in its place ("max k cut" matches "max-3-cut" but not
+    "max cut at depth 3").
+    """
+    if not any(len(token) == 1 for token in keyword):
+        return set(keyword) <= set(idea)
+    width = len(keyword)
+
+    def fits(window: list[str]) -> bool:
+        return all(word == token or (token == PLACEHOLDER and _number_like(word)) for token, word in zip(keyword, window))
+
+    return any(fits(idea[i : i + width]) for i in range(len(idea) - width + 1))
+
+
+def _name_pattern(baseline: dict) -> re.Pattern[str]:
+    names = [baseline["name"], *baseline.get("aliases", [])]
+    return re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?:s|es)?(?!\w)", re.I)
+
+
+def _source(hit: Hit) -> str:
+    """What a citation counts as: a note file once, however many of its sections are near; each registry record."""
+    return hit.path if hit.kind == "note" else hit.doc_id
+
+
+def _named(text: str, patterns: list[re.Pattern[str]]) -> set[int]:
+    """Indexes of the baselines a text names.
+
+    A mention that lies inside a longer mention of another baseline counts only for that one:
+    "Prange" inside "USD-Prange" or "product-USD/Prange" names the USD-Prange sampler, not
+    Prange information-set decoding.
+    """
+    spans = [(m.start(), m.end(), i) for i, pattern in enumerate(patterns) for m in pattern.finditer(text)]
+    return {
+        i
+        for start, end, i in spans
+        if not any(j != i and s <= start and end <= e and e - s > end - start for s, e, j in spans)
+    }
+
+
+def _citing(hits: list[Hit], named: dict[str, set[int]], index: int) -> list[Hit]:
+    """The nearest hit of each source that names baseline `index`."""
+    seen: set[str] = set()
+    found: list[Hit] = []
+    for hit in hits:
+        if _source(hit) not in seen and index in named[hit.doc_id]:
+            seen.add(_source(hit))
+            found.append(hit)
+    return found
+
+
+def recommend(corpus: Corpus, idea: str, k: int = 5, catalog: list[dict] | None = None) -> list[Recommendation]:
+    """Catalog baselines for an idea, best first: keyword overlap plus nearby notes that name them.
+
+    A keyword matches when its tokens occur among the idea's tokens (`keyword_matches`): in
+    any order, or in a row when the keyword has a word of one character, such as the `k`
+    placeholder that stands for a number ("max k cut") or the p of "p spin". The ten
+    note sections and negatives the corpus ranks nearest the idea are read in full; each note
+    or negative among them that names a baseline adds 0.1 to its score (a note once, however
+    many of its sections are near) and its nearest hit is returned as evidence. Baselines
+    scoring 0 are left out. CatalogError when the catalog cannot be loaded or `validate_catalog`
+    finds a problem in it.
+    """
+    entries = load_catalog() if catalog is None else catalog
+    problems = validate_catalog(entries)
+    if problems:
+        where = f" {CATALOG}" if catalog is None else ""
+        raise CatalogError(f"invalid baseline catalog{where}: {'; '.join(problems)}")
+    words = tokens(idea)
+    hits = corpus.search(idea, kinds=("note", "negative"), k=NEARBY)
+    patterns = [_name_pattern(baseline) for baseline in entries]
+    named: dict[str, set[int]] = {}
+    for hit in hits:
+        doc = corpus.get(hit.doc_id)
+        text = f"{doc.title}\n{doc.text}" if doc is not None else f"{hit.title}\n{hit.snippet}"
+        named[hit.doc_id] = _named(text, patterns)
+    found: list[Recommendation] = []
+    for index, baseline in enumerate(entries):
+        mechanisms = baseline["mechanisms"]
+        matched = [m for m in mechanisms if keyword_matches(tokens(m), words)]
+        citing = _citing(hits, named, index)
+        score = round(len(matched) / len(mechanisms) + len(citing) / NEARBY, 4)
+        if score > 0:
+            found.append(Recommendation(baseline, score, matched, citing))
+    found.sort(key=lambda rec: (-rec.score, rec.baseline["name"]))
+    return found[: max(k, 0)]

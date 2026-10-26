@@ -23,7 +23,7 @@ from tools.corpus.ranking import (
     snippet,
     top_rows,
 )
-from tools.corpus.sources import discover, parse_source
+from tools.corpus.sources import GLOBS, _parser_for, discover, parse_source
 from tools.corpus.store import Store
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -43,6 +43,36 @@ GROUPS: dict[str, tuple[str, ...]] = {
 
 def default_root() -> Path:
     return Path(os.environ.get("QSEARCH_ROOT", REPO_ROOT)).resolve()
+
+
+class CorpusRootError(ValueError):
+    """The root has nothing to index: it is missing, not a Q-Search checkout, or holds no documents."""
+
+
+def checkout_root(root: Path | None = None) -> Path:
+    """`root` (default: QSEARCH_ROOT or this repository), resolved, once it is known to be a checkout.
+
+    Raises CorpusRootError before anything is written when the path is not a directory, has
+    no research/ directory or holds no file the corpus indexes, so a mistyped --root never
+    leaves an index tree behind and the MCP server does not start on it.
+    """
+    path = Path(root).resolve() if root else default_root()
+    if not path.is_dir():
+        raise CorpusRootError(f"{path} is not a directory")
+    if not (path / "research").is_dir():
+        raise CorpusRootError(f"{path} is not a Q-Search checkout: it has no research/ directory")
+    if not _has_sources(path):
+        raise CorpusRootError(f"nothing to index under {path}: no registry, note, code or literature file")
+    return path
+
+
+def _has_sources(root: Path) -> bool:
+    """Whether `root` holds a file `discover` would return; stops at the first, so it costs far less."""
+    for pattern in GLOBS:
+        for path in root.glob(pattern):
+            if path.is_file() and _parser_for(path.relative_to(root).as_posix()) is not None:
+                return True
+    return False
 
 
 @dataclass
@@ -185,11 +215,27 @@ class Corpus:
             assert tfidf is not None
             tfidf.patch(set(removed), self.store.texts(added))
         else:
+            if not self.store.count():
+                raise CorpusRootError(f"nothing to index under {self.root}: source files hold no documents")
             tfidf = TfidfState.fit(self.store.texts())
         tfidf.epoch = current
         tfidf.save(self.tfidf_path)
         self._tfidf, self._kinds, self._dense = tfidf, None, None
         return not patchable
+
+    def refit(self) -> None:
+        """Refit TF-IDF from every stored text now, and save it.
+
+        Between refits, changed documents are patched in with the vocabulary and IDF of the
+        last fit, so cosines depend on that history (by up to a few hundredths). A refit
+        makes them a function of the current documents alone.
+        """
+        self._state()
+        self._sync_tfidf("", "", [], [], force_refit=True)
+
+    def changed_since_fit(self) -> int:
+        """Documents patched into the TF-IDF state since it was last fit (0 right after a refit)."""
+        return self._state().changed_since_fit
 
     def _embedder_or_default(self) -> Embedder:
         if self._embedder is None:
@@ -330,6 +376,52 @@ class Corpus:
 
     def been_tried(self, idea: str, k: int = 5, dense: bool = False) -> dict[str, list[Hit]]:
         return {name: self.search(idea, kinds=kinds, k=k, dense=dense) for name, kinds in GROUPS.items()}
+
+    def cosine(self, text: str, doc_ids: list[str]) -> dict[str, float]:
+        """TF-IDF cosine between `text` and each listed document; ids not in the index are left out.
+
+        Unlike `Hit.score` (a reciprocal-rank fusion score), this is a true cosine in [0, 1].
+        """
+        state = self._state()
+        scores = state.scores(text)
+        found: dict[str, float] = {}
+        for doc_id in doc_ids:
+            rowid = self.store.row_of(doc_id)
+            position = np.flatnonzero(state.rowids == rowid) if rowid is not None else ()
+            if len(position):
+                found[doc_id] = float(scores[position[0]])
+        return found
+
+    def cosine_hits(
+        self, text: str, kinds: tuple[str, ...], minimum: float, exclude: tuple[str, ...] = ()
+    ) -> list[Hit]:
+        """Every document of `kinds` whose TF-IDF cosine with `text` is at least `minimum`, highest first.
+
+        Exhaustive: each document of those kinds is scored, unlike `search`, whose rank fusion
+        can leave a close document out of its top k. A hit's `score` is the cosine rounded to
+        four places, and that rounded score is what is compared with `minimum`, so a float32
+        cosine of 0.9999997, shown as 1.0, matches a minimum of 1. Ties are ordered by doc id.
+        Doc ids in `exclude` are left out.
+        """
+        state = self._state()
+        scores = state.scores(text)
+        near = np.flatnonzero(np.isin(self._row_kinds(), list(kinds)) & (scores >= minimum - 1e-4))
+        rounded = {int(i): round(float(scores[i]), 4) for i in near}
+        keep = [i for i, score in rounded.items() if score >= minimum]
+        rows = self.store.rows(int(state.rowids[i]) for i in keep)
+        hits: list[Hit] = []
+        for i in keep:
+            doc = rows.get(int(state.rowids[i]))
+            if doc is None or doc.doc_id in exclude:
+                continue
+            score = rounded[i]
+            hits.append(Hit(doc.doc_id, doc.kind, doc.path, doc.line, doc.title, score, snippet(doc.text, text), doc.meta))
+        hits.sort(key=lambda hit: (-hit.score, hit.doc_id))
+        return hits
+
+    def kind_count(self, kinds: tuple[str, ...]) -> int:
+        """How many indexed documents are of these kinds."""
+        return int(np.isin(self._row_kinds(), list(kinds)).sum())
 
     def matrix(self, kind: str = "negative") -> tuple[list[str], Any]:
         """Doc ids of one kind and their pairwise TF-IDF cosine similarities (sparse)."""

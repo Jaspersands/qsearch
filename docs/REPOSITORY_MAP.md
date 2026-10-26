@@ -33,8 +33,8 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 
 - `site/` - public progress-page styles, assets, and frontend behavior.
 - `tools/` - maintenance and artifact-generation utilities (`build_progress_snapshot.py`).
-- `tools/corpus/` - searchable index and MCP server over notes, registries, theorem modules and literature ("has this been tried?"); index lives in the git-ignored `research/corpus_index/`.
-- `tools/arxiv_watch/` - weekly arXiv collision watch; digest in `research/audits/ARXIV_WATCH.md`.
+- `tools/corpus/` - searchable index and MCP server over notes, registries, theorem modules and literature ("has this been tried?"); index lives in the git-ignored `research/corpus_index/`. `near-duplicates` and `check-new` (MCP `check_duplicate_negative`) flag negatives that restate a retained or quarantined one; report in `research/audits/REGISTRY_DUPLICATES.md`. `baselines` (MCP `classical_baselines`) recommends the classical algorithms an idea must beat, from the catalog `tools/corpus/baselines.json`.
+- `tools/arxiv_watch/` - weekly arXiv collision watch; digest in `research/audits/ARXIV_WATCH.md`; reviewed verdicts in `research/audits/arxiv_verdicts.json`, recorded with `watch.py --verdict` or by the `judge.py` export/import loop for unreviewed flags.
 - `tools/audit/` - read-only audits of the registry (failure modes, rediscovery); outputs in `research/audits/`.
 - `tools/claim_checker/` - flags the fine print (input loading, readout, oracle-only, baselines) in a quantum-advantage abstract.
 - `tools/circuit_search/` - searches local readout circuits (product, adaptive) against certified PPT and collective bounds; DCP packets first.
@@ -43,6 +43,10 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/split_cli/` - the generator and verifier that split the old 30,000-line `qsearch.py` into `qsearch_cli/`; `migrate.py sweep` moves old-style additions into the package. Manifest in `research/audits/cli_manifest.json`.
 - `tools/cockpit/` - builds `site/data/cockpit.json` for `cockpit.html`, a dashboard of what the agents are working on.
 - `tools/spend/` - spend ledger, opt-in timing wrapper (`timed.py`) and per-day Codex token totals; report in `research/audits/SPEND_REPORT.md`.
+- `tools/dqi_screen/` - screens a DQI candidate against the Mazumder-Niroula soundness rules (Prange threshold, licensed reach, margin cap, restarts) and runs a best-of-N Prange baseline; also the `screen_dqi_candidate` MCP tool. No committed outputs.
+- `tools/preflight/` - pre-commit checks for what has blocked a merge: JSON under `research/hypotheses`, `research/registry`, `research/audits` and `research/classical_baselines` that does not parse, CLI references (followed through their imports) to `theorems/`, `core/` or `qsearch_cli/` modules missing on disk or not tracked by git, manifest subcommands missing from the registry; prints problems and exits 1, writes nothing.
+- `tools/referee/` - independent referee for review-pending notes: exports judge batches, verifies verbatim quotes on import; outputs in `research/audits/reviews/` and `research/audits/REFEREE_QUEUE.md`.
+- `tools/brief/` - the per-session agent brief: registry ids added and removed in the last week, open arXiv flags and verdict actions, referee flags, preflight problems, cockpit inertia, near duplicates of new negatives and the five checks to run; a missing source reads "Not available"; outputs in `research/audits/AGENT_BRIEF.md` and `research/audits/agent_brief.json`.
 - `formal/` - Lean 4 project formalizing parts of the prime-character exterior bound; built by its own workflow, not by `validate.yml`.
 - `docs/` - human-readable project maps and research documentation.
 - `docs/papers/classical-competitors/` - draft preprint on three classical or local competitors; every number is generated from a committed report, and `reproduce.sh` regenerates them.

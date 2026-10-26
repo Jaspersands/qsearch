@@ -2,7 +2,9 @@
 
     python tools/corpus/mcp_server.py [--root PATH] [--dense auto|on|off]
 
-Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id).
+Tools: been_tried(idea, k), search_corpus(query, kinds, tags, k), get_doc(doc_id),
+classical_baselines(idea, k), check_duplicate_negative(claim, threshold, allow),
+screen_dqi_candidate(params) (the DQI soundness screen of tools/dqi_screen; no index needed).
 The index refreshes incrementally before a query when it is older than --refresh-seconds.
 --dense auto uses embeddings only while every document has one (after `build --dense`);
 --dense on also embeds new documents at each refresh. Results carry `index_incomplete` and
@@ -22,19 +24,22 @@ if __package__ in (None, ""):
 
 from mcp.server.fastmcp import FastMCP  # noqa: E402
 
-from tools.corpus.api import Corpus  # noqa: E402
-from tools.corpus.cli import _hit_json, _issues_json  # noqa: E402
-from tools.corpus.ranking import Embedder  # noqa: E402
+from tools.corpus.api import Corpus, CorpusRootError, checkout_root  # noqa: E402
+from tools.corpus.baselines import CatalogError, recommend  # noqa: E402
+from tools.corpus.cli import _hit_json, _issues_json, _recommendation_json  # noqa: E402
+from tools.corpus.duplicates import NO_NEGATIVES, PARAPHRASE_LIMITATION, allow_patterns, claim_report, nearest_negatives, valid_threshold  # noqa: E402
+from tools.corpus.ranking import Embedder, query_terms  # noqa: E402
+from tools.dqi_screen.screen import candidate_from_dict, screen  # noqa: E402
 
 
 def create_server(
     root: Path | None = None, dense: str = "auto", refresh_seconds: float = 30.0, embedder: Embedder | None = None
 ) -> FastMCP:
-    corpus = Corpus(Path(root) if root else None, embedder=embedder)
+    corpus = Corpus(checkout_root(Path(root) if root else None), embedder=embedder)  # CorpusRootError if not a checkout
     last_refresh = [0.0]
 
-    def ready() -> bool:
-        if time.time() - last_refresh[0] >= refresh_seconds:
+    def ready(force: bool = False) -> bool:
+        if force or time.time() - last_refresh[0] >= refresh_seconds:
             corpus.refresh(dense=dense == "on")
             last_refresh[0] = time.time()
         # auto: a ranker that cannot see the newest documents would push them down, so wait for full coverage
@@ -72,6 +77,79 @@ def create_server(
             return {"error": f"unknown doc_id {doc_id}"}
         return asdict(doc)
 
+    @server.tool()
+    def screen_dqi_candidate(params: dict) -> dict:
+        """Screen a DQI candidate against the Mazumder-Niroula soundness rules (arXiv:2610.06753).
+        params: name, objective ("count" or "cosine"), q, m, n (rank(B), the optimizer-code
+        dimension), rho (required and validated; the cosine objective ignores it in its formulas), and optionally radius,
+        min_distance, decoder_known, encoder_known (a polynomial-time encoder attains Q*), p, b, c,
+        classical_witness, finite_dqi_mean (see tools/dqi_screen/README.md and examples). Integer
+        fields accept decimal strings: send q above 2^53 as a string from JavaScript clients
+        (e.g. "2305843009213693951"). Supplied c must be consistent with rho even for cosine.
+        Returns the quantities, each rule's check and a verdict:
+        "not viable", "unknown" or "viable" ("viable" leaves the paper's (R3) encoder rule
+        unresolved when no encoder is known). This is a soundness screen, not a proof: the rules
+        are asymptotic and assume worst-case decoding (of Hamming errors for the count objective,
+        of signed {+-1} error patterns for the cosine)."""
+        try:
+            return asdict(screen(candidate_from_dict(params)))
+        except (TypeError, ValueError, ArithmeticError, RecursionError) as exc:
+            return {"error": str(exc)}
+
+    @server.tool()
+    def classical_baselines(idea: str, k: int = 5) -> dict:
+        """Before claiming a quantum advantage for an idea, list the classical algorithms it must
+        beat: entries of the curated catalog ranked by keyword overlap with the idea plus the
+        nearby notes and negatives that already name them, each with a summary, references and,
+        when one exists, a command to run it or the library function (runnable.entry) that
+        computes it on an instance. A recommendation is a competitor to run, not a
+        verdict; an empty list does not mean no classical baseline applies."""
+        ready()
+        try:
+            recs = recommend(corpus, idea, k=k)
+        except CatalogError as exc:
+            return {"error": str(exc)}
+        return {"idea": idea, "recommendations": [_recommendation_json(r) for r in recs], **_issues_json(corpus)}
+
+    @server.tool()
+    def check_duplicate_negative(claim: str, threshold: float = 0.6, allow: list[str] | None = None) -> dict:
+        """Before filing a new negative result, check whether a retained negative is worded
+        closely to it. Paraphrases can pass: nearest gives advisory search leads on no match,
+        with search_rank and cosine; read them or run been_tried. Returns the retained (and quarantined) negatives whose TF-IDF cosine with the claim
+        is at least threshold, highest first (the closest five; total counts them all);
+        duplicate is true when there is any. Pass the claim and its reason. A match is a record
+        to read and extend, not proof of identity: most matches of generated records are sweep
+        siblings, one template filled in for another instance. After reading such a sibling,
+        pass its id in allow (or an id prefix ending in * for its family): it is then listed
+        under allowed and does not count. If index_incomplete is true, no match does not mean
+        the claim is new. threshold must be in (0, 1]. A claim with no words to compare (empty
+        or only stop words), a threshold outside (0, 1], a bare * in allow or an index with no
+        negative records returns an error."""
+        if not query_terms(claim):
+            return {"error": "the claim has no words to compare (it is empty or only stop words)"}
+        try:
+            threshold = valid_threshold(threshold)
+            patterns = allow_patterns(allow)
+        except ValueError as exc:
+            return {"error": str(exc)}
+        # Always refresh (a no-op costs well under a second): a negative another agent filed
+        # inside the refresh window is exactly the duplicate this gate exists to catch.
+        ready(force=True)
+        report = claim_report(corpus, claim, threshold=threshold, allow=patterns)
+        if report.documents == 0:
+            return {"error": NO_NEGATIVES, **_issues_json(corpus)}
+        return {
+            "claim": claim,
+            "threshold": threshold,
+            "matches": [_hit_json(h) for h in report.matches],
+            "total": report.total,
+            "allowed": [{"doc_id": h.doc_id, "score": h.score} for h in report.allowed],
+            "duplicate": bool(report.matches),
+            "nearest": nearest_negatives(corpus, claim) if not report.matches else [],
+            "limitation": PARAPHRASE_LIMITATION,
+            **_issues_json(corpus),
+        }
+
     return server
 
 
@@ -81,7 +159,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dense", choices=("auto", "on", "off"), default="auto")
     parser.add_argument("--refresh-seconds", type=float, default=30.0)
     args = parser.parse_args(argv)
-    create_server(Path(args.root) if args.root else None, args.dense, args.refresh_seconds).run()
+    try:
+        server = create_server(Path(args.root) if args.root else None, args.dense, args.refresh_seconds)
+    except CorpusRootError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    server.run()
     return 0
 
 

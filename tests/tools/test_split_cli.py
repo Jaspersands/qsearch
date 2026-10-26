@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -122,6 +123,24 @@ def _fixture(tmp_path: Path, source: str = MONOLITH) -> Path:
 
 def _run(root: Path, *argv: str) -> subprocess.CompletedProcess:
     return subprocess.run([sys.executable, *argv], cwd=root, capture_output=True, text=True, timeout=120)
+
+
+@pytest.mark.parametrize("package_path", ["repo-other/qsearch_cli", "repo/nested/qsearch_cli"])
+def test_verification_rejects_an_imported_package_from_another_checkout(tmp_path, monkeypatch, package_path):
+    from types import SimpleNamespace
+    from tools.split_cli.verify import _use_root
+    monkeypatch.setitem(sys.modules, "qsearch_cli", SimpleNamespace(__file__=str(tmp_path / package_path / "__init__.py")))
+    with pytest.raises(RuntimeError, match="another checkout"):
+        _use_root(tmp_path / "repo")
+
+
+def test_verification_accepts_its_own_imported_package(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    from tools.split_cli.verify import _use_root
+    monkeypatch.setitem(sys.modules, "qsearch_cli", SimpleNamespace(__file__=str(tmp_path / "qsearch_cli/__init__.py")))
+    monkeypatch.setattr(sys, "path", list(sys.path))
+    _use_root(tmp_path)
+    assert sys.path[0] == str(tmp_path)
 
 
 def test_extract_reads_imports_commands_blocks_and_flags() -> None:
@@ -760,6 +779,7 @@ def test_verify_compares_flag_dispatch_with_the_legacy_main(tmp_path: Path, edit
     clean = _run(root, str(MIGRATE), "verify", "--root", str(root), "--legacy", str(legacy))
     assert clean.returncode == 0, clean.stdout
     registry = root / "qsearch_cli/registry.py"
+    stamp = registry.stat()
     text = registry.read_text()
     first = '    ("other_flag", "theorems.fake_cert", "generate_other"),\n'
     second = '    ("cert_flag", "theorems.fake_cert", "generate_cert"),\n'
@@ -770,6 +790,9 @@ def test_verify_compares_flag_dispatch_with_the_legacy_main(tmp_path: Path, edit
         "module": first + second.replace('"theorems.fake_cert"', '"theorems.fake_mod"'),
     }[edit]
     registry.write_text(text.replace(first + second, changed))
+    # Preserve the timestamp to deterministically reproduce Python's same-second,
+    # same-size stale bytecode case after the clean verification warmed the cache.
+    os.utime(registry, ns=(stamp.st_atime_ns, stamp.st_mtime_ns))
     check = _run(root, str(MIGRATE), "verify", "--root", str(root), "--legacy", str(legacy))
     assert check.returncode == 1 and "DISPATCH" in check.stdout, check.stdout
 

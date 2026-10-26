@@ -1,0 +1,182 @@
+# Preflight
+
+Checks a checkout for the problems that have already blocked a merge. For the agents, one
+line before every commit:
+
+```bash
+python tools/preflight/preflight.py
+```
+
+```bash
+python tools/preflight/preflight.py --json                 # {"root", "problems", "count"}
+python tools/preflight/preflight.py --imports --validate   # also run the two slow checks
+python tools/preflight/preflight.py --root ../other-checkout
+```
+
+It prints one line per problem, `check: path: message`, then `N problems`. It exits 1 when
+there is any problem and 0 when there is none. A `--root` that is not a directory, or that
+has no `qsearch.py` (say `--root qsearch_cli` by mistake), is a usage error (exit 2). Paths
+are relative to the checked root. It writes nothing: git is asked only through commands that
+never write the index, and the slow checks import the checkout with bytecode writing off, so
+they leave no `__pycache__` in it either.
+
+## Why it exists
+
+The merge of 2026-10-19 was blocked twice over:
+
+1. The agents' `qsearch.py` had gained 24 imports of new theorem modules that were in their
+   working copy but not in git. The modules had to be committed first (8831535f). Those
+   imports now live in `qsearch_cli/imports.py`.
+2. A hypothesis contract,
+   `research/hypotheses/dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge_contract.json`,
+   is not valid JSON. It is still broken, and `qsearch.py validate` does not notice: it
+   exits 0 with the file in place.
+
+## Checks
+
+The default checks are static. They parse files, ask git which files it tracks, and import
+nothing. A run takes a few seconds, most of it parsing about 250 MB of
+`research/classical_baselines/`.
+
+| Check | Catches | Message |
+|---|---|---|
+| `json` | Any `*.json` under `research/hypotheses`, `research/registry`, `research/audits` or `research/classical_baselines` that does not parse, including non-UTF-8 bytes | the parser's own error, e.g. `Invalid \escape: line 7 column 167 (char 635)` |
+| `imports` | A `theorems/`, `core/` or `qsearch_cli/` module the CLI refers to that is not on disk, or that `git ls-files` does not list | `missing on disk`, `missing on disk (case differs: theorems/x.py)`, `not tracked by git` or `not tracked by git (intent-to-add only)`, each followed by `; referred to by <file>` (the first such file, and `and N more`); or one `git unavailable` (with the reason when the root is inside a work tree) |
+| `manifest` | A subcommand in `research/audits/cli_manifest.json` that is no longer in `ORDER` in `qsearch_cli/registry.py`, or that moved module | `subcommand X missing from ORDER`, `X: manifest says A, ORDER says B` |
+
+A `.json` file that fails to parse is read again up to three times, 25 to 75 ms apart, as
+`tools/corpus/docs.py`'s `read_json` does: an agent rewriting a registry file in place can be
+caught half way. Integers are parsed as text, so one longer than Python's 4300-digit `int()`
+limit parses. Nesting deeper than Python's `json` can follow is reported with its
+`maximum recursion depth exceeded` message. A `.json` symlink to nothing is a `dangling
+symlink` problem, and a directory the walk cannot list is a `cannot list: <reason>` problem,
+so neither is skipped in silence.
+
+The `imports` check collects references from these places:
+
+- Import statements anywhere in `qsearch.py`, `qsearch_cli/imports.py` and every command
+  module found below (`qsearch_cli/commands/<domain>.py`, which the registry names),
+  including the lazy imports inside command bodies. A file in `qsearch_cli/commands/` that
+  nothing refers to, such as an iCloud copy `general 2.py` or a scratch file, is never
+  loaded by the CLI and is not read. `import theorems.x`, `from core.y import z`, `from
+  qsearch_cli.main import main`, `from theorems import x` and `from qsearch_cli import x`
+  name their file, whether or not it exists. A dotted name that is a directory names its
+  `__init__.py`, and so does `from theorems import sub` when `theorems/sub/` is a
+  directory. A bare name, `from x import f` (the usual style here, and the one an old-style
+  addition to `qsearch.py` uses), counts when `theorems/x.py` exists, else when `core/x.py`
+  exists. Standard library names are skipped.
+  A relative import is read against the importing file's package, since the CLI loads
+  theorem modules as `theorems.x`: in `theorems/x.py`, `from .helper import h` and `from .
+  import helper` name `theorems/helper.py`.
+- The `IMPORTS` table in `qsearch_cli/imports.py`, read with `ast.literal_eval`. A dotted
+  `theorems.x` maps to `theorems/x.py`. A package-style entry, `("theorems", "x")`,
+  `("core", "x")` or `("qsearch_cli", "x")`, which is what `tools/split_cli/migrate.py
+  sweep` writes for `from theorems import x`, maps to `theorems/x.py`, `core/x.py` or
+  `qsearch_cli/x.py` by the same rules. A bare name maps to `theorems/<name>.py` when that
+  file exists, else `core/<name>.py`, the order the CLI puts them on `sys.path`. Standard
+  library names (`os`, `json`, ...), the packages themselves and a module at the top of the
+  checkout (`("qsearch", "main")`, the shim) are skipped.
+- The module column of `DISPATCH` in `qsearch_cli/registry.py`.
+- The module columns of `ORDER` and `FUNCTIONS` in `qsearch_cli/registry.py`, say
+  `qsearch_cli/commands/general.py`. `qsearch_cli/parser.py` imports every `ORDER` module to
+  build the parser, so one that is missing from a clone breaks every command, `--help`
+  included.
+- Import statements inside every module found so far, followed until no new module turns
+  up, by the same rules. A committed theorem module whose new helper was never committed
+  works in the working copy and fails with `ModuleNotFoundError` in a clone. On 2026-10-22
+  the CLI's sources named 962 modules directly and 1092 with their imports.
+
+  These modules, other than command modules, are scanned line by line rather than parsed,
+  which keeps the check at about one second instead of four: an `import` or `from ...
+  import` that starts a line, outside strings and comments, with its bracketed or
+  backslash-continued names. On 2026-10-22 the scan found exactly the import statements a
+  full parse finds in every one of the 1281 files under `theorems/`, `core/` and
+  `qsearch_cli/`.
+
+Each table is read from its last top-level assignment, the one Python keeps, annotated or
+not. A CLI source or command module that does not parse or is not UTF-8, a table of the
+wrong shape (an `IMPORTS` entry whose module is `None`, an `ORDER` that is a dict), or a
+table that is not one literal (`IMPORTS = dict(...)`, or `IMPORTS |= ...`,
+`IMPORTS[k] = ...` or `IMPORTS.update(...)` after it, including direct changes in
+module-level branches/loops, class bodies and function defaults/decorators) is one `imports` problem, `cannot read
+the CLI sources: ...`, and the other checks still run. Its path is the file that cannot be
+read, or `.` for a table.
+
+A module named in another case than its file (`theorems.Foo` for `theorems/foo.py`) is
+missing: Python's import matches case even on macOS, whose file system does not. The
+message names the file, `missing on disk (case differs: theorems/foo.py)`, on every
+platform.
+
+A module that is staged with `git add` counts as tracked, since the commit will include it.
+One marked with `git add -N` (intent to add) does not: `git ls-files` lists it, but a plain
+`git commit` leaves it out. Preflight asks `git diff-files --diff-filter=A` for those and
+reports them as `not tracked by git (intent-to-add only)`. Only plumbing commands run, and
+none of them writes the index: porcelain `git diff` refreshes stale stat data, rewriting
+`.git/index` under `index.lock`, which would fail another agent's `git add` or `git commit`
+in the same checkout.
+
+Git is asked only when the root is the top of its own work tree. Without that (no git, a
+directory that is not a repository, or an exported tree sitting inside some other
+repository such as a dotfiles repository in `$HOME`) the check still reports modules
+missing on disk and adds one `git unavailable` problem instead of calling every module
+untracked. When git works but the root is not the top of the work tree, the problem says
+so: `git unavailable: the root is not the top of a git work tree (git sees it as
+export/)`.
+
+Git is asked about the root's own repository. Variables that point git elsewhere, such as
+the `GIT_DIR` and `GIT_INDEX_FILE` a hook of another repository or worktree exports, are
+dropped. The one exception is a `GIT_INDEX_FILE` directly in the root's own git directory (not a nested worktree directory): a
+pre-commit hook of this checkout under `git commit -a` or `git commit <paths>` gets the index
+that commit will record, and that index is the one checked.
+
+## Slow checks
+
+| Flag | Check | What it does |
+|---|---|---|
+| `--imports` | `resolve` | Uses the same root selection and table lookups as `tools/split_cli/verify.py`: imports every `IMPORTS` name and command function in this process, then imports and looks up the function of every `DISPATCH` certificate flag and the adder of every `ORDER` subcommand, as `qsearch_cli/main.py` and `parser.py` do. For those table lookups it catches import failures and misspelled functions or adders. It does not execute command bodies or check their lazy imported names. One problem per failing name (`x: ...`, `--flag: ...`, `subcommand x: ...`), under the path `qsearch_cli`. |
+| `--validate` | `validate` | Runs `python qsearch.py validate` in the root, as CI does. A non-zero exit is one problem. Validate prints its report as JSON on stdout, so the message is `exit N: K issues, first: <candidate>: <message>`; when there is no report (a crash) it is `exit N:` and the last line of stderr, else of stdout. |
+
+Import-time stdout is redirected to stderr so `--json` remains valid. Imports see only the
+shim path in `sys.argv`, and `SystemExit` (including exit 0) is reported as a resolve failure.
+These checks execute trusted checkout code in this process; they are not a sandbox.
+
+Both together took about 17 seconds on 2026-10-22, and `--imports` alone about 11, the
+static checks included.
+
+## Contract repair
+
+The malformed carry-injection hypothesis contract reported on 2026-10-21 was repaired on
+2026-10-23 by escaping its LaTeX backslash in JSON. The live-data test that pinned the
+syntax error was removed; fixture tests continue to cover invalid escapes. Preflight
+reports malformed files and does not rewrite them.
+
+## Limits
+
+- A bare import statement whose module is in neither `theorems/` nor `core/` is skipped,
+  since it may be a third-party package. Bare packages with an `__init__.py` under either
+  directory are followed in the same order as bare modules. So a bare import of a module that was never
+  written, or was deleted, is not reported. `--imports` does not catch one inside a command
+  body either: it resolves command functions without running them. A dotted or `from
+  theorems import x` import of a missing module is reported.
+- In a module reached through another module, other than a command module, the line scan
+  misses an import in a one-line compound statement (`if x: import y`) or after a semicolon
+  (`x = 1; import y`). An import that starts a line is found whatever follows it. A module
+  that is not valid UTF-8 is checked itself, but its imports are not followed.
+- `from pkg import x`, where `pkg` is a package below `theorems/`, `core/` or `qsearch_cli/`
+  (say `qsearch_cli.commands`), counts `x` as a module only when `pkg/x.py` or `pkg/x/`
+  exists, since `x` may be a name `pkg/__init__.py` defines. So a missing `x` there is not
+  reported. In `theorems`, `core` and `qsearch_cli` themselves, whose `__init__.py` files
+  define nothing the CLI imports from them, `x` is always read as the module `x`.
+- A bare third-party name added to `IMPORTS` (say `numpy`) would be reported as a missing
+  `core/numpy.py`. Today the table holds only `theorems/` and `core/` modules and six
+  standard library names.
+- The `json` check parses only. It does not check schemas or uniqueness of registry IDs.
+  A syntactically valid registry with duplicate IDs passes this check.
+- The `json` check reads only its four directories: 550 of the 1711 tracked
+  `research/**/*.json` files on 2026-10-22. It does not read `research/representation`
+  (619), `research/reductions` (231), `research/phase_workbench` (162),
+  `research/literature_audits` (47), `research/code_equivalence` (34),
+  `research/certificates` (26), `research/coset_workbench` (15), `research/scaling`,
+  `research/quarantine`, or the 25 files at the top of `research/` such as
+  `research/proof_obligations.json`. A broken file there passes. Parsing all of them on
+  2026-10-22 found only the subsequently repaired carry-injection contract.

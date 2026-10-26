@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import importlib.util
-import json
 import os
 import shutil
 import subprocess
@@ -125,15 +124,7 @@ def test_package_matches_upstream_sources() -> None:
     assert _sync().check(REPO) == []
 
 
-REPRODUCE = r'''
-import importlib, json, sys
-module = importlib.import_module("qsearch_classical." + sys.argv[1])
-strip = lambda d: {k: v for k, v in d.items() if "sha256" not in k and k not in ("python_flint_version", "numpy_version")}
-fresh = json.loads(json.dumps(strip(module.run_controls())))
-committed = strip(json.loads(module.REPORT.read_text()))
-diff = sorted(k for k in set(fresh) | set(committed) if fresh.get(k) != committed.get(k))
-print(json.dumps(diff))
-'''
+REPRODUCE = Path(__file__).with_name("classical_report_reproduction.py")
 
 
 @pytest.mark.parametrize("module", [
@@ -144,10 +135,9 @@ def test_package_reproduces_the_committed_report(module: str) -> None:
     pytest.importorskip("flint")
     env = {k: v for k, v in os.environ.items() if k != "PYTHONPATH"} | {
         "PYTHONPATH": str(PACKAGE / "src"), "QSEARCH_CLASSICAL_ROOT": str(REPO)}
-    result = subprocess.run([sys.executable, "-c", REPRODUCE, module], cwd=PACKAGE / "src", env=env,
+    result = subprocess.run([sys.executable, str(REPRODUCE), module], cwd=PACKAGE / "src", env=env,
                             capture_output=True, text=True, timeout=300)
-    assert result.returncode == 0, result.stderr[-2000:]
-    assert json.loads(result.stdout.strip().splitlines()[-1]) == []
+    assert result.returncode == 0, result.stdout + result.stderr
 
 
 def test_package_imports_without_the_repository() -> None:

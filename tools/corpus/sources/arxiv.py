@@ -14,6 +14,7 @@ from typing import Callable
 
 API = "https://export.arxiv.org/api/query"
 ATOM = "{http://www.w3.org/2005/Atom}"
+OPENSEARCH = "{http://a9.com/-/spec/opensearch/1.1/}"
 ARXIV = "{http://arxiv.org/schemas/atom}"
 USER_AGENT = "qsearch-tools/0.1 (research tooling; https://github.com/Jaspersands/qsearch)"
 
@@ -43,13 +44,24 @@ def split_id(raw: str) -> tuple[str, str]:
     return match.group(1), match.group(2) or ""
 
 
-def parse_atom(body: bytes) -> list[Paper]:
+class SearchPage(list):
+    """A list of papers carrying the feed's result count for coverage checks."""
+
+    def __init__(self, papers=(), *, total_results: int | None = None):
+        super().__init__(papers)
+        self.total_results = total_results
+
+
+def parse_atom(body: bytes) -> SearchPage:
     root = ET.fromstring(body)
-    papers = []
+    total = root.findtext(f"{OPENSEARCH}totalResults")
+    if total is not None and (not total.strip().isdigit()):
+        raise ValueError("arXiv feed has invalid totalResults")
+    papers = SearchPage(total_results=int(total) if total is not None else None)
     for entry in root.findall(f"{ATOM}entry"):
         raw_id = entry.findtext(f"{ATOM}id", default="")
         if "/abs/" not in raw_id:
-            continue  # arXiv returns an error entry for malformed queries
+            raise ValueError("arXiv error entry: " + _clean(entry.findtext(f"{ATOM}summary") or raw_id))
         arxiv_id, version = split_id(raw_id)
         categories = [c.get("term", "") for c in entry.findall(f"{ATOM}category")]
         primary = entry.find(f"{ARXIV}primary_category")
@@ -119,6 +131,12 @@ class Client:
             cached.parent.mkdir(parents=True, exist_ok=True)
             cached.write_bytes(body)
         return body
+
+    def invalidate_search(self, search_query: str, max_results: int = 50, start: int = 0) -> None:
+        """An incomplete page must be retried from the service, not its cached response."""
+        if self.cache_dir is not None:
+            url = query_url(search_query, max_results, start)
+            (self.cache_dir / f"{hashlib.sha1(url.encode()).hexdigest()}.xml").unlink(missing_ok=True)
 
     def search(
         self, search_query: str, max_results: int = 50, start: int = 0, sort_by: str = "submittedDate"

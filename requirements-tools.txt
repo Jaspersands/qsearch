@@ -1,6 +1,7 @@
 # Dependencies for tools/ side projects (corpus index, MCP server). Not needed by qsearch.py.
 scikit-learn>=1.4
-mcp>=1.16
+# The corpus server uses the FastMCP v1 API; v2 renames it and changes its contracts.
+mcp>=1.16,<2
 pytest>=8
 # tools/circuit_search PPT bound (tests skip without it).
 cvxpy>=1.4
