@@ -1,5 +1,390 @@
 # Research Agent Handoff
 
+## 2026-10-27 Exact Classical Uniform Sampling Closes Another AG Loophole
+
+Read `/Users/jaspersands/Developer/qsearch-research-work/norm-sampling-2026-10-27/EXACT_SAMPLER.md`,
+HANDOFF.md and VERIFICATION.md. The earlier approximate RESULT.md is now
+superseded by the exact rank-size-biased proposal. Independent AI proof
+and code review accepts the scoped argument; this is not human validation
+or a novelty claim. The reviewer is closed.
+
+The entire previous complete-AG search range now also admits an expected-
+polynomial EXACT classical uniform sampler on the ORIGINAL full-support
+fiber By=s: oddq>=1019,e>=8,q^2>=44e, with the same paid theoretical
+matrix-only adapter and h construction. The adapter is still not a native
+implementation. Small e uses exact systematic rejection. The larger branch
+uses a base/incident mixture to weight offset cosets byq^(k-rankM), then
+one uniform affine solution. Integer thinning and retaining reachable
+rank-deficient systems are essential. Every failed trial redraws outside
+coordinates too. Constant norm multiplicity then gives exact native law.
+
+The acceptance normalizer also gives randomized multiplicative approximate
+counting in this range. There is no approximation floor in the conditional
+sampling law, but caps can returnUNKNOWN. Fixedq,e->infinity remains open;
+atp1019 sufficientcutoff23599/dyadic16384 is unchanged, not a hardness line.
+No positive R promise may be inferred from sampled row combinations.
+
+Final214 selectedtests PASS(45new), fivefile syntax, exact receipt write/
+check and mainqsearchvalidate pass. Two625-coset controls prove exact output
+law and expose bias from fixed outside values, same-coset retries, omitted
+thinning and discarded deficient systems. Nine raw original43x176 witnesses
+verified; that public-geometry input was already easy. No larger instance
+or quantum circuit was executed. Full main-suite was not run.
+
+Separate independent LLL audit in affine-pair-avoidance-review-2026-10-27
+shows the usual value-preserving sparse repair graph has degreeOmega(e)
+on this residual. High-wise independence is not a resampling oracle. No
+fixed-q extractor or classical hardness follows; do not repeat nearby
+LLL/witness sweeps without a concrete new transition kernel or reduction.
+
+Gemini gets the detailed import/adapter/RNG/CLI handoff, not another theory
+assumption. New bundle/review remain outsideGit and are NOT backed up by
+this pointer. No CLI/UI/centralregistry, commit/push, migration or external
+contact. Untracked AG checkpoint and Rees response were preserved. Rees
+outreach remainsUNSENT. Goal remainsACTIVE.
+
+## 2026-10-27 Stronger Classical Attack On The Complete AG Family
+
+Read `/Users/jaspersands/Developer/qsearch-research-work/two-component-norm-2026-10-27/ALL_INPUT_SCOPE.md`,
+MATRIX_ONLY_BRIDGE.md, RESULT.md, REVIEW_RESPONSE.md and HANDOFF.md.
+An independent AI mathematical review accepts the scoped argument; parent
+read the full report and closed the reviewer. No human review or novelty
+claim, and no quantum algorithm was run.
+
+A two-component nonsquare norm cancels the quadratic syndrome terms while
+using twice the auxiliary variables. Exact affine-kernel marginal ranks
+pay the simultaneous-zero probability. Clifford bounds the fixed zero
+coordinates of the complete comparison annihilator by4e+6. Allowing a
+controlled rank loss gives a classical expected-polynomial solver for
+EVERY promised complete AG matrix and EVERY syndrome at oddq>=1019,
+e>=8,q^2>=44e. No random-prime exception or full-cube conditioning remains.
+Atp1019 the sufficient interval is e<=23599, hence dyadic16384, compared
+with the earlier generic greedy dyadic128. These are guarantee cutoffs,
+not hardness thresholds or measured executions at those sizes.
+
+The written matrix-only adapter needs only ring degrees through8 and
+product/colon vanishing spaces; common-zero ratios avoid hidden jets or
+column frames. It is NOT implemented on the native genus41 matrix. The
+executable norm solver verifies five witnesses on the ORIGINAL43x176
+control using its public geometry. That control was already classically
+easy. HANDOFF.md assigns the precise adapter implementation to Gemini.
+
+The fixed-prime unbounded-e frontier and uniform native sampling remain
+open. Do not promote quantum candidates in the newly covered range or
+call a failed norm trial hardness evidence. The independent inverse-trace
+repair review is a separate scoped ONE-DEFECT first-move obstruction,
+not random-start search hardness. No toy oracle or circuit search restored.
+
+The bundle/review remain outside Git; this pointer is not a backup. No
+CLI/UI/central registry, commit/push, migration or outside contact. The
+Rees outreach draft remains UNSENT. See VERIFICATION.md for final checks.
+
+Final verification:169 selected tests PASS (41new), five-file syntax,
+exact native receipt write/check, git diff--check and qsearchvalidate pass.
+The full main repository suite was not run. No subprocess or reviewer
+was left running at this checkpoint.
+
+## 2026-10-27 Six-Dimensional Orthogonal Scope Demoted To Prior Art
+
+Read `/Users/jaspersands/Developer/qsearch-research-work/orthogonal-a3-subsumption-2026-10-27/RESULT.md`,
+VERIFICATION.md and HANDOFF.md. Independent interface audit at sibling
+orthogonal-a3-prior-art-review-2026-10-27/REVIEW.md confirms the imported
+SL4 solver applies with paid ordinary-oracle access; parent read it fully
+and reviewer is closed. The audit is AI, not human review or a code audit.
+
+The public exterior-square map SL4->SO6 costs one original O/SO oracle
+query per pullback query. Klein correspondence sends hidden singular
+ranks1/2/3 to unique ordinary flags of types(2),(1,3),(1),(3). Their full
+stabilizers pull back to FULL SL4 parabolics. DIKQS1406.6511v2Section8
+explicitly includes speciallinear parabolics, with Ivanyos2012 techniques;
+the numbered GL theorem alone is not sufficient. The review checks legal
+restricted scalar extension and the later GL3 oracle, never a freeGL4
+oracle. No hidden rank or subspace is supplied to the pullback.
+
+Thus ALL n=3 cases are prior-art scope, including the local n3/k2 gap.
+Do NOT advertise the n3 line/maximal controls as novelty evidence or build
+another tiny receiver for k2. The variable-rank n>=4 construction is NOT
+subsumed by this dimension-specific map. Its novelty/application remain
+unresolved; the line-query separation alone does not settle either.
+
+121 selected tests PASS (18new)9.74s, three-file syntax, exact receipt
+write/check and mainqsearchvalidate pass. All730 F3 flag correspondences
+and12 opaque interface cases checked, including p2^127-1. These supplied-
+secret controls do NOT execute the imported quantum solver. No fullmain
+suite, centralregistry/CLI/UI, commit/push, migration orcontact. Newbundle/
+review remainoutsideGit, notbackedupbythispointer. Rees email staysUNSENT.
+
+## 2026-10-27 Exterior Receiver Closes The Low-Hidden-Rank Gap
+
+New isolated bundle: `/Users/jaspersands/Developer/qsearch-research-work/orthogonal-exterior-2026-10-27/`.
+Read RESULT.md, CLASSICAL_COMPARATOR.md, REVIEW_RESPONSE.md, VERIFICATION.md
+and HANDOFF.md. Independent AI mathematical review at sibling
+orthogonal-exterior-review-2026-10-27/REVIEW.md accepts both scoped proofs;
+parent read it fully and closed the reviewer. No human review or novelty.
+
+The new public alternating-matrix probe has kernel K={A:AY subset X}, with
+X=U intersect R and Y the hidden projection. Image-support W is full R
+when X!=0, zero at the disjoint d<=1 boundary, and R intersect Uperp when
+X=0,d=n-k>=2. The proper-support screen identifies good probes and infers
+k. A counted both-family Schubert sampler and constant5/8 span-growth
+bound yield a proposed polynomial quantum algorithm for1<=k<=n-2, without
+rank advice. Combined with the prior k>=3 receiver, all1<=k<=n are covered
+for n>=4. The n3/k2 exception remains; no flags/rings/nonsplit extension.
+
+The separate SAME-ORACLE line comparator proves a scoped Omega(sqrt(q))
+classical query bound for opaque randomly relabeled full-stabilizer
+oracles. This gives an exponential-in-log(q) oracle separation at fixed
+n>=3, NOT a natural-task speedup, all-rank hardness, or a novelty claim.
+It uses standard fixed-point/collision reasoning, credited to prior HSP
+work. Do not turn this into a Shor-level-result announcement.
+
+New caveat: Fourier rank failure can yield a proper but polluted image
+support. All rank failures and whole-instrument errors are explicitly
+charged; do not inherit the old receiver's ideal-undersampling soundness.
+103 selected tests PASS (28new) in9.34s, four-file syntax, native receipt
+write/check and main qsearch validate pass. Native F3 hiddenline/plane
+controls used81/2187/2187 CLASSICAL queries, checking SO legality for
+every query. No quantum execution or full main-suite run.
+
+No central registry/CLI/UI, commit/push or storage change. Bundle/review
+are outside Git and NOT backed up by this pointer. Mechanical Gemini
+integration tasks are in HANDOFF.md. Next scientific gate is exact
+prior-art subsumption or a useful native-input oracle construction, not
+more nearby variants or line-bound constants. Rees outreach remains UNSENT.
+
+## 2026-10-27 Rees Review Package Reconciled And Backed Up
+
+The authoritative repository manuscript is now
+`research/manuscripts/rees_hsp_review.tex`. The actual-class normalization
+from the isolated corrected revision is applied; mathematical text matches
+that revision exactly. Only date and `not peer-reviewed` status differ.
+The existing compiler already used the actual lower-central profile; no
+production algorithm was changed. Two new p5/p127-bit regressions check
+that the Heisenberg lift and scalar-line budget do not charge a loose p-1
+class upper bound.
+
+Read `research/manuscripts/REES_REVIEW_BRIEF.md` for the precise primary
+claim, additional interface, imported dependencies, falsifiers and reading
+order. Correctness and bounded prior-art reviews are copied byte-for-byte
+under `research/manuscripts/review_evidence/`; historical absolute links in
+them refer to old snapshots, not current manuscript line numbers. The
+ledger is `REES_REVIEW_VERIFICATION.md` and the UNSENT message draft is
+`REES_OUTREACH_DRAFT.md`. The user asked to SEE that draft, not to send it.
+No recipient selected, email sent, paper submitted or author contacted.
+
+76 selected tests PASS in9.14s, three-file syntax, qsearchvalidate, diff
+checks and built-in LaTeX compilation PASS. Compilation did NOT export a
+deliverable PDF; do not claim one is attached. No full repository-suite,
+human specialist review, novelty certification or quantum execution.
+
+One deliberately infrequent checkpoint commit of ONLY the seven review-
+package/test files was pushed successfully to origin/main:
+`4d56ba2cf36da42df20ddb605b1fa39b9512395a`.
+The pre-existing dirty handoff and AG checkpoint were not staged. This
+does not back up the other isolated research bundles. Do not duplicate this
+reconciliation, restart small SDE/terminal controls, or prepare another
+manuscript under a different filename. No external outreach is authorized
+by the active goal; the scientific correctness/novelty questions remain open.
+
+## 2026-10-27 Unknown-Rank Orthogonal Recovery Extended And Reviewed
+
+New isolated bundle: `/Users/jaspersands/Developer/qsearch-research-work/orthogonal-general-rank-2026-10-27/`.
+Read RESULT.md, REVIEW_RESPONSE.md, VERIFICATION.md and HANDOFF.md. One
+independent review at sibling `general-rank-orthogonal-review-2026-10-27/REVIEW.md`
+finds no mathematical defect under the stated input promise; parent read
+the complete review and closed the reviewer. No code audit or novelty claim.
+
+The prior three-probe theorem required maximal U. The new proposed
+polynomial-time oracle algorithm permits UNKNOWN dim(U)=k, 3<=k<=n, in
+split O^+(2n,q) or SO^+(2n,q), q odd. The three-case additive-probe kernel
+classification and explicit containment certificate remove the maximality
+restriction. The certificate alone proves only R subset U. Probe-derived
+rank provenance supplies equality, including rejection of misleading
+maximal neighbors when the true k=n-1. With ideal Fourier sampling even
+undersampling cannot cause a wrong return; approximate errors are charged.
+
+75 selected tests PASS (40new), four-file syntax, live deterministic receipt
+write/check and existing main qsearch validation PASS. The F_3 opaque-label
+reference runs infer hidden ranks3/4; the large-prime check uses supplied
+secret algebra and is NOT a learner. No quantum algorithm executed.
+No general-rank classical lower bound or natural-input speedup established.
+The older parabolic dequantization errors were ALREADY withdrawn Oct23;
+the new note refines the nonmaximal reflection baseline, not that correction.
+
+No CLI/UI/central registry, commit/push or storage repair. New bundle/review
+remain outside Git; this pointer is NOT a backup. Gemini integration tasks
+and dependency/storage caveats are in HANDOFF.md. Do not extend to rings,
+flags or nonsplit forms by inertia. The larger Rees theorem's specialist
+correctness/novelty assessment remains the higher strategic priority; no
+external contact or submission is authorized by this note.
+
+## 2026-10-27 Correlated-Source Shortcut Rejected And Reviewed
+
+New isolated bundle: `/Users/jaspersands/Developer/qsearch-research-work/rees-correlated-source-2026-10-27/`.
+Read RESULT.md, VERIFICATION.md and HANDOFF.md. One independent mathematical
+review at sibling `rees-correlated-source-review-2026-10-27/REVIEW.md`
+accepts the scoped proof and its general weak-Fourier corollary; reviewer
+closed. No novelty, code audit, or unrestricted lower-bound claim.
+
+A legal one-lifted-query source V|g>=uniform_y |g y,y> gives opposite
+central labels, but not independent sector targets. Its right-action
+observable algebra compresses to the center of the native group algebra:
+the receiver retains only weak Fourier information statistically. This is
+not an efficient simulator or QFT implementation. On two genuine graded
+Rees lines, every nonzero selected-grade branch is identical. Informative
+zero labels cost probability1/p; a capped T-source binary-success bound is
+1/2+min(1,T/p)/2 within the precise mixed-source/right-action interface.
+
+The source itself retains information. An explicit second-target LEFT
+action escapes the bound, and the binary promise has a two-query classical
+test. Different correlated sources may work with right actions. Neither
+the fixed-class theorem nor a general correlated-source lower bound follows.
+Do not expand this counterexample by more primes/classes/source variants.
+
+88 selected tests PASS (48new), three-file syntax, deterministic receipt
+write/check and main qsearch validation pass. Full suite not run; no quantum
+receiver executed. No CLI/UI/central registry, commit/push or migration.
+The new bundle/review remain outside Git; this pointer is NOT a backup.
+Gemini integration guidance preserves that storage caveat in HANDOFF.md.
+
+## 2026-10-27 General Fixed-Class State-Source Gap Reviewed
+
+New isolated bundle: `/Users/jaspersands/Developer/qsearch-research-work/rees-general-curve-2026-10-27/`.
+Read RESULT.md, REVIEW_RESPONSE.md, APPLICATION_BOUNDARY.md and HANDOFF.md.
+One independent mathematical review at the sibling
+`rees-general-curve-review-2026-10-27/REVIEW.md` finds no fatal flaw; parent
+read the whole review. It does NOT audit code, establish novelty or prove
+a natural application. Reviewer closed.
+
+The universal weighted-free polynomial curve has an explicit nontrivial
+singular-value gap for EVERY FIXED class and sufficiently large primes
+depending only on class. The proof uses bounded adjoint tangent closure,
+a full-rank alternating-word Jacobian, nonsingular fiber counting and
+Plancherel; it uses (T^*T)^m, never a norm inference from T^m. This extends
+the old class<=3 source promise relaxation, not the receiver itself.
+
+Pure IID copies plus paid uniform coherent LINEAR action and subgroup-twirl
+robustness yield the old forward-only moment-packet source at general fixed
+class. Zero-moment design and receiver remain imported obligations. Keep
+the better old c<=3 constants; no small-prime or growing-class extension.
+The direct spectral-population corollary removes phase-spacing dependence
+but NOT rare-logical-error population dilution. No useful hard task is
+established. Do not promote a speedup candidate or run another planted sweep.
+
+146 selected tests PASS (52new), three-file syntax, live exact receipt
+write/check and main qsearch validation pass. Full suite not run; no quantum
+receiver executed. Exact c1..6 tensor Jacobians and FLINT minor checks are
+diagnostics, not a proof by finite extrapolation. The conservative c4 source
+example costs over2.4billion copies: asymptotic scope is not practical speed.
+
+No CLI/UI/central registry changes, commit/push or storage repair. All new
+code and review remain outside Git; this pointer is NOT a backup. Gemini
+integration instructions are in HANDOFF.md and preserve the migration caveat.
+Next theory must supply a meaningful native family or test an actual prior
+reduction for the main fixed-class theorem, not extend constants/class again.
+
+## 2026-10-27 Rees Prior Art And Source-Tree Obstruction
+
+New local results live under `/Users/jaspersands/Developer/qsearch-research-work/`.
+Read `rees-source-tree-2026-10-27/RESULT.md` and `RESEARCH_DECISION.md` before
+investing in an average-case diagonal solver or extending growing class.
+
+The existing destructive full-grade receiver has a new reviewed limitation:
+on a filiform family with full-rank random central labels, one terminal
+source needs c! lifted leaves on the generic-label event. Adaptive pooling,
+classical retries and recycling zero-scale targets do not evade the bound.
+With polynomial deterministic label/native caps at sufficiently large p,
+success is negligible even with a free perfect SDE solver. This is NOT an
+unrestricted HSP lower bound, nor an unconditional factorial expected-cost
+claim. Joint fresh sources and disjoint active consumption are essential.
+Correct marginals alone admit an explicit opposite-label counterexample.
+
+One independent adversarial reviewer accepts this scoped proof. A separate
+prior-art review finds the GENERAL fixed-class, growing-prime Lie-HSP claim
+apparently outside the exact published scopes examined, but does not
+certify novelty or an application. The fixed-class theorem remains live;
+the solver-only unrestricted-growing-class plan does not.
+
+117 selected tests PASS, including40 new controls; three Python syntax
+checks, analytic receipt replay/check and qsearch validation pass. Full
+suite not run. No quantum receiver executed. The new bundles and reviews
+are outside Git, not backed up by this pointer; no commit/push or migration.
+No central candidate, CLI or UI changes. Both reviewers are closed.
+
+Next theory pass: a genuinely adaptive/collective reduction of arbitrary
+class-three HSP to existing graph-state solvers, or another actual theorem
+match. The existing HPGP_COSET_INTERFACE_AUDIT already addresses fixed
+charts and naive quotient-register erasure; do not repeat those audits.
+
+## 2026-10-27 Matrix-Only Decoder Comparator
+
+Read the new top section of CONSTRUCTIVE_AG_RESEARCH_CHECKPOINT.md and local
+schur-locator-decoder-2026-10-27/RESULT.md before further AG source work.
+The Schur locator a in V with a*r in V*V supplies a classical sparse-error
+decoder from the public matrix alone. The reviewed native radius is2e-7;
+20 actual nine-or-fewer-error decodes and17 new tests pass. Independent
+comparison review accepts the proof. This supports ordinary classical-decoder DQI,
+NOT classical full-support search. Keep the distinction explicit.
+
+The binary signed-pair circuit and qualified sampling consequence have a
+completed independent mathematical review; their gate plans are polynomial
+in log(q), but no complete quantum decoder or hardware run exists. Retain
+them as scoped reusable work, not evidence the AG family needs quantum-only
+decoding. Source geometry is not granted secretly to the new comparator.
+No central candidate, CLI/UI, Git backup or storage changes. Both bundles
+remain in the isolated Developer directory, not inside this checkout.
+
+The completed literature audit also identifies DFS24 Lemma13 equation22 as
+the essential exact-herald transfer antecedent. DEMOTE family-level novelty:
+ordinary DQI with the locator and a truncated radial source solves search
+and ideal conditional uniform sampling on the same AG promise. No natural
+hard-task reduction or classical full-support dequantization is established.
+Do not expand the AG source solely to demonstrate quantum-only decoding.
+Final611 selected tests, eight-file syntax, native/circuit replays, independent
+comparison controls and registry validation pass. Full main suite not run.
+
+## 2026-10-27 Fiber Repair And Generic-Source Separation
+
+Read the latest section of CONSTRUCTIVE_AG_RESEARCH_CHECKPOINT.md and local
+affine-resampling-audit-2026-10-27/RESULT.md. The actual43-by-176 code has
+eleven disjoint full-support kernel directions; checked fiber repair solves
+every syndrome. The special G=11I-E construction guarantees this through
+dyadic e256 at p1019, with an actual matrix and verified fiber certificate.
+This is not a generated e256 experiment or an unbounded dequantization.
+
+Independent review accepts the contrasting typical-prime-source bound:
+kernel minimum weight>2e except with an explicitly tiny probability under
+EXACT closed-prime sampling plus cube rejection. Handpicked11I-E codes
+cannot stand in for that source even when their Schur cube is full.
+Fixed-bank valid-state isolation is not adaptive-search hardness.
+
+Four disjoint bases are proved for complete native AG inputs; a polynomial
+extractor remains unestablished. Next scientific priority is the precise
+quantum theorem's novelty/resource/useful-problem boundary, not another
+generic avoidance or local-walk framework. All executable new work remains
+in the isolated Developer research folder, not imported/committed/pushed.
+Final verification:499 selected tests, four-file syntax, native46-witness
+replay and independent countercontrol replay pass; registry validation has
+no issues. Full main-repository suite was not run.
+
+## 2026-10-27 Smaller-Prime AG Source And Classical Baseline
+
+Read CONSTRUCTIVE_AG_RESEARCH_CHECKPOINT.md before continuing the old source
+or DCP work. A local F_1019 tower seed and actual genus41, 43-by-176 code
+have been constructed outside this checkout; square rank126, cube rank176.
+The finite code is classically solved by both systematic sampling and a new
+deterministic two-basis greedy baseline. No advantage is claimed. The new
+source's independent agent review accepts the scoped construction and bound
+transfer without required fixes; the separate bounded affine AJT audit is
+complete and does not supply a general polynomial extractor. The combined
+research suite passes 461 tests; main-registry validation has no issues.
+
+The checkpoint identifies exact local files and the higher-level native
+backend handoff for Gemini. Do not label unconstructed e256/512/1024
+forecasts as experiments, restore legacy circuits, or make a candidate
+admission solely from the cube rank. This pass does not import, commit or
+push the isolated code bundle; the checkpoint is an explicit pointer.
+
 ## 2026-10-23 Classical Recovery From Target Endomorphism Transport
 
 Read SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK.md. New local classical deduction,
