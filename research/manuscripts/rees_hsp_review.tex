@@ -15,8 +15,8 @@
 \newcommand{\eps}{\varepsilon}
 \title{Positive Rees Covers and Hidden Subgroup Recovery\\
 \large A Self-Contained Proof Draft for Adversarial Review}
-\author{Quantum Algorithm Search project\\Automated research draft; not independently reviewed}
-\date{22 October 2026}
+\author{Quantum Algorithm Search project\\Automated research draft; not peer-reviewed}
+\date{27 October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -371,7 +371,17 @@ No practical resource claim follows from these enormous polynomial bounds.
 This is a proposed parameterized corollary of the same composition, not a
 claim that arbitrary growing class is efficient or a new diagonal solver.
 Continue to assume explicit genuine structure constants and $c<p$, but
-now let $c$ vary. Write $r=\dim[L,L]$ and $r_d=\dim\gamma_d(L)$.
+now let the supplied class upper bound vary. Before constructing any cover
+or source bank, compute the lower-central spaces by public field linear
+algebra and replace that upper bound by the actual nilpotency class $c$.
+The zero algebra is handled directly. For a nonzero nilpotent algebra the
+nonzero lower-central terms strictly decrease: a nonzero equality
+$\gamma_d(L)=\gamma_{d+1}(L)$ would persist at every later index, contrary
+to nilpotence. Thus this preprocessing takes at most $n$ strict decreases,
+has polynomial cost in $n,\log p$, and uses no hidden-source calls.
+All covers, evaluation-point counts, BCH truncations and source costs in
+this section use this normalized $c$, not a possibly much larger supplied
+upper bound. Write $r=\dim[L,L]$ and $r_d=\dim\gamma_d(L)$.
 
 \begin{lemma}[Uniform public BCH arithmetic]
 Given an $N$-dimensional Lie algebra of class at most $c<p$, its BCH product

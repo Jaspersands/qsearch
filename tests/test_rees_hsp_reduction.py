@@ -13,6 +13,7 @@ from theorems.jet_oracle_homogenization import lie_bch
 from theorems.rees_hsp_reduction import make_rees_cover, recovery_budget, black_box_large_prime_budget, _units
 from theorems.right_abelian_induced_source import upper_triangular_lie, derived_length_three_witness
 from theorems.symbolic_scalar_phase_erasure import PublicLieAlgebra, _fmpz_solve_coordinates
+from theorems.uniform_bch_rees import scalar_line_budget
 from tests.test_ambient_section_potential import _matrix_exp, _matrix_log, _matrix_multiply
 
 
@@ -184,6 +185,24 @@ def test_compiler_uses_only_public_constants_and_exactly_c_original_calls():
     small, _ = upper_triangular_lie(4, 3)
     with pytest.raises(ValueError, match="class<p"):
         make_rees_cover(small, _units(6))
+
+
+@pytest.mark.parametrize("p", [5, 2**127-1])
+def test_actual_class_not_loose_upper_bound_controls_evaluations_and_rank_budget(p):
+    source, _ = upper_triangular_lie(3, p)
+    cover = make_rees_cover(source, _units(3))
+    # Review F1: this algebra also satisfies the very loose bound c<=p-1.
+    # Only the computed actual class satisfies c<=dim([L,L])+1 uniformly.
+    supplied_upper_bound = p-1
+    assert cover.dimensions == (3, 1)
+    assert cover.class_bound == 2 <= cover.dimensions[1]+1 < supplied_upper_bound
+    assert cover.points == (1, 2)
+    calls = []
+    cover.evaluate_fixture(lambda x: calls.append(x), (0,)*cover.dimension)
+    assert calls == [(0, 0, 0)]*2
+    budget = scalar_line_budget(cover.dimensions, 1, prime=p)
+    assert budget.cover_dimension == 4 and budget.leaves_per_terminal == 3
+    assert budget.original_inputs == 6
 
 
 @pytest.mark.parametrize("kind", ["diagonal", "full"])
