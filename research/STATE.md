@@ -108,8 +108,9 @@ a date, so compare titles.
 - **Tests:**
   `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -B -m pytest -q -p no:cacheprovider -W error <tests>`.
   `../tests/KNOWN_FAILURES.txt` lists the 134 tests that already fail.
-- **iCloud:** the repo is on an iCloud Desktop. Put `timeout` on long reads;
-  a hang usually means an evicted file.
+- **Location:** the repo is at `~/Developer/qsearch`, moved off the iCloud
+  Desktop on 2026-10-31. Records citing `/Users/jaspersands/Desktop/quantum
+  algorithm search/...` mean the same path under the repo root.
 
 ## Known open issues
 

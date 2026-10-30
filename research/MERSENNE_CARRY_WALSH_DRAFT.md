@@ -920,7 +920,7 @@ parity-completion claim is made.
 
 ## Appendix A. Read-Only Replay Commands
 
-Run from `/Users/jaspersands/Desktop/quantum algorithm search`. Each command
+Run from the repository root (`/Users/jaspersands/Developer/qsearch`). Each command
 uses only standard-library modules except the explicitly exponential
 NumPy group-ring control. `-B` prevents Python bytecode-cache writes.
 There is no dependency installation and no output redirection to files.

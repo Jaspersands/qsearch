@@ -9388,7 +9388,7 @@ No new dependencies.
 
 ## Global Constraints
 
-- Work from the repository root: `/Users/jaspersands/Desktop/quantum algorithm search`.
+- Work from the repository root: `/Users/jaspersands/Developer/qsearch`.
 - Branch is `main`. **Do not** run `git reset`, `git checkout -- .`,
   `git stash`, or `git clean`. Do not discard work you did not write.
 - **Do not touch anything under `ag-remote/`.**
