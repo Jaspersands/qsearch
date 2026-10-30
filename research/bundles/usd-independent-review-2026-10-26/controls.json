@@ -1,0 +1,446 @@
+{
+  "scope": "bounded independent controls; numerical checks are not proofs",
+  "source_tests": {
+    "command": [
+      "/opt/anaconda3/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "-W",
+      "error",
+      "--rootdir",
+      "/Users/jaspersands/Developer/qsearch-research-work/usd-independent-review-2026-10-26",
+      "/Users/jaspersands/Developer/qsearch-research-work/unambiguous-reduction-2026-10-26/test_usd_reduction.py"
+    ],
+    "returncode": 0,
+    "output": "...................                                                      [100%]\n19 passed in 0.05s"
+  },
+  "exact_unequal_workspace": {
+    "gram": [
+      [
+        "1",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1"
+      ]
+    ],
+    "p_c": [
+      "1/4",
+      "1/2"
+    ],
+    "p_bar": "3/8",
+    "syndromes": [
+      {
+        "character": [
+          1,
+          1
+        ],
+        "lambda": "3/2",
+        "joint_fidelity": "1/4",
+        "clean_workspace_probability": "1/3",
+        "dirty_workspace_probability": "2/3"
+      },
+      {
+        "character": [
+          1,
+          -1
+        ],
+        "lambda": "1/2",
+        "joint_fidelity": "3/4",
+        "clean_workspace_probability": "7/9",
+        "dirty_workspace_probability": "2/9"
+      }
+    ]
+  },
+  "f3_squared_unequal": {
+    "states": 9,
+    "p_c": [
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16,
+      0.18
+    ],
+    "p_bar": 0.09999999999999999,
+    "unitarity_max_error": 1.9516843736640773e-15,
+    "wrong_label_amplitude_max_error": 1.1741143653860667e-16,
+    "syndromes": [
+      {
+        "syndrome_index": 0,
+        "lambda": 0.19999999999999998,
+        "joint_fidelity": 0.4999999999999999,
+        "predicted": 0.5,
+        "dirty_workspace_probability": 0.47087301587301666
+      },
+      {
+        "syndrome_index": 1,
+        "lambda": 0.39999999999999997,
+        "joint_fidelity": 0.24999999999999994,
+        "predicted": 0.25,
+        "dirty_workspace_probability": 0.7216111111111112
+      },
+      {
+        "syndrome_index": 2,
+        "lambda": 0.6,
+        "joint_fidelity": 0.1666666666666667,
+        "predicted": 0.16666666666666666,
+        "dirty_workspace_probability": 0.8066666666666678
+      },
+      {
+        "syndrome_index": 3,
+        "lambda": 0.8,
+        "joint_fidelity": 0.12500000000000008,
+        "predicted": 0.12499999999999999,
+        "dirty_workspace_probability": 0.8039841269841264
+      },
+      {
+        "syndrome_index": 4,
+        "lambda": 1.0,
+        "joint_fidelity": 0.1,
+        "predicted": 0.09999999999999999,
+        "dirty_workspace_probability": 0.8597222222222208
+      },
+      {
+        "syndrome_index": 5,
+        "lambda": 1.1999999999999997,
+        "joint_fidelity": 0.08333333333333336,
+        "predicted": 0.08333333333333334,
+        "dirty_workspace_probability": 0.8869999999999999
+      },
+      {
+        "syndrome_index": 6,
+        "lambda": 1.4,
+        "joint_fidelity": 0.07142857142857141,
+        "predicted": 0.07142857142857142,
+        "dirty_workspace_probability": 0.8519973544973545
+      },
+      {
+        "syndrome_index": 7,
+        "lambda": 1.6,
+        "joint_fidelity": 0.0625,
+        "predicted": 0.06249999999999999,
+        "dirty_workspace_probability": 0.8938068783068773
+      },
+      {
+        "syndrome_index": 8,
+        "lambda": 1.7999999999999994,
+        "joint_fidelity": 0.055555555555555566,
+        "predicted": 0.05555555555555557,
+        "dirty_workspace_probability": 0.9126587301587292
+      }
+    ]
+  },
+  "f4_trace_characters": {
+    "states": 4,
+    "p_c": [
+      0.05,
+      0.1,
+      0.15,
+      0.2
+    ],
+    "p_bar": 0.125,
+    "unitarity_max_error": 1.3322676295501878e-15,
+    "wrong_label_amplitude_max_error": 5.721958498152797e-17,
+    "syndromes": [
+      {
+        "syndrome_index": 0,
+        "lambda": 0.4,
+        "joint_fidelity": 0.31250000000000006,
+        "predicted": 0.3125,
+        "dirty_workspace_probability": 0.6593749999999995
+      },
+      {
+        "syndrome_index": 1,
+        "lambda": 0.7999999999999998,
+        "joint_fidelity": 0.15625000000000006,
+        "predicted": 0.15625000000000003,
+        "dirty_workspace_probability": 0.7895833333333326
+      },
+      {
+        "syndrome_index": 2,
+        "lambda": 1.1999999999999997,
+        "joint_fidelity": 0.10416666666666666,
+        "predicted": 0.10416666666666669,
+        "dirty_workspace_probability": 0.8770833333333337
+      },
+      {
+        "syndrome_index": 3,
+        "lambda": 1.6000000000000005,
+        "joint_fidelity": 0.07812499999999994,
+        "predicted": 0.07812499999999997,
+        "dirty_workspace_probability": 0.892708333333333
+      }
+    ]
+  },
+  "pair_controls": [
+    {
+      "q": 3,
+      "basis": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ]
+      ],
+      "schur_dimension": 3,
+      "pair_transcripts": 729,
+      "ensemble_transcripts": 477,
+      "ensemble_transcripts_rejected": 189,
+      "wrong_label_nonzero_integer_amplitudes": 0,
+      "p_c": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "p_bar": "1/2",
+      "A_tail": "13/32",
+      "E": "135/32",
+      "syndromes": [
+        {
+          "s": [
+            0,
+            0
+          ],
+          "lambda": 1.406249999999999,
+          "joint_fidelity": 0.3555555555555541,
+          "valid_output_with_blank_ancilla": 0.4598765432098773,
+          "dirty_ancilla_probability": -1.5543122344752192e-15
+        },
+        {
+          "s": [
+            0,
+            1
+          ],
+          "lambda": 0.8437499999999996,
+          "joint_fidelity": 0.5925925925925943,
+          "valid_output_with_blank_ancilla": 0.5925925925925936,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        },
+        {
+          "s": [
+            0,
+            2
+          ],
+          "lambda": 0.8437499999999998,
+          "joint_fidelity": 0.5925925925925942,
+          "valid_output_with_blank_ancilla": 0.5925925925925938,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        },
+        {
+          "s": [
+            1,
+            0
+          ],
+          "lambda": 0.984375,
+          "joint_fidelity": 0.5079365079365094,
+          "valid_output_with_blank_ancilla": 0.5385802469135811,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        },
+        {
+          "s": [
+            1,
+            1
+          ],
+          "lambda": 0.9843750000000002,
+          "joint_fidelity": 0.5079365079365094,
+          "valid_output_with_blank_ancilla": 0.5385802469135812,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        },
+        {
+          "s": [
+            1,
+            2
+          ],
+          "lambda": 0.9843750000000003,
+          "joint_fidelity": 0.507936507936509,
+          "valid_output_with_blank_ancilla": 0.538580246913581,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        },
+        {
+          "s": [
+            2,
+            0
+          ],
+          "lambda": 0.9843749999999989,
+          "joint_fidelity": 0.5079365079365087,
+          "valid_output_with_blank_ancilla": 0.5385802469135814,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        },
+        {
+          "s": [
+            2,
+            1
+          ],
+          "lambda": 0.984374999999999,
+          "joint_fidelity": 0.507936507936509,
+          "valid_output_with_blank_ancilla": 0.5385802469135814,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        },
+        {
+          "s": [
+            2,
+            2
+          ],
+          "lambda": 0.9843749999999991,
+          "joint_fidelity": 0.5079365079365087,
+          "valid_output_with_blank_ancilla": 0.5385802469135814,
+          "dirty_ancilla_probability": -1.7763568394002505e-15
+        }
+      ]
+    },
+    {
+      "q": 5,
+      "basis": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "schur_dimension": 1,
+      "pair_transcripts": 1000,
+      "ensemble_transcripts": 310,
+      "ensemble_transcripts_rejected": 10,
+      "wrong_label_nonzero_integer_amplitudes": 0,
+      "p_c": [
+        "15/16",
+        "15/16",
+        "15/16",
+        "15/16",
+        "15/16"
+      ],
+      "p_bar": "15/16",
+      "A_tail": "1/16",
+      "E": "5/16",
+      "syndromes": [
+        {
+          "s": [
+            0
+          ],
+          "lambda": 0.9375000000000018,
+          "joint_fidelity": 0.9999999999999996,
+          "valid_output_with_blank_ancilla": 0.9999999999999991,
+          "dirty_ancilla_probability": 5.551115123125783e-16
+        },
+        {
+          "s": [
+            1
+          ],
+          "lambda": 1.0156250000000018,
+          "joint_fidelity": 0.9230769230769225,
+          "valid_output_with_blank_ancilla": 0.9239999999999993,
+          "dirty_ancilla_probability": 0.07011380118997113
+        },
+        {
+          "s": [
+            2
+          ],
+          "lambda": 1.0156250000000016,
+          "joint_fidelity": 0.9230769230769224,
+          "valid_output_with_blank_ancilla": 0.9239999999999997,
+          "dirty_ancilla_probability": 0.06582436134308067
+        },
+        {
+          "s": [
+            3
+          ],
+          "lambda": 1.015625000000002,
+          "joint_fidelity": 0.9230769230769227,
+          "valid_output_with_blank_ancilla": 0.9239999999999997,
+          "dirty_ancilla_probability": 0.06582436134308078
+        },
+        {
+          "s": [
+            4
+          ],
+          "lambda": 1.0156250000000002,
+          "joint_fidelity": 0.9230769230769225,
+          "valid_output_with_blank_ancilla": 0.923999999999999,
+          "dirty_ancilla_probability": 0.07011380118997101
+        }
+      ]
+    }
+  ],
+  "counterexamples": {
+    "wrong_answer_decoder": {
+      "p_bar": "5/8",
+      "fidelity": "1/10"
+    },
+    "near_perfect_wrong_answer_family": {
+      "states": "2r",
+      "decoder": "diag(I_r, I_r-2J_r/r)",
+      "p_bar": "(1 - 2/r)**2/2 + 1/2",
+      "fidelity": "2/(r**2 + (r - 2)**2)",
+      "r_100_p_bar": "4901/5000",
+      "r_100_fidelity": "1/9802"
+    },
+    "measure_retained_label": {
+      "ensemble": "two orthogonal states, perfect decoder",
+      "correct_coherent_fidelity": "1",
+      "dephased_fidelity": "1/2"
+    },
+    "drop_pair_signs": {
+      "q": 3,
+      "correct_off_diagonal_gram": "-1/2",
+      "unsigned_off_diagonal_gram": "1/2",
+      "isometry_possible": false
+    },
+    "singular_orbit": {
+      "q": 3,
+      "length": 1,
+      "null_vector": [
+        1,
+        1,
+        1
+      ],
+      "lambda_zero": "0",
+      "maximum_p_bar": "0"
+    }
+  },
+  "source_hashes_before": {
+    "HANDOFF.md": "08c47dc8443b625194f0910b8fab07229ddac6a4727184d667bcbda54356c3a7",
+    "USD_REDUCTION.md": "9a5f8c65245ccb7b3dce831a16009650bd91baa709a7c9a19b5397a80776429a",
+    "VERIFICATION.md": "0848370411c18a628e7ed5e1e0f5ad82513198bac44769b3c8c13bb7db9ba9b8",
+    "receipt.json": "e6435c5275c7db6d593e5af002a82bf1e7f6e758beea3309af5dd30770949eeb",
+    "test_usd_reduction.py": "fbec6d4bf8792496c814760a784434e60413052b6e9a6851fcf606330b644937",
+    "usd_reduction.py": "81f36a88b537eef04fe41516cd880b7901fb6d723f4116da4b524c478618472d",
+    "verify_usd.py": "e379a420025e33d665fd740428b70a760080cc465d8b62138b7abe13a0d8abdc"
+  },
+  "source_hashes_after": {
+    "HANDOFF.md": "08c47dc8443b625194f0910b8fab07229ddac6a4727184d667bcbda54356c3a7",
+    "USD_REDUCTION.md": "9a5f8c65245ccb7b3dce831a16009650bd91baa709a7c9a19b5397a80776429a",
+    "VERIFICATION.md": "0848370411c18a628e7ed5e1e0f5ad82513198bac44769b3c8c13bb7db9ba9b8",
+    "receipt.json": "e6435c5275c7db6d593e5af002a82bf1e7f6e758beea3309af5dd30770949eeb",
+    "test_usd_reduction.py": "fbec6d4bf8792496c814760a784434e60413052b6e9a6851fcf606330b644937",
+    "usd_reduction.py": "81f36a88b537eef04fe41516cd880b7901fb6d723f4116da4b524c478618472d",
+    "verify_usd.py": "e379a420025e33d665fd740428b70a760080cc465d8b62138b7abe13a0d8abdc"
+  },
+  "five_local_recorded_receipt_hashes_match": true,
+  "source_unchanged": true
+}

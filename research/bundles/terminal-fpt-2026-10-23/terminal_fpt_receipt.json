@@ -1,0 +1,244 @@
+{
+  "status": "conditional_uniform_terminal_bound_independent_review_pending",
+  "bound": "2^O(k^2 log(k+2)) * poly(input_size,log(p),log(1/error))",
+  "compiler_is_existing_inverse_BCH_construction": true,
+  "bounded_word_controls": [
+    {
+      "residue_prime": 3,
+      "exponent_bound": 2,
+      "class": 2,
+      "operation": "add",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 12,
+      "instruction_cap": 47,
+      "public_multiplications": 27,
+      "multiplication_cap": 40
+    },
+    {
+      "residue_prime": 3,
+      "exponent_bound": 2,
+      "class": 2,
+      "operation": "bracket",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 5,
+      "instruction_cap": 47,
+      "public_multiplications": 13,
+      "multiplication_cap": 19
+    },
+    {
+      "residue_prime": 5,
+      "exponent_bound": 3,
+      "class": 4,
+      "operation": "add",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 68,
+      "instruction_cap": 215,
+      "public_multiplications": 266,
+      "multiplication_cap": 328
+    },
+    {
+      "residue_prime": 5,
+      "exponent_bound": 3,
+      "class": 4,
+      "operation": "bracket",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 64,
+      "instruction_cap": 215,
+      "public_multiplications": 243,
+      "multiplication_cap": 298
+    },
+    {
+      "residue_prime": 7,
+      "exponent_bound": 1,
+      "class": 6,
+      "operation": "add",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 291,
+      "instruction_cap": 887,
+      "public_multiplications": 537,
+      "multiplication_cap": 636
+    },
+    {
+      "residue_prime": 7,
+      "exponent_bound": 1,
+      "class": 6,
+      "operation": "bracket",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 288,
+      "instruction_cap": 887,
+      "public_multiplications": 527,
+      "multiplication_cap": 623
+    },
+    {
+      "residue_prime": 170141183460469231731687303715884105727,
+      "exponent_bound": 2,
+      "class": 3,
+      "operation": "add",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 34,
+      "instruction_cap": 103,
+      "public_multiplications": 3573,
+      "multiplication_cap": 5104
+    },
+    {
+      "residue_prime": 170141183460469231731687303715884105727,
+      "exponent_bound": 2,
+      "class": 3,
+      "operation": "bracket",
+      "verified_all_formal_coefficients": true,
+      "independent_matrix_control": true,
+      "instructions": 30,
+      "instruction_cap": 103,
+      "public_multiplications": 2810,
+      "multiplication_cap": 4086
+    }
+  ],
+  "finite_reduction_controls": [
+    {
+      "name": "C_81_hidden_whole_group",
+      "ambient_order": 81,
+      "recovered_order": 81,
+      "verified_exact_recovery": true,
+      "stages": [
+        {
+          "ambient_order": 81,
+          "omega_order": 3,
+          "intersection_order": 3,
+          "normalizer_index": 1,
+          "next_quotient_order": 27,
+          "terminal_trivial_intersection": false
+        },
+        {
+          "ambient_order": 27,
+          "omega_order": 3,
+          "intersection_order": 3,
+          "normalizer_index": 1,
+          "next_quotient_order": 9,
+          "terminal_trivial_intersection": false
+        },
+        {
+          "ambient_order": 9,
+          "omega_order": 3,
+          "intersection_order": 3,
+          "normalizer_index": 1,
+          "next_quotient_order": 3,
+          "terminal_trivial_intersection": false
+        },
+        {
+          "ambient_order": 3,
+          "omega_order": 3,
+          "intersection_order": 3,
+          "normalizer_index": 1,
+          "next_quotient_order": 1,
+          "terminal_trivial_intersection": false
+        }
+      ],
+      "enumeration_queries": 121,
+      "enumerated_control": true
+    },
+    {
+      "name": "Heisenberg_F3_times_C9",
+      "ambient_order": 243,
+      "recovered_order": 27,
+      "verified_exact_recovery": true,
+      "stages": [
+        {
+          "ambient_order": 243,
+          "omega_order": 81,
+          "intersection_order": 9,
+          "normalizer_index": 3,
+          "next_quotient_order": 9,
+          "terminal_trivial_intersection": false
+        },
+        {
+          "ambient_order": 9,
+          "omega_order": 9,
+          "intersection_order": 3,
+          "normalizer_index": 1,
+          "next_quotient_order": 3,
+          "terminal_trivial_intersection": false
+        },
+        {
+          "ambient_order": 3,
+          "omega_order": 3,
+          "intersection_order": 1,
+          "terminal_trivial_intersection": true
+        }
+      ],
+      "enumeration_queries": 244,
+      "enumerated_control": true
+    }
+  ],
+  "formal_parameter_ledgers_not_asserted_real_terminal_families": [
+    {
+      "prime": 3,
+      "p_length": 6,
+      "class_bound": 4,
+      "index_exponent_bound": 3,
+      "quantum_receiver_executed": false,
+      "independent_proof_review_complete": false,
+      "speedup_claim": false,
+      "branch": "bounded_terminal_enumeration",
+      "enumerated_elements": 729,
+      "uniform_enumeration_cap": 46656
+    },
+    {
+      "prime": 5,
+      "p_length": 6,
+      "class_bound": 4,
+      "index_exponent_bound": 3,
+      "quantum_receiver_executed": false,
+      "independent_proof_review_complete": false,
+      "speedup_claim": false,
+      "branch": "repeated_complete_omega_intersections",
+      "enumerated_elements": 0,
+      "intersection_call_cap": 6,
+      "per_call_final_fourier_samples": 19,
+      "per_call_source_multiplier_cap": 15625,
+      "original_f_query_cap_for_terminal_rees_sources": 7125000,
+      "chart_spanning_word_cap": 1554,
+      "modular_word_instruction_cap": 215,
+      "uniform_source_multiplier_cap": 1679616,
+      "preprocessing_and_coherent_compilation_paid_separately": true
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "p_length": 78,
+      "class_bound": 23,
+      "index_exponent_bound": 12,
+      "quantum_receiver_executed": false,
+      "independent_proof_review_complete": false,
+      "speedup_claim": false,
+      "branch": "repeated_complete_omega_intersections",
+      "enumerated_elements": 0,
+      "intersection_call_cap": 78,
+      "per_call_final_fourier_samples": 94,
+      "per_call_source_multiplier_cap": 10259365309797199807057100215479426315971725125122505424309052885978459899064201429066016895550634892735968435975963142380091331865448435950923620396308030631539618825327034080691120713246061550712549375145802459246528002375017886380190948579212115318998788057158927440864566544453454104677333177232084340900253138174989460261176344576,
+      "original_f_query_cap_for_terminal_rees_sources": 1730098328382960586662881151937588536220207838200158824733781442479863563538590672191976825198076865771422773169242520478409081840461762445019955649151801053580315160227849719231427832598962835665961476427087543517497496208513516287609880804604014278934679622807052887917637043790452686396366757675709774912055088209277522620603734043918336,
+      "chart_spanning_word_cap": 33402558971019667664008206718458465908737914,
+      "modular_word_instruction_cap": 117440503,
+      "uniform_source_multiplier_cap": 10259365309797199807057100215479426315971725125122505424309052885978459899064201429066016895550634892735968435975963142380091331865448435950923620396308030631539618825327034080691120713246061550712549375145802459246528002375017886380190948579212115318998788057158927440864566544453454104677333177232084340900253138174989460261176344576,
+      "preprocessing_and_coherent_compilation_paid_separately": true
+    }
+  ],
+  "quantum_receiver_executed": false,
+  "opaque_group_preprocessing_implemented": false,
+  "general_scalar_solver_implemented": false,
+  "speedup_claim": false,
+  "novelty_established": false,
+  "source_repository_or_staging_modified": false,
+  "source_hashes": {
+    "modular_lazard.py": "6ec404fea7671dded3f11e23c08ef7e8ace6bb4b5c2eae83fed6f3180fd65931",
+    "terminal_reduction.py": "c4f82ea180f430d74f50a6f75b8ccab63439cca9ad1dc084ac17af16ec31b511",
+    "test_terminal_fpt.py": "5d11c8010775fb45d23ac6322ecb018f548b358af142124aa95289f4d4ca58ed",
+    "replay.py": "9690a204f85821be83ffc21570817aff08031e0edafcca94add61e327fafcc7c",
+    "TERMINAL_FPT.md": "6420b570fa070f00e25aaa13379581cbbd517cd6432de0d529ff2366fb101a2b"
+  }
+}

@@ -1,0 +1,503 @@
+{
+  "certified_estimator_control": {
+    "exact_mean": "-3/5",
+    "exact_second_moment": "1",
+    "observed_error": "1/60",
+    "result": {
+      "estimate": "-7/12",
+      "pilot_samples": 2112,
+      "plan": {
+        "average_sign_bound_required": false,
+        "block_draws": 64,
+        "blocks": 33,
+        "decoder_runtime_certified": false,
+        "decoder_total_deterministic_required": true,
+        "delta": "1/16",
+        "epsilon": "1/4",
+        "fiber_enumeration_required": false,
+        "gibbs_accuracy_certified": false,
+        "max_amplitude_evaluations": 4224,
+        "max_decoder_calls": 4224,
+        "pilot_thermal_accuracy_certified": false,
+        "second_moment_upper": "1",
+        "total_draws": 2112
+      },
+      "status": "estimate"
+    },
+    "scope": "finite-pilot implementation control, not a new algorithm candidate"
+  },
+  "claim_status": "local unreviewed exact finite-pilot output theorem and implementation",
+  "context_sha256": {
+    "central-rank-2026-10-23/central_rank.py": "02e102da115ffc7eabd42e4bdf3eebac62d4fec68fe5a88db958caf767cd162e",
+    "hdqi-decoded-observables-2026-10-24/decoded_observables.py": "f4cda5ea5f0ba9dbaf712d5b7e5958ee8cf438f2cfaf4c017cb1197368137f71",
+    "hdqi-ecf-tree-sampler-2026-10-25/ECF_TREE_SAMPLING.md": "0090cf282b582084cc5083f3ae6d5348ccbded3683725943a394e8251f5416ea",
+    "hdqi-ecf-tree-sampler-2026-10-25/tree_controls.py": "e6e479cb05e4d0cafd67eb96ac89bd0f82581715a9686fb3e5be3a3b74d676d3",
+    "hdqi-ecf-tree-sampler-2026-10-25/tree_sampler.py": "b01379307afe8a1b38b1163f4cd9039da65be72069c15d98ca50f8c23e633bc4",
+    "hdqi-output-sampling-2026-10-24/output_sampling.py": "c9401123d1a5d508fc66b148b3b4e88f2a81c0a62af4d4522d30cbaca5c86014"
+  },
+  "full_thermal_sampler_executed": false,
+  "general_high_rank_output_sampling_solved": false,
+  "independent_review_completed": false,
+  "live_physical_output": {
+    "dense_state_used": false,
+    "finite_transfer_factors": 2,
+    "full_thermal_sampler_executed": false,
+    "pauli_draws_diagnostic_only": [
+      "-56643889197324857587699050/687488598563510994781894261",
+      "-7978/90701",
+      "-56643889197324857587699050/687488598563510994781894261",
+      "-64588860/747244619"
+    ],
+    "pauli_estimate_certified": false,
+    "physical_qubits": 24,
+    "pilot_generators": 25,
+    "sampler_plan": {
+      "average_sign_bound_required": false,
+      "decoder_runtime_certified": false,
+      "decoder_total_deterministic_required": true,
+      "delta": "1/64",
+      "failure_probability_upper": "1/64",
+      "fiber_bound": 2,
+      "fiber_rank": 1,
+      "gibbs_accuracy_certified": false,
+      "max_amplitude_evaluations": 24,
+      "max_decoder_calls": 36,
+      "max_pilot_samples": 12,
+      "max_trials": 12,
+      "pilot_thermal_accuracy_certified": false,
+      "rank_B": 25,
+      "rank_X": 24,
+      "success_probability_per_trial": "1/2",
+      "target": "actual_decoded_joint_computational_output_of_transfer_pilot",
+      "z_basis": [
+        1
+      ]
+    },
+    "samples": [
+      {
+        "amplitude_evaluations": 4,
+        "decoder_calls": 6,
+        "left": 14653187,
+        "pilot_samples": 2,
+        "residue": 0,
+        "right": 14653187,
+        "status": "sample",
+        "trials": 2
+      },
+      {
+        "amplitude_evaluations": 2,
+        "decoder_calls": 3,
+        "left": 16551364,
+        "pilot_samples": 1,
+        "residue": 0,
+        "right": 16551364,
+        "status": "sample",
+        "trials": 1
+      },
+      {
+        "amplitude_evaluations": 2,
+        "decoder_calls": 3,
+        "left": 9631641,
+        "pilot_samples": 1,
+        "residue": 0,
+        "right": 9631641,
+        "status": "sample",
+        "trials": 1
+      },
+      {
+        "amplitude_evaluations": 2,
+        "decoder_calls": 3,
+        "left": 10885215,
+        "pilot_samples": 1,
+        "residue": 0,
+        "right": 10885199,
+        "status": "sample",
+        "trials": 1
+      }
+    ],
+    "transfer_resources": {
+      "amplitude_bag_states": 729,
+      "amplitude_oracle_assumed": false,
+      "bag_independence_bound": 1,
+      "bags": 21,
+      "ecf_recognition_performed": false,
+      "edges": 87,
+      "factor_count": 2,
+      "max_bag_pair_states": 1296,
+      "replicas": 4,
+      "state_enumeration_is_exponential_in_factors": true,
+      "thermal_approximation_certified": false,
+      "total_bag_pair_states_per_contraction": 26001,
+      "vertices": 25
+    }
+  },
+  "quantum_advantage_claim": false,
+  "schema": "exact-transfer-decoded-output-v1",
+  "small_controls": [
+    {
+      "all_output_events_match": true,
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3"
+      ],
+      "decoder_kind": "section",
+      "exact_trial_success": "1/2",
+      "nonzero_target_events": 12,
+      "observations": [
+        {
+          "exact_mean": "-250884/871643",
+          "exact_second_moment": "217376484317081/1376568567977606",
+          "observable": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "exact_mean": "125442/871643",
+          "exact_second_moment": "190161599185043/1376568567977606",
+          "observable": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_mean": "0",
+          "exact_second_moment": "0",
+          "observable": [
+            2,
+            3,
+            1
+          ]
+        }
+      ],
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "paulis": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "plan": {
+        "average_sign_bound_required": false,
+        "decoder_runtime_certified": false,
+        "decoder_total_deterministic_required": true,
+        "delta": "1/16",
+        "failure_probability_upper": "1/16",
+        "fiber_bound": 2,
+        "fiber_rank": 1,
+        "gibbs_accuracy_certified": false,
+        "max_amplitude_evaluations": 16,
+        "max_decoder_calls": 24,
+        "max_pilot_samples": 8,
+        "max_trials": 8,
+        "pilot_thermal_accuracy_certified": false,
+        "rank_B": 2,
+        "rank_X": 1,
+        "success_probability_per_trial": "1/2",
+        "target": "actual_decoded_joint_computational_output_of_transfer_pilot",
+        "z_basis": [
+          1
+        ]
+      }
+    },
+    {
+      "all_output_events_match": true,
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3"
+      ],
+      "decoder_kind": "section",
+      "exact_trial_success": "1/2",
+      "nonzero_target_events": 16,
+      "observations": [
+        {
+          "exact_mean": "-866334455637/3043105607279",
+          "exact_second_moment": "8525207491845479648840134644385622989/55402058575651774501718581279804039631",
+          "observable": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "exact_mean": "-292738328928/3043105607279",
+          "exact_second_moment": "620580918308266452352639079616427/4624719485400682241737201170881372",
+          "observable": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_mean": "0",
+          "exact_second_moment": "0",
+          "observable": [
+            2,
+            3,
+            1
+          ]
+        }
+      ],
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "paulis": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "plan": {
+        "average_sign_bound_required": false,
+        "decoder_runtime_certified": false,
+        "decoder_total_deterministic_required": true,
+        "delta": "1/16",
+        "failure_probability_upper": "1/16",
+        "fiber_bound": 2,
+        "fiber_rank": 1,
+        "gibbs_accuracy_certified": false,
+        "max_amplitude_evaluations": 16,
+        "max_decoder_calls": 24,
+        "max_pilot_samples": 8,
+        "max_trials": 8,
+        "pilot_thermal_accuracy_certified": false,
+        "rank_B": 2,
+        "rank_X": 1,
+        "success_probability_per_trial": "1/2",
+        "target": "actual_decoded_joint_computational_output_of_transfer_pilot",
+        "z_basis": [
+          1
+        ]
+      }
+    },
+    {
+      "all_output_events_match": true,
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3"
+      ],
+      "decoder_kind": "zero",
+      "exact_trial_success": "1/4",
+      "nonzero_target_events": 32,
+      "observations": [
+        {
+          "exact_mean": "0",
+          "exact_second_moment": "0",
+          "observable": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "exact_mean": "0",
+          "exact_second_moment": "0",
+          "observable": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_mean": "0",
+          "exact_second_moment": "0",
+          "observable": [
+            2,
+            3,
+            1
+          ]
+        }
+      ],
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "paulis": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "plan": {
+        "average_sign_bound_required": false,
+        "decoder_runtime_certified": false,
+        "decoder_total_deterministic_required": true,
+        "delta": "1/16",
+        "failure_probability_upper": "1/16",
+        "fiber_bound": 4,
+        "fiber_rank": 2,
+        "gibbs_accuracy_certified": false,
+        "max_amplitude_evaluations": 64,
+        "max_decoder_calls": 80,
+        "max_pilot_samples": 16,
+        "max_trials": 16,
+        "pilot_thermal_accuracy_certified": false,
+        "rank_B": 2,
+        "rank_X": 0,
+        "success_probability_per_trial": "1/4",
+        "target": "actual_decoded_joint_computational_output_of_transfer_pilot",
+        "z_basis": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "all_output_events_match": true,
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3"
+      ],
+      "decoder_kind": "imaginary-phase-control",
+      "exact_trial_success": "1/2",
+      "nonzero_target_events": 24,
+      "observations": [
+        {
+          "exact_mean": "-139289131184916/494569255353923",
+          "exact_second_moment": "62872698853747465448618828333269938357029/409464358694980070802158609900309128648934",
+          "observable": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "exact_mean": "0",
+          "exact_second_moment": "0",
+          "observable": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_mean": "1184047661160/494569255353923",
+          "exact_second_moment": "5108760276524449579821150/183701864357438732079904411",
+          "observable": [
+            2,
+            3,
+            1
+          ]
+        }
+      ],
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "paulis": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ]
+      ],
+      "plan": {
+        "average_sign_bound_required": false,
+        "decoder_runtime_certified": false,
+        "decoder_total_deterministic_required": true,
+        "delta": "1/16",
+        "failure_probability_upper": "1/16",
+        "fiber_bound": 2,
+        "fiber_rank": 1,
+        "gibbs_accuracy_certified": false,
+        "max_amplitude_evaluations": 16,
+        "max_decoder_calls": 24,
+        "max_pilot_samples": 8,
+        "max_trials": 8,
+        "pilot_thermal_accuracy_certified": false,
+        "rank_B": 3,
+        "rank_X": 2,
+        "success_probability_per_trial": "1/2",
+        "target": "actual_decoded_joint_computational_output_of_transfer_pilot",
+        "z_basis": [
+          3
+        ]
+      }
+    }
+  ],
+  "source_sha256": {
+    "EXACT_DECODED_OUTPUT.md": "e1b239c445ae86966e1067a213e2c9c0277168e3c11b7f328b119723164da480",
+    "decoded_controls.py": "70acf71138ade6d1ac99fcf02d82e26ec4c7614e78c282f6595ff2934b2c31f2",
+    "decoded_transfer.py": "c43fe6144eace351cb187a08170478d832f6bcf95436f5b092005b64bbc98ce6",
+    "replay.py": "78f48fa05a2d0ce1bb73ac79e2126df9cc9f4feb560d9cf412f8bf77303a58e8",
+    "test_decoded_transfer.py": "fde48b3f3ec82a8f4b5ef1146aad827db29ca37687aeaf18808ff5dd0624ea9a",
+    "transfer_access.py": "03d3d2e02a85824d692368aae040dff351fe366c9f1f3974da28731064926d47"
+  }
+}

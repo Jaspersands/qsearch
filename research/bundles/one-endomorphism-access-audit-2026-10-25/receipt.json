@@ -1,0 +1,308 @@
+{
+  "dependency_sha256": {
+    "cyclic-odd-degree-source-2026-10-25/controls_cyclic.py": "0aba9eca3bda5ba69a4c9537fc0f5bbd129605638429324fdfa9f63c6ee9a442",
+    "cyclic-odd-degree-source-2026-10-25/cyclic_source.py": "43e5897a63a24915bac95c19e55d41ebf22384c3e05d1d1f1ac5434f837aeaef",
+    "double-level-source-2026-10-25/controls_double.py": "afba4b5c3e2858eb1bc0b9c83ad3981f2471310b9122b18a003672b97e9ad5bb",
+    "double-level-source-2026-10-25/double_level_source.py": "9e151dc9c63a46b800d61e5eabf81329a774d23b66f4315d9bf1ecbaf41f1704",
+    "double-level-source-2026-10-25/half_norm.py": "bc606315f51689167dcfa52fb959c8aaabd81069bb0d6b5e3eef0eaf1c77f4b2",
+    "double-level-source-2026-10-25/local_baseline.py": "04a9fbda9297c328aa890a357381ad1520c82169037d8feaba73c3453e36934e",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "kernel-output-2026-10-23/uniform_source_bound.py": "4e0ddcf408e7a7e585a233f5053dd4b1f44137e3d6433253244813bd14ff0119",
+    "native-membership-baseline-2026-10-25/controls_membership.py": "7be424418e20aca0544130443976ea74ddee60daa0644231a4b482225c8aee08",
+    "native-membership-baseline-2026-10-25/native_membership.py": "c106830e6678475e936958c840629eaf2ee21f7f6e2692833015d7f30d9bd5d5",
+    "ppav-source-2026-10-23/2026-1142.pdf": "4504310844c227e0d49c8c628b03e9942894f14fcd6f5881dc5c0122ed645318",
+    "ppav-source-2026-10-23/PPAV_SOURCE_DECISION.md": "67dc27018fe5e796315ffd670977bbff42532b52eb119b16171ae6055e31c37c",
+    "smooth-repolarization-2026-10-23/SMOOTH_REPOLARIZATION.md": "f02bd8c86d0e9c2d32c4156ee20d01761c1e4628b448aae263b26e216e7a5d87",
+    "smooth-repolarization-2026-10-23/smooth_repolarization.py": "2955dd7b65007e1a996779bea4275cf095afc56d31653c50df5afbb3263fa91b",
+    "source-field-audit-2026-10-23/SOURCE_FIELD_AUDIT.md": "fbdb8aca63ff5f44f0bdd395b4574950ce40c936e691da7212074c9b35292763",
+    "source-pullback-2026-10-23/pullback.py": "9352ddaa242473bfb4f048198f20059be97cb91fedc11702179209fdaac2ae1f",
+    "suborder-transcript-2026-10-25/SUBORDER_TRANSCRIPT.md": "3c47ff597405c0b8efe9b944d86c086d4df10822fe5304e6021a4e8def5539b1"
+  },
+  "frobenius_controls": [
+    {
+      "actual_curve_backend_executed": false,
+      "characteristic": 11,
+      "commutant_dimension": 2,
+      "full_algebra_dimension": 16,
+      "generated_algebra_dimension": 8,
+      "natural_twist_relation_checked": true,
+      "prime": 3
+    },
+    {
+      "actual_curve_backend_executed": false,
+      "characteristic": 11,
+      "commutant_dimension": 2,
+      "full_algebra_dimension": 16,
+      "generated_algebra_dimension": 8,
+      "natural_twist_relation_checked": true,
+      "prime": 5
+    },
+    {
+      "actual_curve_backend_executed": false,
+      "characteristic": 11,
+      "commutant_dimension": 2,
+      "full_algebra_dimension": 16,
+      "generated_algebra_dimension": 8,
+      "natural_twist_relation_checked": true,
+      "prime": 7
+    },
+    {
+      "actual_curve_backend_executed": false,
+      "characteristic": 11,
+      "commutant_dimension": 2,
+      "full_algebra_dimension": 16,
+      "generated_algebra_dimension": 8,
+      "natural_twist_relation_checked": true,
+      "prime": 13
+    }
+  ],
+  "gram_nonclosure": {
+    "first_gram_in_field": true,
+    "genuine_integral_automorphisms": true,
+    "hsp_query_group_established": false,
+    "product_gram_in_field": false,
+    "quadratic_field": "Q(j), j^2=-11",
+    "second_gram_in_field": true
+  },
+  "implementation_sha256": {
+    "ACCESS_CEILING.md": "ed6c3724f291e535805e8f52a93df815c2e06f614e333656409d8a7930c79b62",
+    "HANDOFF.md": "c1ba2be4b5e97afeb374186db388ce9d0f2228098cb315270e8b6e1c7a0439d4",
+    "RETAINED_MARKED_RIGIDITY.md": "7dc0b41c1dc76dddb6b8ec385fbf25f11ca814da02cf8d27fdef0065b3a0d034",
+    "access_audit.py": "c15d18741beeb7f430c86a2bc2352f6b99816c3e6fec8f6cb60bf967f84dc7b0",
+    "replay_access_audit.py": "045ffca700de4e9cd83d22f218bc7914dfc89b17df91c5d62bbf9b9bc567c2e0",
+    "test_access_audit.py": "3b857c19950bfcd95cf40e19265b7638ef2fab79dd1bc55305117cef92e8f00b"
+  },
+  "negative_records": [
+    {
+      "claim_rejected": "one nonscalar action determines the torsion isogeny up to scalar",
+      "id": "NEG-ONE-ENDO-SCALAR-INTERTWINER-TRANSFER",
+      "scope": "known degree also insufficient; two genuine degree-three maps supplied",
+      "surviving_obligation": "remove or coherently process the quadratic centralizer ambiguity"
+    },
+    {
+      "claim_rejected": "fixed quadratic input bounds every primitive intertwiner degree",
+      "id": "NEG-ONE-ENDO-PRIMITIVE-DEGREE-TRANSFER",
+      "scope": "not a lower bound against selecting a small representative",
+      "surviving_obligation": "construct a globally consistent bounded representative or another source"
+    },
+    {
+      "claim_rejected": "copies and natural Frobenius arrows supply a full quaternion action",
+      "exception": "known self-Frobenius not commuting with alpha can supply a second operator",
+      "id": "NEG-ONE-ENDO-STABILIZATION-FROBENIUS-CLOSURE",
+      "scope": "specified known algebra operations; genuinely new maps are not excluded"
+    },
+    {
+      "claim_rejected": "Gram-in-quadratic-field integral automorphisms form a query group",
+      "id": "NEG-ONE-ENDO-GRAM-QUERY-GROUP",
+      "scope": "explicit two-automorphism nonclosure, not a ban on non-group algorithms"
+    }
+  ],
+  "projective_counts": [
+    {
+      "count": 4,
+      "prime": 3
+    },
+    {
+      "count": 4,
+      "prime": 5
+    },
+    {
+      "count": 8,
+      "prime": 7
+    },
+    {
+      "count": 12,
+      "prime": 13
+    },
+    {
+      "count": 16,
+      "prime": 17
+    }
+  ],
+  "same_degree_controls": [
+    {
+      "both_half_polarizations_integral": true,
+      "common_degree": 3,
+      "maps_differ_by_nonscalar_centralizer": true,
+      "native_hardness_claim": false,
+      "original_degree_three_kernels_distinct": true,
+      "prime": 5,
+      "same_known_quadratic_action": true,
+      "supplied_global_endomorphisms": true,
+      "transport_of_transverse_operator_differs": true,
+      "transported_integral_gram_operators_differ": true
+    },
+    {
+      "both_half_polarizations_integral": true,
+      "common_degree": 3,
+      "maps_differ_by_nonscalar_centralizer": true,
+      "native_hardness_claim": false,
+      "original_degree_three_kernels_distinct": true,
+      "prime": 7,
+      "same_known_quadratic_action": true,
+      "supplied_global_endomorphisms": true,
+      "transport_of_transverse_operator_differs": true,
+      "transported_integral_gram_operators_differ": true
+    },
+    {
+      "both_half_polarizations_integral": true,
+      "common_degree": 3,
+      "maps_differ_by_nonscalar_centralizer": true,
+      "native_hardness_claim": false,
+      "original_degree_three_kernels_distinct": true,
+      "prime": 13,
+      "same_known_quadratic_action": true,
+      "supplied_global_endomorphisms": true,
+      "transport_of_transverse_operator_differs": true,
+      "transported_integral_gram_operators_differ": true
+    },
+    {
+      "both_half_polarizations_integral": true,
+      "common_degree": 3,
+      "maps_differ_by_nonscalar_centralizer": true,
+      "native_hardness_claim": false,
+      "original_degree_three_kernels_distinct": true,
+      "prime": 17,
+      "same_known_quadratic_action": true,
+      "supplied_global_endomorphisms": true,
+      "transport_of_transverse_operator_differs": true,
+      "transported_integral_gram_operators_differ": true
+    }
+  ],
+  "scope_flags": {
+    "general_quantum_no_go": false,
+    "independent_review": false,
+    "main_registry_integrated": false,
+    "native_geometric_backend_executed": false,
+    "native_hardness_established": false,
+    "novelty_established": false,
+    "quantum_execution": false,
+    "speedup_established": false,
+    "unknown_kernel_recovered": false
+  },
+  "stabilization_controls": [
+    {
+      "commutant_dimension": 2,
+      "copies": 1,
+      "full_algebra_dimension": 4,
+      "generated_algebra_dimension": 2,
+      "prime": 3,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 2,
+      "full_algebra_dimension": 16,
+      "generated_algebra_dimension": 8,
+      "prime": 3,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 3,
+      "full_algebra_dimension": 36,
+      "generated_algebra_dimension": 18,
+      "prime": 3,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 1,
+      "full_algebra_dimension": 4,
+      "generated_algebra_dimension": 2,
+      "prime": 5,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 2,
+      "full_algebra_dimension": 16,
+      "generated_algebra_dimension": 8,
+      "prime": 5,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 3,
+      "full_algebra_dimension": 36,
+      "generated_algebra_dimension": 18,
+      "prime": 5,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 1,
+      "full_algebra_dimension": 4,
+      "generated_algebra_dimension": 2,
+      "prime": 7,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 2,
+      "full_algebra_dimension": 16,
+      "generated_algebra_dimension": 8,
+      "prime": 7,
+      "projective_ambiguity_removed": false
+    },
+    {
+      "commutant_dimension": 2,
+      "copies": 3,
+      "full_algebra_dimension": 36,
+      "generated_algebra_dimension": 18,
+      "prime": 7,
+      "projective_ambiguity_removed": false
+    }
+  ],
+  "status": "SCOPED_FALSIFICATION_OF_ONE_ENDOMORPHISM_ACCESS_SHORTCUTS",
+  "unbounded_primitive_family": {
+    "bound_on_every_primitive_intertwiner_from_fixed_input": false,
+    "controls": [
+      {
+        "degree": 3,
+        "exponent": 1,
+        "primitive_integral_map": true,
+        "same_fixed_quadratic_input": true
+      },
+      {
+        "degree": 9,
+        "exponent": 2,
+        "primitive_integral_map": true,
+        "same_fixed_quadratic_input": true
+      },
+      {
+        "degree": 81,
+        "exponent": 4,
+        "primitive_integral_map": true,
+        "same_fixed_quadratic_input": true
+      },
+      {
+        "degree": 6561,
+        "exponent": 8,
+        "primitive_integral_map": true,
+        "same_fixed_quadratic_input": true
+      },
+      {
+        "degree": 43046721,
+        "exponent": 16,
+        "primitive_integral_map": true,
+        "same_fixed_quadratic_input": true
+      },
+      {
+        "degree": 1853020188851841,
+        "exponent": 32,
+        "primitive_integral_map": true,
+        "same_fixed_quadratic_input": true
+      },
+      {
+        "degree": 3433683820292512484657849089281,
+        "exponent": 64,
+        "primitive_integral_map": true,
+        "same_fixed_quadratic_input": true
+      }
+    ],
+    "fixed_known_endomorphism": "h=(1+j)/2, j^2=-11",
+    "minimal_degree_intertwiner_lower_bound_claim": false,
+    "scope": "counterexample to a universal bound, not to choosing a small representative"
+  }
+}

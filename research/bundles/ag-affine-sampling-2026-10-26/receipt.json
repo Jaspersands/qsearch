@@ -1,0 +1,571 @@
+{
+  "status": "REFINED_GAP_CONTROL_SOLVED_BY_MATCHED_CLASSICAL_UNIFORM_SAMPLER",
+  "proof_status": "WRITTEN_DEDUCTION_WITH_CONTROLS_NOT_INDEPENDENTLY_REVIEWED",
+  "scope": {
+    "relation": "By=s and every y_i nonzero",
+    "all_ag_families_solved": false,
+    "usd_refinement_refuted": false,
+    "native_inverse_trace_solved": false,
+    "quantum_execution": false,
+    "quantum_advantage_established": false,
+    "registry_admission": false
+  },
+  "actual_curve_control": {
+    "prime": 13,
+    "genus": 3,
+    "divisor_degree": 7,
+    "curve_coefficients_low_first": [
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        12,
+        3
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        2,
+        11
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        8
+      ]
+    ],
+    "affine_points_found": 25,
+    "point_pairs_enumerated": 169,
+    "original_parity": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        9,
+        3,
+        12,
+        10,
+        10,
+        12,
+        3,
+        9,
+        4,
+        1,
+        1,
+        4,
+        9,
+        3,
+        12,
+        10
+      ],
+      [
+        0,
+        1,
+        8,
+        1,
+        12,
+        8,
+        8,
+        5,
+        5,
+        1,
+        12,
+        5,
+        12,
+        1,
+        8,
+        1,
+        12,
+        8,
+        8
+      ],
+      [
+        0,
+        2,
+        2,
+        5,
+        4,
+        6,
+        5,
+        1,
+        4,
+        6,
+        1,
+        3,
+        3,
+        11,
+        11,
+        8,
+        9,
+        7,
+        8
+      ]
+    ],
+    "dual_distance_lower": 12,
+    "distance_reason": "nonzero a(x)+b*y has at most7 evaluation zeros",
+    "schur_square_dimension": 12,
+    "schur_cube_dimension": 19,
+    "cube_annihilator_dimension": 0,
+    "refined_decoder_failure_upper": "720866051774684621/26623333280885243904",
+    "gram_tail_upper": "30941/743008370688",
+    "conditional_refined_quantum_success_lower": "25902467229110559283/26623334389557215232",
+    "classical_probability_certificate": {
+      "success_lower": "30126834384/137858491849",
+      "odd_order_used": 11,
+      "expected_trials_upper": "137858491849/30126834384",
+      "requires_uniform_marginals_through_order": 11,
+      "independence_verified_by_this_helper": false,
+      "quantum_advantage_established": false
+    },
+    "128_trial_failure_below_1e_minus_12": true,
+    "quantum_execution": false,
+    "quantum_advantage_established": false
+  },
+  "original_fiber_runs": [
+    {
+      "syndrome": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "seed": 26026,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          8,
+          7,
+          12,
+          1,
+          4,
+          12,
+          4,
+          4,
+          6,
+          8,
+          12,
+          2,
+          8,
+          4,
+          5,
+          7,
+          5,
+          3,
+          6
+        ],
+        "attempts": 4,
+        "field_draws": 56,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    },
+    {
+      "syndrome": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 26027,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          2,
+          12,
+          3,
+          4,
+          6,
+          10,
+          10,
+          10,
+          8,
+          9,
+          7,
+          1,
+          4,
+          11,
+          7,
+          9,
+          2,
+          8,
+          7
+        ],
+        "attempts": 7,
+        "field_draws": 98,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    },
+    {
+      "syndrome": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "seed": 26028,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          2,
+          9,
+          1,
+          10,
+          7,
+          12,
+          12,
+          11,
+          6,
+          4,
+          8,
+          4,
+          4,
+          5,
+          4,
+          2,
+          3,
+          1,
+          11
+        ],
+        "attempts": 6,
+        "field_draws": 84,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    },
+    {
+      "syndrome": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 26029,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          8,
+          6,
+          11,
+          12,
+          5,
+          2,
+          1,
+          3,
+          4,
+          2,
+          8,
+          1,
+          7,
+          1,
+          3,
+          10,
+          12,
+          4,
+          5
+        ],
+        "attempts": 2,
+        "field_draws": 28,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    },
+    {
+      "syndrome": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "seed": 26030,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          6,
+          7,
+          1,
+          2,
+          1,
+          6,
+          5,
+          7,
+          12,
+          12,
+          3,
+          10,
+          3,
+          10,
+          9,
+          10,
+          1,
+          4,
+          8
+        ],
+        "attempts": 7,
+        "field_draws": 98,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    },
+    {
+      "syndrome": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "seed": 26031,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          9,
+          11,
+          5,
+          5,
+          9,
+          5,
+          2,
+          5,
+          10,
+          6,
+          4,
+          7,
+          2,
+          6,
+          6,
+          9,
+          3,
+          8,
+          5
+        ],
+        "attempts": 3,
+        "field_draws": 42,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    },
+    {
+      "syndrome": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "seed": 26032,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          10,
+          12,
+          4,
+          10,
+          5,
+          6,
+          10,
+          9,
+          12,
+          5,
+          6,
+          11,
+          8,
+          9,
+          6,
+          4,
+          1,
+          1,
+          1
+        ],
+        "attempts": 3,
+        "field_draws": 42,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    },
+    {
+      "syndrome": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "seed": 26033,
+      "attempt_cap": 128,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          8,
+          12,
+          6,
+          10,
+          5,
+          5,
+          6,
+          10,
+          8,
+          11,
+          12,
+          10,
+          12,
+          3,
+          5,
+          10,
+          4,
+          5,
+          1
+        ],
+        "attempts": 2,
+        "field_draws": 28,
+        "ideal_conditional_law": "uniform_on_original_full_support_fiber",
+        "seeded_replay_is_not_distributional_evidence": true
+      },
+      "original_relation_verified": true
+    }
+  ],
+  "runtime": {
+    "python": "3.13.5",
+    "python_flint": "0.9.0"
+  },
+  "sha256": {
+    "ag-affine-sampling-2026-10-26/affine_sampling.py": "8aae8d2ae1b196f21c13cf8e144c6f4c1215ac8bbd0b3789e98ab5647dcc40a0",
+    "ag-affine-sampling-2026-10-26/curve_countercontrol.py": "fdc7ca94f5e0b9b402380d2ed38b535c3ebcfa1d9f90c9aed95bc2257e79f341",
+    "ag-affine-sampling-2026-10-26/test_affine_sampling.py": "981200919436480bb72e023109816f84d5b51f5e7677ccd2cace6949f985378c",
+    "ag-affine-sampling-2026-10-26/verify_affine.py": "51000d6320d767206f101d0e3e0854e59007cf74cbbce0fc236051e0364bd65c",
+    "ag-affine-sampling-2026-10-26/AFFINE_SAMPLING.md": "68efa42913956d6e3cb20fddffc567b20d69c4f6784d4b4bd63cd3c063163fbc",
+    "ag-affine-sampling-2026-10-26/HANDOFF.md": "d423d6b824bc48d08004b2b64b2745a32ca6354bbd233eb7c7d17b8481d60c5c",
+    "schur-growth-classical-gate-2026-10-26/schur_gate.py": "d2ba9a0dc1d83a60f3210efec353b463897269bdc943abf728e2a642bc2129e3",
+    "unambiguous-reduction-2026-10-26/receipt.json": "e6435c5275c7db6d593e5af002a82bf1e7f6e758beea3309af5dd30770949eeb",
+    "schur-growth-classical-gate-2026-10-26/receipt.json": "778b6595a508c482fdfc9e8bb5001c6eb0967329bafbb54d128592fff32c6f64"
+  }
+}

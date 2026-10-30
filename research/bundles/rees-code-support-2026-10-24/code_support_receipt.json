@@ -1,0 +1,106 @@
+{
+  "actual_rees_addresses_checked": 81,
+  "corrected_failure_antisymmetry_error": 6.536085761878299e-17,
+  "dependencies_sha256": {
+    "rees-formal-core-2026-10-24/native_source_controls.py": "c9c1dab002eb1dff776ddff6ec3d81c988abc29532bc860bd6bd46e9f69c1ae9",
+    "rees-formal-core-2026-10-24/native_source_receipt.json": "24a331c78d1240bd3719b1067d632a9dc0500d88e20bb37761ddc77faf917eb0",
+    "rees-spectral-mixture-2026-10-24/spectral_mixture.py": "3f8dd7bb9409545ac00bb680688e7e97b07cd1736e4cc75ea5fea66a5e4b4dde",
+    "rees-spectral-mixture-2026-10-24/spectral_mixture_receipt.json": "142f3a0494096c6e22e29eec6f92fe7383188cc22769dbe28c1a21bc4a280ddd"
+  },
+  "determinant_identity_max_error": 2.897767167584095e-16,
+  "final_extracted_wedge_trace_distance": 4.587483999906853e-16,
+  "fine_grained_ancilla_measurement_leakage": 0.4444444444444447,
+  "flat_code_hidden_order": 9,
+  "growth_instrument_operator_error": 1.0917125304012733e-15,
+  "growth_probability_max_error": 2.7755575615628914e-16,
+  "nonflat_support_false_conjugation_distance": 0.1732050807568877,
+  "nonflat_support_wedge_overlap_modulus": 0.9999999999999998,
+  "nonnormal_code_hidden_order": 3,
+  "nonnormal_code_normal_core_order": 1,
+  "nonnormal_rees_hidden_overlap_error_exact": "0",
+  "principal_angle_gap_max_excess": 4.3021142204224816e-16,
+  "rees_hidden_overlap_max_error": 6.386999721212276e-15,
+  "resource_example": {
+    "amplification_blocks_per_leaf": 1344,
+    "controlled_original_action_calls": 451584,
+    "controlled_register_swaps_cap": 2247194880,
+    "cover_order_bits": 31,
+    "design_size": 6,
+    "extraction_abort_budget": "1/160",
+    "global_error_budget": "1/20",
+    "growth_implementation_budget": "1/160",
+    "growth_measurement_cap": 191866752,
+    "growth_stages": [
+      {
+        "attempt_cap": 60,
+        "size": 1,
+        "success_probability": "7/16"
+      },
+      {
+        "attempt_cap": 104,
+        "size": 2,
+        "success_probability": "1/4"
+      },
+      {
+        "attempt_cap": 167,
+        "size": 3,
+        "success_probability": "5/32"
+      },
+      {
+        "attempt_cap": 260,
+        "size": 4,
+        "success_probability": "1/10"
+      },
+      {
+        "attempt_cap": 416,
+        "size": 5,
+        "success_probability": "1/16"
+      },
+      {
+        "attempt_cap": 728,
+        "size": 6,
+        "success_probability": "1/28"
+      },
+      {
+        "attempt_cap": 1664,
+        "size": 7,
+        "success_probability": "1/64"
+      }
+    ],
+    "independent_wedge_sources": 56448,
+    "native_copies_per_wedge_cap": 3400,
+    "native_copy_cap": 191923200,
+    "original_action_implementation_budget": "1/160",
+    "per_growth_instrument_half_diamond_budget": "1/30698680320",
+    "per_original_action_half_diamond_budget": "1/72253440",
+    "promised_flat_code_state": true,
+    "promised_rank": 8,
+    "promises_certified": false,
+    "public_addresses_and_receiver_budget": "1/40",
+    "ray_overlap_gap_lower_bound": "1/32",
+    "receiver_leaf_cap": 7,
+    "scalable_receiver_implemented": false,
+    "source_amplification_budget": "1/160",
+    "source_dimension_enumeration_required": false,
+    "spectral_nondegeneracy_required": false,
+    "unknown_preparation_inverse_calls": 0
+  },
+  "scope": {
+    "antisymmetrization_primitive_is_prior_art": true,
+    "arbitrary_mixed_conjugation_solver": false,
+    "conditional_code_support_reduction": true,
+    "independent_review": false,
+    "novelty_or_speedup_claim": false,
+    "quantum_receiver_executed": false
+  },
+  "source_sha256": {
+    "CODE_SUPPORT.md": "2d8eb027f701f38f2f305dad2b846d6296d72e64a72487e5068cf466970145e3",
+    "HANDOFF.md": "acf828439a8aa9393934fea64d8590a0b0061dba347c88ecac97887cf8055d50",
+    "code_support.py": "261d5b8c370f76203eb2bd4e3a951b173b3701c390a44705320ce02587a4b7fd",
+    "literature_transfer.json": "9ae669ab30ac420a71856a220b49352a9ce6ac17e6e669aa524931edf6011352",
+    "run_audit.py": "c4443f3f897acfbc4588fccb24b6540998e07315930a1e6446743024eae27959",
+    "test_code_support.py": "079fb408f895ca858fa3d3f97b3450d5b2cf46d0059896d17d3de7e4b5a0d970"
+  },
+  "uncorrected_failure_antisymmetry_leakage": 0.4444444444444446,
+  "understated_rank_output_purity": 0.33333333333333326
+}

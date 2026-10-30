@@ -1,0 +1,304 @@
+{
+  "finite_decoder_contract": {
+    "all_size_proof": false,
+    "checked": 16,
+    "radius": 2,
+    "status": "FINITE_EXHAUSTIVE_CHECK"
+  },
+  "full_output_sampling": false,
+  "gibbs_accuracy_assumed": false,
+  "independent_review": false,
+  "large_s_symbolic_family_not_constructed": {
+    "beta": "1/32768",
+    "beta_squared_mass": "2097151/1024",
+    "beta_times_degree": "1048575/8192",
+    "classical_hardness_claim": false,
+    "decoder_radius": 1099511103487,
+    "degree": 4194300,
+    "degree_scale": "4194301/1073741824",
+    "generators": 2199022206976,
+    "quantum_execution": false,
+    "root_vertices": 2097152,
+    "s": 1024
+  },
+  "live_explicit_input_no_statevector": {
+    "anticommutation_degree": 60,
+    "beta": "1/128",
+    "binary_decoder_nonlinearity_witness": true,
+    "decoder_radius": 247,
+    "native_generators": 496,
+    "physical_qubits": 495,
+    "pilot_cutoff": 31,
+    "plan": {
+      "canonical_plan": {
+        "D_lambda": "61/16384",
+        "bound_B": 8,
+        "degree": 60,
+        "estimate": null,
+        "excess_limit": 10,
+        "flip_bound": "1/128",
+        "flip_weight": 1,
+        "full_output_sampling": false,
+        "independently_reviewed": false,
+        "local_theorem_regime": true,
+        "log_partition_error": "1/2359296",
+        "m": 496,
+        "maximum_activity_vertices": 11,
+        "normalized_activity_error": "1/92274688",
+        "production_estimator_executed": false,
+        "quantum_gap_certified": false,
+        "root_draws_upper": 61572651155456,
+        "status": "marked_cluster_comparator"
+      },
+      "classical_reduction_budget_met": true,
+      "decoder_contract_verified_by_plan": false,
+      "decoder_radius_required": 247,
+      "epsilon": "1/4096",
+      "full_output_sampling": false,
+      "independent_review": false,
+      "lifted_pauli": [
+        102293456496754433437912178025862473506770063938845774671352855253004181137646079840102190385184504910965208878986252219038039267058918532916516487168,
+        98452218645418698507790301991507741360710143848070827305749787807072518091287689455903008032452721754378604038647141605876665893116140022954402512896,
+        0
+      ],
+      "pilot_cutoff": 31,
+      "production_estimator_executed": false,
+      "quantum_advantage_claim": false,
+      "route": "arbitrary_pauli",
+      "status": "CONDITIONAL_ON_UNIFORM_DECODER_CONTRACT",
+      "tail_probability_upper": "246291945612296610458213478289561618923180445182645/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+      "target": "actual decoded output, not an assumed Gibbs state",
+      "transfer_budget_met": true,
+      "transfer_error_squared_upper": "246291945612296610458213478289561618923180445182645/837987995621412318723376562387865382967460363787024586107722590232610251879596686050117143635431464230626991136655378178359617675746660621652103062880256"
+    },
+    "root_vertices": 32,
+    "uniform_radius_provenance": "local all-size repetition-quotient algebra, not ball enumeration"
+  },
+  "missing_margin_counterexample": {
+    "actual_decoded_expectation": 1.0,
+    "admission": {
+      "classical_reduction_budget_met": false,
+      "decoder_contract_verified_by_plan": false,
+      "decoder_radius_required": 1,
+      "epsilon": "1/8",
+      "full_output_sampling": false,
+      "independent_review": false,
+      "pilot_cutoff": 1,
+      "production_estimator_executed": false,
+      "quantum_advantage_claim": false,
+      "required_radius_for_cutoff": 2,
+      "route": "arbitrary_pauli",
+      "status": "INCONCLUSIVE_INSUFFICIENT_DECODING_MARGIN",
+      "tail_probability_upper": "3/524288",
+      "target": "actual decoded output, not an assumed Gibbs state",
+      "transfer_budget_met": true,
+      "transfer_error_squared_upper": "3/32768"
+    },
+    "decoder_check": {
+      "all_size_proof": false,
+      "checked": 5,
+      "radius": 1,
+      "status": "FINITE_EXHAUSTIVE_CHECK"
+    },
+    "incorrect_single_lift_expectation": 0.5,
+    "observable": [
+      0,
+      3,
+      0
+    ],
+    "pilot": "normalized native degree-one filter H_hat|0>",
+    "pilot_tail_mass": 0,
+    "pilot_weight_cutoff": 1,
+    "root": "four-cycle"
+  },
+  "novelty_claim": false,
+  "production_estimator_executed": false,
+  "quantum_execution": false,
+  "quantum_speedup_claim": false,
+  "remaining_frontier": [
+    "joint output sampling rather than specified additive Pauli readouts",
+    "average-case decoders without a comparable uniform ball guarantee",
+    "a useful non-Pauli or genuinely quantum downstream task",
+    "independent review of this reduction and its cluster-estimator dependencies"
+  ],
+  "signed_native_controls": [
+    {
+      "actual_expectation": -0.06232879148346853,
+      "actual_tail_mass": 2.2658885981408753e-06,
+      "arbitrary_readout_error_bound_from_actual_mass": 0.0060211475293546835,
+      "canonical_expectation": -0.06232879367854194,
+      "dense_finite_control_not_production_estimator": true,
+      "good_block_error": 0.0,
+      "good_column_error": 0.0,
+      "observable": [
+        0,
+        1,
+        2
+      ],
+      "operator_norm_difference": 1.9999999999999998,
+      "short_word_error_bound_from_actual_mass": 0.0030105737646773417,
+      "word": 1
+    },
+    {
+      "actual_expectation": 0.06231754504449153,
+      "actual_tail_mass": 2.2658885981408753e-06,
+      "arbitrary_readout_error_bound_from_actual_mass": 0.0060211475293546835,
+      "canonical_expectation": 0.062317549983406696,
+      "dense_finite_control_not_production_estimator": true,
+      "good_block_error": 0.0,
+      "good_column_error": 0.0,
+      "observable": [
+        3,
+        0,
+        2
+      ],
+      "operator_norm_difference": 2.0,
+      "short_word_error_bound_from_actual_mass": 0.0030105737646773417,
+      "word": 2
+    },
+    {
+      "actual_expectation": -0.031158765113873006,
+      "actual_tail_mass": 2.2658885981408753e-06,
+      "arbitrary_readout_error_bound_from_actual_mass": 0.0060211475293546835,
+      "canonical_expectation": -0.03115877499170334,
+      "dense_finite_control_not_production_estimator": true,
+      "good_block_error": 0.0,
+      "good_column_error": 0.0,
+      "observable": [
+        0,
+        2,
+        2
+      ],
+      "operator_norm_difference": 2.0,
+      "short_word_error_bound_from_actual_mass": 0.0030105737646773417,
+      "word": 4
+    },
+    {
+      "actual_expectation": -0.062389509083503894,
+      "actual_tail_mass": 2.2658885981408753e-06,
+      "arbitrary_readout_error_bound_from_actual_mass": 0.0060211475293546835,
+      "canonical_expectation": -0.062389509632272244,
+      "dense_finite_control_not_production_estimator": true,
+      "good_block_error": 0.0,
+      "good_column_error": 0.0,
+      "observable": [
+        6,
+        0,
+        2
+      ],
+      "operator_norm_difference": 2.0,
+      "short_word_error_bound_from_actual_mass": 0.0030105737646773417,
+      "word": 8
+    },
+    {
+      "actual_expectation": 0.020776257974293756,
+      "actual_tail_mass": 2.2658885981408753e-06,
+      "arbitrary_readout_error_bound_from_actual_mass": 0.0060211475293546835,
+      "canonical_expectation": 0.02077626455951398,
+      "dense_finite_control_not_production_estimator": true,
+      "good_block_error": 0.0,
+      "good_column_error": 0.0,
+      "observable": [
+        5,
+        3,
+        1
+      ],
+      "operator_norm_difference": 2.0000000000000004,
+      "short_word_error_bound_from_actual_mass": 0.0030105737646773417,
+      "word": 16
+    },
+    {
+      "actual_expectation": -1.0123697298285769e-05,
+      "actual_tail_mass": 0.0032697420543349493,
+      "arbitrary_readout_error_bound_from_actual_mass": 0.22872663349369524,
+      "canonical_expectation": 0.0,
+      "dense_finite_control_not_production_estimator": true,
+      "good_block_error": 0.0,
+      "good_column_error": 0.0,
+      "observable": [
+        3,
+        1,
+        3
+      ],
+      "operator_norm_difference": 2.0,
+      "short_word_error_bound_from_actual_mass": 0.11436331674684762,
+      "word": 3
+    },
+    {
+      "actual_expectation": 0.0019442947350749484,
+      "actual_tail_mass": 0.0032697420543349493,
+      "arbitrary_readout_error_bound_from_actual_mass": 0.22872663349369524,
+      "canonical_expectation": 0.00194461093996335,
+      "dense_finite_control_not_production_estimator": true,
+      "good_block_error": 0.0,
+      "good_column_error": 0.0,
+      "observable": [
+        0,
+        3,
+        0
+      ],
+      "operator_norm_difference": 2.0,
+      "short_word_error_bound_from_actual_mass": 0.11436331674684762,
+      "word": 5
+    }
+  ],
+  "small_short_word_plan": {
+    "canonical_plan": {
+      "D_lambda": "3/256",
+      "bound_B": 8,
+      "degree": 2,
+      "estimate": null,
+      "excess_limit": 5,
+      "flip_bound": "1/16",
+      "flip_weight": 1,
+      "full_output_sampling": false,
+      "independently_reviewed": false,
+      "local_theorem_regime": true,
+      "log_partition_error": "1/4608",
+      "m": 5,
+      "maximum_activity_vertices": 6,
+      "normalized_activity_error": "1/98304",
+      "production_estimator_executed": false,
+      "quantum_gap_certified": false,
+      "root_draws_upper": 234881024,
+      "status": "marked_cluster_comparator"
+    },
+    "classical_reduction_budget_met": true,
+    "decoder_contract_verified_by_plan": false,
+    "decoder_radius_required": 2,
+    "epsilon": "1/8",
+    "full_output_sampling": false,
+    "independent_review": false,
+    "lifted_pauli": [
+      1,
+      0,
+      0
+    ],
+    "pilot_cutoff": 1,
+    "production_estimator_executed": false,
+    "quantum_advantage_claim": false,
+    "route": "short_word",
+    "status": "CONDITIONAL_ON_UNIFORM_DECODER_CONTRACT",
+    "tail_probability_upper": "37/9437184",
+    "target": "actual decoded output, not an assumed Gibbs state",
+    "transfer_budget_met": true,
+    "transfer_error_squared_upper": "37/2359296"
+  },
+  "source_hashes": {
+    "hdqi-cluster-baseline-2026-10-24/CLUSTER_BASELINE.md": "f32572252c925e5ab6e09b74837e659c1a5206893b21ad34408e41f67cfd8d29",
+    "hdqi-cluster-baseline-2026-10-24/cluster_baseline.py": "95de565cd743c7ffa1b81ac8d057374f1d952d5b8e5949bc2862f9ee8f8bc7fe",
+    "hdqi-coherent-sign-2026-10-24/coherent_sign.py": "e4decaffa0075a95e9612dcd44813bb91632127835cfbcfc2bfb84eaebbc40f2",
+    "hdqi-decoded-observables-2026-10-24/decoded_observables.py": "f4cda5ea5f0ba9dbaf712d5b7e5958ee8cf438f2cfaf4c017cb1197368137f71",
+    "hdqi-decoder-margin-2026-10-24/DECODER_MARGIN.md": "907305c43f6573e89af8fdaa6173d0daba05930db2de2edf1e443bfdbc731701",
+    "hdqi-decoder-margin-2026-10-24/HANDOFF.md": "af04a47a301095a67545e41bb444ff707add52386c3b75cfb82d9379dbf7c9b9",
+    "hdqi-decoder-margin-2026-10-24/decoder_margin.py": "e41332d99ec1963f1369ab711780a5cbd9c4801d84d111a98b729638d50df041",
+    "hdqi-decoder-margin-2026-10-24/margin_controls.py": "d76d7abbf31cbec282b16e18407810a06cee2d578c2ab6386adc71fc3ef33567",
+    "hdqi-decoder-margin-2026-10-24/replay.py": "98bd3f72bbe19f7699353e20a010502292b73644f720130f4fdb8e11e7cfc29e",
+    "hdqi-decoder-margin-2026-10-24/test_decoder_margin.py": "062fd529fd25e4161739b0f7ea305ea75c8fe253528cfd008f93a99215549748",
+    "hdqi-defect-observables-2026-10-24/DEFECT_OBSERVABLES.md": "1b0dd5379a17d4e917f424a73bd4becc10319441a0b7a5dbd2c1c203bb61b612",
+    "hdqi-defect-observables-2026-10-24/defect_observables.py": "7dc26aadf17806f0a4c4ddff01c8dcebfe1a688f9095971f054e1582c4ea5626",
+    "hdqi-sign-sampler-2026-10-24/sign_sampler.py": "7c267615bf27a2c942f42a5981e208eaec70002dc7b9dd18b84fc49985a47286"
+  },
+  "status": "LOCAL_UNREVIEWED_NONLINEAR_DECODER_MARGIN_REDUCTION",
+  "target": "specified Pauli expectations of the ACTUAL decoded HDQI output"
+}

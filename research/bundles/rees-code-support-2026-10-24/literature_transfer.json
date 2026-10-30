@@ -1,0 +1,35 @@
+{
+  "status": "bounded_handoff_not_a_production_registry_record",
+  "source": {
+    "arxiv_id": "2610.06737",
+    "version": "v1",
+    "title": "Anti-symmetrization is cheap and useful",
+    "authors": ["Adam Bene Watts", "John Bostanci", "Matthias C. Caro", "Daniel Grier", "Sihan Liu", "Gaurav Mahajan"],
+    "url": "https://arxiv.org/html/2610.06737v1",
+    "inspected_sections": ["Algorithms 1-2", "Theorems 3 and 5", "Section 1.2 support learning/testing"]
+  },
+  "mechanism": "Grow a support-antisymmetric state from IID mixed copies, retaining corrected antisymmetry on failures.",
+  "problem_family": "Unknown quantum-state support; local transfer targets code-preserving subgroup learning.",
+  "reduction": "A code projector P/r maps to its pure exterior-power ray; a supplied physical gate acts by its r-fold tensor power.",
+  "no_go_barrier": "The output forgets nonzero eigenvalues, so it cannot by itself encode arbitrary mixed-state conjugation symmetry.",
+  "proof_technique": "Antisymmetric growth instruments, determinant overlap and principal-angle gap transfer.",
+  "open_question": "Does a motivated nonadditive code/gate family satisfy the required global gap while escaping existing classical and simpler quantum learners?",
+  "reusable_abstraction": "Copy-only rank-charged code-support ray source, with complete abort/instrument error budgets.",
+  "local_note": "CODE_SUPPORT.md",
+  "primitive_is_prior_art": true,
+  "local_transfer_independently_reviewed": false,
+  "local_quantum_receiver_executed": false,
+  "novelty_or_speedup_claim": false,
+  "falsifiers": [
+    "Omitting failed-growth correction leaks out of the retained antisymmetric sector.",
+    "Measuring the complete ancilla index destroys required nonzero-sector coherence.",
+    "Stopping below the true rank need not produce a pure state.",
+    "Preserving support does not imply preserving a nonuniform mixed state.",
+    "Correct one-copy marginals do not guarantee independent growth inputs.",
+    "Even a constant support operator gap cannot remove linear rank dependence in copies."
+  ],
+  "discarded_secondary_attribution": {
+    "arxiv_id": "2609.11345",
+    "reason": "The primary record is an unrelated Iwahori-Hecke algebra paper; the search snippet was mismatched."
+  }
+}

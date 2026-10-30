@@ -1,0 +1,193 @@
+{
+  "arithmetic_controls": [
+    {
+      "basis_degree_bound": 108,
+      "crt_modulus": 440895,
+      "denominator": 6,
+      "order_reconstructed": true,
+      "provenance": "supplied arithmetic actions and tensor-module fixture, not native target maps",
+      "scaled_dictionary": [
+        [
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "small_torsion_levels": [
+        3,
+        5,
+        7,
+        13,
+        17,
+        19
+      ],
+      "suborder_scale": 6
+    },
+    {
+      "basis_degree_bound": 30603,
+      "crt_modulus": 9116385915,
+      "denominator": 101,
+      "order_reconstructed": true,
+      "provenance": "supplied arithmetic actions and tensor-module fixture, not native target maps",
+      "scaled_dictionary": [
+        [
+          101,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "small_torsion_levels": [
+        3,
+        5,
+        7,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "suborder_scale": 101
+    }
+  ],
+  "cm_commutation_bound_controls": [
+    {
+      "characteristic": 7,
+      "common_pure_norm": 2,
+      "noncommuting": true,
+      "product_trace": -3,
+      "provenance": "abstract quaternion-order control",
+      "reduced_discriminant": 7
+    },
+    {
+      "characteristic": 11,
+      "common_pure_norm": 3,
+      "noncommuting": true,
+      "product_trace": -5,
+      "provenance": "abstract quaternion-order control",
+      "reduced_discriminant": 11
+    },
+    {
+      "characteristic": 23,
+      "common_pure_norm": 6,
+      "noncommuting": true,
+      "product_trace": -11,
+      "provenance": "abstract quaternion-order control",
+      "reduced_discriminant": 23
+    }
+  ],
+  "execution_scope": {
+    "canonical_geometric_label_executed": false,
+    "coherent_source_executed": false,
+    "general_cm_source_construction_executed": false,
+    "independent_review_of_this_repair": false,
+    "native_reference_half_frobenius_control_executed": true,
+    "native_target_full_preprocessing_executed": false,
+    "novelty_established": false,
+    "published_rational_tensor_splitter_executed": false,
+    "small_trace_to_order_executed": true,
+    "speedup_established": false,
+    "supplied_tensor_module_extraction_executed": true
+  },
+  "native_reference_controls": [
+    {
+      "abstract_source_discriminant": 49,
+      "characteristic": 7,
+      "curve_a": -1,
+      "curve_b": 0,
+      "distinct_test_inputs": 16,
+      "field_degree": 2,
+      "half_points_tested": 64,
+      "lift_independence_checked": true,
+      "quadratic_relation_checked": true
+    },
+    {
+      "abstract_source_discriminant": 529,
+      "characteristic": 23,
+      "curve_a": -1,
+      "curve_b": 0,
+      "distinct_test_inputs": 16,
+      "field_degree": 2,
+      "half_points_tested": 64,
+      "lift_independence_checked": true,
+      "quadratic_relation_checked": true
+    },
+    {
+      "abstract_source_discriminant": 961,
+      "characteristic": 31,
+      "curve_a": -1,
+      "curve_b": 0,
+      "distinct_test_inputs": 16,
+      "field_degree": 2,
+      "half_points_tested": 64,
+      "lift_independence_checked": true,
+      "quadratic_relation_checked": true
+    }
+  ],
+  "schema": "native-suborder-preprocessing-controls-v1",
+  "sources": [
+    {
+      "id": "EHLMP-2018",
+      "pages": 41,
+      "path": "sources/ehlmp-2018.pdf",
+      "sha256": "df1e4f2ff8d2238c1759ea5395259359bd0faedb90480fb19c98da451cee2a4b",
+      "url": "https://pure-oai.bham.ac.uk/ws/files/47705132/Supersingular.pdf",
+      "used": "Algorithm 6, Lemmas 4-7, Proposition 6 and its following assumption paragraph"
+    },
+    {
+      "id": "IRS-1106.6191v3",
+      "pages": 15,
+      "path": "sources/irs-1106.6191.pdf",
+      "sha256": "e0b0d375bb77a4632fbce713f5375b82eb4197d0fcae8903f93ffff580502869",
+      "url": "https://arxiv.org/pdf/1106.6191",
+      "used": "Theorem 1, Section 4 and Corollary 10, over the fixed number field Q"
+    },
+    {
+      "id": "BROKER-SUPERSINGULAR",
+      "pages": 5,
+      "path": "sources/broker-supersingular.pdf",
+      "sha256": "75cb9a996b9252867df6a326a1427740919fc9736f296ef6216c1e8a2f6102d2",
+      "url": "https://gkorpal.github.io/files/broker-supersingular.pdf",
+      "used": "Theorems 1.1 and 2.1, Lemmas 2.3 and 2.5, Algorithm 2.4; curve construction, not automatic full-order output"
+    }
+  ],
+  "status": "written conditional reduction and finite interface controls"
+}

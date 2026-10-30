@@ -1,0 +1,37 @@
+{
+  "command": "python3 -B exact_controls.py",
+  "exit_code": 0,
+  "arithmetic": "exact rational cyclotomic Q[zeta_3]",
+  "rees_nonnormal_line": {
+    "group_order": 81,
+    "hidden_order": 3,
+    "central_order": 3,
+    "intersection_order": 1,
+    "positive_labels": 3,
+    "forbidden_labels": 0,
+    "complete_label_tuples": 27,
+    "all_valid_witnesses": 234,
+    "exact_moment_checks": 18954,
+    "exact_output_entry_checks": 170586,
+    "zero_witness_negative_control": "fails as required",
+    "tuple_fiber_and_copy_overlap_pairs": 6561,
+    "evaluation_homomorphism_checks": 13122,
+    "fourier_support_size": 9,
+    "recovered_hidden_elements": [[0, 0, 0], [1, 0, 1], [2, 0, 2]]
+  },
+  "diagonal_central_intersection": {
+    "group_order": 81,
+    "hidden_order": 9,
+    "central_order": 9,
+    "intersection_order": 3,
+    "positive_labels": 3,
+    "forbidden_labels": 6,
+    "complete_label_tuples": 27,
+    "all_valid_witnesses": 234,
+    "exact_moment_checks": 18954,
+    "exact_output_entry_checks": 18954,
+    "zero_witness_negative_control": "fails as required",
+    "contains_center_control": "only zero label, mass one"
+  },
+  "status": "all bounded controls passed; not a universal proof"
+}

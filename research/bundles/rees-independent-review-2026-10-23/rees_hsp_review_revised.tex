@@ -1,0 +1,797 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Fp}{\mathbb F_p}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\BCH}{\operatorname{BCH}}
+\newcommand{\eps}{\varepsilon}
+\title{Positive Rees Covers and Hidden Subgroup Recovery\\
+\large A Self-Contained Proof Draft for Adversarial Review}
+\author{Quantum Algorithm Search project\\Automated research draft; not independently reviewed}
+\date{22 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We describe a proposed composition of standard Lie-theoretic and quantum
+algorithmic ingredients. A positive lower-central Rees cover makes an
+arbitrary hidden subgroup of a prime-field Lazard group invariant under
+public dilations. Central character measurements and diagonal-equation
+witnesses then remove successive grades without removing the original
+hidden Lie subspace from grade one. The written argument gives a
+bounded-error polynomial-time procedure at every fixed nilpotency class
+below the characteristic, with growing prime and dimension. A separate
+corollary uses published reductions for general fixed-class nilpotent
+black-box groups. For explicit Lie input, a further proposed corollary gives
+uniform fixed-parameter time in the derived-algebra dimension, allowing
+restricted growing class. This manuscript is a proposed proof, not independent
+verification, a novelty certificate, or an implemented quantum algorithm.
+It has no established lattice, graph-isomorphism, or cryptanalytic application.
+\end{abstract}
+
+\section{Claim, status, and input model}
+Fix a constant $c$. Let $p>c$ be an odd prime, and let $L$ be an
+$n$-dimensional nilpotent Lie algebra over $\Fp$ of class at most $c$,
+specified by genuine structure constants in a public basis. Its Lazard
+group $G=\exp(L)$ has multiplication given by the finite BCH formula.
+The correspondence preserves subgroups and Lie subalgebras
+\cite[Section 2.3]{lazard}; in particular $\mathfrak h=\log H$ is an
+$\Fp$-linear subspace for every $H\le G$.
+
+The ordinary input is a coherent fixed-width function oracle
+$U_f|g,z\rangle=|g,z\mathbin{\mathrm{XOR}} f(g)\rangle$ satisfying
+$f(g)=f(g')$ exactly when $g^{-1}g'\in H$. All oracle calls, label bits,
+public arithmetic, reversible cleanup and approximation costs are charged.
+Alternatively, the input can be fresh IID copies of
+\[
+ \rho_H=\frac1{|G|}\sum_{h\in H}R_h,
+ \qquad R_g|x\rangle=|xg^{-1}\rangle,
+\]
+together with the same public group operations. No inverse of the unknown
+source, hidden coefficient, membership oracle for $H$, or conjugate copy
+is assumed. A correlated bank with these one-copy marginals is insufficient.
+There is a sufficient weaker raw-input promise: an arbitrary mixture of
+products of ideal coset states can be refreshed into independent samples,
+as shown below. Separability alone is not this promise.
+
+\begin{theorem}[Proposed explicit-Lie theorem]\label{thm:main}
+Under the preceding input contract, the algorithm below returns a basis
+of $\mathfrak h$ with probability at least $1-\eps$, in time polynomial
+in $n$, $\log p$, the supplied oracle-label width, and $\log(1/\eps)$,
+for fixed $c$. The only classical non-elementary arithmetic dependency
+is the published fixed-degree diagonal-system algorithm of
+Ivanyos--Santha \cite{is}. The statement is bounded-error, not exact
+over a fixed finite quantum gate set.
+\end{theorem}
+
+The proofs below are the project's proposed justification of this theorem.
+Finite tests are not premises of the theorem and do not certify it. The
+main new item to scrutinize is the composition of homogenization and
+all-record central descent, not the standard ingredients separately.
+
+\section{A public homogeneous cover}
+Write $\gamma_1(L)=L$ and $\gamma_{r+1}(L)=[L,\gamma_r(L)]$. Set
+\[
+ A=\bigoplus_{r=1}^{c} A_r,\qquad
+ A_r=t^r\gamma_r(L)\subset L[t],\qquad
+ D=\dim A\le cn.
+\]
+The bracket is the actual polynomial bracket. Since
+$[\gamma_r(L),\gamma_s(L)]\subseteq\gamma_{r+s}(L)$ and
+$\gamma_{c+1}(L)=0$, this is a Lie subalgebra; no nonzero bracket is
+silently truncated. It has class at most $c$. Evaluation
+$E_s(a(t))=a(s)$ is a Lie homomorphism for every $s\in\Fp$.
+For $s\ne0$, $\Delta_s(a(t))=a(st)$ is an automorphism scaling
+grade $r$ by $s^r$. These maps are also BCH group homomorphisms.
+
+Choose distinct nonzero $s_1,\ldots,s_c$, for instance $1,\ldots,c$.
+Define the tuple oracle on $\exp(A)$ by
+\[
+ \widehat f(a)=\bigl(f(\exp E_{s_1}(\log a)),\ldots,
+                         f(\exp E_{s_c}(\log a))\bigr).
+\]
+It uses $c$ ordinary oracle calls. Each evaluation workspace is uncomputed
+while retaining the address and the tuple label. Discarding uncleaned
+evaluation registers would generally destroy the required coherence.
+
+\begin{lemma}[Exact homogenization]\label{lem:homogeneous}
+The tuple oracle hides $\widetilde H=\exp(\widetilde{\mathfrak h})$, where
+\[
+ \widetilde{\mathfrak h}
+ =\bigoplus_{r=1}^{c}t^r(\mathfrak h\cap\gamma_r(L)).
+\]
+This subgroup is preserved by every nonzero $\Delta_s$.
+\end{lemma}
+\begin{proof}
+For addresses $a,b$, write $\log(a^{-1}b)=\sum_r C_rt^r$.
+Functoriality of BCH gives $\widehat f(a)=\widehat f(b)$ precisely when
+$\sum_r s_i^r C_r\in\mathfrak h$ for each $i$.
+The matrix $(s_i^r)_{i,r=1}^c$ has determinant
+$\prod_i s_i\prod_{i<j}(s_j-s_i)\ne0$.
+Linear combinations using its inverse show this is equivalent to
+$C_r\in\mathfrak h$ for every $r$. The displayed subspace is a Lie
+subalgebra and is homogeneous, giving the final assertion.
+\end{proof}
+
+In particular $A_1=tL$, \emph{not} $L/[L,L]$. Duplicating derived directions
+in grade one is essential. In the associated graded algebra they would
+already have been lost before the quantum procedure began.
+
+\begin{remark}[No original positive grading is assumed]
+The known eight-dimensional Dixmier--Lister algebra
+\cite[Section 4.2, Example 2]{bgr} is a useful adversarial input.
+For its integer bracket table, 32 integer row identities with multipliers
+$1,3,6$ force every derivation to map $L$ into $[L,L]$ in characteristic
+$p>3$. Since it has class three, every derivation has cube zero. It thus
+admits no positive integer grading, although finite-order automorphisms
+can exist. The same argument extends to direct sums: off-diagonal
+derivation blocks have central image, and the center is contained in
+the derived algebra. Nevertheless the Rees cover of $m$ copies has
+grades of dimensions $8m,4m,2m$ and the evaluation homomorphisms above.
+The repository replays the integer identities and checks the public
+cover maps, not a full quantum instrument on this input.
+\end{remark}
+
+\begin{lemma}[Copy-only lift]
+Exactly $c$ fresh copies of $\rho_H$ suffice to produce
+$\rho_{\widetilde H}$ on the public group $\exp(A)$.
+\end{lemma}
+\begin{proof}
+Prepare the uniform address superposition and, on target $i$, apply
+controlled $R_{\exp E_{s_i}(\log a)}$. Clean the public evaluation workspace
+and discard all targets. Since $\tr(\rho_H R_g)=1_H(g)$, the retained
+matrix entry at $a,b$ is
+\[
+ \frac1{|\exp A|}\prod_{i=1}^c
+  1_H\bigl(\exp E_{s_i}(\log(b^{-1}a))\bigr)
+ =\frac{1_{\widetilde H}(b^{-1}a)}{|\exp A|}.
+\]
+This is the desired coset density by Lemma~\ref{lem:homogeneous}.
+No ordinary oracle is reconstructed from copies.
+\end{proof}
+
+\begin{proposition}[Refreshing correlated coset centers]
+Let $P_a=|aH\rangle\langle aH|$. Suppose the supplied bank and side
+information have the state
+\[
+ \Omega=\sum_{\mathbf a}\left(\bigotimes_{j=1}^M P_{a_j}\right)
+               \otimes E_{\mathbf a},\qquad
+ E_{\mathbf a}\succeq0,\quad\sum_{\mathbf a}\tr E_{\mathbf a}=1.
+\]
+Independent uniform left translations, with their randomization records
+discarded, transform this bank into
+$\rho_H^{\otimes M}\otimes\sum_{\mathbf a}E_{\mathbf a}$.
+This uses public group sampling and multiplication, and no extra source
+copies, source inverse, or knowledge of $H$.
+\end{proposition}
+\begin{proof}
+Write $L_g|x\rangle=|gx\rangle$ and
+$\mathcal T(S)=|G|^{-1}\sum_gL_gSL_g^\dagger$.
+The transitive action on left cosets gives $\mathcal T(P_a)=\rho_H$
+for every $a$. Tensor the channels and apply linearity to $\Omega$.
+Alternatively,
+\[
+ \mathcal T(S)_{q,r}=|G|^{-1}\sum_z S_{zq,zr}
+     =|G|^{-1}\tr(SR_{r^{-1}q}),
+\]
+so the existing uniform-address controlled-right-action and target-discard
+channel implements the same refresh. The records of the random translations
+are not retained as adaptive inputs to the receiver.
+\end{proof}
+
+\begin{remark}[Joint promise, not marginal tomography]
+This is a standard twirling consequence, not a new quantum primitive.
+The bank promise is sufficient, not necessary, and not certified from its
+marginals. For $G=C_p$, odd $p$, $H=0$, let $|\chi_k\rangle$ be Fourier
+states. The separable bank
+\[
+ \frac1p\sum_k |\chi_k\rangle\langle\chi_k|
+       \otimes|\chi_{-k/2}\rangle\langle\chi_{-k/2}|
+\]
+has both marginals $I/p$ and is invariant under independent left twirls.
+The two-target lift with evaluation points $1,2$ nevertheless yields
+$|G\rangle\langle G|$, not $I/p$, because the character phases cancel.
+The trace distance is $1-1/p$. Reusing a common translation for every
+register, or conditioning on retained translation records, likewise does
+not prove independent inputs. A joint source error $\delta$ and independent
+uniform-sampling errors $\epsilon_j$ give output error at most
+$\delta+\sum_j\epsilon_j$ by contractivity and a hybrid bound; marginal
+errors cannot replace the joint error. No source-copy cost in the preceding
+theorem is reduced: all consumed registers must actually be supplied.
+\end{remark}
+
+\section{The complete central instrument}
+For this section let $G$ be any finite group, $H\le G$, and let
+$Z\le Z(G)$ be elementary abelian over $\Fp$. Put $K=H\cap Z$.
+For a central character $\chi_\lambda$, define
+\[
+ \Pi_\lambda=\frac1{|Z|}\sum_{z\in Z}\chi_\lambda(-z)R_z.
+\]
+Here $-$ denotes inverse in the additively written center.
+The $\Pi_\lambda$ are orthogonal projectors summing to identity. They
+can be measured with a uniform central register, controlled translations
+and an abelian QFT. The original target remains the full group register.
+
+\begin{lemma}[Normalized branch law]\label{lem:central}
+The character outcome has probability $|K|/|Z|$ on $K^\perp$ and zero
+otherwise. On every positive-mass outcome its normalized target state is
+\[
+ \rho_\lambda=\frac1{|G||K|}
+       \sum_{h\in H,z\in Z}\chi_\lambda(-z)R_{hz}.
+\]
+For $g\in G$,
+\[
+ \tr(\rho_\lambda R_g)=
+ \begin{cases}\chi_\lambda(z),&g=hz\in HZ,\\0,&g\notin HZ.\end{cases}
+\]
+The value is independent of the choice of decomposition $g=hz$.
+\end{lemma}
+\begin{proof}
+Centrality makes $\rho_H$ commute with $\Pi_\lambda$.
+The regular trace vanishes away from the identity. Thus
+$\tr(\rho_H\Pi_\lambda)=|Z|^{-1}\sum_{z\in K}\chi_\lambda(-z)$,
+which gives the probability. Dividing $\rho_H\Pi_\lambda$ by this
+probability gives the displayed state. In its trace against $R_g$, a
+nonzero term requires $g\in HZ$. Each such element has exactly $|K|$
+decompositions, with the same character value because $\lambda$ kills
+$K$. This multiplicity cancels the denominator $|K|$.
+\end{proof}
+
+Assume now that publicly computable automorphisms $\Delta_s$ preserve
+$H$ and scale $Z$ by $s^d$ for every $s\in\Fp^\times$.
+Take independent sources, measure their central labels
+$\lambda_1,\ldots,\lambda_M$, and find a nonzero vector of scales with
+\begin{equation}\label{eq:sde}
+ \sum_{i=1}^M s_i^d\lambda_i=0.
+\end{equation}
+Zero-scale targets are consumed and discarded; $\Delta_0$ is never called.
+Let $Q=G/Z$ and let $\sigma:Q\to G$ be any public section, not necessarily
+a homomorphism. On a uniform $Q$ address, apply controlled
+$R_{\Delta_{s_i}(\sigma(q))}$ to each active target and trace the targets.
+
+\begin{proposition}[Pointwise quotient conversion]\label{prop:descent}
+For every positive-mass tuple of central labels and every valid witness
+to \eqref{eq:sde}, the output is exactly $\rho_{HZ/Z}$ on $Q$.
+Neither $K$ nor a hidden coset representative is an operational input.
+\end{proposition}
+\begin{proof}
+The output entry at $q,r$ is
+\[
+ \frac1{|Q|}\prod_{i:s_i\ne0}
+ \tr\bigl(\rho_{\lambda_i}
+ R_{\Delta_{s_i}(\sigma(r)^{-1}\sigma(q))}\bigr).
+\]
+Put $g=\sigma(r)^{-1}\sigma(q)$. If $g\notin HZ$, every active factor
+is zero, since $\Delta_{s_i}(HZ)=HZ$; the active set is nonempty.
+Otherwise write $g=hz$. Lemma~\ref{lem:central} makes the product
+$\prod_i\chi_{\lambda_i}(s_i^d z)=1$ by \eqref{eq:sde}.
+The remaining indicator is exactly coset equality for $HZ/Z$.
+\end{proof}
+
+This is an identity for complete measured branches, not postselection on
+a favorable tuple. The output is independent of the retained classical
+tuple. Fresh disjoint preparations therefore supply the independent
+inputs required at the next stage. The proof does not authorize replacing
+an IID supply by a correlated purification with the same marginals.
+
+\section{Recovery and the published arithmetic dependency}
+At stage $d=c,c-1,\ldots,2$, work in
+$A/\bigoplus_{r>d}A_r$. Its grade $d$ is central with rank
+$r_d=\dim\gamma_d(L)$, scales by $s^d$, and the hidden image remains
+homogeneous. Proposition~\ref{prop:descent} applies successively.
+The last quotient is $tL$ as an additive group, and the hidden image is
+\emph{all} $t\mathfrak h$. Abelian Fourier samples reveal
+$\mathfrak h^\perp$; a nullspace calculation returns $\mathfrak h$.
+There is no hidden-intersection or normalizer recursion inside this core.
+
+For fixed $d$, the diagonal-system theorem \cite[Sections 3.1--3.3]{is}
+supplies a nonzero solution of \eqref{eq:sde} for arbitrary label columns
+at a sufficient arity
+\[
+ M_d=B_d(r_d),\qquad
+ B_d(r)=\left[d^{d(d-1)/2}(r+1)^d\right]^{\lceil\log_2(d+1)\rceil}.
+\]
+The displayed bound comes from the collision construction, not a heuristic
+rank estimate. The exponent can first be reduced to $\gcd(d,p-1)$ and
+converted back by Bezout. All returned witnesses are checked exactly.
+There is no exhaustive search over field elements in the theorem claim.
+
+\section{Full clocks and approximation errors}
+Let $P=\prod_{d=2}^cM_d$, with empty product one, and take $m=n+t$
+terminal samples, where $t=\lceil\log_p(3/\eps)\rceil$.
+The rank failure probability is at most $1/((p-1)p^t)$.
+The exact source and merge counts are
+\[
+ N_{\rm leaf}=mP,\qquad
+ N_{\rm merge}=m\sum_{d=2}^c\prod_{j=2}^{d-1}M_j,
+ \qquad N_{\rm read}=m.
+\]
+The original query or copy count is $cN_{\rm leaf}$.
+Crucially, the full instrument count includes final Fourier readout:
+\[
+ N_{\rm inst}=N_{\rm leaf}+N_{\rm merge}+N_{\rm read}.
+\]
+Source preparation, central conversion and terminal QFT/measurement are
+three separate error-bearing operations. Incorporate their internal
+arithmetic and Fourier approximations into these full-channel allowances.
+Here operational channel error means half the diamond norm distance;
+for a fixed source preparation it means trace distance. Assign at most
+$\eps/(3N_{\rm inst})$ error to each complete instrument.
+A trace-distance hybrid bounds their total effect by $\eps/3$; no division
+by small branch probabilities is used.
+
+\begin{lemma}[Classical retries do not consume the source bank]
+Suppose the verified classical SDE procedure has a known uniform expected
+running-time upper bound $T$ on its legal public inputs. Capping each
+fresh-seed attempt at $2T$ and trying
+$\lceil\log_2(3N_{\rm merge}/\eps)\rceil$ times makes the abort probability
+per merge at most $\eps/(3N_{\rm merge})$ using no additional source copies.
+\end{lemma}
+\begin{proof}
+Markov gives failure probability at most $1/2$ per capped attempt.
+Verification excludes accepting a false witness. Independent classical
+seeds give the geometric abort bound even conditional on all prior quantum
+records, since the input-dependent expected-time guarantee is uniform.
+The labels have already been measured and stored, and no controlled
+dilation is performed until a valid witness is found. Classical attempts
+therefore reuse labels, not quantum copies. Include verification time in
+$T$. If every attempt fails, abort the run with its charged probability.
+\end{proof}
+
+The case $N_{\rm merge}=0$ needs no SDE allowance. Uniform finite-field
+preparations and QFTs have standard polynomial approximate implementations.
+For arbitrary cyclic modulus one may use the constructions surveyed in
+\cite[Chapters 3 and 5]{hales}; this does not assume an exact prime-modulus
+QFT from a fixed finite gate set.
+Reversible BCH, evaluation, dilations and right translations use public
+fixed-degree arithmetic. The ideal schedule has polynomially many arithmetic
+primitives at fixed $c$. With $\delta=\eps/(3N_{\rm inst})$, reversible
+arithmetic and approximate Fourier circuits require polynomially many gates
+in their input sizes and $\log(1/\delta)$. Thus precision and gate cost
+remain polynomial in the input and $\log(1/\eps)$.
+The rank, solver-abort and channel errors sum to at most
+$\eps$. This proves the proposed explicit-Lie claim, subject to review of
+the lemmas and imported algorithms.
+
+The source-tree leaves need not all be stored simultaneously. With
+depth-first preparation, at most $2+\sum_{d=2}^c(M_d-1)$ descent group
+registers coexist when $c\ge2$; for $c=1$ only one is needed. This excludes
+leaf-oracle workspaces, arithmetic ancillas and classical SDE storage,
+which must also be charged. The product $P$ remains the time/copy cost.
+No practical resource claim follows from these enormous polynomial bounds.
+
+\section{Explicit input with small derived dimension}\label{sec:rank}
+This is a proposed parameterized corollary of the same composition, not a
+claim that arbitrary growing class is efficient or a new diagonal solver.
+Continue to assume explicit genuine structure constants and $c<p$, but
+now let the supplied class upper bound vary. Before constructing any cover
+or source bank, compute the lower-central spaces by public field linear
+algebra and replace that upper bound by the actual nilpotency class $c$.
+The zero algebra is handled directly. For a nonzero nilpotent algebra the
+nonzero lower-central terms strictly decrease: a nonzero equality
+$\gamma_d(L)=\gamma_{d+1}(L)$ would persist at every later index, contrary
+to nilpotence. Thus this preprocessing takes at most $n$ strict decreases,
+has polynomial cost in $n,\log p$, and uses no hidden-source calls.
+All covers, evaluation-point counts, BCH truncations and source costs in
+this section use this normalized $c$, not a possibly much larger supplied
+upper bound. Write $r=\dim[L,L]$ and $r_d=\dim\gamma_d(L)$.
+
+\begin{lemma}[Uniform public BCH arithmetic]
+Given an $N$-dimensional Lie algebra of class at most $c<p$, its BCH product
+can be evaluated with $O(c^4)$ Lie brackets and polynomially many additional
+field operations, without enumerating free Lie words.
+\end{lemma}
+\begin{proof}
+Set $Z(t)=\log(\exp X\exp(tY))$. The standard formal inverse-exponential
+differential identity gives
+\[
+ Z'(t)=\sum_{k=0}^{c-1}b_k\operatorname{ad}_{Z(t)}^k(Y),\quad Z(0)=X,
+ \qquad \sum b_kz^k=\frac{z}{1-e^{-z}}\pmod {z^c}.
+\]
+For an elementary derivation of this differential approach see
+\cite[Section 4.1]{wehler}. Compute $b_k$ by reciprocal power series:
+$f_k=(-1)^k/(k+1)!$, $b_0=1$ and
+$b_k=-\sum_{i=1}^k f_i b_{k-i}$. Thus $b_1=+1/2$.
+Given $Z_0,\ldots,Z_j$, polynomial bracket convolution finds the
+coefficient of $t^j$ on the right, and division by $j+1$ gives $Z_{j+1}$.
+Perform this for $0\le j<c$, then evaluate at $t=1$.
+The universal class-$c$ BCH polynomial has $t$-degree at most $c$ and
+denominators supported on primes at most $c$; the recurrence has the same
+property. Reduction modulo $p$ is therefore valid and coefficientwise
+uniqueness holds below degree $p$. No analytic convergence is required.
+The direct convolution uses
+$(c-1)c(c+1)(c+2)/6$ brackets; each dense bracket costs $O(N^3)$ field
+operations. Reversible arithmetic and cleanup retain polynomial overhead.
+\end{proof}
+
+\begin{corollary}[Proposed derived-dimension parameter bound]
+With the explicit input and source promises of Theorem~\ref{thm:main},
+but allowing $c<p$ to vary, the proposed recovery has bounded-error time
+\[
+ 2^{O(r^2\log(r+2))}\,
+ \operatorname{poly}(n,\log p,\text{label/access width},\log(1/\eps)).
+\]
+The polynomial exponent is independent of $r$. For $r=0$ use abelian HSP.
+\end{corollary}
+\begin{proof}
+After higher grades have been removed, choose a public complete flag of
+the central grade $A_d$. Every flag prefix is an ideal invariant under
+$\Delta_s$, since its action on this grade is scalar $s^d$. The hidden
+image remains dilation invariant in each quotient. Apply
+Proposition~\ref{prop:descent} separately to each one-dimensional factor;
+the flag need not be adapted to the unknown hidden intersection.
+
+The scalar diagonal theorem, \cite[Fact 2]{is}, needs $d+1$ labels and
+time polynomial in $d,\log p$, uniformly in degree. Equivalently put
+$\delta_d=\gcd(d,p-1)$ and use $\delta_d+1$ labels. A witness $x_i$ for
+degree $\delta_d$ becomes $s_i=x_i^u$ on nonzero entries and $s_i=0$
+otherwise, where $du\equiv\delta_d\pmod {p-1}$. This preserves the
+equation and nonzeroness. Zero entries must stay zero even if $u=0$.
+The fresh-source factor per terminal sample is consequently
+\[
+ P_p=\prod_{d=2}^c(\delta_d+1)^{r_d}
+ \le \prod_{d=2}^c(d+1)^{r_d}.
+\]
+The nonzero lower-central terms strictly decrease, whence
+$c\le r+1$, $r_d\le r-d+2$ and
+\[
+ D\le n+\tfrac12r(r+1),\qquad
+ P_p\le (r+2)^{r(r+1)/2}.
+\]
+For $M=n+\lceil\log_2(3/\eps)\rceil$ final samples, there are $MP_p$
+lifted leaves and $cMP_p$ original queries or copies. A forest with
+arity at least two has at most $MP_p-M$ conversion nodes. Including leaf
+and final-readout instruments, at most $2MP_p$ complete instruments need
+error allowances. The earlier full-channel hybrid uses precision logarithmic
+in this count. Public flag/quotient calculations and the preceding BCH
+lemma have uniform polynomial cost in $D,c,\log p$. Combining these bounds
+and the uniform scalar solver gives the claimed parameter dependence.
+\end{proof}
+
+If all $\delta_d\le b$, then $P_p\le(b+1)^{r(r+1)/2}$; for example this
+holds with $b=2$ when the supplied prime is $p=2q+1$ with $q>c$ prime.
+No safe-prime generation assumption is needed or claimed. The generic
+sufficient polynomial regime is $r^2\log(r+2)=O(\log I)$ for explicit
+input length $I$, and $r^2=O(\log I)$ in the bounded-index case.
+Padding by abelian factors can manufacture such a regime without supplying
+a meaningful application. Even the class-twelve profile $(13,11,10,\ldots,1)$
+at $p=47$ costs over $3\cdot10^{28}$ original inputs for sixteen final
+samples in this schedule; these are symbolic bounds, not observed runtime.
+
+The earlier small-commutator algorithm \cite[Theorem 11]{ims} is polynomial
+in input size plus $|G'|=p^r$; that particular estimate does not supply
+the displayed uniform dependence on $\log p$. This is not a novelty proof
+against all HSP literature. No growing-class opaque-input, general-exponent,
+or natural hard application follows. The new finite arithmetic tests do not
+independently validate the composition or implement a scalar solver/receiver.
+
+\section{Direct descent for explicit prime-power Lie rings}\label{sec:ring}
+This section gives an alternative parameter bound, not a strengthening of
+the unrestricted-rank fixed-class outer theorem below. In particular it
+does not assert an efficient solver for arbitrary diagonal systems over
+torsion rings. All failures in the following randomized conversion are paid.
+
+Suppose the input instead gives a genuine finite Lie ring $L$ with an
+explicit additive decomposition $\bigoplus_{i=1}^n\mathbb Z/p^{a_i}$,
+compatible bracket constants, and class $c<p$ for a supplied odd prime $p$.
+The full $a_i\log p$ coordinate/order bit lengths belong to the input.
+Lazard correspondence applies to these Lie rings
+\cite{lazardring,lazardtorsion}; no
+black-box chart acquisition is included here. Let $r$ be the minimum
+additive generator count of $[L,L]$.
+
+\begin{proposition}[Proposed direct ring parameter bound]
+Under the same legal ordinary-oracle or coset-copy source contract, the
+Rees argument has a direct bounded-error variant with time
+\[
+ [4(c+1)]^{(c-1)r}\,
+ \operatorname{poly}(\text{explicit input bits},\log(1/\eps)).
+\]
+This is fixed-parameter time in $(c,r)$, not in $r$ alone.
+\end{proposition}
+\begin{proof}
+Let $p^E$ annihilate $L$. Form
+$A=\bigoplus_{d=1}^c t^d\gamma_d(L)$ with its actual finite-module
+components, not free-module replacements. The evaluations $1,\ldots,c$
+have Vandermonde determinant a unit modulo $p^E$. The earlier argument
+uses only additive operations and unit scalars, so its hidden preimage
+is still $\bigoplus t^d(\mathfrak h\cap\gamma_d(L))$.
+Unit dilations preserve it. BCH identities and the uniform differential
+recurrence are over $\mathbb Z[1/c!]$, whose denominators are units here.
+Public submodules, sections and quotients use full integer relation lattices.
+
+Remove the highest remaining grade one cyclic direct summand $Z$ at a
+time. If $|Z|=p^a$ and $|H\cap Z|=p^b$, character orthogonality gives
+independent uniform labels $\lambda\in p^b\mathbb Z/p^a$ on fresh sources.
+The central contraction proof applies to finite abelian $Z$ verbatim.
+At dilation degree $d$, consume $B=\gcd(d,p-1)+1\le d+1\le p$ targets.
+If a label is zero, use scale one there and zero elsewhere. If all labels
+are nonzero of equal valuation $v$, put $A_i=\lambda_i/p^v$ and solve the
+scalar degree-$d$ equation modulo $p$ via \cite[Fact 2]{is} and the previous
+power-index conversion. All $A_i$ are units. A nonzero witness coordinate
+$s_j$ has derivative $dA_js_j^{d-1}$ a unit modulo $p$; keep other
+coordinates fixed and Hensel-lift $s_j$ to modulus $p^{a-v}$. The resulting
+active scales are units, inactive scales are zero, and
+$\sum\lambda_i s_i^d=0\pmod {p^a}$. Every successful record therefore
+produces the same correct quotient coset state.
+
+Otherwise discard the entire batch and retry on fresh sources. If $b<a$,
+the probability that all labels have valuation $b$ is
+$(1-1/p)^B\ge1/4$; if $b=a$, acceptance is certain. Thus rejection costs
+at most a factor four in expectation per cyclic conversion, independent
+of $a$. This is a source-law argument, not a worst-case ring-SDE solver.
+
+Write $r_d$ for the number of cyclic factors of $\gamma_d(L)$. A subgroup
+of a finite abelian $p$-group with $r$ generators needs at most $r$
+generators: $B[p]\subseteq A[p]$ and $d(B)=\dim_{\Fp}B[p]$ for $B\le A$.
+Thus $\sum_{d=2}^c r_d\le(c-1)r$. Expected lifted leaves per
+terminal sample are at most
+$Q=\prod_{d=2}^c[4(\gcd(d,p-1)+1)]^{r_d}\le[4(c+1)]^{(c-1)r}$.
+For $M=n+3$ final samples, cap the WHOLE run at $16MQ$ lifted leaves.
+Markov bounds clock abort by $1/16$. Each successful or failed attempt
+consumes at least two fresh targets, so all conversion forests together
+have no more internal nodes than leaves. Including readout, at most
+$32MQ+M$ complete instruments require precision allowances. Allocate
+total channel error $1/16$ over this fixed cap; its precision overhead is
+logarithmic. Every lifted leaf still costs $c$ original inputs.
+
+The annihilator of the final hidden additive subgroup has at most $n$
+generators. Its uniform samples generate it iff their images generate
+its quotient by $p$, giving rank failure $<p^{-3}/(p-1)<1/16$.
+One base run therefore succeeds with probability at least $13/16$.
+Recover the hidden submodule and canonicalize its full preimage lattice
+by Hermite normal form. Independent whole-run repetition and voting on
+this canonical output amplify success with $O(\log(1/\eps))$ repetitions;
+arbitrary Smith bases cannot be majority-voted. Joint input-bank error
+is charged separately to the final $\eps$. All public arithmetic, the
+scalar solver and Hensel lifting are polynomial in their bit sizes,
+completing the proposed parameter bound.
+\end{proof}
+
+Two failures are important. First, in $\mathbb Z/9\times\mathbb Z/9$
+with dilation degrees one and two and hidden subgroup $3\mathbb Z/9\times0$,
+the nonunit scale $s=3$ cancels any degree-two central phase but falsely
+returns the whole-quotient signal; phase cancellation alone is insufficient.
+Second, the Lie ring over $\mathbb Z/5^4$ with $[x,y]=5y$ has derived
+additive rank one and class four. The field inequality $c\le r+1$ cannot
+be imported into this ring statement. Some mixed-valuation tuples have no
+unit-scale solution, e.g. $(1,3,9)$ modulo $27$ at degree two.
+
+The exact controls and expanded clock proof are in
+\texttt{PRIME\_POWER\_REES\_DESCENT.md}. A module verifies and Hensel-lifts
+supplied field witnesses; it does not implement their general scalar solver
+or the quantum receiver. This alternative is not known to improve a useful
+application, and for unrestricted derived rank at fixed class the earlier
+outer reduction retains the better polynomial-time bound.
+
+\section{Black-box extension: separate imported obligations}
+This section is not an additional claim that an explicit Lie table is free.
+Assume a uniquely encoded nilpotent black-box group, supplied generators,
+coherent group operations, and fixed class. The standard presentation,
+Sylow, subgroup, normalizer and quotient algorithms used in the nil-2 HSP
+reduction are imported with their quantum preprocessing cost \cite{iss}.
+
+For an exponent-$p$ local group with $p>c$, inverse-BCH group words give
+Lazard addition and bracket. Their lengths depend only on $c$, with
+denominators invertible modulo $p$. Enumerating generator brackets through
+weight $c$ gives a polynomial-size additive spanning list. Abelian kernel
+learning on its additive encoder produces a basis. Further kernel calls
+recover bracket coordinates. All these calls use public group operations,
+not the hidden source. The original generators alone need not span $L$.
+Use bounded clocks, verified encodings, and amplified canonical kernel
+outputs; checking a few relations does not prove kernel completeness.
+
+There is an alternative local exponent-$p$ input conversion which avoids
+learning the target's relations altogether. Let $F_{s,c}$ be the public
+free class-$c$ nilpotent Lie algebra over $\mathbb F_p$ on the $s$ supplied
+generators. Its dimension $d$ is at most $\sum_{j=1}^c s^j$, polynomial
+only for fixed $c$. The universal property and Lazard correspondence give
+a surjection $\pi:F_{s,c}\to\log G$. Evaluate it by public inverse-BCH
+words on a nested-bracket basis. No target Lie coordinates or kernel
+basis are needed. The map $\Phi=\exp\pi$ is generally noninjective;
+$f\circ\Phi$ hides $K=\Phi^{-1}(H)$ with one original query. In the
+copy-only model, controlled right translation by $\Phi(a)$ and target
+discard give
+\[
+ \rho_{\rm out}[a,b]=|\exp F_{s,c}|^{-1}
+  \operatorname{Tr}(\rho_H R_{\Phi(b)^{-1}\Phi(a)})
+  =|\exp F_{s,c}|^{-1}1_K(b^{-1}a).
+\]
+This costs one original copy with no kernel-index penalty, provided the
+public evaluation workspace is cleaned. Apply Theorem~\ref{thm:main}
+to the explicit $F_{s,c}$ and project the recovered full hidden preimage
+to $G$. Surjectivity, promised by the supplied generators, gives $H$.
+An exact public word compiler now implements the general fixed-class
+construction by homogeneous error correction, retaining the shorter
+class-four formulas where valid. Certificates are checked in the free
+associative algebra; no native quantum circuit is synthesized.
+
+This route still needs Rees homogenization. For the Dixmier--Lister
+target with free generators $a,b,c,d$ mapping to $e_1,e_2,e_3,e_4$,
+the kernel contains $[a,d]+[b,[a,c]]$. A free degree dilation by $u$
+maps its image to $(u^2-u^3)e_7$, which is nonzero at $u=2$, $p>3$.
+Thus neither the kernel nor an arbitrary hidden preimage is homogeneous.
+The free dimension can exceed the target encoding width $b$: use $d$
+and $\dim\gamma_j(F_{s,c})$ in the core budgets, not the bounds by $b$
+valid for the acquired-target-chart route. Each map evaluation also costs
+$O(dW_c\log p)$ public multiplications and paid reversible cleanup.
+The bridge does not remove general-exponent or small-prime reductions.
+
+For copy transport into a public subgroup or quotient, one original copy
+and controlled right translation along a forward section $\sigma$ yield
+\[
+ \rho_{\rm out}[q,r]=|Q|^{-1}
+             1_H(\sigma(r)^{-1}\sigma(q)).
+\]
+Subgroup restriction has no index-sized postselection cost. A quotient
+kernel must be known to lie in $H$ and be normal in the current public
+subgroup. Its section need not be homomorphic. Flatten nested forward
+sections and clean their workspaces; no source decoder is assumed.
+
+\begin{corollary}[Proposed general nilpotent extension]
+Combining Theorem~\ref{thm:main} with the preceding public input conversion
+and the published nilpotent-group reductions gives a bounded-error
+polynomial-time HSP algorithm for uniquely encoded groups of any fixed
+nilpotency class, without a bound on prime factors or exponent. The source
+may be an ordinary hiding oracle or fresh mixed coset copies.
+\end{corollary}
+\begin{proof}[Reduction details requiring separate review]
+Class-one groups use the standard abelian HSP algorithm directly. For
+$c\ge2$, every prime $p>c$ is odd, as required by the explicit-Lie statement.
+The standard normalizer procedure reduces a Sylow problem to local hidden
+groups of order at most $p$ \cite[Section 3]{iss}. For $p>c$ restrict such
+a local call to the public subgroup of elements of order dividing $p$ and
+use the explicit-Lie theorem. Do not restrict the original arbitrary hidden
+group to its order-$p$ part just once.
+
+For $p\le c$, the prime is bounded. Use the forward-only bounded-error
+central-erasure/HSMC route \cite[Proposition 3]{ii}, not its distinct exact
+theorem requiring a source inverse. A nonzero degree-$(p-1)$ diagonal
+witness gives a nonempty binary zero-sum support by Fermat, so the cited
+arithmetic theorem also provides a conservative bounded-prime subroutine.
+The existing outer reduction then recovers the full hidden group.
+
+One public step in that outer reduction requires an explicit qualification.
+Maintain $H_0\le H$, $H_0\le K\le N_G(H_0)$ and put $B=K'H_0$.
+To descend when $A=K/B$ is not elementary abelian, use the full preimage
+of $A[p]$. Taking each arbitrary generator's top nontrivial $p$-power
+does not suffice: $(1,0),(1,1)$ in $C_{p^2}\times C_p$ have identical
+$p$-th powers. Instead acquire a complete integer row relation basis $R$
+for $A=\mathbb Z^k/\operatorname{row}_{\mathbb Z}(R)$. Compute a basis of
+\[
+ C=\{a\in\mathbb F_p^k:aR=0\pmod p\},
+ \qquad x_a=\frac{\widetilde a R}{p}\in\mathbb Z^k.
+\]
+The map $a\mapsto x_a$ modulo the relation lattice is an isomorphism
+$C\cong A[p]$: surjectivity follows by writing $px=aR$, and injectivity
+from the full rank of $R$. Evaluate the integer words $x_a$ in the
+original quotient generators and adjoin every generator of $B$. This
+generates precisely $L=\pi^{-1}(A[p])$, a proper subgroup exactly when
+$A$ is not elementary. Do not reduce the integer words modulo $p$.
+If $(H\cap K)/H_0$ is nontrivial, it has an order-$p$ element. Its image
+in $K/B$ has order dividing $p$, so $H\cap L>H_0$, preserving the descent
+invariant. Completeness of public relations is an amplified preprocessing
+obligation, not certified merely by checking individual relations. These
+computations add polynomial public work and no hidden-source reads.
+Although $B$ is used for this public arithmetic, it need not lie in $H$;
+it is not a legal source-quotient kernel. The source is restricted to $L$
+and only quotiented by the known subgroup $H_0\le H$ as required.
+
+If encoding length is $b$, polynomial clocks can cap local recovery calls
+by $b(b+1)$ per branch across Sylows. Allocate failures to preprocessing,
+chart acquisition, large-prime cores and small-prime calls. Conditional on
+no earlier error, each adaptive input satisfies the next algorithm's
+promise; a first-error union bound handles the entire execution. Bounded
+clocks also cover erroneous histories. These are imported public algorithms
+and a written composition, not implemented black-box routines in this repo.
+\end{proof}
+
+\section{Scope comparison and attempted refutations}
+The classical group/Lie construction, interpolation, abelian HSP,
+central Fourier measurement and diagonal-system solver are not new.
+The nil-2 algorithm already uses automorphism-twisted right actions and
+phase cancellation \cite{iss}. The bounded-prime fixed-class result
+\cite{ii} does not give growing-prime polynomial time merely by treating
+the prime as an input variable. The special semidirect groups in
+\cite{is,morales} and quasi-Hamiltonian groups in \cite{morales} are
+different scopes, not lower bounds on other algorithms.
+
+For an explicit scope witness, consider $UT_9(\Fp)$ with $p>8$.
+It has class eight, and with $u_{ij}=I+E_{ij}$, the derived elements
+$a=u_{13},b=u_{35},c=u_{57},d=u_{79}$ satisfy
+$[[a,b],[c,d]]=u_{19}\ne I$ (commutators $xyx^{-1}y^{-1}$).
+Thus its derived subgroup is not abelian. It cannot be an abelian-by-cyclic
+group of the special semidirect form. Also
+$\langle u_{12}\rangle\langle u_{23}\rangle\ne
+\langle u_{23}\rangle\langle u_{12}\rangle$, excluding quasi-Hamiltonian
+scope. This is a structural non-subsumption check for those inspected
+families, not a proof that no other prior algorithm covers this group.
+
+The key falsifiers are precise. Removing an evaluation point can permit a
+nonzero coefficient polynomial to vanish at all remaining points. Replacing
+$\gamma_r(L)$ by unrestricted $L$ and dropping higher powers can destroy
+evaluation homomorphisms. Replacing the cover by the associated graded
+loses derived hidden directions. Nonnormal $H$ requires the stated right
+action convention. Forbidden central outcomes cannot be normalized, and
+all-zero scale witnesses erase the support test. Correlated source banks
+can invalidate the tensor product calculation. Unrestricted growing class
+defeats the fixed-class polynomial bound; Section~\ref{sec:rank} has a
+separate derived-dimension restriction. None is a universal lower bound against other
+approaches to HSP.
+
+\section{What this draft does and does not establish}
+The repository has finite source-to-answer controls for a genuine
+class-three group with nonhomogeneous, nonnormal hidden lines, as well as
+separate higher-class algebra and channel tests. Those tests cover specified
+instances, not the universal theorem. The general SDE backend, quantum
+receiver, black-box presentation acquisition and outer reduction are not
+implemented end to end. A separate Lean draft is not compiler-verified.
+
+Independent review should first try to refute
+Lemma~\ref{lem:homogeneous} and Proposition~\ref{prop:descent} together,
+then the black-box interface and resource composition. Novelty remains
+unestablished. The growing-prime polynomial-phase application examined
+separately has a direct known-technique quantum-learning baseline; it is
+not evidence of a first efficient learner. No DCP, lattice, graph, code,
+ECDSA, or Shor-level application is claimed. This document is intended to
+make the actual proposed theorem easy to attack, not to promote passing
+tests into a discovery.
+
+\begin{thebibliography}{99}
+\bibitem{bgr}
+Y. Bahturin, M. Goze and E. Remm,
+\emph{Group gradings on filiform Lie algebras},
+\href{https://arxiv.org/abs/1308.2396}{arXiv:1308.2396}, Section 4.2.
+\bibitem{lazard}
+\emph{Model-theoretic properties of nilpotent groups and Lie algebras},
+Section 2.3, \href{https://arxiv.org/abs/2310.17595}{arXiv:2310.17595}.
+\bibitem{is}
+G. Ivanyos and M. Santha,
+\emph{Solving systems of diagonal polynomial equations over finite fields},
+\href{https://arxiv.org/abs/1503.09016}{arXiv:1503.09016}, Sections 3--5.
+\bibitem{iss}
+G. Ivanyos, L. Sanselme and M. Santha,
+\emph{An efficient quantum algorithm for the hidden subgroup problem in
+nil-2 groups}, \href{https://arxiv.org/abs/0707.1260}{arXiv:0707.1260};
+\href{https://www.irif.fr/~santha/Papers/iss12.pdf}{author's final version}.
+\bibitem{ii}
+M. Imran and G. Ivanyos,
+\emph{Zero sum subsequences and hidden subgroups},
+\href{https://arxiv.org/abs/2304.08376}{arXiv:2304.08376};
+Quantum Information Processing 23, 14 (2024).
+\bibitem{morales}
+M. E. S. Morales,
+\emph{The Hidden Subgroup Problem in Semidirect Products and
+Quasi-Hamiltonian Groups},
+\href{https://arxiv.org/abs/2608.05321}{arXiv:2608.05321} (2026).
+\bibitem{hales}
+L. R. Hales,
+\emph{The Quantum Fourier Transform and Extensions of the Abelian Hidden
+Subgroup Problem}, doctoral dissertation (2002),
+\href{https://arxiv.org/abs/quant-ph/0212002}{arXiv:quant-ph/0212002}.
+\bibitem{ims}
+G. Ivanyos, F. Magniez and M. Santha,
+\emph{Efficient quantum algorithms for some instances of the non-Abelian
+hidden subgroup problem},
+\href{https://arxiv.org/abs/quant-ph/0102014}{arXiv:quant-ph/0102014}, Theorem 11.
+\bibitem{wehler}
+J. Wehler, \emph{Lie Groups}, lecture notes, release 0.51 (2017), Section 4.1,
+\href{https://www.mathematik.uni-muenchen.de/~wehler/LieAlgebrasLieGroupsScript.pdf}{author's notes}.
+\bibitem{lazardring}
+S. Cical\`o, W. A. de Graaf and M. Vaughan-Lee,
+\emph{An effective version of the Lazard correspondence},
+Journal of Algebra 352 (2012), 430--450,
+\href{https://doi.org/10.1016/j.jalgebra.2011.11.031}{doi:10.1016/j.jalgebra.2011.11.031}.
+\bibitem{lazardtorsion}
+O. Garaialde Oca\~na and J. Gonz\'alez-S\'anchez,
+\emph{Transporting cohomology in Lazard correspondence},
+\href{https://arxiv.org/abs/1405.4654}{arXiv:1405.4654}, Theorem 1.
+\end{thebibliography}
+\end{document}

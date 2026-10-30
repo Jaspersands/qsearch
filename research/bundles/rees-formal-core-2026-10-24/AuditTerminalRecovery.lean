@@ -1,0 +1,25 @@
+import ReesTerminalRecovery
+
+#print axioms QSearch.ReesTerminalRecovery.character_unit_pair
+#print axioms QSearch.ReesTerminalRecovery.restriction_trivial_iff
+#print axioms QSearch.ReesTerminalRecovery.subgroup_character_sum
+#print axioms QSearch.ReesTerminalRecovery.fourier_source
+#print axioms QSearch.ReesTerminalRecovery.readout_smul
+#print axioms QSearch.ReesTerminalRecovery.dual_card
+#print axioms QSearch.ReesTerminalRecovery.evaluation_character_trivial
+#print axioms QSearch.ReesTerminalRecovery.complete_linear_characters
+#print axioms QSearch.ReesTerminalRecovery.fourier_columns
+#print axioms QSearch.ReesTerminalRecovery.readout_complete
+#print axioms QSearch.ReesTerminalRecovery.recovered_membership
+#print axioms QSearch.ReesTerminalRecovery.recovery_contains_hidden
+#print axioms QSearch.ReesTerminalRecovery.recovery_exact
+#print axioms QSearch.ReesTerminalRecovery.recovery_exact_iff
+#print axioms QSearch.ReesTerminalRecovery.standard_character_faithful
+#print axioms QSearch.ReesTerminalRecovery.standard_character_unitary
+#print axioms QSearch.ReesTerminalRecovery.terminal_source
+#print axioms QSearch.ReesTerminalRecovery.native_terminal_readout
+#print axioms QSearch.ReesTerminalRecovery.native_record_readout
+#print axioms QSearch.ReesTerminalRecovery.native_hidden_recovery
+#print axioms QSearch.ReesTerminalRecovery.additiveSource
+#print axioms QSearch.ReesTerminalRecovery.fourierReadout
+#print axioms QSearch.ReesTerminalRecovery.recovered

@@ -1,0 +1,269 @@
+{
+  "algebra": [
+    {
+      "gap_beta2_coefficient": -0.5,
+      "graph": "commuting-weighted",
+      "linear_cancel_exact": true,
+      "one_excitation_identity_exact": true
+    },
+    {
+      "gap_beta2_coefficient": -1.0,
+      "graph": "edge",
+      "linear_cancel_exact": true,
+      "one_excitation_identity_exact": true
+    },
+    {
+      "gap_beta2_coefficient": -1.5,
+      "graph": "cycle4",
+      "linear_cancel_exact": true,
+      "one_excitation_identity_exact": true
+    },
+    {
+      "gap_beta2_coefficient": -2.5,
+      "graph": "clique5",
+      "linear_cancel_exact": true,
+      "one_excitation_identity_exact": true
+    },
+    {
+      "gap_beta2_coefficient": -0.624249684669063,
+      "graph": "weighted-path",
+      "linear_cancel_exact": true,
+      "one_excitation_identity_exact": true
+    }
+  ],
+  "claims": {
+    "independently_reviewed": false,
+    "novelty_established": false,
+    "quantum_circuit_executed": false,
+    "quantum_speedup_established": false,
+    "uniform_gap_proved": false
+  },
+  "commuting_temperature_guard": {
+    "beta": 10,
+    "degree": 0,
+    "exact_gap": 4.097006320439817e-40,
+    "m": 1,
+    "meaning": "beta^2*d alone cannot constrain edgeless inputs; product-state preparation remains easy"
+  },
+  "dense_reference_warning": "Floating-point spectra are not certified eigenvalue intervals; values below 1e-11 are unresolved diagnostics.",
+  "finite_spectra": [
+    {
+      "beta": 0.1,
+      "finite_gap": 0.9950042095008711,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "commuting-weighted",
+      "ground_eigenvalue": -1.0914829214969113e-15,
+      "kappa": 0.0,
+      "kappa_with_isolated_guard": 0.010000000000000002,
+      "largest_term_norm": 1.0000000000000053,
+      "m": 4,
+      "pilot_residual": 1.2001441940621634e-15
+    },
+    {
+      "beta": 0.3,
+      "finite_gap": 0.9553674672274567,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "commuting-weighted",
+      "ground_eigenvalue": -9.02827675074779e-16,
+      "kappa": 0.0,
+      "kappa_with_isolated_guard": 0.09,
+      "largest_term_norm": 1.0000000000000062,
+      "m": 4,
+      "pilot_residual": 9.784551255592002e-16
+    },
+    {
+      "beta": 0.6,
+      "finite_gap": 0.8270710181482606,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "commuting-weighted",
+      "ground_eigenvalue": -1.0367047513908221e-15,
+      "kappa": 0.0,
+      "kappa_with_isolated_guard": 0.36,
+      "largest_term_norm": 1.0000000000000058,
+      "m": 4,
+      "pilot_residual": 1.2757327093567242e-15
+    },
+    {
+      "beta": 0.1,
+      "finite_gap": 0.9900170075793642,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "edge",
+      "ground_eigenvalue": -6.242486730259357e-17,
+      "kappa": 0.010000000000000002,
+      "kappa_with_isolated_guard": 0.020000000000000004,
+      "largest_term_norm": 0.9950023418072373,
+      "m": 2,
+      "pilot_residual": 1.2151337676246984e-16
+    },
+    {
+      "beta": 0.3,
+      "finite_gap": 0.9115789327028135,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "edge",
+      "ground_eigenvalue": -3.0073164157445894e-16,
+      "kappa": 0.09,
+      "kappa_with_isolated_guard": 0.18,
+      "largest_term_norm": 0.9553444221618721,
+      "m": 2,
+      "pilot_residual": 3.0008378801862777e-16
+    },
+    {
+      "beta": 0.6,
+      "finite_gap": 0.6727525195734251,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "edge",
+      "ground_eigenvalue": 1.171316067403618e-17,
+      "kappa": 0.36,
+      "kappa_with_isolated_guard": 0.72,
+      "largest_term_norm": 0.8316259129944474,
+      "m": 2,
+      "pilot_residual": 9.151422776776331e-17
+    },
+    {
+      "beta": 0.1,
+      "finite_gap": 0.9853858561878334,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "cycle4",
+      "ground_eigenvalue": -9.007102657219828e-16,
+      "kappa": 0.020000000000000004,
+      "kappa_with_isolated_guard": 0.030000000000000006,
+      "largest_term_norm": 0.9950220450368397,
+      "m": 4,
+      "pilot_residual": 1.0372950493604857e-15
+    },
+    {
+      "beta": 0.3,
+      "finite_gap": 0.8911144888701441,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "cycle4",
+      "ground_eigenvalue": -1.2059056271058331e-15,
+      "kappa": 0.18,
+      "kappa_with_isolated_guard": 0.27,
+      "largest_term_norm": 0.9573842754252266,
+      "m": 4,
+      "pilot_residual": 1.2982302002545697e-15
+    },
+    {
+      "beta": 0.6,
+      "finite_gap": 0.7321277191455322,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "cycle4",
+      "ground_eigenvalue": -1.2238558393004219e-15,
+      "kappa": 0.72,
+      "kappa_with_isolated_guard": 1.08,
+      "largest_term_norm": 0.8676843777078022,
+      "m": 4,
+      "pilot_residual": 1.5045050825169254e-15
+    },
+    {
+      "beta": 0.1,
+      "finite_gap": 0.9751094118031464,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "clique5",
+      "ground_eigenvalue": 6.00874977878945e-17,
+      "kappa": 0.04000000000000001,
+      "kappa_with_isolated_guard": 0.05000000000000001,
+      "largest_term_norm": 0.995021882360631,
+      "m": 5,
+      "pilot_residual": 4.2577605046477275e-16
+    },
+    {
+      "beta": 0.3,
+      "finite_gap": 0.7865558248130442,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "clique5",
+      "ground_eigenvalue": 2.9123166069498527e-16,
+      "kappa": 0.36,
+      "kappa_with_isolated_guard": 0.44999999999999996,
+      "largest_term_norm": 0.9573111649626105,
+      "m": 5,
+      "pilot_residual": 4.3393764005668457e-16
+    },
+    {
+      "beta": 0.6,
+      "finite_gap": 0.33776606786095686,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "clique5",
+      "ground_eigenvalue": 1.6693482688350234e-16,
+      "kappa": 1.44,
+      "kappa_with_isolated_guard": 1.7999999999999998,
+      "largest_term_norm": 0.8675532135721931,
+      "m": 5,
+      "pilot_residual": 2.7599578839934346e-16
+    },
+    {
+      "beta": 0.1,
+      "finite_gap": 0.9937670827273912,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "weighted-path",
+      "ground_eigenvalue": 9.078970866403159e-17,
+      "kappa": 0.020000000000000004,
+      "kappa_with_isolated_guard": 0.030000000000000006,
+      "largest_term_norm": 0.9996875134371392,
+      "m": 4,
+      "pilot_residual": 3.7142951879296417e-16
+    },
+    {
+      "beta": 0.3,
+      "finite_gap": 0.9446195697398323,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "weighted-path",
+      "ground_eigenvalue": 3.476107313290059e-17,
+      "kappa": 0.18,
+      "kappa_with_isolated_guard": 0.27,
+      "largest_term_norm": 0.9971908120071172,
+      "m": 4,
+      "pilot_residual": 4.0109045227325834e-16
+    },
+    {
+      "beta": 0.6,
+      "finite_gap": 0.7893390486447877,
+      "gap_above_reference_diagnostic_floor": true,
+      "graph": "weighted-path",
+      "ground_eigenvalue": -2.672189858466866e-16,
+      "kappa": 0.72,
+      "kappa_with_isolated_guard": 1.08,
+      "largest_term_norm": 0.989117444335785,
+      "m": 4,
+      "pilot_residual": 8.673745839727722e-16
+    }
+  ],
+  "priced_quadrature_control": {
+    "measured_operator_error": 0.007179001546583381,
+    "plan": {
+      "beta": 0.3,
+      "circuit_executed": false,
+      "filter_error_bound": 0.024992691776966513,
+      "inner_bins": 1569,
+      "inner_cut": 1.7346931999338921,
+      "jump_lcu_normalization": 1.1331484530668263,
+      "largest_real_time": 0.7862001347299744,
+      "m": 2,
+      "outer_bin_error_bound": 0.01249552065667594,
+      "outer_bins": 437,
+      "outer_cut": 0.8859739158326894,
+      "outer_tail_error_bound": 0.012499999999999997,
+      "parent_lcu_normalization_bound": 2.568050833375483,
+      "public_pauli_norm_sum": 2.0,
+      "requested_operator_error": 0.05,
+      "total_analytic_error_bound": 0.049988212433642445,
+      "unbudgeted_errors": [
+        "weight/phase arithmetic rounding",
+        "Hamiltonian simulation error"
+      ]
+    }
+  },
+  "prior_art": [
+    "https://arxiv.org/html/2604.22996v1",
+    "https://arxiv.org/html/2610.03697v1"
+  ],
+  "schema": "hdqi-filtered-parent-control-v1",
+  "scope": "Own kernel/access derivation and dense controls; no polynomial state-preparation theorem.",
+  "sha256": {
+    "hdqi-filtered-parent-2026-10-24/FILTERED_PARENT.md": "18ecad36b24aefc41fa8eebdc007abf9d0fd5deecfadedee50012a85789ae28d",
+    "hdqi-filtered-parent-2026-10-24/filtered_parent.py": "e0795edac6a4789d5f7eccf8da78615194a3750f5bb9c82f77d8ffdd8ba5f90b",
+    "hdqi-filtered-parent-2026-10-24/test_filtered_parent.py": "e378be68db01a2e301bea1fa7d52599483985c17534011e6c88e3781522d7a0a",
+    "hdqi-parent-gap-2026-10-23/parent_gap.py": "ac5e1491f4c65993bdbdd8b06bb7b437fba5695fbcb56b9f095cb8f22af738d5"
+  },
+  "status": "bounded_constructive_parent_with_unproved_uniform_gap"
+}

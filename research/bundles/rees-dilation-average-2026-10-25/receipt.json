@@ -1,0 +1,136 @@
+{
+  "adjacent_phase_control": {
+    "mean_squared_overlap": 0.5,
+    "old_minimum_trace_gap": 1.8464622084398007e-38,
+    "p": 170141183460469231731687303715884105727,
+    "scope": "known abelian control, not a new hard application",
+    "subgroup_twirl_trace_gap": 0.5
+  },
+  "certificate": {
+    "coordinate_degrees": [
+      1,
+      2,
+      3,
+      3
+    ],
+    "group_order_exponent": 4,
+    "jacobian_at_0_1_2_4": 12,
+    "jacobian_degree": 5,
+    "jacobian_factorization": "6*(t0 - t1)*(t1 - t2)**2*(t2 - t3)*(t0 - t1 - t2 + t3)",
+    "nonlinear_irrep_dimension": "p",
+    "regular_fiber_bound": 2,
+    "regular_input_count": "p*(p-1)^2*(p-2)",
+    "word_signs": [
+      -1,
+      1,
+      -1,
+      1
+    ]
+  },
+  "conditional_large_prime_budget": {
+    "action_error_allocation": "1/800",
+    "action_half_diamond_error_per_query": "1/127795200000",
+    "conditional_on": [
+      "subgroup averaged robustness promise",
+      "valid zero moment design",
+      "paid Rees receiver",
+      "uniform coherent action with separately charged gate cost"
+    ],
+    "controlled_action_queries": 159744000,
+    "nilpotency_class_cap": 3,
+    "p": 170141183460469231731687303715884105727,
+    "packets_per_leaf": 66560,
+    "pure_state_only": true,
+    "quantum_execution": false,
+    "query_interface": "uniform coherent SELECT(U)",
+    "random_scales": 6656000,
+    "raw_pure_copies": 159744000,
+    "source_gap": "1/64",
+    "speedup_established": false,
+    "total_gate_cost_certified": false,
+    "unpriced_resources": [
+      "native register width and copy acquisition",
+      "coherent action implementation at allocated precision",
+      "public arithmetic, design, sampling and complete receiver"
+    ],
+    "walk_gap": "1/8"
+  },
+  "direct_normal_form": {
+    "column_cubic": 56713727820156410577229101238628035243,
+    "kind": "cubic_hankel",
+    "lambda": 28356863910078205288614550619314017621,
+    "norm_squared_upper_bound": "4/170141183460469231731687303715884105727",
+    "row_cubic": 56713727820156410577229101238628035243,
+    "row_scale": 1
+  },
+  "large_prime_inverse_control": [
+    [
+      0,
+      1,
+      2,
+      4
+    ],
+    [
+      113427455640312821154458202477256070485,
+      113427455640312821154458202477256070487,
+      113427455640312821154458202477256070488,
+      113427455640312821154458202477256070489
+    ]
+  ],
+  "native_hard_family_established": false,
+  "quantum_execution": false,
+  "regular_fibers": [
+    {
+      "max_regular_fiber": 2,
+      "p": 5,
+      "regular_image_size": 160,
+      "singular": 385,
+      "tuples": 625
+    },
+    {
+      "max_regular_fiber": 2,
+      "p": 7,
+      "regular_image_size": 756,
+      "singular": 1141,
+      "tuples": 2401
+    },
+    {
+      "max_regular_fiber": 2,
+      "p": 11,
+      "regular_image_size": 5500,
+      "singular": 4741,
+      "tuples": 14641
+    }
+  ],
+  "review_scope": "see REVIEW.md, reviewed_snapshot and REVIEW_RESPONSE.md; not implementation certification",
+  "sha256": {
+    "DILATION_AVERAGED_SOURCE.md": "ac7e78705bf5172a3b2f0a0f527dcded72fed1a52d0aa859eddd388acd8d022b",
+    "SOURCE_INDEPENDENCE.md": "5f49bddfdedfc92d44432365c7cccc9b4e5126dff88b31cda6148ab510134a4a",
+    "dilation_average.py": "440533c3be6d453957a735d41a99ab0020c89683ad125cf4cfde71b8efe92714",
+    "replay.py": "b902294f3da922a03c568d1abc36e7253b0c7e75752f80d2f104d84e39cc28e9",
+    "source_independence_control.py": "87da94cc68293dce3294bfa47d8f573bbe316937282c5f9b2011a6cb6b97dca9",
+    "test_dilation_average.py": "1a6251a15bb5b68c08b596aebe447f86767230dcf55db07cf15bc31461c40f40",
+    "test_source_independence_control.py": "b83b4403dba6962084a26fc90106967e359930cc3f3897000a249ced68069b72"
+  },
+  "spectral_controls": [
+    {
+      "ell": 0,
+      "k": 1,
+      "numerical_positive_curve_norm": 0.1676116296,
+      "p": 131
+    },
+    {
+      "ell": 51,
+      "k": 17,
+      "numerical_positive_curve_norm": 0.1676116296,
+      "p": 131
+    },
+    {
+      "ell": 0,
+      "k": 1,
+      "numerical_positive_curve_norm": 0.1241395853,
+      "p": 257
+    }
+  ],
+  "status": "one independent AI review; F1 resource qualification corrected locally; bounded controls only"
+}

@@ -1,0 +1,104 @@
+{
+  "admission": {
+    "independent_review": false,
+    "main_registry_integrated": false,
+    "native_witness": false,
+    "natural_problem_reduction": false,
+    "novelty": false,
+    "quantum_execution": false,
+    "speedup": false
+  },
+  "basis_decoder_run": {
+    "M": 684,
+    "cap": 51,
+    "cap_rank": 50,
+    "degree": 50,
+    "dimension": 204,
+    "errors_sha256": "78efae559e88aba14100517e30019a22a8130094b10845574c5151095f924a00",
+    "exact_recovery": true,
+    "extra_quantum_copies": 0,
+    "halfset_fourier_last_frequencies_sampled": false,
+    "kind": "one_classical_basis_label_not_a_quantum_state",
+    "output_polynomials": 1,
+    "p": 2053,
+    "seed": 261024,
+    "source_error_or_support_supplied": false,
+    "status": "VERIFIED_UNIQUE",
+    "syndrome_sha256": "29d70dfe6414cdfae145fd5f361e466ed9eecc4f5d210ee69a6b28578172784d"
+  },
+  "classical_control": {
+    "global_classical_algorithm_excluded": false,
+    "matched_classical_campaign_run": false,
+    "width3_anisotropic_form": "x^2-3*y^2 over F7 has no nonzero isotropic vector",
+    "width3_split_form_flat": "(t,t,last_constant) for x^2-y^2",
+    "width4_local_flat_direction_F7": [
+      5,
+      0,
+      1
+    ]
+  },
+  "exhaustive_fixed_frequency_rank_controls": [
+    {
+      "exact_fraction": "18/6859",
+      "fixed_last_frequencies": [
+        1,
+        1
+      ],
+      "free_assignments": 130321,
+      "rank_deficient": 342,
+      "valid_contract_bound": "20/6859",
+      "valid_source_contract": true
+    },
+    {
+      "exact_fraction": "18/6859",
+      "fixed_last_frequencies": [
+        2,
+        7
+      ],
+      "free_assignments": 130321,
+      "rank_deficient": 342,
+      "valid_contract_bound": "20/6859",
+      "valid_source_contract": true
+    },
+    {
+      "exact_fraction": "55/6859",
+      "fixed_last_frequencies": [
+        0,
+        0
+      ],
+      "free_assignments": 130321,
+      "rank_deficient": 1045,
+      "valid_contract_bound": "20/6859",
+      "valid_source_contract": false
+    }
+  ],
+  "ideal_perfect_search_bound": {
+    "M": 4096,
+    "cap_equations": 2700,
+    "classical_separation_or_novelty_claimed": false,
+    "degree": 2375,
+    "dimension": 9828,
+    "discarded_source_mass_upper_dyadic": "67824836117668650940016674473491818005211067887599231/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+    "gate_error_budget": "must_subtract_full_circuit_TV_from_success",
+    "guard_cap": 2376,
+    "input_halfsets": "every_explicit_halfset_of_size_(p-1)/2",
+    "native_witness_produced": false,
+    "nondegenerate_quadratic_form_required": true,
+    "one_attempt_perfect_failure_upper_dyadic": "362989255000892590093687110457034608835425893288830925655906657963647/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+    "p": 12289,
+    "quantum_circuit_executed": false,
+    "rank_failure_upper_dyadic": "1/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+    "rate": "819/1024",
+    "source_truncation_preparation_success_lower": "115792089237316195423570917183851790184619044648966090547639578796845242040705/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+    "width": 3
+  },
+  "source_sha256": {
+    "HANDOFF.md": "b6d6b07648c8f005d14d332c4aa6b94e4d6c4273f52e1fca7354dafda149e8c7",
+    "ORBIT_DECODER.md": "8c2fdb373c931edc2a90b5f5795d2f7cc5d02b39595990bc0d47ad93b8b49cbb",
+    "make_receipt.py": "8327eb8a8827926f02fcb1cc4954dd1ebe95ecade17265db357b417be5fc89a9",
+    "orbit_decoder.py": "a6dbb5d2e6c5b9b1783a02e94e4d9a4f6aa3e1db5c0a957c98e33c36d6b0101f",
+    "source_context.json": "167e2cd01bfbc77dcbc7b2d623f29f120adaf0316da069389c47da5d3b270d63",
+    "test_orbit_decoder.py": "e794fe0b675cda8b9807bdace5ff3bf79051abe5e11791b34636230c060af99b"
+  },
+  "status": "LOCAL_UNREVIEWED_ALGORITHM_DERIVATION_WITH_FINITE_CONTROLS"
+}

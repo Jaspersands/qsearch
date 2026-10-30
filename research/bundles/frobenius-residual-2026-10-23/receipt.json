@@ -1,0 +1,203 @@
+{
+  "finite_counts_are_not_full_input_indistinguishability": true,
+  "geometry_executed": false,
+  "independent_review": false,
+  "integral_relation_without_compatible_neighbor": {
+    "compatible_kernels": 0,
+    "exact_source_relations_checked": true,
+    "rank": 1,
+    "status": "INCONSISTENT_WITH_INPUT_PROMISE"
+  },
+  "large_prime_local_controls": {
+    "bits": 127,
+    "ell": 170141183460469231731687303715884105727,
+    "records": [
+      {
+        "candidate_count": 2,
+        "case": "rank_one",
+        "exact_global_source_verified": false,
+        "root_draws": 3
+      },
+      {
+        "abort_bound": "1/18446744073709551616",
+        "case": "rank_zero",
+        "characteristic": 7,
+        "domain": "GL2",
+        "equivariance_checked": true,
+        "exact_global_source_verified": false,
+        "random_draws": 1
+      },
+      {
+        "abort_bound": "1/18446744073709551616",
+        "case": "rank_zero",
+        "characteristic": 11,
+        "domain": "SL2",
+        "equivariance_checked": true,
+        "exact_global_source_verified": false,
+        "random_draws": 4
+      }
+    ]
+  },
+  "new_quantum_algorithm": false,
+  "novelty_claim": false,
+  "original_source_promise_verified": false,
+  "positive_square_self_adjoint_twists_excluded": true,
+  "quantum_receiver_executed": false,
+  "records": [
+    {
+      "abort_bound": "1/18446744073709551616",
+      "auxiliary_primes": [
+        3,
+        7,
+        13
+      ],
+      "characteristic": 11,
+      "compatible_lagrangians_for_this_map": 8,
+      "crt_modulus": 273,
+      "ell": 5,
+      "exact_source_relations_checked": true,
+      "exceptional_kernel_found": true,
+      "existing_receiver_domain": "GL2",
+      "geometric_point_evaluations_executed": 0,
+      "id": "split_rank_0",
+      "imported_quantum_receiver_executed": false,
+      "original_opaque_exception_checks": 5,
+      "point_access_requirements_not_executions": {
+        "gamma_basis": 12,
+        "source_basis_maps": 192,
+        "weak_basis": 12
+      },
+      "random_draws": 1,
+      "rank": 0,
+      "splitting_type": "split",
+      "status": "STABLE_LAGRANGIAN_RESIDUAL",
+      "weak_arithmetic_packets": 3
+    },
+    {
+      "auxiliary_primes": [
+        3,
+        7,
+        13
+      ],
+      "characteristic": 11,
+      "compatible_lagrangians_for_this_map": 2,
+      "crt_modulus": 273,
+      "ell": 5,
+      "exact_source_relations_checked": true,
+      "geometric_point_evaluations_executed": 0,
+      "id": "split_rank_1",
+      "original_opaque_label_calls": 2,
+      "point_access_requirements_not_executions": {
+        "gamma_basis": 12,
+        "source_basis_maps": 192,
+        "weak_basis": 12
+      },
+      "rank": 1,
+      "reference_kernel_recovered": true,
+      "root_abort_bound": "1/340282366920938463463374607431768211456",
+      "root_draws": 1,
+      "splitting_type": "split",
+      "status": "TWO_CANDIDATES_REQUIRE_ORIGINAL_VERIFICATION",
+      "weak_arithmetic_packets": 3
+    },
+    {
+      "auxiliary_primes": [
+        3,
+        7,
+        13
+      ],
+      "characteristic": 11,
+      "compatible_lagrangians_for_this_map": 1,
+      "crt_modulus": 273,
+      "ell": 5,
+      "exact_source_relations_checked": true,
+      "geometric_point_evaluations_executed": 0,
+      "id": "split_rank_2",
+      "original_opaque_label_calls": 0,
+      "point_access_requirements_not_executions": {
+        "gamma_basis": 12,
+        "source_basis_maps": 192,
+        "weak_basis": 12
+      },
+      "rank": 2,
+      "reference_kernel_recovered": true,
+      "splitting_type": "split",
+      "status": "UNIQUE_UNDER_INPUT_PROMISE",
+      "weak_arithmetic_packets": 3
+    },
+    {
+      "abort_bound": "1/36893488147419103232",
+      "auxiliary_primes": [
+        3,
+        11,
+        13
+      ],
+      "characteristic": 7,
+      "compatible_lagrangians_for_this_map": 6,
+      "crt_modulus": 429,
+      "ell": 5,
+      "exact_source_relations_checked": true,
+      "exceptional_kernel_found": false,
+      "existing_receiver_domain": "SL2",
+      "geometric_point_evaluations_executed": 0,
+      "id": "inert_rank_zero",
+      "imported_quantum_receiver_executed": false,
+      "original_opaque_exception_checks": 0,
+      "point_access_requirements_not_executions": {
+        "gamma_basis": 12,
+        "source_basis_maps": 192,
+        "weak_basis": 12
+      },
+      "random_draws": 1,
+      "rank": 0,
+      "splitting_type": "nonsplit",
+      "status": "STABLE_LAGRANGIAN_RESIDUAL",
+      "weak_arithmetic_packets": 3
+    },
+    {
+      "auxiliary_primes": [
+        3,
+        5,
+        13,
+        17
+      ],
+      "characteristic": 7,
+      "compatible_lagrangians_for_this_map": 2,
+      "crt_modulus": 3315,
+      "ell": 11,
+      "exact_source_relations_checked": true,
+      "geometric_point_evaluations_executed": 0,
+      "id": "previous_ell_eleven_rank_one",
+      "original_opaque_label_calls": 2,
+      "point_access_requirements_not_executions": {
+        "gamma_basis": 16,
+        "source_basis_maps": 256,
+        "weak_basis": 16
+      },
+      "rank": 1,
+      "reference_kernel_recovered": true,
+      "root_abort_bound": "1/340282366920938463463374607431768211456",
+      "root_draws": 2,
+      "splitting_type": "split",
+      "status": "TWO_CANDIDATES_REQUIRE_ORIGINAL_VERIFICATION",
+      "weak_arithmetic_packets": 4
+    }
+  ],
+  "scope": "same-input skew-Frobenius residual reduction, arithmetic controls only",
+  "secret_phi_used_only_in_fixture_and_correctness_comparison": true,
+  "seeded_replay_does_not_certify_uniform_randomness": true,
+  "sha256": {
+    "central-rank-2026-10-23/central_rank.py": "02e102da115ffc7eabd42e4bdf3eebac62d4fec68fe5a88db958caf767cd162e",
+    "frobenius-residual-2026-10-23/borel_residual.py": "1cd1b5554b05b017d5886c31ff27f4cfccad4b368b8c9343184e9e226ceee1eb",
+    "frobenius-residual-2026-10-23/replay_residual.py": "fdb287f98522065906e8d50c5384890626dd145857519cce5dcb6ceae22e7a6f",
+    "frobenius-residual-2026-10-23/residual.py": "92bba77da83a520f21e11eea49160cd92db18a121dbf16c8061858dcb9536c07",
+    "frobenius-residual-2026-10-23/residual_controls.py": "5b3e4e44ac367790d48b1786a53e8bcfb826f866da491b7cc0e2502aa12bc15e",
+    "frobenius-residual-2026-10-23/test_borel_residual.py": "cecae69e72e93733e6f3f751fe2d3685e58bda99b9701cabdc53042eef66de8e",
+    "frobenius-residual-2026-10-23/test_residual.py": "20e486b6fc0e810483663a1392ffbcaebc221dcd6bbb93962bcd7e74215571da",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "quadratic-cancellation-2026-10-23/quadratic_cancellation.py": "515ade0328deb73d303c4ab429726659d37b59c1d809d75ac2b164c12c52b217",
+    "scalar-cancellation-2026-10-23/scalar_cancellation.py": "3d589f47026502ac8a640949827f0edf23712d0a5612867f046377afbaf86739",
+    "source-pullback-2026-10-23/controls.py": "d31b9d12d620fa455be022ee9ce67e587d7be2b3fe84fca8378acac8fd9b2b9c",
+    "source-pullback-2026-10-23/pullback.py": "9352ddaa242473bfb4f048198f20059be97cb91fedc11702179209fdaac2ae1f"
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "fermat_null_polynomial_controls": [
+    {
+      "all_scalar_evaluations_zero": true,
+      "coefficients": [
+        0,
+        2,
+        2
+      ],
+      "p": 2,
+      "scalar_evaluations_checked": 4,
+      "t": 2
+    },
+    {
+      "all_scalar_evaluations_zero": true,
+      "coefficients": [
+        0,
+        16,
+        16
+      ],
+      "p": 2,
+      "scalar_evaluations_checked": 32,
+      "t": 5
+    },
+    {
+      "all_scalar_evaluations_zero": true,
+      "coefficients": [
+        0,
+        6,
+        0,
+        3
+      ],
+      "p": 3,
+      "scalar_evaluations_checked": 9,
+      "t": 2
+    },
+    {
+      "all_scalar_evaluations_zero": true,
+      "coefficients": [
+        0,
+        18,
+        0,
+        9
+      ],
+      "p": 3,
+      "scalar_evaluations_checked": 27,
+      "t": 3
+    },
+    {
+      "all_scalar_evaluations_zero": true,
+      "coefficients": [
+        0,
+        20,
+        0,
+        0,
+        0,
+        5
+      ],
+      "p": 5,
+      "scalar_evaluations_checked": 25,
+      "t": 2
+    },
+    {
+      "all_scalar_evaluations_zero": true,
+      "coefficients": [
+        0,
+        42,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7
+      ],
+      "p": 7,
+      "scalar_evaluations_checked": 49,
+      "t": 2
+    }
+  ],
+  "frozen_dependency_sha256": {
+    "rees-class-three-2026-10-24/class_three.py": "4550a5536e35b19cd530b7f2915b7e731b15b9701de477109e4fd261fdf69475",
+    "rees-class-three-2026-10-24/receipt.json": "c903795fc0814df91a6cde324d211fa031654be1c2c624789ae333672062eb55",
+    "rees-class-three-2026-10-24/test_class_three.py": "75c8af07e78c1a26860489107d9fdcfb61909708d57f268d741de3ea32ff6fe5",
+    "rees-formal-core-2026-10-24/REES_RESOURCE_AND_PRIOR_ART.md": "90b7c3d96d891eb392df9a8b456daeb5ab36073d59ef7ecc75dd849834c9b910",
+    "rees-independent-review-2026-10-23/source/REES_HSP_REDUCTION.md": "b759e35d150f15c29edcfa9118982b24be4ac2c59a4f46665c373b201de76847"
+  },
+  "native_ring": {
+    "class": 4,
+    "group_order": 243,
+    "ideal_orders": [
+      81,
+      27,
+      9,
+      3,
+      1
+    ],
+    "n": 1,
+    "p": 3,
+    "pairing_matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        8
+      ]
+    ],
+    "q": 9,
+    "ring_order": 81
+  },
+  "newton_repair": {
+    "degree_four_scale_two": [
+      0,
+      0,
+      1,
+      12,
+      16
+    ],
+    "dilation_order": 3,
+    "general_unipotent_controls": [
+      {
+        "degree": 2,
+        "identity_plus_E_1_p": true,
+        "p": 2,
+        "scale": 3
+      },
+      {
+        "degree": 3,
+        "identity_plus_E_1_p": true,
+        "p": 3,
+        "scale": 4
+      },
+      {
+        "degree": 5,
+        "identity_plus_E_1_p": true,
+        "p": 5,
+        "scale": 6
+      },
+      {
+        "degree": 7,
+        "identity_plus_E_1_p": true,
+        "p": 7,
+        "scale": 8
+      },
+      {
+        "degree": 11,
+        "identity_plus_E_1_p": true,
+        "p": 11,
+        "scale": 12
+      },
+      {
+        "degree": 13,
+        "identity_plus_E_1_p": true,
+        "p": 13,
+        "scale": 14
+      }
+    ],
+    "nonzero_nilpotent_part_square": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "scalar_diagonalization_possible": false,
+    "scale_four_matrix_mod_three": [
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "normalizers": [
+    {
+      "formula_matches": true,
+      "group_elements_checked": 243,
+      "order": 9,
+      "secret_for_control_only": 0
+    },
+    {
+      "formula_matches": true,
+      "group_elements_checked": 243,
+      "order": 9,
+      "secret_for_control_only": 1
+    },
+    {
+      "formula_matches": true,
+      "group_elements_checked": 243,
+      "order": 9,
+      "secret_for_control_only": 3
+    }
+  ],
+  "not_established": {
+    "LWE_consequence": true,
+    "classical_hardness": true,
+    "independent_review": true,
+    "native_search_algorithm": true,
+    "polynomial_copy_receiver": true,
+    "quantum_advantage": true
+  },
+  "parameters": [
+    {
+      "class": 1,
+      "class_less_than_p": true,
+      "derived_dimension_when_t_one": 0,
+      "group_order_log_p": 18,
+      "growing_modulus_fixed_class_bridge_established": false,
+      "hidden_index_log_p": 17,
+      "hidden_order_log_p": 1,
+      "n": 17,
+      "normalizer_order_log_p": 18,
+      "p": 2,
+      "prime_field_exponent_p_input": true,
+      "q": 2,
+      "q_at_most_two_to_class": true,
+      "t": 1
+    },
+    {
+      "class": 5,
+      "class_less_than_p": false,
+      "derived_dimension_when_t_one": null,
+      "group_order_log_p": 86,
+      "growing_modulus_fixed_class_bridge_established": false,
+      "hidden_index_log_p": 85,
+      "hidden_order_log_p": 1,
+      "n": 17,
+      "normalizer_order_log_p": 18,
+      "p": 2,
+      "prime_field_exponent_p_input": false,
+      "q": 32,
+      "q_at_most_two_to_class": true,
+      "t": 5
+    },
+    {
+      "class": 2,
+      "class_less_than_p": true,
+      "derived_dimension_when_t_one": 17,
+      "group_order_log_p": 35,
+      "growing_modulus_fixed_class_bridge_established": false,
+      "hidden_index_log_p": 34,
+      "hidden_order_log_p": 1,
+      "n": 17,
+      "normalizer_order_log_p": 18,
+      "p": 3,
+      "prime_field_exponent_p_input": true,
+      "q": 3,
+      "q_at_most_two_to_class": true,
+      "t": 1
+    },
+    {
+      "class": 4,
+      "class_less_than_p": false,
+      "derived_dimension_when_t_one": null,
+      "group_order_log_p": 69,
+      "growing_modulus_fixed_class_bridge_established": false,
+      "hidden_index_log_p": 68,
+      "hidden_order_log_p": 1,
+      "n": 17,
+      "normalizer_order_log_p": 18,
+      "p": 3,
+      "prime_field_exponent_p_input": false,
+      "q": 9,
+      "q_at_most_two_to_class": true,
+      "t": 2
+    },
+    {
+      "class": 4,
+      "class_less_than_p": true,
+      "derived_dimension_when_t_one": 51,
+      "group_order_log_p": 69,
+      "growing_modulus_fixed_class_bridge_established": false,
+      "hidden_index_log_p": 68,
+      "hidden_order_log_p": 1,
+      "n": 17,
+      "normalizer_order_log_p": 18,
+      "p": 5,
+      "prime_field_exponent_p_input": true,
+      "q": 5,
+      "q_at_most_two_to_class": true,
+      "t": 1
+    },
+    {
+      "class": 16,
+      "class_less_than_p": false,
+      "derived_dimension_when_t_one": null,
+      "group_order_log_p": 273,
+      "growing_modulus_fixed_class_bridge_established": false,
+      "hidden_index_log_p": 272,
+      "hidden_order_log_p": 1,
+      "n": 17,
+      "normalizer_order_log_p": 18,
+      "p": 5,
+      "prime_field_exponent_p_input": false,
+      "q": 625,
+      "q_at_most_two_to_class": true,
+      "t": 4
+    },
+    {
+      "class": 378,
+      "class_less_than_p": false,
+      "derived_dimension_when_t_one": null,
+      "group_order_log_p": 6427,
+      "growing_modulus_fixed_class_bridge_established": false,
+      "hidden_index_log_p": 6426,
+      "hidden_order_log_p": 1,
+      "n": 17,
+      "normalizer_order_log_p": 18,
+      "p": 127,
+      "prime_field_exponent_p_input": false,
+      "q": 2048383,
+      "q_at_most_two_to_class": true,
+      "t": 3
+    }
+  ],
+  "primary_source": "https://arxiv.org/html/2609.34996v1",
+  "runtime": {
+    "python": "3.13.5",
+    "python_flint": "0.9.0"
+  },
+  "scope": "exact falsifiers of naive Rees-to-cyclotomic bridge, not a CCP solver",
+  "secret_digit_control": {
+    "distinct_original_subgroups": true,
+    "equal_mod_three_images": true,
+    "fidelity": "1/3",
+    "label": [
+      0,
+      1
+    ],
+    "phase_exponents": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/3",
+        "0"
+      ]
+    ]
+  },
+  "source_sha256": {
+    "CYCLOTOMIC_BRIDGE.md": "66dae3e52ee8c6208485e4452fe934b799be7b818af5fedf856cc57c32ecabcc",
+    "HANDOFF.md": "ce7860e8dc8bb692a49e58177e24ed25faa769acfee9a23461edf6e4ab0ec3b4",
+    "bridge_controls.py": "e3cb6fa55704461e6966e619d55fd7e76183bfabc15fb8be44291513c4132bbf",
+    "replay.py": "46def2ad0c49b348056dec041529bd5ba44b94e4530fe0f7d4a5cd49aecaf387",
+    "test_bridge_controls.py": "8baa53ed7dd46d4f15a8cbd25d1120c7eae9861dd36abe8b88bacc8b5236e49f"
+  }
+}

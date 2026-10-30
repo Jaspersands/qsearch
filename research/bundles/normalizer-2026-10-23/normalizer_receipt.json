@@ -1,0 +1,540 @@
+{
+  "status": "PUBLIC_ALGEBRA_AND_BOUNDED_FOURIER_CONTROLS",
+  "independent_review": "pending",
+  "quantum_device_execution": false,
+  "scalable_quantum_receiver_executed": false,
+  "black_box_preprocessing_executed": false,
+  "hidden_intersections_learned_in_bounded_simulation_only": true,
+  "general_all_prime_normalizer_implemented": false,
+  "repository_integrated": false,
+  "reason_not_integrated": "Desktop repository was actively being migrated",
+  "cases": [
+    {
+      "prime": 5,
+      "module_exponents": [
+        2,
+        1
+      ],
+      "action_generators": [
+        [
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "supplied_subgroup": [
+        [
+          0,
+          1
+        ]
+      ],
+      "result": {
+        "action_log_generators": [
+          [
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "stabilizer_log_generators": [
+          [
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "stabilizer_group_generators": [
+          [
+            [
+              6,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "action_order": 125,
+        "stabilizer_order": 25,
+        "status": "EXACT_PUBLIC_ACTION_STABILIZER"
+      }
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "module_exponents": [
+        2,
+        1
+      ],
+      "action_generators": [
+        [
+          [
+            1,
+            170141183460469231731687303715884105727
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "supplied_subgroup": [
+        [
+          0,
+          1
+        ]
+      ],
+      "result": {
+        "action_log_generators": [
+          [
+            [
+              170141183460469231731687303715884105727,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              170141183460469231731687303715884105727
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "stabilizer_log_generators": [
+          [
+            [
+              170141183460469231731687303715884105727,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "stabilizer_group_generators": [
+          [
+            [
+              170141183460469231731687303715884105728,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "action_order": 4925250774549309901534880012517951725548123341880193686925858436774199290547709261477934266526216329006041303875583,
+        "stabilizer_order": 28948022309329048855892746252171976962977213799489202546401021394546514198529,
+        "status": "EXACT_PUBLIC_ACTION_STABILIZER"
+      }
+    }
+  ],
+  "quotient_bridge": {
+    "status": "BOUNDED_MECHANISM_CONTROLS_NOT_HARDNESS_EVIDENCE",
+    "prime": 7,
+    "ambient_class": 3,
+    "ambient_order": 16807,
+    "numeric_labels_classically_easy": true,
+    "enumeration_is_not_an_efficient_quantum_implementation": true,
+    "cases": [
+      {
+        "conjugation": 0,
+        "learned_intersection": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "action_order": 49,
+        "action_stabilizer_order": 7,
+        "learned_terminal_subgroup": [
+          [
+            1,
+            0
+          ]
+        ],
+        "recovered_generators": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "recovered_lie_rank": 3,
+        "fourier_stages": [
+          {
+            "addresses_enumerated": 343,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          },
+          {
+            "addresses_enumerated": 49,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          }
+        ]
+      },
+      {
+        "conjugation": 1,
+        "learned_intersection": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "action_order": 49,
+        "action_stabilizer_order": 7,
+        "learned_terminal_subgroup": [
+          [
+            2,
+            1
+          ]
+        ],
+        "recovered_generators": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            2
+          ]
+        ],
+        "recovered_lie_rank": 3,
+        "fourier_stages": [
+          {
+            "addresses_enumerated": 343,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          },
+          {
+            "addresses_enumerated": 49,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          }
+        ]
+      },
+      {
+        "conjugation": 3,
+        "learned_intersection": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            5,
+            0,
+            1
+          ]
+        ],
+        "action_order": 49,
+        "action_stabilizer_order": 7,
+        "learned_terminal_subgroup": [
+          [
+            1,
+            1
+          ]
+        ],
+        "recovered_generators": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            5,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            4
+          ]
+        ],
+        "recovered_lie_rank": 3,
+        "fourier_stages": [
+          {
+            "addresses_enumerated": 343,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          },
+          {
+            "addresses_enumerated": 49,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          }
+        ]
+      },
+      {
+        "conjugation": 6,
+        "learned_intersection": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            6,
+            0,
+            1
+          ]
+        ],
+        "action_order": 49,
+        "action_stabilizer_order": 7,
+        "learned_terminal_subgroup": [
+          [
+            2,
+            1
+          ]
+        ],
+        "recovered_generators": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            6,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        "recovered_lie_rank": 3,
+        "fourier_stages": [
+          {
+            "addresses_enumerated": 343,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          },
+          {
+            "addresses_enumerated": 49,
+            "normalization": 1.0,
+            "positive_fourier_outcomes": 7,
+            "samples_drawn": 16
+          }
+        ]
+      }
+    ],
+    "retained_input_compiler": {
+      "workspace_failure_probability": 0.010000000000000002,
+      "fresh_target_squared_error": 0.02,
+      "arbitrary_target_squared_operator_error": 0.04000000000000001
+    },
+    "in_place_counterexample": {
+      "dimension": 1099511627776,
+      "method": "symbolic_formula_not_dense_simulation",
+      "basis_failure_probability_exact": "1099511627775/302231454903657293676544",
+      "uniform_input_trace_distance": 3.8146972656232653e-06,
+      "balanced_witness_overlap_exact": "0",
+      "balanced_witness_trace_distance": 2
+    }
+  },
+  "growing_class_control": {
+    "ambient_semidirect_class": 8,
+    "prime": 11,
+    "abelian_module_dimension": 8,
+    "supplied_intersection_dimension": 6,
+    "action_stabilizer_order": 11,
+    "quotient_abelian_module_dimension": 2,
+    "quotient_semidirect_order": 1331,
+    "quotient_semidirect_class": 2
+  },
+  "source_sha256": {
+    "abelian_action_normalizer.py": "23e27292fc1ebfe9801b2e8dd446b924cd7a0fc13ccc873ef07ca92ec5de8075",
+    "test_abelian_action_normalizer.py": "edfca814e58d15fe8c68aadad6d0bf88738a0d1ef549370c2fde7a8c731bc39d",
+    "ABELIAN_ACTION_NORMALIZER.md": "046ea944a4965a2df43f08faa5585f414e2676621872ada196b324a5b8cbfb8e",
+    "replay.py": "88276fd45713b4edf3b5aa9817dc601bd989cd507289c93ea3496d947aa10722",
+    "INTEGRATION.md": "bbc03504dd1a479fc6be318e3891e36493f04e5ce3cd947a39d2d9cf7cc51595",
+    "quotient_bridge_controls.py": "ad88188d37e0f2d626d85a8c1f1334109db1988f96f7f586143d415248fd137f",
+    "test_quotient_bridge_controls.py": "349e4cf696dd1836f179039e3cc0f0e3856855e3383b1befaa93a70594b2eddd",
+    "QUOTIENT_BRIDGE_AUDIT.md": "114a48ef797725a94a0cc2c1a6f447ce641056676721315c77899d6820d56969"
+  },
+  "unestablished": [
+    "whole black-box reduction independently checked",
+    "all-prime normalizer interface independently audited",
+    "uniform FPT bound for all-prime terminal algorithm",
+    "novelty",
+    "natural hard input family",
+    "quantum speedup"
+  ]
+}

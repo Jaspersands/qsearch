@@ -1,0 +1,341 @@
+{
+  "abstract_rank_census_not_success_probability": {
+    "3": {
+      "0": 16,
+      "1": 0,
+      "2": 24
+    },
+    "5": {
+      "0": 36,
+      "1": 0,
+      "2": 120
+    },
+    "7": {
+      "0": 64,
+      "1": 0,
+      "2": 336
+    }
+  },
+  "arithmetic_controls": [
+    {
+      "actual_geometric_torsion_points_evaluated": 0,
+      "algebra_compatible_lagrangians": 1,
+      "beta_source_coordinates": [],
+      "characteristic": 11,
+      "crt_modulus": 273,
+      "crt_primes": [
+        3,
+        7,
+        13
+      ],
+      "ell": 5,
+      "fixture": "mixing",
+      "fixture_target": "PRODUCT_NOT_SMOOTH_JACOBIAN",
+      "image": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "image_rank": 2,
+      "pullback_source_coordinates": [
+        -3,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "quantum_receiver_executed": false,
+      "source_involution_kind": null,
+      "status": "CLASSICAL_KERNEL_UNDER_INPUT_PROMISE",
+      "target_map_points_required_not_executed": 12,
+      "two_factor_restriction_controls": [],
+      "weak_basis_points_required_not_executed": 12
+    },
+    {
+      "actual_geometric_torsion_points_evaluated": 0,
+      "algebra_compatible_lagrangians": 36,
+      "beta_source_coordinates": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "characteristic": 11,
+      "crt_modulus": 273,
+      "crt_primes": [
+        3,
+        7,
+        13
+      ],
+      "ell": 5,
+      "fixture": "stable_swap",
+      "fixture_target": "PRODUCT_NOT_SMOOTH_JACOBIAN",
+      "image": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "image_rank": 0,
+      "pullback_source_coordinates": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quantum_receiver_executed": false,
+      "source_involution_kind": "UNITARY_EXCHANGE",
+      "status": "TWO_HIDDEN_LINES_NOT_CLASSICALLY_SOLVED",
+      "target_map_points_required_not_executed": 12,
+      "two_factor_restriction_controls": [
+        {
+          "distinct_orbit_labels": 6,
+          "factor": 0,
+          "opaque_queries": 120
+        },
+        {
+          "distinct_orbit_labels": 6,
+          "factor": 1,
+          "opaque_queries": 120
+        }
+      ],
+      "weak_basis_points_required_not_executed": 12
+    }
+  ],
+  "classical_solution_of_rank_zero_claimed": false,
+  "complete_native_weak_isogeny_executed": false,
+  "curve_controls": [
+    {
+      "actual_curve_coefficients": [
+        3,
+        0,
+        10,
+        0,
+        12,
+        0,
+        1
+      ],
+      "field_enumeration_for_discovery": false,
+      "native_weak_isogeny_attached": false,
+      "prime": 13,
+      "projective_triples_checked": 120,
+      "quotient_curve_points_checked": [
+        18,
+        18
+      ],
+      "reduced_involutions": [
+        {
+          "kappa": 1,
+          "lift_field_degree": 1,
+          "matrix": [
+            1,
+            0,
+            0,
+            12
+          ],
+          "square_scalar": 1,
+          "status": "ELLIPTIC_INVOLUTION"
+        }
+      ],
+      "supplied_and_checked_branch_points": [
+        [
+          1,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          10,
+          1
+        ]
+      ]
+    },
+    {
+      "actual_curve_coefficients": [
+        170141183460469231731687303715884105691,
+        0,
+        49,
+        0,
+        170141183460469231731687303715884105713,
+        0,
+        1
+      ],
+      "field_enumeration_for_discovery": false,
+      "native_weak_isogeny_attached": false,
+      "prime": 170141183460469231731687303715884105727,
+      "projective_triples_checked": 120,
+      "quotient_curve_points_checked": [
+        0,
+        0
+      ],
+      "reduced_involutions": [
+        {
+          "kappa": 1,
+          "lift_field_degree": 1,
+          "matrix": [
+            1,
+            0,
+            0,
+            170141183460469231731687303715884105726
+          ],
+          "square_scalar": 1,
+          "status": "ELLIPTIC_INVOLUTION"
+        }
+      ],
+      "supplied_and_checked_branch_points": [
+        [
+          1,
+          1
+        ],
+        [
+          170141183460469231731687303715884105726,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          170141183460469231731687303715884105725,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          170141183460469231731687303715884105724,
+          1
+        ]
+      ]
+    }
+  ],
+  "elliptic_reduction": {
+    "even_access_requires_original_doubled_levels": true,
+    "imported_PQLP_runtime_assumptions_not_removed": true,
+    "known_elliptic_solver_executed": false,
+    "native_geometry_bridge_implemented": false,
+    "odd_access_preserved": true,
+    "theorem_status": "LOCAL_DERIVATION_REVIEW_PENDING"
+  },
+  "generic_surface_solution_claimed": false,
+  "independent_review": false,
+  "novelty_claim": false,
+  "order_four_falsifier": {
+    "curve_coefficients": [
+      12,
+      8,
+      8,
+      0,
+      5,
+      5,
+      1
+    ],
+    "lift": {
+      "kappa": 12,
+      "lift_field_degree": 1,
+      "matrix": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "square_scalar": 1,
+      "status": "ORDER_FOUR_LIFT_NOT_SELF_ADJOINT"
+    },
+    "once": [
+      0,
+      1,
+      5
+    ],
+    "self_adjoint_gate_eligible": false,
+    "start": [
+      1,
+      0,
+      1
+    ],
+    "twice": [
+      1,
+      0,
+      12
+    ]
+  },
+  "quantum_execution": false,
+  "scope": "native curve-map frontend and conditional bielliptic weak-isogeny reduction",
+  "sha256": {
+    "bielliptic-source-2026-10-24/BIELLIPTIC_SOURCE.md": "5483cad0e0c41fcd4569e9fa45586e93abd96e2f104a65fded2f2dbb19d9f6c7",
+    "bielliptic-source-2026-10-24/HANDOFF.md": "e3a916ed2e803a4b34fe21e225c1df8f6dc617a284b520dd51d4214c2c5c499b",
+    "bielliptic-source-2026-10-24/audit_controls.py": "e1a2f25e32d61207fcff4953ade4b6115754539b0fcc1a402cad2e77ce13c630",
+    "bielliptic-source-2026-10-24/bielliptic.py": "87869c8c3f359f97eb61f830af0acb1b566b5bd401179c022a14d1e02a2de761",
+    "bielliptic-source-2026-10-24/replay.py": "fbca8af070794d20a35e22abf222869f657cac1f530a2d47d0d2b7fb43c493f3",
+    "bielliptic-source-2026-10-24/test_bielliptic.py": "6754c550082539480ab4e4a3663ef6c6ccfd2f10d553d1febbcf77847a46b31f",
+    "frobenius-residual-2026-10-23/residual.py": "92bba77da83a520f21e11eea49160cd92db18a121dbf16c8061858dcb9536c07",
+    "frobenius-residual-2026-10-23/residual_controls.py": "5b3e4e44ac367790d48b1786a53e8bcfb826f866da491b7cc0e2502aa12bc15e",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "scalar-cancellation-2026-10-23/scalar_cancellation.py": "3d589f47026502ac8a640949827f0edf23712d0a5612867f046377afbaf86739",
+    "source-pullback-2026-10-23/controls.py": "d31b9d12d620fa455be022ee9ce67e587d7be2b3fe84fca8378acac8fd9b2b9c",
+    "source-pullback-2026-10-23/pullback.py": "9352ddaa242473bfb4f048198f20059be97cb91fedc11702179209fdaac2ae1f"
+  }
+}

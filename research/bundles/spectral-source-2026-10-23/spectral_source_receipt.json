@@ -1,0 +1,170 @@
+{
+  "budget_examples": [
+    {
+      "attempts_per_output": 26,
+      "calibration_targets": 20,
+      "error": "1/100",
+      "gap": "1/2",
+      "gap_verified": false,
+      "gate_trace_distance_allowance": "1/800",
+      "ideal_bad_event_bound": "3/800",
+      "median_repeats": 145,
+      "outputs": 8,
+      "phase_bits": 9,
+      "phase_grid": 512,
+      "physical_protocol_executed": false,
+      "program_copies_per_power": [
+        108119424000,
+        216238848000,
+        432477696000,
+        864955392000,
+        1729910784000,
+        3459821568000,
+        6919643136000,
+        13839286272000,
+        27678572544000
+      ],
+      "program_copy_cap": 1826532788451840000,
+      "raw_copy_cap": 1826532788451840228,
+      "simulation_diamond_bound": "1/400",
+      "speedup_claim": false,
+      "target_cap": 228,
+      "time_upper_bound": 33787320,
+      "whole_output_trace_distance_bound": "1/160"
+    },
+    {
+      "attempts_per_output": 104,
+      "calibration_targets": 80,
+      "error": "1/100",
+      "gap": "1/8",
+      "gap_verified": false,
+      "gate_trace_distance_allowance": "1/800",
+      "ideal_bad_event_bound": "3/800",
+      "median_repeats": 161,
+      "outputs": 8,
+      "phase_bits": 11,
+      "phase_grid": 2048,
+      "physical_protocol_executed": false,
+      "program_copies_per_power": [
+        1923616665600,
+        3847233331200,
+        7694466662400,
+        15388933324800,
+        30777866649600,
+        61555733299200,
+        123111466598400,
+        246222933196800,
+        492445866393600,
+        984891732787200,
+        1969783465574400
+      ],
+      "program_copy_cap": 578172043152197222400,
+      "raw_copy_cap": 578172043152197223312,
+      "simulation_diamond_bound": "1/400",
+      "speedup_claim": false,
+      "target_cap": 912,
+      "time_upper_bound": 601130208,
+      "whole_output_trace_distance_bound": "1/160"
+    },
+    {
+      "attempts_per_output": 416,
+      "calibration_targets": 320,
+      "error": "1/100",
+      "gap": "1/32",
+      "gap_verified": false,
+      "gate_trace_distance_allowance": "1/800",
+      "ideal_bad_event_bound": "3/800",
+      "median_repeats": 177,
+      "outputs": 8,
+      "phase_bits": 13,
+      "phase_grid": 8192,
+      "physical_protocol_executed": false,
+      "program_copies_per_power": [
+        33848933990400,
+        67697867980800,
+        135395735961600,
+        270791471923200,
+        541582943846400,
+        1083165887692800,
+        2166331775385600,
+        4332663550771200,
+        8665327101542400,
+        17330654203084800,
+        34661308406169600,
+        69322616812339200,
+        138645233624678400
+      ],
+      "program_copy_cap": 179023489419758823014400,
+      "raw_copy_cap": 179023489419758823018048,
+      "simulation_diamond_bound": "1/400",
+      "speedup_claim": false,
+      "target_cap": 3648,
+      "time_upper_bound": 10577791872,
+      "whole_output_trace_distance_bound": "1/160"
+    }
+  ],
+  "controls": [
+    {
+      "analytic_instrument_bound": 1,
+      "complete_instrument_trace_distance": 0.06160854891791239,
+      "finite_conditional_top_error": 0.21653259883295767,
+      "finite_selected_probability": 0.7417125082632944,
+      "grid": 8,
+      "program_copies": 224,
+      "program_copies_per_power": [
+        32,
+        64,
+        128
+      ],
+      "protocol_gap_schedule_executed": false,
+      "target_copies": 1,
+      "unconditional_target_error": 0.35
+    },
+    {
+      "analytic_instrument_bound": 0.2698719953422871,
+      "complete_instrument_trace_distance": 0.016671340536917822,
+      "finite_conditional_top_error": 0.19435820861636566,
+      "finite_selected_probability": 0.7420544604745095,
+      "grid": 8,
+      "program_copies": 896,
+      "program_copies_per_power": [
+        128,
+        256,
+        512
+      ],
+      "protocol_gap_schedule_executed": false,
+      "target_copies": 1,
+      "unconditional_target_error": 0.35000000000000003
+    },
+    {
+      "analytic_instrument_bound": 0.06746799883557178,
+      "complete_instrument_trace_distance": 0.004256672635941661,
+      "finite_conditional_top_error": 0.18795151651692585,
+      "finite_selected_probability": 0.7420341929918352,
+      "grid": 8,
+      "program_copies": 3584,
+      "program_copies_per_power": [
+        512,
+        1024,
+        2048
+      ],
+      "protocol_gap_schedule_executed": false,
+      "target_copies": 1,
+      "unconditional_target_error": 0.34999999999995035
+    }
+  ],
+  "full_source_protocol_executed": false,
+  "hsp_receiver_executed": false,
+  "mechanism": "known density-matrix exponentiation and quantum PCA",
+  "native_hard_application_identified": false,
+  "novel_algorithm_claim": false,
+  "numpy_version": "2.3.3",
+  "scope": "Small dense calculations are verifier controls, not the online input model.",
+  "source_contract": "fresh jointly IID mixed copies; supplied positive top gap",
+  "source_sha256": {
+    "replay.py": "b253345a2afb324f8048d6fc5b14a6eb2f3aa61203481ff36d6e95a3570721f7",
+    "spectral_source.py": "d5e7dee06e2f88cd51a6bc584f7578de0d33f1002b0ca6264e6268432cf3ba1a",
+    "test_spectral_source.py": "7e88b7a13d2b7dee444ffeae3c7008d2b0ed79701cf624559ee93dd9cc50018c"
+  },
+  "status": "FINITE_CHANNEL_CHECKS_AND_PROPOSED_RESOURCE_ENVELOPE"
+}

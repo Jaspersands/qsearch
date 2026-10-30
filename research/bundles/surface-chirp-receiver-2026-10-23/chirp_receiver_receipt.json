@@ -1,0 +1,94 @@
+{
+  "status": "EXPLICIT_RECEIVER_PROTOCOL_WITH_FINITE_QUANTUM_CONTROLS_REVIEW_PENDING",
+  "qiskit_version": "2.3.0",
+  "decoder_supplied_secret_coefficients": false,
+  "quantum_post_query_decoder_simulated": true,
+  "coherent_oracle_circuit_executed": false,
+  "geometric_source_executed": false,
+  "scalable_prime_fourier_compiler_implemented": false,
+  "quantum_hardware_used": false,
+  "speedup_admitted": false,
+  "cases": [
+    {
+      "receiver_prime": 3,
+      "seed": 0,
+      "correct": true,
+      "ideal_protocol_source_copies": 206,
+      "verification_queries": 3,
+      "actual_classical_fiber_table_queries": 324,
+      "pair_measurements": 4,
+      "chart_outcomes": [
+        "ABORT",
+        "ABORT",
+        "CERTIFIED"
+      ],
+      "source_copy_bound": 1536
+    },
+    {
+      "receiver_prime": 3,
+      "seed": 7,
+      "correct": true,
+      "ideal_protocol_source_copies": 50,
+      "verification_queries": 3,
+      "actual_classical_fiber_table_queries": 162,
+      "pair_measurements": 4,
+      "chart_outcomes": [
+        "CERTIFIED"
+      ],
+      "source_copy_bound": 1536
+    },
+    {
+      "receiver_prime": 5,
+      "seed": 1,
+      "correct": true,
+      "ideal_protocol_source_copies": 28,
+      "verification_queries": 3,
+      "actual_classical_fiber_table_queries": 1250,
+      "pair_measurements": 4,
+      "chart_outcomes": [
+        "CERTIFIED"
+      ],
+      "source_copy_bound": 1536
+    },
+    {
+      "receiver_prime": 5,
+      "seed": 9,
+      "correct": true,
+      "ideal_protocol_source_copies": 32,
+      "verification_queries": 3,
+      "actual_classical_fiber_table_queries": 1250,
+      "pair_measurements": 5,
+      "chart_outcomes": [
+        "CERTIFIED"
+      ],
+      "source_copy_bound": 1536
+    },
+    {
+      "receiver_prime": 3,
+      "seed": 42,
+      "correct": true,
+      "ideal_protocol_source_copies": 340,
+      "verification_queries": 3,
+      "actual_classical_fiber_table_queries": 405,
+      "pair_measurements": 19,
+      "chart_outcomes": [
+        "ABORT",
+        "ABORT",
+        "ABORT",
+        "CERTIFIED"
+      ],
+      "source_copy_bound": 1536
+    }
+  ],
+  "source_sha256": {
+    "surface-chirp-receiver-2026-10-23/chirp_receiver.py": "227f5ba3319dc6ace7a152302632c5178f841b5541461c84984cd60243961e84",
+    "surface-chirp-receiver-2026-10-23/quantum_controls.py": "d754fec47b8b372d0ffb7b0612ad027225939aa0c3c131b03056cc60b8412629",
+    "surface-chirp-receiver-2026-10-23/test_chirp_receiver.py": "a0aa845d4117ad4cbdd0f8f9ba78a7d551532dcc0525d454f41bedd249e602e5",
+    "surface-chirp-receiver-2026-10-23/replay_chirp_receiver.py": "ef8c687d55f21778a4566261e98783a185261690ceb77d2d53f6867cd9382137",
+    "surface-chirp-receiver-2026-10-23/EXPLICIT_CHIRP_RECEIVER.md": "45aa9f680179cdb95dc9d21405119e4b46abd38a473292124ff77e53b3df8349",
+    "surface-chirp-receiver-2026-10-23/HANDOFF.md": "0835eae525fade7694fbfdffc2762d713114dd0273617305c472674ce04a22a1",
+    "siegel-classical-2026-10-23/classical_siegel.py": "28714590eeb5853ba893e65a07ce4a5964f12bd5333811546b65dcb8b5325055",
+    "siegel-classical-2026-10-23/test_classical_siegel.py": "14db4ad7ba84b083fc1c2e50845b41328e8f987fb71335e87f006b5b7a2ebaee",
+    "prime-square-flags-2026-10-23/prime_square_flags.py": "7f954c25339c294e1fd4df91003d432643eedb35b75c7d03e8f6f0aecd9c9208"
+  }
+}

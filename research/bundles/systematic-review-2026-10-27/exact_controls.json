@@ -1,0 +1,413 @@
+{
+  "all_syndrome_comparisons": 128,
+  "conditional_cap_mass_identities": 285,
+  "enumerates_nonzero_free_assignments": false,
+  "false_distance_promise_success_bound_on_empty_full_rank_fiber": "3/5",
+  "fixture_count": 8,
+  "fixtures": [
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        2,
+        1,
+        1
+      ],
+      "empty_fibers": 0,
+      "fixture": "even_weight_phase",
+      "formal_alpha_using_row_count": "1/2",
+      "matrix": [
+        [
+          1,
+          1
+        ]
+      ],
+      "max_abs_tail": "1/2",
+      "nonzero_rowspace_minimum_weight": 2,
+      "omitted_phase_mutation_failures": 2,
+      "prime": 3,
+      "rank": 1,
+      "syndromes_checked": 3,
+      "unsigned_weight_mutation_failures": 0
+    },
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        2,
+        3,
+        3
+      ],
+      "empty_fibers": 0,
+      "fixture": "odd_weight_sign",
+      "formal_alpha_using_row_count": "1/4",
+      "matrix": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "max_abs_tail": "1/4",
+      "nonzero_rowspace_minimum_weight": 3,
+      "omitted_phase_mutation_failures": 2,
+      "prime": 3,
+      "rank": 1,
+      "syndromes_checked": 3,
+      "unsigned_weight_mutation_failures": 3
+    },
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        0,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_fibers": 1,
+      "fixture": "forced_zero",
+      "formal_alpha_using_row_count": "1",
+      "matrix": [
+        [
+          1,
+          0
+        ]
+      ],
+      "max_abs_tail": "1",
+      "nonzero_rowspace_minimum_weight": 1,
+      "omitted_phase_mutation_failures": 4,
+      "prime": 5,
+      "rank": 1,
+      "syndromes_checked": 5,
+      "unsigned_weight_mutation_failures": 5
+    },
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "empty_fibers": 5,
+      "fixture": "square_unique_point",
+      "formal_alpha_using_row_count": "4",
+      "matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "max_abs_tail": "5/4",
+      "nonzero_rowspace_minimum_weight": 1,
+      "omitted_phase_mutation_failures": 4,
+      "prime": 3,
+      "rank": 2,
+      "syndromes_checked": 9,
+      "unsigned_weight_mutation_failures": 9
+    },
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "empty_fibers": 2,
+      "fixture": "correlated_pivots_empty_fiber",
+      "formal_alpha_using_row_count": "2",
+      "matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "max_abs_tail": "5/4",
+      "nonzero_rowspace_minimum_weight": 2,
+      "omitted_phase_mutation_failures": 8,
+      "prime": 3,
+      "rank": 2,
+      "syndromes_checked": 9,
+      "unsigned_weight_mutation_failures": 9
+    },
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        48,
+        52,
+        52,
+        52,
+        52,
+        36,
+        40,
+        40,
+        36,
+        40,
+        36,
+        36,
+        40,
+        40,
+        40,
+        36,
+        40,
+        40,
+        40,
+        36,
+        36,
+        40,
+        36,
+        40,
+        40
+      ],
+      "empty_fibers": 0,
+      "fixture": "nonleading_pivots_zero_column",
+      "formal_alpha_using_row_count": "3/2",
+      "matrix": [
+        [
+          0,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2
+        ]
+      ],
+      "max_abs_tail": "69/256",
+      "nonzero_rowspace_minimum_weight": 2,
+      "omitted_phase_mutation_failures": 24,
+      "prime": 5,
+      "rank": 2,
+      "syndromes_checked": 25,
+      "unsigned_weight_mutation_failures": 25
+    },
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        24,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        27,
+        27,
+        26,
+        26,
+        27,
+        27,
+        26,
+        26,
+        27,
+        27,
+        27,
+        27,
+        26,
+        26,
+        27,
+        26,
+        27,
+        27,
+        26,
+        27,
+        26,
+        27,
+        26,
+        27,
+        27,
+        26,
+        27,
+        26,
+        26,
+        27,
+        27,
+        27,
+        27,
+        26,
+        26,
+        27,
+        27,
+        26,
+        26,
+        27,
+        27
+      ],
+      "empty_fibers": 0,
+      "fixture": "scaled_columns",
+      "formal_alpha_using_row_count": "2/9",
+      "matrix": [
+        [
+          2,
+          1,
+          4,
+          0
+        ],
+        [
+          0,
+          3,
+          2,
+          6
+        ]
+      ],
+      "max_abs_tail": "5/54",
+      "nonzero_rowspace_minimum_weight": 3,
+      "omitted_phase_mutation_failures": 48,
+      "prime": 7,
+      "rank": 2,
+      "syndromes_checked": 49,
+      "unsigned_weight_mutation_failures": 49
+    },
+    {
+      "counts_in_lexicographic_syndrome_order": [
+        52,
+        0,
+        0,
+        0,
+        0,
+        0,
+        51,
+        0,
+        0,
+        0,
+        0,
+        0,
+        51,
+        0,
+        0,
+        0,
+        0,
+        0,
+        51,
+        0,
+        0,
+        0,
+        0,
+        0,
+        51
+      ],
+      "empty_fibers": 20,
+      "fixture": "rank_deficient_promise_trap",
+      "formal_alpha_using_row_count": "3/32",
+      "matrix": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "max_abs_tail": "261/64",
+      "nonzero_rowspace_minimum_weight": 4,
+      "omitted_phase_mutation_failures": 24,
+      "prime": 5,
+      "rank": 1,
+      "syndromes_checked": 25,
+      "unsigned_weight_mutation_failures": 0
+    }
+  ],
+  "imports_parent_sampler": false,
+  "method": "exact projective character sums versus rank inclusion-exclusion",
+  "omitted_phase_mutation_failures": 116,
+  "phase_reversal_invariance_checks": 128,
+  "rates": {
+    "rank_per_e_comparison_threshold_decimal_approximation": "0.000216398846163993689897820656955035434888458076246893521344274",
+    "systematic_log2_trials_per_e_decimal_approximation": "0.0000721329487213312299659402189850118116294860254156311737814245"
+  },
+  "scope": "Bounded algebra controls, not a proof by extrapolation or a production implementation test.",
+  "status": "PASS",
+  "tower_exact_arithmetic_controls": [
+    {
+      "alpha_decimal_approximation": "9.99430161669705192107086660953581932063492001836894906389144E-251",
+      "base_trial_factor_decimal_approximation": "1.00043008170890159858432989045668138610993572359529413056112",
+      "delta_lower": 93,
+      "e": 8,
+      "exact_inequalities_passed": true,
+      "four_list_tower_contract_covers_level": false,
+      "k": 43,
+      "loose_tail_decimal_approximation": "9.99910005399730012149489720411212709523417473970958301759457E-16",
+      "worst_rank_four_list_log2_length": 28
+    },
+    {
+      "alpha_decimal_approximation": "9.98710832141996406630523302914448106983643131547517375068499E-531",
+      "base_trial_factor_decimal_approximation": "1.00083032377861426670325473801259401618917557913809064551195",
+      "delta_lower": 189,
+      "e": 16,
+      "exact_inequalities_passed": true,
+      "four_list_tower_contract_covers_level": false,
+      "k": 83,
+      "loose_tail_decimal_approximation": "9.99670059392278810737032937406700947805632916322525510757717E-56",
+      "worst_rank_four_list_log2_length": 54
+    },
+    {
+      "alpha_decimal_approximation": "9.97273725903923509349990392669467971787396829971204871836189E-1091",
+      "base_trial_factor_decimal_approximation": "1.00163128835664355118936689976255328107490164505248517458883",
+      "delta_lower": 381,
+      "e": 32,
+      "exact_inequalities_passed": true,
+      "four_list_tower_contract_covers_level": false,
+      "k": 163,
+      "loose_tail_decimal_approximation": "9.99190340101364193921823220550221135827844472108698779130153E-136",
+      "worst_rank_four_list_log2_length": 108
+    },
+    {
+      "alpha_decimal_approximation": "9.94405714272876582869278782353553663828631206118935576986870E-2211",
+      "base_trial_factor_decimal_approximation": "1.00323514106172731040046703865052834276668917215483524231490",
+      "delta_lower": 765,
+      "e": 64,
+      "exact_inequalities_passed": true,
+      "four_list_tower_contract_covers_level": true,
+      "k": 323,
+      "loose_tail_decimal_approximation": "9.98231592028721683703658992351969039706901269729589329458239E-296",
+      "worst_rank_four_list_log2_length": 214
+    },
+    {
+      "alpha_decimal_approximation": "9.88694411221707024790487573282109623645651402807042082102977E-4451",
+      "base_trial_factor_decimal_approximation": "1.00645055504642666211326182928867901018807645580444442477423",
+      "delta_lower": 1533,
+      "e": 128,
+      "exact_inequalities_passed": true,
+      "four_list_tower_contract_covers_level": true,
+      "k": 643,
+      "loose_tail_decimal_approximation": "9.96316854828851217369495236439984127490806521198277059523962E-616",
+      "worst_rank_four_list_log2_length": 428
+    },
+    {
+      "alpha_decimal_approximation": "9.12096166870746523093651327964430338216532772107285356383767E-35811",
+      "base_trial_factor_decimal_approximation": "1.05256360734718054958700546914596460747968365086847997043914",
+      "delta_lower": 12285,
+      "e": 1024,
+      "exact_inequalities_passed": true,
+      "four_list_tower_contract_covers_level": true,
+      "k": 5123,
+      "loose_tail_decimal_approximation": "9.69892981948743652972757974209254092828934453888266075134767E-5096",
+      "worst_rank_four_list_log2_length": 3414
+    }
+  ],
+  "unsigned_weight_mutation_failures": 100
+}

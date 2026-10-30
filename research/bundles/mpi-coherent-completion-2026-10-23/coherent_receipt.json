@@ -1,0 +1,90 @@
+{
+  "status": "constructive compilation argument UNDER REVIEW; no speedup admission",
+  "native": {
+    "m": 6000,
+    "n": 420,
+    "h": 13,
+    "cap": 209,
+    "t": "13/200"
+  },
+  "native_certificate": {
+    "mass_lower": "1063802532821433662168564405197762086797045967191/1461501637330902918203684832716283019655932542976",
+    "mean_lower": "500020536355079798686537022801167066643037677927/1461501637330902918203684832716283019655932542976",
+    "mean_upper": "500020536355079798686537022801167066643037677929/1461501637330902918203684832716283019655932542976"
+  },
+  "plan": {
+    "mass_lower": "7/10",
+    "mean_lower": "171/500",
+    "threshold": "3/10",
+    "score_absolute_error": "1/1000",
+    "guaranteed_acceptance_threshold": "151/500",
+    "complete_instrument_TV_error": "1/1000",
+    "source_tries_per_round": 2,
+    "source_success_lower": "91/100",
+    "ideal_score_tail_lower": "20/349",
+    "verified_success_per_round_lower": "17851/349000",
+    "round_cap": 800,
+    "raw_preparation_cap": 1600,
+    "failure_bits": 40,
+    "failure_upper": "1/1099511627776",
+    "bound_uses_conditioning_away_abort": false
+  },
+  "resources": {
+    "cyclic_order": 8191,
+    "logical_data_qubits_without_workspace": 17460,
+    "source_single_qubit_rotation_calls_per_round_upper": 12000,
+    "center_phase_calls_per_round_upper": 12000,
+    "modular_constant_add_subtracts_per_round": 5040000,
+    "arbitrary_modulus_QFT_calls_per_round": 420,
+    "decoder_compute_and_uncompute_calls_per_round": 2,
+    "max_operator_error_per_source_rotation": "1/36000000",
+    "max_operator_error_per_center_phase": "1/36000000",
+    "max_operator_error_per_QFT": "1/1260000",
+    "decoder_field_operation_asymptotic": "O(n^3 + m*n + n*h)",
+    "decoder_bit_operation_asymptotic": "T=O((n^3 + m*n + n*h)*h^3), ordinary classical computation",
+    "oblivious_decoder_Boolean_size_asymptotic": "O(T^2) suffices by conservative circuit simulation",
+    "reversible_decoder_space_asymptotic": "O(T^2) suffices by full-history simulation of that circuit",
+    "total_gate_asymptotic": "round_cap * poly(m,n,h,bitlength(t),log(1/instrument_error))",
+    "explicit_public_B_required_or_preprocessing_paid": true,
+    "exponentiation_uses_binary_field_arithmetic_not_qRAM": true,
+    "Shor_discrete_log_calls": 0,
+    "synthesized_gate_count": null,
+    "compiled_quantum_solver_executed": false
+  },
+  "finite_control": {
+    "scope": "exponential finite instrument falsifier, NOT a scalable decoder or optimizer run",
+    "licensed_patterns": 21,
+    "all_bitstring_syndromes_checked": 65536,
+    "decoder_invalid_outputs": 65515,
+    "correct_norm": 0.9999999999999987,
+    "correct_mean": 0.46666666666666595,
+    "count_record_retained_mean": -7.155734338404329e-17,
+    "count_record_retained_TV_from_correct": 0.510981585022177,
+    "wrong_power_of_two_QFT_invalid_output_mass": 0.2270531254490401,
+    "wrong_power_of_two_QFT_TV_including_abort": 0.642461207857447,
+    "wrong_QFT_conditioned_valid_mean": 0.055030949264329755,
+    "compiled_native_solver": false
+  },
+  "unchanged_decoder_replay": {
+    "field_bits": 64,
+    "cyclic_order": 18446744073709551615,
+    "licensed_patterns_decoded": 21,
+    "outside_box_rejected": true,
+    "field_power_evaluations": 88,
+    "full_field_log_table_entries": 0,
+    "subfield_entries_used_ONLY_for_public_fixture_construction": 15,
+    "source_path": "/Users/jaspersands/Desktop/quantum algorithm search/theorems/balanced_signed_mpi.py",
+    "source_sha256": "c34f50718f56772798afeb1f6292c87cd5482fb3a4bae4cb359cc1d63506f789",
+    "changed_decoder_body": false,
+    "compiled_reversible_circuit": false,
+    "scope": "large-field arithmetic control on a deliberately easy public subfield fixture"
+  },
+  "sha256": {
+    "/Users/jaspersands/Developer/qsearch-research-work/mpi-coherent-completion-2026-10-23/coherent_contract.py": "ca4dbb0e057d705ea94ab3923c8b58dc8e18159fd4a1660b85ac55d894f7e35c",
+    "/Users/jaspersands/Developer/qsearch-research-work/mpi-coherent-completion-2026-10-23/test_coherent_contract.py": "3bdb09e176de2d0caf441bcded1b1378e5021d1115e18054177b1c6838abc28d",
+    "/Users/jaspersands/Developer/qsearch-research-work/mpi-coherent-completion-2026-10-23/decoder_replay.py": "cb2f55415c200f932f148a4b00245a7314c6eeb80168cb0824d07e0e567761c6",
+    "/Users/jaspersands/Developer/qsearch-research-work/inverse-trace-residual-2026-10-23/residual_sat.py": "54fe6f9b8e3e3c2169119196cabb095411b37c76335da8d8d83b61de4535e4ce"
+  },
+  "quantum_optimizer_executed": false,
+  "classical_hardness_established": false
+}

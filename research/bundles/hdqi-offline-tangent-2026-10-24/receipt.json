@@ -1,0 +1,123 @@
+{
+  "ball_growth_ledgers": [
+    {
+      "ball_vertices_bound": 17,
+      "degree_bound": 2,
+      "ledger_only": true,
+      "paired_patch_qubits_bound": 34,
+      "pauli_count_log2_bound": 68,
+      "radius": 8,
+      "vertices": 1000000
+    },
+    {
+      "ball_vertices_bound": 13121,
+      "degree_bound": 4,
+      "ledger_only": true,
+      "paired_patch_qubits_bound": 26242,
+      "pauli_count_log2_bound": 52484,
+      "radius": 8,
+      "vertices": 1000000
+    },
+    {
+      "ball_vertices_bound": 1000000,
+      "degree_bound": 16,
+      "ledger_only": true,
+      "paired_patch_qubits_bound": 2000000,
+      "pauli_count_log2_bound": 4000000,
+      "radius": 8,
+      "vertices": 1000000
+    }
+  ],
+  "correlation_theorem_verified": false,
+  "full_patch_dense_controls": [
+    {
+      "discretization_bound": 0.057800000000000004,
+      "max_far_covariance": 0.0,
+      "max_tangent_residual": 9.094704842668266e-16,
+      "quantum_executed": false,
+      "steps": 8,
+      "tangent_error_bound": 1.9559065678668682e-16,
+      "total_bound": 0.0578000000000002,
+      "uses_dense_exact_target_access": true,
+      "vector_error": 0.002029912320349481
+    },
+    {
+      "discretization_bound": 0.028900000000000002,
+      "max_far_covariance": 0.0,
+      "max_tangent_residual": 9.094704842668266e-16,
+      "quantum_executed": false,
+      "steps": 16,
+      "tangent_error_bound": 1.948996659043688e-16,
+      "total_bound": 0.028900000000000196,
+      "uses_dense_exact_target_access": true,
+      "vector_error": 0.0009041403703677079
+    },
+    {
+      "discretization_bound": 0.014450000000000001,
+      "max_far_covariance": 0.0,
+      "max_tangent_residual": 9.094704842668266e-16,
+      "quantum_executed": false,
+      "steps": 32,
+      "tangent_error_bound": 1.9131127450440343e-16,
+      "total_bound": 0.014450000000000192,
+      "uses_dense_exact_target_access": true,
+      "vector_error": 0.0004283279588209248
+    }
+  ],
+  "hashes": {
+    "hdqi-cluster-baseline-2026-10-24/CLUSTER_BASELINE.md": "f32572252c925e5ab6e09b74837e659c1a5206893b21ad34408e41f67cfd8d29",
+    "hdqi-cluster-baseline-2026-10-24/cluster_baseline.py": "95de565cd743c7ffa1b81ac8d057374f1d952d5b8e5949bc2862f9ee8f8bc7fe",
+    "hdqi-defect-observables-2026-10-24/DEFECT_OBSERVABLES.md": "1b0dd5379a17d4e917f424a73bd4becc10319441a0b7a5dbd2c1c203bb61b612",
+    "hdqi-defect-observables-2026-10-24/defect_observables.py": "7dc26aadf17806f0a4c4ddff01c8dcebfe1a688f9095971f054e1582c4ea5626",
+    "hdqi-defect-observables-2026-10-24/linear_pullback.py": "89a490ece4c0d40e462343c129161b1735a6f215081ebad548637a1d8abd6c44",
+    "hdqi-offline-tangent-2026-10-24/HANDOFF.md": "762f1a3bce97df264b0f9ece7e103514cbc4e81ba2f6358b1d51052fa7506957",
+    "hdqi-offline-tangent-2026-10-24/OFFLINE_TANGENT.md": "d6a20cd42aca0d05aa6d219ecbf10690024e9b122c4bb93430d7bda1ef098c29",
+    "hdqi-offline-tangent-2026-10-24/offline_tangent.py": "ec0744ef7cd7a0857ec1fef6a38e52453f6b494e9820f2a0c7844840cd92d730",
+    "hdqi-offline-tangent-2026-10-24/run_audit.py": "51d5cc4b0f960bb64efe9f83f0525a925e6bcf60d69dc1325f1bfdd8b5fec844",
+    "hdqi-offline-tangent-2026-10-24/test_offline_tangent.py": "77ffe90ae3dd9c95b257d6beb68d167d1ac6b9d397405da01baa7dfede6a98a9"
+  },
+  "illustrative_cost_plan": {
+    "correlation_promise_verified": false,
+    "exact_target_marginals_granted": false,
+    "gate_operator_error": "1/5242880000",
+    "local_covariance_required": "1/92480000",
+    "local_dimension_log2": 20,
+    "marginal_trace_error": "1/462400000",
+    "pauli_additive_error": "1/484861542400000",
+    "pauli_estimates": 14411518807572480000,
+    "polar_objective_error_budget": "1/23120000",
+    "production_observable_estimator_implemented": false,
+    "quantum_executed": false,
+    "steps": 102400,
+    "vector_error_budget": "1/136"
+  },
+  "independently_reviewed": false,
+  "main_repository_modified": false,
+  "new_polynomial_preparation_theorem": false,
+  "novelty_certified": false,
+  "polar_discontinuity": {
+    "cross_objective_excess": 3.199884801574626e-12,
+    "density_trace_change": 4e-12,
+    "generator_operator_change": 0.8000000000040001
+  },
+  "production_observable_estimator_executed": false,
+  "quantum_advantage_established": false,
+  "quantum_execution": false,
+  "restricted_patch_dense_control": {
+    "discretization_bound": 0.057800000000000004,
+    "max_far_covariance": 0.06464904651367737,
+    "max_tangent_residual": 0.15276301902431572,
+    "quantum_executed": false,
+    "steps": 32,
+    "tangent_error_bound": 0.023275302610788258,
+    "total_bound": 0.08107530261078827,
+    "uses_dense_exact_target_access": true,
+    "vector_error": 0.02471678073109836
+  },
+  "status": "local_unreviewed_offline_compiler_lemma",
+  "symbolic_128_vertex_pullback": {
+    "density_table_constructed": false,
+    "pilot_word": "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+    "sign": 1
+  }
+}

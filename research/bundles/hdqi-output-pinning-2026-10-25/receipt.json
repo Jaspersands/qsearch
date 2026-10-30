@@ -1,0 +1,100 @@
+{
+  "claim": "output_bit_uniform_Dobrushin_criterion_fails",
+  "classically_easy_control": "independent_six_atom_component_sampling",
+  "connected_native_extension": {
+    "adjacent_pairs_zero_through_order_8": true,
+    "cycle_rank": 3,
+    "every_odd_edge_word_zero_through_order_8": true,
+    "induced_path": true,
+    "nonadjacent_h2_coefficient": 2,
+    "root_edges": 6,
+    "root_vertices": 4,
+    "singleton_h_coefficient": 1,
+    "triple_h3_coefficient": -2
+  },
+  "context_hashes": {
+    "hdqi-cluster-baseline-2026-10-24/CLUSTER_BASELINE.md": "f32572252c925e5ab6e09b74837e659c1a5206893b21ad34408e41f67cfd8d29",
+    "hdqi-decoder-margin-2026-10-24/DECODER_MARGIN.md": "907305c43f6573e89af8fdaa6173d0daba05930db2de2edf1e443bfdbc731701",
+    "hdqi-flux-gap-2026-10-24/FLUX_GAP.md": "d17ccd73a612a56fcccc45a02f29a38df60163603c008ff8881e2128ee1a2c31"
+  },
+  "exact_physical_algebra": {
+    "anticommute_ab": true,
+    "anticommute_bc": true,
+    "central_d": true,
+    "commute_ac": true,
+    "involution_d": true,
+    "minus_sector": true,
+    "plus_sector": true,
+    "square": true,
+    "word_sign": true
+  },
+  "general_output_sampler_implemented": false,
+  "hardness_claim": false,
+  "limiting_heat_bath_gap": "1/3",
+  "quantum_advantage_claim": false,
+  "rows": [
+    {
+      "beta": "1/16",
+      "conditional_influence_13_exact": 1,
+      "inclusion_events_certified": 7,
+      "kappa": "3/256",
+      "perron_polynomial_at_one_upper": "-130983572136055752457/604462909807314587353088",
+      "positive_boundary_010_lower": "36714108001660241367/37778931862957161709568",
+      "positive_boundary_111_lower": "62221560929955/604462909807314587353088",
+      "row_sum_lower": "2416672966046893744790893/1208925819614629174706176",
+      "u_lower": "1207747146432264570084717/1208925819614629174706176",
+      "v_lower": "65555701277541371541/604462909807314587353088"
+    },
+    {
+      "beta": "1/64",
+      "conditional_influence_13_exact": 1,
+      "inclusion_events_certified": 7,
+      "kappa": "3/4096",
+      "perron_polynomial_at_one_upper": "-16395593671267595605/1208925819614629174706176",
+      "positive_boundary_010_lower": "73764464287480966829/1208925819614629174706176",
+      "positive_boundary_111_lower": "30531926049/1208925819614629174706176",
+      "row_sum_lower": "2417777859758205525092967/1208925819614629174706176",
+      "u_lower": "1208852040143576350386791/1208925819614629174706176",
+      "v_lower": "2049574292271476191/302231454903657293676544"
+    },
+    {
+      "beta": "1/256",
+      "conditional_influence_13_exact": 1,
+      "inclusion_events_certified": 7,
+      "kappa": "3/65536",
+      "perron_polynomial_at_one_upper": "-512406603871336681/604462909807314587353088",
+      "positive_boundary_010_lower": "1152899514740028817/302231454903657293676544",
+      "positive_boundary_111_lower": "3728193/604462909807314587353088",
+      "row_sum_lower": "2417847027572560047177435/1208925819614629174706176",
+      "u_lower": "1208921207957930872471259/1208925819614629174706176",
+      "v_lower": "512408558542436371/1208925819614629174706176"
+    }
+  ],
+  "source_hashes": {
+    "HANDOFF.md": "070edb7239bc3b43aafd565b7f493eb2e457ca6bcc5e008dae69c953e967f3ca",
+    "OUTPUT_PINNING.md": "5e4d7231a11362428460893d281e882ce9bfba707708d7b4a16918357ffddf80",
+    "pinning_control.py": "69acce535ab5cfb0337d97b8e673e6833ad84996eab096173fb699c22d15790d",
+    "replay.py": "dbc8694f59c23de44a4ff87a040f1e2b61082efc6c0f2f70fb1d5a7b62690e77",
+    "test_pinning_control.py": "e91560a583d1df04ad87c9632d9559976138d265d47f9247ba357af3f080a7f1"
+  },
+  "status": "local_unreviewed_deduction_with_exact_controls",
+  "whole_vector_taylor_orders_checked": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ]
+}

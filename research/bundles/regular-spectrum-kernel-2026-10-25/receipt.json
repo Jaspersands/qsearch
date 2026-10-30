@@ -1,0 +1,198 @@
+{
+  "arithmetic_controls": [
+    {
+      "candidate_count": 4,
+      "characteristic": 7,
+      "ell": 5,
+      "exact_source_products_checked": true,
+      "geometric_input_verified": false,
+      "global_source_fibers_verified": false,
+      "independent_hom_integrality_checks": 4,
+      "label_backend": "FINITE_OPAQUE_CONTROL_ONLY",
+      "original_source_interface_calls": 9,
+      "public_polynomial_acquisition": {
+        "coefficients": [
+          169,
+          -130,
+          50,
+          -10,
+          1
+        ],
+        "geometric_input_verified": false,
+        "modulus": 627,
+        "required_strict_lower_bound": 156,
+        "status": "RECONSTRUCTED_CONDITIONAL"
+      },
+      "pullback_auxiliary_primes": [
+        3,
+        11,
+        13
+      ],
+      "pullback_modulus": 429,
+      "residual_polynomial": [],
+      "root_abort_bound": "0",
+      "selected_reference_kernel": true,
+      "status": "BOUNDED_LIST_REQUIRES_ORIGINAL_VERIFICATION",
+      "target_map_is_geometric_frobenius": false,
+      "word_image_ranks": [
+        0,
+        0
+      ]
+    },
+    {
+      "candidate_count": 2,
+      "characteristic": 7,
+      "ell": 17,
+      "exact_source_products_checked": true,
+      "geometric_input_verified": false,
+      "global_source_fibers_verified": false,
+      "independent_hom_integrality_checks": 2,
+      "label_backend": "FINITE_OPAQUE_CONTROL_ONLY",
+      "original_source_interface_calls": 5,
+      "public_polynomial_acquisition": {
+        "coefficients": [
+          169,
+          -130,
+          50,
+          -10,
+          1
+        ],
+        "geometric_input_verified": false,
+        "modulus": 627,
+        "required_strict_lower_bound": 156,
+        "status": "RECONSTRUCTED_CONDITIONAL"
+      },
+      "pullback_auxiliary_primes": [
+        3,
+        5,
+        11,
+        13
+      ],
+      "pullback_modulus": 2145,
+      "residual_polynomial": [
+        13,
+        11,
+        1
+      ],
+      "root_abort_bound": "1/340282366920938463463374607431768211456",
+      "selected_reference_kernel": true,
+      "status": "BOUNDED_LIST_REQUIRES_ORIGINAL_VERIFICATION",
+      "target_map_is_geometric_frobenius": false,
+      "word_image_ranks": [
+        1,
+        1
+      ]
+    },
+    {
+      "candidate_count": 1,
+      "characteristic": 7,
+      "ell": 17,
+      "exact_source_products_checked": true,
+      "geometric_input_verified": false,
+      "global_source_fibers_verified": false,
+      "independent_hom_integrality_checks": 1,
+      "label_backend": "FINITE_OPAQUE_CONTROL_ONLY",
+      "original_source_interface_calls": 0,
+      "public_polynomial_acquisition": {
+        "coefficients": [
+          169,
+          -130,
+          50,
+          -10,
+          1
+        ],
+        "geometric_input_verified": false,
+        "modulus": 627,
+        "required_strict_lower_bound": 156,
+        "status": "RECONSTRUCTED_CONDITIONAL"
+      },
+      "pullback_auxiliary_primes": [
+        3,
+        5,
+        11,
+        13
+      ],
+      "pullback_modulus": 2145,
+      "residual_polynomial": [],
+      "root_abort_bound": "0",
+      "selected_reference_kernel": true,
+      "status": "UNIQUE_UNDER_GEOMETRIC_PROMISE",
+      "target_map_is_geometric_frobenius": false,
+      "word_image_ranks": [
+        2,
+        2
+      ]
+    }
+  ],
+  "candidate_bound": 6,
+  "classical_original_source_call_bound": 13,
+  "dependency_sha256": {
+    "frobenius-order-completion-2026-10-25/FROBENIUS_COMPLETION.md": "1dd21ee1f46180a93298b449712a6a7ffc706eba28c00453e94c7bd7f5b880a0",
+    "frobenius-order-completion-2026-10-25/HANDOFF.md": "605dd15d294139a002339662cf706c0094448debde2bd24cdd6290759d1d5b69",
+    "frobenius-order-completion-2026-10-25/completion.py": "d297fcdec80a0111304a3725de2dab1e00bd7dcfd54b258308925146f8226870",
+    "frobenius-order-completion-2026-10-25/receipt.json": "f0977ad2eaef256b43f9dbf1593733b18a658669daa428338fac7f0a79878c0e",
+    "frobenius-order-completion-2026-10-25/replay.py": "e9de368d1ea74b0cd1cd773180f629f4aa38a56ef5058587299f0d22ea4f5d08",
+    "frobenius-order-completion-2026-10-25/test_completion.py": "1c13ae18a08bee0f4d2b4535b529e6ec86fa67fa99510b65a944abad3dcbdc83",
+    "frobenius-residual-2026-10-23/residual.py": "92bba77da83a520f21e11eea49160cd92db18a121dbf16c8061858dcb9536c07",
+    "frobenius-residual-2026-10-23/residual_controls.py": "5b3e4e44ac367790d48b1786a53e8bcfb826f866da491b7cc0e2502aa12bc15e",
+    "kernel-output-2026-10-23/KERNEL_TO_OUTPUT.md": "97d501bea7c13a51111f2480f5880c68e137ab7e49a803f95063807ed68a377d",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "product-corner-attack-2026-10-23/PRODUCT_CORNER_ATTACK.md": "8a35aa1633d3e96d8ca718c894b3f846d46b8e8c9ccbf5d6fea659b7955b11a1",
+    "product-corner-attack-2026-10-23/product_corner_receipt.json": "0662af863ae93784f936a6a3146eba9770e07bd89d03c6051853733ba83d1200",
+    "product-corner-attack-2026-10-23/product_corners.py": "e591d6f90180ab33c955377d3243e9b52ee5426af0e42b695b7a03a422ebcc15",
+    "scalar-cancellation-2026-10-23/scalar_cancellation.py": "3d589f47026502ac8a640949827f0edf23712d0a5612867f046377afbaf86739",
+    "source-pullback-2026-10-23/controls.py": "d31b9d12d620fa455be022ee9ce67e587d7be2b3fe84fca8378acac8fd9b2b9c",
+    "source-pullback-2026-10-23/pullback.py": "9352ddaa242473bfb4f048198f20059be97cb91fedc11702179209fdaac2ae1f",
+    "source-residual-algebra-2026-10-24/HANDOFF.md": "d74611976703ab482e63a98f66a28996eb9b51b40d6425189e0f021ed0b62bb6",
+    "source-residual-algebra-2026-10-24/RESIDUAL_ALGEBRA.md": "5d88f8e027e22844aa7d62b46cdf1ee7aa3a7236276f1c1c94d0a31c100f2910",
+    "source-residual-algebra-2026-10-24/algebra_controls.py": "b6516879fe4e704d06843c812e598b05952d1088e96c390f5a2c6d6e61d38304",
+    "source-residual-algebra-2026-10-24/receipt.json": "47657c405ed5fe2e11af1cba0931fadab61f342140b6bb1948e264df24f17b9d",
+    "source-residual-algebra-2026-10-24/replay.py": "e396c9571247fdad053d4c61383ac1e92e28b89ec53adf278183ef9397a9300c",
+    "source-residual-algebra-2026-10-24/residual_algebra.py": "3c39c70db7471492134781b7ba5ac7333e01f9ee67d15a6f7e2a089fe93dec6e",
+    "source-residual-algebra-2026-10-24/test_residual_algebra.py": "762b53d531d1a477adeabbfb9c77174c455826a037edc7b8ce09eca6baac1c29"
+  },
+  "frozen_predecessor_hashes_checked": {
+    "completion_dependencies": 5,
+    "completion_source": 5,
+    "product_corner_sources": 6,
+    "residual_sources_and_dependencies": 12
+  },
+  "general_weak_isogeny_solver": false,
+  "geometric_attack_executed": false,
+  "independent_review_completed": false,
+  "negative_controls": {
+    "common_field_product_frobenius": "NOT_REGULAR_USE_EXISTING_GENERAL_GATES",
+    "repeated_spectrum": "NOT_REGULAR_USE_EXISTING_GENERAL_GATES"
+  },
+  "original_source_implementation_is_still_required_for_nonunique_lists": true,
+  "quantum_speedup_admitted": false,
+  "source_sha256": {
+    "HANDOFF.md": "ead808a7fddaa8f6a968d5718e540481cd2bee83676bc99438115d1cbcb5b1f8",
+    "REGULAR_SPECTRUM.md": "2ba109ff3e94776cab261f29386e0fc8c9bf4b858c4fb504854953f478654cca",
+    "regular_controls.py": "a9ca6bf87b414219455aaaf8cdb332aa19be1c7b94c488d3722dda0f908fe472",
+    "regular_kernel.py": "fc3da12956e3db8be360d94c4b27fc12b9c2090b1b8801390d1257aa20685fb5",
+    "replay.py": "810dca9993c2f67a7a2dcfefb226ca0377953b93d5d352f9652fab6242817e44",
+    "test_regular_kernel.py": "2948f75e7254add325277fd2067e5a678d7287360f7e2907a70fea2ff713c0f7"
+  },
+  "status": "PROPOSED_CONDITIONAL_CLASSICAL_ATTACK_REVIEW_PENDING",
+  "unchanged_previous_unknown_controls": [
+    {
+      "candidate_count": 2,
+      "control_scope": "LOCAL_LATTICE_NOT_INCOMING_ISOGENY",
+      "ell": 47,
+      "new_gate": "BOUNDED_LIST_REQUIRES_ORIGINAL_VERIFICATION",
+      "original_source_interface_calls": 5,
+      "prior_gate": "UNKNOWN",
+      "selected_reference_kernel": true
+    },
+    {
+      "candidate_count": 2,
+      "control_scope": "LOCAL_LATTICE_NOT_INCOMING_ISOGENY",
+      "ell": 170141183460469231731687303715884105727,
+      "new_gate": "BOUNDED_LIST_REQUIRES_ORIGINAL_VERIFICATION",
+      "original_source_interface_calls": 5,
+      "prior_gate": "UNKNOWN",
+      "selected_reference_kernel": true
+    }
+  ]
+}

@@ -1,0 +1,850 @@
+{
+  "status": "STANDARD_HIGH_DEGREE_AG_EXTENSION_CLASSICALLY_COVERED",
+  "proof_status": "WRITTEN_DEDUCTION_WITH_EXACT_CONTROLS_NOT_INDEPENDENTLY_REVIEWED",
+  "scope": {
+    "relation": "By=s and every y_i nonzero",
+    "standard_ag_degrees": "2g+1 <= degree(G) < m",
+    "quantum_criterion": "Ragavan-Shutty 2610.00502v1 Theorem 5.4, Q<1",
+    "algorithm_is_prior_art": true,
+    "universal_quantum_lower_bound": false,
+    "native_inverse_trace_dequantized": false,
+    "quantum_advantage_established": false,
+    "quantum_execution": false,
+    "uniform_witness_sampling": false,
+    "independent_review": false,
+    "repository_registry_admission": false
+  },
+  "ag_finite_controls": [
+    {
+      "genus": 1,
+      "divisor_degree": 3,
+      "prime": 11,
+      "curve_coefficients_low_first": [
+        6,
+        1,
+        0,
+        1
+      ],
+      "points": [
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          9
+        ]
+      ],
+      "point_pairs_enumerated": 121,
+      "schur_and_rr_rowspaces_equal": true,
+      "original_parity": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          3,
+          3,
+          5,
+          5,
+          7,
+          7,
+          8,
+          8,
+          10,
+          10
+        ],
+        [
+          4,
+          7,
+          5,
+          6,
+          2,
+          9,
+          2,
+          9,
+          3,
+          8,
+          2,
+          9
+        ]
+      ],
+      "syndrome": [
+        1,
+        2,
+        3
+      ],
+      "supplied_verified_nonsquare": 2,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          9,
+          5,
+          8,
+          7,
+          5,
+          3,
+          10,
+          4,
+          5,
+          9,
+          1,
+          1
+        ],
+        "support_size": 10,
+        "pivot_columns": [
+          0,
+          1,
+          2
+        ],
+        "uniform_witness_sampling": false,
+        "algorithm_is_prior_art": true,
+        "attempts": 1,
+        "field_draws": 0,
+        "annihilator": [
+          2,
+          9,
+          3,
+          8,
+          10,
+          1,
+          2,
+          9,
+          10,
+          1,
+          0,
+          0
+        ]
+      },
+      "comparison": {
+        "status": "CLASSICAL_COVERS_THIS_QUANTUM_CRITERION",
+        "rank": 3,
+        "length": 12,
+        "square_dimension": 6,
+        "cube_dimension": 9,
+        "multiplication_growth": 3,
+        "public_unit_verified": true,
+        "classical_bound_over_quantum_bound_upper": "1/20",
+        "quantum_advantage_established": false
+      },
+      "exhaustive_control": {
+        "annihilators_enumerated": 1331,
+        "rank_failures": 1,
+        "nonzero_rank_failures": 0,
+        "minimum_nonzero_support": 9
+      },
+      "quantum_expression_floor": "2660/1331",
+      "actual_uniform_annihilator_failure": "1/1331",
+      "classical_union_bound_from_geometric_proof": "133/1331",
+      "exact_codeword_enumeration": {
+        "quantum_failure_expression": "283997172349/50000000000",
+        "classical_failure_bound": "133/1331",
+        "minimum_distance": 9,
+        "codewords_enumerated": 1331,
+        "expressions_are_not_actual_failure_probabilities": true
+      }
+    },
+    {
+      "genus": 2,
+      "divisor_degree": 5,
+      "prime": 19,
+      "curve_coefficients_low_first": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          18
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          17,
+          10
+        ]
+      ],
+      "point_pairs_enumerated": 361,
+      "schur_and_rr_rowspaces_equal": true,
+      "original_parity": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          7,
+          9,
+          9,
+          11,
+          13,
+          13,
+          14,
+          14,
+          17,
+          17
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          9,
+          11,
+          5,
+          5,
+          7,
+          17,
+          17,
+          6,
+          6,
+          4,
+          4
+        ],
+        [
+          1,
+          18,
+          4,
+          15,
+          0,
+          0,
+          8,
+          11,
+          0,
+          3,
+          16,
+          5,
+          14,
+          9,
+          10
+        ]
+      ],
+      "syndrome": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "supplied_verified_nonsquare": 2,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          12,
+          9,
+          16,
+          7,
+          5,
+          16,
+          6,
+          12,
+          12,
+          17,
+          15,
+          8,
+          15,
+          7,
+          15
+        ],
+        "support_size": 15,
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "uniform_witness_sampling": false,
+        "algorithm_is_prior_art": true,
+        "attempts": 1,
+        "field_draws": 0,
+        "annihilator": [
+          12,
+          12,
+          10,
+          10,
+          17,
+          13,
+          9,
+          9,
+          12,
+          7,
+          7,
+          16,
+          16,
+          1,
+          1
+        ]
+      },
+      "comparison": {
+        "status": "CLASSICAL_COVERS_THIS_QUANTUM_CRITERION",
+        "rank": 4,
+        "length": 15,
+        "square_dimension": 9,
+        "cube_dimension": 14,
+        "multiplication_growth": 5,
+        "public_unit_verified": true,
+        "classical_bound_over_quantum_bound_upper": "19/36",
+        "quantum_advantage_established": false
+      },
+      "exhaustive_control": {
+        "annihilators_enumerated": 19,
+        "rank_failures": 1,
+        "nonzero_rank_failures": 0,
+        "minimum_nonzero_support": 15
+      },
+      "quantum_expression_floor": "260640/361",
+      "actual_uniform_annihilator_failure": "1/19",
+      "classical_union_bound_from_geometric_proof": "7240/19",
+      "exact_codeword_enumeration": null
+    },
+    {
+      "genus": 3,
+      "divisor_degree": 7,
+      "prime": 19,
+      "curve_coefficients_low_first": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          18
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          13,
+          10
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          17,
+          17
+        ]
+      ],
+      "point_pairs_enumerated": 361,
+      "schur_and_rr_rowspaces_equal": true,
+      "original_parity": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          6,
+          6,
+          8,
+          8,
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          17,
+          17
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          9,
+          9,
+          16,
+          16,
+          17,
+          17,
+          7,
+          7,
+          5,
+          5,
+          7,
+          7,
+          11,
+          11,
+          17,
+          17,
+          4,
+          4
+        ],
+        [
+          0,
+          0,
+          8,
+          8,
+          8,
+          8,
+          7,
+          7,
+          7,
+          7,
+          18,
+          18,
+          12,
+          12,
+          1,
+          1,
+          18,
+          18,
+          12,
+          12,
+          11,
+          11
+        ],
+        [
+          1,
+          18,
+          6,
+          13,
+          5,
+          14,
+          7,
+          12,
+          4,
+          15,
+          6,
+          13,
+          8,
+          11,
+          2,
+          17,
+          5,
+          14,
+          9,
+          10,
+          2,
+          17
+        ]
+      ],
+      "syndrome": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "supplied_verified_nonsquare": 2,
+      "result": {
+        "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+        "witness": [
+          9,
+          10,
+          16,
+          7,
+          10,
+          12,
+          13,
+          4,
+          18,
+          5,
+          12,
+          11,
+          9,
+          1,
+          13,
+          12,
+          9,
+          16,
+          1,
+          1,
+          1,
+          1
+        ],
+        "support_size": 18,
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          4,
+          6
+        ],
+        "uniform_witness_sampling": false,
+        "algorithm_is_prior_art": true,
+        "attempts": 1,
+        "field_draws": 0,
+        "annihilator": [
+          9,
+          10,
+          5,
+          14,
+          17,
+          2,
+          13,
+          6,
+          4,
+          15,
+          17,
+          2,
+          4,
+          15,
+          10,
+          9,
+          18,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "comparison": {
+        "status": "NO_DOMINANCE_CERTIFICATE_NOT_ADVANTAGE",
+        "rank": 5,
+        "length": 22,
+        "square_dimension": 12,
+        "cube_dimension": 19,
+        "multiplication_growth": 7,
+        "public_unit_verified": true,
+        "classical_bound_over_quantum_bound_upper": "361/36",
+        "quantum_advantage_established": false
+      },
+      "exhaustive_control": {
+        "annihilators_enumerated": 6859,
+        "rank_failures": 1,
+        "nonzero_rank_failures": 0,
+        "minimum_nonzero_support": 18
+      },
+      "quantum_expression_floor": "4952196/2476099",
+      "actual_uniform_annihilator_failure": "1/6859",
+      "classical_union_bound_from_geometric_proof": "137561/6859",
+      "exact_codeword_enumeration": null
+    }
+  ],
+  "reed_solomon_nonvacuous_comparison_control": {
+    "comparison": {
+      "status": "CLASSICAL_COVERS_THIS_QUANTUM_CRITERION",
+      "rank": 2,
+      "length": 10,
+      "square_dimension": 3,
+      "cube_dimension": 4,
+      "multiplication_growth": 1,
+      "public_unit_verified": true,
+      "classical_bound_over_quantum_bound_upper": "1/220",
+      "quantum_advantage_established": false
+    },
+    "exact_bounds": {
+      "quantum_failure_expression": "893101/250000000",
+      "classical_failure_bound": "12/1771561",
+      "minimum_distance": 9,
+      "codewords_enumerated": 121,
+      "expressions_are_not_actual_failure_probabilities": true
+    },
+    "quantum_expression_floor": "240/161051",
+    "original_parity": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    ],
+    "syndrome": [
+      3,
+      7
+    ],
+    "result": {
+      "status": "VERIFIED_FULL_SUPPORT_WITNESS",
+      "witness": [
+        10,
+        4,
+        4,
+        4,
+        9,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "support_size": 5,
+      "pivot_columns": [
+        0,
+        1
+      ],
+      "uniform_witness_sampling": false,
+      "algorithm_is_prior_art": true,
+      "attempts": 1,
+      "field_draws": 0,
+      "annihilator": [
+        1,
+        7,
+        6,
+        7,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "primary_sources": [
+    "https://arxiv.org/html/2610.00502v1#S5.SS3",
+    "https://arxiv.org/html/2610.00502v1#S6.SS2",
+    "https://arxiv.org/html/1401.6025v3#S2.SS2"
+  ],
+  "runtime": {
+    "python": "3.13.5",
+    "python_flint": "0.9.0"
+  },
+  "sha256": {
+    "schur-growth-classical-gate-2026-10-26/schur_gate.py": "d2ba9a0dc1d83a60f3210efec353b463897269bdc943abf728e2a642bc2129e3",
+    "schur-growth-classical-gate-2026-10-26/finite_controls.py": "0c379a341e8b3a035794043a178f32ee53cd784ae9862f6f3b71884d4a335894",
+    "schur-growth-classical-gate-2026-10-26/test_schur_gate.py": "05b1c785b153ad5996b3d9e4711b9a99bb3d062920cf975590661750d023f7ea",
+    "schur-growth-classical-gate-2026-10-26/verify_schur_gate.py": "91bab4aed0cdcb1e93147131ab5ae7226934e568fb88a996e618f41817b22346",
+    "schur-growth-classical-gate-2026-10-26/SCHUR_AG_CLASSICAL.md": "adc118b10e7f2290d68138fd089fb0d236b368c012260d49392ff2f5d1cc38e3",
+    "schur-growth-classical-gate-2026-10-26/HANDOFF.md": "908a32b20ebb88a94b184d841dbaf2dcc9c1a8ae084d9707383ee021ce2d43a7",
+    "inverse-trace-local-list-2026-10-26/receipt.json": "c75052e06a71e2afde22c776c7711d114b0cea8f964327d29f09beeb494556bb",
+    "inverse-trace-modular-norm-2026-10-25/receipt.json": "ca9170b9b06fc50c7454080837841cfb6681e71b6cc0430df889c654186c9fab"
+  }
+}

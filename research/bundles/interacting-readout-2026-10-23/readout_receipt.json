@@ -1,0 +1,108 @@
+{
+  "status": "finite_controls_pass_written_composition_review_pending",
+  "speedup_admitted": false,
+  "novelty_admitted": false,
+  "general_tfd_simulation_admitted": false,
+  "scalable_thermal_constructor_implemented": false,
+  "end_to_end_sampler_executed": false,
+  "arithmetic_interval_certified": false,
+  "source_sampling": "Required from existing worldline proof; not replayed here",
+  "thermal_dependency": {
+    "url": "https://arxiv.org/html/2007.11174v2#S4.SS1",
+    "result": "Theorem 3, p=2, half inverse temperature"
+  },
+  "bounded_dense_control": {
+    "central_bits": 2,
+    "local_spins": 3,
+    "beta": 0.7,
+    "records": [
+      {
+        "central": [
+          "XI",
+          "XI"
+        ],
+        "local": [
+          "III",
+          "III"
+        ],
+        "paired": 0.8627847062087811,
+        "dense_reference": 0.8627847062087816,
+        "absolute_error": 4.440892098500626e-16,
+        "maximum_absolute_sector_estimator": 0.9327701160493971
+      },
+      {
+        "central": [
+          "II",
+          "II"
+        ],
+        "local": [
+          "ZZI",
+          "III"
+        ],
+        "paired": -0.31920716291125434,
+        "dense_reference": -0.3192071629112545,
+        "absolute_error": 1.6653345369377348e-16,
+        "maximum_absolute_sector_estimator": 0.4481328385209963
+      },
+      {
+        "central": [
+          "YI",
+          "XI"
+        ],
+        "local": [
+          "YII",
+          "III"
+        ],
+        "paired": -0.05076721540889516,
+        "dense_reference": -0.050767215408895235,
+        "absolute_error": 7.632783294297951e-17,
+        "maximum_absolute_sector_estimator": 0.0538144415156406
+      },
+      {
+        "central": [
+          "XY",
+          "YX"
+        ],
+        "local": [
+          "YZI",
+          "IZY"
+        ],
+        "paired": 5.536190062865302e-09,
+        "dense_reference": 5.5361900591122226e-09,
+        "absolute_error": 3.7530797393725344e-18,
+        "maximum_absolute_sector_estimator": 1.5407032239155286e-08
+      }
+    ],
+    "distance_window_claimed": false
+  },
+  "wrong_controls": {
+    "independent_sector_normalization_gap": 0.08471746283186932,
+    "omitted_interactions_gap": 0.30454158229986306
+  },
+  "easy_transfer_matrix_control": {
+    "local_spins": 192,
+    "maximum_bond": 2,
+    "dense_allocation": false,
+    "hard_instance": false,
+    "paired": 0.5370495669980316,
+    "reference": 0.5370495669980353,
+    "log_norm_squared": 165.5800984421231
+  },
+  "illustrative_error_contract_only": {
+    "eta": "1/100",
+    "sampler_tv": "1/200",
+    "arithmetic": "1/1000",
+    "these_errors_are_not_certified_by_this_run": true,
+    "mpo_bias": "201/5000",
+    "sampling_bias": "1/100",
+    "arithmetic_bias": "1/1000",
+    "total_bias": "32/625"
+  },
+  "source_sha256": {
+    "paired_mpo.py": "0dabf03d2575f1a88ee452cd397f8dba94fc181fd68c6b8b99d5befd2e00853d",
+    "controls.py": "21a8df9d08dfc86f296573d1f02bd9402d60c2dc324f878a9507c6d317f50561",
+    "test_paired_mpo.py": "896acf945f212ccaf7675255cb8c9a9661fe125a11531e739a4db206ded1df21",
+    "replay.py": "f1410cc518b47bb9121c1e7115612100719eebc84c133748bda02726e64206c0",
+    "INTERACTING_COHERENT_READOUT.md": "88542b5e11a90331cf8e887e5975471959aff9571f9758bc57f2569ff17bebf6"
+  }
+}

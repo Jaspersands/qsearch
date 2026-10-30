@@ -1,0 +1,72 @@
+{
+  "normalization": {
+    "field_characteristic": 3,
+    "separable_extension_degree": 4,
+    "equation": "Y^4-X^3",
+    "derivative_in_Y": "Y^3",
+    "discriminant": "2*X^9",
+    "normalization_length": 3,
+    "trace_dual_length_bound": 36,
+    "endomorphism_ring_steps": [
+      {
+        "gaps": [
+          1,
+          2,
+          5
+        ],
+        "conductor": 6,
+        "added": [
+          5
+        ]
+      },
+      {
+        "gaps": [
+          1,
+          2
+        ],
+        "conductor": 3,
+        "added": [
+          1,
+          2
+        ]
+      },
+      {
+        "gaps": [],
+        "conductor": 0,
+        "added": []
+      }
+    ]
+  },
+  "branch_collision": {
+    "field_characteristic": 5,
+    "equation": "Y^2-X^2*(X+1)",
+    "normalization": "X=t^2-1, Y=t*(t^2-1)",
+    "distinct_branches_above_origin": [
+      1,
+      4
+    ],
+    "images": {
+      "0": [
+        4,
+        0
+      ],
+      "1": [
+        0,
+        0
+      ],
+      "2": [
+        3,
+        1
+      ],
+      "3": [
+        3,
+        4
+      ],
+      "4": [
+        0,
+        0
+      ]
+    }
+  },
+  "scope": "Exact small controls; no tower, RR backend, zeta, or native code generated."
+}

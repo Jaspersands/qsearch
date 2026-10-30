@@ -1,0 +1,55 @@
+"""Reproducible scoped controls; never a quantum execution receipt."""
+import argparse
+from fractions import Fraction
+import hashlib
+import json
+from pathlib import Path
+
+import numpy as np
+
+from dilation_average import (adjacent_phase_control, certificate_record, cubic_curve_normal_form,
+                              curve_block, regular_fiber_census, regular_preimages,
+                              source_budget, word)
+
+
+def receipt():
+    root = Path(__file__).resolve().parent
+    names = ["dilation_average.py", "test_dilation_average.py", "replay.py",
+             "DILATION_AVERAGED_SOURCE.md", "source_independence_control.py",
+             "test_source_independence_control.py", "SOURCE_INDEPENDENCE.md"]
+    spectra = []
+    for p, k, ell in [(131, 1, 0), (131, 17, 51), (257, 1, 0)]:
+        radius = float(np.linalg.norm(curve_block(p, k, ell, symmetric=False), ord=2))
+        spectra.append({"p": p, "k": k, "ell": ell,
+                        "numerical_positive_curve_norm": round(radius, 10)})
+    return {
+        "status": "one independent AI review; F1 resource qualification corrected locally; bounded controls only",
+        "review_scope": "see REVIEW.md, reviewed_snapshot and REVIEW_RESPONSE.md; not implementation certification",
+        "certificate": certificate_record(),
+        "direct_normal_form": cubic_curve_normal_form(2**127-1, 1, 0),
+        "regular_fibers": [regular_fiber_census(p) for p in [5, 7, 11]],
+        "large_prime_inverse_control": [list(ts) for ts in regular_preimages(
+            word((0, 1, 2, 4), 2**127-1), 2**127-1)],
+        "spectral_controls": spectra,
+        "adjacent_phase_control": adjacent_phase_control(2**127-1),
+        "conditional_large_prime_budget": source_budget(
+            2**127-1, Fraction(1, 2), 1024, 100, Fraction(1, 100), 24),
+        "quantum_execution": False,
+        "native_hard_family_established": False,
+        "sha256": {name: hashlib.sha256((root/name).read_bytes()).hexdigest()
+                   for name in names},
+    }
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("mode", choices=["write", "check"])
+    args = parser.parse_args()
+    path = Path(__file__).with_name("receipt.json")
+    data = receipt()
+    if args.mode == "write":
+        path.write_text(json.dumps(data, indent=2, sort_keys=True)+"\n")
+    else:
+        if json.loads(path.read_text()) != data:
+            raise SystemExit("receipt mismatch")
+    print(args.mode, "PASS", hashlib.sha256(path.read_bytes()).hexdigest())

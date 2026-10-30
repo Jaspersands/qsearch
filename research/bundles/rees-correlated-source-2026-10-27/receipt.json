@@ -1,0 +1,42 @@
+{
+  "analytic_large_prime_bound": {
+    "binary_success_upper_bound": {
+      "denominator": 4611686018427387902,
+      "numerator": 2305843009214693951
+    },
+    "is_hsp_query_lower_bound": false,
+    "necessary_sources_for_two_thirds": 768614336404564651,
+    "original_queries_per_source": 2,
+    "p": 2305843009213693951,
+    "rare_event_union_bound": {
+      "denominator": 2305843009213693951,
+      "numerator": 1000000
+    },
+    "scope": "relative-product source; central labels; right actions; target discard",
+    "source_cap": 1000000
+  },
+  "controls": [
+    {
+      "exact_kernel_cases": 486,
+      "group_order": 81,
+      "p": 3
+    },
+    {
+      "exact_kernel_cases": 6250,
+      "group_order": 625,
+      "p": 5
+    }
+  ],
+  "dependencies": [
+    "numpy (density tests only)",
+    "sympy primality checking"
+  ],
+  "novelty_claim": false,
+  "quantum_execution": false,
+  "source_sha256": {
+    "correlated_source.py": "ea33bf1cb90cfb08a6ff1e57fbd6c406cf8403a7c46d558d4b7eb6bde778c3af",
+    "replay.py": "b756df4c036967086eafa179699b9c34f2082044df0edc8a61a3b0dbc6da4254",
+    "test_correlated_source.py": "a2981d103d2dc06fabc2b1406b37568fc11788abaed76f9de5100ca16c95fae9"
+  },
+  "status": "scoped_correlated_receiver_shortcut_rejected"
+}

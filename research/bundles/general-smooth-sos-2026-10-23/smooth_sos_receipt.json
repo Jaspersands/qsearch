@@ -1,0 +1,55 @@
+{
+  "status": "PROPOSED_GENERAL_ALGEBRAIC_SOURCE_LEMMA_REVIEW_PENDING",
+  "same_denominator_for_all_cases": true,
+  "denominator_bits": 2401,
+  "auxiliary_prime_count": 265,
+  "largest_auxiliary_prime": 1709,
+  "uniform_degree_bound": 3,
+  "uniform_height_bound": 7,
+  "padded_unweighted_square_count_bound": 32,
+  "stabilization_copy_count_bound": "2147483648",
+  "four_square_expansion_executed": false,
+  "geometric_quotient_executed": false,
+  "quantum_algorithm_executed": false,
+  "speedup_admitted": false,
+  "cases": [
+    {
+      "polynomial": "x - 1",
+      "exact_weighted_identity": true,
+      "weight_count": 2,
+      "largest_weight_bits": 4801,
+      "certificate_sha256": "6ca56487940892ed2280b518378bf26581d97450b2a51ba036775f1232f8d43e"
+    },
+    {
+      "polynomial": "x**2 - 3*x + 1",
+      "exact_weighted_identity": true,
+      "weight_count": 5,
+      "largest_weight_bits": 4776,
+      "certificate_sha256": "4c0b9132fca9eadc2f02d5671f514527412f01bdf5285b37ff0573c092931b4a"
+    },
+    {
+      "polynomial": "x**2 - 7*x + 1",
+      "exact_weighted_identity": true,
+      "weight_count": 5,
+      "largest_weight_bits": 4776,
+      "certificate_sha256": "8db203d7bac2ef0a6d7479a6b4f9026555d1c7c9a1de52c1b4452a6bf0d71329"
+    },
+    {
+      "polynomial": "x**3 - 6*x**2 + 5*x - 1",
+      "exact_weighted_identity": true,
+      "weight_count": 8,
+      "largest_weight_bits": 4776,
+      "certificate_sha256": "96a8c2e89c5f9827e8d16bec8acfa2fe261e6656e906c65cb320506027247a08"
+    }
+  ],
+  "source_sha256": {
+    "smooth_sos.py": "6175be5da41f81aca862cfce793e1e1cb407392040f43b10e6946c27426ada63",
+    "test_smooth_sos.py": "9788a3bb4013927627e1aeaaeb8d8aea2f31e6abebb15200bcdcf09ffb3205e5",
+    "replay_smooth_sos.py": "62ff5203186aac5d41e06a69e6871ddee00861adba0c1751b788fef389b05d42",
+    "GENERAL_SMOOTH_SOS.md": "6f35de039e1d254666da7517e910cde0b6d175a2c610f77db7a9ea4c06d79de0",
+    "HANDOFF.md": "60cf2fd494916f8d569b526441a68de718f363c2abec9d0a831ff80edfe8e2d9"
+  },
+  "dependency_sha256": {
+    "../kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f"
+  }
+}

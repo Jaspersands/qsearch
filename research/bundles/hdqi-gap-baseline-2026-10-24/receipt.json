@@ -1,0 +1,353 @@
+{
+  "claims": {
+    "independently_reviewed": false,
+    "novelty_established": false,
+    "quantum_circuit_executed": false,
+    "quantum_speedup_established": false,
+    "uniform_degree_gap_proved": false
+  },
+  "commuting_clipping_control": {
+    "plan": {
+      "beta": 0.1,
+      "clipping_absent_by_norm_bound": false,
+      "clipping_trace_distance_budget": 0.025,
+      "cut": 40.49924952952064,
+      "epsilon": 0.1,
+      "filter_trace_distance_budget": 0.025,
+      "log2_amplitude_amplification_scale": 2.939550669508465,
+      "log2_filter_operator_tolerance": -9.261478764395827,
+      "log2_success_lower_bound": -5.87910133901693,
+      "quantum_circuit_executed": false,
+      "remaining_implementation_budget": 0.05,
+      "squared_coupling_mass": 64,
+      "weighted_bad_tail_bound": 0.00015625000000000003
+    },
+    "reference": {
+      "log_partition": 0.31946808458537834,
+      "log_success": -3.7304573435421187,
+      "log_weighted_bad_tail": -12.551243434169157,
+      "spectral_points": 65,
+      "trace_distance": 0.0001780072796688455
+    }
+  },
+  "finite_gap_controls": [
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.05,
+        "gap_lower_bound": 0.8601250553843951,
+        "row_perturbation_bound": 0.07257072755686907,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 1.3125,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9987502610885448,
+      "graph": "commuting-weighted"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.2,
+        "gap_lower_bound": 0.5036983475151806,
+        "row_perturbation_bound": 0.29028291022747627,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 1.3125,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9800693660291845,
+      "graph": "commuting-weighted"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.5,
+        "gap_lower_bound": 0.07523649867595021,
+        "row_perturbation_bound": 0.7257072755686906,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 1.3125,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.8781959847143808,
+      "graph": "commuting-weighted"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.05,
+        "gap_lower_bound": 0.8288586569149192,
+        "row_perturbation_bound": 0.08958325096968957,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 2.0,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9975010470347558,
+      "graph": "edge"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.2,
+        "gap_lower_bound": 0.4117365339112577,
+        "row_perturbation_bound": 0.35833300387875827,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 2.0,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9602878219780306,
+      "graph": "edge"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.5,
+        "gap_lower_bound": 0.010850866036047338,
+        "row_perturbation_bound": 0.8958325096968957,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 2.0,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.7645875982336582,
+      "graph": "edge"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.05,
+        "gap_lower_bound": 0.7626706207429813,
+        "row_perturbation_bound": 0.1266898484828077,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 4.0,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9962745803077651,
+      "graph": "cycle4"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.2,
+        "gap_lower_bound": 0.24328629547508673,
+        "row_perturbation_bound": 0.5067593939312308,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 4.0,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9457444560131154,
+      "graph": "cycle4"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.5,
+        "gap_lower_bound": 0.0,
+        "row_perturbation_bound": 1.2668984848280769,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 4.0,
+        "status": "inconclusive"
+      },
+      "finite_gap": 0.777939731214676,
+      "graph": "cycle4"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.05,
+        "gap_lower_bound": 0.7367757838690392,
+        "row_perturbation_bound": 0.14164355663335332,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 5.0,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9937565939695143,
+      "graph": "clique5"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.2,
+        "gap_lower_bound": 0.18785790110510894,
+        "row_perturbation_bound": 0.5665742265334133,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 5.0,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9019775092109013,
+      "graph": "clique5"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.5,
+        "gap_lower_bound": 0.0,
+        "row_perturbation_bound": 1.416435566333533,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 5.0,
+        "status": "inconclusive"
+      },
+      "finite_gap": 0.48501773626868855,
+      "graph": "clique5"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.05,
+        "gap_lower_bound": 0.8340463668735413,
+        "row_perturbation_bound": 0.08673860977618178,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 1.875,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9984399725968418,
+      "graph": "weighted-path"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.2,
+        "gap_lower_bound": 0.42646850460502156,
+        "row_perturbation_bound": 0.3469544391047271,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 1.875,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.9751852377085748,
+      "graph": "weighted-path"
+    },
+    {
+      "bound_respected": true,
+      "certificate": {
+        "beta": 0.5,
+        "gap_lower_bound": 0.01758644706683816,
+        "row_perturbation_bound": 0.8673860977618177,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 1.875,
+        "status": "positive_bound"
+      },
+      "finite_gap": 0.8504985453360526,
+      "graph": "weighted-path"
+    }
+  ],
+  "parameter_ledgers_only": [
+    {
+      "clipping_plan": {
+        "beta": 0.024253562503633298,
+        "clipping_absent_by_norm_bound": false,
+        "clipping_trace_distance_budget": 0.0025,
+        "cut": 89.17633330210865,
+        "epsilon": 0.01,
+        "filter_trace_distance_budget": 0.0025,
+        "log2_amplitude_amplification_scale": 1.5619664900328971,
+        "log2_filter_operator_tolerance": -11.205822679807623,
+        "log2_success_lower_bound": -3.1239329800657942,
+        "quantum_circuit_executed": false,
+        "remaining_implementation_budget": 0.005,
+        "squared_coupling_mass": 256,
+        "weighted_bad_tail_bound": 1.5625e-06
+      },
+      "degree": 16,
+      "gap_certificate": {
+        "beta": 0.024253562503633298,
+        "gap_lower_bound": 0.2584412511635966,
+        "row_perturbation_bound": 0.49162882540057734,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 256,
+        "status": "positive_bound"
+      },
+      "instance_constructed": false,
+      "vertices": 256
+    },
+    {
+      "clipping_plan": {
+        "beta": 0.006237828615518054,
+        "clipping_absent_by_norm_bound": false,
+        "clipping_trace_distance_budget": 0.0025,
+        "cut": 1794.244578456494,
+        "epsilon": 0.01,
+        "filter_trace_distance_budget": 0.0025,
+        "log2_amplitude_amplification_scale": 8.075263127734244,
+        "log2_filter_operator_tolerance": -17.71911931750897,
+        "log2_success_lower_bound": -16.15052625546849,
+        "quantum_circuit_executed": false,
+        "remaining_implementation_budget": 0.005,
+        "squared_coupling_mass": 65536,
+        "weighted_bad_tail_bound": 1.5625e-06
+      },
+      "degree": 256,
+      "gap_certificate": {
+        "beta": 0.006237828615518054,
+        "gap_lower_bound": 0.0,
+        "row_perturbation_bound": 2.023090079133963,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 65536,
+        "status": "inconclusive"
+      },
+      "instance_constructed": false,
+      "vertices": 65536
+    },
+    {
+      "clipping_plan": {
+        "beta": 0.0015623093000542115,
+        "clipping_absent_by_norm_bound": false,
+        "clipping_trace_distance_budget": 0.0025,
+        "cut": 59910.21741828503,
+        "epsilon": 0.01,
+        "filter_trace_distance_budget": 0.0025,
+        "log2_amplitude_amplification_scale": 67.51869879139251,
+        "log2_filter_operator_tolerance": -77.16255498116725,
+        "log2_success_lower_bound": -135.03739758278502,
+        "quantum_circuit_executed": false,
+        "remaining_implementation_budget": 0.005,
+        "squared_coupling_mass": 16777216,
+        "weighted_bad_tail_bound": 1.5625e-06
+      },
+      "degree": 4096,
+      "gap_certificate": {
+        "beta": 0.0015623093000542115,
+        "gap_lower_bound": 0.0,
+        "row_perturbation_bound": 8.107160719652839,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 16777216,
+        "status": "inconclusive"
+      },
+      "instance_constructed": false,
+      "vertices": 16777216
+    },
+    {
+      "clipping_plan": {
+        "beta": 9.765620343390457e-05,
+        "clipping_absent_by_norm_bound": false,
+        "clipping_trace_distance_budget": 0.0025,
+        "cut": 214885076.15100256,
+        "epsilon": 0.01,
+        "filter_trace_distance_budget": 0.0025,
+        "log2_amplitude_amplification_scale": 15137.379045619125,
+        "log2_filter_operator_tolerance": -15147.0229018089,
+        "log2_success_lower_bound": -30274.75809123825,
+        "quantum_circuit_executed": false,
+        "remaining_implementation_budget": 0.005,
+        "squared_coupling_mass": 1099511627776,
+        "weighted_bad_tail_bound": 1.5625e-06
+      },
+      "degree": 1048576,
+      "gap_certificate": {
+        "beta": 9.765620343390457e-05,
+        "gap_lower_bound": 0.0,
+        "row_perturbation_bound": 129.73034298616173,
+        "scope": "canonical filtered parent, not an arbitrary Gibbs sampler",
+        "squared_coupling_mass": 1099511627776,
+        "status": "inconclusive"
+      },
+      "instance_constructed": false,
+      "vertices": 1099511627776
+    }
+  ],
+  "schema": "hdqi-mass-gap-and-clipping-v1",
+  "sha256": {
+    "hdqi-filtered-parent-2026-10-24/filtered_parent.py": "e0795edac6a4789d5f7eccf8da78615194a3750f5bb9c82f77d8ffdd8ba5f90b",
+    "hdqi-gap-baseline-2026-10-24/GAP_AND_BASELINE.md": "15a942d29c74cd9ba7142a33941fcaf044b06ba029118c3cfe420d18ae80c714",
+    "hdqi-gap-baseline-2026-10-24/gap_baseline.py": "36504c4a1f759c9cfa5bb874dc44f4f8df8a91b759ab196afe0a818c8290aff8",
+    "hdqi-gap-baseline-2026-10-24/test_gap_baseline.py": "c494b8b187bc21e864af9db490750d80c2098f811b96f962c271ee564b68cc3f",
+    "hdqi-parent-gap-2026-10-23/parent_gap.py": "ac5e1491f4c65993bdbdd8b06bb7b437fba5695fbcb56b9f095cb8f22af738d5"
+  },
+  "status": "certified_mass_regime_not_degree_regime_breakthrough"
+}

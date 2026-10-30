@@ -1,0 +1,727 @@
+{
+  "status": "CONDITIONAL_CLASSICAL_FOUR_LIST_BOUND_NOT_NATIVE_ALGORITHM",
+  "overlap_proof_certificate": {
+    "checked_support_masks": 1296,
+    "cases": [
+      {
+        "shared_mask": 0,
+        "independent_variables": 8,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 1,
+        "independent_variables": 7,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 2,
+        "independent_variables": 7,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 3,
+        "independent_variables": 6,
+        "low_rank": 3,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 4,
+        "independent_variables": 7,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 5,
+        "independent_variables": 6,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 6,
+        "independent_variables": 6,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 7,
+        "independent_variables": 5,
+        "low_rank": 3,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 8,
+        "independent_variables": 7,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 9,
+        "independent_variables": 6,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 10,
+        "independent_variables": 6,
+        "low_rank": 4,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 11,
+        "independent_variables": 5,
+        "low_rank": 3,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 12,
+        "independent_variables": 6,
+        "low_rank": 3,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 13,
+        "independent_variables": 5,
+        "low_rank": 3,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 14,
+        "independent_variables": 5,
+        "low_rank": 3,
+        "high_rank": 2,
+        "maximum_scale_exponent": 0
+      },
+      {
+        "shared_mask": 15,
+        "independent_variables": 4,
+        "low_rank": 2,
+        "high_rank": 1,
+        "maximum_scale_exponent": 0
+      }
+    ],
+    "untruncated_success_lower": {
+      "numerator": 50176,
+      "denominator": 187388721
+    },
+    "capped_success_lower": {
+      "numerator": 1,
+      "denominator": 8000
+    },
+    "cap_multiplier": 40000,
+    "distribution_premise_verified_by_this_certificate": false
+  },
+  "tower_degree_checks": [
+    {
+      "cover_degree": 8,
+      "genus": 41,
+      "residual_degree": 7,
+      "rank_used": 82,
+      "rank_is_worst_case_upper_not_measured": true,
+      "list_length_exponent": 28,
+      "four_prime_degrees": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "degree_checks": [
+        {
+          "degree": 1,
+          "C_n": 294,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 100003,
+            "denominator": 398615692688789700870144
+          }
+        },
+        {
+          "degree": 2,
+          "C_n": 336,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 10000600009,
+            "denominator": 520640904736378384809984
+          }
+        },
+        {
+          "degree": 2,
+          "C_n": 336,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 10000600009,
+            "denominator": 520640904736378384809984
+          }
+        },
+        {
+          "degree": 2,
+          "C_n": 336,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 10000600009,
+            "denominator": 520640904736378384809984
+          }
+        }
+      ],
+      "four_list_guarantee_under_access_contract": false,
+      "requires_exact_independent_uniform_prime_sampling": true,
+      "requires_correct_degree_zero_mod_two_labels": true,
+      "actual_auxiliary_divisor_constructed": false,
+      "curve_primitives_implemented": false,
+      "polynomial_time_for_linear_rank": false,
+      "classical_hardness_established": false,
+      "quantum_advantage_established": false
+    },
+    {
+      "cover_degree": 16,
+      "genus": 81,
+      "residual_degree": 23,
+      "rank_used": 162,
+      "rank_is_worst_case_upper_not_measured": true,
+      "list_length_exponent": 54,
+      "four_prime_degrees": [
+        5,
+        6,
+        6,
+        6
+      ],
+      "degree_checks": [
+        {
+          "degree": 5,
+          "C_n": 902,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 10001500090002700040500243,
+            "denominator": 16897893973165479591531703741755147943936
+          }
+        },
+        {
+          "degree": 6,
+          "C_n": 984,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 1000180013500540012150145800729,
+            "denominator": 20109890348229992241161697014981333090304
+          }
+        },
+        {
+          "degree": 6,
+          "C_n": 984,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 1000180013500540012150145800729,
+            "denominator": 20109890348229992241161697014981333090304
+          }
+        },
+        {
+          "degree": 6,
+          "C_n": 984,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 1000180013500540012150145800729,
+            "denominator": 20109890348229992241161697014981333090304
+          }
+        }
+      ],
+      "four_list_guarantee_under_access_contract": false,
+      "requires_exact_independent_uniform_prime_sampling": true,
+      "requires_correct_degree_zero_mod_two_labels": true,
+      "actual_auxiliary_divisor_constructed": false,
+      "curve_primitives_implemented": false,
+      "polynomial_time_for_linear_rank": false,
+      "classical_hardness_established": false,
+      "quantum_advantage_established": false
+    },
+    {
+      "cover_degree": 32,
+      "genus": 161,
+      "residual_degree": 55,
+      "rank_used": 322,
+      "rank_is_worst_case_upper_not_measured": true,
+      "list_length_exponent": 108,
+      "four_prime_degrees": [
+        13,
+        14,
+        14,
+        14
+      ],
+      "degree_checks": [
+        {
+          "degree": 13,
+          "C_n": 3078,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 100039007020772257918127535100152976441477351388152175350874894323,
+            "denominator": 63855199840026300517104513240922822662753722944820219273516004051083329536
+          }
+        },
+        {
+          "degree": 14,
+          "C_n": 3240,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 10004200819098288108586507892620598103077059570869381991613542056982969,
+            "denominator": 70753684033270139077124114394374318739893321822515478419408314738042470400
+          }
+        },
+        {
+          "degree": 14,
+          "C_n": 3240,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 10004200819098288108586507892620598103077059570869381991613542056982969,
+            "denominator": 70753684033270139077124114394374318739893321822515478419408314738042470400
+          }
+        },
+        {
+          "degree": 14,
+          "C_n": 3240,
+          "small_bias_sufficient_condition": false,
+          "exact_sufficiency_ratio": {
+            "numerator": 10004200819098288108586507892620598103077059570869381991613542056982969,
+            "denominator": 70753684033270139077124114394374318739893321822515478419408314738042470400
+          }
+        }
+      ],
+      "four_list_guarantee_under_access_contract": false,
+      "requires_exact_independent_uniform_prime_sampling": true,
+      "requires_correct_degree_zero_mod_two_labels": true,
+      "actual_auxiliary_divisor_constructed": false,
+      "curve_primitives_implemented": false,
+      "polynomial_time_for_linear_rank": false,
+      "classical_hardness_established": false,
+      "quantum_advantage_established": false
+    },
+    {
+      "cover_degree": 64,
+      "genus": 321,
+      "residual_degree": 119,
+      "rank_used": 642,
+      "rank_is_worst_case_upper_not_measured": true,
+      "list_length_exponent": 214,
+      "four_prime_degrees": [
+        29,
+        30,
+        30,
+        30
+      ],
+      "degree_checks": [
+        {
+          "degree": 29,
+          "C_n": 11270,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 10008703654986772411960928237170748734716715485130938725994377728384921356680815755549549374655361927646231709609992475846766006297813969764264883,
+            "denominator": 5634637097478362330850354606866353217859229417776016849287529694794349355298962347145823443921031517102818242219514491653700988964542873600
+          }
+        },
+        {
+          "degree": 30,
+          "C_n": 11592,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 1000900391609642201513328706501786385717875698659549265415615755971677290432151618002221586113660158850406109656128077562104140927800290418335781094649,
+            "denominator": 5961216063944455167985354751427586751302499041173647213613582436288552460789759348490601782303393343808369340339992474435262434039222501376
+          }
+        },
+        {
+          "degree": 30,
+          "C_n": 11592,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 1000900391609642201513328706501786385717875698659549265415615755971677290432151618002221586113660158850406109656128077562104140927800290418335781094649,
+            "denominator": 5961216063944455167985354751427586751302499041173647213613582436288552460789759348490601782303393343808369340339992474435262434039222501376
+          }
+        },
+        {
+          "degree": 30,
+          "C_n": 11592,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 1000900391609642201513328706501786385717875698659549265415615755971677290432151618002221586113660158850406109656128077562104140927800290418335781094649,
+            "denominator": 5961216063944455167985354751427586751302499041173647213613582436288552460789759348490601782303393343808369340339992474435262434039222501376
+          }
+        }
+      ],
+      "four_list_guarantee_under_access_contract": true,
+      "requires_exact_independent_uniform_prime_sampling": true,
+      "requires_correct_degree_zero_mod_two_labels": true,
+      "actual_auxiliary_divisor_constructed": false,
+      "curve_primitives_implemented": false,
+      "polynomial_time_for_linear_rank": false,
+      "classical_hardness_established": false,
+      "quantum_advantage_established": false
+    },
+    {
+      "cover_degree": 128,
+      "genus": 641,
+      "residual_degree": 247,
+      "rank_used": 1282,
+      "rank_is_worst_case_upper_not_measured": true,
+      "list_length_exponent": 428,
+      "four_prime_degrees": [
+        61,
+        62,
+        62,
+        62
+      ],
+      "degree_checks": [
+        {
+          "degree": 61,
+          "C_n": 43014,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 100183164797215284715475963936240148780369350014677411283563200730796063786997373879999251116131302750209887078468154101478421740602832008884970247465166442550382224903155378401175264730006890446897885824502323699727478974521755675466845016404956997518829183323984120250268533962629684130238332685409399603,
+            "denominator": 56895238710047006842940624597847725677120748192270524322931873190931925226127930393970871897073755602601855741248334012260896622024140579992059008288993758364252382326259118653503259760465727392680250004425972213473940835821887938931576099014617392984568120008385757184
+          }
+        },
+        {
+          "degree": 62,
+          "C_n": 43656,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 10018617029215920117401742821515823598483276109517785160590170762681798766891098380121565109366478668929239337508050814610146609325505009384523679657259039754365873636990247306252729998794879065361129276107705876943847079889099132813710902175544914622875474819948383977387604201864856302076223983538996188498809,
+            "denominator": 58606278412844143381990966393505877373804040909124282572786139816188287423839507717024128236148150123954328569287657935552324789538789494738979918540500587809379152567748310236979076215725890724828130100348784922054689780539186863359235438147380446683146132082596511744
+          }
+        },
+        {
+          "degree": 62,
+          "C_n": 43656,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 10018617029215920117401742821515823598483276109517785160590170762681798766891098380121565109366478668929239337508050814610146609325505009384523679657259039754365873636990247306252729998794879065361129276107705876943847079889099132813710902175544914622875474819948383977387604201864856302076223983538996188498809,
+            "denominator": 58606278412844143381990966393505877373804040909124282572786139816188287423839507717024128236148150123954328569287657935552324789538789494738979918540500587809379152567748310236979076215725890724828130100348784922054689780539186863359235438147380446683146132082596511744
+          }
+        },
+        {
+          "degree": 62,
+          "C_n": 43656,
+          "small_bias_sufficient_condition": true,
+          "exact_sufficiency_ratio": {
+            "numerator": 10018617029215920117401742821515823598483276109517785160590170762681798766891098380121565109366478668929239337508050814610146609325505009384523679657259039754365873636990247306252729998794879065361129276107705876943847079889099132813710902175544914622875474819948383977387604201864856302076223983538996188498809,
+            "denominator": 58606278412844143381990966393505877373804040909124282572786139816188287423839507717024128236148150123954328569287657935552324789538789494738979918540500587809379152567748310236979076215725890724828130100348784922054689780539186863359235438147380446683146132082596511744
+          }
+        }
+      ],
+      "four_list_guarantee_under_access_contract": true,
+      "requires_exact_independent_uniform_prime_sampling": true,
+      "requires_correct_degree_zero_mod_two_labels": true,
+      "actual_auxiliary_divisor_constructed": false,
+      "curve_primitives_implemented": false,
+      "polynomial_time_for_linear_rank": false,
+      "classical_hardness_established": false,
+      "quantum_advantage_established": false
+    }
+  ],
+  "nonuniform_moment_controls": [
+    {
+      "rank": 3,
+      "target": 7,
+      "atoms": [
+        1,
+        2,
+        4,
+        7
+      ],
+      "strengths": [
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 1,
+          "denominator": 16
+        },
+        {
+          "numerator": 1,
+          "denominator": 24
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        }
+      ],
+      "mean": {
+        "numerator": 24511,
+        "denominator": 24576
+      },
+      "second_moment": {
+        "numerator": 22640810369,
+        "denominator": 9663676416
+      },
+      "success_second_moment_lower": {
+        "numerator": 9612625936,
+        "denominator": 22640810369
+      }
+    },
+    {
+      "rank": 4,
+      "target": 15,
+      "atoms": [
+        1,
+        2,
+        4,
+        15
+      ],
+      "strengths": [
+        {
+          "numerator": 1,
+          "denominator": 16
+        },
+        {
+          "numerator": 1,
+          "denominator": 32
+        },
+        {
+          "numerator": 1,
+          "denominator": 48
+        },
+        {
+          "numerator": 1,
+          "denominator": 16
+        }
+      ],
+      "mean": {
+        "numerator": 392959,
+        "denominator": 49152
+      },
+      "second_moment": {
+        "numerator": 5460974105993,
+        "denominator": 68719476736
+      },
+      "success_second_moment_lower": {
+        "numerator": 5647242082048,
+        "denominator": 7021252421991
+      }
+    },
+    {
+      "rank": 5,
+      "target": 31,
+      "atoms": [
+        1,
+        2,
+        4,
+        31
+      ],
+      "strengths": [
+        {
+          "numerator": 1,
+          "denominator": 16
+        },
+        {
+          "numerator": 1,
+          "denominator": 32
+        },
+        {
+          "numerator": 1,
+          "denominator": 48
+        },
+        {
+          "numerator": 1,
+          "denominator": 16
+        }
+      ],
+      "mean": {
+        "numerator": 392959,
+        "denominator": 98304
+      },
+      "second_moment": {
+        "numerator": 6025575109001,
+        "denominator": 274877906944
+      },
+      "success_second_moment_lower": {
+        "numerator": 5647242082048,
+        "denominator": 7747167997287
+      }
+    },
+    {
+      "rank": 6,
+      "target": 63,
+      "atoms": [
+        1,
+        2,
+        4,
+        63
+      ],
+      "strengths": [
+        {
+          "numerator": 1,
+          "denominator": 16
+        },
+        {
+          "numerator": 1,
+          "denominator": 32
+        },
+        {
+          "numerator": 1,
+          "denominator": 48
+        },
+        {
+          "numerator": 1,
+          "denominator": 16
+        }
+      ],
+      "mean": {
+        "numerator": 131327,
+        "denominator": 131072
+      },
+      "second_moment": {
+        "numerator": 10499188460465,
+        "denominator": 4398046511104
+      },
+      "success_second_moment_lower": {
+        "numerator": 4415175917824,
+        "denominator": 10499188460465
+      }
+    },
+    {
+      "rank": 7,
+      "target": 127,
+      "atoms": [
+        1,
+        2,
+        4,
+        127
+      ],
+      "strengths": [
+        {
+          "numerator": 1,
+          "denominator": 32
+        },
+        {
+          "numerator": 1,
+          "denominator": 64
+        },
+        {
+          "numerator": 1,
+          "denominator": 96
+        },
+        {
+          "numerator": 1,
+          "denominator": 32
+        }
+      ],
+      "mean": {
+        "numerator": 2098175,
+        "denominator": 262144
+      },
+      "second_moment": {
+        "numerator": 197946400558594601,
+        "denominator": 2533274790395904
+      },
+      "success_second_moment_lower": {
+        "numerator": 162287800220160000,
+        "denominator": 197946400558594601
+      }
+    },
+    {
+      "rank": 8,
+      "target": 255,
+      "atoms": [
+        1,
+        2,
+        4,
+        255
+      ],
+      "strengths": [
+        {
+          "numerator": 1,
+          "denominator": 32
+        },
+        {
+          "numerator": 1,
+          "denominator": 64
+        },
+        {
+          "numerator": 1,
+          "denominator": 96
+        },
+        {
+          "numerator": 1,
+          "denominator": 32
+        }
+      ],
+      "mean": {
+        "numerator": 2098175,
+        "denominator": 524288
+      },
+      "second_moment": {
+        "numerator": 24283774026395937,
+        "denominator": 1125899906842624
+      },
+      "success_second_moment_lower": {
+        "numerator": 18031977802240000,
+        "denominator": 24283774026395937
+      }
+    },
+    {
+      "rank": 9,
+      "target": 511,
+      "atoms": [
+        1,
+        2,
+        4,
+        511
+      ],
+      "strengths": [
+        {
+          "numerator": 1,
+          "denominator": 32
+        },
+        {
+          "numerator": 1,
+          "denominator": 64
+        },
+        {
+          "numerator": 1,
+          "denominator": 96
+        },
+        {
+          "numerator": 1,
+          "denominator": 32
+        }
+      ],
+      "mean": {
+        "numerator": 6286337,
+        "denominator": 6291456
+      },
+      "second_moment": {
+        "numerator": 361552469959738529,
+        "denominator": 162129586585337856
+      },
+      "success_second_moment_lower": {
+        "numerator": 161865862666522624,
+        "denominator": 361552469959738529
+      }
+    }
+  ],
+  "actual_prime_sampling_implemented": false,
+  "actual_auxiliary_divisor_constructed": false,
+  "quantum_advantage_established": false,
+  "sha256": {
+    "auxiliary-four-list-2026-10-26/four_list.py": "633e087113c58b6057217b33910f7e5f79d58eba6581dfe584616977db59d9bb",
+    "auxiliary-four-list-2026-10-26/test_four_list.py": "93db683d97f6566f398edda512706124024229c863e9920b695621b84a722142",
+    "auxiliary-four-list-2026-10-26/FOUR_LIST.md": "de33dec9d652b3fda754e16f4445dcae29b6b78d926a186cfaab1f68f593b5fd",
+    "auxiliary-four-list-2026-10-26/verify_four_list.py": "a56bec52f7bf62010d6eb4e59514f6e8e381eec9ea3820637ca5200c51b033f6",
+    "auxiliary-four-list-2026-10-26/REVIEW_RESOLUTION.md": "9ab57d3a78a135b4aba353b5c839cbfb9766453f85d7654dc020af349007e94f",
+    "auxiliary-construction-check-2026-10-26/REVIEW.md": "5bd6a59b7d99c6d3db8bfd9814f419d1f6d3a2b0aa477ed5628aa7073807882b",
+    "auxiliary-divisor-review-2026-10-26/REVIEW.md": "cf78bdd6b8aaa4f13548ce990a29a7c6a90d76b0f0afb49c88611d0535629a5c",
+    "auxiliary-four-list-review-2026-10-26/REVIEW.md": "be02637162e8220b917eb3d77586f5cef97c33c3a780177c98fdcbf0d28db44e"
+  }
+}

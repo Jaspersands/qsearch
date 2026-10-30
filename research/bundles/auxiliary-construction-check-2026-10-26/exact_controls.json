@@ -1,0 +1,156 @@
+{
+  "status": "passed",
+  "cutoffs": [
+    {
+      "e": 8,
+      "single_pass": false,
+      "single_ratio_floor": 0,
+      "birthday_pass": [
+        false,
+        false
+      ],
+      "birthday_ratio_floors": [
+        0,
+        0
+      ]
+    },
+    {
+      "e": 16,
+      "single_pass": true,
+      "single_ratio_floor": 12944860411,
+      "birthday_pass": [
+        false,
+        true
+      ],
+      "birthday_ratio_floors": [
+        0,
+        1227
+      ]
+    },
+    {
+      "e": 32,
+      "single_pass": true,
+      "single_ratio_floor": 3512769692536601131704470032518686702848791442430065143306555726602055676,
+      "birthday_pass": [
+        true,
+        true
+      ],
+      "birthday_ratio_floors": [
+        64040584432915384358798429809,
+        6033069952710923608333779585429854
+      ]
+    },
+    {
+      "e": 64,
+      "single_pass": true,
+      "single_ratio_floor": 4649906441568794336032235999797086395062130335234867655265560835869670948882475757747438333053136577064743069276599491437570059011164969070124047201658275665218956505581259787945194365122730413849592,
+      "birthday_pass": [
+        true,
+        true
+      ],
+      "birthday_ratio_floors": [
+        19579114346199205856364236975552765501535318414414250467095196585886939771876655721263599853,
+        1899087230611456048955032033717793516001240585457053150360971301458668083236798801387772716739089
+      ]
+    }
+  ],
+  "birthday": [
+    {
+      "N": 4,
+      "L": 2,
+      "epsilon": "1/8",
+      "max_exact_second_moment_ratio": "4055/2268",
+      "exhaustive_success_probabilities": [
+        "179383/262144",
+        "172487/262144",
+        "172487/262144",
+        "172487/262144"
+      ]
+    },
+    {
+      "N": 16,
+      "L": 4,
+      "epsilon": "1/16",
+      "max_exact_second_moment_ratio": "136103/69360",
+      "exhaustive_success_probabilities": []
+    },
+    {
+      "N": 64,
+      "L": 8,
+      "epsilon": "1/32",
+      "max_exact_second_moment_ratio": "4317743/2160576",
+      "exhaustive_success_probabilities": []
+    }
+  ],
+  "lattice": {
+    "fixtures": [
+      {
+        "moduli": [
+          2
+        ],
+        "generated_order": 2,
+        "lattice_index": 2,
+        "strict_stages": 1,
+        "targets_checked": 2,
+        "pair_calls": 23
+      },
+      {
+        "moduli": [
+          4
+        ],
+        "generated_order": 4,
+        "lattice_index": 4,
+        "strict_stages": 2,
+        "targets_checked": 4,
+        "pair_calls": 58
+      },
+      {
+        "moduli": [
+          4,
+          2
+        ],
+        "generated_order": 8,
+        "lattice_index": 8,
+        "strict_stages": 3,
+        "targets_checked": 8,
+        "pair_calls": 252
+      },
+      {
+        "moduli": [
+          8,
+          4
+        ],
+        "generated_order": 32,
+        "lattice_index": 32,
+        "strict_stages": 5,
+        "targets_checked": 32,
+        "pair_calls": 1237
+      },
+      {
+        "moduli": [
+          4,
+          2,
+          2
+        ],
+        "generated_order": 16,
+        "lattice_index": 16,
+        "strict_stages": 4,
+        "targets_checked": 16,
+        "pair_calls": 784
+      },
+      {
+        "moduli": [
+          8,
+          4
+        ],
+        "generated_order": 8,
+        "lattice_index": 8,
+        "strict_stages": 5,
+        "targets_checked": 0,
+        "pair_calls": 19
+      }
+    ],
+    "countercontrols": 3,
+    "mixed_order_targets": 24
+  }
+}

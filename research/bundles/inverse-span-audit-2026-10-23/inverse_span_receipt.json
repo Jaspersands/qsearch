@@ -1,0 +1,141 @@
+{
+  "status": "ZERO_SUM_DOES_NOT_IMPLY_ACCEPTED_FLAT_EVEN_AFTER_RESCALING",
+  "certificate": {
+    "bits": 7,
+    "modulus": 131,
+    "basis": [
+      1,
+      18,
+      36,
+      8
+    ],
+    "points": [
+      0,
+      1,
+      18,
+      19,
+      36,
+      37,
+      54,
+      55,
+      8,
+      9,
+      26,
+      27,
+      44,
+      45,
+      62,
+      63
+    ],
+    "inverse_values": [
+      0,
+      1,
+      9,
+      112,
+      69,
+      22,
+      7,
+      62,
+      113,
+      18,
+      102,
+      14,
+      83,
+      123,
+      55,
+      6
+    ],
+    "inverse_sum": 0,
+    "linearized_polynomial_coefficients": [
+      7,
+      0,
+      127,
+      121,
+      1
+    ],
+    "inverse_sum_from_b1_div_b0": 0,
+    "inverse_span_rank": 7,
+    "independent_inverse_points": [
+      1,
+      18,
+      19,
+      36,
+      37,
+      54,
+      55
+    ],
+    "independent_inverse_values": [
+      1,
+      9,
+      112,
+      69,
+      22,
+      7,
+      62
+    ],
+    "inverse_trace_values": [
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    "vectorial_inverse_degree_on_subspace": 3,
+    "scalar_inverse_trace_degree_on_subspace": 3,
+    "nonzero_scalars_making_all_traces_zero": 0,
+    "scalar_count_from_annihilator_dimension": 0,
+    "enumerated_scalars_charged": 127,
+    "scope": "finite_exact_counterexample_not_native_input_or_asymptotic_bound"
+  },
+  "censuses": [
+    {
+      "bits": 7,
+      "dimension": 3,
+      "modulus": 131,
+      "subspaces_enumerated": 11811,
+      "zero_sum_by_inverse_span_rank": {
+        "6": 127
+      },
+      "nonzero_sum_by_inverse_span_rank": {
+        "6": 7112,
+        "7": 4572
+      },
+      "field_elements_tabulated_charged": 128,
+      "asymptotic_inference": false
+    },
+    {
+      "bits": 7,
+      "dimension": 4,
+      "modulus": 131,
+      "subspaces_enumerated": 11811,
+      "zero_sum_by_inverse_span_rank": {
+        "7": 127
+      },
+      "nonzero_sum_by_inverse_span_rank": {
+        "7": 11684
+      },
+      "field_elements_tabulated_charged": 128,
+      "asymptotic_inference": false
+    }
+  ],
+  "native_inverse_trace_search_solved": false,
+  "normality_upper_bound_proved": false,
+  "quantum_speedup_claim_allowed": false,
+  "sha256": {
+    "/Users/jaspersands/Developer/qsearch-research-work/inverse-span-audit-2026-10-23/inverse_span_audit.py": "518e93725d3dbf828f3ed238fd2608a6ee76e38494ae1b9a9c9a5276894cd1f5",
+    "/Users/jaspersands/Developer/qsearch-research-work/inverse-span-audit-2026-10-23/test_inverse_span_audit.py": "981c5e1937c33ec7be26f20498f4376fca1247a526126f4de2568f1dbbc8fdfe",
+    "/Users/jaspersands/Developer/qsearch-research-work/inverse-span-audit-2026-10-23/DECISION.md": "691d2b79c6f3cfe58440e540122fb1999a6807bcb400eb642b5da03447f9d112",
+    "/Users/jaspersands/Developer/qsearch-research-work/inverse-trace-residual-2026-10-23/residual_sat.py": "54fe6f9b8e3e3c2169119196cabb095411b37c76335da8d8d83b61de4535e4ce"
+  }
+}

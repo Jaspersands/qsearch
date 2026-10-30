@@ -1,0 +1,260 @@
+{
+  "commuting_linear_high_rank_run": {
+    "ledger": {
+      "diagonal_rank": 128,
+      "epsilon": "1/8",
+      "fiber_enumeration_used": false,
+      "generators": 128,
+      "gibbs_accuracy_assumed": false,
+      "joint_purification_sampler": false,
+      "physical_qubits": 128,
+      "site_tail": "1/16384",
+      "target": "actual_decoder_left_computational_output",
+      "tv_upper": "5/128"
+    },
+    "outputs": [
+      294574577347459459610440151807003819839,
+      329601770190175322233128445320701408711,
+      217561599614627291990790340922077183995,
+      297700212974511374607068158718375884796,
+      318949732522358584090672774573741964219,
+      287093774386768435615045584270371943871,
+      337623423990588409526103894819241312145,
+      274804744492344761370995976548193611070,
+      237017640495773193964500738086972421630,
+      273815443403487894548296222575445259259,
+      329521314762532260644248446851766696571,
+      275129405654306803166731133638547275487,
+      297611979749121983660823554244568115177,
+      322461917313300245258554035016944033788,
+      228958117320771783436312925403905652731,
+      323999297965750552416644190257265237599
+    ],
+    "samples": 16,
+    "statevector_used": false
+  },
+  "general_high_rank_sampling_solved": false,
+  "gibbs_accuracy_assumed": false,
+  "hashes": {
+    "central-rank-2026-10-23/central_rank.py": "02e102da115ffc7eabd42e4bdf3eebac62d4fec68fe5a88db958caf767cd162e",
+    "hdqi-coherent-sign-2026-10-24/COHERENT_SIGN.md": "00bd833987ee88c302e2dff009af8ef4b84bf4ee53a72a1423ae35244e11a53d",
+    "hdqi-coherent-sign-2026-10-24/coherent_sign.py": "e4decaffa0075a95e9612dcd44813bb91632127835cfbcfc2bfb84eaebbc40f2",
+    "hdqi-decoded-observables-2026-10-24/DECODED_OBSERVABLES.md": "f11a7eeedfbe07e4bcb21e5aca7be10ed92591024464761623cff0716826819a",
+    "hdqi-decoded-observables-2026-10-24/decoded_observables.py": "f4cda5ea5f0ba9dbaf712d5b7e5958ee8cf438f2cfaf4c017cb1197368137f71",
+    "hdqi-output-sampling-2026-10-24/HANDOFF.md": "ab563d94432eb73dd5cee0bc9b2364f5b1154a1f89176dfd15ff70538349821e",
+    "hdqi-output-sampling-2026-10-24/OUTPUT_SAMPLING.md": "928dceb3c3c8671798ad6171dff801c393225b34bd465318e4250658518ccff3",
+    "hdqi-output-sampling-2026-10-24/commuting_linear.py": "1e0341c73c1d3828fb2817eb8dd099ae17c595d716c1367390a510c8ac5f14ea",
+    "hdqi-output-sampling-2026-10-24/output_sampling.py": "c9401123d1a5d508fc66b148b3b4e88f2a81c0a62af4d4522d30cbaca5c86014",
+    "hdqi-output-sampling-2026-10-24/test_commuting_linear.py": "e991902f57866429a9a18627536d0077fea2aa59aaaff1baa39adfd7c0e396bc",
+    "hdqi-output-sampling-2026-10-24/test_output_sampling.py": "bfb06d8c9fcfe3d6b41026a89f296fa669327a97728bec4bbff6802d16e12d60",
+    "hdqi-sign-sampler-2026-10-24/SIGN_SAMPLER.md": "84f76da8bbc550aea2fb523ee82a729d204b6484701a7ca27923b130e979e483",
+    "hdqi-sign-sampler-2026-10-24/sign_sampler.py": "7c267615bf27a2c942f42a5981e208eaec70002dc7b9dd18b84fc49985a47286"
+  },
+  "input": {
+    "beta": "1/16",
+    "physical_generators": 129,
+    "physical_qubits": 128,
+    "pilot_labels": 129
+  },
+  "live": {
+    "amplitude_oracle_used": false,
+    "decoder_calls": 81,
+    "failures": 0,
+    "letters": 1403,
+    "outcomes": [
+      {
+        "decoder_calls": 3,
+        "left": 71527300260321457453405104354564395979,
+        "letters": 432,
+        "residue": 0,
+        "right": 71527300260321457452828643602260972491,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 6,
+        "left": 245203870337549149743615198174820351581,
+        "letters": 65,
+        "residue": 0,
+        "right": 245203870337549149743615198174820351581,
+        "status": "sample",
+        "trials": 2,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 224491621735065093624949853127847860377,
+        "letters": 51,
+        "residue": 0,
+        "right": 224491621735065093624949853127847860377,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 12,
+        "left": 170909441883724787127977765330997872537,
+        "letters": 75,
+        "residue": 0,
+        "right": 170909441883724787127977765330997872537,
+        "status": "sample",
+        "trials": 4,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 73791475145162960703864276436894477127,
+        "letters": 64,
+        "residue": 0,
+        "right": 73791475145162960703864276436894477127,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 132527353020081353490490387662431231382,
+        "letters": 71,
+        "residue": 0,
+        "right": 132527353020081353490490387662431231382,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 6,
+        "left": 313060445287558986161363038232549998688,
+        "letters": 53,
+        "residue": 0,
+        "right": 313060445287558986161363038232549998688,
+        "status": "sample",
+        "trials": 2,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 238601647419414682569177999712137689414,
+        "letters": 67,
+        "residue": 0,
+        "right": 238601647419414682569177999712137689414,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 275327988595873621671510937128967335053,
+        "letters": 50,
+        "residue": 0,
+        "right": 275327988595873621671510937128967335053,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 6,
+        "left": 105719102351904343303594676256566591577,
+        "letters": 54,
+        "residue": 0,
+        "right": 105719102351904343303594676256566591577,
+        "status": "sample",
+        "trials": 2,
+        "words": 385
+      },
+      {
+        "decoder_calls": 9,
+        "left": 268064217403481016543550388395528785736,
+        "letters": 78,
+        "residue": 0,
+        "right": 268064217403481016543550388395528785736,
+        "status": "sample",
+        "trials": 3,
+        "words": 385
+      },
+      {
+        "decoder_calls": 12,
+        "left": 332275505596662309418298808268280931352,
+        "letters": 66,
+        "residue": 0,
+        "right": 332275505596662309418298808268280931352,
+        "status": "sample",
+        "trials": 4,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 61601147986128266029837523358183519277,
+        "letters": 67,
+        "residue": 0,
+        "right": 61601147986128266029837523358183519277,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 228299122075052489007181528047826885119,
+        "letters": 82,
+        "residue": 0,
+        "right": 228299122075052489007181528047826885119,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 208951328671984588745961987275996955567,
+        "letters": 63,
+        "residue": 0,
+        "right": 208951328671984588745961987275996955567,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      },
+      {
+        "decoder_calls": 3,
+        "left": 178268015982297074383465634562003621506,
+        "letters": 65,
+        "residue": 0,
+        "right": 178268015982297074383465634562003621506,
+        "status": "sample",
+        "trials": 1,
+        "words": 385
+      }
+    ],
+    "samples": 16,
+    "statevector_used": false,
+    "words": 6160
+  },
+  "one_Z_falsifier": {
+    "accepted_left_zero": "135126217/1087415698",
+    "alpha": "7382089/543707849",
+    "phase_discarded_left_zero": "1/2"
+  },
+  "plan": {
+    "delta": "1/16",
+    "epsilon": "1/8",
+    "failure_probability_upper": "1/16",
+    "fiber_bound": 2,
+    "fiber_rank": 1,
+    "max_decoder_calls": 144,
+    "max_trials": 48,
+    "max_word_letters": 645,
+    "max_words": 18480,
+    "mixture_bias_upper": "1/32",
+    "rank_B": 129,
+    "rank_X": 128,
+    "ratio_bound_method": "mass",
+    "ratio_upper": 3,
+    "signs_per_trial": 385,
+    "site_tail": "1/1217396736",
+    "success_probability_lower": "1/12",
+    "weight_bits": 11,
+    "weight_relative_error": "1/2048",
+    "z_basis": [
+      1
+    ]
+  },
+  "status": "local_unreviewed_full_physical_output_sampler"
+}

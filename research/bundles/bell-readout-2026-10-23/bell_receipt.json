@@ -1,0 +1,59 @@
+{
+  "status": "exact_controls_pass_composition_review_pending",
+  "speedup_admitted": false,
+  "novelty_admitted": false,
+  "general_coherent_simulation_admitted": false,
+  "thermal_mpo_constructor_implemented": false,
+  "source_mps_sampler_executed": false,
+  "requires_decoder_for_classical_output": false,
+  "decoder_free_output_scope": "Bell-label sampling only",
+  "ct_pauli_extension_requires_efficient_decoder_and_amplitude_access": true,
+  "requires_valid_target_approximation_promises": true,
+  "ct_paired_readout_control": {
+    "paired_mean": -0.5714285714285714,
+    "partial_trace_reference": -0.5714285714285713,
+    "analytic_reference": "-4/7",
+    "maximum_absolute_estimator": 0.8,
+    "dense_calibration_only": true
+  },
+  "in_window": {
+    "cells": 5,
+    "relative_distance": 5,
+    "degree": 2,
+    "strict_distance_condition": true,
+    "source_terms": 24,
+    "source_coefficient_support": 234,
+    "target_coefficient_support": 234,
+    "support_map_injective": true,
+    "coherent_coefficients_match": true,
+    "bell_pushforward_tv": "0",
+    "coefficient_expansion_cost_charged": true,
+    "hard_instance": false
+  },
+  "out_of_window_counterexample": {
+    "cells": 5,
+    "relative_distance": 5,
+    "degree": 3,
+    "strict_distance_condition": false,
+    "source_terms": 24,
+    "source_coefficient_support": 1099,
+    "target_coefficient_support": 1047,
+    "support_map_injective": false,
+    "coherent_coefficients_match": true,
+    "bell_pushforward_tv": "1964880960/92843598241",
+    "coefficient_expansion_cost_charged": true,
+    "hard_instance": false
+  },
+  "dependencies": [
+    "https://arxiv.org/abs/2610.06667v2",
+    "https://arxiv.org/html/2007.11174v2#S4.SS1",
+    "https://arxiv.org/abs/1201.3974",
+    "https://arxiv.org/html/0911.1624"
+  ],
+  "source_sha256": {
+    "bell_pushforward.py": "6fa1dbaa101d694b15b9a018735a3131db53a84b49cffaec494345cdd8115453",
+    "test_bell_pushforward.py": "09dd21e40a539c7d1a87a49b0c117afdf4f4219a5bfc7f0acdaf403037e66d4f",
+    "replay_bell.py": "d442ee9fb3bd850d6a1755b87e608b9c0e7cfed66c95ecaf99642b55b3b32b0d",
+    "BELL_READOUT_DECISION.md": "79d7ee7e328d34ca9f726d36017e6552056cdfc2024233a2e3f681cce7dc371a"
+  }
+}

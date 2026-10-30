@@ -1,0 +1,167 @@
+{
+  "status": "CONDITIONAL_OUTPUT_COMPOSITION_REVIEW_PENDING",
+  "secret_kernel_supplied_to_postprocessor": true,
+  "geometric_converter_executed": false,
+  "source_oracle_executed": false,
+  "quantum_receiver_executed": false,
+  "speedup_admitted": false,
+  "cases": [
+    {
+      "curve_characteristic": 7,
+      "kernel_prime": 3,
+      "checks": {
+        "full_left_action_commutes": true,
+        "opposite_multiplication": true,
+        "noncommutativity_witness": true,
+        "source_inclusion_index": true
+      },
+      "twist_control": {
+        "p": 7,
+        "base_field_size": 49,
+        "reference_points": 64,
+        "twist_points": 36,
+        "nonsquare": "2*t + 1",
+        "checks": {
+          "maximal_reference_count": true,
+          "minimal_twist_count": true,
+          "different_base_point_counts": true,
+          "square_root_not_base_rational": true,
+          "square_root_rational_over_quadratic_extension": true,
+          "mapped_points_on_twist": true,
+          "map_conjugates_to_its_negative": true,
+          "map_not_base_rational_witness": true,
+          "mapped_points_quadratic_rational": true
+        },
+        "higher_dimensional_geometric_conversion_executed": false
+      },
+      "positive_scalar_normalization": {
+        "input_degree_over_prime_field": 2,
+        "normalized_degree_over_prime_field": 4,
+        "relative_extension_degree": 2,
+        "normalized_frobenius": 49,
+        "reference_frobenius_after_base_change": 49,
+        "full_eight_torsion_fixed": true,
+        "geometric_field_promise_verified": false,
+        "geometric_conversion_executed": false
+      },
+      "negative_scalar_normalization": {
+        "input_degree_over_prime_field": 2,
+        "normalized_degree_over_prime_field": 4,
+        "relative_extension_degree": 2,
+        "normalized_frobenius": 49,
+        "reference_frobenius_after_base_change": 49,
+        "full_eight_torsion_fixed": true,
+        "geometric_field_promise_verified": false,
+        "geometric_conversion_executed": false
+      }
+    },
+    {
+      "curve_characteristic": 11,
+      "kernel_prime": 5,
+      "checks": {
+        "full_left_action_commutes": true,
+        "opposite_multiplication": true,
+        "noncommutativity_witness": true,
+        "source_inclusion_index": true
+      },
+      "twist_control": {
+        "p": 11,
+        "base_field_size": 121,
+        "reference_points": 144,
+        "twist_points": 100,
+        "nonsquare": "t + 1",
+        "checks": {
+          "maximal_reference_count": true,
+          "minimal_twist_count": true,
+          "different_base_point_counts": true,
+          "square_root_not_base_rational": true,
+          "square_root_rational_over_quadratic_extension": true,
+          "mapped_points_on_twist": true,
+          "map_conjugates_to_its_negative": true,
+          "map_not_base_rational_witness": true,
+          "mapped_points_quadratic_rational": true
+        },
+        "higher_dimensional_geometric_conversion_executed": false
+      },
+      "positive_scalar_normalization": {
+        "input_degree_over_prime_field": 2,
+        "normalized_degree_over_prime_field": 4,
+        "relative_extension_degree": 2,
+        "normalized_frobenius": 121,
+        "reference_frobenius_after_base_change": 121,
+        "full_eight_torsion_fixed": true,
+        "geometric_field_promise_verified": false,
+        "geometric_conversion_executed": false
+      },
+      "negative_scalar_normalization": {
+        "input_degree_over_prime_field": 2,
+        "normalized_degree_over_prime_field": 4,
+        "relative_extension_degree": 2,
+        "normalized_frobenius": 121,
+        "reference_frobenius_after_base_change": 121,
+        "full_eight_torsion_fixed": true,
+        "geometric_field_promise_verified": false,
+        "geometric_conversion_executed": false
+      }
+    },
+    {
+      "curve_characteristic": 19,
+      "kernel_prime": 7,
+      "checks": {
+        "full_left_action_commutes": true,
+        "opposite_multiplication": true,
+        "noncommutativity_witness": true,
+        "source_inclusion_index": true
+      },
+      "twist_control": {
+        "p": 19,
+        "base_field_size": 361,
+        "reference_points": 400,
+        "twist_points": 324,
+        "nonsquare": "t + 1",
+        "checks": {
+          "maximal_reference_count": true,
+          "minimal_twist_count": true,
+          "different_base_point_counts": true,
+          "square_root_not_base_rational": true,
+          "square_root_rational_over_quadratic_extension": true,
+          "mapped_points_on_twist": true,
+          "map_conjugates_to_its_negative": true,
+          "map_not_base_rational_witness": true,
+          "mapped_points_quadratic_rational": true
+        },
+        "higher_dimensional_geometric_conversion_executed": false
+      },
+      "positive_scalar_normalization": {
+        "input_degree_over_prime_field": 2,
+        "normalized_degree_over_prime_field": 4,
+        "relative_extension_degree": 2,
+        "normalized_frobenius": 361,
+        "reference_frobenius_after_base_change": 361,
+        "full_eight_torsion_fixed": true,
+        "geometric_field_promise_verified": false,
+        "geometric_conversion_executed": false
+      },
+      "negative_scalar_normalization": {
+        "input_degree_over_prime_field": 2,
+        "normalized_degree_over_prime_field": 4,
+        "relative_extension_degree": 2,
+        "normalized_frobenius": 361,
+        "reference_frobenius_after_base_change": 361,
+        "full_eight_torsion_fixed": true,
+        "geometric_field_promise_verified": false,
+        "geometric_conversion_executed": false
+      }
+    }
+  ],
+  "source_sha256": {
+    "effective-output-2026-10-23/effective_output.py": "d3401b401499d52468d802af09366c3da867aadeffbf0b84276220bf04ae0444",
+    "effective-output-2026-10-23/twist_control.py": "0f7a3a1a1e20b3367259d83b415303a055542abe94b8d2315eef8dd86438fb5f",
+    "effective-output-2026-10-23/test_effective_output.py": "4dffd9bfb0bd06b36e72aaa273c5bb795da6da747aba1126744e22fa0717c292",
+    "effective-output-2026-10-23/replay_effective_output.py": "9fe4b7ea85a73add2cba2302498b341a1241e164de45dc37bbefa99111b212d3",
+    "effective-output-2026-10-23/EFFECTIVE_OUTPUT_AUDIT.md": "cd7cafea947edae5b3a423035aa07c5dab3cd42ad6a95fcd4c35d1de5b8cf938",
+    "effective-output-2026-10-23/HANDOFF.md": "5f6dcc91122fbf765e57a8806937fccca9a4ec099081db5606502acb318997eb",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "smooth-repolarization-2026-10-23/page-robert-soumier-2026-276.pdf": "7c5bf9474b8e2589ffb84b089320790f83a8bc4c14aa3d1e4f7ed64a29033486"
+  }
+}

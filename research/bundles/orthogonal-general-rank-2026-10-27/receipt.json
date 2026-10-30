@@ -1,0 +1,171 @@
+{
+  "general_rank_classical_lower_bound_proved": false,
+  "kernel_controls": [
+    {
+      "all_fibers_checked": true,
+      "case": "in_U",
+      "full_table_points": 729,
+      "hidden_rank": 3,
+      "kernel_rank": 6,
+      "n": 4,
+      "oracle_calls": 730,
+      "p": 3
+    },
+    {
+      "all_fibers_checked": true,
+      "case": "perpendicular_not_in_U",
+      "full_table_points": 729,
+      "hidden_rank": 3,
+      "kernel_rank": 3,
+      "n": 4,
+      "oracle_calls": 730,
+      "p": 3
+    },
+    {
+      "all_fibers_checked": true,
+      "case": "good",
+      "full_table_points": 729,
+      "hidden_rank": 3,
+      "kernel_rank": 2,
+      "n": 4,
+      "oracle_calls": 730,
+      "p": 3
+    }
+  ],
+  "large_prime_control": {
+    "k": 5,
+    "n": 8,
+    "p": 170141183460469231731687303715884105727,
+    "supplied_secret_algebra_control_only": true,
+    "three_probe_reconstruction_matches": true
+  },
+  "literature_novelty_certified": false,
+  "natural_application_established": false,
+  "opaque_oracle_dense_runs": [
+    {
+      "attempts": 2,
+      "candidate": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          2
+        ]
+      ],
+      "classical_oracle_calls": 4384,
+      "dense_table_queries": 4374,
+      "hidden_rank_for_verification_only": 3,
+      "hidden_rank_supplied_to_controller": false,
+      "inferred_rank": 3,
+      "matches_fixture_secret": true,
+      "n": 4,
+      "p": 3
+    },
+    {
+      "attempts": 2,
+      "candidate": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "classical_oracle_calls": 3659,
+      "dense_table_queries": 3645,
+      "hidden_rank_for_verification_only": 4,
+      "hidden_rank_supplied_to_controller": false,
+      "inferred_rank": 4,
+      "matches_fixture_secret": true,
+      "n": 4,
+      "p": 3
+    }
+  ],
+  "proposed_quantum_budget": {
+    "abelian_hsp_call_cap": 339,
+    "all_rank_failure_bound": "113/56713727820156410577229101238628035242",
+    "arbitrary_rank_classical_lower_bound_proved": false,
+    "certificate_claim": "containment, with rank/probe provenance for equality",
+    "compiled_gate_count": null,
+    "dense_reference_cost_is_this_budget": false,
+    "error_per_complete_fourier_instrument": "1/3151736905457719150903296",
+    "fourier_samples_per_probe": 126,
+    "geometry_failure_bound": "10384593717069655257060992658440192/821678234986022501332043817791314604358242170799200323",
+    "global_classical_sampling_error_allowance": "1/73786976294838206464",
+    "hidden_rank_promise": [
+      3,
+      64
+    ],
+    "hidden_rank_required": false,
+    "original_oracle_query_cap": 498444,
+    "prime": 170141183460469231731687303715884105727,
+    "quantum_algorithm_executed": false,
+    "source_cost_per_fourier_sample": 1,
+    "total_error_target": "1/18446744073709551616",
+    "total_fourier_instruments": 42714,
+    "trial_cap": 113,
+    "witt_rank": 64
+  },
+  "quantum_algorithm_executed": false,
+  "reflection_probability_maximal": "0",
+  "reflection_probability_n8_k3_q3": "121/3280",
+  "schema": "orthogonal_unknown_rank_control_v1"
+}

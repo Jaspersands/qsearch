@@ -1,0 +1,226 @@
+"""Exact certificates and bounded controls, not a quantum receiver."""
+
+from fractions import Fraction
+from functools import lru_cache
+from itertools import product
+from math import ceil, pi, sin
+
+import numpy as np
+import sympy as sp
+
+
+def prime(p):
+    if not isinstance(p, int) or isinstance(p, bool) or p <= 3 or not sp.isprime(p):
+        raise ValueError("a verified prime greater than three is required")
+
+
+def multiply(g, h, p):
+    a, b, c, w = g
+    x, y, z, v = h
+    return ((a+x) % p, (b+y) % p, (c+z) % p,
+            (w+v+(a*y-b*x)*pow(2, -1, p)) % p)
+
+
+def curve(t, p):
+    return (t % p, t*t % p, t*t*t % p, 0)
+
+
+def word(ts, p):
+    if len(ts) != 4:
+        raise ValueError("alternating certificate uses four parameters")
+    g = (0, 0, 0, 0)
+    for sign, t in zip((-1, 1, -1, 1), ts):
+        point = tuple(sign*x % p for x in curve(t, p))
+        g = multiply(g, point, p)
+    return g
+
+
+def regular_preimages(g, p):
+    """All nonsingular preimages of the alternating four-step word map."""
+    prime(p)
+    a, b, c, w = (int(x) % p for x in g)
+    inv2, inv3 = pow(2, -1, p), pow(3, -1, p)
+    r = (c+6*w-a**3) % p
+    if r == 0:
+        return []
+    choices = []
+    if a == 0:
+        if b == 0:
+            return []
+        d = r*pow(3*b, -1, p) % p
+        e = -d % p
+        distance = -b*pow(2*d, -1, p) % p
+        midpoint_sum = 2*c*inv3*pow(b, -1, p) % p
+        m = (midpoint_sum-distance)*inv2 % p
+        choices.append((d, e, m, (m+distance) % p))
+    else:
+        energy = (c-3*b*b*pow(4*a, -1, p)-a**3*pow(4, -1, p)) % p
+        distance = (2*a*energy*pow(r, -1, p)-a*inv2) % p
+        gap = (distance-a*inv2) % p
+        if gap == 0:
+            return []
+        product_de = r*pow(6*gap, -1, p) % p
+        discriminant = (a*a-4*product_de) % p
+        if discriminant == 0:
+            return []
+        for root in sp.sqrt_mod(discriminant, p, all_roots=True):
+            d = (a+int(root))*inv2 % p
+            e = (a-d) % p
+            m = (b*inv2-e*distance)*pow(a, -1, p) % p
+            choices.append((d, e, m, (m+distance) % p))
+    out = []
+    for d, e, m, n in choices:
+        ts = tuple(x % p for x in (m-d*inv2, m+d*inv2,
+                                   n-e*inv2, n+e*inv2))
+        x0, x1, x2, x3 = ts
+        determinant = 6*(x0-x1)*(x1-x2)**2*(x2-x3)*(x0-x1-x2+x3)
+        if determinant % p and word(ts, p) == (a, b, c, w):
+            out.append(ts)
+    return sorted(set(out))
+
+
+@lru_cache(maxsize=1)
+def jacobian_certificate():
+    t = sp.symbols("t0:4")
+    signs = (-1, 1, -1, 1)
+    f = sp.Matrix([
+        *(sum(signs[i]*t[i]**d for i in range(4)) for d in (1, 2, 3)),
+        sum(signs[i]*signs[j]*(t[i]*t[j]**2-t[i]**2*t[j])
+            for i in range(4) for j in range(i+1, 4))/2,
+    ])
+    jac = f.jacobian(t)
+    determinant = sp.Poly(sp.expand(jac.det()), *t)
+    return t, f, jac, determinant
+
+
+def certificate_record():
+    t, f, jac, determinant = jacobian_certificate()
+    return {
+        "coordinate_degrees": [int(sp.Poly(x, *t).total_degree()) for x in f],
+        "jacobian_degree": int(determinant.total_degree()),
+        "jacobian_at_0_1_2_4": int(jac.subs(dict(zip(t, (0, 1, 2, 4)))).det()),
+        "jacobian_factorization": str(sp.factor(determinant.as_expr())),
+        "word_signs": [-1, 1, -1, 1],
+        "regular_fiber_bound": 2,
+        "regular_input_count": "p*(p-1)^2*(p-2)",
+        "group_order_exponent": 4,
+        "nonlinear_irrep_dimension": "p",
+    }
+
+
+def regular_fiber_census(p, tuple_cap=15000):
+    """A capped finite control of regular, not all, fibers."""
+    prime(p)
+    if p**4 > tuple_cap:
+        raise ValueError("finite reference census cap exceeded")
+    t, _, _, det = jacobian_certificate()
+    terms = [(monomial, int(coefficient)) for monomial, coefficient in det.terms()]
+    fibers, singular = {}, 0
+    for ts in product(range(p), repeat=4):
+        value = 0
+        for powers, coefficient in terms:
+            term = coefficient
+            for x, power in zip(ts, powers):
+                term *= pow(x, power, p)
+            value += term
+        if value % p == 0:
+            singular += 1
+        else:
+            g = word(ts, p)
+            fibers[g] = fibers.get(g, 0) + 1
+    return {"p": p, "tuples": p**4, "singular": singular,
+            "max_regular_fiber": max(fibers.values(), default=0),
+            "regular_image_size": len(fibers)}
+
+
+def representation(g, p, k, ell):
+    """p-dimensional unitary irrep; dimension is explicitly capped."""
+    prime(p)
+    if p > 257 or not 0 < k < p:
+        raise ValueError("bounded nontrivial irrep control only")
+    a, b, c, w = g
+    j = np.arange(p, dtype=np.int64)
+    exponent = ((-k*w+k*a*b*pow(2, -1, p)+ell*c) + k*b*j) % p
+    out = np.zeros((p, p), dtype=complex)
+    out[(j+a) % p, j] = np.exp(2j*np.pi*exponent/p)
+    return out
+
+
+def curve_block(p, k, ell, symmetric=True):
+    a = sum((representation(curve(t, p), p, k, ell) for t in range(p)),
+            np.zeros((p, p), dtype=complex)) / p
+    return (a+a.conj().T)/2 if symmetric else a
+
+
+def cubic_curve_normal_form(p, k, ell):
+    """Exact public coefficients; no representation-sized allocation."""
+    prime(p)
+    k, ell = int(k) % p, int(ell) % p
+    if k == 0:
+        raise ValueError("a nonlinear irrep requires nonzero central character")
+    c = (k*pow(2, -1, p)+ell) % p
+    alpha, beta = (k-3*c) % p, (3*c-2*k) % p
+    if not alpha or not beta:
+        return {"kind": "square_map", "alpha": alpha, "beta": beta,
+                "row_cubic": c, "column_cubic": (k-c) % p,
+                "norm_squared": str(Fraction(2, p))}
+    r = beta*pow(alpha, -1, p) % p
+    lam = beta**2*pow(3*alpha, -1, p) % p
+    return {"kind": "cubic_hankel", "row_scale": r, "lambda": lam,
+            "row_cubic": (c*r**3-lam) % p,
+            "column_cubic": (k-c-lam) % p,
+            "norm_squared_upper_bound": str(Fraction(4, p))}
+
+
+def theorem_gap(p):
+    prime(p)
+    if p < 131:
+        raise ValueError("proved large-prime bound requires p >= 131")
+    # sqrt(2/p) + 4/p <= 1/2, checked without floating point.
+    assert 8*p <= (p-8)**2
+    return Fraction(1, 8)
+
+
+def source_budget(p, delta, address_bits, leaves, error, design_size):
+    """Copy/query cap only; no native width or uniform-action gate price supplied."""
+    gap = theorem_gap(p)
+    delta, error = Fraction(delta), Fraction(error)
+    if not 0 < delta <= 1 or not 0 < error < 1:
+        raise ValueError("invalid robustness or total error")
+    if any(not isinstance(v, int) or isinstance(v, bool) or v < 1
+           for v in (address_bits, leaves, design_size)):
+        raise ValueError("positive integer public caps required")
+    gamma = gap*delta*delta/2
+    # Integer base-two log upper bound, also upper-bounding natural log.
+    ratio = Fraction(4*leaves, 1)/error
+    log_cap = max(0, ratio.numerator.bit_length()-ratio.denominator.bit_length())
+    while 2**log_cap * ratio.denominator < ratio.numerator:
+        log_cap += 1
+    packets = ceil(Fraction(address_bits+log_cap, 1)/gamma)
+    queries = leaves*packets*design_size
+    return {"p": p, "walk_gap": str(gap), "source_gap": str(gamma),
+            "nilpotency_class_cap": 3, "pure_state_only": True,
+            "packets_per_leaf": packets,
+            "raw_pure_copies": queries,
+            "controlled_action_queries": queries,
+            "query_interface": "uniform coherent SELECT(U)",
+            "action_half_diamond_error_per_query": str(error/(8*queries)),
+            "action_error_allocation": str(error/8),
+            "total_gate_cost_certified": False,
+            "unpriced_resources": ["native register width and copy acquisition",
+                                   "coherent action implementation at allocated precision",
+                                   "public arithmetic, design, sampling and complete receiver"],
+            "random_scales": leaves*packets,
+            "conditional_on": ["subgroup averaged robustness promise",
+                               "valid zero moment design", "paid Rees receiver",
+                               "uniform coherent action with separately charged gate cost"],
+            "quantum_execution": False, "speedup_established": False}
+
+
+def adjacent_phase_control(p):
+    prime(p)
+    return {"p": p, "old_minimum_trace_gap": sin(pi/p),
+            "subgroup_twirl_trace_gap": 0.5,
+            "mean_squared_overlap": 0.5,
+            "scope": "known abelian control, not a new hard application"}
+

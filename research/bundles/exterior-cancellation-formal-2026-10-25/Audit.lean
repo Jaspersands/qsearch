@@ -1,0 +1,31 @@
+import ExteriorCompression
+
+#print axioms QSearch.ExteriorCompression.shear_apply
+#print axioms QSearch.ExteriorCompression.contraction_square
+#print axioms QSearch.ExteriorCompression.contraction_right_wedge
+#print axioms QSearch.ExteriorCompression.wedge_update_closed
+#print axioms QSearch.ExteriorCompression.shear_formula
+#print axioms QSearch.ExteriorCompression.shear_fixes_closed
+#print axioms QSearch.ExteriorCompression.shear_is_closed
+#print axioms QSearch.ExteriorCompression.contraction_map_zero
+#print axioms QSearch.ExteriorCompression.lift_fst
+#print axioms QSearch.ExteriorCompression.covector_lift
+#print axioms QSearch.ExteriorCompression.fst_comp_lift
+#print axioms QSearch.ExteriorCompression.lift_comp_fst
+#print axioms QSearch.ExteriorCompression.recover_closed
+#print axioms QSearch.ExteriorCompression.projection_injective_on_closed
+#print axioms QSearch.ExteriorCompression.projected_relation_is_full
+#print axioms QSearch.ExteriorCompression.closed_dimension
+#print axioms QSearch.ExteriorCompression.closed_top_zero
+#print axioms QSearch.ExteriorCompression.closed_rows_dimension
+#print axioms QSearch.ExteriorCompression.closed_rows_relation
+#print axioms QSearch.ExteriorCompression.degenerate_projection_counterexample
+#print axioms QSearch.ExteriorCompression.nonclosed_projection_counterexample
+#print axioms QSearch.ExteriorCompression.contraction
+#print axioms QSearch.ExteriorCompression.shear
+#print axioms QSearch.ExteriorCompression.closedDegree
+#print axioms QSearch.ExteriorCompression.covector
+#print axioms QSearch.ExteriorCompression.lift
+#print axioms QSearch.ExteriorCompression.closedProjection
+#print axioms QSearch.ExteriorCompression.closedLift
+#print axioms QSearch.ExteriorCompression.closedEquiv

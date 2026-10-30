@@ -1,0 +1,270 @@
+from fractions import Fraction
+from itertools import product
+import numpy as np
+import pytest
+import sympy as sp
+
+from dilation_average import (
+    adjacent_phase_control, certificate_record, cubic_curve_normal_form, curve, curve_block,
+    jacobian_certificate, multiply, regular_fiber_census, regular_preimages, representation,
+    source_budget, theorem_gap, word,
+)
+
+
+def test_exact_jacobian_certificate():
+    r = certificate_record()
+    assert r["coordinate_degrees"] == [1, 2, 3, 3]
+    assert r["jacobian_degree"] == 5
+    assert r["jacobian_at_0_1_2_4"] == 12
+    assert r["regular_fiber_bound"] == 2
+    t, _, _, det = jacobian_certificate()
+    expected = 6*(t[0]-t[1])*(t[1]-t[2])**2*(t[2]-t[3])*(t[0]-t[1]-t[2]+t[3])
+    assert sp.expand(det.as_expr()-expected) == 0
+
+
+@pytest.mark.parametrize("p", [5, 7, 131, 2**127-1])
+def test_symbolic_word_agrees_with_group_multiplication(p):
+    t, f, _, _ = jacobian_certificate()
+    for ts in [(0, 1, 2, 3), (p-1, p-2, 1, 7), (2, 2, 2, 2)]:
+        exact = []
+        for x in f.subs(dict(zip(t, ts))):
+            num, den = sp.fraction(x)
+            exact.append(int(num)*pow(int(den), -1, p) % p)
+        assert tuple(exact) == word(ts, p)
+
+
+@pytest.mark.parametrize("p", [5, 7, 11])
+def test_regular_fibers_and_bad_mass(p):
+    r = regular_fiber_census(p)
+    assert 0 < r["max_regular_fiber"] <= 2
+    assert r["singular"] == p**4-p*(p-1)**2*(p-2)
+    assert r["regular_image_size"] > 0
+
+
+def test_reference_enumeration_is_not_a_large_prime_algorithm():
+    with pytest.raises(ValueError):
+        regular_fiber_census(131)
+    with pytest.raises(ValueError):
+        representation((0, 0, 0, 0), 2**127-1, 1, 0)
+
+
+@pytest.mark.parametrize("p", [5, 7, 11])
+def test_representation_phase_and_product(p):
+    for g, h in [((1, 2, 3, 4), (4, 3, 2, 1)),
+                 ((2, 0, 1, 1), (0, 3, 2, 4))]:
+        for k in [1, p-1]:
+            left = representation(g, p, k, 2) @ representation(h, p, k, 2)
+            right = representation(multiply(g, h, p), p, k, 2)
+            assert np.allclose(left, right, atol=1e-12)
+
+
+@pytest.mark.parametrize("p,k,ell", [(5, 1, 0), (7, 2, 3), (131, 1, 0),
+                                     (131, 17, 51), (257, 1, 0)])
+def test_nonsymmetric_singular_value_blocks(p, k, ell):
+    matrix = curve_block(p, k, ell, symmetric=False)
+    radius = np.linalg.norm(matrix, ord=2)
+    assert radius < 1-1e-10
+    if p >= 131:
+        assert radius <= 1-float(theorem_gap(p))
+        assert radius**4 <= np.sqrt(2/p)+4/p+1e-12
+
+
+def test_constructive_fibers_against_full_small_field_census():
+    p, fibers = 5, {}
+    for ts in product(range(p), repeat=4):
+        t0, t1, t2, t3 = ts
+        determinant = 6*(t0-t1)*(t1-t2)**2*(t2-t3)*(t0-t1-t2+t3)
+        if determinant % p:
+            fibers.setdefault(word(ts, p), []).append(ts)
+    for g in product(range(p), repeat=4):
+        assert regular_preimages(g, p) == sorted(fibers.get(g, []))
+
+
+def test_inverse_identities_symbolically_on_both_branches():
+    d, e, m, distance = sp.symbols("d e m D")
+    n = m+distance
+    ts = (m-d/2, m+d/2, n-e/2, n+e/2)
+    t, f, _, _ = jacobian_certificate()
+    a, b, c, w = [sp.expand(x.subs(dict(zip(t, ts)))) for x in f]
+    r = sp.expand(c+6*w-a**3)
+    assert sp.expand(r-6*d*e*(distance-a/2)) == 0
+    energy = c-3*b**2/(4*a)-a**3/4
+    assert sp.factor(2*a*energy/r-a/2-distance) == 0
+    b0, c0, r0 = [sp.expand(x.subs(e, -d)) for x in (b, c, r)]
+    assert sp.factor(r0/(3*b0)-d) == 0
+    assert sp.factor(-b0/(2*d)-distance) == 0
+    assert sp.factor(2*c0/(3*b0)-(m+n)) == 0
+
+
+@pytest.mark.parametrize("p", [7, 131, 2**127-1])
+def test_constructive_fibers_without_field_enumeration(p):
+    for ts in [(0, 1, 2, 4), (0, 1, 3, 2), (1, 3, 6, 9)]:
+        ts = tuple(t % p for t in ts)
+        t0, t1, t2, t3 = ts
+        determinant = 6*(t0-t1)*(t1-t2)**2*(t2-t3)*(t0-t1-t2+t3)
+        if determinant % p:
+            assert ts in regular_preimages(word(ts, p), p)
+    assert regular_preimages((0, 0, 0, 0), p) == []
+
+
+def test_symmetrization_is_not_silently_assumed_in_source():
+    a = curve_block(7, 1, 1, symmetric=False)
+    assert not np.allclose(a, a.conj().T)
+    # The alternating word controls (A^* A)^2, NOT A^4.
+    assert not np.allclose(np.linalg.matrix_power(a, 4),
+                           np.linalg.matrix_power(a.conj().T @ a, 2))
+    psi = np.arange(1, 8, dtype=complex)
+    psi /= np.linalg.norm(psi)
+    for t in range(7):
+        u = representation(curve(t, 7), 7, 1, 1)
+        assert np.isclose(abs(np.vdot(psi, u @ psi))**2,
+                          abs(np.vdot(psi, u.conj().T @ psi))**2)
+
+
+def test_cubic_kernel_identity_symbolically():
+    x, y, k, ell, u = sp.symbols("x y k ell u")
+    c = k/2+ell
+    alpha, beta = k-3*c, 3*c-2*k
+    exponent = c*(x-y)**3+k*(x-y)**2*y
+    expanded = c*x**3+(k-c)*y**3+alpha*x*x*y+beta*x*y*y
+    assert sp.expand(exponent-expanded) == 0
+    r, lam = beta/alpha, beta**2/(3*alpha)
+    completed = (c*r**3-lam)*u**3+(k-c-lam)*y**3+lam*(u+y)**3
+    assert sp.factor(exponent.subs(x, r*u)-completed) == 0
+
+
+@pytest.mark.parametrize("p", [5, 7, 11, 13])
+def test_all_small_irreps_match_cubic_or_square_normal_form(p):
+    x, y = np.indices((p, p))
+    for k in range(1, p):
+        for ell in range(p):
+            form = cubic_curve_normal_form(p, k, ell)
+            block = curve_block(p, k, ell, symmetric=False)
+            if form["kind"] == "cubic_hankel":
+                row_scale, lam = form["row_scale"], form["lambda"]
+                phase = (form["row_cubic"]*x**3+form["column_cubic"]*y**3
+                         +lam*(x+y)**3) % p
+                assert np.allclose(block[(row_scale*x) % p, y],
+                                   np.exp(2j*np.pi*phase/p)/p, atol=1e-12)
+                sequence = np.exp(2j*np.pi*((lam*np.arange(p)**3) % p)/p)/p
+                norm = max(abs(np.fft.fft(sequence)))
+                assert np.isclose(np.linalg.norm(block, ord=2), norm, atol=1e-12)
+                assert norm <= 2/np.sqrt(p)+1e-12
+            else:
+                assert not form["alpha"] or not form["beta"]
+                assert form["alpha"] or form["beta"]
+                phase = (form["row_cubic"]*x**3+form["column_cubic"]*y**3
+                         +form["alpha"]*x*x*y+form["beta"]*x*y*y) % p
+                assert np.allclose(block, np.exp(2j*np.pi*phase/p)/p, atol=1e-12)
+                assert np.isclose(np.linalg.norm(block, ord=2)**2, 2/p, atol=1e-12)
+
+
+def test_normal_form_large_prime_and_both_exceptional_branches():
+    p = 2**127-1
+    assert cubic_curve_normal_form(p, 1, 0)["kind"] == "cubic_hankel"
+    for sign, zero_key in [(-1, "alpha"), (1, "beta")]:
+        form = cubic_curve_normal_form(p, 1, sign*pow(6, -1, p))
+        assert form["kind"] == "square_map"
+        assert form[zero_key] == 0
+    with pytest.raises(ValueError):
+        cubic_curve_normal_form(p, 0, 1)
+
+
+def test_moment_packet_has_exact_on_subgroup_phase_cancellation():
+    p, scales = 257, [1, 256, 16, 241]
+    assert all(sum(pow(s, j, p) for s in scales) % p == 0 for j in [1, 2, 3])
+    for u in [0, 1, 13, 256]:
+        phase = sum(7*s*u+11*(s*u)**2+19*(s*u)**3 for s in scales)
+        assert phase % p == 0
+    assert sum(pow(s, 2, p) for s in [1, 256]) % p != 0
+
+
+def test_adjacent_phases_and_nearly_invariant_falsifier():
+    r = adjacent_phase_control(2**127-1)
+    assert r["old_minimum_trace_gap"] < 1e-37
+    assert r["subgroup_twirl_trace_gap"] == 0.5
+    epsilon = Fraction(1, 2**40)
+    # Near a single eigenray the new promise also vanishes; not a free gap.
+    assert float(epsilon*(1-epsilon)) < 1e-11
+
+
+def test_budget_is_exact_and_has_no_prime_sized_loop():
+    a = source_budget(131, Fraction(1, 2), 100, 7, Fraction(1, 100), 4)
+    b = source_budget(2**127-1, Fraction(1, 2), 100, 7, Fraction(1, 100), 4)
+    assert a["source_gap"] == "1/64"
+    assert a["raw_pure_copies"] == b["raw_pure_copies"]
+    assert not a["quantum_execution"] and not a["speedup_established"]
+    c = source_budget(131, Fraction(1, 4), 100, 7, Fraction(1, 100), 4)
+    assert c["raw_pure_copies"] == 4*a["raw_pure_copies"]
+
+
+@pytest.mark.parametrize("p,k,ell", [(5, 1, 0), (7, 2, 3), (131, 17, 51)])
+def test_natural_conjugation_energy(p, k, ell):
+    psi = np.arange(1, p+1, dtype=complex)*np.exp(1j*np.arange(p))
+    psi /= np.linalg.norm(psi)
+    overlap = sum(abs(np.vdot(psi, representation(curve(t, p), p, k, ell) @ psi))**2
+                  for t in range(p))/p
+    # Full irreducible subgroup twirl is I/p; not a test of promise(P) for all K.
+    if p >= 131:
+        assert overlap <= 1-(1-1/p)/8+1e-12
+
+
+def test_exact_averaged_packet_in_easy_abelian_control():
+    p, scales = 257, [1, 256, 16, 241]
+    packet = []
+    for u in range(p):
+        packet.append(np.prod([(1+np.exp(2j*np.pi*((s*u) % p)/p))/2
+                               for s in scales]))
+    # Four of the sixteen subset sums vanish. Not a hardness experiment.
+    zero_count = sum(sum(bit*s for bit, s in zip(bits, scales)) % p == 0
+                     for bits in product((0, 1), repeat=4))
+    assert Fraction(zero_count, 16) == Fraction(1, 4)
+    assert np.isclose(np.mean(packet), 0.25, atol=1e-12)
+
+
+@pytest.mark.parametrize("p", [5, 131, 2**127-1])
+def test_universal_curve_maps_into_actual_class_three_lie_group(p):
+    def unit(i, j):
+        m = sp.zeros(4)
+        m[i, j] = 1
+        return m
+
+    a1 = unit(0, 1)+unit(1, 2)+unit(2, 3)
+    a2 = unit(0, 2)+2*unit(1, 3)
+    a3 = 3*unit(0, 3)
+    bracket = a1*a2-a2*a1
+    assert bracket == unit(0, 3)
+
+    def image(g):
+        a, b, c, w = g
+        x = a*a1+b*a2+c*a3+w*bracket
+        return (sp.eye(4)+x+pow(2, -1, p)*x*x+pow(6, -1, p)*x**3).applyfunc(lambda z: z % p)
+
+    g, h = (3, 2, 1, 4), (1, 3, 4, 2)
+    assert (image(g)*image(h)).applyfunc(lambda z: z % p) == image(multiply(g, h, p))
+
+
+def test_class_four_needs_more_than_the_universal_four_coordinates():
+    def unit(i, j):
+        m = sp.zeros(5)
+        m[i, j] = 1
+        return m
+    a1 = unit(0, 1)+unit(1, 2)+unit(2, 3)+unit(3, 4)
+    a2 = unit(1, 3)
+    bracket = a1*a2-a2*a1
+    assert a1*bracket-bracket*a1 != sp.zeros(5)
+
+
+def test_invalid_resource_caps_fail():
+    for delta, bits, leaves, error, design in [(0, 10, 1, Fraction(1, 10), 4),
+                                             (1, 0, 1, Fraction(1, 10), 4),
+                                             (1, 10, 1, 0, 4)]:
+        with pytest.raises(ValueError):
+            source_budget(131, delta, bits, leaves, error, design)
+
+
+@pytest.mark.parametrize("p", [3, 9, 127, True])
+def test_prime_and_threshold_guards(p):
+    with pytest.raises(ValueError):
+        theorem_gap(p)
+

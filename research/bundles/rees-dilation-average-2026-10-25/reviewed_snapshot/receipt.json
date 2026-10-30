@@ -1,0 +1,121 @@
+{
+  "adjacent_phase_control": {
+    "mean_squared_overlap": 0.5,
+    "old_minimum_trace_gap": 1.8464622084398007e-38,
+    "p": 170141183460469231731687303715884105727,
+    "scope": "known abelian control, not a new hard application",
+    "subgroup_twirl_trace_gap": 0.5
+  },
+  "certificate": {
+    "coordinate_degrees": [
+      1,
+      2,
+      3,
+      3
+    ],
+    "group_order_exponent": 4,
+    "jacobian_at_0_1_2_4": 12,
+    "jacobian_degree": 5,
+    "jacobian_factorization": "6*(t0 - t1)*(t1 - t2)**2*(t2 - t3)*(t0 - t1 - t2 + t3)",
+    "nonlinear_irrep_dimension": "p",
+    "regular_fiber_bound": 2,
+    "regular_input_count": "p*(p-1)^2*(p-2)",
+    "word_signs": [
+      -1,
+      1,
+      -1,
+      1
+    ]
+  },
+  "conditional_large_prime_budget": {
+    "conditional_on": [
+      "subgroup averaged robustness promise",
+      "valid zero moment design",
+      "paid Rees receiver"
+    ],
+    "nilpotency_class_cap": 3,
+    "p": 170141183460469231731687303715884105727,
+    "packets_per_leaf": 66560,
+    "pure_state_only": true,
+    "quantum_execution": false,
+    "random_scales": 6656000,
+    "raw_pure_copies": 159744000,
+    "source_gap": "1/64",
+    "speedup_established": false,
+    "walk_gap": "1/8"
+  },
+  "direct_normal_form": {
+    "column_cubic": 56713727820156410577229101238628035243,
+    "kind": "cubic_hankel",
+    "lambda": 28356863910078205288614550619314017621,
+    "norm_squared_upper_bound": "4/170141183460469231731687303715884105727",
+    "row_cubic": 56713727820156410577229101238628035243,
+    "row_scale": 1
+  },
+  "large_prime_inverse_control": [
+    [
+      0,
+      1,
+      2,
+      4
+    ],
+    [
+      113427455640312821154458202477256070485,
+      113427455640312821154458202477256070487,
+      113427455640312821154458202477256070488,
+      113427455640312821154458202477256070489
+    ]
+  ],
+  "native_hard_family_established": false,
+  "quantum_execution": false,
+  "regular_fibers": [
+    {
+      "max_regular_fiber": 2,
+      "p": 5,
+      "regular_image_size": 160,
+      "singular": 385,
+      "tuples": 625
+    },
+    {
+      "max_regular_fiber": 2,
+      "p": 7,
+      "regular_image_size": 756,
+      "singular": 1141,
+      "tuples": 2401
+    },
+    {
+      "max_regular_fiber": 2,
+      "p": 11,
+      "regular_image_size": 5500,
+      "singular": 4741,
+      "tuples": 14641
+    }
+  ],
+  "sha256": {
+    "DILATION_AVERAGED_SOURCE.md": "d22c012b2e395738223094f7a8bf48f3210e64c80b78b238828f1d7c96dd9688",
+    "dilation_average.py": "fba379dc5cb6240cfe0209408bdc6769b60a77568a94f6ebf3e1af0702a283f4",
+    "replay.py": "db4bc69012937f382349407f5fe34d82e07fe48fcdc9f84d48d0bd5c04797e9f",
+    "test_dilation_average.py": "d3603cf2ffd8aeea0822bfad928a0c1aed0fc58764f7d3cd4d84219d0c8c96c4"
+  },
+  "spectral_controls": [
+    {
+      "ell": 0,
+      "k": 1,
+      "numerical_positive_curve_norm": 0.1676116296,
+      "p": 131
+    },
+    {
+      "ell": 51,
+      "k": 17,
+      "numerical_positive_curve_norm": 0.1676116296,
+      "p": 131
+    },
+    {
+      "ell": 0,
+      "k": 1,
+      "numerical_positive_curve_norm": 0.1241395853,
+      "p": 257
+    }
+  ],
+  "status": "local unreviewed source reduction; bounded controls only"
+}

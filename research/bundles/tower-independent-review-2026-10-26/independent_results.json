@@ -1,0 +1,113 @@
+{
+  "prime_trial_division": true,
+  "nonsquare": 2,
+  "nonzero_square_checks": 143,
+  "schoof_squared_margin": 4,
+  "kummer_quotient_classes": 4096,
+  "explicit_f_infinity": {
+    "(1, 1, 1)": {
+      "order": 8,
+      "leading_rational": "-27/32",
+      "leading_mod_p": 28125
+    },
+    "(1, 1, -1)": {
+      "order": -2,
+      "leading_rational": "-2",
+      "leading_mod_p": 100001
+    },
+    "(1, -1, 1)": {
+      "order": -2,
+      "leading_rational": "54",
+      "leading_mod_p": 54
+    },
+    "(1, -1, -1)": {
+      "order": -2,
+      "leading_rational": "52",
+      "leading_mod_p": 52
+    },
+    "(-1, 1, 1)": {
+      "order": -2,
+      "leading_rational": "162",
+      "leading_mod_p": 162
+    },
+    "(-1, 1, -1)": {
+      "order": -2,
+      "leading_rational": "160",
+      "leading_mod_p": 160
+    },
+    "(-1, -1, 1)": {
+      "order": -2,
+      "leading_rational": "36",
+      "leading_mod_p": 36
+    },
+    "(-1, -1, -1)": {
+      "order": -2,
+      "leading_rational": "34",
+      "leading_mod_p": 34
+    }
+  },
+  "complete_code": {
+    "ambient_dimension": 64,
+    "jet_rank": 21,
+    "rank": 43,
+    "length": 176,
+    "square_rank": 126,
+    "cube_rank": 173,
+    "annihilator_dimension": 3,
+    "analytic_support": 176
+  },
+  "matches_source_receipt_row_space_and_residues": true,
+  "L3G": {
+    "function_dimension": 209,
+    "evaluation_rank": 173,
+    "evaluation_kernel_dimension": 36,
+    "equals_schur_cube": true
+  },
+  "geometric_annihilator_equals_matrix_kernel": true,
+  "solver": {
+    "targets_per_annihilator": 78,
+    "annihilators": 7,
+    "support_sizes": [
+      176,
+      172,
+      172,
+      172,
+      172,
+      172,
+      172
+    ],
+    "witnesses_verified": 546,
+    "uniform_sampling_claimed": false
+  },
+  "full_kummer_low_pole_rank": {
+    "rows": 93,
+    "points": 93,
+    "rank": 93
+  },
+  "one_point_control": {
+    "ambient_dimension": 624,
+    "jet_rank": 581,
+    "rank": 43,
+    "square_rank": 126,
+    "cube_rank": 173,
+    "annihilator_dimension": 3
+  },
+  "conditional_E_arithmetic_degrees": [
+    8,
+    16,
+    32
+  ],
+  "snapshot_sha256": {
+    "snapshot/prime-ag-tower-source-2026-10-26/HANDOFF.md": "df069aa542d7ce492d16eefbc6f9037063b455712471392f01a5e3060d5b795e",
+    "snapshot/prime-ag-tower-source-2026-10-26/TOWER_SOURCE.md": "e02772441d905e647cafeec9f6f52a75b86e3e085e8b1ece056e68d3a9441301",
+    "snapshot/prime-ag-tower-source-2026-10-26/elementary_cover.py": "435746d4a1054ba91b727e5ec23d88f3b501564b5aa59cfe3d9d04d509037299",
+    "snapshot/prime-ag-tower-source-2026-10-26/receipt.json": "88c4db0e53f35c1eb0b5233ef139a8053b062a0f2f4b602bdd8ed791a24b624d",
+    "snapshot/prime-ag-tower-source-2026-10-26/test_tower_source.py": "e6693766ffcba96ea941dfcb588a85bf75c67ba45731c3da7dd8977c8fc431e1",
+    "snapshot/prime-ag-tower-source-2026-10-26/test_tower_source_initial.py": "6c2df9987d5029e5b175bbf7d253b19005c2cf45f308598e4eac78f1ed19552a",
+    "snapshot/prime-ag-tower-source-2026-10-26/tower_seed.py": "e6789585b0e2f1d892560c998bdf018fe08d418628091ad62352801d0a8f908f",
+    "snapshot/prime-ag-tower-source-2026-10-26/verify_tower.py": "5ea8b89e461362f48a0819190380b82f20921c6f148278ff1101554b3739c1e3",
+    "snapshot/schur-growth-classical-gate-2026-10-26/schur_gate.py": "d2ba9a0dc1d83a60f3210efec353b463897269bdc943abf728e2a642bc2129e3"
+  },
+  "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 11:23:37) [Clang 14.0.6 ]",
+  "elapsed_seconds": 4.155
+}

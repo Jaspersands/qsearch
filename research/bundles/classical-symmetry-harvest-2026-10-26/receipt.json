@@ -1,0 +1,137 @@
+{
+  "execution_scope": {
+    "exact_matrix_and_order_closure_controls": true,
+    "full_classical_dequantization_established": false,
+    "hitting_probability_established": false,
+    "independent_review": true,
+    "native_geometric_automorphism_enumeration": false,
+    "native_map_compression": false,
+    "native_pullback_or_order_recovery": false,
+    "novelty_established": false,
+    "quantum_advantage_established": false
+  },
+  "hashes": {
+    "additive-framed-source-2026-10-26/ADDITIVE_SOURCE.md": "4778e57399badcf778ba9daa96c52f35197f4d81cb038309d52a94f2d8beb0d5",
+    "additive-framed-source-2026-10-26/additive_source.py": "0c486867c6ccd378589a1278262e0f0efe49585562b143517a0cac046fc65982",
+    "additive-source-independent-review-2026-10-26/REVIEW.md": "2c4b7ea6b15d6783dd9da827dd4b66bce33aeab1036bc9f9aa90f24d78fad9cc",
+    "classical-symmetry-harvest-2026-10-26/HARVEST.md": "eb7850237c146e4318d513731b95f661efa3d5b9ceac1897f89153fbb718b913",
+    "classical-symmetry-harvest-2026-10-26/harvest.py": "0ae602e2b9e92ef285d4d05541da834eb6943fc1f8163853164aba3921bfce5e",
+    "classical-symmetry-harvest-2026-10-26/replay_harvest.py": "de611d74f28c75d764796d4ee525992767ae652760469319d62f0932019093e3",
+    "classical-symmetry-harvest-2026-10-26/test_harvest.py": "ff85bbc372f3388c21afa1c38bfee992d83b8df2fccf982a6900940331f06ab5",
+    "polarization-completion-probe-2026-10-25/POLARIZATION_COMPLETION.md": "82fe5d300df674138eba1e625d55c6ac4f4c05456489f7e31698eb9453afe791",
+    "ppav-source-2026-10-23/2026-1142.pdf": "4504310844c227e0d49c8c628b03e9942894f14fcd6f5881dc5c0122ed645318"
+  },
+  "inseparable_degree_shift_control": {
+    "characteristic": 11,
+    "interpolation_executed": false,
+    "original_degree": 11,
+    "original_trace": 0,
+    "shift_and_new_degree": [
+      1,
+      12
+    ]
+  },
+  "pell_controls": [
+    {
+      "index_parameter": 3,
+      "integral_standard_product_factorization": true,
+      "pell_parameter": 2,
+      "roots": [
+        8,
+        4,
+        0,
+        0
+      ],
+      "scope": "zero query only; no random-query success probability follows"
+    },
+    {
+      "index_parameter": 17,
+      "integral_standard_product_factorization": true,
+      "pell_parameter": 12,
+      "roots": [
+        288,
+        24,
+        0,
+        0
+      ],
+      "scope": "zero query only; no random-query success probability follows"
+    },
+    {
+      "index_parameter": 99,
+      "integral_standard_product_factorization": true,
+      "pell_parameter": 70,
+      "roots": [
+        9800,
+        140,
+        0,
+        0
+      ],
+      "scope": "zero query only; no random-query success probability follows"
+    },
+    {
+      "index_parameter": 577,
+      "integral_standard_product_factorization": true,
+      "pell_parameter": 408,
+      "roots": [
+        332928,
+        816,
+        0,
+        0
+      ],
+      "scope": "zero query only; no random-query success probability follows"
+    }
+  ],
+  "pullback_controls": [
+    {
+      "certificate": {
+        "coprime_index_transport": true,
+        "corner_degree_bound": 16,
+        "index": 9,
+        "multiplier": 4,
+        "native_pullback_executed": false
+      },
+      "denominator": 2,
+      "index_chain": [
+        9,
+        3,
+        1
+      ],
+      "provenance": "supplied known order and already easy elliptic-unit symmetry",
+      "pullback_outside_input_order": true,
+      "symmetry_outside_input_order": true
+    },
+    {
+      "certificate": {
+        "coprime_index_transport": false,
+        "corner_degree_bound": 81,
+        "index": 9,
+        "multiplier": 9,
+        "native_pullback_executed": false
+      },
+      "denominator": 3,
+      "index_chain": [
+        9
+      ],
+      "provenance": "supplied known order and already easy elliptic-unit symmetry",
+      "pullback_outside_input_order": false,
+      "symmetry_outside_input_order": true
+    }
+  ],
+  "review_followup": {
+    "corrected_statement_independently_re_reviewed": false,
+    "finding": "P2: instance-wise samplers do not imply a uniform algorithm",
+    "resolution": "one sampler and one polynomial, covering all adaptively reached orders"
+  },
+  "schema": "classical-symmetry-harvest-controls-v2",
+  "status": "independently reviewed extraction theorem; classical recovery needs a uniform hitting theorem",
+  "uniform_hitting_obligation": {
+    "all_adaptively_reached_orders_required": true,
+    "hitting_bound_proved": false,
+    "native_data_only_required": true,
+    "original_paid_input_length_required": true,
+    "polynomial_query_and_frame_lengths_required": true,
+    "sampler_implemented": false,
+    "single_polynomial_required": true,
+    "single_uniform_sampler_required": true
+  }
+}

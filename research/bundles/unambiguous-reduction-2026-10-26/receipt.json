@@ -1,0 +1,315 @@
+{
+  "status": "UNAMBIGUOUS_TRANSFER_REFINEMENT_PENDING_INDEPENDENT_REVIEW",
+  "quantum_advantage_established": false,
+  "quantum_execution": false,
+  "native_inverse_trace_solved": false,
+  "uniform_sampling_claimed": false,
+  "registry_admission": false,
+  "controls": [
+    {
+      "length": 1,
+      "prime": 3,
+      "code_dimension": 1,
+      "amplitudes_enumerated": 3,
+      "actual_decoder_success": "0",
+      "decoder_union_bound": "3",
+      "gram_tail": "1",
+      "old_quantum_failure_expression": "18",
+      "gram_numerator": [
+        [
+          2,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          2,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          2
+        ]
+      ],
+      "successful_gram_numerator": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "gram_denominator": 2,
+      "refined_success_lower": "0",
+      "syndromes": [
+        {
+          "syndrome": 0,
+          "gram_eigenvalue": "0",
+          "status": "NO_ACCEPTED_DECODER_BRANCH"
+        },
+        {
+          "syndrome": 1,
+          "gram_eigenvalue": "3/2",
+          "status": "NO_ACCEPTED_DECODER_BRANCH"
+        },
+        {
+          "syndrome": 2,
+          "gram_eigenvalue": "3/2",
+          "status": "NO_ACCEPTED_DECODER_BRANCH"
+        }
+      ],
+      "hardness_evidence": false,
+      "quantum_execution": false
+    },
+    {
+      "length": 2,
+      "prime": 3,
+      "code_dimension": 1,
+      "amplitudes_enumerated": 9,
+      "actual_decoder_success": "1/2",
+      "decoder_union_bound": "3/2",
+      "gram_tail": "1/2",
+      "old_quantum_failure_expression": "9",
+      "gram_numerator": [
+        [
+          4,
+          1,
+          1
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          4
+        ]
+      ],
+      "successful_gram_numerator": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "gram_denominator": 4,
+      "refined_success_lower": "0",
+      "syndromes": [
+        {
+          "syndrome": 0,
+          "gram_eigenvalue": "3/2",
+          "proved_target_fidelity": "1/3",
+          "direct_valid_output_probability": 0.3333333333,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        },
+        {
+          "syndrome": 1,
+          "gram_eigenvalue": "3/4",
+          "proved_target_fidelity": "2/3",
+          "direct_valid_output_probability": 0.6666666667,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        },
+        {
+          "syndrome": 2,
+          "gram_eigenvalue": "3/4",
+          "proved_target_fidelity": "2/3",
+          "direct_valid_output_probability": 0.6666666667,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        }
+      ],
+      "hardness_evidence": false,
+      "quantum_execution": false
+    },
+    {
+      "length": 3,
+      "prime": 3,
+      "code_dimension": 1,
+      "amplitudes_enumerated": 27,
+      "actual_decoder_success": "3/4",
+      "decoder_union_bound": "3/4",
+      "gram_tail": "1/4",
+      "old_quantum_failure_expression": "9/2",
+      "gram_numerator": [
+        [
+          8,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          8,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          8
+        ]
+      ],
+      "successful_gram_numerator": [
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          6
+        ]
+      ],
+      "gram_denominator": 8,
+      "refined_success_lower": "1/5",
+      "syndromes": [
+        {
+          "syndrome": 0,
+          "gram_eigenvalue": "3/4",
+          "proved_target_fidelity": "1",
+          "direct_valid_output_probability": 1.0,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        },
+        {
+          "syndrome": 1,
+          "gram_eigenvalue": "9/8",
+          "proved_target_fidelity": "2/3",
+          "direct_valid_output_probability": 0.6666666667,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        },
+        {
+          "syndrome": 2,
+          "gram_eigenvalue": "9/8",
+          "proved_target_fidelity": "2/3",
+          "direct_valid_output_probability": 0.6666666667,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        }
+      ],
+      "hardness_evidence": false,
+      "quantum_execution": false
+    },
+    {
+      "length": 4,
+      "prime": 3,
+      "code_dimension": 1,
+      "amplitudes_enumerated": 81,
+      "actual_decoder_success": "7/8",
+      "decoder_union_bound": "3/8",
+      "gram_tail": "1/8",
+      "old_quantum_failure_expression": "9/4",
+      "gram_numerator": [
+        [
+          16,
+          1,
+          1
+        ],
+        [
+          1,
+          16,
+          1
+        ],
+        [
+          1,
+          1,
+          16
+        ]
+      ],
+      "successful_gram_numerator": [
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          0,
+          14
+        ]
+      ],
+      "gram_denominator": 16,
+      "refined_success_lower": "5/9",
+      "syndromes": [
+        {
+          "syndrome": 0,
+          "gram_eigenvalue": "9/8",
+          "proved_target_fidelity": "7/9",
+          "direct_valid_output_probability": 0.7777777778,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        },
+        {
+          "syndrome": 1,
+          "gram_eigenvalue": "15/16",
+          "proved_target_fidelity": "14/15",
+          "direct_valid_output_probability": 0.9417989418,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        },
+        {
+          "syndrome": 2,
+          "gram_eigenvalue": "15/16",
+          "proved_target_fidelity": "14/15",
+          "direct_valid_output_probability": 0.9417989418,
+          "status": "BOUNDED_CLASSICAL_STATEVECTOR_CONTROL"
+        }
+      ],
+      "hardness_evidence": false,
+      "quantum_execution": false
+    }
+  ],
+  "wrong_answer_countercontrol": {
+    "states": 8,
+    "gram": "identity",
+    "actual_decoder_success": "5/8",
+    "actual_target_fidelity": "1/10",
+    "false_unambiguous_bound": "5/8",
+    "unambiguous": false,
+    "hypothesis_is_necessary": true
+  },
+  "numerical_identity_tolerance": 1e-12,
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.3.3"
+  },
+  "sources": [
+    "https://arxiv.org/html/2610.00502v1",
+    "https://arxiv.org/html/2310.20651#S6.SS2",
+    "https://arxiv.org/abs/2607.14650"
+  ],
+  "sha256": {
+    "unambiguous-reduction-2026-10-26/usd_reduction.py": "81f36a88b537eef04fe41516cd880b7901fb6d723f4116da4b524c478618472d",
+    "unambiguous-reduction-2026-10-26/test_usd_reduction.py": "fbec6d4bf8792496c814760a784434e60413052b6e9a6851fcf606330b644937",
+    "unambiguous-reduction-2026-10-26/verify_usd.py": "e379a420025e33d665fd740428b70a760080cc465d8b62138b7abe13a0d8abdc",
+    "unambiguous-reduction-2026-10-26/USD_REDUCTION.md": "9a5f8c65245ccb7b3dce831a16009650bd91baa709a7c9a19b5397a80776429a",
+    "unambiguous-reduction-2026-10-26/HANDOFF.md": "08c47dc8443b625194f0910b8fab07229ddac6a4727184d667bcbda54356c3a7",
+    "schur-growth-classical-gate-2026-10-26/receipt.json": "778b6595a508c482fdfc9e8bb5001c6eb0967329bafbb54d128592fff32c6f64"
+  }
+}

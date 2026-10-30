@@ -1,0 +1,102 @@
+{
+  "field_plan": {
+    "auxiliary_fields": [
+      {
+        "absolute_auxiliary_degree": 48,
+        "exponent": 1,
+        "prime": 3,
+        "relative_auxiliary_degree": 2,
+        "torsion_order": 3
+      },
+      {
+        "absolute_auxiliary_degree": 96,
+        "exponent": 1,
+        "prime": 5,
+        "relative_auxiliary_degree": 4,
+        "torsion_order": 5
+      },
+      {
+        "absolute_auxiliary_degree": 1008,
+        "exponent": 2,
+        "prime": 7,
+        "relative_auxiliary_degree": 42,
+        "torsion_order": 49
+      }
+    ],
+    "characteristic": 11,
+    "common_field_for_unknown_phi_given_as_input": false,
+    "compositum_of_auxiliary_fields_constructed": false,
+    "field_embeddings_constructed": false,
+    "fixed_base_degree": 24,
+    "fixed_frobenius_scalar": 3138428376721,
+    "fixed_scalar_mod_8": 1,
+    "input_base_degree": 2,
+    "relative_base_extension": 12,
+    "scope": "SUPERSINGULAR_ELLIPTIC_ENDPOINTS_OVER_ONE_EXPLICIT_FIELD",
+    "sum_separate_auxiliary_degrees": 1152,
+    "supersingularity_verified_by_plan": false,
+    "unknown_isogeny_constructed": false
+  },
+  "implementation_sha256": {
+    "FIELD_NORMALIZATION.md": "baba3dcccf47e7ce858c91014177d57de00ea1c1e0a06e146e1f20a94a218aef",
+    "elliptic_fields.py": "174679166ee6d6ae14c468e4b4bde870644d7eecf02e1e113cb63f9b7216723d",
+    "replay_elliptic_fields.py": "fd50999d35b1822aa7d6abb867829e33ea1bb33d816fcf8217aff266793057c5",
+    "test_elliptic_fields.py": "6e6bbdd46bfa141a0b1f9efa70ec1fa1c8a454708f245d96202bec61764f9811"
+  },
+  "proof_dependencies": {
+    "field_primitives": "https://eprint.iacr.org/2026/1142",
+    "previous_field_note_sha256": "fbdb8aca63ff5f44f0bdd395b4574950ce40c936e691da7212074c9b35292763",
+    "trace_classification": "https://arxiv.org/html/2501.16321v2#S2.SS2"
+  },
+  "scope": "supersingular elliptic endpoints over one explicitly represented finite field",
+  "scope_flags": {
+    "general_surface_field_promise_removed": false,
+    "geometric_source_executed": false,
+    "independent_review": false,
+    "main_registry_integrated": false,
+    "novelty_established": false,
+    "unknown_isogeny_computed": false
+  },
+  "status": "ELLIPTIC_COMMON_FIELD_PROMISE_DERIVED_WITH_EXACT_TWIST_CONTROL",
+  "twist_countercontrol": {
+    "actual_point_counts_computed": true,
+    "curves": [
+      {
+        "a": "u + 1",
+        "b": "0",
+        "frobenius_power_12": [
+          3138428376721,
+          0
+        ],
+        "frobenius_power_6": [
+          -1771561,
+          0
+        ],
+        "hasse_invariant_zero": true,
+        "points_over_F121": 122,
+        "trace": 0
+      },
+      {
+        "a": "0",
+        "b": "2*u + 1",
+        "frobenius_power_12": [
+          3138428376721,
+          0
+        ],
+        "frobenius_power_6": [
+          1771561,
+          0
+        ],
+        "hasse_invariant_zero": true,
+        "points_over_F121": 111,
+        "trace": 11
+      }
+    ],
+    "field": "F_11[u]/(u^2+1)",
+    "isogeny_computed": false,
+    "relative_degree_12_matches_endpoint_frobenius": true,
+    "relative_degree_6_defines_maps_between_fixed_endpoints": false,
+    "relative_degree_6_makes_each_endomorphism_ring_defined": true,
+    "source_promise_repair_independently_reviewed": false
+  }
+}

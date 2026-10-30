@@ -1,0 +1,29 @@
+{
+  "command": "/opt/anaconda3/bin/python -B independent_controls.py",
+  "exit_code": 0,
+  "symbolic": {
+    "word_model": "upper-triangular 3x3 matrices plus independent cubic central coordinate",
+    "jacobian": "6*(t0 - t1)*(t1 - t2)**2*(t2 - t3)*(t0 - t1 - t2 + t3)",
+    "regular_inverse_branches": "both symbolic branches checked",
+    "hankel_identity": "exact rational-function identity checked",
+    "exceptional_branch_guard": "alpha + beta = -k"
+  },
+  "source": {
+    "prime": 131,
+    "design": [1, 130, 1, 130, 28, 103],
+    "design_moments_1_2_3": [0, 0, 0],
+    "native_representation": "direct sum of central characters 1 and 2 of Heisenberg(F_131)",
+    "ray_stabilizer": "{(x,y,z): x=z=0}; nonnormal",
+    "kernel_pairs": 25,
+    "kernel_arithmetic": "exact rational coefficients in Q[zeta_131]",
+    "correct_b_inverse_a": [0, 1, 0, 0],
+    "wrong_a_b_inverse": [0, 1, 0, 1],
+    "correct_overlap": "1",
+    "wrong_orientation_overlap": "7/32",
+    "one_packet_shift_overlap": "1/131",
+    "two_independent_scales_overlap": "1/17161",
+    "two_shared_scales_overlap": "1/131",
+    "zero_scale": "included, with conditional overlap one"
+  },
+  "status": "bounded independent controls passed; not a theorem certificate"
+}

@@ -1,0 +1,153 @@
+{
+  "controls": [
+    {
+      "diagnostic_draws": 4000,
+      "diagnostic_max_abs_draw": 0.010257244544754941,
+      "diagnostic_sample_mean": 0.0034745950270399723,
+      "exact_unbiasedness": true,
+      "maximum_activity_tail": 6.971511865045812e-25,
+      "name": "commuting",
+      "sample_mean_is_not_a_proof": true,
+      "truncated_log_z": 0.003538287275801039
+    },
+    {
+      "diagnostic_draws": 4000,
+      "diagnostic_max_abs_draw": 0.010257244544754941,
+      "diagnostic_sample_mean": 0.003536426404487339,
+      "exact_unbiasedness": true,
+      "maximum_activity_tail": 6.971511865045812e-25,
+      "name": "path",
+      "sample_mean_is_not_a_proof": true,
+      "truncated_log_z": 0.0035372961213944445
+    },
+    {
+      "diagnostic_draws": 4000,
+      "diagnostic_max_abs_draw": 0.010257244544754941,
+      "diagnostic_sample_mean": 0.0035486254028224643,
+      "exact_unbiasedness": true,
+      "maximum_activity_tail": 6.971511865045812e-25,
+      "name": "triangle",
+      "sample_mean_is_not_a_proof": true,
+      "truncated_log_z": 0.0035358696652343096
+    }
+  ],
+  "field_controls": [
+    {
+      "exact_unbiasedness": true,
+      "fields": [
+        "0",
+        "1",
+        "0"
+      ],
+      "full_pilot_sampler_implemented": false,
+      "log_reference_residual": 1.0041125916848692e-12,
+      "name": "zero_pins",
+      "partition_reference": 1.0020155278169818,
+      "reference_error": 9.942156919511422e-25,
+      "truncated_log_partition": 0.002013499366937749
+    },
+    {
+      "exact_unbiasedness": true,
+      "fields": [
+        "-1",
+        "1",
+        "-1"
+      ],
+      "full_pilot_sampler_implemented": false,
+      "log_reference_residual": 1.9850440735602604e-14,
+      "name": "parity",
+      "partition_reference": 1.0004885694536987,
+      "reference_error": 9.942156919511422e-25,
+      "truncated_log_partition": 0.0004884501425226128
+    },
+    {
+      "exact_unbiasedness": true,
+      "fields": [
+        "-1",
+        "-1",
+        "-1"
+      ],
+      "full_pilot_sampler_implemented": false,
+      "log_reference_residual": 5.141980030263512e-27,
+      "name": "total_parity",
+      "partition_reference": 1.0,
+      "reference_error": 9.942156919511422e-25,
+      "truncated_log_partition": -5.141980030263512e-27
+    },
+    {
+      "exact_unbiasedness": true,
+      "fields": [
+        "1/3",
+        "-2/3",
+        "0"
+      ],
+      "full_pilot_sampler_implemented": false,
+      "log_reference_residual": 6.255525611398305e-13,
+      "name": "fractional",
+      "partition_reference": 1.001934218856039,
+      "reference_error": 9.942156919511422e-25,
+      "truncated_log_partition": 0.001932350663980757
+    }
+  ],
+  "hashes": {
+    "CLUSTER_BASELINE.md": "f32572252c925e5ab6e09b74837e659c1a5206893b21ad34408e41f67cfd8d29",
+    "HANDOFF.md": "efcfb8b316352c76b8c091bf3b5b9cce6c086ba86eb4f6bcfcdca7c73253d352",
+    "cluster_baseline.py": "95de565cd743c7ffa1b81ac8d057374f1d952d5b8e5949bc2862f9ee8f8bc7fe",
+    "test_cluster_baseline.py": "b4d603ddd81b6c4db5a3fa47e85018826ec412a4799bc41f96b22d1c204b969e"
+  },
+  "parameter_ledgers": [
+    {
+      "D_lambda": "1/128",
+      "degree": 1,
+      "independently_reviewed": false,
+      "lambda": "1/256",
+      "local_theorem_regime": true,
+      "m": 1000000,
+      "pilot_sampling_dequantized": false,
+      "production_fpras_implemented": false,
+      "quantum_gap_certified": false,
+      "tail_bound": 1.0150610510858575e-09,
+      "truncation": 15
+    },
+    {
+      "D_lambda": "25/4096",
+      "degree": 99,
+      "independently_reviewed": false,
+      "lambda": "1/16384",
+      "local_theorem_regime": true,
+      "m": 1000000,
+      "pilot_sampling_dequantized": false,
+      "production_fpras_implemented": false,
+      "quantum_gap_certified": false,
+      "tail_bound": 3.791391948930782e-13,
+      "truncation": 15
+    },
+    {
+      "D_lambda": "625/65536",
+      "degree": 9999,
+      "independently_reviewed": false,
+      "lambda": "1/1048576",
+      "local_theorem_regime": true,
+      "m": 1000000,
+      "pilot_sampling_dequantized": false,
+      "production_fpras_implemented": false,
+      "quantum_gap_certified": false,
+      "tail_bound": 5.095613137664484e-12,
+      "truncation": 15
+    },
+    {
+      "D_lambda": "625/1024",
+      "degree": 9999,
+      "independently_reviewed": false,
+      "lambda": "1/16384",
+      "local_theorem_regime": false,
+      "m": 1000000,
+      "pilot_sampling_dequantized": false,
+      "production_fpras_implemented": false,
+      "quantum_gap_certified": false,
+      "tail_bound": null,
+      "truncation": 15
+    }
+  ],
+  "status": "local_unreviewed_classical_comparator"
+}

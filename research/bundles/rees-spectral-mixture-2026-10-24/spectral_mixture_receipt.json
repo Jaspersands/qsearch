@@ -1,0 +1,91 @@
+{
+  "actual_cover_elements_checked": 81,
+  "controlled_dme_with_reference": [
+    {
+      "bound": 0.9799999999999999,
+      "distance": 0.228420792737834,
+      "steps": 1
+    },
+    {
+      "bound": 0.48999999999999994,
+      "distance": 0.11922209838104955,
+      "steps": 2
+    },
+    {
+      "bound": 0.24499999999999997,
+      "distance": 0.06172279161665991,
+      "steps": 4
+    },
+    {
+      "bound": 0.12249999999999998,
+      "distance": 0.03151293605704911,
+      "steps": 8
+    },
+    {
+      "bound": 0.06124999999999999,
+      "distance": 0.015936527089452035,
+      "steps": 16
+    }
+  ],
+  "degenerate_conjugation_distance": 0.0,
+  "degenerate_packet_overlap": 0.0,
+  "dependencies_sha256": {
+    "native_source_controls.py": "c9c1dab002eb1dff776ddff6ec3d81c988abc29532bc860bd6bd46e9f69c1ae9",
+    "native_source_receipt.json": "24a331c78d1240bd3719b1067d632a9dc0500d88e20bb37761ddc77faf917eb0"
+  },
+  "independent_marginals_wrong_hidden_overlap_error": 0.962962962962963,
+  "individual_eigenstate_gap_countercontrol": {
+    "finite_order_three_error": 6.106226635438361e-16,
+    "mixed_conjugation_distance": 0.0866025919975622,
+    "one_eigenstate_overlap_gap": 8.94069654977514e-08
+  },
+  "matched_packet_maximum_overlap_error": 2.6058324095367516e-15,
+  "maximum_gap_inequality_excess": 0.0,
+  "mixed_conjugation_hidden_order": 9,
+  "old_scalar_support_hidden_order": 3,
+  "principal_only_false_symmetry_distance": 0.08660254037844385,
+  "principal_only_fixed_vector_error": 0.0,
+  "purification_gap_trials": 64,
+  "representation_homomorphism_error": 1.093442869781314e-15,
+  "resource_example": {
+    "address_and_receiver_budget": "1/40",
+    "all_promises_certified": false,
+    "amplification_blocks_per_leaf": 1344,
+    "conjugate_copy_calls": 0,
+    "design_size": 6,
+    "global_total_error_budget": "1/20",
+    "matching_abort_budget": "1/160",
+    "matching_attempts_per_required_copy_cap": 240,
+    "overlap_gap_lower_bound": "1/32",
+    "per_estimate_bad_value_budget": "1/1807841280",
+    "per_measurement_dme_channel_budget": "1/3615682560",
+    "per_measurement_public_gate_budget": "1/3615682560",
+    "phase_estimation_bits": 45,
+    "phase_grid": "35184372088832",
+    "polynomial_only_with_inverse_polynomial_promised_gaps": true,
+    "program_copies_per_spectral_measurement_cap": "537119785244383718750492305484958105600",
+    "promised_cover_order_log2_upper_bound": 31,
+    "receiver_leaf_cap": 7,
+    "source_amplification_error_budget": "1/160",
+    "spectral_bad_value_budget": "1/160",
+    "spectral_implementation_error_budget": "1/160",
+    "spectral_measurement_cap": 11299008,
+    "spectral_packets": 9408,
+    "total_raw_copy_cap": "6068920750434573593231562563612985514850543808",
+    "unknown_state_inverse_calls": 0
+  },
+  "scope": {
+    "conditional_reduction_for_nondegenerate_positive_spectrum": true,
+    "general_mixed_state_solver": false,
+    "independent_review": false,
+    "novelty_or_speedup_claim": false,
+    "quantum_receiver_executed": false,
+    "spectral_preprocessor_implemented": false
+  },
+  "source_sha256": {
+    "SPECTRAL_MIXTURE.md": "b38e202c320037abd224196e13de193b9a146519a1c7c7b3427094b80b53f47c",
+    "run_audit.py": "1eb822d7ac10ebf0a3ff3284d34a053e1ceec4c551fc4e4919914c3e2b52019e",
+    "spectral_mixture.py": "3f8dd7bb9409545ac00bb680688e7e97b07cd1736e4cc75ea5fea66a5e4b4dde",
+    "test_spectral_mixture.py": "5d777428ea7c5b9886424b783be5bf2643a4a52e06642c7f047e3323ea83d59f"
+  }
+}

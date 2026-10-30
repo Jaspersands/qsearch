@@ -1,0 +1,143 @@
+{
+  "status": "PROPOSED_CLASSICAL_SQUARE_ROOT_BASELINE_REVIEW_PENDING",
+  "input_contract": "Sp_4(F_p) exact LEFT stabilizer coset oracle at an odd prime",
+  "fixture": "lazy opaque injective labels for exact subspace proof controls",
+  "hidden_parameter_supplied_to_solver": false,
+  "all_actual_oracle_calls_charged": true,
+  "deterministic_eight_chart_cover": true,
+  "geometric_source_executed": false,
+  "geometric_oracle_cost_measured": false,
+  "quantum_algorithm_executed": false,
+  "polynomial_bit_time_dequantization": false,
+  "speedup_admitted": false,
+  "cases": [
+    {
+      "prime": 3,
+      "seed": 0,
+      "correct": true,
+      "queries": 17,
+      "query_bound": 45,
+      "charts_tried": 2
+    },
+    {
+      "prime": 3,
+      "seed": 1,
+      "correct": true,
+      "queries": 12,
+      "query_bound": 45,
+      "charts_tried": 1
+    },
+    {
+      "prime": 3,
+      "seed": 2,
+      "correct": true,
+      "queries": 12,
+      "query_bound": 45,
+      "charts_tried": 1
+    },
+    {
+      "prime": 13,
+      "seed": 0,
+      "correct": true,
+      "queries": 19,
+      "query_bound": 85,
+      "charts_tried": 1
+    },
+    {
+      "prime": 13,
+      "seed": 1,
+      "correct": true,
+      "queries": 24,
+      "query_bound": 85,
+      "charts_tried": 1
+    },
+    {
+      "prime": 13,
+      "seed": 2,
+      "correct": true,
+      "queries": 24,
+      "query_bound": 85,
+      "charts_tried": 1
+    },
+    {
+      "prime": 101,
+      "seed": 0,
+      "correct": true,
+      "queries": 55,
+      "query_bound": 215,
+      "charts_tried": 1
+    },
+    {
+      "prime": 101,
+      "seed": 1,
+      "correct": true,
+      "queries": 51,
+      "query_bound": 215,
+      "charts_tried": 1
+    },
+    {
+      "prime": 101,
+      "seed": 2,
+      "correct": true,
+      "queries": 49,
+      "query_bound": 215,
+      "charts_tried": 1
+    },
+    {
+      "prime": 1009,
+      "seed": 0,
+      "correct": true,
+      "queries": 158,
+      "query_bound": 645,
+      "charts_tried": 1
+    },
+    {
+      "prime": 1009,
+      "seed": 1,
+      "correct": true,
+      "queries": 131,
+      "query_bound": 645,
+      "charts_tried": 1
+    },
+    {
+      "prime": 1009,
+      "seed": 2,
+      "correct": true,
+      "queries": 170,
+      "query_bound": 645,
+      "charts_tried": 1
+    },
+    {
+      "prime": 65537,
+      "seed": 0,
+      "correct": true,
+      "queries": 1136,
+      "query_bound": 5135,
+      "charts_tried": 1
+    },
+    {
+      "prime": 65537,
+      "seed": 1,
+      "correct": true,
+      "queries": 930,
+      "query_bound": 5135,
+      "charts_tried": 1
+    },
+    {
+      "prime": 65537,
+      "seed": 2,
+      "correct": true,
+      "queries": 1211,
+      "query_bound": 5135,
+      "charts_tried": 1
+    }
+  ],
+  "source_sha256": {
+    "siegel-classical-2026-10-23/classical_siegel.py": "28714590eeb5853ba893e65a07ce4a5964f12bd5333811546b65dcb8b5325055",
+    "siegel-classical-2026-10-23/test_classical_siegel.py": "14db4ad7ba84b083fc1c2e50845b41328e8f987fb71335e87f006b5b7a2ebaee",
+    "siegel-classical-2026-10-23/replay_classical_siegel.py": "6b4af6f75d5b5eaf0391336e429a92228d1de02120c6ba9b455b94bdf30e8cf8",
+    "siegel-classical-2026-10-23/CLASSICAL_BASELINE.md": "906d96bee2607a39cd0080a05e308a002529a366448592df892b6e68caf6d59b",
+    "siegel-classical-2026-10-23/HANDOFF.md": "b2b85fb69beeb6f055cfaa3a885e881f72845b666994bcb5f72b8e724a254f4a",
+    "prime-square-flags-2026-10-23/prime_square_flags.py": "7f954c25339c294e1fd4df91003d432643eedb35b75c7d03e8f6f0aecd9c9208"
+  }
+}

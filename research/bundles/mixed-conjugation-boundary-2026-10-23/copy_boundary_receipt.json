@@ -1,0 +1,413 @@
+{
+  "schema": "isolated-research-receipt/v1",
+  "date": "2026-10-23",
+  "status": "proved-in-note-copy-bound-with-exact-controls; independent-review-pending",
+  "research_effect": "reject-generic-polylog-copy-mixed-conjugation-extension",
+  "input_contract": {
+    "group": "C3",
+    "access": "IID copies of one fixed unknown diagonal state",
+    "known_action": "shift last qutrit",
+    "visibility": {
+      "numerator": 3,
+      "denominator": 4
+    },
+    "null_stabilizer": "C3",
+    "signal_stabilizer": "identity",
+    "two_cases_isospectral": true,
+    "hidden_orientation_advice": false
+  },
+  "finite_controls": [
+    {
+      "buckets": 1,
+      "order": 3,
+      "visibility": {
+        "numerator": 3,
+        "denominator": 4
+      },
+      "copies": 3,
+      "enumerated_joint_words": 729,
+      "tv": {
+        "numerator": 17,
+        "denominator": 32
+      },
+      "chi_squared_each_vs_uniform": {
+        "numerator": 4617,
+        "denominator": 2048
+      },
+      "cross_likelihood_moment": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "collision_probability": {
+        "numerator": 1,
+        "denominator": 1
+      }
+    },
+    {
+      "buckets": 2,
+      "order": 3,
+      "visibility": {
+        "numerator": 3,
+        "denominator": 4
+      },
+      "copies": 2,
+      "enumerated_joint_words": 324,
+      "tv": {
+        "numerator": 3,
+        "denominator": 16
+      },
+      "chi_squared_each_vs_uniform": {
+        "numerator": 81,
+        "denominator": 256
+      },
+      "cross_likelihood_moment": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "collision_probability": {
+        "numerator": 1,
+        "denominator": 2
+      }
+    },
+    {
+      "buckets": 2,
+      "order": 3,
+      "visibility": {
+        "numerator": 3,
+        "denominator": 4
+      },
+      "copies": 3,
+      "enumerated_joint_words": 5832,
+      "tv": {
+        "numerator": 53,
+        "denominator": 128
+      },
+      "chi_squared_each_vs_uniform": {
+        "numerator": 8505,
+        "denominator": 8192
+      },
+      "cross_likelihood_moment": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "collision_probability": {
+        "numerator": 1,
+        "denominator": 1
+      }
+    },
+    {
+      "buckets": 2,
+      "order": 3,
+      "visibility": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "copies": 3,
+      "enumerated_joint_words": 5832,
+      "tv": {
+        "numerator": 13,
+        "denominator": 18
+      },
+      "chi_squared_each_vs_uniform": {
+        "numerator": 7,
+        "denominator": 2
+      },
+      "cross_likelihood_moment": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "collision_probability": {
+        "numerator": 1,
+        "denominator": 1
+      }
+    }
+  ],
+  "analytical_scaling_not_measured": [
+    {
+      "bucket_bits": 8,
+      "metrics": {
+        "dimension": 2304,
+        "rank": 2304,
+        "heavy_eigenvalue": {
+          "numerator": 5,
+          "denominator": 4608
+        },
+        "heavy_multiplicity": 768,
+        "light_eigenvalue": {
+          "numerator": 1,
+          "denominator": 9216
+        },
+        "light_multiplicity": 1536,
+        "purity_both_cases": {
+          "numerator": 17,
+          "denominator": 18432
+        },
+        "signal_trace_distance_nonidentity": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "signal_absolute_hs_distance_squared": {
+          "numerator": 3,
+          "denominator": 2048
+        },
+        "signal_normalized_hs_overlap": {
+          "numerator": 7,
+          "denominator": 34
+        },
+        "signal_density_vector_nontrivial_character_probability": {
+          "numerator": 9,
+          "denominator": 17
+        },
+        "nonidentity_scalar_expectation_both_cases": {
+          "numerator": 0,
+          "denominator": 1
+        }
+      },
+      "necessary_copy_bounds_error_one_third": {
+        "birthday_necessary_copies": 14,
+        "rational_chi_necessary_copies": 12,
+        "combined_necessary_copies": 14
+      },
+      "classical_sufficient_copies_conservative": 7282,
+      "classical_analytical_error_upper": {
+        "numerator": 739087,
+        "denominator": 2147319801
+      },
+      "canonical_sqrt_purification_gap_interval": [
+        {
+          "numerator": 10780841429566843759,
+          "denominator": 41505174165846491136
+        },
+        {
+          "numerator": 673802589347927735,
+          "denominator": 2594073385365405696
+        }
+      ],
+      "tv_squared_upper_at_one_million_copies": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "large_state_enumerated": false,
+      "large_sampling_campaign_run": false
+    },
+    {
+      "bucket_bits": 32,
+      "metrics": {
+        "dimension": 38654705664,
+        "rank": 38654705664,
+        "heavy_eigenvalue": {
+          "numerator": 5,
+          "denominator": 77309411328
+        },
+        "heavy_multiplicity": 12884901888,
+        "light_eigenvalue": {
+          "numerator": 1,
+          "denominator": 154618822656
+        },
+        "light_multiplicity": 25769803776,
+        "purity_both_cases": {
+          "numerator": 17,
+          "denominator": 309237645312
+        },
+        "signal_trace_distance_nonidentity": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "signal_absolute_hs_distance_squared": {
+          "numerator": 3,
+          "denominator": 34359738368
+        },
+        "signal_normalized_hs_overlap": {
+          "numerator": 7,
+          "denominator": 34
+        },
+        "signal_density_vector_nontrivial_character_probability": {
+          "numerator": 9,
+          "denominator": 17
+        },
+        "nonidentity_scalar_expectation_both_cases": {
+          "numerator": 0,
+          "denominator": 1
+        }
+      },
+      "necessary_copy_bounds_error_one_third": {
+        "birthday_necessary_copies": 53511,
+        "rational_chi_necessary_copies": 46839,
+        "combined_necessary_copies": 53511
+      },
+      "classical_sufficient_copies_conservative": 29826162,
+      "classical_analytical_error_upper": {
+        "numerator": 1411433627407,
+        "denominator": 36028796347875321
+      },
+      "canonical_sqrt_purification_gap_interval": [
+        {
+          "numerator": 10780841429566843759,
+          "denominator": 41505174165846491136
+        },
+        {
+          "numerator": 673802589347927735,
+          "denominator": 2594073385365405696
+        }
+      ],
+      "tv_squared_upper_at_one_million_copies": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "large_state_enumerated": false,
+      "large_sampling_campaign_run": false
+    },
+    {
+      "bucket_bits": 64,
+      "metrics": {
+        "dimension": 166020696663385964544,
+        "rank": 166020696663385964544,
+        "heavy_eigenvalue": {
+          "numerator": 5,
+          "denominator": 332041393326771929088
+        },
+        "heavy_multiplicity": 55340232221128654848,
+        "light_eigenvalue": {
+          "numerator": 1,
+          "denominator": 664082786653543858176
+        },
+        "light_multiplicity": 110680464442257309696,
+        "purity_both_cases": {
+          "numerator": 17,
+          "denominator": 1328165573307087716352
+        },
+        "signal_trace_distance_nonidentity": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "signal_absolute_hs_distance_squared": {
+          "numerator": 3,
+          "denominator": 147573952589676412928
+        },
+        "signal_normalized_hs_overlap": {
+          "numerator": 7,
+          "denominator": 34
+        },
+        "signal_density_vector_nontrivial_character_probability": {
+          "numerator": 9,
+          "denominator": 17
+        },
+        "nonidentity_scalar_expectation_both_cases": {
+          "numerator": 0,
+          "denominator": 1
+        }
+      },
+      "necessary_copy_bounds_error_one_third": {
+        "birthday_necessary_copies": 3506826113,
+        "rational_chi_necessary_copies": 3069585457,
+        "combined_necessary_copies": 3506826113
+      },
+      "classical_sufficient_copies_conservative": 1954687338269,
+      "classical_analytical_error_upper": {
+        "numerator": 6050532232098593373997,
+        "denominator": 154742504910681330455412726
+      },
+      "canonical_sqrt_purification_gap_interval": [
+        {
+          "numerator": 10780841429566843759,
+          "denominator": 41505174165846491136
+        },
+        {
+          "numerator": 673802589347927735,
+          "denominator": 2594073385365405696
+        }
+      ],
+      "tv_squared_upper_at_one_million_copies": {
+        "numerator": 244140136718994140625,
+        "denominator": 332306998946228968225951765070086144
+      },
+      "large_state_enumerated": false,
+      "large_sampling_campaign_run": false
+    },
+    {
+      "bucket_bits": 128,
+      "metrics": {
+        "dimension": 3062541302288446171170371466885913903104,
+        "rank": 3062541302288446171170371466885913903104,
+        "heavy_eigenvalue": {
+          "numerator": 5,
+          "denominator": 6125082604576892342340742933771827806208
+        },
+        "heavy_multiplicity": 1020847100762815390390123822295304634368,
+        "light_eigenvalue": {
+          "numerator": 1,
+          "denominator": 12250165209153784684681485867543655612416
+        },
+        "light_multiplicity": 2041694201525630780780247644590609268736,
+        "purity_both_cases": {
+          "numerator": 17,
+          "denominator": 24500330418307569369362971735087311224832
+        },
+        "signal_trace_distance_nonidentity": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "signal_absolute_hs_distance_squared": {
+          "numerator": 3,
+          "denominator": 2722258935367507707706996859454145691648
+        },
+        "signal_normalized_hs_overlap": {
+          "numerator": 7,
+          "denominator": 34
+        },
+        "signal_density_vector_nontrivial_character_probability": {
+          "numerator": 9,
+          "denominator": 17
+        },
+        "nonidentity_scalar_expectation_both_cases": {
+          "numerator": 0,
+          "denominator": 1
+        }
+      },
+      "necessary_copy_bounds_error_one_third": {
+        "birthday_necessary_copies": 15061703465432641505,
+        "rational_chi_necessary_copies": 13183769146657326591,
+        "combined_necessary_copies": 15061703465432641505
+      },
+      "classical_sufficient_copies_conservative": 8395318191768258157682,
+      "classical_analytical_error_upper": {
+        "numerator": 111612616350067816771565508496763207548687,
+        "denominator": 2854495385411919762116383044239675486956945401
+      },
+      "canonical_sqrt_purification_gap_interval": [
+        {
+          "numerator": 10780841429566843759,
+          "denominator": 41505174165846491136
+        },
+        {
+          "numerator": 673802589347927735,
+          "denominator": 2594073385365405696
+        }
+      ],
+      "tv_squared_upper_at_one_million_copies": {
+        "numerator": 244140136718994140625,
+        "denominator": 113078212145816597093331040047546785012958969400039613319782796882727665664
+      },
+      "large_state_enumerated": false,
+      "large_sampling_campaign_run": false
+    }
+  ],
+  "claims_not_made": [
+    "quantum speedup",
+    "succinct-circuit hardness",
+    "low-rank impossibility",
+    "independent proof review",
+    "full-repository validation",
+    "integration or migration complete"
+  ],
+  "source_sha256": {
+    "copy_boundary.py": "bcc0d17bca1bc4034b3787aa1be2c94928eef1cc0fab69caed6d99815ff1fc64",
+    "test_copy_boundary.py": "a55cc4d218901b9780cb407879a681834668d8272b7e4bffddbc81d04140ec85",
+    "make_receipt.py": "3344fd02f3f5f3d3890d2ce43402dcdb0e5b3d892d8fdb889a471bd3d8e50d47",
+    "MIXED_CONJUGATION_BOUNDARY.md": "5915ff921cb6e8b16e29baa17f3fe55c5b2c08d71e848383e1da3621cc944370"
+  },
+  "primary_references": [
+    "https://sites.stat.columbia.edu/liam/research/pubs/sparse-unif-test.pdf",
+    "https://arxiv.org/html/2609.38085"
+  ]
+}

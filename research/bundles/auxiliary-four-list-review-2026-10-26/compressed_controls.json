@@ -1,0 +1,104 @@
+{
+  "status": "INDEPENDENT_SMALL_GENUS_TWO_CONTROL_ONLY",
+  "curve": "y^2=x^5+x+1 over F_17, H=6 infinity",
+  "squarefree": true,
+  "cubic": {
+    "equations": 9,
+    "unknowns": 6,
+    "rhs_coordinates": 17,
+    "rank": 6,
+    "distinct_triples_only_rank": 2
+  },
+  "degree_checks": [
+    {
+      "degree": 0,
+      "macaulay_quotient": 1,
+      "module_generated_rank": 1
+    },
+    {
+      "degree": 1,
+      "macaulay_quotient": 5,
+      "module_generated_rank": 5
+    },
+    {
+      "degree": 2,
+      "macaulay_quotient": 11,
+      "module_generated_rank": 11
+    },
+    {
+      "degree": 3,
+      "macaulay_quotient": 17,
+      "module_generated_rank": 17
+    },
+    {
+      "degree": 4,
+      "macaulay_quotient": 23,
+      "module_generated_rank": 23
+    },
+    {
+      "degree": 5,
+      "macaulay_quotient": 29,
+      "module_generated_rank": 29
+    },
+    {
+      "degree": 6,
+      "macaulay_quotient": 35,
+      "module_generated_rank": 35
+    },
+    {
+      "degree": 7,
+      "macaulay_quotient": 41,
+      "module_generated_rank": 41
+    }
+  ],
+  "changed_basis_cubic": {
+    "equations": 9,
+    "unknowns": 6,
+    "rhs_coordinates": 17,
+    "rank": 6,
+    "distinct_triples_only_rank": 2
+  },
+  "bad_pencil": {
+    "forms": [
+      "v+x",
+      "v+y-u"
+    ],
+    "common_point": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "quotient_dimensions_0_to_4": [
+      1,
+      3,
+      2,
+      1,
+      1
+    ],
+    "cubic_rank": 5,
+    "cubic_cokernel": 1
+  },
+  "abstract_good_coefficient_ranks_by_characteristic": {
+    "2": 6,
+    "3": 6,
+    "5": 6,
+    "17": 6
+  },
+  "parent_demo_certificate_countercontrol": {
+    "conjugation": "diag(1,-1,-1,1)",
+    "demo_certify_accepts": true,
+    "named_beta_basis_relations_hold": false,
+    "written_strong_certificate_accepts": false
+  },
+  "genus41_counts_only": {
+    "equations": 36162,
+    "unknowns": 1722,
+    "rhs": 212,
+    "dense_coefficients": 62270964,
+    "dense_augmented_entries": 69937308,
+    "streamed_pivot_augmented_entries": 3330348
+  },
+  "native_backend_implemented": false
+}

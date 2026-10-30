@@ -1,0 +1,152 @@
+{
+  "basis_only_countercontrol": {
+    "basis_responses_identical": true,
+    "prime": 5,
+    "projective_maps_different": true,
+    "scope": "finite-module ambiguity, not independently instantiated curve maps",
+    "sum_line_responses_separate": true
+  },
+  "contract": {
+    "cache_once_per_prime": true,
+    "coordinate_entries": "2*r^d",
+    "copies_reuse_same_tuple": true,
+    "extra_queries": "P0+Pj for every j>0; must be available from the original evaluator",
+    "global_consistency_is_a_promise": true,
+    "small_prime_only": true,
+    "weak_calls": "2d-1",
+    "weak_model": "arbitrary nonzero generator independently for each queried point"
+  },
+  "dependency_sha256": {
+    "cyclic-odd-degree-source-2026-10-25/controls_cyclic.py": "0aba9eca3bda5ba69a4c9537fc0f5bbd129605638429324fdfa9f63c6ee9a442",
+    "cyclic-odd-degree-source-2026-10-25/cyclic_source.py": "43e5897a63a24915bac95c19e55d41ebf22384c3e05d1d1f1ac5434f837aeaef",
+    "double-level-source-2026-10-25/DOUBLE_LEVEL_SOURCE.md": "af20f05d6a1c0ee7a88658d045ebc8b32d6ce4bf682c83a22fe3f7bf05fc5aac",
+    "double-level-source-2026-10-25/controls_double.py": "afba4b5c3e2858eb1bc0b9c83ad3981f2471310b9122b18a003672b97e9ad5bb",
+    "double-level-source-2026-10-25/double_level_source.py": "9e151dc9c63a46b800d61e5eabf81329a774d23b66f4315d9bf1ecbaf41f1704",
+    "double-level-source-2026-10-25/half_norm.py": "bc606315f51689167dcfa52fb959c8aaabd81069bb0d6b5e3eef0eaf1c77f4b2",
+    "double-level-source-2026-10-25/local_baseline.py": "04a9fbda9297c328aa890a357381ad1520c82169037d8feaba73c3453e36934e",
+    "elliptic-field-normalization-2026-10-25/FIELD_NORMALIZATION.md": "baba3dcccf47e7ce858c91014177d57de00ea1c1e0a06e146e1f20a94a218aef",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "kernel-output-2026-10-23/uniform_source_bound.py": "4e0ddcf408e7a7e585a233f5053dd4b1f44137e3d6433253244813bd14ff0119",
+    "native-membership-baseline-2026-10-25/NATIVE_MEMBERSHIP.md": "ee27f8b5e5ead8f1b5f79ace1f97e5fe12cb18eaafd5f2b1c14bc26f3869b2db",
+    "native-membership-baseline-2026-10-25/controls_membership.py": "7be424418e20aca0544130443976ea74ddee60daa0644231a4b482225c8aee08",
+    "native-membership-baseline-2026-10-25/native_membership.py": "c106830e6678475e936958c840629eaf2ee21f7f6e2692833015d7f30d9bd5d5",
+    "smooth-repolarization-2026-10-23/smooth_repolarization.py": "2955dd7b65007e1a996779bea4275cf095afc56d31653c50df5afbb3263fa91b",
+    "source-pullback-2026-10-23/pullback.py": "9352ddaa242473bfb4f048198f20059be97cb91fedc11702179209fdaac2ae1f"
+  },
+  "implementation_sha256": {
+    "HANDOFF.md": "bd321bf387b60074285f8caa37a9fe34302e5ee4b31b8dd15a4622492ec11aea",
+    "LARGE_PRIME_AUDIT.md": "d746de7b8798763fc9d353a6f6ba96c37f6a3e9ae430c5bfbd834a4b50d91f56",
+    "SOURCE_MANIFEST.md": "1fddc3e462da7fd293c5fd7014e5616d8e5375cba756d6a630e44ee520392503",
+    "calibration_controls.py": "72b8562ee5251380b4e0e60764634138eca308686792e7b24d99858f9b5da838",
+    "projective_calibration.py": "307ce56f0b01a754462b3f30137accb1e4f41f9e03397359cf6b8b8de0878e07",
+    "replay_calibration.py": "4cf66ad133911e17d4f2e9939fe780c991ca0d1e076990fe48fafd9b547a6313",
+    "test_projective_calibration.py": "a87b1ec85b3956dd68d820a3db9af9dbb4c2f5ab0fb594e3bb0a2dc1dd0bf9ab"
+  },
+  "primary_pdf_sha256": "554c6a9f0f49cc13a59e38bf20a351a797137938dce18bd546a9ecf47a656402",
+  "quaternion_controls": [
+    {
+      "actual_curve_points_generated": false,
+      "bridge_mask": 2,
+      "calibrated_conjugation_correct": true,
+      "coordinate_table_entries": 18,
+      "degree": 2,
+      "doubled_copy_shares_one_mask": true,
+      "independent_column_masks": [
+        1,
+        2
+      ],
+      "naive_conjugation_wrong": true,
+      "prime": 3,
+      "supplied_map_control": true,
+      "unknown_isogeny_recovered": false,
+      "weak_point_calls": 3
+    },
+    {
+      "actual_curve_points_generated": false,
+      "bridge_mask": 4,
+      "calibrated_conjugation_correct": true,
+      "coordinate_table_entries": 50,
+      "degree": 2,
+      "doubled_copy_shares_one_mask": true,
+      "independent_column_masks": [
+        1,
+        2
+      ],
+      "naive_conjugation_wrong": true,
+      "prime": 5,
+      "supplied_map_control": true,
+      "unknown_isogeny_recovered": false,
+      "weak_point_calls": 3
+    },
+    {
+      "actual_curve_points_generated": false,
+      "bridge_mask": 6,
+      "calibrated_conjugation_correct": true,
+      "coordinate_table_entries": 98,
+      "degree": 2,
+      "doubled_copy_shares_one_mask": true,
+      "independent_column_masks": [
+        1,
+        2
+      ],
+      "naive_conjugation_wrong": true,
+      "prime": 7,
+      "supplied_map_control": true,
+      "unknown_isogeny_recovered": false,
+      "weak_point_calls": 3
+    },
+    {
+      "actual_curve_points_generated": false,
+      "bridge_mask": 12,
+      "calibrated_conjugation_correct": true,
+      "coordinate_table_entries": 338,
+      "degree": 2,
+      "doubled_copy_shares_one_mask": true,
+      "independent_column_masks": [
+        1,
+        2
+      ],
+      "naive_conjugation_wrong": true,
+      "prime": 13,
+      "supplied_map_control": true,
+      "unknown_isogeny_recovered": false,
+      "weak_point_calls": 3
+    },
+    {
+      "actual_curve_points_generated": false,
+      "bridge_mask": 16,
+      "calibrated_conjugation_correct": true,
+      "coordinate_table_entries": 578,
+      "degree": 2,
+      "doubled_copy_shares_one_mask": true,
+      "independent_column_masks": [
+        1,
+        2
+      ],
+      "naive_conjugation_wrong": true,
+      "prime": 17,
+      "supplied_map_control": true,
+      "unknown_isogeny_recovered": false,
+      "weak_point_calls": 3
+    }
+  ],
+  "scope_flags": {
+    "global_isogeny_promise_verified": false,
+    "independent_review": false,
+    "main_registry_integrated": false,
+    "native_curve_backend_executed": false,
+    "novelty_established": false,
+    "quantum_execution": false,
+    "speedup_established": false,
+    "unknown_isogeny_recovered": false,
+    "upstream_suborder_heuristics_removed": false
+  },
+  "status": "SMALL_PRIME_PROJECTIVE_CALIBRATION_WITH_SUPPLIED_MAP_CONTROLS",
+  "surface_control": {
+    "coordinate_table_entries": 162,
+    "dimension": 4,
+    "prime": 3,
+    "supplied_linear_map_only": true,
+    "weak_point_calls": 7
+  }
+}

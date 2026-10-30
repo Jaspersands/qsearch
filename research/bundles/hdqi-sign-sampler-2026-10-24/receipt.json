@@ -1,0 +1,280 @@
+{
+  "coherent_preparation_dequantized": false,
+  "controls": [
+    {
+      "failures": 0,
+      "histogram": {
+        "0": 29,
+        "1": 1,
+        "2": 1,
+        "5": 1
+      },
+      "m": 3,
+      "name": "commuting",
+      "plan": {
+        "cluster_exponent": null,
+        "delta": "1/16",
+        "epsilon": "1/8",
+        "exponent": "0",
+        "ideal_bias_bound": "1/33",
+        "ideal_failure_bound": "1/32",
+        "joint_precision_bound": "1/256",
+        "mass": "3",
+        "mass_exponent": "3/8",
+        "max_trials": 5,
+        "max_words": 165,
+        "ratio_bound_method": "commuting_exact",
+        "ratio_upper": 1,
+        "signs_per_trial": 33,
+        "site_tail": "1/145920"
+      },
+      "resources": {
+        "largest_probability_integer_bits": 34,
+        "max_total_letters_per_sample": 2475,
+        "max_word_letters": 15
+      },
+      "samples": 32,
+      "total_letters": 312,
+      "total_words": 1056
+    },
+    {
+      "failures": 0,
+      "histogram": {
+        "0": 30,
+        "1": 1,
+        "2": 1
+      },
+      "m": 2,
+      "name": "edge",
+      "plan": {
+        "cluster_exponent": null,
+        "delta": "1/16",
+        "epsilon": "1/8",
+        "exponent": "1/4",
+        "ideal_bias_bound": "1/33",
+        "ideal_failure_bound": "1/32",
+        "joint_precision_bound": "1/256",
+        "mass": "2",
+        "mass_exponent": "1/4",
+        "max_trials": 15,
+        "max_words": 1455,
+        "ratio_bound_method": "mass",
+        "ratio_upper": 3,
+        "signs_per_trial": 97,
+        "site_tail": "1/783360"
+      },
+      "resources": {
+        "largest_probability_integer_bits": 34,
+        "max_total_letters_per_sample": 14550,
+        "max_word_letters": 10
+      },
+      "samples": 32,
+      "total_letters": 647,
+      "total_words": 3201
+    },
+    {
+      "failures": 0,
+      "histogram": {
+        "0": 26,
+        "1": 2,
+        "2": 1,
+        "4": 3
+      },
+      "m": 3,
+      "name": "path",
+      "plan": {
+        "cluster_exponent": null,
+        "delta": "1/16",
+        "epsilon": "1/8",
+        "exponent": "3/8",
+        "ideal_bias_bound": "1/33",
+        "ideal_failure_bound": "1/32",
+        "joint_precision_bound": "1/256",
+        "mass": "3",
+        "mass_exponent": "3/8",
+        "max_trials": 15,
+        "max_words": 1455,
+        "ratio_bound_method": "mass",
+        "ratio_upper": 3,
+        "signs_per_trial": 97,
+        "site_tail": "1/1175040"
+      },
+      "resources": {
+        "largest_probability_integer_bits": 34,
+        "max_total_letters_per_sample": 21825,
+        "max_word_letters": 15
+      },
+      "samples": 32,
+      "total_letters": 1128,
+      "total_words": 3104
+    },
+    {
+      "failures": 0,
+      "histogram": {
+        "0": 23,
+        "1": 1,
+        "10": 1,
+        "2": 2,
+        "4": 4,
+        "8": 1
+      },
+      "m": 4,
+      "name": "frustrated_jordan_routes",
+      "plan": {
+        "cluster_exponent": null,
+        "delta": "1/16",
+        "epsilon": "1/8",
+        "exponent": "1/2",
+        "ideal_bias_bound": "1/33",
+        "ideal_failure_bound": "1/32",
+        "joint_precision_bound": "1/256",
+        "mass": "4",
+        "mass_exponent": "1/2",
+        "max_trials": 15,
+        "max_words": 1455,
+        "ratio_bound_method": "mass",
+        "ratio_upper": 3,
+        "signs_per_trial": 97,
+        "site_tail": "1/1566720"
+      },
+      "resources": {
+        "largest_probability_integer_bits": 34,
+        "max_total_letters_per_sample": 29100,
+        "max_word_letters": 20
+      },
+      "samples": 32,
+      "total_letters": 1722,
+      "total_words": 3104
+    }
+  ],
+  "degree_gap_proved": false,
+  "growing_degree_family_parameters_only": [
+    {
+      "N": 2,
+      "beta": "1/128",
+      "beta_degree": "1/8",
+      "cluster_exponent": "17/8056",
+      "degree": 16,
+      "exponent": "17/8056",
+      "input_constructed": false,
+      "m": 256,
+      "mass_exponent": "1/128",
+      "ratio_bound_method": "cluster",
+      "ratio_upper": 3
+    },
+    {
+      "N": 8,
+      "beta": "1/8192",
+      "beta_degree": "1/2",
+      "cluster_exponent": "8194/4190207",
+      "degree": 4096,
+      "exponent": "8194/4190207",
+      "input_constructed": false,
+      "m": 16777216,
+      "mass_exponent": "1/8",
+      "ratio_bound_method": "cluster",
+      "ratio_upper": 3
+    },
+    {
+      "N": 32,
+      "beta": "1/524288",
+      "beta_degree": "2",
+      "cluster_exponent": "33554464/17178820607",
+      "degree": 1048576,
+      "exponent": "33554464/17178820607",
+      "input_constructed": false,
+      "m": 1099511627776,
+      "mass_exponent": "2",
+      "ratio_bound_method": "cluster",
+      "ratio_upper": 3
+    },
+    {
+      "N": 128,
+      "beta": "1/33554432",
+      "beta_degree": "8",
+      "cluster_exponent": "137438953984/70368475742207",
+      "degree": 268435456,
+      "exponent": "137438953984/70368475742207",
+      "input_constructed": false,
+      "m": 72057594037927936,
+      "mass_exponent": "32",
+      "ratio_bound_method": "cluster",
+      "ratio_upper": 3
+    }
+  ],
+  "hashes": {
+    "HANDOFF.md": "e1905e0e92b8dab3b421fc5c21bdac9711671b6fb98c7d07f97ec22e37823d38",
+    "SIGN_SAMPLER.md": "84f76da8bbc550aea2fb523ee82a729d204b6484701a7ca27923b130e979e483",
+    "sign_sampler.py": "7c267615bf27a2c942f42a5981e208eaec70002dc7b9dd18b84fc49985a47286",
+    "test_sign_sampler.py": "c4bc656637120206c13530f15179b4f902724b9a32c094e2aa8ebb1f4ba1f1df"
+  },
+  "large_explicit_input_run": {
+    "amplitude_oracle_used": false,
+    "degree": 8,
+    "edges": 512,
+    "failures": 0,
+    "letters": 3185,
+    "m": 128,
+    "occupied_counts": [
+      0,
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      3,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "plan": {
+      "cluster_exponent": null,
+      "delta": "1/16",
+      "epsilon": "1/8",
+      "exponent": "1",
+      "ideal_bias_bound": "1/33",
+      "ideal_failure_bound": "1/32",
+      "joint_precision_bound": "1/256",
+      "mass": "128",
+      "mass_exponent": "1",
+      "max_trials": 15,
+      "max_words": 1455,
+      "ratio_bound_method": "mass",
+      "ratio_upper": 3,
+      "signs_per_trial": 97,
+      "site_tail": "1/50135040"
+    },
+    "resources": {
+      "largest_probability_integer_bits": 54,
+      "max_total_letters_per_sample": 931200,
+      "max_word_letters": 640
+    },
+    "samples": 32,
+    "statevector_constructed": false,
+    "words": 3104
+  },
+  "sampler_bit_probabilities": "rational_integer",
+  "status": "local_unreviewed_sampling_comparator"
+}

@@ -1,0 +1,134 @@
+{
+  "scope": "Exact finite-group/probability controls only; no curve sampler or pairing implementation.",
+  "relation_batches": [
+    {
+      "rank": 1,
+      "rows": 8,
+      "exact_failure": "6561/65536",
+      "union_bound": "6561/65536"
+    },
+    {
+      "rank": 2,
+      "rows": 12,
+      "exact_failure": "3021032879/34359738368",
+      "union_bound": "1594323/16777216"
+    },
+    {
+      "rank": 3,
+      "rows": 16,
+      "exact_failure": "146126746722008705/2305843009213693952",
+      "union_bound": "301327047/4294967296"
+    }
+  ],
+  "kernel_basis_verification": {
+    "row_sequences": 16,
+    "exact_certificates": 6,
+    "rejections": 10
+  },
+  "generation": [
+    {
+      "moduli": [
+        16
+      ],
+      "order": 16,
+      "support": 2,
+      "total_variation_from_uniform": "7/8",
+      "max_mod2_bias": "1/2",
+      "minimum_reachable_proper_subgroup_escape": "1/4",
+      "expected_outer_proposals_exact": "4",
+      "bound_4s": 16,
+      "reachable_subgroups": 2
+    },
+    {
+      "moduli": [
+        8,
+        4
+      ],
+      "order": 32,
+      "support": 4,
+      "total_variation_from_uniform": "7/8",
+      "max_mod2_bias": "1/2",
+      "minimum_reachable_proper_subgroup_escape": "1/4",
+      "expected_outer_proposals_exact": "20/3",
+      "bound_4s": 20,
+      "reachable_subgroups": 5
+    },
+    {
+      "moduli": [
+        8,
+        4,
+        2
+      ],
+      "order": 64,
+      "support": 8,
+      "total_variation_from_uniform": "7/8",
+      "max_mod2_bias": "1/2",
+      "minimum_reachable_proper_subgroup_escape": "1/4",
+      "expected_outer_proposals_exact": "188/21",
+      "bound_4s": 24,
+      "reachable_subgroups": 16
+    },
+    {
+      "moduli": [
+        2,
+        2,
+        2
+      ],
+      "order": 8,
+      "support": 8,
+      "total_variation_from_uniform": "7/16",
+      "max_mod2_bias": "1/2",
+      "minimum_reachable_proper_subgroup_escape": "1/4",
+      "expected_outer_proposals_exact": "188/21",
+      "bound_4s": 12,
+      "reachable_subgroups": 16
+    }
+  ],
+  "correlated_reuse_countercontrols": {
+    "rank1_failure_reusing_one_half_atom_sample_any_positive_rows": "3/4",
+    "rank2_failure_reusing_one_sample_any_positive_rows": "1",
+    "independent_rank1_eight_row_failure": "6561/65536"
+  },
+  "prime_degree_inequality_checks": [
+    {
+      "g": 1,
+      "n": 1
+    },
+    {
+      "g": 6,
+      "n": 1
+    },
+    {
+      "g": 41,
+      "n": 2
+    },
+    {
+      "g": 81,
+      "n": 2
+    },
+    {
+      "g": 161,
+      "n": 2
+    },
+    {
+      "g": 321,
+      "n": 2
+    },
+    {
+      "g": 641,
+      "n": 2
+    },
+    {
+      "g": 10000,
+      "n": 3
+    },
+    {
+      "g": 100000000,
+      "n": 4
+    },
+    {
+      "g": 10000000000000000,
+      "n": 8
+    }
+  ]
+}

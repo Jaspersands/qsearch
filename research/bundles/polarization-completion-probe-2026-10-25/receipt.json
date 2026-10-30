@@ -1,0 +1,131 @@
+{
+  "controls": [
+    {
+      "a_max": 8,
+      "all_polarized_decompositions_searched": false,
+      "characteristic": 23,
+      "forms_tested": 46,
+      "found": false,
+      "global_nonexistence_claim": false,
+      "native_geometric_decomposition": false,
+      "norm_enumeration": {
+        "coefficient_box": 525,
+        "full_order_advice_used": true,
+        "norm_bound": 8,
+        "retained_elements": 59
+      },
+      "order_unit_count": 2,
+      "orientation": "half Frobenius",
+      "search_scope": "free original-E factors within the stated finite form box",
+      "speedup_claim": false,
+      "supplied_order_control": true
+    },
+    {
+      "a_max": 8,
+      "all_polarized_decompositions_searched": false,
+      "characteristic": 47,
+      "forms_tested": 76,
+      "found": false,
+      "global_nonexistence_claim": false,
+      "native_geometric_decomposition": false,
+      "norm_enumeration": {
+        "coefficient_box": 175,
+        "full_order_advice_used": true,
+        "norm_bound": 8,
+        "retained_elements": 29
+      },
+      "order_unit_count": 2,
+      "orientation": "twisted Frobenius",
+      "search_scope": "free original-E factors within the stated finite form box",
+      "speedup_claim": false,
+      "supplied_order_control": true
+    },
+    {
+      "a_max": 16,
+      "all_polarized_decompositions_searched": false,
+      "characteristic": 47,
+      "forms_tested": 256,
+      "found": false,
+      "global_nonexistence_claim": false,
+      "native_geometric_decomposition": false,
+      "norm_enumeration": {
+        "coefficient_box": 1323,
+        "full_order_advice_used": true,
+        "norm_bound": 16,
+        "retained_elements": 115
+      },
+      "order_unit_count": 2,
+      "orientation": "twisted Frobenius",
+      "search_scope": "free original-E factors within the stated finite form box",
+      "speedup_claim": false,
+      "supplied_order_control": true
+    }
+  ],
+  "conversion_algebra": {
+    "D": 30,
+    "checks": {
+      "C_C_adjoint": true,
+      "C_E": true,
+      "C_adjoint_C": true,
+      "E_C": true,
+      "E_adjoint_H_E": true,
+      "coin_identity": true,
+      "four_square_witnesses": true
+    },
+    "coin_x": 3,
+    "coin_y": 34,
+    "multiplier": 900,
+    "native_geometry_executed": false,
+    "trace": 26
+  },
+  "dependency_sha256": {
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "one-endomorphism-access-audit-2026-10-25/ACCESS_CEILING.md": "ed6c3724f291e535805e8f52a93df815c2e06f614e333656409d8a7930c79b62",
+    "ppav-source-2026-10-23/2026-1142.pdf": "4504310844c227e0d49c8c628b03e9942894f14fcd6f5881dc5c0122ed645318",
+    "smooth-repolarization-2026-10-23/SMOOTH_REPOLARIZATION.md": "f02bd8c86d0e9c2d32c4156ee20d01761c1e4628b448aae263b26e216e7a5d87",
+    "smooth-repolarization-2026-10-23/smooth_repolarization.py": "2955dd7b65007e1a996779bea4275cf095afc56d31653c50df5afbb3263fa91b"
+  },
+  "easy_fixture_exclusion": "extra-automorphism fixture is already an easy classical case",
+  "implementation_sha256": {
+    "HANDOFF.md": "0cbd57177d9aabbf0c73ed57563d43c5d2208b171ce708af64df02bb41b65d8e",
+    "POLARIZATION_COMPLETION.md": "82fe5d300df674138eba1e625d55c6ac4f4c05456489f7e31698eb9453afe791",
+    "polarization_probe.py": "9d7d6b2db8422b1f17c0cb9fff867a17c4e1c904e62e4aac4c5cd163b78bdc59",
+    "replay_polarization_probe.py": "18721d80c3799dceb1f9283f96a354d93ae4ea5eb538b63b6f5f5ab15a72e340",
+    "test_polarization_probe.py": "765b9cbdf24ff74889ac967102613b3a7fc37259128f8540eb2a8a49efe9bd7d"
+  },
+  "negative_records": [
+    {
+      "classification": "classical competitor polynomial in bound value, not its bit length",
+      "id": "NEG-POLARIZATION-SMALL-TRACE",
+      "scope": "outside-K orthogonal projector implies degree<=trace(H)^2 noncommuting map"
+    },
+    {
+      "classification": "does not cover arbitrary elliptic factors",
+      "id": "NEG-POLARIZATION-FREE-FACTOR-SMALL-A",
+      "scope": "norm-one original-E-factor witness with beta in K implies degree<=a map"
+    },
+    {
+      "classification": "all decomposition projectors stay in the known algebra",
+      "id": "NEG-POLARIZATION-SCALAR-FROBENIUS-TWO",
+      "scope": "E/F_p, K=Q(pi), pi scalar on E[2], any height/copy count"
+    },
+    {
+      "classification": "copying creates no new primitive polarized factors",
+      "id": "NEG-POLARIZATION-STABILIZATION-FACTORS",
+      "scope": "powers of an indecomposable polarized surface"
+    }
+  ],
+  "proof_status": "written deductions; independent review pending; finite controls not proofs",
+  "scope_flags": {
+    "global_nonexistence": false,
+    "independent_review": false,
+    "main_registry_integrated": false,
+    "native_degree_enumerator_executed": false,
+    "native_geometry_executed": false,
+    "native_hardness_established": false,
+    "novelty_established": false,
+    "speedup_established": false,
+    "unknown_map_recovered": false
+  },
+  "status": "CONDITIONAL_CLASSICAL_COMPLETION_WITH_SCOPED_FALSIFIERS"
+}

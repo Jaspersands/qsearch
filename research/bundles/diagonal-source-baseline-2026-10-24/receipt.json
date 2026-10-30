@@ -1,0 +1,99 @@
+{
+  "accepted_speedup_candidate": false,
+  "classical_group_theorem_dependency": "Luks Theorem 3.2(6); defining-characteristic affine p-group",
+  "classical_luks_backend_implemented": false,
+  "dependency_sha256": {
+    "hdqi-gap-baseline-2026-10-24/GAP_AND_BASELINE.md": "15a942d29c74cd9ba7142a33941fcaf044b06ba029118c3cfe420d18ae80c714",
+    "rees-coarse-spectrum-2026-10-24/COARSE_SPECTRUM.md": "9d8db746b1d5a0a2399a75fadcbccd3b4633fb31b7f0fa8967a4d4d2a45f45b1",
+    "rees-coarse-spectrum-2026-10-24/receipt.json": "f973c633df9cb7efc081714c25333e8f418bf00903955d4a25630ca707b5974c"
+  },
+  "large_rank_resource_ledger_not_execution": {
+    "ambient_basis_not_enumerated": true,
+    "failure_probability": "1/1024",
+    "frequency_error": "1/8454144",
+    "group_backend_executed": false,
+    "logarithm_upper": 18,
+    "no_minimum_weight_or_weight_separation": true,
+    "orbit_gap": "1/32",
+    "quantum_speedup_claim": false,
+    "rank_cap": 128,
+    "rank_gap_diagonality_iid_are_unverified_promises": true,
+    "sample_count": 643252956954624,
+    "trace_norm_loss_upper": "1/256"
+  },
+  "non_diagonal_quantum_source_dequantized": false,
+  "novelty_established": false,
+  "ordinary_samples_only": true,
+  "quantum_algorithm_executed": false,
+  "sha256": {
+    "DIAGONAL_BASELINE.md": "ce826fe19cdb639ba9c96c1c156fc9badcc0a2c1687cb742e30c33850864e093",
+    "HANDOFF.md": "fb4095c22accd0c59995ddd5ce7661d3c5f7de8093d2572f317417c56c7bf086",
+    "diagonal_source.py": "4a8af3a2e21f3c7e347ab3dfd0797092f23a692e54129ecfd9d45ba4bc056829",
+    "run_audit.py": "34f619b16a8f3b4c80ecd4a9b5ac00005f1fcc8aad079cd55010234af8d07c39",
+    "test_diagonal_source.py": "8423870e5ac942fa70d9cf400dda1ae408a2683902f38a1306ce7cdadcf22cf3"
+  },
+  "source_sample_control": {
+    "coarsening_trace_norm_loss": "877/98304",
+    "finite_group_enumeration_not_scalable_solver": true,
+    "group_order": 125,
+    "hidden_order": 5,
+    "histogram": [
+      {
+        "count": 98195,
+        "point": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "count": 98413,
+        "point": [
+          0,
+          0,
+          2
+        ]
+      }
+    ],
+    "minimum_outside_tv": "1606938044258990275541962092341162602522202993782792835301375/1606938044258990275541962092341162602522202993782792835301376",
+    "minimum_true_weight_reference_only": "1/1606938044258990275541962092341162602522202993782792835301376",
+    "normal_core_order": 1,
+    "observed_max_frequency_error_reference_only": "5345344446540220337953914430700278432462162058176410681347/9641628265553941653251772554046975615133217962696757011808256",
+    "planned_samples": 196608,
+    "same_original_rounded_encoded_subgroup": true,
+    "sample_calls": 196608,
+    "source_stage_group_backend_executed": false,
+    "status": "SEEDED_CLASSICAL_SAMPLE_CONTROL_NOT_ASYMPTOTIC_PROOF",
+    "subgroup_labels_reference_only": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "trace_norm_loss_bound": "3/32",
+    "unequal_heavy_weight_difference_reference_only": "1/766247770432944429179173513575154591809369561091801088",
+    "uniform_frequency_event_verified_in_reference": true
+  },
+  "status": "SCOPED_CLASSICAL_BASELINE_REVIEW_PENDING"
+}

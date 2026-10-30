@@ -1,0 +1,458 @@
+{
+  "status": "published-bound application with local derivation; independent review pending",
+  "primary_source": "https://pages.uoregon.edu/kantor/PAPERS/gkfinal.pdf",
+  "source_locator": "Section 3.2 pp753-754; Lemma 3.14 pp756-758",
+  "assumptions": [
+    "odd effective finite field",
+    "Witt rank at least three",
+    "full maximal-singular stabilizer",
+    "random opaque injective coset names",
+    "uniform hidden space in one known component"
+  ],
+  "quantum_algorithm_executed": false,
+  "natural_source_hardness_established": false,
+  "novelty_established": false,
+  "finite_controls": [
+    {
+      "rank": 3,
+      "prime": 3,
+      "spaces_exhausted": 80,
+      "component_sizes": [
+        40,
+        40
+      ],
+      "controls": {
+        "levi_root": {
+          "fixed_in_components": [
+            13,
+            13
+          ],
+          "ratios": [
+            "13/40",
+            "13/40"
+          ]
+        },
+        "upper_root": {
+          "fixed_in_components": [
+            13,
+            13
+          ],
+          "ratios": [
+            "13/40",
+            "13/40"
+          ]
+        },
+        "lower_root": {
+          "fixed_in_components": [
+            13,
+            13
+          ],
+          "ratios": [
+            "13/40",
+            "13/40"
+          ]
+        },
+        "semisimple": {
+          "fixed_in_components": [
+            8,
+            8
+          ],
+          "ratios": [
+            "1/5",
+            "1/5"
+          ]
+        },
+        "component_switch": {
+          "fixed_in_components": [
+            0,
+            0
+          ],
+          "ratios": [
+            "0",
+            "0"
+          ]
+        },
+        "two_switches": {
+          "fixed_in_components": [
+            0,
+            0
+          ],
+          "ratios": [
+            "0",
+            "0"
+          ]
+        },
+        "mixed": {
+          "fixed_in_components": [
+            2,
+            2
+          ],
+          "ratios": [
+            "1/20",
+            "1/20"
+          ]
+        }
+      },
+      "entire_group_exhausted": false,
+      "bound": "7/9"
+    },
+    {
+      "rank": 3,
+      "prime": 5,
+      "spaces_exhausted": 312,
+      "component_sizes": [
+        156,
+        156
+      ],
+      "controls": {
+        "levi_root": {
+          "fixed_in_components": [
+            31,
+            31
+          ],
+          "ratios": [
+            "31/156",
+            "31/156"
+          ]
+        },
+        "upper_root": {
+          "fixed_in_components": [
+            31,
+            31
+          ],
+          "ratios": [
+            "31/156",
+            "31/156"
+          ]
+        },
+        "lower_root": {
+          "fixed_in_components": [
+            31,
+            31
+          ],
+          "ratios": [
+            "31/156",
+            "31/156"
+          ]
+        },
+        "semisimple": {
+          "fixed_in_components": [
+            12,
+            12
+          ],
+          "ratios": [
+            "1/13",
+            "1/13"
+          ]
+        },
+        "component_switch": {
+          "fixed_in_components": [
+            0,
+            0
+          ],
+          "ratios": [
+            "0",
+            "0"
+          ]
+        },
+        "two_switches": {
+          "fixed_in_components": [
+            12,
+            12
+          ],
+          "ratios": [
+            "1/13",
+            "1/13"
+          ]
+        },
+        "mixed": {
+          "fixed_in_components": [
+            2,
+            2
+          ],
+          "ratios": [
+            "1/78",
+            "1/78"
+          ]
+        }
+      },
+      "entire_group_exhausted": false,
+      "bound": "11/25"
+    },
+    {
+      "rank": 4,
+      "prime": 3,
+      "spaces_exhausted": 2240,
+      "component_sizes": [
+        1120,
+        1120
+      ],
+      "controls": {
+        "levi_root": {
+          "fixed_in_components": [
+            148,
+            148
+          ],
+          "ratios": [
+            "37/280",
+            "37/280"
+          ]
+        },
+        "upper_root": {
+          "fixed_in_components": [
+            148,
+            148
+          ],
+          "ratios": [
+            "37/280",
+            "37/280"
+          ]
+        },
+        "lower_root": {
+          "fixed_in_components": [
+            148,
+            148
+          ],
+          "ratios": [
+            "37/280",
+            "37/280"
+          ]
+        },
+        "semisimple": {
+          "fixed_in_components": [
+            80,
+            80
+          ],
+          "ratios": [
+            "1/14",
+            "1/14"
+          ]
+        },
+        "component_switch": {
+          "fixed_in_components": [
+            0,
+            0
+          ],
+          "ratios": [
+            "0",
+            "0"
+          ]
+        },
+        "two_switches": {
+          "fixed_in_components": [
+            0,
+            0
+          ],
+          "ratios": [
+            "0",
+            "0"
+          ]
+        },
+        "mixed": {
+          "fixed_in_components": [
+            8,
+            8
+          ],
+          "ratios": [
+            "1/140",
+            "1/140"
+          ]
+        }
+      },
+      "entire_group_exhausted": false,
+      "bound": "7/27"
+    }
+  ],
+  "scaling_deductions": [
+    {
+      "rank": 8,
+      "field_order": 3,
+      "classical_queries_necessary_for_two_thirds": 21,
+      "fixed_point_bound": "7/2187",
+      "root_fixed_point_ratio": "2917/1597240",
+      "proposed_quantum_query_schedule": {
+        "witt_rank": 8,
+        "prime": 3,
+        "total_error_target": "1/1099511627776",
+        "trial_cap": 72,
+        "abelian_hsp_call_cap": 216,
+        "fourier_samples_per_probe": 45,
+        "total_fourier_instruments": 9720,
+        "original_oracle_query_cap": 13825,
+        "geometry_failure_bound": "4722366482869645213696/22528399544939174411840147874772641",
+        "all_rank_failure_bound": "4/22876792454961",
+        "error_per_complete_fourier_instrument": "1/42749012087930880",
+        "global_classical_sampling_error_allowance": "1/4398046511104",
+        "source_cost_per_fourier_sample": 1,
+        "independent_proof_review_completed": false,
+        "compiled_gate_count": null,
+        "dense_reference_cost_is_this_budget": false
+      },
+      "deduced_not_measured": true
+    },
+    {
+      "rank": 16,
+      "field_order": 3,
+      "classical_queries_necessary_for_two_thirds": 1654,
+      "fixed_point_bound": "7/14348907",
+      "root_fixed_point_ratio": "19131877/68630396496760",
+      "proposed_quantum_query_schedule": {
+        "witt_rank": 16,
+        "prime": 3,
+        "total_error_target": "1/1099511627776",
+        "trial_cap": 72,
+        "abelian_hsp_call_cap": 216,
+        "fourier_samples_per_probe": 61,
+        "total_fourier_instruments": 13176,
+        "original_oracle_query_cap": 30529,
+        "geometry_failure_bound": "4722366482869645213696/22528399544939174411840147874772641",
+        "all_rank_failure_bound": "4/22876792454961",
+        "error_per_complete_fourier_instrument": "1/57948660830306304",
+        "global_classical_sampling_error_allowance": "1/4398046511104",
+        "source_cost_per_fourier_sample": 1,
+        "independent_proof_review_completed": false,
+        "compiled_gate_count": null,
+        "dense_reference_cost_is_this_budget": false
+      },
+      "deduced_not_measured": true
+    },
+    {
+      "rank": 32,
+      "field_order": 3,
+      "classical_queries_necessary_for_two_thirds": 10846755,
+      "fixed_point_bound": "7/617673396283947",
+      "root_fixed_point_ratio": "823564528378597/127173474825649434107411678200",
+      "proposed_quantum_query_schedule": {
+        "witt_rank": 32,
+        "prime": 3,
+        "total_error_target": "1/1099511627776",
+        "trial_cap": 72,
+        "abelian_hsp_call_cap": 216,
+        "fourier_samples_per_probe": 93,
+        "total_fourier_instruments": 20088,
+        "original_oracle_query_cap": 91585,
+        "geometry_failure_bound": "4722366482869645213696/22528399544939174411840147874772641",
+        "all_rank_failure_bound": "4/22876792454961",
+        "error_per_complete_fourier_instrument": "1/88347958315057152",
+        "global_classical_sampling_error_allowance": "1/4398046511104",
+        "source_cost_per_fourier_sample": 1,
+        "independent_proof_review_completed": false,
+        "compiled_gate_count": null,
+        "dense_reference_cost_is_this_budget": false
+      },
+      "deduced_not_measured": true
+    },
+    {
+      "rank": 64,
+      "field_order": 3,
+      "classical_queries_necessary_for_two_thirds": 466917199436564,
+      "fixed_point_bound": "7/1144561273430837494885949696427",
+      "root_fixed_point_ratio": "1526081697907783326514599595237/436673502879206784130402698572360106352656360818212418450680",
+      "proposed_quantum_query_schedule": {
+        "witt_rank": 64,
+        "prime": 3,
+        "total_error_target": "1/1099511627776",
+        "trial_cap": 72,
+        "abelian_hsp_call_cap": 216,
+        "fourier_samples_per_probe": 157,
+        "total_fourier_instruments": 33912,
+        "original_oracle_query_cap": 324289,
+        "geometry_failure_bound": "4722366482869645213696/22528399544939174411840147874772641",
+        "all_rank_failure_bound": "4/22876792454961",
+        "error_per_complete_fourier_instrument": "1/149146553284558848",
+        "global_classical_sampling_error_allowance": "1/4398046511104",
+        "source_cost_per_fourier_sample": 1,
+        "independent_proof_review_completed": false,
+        "compiled_gate_count": null,
+        "dense_reference_cost_is_this_budget": false
+      },
+      "deduced_not_measured": true
+    },
+    {
+      "rank": 128,
+      "field_order": 3,
+      "classical_queries_necessary_for_two_thirds": 865206997078113045268181796729,
+      "fixed_point_bound": "7/3930061525912861057173624287137506221892737197425280369698987",
+      "root_fixed_point_ratio": "5240082034550481409564832382850008295856982929900373826265317/5148461199153508620923695807024492707934031511427005110800183922675963166398684970054670596456799913346324920394155874040",
+      "proposed_quantum_query_schedule": {
+        "witt_rank": 128,
+        "prime": 3,
+        "total_error_target": "1/1099511627776",
+        "trial_cap": 72,
+        "abelian_hsp_call_cap": 216,
+        "fourier_samples_per_probe": 285,
+        "total_fourier_instruments": 61560,
+        "original_oracle_query_cap": 1232065,
+        "geometry_failure_bound": "4722366482869645213696/22528399544939174411840147874772641",
+        "all_rank_failure_bound": "4/22876792454961",
+        "error_per_complete_fourier_instrument": "1/270743743223562240",
+        "global_classical_sampling_error_allowance": "1/4398046511104",
+        "source_cost_per_fourier_sample": 1,
+        "independent_proof_review_completed": false,
+        "compiled_gate_count": null,
+        "dense_reference_cost_is_this_budget": false
+      },
+      "deduced_not_measured": true
+    },
+    {
+      "rank": 8,
+      "field_order": 127,
+      "classical_queries_necessary_for_two_thirds": 1669216,
+      "fixed_point_bound": "255/532875860165503",
+      "root_fixed_point_ratio": "537071733080193/2235879388560574134272853760",
+      "proposed_quantum_query_schedule": {
+        "witt_rank": 8,
+        "prime": 127,
+        "total_error_target": "1/1099511627776",
+        "trial_cap": 72,
+        "abelian_hsp_call_cap": 216,
+        "fourier_samples_per_probe": 21,
+        "total_fourier_instruments": 4536,
+        "original_oracle_query_cap": 8641,
+        "geometry_failure_bound": "4722366482869645213696/22528399544939174411840147874772641",
+        "all_rank_failure_bound": "12/3730131021158521",
+        "error_per_complete_fourier_instrument": "1/19949538974367744",
+        "global_classical_sampling_error_allowance": "1/4398046511104",
+        "source_cost_per_fourier_sample": 1,
+        "independent_proof_review_completed": false,
+        "compiled_gate_count": null,
+        "dense_reference_cost_is_this_budget": false
+      },
+      "deduced_not_measured": true
+    },
+    {
+      "rank": 8,
+      "field_order": 170141183460469231731687303715884105727,
+      "classical_queries_necessary_for_two_thirds": 4021450417631145937248315841170548149238979809786737247532247070662535731402254529006606125034279549101066325672183,
+      "fixed_point_bound": "340282366920938463463374607431768211455/4127301024497384737127654569660285988258688068311809351842773407720303646746185158177060685391221232634285204116680697489363632366268799144123064264320010118610823049176977807251026846291734445362989709458428280962099849143684332826703347146391060930103291084804194303",
+      "root_fixed_point_ratio": "4127301024497384737127654569660285988282946163504007928954476212227530249171218544578704908336773701052373445629000425813108823702013652413429138943355469527928709717837849785912087196662885634455215419797090605732792943376505679754543086496149076272234425260747784193/100120461139116270424863257857365052511732350708322651236986304249267315665490912617756902353435249686996891764887367810840638974049365183919073070239550244283483263680159630503173530212715139025778916746684466460624915860009193765323877564022704698376227813507720616477184056588554724746417894183722090130911143224124778747323310873211470633412923875345697091892724378960733943015455533140467022927560431617023419053847898074314122917242213819341547395740362411222653265591127147943109574849986560",
+      "proposed_quantum_query_schedule": {
+        "witt_rank": 8,
+        "prime": 170141183460469231731687303715884105727,
+        "total_error_target": "1/1099511627776",
+        "trial_cap": 72,
+        "abelian_hsp_call_cap": 216,
+        "fourier_samples_per_probe": 14,
+        "total_fourier_instruments": 3024,
+        "original_oracle_query_cap": 7129,
+        "geometry_failure_bound": "4722366482869645213696/22528399544939174411840147874772641",
+        "all_rank_failure_bound": "4/3150762656675356143179394513257113069",
+        "error_per_complete_fourier_instrument": "1/13299692649578496",
+        "global_classical_sampling_error_allowance": "1/4398046511104",
+        "source_cost_per_fourier_sample": 1,
+        "independent_proof_review_completed": false,
+        "compiled_gate_count": null,
+        "dense_reference_cost_is_this_budget": false
+      },
+      "deduced_not_measured": true
+    }
+  ],
+  "source_hashes": {
+    "orthogonal-rank-bound-2026-10-23/rank_bound.py": "eb801d440d537e6b13f8257b868f47c0f9f8aadb3c59ce5bfb98da33f0e43ace",
+    "orthogonal-rank-bound-2026-10-23/test_rank_bound.py": "4559888b53a5ce740d0d40e014b29b89e6bc62afd36a7c02cdf938b1f69daff1",
+    "orthogonal-rank-bound-2026-10-23/replay.py": "d5be662e62faf0c7df6bf5029b9c3bcfd0f70719803e7e519d4c667a67b33674",
+    "orthogonal-rank-bound-2026-10-23/RANK_DEPENDENT_COMPARISON.md": "871eba8ed62bcb4f2469994f11e7be76a61b0d2e91c0b4838bfc98b2b49ee930",
+    "orthogonal-three-probe-2026-10-23/orthogonal_probe.py": "f942edc2f1c2e7ed316d3600e27ff64605123d85c60538a457ac2ea3ba33c35a",
+    "central-rank-2026-10-23/central_rank.py": "02e102da115ffc7eabd42e4bdf3eebac62d4fec68fe5a88db958caf767cd162e"
+  }
+}

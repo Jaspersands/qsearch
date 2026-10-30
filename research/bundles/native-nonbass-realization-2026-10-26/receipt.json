@@ -1,0 +1,80 @@
+{
+  "controls": [
+    {
+      "all_ambient_orders_supplied": true,
+      "input_index": 27,
+      "output_controls": [
+        {
+          "algebraic_maximality_checks_pass": true,
+          "candidate": "wrong_abstract_center",
+          "contained_in_supplied_target_order": false
+        },
+        {
+          "algebraic_maximality_checks_pass": true,
+          "candidate": "supplied_actual_neighbor",
+          "contained_in_supplied_target_order": true
+        }
+      ],
+      "prime": 3,
+      "source_constructed_in_suborder_coordinates": true
+    },
+    {
+      "all_ambient_orders_supplied": true,
+      "input_index": 125,
+      "output_controls": [
+        {
+          "algebraic_maximality_checks_pass": true,
+          "candidate": "wrong_abstract_center",
+          "contained_in_supplied_target_order": false
+        },
+        {
+          "algebraic_maximality_checks_pass": true,
+          "candidate": "supplied_actual_neighbor",
+          "contained_in_supplied_target_order": true
+        }
+      ],
+      "prime": 5,
+      "source_constructed_in_suborder_coordinates": true
+    },
+    {
+      "all_ambient_orders_supplied": true,
+      "input_index": 4913,
+      "output_controls": [
+        {
+          "algebraic_maximality_checks_pass": true,
+          "candidate": "wrong_abstract_center",
+          "contained_in_supplied_target_order": false
+        },
+        {
+          "algebraic_maximality_checks_pass": true,
+          "candidate": "supplied_actual_neighbor",
+          "contained_in_supplied_target_order": true
+        }
+      ],
+      "prime": 17,
+      "source_constructed_in_suborder_coordinates": true
+    }
+  ],
+  "execution_scope": {
+    "exact_supplied_order_and_suborder_source_arithmetic": true,
+    "independent_review": false,
+    "native_geometric_hiding_labels": false,
+    "native_hardness_or_quantum_advantage": false,
+    "native_output_division": false,
+    "native_phi_or_dual_construction": false,
+    "unknown_native_ring_recovery": false
+  },
+  "hashes": {
+    "additive-framed-source-2026-10-26/additive_source.py": "0c486867c6ccd378589a1278262e0f0efe49585562b143517a0cac046fc65982",
+    "additive-framed-source-2026-10-26/receipt.json": "57725d72e078ec35bd3460c66439e5475c427c450880a0aa2dd12194a1f67bb9",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "local-order-scope-2026-10-26/receipt.json": "d7b8b158fe7371ab352404e912e791c2cd3a54ff43dba4de59141cdb0c651f40",
+    "native-nonbass-realization-2026-10-26/REALIZATION.md": "31acba9cfa5002cc7ad9d04ff3735bacbc3f0d91a95b91b9f9e47f0cdd4dd9ba",
+    "native-nonbass-realization-2026-10-26/native_realization.py": "188946f5cad85e7ee947234576802ec888b0ae2ea18676c5c6885ca228c6f46d",
+    "native-nonbass-realization-2026-10-26/replay_realization.py": "a6468bb11f2d9276b350758a472e4f4cc3ff23880d9429ccb25fcee1be284cbc",
+    "native-nonbass-realization-2026-10-26/test_realization.py": "f56e949b2889bc6e035ce4ec5805942c078ea744922ad8ebe4489a3ef8984a10",
+    "ppav-source-2026-10-23/2026-1142.pdf": "4504310844c227e0d49c8c628b03e9942894f14fcd6f5881dc5c0122ed645318"
+  },
+  "schema": "native-nonbass-realization-controls-v1",
+  "status": "proposed native reduction plus verified supplied-order false positives"
+}

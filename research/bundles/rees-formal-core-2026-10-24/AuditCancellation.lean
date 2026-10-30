@@ -1,0 +1,30 @@
+import ReesCancellation
+
+#print axioms QSearch.ReesCancellation.decomposition_spec
+#print axioms QSearch.ReesCancellation.action_difference
+#print axioms QSearch.ReesCancellation.hiddenCenter_preserved
+#print axioms QSearch.ReesCancellation.central_range_normal
+#print axioms QSearch.ReesCancellation.hiddenCenter_quotient
+#print axioms QSearch.ReesCancellation.quotientRelation_iff
+#print axioms QSearch.ReesCancellation.zero_scale_discard
+#print axioms QSearch.ReesCancellation.character_sum
+#print axioms QSearch.ReesCancellation.moment_cancels
+#print axioms QSearch.ReesCancellation.mem_hiddenSubgroup
+#print axioms QSearch.ReesCancellation.highestEmbed_injective
+#print axioms QSearch.ReesCancellation.highestEmbed_central
+#print axioms QSearch.ReesCancellation.publicDilation_hidden
+#print axioms QSearch.ReesCancellation.publicDilation_center
+#print axioms QSearch.ReesCancellation.rees_instrument
+#print axioms QSearch.ReesCancellation.inHiddenCenter
+#print axioms QSearch.ReesCancellation.quotientRelation
+#print axioms QSearch.ReesCancellation.decomposition
+#print axioms QSearch.ReesCancellation.controlledAction
+#print axioms QSearch.ReesCancellation.centralAction
+#print axioms QSearch.ReesCancellation.automorphismCertificate
+#print axioms QSearch.ReesCancellation.linearCharacter
+#print axioms QSearch.ReesCancellation.scalarEquiv
+#print axioms QSearch.ReesCancellation.scaleEquiv
+#print axioms QSearch.ReesCancellation.hiddenSubgroup
+#print axioms QSearch.ReesCancellation.highestEmbed
+#print axioms QSearch.ReesCancellation.publicDilation
+#print axioms QSearch.ReesCancellation.reesCertificate

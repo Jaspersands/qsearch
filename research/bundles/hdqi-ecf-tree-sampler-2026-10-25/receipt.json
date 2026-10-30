@@ -1,0 +1,1157 @@
+{
+  "cases": {
+    "binary-tree-line-graph": {
+      "bags": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          6,
+          7
+        ],
+        [
+          3,
+          8,
+          9
+        ],
+        [
+          4,
+          10,
+          11
+        ],
+        [
+          5,
+          12,
+          13
+        ],
+        [
+          6,
+          14,
+          15
+        ],
+        [
+          7,
+          16,
+          17
+        ],
+        [
+          8,
+          18,
+          19
+        ],
+        [
+          9,
+          20,
+          21
+        ],
+        [
+          10,
+          22,
+          23
+        ],
+        [
+          11,
+          24,
+          25
+        ],
+        [
+          12,
+          26,
+          27
+        ],
+        [
+          13,
+          28,
+          29
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ],
+        [
+          16
+        ],
+        [
+          17
+        ],
+        [
+          18
+        ],
+        [
+          19
+        ],
+        [
+          20
+        ],
+        [
+          21
+        ],
+        [
+          22
+        ],
+        [
+          23
+        ],
+        [
+          24
+        ],
+        [
+          25
+        ],
+        [
+          26
+        ],
+        [
+          27
+        ],
+        [
+          28
+        ],
+        [
+          29
+        ]
+      ],
+      "bases": [
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z"
+      ],
+      "conditional_thermal_plan": {
+        "bag_independence_bound": 1,
+        "beta": "1",
+        "complex_factors_compiled": false,
+        "conditional_on_ecf_transfer_identity": true,
+        "conditional_thermal_squared_vector_error_upper": "8609434275063916095591335019394246338318347242787202498086932526884971393723667504106891232509570697878070379933962781400193297173099633717382355656859148154497143885317233192595496889476484090788513005810203292123625143068936288877549221345033184147966476767651226390667/534547956274386023593936974014298944897428834597019595262740138589739503812100987077631611707228444674677979871066027496565409096792563083446364871397272160940375746586829411910319250332042962035548914142609456557304334756204522379913397045183357704445370472967624664306640625000",
+        "ecf_graph_verified": false,
+        "error": "1/100",
+        "factors_upper": 828,
+        "full_thermal_sampler_executed": false,
+        "max_independent_subsets_per_bag": 4,
+        "max_pair_states_log2_upper": 3312,
+        "mode_count_upper": 30,
+        "polynomial_classical_sampler_claim": false,
+        "quantum_advantage_claim": false,
+        "scalar_summary": {
+          "constant_error_upper": "35035688385550941946058346867826876763566780791644079/120924077485907141853170423648658766581717034611699104957171",
+          "denominator_positive_on_real_axis": true,
+          "effective_pole_count": 262143,
+          "factor_roots_compiled": false,
+          "full_sampler_executed": false,
+          "geometric_error_upper": "188286357654/11920928955078125",
+          "groups": 18,
+          "max_x": "55/6",
+          "order": 23,
+          "pi_squared_quarter": {
+            "hi": "74122754901072544086103676482018591088037593138176/30040820494562999066066743107020700565338134765625",
+            "lo": "386957160069105687693159583062418030107500154171135669124/156827917907824074994619998867702927312734161920166015625",
+            "machin_terms": 4,
+            "midpoint": "241848295114567825910108631530705004470941123490521376490658/98017448692390046871637499292314329570458851200103759765625",
+            "relative_error_upper": "35035688385550941946058346867826876763566780791644079/120924112521595527404112369707005634408593798178479896601250"
+          },
+          "requested_error": "1/12000",
+          "tail_error_upper": "359397311872096838529337497405152541758349121067047119140625/50718973361656477042912521552830269307618946771691199949361851812",
+          "transfer_degree_upper": 828,
+          "uniform_error_upper": "1694051777550292399915911763695225497477485867013947614983649449302168882256382334955124051354213794625132496454894720537603357115565083/73112786588556862609094045574210404360013066361956701003541562340813099726343507286847467129238189398528257368943804606722021102905273437500"
+        },
+        "scope": "conditional ECF full-native-word thermal sampling bound",
+        "vertices": 30
+      },
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2",
+        "-1/3",
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2",
+        "-1/3",
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2",
+        "-1/3",
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2",
+        "-1/3",
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2",
+        "-1/3"
+      ],
+      "direct_all_output_check": false,
+      "graph_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          17
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          8,
+          19
+        ],
+        [
+          9,
+          20
+        ],
+        [
+          9,
+          21
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          22
+        ],
+        [
+          10,
+          23
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          11,
+          25
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          26
+        ],
+        [
+          12,
+          27
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          13,
+          29
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          28,
+          29
+        ]
+      ],
+      "norm_squared": "760250839741060129221762090429002267552258724093868159769899380643518309724262329/1028078509451292451413705978733839275874307753328638520146728350025000000000000000",
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "resource_record": {
+        "bag_independence_bound": 1,
+        "bags": 31,
+        "ecf_recognition_performed": false,
+        "edges": 43,
+        "factor_count": 2,
+        "max_bag_pair_states": 256,
+        "replicas": 4,
+        "state_enumeration_is_exponential_in_factors": true,
+        "thermal_approximation_certified": false,
+        "total_bag_pair_states_per_contraction": 3921,
+        "vertices": 30
+      },
+      "sample_probabilities": [
+        "3259734901706099863461573723809552982505301688570625323271727009447307774259669521/6227974879158764578584675044794386575788103467776967964835015726231701993261156999168000",
+        "353968943339283139295740774732676604019565933092896604157624609902709394414877857/249118995166350583143387001791775463031524138711078718593400629049268079730446279966720"
+      ],
+      "samples": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "tree_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          9,
+          19
+        ],
+        [
+          9,
+          20
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          10,
+          22
+        ],
+        [
+          11,
+          23
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          12,
+          25
+        ],
+        [
+          12,
+          26
+        ],
+        [
+          13,
+          27
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          14,
+          29
+        ],
+        [
+          14,
+          30
+        ]
+      ]
+    },
+    "branching-cliques": {
+      "bags": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "bases": [
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z"
+      ],
+      "conditional_thermal_plan": {
+        "bag_independence_bound": 2,
+        "beta": "1",
+        "complex_factors_compiled": false,
+        "conditional_on_ecf_transfer_identity": true,
+        "conditional_thermal_squared_vector_error_upper": "6610270555964401828217497334413207751839190958695174044385501260687224648371286130302807186386745168298198423067289276326488803062332095558596853844677608266932266397495996694201784253117908284484120766660723/99713293629941701062740749285540411185544776897711397123118557615097156089295905194771804565157560677515291151969547821238607519105564079566087791856844785407711454488156258047661586691465345211327075958251953125000",
+        "ecf_graph_verified": false,
+        "error": "1/100",
+        "factors_upper": 560,
+        "full_thermal_sampler_executed": false,
+        "max_independent_subsets_per_bag": 4,
+        "max_pair_states_log2_upper": 2240,
+        "mode_count_upper": 6,
+        "polynomial_classical_sampler_claim": false,
+        "quantum_advantage_claim": false,
+        "scalar_summary": {
+          "constant_error_upper": "6817740272623789601842036862063849293439/732069349662222233104044103797009329523866883",
+          "denominator_positive_on_real_axis": true,
+          "effective_pole_count": 16383,
+          "factor_roots_compiled": false,
+          "full_sampler_executed": false,
+          "geometric_error_upper": "6973568802/95367431640625",
+          "groups": 14,
+          "max_x": "11/6",
+          "order": 20,
+          "pi_squared_quarter": {
+            "hi": "58567184230643208357827970392607641685739776/23735956933975702965781130356164504150390625",
+            "lo": "448739872883335824715713657958202884/181867522321972597149477838134765625",
+            "machin_terms": 3,
+            "midpoint": "1464165970285534961366495575741466914444907522/593398923349392574144528258904112603759765625",
+            "relative_error_upper": "6817740272623789601842036862063849293439/732076167402494856893645945833871393373160322"
+          },
+          "requested_error": "1/2400",
+          "tail_error_upper": "1305477631368663663117962169589047728271484375/57568077619686663611007873047002996142144873949996",
+          "transfer_degree_upper": 560,
+          "uniform_error_upper": "46940638242942549591941528815303208009850657829284453980903430365361025706147482177468004211108448064329/446572040392010437970779938543664888368297119290043634782081897789394032816466771902469024472427368164062500"
+        },
+        "scope": "conditional ECF full-native-word thermal sampling bound",
+        "vertices": 6
+      },
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2",
+        "-1/3"
+      ],
+      "direct_all_output_check": true,
+      "graph_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "norm_squared": "54001572987801311524/57686723155300640625",
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "resource_record": {
+        "bag_independence_bound": 2,
+        "bags": 4,
+        "ecf_recognition_performed": false,
+        "edges": 6,
+        "factor_count": 2,
+        "max_bag_pair_states": 256,
+        "replicas": 4,
+        "state_enumeration_is_exponential_in_factors": true,
+        "thermal_approximation_certified": false,
+        "total_bag_pair_states_per_contraction": 499,
+        "vertices": 6
+      },
+      "sample_probabilities": [
+        "56535633918036813033/3456100671219283937536",
+        "312129726725972806201/1728050335609641968768"
+      ],
+      "samples": [
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "tree_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "non-line-path-power": {
+      "bags": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          4,
+          5,
+          6
+        ]
+      ],
+      "bases": [
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X"
+      ],
+      "conditional_thermal_plan": {
+        "bag_independence_bound": 2,
+        "beta": "1",
+        "complex_factors_compiled": false,
+        "conditional_on_ecf_transfer_identity": true,
+        "conditional_thermal_squared_vector_error_upper": "4323098879090225945899665293633029479710018356621341083722004262136898857215296280548555494118501794212590117306578010952831406931759518759986064601185080995914487045650792271202122041672786674394492301873703/49856646814970850531370374642770205592772388448855698561559278807548578044647952597385902282578780338757645575984773910619303759552782039783043895928422392703855727244078129023830793345732672605663537979125976562500",
+        "ecf_graph_verified": false,
+        "error": "1/100",
+        "factors_upper": 560,
+        "full_thermal_sampler_executed": false,
+        "max_independent_subsets_per_bag": 4,
+        "max_pair_states_log2_upper": 2240,
+        "mode_count_upper": 7,
+        "polynomial_classical_sampler_claim": false,
+        "quantum_advantage_claim": false,
+        "scalar_summary": {
+          "constant_error_upper": "6817740272623789601842036862063849293439/732069349662222233104044103797009329523866883",
+          "denominator_positive_on_real_axis": true,
+          "effective_pole_count": 16383,
+          "factor_roots_compiled": false,
+          "full_sampler_executed": false,
+          "geometric_error_upper": "6973568802/95367431640625",
+          "groups": 14,
+          "max_x": "7/3",
+          "order": 20,
+          "pi_squared_quarter": {
+            "hi": "58567184230643208357827970392607641685739776/23735956933975702965781130356164504150390625",
+            "lo": "448739872883335824715713657958202884/181867522321972597149477838134765625",
+            "machin_terms": 3,
+            "midpoint": "1464165970285534961366495575741466914444907522/593398923349392574144528258904112603759765625",
+            "relative_error_upper": "6817740272623789601842036862063849293439/732076167402494856893645945833871393373160322"
+          },
+          "requested_error": "1/2800",
+          "tail_error_upper": "830758492689149603802339562465757645263671875/28784038809843331805503936523501498071072436974998",
+          "transfer_degree_upper": 560,
+          "uniform_error_upper": "24851268662902233484838299309669968337794548511233254237640491005332336273888122127969743005593896883727/223286020196005218985389969271832444184148559645021817391040948894697016408233385951234512236213684082031250"
+        },
+        "scope": "conditional ECF full-native-word thermal sampling bound",
+        "vertices": 7
+      },
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2",
+        "-1/3",
+        "1"
+      ],
+      "direct_all_output_check": true,
+      "graph_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "norm_squared": "371464091635241323673/410216697993249000000",
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "resource_record": {
+        "bag_independence_bound": 2,
+        "bags": 5,
+        "ecf_recognition_performed": false,
+        "edges": 11,
+        "factor_count": 2,
+        "max_bag_pair_states": 256,
+        "replicas": 4,
+        "state_enumeration_is_exponential_in_factors": true,
+        "thermal_approximation_certified": false,
+        "total_bag_pair_states_per_contraction": 1280,
+        "vertices": 7
+      },
+      "sample_probabilities": [
+        "5820086411956620648/371464091635241323673",
+        "5282255479766572125/2971712733081930589384"
+      ],
+      "samples": [
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "tree_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    "odd-cycle": {
+      "bags": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ]
+      ],
+      "bases": [
+        "X",
+        "Z",
+        "X",
+        "Z",
+        "X"
+      ],
+      "conditional_thermal_plan": {
+        "bag_independence_bound": 2,
+        "beta": "1",
+        "complex_factors_compiled": false,
+        "conditional_on_ecf_transfer_identity": true,
+        "conditional_thermal_squared_vector_error_upper": "370474083418430549123503122591893653776351439099057569900912389121552838890229736471795295034921854033607270620882243376312306423987262904101973380820708502536225173804411950171702536121722103368804157678449/2492375868619595477096601639888500485696979339748846044316502941629692554794375401268280810420559539062705976062436309639857365605630663991295020658642922857205155861461966672982306158694264013320207595825195312500",
+        "ecf_graph_verified": false,
+        "error": "1/100",
+        "factors_upper": 494,
+        "full_thermal_sampler_executed": false,
+        "max_independent_subsets_per_bag": 6,
+        "max_pair_states_log2_upper": 2964,
+        "mode_count_upper": 5,
+        "polynomial_classical_sampler_claim": false,
+        "quantum_advantage_claim": false,
+        "scalar_summary": {
+          "constant_error_upper": "6817740272623789601842036862063849293439/732069349662222233104044103797009329523866883",
+          "denominator_positive_on_real_axis": true,
+          "effective_pole_count": 8191,
+          "factor_roots_compiled": false,
+          "full_sampler_executed": false,
+          "geometric_error_upper": "2324522934/19073486328125",
+          "groups": 13,
+          "max_x": "5/3",
+          "order": 19,
+          "pi_squared_quarter": {
+            "hi": "58567184230643208357827970392607641685739776/23735956933975702965781130356164504150390625",
+            "lo": "448739872883335824715713657958202884/181867522321972597149477838134765625",
+            "machin_terms": 3,
+            "midpoint": "1464165970285534961366495575741466914444907522/593398923349392574144528258904112603759765625",
+            "relative_error_upper": "6817740272623789601842036862063849293439/732076167402494856893645945833871393373160322"
+          },
+          "requested_error": "1/2000",
+          "tail_error_upper": "2966994616746962870722641294520563018798828125/71953508277742044606433692078662908576566090353646",
+          "transfer_degree_upper": 494,
+          "uniform_error_upper": "19247703328408575331594392620885323994000251326595905645386229134350977964762091570776783684592061834393/111632787939287700051874655475107195732657944622160915326801214217733307669258998787339311611213684082031250"
+        },
+        "scope": "conditional ECF full-native-word thermal sampling bound",
+        "vertices": 5
+      },
+      "couplings": [
+        "1",
+        "-1/2",
+        "1/3",
+        "-1",
+        "1/2"
+      ],
+      "direct_all_output_check": true,
+      "graph_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "norm_squared": "3835799365852393/4134207084840000",
+      "parameters": [
+        [
+          "1/3",
+          "1/7"
+        ],
+        [
+          "-1/5",
+          "2/9"
+        ]
+      ],
+      "resource_record": {
+        "bag_independence_bound": 2,
+        "bags": 3,
+        "ecf_recognition_performed": false,
+        "edges": 5,
+        "factor_count": 2,
+        "max_bag_pair_states": 1296,
+        "replicas": 4,
+        "state_enumeration_is_exponential_in_factors": true,
+        "thermal_approximation_certified": false,
+        "total_bag_pair_states_per_contraction": 2546,
+        "vertices": 5
+      },
+      "sample_probabilities": [
+        "2113009943545/26614392824648",
+        "4981385788441/26614392824648"
+      ],
+      "samples": [
+        [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tree_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  },
+  "claim_status": "exact finite-product executable; unreviewed general thermal upper-bound argument",
+  "context_sha256": {
+    "hdqi-rational-transfer-2026-10-25/RATIONAL_TRANSFER.md": "8c29ca44500cc29a0ed9b7dbf034d8bfec199d7b7e3d7c56c5dd524fd9dc533b",
+    "hdqi-rational-transfer-2026-10-25/rational_thermal.py": "0f4bc1fd1f5571f4ae9af4236c3ad8261b1b783520285570070797517de5662a",
+    "hdqi-transfer-word-sampler-2026-10-25/word_sampler.py": "19fe00b798f4047d317692081eb1bfaf66dbc6f6fc666ce3aed3d41c8efca80d"
+  },
+  "full_thermal_sampler_executed": false,
+  "independent_review_performed": false,
+  "quantum_advantage_claim": false,
+  "schema": "signed-ecf-tree-sampling-v1",
+  "source_sha256": {
+    "ECF_TREE_SAMPLING.md": "0090cf282b582084cc5083f3ae6d5348ccbded3683725943a394e8251f5416ea",
+    "replay.py": "572fc7e87a49f12e4f7ad01f5bf49d4651d1b98faef6f92b8293eeb2e2f70a3c",
+    "test_tree_sampler.py": "02729ed9d9d8e22ab02777a7bc0741161e35c7eadaf3a1dbfc9e9c43f221c1d5",
+    "thermal_scope.py": "c67dfa752922616a01e30b0a872330cc91b3a75f0869e2072221abad1f64f3a1",
+    "tree_controls.py": "e6e479cb05e4d0cafd67eb96ac89bd0f82581715a9686fb3e5be3a3b74d676d3",
+    "tree_sampler.py": "b01379307afe8a1b38b1163f4cd9039da65be72069c15d98ca50f8c23e633bc4"
+  }
+}

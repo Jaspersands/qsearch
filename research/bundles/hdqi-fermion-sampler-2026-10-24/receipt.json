@@ -1,0 +1,277 @@
+{
+  "algorithmic_cost": "exp(O(cycle_rank))*poly(root size, precision)",
+  "classical_algorithm": "exact rational DPP proposal with coherent-flux rejection",
+  "conditional_precision_bound_example": {
+    "assumed_certified_entry_and_scale_error": "1/1099511627776",
+    "assumption_certified_by_frontend": false,
+    "cycle_rank": 2,
+    "tv_bound": "29/536870912",
+    "vertices": 8
+  },
+  "finite_controls": [
+    {
+      "beta": 0.8,
+      "cycle_rank": 0,
+      "flux_sectors": 1,
+      "name": "branching_tree",
+      "native_error_certified": false,
+      "native_generators": 5,
+      "rational_backend": {
+        "accepted_mass": "1",
+        "all_dpp_branches_exact": true,
+        "envelope_holds_exactly": true,
+        "expected_trials": 1,
+        "incoherent_shortcut_tv": 0.0,
+        "proposal_normalized_exactly": true,
+        "target_normalized_exactly": true
+      },
+      "root_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "root_vertices": 6,
+      "signed_state_l2_error_float_control": 8.540372714812562e-13
+    },
+    {
+      "beta": 0.8,
+      "cycle_rank": 1,
+      "flux_sectors": 2,
+      "name": "four_cycle",
+      "native_error_certified": false,
+      "native_generators": 4,
+      "rational_backend": {
+        "accepted_mass": "1/2",
+        "all_dpp_branches_exact": true,
+        "envelope_holds_exactly": true,
+        "expected_trials": 2,
+        "incoherent_shortcut_tv": 0.48768564764373296,
+        "proposal_normalized_exactly": true,
+        "target_normalized_exactly": true
+      },
+      "root_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "root_vertices": 4,
+      "signed_state_l2_error_float_control": 2.8480345228365693e-13
+    },
+    {
+      "beta": 1.2,
+      "cycle_rank": 2,
+      "flux_sectors": 4,
+      "name": "two_cycles",
+      "native_error_certified": false,
+      "native_generators": 5,
+      "rational_backend": {
+        "accepted_mass": "1/4",
+        "all_dpp_branches_exact": true,
+        "envelope_holds_exactly": true,
+        "expected_trials": 4,
+        "incoherent_shortcut_tv": 0.7321253820333741,
+        "proposal_normalized_exactly": true,
+        "target_normalized_exactly": true
+      },
+      "root_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "root_vertices": 4,
+      "signed_state_l2_error_float_control": 5.493893945571341e-13
+    },
+    {
+      "beta": 0.8,
+      "cycle_rank": 0,
+      "flux_sectors": 1,
+      "name": "disconnected_with_isolate",
+      "native_error_certified": false,
+      "native_generators": 3,
+      "rational_backend": {
+        "accepted_mass": "1",
+        "all_dpp_branches_exact": true,
+        "envelope_holds_exactly": true,
+        "expected_trials": 1,
+        "incoherent_shortcut_tv": 0.0,
+        "proposal_normalized_exactly": true,
+        "target_normalized_exactly": true
+      },
+      "root_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "root_vertices": 6,
+      "signed_state_l2_error_float_control": 4.5069072606929285e-14
+    }
+  ],
+  "forest_cost": "polynomial; all proposals accepted",
+  "generic_degree_gap_resolved": false,
+  "independent_review": false,
+  "native_error_certified": false,
+  "next_blocker": "clean coherent flux amplitudes for extensive cycle rank; matched classical attacks",
+  "novelty_claim": false,
+  "quantum_execution": false,
+  "quantum_speedup_claim": false,
+  "scalable_backend_runs": [
+    {
+      "cycle_rank": 0,
+      "exact_for_rational_surrogate": true,
+      "matrix_dimension": 32,
+      "native_error_certified": false,
+      "native_generators": 31,
+      "native_hilbert_dimension_not_constructed": "2147483648",
+      "quantization_bits": 16,
+      "root_vertices": 32,
+      "samples": [
+        {
+          "trials": 1,
+          "word": 4202496
+        },
+        {
+          "trials": 1,
+          "word": 4
+        },
+        {
+          "trials": 1,
+          "word": 0
+        }
+      ]
+    },
+    {
+      "cycle_rank": 0,
+      "exact_for_rational_surrogate": true,
+      "matrix_dimension": 64,
+      "native_error_certified": false,
+      "native_generators": 63,
+      "native_hilbert_dimension_not_constructed": "9223372036854775808",
+      "quantization_bits": 16,
+      "root_vertices": 64,
+      "samples": [
+        {
+          "trials": 1,
+          "word": 279173005312
+        },
+        {
+          "trials": 1,
+          "word": 4398046511104
+        },
+        {
+          "trials": 1,
+          "word": 18014398509481984
+        }
+      ]
+    },
+    {
+      "cycle_rank": 0,
+      "exact_for_rational_surrogate": true,
+      "matrix_dimension": 128,
+      "native_error_certified": false,
+      "native_generators": 127,
+      "native_hilbert_dimension_not_constructed": "170141183460469231731687303715884105728",
+      "quantization_bits": 16,
+      "root_vertices": 128,
+      "samples": [
+        {
+          "trials": 1,
+          "word": 162259276829287159375072107429888
+        },
+        {
+          "trials": 1,
+          "word": 1370928649737076141778860356208164864
+        },
+        {
+          "trials": 1,
+          "word": 633825300187901677043189841920
+        }
+      ]
+    }
+  ],
+  "scope": "full canonical HDQI word sampling from a supplied line-graph root",
+  "single_sector_trace_falsifier": {
+    "native_trace": 0,
+    "nonempty_native_word": 15,
+    "root": "four_cycle",
+    "zero_flux_image_majorana_subset": 0,
+    "zero_flux_image_phase_power_of_i": 2,
+    "zero_flux_trace": -1
+  },
+  "source_hashes": {
+    "hdqi-fermion-sampler-2026-10-24/FERMION_SAMPLER.md": "a25564e9827d71f1f5549acb28888568486aedc92e978e3870bb436fc3890f9a",
+    "hdqi-fermion-sampler-2026-10-24/HANDOFF.md": "44274cac393ea13e2cdfe9b0a3be9849a7f82d615acf0b5f1a1c2829e5ebbdad",
+    "hdqi-fermion-sampler-2026-10-24/audit_controls.py": "58d32f59223505222678defd82d2526875d630f6ff4c2863b1bf34e5334f3d2b",
+    "hdqi-fermion-sampler-2026-10-24/fermion_sampler.py": "6b146884c0c5137a9eaeeafd5b19040eeda0ed95133adf31486c8f78c1d0c8ff",
+    "hdqi-fermion-sampler-2026-10-24/replay.py": "9b3307f8eb023963a3926a34b4034d05895fd139d97c982efc7199a009438519",
+    "hdqi-fermion-sampler-2026-10-24/test_fermion_sampler.py": "e094e196e3c59719ee1e6505df29a24080a2b397e869ac48e2cc7c74a1d3be68",
+    "hdqi-parent-gap-2026-10-23/parent_gap.py": "ac5e1491f4c65993bdbdd8b06bb7b437fba5695fbcb56b9f095cb8f22af738d5"
+  },
+  "status": "LOCAL_UNREVIEWED_DERIVATION_AND_NUMERICAL_FRONTEND",
+  "symbolic_nonmass_family_not_executed": {
+    "beta_squared_mass": "1074790399/131264",
+    "beta_squared_mass_over_log_m": 393.74136536267537,
+    "beta_squared_times_d_plus_one": "1/64",
+    "cycle_rank": 0,
+    "generators": 1074790399,
+    "hubs": 1048576,
+    "leaves_per_hub": 1024,
+    "line_graph_max_degree_bound": 2050,
+    "root": "chain of hubs with private leaves"
+  }
+}

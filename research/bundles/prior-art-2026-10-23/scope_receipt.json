@@ -1,0 +1,196 @@
+{
+  "status": "STRUCTURAL_SCOPE_CONTROL_ONLY",
+  "matrix_convention": "I+N; zero-based indices; integer identities",
+  "parameter_family": "Five diagonal blocks of size m; prime p > 4",
+  "general_lower_central_dimensions": [
+    "10m^2",
+    "6m^2",
+    "3m^2",
+    "m^2",
+    "0"
+  ],
+  "general_derived_dimensions": [
+    "10m^2",
+    "6m^2",
+    "m^2",
+    "0"
+  ],
+  "checked_block_sizes": {
+    "1": {
+      "lower_central": [
+        10,
+        6,
+        3,
+        1,
+        0
+      ],
+      "derived": [
+        10,
+        6,
+        1,
+        0
+      ]
+    },
+    "2": {
+      "lower_central": [
+        40,
+        24,
+        12,
+        4,
+        0
+      ],
+      "derived": [
+        40,
+        24,
+        4,
+        0
+      ]
+    },
+    "3": {
+      "lower_central": [
+        90,
+        54,
+        27,
+        9,
+        0
+      ],
+      "derived": [
+        90,
+        54,
+        9,
+        0
+      ]
+    },
+    "5": {
+      "lower_central": [
+        250,
+        150,
+        75,
+        25,
+        0
+      ],
+      "derived": [
+        250,
+        150,
+        25,
+        0
+      ]
+    }
+  },
+  "integer_matrix_witnesses": {
+    "class_four_commutator": [
+      [
+        0,
+        4,
+        1
+      ]
+    ],
+    "derived_noncommuting_commutator": [
+      [
+        0,
+        4,
+        1
+      ]
+    ],
+    "AB_product": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ]
+    ],
+    "BA_product": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ]
+    ],
+    "subalgebra_basis": [
+      [
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          2,
+          4,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          4,
+          1
+        ]
+      ]
+    ],
+    "subalgebra_nonzero_bracket": [
+      [
+        0,
+        4,
+        1
+      ]
+    ],
+    "normality_obstruction": [
+      [
+        1,
+        4,
+        1
+      ]
+    ],
+    "degree_two_projection": [
+      [
+        2,
+        4,
+        1
+      ]
+    ]
+  },
+  "direct_scope_exclusions": [
+    "Nilpotency-class-at-most-two theorem",
+    "Abelian-by-cyclic ambient group theorems",
+    "Quasi-Hamiltonian ambient group theorem",
+    "Normal-subgroup-only recovery for the displayed nonnormal H"
+  ],
+  "regime_exclusion": "Bounded-prime result does not directly cover unbounded p",
+  "does_not_exclude": [
+    "A reduction to known algorithms",
+    "Other literature not located in this audit",
+    "An efficient classical algorithm for a supplied concrete source"
+  ],
+  "novelty_certified": false,
+  "natural_hard_source_found": false,
+  "quantum_algorithm_executed": false,
+  "speedup_admitted": false,
+  "source_sha256": {
+    "scope_witness.py": "c530239ff70a142a4ba8027b07a6c8b9a50f5ecbdbecdfdf1741f778d3fb050f",
+    "test_scope_witness.py": "6b5a4c4688af2d446e3891fbd7e86690816280afe8314fc805df3905d71bba40",
+    "replay.py": "5fa7bc30abc5367c4f50cd5f598926f0c4865689ed3e43e29570e4fd78a11a2b",
+    "PRIOR_ART_DECISION.md": "57b0ff4298af1d32925eb75758c659ee4bf473bb9cff6ec2d0726025f58861dd"
+  }
+}

@@ -1,0 +1,755 @@
+{
+  "collision_refusal": {
+    "decoder": {
+      "checked_words": 3,
+      "collision": {
+        "first": 1,
+        "second": 2,
+        "syndrome": 2
+      },
+      "failure_upper": null,
+      "required_words": 9,
+      "status": "LOW_WEIGHT_COLLISION",
+      "t": 1
+    },
+    "epsilon": "1/1000",
+    "hardness_from_refusal": false,
+    "ideal_canonical_pilot_assumed": true,
+    "independent_review": false,
+    "kernel": {
+      "checked_words": 127,
+      "kernel_dimension": 7,
+      "rank_B": 1,
+      "required_words": 127,
+      "status": "EXACT",
+      "weight_counts": {
+        "2": 28,
+        "4": 70,
+        "6": 28,
+        "8": 1
+      },
+      "weighted_sum": "7628545/16777216"
+    },
+    "pilot_preparation_implemented": false,
+    "quantum_advantage_claimed": false,
+    "status": "NO_CERTIFICATE",
+    "trace_distance_squared_upper": null
+  },
+  "correlated_sign_control": {
+    "changed_commutator_coefficient_on_X1X2Z1Z2": [
+      "0",
+      "-48/25"
+    ],
+    "cos_2theta": "3/5",
+    "one_independent_Pauli_sign_flip_breaks_commutation": true,
+    "original_grouped_terms_commute": true,
+    "sin_2theta": "4/5",
+    "this_is_an_identity_control_not_a_hardness_instance": true
+  },
+  "dense_repeated_controls": [
+    {
+      "actual_physical_decoder": {
+        "actual_TFD_infidelity": 0,
+        "actual_pair_trace_distance": 2.3592239273284576e-16,
+        "actual_physical_distance_to_maximally_mixed": 0.3807970779778824,
+        "actual_physical_trace_distance": 9.71445146547012e-17,
+        "coherent_bad_mass": 0.0,
+        "fixed_sign_infidelity_upper": 0.0,
+        "identity_errors": {
+          "good_norm": 2.220446049250313e-16,
+          "isometry_normalization": 2.220446049250313e-16,
+          "physical_target_identity": 2.2887833992611187e-16,
+          "unnormalized_error_identity": 0.0
+        },
+        "m": 1,
+        "max_bad_syndrome_fiber": 0,
+        "n": 1,
+        "pilot_decoding_failure": 0.0,
+        "quantum_algorithm_executed": false,
+        "sign_mask": 0,
+        "target_norm_ratio": 0.9999999999999998
+      },
+      "analytic_formula": {
+        "K": 1,
+        "actual_physical_trace_distance": 0.0,
+        "beta": 1.0,
+        "canonical_sign_ratio": 1,
+        "canonical_total_squared_mass": 1.0,
+        "coherent_bad_mass": 1.232595164407831e-32,
+        "floating_values_are_not_interval_certificates": true,
+        "large_pilot_built": false,
+        "physical_H_unchanged": "Z",
+        "pilot_decoding_failure": 0.0,
+        "target_norm_ratio": 0.9999999999999999
+      }
+    },
+    {
+      "actual_physical_decoder": {
+        "actual_TFD_infidelity": 0.06919672965102097,
+        "actual_pair_trace_distance": 0.16495394988102233,
+        "actual_physical_distance_to_maximally_mixed": 0.23105857863000498,
+        "actual_physical_trace_distance": 0.14973849934787747,
+        "coherent_bad_mass": 0.05659055801496307,
+        "fixed_sign_infidelity_upper": 0.11318111602992617,
+        "identity_errors": {
+          "good_norm": 2.220446049250313e-16,
+          "isometry_normalization": 2.220446049250313e-16,
+          "physical_target_identity": 1.6653345369377348e-16,
+          "unnormalized_error_identity": 2.7755575615628914e-17
+        },
+        "m": 2,
+        "max_bad_syndrome_fiber": 1,
+        "n": 1,
+        "pilot_decoding_failure": 0.05659055801496309,
+        "quantum_algorithm_executed": false,
+        "sign_mask": 0,
+        "target_norm_ratio": 1.2135522670340735
+      },
+      "analytic_formula": {
+        "K": 2,
+        "actual_physical_trace_distance": 0.14973849934787756,
+        "beta": 1.0,
+        "canonical_sign_ratio": 1,
+        "canonical_total_squared_mass": 0.5,
+        "coherent_bad_mass": 0.056590558014963044,
+        "floating_values_are_not_interval_certificates": true,
+        "large_pilot_built": false,
+        "physical_H_unchanged": "Z",
+        "pilot_decoding_failure": 0.05659055801496305,
+        "target_norm_ratio": 1.2135522670340726
+      }
+    },
+    {
+      "actual_physical_decoder": {
+        "actual_TFD_infidelity": 0.12041626537578165,
+        "actual_pair_trace_distance": 0.28392274767517367,
+        "actual_physical_distance_to_maximally_mixed": 0.12245933120185445,
+        "actual_physical_trace_distance": 0.258337746776028,
+        "coherent_bad_mass": 0.1444780416357399,
+        "fixed_sign_infidelity_upper": 0.18947043641108943,
+        "identity_errors": {
+          "good_norm": 1.1102230246251565e-16,
+          "isometry_normalization": 2.220446049250313e-16,
+          "physical_target_identity": 1.6653345369377348e-16,
+          "unnormalized_error_identity": 0.0
+        },
+        "m": 4,
+        "max_bad_syndrome_fiber": 7,
+        "n": 1,
+        "pilot_decoding_failure": 0.04499239477534953,
+        "quantum_algorithm_executed": false,
+        "sign_mask": 0,
+        "target_norm_ratio": 1.363509125525454
+      },
+      "analytic_formula": {
+        "K": 4,
+        "actual_physical_trace_distance": 0.25833774677602783,
+        "beta": 1.0,
+        "canonical_sign_ratio": 1,
+        "canonical_total_squared_mass": 0.25,
+        "coherent_bad_mass": 0.14447804163574005,
+        "floating_values_are_not_interval_certificates": true,
+        "large_pilot_built": false,
+        "physical_H_unchanged": "Z",
+        "pilot_decoding_failure": 0.04499239477534958,
+        "target_norm_ratio": 1.363509125525454
+      }
+    },
+    {
+      "actual_physical_decoder": {
+        "actual_TFD_infidelity": 0.14820207319003664,
+        "actual_pair_trace_distance": 0.3503765797616203,
+        "actual_physical_distance_to_maximally_mixed": 0.062176500885797986,
+        "actual_physical_trace_distance": 0.31862057709208447,
+        "coherent_bad_mass": 0.20858640055984107,
+        "fixed_sign_infidelity_upper": 0.23543899141022961,
+        "identity_errors": {
+          "good_norm": 4.440892098500626e-16,
+          "isometry_normalization": 1.3322676295501878e-15,
+          "physical_target_identity": 5.978733960281817e-16,
+          "unnormalized_error_identity": 1.942890293094024e-16
+        },
+        "m": 8,
+        "max_bad_syndrome_fiber": 127,
+        "n": 1,
+        "pilot_decoding_failure": 0.026852590850388543,
+        "quantum_algorithm_executed": false,
+        "sign_mask": 0,
+        "target_norm_ratio": 1.44982508182539
+      },
+      "analytic_formula": {
+        "K": 8,
+        "actual_physical_trace_distance": 0.3186205770920843,
+        "beta": 1.0,
+        "canonical_sign_ratio": 1,
+        "canonical_total_squared_mass": 0.125,
+        "coherent_bad_mass": 0.2085864005598416,
+        "floating_values_are_not_interval_certificates": true,
+        "large_pilot_built": false,
+        "physical_H_unchanged": "Z",
+        "pilot_decoding_failure": 0.026852590850388675,
+        "target_norm_ratio": 1.4498250818253895
+      }
+    }
+  ],
+  "kernel_budget_refusal": {
+    "decoder": {
+      "checked_words": 1,
+      "collision": null,
+      "failure_upper": "1/32",
+      "required_words": 1,
+      "status": "CERTIFIED_LOW_WEIGHT",
+      "t": 0,
+      "tail_moment_order": 1
+    },
+    "epsilon": "1/1000",
+    "hardness_from_refusal": false,
+    "ideal_canonical_pilot_assumed": true,
+    "independent_review": false,
+    "kernel": {
+      "checked_words": 0,
+      "kernel_dimension": 7,
+      "rank_B": 1,
+      "required_words": 127,
+      "status": "UNKNOWN_BUDGET",
+      "weight_counts": null,
+      "weighted_sum": null
+    },
+    "pilot_preparation_implemented": false,
+    "quantum_advantage_claimed": false,
+    "status": "NO_CERTIFICATE",
+    "trace_distance_squared_upper": null
+  },
+  "large_analytic_controls": [
+    {
+      "K": 16,
+      "actual_physical_trace_distance": 0.3495877046041262,
+      "beta": 1.0,
+      "canonical_sign_ratio": 1,
+      "canonical_total_squared_mass": 0.0625,
+      "coherent_bad_mass": 0.24625487600659007,
+      "floating_values_are_not_interval_certificates": true,
+      "large_pilot_built": false,
+      "physical_H_unchanged": "Z",
+      "pilot_decoding_failure": 0.014525243292787949,
+      "target_norm_ratio": 1.4956354315525424
+    },
+    {
+      "K": 256,
+      "actual_physical_trace_distance": 0.37884396291192923,
+      "beta": 1.0,
+      "canonical_sign_ratio": 1,
+      "canonical_total_squared_mass": 0.00390625,
+      "coherent_bad_mass": 0.28511416980584975,
+      "floating_values_are_not_interval_certificates": true,
+      "large_pilot_built": false,
+      "physical_H_unchanged": "Z",
+      "pilot_decoding_failure": 0.0009722705119956101,
+      "target_norm_ratio": 1.5400697543774817
+    },
+    {
+      "K": 65536,
+      "actual_physical_trace_distance": 0.3807894485833518,
+      "beta": 1.0,
+      "canonical_sign_ratio": 1,
+      "canonical_total_squared_mass": 1.52587890625e-05,
+      "coherent_bad_mass": 0.28781807042494045,
+      "floating_values_are_not_interval_certificates": true,
+      "large_pilot_built": false,
+      "physical_H_unchanged": "Z",
+      "pilot_decoding_failure": 3.81463178197872e-06,
+      "target_norm_ratio": 1.543068862089197
+    },
+    {
+      "K": 4294967296,
+      "actual_physical_trace_distance": 0.3807970778614671,
+      "beta": 1.0,
+      "canonical_sign_ratio": 1,
+      "canonical_total_squared_mass": 2.3283064365386963e-10,
+      "coherent_bad_mass": 0.28782870424021884,
+      "floating_values_are_not_interval_certificates": true,
+      "large_pilot_built": false,
+      "physical_H_unchanged": "Z",
+      "pilot_decoding_failure": 5.8207660898220814e-11,
+      "target_norm_ratio": 1.5430806346356054
+    }
+  ],
+  "negative_transfer_record": {
+    "falsified_claim": "Small canonical decoding failure alone certifies a specified fixed-sign Gibbs target",
+    "id": "NEG-HDQi-FIXED-SIGN-DILUTION-20261024",
+    "native_target": "H=Z at beta=1; K duplicate coefficients 1/K; actual parity decoder",
+    "published_random_sign_theorem_falsified": false,
+    "rational_certificate": {
+      "K": 65536,
+      "beta": "1",
+      "canonical_beta_squared_Jmax_squared_d_plus_one": "1/4294967296",
+      "canonical_beta_squared_mass": "1/65536",
+      "canonical_sign_ratio": "1",
+      "large_pilot_built": false,
+      "physical_trace_distance_strict_lower": "49151/131072",
+      "pilot_failure_upper": "65535/17179869184",
+      "random_sign_theorem_falsified": false,
+      "small_failure_does_not_certify_fixed_sign_Gibbs": true
+    }
+  },
+  "positive_ideal_transfer_certificate": {
+    "decoder": {
+      "checked_words": 2146,
+      "collision": null,
+      "failure_upper": "1365/8796093022208",
+      "required_words": 2146,
+      "status": "CERTIFIED_LOW_WEIGHT",
+      "t": 2,
+      "tail_moment_order": 3
+    },
+    "epsilon": "1/10000",
+    "hardness_from_refusal": false,
+    "ideal_canonical_pilot_assumed": true,
+    "independent_review": false,
+    "kernel": {
+      "checked_words": 1,
+      "kernel_dimension": 1,
+      "rank_B": 64,
+      "required_words": 1,
+      "status": "EXACT",
+      "weight_counts": {
+        "65": 1
+      },
+      "weighted_sum": "1/93035356709837681990313447409664580397266094167976711716030745495121828878514934185752454491361736391777602765602070775492429008462675968"
+    },
+    "pilot_preparation_implemented": false,
+    "quantum_advantage_claimed": false,
+    "status": "CERTIFIED_IDEAL_PILOT_TRANSFER",
+    "trace_distance_squared_upper": "28874924716758058802219660654871439019704716551879803658353459377586044961202079585644264712006763642142784141253020290729902081/93035356709837681990313447409664580397266094167976711716030745495121828878514934185752454491361736391777602765602070775492429008462675968"
+  },
+  "positive_input": {
+    "beta": "1/128",
+    "couplings": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "n": 32,
+    "paulis": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0
+      ],
+      [
+        16,
+        0,
+        0
+      ],
+      [
+        32,
+        0,
+        0
+      ],
+      [
+        64,
+        0,
+        0
+      ],
+      [
+        128,
+        0,
+        0
+      ],
+      [
+        256,
+        0,
+        0
+      ],
+      [
+        512,
+        0,
+        0
+      ],
+      [
+        1024,
+        0,
+        0
+      ],
+      [
+        2048,
+        0,
+        0
+      ],
+      [
+        4096,
+        0,
+        0
+      ],
+      [
+        8192,
+        0,
+        0
+      ],
+      [
+        16384,
+        0,
+        0
+      ],
+      [
+        32768,
+        0,
+        0
+      ],
+      [
+        65536,
+        0,
+        0
+      ],
+      [
+        131072,
+        0,
+        0
+      ],
+      [
+        262144,
+        0,
+        0
+      ],
+      [
+        524288,
+        0,
+        0
+      ],
+      [
+        1048576,
+        0,
+        0
+      ],
+      [
+        2097152,
+        0,
+        0
+      ],
+      [
+        4194304,
+        0,
+        0
+      ],
+      [
+        8388608,
+        0,
+        0
+      ],
+      [
+        16777216,
+        0,
+        0
+      ],
+      [
+        33554432,
+        0,
+        0
+      ],
+      [
+        67108864,
+        0,
+        0
+      ],
+      [
+        134217728,
+        0,
+        0
+      ],
+      [
+        268435456,
+        0,
+        0
+      ],
+      [
+        536870912,
+        0,
+        0
+      ],
+      [
+        1073741824,
+        0,
+        0
+      ],
+      [
+        2147483648,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        8,
+        0
+      ],
+      [
+        0,
+        16,
+        0
+      ],
+      [
+        0,
+        32,
+        0
+      ],
+      [
+        0,
+        64,
+        0
+      ],
+      [
+        0,
+        128,
+        0
+      ],
+      [
+        0,
+        256,
+        0
+      ],
+      [
+        0,
+        512,
+        0
+      ],
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        0,
+        2048,
+        0
+      ],
+      [
+        0,
+        4096,
+        0
+      ],
+      [
+        0,
+        8192,
+        0
+      ],
+      [
+        0,
+        16384,
+        0
+      ],
+      [
+        0,
+        32768,
+        0
+      ],
+      [
+        0,
+        65536,
+        0
+      ],
+      [
+        0,
+        131072,
+        0
+      ],
+      [
+        0,
+        262144,
+        0
+      ],
+      [
+        0,
+        524288,
+        0
+      ],
+      [
+        0,
+        1048576,
+        0
+      ],
+      [
+        0,
+        2097152,
+        0
+      ],
+      [
+        0,
+        4194304,
+        0
+      ],
+      [
+        0,
+        8388608,
+        0
+      ],
+      [
+        0,
+        16777216,
+        0
+      ],
+      [
+        0,
+        33554432,
+        0
+      ],
+      [
+        0,
+        67108864,
+        0
+      ],
+      [
+        0,
+        134217728,
+        0
+      ],
+      [
+        0,
+        268435456,
+        0
+      ],
+      [
+        0,
+        536870912,
+        0
+      ],
+      [
+        0,
+        1073741824,
+        0
+      ],
+      [
+        0,
+        2147483648,
+        0
+      ],
+      [
+        4294967295,
+        4294967295,
+        0
+      ]
+    ]
+  },
+  "random_sign_control": {
+    "average_coherent_bad_mass": 0.03876732024682745,
+    "fixed_all_plus_bad_mass": 0.16837506599861626,
+    "gauge_all_minus_bad_mass": 0.16837506599861626,
+    "pilot_decoding_failure": 0.03876732024682749,
+    "sign_choices_checked": 32
+  },
+  "scope": {
+    "all_size_proofs_independently_reviewed": false,
+    "general_pilot_gap_resolved": false,
+    "known_hard_Gibbs_family_instantiated": false,
+    "large_pilot_built": false,
+    "main_checkout_changed": false,
+    "new_quantum_algorithm_admitted": false,
+    "quantum_algorithm_executed": false,
+    "whole_repository_validated": false
+  },
+  "source_sha256": {
+    "../central-rank-2026-10-23/central_rank.py": "02e102da115ffc7eabd42e4bdf3eebac62d4fec68fe5a88db958caf767cd162e",
+    "../hdqi-coherent-sign-2026-10-24/coherent_sign.py": "e4decaffa0075a95e9612dcd44813bb91632127835cfbcfc2bfb84eaebbc40f2",
+    "../hdqi-decoded-observables-2026-10-24/decoded_observables.py": "f4cda5ea5f0ba9dbaf712d5b7e5958ee8cf438f2cfaf4c017cb1197368137f71",
+    "../hdqi-defect-observables-2026-10-24/DEFECT_OBSERVABLES.md": "1b0dd5379a17d4e917f424a73bd4becc10319441a0b7a5dbd2c1c203bb61b612",
+    "../hdqi-interference-distance-2026-10-24/interference_distance.py": "8f56debc9a3f28cd3f66417bd443dc96615b1d18beb22485dc3068f22b9f9edf",
+    "../hdqi-output-sampling-2026-10-24/output_sampling.py": "c9401123d1a5d508fc66b148b3b4e88f2a81c0a62af4d4522d30cbaca5c86014",
+    "../hdqi-sign-sampler-2026-10-24/sign_sampler.py": "7c267615bf27a2c942f42a5981e208eaec70002dc7b9dd18b84fc49985a47286",
+    "HANDOFF.md": "4e1a3645c0e1ef6dc0de0570aa645672cde8bb6e0720d9d290aa929e8dc5fa75",
+    "TRANSFER.md": "2e3ee0c25832d44c255e773dea353a8d4b7ca30f241321933ae48481fa8d345b",
+    "fixed_sign.py": "88de89e462da7c3cac21840570372df8e0ba7f7e24cee69d324013f3d4247aee",
+    "make_receipt.py": "9972956f00ff1c5db6955b5c59b8e8573d8fd17134f2cfafbce3c0347040c149",
+    "test_fixed_sign.py": "31bb5bc1892cc9097e9da801dae382d7f8f375988d4fd5b74b30d432586c0170"
+  },
+  "status": "LOCAL_UNREVIEWED_FIXED_SIGN_TRANSFER_AUDIT"
+}

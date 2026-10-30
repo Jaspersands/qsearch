@@ -1,0 +1,264 @@
+{
+  "status": "ARITHMETIC_AND_SOURCE_CONTRACT_AUDIT_ONLY",
+  "paper": "https://eprint.iacr.org/2026/1142",
+  "paper_sha256": "4504310844c227e0d49c8c628b03e9942894f14fcd6f5881dc5c0122ed645318",
+  "paper_pages": 44,
+  "relevant_pages_read": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "interpolation_theorem_page_visually_checked": 36,
+  "countercontrol": {
+    "shear": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "positive_symmetric_endomorphism": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "geometric_degree_on_E_squared": 1,
+    "adjoint_product_for_original_polarization": [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "is_polarized_isogeny_for_original_models": false,
+    "changed_polarization_is_principal": true,
+    "general_repolarization_impossibility_claim": false
+  },
+  "descent_false_positive": {
+    "ell": 61,
+    "endomorphism_multiplier": 1,
+    "dimension": 2,
+    "auxiliary_order": 5,
+    "conjugate_numerator": [
+      [
+        0,
+        0,
+        11,
+        -60
+      ],
+      [
+        0,
+        0,
+        60,
+        11
+      ],
+      [
+        11,
+        60,
+        0,
+        0
+      ],
+      [
+        -60,
+        11,
+        0,
+        0
+      ]
+    ],
+    "conjugate_denominator": 61,
+    "candidate_integral_endomorphism": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "torsion_action_matches_candidate": true,
+    "off_diagonal_gaussian_component_trace": "22/61",
+    "true_conjugate_integral": false,
+    "published_interpolation_input_and_uniqueness_bounds_hold": true,
+    "descent_rigidity_bound_holds": false,
+    "geometric_interpolator_executed": false
+  },
+  "auxiliary_plans": [
+    {
+      "multiplier": 61,
+      "dimension": 2,
+      "characteristic": 101,
+      "levels": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "level_product": 1155,
+      "projective_rigidity_bound_squared": 238144,
+      "interpolation_arity_condition": true,
+      "projective_rigidity_condition": true,
+      "max_prime": 11,
+      "sign_branches_mod_global_sign": 8,
+      "torsion_points_constructed": false,
+      "interpolator_executed": false,
+      "kernel_recovered": false
+    },
+    {
+      "multiplier": 170141183460469231731687303715884105727,
+      "dimension": 2,
+      "characteristic": 101,
+      "levels": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        103,
+        107
+      ],
+      "level_product": 12704832265321779279601969382871641823735,
+      "projective_rigidity_bound_squared": 1852673427797059126777135760139006525630541683167308962969665369250976908705856,
+      "interpolation_arity_condition": true,
+      "projective_rigidity_condition": true,
+      "max_prime": 107,
+      "sign_branches_mod_global_sign": 33554432,
+      "torsion_points_constructed": false,
+      "interpolator_executed": false,
+      "kernel_recovered": false
+    },
+    {
+      "multiplier": 57896044618658097711785492504343953926634992332820282019728792003956564819949,
+      "dimension": 2,
+      "characteristic": 101,
+      "levels": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        103,
+        107,
+        109,
+        113,
+        127,
+        131,
+        137,
+        139,
+        149,
+        151,
+        157,
+        163,
+        167,
+        173,
+        179,
+        181,
+        191,
+        193,
+        197,
+        199
+      ],
+      "level_product": 38613475453878522540837619338266405330138597969819559134123923142913423446359905,
+      "projective_rigidity_bound_squared": 214524926879081553593184399971293538039669853129478294043576983099548224481035948448317412277035392525269945235034200512306643199119164696989316018455206464,
+      "interpolation_arity_condition": true,
+      "projective_rigidity_condition": true,
+      "max_prime": 199,
+      "sign_branches_mod_global_sign": 8796093022208,
+      "torsion_points_constructed": false,
+      "interpolator_executed": false,
+      "kernel_recovered": false
+    }
+  ],
+  "claims": {
+    "full_paper_obtained": true,
+    "joint_mark_canonicalization_given_geometric_models": "deduced_using_published_algorithms",
+    "repolarization_converter_supplied_by_theorem_7_1": false,
+    "weak_scalar_sign_enumeration_is_polynomial_time": false,
+    "native_geometric_workflow_executed": false,
+    "new_speedup_admitted": false,
+    "novelty_claim": false
+  },
+  "files": {
+    "weak_marks.py": "70c721412cf77c4d86149e9192f2d9cb2fbfa618230764f535ce8c861ad4cf77",
+    "test_weak_marks.py": "6ce9cf7694c2bdf379187c23160791cbd4accf4016bfedb76fc7a9176c9bfda5",
+    "replay.py": "d88b699d66b7c1506390aea0e36c994cd2da61b32eb2d462987a39d81967b2bd",
+    "PPAV_SOURCE_DECISION.md": "67dc27018fe5e796315ffd670977bbff42532b52eb119b16171ae6055e31c37c",
+    "HANDOFF.md": "a4ca4deccfe47d17168f68a62bce4e90309e3208e125c83356de7199700e3e9c"
+  }
+}

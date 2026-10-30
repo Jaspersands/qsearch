@@ -1,0 +1,709 @@
+{
+  "certificate": {
+    "TV_squared_upper": "651/1073741824",
+    "arbitrary_total_deterministic_decoder": true,
+    "decoder_evaluations_required": 0,
+    "distance_check": {
+      "checked_vectors": 679120,
+      "no_short_relative_word": true,
+      "radius": 4,
+      "required_vectors": 679120,
+      "status": "CERTIFIED",
+      "t": 2,
+      "witness": null
+    },
+    "epsilon": "1/1000",
+    "fiber_ranks": {
+      "fiber_bound": 4294967296,
+      "fiber_rank": 32,
+      "rank_B": 64,
+      "rank_X": 32,
+      "z_basis": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048,
+        4096,
+        8192,
+        16384,
+        32768,
+        65536,
+        131072,
+        262144,
+        524288,
+        1048576,
+        2097152,
+        4194304,
+        8388608,
+        16777216,
+        33554432,
+        67108864,
+        134217728,
+        268435456,
+        536870912,
+        1073741824,
+        2147483648
+      ]
+    },
+    "hardness_from_refusal": false,
+    "measurement": "physical_left_computational_basis_only",
+    "moment_order": 3,
+    "pilot_samples_required": 0,
+    "polynomial_sign_ratio_required": false,
+    "quantum_advantage_claimed": false,
+    "status": "CERTIFIED_UNIFORM_LEFT_OUTPUT",
+    "tail_upper": "651/1073741824"
+  },
+  "dense_physical_controls": [
+    {
+      "actual_left_TV": 0.0,
+      "actual_tail": 0.0,
+      "distance_check": {
+        "checked_vectors": 10,
+        "no_short_relative_word": true,
+        "radius": 2,
+        "required_vectors": 10,
+        "status": "CERTIFIED",
+        "t": 1,
+        "witness": null
+      },
+      "m": 4,
+      "mode": "exponential_dense_physical_control",
+      "n": 2,
+      "rational_tail_upper": "0",
+      "t": 1,
+      "truncated_uniform_max_error": 0.0
+    },
+    {
+      "actual_left_TV": 4.0468680457789175e-05,
+      "actual_tail": 2.8455769275120473e-06,
+      "distance_check": {
+        "checked_vectors": 10,
+        "no_short_relative_word": true,
+        "radius": 2,
+        "required_vectors": 10,
+        "status": "CERTIFIED",
+        "t": 1,
+        "witness": null
+      },
+      "m": 4,
+      "mode": "exponential_dense_physical_control",
+      "n": 2,
+      "rational_tail_upper": "3/524288",
+      "t": 1,
+      "truncated_uniform_max_error": 1.1102230246251565e-16
+    },
+    {
+      "actual_left_TV": 0.002393086004162173,
+      "actual_tail": 0.0006734830402523547,
+      "distance_check": {
+        "checked_vectors": 10,
+        "no_short_relative_word": true,
+        "radius": 2,
+        "required_vectors": 10,
+        "status": "CERTIFIED",
+        "t": 1,
+        "witness": null
+      },
+      "m": 4,
+      "mode": "exponential_dense_physical_control",
+      "n": 2,
+      "rational_tail_upper": "3/2048",
+      "t": 1,
+      "truncated_uniform_max_error": 0.0
+    },
+    {
+      "actual_left_TV": 0.0642519446293069,
+      "actual_tail": 0.07222020684541072,
+      "distance_check": {
+        "checked_vectors": 10,
+        "no_short_relative_word": true,
+        "radius": 2,
+        "required_vectors": 10,
+        "status": "CERTIFIED",
+        "t": 1,
+        "witness": null
+      },
+      "m": 4,
+      "mode": "exponential_dense_physical_control",
+      "n": 2,
+      "rational_tail_upper": "3/8",
+      "t": 1,
+      "truncated_uniform_max_error": 0.0
+    }
+  ],
+  "public_input": {
+    "beta": "1/32",
+    "couplings": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "edges": [
+      [
+        0,
+        32
+      ],
+      [
+        1,
+        33
+      ],
+      [
+        2,
+        34
+      ],
+      [
+        3,
+        35
+      ],
+      [
+        4,
+        36
+      ],
+      [
+        5,
+        37
+      ],
+      [
+        6,
+        38
+      ],
+      [
+        7,
+        39
+      ],
+      [
+        8,
+        40
+      ],
+      [
+        9,
+        41
+      ],
+      [
+        10,
+        42
+      ],
+      [
+        11,
+        43
+      ],
+      [
+        12,
+        44
+      ],
+      [
+        13,
+        45
+      ],
+      [
+        14,
+        46
+      ],
+      [
+        15,
+        47
+      ],
+      [
+        16,
+        48
+      ],
+      [
+        17,
+        49
+      ],
+      [
+        18,
+        50
+      ],
+      [
+        19,
+        51
+      ],
+      [
+        20,
+        52
+      ],
+      [
+        21,
+        53
+      ],
+      [
+        22,
+        54
+      ],
+      [
+        23,
+        55
+      ],
+      [
+        24,
+        56
+      ],
+      [
+        25,
+        57
+      ],
+      [
+        26,
+        58
+      ],
+      [
+        27,
+        59
+      ],
+      [
+        28,
+        60
+      ],
+      [
+        29,
+        61
+      ],
+      [
+        30,
+        62
+      ],
+      [
+        31,
+        63
+      ]
+    ],
+    "generator": "fixed_seeded_symplectic_transvections_NOT_uniform_Clifford",
+    "n": 32,
+    "paulis": [
+      [
+        3249625860,
+        2475710606,
+        0
+      ],
+      [
+        1719322689,
+        2420251871,
+        1
+      ],
+      [
+        3039105867,
+        4160488812,
+        0
+      ],
+      [
+        282479868,
+        3507846347,
+        1
+      ],
+      [
+        4023088252,
+        2478372361,
+        0
+      ],
+      [
+        2138479876,
+        1976880458,
+        0
+      ],
+      [
+        2608126242,
+        20417768,
+        1
+      ],
+      [
+        2829387787,
+        128512340,
+        0
+      ],
+      [
+        790582880,
+        2867405243,
+        0
+      ],
+      [
+        85606383,
+        302828014,
+        1
+      ],
+      [
+        2255074116,
+        4019801454,
+        0
+      ],
+      [
+        2081591764,
+        2479189283,
+        0
+      ],
+      [
+        789019179,
+        2902714924,
+        0
+      ],
+      [
+        3085685684,
+        3978577660,
+        1
+      ],
+      [
+        4178744151,
+        2366377583,
+        0
+      ],
+      [
+        2641571190,
+        771296254,
+        0
+      ],
+      [
+        1366803991,
+        528641096,
+        1
+      ],
+      [
+        3698880519,
+        2025963765,
+        1
+      ],
+      [
+        3716342151,
+        2268558899,
+        0
+      ],
+      [
+        3321216244,
+        2633938539,
+        1
+      ],
+      [
+        3295942776,
+        2062662364,
+        1
+      ],
+      [
+        3880793089,
+        611814461,
+        0
+      ],
+      [
+        1686402822,
+        666462297,
+        1
+      ],
+      [
+        1296124975,
+        2876098760,
+        1
+      ],
+      [
+        1342544658,
+        1429791871,
+        1
+      ],
+      [
+        2129230406,
+        2131585345,
+        0
+      ],
+      [
+        1581414032,
+        3590953708,
+        1
+      ],
+      [
+        2734851720,
+        3650195458,
+        1
+      ],
+      [
+        1266332119,
+        2040024879,
+        1
+      ],
+      [
+        2480460765,
+        649118339,
+        0
+      ],
+      [
+        2419460104,
+        456614786,
+        1
+      ],
+      [
+        324348164,
+        2618599944,
+        1
+      ],
+      [
+        2320070652,
+        3111874422,
+        0
+      ],
+      [
+        1695832281,
+        3746408196,
+        0
+      ],
+      [
+        3005506318,
+        2147803137,
+        0
+      ],
+      [
+        1154286734,
+        3670186880,
+        0
+      ],
+      [
+        2889351168,
+        1744082581,
+        0
+      ],
+      [
+        4122007452,
+        3142801347,
+        1
+      ],
+      [
+        4092212060,
+        4066411130,
+        1
+      ],
+      [
+        2775954905,
+        542865264,
+        0
+      ],
+      [
+        3367486437,
+        918963242,
+        1
+      ],
+      [
+        2324910241,
+        1943076310,
+        0
+      ],
+      [
+        2664197180,
+        1328945030,
+        0
+      ],
+      [
+        3124874311,
+        3369226713,
+        0
+      ],
+      [
+        200848407,
+        1327269230,
+        1
+      ],
+      [
+        1744902434,
+        2143309415,
+        0
+      ],
+      [
+        1636435552,
+        641869222,
+        0
+      ],
+      [
+        1397756795,
+        847626298,
+        0
+      ],
+      [
+        1393895099,
+        2115031424,
+        1
+      ],
+      [
+        1826671106,
+        3230891816,
+        1
+      ],
+      [
+        1788736983,
+        1124770191,
+        0
+      ],
+      [
+        1389961175,
+        474427800,
+        1
+      ],
+      [
+        3547891656,
+        211689737,
+        0
+      ],
+      [
+        74895585,
+        880442811,
+        0
+      ],
+      [
+        3447701988,
+        1533411428,
+        0
+      ],
+      [
+        3157769497,
+        3257157692,
+        0
+      ],
+      [
+        4210001508,
+        348215443,
+        0
+      ],
+      [
+        3853218954,
+        4185041222,
+        0
+      ],
+      [
+        2186345178,
+        3223559432,
+        1
+      ],
+      [
+        1723843368,
+        142476715,
+        0
+      ],
+      [
+        2275413864,
+        2031344623,
+        1
+      ],
+      [
+        2696319784,
+        3138293357,
+        0
+      ],
+      [
+        2200312267,
+        2936009314,
+        0
+      ],
+      [
+        2450332846,
+        750699218,
+        0
+      ]
+    ],
+    "seed": 241024
+  },
+  "scope": {
+    "arbitrary_basis_change_allowed": false,
+    "full_joint_law_claimed_uniform": false,
+    "general_HDQi_gap_resolved": false,
+    "general_distance_algorithm": false,
+    "independent_review": false,
+    "main_checkout_changed": false,
+    "new_quantum_algorithm": false,
+    "polynomial_sign_cost_required": false
+  },
+  "source_sha256": {
+    "../central-rank-2026-10-23/central_rank.py": "02e102da115ffc7eabd42e4bdf3eebac62d4fec68fe5a88db958caf767cd162e",
+    "../hdqi-coherent-sign-2026-10-24/coherent_sign.py": "e4decaffa0075a95e9612dcd44813bb91632127835cfbcfc2bfb84eaebbc40f2",
+    "../hdqi-decoded-observables-2026-10-24/decoded_observables.py": "f4cda5ea5f0ba9dbaf712d5b7e5958ee8cf438f2cfaf4c017cb1197368137f71",
+    "../hdqi-output-sampling-2026-10-24/OUTPUT_SAMPLING.md": "928dceb3c3c8671798ad6171dff801c393225b34bd465318e4250658518ccff3",
+    "../hdqi-output-sampling-2026-10-24/output_sampling.py": "c9401123d1a5d508fc66b148b3b4e88f2a81c0a62af4d4522d30cbaca5c86014",
+    "../hdqi-sign-sampler-2026-10-24/sign_sampler.py": "7c267615bf27a2c942f42a5981e208eaec70002dc7b9dd18b84fc49985a47286",
+    "HANDOFF.md": "12f4b3945f39590c380726641d44f47db0bd6a6602a2b147e3b8e9a31bb3c6bb",
+    "INTERFERENCE_DISTANCE.md": "a975b46eecc523f45f193193403f01366eeb7f3f201eb2562c1dc5d78fb750ca",
+    "interference_distance.py": "8f56debc9a3f28cd3f66417bd443dc96615b1d18beb22485dc3068f22b9f9edf",
+    "make_receipt.py": "b2da9225de202750b5abcdae2f2c6eb06cfd71707c2920b0e805a8cc56795666",
+    "test_interference_distance.py": "09c2ec06b9868d3e69422f455797a3a4f662fe6a6ad8770e99527a08b5970feb"
+  },
+  "status": "LOCAL_UNREVIEWED_RELATIVE_DISTANCE_CLASSICAL_COMPARATOR",
+  "uniform_output_examples": [
+    3536864435,
+    889222814,
+    1473001787,
+    3074166470,
+    713188147,
+    1041856306,
+    2187021977,
+    2019646565,
+    4174002464,
+    4165228687,
+    1806044700,
+    1958951858,
+    3779271567,
+    2670586423,
+    1557332417,
+    2149373958
+  ]
+}

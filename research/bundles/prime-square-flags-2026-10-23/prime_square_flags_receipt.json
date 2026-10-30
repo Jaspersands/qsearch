@@ -1,0 +1,100 @@
+{
+  "status": "CONDITIONAL_SOURCE_REFINEMENT_INDEPENDENT_REVIEW_PENDING",
+  "schema": "isolated-exact-algebra-receipt-v1",
+  "geometric_quotients_executed": false,
+  "kernel_recovery_executed": false,
+  "quantum_algorithm_executed": false,
+  "speedup_admitted": false,
+  "cases": [
+    {
+      "prime": 2,
+      "dimension": 16,
+      "kernel_type": {
+        "r_squared_factors": 0,
+        "r_factors": 32
+      },
+      "rG_dimension": 0,
+      "G_torsion_dimension": 32,
+      "first_kernel_dimension": 16,
+      "direct_kernel_list_size": "4294967296",
+      "two_prime_kernel_lists_total_size": "131072",
+      "second_quotient_order": "65536",
+      "geometric_quotients_executed": false,
+      "field_stability_requires_separate_check": true,
+      "checks": {
+        "first_quotient_multiplier": true,
+        "quotient_pairing_unimodular": true,
+        "residual_kernel_dimension": true,
+        "residual_kernel_isotropic": true,
+        "scalar_frobenius_preserves_first_kernel": true
+      },
+      "scalar_frobenius_control": -103,
+      "scalar_torsion_extension_degree": 1,
+      "geometric_field_contract_verified": false
+    },
+    {
+      "prime": 3,
+      "dimension": 16,
+      "kernel_type": {
+        "r_squared_factors": 16,
+        "r_factors": 0
+      },
+      "rG_dimension": 16,
+      "G_torsion_dimension": 16,
+      "first_kernel_dimension": 16,
+      "direct_kernel_list_size": "1853020188851841",
+      "two_prime_kernel_lists_total_size": "86093442",
+      "second_quotient_order": "43046721",
+      "geometric_quotients_executed": false,
+      "field_stability_requires_separate_check": true,
+      "checks": {
+        "first_quotient_multiplier": true,
+        "quotient_pairing_unimodular": true,
+        "residual_kernel_dimension": true,
+        "residual_kernel_isotropic": true,
+        "scalar_frobenius_preserves_first_kernel": true
+      },
+      "scalar_frobenius_control": -103,
+      "scalar_torsion_extension_degree": 6,
+      "geometric_field_contract_verified": false
+    },
+    {
+      "prime": 5,
+      "dimension": 16,
+      "kernel_type": {
+        "r_squared_factors": 8,
+        "r_factors": 16
+      },
+      "rG_dimension": 8,
+      "G_torsion_dimension": 24,
+      "first_kernel_dimension": 16,
+      "direct_kernel_list_size": "23283064365386962890625",
+      "two_prime_kernel_lists_total_size": "305175781250",
+      "second_quotient_order": "152587890625",
+      "geometric_quotients_executed": false,
+      "field_stability_requires_separate_check": true,
+      "checks": {
+        "first_quotient_multiplier": true,
+        "quotient_pairing_unimodular": true,
+        "residual_kernel_dimension": true,
+        "residual_kernel_isotropic": true,
+        "scalar_frobenius_preserves_first_kernel": true
+      },
+      "scalar_frobenius_control": -103,
+      "scalar_torsion_extension_degree": 20,
+      "geometric_field_contract_verified": false
+    }
+  ],
+  "negative_controls": {
+    "rG_shortcut_is_not_lagrangian_for_X_r": true,
+    "nonscalar_local_control_has_no_stable_line": true
+  },
+  "source_sha256": {
+    "prime-square-flags-2026-10-23/prime_square_flags.py": "7f954c25339c294e1fd4df91003d432643eedb35b75c7d03e8f6f0aecd9c9208",
+    "prime-square-flags-2026-10-23/test_prime_square_flags.py": "78dfcb54f6c49796871c584702bdf5ad450970e32aad435cff0bda76eaaca55d",
+    "prime-square-flags-2026-10-23/replay_prime_square_flags.py": "5cea47c1d06b21c5a657e9a98de5c982efa57a0b2dcd3b981a0bdba42c943a0f",
+    "prime-square-flags-2026-10-23/PRIME_SQUARE_FLAGS.md": "103c6ceaa233d060ef8285b2f31f2526d5af0cf8716d6dc9d4daf79d7ee2982c",
+    "prime-square-flags-2026-10-23/HANDOFF.md": "4b6d2579e25203f87357bb0887a4535743ac6ed345141a410d1a25ad627febed",
+    "smooth-repolarization-2026-10-23/smooth_repolarization.py": "2955dd7b65007e1a996779bea4275cf095afc56d31653c50df5afbb3263fa91b"
+  }
+}

@@ -1,0 +1,702 @@
+{
+  "boolean_interface_bound": {
+    "classical_queries": "Theta(q)",
+    "finite_incidence_controls": [
+      {
+        "nonscalar_fixed_line_histogram": {
+          "0": 2,
+          "1": 6,
+          "2": 6
+        },
+        "prime": 2,
+        "projective_lines": 3,
+        "scalar_matrices": 2,
+        "scope": "BOOLEAN_MEMBERSHIP_ONLY_NOT_NATIVE_INPUT_HARDNESS"
+      },
+      {
+        "nonscalar_fixed_line_histogram": {
+          "0": 18,
+          "1": 24,
+          "2": 36
+        },
+        "prime": 3,
+        "projective_lines": 4,
+        "scalar_matrices": 3,
+        "scope": "BOOLEAN_MEMBERSHIP_ONLY_NOT_NATIVE_INPUT_HARDNESS"
+      },
+      {
+        "nonscalar_fixed_line_histogram": {
+          "0": 200,
+          "1": 120,
+          "2": 300
+        },
+        "prime": 5,
+        "projective_lines": 6,
+        "scalar_matrices": 5,
+        "scope": "BOOLEAN_MEMBERSHIP_ONLY_NOT_NATIVE_INPUT_HARDNESS"
+      },
+      {
+        "nonscalar_fixed_line_histogram": {
+          "0": 882,
+          "1": 336,
+          "2": 1176
+        },
+        "prime": 7,
+        "projective_lines": 8,
+        "scalar_matrices": 7,
+        "scope": "BOOLEAN_MEMBERSHIP_ONLY_NOT_NATIVE_INPUT_HARDNESS"
+      }
+    ],
+    "native_problem_hardness_consequence": false,
+    "proof": "nonscalar matrix fixes at most two lines; constant-query reduction to unique search",
+    "quantum_queries": "Theta(sqrt(q))",
+    "scope": "prime-degree Boolean containment oracle with original geometric data discarded",
+    "source": "https://arxiv.org/abs/quant-ph/9711070"
+  },
+  "conditional_negative_result": {
+    "content_calls": "2*(e+1) per primary component",
+    "direction_calls": "2*(q*d+1) for d=e-2a>0; zero for d=0",
+    "fixed_transcript_bound": "P>8*n^2*Nmax^2; Nmax=4*(np)^2*sum_basis_norms",
+    "id": "NEG-NATIVE-MEMBERSHIP-SMALL-PRIME",
+    "internal_interpolation_dimension": 8,
+    "native_backend_executed": false,
+    "new_coset_source_required": false,
+    "powersmooth_probe_norm_required": false,
+    "prior_art": "smooth-degree classical tractability is known; novelty not claimed",
+    "scope": "prime factors bounded polynomially in paid input length, including even/noncyclic degrees",
+    "status": "CONDITIONAL_ON_NATIVE_PROMISES_AND_PUBLISHED_INTERPOLATION_MODEL",
+    "target_order_advice_required": false
+  },
+  "dependency_sha256": {
+    "cyclic-odd-degree-source-2026-10-25/controls_cyclic.py": "0aba9eca3bda5ba69a4c9537fc0f5bbd129605638429324fdfa9f63c6ee9a442",
+    "cyclic-odd-degree-source-2026-10-25/cyclic_source.py": "43e5897a63a24915bac95c19e55d41ebf22384c3e05d1d1f1ac5434f837aeaef",
+    "double-level-source-2026-10-25/DOUBLE_LEVEL_SOURCE.md": "af20f05d6a1c0ee7a88658d045ebc8b32d6ce4bf682c83a22fe3f7bf05fc5aac",
+    "double-level-source-2026-10-25/controls_double.py": "afba4b5c3e2858eb1bc0b9c83ad3981f2471310b9122b18a003672b97e9ad5bb",
+    "double-level-source-2026-10-25/double_level_source.py": "9e151dc9c63a46b800d61e5eabf81329a774d23b66f4315d9bf1ecbaf41f1704",
+    "double-level-source-2026-10-25/half_norm.py": "bc606315f51689167dcfa52fb959c8aaabd81069bb0d6b5e3eef0eaf1c77f4b2",
+    "double-level-source-2026-10-25/local_baseline.py": "04a9fbda9297c328aa890a357381ad1520c82169037d8feaba73c3453e36934e",
+    "kernel-output-2026-10-23/kernel_output.py": "c93a85716f50fe1c85b229ef0602eab892e40c049e74e5a0f10b3f6109db357f",
+    "kernel-output-2026-10-23/uniform_source_bound.py": "4e0ddcf408e7a7e585a233f5053dd4b1f44137e3d6433253244813bd14ff0119",
+    "ppav-source-2026-10-23/PPAV_SOURCE_DECISION.md": "67dc27018fe5e796315ffd670977bbff42532b52eb119b16171ae6055e31c37c",
+    "smooth-repolarization-2026-10-23/SMOOTH_REPOLARIZATION.md": "f02bd8c86d0e9c2d32c4156ee20d01761c1e4628b448aae263b26e216e7a5d87",
+    "smooth-repolarization-2026-10-23/smooth_repolarization.py": "2955dd7b65007e1a996779bea4275cf095afc56d31653c50df5afbb3263fa91b",
+    "source-field-audit-2026-10-23/SOURCE_FIELD_AUDIT.md": "fbdb8aca63ff5f44f0bdd395b4574950ce40c936e691da7212074c9b35292763",
+    "source-pullback-2026-10-23/pullback.py": "9352ddaa242473bfb4f048198f20059be97cb91fedc11702179209fdaac2ae1f"
+  },
+  "different_column_masks": {
+    "actual": [
+      0,
+      6,
+      1,
+      0
+    ],
+    "common_scalar_promise_is_essential": true,
+    "determinant_check_still_passes": true,
+    "incorrect": [
+      1,
+      4,
+      3,
+      6
+    ],
+    "prime": 7
+  },
+  "fixed_prime_scaling_controls": [
+    {
+      "content_calls": 4,
+      "direction_calls": 6,
+      "exponent": 1,
+      "prime": 2,
+      "supplied_kernel_only": true
+    },
+    {
+      "content_calls": 10,
+      "direction_calls": 18,
+      "exponent": 4,
+      "prime": 2,
+      "supplied_kernel_only": true
+    },
+    {
+      "content_calls": 18,
+      "direction_calls": 34,
+      "exponent": 8,
+      "prime": 2,
+      "supplied_kernel_only": true
+    },
+    {
+      "content_calls": 34,
+      "direction_calls": 66,
+      "exponent": 16,
+      "prime": 2,
+      "supplied_kernel_only": true
+    },
+    {
+      "content_calls": 66,
+      "direction_calls": 130,
+      "exponent": 32,
+      "prime": 2,
+      "supplied_kernel_only": true
+    },
+    {
+      "content_calls": 4,
+      "direction_calls": 8,
+      "exponent": 1,
+      "prime": 3,
+      "supplied_kernel_only": true
+    },
+    {
+      "content_calls": 10,
+      "direction_calls": 26,
+      "exponent": 4,
+      "prime": 3,
+      "supplied_kernel_only": true
+    },
+    {
+      "content_calls": 18,
+      "direction_calls": 50,
+      "exponent": 8,
+      "prime": 3,
+      "supplied_kernel_only": true
+    }
+  ],
+  "implementation_sha256": {
+    "HANDOFF.md": "8ea579d57e7bfc1c57c2b2e39fa022e52fd5a35e14c71bdbda347472adafa001",
+    "NATIVE_MEMBERSHIP.md": "ee27f8b5e5ead8f1b5f79ace1f97e5fe12cb18eaafd5f2b1c14bc26f3869b2db",
+    "controls_membership.py": "7be424418e20aca0544130443976ea74ddee60daa0644231a4b482225c8aee08",
+    "native_membership.py": "c106830e6678475e936958c840629eaf2ee21f7f6e2692833015d7f30d9bd5d5",
+    "replay_membership.py": "6b650830f2818080b6d04831c47a7cc22c9fd15300ffc859c3154471027ab15f",
+    "test_native_membership.py": "75953a87bda00006dd88e0c416e6aca247ee5a3618ecb69e1f24c78c72321be7"
+  },
+  "insufficient_level_false_positive": {
+    "degree": 100,
+    "different_integral_interpolant": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "membership_would_be_false_positive_without_stronger_bound": true,
+    "native_separation_bound_passes": false,
+    "norm": 1,
+    "paper_uniqueness_bound_passes": true,
+    "rational_gamma": [
+      "0",
+      "-23/25",
+      "0",
+      "-3/25"
+    ],
+    "torsion_level": 3
+  },
+  "nonintegral_valid_graph": {
+    "expected_interpolator_result": "BOTTOM_BY_SEPARATION_PROOF",
+    "gamma_coordinates": [
+      "1/2",
+      "-1/2",
+      "0",
+      "1"
+    ],
+    "integral": false,
+    "interpolator_executed": false,
+    "local_graphs": [
+      {
+        "isotropic": true,
+        "prime": 5,
+        "rank": 8
+      },
+      {
+        "isotropic": true,
+        "prime": 7,
+        "rank": 8
+      },
+      {
+        "isotropic": true,
+        "prime": 13,
+        "rank": 8
+      }
+    ],
+    "native_degree": 2,
+    "norm": 3,
+    "torsion_level": 455
+  },
+  "ppav_dependency_sha256": "4504310844c227e0d49c8c628b03e9942894f14fcd6f5881dc5c0122ed645318",
+  "scope_flags": {
+    "independent_review": false,
+    "main_registry_integrated": false,
+    "native_classical_hardness_established": false,
+    "native_geometric_interpolator_executed": false,
+    "novelty_established": false,
+    "quantum_execution": false,
+    "speedup_established": false,
+    "unknown_native_kernel_recovered": false
+  },
+  "status": "CONDITIONAL_NATIVE_MEMBERSHIP_REDUCTION_WITH_SUPPLIED_MAP_CONTROLS",
+  "supplied_map_controls": [
+    {
+      "backend": "EXACT_SUPPLIED_MAP_AND_KNOWN_TARGET_ORDER_CONTROL",
+      "degree": 2,
+      "fixed_weak_primes": [
+        3,
+        5,
+        7,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "maximum_observed_norm": 1178,
+      "minimum_filtered_level": 15477735,
+      "native_interpolation_executed": false,
+      "negative_probes": 4,
+      "noncoprime_norm_probes": 3,
+      "norm_factor_omissions": 8,
+      "original_principal_ideal_verified": true,
+      "positive_probes": 6,
+      "query_count": 10,
+      "recovery": {
+        "components": [
+          {
+            "content": {
+              "content_exponent": 0,
+              "depth": 1,
+              "membership_calls": 4,
+              "thresholds": [
+                0,
+                1
+              ]
+            },
+            "direction": {
+              "membership_calls": 6,
+              "modulus": 2,
+              "native_backend_verified": false,
+              "vector": [
+                1,
+                0
+              ]
+            },
+            "exponent": 1,
+            "prime": 2
+          }
+        ],
+        "contents": {
+          "2": 0
+        },
+        "directions": {
+          "2": [
+            1,
+            0
+          ]
+        },
+        "membership_calls": 10,
+        "worst_case_calls": 10
+      },
+      "supplied_map": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "transcript_bits": 34,
+      "uniform_norm_bound": 15488,
+      "unknown_native_kernel_recovered": false
+    },
+    {
+      "backend": "EXACT_SUPPLIED_MAP_AND_KNOWN_TARGET_ORDER_CONTROL",
+      "degree": 5,
+      "fixed_weak_primes": [
+        3,
+        7,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41
+      ],
+      "maximum_observed_norm": 4775,
+      "minimum_filtered_level": 29740983727,
+      "native_interpolation_executed": false,
+      "negative_probes": 12,
+      "noncoprime_norm_probes": 6,
+      "norm_factor_omissions": 14,
+      "original_principal_ideal_verified": true,
+      "positive_probes": 4,
+      "query_count": 16,
+      "recovery": {
+        "components": [
+          {
+            "content": {
+              "content_exponent": 0,
+              "depth": 1,
+              "membership_calls": 4,
+              "thresholds": [
+                1,
+                1
+              ]
+            },
+            "direction": {
+              "membership_calls": 12,
+              "modulus": 5,
+              "native_backend_verified": false,
+              "vector": [
+                2,
+                1
+              ]
+            },
+            "exponent": 1,
+            "prime": 5
+          }
+        ],
+        "contents": {
+          "5": 0
+        },
+        "directions": {
+          "5": [
+            2,
+            1
+          ]
+        },
+        "membership_calls": 16,
+        "worst_case_calls": 16
+      },
+      "supplied_map": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "transcript_bits": 42,
+      "uniform_norm_bound": 96800,
+      "unknown_native_kernel_recovered": false
+    },
+    {
+      "backend": "EXACT_SUPPLIED_MAP_AND_KNOWN_TARGET_ORDER_CONTROL",
+      "degree": 25,
+      "fixed_weak_primes": [
+        3,
+        7,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53
+      ],
+      "maximum_observed_norm": 97076,
+      "minimum_filtered_level": 237582259074069,
+      "native_interpolation_executed": false,
+      "negative_probes": 18,
+      "noncoprime_norm_probes": 11,
+      "norm_factor_omissions": 16,
+      "original_principal_ideal_verified": true,
+      "positive_probes": 10,
+      "query_count": 28,
+      "recovery": {
+        "components": [
+          {
+            "content": {
+              "content_exponent": 0,
+              "depth": 2,
+              "membership_calls": 6,
+              "thresholds": [
+                2,
+                2
+              ]
+            },
+            "direction": {
+              "membership_calls": 22,
+              "modulus": 25,
+              "native_backend_verified": false,
+              "vector": [
+                18,
+                1
+              ]
+            },
+            "exponent": 2,
+            "prime": 5
+          }
+        ],
+        "contents": {
+          "5": 0
+        },
+        "directions": {
+          "5": [
+            18,
+            1
+          ]
+        },
+        "membership_calls": 28,
+        "worst_case_calls": 28
+      },
+      "supplied_map": [
+        3,
+        4,
+        0,
+        0
+      ],
+      "transcript_bits": 59,
+      "uniform_norm_bound": 2420000,
+      "unknown_native_kernel_recovered": false
+    },
+    {
+      "backend": "EXACT_SUPPLIED_MAP_AND_KNOWN_TARGET_ORDER_CONTROL",
+      "degree": 200,
+      "fixed_weak_primes": [
+        3,
+        7,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67
+      ],
+      "maximum_observed_norm": 6050001,
+      "minimum_filtered_level": 72380229815605296637,
+      "native_interpolation_executed": false,
+      "negative_probes": 22,
+      "noncoprime_norm_probes": 14,
+      "norm_factor_omissions": 38,
+      "original_principal_ideal_verified": true,
+      "positive_probes": 20,
+      "query_count": 42,
+      "recovery": {
+        "components": [
+          {
+            "content": {
+              "content_exponent": 1,
+              "depth": 1,
+              "membership_calls": 8,
+              "thresholds": [
+                0,
+                1
+              ]
+            },
+            "direction": {
+              "membership_calls": 6,
+              "modulus": 2,
+              "native_backend_verified": false,
+              "vector": [
+                1,
+                0
+              ]
+            },
+            "exponent": 3,
+            "prime": 2
+          },
+          {
+            "content": {
+              "content_exponent": 0,
+              "depth": 2,
+              "membership_calls": 6,
+              "thresholds": [
+                2,
+                2
+              ]
+            },
+            "direction": {
+              "membership_calls": 22,
+              "modulus": 25,
+              "native_backend_verified": false,
+              "vector": [
+                18,
+                1
+              ]
+            },
+            "exponent": 2,
+            "prime": 5
+          }
+        ],
+        "contents": {
+          "2": 1,
+          "5": 0
+        },
+        "directions": {
+          "2": [
+            1,
+            0
+          ],
+          "5": [
+            18,
+            1
+          ]
+        },
+        "membership_calls": 42,
+        "worst_case_calls": 50
+      },
+      "supplied_map": [
+        -2,
+        14,
+        0,
+        0
+      ],
+      "transcript_bits": 76,
+      "uniform_norm_bound": 154880000,
+      "unknown_native_kernel_recovered": false
+    },
+    {
+      "backend": "EXACT_SUPPLIED_MAP_AND_KNOWN_TARGET_ORDER_CONTROL",
+      "degree": 36,
+      "fixed_weak_primes": [
+        5,
+        7,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53
+      ],
+      "maximum_observed_norm": 195625,
+      "minimum_filtered_level": 2234276599286305,
+      "native_interpolation_executed": false,
+      "negative_probes": 0,
+      "noncoprime_norm_probes": 0,
+      "norm_factor_omissions": 5,
+      "original_principal_ideal_verified": true,
+      "positive_probes": 12,
+      "query_count": 12,
+      "recovery": {
+        "components": [
+          {
+            "content": {
+              "content_exponent": 1,
+              "depth": 0,
+              "membership_calls": 6,
+              "thresholds": [
+                0,
+                0
+              ]
+            },
+            "direction": null,
+            "exponent": 2,
+            "prime": 2
+          },
+          {
+            "content": {
+              "content_exponent": 1,
+              "depth": 0,
+              "membership_calls": 6,
+              "thresholds": [
+                0,
+                0
+              ]
+            },
+            "direction": null,
+            "exponent": 2,
+            "prime": 3
+          }
+        ],
+        "contents": {
+          "2": 1,
+          "3": 1
+        },
+        "directions": {},
+        "membership_calls": 12,
+        "worst_case_calls": 36
+      },
+      "supplied_map": [
+        6,
+        0,
+        0,
+        0
+      ],
+      "transcript_bits": 59,
+      "uniform_norm_bound": 5018112,
+      "unknown_native_kernel_recovered": false
+    },
+    {
+      "backend": "EXACT_SUPPLIED_MAP_AND_KNOWN_TARGET_ORDER_CONTROL",
+      "degree": 13,
+      "fixed_weak_primes": [
+        3,
+        5,
+        7,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47
+      ],
+      "maximum_observed_norm": 30031,
+      "minimum_filtered_level": 229525384305,
+      "native_interpolation_executed": false,
+      "negative_probes": 28,
+      "noncoprime_norm_probes": 14,
+      "norm_factor_omissions": 31,
+      "original_principal_ideal_verified": true,
+      "positive_probes": 4,
+      "query_count": 32,
+      "recovery": {
+        "components": [
+          {
+            "content": {
+              "content_exponent": 0,
+              "depth": 1,
+              "membership_calls": 4,
+              "thresholds": [
+                1,
+                1
+              ]
+            },
+            "direction": {
+              "membership_calls": 28,
+              "modulus": 13,
+              "native_backend_verified": false,
+              "vector": [
+                5,
+                1
+              ]
+            },
+            "exponent": 1,
+            "prime": 13
+          }
+        ],
+        "contents": {
+          "13": 0
+        },
+        "directions": {
+          "13": [
+            5,
+            1
+          ]
+        },
+        "membership_calls": 32,
+        "worst_case_calls": 32
+      },
+      "supplied_map": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "transcript_bits": 51,
+      "uniform_norm_bound": 654368,
+      "unknown_native_kernel_recovered": false
+    }
+  ]
+}

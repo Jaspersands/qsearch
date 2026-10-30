@@ -1,0 +1,26 @@
+name = "rees_core"
+version = "0.1.0"
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+path = "mathlib"
+
+[[lean_lib]]
+name = "ReesHomogenization"
+allowNonModules = true
+
+[[lean_lib]]
+name = "ReesLie"
+allowNonModules = true
+
+[[lean_lib]]
+name = "ReesDilation"
+allowNonModules = true
+
+[[lean_lib]]
+name = "ReesCentralInstrument"
+allowNonModules = true

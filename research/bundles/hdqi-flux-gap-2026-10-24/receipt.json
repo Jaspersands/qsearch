@@ -1,0 +1,456 @@
+{
+  "certified_native_access_run": {
+    "classical_flux_sample": {
+      "determinants": 36,
+      "flux": 1,
+      "ideal_mixing_tv_bound": "1/4",
+      "native_conditional_access": true,
+      "numerical_tv_bound": "1/4",
+      "seeded_reproducibility_control": true,
+      "steps": 3,
+      "tv_bound": "1/2",
+      "tv_bound_assumes_independent_random_bits": true
+    },
+    "conditional": {
+      "interval": {
+        "hi": "16383/32767",
+        "lo": "4095/8191",
+        "width": "12288/268394497"
+      },
+      "native_probability_enclosed": true,
+      "terms": 228
+    },
+    "floating_eigensolver_used": false,
+    "full_pilot_sample": false,
+    "log_partition": {
+      "determinant_dimension": 4,
+      "interval": {
+        "hi": "132690557/4265607168",
+        "lo": "16237/524288",
+        "width": "586325/4265607168"
+      },
+      "terms": 57
+    }
+  },
+  "classical_flux_mixing_bound": "r exp[-t(1-3D beta^2)/r]",
+  "common_resolvent_controls": [
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.977069759813934,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.999665065075304
+    },
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.977069759813934,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.9996650650753042
+    },
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.9768339768339769,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.9941916256019201
+    },
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.977069759813934,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.9996650650753042
+    },
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.977069759813934,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.9996650650753043
+    },
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.9768339768339769,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.9941916256019201
+    },
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.977069759813934,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.9996650650753044
+    },
+    {
+      "cross_block_bound": 4,
+      "max_cross_block_sum": 1.977069759813934,
+      "max_trace_bound_excess": 0.0,
+      "resolvent_norm": 0.9996650650753042
+    }
+  ],
+  "compiled_gaussian_stage": false,
+  "compiled_quantum_circuit": false,
+  "dense_coherent_control": {
+    "dense_simulation_not_quantum_execution": true,
+    "flux_trace_distance": 9.659904231299124e-06,
+    "native_pilot_norm": 1.0000000000000004,
+    "native_pilot_vector_error_up_to_global_phase": 9.65990423141827e-06,
+    "slices": 256,
+    "time": 32,
+    "uniform_flux_is_exact": false,
+    "uniform_flux_overlap": 0.9999999992216716
+  },
+  "extensive_rank_analytic_ledger_not_executed": {
+    "beta": "1/32",
+    "certificate": {
+      "chord_degree": 2,
+      "cycle_rank": 127,
+      "gap_lower": "509/65024",
+      "influence_upper": "3/512",
+      "status": "LOCAL_PROOF_BOUND"
+    },
+    "coherent_resources": {
+      "adiabatic_error_coefficient": "68895153498191616/131872229",
+      "compiled_gaussian_stage": false,
+      "conditional_interval_tolerance": "1/45434347728516021006359270400",
+      "conditional_rotations": 8873896040725785352804545,
+      "determinant_dimension": 256,
+      "determinants_are_not_elementary_gate_counts": true,
+      "determinants_per_rotation": 241054456004071111450406129068,
+      "evolution_time_upper": 20897547277,
+      "exponential_flux_table_required": false,
+      "first_derivative_bound": "191/32",
+      "first_order_product_steps": 69873197171069176006335,
+      "gap_lower": "509/65024",
+      "independent_review": false,
+      "polynomial_in_input_requires_inverse_polynomial_gap_slack": true,
+      "polynomial_parameters": [
+        "input_size",
+        "1/epsilon",
+        "1/(1-kappa)"
+      ],
+      "quantum_execution": false,
+      "rotation_error_budget": "1/2839646733032251312897454400",
+      "second_derivative_bound": "146115/1024",
+      "status": "LOCAL_IDEAL_POLYNOMIAL_CONSTRUCTION",
+      "total_determinants_upper": 2139092182733834653174180027491113726010442811047014060
+    },
+    "cycle_rank": 127,
+    "edges": 382,
+    "finite_sector_enumeration": false,
+    "hardness_example": false,
+    "quantum_execution": false,
+    "vertices": 256
+  },
+  "finite_complete_flux_controls": [
+    {
+      "analytic_gap_lower": 1.0,
+      "analytic_influence_bound": 0.0,
+      "beta": "0",
+      "cycle_rank": 1,
+      "flux_states_enumerated_for_audit": 2,
+      "gap": 1.0,
+      "ground_residual": 0.0,
+      "max_conditional_influence_column_sum": 0.0,
+      "max_mixed_difference_column_sum": 0.0,
+      "parent_similarity_error": 0.0,
+      "root": "four_cycle",
+      "row_normalization_error": 0.0,
+      "stationarity_error": 0.0
+    },
+    {
+      "analytic_gap_lower": 0.9970703125,
+      "analytic_influence_bound": 0.0029296875,
+      "beta": "1/32",
+      "cycle_rank": 1,
+      "flux_states_enumerated_for_audit": 2,
+      "gap": 1.0,
+      "ground_residual": 7.850462293418876e-17,
+      "max_conditional_influence_column_sum": 0.0,
+      "max_mixed_difference_column_sum": 0.0,
+      "parent_similarity_error": 5.551115123125783e-17,
+      "root": "four_cycle",
+      "row_normalization_error": 0.0,
+      "stationarity_error": 1.1102230246251565e-16
+    },
+    {
+      "analytic_gap_lower": 0.953125,
+      "analytic_influence_bound": 0.046875,
+      "beta": "1/8",
+      "cycle_rank": 1,
+      "flux_states_enumerated_for_audit": 2,
+      "gap": 1.0,
+      "ground_residual": 5.551115123125783e-17,
+      "max_conditional_influence_column_sum": 0.0,
+      "max_mixed_difference_column_sum": 0.0,
+      "parent_similarity_error": 5.551115123125783e-17,
+      "root": "four_cycle",
+      "row_normalization_error": 0.0,
+      "stationarity_error": 0.0
+    },
+    {
+      "analytic_gap_lower": 0.5,
+      "analytic_influence_bound": 0.0,
+      "beta": "0",
+      "cycle_rank": 2,
+      "flux_states_enumerated_for_audit": 4,
+      "gap": 0.49999999999999967,
+      "ground_residual": 0.0,
+      "max_conditional_influence_column_sum": 0.0,
+      "max_mixed_difference_column_sum": 0.0,
+      "parent_similarity_error": 0.0,
+      "root": "two_cycles",
+      "row_normalization_error": 0.0,
+      "stationarity_error": 0.0
+    },
+    {
+      "analytic_gap_lower": 0.4970703125,
+      "analytic_influence_bound": 0.005859375,
+      "beta": "1/32",
+      "cycle_rank": 2,
+      "flux_states_enumerated_for_audit": 4,
+      "gap": 0.5,
+      "ground_residual": 8.777083671441753e-17,
+      "max_conditional_influence_column_sum": 0.0,
+      "max_mixed_difference_column_sum": 0.0,
+      "parent_similarity_error": 2.7755575615628914e-17,
+      "root": "two_cycles",
+      "row_normalization_error": 0.0,
+      "stationarity_error": 0.0
+    },
+    {
+      "analytic_gap_lower": 0.453125,
+      "analytic_influence_bound": 0.09375,
+      "beta": "1/8",
+      "cycle_rank": 2,
+      "flux_states_enumerated_for_audit": 4,
+      "gap": 0.5000000000000001,
+      "ground_residual": 5.551115123125783e-17,
+      "max_conditional_influence_column_sum": 0.0,
+      "max_mixed_difference_column_sum": 1.3877787807814457e-17,
+      "parent_similarity_error": 5.551115123125783e-17,
+      "root": "two_cycles",
+      "row_normalization_error": 0.0,
+      "stationarity_error": 5.551115123125783e-17
+    },
+    {
+      "analytic_gap_lower": 0.3333333333333333,
+      "analytic_influence_bound": 0.0,
+      "beta": "0",
+      "cycle_rank": 3,
+      "flux_states_enumerated_for_audit": 8,
+      "gap": 0.3333333333333332,
+      "ground_residual": 3.925231146709438e-17,
+      "max_conditional_influence_column_sum": 0.0,
+      "max_mixed_difference_column_sum": 0.0,
+      "parent_similarity_error": 0.0,
+      "root": "K4",
+      "row_normalization_error": 1.1102230246251565e-16,
+      "stationarity_error": 0.0
+    },
+    {
+      "analytic_gap_lower": 0.3313802083333333,
+      "analytic_influence_bound": 0.005859375,
+      "beta": "1/32",
+      "cycle_rank": 3,
+      "flux_states_enumerated_for_audit": 8,
+      "gap": 0.3333331219014006,
+      "ground_residual": 3.3993498887762956e-17,
+      "max_conditional_influence_column_sum": 6.342957985516762e-07,
+      "max_mixed_difference_column_sum": 6.342957986626985e-07,
+      "parent_similarity_error": 0.0,
+      "root": "K4",
+      "row_normalization_error": 1.1102230246251565e-16,
+      "stationarity_error": 1.3877787807814457e-17
+    },
+    {
+      "analytic_gap_lower": 0.3020833333333333,
+      "analytic_influence_bound": 0.09375,
+      "beta": "1/8",
+      "cycle_rank": 3,
+      "flux_states_enumerated_for_audit": 8,
+      "gap": 0.33328104993979324,
+      "ground_residual": 8.858986693396703e-17,
+      "max_conditional_influence_column_sum": 0.00015685018062083778,
+      "max_mixed_difference_column_sum": 0.00015685018190711442,
+      "parent_similarity_error": 1.1102230246251565e-16,
+      "root": "K4",
+      "row_normalization_error": 1.1102230246251565e-16,
+      "stationarity_error": 2.7755575615628914e-17
+    }
+  ],
+  "formal_proof": false,
+  "gaussian_relative_phase_controls": [
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 2.220446049250313e-16,
+      "phase_sensitive_vector_error": 2.5086404724151095e-16,
+      "vacuum_amplitude_positive": true
+    },
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 2.220446049250313e-16,
+      "phase_sensitive_vector_error": 2.2281280549821255e-16,
+      "vacuum_amplitude_positive": true
+    },
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 2.220446049250313e-16,
+      "phase_sensitive_vector_error": 3.991862197512297e-16,
+      "vacuum_amplitude_positive": true
+    },
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 2.220446049250313e-16,
+      "phase_sensitive_vector_error": 2.271895917261045e-16,
+      "vacuum_amplitude_positive": true
+    },
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 1.1102230246251565e-16,
+      "phase_sensitive_vector_error": 3.8729037101548034e-16,
+      "vacuum_amplitude_positive": true
+    },
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 2.220446049250313e-16,
+      "phase_sensitive_vector_error": 3.126017911319215e-16,
+      "vacuum_amplitude_positive": true
+    },
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 2.220446049250313e-16,
+      "phase_sensitive_vector_error": 2.9239515496914416e-16,
+      "vacuum_amplitude_positive": true
+    },
+    {
+      "dense_fock_control_not_quantum_execution": true,
+      "global_phase_alignment_used": false,
+      "norm_error": 1.1102230246251565e-16,
+      "phase_sensitive_vector_error": 3.4314654484711446e-16,
+      "vacuum_amplitude_positive": true
+    }
+  ],
+  "generic_HDQi_gap_resolved": false,
+  "independent_review": false,
+  "native_conditionals_interval_certified": true,
+  "novelty_claim": false,
+  "quantum_execution": false,
+  "quantum_speedup_claim": false,
+  "regime": "0<=beta<=1/8, 3D beta^2<1; polynomial inverse gap required",
+  "remaining_blockers": [
+    "independent proof review and prior-art comparison",
+    "same-output classical sampling on connected high-rank roots",
+    "useful native task and a justified classical complexity comparison",
+    "compiled coherent arithmetic and relative-phase-safe Gaussian stage"
+  ],
+  "same_output_classical_route_falsifier": {
+    "activity_interval": {
+      "hi": "-23753523855952747058197565319849735039401951094418896366209690020188970301313315401377978032741510221/113555201392318364411066921975531985570708180488984175949345446238919358079722153447470664993677258612905409397506703360000000",
+      "lo": "-3138829783306943159932122855920819997794100164062371741422413025032158164744191820592649/15005371427882005025073553440164960795497418758536552605314589361686900772951837689548703373788510350611578880000"
+    },
+    "all_time_identity": "W(full,label)=-2*a_(full-minus-edge5)(label)^2",
+    "anticommutation_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "classical_hardness_claim": false,
+    "cycle_rank": 2,
+    "label": 15,
+    "leading_activity_coefficient_at_time_power_12": "-2/2025",
+    "rejected_route": "nonnegative paired-visit-support weights on line graphs",
+    "root_edges": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "root_graph": "K_2,3",
+    "symmetry": {
+      "coupling_scope": "all unit couplings only; weighted symmetries must be rechecked",
+      "identically_zero_for_unit_couplings": true,
+      "image": 15,
+      "image_sign": -1,
+      "label": 15
+    },
+    "this_root_has_existing_classical_sampler": true,
+    "time_beta_over_two": "1/64"
+  },
+  "scope": "canonical independent HDQI words on a supplied simple line-graph root",
+  "source_hashes": {
+    "hdqi-fermion-sampler-2026-10-24/FERMION_SAMPLER.md": "a25564e9827d71f1f5549acb28888568486aedc92e978e3870bb436fc3890f9a",
+    "hdqi-fermion-sampler-2026-10-24/audit_controls.py": "58d32f59223505222678defd82d2526875d630f6ff4c2863b1bf34e5334f3d2b",
+    "hdqi-fermion-sampler-2026-10-24/fermion_sampler.py": "6b146884c0c5137a9eaeeafd5b19040eeda0ed95133adf31486c8f78c1d0c8ff",
+    "hdqi-flux-gap-2026-10-24/FLUX_GAP.md": "d17ccd73a612a56fcccc45a02f29a38df60163603c008ff8881e2128ee1a2c31",
+    "hdqi-flux-gap-2026-10-24/HANDOFF.md": "6e75e4513f3aa8bf73207a71eb7d7c8b7cc0626103cf5984d31b121b433a410f",
+    "hdqi-flux-gap-2026-10-24/flux_controls.py": "bc7ba945bd15891c366e0b83b79ddc7e725f57daeed6021b9f9c7b4794d9435c",
+    "hdqi-flux-gap-2026-10-24/flux_gap.py": "59cc13747bab4d75b898e3b3eefd4b57fc2e65cf90f7a530e492c5699ae06c20",
+    "hdqi-flux-gap-2026-10-24/replay.py": "7c3af655699a3492a523a2199415da87757bcd6b6ebde1b80046d5fb020446d3",
+    "hdqi-flux-gap-2026-10-24/test_flux_gap.py": "b5e05f41c485a201e8bec04fd70169ba00d4dd3c79e2a3f8c474aab51c7131c9",
+    "hdqi-paired-positivity-2026-10-24/paired_positivity.py": "afe5e59ef685b9fdf50439be9943b5db23dea257465cb73aa7ac23afa717146c",
+    "hdqi-parent-gap-2026-10-23/parent_gap.py": "ac5e1491f4c65993bdbdd8b06bb7b437fba5695fbcb56b9f095cb8f22af738d5"
+  },
+  "status": "LOCAL_UNREVIEWED_LINE_GRAPH_FLUX_GAP_AND_IDEAL_CONSTRUCTION",
+  "uniform_flux_falsifier": {
+    "classically_factorable_not_hardness_example": true,
+    "product_components_not_constructed": 1000000000,
+    "single_four_cycle_bit_one_probability_float": 0.49996030510959977,
+    "symbolic_product_trace_distance_float": 0.8905807430225251
+  }
+}
