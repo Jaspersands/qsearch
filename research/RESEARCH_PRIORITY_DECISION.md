@@ -1,5 +1,8 @@
 # Constructive Research Priority Decision
 
+> **Frozen 2026-10-30.** Current priorities live in `research/STATE.md`.
+> This file is an archive: search it by term and do not read it whole.
+
 ## 2026-10-30 Weak Conversion Has A Concrete Genus-Two Route
 
 SIEGEL_CAYLEY_REPOLARIZATION.md replaces the undifferentiated model gap
