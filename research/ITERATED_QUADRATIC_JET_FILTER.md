@@ -221,6 +221,110 @@ The one-dimensional version of delayed nonlinear terms in p-power
 iterates is studied as lower ramification; see [Nordqvist's primary paper](https://arxiv.org/abs/1601.03622).
 That literature is context, not an imported multivariate stabilizer algorithm.
 
+## All Fixed Anchors Without Enumeration
+
+30 October follow-up: James the 2nd proposed the following extension;
+the parent checked the rank-increase argument and its field/access scope.
+This is a written randomized classical procedure, not an implemented
+extension-field backend or a claimed new general stabilizer theorem.
+
+Let d=10m, V=Fix(Gamma), and Delta be a proved degree bound for F. Define
+L_all as the F_p subspace of J_nil satisfying the linear/quadratic jet
+equations for EVERY a in V over the algebraic closure. Coefficients of
+these equations, viewed as polynomials in the anchor coordinates, have
+degree at most Delta. Every actual symmetry lies in exp(L_all).
+
+Choose a VERIFIED extension E=F_q with q>=2d*max(1,Delta)/epsilon. Take
+d fresh independent uniform anchors in V_E, compute their two-jets,
+and intersect the equations over F_p. In particular expand every E
+coefficient in a fixed F_p basis; an E-linear kernel is not the answer.
+The jet recurrence above works over E unchanged, while group matrices
+and unknown Lie coefficients remain over F_p.
+
+Conditional on the history, if the current F_p kernel is too large,
+choose a direction outside L_all. Some violated scalar equation is a
+nonzero polynomial of degree at most Delta in the anchor. A new anchor
+misses that direction with probability at most Delta/q. Unless such a
+miss occurs while the kernel is too large, its dimension falls by at
+least one on every such probe. Starting in dimension d, d probes suffice.
+A union bound gives failure at most d*Delta/q<=epsilon/2. This identifies
+the kernel for ALL algebraic-closure anchors with the stated probability,
+not merely for all base-field points. Every sampled kernel is an exact
+upper constraint group regardless of whether sampling is complete.
+
+Exponentiate a basis of the resulting kernel. At most d full-polynomial
+identity tests, on F(g*x)-F(x) using FRESH independent extension points,
+can check whether every generator actually preserves F. A union bound
+spends at most the remaining epsilon/2. Passing gives a Monte Carlo
+certificate H=K, not a deterministic identity certificate. Failing leaves
+H properly contained in K, without finding its generators. A zero kernel
+is already an exact triviality certificate and needs no probabilistic
+completion claim.
+
+For the unary iterated-map input, Delta<=2^T. Extension degree is
+O(1+(T+log(d/epsilon))/log p), and the anchor calculations cost
+O(d*T*D^4) extension operations plus polynomial F_p elimination. Full
+identity tests use the original circuit, not expanded coefficients.
+Verified irreducible-field construction, uniform field sampling and their
+bit costs must be charged; any construction/sampler failure receives an
+ADDITIONAL allowance or a corresponding split of epsilon. A seed is a
+replay device, not evidence of independent uniform random choices.
+
+Base-field anchors cannot replace extension anchors. For example at
+p>5, F(u,v,z)=(u^p-u)^3*v has zero two-jet at EVERY (a,0,0), a in F_p.
+At an extension a with a^p!=a its v derivative is (a^p-a)^3!=0, so the
+fixed-origin shear v->v+z no longer preserves the jet. This example is
+easy by the existing mixed-Frobenius filter; it only tests the access
+distinction. The extension procedure is not currently exposed by the CLI.
+
+## A Residual Orbit-Sum Family
+
+Write the five-dimensional blocks as (u_i,w_i), with four transverse
+coordinates per w_i. Supply homogeneous quadratic maps q and Q, allowing
+couplings between blocks, and set
+
+```
+P(u,w) = (u+q(w), R(w)),       R(w)=w+Q(w),
+ell(u,w)=sum_i u_i,            T=p in UNARY,       r(w)=sum_i q_i(w).
+```
+
+Then F_p=sum_i u_i+S(w), where
+
+```
+S = sum_(j=0..p-1) r composed with R^j = (phi-I)^(p-1) r,
+phi(f)=f composed with R.
+```
+
+The identity follows from ((X^p-1)/(X-1))=(X-1)^(p-1) in F_p[X]. Since
+phi-I raises positive homogeneous degree by at least one, S has no terms
+below p+1. Thus EVERY fixed-anchor two-jet, including extension anchors,
+is the linear observable plus its anchor constant. This is not an
+inadequate anchor sample.
+
+The linear component forces each block's first off-diagonal row to zero.
+Consequently the exact remaining stabilizer is
+
+```
+H = diag(1, Stab_(UT_4(F_p)^m)(S)),
+```
+
+with the notation applied blockwise. Its ambient class is now three,
+not four. The formal degree is at most 2^p and circuit evaluation costs
+O(p*m^3) field operations for dense quadratic data. The coefficient input
+has O(m^3*log p) bits, plus unary p. Because F_p has degree one in every
+u_i, it cannot be a nontrivial-degree scalar postcomposition over F_p.
+That fact does not eliminate other classical reductions of S.
+
+A finite strictness control uses p=7, r=xy, Q=(y^2,x^2), with other
+transverse coordinates unused. Its degree-eight term is
+`-x*y^7+2*x^4*y^4-x^7*y`; the shear y->y+z changes it although every
+fixed-anchor two-jet agrees. This low-dimensional control is easy, not
+a proposed hard native family. Neither the general construction nor
+this control has been shown to resist the orbit-module, structural,
+Frobenius or higher-jet attacks, and no useful natural application is
+established. The residual question is a general algorithm for these
+public orbit-sum stabilizers, not a new accepted quantum candidate.
+
 ## What This Enables And What It Does Not
 
 This filter can solve a proposed instance classically or reduce the

@@ -154,6 +154,11 @@ The bounded classical kernel sampler, exact resource accounting and failure
 controls are implemented, not the quantum receiver. Replay with
 `python qsearch.py power-sde --random-column --write`.
 
+A [correction to the incoming Rees review](research/manuscripts/REES_FOUR_PILLAR_CORRECTIONS.md)
+separates explicit Lean hypotheses from axioms, upper bounds from lower
+bounds, and valid classical tests from unsupported application-rejection
+rules. The original review is preserved; novelty remains unestablished.
+
 The latest [ring-to-field audit](research/UNIFORM_RING_TO_FIELD_RANK_REDUCTION.md)
 changes the priority: the published outer reduction, reconstructed in
 explicit Lie coordinates, preserves derived additive rank. Conditional on

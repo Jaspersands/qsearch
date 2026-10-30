@@ -1,10 +1,16 @@
 # Corrections To The Four-Pillar Rees Review
 
 30 October 2026. Read this alongside, not as a replacement for,
-REES_INDEPENDENT_FOUR_PILLAR_AUDIT.md. That external AI-assisted review
-is preserved unchanged. Reviewed snapshot SHA-256:
+REES_INDEPENDENT_FOUR_PILLAR_AUDIT.md. This pass did not edit that
+external AI-assisted review. Initial reviewed snapshot SHA-256:
 
 `57b51315fcbe9423cd0bf1093d6cce50f11f17301a80dd3b0304c24d56ef2ab7`.
+
+A concurrent checkpoint removed two trailing spaces on each of its
+Date/Auditor lines. Restoring only those spaces in memory reproduces
+the initial hash exactly; no intervening mathematical edit was present.
+Current snapshot SHA-256:
+`162c31b7a9ca8f31097068da4c2822bf7f5108f4587d2faafebd403f5f8c61b8`.
 
 The previous arithmetic-receiver pass was progress, but supplied no
 decoder. This pass checks whether the newly supplied review is a valid
@@ -296,3 +302,24 @@ Python controls extend tests/test_succinct_polynomial_stabilizer.py,
 test_frobenius_circuit_lift.py, test_rees_full_grade_budget.py and
 test_iterated_quadratic_jet.py. No quantum source, receiver, solver
 runtime or claimed hard instance is executed by these tests.
+
+Clean checkpoint results: 415 selected Python tests passed in29.75s
+with -W error and plugin autoload/cache disabled, including all208 tests
+in the four directly extended files. This is NOT the entire repository
+suite. Four Python syntax checks and12 site JavaScript syntax checks
+passed. qsearch.py validate returned valid:true and issues:[]. All13
+registry JSON files retained aggregate SHA-256
+`79c8b3fca6c2bb7c70cca8116b8356bc3dc69734c682feeba16a8bbf1949c0fd`.
+Whitespace checks passed. No production solver, formal source, registry
+entry or CLI/UI behavior was changed by this pass.
+
+The formal reviewer used installed Lean4.35.0 directly with LEAN_PATH
+covering the existing project/mathlib dependencies. Formal/Audit.lean
+was checked with warningAsError; ReesMeasuredReceiver.lean additionally
+disabled autoImplicit and relaxedAutoImplicit. Both exited0. No Lean
+build, dependency install or compiled-output write was requested.
+
+This agent made no Git writes. A concurrent shared-worktree checkpoint
+`df47b77f` was observed during verification and left intact; it includes
+other work beyond this pass. No validation claim is made for all changes
+in that external checkpoint.

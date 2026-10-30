@@ -16,6 +16,9 @@ from research_registry import (
 )
 
 
+from unittest.mock import patch
+
+
 class DCPApproximateErasureCoherenceReductionTests(unittest.TestCase):
     def test_garbage_gram_and_law_transfer_controls(self):
         for dimension in (2, 4, 8):
@@ -89,17 +92,32 @@ class DCPApproximateErasureCoherenceReductionTests(unittest.TestCase):
                     for row in load_negative_results()
                 )
             )
-        result = run_experiment(
-            "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION"
-        )
-        self.assertEqual(result.status, "completed")
-        self.assertTrue(
-            any(
-                row["experiment_id"]
-                == "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION"
-                for row in load_experiment_results()
+            runner_output = Path(directory) / "runner_coherence.json"
+            with patch(
+                "experiment_runner.write_approximate_erasure_coherence_report",
+                side_effect=lambda **kwargs: write_approximate_erasure_coherence_report(
+                    output_path=runner_output, **kwargs
+                ),
+            ) as mock_writer, patch(
+                "experiment_runner.append_run_history"
+            ) as mock_append, patch(
+                "experiment_runner.write_experiment_trends"
+            ) as mock_trends:
+                result = run_experiment(
+                    "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION"
+                )
+            self.assertEqual(result.status, "completed")
+            self.assertTrue(
+                any(
+                    row["experiment_id"]
+                    == "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION"
+                    for row in load_experiment_results()
+                )
             )
-        )
+            mock_writer.assert_called_once()
+            mock_append.assert_called_once()
+            mock_trends.assert_called_once()
+            self.assertTrue(runner_output.exists())
 
 
 if __name__ == "__main__":

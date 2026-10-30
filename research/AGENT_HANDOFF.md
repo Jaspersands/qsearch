@@ -1,5 +1,134 @@
 # Research Agent Handoff
 
+## 2026-10-30 Six-Agent October DCP Source Check
+
+PROGRESS; goal ACTIVE. Read DCP_SIMON_OCTOBER_REVISION_AUDIT.md. Unlike the
+September audit, this pass obtained the actual official Oct8 revision
+(internalOct7 date) AND Aug11 source. Both PDFs are cached with SHA256.
+Whitespace/page-number-normalized text from InStep1 through beforeLemma3
+is byte-identical; no implemented decoder change. The new response tries
+to rescue it through adaptive postselection. A complete instrument keeps
+one global trace-distance budget, including selected A, outcomes and abort.
+Conditional success pays its acceptance probability and retry runtime.
+
+Agents: Aquinas checked existing coverage/provenance; Copernicus checked
+the exact published no-go and its transfer to latest operations; Noether
+checked postselection; Curie independently checked latestLemma3; Ampere
+checked constructiveDCP alternatives; Laplace compared a native pivot.
+These are focused automated reviews, not human review or fresh Lean checks.
+Allsixcompletedandclosed. Noetherstrengthenedthevalidconditionalbound
+frommin(p,q)tomax(p,q),andrequiredacommoncomparatorwithallaccessible
+labelregisters. Bothscopepitfallsnowhavecountercontrols.
+
+Two independent algorithm-level certificates: published whole-summary-table
+rounding yields poly(n)*2^(-n/3) outputTV includingrestart; the parent's
+Born-weighted isometry check, reviewedbyCopernicus, yields
+m*2^((k-n)/2)+2sqrt(2m*2^(r-k)). k=ceil(n/2) givespoly(n)*2^(-n/4)
+without2^blockwidth. Keep exactlow-sumprefix,flatpremeasurementamplitudes,
+fixedblocks,allBornbranches,andnootherusefullowlabelaccess. These are
+not conditional-on-fullY estimates or generalDCP impossibilitytheorems.
+
+Curie's exact reduced-parameter witness retainsnonzeroz'=22 andpositive
+Bornbranches. Completionmultiplicities(79,3,2,2,1) givesquaredsignedcount
+100144,notpathcountnormalization1392. This refutes the claimedphase
+independence/normalizationstep,notbyitselftheasymptoticLemma3 conclusion.
+The general equal-phase and selection-conditioned character identities
+are recorded and tested. No randomY repair follows merely byassertion.
+
+Constructive comparison: existingWalshfeedforwardstillneedsan efficient
+sign evaluator; its quantumcounting implementation isexponential and a
+classicalevaluatorfacesmatchedwitness extraction. Scalarfieldscattering
+was a distinct nativeapplicationproposal but suppliednonewmechanism or
+certified useful asymptotic window. Do not replace missingmathwithbackends.
+
+VERIFIED:168selectedtestspassed37.40s,including28newtests;Pythoncompile,
+12JSsyntax,diffcheck,qsearchvalidatevalidtrue/issues[]. Notfullreposuite.
+Finalfilethenexpandedto30tests;all30passed0.92safterthemax-boundand
+scopechanges. Pythoncompile/validate/diffchecksreplayedafterward.
+13registryJSONfingerprintunchanged79c8b3fca6c2bb7c70cca8116b8356bc3dc69734c682feeba16a8bbf1949c0fd.
+Oldapproximateerasureintegrationtestreplayedliveartifacttwice,appending
+history00598/00599andrefreshingtrend/reporttimestamps; unchangedmetrics,
+notnewscience. Mechanicalplanassignstestisolation. NoCLI/UI/newcandidate,
+productionAPI,formalcode,commitorpush. PriorReesdirtychangespreserved.
+
+## 2026-10-30 Three-Agent Correction Of The Incoming Rees Audit
+
+PROGRESS; goal ACTIVE. The previous arithmetic pass yielded verified
+progress but no decoder. On inspecting current additions, the new
+four-pillar audit contained decision-relevant false/stale claims. READ
+manuscripts/REES_FOUR_PILLAR_CORRECTIONS.md before its original review.
+The original was not edited by this pass. Initial SHA256
+57b51315fcbe9423cd0bf1093d6cce50f11f17301a80dd3b0304c24d56ef2ab7.
+Concurrent removal of two trailing spaces on each Date/Auditor line
+gives current SHA256
+162c31b7a9ca8f31097068da4c2822bf7f5108f4587d2faafebd403f5f8c61b8.
+Restoring only those spaces in memory reproduced the initial hash.
+
+Zeno the2nd checked live Lean declarations/axiom guards; Mendel the2nd
+checked current resources, ring scope and primary prior art; Beauvoir
+the2nd checked each proposed necessary application criterion against the
+actual filters. All three completed and closed. Automated focused review,
+NOT another full theorem proof, human review or novelty certificate.
+
+KEY CORRECTIONS: no total_sde_policy_hyp declaration/axiom exists. Valid
+total policies are explicit hypotheses of the current class3 measured
+receiver theorem, not formally constructed efficient solvers. The latest
+conditional rank-only ring reduction and all-prime field parameter bound
+must not be replaced by old direct-descent scope. Huge sufficient query
+counts are not lower bounds. Polynomial finite-group HSP query complexity
+is old; the proposal concerns efficient TIME. The review's novelty/closed-
+open-problem directive is unsupported. Source twirling repairs the stated
+correlated-coset-center family; it does not repair arbitrary correlations.
+Classical retries reuse measured labels, not consumed quantum copies.
+
+DO NOT IMPLEMENT THE TEN-FEATURE SIEVE. Complete classical algorithms
+apply under conjunctions of actual hypotheses. Failed or incomplete
+coverage means UNKNOWN, not a hardness certificate. Degree, iteration,
+jet, tensor-train, Moore, access, normality and class requirements were
+conflated. The original ungraded Lie algebra is allowed; the Rees cover
+supplies grading. Public oracle and copy-source reductions retain their
+different input contracts.
+
+FOUR NEW CONTROLS (no production guard changes):
+1. In UT4(F5), F=x0*x1*x3+2*x0*x2^2-x1^2*x2 has degree3<5 and
+D_N F=0, N=E01+E12+E23, but F(exp(tN)x)-F(x)=t^5*x3^3. Thus degree<p
+alone is not the infinitesimal criterion. The cubic orbit is at most20D,
+so this remains classeasy via the orbit-module baseline.
+2. x0+(P-P), P=x0^(2^130), has inflated syntactic degree but is x0.
+The existing DAG value/gradient API confirms the cancellation without
+expansion; a sufficient syntactic guard can legitimately reject it.
+3. P=(x0,x1^2,x2,x3), T=2,p11 yields x1^4. All fixed-anchor two-jets
+vanish and the existing filter correctly returns UNKNOWN with a6D upper
+group, while the actual stabilizer is4D. This is easy algebra, not a
+hard candidate; incomplete jets need not mean p-power iteration.
+4. Genuine class8 filiform profile(9,7,6,5,4,3,2,1),p1103,error1/100
+has a conditional symmetric budget2,229,534,720<10^12 inputs. Verified
+Jacobi/profile; it refutes the arbitrary class6 cutoff, not practical
+gate feasibility. The class12 count1,558,649,013,834,350,592,000 also
+replays exactly for its statedprofile/prime/error. Generic query upper
+exponents at c2,3,4,6,8,12 are5,11,23,56,109,277; class2 has a separate
+quadratic improvement3. Do not mix branches or call these gate exponents.
+
+NEXT: preserve the existing hybrid H<=K classical reduction and restrict
+the SAME fixed oracle to K, recomputing class/ranks. It still needs a
+motivated native residual family and reconstruction mechanism. No degree
+inflation, toy hidden-oracle family, new rejection policy, CLI/UI work,
+candidate promotion or solver scaffold is warranted by this correction.
+The arithmetic receiver remains unimplemented for the reasons in its
+own note; this pass does not reopen it by assertion.
+
+CHANGES: four focused regression files, one review-response note,
+succinct-polynomial scope clarification, README/priority/mechanical
+handoffs. No original-review, formal source, registry, production API or
+Git writes. Verification results are recorded in the correction note.
+VERIFIED:415 selected Python tests PASS29.75s under-Werror, including208
+in the four extended files;4Python syntax,12siteJS syntax, qsearchvalidate
+valid:true/issues:[]; registry13JSON fingerprint unchanged. Two fresh
+strict Lean source/axiom checks used existing compiled imports, NOT a
+whole-project rebuild. Allthree agents closed. Concurrent checkpoint
+df47b77f was observed and preserved; this pass did not initiate it or
+validate every unrelated change in it. Goal remains ACTIVE.
+
 ## 2026-10-30 Six-Agent Arithmetic Receiver Pass
 
 PROGRESS; goal ACTIVE. Read QUATERNION_ARITHMETIC_RECEIVER.md before

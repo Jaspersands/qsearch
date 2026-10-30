@@ -1,5 +1,20 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-10-30 Do Not Wire The Revised Simon DCP Claim
+
+DCP_SIMON_OCTOBER_REVISION_AUDIT.md pins the two actual sources and gives
+the operational comparison. New tests are source/proof controls, not a
+new decoder. Do not promote the external headline or add a circuit backend.
+The complete output includes abort/retry and all adaptive transcripts.
+The prior generic digest artifact need not be regenerated as a new result.
+
+Small test-isolation follow-up: the existing approximate-erasure runner
+test writes the real report/history/trends even though its direct-writer
+test uses a temporary directory. It appended unchanged-metric runs00598/599
+during this pass. Isolate all runner artifact/history destinations in that
+test; preserve production behavior and existing legitimate history. This
+mechanical change is separate from the new mathematical controls.
+
 ## 2026-10-30 Incoming Review Is Not A Policy Specification
 
 Read manuscripts/REES_FOUR_PILLAR_CORRECTIONS.md before using the new

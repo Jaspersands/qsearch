@@ -1,5 +1,23 @@
 # Constructive Research Priority Decision
 
+## 2026-10-30 October DCP Revision Does Not Supply A Repaired Algorithm
+
+Read DCP_SIMON_OCTOBER_REVISION_AUDIT.md. Both official August and October
+PDFs are now pinned: implemented Steps 1-7 are unchanged. The published
+digest theorem still applies through the full-table simulation, and a
+separately checked Born-weighted rounding argument corroborates it.
+Adaptive choice of A cannot multiply a complete instrument's information
+budget; rare conditional success retains its acceptance/retry cost. The
+new Lemma 3 also retains an unsupported conditional-independence step.
+
+This is a new version-specific check, not a new DCP impossibility theorem
+or a claim that the September audit covered October. Do not restart local
+erasure/counting repairs on the basis of the revised response. Full-label
+Walsh feedforward still needs a genuinely efficient evaluator and its
+matched classical witness check. A pivot agent proposed scalar scattering,
+but only with existing algorithms and an unproved useful parameter window;
+that does not yet warrant a new subsystem. No candidate is promoted.
+
 ## 2026-10-30 Correct The Incoming Rees Application Filter
 
 Read manuscripts/REES_FOUR_PILLAR_CORRECTIONS.md with the preserved

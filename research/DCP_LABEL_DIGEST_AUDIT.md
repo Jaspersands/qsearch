@@ -3,6 +3,14 @@
 Status: physical finite controls and a derived extension, REVIEW PENDING.
 No decoder, novelty claim, general DCP impossibility or formal verification.
 
+Version follow-up (2026-10-30): see DCP_SIMON_OCTOBER_REVISION_AUDIT.md.
+The official August and October source PDFs are now pinned and compared:
+the implemented Steps 1-7 are unchanged. The new postselection response
+does not escape the complete-instrument information bound. This is a new
+version-specific check, not evidence that the September pass read a later
+revision. The original provenance and review-pending extensions below stay
+as recorded; no fresh external Lean verification is claimed.
+
 ## Why This Changes The Next Experiment
 
 Gupte, Ragavan and Zhandry, [ePrint 2026/1693](https://eprint.iacr.org/2026/1693),

@@ -385,6 +385,8 @@ def test_native_sampling_cli_writes_scoped_exact_controls(tmp_path, capsys):
 
 def test_native_hash_cli_runs_complete_cells_on_exact_input(tmp_path, capsys):
     import json
+    import pytest
+    pytest.importorskip("z3")
     args = qsearch.build_parser().parse_args([
         "inverse-trace-sampling", "--hash-cells", "--bits", "5", "--cells", "2",
         "--prange-trials", "16", "--timeout-ms", "5000", "--write"])
@@ -441,6 +443,8 @@ def test_native_hash_cli_fingerprints_consumed_anchor_bytes(tmp_path, capsys, mo
 def test_quadratic_cli_preserves_saved_native_cells(tmp_path, capsys):
     import hashlib
     import json
+    import pytest
+    pytest.importorskip("z3")
     from theorems.inverse_trace_hash_probe import run_probe
     from theorems.inverse_trace_smt import native_instance
     prior = run_probe(native_instance(5), cells=2, prange_trials=0)
