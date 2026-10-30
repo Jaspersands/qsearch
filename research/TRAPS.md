@@ -5,7 +5,7 @@ These short rules are distilled from about 1,250 "do not" sentences in
 `MECHANICAL_FOLLOW_UP_PLAN.md`, plus the registry audits (October 2026).
 Read this page instead of rereading those files. Add a trap only after it
 has cost a pass, delete one once its subject is closed, and keep the page
-under 110 lines. Paths are relative to `research/`; commands run from the
+under 120 lines. Paths are relative to `research/`; commands run from the
 repo root.
 
 ## Choosing what to work on
@@ -84,7 +84,9 @@ repo root.
 13. Use `/opt/anaconda3/bin/python` for everything, and say so in every
     helper brief. `/usr/local/bin/python3` has no flint or z3.
 14. Run only the tests the change affects. Never claim the full suite is
-    green. Never edit claims or repin evidence to make tests pass.
+    green. Failures listed in `../tests/KNOWN_FAILURES.txt` predate you;
+    leave them to Gemini. Never edit claims or repin evidence to make
+    tests pass.
 15. Never test against a file another actor is still writing. Codex
     doesn't commit or push; Git checkpoints are Gemini's.
 16. Don't re-acknowledge closed reviews or repeat status boilerplate
@@ -102,10 +104,12 @@ repo root.
   Never print a large file whole.
 - **Helpers.** Default to at most three per round. Use more only when the
   work really splits into more independent pieces. Brief each one with the
-  files it needs and `research/STATE.md`, never the handoff.
+  files it needs and `research/STATE.md`, never the handoff. Helpers get no
+  Git, network or external-service actions (`AGENTS.md`): fetch papers
+  yourself and hand them over as local files.
 - **Effort matched to the job.** Use the highest effort for the main
   reasoning and adversarial maths review. Use a lighter setting (e.g.
-  `gpt-6.1-sol` at `high`) for helpers that fetch papers, run tests or do
+  `gpt-6.1-sol` at `high`) for helpers that read papers, run tests or do
   bookkeeping.
 - **Review matched to the claim.** Get an independent review for anything
   that would move a row of `STATE.md` between Live, Parked and Closed.

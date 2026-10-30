@@ -7,26 +7,42 @@ history; never read them whole. `research/GOAL.md` is the binding owner
 policy. Paths below are relative to `research/`.
 
 Rewrite this page at the end of every pass. Replace stale lines instead of
-appending, and keep it under 110 lines. Detail belongs in the topic notes.
+appending, and keep it to about 120 lines. Detail belongs in the topic notes.
 
 As of 2026-10-30 21:45 AEDT, after the handoff entry
-"2026-10-30 Genus-Two Plus Quotient And Reverse Classical Attack".
+"2026-10-30 Genus-Two Plus Quotient And Reverse Classical Attack". Check
+with `grep -m1 '^## 20' research/AGENT_HANDOFF.md`; several entries share
+a date, so compare titles.
 
 ## Now
 
 - **Top open question:** solve or decisively bound an affordable mixed-prime
-  multiplier selector for aN = Nrd(a*ell*q+b) + (a+1)^2 in the required
-  affine order coset, then the actual charged geometric quotient and joint
-  marked canonicalization. Details: `SIEGEL_CAYLEY_REPOLARIZATION.md`. The
-  exact weak input is in `SIEGEL_ELEMENTARY_REPOLARIZATION.md` section 6.
+  multiplier selector for Nrd(x) = aN - (a+1)^2 with x in
+  b + a*ell*q_0 + a*ell*R*O, then the actual charged geometric quotient and
+  joint marked canonicalization. "Affordable": for every prime power s^e
+  dividing N, the full-torsion degree (ord_(s^e)(-11) over F_121 for the
+  current fixtures) and the quotient cost (Lubicz-Robert: O(s^2 log s) at
+  genus two) are polynomial in the input size. Polynomial bit length of N
+  is not enough. Details: `SIEGEL_CAYLEY_REPOLARIZATION.md` sections 5-6.
+  The weak input is `SIEGEL_ELEMENTARY_REPOLARIZATION.md` section 1, and
+  the conversion it needs is section 6.
+- **Comparators.** Selector: KLPT and Wesolowski sections 5-6, under
+  matching hypotheses (`tools/corpus/cli.py baselines "KLPT"`). Record
+  which hypotheses fail; "use KLPT" is not a reduction. End to end:
+  whenever the target model exposes computable polarized automorphisms,
+  run `theorems/siegel_reverse_transport.py:kernel_from_reverse_transport`
+  (`SIEGEL_REVERSE_TRANSPORT_ATTACK.md`).
 - **Stop rule:** if no affordable selector route emerges, stop adding
-  quotient plumbing and compare another native application
-  (`SIEGEL_CAYLEY_REPOLARIZATION.md` section 7).
-- **Required classical comparator:** whenever the target model exposes
-  computable polarized automorphisms, run
-  `SIEGEL_REVERSE_TRANSPORT_ATTACK.md`.
+  quotient plumbing and compare another native application (section 7).
+  Default budget, set 2026-10-30: one pass. If it ends without a candidate
+  selector and a proof sketch of its bound, apply the stop rule, or extend
+  once with the reason written here. Small sweeps only falsify.
+- **ePrint 2026/1142,** the closest prior-art lead, stays unread. Its full
+  PDF was inaccessible by ordinary requests, and the public slides start
+  from two encoded PPAVs (section 6). Retry only with a new access route.
 - **What a win would mean:** a weak-input source for the known degree-two
-  HPGP. It would not use a distinctive Rees receiver.
+  hidden polynomial graph problem (HPGP) receiver. It would not use a
+  distinctive Rees receiver.
 - **Already ruled out as next steps:** dummy converters, a tiny q-search
   backend, free field extensions, per-level canonicalizers, more SDE
   backends, and repeating the literature search already recorded.
@@ -35,7 +51,7 @@ As of 2026-10-30 21:45 AEDT, after the handoff entry
 
 | Direction | Where it stands | File |
 |---|---|---|
-| Weak-input genus-two repolarization | The Cayley plus-quotient fixes the polarization algebra. Still unpaid: the norm selector, the quotient and canonicalization. Six saved ell61 lifts need huge torsion fields. | `SIEGEL_CAYLEY_REPOLARIZATION.md` |
+| Weak-input genus-two repolarization | The Cayley plus-quotient fixes the polarization algebra. Still unpaid: the norm selector, the quotient and canonicalization. The six saved ell=61 lifts need huge torsion fields. | `SIEGEL_CAYLEY_REPOLARIZATION.md` |
 | Reverse-transport classical attack | Comparator for the row above. Scalar or commuting u can give zero, and the original input need not expose a useful u, so it is not a general break. | `SIEGEL_REVERSE_TRANSPORT_ATTACK.md` |
 
 ## Parked: reopen only with a new input, theorem or application
@@ -71,42 +87,37 @@ As of 2026-10-30 21:45 AEDT, after the handoff entry
 
 ## Standing owner rules
 
-- `GOAL.md` is binding. Codex does the deep reasoning. Low-judgment wiring
-  (registry, CLI, runner, README, UI), artifact refreshes, broad routine
-  validation and mechanical test expansion go to Gemini through
-  `MECHANICAL_FOLLOW_UP_PLAN.md`. Running out of usage is a handoff, not
-  completion.
-- No legacy tiny-circuit search or toy oracle problems (`GOAL.md`).
-- Codex doesn't commit or push. Git checkpoints belong to Gemini, at the
-  owner's reduced cadence. Subagent permission in `AGENTS.md` does not
-  cover Git, network or external-service actions.
+- `GOAL.md` is binding: Codex does the deep reasoning, and Gemini does
+  low-judgment work through `MECHANICAL_FOLLOW_UP_PLAN.md`. No tiny-circuit
+  search or toy oracles. Running out of usage is a handoff, not completion.
 - No outside contact or submission without explicit owner instruction.
-  Everything in `docs/outreach/` is unsent.
-- No registry promotion. `registry/candidates.json` holds 8 unpromoted
-  hypotheses and has not changed since 10-09.
-- Gemini "Investigations 21-61" are unreviewed, and only specific records
-  are quarantined (`CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md`). Never cite them to
+  Everything in `../docs/outreach/` is unsent.
+- No registry promotion: `registry/candidates.json` holds 8 unpromoted
+  hypotheses, unchanged since 10-09.
+- Gemini "Investigations 21-61" are unreviewed (specific records are
+  quarantined in `CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md`). Never cite them to
   rule a direction out.
 
 ## Where things live
 
-- **Algebra tools:** `TOOLBOX.md` covers Sage, GAP, PARI, Singular, fpylll,
-  cvc5 and pdftotext.
-- **Review receipts:** `audits/reviews/`. **Classical baselines and certificates:** `classical_baselines/`.
+- **Algebra tools:** `TOOLBOX.md`. **Review receipts:** `audits/reviews/`.
+  **Classical baselines and certificates:** `classical_baselines/`.
 - **Bundles:** the 10-22 to 10-27 working bundles that the handoff cites
   under `~/Developer/qsearch-research-work/<bundle>/` are copied, text only,
   to `bundles/<bundle>/`. See `bundles/README.md`.
 - **Tests:**
-  `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -B -m pytest -q -p no:cacheprovider -W error <tests>`
+  `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -B -m pytest -q -p no:cacheprovider -W error <tests>`.
+  `../tests/KNOWN_FAILURES.txt` lists the 134 tests that already fail.
 - **iCloud:** the repo is on an iCloud Desktop. Put `timeout` on long reads;
   a hang usually means an evicted file.
 
 ## Known open issues
 
-- `docs/outreach/05-rees-personalized-emails.md` flags a possible gap in
-  `docs/papers/rees-hsp/main.tex`: pi^-1(H) is not dilation-invariant. It is
-  not yet recorded in the handoff.
-- The SMT CLI `--write` regression is still unfixed. Its repair is specified
-  in `MECHANICAL_FOLLOW_UP_PLAN.md` (search "SMT CLI").
-- The "Single Unresolved Question" heading near the end of
-  `RESEARCH_PRIORITY_DECISION.md` (bosonic fast-forwarding) is stale.
+- `../docs/outreach/05-rees-personalized-emails.md` flags a possible gap in
+  `../docs/papers/rees-hsp/main.tex`: pi^-1(H) is not dilation-invariant.
+  Both files are local and untracked. The gap is not yet in the handoff.
+- `NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER` (10-11) says it
+  proves a uniform Omega(p) classical lower bound. Its proof
+  (`CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND.md`, Theorem 4) covers only
+  candidate-testing algorithms and assumes Legendre PRF hardness. Treat it
+  as conditional, and never cite it as hardness.

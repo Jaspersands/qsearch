@@ -25,16 +25,22 @@ either one without the owner's say-so: the disk is about 98% full.
   script rather than making many `sage -c` calls.
 - In `sage -c`, `x` is not predefined. Declare rings and variables first,
   e.g. `R.<t> = QQ[]` or `var('y')`.
-- Running `foo.sage` writes `foo.sage.py` beside it. Keep scratch scripts
-  out of `research/` and `theorems/`, or write `.py` files with
-  `from sage.all import *`.
+- `.sage` files use Sage syntax: `^` is power and `B.<i,j,k> = ...` names
+  generators. In `$E/python` with `from sage.all import *`, `^` is XOR on
+  plain ints (`2 ^ 3` is 1, silently), so write `**` and
+  `QuaternionAlgebra(QQ, -1, -11, names='i,j,k')`.
+- Python 3.14's `random.seed` rejects a Sage `Integer`, which is what a
+  literal becomes in a `.sage` file. Use `random.seed(int(1))` or
+  `set_random_seed(1)`.
 - In the owner's interactive shell, `gap` and `gp` are git aliases. Always
   use the full `$E/...` path.
 - GAP prints a harmless "#I ... package ... not present" line.
 
 ## Classical-attack recipes (each tested 2026-10-30)
 
-```python
+Sage syntax: put them in a `.sage` file and run `$E/sage file.sage`.
+
+```sage
 # Lattice reduction
 A = IntegerMatrix.random(20, "qary", k=10, bits=30); LLL.reduction(A); BKZ.reduction(A, BKZ.Param(10))
 # Groebner basis and points over F_p
@@ -50,8 +56,31 @@ G = libgap.SmallGroup(64, 10); G.ConjugacyClassesSubgroups()
 factor(2^128 + 1); p = next_prime(10^12); g = GF(p).multiplicative_generator(); (g^12345).log(g)
 # Genus-2 Jacobian order over F_p
 C = HyperellipticCurve(GF(103)['t']([1, 0, 3, 0, 1, 0, 1])); C.frobenius_polynomial()(1)
+# Full s^e-torsion field degree when Frobenius acts as the integer pi (pi = -11 over F_121)
+torsion_degree = lambda N, pi: lcm([Mod(pi, s^e).multiplicative_order() for s, e in factor(N)])
+torsion_degree(1029, -11)   # 294
+```
+
+Exact enumeration of a quaternion coset c + M*O by reduced norm, in a
+definite algebra. It matched brute force on the example below.
+
+```sage
+B.<i,j,k> = QuaternionAlgebra(QQ, -1, -11); O = B.maximal_order()
+c, M, bound = 1 + i, 5, 300                     # coset c + M*O, norms < bound
+V = O.free_module(); co = lambda x: vector(QQ, x.coefficient_tuple())
+L = V.span([co(c)], ZZ) + M*V                   # Z*c + M*O contains the coset
+E = [B(list(v)) for v in L.basis()]
+Gram = matrix(ZZ, 4, 4, lambda r, s: 2*E[r].reduced_norm() if r == s else
+              (E[r] + E[s]).reduced_norm() - E[r].reduced_norm() - E[s].reduced_norm())
+hits = {x for vs in QuadraticForm(ZZ, Gram).short_vector_list_up_to_length(bound) for v in vs
+        for x in [sum(a*e for a, e in zip(v, E))] if co(x - c) in M*V}
+sorted({x.reduced_norm() for x in hits})        # [2, 17, 32, 37, ...]
 ```
 
 Corpus lookups (repo Python): `tools/corpus/cli.py been-tried "<idea>"` and
-`tools/corpus/cli.py baselines "<idea>"`. The baselines catalog now has
-Siegel reverse-transport, endomorphism-transport and KLPT entries.
+`tools/corpus/cli.py baselines "<idea>"`. Each lookup first refreshes the
+index in `research/corpus_index/`; add `--no-refresh` after the subcommand
+when no notes changed since the last lookup. `been-tried` is noisy on broad
+words ("Cayley", "dequantization"), so query with specific terms.
+`baselines` is the more reliable of the two; the catalog has Siegel
+reverse-transport, endomorphism-transport and KLPT/Wesolowski entries.

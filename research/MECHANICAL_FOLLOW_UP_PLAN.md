@@ -1,5 +1,35 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-10-31 Triage The Known Full-Suite Failures
+
+`tests/KNOWN_FAILURES.txt` lists the 134 tests that fail in a full local
+run, grouped by cause. 130 also failed in the 10-29 nightly CI run, which
+additionally lacks pycosat. Mechanical repairs only:
+
+- 72 experiment-runner and 46 writer/runner tests expect experiment ids,
+  NEG- records or 'summary' keys that a temporary seed registry no longer
+  contains. Look for a shared cause (likely one loader or seed-registry
+  change) before editing any test.
+  Never weaken a claim gate or delete an expected NEG- id to make a test
+  pass. If a record was quarantined on purpose, update the expectation and
+  cite the quarantine.
+- 5 hard-coded minimum-count assertions (969 < 970..978): df47b77f moved 4
+  records to `registry/quarantined_campaign_negatives.json`. Prefer exact
+  id checks to bare counts.
+- 3 node cross-check replays, 3 NameErrors ('shape') in
+  `tests/test_self_dual_wreath_tetrahedral_chi_square_tail_no_go.py`, 2
+  missing 'status' keys, 2 other assertions; `tests/tools/test_spend.py`
+  SIGINT forwarding times out only under heavy load.
+- Remove each fixed line from the list. Never regenerate an artifact to
+  match a test without replaying its producer.
+
+Done 2026-10-31 (no action needed): the SMT CLI `--write` repair below
+(`test_cli_writes_complete_replayable_instance`) now writes under `--write`
+and always prints JSON, with tests for no write, a relative output under
+`--root` and an absolute output. Also,
+`tests/test_character_shift_decoding_lower_bound_barrier.py` no longer
+rewrites the live registry and report.
+
 ## 2026-10-30 Preserve The Cayley And Reverse-Transport Contracts
 
 Read SIEGEL_CAYLEY_REPOLARIZATION.md and SIEGEL_REVERSE_TRANSPORT_ATTACK.md.
