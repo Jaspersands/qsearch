@@ -214,10 +214,17 @@ def cmd_eval(args: argparse.Namespace) -> int:
         return 1
     results: list[dict] = []
     for case in cases:
-        target = case["id"] if ":" in case["id"] else f"negative:{case['id']}"
+        target_ids = (case["id"],) if ":" in case["id"] else (f"negative:{case['id']}", f"quarantined:{case['id']}")
         hits = corpus.search(case["query"], k=args.k, dense=args.dense, kinds=tuple(case.get("kinds", ())))
         ids = [hit.doc_id for hit in hits]
-        results.append({"id": target, "rank": ids.index(target) + 1 if target in ids else None})
+        rank = None
+        target = target_ids[0]
+        for tid in target_ids:
+            if tid in ids:
+                rank = ids.index(tid) + 1
+                target = tid
+                break
+        results.append({"id": target, "rank": rank})
     found = sum(result["rank"] is not None for result in results)
     status = 0 if found >= args.min else 1
     if args.json:
