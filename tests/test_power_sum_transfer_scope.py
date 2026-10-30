@@ -22,7 +22,7 @@ def test_full_row_rank_and_many_nonzero_columns_do_not_imply_radicality(
     matrix = sp.Matrix.hstack(*(sp.Matrix(column) for column in columns))
     assert matrix[:, :rank] == sp.eye(rank)
     assert all(any(column) for column in columns)
-    assert width > rank * degree and prime % degree != 0
+    assert width > rank * degree and prime > degree
     x = sp.symbols(f"x0:{width}")
     equations = [sum(column[row] * x[j]**degree
                      for j, column in enumerate(columns)) for row in range(rank)]
@@ -82,3 +82,18 @@ def test_reduced_disjoint_power_system_still_has_product_geometric_degree(degree
     for variable in x:
         assert sp.gcd(sp.Poly(variable**degree-1, variable, modulus=prime),
                       sp.Poly(degree*variable**(degree-1), variable, modulus=prime)).degree() == 0
+
+
+def test_smooth_output_of_a_reduced_homogeneous_system_is_nonzero():
+    p = 7
+    x, y, z = sp.symbols("x y z")
+    equation = x**3+y**3+z**3
+    gradient = [sp.diff(equation, v) for v in (x, y, z)]
+    origin = {x: 0, y: 0, z: 0}
+    assert equation.subs(origin) == 0
+    assert all(entry.subs(origin) == 0 for entry in gradient)
+    point = {x: 1, y: p-1, z: 0}
+    assert int(equation.subs(point)) % p == 0
+    assert any(int(entry.subs(point)) % p for entry in gradient)
+    # This checks the singular-origin distinction. It does not execute the
+    # external point-finder, whose smooth-output contract comes from its proof.

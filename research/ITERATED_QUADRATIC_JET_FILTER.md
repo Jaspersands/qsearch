@@ -325,6 +325,35 @@ Frobenius or higher-jet attacks, and no useful natural application is
 established. The residual question is a general algorithm for these
 public orbit-sum stabilizers, not a new accepted quantum candidate.
 
+Carson the 2nd independently challenged the proposed application. S is
+a ONE-HORIZON accumulated cost, not generally a dynamical first integral:
+`S composed with R - S = r composed with R^p - r`. A symmetry of S need
+not commute with R or define a quotient dynamical system. Recovering it
+therefore does not automatically solve invariant discovery or model
+reduction. A meaningful application must establish that missing link.
+
+Before promotion, compare three additional classical structures:
+
+- The actual recurrence symmetries `Q(Bw)=B*Q(w), r(Bw)=r(w)` give a
+  subgroup of Stab(S). Their explicit quadratic representation has
+  polynomial dimension, so the existing defining-characteristic Luks
+  baseline applies. Containment must not be mistaken for equality.
+- If `r=h composed with R-h`, then `U-h(w)` is a first integral of the
+  skew product and `S=h composed with R^p-h`. Bounded-degree h can be
+  searched for by linear coefficient equations. In particular r=ell*Q
+  has the immediate solution h=ell*w; this can solve the invariant task
+  without solving the terminal stabilizer task.
+- If `R^j(w)=w+j*Q(w)`, the quadratic r makes r(R^j(w)) degree at most
+  two in j. For p>3 its sum over j in F_p is zero. More generally a
+  time polynomial of degree below p-1 gives the same collapse.
+
+In the finite example, S_8=-x*y*(x^3-y^3)^2. The polynomial h=x^3-y^3
+is killed by the vector field delta_Q, but
+`h composed with R-h=-h*(3*x*y+x^3+y^3)` is nonzero. Infinitesimal
+invariance does not supply an invariant of this discrete recurrence.
+These checks leave the general residual question open; they do not
+identify a hard family. No dynamical application is promoted by this pass.
+
 ## What This Enables And What It Does Not
 
 This filter can solve a proposed instance classically or reduce the

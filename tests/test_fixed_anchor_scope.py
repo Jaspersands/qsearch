@@ -68,3 +68,19 @@ def test_orbit_sum_has_delayed_terms_but_every_fixed_anchor_two_jet_agrees():
     assert all(sum(powers) == p+1 for powers, _ in total.terms())
     assert not sp.Poly(total.as_expr().subs(y, y+z)-total.as_expr(),
                        x, y, z, modulus=p).is_zero
+    h = x**3-y**3
+    assert total == sp.Poly(-x*y*h**2, x, y, modulus=p)
+    assert sp.expand(y**2*sp.diff(h, x)+x**2*sp.diff(h, y)) == 0
+    discrete_change = sp.Poly(h.subs({x: x+y**2, y: y+x**2}, simultaneous=True)-h,
+                              x, y, modulus=p)
+    assert discrete_change == sp.Poly(-h*(3*x*y+x**3+y**3), x, y, modulus=p)
+    assert not discrete_change.is_zero
+
+
+def test_additive_flow_accumulated_quadratic_cost_can_vanish_identically():
+    x, y = sp.symbols("x y")
+    for p in (7, 11):
+        # R=(x+y^2,y) has R^j=(x+j*y^2,y); this is not a claim for
+        # arbitrary tangent-to-identity quadratic maps.
+        total = sum((x+j*y**2)*y for j in range(p))
+        assert sp.Poly(total, x, y, modulus=p).is_zero

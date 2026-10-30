@@ -2,14 +2,16 @@
 
 30 October 2026. Lagrange the 2nd checked the primary paper and existing
 solvers; the parent independently checked the relevant theorem contracts
-and added exact countercontrols. This is a transfer audit, not a review
+and added exact countercontrols. Kepler the 2nd reviewed the deduction
+and corrected an overstated nonzero-output objection, incorporated below.
+This is a transfer audit, not a review
 certifying the entire external paper, a new solver, or a lower bound.
 
 ## Decision
 
 Do not replace the current power-SDE solver with a generic algebraic
 point-finder on the strength of the new power-sum paper. Its equations,
-geometric promises, nonzero-output requirement, and complexity parameter
+geometric promises and complexity parameter
 do not automatically match the measured Rees label bank.
 
 The source is [Gimenez et al., arXiv:2610.32056v1, Section 6](https://arxiv.org/html/2610.32056v1#S6).
@@ -60,8 +62,11 @@ weighted equations. It is a failure of an unjustified geometric promise.
 Nor does reduced geometry alone give polynomial rank dependence. For
 each row take a Fermat sum on its own disjoint block of g+1 variables.
 In characteristic greater than g, each projective hypersurface is smooth
-and geometrically irreducible, and the product gives a reduced regular
-system with no zero coefficient columns. Its geometric degree is `g^r`.
+and geometrically irreducible. The Cartesian product of their AFFINE
+CONES gives a reduced regular system with no zero coefficient columns.
+Its Hilbert series is `(1-t^g)^r/(1-t)^(r*(g+1))`, so its geometric degree
+is `g^r`; the intermediate prefix degrees are `g^j`. This is not a
+Segre embedding of the product of projective hypersurfaces.
 Thus the generic bound contains `g^(2r)` up to polynomial/logarithmic
 factors even on this well-behaved family. The field guard also grows
 exponentially in r. Taking log(p)=Theta(r) does not absorb this into
@@ -70,11 +75,20 @@ this is a cost limitation of the proposed transfer, not SDE hardness.
 
 ## Nonzero Output And Charts
 
-Zero always solves the homogeneous system. Existence of a nonzero point
-does not show that a point-finding algorithm outputs one. A justified
-projective chart or other exclusion is needed, with its geometry checked.
+Zero always solves the homogeneous system, so a generic black-box promise
+to return SOME point would be insufficient. But Cafure--Matera supplies
+more: its actual algorithm selects a point where the primitive
+polynomial's derivative is nonzero, and its open-set isomorphism maps
+this smooth point back to a smooth point of the input variety. See
+[Lemma 3.5 and Section 6](https://arxiv.org/html/math/0406085v1#S6).
+For a reduced, positive-codimension homogeneous complete intersection
+of degree-g equations, g>=2, the origin is singular. Thus successful
+output is ALREADY NONZERO once those geometric hypotheses hold. No
+extra chart construction is then required. The initial draft's claim
+of an additional independent blocker was too strong and is withdrawn.
 
-One cannot fix an ARBITRARY coordinate to one: in the repeated-basis
+For alternative methods using charts, one cannot fix an ARBITRARY
+coordinate to one: in the repeated-basis
 example all solutions satisfy s_1=0. At p=7,g=3,r=2,M=7 there is nevertheless
 the explicit witness `(0,1,-1,0,0,0,0)`. The first-coordinate chart is
 empty; the second is not. A cover by all M charts preserves nonzero
@@ -102,8 +116,9 @@ The [IID-column construction](RANDOM_COLUMN_REES_PARAMETER_BOUND.md) uses
 M=4u, p>=16u^2, and capped kernel rejection on one saved label bank.
 Its classical `g^M` retries do not consume additional quantum copies.
 An improved geometric solver for suitable random banks is not ruled out,
-but it needs a new geometry/failure analysis and a paid nonzero-output
-procedure. The external theorem does not supply those premises.
+but it needs a new geometry/failure analysis and better total resource
+bounds. Successful smooth output would settle the nonzero requirement;
+it would not settle those missing premises.
 
 A constructive scalar specialization is possible. When all columns equal
 one nonzero vector, impose `sum x_i=1` and `sum x_i^g=0` on g+3 variables.
