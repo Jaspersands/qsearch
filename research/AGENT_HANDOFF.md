@@ -1,5 +1,43 @@
 # Research Agent Handoff
 
+## 2026-10-30 Six-Agent Constructive Direction Challenge
+
+PROGRESS; goal ACTIVE. Read
+audits/reviews/2026-10-30-constructive-direction-round.md for assignments,
+corrections, file list, source links and replay. Six focused agents all
+completed and closed. No candidate or speedup was promoted.
+
+New proof-level classical progress: the fixed-anchor jet filter can use
+extension fields to cover ALL anchors with d probes and fresh generator
+PIT. The residual orbit-sum construction evades those two-jets but does
+not yet solve a useful native dynamical task. The proposed power-sum
+geometry transfer lacks matching equations/geometric promises and can
+pay exponential rank degree. Review corrected an overclaim: the actual
+Cafure--Matera smooth-output procedure already excludes the homogeneous
+origin when its hypotheses hold.
+
+A native diffusion pivot has a stronger classical comparison: explicit
+Girsanov/Pinsker constants plus a rounded-history finite-bit bridge give
+polynomial additive endpoint estimation for bounded smooth-periodic
+drift. With BOTH restricted-Gibbs samplers, reversibility gives the SAME
+normalized overlap as sqrt(p_RP*p_PR). Read all input, boundary and
+precision qualifications in FOKKER_PLANCK_CLASSICAL_BASELINE.md.
+
+The direct quaternion coefficient-quotient/Fourier receiver has success
+at most |O^1|*max(P_I); the specified broad laws make direct marked-good
+success N^(-Omega(N)). It does not exclude decoding from the full record.
+The general norm-one unit bound is now proved from classification and
+cyclotomic degree, correcting an overbroad Hawk citation. Constant state
+preparation error does not preserve exponentially small probabilities.
+
+VERIFIED:392 selected tests PASS6.50s, including32newcontrols;4Python
+compile,12siteJSsyntax,qsearchvalidatevalidtrue/issues[]. Notfullsuite,
+Leanreplay,productionquantumexecutionornewCLIworkflow. Registry13JSON
+fingerprintunchanged79c8b3fca6c2bb7c70cca8116b8356bc3dc69734c682feeba16a8bbf1949c0fd.
+No parent Git writes. Concurrent commits9232b813/561f341e preserved;
+the latter already contains earlier work from this round. Do not redo
+committed pieces just because the remaining unstaged diff is smaller.
+
 ## 2026-10-30 Six-Agent October DCP Source Check
 
 PROGRESS; goal ACTIVE. Read DCP_SIMON_OCTOBER_REVISION_AUDIT.md. Unlike the

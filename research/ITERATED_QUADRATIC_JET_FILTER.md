@@ -224,7 +224,8 @@ That literature is context, not an imported multivariate stabilizer algorithm.
 ## All Fixed Anchors Without Enumeration
 
 30 October follow-up: James the 2nd proposed the following extension;
-the parent checked the rank-increase argument and its field/access scope.
+the parent checked the rank-increase argument and its field/access scope,
+and Kepler the 2nd independently checked the deductions and qualifications.
 This is a written randomized classical procedure, not an implemented
 extension-field backend or a claimed new general stabilizer theorem.
 
@@ -256,8 +257,12 @@ Exponentiate a basis of the resulting kernel. At most d full-polynomial
 identity tests, on F(g*x)-F(x) using FRESH independent extension points,
 can check whether every generator actually preserves F. A union bound
 spends at most the remaining epsilon/2. Passing gives a Monte Carlo
-certificate H=K, not a deterministic identity certificate. Failing leaves
-H properly contained in K, without finding its generators. A zero kernel
+certificate H=K, not a deterministic identity certificate or posterior
+confidence conditional on PASS. Equality acceptance needs only the
+deterministic containment and fresh generator tests; it does not depend
+on successful recovery of L_all. A nonzero PIT evaluation proves H is
+properly contained in K, without finding its generators; a field,
+sampling or computational ABORT proves no such strictness. A zero kernel
 is already an exact triviality certificate and needs no probabilistic
 completion claim.
 

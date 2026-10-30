@@ -12,6 +12,7 @@ from fractions import Fraction
 from itertools import product
 from math import gcd, isqrt
 
+import numpy as np
 import pytest
 import sympy as sp
 from sympy.matrices.normalforms import hermite_normal_form
@@ -363,3 +364,58 @@ def test_bounded_principal_fixtures_and_expanded_height_bound(change):
             assert _integral(coefficients)
             assert basis * coefficients == sp.Matrix(gamma)
             assert max(abs(x) for x in coefficients) * determinant <= 72 * height**4
+
+
+def test_cyclotomic_order_bound_has_no_small_prime_exception():
+    # The SU(2) classification is external. Check its elementary numerical
+    # ingredient, including M=1,2 and the exceptional 1/2 factor at 2.
+    for order in range(1, 513):
+        phi = int(sp.totient(order))
+        factors = sp.factorint(order)
+        ratio = sp.prod(sp.Rational(prime)**(power-2)*(prime-1)**2
+                        for prime, power in factors.items())
+        assert ratio == sp.Rational(phi**2, order)
+        assert ratio >= sp.Rational(1, 2)
+        assert order <= 2*phi**2
+
+
+def test_direct_quotient_full_fourier_marginal_retains_abort_and_norm_units():
+    units = [q for q in product(range(-1, 2), repeat=4) if _norm(q) == 1]
+    assert set(units) == {ONE, I, tuple(-x for x in ONE), tuple(-x for x in I)}
+    good = {_mul(unit, ALPHA) for unit in units}
+    for gamma in good:
+        assert _norm(gamma) == 2
+        assert hermite_normal_form(_multiplication_matrix(gamma, "right")) == YES_HNF
+    xs = [ZERO, ONE, I, H]
+    px = [Fraction(i, 10) for i in (1, 2, 3, 4)]
+    ys = [_mul(z, ALPHA) for z in (ZERO, ONE, I, H, tuple(-x for x in ONE))]
+    py = {y: Fraction(i+1, 15) for i, y in enumerate(ys)}
+    fibers = {}
+    for index, x in enumerate(xs):
+        if x == ZERO:
+            continue
+        inverse = tuple(Fraction(v, _norm(x)) for v in _conjugate(x))
+        for y in ys:
+            gamma = _mul(inverse, y)
+            assert _mul(x, gamma) == y
+            vector = fibers.setdefault(gamma, np.zeros(len(xs)))
+            vector[index] = np.sqrt(float(px[index]*py[y]))
+    marginal = {}
+    for gamma, vector in fibers.items():
+        output = np.fft.fft(vector, norm="ortho")
+        marginal[gamma] = float(np.vdot(output, output).real)
+        assert marginal[gamma] == pytest.approx(float(np.vdot(vector, vector)), abs=1e-14)
+    exact_good = sum(px[i]*sum(py.get(_mul(x, gamma), 0) for gamma in good)
+                     for i, x in enumerate(xs) if x != ZERO)
+    assert sum(marginal.values()) == pytest.approx(float(1-px[0]), abs=1e-14)
+    assert sum(value for gamma, value in marginal.items() if gamma in good) == pytest.approx(float(exact_good))
+    assert exact_good <= len(units)*max(py.values())
+
+
+def test_source_error_must_be_paid_before_claiming_tiny_quotient_success():
+    # A hypothetical perturbation that moves tau mass to a good record
+    # saturates the TV correction. Tiny ideal success alone is not enough.
+    ideal, tau = Fraction(1, 2**80), Fraction(1, 100)
+    actual = ideal+tau
+    assert abs(actual-ideal) == tau
+    assert actual > 10**20*ideal

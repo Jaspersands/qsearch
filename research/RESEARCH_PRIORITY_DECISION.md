@@ -1,5 +1,28 @@
 # Constructive Research Priority Decision
 
+## 2026-10-30 Native Direction Challenge: No New Receiver Yet
+
+Read audits/reviews/2026-10-30-constructive-direction-round.md. Six agents
+compared a Rees residual, a power-sum transfer, quaternion quotient
+readout, and a dissipative-dynamics pivot. None supplies a new accepted
+end-to-end quantum algorithm. Two useful classical arguments survive:
+all-fixed-anchor extension-field testing, and a polynomial finite-time
+diffusion overlap baseline under explicit smoothness and sampling access.
+
+The residual orbit-sum stabilizer has no established native application:
+terminal-cost symmetry is not automatically a recurrence invariant or
+model quotient. Power-sum geometry does not automatically cover Rees
+label equations or improve their rank cost. Direct quaternion quotient
+success is too small for the specified broad source; full-record
+decoding remains open. The general norm-one unit bound is repaired.
+
+Do not commission a backend for any of these just to create apparent
+progress. The next constructive task must specify a native use and
+decoder/reduction, or a paid regime outside the diffusion classical
+window. Incomplete filters remain UNKNOWN, not evidence of hardness.
+Review explicitly withdrew a false extra nonzero-output objection to
+Cafure--Matera; preserve that correction when reusing the geometry audit.
+
 ## 2026-10-30 October DCP Revision Does Not Supply A Repaired Algorithm
 
 Read DCP_SIMON_OCTOBER_REVISION_AUDIT.md. Both official August and October

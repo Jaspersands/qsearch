@@ -57,9 +57,36 @@ conjugation to translate this convention explicitly.
 
 The stabilizer is exact: O g=O iff g in H. If O g=O, applying g to 1 puts
 g in O, and norm one gives inverse conjugate(g) in O. Conversely such a
-unit preserves O. H is finite. Hawk Appendix B bounds its cardinality by
-max(120,16d^2); small cardinality alone does not give its enumeration or
-the circuit for a group measurement.
+unit preserves O. H is finite, with |H|<=max(120,16d^2). Small cardinality
+alone does not give its enumeration or the circuit for a group measurement.
+
+**General cardinality argument (30 October correction).** The previous
+attribution to Hawk Appendix B was too broad: its Proposition B.25 has
+additional presentation hypotheses. The bound in the present generality
+follows instead from the standard finite-subgroup classification of SU(2),
+as recorded in [Wright, Section 2.3.1](https://www.math.stonybrook.edu/alumni/2013-Evan-Wright.pdf),
+and this elementary cyclotomic argument. First use the FULL Minkowski
+embedding: O is discrete and norm-one elements lie in a compact product
+of unit spheres. Hence H is finite. At any one real place the ring map
+B -> B tensor_(F,sigma) R is injective and embeds H into SU(2). This
+does not assert that all of O has discrete image at that single place.
+
+An element u of exact order M generates Q[u]=Q(zeta_M) inside F[u].
+Total definiteness makes B a division algebra, so F[u] is a field of
+degree at most two over F, and phi(M)<=2d. The Euler product gives
+
+```
+phi(M)^2/M = product_(l^e exactly divides M) l^(e-2)*(l-1)^2 >= 1/2,
+M <= 2*phi(M)^2 <= 8d^2.
+```
+
+Every odd-prime factor in the product is at least one; only l=2,e=1
+contributes 1/2. Finite SU(2) subgroups are cyclic, binary dihedral,
+or have order 24,48,120. A binary dihedral group of order 4m contains
+an element of order 2m, so its order is at most 16d^2. This proves the
+stated bound for any totally definite quaternion order over F. Dewey
+the 2nd independently checked the injection, field, and numerical steps.
+This is a local deduction, not a new unit enumeration algorithm.
 
 ## 2. Signature And Precise Parameters
 

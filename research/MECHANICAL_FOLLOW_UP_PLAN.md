@@ -1,5 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-10-30 Six-Agent Proof Controls Are Not New Backends
+
+Read audits/reviews/2026-10-30-constructive-direction-round.md. The32new
+controls and four research notes do not authorize a candidate promotion,
+new quantum CLI, UI tile, Gaussian-LCHS demo, or generic point-finder.
+The extension-field all-anchor procedure is mathematically specified but
+not implemented. Only implement it when a concrete native instance needs
+that test; preserve F_p unknowns, verified fields, independent uniform
+anchors and PIT, failure budgets, and PASS/strictness/ABORT distinctions.
+
+Any later diffusion comparator must retain both restricted-Gibbs samplers
+for normalized overlap, fixed target regions, periodic-seam regularity,
+rounded-history error, and bit precision. Do not replace actual source
+laws in the quaternion bound by ideal Gaussians or drop its approximation
+error term. No simulator result is a quantum receiver implementation.
+
+Concurrent commit9232b813 contains test-runner isolation changes; inspect
+that current code before acting on the older approximate-erasure task
+below. This research pass did not make or broadly validate those changes.
+
 ## 2026-10-30 Do Not Wire The Revised Simon DCP Claim
 
 DCP_SIMON_OCTOBER_REVISION_AUDIT.md pins the two actual sources and gives
