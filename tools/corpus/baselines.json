@@ -187,6 +187,44 @@
         {"note": "ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER"}
       ],
       "runnable": null
+    },
+    {
+      "id": "siegel-endomorphism-transport",
+      "name": "Endomorphism-transport kernel recovery",
+      "aliases": ["endomorphism transport attack", "Hom-lattice attack"],
+      "problem": "Recover the abstract kernel of a weak polarized isogeny when the input also supplies a full evaluable target endomorphism basis (or a Hom lattice) with its Rosati Gram matrix.",
+      "mechanisms": ["target endomorphism", "endomorphism lattice", "hom lattice", "rosati", "isogeny kernel", "repolarization"],
+      "summary": "Reconstruct F_a = phi a phi^dagger in End(B) and test divisibility by ell in the supplied full target lattice; the trace-pairing annihilator of the algebra preserving K has image exactly K. A stronger-input baseline: any route that adds target End/Hom data as advice is already classical. It does not break the original weak-isogeny interface.",
+      "references": [
+        {"note": "SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK"}
+      ],
+      "runnable": null
+    },
+    {
+      "id": "siegel-reverse-transport",
+      "name": "Reverse transport from computable target automorphisms",
+      "aliases": ["reverse transport attack", "reverse-transport attack"],
+      "problem": "Recover the abstract kernel K of a weak polarized isogeny phi from polarized automorphisms of the original target model that are actually computable.",
+      "mechanisms": ["polarized automorphism", "reverse transport", "rosati", "isogeny kernel", "repolarization", "source order"],
+      "summary": "For a computable polarized automorphism u of the original target, reconstruct beta_u = phi^dagger u phi in the known source order; its image lies in K, and an image (or joint span) of dimension g equals K. Needs no target End/Hom lattice. Scalar or commuting u gives no information, so this is a required comparator for weak-input Siegel routes, not a general break.",
+      "references": [
+        {"note": "SIEGEL_REVERSE_TRANSPORT_ATTACK"}
+      ],
+      "runnable": {"entry": "theorems/siegel_reverse_transport.py:kernel_from_reverse_transport"}
+    },
+    {
+      "id": "klpt-norm-equations",
+      "name": "KLPT quaternion norm equations and ideal smoothing",
+      "aliases": ["KLPT", "Kohel-Lauter-Petit-Tignol"],
+      "problem": "Find an element of prescribed (smooth or powersmooth) reduced norm in a quaternion order, or an equivalent left ideal of smooth norm.",
+      "mechanisms": ["quaternion order", "reduced norm", "norm equation", "powersmooth", "ideal smoothing"],
+      "summary": "KLPT smooths equivalent ideal norms in maximal orders of B_{p,inf}; Wesolowski (Sections 5-6) gives GRH-conditional norm and powersmooth-ideal algorithms. The notes treat them as relevant prior art, not a checked solution of the shifted-norm affine-coset selector: compare against them, and do not replace a missing reduction with the phrase 'use KLPT'.",
+      "references": [
+        {"note": "SIEGEL_CAYLEY_REPOLARIZATION"},
+        {"arxiv": "1406.0981"},
+        {"arxiv": "2111.01481"}
+      ],
+      "runnable": null
     }
   ]
 }

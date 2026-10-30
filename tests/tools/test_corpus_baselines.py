@@ -46,7 +46,7 @@ def _corpus_with_note(root: Path, stem: str, text: str) -> Corpus:
 
 def test_catalog_is_well_formed() -> None:
     entries = load_catalog()
-    assert len(entries) == 15
+    assert len(entries) == 18
     assert validate_catalog(entries) == []
     first, second = entries[0], entries[1]
     broken = [

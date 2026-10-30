@@ -338,7 +338,7 @@ Smoke runs on this checkout (2026-10-21):
 ## Baselines
 
 Which classical algorithm should a quantum idea be compared against first? `baselines.py`
-ranks a curated catalog, `tools/corpus/baselines.json` (15 entries), against a short
+ranks a curated catalog, `tools/corpus/baselines.json` (18 entries), against a short
 description of the idea.
 
 ```bash

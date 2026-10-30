@@ -11,13 +11,16 @@ from tools.corpus.sources import literature, markdown, registry, theorems
 # parser(root, rel, issues) -> docs; a parser appends one line to `issues` per record it had to skip.
 Parser = Callable[[Path, str, list[str]], list[Doc]]
 
+# Orientation pages rewritten every pass: they match most queries and record no result.
+ORIENTATION_PAGES = {"STATE.md", "TRAPS.md", "TOOLBOX.md"}
+
 
 def _parser_for(rel: str) -> Parser | None:
     parts = rel.split("/")
     name = parts[-1]
     if parts[:2] == ["research", "registry"] and name in registry.PARSERS:
         return registry.parse
-    if len(parts) == 2 and parts[0] == "research" and name.endswith(".md"):
+    if len(parts) == 2 and parts[0] == "research" and name.endswith(".md") and name not in ORIENTATION_PAGES:
         return markdown.parse
     if len(parts) == 2 and parts[0] == "theorems" and name.endswith(".py") and name != "__init__.py":
         return theorems.parse
