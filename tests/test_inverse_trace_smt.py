@@ -1,5 +1,6 @@
 from itertools import product
 import json
+from pathlib import Path
 
 from flint import fq_default_poly_ctx
 import pytest
@@ -220,6 +221,32 @@ def test_cli_writes_complete_replayable_instance(tmp_path, capsys):
     assert result["prefix_seed"] != args.seed
     assert result["solver_pipeline"] == "direct"
     assert len(result["instance"]["points"]) == 25
+
+
+def _smt_cli_args(root, *extra):
+    from argparse import ArgumentParser
+    from qsearch_cli.commands.general import add_inverse_trace_smt
+    parser = ArgumentParser()
+    parser.set_defaults(root=root)
+    add_inverse_trace_smt(parser.add_subparsers(dest="command", required=True))
+    return parser.parse_args(["inverse-trace-smt", "--bits", "5", "--resource-limit", "1", *extra])
+
+
+def test_cli_without_write_prints_json_and_writes_nothing(tmp_path, capsys):
+    args = _smt_cli_args(tmp_path)
+    assert args.func(args) == 0
+    assert json.loads(capsys.readouterr().out)["status"] == "UNKNOWN_SOLVER_LIMIT"
+    assert not any(tmp_path.iterdir())
+
+
+@pytest.mark.parametrize("absolute", [False, True])
+def test_cli_writes_custom_output_under_root_or_absolute(tmp_path, capsys, absolute):
+    output = tmp_path/"elsewhere/run.json" if absolute else Path("custom/run.json")
+    args = _smt_cli_args(tmp_path/"root", "--write", "--output", str(output))
+    assert args.func(args) == 0
+    saved = output if absolute else tmp_path/"root"/output
+    assert json.loads(saved.read_text()) == json.loads(capsys.readouterr().out)
+    assert not (tmp_path/"root/research").exists()
 
 
 @pytest.mark.parametrize("bits", [5, 7])

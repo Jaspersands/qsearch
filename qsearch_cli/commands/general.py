@@ -300,7 +300,8 @@ def command_inverse_trace_smt(args):
     if args.write:
         path = args.output if args.output.is_absolute() else args.root/args.output
         path.parent.mkdir(parents=True, exist_ok=True)
-        print(payload, end="")
+        path.write_text(payload)
+    print(payload, end="")
     return 0
 
 
