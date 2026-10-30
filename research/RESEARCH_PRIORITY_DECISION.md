@@ -1,5 +1,28 @@
 # Constructive Research Priority Decision
 
+## 2026-10-30 Trace-Affine Sparse Search Is Classically Constructive
+
+Read INVERSE_TRACE_GENUS_ZERO_NORM.md. A five-agent round now supplies an
+expected-polynomial classical search algorithm for targets Tr(c*alpha+d0),
+c!=0, at odd native n>=15. The proof uses the actual squarefree polynomial
+progression, counts valid lifts including nonvanishing, and pays multiplicity
+through a divisor-function second moment. Random factor allocation is a
+necessary part of this particular guarantee. The sparse n17,33-one input
+has a verified witness; it was outside the previous dense-support guard.
+
+Do not use such structured target examples as evidence for a quantum
+search advantage. Arbitrary targets and uniform native sampling remain
+unresolved. Do not infer an arbitrary-target algorithm from the new norm
+method: polynomial trace interpolation of the singleton target still
+forces genus Omega(N), even after gauge optimization. The classical
+result is useful elimination of a broader family, not a Shor-level gain.
+
+Other agent proposals did not meet the constructive gate: quaternion
+compatible CM slices already have a classical solver once the compatible
+embedding is supplied, and compressed MacWilliams readout has an explicit
+native exponentially-small-signal counterexample. Preserve these scoped
+outcomes without building additional backends around their missing steps.
+
 ## 2026-10-30 Native Direction Challenge: No New Receiver Yet
 
 Read audits/reviews/2026-10-30-constructive-direction-round.md. Six agents

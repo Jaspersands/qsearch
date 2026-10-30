@@ -1,5 +1,51 @@
 # Research Agent Handoff
 
+## 2026-10-30 Five-Agent Genus-Zero Constructive Result
+
+PROGRESS; goal ACTIVE. Read INVERSE_TRACE_GENUS_ZERO_NORM.md and
+audits/reviews/2026-10-30-genus-zero-constructive-round.md. Five focused
+agents compared constructive routes and adversarially reviewed the
+surviving classical algorithm. No quantum candidate or speedup promoted.
+
+New result: expected-polynomial native inverse-trace SEARCH for public
+trace-affine targets Tr(c*alpha+d0), c!=0, odd n>=15. The rational norm
+construction needs UNIFORM factor allocations, unique scalar normalization
+and explicit exclusion of zero at one-sites. An MDS first moment plus
+Sawin Lemma8.7's d4 bound proves acceptance, not merely existence. Newton
+supplied the argument, Banach independently checked it, and Heisenberg
+audited the implementation and independently verified the live certificate.
+
+Fixed n17,N289,K36,points0..288,33ones,c512,d0zero: native witness in
+15 trials/158.27s, all coordinates nonzero. Saved full certificate in
+classical_baselines/inverse_trace_genus_zero_n17.json, SHA256
+e86442023227f76462424022e32fbbb7c2a5702043042690ffeac91e89a67c8b.
+Exact IID trial bound1/21853701; not a practical runtime prediction or
+uniform witness sampler. General targets remain open. Singleton targets
+still force polynomial AS genus>=127 at n17 even after trace-only
+optimization; the same old uniform-monic proposal law has acceptance
+at most2^-1870. Do not generalize this to arbitrary solvers or rational
+interpolants with finite poles.
+
+Parent's reciprocal-linear shortcut was FALSE: S1=N+a*S0, not a*S0.
+Reviewer caught it. An odd target-parity argument excludes inverse
+polynomials with deg(g)+1<K, including exceptional zeros. The independent
+code audit also caught a certificate-test gap; replay now binds P to the
+original points and U,A to the exact F, not just its residue class.
+
+One existing selected test exposed a committed stale proof hash in
+inverse_trace_algebraic_audit.json. Replayed its generator; only the hash
+changed, no mathematical controls or source changed. Registry untouched.
+New module/test/artifact are not yet wired to qsearch; Gemini integration
+contract is in MECHANICAL_FOLLOW_UP_PLAN.md. No parent Git writes.
+
+VERIFIED:219 selected tests passed16.34s, including16newcontrols;
+2Pythoncompile,12siteJSsyntax,gitdiffcheck,qsearchvalidatevalidtrue/issues[].
+Not a full repository suite, Lean proof or quantum execution. The
+13registryJSON aggregate remains
+79c8b3fca6c2bb7c70cca8116b8356bc3dc69734c682feeba16a8bbf1949c0fd.
+The final native artifact regression also replays all15 polynomial hashes
+from the saved seed without rerunning the expensive factorization.
+
 ## 2026-10-30 Six-Agent Constructive Direction Challenge
 
 PROGRESS; goal ACTIVE. Read

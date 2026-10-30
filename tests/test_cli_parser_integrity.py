@@ -553,6 +553,19 @@ def test_norm_comparison_options_are_wired(tmp_path, capsys):
     assert saved["same_instance_flat_comparison"]["norm_family_membership"]["certificate_verified"]
 
 
+def test_inverse_trace_genus_zero_cli_runs_and_writes(tmp_path, capsys):
+    import json
+    parser = qsearch.build_parser()
+    output = tmp_path / "genus-zero-control.json"
+    args = parser.parse_args(["inverse-trace-genus-zero", "--bits", "5", "--bit", "2",
+                              "--max-trials", "0", "--write", "--output", str(output)])
+    assert args.func(args) == 0
+    saved = json.loads(output.read_text())
+    assert json.loads(capsys.readouterr().out) == saved
+    assert saved["method"] == "genus_zero_trace_affine_norm"
+    assert saved["status"] == "UNKNOWN_TRIAL_LIMIT"
+
+
 def test_prime_power_sde_workflow_writes_exact_replayable_artifact(tmp_path, capsys):
     import json
     parser = qsearch.build_parser()

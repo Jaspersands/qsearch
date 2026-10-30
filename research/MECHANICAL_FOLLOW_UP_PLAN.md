@@ -1,5 +1,35 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-10-30 Gemini: Preserve The Trace-Affine Norm Contract
+
+New math/replay: INVERSE_TRACE_GENUS_ZERO_NORM.md,
+theorems/inverse_trace_genus_zero.py, tests/test_inverse_trace_genus_zero.py,
+and classical_baselines/inverse_trace_genus_zero_n17.json. The parent has
+already run the bounded native experiment; do not repeat it just to
+manufacture activity. No additional GPT effort is needed for wiring.
+
+Useful integration, using existing adapters only:
+- Expose an inverse-trace-genus-zero CLI entry and optional experiment
+  adapter taking the ORIGINAL instance plus c,d0, two seeds and trial cap.
+- Verify trace-affine compatibility before calling the solver. If adding
+  automatic recognition, solve the n+1-variable binary trace system and
+  explicitly ensure c!=0. Constant targets retain their existing route.
+- Keep theorem scope, IID success certificate and seeded observed status
+  separate. Uniform allocation within a polynomial is NOT uniform native
+  sampling. A finite trial failure is UNKNOWN, not hardness or UNSAT.
+- Preserve every failed trial and the full polynomial witness. Bind P to
+  the original points, F to D^2 modP+PT, and U,A to EXACT F; congruence
+  alone does not authenticate the saved trial certificate.
+- Keep the new result classical. Do not promote an unrestricted solver,
+  a quantum advantage, a hardware runtime guarantee or an arbitrary-target
+  dequantization. Treat FLINT internal randomness as uncapped.
+- Use the independent binary arithmetic artifact test as a regression.
+  New proof or source changes require real replay before updating any
+  provenance hashes; do not bypass a failing provenance assertion.
+
+No quaternion-CM or QOPT backend requested: the five-agent review found
+missing native reductions/readout, not merely missing engineering.
+
 ## 2026-10-30 Six-Agent Proof Controls Are Not New Backends
 
 Read audits/reviews/2026-10-30-constructive-direction-round.md. The32new

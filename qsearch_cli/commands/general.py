@@ -300,6 +300,43 @@ def command_inverse_trace_smt(args):
     if args.write:
         path = args.output if args.output.is_absolute() else args.root/args.output
         path.parent.mkdir(parents=True, exist_ok=True)
+        print(payload, end="")
+    return 0
+
+
+def add_inverse_trace_genus_zero(subparsers):
+    parser = subparsers.add_parser("inverse-trace-genus-zero", help="Expected-polynomial genus-zero norm search for trace-affine targets")
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--bits", type=int, default=17)
+    parser.add_argument("--bit", type=int, default=8)
+    parser.add_argument("--c", type=int, help="Nonzero trace slope")
+    parser.add_argument("--d0", type=int, default=0, help="Trace offset")
+    parser.add_argument("--seed", type=int, default=1030)
+    parser.add_argument("--allocation-seed", type=int, default=1031)
+    parser.add_argument("--max-trials", type=int, default=32)
+    parser.add_argument("--write", action="store_true")
+    parser.add_argument("--output", type=Path, default=Path("research/classical_baselines/inverse_trace_genus_zero.json"))
+    parser.set_defaults(func=command_inverse_trace_genus_zero)
+
+
+def command_inverse_trace_genus_zero(args):
+    from theorems.inverse_trace_genus_zero import run_experiment, trace_bit_instance
+    if args.input:
+        instance = json.loads(args.input.read_text())
+        if args.c is None:
+            raise ValueError("--c (nonzero trace slope) required when supplying custom --input")
+        c = args.c
+        d0 = args.d0
+    else:
+        instance, default_c, default_d0 = trace_bit_instance(args.bits, args.bit)
+        c = args.c if args.c is not None else default_c
+        d0 = args.d0 if args.d0 != 0 else default_d0
+    result = run_experiment(instance, c=c, d0=d0, seed=args.seed,
+                            allocation_seed=args.allocation_seed, max_trials=args.max_trials)
+    payload = json.dumps(result, indent=2) + "\n"
+    if args.write:
+        path = args.output if args.output.is_absolute() else args.root / args.output
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(payload)
     print(payload, end="")
     return 0
