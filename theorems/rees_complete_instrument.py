@@ -264,7 +264,7 @@ def audit_case(kind, random_records=32):
             "ideal_original_oracle_queries_per_final_packet": 3*prod(row["raw_input_arity"] for row in stages)}
 
 
-def nonbijective_cubic_control(kind, seed=1913):
+def nonbijective_cubic_control(kind, seed=1913, *, construction="three_level"):
     """F7 actual mixed-state descent with solver-produced cubic scales.
 
     This starts from a known finite coset density, NOT an emulated hiding
@@ -286,10 +286,10 @@ def nonbijective_cubic_control(kind, seed=1913):
         if abs(sum(mass for mass, _ in branches.values())-1) > TOL:
             raise ArithmeticError("incomplete F7 central instrument")
         allowed = tuple(label for label, (mass, _) in branches.items() if mass and any(label))
-        count = cubic_arity(1) if stage == 3 else 9
+        count = cubic_arity(1, construction=construction) if stage == 3 else 9
         labels = tuple(rng.choice(allowed) for _ in range(count))
         if stage == 3:
-            cubic = cubic_weights(p, labels, rng=rng)
+            cubic = cubic_weights(p, labels, rng=rng, construction=construction)
             weights = cubic.weights
         else:
             weights = square_weights_capped(p, labels, rng)
@@ -314,6 +314,8 @@ def nonbijective_cubic_control(kind, seed=1913):
                 original_input_is_explicit_finite_coset_density=True,
                 tuple_oracle_source_replayed=False, cubic_method=cubic.method,
                 cubic_collision_nodes=cubic.collision_nodes, cubic_root_calls=cubic.root_calls,
+                cubic_curve_draws=cubic.curve_draws,
+                cubic_sampling_abort_bound=str(cubic.sampling_abort_bound),
                 selected_nonzero_records_not_iid_sampling=True, all_label_tuples_checked=False,
                 stages=stages, recovered_basis=basis, final_fourier_support_size=len(frequencies),
                 full_original_subspace_recovered=True, fourier_mass=sum(probabilities))
@@ -325,6 +327,8 @@ def report():
             "arithmetic": "exact_F5_F7_group_operations_with_floating_point_character_phases",
             "cases": [audit_case(kind) for kind in ("X+W", "Z+W")],
             "nonbijective_cubic_controls": [nonbijective_cubic_control(kind) for kind in ("X+W", "Z+W")],
+            "two_level_cubic_controls": [nonbijective_cubic_control(kind, construction="two_level_curve")
+                                         for kind in ("X+W", "Z+W")],
             "full_regular_operator_kernels_checked_per_tested_record": True,
             "all_second_stage_label_tuples_checked": False,
             "quadratic_witness_search": "bounded_exhaustive_F5_fixture_only",

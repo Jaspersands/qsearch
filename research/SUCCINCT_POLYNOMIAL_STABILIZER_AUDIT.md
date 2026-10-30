@@ -6,6 +6,19 @@ instance, general polynomial-equivalence algorithm or executed HSP solver.
 This probes an exclusion in CLASS_THREE_APPLICATION_AUDIT.md instead of
 repeating the already-covered explicit graph/code/tensor cases.
 
+2026-10-28 literature check: [Blaser--Dutta--Dutta--Jindal, sparse shift
+equivalence, Theorem 1.2 and Section 5](https://arxiv.org/html/2610.27168v1)
+gives deterministic time polynomial in the EXPLICIT SPARSE input size,
+including log(degree), over Q. Its arithmetic extension requires
+characteristic zero or greater than degree. It does not cover arbitrary
+high-degree public circuits or formal identities in small characteristic;
+the latter is explicitly left open. Do not infer classical hardness from
+those exclusions. An independent automated literature check found no
+general classical solver for that residual input model, not a lower bound
+or a complete prior-art certificate. The one-dimensional translation-period
+subproblem is already abelian HSP, so is not new Rees leverage. No new hard
+native family or candidate promotion resulted from this check.
+
 2026-10-23 parameter extension: BOUNDED_CODIMENSION_HSP_REDUCTION.md
 replaces the fixed-class assumption by [Gamma:H]<=p^k for supplied matrix
 p-groups with p>max(D,4). Public logarithm/commutator closure supplies the
@@ -177,6 +190,13 @@ F_minus = x^p - x*y^(p-1).
 Thus first derivatives can both overestimate and underestimate the finite
 stabilizer when the degree guard is dropped. These are easy two-monomial,
 abelian controls, not novel algorithms or hard benchmark families.
+
+Do not weaken the guard to Delta<p. A new exact class-three ambient
+UT4(F5) control has F=x0*x1*x3+2*x0*x2^2-x1^2*x2, degree3<5, and
+N=E01+E12+E23. Its infinitesimal derivative vanishes, but
+F(exp(tN)x)-F(x)=t^5*x3^3. The orbit-module baseline still handles
+this cubic; this is not hardness evidence. See
+[the incoming-review correction](manuscripts/REES_FOUR_PILLAR_CORRECTIONS.md).
 
 There is a further explicit dequantization filter. For r>=1, each of
 `Phi(x)=(x_i^(p^r))_i` and `Phi(x)=(x_i^(p^r)-x_i)_i` commutes with

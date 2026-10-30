@@ -12,6 +12,299 @@ import json
 from pathlib import Path
 
 
+def add_holdout_jets(subparsers):
+    parser = subparsers.add_parser("holdout-jets", help="Verify exact binary Hasse-jet holdout certificates; not a quantum attack")
+    parser.add_argument("--input", type=Path, help="JSON public generator, degree, multiplicity and holdout")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--rational", action="store_true", help="Compare the same matrix over the rationals, within a small exact cap")
+    mode.add_argument("--reduced", action="store_true", help="Remove characteristic-two redundant derivative orders")
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--write", action="store_true")
+    parser.set_defaults(func=command_holdout_jets)
+
+
+def command_holdout_jets(args):
+    import hashlib
+    from theorems.holdout_jet_audit import analyze, report
+
+    if args.output and not args.write:
+        raise ValueError("--output requires --write")
+    if args.input and args.write and not args.output:
+        raise ValueError("writing a supplied input requires --output")
+    if not args.input and (args.rational or args.reduced):
+        raise ValueError("--rational and --reduced require --input")
+    if args.input:
+        consumed = args.input.read_bytes()
+        specification = json.loads(consumed)
+        required = {"generator", "degree", "multiplicity", "holdout"}
+        if not isinstance(specification, dict) or set(specification) != required:
+            raise ValueError("input must contain exactly generator, degree, multiplicity and holdout")
+        data = analyze(**specification, rational=args.rational, reduced=args.reduced)
+        data["input_file_sha256"] = hashlib.sha256(consumed).hexdigest()
+    else:
+        data = report()
+    data["proof_note"] = "research/GOPPA_HOLDOUT_QUANTUM_ACCESS.md"
+    payload = json.dumps(data, indent=2) + "\n"
+    if args.write:
+        destination = args.output or args.root / "research/code_equivalence/holdout_jet_audit.json"
+        if args.input and destination.resolve() == args.input.resolve():
+            raise ValueError("output must not overwrite the supplied input")
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(payload)
+    print(payload, end="")
+    return 0
+
+
+def add_iterated_stabilizer(subparsers):
+    parser = subparsers.add_parser("iterated-stabilizer", help="Test exact low-jet classical certificates for iterated polynomial symmetries")
+    parser.add_argument("--input", type=Path, help="Public quadratic-map specification, optionally wrapped with input and fixed anchors")
+    parser.add_argument("--output", type=Path, help="Output path with --write; required when writing an --input result")
+    parser.add_argument("--write", action="store_true")
+    parser.set_defaults(func=command_iterated_stabilizer)
+
+
+def command_iterated_stabilizer(args):
+    import hashlib
+    from theorems.iterated_quadratic_jet import QuadraticIteration, analyze, report
+    if args.output and not args.write:
+        raise ValueError("--output requires --write")
+    if args.input and args.write and not args.output:
+        raise ValueError("writing an --input result requires --output to preserve the calibration report")
+    if args.input:
+        consumed = args.input.read_bytes()
+        supplied = json.loads(consumed)
+        if not isinstance(supplied, dict):
+            raise ValueError("--input must contain a public specification object")
+        if "input" in supplied:
+            specification, anchors = supplied["input"], supplied.get("anchors")
+        else:
+            specification, anchors = supplied, None
+        if not isinstance(specification, dict):
+            raise ValueError("public quadratic-map specification must be an object")
+        data = analyze(QuadraticIteration(**specification), anchors=anchors)
+        data["input_file_sha256"] = hashlib.sha256(consumed).hexdigest()
+        data["proof_note"] = "research/ITERATED_QUADRATIC_JET_FILTER.md"
+    else:
+        data = report()
+    payload = json.dumps(data, indent=2)+"\n"
+    if args.write:
+        destination = args.output or args.root/"research/classical_baselines/iterated_quadratic_jet.json"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(payload)
+    print(payload, end="")
+    return 0
+
+
+def add_inverse_trace_sampling(subparsers):
+    parser = subparsers.add_parser("inverse-trace-sampling", help="Audit native sampling laws or probe complete binary-hash cells")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--hash-cells", action="store_true")
+    mode.add_argument("--quadratic-cells", action="store_true", help="Check quadratic contradictions on the exact cells of a saved hash-cell report")
+    parser.add_argument("--max-monomials", type=int, default=300000)
+    parser.add_argument("--input", type=Path, help="Original instance or saved report containing its instance")
+    parser.add_argument("--anchor-report", type=Path, help="Separate witness-conditioned diagnostic, NOT unplanted initialization")
+    parser.add_argument("--supply-anchor", action="store_true", help="Verify and preblock the supplied anchor before enumerating the rest of its cell")
+    parser.add_argument("--bits", type=int, default=5)
+    parser.add_argument("--seed", type=int, default=1028)
+    parser.add_argument("--target-mode", choices=("ones", "random"), default="ones")
+    parser.add_argument("--prefix-seed", type=int, default=1029)
+    parser.add_argument("--hash-seed", type=int, default=1030)
+    parser.add_argument("--cells", type=int, default=3)
+    parser.add_argument("--surplus", type=int)
+    parser.add_argument("--timeout-ms", type=int, default=10000)
+    parser.add_argument("--resource-limit", type=int, default=50000000)
+    parser.add_argument("--max-models", type=int, default=16)
+    parser.add_argument("--prange-trials", type=int, default=256)
+    parser.add_argument("--reference-bits", type=int, default=16)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--write", action="store_true")
+    parser.set_defaults(func=command_inverse_trace_sampling)
+
+
+def command_inverse_trace_sampling(args):
+    from theorems.inverse_trace_menu_refresh import json_value, report
+    if args.quadratic_cells:
+        data = _quadratic_saved_cells(args)
+        default = "research/classical_baselines/inverse_trace_hash_quadratic.json"
+    elif args.hash_cells:
+        import hashlib
+        from theorems.inverse_trace_hash_probe import run_probe
+        from theorems.inverse_trace_smt import native_instance
+        if args.supply_anchor and not args.anchor_report:
+            raise ValueError("--supply-anchor requires --anchor-report")
+        supplied = json.loads(args.input.read_text()) if args.input else None
+        instance = (supplied.get("instance", supplied) if supplied is not None else
+                    native_instance(args.bits, args.seed, args.target_mode))
+        anchor = None
+        anchor_bytes = None
+        if args.anchor_report:
+            anchor_bytes = args.anchor_report.read_bytes()
+            anchor = json.loads(anchor_bytes)
+            if anchor.get("instance") != instance or not anchor.get("witness"):
+                raise ValueError("anchor report must contain a witness for the exact supplied original instance")
+        data = run_probe(instance, prefix_seed=args.prefix_seed, hash_seed=args.hash_seed,
+                         cells=args.cells, surplus=args.surplus, timeout_ms=args.timeout_ms,
+                         resource_limit=args.resource_limit, max_models=args.max_models,
+                         prange_trials=args.prange_trials, reference_bits=args.reference_bits,
+                         anchor_word=None if anchor is None else anchor["witness"],
+                         supply_anchor=args.supply_anchor)
+        if args.anchor_report:
+            data["anchor_report_sha256"] = hashlib.sha256(anchor_bytes).hexdigest()
+        default = "research/classical_baselines/inverse_trace_hash_cells.json"
+    else:
+        if args.input or args.anchor_report or args.supply_anchor:
+            raise ValueError("instance/anchor inputs require --hash-cells")
+        data = report()
+        default = "research/classical_baselines/inverse_trace_menu_refresh.json"
+    payload = json.dumps(data, default=json_value, indent=2)+"\n"
+    if args.write:
+        path = args.output or Path(default)
+        if not path.is_absolute():
+            path = args.root / path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(payload)
+    print(payload, end="")
+    return 0
+
+
+def _quadratic_saved_cells(args):
+    import hashlib
+    from time import perf_counter
+    import theorems.inverse_trace_algebraic_audit as algebraic
+    import theorems.inverse_trace_hash_probe as probe
+    import theorems.inverse_trace_hash_quadratic as quadratic
+    import theorems.inverse_trace_local_quadratic_span as local_span
+
+    start = perf_counter()
+    if not args.input or args.anchor_report or args.supply_anchor:
+        raise ValueError("--quadratic-cells requires --input of a saved hash-cell report; anchors come from that report")
+    consumed = args.input.read_bytes()
+    prior = json.loads(consumed)
+    instance, saved = prior["instance"], prior["residual"]
+    digest = hashlib.sha256(json.dumps(instance, sort_keys=True).encode()).hexdigest()
+    if digest != prior["instance_sha256"]:
+        raise ValueError("saved original instance digest disagrees")
+    sources = (Path(__file__), Path(quadratic.__file__), Path(probe.__file__),
+               Path(algebraic.__file__), Path(local_span.__file__))
+    root = Path(__file__).resolve().parents[2]
+    before = {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources}
+    descriptor, decode, valid = probe.prepare_probe(
+        instance, prefix_seed=saved["prefix_seed"], surplus=saved["free_field_variables"],
+        anchor_word=saved["supplied_anchor_full_word"])
+    for key in ("residual_indices", "accepted_prefix", "residual_syndrome", "anchor_u",
+                "trace_kernel_basis", "binary_coordinates", "hash_rows_count", "source"):
+        if descriptor[key] != saved[key]:
+            raise ValueError(f"saved residual disagrees with its exact reconstruction: {key}")
+    cells = prior["cells"]
+    if not isinstance(cells, list) or not 1 <= len(cells) <= 32:
+        raise ValueError("saved report must contain 1..32 declared cells")
+    local_certificates = []
+    for target in sorted({instance["targets"][i] for i in descriptor["residual_indices"]}):
+        certificate = local_span.span_certificate(instance["bits"], target)
+        verified = local_span.verify_span_certificate(certificate)
+        if certificate["complete_local_quadratic_span"] and not verified:
+            raise ArithmeticError("local quadratic completeness certificate failed replay")
+        local_certificates.append({"certificate": certificate, "verified": verified})
+    preparation_seconds = perf_counter()-start
+    results = []
+    for cell in cells:
+        rows, rhs = cell["hash_rows"], cell["hash_rhs"]
+        if len(rows) != descriptor["hash_rows_count"]:
+            raise ValueError("saved cell has a different hash width")
+        anchor = descriptor["anchor_u"]
+        if anchor is not None:
+            if not valid(decode(anchor)) or any(
+                    ((row & anchor).bit_count() & 1) != ((rhs >> j) & 1)
+                    for j, row in enumerate(rows)):
+                raise ValueError("saved anchor does not belong to this native hash cell")
+        result = quadratic.analyze_cell(
+            instance, descriptor["residual_indices"], descriptor["residual_syndrome"],
+            rows, rhs, timeout_ms=args.timeout_ms, max_monomials=args.max_monomials)
+        if anchor is not None and result["native_cell_empty_certified"]:
+            raise ArithmeticError("quadratic contradiction rejected an independently verified native anchor")
+        results.append({"cell_index": cell["cell_index"], "hash_rows": rows, "hash_rhs": rhs,
+                        "known_anchor_verified": anchor is not None, "analysis": result})
+    after = {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources}
+    if after != before:
+        raise RuntimeError("source files changed during quadratic campaign")
+    if hashlib.sha256(json.dumps(instance, sort_keys=True).encode()).hexdigest() != digest:
+        raise ArithmeticError("quadratic campaign mutated the original instance")
+    return {"status": "BOUNDED_NATIVE_QUADRATIC_SPAN_PROBE", "instance": instance,
+            "instance_sha256": digest, "residual": saved, "cells": results,
+            "input_report_sha256": hashlib.sha256(consumed).hexdigest(),
+            "input_report_path": str(args.input), "source_hashes": before,
+            "local_quadratic_span_certificates": local_certificates,
+            "all_local_quadratic_relations_covered": all(c["verified"] for c in local_certificates),
+            "higher_degree_closure_covered": False,
+            "preparation_seconds": preparation_seconds, "total_seconds": perf_counter()-start,
+            "whole_workflow_wall_clock_cap_enforced": False,
+            "source_fingerprint_scope": "selected_disk_sources_before_and_after_not_bytecode_attestation",
+            "new_hashes_generated": False, "uniform_sampler": False,
+            "full_algebraic_solver": False, "hardness_evidence": False,
+            "speedup_established": False}
+
+
+def add_inverse_trace_norm(subparsers):
+    parser = subparsers.add_parser("inverse-trace-norm", help="Test a polynomial-norm attack on the original inverse-trace relation")
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--bits", type=int, default=17)
+    parser.add_argument("--seed", type=int, default=1028)
+    parser.add_argument("--polynomial-seed", type=int, default=1029)
+    parser.add_argument("--target-mode", choices=("ones", "random"), default="ones")
+    parser.add_argument("--max-trials", type=int, default=64)
+    parser.add_argument("--compare-flat-dimension", type=int,
+                        help="Run the existing flat attack on the same all-one input and test whole norm-family membership")
+    parser.add_argument("--flat-seed", type=int, default=1030)
+    parser.add_argument("--write", action="store_true")
+    parser.add_argument("--output", type=Path, default=Path("research/classical_baselines/inverse_trace_norm.json"))
+    parser.set_defaults(func=command_inverse_trace_norm)
+
+
+def command_inverse_trace_norm(args):
+    from theorems.inverse_trace_norm import run_experiment
+    from theorems.inverse_trace_smt import native_instance
+    instance = json.loads(args.input.read_text()) if args.input else native_instance(args.bits, args.seed, args.target_mode)
+    result = run_experiment(instance, seed=args.polynomial_seed, max_trials=args.max_trials,
+                            compare_flat_dimension=args.compare_flat_dimension, flat_seed=args.flat_seed)
+    payload = json.dumps(result, indent=2)+"\n"
+    if args.write:
+        path = args.output if args.output.is_absolute() else args.root/args.output
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(payload)
+    print(payload, end="")
+    return 0
+
+
+def add_inverse_trace_smt(subparsers):
+    parser = subparsers.add_parser("inverse-trace-smt", help="Attack the original inverse-trace relation with capped exact SAT")
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--bits", type=int, default=17)
+    parser.add_argument("--seed", type=int, default=1028)
+    parser.add_argument("--target-mode", choices=("ones", "random"), default="ones")
+    parser.add_argument("--full", action="store_true")
+    parser.add_argument("--pipeline", choices=("direct", "qfbv"), default="direct")
+    parser.add_argument("--timeout-ms", type=int, default=30000)
+    parser.add_argument("--resource-limit", type=int, default=50_000_000)
+    parser.add_argument("--write", action="store_true")
+    parser.add_argument("--output", type=Path, default=Path("research/classical_baselines/inverse_trace_smt.json"))
+    parser.set_defaults(func=command_inverse_trace_smt)
+
+
+def command_inverse_trace_smt(args):
+    from theorems.inverse_trace_smt import native_instance, run_experiment
+    instance = json.loads(args.input.read_text()) if args.input else native_instance(args.bits, args.seed, args.target_mode)
+    result = run_experiment(instance, prefix_seed=args.seed ^ 0x9e3779b9, full=args.full,
+                            timeout_ms=args.timeout_ms, resource_limit=args.resource_limit,
+                            pipeline=args.pipeline)
+    payload = json.dumps(result, indent=2)+"\n"
+    if args.write:
+        path = args.output if args.output.is_absolute() else args.root/args.output
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(payload)
+    print(payload, end="")
+    return 0
+
+
 
 def add_audit(subparsers) -> None:
     audit = subparsers.add_parser("audit", help="Regenerate research artifacts and validate the registry.")
@@ -3422,19 +3715,18 @@ def command_wreath_orientation_gram_norm(args: argparse.Namespace) -> int:
 def add_wreath_coset_permutation_holevo_collapse(subparsers) -> None:
     wreath_coset_permutation_holevo_collapse = subparsers.add_parser(
         "wreath-coset-permutation-holevo-collapse",
-        help="Run wreath coset permutation decoder gap, character-ratio overlap, and Holevo information collapse audit.",
+        help="Check a valid wreath coset source, normalized information, and matched classical permutation recovery.",
     )
     wreath_coset_permutation_holevo_collapse.add_argument("--no-registry", action="store_true")
     wreath_coset_permutation_holevo_collapse.set_defaults(func=command_wreath_coset_permutation_holevo_collapse)
 
 
 def command_wreath_coset_permutation_holevo_collapse(args: argparse.Namespace) -> int:
-    from qsearch import initialize_seed_registry, validate_registry
-    initialize_seed_registry(overwrite=False)
+    from qsearch import validate_registry
     from theorems.wreath_coset_permutation_holevo_collapse import REPORT, write_report
     write_report(write_registry=not getattr(args, "no_registry", False))
     validation = validate_registry()
-    print("wreath_coset_permutation_holevo_collapse complete")
+    print("Wreath source corrected; repaired family recovered classically, not general code equivalence.")
     print(f"Artifact: {REPORT}")
     print(f"Registry valid: {validation['valid']}")
     return 0 if validation["valid"] else 1
@@ -3491,25 +3783,23 @@ def command_dihedral_coset_chirp_aliasing_spectral_flatness_barrier(args: argpar
 def add_cfi_graph_coset_luks_subsumption_barrier(subparsers) -> None:
     cfi_graph_coset_luks_subsumption_barrier = subparsers.add_parser(
         "cfi-graph-coset-luks-subsumption-barrier",
-        help="Run Cai-Fürer-Immerman (CFI) graph coset trilemma and bounded-valence Luks classical subsumption barrier audit.",
+        help="Check CFI graph structure and its fixed-valence classical baseline; retract unsupported quantum no-go claims.",
     )
     cfi_graph_coset_luks_subsumption_barrier.add_argument("--no-registry", action="store_true")
     cfi_graph_coset_luks_subsumption_barrier.set_defaults(func=command_cfi_graph_coset_luks_subsumption_barrier)
 
 
 def command_cfi_graph_coset_luks_subsumption_barrier(args: argparse.Namespace) -> int:
-    from qsearch import initialize_seed_registry, validate_registry
-    initialize_seed_registry(overwrite=False)
-    import json
-    from theorems.cfi_graph_coset_luks_subsumption_barrier import REPORT, build_report, register_negative_result
+    from qsearch import validate_registry
+    from core.research_registry import _write_json
+    from theorems.cfi_graph_coset_luks_subsumption_barrier import REPORT, build_report
+    from theorems.nonabelian_barrier_scope_audit import quarantine_reviewed_negatives
     report = build_report()
-    REPORT.parent.mkdir(parents=True, exist_ok=True)
-    with open(REPORT, "w", encoding="utf-8") as f:
-        json.dump(report, f, indent=2)
     if not getattr(args, "no_registry", False):
-        register_negative_result()
+        quarantine_reviewed_negatives()
+    _write_json(REPORT, report)
     validation = validate_registry()
-    print("cfi_graph_coset_luks_subsumption_barrier complete")
+    print("CFI fixed-valence classical baseline checked; no general quantum lower bound claimed.")
     print(f"Artifact: {REPORT}")
     print(f"Registry valid: {validation['valid']}")
     return 0 if validation["valid"] else 1

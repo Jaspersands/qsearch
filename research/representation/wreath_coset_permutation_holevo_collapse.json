@@ -1,315 +1,446 @@
 {
-  "status": "WREATH_COSET_PERMUTATION_HOLEVO_COLLAPSE_PROVED",
-  "derivation_sha256": "ecb71527b9ed039f0dcfed61092799a1cad1365b2edbf5c4d4795c50c6bc8e02",
-  "domain": "Self-Dual Wreath Product W_n = (S_n x S_n) \rtimes Z_2 Code Equivalence",
-  "theorems_proved": [
+  "accepted_speedup_candidate": false,
+  "classical_query_bound": "binom(n,2)+n+1, n>=3, including odd-branch consistency check",
+  "classical_recovery_controls": [
     {
-      "name": "Conjugacy Class Inversion Overlap Law",
-      "statement": "Tr(rho_tau rho_tau') = 1 / |C(tau^-1 tau')| identically across all pairs of permutations.",
-      "verified": true
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 3,
+      "query_count": 7
     },
     {
-      "name": "Purity and Incoherence of Mixed Coset States",
-      "statement": "Tr(rho_tau^2) = 1/n!, so mixed coset states have rank n! and maximal entropy log2(n!).",
-      "verified": true
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 3,
+      "query_count": 7
     },
     {
-      "name": "k-Copy Decoupling and Average Overlap Decay",
-      "statement": "E_tau'[Tr(rho_tau^k rho_tau'^k)] = (1/n!) * (1 + o(1)) for all k >= 2.",
-      "verified": true
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 3,
+      "query_count": 7
     },
     {
-      "name": "Holevo Mutual Information Collapse",
-      "statement": "I(tau : Q^k) <= O(k^2 / n) -> 0 bits for k = O(1), proving an Omega(n log n) copy barrier.",
-      "verified": true
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 3,
+      "query_count": 7
     },
     {
-      "name": "Fano Factorial Reconstruction Failure",
-      "statement": "P_succ <= (I + 1) / log2(n!) = O(1 / (n^2 log n)) -> 0 under any quantum measurement.",
-      "verified": true
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 3,
+      "query_count": 7
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 3,
+      "query_count": 7
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 4,
+      "query_count": 11
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 8,
+      "query_count": 37
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 32,
+      "query_count": 529
+    },
+    {
+      "exact_recovery": true,
+      "labels_read_as_permutations": false,
+      "mode": "CLASSICAL_REPAIRED_SOURCE_CONTROL_NOT_GENERAL_CODE_EQUIVALENCE",
+      "n": 64,
+      "query_count": 2081
     }
   ],
-  "finite_instance_verifications": [
+  "classical_time_scope": "Polynomial image-array work plus charged oracle evaluation and opaque-label comparisons/hashing; no oracle truth table is constructed.",
+  "derivation_sha256": "248dc5f4c690a6e0575d1adc25af7410c2b0999e33d1cb60aa55f9150aa3ad86",
+  "factorial_holevo_collapse_proved": false,
+  "general_code_equivalence_solved": false,
+  "general_copy_lower_bound_proved": false,
+  "information_profiles": [
     {
-      "dimension_n": 3,
-      "group_order": 6,
+      "compressed_purity": "1/2",
+      "elementary_holevo_lower_bound_bits": 0.5849625007211561,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 3,
+      "one_copy_holevo_bits": 1.3333333333333333,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "1/2",
       "partition_count": 3,
-      "conjugacy_classes_count": 3,
-      "identity_overlap": 1.0,
-      "identity_overlap_exact_one": true,
-      "conjugacy_classes": {
-        "(1, 1, 1)": {
-          "class_size": 1,
-          "centralizer_size": 6,
-          "theoretical_overlap": "1",
-          "theoretical_overlap_float": 1.0
-        },
-        "(2, 1)": {
-          "class_size": 3,
-          "centralizer_size": 2,
-          "theoretical_overlap": "1/3",
-          "theoretical_overlap_float": 0.3333333333333333
-        },
-        "(3,)": {
-          "class_size": 2,
-          "centralizer_size": 3,
-          "theoretical_overlap": "1/2",
-          "theoretical_overlap_float": 0.5
-        }
-      },
-      "average_1copy_overlap": "1/2",
-      "average_1copy_overlap_float": 0.5,
-      "average_4copy_overlap": "251/1296",
-      "average_4copy_overlap_float": 0.19367283950617284,
-      "purity": "1/6",
-      "purity_float": 0.16666666666666666,
-      "exact_class_overlap_law_satisfied": true
-    },
-    {
-      "dimension_n": 4,
-      "group_order": 24,
-      "partition_count": 5,
-      "conjugacy_classes_count": 5,
-      "identity_overlap": 1.0,
-      "identity_overlap_exact_one": true,
-      "conjugacy_classes": {
-        "(1, 1, 1, 1)": {
-          "class_size": 1,
-          "centralizer_size": 24,
-          "theoretical_overlap": "1",
-          "theoretical_overlap_float": 1.0
-        },
-        "(2, 1, 1)": {
-          "class_size": 6,
-          "centralizer_size": 4,
-          "theoretical_overlap": "1/6",
-          "theoretical_overlap_float": 0.16666666666666666
-        },
-        "(3, 1)": {
-          "class_size": 8,
-          "centralizer_size": 3,
-          "theoretical_overlap": "1/8",
-          "theoretical_overlap_float": 0.125
-        },
-        "(2, 2)": {
-          "class_size": 3,
-          "centralizer_size": 8,
-          "theoretical_overlap": "1/3",
-          "theoretical_overlap_float": 0.3333333333333333
-        },
-        "(4,)": {
-          "class_size": 6,
-          "centralizer_size": 4,
-          "theoretical_overlap": "1/6",
-          "theoretical_overlap_float": 0.16666666666666666
-        }
-      },
-      "average_1copy_overlap": "5/24",
-      "average_1copy_overlap_float": 0.20833333333333334,
-      "average_4copy_overlap": "14491/331776",
-      "average_4copy_overlap_float": 0.043677059220679014,
-      "purity": "1/24",
-      "purity_float": 0.041666666666666664,
-      "exact_class_overlap_law_satisfied": true
-    },
-    {
-      "dimension_n": 5,
-      "group_order": 120,
-      "partition_count": 7,
-      "conjugacy_classes_count": 7,
-      "identity_overlap": 1.0,
-      "identity_overlap_exact_one": true,
-      "conjugacy_classes": {
-        "(1, 1, 1, 1, 1)": {
-          "class_size": 1,
-          "centralizer_size": 120,
-          "theoretical_overlap": "1",
-          "theoretical_overlap_float": 1.0
-        },
-        "(2, 1, 1, 1)": {
-          "class_size": 10,
-          "centralizer_size": 12,
-          "theoretical_overlap": "1/10",
-          "theoretical_overlap_float": 0.1
-        },
-        "(3, 1, 1)": {
-          "class_size": 20,
-          "centralizer_size": 6,
-          "theoretical_overlap": "1/20",
-          "theoretical_overlap_float": 0.05
-        },
-        "(2, 2, 1)": {
-          "class_size": 15,
-          "centralizer_size": 8,
-          "theoretical_overlap": "1/15",
-          "theoretical_overlap_float": 0.06666666666666667
-        },
-        "(4, 1)": {
-          "class_size": 30,
-          "centralizer_size": 4,
-          "theoretical_overlap": "1/30",
-          "theoretical_overlap_float": 0.03333333333333333
-        },
-        "(3, 2)": {
-          "class_size": 20,
-          "centralizer_size": 6,
-          "theoretical_overlap": "1/20",
-          "theoretical_overlap_float": 0.05
-        },
-        "(5,)": {
-          "class_size": 24,
-          "centralizer_size": 5,
-          "theoretical_overlap": "1/24",
-          "theoretical_overlap_float": 0.041666666666666664
-        }
-      },
-      "average_1copy_overlap": "7/120",
-      "average_1copy_overlap_float": 0.058333333333333334,
-      "average_4copy_overlap": "1730861/207360000",
-      "average_4copy_overlap_float": 0.008347130594135803,
-      "purity": "1/120",
-      "purity_float": 0.008333333333333333,
-      "exact_class_overlap_law_satisfied": true
-    }
-  ],
-  "scaling_profiles": [
-    {
-      "dimension_n": 3,
-      "group_order_n_factorial": "6",
+      "plancherel_entropy_bits": 1.2516291673878228,
+      "raw_regular_coset_purity": "1/6",
       "secret_entropy_bits": 2.584962500721156,
-      "partition_count": 3,
-      "average_1copy_overlap": "1/2",
-      "average_1copy_overlap_float": 0.5,
-      "copies_k": 4,
-      "average_kcopy_overlap": "29/162",
-      "average_kcopy_overlap_float": 0.17901234567901234,
-      "holevo_mutual_information_upper_bound_bits": 2.584962500721156,
-      "raw_holevo_scaling_bound": 5.333333333333333,
-      "fano_identification_success_upper_bound": 1.0,
-      "map_full_recovery_probability_upper_bound": 1.0,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
+      "symmetric_group_order": 6,
+      "trace_distance_from_ensemble_average": "1/2"
     },
     {
-      "dimension_n": 4,
-      "group_order_n_factorial": "24",
-      "secret_entropy_bits": 4.584962500721156,
+      "compressed_purity": "5/16",
+      "elementary_holevo_lower_bound_bits": 1.584962500721156,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 4,
+      "one_copy_holevo_bits": 2.7107770844150676,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "5/16",
       "partition_count": 5,
-      "average_1copy_overlap": "5/24",
-      "average_1copy_overlap_float": 0.20833333333333334,
-      "copies_k": 4,
-      "average_kcopy_overlap": "55/1296",
-      "average_kcopy_overlap_float": 0.04243827160493827,
-      "holevo_mutual_information_upper_bound_bits": 4.0,
-      "raw_holevo_scaling_bound": 4.0,
-      "fano_identification_success_upper_bound": 1.0,
-      "map_full_recovery_probability_upper_bound": 0.6666666666666667,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
+      "plancherel_entropy_bits": 1.8741854163060885,
+      "raw_regular_coset_purity": "1/24",
+      "secret_entropy_bits": 4.584962500721156,
+      "symmetric_group_order": 24,
+      "trace_distance_from_ensemble_average": "19/24"
     },
     {
-      "dimension_n": 5,
-      "group_order_n_factorial": "120",
-      "secret_entropy_bits": 6.906890595608519,
+      "compressed_purity": "17/80",
+      "elementary_holevo_lower_bound_bits": 2.9068905956085187,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 5,
+      "one_copy_holevo_bits": 4.552584246172162,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "17/80",
       "partition_count": 7,
-      "average_1copy_overlap": "7/120",
-      "average_1copy_overlap_float": 0.058333333333333334,
-      "copies_k": 4,
-      "average_kcopy_overlap": "503/60000",
-      "average_kcopy_overlap_float": 0.008383333333333333,
-      "holevo_mutual_information_upper_bound_bits": 3.2,
-      "raw_holevo_scaling_bound": 3.2,
-      "fano_identification_success_upper_bound": 0.6080883925786241,
-      "map_full_recovery_probability_upper_bound": 0.07657989033313567,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
+      "plancherel_entropy_bits": 2.354306349436356,
+      "raw_regular_coset_purity": "1/120",
+      "secret_entropy_bits": 6.906890595608519,
+      "symmetric_group_order": 120,
+      "trace_distance_from_ensemble_average": "113/120"
     },
     {
-      "dimension_n": 6,
-      "group_order_n_factorial": "720",
-      "secret_entropy_bits": 9.491853096329674,
-      "partition_count": 11,
-      "average_1copy_overlap": "11/720",
-      "average_1copy_overlap_float": 0.015277777777777777,
-      "copies_k": 4,
-      "average_kcopy_overlap": "677/486000",
-      "average_kcopy_overlap_float": 0.0013930041152263374,
-      "holevo_mutual_information_upper_bound_bits": 2.6666666666666665,
-      "raw_holevo_scaling_bound": 2.6666666666666665,
-      "fano_identification_success_upper_bound": 0.38629618784181347,
-      "map_full_recovery_probability_upper_bound": 0.008818894733156665,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
-    },
-    {
-      "dimension_n": 8,
-      "group_order_n_factorial": "40320",
-      "secret_entropy_bits": 15.29920801838728,
+      "compressed_purity": "69439/645120",
+      "elementary_holevo_lower_bound_bits": 8.29920801838728,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 8,
+      "one_copy_holevo_bits": 11.753105551347646,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "69439/645120",
       "partition_count": 22,
-      "average_1copy_overlap": "11/20160",
-      "average_1copy_overlap_float": 0.0005456349206349206,
-      "copies_k": 4,
-      "average_kcopy_overlap": "3139/126443520",
-      "average_kcopy_overlap_float": 2.482531330984775e-05,
-      "holevo_mutual_information_upper_bound_bits": 2.0,
-      "raw_holevo_scaling_bound": 2.0,
-      "fano_identification_success_upper_bound": 0.19608858160464676,
-      "map_full_recovery_probability_upper_bound": 9.920634920634917e-05,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
+      "plancherel_entropy_bits": 3.546102467039633,
+      "raw_regular_coset_purity": "1/40320",
+      "secret_entropy_bits": 15.29920801838728,
+      "symmetric_group_order": 40320,
+      "trace_distance_from_ensemble_average": "20149/20160"
     },
     {
-      "dimension_n": 16,
-      "group_order_n_factorial": "20922789888000",
-      "secret_entropy_bits": 44.25014046988262,
+      "compressed_purity": "3642732727/76640256000",
+      "elementary_holevo_lower_bound_bits": 17.835455234075408,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 12,
+      "one_copy_holevo_bits": 23.91009124574001,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "3642732727/76640256000",
+      "partition_count": 77,
+      "plancherel_entropy_bits": 4.925363988335396,
+      "raw_regular_coset_purity": "1/479001600",
+      "secret_entropy_bits": 28.835455234075408,
+      "symmetric_group_order": 479001600,
+      "trace_distance_from_ensemble_average": "6220799/6220800"
+    },
+    {
+      "compressed_purity": "7706087568809453/357082280755200000",
+      "elementary_holevo_lower_bound_bits": 29.250140469882624,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 16,
+      "one_copy_holevo_bits": 38.10020641947154,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "7706087568809453/357082280755200000",
       "partition_count": 231,
-      "average_1copy_overlap": "1/90574848000",
-      "average_1copy_overlap_float": 1.104059263781486e-11,
-      "copies_k": 4,
-      "average_kcopy_overlap": "3527/73784859033600000",
-      "average_kcopy_overlap_float": 4.78011348967121e-14,
-      "holevo_mutual_information_upper_bound_bits": 1.0,
-      "raw_holevo_scaling_bound": 1.0,
-      "fano_identification_success_upper_bound": 0.04519759663500352,
-      "map_full_recovery_probability_upper_bound": 9.558954664774759e-14,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
+      "plancherel_entropy_bits": 6.149934050411084,
+      "raw_regular_coset_purity": "1/20922789888000",
+      "secret_entropy_bits": 44.25014046988262,
+      "symmetric_group_order": 20922789888000,
+      "trace_distance_from_ensemble_average": "90574847999/90574848000"
     },
     {
-      "dimension_n": 32,
-      "group_order_n_factorial": "263130836933693530167218012160000000",
-      "secret_entropy_bits": 117.6632636523603,
+      "compressed_purity": "1693230492334108679201826863741/295874907027008178127047229440000",
+      "elementary_holevo_lower_bound_bits": 56.03765741910044,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 24,
+      "one_copy_holevo_bits": 70.78212839921059,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "1693230492334108679201826863741/295874907027008178127047229440000",
+      "partition_count": 1575,
+      "plancherel_entropy_bits": 8.255529019889856,
+      "raw_regular_coset_purity": "1/620448401733239439360000",
+      "secret_entropy_bits": 79.03765741910044,
+      "symmetric_group_order": 620448401733239439360000,
+      "trace_distance_from_ensemble_average": "393935493163961548799/393935493163961548800"
+    },
+    {
+      "compressed_purity": "371947901988252474367668635741868321989344141461127/208921399112696395250051068600621579685068800000000000",
+      "elementary_holevo_lower_bound_bits": 86.6632636523603,
+      "holevo_is_achieved_accessible_information": false,
+      "mode": "EXACT_WEIGHTS_NUMERICAL_ENTROPY_NOT_QUANTUM_EXECUTION",
+      "n": 32,
+      "one_copy_holevo_bits": 107.58599527127123,
+      "optimal_measurement_implemented": false,
+      "optimal_one_copy_guessing_probability": "371947901988252474367668635741868321989344141461127/208921399112696395250051068600621579685068800000000000",
       "partition_count": 8349,
-      "average_1copy_overlap": "1/31516449506970119794851840000000",
-      "average_1copy_overlap_float": 3.1729462412282255e-32,
-      "copies_k": 4,
-      "average_kcopy_overlap": "924487/243244397012298905823777878892871680000000",
-      "average_kcopy_overlap_float": 3.800650750254511e-36,
-      "holevo_mutual_information_upper_bound_bits": 0.5,
-      "raw_holevo_scaling_bound": 0.5,
-      "fano_identification_success_upper_bound": 0.01274824404354273,
-      "map_full_recovery_probability_upper_bound": 5.3745641478329165e-36,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
-    },
-    {
-      "dimension_n": 64,
-      "group_order_n_factorial": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
-      "secret_entropy_bits": 295.99514394172405,
-      "partition_count": 1741630,
-      "average_1copy_overlap": "15833/1153517565326219673667576266683286189116959237950410838170926312501951856640000000000000",
-      "average_1copy_overlap_float": 1.3725842133597993e-83,
-      "copies_k": 4,
-      "average_kcopy_overlap": "109270423/13862042220312997650572338223770991674573505046291634224598796329654380636274176294912000000000000",
-      "average_kcopy_overlap_float": 7.882707415208892e-90,
-      "holevo_mutual_information_upper_bound_bits": 0.25,
-      "raw_holevo_scaling_bound": 0.25,
-      "fano_identification_success_upper_bound": 0.004223042254524628,
-      "map_full_recovery_probability_upper_bound": 9.372179581586663e-90,
-      "secret_entropy_exceeds_holevo_bound": true,
-      "copy_barrier_confirmed": true
+      "plancherel_entropy_bits": 10.077268381089079,
+      "raw_regular_coset_purity": "1/263130836933693530167218012160000000",
+      "secret_entropy_bits": 117.6632636523603,
+      "symmetric_group_order": 263130836933693530167218012160000000,
+      "trace_distance_from_ensemble_average": "31516449506970119794851839999999/31516449506970119794851840000000"
     }
   ],
+  "invalid_subgroup_counterexample": {
+    "both_factors_in_proposed_set": true,
+    "product": [
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      1
+    ],
+    "product_in_proposed_set": false,
+    "tau": [
+      0,
+      2,
+      1
+    ],
+    "x": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      1
+    ],
+    "y": [
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      0
+    ]
+  },
+  "physical_state_control": {
+    "all_states_normalized_positive": true,
+    "ambient_group_order": 72,
+    "compressed_holevo_bits": 1.333333333333333,
+    "compressed_purity": 0.5,
+    "mode": "BOUNDED_DENSITY_MATRIX_CONTROL_NOT_QUANTUM_RECEIVER",
+    "n": 3,
+    "native_subgroup_order": 12,
+    "pair_overlaps_checked": 36,
+    "raw_holevo_bits": 1.3333333333333335,
+    "raw_overlap_identity_max_residual": 0.0,
+    "raw_purity": 0.16666666666666666,
+    "states_checked": 6
+  },
+  "producer_sha256": "52746b71a2325c59887bb01ced34fb3d112081b78adad1bb81bb91ae9a006c97",
+  "quantum_receiver_implemented": false,
+  "repaired_subgroup": "H_tau={(pi,tau*pi*tau^-1,0)} union {(pi*tau^-1,tau*pi,1)}",
+  "retracted_negative_ids": [
+    "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE"
+  ],
+  "reviewed_on": "2026-10-30",
+  "schema_version": 2,
+  "source_contract": "Valid conjugate of diagonal S_n extended by swap, with exact opaque labels of left cosets; NOT general code equivalence or rigid GI.",
   "speedup_claim_allowed": false,
-  "accepted_speedup_candidate": false
+  "status": "WREATH_SOURCE_CORRECTED_AND_REPAIRED_FAMILY_CLASSICALLY_RECOVERED",
+  "summary": "The old subgroup is invalid and information formulas conflict. A valid highly symmetric repair has large Holevo information and polynomial classical recovery under the same full oracle access. This does not solve the hard general problem."
 }

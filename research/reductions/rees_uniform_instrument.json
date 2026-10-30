@@ -1,0 +1,854 @@
+{
+  "status": "UNIFORM_PRIMITIVE_CERTIFICATE_NOT_CIRCUIT_EXECUTION",
+  "proof_note": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+  "source_sha256": {
+    "theorems/rees_uniform_instrument.py": "d1f1ced35f830060fff3e54c3af0461b6457e6795e740e375344b3cb606e1985",
+    "theorems/uniform_bch_rees.py": "933bf6eb7daad6b16b345b4957bc8ec12d6f8c84c0a3d6fec273ca86f0f90a6c",
+    "theorems/guarded_bch_permutation.py": "fbdc5bba18ed83a60035a00e142b5f08af34ab4a6b2797c16b9a7c3714b2babc",
+    "theorems/power_sde.py": "f28e3d73177103863b169728f2ce970638e5f35e18707eca9a1f902784ee6902",
+    "theorems/power_sde_budget.py": "b27a39422252828609bdd47388b6241280f8569644d042a775b7af0ca0ec87b2",
+    "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md": "1b8d9291df257303371afb00ebce7123800ac9a151e447e9a317b403a3d5bbdc"
+  },
+  "source_hashes_certify_proof": false,
+  "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+  "oracle_queries_executed": 0,
+  "circuit_generator_implemented": false,
+  "quantum_receiver_implemented": false,
+  "whole_rees_correctness_certified": false,
+  "candidate_promotion": false,
+  "proof_promotion": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false,
+  "cases": [
+    {
+      "status": "UNIFORM_PRIMITIVE_CERTIFICATE_NOT_CIRCUIT_EXECUTION",
+      "input_model": "Explicit prime-field Lie coordinates; exact ordinary coherent hiding oracle.",
+      "recovery_budget": {
+        "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+        "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+        "lower_central_dimensions": [
+          4
+        ],
+        "supplied_prime": 2,
+        "actual_class": 1,
+        "derived_dimension": 0,
+        "cover_dimension": 4,
+        "error_target": {
+          "numerator": 1,
+          "denominator": 3
+        },
+        "final_fourier_samples": 8,
+        "fourier_slack": 4,
+        "stages_top_down": [],
+        "leaves_per_terminal": 1,
+        "derived_parameter_leaf_bound": 1,
+        "scalar_flag_leaves_per_terminal": 1,
+        "source_preparations": 8,
+        "original_inputs": 8,
+        "sde_calls": 0,
+        "nonlinear_sde_calls": 0,
+        "complete_instrument_calls": 16,
+        "central_character_measurements": 0,
+        "solver_failure_bits_per_call": null,
+        "solver_abort_bound": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "rank_failure_bound": {
+          "numerator": 1,
+          "denominator": 16
+        },
+        "instrument_error_per_call": {
+          "numerator": 1,
+          "denominator": 144
+        },
+        "total_error_bound": {
+          "numerator": 25,
+          "denominator": 144
+        },
+        "classical_uniform_draw_cap": 0,
+        "classical_fair_bit_cap": 0,
+        "classical_root_pow_gcd_pair_cap": 0,
+        "depth_first_group_register_bound": 1,
+        "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+        "classical_retry_extra_source_copies": 0,
+        "prime_validation_included": false,
+        "profile_existence_certified": false,
+        "deterministic_arithmetic_step_counter": false,
+        "physical_gate_clock": false,
+        "quantum_receiver_implemented": false,
+        "formal_total_policy_instantiated": false,
+        "novelty_established": false,
+        "speedup_claim_allowed": false
+      },
+      "supplied_prime": 2,
+      "canonical_field_limb_bits": 1,
+      "cover_group_register_bits": 4,
+      "stages_top_down": [],
+      "forest_edges": 0,
+      "leaf_preparation_qft_calls": 32,
+      "final_readout_qft_calls": 32,
+      "single_coordinate_qft_calls": 64,
+      "single_coordinate_qft_envelope": 192,
+      "qft_calls_per_instrument_cap": 4,
+      "qft_isometry_error_per_call": {
+        "numerator": 1,
+        "denominator": 576
+      },
+      "qft_precision_bits": 10,
+      "qft_error_bound": {
+        "numerator": 1,
+        "denominator": 9
+      },
+      "per_instrument_qft_error_bound": {
+        "numerator": 1,
+        "denominator": 144
+      },
+      "complete_output_error_bound": {
+        "numerator": 25,
+        "denominator": 144
+      },
+      "ordinary_oracle_queries": 8,
+      "leaf_linear_evaluation_compute_uncompute_pairs": 8,
+      "central_coordinate_subtractions": 0,
+      "controlled_right_actions": 0,
+      "bch_evaluation_passes": 0,
+      "bracket_calls": 0,
+      "dense_structure_tensor_terms": 0,
+      "classical_fair_bit_cap": 0,
+      "classical_root_pow_gcd_pair_cap": 0,
+      "compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+      "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+      "canonical_subspace_reference_stable_error_required": true,
+      "joint_source_error_required": true,
+      "invalid_binary_records_abort": true,
+      "canonical_forbidden_labels_require_hidden_membership_test": false,
+      "zero_scale_is_identity_not_delta_zero": true,
+      "all_target_slots_consumed": true,
+      "classical_retry_extra_source_copies": 0,
+      "cost_scope": "Padded primitive caps; known uniform polynomial circuits, not a physical gate estimate.",
+      "runtime_model": "T_nonoracle + ordinary_oracle_queries*T_f; oracle cost T_f separately supplied.",
+      "arbitrary_modulus_qft_cost": "poly(log(p)+log(1/eta)), including finite-gate synthesis",
+      "bch_boolean_size_bound": "O((d+1)^4*(D_d+1)^3*(log(p)+1)^3) per evaluation",
+      "internal_qft_gate_synthesis_errors_included_in_eta": true,
+      "exact_oracle_assumed": true,
+      "approximate_oracle_error_included": false,
+      "prime_validation_included": false,
+      "profile_existence_certified": false,
+      "circuit_generator_implemented": false,
+      "quantum_receiver_implemented": false,
+      "formal_total_policy_instantiated": false,
+      "physical_gate_clock": false,
+      "oracle_queries_executed": 0,
+      "field_enumeration_used": false,
+      "whole_rees_correctness_certified": false,
+      "novelty_established": false,
+      "native_application_established": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "UNIFORM_PRIMITIVE_CERTIFICATE_NOT_CIRCUIT_EXECUTION",
+      "input_model": "Explicit prime-field Lie coordinates; exact ordinary coherent hiding oracle.",
+      "recovery_budget": {
+        "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+        "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+        "lower_central_dimensions": [
+          6,
+          3,
+          1
+        ],
+        "supplied_prime": 65537,
+        "actual_class": 3,
+        "derived_dimension": 3,
+        "cover_dimension": 10,
+        "error_target": {
+          "numerator": 1,
+          "denominator": 3
+        },
+        "final_fourier_samples": 10,
+        "fourier_slack": 4,
+        "stages_top_down": [
+          {
+            "grade": 3,
+            "rank": 1,
+            "reduced_degree": 1,
+            "arity": 2,
+            "conversions": 160,
+            "consumed_targets": 320,
+            "randomness": null
+          },
+          {
+            "grade": 2,
+            "rank": 3,
+            "reduced_degree": 2,
+            "arity": 16,
+            "conversions": 10,
+            "consumed_targets": 160,
+            "randomness": {
+              "failure_bits": 7,
+              "root_calls": 27,
+              "polynomial_pow_gcd_pairs": 1053,
+              "uniform_calls": 2236,
+              "bit_rejection_attempts": 20,
+              "fair_bits": 760240,
+              "abort_bound": {
+                "numerator": 1487,
+                "denominator": 262144
+              }
+            }
+          }
+        ],
+        "leaves_per_terminal": 32,
+        "derived_parameter_leaf_bound": 288,
+        "scalar_flag_leaves_per_terminal": 54,
+        "source_preparations": 320,
+        "original_inputs": 960,
+        "sde_calls": 170,
+        "nonlinear_sde_calls": 10,
+        "complete_instrument_calls": 500,
+        "central_character_measurements": 480,
+        "solver_failure_bits_per_call": 7,
+        "solver_abort_bound": {
+          "numerator": 5,
+          "denominator": 64
+        },
+        "rank_failure_bound": {
+          "numerator": 1,
+          "denominator": 1208999608279791053111296
+        },
+        "instrument_error_per_call": {
+          "numerator": 1,
+          "denominator": 4500
+        },
+        "total_error_bound": {
+          "numerator": 2059077457851519137330185,
+          "denominator": 10880996474518119478001664
+        },
+        "classical_uniform_draw_cap": 22360,
+        "classical_fair_bit_cap": 7602400,
+        "classical_root_pow_gcd_pair_cap": 10530,
+        "depth_first_group_register_bound": 18,
+        "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+        "classical_retry_extra_source_copies": 0,
+        "prime_validation_included": false,
+        "profile_existence_certified": false,
+        "deterministic_arithmetic_step_counter": false,
+        "physical_gate_clock": false,
+        "quantum_receiver_implemented": false,
+        "formal_total_policy_instantiated": false,
+        "novelty_established": false,
+        "speedup_claim_allowed": false
+      },
+      "supplied_prime": 65537,
+      "canonical_field_limb_bits": 17,
+      "cover_group_register_bits": 170,
+      "stages_top_down": [
+        {
+          "grade": 3,
+          "central_dimension": 1,
+          "group_dimension": 10,
+          "quotient_dimension": 9,
+          "arity": 2,
+          "conversions": 160,
+          "qft_calls_per_conversion": 13,
+          "qft_calls": 2080,
+          "central_coordinate_subtractions": 320,
+          "controlled_right_actions": 320,
+          "bch_evaluation_passes": 1280,
+          "bracket_calls_per_bch_pass": 20,
+          "bracket_calls": 25600,
+          "dense_structure_tensor_terms": 25600000
+        },
+        {
+          "grade": 2,
+          "central_dimension": 3,
+          "group_dimension": 9,
+          "quotient_dimension": 6,
+          "arity": 16,
+          "conversions": 10,
+          "qft_calls_per_conversion": 102,
+          "qft_calls": 1020,
+          "central_coordinate_subtractions": 480,
+          "controlled_right_actions": 160,
+          "bch_evaluation_passes": 640,
+          "bracket_calls_per_bch_pass": 4,
+          "bracket_calls": 2560,
+          "dense_structure_tensor_terms": 1866240
+        }
+      ],
+      "forest_edges": 480,
+      "leaf_preparation_qft_calls": 3200,
+      "final_readout_qft_calls": 60,
+      "single_coordinate_qft_calls": 6360,
+      "single_coordinate_qft_envelope": 19200,
+      "qft_calls_per_instrument_cap": 102,
+      "qft_isometry_error_per_call": {
+        "numerator": 1,
+        "denominator": 459000
+      },
+      "qft_precision_bits": 19,
+      "qft_error_bound": {
+        "numerator": 53,
+        "denominator": 3825
+      },
+      "per_instrument_qft_error_bound": {
+        "numerator": 1,
+        "denominator": 4500
+      },
+      "complete_output_error_bound": {
+        "numerator": 425360065306813361607926513,
+        "denominator": 4624423501670200778150707200
+      },
+      "ordinary_oracle_queries": 960,
+      "leaf_linear_evaluation_compute_uncompute_pairs": 960,
+      "central_coordinate_subtractions": 800,
+      "controlled_right_actions": 480,
+      "bch_evaluation_passes": 1920,
+      "bracket_calls": 28160,
+      "dense_structure_tensor_terms": 27466240,
+      "classical_fair_bit_cap": 7602400,
+      "classical_root_pow_gcd_pair_cap": 10530,
+      "compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+      "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+      "canonical_subspace_reference_stable_error_required": true,
+      "joint_source_error_required": true,
+      "invalid_binary_records_abort": true,
+      "canonical_forbidden_labels_require_hidden_membership_test": false,
+      "zero_scale_is_identity_not_delta_zero": true,
+      "all_target_slots_consumed": true,
+      "classical_retry_extra_source_copies": 0,
+      "cost_scope": "Padded primitive caps; known uniform polynomial circuits, not a physical gate estimate.",
+      "runtime_model": "T_nonoracle + ordinary_oracle_queries*T_f; oracle cost T_f separately supplied.",
+      "arbitrary_modulus_qft_cost": "poly(log(p)+log(1/eta)), including finite-gate synthesis",
+      "bch_boolean_size_bound": "O((d+1)^4*(D_d+1)^3*(log(p)+1)^3) per evaluation",
+      "internal_qft_gate_synthesis_errors_included_in_eta": true,
+      "exact_oracle_assumed": true,
+      "approximate_oracle_error_included": false,
+      "prime_validation_included": false,
+      "profile_existence_certified": false,
+      "circuit_generator_implemented": false,
+      "quantum_receiver_implemented": false,
+      "formal_total_policy_instantiated": false,
+      "physical_gate_clock": false,
+      "oracle_queries_executed": 0,
+      "field_enumeration_used": false,
+      "whole_rees_correctness_certified": false,
+      "novelty_established": false,
+      "native_application_established": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "UNIFORM_PRIMITIVE_CERTIFICATE_NOT_CIRCUIT_EXECUTION",
+      "input_model": "Explicit prime-field Lie coordinates; exact ordinary coherent hiding oracle.",
+      "recovery_budget": {
+        "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+        "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+        "lower_central_dimensions": [
+          13,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "supplied_prime": 170141183460469231731687303715884105727,
+        "actual_class": 12,
+        "derived_dimension": 11,
+        "cover_dimension": 79,
+        "error_target": {
+          "numerator": 1,
+          "denominator": 3
+        },
+        "final_fourier_samples": 17,
+        "fourier_slack": 4,
+        "stages_top_down": [
+          {
+            "grade": 12,
+            "rank": 1,
+            "reduced_degree": 6,
+            "arity": 12,
+            "conversions": 10823951484960768000,
+            "consumed_targets": 129887417819529216000,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 45,
+              "polynomial_pow_gcd_pairs": 51300,
+              "uniform_calls": 8817216,
+              "bit_rejection_attempts": 92,
+              "fair_bits": 103020351744,
+              "abort_bound": {
+                "numerator": 374313,
+                "denominator": 77371252455336267181195264
+              }
+            }
+          },
+          {
+            "grade": 11,
+            "rank": 2,
+            "reduced_degree": 1,
+            "arity": 3,
+            "conversions": 3607983828320256000,
+            "consumed_targets": 10823951484960768000,
+            "randomness": null
+          },
+          {
+            "grade": 10,
+            "rank": 3,
+            "reduced_degree": 2,
+            "arity": 16,
+            "conversions": 225498989270016000,
+            "consumed_targets": 3607983828320256000,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 27,
+              "polynomial_pow_gcd_pairs": 5913,
+              "uniform_calls": 12556,
+              "bit_rejection_attempts": 82,
+              "fair_bits": 130758184,
+              "abort_bound": {
+                "numerator": 6851,
+                "denominator": 1208925819614629174706176
+              }
+            }
+          },
+          {
+            "grade": 9,
+            "rank": 4,
+            "reduced_degree": 9,
+            "arity": 165,
+            "conversions": 1366660541030400,
+            "consumed_targets": 225498989270016000,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 276,
+              "polynomial_pow_gcd_pairs": 529920,
+              "uniform_calls": 69740456400,
+              "bit_rejection_attempts": 105,
+              "fair_bits": 929988986094000,
+              "abort_bound": {
+                "numerator": 9008164509,
+                "denominator": 2535301200456458802993406410752
+              }
+            }
+          },
+          {
+            "grade": 8,
+            "rank": 5,
+            "reduced_degree": 2,
+            "arity": 36,
+            "conversions": 37962792806400,
+            "consumed_targets": 1366660541030400,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 51,
+              "polynomial_pow_gcd_pairs": 11322,
+              "uniform_calls": 23384,
+              "bit_rejection_attempts": 83,
+              "fair_bits": 246490744,
+              "abort_bound": {
+                "numerator": 6315,
+                "denominator": 1208925819614629174706176
+              }
+            }
+          },
+          {
+            "grade": 7,
+            "rank": 6,
+            "reduced_degree": 7,
+            "arity": 259,
+            "conversions": 146574489600,
+            "consumed_targets": 37962792806400,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 361,
+              "polynomial_pow_gcd_pairs": 519840,
+              "uniform_calls": 157366160,
+              "bit_rejection_attempts": 96,
+              "fair_bits": 1918608222720,
+              "abort_bound": {
+                "numerator": 18735993,
+                "denominator": 4951760157141521099596496896
+              }
+            }
+          },
+          {
+            "grade": 6,
+            "rank": 7,
+            "reduced_degree": 6,
+            "arity": 288,
+            "conversions": 508939200,
+            "consumed_targets": 146574489600,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 381,
+              "polynomial_pow_gcd_pairs": 451485,
+              "uniform_calls": 11554224,
+              "bit_rejection_attempts": 92,
+              "fair_bits": 134999553216,
+              "abort_bound": {
+                "numerator": 1700571,
+                "denominator": 309485009821345068724781056
+              }
+            }
+          },
+          {
+            "grade": 5,
+            "rank": 8,
+            "reduced_degree": 1,
+            "arity": 9,
+            "conversions": 56548800,
+            "consumed_targets": 508939200,
+            "randomness": null
+          },
+          {
+            "grade": 4,
+            "rank": 9,
+            "reduced_degree": 2,
+            "arity": 100,
+            "conversions": 565488,
+            "consumed_targets": 56548800,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 123,
+              "polynomial_pow_gcd_pairs": 27675,
+              "uniform_calls": 56100,
+              "bit_rejection_attempts": 84,
+              "fair_bits": 598474800,
+              "abort_bound": {
+                "numerator": 30025,
+                "denominator": 4835703278458516698824704
+              }
+            }
+          },
+          {
+            "grade": 3,
+            "rank": 10,
+            "reduced_degree": 3,
+            "arity": 231,
+            "conversions": 2448,
+            "consumed_targets": 565488,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 279,
+              "polynomial_pow_gcd_pairs": 130572,
+              "uniform_calls": 397566,
+              "bit_rejection_attempts": 87,
+              "fair_bits": 4392706734,
+              "abort_bound": {
+                "numerator": 342399,
+                "denominator": 77371252455336267181195264
+              }
+            }
+          },
+          {
+            "grade": 2,
+            "rank": 11,
+            "reduced_degree": 2,
+            "arity": 144,
+            "conversions": 17,
+            "consumed_targets": 2448,
+            "randomness": {
+              "failure_bits": 67,
+              "root_calls": 171,
+              "polynomial_pow_gcd_pairs": 38988,
+              "uniform_calls": 78736,
+              "bit_rejection_attempts": 85,
+              "fair_bits": 849955120,
+              "abort_bound": {
+                "numerator": 10457,
+                "denominator": 2417851639229258349412352
+              }
+            }
+          }
+        ],
+        "leaves_per_terminal": 7640436342325248000,
+        "derived_parameter_leaf_bound": 9158611693373227008000000,
+        "scalar_flag_leaves_per_terminal": 371209638446513340737559399141212160000,
+        "source_preparations": 129887417819529216000,
+        "original_inputs": 1558649013834350592000,
+        "sde_calls": 14658839073025422353,
+        "nonlinear_sde_calls": 11050855244648617553,
+        "complete_instrument_calls": 144546256892554638370,
+        "central_character_measurements": 144546256892554638336,
+        "solver_failure_bits_per_call": 67,
+        "solver_abort_bound": {
+          "numerator": 11050855244648617553,
+          "denominator": 147573952589676412928
+        },
+        "rank_failure_bound": {
+          "numerator": 1,
+          "denominator": 142576269300693600582536612678134103897885462877789023918259506810025156677535359656431318175643009021862161987055671487524684427617608881579028980890095494214680675432254673181290589551853566
+        },
+        "instrument_error_per_call": {
+          "numerator": 1,
+          "denominator": 1300916312032991745330
+        },
+        "total_error_bound": {
+          "numerator": 1956713945914973670370223294475519412636103597230426078216713679198491586500267909806505061910114073588843624942463276350460303930602789109119105984882384052317631848387445314548981331785715679587334874157345199,
+          "denominator": 10520271803096747014481979765760257330729684003436690917905808024607993523546552491645584560917927584969836131792999948402800754769155151288824884585239807869640267661727703718841808156742668374226098926202650624
+        },
+        "classical_uniform_draw_cap": 190751503416527099091775280,
+        "classical_fair_bit_cap": 2386096316611724354736177101072,
+        "classical_root_pow_gcd_pair_cap": 557326813695761045196252,
+        "depth_first_group_register_bound": 1254,
+        "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+        "classical_retry_extra_source_copies": 0,
+        "prime_validation_included": false,
+        "profile_existence_certified": false,
+        "deterministic_arithmetic_step_counter": false,
+        "physical_gate_clock": false,
+        "quantum_receiver_implemented": false,
+        "formal_total_policy_instantiated": false,
+        "novelty_established": false,
+        "speedup_claim_allowed": false
+      },
+      "supplied_prime": 170141183460469231731687303715884105727,
+      "canonical_field_limb_bits": 127,
+      "cover_group_register_bits": 10033,
+      "stages_top_down": [
+        {
+          "grade": 12,
+          "central_dimension": 1,
+          "group_dimension": 79,
+          "quotient_dimension": 78,
+          "arity": 12,
+          "conversions": 10823951484960768000,
+          "qft_calls_per_conversion": 102,
+          "qft_calls": 1104043051465998336000,
+          "central_coordinate_subtractions": 129887417819529216000,
+          "controlled_right_actions": 129887417819529216000,
+          "bch_evaluation_passes": 519549671278116864000,
+          "bracket_calls_per_bch_pass": 4004,
+          "bracket_calls": 2080276883797579923456000,
+          "dense_structure_tensor_terms": 1025657634510675007880822784000
+        },
+        {
+          "grade": 11,
+          "central_dimension": 2,
+          "group_dimension": 78,
+          "quotient_dimension": 76,
+          "arity": 3,
+          "conversions": 3607983828320256000,
+          "qft_calls_per_conversion": 88,
+          "qft_calls": 317502576892182528000,
+          "central_coordinate_subtractions": 21647902969921536000,
+          "controlled_right_actions": 10823951484960768000,
+          "bch_evaluation_passes": 43295805939843072000,
+          "bracket_calls_per_bch_pass": 2860,
+          "bracket_calls": 123826004987951185920000,
+          "dense_structure_tensor_terms": 58761878319042211180707840000
+        },
+        {
+          "grade": 10,
+          "central_dimension": 3,
+          "group_dimension": 76,
+          "quotient_dimension": 73,
+          "arity": 16,
+          "conversions": 225498989270016000,
+          "qft_calls_per_conversion": 169,
+          "qft_calls": 38109329186632704000,
+          "central_coordinate_subtractions": 10823951484960768000,
+          "controlled_right_actions": 3607983828320256000,
+          "bch_evaluation_passes": 14431935313281024000,
+          "bracket_calls_per_bch_pass": 1980,
+          "bracket_calls": 28575231920296427520000,
+          "dense_structure_tensor_terms": 12543841007444044567019520000
+        },
+        {
+          "grade": 9,
+          "central_dimension": 4,
+          "group_dimension": 73,
+          "quotient_dimension": 69,
+          "arity": 165,
+          "conversions": 1366660541030400,
+          "qft_calls_per_conversion": 1389,
+          "qft_calls": 1898291491491225600,
+          "central_coordinate_subtractions": 901995957080064000,
+          "controlled_right_actions": 225498989270016000,
+          "bch_evaluation_passes": 901995957080064000,
+          "bracket_calls_per_bch_pass": 1320,
+          "bracket_calls": 1190634663345684480000,
+          "dense_structure_tensor_terms": 463177124830748139356160000
+        },
+        {
+          "grade": 8,
+          "central_dimension": 5,
+          "group_dimension": 69,
+          "quotient_dimension": 64,
+          "arity": 36,
+          "conversions": 37962792806400,
+          "qft_calls_per_conversion": 424,
+          "qft_calls": 16096224149913600,
+          "central_coordinate_subtractions": 6833302705152000,
+          "controlled_right_actions": 1366660541030400,
+          "bch_evaluation_passes": 5466642164121600,
+          "bracket_calls_per_bch_pass": 840,
+          "bracket_calls": 4591979417862144000,
+          "dense_structure_tensor_terms": 1508506566582475063296000
+        },
+        {
+          "grade": 7,
+          "central_dimension": 6,
+          "group_dimension": 64,
+          "quotient_dimension": 58,
+          "arity": 259,
+          "conversions": 146574489600,
+          "qft_calls_per_conversion": 3166,
+          "qft_calls": 464054834073600,
+          "central_coordinate_subtractions": 227776756838400,
+          "controlled_right_actions": 37962792806400,
+          "bch_evaluation_passes": 151851171225600,
+          "bracket_calls_per_bch_pass": 504,
+          "bracket_calls": 76532990297702400,
+          "dense_structure_tensor_terms": 20062664208600897945600
+        },
+        {
+          "grade": 6,
+          "central_dimension": 7,
+          "group_dimension": 58,
+          "quotient_dimension": 51,
+          "arity": 288,
+          "conversions": 508939200,
+          "qft_calls_per_conversion": 4083,
+          "qft_calls": 2077998753600,
+          "central_coordinate_subtractions": 1026021427200,
+          "controlled_right_actions": 146574489600,
+          "bch_evaluation_passes": 586297958400,
+          "bracket_calls_per_bch_pass": 280,
+          "bracket_calls": 164163428352000,
+          "dense_structure_tensor_terms": 32030254832615424000
+        },
+        {
+          "grade": 5,
+          "central_dimension": 8,
+          "group_dimension": 51,
+          "quotient_dimension": 43,
+          "arity": 9,
+          "conversions": 56548800,
+          "qft_calls_per_conversion": 187,
+          "qft_calls": 10574625600,
+          "central_coordinate_subtractions": 4071513600,
+          "controlled_right_actions": 508939200,
+          "bch_evaluation_passes": 2035756800,
+          "bracket_calls_per_bch_pass": 140,
+          "bracket_calls": 285005952000,
+          "dense_structure_tensor_terms": 37806324538752000
+        },
+        {
+          "grade": 4,
+          "central_dimension": 9,
+          "group_dimension": 43,
+          "quotient_dimension": 34,
+          "arity": 100,
+          "conversions": 565488,
+          "qft_calls_per_conversion": 1834,
+          "qft_calls": 1037104992,
+          "central_coordinate_subtractions": 508939200,
+          "controlled_right_actions": 56548800,
+          "bch_evaluation_passes": 226195200,
+          "bracket_calls_per_bch_pass": 60,
+          "bracket_calls": 13571712000,
+          "dense_structure_tensor_terms": 1079046105984000
+        },
+        {
+          "grade": 3,
+          "central_dimension": 10,
+          "group_dimension": 34,
+          "quotient_dimension": 24,
+          "arity": 231,
+          "conversions": 2448,
+          "qft_calls_per_conversion": 4644,
+          "qft_calls": 11368512,
+          "central_coordinate_subtractions": 5654880,
+          "controlled_right_actions": 565488,
+          "bch_evaluation_passes": 2261952,
+          "bracket_calls_per_bch_pass": 20,
+          "bracket_calls": 45239040,
+          "dense_structure_tensor_terms": 1778075228160
+        },
+        {
+          "grade": 2,
+          "central_dimension": 11,
+          "group_dimension": 24,
+          "quotient_dimension": 13,
+          "arity": 144,
+          "conversions": 17,
+          "qft_calls_per_conversion": 3181,
+          "qft_calls": 54077,
+          "central_coordinate_subtractions": 26928,
+          "controlled_right_actions": 2448,
+          "bch_evaluation_passes": 9792,
+          "bracket_calls_per_bch_pass": 4,
+          "bracket_calls": 39168,
+          "dense_structure_tensor_terms": 541458432
+        }
+      ],
+      "forest_edges": 144546256892554638336,
+      "leaf_preparation_qft_calls": 10261106007742808064000,
+      "final_readout_qft_calls": 221,
+      "single_coordinate_qft_calls": 11722675819147718751802,
+      "single_coordinate_qft_envelope": 61566636046456848384000,
+      "qft_calls_per_instrument_cap": 4644,
+      "qft_isometry_error_per_call": {
+        "numerator": 1,
+        "denominator": 6041455353081213665312520
+      },
+      "qft_precision_bits": 83,
+      "qft_error_bound": {
+        "numerator": 344784582916109375053,
+        "denominator": 177689863325918048979780
+      },
+      "per_instrument_qft_error_bound": {
+        "numerator": 1,
+        "denominator": 1300916312032991745330
+      },
+      "complete_output_error_bound": {
+        "numerator": 1627571376065108474650096461963067883120168184499974588605722857787319261028131678626003679754024205134584561683648513473748985038296914902218591266568948044015246281369946895379132128379053700937371032082284344554458575187986717,
+        "denominator": 21185747980912217389175008498737902695309597904592808966127982492715957485522915670521860520553154438041501532091644287437010555633922714443553971144016025319758309893809550185066756915756831163624184685092608368438456658448875520
+      },
+      "ordinary_oracle_queries": 1558649013834350592000,
+      "leaf_linear_evaluation_compute_uncompute_pairs": 1558649013834350592000,
+      "central_coordinate_subtractions": 163268330341561136208,
+      "controlled_right_actions": 144546256892554638336,
+      "bch_evaluation_passes": 578185027570218553344,
+      "bracket_calls": 2233873424046043432516608,
+      "dense_structure_tensor_terms": 1097428059563291944825744392192,
+      "classical_fair_bit_cap": 2386096316611724354736177101072,
+      "classical_root_pow_gcd_pair_cap": 557326813695761045196252,
+      "compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+      "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+      "canonical_subspace_reference_stable_error_required": true,
+      "joint_source_error_required": true,
+      "invalid_binary_records_abort": true,
+      "canonical_forbidden_labels_require_hidden_membership_test": false,
+      "zero_scale_is_identity_not_delta_zero": true,
+      "all_target_slots_consumed": true,
+      "classical_retry_extra_source_copies": 0,
+      "cost_scope": "Padded primitive caps; known uniform polynomial circuits, not a physical gate estimate.",
+      "runtime_model": "T_nonoracle + ordinary_oracle_queries*T_f; oracle cost T_f separately supplied.",
+      "arbitrary_modulus_qft_cost": "poly(log(p)+log(1/eta)), including finite-gate synthesis",
+      "bch_boolean_size_bound": "O((d+1)^4*(D_d+1)^3*(log(p)+1)^3) per evaluation",
+      "internal_qft_gate_synthesis_errors_included_in_eta": true,
+      "exact_oracle_assumed": true,
+      "approximate_oracle_error_included": false,
+      "prime_validation_included": false,
+      "profile_existence_certified": false,
+      "circuit_generator_implemented": false,
+      "quantum_receiver_implemented": false,
+      "formal_total_policy_instantiated": false,
+      "physical_gate_clock": false,
+      "oracle_queries_executed": 0,
+      "field_enumeration_used": false,
+      "whole_rees_correctness_certified": false,
+      "novelty_established": false,
+      "native_application_established": false,
+      "speedup_claim_allowed": false
+    }
+  ]
+}

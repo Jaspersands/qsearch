@@ -1,5 +1,11 @@
 # Cubic Cancellation From Public Labels, Including Nonbijective Cubing
 
+Update 28 October 2026: the [two-level curve contraction](CUBIC_TWO_LEVEL_CONTRACTION.md)
+now supplies `(r+1)(2r+1)` cubic columns for arbitrary inputs. The original
+three-level routine below remains a published comparator; the weighted
+Bezout controller now uses the smaller budget. This dated note's older
+80/1120-column controls are historical, not the new required arity.
+
 2026-10-22. Implementation of a published classical arithmetic dependency
 and a stronger finite quantum-channel control. NOT a new SDE algorithm,
 independent verification of Rees, a general-degree backend or a speedup.

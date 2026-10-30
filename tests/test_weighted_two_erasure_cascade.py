@@ -157,13 +157,23 @@ def test_two_stage_weighted_to_ordinary_cascade_reaches_zero_degree() -> None:
 
 
 def test_report_builder_invariants() -> None:
+    from theorems.weighted_two_erasure_cascade import render_markdown
     report = build_weighted_two_erasure_cascade_report()
+    note = render_markdown(report)
+    assert "POWER_SDE_SYMMETRIC_CONTRACTION.md" in note
+    assert "p>=16*g**(2*g+2)" in note
+    assert "ODD_POWER_EXTERIOR_SDE.md" in note
+    assert "Reduced exponents greater than3" not in note
     assert report["schema_version"] == "weighted_two_erasure_cascade_v1"
     assert report["scope"]["accepted_speedup_candidate"] is False
     assert report["scope"]["novelty_claim"] is False
     assert report["scope"]["speedup_claim_allowed"] is False
-    assert report["scope"]["supported_reduced_exponents"] == [1, 2, 3]
-    assert report["scope"]["quadratic_requires_p_mod4_3"]
+    assert report["scope"]["supported_reduced_exponents"] == [
+        1, 2, 3, "g>=4 with p>=16*g**(2*g+2)", "odd g>=5 with p>=4*((g-1)*(g-2))**2",
+    ]
+    assert report["scope"]["large_field_odd_exterior_sde"]
+    assert report["scope"]["large_field_symmetric_power_sde"]
+    assert report["scope"]["quadratic_regimes"] == "p=3 mod4, or p>=1024 via symmetric contraction"
     assert report["scope"]["cubic_three_coset_collision"]
     assert not report["scope"]["general_coset_collision_sde_for_g_gt_3"]
     assert report["stage1_weighted_erasure_p23"][-1]["output_weighted_degree"] == 0

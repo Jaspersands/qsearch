@@ -15,9 +15,11 @@ gaps documented in ``research/NONLINEAR_JET_HSP_RECEIVER.md`` (Sections 6-10),
    - When ``g == 2`` and ``p == 3 (mod 4)``, solves ``sum_i gamma_i^2 v_i = 0``
      in ``(r + 1)^2`` columns via ``square_weights_capped`` and lifts
      ``s_i = gamma_i^u mod p`` so ``s_i^d == gamma_i^2 (mod p)``.
-   - When ``g == 3``, uses the published three-coset collision construction
-     in ``(r+1)(3r+1)(9r+1)`` columns and lifts its cubic witness by the
-     same Bezout exponent. Higher reduced degrees remain unsupported.
+   - When ``g == 3``, uses the two-level curve contraction in
+     ``(r+1)(2r+1)`` columns. In the certified large-field regime, arbitrary
+     ``g >= 2`` uses symmetric contraction in ``(r+1)((g-1)r+1)`` columns.
+     Odd ``g >= 5`` also has a lower-field exterior fallback. Each witness
+     is lifted by the same zero-guarded Bezout exponent.
    - Deterministically verifies ``sum_i s_i^d v_i == 0 (mod p)`` against the
      original uncompressed equation columns before returning.
 2. **Provenance-Pinned Weighted Erasure & Two-Stage Cascade**:
@@ -82,22 +84,27 @@ def bezout_reduced_exponent(p: int, degree: int) -> tuple[int, int]:
 
 
 def required_bezout_arity(p: int, degree: int, rank: int) -> int:
-    """Column count for g=1, g=2 at p=3 mod4, or g=3; not general SDE."""
-    if rank < 0:
+    """Column count for implemented reduced-degree regimes; not general SDE."""
+    if type(rank) is not int or rank < 0:
         raise ValueError("nonnegative equation rank required")
+    g, _ = bezout_reduced_exponent(p, degree)
     if rank == 0:
         return 1
-    g, _ = bezout_reduced_exponent(p, degree)
     if g == 1:
         return rank + 1
-    if g == 2:
-        if p % 4 != 3:
-            raise ValueError("gcd(degree, p-1) == 2 square solver currently requires p = 3 mod 4")
+    if g == 2 and p % 4 == 3:
         return (rank + 1) ** 2
     if g == 3:
-        return cubic_arity(rank)
+        return cubic_arity(rank, construction="two_level_curve")
+    from theorems.power_sde import field_threshold, power_arity
+    if p >= field_threshold(g):
+        return power_arity(rank, g)
+    if g % 2:
+        from theorems.odd_power_sde import odd_power_arity, validate_family
+        validate_family(p, g)
+        return odd_power_arity(rank, g)
     raise ValueError(
-        f"gcd(degree={degree}, p-1={p - 1}) = {g} > 3 requires an unimplemented higher-coset solver"
+        f"even reduced exponent {g} is below the certified symmetric field regime"
     )
 
 
@@ -138,15 +145,33 @@ def solve_bezout_sde_weights(
     rng: random.Random | None = None,
     conic_attempt_cap: int = 128,
     nonresidue_attempt_cap: int = 128,
+    curve_attempt_cap: int = 256,
+    power_sampler_bits: int = 32,
+    bounded_randomness_bits: int | None = None,
 ) -> tuple[list[int], int, int, int]:
     """Solve ``sum_i s_i^degree * columns[i] == 0 (mod p)`` via Bezout exponent reduction.
 
     Returns ``(weights, compressed_rank, g, u)`` where ``g = gcd(degree, p - 1)``
     and ``(y^u)^degree == y^g (mod p)``.
+    For g=3, capped sampling may abort with probability at most
+    3^(-nonresidue_attempt_cap)+(8/9)^curve_attempt_cap under independent
+    uniform draws. Backend root runtime is not clocked by these caps.
+    Odd g>=5 uses the guarded exterior closure; its sampling bound is
+    (1-phi(g)/g)^nonresidue_attempt_cap+(1-1/(2g))^curve_attempt_cap.
+    When p>=16*g**(2*g+2), symmetric contraction is preferred for g>=4
+    (and g=2,p=1 mod4), with sampling bound
+    (1-phi(g)/g)^nonresidue_attempt_cap+(g-1)*2**(-power_sampler_bits).
+    Explicit bounded_randomness_bits selects the large-field symmetric
+    mode with a whole-run failure bound, including root splitting and bit
+    rejection. It replaces the individual sampling caps, and fails closed
+    outside that regime. The g=1 case is already deterministic.
     """
     ring(p)
     if type(degree) is not int or degree < 1:
         raise ValueError("positive integer degree required")
+    if bounded_randomness_bits is not None and (
+            type(bounded_randomness_bits) is not int or bounded_randomness_bits < 1):
+        raise ValueError("positive integer bounded_randomness_bits required")
     compressed, rank = independent_columns_exact(columns, p)
     g, u = bezout_reduced_exponent(p, degree)
     if rank == 0:
@@ -154,7 +179,12 @@ def solve_bezout_sde_weights(
         verify_general_degree_witness(p, columns, weights, degree)
         return weights, 0, g, u
 
-    needed = required_bezout_arity(p, degree, rank)
+    if bounded_randomness_bits is not None and g >= 2:
+        from theorems.power_sde import power_arity, validate_family
+        validate_family(p, g)
+        needed = power_arity(rank, g)
+    else:
+        needed = required_bezout_arity(p, degree, rank)
     if len(compressed) < needed:
         raise ValueError(
             f"degree-{degree} solver (g={g}) needs {needed} columns at rank {rank} (got {len(compressed)})"
@@ -164,7 +194,12 @@ def solve_bezout_sde_weights(
             len(compressed) - (rank + 1)
         )
         weights = [pow(c, u, p) if c else 0 for c in base_rel]
-    elif g == 2:
+    elif bounded_randomness_bits is not None:
+        from theorems.power_sde_budget import budgeted_power_weights
+        gamma = budgeted_power_weights(p, g, compressed, failure_bits=bounded_randomness_bits,
+                                       bit_source=rng).witness.weights
+        weights = [pow(int(c), u, p) if c else 0 for c in gamma]
+    elif g == 2 and p % 4 == 3:
         # g == 2 and p == 3 mod 4
         gamma = square_weights_capped(
             p,
@@ -173,9 +208,23 @@ def solve_bezout_sde_weights(
             conic_attempt_cap=conic_attempt_cap,
         )
         weights = [pow(int(c), u, p) if c else 0 for c in gamma]
-    else:
+    elif g == 3:
         gamma = cubic_weights(p, compressed, rng=rng,
-                              nonresidue_attempt_cap=nonresidue_attempt_cap).weights
+                              nonresidue_attempt_cap=nonresidue_attempt_cap,
+                              construction="two_level_curve",
+                              curve_attempt_cap=curve_attempt_cap).weights
+        weights = [pow(c, u, p) if c else 0 for c in gamma]
+    else:
+        from theorems.power_sde import field_threshold, power_weights
+        if p >= field_threshold(g):
+            gamma = power_weights(p, g, compressed, rng=rng,
+                                  generator_attempt_cap=nonresidue_attempt_cap,
+                                  sampler_bits=power_sampler_bits).weights
+        else:
+            from theorems.odd_power_sde import odd_power_weights
+            gamma = odd_power_weights(p, g, compressed, rng=rng,
+                                      generator_attempt_cap=nonresidue_attempt_cap,
+                                      scalar_attempt_cap=curve_attempt_cap).weights
         weights = [pow(c, u, p) if c else 0 for c in gamma]
     verify_general_degree_witness(p, columns, weights, degree)
     return weights, rank, g, u
@@ -274,6 +323,7 @@ def weighted_cancellation_weights(
     *,
     rng: random.Random | None = None,
     conic_attempt_cap: int = 128,
+    bounded_randomness_bits: int | None = None,
 ) -> tuple[list[int], int, int, int]:
     """Compute and verify public weighted-degree cancellation scales before outcomes are measured."""
     first = _validate_weighted_batch(packets, stage_degree)
@@ -285,6 +335,7 @@ def weighted_cancellation_weights(
         stage_degree,
         rng=rng,
         conic_attempt_cap=conic_attempt_cap,
+        bounded_randomness_bits=bounded_randomness_bits,
     )
     verify_weighted_witness(first.chart, raw_packets, weights, stage_degree)
     return weights, rank, len(active_keys), g
@@ -297,6 +348,7 @@ def weighted_erasure_stage(
     *,
     rng: random.Random | None = None,
     conic_attempt_cap: int = 128,
+    bounded_randomness_bits: int | None = None,
 ) -> tuple[PinnedWeightedPacket, list[int], int, int]:
     """Execute one verified weighted degree-``stage_degree`` cancellation and triangular pullback."""
     first = _validate_weighted_batch(packets, stage_degree)
@@ -307,6 +359,7 @@ def weighted_erasure_stage(
         stage_degree,
         rng=rng,
         conic_attempt_cap=conic_attempt_cap,
+        bounded_randomness_bits=bounded_randomness_bits,
     )
     terms: dict[tuple[tuple[int, ...], tuple[int, ...]], int] = {}
     for pkt, s, (y, z) in zip(packets, weights, outcomes):
@@ -370,6 +423,7 @@ def ordinary_higher_degree_erasure_stage(
     *,
     rng: random.Random | None = None,
     conic_attempt_cap: int = 128,
+    bounded_randomness_bits: int | None = None,
 ) -> tuple[SymbolicScalarPacket, list[int], int, int]:
     """Erase leading ordinary degree ``stage_degree >= 1`` (including ``stage_degree >= 4``) via Bezout SDE."""
     if not packets:
@@ -417,6 +471,7 @@ def ordinary_higher_degree_erasure_stage(
         stage_degree,
         rng=rng,
         conic_attempt_cap=conic_attempt_cap,
+        bounded_randomness_bits=bounded_randomness_bits,
     )
     for y in outcomes:
         _canonical(y, width, p)
@@ -574,9 +629,16 @@ def build_weighted_two_erasure_cascade_report() -> dict[str, object]:
             "two_stage_weighted_to_ordinary_cascade": True,
             "arbitrary_precision_127bit_prime_verified": True,
             "coherent_quantum_circuit_compiler": False,
-            "supported_reduced_exponents": [1, 2, 3],
-            "quadratic_requires_p_mod4_3": True,
+            "supported_reduced_exponents": [1, 2, 3,
+                "g>=4 with p>=16*g**(2*g+2)", "odd g>=5 with p>=4*((g-1)*(g-2))**2"],
+            "quadratic_regimes": "p=3 mod4, or p>=1024 via symmetric contraction",
             "cubic_three_coset_collision": True,
+            "cubic_two_level_curve_contraction": True,
+            "cubic_arity": "(r+1)(2r+1)",
+            "large_field_odd_exterior_sde": True,
+            "large_field_symmetric_power_sde": True,
+            "bounded_randomness_mode_available": True,
+            "all_default_randomized_loops_capped": False,
             "general_coset_collision_sde_for_g_gt_3": False,
             "accepted_speedup_candidate": False,
             "novelty_claim": False,
@@ -619,12 +681,21 @@ def render_markdown(report: dict[str, object]) -> str:
     )
     return f"""# Bezout Exponent-Reduced Higher-Degree SDE Solver and Two-Stage Weighted-to-Ordinary Phase-Erasure Cascade
 
-2026-10-22 update. **Standalone public classical controller and finite reference verification; not a coherent quantum circuit compiler, general higher-coset SDE backend, novelty claim, or accepted speedup candidate.**
+2026-10-28 update. **Public classical controller and exact reference controls;
+not a coherent quantum compiler, all-prime SDE backend, novelty claim, or
+accepted speedup candidate.**
 
-The adapter now supports reduced exponent $g=3$ through the published cubic
-collision backend. Read CUBIC_DIAGONAL_SOLVER.md for its proof obligations,
-capped nonresidue sampling, FLINT root dependency and F7 channel controls.
-Reduced exponents greater than3, and $g=2$ at $p=1$ mod4, still fail closed.
+Reduced degree3 uses [two-level cubic contraction](CUBIC_TWO_LEVEL_CONTRACTION.md).
+For any reduced g>=2, [symmetric contraction](POWER_SDE_SYMMETRIC_CONTRACTION.md)
+provides `(r+1)*((g-1)*r+1)` columns when `p>=16*g**(2*g+2)`.
+It is selected for g>=4 and g=2,p=1 mod4; existing cubic and p=3 mod4
+quadratic backends retain their broader regimes. Odd g>=5 also has the
+[exterior fallback](ODD_POWER_EXTERIOR_SDE.md) when
+`p>=4*((g-1)*(g-2))**2`. Other nonzero-rank regimes fail closed.
+Sampling bounds require uniform draws; FLINT root runtime is not clocked.
+Explicit `bounded_randomness_bits` opts into a whole-run large-field budget
+including root splitting and bit rejection; other nontrivial regimes reject
+that option. See [the budget proof](POWER_SDE_RANDOMNESS_BUDGET.md).
 
 ## 1. Summary and Mechanical Gaps Closed
 
@@ -633,7 +704,7 @@ This note documents `theorems/weighted_two_erasure_cascade.py` and `tests/test_w
 1. **Bezout Exponent-Reduced Fixed-Degree SDE Solver (`bezout_reduced_exponent`, `solve_bezout_sde_weights`, `verify_general_degree_witness`)**:
    - Implements the Section 3 exponent reduction of [Ivanyos and Santha (2015)](https://arxiv.org/abs/1503.09016): for any degree $d \\ge 1$ and odd prime $p$, sets $g = \\gcd(d, p - 1)$ and $u = (d / g)^{{-1}} \\bmod ((p - 1) / g)$ so $(y^u)^d \\equiv y^g \\pmod p$ for all $y \\in \\mathbb{{F}}_p$.
    - Solves $\\sum_i s_i^d v_i \\equiv 0 \\pmod p$ in $r + 1$ columns when $g = 1$ and in $(r + 1)^2$ columns via `square_weights_capped` when $g = 2$ and $p \\equiv 3 \\pmod 4$, deterministically verifying the witness on the original uncompressed columns (`verify_general_degree_witness`).
-   - Supports higher original degrees only when their reduced exponent is covered. Tests now include reduced exponent3 at original degrees3,9,15 and a127-bit prime; this is not a general-degree solver.
+   - Supports higher original degrees only when their reduced exponent and field regime are covered. New controls include genuine reduced degrees4 and5, Bezout lifts, and weighted unknown-phase erasure. The large-prime controls in this report below still reduce to g=1 or2; the separate power-SDE reports exercise the new regimes.
 2. **Provenance-Pinned Weighted Erasure & Two-Stage Cascade (`PinnedWeightedPacket`, `weighted_erasure_stage`, `transition_to_fourier_residual`, `ordinary_higher_degree_erasure_stage`)**:
    - Enforces distinct wrapper instances, pinned `(instance_id, chart_id, chart, parameter_basis)`, and single-use consumption across all weighted merges.
    - Enforces `weighted_degree == 0` before allowing negative $t$-Fourier readout (`transition_to_fourier_residual`), and executes Stage-2 ordinary degree erasure from $D$ down to $0$.

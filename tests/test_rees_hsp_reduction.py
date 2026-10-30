@@ -17,6 +17,47 @@ from theorems.uniform_bch_rees import scalar_line_budget
 from tests.test_ambient_section_potential import _matrix_exp, _matrix_log, _matrix_multiply
 
 
+def test_public_cover_multiplication_uses_uniform_bch_not_word_expansion(monkeypatch):
+    import theorems.rees_hsp_reduction as module
+    import theorems.jet_oracle_homogenization as old_backend
+    from tests.test_uniform_bch_rees import _filiform
+    from theorems.uniform_bch_rees import bch_via_ode
+    c, p = 8, 11
+    dimension, matrix, bracket = _filiform(c, p)
+    cover = make_rees_cover(PublicLieAlgebra(p, dimension, bracket), _units(dimension))
+    calls = 0
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("word expansion must not implement growing-class multiplication")
+
+    def checked(left, right, *, prime, nilpotency_class, bracket):
+        nonlocal calls
+        calls += 1
+        assert nilpotency_class == c and prime == p
+        return bch_via_ode(left, right, prime=prime,
+                          nilpotency_class=nilpotency_class, bracket=bracket)
+
+    monkeypatch.setattr(old_backend, "lie_bch", forbidden)
+    monkeypatch.setattr(module, "bch_via_ode", checked)
+    rng = random.Random(20261029)
+    left, right = (tuple(rng.randrange(p) for _ in range(cover.dimension)) for _ in range(2))
+    output = cover.multiply(left, right)
+    assert calls == 1
+    for point in cover.points:
+        ground_truth = _matrix_log(_matrix_multiply(_matrix_exp(matrix(cover.evaluate(left, point)), p),
+                                                   _matrix_exp(matrix(cover.evaluate(right, point)), p), p), p)
+        assert matrix(cover.evaluate(output, point)) == tuple(map(tuple, ground_truth))
+
+
+def test_abelian_cover_multiplication_rejects_wrong_dimension_before_ode():
+    cover = make_rees_cover(PublicLieAlgebra(3, 4, lambda a, b: (0,)*4), _units(4))
+    assert cover.class_bound == 1 and cover.multiply((1,)*4, (2,)*4) == (0,)*4
+    for left, right in (((1,), (2,)), ((1,)*5, (2,)*5),
+                        ((1,)*4, (2,)), ((1,), (2,)*4)):
+        with pytest.raises(ValueError):
+            cover.multiply(left, right)
+
+
 def span_elements(basis, n, p):
     return {tuple(sum(a*b[j] for a, b in zip(coeff, basis)) % p for j in range(n))
             for coeff in product(range(p), repeat=len(basis))}

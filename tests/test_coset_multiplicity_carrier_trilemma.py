@@ -1,81 +1,172 @@
-"""Test suite for Non-Abelian Coset Multiplicity-Carrier Decoupling Trilemma."""
-from __future__ import annotations
+"""Physical and exact controls for the corrected, non-exhaustive coset scope."""
 
+from fractions import Fraction
+from itertools import permutations
+import json
+import math
+
+import numpy as np
 import pytest
 
-from theorems.coset_multiplicity_carrier_trilemma import (
-    standard_rep_matrix,
-    verify_three_copy_commutator,
-    verify_commutant_zero_information,
-    compute_commutant_dimension,
-    build_scaling_profiles,
-    build_report,
-)
+from theorems import coset_multiplicity_carrier_trilemma as audit
 
 
-def test_standard_rep_matrix():
-    """Verify standard representation matrix properties."""
-    # Transposition (0, 1) in S_3 (dim 2)
-    V = standard_rep_matrix((1, 0, 2), 3)
-    assert V.shape == (2, 2)
-    # V^2 must be identity
-    assert (V @ V == [[1, 0], [0, 1]]).all()
-    # Trace must be fix((0, 1)) - 1 = 1 - 1 = 0
-    assert V.trace() == 0
+@pytest.mark.parametrize("n", [3, 4, 5, 6])
+def test_nonorthonormal_coordinates_are_not_physical_unitaries(n):
+    perm = list(range(n))
+    perm[0], perm[-1] = perm[-1], perm[0]
+    v = audit.standard_rep_matrix(tuple(perm), n)
+    gram = np.eye(n-1)+np.ones((n-1, n-1))
+    assert np.array_equal(v@v, np.eye(n-1))
+    assert np.array_equal(v.T@gram@v, gram)
+    assert not np.array_equal(v.T@v, np.eye(n-1))
+    physical = audit.orthonormal_standard_matrix(tuple(perm), n)
+    assert np.allclose(physical.T@physical, np.eye(n-1))
+    assert np.allclose(physical, physical.T)
+    old_state = np.kron(physical, np.eye(n-1))
+    assert np.linalg.eigvalsh(old_state).min() < -0.99
+    assert np.trace(old_state) == pytest.approx((n-1)*(n-3))
 
 
-def test_three_copy_commutator_entry():
-    """Verify [K_12, K_23]_{(0,0,0),(0,0,1)} = n for n in {3, 4, 5}."""
-    for n in (3, 4, 5):
-        audit = verify_three_copy_commutator(n)
-        assert audit["observed_witness_entry"] == n
-        assert audit["entry_matches_closed_form"] is True
-        assert audit["is_strictly_noncommuting"] is True
+@pytest.mark.parametrize("n", [3, 4, 5, 6, 7, 8])
+def test_physical_born_probabilities_and_true_mutual_information(n):
+    record = audit.verify_commutant_zero_information(n)
+    assert record["physical_states_and_probabilities_verified"]
+    assert record["zero_information_verified"]
+    assert record["probability_variation"] < 1e-12
+    probabilities = np.asarray(record["conditional_born_probabilities"])
+    assert np.allclose(probabilities.sum(axis=1), 1)
+    expected = 1/((n-1)*(n-2))
+    assert np.allclose(probabilities[:, 0], expected)
+    assert record["mutual_information_bits_numeric"] < 1e-12
+    assert Fraction(record["single_copy_irrep_probability_exact"]) == Fraction(
+        2*(n-1)*(n-2), math.factorial(n))
 
 
-def test_commutant_zero_information():
-    """Verify that commutant observables have identically zero mutual information with hidden conjugacy elements."""
-    for n in (3, 4, 5):
-        audit = verify_commutant_zero_information(n)
-        assert audit["trace_variation"] < 1e-12
-        assert audit["is_constant_across_class"] is True
-        assert audit["mutual_information_bits"] == 0.0
-        assert audit["zero_information_verified"] is True
+@pytest.mark.parametrize("n", [3, 4, 5, 6])
+def test_commutator_identity_with_both_ordered_products(n):
+    d = n-1
+    k = np.zeros((d*d, d*d), dtype=np.int64)
+    for i in range(n):
+        for j in range(i+1, n):
+            perm = list(range(n))
+            perm[i], perm[j] = perm[j], perm[i]
+            v = audit.standard_rep_matrix(tuple(perm), n)
+            k += np.kron(v, v)
+    forward = sum(int(k[0, m]*k[m*d, 1]) for m in range(d))
+    reverse = sum(int(k[0, m*d+1]*k[m*d, 0]) for m in range(d))
+    assert forward == math.comb(n-1, 2)+2
+    assert reverse == math.comb(n-2, 2)  # The old written proof incorrectly said zero.
+    assert forward-reverse == n
+    record = audit.verify_three_copy_commutator(n)
+    assert record["observed_witness_entry"] == n
+    assert not record["general_circuit_lower_bound"]
 
 
-def test_commutant_dimension():
-    """Verify commutant dimension dim(Commutant(V^k)) values."""
-    # S_3: dim(V) = 2. dim(Commutant(V^3)) = 11
-    assert compute_commutant_dimension(3, 3) == 11
-    # S_4: dim(V) = 3. dim(Commutant(V^3)) = 31
-    assert compute_commutant_dimension(4, 3) == 31
-    # S_5: dim(V) = 4. dim(Commutant(V^3)) = 40
-    assert compute_commutant_dimension(5, 3) == 40
+@pytest.mark.parametrize("n", range(2, 7))
+@pytest.mark.parametrize("k", [0, 1, 2, 3, 5])
+def test_rencontres_count_matches_independent_factorial_enumeration(n, k):
+    numerator = sum((sum(i == x for i, x in enumerate(p))-1)**(2*k)
+                    for p in permutations(range(n)))
+    assert numerator % math.factorial(n) == 0
+    assert audit.compute_commutant_dimension(n, k) == numerator//math.factorial(n)
 
 
-def test_scaling_profiles():
-    """Verify scaling profiles table and exponential Racah complexity."""
-    profiles = build_scaling_profiles(n_values=(3, 4, 5, 6, 8, 16))
-    assert len(profiles) == 6
-    for p in profiles:
-        assert p["commutator_matches_n"] is True
-        assert p["commutant_mutual_information_bits"] == 0.0
+def test_exact_dimension_not_stirling_estimate_and_not_circuit_bound():
+    profiles = audit.build_scaling_profiles((3, 4, 5, 6, 16, 32))
+    for row in profiles:
+        n = row["n"]
+        lower = Fraction(row["identity_term_dimension_lower_bound_exact"])
+        assert lower == Fraction((n-1)**(2*n), math.factorial(n))
+        assert lower <= row["commutant_dimension_k_n"]
+        assert row["dimension_lower_bound_verified"]
+        assert not row["general_circuit_lower_bound_proved"]
+        assert "racah_complexity_exponential" not in row
+        assert row["dimension_lower_bound_log2_numeric"] == pytest.approx(float(math.log2(lower)))
+    row = next(row for row in profiles if row["n"] == 16)
+    assert row["dimension_lower_bound_log2_numeric"] == pytest.approx(80.77035858958996)
+    assert row["commutator_evidence"] == "ANALYTICAL_IDENTITY"
 
-    # At n=16, Racah complexity is exponential
-    p16 = profiles[-1]
-    assert p16["n"] == 16
-    assert p16["racah_complexity_exponential"] is True
-    assert p16["asymptotic_mult_dimension_log2_k_n"] > 80.0
+
+@pytest.mark.parametrize("n", [3, 4])
+def test_noncommuting_pair_sums_have_normalized_constructive_select_access(n):
+    record = audit.pair_class_sum_access_control(n)
+    assert record["unitarity_max_residual"] < 1e-12
+    assert record["prepared_block_max_residual"] < 1e-12
+    assert record["standard_subspace_commutator_max"] > 0.01
+    assert record["unnormalized_class_sum_block_encoding_normalization"] == math.comb(n, 2)
+    assert record["normalized_class_sum_block_encoding_normalization"] == 1
+    assert record["verifier_uses_dense_tables"]
+    assert not record["analytic_access_plan_uses_dense_tables"]
+    assert not record["uniform_gate_compiler_implemented"]
+    assert not record["arbitrary_Racah_transform_compiled"]
+    assert not record["hard_coset_decoder_compiled"]
 
 
-def test_build_report():
-    """Verify report generation dictionary and headline metrics."""
-    report = build_report()
+@pytest.mark.parametrize("call", [
+    lambda: audit.verify_three_copy_commutator(True),
+    lambda: audit.verify_three_copy_commutator(13),
+    lambda: audit.verify_commutant_zero_information(9),
+    lambda: audit.compute_commutant_dimension(257, 1),
+    lambda: audit.compute_commutant_dimension(3, -1),
+    lambda: audit.pair_class_sum_access_control(5),
+    lambda: audit.pair_class_sum_access_control(3, 4),
+    lambda: audit.standard_rep_matrix((0, 0, 2), 3),
+])
+def test_allocation_and_input_gates(call):
+    with pytest.raises(ValueError):
+        call()
+
+
+def test_report_retracts_general_claims_without_promoting_countercontrols():
+    report = audit.build_report()
     assert report["status"] == "PASS"
+    assert report["negative_result_status"] == "QUARANTINED_OVERBROAD_NO_GO"
     metrics = report["headline_metrics"]
-    assert metrics["all_commutator_witnesses_verified"] is True
-    assert metrics["all_commutant_zero_information_verified"] is True
-    assert metrics["speedup_claim_allowed"] is False
-    assert metrics["accepted_speedup_candidate"] is False
-    assert metrics["tail_n"] == 16
-    assert metrics["tail_commutator_witness"] == 16
+    for field in ("general_circuit_lower_bound_proved", "exhaustive_trilemma_proved",
+                  "speedup_claim_allowed", "accepted_speedup_candidate"):
+        assert not metrics[field]
+    assert "pillars" not in report
+    assert metrics["all_commutant_zero_information_verified"]
+    assert metrics["all_commutator_witnesses_verified"]
+
+
+def test_report_writer_uses_quarantine_instead_of_reactivating_negative(tmp_path, monkeypatch):
+    from theorems import nonabelian_barrier_scope_audit as scope
+    calls = []
+    monkeypatch.setattr(scope, "quarantine_reviewed_negatives", lambda: calls.append("quarantine"))
+    monkeypatch.setattr(audit, "REPORT", tmp_path/"report.json")
+    audit.write_report()
+    audit.write_report(write_registry=False)
+    assert calls == ["quarantine"]
+    report = json.loads(audit.REPORT.read_text())
+    assert report["negative_result_status"] == "QUARANTINED_OVERBROAD_NO_GO"
+    assert not hasattr(audit, "register_negative_result")
+
+
+def test_failed_access_control_cannot_produce_pass_report(monkeypatch):
+    broken = audit.pair_class_sum_access_control()
+    broken["prepared_block_max_residual"] = 1
+    monkeypatch.setattr(audit, "pair_class_sum_access_control", lambda: broken)
+    report = audit.build_report()
+    assert report["status"] == "FAIL"
+    assert not report["headline_metrics"]["bounded_pair_access_verified"]
+
+
+def test_signed_young_action_and_exact_noncommuting_simulation_reference():
+    from sympy import Matrix, eye, kronecker_product, sqrt
+
+    z = Matrix([[1, 0], [0, -1]])
+    s2 = Matrix([[-1, sqrt(3)], [sqrt(3), 1]])/2
+    assert z*z == s2*s2 == eye(2)
+    assert z*s2*z == s2*z*s2
+    wrong_orientation = Matrix([[1, sqrt(3)], [sqrt(3), -1]])/2
+    assert z*wrong_orientation*z != wrong_orientation*z*wrong_orientation
+    transpositions = [z, s2, z*s2*z]
+    a = sum((kronecker_product(t, t) for t in transpositions), Matrix.zeros(4))/3
+    x = Matrix([[0, 1], [1, 0]])
+    assert a == (kronecker_product(x, x)+kronecker_product(z, z))/2
+    assert a**3 == a  # exp(-itA)=I-i sin(t)A+(cos(t)-1)A^2.
+    left, right = kronecker_product(a, eye(2)), kronecker_product(eye(2), a)
+    commutator = left*right-right*left
+    assert (commutator.T*commutator).trace() == 4

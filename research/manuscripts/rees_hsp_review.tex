@@ -445,6 +445,8 @@ $c\le r+1$, $r_d\le r-d+2$ and
  D\le n+\tfrac12r(r+1),\qquad
  P_p\le (r+2)^{r(r+1)/2}.
 \]
+Using base two gives a prime-independent upper bound on the earlier
+$\lceil\log_p(3/\eps)\rceil$ slack, since $p\ge3$.
 For $M=n+\lceil\log_2(3/\eps)\rceil$ final samples, there are $MP_p$
 lifted leaves and $cMP_p$ original queries or copies. A forest with
 arity at least two has at most $MP_p-M$ conversion nodes. Including leaf
@@ -514,7 +516,8 @@ The central contraction proof applies to finite abelian $Z$ verbatim.
 At dilation degree $d$, consume $B=\gcd(d,p-1)+1\le d+1\le p$ targets.
 If a label is zero, use scale one there and zero elsewhere. If all labels
 are nonzero of equal valuation $v$, put $A_i=\lambda_i/p^v$ and solve the
-scalar degree-$d$ equation modulo $p$ via \cite[Fact 2]{is} and the previous
+scalar degree-$d$ equation modulo $p$ via the deterministic algorithm of
+\cite[Fact 2]{is} and the previous
 power-index conversion. All $A_i$ are units. A nonzero witness coordinate
 $s_j$ has derivative $dA_js_j^{d-1}$ a unit modulo $p$; keep other
 coordinates fixed and Hensel-lift $s_j$ to modulus $p^{a-v}$. The resulting
@@ -650,6 +653,13 @@ groups of order at most $p$ \cite[Section 3]{iss}. For $p>c$ restrict such
 a local call to the public subgroup of elements of order dividing $p$ and
 use the explicit-Lie theorem. Do not restrict the original arbitrary hidden
 group to its order-$p$ part just once.
+This exponent-$p$ restriction is distinct from making an abelianization
+elementary abelian in the descent below. It uses the public subgroup
+algorithm of \cite[Lemma 3]{iss}; an elementary abelian abelianization
+alone does not imply exponent $p$. If effective Lazard additive coordinates
+are already supplied, the same subgroup is the additive $p$-torsion and
+can be computed from complete integer relations. Such coordinates are not
+assumed free for a general-exponent black-box input.
 
 For $p\le c$, the prime is bounded. Use the forward-only bounded-error
 central-erasure/HSMC route \cite[Proposition 3]{ii}, not its distinct exact

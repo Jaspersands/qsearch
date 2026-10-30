@@ -38,7 +38,7 @@ def test_multi_gadget_projection_preserves_uniformity_gauge_and_dependent_forms(
     assert mapped.target["spins"] == 10
     assert len(mapped.target["forms"]) == 11
     # A native SAT census is independent of lift(); auxiliaries are not free advice.
-    import pycosat
+    pycosat = pytest.importorskip("pycosat")
     from theorems.ternary_classical_sampling import decode, encode
     clauses, support = encode(mapped.target)
     support = set(support)

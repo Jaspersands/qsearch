@@ -1,0 +1,140 @@
+{
+  "status": "SCOPED_SYMMETRIC_POWER_SDE_NOT_QUANTUM_DISCOVERY",
+  "proof_note": "research/POWER_SDE_SYMMETRIC_CONTRACTION.md",
+  "scaffold_source": "https://arxiv.org/html/1503.09016v2",
+  "character_bound_source": "https://arxiv.org/html/2403.04312v2#S2",
+  "input_promise": "d>=2 divides p-1; p>=16*d**(2*d+2); arbitrary public columns",
+  "arity": "(r+1)*((d-1)*r+1)",
+  "cases": [
+    {
+      "prime": 2305843009213693951,
+      "reduced_degree": 5,
+      "input_rank": 2,
+      "required_columns": 27,
+      "minus_one_is_power": true,
+      "nonzero_scales": 3,
+      "distinguished_support_size": 3,
+      "distinguished_vector_zero": true,
+      "checked_axis_relations": 19,
+      "root_calls": 34,
+      "generator_draws": 1,
+      "scalar_stage_draws": [
+        25,
+        53,
+        787,
+        6836
+      ],
+      "scalar_stage_caps": [
+        1600,
+        8000,
+        40000,
+        200000
+      ],
+      "scalar_stage_success_lower_bounds": [
+        "1/50",
+        "1/250",
+        "1/1250",
+        "1/6250"
+      ],
+      "sampling_abort_bound": "293873587705571876992184134305561419454666389193021880377187926569604314863681794286632449/315544362088404722164691426113114491869282574043609201908111572265625000000000000000000000000000000",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 2305843009213693951,
+      "reduced_degree": 5,
+      "input_rank": 8,
+      "required_columns": 297,
+      "minus_one_is_power": true,
+      "nonzero_scales": 297,
+      "distinguished_support_size": 13,
+      "distinguished_vector_zero": false,
+      "checked_axis_relations": 43,
+      "root_calls": 312,
+      "generator_draws": 1,
+      "scalar_stage_draws": [
+        4,
+        496,
+        380,
+        149
+      ],
+      "scalar_stage_caps": [
+        1600,
+        8000,
+        40000,
+        200000
+      ],
+      "scalar_stage_success_lower_bounds": [
+        "1/50",
+        "1/250",
+        "1/1250",
+        "1/6250"
+      ],
+      "sampling_abort_bound": "293873587705571876992184134305561419454666389193021880377187926569604314863681794286632449/315544362088404722164691426113114491869282574043609201908111572265625000000000000000000000000000000",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 340282366920938463463374607431768211181,
+      "reduced_degree": 4,
+      "input_rank": 3,
+      "required_columns": 40,
+      "minus_one_is_power": false,
+      "nonzero_scales": 40,
+      "distinguished_support_size": 4,
+      "distinguished_vector_zero": false,
+      "checked_axis_relations": 18,
+      "root_calls": 50,
+      "generator_draws": 2,
+      "scalar_stage_draws": [
+        38,
+        45,
+        51
+      ],
+      "scalar_stage_caps": [
+        1024,
+        4096,
+        16384
+      ],
+      "scalar_stage_success_lower_bounds": [
+        "1/32",
+        "1/128",
+        "1/512"
+      ],
+      "sampling_abort_bound": "237684487542793012780631851009/340282366920938463463374607431768211456",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 65537,
+      "reduced_degree": 2,
+      "input_rank": 3,
+      "required_columns": 16,
+      "minus_one_is_power": true,
+      "nonzero_scales": 16,
+      "distinguished_support_size": 5,
+      "distinguished_vector_zero": false,
+      "checked_axis_relations": 8,
+      "root_calls": 19,
+      "generator_draws": 1,
+      "scalar_stage_draws": [
+        2
+      ],
+      "scalar_stage_caps": [
+        256
+      ],
+      "scalar_stage_success_lower_bounds": [
+        "1/8"
+      ],
+      "sampling_abort_bound": "79228162514264337593543950337/340282366920938463463374607431768211456",
+      "exact_original_moment_verified": true
+    }
+  ],
+  "random_input_promise": false,
+  "input_labels_resampled": false,
+  "field_enumeration_used": false,
+  "even_degree_supported": true,
+  "all_prime_regimes_supported": false,
+  "degree_uniform_polynomial_time": false,
+  "backend_runtime_locally_clocked": false,
+  "quantum_receiver_implemented": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false
+}

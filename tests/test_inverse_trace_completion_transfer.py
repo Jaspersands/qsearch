@@ -7,9 +7,11 @@ exponential in nK and is confined to F16; no scalability claim follows.
 from collections import Counter
 from fractions import Fraction
 from itertools import product
-from math import prod
+from math import comb, isqrt, prod
 
 import pytest
+
+from theorems.inverse_trace_gibbs_target import residual_variance_bound
 
 
 def stats(prefix, residual, syndrome=0):
@@ -254,3 +256,200 @@ def test_native_asymptotic_bound_parameters_not_sampler_executions(n):
     bound = Fraction(1, 32)
     remainder = bound * bound - vu / 4 - vu * vt
     assert remainder > 0 and remainder * remainder > vu * vu * vt
+
+
+@pytest.mark.parametrize("targets", [(0,) * 16, (1,) * 16, (0, 1) * 8,
+                                     tuple(i.bit_count() % 2 for i in range(16))])
+@pytest.mark.parametrize("length", [3, 4])
+def test_support_bound_transfer_for_every_native_f16_syndrome(targets, length):
+    residual = histogram(range(length), targets[:length])
+    prefix = histogram(range(length, 16), targets[length:])
+    bu = residual_variance_bound(4, length, 2)
+    bt = residual_variance_bound(4, 16-length, 2)
+    expected_vu = {3: Fraction(1, 4), 4: Fraction(53, 2048)}[length]
+    expected_vt = {3: Fraction(16777217, 562949953421312),
+                   4: Fraction(4194305, 35184372088832)}[length]
+    assert bu*bt < 1
+    for syndrome in range(256):
+        f, g, c, vu, vt, tv, abort = stats(prefix, residual, syndrome)
+        assert vu == expected_vu <= bu
+        assert vt == expected_vt <= bt
+        assert (c-1)**2 <= vu*vt and c > 0
+        assert tv == sum(x*abs(1-y/c) for x, y in zip(f, g))/512
+        assert le_sqrt_sum(tv, bu/4, bu*bt)
+        assert abort <= tv
+    if length == 3:
+        assert any(count == 0 for count in residual)
+    else:
+        assert all(residual)
+
+
+def binary_field_reference(bits):
+    """Independent, table-sized arithmetic for exhaustive F4/F8/F16 controls."""
+    modulus = {2: 0b111, 3: 0b1011, 4: 0b10011}[bits]
+    q = 1 << bits
+
+    def mul(a, b):
+        out = 0
+        while b:
+            if b & 1:
+                out ^= a
+            b >>= 1
+            a <<= 1
+            if a & q:
+                a ^= modulus
+        return out
+
+    def tr(a):
+        out = 0
+        for _ in range(bits):
+            out ^= a
+            a = mul(a, a)
+        assert out in (0, 1)
+        return out
+
+    inverses = [0]+[next(y for y in range(1, q) if mul(x, y) == 1)
+                    for x in range(1, q)]
+    return mul, tr, [tr(x) for x in inverses]
+
+
+@pytest.mark.parametrize("bits,length,checks", [(2, 3, 1), (3, 4, 2), (4, 4, 1)])
+def test_support_sensitive_variance_all_targets_syndromes_and_fourier_supports(bits, length, checks):
+    q = 1 << bits
+    mul, tr, predicate = binary_field_reference(bits)
+    powers = [[1] for _ in range(length)]
+    for point, row in enumerate(powers):
+        for _ in range(checks-1):
+            row.append(mul(row[-1], point))
+    columns = [[sum(mul(x, a) << (bits*k) for k, a in enumerate(row))
+                for x in range(q)] for row in powers]
+    counts = [[0]*(q**checks) for _ in range(1 << length)]
+    for word in product(range(q), repeat=length):
+        syndrome = target = 0
+        for i, x in enumerate(word):
+            syndrome ^= columns[i][x]
+            target |= predicate[x] << i
+        counts[target][syndrome] += 1
+    spectra = []
+    for bit in (0, 1):
+        roots = [x for x in range(q) if predicate[x] == bit]
+        assert len(roots) == q//2
+        r = [Fraction(sum(1-2*tr(mul(u, x)) for x in roots), q//2)
+             for u in range(q)]
+        assert r[0] == 1 and sum(x*x for x in r[1:]) == 1
+        spectra.append([x*x for x in r])
+    assert spectra[0] == spectra[1]
+    root = isqrt(q)
+    root += int(root*root < q)
+    beta = min(Fraction(1), Fraction(1+2*root, q))
+    assert max(spectra[0][1:]) <= beta*beta
+    support_sums = Counter()
+    for coefficients in product(range(q), repeat=checks):
+        if not any(coefficients):
+            continue
+        values = []
+        for row in powers:
+            value = 0
+            for a, c in zip(row, coefficients):
+                value ^= mul(a, c)
+            values.append(value)
+        support = tuple(i for i, value in enumerate(values) if value)
+        assert len(support)-(length-checks) > 0
+        support_sums[support] += prod(spectra[0][value] for value in values)
+    assert all(value <= beta**(2*(length-checks)) for value in support_sums.values())
+    bound = residual_variance_bound(bits, length, checks)
+    mean = Fraction((q//2)**length, q**checks)
+    for row in counts:
+        assert sum(row) == (q//2)**length
+        variance = sum((Fraction(c)/mean-1)**2 for c in row)/(q**checks)
+        assert variance == sum(support_sums.values()) <= bound
+
+
+def power_two(exponent):
+    return Fraction(1 << exponent) if exponent >= 0 else Fraction(1, 1 << -exponent)
+
+
+def assert_transfer_upper(bound, vu, vt):
+    # Pay the prefix-distribution term with an outward integer-square-root bound.
+    exponent = vt.numerator.bit_length()-vt.denominator.bit_length()
+    step = power_two(exponent//2-80)
+    scaled = vt/(4*step*step)
+    root = isqrt(scaled.numerator//scaled.denominator)
+    if root*root*scaled.denominator < scaled.numerator:
+        root += 1
+    prefix = root*step
+    assert prefix*prefix >= vt/4
+    assert (prefix-step)**2 < vt/4
+    remaining = bound-prefix
+    assert remaining >= 0
+    remainder = remaining*remaining-vu/4-vu*vt
+    assert remainder >= 0 and remainder*remainder >= vu*vu*vt
+
+
+@pytest.mark.parametrize("bits,length,vu_m,vu_e,vt_m,vt_e,t_m,t_e", [
+    (17, 40, 1032751, -20, 1725834, -3051, 1016244, -11),
+    (17, 45, 1075167, -90, 1551312, -2977, 1036903, -46),
+    (31, 126, 1000143, -48, 1905417, -20247, 1000072, -25),
+    (31, 136, 1000380, -328, 1627453, -19959, 1000190, -165),
+    (61, 477, 1000001, -231, 1397227, -162046, 1414214, -117),
+    (61, 496, 1000001, -1333, 1181580, -160929, 1414214, -668),
+])
+def test_outward_rational_support_variance_and_transfer_budgets(
+        bits, length, vu_m, vu_e, vt_m, vt_e, t_m, t_e):
+    size, checks = bits*bits, bits*bits//8
+    assert length in (checks+(3*checks+2*bits-1)//(2*bits),
+                      checks+(4*checks+bits-1)//bits)
+    vu = residual_variance_bound(bits, length, checks)
+    vt = residual_variance_bound(bits, size-length, checks)
+    assert vu*vt < 1
+    for value, mantissa, exponent in ((vu, vu_m, vu_e), (vt, vt_m, vt_e)):
+        unit = power_two(exponent)/10**6
+        assert (mantissa-1)*unit < value <= mantissa*unit
+    assert_transfer_upper(Fraction(t_m, 10**6)*power_two(t_e), vu, vt)
+
+
+@pytest.mark.parametrize("bits,mantissa,exponent", [
+    (17, 1769465, -7), (31, 1469067, -34), (61, 1559843, -161),
+])
+def test_original_residual_forecasts_remain_separate(bits, mantissa, exponent):
+    size, checks = bits*bits, bits*bits//8
+    length = checks+(4*checks+bits-1)//bits
+    vu = Fraction(9**length, 1 << (bits*(length-checks)))
+    vt = Fraction(9**(size-length), 1 << (bits*(size-length-checks)))
+    assert_transfer_upper(Fraction(mantissa, 10**6)*power_two(exponent), vu, vt)
+
+
+@pytest.mark.parametrize("bits,length,checks", [(2, 3, 1), (4, 3, 2), (5, 4, 3),
+                                               (6, 5, 4), (17, 40, 36)])
+def test_exact_minimum_formula_retains_vacuous_variance(bits, length, checks):
+    q = 1 << bits
+    root = isqrt(q)
+    root += int(root*root < q)
+    beta = min(Fraction(1), Fraction(1+2*root, q))
+    support = sum(comb(length, w) for w in range(length-checks+1, length+1))
+    expected = min(Fraction(9**length, q**(length-checks)),
+                   support*beta**(2*(length-checks)))
+    actual = residual_variance_bound(bits, length, checks)
+    assert isinstance(actual, Fraction) and actual == expected
+    if bits in (4, 5, 6):
+        assert actual > 1
+        prefix = residual_variance_bound(bits, bits*bits-length, checks)
+        assert actual*prefix < 1
+        assert_transfer_upper(Fraction(1), actual, prefix)
+
+
+def test_variance_bound_is_not_a_pointwise_syndrome_bound():
+    counts = histogram(range(3), (0,)*3)
+    mean = Fraction(sum(counts), 256)
+    squared_errors = [(Fraction(c)/mean-1)**2 for c in counts]
+    bound = residual_variance_bound(4, 3, 2)
+    assert sum(squared_errors)/256 <= bound < max(squared_errors)
+
+
+@pytest.mark.parametrize("args", [(1, 3, 1), (129, 3, 1), (True, 3, 1),
+                                  (4.0, 3, 1), (4, 17, 1), (4, 1, 1),
+                                  (4, 3, 0), (4, 3, 3), (4, 3, 4),
+                                  (4, 3, True), (4, 3, 1.0)])
+def test_residual_variance_parameter_guards(args):
+    with pytest.raises(ValueError):
+        residual_variance_bound(*args)

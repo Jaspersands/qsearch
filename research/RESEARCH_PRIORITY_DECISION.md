@@ -1,5 +1,436 @@
 # Constructive Research Priority Decision
 
+## 2026-10-30 Correct The Incoming Rees Application Filter
+
+Read manuscripts/REES_FOUR_PILLAR_CORRECTIONS.md with the preserved
+four-pillar review. Three focused agents found false/stale scope and
+formalization statements. There is no `total_sde_policy_hyp` axiom;
+valid SDE policies are explicit hypotheses in a kernel-checked class3
+measured identity, not a formal efficient solver. The rank-only ring
+reduction remains conditional and must not be displaced by the older
+direct-descent bound. Huge sufficient budgets are not lower bounds;
+novelty and a useful native application remain unestablished.
+
+Do NOT use the proposed ten conditions as a universal rejection gate.
+Countercontrols check degree-below-p derivative failure, syntactic-degree
+inflation, incomplete jets without p-power iteration, and a class8
+profile below the review's class6 query cutoff. All controls are easy
+calibrations, not new hard candidates. Existing valid classical filters
+remain unchanged. An inapplicable or incomplete filter returns UNKNOWN.
+
+Preserve partial classical reduction H<=K and restrict the same fixed
+oracle to K where warranted, then recompute costs. This existing hybrid
+still needs a motivated native residual family and a constructive
+decoder. Do not replace that task with inflated degrees or fabricated
+necessary features. No new candidate or speedup is admitted by this pass.
+
+## 2026-10-30 Arithmetic Receiver: Exact Contract, No General Decoder
+
+Read QUATERNION_ARITHMETIC_RECEIVER.md. The previous arithmetic lead has
+now been tested by six focused agents. Full prime-qudit Clifford plus
+one cubic gate retains its published dimension-independent variance,
+but its exact record generally contains an uncomputed full-field cubic
+sum. The no-extra-sum chart occurs with probability exactly 1/(p+1);
+conditioning on it destroys diagonal-state identifiability at one qudit.
+Standard stabilizer expansion also has squared coefficient-l1 cost at
+least p*(1-epsilon)_+^2/4. Neither fact is a general scoring lower bound.
+
+Two constructive ingredients survive: a close fixed point-Gaussian proxy
+for the actual Gaussian-cell source, with cropped injective prime
+encoding; and fast additive weak-cubic contraction when the ACTUAL
+variation lambda*W^2+2pi*|c|*W^3 is polynomial. The proxy remains a
+weighted constrained finite sum in growing dimension. A narrow physical
+packet does not localize the auxiliary cubic variable. Neither a free
+theta evaluator nor a relative-error oracle follows.
+
+Do not expand the generic shadow interface or build a backend yet. The
+re-entry gate is a specific native family with a proved, affordable
+contraction and a path from scores to orientation reconstruction. Fix
+proxies before using scored records, or use independent holdouts; pay
+coefficient, input, summation and failure precision separately. If no
+concrete native mechanism meets this gate, pivot rather than adding
+another adjacent barrier note. All existing classical filters remain.
+
+## 2026-10-30 Cheap Receiver Statistics Have Classical Baselines
+
+Read QUATERNION_RECEIVER_CLASSICAL_FILTER.md. The next-test proposal below
+has now been examined. The specified finite source has classical sample
+and amplitude-query access, with fixed arithmetic and support semantics.
+Additive overlap optimization is therefore classically simulable by an
+existing CT-state theorem. This is not a new algorithmic speedup.
+
+Matching-width oscillator joint-parity MEANS also have a classical
+simulator. A passive coherent-state kernel has only one relevant nearby
+lattice point per sampled broad coefficient. For Hermitian parity
+transformations a mutual-pair estimator is bounded by one; shifted-theta
+and Gram bounds pay for omitted pairs and physical normalization. This
+covers a parity involving every embedding, not just local parities. It
+does not sample all parity/number outcomes or cover mismatched packet
+covariance, squeezing, coherent queries, or arbitrary nonlinear decoding.
+
+Discarding one whole embedding makes the reduced source close to a
+publicly sampled packet mixture. A four-dimensional packing argument
+avoids an exponential point-count loss. This does not make arbitrary
+circuits on those packets classically simulable; it is a source-specific
+coherence statement with explicit width and radius conditions.
+
+DO NOT build overlap hill-climbing, local marginal learning, or a fixed
+parity-feature pipeline as the next breakthrough candidate. A viable
+receiver must exploit full records with an affordable nonlinear decoder,
+or specify an operation outside these proved simulation classes. Neither
+high Fourier complexity nor failure of a simulator is evidence of a
+decoder or speedup. The prior polynomial Clifford-record result survives.
+
+An independent comparison initially favored inverse-trace COMPLETE
+residual-cell computation, then WITHDREW that priority after testing an
+actual recurrence. Partial pivot contributions do not merge; hash-only
+pruning leaves prefix dimensions 0,16,32,36,36 in the saved n17 cells.
+The sampling composition and mixing proof exist, but no compact complete-
+cell representation follows. Installing a Groebner solver, raising SAT
+caps, or citing small final quotient dimension is not a constructive
+advance. Rees also lacks a surviving motivated native application.
+
+The next sharply specified arithmetic lead is the existing full-qudit
+Clifford plus one cubic-phase/Fourier measurement. Its published variance
+bound is independent of the prime-register size, avoiding one defect of
+an arithmetic replacement. But evaluating the resulting actual weighted
+quadratic-plus-cubic sums, and searching orientations, remain unpaid.
+Derive a useful contraction with explicit complexity before implementing
+it. This is a falsifiable research question, not a new solver or a claim
+that the next pass is guaranteed to make constructive progress.
+
+## 2026-10-30 Receiver Decoding, Not An Assumed Measurement Barrier
+
+Read QUATERNION_COVARIANT_RECEIVER.md. Five-agent follow-up supplies an
+exactly covariant continuous Gaussian source with a reviewed clean
+finite-bit approximation, including overlapping-packet normalization,
+tail-Gram control and dyadic-center window selection. This removes the
+fixed-grid covariance mismatch at proof level, not via a compiled backend.
+
+Two receiver routes now have different dispositions. Ordinary Cartesian
+position/Fourier measurement is classically simulable using the public
+primal/dual bases at the actual broad-width/tiny-packet parameters; its
+interference is bounded rather than discarded. Global-Clifford shadows,
+in contrast, provide polynomially many informative records with efficient
+measurement circuits by an existing theorem. An exhaustive net decoder
+recovers the transporter, but its score evaluation and search are NOT
+polynomial. The remaining scientific task is a usable decoder or a more
+structured, efficiently decoded measurement. Do not say that all efficient
+measurements are missing or that polynomial samples alone solve the input.
+
+The swap-wreath construction is valid: K has order2|H|^2, a callable
+two-source controlled-SWAP oracle, and odd elements whose first coordinate
+lies in H*a. It remains a compact STATE-VALUED hiding problem, not a free
+finite-group coset-state oracle. Rounded grids are not automatically groups.
+
+Covariant measurement now has an explicit recovery-ball formula in terms
+of representation density matrices, not just scalar weights or a peak.
+Existing binary-large-spin SU(2) rotations are efficient (IJJS2026).
+Their availability does not supply source polar maps or decoding. A
+single-spin maximally entangled probe has growing peak but vanishing
+inverse-spin-ball success; that example is not a general receiver bound.
+
+NEXT: test a concrete structured decoder or bounded joint observable.
+An explicit candidate is Cartesian Hermite conversion followed by known
+circular-mode rotations and number-parity correlations; retain the two
+Schwinger doublets rather than assuming an efficient large CG transform.
+First derive its source-specific gap, cutoff and classical simulator.
+Single marginal features and total occupation need careful checks: the
+latter is rotation-invariant. Do not build a shadow-data pipeline or
+another statevector demonstration before obtaining a usable statistic.
+If this produces no constructive decoder, compare a different native
+mechanism rather than extending the quaternion interface by inertia.
+
+## 2026-10-30 Compact Quaternion Source, Receiver Still Missing
+
+QUATERNION_COMPACT_ORBIT_SOURCE.md now gives a native source for the
+norm-exact ideal input. An arithmetic separation proof reduces every
+short near match to one rational norm-one quaternion; a proper-subgroup
+Gaussian-mass bound gives overlap below 3/4 away from the unit coset.
+Tensor copies amplify separation. A separately reviewed broad coherent
+Klein/Grover--Rudolph construction uses centered conditional windows and
+inverse-basis erasure; it does not prepare a shortest vector. Precision,
+theta normalizers and retained workspace are explicitly charged. These
+are proof-level arguments, not a compiled quantum source.
+
+The scientific question is now narrower: can a receiver recover the
+transporter in SU(2)^d within the exact generator's rounding radius using
+polynomial copies, gates and classical postprocessing? Covariant
+maximum-likelihood POVMs are a template, not that algorithm. Fixed-grid
+straddle states are not exactly covariant. Establish actual representation
+weights and mass INSIDE the recovery ball before proposing a circuit;
+pointwise likelihood or a large Hilbert space does not settle complexity.
+
+Matched falsifiers: full fourth-cumulant contraction classically recovers
+the natural scaled-cubic axes GIVEN adequately precise moments. Broad
+Gaussian cumulants can be exponentially small while fine coherence is
+retained; neither easy moment access nor total loss of information may
+be assumed. Quantum/classical ZLIP algorithms and QuaILLL remain mandatory
+comparators on their actual input promises.
+
+QUATERNION_INTEGRAL_DESCENT.md gives the exact rank-two semilinear and
+Hermitian equations. A locally principal ideal over Q(sqrt(-11)) has a
+free field module and a rational descent but NO integral norm-target
+generator. This closes a proposed field-PIP shortcut, not promised-YES
+hardness. Orthogonally decomposed polarized rank-one CM ideals are easy
+by the existing classical Lenstra--Silverberg theorem.
+
+The alternative GOPPA_LOCAL_QUOTIENT_PRESENTATION.md Section 8 now has a
+held-out one-bit CSS readout, costing 2^rank postselection. A single public
+jet block contains an identity minor of size binom(k-w,s-1); quotienting
+local kernel relations does not remove this syndrome rank. Deprioritize
+THAT preparation, not all Goppa quantum algorithms. Prefer the concrete
+compact-source receiver question over additional wrapper infrastructure.
+No candidate, broad no-go, novelty or speedup is admitted by this pass.
+
+## 2026-10-30 Quaternion Target And Source Audit
+
+QUATERNION_NORM_SLICE_AND_LOCAL_FLAGS.md gives a concrete quantitative
+target: in a real power-of-two cyclotomic center, length approximation
+gamma<sqrt(2) in Q_q(x)=Tr(nrd(x)/q) recovers an attainable exact norm q.
+For general totally real centers, gamma<sqrt(7/4) suffices with explicit
+central-unit corrections. This is an interface to the already-known
+weighted-SVP principalization reduction, not a new solver. The exact
+target has polynomial expanded witness size in the explicit input.
+
+Two easy distractions are removed: rational definite PIP is fixed-rank
+classical SVP, and an orbit of a public split-residue ideal has a Borel
+flag recoverable by Gaussian elimination. The latter is NOT a break of
+secret encoded-isogeny oracles. Ordinary principality need not attain a
+chosen positive norm for arbitrary centers/orders; preserve that promise.
+
+QUATERNION_HSVP_PREPRINT_AUDIT.md records independent confirmation of
+incorrect scalar covolume scaling and an out-of-ideal output in Theorem8
+of the cached 2026-02-13 ePrint2025/1448. The publisher text is uninspected.
+The two-sided center-ideal repair still needs a number-field HSVP solver;
+do not promote preprocessing quantum factoring to an end-to-end algorithm.
+QuaILLL is the relevant structure-aware classical baseline, with matched
+metric, basis hypotheses and quaternion-vs-real block sizes.
+
+NEXT: only reopen the quaternion route for a concrete generator-frame
+oracle retaining information beyond the public flag, or an actual method
+achieving the weighted short-vector target. First inspect the full Hawk
+reduction and compare its native input to the proposed source. Do not
+build wrappers, extrapolate toy lattice timings, or extend this source
+audit by inertia. Compare effective integral descent/state preparation
+against the unresolved characteristic-preserving Goppa mechanism before
+choosing another implementation. No new candidate is admitted here.
+
+## 2026-10-30 Compact Residue Obligation Resolved
+
+COMPACT_RESIDUE_CONDUCTOR_DECISION.md supplies a reviewed, uniform local
+evaluation algorithm for compact POWER PRODUCTS with exact small factors,
+including ramification, signed exponents and denominator cancellation.
+It charges log Norm(modulus), not merely a compressed modulus exponent.
+The known coprime-conductor criterion then consumes maximal-order PIP and
+complete unit outputs without expanding a correcting unit. Finite quotient
+coordinates and ideal factorization are explicit dependencies. No new
+quantum primitive, hardness theorem or unrestricted circuit evaluator is
+claimed. The dyadic output-size family is classically easy and has Pic=1;
+a conductor-5 ideal supplies a matched NO control.
+
+This bounded arithmetic-interface follow-up is complete at the proof and
+exact-control level. Do not spend the next pass building wrappers around
+known PIP, ray-class or pencil algorithms. Compare a genuinely new native
+reduction, with public access and a matched classical baseline, against
+returning to the unresolved public Goppa homology mechanism. A quaternion
+division component is not automatically a hard instance or a quantum
+algorithm; a compact matrix circuit is not automatically a small witness.
+Reopen this interface only for a concrete downstream obligation the stated
+power-product lemma does not cover.
+
+## 2026-10-30 Six-Agent Arithmetic Reduction And Output Audit
+
+Read UNMARKED_INTEGRAL_PENCIL_REDUCTION.md. For n>=3 irreducible integer
+pencils with a supplied source unimodular slice, the unknown GL(2,Z)
+mixing is deterministic polynomial classical preprocessing to at most n
+integral-similarity decisions. Field-root enumeration needs degree n,
+not a normal closure. An independent review confirmed completeness,
+source-only unimodularity and uniform bit cost. This is reuse of known
+machinery, not a new quantum primitive or generic tensor algorithm.
+
+INTEGRAL_SIMILARITY_OUTPUT_SIZE.md proves an explicit O(m)-bit 2x2
+input family whose EVERY expanded integral conjugator needs Theta(2^m)
+bits. A compact Pell exponent suffices. Independent review confirmed the
+minimum over all witnesses, including negative exponents and stabilizers.
+The result constrains output interfaces, not decision complexity; do not
+reintroduce the false general regulator barrier or withdraw known compact
+quantum arithmetic algorithms.
+
+AMITSUR_ARITHMETIC_REUSE_AUDIT.md records Kutas--Montessinos v3's existing
+GRH-conditional splitting theorem using etale tensor powers. The arXiv
+abstract metadata is stale relative to its PDF/HTML; the random-irreducibility
+heuristic is not a missing capability in that version. A compact cochain
+gives compact splitting circuits, but a chosen minimal ideal may still
+have huge coordinate height. A bad gauge is not a lower bound on ALL
+splittings. No general compact-to-small-output conversion was proved.
+
+The same note gives the tuple-to-centralizer reduction and an independently
+reviewed counterexample to transferring the split-component promise:
+three commuting square-zero 8x8 matrices generate an algebra with quotient
+Q, but their centralizer quotient is Hamilton's quaternion division algebra.
+Apply the promise to the endomorphism algebra actually consumed, not the
+original generated algebra. BHJ's single-matrix centralizer proof remains
+separate. No general BQP theorem for arbitrary tuples is established here.
+
+NEXT: do not spend another pass implementing already-covered matrix/pencil
+wrappers. A bounded constructive follow-up is to determine exactly which
+decision steps can consume compact arithmetic through residues and norms,
+without expansion; compare the existing ray-class/S-unit algorithms first.
+Revisit a genuinely harder native arithmetic/metric problem only after
+its centralizer, source promises and strongest current classical algorithm
+are explicit. The quaternion counterexample is not itself a hard instance.
+Goppa work still needs effective public homology/state preparation, not
+another dimension count. No new accepted candidate is warranted this pass.
+
+## 2026-10-30 Public Quotient Formulation And Arithmetic Route Correction
+
+Six focused agents compared constructive encodings, classical compression,
+arithmetic prior art and regression coverage. Read
+GOPPA_LOCAL_QUOTIENT_PRESENTATION.md for the exact public square-zero algebra
+model: jet blocks are homogeneous ideal components, Proposition 6 relations
+are ideal products, and global useful relations are middle homology. The
+small predicted projected-kernel image is NOT the entire block quotient.
+The simplest quadratic-only replacement is false; divided powers matter.
+A parity-preserving CSS construction has a valid compact readout but still
+needs global kernel preparation. No efficient public compression was found.
+Reopen only for an effective homology map or state-preparation mechanism,
+not a restatement of the small logical dimension.
+
+The arithmetic comparison exposed a false existing exclusion. Published
+EHKS 2014 and Biasse--Song 2016 algorithms do permit growing field degree.
+The exact old regulator negative is quarantined; its assumed-formula test
+and JS certificate are deleted. Read the corrected
+ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md, including the 2025 v2
+cost-formula correction, compact outputs, GRH/class-group distinction and
+order-input caveats. No new number-field algorithm is claimed.
+
+ARITHMETIC_TENSOR_DIRECTION_AUDIT.md records two checks: 2x2x2 integer
+decision is already published BQP prior art; smooth fixed-size 3x3x3
+unimodular tensor equivalence admits a classical polynomial-bit algorithm
+by finite determinant-normalized transporters. Two agents independently
+reviewed the latter deduction. It is not a practical implementation or a
+statement about singular or growing-format tensors.
+
+NEXT CONSTRUCTIVE QUESTION: find a native growing-format or singular
+arithmetic orbit problem whose actual input reduces to ideal equivalence
+with polynomial field degree, basis access and output cost. First inspect
+the existing integral-matrix-similarity literature and strong classical
+algorithms. Do not implement another already-classical smooth-family
+wrapper. An explicit missing reduction, not abstract number-field hardness,
+is required before a new candidate can be admitted.
+
+## 2026-10-30 Goppa Holdout Requires A Characteristic-Preserving Mechanism
+
+Read GOPPA_HOLDOUT_QUANTUM_ACCESS.md. Both full primary PDFs are now cached
+and hashed, superseding the earlier abstract-only status below. GIJS's
+distinguisher proof survives a focused independent automatic audit; recovery
+remains conditional. Weis v0.5 supplies a substantially stronger matrix-free
+classical baseline with reduced derivatives and local-relation quotients.
+
+The actual d=3,s=2 jet operator admits binary holdout membership but complex
+nonmembership, with exact ranks 8/8 versus 8/9 and complex kernel overlap
+4/5 at condition number sqrt(5). Do not spend a pass building a QSVT solver
+for the wrong field. This is not a Goppa-key counterexample or a quantum no-go.
+The next constructive question is a compact parity-preserving representation
+of the local-relation quotient and a direct useful locator output. Compare
+against the existing implicit classical algorithm, not dense elimination.
+No such quantum mechanism or new accepted candidate is established here.
+
+## 2026-10-30 Valid Wreath Source Fails The Matched Classical Test
+
+WREATH_COSET_PERMUTATION_HOLEVO_COLLAPSE.md now specifies an actual subgroup
+and normalized native coset states. The prior source was not closed under
+multiplication. Its valid conjugated diagonal-plus-swap replacement has
+one-copy Holevo information log2(n!)-H(Plancherel), not O(1/n), but also
+admits deterministic classical recovery in binom(n,2)+n+1 full-oracle
+queries for n>=3. The implemented solver receives only opaque labels;
+the theorem is not inferred from successful finite controls. The old broad
+negative is quarantined, not replaced by a general code-equivalence claim.
+
+Do not extend this highly symmetric source as a breakthrough candidate.
+The attack uses its complete twisted-diagonal even subgroup; a useful new
+source must remove that access mechanism while still paying for coherent
+preparation. Copy-only access and full chosen-query access are different.
+Large Holevo information or a mathematical optimal POVM does not establish
+a useful quantum decoder.
+
+Before proposing another natural coding target, inspect the current primary
+literature instead of assuming older hardness baselines. The abstract of
+[Ghoshal--Ishai--Jain--Sun, ePrint 2026/1630](https://eprint.iacr.org/2026/1630)
+was checked on 2026-10-30: it reports a PROVABLE quasipolynomial Goppa-key
+distinguisher in the stated asymptotic regime, but describes decryption
+and key recovery as HEURISTIC. This is not a blanket polynomial-time break.
+The full proof and its PIR mechanism have not yet been audited here. Reading
+that mechanism and checking the repository's existing coverage is a better
+next action than another diagonal-carrier variant or dimension barrier.
+
+## 2026-10-30 CFI Dependency Corrected, Classical Baseline Retained
+
+The direct CFI dependency is now corrected in its producer, command, note,
+registry and tests. NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER is archived
+intact, not silently rewritten. The command no longer reinstates it.
+Fixed-degree explicit GI is classically polynomial by Luks; the unsupported
+quartic exponent, single-copy MI rate, dimension-as-runtime estimate and
+universal quantum intractability are withdrawn. No other negatives are
+retracted by this pass. Actual cycle-flip adjacency checks support the
+surviving structural statements; full uncolored normality is not asserted.
+
+CFI remains a weak-classical-baseline control, not a Shor-level target.
+The next receiver experiment must address a specified nontrivial ensemble
+with carrier-sensitive FINAL effects and charge all source preparation,
+conditioning, basis changes and classical alternatives. Do not spend another
+pass drawing dimension curves or relabeling invariant access as decoding.
+
+COSET_REUSABLE_BANK_RECEIVER_BASELINE.md now specifies an EHK-support-test
+plus coherent-search receiver: k=O(log M+log(1/error)) native copies can
+be reused without an unknown-state reflection, but receiver work still costs
+sqrt(M) times polynomial factors for M=(n-1)!!, plus k times the oracle
+evaluator cost. This is a known-method baseline, not a new candidate or a
+compiled implementation. Independent review sharpened the obstruction:
+success is at most (2L+1)^2/M for EVERY bank size after L iterations of
+this architecture. More copies cannot replace a genuinely structured decoder.
+
+## 2026-10-30 Retract The General Multiplicity-Carrier Trilemma
+
+The active NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA incorrectly
+excluded broad receiver architectures using algebra dimension as circuit
+complexity and blind intermediate labels as information erasure. It is now
+hash-bound and quarantined, with its producer/CLI unable to reinstate it.
+Read COSET_MULTIPLICITY_CARRIER_TRILEMMA.md for the corrected input model,
+invariant FINAL effects, constructive pair-class-sum access and limitations.
+The old MI check used a nonpositive nonnormalized operator; the replacement
+uses actual conditional coset states and Born probabilities, with source
+mass charged. A physical native control retains information after blind
+weak-irrep labels. The valid commutator and dimension identities remain.
+
+This corrects search exclusions, not a hard-ensemble decoder. Do not infer
+speedup from efficient access to another invariant. The cited CFI note
+has an explicit scope warning: its producer/registry still contain dependent
+quantum-intractability claims and need a separate targeted correction.
+Its genuine bounded-valence classical baseline must not be discarded with
+those unsupported quantum claims. No blanket retraction of unreviewed
+negatives is justified.
+
+## 2026-10-30 Weak Geometric Conversion: Concrete Shortcuts Fail
+
+Read WEAK_SIEGEL_CONVERSION_AUDIT.md before reopening the Siegel source.
+Four agents checked the literature, a source-side Gram completion, weak
+sign normalization, and elliptic-factor reduction. The completion is
+constructive, but its natural complementary map has polarization
+NI-k^2 ell H^-1. In dimension two, scalar repair to H forces ell|N.
+Independent CRT signs are not exact interpolation assignments; a large
+prime-power escape must pay its potentially exponential point-field degree.
+Intrinsic elliptic isogenies can all be trivial while their gluing remains
+unknown. Accessible rational projectors need not be geometric morphisms.
+
+The original weak source is neither solved nor dequantized. Its full PPAV
+paper remains inaccessible; the checked primary statements need stronger
+inputs or an already encoded target. Do not build another conditional
+wrapper. Reopen only for a concrete geometric converter, a same-input
+classical attack, or a full theorem matching the actual representation.
+Otherwise choose a different constructive native application or receiver.
+
 ## 2026-10-23 Target Endomorphism Advice Also Collapses The Source
 
 SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK.md strengthens the classical baseline:

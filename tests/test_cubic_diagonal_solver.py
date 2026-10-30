@@ -59,7 +59,7 @@ def test_linear_dependence_is_not_a_cubic_witness_at_a_three_coset_prime():
 def test_existing_bezout_adapter_lifts_cubic_solutions_without_changing_labels(prime, degree):
     rng = random.Random(207)
     count = required_bezout_arity(prime, degree, 2)
-    assert count == cubic_arity(2)
+    assert count == cubic_arity(2, construction="two_level_curve")
     columns = [tuple(rng.randrange(prime) for _ in range(2)) for _ in range(count)]
     weights, rank, reduced, lift = solve_bezout_sde_weights(prime, columns, degree, rng=rng)
     assert reduced == 3 and rank == 2

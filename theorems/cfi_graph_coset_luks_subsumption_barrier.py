@@ -1,291 +1,255 @@
-"""Theorem module: Cai-Fürer-Immerman (CFI) Graph Coset Trilemma & Bounded-Valence Luks Classical Subsumption Barrier.
+"""Bounded-valence classical baseline for the implemented CFI parity graphs.
 
-Proves the fundamental complexity barrier and classical subsumption for quantum coset state
-measurements on Cai-Fürer-Immerman (CFI) gadget graphs:
-1. Exact CFI Graph Invariant & Degree Ceiling:
-   For every connected 3-regular base graph G = (V, E) with |V| vertices:
-   - Total CFI vertex count is N_CFI = 4 |V| + 2 |E| == 7 |V| identically.
-   - Total CFI edge count is E_CFI == 12 |V| identically.
-   - Maximum vertex degree is Delta_CFI == 4 identically for all vertices.
-2. Cycle Space Automorphism Normal Subgroup:
-   The edge-flip automorphisms preserving gadget parity correspond to the 1-cycle space Z_1(G, F_2).
-   First Betti number is beta_1(G) = |E| - |V| + 1 = |V|/2 + 1.
-   The automorphism group contains a normal elementary abelian 2-subgroup of order 2^{beta_1(G)} = 2^{|V|/2 + 1}.
-3. Classical Bounded-Valence Subsumption (Luks 1982):
-   Because Delta_CFI <= 4, Graph Isomorphism reduces to finding stabilizers in permutation groups
-   whose composition factors are subgroups of S_4 (solvable groups with prime factors 2 and 3).
-   Luks' classical algorithm decides isomorphism in deterministic polynomial time T_Luks = O(N^4).
-4. Quantum Non-Abelian Coset State Intractability Barrier:
-   Single-copy quantum Fourier sampling on S_{2N} yields mutual information I(tau : K) <= 2^{-Omega(N log N)} bits.
-   Multi-copy collective measurements require diagonalizing commutants of dimension (N!)^k = 2^{Omega(k N log N)},
-   which is exponentially intractable and strictly worse than Luks' O(N^4) classical baseline.
-5. The Universal Trilemma of CFI Quantum Algorithms:
-   Every quantum approach to CFI graphs falls into:
-   - Sector I (Gadget-Promised Access): Solved classically in O(|E|) time by structural parity decoders.
-   - Sector II (Bounded-Valence Unpromised): Solved classically in O(N^4) time by Luks' algorithm (1982).
-   - Sector III (Quantum Collective Commutant): Computationally intractable quantumly due to exponential (N!)^k carrier dimensions.
+This is a scoped correction, not a quantum circuit lower bound. Finite graph
+and automorphism controls accompany a counting proof and Luks' published
+polynomial-time result. Neither a Luks implementation nor a quantum receiver
+is executed here. The historical filename is retained for artifact provenance.
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
-import json
-import math
-import sys
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+import sys
+from typing import Any
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-core_dir = str(ROOT / "core")
-theorems_dir = str(ROOT / "theorems")
-if core_dir not in sys.path:
-    sys.path.insert(0, core_dir)
-if theorems_dir not in sys.path:
-    sys.path.insert(0, theorems_dir)
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 DERIVATION = ROOT / "research/CFI_GRAPH_COSET_LUKS_SUBSUMPTION_BARRIER.md"
 REPORT = ROOT / "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json"
 REGISTRY = ROOT / "research/registry/negative_results.json"
-
 NEGATIVE_RESULT_ID = "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER"
+LUKS_SOURCE = "https://ix.cs.uoregon.edu/~luks/iso.pdf"
 
 
-def audit_finite_cfi_base(base_id: str) -> Dict[str, Any]:
-    """Audit structural invariants and degree bounds of a CFI base graph."""
-    from cfi_base_family_search import base_graph_by_id, cfi_parity_graph_from_base
+def _binary_kernel(rows: list[int], columns: int) -> list[int]:
+    """RREF nullspace over F_2; integer bits represent edge coordinates."""
+    rows = list(rows)
+    pivots = []
+    for col in range(columns):
+        chosen = next((i for i in range(len(pivots), len(rows)) if rows[i] >> col & 1), None)
+        if chosen is None:
+            continue
+        row = len(pivots)
+        rows[row], rows[chosen] = rows[chosen], rows[row]
+        for i in range(len(rows)):
+            if i != row and rows[i] >> col & 1:
+                rows[i] ^= rows[row]
+        pivots.append(col)
+    basis = []
+    for free in range(columns):
+        if free in pivots:
+            continue
+        vector = 1 << free
+        for row, pivot in enumerate(pivots):
+            if rows[row] >> free & 1:
+                vector |= 1 << pivot
+        basis.append(vector)
+    return basis
 
-    desc, adj = base_graph_by_id(base_id)
-    n_base = int(adj.shape[0])
-    e_base = int(np.sum(adj)) // 2
-    deg_base = [int(d) for d in np.sum(adj, axis=1)]
-    is_3_regular = all(d == 3 for d in deg_base)
 
-    # Construct untwisted CFI graph
-    cfi_adj = cfi_parity_graph_from_base(adj, None)
-    n_cfi = int(cfi_adj.shape[0])
-    e_cfi = int(np.sum(cfi_adj)) // 2
-    deg_cfi = [int(d) for d in np.sum(cfi_adj, axis=1)]
-    max_deg_cfi = max(deg_cfi)
-    min_deg_cfi = min(deg_cfi)
+def audit_base_adjacency(
+    adjacency: Any, *, base_id: str = "supplied", base_description: str = "supplied simple base"
+) -> dict[str, Any]:
+    """Bounded exact graph control, including disconnected and isolated bases.
 
-    # Theoretical formulas for 3-regular graphs
-    expected_n_cfi = 7 * n_base if is_3_regular else (4 * n_base + 2 * e_base)
-    expected_e_cfi = 12 * n_base if is_3_regular else None
+    Reject oversized inputs BEFORE expanding the exponential-size local gadgets.
+    The cap is a verification limit, not an algorithmic complexity assertion.
+    """
+    from theorems.cfi_base_family_search import cfi_parity_graph_from_base
 
-    # First Betti number: beta_1 = |E| - |V| + 1
-    beta_1 = e_base - n_base + 1
-    cycle_space_dimension = beta_1
-    automorphism_group_lower_bound = 1 << beta_1
+    base = np.asarray(adjacency)
+    if (base.ndim != 2 or base.shape[0] != base.shape[1]
+            or not 1 <= base.shape[0] <= 64):
+        raise ValueError("expected a nonempty square base adjacency with at most 64 vertices")
+    if not np.all((base == 0) | (base == 1)) or np.any(np.diag(base)) or not np.array_equal(base, base.T):
+        raise ValueError("base must be a simple undirected loop-free binary graph")
+    base = base.astype(int)
+    n_base = len(base)
+    edges = [(u, v) for u in range(n_base) for v in range(u + 1, n_base) if base[u, v]]
+    incident = [[i for i, e in enumerate(edges) if v in e] for v in range(n_base)]
+    degrees = [len(es) for es in incident]
+    middle_counts = [1 if d == 0 else 1 << (d - 1) for d in degrees]
+    expected_vertices = sum(middle_counts) + 2 * len(edges)
+    expected_edges = sum(d * count for d, count in zip(degrees, middle_counts))
+    if expected_vertices > 256:
+        raise ValueError("expanded CFI verifier exceeds 256 vertices; use the symbolic counting proof")
 
-    # Luks complexity estimate: O(N_CFI^4)
-    luks_operations_est = n_cfi ** 4
+    unseen = set(range(n_base))
+    components = 0
+    while unseen:
+        pending = [unseen.pop()]
+        components += 1
+        while pending:
+            vertex = pending.pop()
+            neighbors = {int(v) for v in np.flatnonzero(base[vertex])} & unseen
+            unseen.difference_update(neighbors)
+            pending.extend(neighbors)
+    beta = len(edges) - n_base + components
+    basis = _binary_kernel([sum(1 << i for i in es) for es in incident], len(edges))
+    if len(basis) != beta:
+        raise ArithmeticError("incidence-kernel rank disagrees with component count")
 
+    expanded = cfi_parity_graph_from_base(base)
+    labels = [("middle", v, mask) for v, d in enumerate(degrees)
+              for mask in range(1 << d) if mask.bit_count() % 2 == 0]
+    labels.extend(("edge", i, bit) for i in range(len(edges)) for bit in (0, 1))
+    index = {label: i for i, label in enumerate(labels)}
+    witnesses = []
+    for flip in basis:
+        local = [sum(((flip >> edge) & 1) << j for j, edge in enumerate(es)) for es in incident]
+        if any(mask.bit_count() % 2 for mask in local):
+            raise ArithmeticError("cycle vector has nonzero boundary")
+        permutation = [index[(kind, v, mask ^ (local[v] if kind == "middle" else ((flip >> v) & 1)))]
+                       for kind, v, mask in labels]
+        preserves = np.array_equal(expanded, expanded[np.ix_(permutation, permutation)])
+        involution = all(permutation[permutation[i]] == i for i in range(len(labels)))
+        if not preserves or not involution:
+            raise ArithmeticError("cycle flip failed its actual adjacency or order-two check")
+        witnesses.append({"flipped_edge_indices": [i for i in range(len(edges)) if flip >> i & 1],
+                          "permutation": permutation, "preserves_adjacency": bool(preserves),
+                          "is_involution": involution})
+
+    expanded_degrees = [int(d) for d in expanded.sum(axis=1)]
+    is_cubic = all(d == 3 for d in degrees)
     return {
-        "base_id": base_id,
-        "base_description": desc,
-        "base_vertex_count": n_base,
-        "base_edge_count": e_base,
-        "is_3_regular": is_3_regular,
-        "cfi_vertex_count": n_cfi,
-        "cfi_edge_count": e_cfi,
-        "expected_cfi_vertex_count": expected_n_cfi,
-        "vertex_count_identity_verified": n_cfi == expected_n_cfi,
-        "cfi_min_degree": min_deg_cfi,
-        "cfi_max_degree": max_deg_cfi,
-        "degree_bounded_by_four": max_deg_cfi <= 4 if is_3_regular else max_deg_cfi <= 8,
-        "betti_number_beta_1": beta_1,
-        "cycle_space_automorphism_order_bound": automorphism_group_lower_bound,
-        "luks_polynomial_degree": 4,
-        "luks_operations_estimate": luks_operations_est,
+        "base_id": base_id, "base_description": base_description,
+        "mode": "BOUNDED_EXPLICIT_GRAPH_VERIFICATION",
+        "base_vertex_count": n_base, "base_edge_count": len(edges), "base_degrees": degrees,
+        "component_count": components, "is_3_regular": is_cubic,
+        "cfi_vertex_count": len(expanded), "cfi_edge_count": int(expanded.sum()) // 2,
+        "expected_cfi_vertex_count": expected_vertices, "expected_cfi_edge_count": expected_edges,
+        "vertex_count_identity_verified": len(expanded) == expected_vertices,
+        "edge_count_identity_verified": int(expanded.sum()) // 2 == expected_edges,
+        "cfi_min_degree": min(expanded_degrees), "cfi_max_degree": max(expanded_degrees),
+        "degree_bounded_by_four": max(expanded_degrees) <= 4,
+        "betti_number_beta_1": beta, "cycle_space_dimension": beta,
+        "cycle_space_automorphism_order_bound": 1 << beta,
+        "cycle_generator_count": len(witnesses), "cycle_generators": witnesses,
+        "cycle_generators_preserve_adjacency": all(w["preserves_adjacency"] for w in witnesses),
+        "cycle_subgroup_normal_in_full_uncolored_group_proved": False,
         "classical_subsumption_status": "solvable_in_polynomial_time_by_luks_1982",
+        "classical_baseline_scope": "explicit graph isomorphism with a fixed maximum valence bound",
+        "classical_algorithm_executed": False,
     }
 
 
-def evaluate_scaling_cfi_luks_barrier(n_base: int) -> Dict[str, Any]:
-    """Evaluate asymptotic scaling metrics for cubic CFI base graphs with n_base vertices."""
-    # For 3-regular graphs:
-    e_base = (3 * n_base) // 2
-    n_cfi = 7 * n_base
-    e_cfi = 12 * n_base
-    beta_1 = e_base - n_base + 1  # n_base / 2 + 1
-    aut_order_log2 = float(beta_1)
+def audit_finite_cfi_base(base_id: str) -> dict[str, Any]:
+    from theorems.cfi_base_family_search import base_graph_by_id
 
-    # Luks classical complexity: T_Luks = c * N_CFI^4
-    log2_luks_time = 4.0 * math.log2(n_cfi)
+    description, base = base_graph_by_id(base_id)
+    return audit_base_adjacency(base, base_id=base_id, base_description=description)
 
-    # Quantum single-copy mutual information: I <= 2^{-N_cfi log2(N_cfi)}
-    log2_n_cfi_fact = n_cfi * math.log2(max(1, n_cfi / math.e))
-    single_copy_mi_log2 = -log2_n_cfi_fact
 
-    # Quantum 3-copy commutant dimension: (N_CFI!)^3
-    commutant_dim_log2 = 3.0 * log2_n_cfi_fact
-
+def evaluate_scaling_cfi_luks_barrier(n_base: int) -> dict[str, Any]:
+    """Symbolic cubic graph counts only; no fabricated MI or runtime curves."""
+    if isinstance(n_base, bool) or not isinstance(n_base, int) or n_base < 4 or n_base % 2:
+        raise ValueError("a connected simple cubic base needs an even integer size at least four")
     return {
-        "base_vertex_count": n_base,
-        "base_edge_count": e_base,
-        "cfi_vertex_count": n_cfi,
-        "cfi_edge_count": e_cfi,
-        "max_degree": 4,
-        "cycle_space_dimension_beta_1": beta_1,
-        "automorphism_subgroup_order_log2": aut_order_log2,
-        "luks_classical_time_log2": round(log2_luks_time, 4),
-        "single_copy_quantum_mutual_information_log2": round(single_copy_mi_log2, 4),
-        "three_copy_quantum_commutant_dimension_log2": round(commutant_dim_log2, 4),
-        "quantum_strictly_harder_than_classical": bool(commutant_dim_log2 > log2_luks_time),
+        "mode": "SYMBOLIC_COUNTS_NOT_RUNTIME_BENCHMARK",
+        "base_vertex_count": n_base, "base_edge_count": 3 * n_base // 2,
+        "cfi_vertex_count": 7 * n_base, "cfi_edge_count": 12 * n_base,
+        "max_degree": 4, "cycle_space_dimension_beta_1": n_base // 2 + 1,
+        "automorphism_subgroup_order_log2": n_base // 2 + 1,
+        "classical_baseline": "deterministic polynomial time for fixed degree; exponent not specified here",
     }
 
 
-def build_report() -> Dict[str, Any]:
-    """Build comprehensive verification artifact report."""
-    sha256 = hashlib.sha256(DERIVATION.read_bytes()).hexdigest() if DERIVATION.exists() else "UNCOMMITTED"
+def uncolored_normality_counterexample() -> dict[str, Any]:
+    """An actual K4-CFI automorphism conjugates a cycle flip outside the subgroup."""
+    from theorems.cfi_base_family_search import base_graph_by_id, cfi_parity_graph_from_base
 
-    base_ids = [
-        "complete-k5",
-        "triangular-prism",
-        "cube-q3",
-        "mobius-ladder-8",
-        "petersen",
-        "heawood-like-14",
-    ]
+    row = audit_finite_cfi_base("complete-k4")
+    graph = cfi_parity_graph_from_base(base_graph_by_id("complete-k4")[1])
+    pairs = [(1, 12), (2, 8), (3, 4), (5, 9), (6, 13), (10, 14), (17, 26), (19, 24), (21, 22)]
+    public = list(range(len(graph)))
+    for left, right in pairs:
+        public[left], public[right] = right, left
+    cycle = next(w["permutation"] for w in row["cycle_generators"] if w["flipped_edge_indices"] == [0, 1, 3])
+    conjugate = [public[cycle[public[i]]] for i in range(len(graph))]
+    # public is an involution, so its inverse equals itself in this conjugation.
+    preserves = [bool(np.array_equal(graph, graph[np.ix_(p, p)])) for p in (public, cycle, conjugate)]
+    if not all(preserves) or conjugate[16] in (16, 17):
+        raise ArithmeticError("K4 nonnormality counterexample no longer matches the graph constructor")
+    return {"base_id": "complete-k4", "vertex_count": len(graph),
+            "public_automorphism": public, "public_automorphism_transpositions": [list(p) for p in pairs],
+            "cycle_flip_edges": [[0, 1], [0, 2], [1, 2]], "cycle_flip": cycle,
+            "conjugate": conjugate, "all_three_preserve_adjacency": all(preserves),
+            "original_shared_edge_pair": [16, 17], "conjugate_image_of_16": conjugate[16],
+            "conjugate_is_outside_edge_flip_subgroup": True,
+            "scope": "One explicit counterexample to full-uncolored normality; the cycle subgroup injection survives."}
 
-    audited_bases = [audit_finite_cfi_base(b_id) for b_id in base_ids]
 
-    scaling_base_sizes = [6, 8, 10, 14, 20, 30, 50, 100, 200, 500, 1000]
-    scaling_profiles = [evaluate_scaling_cfi_luks_barrier(v) for v in scaling_base_sizes]
-
-    cubic_audits = [b for b in audited_bases if b["is_3_regular"]]
-    all_cubic_n_exact = all(b["vertex_count_identity_verified"] for b in cubic_audits)
-    all_cubic_deg_4 = all(b["cfi_max_degree"] <= 4 for b in cubic_audits)
-
-    headline_metrics = {
-        "audited_base_count": len(base_ids),
-        "all_cubic_bases_satisfy_7v_identity": all_cubic_n_exact,
-        "all_cubic_cfi_graphs_have_max_degree_four": all_cubic_deg_4,
-        "luks_solvable_classical_subsumption_certified": True,
-        "luks_classical_time_log2_at_100_base_vertices": scaling_profiles[7]["luks_classical_time_log2"],
-        "three_copy_commutant_dimension_log2_at_100_base_vertices": scaling_profiles[7]["three_copy_quantum_commutant_dimension_log2"],
-        "quantum_overhead_vs_luks_at_100_base_vertices_log2": (
-            scaling_profiles[7]["three_copy_quantum_commutant_dimension_log2"]
-            - scaling_profiles[7]["luks_classical_time_log2"]
-        ),
-        "speedup_claim_allowed": False,
-    }
-
-    claim_gate = {
-        "exact_7v_cfi_vertex_identity_proved": all_cubic_n_exact,
-        "max_degree_four_bounded_valence_proved": all_cubic_deg_4,
-        "luks_classical_polynomial_subsumption_certified": True,
-        "single_copy_quantum_mutual_information_extinction_proved": True,
-        "multi_copy_commutant_exponential_intractability_proved": True,
-        "universal_cfi_trilemma_barrier_proved": True,
-        "speedup_claim_allowed": False,
-    }
-
-    theorem_contract = {
-        "exact_cfi_vertex_and_degree_invariants": (
-            "For every connected 3-regular base graph G on V vertices, the CFI parity graph has "
-            "N_CFI = 7 |V| vertices, E_CFI = 12 |V| edges, and maximum vertex degree Delta_CFI = 4 identically."
-        ),
-        "luks_classical_polynomial_subsumption": (
-            "By Luks' theorem (JCSS 1982), Graph Isomorphism for graphs of bounded valence Delta <= 4 reduces to "
-            "finding stabilizers in permutation groups with prime composition factors {2, 3} (solvable groups), "
-            "solvable in deterministic polynomial time T_Luks = O(N_CFI^4) without quantum assistance."
-        ),
-        "single_copy_quantum_fourier_extinction": (
-            "Single-copy quantum measurements on non-abelian coset states yield mutual information "
-            "I(tau : K) <= 2^{-Omega(N log N)} bits, providing zero algorithmic utility."
-        ),
-        "multi_copy_commutant_intractability": (
-            "Multi-copy collective measurements require diagonalizing commutants of dimension (N_CFI!)^k = 2^{Omega(k N log N)}, "
-            "creating an exponential quantum bottleneck that exceeds Luks' O(N^4) classical runtime by an astronomical margin."
-        ),
-        "universal_cfi_trilemma": (
-            "Every CFI gadget instance falls into: (I) gadget-promised parity decodable in O(|E|) time, "
-            "(II) bounded-valence unpromised classically decodable in O(N^4) time by Luks (1982), or "
-            "(III) computationally intractable quantum collective measurements."
-        ),
-    }
-
+def build_report() -> dict[str, Any]:
+    base_ids = ["complete-k5", "triangular-prism", "cube-q3", "mobius-ladder-8", "petersen", "heawood-like-14"]
+    audits = [audit_finite_cfi_base(base) for base in base_ids]
+    cubic = [a for a in audits if a["is_3_regular"]]
+    cubic_counts = bool(cubic) and all(a["cfi_vertex_count"] == 7 * a["base_vertex_count"] for a in cubic)
+    cubic_degrees = bool(cubic) and all(a["cfi_min_degree"] == 3 and a["cfi_max_degree"] == 4 for a in cubic)
     return {
-        "created_at": "2026-10-11T00:00:00+00:00",
-        "status": "CFI_GRAPH_COSET_LUKS_SUBSUMPTION_BARRIER_PROVED",
-        "derivation_sha256": sha256,
-        "theorem_contract": theorem_contract,
-        "headline_metrics": headline_metrics,
-        "claim_gate": claim_gate,
-        "audited_bases": audited_bases,
-        "scaling_profiles": scaling_profiles,
-        "falsifiers_triggered": [NEGATIVE_RESULT_ID],
-        "summary": (
-            "Proved the Cai-Fürer-Immerman (CFI) Graph Coset Trilemma & Bounded-Valence Luks Classical Subsumption Barrier. "
-            "Established that for all 3-regular base graphs, the CFI parity graph has exact vertex count N_CFI = 7 |V| "
-            "and maximum vertex degree Delta_CFI = 4 identically. "
-            "Proved that by Luks' theorem (1982), Graph Isomorphism on these bounded-valence graphs is solvable in deterministic "
-            "polynomial time O(N^4) classically via solvable group stabilizer chains, completely dequantizing the problem. "
-            "Proved that single-copy quantum Fourier measurements have mutual information <= 2^{-Omega(N log N)} bits, "
-            "while multi-copy collective measurements face exponential commutant dimensions (N!)^k = 2^{Omega(k N log N)}, "
-            "making quantum approaches strictly harder than the classical baseline. "
-            "Formally registered NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER."
-        ),
-    }
-
-
-def register_negative_result() -> None:
-    """Register negative result into research/registry/negative_results.json."""
-    if not REGISTRY.exists():
-        return
-    with open(REGISTRY, "r", encoding="utf-8") as f:
-        registry = json.load(f)
-
-    for entry in registry:
-        if entry.get("id") == NEGATIVE_RESULT_ID:
-            print(f"Negative result {NEGATIVE_RESULT_ID} already registered.")
-            return
-
-    new_entry = {
-        "id": NEGATIVE_RESULT_ID,
-        "applies_to": [
-            "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
-            "CFI-BASE-FAMILY-SEARCH",
-            "BOUNDED-VALENCE-LUKS-SUBSUMPTION",
-            "CFI-GRAPH-COSET-TRILEMMA",
-        ],
-        "claim": "Quantum collective measurements or non-abelian coset state observables on Cai-Fürer-Immerman (CFI) gadget graphs can provide an exponential quantum speedup over classical Graph Isomorphism algorithms.",
-        "evidence": {
-            "artifact": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json",
-            "exact_7v_cfi_vertex_identity": "N_CFI == 7 |V| identically for all 3-regular base graphs G = (V, E)",
-            "max_degree_four_ceiling": "Delta_CFI <= 4 identically for all vertices in 3-regular CFI graphs",
-            "luks_polynomial_subsumption": "Luks' algorithm (1982) solves Graph Isomorphism for valence Delta <= 4 in deterministic O(N^4) time classically",
-            "single_copy_fourier_extinction": "I(tau : K) <= 2^{-Omega(N log N)} bits for single-copy quantum Fourier sampling",
-            "multi_copy_commutant_intractability": "Multi-copy collective observables require diagonalizing commutants of dimension (N!)^k = 2^{Omega(k N log N)}",
+        "schema_version": 2, "reviewed_on": "2026-10-30",
+        "status": "CFI_BOUNDED_VALENCE_BASELINE_SCOPED",
+        "producer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "derivation_sha256": hashlib.sha256(DERIVATION.read_bytes()).hexdigest(),
+        "graph_constructor_sha256": hashlib.sha256((ROOT / "theorems/cfi_base_family_search.py").read_bytes()).hexdigest(),
+        "input_model": "two explicit graphs from the implemented shared-edge parity construction; fixed base degree",
+        "theorem_contract": {
+            "counting_proof": "For cubic bases, each middle vertex has degree 3, each shared edge vertex degree 4; N=7V and E=12V. There are no wire-pair or middle-middle edges.",
+            "cycle_subgroup": "The binary incidence kernel acts faithfully by edge-pair flips and even mask translation. Its order is 2^(E-V+c); normality in the full uncolored automorphism group is not asserted.",
+            "classical_baseline": "Luks gives deterministic polynomial-time isomorphism for explicit graphs of fixed bounded degree. This module does not implement that algorithm or assign a numerical exponent.",
+            "scope": "This explicit fixed-degree GI family cannot establish superpolynomial classical complexity versus a polynomial quantum algorithm. Polynomial improvements, other tasks and other access models are not excluded.",
+        },
+        "claim_gate": {
+            "exact_7v_cfi_vertex_identity_proved": cubic_counts,
+            "max_degree_four_bounded_valence_proved": cubic_degrees,
+            "luks_classical_polynomial_subsumption_certified": True,
+            "explicit_luks_quartic_bound_proved": False,
+            "single_copy_quantum_mutual_information_extinction_proved": False,
+            "multi_copy_commutant_exponential_intractability_proved": False,
+            "universal_cfi_trilemma_barrier_proved": False,
+            "cycle_subgroup_normal_in_full_uncolored_group_proved": False,
+            "classical_algorithm_executed": False,
             "speedup_claim_allowed": False,
         },
-        "lesson": "Cai-Fürer-Immerman gadget graphs cannot provide an algorithmic quantum advantage. Although CFI graphs defeat k-dimensional Weisfeiler-Lehman, all 3-regular CFI graphs have bounded maximum degree Delta <= 4, which is solvable in deterministic polynomial time O(N^4) classically by Luks' algorithm (1982). Meanwhile, quantum algorithms on non-abelian coset states face factorially vanishing single-copy information and exponential (N!)^k commutant dimensions for multi-copy collective measurements, making the quantum approach strictly harder than the classical baseline.",
-        "reason_invalid": "For all 3-regular base graphs, the CFI construction produces graphs with N_CFI = 7 |V| vertices and maximum degree Delta <= 4. By Luks' polynomial-time algorithm for bounded valence (JCSS 1982), Graph Isomorphism on these graphs is solved in O(N^4) deterministic classical time. Quantum non-abelian coset state measurements provide <= 2^{-Omega(N log N)} bits of information on single copies, and multi-copy collective measurements require diagonalizing commutant algebras of dimension (N!)^k = 2^{Omega(k N log N)}, completely falsifying the hypothesis of a quantum advantage on CFI graphs.",
-        "source": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json",
+        "headline_metrics": {
+            "audited_base_count": len(audits), "all_cubic_bases_satisfy_7v_identity": cubic_counts,
+            "all_cubic_cfi_graphs_have_max_degree_four": cubic_degrees,
+            "all_general_vertex_and_edge_counts_match": all(a["vertex_count_identity_verified"] and a["edge_count_identity_verified"] for a in audits),
+            "all_cycle_generator_actions_verified": all(a["cycle_generators_preserve_adjacency"] for a in audits),
+            "speedup_claim_allowed": False,
+        },
+        "audited_bases": audits,
+        "uncolored_normality_counterexample": uncolored_normality_counterexample(),
+        "scaling_profiles": [evaluate_scaling_cfi_luks_barrier(n) for n in (6, 8, 10, 14, 20, 30, 50, 100, 200, 500, 1000)],
+        "retracted_negative_ids": [NEGATIVE_RESULT_ID], "falsifiers_triggered": [],
+        "withdrawn_claims": [
+            "The unsupported explicit O(N^4) attribution to Luks.",
+            "The ensemble-unspecified factorial single-copy mutual-information rate.",
+            "The identification of carrier or commutant dimension with a quantum circuit lower bound.",
+            "An exhaustive three-way receiver classification and universal quantum intractability.",
+        ],
+        "primary_sources": [{"url": LUKS_SOURCE, "location": "Introduction, printed p.44; Section 3", "scope": "fixed-valence polynomial-time classical graph isomorphism; precise exponent not attributed"}],
+        "next_experiment": "Require a specified input model, normalized physical ensemble and charged carrier-sensitive receiver before evaluating any new quantum claim. Keep fixed-degree CFI as a classical-baseline control, not a Shor-level target.",
+        "summary": "Retains the fixed-valence explicit-GI classical baseline and verified graph counts; retracts unsupported quantum no-go claims. No quantum speedup or general quantum lower bound follows.",
     }
-
-    registry.append(new_entry)
-    with open(REGISTRY, "w", encoding="utf-8") as f:
-        json.dump(registry, f, indent=2)
-    print(f"Registered negative result {NEGATIVE_RESULT_ID} into {REGISTRY} (Total: {len(registry)})")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Audit CFI Graph Coset Luks Subsumption Barrier")
-    parser.add_argument("--register-negative", action="store_true", help="Register negative result in registry")
+    from core.research_registry import _write_json
+    from theorems.nonabelian_barrier_scope_audit import quarantine_reviewed_negatives
+
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--no-registry", action="store_true", help="Do not apply the hash-bound retraction.")
     args = parser.parse_args()
-
     report = build_report()
-    REPORT.parent.mkdir(parents=True, exist_ok=True)
-    with open(REPORT, "w", encoding="utf-8") as f:
-        json.dump(report, f, indent=2)
-    print(f"Report written to {REPORT}")
-
-    if args.register_negative:
-        register_negative_result()
+    if not args.no_registry:
+        quarantine_reviewed_negatives()
+    _write_json(REPORT, report)
+    print(f"Scoped classical-baseline report: {REPORT}")
 
 
 if __name__ == "__main__":

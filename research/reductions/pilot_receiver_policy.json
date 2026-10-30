@@ -1,0 +1,816 @@
+{
+  "status": "CHECKED_CLASSICAL_POLICY_NOT_QUANTUM_IMPLEMENTATION",
+  "source_artifact": "research/reductions/pilot_module_descent.json",
+  "plans": [
+    {
+      "name": "ambient_mod_p_zero",
+      "plan": {
+        "status": "CHECKED_ACCEPTED_TRANSCRIPT",
+        "prime": 3,
+        "degree": 2,
+        "ambient_exponents": [
+          3
+        ],
+        "episode_cap": 3,
+        "preallocated_copy_cap": 249,
+        "observed_label_count": 11,
+        "unobserved_padding": 238,
+        "request_slot_ranges": [
+          {
+            "episode": 0,
+            "request": 0,
+            "stage": "pilots",
+            "start": 0,
+            "stop": 3
+          },
+          {
+            "episode": 0,
+            "request": 1,
+            "stage": "bank",
+            "start": 3,
+            "stop": 5
+          },
+          {
+            "episode": 0,
+            "request": 2,
+            "stage": "bank",
+            "start": 5,
+            "stop": 7
+          },
+          {
+            "episode": 0,
+            "request": 3,
+            "stage": "bank",
+            "start": 7,
+            "stop": 9
+          },
+          {
+            "episode": 0,
+            "request": 4,
+            "stage": "bank",
+            "start": 9,
+            "stop": 11
+          }
+        ],
+        "active_slots": [
+          {
+            "slot": 3,
+            "scale": 7,
+            "ambient_label": [
+              21
+            ]
+          },
+          {
+            "slot": 4,
+            "scale": 1,
+            "ambient_label": [
+              9
+            ]
+          },
+          {
+            "slot": 5,
+            "scale": 1,
+            "ambient_label": [
+              12
+            ]
+          },
+          {
+            "slot": 6,
+            "scale": 1,
+            "ambient_label": [
+              3
+            ]
+          }
+        ],
+        "identity_action_slots": 245,
+        "output_flag": "accept",
+        "original_ambient_equations_checked": true,
+        "padded_tensor_copies_charged": 249,
+        "zero_dilation_is_used": false,
+        "requires_joint_independent_coset_tensor": true,
+        "requires_hidden_subgroup_preserving_automorphisms": true,
+        "requires_original_character_phase_action": true,
+        "requires_label_only_policy_with_private_randomness": true,
+        "physical_ownership_certified": false,
+        "quantum_receiver_executed": false,
+        "policy_availability_certified_by_transcript": false
+      }
+    },
+    {
+      "name": "oblique_mixed_order",
+      "plan": {
+        "status": "CHECKED_ACCEPTED_TRANSCRIPT",
+        "prime": 3,
+        "degree": 2,
+        "ambient_exponents": [
+          3,
+          4
+        ],
+        "episode_cap": 3,
+        "preallocated_copy_cap": 984,
+        "observed_label_count": 37,
+        "unobserved_padding": 947,
+        "request_slot_ranges": [
+          {
+            "episode": 0,
+            "request": 0,
+            "stage": "pilots",
+            "start": 0,
+            "stop": 4
+          },
+          {
+            "episode": 0,
+            "request": 1,
+            "stage": "bank",
+            "start": 4,
+            "stop": 7
+          },
+          {
+            "episode": 0,
+            "request": 2,
+            "stage": "bank",
+            "start": 7,
+            "stop": 10
+          },
+          {
+            "episode": 0,
+            "request": 3,
+            "stage": "bank",
+            "start": 10,
+            "stop": 13
+          },
+          {
+            "episode": 0,
+            "request": 4,
+            "stage": "bank",
+            "start": 13,
+            "stop": 16
+          },
+          {
+            "episode": 0,
+            "request": 5,
+            "stage": "bank",
+            "start": 16,
+            "stop": 19
+          },
+          {
+            "episode": 0,
+            "request": 6,
+            "stage": "bank",
+            "start": 19,
+            "stop": 22
+          },
+          {
+            "episode": 0,
+            "request": 7,
+            "stage": "bank",
+            "start": 22,
+            "stop": 25
+          },
+          {
+            "episode": 0,
+            "request": 8,
+            "stage": "bank",
+            "start": 25,
+            "stop": 28
+          },
+          {
+            "episode": 0,
+            "request": 9,
+            "stage": "bank",
+            "start": 28,
+            "stop": 31
+          },
+          {
+            "episode": 0,
+            "request": 10,
+            "stage": "bank",
+            "start": 31,
+            "stop": 34
+          },
+          {
+            "episode": 0,
+            "request": 11,
+            "stage": "bank",
+            "start": 34,
+            "stop": 37
+          }
+        ],
+        "active_slots": [
+          {
+            "slot": 7,
+            "scale": 19,
+            "ambient_label": [
+              3,
+              39
+            ]
+          },
+          {
+            "slot": 8,
+            "scale": 25,
+            "ambient_label": [
+              9,
+              54
+            ]
+          },
+          {
+            "slot": 9,
+            "scale": 1,
+            "ambient_label": [
+              0,
+              27
+            ]
+          },
+          {
+            "slot": 13,
+            "scale": 1,
+            "ambient_label": [
+              6,
+              51
+            ]
+          },
+          {
+            "slot": 14,
+            "scale": 1,
+            "ambient_label": [
+              18,
+              45
+            ]
+          },
+          {
+            "slot": 15,
+            "scale": 1,
+            "ambient_label": [
+              18,
+              0
+            ]
+          }
+        ],
+        "identity_action_slots": 978,
+        "output_flag": "accept",
+        "original_ambient_equations_checked": true,
+        "padded_tensor_copies_charged": 984,
+        "zero_dilation_is_used": false,
+        "requires_joint_independent_coset_tensor": true,
+        "requires_hidden_subgroup_preserving_automorphisms": true,
+        "requires_original_character_phase_action": true,
+        "requires_label_only_policy_with_private_randomness": true,
+        "physical_ownership_certified": false,
+        "quantum_receiver_executed": false,
+        "policy_availability_certified_by_transcript": false
+      }
+    },
+    {
+      "name": "cubic_embedded_support",
+      "plan": {
+        "status": "CHECKED_ACCEPTED_TRANSCRIPT",
+        "prime": 7,
+        "degree": 3,
+        "ambient_exponents": [
+          2,
+          3
+        ],
+        "episode_cap": 3,
+        "preallocated_copy_cap": 1632,
+        "observed_label_count": 49,
+        "unobserved_padding": 1583,
+        "request_slot_ranges": [
+          {
+            "episode": 0,
+            "request": 0,
+            "stage": "pilots",
+            "start": 0,
+            "stop": 4
+          },
+          {
+            "episode": 0,
+            "request": 1,
+            "stage": "bank",
+            "start": 4,
+            "stop": 7
+          },
+          {
+            "episode": 0,
+            "request": 2,
+            "stage": "bank",
+            "start": 7,
+            "stop": 10
+          },
+          {
+            "episode": 0,
+            "request": 3,
+            "stage": "bank",
+            "start": 10,
+            "stop": 13
+          },
+          {
+            "episode": 0,
+            "request": 4,
+            "stage": "bank",
+            "start": 13,
+            "stop": 16
+          },
+          {
+            "episode": 0,
+            "request": 5,
+            "stage": "bank",
+            "start": 16,
+            "stop": 19
+          },
+          {
+            "episode": 0,
+            "request": 6,
+            "stage": "bank",
+            "start": 19,
+            "stop": 22
+          },
+          {
+            "episode": 0,
+            "request": 7,
+            "stage": "bank",
+            "start": 22,
+            "stop": 25
+          },
+          {
+            "episode": 0,
+            "request": 8,
+            "stage": "bank",
+            "start": 25,
+            "stop": 28
+          },
+          {
+            "episode": 0,
+            "request": 9,
+            "stage": "bank",
+            "start": 28,
+            "stop": 31
+          },
+          {
+            "episode": 0,
+            "request": 10,
+            "stage": "bank",
+            "start": 31,
+            "stop": 34
+          },
+          {
+            "episode": 0,
+            "request": 11,
+            "stage": "bank",
+            "start": 34,
+            "stop": 37
+          },
+          {
+            "episode": 0,
+            "request": 12,
+            "stage": "bank",
+            "start": 37,
+            "stop": 40
+          },
+          {
+            "episode": 0,
+            "request": 13,
+            "stage": "bank",
+            "start": 40,
+            "stop": 43
+          },
+          {
+            "episode": 0,
+            "request": 14,
+            "stage": "bank",
+            "start": 43,
+            "stop": 46
+          },
+          {
+            "episode": 0,
+            "request": 15,
+            "stage": "bank",
+            "start": 46,
+            "stop": 49
+          }
+        ],
+        "active_slots": [
+          {
+            "slot": 7,
+            "scale": 36,
+            "ambient_label": [
+              7,
+              259
+            ]
+          },
+          {
+            "slot": 8,
+            "scale": 8,
+            "ambient_label": [
+              0,
+              35
+            ]
+          },
+          {
+            "slot": 9,
+            "scale": 1,
+            "ambient_label": [
+              14,
+              231
+            ]
+          },
+          {
+            "slot": 10,
+            "scale": 6,
+            "ambient_label": [
+              7,
+              301
+            ]
+          },
+          {
+            "slot": 11,
+            "scale": 6,
+            "ambient_label": [
+              14,
+              266
+            ]
+          },
+          {
+            "slot": 12,
+            "scale": 6,
+            "ambient_label": [
+              35,
+              49
+            ]
+          },
+          {
+            "slot": 13,
+            "scale": 1,
+            "ambient_label": [
+              35,
+              175
+            ]
+          },
+          {
+            "slot": 14,
+            "scale": 1,
+            "ambient_label": [
+              35,
+              217
+            ]
+          },
+          {
+            "slot": 15,
+            "scale": 1,
+            "ambient_label": [
+              42,
+              0
+            ]
+          },
+          {
+            "slot": 16,
+            "scale": 3,
+            "ambient_label": [
+              14,
+              273
+            ]
+          },
+          {
+            "slot": 17,
+            "scale": 3,
+            "ambient_label": [
+              0,
+              182
+            ]
+          },
+          {
+            "slot": 18,
+            "scale": 3,
+            "ambient_label": [
+              21,
+              315
+            ]
+          },
+          {
+            "slot": 19,
+            "scale": 6,
+            "ambient_label": [
+              7,
+              98
+            ]
+          },
+          {
+            "slot": 20,
+            "scale": 6,
+            "ambient_label": [
+              7,
+              147
+            ]
+          },
+          {
+            "slot": 21,
+            "scale": 6,
+            "ambient_label": [
+              28,
+              70
+            ]
+          }
+        ],
+        "identity_action_slots": 1617,
+        "output_flag": "accept",
+        "original_ambient_equations_checked": true,
+        "padded_tensor_copies_charged": 1632,
+        "zero_dilation_is_used": false,
+        "requires_joint_independent_coset_tensor": true,
+        "requires_hidden_subgroup_preserving_automorphisms": true,
+        "requires_original_character_phase_action": true,
+        "requires_label_only_policy_with_private_randomness": true,
+        "physical_ownership_certified": false,
+        "quantum_receiver_executed": false,
+        "policy_availability_certified_by_transcript": false
+      }
+    },
+    {
+      "name": "incomplete_pilot_retry_control",
+      "plan": {
+        "status": "CHECKED_ACCEPTED_TRANSCRIPT",
+        "prime": 3,
+        "degree": 2,
+        "ambient_exponents": [
+          2
+        ],
+        "episode_cap": 2,
+        "preallocated_copy_cap": 166,
+        "observed_label_count": 15,
+        "unobserved_padding": 151,
+        "request_slot_ranges": [
+          {
+            "episode": 0,
+            "request": 0,
+            "stage": "pilots",
+            "start": 0,
+            "stop": 3
+          },
+          {
+            "episode": 0,
+            "request": 1,
+            "stage": "zero_rank_bank",
+            "start": 3,
+            "stop": 4
+          },
+          {
+            "episode": 1,
+            "request": 0,
+            "stage": "pilots",
+            "start": 4,
+            "stop": 7
+          },
+          {
+            "episode": 1,
+            "request": 1,
+            "stage": "bank",
+            "start": 7,
+            "stop": 9
+          },
+          {
+            "episode": 1,
+            "request": 2,
+            "stage": "bank",
+            "start": 9,
+            "stop": 11
+          },
+          {
+            "episode": 1,
+            "request": 3,
+            "stage": "bank",
+            "start": 11,
+            "stop": 13
+          },
+          {
+            "episode": 1,
+            "request": 4,
+            "stage": "bank",
+            "start": 13,
+            "stop": 15
+          }
+        ],
+        "active_slots": [
+          {
+            "slot": 9,
+            "scale": 1,
+            "ambient_label": [
+              3
+            ]
+          },
+          {
+            "slot": 10,
+            "scale": 1,
+            "ambient_label": [
+              3
+            ]
+          },
+          {
+            "slot": 11,
+            "scale": 1,
+            "ambient_label": [
+              3
+            ]
+          },
+          {
+            "slot": 12,
+            "scale": 1,
+            "ambient_label": [
+              3
+            ]
+          },
+          {
+            "slot": 13,
+            "scale": 2,
+            "ambient_label": [
+              3
+            ]
+          },
+          {
+            "slot": 14,
+            "scale": 2,
+            "ambient_label": [
+              3
+            ]
+          }
+        ],
+        "identity_action_slots": 160,
+        "output_flag": "accept",
+        "original_ambient_equations_checked": true,
+        "padded_tensor_copies_charged": 166,
+        "zero_dilation_is_used": false,
+        "requires_joint_independent_coset_tensor": true,
+        "requires_hidden_subgroup_preserving_automorphisms": true,
+        "requires_original_character_phase_action": true,
+        "requires_label_only_policy_with_private_randomness": true,
+        "physical_ownership_certified": false,
+        "quantum_receiver_executed": false,
+        "policy_availability_certified_by_transcript": false
+      }
+    },
+    {
+      "name": "zero_support_control",
+      "plan": {
+        "status": "CHECKED_ACCEPTED_TRANSCRIPT",
+        "prime": 3,
+        "degree": 2,
+        "ambient_exponents": [
+          2,
+          3
+        ],
+        "episode_cap": 1,
+        "preallocated_copy_cap": 328,
+        "observed_label_count": 5,
+        "unobserved_padding": 323,
+        "request_slot_ranges": [
+          {
+            "episode": 0,
+            "request": 0,
+            "stage": "pilots",
+            "start": 0,
+            "stop": 4
+          },
+          {
+            "episode": 0,
+            "request": 1,
+            "stage": "zero_rank_bank",
+            "start": 4,
+            "stop": 5
+          }
+        ],
+        "active_slots": [
+          {
+            "slot": 4,
+            "scale": 1,
+            "ambient_label": [
+              0,
+              0
+            ]
+          }
+        ],
+        "identity_action_slots": 327,
+        "output_flag": "accept",
+        "original_ambient_equations_checked": true,
+        "padded_tensor_copies_charged": 328,
+        "zero_dilation_is_used": false,
+        "requires_joint_independent_coset_tensor": true,
+        "requires_hidden_subgroup_preserving_automorphisms": true,
+        "requires_original_character_phase_action": true,
+        "requires_label_only_policy_with_private_randomness": true,
+        "physical_ownership_certified": false,
+        "quantum_receiver_executed": false,
+        "policy_availability_certified_by_transcript": false
+      }
+    }
+  ],
+  "correlation_falsifier": {
+    "control": "same_marginals_are_not_independent_sources",
+    "dimension": 3,
+    "joint_trace": 1.0,
+    "joint_min_eigenvalue": -6.166487339166543e-17,
+    "marginal_a_error": 0.0,
+    "marginal_b_error": 0.0,
+    "independent_output_error": 1.1102230246251565e-16,
+    "correlated_output_trace_distance": 0.6666666666666667,
+    "correlated_output_real": [
+      [
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337
+      ],
+      [
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337
+      ],
+      [
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337
+      ]
+    ],
+    "ideal_output_real": [
+      [
+        0.3333333333333333,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.3333333333333333,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.3333333333333333
+      ]
+    ],
+    "character_cancellation_alone_is_sufficient": false,
+    "finite_control_is_algorithm_discovery": false
+  },
+  "postselection_falsifier": {
+    "acceptance_probability": {
+      "numerator": 1,
+      "denominator": 100
+    },
+    "unconditional_distance": {
+      "numerator": 1,
+      "denominator": 1000
+    },
+    "conditional_distance": {
+      "numerator": 1,
+      "denominator": 10
+    },
+    "unconditional_budget_survives": true,
+    "accepted_only_error_bound_without_division_is_valid": false
+  },
+  "policy_side_information_falsifier": {
+    "control": "source_correlated_policy_coins_are_not_private_randomness",
+    "source_marginal_error": 7.473417450352271e-17,
+    "choice_scale_counts": [
+      2,
+      1
+    ],
+    "choice_denominator": 3,
+    "independent_choice_output_error": 0.0,
+    "source_correlated_choice_output_trace_distance": 0.3333333333333334,
+    "source_correlated_choice_output_real": [
+      [
+        0.33333333333333337,
+        -1.3877787807814457e-17,
+        -1.3877787807814457e-17
+      ],
+      [
+        -1.3877787807814457e-17,
+        0.33333333333333337,
+        -1.3877787807814457e-17
+      ],
+      [
+        -1.3877787807814457e-17,
+        -1.3877787807814457e-17,
+        0.33333333333333337
+      ]
+    ],
+    "source_correlated_choice_output_imag": [
+      [
+        2.8625349938425376e-18,
+        -0.1924500897298753,
+        0.1924500897298753
+      ],
+      [
+        0.1924500897298753,
+        2.8625349938425376e-18,
+        -0.1924500897298753
+      ],
+      [
+        -0.1924500897298753,
+        0.1924500897298753,
+        2.8625349938425376e-18
+      ]
+    ],
+    "conditional_choice_table_alone_is_sufficient": false,
+    "finite_control_is_algorithm_discovery": false
+  },
+  "proof_note": "research/PILOT_RECEIVER_POLICY.md",
+  "quantum_receiver_executed": false,
+  "speedup_established": false
+}

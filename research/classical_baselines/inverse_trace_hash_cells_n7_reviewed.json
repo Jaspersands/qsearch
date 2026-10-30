@@ -1,0 +1,2044 @@
+{
+  "status": "BOUNDED_NATIVE_HASH_CELL_PROBE",
+  "instance": {
+    "bits": 7,
+    "points": [
+      59,
+      76,
+      50,
+      110,
+      80,
+      117,
+      32,
+      99,
+      114,
+      25,
+      44,
+      69,
+      49,
+      108,
+      3,
+      14,
+      86,
+      103,
+      82,
+      81,
+      119,
+      10,
+      111,
+      123,
+      118,
+      27,
+      73,
+      9,
+      87,
+      13,
+      40,
+      124,
+      115,
+      7,
+      96,
+      22,
+      45,
+      78,
+      54,
+      29,
+      121,
+      67,
+      18,
+      93,
+      106,
+      38,
+      15,
+      43,
+      64
+    ],
+    "targets": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "checks": 6,
+    "field_modulus_coefficients": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "instance_sha256": "2dcce5e872a2fb11674b16ca93d1dbcb605754b29ef760899f9791c99798a7af",
+  "residual": {
+    "residual_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "accepted_prefix": [
+      [
+        8,
+        70
+      ],
+      [
+        9,
+        61
+      ],
+      [
+        10,
+        107
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        12,
+        84
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        14,
+        78
+      ],
+      [
+        15,
+        36
+      ],
+      [
+        16,
+        29
+      ],
+      [
+        17,
+        16
+      ],
+      [
+        18,
+        85
+      ],
+      [
+        19,
+        2
+      ],
+      [
+        20,
+        118
+      ],
+      [
+        21,
+        62
+      ],
+      [
+        22,
+        8
+      ],
+      [
+        23,
+        64
+      ],
+      [
+        24,
+        91
+      ],
+      [
+        25,
+        4
+      ],
+      [
+        26,
+        116
+      ],
+      [
+        27,
+        123
+      ],
+      [
+        28,
+        89
+      ],
+      [
+        29,
+        45
+      ],
+      [
+        30,
+        16
+      ],
+      [
+        31,
+        79
+      ],
+      [
+        32,
+        25
+      ],
+      [
+        33,
+        24
+      ],
+      [
+        34,
+        25
+      ],
+      [
+        35,
+        81
+      ],
+      [
+        36,
+        109
+      ],
+      [
+        37,
+        36
+      ],
+      [
+        38,
+        39
+      ],
+      [
+        39,
+        119
+      ],
+      [
+        40,
+        2
+      ],
+      [
+        41,
+        60
+      ],
+      [
+        42,
+        45
+      ],
+      [
+        43,
+        33
+      ],
+      [
+        44,
+        64
+      ],
+      [
+        45,
+        103
+      ],
+      [
+        46,
+        8
+      ],
+      [
+        47,
+        6
+      ],
+      [
+        48,
+        35
+      ]
+    ],
+    "residual_syndrome": [
+      96,
+      68,
+      27,
+      103,
+      9,
+      115
+    ],
+    "prefix_seed": 1029,
+    "free_field_variables": 2,
+    "binary_coordinates": 12,
+    "hash_rows_count": 6,
+    "trace_one_element": 1,
+    "trace_kernel_basis": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "source": "FIXED_ACCEPTED_PREFIX",
+    "anchor_u": null,
+    "supplied_anchor_full_word": null,
+    "anchor_acquisition_charged": false,
+    "residual_variance_power2_upper": -1,
+    "pointwise_good_syndrome_certified": false
+  },
+  "hash_seed": 1030,
+  "predeclared_cells": 3,
+  "known_anchor_supplied_to_solver": false,
+  "seeded_diagnostics_not_physical_iid_certification": true,
+  "preparation_seconds": 0.0006868750060675666,
+  "cells": [
+    {
+      "cell_index": 0,
+      "hash_rows": [
+        3923,
+        227,
+        1743,
+        3151,
+        2448,
+        642
+      ],
+      "hash_rhs": 41,
+      "enumeration": {
+        "status": "COMPLETE",
+        "complete": true,
+        "stop_reason": "final_unsat",
+        "method": "Z3_projected_native_hash_cell_enumeration",
+        "scope": "supplied_residual_cell_only",
+        "instance": {
+          "bits": 7,
+          "points": [
+            59,
+            76,
+            50,
+            110,
+            80,
+            117,
+            32,
+            99,
+            114,
+            25,
+            44,
+            69,
+            49,
+            108,
+            3,
+            14,
+            86,
+            103,
+            82,
+            81,
+            119,
+            10,
+            111,
+            123,
+            118,
+            27,
+            73,
+            9,
+            87,
+            13,
+            40,
+            124,
+            115,
+            7,
+            96,
+            22,
+            45,
+            78,
+            54,
+            29,
+            121,
+            67,
+            18,
+            93,
+            106,
+            38,
+            15,
+            43,
+            64
+          ],
+          "targets": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "checks": 6,
+          "field_modulus_coefficients": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "instance_sha256": "2dcce5e872a2fb11674b16ca93d1dbcb605754b29ef760899f9791c99798a7af",
+        "residual_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "residual_word_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "residual_syndrome": [
+          96,
+          68,
+          27,
+          103,
+          9,
+          115
+        ],
+        "pivot_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "free_indices": [
+          6,
+          7
+        ],
+        "pivot_constants": [
+          59,
+          19,
+          119,
+          42,
+          122,
+          111
+        ],
+        "pivot_coefficients": [
+          [
+            6,
+            117
+          ],
+          [
+            5,
+            93
+          ],
+          [
+            109,
+            93
+          ],
+          [
+            70,
+            100
+          ],
+          [
+            26,
+            121
+          ],
+          [
+            51,
+            105
+          ]
+        ],
+        "trace_mask": 1,
+        "trace_one": 1,
+        "trace_pivot_bit": 0,
+        "trace_free_bit_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "trace_kernel_basis": [
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "u_bit_order": [
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "u_bit_order_description": "bit s*(bits-1)+j selects trace_kernel_basis[j] at free_indices[s]",
+        "B": 12,
+        "hash_rows": [
+          3923,
+          227,
+          1743,
+          3151,
+          2448,
+          642
+        ],
+        "hash_rhs": 41,
+        "hash_rank": 6,
+        "hash_system": {
+          "rank": 6,
+          "consistent": true,
+          "rref": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "pivots": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            7
+          ],
+          "free": [
+            3,
+            6,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "hash_free_bits": 6,
+        "symbolic_hash_free_bits": 6,
+        "timeout_ms": 10000,
+        "timeout_scope": "single_post_setup_enumeration_deadline",
+        "solver_resource_limit": 50000000,
+        "resource_limit_scope": "per_check_requested",
+        "max_models": 16,
+        "solver_seed": 0,
+        "known_u": null,
+        "seed_model_count": 0,
+        "solver_model_count": 0,
+        "solutions": [],
+        "model_count": 0,
+        "cell_cardinality": 0,
+        "first_verified_model_seconds": null,
+        "first_solver_model_seconds": null,
+        "completion_seconds": 0.08212187500612345,
+        "solver_calls": [
+          {
+            "call_index": 0,
+            "status": "UNSAT",
+            "timeout_ms": 9999,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 1241,
+              "sat mk clause 3ary": 1332,
+              "sat mk clause nary": 8029,
+              "sat mk var": 1263,
+              "sat del clause": 5666,
+              "sat conflicts": 2423,
+              "sat decisions": 2719,
+              "sat propagations 2ary": 53751,
+              "sat propagations nary": 313140,
+              "sat restarts": 1,
+              "sat minimized lits": 6192,
+              "sat subs resolution dyn": 5,
+              "sat units": 110,
+              "sat elim bool vars res": 539,
+              "sat backjumps": 2422,
+              "sat elim clauses": 1689,
+              "sat elim literals": 894,
+              "sat subsumed": 19,
+              "sat subs resolution": 15,
+              "sat scc elim vars": 98,
+              "num allocs": 999223,
+              "rlimit count": 367429,
+              "max memory": 25.8,
+              "memory": 16.96,
+              "time": 0.044
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.04511654199450277
+          }
+        ],
+        "solver_call_counts": {
+          "SAT": 0,
+          "UNSAT": 1,
+          "UNKNOWN": 0
+        },
+        "solver_check_errors": 0,
+        "backend_errors": [],
+        "projected_blocks": 0,
+        "duplicate_models": 0,
+        "invalid_models": 0,
+        "final_solver_status": "UNSAT",
+        "reason_unknown": null,
+        "validation_seconds": 3.166700480505824e-05,
+        "field_setup_seconds": 0.00019304099259898067,
+        "hash_elimination_seconds": 6.791700434405357e-05,
+        "encoding_seconds": 0.03609462500025984,
+        "check_seconds": 0.04511654199450277,
+        "verification_seconds": 0.0,
+        "model_extraction_seconds": 0.0,
+        "blocking_seconds": 0.0,
+        "seed_verification_seconds": 0.0,
+        "seed_blocking_seconds": 0.0,
+        "deduplication_seconds": 0.0,
+        "statistics_seconds": 0.0005057079979451373,
+        "uniform_sampler": false,
+        "hardness_evidence": false,
+        "polynomial_enumeration_established": false,
+        "whole_workflow_wall_clock_cap_enforced": false,
+        "completeness_basis": "solver_reported_final_UNSAT_after_projected_blocking",
+        "completeness_independently_certified": false,
+        "unsat_proof_artifact": null,
+        "z3_version": "4.15.3",
+        "setup_seconds": 0.03641675000835676,
+        "enumeration_seconds": 0.04570966699975543,
+        "total_seconds": 0.08212641700811218
+      },
+      "independent_reference": {
+        "status": "EXACT_FULL_COORDINATE_SPACE",
+        "solutions": [],
+        "checked": 4096,
+        "shared_hash_elimination": false,
+        "seconds": 0.003416374995140359,
+        "reported_complete_set_matches": true
+      }
+    },
+    {
+      "cell_index": 1,
+      "hash_rows": [
+        3431,
+        772,
+        3854,
+        3886,
+        1852,
+        3857
+      ],
+      "hash_rhs": 55,
+      "enumeration": {
+        "status": "COMPLETE",
+        "complete": true,
+        "stop_reason": "final_unsat",
+        "method": "Z3_projected_native_hash_cell_enumeration",
+        "scope": "supplied_residual_cell_only",
+        "instance": {
+          "bits": 7,
+          "points": [
+            59,
+            76,
+            50,
+            110,
+            80,
+            117,
+            32,
+            99,
+            114,
+            25,
+            44,
+            69,
+            49,
+            108,
+            3,
+            14,
+            86,
+            103,
+            82,
+            81,
+            119,
+            10,
+            111,
+            123,
+            118,
+            27,
+            73,
+            9,
+            87,
+            13,
+            40,
+            124,
+            115,
+            7,
+            96,
+            22,
+            45,
+            78,
+            54,
+            29,
+            121,
+            67,
+            18,
+            93,
+            106,
+            38,
+            15,
+            43,
+            64
+          ],
+          "targets": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "checks": 6,
+          "field_modulus_coefficients": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "instance_sha256": "2dcce5e872a2fb11674b16ca93d1dbcb605754b29ef760899f9791c99798a7af",
+        "residual_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "residual_word_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "residual_syndrome": [
+          96,
+          68,
+          27,
+          103,
+          9,
+          115
+        ],
+        "pivot_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "free_indices": [
+          6,
+          7
+        ],
+        "pivot_constants": [
+          59,
+          19,
+          119,
+          42,
+          122,
+          111
+        ],
+        "pivot_coefficients": [
+          [
+            6,
+            117
+          ],
+          [
+            5,
+            93
+          ],
+          [
+            109,
+            93
+          ],
+          [
+            70,
+            100
+          ],
+          [
+            26,
+            121
+          ],
+          [
+            51,
+            105
+          ]
+        ],
+        "trace_mask": 1,
+        "trace_one": 1,
+        "trace_pivot_bit": 0,
+        "trace_free_bit_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "trace_kernel_basis": [
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "u_bit_order": [
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "u_bit_order_description": "bit s*(bits-1)+j selects trace_kernel_basis[j] at free_indices[s]",
+        "B": 12,
+        "hash_rows": [
+          3431,
+          772,
+          3854,
+          3886,
+          1852,
+          3857
+        ],
+        "hash_rhs": 55,
+        "hash_rank": 6,
+        "hash_system": {
+          "rank": 6,
+          "consistent": true,
+          "rref": [
+            [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          ],
+          "pivots": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6
+          ],
+          "free": [
+            4,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "hash_free_bits": 6,
+        "symbolic_hash_free_bits": 6,
+        "timeout_ms": 10000,
+        "timeout_scope": "single_post_setup_enumeration_deadline",
+        "solver_resource_limit": 50000000,
+        "resource_limit_scope": "per_check_requested",
+        "max_models": 16,
+        "solver_seed": 1,
+        "known_u": null,
+        "seed_model_count": 0,
+        "solver_model_count": 2,
+        "solutions": [
+          {
+            "u": 298,
+            "residual_word": [
+              120,
+              59,
+              42,
+              71,
+              118,
+              71,
+              109,
+              18
+            ],
+            "independently_verified": true,
+            "origin": "solver"
+          },
+          {
+            "u": 1763,
+            "residual_word": [
+              41,
+              2,
+              118,
+              61,
+              44,
+              15,
+              29,
+              62
+            ],
+            "independently_verified": true,
+            "origin": "solver"
+          }
+        ],
+        "model_count": 2,
+        "cell_cardinality": 2,
+        "first_verified_model_seconds": 0.03868466700077988,
+        "first_solver_model_seconds": 0.03868466700077988,
+        "completion_seconds": 0.1081671669962816,
+        "solver_calls": [
+          {
+            "call_index": 0,
+            "status": "SAT",
+            "timeout_ms": 9999,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 1066,
+              "sat mk clause 3ary": 1304,
+              "sat mk clause nary": 6882,
+              "sat mk var": 1254,
+              "sat del clause": 3907,
+              "sat conflicts": 1242,
+              "sat decisions": 1543,
+              "sat propagations 2ary": 31513,
+              "sat propagations nary": 174694,
+              "sat restarts": 12,
+              "sat minimized lits": 3498,
+              "sat subs resolution dyn": 60,
+              "sat units": 85,
+              "sat elim bool vars res": 534,
+              "sat backjumps": 1242,
+              "sat elim clauses": 132,
+              "sat elim literals": 210,
+              "sat subsumed": 9,
+              "sat subs resolution": 4,
+              "sat scc elim vars": 98,
+              "num allocs": 3494808,
+              "rlimit count": 595765,
+              "max memory": 25.81,
+              "memory": 17.07,
+              "time": 0.027
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.028012584007228725,
+            "projected_u": 298,
+            "model_extraction_seconds": 0.00043524999637156725,
+            "verified": true,
+            "verification_errors": [],
+            "verification_seconds": 0.00013108299754094332,
+            "blocking_seconds": 0.0004532080056378618
+          },
+          {
+            "call_index": 1,
+            "status": "SAT",
+            "timeout_ms": 9970,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 1066,
+              "sat mk clause 3ary": 1304,
+              "sat mk clause nary": 6882,
+              "sat mk var": 1254,
+              "sat del clause": 3907,
+              "sat conflicts": 1242,
+              "sat decisions": 1543,
+              "sat propagations 2ary": 31513,
+              "sat propagations nary": 174694,
+              "sat restarts": 12,
+              "sat minimized lits": 3498,
+              "sat subs resolution dyn": 60,
+              "sat units": 85,
+              "sat elim bool vars res": 534,
+              "sat backjumps": 1242,
+              "sat elim clauses": 132,
+              "sat elim literals": 210,
+              "sat subsumed": 9,
+              "sat subs resolution": 4,
+              "sat scc elim vars": 98,
+              "num allocs": 7184568,
+              "rlimit count": 790404,
+              "max memory": 25.89,
+              "memory": 17.05,
+              "time": 0.031
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.03201350000745151,
+            "projected_u": 1763,
+            "model_extraction_seconds": 0.00037608300044666976,
+            "verified": true,
+            "verification_errors": [],
+            "verification_seconds": 0.00011754099978134036,
+            "blocking_seconds": 0.00046016700798645616
+          },
+          {
+            "call_index": 2,
+            "status": "UNSAT",
+            "timeout_ms": 9936,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 1066,
+              "sat mk clause 3ary": 1304,
+              "sat mk clause nary": 6882,
+              "sat mk var": 1254,
+              "sat del clause": 3907,
+              "sat conflicts": 1242,
+              "sat decisions": 1543,
+              "sat propagations 2ary": 31513,
+              "sat propagations nary": 174694,
+              "sat restarts": 12,
+              "sat minimized lits": 3498,
+              "sat subs resolution dyn": 60,
+              "sat units": 85,
+              "sat elim bool vars res": 534,
+              "sat backjumps": 1242,
+              "sat elim clauses": 132,
+              "sat elim literals": 210,
+              "sat subsumed": 9,
+              "sat subs resolution": 4,
+              "sat scc elim vars": 98,
+              "num allocs": 12429813,
+              "rlimit count": 978946,
+              "max memory": 25.93,
+              "memory": 17.09,
+              "time": 0.033
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.03397074999520555
+          }
+        ],
+        "solver_call_counts": {
+          "SAT": 2,
+          "UNSAT": 1,
+          "UNKNOWN": 0
+        },
+        "solver_check_errors": 0,
+        "backend_errors": [],
+        "projected_blocks": 2,
+        "duplicate_models": 0,
+        "invalid_models": 0,
+        "final_solver_status": "UNSAT",
+        "reason_unknown": null,
+        "validation_seconds": 3.8833997678011656e-05,
+        "field_setup_seconds": 0.0004571659956127405,
+        "hash_elimination_seconds": 0.00016500000492669642,
+        "encoding_seconds": 0.008837875007884577,
+        "check_seconds": 0.09399683400988579,
+        "verification_seconds": 0.0002486239973222837,
+        "model_extraction_seconds": 0.000811332996818237,
+        "blocking_seconds": 0.0009133750136243179,
+        "seed_verification_seconds": 0.0,
+        "seed_blocking_seconds": 0.0,
+        "deduplication_seconds": 2.7509959181770682e-06,
+        "statistics_seconds": 0.0023973739880602807,
+        "uniform_sampler": false,
+        "hardness_evidence": false,
+        "polynomial_enumeration_established": false,
+        "whole_workflow_wall_clock_cap_enforced": false,
+        "completeness_basis": "solver_reported_final_UNSAT_after_projected_blocking",
+        "completeness_independently_certified": false,
+        "unsat_proof_artifact": null,
+        "z3_version": "4.15.3",
+        "setup_seconds": 0.009582124999724329,
+        "enumeration_seconds": 0.09859087500080932,
+        "total_seconds": 0.10817300000053365
+      },
+      "independent_reference": {
+        "status": "EXACT_FULL_COORDINATE_SPACE",
+        "solutions": [
+          298,
+          1763
+        ],
+        "checked": 4096,
+        "shared_hash_elimination": false,
+        "seconds": 0.0048727079993113875,
+        "reported_complete_set_matches": true
+      }
+    },
+    {
+      "cell_index": 2,
+      "hash_rows": [
+        2092,
+        3862,
+        3536,
+        1616,
+        3087,
+        289
+      ],
+      "hash_rhs": 28,
+      "enumeration": {
+        "status": "COMPLETE",
+        "complete": true,
+        "stop_reason": "final_unsat",
+        "method": "Z3_projected_native_hash_cell_enumeration",
+        "scope": "supplied_residual_cell_only",
+        "instance": {
+          "bits": 7,
+          "points": [
+            59,
+            76,
+            50,
+            110,
+            80,
+            117,
+            32,
+            99,
+            114,
+            25,
+            44,
+            69,
+            49,
+            108,
+            3,
+            14,
+            86,
+            103,
+            82,
+            81,
+            119,
+            10,
+            111,
+            123,
+            118,
+            27,
+            73,
+            9,
+            87,
+            13,
+            40,
+            124,
+            115,
+            7,
+            96,
+            22,
+            45,
+            78,
+            54,
+            29,
+            121,
+            67,
+            18,
+            93,
+            106,
+            38,
+            15,
+            43,
+            64
+          ],
+          "targets": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "checks": 6,
+          "field_modulus_coefficients": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "instance_sha256": "2dcce5e872a2fb11674b16ca93d1dbcb605754b29ef760899f9791c99798a7af",
+        "residual_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "residual_word_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "residual_syndrome": [
+          96,
+          68,
+          27,
+          103,
+          9,
+          115
+        ],
+        "pivot_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "free_indices": [
+          6,
+          7
+        ],
+        "pivot_constants": [
+          59,
+          19,
+          119,
+          42,
+          122,
+          111
+        ],
+        "pivot_coefficients": [
+          [
+            6,
+            117
+          ],
+          [
+            5,
+            93
+          ],
+          [
+            109,
+            93
+          ],
+          [
+            70,
+            100
+          ],
+          [
+            26,
+            121
+          ],
+          [
+            51,
+            105
+          ]
+        ],
+        "trace_mask": 1,
+        "trace_one": 1,
+        "trace_pivot_bit": 0,
+        "trace_free_bit_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "trace_kernel_basis": [
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "u_bit_order": [
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "u_bit_order_description": "bit s*(bits-1)+j selects trace_kernel_basis[j] at free_indices[s]",
+        "B": 12,
+        "hash_rows": [
+          2092,
+          3862,
+          3536,
+          1616,
+          3087,
+          289
+        ],
+        "hash_rhs": 28,
+        "hash_rank": 6,
+        "hash_system": {
+          "rank": 6,
+          "consistent": true,
+          "rref": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              0
+            ]
+          ],
+          "pivots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            7
+          ],
+          "free": [
+            5,
+            6,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "hash_free_bits": 6,
+        "symbolic_hash_free_bits": 6,
+        "timeout_ms": 10000,
+        "timeout_scope": "single_post_setup_enumeration_deadline",
+        "solver_resource_limit": 50000000,
+        "resource_limit_scope": "per_check_requested",
+        "max_models": 16,
+        "solver_seed": 2,
+        "known_u": null,
+        "seed_model_count": 0,
+        "solver_model_count": 1,
+        "solutions": [
+          {
+            "u": 3362,
+            "residual_word": [
+              33,
+              81,
+              62,
+              91,
+              110,
+              85,
+              36,
+              106
+            ],
+            "independently_verified": true,
+            "origin": "solver"
+          }
+        ],
+        "model_count": 1,
+        "cell_cardinality": 1,
+        "first_verified_model_seconds": 0.060132999991765246,
+        "first_solver_model_seconds": 0.060132999991765246,
+        "completion_seconds": 0.10820041700208094,
+        "solver_calls": [
+          {
+            "call_index": 0,
+            "status": "SAT",
+            "timeout_ms": 9999,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 1131,
+              "sat mk clause 3ary": 1332,
+              "sat mk clause nary": 8231,
+              "sat mk var": 1269,
+              "sat del clause": 5017,
+              "sat conflicts": 2561,
+              "sat decisions": 3204,
+              "sat propagations 2ary": 41953,
+              "sat propagations nary": 302771,
+              "sat restarts": 60,
+              "sat minimized lits": 7326,
+              "sat subs resolution dyn": 63,
+              "sat units": 178,
+              "sat elim bool vars res": 543,
+              "sat backjumps": 2561,
+              "sat elim clauses": 1026,
+              "sat elim literals": 307,
+              "sat subsumed": 23,
+              "sat subs resolution": 21,
+              "sat scc elim vars": 98,
+              "num allocs": 19297092,
+              "rlimit count": 1321042,
+              "max memory": 25.95,
+              "memory": 17.08,
+              "time": 0.046
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.0463598749920493,
+            "projected_u": 3362,
+            "model_extraction_seconds": 0.00039383300463669,
+            "verified": true,
+            "verification_errors": [],
+            "verification_seconds": 0.00012758299999404699,
+            "blocking_seconds": 0.0004522500094026327
+          },
+          {
+            "call_index": 1,
+            "status": "UNSAT",
+            "timeout_ms": 9952,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 1131,
+              "sat mk clause 3ary": 1332,
+              "sat mk clause nary": 8231,
+              "sat mk var": 1269,
+              "sat del clause": 5017,
+              "sat conflicts": 2561,
+              "sat decisions": 3204,
+              "sat propagations 2ary": 41953,
+              "sat propagations nary": 302771,
+              "sat restarts": 60,
+              "sat minimized lits": 7326,
+              "sat subs resolution dyn": 63,
+              "sat units": 178,
+              "sat elim bool vars res": 543,
+              "sat backjumps": 2561,
+              "sat elim clauses": 1026,
+              "sat elim literals": 307,
+              "sat subsumed": 23,
+              "sat subs resolution": 21,
+              "sat scc elim vars": 98,
+              "num allocs": 27639785,
+              "rlimit count": 1543046,
+              "max memory": 25.97,
+              "memory": 17.09,
+              "time": 0.046
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.0468405419960618
+          }
+        ],
+        "solver_call_counts": {
+          "SAT": 1,
+          "UNSAT": 1,
+          "UNKNOWN": 0
+        },
+        "solver_check_errors": 0,
+        "backend_errors": [],
+        "projected_blocks": 1,
+        "duplicate_models": 0,
+        "invalid_models": 0,
+        "final_solver_status": "UNSAT",
+        "reason_unknown": null,
+        "validation_seconds": 3.3042000723071396e-05,
+        "field_setup_seconds": 0.0004133749898755923,
+        "hash_elimination_seconds": 6.333300552796572e-05,
+        "encoding_seconds": 0.011918292002519593,
+        "check_seconds": 0.0932004169881111,
+        "verification_seconds": 0.00012758299999404699,
+        "model_extraction_seconds": 0.00039383300463669,
+        "blocking_seconds": 0.0004522500094026327,
+        "seed_verification_seconds": 0.0,
+        "seed_blocking_seconds": 0.0,
+        "deduplication_seconds": 8.750066626816988e-07,
+        "statistics_seconds": 0.0012519160081865266,
+        "uniform_sampler": false,
+        "hardness_evidence": false,
+        "polynomial_enumeration_established": false,
+        "whole_workflow_wall_clock_cap_enforced": false,
+        "completeness_basis": "solver_reported_final_UNSAT_after_projected_blocking",
+        "completeness_independently_certified": false,
+        "unsat_proof_artifact": null,
+        "z3_version": "4.15.3",
+        "setup_seconds": 0.01266383400070481,
+        "enumeration_seconds": 0.09554066599230282,
+        "total_seconds": 0.10820449999300763
+      },
+      "independent_reference": {
+        "status": "EXACT_FULL_COORDINATE_SPACE",
+        "solutions": [
+          3362
+        ],
+        "checked": 4096,
+        "shared_hash_elimination": false,
+        "seconds": 0.004148041000007652,
+        "reported_complete_set_matches": true
+      }
+    }
+  ],
+  "prange": {
+    "trials": 256,
+    "hits": 5,
+    "first_verified": {
+      "trial": 106,
+      "u": 431,
+      "residual_word": [
+        120,
+        32,
+        36,
+        36,
+        78,
+        119,
+        78,
+        79
+      ]
+    },
+    "seconds": 0.008651750002172776,
+    "seed": 2654436799,
+    "same_residual_input": true,
+    "matched_wall_clock_budget": false,
+    "ideal_per_trial_acceptance": "g(h)*2^(-K)"
+  },
+  "total_seconds": 0.3229472910024924,
+  "uniform_sampler": false,
+  "polynomial_time_enumerator_established": false,
+  "hardness_evidence": false,
+  "speedup_established": false,
+  "whole_workflow_wall_clock_cap_enforced": false,
+  "source_hashes": {
+    "theorems/inverse_trace_hash_probe.py": "41dd5794a57aed680860e5868d39e0640f9888aebac70e7d1f5e0751d801015b",
+    "theorems/inverse_trace_hash_cell.py": "0ad4e3fdb954ea2fc472599c1555ea9774f08bb2a27cb998f66c296b171f21a7",
+    "theorems/inverse_trace_smt.py": "c040c798a1b875ad2940c58f71ac7228ce011d395fd90cce4be955dfda6835ee",
+    "research/INVERSE_TRACE_HASH_HEATBATH.md": "076d9ce4cbee056f49ac99c6a10d51cc317f54e11e3c578ec0dace3dc9d44388"
+  },
+  "source_hashes_unchanged_during_probe": true,
+  "source_fingerprint_scope": "on_disk_before_and_after_probe_not_loaded_bytecode_attestation"
+}

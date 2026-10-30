@@ -8,6 +8,13 @@ this follow-on has not been independently reviewed.
 
 ## Decision
 
+28 October follow-on: [polynomial norms](INVERSE_TRACE_NORM_ATTACK.md) now
+give a separate classical full-instance search route on certified dense
+one-target patterns, including all-one prime-degree inputs. It does not
+sample residual fibers uniformly or address arbitrary residual syndromes.
+The remaining sampling obligation below is unchanged; prime degree alone
+must no longer be treated as an uncovered search regime.
+
 The residual problem is sufficient to attack BOTH remaining tasks, but
 under different contracts. A verified residual witness solves search.
 Sampling the residual nearly uniformly for typical uniform syndromes
@@ -18,7 +25,7 @@ rejection of the sampled prefix with an uncharged acceptance probability.
 The useful next implementation is a capped residual solver/sampler on the
 original public points. Keep its search and distributional results separate.
 More field-size sweeps of already dequantized subfield instances would not
-resolve this obligation. Prime extension degree remains unresolved, not hard.
+resolve this sampling obligation. Failed residual solvers are not hardness.
 
 ## 1. Original Input And Proposed Composition
 
@@ -44,6 +51,11 @@ be its complement and ell=|T|. The algorithm is:
 Step 3 is MISSING. Gaussian elimination exposes ceil(4K/n) free field
 variables, not that many Boolean variables. Neither an exact conditional
 sampler nor its source probability is granted as an oracle.
+
+28 October update: a [bounded coupled SAT probe](INVERSE_TRACE_SMT_BASELINE.md)
+now attempts the search-only version of Step 3, as well as the unrestricted
+full instance. It does not establish a polynomial-time residual solver or
+supply the missing uniform sampler. Its n17 limits remain UNKNOWN.
 
 ## 2. Exact Distribution Identity
 
@@ -199,3 +211,64 @@ targets at syndrome zero it obtains nonzero prefix-transfer TV (about
 silently EXACT uniform sampling. At n17/31/61, the main term sqrt(V_m)/2
 has base-two logarithm -6.177/-33.445/-160.359; cross terms are much smaller.
 Those large-n values are theorem-bound evaluations, not sampler executions.
+
+## 29 October: Support-Sensitive Residual Bound
+
+Chandrasekhar derived the following improvement during the six-agent pass;
+Pasteur independently checked it, and parent checked the support argument.
+This is an AI-reviewed local deduction, not a novelty or runtime claim.
+It leaves the missing residual sampler and every access/error requirement
+above intact. Earlier numerical receipts use the older bound explicitly.
+
+For j>K retained columns, let r_i(u) be the normalized local alphabet
+Fourier coefficient. Balance and Parseval give
+
+    r_i(0)=1, sum_(u!=0) |r_i(u)|^2=1,
+    |r_i(u)|<=beta=(1+2*ceil(sqrt(q)))/q for u!=0,
+
+with beta capped by1. The uniform-syndrome variance is
+v_j=sum_(c in RS[j,K],c!=0) product_i |r_i(c_i)|^2.
+Fix an EXACT support S of size w. Shortening outside S leaves dimension
+d=K-j+w, and a nonzero word requires w>=j-K+1. Choose d information
+coordinates in S. Their entries are nonzero; summing their squared weights
+costs at most1 by Parseval, not q^d. Each remaining w-d=j-K nonzero entry
+contributes at most beta^2. Thus
+
+    v_j <= [sum_(w=j-K+1)^j binom(j,w)] beta^(2(j-K))
+         = [sum_(t=0)^(K-1) binom(j,t)] beta^(2(j-K))
+         <= 2^j beta^(2(j-K)).
+
+Use the minimum of this and the previous9^j q^(K-j). This is a second
+moment over uniform syndromes, NOT a pointwise guarantee for every fiber.
+Values greater than1 must not be clipped. Empty residual fibers remain
+possible in finite controls and must produce ABORT.
+
+Putting j=K+r gives log2(v_j)<=K-(n-3)r+O(r*2^(-n/2)). Therefore
+r=ceil((1+gamma)K/n), fixed gamma>0, suffices asymptotically for
+2^(-Omega(K)) variance. The argument uses MDS information coordinates
+and Parseval directly; it was motivated by the support-sensitive MDS
+product estimates in [Horinaga--Yamakawa, Theorem3.1](https://arxiv.org/pdf/2607.14650v2),
+not a claim that their theorem supplies a classical sampler.
+
+For gamma=1/2 the exact-rational controls give:
+
+| n | K | Old free field variables | New free field variables | New residual length | Full transfer overhead, at most |
+| --- | --- | --- | --- | --- | --- |
+|17|36|9|4|40|1.016244*2^-11|
+|31|120|16|6|126|1.000072*2^-25|
+|61|465|31|12|477|1.414214*2^-117|
+
+The last column bounds sqrt(V_m)/2+sqrt(V_m*V_ell)+sqrt(V_ell)/2
+with outward rational arithmetic. The residual sampler's own average
+error must STILL be added. None of these rows executes a native sampler.
+Keeping the old, larger residual sizes while using the new bound gives
+still smaller overheads; shrinking the core trades some slack for size.
+
+The public residual_variance_bound in inverse_trace_gibbs_target.py and
+the completion-transfer tests check exact finite spectra, all syndrome
+counts, individual support sums, empty fibers and vacuous bounds. The
+reduction still does not lower the known accepted-Prange exponent: with
+r free field variables parameterized by accepted roots, B=(n-1)r binary
+parameters remain, mean fiber size is2^(B-K), and acceptance is g(h)2^-K.
+Improving the conditional solver, not repeatedly tightening this counting
+constant, is the next scientific question.

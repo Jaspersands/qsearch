@@ -1,5 +1,184 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-10-30 Incoming Review Is Not A Policy Specification
+
+Read manuscripts/REES_FOUR_PILLAR_CORRECTIONS.md before using the new
+four-pillar review. Do not encode its ten proposed features as proof-gate
+requirements or copy its 'axiom', novelty, necessary-query-cost or old
+ring-scope claims into dashboards. No production filter was defective;
+four new regressions enforce distinctions already present in the code.
+Do not relax derivative guards or turn incomplete jets into full answers.
+The original external review is preserved by snapshot hash, with this
+separate correction; no new registry entry or CLI wrapper is needed.
+
+## 2026-10-30 Arithmetic Proxy Contracts, Not A New Solver
+
+Read QUATERNION_ARITHMETIC_RECEIVER.md. Four new test files are bounded
+proof controls, not a fast contraction implementation. Do not wire them
+as a quantum decoder, promote a candidate, or create a shadow-data UI.
+The Hiary primitive is cited with explicit promises, not implemented.
+Preserve actual full-cell left-endpoint conventions, rounded centers,
+coefficient probabilities, normalization, hard windows and crop-before-
+encoding. Large primes do not turn irrational rounding into linear maps.
+Keep record-independent proxies/holdout guarantees distinct from adaptive
+per-record fitting; relative-error evaluation is not implied by additive
+sum evaluation. No arbitrary stabilizer-rank lower bound was proved.
+The generic scoring and orientation algorithms are still research tasks,
+not work to hand off as obvious wiring. The corpus-lifecycle task below
+remains the separate useful mechanical task.
+
+## 2026-10-30 Gemini Task: Corpus Connection Ownership
+
+The quaternion regression pass exposed unclosed sqlite3.Connection objects
+under Python3.13 with pytest -W error. Store.close exists in
+tools/corpus/store.py, but Corpus has no public close/context-manager
+interface, and CLI/test callers often do not close the owned Store.
+The strict combined run had39failures/2errors, many from deferred
+PytestUnraisableExceptionWarning wrapping ResourceWarning. Isolating
+ResourceWarning also exposed a stale baseline-note reference; that
+research/catalog description is now corrected, not a remaining task.
+
+Low-reasoning implementation handoff: define deterministic Corpus resource
+ownership and idempotent close/context-manager behavior; close CLI-owned
+instances on success/error and test-owned instances in fixture finalizers;
+handle MCP server shutdown ownership rather than closing after each query.
+Keep Store.write as a transaction scope, not an object lifetime boundary.
+Test repeated close, exceptions, CLI reuse and open-server queries. Do not
+hide the defect with global warning suppression or rely on __del__ alone.
+Replay tests/tools/test_corpus_{cli,sources,index,baselines,duplicates}.py
+under /opt/anaconda3/bin/python with -B -W error and plugin autoload off.
+Production corpus lifecycle code was not modified by the research pass.
+
+## 2026-10-30 Receiver Classical Filters
+
+Read QUATERNION_RECEIVER_CLASSICAL_FILTER.md before adding receiver code.
+Do not wire overlap optimization or fixed matching-width parity features
+as a quantum advantage: both have matched classical estimators. The new
+tests are bounded algebra controls, not a production source or decoder.
+CT evaluation must preserve the preparation's fixed dyadic windows and
+actual sequential probabilities, with robust inverse-coordinate rounding.
+The parity simulator keeps complex kernel phases, overlapping-source
+normalization and a deterministic mutual-pair map. It simulates one
+product-parity bit, not the whole parity vector or number distribution.
+Do not replace global qubit Cliffords by an arithmetic MUB ensemble and
+inherit a dimension-independent shadow variance without a new proof.
+
+No CLI, UI, registry promotion or additional solver wrapper is warranted
+by these checks. Full-record decoding or a new explicitly specified
+constructive mechanism must precede another backend.
+
+## 2026-10-30 Receiver Contracts, No New Backend
+
+Read QUATERNION_COVARIANT_RECEIVER.md. The new files are exact/numerical
+controls for source estimates and receiver interfaces, not production
+quantum algorithms. Do not wire a mock covariant, Clifford-shadow, or
+swap-wreath solver into qsearch.py. No new UI or registry promotion is
+licensed. Global-Clifford acquisition and polynomial copy count are
+proof-level consequences of an existing theorem; classical decoding is
+still unresolved. Efficient reference preparation does not imply efficient
+stabilizer-overlap evaluation. Preserve the D+1 fidelity-score factor.
+
+If a source backend is later specified, use dyadic-center full-cell
+windows, retain the T*nu+4h support margin, and compare Gaussians on the
+SAME selected window. The exact real floor is not a free operation.
+Include actual packet overlap in the ideal normalizer and charge
+nonconstant finite-window normalization. The nonlinear RMS comparison
+map is an analytical device, not a quantum gate.
+
+The Cartesian simulator uses the public dual basis, the exact center
+factor c=s^2/(s^2+2nu^2), broad dual-Gaussian sampling and matched output
+bins. It does not simulate arbitrary Clifford or collective measurements.
+The swap-wreath odd branch swaps OUTPUT registers, not source arguments;
+state-valued labels cannot be replaced by orthogonal coset indicators.
+
+## 2026-10-30 Compact Orbit Source Contract
+
+Read QUATERNION_COMPACT_ORBIT_SOURCE.md and QUATERNION_INTEGRAL_DESCENT.md.
+Do not wire the new bounded test files as a quantum source or receiver.
+The source preparation is a reviewed mathematical construction only. Its
+width depends on its requested error budget; it is not an arbitrary-width
+discrete-Gaussian oracle. If a backend is later authorized, preserve
+centered conditional windows, theta-normalizer error, uniform prefix
+precision and coherent inverse-basis erasure. Never discard a coefficient
+register and call the resulting mixture a clean ket. Reference and ideal
+bases use common physical widths/grid but generally different Gram data.
+
+The source has right cosets H*g and a transporter f_I(g)=f_O(a*g).
+Inversion is not a nonabelian automorphism. Do not instantiate the naive
+generalized-dihedral shortcut, reuse the retracted compact-group no-go,
+or assume that a source query applies the unknown a to arbitrary probes.
+The next work is a measurement derivation, not CLI/UI expansion. Preserve
+actual recovery-ball probability, circuit cost and moment-access costs.
+The public Goppa CSS rank certificate likewise does not license an active
+general no-go record. No new registry entry is needed for these controls.
+
+## 2026-10-30 Quaternion Norm Target
+
+Read QUATERNION_NORM_SLICE_AND_LOCAL_FLAGS.md and
+QUATERNION_HSVP_PREPRINT_AUDIT.md before further wiring. The four new
+quaternion test files are exact falsifiers and interface controls, not
+production solvers. No CLI, UI or registry promotion is warranted.
+
+Preserve the exact q, left/right orientation, ambient ideal image, local
+principality/index check and metric Q_q. Keep gamma (length) distinct
+from gamma^2. Norm-one generator ambiguity is not the full unit group.
+Do not use the cached 2025/1448 covolume formula or Theorem8 as a primitive;
+the publisher chapter remains uninspected. Do not silently correct a
+source formula and retain its unproved downstream constants.
+
+A future QuaILLL comparison needs a certified quaternion module basis,
+the q-dependent embedding weights, matched real block dimension 4*beta,
+and independent exact membership/norm verification. Another team's
+mechanical implementation should wait for a specified native fixture
+and constructive algorithm, not invent a quantum backend or treat a
+short-vector oracle as implemented. The source papers and their hashes
+are recorded in the two notes. No outreach is authorized by this audit.
+
+## 2026-10-30 Compact Residue Interface
+
+Read COMPACT_RESIDUE_CONDUCTOR_DECISION.md. The local evaluation argument
+is proved for products of explicitly small field factors with binary signed
+exponents, an explicit maximal order, and an explicit ideal modulus plus
+its factorization. It is NOT a general compact arithmetic-circuit evaluator.
+Do not invert nonunit denominators directly; normalize local valuations
+before exponentiation and account for the extra division precision.
+
+The bounded controls in tests/test_compact_residue_conductor.py are not
+a generic number-field backend. Preserve their input, exponent, precision
+and recurrence caps. A successful residue or conductor decision does not
+license a quantum CLI, a new speedup candidate, or expanded output claims.
+The dyadic order family has Picard group one; conductor 5 supplies a true
+NO instance with a classical modular certificate. There is no claimed
+quantum advantage for either control. No UI or registry wiring is needed.
+
+## 2026-10-30 Arithmetic Output Interfaces
+
+Do not wire the new arithmetic notes as implemented quantum solvers.
+INTEGRAL_SIMILARITY_OUTPUT_SIZE.md proves a minimum expanded-witness bound;
+UNMARKED_INTEGRAL_PENCIL_REDUCTION.md gives classical preprocessing with
+an integral-similarity decision dependency; AMITSUR_ARITHMETIC_REUSE_AUDIT.md
+gives a compact conversion and a bad-chosen-output example, not a universal
+splitting lower bound. Their bounded exact tests are algebraic controls.
+No new candidate, negative-result record, CLI backend or UI claim is licensed.
+Keep Boolean, modular-residue, compact-expression and expanded-coordinate
+outputs distinct. Do not undo the earlier number-field barrier retraction.
+
+## 2026-10-30 Investigation 43 Instructions Superseded
+
+Do not restore or run the old arbitrary-degree regulator barrier tests or
+JavaScript certificate referenced in historical sections below. They checked
+assumed growth formulas, not lower bounds, and have been deleted. The original
+negative is hash-bound and quarantined. Read
+ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md and run the replacement
+tests/test_number_field_barrier_scope.py. Published arbitrary-degree quantum
+unit-group and principal-ideal algorithms are valid research primitives;
+their discovery or implementation is not claimed by this correction.
+
+GOPPA_LOCAL_QUOTIENT_PRESENTATION.md is a public algebraic presentation,
+not permission to register a speedup candidate or wire a mock quotient
+solver. The unresolved work is effective global kernel preparation and
+compressed block evaluation, not CLI/UI expansion.
+
 ## 2026-10-23 Endomorphism-Transport Baseline Is Strong-Input Only
 
 Read SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK.md. The new coordinate-level

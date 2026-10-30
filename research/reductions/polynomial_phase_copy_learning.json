@@ -6,6 +6,8 @@
   "classical_dequantization": false,
   "novelty_established": false,
   "quantum_learner_implemented": false,
+  "bounded_controller_implemented": true,
+  "controller_backend": "finite_statevector_fixture_only",
   "general_sde_backend_implemented": false,
   "asymptotic_theorem_independently_verified": false,
   "global_constant_recoverable": false,
@@ -103,5 +105,173 @@
         "denominator": 6
       }
     }
-  ]
+  ],
+  "coordinate_profiles": [
+    {
+      "prime": 5,
+      "variables": 2,
+      "degree": 3,
+      "construction": "published",
+      "fixed_axis_per_tree_required": true,
+      "fresh_frame_per_learning_round_required": true,
+      "unknown_coefficients_mod_constant": 9,
+      "coordinate_rank_caps": {
+        "2": 3,
+        "3": 1
+      },
+      "sde_arities": {
+        "2": 1024,
+        "3": 46656
+      },
+      "line_acceptance_lower_bound": {
+        "numerator": 3,
+        "denominator": 5
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 1119744000,
+        "denominator": 1
+      },
+      "original_copy_abort_cap": 6718464000,
+      "source_abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "arithmetic_failure_budget_included": false,
+      "quantum_learner_implemented": false
+    },
+    {
+      "prime": 101,
+      "variables": 8,
+      "degree": 3,
+      "construction": "published",
+      "fixed_axis_per_tree_required": true,
+      "fresh_frame_per_learning_round_required": true,
+      "unknown_coefficients_mod_constant": 164,
+      "coordinate_rank_caps": {
+        "2": 9,
+        "3": 1
+      },
+      "sde_arities": {
+        "2": 40000,
+        "3": 46656
+      },
+      "line_acceptance_lower_bound": {
+        "numerator": 99,
+        "denominator": 101
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 100,
+        "denominator": 101
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 3503748731904,
+        "denominator": 11
+      },
+      "original_copy_abort_cap": 1911135671948,
+      "source_abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "arithmetic_failure_budget_included": false,
+      "quantum_learner_implemented": false
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "variables": 8,
+      "degree": 3,
+      "construction": "symmetric",
+      "fixed_axis_per_tree_required": true,
+      "fresh_frame_per_learning_round_required": true,
+      "unknown_coefficients_mod_constant": 164,
+      "coordinate_rank_caps": {
+        "2": 9,
+        "3": 1
+      },
+      "sde_arities": {
+        "2": 100,
+        "3": 6
+      },
+      "line_acceptance_lower_bound": {
+        "numerator": 170141183460469231731687303715884105725,
+        "denominator": 170141183460469231731687303715884105727
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 170141183460469231731687303715884105726,
+        "denominator": 170141183460469231731687303715884105727
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 1615482254052173647703440644105888165979784456136703529311681567261937367299648637764762439420598955913981547671191224,
+        "denominator": 16417502581831033005116266708393172418107770842142924971674291505885037942322170373990932674997568933154782225367
+      },
+      "original_copy_abort_cap": 590401,
+      "source_abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "arithmetic_failure_budget_included": false,
+      "quantum_learner_implemented": false
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "variables": 8,
+      "degree": 5,
+      "construction": "symmetric",
+      "fixed_axis_per_tree_required": true,
+      "fresh_frame_per_learning_round_required": true,
+      "unknown_coefficients_mod_constant": 1286,
+      "coordinate_rank_caps": {
+        "2": 165,
+        "3": 45,
+        "4": 9,
+        "5": 1
+      },
+      "sde_arities": {
+        "2": 27556,
+        "3": 4186,
+        "4": 100,
+        "5": 2
+      },
+      "line_acceptance_lower_bound": {
+        "numerator": 170141183460469231731687303715884105723,
+        "denominator": 170141183460469231731687303715884105727
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 170141183460469231731687303715884105726,
+        "denominator": 170141183460469231731687303715884105727
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 37767269584806684813683670498854787147785321678617540536139643167712648304708557091138441759159482825487479876390547531636045268781493790855678967239200721796843950884379893058155518545180719090687902200,
+        "denominator": 1273002404470478576629791184626197356178745954539635157921391704225983026759012496862942960428265132954105248305145590398037542082141643323668575135164130780236684240887646477751953565080429
+      },
+      "original_copy_abort_cap": 178007218771201,
+      "source_abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 6
+      },
+      "arithmetic_failure_budget_included": false,
+      "quantum_learner_implemented": false
+    }
+  ],
+  "coordinate_rank_bound_independently_reviewed": true,
+  "optimal_copy_complexity_established": false
 }

@@ -24,6 +24,14 @@ fail the HSP promise; abstract torsion and pairing labels also fail it.
 The next task is the representation-conversion theorem in Section 6,
 not additional nearby quaternion examples or rigidity bounds.
 
+The [2026-10-30 conversion audit](WEAK_SIEGEL_CONVERSION_AUDIT.md) checks
+the accessible primary literature and a concrete stabilization route.
+Its source-side Gram completion is constructive, but the natural
+complementary map has pullback NI-ell H^-1, not H. In dimension two,
+direct scalar repair forces ell|N. Independently signed weak torsion
+images also do not directly meet exact graph-interpolation inputs.
+The full2026/1142 text remains inaccessible; the original gap stays open.
+
 Follow-on classical baseline: SIEGEL_HOM_LATTICE_BASELINE.md proves that
 supplying a full evaluable Hom(A,B) lattice and its Rosati Gram matrix
 allows projective modular reconstruction of phi. Compatible right module

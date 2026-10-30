@@ -1,0 +1,233 @@
+{
+  "all_tensor_networks_dequantized_claim": false,
+  "ambient_group_enumerated": false,
+  "controls": {
+    "common_index_failure_f3": {
+      "ambient_group_enumerated": false,
+      "exact_subgroup_claim": false,
+      "failed_stage": 2,
+      "faithful_dimension": 6,
+      "final_compressed_action_verified": false,
+      "full_orbit_span_computed": false,
+      "full_tensor_materialized": false,
+      "general_luks_implemented": false,
+      "hardness_claim": false,
+      "physical_dimensions": [
+        3,
+        3
+      ],
+      "prefix_ranks": [
+        3,
+        1
+      ],
+      "prime": 3,
+      "quantum_algorithm_claim": false,
+      "returned_generator_count": null,
+      "scope": "finite-field sitewise TT; certified common J^nu=0 with nu<=p",
+      "site_count": 2,
+      "stage_certificates": [
+        {
+          "all_generators_order_dividing_p": true,
+          "ambient_lie_dimension": 2,
+          "augmented_dimension": 9,
+          "common_algebra_dimension": 4,
+          "common_nilpotency_index": 3,
+          "compressed_dimension": 3,
+          "faithful_projection_verified": true,
+          "generators_commute": true,
+          "guard_passed": true,
+          "guard_status": "COMMON_ALGEBRA_NILPOTENT_OK",
+          "input_generator_count": 2,
+          "kind": "prefix_image_stabilizer",
+          "linear_constraint_rank": 0,
+          "output_generator_count": 2,
+          "prefix_rank": 3,
+          "stabilizer_lie_dimension": 2,
+          "stage": 1,
+          "stage_preservation_verified": true
+        },
+        {
+          "all_generators_order_dividing_p": true,
+          "ambient_lie_dimension": null,
+          "augmented_dimension": 15,
+          "common_algebra_dimension": 8,
+          "common_nilpotency_index": 5,
+          "compressed_dimension": 9,
+          "generators_commute": true,
+          "guard_passed": false,
+          "guard_status": "COMMON_ALGEBRA_INDEX_EXCEEDS_PRIME",
+          "input_generator_count": 2,
+          "kind": "prefix_image_stabilizer",
+          "prefix_rank": 1,
+          "stabilizer_lie_dimension": null,
+          "stage": 2,
+          "stage_preservation_verified": false
+        }
+      ],
+      "status": "UNSUPPORTED_COMMON_INDEX",
+      "zero_tensor": false
+    },
+    "isotropic_nonzero_f5": {
+      "ambient_group_enumerated": false,
+      "exact_subgroup_claim": true,
+      "faithful_dimension": 2,
+      "final_compressed_action_verified": true,
+      "full_orbit_span_computed": false,
+      "full_tensor_materialized": false,
+      "general_luks_implemented": false,
+      "hardness_claim": false,
+      "physical_dimensions": [
+        2
+      ],
+      "prefix_ranks": [
+        1
+      ],
+      "prime": 5,
+      "quantum_algorithm_claim": false,
+      "returned_generator_count": 0,
+      "scope": "finite-field sitewise TT; certified common J^nu=0 with nu<=p",
+      "site_count": 1,
+      "stage_certificates": [
+        {
+          "all_generators_order_dividing_p": true,
+          "ambient_lie_dimension": 1,
+          "augmented_dimension": 4,
+          "common_algebra_dimension": 1,
+          "common_nilpotency_index": 2,
+          "compressed_dimension": 2,
+          "faithful_projection_verified": true,
+          "generators_commute": true,
+          "guard_passed": true,
+          "guard_status": "COMMON_ALGEBRA_NILPOTENT_OK",
+          "input_generator_count": 1,
+          "kind": "prefix_image_stabilizer",
+          "linear_constraint_rank": 1,
+          "output_generator_count": 0,
+          "prefix_rank": 1,
+          "stabilizer_lie_dimension": 0,
+          "stage": 1,
+          "stage_preservation_verified": true
+        }
+      ],
+      "status": "EXACT_STABILIZER",
+      "zero_tensor": false
+    },
+    "ut4_product_f5_n3": {
+      "ambient_group_enumerated": false,
+      "exact_subgroup_claim": true,
+      "expected_stabilizer": "product of upper-left UT3 factors; generally nonnormal",
+      "expected_stabilizer_log_p_order_analytic": 9,
+      "faithful_dimension": 12,
+      "final_compressed_action_verified": true,
+      "full_orbit_dimension_analytic": 64,
+      "full_orbit_dimension_source": "analytic: independent local UT4 last-column orbits span F_p^4",
+      "full_orbit_span_computed": false,
+      "full_tensor_materialized": false,
+      "general_luks_implemented": false,
+      "hardness_claim": false,
+      "input_tt_entry_count": 12,
+      "physical_dimensions": [
+        4,
+        4,
+        4
+      ],
+      "prefix_ranks": [
+        1,
+        1,
+        1
+      ],
+      "prime": 5,
+      "quantum_algorithm_claim": false,
+      "returned_generator_count": 9,
+      "scope": "finite-field sitewise TT; certified common J^nu=0 with nu<=p",
+      "site_count": 3,
+      "stage_certificates": [
+        {
+          "all_generators_order_dividing_p": true,
+          "ambient_lie_dimension": 18,
+          "augmented_dimension": 16,
+          "common_algebra_dimension": 18,
+          "common_nilpotency_index": 4,
+          "compressed_dimension": 4,
+          "faithful_projection_verified": true,
+          "generators_commute": false,
+          "guard_passed": true,
+          "guard_status": "COMMON_ALGEBRA_NILPOTENT_OK",
+          "input_generator_count": 9,
+          "kind": "prefix_image_stabilizer",
+          "linear_constraint_rank": 3,
+          "output_generator_count": 15,
+          "prefix_rank": 1,
+          "stabilizer_lie_dimension": 15,
+          "stage": 1,
+          "stage_preservation_verified": true
+        },
+        {
+          "all_generators_order_dividing_p": true,
+          "ambient_lie_dimension": 15,
+          "augmented_dimension": 16,
+          "common_algebra_dimension": 15,
+          "common_nilpotency_index": 4,
+          "compressed_dimension": 4,
+          "faithful_projection_verified": true,
+          "generators_commute": false,
+          "guard_passed": true,
+          "guard_status": "COMMON_ALGEBRA_NILPOTENT_OK",
+          "input_generator_count": 15,
+          "kind": "prefix_image_stabilizer",
+          "linear_constraint_rank": 3,
+          "output_generator_count": 12,
+          "prefix_rank": 1,
+          "stabilizer_lie_dimension": 12,
+          "stage": 2,
+          "stage_preservation_verified": true
+        },
+        {
+          "all_generators_order_dividing_p": true,
+          "ambient_lie_dimension": 12,
+          "augmented_dimension": 16,
+          "common_algebra_dimension": 12,
+          "common_nilpotency_index": 4,
+          "compressed_dimension": 4,
+          "faithful_projection_verified": true,
+          "generators_commute": false,
+          "guard_passed": true,
+          "guard_status": "COMMON_ALGEBRA_NILPOTENT_OK",
+          "input_generator_count": 12,
+          "kind": "prefix_image_stabilizer",
+          "linear_constraint_rank": 3,
+          "output_generator_count": 9,
+          "prefix_rank": 1,
+          "stabilizer_lie_dimension": 9,
+          "stage": 3,
+          "stage_preservation_verified": true
+        }
+      ],
+      "status": "EXACT_STABILIZER",
+      "zero_tensor": false
+    }
+  },
+  "full_tensor_materialized": false,
+  "general_luks_implemented": false,
+  "hardness_claim": false,
+  "independent_mathematical_review": {
+    "general_reduction_reviewer": "Lorentz",
+    "guarded_algorithm_and_code_reviewer": "McClintock",
+    "kind": "automated adversarial review, not human peer review or formal verification",
+    "outcome": "no remaining correctness objection in reviewed scope; provenance test repaired",
+    "scope_note": "research/TENSOR_TRAIN_CLASSICAL_FILTER.md"
+  },
+  "quantum_algorithm_claim": false,
+  "schema_version": 1,
+  "scope": "constructive finite-field TT baseline under stagewise common-J guard only",
+  "source_hash_scope": "solver, tests, and direct helper modules; parent research note excluded",
+  "source_hashes_sha256": {
+    "tests/test_tensor_train_pgroup_stabilizer.py": "09617a7e64f3373401e7e90580a86cefdf723bce56b5d17a78dd8f064262651e",
+    "theorems/hpgp_coset_interface.py": "d4a0659d8f7ee043d9ac7b1578822a931008fc32a052c61ac092de33d5c9a83f",
+    "theorems/moore_common_algebra_stabilizer_backend.py": "d94c78a0407bbf895bc58e7cb2dd1bd1f3a6d953c6dcb57c87869035c48ef942",
+    "theorems/prime_character_opi.py": "533cf9a99c1ead9b68c379b62013f19f491186b6a7329ca5ca21e28fab5c518b",
+    "theorems/symbolic_scalar_phase_erasure.py": "03bef038f7cf3a856b6bea2c87b1e909e7890b0331bd50666fe117a426dff483",
+    "theorems/tensor_train_pgroup_stabilizer.py": "78edc1574d1baaaafe9fbe08ceaa141bec9be7c04b8587732367c12884244bce",
+    "theorems/ut5_matrix_phase_alignment.py": "3029d273f9a6873d049fc5961c33f28f638a2a84d97c58e85e09ad9858575c98"
+  }
+}

@@ -1,5 +1,11 @@
 # Bounded-Codimension HSP: Public Abelian-Ideal Reduction
 
+30 October follow-up: the [hybrid parameter bound](BOUNDED_CODIMENSION_HYBRID_BOUND.md)
+combines the same reduction with whole-grade cancellation and a paid
+classical collision branch. Conditional on the same Rees proof, its
+all-prime parameter factor is `2^O(k^2 log(k+2))`, improving the historical
+scalar-line bound below. It establishes no native application or speedup.
+
 Date: 2026-10-23. Status: LOCAL PROOF; independent review pending.
 Public algebra implemented and tested. No quantum receiver, unknown hidden
 intersection learner, useful application, novelty certification or speedup

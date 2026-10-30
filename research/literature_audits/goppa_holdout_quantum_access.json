@@ -1,0 +1,33 @@
+{
+  "audit_id": "AUDIT-GOPPA-HOLDOUT-QUANTUM-ACCESS",
+  "date": "2026-10-30",
+  "primary_sources": [
+    {
+      "literature_id": "gijs-goppa-pir-2026",
+      "url": "https://eprint.iacr.org/2026/1630",
+      "version": "2026-08-27",
+      "snapshot": "research/literature_cache/eprint_2026_1630.pdf",
+      "sha256": "0de9deb8bfc00c9479e666476df4e71415d5dbcf24b06c9ce5cc5ae5b9af0a8c",
+      "inspected": "Sections 1-5, Claim 6.2, Theorem 7.2 and referenced recovery assumptions",
+      "mechanism": "Homogeneous multilinear Hasse-jet holdout, hidden-curve Hermite interpolation, binary Reed-Muller nonvanishing",
+      "supports": "Provable classical quasipolynomial public-key distinguishing under stated parameters",
+      "does_not_supply": "Unconditional key recovery, a quantum solver, or a characteristic-preserving complex lift"
+    },
+    {
+      "literature_id": "weis-gijs-key-recovery-2026",
+      "url": "https://eprint.iacr.org/2026/1984",
+      "version": "v0.5, 2026-10-06",
+      "snapshot": "research/literature_cache/eprint_2026_1984_v05.pdf",
+      "sha256": "822d2cd3cc515143072a543f1bb743ea9b29651d5be03dd56f948e157d196652",
+      "inspected": "Sections 3-9 and Appendices E/H; Proposition 7 tiled multiplication",
+      "mechanism": "Sharper Goppa constraints, reduced jets, gradient or column-kernel extraction and local-relation quotients",
+      "supports": "Stronger conditional classical baseline with version-matched operation, traffic and memory costs",
+      "does_not_supply": "Unconditional full-size recovery or measured standard-parameter attack"
+    }
+  ],
+  "local_result": "The actual homogeneous multilinear jet operator has a binary holdout acceptance that its complex lift rejects, with nonzero condition number sqrt(5) and kernel overlap 4/5.",
+  "scope": "Exact operator counterexample, not a claimed Goppa-instance counterexample or general quantum no-go",
+  "next_obligation": "Construct a compact parity-preserving representation of the local-relation quotient with a direct useful output map, beating the matrix-free classical baseline",
+  "accepted_candidate": false,
+  "speedup_claim_allowed": false
+}

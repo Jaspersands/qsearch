@@ -1,7 +1,23 @@
 """Q-Search research-lab CLI.
 
 Commands:
+  python qsearch.py holdout-jets --write
+  python qsearch.py iterated-stabilizer --write
+  python qsearch.py inverse-trace-sampling --write
+  python qsearch.py inverse-trace-sampling --hash-cells --bits 5 --write
+  python qsearch.py inverse-trace-sampling --quadratic-cells --input research/classical_baselines/inverse_trace_hash_cells_n11.json --write
+  python qsearch.py prime-power-sde --write
+  python qsearch.py prime-power-sde --random-kernel --write
+  python qsearch.py prime-power-sde --span-blocks --write
+  python qsearch.py prime-power-sde --pilots --write
+  python qsearch.py prime-power-sde --receiver-policy --write
+  python qsearch.py inverse-trace-norm --bits 17 --write
   python qsearch.py audit
+  python qsearch.py inverse-trace-smt --bits 17 --write
+  python qsearch.py cubic-sde --write
+  python qsearch.py odd-power-sde --write
+  python qsearch.py power-sde --write
+  python qsearch.py phase-copy-baseline --write
   python qsearch.py literature
   python qsearch.py hypothesize
   python qsearch.py hidden-shift

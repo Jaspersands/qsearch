@@ -1,0 +1,302 @@
+{
+  "all_auxiliary_choices_covered_within_proposal_family": true,
+  "approximation_control": {
+    "conditional_on_distance_promise": true,
+    "count": {
+      "denominator": 3,
+      "numerator": 16
+    },
+    "distance_promise_verified": false,
+    "epsilon": {
+      "denominator": 4,
+      "numerator": 3
+    },
+    "projective_words": 0,
+    "relative_error_upper": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "status": "PROMISED_DISTANCE_APPROXIMATION"
+  },
+  "default_count_interface_has_resource_cap": true,
+  "exact_precision_control": {
+    "conditional_on_distance_promise": false,
+    "count": 6,
+    "epsilon": {
+      "denominator": 4,
+      "numerator": 1
+    },
+    "projective_words": 1,
+    "projective_work_upper": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "rowspace_distance": 4,
+    "status": "EXACT_COUNT"
+  },
+  "fixed_field_forecasts": [
+    {
+      "ag_promise_verified": false,
+      "e": 8,
+      "length": 176,
+      "native_matrix_generated": false,
+      "p": 1019,
+      "previous_large_field_range": true,
+      "rank": 43,
+      "root_count_relative_error_bound": "1/(p^rank-1)",
+      "rowspace_distance_lower_promise": 93,
+      "scope": "conditional_parameter_forecast_not_measured_runtime",
+      "trial_success_upper_power_of_two": 0,
+      "until_success_expected_trials_lower_power_of_two": 0
+    },
+    {
+      "ag_promise_verified": false,
+      "e": 64,
+      "length": 1408,
+      "native_matrix_generated": false,
+      "p": 1019,
+      "previous_large_field_range": true,
+      "rank": 323,
+      "root_count_relative_error_bound": "1/(p^rank-1)",
+      "rowspace_distance_lower_promise": 765,
+      "scope": "conditional_parameter_forecast_not_measured_runtime",
+      "trial_success_upper_power_of_two": 0,
+      "until_success_expected_trials_lower_power_of_two": 0
+    },
+    {
+      "ag_promise_verified": false,
+      "e": 16384,
+      "length": 360448,
+      "native_matrix_generated": false,
+      "p": 1019,
+      "previous_large_field_range": true,
+      "rank": 81923,
+      "root_count_relative_error_bound": "1/(p^rank-1)",
+      "rowspace_distance_lower_promise": 196605,
+      "scope": "conditional_parameter_forecast_not_measured_runtime",
+      "trial_success_upper_power_of_two": 0,
+      "until_success_expected_trials_lower_power_of_two": 0
+    },
+    {
+      "ag_promise_verified": false,
+      "e": 23599,
+      "length": 519178,
+      "native_matrix_generated": false,
+      "p": 1019,
+      "previous_large_field_range": true,
+      "rank": 117998,
+      "root_count_relative_error_bound": "1/(p^rank-1)",
+      "rowspace_distance_lower_promise": 283185,
+      "scope": "conditional_parameter_forecast_not_measured_runtime",
+      "trial_success_upper_power_of_two": 0,
+      "until_success_expected_trials_lower_power_of_two": 0
+    },
+    {
+      "ag_promise_verified": false,
+      "e": 1048576,
+      "length": 23068672,
+      "native_matrix_generated": false,
+      "p": 1019,
+      "previous_large_field_range": false,
+      "rank": 5242883,
+      "root_count_relative_error_bound": "1/(p^rank-1)",
+      "rowspace_distance_lower_promise": 12582909,
+      "scope": "conditional_parameter_forecast_not_measured_runtime",
+      "trial_success_upper_power_of_two": -4,
+      "until_success_expected_trials_lower_power_of_two": 4
+    },
+    {
+      "ag_promise_verified": false,
+      "e": 16777216,
+      "length": 369098752,
+      "native_matrix_generated": false,
+      "p": 1019,
+      "previous_large_field_range": false,
+      "rank": 83886083,
+      "root_count_relative_error_bound": "1/(p^rank-1)",
+      "rowspace_distance_lower_promise": 201326589,
+      "scope": "conditional_parameter_forecast_not_measured_runtime",
+      "trial_success_upper_power_of_two": -79,
+      "until_success_expected_trials_lower_power_of_two": 79
+    },
+    {
+      "ag_promise_verified": false,
+      "e": 4294967296,
+      "length": 94489280512,
+      "native_matrix_generated": false,
+      "p": 1019,
+      "previous_large_field_range": false,
+      "rank": 21474836483,
+      "root_count_relative_error_bound": "1/(p^rank-1)",
+      "rowspace_distance_lower_promise": 51539607549,
+      "scope": "conditional_parameter_forecast_not_measured_runtime",
+      "trial_success_upper_power_of_two": -20680,
+      "until_success_expected_trials_lower_power_of_two": 20680
+    }
+  ],
+  "general_classical_hardness": false,
+  "ideal_size_biased_coset_proposal_included": true,
+  "native_search_or_uniform_sampler_supplied_by_counting": false,
+  "prefix_count_countercontrols": [
+    {
+      "completion": {
+        "conditional_on_distance_promise": false,
+        "count": 0,
+        "projective_words": 1,
+        "rowspace_distance": 1,
+        "status": "EXACT_COUNT"
+      },
+      "length": 4,
+      "nonzero_prefix": [
+        1,
+        1,
+        1
+      ],
+      "root": {
+        "conditional_on_distance_promise": false,
+        "count": 6,
+        "projective_words": 1,
+        "rowspace_distance": 4,
+        "status": "EXACT_COUNT"
+      },
+      "root_fourier_slack": {
+        "denominator": 8,
+        "numerator": 1
+      },
+      "root_main_term": {
+        "denominator": 3,
+        "numerator": 16
+      }
+    },
+    {
+      "completion": {
+        "conditional_on_distance_promise": false,
+        "count": 0,
+        "projective_words": 1,
+        "rowspace_distance": 1,
+        "status": "EXACT_COUNT"
+      },
+      "length": 7,
+      "nonzero_prefix": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "root": {
+        "conditional_on_distance_promise": false,
+        "count": 42,
+        "projective_words": 1,
+        "rowspace_distance": 7,
+        "status": "EXACT_COUNT"
+      },
+      "root_fourier_slack": {
+        "denominator": 64,
+        "numerator": 1
+      },
+      "root_main_term": {
+        "denominator": 3,
+        "numerator": 128
+      }
+    },
+    {
+      "completion": {
+        "conditional_on_distance_promise": false,
+        "count": 0,
+        "projective_words": 1,
+        "rowspace_distance": 1,
+        "status": "EXACT_COUNT"
+      },
+      "length": 13,
+      "nonzero_prefix": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "root": {
+        "conditional_on_distance_promise": false,
+        "count": 2730,
+        "projective_words": 1,
+        "rowspace_distance": 13,
+        "status": "EXACT_COUNT"
+      },
+      "root_fourier_slack": {
+        "denominator": 4096,
+        "numerator": 1
+      },
+      "root_main_term": {
+        "denominator": 3,
+        "numerator": 8192
+      }
+    },
+    {
+      "completion": {
+        "conditional_on_distance_promise": false,
+        "count": 0,
+        "projective_words": 1,
+        "rowspace_distance": 1,
+        "status": "EXACT_COUNT"
+      },
+      "length": 25,
+      "nonzero_prefix": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "root": {
+        "conditional_on_distance_promise": false,
+        "count": 11184810,
+        "projective_words": 1,
+        "rowspace_distance": 25,
+        "status": "EXACT_COUNT"
+      },
+      "root_fourier_slack": {
+        "denominator": 16777216,
+        "numerator": 1
+      },
+      "root_main_term": {
+        "denominator": 3,
+        "numerator": 33554432
+      }
+    }
+  ],
+  "quantum_advantage": false,
+  "source_hashes": {
+    "research/NORM_SAMPLER_CLOCK_FALSIFIER.md": "9d3b5093eac1798b322c282663ae9be06ce79a15f2a52fdb0b5cd0ef4c3c1739",
+    "tests/test_norm_sampler_clock.py": "13ee98100f2fa301ec0f6da05197044c4f216355cf47565259cd0f591987d4f1",
+    "theorems/norm_sampler_clock.py": "fda4493536a17d3d7a1d42463cf53e9c17cdca0518c756b8c470f4b5562d5461"
+  },
+  "status": "SCOPED_CLOCK_FALSIFIER_AND_CONDITIONAL_COUNTING_SCHEME"
+}

@@ -1,0 +1,1237 @@
+{
+  "status": "BOUNDED_NATIVE_HASH_CELL_PROBE",
+  "instance": {
+    "bits": 5,
+    "points": [
+      14,
+      19,
+      12,
+      27,
+      20,
+      29,
+      8,
+      24,
+      28,
+      6,
+      11,
+      17,
+      0,
+      3,
+      21,
+      25,
+      2,
+      30,
+      18,
+      10,
+      31,
+      1,
+      5,
+      13,
+      7
+    ],
+    "targets": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "checks": 3,
+    "field_modulus_coefficients": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ]
+  },
+  "instance_sha256": "e581233c59486b13df32bc556074246d45f3d0ead1a1dc05f41fd0f5cacb3830",
+  "residual": {
+    "residual_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "accepted_prefix": [
+      [
+        4,
+        29
+      ],
+      [
+        5,
+        22
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        7,
+        29
+      ],
+      [
+        8,
+        24
+      ],
+      [
+        9,
+        23
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        11,
+        24
+      ],
+      [
+        12,
+        24
+      ],
+      [
+        13,
+        20
+      ],
+      [
+        14,
+        21
+      ],
+      [
+        15,
+        24
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        18,
+        3
+      ],
+      [
+        19,
+        20
+      ],
+      [
+        20,
+        22
+      ],
+      [
+        21,
+        17
+      ],
+      [
+        22,
+        7
+      ],
+      [
+        23,
+        25
+      ],
+      [
+        24,
+        21
+      ]
+    ],
+    "residual_syndrome": [
+      13,
+      18,
+      7
+    ],
+    "prefix_seed": 1029,
+    "free_field_variables": 1,
+    "binary_coordinates": 4,
+    "hash_rows_count": 1,
+    "trace_one_element": 1,
+    "trace_kernel_basis": [
+      2,
+      4,
+      9,
+      16
+    ],
+    "source": "FIXED_ACCEPTED_PREFIX",
+    "anchor_u": null,
+    "supplied_anchor_full_word": null,
+    "anchor_acquisition_charged": false,
+    "residual_variance_power2_upper": 1,
+    "pointwise_good_syndrome_certified": false
+  },
+  "hash_seed": 1030,
+  "predeclared_cells": 3,
+  "known_anchor_supplied_to_solver": false,
+  "seeded_diagnostics_not_physical_iid_certification": true,
+  "preparation_seconds": 0.0016506669926457107,
+  "cells": [
+    {
+      "cell_index": 0,
+      "hash_rows": [
+        15
+      ],
+      "hash_rhs": 0,
+      "enumeration": {
+        "status": "COMPLETE",
+        "complete": true,
+        "stop_reason": "final_unsat",
+        "method": "Z3_projected_native_hash_cell_enumeration",
+        "scope": "supplied_residual_cell_only",
+        "instance": {
+          "bits": 5,
+          "points": [
+            14,
+            19,
+            12,
+            27,
+            20,
+            29,
+            8,
+            24,
+            28,
+            6,
+            11,
+            17,
+            0,
+            3,
+            21,
+            25,
+            2,
+            30,
+            18,
+            10,
+            31,
+            1,
+            5,
+            13,
+            7
+          ],
+          "targets": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "checks": 3,
+          "field_modulus_coefficients": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "instance_sha256": "e581233c59486b13df32bc556074246d45f3d0ead1a1dc05f41fd0f5cacb3830",
+        "residual_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "residual_word_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "residual_syndrome": [
+          13,
+          18,
+          7
+        ],
+        "pivot_indices": [
+          0,
+          1,
+          2
+        ],
+        "free_indices": [
+          3
+        ],
+        "pivot_constants": [
+          11,
+          31,
+          25
+        ],
+        "pivot_coefficients": [
+          [
+            29
+          ],
+          [
+            6
+          ],
+          [
+            26
+          ]
+        ],
+        "trace_mask": 9,
+        "trace_one": 1,
+        "trace_pivot_bit": 0,
+        "trace_free_bit_positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "trace_kernel_basis": [
+          2,
+          4,
+          9,
+          16
+        ],
+        "u_bit_order": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "u_bit_order_description": "bit s*(bits-1)+j selects trace_kernel_basis[j] at free_indices[s]",
+        "B": 4,
+        "hash_rows": [
+          15
+        ],
+        "hash_rhs": 0,
+        "hash_rank": 1,
+        "hash_system": {
+          "rank": 1,
+          "consistent": true,
+          "rref": [
+            [
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "pivots": [
+            0
+          ],
+          "free": [
+            1,
+            2,
+            3
+          ]
+        },
+        "hash_free_bits": 3,
+        "symbolic_hash_free_bits": 3,
+        "timeout_ms": 10000,
+        "timeout_scope": "single_post_setup_enumeration_deadline",
+        "solver_resource_limit": 50000000,
+        "resource_limit_scope": "per_check_requested",
+        "max_models": 16,
+        "solver_seed": 0,
+        "known_u": null,
+        "seed_model_count": 0,
+        "solver_model_count": 2,
+        "solutions": [
+          {
+            "u": 0,
+            "residual_word": [
+              22,
+              25,
+              3,
+              1
+            ],
+            "independently_verified": true,
+            "origin": "solver"
+          },
+          {
+            "u": 5,
+            "residual_word": [
+              6,
+              3,
+              17,
+              25
+            ],
+            "independently_verified": true,
+            "origin": "solver"
+          }
+        ],
+        "model_count": 2,
+        "cell_cardinality": 2,
+        "first_verified_model_seconds": 0.07996316700882744,
+        "first_solver_model_seconds": 0.07996316700882744,
+        "completion_seconds": 0.09513495900318958,
+        "solver_calls": [
+          {
+            "call_index": 0,
+            "status": "SAT",
+            "timeout_ms": 9999,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 269,
+              "sat mk clause nary": 781,
+              "sat mk var": 294,
+              "sat conflicts": 45,
+              "sat decisions": 53,
+              "sat propagations 2ary": 1304,
+              "sat propagations nary": 2744,
+              "sat minimized lits": 21,
+              "sat units": 8,
+              "sat backjumps": 45,
+              "num allocs": 27943,
+              "rlimit count": 7881,
+              "max memory": 25.07,
+              "memory": 16.79,
+              "time": 0.008
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.008373917007702403,
+            "projected_u": 0,
+            "model_extraction_seconds": 0.0003820830024778843,
+            "verified": true,
+            "verification_errors": [],
+            "verification_seconds": 0.00012308399891480803,
+            "blocking_seconds": 0.00042383300024084747
+          },
+          {
+            "call_index": 1,
+            "status": "SAT",
+            "timeout_ms": 9990,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 269,
+              "sat mk clause nary": 781,
+              "sat mk var": 294,
+              "sat conflicts": 45,
+              "sat decisions": 53,
+              "sat propagations 2ary": 1304,
+              "sat propagations nary": 2744,
+              "sat minimized lits": 21,
+              "sat units": 8,
+              "sat backjumps": 45,
+              "sat del clause": 43,
+              "sat elim clauses": 23,
+              "sat elim literals": 33,
+              "num allocs": 67015,
+              "rlimit count": 17734,
+              "max memory": 25.1,
+              "memory": 16.82,
+              "time": 0.006
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.0070684579986846074,
+            "projected_u": 5,
+            "model_extraction_seconds": 0.0002945419983007014,
+            "verified": true,
+            "verification_errors": [],
+            "verification_seconds": 7.266600732691586e-05,
+            "blocking_seconds": 0.0001731670054141432
+          },
+          {
+            "call_index": 2,
+            "status": "UNSAT",
+            "timeout_ms": 9981,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 269,
+              "sat mk clause nary": 781,
+              "sat mk var": 294,
+              "sat conflicts": 45,
+              "sat decisions": 53,
+              "sat propagations 2ary": 1304,
+              "sat propagations nary": 2744,
+              "sat minimized lits": 21,
+              "sat units": 8,
+              "sat backjumps": 45,
+              "sat del clause": 43,
+              "sat elim clauses": 23,
+              "sat elim literals": 33,
+              "sat subs resolution dyn": 10,
+              "num allocs": 140275,
+              "rlimit count": 30861,
+              "max memory": 25.12,
+              "memory": 16.8,
+              "time": 0.005
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.005531000002520159
+          }
+        ],
+        "solver_call_counts": {
+          "SAT": 2,
+          "UNSAT": 1,
+          "UNKNOWN": 0
+        },
+        "solver_check_errors": 0,
+        "backend_errors": [],
+        "projected_blocks": 2,
+        "duplicate_models": 0,
+        "invalid_models": 0,
+        "final_solver_status": "UNSAT",
+        "reason_unknown": null,
+        "validation_seconds": 0.00021050000214017928,
+        "field_setup_seconds": 0.00028158399800304323,
+        "hash_elimination_seconds": 4.0583006921224296e-05,
+        "encoding_seconds": 0.07010408300266135,
+        "check_seconds": 0.02097337500890717,
+        "verification_seconds": 0.0001957500062417239,
+        "model_extraction_seconds": 0.0006766250007785857,
+        "blocking_seconds": 0.0005970000056549907,
+        "seed_verification_seconds": 0.0,
+        "seed_blocking_seconds": 0.0,
+        "deduplication_seconds": 3.3339892979711294e-06,
+        "statistics_seconds": 0.0017283749912166968,
+        "uniform_sampler": false,
+        "hardness_evidence": false,
+        "polynomial_enumeration_established": false,
+        "whole_workflow_wall_clock_cap_enforced": false,
+        "completeness_basis": "solver_reported_final_UNSAT_after_projected_blocking",
+        "completeness_independently_certified": false,
+        "unsat_proof_artifact": null,
+        "z3_version": "4.15.3",
+        "setup_seconds": 0.07070500000554603,
+        "enumeration_seconds": 0.02443470899015665,
+        "total_seconds": 0.09513970899570268
+      },
+      "independent_reference": {
+        "status": "EXACT_FULL_COORDINATE_SPACE",
+        "solutions": [
+          0,
+          5
+        ],
+        "checked": 16,
+        "shared_hash_elimination": false,
+        "seconds": 0.0004644170112442225,
+        "reported_complete_set_matches": true
+      }
+    },
+    {
+      "cell_index": 1,
+      "hash_rows": [
+        6
+      ],
+      "hash_rhs": 1,
+      "enumeration": {
+        "status": "COMPLETE",
+        "complete": true,
+        "stop_reason": "final_unsat",
+        "method": "Z3_projected_native_hash_cell_enumeration",
+        "scope": "supplied_residual_cell_only",
+        "instance": {
+          "bits": 5,
+          "points": [
+            14,
+            19,
+            12,
+            27,
+            20,
+            29,
+            8,
+            24,
+            28,
+            6,
+            11,
+            17,
+            0,
+            3,
+            21,
+            25,
+            2,
+            30,
+            18,
+            10,
+            31,
+            1,
+            5,
+            13,
+            7
+          ],
+          "targets": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "checks": 3,
+          "field_modulus_coefficients": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "instance_sha256": "e581233c59486b13df32bc556074246d45f3d0ead1a1dc05f41fd0f5cacb3830",
+        "residual_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "residual_word_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "residual_syndrome": [
+          13,
+          18,
+          7
+        ],
+        "pivot_indices": [
+          0,
+          1,
+          2
+        ],
+        "free_indices": [
+          3
+        ],
+        "pivot_constants": [
+          11,
+          31,
+          25
+        ],
+        "pivot_coefficients": [
+          [
+            29
+          ],
+          [
+            6
+          ],
+          [
+            26
+          ]
+        ],
+        "trace_mask": 9,
+        "trace_one": 1,
+        "trace_pivot_bit": 0,
+        "trace_free_bit_positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "trace_kernel_basis": [
+          2,
+          4,
+          9,
+          16
+        ],
+        "u_bit_order": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "u_bit_order_description": "bit s*(bits-1)+j selects trace_kernel_basis[j] at free_indices[s]",
+        "B": 4,
+        "hash_rows": [
+          6
+        ],
+        "hash_rhs": 1,
+        "hash_rank": 1,
+        "hash_system": {
+          "rank": 1,
+          "consistent": true,
+          "rref": [
+            [
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          ],
+          "pivots": [
+            1
+          ],
+          "free": [
+            0,
+            2,
+            3
+          ]
+        },
+        "hash_free_bits": 3,
+        "symbolic_hash_free_bits": 3,
+        "timeout_ms": 10000,
+        "timeout_scope": "single_post_setup_enumeration_deadline",
+        "solver_resource_limit": 50000000,
+        "resource_limit_scope": "per_check_requested",
+        "max_models": 16,
+        "solver_seed": 1,
+        "known_u": null,
+        "seed_model_count": 0,
+        "solver_model_count": 1,
+        "solutions": [
+          {
+            "u": 5,
+            "residual_word": [
+              6,
+              3,
+              17,
+              25
+            ],
+            "independently_verified": true,
+            "origin": "solver"
+          }
+        ],
+        "model_count": 1,
+        "cell_cardinality": 1,
+        "first_verified_model_seconds": 0.012844458993640728,
+        "first_solver_model_seconds": 0.012844458993640728,
+        "completion_seconds": 0.016268459003185853,
+        "solver_calls": [
+          {
+            "call_index": 0,
+            "status": "SAT",
+            "timeout_ms": 9999,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 284,
+              "sat mk clause nary": 770,
+              "sat mk var": 289,
+              "sat del clause": 43,
+              "sat conflicts": 48,
+              "sat decisions": 64,
+              "sat propagations 2ary": 1469,
+              "sat propagations nary": 2605,
+              "sat minimized lits": 54,
+              "sat subs resolution dyn": 3,
+              "sat units": 24,
+              "sat backjumps": 48,
+              "sat elim clauses": 23,
+              "sat elim literals": 31,
+              "num allocs": 217423,
+              "rlimit count": 39067,
+              "max memory": 25.12,
+              "memory": 16.83,
+              "time": 0.004
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.004864292001002468,
+            "projected_u": 5,
+            "model_extraction_seconds": 0.00018225000530947,
+            "verified": true,
+            "verification_errors": [],
+            "verification_seconds": 7.68329919083044e-05,
+            "blocking_seconds": 0.00016591699386481196
+          },
+          {
+            "call_index": 1,
+            "status": "UNSAT",
+            "timeout_ms": 9993,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 284,
+              "sat mk clause nary": 770,
+              "sat mk var": 289,
+              "sat del clause": 43,
+              "sat conflicts": 48,
+              "sat decisions": 64,
+              "sat propagations 2ary": 1469,
+              "sat propagations nary": 2605,
+              "sat minimized lits": 54,
+              "sat subs resolution dyn": 3,
+              "sat units": 24,
+              "sat backjumps": 48,
+              "sat elim clauses": 23,
+              "sat elim literals": 31,
+              "num allocs": 337884,
+              "rlimit count": 50297,
+              "max memory": 25.12,
+              "memory": 16.8,
+              "time": 0.002
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.0028234159981366247
+          }
+        ],
+        "solver_call_counts": {
+          "SAT": 1,
+          "UNSAT": 1,
+          "UNKNOWN": 0
+        },
+        "solver_check_errors": 0,
+        "backend_errors": [],
+        "projected_blocks": 1,
+        "duplicate_models": 0,
+        "invalid_models": 0,
+        "final_solver_status": "UNSAT",
+        "reason_unknown": null,
+        "validation_seconds": 2.6084002456627786e-05,
+        "field_setup_seconds": 0.00016470799164380878,
+        "hash_elimination_seconds": 7.87919998401776e-05,
+        "encoding_seconds": 0.00656254100613296,
+        "check_seconds": 0.007687707999139093,
+        "verification_seconds": 7.68329919083044e-05,
+        "model_extraction_seconds": 0.00018225000530947,
+        "blocking_seconds": 0.00016591699386481196,
+        "seed_verification_seconds": 0.0,
+        "seed_blocking_seconds": 0.0,
+        "deduplication_seconds": 1.4169927453622222e-06,
+        "statistics_seconds": 0.0011695419962052256,
+        "uniform_sampler": false,
+        "hardness_evidence": false,
+        "polynomial_enumeration_established": false,
+        "whole_workflow_wall_clock_cap_enforced": false,
+        "completeness_basis": "solver_reported_final_UNSAT_after_projected_blocking",
+        "completeness_independently_certified": false,
+        "unsat_proof_artifact": null,
+        "z3_version": "4.15.3",
+        "setup_seconds": 0.006887625000672415,
+        "enumeration_seconds": 0.00938508399121929,
+        "total_seconds": 0.016272708991891704
+      },
+      "independent_reference": {
+        "status": "EXACT_FULL_COORDINATE_SPACE",
+        "solutions": [
+          5
+        ],
+        "checked": 16,
+        "shared_hash_elimination": false,
+        "seconds": 0.000646417000098154,
+        "reported_complete_set_matches": true
+      }
+    },
+    {
+      "cell_index": 2,
+      "hash_rows": [
+        9
+      ],
+      "hash_rhs": 0,
+      "enumeration": {
+        "status": "COMPLETE",
+        "complete": true,
+        "stop_reason": "final_unsat",
+        "method": "Z3_projected_native_hash_cell_enumeration",
+        "scope": "supplied_residual_cell_only",
+        "instance": {
+          "bits": 5,
+          "points": [
+            14,
+            19,
+            12,
+            27,
+            20,
+            29,
+            8,
+            24,
+            28,
+            6,
+            11,
+            17,
+            0,
+            3,
+            21,
+            25,
+            2,
+            30,
+            18,
+            10,
+            31,
+            1,
+            5,
+            13,
+            7
+          ],
+          "targets": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "checks": 3,
+          "field_modulus_coefficients": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "instance_sha256": "e581233c59486b13df32bc556074246d45f3d0ead1a1dc05f41fd0f5cacb3830",
+        "residual_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "residual_word_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "residual_syndrome": [
+          13,
+          18,
+          7
+        ],
+        "pivot_indices": [
+          0,
+          1,
+          2
+        ],
+        "free_indices": [
+          3
+        ],
+        "pivot_constants": [
+          11,
+          31,
+          25
+        ],
+        "pivot_coefficients": [
+          [
+            29
+          ],
+          [
+            6
+          ],
+          [
+            26
+          ]
+        ],
+        "trace_mask": 9,
+        "trace_one": 1,
+        "trace_pivot_bit": 0,
+        "trace_free_bit_positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "trace_kernel_basis": [
+          2,
+          4,
+          9,
+          16
+        ],
+        "u_bit_order": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "u_bit_order_description": "bit s*(bits-1)+j selects trace_kernel_basis[j] at free_indices[s]",
+        "B": 4,
+        "hash_rows": [
+          9
+        ],
+        "hash_rhs": 0,
+        "hash_rank": 1,
+        "hash_system": {
+          "rank": 1,
+          "consistent": true,
+          "rref": [
+            [
+              1,
+              0,
+              0,
+              1,
+              0
+            ]
+          ],
+          "pivots": [
+            0
+          ],
+          "free": [
+            1,
+            2,
+            3
+          ]
+        },
+        "hash_free_bits": 3,
+        "symbolic_hash_free_bits": 3,
+        "timeout_ms": 10000,
+        "timeout_scope": "single_post_setup_enumeration_deadline",
+        "solver_resource_limit": 50000000,
+        "resource_limit_scope": "per_check_requested",
+        "max_models": 16,
+        "solver_seed": 2,
+        "known_u": null,
+        "seed_model_count": 0,
+        "solver_model_count": 1,
+        "solutions": [
+          {
+            "u": 0,
+            "residual_word": [
+              22,
+              25,
+              3,
+              1
+            ],
+            "independently_verified": true,
+            "origin": "solver"
+          }
+        ],
+        "model_count": 1,
+        "cell_cardinality": 1,
+        "first_verified_model_seconds": 0.00790129198867362,
+        "first_solver_model_seconds": 0.00790129198867362,
+        "completion_seconds": 0.011726917000487447,
+        "solver_calls": [
+          {
+            "call_index": 0,
+            "status": "SAT",
+            "timeout_ms": 9999,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 286,
+              "sat mk clause nary": 761,
+              "sat mk var": 290,
+              "sat del clause": 43,
+              "sat conflicts": 37,
+              "sat decisions": 53,
+              "sat propagations 2ary": 1230,
+              "sat propagations nary": 2199,
+              "sat minimized lits": 33,
+              "sat subs resolution dyn": 1,
+              "sat units": 16,
+              "sat backjumps": 37,
+              "sat elim clauses": 23,
+              "sat elim literals": 31,
+              "num allocs": 452781,
+              "rlimit count": 57907,
+              "max memory": 25.12,
+              "memory": 16.83,
+              "time": 0.002
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.0024295409966725856,
+            "projected_u": 0,
+            "model_extraction_seconds": 0.00015604199143126607,
+            "verified": true,
+            "verification_errors": [],
+            "verification_seconds": 5.8542005717754364e-05,
+            "blocking_seconds": 0.00016229200991801918
+          },
+          {
+            "call_index": 1,
+            "status": "UNSAT",
+            "timeout_ms": 9996,
+            "resource_limit": 50000000,
+            "solver_statistics": {
+              "sat mk clause 2ary": 286,
+              "sat mk clause nary": 761,
+              "sat mk var": 290,
+              "sat del clause": 43,
+              "sat conflicts": 37,
+              "sat decisions": 53,
+              "sat propagations 2ary": 1230,
+              "sat propagations nary": 2199,
+              "sat minimized lits": 33,
+              "sat subs resolution dyn": 1,
+              "sat units": 16,
+              "sat backjumps": 37,
+              "sat elim clauses": 23,
+              "sat elim literals": 31,
+              "num allocs": 620568,
+              "rlimit count": 69486,
+              "max memory": 25.12,
+              "memory": 16.8,
+              "time": 0.002
+            },
+            "statistics_scope": "backend_snapshot_not_additive_across_calls",
+            "check_seconds": 0.00247783400118351
+          }
+        ],
+        "solver_call_counts": {
+          "SAT": 1,
+          "UNSAT": 1,
+          "UNKNOWN": 0
+        },
+        "solver_check_errors": 0,
+        "backend_errors": [],
+        "projected_blocks": 1,
+        "duplicate_models": 0,
+        "invalid_models": 0,
+        "final_solver_status": "UNSAT",
+        "reason_unknown": null,
+        "validation_seconds": 2.2041989723220468e-05,
+        "field_setup_seconds": 9.783300629351288e-05,
+        "hash_elimination_seconds": 2.358399797230959e-05,
+        "encoding_seconds": 0.0046780840057181194,
+        "check_seconds": 0.004907374997856095,
+        "verification_seconds": 5.8542005717754364e-05,
+        "model_extraction_seconds": 0.00015604199143126607,
+        "blocking_seconds": 0.00016229200991801918,
+        "seed_verification_seconds": 0.0,
+        "seed_blocking_seconds": 0.0,
+        "deduplication_seconds": 7.500057108700275e-07,
+        "statistics_seconds": 0.00149816699558869,
+        "uniform_sampler": false,
+        "hardness_evidence": false,
+        "polynomial_enumeration_established": false,
+        "whole_workflow_wall_clock_cap_enforced": false,
+        "completeness_basis": "solver_reported_final_UNSAT_after_projected_blocking",
+        "completeness_independently_certified": false,
+        "unsat_proof_artifact": null,
+        "z3_version": "4.15.3",
+        "setup_seconds": 0.004864333997829817,
+        "enumeration_seconds": 0.006880250002723187,
+        "total_seconds": 0.011744584000553004
+      },
+      "independent_reference": {
+        "status": "EXACT_FULL_COORDINATE_SPACE",
+        "solutions": [
+          0
+        ],
+        "checked": 16,
+        "shared_hash_elimination": false,
+        "seconds": 0.0002909580070991069,
+        "reported_complete_set_matches": true
+      }
+    }
+  ],
+  "prange": {
+    "trials": 256,
+    "hits": 27,
+    "first_verified": {
+      "trial": 3,
+      "u": 0,
+      "residual_word": [
+        22,
+        25,
+        3,
+        1
+      ]
+    },
+    "seconds": 0.007826666987966746,
+    "seed": 2654436799,
+    "same_residual_input": true,
+    "matched_wall_clock_budget": false,
+    "ideal_per_trial_acceptance": "g(h)*2^(-K)"
+  },
+  "total_seconds": 0.13989904199843295,
+  "uniform_sampler": false,
+  "polynomial_time_enumerator_established": false,
+  "hardness_evidence": false,
+  "speedup_established": false,
+  "whole_workflow_wall_clock_cap_enforced": false,
+  "source_hashes": {
+    "theorems/inverse_trace_hash_probe.py": "41dd5794a57aed680860e5868d39e0640f9888aebac70e7d1f5e0751d801015b",
+    "theorems/inverse_trace_hash_cell.py": "0ad4e3fdb954ea2fc472599c1555ea9774f08bb2a27cb998f66c296b171f21a7",
+    "theorems/inverse_trace_smt.py": "c040c798a1b875ad2940c58f71ac7228ce011d395fd90cce4be955dfda6835ee",
+    "research/INVERSE_TRACE_HASH_HEATBATH.md": "076d9ce4cbee056f49ac99c6a10d51cc317f54e11e3c578ec0dace3dc9d44388"
+  },
+  "source_hashes_unchanged_during_probe": true,
+  "source_fingerprint_scope": "on_disk_before_and_after_probe_not_loaded_bytecode_attestation"
+}

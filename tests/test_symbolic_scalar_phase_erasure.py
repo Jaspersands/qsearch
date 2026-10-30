@@ -510,3 +510,116 @@ def test_report_builder_matches_documented_invariants() -> None:
     assert tree["stage_arities"] == [7, 169, 7]
     assert tree["total_cubic_leaves"] == 8281
     assert tree["reference_descriptors_only"]
+
+
+def test_general_prime_symbolic_cubic_and_quadratic_erasure_p_1_mod_12(monkeypatch: pytest.MonkeyPatch) -> None:
+    from fractions import Fraction
+    import theorems.bounded_power_roots as roots
+    from theorems.power_sde import power_arity
+    from theorems.prime_character_opi import ring
+
+    p = 105037  # verified prime >= 104976 with p == 1 mod 12
+    ring(p)
+    assert p >= 104976
+    assert p % 12 == 1
+    assert (p - 1) % 3 == 0
+
+    basis = ((0, (1, 0)), (0, (2, 0)))
+    rng = random.Random(20261028)
+
+    # 1. Degree 3 erasure with rank 1 on active cubic keys (power_arity(1, 3) = 6 <= 13 packets)
+    cubic_packets: list[PinnedSymbolicPacket] = []
+    for i in range(13):
+        terms = {
+            ((3, 0), (0,)): rng.randrange(1, p),
+            ((2, 0), (0,)): rng.randrange(1, p),
+            ((1, 0), (1,)): rng.randrange(1, p),
+        }
+        pkt = SymbolicScalarPacket(p, 2, 0, basis, terms)
+        cubic_packets.append(pin_symbolic_packet(pkt, instance_id="gen-prime-cubic", chart_id="c0"))
+
+    outcomes3 = [[rng.randrange(p), rng.randrange(p)] for _ in cubic_packets]
+    merged3, weights3, rank3, eq3 = sparse_degree_erasure_stage(
+        cubic_packets,
+        3,
+        outcomes3,
+        rng=rng,
+        use_general_prime_sde=True,
+        bounded_randomness_bits=64,
+    )
+    assert rank3 == 1
+    assert eq3 == 1
+    assert any(weights3)
+    assert merged3.degree <= 2
+    assert all(pkt.consumed for pkt in cubic_packets)
+    assert not merged3.consumed
+
+    # 2. Degree 2 erasure with rank 1 on active quadratic keys (power_arity(1, 2) = 4 <= 13 packets)
+    quad_packets: list[PinnedSymbolicPacket] = []
+    for i in range(13):
+        terms = {
+            ((2, 0), (0,)): rng.randrange(1, p),
+            ((1, 0), (1,)): rng.randrange(1, p),
+        }
+        pkt = SymbolicScalarPacket(p, 2, 0, basis, terms)
+        quad_packets.append(pin_symbolic_packet(pkt, instance_id="gen-prime-quad", chart_id="c0"))
+
+    outcomes2 = [[rng.randrange(p), rng.randrange(p)] for _ in quad_packets]
+    merged2, weights2, rank2, eq2 = sparse_degree_erasure_stage(
+        quad_packets,
+        2,
+        outcomes2,
+        rng=rng,
+        use_general_prime_sde=True,
+        bounded_randomness_bits=64,
+    )
+    assert rank2 == 1
+    assert eq2 == 1
+    assert any(weights2)
+    assert merged2.degree <= 1
+    assert all(pkt.consumed for pkt in quad_packets)
+    assert not merged2.consumed
+
+    # 3. Test that insufficient columns raises ValueError
+    short_packets = [
+        pin_symbolic_packet(
+            SymbolicScalarPacket(p, 2, 0, basis, {((3, 0), (0,)): 1}),
+            instance_id="gen-prime-short",
+            chart_id="c0",
+        )
+        for _ in range(3)  # needed is 6 for rank 1, g=3
+    ]
+    with pytest.raises(ValueError, match="general-prime SDE controller needs"):
+        sparse_degree_erasure_stage(
+            short_packets,
+            3,
+            [[0, 0] for _ in short_packets],
+            use_general_prime_sde=True,
+            bounded_randomness_bits=64,
+        )
+
+    # 4. Test that bounded_randomness_bits=1 raises RuntimeError("bounded root splitting exhausted")
+    fail_packets: list[PinnedSymbolicPacket] = []
+    for i in range(13):
+        terms = {
+            ((3, 0), (0,)): rng.randrange(1, p),
+            ((2, 0), (0,)): rng.randrange(1, p),
+        }
+        pkt = SymbolicScalarPacket(p, 2, 0, basis, terms)
+        fail_packets.append(pin_symbolic_packet(pkt, instance_id="gen-prime-fail", chart_id="c0"))
+
+    with monkeypatch.context() as m:
+        m.setattr(
+            roots,
+            "bounded_power_root",
+            lambda *args, **kwargs: roots.BoundedPowerRoot(None, 1, 0, 3, Fraction(1)),
+        )
+        with pytest.raises(RuntimeError, match="bounded root splitting exhausted"):
+            sparse_degree_erasure_stage(
+                fail_packets,
+                3,
+                outcomes3,
+                rng=rng,
+                use_general_prime_sde=True,
+                bounded_randomness_bits=1,
+            )

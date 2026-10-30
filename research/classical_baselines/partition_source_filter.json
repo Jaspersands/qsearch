@@ -1,0 +1,1234 @@
+{
+  "status": "MATCHED_CLASSICAL_PARTITION_SOURCE_FILTER",
+  "scope": "exact uniform query-and-discard equality kernel; stabilizer diagonal; supplied purity and gap",
+  "controls": [
+    {
+      "name": "nonuniform_layers",
+      "reference": {
+        "finite_known_function_reference_only": true,
+        "prime": 3,
+        "width": 2,
+        "domain_size": 9,
+        "fiber_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3
+        ],
+        "purity": {
+          "numerator": 5,
+          "denominator": 27
+        },
+        "collision_difference_span": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "translation_symmetries": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "phase_symmetries": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "pauli_symmetries": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            2
+          ]
+        ],
+        "stabilizer_diagonal": true,
+        "quotient_size": 3,
+        "minimum_positive_loss": {
+          "numerator": 2,
+          "denominator": 27
+        }
+      },
+      "plan": {
+        "beta": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "collision_pair_cap": 1296,
+        "verification_pairs_per_representative": 41,
+        "quotient_cap": 6,
+        "field_draw_cap": 6168,
+        "field_rejection_attempt_cap": 16,
+        "bits_per_attempt": 2,
+        "random_bit_cap": 197376,
+        "query_bound": 3576,
+        "randomness_abort_bound": {
+          "numerator": 771,
+          "denominator": 8192
+        },
+        "source_promises_certified": false
+      },
+      "classical_run": {
+        "status": "SUCCESS",
+        "source_promises_certified": false,
+        "caps": {
+          "beta": {
+            "numerator": 1,
+            "denominator": 9
+          },
+          "collision_pair_cap": 1296,
+          "verification_pairs_per_representative": 41,
+          "quotient_cap": 6,
+          "field_draw_cap": 6168,
+          "field_rejection_attempt_cap": 16,
+          "bits_per_attempt": 2,
+          "random_bit_cap": 197376,
+          "query_bound": 3576,
+          "randomness_abort_bound": {
+            "numerator": 771,
+            "denominator": 8192
+          },
+          "source_promises_certified": false
+        },
+        "counts": {
+          "queries": 2800,
+          "random_bits": 14390,
+          "random_bit_calls": 7195,
+          "field_draws": 5392,
+          "collision_pairs": 1296,
+          "verification_pairs": 52,
+          "representatives_tested": 3,
+          "representatives_accepted": 1,
+          "peak_collision_rows": 1
+        },
+        "collision_basis": [
+          [
+            1,
+            0
+          ]
+        ],
+        "quotient_size": 3,
+        "translation_basis": [
+          [
+            1,
+            0
+          ]
+        ],
+        "phase_basis": [
+          [
+            0,
+            1
+          ]
+        ],
+        "pauli_generators": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "generators_match_exact_reference": true
+    },
+    {
+      "name": "noncommuting_full_group",
+      "reference": {
+        "finite_known_function_reference_only": true,
+        "prime": 3,
+        "width": 3,
+        "domain_size": 27,
+        "fiber_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "purity": {
+          "numerator": 5,
+          "denominator": 81
+        },
+        "collision_difference_span": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0
+          ]
+        ],
+        "translation_symmetries": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            2
+          ]
+        ],
+        "phase_symmetries": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            2
+          ]
+        ],
+        "pauli_symmetries": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            2,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            2,
+            2
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            2,
+            0,
+            2,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            2,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            2,
+            1
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            2,
+            2
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            2,
+            0,
+            2,
+            0,
+            2,
+            2
+          ]
+        ],
+        "stabilizer_diagonal": true,
+        "quotient_size": 9,
+        "minimum_positive_loss": {
+          "numerator": 2,
+          "denominator": 81
+        }
+      },
+      "plan": {
+        "beta": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "collision_pair_cap": 4536,
+        "verification_pairs_per_representative": 162,
+        "quotient_cap": 17,
+        "field_draw_cap": 43740,
+        "field_rejection_attempt_cap": 19,
+        "bits_per_attempt": 2,
+        "random_bit_cap": 1662120,
+        "query_bound": 20088,
+        "randomness_abort_bound": {
+          "numerator": 10935,
+          "denominator": 131072
+        },
+        "source_promises_certified": false
+      },
+      "classical_run": {
+        "status": "SUCCESS",
+        "source_promises_certified": false,
+        "caps": {
+          "beta": {
+            "numerator": 1,
+            "denominator": 9
+          },
+          "collision_pair_cap": 4536,
+          "verification_pairs_per_representative": 162,
+          "quotient_cap": 17,
+          "field_draw_cap": 43740,
+          "field_rejection_attempt_cap": 19,
+          "bits_per_attempt": 2,
+          "random_bit_cap": 1662120,
+          "query_bound": 20088,
+          "randomness_abort_bound": {
+            "numerator": 10935,
+            "denominator": 131072
+          },
+          "source_promises_certified": false
+        },
+        "counts": {
+          "queries": 11680,
+          "random_bits": 83308,
+          "random_bit_calls": 41654,
+          "field_draws": 31128,
+          "collision_pairs": 4536,
+          "verification_pairs": 652,
+          "representatives_tested": 9,
+          "representatives_accepted": 3,
+          "peak_collision_rows": 1
+        },
+        "collision_basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "quotient_size": 9,
+        "translation_basis": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "phase_basis": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "pauli_generators": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "generators_match_exact_reference": true
+    }
+  ],
+  "promise_violating_control": {
+    "finite_known_function_reference_only": true,
+    "prime": 3,
+    "width": 2,
+    "domain_size": 9,
+    "fiber_sizes": [
+      1,
+      8
+    ],
+    "purity": {
+      "numerator": 65,
+      "denominator": 81
+    },
+    "collision_difference_span": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "translation_symmetries": [
+      [
+        0,
+        0
+      ]
+    ],
+    "phase_symmetries": [
+      [
+        0,
+        0
+      ]
+    ],
+    "pauli_symmetries": [
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "stabilizer_diagonal": false,
+    "quotient_size": 1,
+    "minimum_positive_loss": {
+      "numerator": 14,
+      "denominator": 81
+    }
+  },
+  "classical_evaluator_queries_executed": true,
+  "quantum_copies_consumed": 0,
+  "general_quantum_input_dequantized": false,
+  "arbitrary_quantum_preprocessing_covered": false,
+  "original_subgroup_recovered_after_hashing": false,
+  "new_speedup_claim_allowed": false,
+  "source_sha256": {
+    "theorems/partition_source_attack.py": "523eda0ce821ff570aca2cc5fad09e015a7717946aa45f161d243d1454699791",
+    "tests/test_partition_source_attack.py": "af85be98988b629ba9fd79420cf76cb76660a0127b9b6106bf4f82b7e89d8ded",
+    "theorems/partition_source_filter.py": "cd57e182ade725b49ddde7df81d9ded28cb9e65741c77a383b9be660e88abde8",
+    "tests/test_partition_source_filter.py": "71b615ec11c01d1454574beabafc8b35748a6f47ca6922c83a607b6885dce43e",
+    "research/PARTITION_SOURCE_CLASSICAL_FILTER.md": "0b7380ed095319530f85fce929e7ab03bed3e3b6aba9a4acbe56024bdc141a68",
+    "qsearch_cli/commands/sde.py": "0b17b073aa6fb5991c21cdc5b09f3bfc2cb933c7275675e6bcea0e87e75a0771"
+  }
+}

@@ -215,6 +215,14 @@ efficient quaternion generator algorithm. Current primary abstract was checked;
 the earlier full [2024/1147 PDF](https://eprint.iacr.org/2024/1147.pdf) was read,
 not the merged 2025 full proof. Preserve that version distinction.
 
+2026-10-30 update: the full merged 2025-02-19 paper has now been read and
+cached. [QUATERNION_NORM_SLICE_AND_LOCAL_FLAGS.md](QUATERNION_NORM_SLICE_AND_LOCAL_FLAGS.md)
+records its exact norm-constrained RIGHT-ideal input and uniform/nonuniform
+reduction scopes, superseding the abstract-only evidence status above.
+It does not turn this native random graph kernel into a Hawk instance.
+The [separate HSVP audit](QUATERNION_HSVP_PREPRINT_AUDIT.md) retains both
+metric and actual membership checks for later short-vector proposals.
+
 The earlier full-paper audit of
 [EPRINT-2025-1095](https://eprint.iacr.org/2025/1095) notes that quaternion
 generator discovery remains unresolved and that exhaustive ideal/four-square

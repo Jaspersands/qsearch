@@ -17,7 +17,7 @@ from flint import fmpz
 
 from theorems.central_character_descent import tree_budget
 from theorems.full_jet_resource_certificate import sde_arity
-from theorems.jet_oracle_homogenization import lie_bch
+from theorems.uniform_bch_rees import bch_via_ode
 from theorems.nil3_complete_budget import ceil_log
 from theorems.symbolic_scalar_phase_erasure import PublicLieAlgebra, _fmpz_solve_coordinates
 
@@ -122,7 +122,10 @@ ambient_basis maps local L coordinates to original oracle logarithms.
         return tuple(a*pow(scale, r, self.p) % self.p for a, (r, _) in zip(vector, self.indices))
 
     def multiply(self, left, right):
-        return lie_bch(self.algebra, left, right, self.class_bound)
+        _canonical(left, self.dimension, self.p)
+        _canonical(right, self.dimension, self.p)
+        return bch_via_ode(left, right, prime=self.p,
+                          nilpotency_class=self.class_bound, bracket=self.algebra.bracket)
 
 
 def make_rees_cover(algebra, ambient_basis):

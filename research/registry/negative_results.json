@@ -57473,29 +57473,6 @@
   },
   {
     "applies_to": [
-      "ARBITRARY-DEGREE-NUMBER-FIELD",
-      "MULTIDIMENSIONAL-CONTINUOUS-HSP",
-      "HALLGREN-SCHMIDT-VOLLMER",
-      "EXPONENTIAL-DEGREE-BARRIER",
-      "LATTICE-SIVP-HARDNESS"
-    ],
-    "claim": "Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].",
-    "evidence": {
-      "compact_representation_overhead": "Manipulating algebraic units and reduced ideals in degree n requires compact representations with n^{O(n)} overhead",
-      "continuous_torus_dual_lattice": "Quotient R^r / Lambda is an r-dimensional compact torus with complete 1D character basis chi_u(x) = exp(2 pi i u . x) labeled by dual lattice Lambda^*",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "exponential_degree_barrier": "For unbounded degree n, quantum complexity is 2^{Omega(n log n)} poly(log |Delta_K|); polynomial time collapses",
-      "lattice_reconstruction_hardness": "Reconstructing dual lattice Lambda^* in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard (2^{Omega(r)})",
-      "mesh_volume_explosion": "Sampling hypercube requires (M / Delta)^r = 2^{Omega(n log n)} states, causing exponential mode dispersion",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
-    "lesson": "While Hallgren (2005) and Schmidt-Vollmer (2005) established polynomial-time quantum algorithms for fixed field degree n = O(1), the algorithm scales as 2^{Omega(n log n)} poly(log |Delta_K|) for growing degree n. When n is unbounded, polynomial tractability collapses due to three compounding mathematical barriers: (1) Lattice reconstruction hardness: dual lattice sampling in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard and requires 2^{Omega(r)} operations; (2) Compact representation overhead: manipulating algebraic units and reduced ideals in degree n requires n^{O(n)} operations; and (3) Multi-dimensional grid volume explosion: the sampling mesh requires (M / Delta)^r = 2^{Omega(n log n)} states. Therefore, the quantum regulator algorithm is confined strictly to constant-degree number fields.",
-    "reason_invalid": "The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples requires solving BDD and SIVP in dimension r, which is NP-hard under randomized reductions and takes 2^{Omega(r)} = 2^{Omega(n)} operations. Furthermore, polynomial multiplication and compact representation arithmetic scale as n^{O(n)}, and the discrete grid volume grows as 2^{Omega(n log n)}. Thus, claiming polynomial-time quantum solvability for arbitrary degree number fields is mathematically invalid: the algorithm is polynomial only in log |Delta_K| for constant degree n, and exponential in n.",
-    "source": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
-  },
-  {
-    "applies_to": [
       "VARIATIONAL-QUANTUM-ALGORITHMS",
       "BARREN-PLATEAUS",
       "HAAR-MEASURE-CONCENTRATION",
@@ -57541,28 +57518,6 @@
     "lesson": "Boson Sampling and Gaussian Boson Sampling (GBS) do not establish a practical or scalable quantum computational speedup. While exact ideal Boson Sampling is linked to #P-hard matrix permanents and hafnians, physical photonic architectures suffer from transmission loss eta in (0, 1) where pure n-photon coherence decays as P_surv = eta^n (under 1.3e-20 for n=50 at eta=0.40 in Jiuzhang), leaving an incoherent thermalized mixture of low-order photon events. By Renema et al. (2018) and Qi et al. (2020), lossy and partially distinguishable linear optics can be simulated classically in polynomial time poly(n) by truncating cycle-type interference to order O(log n). Distinguishable particles are sampled classically in O(m n) time via Clifford & Clifford (2018), while Fermion Sampling is in P via O(n^3) LU determinants. Furthermore, using GBS as a heuristic for Dense Subgraph or Max-Clique provides zero worst-case speedup over classical greedy/SDP solvers, and verifying GBS samples requires computing #P-hard hafnians, making polynomial-time verification impossible in the supremacy regime.",
     "reason_invalid": "Boson Sampling solves no structured computational decision problem, decision search, or algebraic problem; its physical implementations are degraded by transmission loss (eta ~ 0.40 in Jiuzhang), extinguishing pure n-photon coherence with probability < 1e-19. Renema et al. (2018) and Qi et al. (2020) proved that such lossy and partially distinguishable systems are dequantized classically in polynomial time. Distinguishable photon sampling is simulated classically in O(m n) time, and free fermions are simulated in O(n^3) time. Moreover, encoding graph problems into GBS provides zero asymptotic speedup over classical semidefinite programming and greedy solvers, and verifying output samples is #P-hard. Thus, claiming that Boson Sampling or GBS achieves a scalable, verifiable quantum speedup is mathematically and physically invalid.",
     "source": "research/BOSON_SAMPLING_PHOTONIC_LOSS_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
-      "CFI-BASE-FAMILY-SEARCH",
-      "BOUNDED-VALENCE-LUKS-SUBSUMPTION",
-      "CFI-GRAPH-COSET-TRILEMMA"
-    ],
-    "claim": "Quantum collective measurements or non-abelian coset state observables on Cai-F\u00fcrer-Immerman (CFI) gadget graphs can provide an exponential quantum speedup over classical Graph Isomorphism algorithms.",
-    "evidence": {
-      "artifact": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json",
-      "exact_7v_cfi_vertex_identity": "N_CFI == 7 |V| identically for all 3-regular base graphs G = (V, E)",
-      "luks_polynomial_subsumption": "Luks' algorithm (1982) solves Graph Isomorphism for valence Delta <= 4 in deterministic O(N^4) time classically",
-      "max_degree_four_ceiling": "Delta_CFI <= 4 identically for all vertices in 3-regular CFI graphs",
-      "multi_copy_commutant_intractability": "Multi-copy collective observables require diagonalizing commutants of dimension (N!)^k = 2^{Omega(k N log N)}",
-      "single_copy_fourier_extinction": "I(tau : K) <= 2^{-Omega(N log N)} bits for single-copy quantum Fourier sampling",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
-    "lesson": "Cai-F\u00fcrer-Immerman gadget graphs cannot provide an algorithmic quantum advantage. Although CFI graphs defeat k-dimensional Weisfeiler-Lehman, all 3-regular CFI graphs have bounded maximum degree Delta <= 4, which is solvable in deterministic polynomial time O(N^4) classically by Luks' algorithm (1982). Meanwhile, quantum algorithms on non-abelian coset states face factorially vanishing single-copy information and exponential (N!)^k commutant dimensions for multi-copy collective measurements, making the quantum approach strictly harder than the classical baseline.",
-    "reason_invalid": "For all 3-regular base graphs, the CFI construction produces graphs with N_CFI = 7 |V| vertices and maximum degree Delta <= 4. By Luks' polynomial-time algorithm for bounded valence (JCSS 1982), Graph Isomorphism on these graphs is solved in O(N^4) deterministic classical time. Quantum non-abelian coset state measurements provide <= 2^{-Omega(N log N)} bits of information on single copies, and multi-copy collective measurements require diagonalizing commutant algebras of dimension (N!)^k = 2^{Omega(k N log N)}, completely falsifying the hypothesis of a quantum advantage on CFI graphs.",
-    "source": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json"
   },
   {
     "applies_to": [
@@ -63114,25 +63069,6 @@
     "lesson": "Require a typed growing-width quantum DAG with carrier preservation and a noncommutant covariant final POVM.",
     "reason_invalid": "The joint quantum width remains one; classical postprocessing cannot retroactively create the required entangled POVM.",
     "source": "research/representation/coset_growing_width_architecture.json"
-  },
-  {
-    "applies_to": [
-      "NONABELIAN-COSET-OBSERVABLES",
-      "MULTIPLICITY-COMMUTANT",
-      "RACAH-RECOUPLING",
-      "KRONECKER-POVM"
-    ],
-    "claim": "Multiplicity-space commutant Hamiltonians or pairwise Kronecker recoupling observables can extract hidden subgroup or code equivalence permutations in polynomial quantum time.",
-    "evidence": {
-      "artifact": "research/representation/coset_multiplicity_carrier_trilemma.json",
-      "commutant_dimension_law": "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n)",
-      "commutant_mutual_information": "0.0 bits identically",
-      "commutator_closed_form": "[K_12, K_23]_{(0,0,0),(0,0,1)} = n"
-    },
-    "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
-    "lesson": "Spectral gaps in commutant Hamiltonians are irrelevant for secret identification because commutant outcomes are completely secret-independent. Non-abelian quantum algorithms cannot separate multiplicity and carrier registers without incurring either zero information or factorial associator complexity.",
-    "reason_invalid": "By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruling out simultaneous diagonalization. Coherent Racah associator transforms face a factorial multiplicity space dimension (n-1)^{2k}/n! = 2^Omega(n log n), requiring exponential quantum circuit synthesis.",
-    "source": "research/representation/coset_multiplicity_carrier_trilemma.json"
   },
   {
     "applies_to": [
@@ -72825,27 +72761,6 @@
     "lesson": "Unitary parabolic HSP in U(n, F_{q^2}) and SU(n, F_{q^2}) cannot yield an exponential quantum speedup. The problem is classically dequantized in O(n q^{2k}) queries via unitary transvections T_{v, lam}. For all low dimensions k <= O(log n) (including the line parabolic k=1), the problem is solved in polynomial classical time poly(n, log q). Additive Fourier sampling over M_n(F_{q^2}) is extinguished by exponential ambient density collapse q^{-3 m^2} = 2^{-Omega(m^2 log q)}, Lie algebra trace duality exhibits isotropic degeneracy over F_{2^{2r}}, and single-copy weak Fourier sampling yields identically 0.000 bits of mutual information.",
     "reason_invalid": "For every k-dimensional isotropic subspace U in F_{q^2}^n (1 <= k <= m = floor(n/2)), every non-zero skew-Hermitian scalar lam, and every non-zero isotropic vector v, the unitary transvection T_{v, lam} belongs to P_U if and only if v in U^perp. An explicit classical randomized algorithm finds a basis of U^perp in expected O(n q^{2k}) queries and recovers U = (U^perp)^perp in O(n^3) classical operations over F_{q^2}. For all k <= O(log n), the classical time is poly(n, log q), ruling out any quantum speedup. For maximal isotropic parabolics, the ambient density collapses exponentially to q^{-3 m^2} prod(1 - q^{-2j}) = 2^{-Omega(m^2 log q)}, destroying additive Fourier sampling. Furthermore, the line radical R_u(P_1) is a generalized Heisenberg group of class 2, (U, P_1) is a Gel'fand pair with 0.000 bits single-copy mutual information, and multi-copy collective tomography requires diagonalizing the partition commutant P_M(|X_1|) of dimension B(2M) >= (2M - 1)!! = 2^{Omega(n log n)}.",
     "source": "research/UNITARY_PARABOLIC_HSP_OBSTRUCTION_HERMITIAN_DEMARCATION.md"
-  },
-  {
-    "applies_to": [
-      "CODE-EQUIVALENCE",
-      "WREATH-PRODUCT-HSP",
-      "NONABELIAN-COSET-OBSERVABLES",
-      "HOLEVO-BOUND"
-    ],
-    "claim": "Orientation sub-POVMs or structured Naimark dilations on O(1) mixed coset copies can distinguish the (n!)^2 residual hidden permutations.",
-    "evidence": {
-      "artifact": "research/representation/wreath_coset_permutation_holevo_collapse.json",
-      "fano_success_ceiling": "P_succ <= O(1 / (n^2 log n)) -> 0",
-      "holevo_information_bound": "I(tau : Q^k) <= O(k^2 / n) = o(1) bits",
-      "overlap_formula": "Tr(rho_tau rho_tau') = 1 / |C(tau^-1 tau')|",
-      "purity": "Tr(rho_tau^2) = 1/n!",
-      "secret_entropy": "H(tau) = log2(n!) = Theta(n log n) bits"
-    },
-    "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
-    "lesson": "Constant conclusive sub-POVM success on cycle-orientation parity cannot be lifted to fine-permutation decoding on O(1) copies. The mixed coset state has purity 1/n!, and the Holevo mutual information collapses as O(k^2 / n) bits. Disclosing the hidden permutation requires an unbreachable copy complexity of k = Omega(n log n).",
-    "reason_invalid": "By the conjugacy class overlap law and the Holevo bound, the mutual information provided by k = O(1) mixed coset copies is at most O(k^2 / n) bits, whereas identifying the hidden permutation requires log2(n!) = Omega(n log n) bits. Fano's inequality strictly bounds identification success to P_succ <= O(1 / (n^2 log n)), collapsing as 2^-Omega(n log n).",
-    "source": "research/representation/wreath_coset_permutation_holevo_collapse.json"
   },
   {
     "applies_to": [

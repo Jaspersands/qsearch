@@ -8,6 +8,7 @@ import pytest
 import sympy as sp
 
 from theorems.succinct_polynomial_stabilizer import (
+    artin_schreier_carry_counterexample, lcs_step_derivative_guard,
     plan_orbit_fingerprint, white_box_derivative_guard,
 )
 
@@ -102,6 +103,45 @@ def test_derivatives_can_both_overestimate_and_underestimate_finite_stabilizer()
         assert shifted(false_negative).is_zero
 
 
+def test_degree_below_prime_alone_does_not_make_infinitesimal_symmetry_finite():
+    # Native ambient UT4(F5) has class three and exponent five. This is an
+    # exact filter-scope countercontrol, not a hard polynomial-stabilizer input.
+    p, dimension = 5, 4
+    x = sp.symbols("x:4")
+    t, u = sp.symbols("t u")
+    nilpotent = sp.zeros(dimension)
+    for i in range(dimension-1):
+        nilpotent[i, i+1] = 1
+    assert nilpotent**4 == sp.zeros(dimension)
+    assert nilpotent**3 != sp.zeros(dimension)
+
+    def exponential(parameter):
+        return sp.eye(dimension)+parameter*nilpotent+3*parameter**2*nilpotent**2+parameter**3*nilpotent**3
+
+    law_error = exponential(t)*exponential(u)-exponential(t+u)
+    assert all(sp.Poly(entry, t, u, modulus=p).is_zero for entry in law_error)
+    assert exponential(1)**p % p == sp.eye(dimension)
+    polynomial = x[0]*x[1]*x[3]+2*x[0]*x[2]**2-x[1]**2*x[2]
+    degree = sp.Poly(polynomial, *x).total_degree()
+    assert degree == 3 < p
+    derivative = sum(x[i+1]*sp.diff(polynomial, x[i]) for i in range(dimension-1))
+    assert sp.expand(derivative) == 5*x[0]*x[2]*x[3]
+    assert sp.Poly(derivative, *x, modulus=p).is_zero
+    action = dict(zip(x, exponential(t)*sp.Matrix(x)))
+    difference = sp.Poly(polynomial.subs(action, simultaneous=True)-polynomial,
+                         t, *x, modulus=p).as_expr()
+    assert difference == t**p*x[3]**3
+    for value in range(p):
+        assert sp.Poly(difference.subs(t, value), *x, modulus=p).is_zero == (value == 0)
+    # The actual guard correctly refuses this input: orbit-parameter degree,
+    # not just polynomial degree, matters. No production guard needs relaxing.
+    with pytest.raises(ValueError, match="requires p>max"):
+        white_box_derivative_guard(p, dimension, degree)
+    # The cyclic orbit already spans {F,x3^3}, and the full cubic orbit lies
+    # in a 20-dimensional space. The orbit-module classical filter survives.
+    assert sp.binomial(dimension+degree-1, degree) == 20
+
+
 @pytest.mark.parametrize("kind", ["frobenius", "artin_schreier"])
 def test_equivariant_high_degree_lifts_do_not_create_new_stabilizers(kind):
     p = 5
@@ -160,3 +200,62 @@ def test_derivative_kernel_equals_full_finite_stabilizer_in_guarded_regime():
         assert derivative_zero == finite_symmetry
         count += finite_symmetry
     assert count == p
+
+
+def test_lcs_step_derivative_guard_intermediate_characteristic_window():
+    p = 11
+    D = 5
+    degree = 4
+    # Full-group guard fails: (5 - 1) * 4 = 16 >= 11
+    with pytest.raises(ValueError, match="requires p>max"):
+        white_box_derivative_guard(p, D, degree)
+
+    # LCS step 2 succeeds in the intermediate-characteristic window
+    res_step2 = lcs_step_derivative_guard(p, D, degree, lcs_step=2)
+    assert res_step2["lcs_step"] == 2
+    assert res_step2["nilpotent_power_bound"] == 2  # (5 - 1) // 2
+    assert res_step2["parameter_degree_bound"] == 8  # 2 * 4
+    assert res_step2["strict_characteristic_threshold"] == 8
+    assert res_step2["full_group_guard_passes"] is False
+    assert res_step2["recovers_subgroup_intersection_only"] is True
+    assert res_step2["circuit_gradient_access_required"] is True
+
+    # LCS step 4 succeeds with s_r = 1
+    res_step4 = lcs_step_derivative_guard(p, D, degree, lcs_step=4)
+    assert res_step4["lcs_step"] == 4
+    assert res_step4["nilpotent_power_bound"] == 1  # (5 - 1) // 4
+    assert res_step4["parameter_degree_bound"] == 4  # 1 * 4
+    assert res_step4["strict_characteristic_threshold"] == 5
+    assert res_step4["full_group_guard_passes"] is False
+    assert res_step4["recovers_subgroup_intersection_only"] is True
+
+    # LCS step 1 fails when prime <= (D - 1) * degree
+    with pytest.raises(ValueError, match="requires p>max"):
+        lcs_step_derivative_guard(p, D, degree, lcs_step=1)
+
+    # Contract checks: lcs_step must be an integer in [1, D-1]
+    for invalid_step in (0, 5, 6, -1, "2", 1.5):
+        with pytest.raises(ValueError, match="lcs_step must be an integer in"):
+            lcs_step_derivative_guard(p, D, degree, lcs_step=invalid_step)
+
+
+def test_artin_schreier_carry_counterexample_falsifies_unakerneled_derivative_at_degree_p():
+    for p in (5, 7, 11):
+        res = artin_schreier_carry_counterexample(p)
+        assert res["prime"] == p
+        assert res["total_degree"] == p
+        assert res["group_dimension"] == 1
+        assert res["true_stabilizer_size"] == p
+        assert res["true_stabilizer_dimension"] == 1
+        assert res["naive_derivative_kernel_size"] == 1
+        assert res["naive_derivative_kernel_dimension"] == 0
+        assert res["derivative_underestimates_stabilizer"] is True
+        assert res["artin_schreier_carry_degree"] == p
+        assert res["modulo_tp_minus_t_cancels"] is True
+        assert res["orbit_module_rank_upper_bound"] == 2
+        assert res["caught_by_orbit_module_filter"] is True
+        assert res["hardness_claim"] is False
+
+    for bad_p in (2, 3, 4, 9, 15, -5, "7"):
+        with pytest.raises(ValueError):
+            artin_schreier_carry_counterexample(bad_p)

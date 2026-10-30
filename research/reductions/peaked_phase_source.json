@@ -1,0 +1,230 @@
+{
+  "status": "PEAK_WEIGHT_SOURCE_REDUCTION_REFERENCE_ONLY",
+  "input_contract": "IID polynomial-phase-diagonal state; max error weight >= 1/R; R < p",
+  "stabilizer_basis_contract": "IID state diagonal in one unknown maximal stabilizer basis; same peak promise",
+  "input_rank_bound_required": false,
+  "prime": 101,
+  "inverse_peak": 3,
+  "selection": {
+    "known_spectrum_reference_only": true,
+    "input_rank": 148886373358822087497126463801738296202951256788286744534662595050969228887804001,
+    "threshold": {
+      "numerator": 1253425,
+      "denominator": 4964352
+    },
+    "retained_rank": 1,
+    "retained_mass": {
+      "numerator": 1,
+      "denominator": 3
+    },
+    "retained_minimum_normalized_weight": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "good_grid_offset": true,
+    "spectrum_measured": false
+  },
+  "interval_width": {
+    "numerator": 49,
+    "denominator": 303
+  },
+  "spectral_margin": {
+    "numerator": 49,
+    "denominator": 9928704
+  },
+  "bad_grid_probability_bound": {
+    "numerator": 3,
+    "denominator": 2048
+  },
+  "example_wedge_target_caps": {
+    "fixed_threshold_required": true,
+    "retained_rank_bound": 5,
+    "output_cap": 4,
+    "growth_attempts_per_output": 300,
+    "filtered_input_cap": 1204,
+    "filter_trials_per_input": 96,
+    "filter_target_copy_cap": 115584,
+    "rank_training_target_copies": 32256,
+    "rank_training_precision": {
+      "numerator": 49,
+      "denominator": 19857408
+    },
+    "rank_training_ideal_tail": {
+      "numerator": 1,
+      "denominator": 768
+    },
+    "rank_training_output_tv_allowance": {
+      "numerator": 1,
+      "denominator": 768
+    },
+    "filter_half_diamond_allowance_per_call": {
+      "numerator": 1,
+      "denominator": 11096064
+    },
+    "total_growth_gate_error_allowance": {
+      "numerator": 1,
+      "denominator": 96
+    },
+    "bad_grid_probability_bound": {
+      "numerator": 3,
+      "denominator": 2048
+    },
+    "rank_error_budget": {
+      "numerator": 1,
+      "denominator": 48
+    },
+    "growth_abort_bound": {
+      "numerator": 5,
+      "denominator": 256
+    },
+    "filter_abort_bound": {
+      "numerator": 301,
+      "denominator": 16384
+    },
+    "complete_preparation_error_budget": {
+      "numerator": 1,
+      "denominator": 48
+    },
+    "all_source_failure_upper_bound": {
+      "numerator": 5,
+      "denominator": 48
+    },
+    "dme_program_copies_included": false,
+    "source_promise_certified": false,
+    "physical_quantum_preparer_implemented": false
+  },
+  "quadratic_competitor_caps": {
+    "zero_error_probability_lower_bound": {
+      "numerator": 1,
+      "denominator": 81
+    },
+    "wrong_candidate_purity_loss_lower_bound": {
+      "numerator": 1,
+      "denominator": 486
+    },
+    "candidate_count": 57024,
+    "purity_and_overlap_estimate_count": 57025,
+    "swap_trials_per_estimate": 634894848,
+    "mean_estimation_absolute_error": {
+      "numerator": 1,
+      "denominator": 3888
+    },
+    "raw_copy_cap": 72409757642496,
+    "candidate_span_failure_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "simultaneous_estimation_failure_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "public_conic_witness_abort_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "complete_instrument_error_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "total_error_budget": {
+      "numerator": 1,
+      "denominator": 3
+    },
+    "known_rank_required": false,
+    "classical_only_verifier_claimed": false,
+    "end_to_end_quantum_execution": false
+  },
+  "stabilizer_basis_caps": {
+    "target": "phase-free maximal commuting Pauli label space; not original eigenvalue signs",
+    "chart_count_cap": 4,
+    "good_chart_probability_lower_bound": {
+      "numerator": 1,
+      "denominator": 2
+    },
+    "no_good_chart_probability_bound": {
+      "numerator": 1,
+      "denominator": 16
+    },
+    "inner_trial_error_budget": {
+      "numerator": 1,
+      "denominator": 48
+    },
+    "all_inner_trial_error_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "uniform_clifford_sampling_abort_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "clifford_instrument_precision_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "total_error_upper_bound": {
+      "numerator": 5,
+      "denominator": 16
+    },
+    "raw_copy_cap": 376154035273728,
+    "single_chart": {
+      "zero_error_probability_lower_bound": {
+        "numerator": 1,
+        "denominator": 81
+      },
+      "wrong_candidate_purity_loss_lower_bound": {
+        "numerator": 1,
+        "denominator": 486
+      },
+      "candidate_count": 62208,
+      "purity_and_overlap_estimate_count": 62209,
+      "swap_trials_per_estimate": 755827200,
+      "mean_estimation_absolute_error": {
+        "numerator": 1,
+        "denominator": 3888
+      },
+      "raw_copy_cap": 94038508818432,
+      "candidate_span_failure_budget": {
+        "numerator": 1,
+        "denominator": 192
+      },
+      "simultaneous_estimation_failure_budget": {
+        "numerator": 1,
+        "denominator": 192
+      },
+      "public_conic_witness_abort_budget": {
+        "numerator": 1,
+        "denominator": 192
+      },
+      "complete_instrument_error_budget": {
+        "numerator": 1,
+        "denominator": 192
+      },
+      "total_error_budget": {
+        "numerator": 1,
+        "denominator": 48
+      },
+      "known_rank_required": false,
+      "classical_only_verifier_claimed": false,
+      "end_to_end_quantum_execution": false
+    },
+    "bad_chart_regression_law_claimed": false,
+    "original_pure_state_identified": false,
+    "uniform_clifford_sampler_implemented": false,
+    "full_basis_learner_implemented": false
+  },
+  "known_spectrum_reference_only": true,
+  "quantum_filter_executed": false,
+  "quantum_learner_executed": false,
+  "novelty_established": false,
+  "native_classical_input_reduction_established": false,
+  "speedup_claim_allowed": false,
+  "source_sha256": {
+    "theorems/peaked_phase_source.py": "b2c0ee2af1d80f1da9fa8b1ea98e68e660079651d2a02dcbd3ba56b4f60c7688",
+    "tests/test_peaked_phase_source.py": "eda4c4b0885684e857bb7b8e09cb626264ef97b8f7096384bdbb0f888c2f49b5",
+    "research/PEAKED_PHASE_NOISE_LEARNING.md": "8b16e7626d73710e0ae2e0365fcbf16d84a240818e5ddaf50f2041eecf1e499a",
+    "theorems/exterior_phase_learning.py": "18ef6c022ee74d4e37ccf911fce954f8115f3ba3bb33f14ff10d5f53c1c17ed2",
+    "theorems/mixed_spectral_source.py": "761e1716ffd8bd1613bcc2af9057163ca11157e99e3d316801692f654ecaf81e",
+    "qsearch_cli/commands/sde.py": "0b17b073aa6fb5991c21cdc5b09f3bfc2cb933c7275675e6bcea0e87e75a0771",
+    "research/audits/reviews/2026-10-30-noisy-phase-native-scope.md": "777bf6be2a9799e03a4a031cc47311607021da58d54ea6dd9a9ab861d8607675"
+  }
+}

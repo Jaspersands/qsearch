@@ -1,0 +1,978 @@
+{
+  "status": "CONDITIONAL_ON_EXISTING_REES_WHOLE_PROOF_RESOURCE_CERTIFICATE",
+  "proof_note": "research/BOUNDED_CODIMENSION_HYBRID_BOUND.md",
+  "source_sha256": {
+    "theorems/codimension_hybrid_budget.py": "031e04741262f07735c2d07f65b537a6c19dda8a854bade043c99db5bb364f1f",
+    "theorems/uniform_bch_rees.py": "933bf6eb7daad6b16b345b4957bc8ec12d6f8c84c0a3d6fec273ca86f0f90a6c",
+    "theorems/power_sde.py": "f28e3d73177103863b169728f2ce970638e5f35e18707eca9a1f902784ee6902",
+    "theorems/power_sde_budget.py": "b27a39422252828609bdd47388b6241280f8569644d042a775b7af0ca0ec87b2",
+    "theorems/bounded_codimension_reduction.py": "813fa5a75a486fdc40c225e2527209ef580e19febf34cf13d804d0110e2dbf67",
+    "theorems/rees_uniform_instrument.py": "d1f1ced35f830060fff3e54c3af0461b6457e6795e740e375344b3cb606e1985",
+    "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md": "1b8d9291df257303371afb00ebce7123800ac9a151e447e9a317b403a3d5bbdc",
+    "research/BOUNDED_CODIMENSION_HYBRID_BOUND.md": "fc5d70508e08d31b272ff2a77b463ac92443b76ce408ff7a5adb381d6596b40c"
+  },
+  "source_hashes_certify_proof": false,
+  "candidate_promotion": false,
+  "proof_promotion": false,
+  "growing_class_pointwise_correctness_supplied_promise": true,
+  "growing_class_uniform_complete_instrument_efficiency_supplied_promise": false,
+  "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+  "uniform_compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+  "fixed_class_correctness_alone_suffices": false,
+  "total_time_bound": "T_nonoracle + Q*T_f",
+  "oracle_evaluation_cost_certified": false,
+  "label_width_is_oracle_evaluation_cost": false,
+  "resource_certificate_only": true,
+  "hidden_oracle_benchmark": false,
+  "prime_validation_included": false,
+  "profile_existence_certified": false,
+  "quantum_receiver_implemented": false,
+  "native_application_established": false,
+  "speedup_claim_allowed": false,
+  "cases": [
+    {
+      "status": "CONDITIONAL_ON_EXISTING_REES_WHOLE_PROOF_RESOURCE_CERTIFICATE",
+      "dimension": 10,
+      "codimension_bound": 3,
+      "supplied_prime": 7,
+      "error_target": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "prime_contract": "SUPPLIED_PROMISE_NOT_VERIFIED",
+      "actual_class_contract": "SUPPLIED_ACTUAL_NILPOTENCY_CLASS_LT_PRIME",
+      "source_contract": "Fresh independent uniform sources; exact hidden-coset labels.",
+      "whole_proof_dependency": "Existing Rees pointwise/source correctness, plus the written uniform prime-field instrument compilation derivation.",
+      "growing_class_pointwise_correctness_supplied_promise": true,
+      "growing_class_uniform_complete_instrument_efficiency_supplied_promise": false,
+      "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+      "uniform_compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+      "growing_class_pointwise_correctness_certified": false,
+      "growing_class_uniform_complete_instrument_efficiency_certified": false,
+      "fixed_class_correctness_alone_suffices": false,
+      "prime_validation_included": false,
+      "prime_certified": false,
+      "actual_class_certified": false,
+      "codimension_promise_certified": false,
+      "profile_existence_certified": false,
+      "hidden_intersection_completeness_certified": false,
+      "resource_certificate_only": true,
+      "oracle_queries_executed": 0,
+      "solver_implemented": false,
+      "quantum_receiver_implemented": false,
+      "hidden_oracle_benchmark": false,
+      "field_enumeration_used": false,
+      "native_application_established": false,
+      "novelty_established": false,
+      "speedup_claim_allowed": false,
+      "formal_total_policy_instantiated": false,
+      "deterministic_arithmetic_step_counter": false,
+      "physical_gate_clock": false,
+      "cost_scope": "Exact query, source, randomness and algebraic primitive caps; not a gate, public linear-algebra, label-bit-cost or wall-clock count.",
+      "runtime_model": {
+        "total_time_bound": "T_nonoracle + Q*T_f",
+        "Q": "original_queries",
+        "T_f": "Separately charged upper bound on one original oracle evaluation.",
+        "T_nonoracle": "Nonoracle operations, including label processing and uniformly efficient complete instruments, under the supplied bit-cost promises.",
+        "oracle_evaluation_time_included_in_resource_caps": false,
+        "oracle_evaluation_cost_certified": false,
+        "label_width_is_oracle_evaluation_cost": false,
+        "label_processing_cost_charged_to_nonoracle_time": true,
+        "label_width_is_a_separate_bit_complexity_parameter": true
+      },
+      "complexity": {
+        "overall": "2^O(k^2 log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "large_field": "2^O(k log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "parameter": "codimension_bound",
+        "scope": "Oracle call count and conditional nonoracle operation bounds, not a bound on the cost of evaluating the oracle.",
+        "basis": "Terminal dimension O(k^2), class O(k), whole-grade arity product.",
+        "uses_generic_derived_rank_bound": false,
+        "conditional_on_existing_rees_whole_proof": true
+      },
+      "branch_requires_rees": false,
+      "field_threshold": 1253826625536,
+      "classical": {
+        "index_cap": 343,
+        "batch_size": 28,
+        "birthday_exponent_lower_bound": {
+          "numerator": 54,
+          "denominator": 49
+        },
+        "no_collision_probability_upper_bound": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "no_collision_bound_is_strict": true,
+        "collision_selection": "First repeated label in draw order; pair with its first occurrence.",
+        "collision_selection_uses_only_labels": true,
+        "accepted_element": "x^-1*y; exactly uniform on H conditional on batch acceptance",
+        "accepted_elements_are_independent_under_source_promise": true,
+        "identity_elements_retained": true,
+        "rank_slack": 4,
+        "accepted_hidden_elements": 14,
+        "batches_per_hidden_element": 7,
+        "fresh_batch_cap": 98,
+        "group_draw_cap": 2744,
+        "original_query_cap": 2744,
+        "group_inverse_cap": 14,
+        "group_product_cap": 14,
+        "label_processing": "Sort by label and index, scan adjacent equal labels; retain earliest second index.",
+        "label_order_comparison_cap": 13720,
+        "label_equality_comparison_cap": 2646,
+        "label_comparison_bit_cost_parameter": "label_width plus O(log(batch_size)) index bits",
+        "batch_coordinate_storage_cap": 280,
+        "accepted_coordinate_storage_cap": 140,
+        "scalar_uniform_draw_cap": 27440,
+        "scalar_coordinates_per_group_draw": 10,
+        "integer_rejection_cap": 18,
+        "bits_per_rejection_attempt": 3,
+        "fair_bit_cap": 1481760,
+        "collision_failure_bound": {
+          "numerator": 7,
+          "denominator": 64
+        },
+        "rank_failure_bound": {
+          "numerator": 1,
+          "denominator": 16
+        },
+        "field_draw_failure_bound": {
+          "numerator": 1715,
+          "denominator": 16384
+        },
+        "collision_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "rank_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "field_draw_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "index_parameter_envelope": 1971117274719741650707244872321990656
+      },
+      "abelian_intersections": null,
+      "terminal_rees": null,
+      "terminal_uniform_instrument": null,
+      "terminal_profile_is_envelope": false,
+      "original_queries": 2744,
+      "original_inputs": 2744,
+      "abelian_original_queries": 0,
+      "terminal_original_queries": 0,
+      "query_transport_original_queries_per_call": 1,
+      "classical_uniform_draw_cap": 27440,
+      "classical_fair_bit_cap": 1481760,
+      "classical_root_pow_gcd_pair_cap": 0,
+      "total_error_bound": {
+        "numerator": 4531,
+        "denominator": 16384
+      },
+      "branch": "classical_collisions"
+    },
+    {
+      "status": "CONDITIONAL_ON_EXISTING_REES_WHOLE_PROOF_RESOURCE_CERTIFICATE",
+      "dimension": 10,
+      "codimension_bound": 3,
+      "supplied_prime": 170141183460469231731687303715884105727,
+      "error_target": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "prime_contract": "SUPPLIED_PROMISE_NOT_VERIFIED",
+      "actual_class_contract": "SUPPLIED_ACTUAL_NILPOTENCY_CLASS_LT_PRIME",
+      "source_contract": "Fresh independent uniform sources; exact hidden-coset labels.",
+      "whole_proof_dependency": "Existing Rees pointwise/source correctness, plus the written uniform prime-field instrument compilation derivation.",
+      "growing_class_pointwise_correctness_supplied_promise": true,
+      "growing_class_uniform_complete_instrument_efficiency_supplied_promise": false,
+      "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+      "uniform_compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+      "growing_class_pointwise_correctness_certified": false,
+      "growing_class_uniform_complete_instrument_efficiency_certified": false,
+      "fixed_class_correctness_alone_suffices": false,
+      "prime_validation_included": false,
+      "prime_certified": false,
+      "actual_class_certified": false,
+      "codimension_promise_certified": false,
+      "profile_existence_certified": false,
+      "hidden_intersection_completeness_certified": false,
+      "resource_certificate_only": true,
+      "oracle_queries_executed": 0,
+      "solver_implemented": false,
+      "quantum_receiver_implemented": false,
+      "hidden_oracle_benchmark": false,
+      "field_enumeration_used": false,
+      "native_application_established": false,
+      "novelty_established": false,
+      "speedup_claim_allowed": false,
+      "formal_total_policy_instantiated": false,
+      "deterministic_arithmetic_step_counter": false,
+      "physical_gate_clock": false,
+      "cost_scope": "Exact query, source, randomness and algebraic primitive caps; not a gate, public linear-algebra, label-bit-cost or wall-clock count.",
+      "runtime_model": {
+        "total_time_bound": "T_nonoracle + Q*T_f",
+        "Q": "original_queries",
+        "T_f": "Separately charged upper bound on one original oracle evaluation.",
+        "T_nonoracle": "Nonoracle operations, including label processing and uniformly efficient complete instruments, under the supplied bit-cost promises.",
+        "oracle_evaluation_time_included_in_resource_caps": false,
+        "oracle_evaluation_cost_certified": false,
+        "label_width_is_oracle_evaluation_cost": false,
+        "label_processing_cost_charged_to_nonoracle_time": true,
+        "label_width_is_a_separate_bit_complexity_parameter": true
+      },
+      "complexity": {
+        "overall": "2^O(k^2 log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "large_field": "2^O(k log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "parameter": "codimension_bound",
+        "scope": "Oracle call count and conditional nonoracle operation bounds, not a bound on the cost of evaluating the oracle.",
+        "basis": "Terminal dimension O(k^2), class O(k), whole-grade arity product.",
+        "uses_generic_derived_rank_bound": false,
+        "conditional_on_existing_rees_whole_proof": true
+      },
+      "branch_requires_rees": true,
+      "field_threshold": 1253826625536,
+      "classical": null,
+      "abelian_intersections": {
+        "call_cap": 10,
+        "samples_per_call": 17,
+        "rank_slack": 7,
+        "early_abelian_terminal_solves_included": true,
+        "early_abelian_dimension_bound": 10,
+        "complete_sampler_call_cap": 170,
+        "original_query_cap": 170,
+        "rank_failure_bound": {
+          "numerator": 5,
+          "denominator": 64
+        },
+        "rank_error_share": {
+          "numerator": 1,
+          "denominator": 12
+        },
+        "complete_sampler_approximation_share": {
+          "numerator": 1,
+          "denominator": 12
+        },
+        "complete_sampler_error_per_call": {
+          "numerator": 1,
+          "denominator": 2040
+        },
+        "exact_intersection_required": true,
+        "source": "Independent abelian Fourier samples, subject to complete-sampler approximation share."
+      },
+      "terminal_rees": {
+        "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+        "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+        "lower_central_dimensions": [
+          6,
+          4,
+          3,
+          2,
+          1
+        ],
+        "supplied_prime": 170141183460469231731687303715884105727,
+        "actual_class": 5,
+        "derived_dimension": 4,
+        "cover_dimension": 16,
+        "error_target": {
+          "numerator": 1,
+          "denominator": 6
+        },
+        "final_fourier_samples": 11,
+        "fourier_slack": 5,
+        "stages_top_down": [
+          {
+            "grade": 5,
+            "rank": 1,
+            "reduced_degree": 1,
+            "arity": 2,
+            "conversions": 69300,
+            "consumed_targets": 138600,
+            "randomness": null
+          },
+          {
+            "grade": 4,
+            "rank": 2,
+            "reduced_degree": 2,
+            "arity": 9,
+            "conversions": 7700,
+            "consumed_targets": 69300,
+            "randomness": {
+              "failure_bits": 18,
+              "root_calls": 18,
+              "polynomial_pow_gcd_pairs": 1296,
+              "uniform_calls": 2832,
+              "bit_rejection_attempts": 31,
+              "fair_bits": 11149584,
+              "abort_bound": {
+                "numerator": 337,
+                "denominator": 134217728
+              }
+            }
+          },
+          {
+            "grade": 3,
+            "rank": 3,
+            "reduced_degree": 3,
+            "arity": 28,
+            "conversions": 275,
+            "consumed_targets": 7700,
+            "randomness": {
+              "failure_bits": 18,
+              "root_calls": 48,
+              "polynomial_pow_gcd_pairs": 7488,
+              "uniform_calls": 24414,
+              "bit_rejection_attempts": 34,
+              "fair_bits": 105419652,
+              "abort_bound": {
+                "numerator": 24879,
+                "denominator": 8589934592
+              }
+            }
+          },
+          {
+            "grade": 2,
+            "rank": 4,
+            "reduced_degree": 2,
+            "arity": 25,
+            "conversions": 11,
+            "consumed_targets": 275,
+            "randomness": {
+              "failure_bits": 18,
+              "root_calls": 38,
+              "polynomial_pow_gcd_pairs": 2850,
+              "uniform_calls": 5950,
+              "bit_rejection_attempts": 32,
+              "fair_bits": 24180800,
+              "abort_bound": {
+                "numerator": 5535,
+                "denominator": 2147483648
+              }
+            }
+          }
+        ],
+        "leaves_per_terminal": 12600,
+        "derived_parameter_leaf_bound": 345600,
+        "scalar_flag_leaves_per_terminal": 93312,
+        "source_preparations": 138600,
+        "original_inputs": 693000,
+        "sde_calls": 77286,
+        "nonlinear_sde_calls": 7986,
+        "complete_instrument_calls": 215897,
+        "central_character_measurements": 215875,
+        "solver_failure_bits_per_call": 18,
+        "solver_abort_bound": {
+          "numerator": 3993,
+          "denominator": 131072
+        },
+        "rank_failure_bound": {
+          "numerator": 1,
+          "denominator": 24258095192198577111702804507226602424890810132343529344969931805410107408421004872871780899507870385933661656974976290300766523138727386569015649939118287100152285516450123215108048089818565436340141570808324206521797791165972482
+        },
+        "instrument_error_per_call": {
+          "numerator": 1,
+          "denominator": 3886146
+        },
+        "total_error_bound": {
+          "numerator": 136752316302109234180878815653433612658941398697738608512340771671687768280816923748051012400875673981769247184345653839204982300136449116517651391459563885939652937122819075167036609101008849473430176978590726789354799292388040380313,
+          "denominator": 1589778526515925949592554996185602616517644132833265539151949450799356799118278975348525033030147793612548450351512046161151034860419638006187009634410056063395580183606075275025321039614349504435987517984494335198612540041853172580352
+        },
+        "classical_uniform_draw_cap": 28585700,
+        "classical_fair_bit_cap": 115108189900,
+        "classical_root_pow_gcd_pair_cap": 12069750,
+        "depth_first_group_register_bound": 62,
+        "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+        "classical_retry_extra_source_copies": 0,
+        "prime_validation_included": false,
+        "profile_existence_certified": false,
+        "deterministic_arithmetic_step_counter": false,
+        "physical_gate_clock": false,
+        "quantum_receiver_implemented": false,
+        "formal_total_policy_instantiated": false,
+        "novelty_established": false,
+        "speedup_claim_allowed": false,
+        "profile_role": "UNREALIZED_UPPER_ENVELOPE_NOT_ACTUAL_INPUT_PROFILE",
+        "actual_class_field_is_envelope_length_not_certification": true
+      },
+      "terminal_uniform_instrument": {
+        "status": "UNIFORM_PRIMITIVE_CERTIFICATE_NOT_CIRCUIT_EXECUTION",
+        "input_model": "Explicit prime-field Lie coordinates; exact ordinary coherent hiding oracle.",
+        "recovery_budget": {
+          "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+          "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+          "lower_central_dimensions": [
+            6,
+            4,
+            3,
+            2,
+            1
+          ],
+          "supplied_prime": 170141183460469231731687303715884105727,
+          "actual_class": 5,
+          "derived_dimension": 4,
+          "cover_dimension": 16,
+          "error_target": {
+            "numerator": 1,
+            "denominator": 6
+          },
+          "final_fourier_samples": 11,
+          "fourier_slack": 5,
+          "stages_top_down": [
+            {
+              "grade": 5,
+              "rank": 1,
+              "reduced_degree": 1,
+              "arity": 2,
+              "conversions": 69300,
+              "consumed_targets": 138600,
+              "randomness": null
+            },
+            {
+              "grade": 4,
+              "rank": 2,
+              "reduced_degree": 2,
+              "arity": 9,
+              "conversions": 7700,
+              "consumed_targets": 69300,
+              "randomness": {
+                "failure_bits": 18,
+                "root_calls": 18,
+                "polynomial_pow_gcd_pairs": 1296,
+                "uniform_calls": 2832,
+                "bit_rejection_attempts": 31,
+                "fair_bits": 11149584,
+                "abort_bound": {
+                  "numerator": 337,
+                  "denominator": 134217728
+                }
+              }
+            },
+            {
+              "grade": 3,
+              "rank": 3,
+              "reduced_degree": 3,
+              "arity": 28,
+              "conversions": 275,
+              "consumed_targets": 7700,
+              "randomness": {
+                "failure_bits": 18,
+                "root_calls": 48,
+                "polynomial_pow_gcd_pairs": 7488,
+                "uniform_calls": 24414,
+                "bit_rejection_attempts": 34,
+                "fair_bits": 105419652,
+                "abort_bound": {
+                  "numerator": 24879,
+                  "denominator": 8589934592
+                }
+              }
+            },
+            {
+              "grade": 2,
+              "rank": 4,
+              "reduced_degree": 2,
+              "arity": 25,
+              "conversions": 11,
+              "consumed_targets": 275,
+              "randomness": {
+                "failure_bits": 18,
+                "root_calls": 38,
+                "polynomial_pow_gcd_pairs": 2850,
+                "uniform_calls": 5950,
+                "bit_rejection_attempts": 32,
+                "fair_bits": 24180800,
+                "abort_bound": {
+                  "numerator": 5535,
+                  "denominator": 2147483648
+                }
+              }
+            }
+          ],
+          "leaves_per_terminal": 12600,
+          "derived_parameter_leaf_bound": 345600,
+          "scalar_flag_leaves_per_terminal": 93312,
+          "source_preparations": 138600,
+          "original_inputs": 693000,
+          "sde_calls": 77286,
+          "nonlinear_sde_calls": 7986,
+          "complete_instrument_calls": 215897,
+          "central_character_measurements": 215875,
+          "solver_failure_bits_per_call": 18,
+          "solver_abort_bound": {
+            "numerator": 3993,
+            "denominator": 131072
+          },
+          "rank_failure_bound": {
+            "numerator": 1,
+            "denominator": 24258095192198577111702804507226602424890810132343529344969931805410107408421004872871780899507870385933661656974976290300766523138727386569015649939118287100152285516450123215108048089818565436340141570808324206521797791165972482
+          },
+          "instrument_error_per_call": {
+            "numerator": 1,
+            "denominator": 3886146
+          },
+          "total_error_bound": {
+            "numerator": 136752316302109234180878815653433612658941398697738608512340771671687768280816923748051012400875673981769247184345653839204982300136449116517651391459563885939652937122819075167036609101008849473430176978590726789354799292388040380313,
+            "denominator": 1589778526515925949592554996185602616517644132833265539151949450799356799118278975348525033030147793612548450351512046161151034860419638006187009634410056063395580183606075275025321039614349504435987517984494335198612540041853172580352
+          },
+          "classical_uniform_draw_cap": 28585700,
+          "classical_fair_bit_cap": 115108189900,
+          "classical_root_pow_gcd_pair_cap": 12069750,
+          "depth_first_group_register_bound": 62,
+          "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+          "classical_retry_extra_source_copies": 0,
+          "prime_validation_included": false,
+          "profile_existence_certified": false,
+          "deterministic_arithmetic_step_counter": false,
+          "physical_gate_clock": false,
+          "quantum_receiver_implemented": false,
+          "formal_total_policy_instantiated": false,
+          "novelty_established": false,
+          "speedup_claim_allowed": false,
+          "profile_role": "UNREALIZED_UPPER_ENVELOPE_NOT_ACTUAL_INPUT_PROFILE",
+          "actual_class_field_is_envelope_length_not_certification": true
+        },
+        "supplied_prime": 170141183460469231731687303715884105727,
+        "canonical_field_limb_bits": 127,
+        "cover_group_register_bits": 2032,
+        "stages_top_down": [
+          {
+            "grade": 5,
+            "central_dimension": 1,
+            "group_dimension": 16,
+            "quotient_dimension": 15,
+            "arity": 2,
+            "conversions": 69300,
+            "qft_calls_per_conversion": 19,
+            "qft_calls": 1316700,
+            "central_coordinate_subtractions": 138600,
+            "controlled_right_actions": 138600,
+            "bch_evaluation_passes": 554400,
+            "bracket_calls_per_bch_pass": 140,
+            "bracket_calls": 77616000,
+            "dense_structure_tensor_terms": 317915136000
+          },
+          {
+            "grade": 4,
+            "central_dimension": 2,
+            "group_dimension": 15,
+            "quotient_dimension": 13,
+            "arity": 9,
+            "conversions": 7700,
+            "qft_calls_per_conversion": 49,
+            "qft_calls": 377300,
+            "central_coordinate_subtractions": 138600,
+            "controlled_right_actions": 69300,
+            "bch_evaluation_passes": 277200,
+            "bracket_calls_per_bch_pass": 60,
+            "bracket_calls": 16632000,
+            "dense_structure_tensor_terms": 56133000000
+          },
+          {
+            "grade": 3,
+            "central_dimension": 3,
+            "group_dimension": 13,
+            "quotient_dimension": 10,
+            "arity": 28,
+            "conversions": 275,
+            "qft_calls_per_conversion": 178,
+            "qft_calls": 48950,
+            "central_coordinate_subtractions": 23100,
+            "controlled_right_actions": 7700,
+            "bch_evaluation_passes": 30800,
+            "bracket_calls_per_bch_pass": 20,
+            "bracket_calls": 616000,
+            "dense_structure_tensor_terms": 1353352000
+          },
+          {
+            "grade": 2,
+            "central_dimension": 4,
+            "group_dimension": 10,
+            "quotient_dimension": 6,
+            "arity": 25,
+            "conversions": 11,
+            "qft_calls_per_conversion": 206,
+            "qft_calls": 2266,
+            "central_coordinate_subtractions": 1100,
+            "controlled_right_actions": 275,
+            "bch_evaluation_passes": 1100,
+            "bracket_calls_per_bch_pass": 4,
+            "bracket_calls": 4400,
+            "dense_structure_tensor_terms": 4400000
+          }
+        ],
+        "forest_edges": 215875,
+        "leaf_preparation_qft_calls": 2217600,
+        "final_readout_qft_calls": 66,
+        "single_coordinate_qft_calls": 3962882,
+        "single_coordinate_qft_envelope": 13305600,
+        "qft_calls_per_instrument_cap": 206,
+        "qft_isometry_error_per_call": {
+          "numerator": 1,
+          "denominator": 800546076
+        },
+        "qft_precision_bits": 30,
+        "qft_error_bound": {
+          "numerator": 180131,
+          "denominator": 36388458
+        },
+        "per_instrument_qft_error_bound": {
+          "numerator": 1,
+          "denominator": 3886146
+        },
+        "complete_output_error_bound": {
+          "numerator": 5990375001489079940134101721546004771467080767742980186428062384468785284982117006840980773489409272980923020349088376628648183261809446020604079021881583110795497976517355096839699433732849069440312561185580314071423682132811118225831687,
+          "denominator": 169150845442768005110698259039151932794860818089326620100228269615600764069385764698107714989374695092581542568950530199500308958113789064220291638091595555089226335955502803187419133293927172922484635926032212770797175647913135709376872448
+        },
+        "ordinary_oracle_queries": 693000,
+        "leaf_linear_evaluation_compute_uncompute_pairs": 693000,
+        "central_coordinate_subtractions": 301400,
+        "controlled_right_actions": 215875,
+        "bch_evaluation_passes": 863500,
+        "bracket_calls": 94868400,
+        "dense_structure_tensor_terms": 375405888000,
+        "classical_fair_bit_cap": 115108189900,
+        "classical_root_pow_gcd_pair_cap": 12069750,
+        "compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+        "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+        "canonical_subspace_reference_stable_error_required": true,
+        "joint_source_error_required": true,
+        "invalid_binary_records_abort": true,
+        "canonical_forbidden_labels_require_hidden_membership_test": false,
+        "zero_scale_is_identity_not_delta_zero": true,
+        "all_target_slots_consumed": true,
+        "classical_retry_extra_source_copies": 0,
+        "cost_scope": "Padded primitive caps; known uniform polynomial circuits, not a physical gate estimate.",
+        "runtime_model": "T_nonoracle + ordinary_oracle_queries*T_f; oracle cost T_f separately supplied.",
+        "arbitrary_modulus_qft_cost": "poly(log(p)+log(1/eta)), including finite-gate synthesis",
+        "bch_boolean_size_bound": "O((d+1)^4*(D_d+1)^3*(log(p)+1)^3) per evaluation",
+        "internal_qft_gate_synthesis_errors_included_in_eta": true,
+        "exact_oracle_assumed": true,
+        "approximate_oracle_error_included": false,
+        "prime_validation_included": false,
+        "profile_existence_certified": false,
+        "circuit_generator_implemented": false,
+        "quantum_receiver_implemented": false,
+        "formal_total_policy_instantiated": false,
+        "physical_gate_clock": false,
+        "oracle_queries_executed": 0,
+        "field_enumeration_used": false,
+        "whole_rees_correctness_certified": false,
+        "novelty_established": false,
+        "native_application_established": false,
+        "speedup_claim_allowed": false,
+        "profile_role": "UNREALIZED_UPPER_ENVELOPE_NOT_ACTUAL_INPUT_PROFILE"
+      },
+      "terminal_profile_is_envelope": true,
+      "original_queries": 693170,
+      "original_inputs": 693170,
+      "abelian_original_queries": 170,
+      "terminal_original_queries": 693000,
+      "query_transport_original_queries_per_call": 1,
+      "classical_uniform_draw_cap": 28585700,
+      "classical_fair_bit_cap": 115108189900,
+      "classical_root_pow_gcd_pair_cap": 12069750,
+      "total_error_bound": {
+        "numerator": 393435307562493111458843424412567368450852690978109607021249276748667251471789049976198283358868286492128632397350202958974159803641703169599928988682020854508730987600883312280499901955409029877157328319837207993297448986645583869849,
+        "denominator": 1589778526515925949592554996185602616517644132833265539151949450799356799118278975348525033030147793612548450351512046161151034860419638006187009634410056063395580183606075275025321039614349504435987517984494335198612540041853172580352
+      },
+      "branch": "large_field_rees",
+      "terminal_dimension_bound": 6,
+      "terminal_class_bound": 5,
+      "terminal_envelope_profile": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ],
+      "terminal_leaf_parameter_bound": 2217373921,
+      "terminal_stage_arity_parameter_bound": 217,
+      "terminal_error_share": {
+        "numerator": 1,
+        "denominator": 6
+      }
+    },
+    {
+      "status": "CONDITIONAL_ON_EXISTING_REES_WHOLE_PROOF_RESOURCE_CERTIFICATE",
+      "dimension": 32,
+      "codimension_bound": 12,
+      "supplied_prime": 7,
+      "error_target": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "prime_contract": "SUPPLIED_PROMISE_NOT_VERIFIED",
+      "actual_class_contract": "SUPPLIED_ACTUAL_NILPOTENCY_CLASS_LT_PRIME",
+      "source_contract": "Fresh independent uniform sources; exact hidden-coset labels.",
+      "whole_proof_dependency": "Existing Rees pointwise/source correctness, plus the written uniform prime-field instrument compilation derivation.",
+      "growing_class_pointwise_correctness_supplied_promise": true,
+      "growing_class_uniform_complete_instrument_efficiency_supplied_promise": false,
+      "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+      "uniform_compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+      "growing_class_pointwise_correctness_certified": false,
+      "growing_class_uniform_complete_instrument_efficiency_certified": false,
+      "fixed_class_correctness_alone_suffices": false,
+      "prime_validation_included": false,
+      "prime_certified": false,
+      "actual_class_certified": false,
+      "codimension_promise_certified": false,
+      "profile_existence_certified": false,
+      "hidden_intersection_completeness_certified": false,
+      "resource_certificate_only": true,
+      "oracle_queries_executed": 0,
+      "solver_implemented": false,
+      "quantum_receiver_implemented": false,
+      "hidden_oracle_benchmark": false,
+      "field_enumeration_used": false,
+      "native_application_established": false,
+      "novelty_established": false,
+      "speedup_claim_allowed": false,
+      "formal_total_policy_instantiated": false,
+      "deterministic_arithmetic_step_counter": false,
+      "physical_gate_clock": false,
+      "cost_scope": "Exact query, source, randomness and algebraic primitive caps; not a gate, public linear-algebra, label-bit-cost or wall-clock count.",
+      "runtime_model": {
+        "total_time_bound": "T_nonoracle + Q*T_f",
+        "Q": "original_queries",
+        "T_f": "Separately charged upper bound on one original oracle evaluation.",
+        "T_nonoracle": "Nonoracle operations, including label processing and uniformly efficient complete instruments, under the supplied bit-cost promises.",
+        "oracle_evaluation_time_included_in_resource_caps": false,
+        "oracle_evaluation_cost_certified": false,
+        "label_width_is_oracle_evaluation_cost": false,
+        "label_processing_cost_charged_to_nonoracle_time": true,
+        "label_width_is_a_separate_bit_complexity_parameter": true
+      },
+      "complexity": {
+        "overall": "2^O(k^2 log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "large_field": "2^O(k log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "parameter": "codimension_bound",
+        "scope": "Oracle call count and conditional nonoracle operation bounds, not a bound on the cost of evaluating the oracle.",
+        "basis": "Terminal dimension O(k^2), class O(k), whole-grade arity product.",
+        "uses_generic_derived_rank_bound": false,
+        "conditional_on_existing_rees_whole_proof": true
+      },
+      "branch_requires_rees": false,
+      "field_threshold": 16393891944503171080471777630904900412935201887727460442661393862230016,
+      "classical": {
+        "index_cap": 13841287201,
+        "batch_size": 166382,
+        "birthday_exponent_lower_bound": {
+          "numerator": 13841401771,
+          "denominator": 13841287201
+        },
+        "no_collision_probability_upper_bound": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "no_collision_bound_is_strict": true,
+        "collision_selection": "First repeated label in draw order; pair with its first occurrence.",
+        "collision_selection_uses_only_labels": true,
+        "accepted_element": "x^-1*y; exactly uniform on H conditional on batch acceptance",
+        "accepted_elements_are_independent_under_source_promise": true,
+        "identity_elements_retained": true,
+        "rank_slack": 4,
+        "accepted_hidden_elements": 36,
+        "batches_per_hidden_element": 9,
+        "fresh_batch_cap": 324,
+        "group_draw_cap": 53907768,
+        "original_query_cap": 53907768,
+        "group_inverse_cap": 36,
+        "group_product_cap": 36,
+        "label_processing": "Sort by label and index, scan adjacent equal labels; retain earliest second index.",
+        "label_order_comparison_cap": 970339824,
+        "label_equality_comparison_cap": 53907444,
+        "label_comparison_bit_cost_parameter": "label_width plus O(log(batch_size)) index bits",
+        "batch_coordinate_storage_cap": 5324224,
+        "accepted_coordinate_storage_cap": 1152,
+        "scalar_uniform_draw_cap": 1725048576,
+        "scalar_coordinates_per_group_draw": 32,
+        "integer_rejection_cap": 34,
+        "bits_per_rejection_attempt": 3,
+        "fair_bit_cap": 175954954752,
+        "collision_failure_bound": {
+          "numerator": 9,
+          "denominator": 128
+        },
+        "rank_failure_bound": {
+          "numerator": 1,
+          "denominator": 16
+        },
+        "field_draw_failure_bound": {
+          "numerator": 6738471,
+          "denominator": 67108864
+        },
+        "collision_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "rank_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "field_draw_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "index_parameter_envelope": 376864143580400340405096309305753773936562006185348678749298317301079752202487458746209468995377775943712461176171375259513566548568887964632092788052352505278676838546225101061824342843910004550286851387849527459515957906403153033703738394524444937470089067331640051937869428194753786722843963835362986073174335372738891078712092286030359121378685374600601332974390228340480287454760870762464118175854397592582005010839942073165849250203521535751956889590085682011621683914549354420390702675569945208339536052953829654112491227830524777952529671484654302585031571760178212063686922867807013048237117387578223572593735221854592332852547787827211882775448852820898578166664510808193571930815229146457222416555461957819111550925078753096344274899806664994870793215637334599578538128372830257785052246830249112719423194439136878578985699068870656
+      },
+      "abelian_intersections": null,
+      "terminal_rees": null,
+      "terminal_uniform_instrument": null,
+      "terminal_profile_is_envelope": false,
+      "original_queries": 53907768,
+      "original_inputs": 53907768,
+      "abelian_original_queries": 0,
+      "terminal_original_queries": 0,
+      "query_transport_original_queries_per_call": 1,
+      "classical_uniform_draw_cap": 1725048576,
+      "classical_fair_bit_cap": 175954954752,
+      "classical_root_pow_gcd_pair_cap": 0,
+      "total_error_bound": {
+        "numerator": 15651367,
+        "denominator": 67108864
+      },
+      "branch": "classical_collisions"
+    },
+    {
+      "status": "CONDITIONAL_ON_EXISTING_REES_WHOLE_PROOF_RESOURCE_CERTIFICATE",
+      "dimension": 16,
+      "codimension_bound": 8,
+      "supplied_prime": 101,
+      "error_target": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "prime_contract": "SUPPLIED_PROMISE_NOT_VERIFIED",
+      "actual_class_contract": "SUPPLIED_ACTUAL_NILPOTENCY_CLASS_LT_PRIME",
+      "source_contract": "Fresh independent uniform sources; exact hidden-coset labels.",
+      "whole_proof_dependency": "Existing Rees pointwise/source correctness, plus the written uniform prime-field instrument compilation derivation.",
+      "growing_class_pointwise_correctness_supplied_promise": true,
+      "growing_class_uniform_complete_instrument_efficiency_supplied_promise": false,
+      "uniform_compilation_status": "DERIVED_IN_WRITTEN_ARGUMENT_NOT_MACHINE_CERTIFIED",
+      "uniform_compilation_derivation": "research/REES_UNIFORM_INSTRUMENT_COMPILATION.md",
+      "growing_class_pointwise_correctness_certified": false,
+      "growing_class_uniform_complete_instrument_efficiency_certified": false,
+      "fixed_class_correctness_alone_suffices": false,
+      "prime_validation_included": false,
+      "prime_certified": false,
+      "actual_class_certified": false,
+      "codimension_promise_certified": false,
+      "profile_existence_certified": false,
+      "hidden_intersection_completeness_certified": false,
+      "resource_certificate_only": true,
+      "oracle_queries_executed": 0,
+      "solver_implemented": false,
+      "quantum_receiver_implemented": false,
+      "hidden_oracle_benchmark": false,
+      "field_enumeration_used": false,
+      "native_application_established": false,
+      "novelty_established": false,
+      "speedup_claim_allowed": false,
+      "formal_total_policy_instantiated": false,
+      "deterministic_arithmetic_step_counter": false,
+      "physical_gate_clock": false,
+      "cost_scope": "Exact query, source, randomness and algebraic primitive caps; not a gate, public linear-algebra, label-bit-cost or wall-clock count.",
+      "runtime_model": {
+        "total_time_bound": "T_nonoracle + Q*T_f",
+        "Q": "original_queries",
+        "T_f": "Separately charged upper bound on one original oracle evaluation.",
+        "T_nonoracle": "Nonoracle operations, including label processing and uniformly efficient complete instruments, under the supplied bit-cost promises.",
+        "oracle_evaluation_time_included_in_resource_caps": false,
+        "oracle_evaluation_cost_certified": false,
+        "label_width_is_oracle_evaluation_cost": false,
+        "label_processing_cost_charged_to_nonoracle_time": true,
+        "label_width_is_a_separate_bit_complexity_parameter": true
+      },
+      "complexity": {
+        "overall": "2^O(k^2 log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "large_field": "2^O(k log(k+2)) * poly(n,log(p),label_width,log(1/error))",
+        "parameter": "codimension_bound",
+        "scope": "Oracle call count and conditional nonoracle operation bounds, not a bound on the cost of evaluating the oracle.",
+        "basis": "Terminal dimension O(k^2), class O(k), whole-grade arity product.",
+        "uses_generic_derived_rank_bound": false,
+        "conditional_on_existing_rees_whole_proof": true
+      },
+      "branch_requires_rees": false,
+      "field_threshold": 1393796574908163946345982392040522594123776,
+      "classical": {
+        "index_cap": 10828567056280801,
+        "batch_size": 147163632,
+        "birthday_exponent_lower_bound": {
+          "numerator": 10828567218133896,
+          "denominator": 10828567056280801
+        },
+        "no_collision_probability_upper_bound": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "no_collision_bound_is_strict": true,
+        "collision_selection": "First repeated label in draw order; pair with its first occurrence.",
+        "collision_selection_uses_only_labels": true,
+        "accepted_element": "x^-1*y; exactly uniform on H conditional on batch acceptance",
+        "accepted_elements_are_independent_under_source_promise": true,
+        "identity_elements_retained": true,
+        "rank_slack": 4,
+        "accepted_hidden_elements": 20,
+        "batches_per_hidden_element": 8,
+        "fresh_batch_cap": 160,
+        "group_draw_cap": 23546181120,
+        "original_query_cap": 23546181120,
+        "group_inverse_cap": 20,
+        "group_product_cap": 20,
+        "label_processing": "Sort by label and index, scan adjacent equal labels; retain earliest second index.",
+        "label_order_comparison_cap": 659293071360,
+        "label_equality_comparison_cap": 23546180960,
+        "label_comparison_bit_cost_parameter": "label_width plus O(log(batch_size)) index bits",
+        "batch_coordinate_storage_cap": 2354618112,
+        "accepted_coordinate_storage_cap": 320,
+        "scalar_uniform_draw_cap": 376738897920,
+        "scalar_coordinates_per_group_draw": 16,
+        "integer_rejection_cap": 42,
+        "bits_per_rejection_attempt": 7,
+        "fair_bit_cap": 110761235988480,
+        "collision_failure_bound": {
+          "numerator": 5,
+          "denominator": 64
+        },
+        "rank_failure_bound": {
+          "numerator": 1,
+          "denominator": 16
+        },
+        "field_draw_failure_bound": {
+          "numerator": 45988635,
+          "denominator": 536870912
+        },
+        "collision_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "rank_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "field_draw_error_share": {
+          "numerator": 1,
+          "denominator": 9
+        },
+        "index_parameter_envelope": 14242792383964888162918480513432465216409371640403009729971037612045113415478719007639881209041451055630074000655093473974722206675223109929434400259100512062680086347153555148539548552831624261944567042435944993535084132588196941322891072406503377213352323037077384970994853089450777507879083442634420291861180736024127002634265953304576
+      },
+      "abelian_intersections": null,
+      "terminal_rees": null,
+      "terminal_uniform_instrument": null,
+      "terminal_profile_is_envelope": false,
+      "original_queries": 23546181120,
+      "original_inputs": 23546181120,
+      "abelian_original_queries": 0,
+      "terminal_original_queries": 0,
+      "query_transport_original_queries_per_call": 1,
+      "classical_uniform_draw_cap": 376738897920,
+      "classical_fair_bit_cap": 110761235988480,
+      "classical_root_pow_gcd_pair_cap": 0,
+      "total_error_bound": {
+        "numerator": 121486107,
+        "denominator": 536870912
+      },
+      "branch": "classical_collisions"
+    }
+  ]
+}

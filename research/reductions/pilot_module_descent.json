@@ -1,0 +1,4378 @@
+{
+  "status": "PUBLIC_LABEL_CONTROLLER_NOT_QUANTUM_RECEIVER",
+  "cases": [
+    {
+      "name": "ambient_mod_p_zero",
+      "source_seed": 301,
+      "solver_seed": 401,
+      "fixture_generators": [
+        [
+          3
+        ]
+      ],
+      "fixture_generator_orders": [
+        9
+      ],
+      "result": {
+        "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+        "episode_cap": 3,
+        "episodes": [
+          {
+            "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+            "prime": 3,
+            "degree": 2,
+            "ambient_exponents": [
+              3
+            ],
+            "ambient_plan": {
+              "prime": 3,
+              "degree": 2,
+              "reduced_degree": 2,
+              "cyclic_rank": 1,
+              "ambient_cyclic_rank": 1,
+              "failure_bits": 8,
+              "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+              "field_backend_implemented": true,
+              "atom_count": 4,
+              "raw_block_width": 2,
+              "attempts_per_atom": 10,
+              "raw_block_rejection_upper": [
+                1,
+                6
+              ],
+              "block_exhaustion_upper": [
+                1,
+                15116544
+              ],
+              "field_sampler_abort_upper": [
+                1,
+                256
+              ],
+              "pilot_incompleteness_upper": [
+                1,
+                18
+              ],
+              "episode_abort_upper": [
+                449429,
+                7558272
+              ],
+              "raw_bank_sources_upper": 80,
+              "pilot_sources": 3,
+              "predecessors_per_episode_upper": 83,
+              "expected_predecessors_upper": 166,
+              "field_randomness_fully_capped": false,
+              "expected_field_arithmetic_dependency": true,
+              "wrapper_adds_prime_size_guard": false,
+              "iid_intrinsic_sources_required": true,
+              "pilot_coordinate_acquisition_implemented": false
+            },
+            "requests": [
+              {
+                "stage": "pilots",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    18
+                  ],
+                  [
+                    21
+                  ],
+                  [
+                    24
+                  ]
+                ]
+              },
+              {
+                "stage": "bank",
+                "count": 2,
+                "ambient_columns": [
+                  [
+                    21
+                  ],
+                  [
+                    9
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    7
+                  ],
+                  [
+                    3
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 2,
+                "ambient_columns": [
+                  [
+                    12
+                  ],
+                  [
+                    3
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 2,
+                "ambient_columns": [
+                  [
+                    9
+                  ],
+                  [
+                    24
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    3
+                  ],
+                  [
+                    8
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 2,
+                "ambient_columns": [
+                  [
+                    6
+                  ],
+                  [
+                    3
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              }
+            ],
+            "source_labels_consumed": 11,
+            "public_label_pilot_coordinates_implemented": true,
+            "physical_pilot_measurements_executed": false,
+            "quantum_receiver_executed": false,
+            "hidden_support_completeness_certified": false,
+            "physical_iid_source_certified": false,
+            "frame": {
+              "prime": 3,
+              "ambient_exponents": [
+                3
+              ],
+              "pilot_columns": [
+                [
+                  18
+                ],
+                [
+                  21
+                ],
+                [
+                  24
+                ]
+              ],
+              "lattice_basis": [
+                [
+                  3
+                ]
+              ],
+              "basis_from_generators": [
+                [
+                  -323
+                ],
+                [
+                  494
+                ],
+                [
+                  -8
+                ],
+                [
+                  0
+                ]
+              ],
+              "generators_from_basis": [
+                [
+                  9,
+                  6,
+                  7,
+                  8
+                ]
+              ],
+              "relation_matrix": [
+                [
+                  9
+                ]
+              ],
+              "smith_left": [
+                [
+                  1
+                ]
+              ],
+              "smith_right": [
+                [
+                  1
+                ]
+              ],
+              "smith_orders": [
+                9
+              ],
+              "intrinsic_exponents": [
+                2
+              ],
+              "subgroup_order": 9,
+              "certificate_verified": true,
+              "hidden_support_completeness_certified": false
+            },
+            "intrinsic_run": {
+              "status": "VERIFIED_SPANNING_MODULE_WITNESS",
+              "prime": 3,
+              "degree": 2,
+              "exponents": [
+                2
+              ],
+              "plan": {
+                "prime": 3,
+                "degree": 2,
+                "reduced_degree": 2,
+                "cyclic_rank": 1,
+                "ambient_cyclic_rank": 1,
+                "failure_bits": 8,
+                "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+                "field_backend_implemented": true,
+                "atom_count": 4,
+                "raw_block_width": 2,
+                "attempts_per_atom": 10,
+                "raw_block_rejection_upper": [
+                  1,
+                  6
+                ],
+                "block_exhaustion_upper": [
+                  1,
+                  15116544
+                ],
+                "field_sampler_abort_upper": [
+                  1,
+                  256
+                ],
+                "pilot_incompleteness_upper": [
+                  1,
+                  18
+                ],
+                "episode_abort_upper": [
+                  449429,
+                  7558272
+                ],
+                "raw_bank_sources_upper": 80,
+                "pilot_sources": 3,
+                "predecessors_per_episode_upper": 83,
+                "expected_predecessors_upper": 166,
+                "field_randomness_fully_capped": false,
+                "expected_field_arithmetic_dependency": true,
+                "wrapper_adds_prime_size_guard": false,
+                "iid_intrinsic_sources_required": true,
+                "pilot_coordinate_acquisition_implemented": false
+              },
+              "trials": [
+                {
+                  "atom": 0,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      7
+                    ],
+                    [
+                      3
+                    ]
+                  ],
+                  "raw_rank": 1,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 1,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      4
+                    ],
+                    [
+                      1
+                    ]
+                  ],
+                  "raw_rank": 1,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 2,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      3
+                    ],
+                    [
+                      8
+                    ]
+                  ],
+                  "raw_rank": 1,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 3,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      2
+                    ],
+                    [
+                      1
+                    ]
+                  ],
+                  "raw_rank": 1,
+                  "status": "ACCEPTED"
+                }
+              ],
+              "accepted_trial_indices": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "source_columns_consumed": 8,
+              "pilots_executed": false,
+              "quantum_receiver_executed": false,
+              "atoms": [
+                [
+                  1
+                ],
+                [
+                  2
+                ],
+                [
+                  2
+                ],
+                [
+                  0
+                ]
+              ],
+              "atom_weights": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "expanded_field_witness": [
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "raw_columns": [
+                [
+                  7
+                ],
+                [
+                  3
+                ],
+                [
+                  4
+                ],
+                [
+                  1
+                ],
+                [
+                  3
+                ],
+                [
+                  8
+                ],
+                [
+                  2
+                ],
+                [
+                  1
+                ]
+              ],
+              "lift": {
+                "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+                "scales": [
+                  7,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "jacobian_rank": 1,
+                "cyclic_rank": 1,
+                "singularity_is_unsatisfiability": false,
+                "original_module_verified": true,
+                "pivot_indices": [
+                  0
+                ],
+                "lift_steps": 1
+              },
+              "atom_equation_rank": 1,
+              "reason": "raw-module verification; source law remains an external promise"
+            },
+            "selected_request_indices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "zero_rank_branch": false,
+            "selected_ambient_columns": [
+              [
+                21
+              ],
+              [
+                9
+              ],
+              [
+                12
+              ],
+              [
+                3
+              ],
+              [
+                9
+              ],
+              [
+                24
+              ],
+              [
+                6
+              ],
+              [
+                3
+              ]
+            ],
+            "scales": [
+              7,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "original_ambient_verified": true,
+            "reason": "exact ambient witness; quantum source/receiver not certified"
+          }
+        ],
+        "source_labels_consumed": 11,
+        "source_labels_cap": 249,
+        "conditional_all_episodes_abort_upper": [
+          27,
+          4096
+        ],
+        "fresh_iid_source_promise_required": true,
+        "whole_workflow_clock_enforced": false,
+        "public_label_pilot_coordinates_implemented": true,
+        "quantum_receiver_executed": false,
+        "speedup_established": false,
+        "successful_episode_index": 0
+      }
+    },
+    {
+      "name": "oblique_mixed_order",
+      "source_seed": 302,
+      "solver_seed": 402,
+      "fixture_generators": [
+        [
+          3,
+          3
+        ],
+        [
+          0,
+          9
+        ]
+      ],
+      "fixture_generator_orders": [
+        27,
+        9
+      ],
+      "result": {
+        "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+        "episode_cap": 3,
+        "episodes": [
+          {
+            "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+            "prime": 3,
+            "degree": 2,
+            "ambient_exponents": [
+              3,
+              4
+            ],
+            "ambient_plan": {
+              "prime": 3,
+              "degree": 2,
+              "reduced_degree": 2,
+              "cyclic_rank": 2,
+              "ambient_cyclic_rank": 2,
+              "failure_bits": 8,
+              "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+              "field_backend_implemented": true,
+              "atom_count": 9,
+              "raw_block_width": 3,
+              "attempts_per_atom": 12,
+              "raw_block_rejection_upper": [
+                1,
+                6
+              ],
+              "block_exhaustion_upper": [
+                1,
+                241864704
+              ],
+              "field_sampler_abort_upper": [
+                1,
+                256
+              ],
+              "pilot_incompleteness_upper": [
+                1,
+                18
+              ],
+              "episode_abort_upper": [
+                14381713,
+                241864704
+              ],
+              "raw_bank_sources_upper": 324,
+              "pilot_sources": 4,
+              "predecessors_per_episode_upper": 328,
+              "expected_predecessors_upper": 656,
+              "field_randomness_fully_capped": false,
+              "expected_field_arithmetic_dependency": true,
+              "wrapper_adds_prime_size_guard": false,
+              "iid_intrinsic_sources_required": true,
+              "pilot_coordinate_acquisition_implemented": false
+            },
+            "requests": [
+              {
+                "stage": "pilots",
+                "count": 4,
+                "ambient_columns": [
+                  [
+                    24,
+                    42
+                  ],
+                  [
+                    24,
+                    24
+                  ],
+                  [
+                    18,
+                    72
+                  ],
+                  [
+                    24,
+                    78
+                  ]
+                ]
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    9,
+                    9
+                  ],
+                  [
+                    18,
+                    9
+                  ],
+                  [
+                    18,
+                    45
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    0,
+                    15
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    3,
+                    39
+                  ],
+                  [
+                    9,
+                    54
+                  ],
+                  [
+                    0,
+                    27
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    2,
+                    13
+                  ],
+                  [
+                    1,
+                    18
+                  ],
+                  [
+                    0,
+                    9
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    0,
+                    72
+                  ],
+                  [
+                    21,
+                    48
+                  ],
+                  [
+                    9,
+                    54
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    1,
+                    24
+                  ],
+                  [
+                    0,
+                    16
+                  ],
+                  [
+                    1,
+                    18
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    6,
+                    51
+                  ],
+                  [
+                    18,
+                    45
+                  ],
+                  [
+                    18,
+                    0
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    1,
+                    17
+                  ],
+                  [
+                    0,
+                    15
+                  ],
+                  [
+                    2,
+                    0
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    24,
+                    33
+                  ],
+                  [
+                    9,
+                    72
+                  ],
+                  [
+                    15,
+                    6
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    2,
+                    11
+                  ],
+                  [
+                    2,
+                    24
+                  ],
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    6,
+                    6
+                  ],
+                  [
+                    18,
+                    27
+                  ],
+                  [
+                    18,
+                    72
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    0,
+                    2
+                  ],
+                  [
+                    2,
+                    9
+                  ],
+                  [
+                    0,
+                    24
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    0,
+                    54
+                  ],
+                  [
+                    24,
+                    33
+                  ],
+                  [
+                    24,
+                    24
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    0,
+                    18
+                  ],
+                  [
+                    2,
+                    11
+                  ],
+                  [
+                    0,
+                    8
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    6,
+                    6
+                  ],
+                  [
+                    12,
+                    12
+                  ],
+                  [
+                    21,
+                    21
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    0,
+                    2
+                  ],
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    0,
+                    7
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    0,
+                    63
+                  ],
+                  [
+                    9,
+                    45
+                  ],
+                  [
+                    21,
+                    30
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    2,
+                    21
+                  ],
+                  [
+                    2,
+                    15
+                  ],
+                  [
+                    2,
+                    10
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    15,
+                    51
+                  ],
+                  [
+                    3,
+                    66
+                  ],
+                  [
+                    21,
+                    39
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    2,
+                    17
+                  ],
+                  [
+                    2,
+                    22
+                  ],
+                  [
+                    1,
+                    13
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    18,
+                    18
+                  ],
+                  [
+                    24,
+                    33
+                  ],
+                  [
+                    18,
+                    9
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    0,
+                    6
+                  ],
+                  [
+                    2,
+                    11
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              }
+            ],
+            "source_labels_consumed": 37,
+            "public_label_pilot_coordinates_implemented": true,
+            "physical_pilot_measurements_executed": false,
+            "quantum_receiver_executed": false,
+            "hidden_support_completeness_certified": false,
+            "physical_iid_source_certified": false,
+            "frame": {
+              "prime": 3,
+              "ambient_exponents": [
+                3,
+                4
+              ],
+              "pilot_columns": [
+                [
+                  24,
+                  42
+                ],
+                [
+                  24,
+                  24
+                ],
+                [
+                  18,
+                  72
+                ],
+                [
+                  24,
+                  78
+                ]
+              ],
+              "lattice_basis": [
+                [
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  9
+                ]
+              ],
+              "basis_from_generators": [
+                [
+                  -3111,
+                  2768
+                ],
+                [
+                  -1815,
+                  1615
+                ],
+                [
+                  3501,
+                  -3115
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "generators_from_basis": [
+                [
+                  9,
+                  0,
+                  8,
+                  8,
+                  6,
+                  8
+                ],
+                [
+                  -3,
+                  9,
+                  2,
+                  0,
+                  6,
+                  6
+                ]
+              ],
+              "relation_matrix": [
+                [
+                  9,
+                  0
+                ],
+                [
+                  -3,
+                  9
+                ]
+              ],
+              "smith_left": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "smith_right": [
+                [
+                  1,
+                  3
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "smith_orders": [
+                3,
+                27
+              ],
+              "intrinsic_exponents": [
+                1,
+                3
+              ],
+              "subgroup_order": 81,
+              "certificate_verified": true,
+              "hidden_support_completeness_certified": false
+            },
+            "intrinsic_run": {
+              "status": "VERIFIED_SPANNING_MODULE_WITNESS",
+              "prime": 3,
+              "degree": 2,
+              "exponents": [
+                1,
+                3
+              ],
+              "plan": {
+                "prime": 3,
+                "degree": 2,
+                "reduced_degree": 2,
+                "cyclic_rank": 2,
+                "ambient_cyclic_rank": 2,
+                "failure_bits": 8,
+                "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+                "field_backend_implemented": true,
+                "atom_count": 9,
+                "raw_block_width": 3,
+                "attempts_per_atom": 12,
+                "raw_block_rejection_upper": [
+                  1,
+                  6
+                ],
+                "block_exhaustion_upper": [
+                  1,
+                  241864704
+                ],
+                "field_sampler_abort_upper": [
+                  1,
+                  256
+                ],
+                "pilot_incompleteness_upper": [
+                  1,
+                  18
+                ],
+                "episode_abort_upper": [
+                  14381713,
+                  241864704
+                ],
+                "raw_bank_sources_upper": 324,
+                "pilot_sources": 4,
+                "predecessors_per_episode_upper": 328,
+                "expected_predecessors_upper": 656,
+                "field_randomness_fully_capped": false,
+                "expected_field_arithmetic_dependency": true,
+                "wrapper_adds_prime_size_guard": false,
+                "iid_intrinsic_sources_required": true,
+                "pilot_coordinate_acquisition_implemented": false
+              },
+              "trials": [
+                {
+                  "atom": 0,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      0,
+                      3
+                    ],
+                    [
+                      1,
+                      3
+                    ],
+                    [
+                      0,
+                      15
+                    ]
+                  ],
+                  "raw_rank": 1,
+                  "status": "RAW_RANK_REJECT"
+                },
+                {
+                  "atom": 0,
+                  "attempt": 1,
+                  "columns": [
+                    [
+                      2,
+                      13
+                    ],
+                    [
+                      1,
+                      18
+                    ],
+                    [
+                      0,
+                      9
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 1,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      1,
+                      24
+                    ],
+                    [
+                      0,
+                      16
+                    ],
+                    [
+                      1,
+                      18
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 2,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      1,
+                      17
+                    ],
+                    [
+                      0,
+                      15
+                    ],
+                    [
+                      2,
+                      0
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 3,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      2,
+                      11
+                    ],
+                    [
+                      2,
+                      24
+                    ],
+                    [
+                      1,
+                      2
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 4,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      2,
+                      9
+                    ],
+                    [
+                      0,
+                      24
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 5,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      0,
+                      18
+                    ],
+                    [
+                      2,
+                      11
+                    ],
+                    [
+                      0,
+                      8
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 6,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      0,
+                      4
+                    ],
+                    [
+                      0,
+                      7
+                    ]
+                  ],
+                  "raw_rank": 1,
+                  "status": "RAW_RANK_REJECT"
+                },
+                {
+                  "atom": 6,
+                  "attempt": 1,
+                  "columns": [
+                    [
+                      2,
+                      21
+                    ],
+                    [
+                      2,
+                      15
+                    ],
+                    [
+                      2,
+                      10
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 7,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      2,
+                      17
+                    ],
+                    [
+                      2,
+                      22
+                    ],
+                    [
+                      1,
+                      13
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 8,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      0,
+                      6
+                    ],
+                    [
+                      2,
+                      11
+                    ],
+                    [
+                      1,
+                      3
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                }
+              ],
+              "accepted_trial_indices": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                8,
+                9,
+                10
+              ],
+              "source_columns_consumed": 33,
+              "pilots_executed": false,
+              "quantum_receiver_executed": false,
+              "atoms": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  2,
+                  2
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "atom_weights": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "expanded_field_witness": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "raw_columns": [
+                [
+                  2,
+                  13
+                ],
+                [
+                  1,
+                  18
+                ],
+                [
+                  0,
+                  9
+                ],
+                [
+                  1,
+                  24
+                ],
+                [
+                  0,
+                  16
+                ],
+                [
+                  1,
+                  18
+                ],
+                [
+                  1,
+                  17
+                ],
+                [
+                  0,
+                  15
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  11
+                ],
+                [
+                  2,
+                  24
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  9
+                ],
+                [
+                  0,
+                  24
+                ],
+                [
+                  0,
+                  18
+                ],
+                [
+                  2,
+                  11
+                ],
+                [
+                  0,
+                  8
+                ],
+                [
+                  2,
+                  21
+                ],
+                [
+                  2,
+                  15
+                ],
+                [
+                  2,
+                  10
+                ],
+                [
+                  2,
+                  17
+                ],
+                [
+                  2,
+                  22
+                ],
+                [
+                  1,
+                  13
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  2,
+                  11
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "lift": {
+                "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+                "scales": [
+                  19,
+                  25,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "jacobian_rank": 2,
+                "cyclic_rank": 2,
+                "singularity_is_unsatisfiability": false,
+                "original_module_verified": true,
+                "pivot_indices": [
+                  0,
+                  1
+                ],
+                "lift_steps": 2
+              },
+              "atom_equation_rank": 2,
+              "reason": "raw-module verification; source law remains an external promise"
+            },
+            "selected_request_indices": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              11
+            ],
+            "zero_rank_branch": false,
+            "selected_ambient_columns": [
+              [
+                3,
+                39
+              ],
+              [
+                9,
+                54
+              ],
+              [
+                0,
+                27
+              ],
+              [
+                0,
+                72
+              ],
+              [
+                21,
+                48
+              ],
+              [
+                9,
+                54
+              ],
+              [
+                6,
+                51
+              ],
+              [
+                18,
+                45
+              ],
+              [
+                18,
+                0
+              ],
+              [
+                24,
+                33
+              ],
+              [
+                9,
+                72
+              ],
+              [
+                15,
+                6
+              ],
+              [
+                6,
+                6
+              ],
+              [
+                18,
+                27
+              ],
+              [
+                18,
+                72
+              ],
+              [
+                0,
+                54
+              ],
+              [
+                24,
+                33
+              ],
+              [
+                24,
+                24
+              ],
+              [
+                0,
+                63
+              ],
+              [
+                9,
+                45
+              ],
+              [
+                21,
+                30
+              ],
+              [
+                15,
+                51
+              ],
+              [
+                3,
+                66
+              ],
+              [
+                21,
+                39
+              ],
+              [
+                18,
+                18
+              ],
+              [
+                24,
+                33
+              ],
+              [
+                18,
+                9
+              ]
+            ],
+            "scales": [
+              19,
+              25,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "original_ambient_verified": true,
+            "reason": "exact ambient witness; quantum source/receiver not certified"
+          }
+        ],
+        "source_labels_consumed": 37,
+        "source_labels_cap": 984,
+        "conditional_all_episodes_abort_upper": [
+          27,
+          4096
+        ],
+        "fresh_iid_source_promise_required": true,
+        "whole_workflow_clock_enforced": false,
+        "public_label_pilot_coordinates_implemented": true,
+        "quantum_receiver_executed": false,
+        "speedup_established": false,
+        "successful_episode_index": 0
+      }
+    },
+    {
+      "name": "cubic_embedded_support",
+      "source_seed": 303,
+      "solver_seed": 403,
+      "fixture_generators": [
+        [
+          7,
+          7
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "fixture_generator_orders": [
+        49,
+        7
+      ],
+      "result": {
+        "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+        "episode_cap": 3,
+        "episodes": [
+          {
+            "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+            "prime": 7,
+            "degree": 3,
+            "ambient_exponents": [
+              2,
+              3
+            ],
+            "ambient_plan": {
+              "prime": 7,
+              "degree": 3,
+              "reduced_degree": 3,
+              "cyclic_rank": 2,
+              "ambient_cyclic_rank": 2,
+              "failure_bits": 8,
+              "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+              "field_backend_implemented": true,
+              "atom_count": 15,
+              "raw_block_width": 3,
+              "attempts_per_atom": 12,
+              "raw_block_rejection_upper": [
+                1,
+                42
+              ],
+              "block_exhaustion_upper": [
+                5,
+                10043156495546560512
+              ],
+              "field_sampler_abort_upper": [
+                1,
+                256
+              ],
+              "pilot_incompleteness_upper": [
+                1,
+                294
+              ],
+              "episode_abort_upper": [
+                73391476304084405,
+                10043156495546560512
+              ],
+              "raw_bank_sources_upper": 540,
+              "pilot_sources": 4,
+              "predecessors_per_episode_upper": 544,
+              "expected_predecessors_upper": 1088,
+              "field_randomness_fully_capped": false,
+              "expected_field_arithmetic_dependency": true,
+              "wrapper_adds_prime_size_guard": false,
+              "iid_intrinsic_sources_required": true,
+              "pilot_coordinate_acquisition_implemented": false
+            },
+            "requests": [
+              {
+                "stage": "pilots",
+                "count": 4,
+                "ambient_columns": [
+                  [
+                    21,
+                    14
+                  ],
+                  [
+                    42,
+                    329
+                  ],
+                  [
+                    14,
+                    35
+                  ],
+                  [
+                    42,
+                    273
+                  ]
+                ]
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    35,
+                    252
+                  ],
+                  [
+                    35,
+                    175
+                  ],
+                  [
+                    7,
+                    182
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    5,
+                    36
+                  ],
+                  [
+                    5,
+                    25
+                  ],
+                  [
+                    1,
+                    26
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    7,
+                    259
+                  ],
+                  [
+                    0,
+                    35
+                  ],
+                  [
+                    14,
+                    231
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    1,
+                    37
+                  ],
+                  [
+                    0,
+                    5
+                  ],
+                  [
+                    2,
+                    33
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    7,
+                    301
+                  ],
+                  [
+                    14,
+                    266
+                  ],
+                  [
+                    35,
+                    49
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    1,
+                    43
+                  ],
+                  [
+                    2,
+                    38
+                  ],
+                  [
+                    5,
+                    7
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    35,
+                    175
+                  ],
+                  [
+                    35,
+                    217
+                  ],
+                  [
+                    42,
+                    0
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    5,
+                    25
+                  ],
+                  [
+                    5,
+                    31
+                  ],
+                  [
+                    6,
+                    0
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    14,
+                    273
+                  ],
+                  [
+                    0,
+                    182
+                  ],
+                  [
+                    21,
+                    315
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    2,
+                    39
+                  ],
+                  [
+                    0,
+                    26
+                  ],
+                  [
+                    3,
+                    45
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    7,
+                    98
+                  ],
+                  [
+                    7,
+                    147
+                  ],
+                  [
+                    28,
+                    70
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    1,
+                    14
+                  ],
+                  [
+                    1,
+                    21
+                  ],
+                  [
+                    4,
+                    10
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    28,
+                    259
+                  ],
+                  [
+                    28,
+                    42
+                  ],
+                  [
+                    0,
+                    105
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    4,
+                    37
+                  ],
+                  [
+                    4,
+                    6
+                  ],
+                  [
+                    0,
+                    15
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    7,
+                    315
+                  ],
+                  [
+                    21,
+                    231
+                  ],
+                  [
+                    42,
+                    112
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    1,
+                    45
+                  ],
+                  [
+                    3,
+                    33
+                  ],
+                  [
+                    6,
+                    16
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    0,
+                    105
+                  ],
+                  [
+                    28,
+                    322
+                  ],
+                  [
+                    14,
+                    119
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    0,
+                    15
+                  ],
+                  [
+                    4,
+                    46
+                  ],
+                  [
+                    2,
+                    17
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    14,
+                    119
+                  ],
+                  [
+                    0,
+                    308
+                  ],
+                  [
+                    0,
+                    56
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    2,
+                    17
+                  ],
+                  [
+                    0,
+                    44
+                  ],
+                  [
+                    0,
+                    8
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    42,
+                    322
+                  ],
+                  [
+                    14,
+                    28
+                  ],
+                  [
+                    28,
+                    217
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    6,
+                    46
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    4,
+                    31
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    0,
+                    119
+                  ],
+                  [
+                    7,
+                    56
+                  ],
+                  [
+                    35,
+                    294
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    0,
+                    17
+                  ],
+                  [
+                    1,
+                    8
+                  ],
+                  [
+                    5,
+                    42
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    35,
+                    287
+                  ],
+                  [
+                    0,
+                    77
+                  ],
+                  [
+                    42,
+                    35
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    5,
+                    41
+                  ],
+                  [
+                    0,
+                    11
+                  ],
+                  [
+                    6,
+                    5
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    21,
+                    168
+                  ],
+                  [
+                    21,
+                    140
+                  ],
+                  [
+                    42,
+                    280
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    3,
+                    24
+                  ],
+                  [
+                    3,
+                    20
+                  ],
+                  [
+                    6,
+                    40
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              },
+              {
+                "stage": "bank",
+                "count": 3,
+                "ambient_columns": [
+                  [
+                    7,
+                    70
+                  ],
+                  [
+                    35,
+                    280
+                  ],
+                  [
+                    42,
+                    315
+                  ]
+                ],
+                "intrinsic_columns": [
+                  [
+                    1,
+                    10
+                  ],
+                  [
+                    5,
+                    40
+                  ],
+                  [
+                    6,
+                    45
+                  ]
+                ],
+                "status": "MEMBERSHIP_VERIFIED"
+              }
+            ],
+            "source_labels_consumed": 49,
+            "public_label_pilot_coordinates_implemented": true,
+            "physical_pilot_measurements_executed": false,
+            "quantum_receiver_executed": false,
+            "hidden_support_completeness_certified": false,
+            "physical_iid_source_certified": false,
+            "frame": {
+              "prime": 7,
+              "ambient_exponents": [
+                2,
+                3
+              ],
+              "pilot_columns": [
+                [
+                  21,
+                  14
+                ],
+                [
+                  42,
+                  329
+                ],
+                [
+                  14,
+                  35
+                ],
+                [
+                  42,
+                  273
+                ]
+              ],
+              "lattice_basis": [
+                [
+                  7,
+                  0
+                ],
+                [
+                  0,
+                  7
+                ]
+              ],
+              "basis_from_generators": [
+                [
+                  -10817180,
+                  3610140
+                ],
+                [
+                  -1030334,
+                  343865
+                ],
+                [
+                  25239799,
+                  -8423564
+                ],
+                [
+                  144,
+                  -48
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "generators_from_basis": [
+                [
+                  7,
+                  0,
+                  3,
+                  6,
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  49,
+                  2,
+                  47,
+                  5,
+                  39
+                ]
+              ],
+              "relation_matrix": [
+                [
+                  7,
+                  0
+                ],
+                [
+                  0,
+                  49
+                ]
+              ],
+              "smith_left": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "smith_right": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "smith_orders": [
+                7,
+                49
+              ],
+              "intrinsic_exponents": [
+                1,
+                2
+              ],
+              "subgroup_order": 343,
+              "certificate_verified": true,
+              "hidden_support_completeness_certified": false
+            },
+            "intrinsic_run": {
+              "status": "VERIFIED_SPANNING_MODULE_WITNESS",
+              "prime": 7,
+              "degree": 3,
+              "exponents": [
+                1,
+                2
+              ],
+              "plan": {
+                "prime": 7,
+                "degree": 3,
+                "reduced_degree": 3,
+                "cyclic_rank": 2,
+                "ambient_cyclic_rank": 2,
+                "failure_bits": 8,
+                "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+                "field_backend_implemented": true,
+                "atom_count": 15,
+                "raw_block_width": 3,
+                "attempts_per_atom": 12,
+                "raw_block_rejection_upper": [
+                  1,
+                  42
+                ],
+                "block_exhaustion_upper": [
+                  5,
+                  10043156495546560512
+                ],
+                "field_sampler_abort_upper": [
+                  1,
+                  256
+                ],
+                "pilot_incompleteness_upper": [
+                  1,
+                  294
+                ],
+                "episode_abort_upper": [
+                  73391476304084405,
+                  10043156495546560512
+                ],
+                "raw_bank_sources_upper": 540,
+                "pilot_sources": 4,
+                "predecessors_per_episode_upper": 544,
+                "expected_predecessors_upper": 1088,
+                "field_randomness_fully_capped": false,
+                "expected_field_arithmetic_dependency": true,
+                "wrapper_adds_prime_size_guard": false,
+                "iid_intrinsic_sources_required": true,
+                "pilot_coordinate_acquisition_implemented": false
+              },
+              "trials": [
+                {
+                  "atom": 0,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      5,
+                      36
+                    ],
+                    [
+                      5,
+                      25
+                    ],
+                    [
+                      1,
+                      26
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 1,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      1,
+                      37
+                    ],
+                    [
+                      0,
+                      5
+                    ],
+                    [
+                      2,
+                      33
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 2,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      1,
+                      43
+                    ],
+                    [
+                      2,
+                      38
+                    ],
+                    [
+                      5,
+                      7
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 3,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      5,
+                      25
+                    ],
+                    [
+                      5,
+                      31
+                    ],
+                    [
+                      6,
+                      0
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 4,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      2,
+                      39
+                    ],
+                    [
+                      0,
+                      26
+                    ],
+                    [
+                      3,
+                      45
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 5,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      1,
+                      14
+                    ],
+                    [
+                      1,
+                      21
+                    ],
+                    [
+                      4,
+                      10
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 6,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      4,
+                      37
+                    ],
+                    [
+                      4,
+                      6
+                    ],
+                    [
+                      0,
+                      15
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 7,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      1,
+                      45
+                    ],
+                    [
+                      3,
+                      33
+                    ],
+                    [
+                      6,
+                      16
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 8,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      0,
+                      15
+                    ],
+                    [
+                      4,
+                      46
+                    ],
+                    [
+                      2,
+                      17
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 9,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      2,
+                      17
+                    ],
+                    [
+                      0,
+                      44
+                    ],
+                    [
+                      0,
+                      8
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 10,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      6,
+                      46
+                    ],
+                    [
+                      2,
+                      4
+                    ],
+                    [
+                      4,
+                      31
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 11,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      0,
+                      17
+                    ],
+                    [
+                      1,
+                      8
+                    ],
+                    [
+                      5,
+                      42
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 12,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      5,
+                      41
+                    ],
+                    [
+                      0,
+                      11
+                    ],
+                    [
+                      6,
+                      5
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 13,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      3,
+                      24
+                    ],
+                    [
+                      3,
+                      20
+                    ],
+                    [
+                      6,
+                      40
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                },
+                {
+                  "atom": 14,
+                  "attempt": 0,
+                  "columns": [
+                    [
+                      1,
+                      10
+                    ],
+                    [
+                      5,
+                      40
+                    ],
+                    [
+                      6,
+                      45
+                    ]
+                  ],
+                  "raw_rank": 2,
+                  "status": "ACCEPTED"
+                }
+              ],
+              "accepted_trial_indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "source_columns_consumed": 45,
+              "pilots_executed": false,
+              "quantum_receiver_executed": false,
+              "atoms": [
+                [
+                  4,
+                  3
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  5,
+                  5
+                ],
+                [
+                  6,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  6,
+                  1
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  4,
+                  1
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  4
+                ]
+              ],
+              "atom_weights": [
+                0,
+                1,
+                6,
+                1,
+                3,
+                6,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "expanded_field_witness": [
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                6,
+                6,
+                6,
+                1,
+                1,
+                1,
+                3,
+                3,
+                3,
+                6,
+                6,
+                6,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "raw_columns": [
+                [
+                  5,
+                  36
+                ],
+                [
+                  5,
+                  25
+                ],
+                [
+                  1,
+                  26
+                ],
+                [
+                  1,
+                  37
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  2,
+                  33
+                ],
+                [
+                  1,
+                  43
+                ],
+                [
+                  2,
+                  38
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  25
+                ],
+                [
+                  5,
+                  31
+                ],
+                [
+                  6,
+                  0
+                ],
+                [
+                  2,
+                  39
+                ],
+                [
+                  0,
+                  26
+                ],
+                [
+                  3,
+                  45
+                ],
+                [
+                  1,
+                  14
+                ],
+                [
+                  1,
+                  21
+                ],
+                [
+                  4,
+                  10
+                ],
+                [
+                  4,
+                  37
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  0,
+                  15
+                ],
+                [
+                  1,
+                  45
+                ],
+                [
+                  3,
+                  33
+                ],
+                [
+                  6,
+                  16
+                ],
+                [
+                  0,
+                  15
+                ],
+                [
+                  4,
+                  46
+                ],
+                [
+                  2,
+                  17
+                ],
+                [
+                  2,
+                  17
+                ],
+                [
+                  0,
+                  44
+                ],
+                [
+                  0,
+                  8
+                ],
+                [
+                  6,
+                  46
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  4,
+                  31
+                ],
+                [
+                  0,
+                  17
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  5,
+                  42
+                ],
+                [
+                  5,
+                  41
+                ],
+                [
+                  0,
+                  11
+                ],
+                [
+                  6,
+                  5
+                ],
+                [
+                  3,
+                  24
+                ],
+                [
+                  3,
+                  20
+                ],
+                [
+                  6,
+                  40
+                ],
+                [
+                  1,
+                  10
+                ],
+                [
+                  5,
+                  40
+                ],
+                [
+                  6,
+                  45
+                ]
+              ],
+              "lift": {
+                "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+                "scales": [
+                  0,
+                  0,
+                  0,
+                  36,
+                  8,
+                  1,
+                  6,
+                  6,
+                  6,
+                  1,
+                  1,
+                  1,
+                  3,
+                  3,
+                  3,
+                  6,
+                  6,
+                  6,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "jacobian_rank": 2,
+                "cyclic_rank": 2,
+                "singularity_is_unsatisfiability": false,
+                "original_module_verified": true,
+                "pivot_indices": [
+                  3,
+                  4
+                ],
+                "lift_steps": 1
+              },
+              "atom_equation_rank": 2,
+              "reason": "raw-module verification; source law remains an external promise"
+            },
+            "selected_request_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "zero_rank_branch": false,
+            "selected_ambient_columns": [
+              [
+                35,
+                252
+              ],
+              [
+                35,
+                175
+              ],
+              [
+                7,
+                182
+              ],
+              [
+                7,
+                259
+              ],
+              [
+                0,
+                35
+              ],
+              [
+                14,
+                231
+              ],
+              [
+                7,
+                301
+              ],
+              [
+                14,
+                266
+              ],
+              [
+                35,
+                49
+              ],
+              [
+                35,
+                175
+              ],
+              [
+                35,
+                217
+              ],
+              [
+                42,
+                0
+              ],
+              [
+                14,
+                273
+              ],
+              [
+                0,
+                182
+              ],
+              [
+                21,
+                315
+              ],
+              [
+                7,
+                98
+              ],
+              [
+                7,
+                147
+              ],
+              [
+                28,
+                70
+              ],
+              [
+                28,
+                259
+              ],
+              [
+                28,
+                42
+              ],
+              [
+                0,
+                105
+              ],
+              [
+                7,
+                315
+              ],
+              [
+                21,
+                231
+              ],
+              [
+                42,
+                112
+              ],
+              [
+                0,
+                105
+              ],
+              [
+                28,
+                322
+              ],
+              [
+                14,
+                119
+              ],
+              [
+                14,
+                119
+              ],
+              [
+                0,
+                308
+              ],
+              [
+                0,
+                56
+              ],
+              [
+                42,
+                322
+              ],
+              [
+                14,
+                28
+              ],
+              [
+                28,
+                217
+              ],
+              [
+                0,
+                119
+              ],
+              [
+                7,
+                56
+              ],
+              [
+                35,
+                294
+              ],
+              [
+                35,
+                287
+              ],
+              [
+                0,
+                77
+              ],
+              [
+                42,
+                35
+              ],
+              [
+                21,
+                168
+              ],
+              [
+                21,
+                140
+              ],
+              [
+                42,
+                280
+              ],
+              [
+                7,
+                70
+              ],
+              [
+                35,
+                280
+              ],
+              [
+                42,
+                315
+              ]
+            ],
+            "scales": [
+              0,
+              0,
+              0,
+              36,
+              8,
+              1,
+              6,
+              6,
+              6,
+              1,
+              1,
+              1,
+              3,
+              3,
+              3,
+              6,
+              6,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "original_ambient_verified": true,
+            "reason": "exact ambient witness; quantum source/receiver not certified"
+          }
+        ],
+        "source_labels_consumed": 49,
+        "source_labels_cap": 1632,
+        "conditional_all_episodes_abort_upper": [
+          27,
+          4096
+        ],
+        "fresh_iid_source_promise_required": true,
+        "whole_workflow_clock_enforced": false,
+        "public_label_pilot_coordinates_implemented": true,
+        "quantum_receiver_executed": false,
+        "speedup_established": false,
+        "successful_episode_index": 0
+      }
+    }
+  ],
+  "incomplete_pilot_retry_control": {
+    "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+    "episode_cap": 2,
+    "episodes": [
+      {
+        "status": "ABORT",
+        "prime": 3,
+        "degree": 2,
+        "ambient_exponents": [
+          2
+        ],
+        "ambient_plan": {
+          "prime": 3,
+          "degree": 2,
+          "reduced_degree": 2,
+          "cyclic_rank": 1,
+          "ambient_cyclic_rank": 1,
+          "failure_bits": 8,
+          "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+          "field_backend_implemented": true,
+          "atom_count": 4,
+          "raw_block_width": 2,
+          "attempts_per_atom": 10,
+          "raw_block_rejection_upper": [
+            1,
+            6
+          ],
+          "block_exhaustion_upper": [
+            1,
+            15116544
+          ],
+          "field_sampler_abort_upper": [
+            1,
+            256
+          ],
+          "pilot_incompleteness_upper": [
+            1,
+            18
+          ],
+          "episode_abort_upper": [
+            449429,
+            7558272
+          ],
+          "raw_bank_sources_upper": 80,
+          "pilot_sources": 3,
+          "predecessors_per_episode_upper": 83,
+          "expected_predecessors_upper": 166,
+          "field_randomness_fully_capped": false,
+          "expected_field_arithmetic_dependency": true,
+          "wrapper_adds_prime_size_guard": false,
+          "iid_intrinsic_sources_required": true,
+          "pilot_coordinate_acquisition_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 3,
+            "ambient_columns": [
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ]
+          },
+          {
+            "stage": "zero_rank_bank",
+            "count": 1,
+            "ambient_columns": [
+              [
+                3
+              ]
+            ]
+          }
+        ],
+        "source_labels_consumed": 4,
+        "public_label_pilot_coordinates_implemented": true,
+        "physical_pilot_measurements_executed": false,
+        "quantum_receiver_executed": false,
+        "hidden_support_completeness_certified": false,
+        "physical_iid_source_certified": false,
+        "frame": {
+          "prime": 3,
+          "ambient_exponents": [
+            2
+          ],
+          "pilot_columns": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "lattice_basis": [
+            [
+              9
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              1,
+              0,
+              0,
+              0
+            ]
+          ],
+          "relation_matrix": [
+            [
+              1
+            ]
+          ],
+          "smith_left": [
+            [
+              1
+            ]
+          ],
+          "smith_right": [
+            [
+              1
+            ]
+          ],
+          "smith_orders": [
+            1
+          ],
+          "intrinsic_exponents": [],
+          "subgroup_order": 1,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "reason": "nonzero bank label outside zero-rank pilot frame"
+      },
+      {
+        "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+        "prime": 3,
+        "degree": 2,
+        "ambient_exponents": [
+          2
+        ],
+        "ambient_plan": {
+          "prime": 3,
+          "degree": 2,
+          "reduced_degree": 2,
+          "cyclic_rank": 1,
+          "ambient_cyclic_rank": 1,
+          "failure_bits": 8,
+          "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+          "field_backend_implemented": true,
+          "atom_count": 4,
+          "raw_block_width": 2,
+          "attempts_per_atom": 10,
+          "raw_block_rejection_upper": [
+            1,
+            6
+          ],
+          "block_exhaustion_upper": [
+            1,
+            15116544
+          ],
+          "field_sampler_abort_upper": [
+            1,
+            256
+          ],
+          "pilot_incompleteness_upper": [
+            1,
+            18
+          ],
+          "episode_abort_upper": [
+            449429,
+            7558272
+          ],
+          "raw_bank_sources_upper": 80,
+          "pilot_sources": 3,
+          "predecessors_per_episode_upper": 83,
+          "expected_predecessors_upper": 166,
+          "field_randomness_fully_capped": false,
+          "expected_field_arithmetic_dependency": true,
+          "wrapper_adds_prime_size_guard": false,
+          "iid_intrinsic_sources_required": true,
+          "pilot_coordinate_acquisition_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 3,
+            "ambient_columns": [
+              [
+                3
+              ],
+              [
+                3
+              ],
+              [
+                3
+              ]
+            ]
+          },
+          {
+            "stage": "bank",
+            "count": 2,
+            "ambient_columns": [
+              [
+                3
+              ],
+              [
+                3
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "status": "MEMBERSHIP_VERIFIED"
+          },
+          {
+            "stage": "bank",
+            "count": 2,
+            "ambient_columns": [
+              [
+                3
+              ],
+              [
+                3
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "status": "MEMBERSHIP_VERIFIED"
+          },
+          {
+            "stage": "bank",
+            "count": 2,
+            "ambient_columns": [
+              [
+                3
+              ],
+              [
+                3
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "status": "MEMBERSHIP_VERIFIED"
+          },
+          {
+            "stage": "bank",
+            "count": 2,
+            "ambient_columns": [
+              [
+                3
+              ],
+              [
+                3
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "status": "MEMBERSHIP_VERIFIED"
+          }
+        ],
+        "source_labels_consumed": 11,
+        "public_label_pilot_coordinates_implemented": true,
+        "physical_pilot_measurements_executed": false,
+        "quantum_receiver_executed": false,
+        "hidden_support_completeness_certified": false,
+        "physical_iid_source_certified": false,
+        "frame": {
+          "prime": 3,
+          "ambient_exponents": [
+            2
+          ],
+          "pilot_columns": [
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ]
+          ],
+          "lattice_basis": [
+            [
+              3
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              3,
+              1,
+              1,
+              1
+            ]
+          ],
+          "relation_matrix": [
+            [
+              3
+            ]
+          ],
+          "smith_left": [
+            [
+              1
+            ]
+          ],
+          "smith_right": [
+            [
+              1
+            ]
+          ],
+          "smith_orders": [
+            3
+          ],
+          "intrinsic_exponents": [
+            1
+          ],
+          "subgroup_order": 3,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "intrinsic_run": {
+          "status": "VERIFIED_SPANNING_MODULE_WITNESS",
+          "prime": 3,
+          "degree": 2,
+          "exponents": [
+            1
+          ],
+          "plan": {
+            "prime": 3,
+            "degree": 2,
+            "reduced_degree": 2,
+            "cyclic_rank": 1,
+            "ambient_cyclic_rank": 1,
+            "failure_bits": 8,
+            "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+            "field_backend_implemented": true,
+            "atom_count": 4,
+            "raw_block_width": 2,
+            "attempts_per_atom": 10,
+            "raw_block_rejection_upper": [
+              1,
+              6
+            ],
+            "block_exhaustion_upper": [
+              1,
+              15116544
+            ],
+            "field_sampler_abort_upper": [
+              1,
+              256
+            ],
+            "pilot_incompleteness_upper": [
+              1,
+              18
+            ],
+            "episode_abort_upper": [
+              449429,
+              7558272
+            ],
+            "raw_bank_sources_upper": 80,
+            "pilot_sources": 3,
+            "predecessors_per_episode_upper": 83,
+            "expected_predecessors_upper": 166,
+            "field_randomness_fully_capped": false,
+            "expected_field_arithmetic_dependency": true,
+            "wrapper_adds_prime_size_guard": false,
+            "iid_intrinsic_sources_required": true,
+            "pilot_coordinate_acquisition_implemented": false
+          },
+          "trials": [
+            {
+              "atom": 0,
+              "attempt": 0,
+              "columns": [
+                [
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "raw_rank": 1,
+              "status": "ACCEPTED"
+            },
+            {
+              "atom": 1,
+              "attempt": 0,
+              "columns": [
+                [
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "raw_rank": 1,
+              "status": "ACCEPTED"
+            },
+            {
+              "atom": 2,
+              "attempt": 0,
+              "columns": [
+                [
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "raw_rank": 1,
+              "status": "ACCEPTED"
+            },
+            {
+              "atom": 3,
+              "attempt": 0,
+              "columns": [
+                [
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "raw_rank": 1,
+              "status": "ACCEPTED"
+            }
+          ],
+          "accepted_trial_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "source_columns_consumed": 8,
+          "pilots_executed": false,
+          "quantum_receiver_executed": false,
+          "atoms": [
+            [
+              2
+            ],
+            [
+              2
+            ],
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          "atom_weights": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "expanded_field_witness": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          "raw_columns": [
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "lift": {
+            "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+            "scales": [
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2
+            ],
+            "jacobian_rank": 1,
+            "cyclic_rank": 1,
+            "singularity_is_unsatisfiability": false,
+            "original_module_verified": true,
+            "pivot_indices": [
+              2
+            ],
+            "lift_steps": 0
+          },
+          "atom_equation_rank": 1,
+          "reason": "raw-module verification; source law remains an external promise"
+        },
+        "selected_request_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "zero_rank_branch": false,
+        "selected_ambient_columns": [
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ]
+        ],
+        "scales": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "original_ambient_verified": true,
+        "reason": "exact ambient witness; quantum source/receiver not certified"
+      }
+    ],
+    "source_labels_consumed": 15,
+    "source_labels_cap": 166,
+    "conditional_all_episodes_abort_upper": [
+      9,
+      256
+    ],
+    "fresh_iid_source_promise_required": true,
+    "whole_workflow_clock_enforced": false,
+    "public_label_pilot_coordinates_implemented": true,
+    "quantum_receiver_executed": false,
+    "speedup_established": false,
+    "successful_episode_index": 1
+  },
+  "zero_support_control": {
+    "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+    "episode_cap": 1,
+    "episodes": [
+      {
+        "status": "VERIFIED_AMBIENT_MODULE_WITNESS",
+        "prime": 3,
+        "degree": 2,
+        "ambient_exponents": [
+          2,
+          3
+        ],
+        "ambient_plan": {
+          "prime": 3,
+          "degree": 2,
+          "reduced_degree": 2,
+          "cyclic_rank": 2,
+          "ambient_cyclic_rank": 2,
+          "failure_bits": 8,
+          "status": "IMPLEMENTED_BACKEND_SOURCE_BOUND",
+          "field_backend_implemented": true,
+          "atom_count": 9,
+          "raw_block_width": 3,
+          "attempts_per_atom": 12,
+          "raw_block_rejection_upper": [
+            1,
+            6
+          ],
+          "block_exhaustion_upper": [
+            1,
+            241864704
+          ],
+          "field_sampler_abort_upper": [
+            1,
+            256
+          ],
+          "pilot_incompleteness_upper": [
+            1,
+            18
+          ],
+          "episode_abort_upper": [
+            14381713,
+            241864704
+          ],
+          "raw_bank_sources_upper": 324,
+          "pilot_sources": 4,
+          "predecessors_per_episode_upper": 328,
+          "expected_predecessors_upper": 656,
+          "field_randomness_fully_capped": false,
+          "expected_field_arithmetic_dependency": true,
+          "wrapper_adds_prime_size_guard": false,
+          "iid_intrinsic_sources_required": true,
+          "pilot_coordinate_acquisition_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 4,
+            "ambient_columns": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "stage": "zero_rank_bank",
+            "count": 1,
+            "ambient_columns": [
+              [
+                0,
+                0
+              ]
+            ]
+          }
+        ],
+        "source_labels_consumed": 5,
+        "public_label_pilot_coordinates_implemented": true,
+        "physical_pilot_measurements_executed": false,
+        "quantum_receiver_executed": false,
+        "hidden_support_completeness_certified": false,
+        "physical_iid_source_certified": false,
+        "frame": {
+          "prime": 3,
+          "ambient_exponents": [
+            2,
+            3
+          ],
+          "pilot_columns": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "lattice_basis": [
+            [
+              9,
+              0
+            ],
+            [
+              0,
+              27
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "relation_matrix": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "smith_left": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "smith_right": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "smith_orders": [
+            1,
+            1
+          ],
+          "intrinsic_exponents": [],
+          "subgroup_order": 1,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "selected_request_indices": [
+          1
+        ],
+        "zero_rank_branch": true,
+        "selected_ambient_columns": [
+          [
+            0,
+            0
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "original_ambient_verified": true,
+        "reason": "exact ambient witness; quantum source/receiver not certified"
+      }
+    ],
+    "source_labels_consumed": 5,
+    "source_labels_cap": 328,
+    "conditional_all_episodes_abort_upper": [
+      3,
+      16
+    ],
+    "fresh_iid_source_promise_required": true,
+    "whole_workflow_clock_enforced": false,
+    "public_label_pilot_coordinates_implemented": true,
+    "quantum_receiver_executed": false,
+    "speedup_established": false,
+    "successful_episode_index": 0
+  },
+  "proof_note": "research/PILOT_SUBMODULE_COORDINATES.md",
+  "public_label_pilot_coordinates_implemented": true,
+  "quantum_receiver_executed": false,
+  "physical_iid_source_certified": false,
+  "normal_form_backend_bit_complexity_certified": false,
+  "speedup_established": false
+}

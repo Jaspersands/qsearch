@@ -254,15 +254,39 @@ The compiler interprets a supplied bracket callable through its frozen
 basis structure constants; it does not certify an arbitrary nonlinear
 black-box callable by sampling it.
 
-The UNVERIFIED draft formal/drafts/ReesHomogenization.lean attempts
-nonzero-point Vandermonde invertibility,
-coefficient membership modulo any subspace, the tuple-hiding interface,
-and the central coefficient's hidden-intersection multiplicity. Compilation
-could not reach the proof because iCloud-offloaded dependency caches
-stalled or returned invalid headers. It is outside the default build;
-NONE of these new Lean statements is reported as compiler checked. It does
-not formalize the actual Rees Lie construction, Lazard correspondence,
-spectral completeness, SDE algorithm, or the whole adaptive quantum run.
+As of 2026-10-27, the former draft is promoted to
+formal/Formal/ReesHomogenization.lean and passes the default Lean build.
+Nonzero-point Vandermonde invertibility, coefficient membership modulo any
+subspace, the conditional tuple-hiding interface, and the central
+coefficient's hidden-intersection multiplicity are kernel-checked.
+CentralCharacterDescent.normalized_descent_output now composes that
+multiplicity with the actual normalized source and controlled-action
+channel for allowed characters and arbitrary hidden central intersection.
+Local and global axiom guards pass with only Lean's standard three axioms.
+The earlier iCloud-blocked compilation status is historical, not current.
+The later concrete-cover pass now formalizes the actual untruncated Rees
+Lie construction, its class bound, evaluation, unit dilations, grade-one
+retention and hidden-subalgebra interpolation. Canonical interpolation
+over Z/(p^e) is also checked without a free-quotient premise. See
+REES_CONCRETE_FORMALIZATION.md and formal/README.md for exact scope.
+The subsequent class-three group pass constructs actual BCH groups and
+instantiates the group-level evaluation and tuple-hiding interface in
+that scope; see REES_CLASS_THREE_GROUP_FORMALIZATION.md. The subsequent
+quotient pass constructs the actual successive central quotients and
+instantiates their support preservation, central weights and canonical
+sections in both class-three receiver steps. It derives character
+cancellation from a supplied vector SDE and proves terminal retention of
+all log(H); see REES_CENTRAL_QUOTIENT_FORMALIZATION.md. Independent normalized
+input tensors, nonzero branch traces and active SDE witnesses remain explicit
+inputs in that older module. REES_MEASURED_RECEIVER_FORMALIZATION.md now
+connects full-register spectral measurement to the actual source, handles
+all records and inactive targets, and proves the explicit two-stage
+fresh-bank composition. It reuses the existing linear-character bijection
+with a nontrivial base character. Total valid SDE policies and exact initial
+lifted coset supply remain assumptions. General-class BCH/Lazard transport,
+solver/runtime verification, original-oracle preparation and final recovery
+with approximate error bounds remain outside this integrated formalization.
+This is not a complete polynomial-time receiver proof or extracted circuit.
 The written proof and passing Python fixtures are not substitutes for a
 successful Lean check or an independent review of the whole algorithm.
 

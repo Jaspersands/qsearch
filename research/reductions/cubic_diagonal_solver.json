@@ -1,5 +1,5 @@
 {
-  "status": "PUBLISHED_CUBIC_SDE_BACKEND_NOT_NEW_ALGORITHM",
+  "status": "CLASSICAL_CUBIC_SDE_BACKENDS_NOT_QUANTUM_DISCOVERY",
   "cases": [
     {
       "prime": 7,
@@ -59,7 +59,95 @@
     }
   ],
   "source": "https://arxiv.org/pdf/1503.09016",
-  "source_scope": "Proposition10",
+  "source_scope": "Proposition10 three-level comparator; two-level closure is a local deduction",
+  "two_level_cases": [
+    {
+      "prime": 7,
+      "input_columns": 6,
+      "input_equations": 1,
+      "compressed_rank": 1,
+      "method": "two_level_curve_contraction",
+      "published_three_level_columns": 80,
+      "nonzero_scales": 3,
+      "collision_nodes": 4,
+      "checked_axis_relations": 9,
+      "root_calls": 3,
+      "curve_scales": [
+        1,
+        5,
+        1
+      ],
+      "curve_draws": 1,
+      "sampling_abort_bound": "1552518092300708935148979488462502555256886017118335546450444358145217852101919705404519533540858293474436029179825308745077852002821710987109428277491866113208058082326366876124442690844277596030636696693880541301825595324772609537/19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 13,
+      "input_columns": 28,
+      "input_equations": 3,
+      "compressed_rank": 3,
+      "method": "two_level_curve_contraction",
+      "published_three_level_columns": 1120,
+      "nonzero_scales": 20,
+      "collision_nodes": 8,
+      "checked_axis_relations": 13,
+      "root_calls": 5,
+      "curve_scales": [
+        1,
+        6,
+        4
+      ],
+      "curve_draws": 7,
+      "sampling_abort_bound": "1552518092300708935148979488462502555256886017118335546450444358145217852101919705404519533540858293474436029179825308745077852002821710987109428277491866113208058082326366876124442690844277596030636696693880541301825595324772609537/19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 97,
+      "input_columns": 153,
+      "input_equations": 8,
+      "compressed_rank": 8,
+      "method": "two_level_curve_contraction",
+      "published_three_level_columns": 16425,
+      "nonzero_scales": 99,
+      "collision_nodes": 18,
+      "checked_axis_relations": 23,
+      "root_calls": 33,
+      "curve_scales": [
+        1,
+        87,
+        5
+      ],
+      "curve_draws": 2,
+      "sampling_abort_bound": "1552518092300708935148979488462502555256886017118335546450444358145217852101919705404519533540858293474436029179825308745077852002821710987109428277491866113208058082326366876124442690844277596030636696693880541301825595324772609537/19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441",
+      "exact_original_moment_verified": true
+    },
+    {
+      "prime": 170141183460469231731687303715884105727,
+      "input_columns": 45,
+      "input_equations": 4,
+      "compressed_rank": 4,
+      "method": "two_level_curve_contraction",
+      "published_three_level_columns": 2405,
+      "nonzero_scales": 31,
+      "collision_nodes": 10,
+      "checked_axis_relations": 15,
+      "root_calls": 47,
+      "curve_scales": [
+        1,
+        139356285557953051207603707353857846705,
+        50251050399155125757499632971455741619
+      ],
+      "curve_draws": 3,
+      "sampling_abort_bound": "1552518092300708935148979488462502555256886017118335546450444358145217852101919705404519533540858293474436029179825308745077852002821710987109428277491866113208058082326366876124442690844277596030636696693880541301825595324772609537/19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441",
+      "exact_original_moment_verified": true
+    }
+  ],
+  "two_level_proof_note": "research/CUBIC_TWO_LEVEL_CONTRACTION.md",
+  "two_level_uses_random_input_promise": false,
+  "two_level_independent_automated_review": true,
+  "human_review": false,
+  "scalar_curve_success_lower_bound": "1/9 per independent uniform draw",
+  "sampling_caps_are_not_total_runtime_clocks": true,
   "cubic_all_prime_backend_implemented": true,
   "general_degree_backend_implemented": false,
   "finite_field_root_dependency": "FLINT degree-three roots; exact output verification",

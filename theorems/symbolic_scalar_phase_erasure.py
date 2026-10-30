@@ -308,6 +308,8 @@ def sparse_cancellation_weights(
     *,
     rng: random.Random | None = None,
     conic_cap: int = 64,
+    use_general_prime_sde: bool = False,
+    bounded_randomness_bits: int | None = None,
 ) -> tuple[list[int], int, int]:
     """Compute and verify public leading-degree cancellation scales for sparse packets."""
     if degree not in (1, 2, 3):
@@ -318,6 +320,25 @@ def sparse_cancellation_weights(
     compressed, rank = independent_columns_exact(columns, p)
     if rank == 0:
         weights = [1] + [0] * (len(packets) - 1)
+    elif use_general_prime_sde:
+        from math import gcd
+        from theorems.power_sde import power_arity
+        from theorems.weighted_two_erasure_cascade import solve_bezout_sde_weights
+
+        g = gcd(degree, p - 1)
+        needed = rank + 1 if g == 1 else power_arity(rank, g)
+        if len(compressed) < needed:
+            raise ValueError(
+                f"degree-{degree} general-prime SDE controller needs {needed} columns at rank {rank} and g={g}"
+            )
+        w_sub, _, _, _ = solve_bezout_sde_weights(
+            p,
+            compressed[:needed],
+            degree,
+            rng=rng,
+            bounded_randomness_bits=bounded_randomness_bits,
+        )
+        weights = list(w_sub) + [0] * (len(compressed) - needed)
     elif degree == 2:
         weights = square_weights_capped(
             p,
@@ -401,6 +422,8 @@ def sparse_degree_erasure_stage(
     *,
     rng: random.Random | None = None,
     conic_cap: int = 64,
+    use_general_prime_sde: bool = False,
+    bounded_randomness_bits: int | None = None,
 ) -> tuple[PinnedSymbolicPacket, list[int], int, int]:
     """Execute one verified degree-``degree`` cancellation and shear update on sparse packets."""
     weights, rank, active_equations = sparse_cancellation_weights(
@@ -408,6 +431,8 @@ def sparse_degree_erasure_stage(
         degree,
         rng=rng,
         conic_cap=conic_cap,
+        use_general_prime_sde=use_general_prime_sde,
+        bounded_randomness_bits=bounded_randomness_bits,
     )
     merged = sparse_translate_combine(packets, weights, outcomes)
     if merged.degree >= degree:

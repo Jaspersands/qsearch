@@ -1,0 +1,105 @@
+{
+  "status": "DIRECT_NOISY_PHASE_REDUCTION_WITH_PUBLIC_MAP_CONTROLS",
+  "scope": "exact coefficient controls and conditional uniform-source budget",
+  "public_map_basis_roundtrips": true,
+  "public_line_packets_checked": 5,
+  "fixed_axis_filtration_checked": true,
+  "quantum_source_prepared": false,
+  "quantum_learning_run": false,
+  "novelty_established": false,
+  "classical_hardness_established": false,
+  "standard_lwe_reduction": false,
+  "rees_receiver_required": false,
+  "affine_gauge_recoverable": false,
+  "nonuniform_noise_budget_implemented": false,
+  "quadratic_competitor": "four-copy cancellation with SWAP or classical symplectic verification",
+  "quadratic_competitor_end_to_end_implemented": false,
+  "counterexample": "rank divisible by p can erase nonlinear phase information",
+  "budget": {
+    "prime": 101,
+    "variables": 2,
+    "degree": 3,
+    "rank": 2,
+    "rank_known_exactly": true,
+    "source": "IID uniform mixture of distinct linear-phase errors",
+    "recoverable_object": "nonlinear polynomial coefficients; affine terms are gauge",
+    "learner": {
+      "unknown_coefficients_mod_constant": 9,
+      "line_acceptance_lower_bound": {
+        "numerator": 99,
+        "denominator": 101
+      },
+      "merge_acceptance_lower_bound": {
+        "numerator": 100,
+        "denominator": 101
+      },
+      "sde_arities": {
+        "2": 40000,
+        "3": 729000000
+      },
+      "expected_original_copies_upper_bound": {
+        "numerator": 3004357716000000,
+        "denominator": 11
+      },
+      "original_copy_abort_cap": 3277481144727273,
+      "abort_probability_bound": {
+        "numerator": 1,
+        "denominator": 12
+      },
+      "reserved_quantum_precision_budget": {
+        "numerator": 1,
+        "denominator": 12
+      }
+    },
+    "top_wedge_output_cap": 3277481144727273,
+    "raw_noisy_copy_cap": 750543182142545517,
+    "growth_attempt_cap": 747265700997818244,
+    "multiplexed_register_swap_cap": 1494531401995636488,
+    "source_register_bits": 14,
+    "relative_coordinate_subtraction_cap": 6554962289454546,
+    "learner_abort_bound": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "wedge_abort_bound": {
+      "numerator": 3277481144727273,
+      "denominator": 72057594037927936
+    },
+    "sde_abort_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "sde_call_cap": 3277481144727273,
+    "required_sde_abort_per_call": {
+      "numerator": 1,
+      "denominator": 39329773736727276
+    },
+    "complete_instrument_error_budget": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "total_error_upper_bound": {
+      "numerator": 21291879654209257,
+      "denominator": 72057594037927936
+    },
+    "full_quantum_backend_implemented": false,
+    "sde_runtime_included": false,
+    "source_promise_certified": false,
+    "rees_receiver_required": false
+  },
+  "remaining_obligations": [
+    "independent human proof and prior-art review",
+    "physical wedge and public-map learner integration",
+    "bounded SDE solver and complete-instrument precision allocation",
+    "useful native input reduction and matched-access competing learners"
+  ],
+  "source_sha256": {
+    "theorems/exterior_phase_learning.py": "18ef6c022ee74d4e37ccf911fce954f8115f3ba3bb33f14ff10d5f53c1c17ed2",
+    "theorems/polynomial_phase_copy_learning.py": "0358663e84299298d40d611bacab7baf89dbe7b7703e2c9d58187582c04ec879",
+    "theorems/rees_subspace_source.py": "3541cbf5762ebc649708a0c3a28064d9ee2bb63ecd0e9ef0af5b3b524b130acc",
+    "tests/test_exterior_phase_learning.py": "29e4ff1ca537e76bc5e95bdd06e712038527ce82ff2442b888ce0bb0011c97e8",
+    "research/EXTERIOR_NOISY_PHASE_LEARNING.md": "c1f6d258df89c933c908e2c299a13f16ee6d65463e5e676427ea7f2ff814e390",
+    "research/NOISY_QUADRATIC_PHASE_FILTER.md": "ad0c68eddd143764211923aaf8559fca090e3ec778f85196f83ff5179d0908f8",
+    "qsearch_cli/commands/sde.py": "0b17b073aa6fb5991c21cdc5b09f3bfc2cb933c7275675e6bcea0e87e75a0771"
+  }
+}

@@ -15,7 +15,8 @@ import sympy as sp
 from theorems.affine_phase_channel_audit import coset_mixture
 from theorems.affine_phase_erasure import square_weights
 from theorems.ut5_matrix_phase_alignment import (
-    align_public_jets, public_jet_maps, symplectic_pair, verify_alignment,
+    align_public_jets, general_prime_ut5_batch_arity, public_jet_maps,
+    quartic_central_scales, symplectic_pair, verify_alignment,
 )
 from theorems.ut5_scalar_phase_compiler import compile_scalar_packet
 
@@ -561,3 +562,49 @@ def test_symbolic_compiler_matches_actual_ut5_matrix_potentials():
         expected = (-psi-pow(2, -1, p)*sum(a*b for a, b in zip(A, B))-
                     sum(b*t for b, t in zip(B, point[m:]+spectator))) % p
         assert packet.evaluate_fixture(point, theta) == expected
+
+
+def test_general_prime_quartic_central_scales_and_alignment_p_1_mod_12(monkeypatch):
+    from fractions import Fraction
+    import theorems.bounded_power_roots as roots
+    import theorems.power_sde as core
+
+    p = 1201
+    assert p % 12 == 1
+    r, m = 1, 2
+    # Prompt specifies p >= 16 * 2^6 = 1024 for the certified symmetric contraction regime
+    monkeypatch.setattr(core, "field_threshold", lambda d: 1024 if d == 4 else core.field_threshold(d))
+
+    batch_arity = general_prime_ut5_batch_arity(p, r)
+    assert batch_arity == 8
+
+    rng = random.Random(20261028)
+    labels = []
+    scales = []
+
+    for _ in range(m + 3):
+        block = [[rng.randrange(1, p) for _ in range(r)] for _ in range(batch_arity)]
+        weights, rank, g, u = quartic_central_scales(p, block, rng=rng, bounded_randomness_bits=64)
+        assert rank == 1
+        assert g == 4
+        assert u == 1
+        assert any(weights)
+        multiplier = rng.randrange(1, p)
+        scales.extend(multiplier * s % p for s in weights)
+        labels.extend(block)
+
+    assert len({s for s in scales if s}) > 1
+    outcomes = [[rng.randrange(p) for _ in range(m)] for _ in labels]
+    alignment = align_public_jets(p, labels, scales, outcomes)
+    assert verify_alignment(alignment)
+
+    # Test that bounded_randomness_bits=1 raises RuntimeError("bounded root splitting exhausted")
+    fail_block = [[rng.randrange(1, p) for _ in range(r)] for _ in range(batch_arity)]
+    with monkeypatch.context() as m_ctx:
+        m_ctx.setattr(
+            roots,
+            "bounded_power_root",
+            lambda *args, **kwargs: roots.BoundedPowerRoot(None, 1, 0, 4, Fraction(1)),
+        )
+        with pytest.raises(RuntimeError, match="bounded root splitting exhausted"):
+            quartic_central_scales(p, fail_block, rng=rng, bounded_randomness_bits=1)

@@ -1,5 +1,12 @@
 # Direct Prime-Power Rees Descent
 
+**28 October follow-up:** [simultaneous regular cancellation](PRIME_POWER_REGULAR_SDE.md)
+replaces the cyclic-factor source bound by a conditional polynomial bound
+per whole grade in a stronger, rank-dependent large-prime regime. Its exact
+arithmetic is implemented; pilot acquisition and the quantum receiver are
+not. The historical construction and verification record below remain valid
+as the conservative separate-factor route.
+
 2026-10-23. Proposed constructive extension, review pending. Not a new
 scalar-equation solver, independent validation of the Rees composition,
 quantum receiver execution, novelty certificate, or useful hard application.

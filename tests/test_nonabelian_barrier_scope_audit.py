@@ -107,13 +107,41 @@ def test_allocation_and_parameter_gates(call):
 
 
 def isolated_registry(tmp_path, monkeypatch):
-    originals = list(audit.reviewed_originals().values())
     active, archive = tmp_path/"active.json", tmp_path/"archive.json"
-    active.write_text(json.dumps(originals+[{"id": "UNRELATED", "claim": "preserve"}]))
-    archive.write_text("[]")
+    active.write_bytes(audit.ACTIVE.read_bytes())
+    archive.write_bytes(audit.ARCHIVE.read_bytes())
     monkeypatch.setattr(audit, "ACTIVE", active)
     monkeypatch.setattr(audit, "ARCHIVE", archive)
+    originals = list(audit.reviewed_originals().values())
+    active.write_text(json.dumps(originals+[{"id": "UNRELATED", "claim": "preserve"}]))
+    archive.write_text("[]")
     return originals, active, archive
+
+
+def test_cfi_is_fourth_review_bound_to_complete_canonical_original(tmp_path, monkeypatch):
+    originals, _, _ = isolated_registry(tmp_path, monkeypatch)
+    key = "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER"
+    expected_hash = "878a234da47c9296c97d138328817c7b6ba44c5490f146494c391d0fd43110ac"
+    assert len(audit.REVIEWED) == len(originals) == 6
+    assert list(audit.REVIEWED)[3] == key
+    assert audit.REVIEWED[key]["reviewed_on"] == "2026-10-30"
+    assert audit.REVIEWED[key]["sha256"] == expected_hash
+    original = next(row for row in originals if row["id"] == key)
+    canonical = json.dumps(original, sort_keys=True, separators=(",", ":")).encode()
+    assert hashlib.sha256(canonical).hexdigest() == expected_hash
+
+
+def test_wreath_is_fifth_review_bound_to_complete_canonical_original(tmp_path, monkeypatch):
+    originals, _, _ = isolated_registry(tmp_path, monkeypatch)
+    key = "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE"
+    expected_hash = "70d9b4a8d8b377ee21ca70ec35d0b981eeab9007656ed9800ffb73f9f2166bd4"
+    assert len(audit.REVIEWED) == len(originals) == 6
+    assert list(audit.REVIEWED)[4] == key
+    assert audit.REVIEWED[key]["reviewed_on"] == "2026-10-30"
+    assert audit.REVIEWED[key]["sha256"] == expected_hash
+    original = next(row for row in originals if row["id"] == key)
+    canonical = json.dumps(original, sort_keys=True, separators=(",", ":")).encode()
+    assert hashlib.sha256(canonical).hexdigest() == expected_hash
 
 
 def test_quarantine_preserves_complete_hash_bound_originals_and_is_idempotent(tmp_path, monkeypatch):
@@ -122,6 +150,17 @@ def test_quarantine_preserves_complete_hash_bound_originals_and_is_idempotent(tm
     saved = json.loads(archive.read_text())
     assert [r["original_record"] for r in saved] == originals
     assert all(r["original_sha256"] == audit.record_hash(r["original_record"]) for r in saved)
+    assert {r["id"]: r["reviewed_on"] for r in saved} == {
+        key: review["reviewed_on"] for key, review in audit.REVIEWED.items()
+    }
+    assert {r["id"]: r["retraction_reasons"] for r in saved} == {
+        key: review["reasons"] for key, review in audit.REVIEWED.items()
+    }
+    assert all(r["status"] == "QUARANTINED_OVERBROAD_NO_GO" for r in saved)
+    assert {r["id"]: r["review"] for r in saved} == {
+        key: review.get("review", audit.NOTE) for key, review in audit.REVIEWED.items()
+    }
+    assert all(not r["original_checks_are_general_proofs"] for r in saved)
     assert all(r["reinstatement_requires_scoped_mathematical_review"] for r in saved)
     assert json.loads(active.read_text()) == [{"id": "UNRELATED", "claim": "preserve"}]
     before = active.read_bytes(), archive.read_bytes()
@@ -129,12 +168,54 @@ def test_quarantine_preserves_complete_hash_bound_originals_and_is_idempotent(tm
     assert before == (active.read_bytes(), archive.read_bytes())
 
 
+@pytest.mark.parametrize("key", tuple(audit.REVIEWED))
+def test_new_review_extends_existing_archive_without_rewriting_it(tmp_path, monkeypatch, key):
+    originals, active, archive = isolated_registry(tmp_path, monkeypatch)
+    reviewed = audit.REVIEWED
+    with monkeypatch.context() as earlier_review:
+        earlier_review.setattr(audit, "REVIEWED", {k: v for k, v in reviewed.items() if k != key})
+        audit.quarantine_reviewed_negatives()
+    previously_saved = json.loads(archive.read_text())
+    assert len(previously_saved) == len(reviewed) - 1
+    assert {r["id"] for r in json.loads(active.read_text())} == {key, "UNRELATED"}
+    audit.quarantine_reviewed_negatives()
+    saved = json.loads(archive.read_text())
+    assert len(saved) == len(reviewed)
+    assert saved[:-1] == previously_saved
+    assert saved[-1]["id"] == key
+    assert saved[-1]["original_record"] == next(row for row in originals if row["id"] == key)
+    assert saved[-1]["original_sha256"] == reviewed[key]["sha256"]
+    assert saved[-1]["reviewed_on"] == reviewed[key]["reviewed_on"]
+    assert saved[-1]["retraction_reasons"] == reviewed[key]["reasons"]
+    assert json.loads(active.read_text()) == [{"id": "UNRELATED", "claim": "preserve"}]
+    before = active.read_bytes(), archive.read_bytes()
+    audit.quarantine_reviewed_negatives()
+    assert before == (active.read_bytes(), archive.read_bytes())
+
+
+@pytest.mark.parametrize("key", tuple(audit.REVIEWED))
 @pytest.mark.parametrize("quarantine_first", (False, True))
-def test_changed_original_requires_independent_review(tmp_path, monkeypatch, quarantine_first):
+def test_changed_original_requires_independent_review(tmp_path, monkeypatch, quarantine_first, key):
     originals, active, archive = isolated_registry(tmp_path, monkeypatch)
     if quarantine_first:
         audit.quarantine_reviewed_negatives()
-    active.write_text(json.dumps([originals[0] | {"claim": "changed"}, originals[1]]))
+    active.write_text(json.dumps([
+        original | {"claim": "changed"} if original["id"] == key else original
+        for original in originals
+    ]))
+    before = active.read_bytes(), archive.read_bytes()
+    with pytest.raises(ValueError, match="independent review"):
+        audit.quarantine_reviewed_negatives()
+    assert before == (active.read_bytes(), archive.read_bytes())
+
+
+@pytest.mark.parametrize("key", tuple(audit.REVIEWED))
+def test_changed_archived_original_requires_independent_review(tmp_path, monkeypatch, key):
+    _, active, archive = isolated_registry(tmp_path, monkeypatch)
+    audit.quarantine_reviewed_negatives()
+    saved = json.loads(archive.read_text())
+    next(row for row in saved if row["id"] == key)["original_record"]["claim"] = "changed"
+    archive.write_text(json.dumps(saved))
     before = active.read_bytes(), archive.read_bytes()
     with pytest.raises(ValueError, match="independent review"):
         audit.quarantine_reviewed_negatives()
@@ -158,9 +239,11 @@ def test_concurrent_active_change_after_archival_is_not_overwritten(tmp_path, mo
     assert [r["original_record"] for r in json.loads(archive.read_text())] == originals
 
 
-def test_duplicate_reviewed_record_is_not_silently_removed(tmp_path, monkeypatch):
+@pytest.mark.parametrize("key", tuple(audit.REVIEWED))
+def test_duplicate_reviewed_record_is_not_silently_removed(tmp_path, monkeypatch, key):
     originals, active, archive = isolated_registry(tmp_path, monkeypatch)
-    active.write_text(json.dumps(originals+[originals[0]]))
+    duplicate = next(original for original in originals if original["id"] == key)
+    active.write_text(json.dumps(originals+[duplicate]))
     before = active.read_bytes(), archive.read_bytes()
     with pytest.raises(ValueError, match="duplicate"):
         audit.quarantine_reviewed_negatives()

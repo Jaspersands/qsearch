@@ -3,6 +3,12 @@
 27 October 2026. This ledger concerns source reconciliation and selected
 controls, not a new theorem, peer review, novelty decision or quantum run.
 
+The sections below preserve the initial review-package snapshot and its
+checks. A later pass applied the Argon review intake described in
+[REES_ARGON_REVIEW_DISPOSITION.md](REES_ARGON_REVIEW_DISPOSITION.md).
+The initial manuscript hash and exact-diff statement are historical;
+that later pass adds three exposition clarifications and formal checks.
+
 ## Source Reconciliation
 
 The repository's `rees_hsp_review.tex` now incorporates exactly the F1

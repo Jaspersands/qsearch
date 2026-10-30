@@ -5,6 +5,17 @@ local assessment package, not a submission or an announcement. No recipient
 has been selected and nothing has been sent. External contact requires the
 user's explicit instruction.
 
+Subsequent review intake: [Argon's review disposition](REES_ARGON_REVIEW_DISPOSITION.md)
+records corrections to the received AI review, three manuscript
+clarifications, and the added formal checks. The archived review hashes
+below refer to the earlier snapshot; the current manuscript has additional
+exposition. No theorem or novelty status is promoted.
+
+Further checked scope is recorded in
+[the class-three group formalization](../REES_CLASS_THREE_GROUP_FORMALIZATION.md).
+It constructs group laws and the concrete Rees group transport, rather than
+assuming those maps. It is not formal verification of the complete receiver.
+
 ## The Question To Decide
 
 Does the proposed homogenization/state-conversion composition correctly
@@ -140,8 +151,10 @@ Both reports are preserved byte-for-byte in review_evidence/. Their old
 absolute workspace links identify historical snapshots; they are not
 portable links and should not be mistaken for current manuscript line
 numbers. The reports' primary literature URLs remain usable. The current
-mathematical text matches the corrected isolated revision; only the author
-status line and date differ. No reviewed conclusion has been upgraded to
+mathematical text matched the corrected isolated revision at initial
+packaging, apart from the author status line and date. The subsequent
+Argon intake adds the exposition clarifications linked above.
+No reviewed conclusion has been upgraded to
 human validation, formal verification or experimental quantum execution.
 
 ## What This Package Does Not Claim

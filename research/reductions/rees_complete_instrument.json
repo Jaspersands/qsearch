@@ -110,6 +110,8 @@
       "cubic_method": "three_coset_collision",
       "cubic_collision_nodes": 51,
       "cubic_root_calls": 2,
+      "cubic_curve_draws": 0,
+      "cubic_sampling_abort_bound": "1/11790184577738583171520872861412518665678211592275841109096961",
       "selected_nonzero_records_not_iid_sampling": true,
       "all_label_tuples_checked": false,
       "stages": [
@@ -149,6 +151,8 @@
       "cubic_method": "three_coset_collision",
       "cubic_collision_nodes": 51,
       "cubic_root_calls": 2,
+      "cubic_curve_draws": 0,
+      "cubic_sampling_abort_bound": "1/11790184577738583171520872861412518665678211592275841109096961",
       "selected_nonzero_records_not_iid_sampling": true,
       "all_label_tuples_checked": false,
       "stages": [
@@ -178,6 +182,90 @@
       "final_fourier_support_size": 343,
       "full_original_subspace_recovered": true,
       "fourier_mass": 0.9999999999999996
+    }
+  ],
+  "two_level_cubic_controls": [
+    {
+      "prime": 7,
+      "hidden_fixture": "X+W",
+      "initial_regular_support_size": 7,
+      "original_input_is_explicit_finite_coset_density": true,
+      "tuple_oracle_source_replayed": false,
+      "cubic_method": "two_level_curve_contraction",
+      "cubic_collision_nodes": 4,
+      "cubic_root_calls": 3,
+      "cubic_curve_draws": 2,
+      "cubic_sampling_abort_bound": "1552518092300708935148979488462502555256886017118335546450444358145217852101919705404519533540858293474436029179825308745077852002821710987109428277491866113208058082326366876124442690844277596030636696693880541301825595324772609537/19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441",
+      "selected_nonzero_records_not_iid_sampling": true,
+      "all_label_tuples_checked": false,
+      "stages": [
+        {
+          "degree": 3,
+          "raw_conditional_input_count": 6,
+          "nonzero_scales": 2,
+          "maximum_regular_coefficient_error": 4.606715503265579e-16,
+          "output_regular_support_size": 7
+        },
+        {
+          "degree": 2,
+          "raw_conditional_input_count": 9,
+          "nonzero_scales": 5,
+          "maximum_regular_coefficient_error": 2.9580012744028813e-15,
+          "output_regular_support_size": 7
+        }
+      ],
+      "recovered_basis": [
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "final_fourier_support_size": 343,
+      "full_original_subspace_recovered": true,
+      "fourier_mass": 0.9999999999999982
+    },
+    {
+      "prime": 7,
+      "hidden_fixture": "Z+W",
+      "initial_regular_support_size": 49,
+      "original_input_is_explicit_finite_coset_density": true,
+      "tuple_oracle_source_replayed": false,
+      "cubic_method": "two_level_curve_contraction",
+      "cubic_collision_nodes": 4,
+      "cubic_root_calls": 3,
+      "cubic_curve_draws": 2,
+      "cubic_sampling_abort_bound": "1552518092300708935148979488462502555256886017118335546450444358145217852101919705404519533540858293474436029179825308745077852002821710987109428277491866113208058082326366876124442690844277596030636696693880541301825595324772609537/19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441",
+      "selected_nonzero_records_not_iid_sampling": true,
+      "all_label_tuples_checked": false,
+      "stages": [
+        {
+          "degree": 3,
+          "raw_conditional_input_count": 6,
+          "nonzero_scales": 2,
+          "maximum_regular_coefficient_error": 4.606715503265579e-16,
+          "output_regular_support_size": 49
+        },
+        {
+          "degree": 2,
+          "raw_conditional_input_count": 9,
+          "nonzero_scales": 2,
+          "maximum_regular_coefficient_error": 4.642457209663348e-16,
+          "output_regular_support_size": 7
+        }
+      ],
+      "recovered_basis": [
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "final_fourier_support_size": 343,
+      "full_original_subspace_recovered": true,
+      "fourier_mass": 0.9999999999999999
     }
   ],
   "full_regular_operator_kernels_checked_per_tested_record": true,

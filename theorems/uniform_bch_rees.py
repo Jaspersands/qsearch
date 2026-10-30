@@ -9,7 +9,8 @@ free-Lie word expansion, hidden subgroup, or cloud-offloaded import is used.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import gcd
+from fractions import Fraction
+from math import factorial, gcd
 from typing import Callable, Sequence
 
 
@@ -186,3 +187,99 @@ def scalar_line_budget(
         len(dimensions) * need, sum(stage.conversions for stage in stages),
         sum(stage.consumed_targets for stage in stages), tuple(stages),
     )
+
+
+def symmetric_recovery_budget(lower_central_dimensions, *, prime, error=Fraction(1, 3)):
+    """Conditional whole-grade Rees forest and bounded classical randomness.
+
+    Requires a VERIFIED prime and actual lower-central profile, not merely
+    these shape checks. No quantum receiver or physical gate clock is run.
+    Nonlinear grades must satisfy the reduced-degree symmetric field guard;
+    small fields reject, without silently using an unbudgeted fallback.
+    """
+    from theorems.power_sde import field_threshold, power_arity
+    from theorems.power_sde_budget import randomness_budget
+
+    if not isinstance(error, Fraction) or not 0 < error < 1:
+        raise ValueError("exact error Fraction in (0,1) required")
+    if prime is None:
+        raise ValueError("a supplied verified prime is required")
+    scalar = scalar_line_budget(lower_central_dimensions, 1, prime=prime)
+    dimensions = scalar.lower_central_dimensions
+    c, r = len(dimensions), scalar.derived_dimension
+
+    def ceil_log2(value):
+        rounded = (value.numerator+value.denominator-1)//value.denominator
+        return (rounded-1).bit_length()
+
+    slack = ceil_log2(3/error)
+    samples = dimensions[0]+slack
+    need, stages = samples, []
+    for grade, rank in enumerate(dimensions[1:], start=2):
+        degree = gcd(grade, prime-1)
+        if degree > 1 and prime < field_threshold(degree):
+            raise ValueError(f"grade {grade}, reduced degree {degree}: symmetric field guard fails")
+        arity = rank+1 if degree == 1 else power_arity(rank, degree)
+        stages.append(dict(grade=grade, rank=rank, reduced_degree=degree,
+                           arity=arity, conversions=need, consumed_targets=arity*need))
+        need *= arity
+    merges = sum(stage["conversions"] for stage in stages)
+    instruments = need+merges+samples
+    nonlinear_calls = sum(stage["conversions"] for stage in stages if stage["reduced_degree"] > 1)
+    bits = ceil_log2(3*nonlinear_calls/error) if nonlinear_calls else None
+    uniform_calls = random_bits = root_pairs = 0
+    for stage in stages:
+        degree = stage["reduced_degree"]
+        if degree == 1:
+            stage["randomness"] = None
+            continue
+        budget = randomness_budget(stage["rank"], degree, bits)
+        pairs = budget.root_call_cap*(degree-1)*budget.root_split_attempt_cap
+        bit_cap = budget.uniform_call_cap*budget.integer_rejection_cap*(prime-1).bit_length()
+        stage["randomness"] = dict(failure_bits=bits, root_calls=budget.root_call_cap,
+                                   polynomial_pow_gcd_pairs=pairs,
+                                   uniform_calls=budget.uniform_call_cap,
+                                   bit_rejection_attempts=budget.integer_rejection_cap,
+                                   fair_bits=bit_cap, abort_bound=budget.total_abort_bound)
+        uniform_calls += stage["conversions"]*budget.uniform_call_cap
+        random_bits += stage["conversions"]*bit_cap
+        root_pairs += stage["conversions"]*pairs
+    leaves_per_terminal = need//samples
+    leaf_bound = factorial(c-1)*(factorial(r+1)//factorial(r-c+2))**2
+    if leaves_per_terminal > leaf_bound:
+        raise ArithmeticError("whole-grade product exceeds the derived-dimension envelope")
+    solver_error = Fraction(nonlinear_calls, 2**bits) if nonlinear_calls else Fraction(0)
+    rank_error = Fraction(1, (prime-1)*prime**slack)
+    return dict(status="CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+                error_model="Exact independent sources; each complete flagged instrument has the stated error bound.",
+                lower_central_dimensions=dimensions, supplied_prime=prime,
+                actual_class=c, derived_dimension=r, cover_dimension=sum(dimensions),
+                error_target=error, final_fourier_samples=samples, fourier_slack=slack,
+                stages_top_down=list(reversed(stages)), leaves_per_terminal=leaves_per_terminal,
+                derived_parameter_leaf_bound=leaf_bound,
+                scalar_flag_leaves_per_terminal=scalar.leaves_per_terminal,
+                source_preparations=need, original_inputs=c*need, sde_calls=merges,
+                nonlinear_sde_calls=nonlinear_calls, complete_instrument_calls=instruments,
+                central_character_measurements=sum(stage["consumed_targets"] for stage in stages),
+                solver_failure_bits_per_call=bits, solver_abort_bound=solver_error,
+                rank_failure_bound=rank_error, instrument_error_per_call=error/(3*instruments),
+                total_error_bound=rank_error+solver_error+error/3,
+                classical_uniform_draw_cap=uniform_calls, classical_fair_bit_cap=random_bits,
+                classical_root_pow_gcd_pair_cap=root_pairs,
+                depth_first_group_register_bound=1 if c == 1 else 2+sum(stage["arity"]-1 for stage in stages),
+                depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas=True,
+                classical_retry_extra_source_copies=0,
+                prime_validation_included=False, profile_existence_certified=False,
+                deterministic_arithmetic_step_counter=False, physical_gate_clock=False,
+                quantum_receiver_implemented=False, formal_total_policy_instantiated=False,
+                novelty_established=False, speedup_claim_allowed=False)
+
+
+def symmetric_rees_report():
+    cases = [symmetric_recovery_budget(profile, prime=prime)
+             for profile, prime in (((4,), 2), ((6, 3, 1), 65537),
+                                    ((13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1), 2**127-1))]
+    return dict(status="CONDITIONAL_DERIVED_DIMENSION_IMPROVEMENT",
+                proof_note="research/REES_FULL_GRADE_PARAMETER_BOUND.md", cases=cases,
+                note="Source and randomness bounds only; no receiver or arithmetic wall-clock execution.",
+                speedup_claim_allowed=False, novelty_established=False)

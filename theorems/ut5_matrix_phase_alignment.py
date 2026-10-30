@@ -9,7 +9,8 @@ research/UT5_MATRIX_PHASE_ALIGNMENT.md for the source and scope obligations.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Protocol
+import random
+from typing import Protocol, Sequence
 
 from flint import fmpz_mod_ctx, fmpz_mod_mat
 
@@ -280,3 +281,47 @@ def align_jet_maps(maps: JetMaps):
     if not verify_alignment(alignment):
         raise ArithmeticError("public symplectic jet alignment failed verification")
     return alignment
+
+
+def general_prime_ut5_batch_arity(p: int, r: int) -> int:
+    """Return the general-prime batch arity for r-factor UT_5 central alignment."""
+    from math import gcd
+    from theorems.power_sde import power_arity
+
+    ring(p)
+    if type(r) is not int or r < 0:
+        raise ValueError("nonnegative integer rank required")
+    return power_arity(r, gcd(4, p - 1))
+
+
+def quartic_central_scales(
+    p: int,
+    labels: Sequence[Sequence[int]],
+    *,
+    rng: random.Random | None = None,
+    bounded_randomness_bits: int | None = None,
+) -> tuple[list[int], int, int, int]:
+    """Solve for quartic central-label cancellation scales using general-prime Bezout SDE."""
+    from theorems.weighted_two_erasure_cascade import solve_bezout_sde_weights
+
+    ring(p)
+    if p <= 4 or not labels or not labels[0]:
+        raise ValueError("p>4 and nonempty labels required")
+    r = len(labels[0])
+    for label in labels:
+        _canonical(label, r, p)
+        if not all(label):
+            raise ValueError("every Heisenberg central label must be nonzero")
+    weights, rank, g, u = solve_bezout_sde_weights(
+        p,
+        labels,
+        4,
+        rng=rng,
+        bounded_randomness_bits=bounded_randomness_bits,
+    )
+    if not any(weights):
+        raise ArithmeticError("all-zero quartic cancellation weights rejected")
+    for j in range(r):
+        if sum(pow(s, 4, p) * label[j] for label, s in zip(labels, weights)) % p != 0:
+            raise ArithmeticError("quartic central-label cancellation failed")
+    return weights, rank, g, u

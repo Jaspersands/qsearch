@@ -111,6 +111,38 @@ def test_large_prime_high_degree_and_shared_dag_do_not_expand_monomials():
     assert value == evaluate_source(nodes, point, p, field)
 
 
+def test_syntactic_degree_can_be_inflated_without_changing_the_polynomial():
+    p = 2**127-1
+    nodes = [('var', 0)]
+    for _ in range(130):
+        previous = len(nodes)-1
+        nodes.append(('mul', previous, previous))
+    power = len(nodes)-1
+    nodes.append(('const', p-1))
+    nodes.append(('mul', power, len(nodes)-1))
+    nodes.append(('add', power, len(nodes)-1))
+    nodes.append(('add', 0, len(nodes)-1))
+    # This DAG is formally x+(P-P), not just an equality on base-field points.
+    lifted = lift_frobenius_circuit(p, 2, nodes)
+    plain = lift_frobenius_circuit(p, 2, [('var', 0)])
+    assert lifted.degree_bound == 2**130 >= p
+    assert plain.degree_bound == 1 < p
+    assert lifted.frobenius_depth == plain.frobenius_depth == 0
+    assert len(nodes) == 135
+    with pytest.raises(ValueError):
+        mixed_frobenius_derivative_guard(lifted)
+    mixed_frobenius_derivative_guard(plain)
+    field = fq_default_ctx(p, 2)
+    for point in ((field(0), field(1)), (field.gen(), field(2)),
+                  (field.gen()+1, field.gen()**2)):
+        value, gradient = lifted.value_and_gradient(point, field)
+        assert value == point[0]
+        assert gradient == (field(1), field(0))
+        assert (value, gradient) == plain.value_and_gradient(point, field)
+    # A sufficient guard may reject an unhelpful presentation. That rejection
+    # cannot make syntactic degree an intrinsic hardness or admission criterion.
+
+
 def test_identical_block_action_is_not_equivariant_for_non_base_field_matrices():
     field = fq_default_ctx(7, 2)
     coefficient = field.gen()

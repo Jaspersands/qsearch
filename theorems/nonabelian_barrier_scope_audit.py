@@ -1,4 +1,4 @@
-"""Counterchecks for two overbroad nonabelian no-go records, not new algorithms.
+"""Counterchecks for individually reviewed no-go records, not new algorithms.
 
 Execute legal public candidate tests on regular coset states, distinguish spin-one
 from spin-half commutants, and measure an invariant with a constant-size circuit
@@ -30,6 +30,7 @@ NOTE = "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md"
 REVIEWED = {
     "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER": {
         "sha256": "0e9f13606c9c368f56b8f47f8362c46e06439aa42e6d7103208e095e3759bac6",
+        "reviewed_on": "2026-10-19",
         "reasons": [
             "MRS studies the long-involution GI ensemble, not all transposition subgroups.",
             "A public candidate Hadamard test has Theta(1/n^2) information for a uniform hidden transposition.",
@@ -39,11 +40,56 @@ REVIEWED = {
     },
     "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION": {
         "sha256": "6baeff6e7033b74b8353c70f82010cc64b3b01da74b84365725695645119580c",
+        "reviewed_on": "2026-10-19",
         "reasons": [
             "Catalan dimensions apply to tensor powers of spin half, not spin one: spin-one counts at M=2,3 are 3,15.",
             "Exponential commutant dimension does not imply exponentially costly measurements or recoupling circuits.",
             "The torus zero-weight state is not an extremal spin-coherent state.",
             "No specified continuous-input precision model or valid reduction proves exclusion from BQP.",
+        ],
+    },
+    "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA": {
+        "sha256": "60d55d31c75c8dd73fef2daf7ff1c3560c6f1c647369756ba27813866e04e4cc",
+        "reviewed_on": "2026-10-30",
+        "reasons": [
+            "Commutant outcome invariance is retained for conjugation-covariant states within a fixed conjugacy class; it does not imply zero information across distinct classes or for arbitrary measurements.",
+            "The nonzero commutator entry [K_12, K_23]_{(0,0,0),(0,0,1)} = n is retained; it excludes simultaneous diagonalization, not efficient recoupling, and is not a scalar identity for the entire commutator.",
+            "The character-moment formula counts the commutant algebra dimension sum_lambda m_lambda^2, not a single multiplicity space; its growth supplies no quantum circuit lower bound for structured Racah transforms.",
+            "The exhaustive receiver trilemma and universal factorial copy or associator costs are unsupported; the public transposition candidate test already defeats the claimed universal copy obstruction without solving the hard GI ensemble.",
+        ],
+    },
+    "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER": {
+        "sha256": "878a234da47c9296c97d138328817c7b6ba44c5490f146494c391d0fd43110ac",
+        "reviewed_on": "2026-10-30",
+        "reasons": [
+            "The fixed-degree explicit-GI polynomial classical baseline survives; the unsupported O(N^4) specialization is withdrawn.",
+            "The false single-copy mutual-information formula is withdrawn; ensemble-specific coset measurement bounds do not establish a universal CFI information bound.",
+            "Commutant or Hilbert-space dimension is not a runtime lower bound and does not require full diagonalization for every collective measurement.",
+            "Universal quantum intractability and exclusion of all algorithmic quantum advantage are withdrawn; the polynomial classical baseline does not exclude polynomial quantum improvements or settle other input problems.",
+        ],
+    },
+    "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE": {
+        "sha256": "70d9b4a8d8b377ee21ca70ec35d0b981eeab9007656ed9800ffb73f9f2166bd4",
+        "reviewed_on": "2026-10-30",
+        "reasons": [
+            "The displayed H_tau is not a subgroup for noncentral tau under the stated swap semidirect product, so it does not define the claimed coset ensemble.",
+            "Multiplying direct-sum density matrices requires squared Plancherel weights in the trace product; the displayed overlap law omits one weight factor.",
+            "The asserted inverse-conjugacy-class overlap gives identity self-overlap 1, incompatible with the simultaneously asserted purity 1/n! for n >= 2.",
+            "The asserted O(k^2/n) Holevo bound is unsupported by the displayed state and overlap calculations; substituting k^2/n numerically is not an information-theoretic proof.",
+            "Shannon conditional entropy does not supply the asserted MAP success upper bound; even conditionally accepting the Holevo premise, Fano's additive 1 does not give the claimed O(1/(n^2 log n)) ceiling at fixed k.",
+            "No blanket code-equivalence obstruction or universal Omega(n log n) copy lower bound follows; this retraction asserts no replacement algorithm or classical recovery attack.",
+        ],
+    },
+    "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER": {
+        "sha256": "cd1ae36604d9f68eda100d19d07fc765df7cba283b3799b2cc651c4f221768f9",
+        "reviewed_on": "2026-10-30",
+        "review": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md",
+        "reasons": [
+            "EHKS (STOC 2014, Theorem 1.2) gives a unit-group quantum algorithm polynomial in field degree and log discriminant; the asserted universal exponential-degree obstruction is false.",
+            "Biasse-Song (SODA 2016, Theorems 1.1-1.3) gives arbitrary-degree S-unit and principal-ideal algorithms with compact outputs; its class-group theorem explicitly assumes GRH. These are published primitives, not new repository algorithms.",
+            "An exponential grid cardinality is not a quantum gate or sample lower bound; the original argument supplies no valid reduction forcing general SIVP or CVP.",
+            "Linearly independent dual samples need not generate the full dual lattice, so simply inverting an independent sample matrix is not a reconstruction theorem.",
+            "This correction does not solve general lattice problems, short-generator recovery in arbitrary fields, nonmaximal-order bookkeeping, or every continuous HSP; input, precision, output and source promises must be preserved.",
         ],
     },
 }
@@ -231,7 +277,7 @@ def quarantine_reviewed_negatives():
     for key, review in REVIEWED.items():
         if key not in existing:
             archive.append({"id": key, "status": "QUARANTINED_OVERBROAD_NO_GO",
-                            "reviewed_on": "2026-10-19", "review": NOTE,
+                            "reviewed_on": review["reviewed_on"], "review": review.get("review", NOTE),
                             "retraction_reasons": review["reasons"],
                             "original_record": originals[key], "original_sha256": review["sha256"],
                             "original_checks_are_general_proofs": False,
@@ -256,7 +302,7 @@ def build_report():
                                "Catalan": comb(2*copies, copies)//(copies+1),
                                "mode": "EXACT_RECURRENCE_NOT_STATE_SIMULATION"})
     return {
-        "schema_version": 1, "status": "TWO_OVERBROAD_NEGATIVE_RECORDS_COUNTERCHECKED",
+        "schema_version": 1, "status": "SCOPED_OVERBROAD_NEGATIVE_RECORDS_COUNTERCHECKED",
         "producer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "reviewed_original_hashes": {key: record_hash(r) for key, r in originals.items()},
         "regular_coset_state_controls": [transposition_coset_control(n) for n in (3, 4, 5, 6)],
@@ -274,7 +320,20 @@ def build_report():
             "Efficient Schur transforms do not compile an arbitrary GI optimal measurement.",
         ],
         "primary_sources": ["https://arxiv.org/abs/quant-ph/0501056", "https://arxiv.org/abs/quant-ph/0511148",
-                            "https://arxiv.org/abs/quant-ph/0401083", "https://arxiv.org/abs/quant-ph/0407082"],
+                            "https://arxiv.org/abs/quant-ph/0401083", "https://arxiv.org/abs/quant-ph/0407082",
+                            "https://www.cse.psu.edu/~sjh26/units-stoc.pdf",
+                            "https://fangsong.info/files/pubs/BS_SODA16.pdf",
+                            "https://arxiv.org/abs/2510.02280",
+                            "https://arxiv.org/abs/2510.02280v2"],
+        "number_field_review": {
+            "note": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md",
+            "arbitrary_degree_unit_group": "KNOWN_QUANTUM_POLYNOMIAL_TIME",
+            "principal_ideal_output": "COMPACT_GENERATOR_NOT_ARBITRARY_SHORT_GENERATOR",
+            "class_group_algorithm_assumption": "GRH",
+            "corrected_cost_source": "arXiv:2510.02280v2, Theorem 2; v1 magnitude/bit-size typo superseded",
+            "new_implementation_of_number_field_algorithm": False,
+            "general_lattice_problem_solved": False,
+        },
         "retraction_reasons": {key: r["reasons"] for key, r in REVIEWED.items()},
         "new_quantum_algorithm": False, "general_nonabelian_HSP_solved": False,
         "continuous_HSP_input_model_specified": False, "general_circuit_lower_bound_proved": False,
@@ -285,7 +344,7 @@ def build_report():
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--write", action="store_true", help="Write the bounded countercheck report.")
-    parser.add_argument("--quarantine", action="store_true", help="Archive ONLY the two hash-bound reviewed negatives.")
+    parser.add_argument("--quarantine", action="store_true", help="Archive ONLY the hash-bound reviewed negatives.")
     args = parser.parse_args()
     report = build_report()
     if args.quarantine:

@@ -13,6 +13,12 @@ changes the priority: obtaining low-degree equations is NOT the missing
 capability. A zero-complete quadratic description already exists after a
 small lift. The missing capability is solving its globally coupled system.
 
+28 October update: the [exact SAT baseline](INVERSE_TRACE_SMT_BASELINE.md)
+now enforces actual inverse products and the original parity equations.
+It supplies a bounded search experiment, not an efficient solver theorem;
+the full and restricted n17 runs remain UNKNOWN. The relaxation obstruction
+below does not apply to that exact encoding.
+
 This pass supplies an exact model, countercontrols for lossy alternatives,
 and a proof that adding ONLY local equations to an independent-monomial
 linearization cannot constrain its original variables. The next algebraic
@@ -37,6 +43,44 @@ a target-adaptive construction. Do not build a larger local relation miner.
 The code independently verifies the simple identities it actually uses.
 It does not import an unreviewed attack-complexity estimate, transfer stream
 cipher data assumptions, or identify this task with AES key recovery.
+
+### 29 October: Constructive Flat Literature Check
+
+A separate bounded primary-literature check did not identify an applicable
+polynomial-time construction of linear-dimensional, pointwise-constant
+inverse-trace flats for the uncovered prime-degree inputs. This is a gap
+in the checked routes, NOT an exhaustive absence claim or a lower bound.
+
+- [Boyar and Find](https://arxiv.org/abs/1410.1318) give constructive
+  normality bounds from sparse Boolean algebraic normal form after an
+  affine change. Thickness at most n^(3-epsilon), 0<epsilon<2, yields
+  dimension Omega(n^(epsilon/2)). A compact field inverse expression is
+  not the required sparse Boolean input; this does not give the needed
+  linear dimension, prescribed target fibre, or specified anchor.
+- [Carlet](https://link.springer.com/article/10.1007/s10623-024-01531-6)
+  relates inverse SUMS to subspace-polynomial coefficients. For
+  L_V(X)=c_0*X+c_1*X^2+..., the sum of inverses of nonzero v in V is
+  c_1/c_0; on a+V with a outside V it is c_0/L_V(a). Taking trace tests
+  only the parity of component labels, not their pointwise constancy.
+- [Cheng's October 2026 preprint](https://arxiv.org/html/2610.06445v1)
+  states existence and counts of inverse-zero-sum subspaces, with density
+  asymptotic to2^-n in its central dimensional range. These are not
+  inverse-trace constant flats. Random rejection for that distinct
+  property is exponential; no algorithmic construction is imported here.
+- [Kolomeec and Bykov](https://arxiv.org/abs/2206.14980) classify affine
+  spaces with AFFINE inverse images of cardinality greater than2 as scaled
+  subfields. Prime n excludes the proper examples of that form, not
+  nonlinear inverse images contained in a trace hyperplane.
+
+The global cost remains essential. For independent local flats of
+dimensions d_i, the naive full-row-rank binary solve needs at least
+sum_i d_i >= n*K variables. At K=floor(N/8), equal local dimensions must
+reach at least ceil(n*K/N), asymptotic to n/8. Merely Omega(n), without
+its constant, does not guarantee this. Enough variables still does not
+prove rank, consistency, efficient certification, or a uniform output law.
+The saved n61 dimensional shortfall is a failure of this full-row-rank
+strategy, not a failed exhaustive native search. Avoid implementing a
+new flat-search campaign without a theorem addressing these exact gaps.
 
 ## 1. A Sparse Multiplier And Its Missing Zero Constraint
 

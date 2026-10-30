@@ -508,5 +508,153 @@
     "review": "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md",
     "reviewed_on": "2026-10-19",
     "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "NONABELIAN-COSET-OBSERVABLES",
+        "MULTIPLICITY-COMMUTANT",
+        "RACAH-RECOUPLING",
+        "KRONECKER-POVM"
+      ],
+      "claim": "Multiplicity-space commutant Hamiltonians or pairwise Kronecker recoupling observables can extract hidden subgroup or code equivalence permutations in polynomial quantum time.",
+      "evidence": {
+        "artifact": "research/representation/coset_multiplicity_carrier_trilemma.json",
+        "commutant_dimension_law": "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n)",
+        "commutant_mutual_information": "0.0 bits identically",
+        "commutator_closed_form": "[K_12, K_23]_{(0,0,0),(0,0,1)} = n"
+      },
+      "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
+      "lesson": "Spectral gaps in commutant Hamiltonians are irrelevant for secret identification because commutant outcomes are completely secret-independent. Non-abelian quantum algorithms cannot separate multiplicity and carrier registers without incurring either zero information or factorial associator complexity.",
+      "reason_invalid": "By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruling out simultaneous diagonalization. Coherent Racah associator transforms face a factorial multiplicity space dimension (n-1)^{2k}/n! = 2^Omega(n log n), requiring exponential quantum circuit synthesis.",
+      "source": "research/representation/coset_multiplicity_carrier_trilemma.json"
+    },
+    "original_sha256": "60d55d31c75c8dd73fef2daf7ff1c3560c6f1c647369756ba27813866e04e4cc",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Commutant outcome invariance is retained for conjugation-covariant states within a fixed conjugacy class; it does not imply zero information across distinct classes or for arbitrary measurements.",
+      "The nonzero commutator entry [K_12, K_23]_{(0,0,0),(0,0,1)} = n is retained; it excludes simultaneous diagonalization, not efficient recoupling, and is not a scalar identity for the entire commutator.",
+      "The character-moment formula counts the commutant algebra dimension sum_lambda m_lambda^2, not a single multiplicity space; its growth supplies no quantum circuit lower bound for structured Racah transforms.",
+      "The exhaustive receiver trilemma and universal factorial copy or associator costs are unsupported; the public transposition candidate test already defeats the claimed universal copy obstruction without solving the hard GI ensemble."
+    ],
+    "review": "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md",
+    "reviewed_on": "2026-10-30",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+        "CFI-BASE-FAMILY-SEARCH",
+        "BOUNDED-VALENCE-LUKS-SUBSUMPTION",
+        "CFI-GRAPH-COSET-TRILEMMA"
+      ],
+      "claim": "Quantum collective measurements or non-abelian coset state observables on Cai-F\u00fcrer-Immerman (CFI) gadget graphs can provide an exponential quantum speedup over classical Graph Isomorphism algorithms.",
+      "evidence": {
+        "artifact": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json",
+        "exact_7v_cfi_vertex_identity": "N_CFI == 7 |V| identically for all 3-regular base graphs G = (V, E)",
+        "luks_polynomial_subsumption": "Luks' algorithm (1982) solves Graph Isomorphism for valence Delta <= 4 in deterministic O(N^4) time classically",
+        "max_degree_four_ceiling": "Delta_CFI <= 4 identically for all vertices in 3-regular CFI graphs",
+        "multi_copy_commutant_intractability": "Multi-copy collective observables require diagonalizing commutants of dimension (N!)^k = 2^{Omega(k N log N)}",
+        "single_copy_fourier_extinction": "I(tau : K) <= 2^{-Omega(N log N)} bits for single-copy quantum Fourier sampling",
+        "speedup_claim_allowed": false
+      },
+      "id": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
+      "lesson": "Cai-F\u00fcrer-Immerman gadget graphs cannot provide an algorithmic quantum advantage. Although CFI graphs defeat k-dimensional Weisfeiler-Lehman, all 3-regular CFI graphs have bounded maximum degree Delta <= 4, which is solvable in deterministic polynomial time O(N^4) classically by Luks' algorithm (1982). Meanwhile, quantum algorithms on non-abelian coset states face factorially vanishing single-copy information and exponential (N!)^k commutant dimensions for multi-copy collective measurements, making the quantum approach strictly harder than the classical baseline.",
+      "reason_invalid": "For all 3-regular base graphs, the CFI construction produces graphs with N_CFI = 7 |V| vertices and maximum degree Delta <= 4. By Luks' polynomial-time algorithm for bounded valence (JCSS 1982), Graph Isomorphism on these graphs is solved in O(N^4) deterministic classical time. Quantum non-abelian coset state measurements provide <= 2^{-Omega(N log N)} bits of information on single copies, and multi-copy collective measurements require diagonalizing commutant algebras of dimension (N!)^k = 2^{Omega(k N log N)}, completely falsifying the hypothesis of a quantum advantage on CFI graphs.",
+      "source": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json"
+    },
+    "original_sha256": "878a234da47c9296c97d138328817c7b6ba44c5490f146494c391d0fd43110ac",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "The fixed-degree explicit-GI polynomial classical baseline survives; the unsupported O(N^4) specialization is withdrawn.",
+      "The false single-copy mutual-information formula is withdrawn; ensemble-specific coset measurement bounds do not establish a universal CFI information bound.",
+      "Commutant or Hilbert-space dimension is not a runtime lower bound and does not require full diagonalization for every collective measurement.",
+      "Universal quantum intractability and exclusion of all algorithmic quantum advantage are withdrawn; the polynomial classical baseline does not exclude polynomial quantum improvements or settle other input problems."
+    ],
+    "review": "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md",
+    "reviewed_on": "2026-10-30",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "CODE-EQUIVALENCE",
+        "WREATH-PRODUCT-HSP",
+        "NONABELIAN-COSET-OBSERVABLES",
+        "HOLEVO-BOUND"
+      ],
+      "claim": "Orientation sub-POVMs or structured Naimark dilations on O(1) mixed coset copies can distinguish the (n!)^2 residual hidden permutations.",
+      "evidence": {
+        "artifact": "research/representation/wreath_coset_permutation_holevo_collapse.json",
+        "fano_success_ceiling": "P_succ <= O(1 / (n^2 log n)) -> 0",
+        "holevo_information_bound": "I(tau : Q^k) <= O(k^2 / n) = o(1) bits",
+        "overlap_formula": "Tr(rho_tau rho_tau') = 1 / |C(tau^-1 tau')|",
+        "purity": "Tr(rho_tau^2) = 1/n!",
+        "secret_entropy": "H(tau) = log2(n!) = Theta(n log n) bits"
+      },
+      "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
+      "lesson": "Constant conclusive sub-POVM success on cycle-orientation parity cannot be lifted to fine-permutation decoding on O(1) copies. The mixed coset state has purity 1/n!, and the Holevo mutual information collapses as O(k^2 / n) bits. Disclosing the hidden permutation requires an unbreachable copy complexity of k = Omega(n log n).",
+      "reason_invalid": "By the conjugacy class overlap law and the Holevo bound, the mutual information provided by k = O(1) mixed coset copies is at most O(k^2 / n) bits, whereas identifying the hidden permutation requires log2(n!) = Omega(n log n) bits. Fano's inequality strictly bounds identification success to P_succ <= O(1 / (n^2 log n)), collapsing as 2^-Omega(n log n).",
+      "source": "research/representation/wreath_coset_permutation_holevo_collapse.json"
+    },
+    "original_sha256": "70d9b4a8d8b377ee21ca70ec35d0b981eeab9007656ed9800ffb73f9f2166bd4",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "The displayed H_tau is not a subgroup for noncentral tau under the stated swap semidirect product, so it does not define the claimed coset ensemble.",
+      "Multiplying direct-sum density matrices requires squared Plancherel weights in the trace product; the displayed overlap law omits one weight factor.",
+      "The asserted inverse-conjugacy-class overlap gives identity self-overlap 1, incompatible with the simultaneously asserted purity 1/n! for n >= 2.",
+      "The asserted O(k^2/n) Holevo bound is unsupported by the displayed state and overlap calculations; substituting k^2/n numerically is not an information-theoretic proof.",
+      "Shannon conditional entropy does not supply the asserted MAP success upper bound; even conditionally accepting the Holevo premise, Fano's additive 1 does not give the claimed O(1/(n^2 log n)) ceiling at fixed k.",
+      "No blanket code-equivalence obstruction or universal Omega(n log n) copy lower bound follows; this retraction asserts no replacement algorithm or classical recovery attack."
+    ],
+    "review": "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md",
+    "reviewed_on": "2026-10-30",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "ARBITRARY-DEGREE-NUMBER-FIELD",
+        "MULTIDIMENSIONAL-CONTINUOUS-HSP",
+        "HALLGREN-SCHMIDT-VOLLMER",
+        "EXPONENTIAL-DEGREE-BARRIER",
+        "LATTICE-SIVP-HARDNESS"
+      ],
+      "claim": "Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].",
+      "evidence": {
+        "compact_representation_overhead": "Manipulating algebraic units and reduced ideals in degree n requires compact representations with n^{O(n)} overhead",
+        "continuous_torus_dual_lattice": "Quotient R^r / Lambda is an r-dimensional compact torus with complete 1D character basis chi_u(x) = exp(2 pi i u . x) labeled by dual lattice Lambda^*",
+        "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+        "exponential_degree_barrier": "For unbounded degree n, quantum complexity is 2^{Omega(n log n)} poly(log |Delta_K|); polynomial time collapses",
+        "lattice_reconstruction_hardness": "Reconstructing dual lattice Lambda^* in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard (2^{Omega(r)})",
+        "mesh_volume_explosion": "Sampling hypercube requires (M / Delta)^r = 2^{Omega(n log n)} states, causing exponential mode dispersion",
+        "speedup_claim_allowed": false
+      },
+      "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
+      "lesson": "While Hallgren (2005) and Schmidt-Vollmer (2005) established polynomial-time quantum algorithms for fixed field degree n = O(1), the algorithm scales as 2^{Omega(n log n)} poly(log |Delta_K|) for growing degree n. When n is unbounded, polynomial tractability collapses due to three compounding mathematical barriers: (1) Lattice reconstruction hardness: dual lattice sampling in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard and requires 2^{Omega(r)} operations; (2) Compact representation overhead: manipulating algebraic units and reduced ideals in degree n requires n^{O(n)} operations; and (3) Multi-dimensional grid volume explosion: the sampling mesh requires (M / Delta)^r = 2^{Omega(n log n)} states. Therefore, the quantum regulator algorithm is confined strictly to constant-degree number fields.",
+      "reason_invalid": "The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples requires solving BDD and SIVP in dimension r, which is NP-hard under randomized reductions and takes 2^{Omega(r)} = 2^{Omega(n)} operations. Furthermore, polynomial multiplication and compact representation arithmetic scale as n^{O(n)}, and the discrete grid volume grows as 2^{Omega(n log n)}. Thus, claiming polynomial-time quantum solvability for arbitrary degree number fields is mathematically invalid: the algorithm is polynomial only in log |Delta_K| for constant degree n, and exponential in n.",
+      "source": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
+    },
+    "original_sha256": "cd1ae36604d9f68eda100d19d07fc765df7cba283b3799b2cc651c4f221768f9",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "EHKS (STOC 2014, Theorem 1.2) gives a unit-group quantum algorithm polynomial in field degree and log discriminant; the asserted universal exponential-degree obstruction is false.",
+      "Biasse-Song (SODA 2016, Theorems 1.1-1.3) gives arbitrary-degree S-unit and principal-ideal algorithms with compact outputs; its class-group theorem explicitly assumes GRH. These are published primitives, not new repository algorithms.",
+      "An exponential grid cardinality is not a quantum gate or sample lower bound; the original argument supplies no valid reduction forcing general SIVP or CVP.",
+      "Linearly independent dual samples need not generate the full dual lattice, so simply inverting an independent sample matrix is not a reconstruction theorem.",
+      "This correction does not solve general lattice problems, short-generator recovery in arbitrary fields, nonmaximal-order bookkeeping, or every continuous HSP; input, precision, output and source promises must be preserved."
+    ],
+    "review": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md",
+    "reviewed_on": "2026-10-30",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   }
 ]

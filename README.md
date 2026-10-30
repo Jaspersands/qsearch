@@ -32,6 +32,364 @@ The central question driving Q-Search is: **Can explicit computational structure
 
 **Test constructive algorithms, not more surrounding infrastructure. No breakthrough algorithm is implemented.**
 
+The [Goppa holdout audit](research/GOPPA_HOLDOUT_QUANTUM_ACCESS.md) now uses
+the full GIJS and Weis papers, including the stronger matrix-free classical
+baseline. `python qsearch.py holdout-jets --write` verifies exact finite-field
+certificates. An actual jet-operator counterexample rejects the naive complex
+linear-algebra shortcut; it is not a general quantum impossibility claim.
+
+The [local-quotient formulation](research/GOPPA_LOCAL_QUOTIENT_PRESENTATION.md)
+now gives exact public characteristic-two relations, with independent tests.
+It does not yet give efficient global state preparation or quotient access.
+The [number-field correction](research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md)
+withdraws an incorrect exponential-degree barrier: published arbitrary-degree
+quantum unit-group and principal-ideal algorithms must remain available as
+research primitives. Their reuse is not a new algorithm discovered here.
+
+The [arithmetic follow-up](research/UNMARKED_INTEGRAL_PENCIL_REDUCTION.md)
+reduces a promised unmarked tensor problem to existing integral similarity
+using classical preprocessing. A separately reviewed
+[output-size theorem](research/INTEGRAL_SIMILARITY_OUTPUT_SIZE.md) proves
+that even 2x2 inputs can require exponentially long expanded conjugators.
+The [Amitsur audit](research/AMITSUR_ARITHMETIC_REUSE_AUDIT.md) records
+existing quantum splitting machinery and its compact-output interface.
+These are reusable reductions and safeguards, not a newly discovered speedup.
+The [compact-residue follow-up](research/COMPACT_RESIDUE_CONDUCTOR_DECISION.md)
+now supplies a reviewed way to consume compact units in conductor decisions
+without expanding them, with exact YES and NO controls. It does not supply
+a new quantum primitive or a hard native application.
+
+The [quaternion follow-up](research/QUATERNION_NORM_SLICE_AND_LOCAL_FLAGS.md)
+now specifies the exact norm target and a sufficient better-than-`sqrt(2)`
+weighted short-vector guarantee for power-of-two centers. It also rejects
+an explicit local-flag HSP wrapper using public linear algebra. A separate
+[version-scoped source audit](research/QUATERNION_HSVP_PREPRINT_AUDIT.md)
+records two independently checked preprint counterexamples and the stronger
+QuaILLL classical baseline. No efficient algorithm reaching the target is
+implemented or inferred from these checks.
+
+The next [compact-orbit construction](research/QUATERNION_COMPACT_ORBIT_SOURCE.md)
+supplies a native quaternion lattice signature with independently reviewed
+separation and clean approximate preparation arguments. The missing step
+is efficient end-to-end transporter reconstruction, not an assumed
+short-vector sampler. Classical moment recovery is an explicit competitor.
+An [integral-descent counterexample](research/QUATERNION_INTEGRAL_DESCENT.md)
+shows why ordinary field principalization and rational splitting do not
+finish this problem. These are proof-level results and exact controls,
+not an implemented quantum oracle or a speedup. The direct Goppa CSS
+postselection alternative is deprioritized after a native rank-cost check.
+
+The [receiver analysis](research/QUATERNION_COVARIANT_RECEIVER.md) now
+separates informative measurements from efficient decoding. Global
+Clifford shadows give polynomial-size records at proof level, but no
+polynomial decoder is known here. Ordinary Cartesian Fourier records
+have a matched classical simulator. A valid swap-wreath reduction and
+available high-spin rotation circuits clarify the remaining interfaces;
+none completes a quantum algorithm for the native problem.
+
+The [next receiver checks](research/QUATERNION_RECEIVER_CLASSICAL_FILTER.md)
+deprioritize overlap optimization and matching-width parity features:
+both have matched classical estimators. Discarding a whole embedding also
+removes most branch coherence under explicit parameter bounds. These
+results do not simulate full measurement records; efficient nonlinear
+decoding remains open. No new quantum speedup is claimed.
+
+The [arithmetic-score analysis](research/QUATERNION_ARITHMETIC_RECEIVER.md)
+now gives exact measurement records, including cancellation zeros, and
+a close Gaussian reference proxy with explicit encoding/error budgets.
+A localized weak-cubic sum has a conditional fast evaluation route;
+the native growing-dimensional scores do not yet meet its hypotheses.
+The simpler record class occurs only with probability `1/(p+1)`, and
+conditioning can destroy identifiability. Efficient score evaluation
+and orientation reconstruction both remain open, not implementation chores.
+
+A [nonabelian scope correction](research/COSET_MULTIPLICITY_CARRIER_TRILEMMA.md)
+retracts an active, unsupported general no-go claim. Large multiplicity
+spaces and noncommuting operators do not themselves imply exponential
+quantum circuits. Physical information checks and structured-access controls
+replace the faulty checks; a useful receiver for hard ensembles is still missing.
+
+The dependent [CFI report](research/CFI_GRAPH_COSET_LUKS_SUBSUMPTION_BARRIER.md)
+is also corrected: fixed-degree explicit graph isomorphism retains its
+polynomial classical baseline, but the claimed universal quantum impossibility
+and invented runtime comparisons are withdrawn. Actual graph and cycle-action
+checks replace them; neither this correction nor the tests constitute a speedup.
+
+The [wreath-source correction](research/WREATH_COSET_PERMUTATION_HOLEVO_COLLAPSE.md)
+now includes a working classical recovery algorithm for its valid twisted-
+diagonal source, using `binom(n,2)+n+1` opaque-label queries. The corrected
+quantum states contain substantial information, but this source does not
+provide a quantum advantage. The result does not solve general code equivalence.
+
+A [four-agent geometric-source audit](research/WEAK_SIEGEL_CONVERSION_AUDIT.md)
+now separates three unresolved steps: changing polarization, normalizing
+weak torsion images, and recovering the gluing between elliptic factors.
+A constructive matrix completion does not yield the required polarization;
+its direct repair in dimension two forces the secret prime into the quotient budget.
+Exact controls and conditional easier regimes are retained. The original
+weak-input problem remains open, not classically broken or quantum-solved.
+
+The latest [six-agent source/receiver review](research/audits/reviews/2026-10-30-six-agent-source-receiver-burst.md)
+separates feasible state preparation from unestablished hard applications.
+An [exact coherent-selector control](research/COHERENT_GRADE_SELECTOR.md)
+rules out one proposed copy-saving shortcut, not collective receivers in
+general. A constructive follow-up, the [invariant-Gram receiver](research/INVARIANT_GRAM_REES_RECEIVER.md),
+now preserves the required coherence on a larger bank for the class-three
+filiform family. Its public controller plans 14/16-source banks, while a
+stronger verified sequential comparator uses 12/18. Thus there is no uniform
+source improvement; the earlier 18/36 comparison was too weak. The full channel has an
+independently reviewed analytical argument, not a compiled quantum receiver
+or new asymptotic regime. Run `python qsearch.py power-sde --coherent-gram --write`.
+The [high-rank follow-up](research/HIGH_RANK_GRAM_DECISION.md) rules out two
+immediate shortcuts, not general receivers. This extension is deprioritized
+until a new construction beats the complete sequential bound; a useful
+native application remains the other scientific gate.
+
+The latest [random-column Rees derivation](research/RANDOM_COLUMN_REES_PARAMETER_BOUND.md)
+uses actual random character labels to give conditional all-prime parameter
+factors `2^O(r log(r+2))` for derived dimension and `2^O(k log(k+2))` for
+hidden codimension. Independent automated reviews found no fatal error;
+the full Rees theorem, novelty and a useful hard application remain unverified.
+The bounded classical kernel sampler, exact resource accounting and failure
+controls are implemented, not the quantum receiver. Replay with
+`python qsearch.py power-sde --random-column --write`.
+
+The latest [ring-to-field audit](research/UNIFORM_RING_TO_FIELD_RANK_REDUCTION.md)
+changes the priority: the published outer reduction, reconstructed in
+explicit Lie coordinates, preserves derived additive rank. Conditional on
+the field theorem, this gives the stronger rank-only ring bound
+`2^O(R log(R+2))*poly(full input bits)`. It does not require the new direct
+mixed-order receiver. The residual scientific questions are the FIELD
+theorem and a useful native application, not exponent bookkeeping. Replay
+the p-torsion and exact terminal-readout controls with
+`python qsearch.py prime-power-sde --rank-reduction --write`.
+
+The [unit-power](research/UNIT_POWER_MODULE_CANCELLATION.md) and
+[small-prime subset](research/SMALL_PRIME_REGULAR_SUBSET.md) methods remain
+tested direct-arithmetic alternatives, not evidence of a new end-to-end
+input regime. Their `--unit-kernel` and `--subset-kernel` replays are retained.
+
+An earlier six-agent pass produced a [working classical attack](research/MERSENNE_SCALAR_FLAT_ATTACK.md)
+on all three fixed Mersenne native search tests (two n17 inputs and one n31
+input), with independent witness verification and no seed search. It does
+not solve the asymptotic family or uniform sampling. The family is now
+deprioritized as a quantum-breakthrough track; its useful mathematics and
+precise unresolved questions are retained. Replay with
+`python -m theorems.mersenne_scalar_flats --output research/classical_baselines/mersenne_scalar_flats.json`.
+
+The preceding [Pauli-symmetry analysis](research/PAULI_CONJUGATION_SYMMETRY_LEARNING.md)
+targets the full symmetry group of noisy stabilizer-diagonal states, including
+noncommuting symmetries. Independent review replaced a longer construction
+with a direct route using existing skew Bell machinery and paid verification.
+It requires explicit purity and symmetry-separation promises. Public controls
+and finite measurement references are implemented, not a complete quantum
+learner or a new classical-input speedup. Run
+`python qsearch.py phase-copy-baseline --pauli-symmetry --write`.
+The [matched classical source filter](research/PARTITION_SOURCE_CLASSICAL_FILTER.md)
+now recovers that group for uniform query-and-discard sources under the same
+purity/gap promises. High purity can also leave the learned group uninformative
+about the original hidden problem. Run the actual classical controls with
+`python qsearch.py phase-copy-baseline --partition-source --write`.
+
+The preceding [peak-weight learning analysis](research/PEAKED_PHASE_NOISE_LEARNING.md)
+extends the [noisy-phase route](research/EXTERIOR_NOISY_PHASE_LEARNING.md)
+to full-rank noise with one sufficiently heavy component. A quadratic
+specialization also recovers an unknown stabilizer basis under explicit
+Pauli-noise promises. These routes bypass Rees. Public adapters, resource
+certificates and finite controls are implemented, not a full noisy quantum
+learner. Run `python qsearch.py phase-copy-baseline --peaked-noise --write`.
+The [native-source audit](research/audits/reviews/2026-10-30-noisy-phase-native-scope.md)
+establishes no new classical-input speedup; novelty and Shor-level relevance
+remain unresolved.
+
+The preceding [spectral-flag reduction](research/REES_MIXED_SPECTRAL_SOURCE.md)
+extends the [flat-state route](research/REES_SUBSPACE_SYMMETRY_SOURCE.md)
+to arbitrary **polynomial-rank** mixed states, with a supplied global
+symmetry gap but no minimum eigenvalue or eigenvalue-spacing promise.
+The reviewed argument charges spectral filtering, rank learning, rejected
+copies and coherent cleanup. Only finite controls are implemented, not the
+complete quantum source or receiver. Run `python qsearch.py subspace-source
+--mixed-spectrum --write`. The accompanying
+[application audit](research/LOW_RANK_SYMMETRY_APPLICATION_FILTER.md)
+finds stronger competitors for several natural families; no hard
+application or speedup is established. A separate
+[measurement obstruction](research/REES_PREMATURE_GRADE_MEASUREMENT.md)
+shows why measuring all upper-grade labels early can erase almost all useful
+information. Coherent alternatives remain open.
+
+The latest follow-up strengthens [completion counts](research/MERSENNE_COMPLETION_MOMENTS.md):
+every accepted assignment to `6K` of `N=8K+1` coordinates extends, but
+there is still no efficient residual solver. A separate
+[Schmidt-rank filter](research/MERSENNE_COORDINATE_SCHMIDT_FILTER.md) excludes
+low-bond pure-state chains and binary trees with whole-coordinate leaves;
+it does not establish sampling hardness. Both keep the original input
+relation and explicitly distinguish analytic deductions from executions.
+An independently replayed [partial-norm countercertificate](research/MERSENNE_PARTIAL_NORM_FILTER.md)
+rules out one proposed completion family on the original `n=17` instance,
+while retaining the unresolved `n=19` control.
+
+The preceding multi-agent pass closed two potential false leads. A reviewed
+[carry algorithm](research/MERSENNE_CARRY_WALSH_DRAFT.md) gives theoretical
+polynomial-time local Walsh access for the fixed Mersenne family, but its
+loose `O(n^45)` bound is not practical and it does not solve native parity
+completion. A [tensor-train classical filter](research/TENSOR_TRAIN_CLASSICAL_FILTER.md)
+recovers sitewise finite-field stabilizers in a certified regime even when
+the orbit span is exponential. Both have bounded executable controls and
+independent automated reviews, not human peer review or novelty certification.
+The [global access analysis](research/MERSENNE_GLOBAL_FOURIER_ACCESS.md)
+also gives a reviewed classical sampling construction before the final
+Fourier transform. Sampling the final native output remains unresolved.
+
+The earlier [whole-grade Rees analysis](research/REES_FULL_GRADE_PARAMETER_BOUND.md)
+improves a proposed derived-dimension bound from `2^O(r^2 log r)` to
+`2^O(r log r)` in specified prime regimes. It includes whole-forest source
+and failure accounting; `python qsearch.py power-sde --rees-budget --write`
+replays the exact resource certificate, not a quantum receiver. Separate
+[classical filters](research/CONSTRUCTIVE_ROUTE_FILTERS.md) reject two
+attempts to turn existing constructions into useful applications. Neither
+result establishes novelty, classical hardness, or a practical speedup.
+
+The [codimension follow-up](research/BOUNDED_CODIMENSION_HYBRID_BOUND.md)
+combines that construction with a classical collision branch, improving
+the conditional all-prime parameter factor to `2^O(k^2 log(k+2))`.
+`python qsearch.py power-sde --codimension-budget --write` replays its
+resource certificate only; the receiver and novelty remain unverified.
+The random-column follow-up above improves this conditional factor to
+`2^O(k log(k+2))`; the older certificate remains a separate valid schedule.
+
+The [uniform compilation note](research/REES_UNIFORM_INSTRUMENT_COMPILATION.md)
+derives finite-gate receiver existence from public reversible arithmetic and
+known QFTs, including padding, aborts and joint error accounting. Run
+`python qsearch.py power-sde --uniform-instrument --write` for primitive
+counts. This removes an unspecified efficiency premise, not the need to
+verify the full theorem or implement the circuit backend.
+
+The [iterated-map jet filter](research/ITERATED_QUADRATIC_JET_FILTER.md)
+tests whether an exponentially high-degree public circuit actually hides
+nontrivial symmetry. Exact low-order expansions can prove triviality;
+fixed-anchor expansions plus public commutation identities can certify
+the entire stabilizer. Run `python qsearch.py iterated-stabilizer --write`.
+An inconclusive upper group is never reported as the full answer.
+
+The [execution audit](research/audits/reviews/2026-10-29-gemini-execution-audit.md)
+checks the received subfield solver, Vandermonde elimination and
+mixed-modulus receiver code. The subfield result is classical SEARCH
+under explicit zero-target promises; the receiver is a finite numerical
+reference, not a scalable compiled quantum algorithm or source factory.
+
+The [inverse-trace norm attack](research/INVERSE_TRACE_NORM_ATTACK.md) now
+constructs classical witnesses using polynomial norms and RS identities.
+An independently AI-reviewed deduction from Sawin's explicit bound gives
+expected-polynomial search on a certified dense-target regime, including
+all-one native inputs. It solves the same n17 instance left UNKNOWN by SAT,
+and a separate mixed-target n17 instance. Run
+`python qsearch.py inverse-trace-norm --bits 17 --write`.
+Uniform sampling and sparse-one targets remain open; seeded finite runs
+are not hard-clock guarantees. Do not retain dense-target SEARCH hardness
+as support for the quantum proposal.
+
+The whole constant-norm output family is now provably far from uniform:
+at n17 its uniform native mass is at most `2^-70`. An exact binary-linear
+membership test returns verifiable positive or negative certificates.
+The independent flat attack finds a native witness outside this family on
+the SAME input. Replay with `python qsearch.py inverse-trace-norm --bits 17
+--compare-flat-dimension 3 --write`. This refutes a uniform-sampler upgrade
+of this construction, not general classical sampling.
+
+The [independent-menu sampling audit](research/INVERSE_TRACE_MENU_REFRESH.md)
+now checks exact output laws, not just valid witnesses. Independent small
+coordinate menus are asymptotically immobile even with a free restricted
+solver; unanchored variants are biased unless corrected, and the tested
+corrections remain exponential. Run `python qsearch.py inverse-trace-sampling
+--write`. This does not exclude correlated/algebraic samplers or establish
+classical hardness.
+
+The same command records a [tighter residual-completion bound](research/INVERSE_TRACE_COMPLETION_TRANSFER.md):
+the sufficient free-field-variable counts fall from9/16/31 to4/6/12 at
+n17/31/61. This shrinks the remaining sampling subproblem; it does not
+supply its solver or improve the proved classical sampling exponent.
+
+The [complete hash-cell probe](research/INVERSE_TRACE_HASH_CELL_PROBE.md)
+now tests that missing solver directly. Exact small controls pass, but the
+predeclared n11/n17 SAT runs did not complete their cells; at n11 a separate
+exhaustive check established emptiness. Run `python qsearch.py
+inverse-trace-sampling --hash-cells --bits 5 --write`. Reports distinguish
+complete cells, partial lists, unknown outcomes, and supplied witnesses.
+This is a negative result for the bounded encoding, not hardness or a sampler.
+
+The [hash-conditioned quadratic test](research/INVERSE_TRACE_HASH_QUADRATIC.md)
+now retains replayable contradiction or relaxation certificates on those
+SAME saved cells. Exact rank certificates cover every local quadratic
+identity at n11/n17. All three known-empty n11 cells still admit the full
+quadratic relaxation, so adding more local identities cannot fix that
+linearization. This does not exclude higher-degree or nonlinear algebraic
+solvers. Use `inverse-trace-sampling --quadratic-cells --input PATH --write`.
+
+Latest Rees arithmetic work: [symmetric power contraction](research/POWER_SDE_SYMMETRIC_CONTRACTION.md)
+constructs cancellation witnesses from `(r+1)*((d-1)*r+1)` arbitrary public
+labels for fixed reduced degree d, including even degrees, when
+`p>=16*d^(2*d+2)`. Run `python qsearch.py power-sde --write`.
+The [cubic method](research/CUBIC_TWO_LEVEL_CONTRACTION.md) and
+[odd-degree exterior fallback](research/ODD_POWER_EXTERIOR_SDE.md) cover
+additional field regimes. These are independently AI-reviewed mathematical
+constructions with exact controls, not established novelty, a total-clock
+formalization, or a demonstrated quantum speedup. Argon's original review
+and its [corrections and completed tasks](research/manuscripts/REES_ARGON_REVIEW_DISPOSITION.md)
+are retained separately.
+
+The new [finite-randomness mode](research/POWER_SDE_RANDOMNESS_BUDGET.md)
+caps root splitting and integer rejection under one per-run failure bound,
+without redrawing source labels. Run
+`python qsearch.py power-sde --bounded-randomness --write` for exact witnesses
+and resource counters. ABORT remains explicit; prime validation, the full
+receiver clock and a failure-aware Lean policy remain separate obligations.
+
+[Simultaneous prime-power cancellation](research/PRIME_POWER_REGULAR_SDE.md)
+now lifts a regular vector witness across all mixed-order cyclic factors.
+With a polynomial rank-dependent prime guard, fresh paid pilots give a
+conditional `O_d(r^2)` expected source bound per central grade. Run
+`python qsearch.py prime-power-sde --write` for exact replayable arithmetic
+and bounds. Pilot-coordinate acquisition and the quantum receiver are not
+implemented; this improves a sufficient bound, not a demonstrated speedup.
+The selected-block proof avoids an exponential all-minors condition and
+has a p=105037, rank-eight arithmetic control outside that older bound.
+
+The [random-kernel extension](research/RANDOM_KERNEL_REGULAR_SDE.md) now
+removes the remaining rank-dependent prime guard, using bounded rejection
+and a proved joint sampling law. Its p1031, rank-16 quadratic control is
+outside the preceding bound. Run `python qsearch.py prime-power-sde
+--random-kernel --write`. This costs more samples and still assumes the
+degree-only field guard and legal IID sources; it is not a full receiver.
+
+The [spanning-block construction](research/SPANNING_BLOCK_REGULAR_SDE.md)
+now makes regular lifting compatible with arbitrary-input field SDE
+solvers, including small-field backends. Run `python qsearch.py
+prime-power-sde --span-blocks --write`. The general fixed-class bound
+imports a published solver; unsupported local regimes remain rejected.
+Raw sources, failed blocks and pilot costs are charged. The quantum receiver
+and a hard native application remain open.
+
+[Pilot-coordinate compilation](research/PILOT_SUBMODULE_COORDINATES.md) is
+now implemented at the public-label boundary. Run `python qsearch.py
+prime-power-sde --pilots --write` for exact subgroup certificates, fresh
+pilot retries and final checks in the original ambient module. This closes
+the arithmetic coordinate gap, not physical source preparation or receiver
+execution; it does not certify that pilots span the hidden support.
+
+The [bounded receiver-policy layer](research/PILOT_RECEIVER_POLICY.md) now
+checks sparse raw-source plans with every pilot, rejection and unused slot
+charged. Run `python qsearch.py prime-power-sde --receiver-policy --write`.
+Lean connects the actual central-ancilla measurement to accepted/abort
+matrix and trace identities, including label-dependent randomized selection. Correlated-source,
+source-steering and postselection controls expose invalid shortcuts. A physical receiver,
+mixed-order compiler and full recursive clock remain unimplemented.
+
+The [copy-only phase-learning audit](research/POLYNOMIAL_PHASE_COPY_LEARNING_BASELINE.md)
+now checks a fixed-coordinate rank bound and its mixed-coordinate falsifier.
+`python qsearch.py phase-copy-baseline --write` exposes the revised source
+envelopes. This is neither optimal-copy learning nor an executed quantum
+learner; the new rank argument still needs independent review.
+
 The [character-rounding interval attack](research/INTERVAL_CHARACTER_ROUNDING.md)
 now supplies a constructive classical all-target bound for prime full-support
 RS interval search: `d<=(p-1)/2`, `u=O(sqrt(p log p))`, with randomized

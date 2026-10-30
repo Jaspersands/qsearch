@@ -1,4 +1,5 @@
 import Formal.CentralRegularSource
+import Formal.ReesHomogenization
 import Mathlib.Algebra.BigOperators.Group.Finset.Pi
 
 /-!
@@ -8,6 +9,9 @@ Derive the normalized character kernel from the original coset matrix,
 then evaluate the literal controlled-right-action Kraus sums. A nonempty
 active tensor and exact preservation of support are necessary. The source
 tensor premise is independence, not a claim inferred from marginals.
+For an allowed character, normalization divides the raw twisted source
+by the cardinality of the full preimage of H in C. No transverse hidden
+intersection is assumed by normalized_descent_output.
 
 Projector idempotence/completeness, the particular dilation/SDE instance,
 and trace-distance composition are proved in the accompanying research
@@ -28,6 +32,16 @@ def coefficient (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ) (g : G) :
   ∑ z, if g * (embed z)⁻¹ ∈ H then chi z else 0
 
 omit [Fintype G] in
+/-- The Rees coefficient lemma applies to the actual source coefficient.
+The count is of the preimage, including any kernel of embed. -/
+theorem coefficient_allowed (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (allowed : ∀ z, embed z ∈ H → chi z = 1)
+    (h : G) (hh : h ∈ H) (z : C) :
+    coefficient H embed chi (h * embed z) =
+      (Fintype.card (H.comap embed) : ℂ) * chi z :=
+  ReesHomogenization.coefficient_allowed H embed chi allowed h hh z
+
+omit [Fintype G] in
 theorem coefficient_at (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
     (transverse : ∀ z, embed z ∈ H ↔ z = 1) (h : G) (hh : h ∈ H) (z : C) :
     coefficient H embed chi (h * embed z) = chi z := by
@@ -46,6 +60,11 @@ theorem coefficient_off (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
 
 def twistedEntry (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
     (x y : G) : ℂ := invSize G * coefficient H embed chi (y⁻¹ * x)
+
+/-- The trace-one source for an allowed character. The raw twistedEntry
+has trace |embed⁻¹(H)|, not one, when the intersection is nontrivial. -/
+def normalizedEntry (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (x y : G) : ℂ := invSize (H.comap embed) * twistedEntry H embed chi x y
 
 /-- One-sided multiplication by the central spectral projector, with its
 actual normalization. For a central embedding this equals Pi*rho*Pi:
@@ -91,6 +110,88 @@ theorem label_probability (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
     (∑ x, projectedEntry H embed chi x x) = invSize C := by
   simp_rw [projected_source]
   rw [← Finset.mul_sum, twisted_trace H embed chi transverse, mul_one]
+
+theorem twisted_trace_allowed (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (allowed : ∀ z, embed z ∈ H → chi z = 1) :
+    (∑ x, twistedEntry H embed chi x x) = (Fintype.card (H.comap embed) : ℂ) := by
+  have hc := coefficient_allowed H embed chi allowed 1 H.one_mem 1
+  simp only [map_one, mul_one] at hc
+  have ht := twisted_correlation H embed chi 1
+  simpa [rightCorrelation, hc] using ht
+
+theorem label_probability_allowed (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (allowed : ∀ z, embed z ∈ H → chi z = 1) :
+    (∑ x, projectedEntry H embed chi x x) =
+      invSize C * (Fintype.card (H.comap embed) : ℂ) := by
+  simp_rw [projected_source]
+  rw [← Finset.mul_sum, twisted_trace_allowed H embed chi allowed]
+
+theorem label_probability_allowed_ne_zero
+    (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (allowed : ∀ z, embed z ∈ H → chi z = 1) :
+    (∑ x, projectedEntry H embed chi x x) ≠ 0 := by
+  rw [label_probability_allowed H embed chi allowed]
+  have hC : (Fintype.card C : ℂ) ≠ 0 := by exact_mod_cast Fintype.card_ne_zero
+  have hH : (Fintype.card (H.comap embed) : ℂ) ≠ 0 := by
+    exact_mod_cast Fintype.card_ne_zero
+  exact mul_ne_zero (inv_ne_zero hC) hH
+
+/-- This is normalization of the original projected coset matrix by its
+actual branch trace, not an independently postulated character kernel. -/
+theorem normalized_source (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (allowed : ∀ z, embed z ∈ H → chi z = 1) (x y : G) :
+    normalizedEntry H embed chi x y =
+      projectedEntry H embed chi x y / (∑ t, projectedEntry H embed chi t t) := by
+  rw [projected_source, label_probability_allowed H embed chi allowed]
+  have hC : (Fintype.card C : ℂ) ≠ 0 := by exact_mod_cast Fintype.card_ne_zero
+  unfold normalizedEntry invSize
+  rw [mul_div_mul_left _ _ (inv_ne_zero hC), div_eq_mul_inv, mul_comm]
+
+theorem normalized_correlation (H : Subgroup G) (embed : C →* G)
+    (chi : C →* ℂ) (g : G) :
+    rightCorrelation (normalizedEntry H embed chi) g =
+      invSize (H.comap embed) * coefficient H embed chi g := by
+  unfold rightCorrelation
+  simp only [normalizedEntry, ← Finset.mul_sum]
+  rw [← rightCorrelation, twisted_correlation]
+
+theorem normalized_correlation_at (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (allowed : ∀ z, embed z ∈ H → chi z = 1)
+    (h : G) (hh : h ∈ H) (z : C) :
+    rightCorrelation (normalizedEntry H embed chi) (h * embed z) = chi z := by
+  rw [normalized_correlation, coefficient_allowed H embed chi allowed h hh z]
+  have hn : (Fintype.card (H.comap embed) : ℂ) ≠ 0 := by
+    exact_mod_cast Fintype.card_ne_zero
+  change (Fintype.card (H.comap embed) : ℂ)⁻¹ *
+    ((Fintype.card (H.comap embed) : ℂ) * chi z) = chi z
+  rw [← mul_assoc, inv_mul_cancel₀ hn, one_mul]
+
+theorem normalized_correlation_off (H : Subgroup G) (embed : C →* G)
+    (chi : C →* ℂ) (g : G) (outside : ∀ z, g * (embed z)⁻¹ ∉ H) :
+    rightCorrelation (normalizedEntry H embed chi) g = 0 := by
+  rw [normalized_correlation, coefficient_off H embed chi g outside, mul_zero]
+
+theorem normalized_trace (H : Subgroup G) (embed : C →* G) (chi : C →* ℂ)
+    (allowed : ∀ z, embed z ∈ H → chi z = 1) :
+    (∑ x, normalizedEntry H embed chi x x) = 1 := by
+  have ht := normalized_correlation_at H embed chi allowed 1 H.one_mem 1
+  simpa [rightCorrelation] using ht
+
+omit [Fintype G] [Fintype C] in
+/-- Centrality identifies the subgroup support with H times range(embed).
+Injectivity is not needed: all normalization counts use the preimage. -/
+theorem mem_saturation_iff (H : Subgroup G) (embed : C →* G)
+    (central : ∀ z g, embed z * g = g * embed z) (g : G) :
+    g ∈ H ⊔ embed.range ↔ ∃ z, g * (embed z)⁻¹ ∈ H := by
+  let : embed.range.Normal := ⟨by
+    rintro _ ⟨z, rfl⟩ x
+    exact ⟨z, by rw [← central z x]; simp [mul_assoc]⟩⟩
+  rw [Subgroup.mem_sup_of_normal_right]
+  constructor
+  · rintro ⟨h, hh, _, ⟨z, rfl⟩, rfl⟩
+    exact ⟨z, by simpa using hh⟩
+  · rintro ⟨z, hz⟩
+    exact ⟨g * (embed z)⁻¹, hz, embed z, ⟨z, rfl⟩, by simp⟩
 end Source
 
 section ControlledAction
@@ -195,6 +296,37 @@ theorem descent_output {Q : Type*} [Fintype Q] [Nonempty I]
     rw [show (representative r)⁻¹ * representative q =
       ((representative q)⁻¹ * representative r)⁻¹ by group, B.inv_mem_iff]
   rw [he]
+
+/-- Specialize descent_output to independent, actually normalized source
+branches with arbitrary hidden central intersection. centralPart is a
+proof witness for the supported decomposition, not input to actionKraus.
+Support preservation and phase cancellation remain explicit obligations. -/
+theorem normalized_descent_output {Q C : Type*} [Fintype Q] [CommGroup C]
+    [Fintype C] [Nonempty I]
+    (H : Subgroup G) (embed : C →* G)
+    (central : ∀ z g, embed z * g = g * embed z)
+    (chi : I → C →* ℂ) (allowed : ∀ i z, embed z ∈ H → chi i z = 1)
+    (representative : Q → G) (A : I → G →* G) (centralPart : I → G → C)
+    (preserves : ∀ i g, A i g ∈ H ⊔ embed.range ↔ g ∈ H ⊔ embed.range)
+    (decompose : ∀ i g, g ∈ H ⊔ embed.range →
+      A i g * (embed (centralPart i g))⁻¹ ∈ H)
+    (cancel : ∀ g, g ∈ H ⊔ embed.range → ∏ i, chi i (centralPart i g) = 1)
+    (q r : Q) :
+    actionOutput (fun x i => A i (representative x))
+      (fun x y : I → G => ∏ i, normalizedEntry H embed (chi i) (x i) (y i)) q r =
+        invSize Q *
+          (if (representative q)⁻¹ * representative r ∈ H ⊔ embed.range then 1 else 0) := by
+  apply descent_output (H ⊔ embed.range) representative A
+    (fun i => normalizedEntry H embed (chi i)) (fun i g => chi i (centralPart i g))
+    ?_ ?_ cancel q r
+  · intro i g hg
+    apply normalized_correlation_off
+    intro z hz
+    exact hg ((preserves i g).mp ((mem_saturation_iff H embed central (A i g)).mpr ⟨z, hz⟩))
+  · intro i g hg
+    have ht := normalized_correlation_at H embed (chi i) (allowed i)
+      (A i g * (embed (centralPart i g))⁻¹) (decompose i g hg) (centralPart i g)
+    simpa using ht
 end Tensor
 
 end
@@ -219,3 +351,37 @@ end QSearch.CentralCharacterDescent
 /-- info: 'QSearch.CentralCharacterDescent.descent_output' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms QSearch.CentralCharacterDescent.descent_output
+
+/-- info: 'QSearch.CentralCharacterDescent.coefficient_allowed' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.coefficient_allowed
+
+/-- info: 'QSearch.CentralCharacterDescent.label_probability_allowed' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.label_probability_allowed
+
+/-- info: 'QSearch.CentralCharacterDescent.label_probability_allowed_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.label_probability_allowed_ne_zero
+
+/-- info: 'QSearch.CentralCharacterDescent.normalized_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.normalized_source
+
+/-- info: 'QSearch.CentralCharacterDescent.normalized_trace' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.normalized_trace
+
+/-- info: 'QSearch.CentralCharacterDescent.normalized_correlation_at' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.normalized_correlation_at
+
+/-- info: 'QSearch.CentralCharacterDescent.mem_saturation_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.mem_saturation_iff
+
+/-- info: 'QSearch.CentralCharacterDescent.normalized_descent_output' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QSearch.CentralCharacterDescent.normalized_descent_output

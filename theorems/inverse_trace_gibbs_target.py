@@ -59,6 +59,34 @@ def reciprocal_bound(bits, length, checks):
     return beta, mds_character_bound(bits, length, checks, beta)
 
 
+def residual_variance_bound(bits, length, checks):
+    """Exact rational upper bound on the UNIFORM-SYNDROME residual variance.
+
+    For q=2^bits, j=length>K=checks, let Z(h) count x with Hx=h and
+    Tr(inv0(x_i))=b_i, and g(h)=q^K*Z(h)/(q/2)^j. Return an upper bound
+    on E_h[(g(h)-1)^2], not a bound on each individual syndrome's error.
+    Promises: arbitrary fixed target bits, inv0(0)=0, and H a Vandermonde
+    matrix on j distinct supplied field points (hence an [j,K] MDS dual).
+    Balance gives sum_{u!=0}|r_i(u)|^2=1 for normalized local Fourier r_i.
+    No bound for arbitrary predicates or non-MDS matrices is asserted.
+
+    A support of size w has shortened dimension d=w-(j-K). Its d nonzero
+    information coordinates sum to at most one; the other j-K factors
+    contribute beta^(2(j-K)). There are sum_{t=0}^{K-1} binom(j,t)
+    possible supports. The rounded Kloosterman beta is capped only by the
+    trivial Fourier bound one. Values above one are retained, not clipped.
+    This is a counting certificate, not a sampler or a runtime guarantee.
+    """
+    _parameters(bits, length, checks)
+    q = 1 << bits
+    root = isqrt(q)
+    root += int(root*root != q)
+    beta = min(Q(1), Q(1+2*root, q))
+    support = sum(comb(length, t) for t in range(checks))*beta**(2*(length-checks))
+    previous = Q(9**length, q**(length-checks))
+    return min(previous, support)
+
+
 def gibbs_success_bound(length, eta, *, inverse_temperature_base=None, sampler_tv=Q(0)):
     """Success assuming a sampler within TV of the ideal law including ABORT.
 

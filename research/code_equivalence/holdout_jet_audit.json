@@ -1,0 +1,7949 @@
+{
+  "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+  "asymptotic_gijs_validated": false,
+  "quantum_claim": false,
+  "speedup_claim_allowed": false,
+  "accepted_candidate": false,
+  "controls": [
+    {
+      "id": "separating_evaluation",
+      "public_generator": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "metadata": {},
+      "full": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 3,
+          "columns": 3,
+          "rank_gf2": 3,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 2,
+        "operator": "full_hasse",
+        "derivative_orders": [
+          0,
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "packed_target": 1,
+        "dimensions": {
+          "monomials": 1,
+          "training_columns": 8,
+          "jets_per_point": 4,
+          "full_jets_per_point": 4,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 4,
+          "entries_including_target": 9
+        },
+        "gf2": {
+          "rank": 0,
+          "augmented_rank": 1,
+          "delta": 1,
+          "member": false,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "separating_annihilator",
+            "annihilator": [
+              1
+            ],
+            "packed_annihilator": 1,
+            "training_pairings_zero": true,
+            "target_pairing": 1,
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 0,
+          "annihilator_dimension": 1,
+          "heldout_image_rank": 1,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "reduced": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 3,
+          "columns": 3,
+          "rank_gf2": 3,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 2,
+        "operator": "reduced_hasse_gf2",
+        "derivative_orders": [
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "packed_target": 1,
+        "dimensions": {
+          "monomials": 1,
+          "training_columns": 6,
+          "jets_per_point": 3,
+          "full_jets_per_point": 4,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 4,
+          "entries_including_target": 7
+        },
+        "gf2": {
+          "rank": 0,
+          "augmented_rank": 1,
+          "delta": 1,
+          "member": false,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "separating_annihilator",
+            "annihilator": [
+              1
+            ],
+            "packed_annihilator": 1,
+            "training_pairings_zero": true,
+            "target_pairing": 1,
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 0,
+          "annihilator_dimension": 1,
+          "heldout_image_rank": 1,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "full_reduced_gf2_agree": true
+    },
+    {
+      "id": "zero_target",
+      "public_generator": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "metadata": {},
+      "full": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 3,
+          "columns": 3,
+          "rank_gf2": 3,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 2,
+        "operator": "full_hasse",
+        "derivative_orders": [
+          0,
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "packed_target": 0,
+        "dimensions": {
+          "monomials": 1,
+          "training_columns": 8,
+          "jets_per_point": 4,
+          "full_jets_per_point": 4,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 4,
+          "entries_including_target": 9
+        },
+        "gf2": {
+          "rank": 0,
+          "augmented_rank": 0,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": true,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzero_indices": [],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 0,
+          "annihilator_dimension": 1,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "reduced": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 3,
+          "columns": 3,
+          "rank_gf2": 3,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 2,
+        "operator": "reduced_hasse_gf2",
+        "derivative_orders": [
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "packed_target": 0,
+        "dimensions": {
+          "monomials": 1,
+          "training_columns": 6,
+          "jets_per_point": 3,
+          "full_jets_per_point": 4,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 4,
+          "entries_including_target": 7
+        },
+        "gf2": {
+          "rank": 0,
+          "augmented_rank": 0,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": true,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzero_indices": [],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 0,
+          "annihilator_dimension": 1,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "full_reduced_gf2_agree": true
+    },
+    {
+      "id": "nonsaturated_duplicate",
+      "public_generator": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "metadata": {},
+      "full": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 4,
+          "columns": 3,
+          "rank_gf2": 2,
+          "full_row_rank": false,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 1,
+        "holdout": 2,
+        "operator": "full_hasse",
+        "derivative_orders": [
+          0
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": []
+          }
+        ],
+        "packed_training_columns": [
+          1,
+          0
+        ],
+        "packed_target": 1,
+        "dimensions": {
+          "monomials": 4,
+          "training_columns": 2,
+          "jets_per_point": 1,
+          "full_jets_per_point": 1,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 1,
+          "entries_including_target": 12
+        },
+        "gf2": {
+          "rank": 1,
+          "augmented_rank": 1,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              1,
+              0
+            ],
+            "nonzero_indices": [
+              0
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 1,
+          "annihilator_dimension": 3,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "reduced": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 4,
+          "columns": 3,
+          "rank_gf2": 2,
+          "full_row_rank": false,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 1,
+        "holdout": 2,
+        "operator": "reduced_hasse_gf2",
+        "derivative_orders": [
+          0
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": []
+          }
+        ],
+        "packed_training_columns": [
+          1,
+          0
+        ],
+        "packed_target": 1,
+        "dimensions": {
+          "monomials": 4,
+          "training_columns": 2,
+          "jets_per_point": 1,
+          "full_jets_per_point": 1,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 1,
+          "entries_including_target": 12
+        },
+        "gf2": {
+          "rank": 1,
+          "augmented_rank": 1,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              1,
+              0
+            ],
+            "nonzero_indices": [
+              0
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 1,
+          "annihilator_dimension": 3,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "full_reduced_gf2_agree": true
+    },
+    {
+      "id": "saturated_evaluation_space",
+      "public_generator": [
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "metadata": {},
+      "full": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 3,
+          "columns": 4,
+          "rank_gf2": 3,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 2,
+        "multiplicity": 1,
+        "holdout": 3,
+        "operator": "full_hasse",
+        "derivative_orders": [
+          0
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": []
+          },
+          {
+            "point": 2,
+            "derivative": []
+          }
+        ],
+        "packed_training_columns": [
+          1,
+          2,
+          4
+        ],
+        "packed_target": 7,
+        "dimensions": {
+          "monomials": 3,
+          "training_columns": 3,
+          "jets_per_point": 1,
+          "full_jets_per_point": 1,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 1,
+          "entries_including_target": 12
+        },
+        "gf2": {
+          "rank": 3,
+          "augmented_rank": 3,
+          "delta": 0,
+          "member": true,
+          "saturated": true,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              1,
+              1,
+              1
+            ],
+            "nonzero_indices": [
+              0,
+              1,
+              2
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 3,
+          "annihilator_dimension": 0,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "reduced": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 3,
+          "columns": 4,
+          "rank_gf2": 3,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 2,
+        "multiplicity": 1,
+        "holdout": 3,
+        "operator": "reduced_hasse_gf2",
+        "derivative_orders": [
+          0
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": []
+          },
+          {
+            "point": 2,
+            "derivative": []
+          }
+        ],
+        "packed_training_columns": [
+          1,
+          2,
+          4
+        ],
+        "packed_target": 7,
+        "dimensions": {
+          "monomials": 3,
+          "training_columns": 3,
+          "jets_per_point": 1,
+          "full_jets_per_point": 1,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 1,
+          "entries_including_target": 12
+        },
+        "gf2": {
+          "rank": 3,
+          "augmented_rank": 3,
+          "delta": 0,
+          "member": true,
+          "saturated": true,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              1,
+              1,
+              1
+            ],
+            "nonzero_indices": [
+              0,
+              1,
+              2
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 3,
+          "annihilator_dimension": 0,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "full_reduced_gf2_agree": true
+    },
+    {
+      "id": "binary_membership_not_complex_membership",
+      "public_generator": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metadata": {
+        "goppa_instance": false,
+        "general_no_go": false,
+        "purpose": "Exact characteristic-change counterexample with d > s."
+      },
+      "full": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 6,
+          "columns": 9,
+          "rank_gf2": 6,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 8,
+        "operator": "full_hasse",
+        "derivative_orders": [
+          0,
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": []
+          },
+          {
+            "point": 2,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": []
+          },
+          {
+            "point": 3,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": []
+          },
+          {
+            "point": 4,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": []
+          },
+          {
+            "point": 5,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": []
+          },
+          {
+            "point": 6,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": []
+          },
+          {
+            "point": 7,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              5
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          65536,
+          176,
+          11264,
+          65536,
+          65536,
+          65536,
+          917504,
+          4,
+          4,
+          4,
+          2081,
+          8322,
+          4,
+          33288
+        ],
+        "packed_target": 1043,
+        "dimensions": {
+          "monomials": 20,
+          "training_columns": 56,
+          "jets_per_point": 7,
+          "full_jets_per_point": 7,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 7,
+          "entries_including_target": 1140
+        },
+        "gf2": {
+          "rank": 8,
+          "augmented_rank": 8,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "nonzero_indices": [
+              43,
+              44,
+              52,
+              53
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 8,
+          "annihilator_dimension": 12,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": true,
+          "operator": "full_hasse",
+          "field": "Q; identical ranks over R and C for this integer matrix",
+          "exact": true,
+          "rank": 8,
+          "augmented_rank": 9,
+          "delta": 1,
+          "member": false
+        },
+        "field_membership_disagrees": true
+      },
+      "reduced": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 6,
+          "columns": 9,
+          "rank_gf2": 6,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 8,
+        "operator": "reduced_hasse_gf2",
+        "derivative_orders": [
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              5
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          176,
+          11264,
+          65536,
+          65536,
+          65536,
+          917504,
+          4,
+          4,
+          2081,
+          8322,
+          4,
+          33288
+        ],
+        "packed_target": 1043,
+        "dimensions": {
+          "monomials": 20,
+          "training_columns": 48,
+          "jets_per_point": 6,
+          "full_jets_per_point": 7,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 7,
+          "entries_including_target": 980
+        },
+        "gf2": {
+          "rank": 8,
+          "augmented_rank": 8,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "nonzero_indices": [
+              36,
+              37,
+              44,
+              45
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 8,
+          "annihilator_dimension": 12,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "full_reduced_gf2_agree": true
+    },
+    {
+      "id": "binary_goppa_t2",
+      "public_generator": [
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "metadata": {
+        "goppa_instance": true,
+        "field_degree": 4,
+        "goppa_degree": 2,
+        "rootless_quadratic_is_irreducible": true,
+        "interpolation_lhs": 30,
+        "interpolation_rhs": 33,
+        "sufficient_interpolation_holds": false,
+        "observer_input": "public generator only"
+      },
+      "full": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 8,
+          "columns": 16,
+          "rank_gf2": 8,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 15,
+        "operator": "full_hasse",
+        "derivative_orders": [
+          0,
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            2,
+            7
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            3,
+            6
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            1,
+            4,
+            6
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            1,
+            5,
+            7
+          ],
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            2,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            3,
+            5,
+            7
+          ],
+          [
+            3,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            5,
+            6,
+            7
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": []
+          },
+          {
+            "point": 2,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": []
+          },
+          {
+            "point": 3,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": []
+          },
+          {
+            "point": 4,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": []
+          },
+          {
+            "point": 5,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": []
+          },
+          {
+            "point": 6,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": []
+          },
+          {
+            "point": 7,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": []
+          },
+          {
+            "point": 8,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": []
+          },
+          {
+            "point": 9,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": []
+          },
+          {
+            "point": 10,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": []
+          },
+          {
+            "point": 11,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": []
+          },
+          {
+            "point": 12,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": []
+          },
+          {
+            "point": 13,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": []
+          },
+          {
+            "point": 14,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              7
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          17180393512,
+          524328,
+          17179869224,
+          17592227988737,
+          1125900577951746,
+          9007204623613956,
+          17180393480,
+          36028839969947664,
+          17180393504,
+          2287808820569664,
+          1074752,
+          35217473587,
+          36009005811264,
+          2252624447430720,
+          18443276763990144,
+          37744172598038784,
+          2287259064738304,
+          2287533942653952,
+          1144179287654400,
+          546112,
+          17894998016,
+          18279380811776,
+          1126587101609984,
+          9364609253244928,
+          1143629531840512,
+          38887802129088512,
+          1144041848700928,
+          1100597985677,
+          33165,
+          1086324749,
+          1099524211073,
+          70575106037826,
+          1100589596804,
+          1100593791240,
+          4514605498171920,
+          9029210996343840,
+          5277655813324800,
+          374784,
+          12280922112,
+          12575664242688,
+          774056185954304,
+          4714705859903488,
+          5136918324969472,
+          5207287069147136,
+          66709569480425472,
+          562958946283546,
+          274458,
+          8992587802,
+          9208437146433,
+          562950356086786,
+          4714709148338180,
+          562958677839880,
+          562958812061712,
+          39406548817559584,
+          18014439311671296,
+          1245236,
+          40802189312,
+          41781496381440,
+          2674013151166464,
+          18014404951932928,
+          49539622744621056,
+          18014435016704000,
+          18014437164187648,
+          286496437305344,
+          150759,
+          4938792960,
+          5016561647616,
+          282094058078208,
+          285946108968960,
+          10222315438604288,
+          20444630877208576,
+          286427644428288,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "packed_target": 0,
+        "dimensions": {
+          "monomials": 56,
+          "training_columns": 135,
+          "jets_per_point": 9,
+          "full_jets_per_point": 9,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 9,
+          "entries_including_target": 7616
+        },
+        "gf2": {
+          "rank": 56,
+          "augmented_rank": 56,
+          "delta": 0,
+          "member": true,
+          "saturated": true,
+          "target_zero": true,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzero_indices": [],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 56,
+          "annihilator_dimension": 0,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "reduced": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 8,
+          "columns": 16,
+          "rank_gf2": 8,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 15,
+        "operator": "reduced_hasse_gf2",
+        "derivative_orders": [
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            2,
+            7
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            3,
+            6
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            1,
+            4,
+            6
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            1,
+            5,
+            7
+          ],
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            2,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            3,
+            5,
+            7
+          ],
+          [
+            3,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            5,
+            6,
+            7
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              7
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          524328,
+          17179869224,
+          17592227988737,
+          1125900577951746,
+          9007204623613956,
+          17180393480,
+          36028839969947664,
+          17180393504,
+          1074752,
+          35217473587,
+          36009005811264,
+          2252624447430720,
+          18443276763990144,
+          37744172598038784,
+          2287259064738304,
+          2287533942653952,
+          546112,
+          17894998016,
+          18279380811776,
+          1126587101609984,
+          9364609253244928,
+          1143629531840512,
+          38887802129088512,
+          1144041848700928,
+          33165,
+          1086324749,
+          1099524211073,
+          70575106037826,
+          1100589596804,
+          1100593791240,
+          4514605498171920,
+          9029210996343840,
+          374784,
+          12280922112,
+          12575664242688,
+          774056185954304,
+          4714705859903488,
+          5136918324969472,
+          5207287069147136,
+          66709569480425472,
+          274458,
+          8992587802,
+          9208437146433,
+          562950356086786,
+          4714709148338180,
+          562958677839880,
+          562958812061712,
+          39406548817559584,
+          1245236,
+          40802189312,
+          41781496381440,
+          2674013151166464,
+          18014404951932928,
+          49539622744621056,
+          18014435016704000,
+          18014437164187648,
+          150759,
+          4938792960,
+          5016561647616,
+          282094058078208,
+          285946108968960,
+          10222315438604288,
+          20444630877208576,
+          286427644428288,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "packed_target": 0,
+        "dimensions": {
+          "monomials": 56,
+          "training_columns": 120,
+          "jets_per_point": 8,
+          "full_jets_per_point": 9,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 9,
+          "entries_including_target": 6776
+        },
+        "gf2": {
+          "rank": 56,
+          "augmented_rank": 56,
+          "delta": 0,
+          "member": true,
+          "saturated": true,
+          "target_zero": true,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzero_indices": [],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 56,
+          "annihilator_dimension": 0,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "full_reduced_gf2_agree": true
+    },
+    {
+      "id": "matched_random_public_matrix",
+      "public_generator": [
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "metadata": {
+        "goppa_instance": false,
+        "seed": 1630,
+        "matched_shape_and_rank": true
+      },
+      "full": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 8,
+          "columns": 16,
+          "rank_gf2": 8,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 15,
+        "operator": "full_hasse",
+        "derivative_orders": [
+          0,
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            2,
+            7
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            3,
+            6
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            1,
+            4,
+            6
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            1,
+            5,
+            7
+          ],
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            2,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            3,
+            5,
+            7
+          ],
+          [
+            3,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            5,
+            6,
+            7
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": []
+          },
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": []
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": []
+          },
+          {
+            "point": 2,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": []
+          },
+          {
+            "point": 3,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": []
+          },
+          {
+            "point": 4,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": []
+          },
+          {
+            "point": 5,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": []
+          },
+          {
+            "point": 6,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": []
+          },
+          {
+            "point": 7,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": []
+          },
+          {
+            "point": 8,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": []
+          },
+          {
+            "point": 9,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": []
+          },
+          {
+            "point": 10,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": []
+          },
+          {
+            "point": 11,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": []
+          },
+          {
+            "point": 12,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": []
+          },
+          {
+            "point": 13,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": []
+          },
+          {
+            "point": 14,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              7
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          0,
+          2,
+          0,
+          2097152,
+          0,
+          67108864,
+          134217728,
+          268435456,
+          536870912,
+          2287808820569664,
+          1074752,
+          35217473587,
+          36009005811264,
+          2252624447430720,
+          18443276763990144,
+          37744172598038784,
+          2287259064738304,
+          2287533942653952,
+          2,
+          2,
+          2,
+          2097217,
+          2,
+          67110916,
+          134221832,
+          268443664,
+          536887328,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4515694255637376,
+          361344,
+          11840520221,
+          12094627906432,
+          774537222305856,
+          4506898162352256,
+          4513495232315648,
+          4514594743976448,
+          63107569389536256,
+          35218783209009,
+          1050161,
+          34410070065,
+          35184422422017,
+          2252625254834242,
+          18021002026090628,
+          36055211077009672,
+          35218749653520,
+          35218766431264,
+          71675704023503,
+          39375,
+          1289748495,
+          1305684738497,
+          70575106037826,
+          71538120362116,
+          71606911144200,
+          5218568086299152,
+          10437136172598304,
+          2287844036968448,
+          1074803,
+          35217473536,
+          36009058238464,
+          2252625254809600,
+          18443283277545472,
+          37744198509658112,
+          2287293708632064,
+          2287568871751680,
+          4402379227136,
+          132261,
+          4332716032,
+          4398084259840,
+          282094058078208,
+          4402345672704,
+          9025909214412800,
+          18051818428825600,
+          4402375032832,
+          9007199254740992,
+          688128,
+          22548578304,
+          23089744183296,
+          1477743627730944,
+          9007199254740992,
+          9007199254740992,
+          58546795155816448,
+          9007199254740992,
+          67553994412621824,
+          2064384,
+          67645734972,
+          69269232551808,
+          4433230883223552,
+          31525197391822848,
+          49539595901894656,
+          58546795157192704,
+          63050394784890880,
+          4,
+          4,
+          4,
+          4194433,
+          67110914,
+          4,
+          1073774600,
+          2147549200,
+          4295098400,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          33555489,
+          1057,
+          33554465,
+          33555457,
+          550294798402,
+          4402345803908,
+          17609374826760,
+          35218749653520,
+          33555488,
+          9007199254740992,
+          688128,
+          22548578304,
+          23089744183296,
+          1477743627730944,
+          9007199254740992,
+          9007199254740992,
+          58546795155816448,
+          9007199254740992
+        ],
+        "packed_target": 71675704023503,
+        "dimensions": {
+          "monomials": 56,
+          "training_columns": 135,
+          "jets_per_point": 9,
+          "full_jets_per_point": 9,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 9,
+          "entries_including_target": 7616
+        },
+        "gf2": {
+          "rank": 55,
+          "augmented_rank": 55,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzero_indices": [
+              54
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 55,
+          "annihilator_dimension": 1,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "reduced": {
+        "scope": "Finite exact algebraic controls; not validation of asymptotic GIJS or a quantum claim.",
+        "asymptotic_gijs_validated": false,
+        "quantum_claim": false,
+        "speedup_claim_allowed": false,
+        "accepted_candidate": false,
+        "generator": {
+          "rows": 8,
+          "columns": 16,
+          "rank_gf2": 8,
+          "full_row_rank": true,
+          "basis_changed": false
+        },
+        "degree": 3,
+        "multiplicity": 2,
+        "holdout": 15,
+        "operator": "reduced_hasse_gf2",
+        "derivative_orders": [
+          1
+        ],
+        "test_operator": "evaluation_only",
+        "monomials": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            2,
+            7
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            3,
+            6
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            1,
+            4,
+            6
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            1,
+            5,
+            7
+          ],
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            2,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            3,
+            5,
+            7
+          ],
+          [
+            3,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            5,
+            6,
+            7
+          ]
+        ],
+        "training_columns": [
+          {
+            "point": 0,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 0,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 1,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 2,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 3,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 4,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 5,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 6,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 7,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 8,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 9,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 10,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 11,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 12,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 13,
+            "derivative": [
+              7
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              0
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              1
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              2
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              3
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              4
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              5
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              6
+            ]
+          },
+          {
+            "point": 14,
+            "derivative": [
+              7
+            ]
+          }
+        ],
+        "packed_training_columns": [
+          2,
+          0,
+          2097152,
+          0,
+          67108864,
+          134217728,
+          268435456,
+          536870912,
+          1074752,
+          35217473587,
+          36009005811264,
+          2252624447430720,
+          18443276763990144,
+          37744172598038784,
+          2287259064738304,
+          2287533942653952,
+          2,
+          2,
+          2097217,
+          2,
+          67110916,
+          134221832,
+          268443664,
+          536887328,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          361344,
+          11840520221,
+          12094627906432,
+          774537222305856,
+          4506898162352256,
+          4513495232315648,
+          4514594743976448,
+          63107569389536256,
+          1050161,
+          34410070065,
+          35184422422017,
+          2252625254834242,
+          18021002026090628,
+          36055211077009672,
+          35218749653520,
+          35218766431264,
+          39375,
+          1289748495,
+          1305684738497,
+          70575106037826,
+          71538120362116,
+          71606911144200,
+          5218568086299152,
+          10437136172598304,
+          1074803,
+          35217473536,
+          36009058238464,
+          2252625254809600,
+          18443283277545472,
+          37744198509658112,
+          2287293708632064,
+          2287568871751680,
+          132261,
+          4332716032,
+          4398084259840,
+          282094058078208,
+          4402345672704,
+          9025909214412800,
+          18051818428825600,
+          4402375032832,
+          688128,
+          22548578304,
+          23089744183296,
+          1477743627730944,
+          9007199254740992,
+          9007199254740992,
+          58546795155816448,
+          9007199254740992,
+          2064384,
+          67645734972,
+          69269232551808,
+          4433230883223552,
+          31525197391822848,
+          49539595901894656,
+          58546795157192704,
+          63050394784890880,
+          4,
+          4,
+          4194433,
+          67110914,
+          4,
+          1073774600,
+          2147549200,
+          4295098400,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1057,
+          33554465,
+          33555457,
+          550294798402,
+          4402345803908,
+          17609374826760,
+          35218749653520,
+          33555488,
+          688128,
+          22548578304,
+          23089744183296,
+          1477743627730944,
+          9007199254740992,
+          9007199254740992,
+          58546795155816448,
+          9007199254740992
+        ],
+        "packed_target": 71675704023503,
+        "dimensions": {
+          "monomials": 56,
+          "training_columns": 120,
+          "jets_per_point": 8,
+          "full_jets_per_point": 9,
+          "heldout_points_in_training": 0,
+          "omitted_full_heldout_jets": 9,
+          "entries_including_target": 6776
+        },
+        "gf2": {
+          "rank": 55,
+          "augmented_rank": 55,
+          "delta": 0,
+          "member": true,
+          "saturated": false,
+          "target_zero": false,
+          "witness": {
+            "kind": "span_coefficients",
+            "coefficients": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzero_indices": [
+              0,
+              2,
+              4,
+              5,
+              32,
+              34,
+              36,
+              37,
+              49,
+              51
+            ],
+            "verified": true
+          }
+        },
+        "transpose_crosscheck": {
+          "status": "checked",
+          "rank": 55,
+          "annihilator_dimension": 1,
+          "heldout_image_rank": 0,
+          "membership_matches": true
+        },
+        "rational": {
+          "requested": false
+        },
+        "field_membership_disagrees": null
+      },
+      "full_reduced_gf2_agree": true
+    }
+  ],
+  "proof_note": "research/GOPPA_HOLDOUT_QUANTUM_ACCESS.md"
+}

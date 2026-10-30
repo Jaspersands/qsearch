@@ -1,0 +1,249 @@
+"""Predeclared same-input hash-cell probes with an independent Prange baseline.
+
+This runs bounded solver experiments, not the conditional hash heat-bath
+sampler. Partial cells never become samples or evidence of hardness.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+from random import Random
+from time import perf_counter
+
+from theorems.balanced_codeword_filter import integer, reciprocal_trace, trace_mask
+from theorems.explicit_quadratic_opi import element, encoded, field
+from theorems.inverse_trace_gibbs_target import _ceil_log2, residual_variance_bound
+from theorems.inverse_trace_smt import (
+    syndrome, validate_instance, vandermonde_eliminate_residual, verify_word,
+)
+from theorems.parity_block_usd_prange import affine_system
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def _source_fingerprints():
+    files = (Path(__file__), ROOT/"theorems/inverse_trace_hash_cell.py",
+             ROOT/"theorems/inverse_trace_smt.py", ROOT/"research/INVERSE_TRACE_HASH_HEATBATH.md")
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+
+
+def trace_coordinates(bits):
+    mask = trace_mask(bits, 1)
+    pivot = mask & -mask
+    positions = tuple(j for j in range(bits) if (1 << j) != pivot)
+    basis = tuple((1 << j) ^ (pivot if (mask >> j) & 1 else 0) for j in positions)
+    return pivot, positions, basis
+
+
+def prepare_probe(instance, prefix_seed=1029, surplus=None, anchor_word=None):
+    """Freeze original input and residual before any SAT/hash success is seen."""
+    bits, points, targets, checks = validate_instance(instance)
+    integer(prefix_seed, 0, 2**32-1, "prefix seed")
+    if surplus is None:
+        surplus = (3*checks+2*bits-1)//(2*bits)
+    integer(surplus, 1, len(points)-checks, "residual surplus")
+    size = checks+surplus
+    width = (bits-1)*surplus
+    if width < checks:
+        raise ValueError("hash construction requires nonnegative B-K")
+    indices = tuple(range(size))
+    pivot, positions, basis = trace_coordinates(bits)
+    mask = trace_mask(bits, 1)
+    rng, prefix = Random(prefix_seed), {}
+    if anchor_word is not None:
+        anchor_word = tuple(anchor_word)
+        if not verify_word(instance, anchor_word):
+            raise ValueError("supplied anchor must solve the full original instance")
+    for i in range(size, len(points)):
+        if anchor_word is not None:
+            prefix[i] = anchor_word[i]
+        else:
+            y = rng.getrandbits(bits)
+            if ((y & mask).bit_count() & 1) != targets[i]:
+                y ^= pivot
+            prefix[i] = encoded(element(bits, y)**-1) if y else 0
+    h = syndrome(bits, [points[i] for i in prefix], list(prefix.values()), checks)
+    _, free, constants, coefficients = vandermonde_eliminate_residual(
+        bits, points, indices, h, checks)
+    context = field(bits)
+    constants = tuple(element(bits, x) for x in constants)
+    coefficients = tuple(tuple(element(bits, x) for x in row) for row in coefficients)
+
+    def decode(u):
+        integer(u, 0, (1 << width)-1, "accepted-root coordinates")
+        values = []
+        for block, index in enumerate(free):
+            y = targets[index]*pivot
+            for j, direction in enumerate(basis):
+                if (u >> (block*(bits-1)+j)) & 1:
+                    y ^= direction
+            values.append(element(bits, y)**-1 if y else context.zero())
+        pivots = [a+sum((c*x for c, x in zip(row, values)), context.zero())
+                  for a, row in zip(constants, coefficients)]
+        return tuple(encoded(x) for x in (*pivots, *values))
+
+    def valid(word):
+        if any(reciprocal_trace(bits, x) != targets[i] for i, x in zip(indices, word, strict=True)):
+            return False
+        if syndrome(bits, [points[i] for i in indices], word, checks) != h:
+            raise ArithmeticError("independent decode violated original residual parity")
+        full = tuple(word[i] if i < size else prefix[i] for i in range(len(points)))
+        if not verify_word(instance, full):
+            raise ArithmeticError("independent completion violated original full instance")
+        return True
+
+    anchor = None
+    if anchor_word is not None:
+        anchor = 0
+        for block, index in enumerate(free):
+            x = anchor_word[index]
+            y = encoded(element(bits, x)**-1) if x else 0
+            for j, position in enumerate(positions):
+                anchor |= ((y >> position) & 1) << (block*(bits-1)+j)
+        if decode(anchor) != anchor_word[:size] or not valid(decode(anchor)):
+            raise ArithmeticError("anchor failed accepted-coordinate roundtrip")
+    descriptor = {"residual_indices": list(indices),
+                  "accepted_prefix": [[i, value] for i, value in prefix.items()],
+                  "residual_syndrome": list(h), "prefix_seed": prefix_seed,
+                  "free_field_variables": surplus, "binary_coordinates": width,
+                  "hash_rows_count": width-checks,
+                  "trace_one_element": pivot, "trace_kernel_basis": list(basis),
+                  "source": "WITNESS_CONDITIONED_DIAGNOSTIC" if anchor_word is not None
+                            else "FIXED_ACCEPTED_PREFIX",
+                  "anchor_u": anchor,
+                  "supplied_anchor_full_word": None if anchor_word is None else list(anchor_word),
+                  "anchor_acquisition_charged": False,
+                  "residual_variance_power2_upper": _ceil_log2(residual_variance_bound(bits, size, checks)),
+                  "pointwise_good_syndrome_certified": False}
+    return descriptor, decode, valid
+
+
+def exact_cell_reference(descriptor, rows, rhs, decode, valid, max_free_bits):
+    """Exhaust a bounded hash slice, not the exponential whole native fiber."""
+    width = descriptor["binary_coordinates"]
+    if width <= max_free_bits:
+        # Small calibrations must not share the solver's elimination routine.
+        solutions = [u for u in range(1 << width)
+                     if all(((row & u).bit_count() & 1) == ((rhs >> j) & 1)
+                            for j, row in enumerate(rows)) and valid(decode(u))]
+        return {"status": "EXACT_FULL_COORDINATE_SPACE", "solutions": solutions,
+                "checked": 1 << width, "shared_hash_elimination": False}
+    system = affine_system(((row, (rhs >> j) & 1) for j, row in enumerate(rows)), width)
+    if not system["consistent"]:
+        return {"status": "EXACT_EMPTY_AFFINE_SLICE", "solutions": [], "checked": 0,
+                "shared_hash_elimination": True}
+    dimension = len(system["free"])
+    if dimension > max_free_bits:
+        return {"status": "NOT_RUN_REFERENCE_CAP", "ambient_free_bits": dimension,
+                "solutions": None, "checked": 0, "shared_hash_elimination": True}
+    solutions = []
+    for label in range(1 << dimension):
+        u = sum(((label >> j) & 1) << bit for j, bit in enumerate(system["free"]))
+        for row in system["rref"]:
+            if any(row[:-1]):
+                pivot = next(j for j, value in enumerate(row[:-1]) if value)
+                value = row[-1] ^ (sum(c*((u >> j) & 1) for j, c in enumerate(row[:-1])) & 1)
+                u ^= value << pivot
+        if any(((row & u).bit_count() & 1) != ((rhs >> j) & 1) for j, row in enumerate(rows)):
+            raise ArithmeticError("independent hash-slice replay failed")
+        if valid(decode(u)):
+            solutions.append(u)
+    return {"status": "EXACT_FINITE_HASH_SLICE", "ambient_free_bits": dimension,
+            "solutions": solutions, "checked": 1 << dimension,
+            "shared_hash_elimination": True}
+
+
+def run_probe(instance, *, prefix_seed=1029, hash_seed=1030, cells=3, surplus=None,
+              timeout_ms=10000, resource_limit=50000000, max_models=16,
+              prange_trials=256, reference_bits=16, anchor_word=None,
+              supply_anchor=False):
+    start = perf_counter()
+    source_hashes = _source_fingerprints()
+    from theorems.inverse_trace_hash_cell import enumerate_cell
+    integer(hash_seed, 0, 2**32-1, "hash seed")
+    integer(cells, 1, 32, "predeclared cell count")
+    integer(prange_trials, 0, 1000000, "Prange trial count")
+    integer(reference_bits, 0, 16, "finite reference bit cap")
+    if type(supply_anchor) is not bool or (supply_anchor and anchor_word is None):
+        raise ValueError("supplying a known anchor requires an explicit anchor word")
+    before = json.dumps(instance, sort_keys=True)
+    preparation_start = perf_counter()
+    descriptor, decode, valid = prepare_probe(instance, prefix_seed, surplus, anchor_word)
+    preparation_seconds = perf_counter()-preparation_start
+    width, count = descriptor["binary_coordinates"], descriptor["hash_rows_count"]
+    rng = Random(hash_seed)
+    # Freeze every draw before any cell result. Do not discard deficient rows.
+    hashes = []
+    for _ in range(cells):
+        rows = [rng.getrandbits(width) for _ in range(count)]
+        rhs = (rng.getrandbits(count) if descriptor["anchor_u"] is None else
+               sum(((row & descriptor["anchor_u"]).bit_count() & 1) << j
+                   for j, row in enumerate(rows)))
+        hashes.append((rows, rhs))
+    results = []
+    for index, (rows, rhs) in enumerate(hashes):
+        result = enumerate_cell(instance, descriptor["residual_indices"],
+                                descriptor["residual_syndrome"], rows, rhs,
+                                timeout_ms=timeout_ms, resource_limit=resource_limit,
+                                max_models=max_models, solver_seed=index,
+                                **({"known_u": descriptor["anchor_u"]} if supply_anchor else {}))
+        if result["invalid_models"] or result["duplicate_models"]:
+            raise ArithmeticError("cell solver reported invalid or duplicate models; campaign stopped")
+        found = []
+        for solution in result["solutions"]:
+            u, word = solution["u"], tuple(solution["residual_word"])
+            if word != decode(u) or not valid(word):
+                raise ArithmeticError("cell model failed independent native replay")
+            if any(((row & u).bit_count() & 1) != ((rhs >> j) & 1) for j, row in enumerate(rows)):
+                raise ArithmeticError("cell model failed original hash")
+            found.append(u)
+        if len(set(found)) != len(found):
+            raise ArithmeticError("duplicate projected cell solution")
+        ref_start = perf_counter()
+        reference = exact_cell_reference(descriptor, rows, rhs, decode, valid, reference_bits)
+        reference["seconds"] = perf_counter()-ref_start
+        if reference["solutions"] is not None:
+            if not set(found).issubset(reference["solutions"]):
+                raise ArithmeticError("cell solver returned spurious solution")
+            if result["complete"] and set(found) != set(reference["solutions"]):
+                raise ArithmeticError("claimed complete cell omitted a solution")
+        reference["reported_complete_set_matches"] = (
+            True if result["complete"] and reference["solutions"] is not None else None)
+        if result["complete"] and descriptor["anchor_u"] is not None and descriptor["anchor_u"] not in found:
+            raise ArithmeticError("complete anchored cell omitted its known anchor")
+        results.append({"cell_index": index, "hash_rows": rows, "hash_rhs": rhs,
+                        "enumeration": result, "independent_reference": reference})
+    prange_start = perf_counter()
+    prange_rng = Random(hash_seed ^ 0x9e3779b9)
+    hits, first = 0, None
+    for trial in range(prange_trials):
+        u = prange_rng.getrandbits(width)
+        word = decode(u)
+        if valid(word):
+            hits += 1
+            if first is None:
+                first = {"trial": trial+1, "u": u, "residual_word": list(word)}
+    prange_seconds = perf_counter()-prange_start
+    if json.dumps(instance, sort_keys=True) != before:
+        raise ArithmeticError("probe mutated its supplied public instance")
+    if _source_fingerprints() != source_hashes:
+        raise RuntimeError("source files changed during probe; refusing ambiguous provenance")
+    return {"status": "BOUNDED_NATIVE_HASH_CELL_PROBE", "instance": instance,
+            "instance_sha256": hashlib.sha256(before.encode()).hexdigest(),
+            "residual": descriptor, "hash_seed": hash_seed, "predeclared_cells": cells,
+            "known_anchor_supplied_to_solver": supply_anchor,
+            "seeded_diagnostics_not_physical_iid_certification": True,
+            "preparation_seconds": preparation_seconds, "cells": results,
+            "prange": {"trials": prange_trials, "hits": hits, "first_verified": first,
+                       "seconds": prange_seconds,
+                       "seed": hash_seed ^ 0x9e3779b9,
+                       "same_residual_input": True, "matched_wall_clock_budget": False,
+                       "ideal_per_trial_acceptance": "g(h)*2^(-K)"},
+            "total_seconds": perf_counter()-start,
+            "uniform_sampler": False, "polynomial_time_enumerator_established": False,
+            "hardness_evidence": False, "speedup_established": False,
+            "whole_workflow_wall_clock_cap_enforced": False,
+            "source_hashes": source_hashes,
+            "source_hashes_unchanged_during_probe": True,
+            "source_fingerprint_scope": "on_disk_before_and_after_probe_not_loaded_bytecode_attestation"}

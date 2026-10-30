@@ -1,0 +1,1591 @@
+{
+  "status": "BOUNDED_CLASSICAL_UNIT_MODULE_CONTROLS_NOT_QUANTUM_RECEIVER",
+  "cases": [
+    {
+      "name": "ambient_mod_p_zero",
+      "fixture_generators": [
+        [
+          101
+        ]
+      ],
+      "fixture_orders": [
+        10201
+      ],
+      "source_seed": 5101,
+      "arithmetic_seed": 5102,
+      "result": {
+        "status": "VERIFIED_AMBIENT_UNIT_WITNESS",
+        "reason": "EXACT_AMBIENT_CANCELLATION",
+        "plan": {
+          "prime": 101,
+          "degree": 2,
+          "reduced_degree": 2,
+          "cyclic_rank_bound": 1,
+          "uniform_parameter": 2,
+          "pilot_source_count": 8,
+          "bank_source_count": 8,
+          "source_labels_cap": 16,
+          "failure_bits": 20,
+          "recommended_kernel_trial_cap": 2621440,
+          "kernel_trial_cap": 32768,
+          "recommended_cap_met": false,
+          "pilot_incompleteness_bound": {
+            "numerator": 1,
+            "denominator": 10721353521070100
+          },
+          "iid_bad_bank_bound": {
+            "numerator": 10828957681280801,
+            "denominator": 20940143595840039062500000
+          },
+          "kernel_exhaustion_bound": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "auxiliary_arithmetic_abort_bound": {
+            "numerator": 10011483828161588673711392956499155132297,
+            "denominator": 41799775367549535728296379170443435301197053952
+          },
+          "episode_abort_bound": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "arithmetic_budget": {
+            "attempt_cap": 32768,
+            "failure_bits": 20,
+            "kernel_uniform_call_cap": 262144,
+            "root_call_cap": 8,
+            "root_split_attempt_cap": 75,
+            "root_split_trial_cap": 600,
+            "root_uniform_call_cap": 1200,
+            "uniform_call_cap": 263344,
+            "integer_rejection_cap": 40,
+            "bit_draw_cap": 10533760,
+            "random_bit_cap": 73736320,
+            "root_abort_upper": {
+              "numerator": 302231454903657293676544,
+              "denominator": 608266787713357709119683992618861307
+            },
+            "bit_abort_upper": {
+              "numerator": 16459,
+              "denominator": 68719476736
+            },
+            "auxiliary_abort_upper": {
+              "numerator": 10011483828161588673711392956499155132297,
+              "denominator": 41799775367549535728296379170443435301197053952
+            },
+            "attempt_exhaustion_included": false,
+            "iid_fair_bits_required": true
+          },
+          "projective_moments": {
+            "p": 101,
+            "d": 2,
+            "rank_bound": 1,
+            "width": 8,
+            "h": 50,
+            "S": 39062500000000,
+            "D": 781250000000,
+            "mu": {
+              "numerator": 781250000000,
+              "denominator": 101
+            },
+            "variance": {
+              "numerator": 78125000000000,
+              "denominator": 10201
+            },
+            "bad_bank_upper": {
+              "numerator": 10828957681280801,
+              "denominator": 20940143595840039062500000
+            },
+            "good_bank_kernel_power_density_lower": {
+              "numerator": 19531250000000,
+              "denominator": 10828567056280801
+            },
+            "weaker_density_lower": {
+              "numerator": 1,
+              "denominator": 131072
+            },
+            "rank_zero_kernel_power_density": null,
+            "rank_zero_deterministic": false,
+            "require_nonzero": true,
+            "iid_uniform_columns_required": true,
+            "iid_uniform_columns_verified": false,
+            "supplied_prime_verified_by_this_api": false,
+            "arbitrary_fixed_bank_guarantee": false,
+            "fixed_bank_repetitions_repair_bad_banks": false
+          },
+          "field_threshold": 64,
+          "large_field_guard_satisfied": true,
+          "fresh_iid_source_required": true,
+          "iid_fair_bits_required": true,
+          "hidden_support_certified": false,
+          "quantum_receiver_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 8,
+            "ambient_columns": [
+              [
+                882134
+              ],
+              [
+                550248
+              ],
+              [
+                597617
+              ],
+              [
+                244218
+              ],
+              [
+                737704
+              ],
+              [
+                423190
+              ],
+              [
+                592769
+              ],
+              [
+                157762
+              ]
+            ]
+          },
+          {
+            "stage": "bank",
+            "count": 8,
+            "ambient_columns": [
+              [
+                626200
+              ],
+              [
+                267347
+              ],
+              [
+                755480
+              ],
+              [
+                615090
+              ],
+              [
+                310373
+              ],
+              [
+                338249
+              ],
+              [
+                703869
+              ],
+              [
+                521665
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                6200
+              ],
+              [
+                2647
+              ],
+              [
+                7480
+              ],
+              [
+                6090
+              ],
+              [
+                3073
+              ],
+              [
+                3349
+              ],
+              [
+                6969
+              ],
+              [
+                5165
+              ]
+            ]
+          }
+        ],
+        "source_labels_consumed": 16,
+        "quantum_receiver_implemented": false,
+        "hidden_support_completeness_certified": false,
+        "physical_iid_source_certified": false,
+        "normal_form_clock_certified": false,
+        "frame": {
+          "prime": 101,
+          "ambient_exponents": [
+            3
+          ],
+          "pilot_columns": [
+            [
+              882134
+            ],
+            [
+              550248
+            ],
+            [
+              597617
+            ],
+            [
+              244218
+            ],
+            [
+              737704
+            ],
+            [
+              423190
+            ],
+            [
+              592769
+            ],
+            [
+              157762
+            ]
+          ],
+          "lattice_basis": [
+            [
+              101
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              -899
+            ],
+            [
+              1050
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              10201,
+              8734,
+              5448,
+              5917,
+              2418,
+              7304,
+              4190,
+              5869,
+              1562
+            ]
+          ],
+          "relation_matrix": [
+            [
+              10201
+            ]
+          ],
+          "smith_left": [
+            [
+              1
+            ]
+          ],
+          "smith_right": [
+            [
+              1
+            ]
+          ],
+          "smith_orders": [
+            10201
+          ],
+          "intrinsic_exponents": [
+            2
+          ],
+          "subgroup_order": 10201,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "intrinsic_run": {
+          "status": "VERIFIED_UNIT_MODULE_WITNESS",
+          "reason": "EXACT_MIXED_ORDER_CANCELLATION",
+          "original_degree": 2,
+          "reduced_degree": 2,
+          "bezout_exponent": 1,
+          "intrinsic_cyclic_rank": 1,
+          "residue_rank": 1,
+          "bank_columns": [
+            [
+              6200
+            ],
+            [
+              2647
+            ],
+            [
+              7480
+            ],
+            [
+              6090
+            ],
+            [
+              3073
+            ],
+            [
+              3349
+            ],
+            [
+              6969
+            ],
+            [
+              5165
+            ]
+          ],
+          "exponents": [
+            2
+          ],
+          "scales": [
+            4252,
+            73,
+            98,
+            23,
+            1,
+            34,
+            40,
+            38
+          ],
+          "labels_resampled": false,
+          "quantum_receiver_implemented": false,
+          "source_law_certified": false,
+          "field_run": {
+            "status": "VERIFIED",
+            "reason": "EXACT_POWER_KERNEL",
+            "weights": [
+              10,
+              73,
+              98,
+              23,
+              1,
+              34,
+              40,
+              38
+            ],
+            "power_vector": [
+              100,
+              77,
+              9,
+              24,
+              1,
+              45,
+              85,
+              30
+            ],
+            "p": 101,
+            "d": 2,
+            "columns": [
+              [
+                39
+              ],
+              [
+                21
+              ],
+              [
+                6
+              ],
+              [
+                30
+              ],
+              [
+                43
+              ],
+              [
+                16
+              ],
+              [
+                0
+              ],
+              [
+                14
+              ]
+            ],
+            "rank": 1,
+            "require_nonzero": true,
+            "rank_bound": 1,
+            "kernel_dimension": 7,
+            "budget": {
+              "attempt_cap": 32768,
+              "failure_bits": 20,
+              "kernel_uniform_call_cap": 262144,
+              "root_call_cap": 8,
+              "root_split_attempt_cap": 75,
+              "root_split_trial_cap": 600,
+              "root_uniform_call_cap": 1200,
+              "uniform_call_cap": 263344,
+              "integer_rejection_cap": 40,
+              "bit_draw_cap": 10533760,
+              "random_bit_cap": 73736320,
+              "root_abort_upper": {
+                "numerator": 302231454903657293676544,
+                "denominator": 608266787713357709119683992618861307
+              },
+              "bit_abort_upper": {
+                "numerator": 16459,
+                "denominator": 68719476736
+              },
+              "auxiliary_abort_upper": {
+                "numerator": 10011483828161588673711392956499155132297,
+                "denominator": 41799775367549535728296379170443435301197053952
+              },
+              "attempt_exhaustion_included": false,
+              "iid_fair_bits_required": true
+            },
+            "attempts": 175,
+            "completed_kernel_draws": 175,
+            "zero_rejections": 0,
+            "zero_coordinate_rejections": 17,
+            "nonpower_rejections": 157,
+            "kernel_uniform_calls": 1225,
+            "root_uniform_calls": 34,
+            "root_calls": 8,
+            "root_split_trials": 17,
+            "root_proper_splits": 8,
+            "root_split_counts_complete": true,
+            "exact_verified": true,
+            "input_labels_resampled": false,
+            "field_enumeration_used": false,
+            "iid_uniform_columns_verified": false,
+            "iid_fair_bits_verified": false,
+            "supplied_prime_verified_by_this_api": false,
+            "prime_validation_locally_clocked": false,
+            "arbitrary_fixed_bank_success_bound": null,
+            "quantum_receiver_implemented": false,
+            "hsp_claim": false,
+            "speedup_claim": false,
+            "uniform_calls": 1259,
+            "bit_draws": 1570,
+            "random_bits": 10990
+          },
+          "field_witness_original_degree": [
+            10,
+            73,
+            98,
+            23,
+            1,
+            34,
+            40,
+            38
+          ],
+          "lift": {
+            "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+            "scales": [
+              4252,
+              73,
+              98,
+              23,
+              1,
+              34,
+              40,
+              38
+            ],
+            "jacobian_rank": 1,
+            "cyclic_rank": 1,
+            "singularity_is_unsatisfiability": false,
+            "original_module_verified": true,
+            "pivot_indices": [
+              0
+            ],
+            "lift_steps": 1
+          }
+        },
+        "zero_rank_branch": false,
+        "selected_request_indices": [
+          1
+        ],
+        "selected_ambient_columns": [
+          [
+            626200
+          ],
+          [
+            267347
+          ],
+          [
+            755480
+          ],
+          [
+            615090
+          ],
+          [
+            310373
+          ],
+          [
+            338249
+          ],
+          [
+            703869
+          ],
+          [
+            521665
+          ]
+        ],
+        "scales": [
+          4252,
+          73,
+          98,
+          23,
+          1,
+          34,
+          40,
+          38
+        ],
+        "original_ambient_verified": true
+      }
+    },
+    {
+      "name": "oblique_mixed_order",
+      "fixture_generators": [
+        [
+          257,
+          257
+        ],
+        [
+          0,
+          66049
+        ]
+      ],
+      "fixture_orders": [
+        66049,
+        257
+      ],
+      "source_seed": 5257,
+      "arithmetic_seed": 5258,
+      "result": {
+        "status": "VERIFIED_AMBIENT_UNIT_WITNESS",
+        "reason": "EXACT_AMBIENT_CANCELLATION",
+        "plan": {
+          "prime": 257,
+          "degree": 2,
+          "reduced_degree": 2,
+          "cyclic_rank_bound": 2,
+          "uniform_parameter": 3,
+          "pilot_source_count": 12,
+          "bank_source_count": 12,
+          "source_labels_cap": 24,
+          "failure_bits": 20,
+          "recommended_kernel_trial_cap": 671088640,
+          "kernel_trial_cap": 32768,
+          "recommended_cap_met": false,
+          "pilot_incompleteness_bound": {
+            "numerator": 1,
+            "denominator": 321789003321767195342143744
+          },
+          "iid_bad_bank_bound": {
+            "numerator": 83022895403173887965703310337,
+            "denominator": 47487675120085697839052100785414680627675922432
+          },
+          "kernel_exhaustion_bound": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "auxiliary_arithmetic_abort_bound": {
+            "numerator": 135179469177803213758873267955579147805295,
+            "denominator": 376197978307945821554667412533990917710773485568
+          },
+          "episode_abort_bound": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "arithmetic_budget": {
+            "attempt_cap": 32768,
+            "failure_bits": 20,
+            "kernel_uniform_call_cap": 393216,
+            "root_call_cap": 12,
+            "root_split_attempt_cap": 78,
+            "root_split_trial_cap": 936,
+            "root_uniform_call_cap": 1872,
+            "uniform_call_cap": 395088,
+            "integer_rejection_cap": 40,
+            "bit_draw_cap": 15803520,
+            "random_bit_cap": 142231680,
+            "root_abort_upper": {
+              "numerator": 1208925819614629174706176,
+              "denominator": 5474401089420219382077155933569751763
+            },
+            "bit_abort_upper": {
+              "numerator": 24693,
+              "denominator": 68719476736
+            },
+            "auxiliary_abort_upper": {
+              "numerator": 135179469177803213758873267955579147805295,
+              "denominator": 376197978307945821554667412533990917710773485568
+            },
+            "attempt_exhaustion_included": false,
+            "iid_fair_bits_required": true
+          },
+          "projective_moments": {
+            "p": 257,
+            "d": 2,
+            "rank_bound": 2,
+            "width": 12,
+            "h": 128,
+            "S": 19342813113834066795298816,
+            "D": 151115727451828646838272,
+            "mu": {
+              "numerator": 151115727451828646838272,
+              "denominator": 66049
+            },
+            "variance": {
+              "numerator": 9980891566738378466374189056,
+              "denominator": 4362470401
+            },
+            "bad_bank_upper": {
+              "numerator": 83022895403173887965703310337,
+              "denominator": 47487675120085697839052100785414680627675922432
+            },
+            "good_bank_kernel_power_density_lower": {
+              "numerator": 9671406556917033397649408,
+              "denominator": 83022819845310162051379891201
+            },
+            "weaker_density_lower": {
+              "numerator": 1,
+              "denominator": 33554432
+            },
+            "rank_zero_kernel_power_density": null,
+            "rank_zero_deterministic": false,
+            "require_nonzero": true,
+            "iid_uniform_columns_required": true,
+            "iid_uniform_columns_verified": false,
+            "supplied_prime_verified_by_this_api": false,
+            "arbitrary_fixed_bank_guarantee": false,
+            "fixed_bank_repetitions_repair_bad_banks": false
+          },
+          "field_threshold": 144,
+          "large_field_guard_satisfied": true,
+          "fresh_iid_source_required": true,
+          "iid_fair_bits_required": true,
+          "hidden_support_certified": false,
+          "quantum_receiver_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 12,
+            "ambient_columns": [
+              [
+                8481,
+                6481283
+              ],
+              [
+                27499,
+                9142261
+              ],
+              [
+                4112,
+                15525627
+              ],
+              [
+                52942,
+                15244212
+              ],
+              [
+                31868,
+                8882434
+              ],
+              [
+                7453,
+                14868478
+              ],
+              [
+                51914,
+                7977794
+              ],
+              [
+                3855,
+                13081557
+              ],
+              [
+                1028,
+                10700966
+              ],
+              [
+                62708,
+                12942263
+              ],
+              [
+                53199,
+                15376567
+              ],
+              [
+                24929,
+                9932279
+              ]
+            ]
+          },
+          {
+            "stage": "bank",
+            "count": 12,
+            "ambient_columns": [
+              [
+                65278,
+                15983087
+              ],
+              [
+                28270,
+                11058453
+              ],
+              [
+                51143,
+                5929504
+              ],
+              [
+                51143,
+                15176364
+              ],
+              [
+                32639,
+                9939989
+              ],
+              [
+                37522,
+                11794244
+              ],
+              [
+                16705,
+                6159262
+              ],
+              [
+                65278,
+                1518356
+              ],
+              [
+                6939,
+                12622298
+              ],
+              [
+                21845,
+                15477311
+              ],
+              [
+                56283,
+                1971704
+              ],
+              [
+                26728,
+                14755655
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                62191
+              ],
+              [
+                43029
+              ],
+              [
+                23072
+              ],
+              [
+                59052
+              ],
+              [
+                38677
+              ],
+              [
+                45892
+              ],
+              [
+                23966
+              ],
+              [
+                5908
+              ],
+              [
+                49114
+              ],
+              [
+                60223
+              ],
+              [
+                7672
+              ],
+              [
+                57415
+              ]
+            ]
+          }
+        ],
+        "source_labels_consumed": 24,
+        "quantum_receiver_implemented": false,
+        "hidden_support_completeness_certified": false,
+        "physical_iid_source_certified": false,
+        "normal_form_clock_certified": false,
+        "frame": {
+          "prime": 257,
+          "ambient_exponents": [
+            2,
+            3
+          ],
+          "pilot_columns": [
+            [
+              8481,
+              6481283
+            ],
+            [
+              27499,
+              9142261
+            ],
+            [
+              4112,
+              15525627
+            ],
+            [
+              52942,
+              15244212
+            ],
+            [
+              31868,
+              8882434
+            ],
+            [
+              7453,
+              14868478
+            ],
+            [
+              51914,
+              7977794
+            ],
+            [
+              3855,
+              13081557
+            ],
+            [
+              1028,
+              10700966
+            ],
+            [
+              62708,
+              12942263
+            ],
+            [
+              53199,
+              15376567
+            ],
+            [
+              24929,
+              9932279
+            ]
+          ],
+          "lattice_basis": [
+            [
+              257,
+              0
+            ],
+            [
+              257,
+              66049
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              -23274709906,
+              3597
+            ],
+            [
+              -69209398552,
+              10696
+            ],
+            [
+              181260619571,
+              -28013
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              257,
+              0,
+              33,
+              107,
+              16,
+              206,
+              124,
+              29,
+              202,
+              15,
+              4,
+              244,
+              207,
+              97
+            ],
+            [
+              -1,
+              257,
+              98,
+              138,
+              235,
+              230,
+              134,
+              225,
+              120,
+              198,
+              162,
+              195,
+              232,
+              150
+            ]
+          ],
+          "relation_matrix": [
+            [
+              257,
+              0
+            ],
+            [
+              -1,
+              257
+            ]
+          ],
+          "smith_left": [
+            [
+              0,
+              -1
+            ],
+            [
+              1,
+              257
+            ]
+          ],
+          "smith_right": [
+            [
+              1,
+              257
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "smith_orders": [
+            1,
+            66049
+          ],
+          "intrinsic_exponents": [
+            2
+          ],
+          "subgroup_order": 66049,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "intrinsic_run": {
+          "status": "VERIFIED_UNIT_MODULE_WITNESS",
+          "reason": "EXACT_MIXED_ORDER_CANCELLATION",
+          "original_degree": 2,
+          "reduced_degree": 2,
+          "bezout_exponent": 1,
+          "intrinsic_cyclic_rank": 1,
+          "residue_rank": 1,
+          "bank_columns": [
+            [
+              62191
+            ],
+            [
+              43029
+            ],
+            [
+              23072
+            ],
+            [
+              59052
+            ],
+            [
+              38677
+            ],
+            [
+              45892
+            ],
+            [
+              23966
+            ],
+            [
+              5908
+            ],
+            [
+              49114
+            ],
+            [
+              60223
+            ],
+            [
+              7672
+            ],
+            [
+              57415
+            ]
+          ],
+          "exponents": [
+            2
+          ],
+          "scales": [
+            64613,
+            191,
+            132,
+            127,
+            33,
+            146,
+            224,
+            150,
+            112,
+            97,
+            228,
+            99
+          ],
+          "labels_resampled": false,
+          "quantum_receiver_implemented": false,
+          "source_law_certified": false,
+          "field_run": {
+            "status": "VERIFIED",
+            "reason": "EXACT_POWER_KERNEL",
+            "weights": [
+              106,
+              191,
+              132,
+              127,
+              33,
+              146,
+              224,
+              150,
+              112,
+              97,
+              228,
+              99
+            ],
+            "power_vector": [
+              185,
+              244,
+              205,
+              195,
+              61,
+              242,
+              61,
+              141,
+              208,
+              157,
+              70,
+              35
+            ],
+            "p": 257,
+            "d": 2,
+            "columns": [
+              [
+                254
+              ],
+              [
+                110
+              ],
+              [
+                199
+              ],
+              [
+                199
+              ],
+              [
+                127
+              ],
+              [
+                146
+              ],
+              [
+                65
+              ],
+              [
+                254
+              ],
+              [
+                27
+              ],
+              [
+                85
+              ],
+              [
+                219
+              ],
+              [
+                104
+              ]
+            ],
+            "rank": 1,
+            "require_nonzero": true,
+            "rank_bound": 1,
+            "kernel_dimension": 11,
+            "budget": {
+              "attempt_cap": 32768,
+              "failure_bits": 20,
+              "kernel_uniform_call_cap": 393216,
+              "root_call_cap": 12,
+              "root_split_attempt_cap": 78,
+              "root_split_trial_cap": 936,
+              "root_uniform_call_cap": 1872,
+              "uniform_call_cap": 395088,
+              "integer_rejection_cap": 40,
+              "bit_draw_cap": 15803520,
+              "random_bit_cap": 142231680,
+              "root_abort_upper": {
+                "numerator": 1208925819614629174706176,
+                "denominator": 5474401089420219382077155933569751763
+              },
+              "bit_abort_upper": {
+                "numerator": 24693,
+                "denominator": 68719476736
+              },
+              "auxiliary_abort_upper": {
+                "numerator": 135179469177803213758873267955579147805295,
+                "denominator": 376197978307945821554667412533990917710773485568
+              },
+              "attempt_exhaustion_included": false,
+              "iid_fair_bits_required": true
+            },
+            "attempts": 3051,
+            "completed_kernel_draws": 3051,
+            "zero_rejections": 0,
+            "zero_coordinate_rejections": 129,
+            "nonpower_rejections": 2921,
+            "kernel_uniform_calls": 33561,
+            "root_uniform_calls": 32,
+            "root_calls": 12,
+            "root_split_trials": 16,
+            "root_proper_splits": 12,
+            "root_split_counts_complete": true,
+            "exact_verified": true,
+            "input_labels_resampled": false,
+            "field_enumeration_used": false,
+            "iid_uniform_columns_verified": false,
+            "iid_fair_bits_verified": false,
+            "supplied_prime_verified_by_this_api": false,
+            "prime_validation_locally_clocked": false,
+            "arbitrary_fixed_bank_success_bound": null,
+            "quantum_receiver_implemented": false,
+            "hsp_claim": false,
+            "speedup_claim": false,
+            "uniform_calls": 33593,
+            "bit_draws": 67200,
+            "random_bits": 604800
+          },
+          "field_witness_original_degree": [
+            106,
+            191,
+            132,
+            127,
+            33,
+            146,
+            224,
+            150,
+            112,
+            97,
+            228,
+            99
+          ],
+          "lift": {
+            "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+            "scales": [
+              64613,
+              191,
+              132,
+              127,
+              33,
+              146,
+              224,
+              150,
+              112,
+              97,
+              228,
+              99
+            ],
+            "jacobian_rank": 1,
+            "cyclic_rank": 1,
+            "singularity_is_unsatisfiability": false,
+            "original_module_verified": true,
+            "pivot_indices": [
+              0
+            ],
+            "lift_steps": 1
+          }
+        },
+        "zero_rank_branch": false,
+        "selected_request_indices": [
+          1
+        ],
+        "selected_ambient_columns": [
+          [
+            65278,
+            15983087
+          ],
+          [
+            28270,
+            11058453
+          ],
+          [
+            51143,
+            5929504
+          ],
+          [
+            51143,
+            15176364
+          ],
+          [
+            32639,
+            9939989
+          ],
+          [
+            37522,
+            11794244
+          ],
+          [
+            16705,
+            6159262
+          ],
+          [
+            65278,
+            1518356
+          ],
+          [
+            6939,
+            12622298
+          ],
+          [
+            21845,
+            15477311
+          ],
+          [
+            56283,
+            1971704
+          ],
+          [
+            26728,
+            14755655
+          ]
+        ],
+        "scales": [
+          64613,
+          191,
+          132,
+          127,
+          33,
+          146,
+          224,
+          150,
+          112,
+          97,
+          228,
+          99
+        ],
+        "original_ambient_verified": true
+      }
+    }
+  ],
+  "source_sha256": {
+    "theorems/unit_power_module.py": "8d065e0821c8e27f8a60ff04a63f0c79e103fb89d5b286c80f18bff3b27d1022",
+    "theorems/random_column_power_sde.py": "57fd2257151cd5e2feed42384f68db01c25752264b35e18416754c27676bf5ed",
+    "theorems/pilot_submodule.py": "b12a5ba275d150a5b908cb0660f66779ad3347078fc11600bff439074c606626",
+    "theorems/prime_power_rees_descent.py": "7774d759e3637b883dea66cbfd1341a72712440f1be328c74e73d1a0f3c63d27",
+    "theorems/bounded_power_roots.py": "376b8f4d57a7e56dcb2a13203c917323c05dfea700f559c1b1c759a2ebc7c849",
+    "theorems/power_sde_budget.py": "b27a39422252828609bdd47388b6241280f8569644d042a775b7af0ca0ec87b2",
+    "research/UNIT_POWER_MODULE_CANCELLATION.md": "5badda187f1d16d31e34c92fda179e6a7bb1742febd42f5f5be5e645748e5985"
+  },
+  "tree": {
+    "status": "CONDITIONAL_MIXED_ORDER_SOURCE_TREE_NOT_HSP_BOUND",
+    "raw_arity_per_grade": 24,
+    "leaves_per_output_tree": 576,
+    "failure_bits_per_node": 16,
+    "stages": [
+      {
+        "grade": 2,
+        "nodes": 1,
+        "plan": {
+          "prime": 1009,
+          "degree": 2,
+          "reduced_degree": 2,
+          "cyclic_rank_bound": 2,
+          "uniform_parameter": 3,
+          "pilot_source_count": 12,
+          "bank_source_count": 12,
+          "source_labels_cap": 24,
+          "failure_bits": 16,
+          "recommended_kernel_trial_cap": 536870912,
+          "kernel_trial_cap": 536870912,
+          "recommended_cap_met": true,
+          "pilot_incompleteness_bound": {
+            "numerator": 1,
+            "denominator": 1102483743784946719318217767796208
+          },
+          "iid_bad_bank_bound": {
+            "numerator": 1113509941462002714775544850736525633,
+            "denominator": 145742955389190403559424803368165427546275637883280583294976
+          },
+          "kernel_exhaustion_bound": {
+            "numerator": 1,
+            "denominator": 65536
+          },
+          "auxiliary_arithmetic_abort_bound": {
+            "numerator": 4147772958261720656108424324537981158953,
+            "denominator": 724872055011443455194423144685499800986058752
+          },
+          "episode_abort_bound": {
+            "numerator": 32890831254063072320160334826562630235535432352441561587944250115042526282947535,
+            "denominator": 1567658493711907099833014762340797918561363145063090741598437426943222924938508763136
+          },
+          "arithmetic_budget": {
+            "attempt_cap": 536870912,
+            "failure_bits": 16,
+            "kernel_uniform_call_cap": 6442450944,
+            "root_call_cap": 12,
+            "root_split_attempt_cap": 66,
+            "root_split_trial_cap": 792,
+            "root_uniform_call_cap": 1584,
+            "uniform_call_cap": 6442452528,
+            "integer_rejection_cap": 50,
+            "bit_draw_cap": 322122626400,
+            "random_bit_cap": 3221226264000,
+            "root_abort_upper": {
+              "numerator": 295147905179352825856,
+              "denominator": 10301051460877537453973547267843
+            },
+            "bit_abort_upper": {
+              "numerator": 402653283,
+              "denominator": 70368744177664
+            },
+            "auxiliary_abort_upper": {
+              "numerator": 4147772958261720656108424324537981158953,
+              "denominator": 724872055011443455194423144685499800986058752
+            },
+            "attempt_exhaustion_included": false,
+            "iid_fair_bits_required": true
+          },
+          "projective_moments": {
+            "p": 1009,
+            "d": 2,
+            "rank_bound": 2,
+            "width": 12,
+            "h": 504,
+            "S": 268637376395543538746286686601216,
+            "D": 533010667451475275290251362304,
+            "mu": {
+              "numerator": 533010667451475275290251362304,
+              "denominator": 1018081
+            },
+            "variance": {
+              "numerator": 542647500318997948267499106934456320,
+              "denominator": 1036488922561
+            },
+            "bad_bank_upper": {
+              "numerator": 1113509941462002714775544850736525633,
+              "denominator": 145742955389190403559424803368165427546275637883280583294976
+            },
+            "good_bank_kernel_power_density_lower": {
+              "numerator": 134318688197771769373143343300608,
+              "denominator": 1113509674956668989037907205610844481
+            },
+            "weaker_density_lower": {
+              "numerator": 1,
+              "denominator": 33554432
+            },
+            "rank_zero_kernel_power_density": null,
+            "rank_zero_deterministic": false,
+            "require_nonzero": true,
+            "iid_uniform_columns_required": true,
+            "iid_uniform_columns_verified": false,
+            "supplied_prime_verified_by_this_api": false,
+            "arbitrary_fixed_bank_guarantee": false,
+            "fixed_bank_repetitions_repair_bad_banks": false
+          },
+          "field_threshold": 144,
+          "large_field_guard_satisfied": true,
+          "fresh_iid_source_required": true,
+          "iid_fair_bits_required": true,
+          "hidden_support_certified": false,
+          "quantum_receiver_implemented": false
+        }
+      },
+      {
+        "grade": 3,
+        "nodes": 24,
+        "plan": {
+          "prime": 1009,
+          "degree": 3,
+          "reduced_degree": 3,
+          "cyclic_rank_bound": 2,
+          "uniform_parameter": 3,
+          "pilot_source_count": 12,
+          "bank_source_count": 12,
+          "source_labels_cap": 24,
+          "failure_bits": 16,
+          "recommended_kernel_trial_cap": 69657034752,
+          "kernel_trial_cap": 69657034752,
+          "recommended_cap_met": true,
+          "pilot_incompleteness_bound": {
+            "numerator": 1,
+            "denominator": 1102483743784946719318217767796208
+          },
+          "iid_bad_bank_bound": {
+            "numerator": 1113509678037742467393796280205488449,
+            "denominator": 1684937213935668944377844373870304298773179937481067331584
+          },
+          "kernel_exhaustion_bound": {
+            "numerator": 1,
+            "denominator": 65536
+          },
+          "auxiliary_arithmetic_abort_bound": {
+            "numerator": 29060483576805183370478024126682932356713853,
+            "denominator": 5010315644239097162303852776066174624415638093824
+          },
+          "episode_abort_bound": {
+            "numerator": 228187195585647252543713743259466752830014957749094615467968823636664320784873353947,
+            "denominator": 10835655508536701874045798037299595213096142058676083205928399495031556857174972570796032
+          },
+          "arithmetic_budget": {
+            "attempt_cap": 69657034752,
+            "failure_bits": 16,
+            "kernel_uniform_call_cap": 835884417024,
+            "root_call_cap": 12,
+            "root_split_attempt_cap": 69,
+            "root_split_trial_cap": 1656,
+            "root_uniform_call_cap": 4968,
+            "uniform_call_cap": 835884421992,
+            "integer_rejection_cap": 57,
+            "bit_draw_cap": 47645412053544,
+            "random_bit_cap": 476454120535440,
+            "root_abort_upper": {
+              "numerator": 4722366482869645213696,
+              "denominator": 278128389443693511257285776231761
+            },
+            "bit_abort_upper": {
+              "numerator": 104485552749,
+              "denominator": 18014398509481984
+            },
+            "auxiliary_abort_upper": {
+              "numerator": 29060483576805183370478024126682932356713853,
+              "denominator": 5010315644239097162303852776066174624415638093824
+            },
+            "attempt_exhaustion_included": false,
+            "iid_fair_bits_required": true
+          },
+          "projective_moments": {
+            "p": 1009,
+            "d": 3,
+            "rank_bound": 2,
+            "width": 12,
+            "h": 336,
+            "S": 2070481377455157458127600746496,
+            "D": 6162146956711778149189287936,
+            "mu": {
+              "numerator": 6162146956711778149189287936,
+              "denominator": 1018081
+            },
+            "variance": {
+              "numerator": 6273558573689127098126630261882880,
+              "denominator": 1036488922561
+            },
+            "bad_bank_upper": {
+              "numerator": 1113509678037742467393796280205488449,
+              "denominator": 1684937213935668944377844373870304298773179937481067331584
+            },
+            "good_bank_kernel_power_density_lower": {
+              "numerator": 1035240688727578729063800373248,
+              "denominator": 1113509674956668989037907205610844481
+            },
+            "weaker_density_lower": {
+              "numerator": 1,
+              "denominator": 4353564672
+            },
+            "rank_zero_kernel_power_density": null,
+            "rank_zero_deterministic": false,
+            "require_nonzero": true,
+            "iid_uniform_columns_required": true,
+            "iid_uniform_columns_verified": false,
+            "supplied_prime_verified_by_this_api": false,
+            "arbitrary_fixed_bank_guarantee": false,
+            "fixed_bank_repetitions_repair_bad_banks": false
+          },
+          "field_threshold": 144,
+          "large_field_guard_satisfied": true,
+          "fresh_iid_source_required": true,
+          "iid_fair_bits_required": true,
+          "hidden_support_certified": false,
+          "quantum_receiver_implemented": false
+        }
+      }
+    ],
+    "bank_and_pilot_failure_bound": {
+      "numerator": 592049755351916215987703433629346952247857,
+      "denominator": 37310196579632743311212749662250349451846563298119829323513856
+    },
+    "tree_abort_bound": {
+      "numerator": 237659754986817417371919919689516790337849162266597785205296767669796568354362244027,
+      "denominator": 451485646189029244751908251554149800545672585778170133580349978959648202382290523783168
+    },
+    "classical_kernel_trial_cap": 1672305704960,
+    "discarded_pilots_charged": true,
+    "pointwise_source_composition_required": true,
+    "original_oracle_queries_included": false,
+    "quantum_receiver_implemented": false,
+    "all_prime_ring_hsp_bound": false,
+    "complete_quantum_error_accounting_included": false,
+    "class_bounded_by_derived_cyclic_rank": false,
+    "novelty_established": false
+  },
+  "quantum_receiver_implemented": false,
+  "iid_source_certified": false,
+  "all_prime_ring_hsp_bound": false,
+  "speedup_claim_allowed": false,
+  "candidate_promotion": false,
+  "proof_promotion": false
+}

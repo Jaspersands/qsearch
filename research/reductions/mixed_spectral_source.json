@@ -1,0 +1,427 @@
+{
+  "schema": "mixed_spectral_source_v1",
+  "status": "CONDITIONAL_REDUCTION_FINITE_CONTROLS_ONLY",
+  "cases": [
+    {
+      "name": "nonflat_full_support",
+      "spectrum": [
+        {
+          "numerator": 1,
+          "denominator": 2
+        },
+        {
+          "numerator": 1,
+          "denominator": 3
+        },
+        {
+          "numerator": 1,
+          "denominator": 6
+        }
+      ],
+      "cyclic_action_on_first_three_levels": true,
+      "actual_nonidentity_trace_gap": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "supplied_trace_gap": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "width": {
+        "numerator": 1,
+        "denominator": 384
+      },
+      "spectral_margin": {
+        "numerator": 1,
+        "denominator": 786432
+      },
+      "offset": 256,
+      "profile": {
+        "known_spectrum_reference_only": true,
+        "distinct_flags": [
+          {
+            "threshold_index": 0,
+            "threshold": {
+              "numerator": 1,
+              "denominator": 256
+            },
+            "rank": 3
+          },
+          {
+            "threshold_index": 63,
+            "threshold": {
+              "numerator": 43,
+              "denominator": 256
+            },
+            "rank": 2
+          },
+          {
+            "threshold_index": 127,
+            "threshold": {
+              "numerator": 257,
+              "denominator": 768
+            },
+            "rank": 1
+          }
+        ],
+        "rounded_eigenvalues": [
+          {
+            "numerator": 191,
+            "denominator": 384
+          },
+          {
+            "numerator": 127,
+            "denominator": 384
+          },
+          {
+            "numerator": 21,
+            "denominator": 128
+          }
+        ],
+        "trace_residual": {
+          "numerator": 1,
+          "denominator": 128
+        },
+        "trace_rounded": {
+          "numerator": 127,
+          "denominator": 128
+        },
+        "good_offset": true,
+        "physical_registers_per_flag_product": 6
+      },
+      "bad_offset_count": 1,
+      "offset_count": 512,
+      "bad_offset_bound": {
+        "numerator": 3,
+        "denominator": 512
+      },
+      "flag_stabilizer_from_known_diagonal_reference": [
+        0
+      ],
+      "whole_support_wedge_stabilizer": [
+        0,
+        1,
+        2
+      ],
+      "joint_overlap_gap_bound": {
+        "numerator": 1,
+        "denominator": 512
+      },
+      "single_product_preparation_caps": {
+        "distinct_flag_ranks": [
+          3,
+          2,
+          1
+        ],
+        "output_products": 1,
+        "growth_tail_bits": 8,
+        "growth_attempts_per_component": [
+          9216,
+          6144,
+          0
+        ],
+        "growth_attempt_cap": 15360,
+        "filtered_inputs_cap": 15363,
+        "filter_trials_per_input": 6912,
+        "filter_target_copy_cap": 106189056,
+        "controlled_original_actions_per_product": 6,
+        "growth_abort_bound": {
+          "numerator": 5,
+          "denominator": 256
+        },
+        "filter_abort_bound": {
+          "numerator": 15363,
+          "denominator": 262144
+        },
+        "dme_program_copies_included": false,
+        "quantum_preparer_implemented": false
+      }
+    },
+    {
+      "name": "unresolved_tiny_internal_gap",
+      "spectrum": [
+        {
+          "numerator": 1,
+          "denominator": 2
+        },
+        {
+          "numerator": 302231454903657293676545,
+          "denominator": 1208925819614629174706176
+        },
+        {
+          "numerator": 302231454903657293676543,
+          "denominator": 1208925819614629174706176
+        }
+      ],
+      "cyclic_action_on_first_three_levels": true,
+      "actual_nonidentity_trace_gap": {
+        "numerator": 302231454903657293676545,
+        "denominator": 1208925819614629174706176
+      },
+      "supplied_trace_gap": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "width": {
+        "numerator": 1,
+        "denominator": 384
+      },
+      "spectral_margin": {
+        "numerator": 1,
+        "denominator": 786432
+      },
+      "offset": 256,
+      "profile": {
+        "known_spectrum_reference_only": true,
+        "distinct_flags": [
+          {
+            "threshold_index": 0,
+            "threshold": {
+              "numerator": 1,
+              "denominator": 256
+            },
+            "rank": 3
+          },
+          {
+            "threshold_index": 95,
+            "threshold": {
+              "numerator": 193,
+              "denominator": 768
+            },
+            "rank": 1
+          }
+        ],
+        "rounded_eigenvalues": [
+          {
+            "numerator": 191,
+            "denominator": 384
+          },
+          {
+            "numerator": 95,
+            "denominator": 384
+          },
+          {
+            "numerator": 95,
+            "denominator": 384
+          }
+        ],
+        "trace_residual": {
+          "numerator": 1,
+          "denominator": 128
+        },
+        "trace_rounded": {
+          "numerator": 127,
+          "denominator": 128
+        },
+        "good_offset": true,
+        "physical_registers_per_flag_product": 4
+      },
+      "bad_offset_count": 1,
+      "offset_count": 512,
+      "bad_offset_bound": {
+        "numerator": 3,
+        "denominator": 512
+      },
+      "flag_stabilizer_from_known_diagonal_reference": [
+        0
+      ],
+      "whole_support_wedge_stabilizer": [
+        0,
+        1,
+        2
+      ],
+      "joint_overlap_gap_bound": {
+        "numerator": 1,
+        "denominator": 512
+      },
+      "single_product_preparation_caps": {
+        "distinct_flag_ranks": [
+          3,
+          1
+        ],
+        "output_products": 1,
+        "growth_tail_bits": 7,
+        "growth_attempts_per_component": [
+          8064,
+          0
+        ],
+        "growth_attempt_cap": 8064,
+        "filtered_inputs_cap": 8066,
+        "filter_trials_per_input": 6528,
+        "filter_target_copy_cap": 52654848,
+        "controlled_original_actions_per_product": 4,
+        "growth_abort_bound": {
+          "numerator": 3,
+          "denominator": 128
+        },
+        "filter_abort_bound": {
+          "numerator": 4033,
+          "denominator": 65536
+        },
+        "dme_program_copies_included": false,
+        "quantum_preparer_implemented": false
+      }
+    },
+    {
+      "name": "unresolved_tiny_tail",
+      "spectrum": [
+        {
+          "numerator": 1,
+          "denominator": 2
+        },
+        {
+          "numerator": 1,
+          "denominator": 3
+        },
+        {
+          "numerator": 604462909807314587353085,
+          "denominator": 3626777458843887524118528
+        },
+        {
+          "numerator": 1,
+          "denominator": 1208925819614629174706176
+        }
+      ],
+      "cyclic_action_on_first_three_levels": true,
+      "actual_nonidentity_trace_gap": {
+        "numerator": 1208925819614629174706179,
+        "denominator": 3626777458843887524118528
+      },
+      "supplied_trace_gap": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "width": {
+        "numerator": 1,
+        "denominator": 512
+      },
+      "spectral_margin": {
+        "numerator": 1,
+        "denominator": 1048576
+      },
+      "offset": 256,
+      "profile": {
+        "known_spectrum_reference_only": true,
+        "distinct_flags": [
+          {
+            "threshold_index": 0,
+            "threshold": {
+              "numerator": 3,
+              "denominator": 1024
+            },
+            "rank": 3
+          },
+          {
+            "threshold_index": 84,
+            "threshold": {
+              "numerator": 171,
+              "denominator": 1024
+            },
+            "rank": 2
+          },
+          {
+            "threshold_index": 170,
+            "threshold": {
+              "numerator": 343,
+              "denominator": 1024
+            },
+            "rank": 1
+          }
+        ],
+        "rounded_eigenvalues": [
+          {
+            "numerator": 255,
+            "denominator": 512
+          },
+          {
+            "numerator": 85,
+            "denominator": 256
+          },
+          {
+            "numerator": 21,
+            "denominator": 128
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "trace_residual": {
+          "numerator": 3,
+          "denominator": 512
+        },
+        "trace_rounded": {
+          "numerator": 509,
+          "denominator": 512
+        },
+        "good_offset": true,
+        "physical_registers_per_flag_product": 6
+      },
+      "bad_offset_count": 1,
+      "offset_count": 512,
+      "bad_offset_bound": {
+        "numerator": 1,
+        "denominator": 128
+      },
+      "flag_stabilizer_from_known_diagonal_reference": [
+        0
+      ],
+      "whole_support_wedge_stabilizer": [
+        0,
+        1,
+        2
+      ],
+      "joint_overlap_gap_bound": {
+        "numerator": 1,
+        "denominator": 512
+      },
+      "single_product_preparation_caps": {
+        "distinct_flag_ranks": [
+          3,
+          2,
+          1
+        ],
+        "output_products": 1,
+        "growth_tail_bits": 8,
+        "growth_attempts_per_component": [
+          12288,
+          8192,
+          0
+        ],
+        "growth_attempt_cap": 20480,
+        "filtered_inputs_cap": 20483,
+        "filter_trials_per_input": 9728,
+        "filter_target_copy_cap": 199258624,
+        "controlled_original_actions_per_product": 6,
+        "growth_abort_bound": {
+          "numerator": 5,
+          "denominator": 256
+        },
+        "filter_abort_bound": {
+          "numerator": 20483,
+          "denominator": 524288
+        },
+        "dme_program_copies_included": false,
+        "quantum_preparer_implemented": false
+      }
+    }
+  ],
+  "exact_spectra_supplied_only_to_reference": true,
+  "quantum_rank_acquisition_implemented": false,
+  "quantum_spectral_filter_implemented": false,
+  "total_raw_copy_budget_implemented": false,
+  "dme_program_copy_bound_in_research_note": true,
+  "end_to_end_quantum_execution": false,
+  "novelty_established": false,
+  "natural_hard_family_established": false,
+  "speedup_claim_allowed": false,
+  "source_sha256": {
+    "theorems/mixed_spectral_source.py": "761e1716ffd8bd1613bcc2af9057163ca11157e99e3d316801692f654ecaf81e",
+    "tests/test_mixed_spectral_source.py": "161ded47d5fe4e649d10bae4329027c29b2461bc55f26a69016a316dee187751",
+    "research/REES_MIXED_SPECTRAL_SOURCE.md": "376c47b3468aa7bcdda1494f3296c442c58c13d7cfa108f51b070af1bf8060a5",
+    "theorems/copy_spectral_reference.py": "d4002483854c56f2d8160abf938ed56ba225baf8f2c5ddbfaa27337294f2dc9f",
+    "tests/test_copy_spectral_reference.py": "15c2c62e8c2c8874fa2a4e66092d225c4123ca1984e9918592b59344c5a82202",
+    "qsearch_cli/commands/rees.py": "bf961113441a690ff919284f13dda22710ff6c58b618fac06212b5ece774baa4",
+    "tests/test_cli_parser_integrity.py": "3963ba588fc75da8764549e65719aa81e48c9610bd0a863b390eb02522eb9a28"
+  }
+}

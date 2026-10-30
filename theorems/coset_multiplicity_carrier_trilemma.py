@@ -1,38 +1,38 @@
-"""Theorem module: Non-Abelian Coset Multiplicity-Carrier Decoupling Trilemma & Racah Recoupling Obstruction.
+"""Scoped coset identities and constructive access; broad trilemma retracted.
 
-Proves the fundamental trilemma facing non-abelian hidden subgroup and code equivalence algorithms:
-1. Commutant zero-information identity:
-   Tr(E_y sigma_h) = Tr(E_y sigma_{xhx^-1}) for all E_y in End_{S_n}(V^k).
-   Mutual information I(h : M_commutant) = 0.0 bits identically across all conjugacy classes.
-2. Carrier non-commutation obstruction:
-   On V^3, [K_12, K_23]_{(0,0,0),(0,0,1)} = n for all n >= 3, ruling out simultaneous
-   diagonalization of pairwise Kronecker coupling class sums.
-3. Factorial multiplicity dimension explosion:
-   dim(Commutant(V^k)) = (1/n!) sum_{g in S_n} (fix(g) - 1)^{2k} = 2^Omega(n log n) for k >= n,
-   forcing exponential quantum circuit complexity for general Racah 6j associators.
+Invariant POVM effects cannot distinguish a conjugacy orbit. Noncommuting
+pair sums cannot share an eigenbasis. Neither statement nor an exponential
+commutant dimension proves an exponential circuit lower bound. Finite
+physical controls here are not an HSP receiver or a new speedup.
 """
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
+import hashlib
 import json
 import math
-from itertools import permutations
+from itertools import combinations, product
 from pathlib import Path
 from typing import Any, Dict, List, Sequence, Tuple
 
 import numpy as np
-from sympy.combinatorics import Permutation
-
 ROOT = Path(__file__).resolve().parents[1]
 DERIVATION = ROOT / "research/COSET_MULTIPLICITY_CARRIER_TRILEMMA.md"
 REPORT = ROOT / "research/representation/coset_multiplicity_carrier_trilemma.json"
-REGISTRY = ROOT / "research/registry/negative_results.json"
-
 NEGATIVE_RESULT_ID = "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA"
 
 
+def _integer(value: int, name: str, low: int, high: int) -> None:
+    if isinstance(value, bool) or not isinstance(value, int) or not low <= value <= high:
+        raise ValueError(f"{name} must be an integer in [{low}, {high}]")
+
+
 def standard_rep_matrix(perm: Tuple[int, ...], n: int) -> np.ndarray:
-    """Standard representation of S_n on basis v_i = e_i - e_{n-1} for i=0..n-2."""
+    """Exact NONORTHONORMAL coordinates; not physical computational amplitudes."""
+    _integer(n, "permutation degree", 2, 256)
+    if sorted(perm) != list(range(n)):
+        raise ValueError("invalid permutation")
     dim = n - 1
     matrix = np.zeros((dim, dim), dtype=np.int64)
     for col in range(dim):
@@ -47,8 +47,7 @@ def standard_rep_matrix(perm: Tuple[int, ...], n: int) -> np.ndarray:
 
 def verify_three_copy_commutator(n: int) -> Dict[str, Any]:
     """Verify exact closed-form commutator entry [K_12, K_23]_{(0,0,0),(0,0,1)} = n."""
-    if n < 3:
-        raise ValueError("n must be at least 3")
+    _integer(n, "bounded commutator control", 3, 12)
     dim = n - 1
     dim2 = dim * dim
 
@@ -87,60 +86,87 @@ def verify_three_copy_commutator(n: int) -> Dict[str, Any]:
         "theoretical_witness_entry": n,
         "entry_matches_closed_form": val == n,
         "is_strictly_noncommuting": val != 0,
+        "basis": "NONORTHONORMAL_DIFFERENCE_COORDINATES",
+        "mode": "EXACT_BOUNDED_MATRIX_CONTROL",
+        "general_circuit_lower_bound": False,
     }
 
 
+def orthonormal_standard_matrix(perm: Tuple[int, ...], n: int) -> np.ndarray:
+    """Bounded physical standard representation in the Helmert basis."""
+    _integer(n, "bounded physical representation", 3, 8)
+    if sorted(perm) != list(range(n)):
+        raise ValueError("invalid permutation")
+    basis = np.zeros((n, n-1))
+    for j in range(n-1):
+        denominator = math.sqrt((j+1)*(j+2))
+        basis[:j+1, j] = 1/denominator
+        basis[j+1, j] = -(j+1)/denominator
+    permutation = np.zeros((n, n))
+    permutation[list(perm), np.arange(n)] = 1
+    return basis.T @ permutation @ basis
+
+
 def verify_commutant_zero_information(n: int) -> Dict[str, Any]:
-    """Verify that commutant observables have identically zero mutual information with hidden conjugacy elements."""
-    all_perms = list(permutations(range(n)))
-    n_fact = len(all_perms)
+    """Actual two-copy conditional coset states and a binary invariant POVM.
+
+    rho_h=(I+V(h))/(2(n-2)) is the normalized standard-irrep column state
+    for a transposition subgroup. Conditioning on this irrep is explicit;
+    the experiment does not assume it has significant natural source mass.
+    """
+    _integer(n, "bounded Born-probability control", 3, 8)
     dim = n - 1
-
-    # Involutions: all transpositions (i, j)
-    transpositions = []
-    for i in range(n):
-        for j in range(i + 1, n):
-            p = list(range(n))
-            p[i], p[j] = p[j], p[i]
-            transpositions.append(tuple(p))
-
-    # Commutant generator: average over group sum_{g in S_n} V(g) (x) V(g)
-    # This commutes with V(x) (x) V(x) for all x in S_n
-    P_inv = np.zeros((dim * dim, dim * dim), dtype=np.float64)
-    for p in all_perms:
-        V = standard_rep_matrix(p, n).astype(np.float64)
-        P_inv += np.kron(V, V)
-    P_inv /= n_fact
-
-    # Evaluate Tr(P_inv * (V(tau) (x) I)) for each transposition tau
-    traces = []
-    for tau in transpositions:
-        V_tau = standard_rep_matrix(tau, n).astype(np.float64)
-        state_tau = np.kron(V_tau, np.eye(dim))
-        tr = float(np.trace(P_inv @ state_tau))
-        traces.append(tr)
-
-    trace_diff = max(traces) - min(traces)
-    is_constant = trace_diff < 1e-12
-    mutual_info = 0.0 if is_constant else float(trace_diff)
-
+    omega = np.eye(dim).reshape(-1)/math.sqrt(dim)
+    projector = np.outer(omega, omega)
+    probabilities, minimum_eigenvalues, traces, commutators = [], [], [], []
+    for i, j in combinations(range(n), 2):
+        perm = list(range(n))
+        perm[i], perm[j] = perm[j], perm[i]
+        v = orthonormal_standard_matrix(tuple(perm), n)
+        rho = (np.eye(dim)+v)/(2*(n-2))
+        state = np.kron(rho, rho)
+        traces.append(float(np.trace(state)))
+        minimum_eigenvalues.append(float(np.linalg.eigvalsh(state)[0]))
+        joint_action = np.kron(v, v)
+        commutators.append(float(np.max(np.abs(projector@joint_action-joint_action@projector))))
+        probability = float(np.trace(projector@state))
+        probabilities.append([probability, 1-probability])
+    probabilities = np.asarray(probabilities)
+    mean = probabilities.mean(axis=0)
+    information = float(np.sum(probabilities*np.log2(probabilities/mean))/len(probabilities))
+    variation = float(np.ptp(probabilities, axis=0).max())
+    physical = min(minimum_eigenvalues) >= -1e-12 and max(abs(t-1) for t in traces) < 1e-12
+    physical = physical and float(probabilities.min()) >= 0 and float(probabilities.max()) <= 1
+    constant = variation < 1e-12
     return {
         "n": n,
-        "transposition_count": len(transpositions),
-        "min_trace": min(traces),
-        "max_trace": max(traces),
-        "trace_variation": trace_diff,
-        "is_constant_across_class": is_constant,
-        "mutual_information_bits": mutual_info,
-        "zero_information_verified": is_constant,
+        "transposition_count": len(probabilities),
+        "conditional_standard_irrep": True,
+        "single_copy_irrep_probability_exact": str(Fraction(2*(n-1)*(n-2), math.factorial(n))),
+        "expected_invariant_probability_exact": str(Fraction(1, (n-1)*(n-2))),
+        "conditional_born_probabilities": probabilities.tolist(),
+        "probability_variation": variation,
+        "minimum_state_eigenvalue_numeric": min(minimum_eigenvalues),
+        "maximum_trace_one_residual": max(abs(t-1) for t in traces),
+        "effect_commutator_max": max(commutators),
+        "physical_states_and_probabilities_verified": physical,
+        "is_constant_across_class": constant,
+        "mutual_information_bits_numeric": max(0.0, information),
+        "zero_information_verified": physical and constant and max(commutators) < 1e-12,
+        "mode": "BOUNDED_PHYSICAL_BORN_CONTROL_NOT_A_GENERAL_THEOREM_TEST",
     }
 
 
 def compute_commutant_dimension(n: int, k: int) -> int:
     """Compute dim(Commutant(V^k)) = (1/n!) sum_{g in S_n} (fix(g) - 1)^{2k}."""
-    all_perms = list(permutations(range(n)))
-    n_fact = len(all_perms)
-    total = sum((sum(1 for i, v in enumerate(p) if i == v) - 1) ** (2 * k) for p in all_perms)
+    _integer(n, "permutation degree", 2, 256)
+    _integer(k, "tensor copies", 0, 128)
+    # Rencontres numbers count permutations with f fixed points, without n! enumeration.
+    derangements = [1, 0]
+    for j in range(2, n+1):
+        derangements.append((j-1)*(derangements[-1]+derangements[-2]))
+    n_fact = math.factorial(n)
+    total = sum(math.comb(n, f)*derangements[n-f]*(f-1)**(2*k) for f in range(n+1))
     assert total % n_fact == 0
     return total // n_fact
 
@@ -148,25 +174,23 @@ def compute_commutant_dimension(n: int, k: int) -> int:
 def build_scaling_profiles(
     n_values: Sequence[int] = (3, 4, 5, 6, 7, 8, 10, 12, 16)
 ) -> List[Dict[str, Any]]:
-    """Build quantitative scaling ledger for commutator entries, mutual info, and commutant dimensions."""
+    """Exact character dimensions; never convert dimensions into gate bounds."""
     profiles: List[Dict[str, Any]] = []
 
     for n in n_values:
-        # For n <= 6, compute exact commutator and zero-info audit
+        _integer(n, "profile degree", 3, 128)
         if n <= 6:
             comm_audit = verify_three_copy_commutator(n)
             info_audit = verify_commutant_zero_information(n)
             witness = comm_audit["observed_witness_entry"]
-            info_bits = info_audit["mutual_information_bits"]
+            info_bits = info_audit["mutual_information_bits_numeric"]
         else:
             witness = n
             info_bits = 0.0
 
-        # For n <= 8, compute exact commutant dimension for k=3; stabilizes to 41 for all n >= 6
-        dim_k3 = compute_commutant_dimension(n, 3) if n <= 8 else 41
-
-        # Asymptotic multiplicity lower bound at k=n
-        log2_mult_k_n = float(2 * n * math.log2(n - 1) - (n * math.log2(n) - n * math.log2(math.e)))
+        dim_k3 = compute_commutant_dimension(n, 3)
+        lower = Fraction((n-1)**(2*n), math.factorial(n))
+        dimension = compute_commutant_dimension(n, n)
 
         profiles.append({
             "n": n,
@@ -175,123 +199,161 @@ def build_scaling_profiles(
             "commutator_matches_n": witness == n,
             "commutant_mutual_information_bits": info_bits,
             "commutant_dimension_k3": dim_k3,
-            "asymptotic_mult_dimension_log2_k_n": log2_mult_k_n,
-            "racah_complexity_exponential": log2_mult_k_n > 10.0,
+            "commutant_dimension_k_n": dimension,
+            "identity_term_dimension_lower_bound_exact": str(lower),
+            "dimension_lower_bound_log2_numeric": math.log2(lower.numerator)-math.log2(lower.denominator),
+            "dimension_lower_bound_verified": lower <= dimension,
+            "commutator_evidence": "BOUNDED_MATRIX_CONTROL" if n <= 6 else "ANALYTICAL_IDENTITY",
+            "information_evidence": "PHYSICAL_BORN_CONTROL" if n <= 6 else "COVARIANCE_THEOREM_NOT_EXECUTED",
+            "general_circuit_lower_bound_proved": False,
             "status": "PASS",
         })
 
     return profiles
 
 
+def pair_class_sum_access_control(n: int = 3, copies: int = 3) -> Dict[str, Any]:
+    """Explicit finite PREPARE/SELECT compression for natural permutation carriers.
+
+    The analytic access construction acts on word registers, not an n**copies
+    table. This bounded dense control verifies it and its standard-subspace
+    restriction. It is not a Racah transform or an informative HSP decoder.
+    """
+    _integer(n, "bounded SELECT degree", 3, 4)
+    _integer(copies, "bounded SELECT copies", 3, 3)
+    words = tuple(product(range(n), repeat=copies))
+    index = {word: i for i, word in enumerate(words)}
+    pairs = tuple(combinations(range(n), 2))
+    dimension, terms = len(words), len(pairs)
+    prepare = np.vstack([np.eye(dimension)/math.sqrt(terms)]*terms)
+    averages, block_errors, unitary_errors = [], [], []
+    for registers in ((0, 1), (1, 2)):
+        select = np.zeros((terms*dimension, terms*dimension))
+        average = np.zeros((dimension, dimension))
+        for label, (a, b) in enumerate(pairs):
+            for column, word in enumerate(words):
+                output = list(word)
+                for register in registers:
+                    value = output[register]
+                    output[register] = b if value == a else a if value == b else value
+                row = index[tuple(output)]
+                select[label*dimension+row, label*dimension+column] = 1
+                average[row, column] += 1/terms
+        unitary_errors.append(float(np.max(np.abs(select.T@select-np.eye(terms*dimension)))))
+        block_errors.append(float(np.max(np.abs(prepare.T@select@prepare-average))))
+        averages.append(average)
+    commutator = averages[0]@averages[1]-averages[1]@averages[0]
+    standard = np.eye(n)-np.ones((n, n))/n
+    subspace = np.kron(np.kron(standard, standard), standard)
+    return {
+        "n": n, "copies": copies, "representation": "NATURAL_PERMUTATION_WITH_STANDARD_SUBSPACE",
+        "controlled_transposition_terms": terms,
+        "dense_control_dimension": dimension,
+        "unnormalized_class_sum_block_encoding_normalization": terms,
+        "normalized_class_sum_block_encoding_normalization": 1,
+        "unitarity_max_residual": max(unitary_errors),
+        "prepared_block_max_residual": max(block_errors),
+        "overlapping_normalized_sum_commutator_max": float(np.max(np.abs(commutator))),
+        "standard_subspace_commutator_max": float(np.max(np.abs(subspace@commutator@subspace))),
+        "analytic_access_plan_uses_dense_tables": False,
+        "verifier_uses_dense_tables": True,
+        "uniform_gate_compiler_implemented": False,
+        "arbitrary_Racah_transform_compiled": False,
+        "hard_coset_decoder_compiled": False,
+        "speedup_claim_allowed": False,
+    }
+
+
 def build_report() -> Dict[str, Any]:
-    """Generate and serialize the complete Multiplicity-Carrier Decoupling Trilemma report."""
+    """Retain valid identities and explicitly retract the unsupported exclusions."""
     small_audits = [verify_three_copy_commutator(n) for n in (3, 4, 5, 6)]
     info_audits = [verify_commutant_zero_information(n) for n in (3, 4, 5, 6)]
     scaling = build_scaling_profiles()
 
     all_witness_verified = all(a["entry_matches_closed_form"] for a in small_audits)
     all_zero_info_verified = all(a["zero_information_verified"] for a in info_audits)
+    access = pair_class_sum_access_control()
+    access_verified = (access["unitarity_max_residual"] < 1e-12
+                       and access["prepared_block_max_residual"] < 1e-12
+                       and access["standard_subspace_commutator_max"] > 1e-12)
+    dimensions_verified = all(row["dimension_lower_bound_verified"] for row in scaling)
 
     report: Dict[str, Any] = {
         "report_id": "COSET-MULTIPLICITY-CARRIER-TRILEMMA-REPORT",
         "negative_result_id": NEGATIVE_RESULT_ID,
+        "negative_result_status": "QUARANTINED_OVERBROAD_NO_GO",
+        "producer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "derivation_path": str(DERIVATION.relative_to(ROOT)),
         "summary": (
-            "Proves the Multiplicity-Carrier Decoupling Trilemma for non-abelian coset states: "
-            "(1) Commutant measurements have identically zero mutual information (I = 0.0 bits) "
-            "with any hidden conjugacy element by Schur invariance. "
-            "(2) Carrier recoupling across k >= 3 copies is strictly non-commuting: "
-            "[K_12, K_23]_{(0,0,0),(0,0,1)} = n for all n >= 3, ruling out simultaneous diagonalization. "
-            "(3) Transforming carrier parenthesizations requires Racah 6j associators acting on a "
-            "multiplicity space of factorial dimension dim(Commutant) = 2^Omega(n log n)."
+            "Invariant POVMs cannot distinguish members of one conjugacy orbit. "
+            "Overlapping pair class sums are noncommuting but have structured efficient access. "
+            "Exact commutant dimensions establish no circuit lower bound. The exhaustive "
+            "trilemma and universal factorial-copy claim are retracted."
         ),
-        "pillars": {
-            "pillar_1_commutant_zero_information": (
-                "Tr(E_y sigma_h) = Tr(E_y sigma_{xhx^-1}) = const for all E_y in End_{S_n}(V^k). "
-                "Mutual information I(h : E) = 0.0 bits identically across all conjugacy classes."
+        "retained_scoped_statements": {
+            "commutant_zero_information": (
+                "For a covariant state ensemble and invariant POVM effects, Born probabilities "
+                "are constant WITHIN a conjugacy orbit. A later carrier-sensitive measurement "
+                "is not covered unless its total effects are invariant."
             ),
-            "pillar_2_carrier_non_commutation": (
+            "pair_non_commutation": (
                 "[K_12, K_23]_{(0,0,0),(0,0,1)} = n for all n >= 3. Overlapping pair class sums "
-                "do not commute, preventing simultaneous pairwise Kronecker diagonalization."
+                "cannot share an eigenbasis; this does not exclude sequential coherent operations."
             ),
-            "pillar_3_multiplicity_explosion": (
-                "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n) for k >= n, "
-                "forcing exponential quantum circuit complexity for general Racah associator networks."
-            ),
-            "pillar_4_exhaustive_trilemma": (
-                "Every receiver on non-abelian coset states faces an exhaustive trilemma: "
-                "commutant readout is zero-information; separable carrier readout requires k = Omega(n!) copies; "
-                "and collective carrier recoupling is blocked by non-commuting class sums and factorial multiplicity."
+            "dimension": (
+                "dim End_Sn(V^k)=(1/n!) sum_g (fix(g)-1)^(2k). Its identity summand gives "
+                "a dimension lower bound, not a lower bound for a specified quantum circuit."
             ),
         },
+        "retracted_claims": [
+            "Factorial multiplicity dimension forces exponential Racah circuit complexity.",
+            "All separable nonabelian coset measurements need Omega(n!) copies.",
+            "Every receiver falls under an exhaustive computational trilemma.",
+            "A trace spread of V(h) tensor I constitutes a physical mutual-information check.",
+        ],
         "headline_metrics": {
             "all_commutator_witnesses_verified": all_witness_verified,
             "all_commutant_zero_information_verified": all_zero_info_verified,
+            "bounded_pair_access_verified": access_verified,
+            "dimension_lower_bounds_verified": dimensions_verified,
             "tail_n": scaling[-1]["n"],
             "tail_commutator_witness": scaling[-1]["commutator_witness_entry"],
-            "tail_racah_dimension_log2": scaling[-1]["asymptotic_mult_dimension_log2_k_n"],
+            "tail_dimension_lower_bound_log2_numeric": scaling[-1]["dimension_lower_bound_log2_numeric"],
+            "exhaustive_trilemma_proved": False,
+            "general_circuit_lower_bound_proved": False,
             "speedup_claim_allowed": False,
             "accepted_speedup_candidate": False,
         },
         "small_commutator_audits": small_audits,
         "small_zero_information_audits": info_audits,
         "scaling_profiles": scaling,
-        "status": "PASS" if (all_witness_verified and all_zero_info_verified) else "FAIL",
+        "constructive_pair_class_sum_access": access,
+        "counterexample_reference": "research/NONABELIAN_BARRIER_SCOPE_AUDIT.md",
+        "source_mass_and_useful_joint_decoder": "UNRESOLVED_FOR_HARD_ENSEMBLES",
+        "status": "PASS" if (all_witness_verified and all_zero_info_verified
+                               and access_verified and dimensions_verified) else "FAIL",
     }
 
     return report
 
 
-def register_negative_result(report_path: Path = REPORT) -> None:
-    """Register NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA into negative_results.json."""
-    if not REGISTRY.exists():
-        return
-    data = json.loads(REGISTRY.read_text())
-    existing_ids = {entry.get("id") for entry in data}
-    if NEGATIVE_RESULT_ID in existing_ids:
-        return
-
-    entry = {
-        "id": NEGATIVE_RESULT_ID,
-        "applies_to": [
-            "NONABELIAN-COSET-OBSERVABLES",
-            "MULTIPLICITY-COMMUTANT",
-            "RACAH-RECOUPLING",
-            "KRONECKER-POVM",
-        ],
-        "claim": "Multiplicity-space commutant Hamiltonians or pairwise Kronecker recoupling observables can extract hidden subgroup or code equivalence permutations in polynomial quantum time.",
-        "evidence": {
-            "artifact": str(report_path.relative_to(ROOT)),
-            "commutant_mutual_information": "0.0 bits identically",
-            "commutator_closed_form": "[K_12, K_23]_{(0,0,0),(0,0,1)} = n",
-            "commutant_dimension_law": "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n)",
-        },
-        "lesson": "Spectral gaps in commutant Hamiltonians are irrelevant for secret identification because commutant outcomes are completely secret-independent. Non-abelian quantum algorithms cannot separate multiplicity and carrier registers without incurring either zero information or factorial associator complexity.",
-        "reason_invalid": "By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruling out simultaneous diagonalization. Coherent Racah associator transforms face a factorial multiplicity space dimension (n-1)^{2k}/n! = 2^Omega(n log n), requiring exponential quantum circuit synthesis.",
-        "source": str(report_path.relative_to(ROOT)),
-    }
-
-    data.append(entry)
-    REGISTRY.write_text(json.dumps(data, indent=2) + "\n")
-
-
 def write_report(write_registry: bool = True) -> Path:
-    """Generate artifact report and register negative result."""
+    """Generate corrected evidence; never reinstate the retracted negative."""
+    from core.research_registry import _write_json
+    from theorems.nonabelian_barrier_scope_audit import quarantine_reviewed_negatives
+
     report = build_report()
-    REPORT.parent.mkdir(parents=True, exist_ok=True)
-    REPORT.write_text(json.dumps(report, indent=2) + "\n")
-
     if write_registry:
-        register_negative_result(REPORT)
-
+        quarantine_reviewed_negatives()
+    _write_json(REPORT, report)
     return REPORT
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Run Non-Abelian Coset Multiplicity-Carrier Decoupling Trilemma Theorem Audit."
+        description="Check scoped coset identities and retract the unsupported general trilemma."
     )
-    parser.add_argument("--write", action="store_true", help="Write report and register negative result")
+    parser.add_argument("--write", action="store_true", help="Write corrected report and quarantine reviewed negative")
     parser.add_argument("--no-registry", action="store_true", help="Do not update negative results registry")
     args = parser.parse_args()
 
@@ -301,13 +363,14 @@ def main() -> None:
     else:
         rep = build_report()
         print("=" * 70)
-        print("COSET MULTIPLICITY-CARRIER DECOUPLING TRILEMMA")
+        print("COSET MULTIPLICITY SCOPE: BROAD TRILEMMA RETRACTED")
         print("=" * 70)
         print(f"Status: {rep['status']}")
         print(f"Commutator Witnesses Verified: {rep['headline_metrics']['all_commutator_witnesses_verified']}")
         print(f"Commutant Zero Information Verified: {rep['headline_metrics']['all_commutant_zero_information_verified']}")
         print(f"Tail Commutator Witness (n=16): {rep['headline_metrics']['tail_commutator_witness']}")
-        print(f"Tail Racah Multiplicity log2: {rep['headline_metrics']['tail_racah_dimension_log2']:.2f}")
+        print(f"Tail Dimension Lower Bound log2: {rep['headline_metrics']['tail_dimension_lower_bound_log2_numeric']:.2f}")
+        print("General circuit lower bound: NOT ESTABLISHED")
         print("=" * 70)
 
 

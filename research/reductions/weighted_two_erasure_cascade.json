@@ -12,10 +12,18 @@
     "supported_reduced_exponents": [
       1,
       2,
-      3
+      3,
+      "g>=4 with p>=16*g**(2*g+2)",
+      "odd g>=5 with p>=4*((g-1)*(g-2))**2"
     ],
-    "quadratic_requires_p_mod4_3": true,
+    "quadratic_regimes": "p=3 mod4, or p>=1024 via symmetric contraction",
     "cubic_three_coset_collision": true,
+    "cubic_two_level_curve_contraction": true,
+    "cubic_arity": "(r+1)(2r+1)",
+    "large_field_odd_exterior_sde": true,
+    "large_field_symmetric_power_sde": true,
+    "bounded_randomness_mode_available": true,
+    "all_default_randomized_loops_capped": false,
     "general_coset_collision_sde_for_g_gt_3": false,
     "accepted_speedup_candidate": false,
     "novelty_claim": false,

@@ -1,0 +1,3299 @@
+{
+  "status": "CLASSICAL_REGULAR_SUBSET_CONTROLS_NOT_QUANTUM_RECEIVER",
+  "cases": [
+    {
+      "name": "ambient_mod_p_zero",
+      "seed": 30031,
+      "original_degree": 2,
+      "result": {
+        "status": "VERIFIED_AMBIENT_REGULAR_SUBSET_WITNESS",
+        "reason": "EXACT_AMBIENT_CANCELLATION",
+        "scales": [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "plan": {
+          "prime": 3,
+          "degree": 2,
+          "cyclic_rank_bound": 1,
+          "failure_bits": 8,
+          "pilot_source_count": 11,
+          "prefix_source_count": 11,
+          "suffix_source_count": 12,
+          "bank_source_count": 23,
+          "source_labels_cap": 34,
+          "complete_dp_state_bound": 3,
+          "dp_state_cap": 3,
+          "complete_state_cap_met": true,
+          "pilot_incompleteness_bound": {
+            "numerator": 1,
+            "denominator": 118098
+          },
+          "prefix_rank_failure_bound": {
+            "numerator": 1,
+            "denominator": 118098
+          },
+          "iid_subset_absence_bound": {
+            "numerator": 1,
+            "denominator": 1365
+          },
+          "suffix_moments": {
+            "prime": 3,
+            "rank": 1,
+            "width": 12,
+            "state_bound": 3,
+            "nonzero_boolean_words": 4095,
+            "single_word_hit_probability": {
+              "numerator": 1,
+              "denominator": 3
+            },
+            "mu": {
+              "numerator": 1365,
+              "denominator": 1
+            },
+            "variance": {
+              "numerator": 910,
+              "denominator": 1
+            },
+            "no_hit_upper": {
+              "numerator": 1,
+              "denominator": 1365
+            },
+            "distinct_word_images_pairwise_independent": true,
+            "iid_uniform_columns_required": true,
+            "iid_uniform_columns_verified": false,
+            "target_independent_of_suffix_required": true,
+            "state_cap_exhaustion_included": false
+          },
+          "ideal_uncapped_episode_abort_bound": {
+            "numerator": 20138,
+            "denominator": 26867295
+          },
+          "episode_abort_bound": {
+            "numerator": 20138,
+            "denominator": 26867295
+          },
+          "fresh_iid_source_required": true,
+          "source_law_certified": false,
+          "normal_form_clock_certified": false,
+          "quantum_receiver_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 11,
+            "ambient_columns": [
+              [
+                15
+              ],
+              [
+                78
+              ],
+              [
+                3
+              ],
+              [
+                36
+              ],
+              [
+                48
+              ],
+              [
+                78
+              ],
+              [
+                9
+              ],
+              [
+                60
+              ],
+              [
+                33
+              ],
+              [
+                51
+              ],
+              [
+                3
+              ]
+            ]
+          },
+          {
+            "stage": "prefix_and_independent_suffix",
+            "count": 23,
+            "ambient_columns": [
+              [
+                24
+              ],
+              [
+                18
+              ],
+              [
+                30
+              ],
+              [
+                39
+              ],
+              [
+                21
+              ],
+              [
+                57
+              ],
+              [
+                57
+              ],
+              [
+                42
+              ],
+              [
+                60
+              ],
+              [
+                69
+              ],
+              [
+                15
+              ],
+              [
+                27
+              ],
+              [
+                21
+              ],
+              [
+                78
+              ],
+              [
+                6
+              ],
+              [
+                63
+              ],
+              [
+                15
+              ],
+              [
+                27
+              ],
+              [
+                45
+              ],
+              [
+                57
+              ],
+              [
+                30
+              ],
+              [
+                39
+              ],
+              [
+                21
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                8
+              ],
+              [
+                6
+              ],
+              [
+                10
+              ],
+              [
+                13
+              ],
+              [
+                7
+              ],
+              [
+                19
+              ],
+              [
+                19
+              ],
+              [
+                14
+              ],
+              [
+                20
+              ],
+              [
+                23
+              ],
+              [
+                5
+              ],
+              [
+                9
+              ],
+              [
+                7
+              ],
+              [
+                26
+              ],
+              [
+                2
+              ],
+              [
+                21
+              ],
+              [
+                5
+              ],
+              [
+                9
+              ],
+              [
+                15
+              ],
+              [
+                19
+              ],
+              [
+                10
+              ],
+              [
+                13
+              ],
+              [
+                7
+              ]
+            ]
+          }
+        ],
+        "source_labels_consumed": 34,
+        "hidden_support_completeness_certified": false,
+        "hidden_support_rank_bound_certified": false,
+        "physical_iid_source_certified": false,
+        "quantum_receiver_implemented": false,
+        "normal_form_clock_certified": false,
+        "frame": {
+          "prime": 3,
+          "ambient_exponents": [
+            4
+          ],
+          "pilot_columns": [
+            [
+              15
+            ],
+            [
+              78
+            ],
+            [
+              3
+            ],
+            [
+              36
+            ],
+            [
+              48
+            ],
+            [
+              78
+            ],
+            [
+              9
+            ],
+            [
+              60
+            ],
+            [
+              33
+            ],
+            [
+              51
+            ],
+            [
+              3
+            ]
+          ],
+          "lattice_basis": [
+            [
+              3
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              -2
+            ],
+            [
+              11
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              27,
+              5,
+              26,
+              1,
+              12,
+              16,
+              26,
+              3,
+              20,
+              11,
+              17,
+              1
+            ]
+          ],
+          "relation_matrix": [
+            [
+              27
+            ]
+          ],
+          "smith_left": [
+            [
+              1
+            ]
+          ],
+          "smith_right": [
+            [
+              1
+            ]
+          ],
+          "smith_orders": [
+            27
+          ],
+          "intrinsic_exponents": [
+            3
+          ],
+          "subgroup_order": 27,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "intrinsic_run": {
+          "status": "VERIFIED_REGULAR_SUBSET_MODULE_WITNESS",
+          "reason": "EXACT_MIXED_ORDER_CANCELLATION",
+          "scales": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "bank_columns": [
+            [
+              8
+            ],
+            [
+              6
+            ],
+            [
+              10
+            ],
+            [
+              13
+            ],
+            [
+              7
+            ],
+            [
+              19
+            ],
+            [
+              19
+            ],
+            [
+              14
+            ],
+            [
+              20
+            ],
+            [
+              23
+            ],
+            [
+              5
+            ],
+            [
+              9
+            ],
+            [
+              7
+            ],
+            [
+              26
+            ],
+            [
+              2
+            ],
+            [
+              21
+            ],
+            [
+              5
+            ],
+            [
+              9
+            ],
+            [
+              15
+            ],
+            [
+              19
+            ],
+            [
+              10
+            ],
+            [
+              13
+            ],
+            [
+              7
+            ]
+          ],
+          "exponents": [
+            3
+          ],
+          "original_degree": 2,
+          "field_run": {
+            "status": "VERIFIED_REGULAR_SUBSET_WITNESS",
+            "reason": "TARGET_FOUND",
+            "scales": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "prime": 3,
+            "degree": 2,
+            "rank": 1,
+            "width": 23,
+            "prefix_count": 11,
+            "prefix_rank": 1,
+            "basis_indices": [
+              0
+            ],
+            "suffix_width": 12,
+            "target": [
+              1
+            ],
+            "suffix_mask": 2,
+            "max_states": 3,
+            "state_bound": 3,
+            "state_cap_met": true,
+            "states_visited": 2,
+            "peak_states": 2,
+            "transitions": 2,
+            "columns_processed": 2,
+            "cap_truncated": false,
+            "jacobian_rank": 1,
+            "exact_verified": true,
+            "zero_rank_branch": false,
+            "abort_is_unsatisfiability": false,
+            "iid_uniform_columns_verified": false,
+            "arbitrary_fixed_bank_success_bound": null
+          },
+          "labels_resampled": false,
+          "source_law_certified": false,
+          "quantum_receiver_implemented": false,
+          "lift": {
+            "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+            "scales": [
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "jacobian_rank": 1,
+            "cyclic_rank": 1,
+            "singularity_is_unsatisfiability": false,
+            "original_module_verified": true,
+            "pivot_indices": [
+              0
+            ],
+            "lift_steps": 2
+          },
+          "field_witness_original_degree": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "zero_rank_branch": false,
+        "selected_request_indices": [
+          1
+        ],
+        "selected_ambient_columns": [
+          [
+            24
+          ],
+          [
+            18
+          ],
+          [
+            30
+          ],
+          [
+            39
+          ],
+          [
+            21
+          ],
+          [
+            57
+          ],
+          [
+            57
+          ],
+          [
+            42
+          ],
+          [
+            60
+          ],
+          [
+            69
+          ],
+          [
+            15
+          ],
+          [
+            27
+          ],
+          [
+            21
+          ],
+          [
+            78
+          ],
+          [
+            6
+          ],
+          [
+            63
+          ],
+          [
+            15
+          ],
+          [
+            27
+          ],
+          [
+            45
+          ],
+          [
+            57
+          ],
+          [
+            30
+          ],
+          [
+            39
+          ],
+          [
+            21
+          ]
+        ],
+        "original_ambient_verified": true
+      },
+      "generator_columns": [
+        [
+          3
+        ]
+      ],
+      "generator_orders": [
+        27
+      ],
+      "randomness": "SEEDED_CLASSICAL_CONTROL_NOT_CERTIFIED_IID_SOURCE"
+    },
+    {
+      "name": "p5_quadratic_oblique",
+      "seed": 50032,
+      "original_degree": 2,
+      "result": {
+        "status": "VERIFIED_AMBIENT_REGULAR_SUBSET_WITNESS",
+        "reason": "EXACT_AMBIENT_CANCELLATION",
+        "scales": [
+          21,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "plan": {
+          "prime": 5,
+          "degree": 2,
+          "cyclic_rank_bound": 2,
+          "failure_bits": 8,
+          "pilot_source_count": 12,
+          "prefix_source_count": 12,
+          "suffix_source_count": 16,
+          "bank_source_count": 28,
+          "source_labels_cap": 40,
+          "complete_dp_state_bound": 25,
+          "dp_state_cap": 25,
+          "complete_state_cap_met": true,
+          "pilot_incompleteness_bound": {
+            "numerator": 1,
+            "denominator": 39062500
+          },
+          "prefix_rank_failure_bound": {
+            "numerator": 1,
+            "denominator": 39062500
+          },
+          "iid_subset_absence_bound": {
+            "numerator": 5,
+            "denominator": 13107
+          },
+          "suffix_moments": {
+            "prime": 5,
+            "rank": 2,
+            "width": 16,
+            "state_bound": 25,
+            "nonzero_boolean_words": 65535,
+            "single_word_hit_probability": {
+              "numerator": 1,
+              "denominator": 25
+            },
+            "mu": {
+              "numerator": 13107,
+              "denominator": 5
+            },
+            "variance": {
+              "numerator": 314568,
+              "denominator": 125
+            },
+            "no_hit_upper": {
+              "numerator": 5,
+              "denominator": 13107
+            },
+            "distinct_word_images_pairwise_independent": true,
+            "iid_uniform_columns_required": true,
+            "iid_uniform_columns_verified": false,
+            "target_independent_of_suffix_required": true,
+            "state_cap_exhaustion_included": false
+          },
+          "ideal_uncapped_episode_abort_bound": {
+            "numerator": 97669357,
+            "denominator": 255996093750
+          },
+          "episode_abort_bound": {
+            "numerator": 97669357,
+            "denominator": 255996093750
+          },
+          "fresh_iid_source_required": true,
+          "source_law_certified": false,
+          "normal_form_clock_certified": false,
+          "quantum_receiver_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 12,
+            "ambient_columns": [
+              [
+                11,
+                5
+              ],
+              [
+                15,
+                100
+              ],
+              [
+                17,
+                110
+              ],
+              [
+                19,
+                20
+              ],
+              [
+                20,
+                75
+              ],
+              [
+                9,
+                95
+              ],
+              [
+                9,
+                95
+              ],
+              [
+                4,
+                120
+              ],
+              [
+                2,
+                110
+              ],
+              [
+                20,
+                100
+              ],
+              [
+                7,
+                60
+              ],
+              [
+                13,
+                40
+              ]
+            ]
+          },
+          {
+            "stage": "prefix_and_independent_suffix",
+            "count": 28,
+            "ambient_columns": [
+              [
+                24,
+                45
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                17,
+                10
+              ],
+              [
+                9,
+                70
+              ],
+              [
+                4,
+                20
+              ],
+              [
+                6,
+                55
+              ],
+              [
+                12,
+                35
+              ],
+              [
+                13,
+                90
+              ],
+              [
+                21,
+                105
+              ],
+              [
+                9,
+                45
+              ],
+              [
+                7,
+                35
+              ],
+              [
+                16,
+                5
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                19,
+                95
+              ],
+              [
+                4,
+                120
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                9,
+                70
+              ],
+              [
+                7,
+                110
+              ],
+              [
+                19,
+                95
+              ],
+              [
+                10,
+                0
+              ],
+              [
+                0,
+                75
+              ],
+              [
+                20,
+                25
+              ],
+              [
+                15,
+                100
+              ],
+              [
+                6,
+                30
+              ],
+              [
+                6,
+                30
+              ],
+              [
+                14,
+                95
+              ],
+              [
+                9,
+                45
+              ],
+              [
+                20,
+                75
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                3,
+                9
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                14
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                4,
+                11
+              ],
+              [
+                1,
+                7
+              ],
+              [
+                4,
+                18
+              ],
+              [
+                0,
+                21
+              ],
+              [
+                0,
+                9
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                1,
+                24
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                4,
+                14
+              ],
+              [
+                2,
+                22
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                15
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                20
+              ],
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                6
+              ],
+              [
+                4,
+                19
+              ],
+              [
+                0,
+                9
+              ],
+              [
+                1,
+                15
+              ]
+            ]
+          }
+        ],
+        "source_labels_consumed": 40,
+        "hidden_support_completeness_certified": false,
+        "hidden_support_rank_bound_certified": false,
+        "physical_iid_source_certified": false,
+        "quantum_receiver_implemented": false,
+        "normal_form_clock_certified": false,
+        "frame": {
+          "prime": 5,
+          "ambient_exponents": [
+            2,
+            3
+          ],
+          "pilot_columns": [
+            [
+              11,
+              5
+            ],
+            [
+              15,
+              100
+            ],
+            [
+              17,
+              110
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              20,
+              75
+            ],
+            [
+              9,
+              95
+            ],
+            [
+              9,
+              95
+            ],
+            [
+              4,
+              120
+            ],
+            [
+              2,
+              110
+            ],
+            [
+              20,
+              100
+            ],
+            [
+              7,
+              60
+            ],
+            [
+              13,
+              40
+            ]
+          ],
+          "lattice_basis": [
+            [
+              1,
+              0
+            ],
+            [
+              5,
+              25
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              -322,
+              105
+            ],
+            [
+              -27,
+              9
+            ],
+            [
+              736,
+              -240
+            ],
+            [
+              -3,
+              1
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              25,
+              0,
+              11,
+              15,
+              17,
+              19,
+              20,
+              9,
+              9,
+              4,
+              2,
+              20,
+              7,
+              13
+            ],
+            [
+              -5,
+              5,
+              -2,
+              1,
+              1,
+              -3,
+              -1,
+              2,
+              2,
+              4,
+              4,
+              0,
+              1,
+              -1
+            ]
+          ],
+          "relation_matrix": [
+            [
+              25,
+              0
+            ],
+            [
+              -5,
+              5
+            ]
+          ],
+          "smith_left": [
+            [
+              0,
+              -1
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "smith_right": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "smith_orders": [
+            5,
+            25
+          ],
+          "intrinsic_exponents": [
+            1,
+            2
+          ],
+          "subgroup_order": 125,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "intrinsic_run": {
+          "status": "VERIFIED_REGULAR_SUBSET_MODULE_WITNESS",
+          "reason": "EXACT_MIXED_ORDER_CANCELLATION",
+          "scales": [
+            21,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "bank_columns": [
+            [
+              3,
+              9
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              0,
+              21
+            ],
+            [
+              0,
+              9
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              1,
+              24
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              2,
+              22
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              15
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              4,
+              19
+            ],
+            [
+              0,
+              9
+            ],
+            [
+              1,
+              15
+            ]
+          ],
+          "exponents": [
+            1,
+            2
+          ],
+          "original_degree": 2,
+          "field_run": {
+            "status": "VERIFIED_REGULAR_SUBSET_WITNESS",
+            "reason": "TARGET_FOUND",
+            "scales": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "prime": 5,
+            "degree": 2,
+            "rank": 2,
+            "width": 28,
+            "prefix_count": 12,
+            "prefix_rank": 2,
+            "basis_indices": [
+              0,
+              1
+            ],
+            "suffix_width": 16,
+            "target": [
+              3,
+              1
+            ],
+            "suffix_mask": 13,
+            "max_states": 25,
+            "state_bound": 25,
+            "state_cap_met": true,
+            "states_visited": 11,
+            "peak_states": 11,
+            "transitions": 13,
+            "columns_processed": 4,
+            "cap_truncated": false,
+            "jacobian_rank": 2,
+            "exact_verified": true,
+            "zero_rank_branch": false,
+            "abort_is_unsatisfiability": false,
+            "iid_uniform_columns_verified": false,
+            "arbitrary_fixed_bank_success_bound": null
+          },
+          "labels_resampled": false,
+          "source_law_certified": false,
+          "quantum_receiver_implemented": false,
+          "lift": {
+            "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+            "scales": [
+              21,
+              16,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "jacobian_rank": 2,
+            "cyclic_rank": 2,
+            "singularity_is_unsatisfiability": false,
+            "original_module_verified": true,
+            "pivot_indices": [
+              0,
+              1
+            ],
+            "lift_steps": 1
+          },
+          "field_witness_original_degree": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "zero_rank_branch": false,
+        "selected_request_indices": [
+          1
+        ],
+        "selected_ambient_columns": [
+          [
+            24,
+            45
+          ],
+          [
+            0,
+            25
+          ],
+          [
+            17,
+            10
+          ],
+          [
+            9,
+            70
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            6,
+            55
+          ],
+          [
+            12,
+            35
+          ],
+          [
+            13,
+            90
+          ],
+          [
+            21,
+            105
+          ],
+          [
+            9,
+            45
+          ],
+          [
+            7,
+            35
+          ],
+          [
+            16,
+            5
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            19,
+            95
+          ],
+          [
+            4,
+            120
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            9,
+            70
+          ],
+          [
+            7,
+            110
+          ],
+          [
+            19,
+            95
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            15,
+            100
+          ],
+          [
+            6,
+            30
+          ],
+          [
+            6,
+            30
+          ],
+          [
+            14,
+            95
+          ],
+          [
+            9,
+            45
+          ],
+          [
+            20,
+            75
+          ]
+        ],
+        "original_ambient_verified": true
+      },
+      "generator_columns": [
+        [
+          1,
+          5
+        ],
+        [
+          0,
+          25
+        ]
+      ],
+      "generator_orders": [
+        25,
+        5
+      ],
+      "randomness": "SEEDED_CLASSICAL_CONTROL_NOT_CERTIFIED_IID_SOURCE"
+    },
+    {
+      "name": "p5_quartic_oblique",
+      "seed": 50034,
+      "original_degree": 4,
+      "result": {
+        "status": "VERIFIED_AMBIENT_REGULAR_SUBSET_WITNESS",
+        "reason": "EXACT_AMBIENT_CANCELLATION",
+        "scales": [
+          6,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "plan": {
+          "prime": 5,
+          "degree": 4,
+          "cyclic_rank_bound": 2,
+          "failure_bits": 8,
+          "pilot_source_count": 12,
+          "prefix_source_count": 12,
+          "suffix_source_count": 16,
+          "bank_source_count": 28,
+          "source_labels_cap": 40,
+          "complete_dp_state_bound": 25,
+          "dp_state_cap": 25,
+          "complete_state_cap_met": true,
+          "pilot_incompleteness_bound": {
+            "numerator": 1,
+            "denominator": 39062500
+          },
+          "prefix_rank_failure_bound": {
+            "numerator": 1,
+            "denominator": 39062500
+          },
+          "iid_subset_absence_bound": {
+            "numerator": 5,
+            "denominator": 13107
+          },
+          "suffix_moments": {
+            "prime": 5,
+            "rank": 2,
+            "width": 16,
+            "state_bound": 25,
+            "nonzero_boolean_words": 65535,
+            "single_word_hit_probability": {
+              "numerator": 1,
+              "denominator": 25
+            },
+            "mu": {
+              "numerator": 13107,
+              "denominator": 5
+            },
+            "variance": {
+              "numerator": 314568,
+              "denominator": 125
+            },
+            "no_hit_upper": {
+              "numerator": 5,
+              "denominator": 13107
+            },
+            "distinct_word_images_pairwise_independent": true,
+            "iid_uniform_columns_required": true,
+            "iid_uniform_columns_verified": false,
+            "target_independent_of_suffix_required": true,
+            "state_cap_exhaustion_included": false
+          },
+          "ideal_uncapped_episode_abort_bound": {
+            "numerator": 97669357,
+            "denominator": 255996093750
+          },
+          "episode_abort_bound": {
+            "numerator": 97669357,
+            "denominator": 255996093750
+          },
+          "fresh_iid_source_required": true,
+          "source_law_certified": false,
+          "normal_form_clock_certified": false,
+          "quantum_receiver_implemented": false
+        },
+        "requests": [
+          {
+            "stage": "pilots",
+            "count": 12,
+            "ambient_columns": [
+              [
+                24,
+                45
+              ],
+              [
+                3,
+                115
+              ],
+              [
+                3,
+                40
+              ],
+              [
+                6,
+                30
+              ],
+              [
+                18,
+                115
+              ],
+              [
+                11,
+                105
+              ],
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                16,
+                55
+              ],
+              [
+                3,
+                65
+              ],
+              [
+                15,
+                25
+              ],
+              [
+                2,
+                60
+              ]
+            ]
+          },
+          {
+            "stage": "prefix_and_independent_suffix",
+            "count": 28,
+            "ambient_columns": [
+              [
+                21,
+                105
+              ],
+              [
+                23,
+                90
+              ],
+              [
+                13,
+                115
+              ],
+              [
+                24,
+                20
+              ],
+              [
+                6,
+                55
+              ],
+              [
+                13,
+                40
+              ],
+              [
+                20,
+                100
+              ],
+              [
+                0,
+                75
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                19,
+                70
+              ],
+              [
+                1,
+                30
+              ],
+              [
+                6,
+                55
+              ],
+              [
+                17,
+                10
+              ],
+              [
+                22,
+                85
+              ],
+              [
+                8,
+                90
+              ],
+              [
+                17,
+                35
+              ],
+              [
+                12,
+                35
+              ],
+              [
+                5,
+                50
+              ],
+              [
+                17,
+                85
+              ],
+              [
+                14,
+                45
+              ],
+              [
+                10,
+                75
+              ],
+              [
+                22,
+                110
+              ],
+              [
+                9,
+                20
+              ],
+              [
+                14,
+                120
+              ],
+              [
+                17,
+                10
+              ],
+              [
+                20,
+                25
+              ],
+              [
+                5,
+                50
+              ],
+              [
+                13,
+                115
+              ]
+            ],
+            "intrinsic_columns": [
+              [
+                0,
+                21
+              ],
+              [
+                1,
+                18
+              ],
+              [
+                3,
+                23
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                4,
+                11
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                0,
+                20
+              ],
+              [
+                2,
+                15
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                14
+              ],
+              [
+                4,
+                6
+              ],
+              [
+                4,
+                11
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                1,
+                17
+              ],
+              [
+                3,
+                18
+              ],
+              [
+                2,
+                7
+              ],
+              [
+                1,
+                7
+              ],
+              [
+                4,
+                10
+              ],
+              [
+                0,
+                17
+              ],
+              [
+                1,
+                9
+              ],
+              [
+                4,
+                15
+              ],
+              [
+                0,
+                22
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                3,
+                24
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                10
+              ],
+              [
+                3,
+                23
+              ]
+            ]
+          }
+        ],
+        "source_labels_consumed": 40,
+        "hidden_support_completeness_certified": false,
+        "hidden_support_rank_bound_certified": false,
+        "physical_iid_source_certified": false,
+        "quantum_receiver_implemented": false,
+        "normal_form_clock_certified": false,
+        "frame": {
+          "prime": 5,
+          "ambient_exponents": [
+            2,
+            3
+          ],
+          "pilot_columns": [
+            [
+              24,
+              45
+            ],
+            [
+              3,
+              115
+            ],
+            [
+              3,
+              40
+            ],
+            [
+              6,
+              30
+            ],
+            [
+              18,
+              115
+            ],
+            [
+              11,
+              105
+            ],
+            [
+              0,
+              100
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              16,
+              55
+            ],
+            [
+              3,
+              65
+            ],
+            [
+              15,
+              25
+            ],
+            [
+              2,
+              60
+            ]
+          ],
+          "lattice_basis": [
+            [
+              1,
+              0
+            ],
+            [
+              5,
+              25
+            ]
+          ],
+          "basis_from_generators": [
+            [
+              -25484,
+              8487
+            ],
+            [
+              -9455,
+              3149
+            ],
+            [
+              26592,
+              -8856
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              -369,
+              123
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "generators_from_basis": [
+            [
+              25,
+              0,
+              24,
+              3,
+              3,
+              6,
+              18,
+              11,
+              0,
+              0,
+              16,
+              3,
+              15,
+              2
+            ],
+            [
+              -5,
+              5,
+              -3,
+              4,
+              1,
+              0,
+              1,
+              2,
+              4,
+              0,
+              -1,
+              2,
+              -2,
+              2
+            ]
+          ],
+          "relation_matrix": [
+            [
+              25,
+              0
+            ],
+            [
+              -5,
+              5
+            ]
+          ],
+          "smith_left": [
+            [
+              0,
+              -1
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "smith_right": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "smith_orders": [
+            5,
+            25
+          ],
+          "intrinsic_exponents": [
+            1,
+            2
+          ],
+          "subgroup_order": 125,
+          "certificate_verified": true,
+          "hidden_support_completeness_certified": false
+        },
+        "intrinsic_run": {
+          "status": "VERIFIED_REGULAR_SUBSET_MODULE_WITNESS",
+          "reason": "EXACT_MIXED_ORDER_CANCELLATION",
+          "scales": [
+            6,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "bank_columns": [
+            [
+              0,
+              21
+            ],
+            [
+              1,
+              18
+            ],
+            [
+              3,
+              23
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              0,
+              20
+            ],
+            [
+              2,
+              15
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              1,
+              17
+            ],
+            [
+              3,
+              18
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              0,
+              17
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              0,
+              22
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              24
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              3,
+              23
+            ]
+          ],
+          "exponents": [
+            1,
+            2
+          ],
+          "original_degree": 4,
+          "field_run": {
+            "status": "VERIFIED_REGULAR_SUBSET_WITNESS",
+            "reason": "TARGET_FOUND",
+            "scales": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "prime": 5,
+            "degree": 4,
+            "rank": 2,
+            "width": 28,
+            "prefix_count": 12,
+            "prefix_rank": 2,
+            "basis_indices": [
+              0,
+              1
+            ],
+            "suffix_width": 16,
+            "target": [
+              4,
+              1
+            ],
+            "suffix_mask": 26,
+            "max_states": 25,
+            "state_bound": 25,
+            "state_cap_met": true,
+            "states_visited": 15,
+            "peak_states": 15,
+            "transitions": 25,
+            "columns_processed": 5,
+            "cap_truncated": false,
+            "jacobian_rank": 2,
+            "exact_verified": true,
+            "zero_rank_branch": false,
+            "abort_is_unsatisfiability": false,
+            "iid_uniform_columns_verified": false,
+            "arbitrary_fixed_bank_success_bound": null
+          },
+          "labels_resampled": false,
+          "source_law_certified": false,
+          "quantum_receiver_implemented": false,
+          "lift": {
+            "status": "VERIFIED_REGULAR_MODULE_WITNESS",
+            "scales": [
+              6,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "jacobian_rank": 2,
+            "cyclic_rank": 2,
+            "singularity_is_unsatisfiability": false,
+            "original_module_verified": true,
+            "pivot_indices": [
+              0,
+              1
+            ],
+            "lift_steps": 1
+          },
+          "field_witness_original_degree": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "zero_rank_branch": false,
+        "selected_request_indices": [
+          1
+        ],
+        "selected_ambient_columns": [
+          [
+            21,
+            105
+          ],
+          [
+            23,
+            90
+          ],
+          [
+            13,
+            115
+          ],
+          [
+            24,
+            20
+          ],
+          [
+            6,
+            55
+          ],
+          [
+            13,
+            40
+          ],
+          [
+            20,
+            100
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            19,
+            70
+          ],
+          [
+            1,
+            30
+          ],
+          [
+            6,
+            55
+          ],
+          [
+            17,
+            10
+          ],
+          [
+            22,
+            85
+          ],
+          [
+            8,
+            90
+          ],
+          [
+            17,
+            35
+          ],
+          [
+            12,
+            35
+          ],
+          [
+            5,
+            50
+          ],
+          [
+            17,
+            85
+          ],
+          [
+            14,
+            45
+          ],
+          [
+            10,
+            75
+          ],
+          [
+            22,
+            110
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            14,
+            120
+          ],
+          [
+            17,
+            10
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            5,
+            50
+          ],
+          [
+            13,
+            115
+          ]
+        ],
+        "original_ambient_verified": true
+      },
+      "generator_columns": [
+        [
+          1,
+          5
+        ],
+        [
+          0,
+          25
+        ]
+      ],
+      "generator_orders": [
+        25,
+        5
+      ],
+      "randomness": "SEEDED_CLASSICAL_CONTROL_NOT_CERTIFIED_IID_SOURCE"
+    }
+  ],
+  "source_sha256": {
+    "theorems/regular_subset_sum.py": "c979e3c567c535c3155759c3446d21744af753c2cd62fc17dca16fce6ded8ad7",
+    "theorems/small_prime_module.py": "b8b28eb6652ba48363965cf041ab9ef02d942722e3e14b203067676c805ebaac",
+    "tests/test_regular_subset_sum.py": "eb9194bfae7d08ed7bc11a4512f101a7c658af0861b3b4270c291c2968d3bfd1",
+    "tests/test_small_prime_module.py": "37352964e9580d829a18dc22355c445982e5bfa8a983e09991b5a006ba9ed892",
+    "theorems/pilot_submodule.py": "b12a5ba275d150a5b908cb0660f66779ad3347078fc11600bff439074c606626",
+    "theorems/prime_power_rees_descent.py": "7774d759e3637b883dea66cbfd1341a72712440f1be328c74e73d1a0f3c63d27",
+    "theorems/unit_power_module.py": "8d065e0821c8e27f8a60ff04a63f0c79e103fb89d5b286c80f18bff3b27d1022",
+    "research/SMALL_PRIME_REGULAR_SUBSET.md": "8d1b79b339c7506bf8f5df06fab71cf72880ff6166557636ec448d8b493df411"
+  },
+  "source_trees": [
+    {
+      "status": "CONDITIONAL_MIXED_ORDER_SOURCE_TREE_NOT_HSP_BOUND",
+      "regime": "SMALL_PRIME_REGULAR_SUBSET",
+      "all_prime_branch_coverage": true,
+      "class_strictly_below_prime_required": true,
+      "uniform_branch_tree_abort_bound": {
+        "numerator": 1,
+        "denominator": 16
+      },
+      "prime": 5,
+      "class_bound": 4,
+      "cyclic_rank_bound": 2,
+      "uniform_parameter": 4,
+      "field_threshold": 256,
+      "parameter_log_bound": 6,
+      "raw_arity_per_grade": 304,
+      "leaves_per_output_tree": 28094464,
+      "failure_bits_per_node": 96,
+      "tree_abort_bound": {
+        "numerator": 97525295990663247479441179068780296002164538846382308469298631179236091871,
+        "denominator": 853333333333333333333333333333291260751721546037044707809851584734417428990127518773078918457031250
+      },
+      "stages": [
+        {
+          "grade": 2,
+          "nodes": 1,
+          "plan": {
+            "prime": 5,
+            "degree": 2,
+            "cyclic_rank_bound": 2,
+            "failure_bits": 96,
+            "pilot_source_count": 100,
+            "prefix_source_count": 100,
+            "suffix_source_count": 104,
+            "bank_source_count": 204,
+            "source_labels_cap": 304,
+            "complete_dp_state_bound": 25,
+            "dp_state_cap": 25,
+            "complete_state_cap_met": true,
+            "pilot_incompleteness_bound": {
+              "numerator": 1,
+              "denominator": 1262177448353618888658765704452457967477130296174436807632446289062500
+            },
+            "prefix_rank_failure_bound": {
+              "numerator": 1,
+              "denominator": 1262177448353618888658765704452457967477130296174436807632446289062500
+            },
+            "iid_subset_absence_bound": {
+              "numerator": 5,
+              "denominator": 4056481920730334084789450257203
+            },
+            "suffix_moments": {
+              "prime": 5,
+              "rank": 2,
+              "width": 104,
+              "state_bound": 25,
+              "nonzero_boolean_words": 20282409603651670423947251286015,
+              "single_word_hit_probability": {
+                "numerator": 1,
+                "denominator": 25
+              },
+              "mu": {
+                "numerator": 4056481920730334084789450257203,
+                "denominator": 5
+              },
+              "variance": {
+                "numerator": 97355566097528018034946806172872,
+                "denominator": 125
+              },
+              "no_hit_upper": {
+                "numerator": 5,
+                "denominator": 4056481920730334084789450257203
+              },
+              "distinct_word_images_pairwise_independent": true,
+              "iid_uniform_columns_required": true,
+              "iid_uniform_columns_verified": false,
+              "target_independent_of_suffix_required": true,
+              "state_cap_exhaustion_included": false
+            },
+            "ideal_uncapped_episode_abort_bound": {
+              "numerator": 3155443620884047221646914261131144918696882222356822353165905172913453,
+              "denominator": 2559999999999999999999999999999873782255164638111134123429554754203252286970382556319236755371093750
+            },
+            "episode_abort_bound": {
+              "numerator": 3155443620884047221646914261131144918696882222356822353165905172913453,
+              "denominator": 2559999999999999999999999999999873782255164638111134123429554754203252286970382556319236755371093750
+            },
+            "fresh_iid_source_required": true,
+            "source_law_certified": false,
+            "normal_form_clock_certified": false,
+            "quantum_receiver_implemented": false
+          }
+        },
+        {
+          "grade": 3,
+          "nodes": 304,
+          "plan": {
+            "prime": 5,
+            "degree": 3,
+            "cyclic_rank_bound": 2,
+            "failure_bits": 96,
+            "pilot_source_count": 100,
+            "prefix_source_count": 100,
+            "suffix_source_count": 104,
+            "bank_source_count": 204,
+            "source_labels_cap": 304,
+            "complete_dp_state_bound": 25,
+            "dp_state_cap": 25,
+            "complete_state_cap_met": true,
+            "pilot_incompleteness_bound": {
+              "numerator": 1,
+              "denominator": 1262177448353618888658765704452457967477130296174436807632446289062500
+            },
+            "prefix_rank_failure_bound": {
+              "numerator": 1,
+              "denominator": 1262177448353618888658765704452457967477130296174436807632446289062500
+            },
+            "iid_subset_absence_bound": {
+              "numerator": 5,
+              "denominator": 4056481920730334084789450257203
+            },
+            "suffix_moments": {
+              "prime": 5,
+              "rank": 2,
+              "width": 104,
+              "state_bound": 25,
+              "nonzero_boolean_words": 20282409603651670423947251286015,
+              "single_word_hit_probability": {
+                "numerator": 1,
+                "denominator": 25
+              },
+              "mu": {
+                "numerator": 4056481920730334084789450257203,
+                "denominator": 5
+              },
+              "variance": {
+                "numerator": 97355566097528018034946806172872,
+                "denominator": 125
+              },
+              "no_hit_upper": {
+                "numerator": 5,
+                "denominator": 4056481920730334084789450257203
+              },
+              "distinct_word_images_pairwise_independent": true,
+              "iid_uniform_columns_required": true,
+              "iid_uniform_columns_verified": false,
+              "target_independent_of_suffix_required": true,
+              "state_cap_exhaustion_included": false
+            },
+            "ideal_uncapped_episode_abort_bound": {
+              "numerator": 3155443620884047221646914261131144918696882222356822353165905172913453,
+              "denominator": 2559999999999999999999999999999873782255164638111134123429554754203252286970382556319236755371093750
+            },
+            "episode_abort_bound": {
+              "numerator": 3155443620884047221646914261131144918696882222356822353165905172913453,
+              "denominator": 2559999999999999999999999999999873782255164638111134123429554754203252286970382556319236755371093750
+            },
+            "fresh_iid_source_required": true,
+            "source_law_certified": false,
+            "normal_form_clock_certified": false,
+            "quantum_receiver_implemented": false
+          }
+        },
+        {
+          "grade": 4,
+          "nodes": 92416,
+          "plan": {
+            "prime": 5,
+            "degree": 4,
+            "cyclic_rank_bound": 2,
+            "failure_bits": 96,
+            "pilot_source_count": 100,
+            "prefix_source_count": 100,
+            "suffix_source_count": 104,
+            "bank_source_count": 204,
+            "source_labels_cap": 304,
+            "complete_dp_state_bound": 25,
+            "dp_state_cap": 25,
+            "complete_state_cap_met": true,
+            "pilot_incompleteness_bound": {
+              "numerator": 1,
+              "denominator": 1262177448353618888658765704452457967477130296174436807632446289062500
+            },
+            "prefix_rank_failure_bound": {
+              "numerator": 1,
+              "denominator": 1262177448353618888658765704452457967477130296174436807632446289062500
+            },
+            "iid_subset_absence_bound": {
+              "numerator": 5,
+              "denominator": 4056481920730334084789450257203
+            },
+            "suffix_moments": {
+              "prime": 5,
+              "rank": 2,
+              "width": 104,
+              "state_bound": 25,
+              "nonzero_boolean_words": 20282409603651670423947251286015,
+              "single_word_hit_probability": {
+                "numerator": 1,
+                "denominator": 25
+              },
+              "mu": {
+                "numerator": 4056481920730334084789450257203,
+                "denominator": 5
+              },
+              "variance": {
+                "numerator": 97355566097528018034946806172872,
+                "denominator": 125
+              },
+              "no_hit_upper": {
+                "numerator": 5,
+                "denominator": 4056481920730334084789450257203
+              },
+              "distinct_word_images_pairwise_independent": true,
+              "iid_uniform_columns_required": true,
+              "iid_uniform_columns_verified": false,
+              "target_independent_of_suffix_required": true,
+              "state_cap_exhaustion_included": false
+            },
+            "ideal_uncapped_episode_abort_bound": {
+              "numerator": 3155443620884047221646914261131144918696882222356822353165905172913453,
+              "denominator": 2559999999999999999999999999999873782255164638111134123429554754203252286970382556319236755371093750
+            },
+            "episode_abort_bound": {
+              "numerator": 3155443620884047221646914261131144918696882222356822353165905172913453,
+              "denominator": 2559999999999999999999999999999873782255164638111134123429554754203252286970382556319236755371093750
+            },
+            "fresh_iid_source_required": true,
+            "source_law_certified": false,
+            "normal_form_clock_certified": false,
+            "quantum_receiver_implemented": false
+          }
+        }
+      ],
+      "dp_states_per_node_upper": 25,
+      "dp_transition_upper": 241074600,
+      "small_prime_state_enumeration_used": true,
+      "discarded_pilots_charged": true,
+      "pointwise_source_composition_required": true,
+      "original_oracle_queries_included": false,
+      "quantum_receiver_implemented": false,
+      "all_prime_ring_hsp_bound": false,
+      "complete_quantum_error_accounting_included": false,
+      "class_bounded_by_derived_cyclic_rank": false,
+      "novelty_established": false
+    },
+    {
+      "status": "CONDITIONAL_MIXED_ORDER_SOURCE_TREE_NOT_HSP_BOUND",
+      "raw_arity_per_grade": 24,
+      "leaves_per_output_tree": 576,
+      "failure_bits_per_node": 16,
+      "stages": [
+        {
+          "grade": 2,
+          "nodes": 1,
+          "plan": {
+            "prime": 1009,
+            "degree": 2,
+            "reduced_degree": 2,
+            "cyclic_rank_bound": 2,
+            "uniform_parameter": 3,
+            "pilot_source_count": 12,
+            "bank_source_count": 12,
+            "source_labels_cap": 24,
+            "failure_bits": 16,
+            "recommended_kernel_trial_cap": 536870912,
+            "kernel_trial_cap": 536870912,
+            "recommended_cap_met": true,
+            "pilot_incompleteness_bound": {
+              "numerator": 1,
+              "denominator": 1102483743784946719318217767796208
+            },
+            "iid_bad_bank_bound": {
+              "numerator": 1113509941462002714775544850736525633,
+              "denominator": 145742955389190403559424803368165427546275637883280583294976
+            },
+            "kernel_exhaustion_bound": {
+              "numerator": 1,
+              "denominator": 65536
+            },
+            "auxiliary_arithmetic_abort_bound": {
+              "numerator": 4147772958261720656108424324537981158953,
+              "denominator": 724872055011443455194423144685499800986058752
+            },
+            "episode_abort_bound": {
+              "numerator": 32890831254063072320160334826562630235535432352441561587944250115042526282947535,
+              "denominator": 1567658493711907099833014762340797918561363145063090741598437426943222924938508763136
+            },
+            "arithmetic_budget": {
+              "attempt_cap": 536870912,
+              "failure_bits": 16,
+              "kernel_uniform_call_cap": 6442450944,
+              "root_call_cap": 12,
+              "root_split_attempt_cap": 66,
+              "root_split_trial_cap": 792,
+              "root_uniform_call_cap": 1584,
+              "uniform_call_cap": 6442452528,
+              "integer_rejection_cap": 50,
+              "bit_draw_cap": 322122626400,
+              "random_bit_cap": 3221226264000,
+              "root_abort_upper": {
+                "numerator": 295147905179352825856,
+                "denominator": 10301051460877537453973547267843
+              },
+              "bit_abort_upper": {
+                "numerator": 402653283,
+                "denominator": 70368744177664
+              },
+              "auxiliary_abort_upper": {
+                "numerator": 4147772958261720656108424324537981158953,
+                "denominator": 724872055011443455194423144685499800986058752
+              },
+              "attempt_exhaustion_included": false,
+              "iid_fair_bits_required": true
+            },
+            "projective_moments": {
+              "p": 1009,
+              "d": 2,
+              "rank_bound": 2,
+              "width": 12,
+              "h": 504,
+              "S": 268637376395543538746286686601216,
+              "D": 533010667451475275290251362304,
+              "mu": {
+                "numerator": 533010667451475275290251362304,
+                "denominator": 1018081
+              },
+              "variance": {
+                "numerator": 542647500318997948267499106934456320,
+                "denominator": 1036488922561
+              },
+              "bad_bank_upper": {
+                "numerator": 1113509941462002714775544850736525633,
+                "denominator": 145742955389190403559424803368165427546275637883280583294976
+              },
+              "good_bank_kernel_power_density_lower": {
+                "numerator": 134318688197771769373143343300608,
+                "denominator": 1113509674956668989037907205610844481
+              },
+              "weaker_density_lower": {
+                "numerator": 1,
+                "denominator": 33554432
+              },
+              "rank_zero_kernel_power_density": null,
+              "rank_zero_deterministic": false,
+              "require_nonzero": true,
+              "iid_uniform_columns_required": true,
+              "iid_uniform_columns_verified": false,
+              "supplied_prime_verified_by_this_api": false,
+              "arbitrary_fixed_bank_guarantee": false,
+              "fixed_bank_repetitions_repair_bad_banks": false
+            },
+            "field_threshold": 144,
+            "large_field_guard_satisfied": true,
+            "fresh_iid_source_required": true,
+            "iid_fair_bits_required": true,
+            "hidden_support_certified": false,
+            "quantum_receiver_implemented": false
+          }
+        },
+        {
+          "grade": 3,
+          "nodes": 24,
+          "plan": {
+            "prime": 1009,
+            "degree": 3,
+            "reduced_degree": 3,
+            "cyclic_rank_bound": 2,
+            "uniform_parameter": 3,
+            "pilot_source_count": 12,
+            "bank_source_count": 12,
+            "source_labels_cap": 24,
+            "failure_bits": 16,
+            "recommended_kernel_trial_cap": 69657034752,
+            "kernel_trial_cap": 69657034752,
+            "recommended_cap_met": true,
+            "pilot_incompleteness_bound": {
+              "numerator": 1,
+              "denominator": 1102483743784946719318217767796208
+            },
+            "iid_bad_bank_bound": {
+              "numerator": 1113509678037742467393796280205488449,
+              "denominator": 1684937213935668944377844373870304298773179937481067331584
+            },
+            "kernel_exhaustion_bound": {
+              "numerator": 1,
+              "denominator": 65536
+            },
+            "auxiliary_arithmetic_abort_bound": {
+              "numerator": 29060483576805183370478024126682932356713853,
+              "denominator": 5010315644239097162303852776066174624415638093824
+            },
+            "episode_abort_bound": {
+              "numerator": 228187195585647252543713743259466752830014957749094615467968823636664320784873353947,
+              "denominator": 10835655508536701874045798037299595213096142058676083205928399495031556857174972570796032
+            },
+            "arithmetic_budget": {
+              "attempt_cap": 69657034752,
+              "failure_bits": 16,
+              "kernel_uniform_call_cap": 835884417024,
+              "root_call_cap": 12,
+              "root_split_attempt_cap": 69,
+              "root_split_trial_cap": 1656,
+              "root_uniform_call_cap": 4968,
+              "uniform_call_cap": 835884421992,
+              "integer_rejection_cap": 57,
+              "bit_draw_cap": 47645412053544,
+              "random_bit_cap": 476454120535440,
+              "root_abort_upper": {
+                "numerator": 4722366482869645213696,
+                "denominator": 278128389443693511257285776231761
+              },
+              "bit_abort_upper": {
+                "numerator": 104485552749,
+                "denominator": 18014398509481984
+              },
+              "auxiliary_abort_upper": {
+                "numerator": 29060483576805183370478024126682932356713853,
+                "denominator": 5010315644239097162303852776066174624415638093824
+              },
+              "attempt_exhaustion_included": false,
+              "iid_fair_bits_required": true
+            },
+            "projective_moments": {
+              "p": 1009,
+              "d": 3,
+              "rank_bound": 2,
+              "width": 12,
+              "h": 336,
+              "S": 2070481377455157458127600746496,
+              "D": 6162146956711778149189287936,
+              "mu": {
+                "numerator": 6162146956711778149189287936,
+                "denominator": 1018081
+              },
+              "variance": {
+                "numerator": 6273558573689127098126630261882880,
+                "denominator": 1036488922561
+              },
+              "bad_bank_upper": {
+                "numerator": 1113509678037742467393796280205488449,
+                "denominator": 1684937213935668944377844373870304298773179937481067331584
+              },
+              "good_bank_kernel_power_density_lower": {
+                "numerator": 1035240688727578729063800373248,
+                "denominator": 1113509674956668989037907205610844481
+              },
+              "weaker_density_lower": {
+                "numerator": 1,
+                "denominator": 4353564672
+              },
+              "rank_zero_kernel_power_density": null,
+              "rank_zero_deterministic": false,
+              "require_nonzero": true,
+              "iid_uniform_columns_required": true,
+              "iid_uniform_columns_verified": false,
+              "supplied_prime_verified_by_this_api": false,
+              "arbitrary_fixed_bank_guarantee": false,
+              "fixed_bank_repetitions_repair_bad_banks": false
+            },
+            "field_threshold": 144,
+            "large_field_guard_satisfied": true,
+            "fresh_iid_source_required": true,
+            "iid_fair_bits_required": true,
+            "hidden_support_certified": false,
+            "quantum_receiver_implemented": false
+          }
+        }
+      ],
+      "bank_and_pilot_failure_bound": {
+        "numerator": 592049755351916215987703433629346952247857,
+        "denominator": 37310196579632743311212749662250349451846563298119829323513856
+      },
+      "tree_abort_bound": {
+        "numerator": 237659754986817417371919919689516790337849162266597785205296767669796568354362244027,
+        "denominator": 451485646189029244751908251554149800545672585778170133580349978959648202382290523783168
+      },
+      "classical_kernel_trial_cap": 1672305704960,
+      "discarded_pilots_charged": true,
+      "pointwise_source_composition_required": true,
+      "original_oracle_queries_included": false,
+      "quantum_receiver_implemented": false,
+      "all_prime_ring_hsp_bound": false,
+      "complete_quantum_error_accounting_included": false,
+      "class_bounded_by_derived_cyclic_rank": false,
+      "novelty_established": false,
+      "regime": "LARGE_PRIME_UNIT_KERNEL",
+      "all_prime_branch_coverage": true,
+      "prime": 1009,
+      "class_bound": 3,
+      "cyclic_rank_bound": 2,
+      "uniform_parameter": 3,
+      "class_strictly_below_prime_required": true,
+      "uniform_branch_tree_abort_bound": {
+        "numerator": 1,
+        "denominator": 16
+      },
+      "small_prime_state_enumeration_used": false
+    }
+  ],
+  "quantum_receiver_implemented": false,
+  "iid_source_certified": false,
+  "all_prime_ring_hsp_bound": false,
+  "speedup_claim_allowed": false,
+  "candidate_promotion": false,
+  "proof_promotion": false
+}

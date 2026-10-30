@@ -6,6 +6,17 @@ and its function to FUNCTIONS; ORDER is also the order of ``qsearch.py --help``.
 
 # (subcommand, module, function that adds its parser), in --help order
 ORDER = [
+    ("holdout-jets", "qsearch_cli.commands.general", "add_holdout_jets"),
+    ("subspace-source", "qsearch_cli.commands.rees", "add_subspace_source"),
+    ("iterated-stabilizer", "qsearch_cli.commands.general", "add_iterated_stabilizer"),
+    ("inverse-trace-sampling", "qsearch_cli.commands.general", "add_inverse_trace_sampling"),
+    ("prime-power-sde", "qsearch_cli.commands.sde", "add_prime_power_sde"),
+    ("inverse-trace-norm", "qsearch_cli.commands.general", "add_inverse_trace_norm"),
+    ("inverse-trace-smt", "qsearch_cli.commands.general", "add_inverse_trace_smt"),
+    ("cubic-sde", "qsearch_cli.commands.sde", "add_cubic_sde"),
+    ("odd-power-sde", "qsearch_cli.commands.sde", "add_odd_power_sde"),
+    ("power-sde", "qsearch_cli.commands.sde", "add_power_sde"),
+    ("phase-copy-baseline", "qsearch_cli.commands.sde", "add_phase_copy_baseline"),
     ("audit", "qsearch_cli.commands.general", "add_audit"),
     ("literature", "qsearch_cli.commands.general", "add_literature"),
     ("hypothesize", "qsearch_cli.commands.general", "add_hypothesize"),
@@ -873,6 +884,17 @@ ORDER = [
 
 # command function -> module that defines it
 FUNCTIONS = {
+    "command_holdout_jets": "qsearch_cli.commands.general",
+    "command_subspace_source": "qsearch_cli.commands.rees",
+    "command_iterated_stabilizer": "qsearch_cli.commands.general",
+    "command_inverse_trace_sampling": "qsearch_cli.commands.general",
+    "command_prime_power_sde": "qsearch_cli.commands.sde",
+    "command_inverse_trace_norm": "qsearch_cli.commands.general",
+    "command_inverse_trace_smt": "qsearch_cli.commands.general",
+    "command_cubic_sde": "qsearch_cli.commands.sde",
+    "command_odd_power_sde": "qsearch_cli.commands.sde",
+    "command_power_sde": "qsearch_cli.commands.sde",
+    "command_phase_copy_baseline": "qsearch_cli.commands.sde",
     "command_sdw_branch_character_cyclic_polar_compiler": "qsearch_cli.commands.self_dual_wreath",
     "command_sdw_branch_character_cyclic_quadrant_overlap": "qsearch_cli.commands.self_dual_wreath",
     "command_sdw_branch_character_equivariant_multiplier_normal_form": "qsearch_cli.commands.self_dual_wreath",

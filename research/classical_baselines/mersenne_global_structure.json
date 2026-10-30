@@ -1,0 +1,316 @@
+{
+  "completion_bounds": [
+    {
+      "all_syndromes_nonempty_certified": false,
+      "bits": 17,
+      "checks": 36,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 244,
+      "mean_count_log2": 108,
+      "old_uniform_error_power2_upper": 365,
+      "remaining": 45,
+      "syndrome_variance_power2_upper": -63,
+      "uniform_error_power2_upper": 230
+    },
+    {
+      "all_syndromes_nonempty_certified": true,
+      "bits": 17,
+      "checks": 36,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 216,
+      "mean_count_log2": 556,
+      "old_uniform_error_power2_upper": 211,
+      "remaining": 73,
+      "syndrome_variance_power2_upper": -337,
+      "uniform_error_power2_upper": -4
+    },
+    {
+      "all_syndromes_nonempty_certified": true,
+      "bits": 17,
+      "checks": 36,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 200,
+      "mean_count_log2": 812,
+      "old_uniform_error_power2_upper": 123,
+      "remaining": 89,
+      "syndrome_variance_power2_upper": -500,
+      "uniform_error_power2_upper": -100
+    },
+    {
+      "all_syndromes_nonempty_certified": false,
+      "bits": 31,
+      "checks": 120,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 825,
+      "mean_count_log2": 360,
+      "old_uniform_error_power2_upper": 2565,
+      "remaining": 136,
+      "syndrome_variance_power2_upper": -211,
+      "uniform_error_power2_upper": 1613
+    },
+    {
+      "all_syndromes_nonempty_certified": true,
+      "bits": 31,
+      "checks": 120,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 720,
+      "mean_count_log2": 3510,
+      "old_uniform_error_power2_upper": 1672,
+      "remaining": 241,
+      "syndrome_variance_power2_upper": -1830,
+      "uniform_error_power2_upper": -13
+    },
+    {
+      "all_syndromes_nonempty_certified": true,
+      "bits": 31,
+      "checks": 120,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 690,
+      "mean_count_log2": 4410,
+      "old_uniform_error_power2_upper": 1417,
+      "remaining": 271,
+      "syndrome_variance_power2_upper": -2313,
+      "uniform_error_power2_upper": -421
+    },
+    {
+      "all_syndromes_nonempty_certified": false,
+      "bits": 61,
+      "checks": 465,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 3225,
+      "mean_count_log2": 1395,
+      "old_uniform_error_power2_upper": 20182,
+      "remaining": 496,
+      "syndrome_variance_power2_upper": -878,
+      "uniform_error_power2_upper": 13238
+    },
+    {
+      "all_syndromes_nonempty_certified": true,
+      "bits": 61,
+      "checks": 465,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 2790,
+      "mean_count_log2": 27495,
+      "old_uniform_error_power2_upper": 13004,
+      "remaining": 931,
+      "syndrome_variance_power2_upper": -14475,
+      "uniform_error_power2_upper": -28
+    },
+    {
+      "all_syndromes_nonempty_certified": true,
+      "bits": 61,
+      "checks": 465,
+      "completion_solver_implemented": false,
+      "fixed_coordinates": 2730,
+      "mean_count_log2": 31095,
+      "old_uniform_error_power2_upper": 12014,
+      "remaining": 991,
+      "syndrome_variance_power2_upper": -16398,
+      "uniform_error_power2_upper": -1710
+    }
+  ],
+  "coordinate_schmidt_bounds": [
+    {
+      "bits": 17,
+      "bound_scope": "every ordering of whole field coordinates, before and after local Fourier",
+      "checks": 36,
+      "covers_arbitrary_qubit_interleavings": false,
+      "global_sampler_implemented": false,
+      "left_coordinates": 144,
+      "length": 289,
+      "native_state_materialized": false,
+      "pure_trace_distance": [
+        1,
+        10
+      ],
+      "radius": 173,
+      "radius_filtered_rank": {
+        "multiplier": 117,
+        "power_of_two": 612
+      },
+      "required_rank_power2_lower": 611,
+      "right_coordinates": 145,
+      "sampling_hardness_claimed": false,
+      "squared_schmidt_coefficient_power2_upper": -611,
+      "syndrome_sector_count_log2": 612,
+      "uniform_native_rank": {
+        "multiplier": 1,
+        "power_of_two": 612
+      }
+    },
+    {
+      "bits": 31,
+      "bound_scope": "every ordering of whole field coordinates, before and after local Fourier",
+      "checks": 120,
+      "covers_arbitrary_qubit_interleavings": false,
+      "global_sampler_implemented": false,
+      "left_coordinates": 480,
+      "length": 961,
+      "native_state_materialized": false,
+      "pure_trace_distance": [
+        1,
+        10
+      ],
+      "radius": 576,
+      "radius_filtered_rank": {
+        "multiplier": 386,
+        "power_of_two": 3720
+      },
+      "required_rank_power2_lower": 3719,
+      "right_coordinates": 481,
+      "sampling_hardness_claimed": false,
+      "squared_schmidt_coefficient_power2_upper": -3719,
+      "syndrome_sector_count_log2": 3720,
+      "uniform_native_rank": {
+        "multiplier": 1,
+        "power_of_two": 3720
+      }
+    },
+    {
+      "bits": 61,
+      "bound_scope": "every ordering of whole field coordinates, before and after local Fourier",
+      "checks": 465,
+      "covers_arbitrary_qubit_interleavings": false,
+      "global_sampler_implemented": false,
+      "left_coordinates": 1860,
+      "length": 3721,
+      "native_state_materialized": false,
+      "pure_trace_distance": [
+        1,
+        10
+      ],
+      "radius": 2232,
+      "radius_filtered_rank": {
+        "multiplier": 1490,
+        "power_of_two": 28365
+      },
+      "required_rank_power2_lower": 28364,
+      "right_coordinates": 1861,
+      "sampling_hardness_claimed": false,
+      "squared_schmidt_coefficient_power2_upper": -28364,
+      "syndrome_sector_count_log2": 28365,
+      "uniform_native_rank": {
+        "multiplier": 1,
+        "power_of_two": 28365
+      }
+    }
+  ],
+  "field_tables_materialized": false,
+  "hardness_claimed": false,
+  "native_solver_implemented": false,
+  "quantum_advantage_claimed": false,
+  "single_term_importance_bounds": [
+    {
+      "A": 5085,
+      "B_power2_lower": 60,
+      "L_power2_lower": 60,
+      "a": [
+        5085,
+        131072
+      ],
+      "all_estimator_hardness_claimed": false,
+      "all_syndromes_in_g_interval_certified": false,
+      "bits": 17,
+      "bound_scope": "unbiased single-term estimator and independent arithmetic mean only",
+      "checks": 36,
+      "field_tables_materialized": false,
+      "free_symbols": 9,
+      "length": 289,
+      "native_solver_implemented": false,
+      "optimal_proposal_access_granted": true,
+      "relative_variance_g_interval": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "relative_variance_power2_lower": 119,
+      "relative_variance_requires_g_interval": true,
+      "remaining": 45,
+      "s": 3,
+      "second_moment_power2_lower": 120
+    },
+    {
+      "A": 11770617,
+      "B_power2_lower": 526,
+      "L_power2_lower": 526,
+      "a": [
+        11770617,
+        2147483648
+      ],
+      "all_estimator_hardness_claimed": false,
+      "all_syndromes_in_g_interval_certified": false,
+      "bits": 31,
+      "bound_scope": "unbiased single-term estimator and independent arithmetic mean only",
+      "checks": 120,
+      "field_tables_materialized": false,
+      "free_symbols": 16,
+      "length": 961,
+      "native_solver_implemented": false,
+      "optimal_proposal_access_granted": true,
+      "relative_variance_g_interval": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "relative_variance_power2_lower": 1052,
+      "relative_variance_requires_g_interval": true,
+      "remaining": 136,
+      "s": 7,
+      "second_moment_power2_lower": 1053
+    },
+    {
+      "A": 49755179191503,
+      "B_power2_lower": 5797,
+      "L_power2_lower": 5797,
+      "a": [
+        49755179191503,
+        2305843009213693952
+      ],
+      "all_estimator_hardness_claimed": false,
+      "all_syndromes_in_g_interval_certified": false,
+      "bits": 61,
+      "bound_scope": "unbiased single-term estimator and independent arithmetic mean only",
+      "checks": 465,
+      "field_tables_materialized": false,
+      "free_symbols": 31,
+      "length": 3721,
+      "native_solver_implemented": false,
+      "optimal_proposal_access_granted": true,
+      "relative_variance_g_interval": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "relative_variance_power2_lower": 11592,
+      "relative_variance_requires_g_interval": true,
+      "remaining": 496,
+      "s": 14,
+      "second_moment_power2_lower": 11594
+    }
+  ],
+  "source_sha256": {
+    "research/MERSENNE_COMPLETION_MOMENTS.md": "77a38986c40efbd39a23864298719581b6e60f3ef769186e34465b45c0dd13f2",
+    "research/MERSENNE_COORDINATE_SCHMIDT_FILTER.md": "df401bb88f0ea5bebbf1c7468e345608e5034a4cd8371a2c91134a7b4af7d4f8",
+    "research/audits/reviews/2026-10-30-mersenne-conditional-estimator.md": "b360aaf97ab0e156b2923a827deebf23b7468e4f7265ef304b1feb5e5a774d49",
+    "tests/test_mersenne_global_structure.py": "f122913a1eec5e6fddc9daf21b73ce8f10054265b30d6e5f48c5f2c76e9fbca7",
+    "theorems/inverse_trace_gibbs_target.py": "91c500f9e8ee087bf52fd463964bee8a5e699aba208341bfc8b1d6afd7636cb9",
+    "theorems/mersenne_global_structure.py": "fbcec5264019ac176bc443643556611c53d774118a74b39d2aede739ced8388f",
+    "theorems/mersenne_reciprocal_access.py": "3d5265b39bd4be6fbe6f696523e4c23866a339bbddbdade46620465eb0c21c9a"
+  },
+  "status": "ANALYTIC_GLOBAL_STRUCTURE_NOT_A_NATIVE_SOLVER"
+}

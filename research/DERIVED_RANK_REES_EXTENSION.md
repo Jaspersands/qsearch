@@ -1,5 +1,11 @@
 # Uniform Derived-Rank Rees Extension
 
+**29 October addendum:** [whole-grade descent](REES_FULL_GRADE_PARAMETER_BOUND.md)
+sharpens the bound to2^O(r log(r+2)) on a certified large-prime regime,
+and2^O_b(r log(r+2)) for fixed bounded effective degrees. The original
+arbitrary-prime scalar-flag bound below remains valid. The addendum does
+not assert a new application, novelty, or an implemented quantum receiver.
+
 2026-10-23. Proposed corollary of the existing Rees composition, NOT an
 independently verified theorem, new arithmetic primitive, implemented quantum
 receiver, or application-level speedup. The point is a uniform parameter

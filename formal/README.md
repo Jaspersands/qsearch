@@ -1,10 +1,16 @@
 # Lean Formalization: Checked Research Claims
 
-`drafts/ReesHomogenization.lean` is an **unverified draft**, not imported
-by the default build. Its compilation attempts stopped in offloaded
-iCloud dependency caches before checking the statements. See
-`research/REES_HSP_REDUCTION.md` for the separate written argument;
-do not count the draft among the checked claims listed below.
+The default build now checks the concrete positive lower-central Rees Lie
+algebra, its evaluation and dilation maps, its hidden-subalgebra
+interpolation, and canonical prime-power-ring interpolation. At class at
+most three it also constructs the actual BCH group and transports the
+concrete Rees maps into the group-level hiding theorem. It now constructs
+the actual central quotients and instantiates the full-register central
+measurements and their two-stage fresh-bank composition, retaining all of
+log(H) at the terminal additive quotient. Total valid SDE policies remain
+supplied inputs. General-class BCH/Lazard transport, original-oracle-to-
+recovery/error integration and a polynomial-time receiver theorem remain
+outside this verification.
 
 This folder holds a Lean 4 + Mathlib project. It checks the mixed affine-support
 Kraus identity, conditional scalar and matrix group-coset Fourier conversions,
@@ -31,7 +37,22 @@ Nothing here uses `sorry`. The guards in `Formal/Audit.lean` and the local
 guards in `Formal/AffineSupportErasure.lean`, `Formal/CosetSourceFourier.lean`,
 `Formal/ClassThreePotential.lean`, `Formal/ClassThreeMonomial.lean`, `Formal/CosetMatrixSource.lean`,
 `Formal/JetOracleHomogenization.lean`,
+`Formal/ReesHomogenization.lean`,
+`Formal/ReesPrimePowerInterpolation.lean`,
+`Formal/ReesLieConstruction.lean`,
+`Formal/ReesLieInterpolation.lean`,
+`Formal/BCHClassThree.lean`,
+`Formal/BCHClassThreeSubgroups.lean`,
+`Formal/ReesGroupClassThree.lean`,
+`Formal/ReesCentralQuotient.lean`,
+`Formal/ReesCentralQuotientBCH.lean`,
+`Formal/ReesClassThreeReceiver.lean`,
 `Formal/CentralCharacterDescent.lean`,
+`Formal/CentralQuotientReceiver.lean`,
+`Formal/CentralSpectralProjector.lean`,
+`Formal/CentralDescentRecords.lean`,
+`Formal/CentralDescentPolicy.lean`,
+`Formal/ReesMeasuredReceiver.lean`,
 `Formal/RecursiveOracleReduction.lean`,
 `Formal/CentralRegularSource.lean`,
 `Formal/RetainedFourier.lean`,
@@ -76,7 +97,277 @@ To regenerate the Python values after `exterior_characters` changes, run
 `python formal/scripts/gen_crosscheck.py` from the repository root. Add
 `--check` to check the file without rewriting it.
 
+## Rees Interfaces and Nontransverse Central Descent
+
+The promoted module is imported by `Formal.lean`. Its guarded theorems in
+`QSearch.ReesHomogenization` are:
+
+| Theorem | Checked statement |
+|---|---|
+| `coefficientwise_iff` | With no constant term, evaluation at n distinct nonzero field points lies in a linear submodule exactly when all n coefficients do. The submodule need not be homogeneous. |
+| `tuple_hides` | An ordered tuple of original oracle evaluations has exactly the coefficientwise hiding relation, assuming the evaluation homomorphisms, their log/coefficient identity, and the original oracle hiding relation. |
+| `coefficient_translate` | The finite central coefficient at h * embed(z), for h in H, is the character sum over embed's preimage of H times chi(z). |
+| `coefficient_allowed` | If chi is trivial on that preimage, the coefficient is its actual cardinality times chi(z). |
+
+These are interface lemmas. The concrete Lie construction and its
+interpolation identity are now supplied by the separate modules below.
+The class-three group bridge below now supplies BCH/group transport and
+the group-level log/coefficient identity in that scope. General-class
+transport, oracle implementation, sampling/SDE algorithms, recursion,
+complexity and the polynomial-time receiver theorem remain outside this
+formalization.
+
+### Concrete Lie Cover And Ring Bridge
+
+`Formal/ReesLieConstruction.lean` works over any commutative ring, with
+actual Mathlib Lie axioms. Its ambient algebra is the ordinary polynomial
+current algebra `AddMonoidAlgebra R Nat` tensor `L`, not a truncated
+quotient or a supplied bracket table with unverified laws.
+
+| Definition/theorem | Checked statement |
+|---|---|
+| `gamma_bracket_le`, `rees` | Jacobi and the actual lower central series prove untruncated closure of the positive Rees span. |
+| `mem_rees_iff`, `nilpotent_cutoff` | Exactly the positive lower-central coefficients occur; above an explicit class bound they and the corresponding brackets are actually zero. |
+| `evaluation`, `evaluation_formula` | Evaluation is an actual Lie homomorphism with its actual coefficient sum, independent of the hidden subalgebra. |
+| `scaling_coeff`, `dilation` | Scalar substitution scales grade r by a^r; unit scalars give Lie automorphisms. |
+| `grade_one_retention` | Evaluation at one splits the grade-one LINEAR embedding of all L, including derived directions. This embedding is not asserted to be a Lie homomorphism. |
+| `rees_class_bound` | The cover inherits the supplied nilpotence class bound of L. |
+
+`Formal/ReesLieInterpolation.lean` connects these actual evaluation sums to
+the finite interpolation matrix, using the proved coefficient cutoff.
+Its `hiddenCover` is an actual Lie subalgebra defined by evaluation
+preimages. `mem_hiddenCover_iff` identifies it with coefficientwise
+membership in the ambient hidden subalgebra; `dilation_mem_iff` proves
+unit-scale invariance in BOTH directions. No original grading, hidden
+ideal assumption, or supplied invariance equation is required. This is
+the ambient intersection construction, not the generally smaller Rees
+cover of the hidden algebra's intrinsic lower central series.
+
+`Formal/ReesPrimePowerInterpolation.lean` proves the canonical points
+1,...,c have unit evaluation determinant modulo p^e, for prime p, e>0,
+c<p. The generalized ring interface in `ReesHomogenization` needs no
+freeness of the coefficient module or quotient. A kernel-checked Z/9
+counterexample shows why distinct unit points and a nonzero determinant
+do not suffice: 6t+3t^2 vanishes at both 1 and 4.
+
+The hidden subalgebra is a correctness parameter, not an input to
+`evaluation` or `dilation`. These noncomputable mathematical definitions
+do not extract executable circuits or resource bounds. In particular,
+proving a Lie homomorphism alone does not instantiate the group homomorphism
+argument of `tuple_hides`. The separate class-three construction below now
+does so in its stated scope. See `research/REES_CONCRETE_FORMALIZATION.md`
+for the earlier Lie-level checkpoint.
+
+### Actual Class-Three Group Layer
+
+`Formal/BCHClassThree.lean` constructs a group with multiplication
+`x+y+[x,y]/2+([x,[x,y]]+[y,[y,x]])/12`, identity zero and inverse negation.
+It proves associativity from Jacobi and the actual lower-central bound
+`lowerCentralSeries F L L 3 = bottom`. The coefficient field must have
+nonzero 2 and 3, so prime fields of characteristic greater than three are
+included; characteristic zero is not required. No original grading or
+supplied associativity identity is assumed.
+
+`lieHom` and `lieEquiv` turn actual Lie maps into group maps and equivalences.
+`val_pow` and `val_zpow` prove the group-power/logarithmic-scalar formulas.
+`Formal/ReesGroupClassThree.lean` specializes these to the concrete Rees
+evaluation and dilation. Its `evaluation_identity` instantiates the old
+interpolation interface, and `tuple_hides_subgroup` proves exact hiding of
+the actual lifted subgroup. The canonical points 1,2,3 have unit determinant
+12. No hidden ideal or homogeneity premise is added.
+
+`Formal/BCHClassThreeSubgroups.lean` derives a Lie subalgebra from ANY
+subgroup of the prime-field BCH group using explicit powers and commutator
+words. It proves both round trips, rather than assuming additive or bracket
+closure. `ReesGroupClassThree.tuple_hides_arbitrary_subgroup` composes this
+correspondence with the canonical evaluation maps. No supplied log-H space,
+hidden ideal, grading or normality premise remains in that theorem.
+`dilation_arbitrary_subgroup` proves invariance of the actual hidden lift.
+
+An arbitrary subgroup's logarithm is not assumed linear over a general
+extension field. See `research/REES_CLASS_THREE_GROUP_FORMALIZATION.md` for
+scope, counterexamples and final verification. This is not general-class or
+prime-power-ring BCH, executable circuit extraction, or whole-receiver proof.
+
+`QSearch.CentralCharacterDescent.coefficient_allowed` applies the promoted
+coefficient lemma to the existing source definition. Write
+`K = H.comap embed` and `k = Fintype.card K`, so K is the **full preimage**
+of H in C. For an allowed character (`embed z` in H implies `chi z = 1`):
+
+* `twisted_trace_allowed`: the raw `twistedEntry` has trace k.
+* `label_probability_allowed`: the actual one-sided `projectedEntry` has
+  trace k / |C|. `label_probability_allowed_ne_zero` proves it is nonzero.
+* `normalizedEntry` divides `twistedEntry` by k. `normalized_source`
+  identifies it with `projectedEntry` divided by the latter's actual trace;
+  `normalized_trace` proves trace one.
+* `normalized_correlation` retains the factor 1/k explicitly;
+  `normalized_correlation_at` cancels it using `coefficient_allowed`, giving
+  chi(z) on h * embed(z), while `normalized_correlation_off` gives zero
+  outside that support.
+* `mem_saturation_iff` uses explicit centrality of embed's image to identify
+  membership in `H ⊔ embed.range` with a decomposition h * embed(z).
+* `normalized_descent_output` invokes the existing `descent_output` on the
+  independent tensor of these normalized sources, giving the literal
+  controlled-action Kraus output for the saturated subgroup.
+
+The last theorem requires a **nonempty** finite active tensor, allowed
+characters for every factor, centrality, homomorphic actions preserving
+membership in `H ⊔ embed.range` in both directions, central decomposition
+witnesses on support, and cancellation of their character product. The
+witness `centralPart` appears only in correctness premises, not in the
+controlled-action Kraus operators. Independence is represented by an
+explicit product source; it is not inferred from its marginals. To read
+the resulting matrix as a quotient coset source, representatives must be
+an appropriate quotient transversal; the theorem itself accepts any map.
+
+No injectivity of `embed` is needed for these identities: k counts the
+preimage, including the kernel, rather than merely the image intersection.
+Identifying k with |H intersect image(embed)| requires injectivity. Allowed
+characters, not arbitrary labels, are the scope of normalization; the
+distribution over all labels and rejection of disallowed labels are not
+proved in that older module. The new quotient-receiver module below proves
+zero-source rejection and identifies all nonzero-trace branches. The old
+transverse lemmas remain available as special cases.
+The one-sided matrix identity alone is not a proof of spectral-projector
+idempotence, two-sided projection, positivity or instrument completeness.
+`action_complete` separately proves completeness of the controlled-action
+Kraus family for a nonempty control type.
+
+The local headline `#guard_msgs` / `#print axioms` checks and the global
+`Formal/Audit.lean` guards permit only subsets of `propext`,
+`Classical.choice` and `Quot.sound`. The global audit explicitly covers all
+nine promoted Rees theorems and all eleven new central-descent theorems,
+including the normalization and support helper lemmas. The concrete-cover
+pass adds 30 global guards for the ring interface, concrete Lie maps,
+interpolation bridge and ring countercontrols. With installed
+dependencies, validation without build-cache downloads from `formal/` uses:
+
+```text
+lake --no-cache build Formal.ReesHomogenization Formal.CentralCharacterDescent --wfail
+lake --no-cache build Formal.ReesLieConstruction Formal.ReesLieInterpolation Formal.ReesPrimePowerInterpolation --wfail
+lake --no-cache env lean -DwarningAsError=true Formal/ReesHomogenization.lean
+lake --no-cache env lean -DwarningAsError=true Formal/CentralCharacterDescent.lean
+lake --no-cache env lean -DwarningAsError=true Formal/Audit.lean
+lake --no-cache build --wfail
+```
+
+`--no-cache` prevents Lake build-cache downloads; this validation assumes
+the pinned toolchain, dependencies and their compiled artifacts already
+exist. It does not request installation or dependency updates.
+
+### Actual Quotient Coset Output
+
+`Formal/CentralQuotientReceiver.lean` connects the normalized source to an
+actual homomorphic quotient map `pi`, with `pi.ker = embed.range`. It does
+not require the hidden H to contain the kernel or be normal, and its public
+right inverse need not preserve multiplication.
+
+* `disallowed_projected_source` proves the entire projected matrix is zero
+  for a character nontrivial on `H.comap embed`.
+* `nonzero_branch_iff_allowed` derives character admissibility from the
+  nonzero trace of the actual projected matrix.
+* `dilation_preserves_saturation` derives saturation preservation from
+  automorphisms preserving H and acting by automorphisms on the center.
+* `quotient_coset_output` derives the required correlations and proves the
+  controlled-discard output is exactly `groupEntry (H.map pi)`.
+* `scalar_quotient_coset_output` replaces the phase-cancellation premise
+  with the vector SDE `sum_i s_i^d lambda_i = 0` and takes actual nonzero
+  branch traces, not a separately assumed admissible-label predicate.
+* `active_sde` and `active_nonempty` justify the active-target restriction
+  from a nonzero SDE witness; removing zero scales requires positive degree.
+
+The source remains an explicit independent tensor. This older module alone does not certify
+spectral projector physics, the distribution of complete label records,
+fresh-copy recursion, a solver, a circuit, or its running time. The concrete
+class-three bridge below now instantiates the quotient/scaling premises.
+The new coupled Python control uses a nonnormal H with a proper nontrivial
+central intersection and nonlinear quotient section. Incorrect transverse
+normalization gives output trace nine instead of one; this is an arithmetic
+falsifier, not evidence of an algorithmic speedup.
+
+### Concrete Class-Three Quotient Steps
+
+`Formal/ReesCentralQuotient.lean` constructs the actual tail ideals and
+their Lie quotients. It proves centrality of successive kernels, identifies
+each kernel with the corresponding lower-central coefficient space, derives
+its dilation weight, and proves finiteness from retained coordinates.
+`Formal/ReesCentralQuotientBCH.lean` transports these to actual BCH group
+projections with central kernels, derives hidden-image preservation, and
+identifies the terminal group with ADDITIVE L, not L/[L,L].
+
+`Formal/ReesClassThreeReceiver.lean` supplies explicit H-independent sections
+by inserting zero top coefficients. Its `degree_three_output` and
+`degree_two_output` instantiate the generic channel theorem for arbitrary
+prime-field hidden H, including nonnormal H and nontrivial central
+intersections. `terminal_source` retains exactly all of log(H).
+
+In that branchwise module, the source tensor is independently normalized, the measured branches
+must have nonzero trace, and a nonzero active SDE witness is supplied. No
+complete measurement, fresh-source recursion, solver or runtime is extracted.
+The branchwise theorem allows any base character; a complete linear-label
+spectral instrument on a nontrivial center requires a nontrivial one. A
+Python countercontrol shows why repeated trivial-character projectors fail.
+
+All four new modules are in the default build, with 44 local headline axiom
+guards repeated in `Formal/Audit.lean`. The full build and five strict
+file checks passed on 2026-10-27. See
+`research/REES_CENTRAL_QUOTIENT_FORMALIZATION.md` for exact scope, independent
+semantic review, reproducible commands and source hashes.
+
+### Complete Measured Class-Three Descent
+
+`Formal/CentralSpectralProjector.lean` derives the actual full-register
+projector Kraus operators from a central ancilla permutation and Fourier
+amplitudes. Orthogonality, idempotence and completeness hold over all
+additive characters. Its two-sided branch equals the source used by the
+earlier descent module for arbitrary H and arbitrary central intersection.
+
+`Formal/CentralDescentRecords.lean` proves tensor measurement factorization
+and the unnormalized output law for every record. Impossible labels give
+zero matrices. Zero-scale targets use identity controls and retain their
+branch-mass factors when traced out; an all-zero witness is excluded.
+
+`Formal/ReesMeasuredReceiver.lean` reuses the existing nontrivial-base
+linear-character equivalence. It derives the actual measured cubic and
+quadratic steps, sums all records, and composes the two H-independent
+operations on fresh banks. `measured_terminal_source` recovers the additive
+coset matrix of all log(H). No desired normalized source is assumed at an
+intermediate stage. Fresh tensor powers are supplied copies, not cloning.
+
+Total valid SDE witness policies and exact initial lifted coset sources
+remain inputs. There is no extracted solver, gate implementation, runtime
+bound, approximate error proof, final Fourier learning theorem or new
+application. The three modules add 31 local/global axiom guards. Independent
+automated semantic review found no defect in this scoped composition.
+The full Lean build, four strict checks and 130 selected Python tests pass;
+the new finite control covers all 59,049 five-label records. See
+`research/REES_MEASURED_RECEIVER_FORMALIZATION.md` for details and provenance.
+
 ## General Induced-Cocycle Operator Algebra
+
+### Bounded Label-Dependent Policies
+
+`Formal/CentralDescentPolicy.lean` generalizes padded receiver actions to
+automorphisms of any finite central abelian group. Sixteen guarded policy
+theorems derive the independent tensor output, including zero-mass
+records, accepted-record factorization, actual discarded packet traces,
+and conservation for nonnegative normalized choice weights that may
+depend on labels. The abstract relation to a supplied input explicitly
+assumes measured-ensemble completeness; it does not assume the desired
+output. Eight further guarded theorems derive that completeness from the
+actual product ancilla-Kraus measurement over the full character dual,
+then prove the measured accepted/abort trace is one. This bridge needs
+no field structure on the finite additive abelian center, and retains
+every zero-mass record.
+
+This is matrix/trace algebra, not extracted positivity/CPTP machinery,
+an efficient mixed-ring measurement, a Python-to-Lean policy compiler,
+or physical source independence. Subgroup preservation, character
+cancellation and valid accepted witnesses remain explicit premises.
+See `research/PILOT_RECEIVER_POLICY.md` for the fixed fully charged bank,
+failure-aware composition, error promises and decisive source falsifiers.
+
+### Existing Operator Results
 
 `Formal/RecursiveOracleReduction.lean` proves inheritance of hiding
 functions through quotient sections with kernel contained in H, nested
@@ -88,8 +379,9 @@ are written in `research/RECURSIVE_JET_RECOVERY.md`, not fully formalized.
 `Formal/CentralCharacterDescent.lean` derives the one-sided central
 projection from the original coset matrix, its normalized right correlation
 and branch trace, literal controlled-action Kraus completeness/output, and
-the independent tensor quotient kernel. Subgroup preservation and phase
-cancellation remain explicit premises. Projector completeness and the
+the independent tensor quotient kernel, including normalization by the
+full hidden central preimage for nontransverse intersections. Subgroup
+preservation and phase cancellation remain explicit premises. Projector completeness and the
 recursive error argument are written, not fully formalized, in
 `research/CENTRAL_CHARACTER_DESCENT.md`. No hidden source is inferred
 from marginals and no general quantum receiver is extracted.

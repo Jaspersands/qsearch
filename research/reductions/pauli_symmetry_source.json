@@ -1,0 +1,234 @@
+{
+  "status": "PURITY_GAP_CONJUGATION_SYMMETRY_DEDUCTION_AND_PUBLIC_CONTROLS_ONLY",
+  "input_contract": "IID unknown stabilizer-diagonal state; purity >= 1/R; every positive Pauli loss >= supplied delta",
+  "sample_profile": {
+    "known_spectrum_reference_only": true,
+    "purity": {
+      "numerator": 7,
+      "denominator": 54
+    },
+    "four_equal_label_probability": {
+      "numerator": 49,
+      "denominator": 17496
+    },
+    "purity_cubed_lower_bound": {
+      "numerator": 343,
+      "denominator": 157464
+    },
+    "periods": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "period_group_order": 3,
+    "smallest_positive_loss": {
+      "numerator": 1,
+      "denominator": 36
+    },
+    "spectrum_acquired_from_copies": false
+  },
+  "finite_skew_bell_control": {
+    "known_dense_one_qutrit_reference_only": true,
+    "mixed_nondiagonal_input": true,
+    "maximum_physical_fourier_discrepancy": 5.551115123125783e-17,
+    "physical_probability_mass": 1.0000000000000018,
+    "incorrect_pure_convolution_mass": 0.0769153832076898,
+    "purity_fourth_power": 0.0769153832076897,
+    "source_copies_per_physical_candidate": 8,
+    "physical_quantum_execution": false
+  },
+  "public_noncommuting_span_control": {
+    "span_dimension": 3,
+    "radical_dimension": 1,
+    "isotropic_dimension": 2,
+    "diagonalizing_generators": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "symmetry_membership_assumed_not_verified": true
+  },
+  "preferred_direct_caps": {
+    "mechanism": "eight-copy skew Bell marginal followed by paid purity verification",
+    "target": "full phase-free Pauli conjugation group; not restricted to commuting labels",
+    "candidate_count_cap": 65536,
+    "candidate_membership_probability_lower_bound": {
+      "numerator": 1,
+      "denominator": 512
+    },
+    "conditional_accepted_ideal_distribution": "uniform on full conjugation group",
+    "symmetry_dimension_upper_bound": 4,
+    "purity_and_overlap_estimate_count": 65537,
+    "swap_trials_per_estimate": 3483648,
+    "absolute_nonsymmetry_loss_gap": {
+      "numerator": 1,
+      "denominator": 36
+    },
+    "mean_estimation_absolute_error": {
+      "numerator": 1,
+      "denominator": 288
+    },
+    "symmetry_acceptance_loss_threshold": {
+      "numerator": 1,
+      "denominator": 72
+    },
+    "candidate_source_copy_cap": 524288,
+    "verification_source_copy_cap": 456615677952,
+    "total_raw_copy_cap": 456616202240,
+    "failure_budgets": {
+      "candidate_span": {
+        "numerator": 1,
+        "denominator": 12
+      },
+      "all_swap_estimates": {
+        "numerator": 1,
+        "denominator": 12
+      },
+      "bounded_public_field_construction": {
+        "numerator": 1,
+        "denominator": 12
+      },
+      "complete_quantum_instrument_precision": {
+        "numerator": 1,
+        "denominator": 12
+      }
+    },
+    "total_error_upper_bound": {
+      "numerator": 1,
+      "denominator": 3
+    },
+    "random_clifford_chart_required": false,
+    "diagonalizing_basis_required": false,
+    "classical_eigenlabel_stage_required": false,
+    "source_promises_certified": false,
+    "qudit_unit_cost_equals_bit_cost_assumed": false,
+    "full_quantum_learner_implemented": false
+  },
+  "alternative_chart_caps": {
+    "target": "full phase-free Pauli conjugation group, not a designated original basis",
+    "purity_lower_bound": {
+      "numerator": 1,
+      "denominator": 8
+    },
+    "zero_error_probability_lower_bound": {
+      "numerator": 1,
+      "denominator": 512
+    },
+    "absolute_nonsymmetry_loss_gap": {
+      "numerator": 1,
+      "denominator": 36
+    },
+    "mean_estimation_absolute_error": {
+      "numerator": 1,
+      "denominator": 288
+    },
+    "symmetry_acceptance_loss_threshold": {
+      "numerator": 1,
+      "denominator": 72
+    },
+    "chart_count_cap": 5,
+    "no_good_chart_probability_bound": {
+      "numerator": 1,
+      "denominator": 32
+    },
+    "candidate_count_per_chart": 73728,
+    "candidate_count_cap": 368640,
+    "quantum_purity_and_overlap_estimate_count": 368641,
+    "swap_trials_per_estimate": 4147200,
+    "basis_stage_raw_copy_cap": 3057657384960,
+    "heavy_anchor_sample_count": 24576,
+    "heavy_anchor_weight_lower_bound": {
+      "numerator": 1,
+      "denominator": 16
+    },
+    "period_group_order_upper_bound": 8,
+    "period_cover_sample_count": 128,
+    "classical_collision_estimate_count_cap": 129,
+    "independent_pairs_per_collision_estimate": 2156544,
+    "period_stage_eigenbasis_measurement_copy_cap": 556413056,
+    "total_raw_copy_cap": 3058213798016,
+    "failure_budgets": {
+      "no_good_chart": {
+        "numerator": 1,
+        "denominator": 24
+      },
+      "all_candidate_spans": {
+        "numerator": 1,
+        "denominator": 24
+      },
+      "all_swap_estimates": {
+        "numerator": 1,
+        "denominator": 24
+      },
+      "heavy_anchor": {
+        "numerator": 1,
+        "denominator": 24
+      },
+      "period_coset_coverage": {
+        "numerator": 1,
+        "denominator": 24
+      },
+      "all_collision_estimates": {
+        "numerator": 1,
+        "denominator": 24
+      },
+      "bounded_public_random_constructions": {
+        "numerator": 1,
+        "denominator": 24
+      },
+      "complete_quantum_instrument_precision": {
+        "numerator": 1,
+        "denominator": 24
+      }
+    },
+    "total_error_upper_bound": {
+      "numerator": 1,
+      "denominator": 3
+    },
+    "source_promises_certified": false,
+    "bad_chart_regression_law_claimed": false,
+    "period_stage_requires_collective_quantum_measurements": false,
+    "original_basis_identified": false,
+    "full_quantum_learner_implemented": false
+  },
+  "full_rank_noise_allowed": true,
+  "inverse_purity_less_than_prime_required": false,
+  "noncommuting_symmetries_allowed": true,
+  "public_postprocessing_kernels_implemented": true,
+  "uniform_clifford_sampler_implemented": false,
+  "quantum_learner_executed": false,
+  "source_promises_certified": false,
+  "novelty_established": false,
+  "matched_classical_input_separation_established": false,
+  "speedup_claim_allowed": false,
+  "source_sha256": {
+    "theorems/pauli_symmetry_source.py": "35fce336f2d324a8c626f46b189973f91e21b877aa55649161092dfcc6e7eff5",
+    "tests/test_pauli_symmetry_source.py": "cbc4a1037cde9630294e2cd47ca0c82e96abcffe28e236aabe65c5349a124b52",
+    "theorems/coisotropic_symmetry.py": "d1c97b2a2ca0910895b1bd13659d35a8da2064c16e45debd88bb53d245d47921",
+    "tests/test_coisotropic_symmetry.py": "87ed705f046cc80988f39445cc01b76dad7b55bf37848b92dabcf6e07b7daf20",
+    "theorems/skew_bell_mixed_reference.py": "a9e48461afedf28c9c06829b3262eb8929af1f3b0239add24b1d1338f8f8671d",
+    "tests/test_skew_bell_mixed_reference.py": "b2fb067233eecedc9442d247d94c428cceeb8868ba02ef56f8fba8e1b5f5b912",
+    "research/PAULI_CONJUGATION_SYMMETRY_LEARNING.md": "568d2f8f3e3d605b03e2819cf2078740da2379c23c9bdb0771f4d0edbf531046",
+    "qsearch_cli/commands/sde.py": "0b17b073aa6fb5991c21cdc5b09f3bfc2cb933c7275675e6bcea0e87e75a0771",
+    "research/NOISY_QUADRATIC_PHASE_FILTER.md": "ad0c68eddd143764211923aaf8559fca090e3ec778f85196f83ff5179d0908f8",
+    "theorems/peaked_phase_source.py": "b2c0ee2af1d80f1da9fa8b1ea98e68e660079651d2a02dcbd3ba56b4f60c7688"
+  }
+}

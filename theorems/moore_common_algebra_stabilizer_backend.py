@@ -34,6 +34,7 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from theorems.class_three_ambient_frontend import _subspace_intersection
+from theorems.hpgp_coset_interface import matrix_power
 from theorems.moore_gradient_filter import (
     MooreRecognition,
     moore_circuit,
@@ -124,7 +125,7 @@ def compute_common_nonunital_algebra(
         g_mats.append(g_mat)
         x_mats.append(g_mat - id_mat)
 
-    all_order_p = all((g_mat ** prime) == id_mat for g_mat in g_mats)
+    all_order_p = all(matrix_power(prime, g_mat, prime) == id_mat for g_mat in g_mats)
     commute = all(
         g_mats[i] * g_mats[j] == g_mats[j] * g_mats[i]
         for i in range(len(g_mats))

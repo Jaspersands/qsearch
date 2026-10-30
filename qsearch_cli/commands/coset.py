@@ -6519,7 +6519,7 @@ def command_coset_hidden_involution_two_subgroup_projector_algebra_no_go(args: a
 def add_coset_multiplicity_carrier_trilemma(subparsers) -> None:
     coset_multiplicity_carrier_trilemma = subparsers.add_parser(
         "coset-multiplicity-carrier-trilemma",
-        help="Run non-abelian coset multiplicity-carrier decoupling trilemma, commutator entry identity, and Racah complexity audit.",
+        help="Check scoped coset identities and structured pair access; quarantine the unsupported general trilemma.",
     )
     coset_multiplicity_carrier_trilemma.add_argument("--no-registry", action="store_true")
     coset_multiplicity_carrier_trilemma.set_defaults(func=command_coset_multiplicity_carrier_trilemma)
@@ -6531,7 +6531,7 @@ def command_coset_multiplicity_carrier_trilemma(args: argparse.Namespace) -> int
     from theorems.coset_multiplicity_carrier_trilemma import REPORT, write_report
     write_report(write_registry=not getattr(args, "no_registry", False))
     validation = validate_registry()
-    print("coset_multiplicity_carrier_trilemma complete")
+    print("Coset scope checks complete; broad trilemma retracted, no general circuit lower bound.")
     print(f"Artifact: {REPORT}")
     print(f"Registry valid: {validation['valid']}")
     return 0 if validation["valid"] else 1

@@ -1,0 +1,425 @@
+{
+  "status": "CONDITIONAL_DERIVED_DIMENSION_IMPROVEMENT",
+  "proof_note": "research/REES_FULL_GRADE_PARAMETER_BOUND.md",
+  "cases": [
+    {
+      "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+      "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+      "lower_central_dimensions": [
+        4
+      ],
+      "supplied_prime": 2,
+      "actual_class": 1,
+      "derived_dimension": 0,
+      "cover_dimension": 4,
+      "error_target": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "final_fourier_samples": 8,
+      "fourier_slack": 4,
+      "stages_top_down": [],
+      "leaves_per_terminal": 1,
+      "derived_parameter_leaf_bound": 1,
+      "scalar_flag_leaves_per_terminal": 1,
+      "source_preparations": 8,
+      "original_inputs": 8,
+      "sde_calls": 0,
+      "nonlinear_sde_calls": 0,
+      "complete_instrument_calls": 16,
+      "central_character_measurements": 0,
+      "solver_failure_bits_per_call": null,
+      "solver_abort_bound": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "rank_failure_bound": {
+        "numerator": 1,
+        "denominator": 16
+      },
+      "instrument_error_per_call": {
+        "numerator": 1,
+        "denominator": 144
+      },
+      "total_error_bound": {
+        "numerator": 25,
+        "denominator": 144
+      },
+      "classical_uniform_draw_cap": 0,
+      "classical_fair_bit_cap": 0,
+      "classical_root_pow_gcd_pair_cap": 0,
+      "depth_first_group_register_bound": 1,
+      "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+      "classical_retry_extra_source_copies": 0,
+      "prime_validation_included": false,
+      "profile_existence_certified": false,
+      "deterministic_arithmetic_step_counter": false,
+      "physical_gate_clock": false,
+      "quantum_receiver_implemented": false,
+      "formal_total_policy_instantiated": false,
+      "novelty_established": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+      "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+      "lower_central_dimensions": [
+        6,
+        3,
+        1
+      ],
+      "supplied_prime": 65537,
+      "actual_class": 3,
+      "derived_dimension": 3,
+      "cover_dimension": 10,
+      "error_target": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "final_fourier_samples": 10,
+      "fourier_slack": 4,
+      "stages_top_down": [
+        {
+          "grade": 3,
+          "rank": 1,
+          "reduced_degree": 1,
+          "arity": 2,
+          "conversions": 160,
+          "consumed_targets": 320,
+          "randomness": null
+        },
+        {
+          "grade": 2,
+          "rank": 3,
+          "reduced_degree": 2,
+          "arity": 16,
+          "conversions": 10,
+          "consumed_targets": 160,
+          "randomness": {
+            "failure_bits": 7,
+            "root_calls": 27,
+            "polynomial_pow_gcd_pairs": 1053,
+            "uniform_calls": 2236,
+            "bit_rejection_attempts": 20,
+            "fair_bits": 760240,
+            "abort_bound": {
+              "numerator": 1487,
+              "denominator": 262144
+            }
+          }
+        }
+      ],
+      "leaves_per_terminal": 32,
+      "derived_parameter_leaf_bound": 288,
+      "scalar_flag_leaves_per_terminal": 54,
+      "source_preparations": 320,
+      "original_inputs": 960,
+      "sde_calls": 170,
+      "nonlinear_sde_calls": 10,
+      "complete_instrument_calls": 500,
+      "central_character_measurements": 480,
+      "solver_failure_bits_per_call": 7,
+      "solver_abort_bound": {
+        "numerator": 5,
+        "denominator": 64
+      },
+      "rank_failure_bound": {
+        "numerator": 1,
+        "denominator": 1208999608279791053111296
+      },
+      "instrument_error_per_call": {
+        "numerator": 1,
+        "denominator": 4500
+      },
+      "total_error_bound": {
+        "numerator": 2059077457851519137330185,
+        "denominator": 10880996474518119478001664
+      },
+      "classical_uniform_draw_cap": 22360,
+      "classical_fair_bit_cap": 7602400,
+      "classical_root_pow_gcd_pair_cap": 10530,
+      "depth_first_group_register_bound": 18,
+      "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+      "classical_retry_extra_source_copies": 0,
+      "prime_validation_included": false,
+      "profile_existence_certified": false,
+      "deterministic_arithmetic_step_counter": false,
+      "physical_gate_clock": false,
+      "quantum_receiver_implemented": false,
+      "formal_total_policy_instantiated": false,
+      "novelty_established": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_REES_RESOURCE_BOUND_NOT_RECEIVER_EXECUTION",
+      "error_model": "Exact independent sources; each complete flagged instrument has the stated error bound.",
+      "lower_central_dimensions": [
+        13,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "supplied_prime": 170141183460469231731687303715884105727,
+      "actual_class": 12,
+      "derived_dimension": 11,
+      "cover_dimension": 79,
+      "error_target": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "final_fourier_samples": 17,
+      "fourier_slack": 4,
+      "stages_top_down": [
+        {
+          "grade": 12,
+          "rank": 1,
+          "reduced_degree": 6,
+          "arity": 12,
+          "conversions": 10823951484960768000,
+          "consumed_targets": 129887417819529216000,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 45,
+            "polynomial_pow_gcd_pairs": 51300,
+            "uniform_calls": 8817216,
+            "bit_rejection_attempts": 92,
+            "fair_bits": 103020351744,
+            "abort_bound": {
+              "numerator": 374313,
+              "denominator": 77371252455336267181195264
+            }
+          }
+        },
+        {
+          "grade": 11,
+          "rank": 2,
+          "reduced_degree": 1,
+          "arity": 3,
+          "conversions": 3607983828320256000,
+          "consumed_targets": 10823951484960768000,
+          "randomness": null
+        },
+        {
+          "grade": 10,
+          "rank": 3,
+          "reduced_degree": 2,
+          "arity": 16,
+          "conversions": 225498989270016000,
+          "consumed_targets": 3607983828320256000,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 27,
+            "polynomial_pow_gcd_pairs": 5913,
+            "uniform_calls": 12556,
+            "bit_rejection_attempts": 82,
+            "fair_bits": 130758184,
+            "abort_bound": {
+              "numerator": 6851,
+              "denominator": 1208925819614629174706176
+            }
+          }
+        },
+        {
+          "grade": 9,
+          "rank": 4,
+          "reduced_degree": 9,
+          "arity": 165,
+          "conversions": 1366660541030400,
+          "consumed_targets": 225498989270016000,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 276,
+            "polynomial_pow_gcd_pairs": 529920,
+            "uniform_calls": 69740456400,
+            "bit_rejection_attempts": 105,
+            "fair_bits": 929988986094000,
+            "abort_bound": {
+              "numerator": 9008164509,
+              "denominator": 2535301200456458802993406410752
+            }
+          }
+        },
+        {
+          "grade": 8,
+          "rank": 5,
+          "reduced_degree": 2,
+          "arity": 36,
+          "conversions": 37962792806400,
+          "consumed_targets": 1366660541030400,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 51,
+            "polynomial_pow_gcd_pairs": 11322,
+            "uniform_calls": 23384,
+            "bit_rejection_attempts": 83,
+            "fair_bits": 246490744,
+            "abort_bound": {
+              "numerator": 6315,
+              "denominator": 1208925819614629174706176
+            }
+          }
+        },
+        {
+          "grade": 7,
+          "rank": 6,
+          "reduced_degree": 7,
+          "arity": 259,
+          "conversions": 146574489600,
+          "consumed_targets": 37962792806400,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 361,
+            "polynomial_pow_gcd_pairs": 519840,
+            "uniform_calls": 157366160,
+            "bit_rejection_attempts": 96,
+            "fair_bits": 1918608222720,
+            "abort_bound": {
+              "numerator": 18735993,
+              "denominator": 4951760157141521099596496896
+            }
+          }
+        },
+        {
+          "grade": 6,
+          "rank": 7,
+          "reduced_degree": 6,
+          "arity": 288,
+          "conversions": 508939200,
+          "consumed_targets": 146574489600,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 381,
+            "polynomial_pow_gcd_pairs": 451485,
+            "uniform_calls": 11554224,
+            "bit_rejection_attempts": 92,
+            "fair_bits": 134999553216,
+            "abort_bound": {
+              "numerator": 1700571,
+              "denominator": 309485009821345068724781056
+            }
+          }
+        },
+        {
+          "grade": 5,
+          "rank": 8,
+          "reduced_degree": 1,
+          "arity": 9,
+          "conversions": 56548800,
+          "consumed_targets": 508939200,
+          "randomness": null
+        },
+        {
+          "grade": 4,
+          "rank": 9,
+          "reduced_degree": 2,
+          "arity": 100,
+          "conversions": 565488,
+          "consumed_targets": 56548800,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 123,
+            "polynomial_pow_gcd_pairs": 27675,
+            "uniform_calls": 56100,
+            "bit_rejection_attempts": 84,
+            "fair_bits": 598474800,
+            "abort_bound": {
+              "numerator": 30025,
+              "denominator": 4835703278458516698824704
+            }
+          }
+        },
+        {
+          "grade": 3,
+          "rank": 10,
+          "reduced_degree": 3,
+          "arity": 231,
+          "conversions": 2448,
+          "consumed_targets": 565488,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 279,
+            "polynomial_pow_gcd_pairs": 130572,
+            "uniform_calls": 397566,
+            "bit_rejection_attempts": 87,
+            "fair_bits": 4392706734,
+            "abort_bound": {
+              "numerator": 342399,
+              "denominator": 77371252455336267181195264
+            }
+          }
+        },
+        {
+          "grade": 2,
+          "rank": 11,
+          "reduced_degree": 2,
+          "arity": 144,
+          "conversions": 17,
+          "consumed_targets": 2448,
+          "randomness": {
+            "failure_bits": 67,
+            "root_calls": 171,
+            "polynomial_pow_gcd_pairs": 38988,
+            "uniform_calls": 78736,
+            "bit_rejection_attempts": 85,
+            "fair_bits": 849955120,
+            "abort_bound": {
+              "numerator": 10457,
+              "denominator": 2417851639229258349412352
+            }
+          }
+        }
+      ],
+      "leaves_per_terminal": 7640436342325248000,
+      "derived_parameter_leaf_bound": 9158611693373227008000000,
+      "scalar_flag_leaves_per_terminal": 371209638446513340737559399141212160000,
+      "source_preparations": 129887417819529216000,
+      "original_inputs": 1558649013834350592000,
+      "sde_calls": 14658839073025422353,
+      "nonlinear_sde_calls": 11050855244648617553,
+      "complete_instrument_calls": 144546256892554638370,
+      "central_character_measurements": 144546256892554638336,
+      "solver_failure_bits_per_call": 67,
+      "solver_abort_bound": {
+        "numerator": 11050855244648617553,
+        "denominator": 147573952589676412928
+      },
+      "rank_failure_bound": {
+        "numerator": 1,
+        "denominator": 142576269300693600582536612678134103897885462877789023918259506810025156677535359656431318175643009021862161987055671487524684427617608881579028980890095494214680675432254673181290589551853566
+      },
+      "instrument_error_per_call": {
+        "numerator": 1,
+        "denominator": 1300916312032991745330
+      },
+      "total_error_bound": {
+        "numerator": 1956713945914973670370223294475519412636103597230426078216713679198491586500267909806505061910114073588843624942463276350460303930602789109119105984882384052317631848387445314548981331785715679587334874157345199,
+        "denominator": 10520271803096747014481979765760257330729684003436690917905808024607993523546552491645584560917927584969836131792999948402800754769155151288824884585239807869640267661727703718841808156742668374226098926202650624
+      },
+      "classical_uniform_draw_cap": 190751503416527099091775280,
+      "classical_fair_bit_cap": 2386096316611724354736177101072,
+      "classical_root_pow_gcd_pair_cap": 557326813695761045196252,
+      "depth_first_group_register_bound": 1254,
+      "depth_first_bound_excludes_leaf_workspaces_and_arithmetic_ancillas": true,
+      "classical_retry_extra_source_copies": 0,
+      "prime_validation_included": false,
+      "profile_existence_certified": false,
+      "deterministic_arithmetic_step_counter": false,
+      "physical_gate_clock": false,
+      "quantum_receiver_implemented": false,
+      "formal_total_policy_instantiated": false,
+      "novelty_established": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "note": "Source and randomness bounds only; no receiver or arithmetic wall-clock execution.",
+  "speedup_claim_allowed": false,
+  "novelty_established": false
+}
