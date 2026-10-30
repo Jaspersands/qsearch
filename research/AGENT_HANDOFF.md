@@ -1,5 +1,200 @@
 # Research Agent Handoff
 
+## 2026-10-30 Genus-Two Plus Quotient And Reverse Classical Attack
+
+PROGRESS; goal ACTIVE. Read SIEGEL_CAYLEY_REPOLARIZATION.md and
+SIEGEL_REVERSE_TRANSPORT_ATTACK.md FIRST. Four focused agent assignments
+checked construction, actual literature contracts, implementation and an
+independent classical attack audit. Receipt:
+audits/reviews/2026-10-30-cayley-reverse-transport-round.md.
+
+New constructive route, genus TWO only: for transported H with
+H+H^-1=tI, put N=t+2, eta=H+I, mu=I+H^-1. Then mu^dagger H mu=N,
+eta mu=N and K_N=ker(mu)=eta(B[N]). A paid polarized quotient of the
+ORIGINAL model by this kernel gives a model of the new polarization.
+Kernel generators and coprime marking transport are independent of the
+weak common masks. No target End/Hom lattice or sign synchronization is
+required. A source congruence shear avoids characteristic and FIXED odd
+marking primes by elementary CRT, preserving the joint marked class.
+
+This does NOT provide an efficient geometric oracle. The remaining
+multiplier problem is explicit: aN=Nrd(a*ell*q+b)+(a+1)^2, with q in
+a prescribed known-source order coset. Affordable powersmooth N, torsion
+fields, nonfree/even-primary quotient chains, intermediate model fields,
+joint canonicalization and coherent cleanup are still charged gaps.
+Existing norm/ideal smoothing theorems were not verified to solve this
+shifted-norm coset problem. Six existing ell61 lifts require very large
+full-torsion fields; exact costs and minimal-order replay are saved in
+classical_baselines/siegel_cayley_costs.json. Pure 2-power/3-power shortcuts
+also fail for this control; mixed-prime selectors remain open.
+
+New classical module: theorems/siegel_reverse_transport.py. For an ACTUALLY
+computable polarized automorphism u of the original target, reconstruct
+beta=phi^dagger*u*phi in the KNOWN SOURCE order from ell*W^-1*u*W.
+Its exact Rosati norm is2g*ell^2. Image rank g, or joint rank g from several
+maps, recovers the abstract kernel. No geometric ell-torsion or full target
+lattice. The original model need not expose any informative u: even a
+non-scalar commuting u can give zero. UNKNOWN and provenance promises
+are explicit. The successful product fixture is an easy family, not a
+generic break or a hard benchmark.
+
+Parent replay:281 connected tests passed in1.97s, including40 new Cayley
+controls and56 reverse-attack controls, with warnings as errors, plugins,
+bytecode and pytest cache disabled. This is not the full repository suite,
+a geometric implementation, quantum execution or Lean rebuild. Additional
+final syntax/validation receipts are in the audit note. No speedup or
+central registry promotion; mechanical adapters remain Gemini's remit.
+
+Next scientific question: solve or decisively bound the AFFORDABLE
+mixed-prime constrained norm selector, then the actual quotient/model
+contract. Do not add a dummy converter, tiny q-search backend, free field
+extension or per-level canonicalizer. Do not simply repeat SDE work or
+the literature search already recorded. A successful route here uses
+known degree-two HPGP, not distinctive Rees utility.
+
+## 2026-10-30 Regularity Reviewed; Do Not Build Another SDE Backend
+
+PROGRESS; goal ACTIVE. Read PIVOT_REGULARITY_DECISION.md and
+REES_STREAMING_SPACE_BOUND.md. Three additional focused reviewers checked
+regularity, prior-art/resource comparisons and full scheduling composition;
+all completed and closed. Audit/IDs:
+audits/reviews/2026-10-30-pivot-priority-round.md.
+
+The nonzero-pivot lemma works under FULL intrinsic residue rank, original
+e<p, fixed independent pilot layers and the existing source contracts.
+It does not fix an incomplete intrinsic frame, certify IID, or guarantee
+every regular-solvable bank is accepted. New controls catch deficient
+rank despite nonzero observed pivots and the invalid reuse of the d1
+deterministic shortcut for regular lifting. Current production solver
+is unchanged and correctly disclaims mixed-order regularity.
+
+Decision: NO new regular-pivot backend. Existing small-prime Boolean-mask
+enumeration already removes the DP table within the same2^O(u logu) time.
+The existing all-prime FIELD pivot route plus depth-first source trees,
+streamed Fourier readout and the outer ring reduction also gives a written
+conditional rank-FPT polynomial-WORKSPACE corollary. This counts live
+source registers and local scratch, not an uncharged held input bank.
+Intermediate measurement/discard/reset, streaming joint source promises,
+on-demand schedules, paid oracle workspace and complete-channel precision
+are explicit. There is no new global time/coverage or novelty claim.
+
+Next substantive target: the EXISTING weak-input geometric repolarization
+conversion in WEAK_SIEGEL_CONVERSION_AUDIT.md and
+SIEGEL_ELEMENTARY_REPOLARIZATION.md Section6. Obtain the transported
+polarized model and jointly consistent marked label without supplying
+full target End/Hom lattices or inaccessible large-prime torsion. The
+known-target-End comparator already recovers the kernel classically.
+The simple stabilization gives the wrong polarization. Inspect the full
+2026/1142 PPAV conversion hypotheses if accessible; previous attempts
+only obtained abstract/slides. This route uses known degree-two HPGP,
+not Rees; do not portray it as a distinctive Rees application.
+
+VERIFIED:537 connected tests passed in5.07s, including14new proof controls,
+with warnings as errors and pytest plugin/cache/bytecode disabled. New
+test syntax,12siteJS checks and qsearchvalidate(validtrue/issues[]) pass.
+This is not the full repository suite, an emitted receiver or Lean rebuild.
+The unrelated SMT CLI failure from the previous pass was not part of this
+run; its repair remains in the Gemini handoff. No production solver, CLI,
+registry, outreach file or Git state was changed by this pass.
+
+## 2026-10-30 Pivot-Power Solver And Sampling Decision
+
+PROGRESS; goal ACTIVE. Read PIVOT_POWER_SDE.md and
+INVERSE_TRACE_SAMPLING_DECISION.md FIRST. This supersedes the open-ended
+sampling-priority suggestion in the older general-search entry below.
+Five focused agent assignments are recorded in
+audits/reviews/2026-10-30-sampling-pivot-power-round.md.
+
+Constructive result: a bounded fixed-bank prime-field SDE solver samples
+power-valued free coefficients and tests only rank-a pivot coefficients.
+The sufficient good-bank search allowance is proportional to d^a rather
+than d^M. Pilot choice is disjoint/fixed; every suffix membership and final
+original-exponent ambient equation is verified. Zero coefficients, bit/root
+interruptions, explicit caps and separate source/search/auxiliary failure
+are retained. No field table or new quantum input is used by retries.
+
+Euclid independently checked the probability argument and found a decisive
+regularity counterexample. The solver is NOT a regular mixed-order Hensel
+policy. It neither certifies IID source labels nor implements a quantum
+receiver. The analytic source-tree bounds retain inherited conditions;
+there is no new all-prime coverage, global asymptotic or novelty claim.
+
+Sampling results: an efficient original-field binary-kernel diagnostic
+detects zero-syndrome block assembly. Both matched classical flat witnesses
+pass it, so it is not a new hardness gate. The new every-syndrome enclosure
+E_m=24^m*q^((K+1-m)/2) gives a classical adaptive partial-observation
+simulator: n61, observe3161/3721 symbols, TV<2^-299. It does not generate
+the last560 symbols or a full uniform word. The old minimal residual bound
+remains vacuous. Empty-fiber and adaptive-branch review defects were fixed.
+
+Prior-art/utility review established no useful external reduction needing
+the exact full joint law; known full-list primitives and classical wiretap
+alternatives matter. Deprioritize more inverse-trace backends absent such
+a reduction or a concrete full classical sampler. Next theory comparison:
+pivot method versus known SDE algorithms and small-prime branch, including
+whether nonzero pivots yield a useful regular-lifting regime. Do not turn
+a subroutine improvement into a speedup claim without the native reduction.
+
+VERIFIED: final parent combined replay328passed in6.85s with warnings as errors,
+plugin autoload/cache/bytecode disabled. Six new Python files compile;
+12siteJS syntax checks and qsearchvalidate(validtrue/issues[]) pass.
+This is NOT the full repository suite or a Lean rebuild. The existing SMT
+CLI --write omission still fails its isolated regression; Gemini's repair
+contract remains below in MECHANICAL_FOLLOW_UP_PLAN.md. No test is waived.
+All13registryJSON files retain aggregate SHA256
+79c8b3fca6c2bb7c70cca8116b8356bc3dc69734c682feeba16a8bbf1949c0fd.
+No parent/agent Git write, registry promotion, external submission or
+large-n factoring run. Ramanujan's independent implementation audit found
+no concrete findings, with66focused tests and additional interruption/
+sampler controls; see the audit note. All five agents completed and closed.
+Mechanical adapters are left to Gemini.
+
+## 2026-10-30 Arbitrary-Target Classical Search: Five More Agents
+
+PROGRESS; goal ACTIVE. Read INVERSE_TRACE_GENERAL_SEARCH.md FIRST.
+This supersedes the arbitrary-target-open status in older entries below.
+For ANY target pattern and ANY distinct native point set, odd n>=61,
+N=n^2,K=floor(N/8), there is now a reviewed expected-polynomial classical
+SEARCH argument. It is not a uniform sampler, a practical large-n run,
+a novelty claim, a Lean proof, or human peer review. It removes a
+superpolynomial-search-separation rationale, not every polynomial gain.
+
+Kuhn found the applicable 2512.24080v1 trace-sum theorem; Dalton supplied
+deterministic balancing; Hubble challenged sampling; Franklin independently
+checked the characteristic-two sheaf hypotheses; Planck independently
+checked counting, constants, threshold and code. All five are closed.
+Assignments, IDs and corrections: audits/reviews/2026-10-30-general-native-search-round.md.
+
+Deterministically split into two trace-affine blocks, lengths within
+(n^2+-n)/2, keeping ALL original K checks. The short-sum first moment and
+existing d4 second moment certify uniform-allocation norm rejection;
+keep successful blocks so expected proposal counts ADD, O(n^6).
+Every final word is checked against the full original instance.
+
+New modules: inverse_trace_affine_partition.py and inverse_trace_short_sums.py.
+They preserve UNKNOWN at a finite cap even when the IID theorem applies.
+The exact-rational artifact inverse_trace_general_search_bounds.json checks
+endpoints n61,63,65 without large-field factorization or word search.
+New fixed n17 singleton/two-block witnesses escape scoped old proposals,
+but matched d3 flat baselines solve BOTH inputs in about0.6s. Do not use
+them as hard benchmarks. Full proofs, failures and original inputs saved.
+
+Remaining scientific priority: INVERSE_TRACE_SAMPLING_RESIDUAL.md.
+The ideal full-fiber sampler survives as a different task, but classical
+sampling complexity, useful native application and novelty are unresolved.
+Do not turn norm-family bias into a lower bound on all classical samplers.
+No registry promotion or parent Git writes. Gemini wiring and a reproduced
+existing SMT CLI write regression are specified in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+VERIFIED:48 focused tests passed; broader related replay994passed/1failed
+in62.48s. The sole failure is the isolated/reproduced pre-existing SMT
+CLI write omission described above; it is NOT waived or counted green.
+Four Python compile checks,12 siteJS syntax checks,gitdiffcheck and
+qsearchvalidate(validtrue/issues[]) passed. This is not the full repository
+suite. All13registryJSON files retain aggregate SHA256
+79c8b3fca6c2bb7c70cca8116b8356bc3dc69734c682feeba16a8bbf1949c0fd
+(sorted basenames then file bytes). No native large-n factoring was run.
+
 ## 2026-10-30 Five-Agent Genus-Zero Constructive Result
 
 PROGRESS; goal ACTIVE. Read INVERSE_TRACE_GENUS_ZERO_NORM.md and

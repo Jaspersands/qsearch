@@ -1,5 +1,128 @@
 # Constructive Research Priority Decision
 
+## 2026-10-30 Weak Conversion Has A Concrete Genus-Two Route
+
+SIEGEL_CAYLEY_REPOLARIZATION.md replaces the undifferentiated model gap
+by an explicit plus-quotient construction, with eta=H+I, mu=I+H^-1 and
+N=t+2. The weak masks cancel at the subgroup level; a known-source shear
+can avoid the characteristic and fixed odd marking primes. The previous
+stabilization obstruction remains valid for its DIFFERENT map.
+
+Highest-value next question: an affordable mixed-prime multiplier selector
+for aN=Nrd(a*ell*q+b)+(a+1)^2 in the required affine order coset, followed
+by a charged geometric quotient and joint marked canonicalization. No
+checked KLPT/norm theorem currently supplies this combined contract.
+Large prime-power fields, nonfree kernels and intermediate model fields
+are substantive costs. Six saved lifts fail cheap full-torsion access;
+these finite controls do not exclude other lifts or implicit kernels.
+
+The new SIEGEL_REVERSE_TRANSPORT_ATTACK.md must run as a classical
+comparator whenever the original target model exposes informative
+computable polarized automorphisms. Source-order CRT then recovers
+phi^dagger*u*phi and potentially K, without any target order basis.
+Scalar and even non-scalar commuting automorphisms can give zero; do not
+declare the general weak-input problem classically solved. Matrix inputs
+retain their geometric provenance and charged-evaluation promises.
+
+Do not promote a quantum candidate, efficient oracle, new asymptotic
+separation or Rees application from these deductions. The next pass must
+attack the explicit arithmetic/model costs, not implement a convincing
+interface around an unimplemented geometric operation. Four-agent audit:
+audits/reviews/2026-10-30-cayley-reverse-transport-round.md.
+
+## 2026-10-30 Regular-Pivot Backend Fails The Priority Test
+
+PIVOT_REGULARITY_DECISION.md closes the proposed next SDE variant as a
+valid conditional lemma, NOT a new implementation priority. Nonzero
+observed pivots require a separate full-INTRINSIC-row-rank guard. Original
+e<p, frozen zeros, fixed pilot layers and bounded auxiliary failure remain
+essential; the old linear shortcut is not a regularity algorithm.
+
+The proposed polynomial-space rationale is subsumed twice. Exhaustively
+enumerating the existing small-prime Boolean suffix has the same bank
+success event and2^O(u logu) time with polynomial workspace. More broadly,
+REES_STREAMING_SPACE_BOUND.md gives a reviewed conditional field-first
+rank-FPT polynomial-working-space schedule through the existing outer
+reduction, including streamed copies. A fresh regular mixed-order backend
+does not remove a current coverage/time/space obstacle for that input.
+
+Stop this local solver campaign here unless a specific native use changes
+the comparison. The central unresolved scientific question remains useful
+computational payoff under affordable access, not another cancellation
+policy. The next existing constructive target is weak-input geometric
+repolarization/marked-model conversion. Preserve the exact input in
+SIEGEL_ELEMENTARY_REPOLARIZATION.md; WEAK_SIEGEL_CONVERSION_AUDIT.md shows
+why the obvious stabilization does not give the required polarization.
+SIEGEL_ENDOMORPHISM_TRANSPORT_ATTACK.md shows that simply supplying full
+evaluable target endomorphisms and Rosati data makes the kernel classically
+recoverable. Neither falsifies a converter from the ORIGINAL weak input.
+
+Full hypotheses of the 2026/1142 PPAV framework need inspection before
+either importing a conversion theorem or claiming it is absent. Earlier
+abstract/slides access was insufficient. A successful geometric conversion
+would use the known degree-two HPGP receiver, not establish distinctive
+Rees utility. No new native promise, quantum candidate or speedup promoted.
+
+## 2026-10-30 Pivot-Power Improvement; Sampling Is Not Yet A Useful Target
+
+Read PIVOT_POWER_SDE.md and INVERSE_TRACE_SAMPLING_DECISION.md. The
+constructive result is a bounded prime-field SDE subroutine: independently
+select a pilot basis, sample power-valued free coefficients, and test only
+the pivot coefficients. Its good-bank rejection allowance scales as d^a
+in intrinsic source rank a, instead of the earlier sufficient d^M bank-
+width allowance. Source-IID, prime and fair-bit promises remain explicit;
+an exact verified witness is not evidence for those source promises.
+
+The analytic tree bounds retain the inherited conditional cost and paid
+whole-tree restart. This does NOT establish a new all-prime HSP coverage
+theorem, a compiled receiver, novelty or a quantum speedup. The independent
+review found a decisive nonregular witness over F_5, so the current solver
+cannot be substituted for a regular mixed-order Hensel policy.
+
+For inverse-trace sampling, the follow-on now supplies an efficient binary
+rank falsifier for zero-syndrome block assembly, an every-syndrome count
+enclosure, and a classical adaptive partial-observation simulator. At n61,
+the latter covers 3161 of 3721 symbols with certified TV below 2^-299.
+It is NOT a full-word sampler. Existing classical flat witnesses pass the
+rank falsifier, so appending that check does not create a hard native task.
+
+The prior-art/utility review found no external reduction needing the exact
+inverse-trace map AND full joint output law. Full-list coherent summation
+is already a known primitive; wiretap encoding has a classical alternative
+when the decoder may change. Deprioritize additional sampling backends and
+larger finite runs until a useful native reduction or constructive full-
+sampling route is specified. Keep the ideal sampler's scoped result, not
+a hardness claim manufactured from unresolved uniform sampling.
+
+Next theory priority: compare the new pivot method with known arbitrary-
+input SDE algorithms and the existing small-prime branch, then test whether
+a nonzero-pivot variant supplies a genuinely useful regular-lifting regime.
+Require paid arity, root extraction, acceptance, source/reduction promises
+and a precise resulting native algorithm. Do not promote a local solver
+improvement to a new global asymptotic result without that comparison.
+
+## 2026-10-30 General Native Search Is No Longer The Hardness Target
+
+INVERSE_TRACE_GENERAL_SEARCH.md supersedes the restricted-target status
+below. Deterministic balancing plus the new short-trace-sum first moment
+and existing divisor second moment gives expected-polynomial classical
+SEARCH for every target pattern and distinct point set in the odd n>=61
+native sequence. Two independent reviewers checked complementary proof
+obligations; no fatal gap found. This is an imported-theorem mathematical
+deduction, not formal verification, peer review or a novelty certificate.
+
+Deprioritize attempts to prove a superpolynomial quantum search advantage
+on this relation. Do not spend another round on singleton/sparse search
+barriers or runtime sweeps as if a hardness gap remained. The old scoped
+barriers remain valid for their particular proposals, not the whole task.
+
+Uniform sampling is genuinely distinct. Read INVERSE_TRACE_SAMPLING_RESIDUAL.md:
+test constructive classical full-fiber sampling, establish a useful native
+reduction, and compare the ideal coherent sampler with known coding/filter
+algorithms. Require an explicit worthwhile application before promoting
+sampling as the next main quantum direction. No automatic backend request.
+Finite n17 norm successes were also solved faster by existing flat attacks.
+
 ## 2026-10-30 Trace-Affine Sparse Search Is Classically Constructive
 
 Read INVERSE_TRACE_GENUS_ZERO_NORM.md. A five-agent round now supplies an

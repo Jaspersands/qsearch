@@ -1,5 +1,125 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-10-30 Preserve The Cayley And Reverse-Transport Contracts
+
+Read SIEGEL_CAYLEY_REPOLARIZATION.md and SIEGEL_REVERSE_TRANSPORT_ATTACK.md.
+No geometric converter, quantum-source adapter or tiny lift-search backend
+is requested. The new plus quotient is conditional on actual paid access.
+Its field-cost JSON is a countercontrol, not a successful quantum run.
+
+Optional mechanical exposure of the classical reverse-transport module:
+
+- Reuse theorems/siegel_reverse_transport.py, do not reimplement its CRT.
+- Require known SOURCE lattice basis/Gram data, fixed ordered geometric
+  target automorphisms, compatible torsion/form coordinates, and the public
+  source splitting. Do not add a target End/Hom lattice as hidden advice.
+- Preserve UNKNOWN, exact norm checks and RECOVERED_UNDER_INPUT_PROMISES.
+  Algebraic rank/isotropy cannot authenticate geometric input provenance.
+- Present any actual target automorphism computation, torsion fields,
+  evaluations and pairing logarithms as separate paid work. A weakly
+  evaluated target u is not the exact action the routine requires.
+- Scalar and commuting non-scalar controls MUST remain inconclusive. Do
+  not generalize success on the explicit E^2 product fixture to arbitrary B.
+- If exposing the Cayley cost JSON, preserve its six exact lift inputs and
+  full-torsion-only cost scope. Replay tests before changing values. Never
+  construct its huge fields merely to populate a dashboard.
+- Every changed lift must use its UPDATED S,sigma,N in all marking formulas.
+  The new stale-mark regression demonstrates a wrong non-projective label.
+- No automatic central-registry promotion, outreach or publication claims.
+
+The remaining constrained norm selector and joint geometric canonicalizer
+are mathematics problems. Leave them explicitly unimplemented until the
+resource and access contracts are actually discharged.
+
+## 2026-10-30 No Regular-Pivot Backend Requested
+
+Read PIVOT_REGULARITY_DECISION.md and REES_STREAMING_SPACE_BOUND.md.
+The new tests/test_pivot_regularity_boundary.py contains14 algebraic proof
+controls, not a new production solver. Do not expose them as a successful
+quantum experiment or add a regular/Hensel mode to the existing field
+solver on the strength of a nonzero-pivot test alone. Full intrinsic rank,
+original e<p, fixed-zero legality and the d1 branch need separate handling.
+
+Do not implement Boolean enumeration merely because it appears in the
+resource comparison: it is a simple asymptotic baseline refuting the
+need for another backend, not a requested engineering task. Existing
+field-pivot adapters remain optional under the earlier contract below.
+No new CLI, UI tile or registry promotion follows from the space corollary.
+
+The next weak-geometric conversion task is mathematical, not wiring.
+Do not fill its missing model converter with abstract H matrices, torsion
+interpolation alone, a dummy canonicalizer, full target End/Hom lattices,
+or inaccessible ell-torsion. Preserve the actual weak input and strongest
+classical comparator in the named research notes.
+
+## 2026-10-30 Gemini: Preserve The Pivot And Sampling Contracts
+
+New bounded solver: theorems/pivot_power_sde.py, proof PIVOT_POWER_SDE.md,
+and classical_baselines/pivot_power_sde.json. Reuse the implementation;
+do not rebuild the arithmetic in a CLI adapter. Mechanical integration:
+
+- Expose pivot_power_sde and pivot_power_budget through an existing SDE
+  adapter only if useful. Require original exponent, complete original
+  bank, fixed pilot_count, rank_bound and an EXPLICIT attempt_cap.
+- Keep pilot selection independent of the suffix. Never promote a suffix
+  column to repair a deficient pilot; preserve all membership checks.
+- Preserve VERIFIED versus the specific bounded ABORT reason. Report all
+  input labels, planned caps, actual counters and interrupted-root null
+  counters. Do not label a capped abort UNSAT or a source lower bound.
+- Keep source bad-bank, good-bank attempt exhaustion, root/bit failure
+  separate. failure_bits controls auxiliary failure only. Keep exact
+  rational bounds; do not expand base**attempt_cap merely for display.
+- Retain prime_field_only and regularity_not_guaranteed. The recorded
+  p5/mod25 counterexample forbids automatic Hensel-policy substitution.
+  No quantum receiver or source distribution is verified by this backend.
+- Retain known coverage/novelty caveats and the existing paid source-tree
+  and compilation obligations. Do not promote a registry speedup claim.
+
+Sampling diagnostics: theorems/inverse_trace_binary_rank.py and
+inverse_trace_syndrome_counts.py; artifact inverse_trace_sampling_controls.json.
+The first verifies the original word before returning a binary kernel
+certificate. The second bounds all syndromes and partial observations,
+but does not count exactly or generate a full word. Use the original field
+basis/modulus, points, checks and targets. Existing flat witnesses pass the
+rank test; never label passing it uniformity or quantumness. Keep UNKNOWN
+at the old residual size where the new count bound is vacuous.
+
+No additional inverse-trace sampler backend or large-n factoring run is
+requested. Read INVERSE_TRACE_SAMPLING_DECISION.md for the utility gate.
+Regenerate deterministic artifacts before changing provenance hashes;
+preserve their full native inputs and exact witness checks.
+
+## 2026-10-30 Gemini: General Search Integration And Existing CLI Regression
+
+Research contract: INVERSE_TRACE_GENERAL_SEARCH.md, with
+theorems/inverse_trace_affine_partition.py and inverse_trace_short_sums.py.
+The parent completed the mathematical work, finite controls and adversarial
+reviews. Reuse them; do not rerun expensive norm factorizations to create
+activity. The trace-affine CLI was already wired in commit b6b9e533.
+
+Useful mechanical integration only:
+- Expose run_balanced_experiment through the existing CLI adapter. Retain
+  original input/modulus/K, two seeds, two allocation seeds, per-block cap,
+  the deterministic balancing certificate and both short-sum bounds.
+- Display theorem applicability separately from actual capped-run status.
+  UNKNOWN remains UNKNOWN at cap exhaustion. Exact IID bounds are not
+  PRNG guarantees, elapsed-time predictions or uniform-sampling claims.
+- Surface the existing bounds artifact without launching n61 factoring.
+  Its finite endpoint table does not replace the analytic all-odd-n>=61 proof.
+- Supersede any active arbitrary-target-search-hardness assertion; preserve
+  historical records and scoped old barriers. Do not promote quantum speedup.
+- Keep the full-fiber sampling task separate; see INVERSE_TRACE_SAMPLING_RESIDUAL.md.
+
+Reproduced unrelated existing regression (unchanged parent source):
+`tests/test_inverse_trace_smt.py::test_cli_writes_complete_replayable_instance`
+fails both in isolation and the broader suite. In
+qsearch_cli/commands/general.py:293, command_inverse_trace_smt creates the
+output directory but never calls path.write_text(payload); it prints only
+inside args.write. Restore writing under --write and unconditional JSON
+stdout, following adjacent command contracts. Test BOTH with/without
+--write and custom output/root. This is a CLI repair, not a math blocker.
+Do not suppress the failing assertion or overwrite production artifacts.
+
 ## 2026-10-30 Gemini: Preserve The Trace-Affine Norm Contract
 
 New math/replay: INVERSE_TRACE_GENUS_ZERO_NORM.md,

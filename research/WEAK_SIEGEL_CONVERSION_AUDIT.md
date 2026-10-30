@@ -1,5 +1,16 @@
 # Weak Siegel Source: Conversion And Stabilization Audit
 
+**Later constructive refinement (same date):**
+[SIEGEL_CAYLEY_REPOLARIZATION.md](SIEGEL_CAYLEY_REPOLARIZATION.md) gives a
+genus-two plus-quotient construction and weak-mask-independent kernel and
+mark transport. It avoids the failed complement below. Affordable
+multiplier selection, actual torsion/model costs and coherent joint
+canonicalization remain unresolved. The original weak-input problem is
+not solved. [SIEGEL_REVERSE_TRANSPORT_ATTACK.md](SIEGEL_REVERSE_TRANSPORT_ATTACK.md)
+adds an original-input classical attack when the target model exposes
+informative computable polarized automorphisms; no full target order is
+needed for that scoped attack.
+
 2026-10-30. Four focused automated agents checked literature applicability,
 stabilization, classical interpolation, and elliptic-factor reduction.
 These are mathematical deductions and exact arithmetic controls, not an
