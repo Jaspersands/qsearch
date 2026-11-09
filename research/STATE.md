@@ -6,7 +6,8 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-09, after the handoff entry
-"2026-11-09 Rees Square Gap: Cubic Lower Bound on E_2 and a Barrier-Free Type Certificate (AI Only)".
+"2026-11-09 Rees Black-Box Follow-Ups, Paper-Pass Prep, Repo Collapsed to Main (AI Only)";
+the entry below it, "2026-11-09 Rees Square Gap: ...", is from the same day.
 
 Now (11-09, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -1173,17 +1174,20 @@ or separation is claimed.
 
 ## Now
 
-- **Rees black-box corollary draft (11-08, AI only, pending human review; paper NOT edited).**
-  Draft Corollary cor:black-box + input-model paragraph in
-  audits/reviews/2026-11-08-rees-blackbox-corollary-draft.tex: exponent-p black-box p-groups
-  of class c < p with unique encoding reduce to Thm main (conditional like it; not Las Vegas).
-  Finite end-to-end control on 4 groups, 30 subgroups, all recovered; negative controls caught.
-  Exponent p^e, non-unique encoding and nilpotent composition stay unclaimed. Waits for the
-  single paper pass and an owner decision. Handoff entry "2026-11-08 Rees Black-Box Corollary".
-- **Local dfs2b queue (11-08 20:30).** 27 of 99 jobs done (all kappa=9 exceptions 21871-23689):
-  non-members 21871, 22051, 22303, 23671 (witnesses verified, 0 bad), 23 new members. 8 running
-  (23743-24103), 15 exceptions and 49 plain cross-checks queued. Machine shared with other
-  Python jobs, so jobs run ~10-11 h instead of ~7 h.
+- **Rees black-box corollary (11-09, AI only, pending human review; paper NOT edited).**
+  Draft audits/reviews/2026-11-08-rees-blackbox-corollary-draft.tex, revised after an
+  independent referee (MINOR, no break) and a citation check. Exponent-p black-box p-groups of
+  class c < p with unique encoding reduce to Thm main (conditional on Thm is-import; not Las
+  Vegas; worst-case queries poly(l)). Finite control: 5 groups, all subgroups recovered.
+  Owner decisions open: whether it enters the short paper; referee finding 7 (core uses
+  full-version lemmas). Paper pass prepared locally (2026-11-09-rees-paper-pass-prep, gitignored).
+- **Repo (11-09).** Only `main` exists, locally and on GitHub. Paper drafts, outreach 04/05,
+  third-party texts/PDFs, claude_inputs, >10 MB outputs are gitignored (local only).
+- **Local dfs2b queue (11-09 12:20).** 35 of 99 jobs done (kappa=9 exceptions 21871-24103):
+  non-members 21871, 22051, 22303, 23671 (witnesses verified, 0 bad), 31 members. 8 running
+  (24121-24499), 7 exceptions queued; the 49 plain cross-checks are offloaded to cloud shards
+  S1-S3 (brief 2026-11-09-rees-dfs2b-cloud-plain-brief.md); copy their lines into the queue's
+  out/ before it reaches them. Shared machine: ~20 h per job.
 - **Rees SDE open directions (11-08, AI only, pending human review).** (i) p = 3, worst-case
   F_3^n subset sum: PROVED deterministic poly time at n²/4 + O(n^{3/2}) vectors (KOW: n²/3);
   proof referee no gap, break attempt no failure, no prior source found; beats KOW's explicit

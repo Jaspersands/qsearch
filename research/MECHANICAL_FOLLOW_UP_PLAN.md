@@ -10,7 +10,7 @@ Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md. Use `nice -n 19`.
    saved as types/sep_k5_full.out; no interpretation needed.
 3. Port Proposition 1 (twisted Stepanov) to Lean only if the owner asks; otherwise none.
 Do not edit the paper.
-## 2026-11-08 Rees Black-Box Corollary
+## 2026-11-08 Rees Black-Box Corollary (items 1-3 DONE 9 Nov; see the 2026-11-09 handoff entry)
 
 Read audits/reviews/2026-11-08-rees-blackbox-e2e/README.md and the draft .tex beside it.
 1. Add a class-3 UT_n case with n = 5 at p = 5 or 7 to `catalogue()` in
