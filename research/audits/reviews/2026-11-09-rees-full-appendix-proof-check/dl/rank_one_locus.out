@@ -1,0 +1,5 @@
+p=3, |K|=9: 820 projective points, rank counts {0: 0, 1: 20, 2: 800}; expected rank-1 count 2(|K|+1) = 20; rank-1 locus == P(U+) u P(U-): True; r(x) unchanged by adding gamma_2 parts (300 samples): True
+p=5, |K|=5: 156 projective points, rank counts {0: 0, 1: 12, 2: 144}; expected rank-1 count 2(|K|+1) = 12; rank-1 locus == P(U+) u P(U-): True; r(x) unchanged by adding gamma_2 parts (300 samples): True
+p=13, |K|=13: 2380 projective points, rank counts {0: 0, 1: 28, 2: 2352}; expected rank-1 count 2(|K|+1) = 28; rank-1 locus == P(U+) u P(U-): True; r(x) unchanged by adding gamma_2 parts (300 samples): True
+p=7, |K|=49: 120100 projective points, rank counts {0: 0, 1: 100, 2: 120000}; expected rank-1 count 2(|K|+1) = 100; rank-1 locus == P(U+) u P(U-): True; r(x) unchanged by adding gamma_2 parts (300 samples): True
+nice -n 19 timeout 200 /opt/anaconda3/bin/python rank_one_locus.py 3 5 13 7  2.96s user 0.02s system 89% cpu 3.342 total

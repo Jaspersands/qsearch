@@ -5,7 +5,11 @@
 # usage: run_split_k.sh p S k casefile|- jobs outfile
 p=$1; S=$2; k=$3; cases=$4; jobs=$5; out=$6
 SP=${SCRATCH:?set SCRATCH}
-export LRAT_CHECK=$SP/drat-trim/lrat-check
+# 9 Nov: the build in a session scratchpad was unsound (it verified an empty clause without a
+# conflict); use the fixed build and refuse to start unless it passes its negative controls.
+FIXDIR=${0:A:h}/../2026-11-09-lrat-checker-fix
+export LRAT_CHECK=${LRAT_CHECK:-$FIXDIR/lrat-check}
+$FIXDIR/controls.sh $LRAT_CHECK - > /dev/null || { echo "lrat-check failed its controls: $LRAT_CHECK" >&2; exit 1; }
 if [[ $cases == - ]]; then src=(""); else src=("${(@f)$(cat $cases)}"); fi
 /opt/anaconda3/bin/python -c "
 import itertools,sys

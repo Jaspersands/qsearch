@@ -1,4 +1,41 @@
 # Research Agent Handoff
+## 2026-11-09 Rees Lean Check: DL Central Scalars and Unitriangular exp/log Machine-Checked, No sorry (AI Only)
+
+AI-written Lean, kernel-checked; Lean statements not yet human-reviewed; no claim gate changed;
+paper and prep tree NOT edited; no git actions. Note: audits/reviews/2026-11-09-rees-lean-new-lemmas.md.
+Lean: formal/Formal/DixmierListerScalars.lean, DixmierListerGroup.lean, UnitriangularExpLog.lean
+(imported by Formal.lean; 23 axiom guards at the end of Formal/Audit.lean).
+
+- **[Lean-proved] prop:dl-central-scalars, both sentences, as stated.** For every field K with
+  2 != 0 and every zeta in K: some Lie automorphism of DL K (the paper's table) acts on the
+  centre span(e7,e8) as zeta iff zeta = +-1 (`exists_aut_center_smul_iff`). For every prime
+  p > 3: some automorphism of the class-three BCH (Lazard) group of DL(F_p) acts on its centre
+  as z -> z^zeta iff zeta = +-1, for zeta in F_p (`group_center_pow_iff`) and for integer k iff
+  k = +-1 mod p (`group_center_zpow_iff`). Group automorphisms are abstract (no linearity
+  assumed); the Lazard step is proved through the BCHClassThreeSubgroups words, not cited.
+- **[Lean-proved] black-box draft l.38, the exp/log sentences.** Over F_p: exp(log(1+X)) = 1+X
+  and log(exp X) = X mod X^p, with denominators k!, k units for k < p. For any non-unital
+  subalgebra A with A^p = 0 containing the g_i - 1 (any F_p-algebra): <g_i> lies in 1 + A, u^p = 1,
+  and truncated exp/log are inverse bijections A <-> 1 + A (`matrix_group_condition`). For
+  g_i in UT_n(F_p) with n <= p, A^p = 0 holds (`unitriangular_condition`).
+- No statement mismatch with main-core.tex l.408-411 or the draft. Proof-route differences:
+  determinant/Laplace argument instead of the rank-one locus (`core_alg`); explicit base change
+  to the algebraic closure. Not formalised: derivation/no-grading paragraph, gamma3 =
+  span(e7,e8) as an equality, the GAP orders; class < p, the BCH identity, log G = Lazard log,
+  L' = log G, all complexity claims.
+- Strongest independent check: the Lean kernel, with standard axioms only; consistent with the
+  referee's hand check and Groebner computations. Gates that stay false: "human-reviewed" for
+  either result (a Lean proof of an AI-written encoding is not a human check of it); the BCH/Lazard
+  half of the unitriangular item.
+- Next hard question: formalise exp X exp Y = exp BCH(X,Y) on A with A^p = 0, and class < p,
+  closing the unitriangular item.
+- Next command: `cd formal && nice -n 19 lake build --wfail`. Expected artifact: none new.
+  Acceptance: build succeeds and the 23 new guards print only propext, Classical.choice and
+  Quot.sound.
+- Paper pass (owner): may cite the three Lean modules for prop:dl-central-scalars and the
+  unitriangular item; any status-label change is the owner's. No STATE.md or mechanical-plan
+  changes were made in this side session.
+
 ## 2026-11-09 Rees Square Gap Follow-Up: kappa = 5 Type Certificate to 2311, (H) Fails at m = 6, C1 Existence Below Pigeonhole (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.

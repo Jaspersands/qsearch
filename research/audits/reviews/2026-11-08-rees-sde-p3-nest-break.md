@@ -132,7 +132,7 @@ none was.
    who sets `qmin_kow=4` would get pool 5 at q = 3 and a recursion `guarantee(n) + 1` for odd n.
 3. **Mislabelled comparison.** §3 says the hill climb at n = 8..14 stayed below "the guaranteed 63,
    84, 109, 135"; those are `bound(n)` (the crude reporting formula, labelled "formula" in
-   `adversarial.out`), not `guarantee(n)` = 46, 64, 85, 109. The conclusion is unchanged (40, 55,
+   `adversarial.out`), not `guarantee(n)` = 46, 64, 85, 108. The conclusion is unchanged (40, 55,
    75, 95 are below both), but the cited slack is overstated by ≈ 20 columns.
 **[9 Nov: items 1-3 above are fixed in `wnest.py` (mechanical queue, see
 `2026-11-09-mechanical-queue-run.md`). After the fix `wnest.py` runs WNEST for q ≥ 4 and a KOW

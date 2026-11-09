@@ -1,0 +1,38 @@
+--- 2026-11-09-rees-paper-pass-prep/tree/archive/main-2026-11-05-before-restructure/appendix-subspace.tex	2026-11-05 09:20:25
++++ 2026-11-09-rees-paper-pass-prep/tree/appendix-subspace.tex	2026-11-05 09:41:45
+@@ -58,7 +58,7 @@
+ \section{Full Proofs for the Flat Subspace Source}
+ \label{app:subspace}
+ 
+-\noindent\textbf{Proofs checked by AI sessions, pending human review.}
++\noindent\textbf{Status.} Proofs AI-checked, pending human review; provenance in Appendix~\ref{app:provenance}, items~\ref{prov:sub-main}--\ref{prov:sub-profile}.
+ This appendix proves Theorem~\ref{thm:subspace-source} and the four-step composition that follows it in Section~\ref{sec:subspace}. It then proves Theorem~\ref{thm:app-sub-hsp}, a completed form of Corollary~\ref{cor:subspace-hsp}: $H$ is recovered, at the stated total cost in copies and gates. All proofs are written out. The only results imported are three. The first is the Rees core, through Definition~\ref{def:app-sub-core}; that is the procedure of Theorem~\ref{thm:main}, itself a proposed result. The second is the Lazard correspondence in the subgroup form of Definition~\ref{def:input-contract}. The third is van de Woestijne's scalar solver, used only to construct designs. No human has read these proofs. Everything here holds relative to Definition~\ref{def:app-sub-core} and inherits that definition's status.
+ 
+ \subsection{Setting, Access Model and Notation}
+@@ -199,7 +199,7 @@
+ \]
+ \end{proof}
+ 
+-The moment condition cannot be dropped. Take $\Heis(\mathbb{F}_3)$, $H = Z(G) = \exp(\Fp z)$, $r = 2$, and $V$ inside an isotypic component on which $Z(G)$ acts by a nontrivial character $\psi_0$. Then $\chi = \psi_0^2 \ne 1$. For $C = t^2z \in \hlift$ and $S = (1,2)$, the product is $\chi(\exp z)^{1+4} = \chi(\exp z)^2 \ne 1$ (float check $|F-1| = 1.732$).
++The moment condition cannot be dropped. Take $\Heis(\mathbb{F}_3)$, $H = Z(G) = \exp(\Fp z)$, $r = 2$, and $V$ inside an isotypic component on which $Z(G)$ acts by a nontrivial character $\psi_0$. Then $\chi = \psi_0^2 \ne 1$. For $C = t^2z \in \hlift$ and $S = (1,2)$, the product is $\chi(\exp z)^{1+4} = \chi(\exp z)^2 \ne 1$ (a finite computation gives $|F-1| = 1.732$).
+ 
+ \subsection{Streaming Preparation of Exterior States}
+ 
+@@ -254,7 +254,7 @@
+ For a mixed $\nu$, apply this to an eigendecomposition. Each of $\mathrm{Sel}$ and $\mathrm{Sel}^\dagger$ costs $k$ controlled register swaps.
+ \end{proof}
+ 
+-The recovery $W^\dagger$ is necessary. Without it, discarding the ancilla and the fresh register can leave the retained registers outside $\wedge^kV$. At $d = r = 3$ and $k = 2$ the retained state on the rejection branch has weight $1/2$ outside $\wedge^2V$ (float check; $2/3$ at $d = r = 4$, $k = 3$). This does not depend on the completion of $J$: the post-measurement state depends on $J$ only through $f = J|0\rangle$, since $\tr_{\mathrm{anc}}\bigl[((I-|0\rangle\langle0|)J^\dagger\otimes I)\,Y\,(J\otimes I)\bigr] = \tr_{\mathrm{anc}}\bigl[((I-|f\rangle\langle f|)\otimes I)\,Y\bigr]$ and $Y = \mathrm{Sel}\,(J\otimes I)(|0\rangle\langle0|\otimes\nu)(J^\dagger\otimes I)\,\mathrm{Sel}^\dagger$. At $k = 1$ nothing can go wrong, since $\wedge^1V = V$. This follows the growth measurement of~\cite[Algorithms~1--2]{BeneWatts2026}, with the recovery $W^\dagger$ on rejection added here; Lemmas~\ref{lem:app-sub-growth} and~\ref{lem:app-sub-lcu} prove the properties used here, whether or not~\cite{BeneWatts2026} states that recovery step.
++The recovery $W^\dagger$ is necessary. Without it, discarding the ancilla and the fresh register can leave the retained registers outside $\wedge^kV$. At $d = r = 3$ and $k = 2$ the retained state on the rejection branch has weight $1/2$ outside $\wedge^2V$ (finite computation; $2/3$ at $d = r = 4$, $k = 3$). This does not depend on the completion of $J$: the post-measurement state depends on $J$ only through $f = J|0\rangle$, since $\tr_{\mathrm{anc}}\bigl[((I-|0\rangle\langle0|)J^\dagger\otimes I)\,Y\,(J\otimes I)\bigr] = \tr_{\mathrm{anc}}\bigl[((I-|f\rangle\langle f|)\otimes I)\,Y\bigr]$ and $Y = \mathrm{Sel}\,(J\otimes I)(|0\rangle\langle0|\otimes\nu)(J^\dagger\otimes I)\,\mathrm{Sel}^\dagger$. At $k = 1$ nothing can go wrong, since $\wedge^1V = V$. This follows the growth measurement of~\cite[Algorithms~1--2]{BeneWatts2026}, with the recovery $W^\dagger$ on rejection added here; Lemmas~\ref{lem:app-sub-growth} and~\ref{lem:app-sub-lcu} prove the properties used here, whether or not~\cite{BeneWatts2026} states that recovery step.
+ % G1 (referee 11, 4 Nov): whether BeneWatts2026, Algorithms 1--2, include the recovery
+ % W^dagger on rejection was not checked (no offline copy). NEEDS HUMAN VERIFICATION.
+ 
+@@ -404,7 +404,7 @@
+ 
+ \begin{remark}[The budget profile of Section~\ref{sec:subspace}]
+ \label{rem:app-sub-profile}
+-Take $p = 43$, $c = 9$, $m = 19$, $n = 97$ and the hypothetical promises $\delta = 1/10$ and $\eps = 1/3$. The parameters of Theorem~\ref{thm:app-sub-hsp} are $t = 1$, $B_{\mathrm{leaf}} \approx 2^{1569.49}$, $b = 2102$, $\ell = 420400$, $M = 14$ and $T \approx 2^{1591.98}$. For $r = 2, 8, 32$ they are $B = 1598, 1600, 1602$, $N = 6392, 102400, 1640448$, and raw-copy bounds $T(N+1) \approx 2^{1604.62}, 2^{1608.62}, 2^{1612.62}$. These equal the counts in \file{research/reductions/rees_subspace_source.json} and the bounds quoted in Section~\ref{sec:subspace}. The precision allocation above differs from that artifact's, but no count depends on it. All counts are sufficient bounds, not observed costs.
++Take $p = 43$, $c = 9$, $m = 19$, $n = 97$ and the hypothetical promises $\delta = 1/10$ and $\eps = 1/3$. The parameters of Theorem~\ref{thm:app-sub-hsp} are $t = 1$, $B_{\mathrm{leaf}} \approx 2^{1569.49}$, $b = 2102$, $\ell = 420400$, $M = 14$ and $T \approx 2^{1591.98}$. For $r = 2, 8, 32$ they are $B = 1598, 1600, 1602$, $N = 6392, 102400, 1640448$, and raw-copy bounds $T(N+1) \approx 2^{1604.62}, 2^{1608.62}, 2^{1612.62}$. These equal the bounds quoted in Section~\ref{sec:subspace} and the recorded counts (Appendix~\ref{app:provenance}, item~\ref{prov:sub-profile}), whose precision allocation differs from the one above; no count depends on it. All counts are sufficient bounds, not observed costs.
+ \end{remark}
+ 
+ \begin{remark}[A sharper gap]

@@ -1,0 +1,324 @@
+--- 2026-11-09-rees-paper-pass-prep/tree/archive/main-2026-11-05-before-restructure/appendix-torsion-blackbox.tex	2026-11-05 09:20:25
++++ 2026-11-09-rees-paper-pass-prep/tree/appendix-torsion-blackbox.tex	2026-11-09 20:04:10
+@@ -32,8 +32,9 @@
+ % NEEDS HUMAN VERIFICATION: StorjohannMulders1998 volume and pages (ESA 1998), if the key is added.
+ % ---------------------------------------------------------------------------
+ 
+-\noindent\textbf{Status: proofs checked by AI sessions, pending human review.}
+-No human specialist has checked this appendix. It proves
++\noindent\textbf{Status.} Proofs AI-checked, pending human review; no human
++specialist has checked this appendix; provenance in Appendix~\ref{app:provenance},
++items~\ref{prov:tb-lazard}--\ref{prov:tb-count-gates}. The appendix proves
+ Theorem~\ref{thm:ring-to-field} and Proposition~\ref{prop:black-box}, together
+ with the Sylow and small-prime steps that precede the proposition in
+ Section~\ref{sec:black-box-groups}. The two results remain conditional exactly
+@@ -90,7 +91,7 @@
+ $\BCH_c$, so it is a group homomorphism $(\mathcal{L},\ast) \to (\mathcal{M},\ast)$.
+ Conversely, Lazard's theorem~\cite{Lazard1954} (in the form
+ of~\cite[Theorem~2.3 with Examples~2.1--2.2]{Trappeniers2024}; see
+-also~\cite[Chapters~9--10]{Khukhro1998}) says
++also~\cite[\S10.2 and Example~10.24, p.~124]{Khukhro1998}) says
+ that every finite $p$-group $G$ of class at most $c < p$ carries a unique
+ finite Lazard ring structure $(G,+,[\cdot,\cdot])$ on the same set, of the same
+ class, whose BCH product $\ast$ is the group law of $G$. We write $\log G$ for
+@@ -168,9 +169,8 @@
+ lies in $\exp\Lambda_{R_c}$.
+ \end{proof}
+ 
+-The project's certified programs (\file{research/UNIVERSAL_LAZARD_WORD_COMPILER.md})
+-are explicit instances of $\Pi_+$ and $\Pi_{[\,]}$, verified symbolically over
+-$R_c$. Write $m_+, q_+$ (and $m_{[\,]}, q_{[\,]}$) for the numbers of
++Explicit instances of $\Pi_+$ and $\Pi_{[\,]}$, verified symbolically over $R_c$,
++are recorded in Appendix~\ref{app:provenance}, item~\ref{prov:tb-lazard}. Write $m_+, q_+$ (and $m_{[\,]}, q_{[\,]}$) for the numbers of
+ multiplications and powers in $\Pi_+$ (and $\Pi_{[\,]}$); they depend only on $c$.
+ 
+ \begin{lemma}[Prime-power evaluation]
+@@ -394,7 +394,7 @@
+ every instance of Definition~\ref{def:input-contract} of class at most $c_0$ (an
+ explicit $\Fp$-Lie algebra with a coherent hiding oracle), returns an $\Fp$-basis of the
+ hidden subalgebra with probability at least $1 - \eta$ within a running-time bound
+-$T_{\mathsf{Solve}}$ that depends only on the dimension, $\log p$, the label width and
++$T_{\operatorname{Solve}}$ that depends only on the dimension, $\log p$, the label width and
+ $\eta$. Part~(ii) is a field solver for class at most $\min(c,R+1)$ on the socles met
+ here; Theorem~\ref{thm:main}, with $c$ fixed, is a field solver for class at most $c$.
+ By Lemma~\ref{lem:tb-section-rank} every socle met below has class at most
+@@ -405,25 +405,25 @@
+ 
+ \begin{proposition}[Outer recursion with stop rules]
+ \label{prop:tb-recursion}
+-Let $\mathcal{L}$, $G$, $f$, $b$ be as in the setting, and let $\mathsf{Solve}$ be a
+-field solver for class at most $c$. Algorithm~$\mathsf{RtF}$ below makes at most $b$ calls to
+-$\mathsf{Solve}$ on every branch, none on a trivial section. If each call has error
++Let $\mathcal{L}$, $G$, $f$, $b$ be as in the setting, and let $\operatorname{Solve}$ be a
++field solver for class at most $c$. Algorithm~$\operatorname{RtF}$ below makes at most $b$ calls to
++$\operatorname{Solve}$ on every branch, none on a trivial section. If each call has error
+ at most $\eps/b$, it outputs $\hh$ with probability at least $1-\eps$. Every call runs
+-within the bound $T_{\mathsf{Solve}}$ for its dimension, on every branch. Apart from the
++within the bound $T_{\operatorname{Solve}}$ for its dimension, on every branch. Apart from the
+ calls, it uses $\poly(B)$ deterministic public arithmetic, and every query a call
+ makes is one query of $f$.
+ \end{proposition}
+ 
+-\noindent\textbf{Algorithm $\mathsf{RtF}$.} Maintain lattices for subrings
++\noindent\textbf{Algorithm $\operatorname{RtF}$.} Maintain lattices for subrings
+ $K \subseteq S \subseteq \mathcal{L}$ with $K$ an ideal of $S$. Start with
+ $K = 0$, $S = \mathcal{L}$.
+ \begin{enumerate}[label=\arabic*.,leftmargin=2em]
+   \item \emph{Stop rule 1.} If $S = K$, output $K$. (In particular, if $b = 0$ the
+   output is $0$ and no call is made.)
+   \item Present $M = S/K$ by (M1), with section $\sigma$, and its socle $\Omega = M[p]$
+-  by (M3), with basis map $\iota_M : \Fp^{\dim\Omega} \to \Omega$. Call $\mathsf{Solve}$
++  by (M3), with basis map $\iota_M : \Fp^{\dim\Omega} \to \Omega$. Call $\operatorname{Solve}$
+   on $\Omega$ with oracle $f\circ\sigma\circ\iota_M$ and error $\eps/b$, and stop the
+-  call after $T_{\mathsf{Solve}}$ steps for this dimension; a stopped call, or one
++  call after $T_{\operatorname{Solve}}$ steps for this dimension; a stopped call, or one
+   that returns more than $\dim\Omega$ vectors, counts as returning nothing. Let
+   $U = \iota_M(\text{span of the returned vectors}) \subseteq \Omega$.
+   \item \emph{Stop rule 2.} If $U = 0$, or $U$ is not closed under the bracket of
+@@ -441,7 +441,9 @@
+ Lemma~\ref{lem:tb-section-rank}, whatever the earlier calls returned. After a wrong
+ answer, $K \subseteq \hh$ may fail and $f\circ\sigma\circ\iota_M$ need not hide any
+ subgroup; the instance is then outside Definition~\ref{def:input-contract}, and the
+-time-out in step~2 is what bounds the call's running time on such branches.
++time-out in step~2 is what bounds the call's running time on such branches. For
++$\operatorname{Solve}$ = Theorem~\ref{thm:main} the time-out is not needed, since its query
++and time bounds hold for every oracle (Remark~\ref{rem:oblivious}).
+ 
+ \emph{Call count on every branch.} Let $K_0 = 0 \subsetneq K_1 \subsetneq \cdots$ be
+ the successive values of $K$. Each $K_j$ is an additive subgroup of the $p$-group
+@@ -457,7 +459,7 @@
+ ideal of $S$, because $M[p]$ is an ideal of $M$. Then
+ $K' = q^{-1}(\hh/K) \cap P = \hh \cap P \subseteq \hh$. For $x \in \hh$ and
+ $y \in \hh \cap P$, $[x,y] \in \hh$ because $\hh$ is a subring and $[x,y] \in P$
+-because $P$ is an ideal of $S \ni x$; so $\hh \subseteq I_S(K') = S'$. The invariant
++because $P$ is an ideal of $S$ and $x \in S$; so $\hh \subseteq I_S(K') = S'$. The invariant
+ $K \subseteq \hh \subseteq S$ is therefore preserved. If $\hh \ne K$, then $\hh/K$ is
+ a nonzero additive $p$-group, so $(\hh/K)[p] = (\hh/K)\cap M[p] \ne 0$, $U \ne 0$, and
+ $U$ is a subalgebra; the round continues. If $\hh = K$ and $S \ne K$, then $U = 0$ and
+@@ -467,7 +469,7 @@
+ enlarging call multiplies $|K|$ by at least $p$, so there are at most $\log_p|H|$
+ enlarging calls and at most one final call; by the call count above there are at most
+ $b$ calls in all. (For $\mathcal{L} = \Fp^2$ and $H = G$ a single call suffices.) A correct call on a valid instance
+-finishes within $T_{\mathsf{Solve}}$ with the stated probability, so the time-out does
++finishes within $T_{\operatorname{Solve}}$ with the stated probability, so the time-out does
+ not affect this argument.
+ 
+ \emph{Error.} Let $E_j$ be the event that a $j$th call is made, the first $j-1$ calls
+@@ -491,7 +493,7 @@
+ 
+ \begin{proof}[Proof of Theorem~\ref{thm:ring-to-field}]
+ Part~(i) and part~(ii) are proved above. For part~(iii), the first round of
+-$\mathsf{RtF}$ is exactly the step described there: $S = \mathcal{L}$, $K = 0$,
++$\operatorname{RtF}$ is exactly the step described there: $S = \mathcal{L}$, $K = 0$,
+ the call returns $H_1 = H \cap \Omega_1(G)$, and if $H_1 = \{1\}$ then $H = \{1\}$
+ (a nontrivial $h \in H$ of order $p^j$ gives $h^{p^{j-1}} \in H_1\setminus\{1\}$,
+ which is the case $\hh \ne K = 0$ of the correctness argument). Otherwise
+@@ -503,8 +505,8 @@
+ Lemma~\ref{lem:tb-quotient-oracle}. Every section met has the form $S/K$ of
+ Lemma~\ref{lem:tb-section-rank}, so its derived cyclic rank is at most $R$ at every
+ depth, and part~(ii) applies to its socle with the bound stated there. The two stop
+-rules are stop rules~1 and~2 of $\mathsf{RtF}$. Proposition~\ref{prop:tb-recursion}
+-with $\mathsf{Solve}$ = part~(ii) and $\eta = \eps/b$ gives at most $b$ calls on every
++rules are stop rules~1 and~2 of $\operatorname{RtF}$. Proposition~\ref{prop:tb-recursion}
++with $\operatorname{Solve}$ = part~(ii) and $\eta = \eps/b$ gives at most $b$ calls on every
+ branch and success probability at least $1-\eps$.
+ 
+ \emph{Costs per step.} Each call: $2^{O(R\log(R+2))}\cdot\poly(B,\log(b/\eps))$ time
+@@ -514,29 +516,31 @@
+ charged $Q_f\cdot T_f$ separately.
+ \end{proof}
+ 
+-\begin{remark}[Relation to the source note and to prior work]
++\begin{remark}[Relation to prior work and to an alternative outer loop]
+ \label{rem:tb-ring-sources}
+-The quotient oracle is the construction of
+-\file{research/UNIFORM_RING_TO_FIELD_RANK_REDUCTION.md}, Section~2. That note's
+-outer loop is a different algorithm: it scans an ascending central flag of each
++The quotient oracle can also drive a different outer loop (Appendix~\ref{app:provenance},
++item~\ref{prov:tb-ring}), which scans an ascending central flag of each
+ section with an order-at-most-$p$ promise and restarts in $\mathcal{L}$ after each
+-success, using up to $b(b+1)/2$ field calls. $\mathsf{RtF}$ intersects the whole
++success, using up to $b(b+1)/2$ field calls. $\operatorname{RtF}$ intersects the whole
+ socle of the current section and recurses in the nested section, so it needs at most
+ $b$ calls. Normalizer recursions of this kind go back to Ivanyos, Sanselme and
+ Santha~\cite{IvanyosSanselmeSantha2012} (Section~3 of the arXiv version) and appear
+ % NEEDS HUMAN VERIFICATION: ISS "Section 3 of the arXiv version" not checked offline (referee 10, 2026-11-04).
+-in the reduction of Imran and Ivanyos~\cite[Proposition~1]{ImranIvanyos2023}; both
+-are stated for black-box groups, with the class (respectively the primes) bounded.
++in the reduction of Imran and Ivanyos~\cite[Proposition~1]{ImranIvanyos2023}; the first
++is stated for groups given by refined polycyclic presentations with polynomial-time
++collection (which, as noted there, a quantum algorithm computes for solvable black-box
++groups) and bounded class, the second for black-box groups with the primes bounded.
++% 2026-11-09 prep: ISS model and Section 3 numbering AI-read from arXiv:0707.1260v1; human check still needed.
+ The recursion never Fourier-samples a mixed-order group: every core call reads out
+ over $\Fp$, so the incomplete-label failure on $\mathbb{Z}/3\times\mathbb{Z}/9$
+ recorded in Section~\ref{sec:ring} does not arise. It also never forms $G/K$ for a
+-$K$ that is not normal in the current ambient group, which is the frozen-normalizer
+-error recorded in \file{research/CLASS_THREE_HSP_THEOREM_DRAFT.md}: each new $K'$
+-is an ideal of its recomputed idealizer. An AI session simulated $\mathsf{RtF}$
+-with a truth oracle in place of $\mathsf{Solve}$ on six mixed-order rings and 293
+-hidden subgroups, and it returned $\hh$ every time within $b$ calls
+-(\file{research/audits/reviews/2026-11-02-rees-fpt-torsion-check.md}, \S B3); this
+-checks the outer algebra only.
++$K$ that is not normal in the current ambient group (the frozen-normalizer error;
++Appendix~\ref{app:provenance}, item~\ref{prov:tb-ring}): each new $K'$
++is an ideal of its recomputed idealizer. A finite computation confirms that
++$\operatorname{RtF}$, run with a truth oracle in place of $\operatorname{Solve}$ on six
++mixed-order rings and 293 hidden subgroups, returns $\hh$ every time within $b$ calls
++(Appendix~\ref{app:provenance}, item~\ref{prov:tb-ring}); this checks the outer
++algebra only.
+ \end{remark}
+ 
+ %----------------------------------------------------------------------------
+@@ -768,11 +772,15 @@
+ 
+ \begin{remark}[Implementation status]
+ \label{rem:tb-compiler}
+-The proof of Lemma~\ref{lem:tb-evaluation} is uniform in $c < p$ and $e$. The
+-project's implemented compiler (\file{theorems/universal_lazard_words.py}) originally reduced exponents modulo $p$, which limited its certified prime-power coverage to $c \le 4$ with $p > 4$ (\file{research/CLASS_FOUR_PRIME_POWER_INPUT.md}); it now takes an annihilating modulus $p^e$ and agrees with matrix logarithm and exponential in $\UT_{c+1}(\mathbb{Z}/p^e)$ at six test points with $c \le 6$ (\file{research/audits/reviews/2026-11-02-rees-prime-power-compiler.md}, Section~6); these are tests, not a proof of its contract. An AI session checked the lemma
+-exactly on $\UT_{c+1}(\mathbb{Z}/p^e)$ and on relatively free groups built in GAP at
+-$p = 7, 11$, $e = 2, 3$, $c = 5, 6$
+-(\file{research/audits/reviews/2026-11-02-rees-prime-power-compiler.md}).
++The proof of Lemma~\ref{lem:tb-evaluation} is uniform in $c < p$ and $e$. An
++implemented compiler for the words $\Pi_+$ and $\Pi_{[\,]}$ takes an annihilating
++modulus $p^e$ and agrees with matrix logarithm and exponential in
++$\UT_{c+1}(\mathbb{Z}/p^e)$ at six test points with $c \le 6$; these are tests, not a
++proof of its contract. A compiler that reduces exponents modulo $p$ alone is certified
++only for $c \le 4$ with $p > 4$. A finite computation confirms the lemma exactly on
++$\UT_{c+1}(\mathbb{Z}/p^e)$ and on relatively free groups built in GAP at
++$p = 7, 11$, $e = 2, 3$, $c = 5, 6$ (Appendix~\ref{app:provenance},
++item~\ref{prov:tb-evaluation}).
+ \end{remark}
+ 
+ \subsubsection{The kernel of \texorpdfstring{$\Phi$}{Phi} as an abelian hidden subgroup}
+@@ -826,18 +834,20 @@
+ Theorem~\ref{thm:bb-envelope}(i) for $e_p = 1$.
+ 
+ \emph{Exponent $p^e$, $e > 1$.} The tuple lift does not apply to $F$ directly, since $F$ is
+-not an $\Fp$-algebra. Both routes below are conditional on
+-Proposition~\ref{prop:tb-recursion}, that is, on Theorem~\ref{thm:ring-to-field}(iii),
+-with Theorem~\ref{thm:main} as the field solver; they do not use
++not an $\Fp$-algebra. Both routes below use
++Proposition~\ref{prop:tb-recursion} with Theorem~\ref{thm:main} as the field solver, and so
++need nothing beyond Theorem~\ref{thm:is-import} (Remark~\ref{rem:oblivious} replaces the
++time-out of its step~2; Corollary~\ref{cor:black-box-pe} states route~(R2) with explicit
++counts); they do not use
+ Corollary~\ref{cor:fpt-r}, which gives nothing useful here because
+ $\operatorname{d}([F,F]) = d - s = \Theta(s^c)$ for fixed $c \ge 2$.
+ \begin{enumerate}[label=(R\arabic*),leftmargin=2.8em]
+-  \item \emph{Recursion on the cover.} Apply $\mathsf{RtF}$ to the explicit ring $F$, with
++  \item \emph{Recursion on the cover.} Apply $\operatorname{RtF}$ to the explicit ring $F$, with
+   $b_F = \log_p|F| = ed$, hidden subgroup $K = \Phi^{-1}(H)$, oracle $f\circ\Phi$, and
+-  $\mathsf{Solve}$ = Theorem~\ref{thm:main} with error $\eps/(ed)$. By
++  $\operatorname{Solve}$ = Theorem~\ref{thm:main} with error $\eps/(ed)$. By
+   Lemma~\ref{lem:tb-section-rank} every socle met is an explicit $\Fp$-Lie algebra of
+   dimension at most $d$ and class at most $c$, so Theorem~\ref{thm:main} at fixed $c$
+-  applies to it. By Proposition~\ref{prop:tb-recursion}, $\mathsf{RtF}$ makes at most $ed$
++  applies to it. By Proposition~\ref{prop:tb-recursion}, $\operatorname{RtF}$ makes at most $ed$
+   calls and returns $K$ with probability at least $1-\eps$; each local query is one query
+   of $f\circ\Phi$, that is, one query of $f$ and one evaluation of $\Phi$. Output the images
+   under $\Phi$ of a Hermite basis of $K$; they generate $\Phi(K) = H$. Neither $\ker\Phi$ nor
+@@ -855,11 +865,11 @@
+   maps), and $\bar\Phi \coloneqq \Phi\circ\tilde\sigma = \bar\pi\circ q\circ\tilde\sigma = \bar\pi$. So
+   $f\circ\bar\Phi$ hides $\bar\Phi^{-1}(H)$ in an explicit ring of the setting of
+   Section~\ref{app:tb-ring}, with $b = \log_p|G| \le \ell$, at one query of $f$ and one
+-  evaluation of $\Phi$ per query. Apply $\mathsf{RtF}$ (Theorem~\ref{thm:ring-to-field})
++  evaluation of $\Phi$ per query. Apply $\operatorname{RtF}$ (Proposition~\ref{prop:tb-recursion})
+   with at most $\log_p|G| \le \ell$ local calls; every local socle has dimension at most
+   $\operatorname{d}(\mathcal{L}_G) \le \ell$ and class at most $c$, so the field solver is
+   Theorem~\ref{thm:main}, or part~(ii) of Theorem~\ref{thm:ring-to-field} when its rank
+-  bound is useful. Push the result forward by $\bar\Phi$.
++  bound is useful (that choice is conditional, as stated there). Push the result forward by $\bar\Phi$.
+ \end{enumerate}
+ 
+ \paragraph{Ring operations.} A \emph{ring operation modulo $M = p^e$} ($p$ known) is an
+@@ -971,7 +981,7 @@
+ span; remaining vectors stay zero in all earlier positions; and with $R_t$ the
+ remaining set right after the $t$-th pivot is fixed, each later step replaces $R$ by
+ $R'$ with $\langle R\rangle = \langle r_{\mathrm{new}}\rangle + \langle R'\rangle$, so
+-$\langle R_t\rangle = \langle r_{t+1},\dots,r_q\rangle \ni p^{e-a_t}r_t$, which is (HF2).
++$p^{e-a_t}r_t \in \langle R_t\rangle = \langle r_{t+1},\dots,r_q\rangle$, which is (HF2).
+ At most $k$ vectors are appended, so at most $q_0 + k$ are processed, at
+ $O((q_0+k)k)$ ring operations per position: $O((q_0+k)k^2)$ in all, which is $O(k^3)$
+ for $q_0 \le k+1$. Different lifts of an exact quotient $r_j/p^a$ differ by multiples
+@@ -1232,11 +1242,11 @@
+ $K \cap F[p]$, the correct one for that recursion; route (R2) runs it on the chart of $G$.
+ Where $\Omega_1(G)$ itself is wanted,
+ $\Phi^{-1}(\Omega_1(G)) = \pi^{-1}(\log G[p]) = \{x \in F : px \in \ker\pi\}$ is computed by
+-(M2)-type congruences from the output of Lemma~\ref{lem:tb-kernel}. Exact computations by
+-an AI session confirmed these identities on the metacyclic group at $p = 3, 5, 7$ and the
++(M2)-type congruences from the output of Lemma~\ref{lem:tb-kernel}. A finite
++computation confirms these identities on the metacyclic group at $p = 3, 5, 7$ and the
+ strict inclusion $\mho_{e-1}(G) < \Omega_1(G)$ in 49 of the 58 groups of order $3^3$ to
+ $3^5$ and $5^3$ to $5^4$ with class below $p$ and exponent above $p$
+-(\file{research/audits/reviews/2026-11-02-rees-black-box-check.md}, \S C5).
++(Appendix~\ref{app:provenance}, item~\ref{prov:tb-blackbox}).
+ 
+ \subsubsection{Composition over all primes and costs per step}
+ 
+@@ -1281,7 +1291,7 @@
+ every local dimension by the encoding length belong to the acquired-chart route (R2). The
+ small-prime step and the Sylow preprocessing are counted only in the rows above, not in
+ any large-prime call cap. Copy-only input, which would need the forward-only conversions
+-of~\cite{ImranIvanyos2023} and the project's copy-only outer reduction, is not covered;
++of~\cite{ImranIvanyos2023} and a copy-only outer reduction, is not covered;
+ neither is a class that grows with the input.
+ \end{remark}
+ 
+@@ -1296,7 +1306,7 @@
+ error share $\eps/4$; Lemma~\ref{lem:tb-small-primes}; and, for each $p > c$, the pullback of
+ Proposition~\ref{prop:black-box}(i), the chart of route~(R2) acquired by Lemma~\ref{lem:tb-kernel}
+ at $\delta = \eps/(4\ell)$, and then one call of Theorem~\ref{thm:main} on the chart if $e_p = 1$,
+-or Algorithm~$\mathsf{RtF}$ of Proposition~\ref{prop:tb-recursion} on the chart with
++or Algorithm~$\operatorname{RtF}$ of Proposition~\ref{prop:tb-recursion} on the chart with
+ Theorem~\ref{thm:main} as the field solver if $e_p > 1$, every call at error $\eps/(4\ell)$ and
+ with the arities of Remark~\ref{rem:combined-schedule}. Each chart comes with two size checks:
+ the column scan of Lemma~\ref{lem:tb-chart} stops and reports failure as soon as more than
+@@ -1377,7 +1387,7 @@
+ For $e_p = 1$ the chart $\mathcal{L}_G = F/\ker\pi$ is an $\Fp$-Lie algebra of dimension $n_p$
+ and class at most $c$ with oracle $f\circ\bar\Phi$ at one query of $f$ per query
+ (Section~\ref{app:tb-blackbox}, route~(R2)), and one call of Theorem~\ref{thm:main} is made;
+-apply Lemma~\ref{lem:tb-count-grade}. For $e_p > 1$, Algorithm~$\mathsf{RtF}$ runs on the chart
++apply Lemma~\ref{lem:tb-count-grade}. For $e_p > 1$, Algorithm~$\operatorname{RtF}$ runs on the chart
+ with $b = n_p$. By Proposition~\ref{prop:tb-recursion}, the $j$th call ($j = 0, 1, \dots$) is
+ made only if $S_j \ne K_j$, where $|K_j| \ge p^j$; it runs on the socle of $S_j/K_j$, whose
+ dimension is the number of cyclic factors of $S_j/K_j$, at most
+@@ -1440,7 +1450,7 @@
+ 
+ \begin{proposition}[Gates and classical time; proof of Theorem~\ref{thm:bb-envelope}(iii)]
+ \label{prop:tb-count-gates}
+-Assume the results cited by Theorem~\ref{thm:bb-envelope}. The statement \textup{(H1)}, that a single-coordinate quantum Fourier transform over $\Fp$, or over $\mathbb{Z}/p^e$, on $b \le \ell$ bits, to isometry error $\eta$ on its canonical subspace with clean workspace, compiles into $O(b^3\operatorname{polylog}(1/\eta))$ gates, holds by Lemma~\ref{lem:qft-mod}, which gives $O((b + \log(1/\eta))^2)$ gates from $\{X,\mathrm{CNOT},\mathrm{SWAP},\mathrm{Toffoli},H\}$ and dyadic rotations $R_k^{\pm1}$, $\mathrm{C}R_k^{\pm1}$ with $k = O(\log((b + \log(1/\eta))/\eta))$, counted as single gates (over a fixed finite gate set, run Lemma~\ref{lem:qft-mod} at $\eta/2$ and synthesize each of its $O((b+\log(1/\eta))(\log(1/\eta) + \log(b+\log(1/\eta))))$ rotations to error $\eta/2$ divided by their number, for example by~\cite{DawsonNielsen2006}, at a factor $\operatorname{polylog}(b/\eta)$; for $p = 2$, which occurs only when $c = 1$, the standard approximate transform over $\mathbb{Z}/2^e$ gives the same bound, and (H1) still holds). \textup{(H2)}, that addition, multiplication by a constant and multiplication of two registers over $\Fp$, $p$ odd, each cost $O(\log^2 p)$ gates (at most $158b^2+46b$ gates for a multiply--accumulate $t \leftarrow t+\kappa ab$ with $b=\lceil\log_2 p\rceil$, using $3b+5$ clean ancillas and only $X$, $\mathrm{CNOT}$, $\mathrm{SWAP}$ and Toffoli gates), is not a hypothesis: it is discharged by the ripple-carry adder of~\cite{CuccaroDraperKutinMoulton2004} and the modular adder, comparison and shift-and-add multiplier of~\cite{VedralBarencoEkert1996}, as built in the proof of Lemma~\ref{lem:qft-mod} and in the paragraph ``Binary arithmetic and explicit transforms'' of Section~\ref{sec:uniform-compilation} (\file{theorems/rees_circuit_arith.py}); the counts are those of the generated gate lists, and correctness of the blocks for general $b$ is the standard one, checked exhaustively only for $p\le 13$ (AI-checked, pending human review). For $p=2$ these operations cost $O(1)$ gates. No inversion modulo $p$ is performed by a gate: the divisions by $k+1\le c$ in Theorem~\ref{thm:uniform-compilation}(i) are multiplications by classically computed constants, and the unit inversions of Lemmas~\ref{lem:tb-chart} and~\ref{lem:tb-sylow} are classical bit operations counted in~(d). (Were an inversion needed coherently, Fermat exponentiation costs $O(\log^3 p)$ gates and the bound in~(a) is unchanged, since $n_p^3\log^3 p\le\ell^3$.) \textup{(H3)}, that one run of Shor's order finding costs $O(\ell^3)$ gates, is not a
++Assume the results cited by Theorem~\ref{thm:bb-envelope}. The statement \textup{(H1)}, that a single-coordinate quantum Fourier transform over $\Fp$, or over $\mathbb{Z}/p^e$, on $b \le \ell$ bits, to isometry error $\eta$ on its canonical subspace with clean workspace, compiles into $O(b^3\operatorname{polylog}(1/\eta))$ gates, holds by Lemma~\ref{lem:qft-mod}, which gives $O((b + \log(1/\eta))^2)$ gates from $\{X,\mathrm{CNOT},\mathrm{SWAP},\mathrm{Toffoli},H\}$ and dyadic rotations $R_k^{\pm1}$, $\mathrm{C}R_k^{\pm1}$ with $k = O(\log((b + \log(1/\eta))/\eta))$, counted as single gates (over a fixed finite gate set, run Lemma~\ref{lem:qft-mod} at $\eta/2$ and synthesize each of its $O((b+\log(1/\eta))(\log(1/\eta) + \log(b+\log(1/\eta))))$ rotations to error $\eta/2$ divided by their number, for example by~\cite{DawsonNielsen2006}, at a factor $\operatorname{polylog}(b/\eta)$; for $p = 2$, which occurs only when $c = 1$, the standard approximate transform over $\mathbb{Z}/2^e$ gives the same bound, and (H1) still holds). \textup{(H2)}, that addition, multiplication by a constant and multiplication of two registers over $\Fp$, $p$ odd, each cost $O(\log^2 p)$ gates (at most $158b^2+46b$ gates for a multiply--accumulate $t \leftarrow t+\kappa ab$ with $b=\lceil\log_2 p\rceil$, using $3b+5$ clean ancillas and only $X$, $\mathrm{CNOT}$, $\mathrm{SWAP}$ and Toffoli gates), is not a hypothesis: it is discharged by the ripple-carry adder of~\cite{CuccaroDraperKutinMoulton2004} and the modular adder, comparison and shift-and-add multiplier of~\cite{VedralBarencoEkert1996}, as built in the proof of Lemma~\ref{lem:qft-mod} and in the paragraph ``Binary arithmetic and explicit transforms'' of Section~\ref{sec:uniform-compilation} (Appendix~\ref{app:provenance}, item~\ref{prov:tb-count-gates}); the counts are those of the generated gate lists, and correctness of the blocks for general $b$ is the standard one, checked exhaustively only for $p\le 13$ (AI-checked, pending human review). For $p=2$ these operations cost $O(1)$ gates. No inversion modulo $p$ is performed by a gate: the divisions by $k+1\le c$ in Theorem~\ref{thm:uniform-compilation}(i) are multiplications by classically computed constants, and the unit inversions of Lemmas~\ref{lem:tb-chart} and~\ref{lem:tb-sylow} are classical bit operations counted in~(d). (Were an inversion needed coherently, Fermat exponentiation costs $O(\log^3 p)$ gates and the bound in~(a) is unchanged, since $n_p^3\log^3 p\le\ell^3$.) \textup{(H3)}, that one run of Shor's order finding costs $O(\ell^3)$ gates, is not a
+ hypothesis either. Modulo an odd $F \ge 3$ with $n = \lceil\log_2 F\rceil \le 2\ell$ bits and
+ for a unit $a$, one run uses $t_{\mathrm{of}} = 2n+1$ control qubits, $t_{\mathrm{of}}$ gates $H$, the exponentiation
+ $|j\rangle|1\rangle \mapsto |j\rangle|a^j \bmod F\rangle$ as $t_{\mathrm{of}}$ controlled in-place
+@@ -1477,7 +1487,7 @@
+ factoring to order finding is that of~\cite[Section~5]{Shor1997}. The counts follow from those
+ of the blocks, and the controlled multiplication is checked exhaustively, with clean ancillas,
+ for every unit $\kappa$ and odd $F \in \{9,15,21,25,27,33,35,45,49,51,55,57,63\}$
+-(\file{research/audits/reviews/2026-11-04-rees-h3-check/modexp_check.py}; AI-checked, pending
++(Appendix~\ref{app:provenance}, item~\ref{prov:tb-count-gates}; AI-checked, pending
+ human review). Then, with every oracle call counted once:
+ \begin{enumerate}[label=(\alph*),leftmargin=2em]
+   \item the core calls use $O_c\bigl(Q_f(\ell^3 + w)\operatorname{polylog}(\ell/\eps)\bigr)$ gates,
+@@ -1514,6 +1524,11 @@
+ % confirms it, 23/2 becomes 17/2 throughout, which is below E_W(c)+4 >= 9 for every c >= 2, so
+ % tau_c = E_W(c)+1+max(3,hat beta_c) for c >= 2 and tau_1 = 17/2. Same change in main.tex,
+ % thm:bb-envelope. NEEDS HUMAN VERIFICATION.
++% 2026-11-09 prep: AKS Theorem 5.3, O~(log^{15/2} n), is confirmed in the authors' preprint
++% (www.cse.iitk.ac.in/users/manindra/algebra/primality_v6.pdf, Section 5; Annals numbering not
++% checked). It rests on Fouvry's Lemma 5.2, whose constants c, n0 are not given there; the 11-05
++% cloud batch (G) reports that constant as ineffective (not verified here), so 17/2 would hold
++% only with a non-computable implied constant.
+ % The normalizer term O(l^8) of (d) (Lemma tb-howell-rounds) has exponent 8 < 17/2, so it stays
+ % dominated under the improved bound; the O(l^9) fallback without (P1), stated after that lemma,
+ % would not be, so (P1) becomes load-bearing if 17/2 is adopted.
+@@ -1560,3 +1575,8 @@
+ $s\ell^3\log(s/\eps) \le (s\ell)\ell^2\,(s\ell + \log(1/\eps)) \le N^4$), for the gates of~(c) and again for the latter part of~(d), $s^c\ell^4 + \ell^6 \le N^{\max(c,6)}$, and, without the condition $\log_2(8\ell/\eps) \le \ell$, the chart time of~(d) is $O_c(s^c\Lambda^2\ell^2 + \Lambda^4\ell^2) \le O_c(N^{\max(c,2)+2} + N^6)$ and the transforms of~(b) cost $4d\Lambda\ell\cdot O((\ell + \log(16\ell kd/\eps))^2) \le O_c(N^{c+3+o(1)})$, since $d \le c\,s^c$, $s^c\ell \le N^c$, $\Lambda \le 2N+4$ and $\log(16\ell kd/\eps) = O_c(N)$; $s\ell^{23/2} = (s\ell)\ell^{21/2} \le N^{23/2}$, $\Lambda \le 2N+4$.
+ Every $e_d \ge 1$ gives $E_W(c) \ge c$ for every $c \ge 1$. So (a)--(c) are at most $N^{E_W(c)+4+o(1)}$, and every term of the time is at most $N^{\tau_c+o(1)}$: the gates and the solvers by $E_W(c)+4 \le E_W(c)+1+\max(3,\hat\beta_c)$, the charts by $\max(c+2,6) \le \max(E_W(c)+4,\,23/2)$, the transforms of~(b) by $c+3 \le E_W(c)+4$, the certificates by $23/2$, the normalizer steps by $\ell^8 \le N^8$, with $8 < 23/2 \le \tau_c$, and the lower-order classical work by $\max(E_W(c)+4,6)$, since $\ell s^c \le N^c$, $\ell\Lambda^2 = O(N^3)$, $\log^2(s+2) = N^{o(1)}$, $Q_f\ell^3 \le N^{E_W(c)+4+o(1)}$, $t \le 2N+5$ and $E_W(c) \ge c$. Lemma~\ref{lem:tb-count-exponent} gives $E_W(c) \ge 11$ for $3 \le c \le 9$, and $E_W(c) \ge c \ge 10$ for $c \ge 10$, so $E_W(c)+4 \ge 14 > 23/2$ for $c \ge 3$, which gives the value of $\tau_c$ there; at $c = 1$ there is no solver, $E_W(1)+4 = 5$, and $\tau_1 = 23/2$. (At $c = 2$, $E_W(2) = 5$ and $E_W(2)+4 = 9 < 23/2$, so $\tau_2 = \max(6+\max(3,\hat\beta_2),\,23/2)$.)
+ \end{proof}
++
++\begin{remark}[Solver exponent and normalizer term in Theorem~\ref{thm:bb-envelope}(iii)]
++\label{rem:tb-count-envelope}
++Two glosses on Proposition~\ref{prop:tb-count-gates}(d), as used in Theorem~\ref{thm:bb-envelope}(iii). The $O(\ell^8)$ bound for the normalizer steps of the primes with $e_p > 1$ holds for every $\eps$; those steps are done over $\mathbb{Z}/p^{e_p}$ with Howell forms (Lemma~\ref{lem:tb-howell-rounds}; AI-checked, pending human review). The exponent $\hat\beta_c$ is the excess time exponent of the solvers over their arity, with $\log p$ folded in: every solver call at arity $M_d$ on at most $a$ equations runs within $M_d((a+1)\log_2 p)^{\hat\beta_c}\operatorname{polylog}(\ell/\eps)$. \cite{IvanyosSantha2015} states its solver's time only as polynomial; by Remark~\ref{rem:is-runtime}, granting its tape-layout sketch, every Schedule~1 call satisfies this with exponent $5$, since $T^{\mathrm{IS}}_d \le 64C_1c^3M_d((a+1)\log_2 p)^5$ (here $g_d \le a$, and $b = \lceil\log_2 p\rceil$ satisfies $g_d^2+b^2 \le 2((g_d+1)b)^2$ and $b \le 2\log_2 p$); the Schedule~2 calls are not bounded here, so $\hat\beta_c$ is not computed.
++\end{remark}

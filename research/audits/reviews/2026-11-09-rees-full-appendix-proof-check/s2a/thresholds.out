@@ -1,0 +1,55 @@
+=== Table tab:app-s2-thresholds (recomputed) ===
+k | 16k^(2k+2) | T_W | T_A (binding) | (k-1)k^k | T_S (binding) | Delta(T_A) | Delta(T_S)
+2 1024.0 6.562 8.423589 U 4 67.0866 U 0.3688 0.03121
+3 1.05e+5 837.1 79.039396 U 54 735.082 U 0.2903 0.07964
+4 1.678e+7 2.637e+5 868.9965 U 768 8596.36 U 0.2117 0.06545
+5 3.906e+9 8.792e+7 12657.592 U 12500 126105.0 U 0.1073 0.03386
+6 1.254e+12 3.483e+10 233577.03 U 233280 2.24201e+6 U 0.04143 0.01336
+7 5.317e+14 1.696e+13 4941830.3 U 4941258 4.61235e+7 U 0.0135 0.004418
+8 2.882e+17 1.013e+16 1.1744156e+8 U 117440512 1.07375e+9 U 0.003876 0.001282
+9 1.945e+20 7.355e+18 3.0993657e+9 U 3099363912 2.78943e+10 U 0.001006 0.0003353
+
+T_A(3) = 79.03939618  T_A(2) = 8.423589044  T_S(2) = 67.08660371
+T_A(7) = 4941830.29927  < 5e6 ? True
+T_A(8) = 117441562.028684  ceil = 117441563  claimed 117441563
+T_A(9) = 3099365718.69623  9^9/2 = 193710244.5  9^9/2 < T_A(9)? True
+(k-1)k^k at 8: 117440512  T_A(8) - 7*8^8 = 1050.0287
+
+=== Prop TA(ii) claims for 2..40 ===
+violations: []
+TS/k^(k+1): [(3, '9.075'), (4, '8.395'), (5, '8.071'), (6, '8.009'), (10, '8.0'), (20, '8.0'), (40, '8.0')]
+TA/k^(k+1): [(2, '1.053'), (3, '0.9758'), (4, '0.8486'), (5, '0.8101'), (6, '0.8344'), (10, '0.9'), (20, '0.95'), (40, '0.975')]
+
+=== direct evaluations at P = k^(k+1), k = 3,4,5 (Prop TA(ii) proof) ===
+3 Delta(P) = 0.285714  U(P) = 1.484188  margin k/(k-1)-U = 0.015812
+4 Delta(P) = 0.194308  U(P) = 1.2793671  margin k/(k-1)-U = 0.0539663
+5 Delta(P) = 0.0965491  U(P) = 1.2023838  margin k/(k-1)-U = 0.0476162
+
+=== ratio 16k^(2k+2)/T_W(k) ===
+[(2, '156.06'), (3, '125.4'), (4, '63.627'), (5, '44.432'), (6, '36.0'), (7, '31.36'), (8, '28.444'), (9, '26.449')]
+T_W(2) = 6.5615528  ((1+sqrt17)/2)^2 = 6.5615528
+T_W(k)/((k-2)^2 k^(2k)): [(3, '1.1483'), (5, '1.0003'), (9, '1.0'), (20, '1.0'), (50, '1.0')]
+4((k-1)k^k+1)^2 vs 16k^(2k+2): [(2, '100.0', '1024.0'), (3, '1.21e+4', '1.05e+5'), (4, '2.365e+6', '1.678e+7'), (5, '6.251e+8', '3.906e+9'), (6, '2.177e+11', '1.254e+12'), (7, '9.766e+13', '5.317e+14'), (8, '5.517e+16', '2.882e+17'), (9, '3.842e+19', '1.945e+20')]
+kappa*p at p=4((k-1)k^k+1)^2 over k^(2k+3): [(2, '1.563'), (3, '1.844'), (4, '2.256'), (5, '2.56'), (6, '2.778'), (7, '2.939'), (8, '3.063'), (9, '3.16')]
+
+=== constants of the k >= 6 argument (Prop TA(ii)), k = 6..200 ===
+k=6: Delta(P) = 0.0378374  bound chain 0.0680872 0.0687218  u = 0.314167  lhs = 0.0669239
+violations: [('E', 11), ('E', 14), ('E', 16), ('E', 26), ('E', 28), ('E', 36), ('E', 38), ('first', 41), ('first', 42), ('first', 43), ('first', 46), ('first', 47), ('E', 49), ('first', 52), ('E', 55), ('E', 56), ('first', 56), ('first', 65), ('E', 66), ('first', 66), ('first', 71), ('E', 72), ('first', 72), ('first', 74), ('first', 79), ('E', 80), ('first', 82), ('first', 86), ('first', 91), ('E', 95), ('E', 96), ('first', 98), ('E', 100), ('first', 100), ('E', 102), ('first', 104), ('E', 105), ('first', 105), ('E', 106), ('first', 107), ('first', 108), ('E', 110), ('E', 112), ('first', 112), ('first', 117), ('first', 119), ('E', 120), ('first', 122), ('E', 127), ('first', 130), ('first', 133), ('first', 137), ('first', 141), ('E', 142), ('E', 148), ('first', 148), ('E', 149), ('first', 150), ('E', 151), ('E', 152), ('first', 153), ('E', 155), ('E', 158), ('E', 159), ('first', 160), ('first', 162), ('first', 163), ('E', 164), ('E', 166), ('first', 166), ('first', 168), ('E', 175), ('first', 180), ('first', 182), ('E', 188), ('first', 190), ('first', 192), ('E', 193), ('E', 194), ('first', 194), ('first', 196), ('E', 197), ('E', 198)]
+
+=== interval re-check of the bracketing of T_A(k), T_S(k), k = 2..9 ===
+2 T_A 8.42358904396 fails below: True  holds above: True
+2 T_S 67.0866037053 fails below: True  holds above: True
+3 T_A 79.0393961837 fails below: True  holds above: True
+3 T_S 735.081507955 fails below: True  holds above: True
+4 T_A 868.996497241 fails below: True  holds above: True
+4 T_S 8596.35922218 fails below: True  holds above: True
+5 T_A 12657.5921642 fails below: True  holds above: True
+5 T_S 126104.550034 fails below: True  holds above: True
+6 T_A 233577.026543 fails below: True  holds above: True
+6 T_S 2242011.81955 fails below: True  holds above: True
+7 T_A 4941830.29927 fails below: True  holds above: True
+7 T_S 46123530.6028 fails below: True  holds above: True
+8 T_A 117441562.029 fails below: True  holds above: True
+8 T_S 1073751279.16 fails below: True  holds above: True
+9 T_A 3099365718.7 fails below: True  holds above: True
+9 T_S 27894291362.1 fails below: True  holds above: True

@@ -1,0 +1,50 @@
+[1] sigma_p = E[# uniform draws until subset sums (with empty sum) cover F_p]
+   p=3: sigma_p=3.0000  <= p: True  <= ceil(2log2(p-1))+4=6: True
+   p=5: sigma_p=4.0625  <= p: True  <= ceil(2log2(p-1))+4=8: True
+   p=7: sigma_p=4.6379  <= p: True  <= ceil(2log2(p-1))+4=10: True
+   p=11: sigma_p=5.4284  <= p: True  <= ceil(2log2(p-1))+4=11: True
+   p=13: sigma_p=5.7257  <= p: True  <= ceil(2log2(p-1))+4=12: True
+   p=17: sigma_p=6.1803  <= p: True  <= ceil(2log2(p-1))+4=12: True
+   p=19: sigma_p=6.3630  <= p: True  <= ceil(2log2(p-1))+4=13: True
+   (sigma_3 = 3 gives N_0(n) = 1 + 3n(n+1)/2 at p = 3)
+[2] min_{y!=0} #{(u,v) in P_k^2: u-v=y} vs (p-(k-1)(k-2)sqrt p-3k+1)/k^2; Pr_u[u-y in P_k] >= 1/(2k) when sqrt p >= 2(k-1)(k-2)+4
+   2250 (p,kappa) pairs, p < 6000, kappa = 2..7: Jacobi bound holds True; N(y) > 0 for all y != 0 when sqrt p > (k-1)(k-2)+3: True; split prob >= 1/(2k): True
+[3] depths j*_h
+   j*_3 at p=7,13,19,31: [1, 1, 2, 2]  (claim 1,1,2,2)
+   j*_4 at p=13,17: [1, 2]  (claim 1,2)
+   depth bounds (h = 3,4,6 to 2e4; h = 5 to 8e3; 3617 primes) and j*_h <= ceil(log2 kappa): True
+   j*_3 - log2(p)/2 over 3014 primes p = 1 mod 3 < 6e4: [-0.850, 0.599] (claim [-0.85, 0.60])
+[4] E(p) = 1 + sum_{d=2}^c (1 + j_d); claim max_{p>c} E = 3,6,8,10,13,14,16,19 for c = 2..9 (c=9 at p=19)
+   computed: [3, 6, 8, 10, 13, 14, 16, 19] ; maximizing primes: [3, 7, 7, 11, 7, 31, 31, 19]
+[5] weight-doubling solvers: exact output checks and mean column counts
+   binary p=3 j*=1 n=2: outputs valid True; mean columns 9.98 +- 0.13 vs N_0=10.00 (-0.2 se)
+   binary p=3 j*=1 n=3: outputs valid True; mean columns 19.02 +- 0.22 vs N_0=19.00 (+0.1 se)
+   binary p=5 j*=2 n=2: outputs valid True; mean columns 25.59 +- 0.30 vs N_0=25.63 (-0.1 se)
+   binary p=5 j*=2 n=3: outputs valid True; mean columns 79.69 +- 0.85 vs N_0=79.20 (+0.6 se)
+   binary p=7 j*=3 n=2: outputs valid True; mean columns 31.93 +- 0.35 vs N_0=31.79 (+0.4 se)
+   binary p=7 j*=3 n=3: outputs valid True; mean columns 181.25 +- 2.18 vs N_0=179.20 (+0.9 se)
+   h=4 p=13 j*=1 n=2: outputs valid True; mean columns 18.20 +- 0.12 vs N_0=18.18 (+0.2 se)
+   h=4 p=13 j*=1 n=3: outputs valid True; mean columns 34.95 +- 0.17 vs N_0=35.35 (-2.3 se)
+   h=4 p=17 j*=2 n=2: outputs valid True; mean columns 50.39 +- 0.62 vs N_0=51.56 (-1.9 se)
+   h=4 p=17 j*=2 n=3: outputs valid True; mean columns 171.94 +- 1.90 vs N_0=172.32 (-0.2 se)
+   h=3 p=19 j*=2 n=2: outputs valid True; mean columns 54.23 +- 0.65 vs N_0=54.21 (+0.0 se)
+   h=3 p=19 j*=2 n=3: outputs valid True; mean columns 182.76 +- 1.98 vs N_0=182.04 (+0.4 se)
+   h=3 p=13 j*=1 n=2: outputs valid True; mean columns 18.23 +- 0.12 vs N_0=18.18 (+0.4 se)
+   h=3 p=13 j*=1 n=3: outputs valid True; mean columns 35.14 +- 0.21 vs N_0=35.35 (-1.0 se)
+   h=3 p=7 j*=1 n=2: outputs valid True; mean columns 14.80 +- 0.14 vs N_0=14.91 (-0.8 se)
+   h=3 p=7 j*=1 n=3: outputs valid True; mean columns 28.80 +- 0.22 vs N_0=28.83 (-0.1 se)
+   rescaled p=17 k=2 n=2: outputs valid True; mean columns 17.07 +- 0.08 vs formula 16.94
+   rescaled p=17 k=2 n=3: outputs valid True; mean columns 32.97 +- 0.13 vs formula 32.88
+   rescaled p=17 k=2 n=4: outputs valid True; mean columns 54.01 +- 0.18 vs formula 54.12
+   rescaled p=29 k=2 n=2: outputs valid True; mean columns 16.54 +- 0.06 vs formula 16.54
+   rescaled p=29 k=2 n=3: outputs valid True; mean columns 32.19 +- 0.09 vs formula 32.07
+   rescaled p=29 k=2 n=4: outputs valid True; mean columns 53.00 +- 0.14 vs formula 52.79
+   rescaled p=67 k=3 n=2: outputs valid True; mean columns 22.30 +- 0.04 vs formula 22.32
+   rescaled p=67 k=3 n=3: outputs valid True; mean columns 43.72 +- 0.07 vs formula 43.64
+   rescaled p=67 k=3 n=4: outputs valid True; mean columns 71.90 +- 0.10 vs formula 72.06
+   rescaled p=73 k=3 n=2: outputs valid True; mean columns 22.32 +- 0.04 vs formula 22.29
+   rescaled p=73 k=3 n=3: outputs valid True; mean columns 43.52 +- 0.06 vs formula 43.58
+   rescaled p=73 k=3 n=4: outputs valid True; mean columns 72.04 +- 0.10 vs formula 71.97
+   rescaled p=257 k=4 n=2: outputs valid True; mean columns 28.10 +- 0.02 vs formula 28.11
+   rescaled p=257 k=4 n=3: outputs valid True; mean columns 55.22 +- 0.04 vs formula 55.21
+   rescaled p=257 k=4 n=4: outputs valid True; mean columns 91.35 +- 0.06 vs formula 91.35

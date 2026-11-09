@@ -1,0 +1,48 @@
+A. triangular solver (prop:triangular-sde)
+  kappa=2 p=13: 300 banks (a<=5, 4 modes), failures 0  [0.0s]
+  kappa=2 p=101: 300 banks (a<=5, 4 modes), failures 0  [0.1s]
+  kappa=3 p=31: 300 banks (a<=5, 4 modes), failures 0  [0.1s]
+  kappa=3 p=151: 300 banks (a<=5, 4 modes), failures 0  [0.1s]
+  kappa=4 p=61: 300 banks (a<=5, 4 modes), failures 0  [0.2s]
+  kappa=4 p=197: 300 banks (a<=5, 4 modes), failures 0  [0.2s]
+B. block-steered, J=3, iid uniform columns, M_3(a) columns
+  kappa=2 p=257 a=2 M=4: column-condition failures 0/50; back-substitution failures 0/150  [0.2s]
+  kappa=2 p=257 a=3 M=7: column-condition failures 1/50; back-substitution failures 0/147  [0.3s]
+  kappa=2 p=257 a=4 M=9: column-condition failures 2/50; back-substitution failures 0/144  [0.3s]
+  kappa=2 p=257 a=6 M=16: column-condition failures 3/50; back-substitution failures 0/141  [0.4s]
+  kappa=2 p=1031 a=2 M=4: column-condition failures 0/50; back-substitution failures 0/150  [0.5s]
+  kappa=2 p=1031 a=3 M=7: column-condition failures 0/50; back-substitution failures 0/150  [0.6s]
+  kappa=2 p=1031 a=4 M=9: column-condition failures 0/50; back-substitution failures 0/150  [0.8s]
+  kappa=2 p=1031 a=6 M=16: column-condition failures 0/50; back-substitution failures 0/150  [1.0s]
+  kappa=3 p=2767 a=2 M=4: column-condition failures 0/50; back-substitution failures 0/150  [1.3s]
+  kappa=3 p=2767 a=3 M=7: column-condition failures 0/50; back-substitution failures 0/150  [1.7s]
+  kappa=3 p=2767 a=4 M=9: column-condition failures 0/50; back-substitution failures 0/150  [2.1s]
+  kappa=3 p=2767 a=6 M=16: column-condition failures 0/50; back-substitution failures 0/150  [2.8s]
+  kappa=3 p=1009 a=2 M=4: column-condition failures 0/50; back-substitution failures 0/150  [2.9s]
+  kappa=3 p=1009 a=3 M=7: column-condition failures 0/50; back-substitution failures 0/150  [3.0s]
+  kappa=3 p=1009 a=4 M=9: column-condition failures 1/50; back-substitution failures 0/147  [3.2s]
+  kappa=3 p=1009 a=6 M=16: column-condition failures 0/50; back-substitution failures 1/150  [3.4s]
+C. reserved basis, J=3, random banks, floor((a+2)^2/4)+a columns
+  kappa=2 p=257 a=2 M=6 GP: banks 48, stalls 0, true-pool events 0, back-substitution failures 0/144  [3.4s]
+  kappa=2 p=257 a=2 M=6 non-GP: banks 2, stalls 0, true-pool events 0, back-substitution failures 0/6  [3.4s]
+  kappa=2 p=257 a=3 M=9 GP: banks 30, stalls 0, true-pool events 0, back-substitution failures 2/90  [3.5s]
+  kappa=2 p=257 a=3 M=9 non-GP: banks 20, stalls 0, true-pool events 0, back-substitution failures 0/60  [3.5s]
+  kappa=2 p=257 a=4 M=13 GP: banks 5, stalls 0, true-pool events 0, back-substitution failures 0/15  [3.9s]
+  kappa=2 p=257 a=4 M=13 non-GP: banks 45, stalls 0, true-pool events 0, back-substitution failures 0/135  [3.9s]
+  kappa=2 p=1031 a=2 M=6 GP: banks 49, stalls 0, true-pool events 0, back-substitution failures 0/147  [4.0s]
+  kappa=2 p=1031 a=2 M=6 non-GP: banks 1, stalls 0, true-pool events 0, back-substitution failures 0/3  [4.0s]
+  kappa=2 p=1031 a=3 M=9 GP: banks 44, stalls 0, true-pool events 0, back-substitution failures 0/132  [4.2s]
+  kappa=2 p=1031 a=3 M=9 non-GP: banks 6, stalls 0, true-pool events 0, back-substitution failures 0/18  [4.2s]
+  kappa=2 p=1031 a=4 M=13 GP: banks 21, stalls 0, true-pool events 0, back-substitution failures 0/63  [5.1s]
+  kappa=2 p=1031 a=4 M=13 non-GP: banks 29, stalls 0, true-pool events 0, back-substitution failures 0/87  [5.1s]
+  kappa=3 p=2767 a=2 M=6 GP: banks 50, stalls 0, true-pool events 0, back-substitution failures 0/150  [5.3s]
+  kappa=3 p=2767 a=2 M=6 non-GP: banks 0, stalls 0, true-pool events 0, back-substitution failures 0/0  [5.3s]
+  kappa=3 p=2767 a=3 M=9 GP: banks 47, stalls 0, true-pool events 0, back-substitution failures 0/141  [5.8s]
+  kappa=3 p=2767 a=3 M=9 non-GP: banks 3, stalls 0, true-pool events 0, back-substitution failures 0/9  [5.8s]
+  kappa=3 p=2767 a=4 M=13 GP: banks 36, stalls 0, true-pool events 0, back-substitution failures 1/108  [7.0s]
+  kappa=3 p=2767 a=4 M=13 non-GP: banks 14, stalls 0, true-pool events 0, back-substitution failures 0/42  [7.0s]
+C'. reserved basis on banks with many proportional columns (kappa=2, p=257)
+  a=3 M=9: outcomes {'ok': 40}
+  a=4 M=13: outcomes {'ok': 40}
+  a=5 M=17: outcomes {'ok': 40}
+total 7.2s

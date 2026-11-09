@@ -1,0 +1,9 @@
+[1] uniform cap of (ii) vs per-grade cap of (iv), B = ceil(log2(64 (4u)^(c-1))) at c = u
+  (u, kappa) with uniform (ii) cap > (iv) cap: [(3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)] ... 59 pairs for u <= 40
+  u=20, kappa=2: (ii) cap / B = 7.268e+24 vs (iv) cap / B = 4.836e+24
+  per-node count of (ii) <= 4 kappa^M B: holds for all u <= 40, kappa <= 3
+[2] Table tab:random-column-budget, inferred profiles
+  case 0: p=101 >= 16u^2=64 [True], c=2 <= u=2 [True], trees=28, leaves/tree=8, queries=448, QFT=1449; paper {'trees': 28, 'leaves': 8, 'queries': 448, 'qft': 1449}
+  case 1: p=1009 >= 16u^2=256 [True], c=3 <= u=4 [True], trees=40, leaves/tree=256, queries=30720, QFT=132780; paper {'trees': 40, 'leaves': 256, 'queries': 30720, 'qft': 132780}
+  case 2: p=65537 >= 16u^2=2304 [True], c=12 <= u=12 [True], trees=68, leaves/tree=3116402981210161152, queries=2.543e+21, QFT=1.753e+22; paper {'trees': 68, 'queries': '2.6e21', 'qft': '1.8e22'}
+  case 3: 40 trees * c=5 * 24^4 = 66355200 (paper 66355200) [True]; 577 >= 16*36 = 576 [True]

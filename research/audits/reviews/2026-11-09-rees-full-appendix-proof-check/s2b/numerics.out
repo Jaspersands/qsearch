@@ -1,0 +1,54 @@
+== 1. step-threshold (ii): sweep D=4..60, r=2..D at p0=max(4D^{r+1},4r^2D^5)
+  failures: none
+  max of (first+E_r)(D-1) [<1 needed]: 0.335383 at (D,r)= (25, 5)
+  (1.1251)*e^0.2502/2 = 0.72247298
+== 2. union-step (ii): Psi_U(p0) < 0.73 at p0 = max(1+4.05 D c0^-r, 11.6 r^2 D H^2 c0^-4, 100 r)
+  cases: 60923  failures: none
+  max Psi_U(p0): 0.49109 at (39, ('len', 28), 36)
+  interval G/H bound failures: none
+  huge-p0 samples (D,k,r)->Psi_U(p0): [((40, 1, 40), '0.246914'), ((30, 2, 30), '0.255144'), ((20, 1, 20), '0.246914'), ((16, 3, 16), '0.277905'), ((40, 39, 40), '0.0608146')]
+== 3. Theta^cf_2(kappa,k) minima, and the kappa=16/19 inequalities
+  kappa=4: min_k Theta^cf_2 = 1.05e+5 at k=3
+  kappa=5: min_k Theta^cf_2 = 2.205e+5 at k=4
+  kappa=6: min_k Theta^cf_2 = 7.776e+5 at k=5
+  kappa=7: min_k Theta^cf_2 = 1.681e+6 at k=5
+  kappa=8: min_k Theta^cf_2 = 4.502e+6 at k=5
+  kappa=9: min_k Theta^cf_2 = 1.182e+7 at k=5
+  kappa=10: min_k Theta^cf_2 = 2.793e+7 at k=5
+  kappa=11: min_k Theta^cf_2 = 6.061e+7 at k=5
+  kappa=12: min_k Theta^cf_2 = 1.226e+8 at k=5
+  kappa=13: min_k Theta^cf_2 = 2.34e+8 at k=5
+  kappa=14: min_k Theta^cf_2 = 4.217e+8 at k=6
+  kappa=15: min_k Theta^cf_2 = 6.834e+8 at k=6
+  kappa=16: min_k Theta^cf_2 = 1.074e+9 at k=6
+  kappa=17: min_k Theta^cf_2 = 3.365e+9 at k=6
+  kappa=18: min_k Theta^cf_2 = 2.824e+10 at k=6
+  kappa=19: min_k Theta^cf_2 = 6.793e+10 at k=7
+  kappa=20: min_k Theta^cf_2 = 1.064e+11 at k=7
+  kappa=16 k=6: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=14.873 <= k lnlnk=16.317;  4.05k^2(lnk)^k < k^(k/2): False (23.260 vs 22.181)
+  kappa=17 k=7: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=15.054 <= k lnlnk=17.704;  4.05k^2(lnk)^k < k^(k/2): False (24.769 vs 24.082)
+  kappa=18 k=7: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=15.224 <= k lnlnk=19.105;  4.05k^2(lnk)^k < k^(k/2): False (26.284 vs 26.013)
+  kappa=19 k=7: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=15.383 <= k lnlnk=20.518;  4.05k^2(lnk)^k < k^(k/2): True (27.806 vs 27.972)
+  kappa=20 k=8: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=15.533 <= k lnlnk=21.944;  4.05k^2(lnk)^k < k^(k/2): True (29.334 vs 29.957)
+  kappa=25 k=10: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=16.171 <= k lnlnk=29.226;  4.05k^2(lnk)^k < k^(k/2): True (37.062 vs 40.236)
+  kappa=30 k=11: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=16.676 <= k lnlnk=36.724;  4.05k^2(lnk)^k < k^(k/2): True (44.925 vs 51.018)
+  kappa=40 k=15: Theta^cf<=4.05k^2(lnk)^k: True;  ln(2.9k)+8ln(1.2+lnk)=17.449 <= k lnlnk=52.213;  4.05k^2(lnk)^k < k^(k/2): True (60.989 vs 73.778)
+== 4. Theta_2, Theta_3 for kappa = 5,7,11,13; T_R(9,3), W(9,3)
+  kappa=5: Theta_2=3780.82 (k=3; T_U=800.384, last=3780.82 via TR);  Theta_3(k2>=1)=1217.46 (k1=3,k2=2);  Theta_3(k2>=2)=1217.46 (k1=3,k2=2);  (k-1)k^k=1.25e+4; T_R(k,3)=3780.82
+  kappa=7: Theta_2=30823.1 (k=3; T_U=15133.0, last=30823.1 via TR);  Theta_3(k2>=1)=15133.0 (k1=3,k2=2);  Theta_3(k2>=2)=15133.0 (k1=3,k2=2);  (k-1)k^k=4.941e+6; T_R(k,3)=30823.1
+  kappa=11: Theta_2=1.15846e+6 (k=4; T_U=1.15846e+6, last=918335.0 via TR);  Theta_3(k2>=1)=379909.0 (k1=5,k2=2);  Theta_3(k2>=2)=379909.0 (k1=5,k2=2);  (k-1)k^k=2.853e+12; T_R(k,3)=419294.0
+  kappa=13: Theta_2=7.42116e+6 (k=5; T_U=4.64668e+6, last=7.42116e+6 via TR);  Theta_3(k2>=1)=1.05518e+6 (k1=6,k2=3);  Theta_3(k2>=2)=1.05518e+6 (k1=6,k2=3);  (k-1)k^k=3.635e+15; T_R(k,3)=1.05518e+6
+  T_R(9,3) = 134723.2   W(9,3) = 1479142.0
+  W(4,2), W(8,2), W(6,2) = 96.3357 2432.89 648.778   bounds ((D-1)^2+1)^2: 100 2500 676
+  T_W(2) = 6.56155  T_W(4) = 263681.0
+== 5. barrier bound at kappa=4, p=17, h'=2
+  least a' with bound < 1: 146  (bound at a'-1: 1.24472 )
+== 6. T_A(kappa)
+  T_A(3) = 79.0393961837   ceil = 80   (k-1)k^k = 54   k^(k+1) = 81
+  T_A(4) = 868.996497241   ceil = 869   (k-1)k^k = 768   k^(k+1) = 1024
+  T_A(5) = 12657.5921642   ceil = 12658   (k-1)k^k = 12500   k^(k+1) = 15625
+  T_A(6) = 233577.026543   ceil = 233578   (k-1)k^k = 233280   k^(k+1) = 279936
+  T_A(7) = 4941830.29927   ceil = 4941831   (k-1)k^k = 4941258   k^(k+1) = 5764801
+  T_A(8) = 117441562.029   ceil = 117441563   (k-1)k^k = 117440512   k^(k+1) = 134217728
+  T_A(9) = 3099365718.7   ceil = 3099365719   (k-1)k^k = 3099363912   k^(k+1) = 3486784401
+  T_S(3..8) = ['735.08151', '8596.3592', '126104.55', '2242011.8', '46123531.0', '1.0737513e+9']

@@ -1,0 +1,43 @@
+== Lemma qft-mod parameters ==
+N=3 eta=0.0015: b=2 (t,r,tau)=(26,19,15) printed=(26, 19, 15) OK; 3pi2^-tau=2.8762e-04 eta/(b+3)=3.0000e-04 <=; pool 4b+2t+1=61; lemma gate bound per transform=8405
+N=5 eta=0.00028: b=3 (t,r,tau)=(32,22,18) printed=(32, 22, 18) OK; 3pi2^-tau=3.5953e-05 eta/(b+3)=4.6667e-05 <=; pool 4b+2t+1=77; lemma gate bound per transform=14948
+N=3 eta=0.001488: b=2 (t,r,tau)=(26,19,15) printed=(26, 19, 15) OK; 3pi2^-tau=2.8762e-04 eta/(b+3)=2.9760e-04 <=; pool 4b+2t+1=61; lemma gate bound per transform=8405
+N=5 eta=0.0002799: b=3 (t,r,tau)=(32,22,18) printed=(32, 22, 18) OK; 3pi2^-tau=3.5953e-05 eta/(b+3)=4.6650e-05 <=; pool 4b+2t+1=77; lemma gate bound per transform=14948
+N=5 eta=0.00025: b=3 (t,r,tau)=(32,22,18) printed=(32, 22, 18) OK; 3pi2^-tau=3.5953e-05 eta/(b+3)=4.1667e-05 <=; pool 4b+2t+1=77; lemma gate bound per transform=14948
+== transform counts (thm:uniform-compilation(iii) counting) ==
+H3 CW: transforms=24 (printed 24) non-|0>=6 (printed 6) sources/terminal sample=3
+F3(5) CW: transforms=148 (printed 148) non-|0>=24 (printed 24) sources/terminal sample=10
+F3(5) coherent: transforms=176 (printed 176) non-|0>=28 (printed 28) sources/terminal sample=12
+F3(7) coherent_k3: transforms=230 (printed 230) non-|0>=34 (printed None) sources/terminal sample=18
+F4(7) coherent_c4: transforms=3330 (printed 3330) non-|0>=335 (printed None) sources/terminal sample=180
+== arities ==
+H3: kappa={2: 2} CW arities={2: 3} coherent arities={2: 3}
+F3(5): kappa={2: 2, 3: 1} CW arities={2: 5, 3: 2} coherent arities={2: 6, 3: 2}
+F3(7): kappa={2: 2, 3: 3} CW arities={2: 5, 3: 4} coherent arities={2: 6, 3: 3}
+F4(5): kappa={2: 2, 3: 1, 4: 4} CW arities={2: 7, 3: 3, 4: 5} coherent arities={2: 10, 3: 3, 4: 3}
+F4(7): kappa={2: 2, 3: 3, 4: 2} CW arities={2: 7, 3: 7, 4: 3} coherent arities={2: 10, 3: 6, 4: 3}
+F5(7): kappa={2: 2, 3: 3, 4: 2, 5: 1} CW arities={2: 9, 3: 10, 4: 5, 5: 2} coherent arities={2: 15, 3: 10, 4: 6, 5: 2}
+== TV bounds ==
+qft_wire H3: per sample=0.014177 (printed < 0.0142) run of 7=0.099240 (printed < 0.0993) OK
+qft_wire F3(5): per sample=0.011178 (printed < 0.0112) run of 8=0.089425 (printed < 0.0895) OK
+full H3: per sample=0.014177 (printed < None) run of 7=0.099240 (printed < 0.0993) OK
+full F3(5): per sample=0.012321 (printed < None) run of 8=0.098568 (printed < 0.0986) OK
+== gate totals ==
+qft_wire H3: transform gates=188952 / 24 = 7873 per transform; lemma bound 8405
+qft_wire F3(5): transform gates=1968844 / 148 = 13303 per transform; lemma bound 14948
+full H3: transform gates=188952 / 24 = 7873 per transform; lemma bound 8405
+full F3(5): transform gates=2341328 / 176 = 13303 per transform; lemma bound 14948
+qubits: qft_wire H3 82 + (3b+5=11) + pool 61 = 154 (printed 154); F3(5) 744 + 14 + 77 = 835 (printed 835); F4(7) 16302+14=16316 (printed 16316)
+== oracle calls, BCH passes, brackets (first backend) ==
+H3: oracle calls = 3*2 = 6 (printed 6); BCH passes = 3*4 = 12 (printed 12)
+F3(5): oracle calls = 10*3 = 30 (printed 30); passes = 5*2*4 + 5*4 = 60 (printed 60); thm(i) brackets = 40*20 + 20*4 = 880 (printed 880)
+F3(7) coherent_k3 oracle outputs: 18 sources * 3 calls * 4 coords * 3 bits = 648 (printed 648)
+F4(7) coherent_c4 oracle outputs: 180 sources * 4 calls * 5 coords * 3 bits = 10800 (printed 10800)
+== label tuple / pair counts ==
+(5^7-1)*125^6 = 2.980e+17 (printed up to 3.0e17)
+F3(5) coherent grade-2 labels: 25^6 = 244140625 = 5^12 = 244140625; grade-3 label pairs 5^2 = 25; Q at grade 3: 5^6; 25*5^6 = 390625 (printed 390625)
+H3 merge block inputs: labels 3^3, Q 3^3, children 3*4 coords -> 3^(3+3+12) = 3^18 = 387420489; labels*Q values 3^3*3^3 = 729 (printed 729); children support (3^6)^3 = 3.87e+08 (printed 3.9e8)
+F3(7) grade-3 block: label triples 7^3, q in G_2 (D_2 = 6): 7^6 -> 7^9 = 40353607
+F5(7): grade-3 cubes in F_7 = [0, 1, 6]; 3^10 = 59049 vs 7^10 = 282475249
+hlift dims: F4(7) h=gamma_2: 3+3+2+1 = 9 -> 7^9; F5(7) h=gamma_4: 2+2+2+2+1 = 9 -> 7^9
+Heisenberg F_3 subgroup count: 1 + 13 + 4 + 1 = 19; normal subgroups containing Z: Z, 4 maximal, G = 6

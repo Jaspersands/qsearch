@@ -1,0 +1,90 @@
+--- lrat-check.upstream.c	2026-11-09 21:22:51
++++ lrat-check.c	2026-11-09 21:22:51
+@@ -2,6 +2,14 @@
+ Copyright (c) 2017-2023 Marijn Heule, Carnegie Mellon University
+ Last edit: July 2023
+ 
++qsearch fix, 9 Nov 2026 (research/audits/reviews/2026-11-09-lrat-checker-fix/): the upstream copy
++accepted an empty clause without a conflict (any CNF "verified" with the proof `<m+1> 0 0`, or with
++`<m+1> 0 1 -1 0` after line 161 is restored). Changes, marked FIX below: (1) line 161 restored, so
++a lemma without RAT hints must be RUP; (2) the empty clause must be RUP (it has no pivot, so RAT
++hints cannot justify it); (3) unknown clause indices read as DELETED instead of out-of-bounds;
++(4) lemma indices must increase strictly, and the index table grows until the index fits;
++(5) CNF literals beyond the header's variable count are rejected.
++
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+@@ -62,6 +70,7 @@
+ int *litList, litCount, litAlloc;
+ int *inBucket;
+ int *topTable; long long int topAlloc;
++int nVarCNF = 0; // FIX (5)
+ 
+ int  getType   (int* list) { return list[1]; }
+ int  getIndex  (int* list) { return list[0]; }
+@@ -73,7 +82,9 @@
+ int printLit   (int lit)   { return (lit >> 1) * (-2 * (lit&1) + 1); }
+ 
+ inline int getClause (int index) {
++  if (index <= 0 || index >= topAlloc * BUCKET) return DELETED; // FIX (3): unknown index
+   int bucket = index / BUCKET;
++  if (topTable[bucket] < 0) return DELETED;                     // FIX (3): bucket never used
+   int offset = index % BUCKET;
+   return clsList[topTable[bucket]*BUCKET + offset]; }
+ 
+@@ -153,12 +164,15 @@
+ 
+   if (res == CONFLICT) { return SUCCESS; }
+   if (res == FAILED  ) { return FAILED;  }
++  if (size == 0) { // FIX (2): the empty clause has no pivot; only a conflict (RUP) justifies it
++    if (print) printf ("c FAILED: empty clause without a conflict\n");
++    return FAILED; }
+ 
+   int *first = hints; first++; while (*first > 0) first++;
+   int start = intro[pivot ^ 1];
+ 
+   if (RATs == 0)      {
+-//    if (res == SUCCESS) return FAILED; // No RAT and no conflict is FAILED
++    if (res == SUCCESS) return FAILED; // No RAT and no conflict is FAILED  [FIX (1): restored]
+     if (print) printf ("c start %i first %i\n", start, -first[0]);
+     if (start != 0) return FAILED;
+     return SUCCESS; }
+@@ -193,7 +207,7 @@
+ void addClause (int index, int* literals, int size, FILE* drat) {
+ 
+ //  printf ("c index %i\n", index);
+-  if (index >= topAlloc * BUCKET) {
++  while (index >= topAlloc * BUCKET) { // FIX (4): grow until the index fits (was: if)
+     long long int old = topAlloc;
+     topAlloc = (topAlloc * 3) >> 1;
+     printf ("c topTable reallocation from %lli to %lli\n", old, topAlloc);
+@@ -333,6 +347,9 @@
+     while (1) {
+       tmp = fscanf (file, " %i ", &lit);
+       if (tmp == 0 || tmp == EOF) return 0;
++      if (abs (lit) > nVarCNF) { // FIX (5): literal outside the header's variable range
++        printf ("c ERROR: CNF literal %i exceeds the header's %i variables\nc NOT VERIFIED\n", lit, nVarCNF);
++        exit (1); }
+       int clit = convertLit (lit);
+       if (intro[clit] == 0) {
+ //        printf ("c setting intro[%i] = %i\n", lit, line - 1);
+@@ -401,6 +418,7 @@
+       printf ("c ERROR: comment longer than 1024 characters: %s\n", ignore); exit (0); } }
+ 
+   if (nVar <= 0) nVar = 1;
++  nVarCNF = nVar; // FIX (5)
+ 
+   topAlloc = INIT;
+   topTable = (int*) malloc (sizeof(int) * topAlloc);
+@@ -463,6 +481,10 @@
+       deleteClauses (litList + 2, drat); }
+     else if (getType (litList) == (int) 'a') {
+       line  = getIndex  (litList);
++      if (line <= clsLast) { // FIX (4): lemma indices must increase strictly
++        printf ("c ERROR: lemma index %i is not above the previous index %i\n", line, clsLast);
++        found_error = 1;
++        break; }
+       lastIndex = line;
+       int  length = getLength (litList);
+       int* hints  = getHints  (litList);

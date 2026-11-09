@@ -18,9 +18,43 @@ try:
     import pycosat
 except ImportError:      # the k = 4 check below uses cadical instead
     pycosat = None
-import os, subprocess, tempfile
+import os, subprocess, tempfile, shutil
 
-LRAT_CHECK = os.environ.get('LRAT_CHECK', 'lrat-check')
+LRAT_CHECK = os.environ.get('LRAT_CHECK', os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '2026-11-09-lrat-checker-fix', 'lrat-check')))   # fixed build (9 Nov); run its build.sh
+
+
+_LRAT_SOUND = {}
+
+
+def lrat_check_is_sound(checker):
+    """Preflight added 9 Nov 2026 (research/audits/reviews/2026-11-09-lrat-checker-fix/): the upstream
+    lrat-check accepted an empty clause without a conflict, so any CNF 'verified' with a one-line proof.
+    True iff `checker` rejects two such proofs of a satisfiable CNF and verifies a correct proof of an
+    unsatisfiable one. Cached per checker path."""
+    if checker not in _LRAT_SOUND:
+        d = tempfile.mkdtemp()
+
+        def verified(cnf, prf):
+            a, b = os.path.join(d, 'c.cnf'), os.path.join(d, 'c.lrat')
+            with open(a, 'w') as f:
+                f.write(cnf)
+            with open(b, 'w') as f:
+                f.write(prf)
+            r = subprocess.run([checker, a, b], capture_output=True, text=True)
+            return r.returncode == 0 and 'c VERIFIED' in r.stdout.splitlines()
+        try:
+            _LRAT_SOUND[checker] = (not verified('p cnf 1 1\n1 0\n', '2 0 0\n')
+                                    and not verified('p cnf 1 1\n1 0\n', '2 0 1 -1 0\n')
+                                    and verified('p cnf 1 2\n1 0\n-1 0\n', '3 0 1 2 0\n'))
+        finally:
+            shutil.rmtree(d, ignore_errors=True)
+    return _LRAT_SOUND[checker]
+
+
+def require_sound_lrat_check(checker):
+    if not lrat_check_is_sound(checker):
+        raise RuntimeError(f'{checker} failed the lrat-check negative control (it verifies a bogus proof); '
+                           'use the fixed build, research/audits/reviews/2026-11-09-lrat-checker-fix/build.sh')
 
 def cadical_solve(nvars, cl):
     """DIMACS -> cadical with an LRAT proof; an UNSAT answer is accepted only after lrat-check
@@ -33,8 +67,9 @@ def cadical_solve(nvars, cl):
             f.write(' '.join(map(str, c)) + ' 0\n')
     r = subprocess.run(['cadical', '--lrat=true', '--binary=false', cnf, prf], capture_output=True, text=True)
     if r.returncode == 20:
+        require_sound_lrat_check(LRAT_CHECK)
         ch = subprocess.run([LRAT_CHECK, cnf, prf], capture_output=True, text=True)
-        assert 'c VERIFIED' in ch.stdout and 'failed' not in ch.stdout, ch.stdout[-300:]
+        assert ch.returncode == 0 and 'c VERIFIED' in ch.stdout and 'failed' not in ch.stdout, ch.stdout[-300:]
         print('   [cadical UNSAT, LRAT VERIFIED]', flush=True)
         return 'UNSAT'
     assert r.returncode == 10, r.stdout[-300:]

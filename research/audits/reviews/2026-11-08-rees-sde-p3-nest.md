@@ -15,7 +15,7 @@ Labels: **[proved]** complete proof here; **[exact]** finite computation, script
 referee and break reports: (i) `wnest.py` now runs WNEST at q ≥ 4 and a KOW round with pool q + 1 at q ≤ 3
 (it ran WNEST at q = 3 and used KOW's pool q + ⌈log₃(q+1)⌉, so its own worst case was guarantee(n) + 2 for
 odd n); `tables.py` is rerun with identical numbers; (ii) the "guaranteed 63, 84, 109, 135" in §3 are bound(n),
-the exact guarantee(n) is 46, 64, 85, 109; (iii) the dual-distance and KOW-comparison statements are corrected
+the exact guarantee(n) is 46, 64, 85, 108; (iii) the dual-distance and KOW-comparison statements are corrected
 in §0 and Lemma M; Remark (b) is marked unproved. See `2026-11-09-mechanical-queue-run.md`.
 
 Problem. v_1..v_m ∈ F_3^n arbitrary (worst case); find nonempty S with Σ_{i∈S} v_i = 0 in
@@ -219,10 +219,10 @@ The referee's 0.2506 n² at n = 120 is 1/4 + 3/(2n) + O(1/n²) with pieces of co
 
 | n | KOW (0.289 n² at n ≥ 90) | WNEST (deterministic) | WNEST+ (Las Vegas, same guarantee) | guarantee(n)/n² |
 |---|---|---|---|---|
-| 60 | 1037–1045 | 1113–1140 (0.309–0.317) | 935–993 (0.260–0.276) | 0.354 (1275; sharpened KOW-type recursion 1359) |
-| 90 | 2333–2340 | 2425–2430 (0.299–0.300) | 2163 (0.267) | 0.329 (2668; KOW 2954) |
-| 120 | 4154–4173 | 4185–4187 (0.2906) | 3783 (0.2627) | 0.316 (4552; KOW 5156) |
-| 150 | 6516–6520 | 6405–6416 (0.285) | 5842–5853 (0.260) | 0.307 (6916; KOW 7966) |
+| 60 | 1037–1045 | 1113–1140 (0.309–0.317) | 935–993 (0.260–0.276) | 0.354 (1275; sharpened KOW-type recursion 1359; KOW (8) 1465) |
+| 90 | 2333–2340 | 2425–2430 (0.299–0.300) | 2163 (0.267) | 0.329 (2668; sharpened 2954; KOW (8) 3125) |
+| 120 | 4154–4173 | 4185–4187 (0.2906) | 3783 (0.2627) | 0.316 (4552; sharpened 5156; KOW (8) 5405) |
+| 150 | 6516–6520 | 6405–6416 (0.285) | 5842–5853 (0.260) | 0.307 (6916; sharpened 7966; KOW (8) 8285) |
 
 Deterministic WNEST pieces cost q + 8..15 at these n (the (2/3)√N slack is paid twice: once
 in the pool size, once in the selected weight); WNEST+ pieces cost exactly q + 2.
@@ -235,7 +235,7 @@ per-piece assert fired (wt ≥ r* + 2, wt ≤ 2N/3 + (2/3)√N, Δ(F*) ≥ Δ(F)
 peeling). The largest series class peeled was 20. **Hill climb (n = 8..14, 400 steps from
 random and chain starts)** could not push m_used above 40, 55, 75, 95 against bound(n) = 63, 84, 109, 135
 (the crude reporting formula `bound()`, labelled "formula" in `adversarial.out`; the exact
-`guarantee(n)` is 46, 64, 85, 109, still above 40, 55, 75, 95) and never made the per-piece cost exceed the cap (`adversarial.out`, part B).
+`guarantee(n)` is 46, 64, 85, 108, still above 40, 55, 75, 95) and never made the per-piece cost exceed the cap (`adversarial.out`, part B).
 **Single-pool hill climb (`pool_climb.out`, q = 8..14, 600 steps from random and duplicated-column
 pools)**: the Lemma D weight never exceeded r* + 2 + 5 against the cap r* + 2 + (4/3)√N* ≈ 6–7.3,
 and σ stayed ≤ 2.75 ≤ (2/3)√N*. Finite checks falsify only; Theorem A does not rest on them.

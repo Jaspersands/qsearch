@@ -1,0 +1,8 @@
+[1] exact Pr[T > B] vs (p-1)^2/(2^B-1); sigma_p vs ceil(2log2(p-1)) + 1 + sum_j 1/(2^j - 2^-B0)
+   p=3: tail bound holds for B=1..60: True; sigma_p (truncated at B=60) = 3.0000 <= 4.0934 (B0=2): True
+   p=5: tail bound holds for B=1..60: True; sigma_p (truncated at B=60) = 4.0625 <= 6.0214 (B0=4): True
+   p=7: tail bound holds for B=1..60: True; sigma_p (truncated at B=60) = 4.6379 <= 8.0052 (B0=6): True
+   p=11: tail bound holds for B=1..60: True; sigma_p (truncated at B=60) = 5.4284 <= 9.0026 (B0=7): True
+   p=13: tail bound holds for B=1..60: True; sigma_p (truncated at B=60) = 5.7257 <= 10.0013 (B0=8): True
+[2] N_0(n) <= (sigma+1)^J n^(J+1), N_J(n) = n+1, N_j(n) = 1 + sigma sum_{e<n} N_{j+1}(e)
+   grid sigma in {1,3/2,2,3,5,10,13}, J = 1..8, n = 1..120: holds True; max ratio 1.0000

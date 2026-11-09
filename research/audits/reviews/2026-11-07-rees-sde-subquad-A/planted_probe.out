@@ -1,0 +1,4 @@
+{'calls': 352, 'direct': 108, 'direct_Omega_empty': 40, 'direct_Omega_rank_1': 5, 'direct_Omega_rank_2': 28, 'direct_Omega_rank_3': 20, 'direct_Omega_rank_4': 10, 'direct_Omega_rank_5': 5, 'direct_rebuild_None': 0, 'direct_with_rounds': 68, 'errors': 0}
+note: the fixed planted() draws extra random numbers for the Omega component, so the shared
+rng stream (and the bank sequence) diverges from the audit's probe after the first direct exit
+with realised rounds; the counts are therefore not those of the audit (127 / 87).

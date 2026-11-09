@@ -1,0 +1,77 @@
++++ b/docs/papers/rees-hsp/appendix-torsion-blackbox.tex	2026-11-09 20:04:10
+@@ -91,7 +91,7 @@
+ $\BCH_c$, so it is a group homomorphism $(\mathcal{L},\ast) \to (\mathcal{M},\ast)$.
+ Conversely, Lazard's theorem~\cite{Lazard1954} (in the form
+ of~\cite[Theorem~2.3 with Examples~2.1--2.2]{Trappeniers2024}; see
+-also~\cite[Chapters~9--10]{Khukhro1998}) says
++also~\cite[\S10.2 and Example~10.24, p.~124]{Khukhro1998}) says
+ that every finite $p$-group $G$ of class at most $c < p$ carries a unique
+ finite Lazard ring structure $(G,+,[\cdot,\cdot])$ on the same set, of the same
+ class, whose BCH product $\ast$ is the group law of $G$. We write $\log G$ for
+@@ -441,7 +441,9 @@
+ Lemma~\ref{lem:tb-section-rank}, whatever the earlier calls returned. After a wrong
+ answer, $K \subseteq \hh$ may fail and $f\circ\sigma\circ\iota_M$ need not hide any
+ subgroup; the instance is then outside Definition~\ref{def:input-contract}, and the
+-time-out in step~2 is what bounds the call's running time on such branches.
++time-out in step~2 is what bounds the call's running time on such branches. For
++$\operatorname{Solve}$ = Theorem~\ref{thm:main} the time-out is not needed, since its query
++and time bounds hold for every oracle (Remark~\ref{rem:oblivious}).
+ 
+ \emph{Call count on every branch.} Let $K_0 = 0 \subsetneq K_1 \subsetneq \cdots$ be
+ the successive values of $K$. Each $K_j$ is an additive subgroup of the $p$-group
+@@ -524,8 +526,11 @@
+ $b$ calls. Normalizer recursions of this kind go back to Ivanyos, Sanselme and
+ Santha~\cite{IvanyosSanselmeSantha2012} (Section~3 of the arXiv version) and appear
+ % NEEDS HUMAN VERIFICATION: ISS "Section 3 of the arXiv version" not checked offline (referee 10, 2026-11-04).
+-in the reduction of Imran and Ivanyos~\cite[Proposition~1]{ImranIvanyos2023}; both
+-are stated for black-box groups, with the class (respectively the primes) bounded.
++in the reduction of Imran and Ivanyos~\cite[Proposition~1]{ImranIvanyos2023}; the first
++is stated for groups given by refined polycyclic presentations with polynomial-time
++collection (which, as noted there, a quantum algorithm computes for solvable black-box
++groups) and bounded class, the second for black-box groups with the primes bounded.
++% 2026-11-09 prep: ISS model and Section 3 numbering AI-read from arXiv:0707.1260v1; human check still needed.
+ The recursion never Fourier-samples a mixed-order group: every core call reads out
+ over $\Fp$, so the incomplete-label failure on $\mathbb{Z}/3\times\mathbb{Z}/9$
+ recorded in Section~\ref{sec:ring} does not arise. It also never forms $G/K$ for a
+@@ -829,9 +834,11 @@
+ Theorem~\ref{thm:bb-envelope}(i) for $e_p = 1$.
+ 
+ \emph{Exponent $p^e$, $e > 1$.} The tuple lift does not apply to $F$ directly, since $F$ is
+-not an $\Fp$-algebra. Both routes below are conditional on
+-Proposition~\ref{prop:tb-recursion}, that is, on Theorem~\ref{thm:ring-to-field}(iii),
+-with Theorem~\ref{thm:main} as the field solver; they do not use
++not an $\Fp$-algebra. Both routes below use
++Proposition~\ref{prop:tb-recursion} with Theorem~\ref{thm:main} as the field solver, and so
++need nothing beyond Theorem~\ref{thm:is-import} (Remark~\ref{rem:oblivious} replaces the
++time-out of its step~2; Corollary~\ref{cor:black-box-pe} states route~(R2) with explicit
++counts); they do not use
+ Corollary~\ref{cor:fpt-r}, which gives nothing useful here because
+ $\operatorname{d}([F,F]) = d - s = \Theta(s^c)$ for fixed $c \ge 2$.
+ \begin{enumerate}[label=(R\arabic*),leftmargin=2.8em]
+@@ -858,11 +865,11 @@
+   maps), and $\bar\Phi \coloneqq \Phi\circ\tilde\sigma = \bar\pi\circ q\circ\tilde\sigma = \bar\pi$. So
+   $f\circ\bar\Phi$ hides $\bar\Phi^{-1}(H)$ in an explicit ring of the setting of
+   Section~\ref{app:tb-ring}, with $b = \log_p|G| \le \ell$, at one query of $f$ and one
+-  evaluation of $\Phi$ per query. Apply $\operatorname{RtF}$ (Theorem~\ref{thm:ring-to-field})
++  evaluation of $\Phi$ per query. Apply $\operatorname{RtF}$ (Proposition~\ref{prop:tb-recursion})
+   with at most $\log_p|G| \le \ell$ local calls; every local socle has dimension at most
+   $\operatorname{d}(\mathcal{L}_G) \le \ell$ and class at most $c$, so the field solver is
+   Theorem~\ref{thm:main}, or part~(ii) of Theorem~\ref{thm:ring-to-field} when its rank
+-  bound is useful. Push the result forward by $\bar\Phi$.
++  bound is useful (that choice is conditional, as stated there). Push the result forward by $\bar\Phi$.
+ \end{enumerate}
+ 
+ \paragraph{Ring operations.} A \emph{ring operation modulo $M = p^e$} ($p$ known) is an
+@@ -1517,6 +1524,11 @@
+ % confirms it, 23/2 becomes 17/2 throughout, which is below E_W(c)+4 >= 9 for every c >= 2, so
+ % tau_c = E_W(c)+1+max(3,hat beta_c) for c >= 2 and tau_1 = 17/2. Same change in main.tex,
+ % thm:bb-envelope. NEEDS HUMAN VERIFICATION.
++% 2026-11-09 prep: AKS Theorem 5.3, O~(log^{15/2} n), is confirmed in the authors' preprint
++% (www.cse.iitk.ac.in/users/manindra/algebra/primality_v6.pdf, Section 5; Annals numbering not
++% checked). It rests on Fouvry's Lemma 5.2, whose constants c, n0 are not given there; the 11-05
++% cloud batch (G) reports that constant as ineffective (not verified here), so 17/2 would hold
++% only with a non-computable implied constant.
+ % The normalizer term O(l^8) of (d) (Lemma tb-howell-rounds) has exponent 8 < 17/2, so it stays
+ % dominated under the improved bound; the O(l^9) fallback without (P1), stated after that lemma,
+ % would not be, so (P1) becomes load-bearing if 17/2 is adopted.
+--- a/docs/papers/rees-hsp/core/main-core.tex	2026-11-05 09:44:17

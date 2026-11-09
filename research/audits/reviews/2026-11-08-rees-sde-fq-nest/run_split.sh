@@ -5,7 +5,11 @@
 # usage: run_split.sh p S casefile jobs outfile
 p=$1; S=$2; cases=$3; jobs=$4; out=$5
 SP=${SCRATCH:?set SCRATCH}
-export LRAT_CHECK=$SP/drat-trim/lrat-check
+# 9 Nov: the build in a session scratchpad was unsound (it verified an empty clause without a
+# conflict); use the fixed build and refuse to start unless it passes its negative controls.
+FIXDIR=${0:A:h}/../2026-11-09-lrat-checker-fix
+export LRAT_CHECK=${LRAT_CHECK:-$FIXDIR/lrat-check}
+$FIXDIR/controls.sh $LRAT_CHECK - > /dev/null || { echo "lrat-check failed its controls: $LRAT_CHECK" >&2; exit 1; }
 while read c; do
   for x in $(seq 0 $((p-1))); do for y in $(seq 0 $((p-1))); do
     echo "$c;1,1,0:$x,$y"

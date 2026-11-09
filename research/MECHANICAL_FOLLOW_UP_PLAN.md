@@ -96,7 +96,7 @@ Do not edit the paper.
 Read audits/reviews/2026-11-08-rees-sde-p3-nest.md and its -referee/-break reports.
 1. Fix code/proof discrepancies in 2026-11-08-rees-sde-p3-nest/wnest.py: WNEST must start at
    q >= 4 (not 3); guarantee() off by +2 for odd n; KOW pool size q+ceil(log_3(q+1)) vs q+1;
-   relabel the §3 "guaranteed 63, 84, 109, 135" as bound(n) (guarantee(n) = 46, 64, 85, 109).
+   relabel the §3 "guaranteed 63, 84, 109, 135" as bound(n) (guarantee(n) = 46, 64, 85, 108).
    Acceptance: rerun tables.py, numbers match the break report.
    **DONE 9 Nov:** wnest.py now runs WNEST for q >= 4 and a KOW round with pool q + 1 for q <= 3 (the
    baseline `kow` mode keeps KOW's pool); `tables.py` rerun: output identical to the old one and to the break

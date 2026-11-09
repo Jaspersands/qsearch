@@ -1,0 +1,16 @@
+(1) streaming tails
+   all tails <= r 2^-B (exact for r,B <= 4, float otherwise); largest ratio tail/bound = 0.3378 at (r,B) = (3, 1)
+   prod_{k<r} p_k = r^-r for r = 1..11: ok
+(2) profile p=43, c=9, m=19, n=97, delta=1/10, eps=1/3
+   n=97, t=1, tau=1, log2 B_leaf=1569.49, log2 Q_q=1572.66
+   floor(n log2 p)=526, ceil(log2(8B_leaf/eps))=1575, b=2102, ell=420400, M*ell=5885600, log2 T=1591.98
+   r=1: N=0, raw copies = T = 2^1591.98
+   r=2: B=1598, N=6392, raw copies T(N+1) = 2^1604.62
+   r=8: B=1600, N=102400, raw copies T(N+1) = 2^1608.62
+   r=32: B=1602, N=1640448, raw copies T(N+1) = 2^1612.62
+   multiple-of-p route: ell -> 420411, c*ell = 3783699; check c*p*ceil(ell/p) <= c(ell+p): True; crossover M*ell/c = 653955.6
+   ell*ln2 = 291399; ceil(b ln2/gamma) = 291400
+(3) Remark app-sub-sharper
+   violations: 0
+(4) Remark mixed-source(i) rounding identities (exact)
+   violations: 0

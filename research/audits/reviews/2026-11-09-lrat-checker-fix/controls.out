@@ -1,0 +1,19 @@
+fixed:    lrat-check (sha256 13f28c96a0f3df28)
+upstream: lrat-check-upstream (sha256 a1276e576943ca35)
+| control | expected | checker under test | upstream build |
+|---|---|---|---|
+| sat_1 + one-line proof '2 0 0' (audit X1) | REJECTED | REJECTED | VERIFIED |
+| sat_1 + '2 0 1 0' (empty clause, satisfied hint) | REJECTED | REJECTED | VERIFIED |
+| sat_1 + '2 0 1 -1 0' (empty clause with a RAT hint) | REJECTED | REJECTED | VERIFIED |
+| sat_1 + '2 0 99999 0' (hint to an unused index) | REJECTED | REJECTED | VERIFIED |
+| sat_1 + pure-literal lemma then empty clause | REJECTED | REJECTED | VERIFIED |
+| sat_1 + '1 0 0' (lemma reuses index 1) | REJECTED | REJECTED | VERIFIED |
+| sat_or + one-line proof '2 0 0' | REJECTED | REJECTED | VERIFIED |
+| sat_2units + one-line proof '3 0 0' | REJECTED | REJECTED | VERIFIED |
+| sat_2units + '3 0 1 2 0' (hints satisfied, no conflict) | REJECTED | REJECTED | VERIFIED |
+| php54_sat (SAT, same clause ids) + CaDiCaL proof of php54 | REJECTED | REJECTED | REJECTED |
+| unsat_1 + wrong hint '3 0 1 0' | REJECTED | REJECTED | VERIFIED |
+| php54 + CaDiCaL proof without its last (empty-clause) line | REJECTED | REJECTED | REJECTED |
+| unsat_1 + correct proof '3 0 1 2 0' | VERIFIED | VERIFIED | VERIFIED |
+| php54 (pigeonhole 5 into 4, UNSAT) + CaDiCaL 3.0.1 LRAT proof | VERIFIED | VERIFIED | VERIFIED |
+CONTROLS OK: the checker under test matched all 14 expectations

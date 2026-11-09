@@ -16,7 +16,7 @@ from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "..", "2026-11-05-rees-sde-q1"))
-from subquad import Field, Params, solve_T, new_stats, check, DJ, rank, init_state, forward_fast as forward, split_blocks  # noqa
+from subquad import Field, Params, solve_T, new_stats, check, DJ, rank, init_state, forward_fast as forward, split_blocks, rebuild  # noqa
 from fastla import Ech  # noqa
 import time
 from fams import family_list  # noqa
@@ -76,9 +76,11 @@ def planted(Fd, r, Qs, J, M, mix=True):
     st = init_state(Fd, cols)
     forward(Fd, cols, J, rng, st, rule="first")
     # forward_fast returns "direct" (a monochromatic circuit among the block columns, e.g. Q = 1)
-    # before it sets st["Ub"]: that was the KeyError 'Ub' of the break pass.  No round has then
-    # been realised, so Omega = 0 (the bank is still a valid bank; the later columns are as before).
-    Om = st["Ub"] if "Ub" in st else []
+    # from inside its loop without setting st["Ub"]: that was the KeyError 'Ub' of the break pass.
+    # Rounds may already have been realised by then (the 9 Nov audit probe found 87 of 127 direct
+    # exits with realised rounds), so Omega is rebuilt from st["rounds"] (fix P7 of the 9 Nov
+    # mechanical-queue audit; the 8 Nov fix used Omega = [] and silently dropped that component).
+    Om = st["Ub"] if "Ub" in st else rebuild(Fd, st["rounds"])
     Ep = [unit(r, i) for i in range(off, r)]
     qq, n2 = r - off, 0
     while qq >= 1:

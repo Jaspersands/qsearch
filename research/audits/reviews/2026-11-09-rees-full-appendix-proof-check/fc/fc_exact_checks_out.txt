@@ -1,0 +1,44 @@
+[1] lem:fc-rref: exhaustive over X in F_p^{a x M}
+   p=3 a=2 M=4: free entries uniform given (r,pi): True; (c) bound holds for all n0: True
+   p=5 a=2 M=3: free entries uniform given (r,pi): True; (c) bound holds for all n0: True
+   p=3 a=2 M=5: free entries uniform given (r,pi): True; (c) bound holds for all n0: True
+   p=3 a=3 M=3: free entries uniform given (r,pi): True; (c) bound holds for all n0: True
+   p=2 a=2 M=4: free entries uniform given (r,pi): True; (c) bound holds for all n0: True
+   (a) RREF(EX) == RREF(X) for 3000 random injective E: True
+[2] lem:fc-moment: exact mean/variance/Chebyshev over all C in F_p^{r x n}
+   p=7 k=2 r=1 n=2: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.1224 <= 2.333: True
+   p=7 k=2 r=2 n=2: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.3199 <= 4.083: True
+   p=7 k=3 r=2 n=3: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.446 <= 5.444: True
+   p=13 k=3 r=1 n=3: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.04005 <= 0.65: True
+   p=13 k=3 r=2 n=2: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.5187 <= 6.76: True
+   p=13 k=4 r=2 n=2: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.7412 <= 14.08: True
+   p=11 k=5 r=2 n=2: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.8568 <= 26.89: True
+   p=5 k=2 r=3 n=2: EN ok=True Var ok=True Var<=h*EN True  Pr[N<EN/2]=0.6147 <= 9.259: True
+   last claim Pr_C[Cx in D^r] = q^r for all x != 0: True
+[3] lem:fc-node: bank event <= beta, acceptance, witness validity
+   exhaustive p=31 k=2 a=1 M=3 n0=2: Pr[bad]=1860/29791=0.06243 <= beta=0.5489: True; acceptance >= q^r/2 on good banks: True
+   exhaustive p=31 k=3 a=1 M=3 n0=2: Pr[bad]=2160/29791=0.07251 <= beta=1.16: True; acceptance >= q^r/2 on good banks: True
+   exhaustive p=19 k=2 a=1 M=4 n0=3: Pr[bad]=7344/130321=0.05635 <= beta=0.1465: True; acceptance >= q^r/2 on good banks: True
+   Monte Carlo p=31 k=2 a=2 M=5 n0=3 (300 banks): Pr[bad]~0.03 vs beta=0.1; witnesses valid: True
+   Monte Carlo p=61 k=3 a=2 M=5 n0=3 (300 banks): Pr[bad]~0.02 vs beta=0.101; witnesses valid: True
+   Monte Carlo p=13 k=2 a=2 M=4 n0=2 (300 banks): Pr[bad]~0.1867 vs beta=2.382; witnesses valid: True
+[4] prop:rc-lower: E[acceptance of uniform kernel vector | generic] = (q^n - p^-n) q^a
+   p=7 k=2 a=1 M=3: mean=60/343 claim=60/343 equal=True; Pr[not generic]=1/7 == 1-prod(1-p^-i)=1/7: True, <= 1/(p-1): True
+   p=7 k=3 a=1 M=3: mean=24/343 claim=24/343 equal=True; Pr[not generic]=1/7 == 1-prod(1-p^-i)=1/7: True, <= 1/(p-1): True
+   p=5 k=2 a=2 M=3: mean=18/125 claim=18/125 equal=True; Pr[not generic]=29/125 == 1-prod(1-p^-i)=29/125: True, <= 1/(p-1): True
+   p=13 k=3 a=1 M=3: mean=120/2197 claim=120/2197 equal=True; Pr[not generic]=1/13 == 1-prod(1-p^-i)=1/13: True, <= 1/(p-1): True
+   p=7 k=2 a=2 M=3: mean=48/343 claim=48/343 equal=True; Pr[not generic]=55/343 == 1-prod(1-p^-i)=55/343: True, <= 1/(p-1): True
+   p=5 example: -2x for x in {1,4}: [3, 2] in D? [False, False] ; beta(2,n0;1) for n0=1,2: [6.866666666666666, 4.333333333333333]
+[5] lem:fc-zero-sum
+   (a) p=3 a=1 M=3: Pr[no zero-sum]=0 <= 2/7: True
+   (a) p=3 a=2 M=4: Pr[no zero-sum]=80/729 <= 8/15: True
+   (a) p=5 a=1 M=3: Pr[no zero-sum]=16/125 <= 4/7: True
+   (a) p=3 a=2 M=5: Pr[no zero-sum]=0 <= 8/31: True
+   (a) p=5 a=2 M=3: Pr[no zero-sum]=11616/15625 <= 24/7: True
+   (a) p=7 a=1 M=4: Pr[no zero-sum]=90/2401 <= 2/5: True
+   (b) p=3 g=2: all banks of 5 columns have a zero-sum: True; 4 columns (unit vectors x(p-1)) have none: True
+   (b) p=5 g=1: all banks of 5 columns have a zero-sum: True; 4 columns (unit vectors x(p-1)) have none: True
+   (b) p=7 g=1: all banks of 7 columns have a zero-sum: True; 6 columns (unit vectors x(p-1)) have none: True
+   (b) p=2 g=3: all banks of 4 columns have a zero-sum: True; 3 columns (unit vectors x(p-1)) have none: True
+[6] split law counterexample (p=5, kappa=2, V=F_5^2, pi_1,pi_2 coordinates, M_1=2, n0=1)
+   Pr[z_eta = 0 | no abort] = 69/325 (claim 69/325 = 69/325): True

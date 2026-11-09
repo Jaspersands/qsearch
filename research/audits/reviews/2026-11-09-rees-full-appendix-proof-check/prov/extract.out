@@ -1,0 +1,513 @@
+== duplicate labels in T/*.tex ==
+
+== \file paths ==
+   9 -                            OK       docs/papers/rees-hsp/numbers_map.json
+   9 -                            OK       docs/papers/rees-hsp/make_numbers.py
+   9 -                            OK       docs/papers/rees-hsp/reproduce.sh
+   9 -                            OK       docs/papers/rees-hsp/make_numbers.py
+   9 -                            MISSING  numbers.tex
+   9 -                            OK       research/audits/reviews/2026-11-02-rees-e2e-scale/
+   9 -                            MISSING  main.tex
+  11 -                            OK       tests/test_rees_single_evaluation_falsifier.py
+  16 prov:paper                   OK       research/REES_HSP_REDUCTION.md
+  16 prov:paper                   OK       research/reductions/rees_hsp_reduction.json
+  17 prov:paper                   OK       research/audits/reviews/2026-10-31-rees-manuscript-falsifiers.md
+  17 prov:paper                   OK       research/audits/reviews/2026-11-02-rees-manuscript-draft.md
+  17 prov:paper                   OK       research/audits/reviews/2026-11-02-rees-integration-log.md
+  17 prov:paper                   OK       research/audits/reviews/
+  17 prov:paper                   GLOB     *-rees-referee-*.md
+  20 prov:core                    OK       docs/papers/rees-hsp/core/main-core.tex
+  20 prov:core                    OK       research/audits/reviews/2026-11-02-rees-integration-log.md
+  23 prov:cover-dl                OK       research/reductions/rees_nongradable_control.json
+  23 prov:cover-dl                OK       docs/papers/rees-hsp/make_numbers.py
+  26 prov:dl-central-scalars      OK       research/audits/reviews/2026-11-09-rees-dl-central-scalars/
+  26 prov:dl-central-scalars      MISSING  split_check.py
+  26 prov:dl-central-scalars      MISSING  mkpc.py
+  26 prov:dl-central-scalars      MISSING  autp.g
+  26 prov:dl-central-scalars      MISSING  brute.py
+  26 prov:dl-central-scalars      GLOB     *.out
+  29 prov:instr-control           OK       research/reductions/rees_complete_instrument.json
+  32 prov:instr-e2e               OK       research/audits/reviews/2026-11-02-rees-end-to-end.md
+  32 prov:instr-e2e               OK       research/audits/reviews/2026-11-02-rees-e2e-scale.md
+  33 prov:instr-e2e               OK       theorems/rees_end_to_end_sim.py
+  33 prov:instr-e2e               OK       theorems/rees_end_to_end_ext.py
+  36 prov:instr-premature         OK       research/REES_PREMATURE_GRADE_MEASUREMENT.md
+  37 prov:instr-premature         OK       research/audits/reviews/2026-11-02-rees-cited-notes.md
+  40 prov:sde-is-import           OK       research/audits/reviews/2026-11-03-rees-referee-2.md
+  40 prov:sde-is-import           OK       research/audits/reviews/2026-11-05-rees-is2015-second-reading.md
+  43 prov:sde-is-runtime          OK       research/audits/reviews/2026-11-04-rees-is-runtime.md
+  43 prov:sde-is-runtime          OK       research/audits/reviews/2026-11-04-rees-is-runtime-tm.md
+  43 prov:sde-is-runtime          OK       research/audits/reviews/2026-11-05-rees-is-restarts.md
+  43 prov:sde-is-runtime          OK       research/audits/reviews/2026-11-05-rees-is-restarts-composite.md
+  44 prov:sde-is-runtime          OK       research/audits/reviews/2026-11-05-rees-is-restarts-composite-check.md
+  44 prov:sde-is-runtime          OK       research/audits/reviews/2026-11-04-rees-is-runtime.md
+  45 prov:sde-is-runtime          OK       theorems/rees_is_sde_solver.py
+  48 prov:sde-is-solver           OK       research/audits/reviews/2026-11-02-rees-is-solver.md
+  49 prov:sde-is-solver           OK       theorems/rees_is_sde_solver.py
+  49 prov:sde-is-solver           OK       theorems/rees_end_to_end_ext.py
+  52 prov:sde-power               OK       research/POWER_SDE_SYMMETRIC_CONTRACTION.md
+  52 prov:sde-power               OK       research/POWER_SDE_RANDOMNESS_BUDGET.md
+  52 prov:sde-power               OK       research/REES_FULL_GRADE_PARAMETER_BOUND.md
+  53 prov:sde-power               OK       research/audits/reviews/2026-11-01-rees-core-proof-check.md
+  53 prov:sde-power               OK       research/audits/reviews/2026-11-02-rees-cited-notes.md
+  54 prov:sde-power               OK       research/reductions/power_sde.json
+  58 prov:sde-decoupled           OK       research/audits/reviews/2026-11-02-rees-small-prime-arity.md
+  58 prov:sde-decoupled           OK       research/audits/reviews/2026-11-02-rees-weil-threshold.md
+  58 prov:sde-decoupled           OK       research/audits/reviews/2026-11-02-rees-threshold-2.md
+  61 prov:sde-threshold           OK       research/audits/reviews/2026-11-02-rees-threshold-2.md
+  61 prov:sde-threshold           OK       research/audits/reviews/2026-11-03-rees-threshold-3.md
+  61 prov:sde-threshold           OK       research/audits/reviews/2026-11-03-rees-threshold-4.md
+  64 prov:sde-triangular          OK       research/audits/reviews/2026-11-02-rees-linear-arity.md
+  65 prov:sde-triangular          OK       research/audits/reviews/2026-11-04-rees-triangular-review.md
+  68 prov:sde-subquadratic        OK       research/audits/reviews/2026-11-05-rees-sde-subquadratic.md
+  69 prov:sde-subquadratic        OK       research/audits/reviews/2026-11-05-rees-sde-subquadratic-check.md
+  72 prov:sde-block-steered       OK       research/audits/reviews/2026-11-05-rees-sde-two-relation.md
+  73 prov:sde-block-steered       OK       research/audits/reviews/2026-11-05-rees-sde-block-check.md
+  76 prov:sde-worst-case          OK       research/audits/reviews/2026-11-05-rees-sde-worst-case.md
+  77 prov:sde-worst-case          OK       research/audits/reviews/2026-11-05-rees-sde-worst-case-check.md
+  80 prov:sde-worst-case-q1       OK       research/audits/reviews/2026-11-05-rees-sde-q1.md
+  81 prov:sde-worst-case-q1       OK       research/audits/reviews/2026-11-05-rees-sde-q1-check.md
+  84 prov:sde-combined            OK       research/audits/reviews/2026-11-02-rees-combined-schedule.md
+  85 prov:sde-combined            OK       research/audits/reviews/2026-11-05-rees-od-block-steered-od2-applied.md
+  88 prov:sde-fc                  OK       research/RANDOM_COLUMN_REES_PARAMETER_BOUND.md
+  88 prov:sde-fc                  OK       research/audits/reviews/2026-10-30-random-column-rees.md
+  88 prov:sde-fc                  OK       research/audits/reviews/2026-11-02-rees-schedule3-cost.md
+  89 prov:sde-fc                  OK       research/audits/reviews/2026-11-02-rees-schedule3-cost.md
+  89 prov:sde-fc                  OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/
+  92 prov:gc-compilation          OK       research/REES_UNIFORM_INSTRUMENT_COMPILATION.md
+  92 prov:gc-compilation          OK       research/DERIVED_RANK_REES_EXTENSION.md
+  93 prov:gc-compilation          OK       theorems/uniform_bch_rees.py
+  96 prov:gc-qft-mod              OK       research/audits/reviews/2026-11-04-rees-qft-mod.md
+  97 prov:gc-qft-mod              OK       theorems/rees_qft_mod.py
+ 100 prov:gc-control              OK       research/audits/reviews/2026-11-03-rees-circuit-2.md
+ 100 prov:gc-control              OK       research/audits/reviews/2026-11-03-rees-circuit-3.md
+ 100 prov:gc-control              OK       research/audits/reviews/2026-11-04-rees-k30-exact-exponents.md
+ 101 prov:gc-control              OK       theorems/rees_circuit_general.py
+ 101 prov:gc-control              OK       theorems/rees_circuit.py
+ 104 prov:gc-arith                OK       research/audits/reviews/2026-11-04-rees-circuit-arith.md
+ 105 prov:gc-arith                OK       theorems/rees_circuit_arith.py
+ 108 prov:gc-qft-wire             OK       research/audits/reviews/2026-11-04-rees-qft-wire.md
+ 109 prov:gc-qft-wire             OK       theorems/rees_circuit_qft_wire.py
+ 109 prov:gc-qft-wire             OK       theorems/rees_qft_mod.py
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-04-rees-circuit-coherent.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-sims.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-sims-check.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-round2.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-round2-check.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-round3.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-round3-check.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-general-lemma.md
+ 112 prov:gc-coherent             OK       research/audits/reviews/2026-11-05-rees-receiver-general-lemma-check.md
+ 113 prov:gc-coherent             OK       theorems/rees_circuit_coherent.py
+ 113 prov:gc-coherent             OK       theorems/rees_circuit_mono.py
+ 113 prov:gc-coherent             OK       theorems/rees_circuit_mono_c3.py
+ 116 prov:gc-coherent-k3          OK       research/audits/reviews/2026-11-04-rees-circuit-coherent-k3.md
+ 117 prov:gc-coherent-k3          OK       theorems/rees_circuit_coherent_k3.py
+ 120 prov:gc-coherent-c4          OK       research/audits/reviews/2026-11-04-rees-circuit-coherent-c4.md
+ 121 prov:gc-coherent-c4          OK       theorems/rees_circuit_coherent_c4.py
+ 124 prov:gc-full                 OK       research/audits/reviews/2026-11-04-rees-circuit-full.md
+ 125 prov:gc-full                 OK       theorems/rees_circuit_full.py
+ 128 prov:gc-instances            OK       research/audits/reviews/2026-11-03-rees-circuit-2.md
+ 128 prov:gc-instances            OK       research/audits/reviews/2026-11-03-rees-circuit-3.md
+ 128 prov:gc-instances            OK       research/audits/reviews/2026-11-05-rees-receiver-sims.md
+ 128 prov:gc-instances            OK       research/audits/reviews/2026-11-05-rees-receiver-sims-check.md
+ 128 prov:gc-instances            OK       research/audits/reviews/2026-11-05-rees-receiver-round2.md
+ 129 prov:gc-instances            OK       theorems/rees_circuit_general.py
+ 129 prov:gc-instances            OK       theorems/rees_circuit_exhaustive.py
+ 129 prov:gc-instances            OK       formal/Formal/ReesMergeReduction.lean
+ 129 prov:gc-instances            OK       formal/Formal.lean
+ 132 prov:gc-kappa2-proof         OK       research/audits/reviews/2026-11-05-rees-kappa2-circuit-proof.md
+ 133 prov:gc-kappa2-proof         OK       research/audits/reviews/2026-11-05-rees-kappa2-circuit-proof-check.md
+ 136 prov:gc-kappa-proof          OK       research/audits/reviews/2026-11-05-rees-receiver-general-gh.md
+ 137 prov:gc-kappa-proof          OK       research/audits/reviews/2026-11-05-rees-receiver-general-gh-check.md
+ 140 prov:gc-coherent-linear      OK       research/audits/reviews/2026-11-04-rees-coherent-sde.md
+ 141 prov:gc-coherent-linear      OK       theorems/rees_coherent_sde.py
+ 144 prov:gc-coherent-quadratic   OK       research/audits/reviews/2026-11-04-rees-coherent-sde-k2.md
+ 145 prov:gc-coherent-quadratic   OK       theorems/rees_coherent_sde_k2.py
+ 148 prov:gc-coherent-power       OK       research/audits/reviews/2026-11-04-rees-coherent-sde-k3.md
+ 149 prov:gc-coherent-power       OK       theorems/rees_coherent_sde_kappa.py
+ 152 prov:gc-profiles             OK       research/reductions/rees_full_grade_budget.json
+ 152 prov:gc-profiles             OK       research/reductions/rees_uniform_instrument.json
+ 152 prov:gc-profiles             OK       research/reductions/random_column_rees.json
+ 152 prov:gc-profiles             OK       research/reductions/rees_hsp_reduction.json
+ 152 prov:gc-profiles             MISSING  make_numbers.py
+ 155 prov:gc-fcs-budget           OK       theorems/rees_fcs_budget.py
+ 155 prov:gc-fcs-budget           OK       research/audits/reviews/2026-11-04-rees-fcs-budget/fcs_budget.json
+ 155 prov:gc-fcs-budget           OK       research/audits/reviews/2026-11-04-rees-mixed-rule/mixed_rule.py
+ 155 prov:gc-fcs-budget           OK       research/audits/reviews/2026-11-05-rees-od-block-steered-od2-applied/
+ 155 prov:gc-fcs-budget           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3-check/
+ 158 prov:cl-crossover            OK       research/audits/reviews/2026-11-02-rees-classical-lower-bound.md
+ 158 prov:cl-crossover            OK       research/audits/reviews/2026-11-02-rees-classical-lower-bound/refs/quant-ph_0401083.txt
+ 158 prov:cl-crossover            OK       research/audits/reviews/2026-11-05-rees-referee-18-applied.md
+ 159 prov:cl-crossover            OK       research/audits/reviews/2026-11-02-rees-classical-lower-bound/classical_lb.py
+ 159 prov:cl-crossover            ABBREV   .../classical_lb.json
+ 159 prov:cl-crossover            ABBREV   .../classical_lb.out
+ 159 prov:cl-crossover            OK       research/audits/reviews/2026-11-02-rees-classical-lower-bound/birthday_crossover.py
+ 159 prov:cl-crossover            ABBREV   .../birthday_crossover.json
+ 162 prov:cl-filters              OK       research/POLYNOMIAL_ORBIT_MODULE_CLASSICAL_FILTER.md
+ 162 prov:cl-filters              OK       research/ITERATED_QUADRATIC_JET_FILTER.md
+ 162 prov:cl-filters              OK       research/SUCCINCT_POLYNOMIAL_STABILIZER_AUDIT.md
+ 162 prov:cl-filters              OK       research/TENSOR_TRAIN_CLASSICAL_FILTER.md
+ 162 prov:cl-filters              OK       research/MOORE_GRADIENT_CLASSICAL_FILTER.md
+ 163 prov:cl-filters              OK       research/audits/reviews/2026-11-02-rees-cited-notes.md
+ 163 prov:cl-filters              OK       research/audits/reviews/2026-11-02-rees-cited-notes/
+ 167 prov:cl-app3                 OK       research/audits/reviews/2026-11-05-rees-application-3.md
+ 167 prov:cl-app3                 OK       research/audits/reviews/2026-11-05-rees-application-3/
+ 170 prov:cl-app4                 OK       research/audits/reviews/2026-11-05-rees-application-4.md
+ 171 prov:cl-app4                 OK       research/audits/reviews/2026-11-05-rees-application-4-check.md
+ 172 prov:cl-app4                 OK       research/audits/reviews/2026-11-05-rees-application-4/
+ 172 prov:cl-app4                 OK       research/audits/reviews/2026-11-05-rees-application-4-check/
+ 175 prov:pr-fpt-r                OK       research/RANDOM_COLUMN_REES_PARAMETER_BOUND.md
+ 175 prov:pr-fpt-r                OK       research/audits/reviews/2026-11-04-rees-fcs-budget.md
+ 176 prov:pr-fpt-r                OK       research/audits/reviews/2026-11-04-rees-zero-sum-node/
+ 179 prov:pr-fpt-r-scalar         OK       research/DERIVED_RANK_REES_EXTENSION.md
+ 182 prov:pr-codim                OK       research/BOUNDED_CODIMENSION_HSP_REDUCTION.md
+ 182 prov:pr-codim                OK       research/RANDOM_COLUMN_REES_PARAMETER_BOUND.md
+ 183 prov:pr-codim                OK       research/audits/reviews/2026-11-02-rees-codimension.md
+ 183 prov:pr-codim                OK       research/audits/reviews/2026-11-04-rees-fcs-budget.md
+ 183 prov:pr-codim                OK       research/audits/reviews/2026-11-04-rees-check-new-text.md
+ 186 prov:pr-ring                 OK       research/UNIFORM_RING_TO_FIELD_RANK_REDUCTION.md
+ 187 prov:pr-ring                 OK       research/reductions/ring_to_field_rank_reduction.json
+ 190 prov:bb-pullback             OK       research/FREE_LAZARD_PULLBACK.md
+ 190 prov:bb-pullback             OK       research/UNIVERSAL_LAZARD_WORD_COMPILER.md
+ 191 prov:bb-pullback             OK       research/audits/reviews/2026-11-02-rees-prime-power-compiler.md
+ 192 prov:bb-pullback             OK       theorems/universal_lazard_words.py
+ 195 prov:bb-chart                OK       research/audits/reviews/2026-11-02-rees-bb-envelope.md
+ 195 prov:bb-chart                OK       research/audits/reviews/2026-11-03-rees-chart-lemma.md
+ 198 prov:bb-corollary            OK       research/audits/reviews/2026-11-08-rees-blackbox-corollary-draft.tex
+ 198 prov:bb-corollary            OK       research/audits/reviews/2026-11-09-rees-blackbox-corollary-referee.md
+ 199 prov:bb-corollary            OK       theorems/rees_blackbox_end_to_end.py
+ 199 prov:bb-corollary            OK       tests/test_rees_blackbox_end_to_end.py
+ 199 prov:bb-corollary            OK       research/audits/reviews/2026-11-08-rees-blackbox-e2e/
+ 199 prov:bb-corollary            MISSING  semidirect_check.py
+ 202 prov:bb-corollary-pe         OK       research/audits/reviews/2026-11-09-rees-exponent-pe-blackbox.md
+ 203 prov:bb-corollary-pe         OK       research/audits/reviews/2026-11-09-rees-exponent-pe-blackbox/
+ 203 prov:bb-corollary-pe         MISSING  exponent_pe_check.py
+ 203 prov:bb-corollary-pe         MISSING  export_groups.g
+ 203 prov:bb-corollary-pe         MISSING  groups.txt
+ 203 prov:bb-corollary-pe         MISSING  run.out
+ 203 prov:bb-corollary-pe         MISSING  results.jsonl
+ 206 prov:bb-subspace             OK       research/REES_SUBSPACE_SYMMETRY_SOURCE.md
+ 206 prov:bb-subspace             OK       research/REES_PROJECTIVE_STATE_SOURCE.md
+ 207 prov:bb-subspace             OK       research/audits/reviews/2026-11-02-rees-subspace-source.md
+ 210 prov:bb-mixed                OK       research/REES_MIXED_SPECTRAL_SOURCE.md
+ 211 prov:bb-mixed                OK       research/audits/reviews/2026-11-02-rees-cited-notes.md
+ 211 prov:bb-mixed                OK       research/audits/reviews/2026-11-03-rees-mixed-source-sim.md
+ 212 prov:bb-mixed                OK       theorems/rees_mixed_source_sim.py
+ 215 prov:bb-subspace-profile     OK       research/reductions/rees_subspace_source.json
+ 217 prov:lean-modules            OK       formal/
+ 217 prov:lean-modules            OK       formal/Formal.lean
+ 218 prov:lean-modules            OK       formal/Formal/
+ 218 prov:lean-modules            OK       formal/Formal.lean
+ 218 prov:lean-modules            OK       formal/README.md
+ 218 prov:lean-modules            OK       research/audits/reviews/2026-11-02-rees-lean.md
+ 218 prov:lean-modules            OK       research/audits/reviews/2026-11-02-rees-lean-2.md
+ 219 prov:lean-modules            OK       formal/
+ 219 prov:lean-modules            OK       research/audits/reviews/2026-11-05-rees-lean-clean-build.log
+ 221 prov:lean-sde                OK       formal/
+ 222 prov:lean-sde                OK       research/audits/reviews/2026-11-03-rees-lean-3.md
+ 225 prov:lean-c5                 OK       formal/
+ 226 prov:lean-c5                 OK       research/audits/reviews/2026-11-04-rees-lean-c5.md
+ 227 prov:lean-c5                 OK       research/audits/reviews/2026-11-04-rees-referee-4-consistency-applied.md
+ 230 prov:lean-c6                 OK       formal/
+ 231 prov:lean-c6                 OK       research/audits/reviews/2026-11-05-rees-lean-c6.md
+ 234 prov:lean-c7                 OK       formal/
+ 235 prov:lean-c7                 OK       research/audits/reviews/2026-11-05-rees-lean-c7.md
+ 235 prov:lean-c7                 OK       research/audits/reviews/2026-11-05-rees-lean-c7/
+ 236 prov:lean-c7                 OK       research/audits/reviews/2026-11-05-rees-lean-c7-check.md
+ 238 prov:lean-solver             OK       formal/
+ 239 prov:lean-solver             OK       research/audits/reviews/2026-11-05-rees-lean-sde-solver.md
+ 239 prov:lean-solver             OK       research/audits/reviews/2026-11-05-rees-receiver-round2.md
+ 240 prov:lean-solver             OK       research/audits/reviews/2026-11-05-rees-lean-sde-solver-check.md
+ 242 prov:lean-s2local            OK       formal/
+ 243 prov:lean-s2local            OK       research/audits/reviews/2026-11-05-rees-lean-s2-local.md
+ 244 prov:lean-s2local            OK       research/audits/reviews/2026-11-05-rees-lean-s2-local-check.md
+ 247 prov:lean-guards             OK       formal/Formal/Audit.lean
+ 248 prov:lean-guards             OK       research/audits/reviews/2026-11-02-rees-lean.md
+ 248 prov:lean-guards             OK       research/audits/reviews/2026-11-02-rees-lean-2.md
+ 248 prov:lean-guards             OK       formal/Formal/Audit.lean
+ 251 prov:s2-main                 OK       research/POWER_SDE_SYMMETRIC_CONTRACTION.md
+ 251 prov:s2-main                 OK       research/audits/reviews/2026-11-01-rees-core-proof-check.md
+ 251 prov:s2-main                 OK       research/audits/reviews/2026-11-02-rees-small-prime-arity.md
+ 252 prov:s2-main                 MISSING  verify_schedule2.py
+ 255 prov:s2-TA                   OK       research/audits/reviews/2026-11-02-rees-weil-threshold.md
+ 256 prov:s2-TA                   OK       research/audits/reviews/2026-11-01-rees-core-proof-check.md
+ 256 prov:s2-TA                   MISSING  verify_schedule2.py
+ 258 prov:s2-joint-moments        OK       research/audits/reviews/2026-11-02-rees-threshold-2.md
+ 259 prov:s2-joint-moments        OK       research/audits/reviews/2026-11-05-rees-threshold-9.md
+ 260 prov:s2-joint-moments        OK       research/audits/reviews/2026-11-05-rees-threshold-9-check.md
+ 263 prov:s2-small                OK       research/audits/reviews/2026-11-02-rees-small-prime-arity.md
+ 264 prov:s2-small                OK       research/audits/reviews/2026-11-03-rees-check-app-a.md
+ 264 prov:s2-small                MISSING  verify_schedule2.py
+ 267 prov:s2-barrier              OK       research/audits/reviews/2026-11-05-rees-square-gap-attack.md
+ 267 prov:s2-barrier              OK       research/audits/reviews/2026-11-05-rees-threshold-9.md
+ 267 prov:s2-barrier              OK       research/audits/reviews/2026-11-03-rees-threshold-3.md
+ 268 prov:s2-barrier              OK       research/audits/reviews/2026-11-05-rees-square-gap-attack-check.md
+ 268 prov:s2-barrier              OK       research/audits/reviews/2026-11-05-rees-threshold-9-check.md
+ 271 prov:s2-tower                OK       research/audits/reviews/2026-11-05-rees-threshold-6.md
+ 272 prov:s2-tower                OK       research/audits/reviews/2026-11-05-rees-tower-check.md
+ 272 prov:s2-tower                OK       research/audits/reviews/2026-11-05-rees-threshold-7-check.md
+ 275 prov:s2-chains               OK       research/audits/reviews/2026-11-05-rees-threshold-7.md
+ 276 prov:s2-chains               OK       research/audits/reviews/2026-11-05-rees-threshold-7-check.md
+ 279 prov:s2-local                OK       research/audits/reviews/2026-11-05-rees-threshold-8.md
+ 280 prov:s2-local                OK       research/audits/reviews/2026-11-05-rees-threshold-8-check.md
+ 287 prov:s2-exceptional          OK       research/audits/reviews/2026-11-03-rees-dfs2-prune.md
+ 287 prov:s2-exceptional          OK       research/audits/reviews/2026-11-02-rees-small-prime-arity.md
+ 287 prov:s2-exceptional          OK       research/audits/reviews/2026-11-02-rees-threshold-2.md
+ 287 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-threshold-5.md
+ 287 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-t1-sweep-hi.md
+ 287 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-k9-sweep.md
+ 288 prov:s2-exceptional          OK       research/audits/reviews/2026-11-03-rees-check-app-a.md
+ 288 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-cloud-numeric-harvest.md
+ 288 prov:s2-exceptional          MISSING  2026-11-04-rees-cloud-indep.md
+ 288 prov:s2-exceptional          MISSING  2026-11-04-rees-cloud-hard29.md
+ 288 prov:s2-exceptional          MISSING  2026-11-04-rees-cloud-e2k8low.md
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-02-rees-schedules/small-prime/
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-02-rees-schedules/small-prime/dfs2b_k8_rerun_low.out
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-02-rees-schedules/small-prime/dfs2b_k9_rerun_low.out
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-02-rees-schedules/small-prime/dfs2b_k8_gap29_q0.out
+ 289 prov:s2-exceptional          ABBREV   .../dfs2b_k8_gap29_q4.out
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-threshold-5/gap_k8_unresolved.txt
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-k9-sweep/exceptions_20000_193710244.txt
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-k9-sweep/exceptions_decided_by_dfs2b.txt
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-04-rees-k9-sweep/out/dfs2b_20071.out
+ 289 prov:s2-exceptional          ABBREV   .../dfs2b_20107.out
+ 289 prov:s2-exceptional          OK       research/audits/reviews/2026-11-02-rees-schedules/small-prime/dfs2b_k8_hi_q0.out
+ 289 prov:s2-exceptional          ABBREV   .../dfs2b_k8_hi_q4.out
+ 289 prov:s2-exceptional          ABBREV   .../dfs2b_k8_6362_20000.out
+ 289 prov:s2-exceptional          ABBREV   .../dfs2b_k9_14501_17500.out
+ 289 prov:s2-exceptional          ABBREV   .../dfs2b_k9_17501_20000.out
+ 292 prov:s2-scope                OK       research/POWER_SDE_SYMMETRIC_CONTRACTION.md
+ 292 prov:s2-scope                OK       research/audits/reviews/2026-11-02-rees-small-prime-arity.md
+ 295 prov:s3-main                 OK       research/RANDOM_COLUMN_REES_PARAMETER_BOUND.md
+ 295 prov:s3-main                 OK       research/audits/reviews/2026-11-01-rees-core-proof-check.md
+ 295 prov:s3-main                 OK       research/audits/reviews/2026-11-02-rees-fpt-torsion-check.md
+ 296 prov:s3-main                 OK       research/audits/reviews/2026-11-03-rees-check-app-b.md
+ 296 prov:s3-main                 OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/fc_appendix_check.py
+ 299 prov:s3-mixed                OK       research/audits/reviews/2026-11-04-rees-mixed-rule.md
+ 300 prov:s3-mixed                OK       research/audits/reviews/2026-11-04-rees-mixed-rule/mixed_rule.py
+ 300 prov:s3-mixed                OK       research/audits/reviews/2026-11-04-rees-mixed-rule/mixed_rule.json
+ 300 prov:s3-mixed                OK       research/audits/reviews/2026-11-04-rees-mixed-rule/scan_out.txt
+ 303 prov:fc-main                 OK       research/audits/reviews/2026-11-02-rees-schedule3-cost.md
+ 303 prov:fc-main                 OK       research/audits/reviews/2026-11-02-rees-combined-schedule.md
+ 304 prov:fc-main                 OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix.md
+ 304 prov:fc-main                 OK       research/audits/reviews/2026-11-03-rees-check-app-b.md
+ 305 prov:fc-main                 OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/fc_appendix_check.py
+ 305 prov:fc-main                 OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/fc_appendix_check_out.txt
+ 308 prov:fc-zero-sum             OK       research/audits/reviews/2026-11-04-rees-s3-zero-sum.md
+ 308 prov:fc-zero-sum             OK       research/audits/reviews/2026-11-05-rees-s3-integration.md
+ 309 prov:fc-zero-sum             OK       research/audits/reviews/2026-11-04-rees-s3-zero-sum/test_zs.py
+ 309 prov:fc-zero-sum             OK       research/audits/reviews/2026-11-04-rees-s3-zero-sum/zs_lib.py
+ 309 prov:fc-zero-sum             OK       research/audits/reviews/2026-11-04-rees-s3-zero-sum/results.json
+ 312 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity.md
+ 313 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity-check.md
+ 314 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity/doubling.py
+ 314 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity/node.py
+ 314 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity/merge_barrier.py
+ 314 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity/arity_table.py
+ 314 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity/exp_doubling.py
+ 314 prov:fc-zero-sum-arity       GLOB     *.json
+ 314 prov:fc-zero-sum-arity       GLOB     *.log
+ 314 prov:fc-zero-sum-arity       OK       research/audits/reviews/2026-11-05-rees-s3-arity-check/wdcheck.py
+ 314 prov:fc-zero-sum-arity       MISSING  exact.json
+ 314 prov:fc-zero-sum-arity       MISSING  indep.json
+ 314 prov:fc-zero-sum-arity       MISSING  neg.json
+ 314 prov:fc-zero-sum-arity       MISSING  node.json
+ 314 prov:fc-zero-sum-arity       MISSING  reads.json
+ 314 prov:fc-zero-sum-arity       MISSING  .log
+ 317 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3.md
+ 318 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3-check.md
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3/wh_lib.py
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3/run_depth.py
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3/run_exponent.py
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3/run_node.py
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3/run_solver.py
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3/run_misc.py
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3/recheck.py
+ 319 prov:fc-witness-h3           GLOB     *.json
+ 319 prov:fc-witness-h3           GLOB     *.log
+ 319 prov:fc-witness-h3           OK       research/audits/reviews/2026-11-05-rees-s3-witness-h3-check/hcheck.py
+ 319 prov:fc-witness-h3           MISSING  depth.json
+ 319 prov:fc-witness-h3           MISSING  exponent.json
+ 319 prov:fc-witness-h3           MISSING  budget.json
+ 319 prov:fc-witness-h3           MISSING  node.json
+ 319 prov:fc-witness-h3           MISSING  solver.json
+ 319 prov:fc-witness-h3           MISSING  scaled.json
+ 319 prov:fc-witness-h3           MISSING  sp.json
+ 319 prov:fc-witness-h3           MISSING  mitm.json
+ 319 prov:fc-witness-h3           MISSING  neg.json
+ 319 prov:fc-witness-h3           MISSING  .log
+ 322 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-schedule3-cost.md
+ 323 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix.md
+ 323 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/fc_appendix_check.py
+ 324 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-schedule3-cost/fcs_budget.py
+ 324 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-schedule3-cost/fcs_budget_out.txt
+ 324 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-schedule3-cost/fcs_exact.py
+ 324 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-schedule3-cost/fcs_exact_out.txt
+ 324 prov:fc-numbers              OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/fcs_budget_rerun.txt
+ 324 prov:fc-numbers              MISSING  fcs_budget_out.txt
+ 327 prov:fc-lower                OK       research/audits/reviews/2026-11-02-rees-schedule3-cost.md
+ 328 prov:fc-lower                OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix.md
+ 328 prov:fc-lower                OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/fc_appendix_check.py
+ 328 prov:fc-lower                OK       research/audits/reviews/2026-11-02-rees-free-coordinate-appendix/fc_appendix_check_out.txt
+ 331 prov:fc-split                OK       research/audits/reviews/2026-11-03-rees-block-splitting.md
+ 331 prov:fc-split                OK       research/audits/reviews/2026-11-02-rees-schedule3-cost.md
+ 332 prov:fc-split                OK       research/audits/reviews/2026-11-03-rees-block-splitting/block_split_check.py
+ 332 prov:fc-split                OK       research/audits/reviews/2026-11-03-rees-block-splitting/block_split_check_out.txt
+ 332 prov:fc-split                OK       research/audits/reviews/2026-11-03-rees-block-splitting/block_split_check_DF_out.txt
+ 335 prov:fc-tradeoff             OK       research/audits/reviews/2026-11-04-rees-avg-case-arity.md
+ 336 prov:fc-tradeoff             OK       research/audits/reviews/2026-11-04-rees-avg-case-arity/hybrid_fc.py
+ 336 prov:fc-tradeoff             MISSING  hybrid_k2.out
+ 336 prov:fc-tradeoff             MISSING  hybrid_k3.out
+ 336 prov:fc-tradeoff             OK       research/audits/reviews/2026-11-04-rees-avg-case-arity/merge_tree.py
+ 336 prov:fc-tradeoff             MISSING  merge_pair.out
+ 336 prov:fc-tradeoff             MISSING  merge_triple.out
+ 336 prov:fc-tradeoff             OK       research/audits/reviews/2026-11-04-rees-avg-case-arity/tree_bound.py
+ 336 prov:fc-tradeoff             MISSING  tree_bound.out
+ 336 prov:fc-tradeoff             OK       research/audits/reviews/2026-11-04-rees-avg-case-arity/uniformity_exact.py
+ 336 prov:fc-tradeoff             MISSING  uniformity_exact.out
+ 336 prov:fc-tradeoff             MISSING  common.py
+ 336 prov:fc-tradeoff             MISSING  run_all.sh
+ 340 prov:sub-main                OK       research/REES_SUBSPACE_SYMMETRY_SOURCE.md
+ 340 prov:sub-main                OK       research/REES_PROJECTIVE_STATE_SOURCE.md
+ 340 prov:sub-main                OK       research/audits/reviews/2026-11-02-rees-subspace-source.md
+ 341 prov:sub-main                OK       research/audits/reviews/2026-11-03-rees-check-app-c.md
+ 342 prov:sub-main                OK       research/audits/reviews/2026-11-02-rees-subspace-source/exact_checks.py
+ 342 prov:sub-main                OK       research/audits/reviews/2026-11-02-rees-subspace-source/exact_checks.out
+ 342 prov:sub-main                OK       research/audits/reviews/2026-11-03-rees-check-app-c/check_character.py
+ 342 prov:sub-main                MISSING  check_growth.py
+ 342 prov:sub-main                MISSING  check_lcu_offsubspace.py
+ 342 prov:sub-main                MISSING  check_norecovery.py
+ 342 prov:sub-main                MISSING  check_lift.py
+ 342 prov:sub-main                MISSING  check_designs.py
+ 342 prov:sub-main                MISSING  check_linear_algebra.py
+ 342 prov:sub-main                MISSING  check_accounting.py
+ 342 prov:sub-main                MISSING  .out
+ 345 prov:sub-profile             OK       research/audits/reviews/2026-11-02-rees-subspace-source.md
+ 346 prov:sub-profile             OK       research/reductions/rees_subspace_source.json
+ 346 prov:sub-profile             OK       research/audits/reviews/2026-11-03-rees-check-app-c/check_accounting.py
+ 346 prov:sub-profile             OK       research/audits/reviews/2026-11-03-rees-check-app-c/check_accounting.out
+ 349 prov:tb-lazard               OK       research/UNIVERSAL_LAZARD_WORD_COMPILER.md
+ 349 prov:tb-lazard               OK       research/FREE_LAZARD_PULLBACK.md
+ 350 prov:tb-lazard               OK       theorems/universal_lazard_words.py
+ 353 prov:tb-ring                 OK       research/UNIFORM_RING_TO_FIELD_RANK_REDUCTION.md
+ 353 prov:tb-ring                 OK       research/CLASS_THREE_HSP_THEOREM_DRAFT.md
+ 354 prov:tb-ring                 OK       research/audits/reviews/2026-11-02-rees-fpt-torsion-check.md
+ 357 prov:tb-evaluation           OK       research/CLASS_FOUR_PRIME_POWER_INPUT.md
+ 358 prov:tb-evaluation           OK       research/audits/reviews/2026-11-02-rees-prime-power-compiler.md
+ 359 prov:tb-evaluation           OK       theorems/universal_lazard_words.py
+ 362 prov:tb-blackbox             OK       research/audits/reviews/2026-11-02-rees-black-box-check.md
+ 365 prov:tb-count-gates          OK       theorems/rees_circuit_arith.py
+ 365 prov:tb-count-gates          OK       research/audits/reviews/2026-11-04-rees-h3-check/modexp_check.py
+ 365 prov:tb-count-gates          OK       research/audits/reviews/2026-11-04-rees-h3-check/modexp_check.out
+ 368 prov:cd-main                 OK       research/BOUNDED_CODIMENSION_HSP_REDUCTION.md
+ 368 prov:cd-main                 OK       research/BOUNDED_CODIMENSION_HYBRID_BOUND.md
+ 368 prov:cd-main                 OK       research/RANDOM_COLUMN_REES_PARAMETER_BOUND.md
+ 369 prov:cd-main                 OK       research/audits/reviews/2026-11-02-rees-codimension.md
+ 372 prov:cd-checks               OK       research/audits/reviews/2026-11-03-rees-check-app-e.md
+ 373 prov:cd-checks               OK       research/audits/reviews/2026-11-02-rees-codimension/
+ 373 prov:cd-checks               MISSING  codim_lib.py
+ 373 prov:cd-checks               MISSING  filiform_check.py
+ 373 prov:cd-checks               MISSING  filiform_check_out.txt
+ 373 prov:cd-checks               MISSING  reduction_check.py
+ 373 prov:cd-checks               MISSING  reduction_check_out.txt
+ 373 prov:cd-checks               MISSING  group_check.py
+ 373 prov:cd-checks               MISSING  group_check_out.txt
+ 373 prov:cd-checks               MISSING  section6_bounds.py
+ 373 prov:cd-checks               MISSING  section6_bounds_out.txt
+
+== \ref labels ==
+undefined: 0 of 370
+
+== prov labels: references from other files ==
+prov:bb-chart                referenced in: main.tex
+prov:bb-corollary            referenced in: main.tex
+prov:bb-corollary-pe         referenced in: main.tex
+prov:bb-mixed                referenced in: main.tex
+prov:bb-pullback             referenced in: main.tex
+prov:bb-subspace             referenced in: main.tex
+prov:bb-subspace-profile     referenced in: main.tex
+prov:cd-checks               referenced in: appendix-codimension.tex
+prov:cd-main                 referenced in: appendix-codimension.tex
+prov:cl-app3                 referenced in: appendix-filters.tex
+prov:cl-app4                 referenced in: appendix-filters.tex
+prov:cl-crossover            referenced in: main.tex
+prov:cl-filters              referenced in: appendix-filters.tex
+prov:core                    referenced in: NOWHERE
+prov:cover-dl                referenced in: main.tex
+prov:dl-central-scalars      referenced in: main.tex
+prov:fc-lower                referenced in: NOWHERE
+prov:fc-main                 referenced in: appendix-free-coordinate.tex
+prov:fc-numbers              referenced in: appendix-free-coordinate.tex
+prov:fc-split                referenced in: appendix-free-coordinate.tex
+prov:fc-tradeoff             referenced in: appendix-free-coordinate.tex
+prov:fc-witness-h3           referenced in: appendix-free-coordinate.tex
+prov:fc-zero-sum             referenced in: appendix-free-coordinate.tex
+prov:fc-zero-sum-arity       referenced in: appendix-free-coordinate.tex
+prov:gc-arith                referenced in: appendix-backends.tex
+prov:gc-coherent             referenced in: appendix-backends.tex
+prov:gc-coherent-c4          referenced in: appendix-backends.tex
+prov:gc-coherent-k3          referenced in: appendix-backends.tex
+prov:gc-coherent-linear      referenced in: main.tex
+prov:gc-coherent-power       referenced in: main.tex
+prov:gc-coherent-quadratic   referenced in: main.tex
+prov:gc-compilation          referenced in: main.tex
+prov:gc-control              referenced in: appendix-backends.tex, main.tex
+prov:gc-fcs-budget           referenced in: main.tex
+prov:gc-full                 referenced in: appendix-backends.tex, main.tex
+prov:gc-instances            referenced in: appendix-backends.tex
+prov:gc-kappa-proof          referenced in: appendix-backends.tex
+prov:gc-kappa2-proof         referenced in: appendix-backends.tex
+prov:gc-profiles             referenced in: main.tex
+prov:gc-qft-mod              referenced in: appendix-backends.tex, main.tex
+prov:gc-qft-wire             referenced in: appendix-backends.tex
+prov:instr-control           referenced in: main.tex
+prov:instr-e2e               referenced in: main.tex
+prov:instr-premature         referenced in: main.tex
+prov:lean-c5                 referenced in: NOWHERE
+prov:lean-c6                 referenced in: NOWHERE
+prov:lean-c7                 referenced in: NOWHERE
+prov:lean-guards             referenced in: main.tex
+prov:lean-modules            referenced in: appendix-provenance.tex, main.tex
+prov:lean-s2local            referenced in: NOWHERE
+prov:lean-sde                referenced in: NOWHERE
+prov:lean-solver             referenced in: main.tex
+prov:paper                   referenced in: NOWHERE
+prov:pr-codim                referenced in: main.tex
+prov:pr-fpt-r                referenced in: main.tex
+prov:pr-fpt-r-scalar         referenced in: main.tex
+prov:pr-ring                 referenced in: main.tex
+prov:s2-TA                   referenced in: appendix-schedule2.tex
+prov:s2-barrier              referenced in: appendix-schedule2.tex
+prov:s2-chains               referenced in: appendix-schedule2.tex
+prov:s2-exceptional          referenced in: appendix-schedule2.tex
+prov:s2-joint-moments        referenced in: appendix-schedule2.tex
+prov:s2-local                referenced in: appendix-schedule2.tex
+prov:s2-main                 referenced in: appendix-provenance.tex, appendix-schedule2.tex
+prov:s2-scope                referenced in: appendix-schedule2.tex
+prov:s2-small                referenced in: appendix-schedule2.tex
+prov:s2-tower                referenced in: appendix-schedule2.tex
+prov:s3-main                 referenced in: appendix-schedule3.tex
+prov:s3-mixed                referenced in: appendix-schedule3.tex
+prov:sde-block-steered       referenced in: appendix-sde-side.tex
+prov:sde-combined            referenced in: main.tex
+prov:sde-decoupled           referenced in: main.tex
+prov:sde-fc                  referenced in: main.tex
+prov:sde-is-import           referenced in: main.tex
+prov:sde-is-runtime          referenced in: appendix-sde-side.tex, main.tex
+prov:sde-is-solver           referenced in: appendix-sde-side.tex, main.tex
+prov:sde-power               referenced in: main.tex
+prov:sde-subquadratic        referenced in: appendix-sde-side.tex
+prov:sde-threshold           referenced in: appendix-sde-side.tex, main.tex
+prov:sde-triangular          referenced in: main.tex
+prov:sde-worst-case          referenced in: appendix-sde-side.tex
+prov:sde-worst-case-q1       referenced in: appendix-sde-side.tex
+prov:sub-main                referenced in: appendix-subspace.tex
+prov:sub-profile             referenced in: appendix-subspace.tex
+prov:tb-blackbox             referenced in: appendix-torsion-blackbox.tex
+prov:tb-count-gates          referenced in: appendix-torsion-blackbox.tex
+prov:tb-evaluation           referenced in: appendix-torsion-blackbox.tex
+prov:tb-lazard               referenced in: appendix-torsion-blackbox.tex
+prov:tb-ring                 referenced in: appendix-torsion-blackbox.tex
+
+== prov: references anywhere that are undefined ==

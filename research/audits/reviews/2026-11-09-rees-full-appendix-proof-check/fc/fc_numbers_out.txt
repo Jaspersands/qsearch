@@ -1,0 +1,30 @@
+[0] all six table primes are prime; 194522647344910884721 prime: True ; 105019 prime: True
+[1] Table tab:fcs-budget, part (iii) columns (least public arities) and explicit choice
+    claimed (iii) Q / trials / total: 42.3/28.3/47.0  36.6/33.4/50.8  39.1/33.8/52.2  35.9/31.0/49.8  34.1/33.5/51.0  34.0/31.0/49.5
+    p=11: S=20 M=(34,17,37,72,38,7,36,2) log2Q=42.27 B=40 maxcap=2^28.29 (grade 5, kappa=5) total=2^47.03; explicit: M increments [1, 1, 2, 1, 2], dlog2Q=0.24, maxcap 2^28.29
+    p=1031: S=20 M=(23,17,22,23,17,7,12,2) log2Q=36.57 B=36 maxcap=2^33.44 (grade 5, kappa=5) total=2^50.83; explicit: M increments [1, 1, 1, 2, 1], dlog2Q=0.46, maxcap 2^33.44
+    p=5281: S=20 M=(21,23,21,21,18,7,12,10) log2Q=39.08 B=40 maxcap=2^33.78 (grade 4, kappa=4) total=2^52.22; explicit: M increments [2, 1, 2, 1, 1, 2, 1], dlog2Q=0.83, maxcap 2^33.78
+    p=2^31-1: S=20 M=(20,19,17,13,12,10,7,5) log2Q=35.89 B=37 maxcap=2^31.04 (grade 3, kappa=3) total=2^49.82; explicit: M increments [1, 1, 1, 1, 1, 1, 1], dlog2Q=0.94, maxcap 2^31.08
+    p=2^61-1: S=20 M=(19,18,16,14,11,8,5,3) log2Q=34.08 B=36 maxcap=2^33.50 (grade 5, kappa=5) total=2^50.97; explicit: M increments [1, 1, 1, 1, 1, 1, 1, 1], dlog2Q=1.31, maxcap 2^33.54
+    p=2^127-1: S=20 M=(19,18,16,13,11,8,5,3) log2Q=33.98 B=36 maxcap=2^31.00 (grade 3, kappa=3) total=2^49.52; explicit: M increments [1, 1, 1, 1, 1, 1, 1], dlog2Q=1.21, maxcap 2^31.04
+[2] Table tab:fcs-budget, w.-d. column (node of rem:fc-witness-h3(b), arities as stated)
+    claimed: 103.5, 93.0, 119.9, 127.1, 150.8, 142.0
+    p=11: log2Q=103.46; forms {2: 'tab(j*=1)', 4: 'tab(j*=1)', 5: 'tab(j*=3)', 6: 'tab(j*=1)', 8: 'tab(j*=1)'}
+    p=1031: log2Q=92.99; forms {2: 'resc', 4: 'resc', 5: 'resc', 6: 'resc', 8: 'resc'}
+    p=5281: log2Q=119.91; forms {2: 'resc', 3: 'resc', 4: 'resc', 5: 'resc', 6: 'resc', 8: 'tab(j*=1)', 9: 'resc'}
+    p=2^31-1: log2Q=127.09; forms {2: 'resc', 3: 'resc', 4: 'resc', 6: 'resc', 7: 'resc', 8: 'resc', 9: 'resc'}
+    p=2^61-1: log2Q=150.77; forms {2: 'resc', 3: 'resc', 4: 'resc', 5: 'resc', 6: 'resc', 7: 'resc', 8: 'resc', 9: 'resc'}
+    p=2^127-1: log2Q=142.02; forms {2: 'resc', 3: 'resc', 4: 'resc', 6: 'resc', 7: 'resc', 8: 'resc', 9: 'resc'}
+[3] app:fc-numbers (b): part (ii) at u=18, M=72, n0=37, B=56; uniform-kernel caps 4 kappa^72 B
+    u=18 M=72 n0=37 B=56 16u^2=5184
+    p=5281: per-node cap 2^34.27 (grade 4); bank sum/tree 2^-234.9; uniform-kernel cap 2^223.8 (kappa_max=8)
+    p=105019: per-node cap 2^31.64 (grade 3); bank sum/tree 2^-316.9; uniform-kernel cap 2^193.9 (kappa_max=6)
+    p=2147483647: per-node cap 2^31.64 (grade 3); bank sum/tree 2^-589.0; uniform-kernel cap 2^236.0 (kappa_max=9)
+    p=2305843009213693951: per-node cap 2^34.14 (grade 5); bank sum/tree 2^-1159.0; uniform-kernel cap 2^236.0 (kappa_max=9)
+    p=194522647344910884721: per-node cap 2^34.28 (grade 4); bank sum/tree 2^-1280.6; uniform-kernel cap 2^236.0 (kappa_max=9)
+    p=170141183460469231731687303715884105727: per-node cap 2^31.64 (grade 3); bank sum/tree 2^-2413.0; uniform-kernel cap 2^236.0 (kappa_max=9)
+[4] lem:fc-params closed forms and prop:fc-uniform(a)
+    u=2: terms 1/12656.25 + 1/16384 = 0.00014 < 1.5e-4: True
+    identity (4u)^(u-1)(...) = (4/225)^u/u^2 + 2*4^(u-1)/(16^(u+1)u^(u+3)) and sum < 1/64 for u=2..120: True
+    prop:fc-uniform(a): 4*15^-4*2^-3 + 2*64^-3 = 1.751e-05 = 2^-15.80 < 2^-14: True
+    beta(4u,2u+1;a) <= 4*15^-2u*u^-u-1 + 2p^-u-1 (u=2..30, least prime >= 16u^2 and 2^61-1, all kappa<=u | p-1, a<=u-1): True

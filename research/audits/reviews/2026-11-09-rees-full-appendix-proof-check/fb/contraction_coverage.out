@@ -1,0 +1,13 @@
+kappa=3: primes p = 1 mod kappa below 3000: 207; no normalised contraction at []
+kappa=4: primes p = 1 mod kappa below 1100: 89; no normalised contraction at [5, 13, 17, 29, 37, 53]
+kappa=5: primes p = 1 mod kappa below 700: 30; no normalised contraction at [11, 31, 41, 61, 71, 101, 131, 151, 181]
+kappa=6: primes p = 1 mod kappa below 400: 37; no normalised contraction at [7, 13, 19, 31, 37, 43, 61, 67, 73, 79, 97, 103, 109, 127, 139, 151, 157, 163, 181, 193, 199, 211, 223, 241, 271, 277, 283, 307, 331, 349, 367, 373, 379]
+kappa = p-1 = 4, p = 5: contraction NONE (in E_2)
+kappa = p-1 = 6, p = 7: contraction NONE (in E_2)
+kappa = p-1 = 10, p = 11: contraction NONE (in E_2)
+kappa = p-1 = 12, p = 13: contraction NONE (in E_2)
+kappa_constants(p=13, d=4): refused: p = 13 lies in E_2(4): no two-level contraction
+kappa_constants(p=5, d=4): refused: p = 5 lies in E_2(4): no two-level contraction
+kappa_constants(p=17, d=4): refused: p = 17 lies in E_2(4): no two-level contraction
+kappa_constants(p=7, d=6): refused: p = 7 lies in E_2(6): no two-level contraction
+time 9.5s

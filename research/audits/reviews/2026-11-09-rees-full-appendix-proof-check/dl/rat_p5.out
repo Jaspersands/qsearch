@@ -1,0 +1,27 @@
+F_5-rational points of the gauge-fixed automorphism variety (vdim):
+4
+F_5-rational image on the centre: number of points:
+4
+c22,
+c21+1,
+c12-c21,
+c11-c22
+--
+c22,
+c21-1,
+c12-c21,
+c11-c22
+--
+c22+1,
+c21,
+c12-c21,
+c11-c22
+--
+c22-1,
+c21,
+c12-c21,
+c11-c22
+--
+seconds:
+68
+nice -n 19 timeout 150 $E/Singular -q rat_p$p.sing  49.93s user 0.54s system 74% cpu 1:07.69 total

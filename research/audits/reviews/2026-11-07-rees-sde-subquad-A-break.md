@@ -294,11 +294,21 @@ Details and commands: `2026-11-09-mechanical-queue-run.md`. All harness changes 
    started from 19 saved banks that reach the branch (`interesting/`); the J = 5 climbs started from the
    families (the J45 run reached the branch only at J = 4, hence the second file).
 2. **J = 4, κ = 3 inside the theorem prime range** (`attack_bigp.py`, `la.py` with `QS_BIGP=1`, i.e.
-   Python-int arithmetic; `bigp_equiv.py` shows identical traces to the int64 build on 22 banks at
-   p < 2³¹). p = 2 789 427 520 807 ≥ 8·3²⁰·10² (E = 10), 131 banks (12 top-stall designs up to rank 49
+   Python-int arithmetic; `bigp_equiv.py` shows identical traces to the int64 build on 79 banks at
+   p < 2³¹: the 22 family banks, which reach none of the case-3.x branches, plus, since 9 Nov (audit
+   P6), the 57 saved `interesting/*case33_Uplus*` banks, which reach case 3.3 U⁺ (57), 3.0 U⁺ (25),
+   3.1 W (1) and the 3.3 closure (6), but not the top phase; `out/bigp_equiv_{int64,bigp}.json`,
+   `out/bigp_equiv_compare.out`, 0 differences. Adding them exposed a `QS_BIGP`-only `IndexError` in
+   `algt.good_exact` (object-dtype index), fixed; that function needs the class table, which exists
+   only for p ≤ 3·10⁶, so it was unreachable in the theorem-prime run). p = 2 789 427 520 807 ≥ 8·3²⁰·10² (E = 10), 131 banks (12 top-stall designs up to rank 49
    plus the families at r ≤ 24), 120 leaves and 11 direct solutions, **0 assertion/check failures**,
    3 480 back-substitution passes with 0 failures (`out/bigp_J4k3_1.{out,json}`; one `twist` generator
-   failure at r = 8, as before). Ranks above 49 and the 3.3 U⁺ branch at this prime were not reached.
+   failure at r = 8, as before). The case-3.3 U⁺ recursion was reached on 4 banks (least `rec_count_U+33`
+   slack 0) and case 3.0 U⁺ on 1. The top phase, the top-stall recursion, case 3.1 W and ranks above 49
+   were not reached, so the T_m and top-round asserts were not exercised at this prime (BRANCHES line of
+   `out/bigp_J4k3_1.out`: `case33_Uplus` 4, `case30_Uplus` 1; no `case33_top`, `top_stall_rec`, `case31_W`,
+   `direct_top`). [Corrected 9 Nov per the mechanical-queue audit, P3: the earlier sentence said the
+   3.3 U⁺ branch was not reached.]
 3. §8 items 2, 3 and 7: `subquad.py` now asserts (Y) (hypothesis r ≥ q + b, the inequality for C ≥ 2, and
    b + π ≥ F(b)), the T_m(c) condition m ≤ J − 2 before the top phase, and the top-round block count
    |S| ≤ m + 1 ≤ J − 1; `run_tests.py: planted()` no longer raises `KeyError 'Ub'` (forward returned

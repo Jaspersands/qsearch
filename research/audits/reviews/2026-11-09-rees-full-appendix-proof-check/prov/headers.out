@@ -1,0 +1,494 @@
+  rem:combined-schedule                main.tex:757 remark [Combined per-grade schedule; conditional]
+  sec:subspace                         main.tex:1341 section {Flat Subspace Symmetry Sources}
+  sec:uniform-compilation              main.tex:794 section {Uniform Gate Compilation and Resource Bounds}
+  lem:qft-mod                          main.tex:818 lemma [Approximate Fourier transform over $\mathbb{Z}/N$ with explicit size; AI-checked, pending human review]
+  lem:coherent-linear-sde              main.tex:887 lemma [Coherent linear-grade witness; proof sketch, counts checked against the generated gate lists; AI-checked, pending human review]
+  lem:coherent-power-sde               main.tex:909 lemma [Coherent witness at fixed $\kappa_d$; conditional on Proposition~\ref{prop:triangular-sde}; proof sketch, counts checked against the generated gate lists; AI-ch]
+  cor:fpt-r                            main.tex:1157 corollary [Bound in derived dimension for every prime $p > c$, class not fixed; conditional; AI-checked, pending human review]
+  sec:formalization                    main.tex:1403 section {Mechanical Verification in Lean 4}
+  thm:bb-envelope                      main.tex:1306 theorem [All-prime black-box HSP at fixed class; conditional, AI-checked only]
+  tab:fcs-budget                       main.tex:1011 table [htbp]
+  tab:query-crossover                  main.tex:1114 table [htbp]
+  prop:single-evaluation               main.tex:435 proposition [A single pullback is not dilation-invariant; AI-checked, pending human review]
+  lem:homogeneous                      main.tex:419 lemma [Exact homogenization]
+  sec:instrument                       main.tex:528 section {The Complete Central Instrument}
+
+### prov:paper (line 14)
+
+### prov:core (line 18)
+  thm:main                             main.tex:186 theorem [Main theorem]
+  lem:hybrid                           main.tex:627 lemma [Sequential hybrid on a canonical domain]
+  sec:rees-cover                       main.tex:389 section {The Positive Lower-Central Rees Cover and the Tuple Lift}
+  sec:sde                              main.tex:571 section {All-Record Recursive Descent}
+  thm:uniform-compilation              main.tex:802 theorem [Uniform reversible compilation]
+
+### prov:cover-dl (line 21)
+  sec:rees-cover                       main.tex:389 section {The Positive Lower-Central Rees Cover and the Tuple Lift}
+
+### prov:dl-central-scalars (line 24)
+  prop:dl-central-scalars              main.tex:463 proposition [Central scalars of $\mathcal{L}_{\mathrm{DL}}$; AI-checked, pending human review]
+
+### prov:instr-control (line 27)
+  sec:instrument                       main.tex:528 section {The Complete Central Instrument}
+
+### prov:instr-e2e (line 30)
+  sec:instrument                       main.tex:528 section {The Complete Central Instrument}
+  rem:combined-schedule                main.tex:757 remark [Combined per-grade schedule; conditional]
+
+### prov:instr-premature (line 34)
+  rem:premature                        main.tex:565 remark [Premature measurement of lower grades; argued; AI-checked, pending human review]
+
+### prov:sde-is-import (line 38)
+  thm:is-import                        main.tex:654 theorem [Ivanyos--Santha {\cite[Theorem~11 and the proof of Theorem~3, Sections~3.1--3.3]{IvanyosSantha2015}}; imported; the reading of the source is AI-checked only (Re]
+  rem:is-import                        main.tex:659 remark []
+
+### prov:sde-is-runtime (line 41)
+  rem:is-runtime                       main.tex:668 remark [Explicit running time of Schedule~1; AI-checked, pending human review; Turing-machine bounds sketched, constants not computed]
+  rem:sde-side-tape                    appendix-sde-side.tex:11 remark [Operation counts, tape layout and run counts of Schedule~1; AI-checked, pending human review; Turing-machine bounds sketched, constants not computed]
+
+### prov:sde-is-solver (line 46)
+  sec:schedule1                        main.tex:651 section {Schedule 1: the Ivanyos--Santha solver}
+  sec:uniform-compilation              main.tex:794 section {Uniform Gate Compilation and Resource Bounds}
+
+### prov:sde-power (line 50)
+  thm:power-sde                        main.tex:697 theorem [Two-level symmetric SDE contraction; part~(ii) conditional, AI-checked, pending human review; proof in Appendix~\ref{app:schedule2}]
+  tab:full-grade-budget                main.tex:963 table [ht]
+  eq:power-arity                       main.tex:703 equation []
+  app:schedule2                        appendix-schedule2.tex:7 section {Proof of Schedule 2 and its sharpened thresholds}
+
+### prov:sde-decoupled (line 55)
+  prop:decoupled-sde                   main.tex:714 proposition [Decoupled two-level contraction; conditional; AI-checked, pending human review]
+  sec:schedule2                        main.tex:690 section {Schedule 2: two-level symmetric contraction}
+  app:s2-scope                         appendix-schedule2.tex:710 section {What is and is not shown}
+
+### prov:sde-threshold (line 59)
+  rem:two-level-threshold-size         main.tex:723 remark [Size of the two-level threshold; the central-moment threshold argued; AI-checked, pending human review]
+  rem:sde-side-barrier                 appendix-sde-side.tex:28 remark [Barriers for the two-level threshold; argued; AI-checked, pending human review]
+  prop:app-s2-barrier                  appendix-schedule2.tex:416 proposition [the $\kappa^\kappa/2$ barrier]
+
+### prov:sde-triangular (line 62)
+  prop:triangular-sde                  main.tex:729 proposition [Triangular two-level solver; AI-checked, pending human review]
+  rem:triangular-scope                 main.tex:748 remark [Scope and priority of the triangular solver]
+
+### prov:sde-subquadratic (line 66)
+  rem:sde-subquadratic                 appendix-sde-side.tex:38 remark [Below quadratic arity; AI-checked, pending human review]
+
+### prov:sde-block-steered (line 70)
+  rem:sde-block-steered                appendix-sde-side.tex:49 remark [Steered block-refined triangular solver; conditional; AI-checked, pending human review]
+  rem:combined-schedule                main.tex:757 remark [Combined per-grade schedule; conditional]
+
+### prov:sde-worst-case (line 74)
+  rem:sde-worst-case                   appendix-sde-side.tex:58 remark [Worst case: no quadratic existence barrier; steering by a reserved basis; AI-checked, pending human review]
+
+### prov:sde-worst-case-q1 (line 78)
+  rem:sde-worst-case-q1                appendix-sde-side.tex:79 remark [Worst case beyond general position; AI-checked, pending human review]
+
+### prov:sde-combined (line 82)
+  rem:combined-schedule                main.tex:757 remark [Combined per-grade schedule; conditional]
+  thm:main                             main.tex:186 theorem [Main theorem]
+  thm:power-sde                        main.tex:697 theorem [Two-level symmetric SDE contraction; part~(ii) conditional, AI-checked, pending human review; proof in Appendix~\ref{app:schedule2}]
+  tab:fcs-budget                       main.tex:1011 table [htbp]
+
+### prov:sde-fc (line 86)
+  thm:free-coordinate                  main.tex:769 theorem [Random-column schedule (Schedule~3); conditional on the steps behind Theorem~\ref{thm:main}; AI-checked, pending human review; proofs in Appendix~\ref{app:free-]
+  prop:rc-lower                        main.tex:786 proposition [Rejection cost; AI-checked, pending human review; proof in Appendix~\ref{app:free-coordinate}]
+  sec:schedule3                        main.tex:764 section {Schedule 3: random columns}
+  thm:main                             main.tex:186 theorem [Main theorem]
+  app:free-coordinate                  appendix-free-coordinate.tex:33 section {Proof of the Free-Coordinate Schedule (Theorem~\ref{thm:free-coordinate}(i)--(iii))}
+  app:schedule3                        appendix-schedule3.tex:38 section {Proof of Schedule~3 with the Uniform-Kernel Sampler (Theorem~\ref{thm:free-coordinate}(iv))}
+  tab:fcs-budget                       main.tex:1011 table [htbp]
+
+### prov:gc-compilation (line 90)
+  thm:uniform-compilation              main.tex:802 theorem [Uniform reversible compilation]
+
+### prov:gc-qft-mod (line 94)
+  lem:qft-mod                          main.tex:818 lemma [Approximate Fourier transform over $\mathbb{Z}/N$ with explicit size; AI-checked, pending human review]
+
+### prov:gc-control (line 98)
+  tab:backends                         main.tex:865 ?? \label{tab:backends}
+  app:backends-control                 appendix-backends.tex:6 section {Gate-Level Control with the Original Arithmetic}
+
+### prov:gc-arith (line 102)
+  tab:backends                         main.tex:865 ?? \label{tab:backends}
+  app:backends-arith                   appendix-backends.tex:11 section {Binary Arithmetic and Explicit Transforms}
+
+### prov:gc-qft-wire (line 106)
+  tab:backends                         main.tex:865 ?? \label{tab:backends}
+  app:backends-arith                   appendix-backends.tex:11 section {Binary Arithmetic and Explicit Transforms}
+  lem:qft-mod                          main.tex:818 lemma [Approximate Fourier transform over $\mathbb{Z}/N$ with explicit size; AI-checked, pending human review]
+
+### prov:gc-coherent (line 110)
+  tab:backends                         main.tex:865 ?? \label{tab:backends}
+  app:backends-coherent                appendix-backends.tex:18 section {Coherent-Label Backends}
+  app:backends-scope                   appendix-backends.tex:40 section {Scope}
+
+### prov:gc-coherent-k3 (line 114)
+  tab:backends                         main.tex:865 ?? \label{tab:backends}
+  app:backends-coherent                appendix-backends.tex:18 section {Coherent-Label Backends}
+
+### prov:gc-coherent-c4 (line 118)
+  tab:backends                         main.tex:865 ?? \label{tab:backends}
+  app:backends-coherent                appendix-backends.tex:18 section {Coherent-Label Backends}
+
+### prov:gc-full (line 122)
+  tab:backends                         main.tex:865 ?? \label{tab:backends}
+  app:backends-coherent                appendix-backends.tex:18 section {Coherent-Label Backends}
+  lem:qft-mod                          main.tex:818 lemma [Approximate Fourier transform over $\mathbb{Z}/N$ with explicit size; AI-checked, pending human review]
+  app:backends-arith                   appendix-backends.tex:11 section {Binary Arithmetic and Explicit Transforms}
+
+### prov:gc-instances (line 126)
+  app:backends-instances               appendix-backends.tex:35 section {Instances}
+  tab:lean-modules                     main.tex:1418 table [ht]
+
+### prov:gc-kappa2-proof (line 130)
+  app:backends-scope                   appendix-backends.tex:40 section {Scope}
+  lem:coherent-quadratic-sde           main.tex:898 lemma [Coherent witness at $\kappa_d=2$; conditional on Proposition~\ref{prop:triangular-sde}; proof sketch, counts checked against the generated gate lists; AI-checke]
+
+### prov:gc-kappa-proof (line 134)
+  app:backends-scope                   appendix-backends.tex:40 section {Scope}
+  lem:coherent-power-sde               main.tex:909 lemma [Coherent witness at fixed $\kappa_d$; conditional on Proposition~\ref{prop:triangular-sde}; proof sketch, counts checked against the generated gate lists; AI-ch]
+
+### prov:gc-coherent-linear (line 138)
+  lem:coherent-linear-sde              main.tex:887 lemma [Coherent linear-grade witness; proof sketch, counts checked against the generated gate lists; AI-checked, pending human review]
+
+### prov:gc-coherent-quadratic (line 142)
+  lem:coherent-quadratic-sde           main.tex:898 lemma [Coherent witness at $\kappa_d=2$; conditional on Proposition~\ref{prop:triangular-sde}; proof sketch, counts checked against the generated gate lists; AI-checke]
+  prop:triangular-sde                  main.tex:729 proposition [Triangular two-level solver; AI-checked, pending human review]
+
+### prov:gc-coherent-power (line 146)
+  lem:coherent-power-sde               main.tex:909 lemma [Coherent witness at fixed $\kappa_d$; conditional on Proposition~\ref{prop:triangular-sde}; proof sketch, counts checked against the generated gate lists; AI-ch]
+  prop:triangular-sde                  main.tex:729 proposition [Triangular two-level solver; AI-checked, pending human review]
+
+### prov:gc-profiles (line 150)
+  tab:full-grade-budget                main.tex:963 table [ht]
+  tab:random-column-budget             main.tex:991 table [ht]
+  sec:uniform-compilation              main.tex:794 section {Uniform Gate Compilation and Resource Bounds}
+
+### prov:gc-fcs-budget (line 153)
+  tab:fcs-budget                       main.tex:1011 table [htbp]
+  prop:mixed-schedule                  appendix-schedule3.tex:328 proposition [Mixed per-grade schedule; conditional, AI-checked, pending human review]
+
+### prov:cl-crossover (line 156)
+  tab:query-crossover                  main.tex:1114 table [htbp]
+  prop:classical-query                 main.tex:1077 proposition [Classical query complexity; AI-checked, pending human review]
+  rem:query-separation                 main.tex:1133 remark [The query separation; conditional on Theorem~\ref{thm:main}]
+  sec:classical-query                  main.tex:1052 section {Classical Query Complexity}
+  thm:main                             main.tex:186 theorem [Main theorem]
+
+### prov:cl-filters (line 160)
+  rem:filters                          appendix-filters.tex:31 remark [Other classical filters; conditional on their sources]
+  app:filters-list                     appendix-filters.tex:13 section {Conjugation and Other Filters}
+
+### prov:cl-app3 (line 164)
+  app:filters-applications             appendix-filters.tex:44 section {Application Searches}
+
+### prov:cl-app4 (line 168)
+  app:filters-applications             appendix-filters.tex:44 section {Application Searches}
+  rem:filters                          appendix-filters.tex:31 remark [Other classical filters; conditional on their sources]
+
+### prov:pr-fpt-r (line 173)
+  cor:fpt-r                            main.tex:1157 corollary [Bound in derived dimension for every prime $p > c$, class not fixed; conditional; AI-checked, pending human review]
+  thm:main                             main.tex:186 theorem [Main theorem]
+  thm:free-coordinate                  main.tex:769 theorem [Random-column schedule (Schedule~3); conditional on the steps behind Theorem~\ref{thm:main}; AI-checked, pending human review; proofs in Appendix~\ref{app:free-]
+
+### prov:pr-fpt-r-scalar (line 177)
+  cor:fpt-r                            main.tex:1157 corollary [Bound in derived dimension for every prime $p > c$, class not fixed; conditional; AI-checked, pending human review]
+  thm:main                             main.tex:186 theorem [Main theorem]
+
+### prov:pr-codim (line 180)
+  cor:codim                            main.tex:1178 corollary [Hidden codimension; conditional; AI-checked, pending human review]
+  rem:codim                            main.tex:1193 remark [Why the direct descent cannot give the codimension bound]
+  app:codimension                      appendix-codimension.tex:33 section {Proof of the Hidden-Codimension Bound}
+
+### prov:pr-ring (line 184)
+  sec:ring                             main.tex:1198 section {Prime-Power Rings and the Ring-to-Field Reduction}
+  thm:ring-to-field                    main.tex:1205 theorem [Ring-to-field local-torsion reduction; conditional]
+  app:torsion-blackbox                 appendix-torsion-blackbox.tex:1 section {Proofs for the Ring-to-Field and Black-Box Results}
+  prop:tb-recursion                    appendix-torsion-blackbox.tex:406 proposition [Outer recursion with stop rules]
+
+### prov:bb-pullback (line 188)
+  sec:black-box-groups                 main.tex:1236 section {Black-Box Nilpotent Groups}
+  prop:black-box                       main.tex:1241 proposition [Black-box free-Lie pullback]
+  app:torsion-blackbox                 appendix-torsion-blackbox.tex:1 section {Proofs for the Ring-to-Field and Black-Box Results}
+
+### prov:bb-chart (line 193)
+  prop:black-box                       main.tex:1241 proposition [Black-box free-Lie pullback]
+  thm:bb-envelope                      main.tex:1306 theorem [All-prime black-box HSP at fixed class; conditional, AI-checked only]
+  app:torsion-blackbox                 appendix-torsion-blackbox.tex:1 section {Proofs for the Ring-to-Field and Black-Box Results}
+  lem:tb-kernel                        appendix-torsion-blackbox.tex:788 lemma [$\ker\Phi$ by abelian Fourier sampling]
+  lem:tb-chart                         appendix-torsion-blackbox.tex:884 lemma [Chart from the sample matrix; AI-checked, pending human review]
+  lem:tb-howell-rounds                 appendix-torsion-blackbox.tex:1065 lemma [Normalizer steps over $\mathbb{Z}/p^e$; AI-checked, pending human review]
+  prop:tb-count-gates                  appendix-torsion-blackbox.tex:1451 proposition [Gates and classical time; proof of Theorem~\ref{thm:bb-envelope}(iii)]
+
+### prov:bb-corollary (line 196)
+  cor:black-box                        main.tex:1256 corollary [Black-box groups of exponent $p$; AI-checked, pending human review]
+  def:input-contract                   main.tex:163 definition [Explicit Lazard / BCH Chart Contract]
+
+### prov:bb-corollary-pe (line 200)
+  cor:black-box-pe                     main.tex:1282 corollary [Black-box groups of exponent $p^e$; AI-checked, pending human review]
+  rem:oblivious                        main.tex:1047 remark [Cost on arbitrary oracles; AI-checked, pending human review]
+  rem:black-box-pe-source              main.tex:1301 remark [Source of the route]
+  thm:main                             main.tex:186 theorem [Main theorem]
+  def:input-contract                   main.tex:163 definition [Explicit Lazard / BCH Chart Contract]
+
+### prov:bb-subspace (line 204)
+  sec:subspace                         main.tex:1341 section {Flat Subspace Symmetry Sources}
+  thm:subspace-source                  main.tex:1346 theorem [Exterior-state source for flat subspace symmetry; AI-checked, pending human review; proof in Appendix~\ref{app:subspace}]
+  cor:subspace-hsp                     main.tex:1378 corollary [Flat subspace HSP; proposed, conditional]
+  app:subspace                         appendix-subspace.tex:58 section {Full Proofs for the Flat Subspace Source}
+  thm:app-sub-hsp                      appendix-subspace.tex:358 theorem [Flat subspace HSP; complete statement, conditional on the core]
+
+### prov:bb-mixed (line 208)
+  rem:mixed-source                     main.tex:1389 remark [Nonflat sources by spectral flags; argued; AI-checked, pending human review]
+
+### prov:bb-subspace-profile (line 213)
+  sec:subspace                         main.tex:1341 section {Flat Subspace Symmetry Sources}
+
+### prov:lean-modules (line 216)
+  tab:lean-modules                     main.tex:1418 table [ht]
+  sec:formalization                    main.tex:1403 section {Mechanical Verification in Lean 4}
+
+### prov:lean-sde (line 220)
+  tab:lean-modules                     main.tex:1418 table [ht]
+
+### prov:lean-c5 (line 223)
+  tab:lean-modules                     main.tex:1418 table [ht]
+
+### prov:lean-c6 (line 228)
+  tab:lean-modules                     main.tex:1418 table [ht]
+
+### prov:lean-c7 (line 232)
+  tab:lean-modules                     main.tex:1418 table [ht]
+
+### prov:lean-solver (line 237)
+  tab:lean-modules                     main.tex:1418 table [ht]
+  sec:uniform-compilation              main.tex:794 section {Uniform Gate Compilation and Resource Bounds}
+
+### prov:lean-s2local (line 241)
+  tab:lean-modules                     main.tex:1418 table [ht]
+  app:s2-local                         appendix-schedule2.tex:656 section {Local obstructions and small exceptional primes}
+
+### prov:lean-guards (line 245)
+  tab:lean-modules                     main.tex:1418 table [ht]
+
+### prov:s2-main (line 249)
+  thm:app-s2-main                      appendix-schedule2.tex:155 theorem [Schedule 2]
+  lem:app-s2-gcd                       appendix-schedule2.tex:25 lemma [gcd reduction]
+  lem:app-s2-tensor                    appendix-schedule2.tex:52 lemma [two-level tensor]
+  lem:app-s2-witness                   appendix-schedule2.tex:88 lemma [contraction gives a witness]
+  lem:app-s2-normal                    appendix-schedule2.tex:97 lemma [normal form]
+  lem:app-s2-weil-count                appendix-schedule2.tex:123 lemma [prescribed cosets, exact error]
+  lem:app-s2-stage                     appendix-schedule2.tex:169 lemma [stage count]
+  rem:app-s2-four                      appendix-schedule2.tex:194 remark []
+  prop:app-s2-TW                       appendix-schedule2.tex:204 proposition [threshold $T_W$]
+
+### prov:s2-TA (line 253)
+  lem:app-s2-moments                   appendix-schedule2.tex:244 lemma [exact moments]
+  lem:app-s2-cyclo                     appendix-schedule2.tex:263 lemma [cyclotomic estimates]
+  prop:app-s2-TA                       appendix-schedule2.tex:305 proposition [threshold $T_A$]
+  tab:app-s2-thresholds                appendix-schedule2.tex:396 ?? \label{tab:app-s2-thresholds}
+  cor:app-s2-decoupled                 appendix-schedule2.tex:360 corollary [decoupled Schedule 2]
+
+### prov:s2-joint-moments (line 257)
+  rem:app-s2-joint-moments             appendix-schedule2.tex:351 remark [joint moments of the column counts; AI-checked, pending human review]
+
+### prov:s2-small (line 261)
+  cor:app-s2-small                     appendix-schedule2.tex:369 corollary [small $\kappa$]
+
+### prov:s2-barrier (line 265)
+  lem:app-s2-kwise                     appendix-schedule2.tex:401 lemma [a law independent on every $\kappa-1$ coordinates]
+  prop:app-s2-barrier                  appendix-schedule2.tex:416 proposition [the $\kappa^\kappa/2$ barrier]
+  prop:app-s2-chebotarev               appendix-schedule2.tex:452 proposition [no fixed algebraic construction]
+  rem:app-s2-barrier-scope             appendix-schedule2.tex:447 remark [scope of Proposition~\ref{prop:app-s2-barrier}]
+  rem:app-s2-chebotarev-scope          appendix-schedule2.tex:461 remark [scope of Proposition~\ref{prop:app-s2-chebotarev}]
+  rem:app-s2-four-cycle                appendix-schedule2.tex:466 remark [the four-cycle character sums are exact]
+
+### prov:s2-tower (line 269)
+  app:s2-tower                         appendix-schedule2.tex:482 section {A tower of coset refinements}
+  lem:app-s2-refine                    appendix-schedule2.tex:493 lemma [refinement step]
+  thm:app-s2-tower                     appendix-schedule2.tex:508 theorem [tower]
+  prop:app-s2-step-threshold           appendix-schedule2.tex:521 proposition [one-step thresholds]
+  cor:app-s2-tower                     appendix-schedule2.tex:544 corollary [thresholds for composite $\kappa$]
+  rem:app-s2-tower-scope               appendix-schedule2.tex:559 remark [arity, scope and small primes]
+
+### prov:s2-chains (line 273)
+  app:s2-chains                        appendix-schedule2.tex:566 section {Flexible-line chains and union targets}
+  thm:app-s2-chain                     appendix-schedule2.tex:583 theorem [flexible-line chains]
+  prop:app-s2-union-step               appendix-schedule2.tex:596 proposition [union steps]
+  cor:app-s2-union-chain               appendix-schedule2.tex:623 corollary [cubic arity for every $\kappa \ge 4$, including prime $\kappa$]
+  rem:app-s2-chains-scope              appendix-schedule2.tex:636 remark [values, small primes and a barrier]
+  lem:app-s2-divisor                   appendix-schedule2.tex:692 lemma [divisors]
+
+### prov:s2-local (line 277)
+  app:s2-local                         appendix-schedule2.tex:656 section {Local obstructions and small exceptional primes}
+  lem:app-s2-two-rows                  appendix-schedule2.tex:661 lemma [two rows]
+  prop:app-s2-cyclotomic               appendix-schedule2.tex:670 proposition [cyclotomic criterion]
+  lem:app-s2-divisor                   appendix-schedule2.tex:692 lemma [divisors]
+  rem:app-s2-local-scope               appendix-schedule2.tex:703 remark [scope of local obstructions]
+  tab:lean-modules                     main.tex:1418 table [ht]
+
+### prov:s2-exceptional (line 285)
+  app:s2-scope                         appendix-schedule2.tex:710 section {What is and is not shown}
+
+### prov:s2-scope (line 290)
+  app:s2-scope                         appendix-schedule2.tex:710 section {What is and is not shown}
+
+### prov:s3-main (line 293)
+  thm:free-coordinate                  main.tex:769 theorem [Random-column schedule (Schedule~3); conditional on the steps behind Theorem~\ref{thm:main}; AI-checked, pending human review; proofs in Appendix~\ref{app:free-]
+  lem:s3-law                           appendix-schedule3.tex:89 lemma [Label law of a fresh bank]
+  lem:s3-moment                        appendix-schedule3.tex:103 lemma [Projective second moment]
+  lem:s3-mu                            appendix-schedule3.tex:127 lemma [Parameter bounds]
+  lem:s3-root                          appendix-schedule3.tex:150 lemma [Bounded root extraction]
+  lem:s3-node                          appendix-schedule3.tex:174 lemma [One node]
+  lem:s3-tree                          appendix-schedule3.tex:222 lemma [Tree factorization and abort bound]
+  lem:s3-hybrid                        appendix-schedule3.tex:256 lemma [Hybrid over complete instruments]
+  rem:s3-caveat                        appendix-schedule3.tex:208 remark [A bank is not i.i.d.\ given its own acceptance]
+  prop:s3-uniform                      appendix-schedule3.tex:291 proposition [All constants are uniform in $c$]
+  app:schedule3                        appendix-schedule3.tex:38 section {Proof of Schedule~3 with the Uniform-Kernel Sampler (Theorem~\ref{thm:free-coordinate}(iv))}
+
+### prov:s3-mixed (line 297)
+  prop:mixed-schedule                  appendix-schedule3.tex:328 proposition [Mixed per-grade schedule; conditional, AI-checked, pending human review]
+  tab:fcs-budget                       main.tex:1011 table [htbp]
+  app:s3-mixed                         appendix-schedule3.tex:320 section {Per-grade arities and mixed trees}
+  thm:main                             main.tex:186 theorem [Main theorem]
+  thm:power-sde                        main.tex:697 theorem [Two-level symmetric SDE contraction; part~(ii) conditional, AI-checked, pending human review; proof in Appendix~\ref{app:schedule2}]
+  lem:s3-law                           appendix-schedule3.tex:89 lemma [Label law of a fresh bank]
+
+### prov:fc-main (line 301)
+  thm:free-coordinate                  main.tex:769 theorem [Random-column schedule (Schedule~3); conditional on the steps behind Theorem~\ref{thm:main}; AI-checked, pending human review; proofs in Appendix~\ref{app:free-]
+  lem:fc-rref                          appendix-free-coordinate.tex:77 lemma [Law of the echelon form]
+  lem:fc-moment                        appendix-free-coordinate.tex:98 lemma [Free-coordinate second moment]
+  lem:fc-node                          appendix-free-coordinate.tex:124 lemma [One node]
+  lem:fc-params                        appendix-free-coordinate.tex:157 lemma [Parameters of part~(ii)]
+  lem:fc-choice                        appendix-free-coordinate.tex:208 lemma [Explicit choice]
+  lem:fc-forest                        appendix-free-coordinate.tex:246 lemma [Mixed trees]
+  prop:fc-uniform                      appendix-free-coordinate.tex:328 proposition [Constants and cost]
+  app:fc-setting                       appendix-free-coordinate.tex:40 section {Setting and the sampler}
+  app:fc-uniform                       appendix-free-coordinate.tex:325 section {Uniformity in the class, and classical cost}
+  app:free-coordinate                  appendix-free-coordinate.tex:33 section {Proof of the Free-Coordinate Schedule (Theorem~\ref{thm:free-coordinate}(i)--(iii))}
+
+### prov:fc-zero-sum (line 306)
+  lem:fc-zero-sum                      appendix-free-coordinate.tex:226 lemma [Zero-sum node; AI-checked, pending human review]
+  rem:fc-zero-sum-sis                  appendix-free-coordinate.tex:277 remark [The zero-sum node is average-case binary SIS; AI-checked, pending human review]
+
+### prov:fc-zero-sum-arity (line 310)
+  rem:fc-zero-sum-arity                appendix-free-coordinate.tex:290 remark [A polynomial-time node at the zero-sum grade; AI-checked, pending human review]
+
+### prov:fc-witness-h3 (line 315)
+  rem:fc-witness-h3                    appendix-free-coordinate.tex:311 remark [A weight-doubling witness sampler at the free-coordinate grades; AI-checked, pending human review]
+  lem:fc-forest                        appendix-free-coordinate.tex:246 lemma [Mixed trees]
+  tab:fcs-budget                       main.tex:1011 table [htbp]
+
+### prov:fc-numbers (line 320)
+  app:fc-numbers                       appendix-free-coordinate.tex:349 section {Trial counts at the class-nine profile}
+  tab:fcs-budget                       main.tex:1011 table [htbp]
+  lem:fc-choice                        appendix-free-coordinate.tex:208 lemma [Explicit choice]
+
+### prov:fc-lower (line 325)
+  prop:rc-lower                        main.tex:786 proposition [Rejection cost; AI-checked, pending human review; proof in Appendix~\ref{app:free-coordinate}]
+  app:fc-lower                         appendix-free-coordinate.tex:361 section {The rejection cost (Proposition~\ref{prop:rc-lower})}
+
+### prov:fc-split (line 329)
+  lem:fc-split-law                     appendix-free-coordinate.tex:419 lemma [Split banks]
+  prop:fc-split-node                   appendix-free-coordinate.tex:452 proposition [One split node]
+  prop:fc-split                        appendix-free-coordinate.tex:478 proposition [Split schedule; AI-checked, pending human review]
+  app:fc-split                         appendix-free-coordinate.tex:387 section {Splitting the public coordinates}
+
+### prov:fc-tradeoff (line 333)
+  rem:fc-tradeoff                      appendix-free-coordinate.tex:517 remark [Arity--time trade-off for uniform banks; AI-checked, pending human review]
+
+### prov:sub-main (line 337)
+  app:subspace                         appendix-subspace.tex:58 section {Full Proofs for the Flat Subspace Source}
+  thm:app-sub-hsp                      appendix-subspace.tex:358 theorem [Flat subspace HSP; complete statement, conditional on the core]
+  def:app-sub-instance                 appendix-subspace.tex:86 definition [Flat subspace instance]
+  def:app-sub-core                     appendix-subspace.tex:100 definition [Core interface]
+  prop:app-sub-ray                     appendix-subspace.tex:146 proposition [Theorem~\ref{thm:subspace-source}(i)]
+  prop:app-sub-stream                  appendix-subspace.tex:261 proposition [Theorem~\ref{thm:subspace-source}(ii)]
+  lem:app-sub-character                appendix-subspace.tex:170 lemma [Characters of Lazard groups]
+  lem:app-sub-antisym                  appendix-subspace.tex:206 lemma [Antisymmetrizers]
+  lem:app-sub-growth                   appendix-subspace.tex:222 lemma [One growth step]
+  lem:app-sub-lcu                      appendix-subspace.tex:236 lemma [Coherent realization with recovery]
+  lem:app-sub-design                   appendix-subspace.tex:283 lemma [Designs exist and are constructible]
+  lem:app-sub-lift                     appendix-subspace.tex:300 lemma [Lift of a symmetry state]
+  cor:app-sub-cancel                   appendix-subspace.tex:189 corollary [Moment cancellation]
+  cor:app-sub-two-lifts                appendix-subspace.tex:341 corollary [The coset-copy lift and the exterior lift]
+  rem:app-sub-multiple-p               appendix-subspace.tex:351 remark [An alternative to the design when $p \le \ell$]
+  rem:app-sub-sharper                  appendix-subspace.tex:410 remark [A sharper gap]
+  rem:app-sub-scope                    appendix-subspace.tex:415 remark [Scope]
+  thm:main                             main.tex:186 theorem [Main theorem]
+
+### prov:sub-profile (line 343)
+  rem:app-sub-profile                  appendix-subspace.tex:405 remark [The budget profile of Section~\ref{sec:subspace}]
+  sec:subspace                         main.tex:1341 section {Flat Subspace Symmetry Sources}
+  thm:app-sub-hsp                      appendix-subspace.tex:358 theorem [Flat subspace HSP; complete statement, conditional on the core]
+
+### prov:tb-lazard (line 347)
+  app:tb-lazard                        appendix-torsion-blackbox.tex:60 section {Lazard Toolkit}
+  lem:tb-integral                      appendix-torsion-blackbox.tex:112 lemma [Integrality of Lie elements of low degree]
+  lem:tb-words                         appendix-torsion-blackbox.tex:140 lemma [Inverse-BCH words over $R_c$]
+  cor:tb-correspondence                appendix-torsion-blackbox.tex:198 corollary [Subgroups, ideals, normalizers, cosets]
+
+### prov:tb-ring (line 351)
+  thm:ring-to-field                    main.tex:1205 theorem [Ring-to-field local-torsion reduction; conditional]
+  app:tb-ring                          appendix-torsion-blackbox.tex:242 section {Proof of Theorem~\ref{thm:ring-to-field}}
+  lem:tb-quotient-oracle               appendix-torsion-blackbox.tex:346 lemma [Quotient oracle]
+  lem:tb-section-rank                  appendix-torsion-blackbox.tex:372 lemma [Rank and class of every section]
+  prop:tb-recursion                    appendix-torsion-blackbox.tex:406 proposition [Outer recursion with stop rules]
+  rem:tb-ring-sources                  appendix-torsion-blackbox.tex:519 remark [Relation to prior work and to an alternative outer loop]
+  cor:fpt-r                            main.tex:1157 corollary [Bound in derived dimension for every prime $p > c$, class not fixed; conditional; AI-checked, pending human review]
+
+### prov:tb-evaluation (line 355)
+  lem:tb-evaluation                    appendix-torsion-blackbox.tex:176 lemma [Prime-power evaluation]
+  rem:tb-compiler                      appendix-torsion-blackbox.tex:773 remark [Implementation status]
+  prop:black-box                       main.tex:1241 proposition [Black-box free-Lie pullback]
+
+### prov:tb-blackbox (line 360)
+  prop:black-box                       main.tex:1241 proposition [Black-box free-Lie pullback]
+  app:tb-blackbox                      appendix-torsion-blackbox.tex:547 section {Proofs for Black-Box Groups}
+  lem:tb-sylow                         appendix-torsion-blackbox.tex:574 lemma [Sylow split]
+  lem:tb-small-primes                  appendix-torsion-blackbox.tex:668 lemma [Small primes]
+  lem:tb-kernel                        appendix-torsion-blackbox.tex:788 lemma [$\ker\Phi$ by abelian Fourier sampling]
+  lem:tb-chart                         appendix-torsion-blackbox.tex:884 lemma [Chart from the sample matrix; AI-checked, pending human review]
+  lem:tb-howell-rounds                 appendix-torsion-blackbox.tex:1065 lemma [Normalizer steps over $\mathbb{Z}/p^e$; AI-checked, pending human review]
+  tab:tb-steps                         appendix-torsion-blackbox.tex:1270 ?? \label{tab:tb-steps}
+  rem:tb-scope                         appendix-torsion-blackbox.tex:1287 remark [Scope]
+  thm:main                             main.tex:186 theorem [Main theorem]
+
+### prov:tb-count-gates (line 363)
+  app:tb-counts                        appendix-torsion-blackbox.tex:1299 section {Proof of the counts of Theorem~\ref{thm:bb-envelope}}
+  thm:bb-envelope                      main.tex:1306 theorem [All-prime black-box HSP at fixed class; conditional, AI-checked only]
+  lem:tb-count-grade                   appendix-torsion-blackbox.tex:1327 lemma [Per-grade arity bound]
+  lem:tb-count-exponent                appendix-torsion-blackbox.tex:1354 lemma [The exponents $E_W(c)$]
+  lem:tb-count-prime                   appendix-torsion-blackbox.tex:1375 lemma [One Sylow subgroup]
+  prop:tb-count-gates                  appendix-torsion-blackbox.tex:1451 proposition [Gates and classical time; proof of Theorem~\ref{thm:bb-envelope}(iii)]
+
+### prov:cd-main (line 366)
+  thm:app-codim                        appendix-codimension.tex:43 theorem [Hidden-codimension bound; AI-checked, pending human review]
+  cor:codim                            main.tex:1178 corollary [Hidden codimension; conditional; AI-checked, pending human review]
+  app:codim-statement                  appendix-codimension.tex:40 section {Statement and Lazard Conventions}
+  app:codim-proof                      appendix-codimension.tex:304 section {Error Budget and Proof of Theorem~\ref{thm:app-codim}}
+  lem:app-codim-lazard                 appendix-codimension.tex:55 lemma [Lazard facts used]
+  lem:app-codim-ideal                  appendix-codimension.tex:98 lemma [Construction]
+  lem:app-codim-selfcentral            appendix-codimension.tex:111 lemma [Self-centralizing]
+  lem:app-codim-restrict               appendix-codimension.tex:140 lemma [The restricted oracle is an abelian HSP oracle]
+  lem:app-codim-sample                 appendix-codimension.tex:151 lemma [Fourier sampling and certified recovery]
+  lem:app-codim-normalizer             appendix-codimension.tex:169 lemma [Normalizer]
+  lem:app-codim-transport              appendix-codimension.tex:183 lemma [Transport through an arbitrary section]
+  lem:app-codim-unwind                 appendix-codimension.tex:194 lemma [Unwinding]
+  lem:app-codim-ad                     appendix-codimension.tex:244 lemma [Per-grade rank bound]
+  prop:app-codim-filiform              appendix-codimension.tex:77 proposition [Filiform example]
+  prop:app-codim-size                  appendix-codimension.tex:122 proposition [Size and class]
+  prop:app-codim-complete              appendix-codimension.tex:215 proposition [Completeness of the reduction]
+  prop:app-codim-rc                    appendix-codimension.tex:265 proposition [Terminal solver for $p \ge 64k^2$; conditional on Theorem~\ref{thm:free-coordinate}(iv)]
+  prop:app-codim-birthday              appendix-codimension.tex:279 proposition [Classical collision learner; proved here, AI-checked, pending human review]
+  thm:main                             main.tex:186 theorem [Main theorem]
+  thm:free-coordinate                  main.tex:769 theorem [Random-column schedule (Schedule~3); conditional on the steps behind Theorem~\ref{thm:main}; AI-checked, pending human review; proofs in Appendix~\ref{app:free-]
+  thm:uniform-compilation              main.tex:802 theorem [Uniform reversible compilation]
+  lem:hybrid                           main.tex:627 lemma [Sequential hybrid on a canonical domain]
+
+### prov:cd-checks (line 370)
+  app:codim-checks                     appendix-codimension.tex:321 section {Scope, Comparison, and Exact Checks}
+  prop:app-codim-size                  appendix-codimension.tex:122 proposition [Size and class]
+  prop:app-codim-complete              appendix-codimension.tex:215 proposition [Completeness of the reduction]
+  prop:app-codim-filiform              appendix-codimension.tex:77 proposition [Filiform example]
+  thm:free-coordinate                  main.tex:769 theorem [Random-column schedule (Schedule~3); conditional on the steps behind Theorem~\ref{thm:main}; AI-checked, pending human review; proofs in Appendix~\ref{app:free-]

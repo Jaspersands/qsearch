@@ -1,0 +1,90 @@
+input order: ['main.tex', 'numbers.tex', 'appendix-schedule2.tex', 'appendix-schedule3.tex', 'appendix-free-coordinate.tex', 'appendix-subspace.tex', 'appendix-torsion-blackbox.tex', 'appendix-codimension.tex', 'appendix-sde-side.tex', 'appendix-backends.tex', 'appendix-filters.tex', 'appendix-provenance.tex']
+  14 prov:paper                   (no label in title)
+  18 prov:core                    (no label in title)
+  21 prov:cover-dl                sec:rees-cover                     main.tex:390
+  24 prov:dl-central-scalars      prop:dl-central-scalars            main.tex:464
+  27 prov:instr-control           sec:instrument                     main.tex:529
+  30 prov:instr-e2e               sec:instrument                     main.tex:529
+  34 prov:instr-premature         rem:premature                      main.tex:566
+  38 prov:sde-is-import           thm:is-import                      main.tex:655
+  41 prov:sde-is-runtime          rem:is-runtime                     main.tex:669
+  46 prov:sde-is-solver           sec:schedule1                      main.tex:652  <-- earlier than previous item
+  50 prov:sde-power               thm:power-sde                      main.tex:698
+  55 prov:sde-decoupled           prop:decoupled-sde                 main.tex:715
+  59 prov:sde-threshold           rem:two-level-threshold-size       main.tex:724
+  62 prov:sde-triangular          prop:triangular-sde                main.tex:730
+  66 prov:sde-subquadratic        rem:sde-subquadratic               appendix-sde-side.tex:39
+  70 prov:sde-block-steered       rem:sde-block-steered              appendix-sde-side.tex:50
+  74 prov:sde-worst-case          rem:sde-worst-case                 appendix-sde-side.tex:59
+  78 prov:sde-worst-case-q1       rem:sde-worst-case-q1              appendix-sde-side.tex:80
+  82 prov:sde-combined            rem:combined-schedule              main.tex:758  <-- earlier than previous item
+  86 prov:sde-fc                  thm:free-coordinate                main.tex:770
+  90 prov:gc-compilation          thm:uniform-compilation            main.tex:803
+  94 prov:gc-qft-mod              lem:qft-mod                        main.tex:819
+  98 prov:gc-control              tab:backends                       main.tex:865
+ 102 prov:gc-arith                tab:backends                       main.tex:865
+ 106 prov:gc-qft-wire             tab:backends                       main.tex:865
+ 110 prov:gc-coherent             tab:backends                       main.tex:865
+ 114 prov:gc-coherent-k3          tab:backends                       main.tex:865
+ 118 prov:gc-coherent-c4          tab:backends                       main.tex:865
+ 122 prov:gc-full                 tab:backends                       main.tex:865
+ 126 prov:gc-instances            app:backends-instances             appendix-backends.tex:36
+ 130 prov:gc-kappa2-proof         app:backends-scope                 appendix-backends.tex:41
+ 134 prov:gc-kappa-proof          app:backends-scope                 appendix-backends.tex:41
+ 138 prov:gc-coherent-linear      lem:coherent-linear-sde            main.tex:888  <-- earlier than previous item
+ 142 prov:gc-coherent-quadratic   lem:coherent-quadratic-sde         main.tex:899
+ 146 prov:gc-coherent-power       lem:coherent-power-sde             main.tex:910
+ 150 prov:gc-profiles             tab:full-grade-budget              main.tex:966
+ 153 prov:gc-fcs-budget           tab:fcs-budget                     main.tex:1014
+ 156 prov:cl-crossover            tab:query-crossover                main.tex:1117
+ 160 prov:cl-filters              rem:filters                        appendix-filters.tex:32
+ 164 prov:cl-app3                 app:filters-applications           appendix-filters.tex:45
+ 168 prov:cl-app4                 app:filters-applications           appendix-filters.tex:45
+ 173 prov:pr-fpt-r                cor:fpt-r                          main.tex:1158  <-- earlier than previous item
+ 177 prov:pr-fpt-r-scalar         cor:fpt-r                          main.tex:1158
+ 180 prov:pr-codim                cor:codim                          main.tex:1179
+ 184 prov:pr-ring                 sec:ring                           main.tex:1199
+ 188 prov:bb-pullback             sec:black-box-groups               main.tex:1237
+ 193 prov:bb-chart                prop:black-box                     main.tex:1242
+ 196 prov:bb-corollary            cor:black-box                      main.tex:1257
+ 200 prov:bb-corollary-pe         cor:black-box-pe                   main.tex:1283
+ 204 prov:bb-subspace             sec:subspace                       main.tex:1342
+ 208 prov:bb-mixed                rem:mixed-source                   main.tex:1390
+ 213 prov:bb-subspace-profile     sec:subspace                       main.tex:1342  <-- earlier than previous item
+ 216 prov:lean-modules            tab:lean-modules                   main.tex:1421
+ 220 prov:lean-sde                tab:lean-modules                   main.tex:1421
+ 223 prov:lean-c5                 tab:lean-modules                   main.tex:1421
+ 228 prov:lean-c6                 tab:lean-modules                   main.tex:1421
+ 232 prov:lean-c7                 tab:lean-modules                   main.tex:1421
+ 237 prov:lean-solver             tab:lean-modules                   main.tex:1421
+ 241 prov:lean-s2local            tab:lean-modules                   main.tex:1421
+ 245 prov:lean-guards             tab:lean-modules                   main.tex:1421
+ 249 prov:s2-main                 thm:app-s2-main                    appendix-schedule2.tex:156
+ 253 prov:s2-TA                   lem:app-s2-moments                 appendix-schedule2.tex:245
+ 257 prov:s2-joint-moments        rem:app-s2-joint-moments           appendix-schedule2.tex:352
+ 261 prov:s2-small                cor:app-s2-small                   appendix-schedule2.tex:370
+ 265 prov:s2-barrier              lem:app-s2-kwise                   appendix-schedule2.tex:402
+ 269 prov:s2-tower                app:s2-tower                       appendix-schedule2.tex:483
+ 273 prov:s2-chains               app:s2-chains                      appendix-schedule2.tex:567
+ 277 prov:s2-local                app:s2-local                       appendix-schedule2.tex:657
+ 285 prov:s2-exceptional          app:s2-scope                       appendix-schedule2.tex:711
+ 290 prov:s2-scope                app:s2-scope                       appendix-schedule2.tex:711
+ 293 prov:s3-main                 thm:free-coordinate                main.tex:770  <-- earlier than previous item
+ 297 prov:s3-mixed                prop:mixed-schedule                appendix-schedule3.tex:329
+ 301 prov:fc-main                 thm:free-coordinate                main.tex:770  <-- earlier than previous item
+ 306 prov:fc-zero-sum             lem:fc-zero-sum                    appendix-free-coordinate.tex:227
+ 310 prov:fc-zero-sum-arity       rem:fc-zero-sum-arity              appendix-free-coordinate.tex:291
+ 315 prov:fc-witness-h3           rem:fc-witness-h3                  appendix-free-coordinate.tex:312
+ 320 prov:fc-numbers              app:fc-numbers                     appendix-free-coordinate.tex:350
+ 325 prov:fc-lower                prop:rc-lower                      main.tex:787  <-- earlier than previous item
+ 329 prov:fc-split                lem:fc-split-law                   appendix-free-coordinate.tex:420
+ 333 prov:fc-tradeoff             rem:fc-tradeoff                    appendix-free-coordinate.tex:518
+ 337 prov:sub-main                app:subspace                       appendix-subspace.tex:59
+ 343 prov:sub-profile             rem:app-sub-profile                appendix-subspace.tex:406
+ 347 prov:tb-lazard               app:tb-lazard                      appendix-torsion-blackbox.tex:61
+ 351 prov:tb-ring                 thm:ring-to-field                  main.tex:1206  <-- earlier than previous item
+ 355 prov:tb-evaluation           lem:tb-evaluation                  appendix-torsion-blackbox.tex:177
+ 360 prov:tb-blackbox             prop:black-box                     main.tex:1242  <-- earlier than previous item
+ 363 prov:tb-count-gates          app:tb-counts                      appendix-torsion-blackbox.tex:1300
+ 366 prov:cd-main                 thm:app-codim                      appendix-codimension.tex:44
+ 370 prov:cd-checks               app:codim-checks                   appendix-codimension.tex:322

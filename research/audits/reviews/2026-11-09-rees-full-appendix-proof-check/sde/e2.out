@@ -1,0 +1,20 @@
+E_2(2) up to 200: []
+E_2(3) up to 400: []
+E_2(4) up to 2000 (T_A(4)=869): [5, 13, 17, 29, 37, 53] [0.1s]
+E_2(5) up to 13000 (T_A(5)=1.27e4): [11, 31, 41, 61, 71, 101, 131, 151, 181] [4.6s]
+kappa=2: primes p=1 mod kappa, p<=1: []; in E_2: []; claim holds: True
+kappa=3: primes p=1 mod kappa, p<=3: []; in E_2: []; claim holds: True
+kappa=4: primes p=1 mod kappa, p<=7: [5]; in E_2: [5]; claim holds: True
+kappa=5: primes p=1 mod kappa, p<=13: [11]; in E_2: [11]; claim holds: True
+kappa=6: primes p=1 mod kappa, p<=21: [7, 13, 19]; in E_2: [7, 13, 19]; claim holds: True
+kappa=7: primes p=1 mod kappa, p<=31: [29]; in E_2: [29]; claim holds: True
+kappa=8: primes p=1 mod kappa, p<=43: [17, 41]; in E_2: [17, 41]; claim holds: True
+kappa=9: primes p=1 mod kappa, p<=57: [19, 37]; in E_2: [19, 37]; claim holds: True
+kappa=10: primes p=1 mod kappa, p<=73: [11, 31, 41, 61, 71]; in E_2: [11, 31, 41, 61, 71]; claim holds: True
+kappa=11: primes p=1 mod kappa, p<=91: [23, 67, 89]; in E_2: [23, 67, 89]; claim holds: True
+kappa=12: primes p=1 mod kappa, p<=111: [13, 37, 61, 73, 97, 109]; in E_2: [13, 37, 61, 73, 97, 109]; claim holds: True
+E_2(4) -> E_2(8) at [17]: in E_2(8): {17: True}
+E_2(5) -> E_2(10) at [11, 31, 41, 61, 71]: in E_2(10): {11: True, 31: True, 41: True, 61: True, 71: True}
+E_2(4) -> E_2(12) at [13, 37]: in E_2(12): {13: True, 37: True}
+E_2(6) -> E_2(12) at [13, 37]: in E_2(12): {13: True, 37: True}
+total 4.6s

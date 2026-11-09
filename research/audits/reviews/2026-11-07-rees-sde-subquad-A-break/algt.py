@@ -633,10 +633,13 @@ def good_exact(Fd, betas, classes):
     """All s with beta_b + s in Q_{-c_b} u {0} for all b (needs the class table)."""
     p = Fd.p
     t = Fd.table
-    s = np.arange(p, dtype=I64)
+    # The class table exists only for p <= 3e6 (la.Fq), so int64 indices are exact here. With
+    # QS_BIGP=1, dtype=I64 (object) made t[y] raise IndexError; found 9 Nov when the interesting/
+    # case-3.3 banks were added to bigp_equiv.py (audit P6). Unreachable at p > 3e6 (table None).
+    s = np.arange(p, dtype=np.int64)
     ok = np.ones(p, dtype=bool)
     for bt, cb in zip(betas, classes):
-        y = (s + bt) % p
+        y = (s + int(bt)) % p
         cy = t[y]
         ok &= (cy == -1) | (cy == (-cb) % Fd.k)
     return np.nonzero(ok)[0]

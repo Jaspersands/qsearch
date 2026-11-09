@@ -1,0 +1,16 @@
+brute check 7 2 (1, 0) (1, 0)
+brute check 11 2 (1, 1) (1, 1)
+brute check 13 3 (0, 0) (0, 0)
+brute check 19 3 (0, 0) (0, 0)
+brute check 31 3 (0, 0) (0, 0)
+kappa=2: E_cg(3,2) up to 5000 = []  [3.7s]
+kappa=3: E_cg(3,3) up to 11000 = [7, 13, 19, 31, 37, 43, 61, 67, 73, 79, 97, 103, 109, 127, 139, 151, 157, 163, 181, 193, 211, 241]  [12.2s]
+E_cg(3,3) matches paper list: True
+kappa=2: primes with G*_3 = 0: [3, 5, 7]
+kappa=3: primes with G*_3 = 0 == E_cg(3,3): True
+kappa=2 violations of G*_3>=p/10 for 256<=p<=5000: []
+kappa=3 violations of G*_3>=p/54 for 2750<=p<=11000: []
+min ratio G*_3/p, kappa=2, p>=256: 0.10894941634241245  kappa=3, p>=2750: 0.02529815684857246
+Weil J=3 bound >= p/10 at p=5000: True  (also J=2): True
+Weil J=3 bound >= p/54 at p=11000: True  (also J=2): True
+total 12.2s

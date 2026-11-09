@@ -1,0 +1,23 @@
+== Part A: Howell / membership / kernel / Smith vs brute force
+  Part A passed: 420 random modules; (3|1) over Z/9 gives Lambda = 3Z/9
+== Part B: Lemma tb-chart end to end on F_{s,c}(Z/p^e)/I, random ideals I
+  (p,e,s,c)=(3, 2, 2, 2) d=3: cumulative 25/25 charts verified
+  (p,e,s,c)=(3, 2, 3, 2) d=6: cumulative 49/49 charts verified
+  (p,e,s,c)=(3, 3, 2, 2) d=3: cumulative 74/74 charts verified
+  (p,e,s,c)=(5, 2, 2, 3) d=5: cumulative 99/99 charts verified
+  (p,e,s,c)=(5, 2, 2, 4) d=8: cumulative 124/124 charts verified
+  (p,e,s,c)=(5, 3, 2, 3) d=5: cumulative 149/149 charts verified
+  (p,e,s,c)=(7, 2, 3, 3) d=14: cumulative 174/174 charts verified
+  (p,e,s,c)=(5, 2, 1, 4) d=1: cumulative 199/199 charts verified
+  (p,e,s,c)=(3, 2, 4, 2) d=10: cumulative 224/224 charts verified
+  Part B: 224 of 224 charts verified against F/I
+== Part C: C_9 x C_3 (s=2, c=2, p=3, e=2) and the mod-p column scan
+  C9xC3: Howell scan correct in 198/198; mod-p scan spans A in 0/198
+  random ideals: mod-p scan misses part of A in 56/90 charts
+== Part D: failure branches -- Lie check pass rate and class of passing charts
+  (3, 2, 2, 2) d=3: {'exact_fail': 30, 'exact_pass_lie': 30, 'exact_ideal': 17, 'exact_class_gt_c': 3, 'arb': 75, 'arb_pass_lie': 60, 'arb_class_gt_c': 3}
+  (5, 2, 2, 3) d=5: {'exact_fail': 46, 'exact_pass_lie': 33, 'exact_ideal': 6, 'exact_class_gt_c': 6, 'arb': 75, 'arb_pass_lie': 54, 'arb_class_gt_c': 10}
+  (5, 2, 3, 2) d=6: {'exact_fail': 90, 'exact_pass_lie': 58, 'exact_ideal': 6, 'exact_class_gt_c': 13, 'arb': 75, 'arb_pass_lie': 58, 'arb_class_gt_c': 13}
+  (5, 3, 2, 3) d=5: {'exact_fail': 68, 'exact_pass_lie': 47, 'exact_ideal': 3, 'exact_class_gt_c': 16, 'arb': 75, 'arb_pass_lie': 50, 'arb_class_gt_c': 3}
+  (7, 2, 2, 4) d=8: {'exact_fail': 82, 'exact_pass_lie': 33, 'exact_ideal': 3, 'exact_class_gt_c': 11, 'arb': 75, 'arb_pass_lie': 37, 'arb_class_gt_c': 7}
+RESULT B ok C ok time 110.2s

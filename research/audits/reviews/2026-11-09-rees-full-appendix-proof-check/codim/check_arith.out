@@ -1,0 +1,12 @@
+birthday constant checks k=1..60, failures: []
+c=2: coefficients ['1', '1/2']; max denominator 2 (> c: False); prime factors <= c: True
+c=3: coefficients ['1', '1/2', '1/12']; max denominator 12 (> c: True); prime factors <= c: True
+c=4: coefficients ['1', '1/2', '1/12', '0']; max denominator 12 (> c: True); prime factors <= c: True
+c=5: coefficients ['1', '1/2', '1/12', '0', '-1/720']; max denominator 720 (> c: True); prime factors <= c: True
+c=6: coefficients ['1', '1/2', '1/12', '0', '-1/720', '0']; max denominator 720 (> c: True); prime factors <= c: True
+c=7: coefficients ['1', '1/2', '1/12', '0', '-1/720', '0', '1/30240']; max denominator 30240 (> c: True); prime factors <= c: True
+c=8: coefficients ['1', '1/2', '1/12', '0', '-1/720', '0', '1/30240', '0']; max denominator 30240 (> c: True); prime factors <= c: True
+x^r <= max(r^{2r},2^16,2^x) grid r<60, 1<=x<=201: counterexample: None
+fpt-r filiform r=3: p=5 S=7 arities={2: 22, 3: 3, 4: ('ZS', 5, 'S1', 281474976710656)}; log2 Q (zero-sum)=13.17, (Schedule 1)=58.85
+fpt-r filiform r=5: p=7 S=9 arities={2: 21, 3: 32, 4: 27, 5: 3, 6: ('ZS', 7, 'S1', 27248725205725708579376953114979198828544)}; log2 Q (zero-sum)=24.29, (Schedule 1)=155.81
+fpt-r filiform r=9: p=11 S=12 arities={2: 23, 3: 9, 4: 26, 5: 52, 6: 30, 7: 5, 8: 33, 9: 3, 10: ('ZS', 11, 'S1', 1099511627776000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)}; log2 Q (zero-sum)=42.32, (Schedule 1)=676.81

@@ -1,0 +1,26 @@
+p=3 D=3 Delta=1 hyp p>max(D,(D-1)Delta)=False: forms=3 dimFix=1 dimKer=1 dimFix∩Ker=1 -> equal
+p=3 D=3 Delta=2 hyp p>max(D,(D-1)Delta)=False: forms=6 dimFix=2 dimKer=2 dimFix∩Ker=2 -> equal
+p=5 D=3 Delta=1 hyp p>max(D,(D-1)Delta)=True: forms=3 dimFix=1 dimKer=1 dimFix∩Ker=1 -> equal
+p=5 D=3 Delta=2 hyp p>max(D,(D-1)Delta)=True: forms=6 dimFix=2 dimKer=2 dimFix∩Ker=2 -> equal
+p=5 D=3 Delta=3 hyp p>max(D,(D-1)Delta)=False: forms=10 dimFix=2 dimKer=2 dimFix∩Ker=2 -> equal
+p=5 D=3 Delta=4 hyp p>max(D,(D-1)Delta)=False: forms=15 dimFix=3 dimKer=3 dimFix∩Ker=3 -> equal
+p=5 D=4 Delta=1 hyp p>max(D,(D-1)Delta)=True: forms=4 dimFix=1 dimKer=1 dimFix∩Ker=1 -> equal
+p=5 D=4 Delta=2 hyp p>max(D,(D-1)Delta)=False: forms=10 dimFix=2 dimKer=2 dimFix∩Ker=2 -> equal
+p=5 D=4 Delta=3 hyp p>max(D,(D-1)Delta)=False: forms=20 dimFix=4 dimKer=4 dimFix∩Ker=3 -> DIFFER (Fix\Ker dim 1, Ker\Fix dim 1)
+p=5 D=4 Delta=4 hyp p>max(D,(D-1)Delta)=False: forms=35 dimFix=7 dimKer=7 dimFix∩Ker=5 -> DIFFER (Fix\Ker dim 2, Ker\Fix dim 2)
+p=5 D=5 Delta=1 hyp p>max(D,(D-1)Delta)=False: forms=5 dimFix=1 dimKer=1 dimFix∩Ker=1 -> equal
+p=5 D=5 Delta=2 hyp p>max(D,(D-1)Delta)=False: forms=15 dimFix=3 dimKer=3 dimFix∩Ker=3 -> equal
+p=5 D=5 Delta=3 hyp p>max(D,(D-1)Delta)=False: forms=35 dimFix=7 dimKer=7 dimFix∩Ker=5 -> DIFFER (Fix\Ker dim 2, Ker\Fix dim 2)
+p=5 D=5 Delta=4 hyp p>max(D,(D-1)Delta)=False: forms=70 dimFix=14 dimKer=14 dimFix∩Ker=8 -> DIFFER (Fix\Ker dim 6, Ker\Fix dim 6)
+p=7 D=3 Delta=1 hyp p>max(D,(D-1)Delta)=True: forms=3 dimFix=1 dimKer=1 dimFix∩Ker=1 -> equal
+p=7 D=3 Delta=2 hyp p>max(D,(D-1)Delta)=True: forms=6 dimFix=2 dimKer=2 dimFix∩Ker=2 -> equal
+p=7 D=3 Delta=3 hyp p>max(D,(D-1)Delta)=True: forms=10 dimFix=2 dimKer=2 dimFix∩Ker=2 -> equal
+p=7 D=3 Delta=4 hyp p>max(D,(D-1)Delta)=False: forms=15 dimFix=3 dimKer=3 dimFix∩Ker=3 -> equal
+p=7 D=3 Delta=5 hyp p>max(D,(D-1)Delta)=False: forms=21 dimFix=3 dimKer=3 dimFix∩Ker=3 -> equal
+p=7 D=3 Delta=6 hyp p>max(D,(D-1)Delta)=False: forms=28 dimFix=4 dimKer=4 dimFix∩Ker=4 -> equal
+p=7 D=4 Delta=1 hyp p>max(D,(D-1)Delta)=True: forms=4 dimFix=1 dimKer=1 dimFix∩Ker=1 -> equal
+p=7 D=4 Delta=2 hyp p>max(D,(D-1)Delta)=True: forms=10 dimFix=2 dimKer=2 dimFix∩Ker=2 -> equal
+p=7 D=4 Delta=3 hyp p>max(D,(D-1)Delta)=False: forms=20 dimFix=3 dimKer=3 dimFix∩Ker=3 -> equal
+p=7 D=4 Delta=4 hyp p>max(D,(D-1)Delta)=False: forms=35 dimFix=5 dimKer=5 dimFix∩Ker=5 -> equal
+p=7 D=4 Delta=5 hyp p>max(D,(D-1)Delta)=False: forms=56 dimFix=8 dimKer=8 dimFix∩Ker=6 -> DIFFER (Fix\Ker dim 2, Ker\Fix dim 2)
+p=7 D=4 Delta=6 hyp p>max(D,(D-1)Delta)=False: forms=84 dimFix=12 dimKer=12 dimFix∩Ker=8 -> DIFFER (Fix\Ker dim 4, Ker\Fix dim 4)

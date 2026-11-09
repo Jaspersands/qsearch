@@ -1,0 +1,29 @@
+equations x variables: 224 x 64  (nonzero rows: 138 )
+rank over Q: 52
+nonzero elementary divisors (count, distinct values): 52 [1, 3, 6]
+primes dividing some elementary divisor: [2, 3]
+p=2: rank mod p = 50, dim Der = 14
+p=3: rank mod p = 48, dim Der = 16
+p=5: rank mod p = 52, dim Der = 12
+p=7: rank mod p = 52, dim Der = 12
+p=11: rank mod p = 52, dim Der = 12
+p=13: rank mod p = 52, dim Der = 12
+p=17: rank mod p = 52, dim Der = 12
+p=19: rank mod p = 52, dim Der = 12
+p=23: rank mod p = 52, dim Der = 12
+p=29: rank mod p = 52, dim Der = 12
+p=31: rank mod p = 52, dim Der = 12
+p=37: rank mod p = 52, dim Der = 12
+p=41: rank mod p = 52, dim Der = 12
+p=43: rank mod p = 52, dim Der = 12
+p=47: rank mod p = 52, dim Der = 12
+p=53: rank mod p = 52, dim Der = 12
+p=59: rank mod p = 52, dim Der = 12
+dim Der over Q: 12
+paper's 12 generators satisfy the system: True ; they span dim 12
+paper's span equals the full kernel over Q: True
+char 3: dim Der = 16
+char 3: basis derivations with a component D e_l -> e_k, k<=4: 4
+char 3: non-nilpotent basis derivations: 2
+char 3: non-nilpotent among 200 random derivations: 176
+nice -n 19 timeout 240 $E/sage derivations.sage  2.48s user 0.41s system 70% cpu 4.124 total

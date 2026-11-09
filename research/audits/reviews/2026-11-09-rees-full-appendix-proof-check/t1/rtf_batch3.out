@@ -1,0 +1,15 @@
+{"ring": "Heis3(Z9)", "p": 3, "e": [2, 2, 2], "cls": 2, "R": 1, "b": 6, "n_subrings": 247, "max_calls_truth": 3, "adversarial_runs": 372, "max_calls_adv": 5, "calls_HeqG_without_stop1": 3, "runs": 247, "hiding_checked": 1369, "U_claim_ok": 1369, "max_calls_minus_b": -99, "rounds": 1855, "normalizer_checked": 465, "section_checks": 1792, "idealizer_eq_normalizer": 0}
+real 16.63
+Traceback (most recent call last):
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-09-rees-full-appendix-proof-check/t1/rtf_check.py", line 730, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-09-rees-full-appendix-proof-check/t1/rtf_check.py", line 700, in main
+    lab = coset_labels(L, Hh)
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-09-rees-full-appendix-proof-check/t1/rtf_check.py", line 448, in coset_labels
+    Y = L.bch(L.all, h[None, :])
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-09-rees-full-appendix-proof-check/t1/rtf_check.py", line 70, in bch
+    vals[w] = self.br(vals[w[:-1]], vals[(w[-1],)])
+                      ~~~~^^^^^^^^
+KeyError: (0, 0)
+real 22.38

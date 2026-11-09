@@ -1,0 +1,29 @@
+dim, vdim of the gauge-fixed automorphism ideal:
+2
+-1
+vdim of radical (number of component points over the algebraic closure):
+-1
+image on the centre (C e7 = c11 e7 + c21 e8, C e8 = c12 e7 + c22 e8): vdim of radical =
+-1
+c11-c12+c21-c22,
+c21^10-c21^9*c22-c21*c22^9+c22^10-c12^8+c12^7*c22-c12^6*c22^2+c12^5*c22^3-c12^4*c22^4+c12^3*c22^5-c12^2*c22^6+c12*c22^7-c22^8
+minimal associated primes of the image (each is one point over the base field or a Galois orbit):
+c21^5+c21^4*c22+c21^3*c22^2-c21^2*c22^3-c21*c22^4-c22^5+c12^4+c12^3*c22+c12*c22^3+c22^4,
+c11-c12+c21-c22
+--
+-c21^5-c21^4*c22-c21^3*c22^2+c21^2*c22^3+c21*c22^4+c22^5+c12^4+c12^3*c22+c12*c22^3+c22^4,
+c11-c12+c21-c22
+--
+SCALARS: ideal in z of zeta with C = zeta*Id:
+z2-1
+[1]:
+   _[1]=1
+   _[2]=z+1
+   _[3]=z-1
+[2]:
+   1,1,1
+EIGENVALUES on the centre: ideal in x:
+0
+seconds:
+78
+nice -n 19 timeout 170 $E/Singular -q g_p$p.sing  59.93s user 0.73s system 77% cpu 1:18.45 total

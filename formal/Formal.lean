@@ -69,4 +69,7 @@ import Formal.ReesSdePolicy
 import Formal.ReesSdeSolver
 import Formal.ReesMergeReduction
 import Formal.ReesS2Local
+import Formal.DixmierListerScalars
+import Formal.DixmierListerGroup
+import Formal.UnitriangularExpLog
 import Formal.Audit

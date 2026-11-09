@@ -72,8 +72,8 @@ q^{q²}(n+1)^{q−1} [literature]).
    gadget [exact at q = 7, `big_7_int_nest.out`; q = 11 only for the P-equivariant problem,
    `big_11_int_nest.out` (referee C finding 2: Lemma Q is not shown exact for S = {0,±1,±2})]; q = 13: open (§2). The one-dimensional
    KOW round is reproduced as a feasibility fact at q = 5, 7, 11, 13 [exact, `table_small.out`].
-5. **(c) 0/1 subset sum at q = 5, 7.** Nothing of lower degree from this framework [proved,
-   Lemma Z]: a 0/1 realization of even one dimension forces the label set into four parallel
+5. **(c) 0/1 subset sum at q = 5, 7.** Nothing of lower degree from this framework [argued; Lemma Z
+   proves the four-hyperplane confinement and the infeasibility of nested and full label sets]: a 0/1 realization of even one dimension forces the label set into four parallel
    hyperplanes {⟨γ, ℓ⟩ ∈ {−2,−1,0,1}}, which no pattern set that support nesting or weight
    selection can force satisfies; k = 1, 2, 3 nested and all-pattern sets are UNSAT at p = 5, 7
    [exact]. KOMSW's exponent q − 1 is untouched.
@@ -112,17 +112,23 @@ on the labels (one column per label); a nonzero S-realizer y of 0 gives one with
 The decision problem "is L d-feasible with weak nondegeneracy" is finite; `gadget_cnf4.py` decides
 it (one-hot CNF, every model re-verified over all α and all labels by `gadget_cnf.verify`).
 
-**Lemma R (coset reduction) [proved].** If (Φ, γ) is feasible and weakly nondegenerate, so is
-(Φ, γ′) with γ′_{λα} := λγ_α for λ ∈ P and α in a fixed set of representatives of F_p^d∖0 modulo P.
-*Proof.* y′_{λα} = λ(⟨α, Φ⟩ + ⟨γ_α, ·⟩) = λ y_α ∈ λS = S, nonzero iff y_α is. *Wording repair (referee B
-finding 3).* Weak nondegeneracy is per direction, not per α: if the only nonzero realizer of a direction
-sits at a non-representative multiple μα, the formula γ′_{λα} := λγ_α with α the representative can make
-that direction degenerate. So re-base each (direction, coset) slot at a nonzero member μα of it: set
-y′_{νμα} := ν y_{μα} (ν ∈ P); this is a valid family since y_{μα} ≡ ⟨μα, y_e⟩ modulo the row space, it
-takes values in νS = S and is nonzero iff y_{μα} is, and the CNF's free γ-slot for that coset can
-represent it (for coset 0 of a unit direction re-normalise Φ_j := μ^{-1} y_{μe_j}). The choice is per
-slot, so it never conflicts (unlike Lemma Q). ∎ So the free data are
-γ_α for α in a set of (p^d − 1)/|P| representatives: for d = 2 and κ = 2, (p+1) directions × 2
+**Lemma R (coset reduction) [proved; restated 9 Nov in the per-slot existence form of referee B
+finding 3].** Call {λα : λ ∈ cP} (a projective direction [α] and a coset cP of P in F_p^*) a *slot*.
+If a feasible, weakly nondegenerate (Φ, γ) exists, then a feasible, weakly nondegenerate (Φ′, γ′)
+exists that is P-equivariant, γ′_{λα} = λγ′_α for all λ ∈ P and α ≠ 0, and normalised,
+γ′_{e_j} = 0 (j = 1..d). On a slot, equivariance says γ′_{νβ} = νγ′_β (ν ∈ P) for any member β; the
+proof builds γ′ from a member chosen per slot, depending on the solution, and the CNF places the slot's
+free γ-value at a fixed representative. (The earlier statement, which took γ′_{λα} := λγ_α
+from the original γ at a fixed set of representatives α, is false in general: if the only nonzero
+realizer of a direction sits at a non-representative multiple, it can make that direction degenerate.)
+*Proof (referee B finding 3).* In each slot pick a member β with y_β ≢ 0 on L if there is one (any member
+otherwise) and set ỹ_{νβ} := ν y_β (ν ∈ P), i.e. γ̃_{νβ} := νγ_β with the same Φ. These values lie in
+νS = S, and ỹ vanishes on a slot only if y vanishes on all of it, so every direction keeps a nonzero
+realizer. In the slot Pe_j, with chosen member μ_j e_j (μ_j ∈ P), put Φ′_j := μ_j^{-1} y_{μ_j e_j} ∈ S. Then
+Φ′_j − Φ_j = ⟨μ_j^{-1}γ_{μ_j e_j}, ℓ⟩ is a row-space term, so with γ′_α := γ̃_α − Σ_j α_j μ_j^{-1}γ_{μ_j e_j}
+every realizer is unchanged, ỹ_α = ⟨α, Φ′⟩ + ⟨γ′_α, ℓ⟩; γ′ is P-equivariant (the correction is linear
+in α) and γ′_{e_j} = 0. The choices are per slot, so they never conflict (unlike Lemma Q). ∎ So the free
+data are one γ-value per slot, (p^d − 1)/|P| of them: for d = 2 and κ = 2, (p+1) directions × 2
 cosets minus the two unit directions at coset 0 (where γ = 0 because Φ_j := y_{e_j}).
 
 **Lemma Q (label scaling) [proved].** For λ ∈ P the constraints at λℓ with Φ(λℓ) := λΦ(ℓ) are those
@@ -305,7 +311,7 @@ these sets), so they are infeasible for every k and every p ≥ 5
 (for p = 3 the four values are all of F_3, which is KOW's gadget). ∎ Exact confirmation: k = 1, 2, 3
 at p = 5, 7 UNSAT (`table_small.out`). A one-dimensional 0/1 piece thus needs a label set confined
 to four hyperplanes — a pattern gap that neither support nesting nor weight selection produces —
-so the framework gives no polynomial of degree below q − 1 here; it does not say that KOMSW's
+so the framework gives no polynomial of degree below q − 1 here [argued]; it does not say that KOMSW's
 degree is optimal.
 
 ## 6. Computations

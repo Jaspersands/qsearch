@@ -46,6 +46,9 @@ import Formal.ReesSdePolicy
 import Formal.ReesSdeSolver
 import Formal.ReesMergeReduction
 import Formal.ReesS2Local
+import Formal.DixmierListerScalars
+import Formal.DixmierListerGroup
+import Formal.UnitriangularExpLog
 
 /-!
 # Axiom audit
@@ -2304,3 +2307,97 @@ Guards for `ReesGeneralCover`, `ReesGeneralLaw`, `ReesGeneralLawClassThree` and
 /-- info: 'QSearch.ReesS2Local.seven_not_mem_E2_three' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs (whitespace := lax) in
 #print axioms QSearch.ReesS2Local.seven_not_mem_E2_three
+
+/-! ## Dixmier–Lister central scalars and the unitriangular exp/log condition (2026-11-09) -/
+
+/-- info: 'QSearch.DixmierLister.table' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.table
+
+/-- info: 'QSearch.DixmierLister.table_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.table_zero
+
+/-- info: 'QSearch.DixmierLister.mem_center_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.mem_center_iff
+
+/-- info: 'QSearch.DixmierLister.signEquiv_center' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.signEquiv_center
+
+/-- info: 'QSearch.DixmierLister.core_alg' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.core_alg
+
+/-- info: 'QSearch.DixmierLister.scalar_core' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.scalar_core
+
+/-- info: 'QSearch.DixmierLister.exists_aut_center_smul_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.exists_aut_center_smul_iff
+
+/-- info: 'QSearch.DixmierLister.lcs_three_eq_bot' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.lcs_three_eq_bot
+
+/-- info: 'QSearch.DixmierLister.toLieEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.toLieEquiv
+
+/-- info: 'QSearch.DixmierLister.mem_center_iff_val' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.mem_center_iff_val
+
+/-- info: 'QSearch.DixmierLister.group_center_pow_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.group_center_pow_iff
+
+/-- info: 'QSearch.DixmierLister.group_center_zpow_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.DixmierLister.group_center_zpow_iff
+
+/-- info: 'QSearch.UnitriangularExpLog.natCast_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.natCast_ne_zero
+
+/-- info: 'QSearch.UnitriangularExpLog.factorial_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.factorial_ne_zero
+
+/-- info: 'QSearch.UnitriangularExpLog.exp_log_congr' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.exp_log_congr
+
+/-- info: 'QSearch.UnitriangularExpLog.log_exp_congr' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.log_exp_congr
+
+/-- info: 'QSearch.UnitriangularExpLog.texp_tlog' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.texp_tlog
+
+/-- info: 'QSearch.UnitriangularExpLog.tlog_texp' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.tlog_texp
+
+/-- info: 'QSearch.UnitriangularExpLog.expEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.expEquiv
+
+/-- info: 'QSearch.UnitriangularExpLog.pow_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.pow_eq_one
+
+/-- info: 'QSearch.UnitriangularExpLog.matrix_group_condition' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.matrix_group_condition
+
+/-- info: 'QSearch.UnitriangularExpLog.strictUpper_prod_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.strictUpper_prod_eq_zero
+
+/-- info: 'QSearch.UnitriangularExpLog.unitriangular_condition' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.UnitriangularExpLog.unitriangular_condition

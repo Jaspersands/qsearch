@@ -1,0 +1,15 @@
+Table tab:fcs-budget, uniform-kernel columns (paper value in brackets):
+p=11: S3 grades [], S2 grades [], added 0  (no uniform-kernel node: table shows a dash)
+p=1031: S3 grades [], S2 grades [2, 4, 6, 8], added 0  (no uniform-kernel node: table shows a dash)
+p=5281: S3 grades [2, 3, 4, 5, 6, 8, 9], S2 grades [], added 0, log2 Q=50.27 [50.3], log2 trials=128.23 [128.2], B=45, log2 lhs=-67.24, log2 tree-abort=-6.376  M=[72, 68, 60, 52, 40, 7, 32, 12]
+p=2147483647: S3 grades [2, 3, 4, 6, 7, 9], S2 grades [8], added 0, log2 Q=50.86 [50.9], log2 trials=121.58 [121.6], B=44, log2 lhs=-546.01, log2 tree-abort=-6.388  M=[72, 68, 60, 13, 40, 28, 16, 36]
+p=2305843009213693951: S3 grades [2, 3, 4, 5, 6, 7, 9], S2 grades [8], added 0, log2 Q=52.86 [52.9], log2 trials=128.26 [128.3], B=46, log2 lhs=-1174.01, log2 tree-abort=-6.388  M=[72, 68, 60, 52, 40, 28, 16, 36]
+p=170141183460469231731687303715884105727: S3 grades [2, 3, 4, 6, 7], S2 grades [8, 9], added 0, log2 Q=49.86 [49.9], log2 trials=115.20 [115.2], B=43, log2 lhs=-2562.01, log2 tree-abort=-6.909  M=[72, 68, 60, 13, 40, 28, 16, 18]
+max log2 lhs over S3 rows = -67.24 (paper: at most 2^-67); tree-abort range [-6.91, -6.38] (paper: 2^-6.91 .. 2^-6.38)
+p=151: types {2: 'S1', 3: 'S1', 4: 'S1', 5: 'S1', 6: 'S1', 7: 'lin', 8: 'S1', 9: 'S3'}, added {2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 60}, M_9=72
+p=151: log2 of n_9*beta_9(12) = 331.2 (paper: far above 1)
+part (iv) u=18 p=5281: max kappa=8, B=56, log2(4 kappa^M B)=223.81
+part (iv) u=18 p=2147483647: max kappa=9, B=56, log2(4 kappa^M B)=236.04
+part (iv) u=18 p=2305843009213693951: max kappa=9, B=56, log2(4 kappa^M B)=236.04
+part (iv) u=18 p=170141183460469231731687303715884105727: max kappa=9, B=56, log2(4 kappa^M B)=236.04
+range 223.8 .. 236.0 (paper: 223.8 .. 236.0); u=18 needs g_2 = 17 <= u-1 = 17

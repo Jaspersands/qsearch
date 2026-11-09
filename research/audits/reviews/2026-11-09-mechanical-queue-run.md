@@ -43,16 +43,17 @@ Interpreter `/opt/anaconda3/bin/python`, `nice -n 19`, no computation above abou
   would give 2N*/9); the KOW comparison now names the note's sharpened `kow_recursion()` versus KOW's own
   recursion (8) (below it for 9 ≤ n < 3000, integer pieces 15 ≤ n; explicit closed form beats KOW's closed form only
   for n > 80, (8) only for n > 105), all numbers from the referee's `recursion_ref.out`; Remark (b) marked
-  UNPROVED; "guaranteed 63, 84, 109, 135" relabelled bound(n) (guarantee(n) = 46, 64, 85, 109); k = 4 SAT
+  UNPROVED; "guaranteed 63, 84, 109, 135" relabelled bound(n) (guarantee(n) = 46, 64, 85, 108); k = 4 SAT
   results and the wnest.py fix recorded. A short corrections paragraph sits at the top.
 
 ## Worst Case Below a²
 
 See `…-subquad-A-break.md` §11. Climb: 24 200 bank evaluations, 0 failures, no negative slack; least
 `rec_count_U+33` slack 0 at J = 4 (3 538 banks reaching the branch) and J = 5 (364). J = 4, κ = 3 at
-p = 2 789 427 520 807: 131 banks, 0 assertion failures, 3 480 back-substitution passes, 0 failures. The new
-`interesting/` files written by `attack_bigp.py` carry p ≈ 2.8e12 banks. New asserts in `subquad.py` held on
-all eleven stored test groups. `la.py` is unchanged unless `QS_BIGP=1`.
+p = 2 789 427 520 807: 131 banks, 0 assertion failures, 3 480 back-substitution passes, 0 failures. New
+asserts in `subquad.py` held on all eleven stored test groups. `la.py` is unchanged unless `QS_BIGP=1`.
+[9 Nov audit P8: a sentence saying `attack_bigp.py` wrote new p ≈ 2.8e12 banks to `interesting/` was deleted;
+no such files exist.]
 
 ## 2026-11-09 sections
 

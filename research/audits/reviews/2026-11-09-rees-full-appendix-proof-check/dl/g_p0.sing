@@ -1,0 +1,58 @@
+// gauge-fixed block formulation, 29 generators, char 0, mode full
+LIB "primdec.lib";
+ring r = 0, (b13,b23,b14,b24,t,a11,a12,a13,a14,a21,a22,a23,a24,a31,a32,a33,a34,a41,a42,a43,a44), dp;
+option(redSB);
+ideal I = a11*a24 - a14*a21 - a31*a44 + a34*a41,
+a11*a34 - a14*a31 + a21*a44 - a24*a41,
+-a11*a22*a33 - a11*a23*a32 + a11*a44 + a12*a21*a33 + a12*a23*a31 - a14*a41 - a21*a23*a42 - a21*b24 + a22*a23*a41 + a31*a33*a42 - a31*b14 - a32*a33*a41,
+-a11*a13*a22 - a11*a32*a43 - a11*b14 + a12*a13*a21 + a12*a31*a43 + a13*a31*a42 - a13*a32*a41 + a21*a34 - a21*a42*a43 + a22*a41*a43 - a24*a31 - a41*b24,
+a12*a23 - a13*a22 - a32*a43 + a33*a42,
+a12*a33 - a13*a32 + a22*a43 - a23*a42,
+-a11*a21*a32 - a11*a22*a31 + 2*a12*a21*a31 + a12*a43 - a13*a42 - a21^2*a42 + a21*a22*a41 - a22*b23 + a31^2*a42 - a31*a32*a41 - a32*b13,
+-a11^2*a22 + a11*a12*a21 + a11*a31*a42 - 2*a11*a32*a41 + a12*a31*a41 - a12*b13 - a21*a41*a42 + a22*a33 + a22*a41^2 - a23*a32 - a42*b23,
+-a11*a23 + a12*a24 + a13*a21 - a14*a22 + a31*a43 - a32*a44 - a33*a41 + a34*a42,
+-a11*a33 + a12*a34 + a13*a31 - a14*a32 - a21*a43 + a22*a44 + a23*a41 - a24*a42,
+-a11*a43 + a12*a44 + a13*a41 - a14*a42 + a21*b23 - a22*b24 + a31*b13 - a32*b14,
+a11*b13 - a12*b14 - a21*a33 + a22*a34 + a23*a31 - a24*a32 + a41*b23 - a42*b24,
+a11*a22 - a12*a21 + a13*a24 - a14*a23 - a31*a42 + a32*a41 - a33*a44 + a34*a43,
+a11*a32 - a12*a31 + a13*a34 - a14*a33 + a21*a42 - a22*a41 + a23*a44 - a24*a43,
+a11*a42 - a12*a41 + a13*a44 - a14*a43 - a23*b24 + a24*b23 - a33*b14 + a34*b13,
+-a13*b14 + a14*b13 + a21*a32 - a22*a31 + a23*a34 - a24*a33 - a43*b24 + a44*b23,
+-a11*a21*a33 - a11*a23*a31 + 2*a13*a21*a31 - a21^2*a43 + a21*a23*a41 + a31^2*a43 - a31*a33*a41,
+-a11^2*a23 + a11*a13*a21 + a11*a31*a43 - 2*a11*a33*a41 + a13*a31*a41 - a21*a41*a43 + a23*a41^2,
+-2*a11*a22*a32 + a12*a21*a32 + a12*a22*a31 - a21*a22*a42 + a22^2*a41 + a31*a32*a42 - a32^2*a41,
+-a11*a12*a22 - a11*a32*a42 + a12^2*a21 + 2*a12*a31*a42 - a12*a32*a41 - a21*a42^2 + a22*a41*a42,
+-a12*a21*a33 - a12*a23*a31 + a13*a21*a32 + a13*a22*a31 - a21*a22*a43 + a21*a23*a42 + a31*a32*a43 - a31*a33*a42,
+-a11*a12*a23 + a11*a13*a22 + a11*a32*a43 - a11*a33*a42 - a12*a33*a41 + a13*a32*a41 - a22*a41*a43 + a23*a41*a42,
+-2*a11*a23*a33 + a13*a21*a33 + a13*a23*a31 - a21*a23*a43 + a23^2*a41 + a31*a33*a43 - a33^2*a41,
+-a11*a13*a23 - a11*a33*a43 + a13^2*a21 + 2*a13*a31*a43 - a13*a33*a41 - a21*a43^2 + a23*a41*a43,
+-a11*a22*a34 - a11*a24*a32 + a12*a21*a34 + a12*a24*a31 - a21*a24*a42 + a22*a24*a41 + a31*a34*a42 - a32*a34*a41,
+-a11*a14*a22 - a11*a32*a44 + a12*a14*a21 + a12*a31*a44 + a14*a31*a42 - a14*a32*a41 - a21*a42*a44 + a22*a41*a44,
+a11*a21*a32 + a11*a22*a31 - a11*a23*a34 - a11*a24*a33 - 2*a12*a21*a31 + a13*a21*a34 + a13*a24*a31 + a21^2*a42 - a21*a22*a41 - a21*a24*a43 + a23*a24*a41 - a31^2*a42 + a31*a32*a41 + a31*a34*a43 - a33*a34*a41,
+a11^2*a22 - a11*a12*a21 - a11*a14*a23 - a11*a31*a42 + 2*a11*a32*a41 - a11*a33*a44 - a12*a31*a41 + a13*a14*a21 + a13*a31*a44 + a14*a31*a43 - a14*a33*a41 + a21*a41*a42 - a21*a43*a44 - a22*a41^2 + a23*a41*a44,
+a11*a22*a33*a44*t - a11*a22*a34*a43*t - a11*a23*a32*a44*t + a11*a23*a34*a42*t + a11*a24*a32*a43*t - a11*a24*a33*a42*t - a12*a21*a33*a44*t + a12*a21*a34*a43*t + a12*a23*a31*a44*t - a12*a23*a34*a41*t - a12*a24*a31*a43*t + a12*a24*a33*a41*t + a13*a21*a32*a44*t - a13*a21*a34*a42*t - a13*a22*a31*a44*t + a13*a22*a34*a41*t + a13*a24*a31*a42*t - a13*a24*a32*a41*t - a14*a21*a32*a43*t + a14*a21*a33*a42*t + a14*a22*a31*a43*t - a14*a22*a33*a41*t - a14*a23*a31*a42*t + a14*a23*a32*a41*t - 1;
+int t0 = rtimer;
+I = std(I);
+print("dim, vdim of the gauge-fixed automorphism ideal:"); print(dim(I)); print(vdim(I));
+ideal R = std(radical(I)); print("vdim of radical (number of component points over the algebraic closure):"); print(vdim(R));
+ring r2 = 0, (b13,b23,b14,b24,t,a11,a12,a13,a14,a21,a22,a23,a24,a31,a32,a33,a34,a41,a42,a43,a44,c11,c12,c21,c22,z,x), (dp(21),dp(6));
+option(redSB);
+ideal R = imap(r,R);
+ideal Cdef = c11-(a11*a22*a33 + a11*a23*a32 - a12*a21*a33 - a12*a23*a31 + a21*a23*a42 - a22*a23*a41 - a31*a33*a42 + a32*a33*a41), c12-(a11*a21*a32 + a11*a22*a31 - 2*a12*a21*a31 + a21^2*a42 - a21*a22*a41 - a31^2*a42 + a31*a32*a41), c21-(a11*a13*a22 + a11*a32*a43 - a12*a13*a21 - a12*a31*a43 - a13*a31*a42 + a13*a32*a41 + a21*a42*a43 - a22*a41*a43), c22-(a11^2*a22 - a11*a12*a21 - a11*a31*a42 + 2*a11*a32*a41 - a12*a31*a41 + a21*a41*a42 - a22*a41^2);
+ideal Jc = eliminate(R+Cdef+ideal(z,x), b13*b23*b14*b24*t*a11*a12*a13*a14*a21*a22*a23*a24*a31*a32*a33*a34*a41*a42*a43*a44);
+ring rc = 0, (c11,c12,c21,c22), dp;
+option(redSB);
+ideal Jc = std(imap(r2,Jc));
+print("image on the centre (C e7 = c11 e7 + c21 e8, C e8 = c12 e7 + c22 e8): vdim of radical =");
+ideal RC=std(radical(Jc)); print(vdim(RC)); print(RC);
+print("minimal associated primes of the image (each is one point over the base field or a Galois orbit):");
+list L=minAssGTZ(RC); int k; for(k=1;k<=size(L);k++){print(L[k]); print("--");}
+setring r2;
+ideal Jz = eliminate(R+Cdef+ideal(c12,c21,c11-z,c22-z,x), b13*b23*b14*b24*t*a11*a12*a13*a14*a21*a22*a23*a24*a31*a32*a33*a34*a41*a42*a43*a44*c11*c12*c21*c22*x);
+ideal Jx = eliminate(R+Cdef+ideal(x^2-(c11+c22)*x+(c11*c22-c12*c21), z), b13*b23*b14*b24*t*a11*a12*a13*a14*a21*a22*a23*a24*a31*a32*a33*a34*a41*a42*a43*a44*c11*c12*c21*c22*z);
+ring rz = 0, (z,x), dp;
+ideal Jz = std(imap(r2,Jz)); ideal Jx = std(imap(r2,Jx));
+print("SCALARS: ideal in z of zeta with C = zeta*Id:"); print(Jz); int kk; for(kk=1;kk<=size(Jz);kk++){print(factorize(Jz[kk]));}
+print("EIGENVALUES on the centre: ideal in x:"); print(Jx); for(kk=1;kk<=size(Jx);kk++){print(factorize(Jx[kk]));}
+print("seconds:"); print(rtimer-t0);
+quit;

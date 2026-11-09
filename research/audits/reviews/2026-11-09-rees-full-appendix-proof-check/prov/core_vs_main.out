@@ -1,0 +1,29 @@
+labels on + lines of the core diff: ['cor:black-box', 'cor:black-box-pe', 'prop:dl-central-scalars', 'rem:black-box-pe-source', 'rem:black-box-scope', 'rem:oblivious']
+
+cor:black-box: core 188 words, main 192 words, ratio 0.984
+  replace: core[$p$]] main[$p$; AI-checked, pending human review]]
+
+cor:black-box-pe: core 247 words, main 251 words, ratio 0.988
+  replace: core[$p^e$]] main[$p^e$; AI-checked, pending human review]]
+
+prop:dl-central-scalars: core 75 words, main 75 words, ratio 1.000
+
+rem:black-box-pe-source: core 269 words, main 284 words, ratio 0.969
+  insert: core[] main[Remark~\ref{rem:tb-ring-sources} relates the recursion to other outer loops.]
+  replace: core[(Appendix~\ref{app:artifacts})] main[(Appendix~\ref{app:provenance}, item~\ref{prov:bb-corollary-pe}; finite computation, AI-checked, pending human review)]
+
+rem:black-box-scope: core 345 words, main 339 words, ratio 0.874
+  replace: core[part~(ii) of the black-box free-Lie pullback proposition of~\fullv,] main[Proposition~\ref{prop:black-box}(ii) (Appendix~\ref{app:torsion-blackbox}),]
+  replace: core[the chart lemma used there,] main[Lemma~\ref{lem:tb-chart},]
+  replace: core[only results proved here and the inverse Baker--Campbell--Hausdorff formulas from the literature.] main[Lemmas~\ref{lem:tb-words}, \ref{lem:tb-evaluation} and~\ref{lem:tb-kernel}.]
+  replace: core[Corollary~\ref{cor:black-box-pe}.] main[Corollary~\ref{cor:black-box-pe}, which takes route~(R2) of Proposition~\ref{prop:black-box}(ii).]
+  replace: core[in~\fullv{} (its all-prime black-box theorem)] main[of Theorem~\ref{thm:bb-envelope}]
+  replace: core[this paper does not treat those steps,] main[Theorem~\ref{thm:bb-envelope} is stated with the combined rule of Remark~\ref{rem:combined-schedule}]
+
+rem:oblivious: core 120 words, main 269 words, ratio 0.581
+  replace: core[oracles]] main[oracles; AI-checked, pending human review]]
+  replace: core[and] main[with the conversion of Remark~\ref{rem:is-import}(b) (Section~\ref{sec:recursion}). The same holds when the recursion uses the arities]
+  replace: core[conversion to] main[combined rule of Remark~\ref{rem:combined-schedule}, without its block-steered option, as in Theorem~\ref{thm:bb-envelope}. Those arities are fixed by $p$, $d$ ]
+  replace: core[exponent $d$.] main[expected running time of one attempt on any columns. The cut-off needs $T$ as an explicit function of $(p,\kappa_d,g_d)$. Theorem~\ref{thm:app-s2-main} shows th]
+  insert: core[] main[of Theorem~\ref{thm:main}]
+  replace: core[uses] main[and Theorem~\ref{thm:bb-envelope} use]
