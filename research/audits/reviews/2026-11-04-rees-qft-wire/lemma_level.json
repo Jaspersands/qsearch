@@ -1,0 +1,94 @@
+{
+ "heis_f3": {
+  "n_samples": 7,
+  "zero_calls": 18,
+  "general_calls": 6,
+  "eta": 0.001488095238095238,
+  "params": [
+   26,
+   19,
+   15
+  ],
+  "delta_lemma_level": 0.014105756587685467,
+  "run_failure_lemma_level": 0.09874029611379827,
+  "delta_exact_formula": 0.004556961214619959,
+  "counts": {
+   "qubits": 154,
+   "ancillas_arith": 11,
+   "pool_qubits": 61,
+   "arith_gates": 42234,
+   "swap_macro_gates": 24,
+   "qft_calls": 24,
+   "oracle_calls": 6,
+   "qft_gates": 188952,
+   "qft_gate_types": {
+    "x": 23568,
+    "cx": 106872,
+    "ccx": 39792,
+    "swap": 240,
+    "h": 2784,
+    "r": 1392,
+    "cr": 14304
+   },
+   "qft_gates_per_call": 7873.0,
+   "total_gates_excl_oracle": 231210,
+   "params": {
+    "t": 26,
+    "r": 19,
+    "tp": 15
+   },
+   "max_rotation_index": 19,
+   "zero_input_calls": {
+    "zero": 18,
+    "general": 6
+   },
+   "seconds": 0.06
+  }
+ },
+ "n4_f5": {
+  "n_samples": 8,
+  "zero_calls": 124,
+  "general_calls": 24,
+  "eta": 0.0002798507462686567,
+  "params": [
+   32,
+   22,
+   18
+  ],
+  "delta_lemma_level": 0.011174549575240405,
+  "run_failure_lemma_level": 0.08939639660192324,
+  "delta_exact_formula": 0.005562292629624508,
+  "counts": {
+   "qubits": 835,
+   "ancillas_arith": 14,
+   "pool_qubits": 77,
+   "arith_gates": 1028700,
+   "swap_macro_gates": 300,
+   "qft_calls": 148,
+   "oracle_calls": 30,
+   "qft_gates": 1968844,
+   "qft_gate_types": {
+    "x": 241536,
+    "cx": 1111628,
+    "ccx": 448440,
+    "swap": 3996,
+    "h": 21164,
+    "r": 11248,
+    "cr": 130832
+   },
+   "qft_gates_per_call": 13303.0,
+   "total_gates_excl_oracle": 2997844,
+   "params": {
+    "t": 32,
+    "r": 22,
+    "tp": 18
+   },
+   "max_rotation_index": 22,
+   "zero_input_calls": {
+    "zero": 124,
+    "general": 24
+   },
+   "seconds": 1.36
+  }
+ }
+}

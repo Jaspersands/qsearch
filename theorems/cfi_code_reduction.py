@@ -456,9 +456,12 @@ def audit_cfi_graph_code(base_id: str, seed: int = 14_071) -> CFIGraphCodeRecord
 def run_cfi_graph_code_reduction(base_ids: Sequence[str] | None = None, seed: int = 14_071) -> CFIGraphCodeReductionReport:
     active = list(base_ids) if base_ids is not None else list(DEFAULT_BASE_IDS)
     records = [audit_cfi_graph_code(base_id, seed=seed) for base_id in active]
+    # A direction counts only when every base row verifies it, so the count cannot exceed what was checked.
+    recovery_all = bool(records) and all(record.recovered_graphs_match_sources_up_to_isomorphism for record in records)
+    controls_all = bool(records) and all(record.equivalent_control_witness_verified for record in records)
     metrics: dict[str, int | float] = {
         "base_count": len(records),
-        "theorem_direction_count": 2,
+        "theorem_direction_count": int(recovery_all) + int(controls_all),
         "recovery_verified_count": sum(record.recovered_graphs_match_sources_up_to_isomorphism for record in records),
         "equivalent_control_verified_count": sum(record.equivalent_control_witness_verified for record in records),
         "promised_decoder_dequantized_count": sum(

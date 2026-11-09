@@ -1,0 +1,10 @@
+ q   N   start        max wt-(r*+2)   max wt   cap 2N/3+2sqrtN/3   max sigma   (4/3)sqrt(N)   N* range
+ 8   20  random            4            14      16.31             2.11        5.96      20..20
+ 8   20  duplicates        4            14      16.31             2.11        5.96      20..20
+10   23  random            4            16      18.53             2.26        6.39      23..23
+10   23  duplicates        4            16      18.53             2.62        6.39      23..23
+12   27  random            5            19      21.46             2.45        6.93      27..27
+12   27  duplicates        5            19      21.46             2.45        6.93      27..27
+14   30  random            5            21      23.65             2.58        7.30      30..30
+14   30  duplicates        5            20      23.65             2.75        7.30      28..30
+no assert fired: wt >= r*+2 and wt <= 2N/3 + 2 sqrt(N)/3 on every pool visited

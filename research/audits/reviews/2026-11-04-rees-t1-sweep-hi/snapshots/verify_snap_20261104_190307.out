@@ -1,0 +1,14 @@
+witness FOUND lines=417860 unparsed=0 valid distinct p=417860 bad lines=0 lines outside (LO,HI]=0
+chunk                  lo         hi   primes    valid   bad   dup  missing
+c00               8388608   15204417   104776   104776     0     0        0
+c01              15204417   22020227   101764   101764     0     0        0
+c02              22020227   28836037    99972    99972     0     0        0
+c03              28836037   35651846    98460    98460     0     0        0
+c04              35651846   36056497     5784     5784     0     0        0
+c05              42467656   42759793     4134     4134     0     0        0
+c06              49283466   49480993     2784     2784     0     0        0
+c07              56099275   56112169      186      186     0     0        0
+TOTAL             8388608  117441563   417860   417860     0     0        0
+primes p=1 mod 8 in (8388608,117441563]: 1534715
+first failing prime: 36056593; last prime of the contiguous verified run: 36056497
+CONTIGUOUS: every prime p=1 mod 8 in (8388608,36056592] has exactly one valid strict witness

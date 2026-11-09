@@ -1,5 +1,11 @@
 # Unconditional Ternary Decoding To Constrained-Product Sampling
 
+**2026-10-31 follow-up:** `TERNARY_SEQUENTIAL_SAMPLING.md` supplies an
+independently reviewed classical sampler matching this proposal's
+ensemble-average guarantee under the same imported block theorem. The
+historical derivation below is retained; it is not an unmatched quantum
+sampling advantage.
+
 2026-10-20. LOCAL REDUCTION DERIVATION / INDEPENDENT REVIEW PENDING.
 Known Fourier/coherent-decoding paradigm, not a novelty or speedup claim.
 This pass implements the full bounded gate sequence and supplies an explicit

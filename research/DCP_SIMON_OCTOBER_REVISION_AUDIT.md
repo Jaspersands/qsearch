@@ -6,6 +6,12 @@ constructive-DCP and alternative-direction reviews. This is automated
 research review, not human peer review, a new quantum algorithm, or a fresh
 Lean verification of either external paper.
 
+November follow-up: the independently inspected November mirror still
+specifies the same decoder; its rewritten explanation adds no new
+full-label-dependent operation. Direct official/mirror byte identity remains
+UNKNOWN. See `audits/reviews/2026-11-05-simon-november-source-delta.md` for
+the pinned bytes, metadata, operational comparison and strict scope.
+
 ## Decision
 
 Do not reopen this decoder on the strength of its October response. Its

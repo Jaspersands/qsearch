@@ -1,0 +1,74 @@
+# Exact excerpt from PRIME_INDEX_FACTORIAL_RESIDUE_NORMALIZATION.md Section5
+
+Choose any nonzero unit-coordinate vector v. The vectors
+v,Sv,...,S^(ell-2)v form a rational basis, since Phi_ell is irreducible.
+The inverse map1->v,zeta->Sv identifies U with a fractional ideal D_U
+of R. Thus C corresponds to the PRINCIPAL fractional ideal J=I*D_U.
+Its presentation has polynomial bit size. This does not make an arbitrary
+compact generator safe to expand: eta^(2^B) in Z[zeta_5] is the explicit
+counterexample to that shortcut.
+
+Find a compact generator a of J using the existing S-unit theorem in
+Q(zeta), with S its factored ideal support, then solve the valuation
+vector of J. To find this support, first choose a known integer D0 with
+D0*J integral; factor BOTH D0 and the integer norm N(D0*J), then decompose
+those rational primes in R. Factoring the rational norm N(J) alone is
+insufficient: a quotient of distinct equal-norm primes can have norm1.
+Shor and finite-field ideal factorization pay this corrected step.
+Principality is guaranteed by(3), not
+supplied as a hidden generator. An exact ideal check below certifies a
+successful output; capped retries amplify this stage separately.
+
+### Balance height, without solving full-unit BDD
+
+Let m=(ell-1)/2 and use the explicit circular units
+u_i=(1-zeta^i)/(1-zeta),2<=i<=m. Their m-coordinate logarithmic columns
+B form a basis of the zero-sum real subspace. Every entry has absolute
+value<=logell. The underlying circulant log matrix has nonprincipal
+Fourier eigenvalues of magnitude sqrtell*|L(1,psi)|/2 for the even
+characters psi modulo ell. All nonreal psi have the retained effective
+inverse-log lower bound. If the real even quadratic character exists,
+use its SEPARATE class formula
+
+    L(1,psi)=2hR/sqrtell >=2log((1+sqrt5)/2)/sqrtell.
+
+Thus all relevant eigenvalues are bounded below by an effective absolute
+constant c0>0. The difference matrix with columns e_i-e_1 has least
+singular value1; consequently B has least singular value at least c0.
+For ell3 the zero-dimensional balancing step is empty.
+
+For the known compact a, put mu=log|N(J)|/(ell-1). Express
+Log(a)-mu*1 in B to coordinate error<=1/4 and round to integers. Divide a
+by the resulting product of u_i to get a'. Residual coordinates have
+absolute value<=3/4, hence
+
+    |log|sigma(a')|| <= |mu|+(3/4)(m-1)logell.              (9)
+
+This is ordinary basis rounding to get ANY generator of controlled BIT
+height. The index of circular units in full units is irrelevant; there
+is no closest-unit requirement and no h^+ coset enumeration. Large
+compact exponents enter the required precision through their bit lengths.
+No blanket inverse-log lower bound for REAL Dirichlet characters is used.
+
+Take a known integer D0 with D0*J contained in R, from its fractional-ideal
+presentation. Then b=D0*a' is integral. Do not multiply leaf denominators
+to huge powers. Equation(9) bounds all embeddings by
+M=D0*exp(|mu|+O(ell logell)); logM is polynomial in the original input.
+Writing b=sum_(j=0)^(ell-2)b_j*zeta^j, with b_(ell-1)=0, gives
+
+    b_j=(1/ell)sum_(a=1)^(ell-1)
+            (zeta^(-aj)-zeta^a)*sigma_a(b),   |b_j|<=2M.  (10)
+
+Evaluate these KNOWN compact embeddings by certified log-magnitude and
+phase arithmetic, to absolute error<1/8, and round the b_j to integers.
+Precision is polynomial in logM, leaf heights and log(sum|exponents|).
+Even very large intermediate magnitudes need no expanded intermediate
+products. Check exactly that(b/D0)=J. Map this polynomial-BIT expanded
+R-generator back to U; it yields the required compact c0 using ordinary
+binary exponents. An arbitrary PIP answer is not used without this repair.
+
+The log-basis argument is independently reviewed. Its purpose differs
+from [CDPR Theorem4.1](https://sites.cc.gatech.edu/fac/cpeikert/pubs/logunit.pdf),
+which recovers a prescribed short generator only for a circular-unit
+multiplier, then discusses h^+ coset enumeration for full units.
+

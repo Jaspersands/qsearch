@@ -1,0 +1,2 @@
+XCHECK K=10 p<=3800: agree=129 disagree=0 undecided=0
+timeout 1500 nice -n 10 /opt/anaconda3/bin/python xcheck_dfs2b.py 10 3800   38.40s user 0.44s system 47% cpu 1:21.42 total

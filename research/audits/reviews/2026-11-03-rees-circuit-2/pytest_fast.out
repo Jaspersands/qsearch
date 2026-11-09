@@ -1,0 +1,15 @@
+...........................................................sssssssssssss [ 98%]
+s                                                                        [100%]
+============================= slowest 10 durations =============================
+6.74s call     tests/test_rees_circuit_general.py::test_n4_seeded_runs_recover_log_h_with_is_solver_at_grade_three
+3.74s call     tests/test_rees_circuit_general.py::test_n4_is_solver_at_both_grades_with_arity_18
+1.98s call     tests/test_rees_circuit_general.py::test_n4_every_grade_exact[n4(F_5) H=<e1+e3> non-normal]
+1.94s call     tests/test_rees_circuit_general.py::test_n4_every_grade_exact[n4(F_5) H=trivial]
+1.78s call     tests/test_rees_circuit_general.py::test_n4_every_grade_exact[n4(F_5) H=<e2> non-normal]
+1.77s call     tests/test_rees_circuit_general.py::test_n4_every_grade_exact[n4(F_5) H=<e2,e3> non-normal]
+1.67s call     tests/test_rees_circuit_general.py::test_n4_every_grade_exact[n4(F_5) H=<e1> non-normal]
+1.26s call     tests/test_rees_circuit_general.py::test_n4_every_grade_exact[n4(F_5) H=Z(G)]
+1.13s call     tests/test_rees_circuit_general.py::test_n4_resource_counts_match_formulas
+1.08s call     tests/test_rees_circuit_general.py::test_n4_every_grade_exact[n4(F_5) H=<e1+e2,e3> (closure)]
+59 passed, 14 skipped in 36.34s
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 nice -n 10 timeout  30.20s user 3.66s system 92% cpu 36.656 total

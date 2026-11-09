@@ -1,0 +1,9 @@
+sec 2: compression identities exact on 11664 (eigenvalue, offset) pairs
+sec 4: each eigenvalue spoils at most one offset; max bad offsets seen 6
+sec 6: rank identity E[1(lam>=t)/lam] = rank(P_t) exact; bias 1/32 and Hoeffding constants check
+sec 2-3 group controls: 1768 (state, offset) instances over ['S4 on C^4', 'C5 on C^5', 'D4 on C^4', 'S3xC2 on C^6']; stabilizer of the flag product = H in all; min (1-overlap)/(delta^2/8) = 4.001
+false-gap control: true delta=2.0e-06, supplied 0.5 -> swap (not in H) fixes every flag: True; the global-gap promise is necessary
+sec 3 lemma: |<Omega_A|Omega_B>|^2 <= 1 - TD(A/r,B/r)^2 on 4000 pairs (max lhs+TD^2 = 1.000000)
+sec 7: acceptance of one growth step = (1 - k Tr(rho gamma_psi))/(k+1) >= w(r-k)/(k+1) for every pure psi in wedge^k V (float)
+sec 7: exact tail of the growth clock <= r exp(-N w / r) for r<=6, w in {1/r,1/2r,1/4r}, b<=3
+TOTAL FAILURES: 0

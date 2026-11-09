@@ -59,7 +59,7 @@ function action(c,mass,scope){
   check(cmp(A,zero)>=0n&&cmp(L,zero)>=0n,"absolute integrated action");
   const raw=mul(mass,squared(add(add(one,mul(A,r)),L))),bound=cmp(raw,one)<0n?raw:one;
   check(c.raw_fiber_success_upper===str(bound),"raw action success ceiling, no conditioned branch");
-  for(const flag of["bound_applies_to_temperature_and_block_policies_depending_on_full_labels_and_target","arbitrary_signed_and_nonmonotone_parent_schedules_covered","projection_or_postselection_is_not_free_parent_evolution","starting_state_is_uniform_native_word_superposition"])check(c[flag]===true,"parent action scope: "+flag);
+  for(const flag of["bound_applies_to_temperature_and_block_policies_depending_on_full_labels_and_target","arbitrary_signed_and_nonmonotone_parent_schedules_derivation_claim","projection_or_postselection_is_not_free_parent_evolution","starting_state_is_uniform_native_word_superposition"])check(c[flag]===true,"parent action scope: "+flag);
   check(c.arbitrary_quantum_receiver_lower_bound===false,"not an all-receiver lower bound");return bound;
 }
 same(R.exact_parent_controls.map(c=>[c.support,c.attenuation]),[[1,"1"],[1,"1/3"],[1,"1/27"],[1,"0"],[2,"1/3"]],"fixed finite cooling controls");

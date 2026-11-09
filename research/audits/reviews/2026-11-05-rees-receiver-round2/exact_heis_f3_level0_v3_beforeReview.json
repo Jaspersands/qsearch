@@ -1,0 +1,1688 @@
+{
+ "status": "exact_level0_output_law_of_assembled_coherent_terminal_sample_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "config": "Heis(F_3) c=2 dims=(3, 1) points=(1, 2) M={2: 3}",
+ "qubits": 182,
+ "gates": 115282,
+ "qft_calls": 24,
+ "oracle_calls": 6,
+ "subgroups": [
+  {
+   "name": "Heis(F_3) H=<[]> normal",
+   "normal": true,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 10460353203,
+    "(0, 0, 1)": 10460353203,
+    "(0, 0, 2)": 10460353203,
+    "(0, 1, 0)": 10460353203,
+    "(0, 1, 1)": 10460353203,
+    "(0, 1, 2)": 10460353203,
+    "(0, 2, 0)": 10460353203,
+    "(0, 2, 1)": 10460353203,
+    "(0, 2, 2)": 10460353203,
+    "(1, 0, 0)": 10460353203,
+    "(1, 0, 1)": 10460353203,
+    "(1, 0, 2)": 10460353203,
+    "(1, 1, 0)": 10460353203,
+    "(1, 1, 1)": 10460353203,
+    "(1, 1, 2)": 10460353203,
+    "(1, 2, 0)": 10460353203,
+    "(1, 2, 1)": 10460353203,
+    "(1, 2, 2)": 10460353203,
+    "(2, 0, 0)": 10460353203,
+    "(2, 0, 1)": 10460353203,
+    "(2, 0, 2)": 10460353203,
+    "(2, 1, 0)": 10460353203,
+    "(2, 1, 1)": 10460353203,
+    "(2, 1, 2)": 10460353203,
+    "(2, 2, 0)": 10460353203,
+    "(2, 2, 1)": 10460353203,
+    "(2, 2, 2)": 10460353203
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 11.9,
+   "S": 1,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 0, 1)": 31381059609,
+    "(0, 0, 2)": 31381059609,
+    "(0, 1, 0)": 31381059609,
+    "(0, 1, 1)": 31381059609,
+    "(0, 1, 2)": 31381059609,
+    "(0, 2, 0)": 31381059609,
+    "(0, 2, 1)": 31381059609,
+    "(0, 2, 2)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 9.6,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 0, 1)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 0)": 31381059609,
+    "(0, 2, 0)": 31381059609,
+    "(1, 0, 2)": 31381059609,
+    "(1, 1, 2)": 31381059609,
+    "(1, 2, 2)": 31381059609,
+    "(2, 0, 1)": 31381059609,
+    "(2, 1, 1)": 31381059609,
+    "(2, 2, 1)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 9.8,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 0, 2)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 0)": 31381059609,
+    "(0, 2, 0)": 31381059609,
+    "(1, 0, 1)": 31381059609,
+    "(1, 1, 1)": 31381059609,
+    "(1, 2, 1)": 31381059609,
+    "(2, 0, 2)": 31381059609,
+    "(2, 1, 2)": 31381059609,
+    "(2, 2, 2)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 10.5,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 1, 0)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 0, 1)": 31381059609,
+    "(0, 0, 2)": 31381059609,
+    "(1, 2, 0)": 31381059609,
+    "(1, 2, 1)": 31381059609,
+    "(1, 2, 2)": 31381059609,
+    "(2, 1, 0)": 31381059609,
+    "(2, 1, 1)": 31381059609,
+    "(2, 1, 2)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 10.2,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 1, 1)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 2)": 31381059609,
+    "(0, 2, 1)": 31381059609,
+    "(1, 0, 2)": 31381059609,
+    "(1, 1, 1)": 31381059609,
+    "(1, 2, 0)": 31381059609,
+    "(2, 0, 1)": 31381059609,
+    "(2, 1, 0)": 31381059609,
+    "(2, 2, 2)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 9.7,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 1, 2)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 1)": 31381059609,
+    "(0, 2, 2)": 31381059609,
+    "(1, 0, 1)": 31381059609,
+    "(1, 1, 2)": 31381059609,
+    "(1, 2, 0)": 31381059609,
+    "(2, 0, 2)": 31381059609,
+    "(2, 1, 0)": 31381059609,
+    "(2, 2, 1)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 9.2,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 2, 0)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 0, 1)": 31381059609,
+    "(0, 0, 2)": 31381059609,
+    "(1, 1, 0)": 31381059609,
+    "(1, 1, 1)": 31381059609,
+    "(1, 1, 2)": 31381059609,
+    "(2, 2, 0)": 31381059609,
+    "(2, 2, 1)": 31381059609,
+    "(2, 2, 2)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 9.0,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 2, 1)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 1)": 31381059609,
+    "(0, 2, 2)": 31381059609,
+    "(1, 0, 2)": 31381059609,
+    "(1, 1, 0)": 31381059609,
+    "(1, 2, 1)": 31381059609,
+    "(2, 0, 1)": 31381059609,
+    "(2, 1, 2)": 31381059609,
+    "(2, 2, 0)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 7.8,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 2, 2)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 2)": 31381059609,
+    "(0, 2, 1)": 31381059609,
+    "(1, 0, 1)": 31381059609,
+    "(1, 1, 0)": 31381059609,
+    "(1, 2, 2)": 31381059609,
+    "(2, 0, 2)": 31381059609,
+    "(2, 1, 1)": 31381059609,
+    "(2, 2, 0)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 8.8,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(0, 1, 0)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 0, 1)": 31381059609,
+    "(0, 0, 2)": 31381059609,
+    "(1, 0, 0)": 31381059609,
+    "(1, 0, 1)": 31381059609,
+    "(1, 0, 2)": 31381059609,
+    "(2, 0, 0)": 31381059609,
+    "(2, 0, 1)": 31381059609,
+    "(2, 0, 2)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 10.5,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(0, 1, 1)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 2)": 31381059609,
+    "(0, 2, 1)": 31381059609,
+    "(1, 0, 0)": 31381059609,
+    "(1, 1, 2)": 31381059609,
+    "(1, 2, 1)": 31381059609,
+    "(2, 0, 0)": 31381059609,
+    "(2, 1, 2)": 31381059609,
+    "(2, 2, 1)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 9.0,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(0, 1, 2)]> non-normal",
+   "normal": false,
+   "hubs": 729,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 729,
+   "hub_peak_rows": 177147,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 31381059609,
+    "(0, 1, 1)": 31381059609,
+    "(0, 2, 2)": 31381059609,
+    "(1, 0, 0)": 31381059609,
+    "(1, 1, 1)": 31381059609,
+    "(1, 2, 2)": 31381059609,
+    "(2, 0, 0)": 31381059609,
+    "(2, 1, 1)": 31381059609,
+    "(2, 2, 2)": 31381059609
+   },
+   "label_tuples": 27,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 7.7,
+   "S": 3,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+   "normal": true,
+   "hubs": 27,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 243,
+   "hub_peak_rows": 2187,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 43046721,
+    "(0, 1, 0)": 43046721,
+    "(0, 2, 0)": 43046721,
+    "(1, 0, 0)": 43046721,
+    "(1, 1, 0)": 43046721,
+    "(1, 2, 0)": 43046721,
+    "(2, 0, 0)": 43046721,
+    "(2, 1, 0)": 43046721,
+    "(2, 2, 0)": 43046721
+   },
+   "label_tuples": 1,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 0.2,
+   "S": 9,
+   "plain_level0_law_equal": true,
+   "plain_seconds": 0.1,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+   "normal": true,
+   "hubs": 27,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 243,
+   "hub_peak_rows": 2187,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 129140163,
+    "(0, 1, 0)": 129140163,
+    "(0, 2, 0)": 129140163
+   },
+   "label_tuples": 1,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 0.3,
+   "S": 27,
+   "plain_level0_law_equal": true,
+   "plain_seconds": 0.1,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal",
+   "normal": true,
+   "hubs": 27,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 243,
+   "hub_peak_rows": 2187,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 129140163,
+    "(1, 2, 0)": 129140163,
+    "(2, 1, 0)": 129140163
+   },
+   "label_tuples": 1,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 0.3,
+   "S": 27,
+   "plain_level0_law_equal": true,
+   "plain_seconds": 0.1,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal",
+   "normal": true,
+   "hubs": 27,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 243,
+   "hub_peak_rows": 2187,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 129140163,
+    "(1, 1, 0)": 129140163,
+    "(2, 2, 0)": 129140163
+   },
+   "label_tuples": 1,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 0.3,
+   "S": 27,
+   "plain_level0_law_equal": true,
+   "plain_seconds": 0.1,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal",
+   "normal": true,
+   "hubs": 27,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 243,
+   "hub_peak_rows": 2187,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 129140163,
+    "(1, 0, 0)": 129140163,
+    "(2, 0, 0)": 129140163
+   },
+   "label_tuples": 1,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 0.3,
+   "S": 27,
+   "plain_level0_law_equal": true,
+   "plain_seconds": 0.1,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  },
+  {
+   "name": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal",
+   "normal": true,
+   "hubs": 27,
+   "hub_wires_only_controls": true,
+   "segment_kinds": [
+    "perm"
+   ],
+   "final_qft_step": 325,
+   "pre_split_peak_rows": 243,
+   "hub_peak_rows": 2187,
+   "hub_joins": 0,
+   "labels_and_Q_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law": {
+    "(0, 0, 0)": 387420489
+   },
+   "label_tuples": 1,
+   "checkpoints": {
+    "K1_source_rdm_equals_coset_density": true,
+    "K2_instrument_rdm_equals_reference": true,
+    "K0_workspace_clean_after_each_source_and_instrument": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q_proportional_to_rho_H1_total": true,
+    "K5_label_law_uniform_on_Kperp_M": true
+   },
+   "checkpoint_detail": {
+    "K1_source_rdm_equals_coset_density": [
+     true,
+     true,
+     true
+    ],
+    "K2_instrument_rdm_equals_reference": [
+     true,
+     true,
+     true
+    ],
+    "K0_workspace_clean_after_each_source_and_instrument": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_workspace_unentangled_at_each_merge_component_boundary": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "K3_child_translated_after_its_own_merge": [
+     true,
+     true
+    ],
+    "K4_children_equal_reference_translation_every_hub": [
+     true,
+     true,
+     true
+    ]
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 0.3,
+   "S": 81,
+   "plain_level0_law_equal": true,
+   "plain_seconds": 0.0,
+   "seeded_recoveries_from_exact_law": [
+    true,
+    true
+   ]
+  }
+ ],
+ "seconds": 125.8,
+ "max_rss_MB": 687.7
+}

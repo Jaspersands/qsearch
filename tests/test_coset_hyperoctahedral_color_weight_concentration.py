@@ -85,10 +85,10 @@ def test_report_localizes_without_compiling_residual_fusion(tmp_path):
         scaling_half_degrees=(4, 8, 16, 32, 64),
     )
     assert report.theorem.theorem_verified
-    assert report.theorem.exact_color_weight_law_proved
-    assert report.theorem.exponential_uniform_color_convergence_proved
-    assert report.theorem.balanced_source_mass_proved
-    assert report.theorem.balanced_alternative_mass_proved
+    assert report.theorem.exact_color_weight_law_checked_finite
+    assert report.theorem.exponential_tv_bound_checked_finite
+    assert report.theorem.balanced_source_mass_paper_claim
+    assert report.theorem.balanced_alternative_mass_paper_claim
     assert not report.theorem.balanced_residual_fusion_compiled
     assert not report.theorem.full_matrix_hecke_polar_compiled
     assert report.claim_gate[
@@ -103,7 +103,7 @@ def test_report_localizes_without_compiling_residual_fusion(tmp_path):
         scaling_half_degrees=(4, 8, 16),
     )
     assert payload["status"] == (
-        "balanced-color-alternative-mass-proved-residual-fusion-open"
+        "balanced-color-alternative-mass-paper-claim-residual-fusion-open"
     )
     assert payload["headline_metrics"][
         "balanced_matrix_hecke_compiler_count"

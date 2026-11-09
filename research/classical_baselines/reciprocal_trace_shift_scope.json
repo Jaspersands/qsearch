@@ -1,0 +1,122 @@
+{
+  "status": "EXACT_SMALL_SOURCE_SCOPE_CONTROLS_ONLY",
+  "rows": [
+    {
+      "n": 2,
+      "q": 4,
+      "field_modulus": [
+        1,
+        1,
+        1
+      ],
+      "nonzero_autocorrelation_checks": 3,
+      "autocorrelation_identity_passed": true,
+      "autocorrelation_histogram": {
+        "-4": 2,
+        "4": 1
+      },
+      "additive_periods": [
+        0,
+        1
+      ],
+      "distinct_shift_functions": 2,
+      "raw_trace_zero_polynomial_degree": 1,
+      "zero_extended_bit_polynomial_degrees": {
+        "0": 2,
+        "1": 2
+      },
+      "zero_extended_bit_root_counts": {
+        "0": 2,
+        "1": 2
+      },
+      "zero_extension_checked_separately": true
+    },
+    {
+      "n": 3,
+      "q": 8,
+      "field_modulus": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "nonzero_autocorrelation_checks": 7,
+      "autocorrelation_identity_passed": true,
+      "autocorrelation_histogram": {
+        "-8": 1,
+        "0": 6
+      },
+      "additive_periods": [
+        0
+      ],
+      "distinct_shift_functions": 8,
+      "raw_trace_zero_polynomial_degree": 3,
+      "zero_extended_bit_polynomial_degrees": {
+        "0": 4,
+        "1": 4
+      },
+      "zero_extended_bit_root_counts": {
+        "0": 4,
+        "1": 4
+      },
+      "zero_extension_checked_separately": true
+    },
+    {
+      "n": 4,
+      "q": 16,
+      "field_modulus": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "nonzero_autocorrelation_checks": 15,
+      "autocorrelation_identity_passed": true,
+      "autocorrelation_histogram": {
+        "-8": 4,
+        "0": 9,
+        "8": 2
+      },
+      "additive_periods": [
+        0
+      ],
+      "distinct_shift_functions": 16,
+      "raw_trace_zero_polynomial_degree": 7,
+      "zero_extended_bit_polynomial_degrees": {
+        "0": 8,
+        "1": 8
+      },
+      "zero_extended_bit_root_counts": {
+        "0": 8,
+        "1": 8
+      },
+      "zero_extension_checked_separately": true
+    }
+  ],
+  "identity": "C(a)=W(a^-1)-2+2*(-1)^Tr(a^-1), a!=0",
+  "binary_equation": "B(Y)=sum_{j=0}^{n-1}Y^(q/2-2^j); b=0: Y*B(Y)=0; b=1: Y^(q/2)+B(Y)=0",
+  "prime_field_control": {
+    "prime": 17,
+    "rational_function": "z+1/z",
+    "samples": [
+      {
+        "position": 1,
+        "full_F17_observation": 9,
+        "equation_degree": 2
+      },
+      {
+        "position": 2,
+        "full_F17_observation": 12,
+        "equation_degree": 2
+      }
+    ],
+    "gcd_degree": 1,
+    "recovered_shift": 5,
+    "input_is_full_prime_field_value_not_trace_bit": true
+  },
+  "scope": "Retained constant-degree decoder uses full odd-prime-field rational values. Binary trace constraints have degree q/2; this does not prove classical hardness or rule out a different efficient decoder.",
+  "classical_polynomial_time_bit_shift_recovery": "UNKNOWN_FROM_THIS_AUDIT",
+  "quantum_circuit_executed": false,
+  "large_benchmark_executed": false
+}

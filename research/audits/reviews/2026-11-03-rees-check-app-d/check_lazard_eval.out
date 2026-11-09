@@ -1,0 +1,14 @@
+p=3 c=2 e=2: modulus p^e correct=True  caps={'power': 8, 'lie_add': 40, 'lie_bracket': 19, 'linear_combination_per_term': 48}
+p=3 c=2 e=3: modulus p^e correct=True  caps={'power': 10, 'lie_add': 48, 'lie_bracket': 23, 'linear_combination_per_term': 58}
+p=5 c=3 e=2: modulus p^e correct=True  caps={'power': 10, 'lie_add': 124, 'lie_bracket': 102, 'linear_combination_per_term': 134}
+p=5 c=4 e=2: modulus p^e correct=True  caps={'power': 10, 'lie_add': 248, 'lie_bracket': 226, 'linear_combination_per_term': 258}
+p=5 c=4 e=3: modulus p^e correct=True  caps={'power': 14, 'lie_add': 328, 'lie_bracket': 298, 'linear_combination_per_term': 342}
+p=7 c=3 e=3: modulus p^e correct=True  caps={'power': 18, 'lie_add': 204, 'lie_bracket': 166, 'linear_combination_per_term': 222}
+p=7 c=5 e=2: modulus p^e correct=True  caps={'power': 12, 'lie_add': 646, 'lie_bracket': 620, 'linear_combination_per_term': 658}
+p=7 c=6 e=2: modulus p^e correct=True  caps={'power': 12, 'lie_add': 1286, 'lie_bracket': 1260, 'linear_combination_per_term': 1298}
+negative control p=5 c=3 e=2 with modulus p: all correct=False (expect False)
+negative control p=7 c=5 e=2 with modulus p: all correct=False (expect False)
+negative control p=5 c=4 e=2 with modulus p: all correct=False (expect False)
+p=3 c=3 rejected: 1<=c<p and public multiplication required
+p=5 c=5 rejected: 1<=c<p and public multiplication required
+p=2 c=2 rejected: explicit odd prime integer required

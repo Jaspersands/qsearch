@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4051,
+      "path": "research/audits/claude_inputs/2026-11-07-spinor-genus/native_contract.md",
+      "sha256": "9549bfbaac2ec8ad1074745899894fbbc587b49e25edf8b1d65c52b8f7ec3591",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 8787,
+      "path": "research/audits/claude_inputs/2026-11-07-spinor-genus/transport_context.md",
+      "sha256": "6943d53a234c711bc9117a67da9a18b12f163ca8465a95fcedabe2d7a4cb76c9",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6106,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-07T02:20:27.147415+00:00",
+  "input_token_allowance": 6362,
+  "max_budget_usd": 1.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.680808,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-spinor-genus/transport_prompt.md",
+    "sha256": "fdf53c5c3a673631794785668ff096f28a958b1ded67e8bc1e6d8daafd05f01e",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261107T022019.258578Z-88079e9d",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 6106,
+    "output_tokens": 528
+  },
+  "usage_cost_estimate_usd": 0.034984
+}

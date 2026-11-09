@@ -1,0 +1,639 @@
+{
+  "scope": "Finite exact algebra/classical membership diagnosis only. H enumeration is ANALYSIS ONLY; no quantum execution or native H-recovery, and p=3 fails p>=128*n.",
+  "p": 3,
+  "n": 3,
+  "r": 2,
+  "s": 1,
+  "proposed_prime_threshold": 384,
+  "S": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "g": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      2,
+      2
+    ],
+    [
+      2,
+      1,
+      2
+    ]
+  ],
+  "H_order": 96,
+  "g_normalizes_H": false,
+  "normalizer_counterexample_h": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      2
+    ]
+  ],
+  "U_basis": [
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ]
+  ],
+  "W_basis": [
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "Wperp_basis": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "algebra_dimension": 5,
+  "algebra_density_in_all_matrices": "1/81",
+  "right_annihilator_dimension": 4,
+  "uninverted_annihilator_dimension": 4,
+  "annihilator_flatness_basis_trace_checks": 768,
+  "annihilator_number_frequencies": 81,
+  "exact_squared_amplitude_per_annihilator_frequency": "32/6561",
+  "exact_annihilator_mass_beta": "32/81",
+  "full_rank_C_D_frequency_count_inside_annihilator": 64,
+  "conditional_full_rank_C_D_probability": "64/81",
+  "joint_annihilator_and_full_rank_mass": "2048/6561",
+  "residual_mass_outside_annihilator": "49/81",
+  "full_Fourier_support_is_claimed_4_dimensional": false,
+  "outside_nonzero_frequency_control": {
+    "trace_pairing": "tr(B*x), without a transpose",
+    "trace_residue_counts_0_1_2": [
+      24,
+      36,
+      36
+    ],
+    "exact_phase_sum": "-12",
+    "normalized_amplitude": "-12/sqrt(96*3^9)",
+    "normalized_squared_amplitude": "1/13122",
+    "all_96_phases_equal_one": false
+  },
+  "fixed_frequency_controls": [
+    {
+      "C": [
+        1,
+        0
+      ],
+      "D": [
+        1,
+        0
+      ],
+      "right_coset_frequency": [
+        [
+          2,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "uninverted_coset_frequency": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ],
+      "right_frequency_kernel_basis": [
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "right_kernel_contained_in_U": true,
+      "uninverted_frequency_transpose_kernel_basis": [
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "uninverted_transpose_kernel_contained_in_Wperp": true,
+      "right_coset_amplitude": {
+        "trace_pairing": "tr(B*x), without a transpose",
+        "trace_residue_counts_0_1_2": [
+          96,
+          0,
+          0
+        ],
+        "exact_phase_sum": "96",
+        "normalized_amplitude": "96/sqrt(96*3^9)",
+        "normalized_squared_amplitude": "32/6561",
+        "all_96_phases_equal_one": true
+      },
+      "uninverted_coset_amplitude": {
+        "trace_pairing": "tr(B*x), without a transpose",
+        "trace_residue_counts_0_1_2": [
+          96,
+          0,
+          0
+        ],
+        "exact_phase_sum": "96",
+        "normalized_amplitude": "96/sqrt(96*3^9)",
+        "normalized_squared_amplitude": "32/6561",
+        "all_96_phases_equal_one": true
+      },
+      "wrong_uninverted_plain_kernel_basis": [
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "wrong_uninverted_plain_kernel_contained_in_U": true,
+      "wrong_right_transpose_kernel_basis": [
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "wrong_right_transpose_kernel_contained_in_Wperp": true
+    },
+    {
+      "C": [
+        0,
+        1
+      ],
+      "D": [
+        0,
+        1
+      ],
+      "right_coset_frequency": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "uninverted_coset_frequency": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "right_frequency_kernel_basis": [
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "right_kernel_contained_in_U": true,
+      "uninverted_frequency_transpose_kernel_basis": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "uninverted_transpose_kernel_contained_in_Wperp": true,
+      "right_coset_amplitude": {
+        "trace_pairing": "tr(B*x), without a transpose",
+        "trace_residue_counts_0_1_2": [
+          96,
+          0,
+          0
+        ],
+        "exact_phase_sum": "96",
+        "normalized_amplitude": "96/sqrt(96*3^9)",
+        "normalized_squared_amplitude": "32/6561",
+        "all_96_phases_equal_one": true
+      },
+      "uninverted_coset_amplitude": {
+        "trace_pairing": "tr(B*x), without a transpose",
+        "trace_residue_counts_0_1_2": [
+          96,
+          0,
+          0
+        ],
+        "exact_phase_sum": "96",
+        "normalized_amplitude": "96/sqrt(96*3^9)",
+        "normalized_squared_amplitude": "32/6561",
+        "all_96_phases_equal_one": true
+      },
+      "wrong_uninverted_plain_kernel_basis": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "wrong_uninverted_plain_kernel_contained_in_U": false,
+      "wrong_right_transpose_kernel_basis": [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "wrong_right_transpose_kernel_contained_in_Wperp": false
+    },
+    {
+      "C": [
+        1,
+        1
+      ],
+      "D": [
+        1,
+        2
+      ],
+      "right_coset_frequency": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "uninverted_coset_frequency": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ],
+      "right_frequency_kernel_basis": [
+        [
+          1,
+          2,
+          2
+        ]
+      ],
+      "right_kernel_contained_in_U": true,
+      "uninverted_frequency_transpose_kernel_basis": [
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "uninverted_transpose_kernel_contained_in_Wperp": true,
+      "right_coset_amplitude": {
+        "trace_pairing": "tr(B*x), without a transpose",
+        "trace_residue_counts_0_1_2": [
+          96,
+          0,
+          0
+        ],
+        "exact_phase_sum": "96",
+        "normalized_amplitude": "96/sqrt(96*3^9)",
+        "normalized_squared_amplitude": "32/6561",
+        "all_96_phases_equal_one": true
+      },
+      "uninverted_coset_amplitude": {
+        "trace_pairing": "tr(B*x), without a transpose",
+        "trace_residue_counts_0_1_2": [
+          96,
+          0,
+          0
+        ],
+        "exact_phase_sum": "96",
+        "normalized_amplitude": "96/sqrt(96*3^9)",
+        "normalized_squared_amplitude": "32/6561",
+        "all_96_phases_equal_one": true
+      },
+      "wrong_uninverted_plain_kernel_basis": [
+        [
+          1,
+          1,
+          2
+        ]
+      ],
+      "wrong_uninverted_plain_kernel_contained_in_U": false,
+      "wrong_right_transpose_kernel_basis": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "wrong_right_transpose_kernel_contained_in_Wperp": false
+    }
+  ],
+  "wrong_orientation_witness": {
+    "C": [
+      0,
+      1
+    ],
+    "D": [
+      0,
+      1
+    ],
+    "uninverted_plain_kernel_basis": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "not_contained_in_U": true,
+    "right_transpose_kernel_basis": [
+      [
+        1,
+        2,
+        1
+      ]
+    ],
+    "not_contained_in_Wperp": true
+  },
+  "fixed_rank_one_membership_controls": [
+    {
+      "u": [
+        1,
+        0,
+        0
+      ],
+      "phi": [
+        1,
+        0,
+        0
+      ],
+      "admissible_nonzero_t": [
+        1
+      ],
+      "checks": [
+        {
+          "t": 1,
+          "I_plus_tX_in_H": false,
+          "X_in_A": false
+        }
+      ]
+    },
+    {
+      "u": [
+        0,
+        1,
+        0
+      ],
+      "phi": [
+        0,
+        1,
+        0
+      ],
+      "admissible_nonzero_t": [
+        1
+      ],
+      "checks": [
+        {
+          "t": 1,
+          "I_plus_tX_in_H": false,
+          "X_in_A": false
+        }
+      ]
+    },
+    {
+      "u": [
+        1,
+        0,
+        0
+      ],
+      "phi": [
+        0,
+        1,
+        0
+      ],
+      "admissible_nonzero_t": [
+        1,
+        2
+      ],
+      "checks": [
+        {
+          "t": 1,
+          "I_plus_tX_in_H": false,
+          "X_in_A": false
+        },
+        {
+          "t": 2,
+          "I_plus_tX_in_H": false,
+          "X_in_A": false
+        }
+      ]
+    },
+    {
+      "u": [
+        0,
+        1,
+        0
+      ],
+      "phi": [
+        1,
+        0,
+        0
+      ],
+      "admissible_nonzero_t": [
+        1,
+        2
+      ],
+      "checks": [
+        {
+          "t": 1,
+          "I_plus_tX_in_H": false,
+          "X_in_A": false
+        },
+        {
+          "t": 2,
+          "I_plus_tX_in_H": false,
+          "X_in_A": false
+        }
+      ]
+    },
+    {
+      "u": [
+        1,
+        1,
+        0
+      ],
+      "phi": [
+        1,
+        0,
+        0
+      ],
+      "admissible_nonzero_t": [
+        1
+      ],
+      "checks": [
+        {
+          "t": 1,
+          "I_plus_tX_in_H": true,
+          "X_in_A": true
+        }
+      ]
+    },
+    {
+      "u": [
+        0,
+        1,
+        0
+      ],
+      "phi": [
+        1,
+        2,
+        2
+      ],
+      "admissible_nonzero_t": [
+        2
+      ],
+      "checks": [
+        {
+          "t": 2,
+          "I_plus_tX_in_H": true,
+          "X_in_A": true
+        }
+      ]
+    }
+  ],
+  "true_pair_transvection_certificate": {
+    "tests": [
+      {
+        "i": 0,
+        "j": 1,
+        "membership": true
+      },
+      {
+        "i": 1,
+        "j": 0,
+        "membership": true
+      }
+    ],
+    "accept": true
+  },
+  "fixed_wrong_complementary_pair_basis": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "wrong_pair_transvection_certificate": {
+    "tests": [
+      {
+        "i": 0,
+        "j": 1,
+        "membership": false
+      },
+      {
+        "i": 1,
+        "j": 0,
+        "membership": true
+      }
+    ],
+    "accept": false
+  },
+  "worker_seconds": 0.22335675009526312
+}

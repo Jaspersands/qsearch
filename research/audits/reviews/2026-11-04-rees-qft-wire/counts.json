@@ -1,0 +1,275 @@
+{
+ "status": {
+  "status": "explicit_qft_mod_p_wired_as_optional_backend_finite_checks",
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "formal_compiler_checked": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review",
+  "explicit_qft_backend_available": true,
+  "default_backend_unchanged": true,
+  "poly_log_p_arithmetic_implemented": true,
+  "fixed_finite_gate_set": false,
+  "monolithic_explicit_simulation": false
+ },
+ "counts": {
+  "heis_f3": {
+   "original": {
+    "qubits": 82,
+    "gates_incl_qft_unitaries": 1236
+   },
+   "exact_arith": {
+    "qubits": 93,
+    "ancillas_arith": 11,
+    "pool_qubits": 0,
+    "arith_gates": 42234,
+    "swap_macro_gates": 24,
+    "qft_calls": 24,
+    "oracle_calls": 6,
+    "qft_gates": 24,
+    "total_gates_excl_oracle": 42282,
+    "seconds": 0.01
+   },
+   "explicit_sim_shared": {
+    "qubits": 116,
+    "ancillas_arith": 11,
+    "pool_qubits": 23,
+    "arith_gates": 42234,
+    "swap_macro_gates": 24,
+    "qft_calls": 24,
+    "oracle_calls": 6,
+    "qft_gates": 82080,
+    "qft_gate_types": {
+     "x": 12624,
+     "cx": 46680,
+     "ccx": 17904,
+     "swap": 240,
+     "h": 960,
+     "r": 2616,
+     "cr": 1056
+    },
+    "qft_gates_per_call": 3420.0,
+    "total_gates_excl_oracle": 124338,
+    "params": {
+     "t": 7,
+     "r": 7,
+     "tp": 28
+    },
+    "max_rotation_index": 28,
+    "zero_input_calls": {
+     "zero": 18,
+     "general": 6
+    },
+    "seconds": 0.06
+   },
+   "explicit_sim_fresh": {
+    "qubits": 645,
+    "ancillas_arith": 11,
+    "pool_qubits": 552,
+    "arith_gates": 42234,
+    "swap_macro_gates": 24,
+    "qft_calls": 24,
+    "oracle_calls": 6,
+    "qft_gates": 82080,
+    "qft_gate_types": {
+     "x": 12624,
+     "cx": 46680,
+     "ccx": 17904,
+     "swap": 240,
+     "h": 960,
+     "r": 2616,
+     "cr": 1056
+    },
+    "qft_gates_per_call": 3420.0,
+    "total_gates_excl_oracle": 124338,
+    "params": {
+     "t": 7,
+     "r": 7,
+     "tp": 28
+    },
+    "max_rotation_index": 28,
+    "zero_input_calls": {
+     "zero": 18,
+     "general": 6
+    },
+    "seconds": 0.06
+   },
+   "target": {
+    "per_run_coupling_target": 0.1,
+    "n_samples": 7,
+    "eta": 0.005524271728019903,
+    "params": [
+     22,
+     17,
+     14
+    ],
+    "proved_budget_per_sample": 0.011351453018770457,
+    "gates_per_call": 6878,
+    "gate_bound_per_call": 7318,
+    "qubits_per_call_lemma": 66
+   },
+   "explicit_target_shared": {
+    "qubits": 146,
+    "ancillas_arith": 11,
+    "pool_qubits": 53,
+    "arith_gates": 42234,
+    "swap_macro_gates": 24,
+    "qft_calls": 24,
+    "oracle_calls": 6,
+    "qft_gates": 165072,
+    "qft_gate_types": {
+     "x": 21264,
+     "cx": 94200,
+     "ccx": 35184,
+     "swap": 240,
+     "h": 2400,
+     "r": 1368,
+     "cr": 10416
+    },
+    "qft_gates_per_call": 6878.0,
+    "total_gates_excl_oracle": 207330,
+    "params": {
+     "t": 22,
+     "r": 17,
+     "tp": 14
+    },
+    "max_rotation_index": 17,
+    "zero_input_calls": {
+     "zero": 18,
+     "general": 6
+    },
+    "seconds": 0.06
+   }
+  },
+  "n4_f5": {
+   "original": {
+    "qubits": 744,
+    "gates_incl_qft_unitaries": 91240
+   },
+   "exact_arith": {
+    "qubits": 758,
+    "ancillas_arith": 14,
+    "pool_qubits": 0,
+    "arith_gates": 1028700,
+    "swap_macro_gates": 300,
+    "qft_calls": 148,
+    "oracle_calls": 30,
+    "qft_gates": 148,
+    "total_gates_excl_oracle": 1029148,
+    "seconds": 0.01
+   },
+   "explicit_sim_shared": {
+    "qubits": 787,
+    "ancillas_arith": 14,
+    "pool_qubits": 29,
+    "arith_gates": 1028700,
+    "swap_macro_gates": 300,
+    "qft_calls": 148,
+    "oracle_calls": 30,
+    "qft_gates": 869352,
+    "qft_gate_types": {
+     "x": 127872,
+     "cx": 497132,
+     "ccx": 206904,
+     "swap": 3996,
+     "h": 6956,
+     "r": 17908,
+     "cr": 8584
+    },
+    "qft_gates_per_call": 5874.0,
+    "total_gates_excl_oracle": 1898352,
+    "params": {
+     "t": 8,
+     "r": 8,
+     "tp": 28
+    },
+    "max_rotation_index": 28,
+    "zero_input_calls": {
+     "zero": 124,
+     "general": 24
+    },
+    "seconds": 1.28
+   },
+   "explicit_sim_fresh": {
+    "qubits": 5050,
+    "ancillas_arith": 14,
+    "pool_qubits": 4292,
+    "arith_gates": 1028700,
+    "swap_macro_gates": 300,
+    "qft_calls": 148,
+    "oracle_calls": 30,
+    "qft_gates": 869352,
+    "qft_gate_types": {
+     "x": 127872,
+     "cx": 497132,
+     "ccx": 206904,
+     "swap": 3996,
+     "h": 6956,
+     "r": 17908,
+     "cr": 8584
+    },
+    "qft_gates_per_call": 5874.0,
+    "total_gates_excl_oracle": 1898352,
+    "params": {
+     "t": 8,
+     "r": 8,
+     "tp": 28
+    },
+    "max_rotation_index": 28,
+    "zero_input_calls": {
+     "zero": 124,
+     "general": 24
+    },
+    "seconds": 1.48
+   },
+   "target": {
+    "per_run_coupling_target": 0.1,
+    "n_samples": 8,
+    "eta": 0.0010649489576809157,
+    "params": [
+     28,
+     20,
+     16
+    ],
+    "proved_budget_per_sample": 0.01103870698573177,
+    "gates_per_call": 11994,
+    "gate_bound_per_call": 13436,
+    "qubits_per_call_lemma": 86
+   },
+   "explicit_target_shared": {
+    "qubits": 827,
+    "ancillas_arith": 14,
+    "pool_qubits": 69,
+    "arith_gates": 1028700,
+    "swap_macro_gates": 300,
+    "qft_calls": 148,
+    "oracle_calls": 30,
+    "qft_gates": 1775112,
+    "qft_gate_types": {
+     "x": 222592,
+     "cx": 1009212,
+     "ccx": 408184,
+     "swap": 3996,
+     "h": 18796,
+     "r": 10804,
+     "cr": 101528
+    },
+    "qft_gates_per_call": 11994.0,
+    "total_gates_excl_oracle": 2804112,
+    "params": {
+     "t": 28,
+     "r": 20,
+     "tp": 16
+    },
+    "max_rotation_index": 20,
+    "zero_input_calls": {
+     "zero": 124,
+     "general": 24
+    },
+    "seconds": 1.37
+   }
+  }
+ }
+}

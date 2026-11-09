@@ -1,0 +1,7 @@
+== committed artifact rees_uniform_instrument.json (eps = 1/3)
+ (4,) p=2: N_instr=16 q_max=4 eta=eps/192 bits=10 N_QFT*eta/(eps/3)=1.0000 total/eps=0.5208 | core-check q_max=4 (ok; aggregate with it 1.0000 of eps/3)
+ (6, 3, 1) p=65537: N_instr=500 q_max=102 eta=eps/153000 bits=19 N_QFT*eta/(eps/3)=0.1247 total/eps=0.2759 | core-check q_max=48 (UNDERCOUNTS per instrument; aggregate with it 0.2650 of eps/3)
+ (13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1) p=170141183460469231731687303715884105727: N_instr=144546256892554638370 q_max=4644 eta=eps/2013818451027071221770840 bits=83 N_QFT*eta/(eps/3)=0.0175 total/eps=0.2305 | core-check q_max=2310 (UNDERCOUNTS per instrument; aggregate with it 0.0351 of eps/3)
+== sweep: random profiles, classes 2..6, p = 2^61-1, eps in {1/3, 1/1000}
+ 44 profiles: all exact checks pass; core-check q_max undercounts the per-instrument transform count in 44; its aggregate allocation would also fail in 3
+ hybrid float check: 200 random trials, max ||(actual-ideal)J|| / (N*eta) = 1.0000 (<= 1); last trial leaked mass into padding 1.83e-01

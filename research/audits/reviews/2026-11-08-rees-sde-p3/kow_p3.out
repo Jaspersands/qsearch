@@ -1,0 +1,24 @@
+n  m_n(KOW recursion as implemented)  2n+1  n^2/3  (n+1)(n+2)/2
+  1      3      3      0.3       3
+  2      6      5      1.3       6
+  3      9      7      3.0      10
+  4     13      9      5.3      15
+  5     18     11      8.3      21
+  6     24     13     12.0      28
+  8     37     17     21.3      45
+ 10     54     21     33.3      66
+ 12     73     25     48.0      91
+ 16    120     33     85.3     153
+ 20    177     41    133.3     231
+ 24    246     49    192.0     325
+ 32    417     65    341.3     561
+ 40    632     81    533.3     861
+ 48    891     97    768.0    1225
+ 60   1359    121   1200.0    1891
+ 64   1536    129   1365.3    2145
+ratio m_n / n^2 at n=64: 0.375
+verified 216 instances at budget m_n, failures 0; every found support <= w_bound(l) when l+r vectors were available
+largest observed support per level (l: w) for l in 5,10,20,30,40,50,60: {5: 5, 10: 7, 20: 13, 30: 19, 40: 25, 50: 30, 60: 38} bounds: {5: 5, 10: 9, 20: 15, 30: 22, 40: 29, 50: 36, 60: 43}
+n=20: columns consumed by the dependencies on random instances [117, 92, 71, 114, 113], budget 177, 2n+1=41
+n=40: columns consumed by the dependencies on random instances [452, 441, 441, 455, 430], budget 632, 2n+1=81
+n=60: columns consumed by the dependencies on random instances [1020, 1030, 1025, 1012, 1022], budget 1359, 2n+1=121

@@ -1,0 +1,34 @@
+Audit one quantitative claim, not broad learning. Let V=exterior^w C^n,
+D=binom(n,w), psi ANY unit vector, U Haar in U(n), and p_S(U)=
+|<S|exterior^w(U)|psi>|² in the occupation basis. A Slater basis vector
+|S> is highest-weight coherent; |S> tensor² lies in the single Cartan
+product irrep of shape (2^w), dimension
+D2=D²*(n+1)/[(w+1)(n-w+1)]. Schur twirling of |S><S| tensor² thus gives
+Pi_(2^w)/D2. Proposed deduction:
+E_U sum_S p_S(U)² <= D/D2;
+Pr_U[max_(|A|<=R) sum_(S in A)p_S(U)>=1-epsilon²]
+ <= R*D/[D2*(1-epsilon²)²].
+The max over subsets is INSIDE the probability, via Cauchy-Schwarz and
+Markov. For any list of L passive frames independent of U, even randomized,
+union bound multiplies by L. So polynomial L,R and w~n/2 fail with
+exponentially high probability. Check tensor multiplicity, measure
+normalization, irrep dimension, and quantifiers; try a counterexample.
+
+Application context: p=n prime3mod4>=11; D0 quadratic residues; psi is
+equal coherent superposition of n translates |D0+a>. It has n Fock terms,
+fixed w=(n-1)/2 particles, support distance(n+1)/2. All second/fourth
+Majorana moments equal the maximally mixed w-sector and are invariant
+under passive U(n); complete quadratic ray-stabilizer is only totalN.
+Hence an exact-moment-only torus/frame extractor has a U-independent
+list. Same for protocols measuring individual degree2/4 Pauli observables
+on separate copies: Bernoulli means specify full transcript law. This does
+NOT cover joint occupation records, higher-degree data, general Gaussian
+frames that do not respect the recovered N, coherent measurements or a
+full learning lower bound. Arbitrary exact support proliferation alone
+would not suffice for approximate learning; the displayed bound is needed.
+
+Primary Sugita nlin/0208007v4 SectionIII equations14-16 gives precisely the
+Cartan-product twirl; SectionIV fermions gives the rectangular dimension.
+You may prove these facts directly rather than assume a cited theorem.
+Return a concise mathematical verdict with any needed repairs and clear
+scope, within the output budget. No tools/repository access or novelty claim.

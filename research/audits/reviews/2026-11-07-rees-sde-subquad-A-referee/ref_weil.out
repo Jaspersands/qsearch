@@ -1,0 +1,13 @@
+p >= 8 kappa^{2E} E^2 implies min_e LW(p,e) >= p/(2 kappa^E), kappa<=5, E<=30: True
+kappa=2 E= 5 least p with (*) for all e<=E: 61524   (8k^{2E}E^2 = 204800)  ratio 3.33  monotone-above True  per-pass<=1/2 needs p >= 320 r
+kappa=2 E= 6 least p with (*) for all e<=E: 396924   (8k^{2E}E^2 = 1179648)  ratio 2.97  monotone-above True  per-pass<=1/2 needs p >= 768 r
+kappa=2 E= 7 least p with (*) for all e<=E: 2322604   (8k^{2E}E^2 = 6422528)  ratio 2.77  monotone-above True  per-pass<=1/2 needs p >= 1792 r
+kappa=2 E= 8 least p with (*) for all e<=E: 12744932   (8k^{2E}E^2 = 33554432)  ratio 2.63  monotone-above True  per-pass<=1/2 needs p >= 4096 r
+kappa=2 E=10 least p with (*) for all e<=E: 339075436   (8k^{2E}E^2 = 838860800)  ratio 2.47  monotone-above True  per-pass<=1/2 needs p >= 20480 r
+kappa=3 E= 5 least p with (*) for all e<=E: 3748116   (8k^{2E}E^2 = 11809800)  ratio 3.15  monotone-above True  per-pass<=1/2 needs p >= 2430 r
+kappa=3 E= 6 least p with (*) for all e<=E: 52998424   (8k^{2E}E^2 = 153055008)  ratio 2.89  monotone-above True  per-pass<=1/2 needs p >= 8748 r
+kappa=3 E= 7 least p with (*) for all e<=E: 688117852   (8k^{2E}E^2 = 1874923848)  ratio 2.72  monotone-above True  per-pass<=1/2 needs p >= 30618 r
+kappa=3 E= 8 least p with (*) for all e<=E: 8434585632   (8k^{2E}E^2 = 22039921152)  ratio 2.61  monotone-above True  per-pass<=1/2 needs p >= 104976 r
+kappa=3 E=10 least p with (*) for all e<=E: 1129679882536   (8k^{2E}E^2 = 2789427520800)  ratio 2.47  monotone-above True  per-pass<=1/2 needs p >= 1180980 r
+E=5 kappa=2: 61524  E=5 kappa=3: 3748116
+kappa/(p-1) <= 2kappa^E/p (E>=2): True

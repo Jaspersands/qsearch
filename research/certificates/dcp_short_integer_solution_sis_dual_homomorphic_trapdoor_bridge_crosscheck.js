@@ -22,7 +22,7 @@ if (!cert.all_checks_passed) {
 }
 
 const a = cert.gadget_trapdoor_n2_t3_audit;
-if (!a.zero_sum_at_eq_0_mod_2t_verified || a.num_punctured_scales_extracted !== 6) {
+if (!a.zero_sum_identity_by_construction ||a.num_punctured_scales_extracted !== 6) {
   throw new Error("Gadget trapdoor verification failed");
 }
 

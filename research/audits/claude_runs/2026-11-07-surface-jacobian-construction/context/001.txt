@@ -1,0 +1,44 @@
+Source https://people.maths.ox.ac.uk/pila/Frobenius.pdf ; local source.json records SHA256. Actual text lines24–65.
+Schoof showed that for an elliptic curve E over a finite field Fq , given by a Weierstrass
+equation, one can compute the number of Fq –rational points of E in time polynomial in
+log q. The algorithm computes the characteristic polynomial P (t) ∈ Z[t] of the Frobenius
+endomorphism of E. For an elliptic curve, P (t) is a monic, quadratic polynomial with
+constant term q, and the number of Fq –rational points of E is P (1). Our result is the
+following.
+     Theorem A. Let A be an Abelian variety over a finite field Fq , given explicitly as a
+projective variety with an explicit addition law. Then one can compute the characteristic
+polynomial P (t) ∈ Z[t] of the Frobenius endomorphism of A in time
+                                         O((log q)∆ )
+where ∆ and the implied constant depend only on the dimension of the embedding space of
+A, the number of equations defining A and the addition law, and their degrees.
+     The dependence on the form of the equations defining A corresponds to the Weier-
+strass equation in the elliptic curve case. The algorithm is described in section 3, and its
+correctness is proved, while the running time is analyzed in section 4. Adleman and Huang
+[1] have announced a non–deterministic generalization of Schoof’s algorithm to curves of
+genus 2 as part of a random polynomial time primality test. This primality test generalizes
+that of Goldwasser and Kilian [4], which employed Schoof’s algorithm.
+
+                                               1
+
+Applications. In the case that the Abelian variety A is the Jacobian variety of a curve
+C defined over Fq , the Zeta function of C is immediately recovered from P (t), and in
+particular the number of Fq –rational points of C. If C0 is a smooth projective curve
+defined over Q, we can construct, following Chow [3], the Jacobian variety J0 of C0 as
+a projective Abelian variety defined over Q. Then for all but finitely many primes p, the
+reduction J of J0 modulo p is the Jacobian variety of the reduction C of C0 modulo p.
+These Jacobians all have the same form of defining equations, so we have:
+     Theorem B. Let C0 be a smooth projective curve over Q. There is a deterministic
+polynomial time algorithm which on input p computes the Zeta function of the reduction
+C of C0 modulo p, hence, in particular, the number of Fp –rational points of C.
+     Here polynomial time means time polynomial in log p. It should be possible to make
+theorem B uniform for curves of a given genus. This entails showing that all curves of
+a given genus, over all fields (perhaps excluding a finite number of characteristics) can
+be presented by equations of the same form, and that their Jacobians can be uniformly
+constructed (with addition laws), again in the same form. We would thus do a precompu-
+tation for a given genus, rather that for a given curve over Q. (For curves of genus 2, there
+is some recent work toward doing this explicitly by D. Grant (Formal Groups in Genus
+Two, preprint,) and by Cassels and Flynn.)
+     Given a curve X0 defined over Q, but perhaps not smooth or projective, we can
+construct a smooth projective curve C0 over Q birationally isomorphic to X0 over Q. The
+birational isomorphism persists between the reductions X and C of X0 and C0 modulo
+p for all but finitely many primes p. The Fp –rational points of X and C are in bijective

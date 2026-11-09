@@ -1,5 +1,13 @@
 # Effective Output And A Common Field
 
+**2026-10-31 correction:** the conservative ell<=p^C restriction below is
+unnecessary for a full evaluated End(B) basis after certified K. See
+`../../SURFACE_THEOREM_PRIORITY_AUDIT.md`, "Height Correction For The Stronger
+Output": fixed-rank LLL supplies a small module presentation, as explicitly
+allowed by PRS Section2.1 and Remark3.1. The input basis transformations still
+cost polynomial time in their original heights/log ell. The field, reference,
+model and imported-algorithm dependencies below remain in force.
+
 2026-10-23. Proposed composition audit; independent review pending.
 The code prepares the exact contravariant module interface. It does NOT run
 the published geometric converter or recover a hidden kernel.

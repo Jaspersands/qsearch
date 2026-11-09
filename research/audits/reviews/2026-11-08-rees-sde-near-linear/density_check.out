@@ -1,0 +1,28 @@
+(i) a=1, three nonzero columns, exhaustive over banks:
+  kappa=2 p=101: banks (1,c2,c3) with NO nonzero P0-solution: 0 of 5050 ; dead pairs (1,c): 50 (expected 50)
+  kappa=2 p=109: banks (1,c2,c3) with NO nonzero P0-solution: 0 of 5886 ; dead pairs (1,c): 54 (expected 54)
+  kappa=3 p=103: banks (1,c2,c3) with NO nonzero P0-solution: 0 of 5253 ; dead pairs (1,c): 68 (expected 68)
+  kappa=3 p=109: banks (1,c2,c3) with NO nonzero P0-solution: 0 of 5886 ; dead pairs (1,c): 72 (expected 72)
+  kappa=4 p=101: banks (1,c2,c3) with NO nonzero P0-solution: 0 of 5050 ; dead pairs (1,c): 75 (expected 75)
+  kappa=4 p=109: banks (1,c2,c3) with NO nonzero P0-solution: 0 of 5886 ; dead pairs (1,c): 81 (expected 81)
+  kappa=6 p=103: banks (1,c2,c3) with NO nonzero P0-solution: 0 of 5253 ; dead pairs (1,c): 85 (expected 85)
+(ii) kappa=3, a=2: exact counts of nonzero P0-solutions
+  p=1009: dead-pair bank M=4 count = 0
+  p=1009: 60 random banks M=5: min=4222512 median=4266192 max=4329696  (heuristic p^3/27 = 38046064)
+  p=1009: dead pairs + generic: count = 4095840
+  p=1009: dead pairs + (1,1): count = 3775296
+  p=1009: dead pairs + (1,c): count = 4095840
+  p=1009: dead pairs + (c,c): count = 4443600
+  p=1009: dead pairs + (c^2,c): count = 4520880
+  p=1009: proportional triple: count = 12783792
+  p=1009: 4 proportional: count = 12783792
+  p=1033: dead-pair bank M=4 count = 0
+  p=1033: 60 random banks M=5: min=4530480 median=4576920 max=4797424  (heuristic p^3/27 = 40826034)
+  p=1033: dead pairs + generic: count = 4087064
+  p=1033: dead pairs + (1,1): count = 5120096
+  p=1033: dead pairs + (1,c): count = 4826320
+  p=1033: dead pairs + (c,c): count = 4549400
+  p=1033: dead pairs + (c^2,c): count = 4312040
+  p=1033: proportional triple: count = 13712872
+  p=1033: 4 proportional: count = 13712872
+/opt/anaconda3/bin/python -B density_check.py  163.74s user 87.50s system 73% cpu 5:40.39 total

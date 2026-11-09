@@ -1,0 +1,71 @@
+{
+ "status": "coherent_label_receiver_backend_class_four_instance_finite_checks",
+ "scope": "n5(F_7) only: kappa = (2, 3, 2) at grades (4, 3, 2), arities (3, 6, 10)",
+ "coherent_receiver_implemented": false,
+ "coherent_label_backend_class_four_instance": true,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "whole_circuit_amplitude_simulation": false,
+ "source_from_gate_list_on_all_addresses": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "parts": [
+  "paths",
+  "rref"
+ ],
+ "args": {
+  "out": "research/audits/reviews/2026-11-04-rees-circuit-coherent-c4/rref_paths.json",
+  "parts": "rref,paths",
+  "per_label": 4096,
+  "random_sde": 4194304,
+  "tuples": 64,
+  "max_all": 400,
+  "state_instances": "",
+  "run_instances": "",
+  "paths": 512
+ },
+ "config": "n5(F_7) c=4 dims=(5, 3, 2, 1) points=(1, 2, 3, 4) M={2: 10, 3: 6, 4: 3}",
+ "rref": {
+  "d3_sde_all_row_spaces": {
+   "inputs": 6884860,
+   "gates": 402726,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 45.8,
+   "passed": true,
+   "row_spaces_expected": 6884860
+  },
+  "d3_block_all_row_spaces": {
+   "inputs": 6884860,
+   "gates": 1648452,
+   "qubits": 616,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 220.6,
+   "passed": true,
+   "row_spaces_expected": 6884860
+  }
+ },
+ "assembled_basis_paths": {
+  "fresh_registers_zero_before_qft": true,
+  "children_and_Q": true,
+  "labels": true,
+  "root_Q_unchanged": true,
+  "workspace_clean": true,
+  "paths": 512,
+  "passed": true
+ },
+ "assembled_mutants": {
+  "drop_one_instrument": true,
+  "drop_one_witness_control_grade4": true,
+  "all_rejected": true
+ },
+ "seconds": 502.6
+}

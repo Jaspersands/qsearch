@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "scope": "Falsifies only deleting a site from the on-shell Gaudin norm formula while keeping roots fixed.",
+  "epsilon": [
+    "1/2",
+    "2",
+    "1/5",
+    "7/5"
+  ],
+  "roots": [
+    "-1",
+    "1"
+  ],
+  "gamma": "-5/4",
+  "coupling_G": "4/5",
+  "subsets": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "amplitudes": [
+    "0",
+    "-5/2",
+    "5/6",
+    "5/12",
+    "5/4",
+    "25/16"
+  ],
+  "Borchardt_checks": 6,
+  "zero_amplitude_included": true,
+  "Bethe_residuals_full": [
+    "0",
+    "0"
+  ],
+  "pairing_H_eigenvalue": "0",
+  "pairing_H_eigenvector_check": true,
+  "full_norm_and_Gaudin": "25625/2304",
+  "site_0_empty": {
+    "true_unnormalized_norm": "9625/2304",
+    "probability": "77/205",
+    "deleted_site_Gaudin": "2867/768",
+    "exact_discrepancy": "4/9",
+    "deleted_site_Bethe_residuals": [
+      "2/3",
+      "-2"
+    ]
+  },
+  "M2_identity": {
+    "formula": "true_norm - Gaudin_det = K*(K+4/d^2)",
+    "universal_one_level_Cauchy_relation_verified_symbolically": true,
+    "derivation": "true_norm=A*B+K^2-2D; Gaudin_det=A*B-2(A+B)/d^2; A+B=2K+d^2*D.",
+    "exact_full_and_prefix_checks": [
+      {
+        "levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "K": "-1",
+        "norm_minus_Gaudin": "0"
+      },
+      {
+        "levels": [
+          1,
+          2,
+          3
+        ],
+        "K": "1/3",
+        "norm_minus_Gaudin": "4/9"
+      }
+    ]
+  },
+  "claim_gates": {
+    "general_Bethe_algorithm_no_go": false,
+    "hardness": false,
+    "poly_N_algorithm_inference": false,
+    "full_state_preparation": false,
+    "quantum_execution": false,
+    "novelty": false,
+    "speedup": false
+  }
+}

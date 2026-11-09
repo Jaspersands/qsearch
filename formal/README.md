@@ -7,10 +7,26 @@ most three it also constructs the actual BCH group and transports the
 concrete Rees maps into the group-level hiding theorem. It now constructs
 the actual central quotients and instantiates the full-register central
 measurements and their two-stage fresh-bank composition, retaining all of
-log(H) at the terminal additive quotient. Total valid SDE policies remain
-supplied inputs. General-class BCH/Lazard transport, original-oracle-to-
-recovery/error integration and a polynomial-time receiver theorem remain
-outside this verification.
+log(H) at the terminal additive quotient. In every class it checks the
+Lie-level cover facts unconditionally and, conditionally on an explicit natural
+group law, the group-level tuple criterion, the central tower and the measured
+receiver composed over all stages. The group-law hypotheses are discharged at
+class three and, since 2026-11-02, at class four: the quartic BCH group is
+constructed from Jacobi, its prime-field subgroups are Lie subalgebras, and
+the composed class-four receiver is unconditional apart from its stated
+inputs. Since 2026-11-04 the same holds at class five (`BCHClassFive`,
+`BCHClassFiveSubgroups`, `ReesGeneralLawClassFive`; report
+`research/audits/reviews/2026-11-04-rees-lean-c5.md`), and since 2026-11-05 at
+class six (`BCHClassSix`, `BCHClassSixSubgroups`, `ReesGeneralLawClassSix`; report
+`research/audits/reviews/2026-11-05-rees-lean-c6.md`) and at class seven
+(`BCHClassSeven`, `BCHClassSevenSubgroups`, `ReesGeneralLawClassSeven`, over
+`ZMod p` with `p > 7`; report `research/audits/reviews/2026-11-05-rees-lean-c7.md`).
+The SDE policies of the
+measured receiver are supplied inputs, except in `ReesSdePolicy`, which builds
+them (non-constructively, by Chevalley–Warning) from a bank-size hypothesis. The
+general-class (c at least eight) BCH/Lazard construction, original-oracle-to-recovery/error
+integration and a polynomial-time receiver theorem remain outside this
+verification.
 
 This folder holds a Lean 4 + Mathlib project. It checks the mixed affine-support
 Kraus identity, conditional scalar and matrix group-coset Fourier conversions,
@@ -43,10 +59,27 @@ guards in `Formal/AffineSupportErasure.lean`, `Formal/CosetSourceFourier.lean`,
 `Formal/ReesLieInterpolation.lean`,
 `Formal/BCHClassThree.lean`,
 `Formal/BCHClassThreeSubgroups.lean`,
+`Formal/BCHClassFour.lean`,
+`Formal/BCHClassFourSubgroups.lean`,
+`Formal/ReesGeneralLawClassFour.lean`,
+`Formal/ReesGeneralMeasuredReceiver.lean`,
 `Formal/ReesGroupClassThree.lean`,
 `Formal/ReesCentralQuotient.lean`,
 `Formal/ReesCentralQuotientBCH.lean`,
 `Formal/ReesClassThreeReceiver.lean`,
+`Formal/ReesSdeWitness.lean`,
+`Formal/ReesSdeTriangular.lean`,
+`Formal/ReesSdeGcd.lean`,
+`Formal/ReesSdeQuadratic.lean`,
+`Formal/ReesSdePolicy.lean`,
+`Formal/ReesSdeSolver.lean`,
+`Formal/ReesS2Local.lean`,
+`Formal/BCHClassSix.lean`,
+`Formal/BCHClassSixSubgroups.lean`,
+`Formal/ReesGeneralLawClassSix.lean`,
+`Formal/BCHClassSeven.lean`,
+`Formal/BCHClassSevenSubgroups.lean`,
+`Formal/ReesGeneralLawClassSeven.lean`,
 `Formal/CentralCharacterDescent.lean`,
 `Formal/CentralQuotientReceiver.lean`,
 `Formal/CentralSpectralProjector.lean`,
@@ -342,6 +375,126 @@ automated semantic review found no defect in this scoped composition.
 The full Lean build, four strict checks and 130 selected Python tests pass;
 the new finite control covers all 59,049 five-label records. See
 `research/REES_MEASURED_RECEIVER_FORMALIZATION.md` for details and provenance.
+
+### General-Class Layer And Class Four (2026-11-02)
+
+Four files written in round 1 as review artifacts
+(`research/audits/reviews/2026-11-02-rees-lean/`, kept there unchanged) are now
+in the default build under the same module names, and four new files extend
+them. Their 185 global guards are in `Formal/Audit.lean`; see
+`research/audits/reviews/2026-11-02-rees-lean-2.md` for statements and logs.
+On 2026-11-04 three class-five modules were added (last three rows below);
+their 21 guards are also in `Formal/Audit.lean`, and their report is
+`research/audits/reviews/2026-11-04-rees-lean-c5.md`. On 2026-11-05 three
+class-six modules followed (the rows marked 2026-11-05), with 21 guards in
+`Formal/Audit.lean`; report `research/audits/reviews/2026-11-05-rees-lean-c6.md`.
+Three class-seven modules (the rows marked "class seven, 2026-11-05") added 21
+more guards; report `research/audits/reviews/2026-11-05-rees-lean-c7.md`.
+
+| Module | Guards | Checked content |
+|---|---|---|
+| `ReesGeneralCover` | 23 | Any class, any commutative ring: exact class of the Rees algebra, central top grade, `E_s ∘ δ_a = E_{as}`, `E_s(⊕_{j>d} t^j γ_j) = γ_{d+1}`, `h̃ = ⊕_r t^r(h ∩ γ_r) = ∩_i E_{s_i}^{-1}(h) = ∩_s E_s^{-1}(h)`, independent of the points. |
+| `ReesGeneralLaw` | 40 | Conditional on `NilpotentGroupLaw F c`: law groups, Lie maps as group maps, group tuple criterion, `exp h̃` independent of points and dilation-invariant, central tower with central additive step kernels, terminal group additive `L`. |
+| `ReesGeneralLawClassThree` | 5 | The cubic BCH product satisfies the three hypotheses at `c = 3`. |
+| `ReesGeneralReceiver` | 15 | Conditional general-class measured step `step_output` with a public section; terminal source retains all of `h`. |
+| `BCHClassFour` | 38 | Quartic BCH group `x+y+[x,y]/2+([x,[x,y]]+[y,[y,x]])/12-[y,[x,[x,y]]]/24` from Jacobi and `lowerCentralSeries F L L 4 = ⊥`, over any field with 2, 3 nonzero; Lie maps give group maps; powers are scalar multiples. |
+| `BCHClassFourSubgroups` | 42 | Explicit commutator/power words recover `[x,y]` and `x+y`; every subgroup of the prime-field class-four BCH group is a Lie subalgebra, with both round trips. |
+| `ReesGeneralLawClassFour` | 10 | The quartic law satisfies all three hypotheses at `c = 4` over `ZMod p`, `p > 3`; tuple hiding, receiver step and terminal source at `c = 4` for arbitrary `H` with points `1,2,3,4` (`p > 4`). |
+| `ReesGeneralMeasuredReceiver` | 12 | General-class measured stage summed over all records; `descend` composes all `c - 1` stages on fresh banks without `H`; from the exact top coset source the terminal output is the additive coset source of all of `h`; unconditional class-four instance. |
+| `BCHClassFive` | 8 | Quintic BCH group (degree-5 terms with 1/720, 1/360, 1/120) from Jacobi and `lowerCentralSeries F L L 5 = ⊥`, over any field with 2, 3, 5 nonzero; Lie maps give group maps; powers are scalar multiples. (2026-11-04) |
+| `BCHClassFiveSubgroups` | 8 | Every subgroup of the prime-field class-five BCH group (`p > 5`) is a Lie subalgebra (`toLieSubalgebra`), with both round trips. (2026-11-04) |
+| `ReesGeneralLawClassFive` | 5 | The quintic law satisfies all three hypotheses at `c = 5` over `ZMod p`, `p > 5` (`bchLaw`, `bchLaw_additive`, `bchLaw_subgroups`); tuple hiding (`classFive_tuple_hides_coeff`), terminal source (`classFive_terminal_source`) and measured terminal source (`classFive_measured_terminal_source`, policies supplied as inputs) for arbitrary `H` at points `1,...,5`. (2026-11-04) |
+| `BCHClassSix` | 8 | Sextic BCH group (degree-6 terms `-[x,[x,[y,[y,[x,y]]]]]/720 + [x,[y,[x,[y,[x,y]]]]]/240 + ([x,[y,[y,[y,[x,y]]]]] + [y,[x,[x,[x,[x,y]]]]])/1440`) from Jacobi and `lowerCentralSeries F L L 6 = ⊥`, over any field with 2, 3, 5 nonzero; Lie maps give group maps; powers are scalar multiples. (2026-11-05) |
+| `BCHClassSixSubgroups` | 8 | Every subgroup of the prime-field class-six BCH group (`p > 5`, so `p ≥ 7`) is a Lie subalgebra (`toLieSubalgebra`), with both round trips. (2026-11-05) |
+| `ReesGeneralLawClassSix` | 5 | The sextic law satisfies all three hypotheses at `c = 6` over `ZMod p`, `p > 5` (`bchLaw`, `bchLaw_additive`, `bchLaw_subgroups`); tuple hiding (`classSix_tuple_hides_coeff`), terminal source (`classSix_terminal_source`) and measured terminal source (`classSix_measured_terminal_source`, policies supplied as inputs) for arbitrary `H` at points `1,...,6` (`p > 6`). (2026-11-05) |
+| `BCHClassSeven` | 8 | Septic BCH group (the sextic law plus 18 right-normed degree-7 words with denominators 1120, 2520, 5040, 10080, 30240) from Jacobi and `lowerCentralSeries F L L 7 = ⊥`, over any field with 2, 3, 5, 7 nonzero; Lie maps give group maps; powers are scalar multiples. (class seven, 2026-11-05) |
+| `BCHClassSevenSubgroups` | 8 | Every subgroup of the prime-field class-seven BCH group (`p > 7`, so `p ≥ 11`) is a Lie subalgebra (`toLieSubalgebra`), with both round trips; `val_bracketWord` and `val_addWord` are proved in one lemma per correction factor. (class seven, 2026-11-05) |
+| `ReesGeneralLawClassSeven` | 5 | The septic law satisfies all three hypotheses at `c = 7` over `ZMod p`, `p > 7` (`bchLaw`, `bchLaw_additive`, `bchLaw_subgroups`); tuple hiding (`classSeven_tuple_hides_coeff`), terminal source (`classSeven_terminal_source`) and measured terminal source (`classSeven_measured_terminal_source`, policies supplied as inputs) for arbitrary `H` at points `1,...,7` (`p > 7`). (class seven, 2026-11-05) |
+
+The associativity proof normalizes both sides to right-normed brackets with a
+sorted innermost pair, using one degree-three and three degree-four Jacobi
+rules (`jacobi3`, `jacobi4b`). The rules and the subgroup words were found
+with exact rational models in `research/audits/reviews/2026-11-02-rees-lean-2/`
+(`bch4_model.py`, `rules4_lean.py`, `words4.py`); Lean does not depend on those
+scripts. The class-four law needs only `2, 3 ≠ 0`; the admissible points
+`1,2,3,4` need `p > 4`.
+
+Inputs and limits are as for class three: total valid SDE witness policies and
+the exact initial lifted coset source are supplied; fresh tensor powers are
+supplied copies; no solver, circuit, runtime or error bound is extracted. Class five is
+covered by `BCHClassFive`, `BCHClassFiveSubgroups` and `ReesGeneralLawClassFive`
+(2026-11-04), and class six by `BCHClassSix`, `BCHClassSixSubgroups` and
+`ReesGeneralLawClassSix` (2026-11-05), with the same method: 28 degree-six
+three-letter rules (116 normal words in degree six) and three degree-six two-letter
+rules, chosen with the exact models in
+`research/audits/reviews/2026-11-05-rees-lean-c6/`. Class seven is covered by
+`BCHClassSeven`, `BCHClassSevenSubgroups` and `ReesGeneralLawClassSeven`
+(2026-11-05): 36 degree-seven three-letter rules (312 normal words in degree seven),
+no degree-seven two-letter rule, and degree-seven coefficients cross-checked against
+Dynkin's formula, a corrected Varadarajan recursion in Sage and 8×8 nilpotent
+matrices (`research/audits/reviews/2026-11-05-rees-lean-c7/`). No group law is
+constructed for `c ≥ 8`.
+
+### Rees SDE Step: Witness Existence, Triangular Solver, Gcd Reduction (2026-11-03)
+
+`Formal/ReesSdeWitness.lean`, `Formal/ReesSdeTriangular.lean` and
+`Formal/ReesSdeGcd.lean` have 31 guards, in the section "Rees SDE solvers" at the
+end of `Formal/Audit.lean`. None uses an axiom beyond `propext`, `Classical.choice` and
+`Quot.sound`. They check:
+
+- Chevalley–Warning witness existence at arity κa+1 over any finite field, and
+  gcd(d,p−1)·a+1 at exponent d over `ZMod p` (`exists_witness`,
+  `exists_witness_zmod`, `exists_witness_gcd`, `exists_witness_linear`);
+- the correctness of the triangular two-level construction of
+  `prop:triangular-sde` from (a+1)(a+2)/2 columns, given a normalised contraction
+  (α, β) as a hypothesis (`triangular_witness`, `triangular_sde_witness`,
+  `triangular_sde_of_contraction`, `triangular_sde_zmod`, and the instance
+  `triangular_sde_three`);
+- the Bezout reduction of `lem:app-s2-gcd` (`pow_bezout_exponent`,
+  `range_pow_units_eq`, `bezout_witness`).
+
+These are existence statements. No solver is extracted, and no running time is
+checked. Statements and build logs are in
+`research/audits/reviews/2026-11-03-rees-lean-3.md`.
+
+Two modules added on 2026-11-05 (12 guards, section "Rees SDE at kappa = 2 and
+Chevalley-Warning receiver policies" at the end of `Formal/Audit.lean`; report
+`research/audits/reviews/2026-11-05-rees-lean-c6.md`):
+
+| Module | Guards | Checked content |
+|---|---|---|
+| `ReesSdeQuadratic` | 6 | At κ = 2 the two-level contraction exists over `ZMod p` for every odd prime `p` (`p ∉ E_2(2)`): the least non-residue ν gives μ = ν − 1 (`exists_consecutive_nonsquare`), and α = (1, 0), β = (0, μ) satisfy the coset condition for every generator g (`contraction_two`). Hence any (a+1)(a+2)/2 columns in `(ZMod p)^a` have a nonzero s with ∑ s_i^2 λ_i = 0 (`triangular_sde_quadratic`), and the same at every exponent d with gcd(d, p−1) = 2 (`triangular_sde_gcd_two`); no contraction hypothesis. |
+| `ReesSdePolicy` | 6 | Chevalley–Warning in any finite-dimensional label space (`exists_witness_module`, `exists_witness_module_gcd`); a total policy `cwPolicy` chosen by `Classical.choose`, with `cwPolicy_active` and `cwPolicy_sde`; the general measured receiver with that policy (`measured_terminal_source_cw`, hypothesis: every bank at stage d+1 has more than gcd(d+1, p−1)·dim (γ_{d+1})^* columns) and its class-six instance for arbitrary `H` (`classSix_measured_terminal_source_cw`). |
+
+Still outside: the existence of two-level contractions for κ ≥ 3, any solver as
+an algorithm (the policies are chosen, not computed), the arity bounds of
+Schedules 1–3, and running times. (`ReesSdeSolver` below now gives computable
+solvers at κ ≤ 2 and an exhaustive search; the policies of `ReesSdePolicy` are
+still chosen, not replaced by them.)
+
+Two modules integrated on 2026-11-05 (29 guards at the end of
+`Formal/Audit.lean`; reports
+`research/audits/reviews/2026-11-05-rees-lean-sde-solver.md`,
+`research/audits/reviews/2026-11-05-rees-receiver-round2.md` and the check
+`research/audits/reviews/2026-11-05-rees-lean-sde-solver-check.md`;
+machine-checked in Lean, AI-run, pending human review):
+
+| Module | Guards | Checked content |
+|---|---|---|
+| `ReesSdeSolver` | 24 | Computable SDE solvers with correctness proofs (ordinary `def`s, run by `#eval` in the file): Gaussian elimination (`kernelVec_spec`, `solveVec_some`, `solveVec_none`); the triangular solver of `prop:triangular-sde` over any field with the contraction as input (`triSolve_spec`: from any M ≥ (a+1)(a+2)/2 columns a nonzero x with entries in D, supported on the first (a+1)(a+2)/2 columns, ∑ x_i λ_i = 0; `contraction_of_index` turns a coset index into its hypothesis); at κ = 2 over a finite field of odd characteristic for any quadratic non-residue g (`quadSolve_spec`, `quadSolveExp_spec`); over `ZMod p`, p odd, with the contraction found by search (`findMu_spec`, `findMu_contraction`, `quadSolveZMod_spec`, `quadSolveZModExp_spec`: no input but p, d and the columns); κ = 1 from any a+1 columns (`linSolve_spec`, `linSolve_zmod_spec`, `pow_bezoutExp`); exhaustive search at κa+1 columns (`cwSearch_spec`, `cwSearch_witness`, `cwSearch_zmod_gcd`). Running time not formalized; square roots by O(|K|) search, not the paper's Las Vegas extraction; no coset index or contraction for κ ≥ 3. |
+| `ReesMergeReduction` | 5 | Step (R) of the exhaustive merge checks: coordinates of the witness equation in a basis (`witness_coords`), cancellation of the twist exponent (`exponent_cancels`), the pointwise identity merged product = zero-label product for every label tuple and every witness given (E2), (E3) and the support condition (`merge_product_eq`, `merge_product_eq_of_labels`), and the zero-label product as κ^#A times an indicator (`zero_product_indicator`). That the merge code's output is a function of this product is read off the code, not formalized. |
+
+### Rees Schedule 2: Local Obstructions and Small Exceptional Primes (2026-11-05)
+
+`Formal/ReesS2Local.lean` (14 guards at the end of `Formal/Audit.lean`; report
+`research/audits/reviews/2026-11-05-rees-lean-s2-local.md`, check
+`research/audits/reviews/2026-11-05-rees-lean-s2-local-check.md`; machine-checked in
+Lean, AI-run, pending human review) formalizes Subsection `app:s2-local` of
+`docs/papers/rees-hsp/appendix-schedule2.tex`:
+
+| Module | Guards | Checked content |
+|---|---|---|
+| `ReesS2Local` | 14 | Definitions over `ZMod p`: cosets `Q°_m = ξ^m Q_0 ∪ {0}` (`MemQo`), coset generator (`IsCosetGen`), `W ⊗ W` read as the matrices with every row and column in `W` (`InWW`), two-level contraction (`IsContraction`), `E_2(κ)` quantified over every coset generator (`E2`; equal to the "some generator" reading by `mem_E2_iff_exists`, via `hasContraction_transfer` and `exists_cosetGen`) and `A(u, v)` (`A`). The normal form `lem:app-s2-normal` in both directions (`hasContraction_iff`); `lem:app-s2-two-rows` (`beta_injective`, `alpha_injective`, `two_rows_diff`); `prop:app-s2-cyclotomic`(i) (`exists_A_witness`, `mem_E2_of_A_eq_zero`) and (ii) (`card_pairs_le`, `mem_E2_of_le`, bound stated over `ℤ`); `lem:app-s2-divisor` (`mem_E2_of_dvd`, with `D ≥ 1`). Instances by `decide` (no `native_decide`): `13, 29 ∈ E_2(4)` by (i), ten memberships for `κ = 4, …, 9` by (ii), and `7 ∉ E_2(3)`, `3 ∉ E_2(2)` by explicit contractions. Part (iii) (Weil bound), the finite computations of `rem:app-s2-local-scope` and all thresholds are not formalized. |
 
 ## General Induced-Cocycle Operator Algebra
 

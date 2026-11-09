@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_f_basis": true,
+    "source_deterministic": true,
+    "source_gaudin": true,
+    "source_correlators": true,
+    "closed_2026-11-07-bethe-prefix-core.md": true,
+    "closed_2026-11-07-bethe-prefix-sources.md": true,
+    "HF_addendum": true,
+    "exact_control": true,
+    "exact_falsifier": true,
+    "false_gates": true,
+    "syntax": true,
+    "terminal_timeout": true,
+    "empty_response": true,
+    "unknown_partial_billing": true,
+    "ledger": true,
+    "title_AGENT_HANDOFF.md": true,
+    "title_MECHANICAL_FOLLOW_UP_PLAN.md": true,
+    "STATE_title": true,
+    "STATE_no_live_call": true,
+    "STATE_open": true
+  },
+  "source_snapshots": {
+    "f_basis": {
+      "name": "f_basis",
+      "url": "https://scipost.org/SciPostPhys.18.6.187/pdf",
+      "sha256": "ee3ee74d076c22342d90aa0889d59f41831c1460d100155323076c228e723300"
+    },
+    "deterministic": {
+      "name": "deterministic",
+      "url": "https://arxiv.org/pdf/2403.03283",
+      "sha256": "b4f1d19be55967540b991503e092fee40344efc2cf74c1cac7cb2deefd8659a1"
+    },
+    "gaudin": {
+      "name": "gaudin",
+      "url": "https://arxiv.org/pdf/1501.05827",
+      "sha256": "431bfeae878cc93e62116ed2d176ddd4097607b34ef0efb52b343ceb03f68d36"
+    },
+    "correlators": {
+      "name": "correlators",
+      "url": "https://arxiv.org/pdf/solv-int/9708007",
+      "sha256": "30552a5894371efa0a3c5f8685f97401da0297b5b8e67beb6eb4d755d67cad42"
+    }
+  },
+  "review_sha256": {
+    "2026-11-07-bethe-prefix-core.md": "f55e6a12c98623d1168a89f6005476d3954fe4405e482cf7e0efa5511a8e2ac7",
+    "2026-11-07-bethe-prefix-sources.md": "ae42f36daf318d1c5488944fd4e155a2dc3fcacb8bc2d58c5fe7fcbc4df80c34"
+  },
+  "control_sha256": {
+    "control.py": "24f3dc470542d3d18aa5b8ad791308bd7d31216ec67aaa03bc059a3a9b52e7f9",
+    "result.json": "a1223ba493b82e322b7871eaad4640d3874746bf97a87e7c9de9bdc2e9845492"
+  },
+  "ledger": {
+    "nonpartial_estimates": 72,
+    "estimated_usd": "57.237428",
+    "completed_reports": 37,
+    "partial_unknown_billing_records": 2,
+    "not_balance": true
+  },
+  "pass_billing": "UNKNOWN; partial counter USD0.027600 is not a final charge",
+  "control_reexecuted": false,
+  "scope": "Exact classical falsifier and reviewed conditional-baseline checkpoint. Full Bethe preparation and general impossibility remain unproved."
+}

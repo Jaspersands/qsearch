@@ -1,0 +1,112 @@
+{
+ "exact": {
+  "sigma": {
+   "3": {
+    "exact": "3/1",
+    "float": 3.0,
+    "bound_min_p_B0p4": 3,
+    "bound_ok": true
+   },
+   "5": {
+    "exact": "65/16",
+    "float": 4.0625,
+    "bound_min_p_B0p4": 5,
+    "bound_ok": true
+   },
+   "7": {
+    "exact": "1127/243",
+    "float": 4.637860082304527,
+    "bound_min_p_B0p4": 7,
+    "bound_ok": true
+   },
+   "11": {
+    "exact": "10602328/1953125",
+    "float": 5.428391936,
+    "bound_min_p_B0p4": 11,
+    "bound_ok": true
+   },
+   "13": {
+    "exact": "4154499115/725594112",
+    "float": 5.725651636765211,
+    "bound_min_p_B0p4": 12,
+    "bound_ok": true
+   },
+   "17": {
+    "exact": "434896500819017/70368744177664",
+    "float": 6.18025098928878,
+    "bound_min_p_B0p4": 12,
+    "bound_ok": true
+   }
+  },
+  "closed_form_ok": {
+   "3": {
+    "bound_ok_n_le_200": true,
+    "increasing": true,
+    "jstar": 1,
+    "degree_1_plus_jstar": 2,
+    "slope_n_to_2n": {
+     "25": 1.970883820783226,
+     "50": 1.9855042391543214,
+     "100": 1.992768909266886
+    }
+   },
+   "5": {
+    "bound_ok_n_le_200": true,
+    "increasing": true,
+    "jstar": 2,
+    "degree_1_plus_jstar": 3,
+    "slope_n_to_2n": {
+     "25": 2.9991453817140057,
+     "50": 2.9997899375763395,
+     "100": 2.9999479385399423
+    }
+   },
+   "7": {
+    "bound_ok_n_le_200": true,
+    "increasing": true,
+    "jstar": 3,
+    "degree_1_plus_jstar": 4,
+    "slope_n_to_2n": {
+     "25": 4.058329658663384,
+     "50": 4.029021479741765,
+     "100": 4.014470253435381
+    }
+   },
+   "11": {
+    "bound_ok_n_le_200": true,
+    "increasing": true,
+    "jstar": 4,
+    "degree_1_plus_jstar": 5,
+    "slope_n_to_2n": {
+     "25": 5.151044164231638,
+     "50": 5.07380827866076,
+     "100": 5.036483049418137
+    }
+   },
+   "13": {
+    "bound_ok_n_le_200": true,
+    "increasing": true,
+    "jstar": 4,
+    "degree_1_plus_jstar": 5,
+    "slope_n_to_2n": {
+     "25": 5.151428918285385,
+     "50": 5.07389736984548,
+     "100": 5.036504511213211
+    }
+   },
+   "17": {
+    "bound_ok_n_le_200": true,
+    "increasing": true,
+    "jstar": 4,
+    "degree_1_plus_jstar": 5,
+    "slope_n_to_2n": {
+     "25": 5.15194425528042,
+     "50": 5.074016861332793,
+     "100": 5.036533317639448
+    }
+   }
+  },
+  "p3_formula_ok": true
+ },
+ "secs": 0.1
+}

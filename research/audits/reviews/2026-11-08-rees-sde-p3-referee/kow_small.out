@@ -1,0 +1,8 @@
+n=2 m=5: ordered sequences 59049: some-branch-fails 2592, all-branches-fail 2592
+   multisets 1287 (with a zero-sum subset: 1287); sorted order: some-branch-fails 53, all-branches-fail 53; fail for every order and branch 0; fail for some order/branch 232
+n=2 m=6: ordered sequences 531441: some-branch-fails 0, all-branches-fail 0
+   multisets 3003 (with a zero-sum subset: 3003); sorted order: some-branch-fails 0, all-branches-fail 0; fail for every order and branch 0; fail for some order/branch 0
+author's example [(0, 1), (1, 0), (1, 1), (1, 2), (1, 2)] sorted-order outcome (some succ, some fail): (False, True)
+n=3 m=8 author's failure instance: some branch succeeds True, some branch fails True; zero-sum subset exists True
+n=4 m=12 author's failure instance: some branch succeeds True, some branch fails True; zero-sum subset exists True
+recursion m_1..m_8: [3, 6, 9, 13, 18, 24, 30, 37]

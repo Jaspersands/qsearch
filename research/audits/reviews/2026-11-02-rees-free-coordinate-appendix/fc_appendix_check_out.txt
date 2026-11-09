@@ -1,0 +1,48 @@
+== part (ii): displayed inequalities
+   u = 2..120: h >= 15u; tree bank sum = (4/225)^u/u^2 + 2*4^(u-1)/(16^(u+1)u^(u+3)) <= 1/64; 3T2^-B <= 3/64 and B <= 7+(u-1)ceil(log2 4u) for c = 2..u: OK
+   u = 2..30: beta(4u, 2u+1; a) <= 4*15^(-2u)u^(-u-1) + 2p^(-u-1) for all kappa <= u, kappa | p-1, a <= u-1, at the least prime >= 16u^2, 2^61-1, 2^127-1; q >= 1/kappa: OK
+
+== part (iii): class-nine profile g = (19,17,16,14,12,9,6,3,1), eps = 1/3
+   p=      11 least   : log2Q=  42.3 max log2 trials/node= 28.3 (grade 5) log2 total trials= 47.0 B=40 err total=0.158 <= 1/3
+        arities 2:FCS34 3:lin17 4:FCS37 5:FCS72 6:FCS38 7:lin7 8:FCS36 9:lin2
+   p=      11 explicit: log2Q=  42.5 max log2 trials/node= 28.3 (grade 5) log2 total trials= 47.1 B=40 err total=0.153 <= 1/3
+        arities 2:FCS35 3:lin17 4:FCS38 5:FCS74 6:FCS39 7:lin7 8:FCS38 9:lin2
+   p=    1031 least   : log2Q=  36.6 max log2 trials/node= 33.4 (grade 5) log2 total trials= 50.8 B=36 err total=0.137 <= 1/3
+        arities 2:FCS23 3:lin17 4:FCS22 5:FCS23 6:FCS17 7:lin7 8:FCS12 9:lin2
+   p=    1031 explicit: log2Q=  37.0 max log2 trials/node= 33.4 (grade 5) log2 total trials= 51.0 B=36 err total=0.138 <= 1/3
+        arities 2:FCS24 3:lin17 4:FCS23 5:FCS24 6:FCS19 7:lin7 8:FCS13 9:lin2
+   p=    5281 least   : log2Q=  39.1 max log2 trials/node= 33.8 (grade 4) log2 total trials= 52.2 B=40 err total=0.142 <= 1/3
+        arities 2:FCS21 3:FCS23 4:FCS21 5:FCS21 6:FCS18 7:lin7 8:FCS12 9:FCS10
+   p=    5281 explicit: log2Q=  39.9 max log2 trials/node= 33.8 (grade 4) log2 total trials= 52.6 B=40 err total=0.143 <= 1/3
+        arities 2:FCS23 3:FCS24 4:FCS23 5:FCS22 6:FCS19 7:lin7 8:FCS14 9:FCS11
+   p=  2^31-1 least   : log2Q=  35.9 max log2 trials/node= 31.0 (grade 3) log2 total trials= 49.8 B=37 err total=0.148 <= 1/3
+        arities 2:FCS20 3:FCS19 4:FCS17 5:lin13 6:FCS12 7:FCS10 8:FCS7 9:FCS5
+   p=  2^31-1 explicit: log2Q=  36.8 max log2 trials/node= 31.1 (grade 3) log2 total trials= 50.1 B=38 err total=0.140 <= 1/3
+        arities 2:FCS21 3:FCS20 4:FCS18 5:lin13 6:FCS13 7:FCS11 8:FCS8 9:FCS6
+   p=  2^61-1 least   : log2Q=  34.1 max log2 trials/node= 33.5 (grade 5) log2 total trials= 51.0 B=36 err total=0.148 <= 1/3
+        arities 2:FCS19 3:FCS18 4:FCS16 5:FCS14 6:FCS11 7:FCS8 8:FCS5 9:FCS3
+   p=  2^61-1 explicit: log2Q=  35.4 max log2 trials/node= 33.5 (grade 5) log2 total trials= 51.3 B=37 err total=0.144 <= 1/3
+        arities 2:FCS20 3:FCS19 4:FCS17 5:FCS15 6:FCS12 7:FCS9 8:FCS6 9:FCS4
+   p= 2^127-1 least   : log2Q=  34.0 max log2 trials/node= 31.0 (grade 3) log2 total trials= 49.5 B=36 err total=0.145 <= 1/3
+        arities 2:FCS19 3:FCS18 4:FCS16 5:lin13 6:FCS11 7:FCS8 8:FCS5 9:FCS3
+   p= 2^127-1 explicit: log2Q=  35.2 max log2 trials/node= 31.0 (grade 3) log2 total trials= 49.8 B=37 err total=0.139 <= 1/3
+        arities 2:FCS20 3:FCS19 4:FCS17 5:lin13 6:FCS12 7:FCS9 8:FCS6 9:FCS4
+   table tab:fcs-budget, columns (iii), reproduced from the least public arities: OK; largest per-node trial cap 2^33.78
+
+== Lemma lem:fc-moment, exhaustive over C in F_p^(r x n)
+   (p,kappa,r,n)=(5,2,1,3): E N = h^n q^r, Var N = h^(n+1)(q^r-q^2r) <= h E N exact; bad fraction 0.1120 <= Chebyshev 1.0000; oblivious identity OK
+   (p,kappa,r,n)=(7,3,2,2): E N = h^n q^r, Var N = h^(n+1)(q^r-q^2r) <= h E N exact; bad fraction 0.6664 <= Chebyshev 1.0000; oblivious identity OK
+   (p,kappa,r,n)=(7,2,2,2): E N = h^n q^r, Var N = h^(n+1)(q^r-q^2r) <= h E N exact; bad fraction 0.3199 <= Chebyshev 1.0000; oblivious identity OK
+   (p,kappa,r,n)=(13,4,1,3): E N = h^n q^r, Var N = h^(n+1)(q^r-q^2r) <= h E N exact; bad fraction 0.1352 <= Chebyshev 1.0000; oblivious identity OK
+   (p,kappa,r,n)=(11,5,2,2): E N = h^n q^r, Var N = h^(n+1)(q^r-q^2r) <= h E N exact; bad fraction 0.8568 <= Chebyshev 1.0000; oblivious identity OK
+   (p,kappa,r,n)=(13,3,1,3): E N = h^n q^r, Var N = h^(n+1)(q^r-q^2r) <= h E N exact; bad fraction 0.0401 <= Chebyshev 0.6500; oblivious identity OK
+
+== Lemmas lem:fc-rref and lem:fc-node, exhaustive over banks X in F_p^(a x M)
+   (p,kappa,a,M,n0)=(5,2,1,5,3): 3125 banks; C uniform given (r,pi) for every pattern; bad fraction 0.1088 <= beta 1.7067; generic-pattern failure 0.2000 <= 1/(p-1); uniform-kernel mean acceptance = (q^n-p^-n)q^a
+   (p,kappa,a,M,n0)=(7,3,1,5,3): 16807 banks; C uniform given (r,pi) for every pattern; bad fraction 0.0932 <= beta 2.3537; generic-pattern failure 0.1429 <= 1/(p-1); uniform-kernel mean acceptance = (q^n-p^-n)q^a
+   (p,kappa,a,M,n0)=(13,2,1,4,3): 28561 banks; C uniform given (r,pi) for every pattern; bad fraction 0.0845 <= beta 0.2833; generic-pattern failure 0.0769 <= 1/(p-1); uniform-kernel mean acceptance = (q^n-p^-n)q^a
+   (p,kappa,a,M,n0)=(13,4,1,4,2): 28561 banks; C uniform given (r,pi) for every pattern; bad fraction 0.1534 <= beta 4.3393; generic-pattern failure 0.0769 <= 1/(p-1); uniform-kernel mean acceptance = (q^n-p^-n)q^a
+   (p,kappa,a,M,n0)=(5,2,2,4,2): 390625 banks; C uniform given (r,pi) for every pattern; bad fraction 0.5385 <= beta 5.7956; generic-pattern failure 0.2320 <= 1/(p-1); uniform-kernel mean acceptance = (q^n-p^-n)q^a
+   (p,kappa,a,M,n0)=(7,3,2,3,1): 117649 banks; C uniform given (r,pi) for every pattern; bad fraction 0.8311 <= beta 21.9410; generic-pattern failure 0.1603 <= 1/(p-1); uniform-kernel mean acceptance = (q^n-p^-n)q^a
+
+ALL CHECKS PASSED

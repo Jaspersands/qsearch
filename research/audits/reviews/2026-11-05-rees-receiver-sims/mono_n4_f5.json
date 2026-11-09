@@ -1,0 +1,1844 @@
+{
+ "status": "monolithic_trajectory_simulation_of_assembled_coherent_terminal_sample_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "runs": {
+  "n4_f5": {
+   "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 2}",
+   "qubits": 1198,
+   "gates": 2694596,
+   "qft_calls": 176,
+   "oracle_calls": 36,
+   "compile_seconds": 0.98,
+   "structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "levels": {
+    "2": {
+     "schedule_verified": true,
+     "measured_registers": 78,
+     "subgroups": [
+      {
+       "name": "n4(F_5) H=<e2> non-normal",
+       "normal": false,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 5,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 390625
+       },
+       "recovered": true,
+       "terminal_samples": 8,
+       "all_support_in_h_perp": true,
+       "all_exactly_uniform": true,
+       "all_workspace_clean": true,
+       "peak_rows": 78125,
+       "peak_MB": 3.9,
+       "seconds": 18.0,
+       "samples": [
+        [
+         4,
+         0,
+         4,
+         4
+        ],
+        [
+         3,
+         0,
+         3,
+         0
+        ],
+        [
+         2,
+         0,
+         1,
+         3
+        ],
+        [
+         1,
+         0,
+         1,
+         4
+        ],
+        [
+         2,
+         0,
+         0,
+         3
+        ],
+        [
+         4,
+         0,
+         0,
+         2
+        ],
+        [
+         4,
+         0,
+         0,
+         4
+        ],
+        [
+         1,
+         0,
+         4,
+         0
+        ]
+       ],
+       "per_sample": [
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 130,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 1.92
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 131,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.27
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 131,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.89
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 129,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.06
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 129,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 1.92
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 129,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.1
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 132,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.37
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 129,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.43
+        }
+       ]
+      },
+      {
+       "name": "n4(F_5) H=<e1> non-normal",
+       "normal": false,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 5,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 390625
+       },
+       "recovered": true,
+       "terminal_samples": 8,
+       "all_support_in_h_perp": true,
+       "all_exactly_uniform": true,
+       "all_workspace_clean": true,
+       "peak_rows": 78125,
+       "peak_MB": 3.9,
+       "seconds": 19.8,
+       "samples": [
+        [
+         0,
+         0,
+         2,
+         2
+        ],
+        [
+         0,
+         1,
+         1,
+         1
+        ],
+        [
+         0,
+         2,
+         2,
+         4
+        ],
+        [
+         0,
+         4,
+         1,
+         0
+        ],
+        [
+         0,
+         3,
+         1,
+         4
+        ],
+        [
+         0,
+         1,
+         1,
+         1
+        ],
+        [
+         0,
+         3,
+         3,
+         3
+        ],
+        [
+         0,
+         1,
+         2,
+         4
+        ]
+       ],
+       "per_sample": [
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.25
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 132,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.31
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 135,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.63
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 137,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.62
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.84
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.71
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.22
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 135,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.24
+        }
+       ]
+      },
+      {
+       "name": "n4(F_5) H=<e1+e3> non-normal",
+       "normal": false,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 5,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 390625
+       },
+       "recovered": true,
+       "terminal_samples": 8,
+       "all_support_in_h_perp": true,
+       "all_exactly_uniform": true,
+       "all_workspace_clean": true,
+       "peak_rows": 78125,
+       "peak_MB": 3.9,
+       "seconds": 19.1,
+       "samples": [
+        [
+         0,
+         2,
+         0,
+         2
+        ],
+        [
+         0,
+         1,
+         0,
+         0
+        ],
+        [
+         4,
+         3,
+         1,
+         2
+        ],
+        [
+         1,
+         0,
+         4,
+         1
+        ],
+        [
+         3,
+         4,
+         2,
+         0
+        ],
+        [
+         3,
+         3,
+         2,
+         0
+        ],
+        [
+         3,
+         4,
+         2,
+         1
+        ],
+        [
+         3,
+         1,
+         2,
+         1
+        ]
+       ],
+       "per_sample": [
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.38
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 133,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.31
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 133,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.36
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 135,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.32
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.48
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 135,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.39
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 135,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.27
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.9,
+         "factor_merges": 138,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.62
+        }
+       ]
+      },
+      {
+       "name": "n4(F_5) H=<e2,e4> non-normal",
+       "normal": false,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 625,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 48828125
+       },
+       "recovered": true,
+       "terminal_samples": 8,
+       "all_support_in_h_perp": true,
+       "all_exactly_uniform": true,
+       "all_workspace_clean": true,
+       "peak_rows": 9765625,
+       "peak_MB": 504.2,
+       "seconds": 704.3,
+       "samples": [
+        [
+         2,
+         0,
+         4,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ],
+        [
+         3,
+         0,
+         4,
+         0
+        ],
+        [
+         3,
+         0,
+         3,
+         0
+        ],
+        [
+         4,
+         0,
+         2,
+         0
+        ],
+        [
+         3,
+         0,
+         1,
+         0
+        ],
+        [
+         3,
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         1,
+         0
+        ]
+       ],
+       "per_sample": [
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 79.63
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 137,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 85.82
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 137,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 92.29
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 91.4
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 89.29
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 89.3
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 86.11
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 9765625,
+         "peak_MB": 504.2,
+         "factor_merges": 138,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 90.47
+        }
+       ]
+      },
+      {
+       "name": "n4(F_5) H=<e1+e2,e3> (closure)",
+       "normal": true,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 15625,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 1220703125
+       },
+       "skipped": "factor of 48828125 rows x 93 wires (~6.30 GB) exceeds the budget",
+       "seconds": 5.2
+      },
+      {
+       "name": "n4(F_5) H=<e3,e4> = gamma_2",
+       "normal": true,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 3125,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 244140625
+       },
+       "skipped": "factor of 48828125 rows x 93 wires (~6.30 GB) exceeds the budget",
+       "seconds": 3.7
+      },
+      {
+       "name": "n4(F_5) H=<e2,e3> non-normal",
+       "normal": false,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 125,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 9765625
+       },
+       "recovered": true,
+       "terminal_samples": 8,
+       "all_support_in_h_perp": true,
+       "all_exactly_uniform": true,
+       "all_workspace_clean": true,
+       "peak_rows": 1953125,
+       "peak_MB": 98.6,
+       "seconds": 155.4,
+       "samples": [
+        [
+         2,
+         0,
+         0,
+         2
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ],
+        [
+         2,
+         0,
+         0,
+         0
+        ],
+        [
+         2,
+         0,
+         0,
+         1
+        ],
+        [
+         1,
+         0,
+         0,
+         4
+        ],
+        [
+         2,
+         0,
+         0,
+         4
+        ],
+        [
+         2,
+         0,
+         0,
+         1
+        ],
+        [
+         4,
+         0,
+         0,
+         3
+        ]
+       ],
+       "per_sample": [
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 137,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 20.08
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 131,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 19.42
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 135,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 19.37
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 136,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 19.18
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 19.34
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 135,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 19.22
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 19.13
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 25,
+         "h_perp_size": 25,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 98.6,
+         "factor_merges": 130,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 19.65
+        }
+       ]
+      },
+      {
+       "name": "n4(F_5) H=Z(G)",
+       "normal": true,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 125,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 9765625
+       },
+       "recovered": true,
+       "terminal_samples": 8,
+       "all_support_in_h_perp": true,
+       "all_exactly_uniform": true,
+       "all_workspace_clean": true,
+       "peak_rows": 1953125,
+       "peak_MB": 99.4,
+       "seconds": 134.9,
+       "samples": [
+        [
+         0,
+         1,
+         0,
+         0
+        ],
+        [
+         3,
+         1,
+         2,
+         0
+        ],
+        [
+         3,
+         4,
+         0,
+         0
+        ],
+        [
+         3,
+         2,
+         0,
+         0
+        ],
+        [
+         0,
+         1,
+         3,
+         0
+        ],
+        [
+         1,
+         4,
+         3,
+         0
+        ],
+        [
+         4,
+         3,
+         4,
+         0
+        ],
+        [
+         0,
+         2,
+         3,
+         0
+        ]
+       ],
+       "per_sample": [
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 133,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 15.95
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 17.55
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 133,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 17.41
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 132,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 17.9
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 17.07
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 15.73
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 132,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 16.62
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 125,
+         "h_perp_size": 125,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 1953125,
+         "peak_MB": 99.4,
+         "factor_merges": 134,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 16.67
+        }
+       ]
+      },
+      {
+       "name": "n4(F_5) H=trivial",
+       "normal": true,
+       "seed": 20261105,
+       "estimate": {
+        "qubits": 1198,
+        "S": 1,
+        "Q_uniform_rows": 15625,
+        "est_peak_rows_top_merge": 78125
+       },
+       "recovered": true,
+       "terminal_samples": 8,
+       "all_support_in_h_perp": true,
+       "all_exactly_uniform": true,
+       "all_workspace_clean": true,
+       "peak_rows": 78125,
+       "peak_MB": 3.4,
+       "seconds": 17.6,
+       "samples": [
+        [
+         2,
+         3,
+         3,
+         0
+        ],
+        [
+         0,
+         1,
+         0,
+         3
+        ],
+        [
+         3,
+         1,
+         2,
+         3
+        ],
+        [
+         0,
+         3,
+         1,
+         0
+        ],
+        [
+         1,
+         4,
+         1,
+         2
+        ],
+        [
+         4,
+         2,
+         1,
+         4
+        ],
+        [
+         3,
+         3,
+         3,
+         2
+        ],
+        [
+         4,
+         3,
+         4,
+         0
+        ]
+       ],
+       "per_sample": [
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 109,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.23
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 109,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.08
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 109,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.0
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 109,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.38
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 109,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.18
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 108,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.19
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 107,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.21
+        },
+        {
+         "support_in_h_perp": true,
+         "exactly_uniform_on_h_perp": true,
+         "support_size": 625,
+         "h_perp_size": 625,
+         "workspace_clean": true,
+         "readout_factor_extra_wires": 0,
+         "peak_rows": 78125,
+         "peak_MB": 3.4,
+         "factor_merges": 108,
+         "counts": {
+          "qft": 152,
+          "gates": 2694596,
+          "oracle_calls": 36,
+          "qft_dg": 24
+         },
+         "measured_registers": {
+          "oracle_output": 36,
+          "label": 24,
+          "child": 18
+         },
+         "seconds": 2.32
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "max_rss_MB": 2117.9
+}

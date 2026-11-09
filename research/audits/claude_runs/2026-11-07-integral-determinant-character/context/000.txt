@@ -1,0 +1,42 @@
+# Determinant-character gate for compact integral similarity
+Native A,B∈Mat_n(Z), find NO or compact unimodular C with BC=CA. Rational similarity
+D is expanded polynomial-height, BD=DA. E=C_Q(B), Omega=C_Z(B), I=C_Z(A,B)D^-1.
+BHJ Prop9.11 gives expanded polynomial-height quotient map rho:E→product_{i,j}
+Mat_{d_ij}(K_i), where Q^n as Q[x]-module is sum (Q[x]/f_i^j)^{d_ij}.
+On the j-layered indecomposable module, an E-element acts with same diagonal
+block rho_ij on each of j f_i composition factors. Proposed determinant identity:
+ det_Q(alpha on Q^n)=prod_{i,j} Norm_{K_i/Q}(det rho_ij(alpha))^j.
+Nilpotent radical contribution is1 when comparing two invertible lifts.
+
+Suppose the semisimple BHJ principalization (separate source/constructor gate)
+returns a compact generator g of rho(I) over rho(Omega), with each component
+ g_i=(v_i*u_i)^-1 * beta_i, undoing any small xi normalization consistently.
+Here maximal-order lattice X_i=M_i beta_i is EXPANDED; beta_i is a compact
+matrix generator, v_i∈SL(M_i) is expanded, and u_i∈M_i^× lifts a compact field
+unit (det u_i a unit). If xi used, beta1=beta0*xi and finalg=(vu)^-1 beta1 xi^-1,
+so (vu)^-1 beta0 also valid. No double xi undo.
+
+Proposed determinant magnitude shortcut: |Norm det beta_i| is the ratio of
+covolumes of e11 X_i and e11 M_i as O_K lattices in K_i^{d_i}, using a small
+nice-order conjugation if needed. Equivalently compute their determinant
+fractional ideals and take the rational ideal norm ratio. All bases/ideals here
+are expanded polynomial-height. Since |Norm det u_i|=1 and detv_i=1, the same
+positive rational magnitude is |Norm det g_i|. Thus compute
+ |det C|=|det D| * prod_{i,j} |Norm det g_ij|^j
+as an expanded polynomial-bit rational from these lattice indices, with no
+compact determinant or large-integer expansion. If xi is tracked separately,
+include its explicit determinant magnitude exactly once.
+
+To lift g: rho:I→rho(I) is a surjection of free Z lattices. Compute a Z-linear
+section on an expanded HNF/SNF basis of rho(I) before seeing g. Evaluate its
+rational-linear formulas on g as arithmetic circuits, obtaining alpha∈I.
+Then C=alpha D automatically belongs to Hom_Z(A,B), so is integral and intertwines.
+Its determinant depends only on g by the character formula. If |det C|=1 it is
+unimodular. If >1 or !=1, source BHJ Thm3.4 and Prop9.12 imply no unimodular
+intertwiner exists, because any semisimple generator/lift would be a full generator
+if one existed, and full generators differ by Omega-units with determinant±1.
+
+Audit THIS determinant/lift/NO gate only. It is not yet a proof of compact
+maximal-order principalization or conductor descent. No hidden target ideals,
+no approximate numerical sign tests, no general arithmetic-DAG integrality test,
+and no novelty/hardness claim. Sources in separate actual BHJ excerpt.

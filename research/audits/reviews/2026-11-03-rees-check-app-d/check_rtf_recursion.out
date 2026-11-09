@@ -1,0 +1,13 @@
+Z/27: b=3 R=0 class=1 subrings tested=4
+Z/25+Z/5 abelian: b=3 R=0 class=1 subrings tested=10
+(Z/9)^2 [x,y]=3y: b=4 R=1 class=2 subrings tested=18
+Z/9+Z/3+Z/3 [e2,e3]=3e1: b=4 R=1 class=2 subrings tested=32
+Heis(Z/9): b=6 R=1 class=2 subrings tested=43
+Z/25+Z/5 [e1,e2]=5e1: b=3 R=1 class=2 subrings tested=12
+Z/25+Z/5+Z/5 [e0,e1]=e2,[e0,e2]=5e0 class3: b=4 R=2 class=3 subrings tested=25
+Z/5^2+Z/5^2 [x,y]=5y class2: b=4 R=1 class=2 subrings tested=27
+truth-solver cases: 171 all returned h within b calls
+adversarial branches: 15 per case, call cap <= b and invariants held
+cases where calls != log_p|H| + [H!=G]: 43
+smallest such case (|L|, ring, log_p|H|, calls, claimed, enlarging): (81, '(Z/9)^2 [x,y]=3y', 3, 3, 4, 2)
+max (sum of socle dims)/b: (2.0, ('Z/9+Z/3+Z/3 [e2,e3]=3e1', 2, [3, 3, 2], 4))

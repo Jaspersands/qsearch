@@ -2,7 +2,8 @@
 
 Known Lazard / Dynkin-Specht-Wever ingredients. Rational straight-line
 programs are certified in the free associative algebra, then evaluated on
-opaque exponent-p group elements. No target coordinates, source queries,
+opaque elements of a group killed by a known power of p (default p).
+No target coordinates, source queries,
 group enumeration or quantum receiver. Cost is NOT uniform polynomial in c.
 """
 from __future__ import annotations
@@ -173,16 +174,27 @@ def compile_lazard_word(class_bound, operation):
 
 
 class UniversalLazardWords:
-    """Opaque exponent-p evaluator; class/exponent promises are NOT certified.
+    """Opaque evaluator modulo an annihilating power M of p (default M=p).
 
-    All branches depend only on public coefficients. Reversible synthesis
-    and workspace cleanup must still be paid by a quantum implementation.
+    The certificates are Z[1/c!] identities, so they hold in every finite
+    p-group of class <= c < p once rational powers are taken modulo any
+    power of p killing the group (research/audits/reviews/
+    2026-11-02-rees-prime-power-compiler.md, section 2). Class and exponent
+    promises are NOT certified. All branches depend only on public
+    coefficients. Reversible synthesis and workspace cleanup must still be
+    paid by a quantum implementation.
     """
-    def __init__(self, p, class_bound, identity, multiply):
+    def __init__(self, p, class_bound, identity, multiply, modulus=None):
         ring(p)
         if type(class_bound) is not int or not 1 <= class_bound < p or not callable(multiply):
             raise ValueError("1<=c<p and public multiplication required")
-        self.p, self.class_bound, self.identity = p, class_bound, identity
+        modulus = p if modulus is None else modulus
+        power_of_p = modulus
+        while type(power_of_p) is int and power_of_p > 1 and power_of_p % p == 0:
+            power_of_p //= p
+        if type(modulus) is not int or modulus < p or power_of_p != 1:
+            raise ValueError("modulus must be a power p^e, e>=1, annihilating the group")
+        self.p, self.modulus, self.class_bound, self.identity = p, modulus, class_bound, identity
         self._multiply, self.multiplication_calls = multiply, 0
         self.certificates = {op: compile_lazard_word(class_bound, op) for op in ("add", "bracket")}
 
@@ -193,7 +205,7 @@ class UniversalLazardWords:
     def power(self, element, exponent):
         if type(exponent) is not int:
             raise ValueError("integer exponent required")
-        exponent %= self.p
+        exponent %= self.modulus
         result = self.identity
         while exponent:
             if exponent & 1:
@@ -210,7 +222,7 @@ class UniversalLazardWords:
                 value = self.multiply(values[instruction[1]], values[instruction[2]])
             else:
                 _, i, numerator, denominator = instruction
-                value = self.power(values[i], numerator*pow(denominator, -1, self.p))
+                value = self.power(values[i], numerator*pow(denominator, -1, self.modulus))
             values.append(value)
         return values[certificate.output]
 
@@ -222,8 +234,8 @@ class UniversalLazardWords:
 
     def linear_combination(self, elements, coefficients):
         if len(elements) != len(coefficients) or any(
-                type(x) is not int or not 0 <= x < self.p for x in coefficients):
-            raise ValueError("one canonical field coefficient per element required")
+                type(x) is not int or not 0 <= x < self.modulus for x in coefficients):
+            raise ValueError("one canonical coefficient modulo the annihilator per element required")
         result = self.identity
         for element, coefficient in zip(elements, coefficients):
             if coefficient:
@@ -231,10 +243,10 @@ class UniversalLazardWords:
         return result
 
     def operation_caps(self):
-        add = self.certificates["add"].multiplication_cap(self.p)
-        return {"power": 2*self.p.bit_length(), "lie_add": add,
-                "lie_bracket": self.certificates["bracket"].multiplication_cap(self.p),
-                "linear_combination_per_term": add+2*self.p.bit_length()}
+        add = self.certificates["add"].multiplication_cap(self.modulus)
+        return {"power": 2*self.modulus.bit_length(), "lie_add": add,
+                "lie_bracket": self.certificates["bracket"].multiplication_cap(self.modulus),
+                "linear_combination_per_term": add+2*self.modulus.bit_length()}
 
 
 def build_report():

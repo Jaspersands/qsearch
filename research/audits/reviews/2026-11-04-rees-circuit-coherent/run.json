@@ -1,0 +1,1333 @@
+{
+ "status": "coherent_label_receiver_backend_small_instances_finite_checks",
+ "scope": "Heis(F_3) and n4(F_5) only: every SDE grade has kappa_d in {1, 2}",
+ "coherent_receiver_implemented": false,
+ "coherent_label_backend_kappa_le2_instances": true,
+ "kappa_ge3_grades_coherent": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "parts": [
+  "counts",
+  "heis",
+  "n4",
+  "paths",
+  "proofs",
+  "sampled"
+ ],
+ "counts": {
+  "heis_f3": {
+   "config": "Heis(F_3) c=2 dims=(3, 1) points=(1, 2) M={2: 3}",
+   "terminal_sample": {
+    "by_component": {
+     "bch_merge_grade2": {
+      "swap": 120,
+      "x": 5328,
+      "cx": 17040,
+      "ccx": 6816,
+      "add_product": 24,
+      "add_scaled": 48,
+      "gates": 29304
+     },
+     "final_qft": {
+      "qft_calls": 3,
+      "measured_qudits": 3,
+      "gates": 0
+     },
+     "instrument": {
+      "x": 132,
+      "cx": 450,
+      "ccx": 180,
+      "add_scaled": 3,
+      "gates": 762
+     },
+     "instrument_qft": {
+      "qft_calls": 6,
+      "gates": 0
+     },
+     "oracle": {
+      "oracle_calls": 6,
+      "gates": 0
+     },
+     "q_prep_qft": {
+      "qft_calls": 3,
+      "gates": 0
+     },
+     "sde_grade2": {
+      "x": 11336,
+      "cx": 34636,
+      "ccx": 13932,
+      "swap": 304,
+      "add_product": 76,
+      "add_scaled": 22,
+      "gates": 60208
+     },
+     "source_evaluation": {
+      "x": 2112,
+      "cx": 7200,
+      "ccx": 2880,
+      "add_scaled": 48,
+      "gates": 12192
+     },
+     "source_qft": {
+      "qft_calls": 12,
+      "gates": 0
+     },
+     "witness_control_grade2": {
+      "x": 2412,
+      "cx": 7380,
+      "ccx": 2952,
+      "swap": 72,
+      "add_product": 18,
+      "gates": 12816
+     }
+    },
+    "total": {
+     "qft_calls": 24,
+     "oracle_calls": 6,
+     "x": 21320,
+     "cx": 66706,
+     "ccx": 26760,
+     "swap": 496,
+     "measured_qudits": 3,
+     "add_scaled": 121,
+     "add_product": 118,
+     "gates": 115282
+    },
+    "qubits": 182,
+    "qubits_by_role": {
+     "arith_ancilla": 11,
+     "evaluation_w": 6,
+     "block_workspace_pool": 99,
+     "address_top": 24,
+     "oracle_output": 30,
+     "label_z_grade2": 6,
+     "Q_grade1": 6
+    },
+    "sources": {
+     "1": 1,
+     "2": 3
+    },
+    "arities": {
+     "2": 3
+    },
+    "oracle_calls": 6
+   },
+   "structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "blocks": {
+    "2": {
+     "kappa": 2,
+     "arity": 3,
+     "label_dim": 1,
+     "sde_qubits": 116,
+     "qubits": {
+      "labels": 6,
+      "children": 24,
+      "Q": 6,
+      "witness_S": 6,
+      "arith_ancilla": 11,
+      "sde_workspace": 93,
+      "merge_workspace_on_sde_wires": 16,
+      "merge_workspace_extra": 0,
+      "total": 146,
+      "workspace_total": 110
+     },
+     "segments": {
+      "sde_U_and_Uinv": {
+       "x": 11336,
+       "cx": 34636,
+       "ccx": 13932,
+       "swap": 304,
+       "add_product": 76,
+       "add_scaled": 22,
+       "gates": 60208
+      },
+      "witness_control_G": {
+       "x": 2412,
+       "cx": 7380,
+       "ccx": 2952,
+       "swap": 72,
+       "add_product": 18,
+       "gates": 12816
+      },
+      "bch_merge": {
+       "swap": 120,
+       "x": 5328,
+       "cx": 17040,
+       "ccx": 6816,
+       "add_product": 24,
+       "add_scaled": 48,
+       "gates": 29304
+      },
+      "block_total": {
+       "x": 19076,
+       "cx": 59056,
+       "ccx": 23700,
+       "swap": 496,
+       "add_product": 118,
+       "add_scaled": 70,
+       "gates": 102328
+      }
+     },
+     "structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     }
+    }
+   },
+   "measured_generator_cw_arity": {
+    "qubits": 93,
+    "arith_gates": 42234,
+    "swap_macro": 24,
+    "ccx": 9876,
+    "qft_calls": 24,
+    "oracle_calls": 6,
+    "classical_bits": 12,
+    "macros": {
+     "add_scaled": 99,
+     "add_product": 24
+    },
+    "arities": {
+     "2": 3
+    }
+   }
+  },
+  "n4_f5": {
+   "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 2}",
+   "terminal_sample": {
+    "by_component": {
+     "bch_merge_grade2": {
+      "swap": 1260,
+      "x": 34368,
+      "cx": 122208,
+      "ccx": 52536,
+      "add_product": 96,
+      "add_scaled": 144,
+      "gates": 210372
+     },
+     "bch_merge_grade3": {
+      "swap": 4860,
+      "x": 127104,
+      "cx": 448224,
+      "ccx": 192792,
+      "add_product": 384,
+      "add_scaled": 432,
+      "gates": 772980
+     },
+     "final_qft": {
+      "qft_calls": 4,
+      "measured_qudits": 4,
+      "gates": 0
+     },
+     "instrument": {
+      "x": 1728,
+      "cx": 6768,
+      "ccx": 2928,
+      "add_scaled": 24,
+      "gates": 11424
+     },
+     "instrument_qft": {
+      "qft_calls": 48,
+      "gates": 0
+     },
+     "oracle": {
+      "oracle_calls": 36,
+      "gates": 0
+     },
+     "q_prep_qft": {
+      "qft_calls": 40,
+      "gates": 0
+     },
+     "sde_grade2": {
+      "x": 118964,
+      "cx": 403780,
+      "ccx": 174668,
+      "swap": 5520,
+      "add_product": 460,
+      "add_scaled": 44,
+      "gates": 702932
+     },
+     "sde_grade3": {
+      "cx": 251544,
+      "x": 74016,
+      "ccx": 108648,
+      "swap": 3456,
+      "add_product": 288,
+      "add_scaled": 24,
+      "gates": 437664
+     },
+     "source_evaluation": {
+      "x": 36288,
+      "cx": 142128,
+      "ccx": 61224,
+      "add_scaled": 504,
+      "gates": 239640
+     },
+     "source_qft": {
+      "qft_calls": 84,
+      "gates": 0
+     },
+     "witness_control_grade2": {
+      "x": 12000,
+      "cx": 40896,
+      "ccx": 17568,
+      "swap": 576,
+      "add_product": 48,
+      "gates": 71040
+     },
+     "witness_control_grade3": {
+      "x": 42000,
+      "cx": 143040,
+      "ccx": 61488,
+      "swap": 2016,
+      "add_product": 168,
+      "gates": 248544
+     }
+    },
+    "total": {
+     "qft_calls": 176,
+     "oracle_calls": 36,
+     "cx": 1558588,
+     "x": 446468,
+     "ccx": 671852,
+     "swap": 17688,
+     "measured_qudits": 4,
+     "add_scaled": 1172,
+     "add_product": 1444,
+     "gates": 2694596
+    },
+    "qubits": 1198,
+    "qubits_by_role": {
+     "arith_ancilla": 14,
+     "evaluation_w": 12,
+     "block_workspace_pool": 368,
+     "address_top": 252,
+     "oracle_output": 360,
+     "label_z_grade3": 36,
+     "Q_grade2": 108,
+     "label_z_grade2": 36,
+     "Q_grade1": 12
+    },
+    "sources": {
+     "1": 1,
+     "2": 6,
+     "3": 12
+    },
+    "arities": {
+     "2": 6,
+     "3": 2
+    },
+    "oracle_calls": 36
+   },
+   "structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "blocks": {
+    "2": {
+     "kappa": 2,
+     "arity": 6,
+     "label_dim": 2,
+     "sde_qubits": 418,
+     "qubits": {
+      "labels": 36,
+      "children": 108,
+      "Q": 12,
+      "witness_S": 18,
+      "arith_ancilla": 14,
+      "sde_workspace": 350,
+      "merge_workspace_on_sde_wires": 36,
+      "merge_workspace_extra": 0,
+      "total": 538,
+      "workspace_total": 382
+     },
+     "segments": {
+      "sde_U_and_Uinv": {
+       "x": 118964,
+       "cx": 403780,
+       "ccx": 174668,
+       "swap": 5520,
+       "add_product": 460,
+       "add_scaled": 44,
+       "gates": 702932
+      },
+      "witness_control_G": {
+       "x": 12000,
+       "cx": 40896,
+       "ccx": 17568,
+       "swap": 576,
+       "add_product": 48,
+       "gates": 71040
+      },
+      "bch_merge": {
+       "swap": 1260,
+       "x": 34368,
+       "cx": 122208,
+       "ccx": 52536,
+       "add_product": 96,
+       "add_scaled": 144,
+       "gates": 210372
+      },
+      "block_total": {
+       "x": 165332,
+       "cx": 566884,
+       "ccx": 244772,
+       "swap": 7356,
+       "add_product": 604,
+       "add_scaled": 188,
+       "gates": 984344
+      }
+     },
+     "structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     }
+    },
+    "3": {
+     "kappa": 1,
+     "arity": 2,
+     "label_dim": 1,
+     "sde_qubits": 58,
+     "qubits": {
+      "labels": 6,
+      "children": 42,
+      "Q": 18,
+      "witness_S": 6,
+      "arith_ancilla": 14,
+      "sde_workspace": 32,
+      "merge_workspace_on_sde_wires": 30,
+      "merge_workspace_extra": 27,
+      "total": 145,
+      "workspace_total": 79
+     },
+     "segments": {
+      "sde_U_and_Uinv": {
+       "cx": 41924,
+       "x": 12336,
+       "ccx": 18108,
+       "swap": 576,
+       "add_product": 48,
+       "add_scaled": 4,
+       "gates": 72944
+      },
+      "witness_control_G": {
+       "x": 7000,
+       "cx": 23840,
+       "ccx": 10248,
+       "swap": 336,
+       "add_product": 28,
+       "gates": 41424
+      },
+      "bch_merge": {
+       "swap": 810,
+       "x": 21184,
+       "cx": 74704,
+       "ccx": 32132,
+       "add_product": 64,
+       "add_scaled": 72,
+       "gates": 128830
+      },
+      "block_total": {
+       "cx": 140468,
+       "x": 40520,
+       "ccx": 60488,
+       "swap": 1722,
+       "add_product": 140,
+       "add_scaled": 76,
+       "gates": 243198
+      }
+     },
+     "structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 27
+     }
+    }
+   },
+   "measured_generator_cw_arity": {
+    "qubits": 758,
+    "arith_gates": 1028700,
+    "swap_macro": 300,
+    "ccx": 258220,
+    "qft_calls": 148,
+    "oracle_calls": 30,
+    "classical_bits": 72,
+    "macros": {
+     "add_scaled": 920,
+     "add_product": 400
+    },
+    "arities": {
+     "2": 5,
+     "3": 2
+    }
+   },
+   "measured_generator_coherent_arity": {
+    "qubits": 890,
+    "arith_gates": 1234440,
+    "swap_macro": 360,
+    "ccx": 309864,
+    "qft_calls": 176,
+    "oracle_calls": 36,
+    "classical_bits": 84,
+    "macros": {
+     "add_scaled": 1104,
+     "add_product": 480
+    },
+    "arities": {
+     "2": 6,
+     "3": 2
+    }
+   }
+  }
+ },
+ "proofs": {
+  "heis_f3_d2": {
+   "controlled_merge": {
+    "macros": 30,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   },
+   "sde_exhaustive": {
+    "inputs": 27,
+    "gates": 30104,
+    "witness_equals_canonical": true,
+    "witness_nonzero": true,
+    "equation_holds": true,
+    "labels_restored": true,
+    "workspace_clean": true
+   }
+  },
+  "n4_f5_d2": {
+   "controlled_merge": {
+    "macros": 48,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   }
+  },
+  "n4_f5_d3": {
+   "controlled_merge": {
+    "macros": 82,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 27
+   },
+   "sde_exhaustive": {
+    "inputs": 25,
+    "gates": 36472,
+    "witness_equals_canonical": true,
+    "witness_nonzero": true,
+    "equation_holds": true,
+    "labels_restored": true,
+    "workspace_clean": true
+   }
+  }
+ },
+ "assembled_basis_paths": {
+  "heis_f3": {
+   "fresh_registers_zero_before_qft": true,
+   "children_and_Q": true,
+   "labels": true,
+   "root_Q_unchanged": true,
+   "workspace_clean": true,
+   "paths": 16384,
+   "passed": true
+  },
+  "n4_f5": {
+   "fresh_registers_zero_before_qft": true,
+   "children_and_Q": true,
+   "labels": true,
+   "root_Q_unchanged": true,
+   "workspace_clean": true,
+   "paths": 1024,
+   "passed": true
+  }
+ },
+ "block_sampled": {
+  "heis_f3_d2": {
+   "inputs": 65536,
+   "gates": 102328,
+   "qubits": 146,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 0.25,
+   "passed": true
+  },
+  "n4_f5_d2": {
+   "inputs": 4096,
+   "gates": 984344,
+   "qubits": 538,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 1.04,
+   "passed": true
+  },
+  "n4_f5_d3": {
+   "inputs": 4096,
+   "gates": 243198,
+   "qubits": 145,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 0.28,
+   "passed": true
+  },
+  "n4_f5_d3_all_labels_all_q": {
+   "inputs": 390625,
+   "gates": 243198,
+   "qubits": 145,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 2.08,
+   "passed": true
+  }
+ },
+ "heis_end_to_end": {
+  "block_tables_clean": true,
+  "rows": [
+   {
+    "instance": "Heis(F_3) H=<[]> normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 2.03
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.88
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 1)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.83
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 2)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.86
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 0)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.88
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 1)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.89
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 2)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.87
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 0)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.82
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 1)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.84
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 2)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.87
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 0)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.85
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 1)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.94
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 2)]> non-normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 27,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.89
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 1,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.16
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 1,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.1
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 1,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.07
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 1,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.1
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 1,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.11
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal",
+    "source_ok": true,
+    "instrument_ok": true,
+    "label_tuples_nonzero": 1,
+    "rho_Q_equals_rho_H1": true,
+    "every_label_branch_proportional_to_rho_H1": true,
+    "readout_uniform_on_h_perp": true,
+    "support_nullspace_equals_log_H": true,
+    "trace_one": true,
+    "measured_mixture_equals_rho_H1": true,
+    "seeded_recoveries": [
+     true,
+     true
+    ],
+    "seconds": 0.06
+   }
+  ],
+  "all_pass": true
+ },
+ "n4_state": {
+  "rows": [
+   {
+    "instance": "n4(F_5) H=<e2> non-normal",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 25,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 25,
+      "tuples": "sampled 256 of 244140625",
+      "cases": 256,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=<e1> non-normal",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 25,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 25,
+      "tuples": "sampled 256 of 244140625",
+      "cases": 256,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=<e1+e3> non-normal",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 25,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 25,
+      "tuples": "sampled 256 of 244140625",
+      "cases": 256,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=<e2,e4> non-normal",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 15625,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=<e1+e2,e3> (closure)",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=<e3,e4> = gamma_2",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=<e2,e3> non-normal",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 25,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 15625,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=Z(G)",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 15625,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   },
+   {
+    "instance": "n4(F_5) H=trivial",
+    "grades": {
+     "3": {
+      "arity": 2,
+      "label_support": 5,
+      "tuples": "all",
+      "cases": 25,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 25,
+      "tuples": "sampled 256 of 244140625",
+      "cases": 256,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true
+   }
+  ],
+  "runs": [
+   {
+    "instance": "n4(F_5) H=<e2> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e2> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e1> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e1> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e1+e3> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e1+e3> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e2,e4> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e2,e4> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e1+e2,e3> (closure)",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e1+e2,e3> (closure)",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e3,e4> = gamma_2",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e3,e4> = gamma_2",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e2,e3> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=<e2,e3> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=Z(G)",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=Z(G)",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=trivial",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   },
+   {
+    "instance": "n4(F_5) H=trivial",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 288,
+    "top_sources": 96,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8
+   }
+  ],
+  "all_pass": true
+ },
+ "seconds": 164.9
+}

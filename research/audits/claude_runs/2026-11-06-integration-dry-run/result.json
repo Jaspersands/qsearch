@@ -1,0 +1,44 @@
+{
+  "billing_status": "not_started",
+  "budget_check": "not_performed",
+  "context": [
+    {
+      "bytes": 3431,
+      "path": "research/audits/claude_inputs/2026-11-06-prime-index/state_excerpt.md",
+      "sha256": "c8812edbb2a7ff7a09c2b5f52d77f56ed5d79009611b2bfb9320866bf8a130e3",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 21156,
+      "path": "research/PRIME_INDEX_FACTORIAL_RESIDUE_NORMALIZATION.md",
+      "sha256": "72b3e79bd2c60f048a9e20e07aafdaaefdd4c2a7c5f35c11453bf1986caedcf9",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 30647,
+      "path": "research/audits/claude_inputs/2026-11-06-prime-index/primary_source_excerpts.md",
+      "sha256": "1212896fd420c6b86c9a5529dd262b4bca0a9792820492e32f1f8eecce490e3d",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "effort": "max",
+  "max_budget_usd": 3.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-06-prime-index/core_review_prompt.md",
+    "sha256": "bb1058486190686434d795f2970a18be310cd38a8a6b24830408e88b4b583ef6",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261106T050412.726340Z-7e1d00cb",
+  "status": "dry_run",
+  "usage": {}
+}

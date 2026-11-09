@@ -1,15 +1,12 @@
 # Traps
 
-These short rules are distilled from about 1,250 "do not" sentences in
-`AGENT_HANDOFF.md`, `RESEARCH_PRIORITY_DECISION.md` and
-`MECHANICAL_FOLLOW_UP_PLAN.md`, plus the registry audits (October 2026).
-Read this page instead of rereading those files. Add a trap only after it
-has cost a pass, delete one once its subject is closed, and keep the page
-under 120 lines. Paths are relative to `research/`; commands run from the
-repo root.
+These rules distill about 1,250 "do not" sentences in the handoff, priority
+and mechanical-plan archives, plus the registry audits (October 2026).
+Read this page instead of those archives. Add traps after they cost a pass;
+delete closed ones and keep this under120 lines. Paths are relative to
+`research/`; commands run from the repo root.
 
 ## Choosing what to work on
-
 1. Choose the next pass by its value outside this repo, not by the gap the
    last pass left, unless that gap is the decisive obstacle to an
    externally valuable result. Don't add another variant, sweep, fixture or
@@ -22,7 +19,6 @@ repo root.
    application out of an unresolved residual.
 
 ## Before building anything quantum
-
 4. First run the track's standard classical attacks on the exact instance.
    A classical competitor is the top failure mode: it killed 32% of
    registry records. `tools/corpus/cli.py baselines "<idea>"` names the
@@ -36,7 +32,8 @@ repo root.
    postselect.
 
 ## Claims
-
+- Trace signs: P_i(T)=det(1-TF) has linear coefficient -Tr(F). For smooth
+  surfaces with H1=H3=0, #X=1+q²-[T]P2; do not reuse the curve sign.
 7. Finite scans and fixtures can only falsify. Never use them as evidence
    for all n.
 8. An incomplete attack, an UNKNOWN, a missing backend or a mixing
@@ -91,12 +88,14 @@ repo root.
     doesn't commit or push; Git checkpoints are Gemini's.
 16. Don't re-acknowledge closed reviews or repeat status boilerplate
     ("PROGRESS; goal ACTIVE", the registry hash, dirty-file lists).
+17. Never run `docs/papers/rees-hsp/make_numbers.py`, not even with
+    `--check`: it rewrites `numbers.tex` before checking. Use
+    `tests/tools/test_rees_paper_numbers.py`, or import its functions
+    read-only.
 
 ## Usage: spend it on thinking, not overhead
-
-- **Batch.** One command that reads several files or runs several checks
-  beats many small calls, because every call resends the whole context
-  (about 120K tokens).
+- **Batch.** One command reading several files or running several checks
+  beats small calls, each of which resends the context (about120K tokens).
 - **Rituals only at milestones.** Run `qsearch.py validate`, registry
   hashes, `git status`/`diff` and site checks once per milestone, not
   every pass.
@@ -107,10 +106,12 @@ repo root.
   files it needs and `research/STATE.md`, never the handoff. Helpers get no
   Git, network or external-service actions (`AGENTS.md`): fetch papers
   yourself and hand them over as local files.
-- **Effort matched to the job.** Use the highest effort for the main
-  reasoning and adversarial maths review. Use a lighter setting (e.g.
-  `gpt-6.1-sol` at `high`) for helpers that read papers, run tests or do
-  bookkeeping.
+- **Claude API.** Owner-authorized paid research reviews use
+  `CLAUDE_RESEARCH_WORKFLOW.md`: explicit context, saved usage, verified findings;
+  no automatic claim promotion or unknown-cost retry.
+- **Effort matched to the job.** Use the highest effort for core reasoning
+  and adversarial maths. Use lighter settings (e.g. `gpt-6.1-sol` at `high`)
+  for source reads, tests or bookkeeping.
 - **Review matched to the claim.** Get an independent review for anything
   that would move a row of `STATE.md` between Live, Parked and Closed.
   Skip it for small edits. Prior-art checks change decisions most often;

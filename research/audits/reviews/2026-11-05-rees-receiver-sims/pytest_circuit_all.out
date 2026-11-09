@@ -1,0 +1,22 @@
+........................................................................ [ 23%]
+...ssssss......................................s........ss.............. [ 47%]
+........s............................................................... [ 71%]
+..................ssssssssssssss........................................ [ 95%]
+..............s                                                          [100%]
+=============================== warnings summary ===============================
+tests/test_rees_circuit.py: 4 warnings
+tests/test_rees_circuit_general.py: 8 warnings
+  /opt/anaconda3/lib/python3.13/site-packages/stevedore/extension.py:340: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+    obj = plugin(*invoke_args, **invoke_kwds)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 8 durations ==============================
+49.08s call     tests/test_rees_circuit_qft_wire.py::test_terminal_sample_prefixes_explicit_vs_exact
+33.63s call     tests/test_rees_circuit_coherent_k3.py::test_state_checks_grade3_full_label_support
+21.32s call     tests/test_rees_circuit_coherent_k3.py::test_state_checks_small_support_instances
+16.64s call     tests/test_rees_circuit_coherent.py::test_heis_end_to_end_all_subgroups
+16.41s call     tests/test_rees_circuit_coherent.py::test_heis_end_to_end_detects_wrong_block
+14.97s call     tests/test_rees_circuit.py::test_exact_source_evaluation_matches_aer_statevector[basis1]
+14.63s call     tests/test_rees_circuit_coherent_c4.py::test_all_block_mutants_rejected
+13.69s call     tests/test_rees_circuit.py::test_merge_aer_statevector_matches_bit_level_evaluation[1]
+278 passed, 25 skipped, 12 warnings in 533.67s (0:08:53)

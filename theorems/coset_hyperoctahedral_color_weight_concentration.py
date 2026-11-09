@@ -112,10 +112,10 @@ class ColorWeightConcentrationTheorem:
     alternative_transfer: str
     representation_consequence: str
     scope_limit: str
-    exact_color_weight_law_proved: bool
-    exponential_uniform_color_convergence_proved: bool
-    balanced_source_mass_proved: bool
-    balanced_alternative_mass_proved: bool
+    exact_color_weight_law_checked_finite: bool
+    exponential_tv_bound_checked_finite: bool
+    balanced_source_mass_paper_claim: bool
+    balanced_alternative_mass_paper_claim: bool
     balanced_residual_fusion_compiled: bool
     full_matrix_hecke_polar_compiled: bool
     theorem_verified: bool
@@ -365,15 +365,19 @@ def build_color_weight_concentration_report(
             "No residual little-group multiplicity basis, matrix-Hecke polar, "
             "physical source lift, or algorithm is constructed."
         ),
-        exact_color_weight_law_proved=True,
-        exponential_uniform_color_convergence_proved=True,
-        balanced_source_mass_proved=True,
-        balanced_alternative_mass_proved=True,
+        # Computed on the finite controls only; the general-m law and the
+        # balanced-mass bounds are paper derivations, not checks in this module.
+        exact_color_weight_law_checked_finite=verified,
+        exponential_tv_bound_checked_finite=all(
+            row.tv_bound_residual <= 1e-12 for row in controls
+        ),
+        balanced_source_mass_paper_claim=True,
+        balanced_alternative_mass_paper_claim=True,
         balanced_residual_fusion_compiled=False,
         full_matrix_hecke_polar_compiled=False,
         theorem_verified=verified and scaling_verified,
         status=(
-            "balanced-color-alternative-mass-proved-residual-fusion-open"
+            "balanced-color-alternative-mass-paper-claim-residual-fusion-open"
             if verified and scaling_verified
             else "color-weight-concentration-control-failure"
         ),

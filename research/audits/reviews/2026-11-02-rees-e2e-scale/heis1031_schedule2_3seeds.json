@@ -1,0 +1,1056 @@
+{
+ "status": "exact_small_instance_simulation_not_a_coherent_receiver",
+ "coherent_receiver_implemented": false,
+ "asymptotic_cost_tested": false,
+ "count": "rule_w",
+ "groups": [
+  "heis1031"
+ ],
+ "runs": 12,
+ "aborted": 0,
+ "all_recovered": true,
+ "all_laws_uniform": true,
+ "all_stage_outputs_equal_rho_H_d": true,
+ "all_readout_laws_uniform_on_h_perp": true,
+ "all_queries_equal_charged": true,
+ "all_block_sizes_equal_charged_arity": true,
+ "seconds": 154.6,
+ "rows": [
+  {
+   "instance": "Heis(F_1031) H=trivial",
+   "dim_h": 0,
+   "normal": true,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [],
+   "truth_basis": [],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 4,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261102,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 0.15,
+   "seconds": 0.55
+  },
+  {
+   "instance": "Heis(F_1031) H=trivial",
+   "dim_h": 0,
+   "normal": true,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [],
+   "truth_basis": [],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 6,
+      "4": 1
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261103,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 0.01,
+   "seconds": 0.19
+  },
+  {
+   "instance": "Heis(F_1031) H=trivial",
+   "dim_h": 0,
+   "normal": true,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [],
+   "truth_basis": [],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "1": 1,
+      "2": 3,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261104,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 0.14,
+   "seconds": 0.42
+  },
+  {
+   "instance": "Heis(F_1031) H=<x> non-normal",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "truth_basis": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 4,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261102,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 6.25,
+   "seconds": 27.93
+  },
+  {
+   "instance": "Heis(F_1031) H=<x> non-normal",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "truth_basis": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 6,
+      "4": 1
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261103,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 2.88,
+   "seconds": 11.45
+  },
+  {
+   "instance": "Heis(F_1031) H=<x> non-normal",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "truth_basis": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "1": 1,
+      "2": 3,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261104,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 2.59,
+   "seconds": 15.65
+  },
+  {
+   "instance": "Heis(F_1031) H=<y+z> non-normal",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "truth_basis": [
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 4,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261102,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 1.41,
+   "seconds": 14.54
+  },
+  {
+   "instance": "Heis(F_1031) H=<y+z> non-normal",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "truth_basis": [
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 6,
+      "4": 1
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261103,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 2.23,
+   "seconds": 10.6
+  },
+  {
+   "instance": "Heis(F_1031) H=<y+z> non-normal",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "truth_basis": [
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "1": 1,
+      "2": 3,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261104,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 2.73,
+   "seconds": 13.79
+  },
+  {
+   "instance": "Heis(F_1031) H=<x+2y+z>",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "truth_basis": [
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 4,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261102,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 2.33,
+   "seconds": 13.36
+  },
+  {
+   "instance": "Heis(F_1031) H=<x+2y+z>",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "truth_basis": [
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "2": 6,
+      "4": 1
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261103,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 2.15,
+   "seconds": 10.16
+  },
+  {
+   "instance": "Heis(F_1031) H=<x+2y+z>",
+   "dim_h": 1,
+   "normal": false,
+   "meets_center_trivially": true,
+   "contains_center": false,
+   "order_H": 1031,
+   "recovered_equals_log_H": true,
+   "recovered_basis": [
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "truth_basis": [
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "top_sources": 28,
+   "oracle_queries": 56,
+   "charged_queries": 56,
+   "queries_equal_charged": true,
+   "readout_samples": 7,
+   "every_stage_output_equals_rho_H_d": true,
+   "distinct_stage_outputs": {
+    "1": 1
+   },
+   "readout_law_uniform_on_h_perp": true,
+   "channel_calls": 7,
+   "channel_outputs_computed": 7,
+   "stages": {
+    "2": {
+     "schedule": "schedule2",
+     "kappa": 2,
+     "g": 1,
+     "charged_arity": 4,
+     "paper_B_d": 64,
+     "block_sizes": [
+      4
+     ],
+     "label_support_size": 1031,
+     "sources_measured": 28,
+     "distinct_states_measured": 1,
+     "every_measured_law_uniform_on_K_perp": true,
+     "observed_labels_in_support": true,
+     "labels_observed": 28,
+     "chi_square": {
+      "skipped": "expected count < 5 or one category",
+      "n": 28,
+      "k": 1031
+     },
+     "blocks": 7,
+     "zero_column_exits": 0,
+     "full_solver_runs": 7,
+     "diagnostic_nonzero_solves": 0,
+     "theorem11_calls": 0,
+     "restarts": 0,
+     "schedule2_calls": 7,
+     "max_columns_consumed": 4,
+     "witness_support_sizes": {
+      "1": 1,
+      "2": 3,
+      "4": 3
+     }
+    }
+   },
+   "group": "heis1031",
+   "p": 1031,
+   "c": 2,
+   "cover_dims": [
+    3,
+    1
+   ],
+   "count": "rule_w",
+   "witness_policy": "solver on the whole block",
+   "seed": 20261104,
+   "source": {
+    "mode": "substitute",
+    "lifted_order": 1031,
+    "substitute": "S = exp(sum_k t^k (h cap gamma_k)) built from H; NOT from the oracle",
+    "subgroup_check": "full",
+    "coset_check": "sampled_2000_pairs"
+   },
+   "source_seconds": 4.98,
+   "seconds": 34.87
+  }
+ ]
+}

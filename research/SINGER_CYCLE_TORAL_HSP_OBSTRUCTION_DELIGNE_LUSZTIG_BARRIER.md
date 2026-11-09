@@ -1,8 +1,39 @@
 # Non-Split Maximal Torus (Singer Cycle) HSP Obstruction and Deligne-Lusztig Commutant Barrier in $\mathrm{GL}(n, \mathbb{F}_q)$
 
+## 2026-11-06 correction: the universal barrier is withdrawn
+
+The historical claims below MUST NOT be used to exclude a Singer-subgroup
+algorithm. See [Hidden field characters: classical baseline and Singer
+scope](HIDDEN_FIELD_CHARACTER_ADMISSION.md), Sections3--4, and the actual
+Hayashi--Kawachi--Kobayashi0604174 Theorems2.3/2.5 cited there.
+
+- For GL_n(Fp), oddp, standard mixed Singer coset-copy complexity is
+  Theta(n) at fixed error, by a direct application of those known bounds.
+  The claimed Omega(n²) copy requirement is false. This supplies a POVM,
+  not an efficient circuit; the dimension-based exponential gate-lower-bound
+  argument below is unsupported and withdrawn.
+- At n=4, multiplication by a nonscalar element of F_(p²) inside F_(p⁴)
+  has characteristic polynomial minpoly(a)^2. Irreducibility of the ENTIRE
+  Singer action does not imply irreducibility of every nonscalar element.
+  Such an element preserves a proper subspace, also refuting the historical
+  claim that there are no parabolic elements.
+- For oddp, g and cg with nonidentity c in Fp^* collide for every hidden
+  Singer subgroup. The stated universal pair-collision bound is false,
+  and its claimed classical lower bound is not established by this proof.
+
+No nonidentity unipotent lies in a Singer subgroup, and final weak irrep
+labels remain conjugacy-invariant. These limited facts survive. The finite
+GL2(F3) tests are not proofs of the withdrawn asymptotic claims. Exact Sage
+subfield/intersection controls are in classical_baselines/hidden_field_scope_control.*.
+No new efficient quantum algorithm, classical solver for the ordinary
+Singer HSP, novelty, or separation is inferred. Preservation/quarantine of
+the single legacy registry record is queued to Gemini, not performed here.
+
+## Historical investigation, retained for provenance
+
 **Investigation**: Investigation 32  
 **Date**: 2026-10-11  
-**Status**: PROVED MATHEMATICAL OBSTRUCTION & CUSPIDAL DELIGNE-LUSZTIG COMMUTANT BARRIER (Zero Speedup Retained)  
+**Historical status (withdrawn above)**: PROVED MATHEMATICAL OBSTRUCTION & CUSPIDAL DELIGNE-LUSZTIG COMMUTANT BARRIER (Zero Speedup Retained)
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
 **Cross-References**:
 - Investigation 21: Lie-Type Matrix Groups & Deligne-Lusztig Representations (`research/UNIVERSAL_QUANTUM_HIDDEN_STRUCTURE_CLASSIFICATION.md`)

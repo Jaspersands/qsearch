@@ -1,0 +1,1190 @@
+{
+  "scope": "Twelve predeclared fixed corrupted-table finite controls; exact Sage field/combinatorial algebra and floating normalized NumPy FFT. No quantum execution, asymptotic success claim, noise grid, or mixed-device-noise model.",
+  "access": "Source receives F(x) only through unchanged imported cleaned_source. Each F is one fixed table lambda_Q with the stated deterministic sign flips. Q, roots and virtual resultant are analysis-only. Classical table-only attack uses p F bits and explicitly charged candidate work.",
+  "fourier": "Unchanged imported normalized_fft, np.fft.fftn(norm=ortho), negative exponent, ascending coefficients. Virtual state chi(resultant(Q,R))/sqrt(p*U), analysis only.",
+  "overlap": "Signed overlap chi(-1)^d*gamma_clean*E_d with E_d exact without-replacement subset parity. mu^d is an explicitly incorrect IID replacement control.",
+  "escape": "For every proper hyperplane W<H, test mass(H minus W)>=max(0,abs(overlap)-sqrt(virtualmass(W)))^2. All large-prime theorem thresholds fail here; no success claim follows.",
+  "physical_phase": "Projection scores square absolute public correlation; phase vectors differing globally by minus one are physically identical. Small examples need not provide a statistical verification gap.",
+  "old_consecutive_verifier_counterexample": "With any nonempty prescribed mask of size m<p, the true per-test projection s=(1-2m/p)^2 is below 1. Requiring all K independent tests to pass accepts with probability s^K, tending to zero. This is not a valid robust verifier.",
+  "families": [
+    {
+      "name": "p11_split_quadratic",
+      "p": 11,
+      "d": 2,
+      "Q_ascending_coefficients": [
+        0,
+        10,
+        1
+      ],
+      "roots_analysis_only": [
+        0,
+        1
+      ],
+      "n_nonroots": 9,
+      "N0": 550,
+      "Ngood": 360,
+      "U": 100,
+      "gamma_clean": 0.462833529503922,
+      "maximum_virtual_W_mass": 0.09999999999999998,
+      "squarefree_large_prime_threshold_max_128_d_factorial_256_d_squared": 1024,
+      "large_prime_threshold_satisfied": false,
+      "controls": [
+        {
+          "mask_name": "empty",
+          "mask": [],
+          "fixed_observed_table": [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 121,
+            "squarefree_candidates_fully_evaluated": 110,
+            "public_candidate_evaluations": 1210,
+            "nearest_hamming_distance": 0,
+            "nearest_candidate_count": 1,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 1,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              11
+            ],
+            "true_candidate_hamming_distance_analysis_only": 0,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 0.6694214876033059,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "9/11"
+          },
+          "B_nonroot_errors": 0,
+          "exact_signed_distinct_subset_average_Ed": "1",
+          "incorrect_IID_replacement_mu_to_d": "1",
+          "signed_virtual_overlap_prediction": 0.462833529503922,
+          "signed_virtual_overlap_observed_real": 0.4628335295039223,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 3.3306690738754696e-16,
+          "source_constructor_diagnostic_oracle_calls": 110,
+          "actual_H_inlier_mass": 0.23801652892561984,
+          "proper_H_hyperplanes_checked": 12,
+          "minimum_actual_H_minus_W_mass": 0.1854244928625094,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0.02149324988763084,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0.01720584448097882,
+          "uniform_bound_vacuous": false,
+          "individual_W_bounds_vacuous_numerically": 0,
+          "correct_candidate_projection_observed": 1.0000000000000004,
+          "correct_candidate_projection_prediction": 1.0
+        },
+        {
+          "mask_name": "first_nonroot",
+          "mask": [
+            2
+          ],
+          "fixed_observed_table": [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 121,
+            "squarefree_candidates_fully_evaluated": 110,
+            "public_candidate_evaluations": 1210,
+            "nearest_hamming_distance": 1,
+            "nearest_candidate_count": 1,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "9/11",
+            "maximum_public_projection_score": 0.6694214876033059,
+            "maximum_absolute_correlation_candidate_count": 2,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ],
+              [
+                5,
+                2,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              9,
+              -9
+            ],
+            "true_candidate_hamming_distance_analysis_only": 1,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 0.6694214876033059,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "9/11"
+          },
+          "B_nonroot_errors": 1,
+          "exact_signed_distinct_subset_average_Ed": "5/9",
+          "incorrect_IID_replacement_mu_to_d": "49/81",
+          "signed_virtual_overlap_prediction": 0.25712973861329,
+          "signed_virtual_overlap_observed_real": 0.2571297386132901,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 5.551115123125783e-17,
+          "source_constructor_diagnostic_oracle_calls": 110,
+          "actual_H_inlier_mass": 0.09917355371900831,
+          "proper_H_hyperplanes_checked": 12,
+          "minimum_actual_H_minus_W_mass": 0.0713749060856498,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 10,
+          "correct_candidate_projection_observed": 0.669421487603306,
+          "correct_candidate_projection_prediction": 0.6694214876033057
+        },
+        {
+          "mask_name": "first_two_nonroots",
+          "mask": [
+            2,
+            3
+          ],
+          "fixed_observed_table": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 121,
+            "squarefree_candidates_fully_evaluated": 110,
+            "public_candidate_evaluations": 1210,
+            "nearest_hamming_distance": 2,
+            "nearest_candidate_count": 3,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ],
+              [
+                1,
+                7,
+                1
+              ],
+              [
+                4,
+                6,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "7/11",
+            "maximum_public_projection_score": 0.4049586776859504,
+            "maximum_absolute_correlation_candidate_count": 6,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ],
+              [
+                1,
+                7,
+                1
+              ],
+              [
+                4,
+                6,
+                1
+              ],
+              [
+                5,
+                2,
+                1
+              ],
+              [
+                6,
+                3,
+                1
+              ],
+              [
+                7,
+                4,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              7,
+              7,
+              7,
+              -7,
+              -7,
+              -7
+            ],
+            "true_candidate_hamming_distance_analysis_only": 2,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 0.4049586776859504,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "7/11"
+          },
+          "B_nonroot_errors": 2,
+          "exact_signed_distinct_subset_average_Ed": "2/9",
+          "incorrect_IID_replacement_mu_to_d": "25/81",
+          "signed_virtual_overlap_prediction": 0.10285189544531599,
+          "signed_virtual_overlap_observed_real": 0.10285189544531598,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 1.3877787807814457e-17,
+          "source_constructor_diagnostic_oracle_calls": 110,
+          "actual_H_inlier_mass": 0.07933884297520662,
+          "proper_H_hyperplanes_checked": 12,
+          "minimum_actual_H_minus_W_mass": 0.05394440270473329,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 10,
+          "correct_candidate_projection_observed": 0.40495867768595056,
+          "correct_candidate_projection_prediction": 0.4049586776859504
+        },
+        {
+          "mask_name": "first_root",
+          "mask": [
+            0
+          ],
+          "fixed_observed_table": [
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 121,
+            "squarefree_candidates_fully_evaluated": 110,
+            "public_candidate_evaluations": 1210,
+            "nearest_hamming_distance": 1,
+            "nearest_candidate_count": 1,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "9/11",
+            "maximum_public_projection_score": 0.6694214876033059,
+            "maximum_absolute_correlation_candidate_count": 2,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                0,
+                10,
+                1
+              ],
+              [
+                5,
+                2,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              9,
+              -9
+            ],
+            "true_candidate_hamming_distance_analysis_only": 1,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 0.6694214876033059,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "9/11"
+          },
+          "B_nonroot_errors": 0,
+          "exact_signed_distinct_subset_average_Ed": "1",
+          "incorrect_IID_replacement_mu_to_d": "1",
+          "signed_virtual_overlap_prediction": 0.462833529503922,
+          "signed_virtual_overlap_observed_real": 0.4628335295039223,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 3.3306690738754696e-16,
+          "source_constructor_diagnostic_oracle_calls": 110,
+          "actual_H_inlier_mass": 0.2380165289256198,
+          "proper_H_hyperplanes_checked": 12,
+          "minimum_actual_H_minus_W_mass": 0.20045078888054083,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0.02149324988763084,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0.01720584448097882,
+          "uniform_bound_vacuous": false,
+          "individual_W_bounds_vacuous_numerically": 0,
+          "correct_candidate_projection_observed": 0.669421487603306,
+          "correct_candidate_projection_prediction": 0.6694214876033057
+        }
+      ]
+    },
+    {
+      "name": "p11_mixed_cubic",
+      "p": 11,
+      "d": 3,
+      "Q_ascending_coefficients": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "roots_analysis_only": [
+        0
+      ],
+      "n_nonroots": 10,
+      "N0": 1650,
+      "Ngood": 1200,
+      "U": 1200,
+      "gamma_clean": 0.25712973861328997,
+      "maximum_virtual_W_mass": 0.0916666666666668,
+      "squarefree_large_prime_threshold_max_128_d_factorial_256_d_squared": 2304,
+      "large_prime_threshold_satisfied": false,
+      "controls": [
+        {
+          "mask_name": "empty",
+          "mask": [],
+          "fixed_observed_table": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 1331,
+            "squarefree_candidates_fully_evaluated": 1210,
+            "public_candidate_evaluations": 13310,
+            "nearest_hamming_distance": 0,
+            "nearest_candidate_count": 1,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 2,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                8,
+                3,
+                4,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              11,
+              -11
+            ],
+            "true_candidate_hamming_distance_analysis_only": 0,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 1.0,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "1"
+          },
+          "B_nonroot_errors": 0,
+          "exact_signed_distinct_subset_average_Ed": "1",
+          "incorrect_IID_replacement_mu_to_d": "1",
+          "signed_virtual_overlap_prediction": -0.25712973861328997,
+          "signed_virtual_overlap_observed_real": -0.2571297386132899,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 5.551115123125783e-17,
+          "source_constructor_diagnostic_oracle_calls": 495,
+          "actual_H_inlier_mass": 0.1096418732782368,
+          "proper_H_hyperplanes_checked": 133,
+          "minimum_actual_H_minus_W_mass": 0.09085900325569744,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 132,
+          "correct_candidate_projection_observed": 1.0000000000000004,
+          "correct_candidate_projection_prediction": 1.0
+        },
+        {
+          "mask_name": "first_nonroot",
+          "mask": [
+            1
+          ],
+          "fixed_observed_table": [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 1331,
+            "squarefree_candidates_fully_evaluated": 1210,
+            "public_candidate_evaluations": 13310,
+            "nearest_hamming_distance": 1,
+            "nearest_candidate_count": 4,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                3,
+                9,
+                7,
+                1
+              ],
+              [
+                4,
+                0,
+                6,
+                1
+              ],
+              [
+                4,
+                10,
+                10,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "9/11",
+            "maximum_public_projection_score": 0.6694214876033059,
+            "maximum_absolute_correlation_candidate_count": 12,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                4,
+                1
+              ],
+              [
+                2,
+                6,
+                1,
+                1
+              ],
+              [
+                3,
+                9,
+                7,
+                1
+              ],
+              [
+                4,
+                0,
+                6,
+                1
+              ],
+              [
+                4,
+                10,
+                10,
+                1
+              ],
+              [
+                6,
+                0,
+                1,
+                1
+              ],
+              [
+                7,
+                5,
+                6,
+                1
+              ],
+              [
+                8,
+                3,
+                4,
+                1
+              ],
+              [
+                8,
+                10,
+                2,
+                1
+              ],
+              [
+                10,
+                1,
+                7,
+                1
+              ],
+              [
+                10,
+                4,
+                2,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              9,
+              -9,
+              -9,
+              9,
+              9,
+              9,
+              -9,
+              -9,
+              -9,
+              -9,
+              -9,
+              -9
+            ],
+            "true_candidate_hamming_distance_analysis_only": 1,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 0.6694214876033059,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "9/11"
+          },
+          "B_nonroot_errors": 1,
+          "exact_signed_distinct_subset_average_Ed": "2/5",
+          "incorrect_IID_replacement_mu_to_d": "64/125",
+          "signed_virtual_overlap_prediction": -0.10285189544531599,
+          "signed_virtual_overlap_observed_real": -0.102851895445316,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 1.3877787807814457e-17,
+          "source_constructor_diagnostic_oracle_calls": 495,
+          "actual_H_inlier_mass": 0.07878787878787887,
+          "proper_H_hyperplanes_checked": 133,
+          "minimum_actual_H_minus_W_mass": 0.06125720010017546,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 132,
+          "correct_candidate_projection_observed": 0.669421487603306,
+          "correct_candidate_projection_prediction": 0.6694214876033057
+        },
+        {
+          "mask_name": "first_two_nonroots",
+          "mask": [
+            1,
+            2
+          ],
+          "fixed_observed_table": [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 1331,
+            "squarefree_candidates_fully_evaluated": 1210,
+            "public_candidate_evaluations": 13310,
+            "nearest_hamming_distance": 0,
+            "nearest_candidate_count": 1,
+            "nearest_candidates_ascending": [
+              [
+                4,
+                0,
+                6,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 2,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                4,
+                0,
+                6,
+                1
+              ],
+              [
+                6,
+                0,
+                1,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              11,
+              -11
+            ],
+            "true_candidate_hamming_distance_analysis_only": 2,
+            "true_candidate_is_hamming_nearest_analysis_only": false,
+            "maximum_wrong_public_projection_score_analysis_only": 1.0,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "1"
+          },
+          "B_nonroot_errors": 2,
+          "exact_signed_distinct_subset_average_Ed": "1/15",
+          "incorrect_IID_replacement_mu_to_d": "27/125",
+          "signed_virtual_overlap_prediction": -0.017141982574219332,
+          "signed_virtual_overlap_observed_real": -0.01714198257421933,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 3.469446951953614e-18,
+          "source_constructor_diagnostic_oracle_calls": 495,
+          "actual_H_inlier_mass": 0.07658402203856765,
+          "proper_H_hyperplanes_checked": 133,
+          "minimum_actual_H_minus_W_mass": 0.06095667417981479,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 132,
+          "correct_candidate_projection_observed": 0.40495867768595056,
+          "correct_candidate_projection_prediction": 0.4049586776859504
+        },
+        {
+          "mask_name": "first_root",
+          "mask": [
+            0
+          ],
+          "fixed_observed_table": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 11,
+            "monic_squarefreeness_tests": 1331,
+            "squarefree_candidates_fully_evaluated": 1210,
+            "public_candidate_evaluations": 13310,
+            "nearest_hamming_distance": 1,
+            "nearest_candidate_count": 5,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                2,
+                5,
+                2,
+                1
+              ],
+              [
+                6,
+                0,
+                10,
+                1
+              ],
+              [
+                6,
+                5,
+                1,
+                1
+              ],
+              [
+                7,
+                0,
+                5,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 1,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                3,
+                3,
+                7,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              -11
+            ],
+            "true_candidate_hamming_distance_analysis_only": 1,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 1.0,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "1"
+          },
+          "B_nonroot_errors": 0,
+          "exact_signed_distinct_subset_average_Ed": "1",
+          "incorrect_IID_replacement_mu_to_d": "1",
+          "signed_virtual_overlap_prediction": -0.25712973861328997,
+          "signed_virtual_overlap_observed_real": -0.2571297386132899,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 5.551115123125783e-17,
+          "source_constructor_diagnostic_oracle_calls": 495,
+          "actual_H_inlier_mass": 0.10964187327823681,
+          "proper_H_hyperplanes_checked": 133,
+          "minimum_actual_H_minus_W_mass": 0.09085900325569744,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 132,
+          "correct_candidate_projection_observed": 0.669421487603306,
+          "correct_candidate_projection_prediction": 0.6694214876033057
+        }
+      ]
+    },
+    {
+      "name": "p7_mixed_cubic",
+      "p": 7,
+      "d": 3,
+      "Q_ascending_coefficients": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "roots_analysis_only": [
+        0
+      ],
+      "n_nonroots": 6,
+      "N0": 210,
+      "Ngood": 120,
+      "U": 288,
+      "gamma_clean": 0.18442777839082938,
+      "maximum_virtual_W_mass": 0.14583333333333326,
+      "squarefree_large_prime_threshold_max_128_d_factorial_256_d_squared": 2304,
+      "large_prime_threshold_satisfied": false,
+      "controls": [
+        {
+          "mask_name": "empty",
+          "mask": [],
+          "fixed_observed_table": [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 7,
+            "monic_squarefreeness_tests": 343,
+            "squarefree_candidates_fully_evaluated": 294,
+            "public_candidate_evaluations": 2058,
+            "nearest_hamming_distance": 0,
+            "nearest_candidate_count": 2,
+            "nearest_candidates_ascending": [
+              [
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                5,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 4,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                5,
+                1
+              ],
+              [
+                5,
+                0,
+                4,
+                1
+              ],
+              [
+                5,
+                1,
+                6,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              7,
+              7,
+              -7,
+              -7
+            ],
+            "true_candidate_hamming_distance_analysis_only": 0,
+            "true_candidate_is_hamming_nearest_analysis_only": true,
+            "maximum_wrong_public_projection_score_analysis_only": 1.0,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "1"
+          },
+          "B_nonroot_errors": 0,
+          "exact_signed_distinct_subset_average_Ed": "1",
+          "incorrect_IID_replacement_mu_to_d": "1",
+          "signed_virtual_overlap_prediction": -0.18442777839082938,
+          "signed_virtual_overlap_observed_real": -0.18442777839082944,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 5.551115123125783e-17,
+          "source_constructor_diagnostic_oracle_calls": 105,
+          "actual_H_inlier_mass": 0.13469387755102022,
+          "proper_H_hyperplanes_checked": 57,
+          "minimum_actual_H_minus_W_mass": 0.08746355685131181,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 56,
+          "correct_candidate_projection_observed": 0.9999999999999993,
+          "correct_candidate_projection_prediction": 1.0
+        },
+        {
+          "mask_name": "first_nonroot",
+          "mask": [
+            1
+          ],
+          "fixed_observed_table": [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 7,
+            "monic_squarefreeness_tests": 343,
+            "squarefree_candidates_fully_evaluated": 294,
+            "public_candidate_evaluations": 2058,
+            "nearest_hamming_distance": 0,
+            "nearest_candidate_count": 2,
+            "nearest_candidates_ascending": [
+              [
+                1,
+                2,
+                1,
+                1
+              ],
+              [
+                2,
+                6,
+                3,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 4,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                1,
+                2,
+                1,
+                1
+              ],
+              [
+                2,
+                6,
+                3,
+                1
+              ],
+              [
+                3,
+                2,
+                2,
+                1
+              ],
+              [
+                5,
+                4,
+                4,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              7,
+              7,
+              -7,
+              -7
+            ],
+            "true_candidate_hamming_distance_analysis_only": 1,
+            "true_candidate_is_hamming_nearest_analysis_only": false,
+            "maximum_wrong_public_projection_score_analysis_only": 1.0,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "1"
+          },
+          "B_nonroot_errors": 1,
+          "exact_signed_distinct_subset_average_Ed": "0",
+          "incorrect_IID_replacement_mu_to_d": "8/27",
+          "signed_virtual_overlap_prediction": -0.0,
+          "signed_virtual_overlap_observed_real": -3.469446951953614e-18,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 3.469446951953614e-18,
+          "source_constructor_diagnostic_oracle_calls": 105,
+          "actual_H_inlier_mass": 0.1510204081632651,
+          "proper_H_hyperplanes_checked": 57,
+          "minimum_actual_H_minus_W_mass": 0.1014577259475217,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 57,
+          "correct_candidate_projection_observed": 0.5102040816326527,
+          "correct_candidate_projection_prediction": 0.5102040816326531
+        },
+        {
+          "mask_name": "first_two_nonroots",
+          "mask": [
+            1,
+            2
+          ],
+          "fixed_observed_table": [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 7,
+            "monic_squarefreeness_tests": 343,
+            "squarefree_candidates_fully_evaluated": 294,
+            "public_candidate_evaluations": 2058,
+            "nearest_hamming_distance": 0,
+            "nearest_candidate_count": 2,
+            "nearest_candidates_ascending": [
+              [
+                2,
+                1,
+                6,
+                1
+              ],
+              [
+                4,
+                6,
+                1,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 4,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                2,
+                1,
+                6,
+                1
+              ],
+              [
+                4,
+                6,
+                1,
+                1
+              ],
+              [
+                5,
+                3,
+                0,
+                1
+              ],
+              [
+                6,
+                3,
+                5,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              7,
+              7,
+              -7,
+              -7
+            ],
+            "true_candidate_hamming_distance_analysis_only": 2,
+            "true_candidate_is_hamming_nearest_analysis_only": false,
+            "maximum_wrong_public_projection_score_analysis_only": 1.0,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "1"
+          },
+          "B_nonroot_errors": 2,
+          "exact_signed_distinct_subset_average_Ed": "-1/5",
+          "incorrect_IID_replacement_mu_to_d": "1/27",
+          "signed_virtual_overlap_prediction": 0.03688555567816588,
+          "signed_virtual_overlap_observed_real": 0.03688555567816588,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 0.0,
+          "source_constructor_diagnostic_oracle_calls": 105,
+          "actual_H_inlier_mass": 0.15102040816326504,
+          "proper_H_hyperplanes_checked": 57,
+          "minimum_actual_H_minus_W_mass": 0.111953352769679,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 56,
+          "correct_candidate_projection_observed": 0.18367346938775503,
+          "correct_candidate_projection_prediction": 0.18367346938775514
+        },
+        {
+          "mask_name": "first_root",
+          "mask": [
+            0
+          ],
+          "fixed_observed_table": [
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "classical_first_attack": {
+            "native_fixed_table_queries": 7,
+            "monic_squarefreeness_tests": 343,
+            "squarefree_candidates_fully_evaluated": 294,
+            "public_candidate_evaluations": 2058,
+            "nearest_hamming_distance": 0,
+            "nearest_candidate_count": 2,
+            "nearest_candidates_ascending": [
+              [
+                3,
+                4,
+                0,
+                1
+              ],
+              [
+                6,
+                2,
+                2,
+                1
+              ]
+            ],
+            "maximum_absolute_public_correlation_exact": "1",
+            "maximum_public_projection_score": 1.0,
+            "maximum_absolute_correlation_candidate_count": 4,
+            "maximum_absolute_correlation_candidates_ascending": [
+              [
+                2,
+                1,
+                1,
+                1
+              ],
+              [
+                2,
+                4,
+                3,
+                1
+              ],
+              [
+                3,
+                4,
+                0,
+                1
+              ],
+              [
+                6,
+                2,
+                2,
+                1
+              ]
+            ],
+            "maximum_absolute_correlation_candidates_signed_numerators": [
+              -7,
+              -7,
+              7,
+              7
+            ],
+            "true_candidate_hamming_distance_analysis_only": 1,
+            "true_candidate_is_hamming_nearest_analysis_only": false,
+            "maximum_wrong_public_projection_score_analysis_only": 1.0,
+            "maximum_wrong_absolute_correlation_exact_analysis_only": "1"
+          },
+          "B_nonroot_errors": 0,
+          "exact_signed_distinct_subset_average_Ed": "1",
+          "incorrect_IID_replacement_mu_to_d": "1",
+          "signed_virtual_overlap_prediction": -0.18442777839082938,
+          "signed_virtual_overlap_observed_real": -0.18442777839082944,
+          "signed_virtual_overlap_imaginary_abs": 0.0,
+          "overlap_prediction_abs_error": 5.551115123125783e-17,
+          "source_constructor_diagnostic_oracle_calls": 105,
+          "actual_H_inlier_mass": 0.13469387755102016,
+          "proper_H_hyperplanes_checked": 57,
+          "minimum_actual_H_minus_W_mass": 0.0874635568513118,
+          "uniform_escape_bound_from_max_actual_virtual_Wmass": 0,
+          "uniform_escape_bound_from_coarse_virtual_W_bound": 0,
+          "uniform_bound_vacuous": true,
+          "individual_W_bounds_vacuous_numerically": 56,
+          "correct_candidate_projection_observed": 0.510204081632653,
+          "correct_candidate_projection_prediction": 0.5102040816326531
+        }
+      ]
+    }
+  ],
+  "all_assertions_passed": true
+}

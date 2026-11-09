@@ -1,0 +1,244 @@
+{
+ "status": "exact_level0_law_class3_by_coset_symmetry_and_hub_decomposition_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "mode": "relabel",
+ "job": "n4_f5",
+ "runs": [],
+ "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 2}",
+ "qubits": 1198,
+ "steps": 3181,
+ "anatomy_ok": true,
+ "setup_seconds": 1.1,
+ "relabeling": {
+  "nodes_1_to_5_equal_node_0_up_to_wire_bijection": true,
+  "per_node": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "lemma_hypotheses": {
+  "sources": [
+   {
+    "node": 0,
+    "source_end": 51,
+    "last_oracle_call": 44,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 0,
+    "source_end": 106,
+    "last_oracle_call": 99,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 1,
+    "source_end": 407,
+    "last_oracle_call": 400,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 1,
+    "source_end": 462,
+    "last_oracle_call": 455,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 2,
+    "source_end": 763,
+    "last_oracle_call": 756,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 2,
+    "source_end": 818,
+    "last_oracle_call": 811,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 3,
+    "source_end": 1119,
+    "last_oracle_call": 1112,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 3,
+    "source_end": 1174,
+    "last_oracle_call": 1167,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 4,
+    "source_end": 1475,
+    "last_oracle_call": 1468,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 4,
+    "source_end": 1530,
+    "last_oracle_call": 1523,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 5,
+    "source_end": 1831,
+    "last_oracle_call": 1824,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   },
+   {
+    "node": 5,
+    "source_end": 1886,
+    "last_oracle_call": 1879,
+    "components_touching_address_after_source_end": [
+     "bch_merge_grade3",
+     "instrument"
+    ],
+    "instrument_contiguous_and_own": true,
+    "merge_one_interval_no_other_child": true,
+    "ok": true
+   }
+  ],
+  "grade2_nodes": [
+   {
+    "node": 0,
+    "traced_wires_touched_after_grade3_merge": false,
+    "components_touching_Q2_after_grade3_merge": [
+     "bch_merge_grade2",
+     "instrument"
+    ],
+    "merge_one_interval_no_other_child": true,
+    "instrument_is_own_grade2_instrument": true,
+    "ok": true
+   },
+   {
+    "node": 1,
+    "traced_wires_touched_after_grade3_merge": false,
+    "components_touching_Q2_after_grade3_merge": [
+     "bch_merge_grade2",
+     "instrument"
+    ],
+    "merge_one_interval_no_other_child": true,
+    "instrument_is_own_grade2_instrument": true,
+    "ok": true
+   },
+   {
+    "node": 2,
+    "traced_wires_touched_after_grade3_merge": false,
+    "components_touching_Q2_after_grade3_merge": [
+     "bch_merge_grade2",
+     "instrument"
+    ],
+    "merge_one_interval_no_other_child": true,
+    "instrument_is_own_grade2_instrument": true,
+    "ok": true
+   },
+   {
+    "node": 3,
+    "traced_wires_touched_after_grade3_merge": false,
+    "components_touching_Q2_after_grade3_merge": [
+     "bch_merge_grade2",
+     "instrument"
+    ],
+    "merge_one_interval_no_other_child": true,
+    "instrument_is_own_grade2_instrument": true,
+    "ok": true
+   },
+   {
+    "node": 4,
+    "traced_wires_touched_after_grade3_merge": false,
+    "components_touching_Q2_after_grade3_merge": [
+     "bch_merge_grade2",
+     "instrument"
+    ],
+    "merge_one_interval_no_other_child": true,
+    "instrument_is_own_grade2_instrument": true,
+    "ok": true
+   },
+   {
+    "node": 5,
+    "traced_wires_touched_after_grade3_merge": false,
+    "components_touching_Q2_after_grade3_merge": [
+     "bch_merge_grade2",
+     "instrument"
+    ],
+    "merge_one_interval_no_other_child": true,
+    "instrument_is_own_grade2_instrument": true,
+    "ok": true
+   }
+  ],
+  "readout_on_Q1_only_and_last": true,
+  "ok": true
+ }
+}

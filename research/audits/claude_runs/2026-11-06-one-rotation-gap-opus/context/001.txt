@@ -1,0 +1,65 @@
+Source https://arxiv.org/pdf/2609.27128v1 SHA256 a9c893a41073fdb527d74ec26f7382096dbd408fe4f412110a6c22d8c1b56d81
+Actual text lines1383-1445 (product support anti-concentration).
+giving nonzero violation probability at least γ⋆ . The swap bound then gives a nontrivial cut with the stated purity.
+Its largest squared Schmidt coefficient is at least that purity, which bounds the trace distance to the corresponding
+product state.
+
+
+                               Appendix G: Explicit examples and process learning
+
+                                           1.   Exact gap for products of qubits
+
+  We first determine the quadratic gap for Clifford-scrambled products of qubits. This gives explicit families for which
+the cost of exact learning can be evaluated. A pure qubit with Bloch vector (rx , ry , rz ) has Bell probabilities
+
+                                    1 − ry2             1 − rz2            1 − rx2
+                             pI =           ,    pX =           ,   pZ =           ,   pY = 0.                       (G1)
+                                      2                   2                  2
+For a nonstabilizer qubit, all three allowed Bell labels have nonzero probability. Restricted to these labels, 1, x, z form
+a basis of the Boolean functions. We can therefore select any one label with an affine indicator.
+                                                        Nn
+Proposition S9 (Qubit-product gap). Let ψ = C i=1 ϕi , where C ∈ Cliff n and each ϕi is a nonstabilizer qubit.
+Denote the smallest nonzero Bell probability of ϕi by ηi , and order these probabilities as η(1) ≤ η(2) ≤ · · · . The
+quadratic gap is
+                                                         (
+                                                          η1 ,        n = 1,
+                                               γ2 (ψ) =                                                                (G2)
+                                                          η(1) η(2) , n ≥ 2.
+
+Proof. The lower bound follows from a property of independent variables with finite support. For each variable, consider
+the smallest positive probability of any of its values. A nonzero function of degree at most ℓ in these variables is
+nonzero with probability at least the product of the ℓ smallest of these probabilities, using all variables when there are
+fewer than ℓ. Here, degree counts the distinct variables with nonconstant basis elements in a product-basis monomial.
+  To prove this property, choose a variable in a monomial of highest degree and the nonconstant basis element
+appearing on that variable in the chosen monomial. Its coefficient is a nonzero function of degree at most ℓ − 1 on
+the other variables. By induction, this coefficient is nonzero with at least the required product probability on the
+remaining variables. Whenever it is nonzero, the full function is nonzero on at least one possible value of the chosen
+variable. Multiplying these two probability bounds proves the claim.
+  A Boolean quadratic has degree at most two in these variables, which gives the lower bound in Eq. (G2). We attain
+the bound by multiplying affine indicators of the least-probable Bell labels on the two qubits with smallest ηi . For
+n = 1, a single indicator suffices. Finally, the affine relabeling induced by a Clifford preserves both the polynomial
+degree and the violation probability.
+                               √
+  For |T ⟩ = (|0⟩ + eiπ/4 |1⟩)/ 2, the three nonzero probabilities are 1/2, 1/4, 1/4. Thus γ2 (C|T ⟩⊗n ) = 1/16 for every
+Clifford and n ≥ 2. Independent Haar-random qubits instead give
+                                                  p
+                               Pr[ηi ≤ y] = 3(1 − 1 − 2y) = 3y + O(y 2 ),        0 ≤ y ≤ 41 .                        (G3)
+                                                                                                                        23
+
+
+       √ this distribution, note that each Bloch coordinate is uniform on [−1, 1]. For y ≤ 1/4, the three events
+To obtain
+|rα | ≥ 1 − 2y are disjoint except at boundaries of measure zero. Standard order statistics then give
+                                                               d
+                                                  9n2 γ2 −−→ E1 (E1 + E2 ),                                           (G4)
+
+where E1 , E2 are independent exponential variables with unit rate. At any fixed ensemble quantile, O(n4 ) copies
+therefore suffice for exact structure recovery. The scaling is set by the two qubits closest to Pauli eigenstates. The cost
+is controlled by these rare local Bell samples.
+
+
+                                   2.     Learning random T-doped Clifford outputs
+
+  We prove Corollary 3 by combining the known Clifford-product reduction for random doped circuits [18, 19] with
+a constant Bell support gap. The structural reduction is prior work; the consequence here is efficient recovery from
+copies of the output without the preparation circuit. A circuit is sampled once, and all copies supplied to the learner

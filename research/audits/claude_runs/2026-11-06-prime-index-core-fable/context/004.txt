@@ -1,0 +1,118 @@
+## 9. Unconditional Classical Approximation Of Nonreal L1
+
+2026-11-06 follow-up. The estimator, nonquadratic source scope and
+precision/resource proof have independent review. Actual integrated-text
+review of Section9 and its preferred-step annotations is accepted. This replaces the analytic GRH approximation, NOT
+the class-group computation. The full L0 composition remains under GRH.
+
+### 9.1. Contract, Selection And Baselines
+
+Input a binary prime p, public eta defining a nonprincipal character chi
+of power-of-two order q>=4 as above, rational additive accuracy0<epsilon<=1
+and failure allowance0<rho<1. The output approximates L(1,chi) to
+additive error epsilon with probability at least1-rho in classical time
+polynomial(q,logp,1/epsilon,log1/rho). A relative/log-magnitude/circular-
+phase accuracy delta is also available in polynomial(q,logp,1/delta,
+log1/rho) time for these NONQUADRATIC characters. This is randomized
+coarse approximation, not exact L0, polynomial-in-log(1/epsilon)
+computation, or a new quantum advantage. Character evaluation is paid by
+modular powering and q comparisons. No character oracle is supplied.
+
+The decisive question was whether the analytic phase/magnitude input
+actually needed a short Euler product or a new quantum operation. Corpus
+been-tried and baselines queries for Dirichlet L1 / dyadic importance
+sampling found no matching result (the baseline catalog returned only
+a weak unrelated lattice match). Literature searches found standard
+deterministic evaluation routines, not a priority certificate for this
+argument. The parent and reviewer checked CDPR2016 ACTUAL Theorem2.6,
+which gives an effective unconditional lower bound
+
+    |L(1,psi)| >= 1/(C logp)                              (9)
+
+for primitive nonquadratic psi of conductor p. The cited
+[author manuscript](https://ir.cwi.nl/pub/24685/24685B.pdf) attributes
+this to classical Landau bounds. This, not GRH or a typical-generator
+assumption, is the relevant primary import. All odd powers chi^a here
+have full order q>=4, so are nonreal and primitive of conductor p.
+The result does not give the same relative complexity for real quadratic
+characters, where the unconditional lower bound is much smaller.
+
+### 9.2. Exact Dyadic Sampling Law
+
+Choose J to be the least POWER OF TWO at least
+ceil(log2(8p/epsilon+1)), and put N=2^J-1. Then N>=8p/epsilon and
+J=O(logp+log1/epsilon). The numeric cutoff N is never enumerated.
+Draw j uniformly from{0,...,J-1}, using exactly log2J random bits, then
+draw n uniformly from{2^j,...,2^(j+1)-1} using j fresh bits. Return
+
+    X=J*2^j*chi(n)/n.
+
+For every n in its unique dyadic block, its probability is1/(J*2^j),
+so E[X]=sum_(n<=N) chi(n)/n EXACTLY and |X|<=J. This choice of J
+avoids a rejection-sampling clock. It uses at most J+log2J random bits
+per sample, with O(J)-bit integer arithmetic. Multiples of p have chi=0.
+
+Nonprincipality and periodicity imply |A(t)|<=p for
+A(t)=sum_(n<=t)chi(n). Abel summation therefore bounds the omitted tail
+by2p/N<=epsilon/4, unconditionally. The fact that the series is only
+conditionally convergent at1 does not invalidate the finite unbiased
+estimator or this explicit tail bound.
+
+For m characters (m=1 for a single value, m=q/4 for the required
+conjugate pairs), use
+
+    M >= 32*J^2*epsilon^(-2)*log(4m/rho)                  (10)
+
+independent samples, with integer ceilings/upper bounds. Hoeffding applied
+to real and imaginary parts bounds each component error by epsilon/4
+except with total probability rho after a union bound. The resulting
+complex sampling error is less than epsilon/2. Approximate roots of
+unity and rational weights so the total numerical error is at most
+epsilon/4. For example evaluate each character root within
+O(epsilon/J) and average with fixed-point precision paying logM bits.
+No enormous common rational denominator is formed. Sampling, tail and
+numerical errors sum to at most epsilon. Shared n samples may be used
+for all characters; their independence across characters is unnecessary
+for the union bound. Every sample is fresh across the M trials.
+
+### 9.3. Log-Magnitude, Phase And The Existing Unit Algorithm
+
+Take b=ceil(log2p) and a fixed effective integer C at least the constant
+in(9), enlarged if needed. Then kappa=1/(Cb) is a rational lower bound
+for each required |L(1,chi^(-a))|. For0<delta<=1/4 set
+
+    epsilon=delta*kappa/16.                              (11)
+
+On the common good event, |Lhat/L-1|<=delta/16. The convergent
+logarithm of1+(Lhat/L-1) gives errors below delta in both log|L| and
+CIRCULAR phase. No global unwrapped log branch is needed. If an estimate
+is too close to zero (e.g. |Lhat|<kappa/2), ABORT rather than refine
+without a clock; the good event cannot trigger that condition. Numerical
+log/argument evaluations have polynomial bit cost using the known lower
+bound and fixed error allocation.
+
+For fixed q this directly supplies Section6's constant target-log and
+phase tolerance. For Section8 choose delta to meet its stated
+1/(100*h*A) target-log error budget, allowing the additional elementary
+(logp)/2-logpi and beta-log errors. Equations(10)-(11) then use polynomial
+(q,h,logp,log1/rho) work; the leading sampling dependence is quadratic
+in1/delta, with logarithmic cutoff factors. It is NOT polynomial only in
+logh. The previous public-H clock and expected-time bad-h protection
+remain valid, updating their generic polynomial work exponent if needed.
+
+Add the simultaneous Monte Carlo failure rho to the existing aggregate
+<1/20 ledger for the non-F-S-unit blocks. Whole-output repetitions use
+fresh arithmetic AND fresh classical sampling. The complete F S-unit
+event still pays beta and the full units together. No exact-on-success
+claim or independent trust in an incomplete class group is introduced.
+
+The preferred analytic subroutine is now this unconditional randomized
+one; the earlier deterministic GRH Euler proof remains a valid option.
+GRH is STILL used to generate the full conductor-p class module and, in
+the uniform version, the real coefficient-field class number h. Those
+Dedekind GRH assumptions can already imply relevant Dirichlet GRH, so
+this does not claim a strictly weaker logical assumption for the whole
+composition. It removes the analytic subroutine's dependency and supplies
+a stronger classical baseline for that operation. Exact I=(L0), the
+Gauss phase and their access costs are not obtained by this estimator.
+

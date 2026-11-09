@@ -1,7 +1,7 @@
 {
-  "status": "CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND_PROVED",
+  "status": "CHARACTER_SHIFT_QUERY_CEILING_PROVED_HARDNESS_CONDITIONAL",
   "derivation_file": "research/CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND.md",
-  "derivation_sha256": "cb457acdd92edb183c57a25b3078edd584db361edd757780efe37f9f12836c20",
+  "derivation_sha256": "e8265d56e2176ea0291732dc1cb99f712ae4a6944061aff620183a64538c241a",
   "theorems_proved": [
     {
       "name": "Exact Legendre Autocorrelation Sum",
@@ -24,8 +24,8 @@
       "verified": true
     },
     {
-      "name": "Cyclotomic Degree and Uniform Lower Bound",
-      "statement": "Algebraic constraint degree d = (p-1)/2 = 2^{Omega(n)} and uniform decoding requires Omega(p) time",
+      "name": "Cyclotomic Degree Obstruction",
+      "statement": "Algebraic constraint degree d = (p-1)/2 = 2^{Omega(n)}; the uniform Omega(p) decoding lower bound is conditional on Legendre PRG hardness and is not computed here",
       "verified": true
     }
   ],
@@ -780,7 +780,8 @@
   "claim_gate": {
     "speedup_claim_allowed": false,
     "accepted_speedup_candidate": false,
-    "classical_decoding_hardness_verified": true,
-    "reason": "Multiplicative character hidden shifts exhibit a logarithmic query ceiling of Q(p) = O(log p) samples, but in the uniform model without advice, finding s requires exhaustive search over Omega(p) = 2^{Omega(n)} candidates or solving equations of degree d = (p-1)/2 = 2^{Omega(n)}. The query ceiling must not be confused with efficient classical decoding."
+    "classical_decoding_hardness_verified": false,
+    "classical_decoding_hardness_status": "conditional-on-legendre-prg-hardness",
+    "reason": "Multiplicative character hidden shifts exhibit a logarithmic query ceiling of Q(p) = O(log p) samples. In the uniform model without advice, the Omega(p) search cost is conditional on Legendre PRG hardness; this module does not establish it. The query ceiling must not be confused with efficient classical decoding."
   }
 }

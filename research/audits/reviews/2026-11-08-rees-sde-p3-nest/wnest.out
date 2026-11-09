@@ -1,0 +1,19 @@
+gadget symbolic re-derivation (8 identities mod the two relations, h1,h2 independent): True
+pool sizes N(q) for q = 10, 20, 40, 80, 160: [23, 40, 72, 135, 260]
+
+uniformly random instances [sampled]; m_used = columns ever pulled (= m needed for the run)
+ n   mode   m_used          m_used/n^2        rounds   max(|X|-q) over 2-dim pieces
+ 30  kow    [263, 266, 256]  [0.2922, 0.2956, 0.2844]  23  [None, None, None]
+ 30  wnest  [329, 328, 332]  [0.3656, 0.3644, 0.3689]  16  [8, 8, 8]
+ 60  kow    [1037, 1040, 1040]  [0.2881, 0.2889, 0.2889]  57  [None, None, None]
+ 60  wnest  [1140, 1113, 1139]  [0.3167, 0.3092, 0.3164]  31  [10, 10, 10]
+ 90  kow    [2336, 2340, 2333]  [0.2884, 0.2889, 0.288]  85  [None, None, None]
+ 90  wnest  [2430, 2425, 2425]  [0.3, 0.2994, 0.2994]  46  [11, 11, 12]
+120  kow    [4173, 4154]  [0.2898, 0.2885]  116  [None, None]
+120  wnest  [4187, 4185]  [0.2908, 0.2906]  60  [12, 13]
+150  kow    [6516, 6520]  [0.2896, 0.2898]  138  [None, None]
+150  wnest  [6405, 6416]  [0.2847, 0.2852]  75  [15, 15]
+
+WNEST n=120 per-piece (q, d, |X|, N, N*, r*, wt, mu, sigma): first 4 [(120, 2, 132, 198, 198, 120, 132, 132.0, 6.63), (118, 2, 131, 194, 194, 118, 131, 129.33, 6.57), (116, 2, 128, 191, 191, 116, 128, 127.33, 6.51), (114, 2, 127, 188, 188, 114, 127, 125.33, 6.46)]
+   last 4 [(10, 2, 15, 23, 23, 10, 15, 15.33, 2.26), (8, 2, 13, 20, 20, 8, 13, 13.33, 2.11), (6, 2, 11, 16, 16, 6, 11, 10.67, 1.89), (4, 2, 9, 13, 13, 4, 9, 8.67, 1.7)]
+all witnesses verified by direct summation (assert in Run.finish)

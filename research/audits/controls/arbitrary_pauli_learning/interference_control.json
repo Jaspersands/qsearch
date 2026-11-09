@@ -1,0 +1,84 @@
+{
+  "scope": "four fixed exact phase/support falsifiers; existing n4 decoder reused",
+  "exact_field": "Q(zeta16)",
+  "cases": [
+    {
+      "pauli": "Y",
+      "labels_checked": 4,
+      "support_size": 2,
+      "envelope_support_size": 3,
+      "cancelled_envelope_labels": 1,
+      "overlap_mass": "1/2",
+      "k2_dimension": 2,
+      "outside_overlap_exact": true,
+      "source_correction_exact": true
+    },
+    {
+      "pauli": "YZZZ",
+      "labels_checked": 256,
+      "support_size": 106,
+      "envelope_support_size": 106,
+      "cancelled_envelope_labels": 0,
+      "overlap_mass": "27/128",
+      "k2_dimension": 1,
+      "outside_overlap_exact": true,
+      "source_correction_exact": true,
+      "candidate_axes": [
+        32,
+        81,
+        96,
+        128,
+        145
+      ],
+      "true_physical_axis": 81,
+      "affine_point_shortcut_rejected": true,
+      "k3_dimension": 14,
+      "top_dimension": 13,
+      "lie_dimension": 6,
+      "square_zero_dimension": 5,
+      "common_kernel_dimension": 4,
+      "initial_rank_one_equation_dimension": 6,
+      "macaulay_degree_at_most_two_relation_dimension": 10,
+      "quotient_algebra_dimension": 6,
+      "maximum_joint_eigenspaces": 6,
+      "recovered_matrix_ranks": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "coefficient_assignments_enumerated": 0
+    },
+    {
+      "pauli": "YZZZI",
+      "labels_checked": 1024,
+      "support_size": 318,
+      "envelope_support_size": 318,
+      "cancelled_envelope_labels": 0,
+      "overlap_mass": "27/128",
+      "k2_dimension": 2,
+      "outside_overlap_exact": true,
+      "source_correction_exact": true
+    },
+    {
+      "pauli": "YZZZZ",
+      "labels_checked": 1024,
+      "support_size": 327,
+      "envelope_support_size": 333,
+      "cancelled_envelope_labels": 6,
+      "overlap_mass": "81/512",
+      "k2_dimension": 1,
+      "outside_overlap_exact": true,
+      "source_correction_exact": true
+    }
+  ],
+  "cutoff_integer_inequality": true,
+  "claims": {
+    "full_learner_executed": false,
+    "quantum_execution": false,
+    "asymptotic_from_controls": false,
+    "speedup": false
+  }
+}

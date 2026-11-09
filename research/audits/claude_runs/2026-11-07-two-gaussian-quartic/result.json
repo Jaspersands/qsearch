@@ -1,0 +1,44 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3060,
+      "path": "research/audits/claude_inputs/2026-11-07-two-gaussian/contract.md",
+      "sha256": "15784735d5caa018795c964f3b6221d536593dc3fbb4f7d0f899173ae9c54380",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 1889,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-06T17:05:36.992133+00:00",
+  "input_token_allowance": 2145,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.65985,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-two-gaussian/quartic_prompt.md",
+    "sha256": "0a41e14000f282df3bcc3c3492a41cc308b603ae0c5ac2ab07680167bbb85b83",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261106T165834.818559Z-32f5cc80",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 1889,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 1.65729
+}

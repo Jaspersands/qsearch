@@ -1,0 +1,48 @@
+== per (kappa,p,a): all families at budget ==
+k p a M banks solved idstalls crit idfail orderfail/orders maxpi maxpi/M (family) | maxpi excl. chain4/lines
+2 1009 3 9 130 130 33 11 0 0/780 3 0.33 codim1_2 | 3 codim1_2
+2 1009 4 13 130 130 27 10 0 0/780 3 0.23 chain4 | 2 codim1_2
+2 1009 5 17 130 130 29 10 10 11/780 4 0.24 codim1_front_2 | 4 codim1_front_2
+2 1009 6 22 130 130 30 10 0 0/780 6 0.27 chain4 | 3 codim1_2
+2 1009 7 27 130 130 30 10 10 10/780 8 0.30 chain4 | 4 flag_sub
+2 1009 8 33 130 130 29 10 10 10/780 11 0.33 chain4 | 6 flag_sub
+2 1009 9 39 130 130 30 10 10 10/780 14 0.36 chain4 | 9 flag_sub
+2 1009 10 46 130 130 30 10 10 10/780 18 0.39 chain4 | 12 flag_sub
+2 10007 3 9 130 130 26 10 0 0/780 2 0.22 codim1_2 | 2 codim1_2
+2 10007 4 13 130 130 29 10 0 0/780 3 0.23 chain4 | 2 codim1_2
+2 10007 5 17 130 130 28 10 10 11/780 4 0.24 chain4 | 3 codim1_2
+2 10007 6 22 130 130 29 10 0 0/780 6 0.27 chain4 | 3 codim1_2
+2 10007 7 27 130 130 30 10 10 10/780 8 0.30 chain4 | 4 flag_sub
+2 10007 8 33 130 130 30 10 10 10/780 11 0.33 chain4 | 6 flag_sub
+2 10007 9 39 130 130 30 10 10 10/780 14 0.36 chain4 | 9 flag_sub
+3 1009 3 9 140 140 44 20 0 0/840 2 0.22 codim1_2 | 2 codim1_2
+3 1009 4 13 140 140 40 20 0 0/840 3 0.23 chain4 | 2 codim1_2
+3 1009 5 17 140 140 40 20 20 20/840 4 0.24 chain4 | 3 codim1_2
+3 1009 6 22 140 140 40 20 10 10/840 6 0.27 chain4 | 4 codim1_2
+3 1009 7 27 140 140 40 20 20 20/840 8 0.30 chain4 | 5 codim1_2
+3 1009 8 33 140 140 40 20 20 20/840 11 0.33 chain4 | 6 flag_sub
+3 1009 9 39 140 140 41 20 20 20/840 14 0.36 chain4 | 9 flag_sub
+3 1009 10 46 140 140 41 20 20 20/840 18 0.39 chain4 | 12 flag_sub
+3 10009 3 9 140 140 44 20 0 0/840 2 0.22 codim1_2 | 2 codim1_2
+3 10009 4 13 140 140 40 20 0 0/840 3 0.23 chain4 | 2 codim1_2
+3 10009 5 17 140 140 40 20 20 21/840 4 0.24 chain4 | 3 codim1_2
+3 10009 6 22 140 140 40 20 10 11/840 6 0.27 chain4 | 3 codim1_2
+3 10009 7 27 140 140 40 20 20 20/840 8 0.30 chain4 | 4 flag_sub
+3 10009 8 33 140 140 40 20 20 20/840 11 0.33 chain4 | 6 flag_sub
+3 10009 9 39 140 140 40 20 20 20/840 14 0.36 chain4 | 9 flag_sub
+
+== per family (all kappa,p,a at budget) ==
+random          banks  300 solved  300 idstall    0 crit    0 idfail    0 orderfail    0/ 1800 maxpi 0
+lines_a+1       banks  300 solved  300 idstall    0 crit    0 idfail    0 orderfail    0/ 1800 maxpi 0
+lines_a         banks  300 solved  300 idstall    0 crit    0 idfail    0 orderfail    0/ 1800 maxpi 0
+pairs           banks  300 solved  300 idstall    0 crit    0 idfail    0 orderfail    0/ 1800 maxpi 0
+planes5         banks  300 solved  300 idstall   14 crit    0 idfail    0 orderfail    0/ 1800 maxpi 1
+flats3_8        banks  300 solved  300 idstall    7 crit    0 idfail    0 orderfail    0/ 1800 maxpi 1
+lines+planes    banks  300 solved  300 idstall    0 crit    0 idfail    0 orderfail    0/ 1800 maxpi 0
+flag_sub        banks  300 solved  300 idstall    0 crit    0 idfail    0 orderfail    1/ 1800 maxpi 12
+codim1_2        banks  300 solved  300 idstall  288 crit    1 idfail    0 orderfail    0/ 1800 maxpi 5
+codim1_3        banks  300 solved  300 idstall    2 crit    0 idfail    0 orderfail    0/ 1800 maxpi 5
+codim1_front_2  banks  300 solved  300 idstall  289 crit    0 idfail    0 orderfail    0/ 1800 maxpi 5
+basis_dense     banks  300 solved  300 idstall    0 crit    0 idfail    0 orderfail    0/ 1800 maxpi 0
+chain4          banks  300 solved  300 idstall  300 crit  300 idfail  180 orderfail  183/ 1800 maxpi 18
+chainfull       banks  150 solved  150 idstall  150 crit  150 idfail  110 orderfail  110/  900 maxpi 2

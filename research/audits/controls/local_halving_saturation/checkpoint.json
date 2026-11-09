@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_zarhin": true,
+    "source_stoll": true,
+    "source_differentials": true,
+    "source_liu_discriminant": true,
+    "core_closed": true,
+    "index_all_prime_closed": true,
+    "precision_still_open": true,
+    "control.py_syntax_and_scope": true,
+    "repair_counterexample.py_syntax_and_scope": true,
+    "halving_and_tails": true,
+    "report_counterexample": true,
+    "claude_index": true,
+    "claude_precision": true,
+    "ledger": true,
+    "AGENT_HANDOFF.md_title": true,
+    "MECHANICAL_FOLLOW_UP_PLAN.md_title": true,
+    "state_title": true,
+    "full_endpoint_not_claimed": true,
+    "scoped_diff_check": true
+  },
+  "ledger": {
+    "nonpartial_estimates": 70,
+    "estimated_usd": "55.127182",
+    "completed_reports": 36,
+    "partial_unknown_billing_records": 1,
+    "not_balance": true
+  },
+  "pass_estimate_usd": "3.36928",
+  "control_reexecuted": false,
+  "scope": "Frozen sources, component reviews, open precision boundary, exact classical falsifiers, terminal API costs, syntax and title alignment only.",
+  "source_scopes": {
+    "stoll": "Actual ONE-half construction and explicit p-adic warning.",
+    "zarhin": "General-halving pointer only; point-on-curve formulas not a general divisor primitive.",
+    "differentials": "Cover exponent prime to residue characteristic; excludes dyadic hyperelliptic case.",
+    "liu_discriminant": "Smoothness criterion only; not a precision or Neron-index bound."
+  },
+  "review_sha256": {
+    "research/audits/reviews/2026-11-07-local-saturation-core.md": "e0e43093bb46ef13a6f2996a3ed3a147ee633072c6a69ef4113833ec0d912523",
+    "research/audits/reviews/2026-11-07-local-saturation-index.md": "ddfab18cc92005fed2839795d22f14d9695550634c8c39cfe9fc11e92f893264",
+    "research/audits/reviews/2026-11-07-local-saturation-sources.md": "1ede4e79208e9ca59082f30cfb859761c62f519e1199a3ec68d524f4afe5a143"
+  },
+  "control_sha256": {
+    "control.py": "bf03779b540f9e313a3837ba9e333299bc1124d53b1614112940d591c2522b0e",
+    "repair_counterexample.py": "59544dca5d955402e185766cf30c993c3699f69b09affce083e68ecc66987ef7"
+  }
+}

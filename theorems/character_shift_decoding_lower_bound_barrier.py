@@ -246,8 +246,8 @@ def build_report() -> Dict[str, Any]:
             "verified": all(r["unique_identification_rate"] >= 0.90 for r in simulation_results),
         },
         {
-            "name": "Cyclotomic Degree and Uniform Lower Bound",
-            "statement": "Algebraic constraint degree d = (p-1)/2 = 2^{Omega(n)} and uniform decoding requires Omega(p) time",
+            "name": "Cyclotomic Degree Obstruction",
+            "statement": "Algebraic constraint degree d = (p-1)/2 = 2^{Omega(n)}; the uniform Omega(p) decoding lower bound is conditional on Legendre PRG hardness and is not computed here",
             "verified": all(r["degree_exponential_in_n"] for r in degree_obstruction),
         },
     ]
@@ -255,17 +255,17 @@ def build_report() -> Dict[str, Any]:
     claim_gate = {
         "speedup_claim_allowed": False,
         "accepted_speedup_candidate": False,
-        "classical_decoding_hardness_verified": True,
+        "classical_decoding_hardness_verified": False,
+        "classical_decoding_hardness_status": "conditional-on-legendre-prg-hardness",
         "reason": (
-            "Multiplicative character hidden shifts exhibit a logarithmic query ceiling of Q(p) = O(log p) samples, "
-            "but in the uniform model without advice, finding s requires exhaustive search over Omega(p) = 2^{Omega(n)} "
-            "candidates or solving equations of degree d = (p-1)/2 = 2^{Omega(n)}. The query ceiling must not be confused "
-            "with efficient classical decoding."
+            "Multiplicative character hidden shifts exhibit a logarithmic query ceiling of Q(p) = O(log p) samples. "
+            "In the uniform model without advice, the Omega(p) search cost is conditional on Legendre PRG hardness; "
+            "this module does not establish it. The query ceiling must not be confused with efficient classical decoding."
         ),
     }
 
     return {
-        "status": "CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND_PROVED",
+        "status": "CHARACTER_SHIFT_QUERY_CEILING_PROVED_HARDNESS_CONDITIONAL",
         "derivation_file": str(DERIVATION.relative_to(ROOT)),
         "derivation_sha256": derivation_sha,
         "theorems_proved": theorems_proved,
@@ -302,20 +302,20 @@ def write_report(write_registry: bool = True) -> Path:
                 "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
                 "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
                 "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
-                "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model",
+                "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model, conditional on Legendre PRG hardness (not computed here)",
                 "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}"
             },
             "lesson": (
                 "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. "
                 "Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, "
-                "but uniform decoding without advice requires Omega(p) operations, matching the computational hardness "
-                "of inverting the Legendre PRG."
+                "but uniform decoding without advice is conjectured to need Omega(p) operations. That bound is conditional "
+                "on the hardness of inverting the Legendre PRG and is not proved here."
             ),
             "reason_invalid": (
                 "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, "
                 "allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, "
-                "recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing "
-                "Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits "
+                "recovering the shift s is conjectured to require solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing "
+                "Omega(p) candidate shifts, conditional on Legendre PRG hardness. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits "
                 "or via van Dam-Hallgren's quantum Fourier transform."
             ),
             "source": str(REPORT.relative_to(ROOT))

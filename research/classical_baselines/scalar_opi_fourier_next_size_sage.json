@@ -1,0 +1,170 @@
+{
+  "status": "ONE_SAVED_Q512_NATIVE_CASE_AND_REQUESTED_EXACT_MEANS_PASS",
+  "sage_version": "10.9",
+  "source_sha256": {
+    "scalar_opi_fourier_next_size.json": "b30a90b2466a64c3d34fbf67f038e6685717f2c29ee12bca44561672e3148e41",
+    "scalar_opi_fourier_sage_check.py": "e13de84f39bef1a3b40845ddae82726a777e7577db95c83f4661202d97c39bf7"
+  },
+  "algorithm_h_independent_check": {
+    "q": 512,
+    "t": 9,
+    "k": 128,
+    "seed": 3101,
+    "score": 396,
+    "native_evaluations": 511,
+    "degree": 127,
+    "restrictions_and_native_parities_checked": 1152,
+    "trajectory_gain_identities_checked": 1152,
+    "total_gain_numerator": 71936,
+    "independent_exact_section_means": [
+      {
+        "step": 0,
+        "mean": "511/2",
+        "saved_numerator": 130816,
+        "denominator": 512,
+        "minimum_row_rank": 9,
+        "maximum_row_rank": 9,
+        "row_rank_histogram": {
+          "9": 511
+        },
+        "fully_accepted_row_rank_histogram": {},
+        "row_mean_sum_by_rank": {
+          "9": "511/2"
+        }
+      },
+      {
+        "step": 288,
+        "mean": "73079/256",
+        "saved_numerator": 146158,
+        "denominator": 512,
+        "minimum_row_rank": 4,
+        "maximum_row_rank": 9,
+        "row_rank_histogram": {
+          "9": 441,
+          "8": 8,
+          "4": 33,
+          "5": 28,
+          "6": 1
+        },
+        "fully_accepted_row_rank_histogram": {
+          "4": 33
+        },
+        "row_mean_sum_by_rank": {
+          "9": "441/2",
+          "8": "1203/256",
+          "4": "33",
+          "5": "847/32",
+          "6": "51/64"
+        }
+      },
+      {
+        "step": 576,
+        "mean": "40335/128",
+        "saved_numerator": 161340,
+        "denominator": 512,
+        "minimum_row_rank": 4,
+        "maximum_row_rank": 9,
+        "row_rank_histogram": {
+          "9": 384,
+          "5": 49,
+          "4": 75,
+          "8": 2,
+          "6": 1
+        },
+        "fully_accepted_row_rank_histogram": {
+          "4": 75
+        },
+        "row_mean_sum_by_rank": {
+          "9": "192",
+          "5": "1477/32",
+          "4": "75",
+          "8": "149/128",
+          "6": "51/64"
+        }
+      },
+      {
+        "step": 864,
+        "mean": "88243/256",
+        "saved_numerator": 176486,
+        "denominator": 512,
+        "minimum_row_rank": 4,
+        "maximum_row_rank": 9,
+        "row_rank_histogram": {
+          "9": 324,
+          "5": 67,
+          "4": 119,
+          "8": 1
+        },
+        "fully_accepted_row_rank_histogram": {
+          "4": 119
+        },
+        "row_mean_sum_by_rank": {
+          "9": "162",
+          "5": "505/8",
+          "4": "119",
+          "8": "147/256"
+        }
+      },
+      {
+        "step": 1143,
+        "mean": "96381/256",
+        "saved_numerator": 192762,
+        "denominator": 512,
+        "minimum_row_rank": 3,
+        "maximum_row_rank": 9,
+        "row_rank_histogram": {
+          "8": 151,
+          "7": 51,
+          "4": 157,
+          "9": 63,
+          "6": 2,
+          "5": 83,
+          "3": 4
+        },
+        "fully_accepted_row_rank_histogram": {
+          "4": 157,
+          "3": 4,
+          "5": 1
+        },
+        "row_mean_sum_by_rank": {
+          "8": "19785/256",
+          "7": "1751/64",
+          "4": "157",
+          "9": "63/2",
+          "6": "17/16",
+          "5": "2505/32",
+          "3": "4"
+        }
+      },
+      {
+        "step": 1152,
+        "mean": "396",
+        "saved_numerator": 202752,
+        "denominator": 512,
+        "minimum_row_rank": 0,
+        "maximum_row_rank": 0,
+        "row_rank_histogram": {
+          "0": 511
+        },
+        "fully_accepted_row_rank_histogram": {
+          "0": 396
+        },
+        "row_mean_sum_by_rank": {
+          "0": "396"
+        }
+      }
+    ],
+    "independent_affine_image_row_checks": 3066,
+    "passed": true
+  },
+  "prange_best_independent_check": {
+    "score": 347,
+    "degree": 127,
+    "native_horner_evaluations": 511,
+    "saved_word_and_hits_match": true,
+    "score_matches_saved_32_trial_maximum": true
+  },
+  "scope": "Saved q512,k128,seed3101 only; no Algorithm H rerun or new instances. Sage native arithmetic and affine image means; every saved parity and gain identity. Prange best native witness checked, but the other31 Prange witnesses are not stored or rerun. No asymptotic or matched runtime conclusion.",
+  "wall_seconds": 28.330056208069436,
+  "replay_command": "/opt/anaconda3/envs/qsearch-cas/bin/python - <<'PY'\nfrom pathlib import Path\nimport hashlib\nimport importlib.util\nimport json\nimport time\nfrom sage.all import GF, PolynomialRing\nfrom sage.version import version as sage_version\n\nstarted = time.monotonic()\nroot = Path(\"/Users/jaspersands/Developer/qsearch\")\nsource = root / \"research/classical_baselines/scalar_opi_fourier_next_size.json\"\nchecker = root / \"research/classical_baselines/scalar_opi_fourier_sage_check.py\"\nhashes = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (source, checker)}\ndata = json.loads(source.read_text())\nassert data[\"status\"] == \"ONE_PREDECLARED_NEXT_SIZE_CASE_COMPLETE_NOT_ASYMPTOTIC_EVIDENCE\"\nrow = data[\"row\"]\nassert (row[\"q\"], row[\"k\"], row[\"seed\"]) == (512, 128, 3101)\nspec = importlib.util.spec_from_file_location(\"independent_native_sage_check\", checker)\nmodule = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(module)\nalgorithm_h = module.check_case(row, row)\n\nR = PolynomialRing(GF(2), \"X\")\nF = GF(row[\"q\"], name=\"alpha\", modulus=R(row[\"field_modulus\"]))\nnative = [F.from_integer(i) for i in range(row[\"q\"])]\nbest = row[\"prange\"][\"best\"]\ncoeffs = best[\"monomial_coefficients\"]\nassert len(coeffs) <= row[\"k\"] and all(0 <= c < row[\"q\"] for c in coeffs)\nP = PolynomialRing(F, \"Z\")\npoly = P([native[c] for c in coeffs])\nassert poly.degree() < row[\"k\"]\nwords = []\nfor point in native[1:]:\n    value = F.zero()\n    for coefficient in reversed(coeffs):\n        value = value * point + native[coefficient]\n    assert value == poly(point)\n    words.append(int(value.to_integer()))\nassert words == best[\"word\"]\nprange_score = sum(word in table for word, table in zip(words, row[\"tables\"]))\nassert prange_score == best[\"hits\"] == max(row[\"prange\"][\"scores\"])\nassert len(row[\"prange\"][\"scores\"]) == 32\nassert hashes == {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (source, checker)}\nREPORT = {\n    \"status\": \"ONE_SAVED_Q512_NATIVE_CASE_AND_REQUESTED_EXACT_MEANS_PASS\",\n    \"sage_version\": sage_version,\n    \"source_sha256\": hashes,\n    \"algorithm_h_independent_check\": algorithm_h,\n    \"prange_best_independent_check\": {\n        \"score\": prange_score, \"degree\": int(poly.degree()),\n        \"native_horner_evaluations\": len(words), \"saved_word_and_hits_match\": True,\n        \"score_matches_saved_32_trial_maximum\": True\n    },\n    \"scope\": \"Saved q512,k128,seed3101 only; no Algorithm H rerun or new instances. \"\n             \"Sage native arithmetic and affine image means; every saved parity and gain identity. \"\n             \"Prange best native witness checked, but the other31 Prange witnesses are not stored or rerun. \"\n             \"No asymptotic or matched runtime conclusion.\",\n    \"wall_seconds\": time.monotonic() - started\n}\nprint(json.dumps(REPORT, indent=2))\n\nPY"
+}

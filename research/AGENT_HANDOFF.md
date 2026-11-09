@@ -1,4 +1,6418 @@
 # Research Agent Handoff
+## 2026-11-09 Rees Square Gap: Cubic Lower Bound on E_2 and a Barrier-Free Type Certificate (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited.
+Report: audits/reviews/2026-11-09-rees-square-gap-stepanov.md (scripts in the folder beside it).
+Three Claude subagents ran: a proof referee, an upper-side attack and a literature check.
+
+- **PROVED (referee verdict CORRECT; tight at (kappa,p)=(4,41), (3,7)):** a twisted Stepanov
+  bound.
+  - Statement: a two-level contraction with z zero cells has kappa(kappa-1) - z <= h + kappa - 2.
+  - Hence every p = 1 mod kappa with p <= kappa^3 - 3kappa^2 + 2kappa is in E_2(kappa). The
+    paper's lower end is quadratic, kappa^2 - 3kappa + 3.
+  - Zero cells satisfy (i-j)-(i'-j') = ind(-1), so z <= 2 when ind(-1) != 0.
+  - Key point: the pattern -(i+j) is separable, so zeta^j (alpha_j+beta_i)^h = zeta^{-i}. TH3
+    dismissed Hanson-Petridis because the cells lie in different cosets.
+  - A Hanson-Petridis-strength twisted bound kappa^2 <= h + z is FALSE (p = 41 has
+    contractions).
+  - Lower bound only: it does not narrow the square gap.
+- **Upper side: no o(kappa^kappa) threshold.**
+  - New [proved]: a PGL_2(F_p) normal form for all-nonzero contractions (cross ratios are
+    kappa-th powers, plus a rainbow chart point).
+  - New [proved]: a separable-type reduction giving kappa^{2kappa-2} type sums.
+  - Its permanent-weighted certificate is NOT excluded by O1, O2 or Chebotarev (open stratum).
+  - Exact values at kappa = 4: PW certifies at 181, fails at 193, holds from 197. The proved
+    pair-signed form certifies from 137, below the O1 barrier 203. The parent reran
+    137/181/193/197/229.
+  - Second pass (types-proof/REPORT.md), all proved: the certificate is valid; pair classes are
+    -kappa/n exactly up to (kappa-2)/n; every class obeys the Weil bound ((m-2)sqrt p+2kappa-m)/n.
+    That makes the certificate rigorous only at about T_A^2: nothing new.
+  - Clean open hypothesis OSC(B): C1-count lower bound, 1/p low-support bias, and square-root
+    cancellation over C1 orbits. It would give kappa^{(kappa+1)/2+o(1)} (3450 at kappa = 5).
+    Untested in its regime (mean bucket size << 1).
+  - Literature: best analogue is the Paley n-e.c. threshold (Weil base 4 versus counting base 2,
+    no improvement known). The all-p Paley clique lower bound is still (1/2)log2 p (Cohen).
+- **Claim gates false:** square gap closed; any threshold o(kappa^kappa); T_A/T_S/tables changed;
+  type certificate proved beyond finite primes; O1/O2 refuted.
+- **Next hard question:** prove C1 existence (kappa-1 points S', kappa points T with
+  chi(s - t) independent of t) for some p = o(kappa^kappa). It is unproved below the pigeonhole
+  bound (kappa-1)kappa^{kappa-1}.
+- **Next command (less loaded machine):** in the report folder, run
+  `nice -n 19 /opt/anaconda3/bin/python -I types/orbit_types.py 5 <p>` and `types/sep_types.py 5 <p>`
+  for p = 1 mod 5 in (1.5*5^3, 2628].
+  - Expected artifact: kappa = 5 permanent-weighted ratios and C1 counts against the first
+    moment.
+  - Acceptance: the ratio is below 1 at some p < 2628 (O1 barrier), or the run shows it is not.
+- **Paper (owner/integrator):** proposed text in report §7, NOT applied.
+- Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-09 Rees Square Gap".
+## 2026-11-08 Rees Black-Box Corollary Draft and End-to-End Control (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited (waits for the
+single paper pass). Prompted by an outside question on the strength of the explicit chart.
+
+- Drafted (audits/reviews/2026-11-08-rees-blackbox-corollary-draft.tex, revised after an
+  adversarial AI review): (A) "How strong is the explicit chart?" (UT_n(F_p), n <= p, via the
+  matrix log; black box; pc presentations) and (B) Corollary cor:black-box. Claim,
+  CONDITIONAL on Thm main/Thm is-import: a black-box p-group of class c < p (c fixed),
+  exponent p, unique l-bit encoding, coherent XOR multiplication oracle, p given: H is found
+  with prob >= 1 - eps; no f query before the chart; on the chart-correct event
+  (prob >= 1 - eps/4) at most Q_q queries for m = log_p|G|. It is the e = 1 route of the full
+  version's Prop black-box(ii) with Schedule 1 alone. NOT Las Vegas: the checks miss
+  K' strictly inside K, and the QFT is approximate.
+- Not claimed: exponent p^e > p (ring-to-field), non-unique encoding (Inui-Le Gall setting),
+  black-box nilpotent non-p-groups (thm:bb-envelope stays conditional on Schedule 2).
+- Finite control (audits/reviews/2026-11-08-rees-blackbox-e2e/README.md;
+  theorems/rees_blackbox_end_to_end.py; tests/test_rees_blackbox_end_to_end.py, 2 passed):
+  heis5_s3, affine5, affine7, free23_5 (|G| up to 3125), 30 subgroups, all recovered from
+  opaque handles; both negative controls (naive pullback, single kernel sample) caught in all
+  four groups. Finite; proves nothing for other groups.
+- Paper-pass obligations: revise core/main-core.tex l.184 and the l.697 outlook paragraph;
+  define \UT in the core; add the CicaloDeGraafVaughanLee2012 bib entry after reading it;
+  check the Khukhro chapter citation (NEEDS HUMAN VERIFICATION markers in the draft).
+- Next: owner decides whether (B) enters the short paper; then integrate in the single pass.
+  Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-08 Rees Black-Box Corollary".
+
+## 2026-11-08 Rees SDE Open Directions: F_3 Worst Case n²/4, o(a²) Whenever p/a → ∞, Promise Hardness (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited. Seven reports in
+audits/reviews/2026-11-08-rees-sde-*.md (each with a folder of scripts).
+
+- p = 3 (F_3^n subset sum, worst case) PROVED, AI-checked by a proof referee and a break
+  attempt (-p3-nest.md, -p3-nest-referee.md, -p3-nest-break.md): deterministic poly time for
+  every instance with m >= n²/4 + (8/9)(n+2)^(3/2) + 4n + 2 sqrt(n) + 15, against KOW's
+  n²/3 + O(n log n) (arXiv 2510.07515 Thm 1.2). Mechanism: a dependency of weight in
+  [rank+2, q + (8/3) sqrt q + 4] carries a nested second dependency; the nested-support gadget
+  realizes 2 dims per piece; series-class peeling + second Pless moment + conditional
+  expectations find that weight deterministically. Corrections: peeling gives dual distance
+  >= 2, not >= 3 (variance bound unaffected); the explicit bound beats KOW's explicit bound only
+  for n > 80 (the break attempt: > KOW's recursion for n < 146, > n²/3 for n < 206); Remark (b)
+  unproved. Break: 0 failures (656 instances at the bound, n <= 100, ~350k annealing/pool evals,
+  ~3M exhaustive lemma cases). 1/4 is the floor of 2-dim pieces; no connected 3-dependency
+  gadget exists (k = 3, 4 SAT). Priority check (-p3-nest-lit.md): no source has c < 1/3 worst
+  case or the technique; KOW v3 says Plotkin algorithmization is "stuck at 2/3" (a write-up must
+  explain why the window avoids it). Earlier p = 3 pass's barrier (Theorem 6(i)) and Theorem 5
+  REFUTED by its referee (-p3-referee.md).
+- Prime condition (-uniform-p.md, referee -uniform-p-referee.md, nothing refuted): Theorem L
+  (lookahead back substitution, zero error); Theorem A holds at every p >= max(C_old,
+  kappa^E (E r + 2)). Unconditionally F = O(a² / min(log a, log(p/a))): o(a²) iff p/a -> inf.
+  An a-independent threshold (C(2,3) = 583,991; C(3,3) = 172,103,821) needs bounded control
+  fan-in (Q-loc), which ALG-T's fixed scan order fails on exact-circuit banks; open. Bounded p:
+  G*_E(p) = 0 for p < kappa^E - E(kappa-1); no route below the triangular count found.
+- Near-linear (-near-linear.md, referee -near-linear-referee.md): Theorem H (dead-pair padding
+  of rem:sde-subquadratic(b)) CONFIRMED: solving every SOLVABLE bank at arity
+  L <= M <= 2a + 4 - L, L = ceil(log_kappa p) + lambda, recovers a power-residue PRF key.
+  Its claim to exclude O(a^(1+eps)) solvers is REFUTED (padding keeps 2a - M fixed; never crosses
+  M = 2a). The total regime M >= kappa a + 1 is untouched: no algorithm, no hardness.
+- Literature (-lit2.md): nothing solves or blocks the three directions; linear-in-forms
+  existence bounds need p exponential and are non-constructive; KOMSW 0.1022 is average case,
+  unproved.
+- Gates that stay false: o(a²) uniform in p; anything o(n²) at p = 3; near-linear in the total
+  regime; paper changed; novelty or priority.
+- Next hard question: worst-case F_3 below n²/4 needs 3-dim pieces (none connected exist) or a
+  decoding step; for large p, Q-loc (a forward rule with bounded control fan-in).
+  Next command: MECHANICAL_FOLLOW_UP_PLAN.md, "2026-11-08 Rees SDE Open Directions".
+
+## 2026-11-07 Rees SDE Worst Case Below a²: Theorem A (Rado Flat), O(a²/log a) Columns (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited (owner decision).
+Topic note: audits/reviews/2026-11-07-rees-sde-subquad-A.md (Theorem A, Corollary A).
+
+- Proved (AI-checked twice, pending human review): kappa >= 2, J >= max(kappa,2),
+  c = 2(J-1), E = 3J-2, F(r) = D_J(r) + max(2,2J-4) r. EVERY bank of rank r with >= F(r)
+  columns (any form, no general position, no column randomness) reduces in deterministic
+  poly time to a solution or to a leaf flag with (F1), (F2), (S) and <= E blocks per round;
+  back substitution fails w.p. <= 1/2 per pass at p >= max(8 kappa^{2E} E^2, 2E r kappa^E).
+  New step: the Rado flat (Lemma M). When no absorption of load <= c exists, the Edmonds
+  matroid-intersection min-max gives a flat W of codim > c with few columns outside, so the
+  recursion on W applies. This removes Q1's unbounded absorption load (heavy stalls).
+- Corollary A: J = max(kappa,3,ceil(log_kappa a)), fixed kappa, p >= ~72 kappa^2 a^6 J^2:
+  worst-case O(a²/log a) columns (F(a) <= a²/(2(J-1)) + a(2J-3/2+1/(J-1))), Las Vegas,
+  expected time kappa^E poly(a, M, log p). Corollary A3 (J=3, kappa in {2,3}):
+  floor((r+2)^2/4)+2r columns at p >= max(2.33e6,1792r) (kappa=2), max(6.89e8,30618r)
+  (kappa=3). Previous best worst case: (a+1)(a+2)/2.
+- Checks: Fable referee (-subquad-A-referee.md) CORRECT, no error/gap, wording fixes only;
+  independent reimplementation + attack (-subquad-A-break.md): no break in ~1.5M banks
+  (incl. exhaustive a=2, annealing, theorem-range primes), 308 banks identical to subquad.py.
+  Least observed slack 0 in the case-3.3 U+ recursion count (valid, at its bound).
+- Barrier (-subquad-B.md, argued model result): piece schemes with poly cost need
+  Omega(a²/log a) columns on random banks at p >= 2^{O~(a²)}; so Theta(a²/log a) is the
+  limit of this family. Literature (-subquad-lit.md): no known worst-case o(m²) solver;
+  KOW arXiv:2510.07515 s.5.1 lists o(n²) for F_3 subset sum as open.
+- Gates that stay false: uniformity in p (nothing at p=3 or kappa=p-1); a²/log a optimal
+  beyond the piece model; paper arity changed; any novelty or priority claim.
+- Next hard question: capacity c independent of J (prime exponent ~6 -> ~2), or primes
+  p = a^{O(1)} with a smaller exponent; human check of Lemma M and of Lemma 2 with absorbed
+  blocks. Next command: slack-minimising climb at J in {4,5} on the case-3.3 U+ recursion
+  (MECHANICAL_FOLLOW_UP_PLAN.md, "2026-11-07 Rees SDE Worst Case Below a²").
+
+## 2026-11-07 Scalar OPI Tilted-Walk Admission
+
+PROVISIONAL hard derivation in SCALAR_OPI_TILTED_WALK_ADMISSION.md.
+Fresh independent comparison selected actual2609.40088v1 tilted-walk
+prescription on native full-table scalar OPI. Natural random(k-1)-anchor
+RS updates give exact drift P_sG=(1-sr)G+sr mu,r=(m-k+1)/m. At verified
+constant score spreadgamma, source constants require L>=sr gamma,
+V>=s(r gamma)^2, omega<=s/log(q^k). Actual Theorem4.6 then gives
+b*M=O(log(q^k)^-2), even with laziness. Prange pays that score spread on
+original random halfsets with high probability, without target advice.
+
+Proposed constructive classical counterpart: two independent killed walks
+from the SAME sampled stationaryx generate normalized positive-filter
+measurement law exactly. Acceptance>=exp(-bM) forG>=1/2; finite rational
+sampling/capped clocks paid. Thus this prescribed stationary filter would
+barely change uniform probabilities. Independent source/core and precise
+probability checks pending. No general tilted-walk/OPI no-go, conditioned-
+start simulation, novelty, separation or quantum execution. Next command:
+read note and source Theorem4.6/Condition3.4/Section7.3, one exact Sage drift
+and paired-law control plus Prange comparator. Expected closed proof or
+counterexample; see mechanicaltopitem. No old controls or broad sweeps.
+
+## 2026-11-07 Gaudin Two-Cluster Gap
+
+CLOSED written native counterfamily in GAUDIN_TWO_CLUSTER_GAP.md:
+N=2n,n>=27, excitationM=n, sites eps_Ai=n^-8*i, eps_Bi=1+n^-8*i,
+g1/(2n). All sites distinct with polynomial inverse spacing/charge norms.
+Squared SAME-sector joint separation <=2312n^-5/3=o(1/N), refuting a
+UNIFORM Omega(1/N) floor over this native input class. Exact n64 Sturm
+endpoints plus reviewed fusion give physical128-site distance²<1/400<1/128.
+The all-family result comes from operator identities and min-max, not fits.
+
+The crucial finite-spacing proof cancels singular internal charges on the
+symmetric clusters; exact invariant compression has e<=400n^-4. An anchor
+charge transfers fused gaps without an inverse eigenvector-gap assumption.
+Two-tent variational states give criticalgap<=33n^-1/3. Strongest comparator:
+classically accessible n+1-dimensional fused problem; N6 optimizer was only
+finite nonfalsification. Prior two-level BCS critical exponent is KNOWN.
+Accepted Lutzv3 still leaves the general gap open; no proved weak/strong
+limit or its particular numerical site families is refuted.
+
+Two CLOSED reviews parent-read, two primary snapshots, three scoped controls
+checked. No matching Theta law, superpoly-gap, exclusion of all polynomial
+preparation, novelty, separation or quantum execution. Existing conditional
+label-free preparation unchanged; weaker polynomial all-path gap OPEN.
+Claude fusion request refusedEMPTY, terminal/reaped, no findings/retry,
+estimateUSD0.133568. Aggregate79 nonpartialUSD60.361134/38complete is NOT
+balance; two old partial billsUNKNOWN. Historical n^-16 API packet retained.
+Scoped checkpoint: audits/controls/gaudin_adversarial_gap/checkpoint.json;
+mechanicaltopitem preserves the exact control/proof distinction.
+
+Next independently reselect by external value. Gaudin re-entry requires a
+new weaker all-family lower bound or superpolynomial counterfamily, checked
+against this analytic critical family first; no nearby gap curve/filter.
+Next command: read STATE/TRAPS, corpus been-tried for the proposed exact
+operation, then actual primary literature and classical baselines. Expected
+artifact: one paid all-parameter construction/counterfamily that changes
+the end-to-end algorithm decision; finite success is not acceptance.
+
+## 2026-11-07 Binary Fock Kerr Admission
+
+CLOSED in BINARY_FOCK_KERR_SAMPLING.md: full native binary-Fock passive/Kerr
+count sampling has a WRITTEN poly(nativebits,logK,log1epsilon) quantum
+composition on every fixed-total input/reference. Actual Prakash Cor2.3
+already claims this endpoint; PRIOR ART. Common pair grid, coherent QHT,
+cutoff/tail padding, degree phases and clean-workspace errors are paid.
+
+Strongest new written classical comparator: BUNCHED input and numerical
+chi=product(2 reduced Kerr denominators), coherent multinomial-branch
+rejection costs poly(chi,nativebits,logK,log1epsilon), with bounded clocks.
+Explicit binary-binomial envelope/Stirling precision and outer tiny-S
+coupling close the BIT proof. Thus polynomialchi is classically matched.
+Does NOT dequantize arbitrary Fock input or exponentially many branches.
+Exact two-photon incoherent-mixture shortcut has TV error1/2; dual-rail CZ
+proves only known universal-circuit inclusion, not hardness/separation.
+
+Three CLOSED reviews parent-read; five primary PDFs and actual NIST
+positive-real remainder statement checked. Frozen exact Sage controls PASS;
+no QHT/full-classical/quantum execution, novelty or separation. Claude useful
+binomial report checked with precision repairs; distinct generation refused
+EMPTY. Both terminal/reaped/no retry, estimateUSD0.314984. Aggregate78
+nonpartialUSD60.227566/38complete is NOT balance; two old billsUNKNOWN.
+Scoped checkpoint: audits/controls/binary_fock_kerr/checkpoint.json.
+Mechanical item under this title preserves these boundaries; no backend.
+
+Next independently reselect by external value. A Kerr re-entry needs a
+specific family/readout and new paid operation outside this comparator,
+not another low-branch variant or BQP inclusion. Next command: read STATE
+and TRAPS, corpus been-tried for the proposed exact operation, then actual
+primary literature and baselines. Expected one candidate card and a decisive
+classical falsifier/proof; acceptance is an all-parameter paid construction
+or counterfamily, never finite large-K success. No old controls rerun.
+
+## 2026-11-07 Gaudin Joint Charge Traversal
+
+CLOSED conditional constructive theorem in GAUDIN_JOINT_CHARGE_TRAVERSAL.md:
+commuting-charge random dephasing prepares the initial-label joint branch
+without q(s)/Bethe-root advice. Rank-one path, unsquared joint separation
+kappa, explicit derivative L and Pauli-time costs are charged; finite
+rational clocks/precision and dimension-free channel hybrid give poly
+resources in1/epsilon. Known Boixo machinery, not novelty. Whole native
+Gaudin preparation UNADMITTED: polynomial SAME-M gap remains OPEN; binary
+rational sites alone do not pay simulation norms. Only averaged preparation,
+no coherent label transform/reflection, separation or quantum execution.
+
+Strongest classical attack: exactN3 sites0,1,2,g1/10,M1 gap1.879457<2
+refutes a constant floor, not1/N. Analytic M1 gap>=2/N is classically matched.
+Exactly12 bulk cases had no1/N numerical violation; no asymptotic inference.
+Two CLOSED reviews read, two actual primary PDFs, both control scripts read.
+Claude QPE critique TRUNCATED/partial, checked caveats retained; gap request
+TRUNCATED/EMPTY. Both terminal/reaped, estimateUSD1.796010, no retry.
+Ledger76 nonpartialUSD59.912582/37complete; two older partial bills UNKNOWN.
+Mechanical item above specifies the scoped checkpoint; no prior reruns.
+Next hard question: prove/falsify SAME-M joint separation at growing filling,
+for a natural family such as eps_i=i,g in[0,1]. Reassess external value first;
+no additional filter/mesh/one-particle variant. Next command: read STATE and
+TRAPS, then corpus been-tried for the actual proposed inequality, followed by
+primary literature. Expected artifact: a proved inequality/counterexample
+family; accept only paid all-N statement, never another finite gap curve.
+
+## 2026-11-07 Spinor Genus Native Admission
+
+PROGRESS: INDEFINITE_TERNARY_SPINOR_ADMISSION.md tests native indefinite
+ternary integral-isometry DECISION over growing totally-real K. Actual
+Kirschmer spinor/ray quotient is the mechanism; common ambient transport
+and its prime support are not advice. Full algorithm remains OPEN.
+
+Reviewed all-family classical falsifier: A=diag(1,p²,-p⁴), p17mod72, and
+its3-neighbor B have same genus but different conductor-p quadratic Hecke
+characters. Local stabilizer characters vanish while chi(3)=-1. Cl(Q)=0
+cannot replace the RAY quotient. Proper/ordinary coincide in oddrank3.
+Exact p17 HNF/matrix/character control PASS after one JSON serialization fix.
+
+Positive local gate: Beli2001 goodBONG requires<=3 explicit summand repairs;
+two binaryG formulas + unit-filtration/Hilbert F2 linear algebra pay dyadic
+spinor GENERATORS in polynomial BIT as fielddegree grows. Native expanded
+coefficients, factoredprime and maximalorder charged. Actual Voight6.1
+uniform Hilbert algorithm; erratum irrelevant. Parent read source/proof and
+visually checked scanned case tables. Source review CLOSED. New finite e1f2/
+e3f1 control PASS after one residue API fix; neither old control rerun.
+
+Common-ambient/support and local transporter OFFSET remain OPEN. Beli's
+nested-lattice chapter2 gives a subgroup, not the nonnested isometry coset.
+No full algorithm/novelty/separation/hardness/general-no-go/execution.
+Claude transport request refused EMPTY; distinct dyadic attack truncatedEMPTY
+at16384. Both terminal/reaped, no findings/retries; estimateUSD0.879144.
+Aggregate74 nonpartialUSD58.116572/37reports is NOTbalance; two old partial
+bills UNKNOWN. Scoped milestone
+ audits/controls/spinor_genus_admission/checkpoint.json, controls not rerun.
+Full native route PARKED until a paid global/relative transport operation;
+no nearby local formula/backend campaign. Next independently compare upside.
+For re-entry, next command:
+/opt/anaconda3/bin/python tools/corpus/cli.py been-tried -k 2 "relative spinor obstruction native Gram matrices compact support"
+then actual primary literature. Expected paid native comparison operation;
+acceptance must separate the frozen3-neighbor pair without supplied ambient
+map, compact-sum factoring or exponential local search, and prove all-degree
+costs separately. Mechanical queue under this title completed.
+
+## 2026-11-07 Bethe Prefix Determinant Admission
+
+FALSIFIED: RATIONAL_GAUDIN_PREFIX_ADMISSION.md tests a complete determinant-
+prefix preparation route after independent triage of local HALF, sparseRel,
+Legendre and scalarOPI found no new paid operation. On a valid rational
+N4,M2 Gaudin eigenstate, true empty-first norm9625/2304 differs from the
+deleted-site norm determinant8601/2304 by4/9. Full norm25625/2304 and
+independent pairing-H eigenvalue0 are exact. General two-root identity gives
+Z_U-detG_U=K(K+4/d²); deleting sites destroys on-shell condition.
+
+Actual Sklyanin general formula sumsM!determinants; on-shell alone collapses.
+Claeys pays Cauchy amplitudes and common-dual normalization, not arbitrary
+prefixes. Known binomial/Gram constructions are not universal lowerbounds.
+Full preparation remains OPEN; no hardness/novelty/separation/execution.
+A classical ALL-prefix operation would also pay classical sampling and
+sparse-observable estimates, the mandatory comparator for this mechanism.
+
+Four primary snapshots; core/source reviews CLOSED, one exact Sage control
+PASS. Same prefix has no single one-hole Cauchy dual (inverse-amplitude
+slopes-4/45 and4/3 differ); no dual advice may be supplied. Parent read
+proofs and control; no old rerun.
+Finite-coupling one-site marginals ARE paid: Bethe differentiation and
+Hellmann-Feynman give <n_i>=1^T Gcal^-1 w_i; here128/205. The missing
+operation is extensive conditioning, not the first marginal. Focused
+proof-only addendum CLOSED/read; no control rerun.
+Claude repair terminated ReadTimeout with EMPTY response, reaped/no retry.
+PartialUSD0.027600 has UNKNOWN billing, no findings. Aggregate72 nonpartial
+estimatesUSD57.237428/37reports unchanged; now TWO partial unknown bills.
+Scoped milestone: audits/controls/bethe_prefix_admission/checkpoint.json.
+Full-preparation/hardness/general-no-go/novelty/separation gates stayfalse.
+
+Next independently select by external value; no Bethe variant is queued.
+Next command: sed -n '1,48p' research/STATE.md, then read TRAPS and run
+/opt/anaconda3/bin/python tools/corpus/cli.py been-tried -k 2 on each concrete
+new mechanism BEFORE actual primary literature. Expected next admission
+note compares independent high-upside directions, selects one full native
+algorithm question and defines its cheapest decisive classical attack.
+Reopen this route only if a paid ALL-prefix operation survives the frozen
+counterexample and faces the matched sampler/readout. Mechanical queue under
+this title completed. Prior local-halving results unchanged.
+
+## 2026-11-07 Local Saturation Kernel Structure
+
+PROGRESS: LOCAL_SATURATION_FINITE_PRECISION.md derives exact bounded Stoll
+kernel shape kerM=t0*k[x]_(<=g-j), dim=g-j+1, minhalf degreej. Proof uses
+ternary norm isotropy, a principal multiplier ideal ON THAT RATIONAL LINE,
+and opposite-parity leading degrees. Unbounded congruence module is NOT
+rankone. Independent addendum CLOSED; new exact control frozen/PASS.
+This simplifies minimal-degree bookkeeping, not finite-precision branching.
+
+Claude sharp Smith-kernel precision lemma accepted. Monic normalization
+report repaired: uncertain division loses2lambda ABSOLUTE digits in general;
+augmented-matrix bound requires full column rank. diag(0,1) supplies exact
+counterexample without that guard. Full kernel rank givesj only after a
+proved nonzero-Smith bound. All source/entry-construction and augmented
+conditioning costs remain OPEN. Same classical baseline, no full local/
+global algorithm, novelty, separation, hardness or quantum execution.
+
+New exact kernel-family/precision control PASS after one Sage coercion repair;
+old half control not rerun. Howell Claude completed and reviewed; certificate
+request truncated EMPTY, both terminal/reaped/no retry. EstimateUSD2.110246;
+aggregate72 nonpartialUSD57.237428/37reports is NOTbalance, oldpartial billing
+UNKNOWN. Expiring credit persists. Next decisive theorem is
+constructive conditioning of ONE-HALF moduloE=2L, or an actual route-specific
+falsifier. Generic matrix rank jumps or one bad representative are insufficient.
+Scoped milestone PASS: audits/controls/local_saturation_precision/checkpoint.json;
+18 checks, controls not rerun. Mechanical queue under this title completed.
+Next pass first reselect independently; if retaining this line, next command
+/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "stable local Jacobian finite quotient conditioning"
+then actual primary literature. Expected a paid native HALF proof/falsifier
+or an explicit pivot decision, not another matrix utility. Acceptance must
+bound coordinate construction, representative selection, actual-point lifting,
+all nonzero pivots/root/gcd losses and final labels by native input bits.
+
+## 2026-11-07 Local Saturation Finite Quotient
+
+PROGRESS: LOCAL_SATURATION_FINITE_PRECISION.md proves reviewed exact
+finite-quotient saturation. At2 E=2L, A=G_(2)/E has ALL A[2]=H0/E known.
+A returned actual point with2q-h inE gives an exact finite relation; each
+kernel half doubles the subgroup, with prior polynomial kappa. Oddp uses
+open pro-p E. This removes actual free/torsion point-relation requirements,
+not stable arithmetic. Error subgroup is essential: G=Z2,L=2Z2,h=2,
+r=-2 preserves Kummer but half0 makes no progress; r is not in2L.
+
+Full local/global algorithm OPEN: point-coset representation, labels,
+ONE-HALF precision and rank/gcd/degree branches unpaid. Actual Mascot
+requires good reduction, preserved residue rank and prime-to-p torsion;
+KM pays field operations only. Source/core reviews CLOSED, two Claude
+lemma/certificate requests in flight; no findings or charge presumed.
+Same classical Stoll baseline. No novelty, separation, hardness or execution.
+
+Next concrete experiment is a bounded certificate for ONE-HALF moduloE,
+not exact representatives or arbitrary Kummer-preserving perturbations.
+After terminal reports, verify findings and save one exact control only
+if it falsifies a specific assertion. Mechanical scoped queue under same
+title; next artifact audits/controls/local_saturation_precision/checkpoint.json.
+Acceptance retains finite-precision gate OPEN until every native cost is paid.
+
+## 2026-11-07 Local Saturation Polynomial Iteration
+
+PROGRESS: LOCAL_HALVING_SATURATION.md now proves polynomial ITERATION for
+EVERY prime, arbitrary growing-genus monic squarefree integer f, no reduction
+promise. Core and index addendum CLOSED. Formal seeds+branch torsion and
+ONE-half saturation increase the correct closed subgroup by2. A proof-only
+local-field/chart count and Haar-volume bound pay initial index; odd primes
+use an auxiliary OPEN pro-p lattice, never volume of finite2torsion. No model,
+field/chart enumeration, Neron data or local image advice enters the algorithm.
+
+Uniform finite-precision half/point/label arithmetic is STILL OPEN; full
+native local image and global two-Selmer algorithm remain unadmitted. Actual
+Stoll Prop5.1 is a classical exact-field constructor with an explicit p-adic
+warning. KW tame-differential source excludes2; Liu smoothness note supplies
+no missing precision bound. Same classical descent baseline; no novelty,
+separation, hardness, human/formal verification or quantum execution.
+
+One exact Sage control verifies order4 half and finite log determinants with
+tail bounds. Separate exact resultants refute Claude's unqualified chart
+repair for ALL h∈Z2; not a no-go for halving. Useful report findings retained,
+overstatements rejected. Index API truncated partial, not complete review;
+precision API completed. Both terminal/no retry, estimateUSD3.369280.
+Aggregate70 nonpartial estimatesUSD55.127182/36 completed reports is NOT
+balance; priorpartial billingUNKNOWN. Expiring credit instruction persists.
+
+Next hard question: finite precision for the actual bounded saturation loop.
+After STATE/TRAPS, next command corpus been-tried "bad reduction p-adic
+Jacobian halving Khuri-Makdisi", then actual primary source. Expected precise
+stable-half proof/falsifier, not backend/sweep. Acceptance pays every rank/gcd
+and degree branch, local squareclass accuracy, and subsequent divisions.
+Scoped milestone PASS at audits/controls/local_halving_saturation/checkpoint.json;
+source hashes, closed reviews, control scopes, terminal usage and titles checked.
+Controls not rerun; no broad registry/site changes.
+
+## 2026-11-07 Local Saturation Dyadic Index
+
+PROGRESS: LOCAL_HALVING_SATURATION.md proves all-g formal seed independence
+and exact index-two saturation (closed core review). NEW closed addendum
+proves polynomial DYADIC iteration bound kappa<=D0+2g(4D+12)+gM+3g-t,
+D=v2(disc f), M=2ceil(log2g)+4. Proof-only local-field COUNT, explicit
+Hensel curve charts, trace-divisor coverage and Haar area compare bound
+Jacobian volume. NO field/chart enumeration, Neron basis or regular model
+is supplied/computed. This removes the index blocker, not finite precision.
+
+Actual Stoll gives ONE-half field algorithm. Uniform p-adic chart/rank/gcd
+precision is still OPEN; no full local/global algorithm, novelty, hardness,
+speedup or quantum execution. Odd-prime volume extension being checked.
+Classical same-descent baseline retained. One exact Stoll control yields an
+order4 half of a branch class with zero Kummer label; formal determinants
+checked with tail bounds. No finite all-g inference. Claude precision's
+unqualified repair bound is refuted by explicit all-h dyadic resultants;
+other overstatements rejected. Index report truncated partial, not complete.
+Both calls terminal, estimateUSD3.369280, no retry/balance inference.
+
+Next hard question: robust finite-precision ONE-half in the actual bounded
+saturation loop, or an exact route-specific falsifier. Next artifacts are
+closed index/control reviews and scoped checkpoint per mechanical queue;
+no generic regular-model backend or broad growth sweep.
+
+## 2026-11-07 Local Halving Saturation Admission
+
+OPEN native question: LOCAL_HALVING_SATURATION.md seeks complete Kummer
+image of J(Qp)/2 for EVERY monic odd-degree hyperelliptic input, growing genus,
+including bad/wild/dyadic primes. This removes the general-Selmer blocker;
+no local/Neron models or generators supplied. Compare independent Gaudin and
+black-box group routes first; no new paid operation there. Matched baseline
+is classical Stoll descent, with quantum global arithmetic only if local closes.
+
+New mechanism: start all rational J[2], add g independent formal directions
+at2, and halve kernel classes in H/2H until known local rank is reached.
+Actual Stoll Prop5.1 gives ONE half via etale square roots and linear algebra;
+no exponential root enumeration. It EXPLICITLY warns of p-adic precision.
+Parent near-infinity Vandermonde log determinant is under review. Uniform
+Neron/component index and finite chart/precision bounds remain BLOCKERS;
+termination, field-operation counts or passing examples cannot pay them.
+
+No novelty/speedup/hardness/full algorithm or quantum execution. Prior
+unramified/random-source falsifiers remain unchanged. Two Claude obligations
+(index and precision) plus internal core/source review assigned; no API result
+claimed yet. Next command/artifacts/acceptance in same-title mechanical queue.
+
+## 2026-11-07 Compact Integral Similarity Witness Composition
+
+PROGRESS, reviewed WRITTEN composition: COMPACT_INTEGRAL_SIMILARITY.md composes the known BHJ
+single-matrix algorithm with compact PIP/unit outputs. For arbitrary growing
+binary A,B in Mat_n(Z), the target is NO or a polynomial-size compact INTEGER
+unimodular C, BC=CA; polynomial quantum BIT/gates, conservatively under GRH.
+Core/source reviews and exact control CLOSED; parent reconciled all joins. No novel
+quantum primitive, expanded/short output, separation or execution claim.
+
+The generator proof uses proper conductor, updated beta1=beta0*xi, finite
+SL lift and Lem4.2; undo xi once. Lattice section rho(I)->I certifies integral
+intertwining. Jordan-length determinant character and SMALL covolume ratios
+compute |detC| without compact PIT; Thm3.4/Prop9.12 pay NO. Local product
+residues reuse COMPACT_RESIDUE_CONDUCTOR_DECISION.md; fractional matrix sums
+use a small clearing denominator and enlarged modulus, never nonunit inversion.
+Full unit completeness is amplified by union of verified lists; bounded clocks
+count ABORT/error. Positive certificates do not certify complete unit bases.
+
+Strongest baseline is SAME BHJ reduction with classical class/unit/PIP; no
+hardness. Existing dimension2 minimum expanded-output obstruction is retained.
+One finite Sage run passes local/dyadic/split-prime and mixed-Jordan controls;
+wrong exponent gives578 versus actual-136. No old Pell rerun. Claude residue
+report accepted with two explicit minor repairs; determinant request empty.
+Both terminal, estimateUSD1.093082, no retries/balance inference.
+Aggregate68 nonpartial estimatesUSD51.757902/35 completed reports; prior
+partial timeout billing UNKNOWN. Expiring dedicated-credit instruction persists.
+
+Scoped milestone PASS: audits/controls/compact_integral_similarity/checkpoint.json;
+MECHANICAL_FOLLOW_UP_PLAN.md records completed checks, false gates retained.
+Next independently reselect by external value after STATE/TRAPS and corpus,
+not by a nearby variant. No backend or generic compact-circuit project queued.
+
+## 2026-11-07 Compact Integral Similarity Admission
+
+HARD DERIVATION under review: COMPACT_INTEGRAL_SIMILARITY.md targets native
+arbitrary growing A,B∈Mat_n(Z), NO or compact integral unimodular intertwiner,
+quantum polynomial BIT under explicit GRH. Existing dimension2 output theorem
+excludes expanded witnesses; published BHJ Cor9.16 alone does not pay compact
+consumption. Actual centralizer quotient and BJ08 rank-one Steinitz formula
+supply small maps with only field PIP/unit factors compact. No tuple extension.
+
+Parent residue lemma strips polynomial-bounded valuations of SMALL atoms,
+uses local uniformizers and denominator ideals, then binary modular powers;
+ramified/nonunit leaves included. Fractional sums use enlarged modulus and
+finite-lattice division. Parent determinant character uses Jordan lengths j,
+small maximal-order lattice covolumes and |detD|; radical lift via an expanded
+Z-linear section ensures integral intertwining without compact-sum tests.
+Proper conductor and xi normalization are explicit. Full composition pending.
+
+Classical baseline is the same BHJ arithmetic reduction with classical
+class/unit/PIP; no hardness/separation. No novelty, expanded/short output,
+implementation or execution. Two Claude calls live; source/core review and
+new exact residue/character control assigned. No repeat Pell/output-size sweep.
+Next: close compact descent and positive-certificate joins or record blocker;
+expected review/control artifacts linked in topic note. Mechanical queue below.
+
+## 2026-11-07 Folded Chain Coherent Fast Forwarding
+
+PROGRESS: reviewed WRITTEN uniform arbitrary-input quantum exp(-it H_N)
+for the explicit open folded XXZ chain, including reference entanglement;
+BIT/gate cost poly(N,bitlength(binary rational t),log1/epsilon). Complete
+bond/prefix encoding with terminalD and all boundary/jammed sectors, unique
+-1/2 hops, controlled free sine transforms and honest occupation phases.
+No sector/root/frame advice or postselection. Finite compiled guarantee is
+clean-input isometry error; approximate ancillas may leak O(epsilon).
+
+FOLDED_CHAIN_COHERENT_TRANSFORM.md links closed core/source reviews.
+Known CT/Slater baseline MATCHES specified eigenbasis states and computational-
+basis quenches for basis sampling and additive bounded sparse observables,
+including long Pauli strings and binary times. No arbitrary-input classical
+simulator, hardness or separation. Bulk encoding is known1997/2021; source
+terminal-boundary caveat repaired directly, no novelty inference. Native Pauli
+normalization gives hopping -1/2 and energy -cos, despite source Eq3.16 factor.
+No periodic/generalXXZ, practical cost, human/formal verification, implementation
+or quantum execution claim. Four used primary sources; two unused leads retained.
+
+One exact Sage control N=2..8 PASS (1024 states at N=8), all boundaries,
+bijections/block sizes/signs; finite BC-sector Slater control. No rerun or
+asymptotic inference. Claude Fable useful proof USD0.872230; Opus truncated
+empty USD0.351284, no findings/retry. Both terminal; total USD1.223514.
+Aggregate66 nonpartial estimatesUSD50.664820/34reports is NOTbalance;
+priorpartial billing UNKNOWN. Dedicated expiring-credit instruction persists.
+
+Next hard question is independently selected by external value. Any future
+advantage comparison needs an explicit succinct input/observable outside the
+matched Slater/permutation readouts; arbitrary unknown input alone supplies
+no classical hardness. No adjacent boundary/deformation/backend campaign.
+Next command afterSTATE/TRAPS: corpusbeen-tried for a concrete new operation,
+then actual primary literature. Expected a native candidate or decisive attack;
+acceptance pays input/output/access and strongest matched classical baseline.
+Mechanical checkpoint under same title: PASS at
+audits/controls/folded_chain_transform/checkpoint.json; no control rerun.
+
+## 2026-11-07 Folded Chain All-Sector Conjugacy
+
+HARD DERIVATION reviewed: every binary spin string, including all open
+boundary/jammed sectors, maps bijectively by bond XOR and greedy11/10/0
+parsing with terminalD to (conserved label, hard-core occupations). Every
+native H_N transition is exactly one adjacent exchange of coefficient -1/2.
+No hidden fragment advice, signs or potentials. Full proof and closed core
+review linked in FOLDED_CHAIN_COHERENT_TRANSFORM.md. Controlled second-
+quantized sine transform and binary-time phases pay arbitrary-input quantum
+poly(N,bitlength(t),log1/epsilon) evolution; full source review still pending.
+
+Classical baseline matches specified eigenbasis states and computational-basis
+quenches via Slater sampling/amplitudes and CT sparse-observable estimation.
+No arbitrary-input classical simulation or hardness. No novelty/separation,
+implementation/practicality or quantum execution. Known bulk token map dates
+to1997/2021; terminal-bit/coherent completion is proved here, no priority claim.
+Source Eq3.16 energy factor disagrees with Eq3.1 Pauli normalization; direct
+native matrix element -1/2 and energy -cos are authoritative and exactly tested.
+
+One exact Sage run N=2..8 PASS, no asymptotic inference. Fable bijection
+report useful, estimateUSD0.872230; Opus composition truncated/empty at16384,
+estimateUSD0.351284, no findings/retry. Both terminal. Aggregate nonpartial
+estimatesUSD50.664820/66records/34reports is NOTbalance; earlierpartial billing
+UNKNOWN. Next command: read CLOSED source review when available, then scoped
+frozen milestone; expected checkpoint under controls/folded_chain_transform/.
+Acceptance preserves native Hamiltonian normalization and quantum-input versus
+classically matched readout scope. Mechanical queue under same title.
+
+## 2026-11-07 Folded Chain Coherent Transform Admission
+
+HARD DERIVATION pending independent review: for the exact open folded XXZ
+Hamiltonian in FOLDED_CHAIN_COHERENT_TRANSFORM.md, bond bits change by
+011<->110 with amplitude -1/2. Greedy A=11,B=10,C=0 and trailingD=1 encoding
+appears to give a complete bijection to fixed B/C labels plus hard-core A
+occupations; moves become AB<->BA or AC<->CA. If all-N joins hold, controlled
+free-fermion sine transforms yield arbitrary-input poly(N,bitlength(t),log1/eps)
+unitary evolution without sector/root advice. No algorithm promotion yet.
+
+Strongest classical attack ALREADY succeeds on specified folded eigenstates:
+source U_D only permutes Slater amplitudes. DPP sampling/determinant amplitudes
+and variance-bounded importance estimation match additive sparse-observable
+readout, including long Pauli strings. Not a general XXZ or arbitrary-input
+classical simulator. No novelty, separation, implementation or execution.
+Two focused Claude paid calls now live, results/costs not yet known; earlier
+two local format rejections made no API call. Independent core/control assigned.
+
+Next: all-sector bijection and precision review, then exact Pauli-to-path
+falsifier. Expected audits/controls/folded_chain_transform/result.json;
+acceptance compares every small-state sector but cannot prove asymptotics.
+Mechanical queue under same title. STATE rewritten at pass end.
+
+## 2026-11-07 Quintic Surface P2 Reduction
+
+PROGRESS: reviewed WRITTEN bounded-error quantum poly(logp,log1/eta) BIT/gate
+algorithm for exactFULL degree53P2 of EVERY smooth quinticSURFACE inP3/Fp,
+nativebinaryinput, FIXEDdegree5. No GRH/Tate, suppliedtorsion/frame/monodromy,
+cohomology oracle or shortcertificate. Reused explicitconstructor/readout with
+verified g31/r62/base45/nodes220, CI(5,3) sectiondata/KM189, frameell^3844,
+fullarithmetic twists/localdata, recomputedQ_5/directcountfallback, derived
+versusprojective invariants, charzeroFourier/Newton, binaryrootdegreeguards
+13578/62, CRT>2^54p^53 and restartedfiniteclocks.
+
+QUINTIC_SURFACE_P2_ADMISSION.md and two CLOSED reviews (geometry/composition)
+record the complete joins. Five newprimarysources checked. ActualSchnell
+Theorem1/Deligne give KNOWN nonabelian-origin obstruction for VERY GENERAL
+COMPLEX degree>=5surfaces; LieSO52 weight2space hasdimension6. This excludes
+Hodge-compatible genericabelian/KS replacement, NOT allFpclassicalalgorithms,
+specialsurfaces orfinitefieldcoincidences. Currentcontrolledreduction sources
+retainp-dependence; no priority/separation inference. No novelty/speedup,
+growingdegree, practicalcost, human/formal verification or full/quantumexecution.
+
+ExactCLASSICAL control: wedge²/halfspinmultiplicities; actualsmooth non-diagonal
+F7quintic has58points, traceH2=+8,c1(P2)=-8. Initialhelper sign-label error was
+withdrawn/corrected and rerunonce; two runs total, finalaccepted. No fullP2 or
+quantum computation inferred. Formalordinary slopes remainconditional.
+Claude oneuseful isolatedlemma reportestimateUSD0.512620; incidentalTate-only
+wordingrepaired, known-sourceproofnotAIapproval. Allterminal/noAPIlive/retry.
+Aggregate64 nonpartial estimatesUSD49.441306/33reports is NOT balance; prior
+partialtimeout billingUNKNOWN. Owner's spend-before-expiryinstruction persists.
+
+Next: independently select highest-external-value scientificquestion; no d6
+variant, coverbackend or wider finite sweep. General-d parameter formulas are
+alreadyrecorded to prevent repetitive adjacentpasses. Next command afterSTATE/
+TRAPS: corpusbeen-tried for an actualnewoperation, thenactualprimaryliterature.
+Expectedartifact a concreteend-to-end candidate or decisiveclassicalfalsifier;
+acceptance chargesaccess/fulloutput and requires a paid operation beyond the
+closedpoint-count route. Mechanicalfollowup under sameheading.
+Scoped milestone PASS: audits/controls/quintic_surface_admission/checkpoint.json;
+five PDF hashes, two closed reviews, corrected control and terminal usage checked.
+No control rerun or broad validation.
+
+## 2026-11-07 Quintic Abelian Baseline Scope
+
+HARD SOURCE GATE RESOLVED: actual Schnell2011 Proposition6/Lemmas5–7/
+Theorem1 plus DeligneWeilII4.4 give the KNOWN obstruction: verygeneral
+complexdegree>=5 surface primitiveH2 is not generated by abelianH1/Tate
+objects. ForquinticVtype(4,44,4), connectedLieSO52 hasweight2 dimension6,
+impossible in a weight1MT quotient. This is REUSED theory, not newreporesult.
+It excludes Hodge-compatible marked abelian/KS-family reduction, NOT all
+classicalalgorithms, isolatedFp relations orspecialsurfaces. Patrikis generalized
+KS lifts do not supply an arbitraryquintic abelianH1 endpoint.
+
+QUINTIC_SURFACE_P2_ADMISSION.md is stillOPEN for exactdegree53P2 on EVERY
+smoothquintic/Fp, nativebinaryinput, prospectivefixeddegreequantumpolylogp.
+Geometrydelta independentlychecked; closedcompositionpending. Actual2026
+quinticcontrolledreduction source retains p-dependence; nohardness claim.
+ClaudeHodge reportcompletedUSD0.512620; acceptedcore proof, repairedTate-only
+MT wording. No APIlive/retry. ExactSage Lie/spin andquinticF7control inprogress.
+Algorithmimplementation/novelty/speedup/quantumexecution remainFALSE.
+
+Next command: readclosedgeometrydelta, then runits fullcomposition review
+with everyrank/branch/CRT/clock replaced. Expectedartifact writtennativebound
+or explicitfalsifier; acceptance retains verygeneralC vs EVERYFp distinction.
+No degree6variant/backend/sweep. Mechanicalqueue under sameheading.
+
+## 2026-11-07 Quintic Surface Admission
+
+Selected afterSTATE/TRAPS, corpus and actualliterature: exactP2 for EVERY
+smooth quinticSURFACE overFp, nativebinaryinput, prospectivequantumpolylogp
+at FIXEDdegree5. Independent ranking over viableoldquarticKS and codeequiv
+(no newdecoder). The change targets a specific classicalblocker: pg4 and
+primitiveHodge(4,44,4), not K3type. Conditional Lie-weight proof excludes
+abelianH1/Tate-generated origin ifgenericMT Lie=so52: quotientLie weights
+would beonly−1,0,1, butΛ²H20 hasweight2 dimension6. Directhalfspin hasfive
+weights. ActualPatrikisintro confirms h20=1 limitation; genericMT/Deligne
+scope still underaudit. This is NOT classicalhardness or allfinitefieldno-go.
+
+QUINTIC_SURFACE_P2_ADMISSION.md records input, mechanism, resources, baselines,
+obligations/falsifiers. Reuse priorframe/twistconstructor only afterdeltaaudit:
+g31,r62,base45,nodes220,b2=53,frameell^3844,CRT>2^54p^53. New2026 quintic
+point-count source underinspection. Nativealgorithm/novelty/speedup/execution
+gatesFALSE. One focused ClaudeHodge-lemma request live, nofindings assumed.
+
+Next command: inspect actual DeligneWeilII4.4 and terminal Hodge-audit output;
+expectedartifact a verifiedgenericSO/quotientweightlemma OR counterexample.
+Acceptance excludes finitefield/classicalcomplexity overreach and pays every
+source hypothesis. Mechanical followup under sameheading.
+
+## 2026-11-07 Surface P2 Torsion-Cover Reduction
+
+PROGRESS: reviewed WRITTEN bounded-error quantum algorithm for FULL degree22
+P2 of EVERY smooth quartic X/Fp, native binarycoefficients/p only, polynomial
+(logp,log1/eta) BIT/gate time at FIXEDdegree. No GRH/Tate or supplied torsion,
+cohomology, monodromy, cover or localFrobenius. Cubic pencil genus19/base36/
+nodes132, unique-divisor fixed-coordinate atlas, flattened group operations,
+polynomial t-heights, trace-radical and explicit GL38 frame/twist descent pay
+construction. Cyclic-character G0 induction, characteristic-zero Fourier/Newton
+BEFORE reduction, binary multiplicity roots and local/Leray corrections pay
+readout/CRT. Enlarged explicitQ(ell) + directcount fallback, model-degree
+preprocessing, derived/projective invariant distinction and restart/degree
+clocks are part of the proof. Pointcountsign is #X=1+p²-[T]P2.
+
+SURFACE_TORSION_COVER_RECONSTRUCTION.md and four CLOSED reviews record exact
+proof/source scope. Ten new primaryPDF snapshots + retained Kedlaya and one
+parent primary-web scope receipt; exactCLASSICAL control inspected. Untwisted
+permutation identity REFUTED bySL2F7/order8 irrationalBrauer trace; formalC8
+Fourier toy and F7quartic62/base2/fibers76 check only finite normalization.
+Strongest classicalKS comparison remainsVIABLE/OPEN; formal same-spin/different-
+standard Weil spectra are NOT realizedK3s and doNOT refute marked/descentrepair.
+Actual Elkies1997 footnote10 already proposed KS: no new-repo credit, and no
+proved classical algorithm inferred. No novelty/speedup, practicalcost, growing-
+degree, shortcertificate, human/formal verification or full/quantumexecution.
+
+Five terminalClaude calls estimateUSD4.303624: one useful lead (falseidentity
+repaired), two refusals and two emptytruncations. No findings/retries fromempty
+calls, no liveAPI. Aggregate63 nonpartial estimatesUSD48.928686/32reports is NOT
+balance; priorpartialtimeout billingUNKNOWN. Owner's spend-before-expiry
+instruction persists, with distinct useful obligations.
+
+Next selection: compare the decisive marked/arithmetic KS classical test with
+independent high-upside mechanisms; doNOT queue a coverbackend/nearbydegree
+variant by inertia. Next command afterSTATE/TRAPS, if that operation is selected:
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried --no-refresh
+"Clifford-marked arithmetic monodromy Kuga Satake point counting"`; then
+inspect actual updatedquartic period-map/KS sources. Expected artifact: a paid nativeclassicalmatch/falsifier
+or a different fully specified candidate; acceptance requires fullarithmetic
+transport/effectiveprecomputation, not the spin spectrum alone. Mechanical
+follow-up under the same heading; scoped checkpoint below is not a proof.
+Scoped milestone PASS: tenprimaryPDF hashes, separate Elkieswebscope receipt,
+fourclosedreview dispositions, exactcontrol syntax/savedfalsegates, fiveAPI
+terminalusage records and matchingtitles. Scopedgitdiff--check passed. No full
+suite/registry/quantumrun. Artifact audits/controls/surface_torsion_cover/checkpoint.json.
+The initial checker expected the literal CLOSED marker in the geometry review;
+its actual explicit closure sentence was checked instead, without editing claims.
+
+
+## 2026-11-07 Surface Torsion Geometry Construction
+
+Exact target unchanged: FULL P2 of ANY smooth quartic over binaryFp input,
+fixed degree only, no supplied Jacobian/monodromy/cover. A CLOSED WRITTEN
+geometry proof now pays fixed-coordinate unique reduced-divisor charts,
+O(logell) flattened group operations, polynomial t-heights, reduced torsion
+and full arithmetic GL38 frame algebra. Guard p>2M(ell)^2 permits trace-radical
+reduction; otherwise direct point counting is polynomiallogp for ell=O(logp).
+Explicit semilinear descent, constant-field handling and actual Kozen local
+parameters pay twists/boundary Frobenius. Cubic pencil genus19/base36/nodes132,
+irreducible-node proof and mod-ell invariant cycles pay Leray corrections.
+Full proof/source scopes: audits/reviews/2026-11-07-surface-torsion-geometry.md;
+current topic SURFACE_TORSION_COVER_RECONSTRUCTION.md. Full composition/CRT/
+finite-clock independent review still PENDING; nativealgorithm gateFALSE.
+
+Strongest CLASSICAL comparison: fixed-family Kuga–Satake + Pila is material,
+not dismissed for huge constants or missing printed equations. Unmarked spin
+readout fails on an exact rational Weil-spectrum collision (not realizedK3s),
+but Clifford-marked generic-monodromy/arithmetic descent remainsVIABLE/OPEN.
+Actual-source narrow review: audits/reviews/2026-11-07-kuga-satake-classical-baseline.md.
+No novelty/speedup, practical, human/formal verification or quantumexecution.
+Initial untwisted Brauer identity is refuted; exact classical controls retained.
+Two further Claude calls empty: token-limit1.670890USD/refusal0.014760USD,
+no findings/retry; a distinct KS-marking request is live. No balance inference.
+
+Next command: read the CLOSED composition review and terminal KS-marking
+response/result, then verify any concrete counterexample/source hypothesis.
+Expected artifact: complete WRITTEN native bound OR named falsifier, with KS
+comparison still accurately scoped. Acceptance: no hidden geometry, modular
+trace shortcut, input-dependent advice, p-sized loop in large-p branch or
+untested claim promotion. Mechanical follow-up is under this same heading.
+
+## 2026-11-07 Surface Torsion Character Repair
+
+OPEN native target: exact degree22 P2 of ANY smooth quartic overFp, binary
+coefficients/p only, prospective quantum poly(logp) at FIXED degree. The
+original rational PERMUTATION induction is REFUTED: SL2F7/order8 has Brauer
+trace minpoly x^2-2; exact Sage control confirms it. Repaired conditional
+readout uses cyclic ell-prime CHARACTERS, FULL arithmetic GL_r frame torsors,
+contragredient J[ell], and explicit twists overFp^j. Independent proof establishes
+rational G0 span, inverse-character projector convention, characteristic-zero
+Fourier/Newton BEFORE reduction and normalized m-th roots by factor exponents.
+No exact monodromy or Frobenius is input. Note/review:
+SURFACE_TORSION_COVER_RECONSTRUCTION.md;
+audits/reviews/2026-11-07-surface-torsion-induction.md.
+
+Source-safe default cubic-Veronese pencil has genus19/base36/nodes132.
+Parent Hodge-index argument proves cubic one-node fibers irreducible; primitive
+vanishing-cycle argument gives the intended mod-ell boundary identity, still
+under geometric review. KM unique reduced-divisor charts give a concrete
+bounded-variable torsion construction lead; effective Kuga–Satake is being
+audited as a stronger CLASSICAL competitor. Local Claude request REFUSED/no
+findings/retry; Jacobian request still live.
+Uniform explicit Jacobian/frame/twist/local construction BIT costs remain
+UNPAID; degree bounds alone do not close them. Pila assumes abelian model and
+additionlaw. Known classical fixed-genus polylog curves do not cover growing
+cover genus; controlled reduction has p dependence. Actual F7 quartic control
+62points/base2/fiberssum76 checks only normalization; C8 Fourier control is a
+formal matrix toy. All nativealgorithm, novelty/speedup, quantumexecution gates
+FALSE. Source snapshots and control are linked in note. Two focused Claude
+geometry/local requests now live; prior reselection reports terminal (one
+useful lead, one refusal), no unknown-cost retry. No API approval is evidence.
+
+Next hard question: uniform polynomial(ell,logp) construction from the actual
+pencil input, including t-heights, components/twists and boundary Frobenius.
+Next command: inspect closed source review and the two terminal response/result
+bundles under audits/claude_runs/2026-11-07-surface-{jacobian-construction,
+local-corrections}; expected artifact a complete construction proof OR a
+specific unpaid gate. Acceptance: actual-source hypotheses, all BIT clocks,
+and no supplied geometry. Mechanical queue under the same heading below.
+
+## 2026-11-07 Surface Torsion-Cover Candidate
+
+SURFACE_TORSION_COVER_RECONSTRUCTION.md selects exact full P2 of smooth quartic
+K3/Fp via explicit torsion-cover TWISTS and known genus-polynomial quantum curve
+zeta, targetpoly(logp), fixeddegree only. Input equation+p; NO Jacobian/torsion/
+cover/monodromy/Frobenius advice. Corpus then literature compared integral
+similarity(alreadyBHJ9.16), generalclassgeneration(sourceunpaid), quaternionHSVP
+(oracleunpaid), andHPGP(growingdegreeunpaid). Actual2511.02262 excludesP2.
+
+Original Claude permutation-module Artin identity is FALSE: naturalSL2F7
+Brauertrace atorder8 is sqrt2. Sage verifies; rationalspanofinteger permutation
+characters cannot recoverit. Parentrepair UNDER REVIEW uses rationalG0 span
+of induced ell-prime cyclic CHARACTERS, fullarithmeticGamma, and explicit
+h-twists overFp^r. ExactcyclotomicFourier/Newton BEFORE modell handlesr divisible
+byell; factoredbinary exponents handle anell-divisible induction denominator.
+No full algorithm follows before the cover/twist/local-correction BIT costs.
+
+ExactCLASSICAL controls completed: irrationalBrauertrace; formalC8 Fourier/
+Newton toy includingdivision7; smoothquarticFp7 #X62,#base2,sumfiber76=62+7*2.
+They do not establishtorsionconstruction or scaling. Stronger point-count
+baselines/sources inprogress; corpusbaseline genericKLPT hit is inapplicable.
+
+Fablehypothesis report completedUSD1.348910; Opusrefusal/emptyUSD0.019404,
+no findings/retry. Bothterminal. Coremodular and geometric/source reviews active;
+primaryPila/Khuri-Makdisi/controlled-reduction fetch started (samehandle iflive).
+Next command: inspect actualsource, obtain counterexample orpaid modular-L and
+explicitgeometricconstruction lemmas. No quantumbackend/sweep/novelty/separation
+or fullalgorithm claim. Matching mechanical queue; STATE still lastfinishedpass.
+
+## 2026-11-07 Two Gaussian Channel Diamond Learner
+
+GAUSSIAN_CHANNEL_MIXTURE_ADMISSION.md establishes a reviewed WRITTEN uniform
+polynomial-use/BIT/gate learner for EVERY exact memoryless mixture of TWO full
+ordinary Gaussian CPTP maps, known Majoranas, no weight/branch/gap advice.
+Output explicit CPTP circuit, raw diamond<=epsilon with success>=1-eta.
+Reference-FIRST/full odd-action source, gap-free single-map continuity,
+TP-preserving rank2 repair, invariant<=4mode core, program norm<=64, stable
+effect normalization and deterministic compiled amplification pay every case.
+No inverse source or consumed-input retry. Finite compiler clock is separate
+from reconstruction arithmetic; small links discarded with operator error.
+
+Strongest matched baseline: ALL data use nonadaptive product preparations and
+local Pauli readout with the SAME variance; processing is classical. Thus no
+coherence/computational advantage, novelty or Shor-level result. Actual opened
+unitary-only/bosonic theorems retain their scopes. Five closed reviews read,
+six primary snapshots retained, exact CLASSICAL control passed: naiveBell Wick,
+missing transpose and nonTP-core shortcuts fail. No finite evidence proves
+scaling; no full/quantumexecution, human/formal audit, noisy/offmodel/many-map,
+parity-restricted or practical-cost claim.
+
+Four Claude calls terminal: two empty truncations, two useful checked lemmas;
+estimateUSD3.537260. Aggregate58 nonpartial estimatesUSD44.625062/31reports is
+NOT balance; prior timeout billingUNKNOWN. No live call or retry. Scoped
+title/source/review/control/API consistency and diff checks passed.
+Next hard question: independently select a native constructive direction with
+a plausible advantage beyond the matched product-query processing baseline.
+Next command: read STATE/TRAPS, corpus been-tried then actual literature and
+baselines for competing directions. Expectedartifact: one paid end-to-end
+mechanism and cheapest decisive classical falsifier, or a justified pivot.
+No learner backend/nearby variant/sweep queued. Matching mechanical queue.
+
+## 2026-11-07 CSA Minimal Modules and Primitive Idempotents
+
+CSA_MINIMAL_MODULE.md establishes the reviewed WRITTEN quantum polynomial-BIT
+construction under explicit GRH for EVERY growing expanded CSA A/K: Schur
+index d, exact compact primitive idempotent e, minimal left ideal Ae and action.
+Use the CLASSICAL factoring-oracle index theorem, an expanded prescribed
+degree-d splitting field, known KM split map, then SIMPLE module F^n.
+Hom dimension m*n*d and affine right-identity rank m*d² pay Cramer extraction.
+
+Deterministic classical positive certificate is sound independently of GRH
+under field/CSA promises: expanded maximal order via radical/separability/
+idealizer and field-center checks, RELATIVE REDUCED-trace discriminant index,
+checked expanded Amitsur presentation/cochain and exact modular nonzero minors.
+Proved upper ranks avoid generic PIT. Canonicity is transcript-relative only.
+Index certification is essential; larger-degree modules pass extraction yet
+can yield nonprimitive idempotents. No hidden module, field or invariant advice.
+
+Two closed reviews read; eightprimary sources scoped. Strong baseline already
+computes index with factoring; known classical S-unit/split algorithms retained.
+Actual M2(H) control: Hom rank120/nullity8, affine rank4, Ae dim8, eAe dim4;
+regular module gives nonprimitive1. PARI table algindex UNSUPPORTED receipt,
+separate cyclic-H index2, no hardness inference. No full/quantumexecution,
+novelty/separation, human/formal review, integral/short/expanded output,
+input-canonical normal form or generic compact-zero-testing claim.
+
+Two useful Claude reports estimateUSD0.860428; exact roles and accepted/rejected
+findings recorded. Aggregate54 nonpartial estimatesUSD41.087802/29reports,
+NOTbalance; earlier partialtimeout billingUNKNOWN. No live call/retry.
+Next hard question: select an independent end-to-end native algorithm mechanism
+by external value; this endpoint needs no nearby extension/backend. Next command:
+read STATE/TRAPS, corpus been-tried for independent candidate contracts, primary
+literature and baselines. Expectedartifact: one admitted mechanism and cheapest
+classical falsifier, or rejection before implementation. Matching mechanical
+queue; no registry promotion, broad checks or Git action.
+
+## 2026-11-07 CSA Primitive-Idempotent Certificate
+
+CSA_MINIMAL_MODULE.md adds an exact compact construction certificate under
+field/CSA promises: certify maximal order locally by radical nilpotence,
+separability of quotient, field center and idealizer equality; recompute the
+RELATIVE REDUCED-TRACE discriminant and real signatures to certify index d.
+This avoids importing a character-only rational-discriminant shortcut or free
+O_K basis. Factoring-paid classical theorem is verified in Voight7.2/NS.
+
+Then degree-d irreducible local CRT with real coefficient control gives an
+expanded splitting field. Known KM yields SIMPLE module F^n. Compact Hom
+and affine right-identity systems have PROVED rational ranks R*N-N and m*d²;
+modular nonzero minors plus canonical Cramer formulas certify the primitive
+idempotent without general PIT. Adaptive pivot MINOR choice is legal; the
+input matrix precedes its fresh modulus, and a fixed existing minor pays the
+success bound. Index certification is essential: larger-degree modules can
+pass extraction while yielding nonprimitive idempotents.
+
+One independent field Claude report completed and read; core/certificate
+review and compact Claude attack pending. Classical control passes exact
+M2(H) Hom/idempotent ranks. PARI table-input algindex is UNSUPPORTED (actual
+receipt), while specialized cyclic-H index2 passes; this is no hardness result.
+No full/quantumexecution, novelty/separation or expanded-output claim.
+Next command: read final closed core review and terminal compact report;
+expectedartifact: fully reviewed complete compact algorithm or repaired gate.
+Matching mechanical entry; no backend/broad tests/Git.
+
+
+## 2026-11-07 CSA Minimal-Module Construction Candidate
+
+CSA_MINIMAL_MODULE.md gives an UNREVIEWED written candidate for arbitrary
+growing CSA A/K: classical factoring-oracle Schur index d, expanded prescribed
+degree-d splitting field F, known KM split map, then V=F^n is SIMPLE.
+Compact Hom_A(V,A) has rational dimension m*n*d; canonical Cramer kernels and
+right-identity affine solve (rank m*d²) would yield a primitive idempotent and
+minimal ideal with paid compact output. No field/module/local-invariant advice.
+Actual Voight7.2 + Nebe--Steel close the classical index baseline; the proposed
+Amitsur period lattice is unnecessary. No novelty/separation/quantumexecution,
+expanded output or all-degree classical-hardness claim. Full review, two focused
+Claude attacks and exact classical control pending. Source index confirmation
+is not confirmation of the compact extraction theorem.
+Next command: read closed core/source reviews and terminal Claude reports;
+expectedartifact: repaired fully paid compact construction or explicit failed
+rank/field/PIT gate. Acceptance: exact source scopes, all growing dimensions,
+fresh-prime clocks, no hidden rank oracle and a classical index/module control.
+Matching mechanical entry; no backend, registry promotion or Git action.
+
+## 2026-11-07 Stabilizer Rank-Minimizer Separation
+
+STABILIZER_SPAN_RECONDITIONING.md establishes a reviewed exact all-n
+separation. A K=binom(n,2)+1-dimensional explicit stabilizer span has EVERY
+positive-weight in-span frame condition>=2^n/[K(n+1)], regardless of added
+rays/weights. Its E={0,e_i} target has restricted squared extentTheta(2^n/n)
+but actual extentTheta(n), with exact global fidelity9/[4(n+1)].
+
+Algebraic tagging by theta=2^(1/p), odd primep>K, forces a nearby state's
+EXACT rankK and UNIQUE minimum-rank span. Every rank-minimal decomposition
+has squared coefficient cost>=2^n/[4(n+1)], whereas <=K+n+1 terms outside
+the span give cost<=4(n+1). All descriptions have polynomial algebraic size.
+Thus minimum-rank-first polynomial coefficient cost and universal in-span
+reconditioning are REFUTED. Tiny perturbation is exponentially close to the
+easy target: no approximate-rank hardness or native tomography lower bound.
+
+Independent source/core review and tagging addendum read; five actual primary
+sources scoped. Known best opened-source rank-to-extent2^O(sqrt(k logk)) and
+copy-only learner retained; optimized polynomial extent/learner remainOPEN.
+Actual classical controls PASS: n6 exactGram, exhaustive1080 n3 stabilizers,
+and exact B(theta) coefficient recovery. No fulllearner/quantumexecution,
+novelty, general learning no-go or exponential globalextent claim.
+
+Two useful Claude reports estimateUSD0.506252. Proofs verified; polynomial-
+BIT versus COPY conflation and zero-robust-radius overstatements rejected.
+Aggregate52 nonpartial estimatesUSD40.227374/27reports is NOTbalance; earlier
+partial timeout billingUNKNOWN. No live call/retry. No backend or nearby sweep.
+Next hard question: choose a different paid native mechanism by external value,
+not another conditioning refinement. Next command: read STATE/TRAPS, then
+corpus been-tried/baselines and primary sources for independent candidate
+contracts. Expectedartifact: one end-to-end hypothesis and its cheapest
+classical falsifier, or explicit rejection before implementation. Mechanical
+queue matching dated item; no registry promotion or Git checkpoint.
+
+## 2026-11-07 Stabilizer Minimum-Rank Coefficient Gap
+
+STABILIZER_SPAN_RECONDITIONING.md Section4 strengthens the in-span
+falsifier: a tiny algebraic perturbation has EXACT stabilizer rank K and
+UNIQUE minimum-rank span V. Use B=Q(zeta8), theta=2^(1/p) for odd primep>K,
+epsilon0=2^-2n/(8K), z=R+epsilon0 sum_j theta^(j+1)s_j. Since degree_B theta
+is p>K, every B-defined stabilizer span containingz must contain ALL original
+s_j. Normalization does not affect membership. Thus every rank-minimizing
+decomposition lies in V and has squared coefficient cost>=2^n/[4(n+1)].
+The explicit outside-V decomposition has <=K+n+1 terms and squared cost
+<=4(n+1), with polynomial algebraic descriptions. No general extent lower
+bound, learner hardness, quantum execution or novelty claim.
+
+Independent strengthening review and second focused Claude attack pending;
+base all-n family review COMPLETE and read. Base exact Sage control PASS,
+small algebraic-field coefficient-extraction control now running. First
+Claude attack still running until authoritative terminal observation.
+Next command: read closed addendum/control and both terminal API reports;
+expectedartifact: fully reviewed scoped minimum-rank/norm gap or correction.
+Mechanical queue matching item; no frame backend or broader sweep.
+
+## 2026-11-07 Stabilizer Span Reconditioning Falsifier
+
+STABILIZER_SPAN_RECONDITIONING.md derives an all-n counterfamily to
+polynomial conditioning by stabilizer dictionaries confined to their original
+span. E={0,e_i}, first-two-one cells C_ij and |+>^n span V of dimension
+K=binom(n,2)+1. Every inV stabilizer has E-overlap squared0 or(n+1)/2^n.
+ANY positive-weight spanning frame inV therefore has condition at least
+2^n/[K(n+1)], independent of dictionary size. Restricted squared extent is
+Theta(2^n/n), while the actual extent isTheta(n): computational-basis atoms
+OUTSIDE V give an explicit short decomposition. Exact global stabilizer
+fidelity is9/[4(n+1)]. No general quantum/learning lower bound follows.
+
+Actual current2610.06819 already gives2^O(sqrt(k logk)) rank-to-extent and
+copy-only learning; code merging/projections are prior work. Full polynomial-
+rank tomography remains OPEN. Fixed-frame eigenvalues alone were insufficient;
+this derivation quantifies over ALL in-span rays and positive reweightings.
+Independent source/core review pending; exact Sage control PASS: n6 Gram
+and n3 complete1080-state enumeration. One narrow Claude proof attack RUNNING,
+no findings/billing asserted yet. No learner/quantumexecution,novelty,
+exponential unrestricted extent or general learning no-go.
+Next command: read independent review and saved Claude response/stop status,
+then scoped source/control/usage milestone. Expectedartifact: reviewed scoped
+falsifier or correction, not a preconditioning backend. Mechanical queue matching.
+
+## 2026-11-07 Reduced Norm Prescribed Field
+
+REDUCED_NORM_PRESCRIBED_FIELD.md establishes a reviewed WRITTEN bounded-
+error quantum polynomial-BIT SEARCH composition under explicit GRH for EVERY
+explicit growing CSA A/K, expanded compatible field/maximal-order input and
+target a: exact HMS sign NO, or a compact canonical x with Nrd(x)=a; capped
+failures ABORT. No splitting/local invariant/class/unit/solution advice.
+
+Trace-order support, fixed-constant irreducible density>=1/(3g), wild/negative
+local valuations and denominator-adjusted CRT construct a degree-n splitting
+field with generator norm a. Known Amitsur splitting plus regular-module
+cyclic transport recover x by RIGHT multiplication. Small-atom LS/HNF pays
+cochain SEARCH. Expanded Phi checks, canonical trace/cochain/Cramer circuits
+and exact modular nonzero certification give deterministic classical positive
+verification without GRH or general circuit PIT. All scalar nodes are counted
+in the polynomial modulus clock; expanded answers can be huge.
+
+Three independent reviews read and integrated; four actual primary sources
+scoped. Classical HMS existence is already easy; splitting/class-unit and
+quaternion baselines retained. PARI Hamilton norm and exact nondivision M2(H)
+regular/right-multiplication controls PASS. No full/quantumexecution, novelty,
+separation, human/formal review, integral/short/expanded witness or minimal-
+module algorithm. Two useful Claude reports USD0.766564 estimate; unchecked-rho
+certificate gap repaired. Aggregate50 nonpartial estimatesUSD39.721122 and
+25reports are NOT balance; prior timeout has UNKNOWN billing. No live call.
+
+Next hard question: independently rank native constructive mechanisms against
+this known-arithmetic composition; do not extend to integral/PIP by inertia.
+Next command: corpus been-tried for each proposed independent mechanism,
+then actual primary literature and corpus baselines. Expectedartifact: one
+precise input/mechanism/resource/falsifier contract, or rejection if no paid
+operation survives. Mechanical queue: matching dated item; no backend/sweep.
+
+## 2026-11-07 Reduced Norm Certified Reconstruction
+
+REDUCED_NORM_PRESCRIBED_FIELD.md now contains a WRITTEN constructive
+composition for every explicit growing CSA A/K and expanded a, under GRH:
+HMS sign NO or compact x with Nrd(x)=a; capped failures are ABORT. Finite
+support from an explicit order trace discriminant, classical fixed-constant
+irreducible density >=1/(3g), wild/negative-valuation local polynomials and
+quantitative ideal CRT pay the prescribed degree-n splitting field.
+
+The regular A-module over that field recovers x by RIGHT multiplication.
+Exact positive certificate checks expanded Amitsur Phi against INPUT A,
+small-atom LS coboundary relations, canonical trace/cochain map and a modular
+nonzero determinant, then syntactically reconstructs the Cramer circuit.
+No arbitrary circuit PIT, global minimal module or splitting advice.
+Field and actual-source/compact reviews complete; final composition review
+PENDING. Sources HMS/KM/LS checked; classical PARI norm and nondivision M2(H)
+interface controls PASS. Both Claude reports useful, USD0.766564 estimate;
+module report correctly exposed unchecked-rho gap, repaired as above.
+No novelty/separation, integral/short/expanded output or full/quantumexecution.
+Next command: read final independent composition review, resolve findings,
+then scoped source/control/usage/title milestone. Expectedartifact: reviewed
+written theorem or explicit blocker. Mechanical queue: matching dated item.
+
+## 2026-11-07 Reduced Norm Prescribed-Field Candidate
+
+REDUCED_NORM_PRESCRIBED_FIELD.md records a constructive SEARCH candidate
+for arbitrary explicit growing CSA A/K and target a. HMS decision is ALREADY
+classical. Build degree-n splitting field F with generator norm a using
+prescribed-constant local irreducibles/weak approximation; use known split
+Amitsur map over F and a cyclic vector in the REGULAR A-module F^n to recover
+x by right multiplication. No global minimal ideal or supplied field.
+
+Core proposed quantitative facts: classical fixed-constant irreducible density
+>=1/(3g) via norm fibres/proper subfields; single-side Newton construction
+includes wild primes; order regular-trace discriminant bounds bad primes.
+Global CRT/sign BIT, actual source interfaces and compact circuit certificate
+remain OPEN. Full source1707.02498 Lemma1/Theorem2 read; KM v3 Fact2.1/Thm4.13
+retained. Integral similarity and curve zeta candidates already covered.
+No fullalgorithm, novelty/separation, integral/short witness or execution.
+Next command: review local/counting and compact module obligations, then one
+actual classical quaternion norm control. Expectedartifact: quantified full
+construction/certificate or decisive falsifier. Mechanical queue matching item.
+
+## 2026-11-07 Relative Norm Tensor Support
+
+RELATIVE_NORM_TENSOR_SUPPORT.md establishes a reviewed WRITTEN quantum
+polynomial-BIT composition under explicit GRH for EVERY growing K subset L,
+expanded maximal-order bases/tables/embedding and target a. Return NO or a
+COMPACT x with exact N_L/K(x)=a; no closure/class/unit/solution advice.
+Relative paired tensor norms preserve K-norm exactly. All primitive pair
+relations span each unramified valuation kernel. Relative tensor factors
+are absolute tensor factors, whose discriminants pay polynomial support.
+Existing complete compact S-units plus FULL torsion and classical LS small-
+atom relations/HNF close the endpoint. YES verification is classical/exact;
+NO depends on complete-source success. No integral/short/expanded guarantee.
+
+Independent full composition review read; actual BS/LS interfaces checked.
+Original Simon thesis pages67/74 confirm substantial prior S-unit endpoint
+and closure-based support work. Later2002 paper unavailable, priority UNKNOWN.
+2023 gate-synthesis norm algorithm retains its special class/unit/Euclidean
+promises. PARI finds a witness for the nonrational degree3 control; absolute
+norm1 hides valuations -1,+1 above31, so absolute-norm-only support is false.
+Denominator support, relative determinant/basis change and torsion controls
+PASS. Fullsolver/quantumexecution,novelty,separation and practical claims false.
+
+Claude compact-coordinate audit completed, USD0.312188 estimate; checked
+BIT/torsion/deduplication/source suggestions integrated. Independent Fable
+support attempt TERMINAL ReadTimeout/no report in
+audits/claude_runs/2026-11-07-relative-norm-support. Billing UNKNOWN;
+USD0.006250 is partial usage, NOT final cost. No retry/findings. The written
+proof does not depend on that attempt. No live call remains.
+Next hard question: independently compare native mechanisms, no multinorm
+or norm-backend extension by inertia. Next command: corpus been-tried for an
+independent explicit-input candidate, then primary literature and baselines.
+Expectedartifact: one input/mechanism/resource/falsifier contract or rejection.
+Mechanical queue: matching dated item in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Relative Norm Tensor Candidate
+
+RELATIVE_NORM_TENSOR_SUPPORT.md records the proposed full compact N_L/K(x)=a
+solver for arbitrary growing explicit number fields/maximal orders/embedding,
+under GRH. Relative tensor paired norms preserve the EXACT K-norm; all local
+primitive pair vectors span the valuation kernel. Factors occur in L tensor_Q L,
+so the existing absolute discriminant bound pays a polynomial rational support.
+Full torsion plus existing classical LS atom relations pay nonrational targets.
+Independent review/source comparison and exact PARI baseline are pending;
+no accepted theorem, novelty/separation, integral/short output or execution.
+Two distinct Claude obligations will attack support and compact coordinates.
+Next command: inspect actual Simon source and run one PARI rnfisnorm control.
+Expected artifact: scoped source disposition and exact nonrational-target,
+torsion/cancellation falsifier; acceptance requires all norm/support/bit
+interfaces close. No normal closure or arithmetic backend authorized.
+Mechanical queue: matching dated item in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Mixed Gaussian Pair Learning
+
+MIXED_GAUSSIAN_PAIR_LEARNING.md establishes a reviewed WRITTEN polynomial-
+copy/BIT learner for EVERY exact IID mixture of TWO arbitrary mixed fermionic
+Gaussians, knownMajoranas/ordinaryqubitgates, allweights/noinputgaps or branch
+advice. Output an epsilon-close state as <=4KNOWN Gaussians, not necessarily
+originalcomponents. EVEN means parity-commuting, not fixed-even-sector support.
+No human/formal review, novelty/separation, practicalcost or quantumexecution.
+
+Degree2/4/6 forms H=E²,J=tE³: randomized6minor/Pfaffian/Lefschetz inverse
+recovers highrank E upsign. Contracted4form Gram locates lowrank support.
+Commonattenuation plus actual globalGaussian trace bound pays all precision.
+Explicitκ hierarchy/2h,2ell thresholds and full inverse ledger close uniform
+error/failure clocks. Lowrank Schur Gaussian map compresses to<=2modecore;
+its two parity blocks diagonalize into<=4PURE Gaussians. Compute their output
+covariances and prepare directly. No physicalchannel/CJ/postselection backend.
+
+Core, actualsource and numericalcomposition reviews fullyread/accepted,
+including directoutput addenda. Exact classicalcontrol checks H/J,t=3/2,
+Pfaffian−587/46875/minussign,8Dcrossrecovery,rank2Gaussianidentity,CP Schurzero.
+Checked alternativeCJ has exactsuccess1/16; omittedreferencecorrection fails;
+this control is NOT needed by final learner. No fulllearner execution.
+Strongbaseline suppliedcomponent classicalWick/Pfaffian evaluation retained.
+Actual2026 purestabilizerrank2 learner alreadycovered; CSA regularmodule
+splitting leaves arbitraryminimalmodule extraction unpaid, no newcandidate.
+
+Claude exterior attempt terminalmax_tokens with397-character unfinishedprefix,
+estimateUSD0.828720; no usableproof/findings/retry. Aggregate47estimates
+USD38.642370,22completedreports is NOTbalance. No pendingcall. Falsegates:
+classicalhardness/separation,novelty,off-model/noisy source,manycomponents,
+parity-restricted-onlygates,practicalscale,quantumexecution. Next hard question:
+independently select a native constructive mechanism with a paid endpoint,
+not an adjacent mixture/rank extension. Next command
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'native quantum algorithm constructive mechanism' -k 3`.
+Expectedartifact: one selected input/mechanism/baseline contract and first
+classical falsifier. No tomography/CJ backend or sweep. Mechanicalqueue:
+matching dated item in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Mixed Gaussian Four-Term Endpoint
+
+MIXED_GAUSSIAN_PAIR_LEARNING.md now has a direct output endpoint: every
+even two-mode density core is a mixture of <=4 parity-definite pure states,
+and EACH is Gaussian (BCS even sector or one-particle odd Slater sector).
+Compute their four output covariances under the proved Schur Gaussian map
+and prepare those known Gaussian states. The final learner needs no physical
+channel/Choi implementation or Bell postselection. Abstract CP pays core
+trace-error contraction;4x4 spectral residual avoids any eigenvector-gap
+promise. Ordinary qubit/knownMajorana parity convention retained. Focused
+independent addendum accepted. Full numeric ledger is under final integration.
+No novelty/separation, practical cost or quantum execution. Next command:
+read dated mixed-gaussian-composition review and integrate its explicit
+threshold/precision ledger. Expected artifact: complete uniform written
+learner for the unchanged native class, all output clocks charged. Mechanical
+queue: matching dated entry in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Mixed Gaussian Pair Derivation
+
+MIXED_GAUSSIAN_PAIR_LEARNING.md records a constructive candidate for EVERY
+mixture of two arbitrary mixed fermionic Gaussians from freshIIDcopies.
+Exact H=E²,J=tE³ moments identify high-rank covariance difference by a paid
+random6minor/Pfaffian/Lefschetz inverse; rank<=4 difference is a Gaussian
+channel of <=2mode core, constructed by explicit Schur complement. Common
+attenuation pays all B/R gaps using actual globalGaussian trace bound.
+All-degree<=6 collision falsifier rejected analytically within this class;
+no full learner yet: uniform numerical ledger/CJ conventions/review pending.
+
+Independent stabilizer-rank2 candidate already covered by actual2026 papers;
+CSA regular-module tensor trick leaves minimal-module extraction unpaid.
+Matched baseline supplied-component Wick/Pfaffian evaluation, not a classical
+copy-free learner. No classical-input separation, novelty, practical cost,
+noisy-source, generalmixture or quantum execution claim. One Fable exterior
+call pending (mixed-gaussian-exterior), do not duplicate. Next command:
+exact CAS control under audits/controls/mixed_gaussian_pair/control.py;
+expected artifact checks H/J and minus sign A=−sqrt[4](detB)B^-1, and zero
+CP Schur complement. Acceptance is consistency ONLY, no theorem from tests.
+Next hard task: uniform composition and independently reviewed outputchannel.
+Mechanical queue: matching dated item in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Wild Local Selmer Admission
+
+WILD_LOCAL_SELMER_ADMISSION.md: general growing-genus two-Selmer DIMENSION
+under explicitGRH is PARKED, not disproved. Complete wild local generation
+and arbitrary-dyadic regular-model BIT cost remain unpaid. Independent
+isogeny/action comparison supplied no new paid endpoint. Classical comparator
+is actual Stoll descent, including its warned random-divisor implementation.
+
+Exact reviewed falsifier: for EVERYg>=2 and oddp,
+f=(x^(2g-2)-p)(x³-p²) has local image dimension1, but EVERY curve point over
+EVERY finite unramified extension has trivial label. Ramified branch divisor
+has (p²-alpha³,beta^(2g-2)-p), normalized valuations3 in both factors and
+equal norms; degree2 witness for g2, complementary degree3 for g>=3.
+Thus unramified curve-point traces alone are incomplete; no general model or
+local-source impossibility. Separate known uniform-polynomial sampler needs
+raw probability<=3^-N for f_N=(x-1)product_{j=1}^4(x-3^N j), O(N) input bits.
+No hardness/quantum lower bound; stratification handles this particular family.
+
+Six primary sources; actual Liu2504.16808v3 gives dyadic resolution equations
+and termination, not a proved total BIT clock. Retain genuine Liu2603.19065v2
+Cor1.27 Weierstrass-chain bound v(Delta)/2; it does not cover all wild charts.
+Bosch-Liu component quotient/surjectivity is not constructive divisor lifting.
+Focused independent review read; exact norms54/valuations3 and fourN classical
+controls PASS (finiteprecision factors only consistency; proof is separate).
+Two Claude calls terminal EMPTY/max_tokens: no evidence/retries; pass estimate
+USD2.759310. Aggregate46estimatesUSD37.813650,22reports is NOTbalance.
+
+False gates: full Selmer/wild algorithm, model clock, novelty/separation,
+MWrank/points/covers, quantum execution, general local impossibility. Next
+hard question: independently select a native constructive mechanism with a
+paid endpoint; no adjacent resolution backend or sampling sweep. Next command
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'native quantum algorithm constructive mechanism' -k 3`.
+Expectedartifact: one independently selected native problem/mechanism/baseline
+contract and first decisive classical falsifier. Mechanical queue: matching
+entry in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Wild Local Selmer Derivation
+
+WILD_LOCAL_SELMER_ADMISSION.md records an exact native counterexample to
+unramified-point trace generation: C/Q3:y²=(x²-3)(x³-9) has local image
+dimension1 but EVERY point over EVERY finite unramified extension maps to0.
+Ramified quadratic branch divisor gives (9-3alpha,beta²-3), both normalized
+valuations3 and norms54. Parent proof and independent check agree. No general
+local-source impossibility; ramified regular-model/divisor methods stay open.
+Known unstratified Stoll polynomial sampling also misses needed classes for
+f_N=(x-1)product(x-3^N j), with raw hit probability<=3^-N and O(N) bits.
+No hardness or quantum lower bound; structured stratification handles it.
+
+General growing-genus Selmer DIMENSION under explicitGRH is NOT admitted.
+New Liu double-cover algorithm supplies actual dyadic equations/termination,
+but total BIT cost and complete Picard-to-divisor generation remain open.
+Six primary snapshots; source helper and two distinct Claude calls pending
+(wild-local-resolution, wild-local-picard). Do not duplicate these calls.
+False gates: general algorithm, complete wild source, novelty/separation,
+MW rank, quantum execution. Next command: targeted CAS branch-label control
+under audits/controls/wild_local_selmer/control.py; expected exact norms54
+and missing valuation direction, no algorithm inference. Then read actual
+source/Claude reports and either close both resource obligations or pivot.
+Mechanical queue: matching dated item in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Cubic Covariant Copy Processor
+
+Rejected the specified known six-copy antiidentity as a hidden-cubic-frame
+extractor. CUBIC_COVARIANT_COPY_PROCESSOR.md: retaining one output maps Pauli
+r to r^5, preserves exact signed stabilizers, and for all Clifford-hidden
+Boolean cubic phases converges within2^(n-5^j-1) to the original stabilizer-
+code mixed state using6^j copies. CCZ products have trivial stabilizer and
+limitI/2^n. No claim about arbitrary intermediate/environment receivers.
+
+For EVERY arbitrary pure complex psi, two Bell measurements after this map
+return exactly two independent ordinary Bell samples and two known-Pauli-
+corrected original copies, with explicit branch phase/swap/probability.
+All six-copy binary copy-linear covariant maps are permutations or anti-
+permutations, so this exact pattern supplies no additional receiver.
+Known GNW1712.08628v3 machinery/testing retained as prior art. Supplied-f,C
+classical Bell sampling remains a comparator, not an unknown-frame learner.
+Independent OPI/sparse-root/folded/cycle-DQI screens supplied no new endpoint.
+
+Focused independent review read; three primary sources and one exact control
+complete. Generic complex input: all16Bellbranches,9nonzero,totalprob1,Yphase;
+CCZgap1/2 and linear-derivative/Pauli cancellation checked. No theorem inferred
+from finite success. Claude useful report USD0.327524, but its false side
+claim C^T C need not be Pauli was REJECTED by the symplectic-kernel proof.
+Aggregate44estimatesUSD35.054340,22reports is NOTbalance. No pendingcall/retry.
+
+False gates: learner, novelty/separation, native hardness, quantum execution,
+unrestricted commutant/general coherent-receiver impossibility. The cubic
+learner stays PARKED; these particular receivers are CLOSED. Next hard
+question: independently identify a native operation with an end-to-end
+resource path, not another variant of this receiver. Next command
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'native quantum algorithm constructive mechanism' -k 3`.
+Expectedartifact: one independently chosen input/mechanism/baseline contract
+and its first decisive classical falsifier. No convolution/backend/sweep.
+See newest mechanical preservation entry.
+
+## 2026-11-07 Cubic Covariant Copy Processor Derivation
+
+Six-copy antiidentity is a PAID known Clifford-commuting operation, but
+retaining one output maps every Pauli coefficient r to r^5 and preserves
+exactly the original signed stabilizers. For every hidden-Clifford cubic
+phase state nonstabilizer coefficients have magnitude<=1/2; j iterations
+converge within2^(n-5^j-1) to the original stabilizer-code mixed state.
+Polynomial copies suffice, but this discards the missing cubic frame.
+CUBIC_COVARIANT_COPY_PROCESSOR.md records proof and actual GNW1712.08628v3
+prior machinery. No new stabilizer-test or general learner impossibility.
+
+Alternative Bell-pair retention has a derived exact identity: two ordinary
+Bell samples plus two known-Pauli-corrected ORIGINAL copies. Arbitrary pure
+complex amplitudes; all probabilities retained. Focused Claude review and
+one exact phase/control check pending. No factor-search backend admitted.
+Independent OPI/sparse-root/cycle/folded-DQI screens supplied no paid new
+native endpoint; source limits in note. False gates: learner, separation,
+novelty, native hardness, quantum execution, unrestricted commutant no-go.
+Next command: poll existing bell-commutant call and check finite exact
+complex-amplitude branches; expectedartifact a reviewed identity or explicit
+counterexample. See newest mechanical preservation entry. Then pivot by
+independent value, not another nearby cubic barrier.
+
+## 2026-11-07 Global Compact Isotropy
+
+Established reviewed WRITTEN bounded-error quantum polynomial-BIT isotropy
+decision and NONZERO compact isotropic vector for EVERY charged growing-degree
+number field and nondegenerate growing-dimension expanded form, under EXPLICIT
+GRH. Input pays defining polynomial, compatible maximal-order basis/table;
+output is arithmetic circuits, with a paid bounded-error classical verifier.
+GLOBAL_COMPACT_ISOTROPY.md: one5plane handles all real signatures; polynomial
+local quadratic ideal/norm construction and weakapprox reduce5to4; arbitrary
+quaternion splitting descends via opposite-ideal line intersection. Known
+Amitsur2307.00261v3 supplies the quantum split primitive; no new primitive claim.
+
+Four scoped source/descent/local/composition reviews complete and read.
+Classical rational/quadratic-base/factoring/norm/LLL baselines retained.
+Seven primary sources and exact control: PARI points/obstruction, gauged
+Q(sqrt6) descent, omitted-discriminant-sign failure, dyadic generators over
+ramified base. Literal source formula fails 4/3=(1/3)*2^2; inverse-prime-norm
+bound does not prove BIT clock, but neither shows general hardness.
+No theorem inferred from finite success; no human/formal review asserted.
+
+Claude one useful weakapprox report and one terminal empty refusal estimate
+USD0.707116; aggregate43estimatesUSD34.726816,21reports is NOTbalance. No retry
+or pendingcall. False gates: novelty/separation, full/quantum execution,
+expanded/short/integral point, compact-input/repeated Witt decomposition,
+removing GRH. Fresh modular primes for adaptive/final tests; source internal
+fields are separately paid polynomial degree, not all<=2n. ABORT counts within
+error budget and never means NO.
+
+Next hard question: independently rank native constructive mechanisms beyond
+this known-arithmetic composition. Next command
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'native quantum algorithm constructive operation' -k 3`.
+Expected artifact: independent input/output/mechanism/resource/baseline
+comparison and decisive falsifier, not a nearby backend. See newest mechanical
+preservation entry. No full solver, sweep, registry promotion or broad suite.
+
+## 2026-11-07 Global Compact Isotropy Local Reduction
+
+Closed paid local binary-value construction for EVERY growing-degree K_p,
+including wild dyadic places: global quadratic prime decomposition decides
+squares; split CRT/ramified uniformizers have norm valuation1; inert unit
+norms and <=4n principal-unit generators yield a nonsquare norm. All
+representatives stay EXPANDED polynomial-bit, auxiliary extensions quadratic
+OVER K; integer factoring and maximal-order arithmetic explicitly paid.
+No local root, classgroup advice or squareclass enumeration. Independent
+local review read/checked; GLOBAL_COMPACT_ISOTROPY.md has the proof.
+
+Finite/real weakapproximation also has a checked polynomial-bit construction
+via ideal CRT, a denominator coprime to bad primes, and conditioned Minkowski
+rounding. Claude report useful, with parent-checked basis/HNF/target-error
+clarifications; pass estimate USD0.707116 including terminal empty local
+refusal. Exact classical/descent/dyadic control passed, not theorem evidence.
+Whole native isotropy composition is under final review. Existing GRH
+Amitsur splitting and rational/quadratic-base classical algorithms retained.
+False gates: novelty/separation, execution, expanded/short/integral point,
+compact-input Witt decomposition or removing GRH. Next command: read pending
+global-isotropy-composition review; expected artifact full proof or exact
+remaining blocker. Use fresh modular primes for adaptive/final checks;
+Amitsur internal tensor fields are polynomial degree, not all <=2n.
+See newest mechanical preservation entry; no backend/sweep queued.
+
+## 2026-11-07 Global Compact Isotropy Descent
+
+Established exact compact extraction of a NONZERO K-isotropic vector from
+ANY correct quaternion splitting in dimensions3/4. Arbitrary charged
+number-field degree; q4 uses K(sqrt(det q)), and reversion turns the
+conjugate LEFT ideal into a RIGHT ideal, so their intersection is exactly
+a Galoisstable line. Constant-size cofactors, normalization, component
+circuits and charged bounded-error modular zero tests close postprocessing.
+See GLOBAL_COMPACT_ISOTROPY.md and dated descent/source reviews.
+
+Whole native under-GRH quantum polynomial-BIT solver remains CONDITIONAL
+on local/approximation/source composition gates. Proposed single5plane and
+local norm generators avoid prime search and dyadic enumeration. Actual
+Koprowski2111.08569v2 inverse-norm density bound does not prove BIT runtime;
+fractional-input Algorithm6 counterexample is 4/3=(1/3)*2^2. Neither shows
+general hardness. Existing Amitsur2307.00261v3 splitting and classical
+rational/quadratic-base/norm/LLL baselines retained; novelty UNKNOWN.
+
+Claude local call terminal empty refusal USD0.018276, no findings/retry;
+distinct weakapprox audit pending. False gates: full native theorem until
+composition review, full/quantum execution, novelty, separation, expanded/
+short/integral output, repeated compact Witt decomposition, GRH removal.
+Next hard question: pay arbitrary-growing-degree local value and simultaneous
+approximation with polynomial expanded coefficients. Next command: read
+GLOBAL_COMPACT_ISOTROPY.md and pending dated local/source reviews; poll
+existing weakapprox call, do not restart. Expected artifact: full proof or
+precise counterexample, then one exact classical/descent control. See newest
+mechanical preservation entry; no quantum backend or broad suite admitted.
+
+## 2026-11-07 Two Gaussian Pair Learning
+
+Established reviewed WRITTEN polynomial-copy/BIT learner for EVERY normalized
+sum of TWO arbitrary pure EVEN fermionic Gaussians, exact IID copies and
+known physicalMajoranas/ordinary qubit circuits. No supplied branches/frame,
+inverse, overlap, minimumweight or gap. `TWO_GAUSSIAN_PAIR_LEARNING.md`:
+pairedcovariance identity, cancellation-uniform merge/four-mode dichotomy,
+positive R2=qI+z|Omega><Omega| with gapkz/catfailure<=kz, low-nu quartic
+orientation, explicit polynomial precision hierarchy, known coherent MPS
+endpoint and fresh fidelity selection close frame AND relativephase.
+
+Exact/core/composition/source AI reviews complete. Actual primary MPS
+source1002.4632 already pays the endpoint mechanism; priority UNKNOWN.
+Supplieddescription Pfaffian baseline retains phase/precision qualifications.
+One eightmode exactcontrol verifies R2gap243/6700, catbound saturation,
+rotated rank12 covarianceprojector, complex/cancellation identities and
+coherent GHZ memory. An overstrong testnu>=1/3 failed; correctexactnu and
+provednu>=c/3 passed. No result inferred from finite success.
+
+Four terminal Claude bundles: two useful, two emptymax_tokens; passestimate
+USD5.559080. Aggregate41 estimatesUSD34.019700,20reports; notremainingbalance.
+No retries/pendingcalls. False gates: fulllearner/quantumexecution, novelty,
+classicalseparation, generalGaussianrank, noisy/mixed source, parity-only
+physicalgate model. Output uses charged knownMajorana reflection ifneeded.
+Next hard question: independently rank native algorithm mechanisms, rather
+than extendingGaussianrank by inertia. Next command
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'native quantum algorithm constructive operation' -k 3`.
+Expectedartifact: one native input/output/paid mechanism/resource/baseline
+comparison and a decisive falsifier. No backend or sweep queued. See newest
+mechanical preservation entry for sixsources/fourClaude/review/control scope.
+
+## 2026-11-07 Two Gaussian Pair Recovery Derivation
+
+Working note `TWO_GAUSSIAN_PAIR_LEARNING.md` derives exact covariance group
+identification and a cancellation-uniform collision dichotomy for IID copies
+of a normalized sum of TWO arbitrary pure EVEN Gaussians, known physical
+Majoranas. No supplied branches/frame/gap/overlap. Simultaneous merging is
+controlled outside a <=4mode fallback. Equal-angle groups have R2=qI+z|Omega>
+<Omega|, z>=0, gapkz; outsidecat probability<=kz. Nearzero covariance implies
+c<=3nu for k>=3, enabling the old quartic cat orientation. These are structural
+lemmas; uniform noisy composition/BIT learner remains UNDER REVIEW.
+
+Classical supplieddescription Pfaffian baseline and known smallcore/MPS
+primitives retained. Rational-form/finite-algebra screens did not produce a
+new speedup; independent selection favors this concrete operation over unpaid
+Legendre/OPI/DCP receivers. False gates: fulllearner, novelty, separation,
+quantumexecution, arbitrary Gaussianrank, odd/mixed/noisy source. One Claude
+covariance report accepted with scope repairs; one empty truncated quartic
+request gives no findings/retry. See topicnote and newest mechanical entry.
+Next hard question: pay the full precision hierarchy and sequentialtomography
+without a hidden gap, branch advice or uncharged conditional sampling.
+Next command: read topicnote and pending core/source reviews; expected artifact
+is reviewed uniform composition or exact counterexample. No broad backend or
+suite admitted before this test.
+
+## 2026-11-07 Sparse Fock Torus Falsifier
+
+Refuted general sparse-frame recovery by quadratic-variance/maximal-torus
+completion. `SPARSE_FOCK_TORUS_FALSIFIER.md`: exactPaley n=p3mod4>=11,
+r=n equalFockbranches, distance>=6, complete quadraticstabilizeru(1),
+nonzero variancegap>=10/11, ALL degree2/4 means passiveU(n)-invariant.
+Known Sugita Cartan twirl gives any U-independent listL passiveframes
+R-sparse epsilon-approximation success<=L R(n+3)/[4 binom(n,w)(1-epsilon²)²].
+This is an APPROXIMATE support obstruction, not just exact densification.
+
+Structural/source/quantifier reviews closed. Exactp11 control verifies
+full231 Gram spectrum0^1,(12/11)^120,(10/11)^110; rotatedstate overlap43/55
+has same lowmeans, but degree6 occupation triple changes1/11 to9/275.
+Sage Weyl Cartan dimension60984 matches source; no sampling inference.
+One useful terminal Fable audit estimated USD0.596230; activeframe failure
+claim rejected as unsupported. No retries/balance inference. False gates:
+generallearning impossibility, arbitraryGaussian-frame coverage, hardness,
+novelty, quantumexecution. Joint/higher/coherent observations remain OPEN.
+
+Independent arithmetic screen: good polynomial-degree cyclotomic point
+remains unpaid; specified-root CIT is not that operation. Polynomial
+native normmultiplicity at1 would suffice, but a broad determinant version
+would derandomize symbolicdeterminant PIT. No conditional backend built.
+Next hard question: independently choose a native algorithm with a paid
+operation outside these interfaces. Start STATE/TRAPS; next command
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'native quantum algorithm constructive decoder' -k 3`
+is only a triage entrypoint. Expected artifact: independent candidate/source
+comparison with full input/baseline/resource contract; accept implementation
+only with a specific end-to-end blocker and falsifier. Do not rerun the
+closed control or solve the manufactured counterfamily by inertia. See
+newest mechanical preservation entry.
+
+## 2026-11-07 Two Fock Gaussian Learning
+
+Established reviewed WRITTEN polynomial-copy/BIT learner for EVERY exact
+parity-definite G(alpha|x>+beta|y>), unknown shared evenGaussian, arbitrary
+same-parity Fockstrings, known physicalMajoranas and independent copies.
+No minweights, frame/inverse/branch advice. For Hammingk>=6,
+K=4p(1-p)W(Jactive) has pair-spectrum a(k-1),+/-a,0. Uniform rounding,
+fixed4 compression, dominantGaussian fallback and fresh2D phase tomography
+close the endpoint. Fullproof: `TWO_FOCK_GAUSSIAN_LEARNING.md`.
+
+Actualsource/core reviews closed; fixedparticlecap source does not cover
+all growing balancedcats, but cumulant-method overlap is substantial and
+priority UNKNOWN. Supplieddescription Pfaffian simulation is classical;
+no computing separation follows. Exact7mode/6active control passed:
+spectrum5^1,1^30,(-1)^35,0^25; same lowmoments for different phases;
+learned56Givens frame and phase recovery; k4/k2 reject mixture shortcuts.
+No full/noisy learner, general sparsity, unknownMajoranas, novelty,
+separation or quantum execution. Two useful terminal Claude reports,
+estimate USD1.650348, checked dispositions in note; no retry/balance claim.
+
+Next hard question: which independently selected native problem now has a
+paid operation worth extending? General sparse-Fock learning remains open,
+but no adjacent extension is queued. Start STATE/TRAPS, then run
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'unknown Gaussian sparse Fock learning' -k 3`;
+expected artifact is an independent source/baseline shortlist. Accept a
+new experiment only with a new end-to-end role and explicit falsifier;
+do not rerun the closed cat control or build a moment backend by inertia.
+Mechanical preservation instructions are the newest follow-up entry.
+
+## 2026-11-07 General Sparse Algebraic-Constant Lattice
+
+GENERAL_SPARSE_CONSTANTS_ATTACK.md establishes a reviewed WRITTEN randomized
+CLASSICAL polynomial sparse-BIT algorithm for FULL Alg={e:u^e algebraic/Q}
+in EVERY monic irreducible Q(T)[Y]/f of charged growingdegree delta, growing
+s,k and sparse rational coefficients/binary T exponents. No constants/place
+or inverse advice. This is NOT full Rel={e:u^e=1}; constants/torsion remain.
+
+All extended derivatives are paid in the ORIGINAL Y basis. Implicit common
+D/determinant numerators have explicit polynomial-log norm/degree bounds;
+large-prime evaluation, FULL integer congruence kernel and exactLLL prefix
+recover Alg without expansion or finite-index loss. Rank0/fullrank included.
+No new quantum construction. Existing delta1/2/Kummer and finiteQ-algebra
+classical fullRel algorithms remain the stronger baselines in their scopes.
+
+The explicit Eisenstein family f=prod_j(Y-j(2+T^M))-T^M(T^M-1)(2+T^M),
+evenbinaryM, defeats naive uncancelledLC at0/infinity and forces Omega(M)
+expanded coefficient bits at EVERYgood rational specialization in its monic
+basis. This is an operation-level falsifier: its u_j tuple actually has
+Alg=0, and norms repair its LC cancellation. No native hardness or general
+constant-map/compact-specialization impossibility. Individual norm/trace/
+charpolynomial summaries also lose joint constant embedding alignment.
+
+Core/counterfamily review and one exact CLASSICAL quartic control passed:
+N41bits unexpanded, four original basis coefficients, derivative rank2,
+Alg rank5/fullLLL lattice, nonrationalconstants/order2 sign, badp257 rank1,
+and symbolic Eisenstein residue-6. A Sage API unpacking repair preceded
+completion; no source formula weakened. No generic/full/quantum execution.
+Two terminal empty Claude calls (one refusal, one max_tokens), estimate
+USD0.900988; no findings/retries/pending call/balance inference.
+
+Next hard question: independently select a native mechanism, or reopen the
+FULL classicalRel attack only with a paid uniform compact-constant operation.
+No easy-face subclass, genericbackend or further nearby barrier is queued.
+Next command ONLY if affected formulas change:
+`/opt/anaconda3/envs/qsearch-cas/bin/python research/audits/controls/general_sparse_constants/control.py`.
+Expected JSON facts as above and all fullRel/map/quantum/speedup/novelty gates
+false. Gemini preservation items are at the top of the mechanical queue.
+
+## 2026-11-07 Hidden Cubic Phase Admission
+
+HIDDEN_CUBIC_PHASE_LEARNING.md: reviewed admission pass, PARKED. Input fresh
+exact copies of unknown C|phase_f>, unknown Clifford and cubic hypergraph
+max occurrence2; output target is a known approximate preparation circuit.
+No inverse/channel/hidden frame. Actual ABB/Haug/Fechisin sources do not pay
+frame recovery. Known f,C give polynomial CLASSICAL exact Bell sampling via
+quadratic Fourier radical equations; characteristic2 offsets matter.
+
+PROVED for EVERY degree d>=2 Boolean phase state, any product of k affine
+Bell parities has probability0 or >=2^[-2k-(d-1)(2^k-1)], including unknown
+Clifford relabeling. Real commuting-Pauli projector and Reed-Muller distance
+prove it. Thus polynomial copies exclude every FALSE <=5-factor equation
+at d3 (loose constant2^-72), even when selected adaptively. This does NOT
+certify the entire empirical K5, find factors, or recover a valid frame.
+Exact local occurrence2 equations are b_i product_N(i)(1+a_j)=0.
+
+Full degree2 graph-edge vanishing spaces contain a two-affine-factor
+polynomial with prescribed value P(0)=1 iff graph is4-colorable. This
+scoped generic oracle is not free; unprescribed factor search has the easy
+sum_i x_i, and NO native Bell-hardness reduction is claimed. Source/proof/
+reduction reviews complete. The absent frame operation, not a no-go, parks
+this line after one admission pass. No generic backend or further gap sweep.
+
+Exact CLASSICAL six-variable K4 control passed after QQ API correction:
+all4096 probabilities, support925, ranks0/2/4 counts1/7/56, offset trap,
+all local constraints, affine relabel, K1=0/K2dim1 and event1/8. Only finite
+width6, no asymptotic width or learner inference. Two terminal Claude calls
+exhausted32768 tokens each with EMPTY reports; estimate USD2.350002. No
+findings/retries/pending call/balance inference. All learner/novelty/speedup,
+quantum execution, noisy-source and native-hardness gates remain false.
+
+Next hard question: independent externally valuable mechanism selection;
+reopen only with a concrete paid phase-frame extraction operation. Next
+command ONLY if affected formulas change:
+`/opt/anaconda3/envs/qsearch-cas/bin/python research/audits/controls/hidden_cubic_learning/control.py`.
+Expected JSON values as above and false claim gates. Gemini preservation
+items are at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Cyclic-Support Monomial Descent Solver
+
+WRITTEN bounded-error quantum polynomial-BIT composition under EXPLICIT GRH:
+input growing-degree Galois E/Q with maximal-order table and all automorphisms,
+arbitrary growing-rank integer monomial G-action A_g, and expanded nonzero
+cocycle a_g. Return NO or compact x with a_g=x/(g star x). E/group/action
+and their sizes are charged input, not a free splitting-field construction.
+CYCLIC_SUPPORT_MONOMIAL_DESCENT.md gives the complete native algorithm.
+
+PROVED unconditional support theorem under ordinary class support in every
+cyclic fixed field E^C. Unramified decomposition D and its unique prime over
+q in E^D give primitive valuation1; invariant m transfers over LEFT cosets
+without |D| multiplication. GRH/discriminant tower/source48 pay polynomial
+numerical S without constructing any fixed field. Clear coordinate denominators
+before factoring numerator norms; norm-only support can miss opposite primes.
+
+Complete compact S-units plus torsion feed EXISTING Lenstra--Silverberg
+full atom-relation lattices. Integer residual solving handles all G equations,
+retains torsion, and returns polynomial-bit compact exponents. LS also gives
+an unconditional deterministic positive verifier BEFORE emission. Torsion is
+paid through LS decomposition of E[T]/Phi_m, m<=2N^2. No new log/equality
+subsystem, unit-DLog oracle, expanded point or advice. NO depends on the
+complete-source event; one aggregate error budget, no unbounded retries.
+
+Core/source/coordinate/integrated reviews closed. Classical S-units with the
+SAME back end is the generic comparator; Hilbert90/permutation/conic cases
+are stronger. Prior Galois cohomology and KM Amitsur quantum S-unit algorithms
+substantially overlap; checked torsor-Brauer results have retract-rational
+scope. Priority UNKNOWN. No novelty/separation, general succinct-torus,
+integral/short point, GRH removal or full/quantum execution claim.
+
+One exact CLASSICAL Q(zeta7) control passed: p13 primitive transfer, wrong
+inverse action, norm-one hidden support, order14 torsion, full-group Smith
+solution and260-bit compact exponents without expansion. General LS and
+quantum primitives were not executed. Fable refused (no report), Opus
+coordinate audit useful; total estimated USD0.482402, no retry/pending call
+or invoice/balance inference. Optional log route was superseded by prior art.
+
+Next hard question: independent native-mechanism selection by external value;
+no automatic torsor extension or new solver admitted. Next command ONLY if
+affected formulas change:
+`/opt/anaconda3/envs/qsearch-cas/bin/python research/audits/controls/monomial_descent/control.py`.
+Expected JSON: primitive[1,0,0], wrong orientation/norm-average rejection,
+norm1 with opposite13-valuations, torsion14, all6 equations verified,
+260-bit exponents/no expansion and all execution/GRH/speedup gates false.
+Gemini preservation items are at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Tensor-Square Rational Norm Solver
+
+WRITTEN bounded-error quantum polynomial-BIT composition under EXPLICIT GRH
+for arbitrary growing-degree L/Q, supplied maximal-order basis/table, binary
+rational a, no closure/unit/class/solution advice. Return NO or COMPACT x
+with N(x)=a; positive outputs have an exact classical compact certificate.
+TENSOR_SQUARE_RATIONAL_NORMS.md contains the full proof and resource model.
+
+Unconditional support theorem: if S contains ramified primes and class-group
+generators of all factors of L tensor L, every S-supported global norm has
+an S-unit preimage. Paired norms and ALL primitive residue-degree syzygies
+remove unwanted valuations integrally. Tensor discriminant D^(2n) plus the
+actual GRH constant48 gives a polynomial NUMERICAL prime cutoff. Only L's
+complete compact S-unit basis is computed, using existing quantum arithmetic;
+all auxiliary fields and principalizers remain proof objects. Gcd-free exact
+norm coordinates, sign row and integer HNF pay compact output/verification.
+
+Core/source/resource/final reviews closed. Simon's primary thesis already
+contains norm-one support reduction and closure-field principalization;
+inspected tensor-torus prior art has coprimality hypotheses. Priority UNKNOWN.
+Strongest comparator: same reduction with classical S-unit/factoring methods;
+conics and HNP local-decision methods apply on their actual subclasses.
+HNP does NOT construct the witness; the degree5 control is an HNP case.
+Claude's proposed smooth search lacks proved coverage/expected runtime and
+its polynomial Chebotarev search clock is not established. No separation,
+novelty, integral/short solution, GRH removal or full/quantum execution claim.
+
+One exact Sage/PARI degree5 control passed: tensor degrees5,20; actual (2,3)
+prime pair gives norm1 and valuations(3,-2); tensor discriminant, saturation,
+classical norm31 witness and compact signed norm-31 all checked. Finite only.
+Fable and Opus both completed and verified/dispositioned, total estimated
+USD1.325932; no retry, pending API call, invoice or balance inference.
+
+Next hard question is independent native-mechanism selection with external
+value beyond recomposing known primitives, not an automatic norm extension.
+No further implementation admitted. Next command ONLY if affected formulas
+change: `/opt/anaconda3/envs/qsearch-cas/bin/python research/audits/controls/tensor_square_norm/norm_control.py`.
+Expected JSON: paired norm1, valuations(3,-2), all-pair index1 versus false
+star/raw index2, compact norm-31 with no expansion; all general-execution,
+GRH-verification and speedup gates false. Gemini's precise scope-preservation
+items are at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-07 Arbitrary-Pauli One-Rotation Learner
+
+WRITTEN end-to-end polynomial-time quantum-copy learner: every exact
+C exp(-i*pi*P/8)H^n, unknown Clifford and arbitrary signed Pauli including
+partial/empty support; approximate preparation within epsilon, failure eta.
+No supplied frame, source inverse, evaluator or chosen-state access.
+Core, endpoint, actual-source and final integrated reviews complete.
+ARBITRARY_PAULI_MAGIC_LEARNING.md contains the full paid algorithm.
+
+For active w>=25, deletion of interference region mass <=(3/4)^w leaves
+canonical envelope K3 and gap1/1024. Affine directions transform by LINEAR
+parts; old polynomial cubic extraction includes the true physical axis.
+For w<=24, nonzero core mass >=4^-24/12 gives GLOBAL gamma2>=4^-24/48.
+Haug exact block recovery then branches: direct global approximate tomography
+for bounded blocks; cubic correction, capped exact finite-H learner and fresh
+original-copy known-candidate inverse verification for the large block.
+Explicit universal gap inverse ~1.35e16: asymptotic, NOT practical efficiency.
+
+Counterexamples/guards: one Y rotation becomes a stabilizer, so all-weight
+same-K3 is false; all-zero verification does NOT have guaranteed completeness
+for approximate tomography. Small branch outputs directly. Actual baseline
+already covers logarithmic width with paid gap; known-coordinate MPS and
+process/Choi access do not supply the native decoder. No novelty, separation,
+noisy/angle/two-rotation/MPS/channel or executed-full-algorithm claim.
+
+One exact Sage control checks Y, YZZZ, YZZZI and YZZZZ; the latter loses
+six envelope labels. Reused n4 Macaulay recovers physical axis81 without
+coefficient search; affine-point shortcut fails. No asymptotic inference.
+Both Claude audits completed, total estimated USD1.432656; verified main
+proofs, corrected sign and hypothesis-count wording, no balance inference.
+STATE prefix/Now/accounted row and Gemini mechanical queue are updated.
+Next hard question: which independent native operation can remove a decisive
+end-to-end blocker outside this quantum-copy learning class? Next command:
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "<independently selected native mechanism>"`
+then actual primary sources and matched baseline lookup. Expected artifact:
+one admitted mechanism with input/output, cost and falsifier, or a specific
+rejection; acceptance requires a paid constructive operation. No adjacent
+implementation, broad suite or further interference sweep is queued.
+
+## 2026-11-06 One-Rotation Cubic Bell Learner
+
+- ONE_ROTATION_MAGIC_LEARNING.md is a reviewed WRITTEN polynomial-time
+  copy learner for EVERY n>=4 exact psi=C exp(-i*pi*Z^n/8)|H>^n, unknown
+  Clifford. Output preparation within trace distance epsilon, failure eta;
+  polynomial n,1/epsilon,log1eta. No source inverse, evaluator or hidden axes.
+- Exact Bell law and gamma_D>=2^(-2D-3) pay COMPLETE cubic K3. Uniform
+  K3/top-form/Lie proof plus linear square-zero extraction and degree3
+  Macaulay algebra return n+1 PHYSICAL axes including the correcting one.
+  Unknown affine shifts disappear only in top degree; F, not F^-T covariance.
+  No unique-axis, generic MQ or exponential matrix/assignment search.
+- Corrected finite-H products use the existing exact learner. Cap every
+  branch and validate returned unitary format; test fresh original copies
+  with the KNOWN candidate inverse, all-zero m=ceil(epsilon^-2 ln(4r/eta)).
+  Total bad-output/ABORT probability<eta; wrong accepted branches need only
+  be epsilon-close. No unknown-source inverse or exact equality certificate.
+- Core/source/end-to-end independent reviews complete. K2=<q> implies
+  Clifford-product width n; every nontrivial Clifford PURE-product cut is
+  >0.088 away. This separates source applicability, NOT learning hardness.
+  Strongest baseline is actual Haug/Aguilar product/Choi learning under its
+  true access; arbitrary unknown-Clifford bond2 MPS is not supplied free.
+- Exact n4 cyclotomic two-frame Bell/correction and support-to-Macaulay
+  controls pass:106 support labels, five axes equal forward conjugation,
+  zero coefficient assignments searched. Naive p-period and abelian-Lie
+  commutator shortcuts are FALSIFIED. No full learner/quantum execution.
+- Claude gap audit useful USD0.314024 estimate; Fable extraction empty
+  max_tokens USD1.65344; distinct rank-one audit refused USD0.0214. Total
+  USD1.988864 estimated, no findings/retries for empty calls, no invoice or
+  exact balance inference. Dispositions: audits/reviews/2026-11-06-one-
+  rotation-learning.md; closed algebra proof is the adjacent cubic-axis note.
+- No novelty, classical separation, arbitrary noisy/MPS/Pauli-rotation
+  extension or hardware claim. No adjacent implementation queued. Next
+  command: STATE/TRAPS, corpus been-tried/baselines and primary literature
+  for independently ranked native hypotheses. Expected artifact: a paid
+  end-to-end mechanism and cheapest decisive test. Gemini queue: matching top.
+
+## 2026-11-06 One-Rotation Cubic Source and Axis Candidate
+
+- ONE_ROTATION_MAGIC_LEARNING.md now gives a complete written CANDIDATE
+  learner for exact copies C exp(-i*pi*Z^n/8)|H>^n, n>=4. Output a
+  preparation within trace distance epsilon, failure eta, target polynomial
+  n,1/epsilon,log1eta. No inverse/query/axes advice or classical-input speedup.
+- Exact Bell law and gamma_D>=2^(-2D-3) prove a polynomial cubic source;
+  Opus audit and n4 cyclotomic two-frame control complete. Universal q=0
+  kills naive translation-period extraction. No generic noise extension.
+- Closed proposed all-n algebra proof: audits/reviews/2026-11-06-one-rotation-
+  cubic-axis.md. Exact K3 and top W yield L=aI+N_D, D=diag(c)+b11t.
+  Abelian commutator shortcut FALSIFIED. Linear square-zero part and degree3
+  Macaulay algebra return n+1 axes including Fp; no hidden frame, rank search,
+  unique-axis claim or n-parity restriction. Independent proof review pending.
+- Candidate corrections feed a CAPPED existing finite-H product learner.
+  Verify returned preparations using their KNOWN inverse on fresh source
+  copies, m=ceil(epsilon^-2 ln(4(n+1)/eta)); no unknown preparation inverse
+  or exact wrong-branch equality certificate. Proper approximate output only.
+- Actual primary source audit: general unknown-Clifford bond2 MPS is not
+  automatically covered; the correctly corrected product IS already learned
+  exactly by Haug. Published typical Choi guarantees do not give source access.
+- Claude extraction Fable ended empty max_tokens USD1.65344 estimate; distinct
+  rank-one proof Opus refused empty USD0.0214. No findings/retries. Useful
+  exact-law/gap Opus USD0.314024; total estimate USD1.988864, not invoice/balance.
+- Next command: inspect independent all-n review and the one native scrambled
+  K3/Lie/Macaulay control. Acceptance needs the symbolic proof, full source
+  and error/resource composition. No finite-to-asymptotic/novelty/speedup
+  claim. Gemini queue: matching top entry; no larger implementation queued.
+
+## 2026-11-06 One-Rotation Magic Learning Candidate
+
+- ONE_ROTATION_MAGIC_LEARNING.md selects exact-copy learning of
+  C exp(-i*pi*Z^n/8)|H>^n, unknown Clifford, growing n, no inverse/query/axes
+  advice. Output any preparation circuit; target poly(n,log1eta). Structured
+  correlated resource-state learning, not classical-input speedup.
+- Current published quadratic Bell product learners are the baseline.
+  Parent derived a candidate exact Bell law and constant degree3 support gap,
+  giving a paid cubic coefficient space. Universal full-swap q=0 prevents
+  naive translation-period/Simon extraction. Cubics Eij and q cut support,
+  but full K3 classification and physical Pauli extraction remain OPEN.
+- Proposed concrete algebra: infinitesimal symplectic stabilizer of top
+  cubic space, then derived-algebra common kernel; independent exact check
+  running. If it identifies the rotation, undo it and use existing product
+  learner. No algorithm, novelty, speedup or finite-to-asymptotic inference.
+- Independent OPI/Gaussian/exterior comparison supplied only prior operations
+  or unpaid receivers, so no adjacent implementation admitted there.
+- Two distinct active Claude calls (algebra Fable, exact gap Opus) retained
+  under audits/claude_runs/2026-11-06-one-rotation-*. Poll same handles.
+  Next command: read their reports and one exact K3/correction falsifier;
+  expected artifact is a uniform paid extraction proof or precise failure.
+  Gemini queue: matching top MECHANICAL_FOLLOW_UP_PLAN.md entry.
+
+## 2026-11-06 Good-Dyadic Growing Selmer Composition
+
+- GOOD_DYADIC_GROWING_SELMER.md gives a reviewed WRITTEN bounded-error
+  quantum polynomial-BIT two-Selmer DIMENSION composition for explicit
+  C:y²+h y=f, monic odd d>=3, growing genus, smooth good Z2 model,
+  odd-Galois global branch field factors, and good odd primes p<=d.
+  Full coefficient/degree/error costs charged; no class/unit/point advice.
+- New CLASSICAL local operation: connected constant-etale Lang doublecover
+  plus Weil proves reduction-trace span; shallow 2u/4u perturbations span
+  formal layers. A3=2A2 falsifies deep formal sourcing. Integral differential
+  basis, root-distance bounds and exact dyadic O/8 integer filtration pay
+  generation/coordinates/precision without unit enumeration or saturation.
+- Paid large-p theorem and quantum compact T-unit/class-generator sources
+  close global composition. Append a separate sign unit per field factor;
+  aggregate complete-basis errors via actual source mu and repeat only whole
+  runs for final integer-dimension majority. Original valuations retain
+  global parity; compact atoms get their OWN polynomial norm-height precision.
+- Nonvacuity for every odd-prime genus m: odd-cyclic Grunwald/CRT shifted-G
+  family has branch algebra Q x K x K and all retained local promises.
+  No efficient input generator promised. Strongest exact duplicate-field
+  simplification is global norm-kernel K(S,2)^2; reuse K arithmetic, but
+  complete units and Cl_(K,S)[2] remain. Same-descent classical comparator.
+- Core/source/global/family/integrated independent reviews complete.
+  Claude coordinates completed (USD0.199348 estimate), trace call refused
+  empty (USD0.02434), no findings/retry. Total estimate USD0.223688, not
+  invoice/balance. Dispositions: audits/reviews/2026-11-06-good-dyadic-selmer.md.
+- One exact Sage control: genus3 cyclic cubic model, small-prime promises,
+  q32768 tangent rank3; Q2(sqrt2) O/8 relation index32, unit class dimension3,
+  all product maps checked. Saturation wrongly gives dimension0. These are
+  finite falsifiers, not local/Selmer/quantum execution or asymptotic evidence.
+- No novelty, speedup/separation, arbitrary-hyperelliptic, MW-rank, points
+  or covering output. No unverified irreducible-family obstruction used.
+  Next command: STATE/TRAPS, corpus been-tried/baselines then primary
+  literature for independently ranked native mechanisms. Expected artifact:
+  one paid end-to-end hypothesis and cheapest decisive test; no adjacent
+  implementation by inertia. Gemini queue: matching top entry.
+
+## 2026-11-06 Good-Dyadic Growing Selmer Candidate
+
+- GOOD_DYADIC_GROWING_SELMER.md records a FULL endpoint candidate: exact
+  two-Selmer DIMENSION of growing-genus C:y²+h y=f, explicit smooth Z2
+  model, monic odd f, odd-Galois global factor fields after scaling, and
+  checkable good reduction at all odd p<=d. No points/class/unit/local
+  advice. Native degree/input bits charged; no MW-rank/cover/novelty claim.
+- New concrete CLASSICAL dyadic operation: polynomial F_(2^a) point traces
+  span reduction via connected Lang doublecover+Weil; shallow 2u/4u point
+  differences span formal layers. Deep A3 points are doubles, hence zero.
+  Unit hbar avoids Weierstrass poles and gives exact v2F(4x)=2d-2.
+- Exact dyadic squareclasses use O_E/8, residue-digit generators and full
+  integer filtration kernels, NOT unit enumeration or saturation. Combine
+  with paid large-p local images and existing quantum global arithmetic.
+  Global compact-atom/resource and two local proof audits pending.
+- The initial irreducible-family endpoint has a possible genus obstruction;
+  actual candidate permits product fields. Shifted G construction has Q
+  plus two copies of an odd-cyclic field; Grunwald/CRT nonvacuity and all
+  small-prime conditions are under independent check. No theorem promoted.
+- Primary sources and two distinct active Claude requests retained under
+  audits/sources/good_dyadic_selmer and claude_runs/{good-dyadic-trace-opus,
+  dyadic-coordinates-opus} with 2026-11-06 prefixes. Poll existing runs,
+  no duplicate calls. Codex derivation audit file is a proposal, not source.
+- Next command: read existing reports/reviews, then one exact native
+  shifted-G/dyadic-filtration/tangent control. Expected artifacts: verified
+  dispositions and full paid composition or a concrete falsifier. Gemini
+  queue is the matching top MECHANICAL_FOLLOW_UP_PLAN.md entry.
+
+## 2026-11-06 Large-Prime Local Kummer Image Composition
+
+- LARGE_PRIME_LOCAL_KUMMER_IMAGE.md is a reviewed WRITTEN CLASSICAL
+  polynomial-BIT complete local-image algorithm for monic separable
+  f in Z[X], d=2g+1>=3, p>d, growing g, arbitrary bad reduction. Returns
+  delta(J(Qp)) basis in a returned fixed frame with probability>=1-eta,
+  otherwise ABORT; every returned basis is exact. No hidden local source,
+  points, splitting field, class advice or integer-discriminant factoring.
+- All degree<=g tame extensions are paid. Bounded exceptional-disc tree
+  handles fractional-root children; generic character-FUNCTIONAL sampling
+  spans the image in polynomial work without all-pattern enumeration.
+  Actual Stoll rank r-1 certifies completeness. Source p-integral bases,
+  finite-ring coordinates and explicit P,S,W bounds pay BIT precision.
+- Independent core, full-source/arithmetic and final actual-text reviews
+  complete; Claude coordinate report repairs verified. Full source §3/§5
+  closes its packet omission. Its d1,p2 counterexample is outside native
+  scope. Component bases, decomposition stopping count, fixed frame and
+  logarithmic Las Vegas restarts are explicit. Ledger:
+  audits/reviews/2026-11-06-local-kummer-image.md.
+- One exact Sage control: d5,p10007 rank4 and minimum functional count2475;
+  stronger every-pattern density is false. Native p7 fractional-root child
+  and Q7(sqrt7) valuation9 Cramer normalization catch two other mistakes.
+  No full local algorithm, quantum execution or asymptotic test inference.
+- Strongest comparator: Stoll's complete residue-field scan and random
+  divisor source with tiny regions; fixed-cubic character route already
+  local. No novelty, speedup, global Selmer, small/wild/dyadic, MW rank,
+  rational point or covering-curve claim. Global arithmetic remains unpaid.
+- Claude narrow Opus completed, estimate USD0.2938. Three distinct empty
+  max_tokens calls cost estimates USD3.30837, USD1.382444, USD1.78261;
+  no findings or retries. Pass total estimate USD6.767224, not an invoice
+  or exact remaining balance. Owner's seven-day use-all allocation retained.
+- No larger implementation or nearby extension queued. Next command: read
+  STATE/TRAPS, then corpus been-tried/baselines and primary literature for
+  independently ranked native mechanisms. Expected artifact: one paid
+  end-to-end operation and cheapest decisive falsifier. Do not continue
+  local barriers by inertia. Gemini queue: matching top entry.
+
+## 2026-11-06 Local Kummer Arithmetic Completion Candidate
+
+- LARGE_PRIME_LOCAL_KUMMER_IMAGE.md section8 now gives an explicit proposed
+  polynomial-BIT completion: actual p-integral basis theorem at GIVEN p,
+  finite-ring radical/idempotents, free component bases, uniformizers and
+  determinant/Cramer squareclass coordinates. Global Q factorization pays
+  the source's field hypothesis; no integer-discriminant factoring advice.
+- P=16d^2g^2(Delta+2)+16 exceeds all determinant/Cramer losses. Explicit
+  unramified/Eisenstein towers pay local-factor arithmetic at relative
+  degree d. E_i/K occur only in the character PROOF, not the runtime tree.
+  Independent Codex core and source/precision review accepted with repairs;
+  a narrow independent Opus coordinate audit is pending. Runtime claim
+  remains a candidate until final actual-text review/disposition.
+- Fable core call terminated max_tokens with zero report, estimate USD1.78261;
+  no findings or retry. Existing local-coordinates-opus is a distinct narrow
+  arithmetic obligation. Keep no global Selmer, small/wild/dyadic, novelty,
+  quantum speedup or finite-control-to-theorem promotion.
+- Next command: inspect EXISTING local-coordinates-opus result/report; run
+  one exact generic-span/fractional-child/normalization control. Expected
+  artifacts: control JSON and review disposition. Acceptance: actual
+  formulas and precision proof stand independently of finite outcomes.
+  Gemini queue: matching top MECHANICAL_FOLLOW_UP_PLAN.md entry.
+
+## 2026-11-06 Large-Prime Local Kummer Candidate
+
+- LARGE_PRIME_LOCAL_KUMMER_IMAGE.md records a concrete CLASSICAL candidate:
+  complete delta(J(Qp)) for monic separable odd degree d=2g+1, p>d,
+  growing genus and arbitrary bad reduction, polynomial native BIT cost.
+  All degree<=g tame extensions, bounded exceptional-disc traversal and
+  character-FUNCTIONAL span sampling replace residue scans/rare sources.
+- Parent derivation: every nonzero functional on valid generic images has
+  density>=1/8 for q>=256d^2, including square/constant degeneracies; below
+  that threshold enumerate. Union bound uses 2^(2d) only in the PROOF,
+  hence O(d+log(M/eta)) samples, not all sign patterns. Fractional-distance
+  children need strict-root neighborhoods, not closed-disc root claims.
+- Actual Stoll4.4 gives rank r-1; 6.1/6.3 and norm diagram give coverage,
+  stability and root images. Local factorization/coordinate/norm BIT costs
+  and polynomial precision remain under independent review. No completed
+  local algorithm, global Selmer, small/wild/dyadic, novelty or quantum claim.
+- Strongest baseline: Stoll's systematic field scan and random polynomial
+  source with explicitly tiny generator sets; fixed-cubic variant already
+  local. Independent native comparison selected this paid-source operation.
+  General sparse char0 small-order specialization remains OPEN; actual CIT
+  does not prove a small good order. Two Claude calls ended max_tokens with
+  no reports, estimates USD3.30837 and USD1.382444; no findings or retry.
+- Next command: inspect terminal result.json/response.md of EXISTING
+  audits/claude_runs/2026-11-06-local-kummer-fable and core/precision reviews.
+  Expected artifact: verified disposition ledger plus exact paid precision
+  bound or explicit blocker. Then one targeted Sage falsifier control only.
+  Gemini items: top matching MECHANICAL_FOLLOW_UP_PLAN.md entry.
+
+## 2026-11-06 Bounded-Degree Contraction Baseline Scope
+
+- BOUNDED_DEGREE_CONTRACTION_BASELINE.md is a reviewed WRITTEN source-based
+  deterministic exact sum-product algorithm for explicit bounded-arity/
+  occurrence Boolean tables over fixed Q(zeta8), with explicitly charged
+  variable list L>=n. Time poly(L)*2^{O(n(loglogn)^2/sqrt(logn))}, poly(L)
+  space. Main-source layout, common counting and added BIT costs checked.
+- Explicit H,T,CNOT one-amplitude reduction has n<=2G, b=2,w<=4,d<=2n;
+  corresponding gate-count bound is subexponential, NOT polynomial or a
+  subexponential qubit-count bound. No full ETH-paper acceptance, sharper
+  appendix, novelty, sampler, oracle/succinct-gate or new quantum claim.
+- Strongest TIME comparison uses the minimum of active-qubit, applicable
+  contraction-order, stabilizer and source-based bounds; their space bounds
+  differ. This does not exclude polynomial quantum/superpolynomial classical
+  gaps. SU(n) symmetric-power compilation is known; no hidden-torus receiver
+  was supplied in the independent candidate comparison.
+- Independent layout, Claude counting and final actual-text source/bit/circuit
+  reviews complete. Repaired uncharged-unused-variable output-size ambiguity.
+  Rejected a reviewer misread caused by overlapping displayed source ranges.
+  Review: audits/reviews/2026-11-06-bounded-degree-contraction.md.
+- One exact Sage supplied-design control: four variables, nontrivial group-sum
+  kernels, K-valued factors, all nine jets and full Hermite recovery match.
+  Wrong x-dependent corrections and omitted fixed bits fail. No scaled
+  asymptotic algorithm, SAT or quantum run. Claude completed, estimate
+  USD0.32692, exact usage/report retained; no balance or invoice claim.
+- Next command: read STATE/TRAPS, then corpus been-tried and baselines for a
+  distinct native paid quantum operation, followed by actual literature.
+  Expected artifact: one concrete input/output/mechanism/cost hypothesis with
+  cheapest classical falsifier. Acceptance requires an end-to-end role;
+  no further appendix audit, simulator, sweep or neighboring subsystem queued.
+  Mechanical preservation items are at the top of the follow-up plan.
+
+## 2026-11-06 Bounded-Degree Contraction Candidate
+
+- BOUNDED_DEGREE_CONTRACTION_BASELINE.md gives a written source-based
+  deterministic subexponential exact Boolean contraction composition for
+  explicit bounded-arity/occurrence tables over fixed Q(zeta8). It pays the
+  published layout and counting operations, plus polynomial BIT/space costs.
+  The explicit H,T,CNOT one-amplitude reduction has n=O(G), b=2,w<=4 and
+  proposed time poly(input)*2^{O(G(loglogG)^2/sqrt(logG))}.
+- Actual primary layout/parameter review and independent Claude algebraic
+  counting review found no blocker. Parent bit proof and circuit scope await
+  final independent actual-text review. No whole ETH-paper acceptance, sharper
+  exponent, novelty, polynomial simulation, oracle simulation, all-amplitudes,
+  approximate sampler, new quantum algorithm or separation claim.
+- One exact Sage four-variable supplied-design control passed all nine jets
+  and Hermite recovery over Q(zeta8), with nontrivial group-sum kernels.
+  Wrong x-dependent corrections and omitted fixed-bit restrictions fail.
+  No asymptotic construction, SAT or quantum run. Claude completed; estimate
+  USD0.32692; request/context/usage/report retained in the note's run bundle.
+- Strongest baseline is the minimum of active-qubit, applicable low-width,
+  stabilizer and source-based contraction costs, not the new expression alone.
+  Weighted-character torus and SU(n) compilation supplied no paid new receiver.
+- Next: independent actual-text fixed-field bit/circuit review of the note;
+  expected review artifact and acceptance: all arithmetic, source boundaries,
+  original size parameters and claim exclusions preserved. No new execution
+  absent a concrete failure. Mechanical preservation items are atop the queue.
+
+## 2026-11-06 Monomial Kummer Sparse Classical Relations
+
+- MONOMIAL_KUMMER_SPARSE_RELATIONS.md gives a complete WRITTEN bounded-
+  error CLASSICAL polynomial sparse-BIT full-relation algorithm for
+  Q(T)[Y]/(Y^delta-a*T^v), irreducible, nonzero sparse rational power-basis
+  inputs, growing s,k and CHARGED numerical delta, binary T exponents.
+  No inverse, constant-field, factor, place or relation advice is supplied.
+- Unimodular exponents compute K=Q(alpha), alpha^g=a. Tied leading terms
+  have distinct powers in an interval<g, so beta is small and nonzero.
+  LC=alpha^c beta remains compact; never expand alpha^c. Actual LS on
+  ORIGINAL beta_i,alpha plus integer pullback/Alg intersection pays torsion.
+- Original-basis Euler derivatives/adjugates have explicit polynomial-bit
+  coefficient and degree bounds. Large-prime content/point avoidance and
+  exact LLL recover the entire Alg lattice. Two core and two actual-text/
+  source/resource reviews accepted; no heuristic LLL or finite-index loss.
+- One exact Sage control: delta6, M=2^40+172, v=6M+2, K=Q(sqrt2),
+  six units. Recovered Alg rank5 and exact Rel rank3, with generators
+  (6,-v,-1,0,0,0),(0,0,0,1,1,0),(0,0,0,0,0,2). Preserved compact
+  alpha^-M, tied coefficients, derivative-only constant2 and LC-only Z
+  false positives, p257 content collapse, and unsaturated order2 sign.
+  Control-only basis bound/prime and direct small-field certificate used;
+  no general LS, full theorem-sized algorithm or quantum execution.
+- The classical baseline covers EVERY input in this monomial family, not
+  every growing-degree f. No novelty, new quantum primitive, separation,
+  arbitrary ideal conversion or poly(logdelta) claim. No API call this pass.
+  Sources: audits/sources/monomial_kummer_relations/. Review:
+  audits/reviews/2026-11-06-monomial-kummer-relations.md. Exact artifacts:
+  audits/controls/monomial_kummer_relations/native_control.{py,json}.
+- Next hard question must be selected by independent external value. No
+  automatic constant-field extension, implementation or sweep. Next command
+  at pass boundary: read STATE/TRAPS, then corpus been-tried and baselines,
+  followed by actual primary literature for a DISTINCT paid operation.
+  Expected artifact: one native hypothesis with cheapest decisive falsifier;
+  acceptance requires an end-to-end role and strongest applicable classical
+  comparator. Mechanical preservation items are at the top of the queue.
+
+## 2026-11-06 Monomial Kummer Sparse Classical Candidate
+
+- MONOMIAL_KUMMER_SPARSE_RELATIONS.md gives a proposed full CLASSICAL
+  polynomial sparse-BIT relation algorithm for Q(T)[Y]/(Y^delta-a*T^v),
+  monic irreducible, nonzero supplied sparse rational power-basis units;
+  s,k,charged delta grow and T exponents are binary. No advice or expansion.
+- Unimodular exponent change computes K=Q(alpha), alpha^g=a. Tied leading
+  terms have distinct alpha exponents spanning<g; their beta cannot cancel.
+  Keep LC=alpha^c*beta compact. LS uses ORIGINAL small beta_i and alpha,
+  then an integer pullback/intersection with Alg preserves full torsion.
+- Euler derivative/adjugate coefficient bounds plus large-characteristic
+  specialization and exact LLL recover all Alg in polynomial sparse BIT time.
+  Both core parts independently accepted; combined actual-text/resource
+  review, including explicit coefficient bound, is pending. No general f,
+  positive-characteristic, novelty, quantum advantage or execution claim.
+- Next command: CAS Python audits/controls/monomial_kummer_relations/native_control.py
+  after writing the specified single control. Expected JSON: delta6,
+  M=2^40+172, two nontrivial free/constant relations plus order2 sign relation;
+  compact LC, derivative/LC false positives, p257 failure and nonsaturation.
+  Acceptance requires exact native identities without huge-power expansion;
+  no general LS or full algorithm execution claim. Mechanical queue at top.
+
+## 2026-11-06 Exact Oscillator Pairing and Independent Mechanism Triage
+
+- OSCILLATOR_PAIRING_AND_MECHANISM_TRIAGE.md proves the EXACT universal
+  pairing sigma(y).z=y.pi(z) forces pi=Mz and sigma=M^T y. For a public
+  square permutation evaluator, basis queries plus Gaussian elimination
+  give the optimum position score and exact uniform shell samples. With a
+  y-dependent global phase, only an affine offset is added. Promise is
+  assumed, not certified by basis queries; no quantum-only access transfer.
+- Actual2509.14443v2 Section6.3 has this premise; rectangular Max-LINSAT
+  and other nonlinear constructions remain open. This is not a paper flaw,
+  general DQI simulation, novel algorithm or separation. One exact Sage
+  control solved score3 and exhibited Toffoli's0-versus1 pairing failure.
+  Independent narrow review accepted the theorem and scope qualifications.
+- Independent comparison rejected no native problem wholesale: complete-list
+  DQI is already Jo plus the retained random-table proof; rank-metric DQI is
+  prior art; spired graphs supplied no native compiler; code equivalence and
+  supersingular path search supplied no new paid decoder. No new subsystem.
+- Growing-degree character recovery remains the high-value query/time gap,
+  but no paid operation removing the factorial emerged. Existing full-table,
+  empirical-search and chosen-Fourier-feature classical baselines retained.
+  Claude constructive run2026-11-06-character-factorial-opus returned terminal
+  refusal, empty report, estimated$0.063892; NO findings and no retry.
+- Review: audits/reviews/2026-11-06-oscillator-pairing-triage.md. Exact control:
+  audits/controls/oscillator_pairing/exact_control.{py,json}. All quantum,
+  novelty, speedup and general nonlinear/noisy/source-extension gates false.
+- Next hard question: identify a new paid native operation, independently
+  ranked; no priority from an unresolved residual. For character re-entry,
+  write its exact original-oracle phase formula BEFORE running a control.
+  Next pass command: read STATE/TRAPS, then corpus been-tried / baselines and
+  actual primary source for that operation. Expected artifact: one concrete
+  hypothesis with cheapest falsifier; acceptance requires a paid end-to-end
+  role. No automatic API retry, scan or implementation queued; Gemini items
+  are at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-06 Sparse Characteristic-Zero Relations and Quadratic Classical Match
+
+- SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md gives a complete WRITTEN
+  bounded-error quantum polynomial-BIT full-relation algorithm for explicit
+  Q(T)[Y]/monic irreducible f, growing s,k,charged delta, binary sparse T
+  exponents and promised nonzero units. Independent core/source/resource and
+  final actual-text reviews complete. No inverse, constant-field, valuation,
+  source-point or relation advice; not arbitrary ideal conversion.
+- Full basis BIT bound includes nontorsion constants: proof-only finiteQ
+  fiber, C_A field injection, explicit height bound, quantitative Northcott,
+  ALL-place log lattice/John/LLL and roots-of-unity index<=2delta². Actual
+  large-prime content + finite-point norm union bounds pay ALL short false
+  relations; full-ring HSP and exact nonsaturated LLL are reused and charged.
+- Strong classical attack closes EVERY delta1 and delta2 input in this SAME
+  sparse-bit model, with growing variables/tuple. Modular derivatives/LLL
+  recover Alg; rational or quadratic leading coefficients and actual LS
+  relations among ORIGINAL small constants recover Rel. Quadratic leading
+  cancellation uses one norm, no huge Puiseux expansion or basis powers.
+- One Sage native control passed, N=2^40+1 kept binary. Y²-T^(2N)-2,
+  units(Y-T^N,Y+T^N,2,T): both branches give exact Z(1,1,-1,0). Derivative-
+  only constant2 and LC-only T are false positives; p257|N erases a real
+  constraint. No HSP/generalLS/full algorithm or theorem-sized prime run.
+- Review repairs retained: C_A instead of all fraction-field constants;
+  integral model instead of a Q-algebra modulo p; sharp adjugate bound;
+  nonconstant LCs change with branch even if constant embedding stays fixed;
+  rational inverses are explicitly paid, not absent. Sources/hashes:
+  audits/sources/sparse_charzero_relations/. Review:
+  audits/reviews/2026-11-06-sparse-charzero-relations.md. No API call this pass.
+- No novelty, separation, new quantum primitive, general growing-degree
+  classical match, reverse char0 DLog equivalence or execution claim. General
+  sparse-bit algebraic leading-place computation remains UNKNOWN.
+- Next command at NEW-pass boundary: read STATE/TRAPS, run corpus been-tried
+  then primary literature and baseline checks for at most3 independent native
+  mechanisms. Expected artifact: one externally ranked exact hypothesis with
+  cheapest decisive experiment. Acceptance: paid end-to-end role and explicit
+  strongest classical match; the leftover arithmetic question gets no priority
+  by inertia. Mechanical queue at top; no wrapper, sweep or paper queued.
+
+## 2026-11-06 Sparse Characteristic-Zero Relations Candidate
+
+- SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md proposes full bounded-error
+  quantum polynomial-BIT relations for explicit Q(T)[Y]/monic irreducible f,
+  growing s,k,charged delta and sparse binary T exponents, no advice/inverses.
+  Independent alternative selection checked actual curve-zeta and thermal
+  sources plus native syndrome/Legendre blockers before selecting this.
+- New hard derivation: uniform full-relation basis bound, including nontorsion
+  algebraic constants. A proof-only integer fiber embeds constants into a
+  number field of degree<=delta. Explicit height bounds, quantitative
+  Northcott, ALL-place log lattice/John/LLL, torsion index<=2delta² and HNF
+  give polynomial BIT basis size. Independent Codex core review accepts.
+- Random LARGE-prime content avoidance and finite-point norm union bound
+  aim to preserve all true/short-false relations. Full finite ring HSP and
+  exact nonsaturated LLL reuse the preceding paid construction. Complete
+  prime/source/resource review remains PENDING; no quantum execution.
+- Cheapest classical attack succeeds for ALL delta1 rational functions:
+  modular logarithmic derivatives + LLL recover Alg; leading coefficients
+  and original rational relations recover fullRel. Sparse input, growing
+  variables/tuple, no dense expansion or integer factoring. Review pending.
+  Existing finiteQ-algebra and fixed-variable/numerical-degree results apply
+  only under their own input scopes. No novelty, separation, full general
+  classical match or arbitrary-ideal conversion claim.
+- Next command: source/review checks and ONE exact symbolic-exponent Sage
+  control; artifacts in audits/controls/sparse_charzero_relations/ and
+  audits/reviews/2026-11-06-sparse-charzero-relations.md. Acceptance: no loop
+  in numerical degree, both derivative/constant false positives caught,
+  genuine primes/content/units and complete relation lattice accounted for.
+  Mechanical queue at top. Next hard attack: quadratic radical leading-term
+  maps, then assess whether a general sparse-bit classical counterpart exists.
+
+## 2026-11-06 Sparse Function-Field Relations and Classical Counterpart
+
+- FUNCTION_FIELD_RELATIONS_RANDOM_SPECIALIZATION.md now has an independently
+  reviewed WRITTEN bounded-error quantum poly-BIT algorithm for the full
+  relation lattice of nonzero units in explicit Fp(T)[Y]/monic irreducible f.
+  s,k,charged numerical delta grow; sparse T exponents are binary. No inverse,
+  divisor, constants, point or relation advice; not arbitrary ideal conversion.
+- Uniform basis BIT bound, random finite specialization/norm union bound,
+  canonical FULL quotient HSP using known GL period, and exact short-prefix
+  LLL all checked. Nilpotents and ambient nonsaturation retained. True
+  relations survive; all short false relations excluded with bounded error.
+- Hard classical deduction: a private random-exponent challenge pays a
+  primitive generator using generator-promised DLog without integer factoring.
+  Residue-field logs plus explicit nilpotent filtrations then recover full
+  finite-ring relations. Actual KW1906.10668 Thm1.1 yields a WHOLE classical
+  quasipolynomial bound at FIXED p; reduction/actual-text review complete.
+  Verified independent retries preserve log1eta confidence costs.
+  Together with the constant-field two-unit special case, the native problem
+  is randomized-polytime Turing equivalent to finite-field DLog. Full basis
+  second-coordinate gcd constructs the reverse reduction; no hardness claim.
+- Exact Sage F5(T), units(T,2T²,2) control passed: primitive F3125 recovers
+  true nonsaturated rank2 lattice; legal T1 produces false(1,0,0). F3[Y]/
+  (Y³-1) guard has order3, versus root-projection order1. No HSP, theorem-
+  sized field, full algorithm or asymptotic theorem inferred from controls.
+- Claude Opus audit returned empty_response/refusal, no report or findings;
+  estimated$0.047964, no retry. Ledger in audits/reviews/
+  2026-11-06-function-field-specialization-usage.json. No novelty, separation,
+  metabelian extension, classical general-polytime or execution claims.
+- Review artifact: audits/reviews/2026-11-06-function-field-specialization.md;
+  all randomness/primitive-base/nilpotent and confidence clocks paid, no
+  field-only theorem silently upgraded. Mechanical queue at top.
+- Next command for a NEW pass: read STATE/TRAPS, then corpus been-tried and
+  baselines for each of at most3 independently motivated native mechanisms,
+  followed by primary-source checks. Expected artifact: one selected precise
+  hypothesis and cheapest decisive test, recorded in a topic note/handoff.
+  Acceptance: paid end-to-end operation, explicit strongest classical match,
+  and external value comparison. No arithmetic extension or sweep by inertia.
+
+## 2026-11-06 Function-Field Random Specialization Candidate
+
+- FUNCTION_FIELD_RELATIONS_RANDOM_SPECIALIZATION.md proposes a full quantum
+  polynomial-BIT relation-lattice algorithm for explicit
+  F=Fp(T1,...,Ts)[Y]/f, f monic irreducible of charged numerical degree delta,
+  and growing k nonzero elements with rational sparse coefficients/BINARY
+  T-exponents. s,k,delta ALL grow. No inverse, divisor or constant-field
+  advice. Not a conversion from arbitrary ideal presentations.
+- New operation: random evaluation in a deliberately LARGE finite extension,
+  canonical full quotient ring, finite abelianHSP relation lattice, then
+  LLL SHORT prefix. True relations survive; uniform polynomial-bit basis
+  bound and norm-polynomial union bound aim to exclude ALL short false ones.
+  No expanded unit powers, valuations or coefficient products are computed.
+- Independent Codex accepts the uniform bound from actual Prop3.1 proof:
+  inverse-variable affine model m=s+1+L+k,D=beta+delta+2, Alg basisB0=k!D^((m+1)k),
+  constants degree<=delta, fullRel basis<=kB0p^delta. Fixed m,k was needed
+  for the published enumeration CLOCK, not this existential size bound.
+  Separate Codex review accepts exact LLL recovery incl ambient nonsaturation.
+- Complete finite-specialization/HSP proof review is PENDING in Claude run
+  audits/claude_runs/2026-11-06-function-field-specialization-opus/.
+  Known period|GL_delta(F_Q)| pays finiteHSP without unknown ring inverses.
+  Nilpotent quotients are retained; irreducibility of a SPECIALIZED f is
+  neither assumed nor required. Norm generic-field nonzeroness is essential.
+- Strong baseline: direct rational-function valuations and existing KW2.10;
+  the same algorithm with a classical finite-ring relation routine. Actual
+  KW1906.10668 Thm1.1 is quasipolynomial at fixed characteristic. No
+  novelty, general exponential separation, metabelian extension or execution.
+- Next command: one Sage native F5(T), units(T,2T²,2) control. At primitive
+  T inF3125, tight control-onlyB4 givescutoff96 below fake gap781/sqrt5;
+  expect exact rank2 NONSATURATED relations. T1 must expose a false short
+  relation. A tiny Y^3-T specialization guards against dropping nilpotents.
+  Artifacts go in audits/controls/function_field_specialization/; finite
+  controls do not runHSP or validate theorem-sized field clocks. Mechanical
+  queue at top. Next gate is full proof/source/actual-text review.
+
+## 2026-11-06 Classical Growing-Tuple Affine Unit Relations
+
+- AFFINE_UNIT_RELATIONS_DIFFERENTIAL_SPECIALIZATION.md gives a complete
+  WRITTEN deterministic CLASSICAL polynomial-bit composition for fixed
+  variable count m and GROWING supplied unit/inverse tuples in a promised
+  PRIME affine Q-algebra. Immediate characteristic-zero PRIME Z-domain
+  corollary by injective rationalization. Core, source/cost and final actual-
+  text reviews complete. No primality verification or full algorithm run.
+- dlog kernel in the Kahler module equals the algebraicity lattice. Its
+  membership problem is encoded by Y-linear forms in2m fixed variables,
+  paying Hermann bounds independently of tuple length. Generic localization
+  and a denominator-safe finite specialization preserve the algebraic
+  constant FIELD. Intersect with relations of ORIGINAL specialized units;
+  no enormous unit-basis products, source-point or divisor-map advice.
+- Explicit bounded-degree GB and reduction systems plus Cramer degree/height
+  bounds pay the entire rational-function/structure-constant construction.
+  Actual Lenstra--Silverberg Thm1.11 accepts arbitrary finite tuples and
+  nonreduced finiteQalgebras. The final relation lattice need not be saturated.
+  The supplied-unit problem does NOT compute complete units/class groups;
+  previous quantum factorial results are not classically matched by this.
+- Strong baselines: Miasnikov--Ushakov2610.27250v1 fixed-k rational branch is
+  already classical; Kreuzer--Walsh2.6/2.10/5.1 supply earlier valuation and
+  localization methods. No novelty or speedup inference. The full new
+  paper's finite-characteristic/torsion quantum and metabelian scopes remain.
+- Two exact Sage controls passed: Gm relationZ*(-2,-1,1,0) exposes both
+  one-filter false positives; Q(sqrt2) constants remain intact in the second
+  specialization. Artifacts: audits/controls/affine_unit_differential/.
+  They use elementary finite relations, not general LS/full algorithm code.
+  No parameter sweep, quantum execution or broad suite claim.
+- Promise falsifier: (1,2) in Q[x,x^-1] times Q can be lost in a generic
+  component. No reducible/nonreduced, positive-characteristic, arbitrary-m
+  or sparse binary-exponent theorem. These are scope boundaries, not no-gos.
+- Claude proof audit completed, estimated$0.393336; obligations were repaired
+  in the written proof and parent-checked against actual sources. No etale
+  restriction needed. Dispositions and ledger:
+  audits/reviews/2026-11-06-affine-unit-differential.md and
+  audits/reviews/2026-11-06-affine-unit-usage.json.
+- Next hard selection: does the remaining positive-characteristic affine
+  relation problem admit a specific paid growing-tuple operation, or do
+  independent native directions have greater value? Do not automatically
+  extend this rational baseline. Next commands: STATE/TRAPS, precise corpus
+  lookup and ACTUAL source Section4 of2610.27250 if that operation survives
+  independent comparison. Artifact/acceptance: one native contract with a
+  new operation and decisive classical test; no derivative-modp substitution
+  (dlog(x^p)=0 does not make x^p algebraic). Mechanical queue at top; no
+  implementation or further controls currently queued.
+
+## 2026-11-06 Character Fourier Feature Baseline and Exact Mask Law
+
+- LEGENDRE_FOURIER_FEATURE_CLASSICAL_MATCH.md is parent/Codex actual-text
+  and targeted Claude reviewed. In chosen-BIT access, every additive Fourier
+  mean of the uniform split source has a classical poly(m,logp,epsilon^-1)
+  estimator: sampleR, factor PUBLIC R+h, keep failures as zero observations,
+  query signs on success. Sampling/factoring timeout ABORTS. Adaptive
+  robust SQ decoders and public subspace/candidate-syndrome scores are
+  matched; full labels, empirical noise and copy-only sources are NOT.
+- A polynomial SQ decoder would still be valuable: classical chosen-BIT
+  recovery and quantum copy recovery. No such decoder is established.
+  This is a matched interface, not hardness or a broad dequantization.
+- For clean root-freeQ, the COMPLETE true-Q syndrome marginal is exactly
+  the unsigned split-mask marginal. For irreducibleQ the stronger full-
+  label model ideal moments+independent mask noise is FALSE: oldp5 actual
+  P0=8/3125 versus1/3000. EVERY oddd>=3 gives actualP0=0 but mixtureP0>0.
+  This exact discrepancy can be tiny; controlled approximation remains open.
+- Recurrence rows are not mostly correct: E[correct rows]<=1 for all m>=d,
+  including arbitrary weights/ancillas, whenQ has no rational roots. At
+  m2d-1 the bound is<=1/2+1/(2d-1). Low-inlier regression and actual
+  coherent/joint-label decoding remain OPEN. No polynomial-d quantum
+  algorithm, novelty, separation or execution claim.
+- One exact Sage reuse of the existingp5 control reproduced energy72,
+  signedsum8 and the discrepancy; it executed six classical estimator
+  populations with means1,0,1/20,-1/20,0,1/10. No new FFT, parameter sweep,
+  Monte Carlo confidence experiment or broad suite. Artifacts:
+  audits/controls/legendre_fourier_feature_match/p5_reuse.{py,json}.
+- Independent superlattice source audit below admitted no polynomial clean
+  inverse; its conditional RECORD sampler is real but exponential and omits
+  discarded scalar coins. Chosen-line multivariate composition inherits
+  fixed-degree cost. Do not extend these routes by another wrapper/barrier.
+- Claude pass: Fable constructive request refused with0 output ($0.15552
+  estimated input usage); distinct narrow Opus proof audit completed
+  ($0.41804). Parent verified suggestions and repaired scope. Ledger and
+  dispositions: audits/reviews/2026-11-06-fourier-feature-{usage.json,review.md}.
+- Next hard question: does a genuinely different PAID native operation
+  give a polynomial decoder, or should independent externally valuable
+  problems take priority? Do not assume another Hankel extension is next.
+  Next commands: STATE/TRAPS, corpus been-tried and baselines for the precise
+  competing mechanism, then ACTUAL primary source. Expected artifact: ONE
+  end-to-end candidate contract and cheapest decisive test; no subsystem
+  without such a contract. Parent must select it by external value. See
+  top mechanical queue; no simulator/registry/site work is queued here.
+
+## 2026-11-06 Superlattice Conditional Record Source Audit
+
+- SUPERLATTICE_CONDITIONAL_RECORD_AUDIT.md records the actual full-paper
+  source, not an abstract transfer. Lemmas4.1/4.7 imply a classical sampler
+  of the ordinary computation RECORD AND SELECTED OCCURRENCE conditioned on
+  outputz: forced Algorithm8 plus acceptance1/list_size, success>=1/2.
+  Parent checked the measure identity; independent local source review agrees.
+  This relies on the paper's stated lemmas, not verification of all144pages.
+- Every test still builds exponential lists. The record explicitly omits
+  discarded scalar random numbers. No clean coherent inverse, pure DGS,
+  polynomial clock or full-random-tape posterior follows. Missing circuit
+  is an obligation, not a no-go. Own classical DGS baseline has time
+  (3/2)^(n/2+o(n)), space(4/3)^(n/2+o(n)), times precision polynomials.
+- Chosen-line multivariate character interpolation inherits fixed-degree
+  univariate decoding; quadratic composition is already recorded. No new
+  subsystem is admitted. Next hard question: a paid native character
+  measurement/decoder removing factorial growing-degree loss.
+- Next command: read LEGENDRE_HANKEL_SUCCESS_BOUNDARY.md Section5 and
+  LEGENDRE_HANKEL_RESULTANT_READOUT.md, then a focused Claude constructive
+  review against an independent classical attack. Expected artifact: an
+  explicit paid operation or a specific failed obligation, not a sweep.
+  Acceptance requires original access, all resources and a decisive test.
+  Mechanical items: top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-06 Gauss-Phase Calls Removed by Embedding Covariance
+
+- PRIME_INDEX_FACTORIAL_RESIDUE_NORMALIZATION.md Section10 proves a
+  constructive reduction in required quantum work: ALL physical Gauss-
+  phase estimation calls in Sections3--4 are unnecessary. Parent derivation,
+  independent Codex and Claude core reviews ACCEPT; final changed-text
+  review ACCEPTED. Binary primesell,p, ell odd andell|(p-1), same canonical
+  ((p-1)/ell)! modp, same poly(NUMERICAL ell,logp,log1eta) quantum bound.
+  Quantum factoring and COMPLETE compact S-unit sources remain paid.
+- Fix zeta, sigma and ONE proof-only physical isomorphism. For ANY chosen
+  algebraic embedding iota_b=iota_0 composed sigma^b, BOTH unit Fourier mode
+  T_j and algebraic tau_j acquire zeta^(-bj). Their comparison ratio is
+  invariant. Classical root isolation may pick any t^ell=A root; evaluate
+  units and periods consistently. Neither b nor the physical Gauss phase
+  is computed. Exact class/unit/Fitting/Jacobi and nonrealL1 contracts stay.
+- Sharp falsifier: with unit embedding b and target embedding d, but the
+  abstract local pi=p/t FIXED, output is k!*r^(d-b). Changing the denominator
+  too would cancel the deliberate error. Ordinary local ratio/residue
+  checks alone can pass despite that wrong output.
+- One Sage ell5,p11 control: all5 matched outputs2, all5 target-only +1
+  mismatches8. Exact norms/Hilbert90/local arithmetic;256-bit numerical
+  covariance error<2.8e-77. Known c is finite validation truth, not a source.
+  Artifact: audits/controls/prime_index_embedding_covariance/ell5_p11.{py,json,log}.
+  No PIP, L1 sampler, quantum routine, or larger sweep executed.
+- Independent native trilinear-equivalence comparison rejected the proposed
+  measured cubic-phase Bell operation: quadratic Gauss elimination samples
+  its EXACT law in O(n³), matching public phase preparation. This does not
+  simulate coherent GL-transform control or exclude tensor equivalence.
+  Existing Gaussian pair-cooling and uniform-character leads supplied no
+  new paid operation. Classical class/unit and Tal factorial baselines
+  retain their scopes; no full dequantization, novelty or separation.
+- Next hard question: can a distinct paid native operation emerge from the
+  new superlattice/random-shift source, rather than another dense-list or
+  rejection wrapper? Next source command: open the full primary PDF
+  https://eprint.iacr.org/2026/2761.pdf (use an author/mirror copy if needed),
+  then inspect its actual construction and matched classical clocks.
+  Expected artifact: one precise constructive admission or decisive
+  falsifier; an abstract alone fails acceptance. No source theorem from
+  that paper has yet been imported. Mechanical queue below preserves scope.
+
+## 2026-11-06 Claude Audits and Prime-Index Factorial Completion
+
+- Claude API integration COMPLETE: explicit research context, conservative
+  per-call cost preflight, saved exact snapshots/usage, no automatic retries.
+  23 focused tests passed; no full-suite claim, Git or publication action.
+  Eight paid requests:3 completed reports,5 truncated; estimated$8.956502.
+  A preflight account-limit refusal caused no generation; owner raised the
+  limit to$200 and resumed use. This is not an account-balance statement.
+- PRIME_INDEX_FACTORIAL_RESIDUE_NORMALIZATION.md Sections2--7 now have
+  core/source, integrated resource and final actual-text delta/source review.
+  WRITTEN unconditional bounded-error quantum poly(NUMERICAL ell,logp,
+  log1eta) for EVERY odd primeell dividingp-1, output((p-1)/ell)! modp.
+  Parent verified the proof and actual source passages, not approval labels.
+- Useful Claude repairs: effective compact-DAG leaf multiplicities and
+  explicit generator precision; approximate-largest-mode selection and
+  phase constants; exact analytic/local access contracts. The known dyadic
+  nonrealL1 estimator defeats the report's speculative GRH objection.
+- Claude also caught a source-packet slicing defect: splitlines() counted
+  PDF form feeds and omitted Greither's proof. Corrected NEWLINE ranges
+  contain actual pp456--457 small-group definition and p496 K0 correction.
+  Independent source review confirms C_small=2C by augmentation and SAME-
+  action cancellation at every R-prime above2. Old packets are superseded;
+  request snapshots retain what was actually sent. No mathematical
+  counterexample emerged; incomplete reports supply no acceptance evidence.
+- Retain eta^(2^B) as the blind-expansion falsifier, D0 plusN(D0J) support,
+  two Jacobi/local prime conventions, and whole-final-integer majority.
+  One durable ell5,p11 control passed; no PIP/quantum execution. Tal's
+  scoped factorial algorithms and classical class/unit methods remain
+  baselines. No novelty, separation, poly(logell), arbitrary-factorial claim.
+- Next hard question: which NEW constructive native operation has greatest
+  external value, including a matched classical attack on the exact output?
+  Start with `/opt/anaconda3/bin/python tools/corpus/cli.py been-tried
+  "classical prime-index factorial canonical residue"`, then baselines and
+  actual literature before choosing against independent directions.
+  Expected artifact: one justified mechanism/falsifier admission, not a
+  nearby arithmetic extension or another review loop. Acceptance requires
+  an explicit input/access/resource contract and a new paid operation.
+  Mechanical queue: 'Claude Integration and Prime-Index Completion'.
+
+## 2026-11-06 Claude Research Integration and Generator Precision
+
+- Owner-authorized Claude API workflow is integrated in AGENTS.md and
+  CLAUDE_RESEARCH_WORKFLOW.md. Explicit selected context, token-count
+  preflight, no automatic retries, durable request/response/usage bundles;
+  cost estimates are not hard billing guarantees or account balances.
+- Focused runner tests:23 passed. No full-suite, Git or publication action.
+  Initial broad Fable/max and Opus/max reviews returned no report at32768
+  output tokens; INCOMPLETE, no scientific evidence. Observed first-three
+  usage estimate$2.957664, including the completed narrow Opus review.
+- Conditional principal-ideal generator lemma reviewed: GIVEN an exact
+  polynomial-bit ideal and valid compact generator, circular-log rounding
+  produces SOME expanded polynomial-BIT generator. Parent independently
+  checked accepted findings and repaired effective DAG multiplicities,
+  perturbation precision and bounded final log-polar expansion in
+  PRIME_INDEX_FACTORIAL_RESIDUE_NORMALIZATION.md Section5; Section9 records
+  dispositions. eta^(2^B) still refutes blind compact expansion. No full-unit
+  BDD or h+ enumeration; remembered regulator-source shortcut NOT imported.
+- Full prime-index theorem remains PENDING: intended poly(NUMERICAL ell,
+  logp,log1eta), no GRH/advice. Existing exact ell5,p11 control was rerun
+  from durable path and passed; no PIP/quantum execution. Preserve Tal's
+  scoped classical comparisons; no novelty, separation or general factorial.
+- Next command: inspect result.json/response.md in
+  audits/claude_runs/2026-11-06-{fitting-gate-fable,residue-gate-opus}/
+  after completion and reconcile with the independent integrated resource
+  audit. Expected artifact: sourced proof repair, accepted written scope,
+  or a precise failed gate. Do not rerun an incomplete report by reflex.
+  Mechanical queue: 'Claude Research Integration' below.
+
+## 2026-11-06 Uniform Prime-Index Factorial Composition
+
+- PRIME_INDEX_FACTORIAL_RESIDUE_NORMALIZATION.md now integrates the
+  conditional residue lemma with explicit uniform field and generator
+  constructions. Core components independently reviewed; FINAL integrated
+  actual-text review PENDING. Intended poly(ell,logp,log1eta), numericalell.
+- Periods eta_i give an INTEGRAL NORMAL BASIS of the degreeell field:
+  discriminantp^(ell-1) from Gauss Fourier eigenvalues. E degreeell(ell-1)
+  has product basis. Actual Tal exactJacobi paysconstruction; acquisition
+  primezeta->r^-1 differs from finalLOCALprimezeta->r. O(1/ell) Gaussphase
+  selectsrootbranch; subsequent close-root refinement is classical algebra.
+- Compact-generator gap repaired in derivation: convertC to principal
+  fractionalRideal, usecompactS-unit/PIP, then ROUND againstexplicit
+  circular-unitlogbasis toANY generator ofpolynomialBITheight. Separate
+  realquadraticL1 lowerbound avoids a blanket inverse-log claim. Knownideal
+  denominator andFourierembedding rounding payexpandedRcoefficients; exact
+  principalidealcheck certifies thisstage. No full-unitBDD/h^+ enumeration.
+- Fitting construction usesfiniteclass-moduleCRT/SNF atfactoredh, including
+  unramifiedRprimecomponents andtheuniqueprimeaboveell. Generalunitcoordinate
+  precision followsMinkowski regulator lowerbound(4(ell-1))^(-(ell-1)).
+  LocalHNF normalizesleafvaluations; wholefinal-integermajority budgetsall
+  randomness. Fullproofstillawaitsactualtextreview, notinferredfromcomponents.
+- Singleell5,p11 exactcontrol: nontrivialrealw=1 modlambda² givesalpha2!=alpha
+  butsamefactorialresidue2. Badeta2 givesnonintegralHilbert90. Parent retaining
+  andrerunningdurableartifact. No PIP/quantumexecution orlargeprimeinference.
+- Nextcommand: finalindependentactualtextreview plusONE durablecontrol;
+  expectedartifactacceptedwrittencomposition orconcretegap. No novelty,
+  separation, arbitraryfactorial orpoly(logell) claim. Mechanicalqueue
+  preservesclaimboundaries; noquantumsimulator orprime sweep.
+
+## 2026-11-06 Prime-Index Factorial Residue Normalization
+
+- New growing-parameter candidate PRIME_INDEX_FACTORIAL_RESIDUE_NORMALIZATION.md:
+  input odd primeell dividingp-1, target((p-1)/ell)! modp, intended
+  poly(ell,logp,log1eta), NUMERICAL ell charged. Full algorithm NOT admitted.
+- Independently source-reviewed all-prime identity C=Fitt_Z[zeta_ell](ClK)U
+  needs no PID assumption. All1.2 handles q notdividing2ell; unique prime
+  aboveell plus scalarindex handlesell. Actual Greither p496 intermediate
+  formula handles2: cancel the extra e'F2[C_ell] against C/2C, since the
+  small circular group is2C. No larger-convention or module-isomorphism claim.
+- Conditional constructive lemma in independent review: a paid exact
+  R-generator c0 can be phase-normalized using its largest Fourierlogmode,
+  then normalized modlambda by an explicit REAL cyclotomic unit. Residual
+  realu=1 modlambda impliesu=1 modlambda², so integer Hilbert90 givesalpha2
+  withalpha2/alpha=1 modP. Only the final factorial residue is canonical;
+  recovering the exact circular generator is unnecessary.
+- Real blocker: compactPIP output may have exponentially long expanded
+  R-coefficients, hence unpaid K-unit exponents. eta^(2^B) inZ[zeta5]
+  disproves the compact-contract shortcut. Explicit log-balancing toward
+  polynomial-BIT height is being tested, not assumed. Uniform field/embedding
+  construction and aggregate precision/success are also open.
+- Comparators: actual Tal divisor/fixed-index bounds and classical class/unit
+  arithmetic. CDPR4.1 only handles circular-unit multiplier; its full-unit
+  extension enumeratesh^+ cosets. No such enumeration or hidden advice paid.
+- Next command: complete independent residue/resource review and uniform
+  Jacobi-based field construction; expected artifact accepted paid operation
+  or concrete falsifier. No speedup, novelty, execution or general-factorial
+  claim; mechanical queue has no implementation pending these gates.
+
+## 2026-11-06 Cubic Circular Units and One-Third Factorial Candidate
+
+- THIRD_FACTORIAL_CUBIC_CIRCULAR_UNITS.md Sections1--8: independent core,
+  source and final actual-text reviews ACCEPTED. For EVERY binary prime
+  p1mod3, p>=7 and0<eta<1/2, the WRITTEN unconditional bounded-error
+  quantum composition outputs((p-1)/3)! modp in poly(logp,log1eta).
+  All implemented fields have degree3/6. No supplied units, class module,
+  circular generator, long cyclotomic product or principal-ideal oracle.
+- Exact source identity C=Fitt_Z[rho](ClK)U uses SAME sigma action.
+  Scalar index[U:C]=h pays inert/ramified primes; actual All2015v2 Thm1.2
+  pays separate split components, including conductor p. Its small
+  circular group is2C. Equality is of local lengths/Fitting ideals,
+  not an asserted module isomorphism or scalar-index-only reconstruction.
+- One complete compact S-unit event supplies class/unit bases and beta.
+  Known quantum Gauss phase plus classical nonreal L1 selects the embedding
+  and one of six generators. Integer unit Hilbert90 recovers canonical
+  alpha. LOCAL UNIT alpha/tau(bar chi) at rho->g^((p-1)/3) gives factorial.
+  Certified log rounding, leafwise HNF normalization, binary exponents
+  and whole-run FINAL-INTEGER majority are paid; no inverse-h accuracy.
+- Durable exact p313 scripts/JSON/logs: audits/controls/cubic_third_factorial_p313/.
+  Cl=C7,sigma4 gives correct HNF[[1,3],[0,7]]; inverse action2 gives
+  [[1,5],[0,7]] despite same index. Hilbert90 needs alpha=-beta*epsilon
+  because raw epsilon has norm-1. At rho214, correct local residue is
+  216/3=72=104!; wrong denominator has valuation-1. Degree312 truth is
+  finite validation ONLY. Bridge rerun from durable path; no quantum run.
+- Classical comparison includes ERH subexponential class/unit arithmetic
+  and actual Tal TR26-211 Thm1.1/1.3, Props1.7/4.2/4.3: p-1,p+1 and
+  fixed-odd-prime-power cyclotomic divisors, with their access/oddness/
+  fixed-index scopes. The cached69-page PDF already contained them;
+  checking only Thm1.1 was incomplete. Exact Jacobi is classical at fixed
+  order. No classical lower bound, novelty, separation or execution.
+- Next hard question: select a new paid mechanism for a growing-parameter
+  native problem against independent high-upside directions. Do not extend
+  this fixed-degree arithmetic line merely because the proof succeeded.
+  Next command: corpus been-tried and baselines for each concrete candidate,
+  then actual primary literature; expected artifact is ONE admission with
+  its cheapest decisive classical falsifier, or explicit rejection.
+  Acceptance requires a paid source/decoder and full resource account.
+  Mechanical follow-up below has no sweep or quantum simulator queued.
+
+## 2026-11-06 Elliptic Character Normal Form and Prime-Order Collision
+
+- ELLIPTIC_DIVISIBILITY_CHARACTER_ADMISSION.md Sections5--7 records the
+  hard derivation and exact classical controls. For EVERY known odd order
+  r>=3, u=(r+1)/2, e_P(m)=chi(2y(mP)), e_P(0)=0,
+  f_P(n)=e_P(un modr)*e_P(u)^n for EVERY integer n>=1. One even anchor
+  plus one legal even query reconstructs each full answer. Odd indices
+  add no information; no normalizer/coprimality promise is needed.
+- In a public prime subgroup, source collisions are exactly cosets of
+  H={t:b(tm)=b(m) allm}. H is not proved efficiently known. E/F7:y²=x³+3,
+  order13, G=(1,2), 3G=(2,2), 9G=(4,2) give IDENTICAL full sources:
+  the y-preserving order3 automorphism proves this for alln. This falsifies
+  original-point uniqueness even at p3mod4 and prime group order.
+  Parent Sage confirmed coordinates,26 indices and the all-point formula.
+  Generic-j alone also fails: F13, E:y²=x³+4x+8,j7, order5 subgroup
+  generated by(4,6) has constant+1 e offzero; allfour nonzero points give
+  the same complete f. The narrower simultaneous p3mod4/generic-j/whole-
+  prime-group promise is not refuted. Independent algebra review accepted.
+- Stronger parent-derived falsifier, independent review ACCEPTED: rational
+  Tate curve y²-xy-4y=x³-4x² has order7 P=(0,0). Short model
+  Y²=X³-43X/16+83/32 has2Y(P,2P,4P)=(-4,8,2). For primes p3mod8,
+  chi(-2)=chi(-1/2)=1, hence multiplication by2 preserves the whole
+  six-point sign sequence; full sources of P,2P,4P coincide. Bad primes
+  excluded automatically for p>3; generic j excludes43,83. This gives an
+  infinite fixed-order family, NOT a growing-r or whole-prime-group result.
+  Parent Sage checked the rational model and p11 instance (#E14,j9).
+  Exact e_P(m)=-(m|7), H={1,2,4}. This defeats generic-j plus p3mod4,
+  but not their combination with a whole-prime-group promise.
+- One independent generic-j F43/order47 control has H={1}, minimum
+  shift distance16/46; full94-value distance32/94. Finite separation ONLY.
+  No sweep or inference of asymptotic separation/hardness is allowed.
+- Actual LauterStange2008 Theorems6,8,9 and Sections7--8 read: full-value
+  normalization and SUPPLIED-point EDS-Residue attacks do not supply
+  hidden-point reconstruction from character-only queries. Exhaustive
+  cyclic matching is a legal classical comparator; stronger attacks UNKNOWN.
+- Independent core/actual-text review of Sections5--7 ACCEPTED, including
+  the all-index counterexamples, including the infinite fixed-order family.
+  Actual JaoJetchevVenkatesan2007 already
+  frames multiplier character reconstruction; analytic separation is
+  conjectural, decoding unresolved, and its algebraic-coordinate theorem
+  has different outputs. All uniqueness,
+  informative-receiver, efficient-decoder, novelty, speedup and execution
+  gates remain false. Do not infer generic-j separation or use degree-free Weil bounds.
+  Known H alone does not make an arbitrary Boolean shift easy (singleton
+  search); this is not an elliptic-family quantum lower bound.
+- Independent comparison (note Section8) rejected two concrete wrappers:
+  GI anchor/refinement amplification and supersingular endpoint-path
+  amplification. For both, polynomial alpha^(-1/2) implies polynomial
+  classical alpha^(-1), with the SAME source and verified output. This
+  rejects those wrappers only. Actual Babai theorem/correction checked;
+  Delgado2026 p^(1/3+o(1)) unrestricted-isogeny result read as an attributed
+  preprint comparator, not fully re-proved or promoted. No new subsystem.
+- Next command: corpus been-tried/baselines for a distinct CONCRETE native
+  operation, then actual primary literature. Expected artifact: a justified
+  constructive selection after this completed source/collision result;
+  no new candidate passed the current independent comparison. Acceptance requires a new paid operation or decisive attack,
+  not another Boolean-shift relabeling. Mechanical queue below is aligned.
+
+## 2026-11-06 Elliptic Divisibility Character Source Admission
+
+- New native question found in actual ShparlinskiStange2012 Section6:
+  integer oracle n->chi(Psi_n(P)), recover hidden elliptic point P.
+  ELLIPTIC_DIVISIBILITY_CHARACTER_ADMISSION.md records scope and sources.
+- Independently reviewed exact falsifier: Psi_n(-P)=(-1)^(n-1)Psi_n(P),
+  so p1mod4 makes P and-P indistinguishable for ALLqueries, includingzeros.
+  Sign-orbit output is necessary, not proved sufficient. p3mod4 n2
+  distinguishes that pair, not all pairs. No source uniqueness assumption.
+- Parent symbolically verified opposite-point identity(3) and discriminant
+  16b y(S)^2, but it needs chosen POINT-shift queries chi(x(Q+S)). This
+  stronger source is NOT supplied by the published INTEGER oracle;
+  independent review confirms the mismatch. No masked receiver admitted.
+- Source-correct candidate from published Lemma3.2: query2m gives
+  chi(2y(mP)). For P in PUBLIC prime-order subgroup<G>, m=g^j modr
+  gives Boolean cyclic hidden shift of publich(j)=chi(2y([g^j]G)).
+  Independent actual-text review ACCEPTED the exact reduction. Query the
+  INTEGER2m; no EDS index reduction modr and no classical-to-coherent
+  source upgrade. No injectivity, separator, PGM or decoder is paid.
+  All subgroup/primitive-root/factoring/index costs remain explicit.
+- Next command: corpus baselines for EDS hidden-point reconstruction,
+  then actual normalized-EDS/classical-attack literature. Expected artifact:
+  strongest legal classical attack/collision or a paid informative receiver.
+  Acceptance preserves exact native oracle/output ambiguity. No algorithm,
+  novelty, separation or quantum execution; no simulator or sweep queued.
+- Prior Gaussian cooling pass is complete and reviewed in the next entry;
+  exact classical counterpart, tie correction and input/error clocks stand.
+
+## 2026-11-06 Gaussian Pair Cooling and Its Classical Counterpart
+
+- Hard derivation in STRUCTURED_EDCP_KLEIN_DUALITY_AUDIT.md Section10;
+  independent core/actual-text review ACCEPTED; older sections not promoted.
+  Explicit basis B plus PAID fresh probability-width Gaussian states.
+  Two-copy difference measurement gives |G_(L+u/2),s/sqrt2>; centered
+  branch mass rho_(s/sqrt2)(L)^2/rho_s(L)^2 is order2^-n above smoothing.
+  Actual ADRS Lemma3.4/Prop3.5 already pay classical exact combining.
+- Constructive all-branch alternative: Babai residual delta of u/2 modL,
+  ||delta||<=.5sqrt(sum g_i²), translates output ontoL. Exact overlap(25)
+  gives trace distance<=sqrt(pi R_B²/(2t²)+4epsilon) above smoothing.
+  Translation-equivariant floor(x+1/2) rounding is REQUIRED for the
+  stated coset invariance; ties-to-even u=1,3 inZ is the review correction.
+  This does not assert exact centered output or impossibility below bound.
+- Strong matched classical control is analytic: SAME averaging/shift gives
+  identical computational samples. Direct profile-Klein law has
+  E<=2e^-a/(1-e^-3a), a=pi t²/sum g_i², and TV<=e^(4E)-1 forE<=1/4.
+  The sufficient quantum correction width is already classically sampled.
+  Z/odd-u equal-neighbor identity is the exact center-omission falsifier.
+- Binary-tree iteration charges2^k=(s_initial/t_final)^2 starting copies
+  and e_(j+1)<=2e_j+tau_j. No polylog-width-ratio shortcut.
+- No novelty, separation, general lattice no-go or BDD/LWE algorithm.
+  Distinct code-equivalence orbit-kernel and sparse-root ideas supplied no
+  new decoder and were not admitted. Entrywise kernel ranks do not
+  dequantize coherent controlled permutations; no broad legacy barrier used.
+- Reviews COMPLETE; no finite Gaussian simulation or backend run. Next
+  command: corpus been-tried and primary literature for a distinct native
+  mechanism. Expected artifact: one explicit source/decoder with a decisive
+  falsifier. Reopening cooling requires useful retained coherence outside
+  the proved sufficient basis-width regime and a native decoding role.
+  No further Gaussian wrapper or width sweep; mechanical queue below.
+
+## 2026-11-06 Fixed Odd Degree and Unconditional Cubic Selmer
+
+- Hard derivation recorded in ODD_GALOIS_CLASS_GROUP_COMPOSITION.md
+  Section6; independent core and actual-text integration reviews ACCEPTED.
+  Explicit MAXIMAL ORDER, ANY odd degree n, no Galois promise; clock
+  poly(b,n!,log D,log1eta), numerical n! charged. Fixed n only is polytime.
+- Actual Stark1974 Lemma8 p145 read: near1 real zero descends to a quadratic
+  subfield INSIDE K; odd degree gives delta>1/(4n!logD). Allow principal
+  exceptional chi rather than claiming it absent. For logX>=A n!log(Dn^n),
+  derivative of Li(t)-Li(t^beta) gives dyadic increment>=3Delta/4.
+  Uniform outside-subgroup count>=Delta/4 survives errors/removals.
+- Existing raw integer/padded prime source, capped arithmetic, full S-unit
+  valuation lattice and canonical-list majority carry over. Every retained
+  monic irreducible cubic Selmer-DIMENSION input therefore loses the GRH
+  generator premise, including non-Galois fields; local proof unchanged.
+- Reused certified cubic controls; no new sweep. Strong classical
+  subexponential class/unit arithmetic and SiksekSmart1997 descent remain
+  the baselines. No novelty, separation, rank, points or quantum execution.
+  General quadratic/CM source assumptions and growing-degree n! cost remain.
+- Source, actual-text integration and error-budget review COMPLETE. No
+  mathematical correction or control rerun. Next command: corpus been-tried
+  and baselines for the independently selected concrete operation, followed
+  by primary literature. Expected artifact: one admitted mechanism or a
+  decisive falsifier; acceptance needs paid input/access and a plausible
+  end-to-end role. Mechanical queue below; general quadratic source and
+  independent reconstruction directions are the next comparison, not
+  automatic extensions of this completed composition.
+
+- End-of-pass independent triage admitted NONE of random-norm factor
+  coverage, imperfect Hankel decoding or Bell full-law inversion. Source
+  laws/decoders remain unpaid, not disproved. Details at the end of the
+  topic note. Next pass compares a DISTINCT native mechanism before
+  returning to these gaps; no new barrier note or implementation queued.
+
+## 2026-11-06 Odd Galois Class-Group Composition
+
+- WRITTEN constructive checkpoint: ODD_GALOIS_CLASS_GROUP_COMPOSITION.md.
+  COMPLETE: independent generator core and actual-note/full-composition
+  review accepted. Explicit MAXIMAL ORDER, promised Galois ODD degree overQ.
+  Primary output canonical Cl(K) invariant factors; no GRH premise.
+- Classical source: TZ1803.02823v3 Thm1.4 on Hilbert class field overK,
+  Q=1, scaleD n^n independenth. A nonprincipal exceptional classcharacter
+  cannot suppress aggregate primesoutside ANYproper subgroup. Principal
+  exceptional zero excluded by odd-Galois character-pair parity (no Artin
+  holomorphy assumption; actual Heilbronn source also checked).
+- Uniform integers in[X,2X), primality, finite-algebra factorization and
+  padded ideal slots give raw escape>=1/[16n(L+1)], L=log2X polynomial.
+  T=128n(L+1)(ceil(log2(8^nD))+log(4/eta)) trials pay generation whp;
+  no hidden class-membership oracle, Hilbert-field construction or
+  prime-sampling normalization. Degree>1 and ramified primes are removed.
+- Existing unconditional compact S-unit basis supplies FULL valuation
+  relation lattice; SNF and whole-run canonical-list majority compose
+  to bounded-error quantum polynomial time. No canonical ideal basis or
+  input-model extension. Strong classical class/unit baselines remain;
+  no novelty, separation or quantum execution. Certified cyclic cubic
+  x³-11x²-14x-1 has D163², classC2xC2; three norm5 prime factors give
+  its three nonzero classes. Their squared ideals equal(1-theta),
+  (-theta-2),(2theta+1) exactly. Finite algebra only, no source run.
+- Independently reviewed direct corollary: the CYCLIC-cubic subcase of
+  ELLIPTIC_TWO_SELMER_COMPOSITION.md is now unconditional. Replace only
+  class generators by this source and adjoin bad primes; its already-paid
+  cubic maximal-order, compact T-unit, mod2 and local/real clocks still apply.
+  General cubic, rational-rank and point-computation scopes do not expand.
+- This does NOT remove the even-degree CM/L0 GRH premise. General prime
+  sampling still has a principal-exceptional-zero supply gate; factored
+  random norms have a different unproved support law. Hidden-field Bell
+  moment comparison found no constructive readout (normalization/padding
+  and tiny Fourier moments must be retained when revisiting it); exact
+  amplitude, padding and every-public-R moment bound are now recorded in
+  HIDDEN_FIELD_CHARACTER_ADMISSION.md Section7. No full-law no-go.
+- Actual prior-art audit: Biasse--Song already gives the generic ANY-S
+  reduction, and the stronger classical methods retain ERH/subexponential
+  relation costs. This is a source specialization of published machinery,
+  not a novelty certificate. Next hard question is independently selected
+  end-to-end scope, not a practical sampler or constant-tuning task.
+  Next read-only command after STATE/TRAPS:
+  `/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "class group prime source principal exceptional zero relative quadratic subfield"`.
+  Expected artifact: an explicit paid source removing the remaining
+  principal-exceptional gate, or a higher-value independent mechanism.
+  Acceptance cannot replace density by least-prime existence or import
+  this odd-Galois result into even-degree CM fields. Mechanical boundaries
+  remain at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-06 Overcomplete Hankel Packet Falsifier
+
+- COMPLETE: independent core derivation and actual-text review accepted.
+  LEGENDRE_HANKEL_SUCCESS_BOUNDARY.md's new final section rejects the
+  concrete overcomplete-packet/consecutive-window repair. Native source
+  and irreducible monic Q of degree d>=2 are unchanged, p odd,
+  2d-1<=m<=p. No hidden root labels are supplied.
+- For ANY weighted/ancilla coefficient state on squarefree completely
+  split degree-m labels, full-recurrence mass<=(d-1)!/m!. Partial-window
+  projectors average p^d fibers with outside coefficients FIXED. Prefix
+  occupancy gives (m-d)!/m!; shifted windows count only NONZERO roots and
+  give (m-d-1)!/(m-1)!. All-window union is at most
+  (3/2)(d-1)!/(2d-1)!<=(3/2)d^-d for EVERY allowed m.
+- This is a scoped exact falsifier, not a general receiver/copy lower
+  bound. Correct window event removes the zero WINDOW, not merely the
+  full-register origin. Imperfect-outcome joint decoding remains UNKNOWN.
+  Strong baselines: known parameterized quantum receiver, Russell's
+  query-only POVM, and Kopparty poly(p) full-table classical decoding under
+  its actual Algorithm A/Theorem3.1 degree condition, not the larger
+  introductory constant. Source texts checked; no new finite scan.
+- No larger packet or degree sweep is admitted. Next hard task must
+  specify a genuinely different paid use of the imperfect measurement
+  outcomes or select an independent direction; no further support packing
+  variants. Next READ-ONLY command after STATE/TRAPS:
+  `/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "Legendre character Fourier imperfect outcomes joint decoding recurrence"`.
+  Expected artifact: an explicit data law and polynomial reconstruction
+  operation, or a higher-value pivot. Acceptance requires an actual native
+  success argument, not hidden root labels, sample complexity or a failed
+  classical attack. Keep novelty/speedup/hardness/poly-degree gates false.
+  Mechanical boundaries are at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-06 OPI Anchor-Plane Admission
+
+- COMPLETE: independent derivation and actual-note core review accepted.
+  SCALAR_OPI_ANCHOR_PLANE_ADMISSION.md preserves ORIGINAL IID full-table
+  scalar OPI. Actual2610.06753v1 C.3 already has the anchor-pivot direction
+  family; exhaustive lookahead is a stronger policy, not an executed-source
+  claim. Existing Prange, adaptive annealing and Algorithm H remain baselines.
+- Written exact operation: k-2 satisfied anchors leave a q² plane. Its
+  Fourier spectrum is the sum of q-scaled row transforms on disjoint
+  NONZERO frequency lines. O(mq+q²logq) integer operations after row
+  preprocessing, plus polynomial field work. All zero modes accumulate;
+  infinity/missing-point/repeated-root directions are not anchor exchanges.
+- EVERY-TABLE line mean=(m+k-1)/2; nonzero mean removes H(c) exactly.
+  EVERY-TABLE plane mean=(m+k-2)/2 and variance=(m-k+2)/4. These give no
+  anchor gradient, but do NOT bound adaptive tails or first-witness search.
+  A fresh-Prange hit-vector-only Hoeffding bound is explicitly restricted.
+  Strict integer-potential ascent terminates in<=m increases; local
+  optimality supplies no DQI-level quality. No solver/sweep is admitted.
+- Independent phase-copy and class-generation comparisons admit no new
+  mechanism: binary cubic derivatives have the known separable learner;
+  inverse-norm ideal sampling still lacks class coverage. Keep novelty,
+  hardness, asymptotic match, speedup and quantum-execution gates false.
+- Next hard question is a paid CONSTRUCTIVE native first-witness mechanism,
+  selected against independent directions, not another nearby mixing or
+  moment barrier. Next read-only command after STATE/TRAPS:
+  `/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "scalar OPI adaptive anchor higher order score drift constructive first witness"`.
+  Expected artifact: an explicit operation plus source-correct adaptive
+  success/quality argument, or an independent higher-value pivot; no
+  implementation follows from a finite score or UNKNOWN. Review/control
+  completion and mechanical boundaries are at the top of the mechanical plan.
+- One F8 Sage control completed:64 Fourier equalities, mean4, variance3/2
+  and four allowed nonzero-line means31/7. Native tables are recorded in
+  the topic note. Finite algebra only, not an optimization run. The first
+  control invocation failed on QQ(n,d); corrected rational construction
+  leaves the theorem and input unchanged.
+
+## 2026-11-06 Elliptic Two-Selmer Composition and Prior Art
+
+- COMPLETE: independent core and ACTUAL-TEXT review accepted.
+  ELLIPTIC_TWO_SELMER_COMPOSITION.md gives a WRITTEN bounded-error
+  quantum poly(b,log1eta) composition
+  under class-generator GRH for dim Sel2(E/Q), monic irreducible binary
+  integral cubic f. No MW rank, rational points, covering curves or novelty.
+- Global: paid maximal order, GRH T-generators, ONE complete compact T-unit
+  basis, mod2 valuation kernel and norm rows. Squareclass representatives
+  reduce compact exponents mod2 and have polynomial height. Integer kernels
+  lose 2-torsion; raw compressed support must not replace original V.
+- Local classical core: primitive-content root tree has<=3nodes/level,
+  stops at vpdisc+5; large odd-p generic Legendre patterns have mass>=1/16,
+  small-p enumeration bounded, dyadic4-lifts after X=4x pay coverage.
+  Actual Stoll dimensions certify complete non-ABORT local spans. Real
+  signs and one-event/fresh-run INTEGER-dimension majority are explicit.
+- Strongest comparator is existing classical two-descent with rigorous
+  ERH subexponential class/unit arithmetic. Original Stoll residue scan and
+  unrestricted random-source claim do not themselves pay a bit clock.
+  No code subsystem/quantum execution. Native PARI x³-2 has certified
+  classno1 and Selmerdim1. The exact point(5/4,5/8) on
+  x³-x²+8x-10 refutes unscaled dyadic trivial-tail; one50digit local
+  factor/square check agrees. Controls do not execute our new root tree.
+- PRIOR ART: actual SiksekSmart1997 Sections1--3 ALREADY give polynomial
+  reduction from compact class/unit data to Selmer, including local tests
+  and F2 filtering. This is an explicit composition of published machinery,
+  not a new quantum mechanism; factoring-only classical poly is not proved.
+  Section7 records primary audit; no Selmer subsystem is admitted.
+- Independent next-direction comparison admits NO new operation/run.
+  Highest-value retained question: can a paid adaptive-basis CLASSICAL
+  search match the known quantum score for original full-table scalar OPI?
+  Existing fixed-catalog mixing bounds cover neither adaptive pivots nor
+  first-witness hitting. Do not queue another annealing sweep.
+  Next READ-ONLY command after STATE/TRAPS:
+  `rg -n 'adaptive|pivot|first-witness' research/SCALAR_OPI_NATIVE_PRIORITY.md research/SCALAR_OPI_GIBBS_LINE_TEST.md`.
+  Expected artifact: a new concrete operation and actual-source-law
+  calculation, or an independent higher-value pivot. Acceptance requires
+  a paid first-witness/score claim on the original source, not stationary
+  mixing or finite scores. No implementation is queued without that gate.
+  Keep all novelty/separation/rational-rank gates false. Mechanical items
+  are at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-06 Classical Inverse-Norm Ideal Sampling
+
+- COMPLETE: independent core and ACTUAL-TEXT review accepted.
+  UNCONDITIONAL_CLASS_GENERATOR_ADMISSION.md
+  Section5 derives a paid CLASSICAL sampler Pr(I)=Norm(I)^(-s)/zeta_K(s),
+  s=1+1/B, within TV epsilon in polynomial(field input,n,B,log1epsilon)
+  time, for explicit maximal orders. Independent rational zeta streams,
+  Kalai factored integers and residue-degree exponent floors pay the law;
+  direct tail caps avoid timing bias. No Shor, GRH or supplied class data.
+- Coverage remains UNKNOWN: Re L_K(s,psi)/zeta_K(s)<=e<1/2 for every
+  nontrivial class character at polynomial numerical B is unproved.
+  This is not uniform bounded-norm sampling or an unconditional class
+  algorithm. All novelty/speedup/end-to-end-unconditional gates stay false.
+- Actual Charles source hides kappa_K^{-1} and a field-dependent asymptotic
+  onset; its theorem does not pay varying-field sampling. The naive norm
+  lift already has principal mass3/5 versus1/2 at Q(sqrt(-5)),N5.
+  Actual deBoer/PelletMary/Wesolowski Thm1.3 strengthens the classical
+  fixed-degree comparator to rigorous ERH subexponential time. Recent
+  QRH claims are not audited and are not used to remove assumptions.
+- Independent comparison selects exact elliptic 2-Selmer computation for
+  admission next: paid global compact-unit arithmetic is concrete; local
+  Kummer-image runtime at large bad primes and2 is the first decisive gate.
+  This is neither rational rank nor rational-point search. Next command:
+  read actual Stoll2001 local algorithm (source in topic note/next pass),
+  then prove a poly-bit clock or give a precise falsifier before code.
+  Expected artifact: operation-level local proof or scoped rejection,
+  independently reviewed. Mechanical items are at the top of the plan.
+
+## 2026-11-06 Unconditional Classical L1 Approximation
+
+- Section9 of FIXED_ORDER_DIRICHLET_L0_RECONSTRUCTION.md and the
+  preferred-step integrations have independent source/core and ACTUAL-
+  TEXT review. Nonprincipal public chi: dyadic sampling with
+  X=J2^j chi(n)/n estimates L1 additively in classical
+  poly(q,logp,1/epsilon,log1rho) time. J itself is a power2, so the
+  clock/random-bit cost is exact; cutoff N=2^J-1 is never enumerated.
+- E[X] equals the truncated series, |X|<=J, periodicity gives tail
+  <=2p/N. M>=32J²epsilon^-2 log(4m/rho) pays all real/imaginary
+  components. Actual CDPR Thm2.6 gives effective nonquadratic
+  |L1|>=1/(C logp), yielding log-magnitude and CIRCULAR phase
+  accuracy delta in poly(q,logp,1/delta,log1rho) WITHOUT analytic GRH.
+  Every odd chi power here is nonquadratic; no real-character transfer.
+- This is the PREFERRED analytic step for fixed/uniform L0 and quartic
+  factorial. Unknown-target accuracy1/(h polyq) still costs poly(h)
+  TIME. Fresh sampling enters the existing confidence ledger and
+  whole-output repetitions; public-H and expected-time caps remain.
+  Full L0 still uses class-generation GRH. No exact classical L0,
+  polynomial-in-logprecision result, new quantum gain or novelty claim.
+- Parent exact Sage p13,q4,eta5,J4 control: E[X]=341/315-5309i/9240,
+  second moment271511131/24012450<16. Dropping2^j/n has NONZERO
+  bias211/1260-233i/4620. Reviewer checked the algebra. No confidence
+  experiment, general sampling implementation, new runner or scan.
+- Independent random-prime class-generation comparison remains UNKNOWN.
+  Unramified residue-degree>1 primes in cyclic CM2-power K are fixed
+  by conjugation and contribute zero to the ODD-MINUS class group.
+  One-sided normalized character bias <=e gives subgroup mass
+  <=(1+e)/2 and a generation clock, but no paid sampler/coverage follows.
+  Both lemmas reviewed; no exceptional zero asserted or general no-go.
+- Next externally valuable question: can a paid native class-generator
+  source avoid GRH with proved useful-class coverage? Norm factoring
+  alone is not coverage. Compare independent directions before pursuing
+  it; top MECHANICAL supplies the corpus command and acceptance.
+
+## 2026-11-06 Index-Scaled Growing-Order L0
+
+- Section8 of FIXED_ORDER_DIRICHLET_L0_RECONSTRUCTION.md has accepted
+  independent core/source and ACTUAL-TEXT integration reviews. Native
+  input remains binary prime p=1+qk, q2power, k odd, public character
+  root; output exact L0. It removes the unbounded fixed-field table,
+  not the full-unit index h=h(Q(zeta_q)^+). GRH remains.
+- Actual CDPR Claim2.1/Thms2.8/3.1 give polynomial circular-dual
+  geometry and [Log E:Log C]=h, NOT h=1. Pay h with quantum class
+  arithmetic and one F S-unit event for beta and complete unit generators.
+  W_i=h B^+Log epsilon_i are integral; n=h B^+(Log L0-Log beta)
+  belongs to their integer image. SNF gives the full-unit correction;
+  no coset list, random-generator assumption or CVP oracle.
+- Known compact unit logs cost poly(logh) precision; UNKNOWN target GRH
+  logs cost poly(h) TIME. Public T pays dual-basis precision against
+  huge compact logs. Final torsion associates have coefficients<p, so
+  auxiliary-prime CRT modulus>2p expands only the final element.
+- Bounded-clock theorem: time poly(q,H,logp,log1eta) for public H, with
+  success promised when actualh<=H. ALL-input theorem: EXPECTED time
+  poly(q,h,logp,log1eta). U=(2q)^(4q) follows from Minkowski/ideal
+  counts; suppress h-estimation error below eta/(100U^(a+2)) and cap
+  ALL downstream branches, including malformed outputs. Independent
+  whole-output repetitions use fresh arithmetic. No worst-case
+  poly(trueh) claim without a public bound.
+- Existing certified q8,p41 epsilon equals circular b_3 and covers only
+  index1. No new scan, general-index implementation, short-GRH/CRT or
+  quantum execution. Classical circular decoding is used as a baseline;
+  same-field index calculus remains a comparator. No unrestricted all-q
+  polynomial bound, Weber claim, novelty or classical separation.
+- Independent native comparison found no new unique-SVP full-label
+  decoder: Regev's source/failure-parameter theorem is already known
+  (parent checked actual TeX). Folded-RS and fixed-particle graph walks
+  supplied no fresh operation. No broad no-go or extra subsystem.
+- Next hard question: remove the numerical h dependence with a paid
+  full-unit-coset operation, or select an independent native mechanism
+  of higher external value. Supplied cosets or favorable finite ranks
+  are not algorithms. Top MECHANICAL gives next command/acceptance.
+
+## 2026-11-06 Fixed-Order Dirichlet L0 Composition
+
+- FIXED_ORDER_DIRICHLET_L0_RECONSTRUCTION.md is an independently
+  actual-text reviewed WRITTEN composition: EACH FIXED q=2^s>=4,
+  binary prime p=1+qk with k odd, public order-q root, exact L(0,chi)
+  coefficients in C(q)*poly(logp,log1eta) bounded-error quantum time
+  under GRH. C(q) is COMPUTABLE, not advice; no growing-q polynomial
+  claim, novelty, separation, quantum execution or factorial extension.
+- Full integral period basis/action is constructed from CLASSICAL exact
+  Jacobi sums, without p-sized cyclotomic expansion. Tal global arbitrary
+  binary pairs apply with source root eta^-1; distinguished-p UNIT
+  evaluation is not imported for arbitrary pairs. All L0 coefficients
+  are odd, proving v_(1-zeta_q)(L0)=q/2-1 exactly.
+- Complete class relations and Galois action share one paid S-unit event.
+  Greither Cor8.7 gives the inverse-character ideal. Odd-primary MINUS
+  projection, local lengths, charged Shor factoring, one conjugation and
+  exact2-part restoration recover (L0), without a PID assumption.
+- Fixed coefficient-field LLL plus a certified finite unit-box table
+  gives a classical O_q(logp)-bit generator. Complete units, short GRH
+  L1 logs and inverse-log-basis rounding recover the unit; one O(1/q)
+  Gauss-phase estimate fixes torsion. No coefficient-field quantum call
+  or CVP oracle. Actual-note review tightened H>=1, induced matrix norm
+  and public T; all integrated. Ideal equality is essential, since equal
+  magnitudes alone do not make a quotient an algebraic unit.
+- Classical comparator: same-field relation/index calculus (actual
+  Biasse-Fieker2014 bound has GRH PLUS heuristics), Louboutin exact
+  numerical reconstruction with its charged root-number input, and
+  direct Bernoulli sums. No classical polylog exclusion. Sole certified
+  q8,p41 control COMPLETE, parent-inspected: maximal disc41^7, Cl(K)=1,
+  L0=[1,1,-1,-1], norm8 and lambda valuation3. A unit^7 twist defeats
+  all8 torsion choices until corrected. Diagnostic truth/logs and PARI
+  replace quantum/GRH/table operations; general non-PID code is NOT run.
+  Top MECHANICAL records the exact artifact and scope.
+- Section9 of the quarter-factorial note separately records reviewed
+  auxiliary-input equivalence of its residue/sign, and only the failure
+  of a REDUCED odd ideal mod4 shortcut; raw presentation entries can
+  retain information. Chocian source scope checked. Independent curve-
+  zeta/Jacobian-order proposal is already Kedlaya; no new subsystem.
+- Next hard question: can the conductor-p ideal be obtained classically
+  in polylogp, or does an independent native direction offer higher
+  research value? No denominator extension by inertia. Next command,
+  expected artifact and acceptance test are in the top mechanical entry.
+
+## 2026-11-06 Quarter-Factorial Residues From Shared Quadratic Data
+
+- QUARTER_FACTORIAL_QUARTIC_ARITHMETIC.md Section8 audits the exact
+  classical output requirements. For p5mod8 the sign formula needs
+  h(-4p) mod16 and one coordinate of L0 mod4. Williams-Currie1982
+  mod8 congruence alone leaves E->E+2 and swaps the roots; this is
+  only that substitution's failure, not a public-input lower bound.
+- Actual Kaplan-Williams1982 Theorem1 gives H=T*kappa mod16 for
+  the fundamental unit T+U sqrtp of Z[sqrtp]. Reusing the ALREADY
+  PAID maximal-order epsilon,h_R gives uniformly
+  H=h_R*Tr(epsilon^3)/2 mod16. Evaluate epsilon compactly mod32O,
+  cube, and extract the half-trace; no expanded Pell coefficients or
+  extra imaginary-quadratic quantum call. Core/source, uniform-formula
+  and actual-note integration reviews accepted. Two number fields remain.
+- Amplify the JOINT canonical pair (Fhalf,H mod16) from each real
+  S-unit block. A majority of F alone does not validate accompanying
+  arithmetic. Quartic ideal amplification stays separate. Same native
+  input and bounded-error GRH/polylog guarantee, no new primitive,
+  novelty, separation, classical sign certificate or quantum execution.
+- Existing certified p13/101 artifacts give T3=18/4030, Hmod16=2/14;
+  no additional scan is required. Classical algorithms still pay real
+  units/class data and the needed quartic residue; no free advice.
+- Independent direct AJL/volume-limit proposal fails its required color:
+  at root order N its N-dimensional color has quantum dimension0,
+  outside the unitary path labels1,...,N-1. Actual AJL and Murakami
+  sources checked. No general topological no-go or convergence claim.
+- Next hard question is a concrete paid computation of the necessary
+  quartic L0 residue mod4, or an independently selected higher-value
+  operation. No further denominator extension by inertia. Top
+  MECHANICAL records pending review and the next command/acceptance.
+
+## 2026-11-06 Quartic Class Module And Canonical Quarter-Factorial
+
+- QUARTER_FACTORIAL_QUARTIC_ARITHMETIC.md gives an independently
+  actual-text reviewed WRITTEN composition: binary prime p=5mod8,
+  output ((p-1)/4)! modp in polynomial(logp,log1eta) bounded-error
+  quantum time under GRH. No oracle, class-module/unit or sign advice.
+  No quantum execution, novelty, separation or classical certificate.
+- Greither2007 Cor8.7 ACTUAL source applies unconditionally here.
+  Total ramification gives U^-=R; sigma->i gives Fitt=(L(0,bar chi))
+  away from2. Both exact L0 coordinates are odd, restoring precisely
+  one1+i. Explicit degree4 integral basis and action are paid; ONE
+  stable factor-base S-unit relation event supplies the whole class
+  module and sigma permutation. Gaussian HNF/gcd computes the Fitting
+  ideal in polynomial bit time without enumerating maximal minors.
+- The preferred composition reuses the already-paid canonical half-F
+  in Matthews's classical quartic Gauss formula. Buell-Hudson-Williams
+  Eq1.1 has b=-F*a, an essential minus sign lost by OCR but visually
+  checked; Eq3.5 plus the chi/conjugate branch removes the quantum
+  Gauss-phase call. Functional equation and a source-backed GRH short
+  log L1 approximation select the exact Gaussian associate at constant
+  angular precision. Interval counts and h(-4p)/2 give chi(G);
+  compatible Jacobi reduction gives G²=-F/(2ReJ). Actual-note review
+  accepted the original composition AND the later phase simplification.
+- Certified classical controls p13/101 COMPLETE, parent-inspected:
+  at101 Cl=C5, sigma=2, Fitt=(-1-2i), L=-3+i, correctG46;
+  wrong conjugation gives55 and omitting1+i fails integrally. Controls
+  enumerate L directly and do not execute the full canonical-unit
+  selection or general module algorithm. Separate two-prime numerical
+  convention checks of the classical phase formula agree below3e-50.
+- Strong comparator uses the SAME arithmetic with classical class-group
+  and factorial algorithms; Tal September2026 exact q4 Jacobi is already
+  classical. The signed Gaussian parameter is not free half-F advice.
+  Independent isogeny shortcut lacked a paid small action representation.
+  No general-prime/factorial claim, lower bound or optimal classical rate.
+- Next hard question: can a concrete higher-reciprocity/small class-number
+  congruence compute this specific canonical output without full class
+  computation? Compare independent high-upside directions before another
+  factorial pass. Top MECHANICAL gives exact lookup command, expected
+  artifact and acceptance; no new subsystem or scan is queued.
+
+## 2026-11-06 Canonical Half-Factorial Compact Arithmetic
+
+- HALF_FACTORIAL_COMPACT_ARITHMETIC.md gives a WRITTEN explicit-input
+  quantum composition under GRH: given binary prime p, output
+  ((p-1)/2)! modp in polynomial(logp,log1eta) bounded-error time. No
+  oracle, class group/unit advice, expanded Pell solution or factoring
+  of p-1. Known Mordell/Chowla congruences plus published quantum class
+  groups and compact units; no new primitive, novelty or separation.
+- Actual Chowla original page inspected and retained in literature_cache;
+  actual BS2016 Theorems1.1/1.2 and2510.02280v2 Sections8.1/8.2 checked.
+  Class-group GRH retained. Primitive positive rank-one unit is recovered
+  from a COMPLETE compact generating set via bounded log-ratio rational
+  reconstruction and Bezout; signs/inverse paid. Existing compact-residue
+  theorem handles nonunit factors at P=(sqrtp), NormP=p. This returns
+  t/2 without expanding epsilon=(t+u sqrtp)/2. Independent source/core
+  derivation AND actual-note core review accepted. One factor-base S-unit
+  call supplies class relations and the full unit kernel on one common
+  success event; positive denominator/gcd fixes the Bezout orientation.
+- Strongest comparator is the SAME arithmetic composition with classical
+  relation algorithms, not brute multiplication. Williams1981 signed
+  Gaussian b is defined using the unknown factorial, so is not free
+  classical advice. No classical lower bound or fastest-exponent claim.
+- Eight certified classical Sage/PARI controls COMPLETE, parent-inspected:
+  p3,5,7,13,17,23,41,229 give1,2,6,5,13,1,9,122. Atp5 inverse/negative
+  units give the WRONG root3 yet pass the square check; p3 exception paid.
+  No quantum execution or exact-on-success claim. Only bounded error.
+- Next hard question is selected against independent directions: can a
+  canonical fractional-factorial beyond this case be recovered through
+  paid polynomial-size arithmetic, or does its actual source force large
+  degree/output? No extension admitted. Top MECHANICAL has next command,
+  artifact and acceptance; all speedup/novelty gates remain false.
+
+## 2026-11-06 Explicit Levi Tensor and MQ Admission
+
+- LEVI_TENSOR_AND_MQ_ADMISSION.md records two independently derived,
+  parent-rederived analytical tests. Exact finite GL(U)xGL(W) stabilizer
+  of an explicit mixed tensor, total order d<p-1 in the prior p>=128n
+  regime, is classically recovered by derivative linear equations and
+  their two-dimensional commutant. Proof does not assume equality of
+  finite and algebraic stabilizers; degree<p integrates only the needed
+  rank-one infinitesimal symmetry. Dense/sparse description size is paid.
+- The explicit tensor source for the Levi oracle is therefore rejected;
+  no high-degree, succinct-circuit or opaque-source exclusion follows.
+  Corpus derivative filters reused. No implementation or scan needed.
+- Independent public-MQ Gaussian/Fourier proposal exactly reproduces
+  restricted constraint evaluation. Verified success after T preparation
+  is alpha times original solution density, alpha=|{z:det(I+sum z_i A_i)
+  !=0}|/p^m. Separated squares Q_i=x_i^2,b_i=1 are an exact falsifier:
+  rate [2(p-1)/p^2]^n versus immediate classical witness. No general MQ
+  lower bound or rejection of other quantum operations.
+- Next hard question: whether canonical half-factorial residues have a
+  fully paid compact-unit/class-number quantum composition under the
+  actual published hypotheses. Check primary congruences, normalization
+  and strongest classical competitors before admitting it. Top MECHANICAL
+  gives next command/artifact/acceptance; all novelty/speedup gates false.
+
+## 2026-11-06 Unbalanced Levi Coset Recovery
+
+- Constructive WRITTEN quantum oracle algorithm in
+  UNBALANCED_LEVI_COSET_RECOVERY.md: exact opaque coset oracle for
+  S(GL_r(Fp)×GL_s(Fp))S^-1, r>s>=1,n=r+s,p>=128n. Recover both ordered
+  summands, exact on success, ABORT<=eta; O(n log1eta) coherent calls,
+  O(n² log1eta) total evaluations and polynomial(n,logp,labelwidth,log1eta)
+  work. No H samples/generators, algebra/idempotent or additive oracle.
+- Independent derivation, parent rederivation AND actual-note core review
+  accepted. Known Ivanyos Borel ambient-QFT mechanism is explicitly credited.
+  Exact annihilator mixture mass beta=|GL_r||GL_s|/p^(r²+s²), not free
+  projection. Inverted/uninverted cosets give random kernel subspaces of
+  U/Wperp. r samples each orientation suffice with paid per-attempt failure
+  <=12r/p. Finite GL preparation, QFT precision and retry clocks specified.
+- Exact candidate certificate uses only within-block elementary
+  transvections: accepted generators span A' as an associative algebra;
+  A' subset A and equal dimensions imply equality. The size-one block
+  projector is paid via I minus the larger-block projector.
+- Stronger classical comparator independently derived and parent-checked:
+  O((p^(3s/2)+r p^s+n²)log1eta) chosen queries, exact on success, ABORT<=eta.
+  Birthday collisions in random rank-one transvection subgroups find a
+  large-block seed; paid membership rejection then spans U and Wperp.
+  Bad seeds, repeated inputs, tables and finite clocks explicitly charged.
+  Both full algorithms WRITTEN, not executed. No optimal classical exponent.
+  Explicit matrix labels or H generators would change/ease the problem.
+  An independently selected orthogonal alternative was already proved in
+  the October27 local bundle; no new uniform-target subset-sum finder.
+- One bounded p3n3 exact algebra control COMPLETE and parent-inspected:
+  both orientations, exact32/81 annihilator mass, residual, six classical
+  membership cases and certificate pass. Wrong orientation/pair fail.
+  No quantum execution,
+  balanced/small-p/all-Levi theorem, novelty or non-oracle application.
+  The next hard question is an externally motivated paid source that does
+  not expose the decomposition classically, selected against independent
+  directions. Top MECHANICAL gives command/artifact/acceptance.
+
+## 2026-11-06 Kronecker RSK Composition Falsifier
+
+- Independent constructive classical proposal tested before implementation:
+  uniform RSK-preimage permutations of explicit shapes lambda,mu, compose,
+  output RSK shape. Desired law d_nu*g(lambda,mu,nu)/(d_lambda*d_mu);
+  published2302.11454v3 Lemma2/AppendixE pays a polynomial quantum sampler.
+  Actual primary text and corpus/baselines checked. No source/advice added.
+- FIRST case n4,lambda=mu=22 rejects it: preimages2143,2413,3142,3412;
+  their products are uniform1234,1324,4231,4321. Shape law has masses1/4
+  on4,31,211,1111; target has1/4,1/2,1/4 on4,22,1111. ExactTV=1/2.
+  Witness2143 composed2413=1324 has forbiddenshape31. Independent Sage
+  calculation stopped immediately; parent independently checked product
+  law and character identity chi22²=chi4+chi22+chi1111.
+- KRONECKER_RSK_COMPOSITION_TEST.md records the finite falsifier. Only
+  this sampler is rejected; general classical sampling/hardness, novelty,
+  hidden-involution decoding and quantum-execution gates remain false.
+  No further scan or subsystem. Re-rank independent constructive directions;
+  next command/artifact/acceptance are in top MECHANICAL_FOLLOW_UP_PLAN.
+
+## 2026-11-06 Extension Character Norm-GCD Recovery
+
+- Constructive WRITTEN classical chosen-query algorithm in
+  EXTENSION_CHARACTER_NORM_GCD_RECOVERY.md: EVERY monic squarefree
+  degree-d Q over explicit K=Fp^r, r>=2, p>=65536(rd)^2. Recover all
+  coefficients exactly on success, ABORT<=eta, O(p log(1/eta)) sign
+  queries and polynomial(p,r,d,log1eta) bit time. Padding chi(0)=+1.
+- Two independent derivations agree. Decode translated subfield norms
+  H_a via actual Kopparty2601.07137v1 AlgorithmA/Theorem3.1; its entire
+  polynomial-p cost is charged. Public squarefree/degree/full-table checks
+  certify every accepted H_a. gcd(H_a(X-a),H_b(X-b)) contains Q;
+  degree-d is an EXACT output certificate, without extra oracle queries.
+- Uniform random UNCONDITIONED pairs fail with probability at most
+  [2 binom(rd,2)+(rd)^2]p^(-ceil(r/2))<2(rd)^2/p. This covers proper-
+  subfield coefficients; Q in Fp[X] can have H_0=Q^r, which is explicitly
+  rejected. Capped unbiased coordinate sampling and retry clocks are paid.
+- Primary-source native scope checked against Pandey2604.04833v3
+  Sections4--5.2. No paper-error, novelty or universal PRF break claim.
+  Stronger than full-field poly(p^r) decoding in the stated regime;
+  still not polynomial-logp, passive/copy-only, repeated-factor or fixed
+  small-characteristic recovery. Full decoder WRITTEN, not executed.
+- One terminal Sage F49 control, parent-inspected, verifies686 character
+  identities and all squarefree-line pair gcds for two explicit quadratics.
+  It calculates norms from hidden Q ANALYSIS-ONLY. No native decoder,
+  quantum execution, threshold or scaling inference. Independent derivation
+  AND actual-note mathematical review accepted; degree cost is explicit,
+  polynomial in output length rather than binary degree encoding.
+  See top MECHANICAL.
+- Independent alternatives: semisimple integral-conjugacy decision already
+  covered by BHJ2202.03526v3 Corollary9.16 (actual text checked); normalized
+  Kronecker RSK composition remains an untested proposed law. Next hard
+  question: what paid mechanism addresses the remaining characteristic/
+  degree dependence, or an independently higher-value native problem?
+
+## 2026-11-06 Weighted Moments and Sampled-Oracle Admission
+
+- Compared two concrete operations before implementation; details in
+  WEIGHTED_MOMENT_CHARACTER_ADMISSION.md. Native source remains fresh
+  padded-character copies of an unknown monic polynomial. Proof tests use
+  every irreducible degree d=2m-1>=3, where padding is irrelevant.
+- Independent new mechanism: append public nonzero weights with chi phases,
+  encode2m weighted moments, erase roots/weights by public Prony/factoring,
+  Fourier-measure coefficients. Parent rederived exact conditional correct
+  projective-ray probability binom(p,m)/[p^m(p-1)^(m-1)]. At d3 this is
+  exactly1/(2p), before distinctness. Direct repetition is not polylogp.
+  This is outside the old split-resultant support proof, and rejects ONLY
+  this coefficient readout, not alternate processing of its outcomes.
+- Independent external comparison: 2604.07639v2 D.12/D.13 supplies a valid
+  averaged-channel oracle sketch from CLASSICAL labeled samples, at
+  O(p Q²/epsilon) cost on a uniform p-element domain. It is not a conversion
+  from phase copies, which do not supply measured sign labels. Parent and
+  source helper checked the actual theorems and memory/runtime discussion;
+  no external-paper-error or general structured-character lower bound.
+- Parent's direct sketch falsifier: M basis-selective phase updates on|+>
+  alter<=M coordinates, so target overlap<= (d-1)/sqrtp+2M/p by Weil.
+  Every realization obeys it; average fidelity obeys its square. Constant
+  fidelity needs Omega(p) for this raw update model whenp≫d², not all
+  circuits. Independent actual-note review accepted both calculations,
+  erasure and scope; parent independently rederived them. No finite run needed.
+- Strong comparators retained: known fixed-degree native quantum receiver,
+  Kopparty full-table classical reconstruction with its actual promises,
+  and the source paper's unrestricted-memory classical runtime comparison.
+  No new algorithm, hardness, novelty, source bridge or execution claim.
+  Next hard question and command/artifact/acceptance are in top MECHANICAL.
+
+## 2026-11-06 Cubic Gauss Elliptic Product Admission
+
+- Concrete classical mechanism tested: CM/full-kernel evaluation of the
+  Matthews elliptic product for standard-additive-character cubic Gauss
+  phase, given an explicit primary Eisenstein prime pi of normp.
+  CUBIC_GAUSS_ELLIPTIC_PRODUCT_ADMISSION.md records the source-based result.
+- Ito2012 Theorem2 ALREADY evaluates the canonical elliptic factor's branch.
+  The unpaid factor is alpha(S_pi)=product of the geometric representatives
+  modulo pi, lifted to a cube root of-1. Known Gauss phase and this product
+  are mutually reducible with polynomial extra work; no new algorithm.
+- Independent derivation: changing one representative by rho multiplies
+  BOTH alpha and the elliptic product by rho. Full-kernel product=pi^-2
+  only gives the cubed identity tau^3=-p*pi. This rejects one claimed
+  completion, not all CM algorithms or all classical Gauss computations.
+- Strong classical comparator: Tal's exact Jacobi result is poly(q,logp),
+  but arbitrary factorial Theorem1.1 is soft-O(q^c+sqrt(p/q)); fixedq3 does
+  not remove sqrt(p). General Gauss-to-DLog reduction uses full-orderchi;
+  it supplies no fixed-cubic-order hardness conclusion. Parent read actual
+  Ito equations/Theorem2/Section4, Tal Theorem1.1 and vanDam--Seroussi
+  Algorithm3/Theorem1/Lemma2. Independent actual-text review accepted the
+  note, including principal-angle bookkeeping. A separate comparison found
+  only O(sqrtp) rowwise factorial ratios, with no paid cancellation.
+- Exact Sage controls p7,13,19,31 completed and parent-inspected: tau³,
+  three additive-twist ratios, and representative rotations pass. Numerical
+  principal-root branches0,2,2,0 use160bits. Arbitrary representatives are
+  NOT Ito geometric S_pi. No elliptic/quantum run or asymptotic inference.
+- Next hard question: is there a PAID fast product for Ito's region or a
+  different representative rule paying BOTH factors? No subsystem or sweep
+  is justified without that operation. The polynomial-degree native
+  character reconstruction gap remains higher priority. Algorithm,
+  dequantization, hardness, novelty and quantum-execution gates stay false.
+  Exact next command/artifact/acceptance are in top MECHANICAL_FOLLOW_UP_PLAN.
+
+## 2026-11-06 Half-Center Subset Sum and Gaussian Admission
+
+- New concrete sampler admission/correction: DCP_HALF_CENTER_DGS_ADMISSION.md.
+  Derivations AND actual-text core review accepted Sections1--6. Tiny exact
+  controls completed and inspected; no quantum implementation.
+- Exact geometry reuses the October16 half-integer correction: for the
+  modular target coset, all integer points lie at distance >=sqrt(n)/2
+  from (1/2,...,1/2), with equality EXACTLY for binary witnesses. Signed
+  coordinates retain all odd parities and determinant 2^n D/g. The legacy
+  NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER drops that parity and
+  converts a volume heuristic into an unsupported universal list bound.
+- For IID uniform coefficients and independent uniform T, exact moments
+  EN=2^n/D and EN²=2^n/D+2^n(2^n-1)/D². For planted uniform X, EN=1+(2^n-1)/D;
+  atD=2^n the planted law has density N relative to the uniform-target law.
+  Thus no exponential expected closest-list multiplicity on either source.
+  Finding a short list or an exact closest vector remains unpaid.
+- Constructive target calculation: a GIVEN-target coset Gaussian at the
+  Boolean midpoint with sigma²<=2pi/log(32n) returns a binary witness with
+  average probability >7/16 under independent uniform T, >16/17 under the
+  planted law, before TVerror. This is conditional on the sampler, not an
+  algorithm. Freshly generating a target/witness pair does not supply it.
+- First source falsifier: a straightforward arbitrary-center extension of
+  the conservative zero-centered theta envelope has actual herald probability
+  <=(17/16)(8/n)^(n/8), for every instance and basis. Polynomial standard
+  amplitude amplification/repetitions cannot pay that herald. No bound on
+  tighter normalizers, arbitrary DGS algorithms or other failure-state uses.
+  Source2605.20133 Section3.3 applies its final sampler at c=0; no affine
+  theorem imported. Coster0.9408 requires an SVPoracle, not unconditionalLLL.
+- Finite evidence: exhaustive n3D8 census givesEN1, EN²15/8 and planted
+  mean15/8. n2D4 verifies dropped parity/determinants4,16. ONE unfiltered
+  n8D256 draw has3binarysolutions; LLL+actualGS nearest-plane and fpylll
+  provedCVP both return verified witnesses at squaredscaled distance8.
+  Enumeration is validator-only after both solver outputs; no scaling claim.
+  Source helper and parent checked DGS Theorem7 and Coster Theorem3.1.
+  Legacy note now has an explicit withdrawal warning; only exact-record
+  registry quarantine remains queued to Gemini, with its original hash.
+- Independent CFT candidate fails atlambda21: rim-hook recursion gives1/3
+  to each of1³,21,3, whereas the exact row law is2/3,0,1/3. This rejects
+  one incoherent recursion, not joint row sampling. No new CFT subsystem.
+- Next hard question is a paid given-target preparation/normalization OR a
+  different native mechanism, not a larger Gaussian scan. All algorithm,
+  hardness, novelty, DCP speedup and execution gates remain false. Exact
+  next commands/artifacts/acceptance are in top MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-06 Native OPI Fixed-Direction Gibbs Test
+
+- Completed one analytical falsifier, no implementation: the helper-authored
+  SCALAR_OPI_GIBBS_LINE_TEST.md passed parent actual-text review. The weighted
+  MDS second moment, exact native/planted TV identity, balanced-row affinity
+  and self-loop mixing argument were independently rederived. Automated
+  mathematical review only; no novelty, experiment or quantum run claimed.
+- Exact native source: q=2^t>=4, m=q-1, [m,k] RS, independent uniform q/2
+  halfsets supplied as FULL tables. The proposed classical competitor
+  targets pi(c) proportional to exp(beta*score(c)) using ideal field-line
+  heat baths. Each line needs O(mq) table inspections. The hoped polynomial
+  worst-start mixing certificate is false for fixed beta>0, fixed rate
+  0<R<1, and a polynomial PUBLIC catalog of nonzero directions.
+- With tau=tanh(beta/2), v=(1+tau²)^m/q^k and
+  rho=(q-2+q*sech(beta/2))/(2(q-1)), native stationary expected maximal
+  catalog exit is <=M(q-1)rho^(m-k+1)+sqrt(v)/2=:epsilon.
+  Fixed random-scan mixtures over a spanning catalog have worst-start
+  mixing >=floor(1/(8sqrt(epsilon))) on an original-table event of probability
+  >=1-sqrt(epsilon)-4v. The planted tilt is proof-only, paid by exact
+  TV=E|1-Z/EZ|/2; no replacement source or free conditional counts.
+- Stronger surviving classical baseline: 2610.06753v1 C.3/D.1 updates its
+  systematic basis using newly satisfied rows and changes temperature.
+  Parent checked that primary text. It is OUTSIDE this theorem. The sticky
+  states can already be successful witnesses: no first-hit bound from a
+  uniform/Prange start, general OPI hardness, quantum separation, or
+  rejection of the published annealer follows. No further sweep is queued.
+- Independent comparisons admitted no operation: weak-surface work still
+  lacks a paid native source; Gauss-phase estimation is already a quantum
+  task and no new application was obtained; Singer-copy information does
+  not give a native sign-source receiver. Relative transduction was found
+  already covered by the corpus and was not reopened. These are selection
+  outcomes, not new impossibility results. The main growing-degree native
+  character problem remains open; do not continue a line solely to extend
+  its nearby obstructions.
+- Next hard question: a constructive poly(d,logp) native character receiver
+  beyond the closed split/Hankel operation, compared against a genuinely
+  new full-table scalar-OPI classical operation. No operation passed this
+  pass's admission gate. Next command, required artifact and acceptance
+  are in the top MECHANICAL_FOLLOW_UP_PLAN.md entry; no code without it.
+
+## 2026-11-06 Hidden Field Baseline and Singer Copy Correction
+
+- Completed reviewed checkpoint: HIDDEN_FIELD_CHARACTER_ADMISSION.md is
+  the current topic note. Section2's classical norm-character reconstruction
+  passed actual-text core review, including Frobenius alignment and capped
+  unbiased sampling/factorization. Section3's Singer-copy bounds were
+  independently checked against the primary theorem/proof and actual note.
+- Native candidate: F(x)=padded chi_p Norm(Lx), unknown invertible Fp-linear
+  L on dimensionn, output normalized field algebra/projective norm. Under
+  CHOSEN sign queries, WRITTEN classical O(p n log(n/eta)) query baseline
+  for p>=65536n²: verified irreducible line decode, public field from one
+  generator, n Frobenius candidates per basis vector, second-line alignment.
+  No selected-line access from global copies and no polylog-p classical claim.
+- A retained prior-work exclusion is false: for ordinary GL_n(Fp) Singer
+  mixed coset states, distinct embedded fields intersect in proper F_(p^e),
+  e<=n/2. Hayashi--Kawachi--Kobayashi0604174 Thms2.3/2.5 imply per-T PGM
+  error<=4(N-1)p^(-nk/2), and any POVM average success<=(p^n-1)^k/N.
+  Thus fixed-error standard copy complexity is Theta(n), NOT Omega(n²).
+  This is an application of known discrimination bounds, not a circuit.
+- Additional exact counterexamples: atn4 a nonscalar subfield element
+  has reducible characteristic polynomial minpoly²; g,cg scalar-related
+  classical queries always collide. The old universal collision bound and
+  dimension-derived circuit lower bound cannot be used. Unipotent exclusion
+  and conjugacy-invariance of final weak labels survive.
+- Exact Sage F81 control verifies minpoly², an invertible conjugator and
+  dimension2 field intersection. The native p3n3 Groebner attack used26
+  sign queries and returned39 candidates, all with identical norm and field
+  algebra. Producer uses only oracle/public data; truth is validator-only.
+  One run, finite-only; no high-p Kopparty pipeline or quantum execution.
+  classical_baselines/hidden_field_scope_control.* is durable and inspected.
+- No native sign-to-Singer coset reduction, efficient PGM, new quantum
+  algorithm, hardness, novelty or separation. Legacy note has an explicit
+  correction; exact-record registry quarantine and test-description repairs
+  are queued to Gemini with original hash. Next hard question is a paid
+  native field receiver compared against independent directions, not a PGM
+  wrapper. Next command, artifact and acceptance: top of
+  MECHANICAL_FOLLOW_UP_PLAN.md. The main native univariate priority remains;
+  no field-only application or false barrier promotes this candidate.
+
+## 2026-11-06 Native Source Admission and Current PFR Baseline
+
+- Bounded portfolio comparison after the completed CFT pass; no new
+  algorithm, impossibility theorem or experiment. Independent mechanism
+  reviewer found no admitted operation. Keep the latest CFT and symmetric-
+  determinant results at their already reviewed scope; do not rerun them.
+- Highest-value question remains native monic squarefree degree-d
+  reconstruction from fresh padded-character copies (BIT queries may
+  prepare them), in poly(d,logp) total time. Proposed Gauss-auxiliary
+  mechanism would feed additive polynomial phases into moment-map
+  interpolation. The identity does NOT supply coherent exp(2pi i tQ(x)/p)
+  from character-only input. A paid conversion, including normalization,
+  query cost and retained workspace, remains missing. This proposal is
+  CONDITIONAL, not disproved for all possible conversions. The retained
+  quantum algorithm costs exp(O(d logd)); Kopparty's applicable complete-
+  table classical decoder costs poly(p). Neither is a lower bound.
+  Russell--Shparlinski Theorem6 actual local text was rechecked: its
+  O(d) statement supplies queries and an existential POVM, not a circuit.
+- Independent native candidate: given uniform samples and membership
+  access to nonempty A subset F2^n with |A+A|<=K|A|, output a basis of
+  V with |V|<=|A| and polynomially many translates covering A. A quantum
+  stabilizer-learning route aimed at poly(n,K) would improve the older
+  exponential-K dependence, but CURRENT primary prior art already gives
+  a randomized classical poly(n,K,log1delta) algorithm for exactly that
+  output/access. Arunachalam--Dutt--Grewal--Gupte, 2609.20771v1,
+  Theorem1.2 (actual HTML theorem and access paragraphs inspected):
+  https://arxiv.org/html/2609.20771v1#S1.SS1 . Earlier ITCS2026 Theorems2/3
+  already match polynomial-n solvability at fixed K. Do not transfer this
+  to quantum-state-copy-only access or claim an independent proof audit.
+  This source-level classical falsifier needs no implementation or scan.
+- Independent scalar OPI comparison retains the EXACT full-table input
+  and published target score. The proposed unequal reliabilities from
+  small joint conditioning are already covered by the <=k-1-row uniformity
+  argument in LEGENDRE_HANKEL_SUCCESS_BOUNDARY.md; the helper supplied no
+  polynomial larger-joint contraction. No new OPI theorem or baseline run.
+- All speedup/novelty/separation/native additive-oracle gates stay false.
+  No new subsystem or barrier note. Next hard question: supply a genuinely
+  new paid source/measurement for the native reconstruction problem, or
+  a better externally motivated native problem after independent comparison.
+  Next command, expected artifact and acceptance: top of
+  MECHANICAL_FOLLOW_UP_PLAN.md. Mathematical difficulty is not completion
+  or an external blocker for the research goal.
+
+## 2026-11-06 Classical Character Marginals Match Coarse CFT Entropy
+
+- Independently ACTUAL-TEXT reviewed WRITTEN classical algorithm for
+  EVERY explicit partition lambda of n: compute every single cycle-count
+  marginal of row P_lambda(nu)=chi_lambda(nu)^2/z_nu exactly in poly(n)
+  bit time. Hence compute the SAME pointwise L_lambda=-Elogz used in
+  Rathore--Zhou2610.05752 Section5.2 to additive epsilon in
+  poly(n,log1epsilon). CFT_CHARACTER_MARGINAL_BASELINE.md Sections1--3.
+- One-mode displacement is exp(-su²/2) times a finite Laguerre mixture.
+  Infinite-wedge CCR comes BEFORE finite truncation: F=n+2s floor(n/s)+1
+  protects every coefficient through degree2floor(n/s). A finite Slater
+  determinant, exact rational Taylor coefficients and binomial inversion
+  pay the whole algorithm. No infinite determinant, uncharged phase,
+  noisy-moment inversion or factorial bit cost. Finite2n currents are NOT
+  globally bosonic. Core reviewer checked corrected actual text.
+- Separate actual-source audit confirms native explicit lambda, row law,
+  additive logz statistic and Delta S=L+H(P), 0<=H<=logp(n). Thus the
+  classical approximation has the same coarse bias, plus epsilon.
+  This is not a uniform/Plancherel-only substitute or column sampler.
+- Independently reviewed corollary: E m_s=hook_multiplicity_s/s and equal-
+  hook cells form an antichain, giving
+  0<=-Delta S_lambda<=sqrt(2n) H_n logn=o(n) UNIFORMLY in lambda.
+  Maximum/any-average asymptotic linear growth is excluded. The source
+  only reports finite n<=30 linear fits; those finite data are not refuted.
+- Five exact Sage controls match independent full-row characters. Wrong
+  bosonic scale and too-short window can still yield normalized positive
+  probabilities but fail exact comparison. Producer/JSON:
+  classical_baselines/cft_character_marginal_control.*. No broad scan or
+  quantum execution; finite controls do not prove the algorithm.
+- No novelty, full joint row sampling, joint entropy/exact Delta S,
+  coherent QCT/column-sampling/HSP dequantization, or paper-error claim.
+  No matched runtime exponent claimed. This closes the coarse-entropy
+  application as an unmatched polynomial-time quantum opportunity only.
+- Earlier portfolio checks supplied no new bridge: published Legendre MQ
+  uses explicit diagonal quadrics, not hidden full-Sym character copies;
+  the independent AG selector needs degree2e-11<g and is not supplied by
+  ordinary RR or already-paid Jacobian coordinates. No subsystem built.
+- Next high-value question remains paid native polynomial-degree character
+  reconstruction, compared with independent native tasks. No automatic
+  character-table extension. Next command/artifact/acceptance are in
+  MECHANICAL_FOLLOW_UP_PLAN.md; all current controls complete.
+
+## 2026-11-06 Draft Classical Character-Row Marginal Baseline
+
+- Independent pivot now has a concrete native target: Rathore--Zhou
+  2610.05752 Section5.2, explicit lambda, row law chi_lambda(nu)^2/z_nu,
+  coarse CFT entropy estimator L=-Elogz. Source scope independently
+  audited; quantum bias is H(P)<=logp(n), numerical/circuit error extra.
+- DRAFT hard derivation in CFT_CHARACTER_MARGINAL_BASELINE.md: every
+  single cycle-count marginal from one exact formal Slater determinant.
+  Displacement gives exp(-su²/2) times a finite Laguerre mixture; rational
+  Taylor coefficients and binomial inversion recover the marginal.
+  Window F=n+2s floor(n/s)+1 pays all terms through degree2floor(n/s);
+  O(n)-size polynomial matrices, polynomial degree/bit cost. Core review
+  pending; no algorithm execution or classical conclusion admitted yet.
+- This would compute the SAME pointwise L in polynomial time, NOT merely
+  a uniform/Plancherel average. No joint sampling/entropy, exact Delta S,
+  QCT/HSP dequantization, novelty or paper-error claim. Finite 2n-mode
+  currents are not globally canonical bosons; truncation proof is critical.
+- Earlier checks found no paid Symdet source bridge from published
+  Legendre MQ: its quadrics are public and diagonal. Independent AG
+  parity-selector comparison adds no operation: degree2e-11<g and known
+  group coordinates cannot perform constrained effectivity. No subsystem.
+- Next: independent all-n core falsification, then one exact character-law
+  control if accepted. Mechanical details at top of
+  MECHANICAL_FOLLOW_UP_PLAN.md. STATE will be refreshed at pass end.
+
+## 2026-11-06 Symmetric Determinant Character Receiver Reviewed
+
+- Independently ACTUAL-TEXT reviewed WRITTEN algorithm: EVERY n>=3,
+  p>=256[binom(n+3,4)+n+1], unknown arbitrary invertible L on Sym_n,
+  fresh exact GLOBAL padded-character copies. Projectively reconstruct
+  det(LA) with O(n^4 log1eta) copies and poly(n,logp,log1eta) time/space.
+  SYMMETRIC_DETERMINANT_CHARACTER_READOUT.md Sections1--4.
+- Parity-combined Gauss sums give a virtual rank1 Fourier source; actual
+  padding/lower-rank error squared<=4/(p-1), not free source replacement.
+  Quartic rank escape learns the Veronese quadratic ideal. Tangent-line
+  intersections and one generic point align scales; no hidden frame or
+  square roots. Trace factor2/adjoint, raw-row errors, PIT/majority on bad
+  events and four eta/4 finite-cap budgets are paid.
+- Strong native classical baseline independently reviewed in Section5:
+  p>=65536n², O(p[N³+log1eta]) padded-SIGN queries, poly(n,p,log1eta)
+  time. Actual Kopparty Thm3.1 degree epsilon*sqrt(p)/16; try both signs,
+  verify full tables, reject bad lines, interpolate log-det jets, learn
+  the trace Jordan product, use Newton identities. Output evaluable
+  projective circuit, not asserted explicit coordinate isomorphism.
+  Weil exception is NONZERO SCALAR TIMES SQUARE, not merely square.
+  Imported/composed classical algorithm NOT executed. No hardness.
+- Two raw-Gauss FFT controls n3p5/n4p3 reproduce actual rank1 mass
+  .63995904/.4070442439 and all normalization identities; below threshold.
+  One exact Sage ideal decoder n3p65537 uses19 labels, rank15/kernel6,
+  exact projective equality; wrong trace/inverse conventions fail. Both
+  producer/JSON pairs live under classical_baselines/symmetric_det_*.
+  No actual contaminated-source decoder or quantum execution claimed.
+- No novelty, separation, native external application, general univariate
+  or full-matrix learner, noisy/small-prime extension. Known-column
+  determinant alternative NOT admitted as a program. This structured
+  growing-degree result does not remove the univariate factorial blocker.
+- Next highest-value question remains a paid general-degree native
+  character learner, compared with independent directions. Before another
+  extension, seek a precise external source reduction or a genuinely new
+  operation. No nearby determinant variants or further controls by default.
+  Next command/artifact/acceptance: top MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-06 Symmetric Determinant Rank-One Receiver Under Review
+
+- WRITTEN constructive candidate, independent core/classical review in
+  progress: SYMMETRIC_DETERMINANT_CHARACTER_READOUT.md. Every n>=3,
+  p>=256[binom(n+3,4)+n+1], unknown arbitrary L on Sym_n, fresh exact
+  GLOBAL padded-character copies; reconstruct det(LA) projectively in
+  poly(n,logp,log1eta), if the detailed proof survives review.
+- Parity-combined scalar Gauss sums equal chi(det) at full rank and
+  cancel corank1. Their Fourier state is uniform in magnitude on rank1,
+  with only a small even-n zero component; actual padding/source error
+  squared<=4/(p-1). Quartic rank escape learns the quadratic Veronese
+  ideal; tangent intersections and one generic point fix all coordinate
+  scales. Trace-pairing factor2 and adjoint direction are explicit.
+- Raw finite n3p5/n4p3 FFT checks passed normalization falsifiers, not the
+  algorithm: below-threshold actual rank1 mass .639959/.407044. No quantum
+  run. Classical full-sign-line/log-det-jet comparator under review;
+  ordinary GGKS19 full-value determinant theorem is not imported here.
+- No novelty/separation, native external application, arbitrary univariate
+  learner, general full-matrix learner, noise/smallp or quantum execution.
+  Known-column determinant lemma was NOT admitted as a new program.
+- Next hard question is correctness and classical/source comparison of
+  this single receiver, then value-based priority selection. Mechanical
+  queue at top of MECHANICAL_FOLLOW_UP_PLAN.md waits for core review.
+
+## 2026-11-06 All-Conductor Jacobi Recovery Already Classical
+
+- Independent direction comparison selected repeated Jacobi recovery as
+  a concrete alternative to character learning. Local WRITTEN all-q
+  group-ring reduction independently reviewed: every prime p,q|p-1,
+  1<=a<q, compatible character/prime, exact J_a and modp,p² in
+  poly(q,logp), including even/composite/noncoprime cases.
+- R=Z[Cq] retains all components. Public CRT/HNF ideal uses
+  E_j=ceil(aj/q)-1 and augmentation M=((p-1)^a-(-1)^a)/p; all-character
+  Gauss valuation and equal index prove I=RV with integral gluing paid.
+  Explicit norm w plus Lenstra--Silverberg returns generator; integral
+  norm-one ratio is +/-X^k. Augmentation and even-q derivative fix it.
+  No hidden true sum, factorization of M, maximal-order gluing advice,
+  compact-output debt or free character setup. Detailed proof/reviews:
+  JACOBI_GROUP_RING_RECOVERY.md. Imported recovery NOT implemented.
+- PRIORITY-CHANGING PRIMARY SOURCE: Tal September2026 ECCC TR26-211
+  already proves the same native classical task, Thm1.5, Lemma2.8,
+  Section3.1/Thm3.1 and3.3. Parent and independent source audit read the
+  actual statements, procedure, degeneracies, setup and cost. It uses
+  known-norm recovery plus van Wamelen root selection. July quantum paper
+  is not the strongest current comparator. No external-paper-error claim.
+- Cancelled four planned Sage controls BEFORE implementation: prior art
+  supplies their intended algorithmic conclusion. No control artifact,
+  GS/LS, modular-factorial or quantum execution is claimed. Existing
+  prime-conductor notes have scope-refresh banners. Specific priority of
+  this alternate group-ring proof is unverified; novelty/separation/
+  fastest-factorial-exponent/general polylog-factorial gates stay false.
+- Highest-value open question remains a genuinely different paid uniform
+  polynomial-degree character learner, compared with independent native
+  directions. Next command and source-comparison acceptance are in
+  MECHANICAL_FOLLOW_UP_PLAN.md. No return to composite Jacobi ambiguity
+  or further arithmetic infrastructure without a new native payoff.
+
+## 2026-11-06 Draft Full Group-Ring Jacobi Recovery
+
+- DRAFT constructive classical reduction, independent core review pending:
+  JACOBI_GROUP_RING_RECOVERY.md. Exact repeated J_a for EVERY q|p-1,
+  1<=a<q, compatible public character/prime, cost poly(q,logp). Native
+  payoff is Tal2607.29453 Thm1.3, not an invented phase oracle.
+- Keep R=Z[X]/(Xq-1), full coefficient-vector witness V, augmentation
+  M=((p-1)^a-(-1)^a)/p. Public ideal imposes all j!=0 p-adic evaluations
+  with E_j=ceil(aj/q)-1 plus augmentation divisible by M. Coprime CRT,
+  Gauss valuations and norm/index give I=RV, including integral gluing.
+- Public w has components M², p^(a-1), or p^(a-2) when product character
+  becomes trivial. Explicit integral formula in note; no free known sums.
+  Lenstra--Silverberg CM-order theorem applies to this group ring and
+  returns normalized generator. Ratio u is integral norm-one, hence
+  coefficient sumsq1 forces +/-X^k. Sign/shift fixed by augmentation and
+  explicit derivative moment, also for even q. No factorization of M.
+- Strong classical comparator is the published known-relative-norm
+  theorem, NOT empirical LLL. Actual theorem input/phase controls pending;
+  imported recovery algorithm not executed. General quantum separation,
+  novelty, external-paper-error and same-factorial-exponent gates FALSE.
+- Next command/artifact/acceptance: prescribed public-input Sage controls
+  in MECHANICAL_FOLLOW_UP_PLAN.md's group-ring entry. Core proofs of
+  valuations, gluing, norm and resource bounds remain Codex review work.
+
+## 2026-11-06 Determinant Fourier Candidate Fails Admission
+
+- Compared a structured growing-degree candidate after independent
+  Kloosterman rejection. Native hypothetical input: fresh exact global
+  padded-character copies of det(mat(Lx)), unknown L in GL(n^2,Fp), n>=2.
+  Output projective determinant representation, hoped poly(n,logp).
+  Character-only source application itself remains unpaid.
+- Corpus then primary literature: full-value determinant equivalence is
+  already randomized polynomial (GGKS19 Thm1, |F|>=10n^4, characteristic
+  not dividing n(n-1)); it does NOT accept sign/copy-only input.
+- Li--Hu matrix Gauss formula plus exact padding accounting proves EACH
+  direct-QFT measured law is within s+alpha*p^(-n/2)<=1/(p-1)+p^(-n/2)
+  of uniform, alpha=prod(1-p^-j),s=1-alpha. t measured copies have at most
+  t times this distance. Uniform classical vectors match the output with
+  zero oracle access; t=o(p) cannot give constant binary advantage.
+- Independent core review accepts normalization, zero label, interference,
+  inverse transpose and tensorization; use PROJECTIVELY distinct instances.
+  No coherent/collective/general native-learning lower bound. No quantum
+  subsystem or finite scan built; no classical full-value routine executed.
+  Derivation/scope: CHARACTER_DETERMINANT_FOURIER_ADMISSION.md.
+- Highest-value unresolved question remains a paid uniform poly(d,logp)
+  character-polynomial learner, with comparison against independent native
+  candidates. No determinant variant program or formal Kloosterman wrapper.
+  Next command/artifact/acceptance are in the mechanical entry below;
+  algorithm, novelty, separation, hardness and execution gates stay false.
+
+## 2026-11-06 Kloosterman Spectral Admission Falsifiers
+
+- Native target: explicit growing odd prime p,a!=0, additive-epsilon
+  approximation to K_p(a)/sqrt(p) in poly(logp,1/epsilon,log1/delta), no
+  spectral oracle/advice. KLOOSTERMAN_SPECTRAL_ADMISSION.md records corpus,
+  actual primary sources and classical-first scope. No operation admitted.
+- Bruin's global amplitudes are K/sqrt(p^2-p-1); scalar extraction costs
+  sqrt(p)/(delta*epsilon)*polylogp. Childs Section8.1 already has the
+  centered walk and entrywise-absolute-norm scale loss. Rank2 Frobenius
+  is an explicit open unitary question, not a constructed circuit.
+- Published Wan degree theorem implies EVERY p>=5,a!=0 has
+  [Q(K):Q]=(p-1)/2: no elliptic integral trace shortcut. No approximation
+  or complexity lower bound follows. C_a:y^p-y=x+a/x has genus p-1;
+  quantum full-zeta poly(g,logp) is not a polylogp guarantee here.
+- Exact separate label falsifier: (x,y)->(rx,ry) identifies C_a and
+  C_(r^2 a) over Fp, hence their whole zetas, while K values are distinct
+  Galois conjugates for r!=+/-1. The marked translation is changed.
+  Unmarked zeta alone is insufficient; original-a/marked arithmetic
+  reductions remain open. Exact p5,a1/4 Sage control gives unequal
+  conjugates, minpoly X^2-3X+1, both genera4 and projective counts12;
+  isomorphism/point-bijection checks pass. Full zeta was not executed.
+- Independent source audit verified normalization, degree quantifiers,
+  classical-small-characteristic scope and +1 convention. No general
+  classical solution/hardness, novelty, separation or quantum execution.
+- Next: compare a new PAID native reconstruction operation with an
+  independent high-upside direction. No further Kloosterman subsystem
+  without explicit scale/label-preserving access. Next command and fixed
+  counterexample acceptance are in MECHANICAL_FOLLOW_UP_PLAN.md's
+  "Preserve Kloosterman Admission Scope" entry. No registry promotion.
+
+## 2026-11-06 Reviewed Affine Quadratic Slice-Lift Receiver
+
+- Independently reviewed WRITTEN theorem in
+  AFFINE_QUADRATIC_CHARACTER_SLICE_READOUT.md: EVERY n>=3, invertible
+  symmetric A, arbitrary b,c, odd prime p>=256T, exact fresh GLOBAL pure
+  padded-character copies recover(A,b,c) projectively in polynomial
+  n,logp,log1eta. k=1/2 for odd/even n, r=n-k+1, T=binom(k+2,2)r(r+1)/2.
+  No selected-slice copies, full-value oracle or unknown-source inverse.
+- Paid operation measures k coordinates z, appends uniform t!=0 and
+  homogenizes each remaining slice. C(z)=adjH_z/detB has degree EXACTLY2,
+  Crr1; shared feature relations have exceptional proportional slices
+  <=4/p. Ideal rank-escape failure13/p becomes actual<26/p by event-norm
+  comparison, using squared distance2(1-sqrt(1-1/p)). No hidden postselection.
+- Public kernel decoder recovers F at one scale; P is resampled EACH
+  attempt. Original-copy validator accepts true projective F >=3/4 and
+  wrong nonsingular G <=1/4, from overlap<=3/sqrt(p)+12/p. R,K copy cap,
+  public randomness caps and approximate-QFT/interval budgets give total
+  failure<=5eta/8. Complete 276-line Sections1--6 actual-text review
+  accepted all cases/resources; parent independently checked derivations.
+- Classical first: native affine line moments need fourth-moment recovery
+  of UNKNOWN leading sign.220 F11 pairs (2420queries) and one F101 affine
+  case (1010queries) pass. Random translated grid avoids the possible zero
+  critical point. Parent read/accepted complete four-template birthday
+  proof: O(n^2sqrt(p)*polylog) queries, extra n for assembly, but this
+  extension is UNIMPLEMENTED. Existing saved birthday code remains monic
+  irreducible only. Scope note: audits/reviews/2026-11-06-affine-quadric-classical-scope.md.
+- BIT/raw-phase quantum polynomial recovery was already a chosen-line
+  univariate corollary. Classical polylog affine sign learning would solve
+  every shifted-Legendre instance through F_s=sum x_i^2+s ands=c'/A'11.
+  This is an oracle implication, not hardness or a copy-source reduction.
+- Two prescribed source cases n3p7,n4p5 give full ideal feature ranks17/35,
+  exact kernel-derived projective decode and4558 restriction identities.
+  Actual cone masses differ from ideal, all bad slices retained. Singular-B
+  guard is ANALYSIS ONLY. All p belowthreshold; no noisy-row receiver or
+  coherent quantum execution. Files closed: affine_quadric_slice_control
+  .py/.json and affine_quadric_line_control.py in classical_baselines/.
+- Gates remain FALSE: novelty, separation, quantum execution, general-
+  degree polynomial time, singular-A/n2/noise/smallp extension. New method
+  is accounted for; do not continue a quadratic variant by inertia.
+- Next scientific priority remains uniform poly(d,logp) native character
+  reconstruction. Independent alternative: explicit normalized Kloosterman
+  evaluation over growing primes; Bruin1807.03600 prepares the global
+  state but fixed-coordinate extraction still costs sqrt(p). No paid
+  rank2 spectral compression found, so no subsystem/control admitted.
+  First next command: corpus been-tried "normalized Kloosterman Frobenius
+  eigenvalue compression growing prime", then primary literature refresh
+  and comparison with a concrete collective native-character operation.
+  Expected artifact: ONE paid circuit/resource derivation or explicit
+  rejection; success requires no hidden eigenspace or small-amplitude
+  amplification debt. Mechanical item: Preserve Reviewed Affine Receiver.
+
+## 2026-11-06 Affine Quadratic Slice-Lift Derivation
+
+- New WRITTEN candidate in AFFINE_QUADRATIC_CHARACTER_SLICE_READOUT.md:
+  every n>=3, invertible A, arbitrary b,c, odd prime p>=256T, fresh exact
+  GLOBAL pure padded-character copies recover (A,b,c) projectively in
+  poly(n,logp,log1eta). k=1/2 for odd/even n, r=n-k+1, T=binom(k+2,2)r(r+1)/2.
+  Actual-text final review/finite controls pending; no novelty/separation.
+- New paid operation: measure k coordinates z, homogenize each remaining
+  slice using public t!=0 and scaling, then Fourier sample. No selected-
+  slice copy source. Shared C(z)=adjH_z/detB has z-degree2,Crr1. Rank-one
+  versus full-rank leading term proves degree EXACTLY2. For every other
+  relation, proportional slices lie in a nonzero degree<=4 zero set.
+- Ideal rank-escape failure<=13/p; restricted t source has squared norm
+  distance<=2/p, so rare-event comparison pays actual failure<26/p,
+  NOT a T/sqrt(p) loss. Random public P has bad B probability<=4m/p;
+  resample P EACH attempt. A T-1 raw-row block has constant correct-kernel
+  probability. Public polynomial-matrix algebra recovers full F.
+- Original-copy candidate overlap verifies outputs, including bad-P
+  attempts: correct scalar multiple >=(1-4/p)^2; wrong nonsingular affine
+  quadratic overlap <=3/sqrt(p)+12/p via line discriminants/resultant and
+  Weil. Known candidate inverse only. Caps R,K and classical/QFT errors
+  give total<=5eta/8 with polynomial resources. Independent algebra checks
+  accept these steps, actual complete-note review still required.
+- Classical first: full-table affine moments tested on220 F11 signed
+  squarefree quadratics and one n3,p101 affine instance. Unknown leading
+  sign requires FOURTH centered moment, not F(u). O(n^2p) queries.
+  Four-template sqrt(p) refinement pending review; BIT/raw-phase quantum
+  upper bound already follows from univariate degree2 on chosen lines.
+- Next command: Sage fixed joint-cone/source controls n3p7,n4p5 plus one
+  singular-coordinate guard. Expected artifact:
+  classical_baselines/affine_quadric_slice_control.json. Acceptance: unique
+  full joint relation and correct projective kernel decode; exact source
+  restriction and charged missing-hyperplane distance; bad B detected.
+  Finite primes below threshold; no quantum execution. Mechanical queue:
+  Preserve Affine Quadratic Slice-Lift Contract.
+- Next hard question: final adversarial complete-text/source/resource
+  review and strongest native classical scope. No general polynomial-
+  degree, singular-A, n2, noise or small-prime claim; do not infer a route
+  around the univariate factorial ceiling from this quadratic composition.
+
+## 2026-11-06 Reviewed Toric Point-Count Classical Comparison
+
+- Independently reviewed WRITTEN classical composition in
+  TORIC_POINTCOUNT_ACCURACY_BASELINE.md matches Maeda--Yano2608.23929
+  accuracy epsilon q^(n+s/2-rho) on ALL odd-characteristic Newton-
+  nondegenerate explicit canonical Laurent inputs with fixed rational
+  augmented rank rho and bounded exponent entries. Polynomial in input,
+  logq,1/epsilon,log1delta; no unknown polynomial oracle or hidden advice.
+- s>rho: saturated-lattice bijection reduces to r=rho-1 active variables.
+  Published Sperber--Voight trace bound gives ambient A_r with error
+  (v-1)q^((r-1)/2), v<=r!(2C)^r. Largeq ambient answer and bounded smallq
+  enumeration pay time. Source explicitly assumes odd characteristic.
+- s=rho: EXACT classical counter in every characteristic, even without
+  Newton nondegeneracy. SNF bounds character orders by constantg; fixed-
+  degree smooth Fermat twists counted by Pila0504570 TheoremF give Jacobi
+  sums after all boundary corrections. Total character zero modg removes
+  every nontrivial Gauss factor. No general generator/DLP, no supplied
+  Jacobian; raw-bit capped sampling and empty/monomial cases paid.
+- Two independent actual-text reviews accept the composition. Parent
+  checked the primary statements and math. Four fixed Sage controls:
+  p41/43 counts1664/1734, errors103/11, all15faces certified percase;
+  p13g4 all16 Jacobi identities and64tuple count0 match exactly.
+  Pila algorithm NOT executed. Strong guard: (1+x)(1+y+z) has error1560
+  above target840.5 atp41; factorization counts it classically.
+- Gates FALSE: general s>rho Newton-degenerate classical solver, refutation
+  of the quantum theorem, novelty/separation, quantum or practical Pila
+  execution, and transfer to native unknown-polynomial character access.
+  Source PDFs and exact control JSON are pinned in the topic note/artifact.
+- Independent triage did not admit a new OPI or orthogonal-HSP operation.
+  Native poly(d,logp) character reconstruction remains highest-value;
+  pointwise Gauss lifting and uniformly postselected candidate analysis
+  do not supply a paid collective decoder. No new variant/sweep/subsystem.
+- Next hard question: construct an informative collective character-to-
+  additive or normalized analysis operation with polynomial charged
+  success, preserving native access. First command:
+  `/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "Legendre polynomial collective character additive lift normalized analysis transform"`.
+  Expected artifact: ONE precise paid operation/resource derivation or
+  explicit rejection; acceptance requires escaped split-support ceiling,
+  no p^(-Omega(d)) herald, and a matched native classical comparison BEFORE
+  implementation. No experiment is admitted just because the gap persists.
+  Mechanical item: Preserve Reviewed Toric Classical Comparison.
+
+## 2026-11-06 Fixed-Order Jacobi Point-Count Branch
+
+- New hard derivation in TORIC_POINTCOUNT_ACCURACY_BASELINE.md Section4:
+  explicit canonical support s=rho with fixed rank/entry bounds has an
+  exact expected-poly(input,logq) CLASSICAL counter, every finite field,
+  without Newton nondegeneracy. Actual-text review and finite identity
+  control pending. This extends the already-reviewed odd-characteristic
+  nondegenerate s>rho ambient estimator; that estimator is unchanged.
+- Full-column-rank SNF forces all admissible characters to order dividing
+  g=gcd(d_s,q-1), a constant. No general generator/DLP: sample a whose
+  a^((q-1)/g) has orderg; bounded lookup labels characters, capped trials
+  pay delta. Count g^2 smooth fixed-degree Fermat twists via Pila0504570
+  TheoremF, subtract all three coordinate boundaries, Fourier-invert to
+  Jacobi sums, and combine Gauss factors using total character=1.
+- Combined scope covers all odd-characteristic Newton-nondegenerate
+  bounded-support inputs at the advertised Maeda--Yano additive accuracy.
+  General s>rho degenerate inputs remain UNKNOWN. No refutation of the
+  valid quantum theorem, novelty, generic classical advantage, practical
+  Pila implementation or native character-oracle reconstruction claim.
+- Controls already done for prior branch: p41/43 counts1664/1734, errors
+  103/11, all15 Newton faces certified percase. Degenerate factor guard
+  gives error1560>840.5 atp41, so the ambient estimator cannot be widened.
+- Next command: exact Sage p13,g4 twisted-Fermat/finite-character identity
+  control for 1+x^4+y^4+z^4; expected retained JSON. Acceptance: all16
+  Fourier-inverted Jacobi sums equal direct sums, character formula equals
+  native exact count, and no growing-order Gauss oracle appears. Final
+  actual-text review must inspect section4, including boundary/zero rules.
+  Mechanical item: Preserve Toric Point-Count Accuracy Scope.
+
+## 2026-11-06 Toric Point-Count Accuracy Classical Baseline
+
+- New WRITTEN classical composition in TORIC_POINTCOUNT_ACCURACY_BASELINE.md,
+  actual-text review/controls pending: explicit canonical Laurent support,
+  fixed augmented rank rho and bounded entries, Newton nondegenerate after
+  SATURATED torus reduction, s>=rho+1. Achieves Maeda--Yano2608.23929 error
+  epsilon q^(n+s/2-rho) in poly(input,logq,1/epsilon) time.
+- Published Sperber--Voight weight bound gives ambient term
+  A_r=((q-1)^r-(-1)^r)/q with error<=(v-1)q^((r-1)/2), r=rho-1.
+  Return ambient count for q>=max(2,((v-1)/epsilon)^2); below it enumerate
+  only r active coordinates. Uniform v<=r!(2C)^r pays all constants.
+  No hidden cohomology trace, Gauss sum evaluation or free root extraction.
+- Strongest guard: f=(1+x)(1+y+z) has ambient error(q-1)(q-2), violating
+  epsilon q^2 atq41,epsilon1/2. Factorization counts it classically; no
+  hardness. General Newton-degenerate inputs and s=rho equality remain
+  outside this ambient estimator. Published quantum theorem not refuted.
+- Next hard question: can equality s=rho be matched using explicitly paid
+  fixed-order Jacobi sums/curve counts, and does any specific degenerate
+  family leave a motivated unresolved quantum payoff? Do not create a
+  subsystem from the residual. Primary finite-field source is explicit,
+  not native unknown-polynomial character access.
+- Next command: Sage controls atp41/43 for 1+x+y+z+1/(xyz), all faces,
+  volume4, exact counts; then actual-text review. Expected artifact:
+  classical_baselines/toric_pointcount_accuracy_control.json. Acceptance:
+  nondegenerate promised branch meets exact bound; degenerate guard fails.
+  Mechanical queue: Preserve Toric Point-Count Accuracy Scope.
+
+## 2026-11-06 Reviewed Global Quadratic Character Copy Receiver
+
+- Independently reviewed WRITTEN end-to-end theorem in
+  QUADRATIC_CHARACTER_CONE_READOUT.md: every odd n>=3, odd prime p>=16n^2,
+  every invertible symmetric A, fresh exact GLOBAL pure padded-character
+  copies recover A up to nonzero scalar in poly(n,logp,log1eta) time.
+  No value oracle, chosen-line copy source or supplied cone samples.
+- Exact Fourier law gives uniform nonzero-dual-cone mass
+  alpha=(1-p^(-(n-1)))(1-1/p)^2. Witt/SZ uniform escape pays rankD-1,
+  D=n(n+1)/2; a block succeeds>=9/16. Fresh Fourier labels verify candidate
+  cones with true>=1-2/p and wrong<=7/p. Explicit caps R,K give
+  L=R(D-1+K) copies; ideal failure<=eta/2 and approximate-QFT hybrid budget
+  pays total<=eta. Actual-text independent review accepted all steps.
+- Material source distinction: BIT/raw-phase oracle polynomial recovery
+  already follows from earlier univariate degree2 decoding on O(n^2) chosen
+  affine lines. Direct projection of a GLOBAL copy onto one line costs
+  p^(1-n). No new oracle upper bound or free copy-to-oracle conversion.
+- Native classical attack is explicit: O(n^2p) SIGN queries and O(n^3p)
+  field work via line moments;84 exact p7 signed-quadratic cases pass.
+  Classical projective recovery would solve linear Legendre hidden shift
+  by a paid one-query embedding plus exact zero-shift repair;2058 native
+  simulation and36 ratio checks pass. Implication only, not hardness.
+- Four predeclared controls pass after the native full-table baseline.
+  Source normalization, padding, dense off-diagonal convention and full
+  cone rank are checked. At p3,n5 the true and one wrong cone verifier
+  BOTH accept49/81; all finitep below threshold. No small-prime guarantee,
+  coherent circuit execution, novelty or classical separation. Review:
+  audits/reviews/2026-11-05-quadric-classical-scope.md; artifact:
+  classical_baselines/quadric_cone_control.json.
+- Independent portfolio check: November Simon mirror retains October's
+  decoder despite revised explanation; official-byte identity UNKNOWN.
+  No DCP re-entry. Pinned source-delta note is linked from October audit.
+- Next hard question: identify the next native use or genuinely different
+  paid source/measurement whose end-to-end payoff survives prior art and
+  classical attacks. The new copy theorem is accounted for, not grounds
+  for a parity/noise sweep. Concrete first command:
+  `/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "quadratic character global phase copies dual cone reconstruction"`,
+  then primary state-learning coverage and an independent native-direction
+  comparison. Expected artifact: a precise prior-coverage/native-use result
+  or one constructive hypothesis with cheapest falsifier. Mechanical item:
+  Preserve Reviewed Quadratic Copy Receiver.
+
+## 2026-11-05 Odd-Dimensional Character Cone Derivation
+
+- New constructive question selected after corpus/primary/classical-scope
+  checks: learn projective nonsingular symmetric A from GLOBAL fresh pure
+  padded character copies p^(-n/2)sum_x lambda(x^T A x)|x>, odd n>=3,
+  p>=16n^2. Output A up to nonzero scalar. No value oracle, supplied cone
+  samples, line-restricted copies, even-dimension or device-noise promise.
+- Exact Gauss law puts alpha=(1-p^(-(n-1)))(1-1/p)^2>=1-2/p mass uniformly
+  on the NONZERO dual cone y^T A^-1 y=0. A Witt chart and degree4
+  Schwartz-Zippel give <=5/p agreement of any other quadratic with uniform
+  cone points. D-1 samples, D=n(n+1)/2, supply a full-rank linear system
+  with probability>=1-7(D-1)/p>=1/2. Invert its unique quadratic matrix.
+  Fresh Fourier labels verify a proposed dual quadratic: true>=1-2/p,
+  wrong<=7/p, threshold1/2. R=ceil(log2(4/eta)), K=ceil(8ln(4R/eta));
+  capped copies R(D-1+K), ideal failure<=eta/2. Per-copy QFT channel error
+  eta/[2R(D-1+K)] pays total failure<=eta with polynomial resources.
+  Topic note QUADRATIC_CHARACTER_CONE_READOUT.md is being authored; full
+  actual-text review and narrow finite falsifiers are pending.
+- Classical scope is essential: BIT/raw-phase polynomial-time learning
+  already follows from n^2 chosen affine-line calls to the reviewed
+  univariate quadratic decoder. Global copies do not supply those states;
+  direct line projection costs p^(1-n). A classical projective learner from
+  native BIT queries would solve ordinary shifted Legendre via
+  Q_s=x1*x2+s*x3^2 (+ hyperbolic pairs), one native query when x3!=0.
+  Implication only, not hardness. Existing fp2 six-value attack requires
+  field-value exponents of a known form and does not transfer to characters.
+- Primary2007 hidden nonlinear structures use distinct level-set labels
+  or special shifted-sphere sources; Rotteler2009 uses Boolean additive
+  quadratic phases. No novelty, separation or new oracle upper bound.
+  The material candidate is a uniform growing-dimension COPY receiver.
+- Independent high-upside comparison checked the November Simon mirror:
+  same operational decoder as October, expanded explanatory note only;
+  official/mirror byte identity UNKNOWN. See audits/reviews/
+  2026-11-05-simon-november-source-delta.md. No DCP implementation admitted.
+- Next command: finish native classical baseline first, then exact-field/
+  floating-FFT checks for four predeclared sources (p5,n3 identity; its
+  nonsquare scalar2; one dense nonsingular n3 form; p3,n5 identity), and
+  independent actual-text review. Accept exact phase/cone mass/rank identities
+  only; every finitep below threshold, not end-to-end quantum execution.
+  Mechanical item: Preserve Character Cone Source Contract.
+
+## 2026-11-05 Reviewed Split-Support Hankel Boundary
+
+- Independently reviewed actual-text theorem in
+  LEGENDRE_HANKEL_SUCCESS_BOUNDARY.md: for every irreducible degree-d Q,
+  d>=2, p>=2d-1, ANY coefficient state on the same fully split degree2d-1
+  support has Fourier/Hankel correctness <=(d-1)!/(2d-1)!<=d^-d.
+  Weighted, phased, mixed and ancillary states obey fiberwise Cauchy.
+  Clean exact law subtracts zero-frequency mass; D_Q=H_Q\{0}. This closes
+  polynomial-degree rescue by better analysis/reweighting of THIS receiver.
+- The reviewed exp(O(d logd)) upper bound remains valid. No general
+  quantum/copy/query lower bound, classical hardness or separation follows.
+  Parent exact existing-case check gave PrCorrect217/3125 at p5, matching
+  saved FFT. Parent also reproduced the p7 source-shift phase counterexample.
+  No new scan, quantum execution or infrastructure. Classical native
+  comparisons retain their actual access and promises.
+- Portfolio comparison admitted neither public pointwise source-shift phase
+  transport nor OPI marginal-derived unequal reliabilities. The first fails
+  on two targets sharing all queried-root signs but requiring opposite
+  corrections. The second reduces to equal-list weights by RS k-wise
+  independence. These are specific proposal falsifiers, not generic no-go's.
+- Next hard work must select a different PAID source/measurement or an
+  independent native direction; do not continue this receiver by inertia.
+  Next command: corpus been-tried/baselines for the chosen specific new
+  operation, then full primary literature. Expected artifact: a constructive
+  contract and cheapest falsifier. Acceptance excludes hidden extension or
+  resultant access, new generic frameworks and more parameter sweeps.
+  Mechanical item: Preserve Reviewed Hankel Success Boundary.
+
+## 2026-11-05 Split-Support Hankel Packing Bound
+
+- Hard derivation closed in LEGENDRE_HANKEL_SUCCESS_BOUNDARY.md. For EVERY
+  irreducible degree-d Q, d>=2, p>=2d-1, the existing m=2d-1 coefficient
+  Fourier/Hankel operation has conditional correctness <=
+  (d-1)!/(2d-1)!<=d^-d. This holds for ANY phases/weights supported on the
+  same squarefree fully split degree-m locus, even with ancillary workspace.
+  In a residue fiber moduloQ, distinct R cannot share d roots: otherwise
+  a degree2d product divides R-R' of degree<=2d-1. Disjoint d-subset packing
+  and fiberwise Cauchy give the bound. All source flags only decrease it.
+- Clean exact probability is sum C_v^2/(N p^d) minus zero-frequency mass;
+  D_Q=H_Q\{0}. Parent Sage reproduction on the existing p5 irreducible case:
+  fiber sizes1:8,2:16; PrH9/125, PrZero8/3125, PrCorrect217/3125, agreeing
+  with the saved FFT. No new scan or quantum execution. Parent and an
+  independent helper checked the packing argument; final text review pending.
+- This disproves only sharper-analysis/reweighting rescue of the SAME
+  support and measurement. The reviewed exp(O(d logd)) algorithm remains
+  valid; no general query/copy/time lower bound or classical hardness.
+  New source support, collective measurement or multi-outcome decoder is
+  required for a polynomial-degree candidate.
+- Concrete source-shift bypass also fails its first exact test: at p7,
+  Q1=X^2+1 and Q2=X^2-X+4 share native signs(+,+,-) on0,1,2. For
+  R=X(X-1)(X-2), h=3(X-2), both initial resultant signs are-1, but shifted
+  signs are+1,-1. No Q-independent pointwise phase correction transports
+  R to R+h; extra native queries/interference remain outside this falsifier.
+  Parent reproduced using Sage. No free nonsplit-resultant access.
+- Independent OPI comparison admitted no new operation: exact row marginals
+  conditioned on <=k-1 other RS rows remain uniform, even for table-selected
+  row sets. Proposed unequal-symbol reliabilities therefore reduce to the
+  old equal-list certificate. This is candidate triage, not general hardness.
+- Next command: review the closed boundary note, then select a genuinely
+  different paid operation or pivot after corpus/primary/classical checks.
+  Expected artifact: a source-correct constructive hypothesis plus its
+  cheapest falsifier; reject another nearby bound or parameter sweep.
+  Mechanical item: Preserve Split-Support Receiver Boundary.
+
+## 2026-11-05 Reviewed Uniform Hankel Character Decoder
+
+- Independently reviewed WRITTEN uniform theorem in
+  LEGENDRE_HANKEL_RESULTANT_READOUT.md: every d>=2, monic squarefree Q over
+  odd prime p, fresh exact pure native padded-character copies. One
+  2d-1-copy source and coefficient Fourier outcome supply 2d moments;
+  every virtual-supported moment vector reconstructs Q by a public Hankel
+  solve. The Q-specific correctness event has probability >=overlap^2.
+  chi(a)^d uses TARGET degree; the old chi(a)^m needs public correction.
+- For p>=256d^2, clean per-attempt all-flags success >=1/(32(2d-1)!). For
+  ONE fixed F with <=rho*p errors, rho<1/4, use
+  p>=max{256d^2,64d^2/(1-4rho)^2}; the exact signed-moment recurrence gives
+  E_m>=6^-m and success >=1/(32*36^m*m!). Uniform permutation rank/unrank,
+  public seed factorization, QFT precision, statistical verification and
+  capped trials pay exp(O(d logd))*poly(logp,(1-4rho)^-1,log1eta) total
+  gates/copies and polynomial ACTIVE workspace. Failure<=9eta/16; copy
+  cap R(m+K). Review accepted the actual note and all resource statements.
+- Five prescribed controls pass, native original-degree table baselines
+  first; artifact hankel_resultant_control.json. All unit-support labels
+  decode Q; nonunits inside the annihilator are singular. Wrong scalar
+  exponent makes both quadratic overlaps zero; p7 corrupted E5=-2/3.
+  Every finite source has a wrong candidate of projection score1; the
+  corrupted cubic equals another polynomial's table. All p below threshold.
+  Exact fields/floating FFT only, not a complete quantum execution.
+- Classical comparison remains Kopparty full-tablepoly(p) at its proved
+  radius/degree and empirical exhaustive BIT decoding with polylog queries,
+  p^d time. Prony is known; full-VALUE quantum interpolation is a different
+  oracle. No novelty, separation, hardness, poly(d) efficiency, device/mixed
+  noise or small-prime universality. The factorial density remains charged.
+- Next hard question: can a SPECIFIC paid source/readout remove factorial
+  degree cost, or does an independent high-upside direction offer better
+  expected value? First command: corpus been-tried/baselines for that exact
+  candidate, then primary literature. Expected artifact: an end-to-end
+  hypothesis and cheapest decisive falsifier, or a reasoned pivot. Accept
+  no hidden extension oracle, supplied moment table or generic subsystem.
+  Mechanical item: Preserve Reviewed Uniform Hankel Results.
+
+## 2026-11-05 Collective Hankel Resultant Derivation
+
+- New hard derivation in LEGENDRE_HANKEL_RESULTANT_READOUT.md (authoring
+  and independent review in progress): m=2d-1 native phase copies, distinct
+  root folding and scalar chi(a)^d produce a split degree-m coefficient
+  state. The exponent is TARGET degree d, not m. For monic squarefree Q,
+  the virtual product-algebra character has U supported Fourier outcomes
+  y_j=Tr(t theta^j), t a unit. Every such outcome has invertible d-by-d
+  Hankel matrix and its public recurrence solve returns Q. Cauchy gives
+  actual one-outcome correctness >= squared virtual overlap; no d-outcome
+  inlier-block guess is needed. Prony/Hankel solving itself is known.
+- For p>=256d^2, clean all-flags success >=1/(32(2d-1)!). For ONE fixed F
+  within rho*p of paddedchiQ, rho<1/4, and
+  p>=max{256d^2,64d^2/(1-4rho)^2}, the exact signed subset recurrence gives
+  E_m>=6^-m and success >=1/(32*36^m*m!). Statistical candidate verification,
+  paid root erasure, uniform permutation rank/unrank, QFT precision and
+  bounded trials give the proposed UNIFORM exp(O(d logd))*poly(logp,
+  (1-4rho)^-1,log1eta) bound. Active workspace is polynomial, source copies
+  are requested sequentially. Full resource statement awaits closed review.
+- All five predeclared finite sources pass hankel_resultant_control.py/.json:
+  virtual nonzero labels all decode Q, virtual zeros inside the annihilator
+  are singular. Both quadratic uncorrected scalar phases have zero overlap.
+  The small-p corrupted cubic has E5=-2/3, so positive large-p bounds cannot
+  be extrapolated downward. Original-degree native table baselines ran first.
+  Exact finite fields plus floating FFT only; every testedp below threshold.
+- Strongest classical comparison remains full-table Kopparty poly(p) below
+  its radius and empirical exhaustive BIT decoding with polylog queries,
+  p^d time. Full-VALUE quantum interpolation does not supply character
+  access. Gates false: poly(d) efficiency, novelty, separation, hardness,
+  quantum execution, small-prime universality, device/mixed-source extension.
+- Next command: read the CLOSED topic note and independent review, inspect
+  the five-case artifact. Acceptance: prove all supported moments decodable,
+  target-degree scalar, uniform compiler and all-flags error ledger. Then
+  compare independent directions before admitting a concrete operation to
+  remove factorial split density. Mechanical item: Preserve Hankel Contract.
+
+## 2026-11-05 Reviewed Fixed Corrupted Character Decoder
+
+- Independently reviewed WRITTEN theorem in
+  LEGENDRE_CORRUPTED_CHARACTER_READOUT.md: fixedd>=2, monic squarefreeQ,
+  ONE fixed F differing from paddedchiQ on <=rho*p points, rho<1/4. Fresh
+  pure copies give C_d poly(logp,(1-4rho)^-1,log1eta) gates/copies for
+  p>=max{512*9^d*d!,64d^2/(1-4rho)^2}. No device/mixed/correlated source.
+- Exact signed-subset moment E_d, with a controlled collision-coupling
+  error to the IID expression, pays uniform Fourier rank growth. Statistical
+  public-candidate projection replaces the invalid consecutive-all-pass
+  verifier. Seed, sampling, approximate gates and capped blocks/tests give
+  total failure<=9eta/16. Review: audits/reviews/
+  2026-11-05-corrupted-character-resultant-review.md.
+- Native classical tests ran first. All12 prescribed finite mask controls
+  and808 proper-subspace checks pass; ten escape bounds are vacuous and
+  every testedp is below the theorem threshold. p7 cubic one nonrootflip:
+  E3=0 but IID8/27; two flips E3=-1/5. Root-only flips leave virtual overlap.
+  Exact p11 phase ambiguity: X^3+X and X^3+4X^2+3X+8 have opposite padded
+  tables, hence identical clean physical copies. Parent reproduced both
+  decisive identities independently. No quantum circuit was executed.
+- Classical comparison: belowrho1/8, Kopparty full-tablepoly(p) with paid
+  roots/degree condition. Throughoutrho<1/4, empirical exhaustive decoding
+  uses polylog BIT queries but p^d enumeration. No query separation or time
+  lower bound. Any fixedrho>1/4 permits ambiguous midpoint tables
+  asymptotically; no exact finite-radius optimality is asserted.
+- Gates false: novelty, execution, separation, hardness, growing-degree
+  efficiency, small-prime universality, arbitrary mixed/device noise.
+  The external fixed-degree noisy reconstruction problem is now covered
+  at the written level; do not continue by adding nearby noise variants.
+- Next hard question: compare independent high-upside directions with the
+  uniform growing-degree reconstruction problem from the published O(d)
+  query result. A further route must actually pay a new collective readout
+  overcoming the factorial split-mask cost, not relabel slow-degree regimes.
+  Next command: corpus been-tried/baselines for that SPECIFIC operation,
+  then primary literature. Expected artifact: a paid end-to-end mechanism
+  and its first falsifier, or a documented pivot. No generic framework.
+  Mechanical item: Preserve Reviewed Fixed Corruption Results.
+
+## 2026-11-05 Fixed Corrupted Character Receiver Derivation
+
+- Hard derivation recorded in LEGENDRE_CORRUPTED_CHARACTER_READOUT.md;
+  independent review and12 predeclared finite controls in progress. Fixedd,
+  monic squarefreeQ, ONE fixed sign functionF differing from paddedchiQ on
+  <=rho*p points, rho<1/4. Fresh pure copies only; not device/mixed noise.
+- Exact overlap is gamma_clean times a signed WITHOUT-replacement subset
+  moment E_d. A collision-coupling bound controls its difference from mu^d.
+  Uniform rank growth survives for sufficiently largep. One nonrootflip
+  at p7,d3,n6 makes E3=0 despite IIDprediction8/27: uncontrolled substitution
+  is false. It does not falsify the separately proved large-p bound.
+- Statistical candidate projections replace consecutive-all-pass tests.
+  True score>=(1-2rho)^2; false<=1/4 after the charged Weil threshold.
+  Hoeffding, capped blocks and the existing paid coefficient/QFT circuits
+  give C_d poly(logp,(1-4rho)^-1,log1eta). Exact ledger in the note.
+- Classical baseline: Kopparty full-tablepoly(p) applies only below its
+  stated1/8 radius; native BIT empirical exhaustive decoding coversrho<1/4
+  with polylogqueries but p^d enumeration. No query/time separation inferred.
+  Midpoint ambiguity excludes every fixedrho>1/4 asymptotically; no exact
+  finite-radius optimality. No novelty or quantumexecution claim.
+- Next command: read corrupted-character review and scoped JSON when ready;
+  accept only exact source model, subset overlap, uniformrank, verification
+  gap and all caps. Falsifiers are signal cancellation or ambiguous targets,
+  not a failed random simulation. See mechanical item below.
+
+## 2026-11-05 Reviewed Squarefree Padded Character Reconstruction
+
+- Independently reviewed WRITTEN fixed-degree theorem in
+  LEGENDRE_SQUAREFREE_RESULTANT_READOUT.md: every monic SQUAREFREE degree-d Q,
+  d>=2 fixed, prime p>=max{128d!,256d^2}, is recoverable in
+  C_d poly(logp,log(1/eta)) gates/copies from fresh pure lambda(Q(x)) phases,
+  lambda0=+1. Original coherent trit or padded BIT/raw-phase queries supply
+  copies. No root flags, hidden factorization, extension oracle or inverse.
+- Virtual product-algebra character has exactly U=product(p^d_j-1) Fourier
+  labels in Q-perp. Exact native overlap Ngood/sqrt(N0*pU) treats root
+  padding without rejection. Uniform subspace escape, squarefree candidate
+  filter and shared-factor Weil bound pay reconstruction/verification.
+  Review: audits/reviews/2026-11-05-squarefree-resultant-review.md.
+- Predeclared p11 controls: three factor patterns; full-table classical
+  enumeration first. Spectrum sizes100/1200/1000 and12/133/133 subspace
+  checks pass; cubic lower bounds are vacuous. Old all-nonzero-H flatness
+  fails. EXACT padded collision: X(X-1)(X-2) versus irreducible
+  X^3+4X^2+10X+5; trit distinguishes. No all-small-prime fallback.
+  Repeated-factor impossibility: distinct irreduciblequadratic squares have
+  identical constant+1 trit tables, already explicit at p5.
+- Primary baseline upgraded: Kopparty2601.07137 AlgorithmA/Thm3.1 uses
+  full p queries and poly(p) work, tolerates constant table errors including
+  <=d padded roots. Use safe proved degree constant, not the introductory
+  factor16 discrepancy. It does not transfer to arbitrary IID OPI halfsets.
+  Linear-shift -> irreducible-quadratic reduction, with a padded-zero fix,
+  independently checked in legendre-classical-reduction-review.md. No
+  classical hardness or receiver novelty follows from either source audit.
+- False gates: execution, novelty, separation, classical hardness, growing
+  degree, small-prime universality, noisy/correlated quantum source. No
+  broad control expansion. State/queue updated with reviewed scope.
+- Next hard question by external value: can the explicit receiver decode a
+  FIXED corrupted character table at constant error fraction, as a sublinear
+  analogue of the published full-table decoding problem? First compare
+  independent directions and corpus/primary work. Candidate operation is
+  signed subset overlap plus statistical public-candidate verification;
+  distinguish fresh pure copies of one corrupted function from mixed/device
+  noise. First falsifier: overlap/rank or verification gap vanishes. Expected
+  artifact is a paid theorem or counterexample, not generic noise plumbing.
+  See mechanical item Preserve Reviewed Squarefree Boundaries.
+
+## 2026-11-05 Squarefree Resultant Native Source Extension
+
+- New hard derivation recorded in LEGENDRE_SQUAREFREE_RESULTANT_READOUT.md;
+  independent review/falsifier in progress. Fixed d>=2, monic SQUAREFREE Q,
+  p>=max{128d!,256d^2}, fresh pure copies with lambda(0)=+1. Same paid
+  coefficient circuit; no root indicators, CRT or extension oracle supplied.
+- Virtual product-algebra norm character has U=product(p^d_j-1) Fourier
+  frequencies in Q-perp, magnitude1/sqrtU. Native padded-state overlap is
+  Ngood/sqrt(N0*pU), Ngood=(p-1)C(p-r,d). Uniform proper-subspace escape
+  and shared-factor Weil verification pay the full reconstruction; old
+  all-nonzero-hyperplane flatness is FALSE for reducible Q. Degree/constants
+  remain factorial; no source substitution or padded multiplicativity claim.
+- Classical source audit found Kopparty2601.07137 AlgorithmA, a full-p-query
+  poly(p) decoder including padded zeros as errors. Its provedThm3.1 degree
+  bound differs by16 from the introduction; use safe explicit constants.
+  Linear Legendre shift reduces to worst-case irreducible-quadratic
+  reconstruction in classical chosen TRIT/BIT access, with padded-zero
+  correction and bounded overhead. Neither fact proves hardness/novelty.
+- Exact nonsquarefree counterexample: distinct irreduciblequadratic squares
+  have identical constant+1 tables. This excludes a universal degree4
+  extension even for trit access. No quantum execution or speedup claim.
+- Next command: read squarefree proof review and
+  classical_baselines/squarefree_resultant_control.json when complete;
+  acceptance requires actual padded-phase overlap, CRT spectrum, clean
+  encoding and full retry ledger. No asymptotic inference from the three
+  predeclared p11 factor patterns. See mechanical item below.
+
+## 2026-11-05 Reviewed Fixed Degree Resultant Hyperplane Reconstruction
+
+- Independently reviewed WRITTEN theorem in
+  LEGENDRE_RESULTANT_HYPERPLANE_READOUT.md: for EACH FIXED d>=2 and every
+  prime p>=max{d(d-1),16d!,16(2d-1)^2}, any monic irreducible degree-d Q is
+  recoverable from fresh pure native character phase copies in
+  C_d poly(logp,log(1/eta)) gates/copies. BIT/raw-phase queries supply copies.
+  The d-dependence is explicitly factorial or worse; small primes excluded.
+- Paid operation: d copies -> distinct roots -> clean split coefficient
+  state with public chi(a)^d -> abelian Fourier samples. Overlap with a
+  VIRTUAL resultant norm-character state is sqrt(delta), delta~1/d!;
+  its spectrum is flat on nonzero Q-perp. Uniform escape from EVERY proper
+  subspace pays d independent inliers and linear reconstruction. Public
+  random trit signatures simultaneously pay coherent root erasure; no
+  extension-field oracle, hidden root, unknown inverse or polar transform.
+- Reviewer accepts explicit seed caps, precision, retries and fresh-copy
+  candidate verification. Primary Kitaev 9511026 Section5 equations22-25
+  pays arbitrary-modulus Fourier gates with operator error and clean ancilla.
+  Review: audits/reviews/2026-11-05-resultant-hyperplane-review.md.
+- Native classical baseline ALSO independently proved: every irreducible
+  cubic p>=23 has a rank-three central-window system after p queries;
+  O(M(p)logp+p) field work with fast interpolation. A gap recurrence and
+  Wronskian contradiction prove this, not the finite scan. Review/source:
+  audits/reviews/2026-11-05-cubic-character-window-review.md plus the
+  independent acceptance addendum in the resultant review. Still not polylog.
+- Finite falsifiers: all10 p5 quadratics and112 p7 cubics pass native phase,
+  virtual Fourier-flatness/overlap and60/6384 proper-hyperplane checks.
+  Keeping injective root labels gives uniform Fourier output; missing
+  chi(a)^3 kills cubic overlap. The p7 escape bound is vacuous. Exact Sage
+  fields plus floating NumPy FFT, not quantum execution. Classical control
+  finds48 p13 rank-two exceptions; all p17/19 cases rank3. No more sweeps.
+- Primary prior-art scope checked: Russell-Shparlinski provides a POVM/query
+  result; Ivanyos et al. 1502.06631 uses classical queries and e^(d/2) search.
+  No novelty conclusion. All gates stay false for execution, novelty,
+  separation, classical hardness, growing-degree efficiency and noisy banks.
+- Next high-value question: constructive polylog classical native recovery
+  or exact prior art for this receiver, compared against independent routes
+  before any extension. Next command: corpus been-tried/baselines for a
+  SPECIFIC new operation, then primary literature; expected artifact a paid
+  operation and first falsifier, not a generic framework or repeated scan.
+  Mechanical scope: Preserve Reviewed Resultant Hyperplane Results below.
+
+## 2026-11-05 Fixed Degree Resultant Hyperplane Candidate
+
+- New constructive derivation in LEGENDRE_RESULTANT_HYPERPLANE_READOUT.md:
+  for fixed d>=2 and sufficiently large growing odd p, native d phase copies
+  coherently encode completely split coefficient vectors. Their resultant
+  character state overlaps a VIRTUAL norm-character state by sqrt(delta),
+  delta~1/d!. Its abelian Fourier spectrum is flat on nonzero Q-perp.
+- A uniform escape bound for EVERY proper subspace pays d independent
+  inliers, constant-dimensional linear recovery and fresh-copy verification.
+  Public random character signatures pay clean root erasure for all supported
+  coefficient labels simultaneously. No extension oracle or unknown inverse.
+  Written polynomial-in-log(p) composition is pending independent review;
+  degree dependence is factorial, and small primes are explicitly excluded.
+- Corpus and primary prior work checked: Russell-Shparlinski Theorem6 is a
+  POVM/query result; Ivanyos et al. 1502.06631 Section3 uses classical oracle
+  values and e^(d/2) search. No novelty conclusion. Binary-cubic orbital
+  transforms are not needed. Interleaved OPI duplicates an existing barrier.
+- Native classical falsifier found 48 rank-two p13 cubics. A companion proof
+  proposes p-query O(M(p)logp+p) reconstruction for every p>=23, not a
+  polylog attack; independent review still required. Smallp identifiability
+  is not automatic. No speedup, separation, hardness or execution claim.
+- Next hard question: adversarially check the actual coefficient encoding,
+  Fourier escape proof, capped errors/retries, and classical window theorem.
+  Next command: read audits/reviews/2026-11-05-resultant-hyperplane-review.md
+  and classical_baselines/resultant_hyperplane_control.json once complete.
+  Accept only explicit all-p proof/resource review plus scoped finite source
+  checks; never infer theorem from those controls. See mechanical item below.
+
+## 2026-11-05 Reviewed GL2 Hard Block Source Audit
+
+- Critical source dependency of the reviewed Legendre receiver checked:
+  audits/reviews/2026-11-05-gl2-hard-block-source-review.md accepts the
+  uniform all-q A_gamma construction, coherent labels, boundary states,
+  cleanup, and noncircular exceptional-column preparation. It uses only
+  the stated public arithmetic, QFT and clean Gauss-phase primitives.
+- Independent algebra: the explicit torus map is an isometry; its generic
+  and exceptional column identities imply target-column orthonormality.
+  This avoids assuming the efficient A_gamma circuit in the reflection
+  argument. No generic Mackey-theory reproof or whole-QFT execution.
+- One predeclared finite falsifier: q=3,5,7, gamma=1, all 15 columns,
+  exact Sage fields and 200-bit complex arithmetic. Literal circuit agrees
+  with source equations 129-130 below 2^-150, including unused outputs.
+  Omitting the exceptional correction fails at every field. Script/JSON:
+  classical_baselines/gl2_qft_hard_block_control.py/.json. The dense
+  correction in this check does not certify efficient preparation.
+- Classical recheck admitted no new operation: the proposed sparse power
+  is dense; formal differentiation needs missing access; KKK's cubic
+  fingerprint yield reads all p values. No optimality/lower bound follows.
+  Cubic reconstruction's primary baseline was inspected, but no paid
+  multiplicity-block receiver was admitted. No new quantum framework.
+- Written native BIT, raw-phase and pure-copy reconstruction results stay
+  accepted. Gates remain false: quantum execution, novelty, speedup,
+  separation, classical hardness, and noisy/correlated-source extension.
+- Next high-value question: identify a constructive algorithmic route with
+  an actual new paid operation. Re-rank independent directions now; do not
+  continue these source checks or nearby barriers by inertia. Next command:
+  corpus been-tried for the selected concrete mechanism, then full primary
+  literature and native classical baselines. Expected artifact: one scoped
+  algorithmic hypothesis or decisive falsifier, not another sweep.
+  Mechanical preservation items are at the top of its plan.
+
+## 2026-11-05 Reviewed Legendre Phase Copy Reconstruction
+
+- Source restriction removed by an independently accepted proof in
+  QUADRATIC_LEGENDRE_SPHERICAL_READOUT.md and the receiver-review addendum.
+  For every growing odd prime and every hidden monic irreducible quadratic,
+  fresh pure copies p^-1/2 sum_x chi(Q(x))|x> suffice for the same WRITTEN
+  polynomial-time reconstruction. No unknown oracle/inverse is needed.
+- Two finite copies, distinct-pair projection and folding give norm
+  distance<1/16 from the ideal homogeneous kernel for p>=625. Since the
+  paid adjoint is a contraction, joint ideal correct probability>1/128,
+  including every flag. This does NOT prepare the missing infinity point.
+- Candidate verification projects NEW copies against a PUBLIC known
+  candidate state. Wrong acceptance<=9/p; true acceptance1 ideally.
+  Charged precision, capped trials and fresh-copy tests give failure<eta
+  with cap2R+RK, R=ceil512log(4/eta),K=ceil(log(4R/eta)/log32).
+  Small primes have an explicit copy-only finite enumeration/verification
+  procedure; the earlier bit moments prove injectivity, not an operation.
+- Consequently uncontrolled raw phase access also suffices, one query
+  per copy, with public preparation accuracy charged. No controlled-unknown
+  unitary, free homogeneous lift, secret advice, cloning or copy reuse.
+  Original classical bit-query competitors stay in their original model.
+- Primary Russell--Shparlinski Theorem6 source and corpus/baselines checked
+  before this extension. No new code, simulator, spectrum or size sweep
+  was needed; the result is a uniform perturbation/verification proof.
+- Gates false: execution, novelty, speedup, separation, classical hardness,
+  noisy/correlated-source extension. Overall source dependency remains
+  the checked GL2 QFT theorem and Xi moment theorem, as in the BIT result.
+- Next highest-value question remains a constructive SAME-NATIVE classical
+  counterpart; require a new operation before more attacks. Re-rank it
+  against independent high-upside directions before extending degree or
+  building anything. Next command: corpus been-tried for concrete candidate,
+  then primary literature and matched baselines. Expected artifact: one
+  admitted algorithmic hypothesis or decisive falsifier with paid access.
+  Mechanical preservation queue is at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-05 Legendre Finite Phase Copy Checkpoint
+
+- Hard source-boundary deduction appended to
+  QUADRATIC_LEGENDRE_SPHERICAL_READOUT.md, under independent review:
+  two fresh ordinary finite-domain character phase copies, distinct-pair
+  projection and sorting, give a vector within norm<1/16 of the reviewed
+  homogeneous kernel column for every p>=625. The same paid adjoint is
+  a contraction; correct joint probability>1/128 follows without preparing
+  infinity or making any bit/controlled/extension-field query.
+- Fresh-copy candidate projection has ideal true acceptance1 and wrong
+  acceptance<=9/p<1/64. Public known-candidate state preparation is paid;
+  no inverse of the unknown source or copy reuse. Proposed bounded
+  error/retry budget is explicit in the note; small-prime and adaptive
+  verification details remain in review. Original BIT theorem stays valid.
+- Prior corpus/baseline lookup and Russell--Shparlinski Theorem6 source
+  audit precede this continuation. Classical moment/birthday competitors
+  unchanged; catalog norm-search needs a different explicit input.
+- Gates false for now: promoted copy-only algorithm, execution, novelty,
+  speedup, separation, classical hardness. Fresh IID pure copies are an
+  explicit promise; no correlated/noisy-bank extension.
+- Next hard question: does copy-only verification close with uniform
+  bounded resources including small primes? Next command: read the focused
+  receiver review after its continuation is finished. Expected artifact:
+  accepted/refuted source corollary with constants, not a new simulator.
+  Mechanical queue remains preservation of the reviewed receiver contract.
+
+## 2026-11-05 Reviewed Legendre Bounded Adjoint Reconstruction
+
+- Independently accepted WRITTEN polynomial-time quantum composition for
+  EVERY monic irreducible quadratic over a growing odd prime, with native
+  BIT/XOR access to chi(Q(x)). Full statement/proof/resources:
+  QUADRATIC_LEGENDRE_SPHERICAL_READOUT.md. No oracle extension or advice.
+- Two homogeneous phase copies give split-pair kernel T=2DC-J. Explicit
+  principal fixed vectors, paid GL2 QFT and its actual GT basis implement
+  partial spherical transforms. The adjoint scalar tau*/p is a two-Gauss
+  phase LCU; no inverse/polar/conditioning theorem. Xi's fourth Jacobi
+  moment gives principal trace p^4/8+O(p^(7/2)). Ideal per-attempt joint
+  correctness >1/32 for p>=625, tending to1/8, with ALL flags charged.
+- Capped preprocessing, coherent cleanup, fixed per-attempt operator error,
+  bounded repetitions and exact fresh verification give failure<eta,
+  time/workspace poly(log p,log(1/eta)), native-query cap2R+RK. Small
+  primes use the existing exact moment baseline plus the p3 truth tables.
+- Three focused reviews: spherical-identity, principal-mass, and receiver,
+  all dated2026-11-05 under audits/reviews/. Review corrected principal
+  label order, actual inverse-additive basis (PDF bars lost by extraction),
+  conjugation of the ENTIRE dual preparation, compatible field generators,
+  and the bounded exact-uniform verification sampler. Wrong conjugation
+  fails4/5 exact labels; full p7 frame check covers all21 hidden quadratics.
+- Source theorem applicability checked, not an independent reproof of the
+  complete GL2 QFT paper. No quantum circuit was compiled or executed.
+  Gates false: novelty, speedup, separation, classical hardness, free
+  raw-phase homogeneous lift. The classical expected-sqrt(p) baseline
+  and earlier subexponential comparator remain as actually proved/tested.
+- Highest unresolved scientific comparison: can a constructive classical
+  native-oracle algorithm match this written upper bound? Require a new
+  operation before more attacks/sweeps. Before another major direction,
+  compare its external value with OPI and higher-degree reconstruction.
+  A cheap source-boundary follow-up is finite-domain phase-copy readout:
+  check corpus/literature, then quantify the omitted-infinity perturbation
+  and verification without smuggling back a bit oracle.
+- Mechanical queue is at the top of MECHANICAL_FOLLOW_UP_PLAN.md. Next
+  command: corpus been-tried for the selected follow-up, then primary
+  source audit. Expected artifact: a scoped proof/falsifier, with native
+  resources and uniform success; no new framework or conditioning sweep.
+
+## 2026-11-05 Legendre Bounded Adjoint Receiver Checkpoint
+
+- Hard derivation recorded in QUADRATIC_LEGENDRE_SPHERICAL_READOUT.md:
+  on nonexceptional even principal sectors, the actual forward scalar is
+  conjugate(beta(4lambda)^-1(J^2-bar(J)^2)/2). The RECEIVER uses its
+  conjugate divided by p, a two-Gauss-phase LCU with constant normalization.
+  No polar inversion or smallest-singular-value assumption is needed.
+- Xi1809.04286 Theorem1.3, full source read, supplies fourth Jacobi moment
+  <=12p^(5/2). Fourfold beta labels give principal trace
+  A=p^4/8+O(p^(7/2)). Independent mass review verifies A>=p^3(p+1)/16
+  for every prime p>=625. Conditional receiver joint correctness exceeds
+  1/32 INCLUDING principal/LCU/off-diagonal flags, and tends to1/8.
+- Exact source remains original BIT oracle, growing odd prime, irreducible
+  monic quadratic. Explicit split/nonsplit coset arithmetic and toolbox
+  Eq97 GT basis conversion now specify the partial transform. Right dual
+  vectors require conjugating the ENTIRE preparation circuit.
+- End-to-end composition, error/retry budget and source assumptions are
+  still under review. Saved expected sqrt(p) classical and subexponential
+  quantum comparators remain unchanged. No executed quantum receiver.
+- Gates false: algorithm promotion, novelty, speedup, separation, classical
+  hardness. Strong falsifier is the wrong conjugation or any hidden QFT
+  workspace/preparation cost. Next hard task: independently review all
+  receiver gates and exact phase conventions, then search same-native
+  classical attacks. Mechanical queue remains the top spherical controls
+  in MECHANICAL_FOLLOW_UP_PLAN.md; no conditioning sweep.
+
+## 2026-11-05 Legendre Spherical Kernel Checkpoint
+
+- Exact native two-copy reduction recorded in
+  QUADRATIC_LEGENDRE_SPHERICAL_READOUT.md: for every odd prime and every
+  monic irreducible Q, the off-diagonal homogeneous phase pair succeeds
+  with p/(p+1), giving T[:,Q]/sqrt(p(p+1)/2). Original BIT oracle only.
+- Exact intertwiner identity T=2DC-J connects the split/nonsplit torus
+  normalizer incidence C and harmonic adjacency D. Chen's nontrivial
+  constituent eigenvalue is 4d^2(p-d^2). Full rank is not conditioning.
+- New constructive hypothesis: explicit principal fixed vectors and a
+  two-Jacobi-phase scalar could pay a partial spherical polar receiver.
+  Scalar phase conventions and actual QFT basis conversion remain under
+  review; retained principal mass is unproved. No algorithm claim.
+- Classical baseline remains the paid expected sqrt(p) birthday attack;
+  known quantum comparator remains Kuperberg's subexponential receiver.
+  Finite p3/5/7/11/13 Gram controls are not asymptotic evidence.
+- Gates false: novelty, speedup, separation, classical hardness, efficient
+  receiver, quantum execution, free cuspidal preparation or postselection.
+- Next hard question: prove principal trace >=p^4/polylog(p), verify the
+  exact scalar and induced-to-GT basis circuit, then adversarially review
+  every cleanup/precision/success cost. Mechanical items are at the top of
+  MECHANICAL_FOLLOW_UP_PLAN.md. Next command: read Chen Proposition9.3
+  locally and derive exact small-character identities. Expected artifact:
+  focused identity review; acceptance is agreement of matrix/scalar
+  conventions, not a larger conditioning sweep.
+
+## 2026-11-05 Native Random Table List Sampler
+
+- Hard derivation and positive composition independently reviewed:
+  SCALAR_OPI_RANDOM_TABLE_LIST_SAMPLER.md proves an exact MDS second
+  moment for every Boolean acceptance-pattern count on the original
+  IID FULL half-set tables, q=2^t,m=q-1,k=floor(Rm),fixed R>0.
+  E chi2<=2^m/q^k and Pr[any relative count error>delta]
+  <=4^m/(delta^2 q^k). This supplies one global good-instance event.
+- Positive written composition of KNOWN operations: complete Johnson
+  list decoding of C^perp, canonical GLOBAL padded-index erasure, and
+  trace Fourier readout. The event pays Z/L with Z=1+o(1), not an
+  uncharged postselection. Claimed polynomial full-input score approaches
+  1/2+sqrt(a(1-a)), a=min(1/2,1-sqrt(1-R)); R>3/4 also permits perfect
+  search by polynomial repetitions. Full proof/resources are in the note.
+- Prime-field Sun--Wootters capacity decoding is NOT imported into the
+  binary field. Jo's sampler is prior machinery; the source-specific
+  second moment replaces its prime-field analytic normalization here.
+  Chailloux2511.22691 Theorem3 already has the same Johnson score curve;
+  this pass checks the binary IID instance law, not a new curve/mechanism.
+  Prior saved finite comparisons remain exactly as executed.
+- Classical baseline remains actual Prange, published systematic line
+  search/annealing, and verified Algorithm H. Independent constructive
+  triage found no new classical operation; do not reopen size/tie sweeps.
+  Counts alone give no efficient conditional-count or inverse sampler.
+- Gates false: novelty, speedup, separation, classical hardness, worst-case
+  tables, capacity decoding in characteristic two, quantum execution.
+  Strongest source falsifier: correlated balanced row predicates can force
+  a parity identity using a full-support vector in C^perp.
+- Review: audits/reviews/2026-11-05-scalar-opi-random-table-list-review.md
+  accepts equations1-7, the full source quantifier and perfect corollary.
+  Fourier coefficient normalization and the GLOBAL attempt/precision
+  budgets were made explicit. Primary CHK all-field decoder statement and
+  its small-characteristic factorization branch were also checked.
+- Next hard question: a full-table polynomial classical operation matching
+  this attainable quantum score, or an independently higher-value native
+  candidate. No such new classical operation was admitted in this pass.
+  Next command: /opt/anaconda3/bin/python tools/corpus/cli.py baselines
+  "random scalar OPI joint-row classical solver" -k 4 --no-refresh.
+  Expected artifact: a concrete paid operation and its cheapest decisive
+  test, after primary-source and independent-direction comparison; no
+  further finite Algorithm H sweep. Matching mechanical entry specifies
+  the optional exact q4 count/parity control, not a new main research task.
+  Final scoped source/STATE-title/whitespace checks complete this pass.
+
+## 2026-11-05 Fixed Characteristic Reconstruction Boundary
+
+- Constructive written composition, independently reviewed: for every
+  FIXED odd p and q=p^n growing, supplied field presentation and native
+  irreducible-quadratic character Q2 oracle, reflection fingerprints plus
+  Friedl et al. Theorem3.5 recover the center in(n+p)^O(p) time; a paid
+  partial-Legendre transform recovers the width with constant success.
+  This is a DIFFERENT regime from growing-prime q=p and uses known tools.
+  Full proof/source/cost contract: QUADRATIC_LEGENDRE_RECOVERY.md, final section.
+- The width unitary F^dagger diag(1,chi(k!=0))F=C/tau+J/q needs no supplied
+  Gauss phase. |tau|=sqrt(q) gives success>=1/3 forq>=37. Fingerprints need
+  L=O(log q+log(1/error)); global bad-list probability<=q^2(3/4)^L.
+  State preparation, square roots, verification, precision and abort costs
+  are charged. Relative-bit compilation also pays the raw-phase extension.
+- Classical expected sqrt(q) chosen-query and O(q) moment upper bounds
+  extend; no classical lower bound is claimed. Published HQPP labels are
+  finer than the native two-color oracle, so that theorem alone is not a
+  reduction. No extension-field access is added to a prime-field input.
+- AG matrix-only count-to-search proposal recovered earlier work, rather
+  than a new attack: NORM_SAMPLER_CLOCK_FALSIFIER.md already proves the
+  root FPTAS and explicit failure of its uncharged conditional use. The
+  earlier multibasis/local-repair audits also cover the proposed shortcuts.
+  No implementation or new negative result is warranted.
+- Gates false: novelty, Shor-level discovery, growing-prime polynomial time,
+  classical hardness, separation, end-to-end quantum execution. Retain the
+  matrix-coset falsifier from the previous completed pass. This source check
+  does not justify another nearby receiver by inertia.
+- Portfolio decision: return priority to the asymptotic classical
+  counterpart of the FULL-INPUT random-half-table scalar OPI problem.
+  Its quantum DQI mechanism already has a specified end-to-end contract;
+  the retained Algorithm H finite competitor leaves the asymptotic
+  comparison open. Legendre has no new polynomial receiver and AG has no
+  new selector. This is a theorem/constructive-mechanism task, not a restart
+  of finite tie-rule or field-size sweeps.
+- Next command: /opt/anaconda3/bin/python tools/corpus/cli.py been-tried
+  "scalar OPI random half tables constructive asymptotic classical score" -k 3.
+  Then check primary full texts before choosing an operation. Expected
+  artifact: a source-matched polynomial classical mechanism with a DQI
+  score comparison, or its cheapest decisive falsifier. Acceptance requires
+  an asymptotic proof or a scoped refutation, never a promoted finite score.
+  Matching mechanical entry preserves the field/source boundaries.
+- Scoped proof/source/whitespace and STATE-title checks complete the pass;
+  existing executed controls were not rerun and no new simulator was built.
+
+## 2026-11-05 Legendre Matrix Coset Source And Exact Readout Falsifier
+
+- Progress: paid the native ORIGINAL BIT-Q2 reduction to GL2 coloring
+  stabilizer cosets, then refuted the proposed additive-matrix Fourier
+  receiver exactly. Independent adversarial review accepted the source,
+  subgroup counts, exact law and recovery postprocessing; full derivation:
+  QUADRATIC_LEGENDRE_MATRIX_COSETS.md. No new implementation.
+- For every p>=41 and monic irreducible quadratic Q, its coloring stabilizer
+  H has order p^2-1 and every nonzero vector stabilizer has size2. L public
+  projective fingerprints separate all cosets with global failure at most
+  p^4(3/4)^L. One routed native bit query computes each homogeneous bit.
+  Inversion fixes left/right coset orientation. No secret coordinates,
+  extension-field oracle, free label decoder or raw-phase projective lift.
+- For exact independent random coset states with fingerprint labels
+  DISCARDED, additive Fourier measurement of all four matrix entries is
+  pointwise independent of Q. With D=|GL2|, per-matrix probabilities at
+  ranks0/1/2 are (p^2-1)/p^4,
+  [2D-p(p-1)(p^2-3)]/(p^4 D), [D-p^2-2p]/(p^4 D).
+  This refutes only this receiver, not retained-label/coherent/nonabelian
+  or collective algorithms. Ivanyos's Borel kernel extraction does not
+  transfer to this subgroup. All polynomial-time, novelty, hardness,
+  separation and end-to-end execution gates remain false.
+- Baselines unchanged: expected O(sqrt(p)polylog p) classical chosen-bit
+  queries/time/memory; reviewed 2^O(sqrt(log p)) quantum time/queries/space.
+  Existing exact and six-key controls were not rerun.
+- Independent AG comparison found no new low-degree parity selector or
+  full-rational r2 bound along the actual F1019 chain. RR degree g exceeds
+  its budget by3e+12. Seed infinitude and S-split quotient rank do not pay
+  r2<=C log g; the marked-point obstruction remains. Keep conditional.
+- Next hard question: which independently motivated native problem has
+  a concrete paid mechanism beyond these failed readouts? Re-rank before
+  another Legendre variant. A matrix receiver must first show a secret-
+  dependent observable for the actual random-coset source and specify
+  retained labels/workspace and polylog implementation.
+- Next command: /opt/anaconda3/bin/python tools/corpus/cli.py been-tried
+  "native quantum algorithm constructive decoding classical baseline" -k 3.
+  Expected artifact: one source-correct candidate mechanism and cheapest
+  decisive falsifier, not a generic HSP package. Matching mechanical entry
+  records the exact algebra and forbids a redundant matrix sweep.
+
+## 2026-11-05 Legendre Phase Access Corrected And Affine Decoder Rejected
+
+- Progress: corrected an overstrong access blocker and rejected two concrete
+  readouts on the same native irreducible-quadratic problem. The reviewed
+  subexponential composition and expected-sqrt(p) classical baseline stand.
+- Exact general compiler: H_B, CSWAP(X,R), UNCONTROLLED U_g(R), CSWAP,
+  H_B with public R=x0 gives g(x0)|x,B XOR Lg(x) XOR Lg(x0),x0>.
+  One phase query, O(log p) routing/workspace, no controlled black-box gate.
+  Relative fingerprints have identical fibers. Candidate verification uses
+  (1+sigma S_fh/p)/2 and the same absolute Weil bound. Thus uncontrolled
+  diagonal phase queries suffice for the quantum composition. Copies alone
+  do not supply this construction; no copies-only impossibility follows.
+- Reproduced before correcting live text/review: exact Sage p5/7 checked31
+  irreducible quadratics,197 secret/reference pairs,2558 X,B inputs. All
+  match the full operator identity with clean final R. Omitting swaps fails
+  1248 cases; two zero-output controls reject. Artifacts:
+  classical_baselines/quadratic_legendre_phase_compiler.py/json. Native
+  query count1 is distinct from5116 dense simulation callback evaluations.
+- Strongest baseline remains expected O(sqrt(p)polylog p) with ORIGINAL
+  classical bit queries. Raw phase access has no ordinary classical sign
+  query interpretation. Do not transfer old experiment counts/error bounds
+  to a relative-bit model without separate accounting. No Q1 transfer.
+- The concrete affine-evaluation/projection decoder has normalization
+  alpha=(p-1)sqrt(p(p-1))/p and success1/(p-1)^2, so generic amplification
+  costsTheta(p). The GL2 branching cleanup does not fix this circuit.
+  Homogeneous Fourier self-duality holds for any balanced projective-line
+  coloring, making its direct Fourier output uniform. These proposals are
+  parked; no general polynomial-time impossibility, novelty, hardness or
+  speedup claim follows. Full proofs and source scopes: QUADRATIC_LEGENDRE_RECOVERY.md.
+- Highest-value question remains native polynomial-time nonlinear character
+  reconstruction, but no new receiver is admitted. Next hard work must
+  propose a genuinely different paid circuit (coherent center information,
+  normalization and all singular sectors), or re-rank independent native
+  directions; do not repeat the affine projection or generic PGM discussion.
+  Next command: /opt/anaconda3/bin/python tools/corpus/cli.py been-tried
+  "quadratic character reconstruction coherent receiver" -k 3.
+  Expected artifact is a specific circuit hypothesis with a matched
+  classical attack and falsifier, not a matrix-conditioning sweep.
+- STATE refreshed, collaborator Rees sections preserved. Matching mechanical
+  entry preserves the source-model correction and completed control; no
+  registry promotion, broad suite, commit, outreach or manuscript change.
+  Scoped source/JSON/hash, corrected-boundary text, whitespace and STATE-title
+  checks passed; the fixed-input compiler run was not repeated.
+
+## 2026-11-05 Quadratic Legendre Concrete Circuit And Oracle Audit
+
+- Same native odd-prime irreducible quadratic reconstruction question;
+  classical expected sqrt(p) chosen-query baseline reused, not rerun.
+- Exact affine-bijection proposal is now specified: uniform x!=y,
+  (b,c)->(f(x),f(y)), two normalized character-state projections. Its
+  block is K_off/alpha with alpha=(p-1)sqrt(p(p-1))/p=Theta(p), and
+  irreducible-column heralding and reverse correct-label probability are
+  exactly1/(p-1)^2. Falsifies this circuit, not all native decoders.
+- Homogeneous quadratic-character Fourier self-duality holds for EVERY
+  balanced coloring of projective lines. Thus the proposed direct Fourier
+  readout is uniform and supplies no coefficient information. No broad
+  hidden-shift, copies-only or quantum lower bound follows.
+- A constructive correction is under exact verification: H, CSWAP,
+  UNCONTROLLED phase query on a public reference register, CSWAP, H
+  compiles relative bits with global factor g(x0), returning workspace.
+  Independent algebra review accepts it; p5/7 exhaustive control is running.
+  This would weaken the sufficient quantum oracle access, not change the
+  executed classical bit-query model or establish a new algorithm.
+- Claims of polynomial time, novelty, hardness, separation and deployment
+  impact remain false. See QUADRATIC_LEGENDRE_RECOVERY.md follow-up.
+  Next command after the control completes: read
+  classical_baselines/quadratic_legendre_phase_compiler.json and inspect
+  its circuit against the source. Acceptance: every basis input and
+  reference, exact global phase/clean workspace, one uncontrolled query,
+  and an omitted-swap negative control. Then correct the source boundary,
+  refresh STATE and re-rank; do not continue the failed affine projection.
+- Mechanical follow-up: matching Concrete Circuit And Oracle Audit entry.
+
+## 2026-11-05 Quadratic Legendre Bounds Verified And Decoder Block Isolated
+
+- Native contract: every hidden monic irreducible quadratic over a growing
+  public odd prime, reversible BIT-OUTPUT Q2 character oracle on F_p only;
+  recover both coefficients with charged fresh verification. Input size log p.
+- Reviewed written upper bounds: expected classical O(sqrt(p)polylog p) via
+  reflection-cover center and quotient collision width; quantum
+  2^O(sqrt(log p)) time/queries/quantum space via exact DCP fingerprints,
+  arbitrary-modulus Kuperberg and constant-success partial-Legendre width.
+  No novelty, classical hardness, separation, polynomial-time receiver,
+  phase-only/Q1 transfer, deployment break or executed quantum algorithm.
+- Completed evidence: Sage checked164 exact moment recoveries plus3 excluded
+  p3 failures; all6 predeclared chosen-query attacks recovered the key.
+  Independent review bounds total classical error by257/4096 and confirms
+  EXPECTED resources: bad branches can retain O(p) candidate witnesses.
+  Exact p37/43 controls verified80 fibers,3218 DCP phase identities and both
+  Gauss-phase branches. Negative orientation/normalization controls fail.
+  See QUADRATIC_LEGENDRE_RECOVERY.md and its three script/JSON pairs.
+- GL2 toolbox6.33's explicit Gauss/Jacobi A_gamma has different labels;
+  no paid conversion to the reconstruction measurement was found. For this
+  two-copy organization, translation QFT gives omega^(ka)B_k(r,d), with
+  B_k=p^(-3/2)sum_t chi((((t+r)^2-d)((t-r)^2-d)))omega^(kt).
+  For k!=0, B_k(r,d)=B_1(kr,k^2d); +/- folding leaves a square width block.
+  It is subnormalized. Measuring k erases the center; a QFT alone is not
+  its polar isometry. Direct kernel-as-unitary and label-heralding shortcuts
+  remain falsified only in their specified scopes.
+- Highest-value question: poly(log p) native nonlinear reconstruction.
+  Next hard task is one explicit coherent block-circuit identity, with paid
+  singular weights and the k=0 sector. Re-rank alternatives if none is
+  proposed; no conditioning sweep, generic PGM framework or OPI tie-rule
+  continuation. Next command: /opt/anaconda3/bin/python tools/corpus/cli.py
+  been-tried "quadratic character tensor reconstruction Jacobi Gauss polar transform" -k 4.
+  Expected artifact: a short circuit identity or an exact mismatch appended
+  to the topic note, followed only then by its smallest decisive matrix
+  control. Acceptance: retain center coherence and inverse-polynomial
+  success with poly(log p) total cost; missing normalization is failure.
+- Independent mathematical and classical reviews are in audits/reviews/.
+  Mechanical items are at the matching Bounds Verified entry in
+  MECHANICAL_FOLLOW_UP_PLAN.md. STATE.md has been refreshed; collaborator
+  Rees material is preserved. Scoped Python/JSON consistency, quantum source
+  hash, new-section whitespace and STATE-title checks passed; no broad suite.
+  No registry promotion, commit or outreach.
+
+## 2026-11-05 Quadratic Legendre Center And Width Composition
+
+- Proved and independently reviewed written upper bounds for the SAME
+  monic irreducible quadratic, standard bit-outputQ2 oracle over F_p.
+  Complete details: QUADRATIC_LEGENDRE_RECOVERY.md. No phase-only, Q1,
+  extension-field oracle, hidden advice or deployment transfer.
+- Stronger CLASSICAL competitor: reflection fingerprint baby/giant cover
+  recovers center with O(sqrtp logp) chosen queries; multiplicative quotient
+  fingerprint birthday collision recovers width. Total expected
+  O(sqrtp polylogp) time/queries/memory; quarticWeil pays injectivization.
+  Six predeclared Sage source cases passed, all outcomes retained. This
+  does not apply to consecutive/passive samples; no novelty/hardness claim.
+- QUANTUM composition: inversion-corrected reflection fingerprints give
+  exact standard DCP samples on a single global good-offset event. Known
+  Kuperberg all-N algorithm finds center in2^O(sqrtlogp); then a paid
+  Legendre-convolution unitary on the square-domain state finds width
+  with constant success. Quantumspace is also subexponential. No actual
+  sieve circuit executed and no polylog decoder established.
+- Gates false: novelty, separation, classical hardness, polylog recovery,
+  Q1 attack. The earlier candidate-state inverse costsTheta(p), and the
+  two-copy evaluation kernel is not unitary; those are scoped falsifiers.
+- Next hard question: whether the explicit GL2 A-matrix supplies a concrete
+  operation beyond this paid subexponential route. Do not infer a PGM from
+  a group QFT. Next command: inspect Theorem6.33 and its matrix domains in
+  audits/sources/legendre_prf/qft_toolbox_2608_28573.txt; expected artifact
+  an exact matching transform or a source/normalization mismatch. Accept
+  only a polynomial-logarithmic native operation with its full workspace
+  and success cost; no general receiver infrastructure. Mechanical queue:
+  matching Center And Width entry.
+
+## 2026-11-05 Quadratic Legendre Native Contract And Decoder Falsifiers
+
+- Native question: recover monic irreducible f=X^2+bX+c over growing F_p
+  from Q2 access ONLY to chi(f(x)), x in F_p. No full f-values, extension
+  oracle, advice or automatic Q1 deployment transfer. Published few-query
+  theorem does not implement its POVM. Source audit and exact contracts:
+  QUADRATIC_LEGENDRE_RECOVERY.md; primary full texts saved locally.
+- Proved p>=5 full-data classical baseline: S1=b/2 and
+  S2=c/2-3b^2/8 by Euler/monomial sums; exactly p queries, O(p) field work,
+  O(logp) scratch. Native Sage controls pending. Published quadratic
+  collision/translation attacks are ~p, with fingerprint/data qualifications.
+- Refuted two concrete decoder shortcuts: the two-copy evaluation kernel
+  is not unitary (F5 pair gives overlap9/25, off-diagonal1/5); controlled
+  inverse-candidate preparation has herald probabilityTheta(p^-2) and
+  amplification costTheta(p). Neither is a general no-go or hardness claim.
+- Gates false: efficient decoder, novelty, speedup, hardness, Q1 attack.
+  Next hard question: can a paid transform implement this actual kernel's
+  measurement? GL2 QFT primary theorem is being checked; QFT alone is not it.
+- Next command: native Sage moment check on p5,7,11,13, then read Theorem6.1
+  and its GL2 construction in audits/sources/legendre_prf/qft_toolbox_2608_28573.txt.
+  Expected artifacts: exact classical witnesses and an operation-level
+  constructive step or decisive source/normalization falsifier. Acceptance:
+  no supplied Fourier phases, free label contraction or generic HSP solver.
+  Mechanical queue: matching Quadratic Legendre entry.
+
+## 2026-11-05 Scalar OPI Algorithm H Verified And Scaling Probe Stopped
+
+- Exact classical operation, independently reviewed: full explicit IID
+  half-tables over F_(2^t), m=q-1, degree<k; known MaxLin2 Algorithm H with
+  largest-current-Walsh-weight selection. Each step raises the exact
+  section mean by |C|/q; <=kt steps and polynomial explicit-input cost.
+  Native coefficients are returned; no hidden advice. Full derivation,
+  primary attribution and limitations: SCALAR_OPI_FOURIER_ELIMINATION.md.
+- Six saved cases verified. q256 scores206,203 versus Prange171,172 and
+  rational-DQI-filter mean lower bound203.636. One PREDECLARED next-size
+  case q512,k128,seed3101 scores396 versus Prange347 and DQI414.037; finite
+  persistence failed. No rerolls/tuning. Retain baseline, stop sweeps.
+- Sage independently checked all seven native Algorithm H witnesses and
+  q512 Prange, total2396 saved parity/gain identities,62 exact
+  section means and7362 row-image enumerations. Large-case means sampled
+  at stated checkpoints; no claim to independently recompute every weight.
+- Mechanism: before the last8 q256 restrictions, fully accepted image ranks
+  {4:110,3:6}/{4:113,3:4}; q512 before last9 has {4:157,3:4,5:1}.
+  Early no-alias lemma applies only to <=k-2 touched row spaces. A balanced
+  quadratic counterexample refutes bounding later gains by initial Walsh
+  maxima. Neither observation bounds the full adaptive asymptotic score.
+- q512 first execution failed only in unsaved-result NumPy/Fraction output
+  comparison. Reproduced and fixed with Python-int score conversion; same
+  saved inputs rerun. Witness now saved before comparison. No score-rule
+  change. Complete q512 run250.17s; no matched runtime comparison.
+- Gates false: novelty, speedup, hardness, asymptotic DQI match, and global
+  failure of Algorithm H. Independent review accepts stopping this probe.
+- Next hard question: re-rank native algorithm opportunities against the
+  unresolved full-table OPI question; do not spend another pass on a nearby
+  Algorithm H barrier. One unadmitted comparison is efficient TIME for
+  quadratic Legendre-PRF recovery, where known query bounds alone do not
+  pay a receiver. Next command: `/opt/anaconda3/bin/python tools/corpus/cli.py
+  been-tried "quadratic Legendre PRF efficient quantum time reconstruction"`;
+  then primary full-text theorem/algorithm audit and baselines lookup.
+  Expected artifact: an explicit native input/resource contract or decisive
+  existing-algorithm match. Acceptance: concrete paid constructive operation
+  before experiments; no query-to-time or generic-oracle hardness transfer.
+  Mechanical items: matching 2026-11-05 Algorithm H entry below.
+
+## 2026-11-05 Rees Afternoon: Receiver for General (G,H), SDE Theorem Q1, Cloud dfs2b Batch (AI Only)
+
+AI-only; each result adversarially checked before integration; nothing human-reviewed; no
+claim gate changed. Log rows I240-I243. Companion 203 pp., 0 Overfull, no undefined refs
+(scratchpad build; pdf/ still holds the 201 pp. copy). Uncommitted; not pushed.
+
+- Proved, conditional on the arithmetic macros (exhaustive p <= 127) (I241): the coherent
+  witness circuit is correct for every kappa_d >= 3 with p not in E_2(kappa_d). Access model:
+  coherent oracle, explicit Lie algebra. Coverage: coherent_k3 emits correct programs for
+  every class-2/3 instance with p <= 2*10^6, poly(log|G|, log p) gates. The checker refuted
+  the report's "iff" above 2*10^6 and its cofinite claim for c >= 6; the paper uses the
+  corrected text (appendix-backends.tex §6.1-6.2, prov:gc-kappa-proof).
+- Proved (I242, rem:sde-worst-case-q1): for kappa in {2,3}, every bank of rank r with
+  >= floor((r+2)^2/4)+3r columns reduces in deterministic poly time to a solution or to a flag
+  whose rounds have <= 3+c blocks; for c <= 2 the back substitution fails w.p. <= 1/2 at
+  p >= max(62000,320r) (kappa=2), p >= max(3.75e6,2430r) (kappa=3). Checker fixes applied:
+  Corollary A needs U_L != 0 (counterexample e1, e2, e1+e2 in F_7^2); "heavy" disambiguated.
+  Independent code, ~11,000 banks, 0 failures. Classical baseline unchanged: arity (a+1)(a+2)/2.
+- Gates that stay false: coherent_receiver_implemented; poly time at o(a^2) columns for every
+  bank; Conjecture 5 (reason now only: c unbounded); uniformity in p; any novelty claim; all
+  six Rees gates.
+- Cloud (7 sessions, 5.5 h cap, no commits): dfs2b A/B/C/F on the remaining kappa=8/9 primes,
+  plain-mode cross-checks D/E, G = native-application literature search. Clean-copy Lean rebuild
+  of formal/ at b117b98e passed (EXIT=0, no warning/error/sorry; Mathlib prebuilt; I243; log
+  audits/reviews/2026-11-05-rees-lean-clean-build.log).
+- Next hard question: bound c (splittings per round) or exhibit a bank forcing c >= 3 at a
+  leaf; the search must use a >= 11 at the 3r budget (or a >= 6 at the r budget).
+- Next command: collect cloud results; re-verify each FEASIBLE witness locally; acceptance:
+  every INFEASIBLE/FEASIBLE claim reproduced or rerun before E_2(8)/E_2(9) change in the paper.
+  Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md, "2026-11-05 Rees Afternoon".
+
+## 2026-11-05 Rees Owner Decisions Applied, Companion Restructured, Expert Emails Drafted (AI Only)
+
+AI-only; each result adversarially checked before integration; nothing human-reviewed; no
+claim gate changed. Log rows I229-I239. Core docs/papers/rees-hsp/core/main-core.tex 27 pp.,
+companion main.tex 201 pp., both clean; numbers test 2 passed; PDFs in docs/papers/rees-hsp/pdf/.
+
+- Owner decisions (11-05): OD3 as a READABLE variant (thm:main concrete and enumerated, new
+  rem:main-solver; abstract-solver draft not applied); OD4 shorter core Outlook; OD1; OD2
+  (zero-sum and h>=3 nodes in (R1)); block-steered solver adopted (fcs-budget combined column
+  only; E_W unchanged); companion restructured into paper order with provenance appendix
+  appendix-provenance.tex (archive: docs/papers/rees-hsp/archive/main-2026-11-05-before-restructure/).
+- Proved (AI-checked, pending human review): general left-translation lemma for the coherent
+  receiver, per-tuple P_coh = P_meas (I229); kappa=2 witness circuit correct for every odd p
+  given the arithmetic macros, exhaustive for p <= 13 (I236); square-gap barriers
+  prop:app-s2-barrier (kappa^kappa/2 for a stated method class) and prop:app-s2-chebotarev
+  (I235). Fixed a real error in companion thm:uniform-compilation(iii) (I239).
+- Finite computation: 20071, 20089, 20107 in E_2(9) by complete dfs2b runs; 1370 kappa=9
+  primes in (20000, 424549] still open.
+- Gates that stay false: all six Rees gates; square gap open; E_2(8), E_2(9) not known;
+  coherent_receiver_implemented false (no generator for general (G,H)).
+- Referees: 18 (core) ready after fixes, applied; 19 (restructured companion) in
+  audits/reviews/2026-11-05-rees-referee-19-companion.md.
+- Expert email drafts (UNSENT, owner sends): docs/papers/rees-hsp/emails/expert-emails-2026-11-05.md.
+  First human check needed: Ivanyos-Santha 2015 pp. 3, 7, 8-10 (core Remark 5.3).
+- Next hard question: the square gap (two barriers now proved); deciding the 1370 open
+  kappa=9 primes.
+- Never run make_numbers.py (TRAPS 17).
+- Git: second local commit b117b98e on rees-full-overnight-2026-11-05 (through I240); not
+  pushed. Email drafts and PDFs deliberately uncommitted (public repo).
+
+## 2026-11-05 Rees Morning: k9 Sweep to 9^9/2, Lean S2 Local, Receiver Round 3, Referees 16-17 (AI Only)
+
+AI-only; each item adversarially checked before integration; nothing human-reviewed;
+no claim gate in research/reductions/rees_hsp_reduction.json changed. Paper
+docs/papers/rees-hsp/main.tex 177 pp., core 28 pp., both clean; numbers test 2 passed.
+Log rows I223-I226 in research/audits/reviews/2026-11-02-rees-integration-log.md.
+
+- Finite computation (I223): every prime p = 1 (mod 9) in (20000, 9^9/2] (1791117
+  primes) has an explicit two-level contraction, re-checked by two separately
+  written verifiers (bad = 0), except 1373 listed primes (max 424549), which are
+  OPEN, not shown to be in E_2(9). Since 9^9/2 < T_A(9), E_2(9) is not determined.
+  Report: audits/reviews/2026-11-04-rees-k9-sweep.md "Result (2026-11-05)".
+  dfs2b snapshot: 14281 in E_2(8), 18199 in E_2(9); decided to 13873 / 16363.
+- Lean (I224): formal/Formal/ReesS2Local.lean proves the two-row and divisor lemmas
+  and Prop app-s2-cyclotomic (i),(ii) (p <= kappa^2-3kappa+3 => p in E_2(kappa));
+  part (iii) (Weil) not formalized. 552 guards. Check: -lean-s2-local-check.md.
+- Receiver (I225): n4(F_5) exact whole-circuit law for 2 of 9 subgroups via two
+  hand-proved coset lemmas (not machine-checked); other 7 conditional on 13 label
+  tuples each. coherent_receiver_implemented stays false. -receiver-round3(-check).md.
+- Referee-16 (Fable) on all overnight additions: 0 Error, 0 Gap; 10 minor items
+  applied (I226), incl. the kappa^kappa/2 barrier now marked argued.
+- Referee-17 (Fable) on core/main-core.tex: major revision; 0 Error, 2 Gap (controlled
+  oracle guard, fixed; B_d rests on an AI-only reading of Ivanyos-Santha 2015, now
+  stated); 20 of 22 applied (I227). Owner decisions OD3 (abstract-arity restatement)
+  and OD4 (shorter Outlook) in research/STATE.md.
+- Gates that stay false: all six Rees gates; E_2(8), E_2(9) not known exactly.
+- Next hard question: a near-observed two-level threshold (square gap), or
+  deciding the 1373 kappa=9 OPEN primes with dfs2b.
+- Next command: after owner OD3/OD4, edit core/main-core.tex accordingly; acceptance:
+  core builds clean (0 Overfull, no undefined refs), numbers test 2 passed.
+- Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md top entry (2026-11-05 Rees Overnight).
+- Git: local commit 88eccdd8 on branch rees-full-overnight-2026-11-05 (Rees paths through
+  I227); not pushed; pushing needs the owner's OK (repo is public).
+- After the commit (uncommitted): I228, a second AI reading of Ivanyos-Santha 2015 confirms
+  the B_d reading with caveats (-is2015-second-reading.md); core rem:is-printed has page
+  locators. OD3 draft ready in audits/reviews/2026-11-05-rees-od3-draft/ and OD4 draft in
+  -od4-draft/ (apply OD3 first, then od4-on-od3.diff); neither applied.
+
+## 2026-11-05 Rees Overnight Results: Rows I203-I222, Chains, Zero-Sum Node, Lean Class Seven (AI Only)
+
+All AI-only, each result adversarially checked by a separate agent before integration;
+nothing human-reviewed; no claim gate in research/reductions/rees_hsp_reduction.json changed.
+Paper docs/papers/rees-hsp/main.tex (untracked, ~173 pp., clean build, numbers test 2 passed)
+and core/main-core.tex (27 pp., synced, I213). Row-by-row in
+research/audits/reviews/2026-11-02-rees-integration-log.md I203-I219; one line each in
+research/STATE.md "Overnight 11-04/05".
+
+Proved (AI-checked, pending human review):
+- Schedule 2: contraction chains (app:s2-chains, I209) give a CUBIC-arity C(a+3,3) solver for
+  every kappa >= 4 incl. prime kappa at p > Theta_2(kappa) <= 4.05 kappa^2 (ln kappa)^kappa
+  (kappa >= 16); tower (app:s2-tower, I205) threshold kappa^{q_1+O(1)}; local obstructions
+  (app:s2-local, I216): p <= kappa^2-3kappa+3 implies p in E_2(kappa). Square gap NOT closed;
+  quadratic-arity threshold still T_A ~ (kappa-1)kappa^kappa; conditional O(kappa^kappa)
+  for kappa >= 729 and a joint-moment barrier at kappa^kappa/2 (I220).
+- SDE: O(a^2/log a) and floor((a+2)^2/4)+[a odd] columns for i.i.d. uniform columns
+  (rem:sde-subquadratic, rem:sde-block-steered); general-position banks deterministic
+  (rem:sde-worst-case). Arbitrary columns: (a+1)(a+2)/2 is still the best proved.
+- Schedule 3: polynomial-time average-case zero-sum node, arity O_c(g^{1+ceil(log2 c)})
+  (rem:fc-zero-sum-arity, I210) + barriers; o(g^2) open. h >= 3 witness sampler of degree
+  1+j*_h (rem:fc-witness-h3, I221): node work polynomial at fixed c for every p > c, more queries.
+- IS restarts: at most e <= log2 kappa runs for prime-power kappa (I194); composite kappa: rho =
+  nu - min_q v_q((p-1)/kappa) runs, nu+1 tight, no kappa-only bound (I219).
+- Application: none. Theorem W (I214): S1 classically easy at bounded base-p digit sum.
+- Lean: class seven (I217) and computable kappa<=2 SDE solvers + step (R) (I218); full
+  lake build --wfail OK; 538 guards (500 paper table + 38). Still outside: c >= 8, running
+  times, kappa >= 3 algorithms, any compiler.
+- Coherent receiver: exact whole-circuit law Heis(F_3) all 19 subgroups; checkpoints; n5(F_5)
+  merges; n6(F_7) class five 14/14 seeded (I208, I212). Gate stays false.
+- Referee 13 (I207), referee 14 (Fable, I215) and referee 15 (Fable, I222) applied; K30 exact exponents (I204).
+
+Owner decisions waiting (see STATE): adopt block-steered SDE (fcs-budget combined column
+555.4->533.4 at 2^61-1; E_W unchanged); chains/tower at kappa_d = 4 in the combined rule
+(would change E_W(7..9)); zero-sum node as third Gamma_0 option in (R1); h>=3 nodes in (R1) (OD2) and rewording
+the question after prop:rc-lower (OD1); restructure the
+companion (referee 14 S1/S2/S6: project-log character); local commit of Rees paths on a new
+branch (OK'd, no push).
+
+Claim gates that stay false: independent_review, novelty_established,
+speedup_claim_allowed, coherent_receiver_implemented, general_sde_implemented,
+formal_compiler_checked.
+
+Next hard question: a quadratic-arity two-level threshold below kappa^{(1-eps)kappa}
+(threshold-9 report, if written, says what was tried). Next command: see STATE "Now".
+Mechanical items: top of research/MECHANICAL_FOLLOW_UP_PLAN.md (11-05 overnight).
+
+## 2026-11-05 Rees Threshold-6: Coset-Refinement Tower Bypasses the Square Gap at Higher Arity (AI Only)
+
+Report: `audits/reviews/2026-11-05-rees-threshold-6.md` (+ folder). AI-only, pending human review.
+- **Claim [proved].** Refining the coset classes one prime factor of kappa at a time replaces the
+  two-level contraction by L "rectangular" contractions RC(D_t; D_{t-1}Z_{D_t}). In each, a
+  variable faces r_t = D_t/D_{t-1} conditions, not kappa. The tower (Thm 2.3) solves
+  sum u_b^kappa lambda_b = 0 from M = (a+1) prod_t((r_t-1)a+1) ARBITRARY columns (deterministic given the
+  step contractions; L = 1 is Schedule 2). Thresholds: Prop 3.1 (Weil W(D,r)), Prop 3.2 + Lemma 3.3
+  (T_R(D,r) <= max(4D^{r+1}, 4r^2 D^5)). Thm 4.2: for composite kappa with largest prime q, every
+  p = 1 mod kappa with p > max(T_A(q)[q>=5], 4kappa^{q+1}, 4q^2 kappa^5) works; kappa = 2^L: p > ((kappa-1)^2+1)^2 < kappa^4,
+  M = (a+1)^{L+1}, poly(kappa) finding cost; 3-smooth: p > 36 kappa^5.
+- **Not proved / refuted.** The two-level square gap (E_2 itself) is NOT closed. Routes 1, 2 and 4 fail
+  (Kummer covers re-index the same sums, Remark 6.1; square-root barrier kappa^{kappa+1}; GRH adds
+  nothing; only the random-model Conjecture 6.4 gives (kappa+1)/2, and it needs c >= 156). Arity is NOT O(a^2):
+  its degree in a is L+1 = Omega(kappa)+1 (Remark 4.4). Prime kappa: no change.
+- **Exact (finite + theorem; witnesses re-checked by an independent sympy checker).** No tower or
+  union chain (|K| <= 3) covers: kappa=4 {5,13}; 5 {11}; 6 {7,13,19,31,43,67}; 7 {29,43,71,113}; 8
+  {17,41,73,89,137,233}; 9 {19,37,73,109,127,163,181,199,307,433}; 16: 17 primes <= 1489. All lie in
+  E_2(kappa); every other p = 1 mod kappa is covered (e.g. 52 of 56 primes of E_2(7), and 11953 in E_2(8)).
+  The kappa=7 statement awaits `v_u7_step1A.out` (re-check of 236878 witnesses, was running).
+- **Baseline/counterexample.** Lemma 7.1: E(kappa;R->K) is a subset of E_2(kappa) (row restriction); a
+  cross-check passed on all exact lists. Corrected own error: union targets allow repeated beta
+  (kappa=5, p=11 step 1 is feasible only with a repeat); all union infeasibility claims were redone.
+- **Gates.** Every Rees claim gate stays false. No .tex edit (proposed text in report §8, marked
+  "AI-checked, pending human review"). Nothing committed. rees_hsp_reduction.json untouched.
+- **Next hard question.** Is there a schedule with a poly(kappa) threshold and arity O(a^2)? Or a
+  lower bound for universal-contraction schemes at arity O(a^2) below kappa^{(kappa+1)/2}? Second:
+  prime kappa (the tower gives nothing).
+- **Next command.** `cd research/audits/reviews/2026-11-05-rees-threshold-6 && cat v_u7_step1A.out`.
+  Expected artifact: the verifier summary. Acceptance: bad=0, contradictions=[], missing=[]; then the
+  kappa=7 line of report §0/§5.4 loses its "pending" mark. Mechanical items: top of
+  MECHANICAL_FOLLOW_UP_PLAN.md (2026-11-05 Rees Threshold-6).
+
+## 2026-11-05 Rees Overnight Campaign: Owner Decisions and Nine Agents (AI Only)
+
+Owner (11-04 ~22:20, then asleep, cannot approve): work on every open item all
+night. Decisions: K10 -> review prop:triangular-sde (adoption after review);
+F1 -> core paper core/main-core.tex is the submission, main.tex the companion;
+K7 -> MERGE thm:random-column into thm:free-coordinate, correctly; P3 keep tags,
+P6 finish, P7 at release, P8 terminology paragraph (keep "coherent receiver"),
+P11 strip comments at release; K30 -> make exponents exact, then drop clause;
+K21 -> LOCAL commit of Rees paths on a branch, NO push (repo public).
+Done: I190 (P6), I191 (P8 + one status convention). Build clean 149 pp.
+Running (reports land in audits/reviews/; integrate each after checking):
+- -triangular-review.md (adversarial review + E_W^tri preview; adopt if clean)
+- -k30-exact-exponents.md; -k9-sweep.md (screens k9sweep_*)
+- -s3-integration.md: Schedule 3 integrator OWNS the Schedule 3 text tonight
+  (K7 merge + verified s3-zero-sum results: Z1 finder <=> average-case binary
+  SIS, A3 Fourier sampling gives the law exactly, A4 coset-copy proved)
+- 2026-11-05-rees-threshold-6.md, -sde-subquadratic.md, -is-restarts.md,
+  -receiver-sims.md, -lean-c6.md, -application-3.md
+- cloud: "Rees overnight: two-level contraction threshold gap", "... native
+  application" (report only in their final messages; owner reads them).
+- kappa=8 exact E_2: screens dfs2b_k8hi_0..4 (216 primes of (11953, 20000]).
+Claim gates all false. Next command if this session dies: read each report
+above, verify, integrate one at a time into main.tex (build + numbers test),
+log rows I19x, then the local commit (scope: docs/papers/rees-hsp, Rees
+reports/scripts excluding *-t1-sweep-hi/out/ (291 MB), theorems/rees_*,
+tests/test_rees_*, formal Rees files) on a new branch.
+
+## 2026-11-04 Rees I153: Check Fixes Applied, Five New Agents (AI Only)
+
+Update: I154 adds the notation table (sec:notation); I155 adds
+lem:coherent-linear-sde (kappa_d = 1 grades only, not wired in; the
+coherent_receiver gate stays false). I156-I157 apply referee 3
+(appendices; body), the explicit-QFT backend text and Lean class five
+(BCHClassFive etc., 21 guards, Audit builds). I158 proves the Bezout
+conversion, so it is no longer a condition. I159 applies the check of
+I153-I158 (0 errors). I160 adds lem:coherent-quadratic-sde (kappa_d = 2);
+with I155 every grade is coherent when gcd(p-1, lcm(2..c)) = 2, not wired
+in, gate false. I161 wires both into a coherent-label backend
+(theorems/rees_circuit_coherent.py) on Heis(F_3) and n4(F_5) only; gate
+stays false. I162 adds the kappa = 8 certificate (every p = 1 mod 8 in
+(49417, 8^8/2] has a contraction; 139558 witnesses, checker rerun, bad=0).
+I163 adds lem:coherent-power-sde: coherent witness at every grade with
+p not in E_2(kappa_d) (all class 3; class 4 for p not in E_2(4)); not wired,
+gates false. Next hard question: wire it on the class-three filiform algebra
+over F_7 (kappa_3 = 3); acceptance test = merge outputs equal rho_{H_{d-1}}
+on all label pairs at grade three. I164 applies the unanchored check
+audits/reviews/2026-11-04-rees-check-i159-163.md (1 Error: kappa=2 lemma IS
+wired in backend 4; fixed) and refreshes E_2(8) to 9769 (decided to 9769) and
+kappa=9 decided to 12979. Proposed cloud card task_39a8b78f: independent
+solver re-deciding 9769, 9473 (K=8) and 17623 (K=9); save its final message
+as audits/reviews/2026-11-04-rees-cloud-e2-recheck.md. I165 adds the
+combined coherent + explicit-QFT circuit (theorems/rees_circuit_full.py) on
+Heis(F_3), n4(F_5); gate stays false. I166 adds the fifth backend
+(theorems/rees_circuit_coherent_k3.py): kappa_3 = 3 wired on filiform F_7
+(1629 qubits, 4832806 gates/sample); not independently reviewed. 134 pp., clean.
+main.tex was 125 pp. at I153 (I137-I153), rebuilt from fresh copies: no overfull
+boxes or float warnings (three bibliography underfulls). Note: the
+scratchpad build dir had held stale .tex copies; always copy all *.tex
+into the build dir before latexmk. Rees tests: 982 passed, 35 skipped.
+
+I153 applies the unanchored check audits/reviews/2026-11-04-rees-check-
+i149-151-r2.md (no counterexample). Errors fixed: the lem:qft-mod block
+counts summed to +68 against the stated +60 (the bound holds; multiplier
+is 158b^2+46b-4); rem:fc-tradeoff(a) failure bound is now beta+5*2^-B.
+Gaps fixed: (R3) now runs the zero-sum search that (R1) allows (needed by
+lem:fc-forest, thm:free-coordinate(iii), cor:fpt-r(ii));
+thm:free-coordinate(iii) statement now allows the zero-sum node;
+rem:fc-tradeoff(b) has the two-group partition step. Imprecisions applied
+with the reviewer's wording (log row I153 lists them).
+Gates that must stay false: every claim gate in
+reductions/rees_hsp_reduction.json. Nothing committed or pushed.
+
+[~17:15] Local: referee-4 consistency pass done (audits/reviews/2026-11-04-rees-referee-4-
+consistency.md: 8 Errors, 13 Gaps); applied as I171 (-consistency-applied.md);
+lake build Formal.Audit rerun OK. Paper 135 pp., clean. Full rees suite 1329 passed.
+[~19:00] I172 (H2 discharged) and I173 (prop:coherent-receiver, 138 pp.) integrated;
+running: -h3-check.md, -coherent-receiver-check.md.
+[~20:00] I174 (H3) discharged (explicit order finding; -h3-check.md "Applied"), so all
+of prop:tb-count-gates is now unconditional. I175: the coherent-receiver check
+(-coherent-receiver-check.md, 1E/2G/9I) applied in full; the receiver stays an
+existence statement, the gate bound gains +4bQ. I176: E_2(8) decided to 11161,
+11161 in E_2(8) (0.96 kappa^{4.5}); E_2(9) decided to 13807, 17713 in E_2(9). Paper
+140 pp., clean; numbers test passes. Running: -is-runtime.md (explicit T^IS_d),
+-h3-recheck.md (unanchored recheck of I174), -t1-sweep-hi.md (T1 witnesses over
+(8^8/2, 117441563] with a power-residue test in place of the O(p) index table;
+outputs in audits/reviews/2026-11-04-rees-t1-sweep-hi/, screens t1sweep_*; verify
+with the verify.sh it writes). Cloud sessions: none had reported by ~20:00.
+[~21:20] I177-I187 integrated (paper 148 pp., clean; numbers test passes):
+rem:is-runtime explicit T^IS_d (I177) with its TM layout sketched (I179);
+(H3) recheck fixes (I178: synthesis budget, c=1 exponent, AKS at 21/2);
+lem:tb-howell-rounds removes the normal-form proviso (I183, independently
+checked first); referee passes 5-11 applied (I180-I186: circuits, black box,
+front matter incl. a Contributions paragraph, SDE/Schedule 2, core, regimes,
+subspace/filters/Lean; formal/README.md class-five rows fixed); and
+E_2(8) ∩ (49417, 117441563] = ∅ by 1534715 explicit witnesses checked by two
+verifiers (I187; -t1-sweep-hi.md), so E_2(8) ⊆ [3,20000] ∪ 29 primes.
+Claim stated: finite computations and proofs, all AI-checked, pending human
+review. Gates that stay false: all of rees_hsp_reduction.json.
+Strongest baseline: none changed. Next hard question: the 29 kappa=8 primes
+(each needs a dfs2b run of hours) or the square gap. Next command: re-read
+small-prime/dfs2b_*.out (still running), recount decided ranges with the
+script in the I176/I182 rows, update main.tex ~650 and appendix-schedule2
+if they moved; acceptance: clean build, numbers test, log row. Human-check
+list: grep 'NEEDS HUMAN VERIFICATION' docs/papers/rees-hsp/*.tex.
+[~21:30] Started exact dfs2b on the 29 unresolved kappa=8 primes of
+threshold-5/gap_k8_unresolved.txt: screens dfs2b_gap29_0..4 (5 queues, nice 10,
+limit 4e9), outputs small-prime/dfs2b_k8_gap29_q{0..4}.out with a DONE_P line per
+prime and QUEUE_DONE at the end. Expect hours per prime. FEASIBLE lines are
+witnesses (verify with threshold-5/verify_witnesses.py); INFEASIBLE adds the
+prime to E_2(8). When all 29 are decided, E_2(8) ∩ (20000, T_A(8)] is known and
+only (11489, 20000] remains (the running dfs2b_8_6362 scan) for E_2(8) exactly.
+[~22:00] 11953 INFEASIBLE (old sequential scan, 1639 s; screen now killed), so
+11953 ∈ E_2(8) (1.03 kappa^4.5) and kappa=8 is decided contiguously to 11953.
+kappa=9: 17929 ∈ E_2(9) too (dfs2b_k9_17501_20000.out). Neither is in the paper
+yet; fold both in with the exact-E_2(8) edit. Running local agents: kappa=9 T1/P
+witness sweep over (20000, 9^9/2] -> audits/reviews/2026-11-04-rees-k9-sweep.md
+(screens k9sweep_*), and Schedule 3 zero-sum finder -> -s3-zero-sum.md. The
+QFT-over-Z/N wiring is already done (I157, rees_circuit_qft_wire.py); the
+continuation doc said otherwise and is corrected. Four user-started cloud
+sessions (11-04 ~22:00): literature priority (new work); kappa=8 sweep, the 29
+hard primes, and the 145 primes of (9769, 20000] duplicate local results that are not pushed.
+[~21:45] I188 (referee-12 whole-paper consistency, 0 errors; 18 NEEDS HUMAN
+VERIFICATION tags) and I189: all 29 gap primes FEASIBLE within minutes, so
+E_2(8) ⊆ [3, 20000]; 11689 ∈ E_2(8) (1.009 kappa^4.5); kappa=9 decided to 15787,
+17911 ∈ E_2(9). The remaining (11897, 20000] for kappa=8 (216 primes) runs in
+screens dfs2b_k8hi_0..4 -> small-prime/dfs2b_k8_hi_q*.out (DONE_P per prime,
+QUEUE_DONE); the old dfs2b_8_6362 screen is stopped once it decides 11953.
+When the queues finish, E_2(8) is known exactly: recount (I189 row), update
+main.tex ~650 + appendix-schedule2 + README, and state E_2(8) exactly (the paper
+currently says 'not known exactly' for kappa = 8). Paper 149 pp., clean; full
+rees suite 1329 passed / 87 skipped.
+[~18:00] Local agents: audits/reviews/2026-11-04-rees-coherent-receiver-theorem.md
+(general coherent receiver by Bennett simulation of the IS solver + deferred
+measurement: statement, proof, LaTeX proposal; gate coherent_receiver_implemented
+stays false either way) and -h2-check.md (can (H2) of prop:tb-count-gates be dropped).
+Cloud jobs requested 11-04 ~15:50 (owner-approved; they report only in their final
+messages, so copy each into audits/reviews/2026-11-04-rees-cloud-<name>.md and verify
+witnesses locally with verify_witnesses.py): task_39a8b78f (independent solver,
+re-decide 9769, 9473, 17623), task_85e35d7f e2k8-low (145 undecided K=8 primes in
+(9769,20000]), task_d9d99827 e2k8-hard (the 29 primes of gap_k8_unresolved.txt),
+task_0b178390 e2k8-sweep (witnesses over (8^8/2, T_A(8)]; NOTE its brief says
+1.17e8 but T_A(8) = 117441563 by the appendix's formula, so its range must reach
+117441563; a correction message was sent or must be), task_44a11fdc
+rees-priority-3 (deeper literature-priority search).
+Running (local subagents; reports written incrementally, may be partial):
+[11-04 ~15:00] audits/reviews/2026-11-04-rees-circuit-full.md (coherent +
+explicit QFT), -circuit-coherent-k3.md (fifth backend, filiform F_7, kappa_3 = 3;
+new module theorems/rees_circuit_coherent_k3.py), -check-i159-163.md (unanchored
+check). [~16:30] -circuit-coherent-k3-review.md (independent review of the fifth
+backend), -circuit-coherent-c4.md (coherent class-four filiform F_7, new module
+theorems/rees_circuit_coherent_c4.py). circuit-full, circuit-coherent-k3 and
+check-i159-163 finished (I164-I166). Earlier ones listed next are finished.
+audits/reviews/2026-11-04-rees-qft-wire.md (lem:qft-mod as a circuit
+backend), -coherent-sde.md (reversible linear-grade SDE solve),
+-threshold-5.md (non-character-sum route to the square gap), -lean-c5.md
+(BCH group law at class five, new Lean files only), -notation-table.md
+(referee m1). Cloud jobs started by the owner: task_3087361b (zero-sum finder),
+task_8de856b9 (citations), task_cf3ba4f9 (dfs2b k8 tail); copy their final
+messages into audits/reviews/2026-11-04-rees-cloud-*.md.
+Next hard question: a polynomial-time zero-sum finder at near-linear
+arity, or the Schedule 2 square gap.
+Next command: read each report above; fold in only parent-checked
+results as I154+, rebuild (copy *.tex to the build dir first), run
+pytest -q tests -k rees. Acceptance: clean build, tests pass, log rows.
+
+## 2026-11-04 Rees 11-04 Passes: (H1) Proved, Zero-Sum Node, Mixed Rule (AI Only)
+
+main.tex is 125 pp. (I137-I152, built clean, 0 warnings). The log is
+audits/reviews/2026-11-02-rees-integration-log.md. Continuation brief:
+REES_FULL_CONTINUATION.md, section "11-04 midday checkpoint".
+
+Proved, conditional as stated (all AI-checked, pending human review):
+- lem:qft-mod (I150). An explicit QFT over Z/N, N odd, with operator-norm
+  error eta on the canonical subspace and clean ancillas, using
+  O((b+log 1/eta)^2) gates from {X,CNOT,SWAP,Toffoli,H} plus dyadic R_k
+  and CR_k. (H1) of prop:tb-count-gates is now a lemma, not a hypothesis;
+  (H2) and (H3) stay hypotheses. Fixed-gate-set synthesis is cited
+  (Solovay-Kitaev), not proved. The lemma is not wired into the generated
+  circuits.
+- lem:fc-zero-sum (I151). At kappa = p-1, M = g(p-1)+1 always gives a
+  zero-sum witness (Chevalley-Warning); the search costs M*min(2^M, p^g).
+  So cor:fpt-r(ii) at p = c+1 now holds through thm:free-coordinate(iii),
+  under the same conditions as (i): thm:main's steps and the lem:s3-law
+  label law. IMS stays the alternative that needs no label law (coherent
+  oracle).
+- prop:mixed-schedule (I149, Appendix B, app:s3-mixed). A stated theorem
+  for the uniform-kernel column of tab:fcs-budget, with a
+  node-count-weighted bank budget. Counterexample to the unweighted rule:
+  p = 151 at class nine, where the tree-abort bound is 2^331.
+Refuted direction (I152, rem:fc-tradeoff): no o(a^2) average-case SDE
+  method. Isotropic merging keeps banks uniform but needs 3^a columns. Every
+  examined method lies on time ~kappa^{a-M/a} (argued, not a lower bound).
+Finite: dfs2b found many INFEASIBLE primes for kappa=8 above 4201 and for
+kappa=9 above 5689, so E_2(8) and E_2(9) are not complete. Rescans are
+running (screen sessions), plus five cloud jobs that report only in their
+final messages (see MECHANICAL_FOLLOW_UP_PLAN.md, 2026-11-04).
+Gates that must stay false: every claim gate in
+reductions/rees_hsp_reduction.json, including speedup_claim_allowed,
+coherent_receiver_implemented and novelty_established.
+Nothing committed or pushed.
+
+Next hard question: a polynomial-time finder at the zero-sum grade for
+general profiles, or the Schedule 2 square gap.
+Next command: read audits/reviews/2026-11-04-rees-check-i149-151.md, an
+unanchored check of the I149-I151 text, and apply any error it finds. Then
+rebuild in a scratchpad copy with latexmk.
+Acceptance: a clean build, and every check finding either an I-row or listed
+open.
+
+## 2026-11-02 Rees Full Campaign Rounds 3-4: Proof Checks And Appendix F (AI Only)
+
+Campaign files: REES_FULL_CAMPAIGN_3.md and _4.md. Results and the next steps
+are in REES_FULL_CONTINUATION.md ("Results landed" and the ranked list).
+main.tex: integrator passes 3-8, 106 pp. with log rows through I124, built clean by the parent (no dest, overfull or undefined warnings). All six proof checks and Lean-3 are folded in. A second unanchored referee (2026-11-03-rees-referee-2.md) found no error in thm:main; its gaps went in as I125-I131 (pass 9). The circuit generator (theorems/rees_circuit_general.py, -circuit-2.md; fast tests 59 passed on rerun) was sent to the integrator for pass 10. The core paper core/main-core.tex (26 pp.) matches I125-I126. Appendix F
+proves thm:free-coordinate. The unanchored proof checks of Appendices A, B
+and E and of the core found NO error and NO counterexample; their gap fixes
+were sent to the integrator. The core gap to verify first is lem:hybrid's
+domain (check-core G1). Threshold-3: an obstruction, no new threshold. A
+separate 25-page core paper is at docs/papers/rees-hsp/core/. Lean SDE, the
+mixed-source simulation, the circuit generator, checks C and D, and four
+cloud jobs (results only in their final messages) were still running when
+usage ran out. No gate flipped, nothing committed or pushed.
+
+Next command: in a scratchpad copy of docs/papers/rees-hsp/, run latexmk and
+grep main.log for "referenced but does not exist", Overfull and undefined.
+Then confirm that every round-4 "Proposed paper text" is either an I-row or
+listed as open. Acceptance: a clean build, plus every check report mapped
+to I-rows.
+
+## 2026-11-02 Rees Full Campaign Round 2: Paper Integrated, 89 Pages (AI Only)
+
+Run from REES_FULL_CAMPAIGN_2.md (18 items). Continuation brief for Codex,
+ranked gaps and the next command: REES_FULL_CONTINUATION.md. main.tex IS now
+the full paper (the round-1 draft became main.tex in integrator pass 1; the
+pre-campaign copy is in docs/papers/rees-hsp/archive/). After pass 2 it is 89
+pp. with appendices A-E (Schedule 2, Schedule 3, subspace source,
+torsion/black-box, codimension) and builds clean. The change log is
+audits/reviews/2026-11-02-rees-integration-log.md (I1-I65; judgement calls
+K1-K15). Pass 3 (Lean-2, circuit, scaled simulator) was running at writing.
+No gate flipped, nothing committed.
+
+Verdicts (all AI-checked; no counterexample anywhere):
+- referee (unanchored): major revision, no error in the core. P1-P8 were
+  applied. F1 (restructure), M4 and most minors are listed open.
+- threshold-2: E_2(7) exact (56 primes, largest 3221). The central-moment
+  threshold kappa^{kappa+o(1)} helps only for kappa>=15. The square gap stays
+  open.
+- linear-arity: no o(a^2) solver. Triangular two-level solver at
+  (a+1)(a+2)/2 columns (prop:triangular-sde). It is not adopted in Rule W
+  (K10, owner).
+- schedule3-cost: a free-coordinate sampler, about 2^34 trials/node instead
+  of 2^128. Added as a separate conditional thm:free-coordinate; Appendix B
+  proves only the old theorem (K7).
+- bb-envelope: thm:bb-envelope, the all-prime black-box HSP at fixed class,
+  conditional (exponent 144 at c=9).
+- classical-lower-bound: Theta(p^{(m-1)/2}) classical queries for arbitrary
+  H (prop:classical-query). This is a query separation only, conditional on
+  Thm main.
+- cited-notes: the cited-but-unaudited notes are checked. rem:premature was
+  rewritten; rem:mixed-source was added (argued).
+- a1-citers: two new Imran-Ivanyos citers, neither covering A1. A1 stays
+  "possibly new".
+- appendices 14-18: full proofs written. Two one-line body fixes applied.
+- lean-2: eight modules promoted into formal/Formal/ (BCHClassFour,
+  ReesGeneral*). Audit.lean has 403 guards, all standard axioms. Clean-copy
+  `lake --no-cache build --wfail` succeeded (3507 jobs). c=3,4 are
+  unconditional; c>=5 is conditional on the Lazard law.
+- circuit: theorems/rees_circuit.py, a Qiskit gate-level circuit for
+  Heis(F_3), exact for all 19 subgroups. 82 qubits (45 with reuse), 5528
+  CNOTs excluding the oracle. One instance only.
+- e2e-scale: theorems/rees_end_to_end_ext.py uses the real solvers at Rule
+  W arity. It runs class four on n5(F_11) (7.1e6 queries/run, 9 subgroups)
+  and Schedule 2 on Heis(F_1031). Every run recovers log H. Rule W on
+  class-4 F_7 is out of reach (1.25e12).
+- dfs2: kappa=8 jobs on [4058,17500] hit LIMIT at 4153, 4201, 6073, 6089 and
+  8009. kappa=9 above 5689 is not scanned. Incomplete; no report file.
+
+Gates that must stay false: every Rees gate, in particular
+independent_review, novelty_established, speedup_claim_allowed,
+coherent_receiver_implemented, general_sde_implemented and
+formal_compiler_checked (Lean is still conditional for c>=5 and has no
+solver or arity bounds).
+
+Next hard question: close the Schedule 2 square gap, or find an o(a^2) SDE
+solver. Human review stays the binding gate. Next command: the dfs2 LIMIT
+reruns with a stronger prune (REES_FULL_CONTINUATION.md, last section).
+Acceptance: every LIMIT resolved. Mechanical queue top entry "2026-11-02
+Preserve The Rees Round 2 Artifacts".
+
+## 2026-11-02 Rees Full Campaign: Twelve Parallel Items (AI Only)
+
+Run from REES_FULL_CAMPAIGN.md (item table, files per item, shared rules).
+Reports are all audits/reviews/2026-11-02-rees-<item>.md, with scripts in
+same-named folders. main.tex is unchanged; all fixes went to the candidate
+copy docs/papers/rees-hsp/main-full-draft.tex (27 pp., compiles, refs and
+cites resolve), and the change log is -manuscript-draft.md (60 rows,
+conflicts C1-C17 awaiting the owner). No gate flipped, nothing committed.
+
+Verdicts (all AI-checked; no counterexample anywhere):
+- a1-priority: A1 still "possibly new" after full-text reads of citing
+  papers. Gap: 4 of 14 Imran-Ivanyos citers not found.
+- weil-threshold: two-level contraction proved for p >= T_A(kappa), about
+  (kappa-1)kappa^kappa, closing E_2(6) exactly. Still about the square of
+  the observed ~1.5kappa^{(kappa+1)/2}.
+- codimension: the 2^{O(k log(k+2))}*poly bound is RESTORED through the
+  abelian-ideal reduction, with the same conditional status as Cor fpt-r.
+- subspace-source: thm:subspace-source is correct, but the section never
+  states that H is recovered or the per-source copy cost M*k; completed
+  statement given.
+- prime-power-compiler: the class<=4 limit for exponent p^e was an
+  evaluator artifact. The existing Z[1/c!] words evaluated mod p^e work for
+  every c<p. The fix is now in theorems/universal_lazard_words.py (optional
+  `modulus`, default p), with tests/test_universal_lazard_words_prime_power.py;
+  85 tests across the module and free_lazard_pullback pass.
+- compilation-filters: thm:uniform-compilation and prop:conjugation hold;
+  the conjugation failure range N<=p<=2N-2 is sharp. Prop conjugation is a
+  special case of Luks 1992 Thm 3.2(5). rem:filters misstates two hypotheses.
+- lean: a clean rebuild matches tab:lean-modules exactly (16 modules, 180
+  guards; Audit.lean has 218 in total), with no sorry. Four new files in
+  -lean/ add 83 guarded declarations: general-class cover facts
+  unconditionally, and the group law and descent conditional on an explicit
+  Lazard input. They are outside formal/.
+- is-solver: theorems/rees_is_sde_solver.py is a deterministic Schedule 1
+  solver for every d and odd p, at <= B_kappa(a) columns, with 152 tests. One
+  labelled substitute: van de Woestijne's selective root extraction.
+- end-to-end: theorems/rees_end_to_end_sim.py recovers log H exactly in
+  230/230 runs on Heis(F3), Heis(F5), n4(F5), n4(F7), non-normal H
+  included; exact uniform label laws; 41 tests. With is-solver, 193 tests
+  pass on rerun.
+- application: negative. Classical-input families fall to linear-rep
+  (Luks), low-degree polynomial, conjugation or non-HSP channels. The
+  shift-and-phase quantum family is Ivanyos-Santha Section 5; a twisted-code
+  candidate was killed and reviewed twice.
+- dfs2-runs: kappa=7 complete on [1597,20000]; all LIMITs resolved; the
+  largest exceptional prime is 3221. kappa=8 stopped at the 1 h timeout
+  after [2442,4057] (largest infeasible 4057), and kappa=9 after
+  [3584,5689] (largest 5689). Ranges above those are NOT scanned.
+
+Gates that must stay false: every Rees gate named in the 11-01 and 11-02
+entries, including general_sde_implemented and
+coherent_receiver_implemented (a solver and an exact simulator exist, not a
+quantum receiver), formal_compiler_checked (new Lean files are outside
+formal/ and conditional), novelty_established and speedup_claim_allowed (no
+application).
+
+Next hard question: the owner's decisions on conflicts C1-C17 and on
+accepting main-full-draft.tex; mathematically, a two-level threshold near
+the observed one. Human expert review stays the binding gate; nothing goes
+to outreach without the owner. Mechanical queue top entry "2026-11-02
+Preserve The Rees Campaign Artifacts".
+
+## 2026-11-02 Rees Extensions, Combined Schedule And Small-Prime Arity (AI Only)
+
+Four Claude Code side sessions, run from REES_EXTENSIONS_CHECK_BRIEF.md and
+two follow-up prompts. Reports, all in audits/reviews/ with scripts under
+2026-11-02-rees-extensions/ and 2026-11-02-rees-schedules/:
+2026-11-02-rees-fpt-torsion-check.md, -black-box-check.md,
+-combined-schedule.md, -small-prime-arity.md. No paper, gate, registry or
+outreach edits. Core steps 1-5 (11-01 entry) are taken as proved.
+
+Cor fpt-r: holds for every p>c with the class NOT fixed, constants
+independent of c: Schedule 3 with u=r+1 for p>=16(r+1)^2 (relies on the
+i.i.d. label law), IMS Thm 11 below that. Gap: IMS gives constant error;
+reaching eps needs an unstated, elementary amplification. Ring-to-field
+(torsion rank R): holds conditional on fpt-r, at most b calls, given two
+unstated stop rules (no call on a trivial section; reject a returned
+subspace that is not a strictly larger subalgebra). The paper's recursion
+differs from the source note's (<=b vs b(b+1)/2 calls).
+Black-box pullback: holds for exponent p given Thm main; for p^e it is
+conditional on ring-to-field (iii). No counterexample (exact metacyclic and
+GAP SmallGroups checks). Five closable text gaps: ker Phi is an abelian HSP
+never stated; the b(b+1)/exponent-147 envelope bounds the acquired-chart
+route, not this one; |G| is not needed; Imran-Ivanyos Thm 1 can cover the
+primes p<=c; part (iii)'s "local object" is not needed.
+
+Combined rule W (Schedule 1/2 chosen per grade from public p, d, g_d)
+holds for every p>c and every H with no label law. Class-9 queries fall
+from 2^1572.7 to between 2^1562.3 and 2^61.5 depending on p. Most of the
+small-p saving is Schedule 1 at the reduced degree kappa_d, already valid
+but not what main.tex budgets. The worst-case m-exponent moves only
+145->143 (c=9), 109->107 (c=8), unchanged for c<=7. Adding Schedule 3
+lowers queries to about 2^46-2^53 at up to 2^128 classical trials per node.
+
+Small-prime arity: existence is never the obstacle (Chevalley-Warning gives
+kappa*a+1 at every prime, exact at kappa=p-1). Proved lower bound
+a(M*(p,kappa,1)-1)+1 >= 2a+1. Schedule 2's arity holds for p>T_W(kappa),
+26-156x below 16kappa^{2kappa+2} for kappa<=9 (decoupled contraction).
+Exact exceptional two-level primes known for kappa<=5; kappa>=6 only partly.
+New all-prime L-level fallback with arity O_kappa(a^L), L about kappa ln kappa,
+whose precomputation is astronomical. No efficient linear-arity solver and
+no hardness are known.
+
+Baselines: Schedule 1 (Ivanyos-Santha) for the SDE; IMS small-commutator
+and Imran-Ivanyos bounded-prime algorithms for the extensions. Gates that
+must stay false: all six of rees_hsp_reduction.json named on 11-01, the
+random_column_rees.json and ring_to_field_rank_reduction.json promotion,
+certification, implementation and novelty flags listed in the fpt-torsion
+report Section 5, and the small-prime report's own list (Schedule 2
+optimal, small arity impossible, zero-sum search hard, novelty of its
+Theorems 2 and 4).
+
+Next hard question: a two-level threshold near the observed
+~1.5kappa^{(kappa+1)/2}, using the freedom in beta, which per-alpha Weil
+does not use. Next command (mechanical):
+`cc -O2 -o dfs2 dfs2.c && ./dfs2 7 1597 20000 5000000` in
+2026-11-02-rees-schedules/small-prime/, then the same for kappa 8 and 9.
+Expected artifact: INFEASIBLE/LIMIT lines. Acceptance: every LIMIT
+resolved, with the largest INFEASIBLE prime per kappa reported. Human
+review stays the binding gate. Mechanical queue top entry "2026-11-02
+Preserve The Rees Extension And Schedule Reports".
+
+## 2026-11-02 Rees Core Proof And Priority Checks (AI Only)
+
+Claude Code ran both Rees briefs as side sessions (Opus high, steps 1-2 and
+3-5; Sonnet medium, priority). Reports:
+audits/reviews/2026-11-01-rees-core-proof-check.md (Sections 1-9) and
+audits/reviews/2026-11-01-rees-priority-check.md. Paper, claim gates,
+registries and outreach untouched.
+
+Checked claim: main.tex Theorem main. Fixed c, every prime p>c, finite
+p-group G of class c given by an explicit Lazard Lie algebra L=F_p^m, EVERY
+subgroup H (normal or not, no transversality, K_d and a_d unknown), coherent
+oracle or c fresh copies of rho_H per lifted source, Schedule 1
+(Ivanyos-Santha Section 3 solver at arity B_d). Output: a basis of h=log H
+with probability >=1-eps in poly(m, log p, label width, log 1/eps).
+Verdict: steps 1-5 hold as written proofs; no gap or counterexample.
+Exact mod-p checks on ten algebras, 2<=c<=6 including c=p-1, plus exact
+SDE/envelope evaluation. Schedules 2 and 3 hold only conditionally (prime
+bounds; Schedule 3 also the i.i.d. label law); the main theorem uses
+neither. Not covered: black-box extension, Cor fpt-r, torsion-rank row.
+Constants are astronomical (about 2^1573 queries at the class-9 profile).
+
+Priority: conjunction "possibly new in the stated regime", search thin (10
+queries, no citing-paper lists). Ruling 5a: IS Cor 8 is a strict special
+case for p>class, so growing p at fixed class (A4) is not new; the
+grade-by-grade descent (A2) is IS Section 5's degree-by-degree elimination
+transplanted through the Rees cover. Only A1 (the graded cover for arbitrary
+H in arbitrary Lazard groups) may be new. Ruling 5b: Imran-Ivanyos is
+unconditional only for constant-bounded primes; Olson's bound keeps that
+route from p superpolynomial in m. Both 2026 arXiv citations resolved.
+
+Strongest baseline: Imran-Ivanyos (bounded primes, any fixed class) and IS
+Cor 8 (growing p, F_p semidirect F_p^m, order-p H). Gates that must stay
+false in reductions/rees_hsp_reduction.json: independent_review (AI checks
+do not count), novelty_established, speedup_claim_allowed,
+coherent_receiver_implemented, general_sde_implemented,
+formal_compiler_checked.
+
+Next hard question: is A1 already known? Next command:
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "graded t-adic Rees cover of a Lazard group with evaluation-tuple oracle for arbitrary hidden subgroup"`,
+then full-text reads of papers citing arXiv:1503.09016 and arXiv:2304.08376.
+Expected artifact: an A1 priority note in audits/reviews/. Acceptance: every
+candidate verdict rests on a primary full text with theorem numbers.
+Human expert review remains the binding gate; no outreach without the owner.
+Mechanical queue top entry "2026-11-02 Preserve The Rees Check Reports".
+
+## 2026-10-31 Scalar OPI Checkpoint And Portfolio Rejection
+
+End-pass checkpoint: SCALAR_OPI_NATIVE_PRIORITY.md's final section records
+the independent comparison. No new mechanism was admitted. Full-TABLE
+random scalar OPI over F_(2^t),m=q-1,degree<k remains the highest-value
+question; known DQI supplies the comparator. Two reviewed restrictions and
+the stopped six-case repair are in SCALAR_OPI_SOFT_DECODING.md. Sage checked
+all18 native witnesses plus the Hasse/Cauchy controls. Exact binary-bit
+shift controls and the reviewed paid theorem are in
+RECIPROCAL_TRACE_SHIFT_SCOPE.md; Simon already supplies that quantum endpoint.
+
+The Goppa local-only lexicographic pivot suggestion was rejected using the
+EXISTING rank(E)+dim(ker(E)/L) exact sequence and public jet rank certificate;
+it does not construct global pivots or locator readout. AG four-base and
+one-endomorphism transport supplied no newly paid operation. Jo's complete
+list-erasure mechanism is also prior work. Keep all four parked. No generic
+classical hardness, asymptotic conclusion from finite scores, novelty,
+speedup, new quantum implementation, registry promotion or outreach.
+
+Next hard question: specify an actual full-table classical operation beyond
+the rejected schedules and published systematic line search, with source-
+correct resource/success analysis; otherwise choose an independently
+motivated native algorithm with a new paid mechanism. Next command after a
+specific operation is chosen:
+`/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "<operation and exact source>"`.
+Then its baselines lookup and primary literature. Expected artifact is an
+algorithm/falsifier contract, not another runner. Acceptance requires the
+original input, native output verification, charged access and a concrete
+reason it can beat or decisively test the existing comparator. There is no
+justified next sweep. STATE.md rewritten; mechanical queue top entry.
+
+## 2026-10-31 Reciprocal-Trace Shift Is An Existing Quantum Endpoint
+
+RECIPROCAL_TRACE_SHIFT_SCOPE.md separates the bit oracle
+Tr_F2(inv0(x+s)) over F_(2^n) from trace_function_search.py's FULL rational
+prime-field values. Its constant-degree classical negative does not transfer;
+no source-matched polynomial classical decoder was established. For n>=3,
+the paid exact-point-count Fourier-sign construction succeeds with probability
+>=q/(1+2sqrt(q))^2. Exact autocorrelation C(a)=W(a^-1)-2+2psi(a^-1) pays
+candidate verification and shift identifiability. F4 is a genuine exception.
+
+Independent review confirms the decisive prior-method comparator: O(n)
+random public translates injectivize the Boolean function, and Simon solves
+the same input with O(n^2) Boolean queries and polynomial public arithmetic,
+without point counting. Primary Gharibi1207.4537 Theorem5/Simon reduction
+checked. Public-f exhaustive filtering also uses only O(n) classical queries;
+random-two-oracle lower bounds do not apply. Park the line: no new solvability
+endpoint or independently established native application. No novelty,
+classical hardness, separation, receiver implementation or full-table claim.
+
+Next hard question is independent direction selection after the stopped
+scalar-OPI repair; compare actual paid mechanisms and external value before
+continuing. A scalar-OPI list-erasure suggestion already meets published
+Sun--Wootters/Johnson-radius prior work, so no new decoder scaffold. Next
+command: primary-paper/corpus comparison of a specified operation. Expected
+artifact: a candidate with source, baseline and falsifier, or an explicit
+reason to park. Mechanical queue: top; no point-count backend or sweeps.
+
+Exact Sage controls saved in classical_baselines/reciprocal_trace_shift_scope.json:
+25 autocorrelations, F4 period ambiguity, correct zero-extended degree-q/2
+bit equations, and separate F17 full-value quadratic recovery. Jo2607.16541
+Sections4-7 (not just abstract) confirms the list-erasure prior-method filter.
+
+## 2026-10-31 Scalar OPI Soft-Decoder Experiment Stopped
+
+SCALAR_OPI_SOFT_DECODING.md now records independently reviewed proofs and
+the completed native experiment. Equal-within-list INTEGER Hasse weights
+cannot meet the strict KV root certificate for k>=3; this does not reject
+unequal symbol weights or accidental factors. The specified future-uniform
+FFT-SC schedule ignores all but k-1 real tables at dyadic k; independent
+restarts do not close a fixed DQI gap. No adaptive-feedback lower bound.
+
+The concrete freeze-aware max-sum repair ran on the original IID half-table
+source at (q,k)=(16,4),(64,16),(256,64), two fixed seeds each, against actual
+Prange32 and a rational ideal DQI mean bound. At q256 its scores155,165 are
+below Prange171,172 and DQI>=203.636. Stop the repair, not a theorem of
+asymptotic failure. Independent Sage checked all18 native witnesses and the
+Hasse/unequal-weight/Cauchy controls; independent review accepted scope/code.
+Artifacts: classical_baselines/scalar_opi_fft_probe.{py,json} and
+scalar_opi_soft_decoder_controls.json. No quantum execution, matched-time
+comparison, general classical hardness, novelty or speedup.
+
+Next hard question: can a previously paid inverse-trace Fourier source
+remove a real hidden-shift blocker, or does its exact BIT-input model already
+admit a classical decoder? Audit the existing prime-field/full-phase
+negative before transferring it to F2 trace. Corpus lookup precedes current
+literature. Next command: source-scope reads of trace_function_search.py and
+RECIPROCAL_TRACE_SOURCE_ACCESS.md, then primary hidden-shift papers. Expected
+artifact: exact access-model comparison and either a paid candidate or a
+decisive rejection; no invented native application. Mechanical queue: top.
+
+## 2026-10-31 Scalar OPI Soft-Decoder Gates
+
+SCALAR_OPI_SOFT_DECODING.md gives two scoped deductions on the ORIGINAL
+explicit F_(2^t),m=q-1,degree<k, IID half-table source. For GS/KV interpolation
+with equal weight s_i on all accepted symbols at coordinate i, every
+interpolant has weighted degree >=sum s_i once (q/2)(k-1)>=m. No word can
+meet the strict root certificate; arbitrary adaptive ROW weights and
+dependent interpolation equations do not repair it. Unequal symbol weights
+and accidental factors remain open. Independent final review pending.
+
+The specific additive-FFT SC schedule averaging all future coefficients
+before freezing them also collapses: at offset0 its low message is L(c)
+times a constant. For k=2^s, only V_s's k-1 real tables influence output;
+remaining hits are IID Bernoulli(1/2). Mean<=(m+k-1)/2. Independent review
+accepted. Precommitted polynomial restarts do not close a constant DQI gap;
+adaptive outside-table feedback is not bounded. Point0 has NEUTRAL weight.
+Do not replace numerical-degree freezes by polar information positions.
+
+Next hard/experimental question: does using L(c)R(c) when the paired high
+coefficient is KNOWN zero improve actual native words? This freeze-aware
+scalar-message repair is heuristic, not the exact constrained posterior
+(a Sage F4 control shows lost correlations). Next command: one bounded
+FLINT-native experiment against actual Prange and rational DQI mean bounds.
+Expected artifact: verified degree<k witnesses, scored identical tables,
+charged message work, and negative controls for ordinary SC. No generic
+classical hardness, speedup, exact posterior or scalable quantum circuit.
+Mechanical queue: top entry; no pipeline or broad test expansion.
+
+## 2026-10-31 Native Scope Filter And Scalar OPI Priority
+
+Completed the reviewed permutable mixed-copy StateHSP pass; see
+PERMUTABLE_STATE_HSP.md. Its complete all-prime solvable-group written
+learner is retained with paid freshIID copies, controlledlinearR and gap.
+37 existing regressions plus six group controls and three density-control
+groups passed. No novelty, separation or receiver implementation claim.
+Section6 independently rejects the proposed T-conjugated application:
+D8^n is involution-generated, so permutableH is normal; order-twoH is
+central and already abelian-learnable. The physical paper uses a REDUCIBLE
+doubled representation; do not misapply the separate irreducible-kernel
+guard. M27 remains a nonnormal real-gap example, not a modulus-gap irrep.
+
+Independent portfolio checks found no new paid operation for Goppa,
+one-endomorphism EndRing or lattice sampling. New priority is the externally
+open FULL-EXPLICIT random scalar OPI problem, using published DQI as the
+quantum comparator. Exact family for the proposed classical falsifier:
+q=2^t,m=q-1,degree<k,independent uniform half-set TABLES. No transfer to
+prime fields, compact cubic targets or folded-oracle lower bounds.
+
+SCALAR_OPI_NATIVE_PRIORITY.md derives/reviews the cheapest rejection:
+Pr(any d-flat)<=m*2^(t-d)*GaussianBinomial(t,d,2)*2^(-2^d).
+Only O(log t)-dimensional flats exist whp. The FULL-ROW-RANK forced-prefix
+plus independent-suffix certificate needs d/t>=1-sqrt(R/(2-R))+o(1) to
+match DQI, so it cannot establish that score. Actual dependent/adaptive
+attacks remain open; do not condition the suffix law on the global event.
+Eight exact integer-count rows retained in scalar_random_opi_flat_count.json;
+at t10,k306 the required d6 occurs anywhere with probability<=2^-24.
+No adapter/sweep was built, and no classical hardness follows.
+
+Next hard question: what concrete full-table operation, beyond this
+certificate and published systematic line search/annealing, can recover a
+DQI-quality scalar-OPI word? Next command: corpus been-tried/baselines for
+that SPECIFIED operation, then primary-source check. Expected artifact:
+charged original-source algorithm or decisive falsifier; acceptance requires
+an actual new operation, not another conditional interface. No implementation
+is authorized by scientific inertia. Mechanical queue: top entry.
+
+## 2026-10-31 Permutable Mixed-Copy StateHSP Composition Reviewed
+
+PERMUTABLE_STATE_HSP.md now has an independently reviewed written
+bounded-error polynomial-time learner for permutable one-sided Bose H in
+every uniquely encoded finite SOLVABLE G, given fresh IID unknown mixedrho
+copies, a paid consistently phased controlled linear representation, and
+a usable overlap gap gamma. Cost poly(input,1/gamma,log1/eta); no class or
+prime restriction, purification, inverse unknown source or group QFT.
+Paid permutation-input and nu(G)-dependent extensions retain their exact
+scope. Proof: approximate coset sources, Sylow/second-center reduction,
+forward-only odd-prime ISS and binary central-erasure terminals. Final
+review accepted after explicit K=H0 and H0=Q termination guards.
+
+All three density-control groups passed; existing copy-only outer and
+quotient-torsion regressions passed 37/37. Retain full torsion preimages,
+arithmetic-only kernel quotients, original-ambient normalizers and complete
+channel error bounds. Strong counterexamples: correlated banks, phase
+aliasing, conjugation symmetry and arbitrary-generator top powers. Explicit
+strings/graphs/codes remain classically matched by Sylow/Luks. False gates:
+novelty, new classical separation, implemented receiver, physical application,
+generic HSP or arbitrary opaque-group polynomial cost.
+
+Next hard question: does a motivated physical learning family satisfy this
+permutability promise beyond already-solved StateHSP cases? First bounded
+scope check: primary 2510.07872v3, exact hidden subgroup and prior learner,
+against the order-p-generation normality filter. Next command: corpus
+been-tried/baselines followed by primary theorem read (already in progress).
+Expected artifact: a native contract with a distinct payoff or a precise
+scope rejection, not another backend. Mechanical queue: top entry.
+
+## 2026-10-31 StateHSP Two-Group Copy Access Paid
+
+PERMUTABLE_STATE_HSP.md Section4 closes the p=2 interface at written
+operation-level: Imran-Ivanyos2304.08376 Lemma2 acts on accessible group
+registers/publicancillas, never on purifyingworkspace. For semi-elementary
+class-twoQ, Q' is elementaryabelian; r+1 binarylabels give nonemptyzero-sum
+support and ONE erasurelayer. Fresh mixedcopies suffice. Standardbounded-error
+abelian sampling needs no sourceinverse. This is a derived CPTP corollary,
+not the exactTheorem1 (whichneedsinverse) or verbatimProp3input wording.
+
+Parent and independentprimary audit agree. Retain COMPLETE public A[2]
+preimages plus fullkernel K'H0; arbitrarygenerator toppowers fail already
+inC4xC2. That quotient is arithmetic-only, notfreehiddensourceaccess.
+Finalreview caughtandfixed the K=H0 stopguard so trivialhiddenH cannotloop;
+H0=Q also exits. Atmostpoly calls, onecentralerasureeach; complete-channel
+errorbudget, no rarebranch renormalization. OddprimeISS branch separatelypaid.
+
+Togetherwith the sourcelemma and second-center/Sylow reduction, the proposed
+native theorem covers permutableBoseH in allsolvable uniqueencodedG fromfresh
+IID unknownmixedrho copies, controlledlinearR, usablegapgamma. poly(input,
+1/gamma,log1/eta), no groupQFT/preparationinverse. Wholewrittenreviewfinishing.
+Sage densitycontrols PASSED: rank3 M27 nonnormalH, distinctsections, phase
+aliasing, conjugation-vs-Bose andcorrelatedbankcounterexamples. Prior-art
+amplification is explicitly BGT2410.12706Fact3.3, notnew. No novelty/new
+separation/implementedreceiver/physicalapplication or arbitrarygenericHSP.
+
+Nextcommand: finalindependentreview of PERMUTABLE_STATE_HSP.md afterstopguard,
+then scopedmilestonechecks andSTATErewrite. Expectedartifact: acceptedscoped
+composition or concretegap. Nextscientificselection mustcompare external
+payoff; noautomatic extension to conjugationsymmetry or approximateH.
+Mechanicalqueue: topentry.
+
+## 2026-10-31 Mixed-State Copies Supply Approximate Coset Sources
+
+PERMUTABLE_STATE_HSP.md proves/reviews a native source lemma: freshIID
+mixedrho copies, paid controlled linearR, one-sided+1 stabilizerH and
+known modulusgapgamma yield approximate mixedcosetstates on anypublic
+subgroup or known S/B section withB<=H. Kernel Tr(R(sigma(r)^-1sigma(q))rho)^t/N;
+trace distance<=sqrtN exp(-gamma*t)/2. t=O((logN+log1/delta)/gamma).
+No purification, inverseunknownsource, f-labels or indexpostselection.
+Referenceflags also handle a specifiedrealgap and rejectphasealiasing.
+Hadamard tests pay classicalcandidate membership, notcompleteness.
+
+Independent source review accepted; primary ISS operations pay odd-prime
+class-two terminals frommixedcopies. Retain actualcentral outcome law
+|H intersectG'|/|G'| on itsannihilator, notuniform-all-u shorthand. The p=2
+branch is NOTyet admitted: ISS invokesFIMSS; check Imran-Ivanyos2304.08376
+Proposition3/Lemma2 for forward-only boundederror, notits exact theorem
+which explicitly requires inverse source. Publicgroup preprocessing is
+already paid and uses nohiddenrho access. Noallprime StateHSP theorem yet.
+
+Selection: explicitgraph/code natives areclassicallycovered. FullUT_D(F2)
+determinantal-stabilizer suggestion has permutableH NORMAL (transvections
+haveorder2), so IMSalreadycoversitsordinaryHSP. Do not mutatewithout a
+motivatednonnormalfamily. Goppa andquaternion alternatives retain unpaid
+quotient/contraction blockers. This nativequantumsource has a specific
+terminal accessquestion, not an inventedclassicaloracle benchmark.
+
+Nextcommand: read primary Imran-Ivanyos Proposition3/Lemma2 andconversion
+at c=2,p=2, trace allworkspaceoperations. Expectedartifact: scopedpaid
+terminal or explicitgap; then fullcompositionreview and focusedmatrix
+falsifier. No newbackend/registry/outreach. Mechanicalqueue: topentry.
+
+## 2026-10-31 Explicit Permutable Symmetries Have A Classical Sylow Baseline
+
+New deduction in CLASS_THREE_APPLICATION_AUDIT.md, same-day subsection:
+for ANY supplied permutationG<=S_n (notnecessarilysolvable), promised
+permutableH=Stab_G(X) is classically recoverable inpolytime for explicit
+sets/strings, graphs/fixed-arity relations, and linear codes under coordinate
+permutations. Kantor1985MainTheorem pays classicalSylows; Luks pays each
+solvableP_p stabilizer. The newSylow order lemma makes each output a full
+Sylow ofH, and theirunion generatesH withoutcommutation. Codes retain
+mu<=n and fieldarithmetic costs; relationarity muststayfixed.
+
+Parentcheckedprimarytheorems and independentreviewaccepted the reduction.
+GAP's actual setstabilizer recovered the nonnormal permutableorder3 subgroup
+ofM27 in its explicit27-pointregularaction. This finitecontrol is not a
+runtimeproof. FullordinaryoracleHSP theorem survives; native quantum
+advantage for this explicitclass doesnot. Do not transfer the baseline to
+succinct nonlinearfunctions, unknownquantumstates, arbitrarytransporters
+or an unknownambientgroup. Allnovelty/separation/application gates stayfalse.
+
+Nextselection compares genuinelysuccinct/quantum nativeinput against AG and
+otherindependentdirections. Nextcommand: corpus been-tried for the selected
+nativeaccessmodel, then primaryliterature. Expectedartifact: one complete
+paid mechanism and strongestclassicalbaseline, or a scopedfalsifier; no new
+sourcebackend or orbit-tableimplementation. Mechanicalqueue: topentry.
+
+## 2026-10-31 Permutable HSP Sylow Reduction Beyond Nilpotence
+
+PERMUTABLE_SYLOW_HSP.md gives a reviewed group reduction for ANY finiteG
+with permutableH: for ANY publicSylowP, HP is a subgroup and its order
+forces H intersectP to be a fullSylow ofH. Run the prior p-group solver
+on oneP perprime; the learned subgroups generateH even when they do not
+commute. At most(log2|G|)^2 nil-2 calls. No general-solvable normalizers,
+Fitting routine, hiddencore, QFTG or hidden advice is introduced.
+
+Two independent reviewers accepted the core. Parent checked exact IMS
+Theorem6/Corollary5/Theorem4(v): publicSylows and order cost poly(input+
+nu(G)); nu=1 forsolvableG and polynomial forpermutation inputs. Therefore
+ordinary unique-encoding permutableHSP has a written quantum-poly upper
+bound for ALL SOLVABLE ambientG (unboundedclass/primes), and permutation
+inputs with chargeddegree. ArbitraryopaqueG retains nu(G) or separately
+paidSylow access. No generic solvableHSP or unconditional allfinite claim.
+
+Classical public group machinery is charged and does not supply hidden
+intersections. Abelian collision baseline is inherited, not a new native
+separation. S3 differentreflections falsify droppingpermutability. Proposed
+positivecontrol M27xS3, HMxS3 requires generation ofnoncommuting Sylowpieces.
+Novelty/application/implementation/separation gates remainfalse; bounded
+primary searches foundno exactcomposition, not proof ofpriority.
+
+Sage classical_baselines/permutable_nilpotent_controls.sage PASSED allsix
+controls, including S3 rejection and nonnormal/nonnilpotent recombination.
+Nextcommand: corpus been-tried for a selected concrete native application,
+then primary literature and exact classical baseline. Expectedartifact: a
+paid native-input reduction or a decisive scoped falsifier plus comparison
+with independent high-upside directions. Accept no oracle benchmark posing
+as an application. Mechanicalqueue: topentry; fullcontracts in the note.
+
+## 2026-10-31 Permutable Nilpotent HSP By Second-Center Probes
+
+New written deduction in PERMUTABLE_NILPOTENT_HSP.md: ordinary HSP with
+PERMUTABLE H in any uniquely encoded finite NILPOTENT group has a reviewed written
+paid quantum-poly recovery, with unrestricted class/primes. Two independent
+reviews accept the group argument; final composition review accepted the
+scope/clock. All four focused exact falsifiers passed. No novelty, implementation, native application or new separation.
+The installed GAP Omega routines enumerate in the general case; this is not
+hardness. The new route bypasses Omega1 rather than implementing that gap.
+
+For a p-group, the deepest nontrivial hidden intersection in a refinedPC
+series has orderp. Prime-order permutability puts it in the Baer norm and
+hence Z2 of that series subgroup. Scan these public class<=2 probes using
+published nil-2 HSP. Maintain ONLY originalB<=H; every round recompute
+S=N_ORIGINAL_G(B), localhidden=N_H(B)/B, and lift any nontrivial intersection.
+All probes trivial impliesB=H by the p-group normalizer condition. At most
+b^2 nil-2 calls; split generalnilpotentG into paidSylows. The prior IMS/ISS
+quantum-collection and directquotient bridge pays all public operations.
+
+Scope traps: D8 withH=G permits firstB a reflection, so H<=N_G(B) is FALSE;
+permanent ambient restriction losesH. S3,A3 refutes the prime-order lemma
+outside p-groups. Classical abelian collision baseline remains; no new
+nonabelian lowerbound. Keep generic nilpotent/solvable/permutable-finite HSP,
+copy-only and speedup gates false. Sources: Cossey-StonehewerLemma2.2;
+all-prime norm inclusion; IMS0102014; ISS0707.1260Theorem1/Section3.
+
+Executed Sage on classical_baselines/permutable_nilpotent_controls.sage:
+all four D8/D16/S3/Sylow controls PASSED, without an oracle implementation.
+Final review added explicit CRT projection powers and flattened D_i/B probes.
+Next command: corpus been-tried for 'permutable hidden subgroup solvable
+Fitting normal core reduction', then primary literature. Expected artifact:
+a paid native-input extension or a scoped obstacle and priority decision;
+accept only an end-to-end polynomial mechanism, not unpaid core/QFT advice.
+Mechanical queue: top entry.
+
+## 2026-10-31 Permutable Black-Box Lazard HSP Composition
+
+PERMUTABLE_LAZARD_HSP.md Sections6-7 gives a reviewed written quantum-poly
+upper bound for ordinary HSP with PERMUTABLE H in uniquely encoded finite
+p-groups, knownp and actualclassc<p, with c allowed to grow. No suppliedLie
+chart, Rees/SDE or uncharged hidden advice. Imported normal-HSP/presentation
+interfaces are IMS0102014; ISS0707.1260 §3 supplies polynomial normalizers
+with refinedPCpresentation and efficientcollection. Nice-factor quantum
+collection plus retained-input cleanup pays that premise, including growing
+class. Primary interfaces and independent composition review found no gap.
+
+Maintain ORIGINAL B<=H<=S, B normalS. In Q=S/B, public q->q^p hides
+T=Omega1(Q); normalHSP learnsT. Originalf through a paid section then hides
+K=(H/B) intersectT, normal inT by permutability+exponentp. LearnK; ifzero
+returnB. Otherwise liftJ, set(S,B)=(N_S(J),J). Each nonterminal round growsB
+byfactorp. DirectIMS on originalS/B prevents recursive wrapper blowup;
+amplify/cap classical calls and compile canonical maps with2sqrt(delta)
+operator error. All public/source-inverse costs in IMS are charged; ordinary
+reversible f-evaluation gates are counted, with no label-to-preimage inverse
+or inverse unknown copy source granted.
+
+The explicit-coordinate corollary is simpler: samef is additiveHSP onL[p],
+with at mostb(b+t) originalqueries. That sharper query bound is NOT assigned
+to the black-box version. Nonnormal modularp^3 H and growing-class products
+show nonvacuity, not an application. Published normal/abelian/nil-2 baselines
+and the restricted Morales2608.05321 scopes were checked. Novelty UNKNOWN.
+No copy-only/generalclass/generalpermutableHSP/implementedreceiver/new
+separation claim. Sage/GAP falsifiers passed, including all729 UT3(Z/9)
+power fibers and a nonhomomorphism control; D8 rejects the naive extension.
+
+Next single hard question: is there a paid polynomial Omega1 construction
+in irregular p-groups that preserves this normal-HSP recursion? Corpus then
+primary computational-group sources first. Next command:
+/opt/anaconda3/bin/python tools/corpus/cli.py been-tried 'Omega1 irregular p-group constructive algorithm permutable hidden subgroup'
+Expected artifact: a source-scoped access theorem or explicit failed premise;
+accept only polynomial in encoding bits/logp, not group order or p, and no
+hidden subgroup input. No source backend or sweep. Mechanical queue: top entry.
+
+## 2026-10-31 Permutable HSP Power-Map Access Check
+
+The explicit-coordinate result in PERMUTABLE_LAZARD_HSP.md passed final
+independent review and its exact Sage/GAP falsifiers. Samef onL[p] is additive
+HSP, no normal-HSP backend/BCH execution; at mostb(b+t) queries. Guards:
+b=0 immediate return, 0<epsilon<1, reject candidate not an ideal before
+quotienting. No novelty/implementation/separation claim.
+
+Further hard deduction for removing coordinate advice: on ANY finite
+p-group withclassc<p, public g->g^p hides characteristicOmega1(G). Abstract
+Lazard proof: px=py iff x-y inL[p] iff equal quotient cosets. The underlying
+power-fiber fact is already in Hall as cited by ISS0707.1260 Lemma3.
+Operational cost O(logp) multiplications, hence IMS normal HSP learnsOmega1
+without a Lie chart; originalf then recoversH intersectOmega1 by normalHSP.
+
+The proposed black-box recursion still requires the exact paid growing-class
+normalizer/quotient composition. Primary ISS§3 states polynomial normalizers
+given refinedPCpresentation plus efficientcollection. IMS nice-factor maps
+offer quantumcollection; the old retained bridge has a cleanup bound and
+direct-originalS/B representation to avoid recursive wrapper costs. Independent
+composition review is running. Until accepted, keep the explicit theorem and
+power-access lemma separate from a full black-box algorithm. No copy-only,
+all-prime/all-class/generalpermutableHSP or native-application claim.
+
+Next check: exact source interfaces plus full-run clock on originalB≤H≤S,
+and a UT3(Z/9) power-fiber countercontrol. Expected artifact is a scoped
+black-box acceptance or exact unresolved obligation, not a new backend.
+Mechanical queue: top entry. STATE rewrite follows final disposition.
+
+## 2026-10-31 Permutable Lazard HSP Through Abelian Sampling
+
+Hard derivation: PERMUTABLE_LAZARD_HSP.md gives a proposed polynomial HSP for
+explicit finite p-Lie rings of ANY growing class c<p when the unknown H is
+permutable. No Rees/SDE dependence. S=exp L[p] is a paid characteristic
+exponent-p subgroup; H1=H intersect S is normal in S because each cyclic
+order-p extension has index at most p. Stronger reviewed simplification:
+log H1 is an ideal of L[p], so BCH-coset equality there is EXACTLY additive
+coset equality. The SAME ordinary oracle and additive QFT recover H1.
+Zero implies H=1; otherwise H normalizes H1. Linear-congruence idealizer
+and SNF quotient give a smaller explicit Lazard instance with the same
+permutability promise. At most b=log_p|G| stages and b*(b+t) original queries,
+t=ceil(log_p(2b/epsilon)). Sections compose into one original query each.
+No BCH evaluation is executed: f is addressed by the supplied Lie coordinates.
+Charge expanded coordinate widths, SNF maps, additive QFTs and complete-run
+precision. Normal-HSP backend and Rees/SDE are all unnecessary here.
+
+This is an independent response to the permutable-H question in Morales
+2608.05321v2. Corpus and primary sources were checked; novelty remains
+UNKNOWN. A baseline is the published solvable normal-HSP algorithm;
+abelian and nil-2 subcases are already known. The modular p^3 example gives
+nonnormal permutable H; exponent-p Heisenberg nonnormal lines refute dropping
+the promise. D8 refutes extending the torsion-kernel model beyond c<p.
+No general black-box, copy-only, all-permutable-H, application, implemented
+receiver or new separation claim. Independent reviews accepted the algebra
+and identified the additive simplification; final written-note review pending.
+
+Next command: /opt/anaconda3/envs/qsearch-cas/bin/sage research/classical_baselines/permutable_socle_controls.sage
+expected artifact is a focused algebraic falsifier, not HSP execution.
+Acceptance: the modular subgroup is nonnormal but permutable, normal in its
+p-torsion subgroup; the Heisenberg line fails permutability; the D8 killed-by-2
+set is not a subgroup. Even modular permutable H does not make f additive
+on ALL L; x and x+y are a counterexample. Next hard question is final paid
+access review and prior-art scope, not more Rees identities. Mechanical queue:
+top entry.
+
+## 2026-10-31 Small-Parity AG Search And Marked-Point Falsifier
+
+Read AG_SMALL_PARITY_SELECTOR.md. New constructive classical SEARCH branch:
+for original complete-AG B,s at fixedF1019, compute full r2=dimJ/2J and N=2^r2.
+Set n=2e-11, Cn=(g+1)(n+6). Ifq^n>=16N^2Cn^2, exact uniform degree-n prime
+rejection supplies the required Pic/2 class with acceptance>=1/(2N).
+Retained fixed-characteristic reconstruction/order/halving contracts already
+pay these operations. Thus r2<=C log2g for fixedC gives expected-poly native
+search. No such rank bound is known for the intended infinite tower.
+
+The conversion now carries original rows into the normalized plane field
+using degree<=2g+3 two-variable rational functions, linear systems inR_(4g+7).
+Intrinsic local evaluations and an explicit differential construct the actual
+full-support h, even when half-divisor A meets D. No arbitrary annihilator
+vector or hidden column multiplier is allowed. degA10e+4 givesdimA=k+1 and
+all restriction ranks; the known one-component norm then reaches EVERY
+original syndrome with offset-rank failure<1/q and no zero coordinates.
+Independent selector and frame reviews accepted the argument; focused Sage
+control passed (49 original syndromes, rank failure49/2401, frame alignment
+and the strict-distance countercontrol). This is not a uniform sampler, native
+backend, general fixed-q algorithm, hardness or novelty claim.
+
+Decisive source falsifier: K+D~32I, so targetparity equals originalGparity.
+A nontrivial S-split character annihilates all marked-point differences.
+Consequently any defect made ONLY of marked tower points is impossible for
+approximately half the original uniform-primeG source, even after actual
+full-cube rejection. Arbitrary unmarked closed points remain outside this
+obstruction. Full Pic/2 rank is not tower depth or a chosen cover's rank.
+
+Next hard question is a genuinely non-enumerative low-degree parity selector
+for large-r2 inputs, or a new independently motivated native mechanism. Do
+not build the source or more marked-point/lookup tables. Next command:
+/opt/anaconda3/envs/qsearch-cas/bin/sage research/classical_baselines/ag_small_parity_identities.sage
+Expected artifact: exact frame, rank and all-syndrome controls; acceptance
+is every original output verified, with the split-code countercontrol failing
+uniqueness. This control does not test growing genus or native parity ranks.
+Mechanical queue: matching top entry. Final written-note review accepted the
+plane conversion and complete scoped claim. Do not continue large-r2 selector
+work absent a new mechanism. A fresh comparison also found no unresolved
+core Rees identity worth re-auditing; the stated general-class import remains.
+
+## 2026-10-31 Classical Sampling Throughout Fixed-Prime BPQM Success
+
+Read TERNARY_SEQUENTIAL_SAMPLING.md, Section7. Proved a constructive CLASSICAL
+sampler implication for every fixed prime q, rational probability vector mu
+(including zeros/asymmetry), and constant3<=a<b on the original regular
+socket ensemble. Input retains one IID nonzero coefficient per incidence,
+IID uniform offsets J and all original spins. Target is proportional to
+product mu(J+H^t x), with ABSTAIN for empty instances. If the corresponding
+circulant pure-state channel is in the IMPORTED BPQM success region, then
+classical polynomial-bit-time ensemble-average TV tends to zero. This closes
+the prospective SUPERPOLYNOMIAL sampling separation in that class, not
+polynomial/practical improvements, quantum communications or dense AG/DQI.
+
+Key chain: coefficient-aware error/posterior duality (keep reflections and
+relative-shift probabilities); tree TV<=sqrt(b(q-1)F_t/2); exact planted-prefix
+normalizer cancellation; one final count transfer. The arbitrary-rank Gram
+identity gives eta_H<=sqrt(delta_H). Initial short-cycle components are
+sampled by exact tree/unicyclic DP. Choosing t=ceil(tau loglog(M+3)),
+tau>1/log(a-1), requires no DE oracle or hidden basin constant. Explicit bound:
+ETV<=bad_geometry+sqrt(Edelta)+q*a*(maxmu-minmu)*M*sqrt(b(q-1)F_t/2)+coin_error.
+The claim imports the primary block/tail theorems; no new proof of them or
+human/formal review is claimed. Three automated independent reviews accepted
+the generalized chain; final wording review corrected cycle-rank and scope.
+
+Validation: existing27 certificate tests, prior ternary insertion/abort
+identities, and new bpqm_general_identities.sage passed. The latter checks
+actual asymmetricF5 planted observations/flags and30 exact Gram/count
+identities with rank deficiency. These are finite falsifiers, not a sampler
+implementation or asymptotic evidence. Raw sockets remain required generally;
+only the binary matrix-only repair was separately proved. Fixed-mu convergence,
+not threshold-uniform convergence; no prime-power/herald-mixture extension.
+
+Next hard question after independent portfolio comparison: can a PAID small
+Pic/2 effective-divisor selector bypass the existing fixed-field AG norm
+clock and give classical native search? The precise sufficient selector is
+E>=0, disjointD, degE<=2e-11 and K+D-G-E~2A with explicit equivalence and paid
+access from B. It would make known one-component norm completion work with
+rank failure<1/q; selector/halving/reconstruction remain unpaid. This is a
+new conditional attack interface, not an admitted algorithm or sampling
+claim. First command: /opt/anaconda3/bin/python tools/corpus/cli.py been-tried
+"effective divisor Picard modulo two fixed field class selector"; then
+baselines and primary constructive RR/class-group literature. Expected
+artifact: a costed selector or a decisive input/degree obstruction. Acceptance:
+original B,s, fixedF1019, unbounded dyadic e; no free geometry, class-group
+logarithms, target-dependent prime rejection, or a supplied short divisor.
+Time-box this exact mechanism audit; absent a construction, compare independent
+native directions again rather than extending norm barriers or source fixtures.
+Mechanical queue: matching top entry. No registry, Git or outreach action.
+
+## 2026-10-31 Fixed-Field AG Reconciliation And BPQM Mechanism Test
+
+The new lookup RECOVERED, not newly proved, NORM_SAMPLER_CLOCK_FALSIFIER.md:
+fresh quadratic norm trials have exponential fixed-q clocks even with ideal
+size bias; root count FPTAS is not a conditional-count oracle. Four-base/AJT
+existence and fixed-bank repair obstructions were also already audited.
+Do not spend another pass optimizing this same proposal or building larger
+known-easy divisors. Independent reviewers found no new paid extractor.
+The quantum matrix-only ECP/truncated-DQI comparator survives: every syndrome,
+ideal conditional uniform output, raw success lambda_s*tau^2 when preparation
+heralding is charged. The fixed-F1019 tower is nonvacuous along dyadic e;
+higher-level source arithmetic remains unimplemented, not free or executed.
+
+One conditional algebraic route was made precise, NOT adopted as an algorithm:
+construct E>=0, disjoint D, degE<=2e-11 and K+D-G-E~2A with the equivalence.
+Then dimL(A)>=k+1 and a full-support mixed annihilator allow the known
+one-component norm search; d(V)>degA gives rank failure<1/q for random offset.
+Finding E in the required Pic/2 class and halving it are unpaid. This is
+search only, not a sampling result, hardness evidence or reason for a new
+subsystem. Prior input/decoder/source details remain in the retained bundles.
+
+Priority comparison: AG has a sound known quantum comparator but no new
+mechanism; Hawk lacks a paid generator and integral-pencil similarity is
+prior art. The next potentially consequential question is whether the NEW
+classical insertion construction covers the entire FIXED-PRIME, bounded-degree
+BPQM success class, rather than just ternary/binary points. Corpus lookup and
+primary BPQM/sampling sources checked first. Expected artifact: a scoped
+general theorem in TERNARY_SEQUENTIAL_SAMPLING.md with explicit mu, raw socket
+access, Fourier potential, resource bound and exception list. Acceptance:
+independent proof of alphabet-generic posterior duality, count-flatness and
+prefix cancellation; no extrapolation from two examples. Next command:
+read Sections1-5 of that note and the primary qary Theorem30/node identities.
+Mechanical queue: matching entry at top of MECHANICAL_FOLLOW_UP_PLAN.md.
+No new implementation, registry promotion, Git, source backend or outreach.
+
+## 2026-10-31 Classical Sampling Matches Sparse BPQM Premises
+
+Established, conditional on the SAME imported whole-code BPQM theorem used
+by the quantum proposal: a polynomial-bit-time classical sampler has
+ensemble-average TV tending to zero for the original signed ternary (3,6)
+configuration ensemble, IID offsets, all original spins and ABSTAIN on empty
+instances. Read TERNARY_SEQUENTIAL_SAMPLING.md. Exact tree duality plus local
+insertion gives error <= bad_geometry + sqrt(2 E delta_H) +
+(9/2) M sqrt(6 F_t) + coin_error. Planted PREFIX density cancels each local
+normalizer, then one FINAL count-flatness transfer avoids multiplying the
+unknown block-error rate by M. Short-cycle components are initialized exactly;
+a radius-O(loglog M) two-cycle union bound is o(1). The binary c=13/20 native
+Gibbs point has the same conclusion, including its matrix-only interface.
+
+Three independent automated reviewers checked the composition and source
+scope; no fatal gap found. Existing exact certificate:27 tests passed.
+Sage ternary_insertion_identities.sage checks TV1/6, abort TV1/3, and40 prefix
+identities. These are algebraic controls, not a production sampler or an
+independent proof of the imported block theorem. No all-instance FPAUS,
+practical speed comparison, new general duality theorem, novelty, classical
+hardness or quantum advantage is established. Rare frozen instances remain;
+Efthymiou's SET sufficient coefficient fails here but is not a hardness claim.
+
+Next question chosen against Hawk/quaternion and further local BPQM variants:
+can the classical full-support AG norm sampler work at FIXED q=1019 with
+e->infinity, beyond q^2>=44e? Recovered usd-novelty-review-2026-10-27/REVIEW.md
+already supplies a paid matrix-only ECP decoder and known truncated DQI
+sampler. Any blanket statement that AG lacks a quantum decoder is withdrawn.
+First command: /opt/anaconda3/bin/python tools/corpus/cli.py baselines
+"complete AG fixed field full support syndrome norm zero avoidance"; read the
+retained review and norm-sampling EXACT_SAMPLER.md, then primary literature.
+Expected artifact: scoped fixed-field classical attack or decisive falsifier,
+with original B,s input, all nonzero coordinates and paid access preserved.
+Acceptance: an asymptotic argument at fixed q, not an extrapolated finite run
+or the old union bound. Mechanical queue: matching entry at the top of
+MECHANICAL_FOLLOW_UP_PLAN.md. Surface work remains parked after its complete
+conditional theorem audit; no registry promotion, Git or outreach.
+
+## 2026-10-31 Constructive Ternary Sampler Review Checkpoint
+
+Read TERNARY_SEQUENTIAL_SAMPLING.md. A new CLASSICAL insertion sampler has
+explicit local-tree, planted-prefix cancellation and short-cycle proofs.
+Three focused independent reviews checked primary qary theorem scope,
+tree duality/local replacement, transfer algebra and cycle topology; final
+whole-composition review is running.27 existing certificate tests passed.
+No sampler implementation, novelty claim or speedup gate is promoted.
+
+Native law: original signed (3,6) socket multigraph, M=2V, IID uniform J,
+all original spin/gauge solutions with nonzero J+H^Tx, ABSTAIN on empty
+targets. Quantum node spectra equal classical posterior laws with bit/check
+roles swapped, including relative-shift/herald weights. Certified F_t bounds
+mean root TV by sqrt(6F_t). Initialize ALL cycle-near factors by exact
+unicyclic DP; insert remaining factors and resample tree interiors conditional
+on their actual exterior. Raw socket multiplicity and all failures persist.
+
+Key transfer: prefix planted laws P_i have density z_i=Z_i/EZ_i. With
+R_i=P_(i-1) times a uniform new offset, dP_i/dR_i=(3/2)p_i. This CANCELS
+the1/p_i replacement error. Final planted law has P_i prefixes, so transfer
+to original uniform inputs costs eta_full<=sqrt(2delta_M) ONCE. Candidate
+mean-TV bound: bad-geometry +sqrt(2Edelta_M)+(9/2)M sqrt(6F_t)+coinerror ->0.
+The ideal POVM's existence suffices for count flatness; no compiled quantum
+decoder is assumed by the classical algorithm.
+
+Cycle proof: if every incidence radius-(r+2) ball has excess<=1, adjacent
+bad factors share one cycle, so each initial bad component is unicyclic.
+Two-collision union bound O(5^(4r)/M)=polylog(M)/M at r=O(loglog M) closes
+the invalid 'abort on ANY short cycle' shortcut. Counts, coins and topology
+are paid polynomial work; no partition oracle or planted witness is given.
+
+Next: finish independent whole-proof review, then record the precise SAME-
+INPUT sampling decision. Next command: read complete topic note and review
+result; expected artifact is corrected theorem/counterexample plus a tiny
+exact replacement/transfer falsifier. Acceptance: original ensemble and
+unconditional TV, empty/abort outcomes and all cycle exceptions charged.
+No sampler framework or broad benchmark before that decision. Mechanical
+items: top Ternary insertion section in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-10-31 Rees Manuscript Corrected To The Tuple Lift (Claude Code)
+
+Not a Codex research pass; STATE.md "Now" was deliberately left as is, and
+the surface entry below remains the current research state.
+
+REFUTED, sharpened: for s!=0 and lambda not in {0,1}, Delta_lambda
+preserves E_s^-1(log H) IFF [L,L] <= log H. So the newer manuscript's
+direct pullback supported descent only when f factors through G/[G,G].
+Counterexample: u=s*tz-t^2z. Checked exhaustively on 4 algebras (6731
+subalgebras) by tests/test_rees_single_evaluation_falsifier.py.
+
+Fix: docs/papers/rees-hsp/main.tex now uses the c-point tuple lift,
+c-copy coset input, normalized branch law and controlled-right-action
+conversion, as in REES_HSP_REDUCTION.md. It restates SDE schedules from
+the notes and lists the real Lean modules (180 guards, built 10-31).
+Withdrawn: FPT(k) (filiform counterexample), Omega(p^55), 2d^3 g_d, and
+four unverifiable citations. Scope unchanged: explicit F_p Lie input,
+fixed c<p, coherent oracle or IID coset copies. Classical baseline: none
+claimed; no application. Gates that stay false: verified manuscript,
+novelty, speedup, application. Section 7.2 now follows
+REES_SUBSPACE_SYMMETRY_SOURCE.md. Sections 5, 6.2, 7.1 and 8 were then
+re-audited and corrected; the two key citations were checked on arXiv.
+Details: audits/reviews/2026-10-31-rees-manuscript-falsifiers.md
+Section 5.
+An independent referee pass over Sections 1-4 and 6.1 found no fatal error.
+It corrected the Dixmier--Lister table (Jacobi failed) and the solver-abort
+budget, among smaller fixes; see the same Section 5.
+
+Next hard question (Rees, parked): a human specialist review of the
+corrected manuscript, starting with Sections 1-4.
+Next command: PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /opt/anaconda3/bin/python -B -m pytest -q -p no:cacheprovider tests/test_rees_single_evaluation_falsifier.py tests/tools/test_rees_paper_numbers.py
+Acceptance: 7 passed; make_numbers.py --check clean; reproduce.sh 148 same.
+Mechanical items: top section of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-10-31 Complete Surface Theorem Audit And Native-Sampling Pivot
+
+Read SURFACE_THEOREM_PRIORITY_AUDIT.md. The bounded audit found no new gap
+in source -> known degree-two HPGP -> certified K -> full Hom/End algebraic
+output. Scope: p>3, odd prime ell!=p, genuine weak phi:E^2->B, FULL evaluable
+source order, complete prescribed small-prime transcript, and paid common
+definition field/models/heights. Imported PPAV/HPGP algorithms remain explicit
+dependencies. Final three unipotent comparisons plus f(I), evaluated with
+always-correct classical labels and abort-on-timeout, certify K even after
+bad-chart/malformed learner output. Lattice consistency alone does not.
+
+NEW CORRECTION: arbitrary ell is allowed for the stronger evaluated End(B)
+output too. Rank8 trace determinant p^4, positive integral minimum and fixed-
+rank LLL give p^O(1) reduced norms, O-action and Hermitian coefficients.
+PRS2026/276 Section2.1 explicitly allows reduction; Remark3.1 accepts the
+small finite module presentation. Basis transformations cost polynomial in
+original log ell/heights. No free O-basis/PIP or new GRH is needed. Reference-
+field and model contracts persist. Independent reviewer checked this argument
+and primary sections; no geometry or quantum circuit was executed.
+
+PRIORITY: PARK surface/backend/membership variants for lack of a distinct
+native payoff, NOT because the conditional theorem is refuted or classically
+solved. Parent and independent reviewer checked Chen--Petit Thm1/3, Def13,
+Remarks27/31: elliptic endpoints already quantum polynomial heuristically.
+Seven-query mask calibration and upstream small-transcript acquisition already
+exist. The independently reviewed additive source is the stronger retained
+full-suborder assumption-removal candidate relative to PPAV contracts.
+No novelty, native hardness, speedup, cryptographic or execution gate changes.
+
+Next hard question: does the actual signed-trine decoder theorem support
+the repository's sparse ternary affine-exclusion sampling regime, and does a
+matched classical random-CSP sampler already cover it? This is an independent
+native-output mechanism, not a new isogeny subsystem. Before any quantum work:
+corpus been-tried/baselines, TERNARY_BPQM_CERTIFICATE.md,
+TERNARY_DECODED_SAMPLER.md, TERNARY_BPQM_BLOCK.md,
+TERNARY_CONDITIONED_SAMPLING.md, then primary decoder/sampling theorems.
+Next command: /opt/anaconda3/bin/python tools/corpus/cli.py been-tried "signed trine sparse ternary uniform sampling dv3 dc6"
+Expected artifact: exact ensemble/decoder/sampling theorem comparison and one
+decisive classical or quantum falsifier, not backend expansion. Acceptance:
+same signed socket H, IID uniform J, original spins/gauge and unconditional
+failure law; never replace it with dense IID matrices or planted instances.
+Mechanical items: matching top section in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-10-31 Cayley Descent Membership And Surface Theorem Decision
+
+Read SURFACE_CAYLEY_MEMBERSHIP.md and SURFACE_WEAK_ISERP_DECISION.md.
+The bounded classical-attack pass produced a new constructive test, not
+kernel recovery. For every source a and ell>=11, use its centered lift mod
+ell, X=p[[0,a],[-a^dagger,0]], m=1+pz (ten choices), d=Nrd(mI+X),
+F=d(mI-X)(mI+X)^-1 on E^4. Reduced degree8 adjugate gives integrality;
+avoid m*d=0 mod ell and d=1 mod p. Then F^dagger F=d^2I and
+F preserves K^2 iff a preserves K. Original-model interpolation on B^2
+with M>d^2 and M^2>32ell^2d^2 decides descent. One global prime pool
+covers all canonical lifts. This pays internal dimension32 and the actual
+weak-evaluation/model/field contracts; no target End/Hom advice is added.
+
+Independent review accepted after correcting M>=P/D and explicitly
+canonicalizing arbitrary input lifts before the uniform bound. Exact Sage
+reproducer: classical_baselines/surface_cayley_membership.sage;60 split
+controls passed; replacing -a^dagger by -a gives rank4 polarization defect.
+These are not geometric interpolation or hidden-kernel recovery results.
+
+Separate exact model boundary: for uniform graph Lagrangian over F_ell,
+Q adaptive Boolean preservation queries recover it with probability at most
+2Q/ell+ell^-3. Non-scalar acceptance is a nonzero degree<=2 polynomial
+condition. This is ONLY a Boolean-query theorem: native geometry, represented
+maps and intermediate transcript information are excluded. Never cite it
+as classical hardness of weak surface IsERP or a speedup certificate.
+
+Primary-source check:2026/276 requires full Hom/module data for its relevant
+conversion routines; arbitrary maximalization cannot choose among the
+(ell+1)(ell^2+1) Rosati-stable local completions of Z_ell I+ell M4(Z_ell).
+Inter-query v:P_n->P_m is useful to pullback iff the source unitary
+U=sigma_m phi^-1 v phi sigma_n^-1 is nonintegral. Known marked same-coset
+maps give zero. No uniform useful-query selection or full K recovery found.
+
+NEXT SINGLE QUESTION (one bounded pass): does the COMPLETE weak-surface
+IsERP composition give a substantive theorem/assumption improvement beyond
+existing IsERP results? Review source->HPGP->certified K->full algebraic
+Hom/End output and exact native promises. Kernel-output and effective-output
+bundles ALREADY exist; do not call them missing. Compare Chen et al. and
+Chen--Petit, including projective-frame calibration and any upstream
+suborder-to-evaluator assumptions. Stop local attack variants now.
+Next command: /opt/anaconda3/bin/python tools/corpus/cli.py been-tried "surface weak IsERP Chen Petit projective frame calibration"
+then read bundles/native-input-audit-2026-10-23/NATIVE_INPUT_GATE.md,
+bundles/kernel-output-2026-10-23/KERNEL_TO_OUTPUT.md, and the named prior-art
+notes before primary literature. Expected artifact: one precise theorem and
+comparison or a pinpointed failed obligation/known result. If no substantive
+payoff remains, park the surface line and compare independent mechanisms.
+No novelty, native execution, cryptanalysis or speedup gates are promoted.
+Mechanical items: matching top section in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-10-31 Recovered Prime-Only Source And Bounded Classical Harvest
+
+Read SURFACE_SOURCE_RECONCILIATION.md and SURFACE_AUTOMORPHISM_HARVEST.md.
+Three focused independent agents reviewed the selector/old source algebra,
+the actual retained PPAV paper contract, and the manuscript/harvest proofs.
+Receipts: audits/reviews/2026-10-31-{prime-only-source-recovery,
+ppav-source-contract,rees-manuscript-falsifiers}.md. This is automated
+review, not human peer review or a novelty certificate.
+
+PRIORITY CORRECTION: the retained prime-only eight-copy source already
+avoids the mixed-prime selector. For every Sp4 query, an evenized lift plus
+a shear forces odd trace t; one global odd squarefree N>T^2 admits
+(t+2)X+(t-2)Y=N. Eight squares give C^dagger C=NH8 and integral
+F=H8^-1 C^dagger with F^dagger H8 F=NI. Prime kernels and transported
+joint marks yield the proposed HPGP source at output dimension16. The
+failed complementary-map stabilization is different. Full 2026/1142 is
+retained and has been read; its quotient/product/canonicalization theorem
+matches the prime-only contract. Fixed-field and uniform-clock arguments
+also already exist and survived review. Do not repeat either false blocker.
+
+Exact input: genuine ell-polarized phi:E^2->B, p>3, odd ell!=p, known FULL
+evaluable source order, original modeled B, and fixed small-prime full-basis
+images with one common mask per order. The full order AND phi are defined
+over a paid common field. Scalar Frobenius, separate fields and explicit
+descent between stages bound costs. The claim is conditional on the imported
+PPAV model/HPGP algorithms and these promises, NOT inferred from tests.
+No geometric oracle, quantum learner, speedup, novelty or cryptanalytic
+result is implemented/admitted. Abstract K output is not a geometric ell-
+torsion basis or automatically an effective target End ring.
+
+NEW SCOPED CLASSICAL RESULT: if every queried repolarized surface P_j is
+geometrically indecomposable with polarized Aut(P_j)={+/-1}, then all
+corners of q_j^dagger Aut(Y_j) q_j lie in Z[H_j]. Their source pullbacks are
+ell*P(S_j), hence zero modulo ell. Arbitrary mixed-query words, adjoints,
+and certified prime-to-ell divisions retain rank zero. This follows from
+unique polarized decomposition and the correctly oriented identity
+q_j^dagger v q_j=C_j W F_j. It bounds the complete automorphism-word
+extractor on that branch, not all classical algorithms or query frequency.
+Independent target maps can still recover K; ell-primary saturation,
+inter-query isomorphisms and geometric/marked data remain uncovered.
+
+Validation:82 existing stabilization/prime-only controls and56 existing
+reverse-transport controls passed (138 total, separate focused runs).
+Sage checked the generic eight-square identity and noncommuting mixed-word
+pullbacks with an informative independent-map countercontrol. No full
+suite or geometric/quantum execution is claimed. Two exact Rees manuscript
+falsifiers are in the preceding entry; main.tex now has a visible warning.
+
+Next single scientific question: can ell-primary integrality or new
+inter-query geometric isomorphisms give a polynomial classical K-recovery
+algorithm from the SAME compact weak input? First command:
+/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "weak isogeny integral saturation inter-query polarized isomorphism"
+then baselines and primary-source input checks against2026/276 and2601.18050.
+Expected artifact: an explicit paid classical reduction or a scoped unresolved
+operation/falsifier. No target End/Hom advice; no hardness from failure.
+One further substantive pass, then compare independent directions if no
+constructive attack or concrete source-proof/priority question emerges.
+Mechanical actions: matching top section in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-10-31 Rees Protocol Falsifiers And Recovered Surface Source
+
+Two manuscript steps are refuted, not the corrected Rees composition.
+Read audits/reviews/2026-10-31-rees-manuscript-falsifiers.md. For c=2,p=3,
+H=1, tz-t^2z is in ker(E_1) but its dilation by 2 is not. Independently,
+SUM maps character inputs (a,b) to (a-b,b), not a+b in the last register;
+p=5,(a,b)=(1,4) falsifies the stated zero-character output. The existing
+tuple oracle (c original calls) and fresh-control right-action channel in
+REES_HSP_REDUCTION.md are different constructions. main.tex now carries
+a visible nonauthoritative notice; its terminal quotient, SDE bounds and
+copy-only extension also need reconciliation. No whole-paper verification,
+improved runtime, novelty or speedup claim is admitted.
+
+The selector review found omitted prior constructive work: bundles/
+prime-only-source-2026-10-25/PRIME_ONLY_SOURCE.md already gives an odd-trace,
+odd-squarefree multiplier construction at fixed output dimension16.
+The full 44-page 2026/1142 PDF is retained at /Users/jaspersands/Developer/qsearch-research-work/
+ppav-source-2026-10-23/2026-1142.pdf.
+It is not unread. Independent algebra/source-contract review is in progress.
+The failed complementary-map stabilization does not refute this construction.
+Do not start a shifted-norm selector backend while reconciling this evidence.
+
+Next hard question: does the assembled prime-only source, under its PAID
+common-field and genuine weak-isogeny promises, survive the classical
+information exposed by its quotient and automorphism computations? Next
+read bundles/source-pullback-2026-10-23/SOURCE_PULLBACK_ATTACK.md and the
+prime-only source, then record exact surviving obligations. Expected artifact:
+a scoped reconciliation/attack note; acceptance requires original input,
+actual paid maps, correct adjoints and no imported target End/Hom lattice.
+Mechanical items are the matching top section in MECHANICAL_FOLLOW_UP_PLAN.md.
 
 ## 2026-10-30 Genus-Two Plus Quotient And Reverse Classical Attack
 

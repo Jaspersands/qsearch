@@ -1,0 +1,348 @@
+GENFAIL twist 3 2 2 4 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 3 2 2 4 IndexError('list assignment index out of range')
+GENFAIL twist 3 2 2 4 IndexError('list assignment index out of range')
+done p=3 k=2 J=2 r=4 {'solution': 23, 'leaf': 19} {'call': 45, 'direct_fwd': 23, 'reach_V': 10, 'stall': 12, 'case1_closure': 6, 'case2_Y': 3, 'case32_leafB': 3}
+GENFAIL twist 3 2 2 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 3 2 2 6 ValueError('empty range in randrange(1, 1)')
+done p=3 k=2 J=2 r=6 {'solution': 43, 'leaf': 42} {'call': 91, 'direct_fwd': 43, 'reach_V': 20, 'stall': 28, 'case1_closure': 15, 'case2_Y': 5, 'case32_leafB': 6, 'case33_closure': 1, 'case33_Uplus': 1}
+done p=3 k=2 J=2 r=8 {'solution': 64, 'leaf': 66} {'call': 138, 'direct_fwd': 63, 'reach_V': 39, 'stall': 35, 'case1_closure': 18, 'case2_Y': 5, 'case32_leafB': 8, 'case33_closure': 1, 'case33_Uplus': 1, 'zero_col': 1, 'case30_Uplus': 2}
+done p=3 k=2 J=2 r=12 {'solution': 78, 'leaf': 97} {'call': 185, 'direct_fwd': 77, 'reach_V': 63, 'stall': 44, 'case1_closure': 24, 'case2_Y': 6, 'case32_leafB': 9, 'case33_closure': 1, 'case33_Uplus': 1, 'zero_col': 1, 'case30_Uplus': 3}
+done p=3 k=2 J=2 r=16 {'solution': 90, 'leaf': 130} {'call': 235, 'direct_fwd': 89, 'reach_V': 88, 'stall': 57, 'case1_closure': 31, 'case2_Y': 6, 'case32_leafB': 10, 'case33_closure': 1, 'case33_Uplus': 3, 'zero_col': 1, 'case30_Uplus': 5, 'case31_W': 1}
+GENFAIL twist 3 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 3 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 3 2 3 4 IndexError('list assignment index out of range')
+done p=3 k=2 J=3 r=4 {'solution': 25, 'leaf': 17} {'call': 47, 'zero_col': 4, 'reach_V': 9, 'direct_fwd': 21, 'stall': 13, 'case1_closure': 4, 'case2_Y': 3, 'case33_Uplus': 1, 'case32_leafB': 2, 'case33_closure': 2, 'case30_Uplus': 1}
+GENFAIL twist 3 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 3 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 3 2 3 6 ValueError('empty range in randrange(1, 1)')
+done p=3 k=2 J=3 r=6 {'solution': 43, 'leaf': 41} {'call': 95, 'zero_col': 5, 'reach_V': 27, 'direct_fwd': 38, 'stall': 25, 'case1_closure': 7, 'case2_Y': 3, 'case33_Uplus': 7, 'case32_leafB': 4, 'case33_closure': 3, 'case30_Uplus': 1}
+done p=3 k=2 J=3 r=8 {'solution': 64, 'leaf': 65} {'call': 145, 'zero_col': 6, 'reach_V': 43, 'direct_fwd': 58, 'stall': 38, 'case1_closure': 11, 'case2_Y': 4, 'case33_Uplus': 11, 'case32_leafB': 8, 'case33_closure': 3, 'case30_Uplus': 1}
+done p=3 k=2 J=3 r=12 {'solution': 69, 'leaf': 105} {'call': 193, 'zero_col': 6, 'reach_V': 72, 'direct_fwd': 63, 'stall': 52, 'case1_closure': 21, 'case2_Y': 7, 'case33_Uplus': 11, 'case32_leafB': 9, 'case33_closure': 3, 'case30_Uplus': 1}
+done p=3 k=2 J=3 r=16 {'solution': 80, 'leaf': 139} {'call': 238, 'zero_col': 6, 'reach_V': 96, 'direct_fwd': 74, 'stall': 62, 'case1_closure': 28, 'case2_Y': 7, 'case33_Uplus': 11, 'case32_leafB': 12, 'case33_closure': 3, 'case30_Uplus': 1}
+GENFAIL twist 3 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 3 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 3 2 4 4 IndexError('list assignment index out of range')
+done p=3 k=2 J=4 r=4 {'leaf': 22, 'solution': 20} {'call': 47, 'reach_V': 16, 'direct_fwd': 13, 'stall': 11, 'case2_Y': 3, 'case32_leafB': 3, 'zero_col': 7, 'case1_closure': 3, 'case33_Uplus': 2}
+GENFAIL twist 3 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 3 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 3 2 4 6 IndexError('list assignment index out of range')
+done p=3 k=2 J=4 r=6 {'leaf': 55, 'solution': 29} {'call': 94, 'reach_V': 41, 'direct_fwd': 22, 'stall': 24, 'case2_Y': 5, 'case32_leafB': 5, 'zero_col': 7, 'case1_closure': 9, 'case33_Uplus': 5}
+done p=3 k=2 J=4 r=8 {'leaf': 87, 'solution': 42} {'call': 152, 'reach_V': 68, 'direct_fwd': 35, 'stall': 42, 'case2_Y': 9, 'case32_leafB': 7, 'zero_col': 7, 'case1_closure': 12, 'case33_Uplus': 14}
+done p=3 k=2 J=4 r=12 {'leaf': 119, 'solution': 55} {'call': 199, 'reach_V': 94, 'direct_fwd': 48, 'stall': 50, 'case2_Y': 9, 'case32_leafB': 8, 'zero_col': 7, 'case1_closure': 17, 'case33_Uplus': 16}
+done p=3 k=2 J=4 r=16 {'leaf': 152, 'solution': 67} {'call': 247, 'reach_V': 119, 'direct_fwd': 60, 'stall': 61, 'case2_Y': 11, 'case32_leafB': 10, 'zero_col': 7, 'case1_closure': 23, 'case33_Uplus': 17}
+GENFAIL twist 5 2 2 4 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 5 2 2 4 IndexError('list assignment index out of range')
+GENFAIL twist 5 2 2 4 ValueError('empty range in randrange(1, 1)')
+done p=5 k=2 J=2 r=4 {'solution': 17, 'leaf': 25} {'call': 45, 'direct_fwd': 17, 'reach_V': 13, 'stall': 15, 'case1_closure': 7, 'case2_Y': 2, 'case32_leafB': 5, 'case33_Uplus': 1}
+GENFAIL twist 5 2 2 6 ValueError('empty range in randrange(1, 1)')
+done p=5 k=2 J=2 r=6 {'solution': 32, 'leaf': 54} {'call': 94, 'direct_fwd': 32, 'reach_V': 29, 'stall': 33, 'case1_closure': 14, 'case2_Y': 5, 'case32_leafB': 11, 'case33_Uplus': 2, 'case30_Uplus': 1}
+done p=5 k=2 J=2 r=8 {'solution': 47, 'leaf': 84} {'call': 145, 'direct_fwd': 47, 'reach_V': 51, 'stall': 47, 'case1_closure': 21, 'case2_Y': 10, 'case32_leafB': 12, 'case33_Uplus': 2, 'case30_Uplus': 1, 'case31_W': 1}
+done p=5 k=2 J=2 r=12 {'solution': 58, 'leaf': 118} {'call': 193, 'direct_fwd': 58, 'reach_V': 72, 'stall': 63, 'case1_closure': 30, 'case2_Y': 12, 'case32_leafB': 16, 'case33_Uplus': 3, 'case30_Uplus': 1, 'case31_W': 1}
+done p=5 k=2 J=2 r=16 {'solution': 73, 'leaf': 148} {'call': 238, 'direct_fwd': 73, 'reach_V': 91, 'stall': 74, 'case1_closure': 38, 'case2_Y': 12, 'case32_leafB': 19, 'case33_Uplus': 3, 'case30_Uplus': 1, 'case31_W': 1}
+GENFAIL twist 5 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 5 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 5 2 3 4 IndexError('list assignment index out of range')
+done p=5 k=2 J=3 r=4 {'solution': 16, 'leaf': 26} {'call': 48, 'direct_fwd': 16, 'reach_V': 15, 'stall': 17, 'case1_closure': 6, 'case2_Y': 4, 'case32_leafB': 5, 'case33_Uplus': 2}
+GENFAIL twist 5 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 5 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 5 2 3 6 ValueError('empty range in randrange(1, 1)')
+done p=5 k=2 J=3 r=6 {'solution': 25, 'leaf': 59} {'call': 99, 'direct_fwd': 25, 'reach_V': 39, 'stall': 35, 'case1_closure': 10, 'case2_Y': 5, 'case32_leafB': 9, 'case33_Uplus': 9, 'case30_Uplus': 1, 'case33_closure': 1}
+done p=5 k=2 J=3 r=8 {'solution': 36, 'leaf': 93} {'call': 154, 'direct_fwd': 36, 'reach_V': 59, 'stall': 59, 'case1_closure': 19, 'case2_Y': 8, 'case32_leafB': 13, 'case33_Uplus': 16, 'case30_Uplus': 1, 'case33_closure': 2}
+done p=5 k=2 J=3 r=12 {'solution': 46, 'leaf': 128} {'call': 203, 'direct_fwd': 46, 'reach_V': 83, 'stall': 74, 'case1_closure': 27, 'case2_Y': 11, 'case32_leafB': 15, 'case33_Uplus': 17, 'case30_Uplus': 1, 'case33_closure': 2, 'case33_top': 1, 'top_leaf': 1}
+done p=5 k=2 J=3 r=16 {'solution': 53, 'leaf': 166} {'call': 256, 'direct_fwd': 53, 'reach_V': 107, 'stall': 96, 'case1_closure': 34, 'case2_Y': 12, 'case32_leafB': 21, 'case33_Uplus': 23, 'case30_Uplus': 2, 'case33_closure': 3, 'case33_top': 1, 'top_leaf': 1}
+GENFAIL twist 5 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 5 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 5 2 4 4 IndexError('list assignment index out of range')
+done p=5 k=2 J=4 r=4 {'solution': 14, 'leaf': 28} {'call': 49, 'direct_fwd': 13, 'reach_V': 24, 'stall': 11, 'case2_Y': 4, 'case33_Uplus': 3, 'case1_closure': 4, 'zero_col': 1}
+GENFAIL twist 5 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 5 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 5 2 4 6 IndexError('list assignment index out of range')
+done p=5 k=2 J=4 r=6 {'solution': 17, 'leaf': 67} {'call': 96, 'direct_fwd': 16, 'reach_V': 59, 'stall': 20, 'case2_Y': 8, 'case33_Uplus': 4, 'case1_closure': 8, 'zero_col': 1}
+done p=5 k=2 J=4 r=8 {'solution': 29, 'leaf': 100} {'call': 154, 'direct_fwd': 28, 'reach_V': 90, 'stall': 35, 'case2_Y': 20, 'case33_Uplus': 5, 'case1_closure': 8, 'zero_col': 1, 'case32_leafB': 2}
+done p=5 k=2 J=4 r=12 {'solution': 41, 'leaf': 133} {'call': 203, 'direct_fwd': 40, 'reach_V': 115, 'stall': 47, 'case2_Y': 22, 'case33_Uplus': 7, 'case1_closure': 14, 'zero_col': 1, 'case32_leafB': 4}
+done p=5 k=2 J=4 r=16 {'solution': 46, 'leaf': 173} {'call': 252, 'direct_fwd': 45, 'reach_V': 143, 'stall': 63, 'case2_Y': 24, 'case33_Uplus': 9, 'case1_closure': 20, 'zero_col': 1, 'case32_leafB': 10}
+GENFAIL twist 7 2 2 4 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 2 2 4 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 2 2 4 ValueError('empty range in randrange(1, 1)')
+done p=7 k=2 J=2 r=4 {'leaf': 29, 'solution': 13} {'call': 47, 'reach_V': 25, 'zero_col': 1, 'direct_fwd': 12, 'stall': 9, 'case32_leafB': 2, 'case2_Y': 3, 'case1_closure': 2, 'case33_Uplus': 1, 'case30_Uplus': 1}
+GENFAIL twist 7 2 2 6 ValueError('empty range in randrange(1, 1)')
+done p=7 k=2 J=2 r=6 {'leaf': 63, 'solution': 23} {'call': 98, 'reach_V': 48, 'zero_col': 1, 'direct_fwd': 22, 'stall': 27, 'case32_leafB': 5, 'case2_Y': 8, 'case1_closure': 9, 'case33_Uplus': 3, 'case30_Uplus': 1, 'case33_closure': 1}
+done p=7 k=2 J=2 r=8 {'leaf': 96, 'solution': 35} {'call': 150, 'reach_V': 70, 'zero_col': 1, 'direct_fwd': 34, 'stall': 45, 'case32_leafB': 8, 'case2_Y': 11, 'case1_closure': 17, 'case33_Uplus': 5, 'case30_Uplus': 2, 'case33_closure': 1, 'case31_W': 1}
+done p=7 k=2 J=2 r=12 {'leaf': 132, 'solution': 44} {'call': 198, 'reach_V': 92, 'zero_col': 1, 'direct_fwd': 43, 'stall': 62, 'case32_leafB': 9, 'case2_Y': 13, 'case1_closure': 30, 'case33_Uplus': 5, 'case30_Uplus': 2, 'case33_closure': 1, 'case31_W': 2}
+done p=7 k=2 J=2 r=16 {'leaf': 167, 'solution': 54} {'call': 248, 'reach_V': 117, 'zero_col': 1, 'direct_fwd': 53, 'stall': 77, 'case32_leafB': 11, 'case2_Y': 15, 'case1_closure': 38, 'case33_Uplus': 5, 'case30_Uplus': 4, 'case33_closure': 1, 'case31_W': 3}
+GENFAIL twist 7 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 2 3 4 IndexError('list assignment index out of range')
+done p=7 k=2 J=3 r=4 {'leaf': 36, 'solution': 6} {'call': 53, 'reach_V': 29, 'stall': 18, 'case1_closure': 7, 'case2_Y': 6, 'direct_fwd': 6, 'case33_Uplus': 4, 'case31_W': 1}
+GENFAIL twist 7 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 2 3 6 ValueError('empty range in randrange(1, 1)')
+done p=7 k=2 J=3 r=6 {'leaf': 68, 'solution': 16} {'call': 100, 'reach_V': 49, 'stall': 35, 'case1_closure': 11, 'case2_Y': 11, 'direct_fwd': 16, 'case33_Uplus': 4, 'case31_W': 1, 'case32_leafB': 7, 'case33_top': 1, 'top_leaf': 1}
+done p=7 k=2 J=3 r=8 {'leaf': 105, 'solution': 24} {'call': 155, 'reach_V': 75, 'stall': 56, 'case1_closure': 16, 'case2_Y': 15, 'direct_fwd': 24, 'case33_Uplus': 10, 'case31_W': 1, 'case32_leafB': 13, 'case33_top': 1, 'top_leaf': 1}
+done p=7 k=2 J=3 r=12 {'leaf': 145, 'solution': 29} {'call': 206, 'reach_V': 100, 'stall': 77, 'case1_closure': 27, 'case2_Y': 18, 'direct_fwd': 29, 'case33_Uplus': 13, 'case31_W': 1, 'case32_leafB': 17, 'case33_top': 1, 'top_leaf': 1}
+done p=7 k=2 J=3 r=16 {'leaf': 184, 'solution': 35} {'call': 256, 'reach_V': 122, 'stall': 99, 'case1_closure': 39, 'case2_Y': 20, 'direct_fwd': 35, 'case33_Uplus': 15, 'case31_W': 2, 'case32_leafB': 20, 'case33_top': 1, 'top_leaf': 1, 'case33_closure': 2}
+GENFAIL twist 7 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 2 4 4 IndexError('list assignment index out of range')
+done p=7 k=2 J=4 r=4 {'leaf': 35, 'solution': 7} {'call': 48, 'reach_V': 28, 'direct_fwd': 7, 'stall': 13, 'case2_Y': 5, 'case1_closure': 6, 'case33_Uplus': 1, 'case32_leafB': 1}
+GENFAIL twist 7 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 2 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 7 2 4 6 IndexError('list assignment index out of range')
+done p=7 k=2 J=4 r=6 {'leaf': 73, 'solution': 11} {'call': 93, 'reach_V': 60, 'direct_fwd': 11, 'stall': 22, 'case2_Y': 6, 'case1_closure': 10, 'case33_Uplus': 3, 'case32_leafB': 3}
+done p=7 k=2 J=4 r=8 {'leaf': 114, 'solution': 15} {'call': 147, 'reach_V': 91, 'direct_fwd': 15, 'stall': 41, 'case2_Y': 11, 'case1_closure': 15, 'case33_Uplus': 7, 'case32_leafB': 8}
+done p=7 k=2 J=4 r=12 {'leaf': 157, 'solution': 17} {'call': 193, 'reach_V': 122, 'direct_fwd': 17, 'stall': 54, 'case2_Y': 12, 'case1_closure': 20, 'case33_Uplus': 7, 'case32_leafB': 15}
+done p=7 k=2 J=4 r=16 {'leaf': 195, 'solution': 24} {'call': 244, 'reach_V': 152, 'direct_fwd': 24, 'stall': 68, 'case2_Y': 12, 'case1_closure': 26, 'case33_Uplus': 13, 'case32_leafB': 17}
+GENFAIL twist 11 2 2 4 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 11 2 2 4 IndexError('list assignment index out of range')
+GENFAIL twist 11 2 2 4 IndexError('list assignment index out of range')
+done p=11 k=2 J=2 r=4 {'leaf': 30, 'solution': 12} {'call': 46, 'reach_V': 19, 'direct_fwd': 12, 'stall': 15, 'case1_closure': 8, 'case2_Y': 3, 'case32_leafB': 3, 'case31_W': 1}
+GENFAIL twist 11 2 2 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 11 2 2 6 ValueError('empty range in randrange(1, 1)')
+done p=11 k=2 J=2 r=6 {'leaf': 62, 'solution': 23} {'call': 97, 'reach_V': 43, 'direct_fwd': 23, 'stall': 31, 'case1_closure': 12, 'case2_Y': 10, 'case32_leafB': 7, 'case31_W': 2}
+done p=11 k=2 J=2 r=8 {'leaf': 99, 'solution': 31} {'call': 148, 'reach_V': 67, 'direct_fwd': 31, 'stall': 50, 'case1_closure': 19, 'case2_Y': 14, 'case32_leafB': 13, 'case31_W': 2, 'case33_Uplus': 1, 'case30_Uplus': 1}
+done p=11 k=2 J=2 r=12 {'leaf': 134, 'solution': 41} {'call': 196, 'reach_V': 86, 'direct_fwd': 41, 'stall': 69, 'case1_closure': 28, 'case2_Y': 15, 'case32_leafB': 20, 'case31_W': 3, 'case33_Uplus': 2, 'case30_Uplus': 1}
+done p=11 k=2 J=2 r=16 {'leaf': 171, 'solution': 49} {'call': 248, 'reach_V': 109, 'direct_fwd': 49, 'stall': 90, 'case1_closure': 36, 'case2_Y': 18, 'case32_leafB': 26, 'case31_W': 5, 'case33_Uplus': 3, 'case30_Uplus': 2}
+GENFAIL twist 11 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 11 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 11 2 3 4 IndexError('list assignment index out of range')
+done p=11 k=2 J=3 r=4 {'leaf': 38, 'solution': 4} {'call': 49, 'reach_V': 27, 'direct_fwd': 4, 'stall': 18, 'case1_closure': 5, 'case2_Y': 7, 'case32_leafB': 6}
+GENFAIL twist 11 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 11 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 11 2 3 6 ValueError('empty range in randrange(1, 1)')
+done p=11 k=2 J=3 r=6 {'leaf': 74, 'solution': 10} {'call': 101, 'reach_V': 56, 'direct_fwd': 10, 'stall': 35, 'case1_closure': 10, 'case2_Y': 16, 'case32_leafB': 8, 'case33_Uplus': 1}
+done p=11 k=2 J=3 r=8 {'leaf': 107, 'solution': 22} {'call': 159, 'reach_V': 78, 'direct_fwd': 22, 'stall': 59, 'case1_closure': 13, 'case2_Y': 26, 'case32_leafB': 16, 'case33_Uplus': 4}
+done p=11 k=2 J=3 r=12 {'leaf': 143, 'solution': 31} {'call': 210, 'reach_V': 100, 'direct_fwd': 31, 'stall': 79, 'case1_closure': 22, 'case2_Y': 30, 'case32_leafB': 21, 'case33_Uplus': 6}
+done p=11 k=2 J=3 r=16 {'leaf': 182, 'solution': 37} {'call': 261, 'reach_V': 124, 'direct_fwd': 37, 'stall': 100, 'case1_closure': 32, 'case2_Y': 31, 'case32_leafB': 26, 'case33_Uplus': 9, 'case30_Uplus': 2}
+GENFAIL twist 11 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 11 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 11 2 4 4 IndexError('list assignment index out of range')
+done p=11 k=2 J=4 r=4 {'leaf': 35, 'solution': 7} {'call': 50, 'reach_V': 31, 'direct_fwd': 7, 'stall': 12, 'case1_closure': 4, 'case2_Y': 5, 'case33_Uplus': 3}
+GENFAIL twist 11 2 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 11 2 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 11 2 4 6 IndexError('list assignment index out of range')
+done p=11 k=2 J=4 r=6 {'leaf': 72, 'solution': 12} {'call': 99, 'reach_V': 64, 'direct_fwd': 12, 'stall': 23, 'case1_closure': 6, 'case2_Y': 7, 'case33_Uplus': 8, 'case32_leafB': 2}
+done p=11 k=2 J=4 r=8 {'leaf': 108, 'solution': 21} {'call': 153, 'reach_V': 93, 'direct_fwd': 21, 'stall': 39, 'case1_closure': 11, 'case2_Y': 14, 'case33_Uplus': 10, 'case32_leafB': 4}
+done p=11 k=2 J=4 r=12 {'leaf': 150, 'solution': 24} {'call': 199, 'reach_V': 125, 'direct_fwd': 24, 'stall': 50, 'case1_closure': 16, 'case2_Y': 15, 'case33_Uplus': 10, 'case32_leafB': 9}
+done p=11 k=2 J=4 r=16 {'leaf': 188, 'solution': 31} {'call': 245, 'reach_V': 152, 'direct_fwd': 31, 'stall': 62, 'case1_closure': 23, 'case2_Y': 15, 'case33_Uplus': 11, 'case32_leafB': 13}
+GENFAIL twist 13 2 2 4 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 2 2 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 2 2 4 IndexError('list assignment index out of range')
+done p=13 k=2 J=2 r=4 {'leaf': 25, 'solution': 17} {'call': 52, 'reach_V': 18, 'direct_fwd': 17, 'stall': 17, 'case2_Y': 10, 'case32_leafB': 2, 'case1_closure': 5}
+GENFAIL twist 13 2 2 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 2 2 6 ValueError('empty range in randrange(1, 1)')
+done p=13 k=2 J=2 r=6 {'leaf': 57, 'solution': 28} {'call': 102, 'reach_V': 38, 'direct_fwd': 28, 'stall': 36, 'case2_Y': 14, 'case32_leafB': 10, 'case1_closure': 9, 'case33_Uplus': 2, 'case30_Uplus': 1}
+done p=13 k=2 J=2 r=8 {'leaf': 87, 'solution': 43} {'call': 155, 'reach_V': 58, 'direct_fwd': 43, 'stall': 54, 'case2_Y': 21, 'case32_leafB': 13, 'case1_closure': 16, 'case33_Uplus': 2, 'case30_Uplus': 1, 'case31_W': 1}
+done p=13 k=2 J=2 r=12 {'leaf': 120, 'solution': 55} {'call': 204, 'reach_V': 77, 'direct_fwd': 54, 'stall': 72, 'case2_Y': 25, 'case32_leafB': 18, 'case1_closure': 25, 'case33_Uplus': 2, 'case30_Uplus': 1, 'case31_W': 1, 'zero_col': 1}
+done p=13 k=2 J=2 r=16 {'leaf': 155, 'solution': 65} {'call': 253, 'reach_V': 98, 'direct_fwd': 64, 'stall': 90, 'case2_Y': 28, 'case32_leafB': 20, 'case1_closure': 37, 'case33_Uplus': 2, 'case30_Uplus': 1, 'case31_W': 2, 'zero_col': 1}
+GENFAIL twist 13 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 2 3 4 IndexError('list assignment index out of range')
+done p=13 k=2 J=3 r=4 {'leaf': 32, 'solution': 10} {'call': 53, 'reach_V': 24, 'direct_fwd': 10, 'stall': 19, 'case32_leafB': 3, 'case2_Y': 6, 'case33_Uplus': 4, 'case1_closure': 4, 'case31_W': 1, 'case33_closure': 1}
+GENFAIL twist 13 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 2 3 6 ValueError('empty range in randrange(1, 1)')
+done p=13 k=2 J=3 r=6 {'leaf': 61, 'solution': 23} {'call': 102, 'reach_V': 47, 'direct_fwd': 23, 'stall': 32, 'case32_leafB': 6, 'case2_Y': 12, 'case33_Uplus': 5, 'case1_closure': 6, 'case31_W': 1, 'case33_closure': 1, 'case33_top': 1, 'top_leaf': 1}
+done p=13 k=2 J=3 r=8 {'leaf': 95, 'solution': 34} {'call': 157, 'reach_V': 74, 'direct_fwd': 34, 'stall': 49, 'case32_leafB': 9, 'case2_Y': 21, 'case33_Uplus': 6, 'case1_closure': 10, 'case31_W': 1, 'case33_closure': 1, 'case33_top': 1, 'top_leaf': 1}
+done p=13 k=2 J=3 r=12 {'leaf': 131, 'solution': 43} {'call': 208, 'reach_V': 93, 'direct_fwd': 43, 'stall': 72, 'case32_leafB': 14, 'case2_Y': 26, 'case33_Uplus': 6, 'case1_closure': 20, 'case31_W': 1, 'case33_closure': 2, 'case33_top': 2, 'top_leaf': 2, 'case30_Uplus': 1}
+done p=13 k=2 J=3 r=16 {'leaf': 167, 'solution': 52} {'call': 262, 'reach_V': 113, 'direct_fwd': 52, 'stall': 97, 'case32_leafB': 20, 'case2_Y': 30, 'case33_Uplus': 11, 'case1_closure': 29, 'case31_W': 1, 'case33_closure': 2, 'case33_top': 3, 'top_leaf': 3, 'case30_Uplus': 1}
+GENFAIL twist 13 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 2 4 4 IndexError('list assignment index out of range')
+done p=13 k=2 J=4 r=4 {'leaf': 34, 'solution': 8} {'call': 51, 'reach_V': 30, 'direct_fwd': 8, 'stall': 13, 'case32_leafB': 1, 'case2_Y': 7, 'case1_closure': 3, 'case33_Uplus': 2}
+GENFAIL twist 13 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 2 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 13 2 4 6 IndexError('list assignment index out of range')
+done p=13 k=2 J=4 r=6 {'leaf': 71, 'solution': 13} {'call': 98, 'reach_V': 64, 'direct_fwd': 13, 'stall': 21, 'case32_leafB': 2, 'case2_Y': 9, 'case1_closure': 5, 'case33_Uplus': 5}
+GENFAIL twist 13 2 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 2 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 2 4 8 ValueError('empty range in randrange(1, 1)')
+done p=13 k=2 J=4 r=8 {'leaf': 109, 'solution': 17} {'call': 147, 'reach_V': 91, 'direct_fwd': 17, 'stall': 39, 'case32_leafB': 9, 'case2_Y': 14, 'case1_closure': 9, 'case33_Uplus': 7}
+done p=13 k=2 J=4 r=12 {'leaf': 150, 'solution': 21} {'call': 197, 'reach_V': 121, 'direct_fwd': 21, 'stall': 55, 'case32_leafB': 13, 'case2_Y': 16, 'case1_closure': 16, 'case33_Uplus': 10}
+done p=13 k=2 J=4 r=16 {'leaf': 185, 'solution': 31} {'call': 248, 'reach_V': 144, 'direct_fwd': 31, 'stall': 73, 'case32_leafB': 19, 'case2_Y': 20, 'case1_closure': 22, 'case33_Uplus': 12}
+GENFAIL twist 17 2 2 4 IndexError('list assignment index out of range')
+GENFAIL twist 17 2 2 4 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 17 2 2 4 IndexError('list assignment index out of range')
+done p=17 k=2 J=2 r=4 {'leaf': 28, 'solution': 14} {'call': 52, 'reach_V': 19, 'direct_fwd': 14, 'stall': 19, 'case1_closure': 4, 'case32_leafB': 5, 'case2_Y': 8, 'case30_Uplus': 2}
+GENFAIL twist 17 2 2 6 ValueError('empty range in randrange(1, 1)')
+done p=17 k=2 J=2 r=6 {'leaf': 60, 'solution': 26} {'call': 107, 'reach_V': 40, 'direct_fwd': 26, 'stall': 41, 'case1_closure': 11, 'case32_leafB': 9, 'case2_Y': 16, 'case30_Uplus': 2, 'case33_Uplus': 3}
+done p=17 k=2 J=2 r=8 {'leaf': 90, 'solution': 41} {'call': 159, 'reach_V': 55, 'direct_fwd': 41, 'stall': 63, 'case1_closure': 18, 'case32_leafB': 17, 'case2_Y': 23, 'case30_Uplus': 2, 'case33_Uplus': 3}
+done p=17 k=2 J=2 r=12 {'leaf': 121, 'solution': 55} {'call': 208, 'reach_V': 76, 'direct_fwd': 55, 'stall': 77, 'case1_closure': 25, 'case32_leafB': 20, 'case2_Y': 25, 'case30_Uplus': 3, 'case33_Uplus': 3, 'case31_W': 1}
+done p=17 k=2 J=2 r=16 {'leaf': 157, 'solution': 64} {'call': 261, 'reach_V': 99, 'direct_fwd': 64, 'stall': 98, 'case1_closure': 33, 'case32_leafB': 25, 'case2_Y': 26, 'case30_Uplus': 7, 'case33_Uplus': 3, 'case31_W': 4}
+GENFAIL twist 17 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 17 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 17 2 3 4 IndexError('list assignment index out of range')
+done p=17 k=2 J=3 r=4 {'leaf': 34, 'solution': 8} {'call': 54, 'reach_V': 28, 'direct_fwd': 8, 'stall': 18, 'case2_Y': 11, 'case1_closure': 4, 'case33_Uplus': 1, 'case32_leafB': 1, 'case33_top': 1, 'top_leaf': 1}
+GENFAIL twist 17 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 17 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 17 2 3 6 ValueError('empty range in randrange(1, 1)')
+done p=17 k=2 J=3 r=6 {'leaf': 71, 'solution': 13} {'call': 106, 'reach_V': 54, 'direct_fwd': 13, 'stall': 39, 'case2_Y': 21, 'case1_closure': 10, 'case33_Uplus': 1, 'case32_leafB': 6, 'case33_top': 1, 'top_leaf': 1}
+done p=17 k=2 J=3 r=8 {'leaf': 104, 'solution': 25} {'call': 160, 'reach_V': 74, 'direct_fwd': 25, 'stall': 61, 'case2_Y': 30, 'case1_closure': 17, 'case33_Uplus': 1, 'case32_leafB': 11, 'case33_top': 1, 'top_leaf': 1, 'case33_closure': 1}
+done p=17 k=2 J=3 r=12 {'leaf': 141, 'solution': 33} {'call': 211, 'reach_V': 97, 'direct_fwd': 33, 'stall': 81, 'case2_Y': 34, 'case1_closure': 23, 'case33_Uplus': 3, 'case32_leafB': 19, 'case33_top': 1, 'top_leaf': 1, 'case33_closure': 1}
+done p=17 k=2 J=3 r=16 {'leaf': 178, 'solution': 41} {'call': 260, 'reach_V': 116, 'direct_fwd': 41, 'stall': 103, 'case2_Y': 35, 'case1_closure': 30, 'case33_Uplus': 5, 'case32_leafB': 29, 'case33_top': 2, 'top_leaf': 2, 'case33_closure': 1, 'case30_Uplus': 1}
+GENFAIL twist 17 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 17 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 17 2 4 4 IndexError('list assignment index out of range')
+done p=17 k=2 J=4 r=4 {'solution': 10, 'leaf': 32} {'call': 54, 'direct_fwd': 10, 'reach_V': 27, 'stall': 17, 'case1_closure': 5, 'case2_Y': 8, 'case33_Uplus': 4}
+GENFAIL twist 17 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 17 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 17 2 4 6 ValueError('empty range in randrange(1, 1)')
+done p=17 k=2 J=4 r=6 {'solution': 15, 'leaf': 69} {'call': 101, 'direct_fwd': 15, 'reach_V': 60, 'stall': 26, 'case1_closure': 7, 'case2_Y': 12, 'case33_Uplus': 5, 'case32_leafB': 2}
+GENFAIL twist 17 2 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 17 2 4 8 ValueError('empty range in randrange(1, 1)')
+done p=17 k=2 J=4 r=8 {'solution': 26, 'leaf': 101} {'call': 154, 'direct_fwd': 26, 'reach_V': 88, 'stall': 40, 'case1_closure': 9, 'case2_Y': 19, 'case33_Uplus': 8, 'case32_leafB': 4}
+done p=17 k=2 J=4 r=12 {'solution': 33, 'leaf': 139} {'call': 207, 'direct_fwd': 33, 'reach_V': 113, 'stall': 61, 'case1_closure': 12, 'case2_Y': 22, 'case33_Uplus': 13, 'case32_leafB': 14}
+done p=17 k=2 J=4 r=16 {'solution': 44, 'leaf': 173} {'call': 260, 'direct_fwd': 44, 'reach_V': 135, 'stall': 81, 'case1_closure': 19, 'case2_Y': 25, 'case33_Uplus': 18, 'case32_leafB': 19}
+GENFAIL twist 31 2 2 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 2 2 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 2 2 4 IndexError('list assignment index out of range')
+done p=31 k=2 J=2 r=4 {'leaf': 34, 'solution': 8} {'call': 45, 'reach_V': 29, 'stall': 8, 'case1_closure': 3, 'case2_Y': 3, 'direct_fwd': 8, 'case32_leafB': 2}
+GENFAIL twist 31 2 2 6 ValueError('empty range in randrange(1, 1)')
+done p=31 k=2 J=2 r=6 {'leaf': 64, 'solution': 22} {'call': 95, 'reach_V': 49, 'stall': 24, 'case1_closure': 9, 'case2_Y': 8, 'direct_fwd': 22, 'case32_leafB': 6, 'case30_Uplus': 1}
+done p=31 k=2 J=2 r=8 {'leaf': 102, 'solution': 29} {'call': 148, 'reach_V': 73, 'stall': 46, 'case1_closure': 15, 'case2_Y': 13, 'direct_fwd': 29, 'case32_leafB': 14, 'case30_Uplus': 1, 'case33_Uplus': 3}
+done p=31 k=2 J=2 r=12 {'leaf': 136, 'solution': 40} {'call': 198, 'reach_V': 96, 'stall': 62, 'case1_closure': 24, 'case2_Y': 16, 'direct_fwd': 40, 'case32_leafB': 16, 'case30_Uplus': 1, 'case33_Uplus': 4, 'case31_W': 1}
+done p=31 k=2 J=2 r=16 {'leaf': 170, 'solution': 51} {'call': 248, 'reach_V': 116, 'stall': 81, 'case1_closure': 33, 'case2_Y': 19, 'direct_fwd': 51, 'case32_leafB': 21, 'case30_Uplus': 1, 'case33_Uplus': 4, 'case31_W': 3}
+GENFAIL twist 31 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 2 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 2 3 4 IndexError('list assignment index out of range')
+done p=31 k=2 J=3 r=4 {'leaf': 31, 'solution': 11} {'call': 53, 'reach_V': 21, 'stall': 21, 'case1_closure': 7, 'case2_Y': 8, 'direct_fwd': 11, 'case33_Uplus': 3, 'case32_leafB': 3}
+GENFAIL twist 31 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 31 2 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 31 2 3 6 ValueError('empty range in randrange(1, 1)')
+done p=31 k=2 J=3 r=6 {'leaf': 64, 'solution': 20} {'call': 103, 'reach_V': 46, 'stall': 37, 'case1_closure': 12, 'case2_Y': 15, 'direct_fwd': 20, 'case33_Uplus': 4, 'case32_leafB': 6}
+done p=31 k=2 J=3 r=8 {'leaf': 103, 'solution': 26} {'call': 156, 'reach_V': 69, 'stall': 61, 'case1_closure': 16, 'case2_Y': 23, 'direct_fwd': 26, 'case33_Uplus': 4, 'case32_leafB': 18}
+done p=31 k=2 J=3 r=12 {'leaf': 143, 'solution': 31} {'call': 210, 'reach_V': 94, 'stall': 85, 'case1_closure': 23, 'case2_Y': 28, 'direct_fwd': 31, 'case33_Uplus': 8, 'case32_leafB': 26}
+done p=31 k=2 J=3 r=16 {'leaf': 180, 'solution': 39} {'call': 262, 'reach_V': 116, 'stall': 107, 'case1_closure': 31, 'case2_Y': 32, 'direct_fwd': 39, 'case33_Uplus': 9, 'case32_leafB': 32, 'case31_W': 2, 'case33_top': 1, 'top_leaf': 1}
+GENFAIL twist 31 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 2 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 2 4 4 IndexError('list assignment index out of range')
+done p=31 k=2 J=4 r=4 {'leaf': 38, 'solution': 4} {'call': 47, 'reach_V': 34, 'stall': 9, 'case1_closure': 4, 'case2_Y': 5, 'direct_fwd': 4}
+GENFAIL twist 31 2 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 31 2 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 31 2 4 6 ValueError('empty range in randrange(1, 1)')
+done p=31 k=2 J=4 r=6 {'leaf': 76, 'solution': 8} {'call': 97, 'reach_V': 66, 'stall': 23, 'case1_closure': 7, 'case2_Y': 11, 'direct_fwd': 8, 'case32_leafB': 3, 'case33_Uplus': 2}
+GENFAIL twist 31 2 4 8 ValueError('empty range in randrange(1, 1)')
+done p=31 k=2 J=4 r=8 {'leaf': 112, 'solution': 16} {'call': 150, 'reach_V': 100, 'stall': 34, 'case1_closure': 7, 'case2_Y': 18, 'direct_fwd': 16, 'case32_leafB': 5, 'case33_Uplus': 4}
+done p=31 k=2 J=4 r=12 {'leaf': 154, 'solution': 19} {'call': 204, 'reach_V': 130, 'stall': 55, 'case1_closure': 11, 'case2_Y': 23, 'direct_fwd': 19, 'case32_leafB': 12, 'case33_Uplus': 8, 'case33_closure': 1}
+done p=31 k=2 J=4 r=16 {'leaf': 195, 'solution': 23} {'call': 253, 'reach_V': 161, 'stall': 69, 'case1_closure': 16, 'case2_Y': 27, 'direct_fwd': 23, 'case32_leafB': 17, 'case33_Uplus': 8, 'case33_closure': 1}
+GENFAIL twist 7 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 3 3 4 IndexError('list assignment index out of range')
+done p=7 k=3 J=3 r=4 {'leaf': 33, 'solution': 9} {'call': 50, 'reach_V': 25, 'zero_col': 1, 'stall': 16, 'case1_closure': 4, 'case2_Y': 6, 'direct_fwd': 8, 'case33_Uplus': 2, 'case32_leafB': 3, 'case33_closure': 1}
+GENFAIL twist 7 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 3 3 6 ValueError('empty range in randrange(1, 1)')
+done p=7 k=3 J=3 r=6 {'leaf': 67, 'solution': 17} {'call': 100, 'reach_V': 48, 'zero_col': 1, 'stall': 35, 'case1_closure': 9, 'case2_Y': 12, 'direct_fwd': 16, 'case33_Uplus': 4, 'case32_leafB': 9, 'case33_closure': 1}
+done p=7 k=3 J=3 r=8 {'leaf': 102, 'solution': 27} {'call': 158, 'reach_V': 72, 'zero_col': 1, 'stall': 59, 'case1_closure': 16, 'case2_Y': 20, 'direct_fwd': 26, 'case33_Uplus': 8, 'case32_leafB': 13, 'case33_closure': 1, 'case30_Uplus': 1}
+done p=7 k=3 J=3 r=12 {'leaf': 141, 'solution': 33} {'call': 211, 'reach_V': 97, 'zero_col': 1, 'stall': 81, 'case1_closure': 25, 'case2_Y': 23, 'direct_fwd': 32, 'case33_Uplus': 12, 'case32_leafB': 18, 'case33_closure': 1, 'case30_Uplus': 2}
+done p=7 k=3 J=3 r=16 {'leaf': 180, 'solution': 39} {'call': 263, 'reach_V': 120, 'zero_col': 1, 'stall': 104, 'case1_closure': 36, 'case2_Y': 27, 'direct_fwd': 38, 'case33_Uplus': 15, 'case32_leafB': 23, 'case33_closure': 1, 'case30_Uplus': 2}
+GENFAIL twist 7 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 7 3 4 4 IndexError('list assignment index out of range')
+done p=7 k=3 J=4 r=4 {'solution': 8, 'leaf': 34} {'call': 48, 'direct_fwd': 8, 'reach_V': 26, 'stall': 14, 'case1_closure': 5, 'case2_Y': 5, 'case32_leafB': 3, 'case33_Uplus': 1}
+GENFAIL twist 7 3 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 3 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 3 4 6 ValueError('empty range in randrange(1, 1)')
+done p=7 k=3 J=4 r=6 {'solution': 13, 'leaf': 71} {'call': 101, 'direct_fwd': 13, 'reach_V': 59, 'stall': 29, 'case1_closure': 7, 'case2_Y': 11, 'case32_leafB': 4, 'case33_Uplus': 6, 'case33_closure': 1}
+GENFAIL twist 7 3 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 7 3 4 8 ValueError('empty range in randrange(1, 1)')
+done p=7 k=3 J=4 r=8 {'solution': 20, 'leaf': 107} {'call': 153, 'direct_fwd': 20, 'reach_V': 90, 'stall': 43, 'case1_closure': 11, 'case2_Y': 17, 'case32_leafB': 5, 'case33_Uplus': 9, 'case33_closure': 1}
+done p=7 k=3 J=4 r=12 {'solution': 27, 'leaf': 145} {'call': 204, 'direct_fwd': 27, 'reach_V': 124, 'stall': 53, 'case1_closure': 14, 'case2_Y': 21, 'case32_leafB': 6, 'case33_Uplus': 11, 'case33_closure': 1}
+done p=7 k=3 J=4 r=16 {'solution': 34, 'leaf': 183} {'call': 258, 'direct_fwd': 34, 'reach_V': 150, 'stall': 74, 'case1_closure': 23, 'case2_Y': 27, 'case32_leafB': 9, 'case33_Uplus': 14, 'case33_closure': 1}
+GENFAIL twist 13 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 3 3 4 IndexError('list assignment index out of range')
+done p=13 k=3 J=3 r=4 {'leaf': 33, 'solution': 9} {'call': 48, 'reach_V': 21, 'direct_fwd': 9, 'stall': 18, 'case1_closure': 7, 'case32_leafB': 5, 'case2_Y': 5, 'case33_Uplus': 1}
+GENFAIL twist 13 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 3 3 6 ValueError('empty range in randrange(1, 1)')
+done p=13 k=3 J=3 r=6 {'leaf': 69, 'solution': 15} {'call': 97, 'reach_V': 49, 'direct_fwd': 15, 'stall': 33, 'case1_closure': 9, 'case32_leafB': 11, 'case2_Y': 11, 'case33_Uplus': 2}
+done p=13 k=3 J=3 r=8 {'leaf': 110, 'solution': 19} {'call': 154, 'reach_V': 77, 'direct_fwd': 19, 'stall': 58, 'case1_closure': 18, 'case32_leafB': 15, 'case2_Y': 18, 'case33_Uplus': 7}
+done p=13 k=3 J=3 r=12 {'leaf': 148, 'solution': 26} {'call': 206, 'reach_V': 97, 'direct_fwd': 26, 'stall': 83, 'case1_closure': 29, 'case32_leafB': 22, 'case2_Y': 23, 'case33_Uplus': 9}
+done p=13 k=3 J=3 r=16 {'leaf': 186, 'solution': 33} {'call': 260, 'reach_V': 118, 'direct_fwd': 33, 'stall': 109, 'case1_closure': 39, 'case32_leafB': 29, 'case2_Y': 27, 'case33_Uplus': 12, 'case31_W': 1, 'case30_Uplus': 1}
+GENFAIL twist 13 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 13 3 4 4 IndexError('list assignment index out of range')
+done p=13 k=3 J=4 r=4 {'leaf': 40, 'solution': 2} {'call': 51, 'reach_V': 35, 'direct_fwd': 2, 'stall': 14, 'case1_closure': 4, 'case32_leafB': 1, 'case33_Uplus': 3, 'case2_Y': 6}
+GENFAIL twist 13 3 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 3 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 13 3 4 6 IndexError('list assignment index out of range')
+done p=13 k=3 J=4 r=6 {'leaf': 81, 'solution': 3} {'call': 102, 'reach_V': 71, 'direct_fwd': 3, 'stall': 28, 'case1_closure': 9, 'case32_leafB': 1, 'case33_Uplus': 6, 'case2_Y': 12}
+GENFAIL twist 13 3 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 3 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 13 3 4 8 ValueError('empty range in randrange(1, 1)')
+done p=13 k=3 J=4 r=8 {'leaf': 120, 'solution': 6} {'call': 150, 'reach_V': 104, 'direct_fwd': 6, 'stall': 40, 'case1_closure': 10, 'case32_leafB': 6, 'case33_Uplus': 8, 'case2_Y': 16}
+done p=13 k=3 J=4 r=12 {'leaf': 163, 'solution': 8} {'call': 203, 'reach_V': 138, 'direct_fwd': 8, 'stall': 57, 'case1_closure': 15, 'case32_leafB': 9, 'case33_Uplus': 12, 'case2_Y': 20, 'case33_top': 1, 'top_leaf': 1}
+done p=13 k=3 J=4 r=16 {'leaf': 204, 'solution': 12} {'call': 254, 'reach_V': 164, 'direct_fwd': 12, 'stall': 78, 'case1_closure': 21, 'case32_leafB': 17, 'case33_Uplus': 15, 'case2_Y': 22, 'case33_top': 2, 'top_leaf': 2, 'case30_Uplus': 1}
+GENFAIL twist 19 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 19 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 19 3 3 4 IndexError('list assignment index out of range')
+done p=19 k=3 J=3 r=4 {'leaf': 34, 'solution': 8} {'call': 47, 'reach_V': 25, 'stall': 14, 'case1_closure': 4, 'direct_fwd': 8, 'case32_leafB': 5, 'case2_Y': 2, 'case33_Uplus': 2, 'case30_Uplus': 1}
+GENFAIL twist 19 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 19 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 19 3 3 6 ValueError('empty range in randrange(1, 1)')
+done p=19 k=3 J=3 r=6 {'leaf': 73, 'solution': 11} {'call': 99, 'reach_V': 54, 'stall': 34, 'case1_closure': 9, 'direct_fwd': 11, 'case32_leafB': 10, 'case2_Y': 9, 'case33_Uplus': 4, 'case30_Uplus': 2}
+done p=19 k=3 J=3 r=8 {'leaf': 108, 'solution': 21} {'call': 158, 'reach_V': 75, 'stall': 62, 'case1_closure': 17, 'direct_fwd': 21, 'case32_leafB': 16, 'case2_Y': 18, 'case33_Uplus': 9, 'case30_Uplus': 2}
+done p=19 k=3 J=3 r=12 {'leaf': 148, 'solution': 26} {'call': 208, 'reach_V': 101, 'stall': 81, 'case1_closure': 25, 'direct_fwd': 26, 'case32_leafB': 21, 'case2_Y': 23, 'case33_Uplus': 9, 'case30_Uplus': 2, 'case33_top': 1, 'top_leaf': 1}
+done p=19 k=3 J=3 r=16 {'leaf': 183, 'solution': 36} {'call': 259, 'reach_V': 116, 'stall': 107, 'case1_closure': 34, 'direct_fwd': 36, 'case32_leafB': 30, 'case2_Y': 26, 'case33_Uplus': 11, 'case30_Uplus': 3, 'case33_top': 2, 'top_leaf': 2, 'case33_closure': 1}
+GENFAIL twist 19 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 19 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 19 3 4 4 IndexError('list assignment index out of range')
+done p=19 k=3 J=4 r=4 {'leaf': 37, 'solution': 5} {'call': 50, 'reach_V': 33, 'direct_fwd': 5, 'stall': 12, 'case1_closure': 4, 'case2_Y': 6, 'case33_Uplus': 2}
+GENFAIL twist 19 3 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 19 3 4 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 19 3 4 6 IndexError('list assignment index out of range')
+done p=19 k=3 J=4 r=6 {'leaf': 76, 'solution': 8} {'call': 96, 'reach_V': 67, 'direct_fwd': 8, 'stall': 21, 'case1_closure': 8, 'case2_Y': 9, 'case33_Uplus': 3, 'case32_leafB': 1}
+GENFAIL twist 19 3 4 8 ValueError('empty range in randrange(1, 1)')
+done p=19 k=3 J=4 r=8 {'leaf': 114, 'solution': 14} {'call': 148, 'reach_V': 96, 'direct_fwd': 14, 'stall': 38, 'case1_closure': 14, 'case2_Y': 17, 'case33_Uplus': 3, 'case32_leafB': 4}
+done p=19 k=3 J=4 r=12 {'leaf': 155, 'solution': 18} {'call': 199, 'reach_V': 128, 'direct_fwd': 18, 'stall': 53, 'case1_closure': 17, 'case2_Y': 20, 'case33_Uplus': 6, 'case32_leafB': 9, 'case33_top': 1, 'top_leaf': 1}
+done p=19 k=3 J=4 r=16 {'leaf': 194, 'solution': 24} {'call': 249, 'reach_V': 153, 'direct_fwd': 24, 'stall': 72, 'case1_closure': 27, 'case2_Y': 23, 'case33_Uplus': 8, 'case32_leafB': 13, 'case33_top': 1, 'top_leaf': 1}
+GENFAIL twist 31 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 3 3 4 IndexError('list assignment index out of range')
+done p=31 k=3 J=3 r=4 {'leaf': 34, 'solution': 8} {'call': 51, 'reach_V': 25, 'stall': 18, 'case1_closure': 8, 'case2_Y': 9, 'direct_fwd': 8, 'case32_leafB': 1}
+GENFAIL twist 31 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 31 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 31 3 3 6 ValueError('empty range in randrange(1, 1)')
+done p=31 k=3 J=3 r=6 {'leaf': 68, 'solution': 16} {'call': 98, 'reach_V': 49, 'stall': 33, 'case1_closure': 13, 'case2_Y': 13, 'direct_fwd': 16, 'case32_leafB': 5, 'case33_Uplus': 1, 'case33_top': 1, 'top_leaf': 1}
+done p=31 k=3 J=3 r=8 {'leaf': 109, 'solution': 20} {'call': 153, 'reach_V': 77, 'stall': 56, 'case1_closure': 20, 'case2_Y': 22, 'direct_fwd': 20, 'case32_leafB': 11, 'case33_Uplus': 2, 'case33_top': 1, 'top_leaf': 1}
+done p=31 k=3 J=3 r=12 {'leaf': 149, 'solution': 25} {'call': 206, 'reach_V': 100, 'stall': 81, 'case1_closure': 27, 'case2_Y': 27, 'direct_fwd': 25, 'case32_leafB': 19, 'case33_Uplus': 5, 'case33_top': 1, 'top_leaf': 1, 'case33_closure': 2}
+done p=31 k=3 J=3 r=16 {'leaf': 188, 'solution': 31} {'call': 261, 'reach_V': 121, 'stall': 109, 'case1_closure': 34, 'case2_Y': 34, 'direct_fwd': 31, 'case32_leafB': 27, 'case33_Uplus': 8, 'case33_top': 1, 'top_leaf': 1, 'case33_closure': 5}
+GENFAIL twist 31 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 31 3 4 4 IndexError('list assignment index out of range')
+done p=31 k=3 J=4 r=4 {'leaf': 40, 'solution': 2} {'call': 46, 'reach_V': 35, 'stall': 9, 'case1_closure': 4, 'direct_fwd': 2, 'case2_Y': 4, 'case33_top': 1, 'top_leaf': 1}
+GENFAIL twist 31 3 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 31 3 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 31 3 4 6 ValueError('empty range in randrange(1, 1)')
+done p=31 k=3 J=4 r=6 {'leaf': 77, 'solution': 7} {'call': 93, 'reach_V': 67, 'stall': 19, 'case1_closure': 8, 'direct_fwd': 7, 'case2_Y': 6, 'case33_top': 1, 'top_leaf': 1, 'case33_Uplus': 3, 'case32_leafB': 1}
+GENFAIL twist 31 3 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 31 3 4 8 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 31 3 4 8 ValueError('empty range in randrange(1, 1)')
+done p=31 k=3 J=4 r=8 {'leaf': 115, 'solution': 11} {'call': 143, 'reach_V': 100, 'stall': 32, 'case1_closure': 10, 'direct_fwd': 11, 'case2_Y': 12, 'case33_top': 1, 'top_leaf': 1, 'case33_Uplus': 5, 'case32_leafB': 4}
+done p=31 k=3 J=4 r=12 {'leaf': 157, 'solution': 14} {'call': 191, 'reach_V': 130, 'stall': 47, 'case1_closure': 16, 'direct_fwd': 14, 'case2_Y': 13, 'case33_top': 1, 'top_leaf': 1, 'case33_Uplus': 7, 'case32_leafB': 10}
+done p=31 k=3 J=4 r=16 {'leaf': 197, 'solution': 19} {'call': 244, 'reach_V': 152, 'stall': 73, 'case1_closure': 24, 'direct_fwd': 19, 'case2_Y': 16, 'case33_top': 1, 'top_leaf': 1, 'case33_Uplus': 12, 'case32_leafB': 19, 'case33_closure': 1}
+GENFAIL twist 37 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 37 3 3 4 IndexError('list assignment index out of range')
+GENFAIL twist 37 3 3 4 IndexError('list assignment index out of range')
+done p=37 k=3 J=3 r=4 {'leaf': 38, 'solution': 4} {'call': 51, 'reach_V': 25, 'direct_fwd': 4, 'stall': 22, 'case1_closure': 7, 'case32_leafB': 5, 'case33_Uplus': 4, 'case2_Y': 5, 'case33_closure': 1}
+GENFAIL twist 37 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 37 3 3 6 ValueError('empty range in randrange(1, 1)')
+GENFAIL twist 37 3 3 6 ValueError('empty range in randrange(1, 1)')
+done p=37 k=3 J=3 r=6 {'leaf': 76, 'solution': 8} {'call': 101, 'reach_V': 49, 'direct_fwd': 8, 'stall': 44, 'case1_closure': 14, 'case32_leafB': 12, 'case33_Uplus': 4, 'case2_Y': 12, 'case33_closure': 1, 'case30_Uplus': 1}
+done p=37 k=3 J=3 r=8 {'leaf': 117, 'solution': 12} {'call': 158, 'reach_V': 79, 'direct_fwd': 12, 'stall': 67, 'case1_closure': 19, 'case32_leafB': 18, 'case33_Uplus': 4, 'case2_Y': 23, 'case33_closure': 1, 'case30_Uplus': 2}
+done p=37 k=3 J=3 r=12 {'leaf': 153, 'solution': 21} {'call': 209, 'reach_V': 99, 'direct_fwd': 21, 'stall': 89, 'case1_closure': 28, 'case32_leafB': 24, 'case33_Uplus': 5, 'case2_Y': 28, 'case33_closure': 1, 'case30_Uplus': 2, 'case33_top': 1, 'top_leaf': 1}
+done p=37 k=3 J=3 r=16 {'leaf': 192, 'solution': 27} {'call': 258, 'reach_V': 123, 'direct_fwd': 27, 'stall': 108, 'case1_closure': 36, 'case32_leafB': 31, 'case33_Uplus': 6, 'case2_Y': 30, 'case33_closure': 1, 'case30_Uplus': 3, 'case33_top': 1, 'top_leaf': 1}
+GENFAIL twist 37 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 37 3 4 4 IndexError('list assignment index out of range')
+GENFAIL twist 37 3 4 4 IndexError('list assignment index out of range')
+done p=37 k=3 J=4 r=4 {'leaf': 40, 'solution': 2} {'call': 52, 'reach_V': 35, 'stall': 15, 'case1_closure': 5, 'case33_Uplus': 4, 'case2_Y': 6, 'direct_fwd': 2}
+GENFAIL twist 37 3 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 37 3 4 6 IndexError('list assignment index out of range')
+GENFAIL twist 37 3 4 6 ValueError('empty range in randrange(1, 1)')
+done p=37 k=3 J=4 r=6 {'leaf': 76, 'solution': 8} {'call': 102, 'reach_V': 65, 'stall': 29, 'case1_closure': 9, 'case33_Uplus': 6, 'case2_Y': 12, 'direct_fwd': 8, 'case33_top': 1, 'top_leaf': 1, 'case32_leafB': 1}
+GENFAIL twist 37 3 4 8 ValueError('empty range in randrange(1, 1)')
+done p=37 k=3 J=4 r=8 {'leaf': 111, 'solution': 17} {'call': 159, 'reach_V': 95, 'stall': 47, 'case1_closure': 12, 'case33_Uplus': 9, 'case2_Y': 22, 'direct_fwd': 17, 'case33_top': 1, 'top_leaf': 1, 'case32_leafB': 3}
+done p=37 k=3 J=4 r=12 {'leaf': 151, 'solution': 22} {'call': 215, 'reach_V': 125, 'stall': 68, 'case1_closure': 16, 'case33_Uplus': 16, 'case2_Y': 26, 'direct_fwd': 22, 'case33_top': 1, 'top_leaf': 1, 'case32_leafB': 9}
+done p=37 k=3 J=4 r=16 {'leaf': 192, 'solution': 26} {'call': 264, 'reach_V': 152, 'stall': 86, 'case1_closure': 24, 'case33_Uplus': 17, 'case2_Y': 29, 'direct_fwd': 26, 'case33_top': 1, 'top_leaf': 1, 'case32_leafB': 15}
+TOTAL smallp 2 banks 6784 {'solution': 1330, 'leaf': 5454} fails 0 time 1193s
+BRANCHES {'call': 7845, 'direct_fwd': 1312, 'reach_V': 3887, 'stall': 2628, 'case1_closure': 916, 'case2_Y': 686, 'case32_leafB': 610, 'case33_closure': 24, 'case33_Uplus': 312, 'zero_col': 18, 'case30_Uplus': 38, 'case31_W': 25, 'case33_top': 17, 'top_leaf': 17}

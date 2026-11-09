@@ -1,0 +1,19 @@
+p_W(E,kappa): {(2, 3): 202, (3, 3): 2710, (2, 4): 2033, (4, 4): 585233, (5, 5): 156150026, (6, 6): 54417225638, (7, 7): 24415971327519, (9, 9): 9606056609418123274}
+p=11: kappa_d=[2, 1, 2, 5, 2, 1, 2, 1] table combined log2Q=202.1 (recomputed 202.1); triangular preview 202.1
+    variant A: log2Q=202.1  kinds=['S1', 'lin', 'S1', 'S1', 'S1', 'lin', 'S1', 'lin']  M=[419904, 17, 202500, '4.77e+37', 40000, 7, 1024, 2]  bank-abort sum=0.00e+00
+    variant B: log2Q=202.1  kinds=['S1', 'lin', 'S1', 'S1', 'S1', 'lin', 'S1', 'lin']  M=[419904, 17, 202500, '4.77e+37', 40000, 7, 1024, 2]  bank-abort sum=0.00e+00
+p=1031: kappa_d=[2, 1, 2, 5, 2, 1, 2, 1] table combined log2Q=167.3 (recomputed 167.3); triangular preview 164.0
+    variant A: log2Q=167.3  kinds=['S2', 'lin', 'S2', 'S1', 'S2', 'lin', 'S2', 'lin']  M=[324, 17, 225, '4.77e+37', 100, 7, 16, 2]  bank-abort sum=0.00e+00
+    variant B: log2Q=167.3  kinds=['S2', 'lin', 'S2', 'S1', 'S2', 'lin', 'S2', 'lin']  M=[324, 17, 225, '4.77e+37', 100, 7, 16, 2]  bank-abort sum=0.00e+00
+p=5281: kappa_d=[2, 3, 4, 5, 6, 1, 8, 3] table combined log2Q=852.3 (recomputed 852.3); triangular preview 851.4
+    variant A: log2Q=852.3  kinds=['S2', 'S1', 'S1', 'S1', 'S1', 'lin', 'S1', 'S1']  M=[324, '1.76e+10', '8.92e+24', '4.77e+37', '1.04e+53', 7, '2.58e+120', 46656]  bank-abort sum=0.00e+00
+    variant B: log2Q=852.3  kinds=['S2', 'S1', 'S1', 'S1', 'S1', 'lin', 'S1', 'S1']  M=[324, '1.76e+10', '8.92e+24', '4.77e+37', '1.04e+53', 7, '2.58e+120', 46656]  bank-abort sum=0.00e+00
+p=2^31-1: kappa_d=[2, 3, 2, 1, 6, 7, 2, 9] table combined log2Q=944.9 (recomputed 944.9); triangular preview 940.5
+    variant A: log2Q=940.3  kinds=['TC(E=3)', 'TC(E=3)', 'S2', 'lin', 'S1', 'S1', 'S2', 'S1']  M=[91, 81, 225, 13, '1.04e+53', '9.73e+70', 16, '1.77e+148']  bank-abort sum=9.01e-05
+    variant B: log2Q=934.2  kinds=['TC(E=8)', 'TC(E=8)', 'TC(E=8)', 'lin', 'S1', 'S1', 'S2', 'S1']  M=[34, 31, 24, 13, '1.04e+53', '9.73e+70', 16, '1.77e+148']  bank-abort sum=8.23e-04
+p=2^61-1: kappa_d=[2, 3, 2, 5, 6, 7, 2, 9] table combined log2Q=555.4 (recomputed 555.4); triangular preview 542.0
+    variant A: log2Q=533.4  kinds=['TC(E=3)', 'TC(E=3)', 'TC(E=3)', 'TC(E=5)', 'TC(E=6)', 'TC(E=7)', 'TC(E=3)', 'S1']  M=[91, 81, 64, 28, 16, 8, 7, '1.77e+148']  bank-abort sum=2.49e-07
+    variant B: log2Q=528.1  kinds=['TC(E=8)', 'TC(E=8)', 'TC(E=8)', 'TC(E=8)', 'TC(E=7)', 'TC(E=7)', 'TC(E=4)', 'S1']  M=[34, 31, 24, 20, 15, 8, 5, '1.77e+148']  bank-abort sum=7.97e-09
+p=2^127-1: kappa_d=[2, 3, 2, 1, 6, 7, 2, 9] table combined log2Q=61.5 (recomputed 61.5); triangular preview 48.3
+    variant A: log2Q=41.4  kinds=['TC(E=3)', 'TC(E=3)', 'TC(E=3)', 'lin', 'TC(E=6)', 'TC(E=7)', 'TC(E=3)', 'TC(E=9)']  M=[91, 81, 64, 13, 16, 8, 7, 3]  bank-abort sum=2.68e-26
+    variant B: log2Q=39.2  kinds=['TC(E=8)', 'TC(E=8)', 'TC(E=8)', 'lin', 'TC(E=7)', 'TC(E=7)', 'TC(E=4)', 'S2']  M=[34, 31, 24, 13, 15, 8, 5, 18]  bank-abort sum=7.01e-29

@@ -1,0 +1,58 @@
+## 2. Exact circular submodule, without a PID assumption
+
+K is the real cyclic degree-ell field of conductor p, sigma induced by
+zeta_p->zeta_p^g. U=O_K^*/{+1,-1}, R=Z[zeta], with zeta acting as sigma.
+U is invertible rank one over the Dedekind ring R, not assumed free.
+The norm operator kills both U and Cl(K). For ANALYSIS only, set
+
+    alpha=Norm_(Q(zeta_p)/K)(1-zeta_p),
+    c=Norm_(Q(zeta_p)^+/K)
+       [zeta_p^((1-g)/2)(1-zeta_p^g)/(1-zeta_p)],
+    delta=c²=sigma(alpha)/alpha,   C=R*c.                 (1)
+
+The half exponent is modulo p. No degree-(p-1) computation is authorized.
+For j=1,...,ell-1 define
+
+    T_j(w)=sum_(t=0)^(ell-1) zeta^(jt) log|sigma^t(w)|.
+
+The same Fourier expansion as in the cubic note gives
+
+    T_j(c)=(1-zeta^(-j))*tau(chi^j)*L(1,bar chi^j)/2.      (2)
+
+All modes are nonzero. Circulant cofactors give
+
+    R_C=(1/ell)*product_(j!=0)|T_j(c)|
+       =p^((ell-1)/2)*product_(j!=0)L(1,chi^j)/2^(ell-1)
+       =h_K R_U.
+
+Thus C is free rank one over R and[U:C]=h_K. The exact SAME-action identity
+is
+
+    C=Fitt_R(Cl(K))*U.                                   (3)
+
+For every rational prime q not dividing2ell, All2015v2 Theorem1.2(d=1)
+gives equality of character-component orders, hence local lengths. At
+q=p its ramification hypothesis holds because e=ell<p-1; elsewhere e=1.
+At q=ell, R has only one prime, so the scalar index fixes its length.
+
+At q=2 use the ACTUAL intermediate formula in Greither1992, proof of
+Corollary4.15, printed p496. K is unramified at2 and its degree ell is
+odd, so the Sinnott correction lattices agree over Z2. With e' the
+nontrivial-character idempotent, the formula is
+
+    [U_2/C_small,2]=[Cl(K)_2]+[e' F2[C_ell]]              (4)
+
+in the Grothendieck group of finite Z2[C_ell]-modules. Prime-conductor
+norm distribution gives C_small=2C modulo signs. Since C is free rank
+one, C/2C=R/2R=e'F2[C_ell]. Subtract this term using the exact sequence
+for C/2C inside U/2C. Equality of lengths follows at EVERY prime of R
+above2, even when2 splits into several primes. No identification with
+Greither's larger circular-unit convention is imported. Over a DVR an
+invertible rank-one module with finite quotient satisfies
+C=Fitt(U/C)U; the local identities prove(3) globally.
+
+Sources: [All v2, Theorem1.2](https://arxiv.org/abs/1502.01578) and
+[Greither1992, pp495--497](https://www.numdam.org/item/10.5802/aif.1299.pdf).
+Independent source review ACCEPTED; this is equality of Fitting ideals,
+not an isomorphism of class modules or a free-generator algorithm.
+

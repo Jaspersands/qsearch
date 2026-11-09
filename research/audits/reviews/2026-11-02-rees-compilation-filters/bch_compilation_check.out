@@ -1,0 +1,36 @@
+== (i) bracket calls of bch_via_ode versus (c-1)c(c+1)(c+2)/6
+ c= 1 p= 2: calls=[0] formula=0 EXACT
+ c= 2 p= 3: calls=[4] formula=4 EXACT
+ c= 3 p= 5: calls=[20] formula=20 EXACT
+ c= 4 p= 5: calls=[60] formula=60 EXACT
+ c= 5 p= 7: calls=[140] formula=140 EXACT
+ c= 6 p= 7: calls=[280] formula=280 EXACT
+ c= 7 p=11: calls=[504] formula=504 EXACT
+ c= 8 p=11: calls=[840] formula=840 EXACT
+ c= 9 p=11: calls=[1320] formula=1320 EXACT
+ c=10 p=11: calls=[1980] formula=1980 EXACT
+ c=11 p=13: calls=[2860] formula=2860 EXACT
+ c=12 p=13: calls=[4004] formula=4004 EXACT
+== (i) correctness: bch_via_ode == log(exp X exp Y) in n_N(F_p), N=c+1<=p
+ c=1 p=2: 60 random pairs agree (boundary p=c+1: True)
+ c=2 p=3: 60 random pairs agree (boundary p=c+1: True)
+ c=2 p=5: 60 random pairs agree (boundary p=c+1: False)
+ c=3 p=5: 60 random pairs agree (boundary p=c+1: False)
+ c=4 p=5: 60 random pairs agree (boundary p=c+1: True)
+ c=4 p=7: 60 random pairs agree (boundary p=c+1: False)
+ c=5 p=7: 15 random pairs agree (boundary p=c+1: False)
+ c=6 p=7: 15 random pairs agree (boundary p=c+1: True)
+ c=6 p=11: 15 random pairs agree (boundary p=c+1: False)
+ c=7 p=11: 15 random pairs agree (boundary p=c+1: False)
+ control: class-3 algebra evaluated with c=2 is wrong on 30/40 pairs (must be >0)
+== (ii) clean |u>|v> -> |u>|u*v> by two XOR evaluators (4 BCH passes)
+ n_3(F_3), all 729 pairs: scratch cleared, passes=[4] (each BCH pass = 4 brackets)
+ n_3(F_5), all 15625 pairs: scratch cleared, passes=[4] (each BCH pass = 4 brackets)
+ n_4(F_5), sampled 3000 pairs: scratch cleared, passes=[4] (each BCH pass = 20 brackets)
+== artifact rees_uniform_instrument.json: per-stage bracket accounting
+ profile (4,) p=2: brackets=0 = sum_d passes_d*B(d); passes*B(c)=0 (equal)
+   (iv) arities []: 2+sum(M_d-1)=1 matches artifact
+ profile (6, 3, 1) p=65537: brackets=28160 = sum_d passes_d*B(d); passes*B(c)=38400 (DIFFERENT: theorem (i) reads B(c), table uses B(d))
+   (iv) arities [2, 16]: 2+sum(M_d-1)=18 matches artifact
+ profile (13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1) p=170141183460469231731687303715884105727: brackets=2233873424046043432516608 = sum_d passes_d*B(d); passes*B(c)=2315052850391155087589376 (DIFFERENT: theorem (i) reads B(c), table uses B(d))
+   (iv) arities [12, 3, 16, 165, 36, 259, 288, 9, 100, 231, 144]: 2+sum(M_d-1)=1254 matches artifact

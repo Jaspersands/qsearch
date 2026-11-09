@@ -1,0 +1,34 @@
+{
+  "scope": "one exact supplied-design control, not asymptotic execution",
+  "field": "Q(zeta_8)",
+  "n": 4,
+  "Q": 3,
+  "R": 2,
+  "J": 3,
+  "measurements": [
+    "x0+x1",
+    "x2+x3"
+  ],
+  "direct_H": "(-1/18*zeta8^2 + 1/18*zeta8)*T^6 + (-1/18*zeta8^2 + 13/18*zeta8 - 1)*T^5 + (-163/36*zeta8^2 + 271/36*zeta8 - 3/2)*T^4 + (14/9*zeta8^2 + 5*zeta8 + 80/9)*T^3 + (-209/36*zeta8^2 + 53/36*zeta8 - 1267/18)*T^2 + (-7*zeta8^2 + 28*zeta8 + 26/3)*T - zeta8^2 + 7*zeta8 + 18",
+  "H0": "-zeta8^2 + 7*zeta8 + 18",
+  "jets": [
+    "(-1069/36*zeta8^2 + 2509/36*zeta8 - 1129/18)*z^2 + (-98/3*zeta8^2 + 80*zeta8 - 1048/9)*z - 152/9*zeta8^2 + 448/9*zeta8 - 112/3",
+    "(-1475/12*zeta8^2 + 1133/4*zeta8 - 2395/18)*z^2 + (-1544/9*zeta8^2 + 3629/9*zeta8 - 2648/9)*z - 932/9*zeta8^2 + 256*zeta8 - 2080/9",
+    "(-11477/36*zeta8^2 + 25757/36*zeta8 - 6145/18)*z^2 + (-1777/3*zeta8^2 + 4075/3*zeta8 - 2222/3)*z - 453*zeta8^2 + 1065*zeta8 - 714"
+  ],
+  "design_kernel_verified": true,
+  "all_jets_match": true,
+  "hermite_full_polynomial_matches": true,
+  "wrong_x_dependent_correction_rejected": true,
+  "dropped_fixed_bits_rejected": true,
+  "wrong_correction_jets": [
+    "(-541/18*zeta8^2 + 197/3*zeta8 - 1993/36)*z^2 + (-286/9*zeta8^2 + 767/9*zeta8 - 380/3)*z - 152/9*zeta8^2 + 448/9*zeta8 - 112/3",
+    "(-371/3*zeta8^2 + 9787/36*zeta8 - 2087/18)*z^2 + (-518/3*zeta8^2 + 3563/9*zeta8 - 281)*z - 932/9*zeta8^2 + 256*zeta8 - 2080/9",
+    "(-11065/36*zeta8^2 + 22729/36*zeta8 - 815/3)*z^2 + (-1763/3*zeta8^2 + 3883/3*zeta8 - 2027/3)*z - 453*zeta8^2 + 1065*zeta8 - 714"
+  ],
+  "wrong_restriction_jets": [
+    "(-548/9*zeta8^2 + 164*zeta8 - 76)*z^2 + (-48*zeta8^2 + 1240/9*zeta8 - 160)*z - 152/9*zeta8^2 + 448/9*zeta8 - 112/3",
+    "(-707/3*zeta8^2 + 5071/9*zeta8 - 182)*z^2 + (-2140/9*zeta8^2 + 1810/3*zeta8 - 1160/3)*z - 932/9*zeta8^2 + 256*zeta8 - 2080/9",
+    "(-5680/9*zeta8^2 + 12596/9*zeta8 - 490)*z^2 + (-800*zeta8^2 + 5696/3*zeta8 - 2854/3)*z - 453*zeta8^2 + 1065*zeta8 - 714"
+  ]
+}

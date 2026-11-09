@@ -1,0 +1,269 @@
+# correlators
+{'name': 'correlators', 'url': 'https://arxiv.org/pdf/solv-int/9708007', 'sha256': '30552a5894371efa0a3c5f8685f97401da0297b5b8e67beb6eb4d755d67cad42'}
+
+Original extracted-text lines263-290:
+                                                   5
+ however, to extremely tedious calculations, and it is the aim of the present paper to
+simplify the derivation using the method of generating functions. Still, one simple
+observation can be made right now: the correlator C(U, W, V) is a polynomial in
+λ(u), λ(v), λ(w) with the coeffitients rational in u ∈ U, v ∈ V, w ∈ W.
+    It is important to stress, following [7], that for the derivation of the formulas for
+C(U, W, V) the concrete form (2.12) of the function λ(u) is not important, it can
+be considered as a formal parameter. All what matters is analyticity of λ(u) at the
+points of U ∪ V ∪ W and the relations (2.9), (2.10) and (2.11).
+    We conclude this list of known results with an important determinant formula
+for the norm of the Bethe eigenfunction.
+Theorem 2 Let V = {v1 , . . . , vN } and vj satisfy the Bethe equations (2.15). Then
+
+                                hV | Vi = (−1)N det M                             (2.22)
+
+where the matrix M is given by
+                                                X        2
+                           Mjj = ∂vj λ(vj ) +                   2
+                                                                  ,              (2.23a)
+                                                k6=j (vj − vk )
+
+
+                                         2
+                           Mjk = −               ,        j 6= k                 (2.23b)
+                                     (vj − vk )2
+
+
+    The formula (2.22) was derived first by Richardson [11] for a model which can
+Original extracted-text lines627-678:
+   5. Richardson’s determinant formula
+    For the rest of this paper we consider only the case W = ∅. To prove the Theorem
+2, we derive first a recurrence relation for the correlators C(U, ∅, V) = hU | Vi.
+    Note the following property of the function Λ
+                                         X X                    Λ({x, y})
+                    Λ(X ∪ Y) =                           Q             Q                                         (5.1)
+                                         x∈X y∈Y             (x − x′ )   (y − y ′ )
+                                                      x′ 6=x                 y ′ 6=y
+
+
+which holds for X ∩ Y = ∅ and can be deduced easily from the definition (3.1) of Λ.
+    Using (5.1) one can rewrite the Λ-representation (3.7) for hU | Vi as a polynomial
+in the two-point correlators Λ({u, v}) with the coefficients rational in u, v. Let us
+denote the polynomial in question as C(U, V; ℓ) considering ℓ(u, v) ≡ Λ({u, v}) as a
+functional parameter:
+                            hU | Vi = C(U, V; Λ({u, v})).
+   Richardson [11] has found an alternative description of the function C(U, V; ℓ).
+
+Theorem 4 The function C(U, V; ℓ) possesses the following properties:
+
+  1. C(U, V; ℓ) is a polynomial in ℓ(u, v), u ∈ U, v ∈ V.
+
+  2. Each of the ℓ(u, v) enters C(U, V; ℓ) linearly.
+
+  3. The polynomial C(U, V; ℓ) has no free term, that is
+
+                                                  C(U, V; 0) = 0.
+
+
+                                                      12
+   4. Recurrence relation. Let Ue = U ∪ {ue} and Ve = V ∪ {ve}. Then the coefficient
+                       e V;
+     at ℓ(ue, ve) in C(U,                           e where
+                          e ℓ) is equal to −C(U, V; ℓ)
+
+
+                                                e                                       2
+                                                ℓ(u, v) := ℓ(u, v) +                              .                     (5.2)
+                                                                                 (u − ue)(v − ve)
+
+  5. Initial condition
+                                                        C({u}, {v}; ℓ) = ℓ(u, v).
+
+
+    Obviously, the properties 1–5, if true, characterize the function C(U, V; ℓ) uniquely.
+    Richardson himself has proved the above theorem by a straightforward calcu-
+lation for a very degenerate case of Gaudin model. Our proof, valid for general
+Gaudin model, is based on the Λ-representation for hU | Vi and is much simpler due
+to using the machinery of generating functions.
+    The statements 1, 2 and 3 of the Theorem follow directly from the Λ-representation
+(3.7) and (5.1), the statement 5 follows from (2.21) and (3.2). The remaining state-
+ment 4 (recurrence relation), in principle, can also be derived directly from the
+Original extracted-text lines782-818:
+
+Theorem 5 (Richardson) Let us fix an ordering of the sets U = {u1 , . . . , uN } and
+V = {v1 , . . . , vN }. The function C(U, V; ℓ) can be expressed as the sum of N! deter-
+minants                                            X
+                               (−1)N C(U, V; ℓ) =      det Mσ                      (5.9)
+                                                                                σ∈SN
+
+
+
+                                                                         14
+ where the sum is taken over all permutations σ of indices {1, . . . , N}, and the ma-
+trices Mσ are defined as
+                                            X
+                 Mσjj := ℓ(uj , vσj ) + 2             (uj − uj ′ )−1 (vσj − vσj′ )−1   (5.10)
+                                            j ′ 6=j
+
+
+                  Mσjk := −2(uj − uk )−1 (vσj − vσk )−1 ,                  j 6= k      (5.11)
+
+
+
+    Proof. It is easy to verify (see [11]) that the right-hand-side of (5.9) satisfies
+the same conditions 1–4 of the Theorem 1 which determine uniquely C(U, V; ℓ). The
+theorem 2 is obtained now as a simple corollary. Indeed, if U = V and the parameters
+vk satisfy Bethe equations (2.15) then in the sum (5.9) only the term corresponding
+to the identical permutation is non-zero, and the formula for the norm of Bethe
+function simplifies to (2.22). For the details see again [11].
+    For a completely different proof of the formula (2.22) based on the semiclassical
+expansion of the solutions to the Knizhnik-Zamolodchikov equation, see [10].
+
+
+   6. Discussion
+    On a simple example of the Gaudin model we have demonstrated that the calcu-
+lation of polynomial correlators simplifies drastically when one makes use of expo-
+nential generating functions. An intriguing and so far open question is if a similar
+simplification is possible in case of XXX or XXZ magnetic chains, when the Lie
+algebra (2.9) is replaced by the yangian Y[sl2 ] or, respectively, quantum Lie algebra
+# gaudin
+{'name': 'gaudin', 'url': 'https://arxiv.org/pdf/1501.05827', 'sha256': '431bfeae878cc93e62116ed2d176ddd4097607b34ef0efb52b343ceb03f68d36'}
+
+Original extracted-text lines574-612:
+                                           a=1                                   which is the permanent of an (N ×N ) matrix with matrix
+                                                                                 elements given by Xia α . This is a formula independent
+                                                                                 of the integrability or the explicit expression for X and
+which is an uncorrelated wavefunction and an eigenstate                          is simply a result of the structure of the wavefunction.
+in the uncoupled limit (g = 0). The Bethe Ansatz state                           However, by imposing the Gaudin algebra on the matrix
+                                                                                                                                       8
+
+                                                                       point of view as the eigenvalue-based variables are free of
+            1.0
+                                                                       singularities, opposed to the singularity-prone rapidities.
+            0.5
+                                                                       In addition, this would enable us to skip the inversion
+            0.0                                                        step, which is the main bottleneck of this method.
+  gΛi   −0.5                                                              For the rational model, it was shown by Faribault and
+                                                                       Schuricht3 that
+        −1.0                                                                                               
+        −1.5
+                                                                                                   1
+                                                                                        per                 = det J          (49)
+        −2.0
+                                                                                                ia − x α
+            0.0     0.2       0.4         0.6       0.8       1.0
+                                                                       where the left-hand size is the permanent of an N × N
+            −8                                                         Cauchy matrix and the right hand side is the determinant
+        −10                                                            of a matrix J defined as
+        −12                                                                     (PN                PN
+                                                                                             1                1
+        −14                                                                          α=1  ia −xα −   c6=a  ia − ic if a = b
+   <(xα )                                                                 Jab =      1                                       (50)
+        −16
+                                                                                   i − i                           if a 6= b
+                                                                                      a   b
+        −18
+        −20                                                            where the only dependence on the rapidities is through
+        −22                                                            the diagonal elements, which can be expressed in terms
+        −24
+           0.0      0.2       0.4         0.6       0.8       1.0      of the eigenvalue-based variables. The ingenious proof
+                                                                       of this expression is based on a recursion relation which
+             8
+Original extracted-text lines704-805:
+Fortunately, the prefactor can be absorbed in the defi-                       Both representations describe, up to the normalization,
+nition of the state without loss of generality, which will                    the same state. So by comparing the eigenvalues of the
+still allow the calculation of all necessary normalizations                   constants of motion
+and prefactors. Note the appearance of Zri in the diag-                                                                  
+                                                                                                                  n
+onal elements, which can be easily evaluated and links                                         1              gX
+the matrix to the prefactor for the Bethe Ansatz state                                    ri =    −1 − gΛi +          Zik 
+                                                                                               2               2
+through our choice of the additional level r.                                                                    k6=i
+                                                                                                                       
+   To recapitulate, the overlap of a state                                                                      n
+                                                                                               1            g X
+                                                                                             =    1 − gΛ0i +        Zik  ,      (66)
+                             N     n
+                                                     !                                         2             2
+                                     Xiα                                                                                     k6=i
+                                               Si†
+                             Y     X
+               |{xα }i =                                 |↓ . . . ↓i   (58)
+                            α=1    i=1
+                                         Xrα                                  it can be seen that the dual representation of an eigen-
+                                                                              state is determined by a set of dual eigenvalue-based vari-
+with a Slater determinant                                                     ables given by
+                                           N                                                              2
+                                                                                                Λ0i = Λi + ,               ∀i = 1 . . . n,                 (67)
+                                                 Si†j |↓ . . . ↓i
+                                           Y
+           |{ia }i = |{i1 . . . iN }i =                                (59)                               g
+                                           j=1
+                                                                              which can be verified by simply substituting these vari-
+is given by                                                                   ables in the dual eigenvalue-based equations. The exis-
+                                                                              tence of the dual state allows one to write the overlap
+                                              det J                           of a normal state and a dual state as the overlap of a
+                    h{i1 . . . iN }|{xα }i = Q                         (60)   Bethe Ansatz state with the fully-filled state. This will
+                                              a Xria
+                                                                              be exploited in the following section to obtain the nor-
+with                                                                          malization of the Bethe Ansatz states and several form
+               (                                                              factors.
+                            PN
+                   Λia −      c6=a Zia ic + Zria         if a = b
+       Jab =                                                       .   (61)
+                   Xia ib                                if a 6= b                      C.       Normalization and form factors
+
+                                                                                 Due to the dual representation, we have two different
+                     B.     Dual representations                              representations of each Bethe Ansatz state. These two
+                                                                              states have different normalizations and can be written
+   So far, all Bethe Ansatz states have been created by                       as
+acting with creation operators on the vacuum state, de-                                     YN   n
+                                                                                                X Xiα †
+                                                                                                            !
+stroyed by all annihilation operators. Due to the particle-                      |{xα }i =               S |↓ . . . ↓i = Nα |{xα }in
+hole symmetry of the RG models, every Bethe Ansatz                                          α=1 i=1
+                                                                                                     Xrα i
+state can also be constructed by acting on the fully-filled                                 n−N   n
+                                                                                                             !
+state, annihilated by all creation operators, with a set
+                                                                                             Y X     X iα0
+                                                                                 |{x0α }i =                Si |↑ . . . ↑i = Nα0 |{xα }in
+of generalized annihilation operators, the so-called dual                                    0   i=1
+                                                                                                     Xrα0
+                                                                                             α =1
+representation.
+   A renormalized Bethe Ansatz state is given in its nor-                     where |{xα }in is the normalized eigenstate. This can be
+mal and dual representation as                                                used to calculate
+
+                      N    n
+                                     !                                        h{xα0 }|{xα }i = Nα Nα0
+                     Y    X    Xiα †                                                            n−N     n
+                                                                                                                           ! N      n
+                                                                                                                                                      !
+           |{xα }i =              S |↓ . . . ↓i ,     (62)                                                Xiα0                        Xiα
+                                                                                                                     Si†                        Si†
+                                                                                                 Y      X                    Y      X
+                     α=1 i=1
+                               Xrα i                                           = h↑ . . . ↑ |                                                             | ↓ . . . ↓i
+                                                                                                              Xrα0                        Xrα
+                     n−N    n
+                                      !                                                         α0 =1   i=1                 α=1     i=1
+                      Y X      Xiα0                                               det J
+          |{xα0 }i =                Si |↑ . . . ↑i .  (63)                     = Qn                                                                             (68)
+                               Xrα0
+                      0    i=1
+                            α =1                                                  i=1 Xri
+                                                                                                                                    10
+
+with                                                                   explicitly. However, if these have been determined, other
+          (          Pn                                                form factors can also be calculated by commuting the
+           2Λi + g2 − k6=i Zik + Zri           if i = j                operator through the creation operators in the Bethe
+    Jij =                                                ,      (69)
+           Xij                                 if i 6= j               Ansatz state, as has been shown in [35]. This allows
+                                                                       the computation of form factors such as e.g. Sk† Sl as a
+since the overlap between the two states is just the                   sum over determinants.
+overlap of a Bethe Ansatz state determined by {x} =                       It is interesting to note that the expectation value for
+{xα }∪{xα0 } or by Λi = Λi +Λ0i = 2Λi +2/g with |↑ . . . ↑i.           Si0 offers a physical interpretation for Λi , since the deriva-
+The ratio Nα /Nα0 can easily be found by taking the over-              tive of Λi to g fully determines the filling of the level i
+lap of both representations with a single reference state              as described by hSi0 i. Knowledge of the evolution of Λi
+and taking this ratio. Knowing both the ratio and the                  with a changing coupling constant is then equivalent to
+product of the normalizations, the normalization of both               knowing how the N excitations are distributed over the
+representations is uniquely defined                                    n levels.
+   In a similar manner as for the XXX model3,4 , these
+results can be used to calculate form factors. Since this is
+a generalization of the results presented in these papers,

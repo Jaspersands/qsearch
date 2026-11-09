@@ -1,0 +1,4 @@
+filiform r=1 p=67 d=2 kappa=2 a=1 M=8: banks=200 (exact DP); witness exists 200/200; acceptance min 4.398e-03 mean 4.398e-03; bound 1/(4k^M)=9.766e-04; banks below bound 0; min/bound=4.5; 0.1s
+filiform r=2 p=149 d=2 kappa=2 a=2 M=12: banks=60 (exact main term + float64 character sum); witness exists 60/60; acceptance min 2.645e-04 mean 2.645e-04; bound 1/(4k^M)=6.104e-05; banks below bound 0; min/bound=4.3; 0.2s
+filiform r=3 p=257 d=2 kappa=2 a=3 M=16: banks=20 (exact main term + float64 character sum); witness exists 20/20; acceptance min 1.624e-05 mean 1.624e-05; bound 1/(4k^M)=3.815e-06; banks below bound 0; min/bound=4.3; 88.8s
+filiform r=3 p=257 d=4 kappa=4 a=1 M=16: banks=200 (exact DP); witness exists 200/200; acceptance min 2.803e-10 mean 2.803e-10; bound 1/(4k^M)=5.821e-11; banks below bound 0; min/bound=4.8; 2.6s

@@ -1,0 +1,43 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4125,
+      "path": "research/audits/claude_inputs/2026-11-07-two-fock-learning/contract.md",
+      "sha256": "47de8c86e6fd593e5537cf81d40b35a0f95efcdd069adeaa3cc8d3839579d59d",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 2194,
+  "effort": "high",
+  "finished_at": "2026-11-06T16:16:15.735831+00:00",
+  "input_token_allowance": 2450,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.6629,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-two-fock-learning/stability_prompt.md",
+    "sha256": "3ae946d486a1ff1438e34ab02dcff456cadc8b227892401cfdbe02e9ba261a65",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261106T161022.886300Z-89524e6d",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2194,
+    "output_tokens": 27478
+  },
+  "usage_cost_estimate_usd": 1.39584
+}

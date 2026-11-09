@@ -1,0 +1,39 @@
+# PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 nice -n 10 python -B -m pytest -q -p no:cacheprovider tests/test_rees_circuit.py tests/test_rees_circuit_arith.py tests/test_rees_circuit_coherent.py tests/test_rees_circuit_coherent_c4.py tests/test_rees_circuit_coherent_k3.py tests/test_rees_circuit_exhaustive.py tests/test_rees_circuit_full.py tests/test_rees_circuit_general.py tests/test_rees_circuit_mono.py tests/test_rees_circuit_qft_wire.py tests/test_rees_circuit_sparse.py tests/test_rees_end_to_end_ext.py tests/test_rees_end_to_end_sim.py 
+........................................................................ [ 18%]
+...ssssss......................................s........ss.............. [ 37%]
+........s............................................................... [ 56%]
+.................ssssssssssssss.....................F................... [ 74%]
+.............s.......................................................... [ 93%]
+.........................                                                [100%]
+=================================== FAILURES ===================================
+________________________ test_wrong_merge_sign_detected ________________________
+
+heis = (<theorems.rees_circuit_general.Config object at 0x1303bf520>, [Hidden(name='Heis(F_3) H=<[]> normal', algebra=LieAlge...', (13,)), ('x', (14,)), ('x', (6,)), ('cx', (2, 13)), ...], 'source_evaluation', {0, 1, 2, 3, 6, 7, ...}, True], ...])
+
+    def test_broken_bennett_schedule_detected(heis):
+        """Merge blocks without the Bennett uncompute leave bracket garbage and
+        break the readout. (The 'g_sign' mutation is not visible in the readout
+        law on these trajectories; it is caught by the coherent backend's block
+        checks.)"""
+        cfg, insts, _, _ = heis
+        with _mutated_blocks({"skip_bennett"}):
+            ts = C.TerminalSample(cfg)
+        steps = M.compile_program(ts)
+        sched, _ = M.measurement_schedule(ts, steps, 2)
+        rng = np.random.default_rng(1)
+        bad = 0
+>       for inst in [i for i in insts if not i.normal][:4]:
+E       assert 0 > 0
+
+tests/test_rees_circuit_mono.py:224: AssertionError
+=============================== warnings summary ===============================
+tests/test_rees_circuit.py: 4 warnings
+tests/test_rees_circuit_general.py: 8 warnings
+  /opt/anaconda3/lib/python3.13/site-packages/stevedore/extension.py:340: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+    obj = plugin(*invoke_args, **invoke_kwds)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_rees_circuit_mono.py::test_wrong_merge_sign_detected - asse...
+1 failed, 359 passed, 25 skipped, 12 warnings in 1154.35s (0:19:14)
+     1155.39 real       610.12 user        46.99 sys

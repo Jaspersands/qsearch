@@ -1,0 +1,26 @@
+% Proposed text (b): changes to prop:tb-count-gates (appendix-torsion-blackbox.tex),
+% written against the version with the per-b (H1) and 2 sum_p k d transforms at
+% error eps/(16 l k d). AI-checked, pending human review.
+
+% (b1) In the statement, replace
+%   "Assume, in addition to the results cited by Theorem~\ref{thm:bb-envelope}:
+%    \textup{(H1)} a single-coordinate quantum Fourier transform over $\Fp$, or over $\mathbb{Z}/p^e$, on $b \le \ell$ bits, to isometry error $\eta$ compiles into $O(b^3\operatorname{polylog}(1/\eta))$ gates (this fixes the degree left open in Theorem~\ref{thm:uniform-compilation}(iii));
+%    \textup{(H2)} ..."
+% by:
+Assume, in addition to the results cited by Theorem~\ref{thm:bb-envelope}, \textup{(H2)} and \textup{(H3)} below. The statement \textup{(H1)}, that a single-coordinate quantum Fourier transform over $\Fp$, or over $\mathbb{Z}/p^e$, on $b \le \ell$ bits, to isometry error $\eta$ on its canonical subspace with clean workspace, compiles into $O(b^3\operatorname{polylog}(1/\eta))$ gates, holds by Lemma~\ref{lem:qft-mod}, which gives $O((b + \log(1/\eta))^2)$ gates from $\{X,\mathrm{CNOT},\mathrm{SWAP},\mathrm{Toffoli},H\}$ and dyadic rotations $R_k^{\pm1}$, $\Lambda(R_k)^{\pm1}$ with $k = O(\log((b + \log(1/\eta))/\eta))$, counted as single gates (over a fixed finite gate set each of the $O((b+\log(1/\eta))(\log(1/\eta) + \log(b+\log(1/\eta))))$ rotations is synthesized to error $\eta$ divided by their number, for example by~\cite{DawsonNielsen2006}, at a factor $\operatorname{polylog}(b/\eta)$, and (H1) still holds); \textup{(H2)} ...
+
+% (b2) In the proof of (a), replace
+%   "By~(H1) and $n_p \le \ell/\log_2 p$ a transform over $\Fp$ costs $O((\log p)^3\operatorname{polylog}(\ell/\eps))$,"
+% by:
+By Lemma~\ref{lem:qft-mod} with $N = p$, $b = \lceil\log_2 p\rceil$ and $\log(1/\eta) = O_c(\log(\ell/\eps))$, a transform over $\Fp$ costs $O((\log p + \log(\ell/\eps))^2) \le O((\log p)^3\operatorname{polylog}(\ell/\eps))$ gates; with $n_p \le \ell/\log_2 p$,
+
+% (b3) In the proof of (b), replace
+%   "and, by~(H1), $\sum_p k\,d\,\ell^3 \le 2d\Lambda\ell^3\sum_p 1/\log_2 p \le 2d\Lambda\ell^4$ gates; with $d \le c\,s^c$ and $\Lambda \le 2\ell$ this is $O_c(s^c\ell^5)$."
+% by:
+and, by Lemma~\ref{lem:qft-mod} with $N = p^{e_p}$ on $b_M \le \ell$ bits and $\eta = \eps/(16\ell kd)$, each of the $2\sum_p k\,d$ transforms costs $O((\ell + \log(16\ell kd/\eps))^2)$ gates. Here $2\sum_p k\,d \le 4d\Lambda\sum_p 1/\log_2 p \le 4d\Lambda\ell$, and, with $d \le c\,s^c$, $k \le 2\Lambda$, $\Lambda \le 2\ell$ and $\log_2(8\ell/\eps) \le \ell$, $\log_2(16\ell kd/\eps) = O_c(\ell + \log(s+1))$. The transforms therefore cost $O_c(s^c\ell^2(\ell + \log(s+1))^2) \le O_c(s^c\ell^5\operatorname{polylog}(s\ell))$ gates.
+
+% (b4) In main.tex, Theorem bb-envelope item (iii) and the paragraph after it:
+%   "Under the compilation hypotheses (H1)--(H3) of Proposition~\ref{prop:tb-count-gates},"
+%   -> "Under the compilation hypotheses (H2)--(H3) of Proposition~\ref{prop:tb-count-gates} ((H1) is Lemma~\ref{lem:qft-mod}),"
+%   "under the compilation hypotheses (H1)--(H3) of Proposition~\ref{prop:tb-count-gates}, which this paper states but does not prove."
+%   -> "under the compilation hypotheses (H2)--(H3) of Proposition~\ref{prop:tb-count-gates}, which this paper states but does not prove; (H1) is proved as Lemma~\ref{lem:qft-mod}, AI-checked, pending human review."

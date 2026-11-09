@@ -1,0 +1,1579 @@
+{
+ "status": "poly_log_p_reversible_arithmetic_backend_for_generated_circuits_finite_checks",
+ "coherent_receiver_implemented": false,
+ "general_sde_implemented": false,
+ "formal_compiler_checked": false,
+ "independent_review": false,
+ "novelty_established": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "qft_poly_log_p_implemented": false,
+ "poly_log_p_arithmetic_implemented": true,
+ "runs": {
+  "heis_f3": {
+   "job": "heis_f3",
+   "config": "Heis(F_3) c=2 dims=(3, 1) points=(1, 2) M={2: 3}",
+   "merges": {
+    "d2_s1": {
+     "proof_new": {
+      "macros_checked": 25,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 2187,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": "all",
+     "gates_new": {
+      "x": 1776,
+      "cx": 5680,
+      "ccx": 2272,
+      "swap": 32,
+      "swap_macro": 8,
+      "arith_total": 9760
+     },
+     "qubits_new": 35,
+     "gates_old": 264,
+     "qubits_old": 24
+    },
+    "d2_s2": {
+     "proof_new": {
+      "macros_checked": 25,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 2187,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": "all",
+     "gates_new": {
+      "x": 1776,
+      "cx": 5680,
+      "ccx": 2272,
+      "swap": 32,
+      "swap_macro": 8,
+      "arith_total": 9760
+     },
+     "qubits_new": 35,
+     "gates_old": 264,
+     "qubits_old": 24
+    }
+   },
+   "instances": [
+    {
+     "instance": "Heis(F_3) H=<[]> normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 81,
+      "lifted_order": 1,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 0,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 1)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 2)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 0)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 1)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 2)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 0)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 1)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 2)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 0)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 1)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 2)]> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 27,
+      "lifted_order": 3,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 234
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 9,
+      "lifted_order": 9,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 2,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 26
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 3,
+      "lifted_order": 27,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 3,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 26
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 3,
+      "lifted_order": 27,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 3,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 26
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 3,
+      "lifted_order": 27,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 3,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 26
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 3,
+      "lifted_order": 27,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 3,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 26
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 1,
+      "lifted_order": 81,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 4,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "2": 26
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 42
+      }
+     ],
+     "all_equal": true
+    }
+   ],
+   "instrument_exponents_equal": true,
+   "instrument_info_new": {
+    "2": {
+     "leak": 6.661338147750939e-16,
+     "completeness_err": 4.440892098500626e-16,
+     "circulant_err": 0.0,
+     "round_err": 6.753223014464259e-16,
+     "ok": true
+    }
+   },
+   "all_merges_proved_new": true,
+   "all_bitlevel_new_ok": true,
+   "all_bitlevel_perm_equal_old": true,
+   "all_instances_equal": true,
+   "all_runs_recover_new": true,
+   "seconds": 1.4
+  },
+  "n4_f5": {
+   "job": "n4_f5",
+   "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 5, 3: 2}",
+   "merges": {
+    "d2_s1": {
+     "proof_new": {
+      "macros_checked": 41,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 62500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      168,
+      319,
+      398,
+      531
+     ],
+     "gates_new": {
+      "x": 5728,
+      "cx": 20368,
+      "ccx": 8772,
+      "swap": 192,
+      "swap_macro": 18,
+      "arith_total": 35060
+     },
+     "qubits_new": 68,
+     "gates_old": 3186,
+     "qubits_old": 54
+    },
+    "d2_s2": {
+     "proof_new": {
+      "macros_checked": 41,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 62500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      10,
+      25,
+      47,
+      192
+     ],
+     "gates_new": {
+      "x": 5728,
+      "cx": 20400,
+      "ccx": 8772,
+      "swap": 192,
+      "swap_macro": 18,
+      "arith_total": 35092
+     },
+     "qubits_new": 68,
+     "gates_old": 3186,
+     "qubits_old": 54
+    },
+    "d2_s3": {
+     "proof_new": {
+      "macros_checked": 41,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 62500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      109,
+      405,
+      508,
+      570
+     ],
+     "gates_new": {
+      "x": 5728,
+      "cx": 20400,
+      "ccx": 8772,
+      "swap": 192,
+      "swap_macro": 18,
+      "arith_total": 35092
+     },
+     "qubits_new": 68,
+     "gates_old": 3186,
+     "qubits_old": 54
+    },
+    "d2_s4": {
+     "proof_new": {
+      "macros_checked": 41,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 62500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      314,
+      379,
+      455,
+      606
+     ],
+     "gates_new": {
+      "x": 5728,
+      "cx": 20368,
+      "ccx": 8756,
+      "swap": 192,
+      "swap_macro": 18,
+      "arith_total": 35044
+     },
+     "qubits_new": 68,
+     "gates_old": 3186,
+     "qubits_old": 54
+    },
+    "d3_s1": {
+     "proof_new": {
+      "macros_checked": 69,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 312500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      8494,
+      8748,
+      9879,
+      14610
+     ],
+     "gates_new": {
+      "x": 10592,
+      "cx": 37352,
+      "ccx": 16090,
+      "swap": 384,
+      "swap_macro": 21,
+      "arith_total": 64418
+     },
+     "qubits_new": 89,
+     "gates_old": 5925,
+     "qubits_old": 75
+    },
+    "d3_s2": {
+     "proof_new": {
+      "macros_checked": 69,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 312500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      42,
+      4333,
+      10482,
+      12747
+     ],
+     "gates_new": {
+      "x": 10592,
+      "cx": 37400,
+      "ccx": 16082,
+      "swap": 384,
+      "swap_macro": 21,
+      "arith_total": 64458
+     },
+     "qubits_new": 89,
+     "gates_old": 5925,
+     "qubits_old": 75
+    },
+    "d3_s3": {
+     "proof_new": {
+      "macros_checked": 69,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 312500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      524,
+      6158,
+      8661,
+      13396
+     ],
+     "gates_new": {
+      "x": 10592,
+      "cx": 37400,
+      "ccx": 16082,
+      "swap": 384,
+      "swap_macro": 21,
+      "arith_total": 64458
+     },
+     "qubits_new": 89,
+     "gates_old": 5925,
+     "qubits_old": 75
+    },
+    "d3_s4": {
+     "proof_new": {
+      "macros_checked": 69,
+      "x_equals_bch_right_translation": true,
+      "W_clean": true,
+      "brackets_clean": true,
+      "q_unchanged": true,
+      "q_never_targeted": true,
+      "proved": true
+     },
+     "bitlevel_new": {
+      "q_unchanged": true,
+      "scratch_clean": true,
+      "x_canonical": true,
+      "q_never_targeted": true,
+      "inputs": 312500,
+      "ancilla_clean": true,
+      "equals_bch": true
+     },
+     "bitlevel_old_ok": true,
+     "bitlevel_perm_equal_old": true,
+     "q_rows": [
+      2744,
+      11400,
+      11951,
+      13227
+     ],
+     "gates_new": {
+      "x": 10592,
+      "cx": 37352,
+      "ccx": 16074,
+      "swap": 384,
+      "swap_macro": 21,
+      "arith_total": 64402
+     },
+     "qubits_new": 89,
+     "gates_old": 5925,
+     "qubits_old": 75
+    }
+   },
+   "instances": [
+    {
+     "instance": "n4(F_5) H=<e2> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 15625,
+      "lifted_order": 5,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 120,
+      "2": 4364
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=<e1> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 15625,
+      "lifted_order": 5,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 120,
+      "2": 4364
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=<e1+e3> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 15625,
+      "lifted_order": 5,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 1,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 120,
+      "2": 4364
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=<e2,e4> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 125,
+      "lifted_order": 625,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 4,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 24,
+      "2": 6044
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=<e1+e2,e3> (closure)",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 5,
+      "lifted_order": 15625,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 6,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 24,
+      "2": 3124
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=<e3,e4> = gamma_2",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 25,
+      "lifted_order": 3125,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 5,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 24,
+      "2": 3124
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=<e2,e3> non-normal",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 625,
+      "lifted_order": 125,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 3,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 120,
+      "2": 6044
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=Z(G)",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 625,
+      "lifted_order": 125,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 3,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 24,
+      "2": 6044
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    },
+    {
+     "instance": "n4(F_5) H=trivial",
+     "source_state_equal": true,
+     "source_S_equal": true,
+     "source_info_equal": true,
+     "source_info_new": {
+      "address_unchanged": true,
+      "workspace_clean": true,
+      "fibres": 78125,
+      "lifted_order": 1,
+      "equal_fibres": true,
+      "identity_fibre_is_subgroup": true,
+      "fibres_are_left_cosets": true,
+      "coset_generators": 0,
+      "coset_state": true,
+      "chunks": 1
+     },
+     "label_laws_equal": true,
+     "branches_equal": true,
+     "check_rows_identical": true,
+     "check_passed_new": true,
+     "cases_new": {
+      "3": 120,
+      "2": 4364
+     },
+     "seeded_runs": [
+      {
+       "seed": 20261103,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      },
+      {
+       "seed": 20261104,
+       "identical": true,
+       "recovered_new": true,
+       "oracle_queries": 240
+      }
+     ],
+     "all_equal": true
+    }
+   ],
+   "instrument_exponents_equal": true,
+   "instrument_info_new": {
+    "2": {
+     "leak": 2.220446049250313e-16,
+     "completeness_err": 2.220446049250313e-16,
+     "circulant_err": 0.0,
+     "round_err": 2.482534153247273e-16,
+     "ok": true
+    },
+    "3": {
+     "leak": 2.220446049250313e-16,
+     "completeness_err": 2.220446049250313e-16,
+     "circulant_err": 0.0,
+     "round_err": 2.482534153247273e-16,
+     "ok": true
+    }
+   },
+   "all_merges_proved_new": true,
+   "all_bitlevel_new_ok": true,
+   "all_bitlevel_perm_equal_old": true,
+   "all_instances_equal": true,
+   "all_runs_recover_new": true,
+   "seconds": 65.1
+  }
+ },
+ "seconds": 66.5
+}

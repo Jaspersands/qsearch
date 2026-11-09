@@ -1,0 +1,11 @@
+Audit ONE explicit all-n falsifier, cheapest algebraic attack first. You have no tools. Return a concise mathematical report (aim under1800 words), with proof corrections or counterexample; do not spend output deriving unrelated tomography algorithms.
+
+For n>=2, E={0,e1,...,en} in F2^n, m=n+1. Partition its complement into affine cells C_ij whose first two 1s are i<j; dimC=n-j. Let p=|+>^n, c_ij uniform normalized on C_ij, V=span(p,c_ij), K=binom(n,2)+1. All normalized stabilizer states have affine support and flat amplitude modulus. Let u=m^-1/2 sum_E|x>, r=m/2^n.
+
+Claims:
+1. V exactly vectors constant on E and each cell. u in V; p-sum_ij2^-j/2 c_ij=sqrt(r)u. Original Gram eigen1±sqrt(1-r),1 otherwise.
+2. EVERY stabilizer s IN V has |<u,s>|² either0 orr: if nonzero onE, equal coordinates force affine support containing E, hence fullcube.
+3. For ANY finite stabilizer dictionary insideV and nonnegative weights, frameF has condition≥1/(Kr), or singular. Rayleigh(u)≤r TrF; lambdaMax≥TrF/K. Even arbitrary positive reweighting/unlimited atoms cannot give polynomial conditioning inK.
+4. Restricted squared extent xi_V(u)≥1/r and≤(4+2sqrt2)^2/r. BUT global chi(u)≤n+1, squared extent xi(u)≤n+1 using computational basis atoms OUTSIDE V. Global stabilizer fidelity exactly9/[4(n+1)] since affine dimensiond support meets affinely independentE in at mostd+1points; max_d(d+1)^2/2^d=9/4, achieved d2. Thus global xi≥4(n+1)/9.
+
+This would falsify a proposed universal IN-SPAN frame augmentation method for polynomial-rank tomography, not polynomial globally optimized extent, arbitrary measurements, or learner existence. Published current bound is xi≤2^O(sqrt(k log(k+1))) (squared convention); existing code/projection proof is allowed to leave original span. Check all quantifiers, n2 edge, complex phases, frame weights, and crucial restricted/global distinction. Does any alternative in-span stabilizer evade the support argument? Does the classical outside-span construction invalidate only an overbroad claim or our precise one? Distinguish proved statements from unknown novelty. No citations needed unless you know actual source; do not invent them.

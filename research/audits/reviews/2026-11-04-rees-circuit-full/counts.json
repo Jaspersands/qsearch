@@ -1,0 +1,1106 @@
+{
+ "status": {
+  "status": "explicit_qft_and_coherent_labels_one_circuit_per_terminal_sample_finite_checks",
+  "scope": "Heis(F_3) and n4(F_5) only (every SDE grade has kappa_d <= 2)",
+  "full_gate_level_terminal_sample": true,
+  "no_mid_circuit_measurement": true,
+  "monolithic_simulation": false,
+  "fixed_finite_gate_set": false,
+  "coherent_receiver_implemented": false,
+  "general_instances": false,
+  "kappa_ge3_grades_coherent": false,
+  "independent_review": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review"
+ },
+ "targets": {
+  "heis_f3": {
+   "eta": 0.0015,
+   "params": [
+    26,
+    19,
+    15
+   ],
+   "delta_lemma": 0.01417718515911404,
+   "P_lemma": 0.09924029611379828
+  },
+  "n4_f5": {
+   "eta": 0.00025,
+   "params": [
+    32,
+    22,
+    18
+   ],
+   "delta_lemma": 0.012320995857978318,
+   "P_lemma": 0.09856796686382654
+  }
+ },
+ "heis_f3": {
+  "target": {
+   "config": "Heis(F_3) c=2 dims=(3, 1) points=(1, 2) M={2: 3}",
+   "params": [
+    26,
+    19,
+    15
+   ],
+   "eta": 0.0015,
+   "pool_size": 61,
+   "block_workspace_pool": 99,
+   "qubits": 182,
+   "qubits_coherent": 182,
+   "qubits_separate_layout": 243,
+   "gates_per_call": 7873,
+   "gate_types_per_call": {
+    "h": 116,
+    "r": 58,
+    "x": 982,
+    "cx": 4453,
+    "ccx": 1658,
+    "cr": 596,
+    "swap": 10
+   },
+   "gate_bound_per_call": 8405,
+   "calls": {
+    "calls": 24,
+    "zero_input_forward": 18,
+    "zero_input_inverse": 0,
+    "general": 6,
+    "by_component": {
+     "final_qft/qft/general": 3,
+     "instrument_qft/qft/zero": 3,
+     "instrument_qft/qft_dg/general": 3,
+     "q_prep_qft/qft/zero": 3,
+     "source_qft/qft/zero": 12
+    }
+   },
+   "coherent_gates": 115282,
+   "formula_total": 304234,
+   "emitted": {
+    "gate_set_ok": true,
+    "arity_ok": true,
+    "wires_ok": true,
+    "rotation_params_ok": true,
+    "measured_registers": [
+     [
+      176,
+      177
+     ],
+     [
+      178,
+      179
+     ],
+     [
+      180,
+      181
+     ]
+    ],
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true,
+    "passed": true,
+    "by_component": {
+     "bch_merge_grade2": {
+      "x": 5328,
+      "cx": 17040,
+      "ccx": 6816,
+      "swap": 120,
+      "gates": 29304
+     },
+     "final_qft": {
+      "qft_calls": 3,
+      "h": 348,
+      "r": 174,
+      "x": 2946,
+      "cx": 13359,
+      "ccx": 4974,
+      "cr": 1788,
+      "swap": 30,
+      "measure_items": 1,
+      "gates": 23619
+     },
+     "instrument": {
+      "x": 132,
+      "cx": 450,
+      "ccx": 180,
+      "gates": 762
+     },
+     "instrument_qft": {
+      "qft_calls": 6,
+      "h": 696,
+      "r": 348,
+      "x": 5892,
+      "cx": 26718,
+      "ccx": 9948,
+      "cr": 3576,
+      "swap": 60,
+      "gates": 47238
+     },
+     "oracle": {
+      "oracle_items": 6,
+      "gates": 0
+     },
+     "q_prep_qft": {
+      "qft_calls": 3,
+      "h": 348,
+      "r": 174,
+      "x": 2946,
+      "cx": 13359,
+      "ccx": 4974,
+      "cr": 1788,
+      "swap": 30,
+      "gates": 23619
+     },
+     "sde_grade2": {
+      "x": 11336,
+      "cx": 34636,
+      "ccx": 13932,
+      "swap": 304,
+      "gates": 60208
+     },
+     "source_evaluation": {
+      "x": 2112,
+      "cx": 7200,
+      "ccx": 2880,
+      "gates": 12192
+     },
+     "source_qft": {
+      "qft_calls": 12,
+      "h": 1392,
+      "r": 696,
+      "x": 11784,
+      "cx": 53436,
+      "ccx": 19896,
+      "cr": 7152,
+      "swap": 120,
+      "gates": 94476
+     },
+     "witness_control_grade2": {
+      "x": 2412,
+      "cx": 7380,
+      "ccx": 2952,
+      "swap": 72,
+      "gates": 12816
+     }
+    },
+    "total": {
+     "qft_calls": 24,
+     "h": 2784,
+     "r": 1392,
+     "x": 44888,
+     "cx": 173578,
+     "ccx": 66552,
+     "cr": 14304,
+     "swap": 736,
+     "oracle_items": 6,
+     "measure_items": 1,
+     "gates": 304234
+    },
+    "qubits": 182,
+    "qubits_used": 152,
+    "rotations_by_k_sign": {
+     "cr1-": 6,
+     "cr1+": 42,
+     "cr2-": 600,
+     "cr2+": 600,
+     "cr3-": 576,
+     "cr3+": 576,
+     "cr4-": 552,
+     "cr4+": 552,
+     "cr5-": 528,
+     "cr5+": 528,
+     "cr6-": 504,
+     "cr6+": 504,
+     "cr7-": 480,
+     "cr7+": 480,
+     "cr8-": 456,
+     "cr8+": 456,
+     "cr9-": 432,
+     "cr9+": 432,
+     "cr10-": 408,
+     "cr10+": 408,
+     "cr11-": 384,
+     "cr11+": 384,
+     "cr12-": 360,
+     "cr12+": 360,
+     "cr13-": 336,
+     "cr13+": 336,
+     "cr14-": 312,
+     "cr14+": 312,
+     "cr15-": 288,
+     "cr15+": 288,
+     "cr16-": 264,
+     "cr16+": 264,
+     "cr17-": 240,
+     "cr17+": 240,
+     "cr18-": 216,
+     "cr18+": 216,
+     "cr19-": 192,
+     "cr19+": 192,
+     "r1-": 30,
+     "r1+": 66,
+     "r2-": 63,
+     "r2+": 153,
+     "r3-": 36,
+     "r3+": 108,
+     "r4-": 30,
+     "r4+": 66,
+     "r5-": 3,
+     "r5+": 21,
+     "r6-": 9,
+     "r6+": 63,
+     "r7-": 36,
+     "r7+": 108,
+     "r8-": 3,
+     "r8+": 21,
+     "r9-": 9,
+     "r9+": 63,
+     "r10-": 9,
+     "r10+": 63,
+     "r11-": 36,
+     "r11+": 108,
+     "r12-": 3,
+     "r12+": 21,
+     "r13-": 36,
+     "r13+": 108,
+     "r14-": 9,
+     "r14+": 63,
+     "r15-": 6,
+     "r15+": 42
+    },
+    "max_rotation_index": 19
+   },
+   "oracle_calls": 6,
+   "n_samples": 7,
+   "hybrid": {
+    "n_calls": 24,
+    "zero_input_forward": 18,
+    "general": 6,
+    "B": 0.0005384342238089019,
+    "prep": 7.368643732036375e-05,
+    "B_simple": 0.0008970167617179303,
+    "exact_formula": 0.004556961214619959,
+    "lemma": 0.01417718515911404
+   },
+   "P_run_differs_exact_formula": 0.03189872850233971,
+   "P_run_differs_lemma": 0.09924029611379828,
+   "formula_equals_emitted": true
+  },
+  "sim_params": {
+   "config": "Heis(F_3) c=2 dims=(3, 1) points=(1, 2) M={2: 3}",
+   "params": [
+    7,
+    7,
+    28
+   ],
+   "eta": null,
+   "pool_size": 23,
+   "block_workspace_pool": 99,
+   "qubits": 182,
+   "qubits_coherent": 182,
+   "qubits_separate_layout": 205,
+   "gates_per_call": 3420,
+   "gate_types_per_call": {
+    "h": 40,
+    "r": 109,
+    "x": 526,
+    "cx": 1945,
+    "ccx": 746,
+    "cr": 44,
+    "swap": 10
+   },
+   "gate_bound_per_call": 3616,
+   "calls": {
+    "calls": 24,
+    "zero_input_forward": 18,
+    "zero_input_inverse": 0,
+    "general": 6,
+    "by_component": {
+     "final_qft/qft/general": 3,
+     "instrument_qft/qft/zero": 3,
+     "instrument_qft/qft_dg/general": 3,
+     "q_prep_qft/qft/zero": 3,
+     "source_qft/qft/zero": 12
+    }
+   },
+   "coherent_gates": 115282,
+   "formula_total": 197362,
+   "emitted": {
+    "gate_set_ok": true,
+    "arity_ok": true,
+    "wires_ok": true,
+    "rotation_params_ok": true,
+    "measured_registers": [
+     [
+      176,
+      177
+     ],
+     [
+      178,
+      179
+     ],
+     [
+      180,
+      181
+     ]
+    ],
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true,
+    "passed": true,
+    "by_component": {
+     "bch_merge_grade2": {
+      "x": 5328,
+      "cx": 17040,
+      "ccx": 6816,
+      "swap": 120,
+      "gates": 29304
+     },
+     "final_qft": {
+      "qft_calls": 3,
+      "h": 120,
+      "r": 327,
+      "x": 1578,
+      "cx": 5835,
+      "ccx": 2238,
+      "cr": 132,
+      "swap": 30,
+      "measure_items": 1,
+      "gates": 10260
+     },
+     "instrument": {
+      "x": 132,
+      "cx": 450,
+      "ccx": 180,
+      "gates": 762
+     },
+     "instrument_qft": {
+      "qft_calls": 6,
+      "h": 240,
+      "r": 654,
+      "x": 3156,
+      "cx": 11670,
+      "ccx": 4476,
+      "cr": 264,
+      "swap": 60,
+      "gates": 20520
+     },
+     "oracle": {
+      "oracle_items": 6,
+      "gates": 0
+     },
+     "q_prep_qft": {
+      "qft_calls": 3,
+      "h": 120,
+      "r": 327,
+      "x": 1578,
+      "cx": 5835,
+      "ccx": 2238,
+      "cr": 132,
+      "swap": 30,
+      "gates": 10260
+     },
+     "sde_grade2": {
+      "x": 11336,
+      "cx": 34636,
+      "ccx": 13932,
+      "swap": 304,
+      "gates": 60208
+     },
+     "source_evaluation": {
+      "x": 2112,
+      "cx": 7200,
+      "ccx": 2880,
+      "gates": 12192
+     },
+     "source_qft": {
+      "qft_calls": 12,
+      "h": 480,
+      "r": 1308,
+      "x": 6312,
+      "cx": 23340,
+      "ccx": 8952,
+      "cr": 528,
+      "swap": 120,
+      "gates": 41040
+     },
+     "witness_control_grade2": {
+      "x": 2412,
+      "cx": 7380,
+      "ccx": 2952,
+      "swap": 72,
+      "gates": 12816
+     }
+    },
+    "total": {
+     "qft_calls": 24,
+     "h": 960,
+     "r": 2616,
+     "x": 33944,
+     "cx": 113386,
+     "ccx": 44664,
+     "cr": 1056,
+     "swap": 736,
+     "oracle_items": 6,
+     "measure_items": 1,
+     "gates": 197362
+    },
+    "qubits": 182,
+    "qubits_used": 152,
+    "rotations_by_k_sign": {
+     "cr1-": 6,
+     "cr1+": 42,
+     "cr2-": 144,
+     "cr2+": 144,
+     "cr3-": 120,
+     "cr3+": 120,
+     "cr4-": 96,
+     "cr4+": 96,
+     "cr5-": 72,
+     "cr5+": 72,
+     "cr6-": 48,
+     "cr6+": 48,
+     "cr7-": 24,
+     "cr7+": 24,
+     "r1-": 30,
+     "r1+": 66,
+     "r2-": 63,
+     "r2+": 153,
+     "r3-": 36,
+     "r3+": 108,
+     "r4-": 30,
+     "r4+": 66,
+     "r5-": 3,
+     "r5+": 21,
+     "r6-": 9,
+     "r6+": 63,
+     "r7-": 36,
+     "r7+": 108,
+     "r8-": 3,
+     "r8+": 21,
+     "r9-": 9,
+     "r9+": 63,
+     "r10-": 9,
+     "r10+": 63,
+     "r11-": 36,
+     "r11+": 108,
+     "r12-": 3,
+     "r12+": 21,
+     "r13-": 9,
+     "r13+": 63,
+     "r14-": 36,
+     "r14+": 108,
+     "r15-": 30,
+     "r15+": 66,
+     "r16-": 30,
+     "r16+": 66,
+     "r17-": 3,
+     "r17+": 21,
+     "r18-": 36,
+     "r18+": 108,
+     "r19-": 3,
+     "r19+": 21,
+     "r20-": 36,
+     "r20+": 108,
+     "r21-": 30,
+     "r21+": 66,
+     "r22-": 30,
+     "r22+": 66,
+     "r23-": 30,
+     "r23+": 66,
+     "r24-": 30,
+     "r24+": 66,
+     "r25-": 3,
+     "r25+": 21,
+     "r26-": 36,
+     "r26+": 108,
+     "r27-": 30,
+     "r27+": 66,
+     "r28-": 12,
+     "r28+": 84
+    },
+    "max_rotation_index": 28
+   },
+   "oracle_calls": 6,
+   "n_samples": 7,
+   "hybrid": {
+    "n_calls": 24,
+    "zero_input_forward": 18,
+    "general": 6,
+    "B": 0.22152262721922492,
+    "prep": 1.193640385173075e-08,
+    "B_simple": 0.2215226659973142,
+    "exact_formula": 1.329135978170619
+   },
+   "P_run_differs_exact_formula": 1.0,
+   "formula_equals_emitted": true
+  }
+ },
+ "n4_f5": {
+  "target": {
+   "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 2}",
+   "params": [
+    32,
+    22,
+    18
+   ],
+   "eta": 0.00025,
+   "pool_size": 77,
+   "block_workspace_pool": 368,
+   "qubits": 1198,
+   "qubits_coherent": 1198,
+   "qubits_separate_layout": 1275,
+   "gates_per_call": 13303,
+   "gate_types_per_call": {
+    "h": 143,
+    "r": 76,
+    "x": 1632,
+    "cx": 7511,
+    "ccx": 3030,
+    "cr": 884,
+    "swap": 27
+   },
+   "gate_bound_per_call": 14948,
+   "calls": {
+    "calls": 176,
+    "zero_input_forward": 148,
+    "zero_input_inverse": 0,
+    "general": 28,
+    "by_component": {
+     "final_qft/qft/general": 4,
+     "instrument_qft/qft/zero": 24,
+     "instrument_qft/qft_dg/general": 24,
+     "q_prep_qft/qft/zero": 40,
+     "source_qft/qft/zero": 84
+    }
+   },
+   "coherent_gates": 2694596,
+   "formula_total": 5035924,
+   "emitted": {
+    "gate_set_ok": true,
+    "arity_ok": true,
+    "wires_ok": true,
+    "rotation_params_ok": true,
+    "measured_registers": [
+     [
+      1186,
+      1187,
+      1188
+     ],
+     [
+      1189,
+      1190,
+      1191
+     ],
+     [
+      1192,
+      1193,
+      1194
+     ],
+     [
+      1195,
+      1196,
+      1197
+     ]
+    ],
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true,
+    "passed": true,
+    "by_component": {
+     "bch_merge_grade2": {
+      "x": 34368,
+      "cx": 122208,
+      "ccx": 52536,
+      "swap": 1260,
+      "gates": 210372
+     },
+     "bch_merge_grade3": {
+      "x": 127104,
+      "cx": 448224,
+      "ccx": 192792,
+      "swap": 4860,
+      "gates": 772980
+     },
+     "final_qft": {
+      "qft_calls": 4,
+      "h": 572,
+      "r": 304,
+      "x": 6528,
+      "cx": 30044,
+      "ccx": 12120,
+      "cr": 3536,
+      "swap": 108,
+      "measure_items": 1,
+      "gates": 53212
+     },
+     "instrument": {
+      "x": 1728,
+      "cx": 6768,
+      "ccx": 2928,
+      "gates": 11424
+     },
+     "instrument_qft": {
+      "qft_calls": 48,
+      "h": 6864,
+      "r": 3648,
+      "x": 78336,
+      "cx": 360528,
+      "ccx": 145440,
+      "cr": 42432,
+      "swap": 1296,
+      "gates": 638544
+     },
+     "oracle": {
+      "oracle_items": 36,
+      "gates": 0
+     },
+     "q_prep_qft": {
+      "qft_calls": 40,
+      "h": 5720,
+      "r": 3040,
+      "x": 65280,
+      "cx": 300440,
+      "ccx": 121200,
+      "cr": 35360,
+      "swap": 1080,
+      "gates": 532120
+     },
+     "sde_grade2": {
+      "x": 118964,
+      "cx": 403780,
+      "ccx": 174668,
+      "swap": 5520,
+      "gates": 702932
+     },
+     "sde_grade3": {
+      "cx": 251544,
+      "x": 74016,
+      "ccx": 108648,
+      "swap": 3456,
+      "gates": 437664
+     },
+     "source_evaluation": {
+      "x": 36288,
+      "cx": 142128,
+      "ccx": 61224,
+      "gates": 239640
+     },
+     "source_qft": {
+      "qft_calls": 84,
+      "h": 12012,
+      "r": 6384,
+      "x": 137088,
+      "cx": 630924,
+      "ccx": 254520,
+      "cr": 74256,
+      "swap": 2268,
+      "gates": 1117452
+     },
+     "witness_control_grade2": {
+      "x": 12000,
+      "cx": 40896,
+      "ccx": 17568,
+      "swap": 576,
+      "gates": 71040
+     },
+     "witness_control_grade3": {
+      "x": 42000,
+      "cx": 143040,
+      "ccx": 61488,
+      "swap": 2016,
+      "gates": 248544
+     }
+    },
+    "total": {
+     "qft_calls": 176,
+     "h": 25168,
+     "r": 13376,
+     "x": 733700,
+     "cx": 2880524,
+     "ccx": 1205132,
+     "cr": 155584,
+     "swap": 22440,
+     "oracle_items": 36,
+     "measure_items": 1,
+     "gates": 5035924
+    },
+    "qubits": 1198,
+    "qubits_used": 838,
+    "rotations_by_k_sign": {
+     "cr1-": 48,
+     "cr1+": 304,
+     "cr2-": 5456,
+     "cr2+": 5456,
+     "cr3-": 5280,
+     "cr3+": 5280,
+     "cr4-": 5104,
+     "cr4+": 5104,
+     "cr5-": 4928,
+     "cr5+": 4928,
+     "cr6-": 4752,
+     "cr6+": 4752,
+     "cr7-": 4576,
+     "cr7+": 4576,
+     "cr8-": 4400,
+     "cr8+": 4400,
+     "cr9-": 4224,
+     "cr9+": 4224,
+     "cr10-": 4048,
+     "cr10+": 4048,
+     "cr11-": 3872,
+     "cr11+": 3872,
+     "cr12-": 3696,
+     "cr12+": 3696,
+     "cr13-": 3520,
+     "cr13+": 3520,
+     "cr14-": 3344,
+     "cr14+": 3344,
+     "cr15-": 3168,
+     "cr15+": 3168,
+     "cr16-": 2992,
+     "cr16+": 2992,
+     "cr17-": 2816,
+     "cr17+": 2816,
+     "cr18-": 2640,
+     "cr18+": 2640,
+     "cr19-": 2464,
+     "cr19+": 2464,
+     "cr20-": 2288,
+     "cr20+": 2288,
+     "cr21-": 2112,
+     "cr21+": 2112,
+     "cr22-": 1936,
+     "cr22+": 1936,
+     "r1-": 224,
+     "r1+": 480,
+     "r2-": 496,
+     "r2+": 1264,
+     "r3-": 296,
+     "r3+": 936,
+     "r4-": 224,
+     "r4+": 480,
+     "r5-": 24,
+     "r5+": 152,
+     "r6-": 296,
+     "r6+": 936,
+     "r7-": 248,
+     "r7+": 632,
+     "r8-": 224,
+     "r8+": 480,
+     "r9-": 224,
+     "r9+": 480,
+     "r10-": 248,
+     "r10+": 632,
+     "r11-": 48,
+     "r11+": 304,
+     "r12-": 72,
+     "r12+": 456,
+     "r13-": 272,
+     "r13+": 784,
+     "r14-": 248,
+     "r14+": 632,
+     "r15-": 96,
+     "r15+": 608,
+     "r16-": 24,
+     "r16+": 152,
+     "r17-": 48,
+     "r17+": 304,
+     "r18-": 48,
+     "r18+": 304
+    },
+    "max_rotation_index": 22
+   },
+   "oracle_calls": 36,
+   "n_samples": 8,
+   "hybrid": {
+    "n_calls": 176,
+    "zero_input_forward": 148,
+    "general": 28,
+    "B": 0.00010603646375712127,
+    "prep": 2.433401209236772e-05,
+    "B_simple": 0.000141343194006484,
+    "exact_formula": 0.006570454774869818,
+    "lemma": 0.012320995857978318
+   },
+   "P_run_differs_exact_formula": 0.05256363819895855,
+   "P_run_differs_lemma": 0.09856796686382654,
+   "formula_equals_emitted": true
+  },
+  "sim_params": {
+   "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 2}",
+   "params": [
+    8,
+    8,
+    28
+   ],
+   "eta": null,
+   "pool_size": 29,
+   "block_workspace_pool": 368,
+   "qubits": 1198,
+   "qubits_coherent": 1198,
+   "qubits_separate_layout": 1227,
+   "gates_per_call": 5874,
+   "gate_types_per_call": {
+    "h": 47,
+    "r": 121,
+    "x": 864,
+    "cx": 3359,
+    "ccx": 1398,
+    "cr": 58,
+    "swap": 27
+   },
+   "gate_bound_per_call": 6500,
+   "calls": {
+    "calls": 176,
+    "zero_input_forward": 148,
+    "zero_input_inverse": 0,
+    "general": 28,
+    "by_component": {
+     "final_qft/qft/general": 4,
+     "instrument_qft/qft/zero": 24,
+     "instrument_qft/qft_dg/general": 24,
+     "q_prep_qft/qft/zero": 40,
+     "source_qft/qft/zero": 84
+    }
+   },
+   "coherent_gates": 2694596,
+   "formula_total": 3728420,
+   "emitted": {
+    "gate_set_ok": true,
+    "arity_ok": true,
+    "wires_ok": true,
+    "rotation_params_ok": true,
+    "measured_registers": [
+     [
+      1186,
+      1187,
+      1188
+     ],
+     [
+      1189,
+      1190,
+      1191
+     ],
+     [
+      1192,
+      1193,
+      1194
+     ],
+     [
+      1195,
+      1196,
+      1197
+     ]
+    ],
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true,
+    "passed": true,
+    "by_component": {
+     "bch_merge_grade2": {
+      "x": 34368,
+      "cx": 122208,
+      "ccx": 52536,
+      "swap": 1260,
+      "gates": 210372
+     },
+     "bch_merge_grade3": {
+      "x": 127104,
+      "cx": 448224,
+      "ccx": 192792,
+      "swap": 4860,
+      "gates": 772980
+     },
+     "final_qft": {
+      "qft_calls": 4,
+      "h": 188,
+      "r": 484,
+      "x": 3456,
+      "cx": 13436,
+      "ccx": 5592,
+      "cr": 232,
+      "swap": 108,
+      "measure_items": 1,
+      "gates": 23496
+     },
+     "instrument": {
+      "x": 1728,
+      "cx": 6768,
+      "ccx": 2928,
+      "gates": 11424
+     },
+     "instrument_qft": {
+      "qft_calls": 48,
+      "h": 2256,
+      "r": 5808,
+      "x": 41472,
+      "cx": 161232,
+      "ccx": 67104,
+      "cr": 2784,
+      "swap": 1296,
+      "gates": 281952
+     },
+     "oracle": {
+      "oracle_items": 36,
+      "gates": 0
+     },
+     "q_prep_qft": {
+      "qft_calls": 40,
+      "h": 1880,
+      "r": 4840,
+      "x": 34560,
+      "cx": 134360,
+      "ccx": 55920,
+      "cr": 2320,
+      "swap": 1080,
+      "gates": 234960
+     },
+     "sde_grade2": {
+      "x": 118964,
+      "cx": 403780,
+      "ccx": 174668,
+      "swap": 5520,
+      "gates": 702932
+     },
+     "sde_grade3": {
+      "cx": 251544,
+      "x": 74016,
+      "ccx": 108648,
+      "swap": 3456,
+      "gates": 437664
+     },
+     "source_evaluation": {
+      "x": 36288,
+      "cx": 142128,
+      "ccx": 61224,
+      "gates": 239640
+     },
+     "source_qft": {
+      "qft_calls": 84,
+      "h": 3948,
+      "r": 10164,
+      "x": 72576,
+      "cx": 282156,
+      "ccx": 117432,
+      "cr": 4872,
+      "swap": 2268,
+      "gates": 493416
+     },
+     "witness_control_grade2": {
+      "x": 12000,
+      "cx": 40896,
+      "ccx": 17568,
+      "swap": 576,
+      "gates": 71040
+     },
+     "witness_control_grade3": {
+      "x": 42000,
+      "cx": 143040,
+      "ccx": 61488,
+      "swap": 2016,
+      "gates": 248544
+     }
+    },
+    "total": {
+     "qft_calls": 176,
+     "h": 8272,
+     "r": 21296,
+     "x": 598532,
+     "cx": 2149772,
+     "ccx": 917900,
+     "cr": 10208,
+     "swap": 22440,
+     "oracle_items": 36,
+     "measure_items": 1,
+     "gates": 3728420
+    },
+    "qubits": 1198,
+    "qubits_used": 838,
+    "rotations_by_k_sign": {
+     "cr1-": 48,
+     "cr1+": 304,
+     "cr2-": 1232,
+     "cr2+": 1232,
+     "cr3-": 1056,
+     "cr3+": 1056,
+     "cr4-": 880,
+     "cr4+": 880,
+     "cr5-": 704,
+     "cr5+": 704,
+     "cr6-": 528,
+     "cr6+": 528,
+     "cr7-": 352,
+     "cr7+": 352,
+     "cr8-": 176,
+     "cr8+": 176,
+     "r1-": 224,
+     "r1+": 480,
+     "r2-": 496,
+     "r2+": 1264,
+     "r3-": 296,
+     "r3+": 936,
+     "r4-": 224,
+     "r4+": 480,
+     "r5-": 24,
+     "r5+": 152,
+     "r6-": 296,
+     "r6+": 936,
+     "r7-": 248,
+     "r7+": 632,
+     "r8-": 224,
+     "r8+": 480,
+     "r9-": 224,
+     "r9+": 480,
+     "r10-": 248,
+     "r10+": 632,
+     "r11-": 48,
+     "r11+": 304,
+     "r12-": 72,
+     "r12+": 456,
+     "r13-": 272,
+     "r13+": 784,
+     "r14-": 48,
+     "r14+": 304,
+     "r15-": 296,
+     "r15+": 936,
+     "r16-": 224,
+     "r16+": 480,
+     "r17-": 224,
+     "r17+": 480,
+     "r18-": 248,
+     "r18+": 632,
+     "r19-": 48,
+     "r19+": 304,
+     "r20-": 72,
+     "r20+": 456,
+     "r21-": 72,
+     "r21+": 456,
+     "r22-": 96,
+     "r22+": 608,
+     "r23-": 296,
+     "r23+": 936,
+     "r24-": 24,
+     "r24+": 152,
+     "r25-": 272,
+     "r25+": 784,
+     "r26-": 248,
+     "r26+": 632,
+     "r27-": 96,
+     "r27+": 608,
+     "r28-": 48,
+     "r28+": 304
+    },
+    "max_rotation_index": 28
+   },
+   "oracle_calls": 36,
+   "n_samples": 8,
+   "hybrid": {
+    "n_calls": 176,
+    "zero_input_forward": 148,
+    "general": 28,
+    "B": 0.20146559557319427,
+    "prep": 4.05687398063077e-09,
+    "B_simple": 0.20146564769237452,
+    "exact_formula": 5.641037276466788
+   },
+   "P_run_differs_exact_formula": 1.0,
+   "formula_equals_emitted": true
+  }
+ }
+}

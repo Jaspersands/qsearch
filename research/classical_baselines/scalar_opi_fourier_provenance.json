@@ -1,0 +1,536 @@
+{
+  "status": "SAME_SIX_CASES_PROVENANCE_NOT_ASYMPTOTIC_EVIDENCE",
+  "input_sha256": {
+    "scalar_opi_fft_probe.json": "5c3c81e2ddca14fc994ca96d93a054983470aa1db5f3f4a4f858ca5d52109da0",
+    "scalar_opi_fourier_elimination.json": "3bf6e5831a88ea01ee1025a2d8534851330ec3aceed553867c31dd5fef1b701a"
+  },
+  "scope": "Nonzero row Fourier support collisions, not full row-space intersections; single-row selections after aliases need not satisfy the early direct-sum invariant.",
+  "rows": [
+    {
+      "q": 16,
+      "k": 4,
+      "seed": 3101,
+      "denominator": 16,
+      "first_nonzero_cross_row_support_alias": {
+        "after_step": 4,
+        "remaining_free_bits": 12,
+        "rows_selected_before_first_alias": 4,
+        "mean_numerator": 136
+      },
+      "first_selected_mixed_row_frequency": {
+        "step": 6,
+        "owner_count": 2,
+        "mean_before_numerator": 140
+      },
+      "selected_mixed_row_steps": 7,
+      "gain_on_selected_single_row_frequencies_numerator": 32,
+      "gain_on_selected_mixed_row_frequencies_numerator": 56,
+      "checkpoints": [
+        {
+          "after_step": 4,
+          "mean_numerator": 136,
+          "rows_with_constant_score_one": 0,
+          "row_mean_numerator_histogram": {
+            "8": 11,
+            "12": 4
+          }
+        },
+        {
+          "after_step": 8,
+          "mean_numerator": 158,
+          "rows_with_constant_score_one": 3,
+          "row_mean_numerator_histogram": {
+            "8": 8,
+            "10": 1,
+            "12": 3,
+            "16": 3
+          }
+        },
+        {
+          "after_step": 12,
+          "mean_numerator": 188,
+          "rows_with_constant_score_one": 6,
+          "row_mean_numerator_histogram": {
+            "8": 3,
+            "10": 2,
+            "12": 4,
+            "16": 6
+          }
+        },
+        {
+          "after_step": 14,
+          "mean_numerator": 208,
+          "rows_with_constant_score_one": 10,
+          "row_mean_numerator_histogram": {
+            "8": 3,
+            "12": 2,
+            "16": 10
+          }
+        }
+      ]
+    },
+    {
+      "q": 16,
+      "k": 4,
+      "seed": 3102,
+      "denominator": 16,
+      "first_nonzero_cross_row_support_alias": {
+        "after_step": 6,
+        "remaining_free_bits": 10,
+        "rows_selected_before_first_alias": 6,
+        "mean_numerator": 144
+      },
+      "first_selected_mixed_row_frequency": {
+        "step": 7,
+        "owner_count": 2,
+        "mean_before_numerator": 144
+      },
+      "selected_mixed_row_steps": 10,
+      "gain_on_selected_single_row_frequencies_numerator": 24,
+      "gain_on_selected_mixed_row_frequencies_numerator": 80,
+      "checkpoints": [
+        {
+          "after_step": 4,
+          "mean_numerator": 136,
+          "rows_with_constant_score_one": 0,
+          "row_mean_numerator_histogram": {
+            "8": 11,
+            "12": 4
+          }
+        },
+        {
+          "after_step": 8,
+          "mean_numerator": 160,
+          "rows_with_constant_score_one": 2,
+          "row_mean_numerator_histogram": {
+            "8": 7,
+            "12": 6,
+            "16": 2
+          }
+        },
+        {
+          "after_step": 12,
+          "mean_numerator": 190,
+          "rows_with_constant_score_one": 5,
+          "row_mean_numerator_histogram": {
+            "8": 2,
+            "10": 1,
+            "12": 7,
+            "16": 5
+          }
+        },
+        {
+          "after_step": 16,
+          "mean_numerator": 224,
+          "rows_with_constant_score_one": 14,
+          "row_mean_numerator_histogram": {
+            "0": 1,
+            "16": 14
+          }
+        }
+      ]
+    },
+    {
+      "q": 64,
+      "k": 16,
+      "seed": 3101,
+      "denominator": 64,
+      "first_nonzero_cross_row_support_alias": {
+        "after_step": 77,
+        "remaining_free_bits": 19,
+        "rows_selected_before_first_alias": 36,
+        "mean_numerator": 2920
+      },
+      "first_selected_mixed_row_frequency": {
+        "step": 80,
+        "owner_count": 2,
+        "mean_before_numerator": 2942
+      },
+      "selected_mixed_row_steps": 16,
+      "gain_on_selected_single_row_frequencies_numerator": 940,
+      "gain_on_selected_mixed_row_frequencies_numerator": 692,
+      "checkpoints": [
+        {
+          "after_step": 24,
+          "mean_numerator": 2318,
+          "rows_with_constant_score_one": 0,
+          "row_mean_numerator_histogram": {
+            "32": 49,
+            "44": 3,
+            "46": 1,
+            "56": 7,
+            "60": 3
+          }
+        },
+        {
+          "after_step": 48,
+          "mean_numerator": 2600,
+          "rows_with_constant_score_one": 1,
+          "row_mean_numerator_histogram": {
+            "32": 39,
+            "44": 1,
+            "52": 1,
+            "56": 17,
+            "60": 4,
+            "64": 1
+          }
+        },
+        {
+          "after_step": 72,
+          "mean_numerator": 2866,
+          "rows_with_constant_score_one": 6,
+          "row_mean_numerator_histogram": {
+            "32": 28,
+            "42": 3,
+            "44": 1,
+            "56": 21,
+            "60": 4,
+            "64": 6
+          }
+        },
+        {
+          "after_step": 90,
+          "mean_numerator": 3194,
+          "rows_with_constant_score_one": 22,
+          "row_mean_numerator_histogram": {
+            "30": 1,
+            "32": 8,
+            "34": 4,
+            "36": 3,
+            "38": 3,
+            "40": 2,
+            "42": 1,
+            "44": 2,
+            "48": 3,
+            "52": 1,
+            "56": 11,
+            "60": 2,
+            "64": 22
+          }
+        },
+        {
+          "after_step": 96,
+          "mean_numerator": 3648,
+          "rows_with_constant_score_one": 57,
+          "row_mean_numerator_histogram": {
+            "0": 6,
+            "64": 57
+          }
+        }
+      ]
+    },
+    {
+      "q": 64,
+      "k": 16,
+      "seed": 3102,
+      "denominator": 64,
+      "first_nonzero_cross_row_support_alias": {
+        "after_step": 75,
+        "remaining_free_bits": 21,
+        "rows_selected_before_first_alias": 38,
+        "mean_numerator": 2928
+      },
+      "first_selected_mixed_row_frequency": {
+        "step": 80,
+        "owner_count": 2,
+        "mean_before_numerator": 2970
+      },
+      "selected_mixed_row_steps": 16,
+      "gain_on_selected_single_row_frequencies_numerator": 954,
+      "gain_on_selected_mixed_row_frequencies_numerator": 614,
+      "checkpoints": [
+        {
+          "after_step": 24,
+          "mean_numerator": 2320,
+          "rows_with_constant_score_one": 0,
+          "row_mean_numerator_histogram": {
+            "32": 47,
+            "44": 3,
+            "46": 4,
+            "48": 1,
+            "56": 7,
+            "60": 1
+          }
+        },
+        {
+          "after_step": 48,
+          "mean_numerator": 2604,
+          "rows_with_constant_score_one": 0,
+          "row_mean_numerator_histogram": {
+            "32": 36,
+            "42": 3,
+            "44": 1,
+            "46": 1,
+            "48": 1,
+            "56": 18,
+            "60": 3
+          }
+        },
+        {
+          "after_step": 72,
+          "mean_numerator": 2890,
+          "rows_with_constant_score_one": 3,
+          "row_mean_numerator_histogram": {
+            "32": 26,
+            "42": 2,
+            "44": 1,
+            "46": 1,
+            "48": 1,
+            "56": 24,
+            "60": 5,
+            "64": 3
+          }
+        },
+        {
+          "after_step": 90,
+          "mean_numerator": 3228,
+          "rows_with_constant_score_one": 16,
+          "row_mean_numerator_histogram": {
+            "28": 1,
+            "32": 5,
+            "34": 3,
+            "36": 1,
+            "38": 1,
+            "40": 4,
+            "42": 2,
+            "44": 6,
+            "48": 2,
+            "52": 1,
+            "56": 19,
+            "60": 2,
+            "64": 16
+          }
+        },
+        {
+          "after_step": 95,
+          "mean_numerator": 3584,
+          "rows_with_constant_score_one": 50,
+          "row_mean_numerator_histogram": {
+            "0": 1,
+            "32": 12,
+            "64": 50
+          }
+        }
+      ]
+    },
+    {
+      "q": 256,
+      "k": 64,
+      "seed": 3101,
+      "denominator": 256,
+      "first_nonzero_cross_row_support_alias": {
+        "after_step": 479,
+        "remaining_free_bits": 33,
+        "rows_selected_before_first_alias": 121,
+        "mean_numerator": 48000
+      },
+      "first_selected_mixed_row_frequency": {
+        "step": 490,
+        "owner_count": 2,
+        "mean_before_numerator": 48312
+      },
+      "selected_mixed_row_steps": 22,
+      "gain_on_selected_single_row_frequencies_numerator": 15714,
+      "gain_on_selected_mixed_row_frequencies_numerator": 4382,
+      "checkpoints": [
+        {
+          "after_step": 128,
+          "mean_numerator": 36824,
+          "rows_with_constant_score_one": 24,
+          "row_mean_numerator_histogram": {
+            "128": 218,
+            "156": 1,
+            "158": 1,
+            "162": 1,
+            "188": 1,
+            "232": 7,
+            "240": 1,
+            "248": 1,
+            "256": 24
+          }
+        },
+        {
+          "after_step": 256,
+          "mean_numerator": 40990,
+          "rows_with_constant_score_one": 51,
+          "row_mean_numerator_histogram": {
+            "128": 185,
+            "154": 1,
+            "156": 1,
+            "192": 1,
+            "232": 12,
+            "240": 3,
+            "248": 1,
+            "256": 51
+          }
+        },
+        {
+          "after_step": 384,
+          "mean_numerator": 44992,
+          "rows_with_constant_score_one": 86,
+          "row_mean_numerator_histogram": {
+            "128": 155,
+            "152": 2,
+            "224": 1,
+            "232": 5,
+            "240": 5,
+            "248": 1,
+            "256": 86
+          }
+        },
+        {
+          "after_step": 504,
+          "mean_numerator": 49392,
+          "rows_with_constant_score_one": 116,
+          "row_mean_numerator_histogram": {
+            "112": 1,
+            "120": 1,
+            "122": 3,
+            "124": 2,
+            "126": 2,
+            "128": 47,
+            "130": 5,
+            "132": 9,
+            "134": 6,
+            "136": 8,
+            "138": 8,
+            "140": 6,
+            "142": 3,
+            "144": 7,
+            "146": 2,
+            "148": 12,
+            "150": 1,
+            "152": 1,
+            "156": 2,
+            "164": 2,
+            "172": 1,
+            "180": 1,
+            "208": 1,
+            "224": 1,
+            "232": 1,
+            "240": 5,
+            "248": 1,
+            "256": 116
+          }
+        },
+        {
+          "after_step": 512,
+          "mean_numerator": 52736,
+          "rows_with_constant_score_one": 206,
+          "row_mean_numerator_histogram": {
+            "0": 49,
+            "256": 206
+          }
+        }
+      ]
+    },
+    {
+      "q": 256,
+      "k": 64,
+      "seed": 3102,
+      "denominator": 256,
+      "first_nonzero_cross_row_support_alias": {
+        "after_step": 485,
+        "remaining_free_bits": 27,
+        "rows_selected_before_first_alias": 124,
+        "mean_numerator": 48228
+      },
+      "first_selected_mixed_row_frequency": {
+        "step": 488,
+        "owner_count": 2,
+        "mean_before_numerator": 48304
+      },
+      "selected_mixed_row_steps": 21,
+      "gain_on_selected_single_row_frequencies_numerator": 15776,
+      "gain_on_selected_mixed_row_frequencies_numerator": 3552,
+      "checkpoints": [
+        {
+          "after_step": 128,
+          "mean_numerator": 36842,
+          "rows_with_constant_score_one": 17,
+          "row_mean_numerator_histogram": {
+            "128": 208,
+            "156": 6,
+            "158": 6,
+            "160": 1,
+            "162": 1,
+            "188": 1,
+            "192": 1,
+            "232": 10,
+            "240": 4,
+            "256": 17
+          }
+        },
+        {
+          "after_step": 256,
+          "mean_numerator": 41010,
+          "rows_with_constant_score_one": 48,
+          "row_mean_numerator_histogram": {
+            "128": 183,
+            "156": 1,
+            "158": 1,
+            "160": 1,
+            "184": 1,
+            "192": 1,
+            "232": 14,
+            "240": 5,
+            "256": 48
+          }
+        },
+        {
+          "after_step": 384,
+          "mean_numerator": 45084,
+          "rows_with_constant_score_one": 85,
+          "row_mean_numerator_histogram": {
+            "128": 154,
+            "156": 1,
+            "160": 1,
+            "232": 8,
+            "240": 6,
+            "256": 85
+          }
+        },
+        {
+          "after_step": 504,
+          "mean_numerator": 49432,
+          "rows_with_constant_score_one": 117,
+          "row_mean_numerator_histogram": {
+            "116": 3,
+            "118": 4,
+            "120": 2,
+            "122": 1,
+            "124": 6,
+            "126": 8,
+            "128": 40,
+            "130": 5,
+            "132": 7,
+            "134": 4,
+            "136": 7,
+            "138": 3,
+            "140": 6,
+            "142": 1,
+            "144": 6,
+            "146": 4,
+            "148": 11,
+            "152": 6,
+            "156": 3,
+            "184": 2,
+            "224": 1,
+            "240": 8,
+            "256": 117
+          }
+        },
+        {
+          "after_step": 511,
+          "mean_numerator": 51968,
+          "rows_with_constant_score_one": 166,
+          "row_mean_numerator_histogram": {
+            "0": 15,
+            "128": 74,
+            "256": 166
+          }
+        }
+      ]
+    }
+  ]
+}

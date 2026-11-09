@@ -1,0 +1,624 @@
+{
+ "Heis(F_3)": {
+  "m": 3,
+  "c": 2,
+  "p": 3,
+  "dims": [
+   3,
+   1
+  ],
+  "arity": {
+   "2": 3
+  },
+  "N_d": {
+   "1": 1,
+   "2": 3
+  },
+  "bits_per_coordinate": 2,
+  "label_bits": 5,
+  "A_p_gates_per_add_scaled": 8,
+  "bch_nodes": {
+   "2": [
+    "xy"
+   ]
+  },
+  "primitive_counts": {
+   "oracle_calls": 6,
+   "E_s_compute": 6,
+   "E_s_uncompute": 6,
+   "qft_leaf": 12,
+   "qft_final": 3,
+   "central_subtractions": 3,
+   "controlled_right_actions": 3,
+   "bch_passes": 12,
+   "bracket_evaluations": 12,
+   "qft_grade2": 9
+  },
+  "bracket_bound_thm_uniform_compilation_i": 48,
+  "qubits_no_reuse": 82,
+  "logical_ops_module_sum": {
+   "measure": 12,
+   "qft3": 21,
+   "qft3_dg": 3,
+   "swap": 24,
+   "x_with_1_controls": 588,
+   "x_with_2_controls": 396,
+   "x_with_3_controls": 192
+  },
+  "logical_gates_total": 1224,
+  "macro_counts_per_module": {
+   "source": {
+    "qft": 4,
+    "add_scaled": 16,
+    "oracle": 2
+   },
+   "merge_d2": {
+    "add_product": 8,
+    "add_scaled": 16,
+    "swap": 1
+   },
+   "instrument_d2": {
+    "qft": 1,
+    "add_scaled": 1,
+    "qft_dg": 1
+   }
+  },
+  "transpiled_cx_per_module": {
+   "source": 440,
+   "instrument_d2": 32,
+   "merge_d2_s1": 1362,
+   "q_prep_d2": 9,
+   "readout": 9
+  },
+  "transpiled_cx_total_module_sum": 5520,
+  "seconds": 0.6
+ },
+ "Heis(F_5)": {
+  "m": 3,
+  "c": 2,
+  "p": 5,
+  "dims": [
+   3,
+   1
+  ],
+  "arity": {
+   "2": 3
+  },
+  "N_d": {
+   "1": 1,
+   "2": 3
+  },
+  "bits_per_coordinate": 3,
+  "label_bits": 7,
+  "A_p_gates_per_add_scaled": 36,
+  "bch_nodes": {
+   "2": [
+    "xy"
+   ]
+  },
+  "primitive_counts": {
+   "oracle_calls": 6,
+   "E_s_compute": 6,
+   "E_s_uncompute": 6,
+   "qft_leaf": 12,
+   "qft_final": 3,
+   "central_subtractions": 3,
+   "controlled_right_actions": 3,
+   "bch_passes": 12,
+   "bracket_evaluations": 12,
+   "qft_grade2": 9
+  },
+  "bracket_bound_thm_uniform_compilation_i": 48,
+  "qubits_no_reuse": 120,
+  "logical_ops_module_sum": {
+   "measure": 18,
+   "qft5": 21,
+   "qft5_dg": 3,
+   "swap": 36,
+   "x_with_1_controls": 3900,
+   "x_with_3_controls": 396,
+   "x_with_4_controls": 1284,
+   "x_with_5_controls": 576,
+   "x_with_6_controls": 864
+  },
+  "logical_gates_total": 7080,
+  "macro_counts_per_module": {
+   "source": {
+    "qft": 4,
+    "add_scaled": 16,
+    "oracle": 2
+   },
+   "merge_d2": {
+    "add_product": 8,
+    "add_scaled": 16,
+    "swap": 1
+   },
+   "instrument_d2": {
+    "qft": 1,
+    "add_scaled": 1,
+    "qft_dg": 1
+   }
+  },
+  "transpiled_cx_per_module": {
+   "source": 6132,
+   "instrument_d2": 322,
+   "merge_d2_s1": 25172,
+   "q_prep_d2": 57,
+   "readout": 57
+  },
+  "transpiled_cx_total_module_sum": 94992,
+  "seconds": 1.1
+ },
+ "Heis(F_7)": {
+  "m": 3,
+  "c": 2,
+  "p": 7,
+  "dims": [
+   3,
+   1
+  ],
+  "arity": {
+   "2": 3
+  },
+  "N_d": {
+   "1": 1,
+   "2": 3
+  },
+  "bits_per_coordinate": 3,
+  "label_bits": 9,
+  "A_p_gates_per_add_scaled": 88,
+  "bch_nodes": {
+   "2": [
+    "xy"
+   ]
+  },
+  "primitive_counts": {
+   "oracle_calls": 6,
+   "E_s_compute": 6,
+   "E_s_uncompute": 6,
+   "qft_leaf": 12,
+   "qft_final": 3,
+   "central_subtractions": 3,
+   "controlled_right_actions": 3,
+   "bch_passes": 12,
+   "bracket_evaluations": 12,
+   "qft_grade2": 9
+  },
+  "bracket_bound_thm_uniform_compilation_i": 48,
+  "qubits_no_reuse": 132,
+  "logical_ops_module_sum": {
+   "measure": 18,
+   "qft7": 21,
+   "qft7_dg": 3,
+   "swap": 36,
+   "x_with_1_controls": 12636,
+   "x_with_4_controls": 1782,
+   "x_with_5_controls": 1782,
+   "x_with_6_controls": 1296,
+   "x_with_7_controls": 2592,
+   "x_with_8_controls": 1296
+  },
+  "logical_gates_total": 21444,
+  "macro_counts_per_module": {
+   "source": {
+    "qft": 4,
+    "add_scaled": 16,
+    "oracle": 2
+   },
+   "merge_d2": {
+    "add_product": 8,
+    "add_scaled": 16,
+    "swap": 1
+   },
+   "instrument_d2": {
+    "qft": 1,
+    "add_scaled": 1,
+    "qft_dg": 1
+   }
+  },
+  "seconds": 0.4
+ },
+ "n4(F_5)": {
+  "m": 4,
+  "c": 3,
+  "p": 5,
+  "dims": [
+   4,
+   2,
+   1
+  ],
+  "arity": {
+   "2": 5,
+   "3": 2
+  },
+  "N_d": {
+   "1": 1,
+   "2": 5,
+   "3": 10
+  },
+  "bits_per_coordinate": 3,
+  "label_bits": 10,
+  "A_p_gates_per_add_scaled": 36,
+  "bch_nodes": {
+   "2": [
+    "xy"
+   ],
+   "3": [
+    "xy",
+    "xxy",
+    "yxy"
+   ]
+  },
+  "primitive_counts": {
+   "oracle_calls": 30,
+   "E_s_compute": 30,
+   "E_s_uncompute": 30,
+   "qft_leaf": 70,
+   "qft_final": 4,
+   "central_subtractions": 20,
+   "controlled_right_actions": 15,
+   "bch_passes": 60,
+   "bracket_evaluations": 140,
+   "qft_grade2": 24,
+   "qft_grade3": 50
+  },
+  "bracket_bound_thm_uniform_compilation_i": 880,
+  "qubits_no_reuse": 744,
+  "logical_ops_module_sum": {
+   "measure": 72,
+   "qft5": 128,
+   "qft5_dg": 20,
+   "swap": 300,
+   "x_with_1_controls": 50400,
+   "x_with_3_controls": 3680,
+   "x_with_4_controls": 12640,
+   "x_with_5_controls": 9600,
+   "x_with_6_controls": 14400
+  },
+  "logical_gates_total": 91168,
+  "macro_counts_per_module": {
+   "source": {
+    "qft": 7,
+    "add_scaled": 42,
+    "oracle": 3
+   },
+   "merge_d2": {
+    "add_product": 16,
+    "add_scaled": 24,
+    "swap": 1
+   },
+   "instrument_d2": {
+    "qft": 2,
+    "add_scaled": 2,
+    "qft_dg": 2
+   },
+   "merge_d3": {
+    "add_product": 32,
+    "add_scaled": 36,
+    "swap": 1
+   },
+   "instrument_d3": {
+    "qft": 1,
+    "add_scaled": 1,
+    "qft_dg": 1
+   }
+  },
+  "transpiled_cx_per_module": {
+   "source": 16113,
+   "instrument_d2": 644,
+   "merge_d2_s1": 48632,
+   "q_prep_d2": 76,
+   "instrument_d3": 322,
+   "merge_d3_s1": 93291,
+   "q_prep_d3": 114,
+   "readout": 76
+  },
+  "transpiled_cx_total_module_sum": 1344362,
+  "seconds": 5.2
+ },
+ "n4(F_7)": {
+  "m": 4,
+  "c": 3,
+  "p": 7,
+  "dims": [
+   4,
+   2,
+   1
+  ],
+  "arity": {
+   "2": 5,
+   "3": 4
+  },
+  "N_d": {
+   "1": 1,
+   "2": 5,
+   "3": 20
+  },
+  "bits_per_coordinate": 3,
+  "label_bits": 12,
+  "A_p_gates_per_add_scaled": 88,
+  "bch_nodes": {
+   "2": [
+    "xy"
+   ],
+   "3": [
+    "xy",
+    "xxy",
+    "yxy"
+   ]
+  },
+  "primitive_counts": {
+   "oracle_calls": 60,
+   "E_s_compute": 60,
+   "E_s_uncompute": 60,
+   "qft_leaf": 140,
+   "qft_final": 4,
+   "central_subtractions": 30,
+   "controlled_right_actions": 25,
+   "bch_passes": 100,
+   "bracket_evaluations": 260,
+   "qft_grade2": 24,
+   "qft_grade3": 70
+  },
+  "bracket_bound_thm_uniform_compilation_i": 1680,
+  "qubits_no_reuse": 1404,
+  "logical_ops_module_sum": {
+   "measure": 102,
+   "qft7": 208,
+   "qft7_dg": 30,
+   "swap": 510,
+   "x_with_1_controls": 313560,
+   "x_with_4_controls": 30780,
+   "x_with_5_controls": 30780,
+   "x_with_6_controls": 38880,
+   "x_with_7_controls": 77760,
+   "x_with_8_controls": 38880
+  },
+  "logical_gates_total": 531388,
+  "macro_counts_per_module": {
+   "source": {
+    "qft": 7,
+    "add_scaled": 42,
+    "oracle": 3
+   },
+   "merge_d2": {
+    "add_product": 16,
+    "add_scaled": 24,
+    "swap": 1
+   },
+   "instrument_d2": {
+    "qft": 2,
+    "add_scaled": 2,
+    "qft_dg": 2
+   },
+   "merge_d3": {
+    "add_product": 32,
+    "add_scaled": 36,
+    "swap": 1
+   },
+   "instrument_d3": {
+    "qft": 1,
+    "add_scaled": 1,
+    "qft_dg": 1
+   }
+  },
+  "seconds": 1.9
+ },
+ "n5(F_5)": {
+  "m": 5,
+  "c": 4,
+  "p": 5,
+  "dims": [
+   5,
+   3,
+   2,
+   1
+  ],
+  "arity": {
+   "2": 7,
+   "3": 3,
+   "4": 5
+  },
+  "N_d": {
+   "1": 1,
+   "2": 7,
+   "3": 21,
+   "4": 105
+  },
+  "bits_per_coordinate": 3,
+  "label_bits": 12,
+  "A_p_gates_per_add_scaled": 36,
+  "bch_nodes": {
+   "2": [
+    "xy"
+   ],
+   "3": [
+    "xy",
+    "xxy",
+    "yxy"
+   ],
+   "4": [
+    "xy",
+    "xxy",
+    "yxy",
+    "xyxy",
+    "yxxy"
+   ]
+  },
+  "primitive_counts": {
+   "oracle_calls": 420,
+   "E_s_compute": 420,
+   "E_s_uncompute": 420,
+   "qft_leaf": 1155,
+   "qft_final": 5,
+   "central_subtractions": 168,
+   "controlled_right_actions": 133,
+   "bch_passes": 532,
+   "bracket_evaluations": 2380,
+   "qft_grade2": 47,
+   "qft_grade3": 140,
+   "qft_grade4": 420
+  },
+  "bracket_bound_thm_uniform_compilation_i": 26992,
+  "qubits_no_reuse": 10002,
+  "logical_ops_module_sum": {
+   "measure": 519,
+   "qft5": 1599,
+   "qft5_dg": 168,
+   "swap": 4263,
+   "x_with_1_controls": 1141840,
+   "x_with_3_controls": 72464,
+   "x_with_4_controls": 256368,
+   "x_with_5_controls": 233856,
+   "x_with_6_controls": 350784
+  },
+  "logical_gates_total": 2061342,
+  "macro_counts_per_module": {
+   "source": {
+    "qft": 11,
+    "add_scaled": 88,
+    "oracle": 4
+   },
+   "merge_d2": {
+    "add_product": 24,
+    "add_scaled": 32,
+    "swap": 1
+   },
+   "instrument_d2": {
+    "qft": 3,
+    "add_scaled": 3,
+    "qft_dg": 3
+   },
+   "merge_d3": {
+    "add_product": 56,
+    "add_scaled": 54,
+    "swap": 1
+   },
+   "instrument_d3": {
+    "qft": 2,
+    "add_scaled": 2,
+    "qft_dg": 2
+   },
+   "merge_d4": {
+    "add_product": 80,
+    "add_scaled": 70,
+    "swap": 1
+   },
+   "instrument_d4": {
+    "qft": 1,
+    "add_scaled": 1,
+    "qft_dg": 1
+   }
+  },
+  "seconds": 1.6
+ },
+ "n5(F_7)": {
+  "m": 5,
+  "c": 4,
+  "p": 7,
+  "dims": [
+   5,
+   3,
+   2,
+   1
+  ],
+  "arity": {
+   "2": 7,
+   "3": 7,
+   "4": 3
+  },
+  "N_d": {
+   "1": 1,
+   "2": 7,
+   "3": 49,
+   "4": 147
+  },
+  "bits_per_coordinate": 3,
+  "label_bits": 15,
+  "A_p_gates_per_add_scaled": 88,
+  "bch_nodes": {
+   "2": [
+    "xy"
+   ],
+   "3": [
+    "xy",
+    "xxy",
+    "yxy"
+   ],
+   "4": [
+    "xy",
+    "xxy",
+    "yxy",
+    "xyxy",
+    "yxxy"
+   ]
+  },
+  "primitive_counts": {
+   "oracle_calls": 588,
+   "E_s_compute": 588,
+   "E_s_uncompute": 588,
+   "qft_leaf": 1617,
+   "qft_final": 5,
+   "central_subtractions": 266,
+   "controlled_right_actions": 203,
+   "bch_passes": 812,
+   "bracket_evaluations": 3556,
+   "qft_grade2": 47,
+   "qft_grade3": 252,
+   "qft_grade4": 784
+  },
+  "bracket_bound_thm_uniform_compilation_i": 39312,
+  "qubits_no_reuse": 16302,
+  "logical_ops_module_sum": {
+   "measure": 813,
+   "qft7": 2439,
+   "qft7_dg": 266,
+   "swap": 6489,
+   "x_with_1_controls": 5948488,
+   "x_with_4_controls": 474516,
+   "x_with_5_controls": 474516,
+   "x_with_6_controls": 792288,
+   "x_with_7_controls": 1584576,
+   "x_with_8_controls": 792288
+  },
+  "logical_gates_total": 10075866,
+  "macro_counts_per_module": {
+   "source": {
+    "qft": 11,
+    "add_scaled": 88,
+    "oracle": 4
+   },
+   "merge_d2": {
+    "add_product": 24,
+    "add_scaled": 32,
+    "swap": 1
+   },
+   "instrument_d2": {
+    "qft": 3,
+    "add_scaled": 3,
+    "qft_dg": 3
+   },
+   "merge_d3": {
+    "add_product": 56,
+    "add_scaled": 54,
+    "swap": 1
+   },
+   "instrument_d3": {
+    "qft": 2,
+    "add_scaled": 2,
+    "qft_dg": 2
+   },
+   "merge_d4": {
+    "add_product": 80,
+    "add_scaled": 70,
+    "swap": 1
+   },
+   "instrument_d4": {
+    "qft": 1,
+    "add_scaled": 1,
+    "qft_dg": 1
+   }
+  },
+  "seconds": 5.6
+ }
+}

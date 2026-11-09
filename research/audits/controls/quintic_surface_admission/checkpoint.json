@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "date": "2026-11-07",
+  "heading": "2026-11-07 Quintic Surface P2 Reduction",
+  "source_pdf_hashes_checked": 5,
+  "closed_reviews": [
+    "research/audits/reviews/2026-11-07-quintic-surface-geometry.md",
+    "research/audits/reviews/2026-11-07-quintic-surface-composition.md"
+  ],
+  "control": {
+    "scope": "exact classical finite control only",
+    "total_runs": 2,
+    "corrected_F7_points": 58,
+    "corrected_H2_trace": 8,
+    "corrected_P2_linear_coefficient": -8,
+    "full_P2_computed": false,
+    "rerun_at_checkpoint": false
+  },
+  "claude": {
+    "run_id": "20261106T233641.731925Z-d76f7756",
+    "status": "completed",
+    "estimated_usd": 0.51262,
+    "aggregate_nonpartial_estimate_usd": 49.441306,
+    "nonpartial_usage_records": 64,
+    "completed_reports": 33,
+    "prior_partial_timeout_billing": "UNKNOWN",
+    "estimates_are_provider_balance": false,
+    "retry": false
+  },
+  "scope": {
+    "written_reduction_reviewed": true,
+    "implementation": false,
+    "novelty": false,
+    "speedup": false,
+    "quantum_execution": false,
+    "Hodge_obstruction": "known theorem for very general complex surfaces; not a finite-field classical lower bound"
+  },
+  "validation": "source hashes, frozen artifacts, syntax and scope only; no full suite"
+}

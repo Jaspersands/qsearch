@@ -1,0 +1,37 @@
+A. explicit (kappa-1)-wise independent law
+  kappa=3 q=1/4: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=3 q=1/2: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=3 q=2/3: nonneg=False total=1 P(all)=0 marginals_independent=True
+  kappa=4 q=1/4: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=4 q=1/2: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=4 q=2/3: nonneg=False total=1 P(all)=0 marginals_independent=True
+  kappa=5 q=1/4: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=5 q=1/2: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=5 q=2/3: nonneg=False total=1 P(all)=0 marginals_independent=True
+  kappa=6 q=1/4: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=6 q=1/2: nonneg=True total=1 P(all)=0 marginals_independent=True
+  kappa=6 q=2/3: nonneg=False total=1 P(all)=0 marginals_independent=True
+B. 4-cycle frequencies: brute force vs p(p-1) chi^{e2+e4}(-1) J(e1,e2) J(e3,e4)
+  kappa=3 p=7: 2 tuples, max |brute - formula| = 6.48e-14, |S| = p^2(p-1) = 294
+    sum e = 1 (nonzero): |S| = 1.90e-14
+    path support (degree-one vertex): |S| = 2.00e-14
+  kappa=3 p=13: 2 tuples, max |brute - formula| = 3.46e-13, |S| = p^2(p-1) = 2028
+    sum e = 1 (nonzero): |S| = 1.33e-12
+    path support (degree-one vertex): |S| = 2.75e-13
+  kappa=4 p=13: 6 tuples, max |brute - formula| = 9.76e-13, |S| = p^2(p-1) = 2028
+    sum e = 1 (nonzero): |S| = 3.82e-13
+    path support (degree-one vertex): |S| = 1.53e-13
+  kappa=5 p=11: 6 tuples, max |brute - formula| = 2.61e-12, |S| = p^2(p-1) = 1210
+    sum e = 1 (nonzero): |S| = 5.87e-13
+    path support (degree-one vertex): |S| = 3.02e-14
+C. primes p = 1 (mod kappa) below X at which small primes are kappa-th powers
+  kappa=4: 3018 primes; 2 is a power at 748 (0.248, 1/kappa=0.250); 2,3,5 all powers at 30 (0.0099, kappa^-3=0.0156); first p with 2..13 all powers: []
+  kappa=5: 1508 primes; 2 is a power at 297 (0.197, 1/kappa=0.200); 2,3,5 all powers at 10 (0.0066, kappa^-3=0.0080); first p with 2..13 all powers: []
+  kappa=7: 1005 primes; 2 is a power at 130 (0.129, 1/kappa=0.143); 2,3,5 all powers at 0 (0.0000, kappa^-3=0.0029); first p with 2..13 all powers: []
+D. barrier values against known E_2 data
+  kappa=4: max known E_2 = 53; kappa^kappa/2 = 128; (kappa-1)kappa^kappa = 768; 1.5 kappa^((kappa+1)/2) = 48; 2^(-1/(k-1)) kappa^kappa = 203.2
+  kappa=5: max known E_2 = 181; kappa^kappa/2 = 1562; (kappa-1)kappa^kappa = 1.25e+04; 1.5 kappa^((kappa+1)/2) = 187.5; 2^(-1/(k-1)) kappa^kappa = 2628
+  kappa=6: max known E_2 = 859; kappa^kappa/2 = 2.333e+04; (kappa-1)kappa^kappa = 2.333e+05; 1.5 kappa^((kappa+1)/2) = 793.6; 2^(-1/(k-1)) kappa^kappa = 4.062e+04
+  kappa=7: max known E_2 = 3221; kappa^kappa/2 = 4.118e+05; (kappa-1)kappa^kappa = 4.941e+06; 1.5 kappa^((kappa+1)/2) = 3602; 2^(-1/(k-1)) kappa^kappa = 7.337e+05
+  kappa=8: max known E_2 = 14281; kappa^kappa/2 = 8.389e+06; (kappa-1)kappa^kappa = 1.174e+08; 1.5 kappa^((kappa+1)/2) = 1.738e+04; 2^(-1/(k-1)) kappa^kappa = 1.52e+07
+  kappa=9: max known E_2 = 18199; kappa^kappa/2 = 1.937e+08; (kappa-1)kappa^kappa = 3.099e+09; 1.5 kappa^((kappa+1)/2) = 8.857e+04; 2^(-1/(k-1)) kappa^kappa = 3.553e+08

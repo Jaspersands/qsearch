@@ -1,0 +1,64 @@
+{
+  "scope": "exact classical baseline and algebra controls only",
+  "source_fractional_counterexample": {
+    "value": "4/3",
+    "forbidden_class_ratio": "4"
+  },
+  "pari_baseline": {
+    "q4_witness": [
+      "-2",
+      "-2",
+      "0",
+      "1"
+    ],
+    "q5_witness": [
+      "-1",
+      "-2",
+      "1",
+      "1",
+      "-1"
+    ],
+    "ternary_obstruction": "3"
+  },
+  "quaternary_descent": {
+    "extension": "Q(sqrt(6))",
+    "plane_rank": 2,
+    "stack_rank": 3,
+    "descended_vector": [
+      "1",
+      "1/5",
+      "-13/5",
+      "-11/5"
+    ]
+  },
+  "lost_discriminant_sign": {
+    "correct_rank": 3,
+    "wrong_rank": 2
+  },
+  "unramified_dyadic_norm": {
+    "generator_norms": [
+      "9",
+      "-1",
+      "25",
+      "-11"
+    ],
+    "selected_pair": [
+      "2",
+      "1"
+    ],
+    "binary_value": "-1"
+  },
+  "ramified_dyadic_base": {
+    "base": "Q(sqrt(2))",
+    "unit_generator_count": 8,
+    "contains_nonsquare_norm_minus1": true
+  },
+  "claim_gates": {
+    "full_solver_execution": false,
+    "quantum_execution": false,
+    "classical_separation": false,
+    "novelty": false,
+    "expanded_output_bound": false,
+    "asymptotic_inference_from_control": false
+  }
+}

@@ -1,0 +1,26 @@
+r= 8 uniform leaf: L= 4 maxblocks=3 rho=  6 N*_lev= 3 N*_src= 0 min|Good|=0 H(leaf)=False | passes=200 fails=7 events={'lev_fallback': 21, 'emptyGood': 7} | deterministic: ok
+r= 8 uniform leaf: L= 4 maxblocks=3 rho=  6 N*_lev= 3 N*_src= 0 min|Good|=0 H(leaf)=False | passes=200 fails=6 events={'lev_fallback': 16, 'emptyGood': 6} | deterministic: ok
+r= 8 uniform leaf: L= 4 maxblocks=3 rho=  8 N*_lev= 3 N*_src= 2 min|Good|=0 H(leaf)=False | passes=200 fails=7 events={'lev_fallback': 11, 'emptyGood': 7} | deterministic: ok
+r= 8 uniform leaf: L= 4 maxblocks=3 rho=  8 N*_lev= 3 N*_src= 2 min|Good|=0 H(leaf)=False | passes=200 fails=5 events={'lev_fallback': 18, 'emptyGood': 5} | deterministic: ok
+r= 8 EC      leaf: L= 4 maxblocks=3 rho=  8 N*_lev= 0 N*_src= 8 min|Good|=1 H(leaf)=False | passes=200 fails=0 events={} | deterministic: ok
+r= 8 EC      leaf: L= 4 maxblocks=3 rho=  8 N*_lev= 0 N*_src= 7 min|Good|=1 H(leaf)=False | passes=200 fails=0 events={} | deterministic: ok
+r= 8 EC      leaf: L= 4 maxblocks=3 rho=  8 N*_lev= 0 N*_src= 7 min|Good|=1 H(leaf)=False | passes=200 fails=0 events={} | deterministic: ok
+r=12 uniform leaf: L= 6 maxblocks=3 rho= 12 N*_lev= 3 N*_src= 2 min|Good|=0 H(leaf)=False | passes=200 fails=9 events={'lev_fallback': 20, 'emptyGood': 9} | deterministic: ok
+r=12 uniform leaf: L= 7 maxblocks=3 rho= 11 N*_lev= 3 N*_src= 0 min|Good|=0 H(leaf)=False | passes=200 fails=8 events={'lev_fallback': 20, 'emptyGood': 8} | deterministic: ok
+r=12 uniform leaf: L= 7 maxblocks=3 rho= 11 N*_lev= 2 N*_src= 0 min|Good|=0 H(leaf)=False | passes=200 fails=10 events={'lev_fallback': 19, 'emptyGood': 10} | deterministic: ok
+r=12 EC      leaf: L= 6 maxblocks=3 rho= 12 N*_lev= 0 N*_src=12 min|Good|=0 H(leaf)=False | passes=200 fails=3 events={'src_fallback': 3, 'emptyGood': 3} | deterministic: ok
+r=12 EC      leaf: L= 6 maxblocks=3 rho= 12 N*_lev= 0 N*_src=12 min|Good|=0 H(leaf)=False | passes=200 fails=4 events={'src_fallback': 7, 'emptyGood': 4} | deterministic: ok
+r=12 EC      leaf: L= 6 maxblocks=3 rho= 12 N*_lev= 0 N*_src=12 min|Good|=0 H(leaf)=False | passes=200 fails=5 events={'src_fallback': 7, 'emptyGood': 5} | deterministic: ok
+r=12 EC      leaf: L= 6 maxblocks=3 rho= 12 N*_lev= 0 N*_src=12 min|Good|=0 H(leaf)=False | passes=200 fails=4 events={'src_fallback': 11, 'emptyGood': 4} | deterministic: ok
+r=12 EC      leaf: L= 6 maxblocks=3 rho= 12 N*_lev= 0 N*_src=11 min|Good|=0 H(leaf)=False | passes=200 fails=4 events={'src_fallback': 7, 'emptyGood': 4} | deterministic: ok
+r=16 uniform leaf: L= 8 maxblocks=3 rho= 14 N*_lev= 3 N*_src= 2 min|Good|=0 H(leaf)=False | passes=200 fails=12 events={'lev_fallback': 24, 'emptyGood': 12} | deterministic: ok
+r=16 uniform leaf: L= 8 maxblocks=3 rho= 14 N*_lev= 3 N*_src= 2 min|Good|=0 H(leaf)=False | passes=200 fails=17 events={'lev_fallback': 35, 'emptyGood': 17} | deterministic: ok
+r=16 uniform leaf: L= 8 maxblocks=3 rho= 14 N*_lev= 3 N*_src= 2 min|Good|=0 H(leaf)=False | passes=200 fails=23 events={'lev_fallback': 37, 'emptyGood': 23} | deterministic: ok
+r=16 uniform leaf: L= 8 maxblocks=3 rho= 14 N*_lev= 3 N*_src= 0 min|Good|=0 H(leaf)=False | passes=200 fails=16 events={'lev_fallback': 35, 'emptyGood': 16} | deterministic: ok
+r=16 uniform leaf: L= 9 maxblocks=3 rho= 16 N*_lev= 2 N*_src= 1 min|Good|=0 H(leaf)=False | passes=200 fails=6 events={'lev_fallback': 16, 'emptyGood': 6} | deterministic: ok
+r=16 uniform leaf: L= 9 maxblocks=3 rho= 16 N*_lev= 2 N*_src= 1 min|Good|=0 H(leaf)=False | passes=200 fails=7 events={'lev_fallback': 18, 'emptyGood': 7} | deterministic: ok
+r=16 EC      leaf: L= 8 maxblocks=3 rho= 16 N*_lev= 0 N*_src=14 min|Good|=0 H(leaf)=False | passes=200 fails=1 events={'src_fallback': 6, 'emptyGood': 1} | deterministic: ok
+r=16 EC      leaf: L= 8 maxblocks=3 rho= 16 N*_lev= 0 N*_src=14 min|Good|=0 H(leaf)=False | passes=200 fails=10 events={'src_fallback': 14, 'emptyGood': 10} | deterministic: FAIL
+r=16 EC      leaf: L= 8 maxblocks=3 rho= 16 N*_lev= 0 N*_src=16 min|Good|=0 H(leaf)=False | passes=200 fails=13 events={'src_fallback': 26, 'emptyGood': 13} | deterministic: ok
+r=16 EC      leaf: L= 8 maxblocks=3 rho= 16 N*_lev= 0 N*_src=16 min|Good|=0 H(leaf)=False | passes=200 fails=11 events={'src_fallback': 20, 'emptyGood': 11} | deterministic: ok
+SUMMARY {'leaves': 25, 'H_holds': 0, 'H_holds_and_fallback': 0, 'fallback_leaves': 22, 'det_ok': 24}

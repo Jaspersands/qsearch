@@ -1,0 +1,176 @@
+# Actual primary source
+{"url": "https://arxiv.org/pdf/2503.21741v2", "sha256": "e836c1e3304efe764d5c7ab1d7a53888e136c2a7539ea6ad63b612bd01ef3e35", "status": 200, "date": "2026-11-07"}
+PDF text lines220-310 and1157-1236 (PDF equation numbers differ from HTML):
+fermionic ladder operators, while ΓZ is the set of al-                     The Richardson-Gaudin models.— We finally apply
+lowed momenta in each parity sector. In particular                      our construction for arbitrary eigenstate preparation of
+p = 2π                   1 3                 1                          an interacting model. We consider the class of spin-1/2
+       N l with l = 2 , 2 , . . . , N − 2 for Z = +1, while
+l = 0, 1, . . . , N − 1 for Z = −1 [1].                                 XXX Richardson-Gaudin (RG) models [43–45] H RG =
+                                                                        PN           (k)
+   Based on the mapping to free fermions, all eigenstates                  k=1 ωk Q      , where
+of the XY model can be prepared by circuits of depth                                                              N
+O(N ) using the algorithms developed in Refs. [11, 12, 42].                                    σkz  1 g X ⃗σk · ⃗σj − 1
+                                                                                      Q(k) =       + +                  .                    (10)
+We do not aim at improving these results. Rather, we                                           2    2 4     ϵk − ϵ j
+                                                                                                                 j̸=k
+invoke these algorithms for the initial state at the Ising
+point γ = 1, h = 0 and subsequently demonstrate the                     Here, ωk and ϵk (with ϵk ̸= ϵj for k ̸= j) are arbitrary
+preparation protocol by adiabatically sweeping to any                   parameters and g is the interaction strength. The Hamil-
+other point in the phase as an illustrative example. Let                tonian commutes with the total magnetization M and
+us first focus on h < 1.                                                with the operators Q(k) , which are mutually commuting
+   It can be seen immediately that the set of conserved                 [Q(j) , Q(k) ] = 0 [45]. In fact, the operators {Q(k) }N
+                                                                                                                               k=1
+operators {c†p cp |p = 2π             1                      1
+                          N l, l = 0, 2 , . . . , N − 1, N − 2 } com-   provide a complete set of conservation laws, i.e. the
+pletely specify an eigenstate. Using this set, we construct             set of their eigenvalues uniquely specify an Hamiltonian
+
+                                                                                                                                                                    4
+
+eigenstate [46]. Setting ω1 = 1, ϵ1 = 0 and ωi = 0,                                  4 × 10 1                                                   Central Spin
+ϵi = −e(i−2)/N for i ̸= 1, we obtain the central-spin                                                                                           Constant Spacing:
+model, which is relevant in the study of quantum dots                                3 × 10 1                                                    i=i
+like the nitrogen-vacancy defect in diamond [45, 47]. In                                                                                        Random Uniform:
+                                                                                                                                                 i U(0, 1)
+
+
+
+                                                                    min qv qv 22
+the RG models, each eigenstate |v⟩ is labeled by the vec-                                                                                       N 1
+                                                                                     2 × 10 1
+                                                                          0
+
+            (1)          (N )        (k)
+tor q⃗v = (qv , . . . , qv )T where qv is the eigenvalue of                                         ×10 4
+the charge Q(k) associated with |v⟩. The set of all pos-                                        6
+sible vectors q⃗v coincides with the set of solutions to the              g, v, v0              4
+so-called quadratic Bethe equations
+                                                                                        10 1    2
+
+                                    N                                                           0
+                  2             g   X      q (k) − q (j)
+              q (k) = q (k) −                            ,   (11)                                     4     6   8   10   12   14
+                                2             ϵk − ϵ j
+                                    j̸=k                                                               3            4              6                     12
+                                                                                                                          System Size N
+                                          P (k)
+with the additional constraint             kq   = M/2 + N/2.
+Eqs. (11) are equivalent to the traditional Bethe equa-             FIG. 1. The RG quadratic Bethe equations are solved nu-
+tions written in terms of the quasiparticle rapidities [45].        merically for all eigenstates while dynamically adapting ∆g,
+At g = 0, the quadratic Bethe equations become trivial              the pairwise ∥ · ∥2 -distance is computed and minimized over
+      2                                                             the adiabatic path g ∈ [0, 10] and all eigenstate pairs [35].
+(q (k) = q (k) ) and {⃗qv }v coincides with the set of binary       This equals the minimal gap of HvRG along the adiabatic path
+vectors.                                                            for all eigenstates v and is shown against system size. Inset
+   For generic g, the solution to Eqs. (11) can be found            shows deviations of the data point from the N −1 curve shown
+numerically by the following procedure: starting from               in black. It can be seen that this fits the gap closing for all
+g = 0 and with a given binary vector, one iteratively in-           models.
+creases g by a small amount ∆g and solves Eqs. (11) via
+a local optimization initialized with the solution of the           tors (M, M ′ ) are separated by an O(1/N ) energy
+previous step [48]. As an improvement, the optimizer can
+                                                                                                                                       2
+also be initialized instead by computing a Taylor expan-                                               N
+                                                                                                     1 X (k)                                   (M − M ′ )2
+                                                                                                                (k)
+sion at the previous solution, which reduces to solving                   ∥⃗qv − q⃗v′ ∥22 ≥              qv − q v ′                        =               . (12)
+                                                                                                     N                                            4N
+linear systems of equations as for the quadratic Bethe                                                      k=1
+equations [48]. A sufficient condition for this method to           For states within the same magnetization sector, we were
+be efficient is that the ∆g required to remain in the local         not able to rigorously bound the scaling of the gap. How-
+minima at any iteration does not vanish exponentially               ever, we have collected convincing analytic and numer-
+with increasing system size. We are not able to provide             ical evidence showing that the gap scaling is at most
+conclusive numerical evidence that this is the case [35],           O(1/N ), as we now discuss. In the limit g → 0, the
+and to our knowledge there is no rigorous result that               gap can be evaluated via standard perturbation the-
+guarantees or prohibits that Eqs. (11) can be solved in             ory: when g < 2(2+
+                                                                                          mink,j |ϵk −ϵj |
+                                                                                                √          , we find that the gap is
+polynomial time. This problem is equivalent to establish-                                         5)N 2
+
+ing the complexity of solving the Bethe equations and is            O(1) [35]. Likewise, and with additional properties of
+beyond the scope of our work. In the following, we will             the Gaudin magnet [49], in the limit g → ∞ we prove
+assume that an efficient algorithm exists, and use the              minv,v′ ∥⃗qv − q⃗v′ ∥22 = 1/N [35]. Away from this pertur-
+method described above to obtain numerical results.                 bative regime, we have performed a numerical analysis
+                                                                    for different values of the parameters εk [35]. Our results
+   Given a target eigenstate |v⟩, we can follow our pro-
+                                                                    are shown in Fig. 1, strongly supporting a O(1/N ) scaling
+tocol and construct the parent Hamiltonian HvRG (g) =
+                    (k)                     (k)                     for increasing N . Notably, the numerics show a strictly
+                                             Appendix H: Smale’s α-theory
+
+   With the quadratic Bethe equations available for the RG model, the question of the gap of the Hamiltonian
+becomes a question of the minimal geometric distance between any root vectors of this set of algebraic equations, as
+HPRG |v ′ ⟩ = ||⃗qv − q⃗v′ ||22 . This question has been considered in the mathematical literature, and different lower bounds
+are known. Importantly, the so-called Smale’s α-theory [52, Chs. 8-14], originally developed to give bounds on the
+convergence radius of Newtons algorithm around the root of a function, appears to be relevant. In fact, for an analytic
+function f : E → F mapping between Banach spaces E, F , for any two roots f (ζ) = f (ζ ′ ) = 0, ζ ̸= ζ ′ , one has the
+following Smale’s bound
+                                                          √
+                                                 ′     5 − 17                   1
+                                          ||ζ − ζ || ≥                   Df (ζ)−1 D k f (ζ)                             (SH.1)
+                                                          4    supk≥2 ||                    ||1/(k−1)
+                                                                         k!
+
+if the inverse of the Jacobi matrix Df (ζ) exists. For the class of RG models that were considered in the main text,
+the equations are all polynomials of degree 2. For these equations the supremum over k in Eq. SH.1 drops out, as the
+
+                                                                                                                                                                        17
+
+                                                  Central Spin                            Constant Spacing: i = i                      Random Uniform: i U(0, 1)
+
+                      100
+
+
+
+
+Minimum Smale Bound
+                      10 1
+
+                      10 2
+
+                      10 3
+
+                      10 4
+                                  Minimum bound                              Minimum bound                                     Minimum bound
+                             3 × 100 4 × 100       6 × 100        101   3 × 100 4 × 100        6 × 100              101   3 × 100 4 × 100       6 × 100        101
+                                                  System Size N                               System Size N                                    System Size N
+
+ FIG. S9. Lower bound for parent Hamiltonian gap via Smale bound. Dots corresponds to values of Eq. SH.4 for all eigenstates
+ of the model. It appears that the minimum over all eigenstates decreases exponentially.
+
+
+ Dk on such polynomials becomes zero for k > 2 and the tensors can be computed explicitly:
+                                                          (                        PN
+                                                            k = l : 2q (k) − 1 + g2 k̸=j ϵk −ϵ
+                                                                                           1
+                                             
+                                             i ≤ N :                                         j
+
+                   (Df (ζ))k,l = ∂k fl (ζ) =                k ̸= l : − g2 ϵl −ϵ
+                                                                             1
+                                                                               k
+                                                                                                                                                                     (SH.2)
+                                             
+                                               i=N +1: 1
+                                             
+                                                   (
+                       2                            k=l=m≤N : 2
+                   (D f (ζ))k,l,m = ∂k ∂l fm (ζ) =                       .                                                                                           (SH.3)
+                                                    else:            0
+
+ Lower bounding the Smale bound via submultiplicativity and using that ||M −1 || = 1/σmin (M ), one arrives at
+                                                       √
+                                              ′     5 − 17 σmin (Df (ζ))
+                                       ||ζ − ζ || ≥                       ,                                   (SH.4)
+                                                       2     ||D2 f (ζ)||
+
+ where ||D2 f (ζ)|| = 2.
+    At this point we note the similarity to the Gaudin determinant expression [63–65] and the connection to the
+ condition number of the linear system occurring in the Taylor expansion for the eigenvalue based solution of the
+ quadratic Bethe equations discussed in Sec. G.
+    However, even as the resulting tensors have a lot of structure, as the Smale bound is still dependent on the solution
+ vector of the quadratic Bethe equations, an analytical lower bound is not immediate. A numerical analysis can
+ be done by calculating the Smale bounds for all eigenvectors for small system sizes, by using the explicit results
+ of the numerical method described in the previous section. Fig. S9 shows these results for the central spin model.
+ Unfortunately, the minimal Smale bound appears to be exponentially small in system size and thus insufficient for a
+ proof of the gap scaling observed in the numerics. Yet, the numerics suggests the Smale bound does not decay for
+ many eigenstates, and it is thus an interesting question for future research whether methods of this sort could be used
+ to prove efficient preparation for some eigenstates of the RG models, or if the Smale bound is tighter for other classes
+ of integrable models.

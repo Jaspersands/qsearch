@@ -1,0 +1,75 @@
+{
+  "scope": "ONE finite n=4 affine support-to-Macaulay control only",
+  "n": 4,
+  "gates": [
+    [
+      "H",
+      0
+    ],
+    [
+      "S",
+      1
+    ],
+    [
+      "CX",
+      1,
+      2
+    ],
+    [
+      "CX",
+      3,
+      0
+    ]
+  ],
+  "bell_labels_enumerated_for_validation_truth": 256,
+  "support_size": 106,
+  "nontrivial_affine_pullback_offset": 32,
+  "candidate_axes": [
+    1,
+    32,
+    96,
+    128,
+    193
+  ],
+  "independent_forward_pauli_axes": [
+    1,
+    32,
+    96,
+    128,
+    193
+  ],
+  "wrong_inverse_transpose_axes": [
+    9,
+    64,
+    98,
+    144,
+    187
+  ],
+  "forward_covariance_verified": true,
+  "inverse_transpose_countercontrol_rejected": true,
+  "k2_dimension": 1,
+  "k3_dimension": 14,
+  "top_dimension": 13,
+  "lie_dimension": 6,
+  "square_zero_dimension": 5,
+  "common_kernel_dimension": 4,
+  "initial_rank_one_equation_dimension": 6,
+  "macaulay_degree_at_most_two_relation_dimension": 10,
+  "quotient_algebra_dimension": 6,
+  "maximum_joint_eigenspaces": 6,
+  "recovered_matrix_ranks": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "coefficient_assignments_enumerated": 0,
+  "claims": {
+    "full_quantum_learner": false,
+    "asymptotic_from_control": false,
+    "quantum_execution": false,
+    "coefficient_assignment_search": false
+  }
+}

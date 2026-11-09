@@ -1,0 +1,15 @@
+d=2,k=2: all 8 patterns: False | T_1 (nested): True | referee 5-set: True
+d=2,k=2: feasible T: 218; non-trivial: 82 (referee: 218 / 82)
+d=3,k=2 (Theorem 3): all 8: False | T_1: False
+d=3,k=3: all 26 patterns: False   [1.0s]
+d=3,k=3: delta_1 full support (9 points off a line, 18 patterns): False
+d=3,k=3: nested chain supp d3 <= supp d2 <= supp d1 = X (14 patterns, 7 points): False | trivial: False
+d=3,k=3: d2, d3 disjoint supports inside supp d1 (10 patterns, 5 points): False | trivial: False
+d=3,k=3: nested pair + disjoint third (sanity, must be SAT): True
+PGL(3,3) acting on PG(2,3): 5616 permutations of 13 points
+orbits of nonempty point sets: 29
+d=3,k=3: non-trivial feasible point-set orbits: 2; by |points|: {3: 1, 4: 1}
+largest feasible point sets (|pts|, mask, orbit size, #lines missed, #lines met in <=1 point):
+    (3, 19, 234, 4, 10) points: [(0, 0, 1), (0, 1, 0), (1, 0, 0)]
+    (4, 23, 468, 2, 9) points: [(0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0)]
+total time 1383s

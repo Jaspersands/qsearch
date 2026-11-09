@@ -1,0 +1,20 @@
+1009 2 done 182 {'stall': 19, 'closure': 18, 'direct': 73, 'thm2': 90, 'absorb': 1, 'top-pair-checked': 1, 'top-pair': 1}
+1009 2 done 364 {'stall': 64, 'closure': 61, 'direct': 121, 'thm2': 179, 'absorb': 3, 'top-pair-checked': 1, 'top-pair': 1, 'absorb-leaf': 2}
+1009 2 done 546 {'stall': 98, 'closure': 89, 'direct': 185, 'thm2': 265, 'absorb': 7, 'top-pair-checked': 1, 'top-pair': 1, 'absorb-leaf': 6, 'rec-Y': 2}
+1009 2 done 728 {'stall': 117, 'closure': 106, 'direct': 246, 'thm2': 367, 'absorb': 9, 'top-pair-checked': 1, 'top-pair': 1, 'absorb-leaf': 8, 'rec-Y': 2}
+1009 2 done 910 {'stall': 148, 'closure': 115, 'direct': 324, 'thm2': 448, 'absorb': 23, 'top-pair-checked': 1, 'top-pair': 1, 'absorb-leaf': 18, 'rec-Y': 2, 'codim1-closure': 4, 'rec-U+': 8}
+1009 2 done 1092 {'stall': 202, 'closure': 145, 'direct': 394, 'thm2': 515, 'absorb': 38, 'top-pair-checked': 2, 'top-pair': 2, 'absorb-leaf': 32, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 9, 'heavy': 4}
+10007 2 done 1274 {'stall': 224, 'closure': 160, 'direct': 451, 'thm2': 618, 'absorb': 45, 'top-pair-checked': 3, 'top-pair': 3, 'absorb-leaf': 38, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 9, 'heavy': 4}
+10007 2 done 1456 {'stall': 254, 'closure': 187, 'direct': 512, 'thm2': 709, 'absorb': 48, 'top-pair-checked': 5, 'top-pair': 5, 'absorb-leaf': 39, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 9, 'heavy': 4}
+10007 2 done 1638 {'stall': 273, 'closure': 203, 'direct': 564, 'thm2': 820, 'absorb': 51, 'top-pair-checked': 5, 'top-pair': 5, 'absorb-leaf': 42, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 9, 'heavy': 4}
+10007 2 done 1820 {'stall': 308, 'closure': 222, 'direct': 632, 'thm2': 901, 'absorb': 65, 'top-pair-checked': 5, 'top-pair': 5, 'absorb-leaf': 56, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 11, 'heavy': 4}
+10007 2 done 2002 {'stall': 364, 'closure': 269, 'direct': 691, 'thm2': 968, 'absorb': 74, 'top-pair-checked': 5, 'top-pair': 5, 'absorb-leaf': 65, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 11, 'heavy': 4}
+10007 2 done 2184 {'stall': 394, 'closure': 298, 'direct': 783, 'thm2': 1028, 'absorb': 75, 'top-pair-checked': 5, 'top-pair': 5, 'absorb-leaf': 66, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 11, 'heavy': 4}
+banks 2184 unsolved/assertion 0
+cases {'stall': 394, 'closure': 298, 'direct': 783, 'thm2': 1028, 'absorb': 75, 'top-pair-checked': 5, 'top-pair': 5, 'absorb-leaf': 66, 'rec-Y': 10, 'codim1-closure': 4, 'rec-U+': 11, 'heavy': 4}
+leaf loads {0: 1331, 1: 67, 2: 3} total single-pass failures before success, by leaf kind {'closure': 0, 'thm2': 2, 'top-pair': 0, 'absorb-leaf': 0, 'codim1-closure': 0}
+heavy stalls (optimal load >= 3): 4
+   {'p': 1009, 'a': 8, 'fam': 'flat', 'info': {'r': 8, 'q': 3, 'qplus': 0, 'b': 2, 'eps': 3, 'pi': 10, 'T': 3, 'load': 3, 'trunc': False, 'colsY': 15, 'fY': 6, 'colsU': 17, 'fU': 17, 'rounds': [(3, 3, 0), (7, 3, 7), (2, 2, 0)]}}
+   {'p': 1009, 'a': 8, 'fam': 'flat', 'info': {'r': 8, 'q': 3, 'qplus': 0, 'b': 2, 'eps': 3, 'pi': 10, 'T': 3, 'load': 3, 'trunc': False, 'colsY': 15, 'fY': 6, 'colsU': 19, 'fU': 17, 'rounds': [(3, 3, 0), (7, 3, 5), (2, 2, 0)]}}
+   {'p': 1009, 'a': 8, 'fam': 'flat', 'info': {'r': 8, 'q': 3, 'qplus': 0, 'b': 2, 'eps': 3, 'pi': 11, 'T': 2, 'load': 3, 'trunc': False, 'colsY': 16, 'fY': 6, 'colsU': 18, 'fU': 17, 'rounds': [(3, 3, 0), (7, 3, 7), (2, 2, 0)]}}
+   {'p': 1009, 'a': 8, 'fam': 'flat', 'info': {'r': 8, 'q': 3, 'qplus': 0, 'b': 2, 'eps': 3, 'pi': 11, 'T': 3, 'load': 3, 'trunc': False, 'colsY': 16, 'fY': 6, 'colsU': 19, 'fU': 17, 'rounds': [(3, 3, 0), (2, 2, 0), (6, 3, 5)]}}

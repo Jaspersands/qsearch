@@ -1,0 +1,118 @@
+# Two Gaussian channels: diamond-distance learning admission
+
+2026-11-07. OPEN candidate; no end-to-end algorithm, novelty or separation.
+Start: STATE/TRAPS match CSA Minimal Modules and Primitive Idempotents.
+Previous pass was PROGRESS (reviewed construction, evidence and records).
+
+## Native question and independent choice
+
+Input: fresh ordinary uses of a fixed memoryless n-qubit channel E=p G1+(1-p)G2,
+with unknown p and unknown n-mode fermionic Gaussian CPTP components. No branch
+label, environment, Stinespring unitary, inverse, controlled channel or parameter
+separation is supplied. Fix an explicit known Gaussian maximally entangled state
+Omega on output/reference mode ordering, and define J(E)=(E tensor I)(Omega).
+For the current precise promise J(Gj) is Gaussian with reference marginal I/2^n.
+The equivalence of this promise to the conventional full ordinary-qubit Gaussian
+dilation model is under actual-source audit; do not silently invoke only the
+EVEN-input/superselection model when claiming full diamond distance.
+
+Target: explicit CPTP preparation/use circuit for Ehat with
+||Ehat-E||diamond<=epsilon, success>=1-eta, polynomial(n,1/epsilon,log1/eta)
+ordinary channel uses, classical BIT processing and gates. Output may be an
+improper learner; it must be a usable channel, not just a normalized Choi state.
+This is a quantum-data learning task, not a classical-input speedup claim.
+Expected benefit is polynomial learning for a physical switching-noise family
+versus unrestricted channel tomography; no classical computational lower bound.
+
+Selection compared independent directions after corpus lookups and literature:
+(1) succinct polynomial symmetry retains the classical orbit-module filter;
+(2) growing-center quaternion PIP still has an unpaid integral/norm-constrained
+operation (the last compact CSA result does not pay it); (3) growing-degree
+Legendre reconstruction retains its factorial split-source bound, and no new
+joint-label operation was identified. This channel task has a specific new
+constructive mechanism: proper Gaussian component recovery at high effective
+rank, and a constant-mode CP processor at low rank. It is selected for the
+externally useful WORST-INPUT channel endpoint, not merely another state variant.
+
+Corpus been-tried: Gaussian channels mixture Choi diamond learning; baselines:
+fermionic Gaussian mixture channel diamond distance tomography. Catalog returned
+tensor networks. Stronger matched baselines: supplied-component Gaussian/Wick
+simulation and classical processing of measured moments; actual published FLO
+and few-nonGaussian-UNITARY diamond learners. Arbitrary channel mixtures need
+not be few-gate unitaries. Actual2608.05307 AppendixC TheoremC.2 is BOSONIC,
+with Gaussian-measurement-conditioned outputs; it is not a lower bound for this
+fermionic mixture-of-two-CPTP-Gaussian-maps promise. Sources fetched under
+audits/sources/gaussian_channel_selection.
+
+Cheapest falsifiers: two promised mixtures with exponentially close normalized
+Choi states but constant diamond distance; Gaussian covariance perturbations
+whose full-channel distance is uncontrolled; state reconstruction that breaks
+trace preservation; a constant core that still needs exponentially rare Bell
+postselection; parity/Jordan-Wigner mismatch. Generic Choi tomography has an
+exponential dimension factor and is NOT itself a channel learner. No quantum
+implementation or benchmark is admitted before these gates.
+
+## Candidate route and current obligations
+
+MIXED_GAUSSIAN_PAIR_LEARNING.md already pays polynomial-copy/BIT reconstruction
+of an exact mixture of two mixed Gaussian STATES. Its final output can be an
+improper mixture of four Gaussian states. This does not preserve the input
+marginal constraint and therefore cannot be imported as a diamond learner.
+High effective covariance-difference rank gives estimates of the actual two
+components/weights; enforce the reference block0 and physical covariance LMI
+by a polynomial-size convex projection. This requires a uniform diamond
+continuity theorem for individual Gaussian channels and a paid small-weight
+branch, both OPEN here.
+
+Low effective rank needs a channel-specific endpoint. For EXACT rank<=4
+covariance difference and a strictly mixed common regularization, the existing
+state lemma factors both Choi states through one Gaussian CPTP state map Psi
+from at most two modes to the full output/reference system. Write its covariance
+map Gamma -> L Gamma L^T+Z. Let sigma be the core mixture and R be the reference.
+Trace preservation of the target gives
+  0=Gamma_target,R=Z_R+L_R Gamma_sigma L_R^T.
+Hence Z_R is supported on im(L_R), whose dimension is at most4. After a known
+reference-only Gaussian rotation, the FULL marginal channel Psi_R has output
+  T(tau) tensor I_rest/D_rest
+for every core state tau (not merely the Gaussian tau), because Gaussian-channel
+characteristic functions factor and all nonconstant core variables enter im L_R.
+T acts from a constant-dimensional core to at most two reference modes.
+Thus exact TP of the candidate reduces to T(tau)=I_h/h, a constant-size linear
+constraint. Physical core repair can be posed as a constant-dimensional SDP.
+This is an exact structural observation, not yet a stable noisy reconstruction.
+
+## A general CP norm lemma (parent derivation, review pending)
+
+Let Psi:M_r -> M_D tensor M_D be CP/TP, and suppose after a known unitary on
+its reference output, Tr_output Psi(tau)=T(tau) tensor I_D0/D0,
+where D=h*D0 and T:M_r->M_h is CP/TP. Define Phi_tau by normalized Choi state
+J(Phi_tau)=Psi(tau). It is CPTP exactly when T(tau)=I_h/h.
+
+Take the normalized Choi state J(Psi), rearranged with its two reference
+registers as the joint input of a CP map Lambda:M_r tensor M_D -> M_D.
+Its unnormalized Choi matrix is r*D*J(Psi). Feeding program tau gives
+J(Phi_tau)=Psi(tau), by the usual link product. Moreover
+  Lambda^dagger(I)=transpose(r*h*J(T) tensor I_D0),
+up to the known register/unitary ordering. Therefore
+  ||Lambda||diamond=||Lambda^dagger(I)||infinity<=r*h,
+since J(T) is positive of trace1. For all core states tau,sigma,
+  ||Phi_tau-Phi_sigma||diamond <=r*h*||tau-sigma||1.
+No full-input factor D appears. The program dimensions r,h are constant in
+the exact low-rank construction. This is a NORM bound only: reshaping a known
+large Choi state does NOT automatically provide an efficient circuit Lambda.
+
+Efficient physical endpoint OPEN: exploit that Psi is Gaussian, so Lambda is a
+Gaussian CP map with trace effect confined to program plus O(1) input modes.
+If one can compile Lambda/(r*h) by Gaussian dilation and a constant-mode filter,
+feasible tau would have success1/(r*h), independent of the unknown channel input.
+Failure cannot consume an unknown input and then be silently retried; the final
+learner needs a deterministic CPTP realization, or a heralded failure branch
+whose probability is reduced without reusing consumed input. A mere constant
+postselection probability is not a deterministic channel approximation.
+This is the sharp constructive blocker, not a free postselection primitive.
+
+Additional OPEN gates: uniform approximate rank/weight classification; CP/TP
+preserving truncation with only constant rank enlargement; transfer from an
+attenuated Choi model to original channel in diamond norm; exact ordinary
+channel convention; polynomial compilation and all finite clocks.
+No algorithm, source promise, or speedup follows from the CP norm lemma alone.

@@ -1,0 +1,16 @@
+p=5 kappa=2 S=[0, 1, 4]
+n=10: guarantee 72 (0.720 n^2); KOW F_5 (+-1) recursion ~ 0.4 n^2 + O(n log n); triangular 66; n^2/4 = 25
+   stages (q, N, N*, r*, |X|, #labels): [(10, 21, 21, 10, 17, 11), (8, 18, 18, 8, 14, 9), (6, 16, 16, 6, 13, 7), (4, 13, 13, 4, 10, 6)] ...
+   12 instances (random/low-rank/few-distinct/sparse): all witnesses verified; columns consumed 0..59; gadget cache 20 label sets, infeasible 0
+n=20: guarantee 210 (0.525 n^2); KOW F_5 (+-1) recursion ~ 0.4 n^2 + O(n log n); triangular 231; n^2/4 = 100
+   stages (q, N, N*, r*, |X|, #labels): [(20, 35, 35, 20, 28, 16), (18, 32, 32, 18, 26, 12), (16, 30, 30, 16, 24, 14), (14, 27, 27, 14, 22, 11)] ...
+   12 instances (random/low-rank/few-distinct/sparse): all witnesses verified; columns consumed 0..178; gadget cache 62 label sets, infeasible 0
+n=30: guarantee 407 (0.452 n^2); KOW F_5 (+-1) recursion ~ 0.4 n^2 + O(n log n); triangular 496; n^2/4 = 225
+   stages (q, N, N*, r*, |X|, #labels): [(30, 49, 49, 30, 39, 16), (28, 46, 46, 28, 37, 17), (26, 43, 43, 26, 34, 16), (24, 41, 41, 24, 33, 13)] ...
+   12 instances (random/low-rank/few-distinct/sparse): all witnesses verified; columns consumed 0..353; gadget cache 133 label sets, infeasible 0
+n=40: guarantee 661 (0.413 n^2); KOW F_5 (+-1) recursion ~ 0.4 n^2 + O(n log n); triangular 861; n^2/4 = 400
+   stages (q, N, N*, r*, |X|, #labels): [(40, 62, 62, 40, 50, 15), (38, 59, 59, 38, 47, 15), (36, 57, 57, 36, 45, 17), (34, 54, 54, 34, 43, 19)] ...
+   4 instances (random/low-rank/few-distinct/sparse): all witnesses verified; columns consumed 0..579; gadget cache 180 label sets, infeasible 0
+n=60: guarantee 1340 (0.372 n^2); KOW F_5 (+-1) recursion ~ 0.4 n^2 + O(n log n); triangular 1891; n^2/4 = 900
+   stages (q, N, N*, r*, |X|, #labels): [(60, 89, 89, 60, 71, 19), (58, 86, 86, 58, 68, 19), (56, 83, 83, 56, 67, 19), (54, 81, 81, 54, 66, 18)] ...
+   4 instances (random/low-rank/few-distinct/sparse): all witnesses verified; columns consumed 0..1192; gadget cache 249 label sets, infeasible 0

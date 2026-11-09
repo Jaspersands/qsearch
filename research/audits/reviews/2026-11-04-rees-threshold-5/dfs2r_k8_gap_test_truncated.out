@@ -1,0 +1,11 @@
+117:static long opt_rand = 0; static u64 rstate = 1;
+278:    if (opt_rand) for (u64 q = bestn; q > 1; q--) { u64 w = xr() % q; u32 t = cl[q-1]; cl[q-1] = cl[w]; cl[w] = t; }
+314:        else if (!strcmp(argv[a], "rand") && a + 2 < argc) { opt_rand = atol(argv[a+1]); rstate = strtoull(argv[a+2], 0, 10) * 0x9E3779B97F4A7C15ULL + 1; a += 2; }
+356:        for (long rr = 1; opt_rand && r == -1 && rr < opt_rand; rr++) {
+359:        if (opt_rand && r == 0) r = -1;   /* a randomized run never claims INFEASIBLE */
+FEASIBLE k=8 p=20089 g=7 nodes=198625 secs=570.491 beta=0,5597,14030,1245,18604,13726,1890
+DONE k=8 range=[20089,20089] feasible=1 infeasible=0 limit=0 mode=full+nosym
+FEASIBLE k=8 p=20201 g=6 nodes=214763 secs=259.669 beta=0,16332,1185,1782,10227,7380,1004,
+DONE k=8 range=[20201,20201] feasible=1 infeasible=0 limit=0 mode=full+nosym
+
+[exited with code 0]

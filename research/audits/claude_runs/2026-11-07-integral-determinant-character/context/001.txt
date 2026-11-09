@@ -1,0 +1,109 @@
+Actual published BHJ primary https://epub.ub.uni-muenchen.de/94856/1/computation-of-lattice-isomorphisms-and-the-integral-matrix-similarity-problem.pdf ; hash in source.json.
+
+Original lines298-330
+           𝑔𝔭 = ℎ𝔭 ◦ 𝑓𝔭 . Note that ℎ𝔭 is surjective and thus is in fact an automorphism of 𝑌𝔭 by [CR81, (5.8)].
+           Therefore, 𝑓𝔭 is an isomorphism. Since this is true for all choices of 𝔭, we have that f itself is an
+           isomorphism by [CR81, (4.2)(ii)].                                                                      
+
+
+           3.3. Reduction to the case of lattices in semisimple algebras
+           Let J( 𝐴) denote the Jacobson radical of A, and note that 𝐴 := 𝐴/J( 𝐴) is a semisimple K-algebra by
+           [CR81, (5.19)]. Let ℎ : 𝐴 → 𝐴 denote the canonical projection map. For an element 𝑎 ∈ 𝐴, write 𝑎 for
+           ℎ(𝑎), and for a subset 𝑆 ⊆ 𝐴, write 𝑆 for ℎ(𝑆). Then Λ is an R-order in 𝐴. The following result may be
+           viewed as a variant of [Fad66, Theorem 3].
+           Theorem 3.4. Let X be a full Λ-lattice in A. Then 𝑋 is a full Λ-lattice in 𝐴. Moreover, the following
+           statements hold for 𝛼 ∈ 𝑋.
+           (a) If 𝑋 = Λ𝛼, then 𝑋 = Λ𝛼.
+           (b) If 𝑋 = Λ𝛼, then either 𝑋 = Λ𝛼 or 𝑋 ≠ Λ𝛽 for all 𝛽 ∈ 𝑋.
+           Proof. The ﬁrst claim and part (a) are both clear. Suppose that 𝑋 = Λ𝛼 and that there exists 𝛽 ∈ 𝑋 such
+           that 𝑋 = Λ𝛽. Since 𝛼 ∈ 𝑋 = Λ𝛽, there exists 𝜀 ∈ Λ such that 𝛼 = 𝜀𝛽. Hence, 𝛼 = 𝜀𝛽, and since each
+                                                                             ×
+           of 𝛼 and 𝛽 is a free generator of 𝑋 over Λ, we must have 𝜀 ∈ Λ . Let 𝜂 ∈ Λ such that 𝜂 = 𝜀 −1 . Then
+           𝜀𝜂 = 1 + 𝜌, where 𝜌 ∈ J( 𝐴). Moreover, 𝜌 = 𝜀𝜂 − 1 ∈ Λ. Since A is Artinian, J( 𝐴) is a nilpotent ideal
+           (see [CR81, (5.15)]), and so 𝜌 is a nilpotent element. Therefore,
+
+                                               𝜀 −1 = 𝜂(1 + 𝜌) −1 = 𝜂(1 − 𝜌 + 𝜌 2 − 𝜌 3 + · · · ) ∈ Λ,
+
+           where the alternating sum is ﬁnite. Hence, 𝜀 ∈ Λ× and so Λ𝛼 = Λ𝜀𝛽 = Λ𝛽 = 𝑋.                               
+
+
+           4. A necessary and suﬃcient condition for freeness
+           Let K be a number ﬁeld with ring of integers O = O𝐾 , and let A be a ﬁnite-dimensional semisimple
+           K-algebra. Let Λ be an O-order in A. By [Rei03, (10.4)] there exists a (not necessarily unique) maximal
+           O-order M in A containing Λ.
+              Lemmas 4.1 and 4.2, as well as part of Proposition 4.3, are based on [Hus17, §1.6].
+           Lemma 4.1. Let 𝔠, 𝔡, 𝔣 be left ideals of Λ such that 𝔠 ⊆ 𝔡. Then 𝔡 ∩ (𝔠 + 𝔣) = 𝔠 + (𝔡 ∩ 𝔣).
+
+
+Original lines1516-1545
+            Proposition 9.11. Let K be a number ﬁeld, let 𝑛 ∈ Z>0 , and let 𝐴 ∈ Mat𝑛 (𝐾). Let f be the characteristic
+            polynomial of A, and let 𝑓 = 𝑓1𝑛1 · · · 𝑓𝑟𝑛𝑟 be its factorisation, where 𝑓1 , . . . , 𝑓𝑟 ∈ 𝐾 [𝑥] are distinct monic
+            irreducible polynomials and 𝑛𝑖 ∈ Z>0 for each i. Let 𝐾𝑖 = 𝐾 [𝑥]/( 𝑓𝑖 ) for 𝑖 = 1, . . . , 𝑟. Then there exists
+            a polynomial-time algorithm that computes the factorisation of f, computes 𝐶𝐾 ( 𝐴) and J(𝐶𝐾 ( 𝐴)) and
+            computes an explicit homomorphism of K-algebras
+
+                                                                                      
+                                                                                          
+                                                                                         𝑟  
+                                                                                           𝑚𝑖
+                                          𝜌 : 𝐶𝐾 ( 𝐴) −→ 𝐶𝐾 ( 𝐴)/J(𝐶𝐾 ( 𝐴)) −→                     Mat𝑑𝑖, 𝑗 (𝐾𝑖 )
+                                                                                         𝑖=1 𝑗=1
+
+            for some 𝑚 𝑖 ∈ Z>0 and 𝑑𝑖, 𝑗 ∈ Z ≥0 such that 𝑚  𝑗=1 𝑗 𝑑 𝑖, 𝑗 = 𝑛𝑖 for each i. In particular, this solves
+                                                               𝑖
+
+
+            Wedderburn for 𝐶𝐾 ( 𝐴)/J(𝐶𝐾 ( 𝐴)), which satisﬁes hypothesis (H).
+            Proof. Assume the setup and notation of the proof of Proposition 9.10 with 𝐹 = 𝐾. The isomorphism
+            of (10) is obtained when computing the rational canonical form, which can be performed in polynomial
+            time (see [Vil93, Theorem 4]). Moreover, polynomials in 𝐾 [𝑥] can be factored in polynomial time by
+            the
+             𝑟algorithm of [Len83, (4.5) Theorem]. 𝑚𝑖 Thus, we            can explicitly compute a decomposition 𝑇𝐾 ( 𝐴) =
+                                                                      𝑗 𝑑𝑖, 𝑗
+                𝑖=1 𝑉𝑖 and isomorphisms 𝑉𝑖             𝑗=1 (𝐾 [𝑥]/( 𝑓𝑖 ))       for some 𝑚 𝑖 ∈ Z>0 and 𝑑𝑖, 𝑗 ∈ Z ≥0 . Note that,
+            for each i, we have 𝑚     𝑖
+                                    𝑗=1 𝑗 𝑑 𝑖, 𝑗 = 𝑛 𝑖  since  𝑓 =  𝑔 1 · · · 𝑔 𝑠 . Since 𝐶𝐾 ( 𝐴) is canonically isomorphic to
+            End𝐾 [𝑥 ] (𝑇𝐾 ( 𝐴)) by Lemma 9.5 (b), the desired result now follows from Corollary 9.9.                           
+
+
+
+Original lines1573-1611
+           (a) the 𝐶𝑅 (𝐵)-lattice 𝐶𝑅 ( 𝐴, 𝐵)𝐷 −1 in 𝐶𝐾 (𝐵) is free of rank 1, and
+           (b) every (any) free generator 𝐶   of 𝐶𝑅 ( 𝐴, 𝐵)𝐷 −1 over 𝐶𝑅 (𝐵) satisﬁes 𝐶   𝐷 ∈ GL𝑛 (𝑅).
+           Furthermore, when this is the case, 𝐵 = 𝐶 𝐴𝐶 −1 , where 𝐶 := 𝐶   𝐷.
+           Proof. By Lemma 9.1 the map 𝜃 𝐷 −1 : 𝐶𝐾 ( 𝐴, 𝐵) → 𝐶𝐾 (𝐵), 𝑋 ↦→ 𝑋 𝐷 −1 is an isomorphism of 𝐶𝐾 (𝐵)-
+           modules. Hence, the desired result follows from Proposition 9.2.                                 
+                The main algorithm of this section is as follows.
+           Algorithm 9.13. Let K be a number ﬁeld with ring of integers O = O𝐾 , let 𝑛 ∈ Z>0 and let 𝐴, 𝐵 ∈
+           Mat𝑛 (O). The following steps solve IsSimilar for A and B, that is, they determine whether A and B are
+           similar over O, and if so, return an element 𝐶 ∈ GL𝑛 (O) such that 𝐵 = 𝐶 𝐴𝐶 −1 .
+           (1) Check whether A and B are similar over K, and if so, compute 𝐷 ∈ GL𝑛 (𝐾) such that 𝐵 = 𝐷 𝐴𝐷 −1 .
+               If not, then A and B are not similar over O.
+           (2) Compute 𝐶𝐾 (𝐵), J(𝐶𝐾 (𝐵)) and an explicit homomorphism of K-algebras
+
+                                                                                      
+                                                                                          
+                                                                                         𝑡
+                                               𝜌 : 𝐶𝐾 (𝐵) −→ 𝐶𝐾 (𝐵)/J(𝐶𝐾 (𝐵)) −→               Mat𝑑𝑖 (𝐾𝑖 ),
+                                                                                         𝑖=1
+
+               where the 𝐾𝑖 ’s are (not necessarily distinct) ﬁnite ﬁeld extensions of K.
+           (3) Check whether 𝜌(𝐶O ( 𝐴, 𝐵)𝐷 −1 ) is a free 𝜌(𝐶O (𝐵))-lattice, and if so, compute a generator 𝐸 ∈
+               𝜌(𝐶O ( 𝐴, 𝐵)𝐷 −1 ). If not, then A and B are not similar over O.
+           (4) Compute 𝐶   ∈ 𝐶O ( 𝐴, 𝐵)𝐷 −1 such that 𝜌(𝐶  ) = 𝐸.
+           (5) Check whether 𝐶 := 𝐶   𝐷 ∈ GL𝑛 (O). If so, then 𝐵 = 𝐶 𝐴𝐶 −1 . If not, then A and B are not similar
+               over O.
+           Proof of correctness of Algorithm 9.13. If all steps succeed, then 𝐶 ∈ 𝐶O ( 𝐴, 𝐵) ∩ GL𝑛 (O) and it easily
+           follows that 𝐵 = 𝐶 𝐴𝐶 −1 . It remains to show that if any of steps (1), (3) or (5) fail, then A and B are
+           not similar over O. If step (1) fails, then this is clear. If step (3) fails, then Theorem 3.4 (a) implies that
+           𝐶O ( 𝐴, 𝐵)𝐷 −1 is not free over 𝐶O (𝐵), and the result follows from Proposition 9.12 (a). Finally, suppose
+           that step (5) fails, that is, 𝐶 ∉ GL𝑛 (O). If 𝐶   is not a free generator of 𝐶O ( 𝐴, 𝐵)𝐷 −1 over 𝐶O (𝐵), then
+           Theorem 3.4 (b) implies that 𝐶O ( 𝐴, 𝐵)𝐷 −1 is not free over 𝐶O (𝐵), and again the result follows from
+           Proposition 9.12 (a). If 𝐶   is a free generator of 𝐶O ( 𝐴, 𝐵)𝐷 −1 over 𝐶O (𝐵), then the result follows from
+           Proposition 9.12 (b).                                                                                         
+              The following result analyses the complexity of Algorithm 9.13, and further details on each step are
+           given in the proof.
+           Theorem 9.14. Let K be a number ﬁeld with ring of integers O = O𝐾 , let 𝑛 ∈ Z>0 and let 𝐴, 𝐵 ∈
+           Mat𝑛 (O). Let 𝑓1 , . . . , 𝑓𝑟 ∈ 𝐾 [𝑥] be the distinct monic irreducible factors of the characteristic polynomial
+           of B. For 𝑖 = 1, . . . , 𝑟 let 𝐾𝑖 = 𝐾 [𝑥]/( 𝑓𝑖 ). Let Λ be the image of 𝐶O (𝐵) under the projection 𝐶𝐾 (𝐵) →
+           𝐶𝐾 (𝐵)/J(𝐶𝐾 (𝐵)). Let M be any choice of maximal O-order in 𝐶𝐾 (𝐵)/J(𝐶𝐾 (𝐵)) containing Λ, and

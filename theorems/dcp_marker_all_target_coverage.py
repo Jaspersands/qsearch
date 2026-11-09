@@ -242,7 +242,9 @@ def all_target_coverage_trial(
     target = 0
     assignment_count = 1 << register_count
     gray = 0
+    visited = 0
     for step in range(assignment_count):
+        visited += 1
         legal[target] = True
         standard_depth, _ = profile_from_integer_projection_dots(
             standard, standard_dots
@@ -310,7 +312,7 @@ def all_target_coverage_trial(
             float(median(carry_depths)) if carry_depths else None
         ),
         target_independent_kernel_verified=independent,
-        full_boolean_cube_enumerated=True,
+        full_boolean_cube_enumerated=visited == assignment_count,
     )
 
 

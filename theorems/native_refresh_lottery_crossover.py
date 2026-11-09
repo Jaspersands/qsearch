@@ -461,7 +461,10 @@ def crossover_width_bound(m, k, alpha_original, alpha_target, min_refresh_digits
     beta_term = a_orig * g_term
     beta_sq = beta_term * beta_term
     exact_identity_rhs = 6 * delta_raw * H_min * Fraction(g_term * g_term, m)
-    if beta_sq != exact_identity_rhs:
+    # delta_raw is defined from H_min, so this identity holds by construction.
+    # The guard catches arithmetic slips in this function, not a mathematical failure.
+    identity_holds = beta_sq == exact_identity_rhs
+    if not identity_holds:
         raise ArithmeticError("exact rational crossover identity failed")
     req_energy = Fraction(high_energy["required_normalized_quotient_energy_upper"])
     term_floor = Fraction(term_energy["worst_case_rounding_floor_m_over_2_g_min_squared"])
@@ -496,7 +499,7 @@ def crossover_width_bound(m, k, alpha_original, alpha_target, min_refresh_digits
         "terminal_rounding_floor_at_least_half_target": in_half_floor_zone,
         "beta_squared_strictly_below_three_halves_delta_when_H_nonpositive": (beta_sq < three_halves_bound) if in_nonpositive_H_zone else None,
         "beta_squared_strictly_below_three_delta_when_half_floor": (beta_sq < three_bound) if in_half_floor_zone else None,
-        "parameter_cancellation_verified": True,
+        "parameter_cancellation_verified": identity_holds,
     }
 
 

@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4479,
+      "path": "research/audits/claude_inputs/2026-11-07-quintic/source_excerpt.md",
+      "sha256": "043a7b36decb0a77ae1db1f8af27e6a2d675d7bfc9ded9705307741444daad9f",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 531,
+      "path": "research/audits/claude_inputs/2026-11-07-quintic/context.md",
+      "sha256": "e5d355f41da3afa0f9be489b4d87f78d20320e5cd91366187b1778ec5537f433",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 2272,
+  "effort": "high",
+  "finished_at": "2026-11-06T23:38:48.171961+00:00",
+  "input_token_allowance": 2528,
+  "max_budget_usd": 1.0,
+  "max_tokens": 16384,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 0.84448,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-quintic/hodge_attack.md",
+    "sha256": "bf35909866a1f3444d9692cbcbd97455795e75007b6efcde7cc2454570b19de6",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261106T233641.731925Z-d76f7756",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2272,
+    "output_tokens": 9798
+  },
+  "usage_cost_estimate_usd": 0.51262
+}

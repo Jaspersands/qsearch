@@ -1,0 +1,122 @@
+lower bound done
+monte carlo done
+{
+ "comparison": [
+  {
+   "family": "Heisenberg",
+   "c": 2,
+   "m": 3,
+   "g": [
+    3,
+    1
+   ],
+   "quantum_schedule1_queries(p>=11,eps=1/3)": "512",
+   "log2_quantum": 9.0,
+   "crossover_prime": "443",
+   "log2_crossover_prime": 8.79,
+   "classical_lb_at_crossover_log2": 9.0,
+   "ehk_information_copies_at_crossover": 81
+  },
+  {
+   "family": "filiform class 3",
+   "c": 3,
+   "m": 4,
+   "g": [
+    4,
+    2,
+    1
+   ],
+   "quantum_schedule1_queries(p>=11,eps=1/3)": "226748160",
+   "log2_quantum": 27.76,
+   "crossover_prime": "337853",
+   "log2_crossover_prime": 18.37,
+   "classical_lb_at_crossover_log2": 27.76,
+   "ehk_information_copies_at_crossover": 301
+  },
+  {
+   "family": "free 2-generator class 3",
+   "c": 3,
+   "m": 5,
+   "g": [
+    5,
+    3,
+    2
+   ],
+   "quantum_schedule1_queries(p>=11,eps=1/3)": "9795520512",
+   "log2_quantum": 33.19,
+   "crossover_prime": "92107",
+   "log2_crossover_prime": 16.49,
+   "classical_lb_at_crossover_log2": 33.19,
+   "ehk_information_copies_at_crossover": 407
+  },
+  {
+   "family": "Dixmier-Lister (class 3)",
+   "c": 3,
+   "m": 8,
+   "g": [
+    8,
+    4,
+    2
+   ],
+   "quantum_schedule1_queries(p>=11,eps=1/3)": "35872267500",
+   "log2_quantum": 35.06,
+   "crossover_prime": "997",
+   "log2_crossover_prime": 9.96,
+   "classical_lb_at_crossover_log2": 35.07,
+   "ehk_information_copies_at_crossover": 644
+  },
+  {
+   "family": "class-9 profile (rees_hsp_reduction.json)",
+   "c": 9,
+   "m": 19,
+   "g": [
+    19,
+    17,
+    16,
+    14,
+    12,
+    9,
+    6,
+    3,
+    1
+   ],
+   "quantum_schedule1_queries(p>=11,eps=1/3)": "261402681256039014299384353402387949825555221776134706665137261162334667903346450134719925495588192239516322097306499074705911952954999126444322435371775286082870216569325896389286776790157365648563729768598218532426461865449404965531949268602544062964078586328134100939820655943370125856147451628290051396129195728868438760648293028952336305133048225216156125270994638868871267190882143227915781457085983579176960000000000000000000000000000000000000000000000000000000000000",
+   "log2_quantum": 1572.66,
+   "crossover_prime": "2^174.72",
+   "log2_crossover_prime": 174.72,
+   "classical_lb_at_crossover_log2": 1572.66,
+   "ehk_information_copies_at_crossover": 62909
+  }
+ ],
+ "class9_ceil_log2_check": {
+  "computed": 1573,
+  "json": 1573
+ }
+}
+F_3^3 (abelian control) all lines N 13 q_LB 5 q_exact 5 attained True
+Heis(F_3) all lines N 13 q_LB 5 q_exact 5 attained True
+Heis(F_3) noncentral lines N 12 q_LB 5 q_exact 5 attained True
+Heis(F_5) all lines N 31 q_LB 7 q_exact 7 attained True
+Heis(F_5) noncentral lines N 30 q_LB 7 q_exact 7 attained True
+Fil4(F_5) all lines N 156 q_LB 15 q_exact None attained False
+Fil4(F_5) noncentral lines N 155 q_LB 15 q_exact None attained False
+Heis(F_7) all lines N 57 q_LB 10 q_exact 10 attained True
+Heis(F_7) noncentral lines N 56 q_LB 10 q_exact 10 attained True
+F_3^3 (abelian control) Qmin 6 [1, 1] closed 74 1.0
+Heis(F_3) Qmin 6 [1, 1] closed 74 1.0
+Heis(F_5) Qmin 9 [1, 1] closed 84 1.0
+Fil4(F_5) Qmin 19 [1, 1] closed 122 1.0
+Heis(F_7) Qmin 12 [1, 1] closed 90 1.0
+Heis(F_3) 1 1 False 0.6996 0.693
+Heis(F_3) 1 1 False 0.6996 0.688
+Heis(F_3) 2 2 True 0.8808 0.877
+Heis(F_3) 2 2 True 0.8808 0.8765
+Heis(F_5) 1 1 False 0.7109 0.7175
+Heis(F_5) 1 1 False 0.7109 0.717
+Heis(F_5) 1 1 False 0.7109 0.715
+Heis(F_5) 1 1 False 0.7109 0.705
+Fil4(F_5) 1 1 False 0.6765 0.6885
+Fil4(F_5) 2 2 True 0.9903 0.9875
+Fil4(F_5) 2 2 False 0.9903 0.9925
+Fil4(F_5) 1 1 False 0.6765 0.693
+EXIT 0

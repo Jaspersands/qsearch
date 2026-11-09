@@ -1,0 +1,68 @@
+## 3. Conditional residue-normalization lemma
+
+ASSUME an exact compact R-generator c0 of C, full units, a compact beta
+with(beta)=P and Norm(beta)=p, and the compatible field/embedding are
+already PAID. This section alone does not pay those inputs.
+
+Write c=c0^u modulo signs, u in R^*. The unit u/bar(u) has every complex
+absolute value1, hence is a root of unity. Reduction at lambda=zeta-1
+is1, so this root is a power of zeta, not minus such a power. Since ell
+is odd, u=zeta^a*v for a REAL unit v. This elementary argument avoids
+assuming a unit-group index or a finite set of all R-generators.
+
+Select a largest nontrivial mode T_j(c0). It has magnitude at least
+log2/2: otherwise Fourier inversion would force every conjugate of c0
+to have magnitude<sqrt2, and the nonzero integer Norm(c0²-1) would
+have absolute value<1. (c0 is not+1 or-1.) Certified absolute log-mode
+error O(1/ell) thus suffices for its phase. By
+
+    T_j(c0^u)=u(zeta^(-j))*T_j(c0),
+
+comparison with(2) MODULO pi identifies a uniquely among ell phases,
+whose separation modulo pi is pi/ell. Set c1=sigma^a(c0); the R-unit exponent relating c to c1 is real.
+(All field elements of K were already real.)
+Known Gauss-phase estimation to O(1/ell) and the classical nonquadratic
+L1 estimator are the proposed paid analytic operations. Every chi^j
+is nonreal, since ell is odd.
+
+Now c1² modP=r^b for a nonzero b modell. Find b with at most ell trials
+in the known order-ell subgroup, and set a0=b^(-1) modell. The explicit
+REAL cyclotomic unit
+
+    eta_a0=zeta^((1-a0)/2)*sum_(t=0)^(a0-1)zeta^t
+
+uses the half exponent modulo ell and has residue a0 modlambda.
+Set c2=c1^eta_a0. Its coefficients have size
+polynomial in ell, and delta2=c2² reduces to r at P.
+
+The determinant of sigma-1 on U is ell. Squared reduction gives an
+isomorphism
+
+    U/(sigma-1)U -> mu_ell(Fp),    [w] -> w² modP:          (5)
+
+it is well defined and surjective because the true c maps to r. Also
+sigma(beta)/beta reduces to r, by the leading coefficient at the
+totally ramified prime. Thus delta2/(sigma(beta)/beta), a norm-one unit
+with residue1, lies in(sigma-1)U. Solve its INTEGER unit-coordinate
+equation, orient the resulting epsilon to Norm(epsilon)=1, and put
+alpha2=beta*epsilon. Norm-one lifting loses no sign in odd degree.
+
+Write c2=c^w modulo signs. Here w is real and w=1 modlambda. Conjugation
+sends lambda to-lambda modulo lambda²; since ell is odd, this implies
+w=1 modlambda². Put b'=(w-1)/lambda in lambda R. Comparing Galois ratios
+and norms proves
+
+    alpha2/alpha=delta^b',    alpha2/alpha=1 modP.          (6)
+
+The first equality uses the faithful multiplicative R-action on norm-one
+units. The second uses b' in lambda R and the fact that sigma acts
+trivially on the residue field. Therefore alpha2 may differ from alpha,
+but in L=K(zeta), at rho=zeta->r, the local factorial congruence is
+
+    alpha2/tau(bar chi)=k! modP_L.                        (7)
+
+The proof is the same Taylor-coefficient calculation as in the cubic
+note: tau(bar chi)/Z^k=-1/k!, alpha/Z^k=-1. Both have valuation1 in L.
+This conditional operation needs no full-unit bounded-distance decoder,
+no h^+ coset enumeration and no canonical circular-unit recovery.
+

@@ -1,0 +1,112 @@
+1009 2 a=3 M=9 lines2 plain {'ok': 2, 'direct': 4} rec {'ok': 2, 'direct': 4}
+1009 2 a=3 M=9 lines_a plain {'direct': 5, 'ok': 1} rec {'direct': 5, 'ok': 1}
+1009 2 a=3 M=9 lines_a+1 plain {'stall': 6} rec {'ok': 1, 'stall(pool=1,codim=1)': 5}
+1009 2 a=3 M=9 subsp_y1 plain {'direct': 2, 'ok': 2, 'stall': 2} rec {'direct': 2, 'ok': 4}
+1009 2 a=3 M=9 subsp_half plain {'stall': 2, 'direct': 4} rec {'ok(rec1)': 2, 'direct': 4}
+1009 2 a=3 M=9 subsp_a-1 plain {'stall': 6} rec {'ok(rec1)': 6}
+1009 2 a=3 M=9 flag plain {'ok': 3, 'stall': 2, 'direct': 1} rec {'ok': 3, 'ok(rec1)': 2, 'direct': 1}
+1009 2 a=3 M=9 sparse plain {'direct': 6} rec {'direct': 6}
+1009 2 a=5 M=17 lines2 plain {'direct': 6} rec {'direct': 6}
+1009 2 a=5 M=17 lines_a plain {'direct': 6} rec {'direct': 6}
+1009 2 a=5 M=17 lines_a+1 plain {'ok': 6} rec {'ok': 6}
+1009 2 a=5 M=17 subsp_y1 plain {'direct': 3, 'stall': 3} rec {'direct': 3, 'ok(rec2)': 3}
+1009 2 a=5 M=17 subsp_half plain {'stall': 5, 'direct': 1} rec {'ok(rec1)': 5, 'direct': 1}
+1009 2 a=5 M=17 subsp_a-1 plain {'ok': 5, 'stall': 1} rec {'ok': 5, 'ok(rec1)': 1}
+1009 2 a=5 M=17 flag plain {'stall': 4, 'direct': 2} rec {'ok(rec1)': 4, 'direct': 2}
+1009 2 a=5 M=17 sparse plain {'direct': 6} rec {'direct': 6}
+1009 2 a=7 M=27 lines2 plain {'ok': 2, 'direct': 4} rec {'ok': 2, 'direct': 4}
+1009 2 a=7 M=27 lines_a plain {'direct': 6} rec {'direct': 6}
+1009 2 a=7 M=27 lines_a+1 plain {'stall': 2, 'ok': 4} rec {'ok': 5, 'direct': 1}
+1009 2 a=7 M=27 subsp_y1 plain {'direct': 1, 'stall': 4, 'zero column': 1} rec {'direct': 1, 'ok(rec1)': 2, 'zero column': 1, 'ok(rec2)': 2}
+1009 2 a=7 M=27 subsp_half plain {'stall': 4, 'ok': 1, 'direct': 1} rec {'ok(rec2)': 4, 'ok': 1, 'direct': 1}
+1009 2 a=7 M=27 subsp_a-1 plain {'ok': 5, 'stall': 1} rec {'ok': 6}
+1009 2 a=7 M=27 flag plain {'direct': 2, 'stall': 4} rec {'direct': 2, 'ok(rec1)': 4}
+1009 2 a=7 M=27 sparse plain {'direct': 6} rec {'direct': 6}
+1009 2 a=9 M=39 lines2 plain {'ok': 1, 'direct': 5} rec {'ok': 1, 'direct': 5}
+1009 2 a=9 M=39 lines_a plain {'direct': 6} rec {'direct': 6}
+1009 2 a=9 M=39 lines_a+1 plain {'ok': 6} rec {'ok': 6}
+1009 2 a=9 M=39 subsp_y1 plain {'direct': 5, 'stall': 1} rec {'direct': 5, 'ok(rec1)': 1}
+1009 2 a=9 M=39 subsp_half plain {'stall': 6} rec {'ok(rec2)': 3, 'ok(rec1)': 3}
+1009 2 a=9 M=39 subsp_a-1 plain {'stall': 1, 'ok': 5} rec {'ok': 6}
+1009 2 a=9 M=39 flag plain {'stall': 4, 'direct': 1, 'ok': 1} rec {'ok(rec1)': 4, 'direct': 1, 'ok': 1}
+1009 2 a=9 M=39 sparse plain {'direct': 6} rec {'direct': 6}
+10007 2 a=3 M=9 lines2 plain {'direct': 5, 'ok': 1} rec {'direct': 5, 'ok': 1}
+10007 2 a=3 M=9 lines_a plain {'direct': 5, 'ok': 1} rec {'direct': 5, 'ok': 1}
+10007 2 a=3 M=9 lines_a+1 plain {'stall': 4, 'ok': 2} rec {'ok': 3, 'stall(pool=1,codim=1)': 3}
+10007 2 a=3 M=9 subsp_y1 plain {'direct': 2, 'ok': 4} rec {'direct': 2, 'ok': 3, 'ok(rec1)': 1}
+10007 2 a=3 M=9 subsp_half plain {'direct': 4, 'stall': 2} rec {'direct': 4, 'ok(rec1)': 2}
+10007 2 a=3 M=9 subsp_a-1 plain {'stall': 3, 'direct': 3} rec {'ok(rec1)': 3, 'direct': 3}
+10007 2 a=3 M=9 flag plain {'direct': 2, 'stall': 3, 'ok': 1} rec {'direct': 2, 'ok(rec1)': 3, 'ok': 1}
+10007 2 a=3 M=9 sparse plain {'stall': 3, 'ok': 2, 'direct': 1} rec {'ok(rec1)': 3, 'ok': 2, 'direct': 1}
+10007 2 a=5 M=17 lines2 plain {'direct': 6} rec {'direct': 6}
+10007 2 a=5 M=17 lines_a plain {'direct': 6} rec {'direct': 6}
+10007 2 a=5 M=17 lines_a+1 plain {'ok': 6} rec {'ok': 5, 'stall(pool=2,codim=1)': 1}
+10007 2 a=5 M=17 subsp_y1 plain {'stall': 3, 'direct': 3} rec {'ok(rec2)': 3, 'direct': 3}
+10007 2 a=5 M=17 subsp_half plain {'stall': 5, 'direct': 1} rec {'ok(rec1)': 5, 'direct': 1}
+10007 2 a=5 M=17 subsp_a-1 plain {'stall': 1, 'ok': 5} rec {'ok(rec1)': 1, 'ok': 5}
+10007 2 a=5 M=17 flag plain {'stall': 2, 'direct': 4} rec {'ok(rec1)': 2, 'direct': 4}
+10007 2 a=5 M=17 sparse plain {'direct': 4, 'stall': 2} rec {'direct': 4, 'ok(rec1)': 1, 'ok': 1}
+10007 2 a=7 M=27 lines2 plain {'ok': 3, 'direct': 3} rec {'ok': 3, 'direct': 3}
+10007 2 a=7 M=27 lines_a plain {'direct': 6} rec {'direct': 6}
+10007 2 a=7 M=27 lines_a+1 plain {'ok': 3, 'stall': 3} rec {'ok': 4, 'direct': 2}
+10007 2 a=7 M=27 subsp_y1 plain {'stall': 4, 'direct': 2} rec {'ok(rec1)': 1, 'ok(rec2)': 3, 'direct': 2}
+10007 2 a=7 M=27 subsp_half plain {'stall': 4, 'direct': 2} rec {'ok(rec2)': 4, 'direct': 2}
+10007 2 a=7 M=27 subsp_a-1 plain {'stall': 1, 'ok': 5} rec {'stall(pool=3,codim=1)': 1, 'ok': 5}
+10007 2 a=7 M=27 flag plain {'stall': 5, 'direct': 1} rec {'ok(rec1)': 5, 'direct': 1}
+10007 2 a=7 M=27 sparse plain {'stall': 2, 'direct': 2, 'ok': 2} rec {'ok(rec1)': 2, 'direct': 2, 'ok': 2}
+10007 2 a=9 M=39 lines2 plain {'direct': 4, 'ok': 2} rec {'direct': 4, 'ok': 2}
+10007 2 a=9 M=39 lines_a plain {'direct': 6} rec {'direct': 6}
+10007 2 a=9 M=39 lines_a+1 plain {'ok': 6} rec {'ok': 5, 'stall(pool=5,codim=1)': 1}
+10007 2 a=9 M=39 subsp_y1 plain {'direct': 4, 'stall': 2} rec {'direct': 4, 'ok(rec1)': 1, 'ok(rec2)': 1}
+10007 2 a=9 M=39 subsp_half plain {'stall': 5, 'direct': 1} rec {'ok(rec1)': 4, 'direct': 1, 'ok(rec2)': 1}
+10007 2 a=9 M=39 subsp_a-1 plain {'ok': 6} rec {'ok': 6}
+10007 2 a=9 M=39 flag plain {'direct': 4, 'stall': 2} rec {'direct': 4, 'ok(rec1)': 2}
+10007 2 a=9 M=39 sparse plain {'direct': 4, 'stall': 1, 'ok': 1} rec {'direct': 2, 'ok(rec2)': 1, 'ok': 3}
+1009 3 a=4 M=13 lines2 plain {'direct': 3, 'ok': 3} rec {'direct': 3, 'ok': 3}
+1009 3 a=4 M=13 lines_a plain {'direct': 6} rec {'direct': 6}
+1009 3 a=4 M=13 lines_a+1 plain {'stall': 2, 'ok': 4} rec {'direct': 1, 'ok': 3, 'stall(pool=1,codim=1)': 1, 'ok(rec1)': 1}
+1009 3 a=4 M=13 subsp_y1 plain {'direct': 2, 'stall': 4} rec {'direct': 2, 'ok(rec1)': 4}
+1009 3 a=4 M=13 subsp_half plain {'direct': 1, 'ok': 3, 'stall': 2} rec {'direct': 1, 'ok': 4, 'ok(rec1)': 1}
+1009 3 a=4 M=13 subsp_a-1 plain {'ok': 5, 'stall': 1} rec {'ok': 6}
+1009 3 a=4 M=13 flag plain {'direct': 1, 'stall': 5} rec {'direct': 1, 'ok(rec1)': 5}
+1009 3 a=4 M=13 sparse plain {'ok': 2, 'stall': 1, 'direct': 3} rec {'ok': 2, 'direct': 4}
+1009 3 a=6 M=22 lines2 plain {'ok': 5, 'direct': 1} rec {'ok': 5, 'direct': 1}
+1009 3 a=6 M=22 lines_a plain {'direct': 6} rec {'direct': 6}
+1009 3 a=6 M=22 lines_a+1 plain {'stall': 2, 'ok': 4} rec {'ok': 5, 'direct': 1}
+1009 3 a=6 M=22 subsp_y1 plain {'direct': 2, 'stall': 4} rec {'direct': 2, 'ok(rec1)': 1, 'ok(rec2)': 3}
+1009 3 a=6 M=22 subsp_half plain {'ok': 2, 'stall': 4} rec {'ok': 4, 'ok(rec1)': 2}
+1009 3 a=6 M=22 subsp_a-1 plain {'stall': 1, 'ok': 5} rec {'ok(rec1)': 1, 'ok': 5}
+1009 3 a=6 M=22 flag plain {'stall': 4, 'direct': 2} rec {'ok(rec1)': 4, 'direct': 2}
+1009 3 a=6 M=22 sparse plain {'direct': 5, 'ok': 1} rec {'direct': 5, 'ok': 1}
+1009 3 a=8 M=33 lines2 plain {'direct': 3, 'ok': 3} rec {'direct': 3, 'ok': 3}
+1009 3 a=8 M=33 lines_a plain {'ok': 1, 'direct': 5} rec {'ok': 1, 'direct': 5}
+1009 3 a=8 M=33 lines_a+1 plain {'ok': 2, 'stall': 4} rec {'ok': 3, 'direct': 3}
+1009 3 a=8 M=33 subsp_y1 plain {'direct': 3, 'stall': 3} rec {'direct': 3, 'ok(rec1)': 2, 'ok(rec2)': 1}
+1009 3 a=8 M=33 subsp_half plain {'ok': 5, 'stall': 1} rec {'ok': 5, 'ok(rec1)': 1}
+1009 3 a=8 M=33 subsp_a-1 plain {'ok': 6} rec {'ok': 6}
+1009 3 a=8 M=33 flag plain {'direct': 2, 'stall': 4} rec {'direct': 2, 'ok(rec1)': 4}
+1009 3 a=8 M=33 sparse plain {'direct': 4, 'ok': 1, 'stall': 1} rec {'direct': 4, 'ok': 1, 'ok(rec1)': 1}
+10009 3 a=4 M=13 lines2 plain {'ok': 3, 'direct': 3} rec {'ok': 3, 'direct': 3}
+10009 3 a=4 M=13 lines_a plain {'direct': 6} rec {'direct': 6}
+10009 3 a=4 M=13 lines_a+1 plain {'stall': 4, 'ok': 2} rec {'ok': 2, 'direct': 1, 'ok(rec1)': 3}
+10009 3 a=4 M=13 subsp_y1 plain {'direct': 4, 'stall': 2} rec {'direct': 4, 'ok(rec1)': 2}
+10009 3 a=4 M=13 subsp_half plain {'ok': 5, 'stall': 1} rec {'ok': 6}
+10009 3 a=4 M=13 subsp_a-1 plain {'ok': 4, 'stall': 1, 'direct': 1} rec {'ok': 5, 'direct': 1}
+10009 3 a=4 M=13 flag plain {'stall': 4, 'direct': 2} rec {'ok(rec1)': 3, 'ok(rec2)': 1, 'direct': 2}
+10009 3 a=4 M=13 sparse plain {'stall': 1, 'direct': 3, 'ok': 2} rec {'ok(rec1)': 1, 'direct': 4, 'ok': 1}
+10009 3 a=6 M=22 lines2 plain {'ok': 4, 'direct': 2} rec {'ok': 4, 'direct': 2}
+10009 3 a=6 M=22 lines_a plain {'direct': 6} rec {'direct': 6}
+10009 3 a=6 M=22 lines_a+1 plain {'ok': 3, 'stall': 3} rec {'ok': 3, 'stall(pool=2,codim=1)': 2, 'direct': 1}
+10009 3 a=6 M=22 subsp_y1 plain {'stall': 4, 'direct': 2} rec {'ok(rec2)': 4, 'direct': 2}
+10009 3 a=6 M=22 subsp_half plain {'stall': 1, 'ok': 5} rec {'ok': 6}
+10009 3 a=6 M=22 subsp_a-1 plain {'ok': 5, 'stall': 1} rec {'ok': 6}
+10009 3 a=6 M=22 flag plain {'stall': 5, 'direct': 1} rec {'ok(rec1)': 5, 'direct': 1}
+10009 3 a=6 M=22 sparse plain {'stall': 3, 'direct': 3} rec {'ok(rec1)': 2, 'direct': 3, 'ok': 1}
+10009 3 a=8 M=33 lines2 plain {'direct': 5, 'ok': 1} rec {'direct': 5, 'ok': 1}
+10009 3 a=8 M=33 lines_a plain {'direct': 6} rec {'direct': 6}
+10009 3 a=8 M=33 lines_a+1 plain {'stall': 2, 'ok': 4} rec {'direct': 2, 'ok': 4}
+10009 3 a=8 M=33 subsp_y1 plain {'stall': 6} rec {'ok(rec2)': 3, 'ok(rec1)': 3}
+10009 3 a=8 M=33 subsp_half plain {'ok': 6} rec {'ok': 5, 'ok(rec1)': 1}
+10009 3 a=8 M=33 subsp_a-1 plain {'ok': 6} rec {'ok': 6}
+10009 3 a=8 M=33 flag plain {'stall': 3, 'direct': 2, 'ok': 1} rec {'ok(rec1)': 3, 'direct': 2, 'ok': 1}
+10009 3 a=8 M=33 sparse plain {'direct': 5, 'ok': 1} rec {'direct': 5, 'ok': 1}

@@ -107,8 +107,19 @@ def test_asymptotic_mass_information_trilemma():
     assert scaling[-1]["total_physical_information_ceiling_bits"] < scaling[0]["total_physical_information_ceiling_bits"]
 
 
-def test_report_and_registry_integration():
+def test_report_and_registry_integration(tmp_path, monkeypatch):
     """Verify report generation, claim gate, and negative results registry update."""
+    # Write into a copy of the repo layout so the live report and registry stay untouched.
+    import shutil
+    import theorems.self_dual_wreath_plancherel_mass_extinction_barrier as module
+    for name in ("DERIVATION", "REPORT", "REGISTRY"):
+        live = getattr(module, name)
+        copy = tmp_path / live.relative_to(module.ROOT)
+        copy.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(live, copy)
+        monkeypatch.setattr(module, name, copy)
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+    registry_copy = module.REGISTRY
     out_path = write_report(write_registry=True)
     assert out_path.exists()
 
@@ -118,7 +129,7 @@ def test_report_and_registry_integration():
     assert report["claim_gate"]["asymptotic_quantum_speedup_falsified"] is True
 
     # Registry check
-    registry = json.loads(REGISTRY.read_text())
+    registry = json.loads(registry_copy.read_text())
     entry = next((e for e in registry if e["id"] == NEGATIVE_RESULT_ID), None)
     assert entry is not None
     assert "CODE-EQUIVALENCE-HARD-FAMILY-SEARCH" in entry["applies_to"]

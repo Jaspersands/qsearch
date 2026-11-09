@@ -1,0 +1,132 @@
+{
+ "algorithm": [
+  {
+   "kappa": 2,
+   "p": 257,
+   "phase0_draws": 11,
+   "solved": 45
+  },
+  {
+   "kappa": 3,
+   "p": 26263,
+   "phase0_draws": 31,
+   "solved": 45
+  },
+  {
+   "kappa": 4,
+   "p": 4194329,
+   "phase0_draws": 419,
+   "solved": 30
+  }
+ ],
+ "stage_lemma": [
+  {
+   "kappa": 2,
+   "p": 257,
+   "min_Lambda_over_bound": 1.9922178988326849
+  },
+  {
+   "kappa": 3,
+   "p": 26251,
+   "min_Lambda_over_bound": 1.9274694297360102
+  }
+ ],
+ "TA_i": [
+  {
+   "kappa": 3,
+   "p": 97,
+   "exact_or_sampled_good_fraction": 0.9692847273886704,
+   "bound": 0.1659743880232002,
+   "sampled": false
+  },
+  {
+   "kappa": 3,
+   "p": 103,
+   "exact_or_sampled_good_fraction": 0.9710623055895937,
+   "bound": 0.20970649354588977,
+   "sampled": false
+  },
+  {
+   "kappa": 3,
+   "p": 109,
+   "exact_or_sampled_good_fraction": 0.9726454002188368,
+   "bound": 0.24906624629917973,
+   "sampled": false
+  },
+  {
+   "kappa": 3,
+   "p": 139,
+   "exact_or_sampled_good_fraction": 0.9499508307023447,
+   "bound": 0.39877739551580615,
+   "sampled": false
+  },
+  {
+   "kappa": 3,
+   "p": 211,
+   "exact_or_sampled_good_fraction": 0.9858269131421127,
+   "bound": 0.5936759130741346,
+   "sampled": false
+  },
+  {
+   "kappa": 4,
+   "p": 881,
+   "exact_or_sampled_good_fraction": 0.88775,
+   "bound": 0.011079973094189288,
+   "sampled": true
+  },
+  {
+   "kappa": 4,
+   "p": 929,
+   "exact_or_sampled_good_fraction": 0.9265,
+   "bound": 0.05306093436418635,
+   "sampled": true
+  }
+ ],
+ "TA_iii_sampler": [
+  {
+   "kappa": 3,
+   "p": 739,
+   "K": 135,
+   "rounds": 300,
+   "success_rate": 0.98,
+   "claimed_lower": 0.375,
+   "U": 1.0414380002656622,
+   "need": 1.0416666666666667
+  },
+  {
+   "kappa": 4,
+   "p": 8597,
+   "K": 1421,
+   "rounds": 300,
+   "success_rate": 0.9833333333333333,
+   "claimed_lower": 0.375,
+   "U": 1.0312476501109051,
+   "need": 1.03125
+  },
+  {
+   "kappa": 2,
+   "p": 71,
+   "K": 18,
+   "rounds": 300,
+   "success_rate": 0.9666666666666667,
+   "claimed_lower": 0.375,
+   "U": 1.0588940614927722,
+   "need": 1.0625
+  }
+ ],
+ "symmetric_k3_failures": {
+  "zero": [
+   7,
+   13,
+   19,
+   61
+  ],
+  "strict": [
+   7,
+   13,
+   19,
+   61
+  ]
+ },
+ "xi_independence_failures": []
+}

@@ -1,5 +1,10 @@
 # What The Current Binary Tree Certificate Can And Cannot Establish
 
+**2026-10-31 follow-up:** the finite-graph classical sampler is now derived
+in `research/TERNARY_SEQUENTIAL_SAMPLING.md`, Section6, including the binary
+matrix-only interface. It imports the same block-error theorem as the quantum
+proposal. The narrower historical claim below remains unchanged.
+
 Status: LOCAL UNREVIEWED deduction using established binary channel algebra.
 This is not a new general channel-duality theorem, a finite-graph Gibbs sampler,
 an independently reviewed proof, or a quantum advantage result.

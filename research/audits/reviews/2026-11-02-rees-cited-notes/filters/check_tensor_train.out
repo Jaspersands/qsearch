@@ -1,0 +1,25 @@
+== 1. Gram falsifier over F_5
+M=[[1,2],[2,4]]: rank(M) = 1  M M^T = [[0, 0], [0, 0]]  rank(M M^T) = 0
+(1,2).(1,2) mod 5 = 0
+
+== 2/3. Gauge invariance of U_i and a canonical echelon gauge (local sweep)
+p=3 dims=[2, 2, 2, 2] bonds=[2, 3, 2]: tensors equal=True U_i equal=True canonical cores identical=True canonical reproduces A=True canonical bonds=[2, 3, 2]
+p=5 dims=[2, 3, 2] bonds=[2, 2]: tensors equal=True U_i equal=True canonical cores identical=True canonical reproduces A=True canonical bonds=[2, 2]
+p=2 dims=[2, 2, 2, 2] bonds=[2, 2, 2]: tensors equal=True U_i equal=True canonical cores identical=True canonical reproduces A=True canonical bonds=zero tensor
+p=7 dims=[3, 3, 3] bonds=[2, 2]: tensors equal=True U_i equal=True canonical cores identical=True canonical reproduces A=True canonical bonds=[2, 2]
+
+== 4. Staged subspace stabilizers vs exhaustive H
+UT3(F3)^2, d=3, bond 2: |Gamma|=729 prefix ranks=[2, 1] |H|=1 |K_N global|=1 |K_N local|=1 K_N==H: True
+UT3(F3)^2, d=3, bond 1 (e2 x e2): |Gamma|=729 prefix ranks=[1, 1] |H|=9 |K_N global|=9 |K_N local|=9 K_N==H: True
+UT2(F3)^3, d=2, bonds 2,2: |Gamma|=27 prefix ranks=[2, 2, 1] |H|=1 |K_N global|=1 |K_N local|=1 K_N==H: True
+diagonal UT3(F3) on identity TT sum e_k x e_k: |Gamma|=27 prefix ranks=[3, 1] |H|=1 |K_N global|=1 |K_N local|=1 K_N==H: True
+diagonal UT3(F3), random bond 2: |Gamma|=27 prefix ranks=[1, 1] |H|=3 |K_N global|=3 |K_N local|=3 K_N==H: True
+
+== 5. p-group premise: scalar 2 on site 1 over F_5 (order 4, not a 5-group)
+preserves every U_i: True  fixes A: False
+
+== 6. Repo solver (read-only import) vs exhaustive reference
+UT3(F5)^2, d=3, bond 2 (reference): |Gamma|=15625 prefix ranks=[1, 1] |H|=25 |K_N global|=25 |K_N local|=25 K_N==H: True
+repo solver status=EXACT_STABILIZER generated |H|=25 equals exhaustive H: True
+note's p=3 control (Jordan block, site index 3 <= p): status UNSUPPORTED_COMMON_INDEX failed stage 2 stage indices [3, 5]
+ALL_PASS

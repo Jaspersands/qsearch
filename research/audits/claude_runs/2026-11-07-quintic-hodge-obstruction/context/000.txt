@@ -1,0 +1,39 @@
+Source https://arxiv.org/pdf/1407.1942, actual introduction lines15–49, SHA256 in local source.json.
+                                         by Deligne ([Del72]). For later purposes, we take X to be projective, let η be an ample line bundle
+                                         on X, and replace the full cohomology group H 2 (X, Q) by the η-primitive cohomology Prim2η (X, Q)
+                                         (the kernel of ∪η); for notational convenience we let VQ be the weight-zero (Tate-twisted) Q-Hodge
+                                         structure
+                                                                                 VQ = Prim2η (X, Q)(1).
+                                         The Hodge bi-grading is then given by a representation of the Deligne torus S = ResC/R Gm on VR ;
+                                         this preserves the intersection pairing, and so we can set up the ‘lifting problem’ of whether the
+                                         dotted arrow in the following diagram can be filled in:
+                                         (1)                                                           GSpin(VR )
+                                                                                                           ✉::
+                                                                                                   h̃ ✉
+                                                                                                   ✉
+                                                                                               ✉                 
+
+
+                                                                                           ✉        h //
+                                                                                       S                   SO(VR ).
+                                         It is easily seen that this is possible, and that the ambiguity in such a lift is a choice of Tate
+                                         twist. Now, associated to the quadratic space VQ there is an (even–this is immaterial) Clifford
+                                         algebra C + (VQ ), and there is a natural representation of GSpin(VQ ) on C + (VQ ). In these terms, the
+                                         Kuga-Satake abelian variety is the complex abelian variety associated to the weight 1 polarizable
+                                         Q-Hodge structure whose underlying Q-vector space is C + (VQ ), and whose Hodge bi-grading is
+                                         given by the representation of S induced by the lift (normalized to weight 1) h̃.
+                                            It is a numerical miracle, crucially depending on the fact that h2,0 (X) = 1, that the Hodge struc-
+                                         ture (C + (VQ ), h̃) has Hodge bi-grading of type {(1, 0), (0, 1)}. A number of people have studied
+                                         variants of the original construction (for example, [Mor85], [Gal00], [Voi05], [Moo]), always be-
+                                         ginning with some Hodge structure resembling that of a K3 surface or abelian variety, and extract-
+                                         ing some other Hodge structure (the ‘lift’) that can by Riemann’s theorem be shown to come from
+                                         an abelian variety.
+                                            But the diagram (1) above suggests a much broader question: abandon K3 surfaces and abelian
+                                         varieties, and consider any orthogonally polarized weight zero Hodge structure VQ of motivic
+                                         origin, for instance Prim2k (X, Q)(k) for any smooth projective variety X/C. Again it is easy to find
+                                           I am very grateful to the organizers for the opportunity to speak at the conference. This work was conceived while
+                                         unemployed in my parents’ basement, but only brought to fruition with the support of NSF grant DMS-1303928.
+                                                                                                           1
+
+(unique up to Tate twist) a lift h̃, so we again have a (polarizable) Q-Hodge structure (C + (VQ ), h̃).
+Is it motivic? Characterizing the essential image of the ‘Hodge realization’ functor on the category

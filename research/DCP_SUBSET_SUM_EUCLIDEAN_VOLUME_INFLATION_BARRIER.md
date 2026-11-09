@@ -1,6 +1,37 @@
 # Density-One Modular Subset-Sum Euclidean Volume Inflation & BDD Multiplicity Barrier
 
-**Status**: PROVED & FORMALLY FALSIFIED  
+## Correction, 2026-11-06: universal exclusion withdrawn
+
+Do not use the historical claims below as a lattice, BDD, list-decoding,
+or DCP lower bound. The independently actual-text reviewed correction is
+[DCP_HALF_CENTER_DGS_ADMISSION.md](DCP_HALF_CENTER_DGS_ADMISSION.md).
+
+- Correct centering retains coordinate parity: the signed difference lattice
+  is 2L with determinant 2^n D/g, where g=gcd(D,a_1,...,a_n). The single
+  congruence modulo2D drops that parity and can introduce spurious zero.
+- In the correct affine coset, every integer vector is at least sqrt(n)/2
+  from the half-integer midpoint, with equality exactly for binary vectors.
+  Nonbinary vectors cannot be closer or tie a feasible Boolean witness.
+- At densityone, exact mean closest-list cardinality is1 for IID coefficients
+  and an independent uniform target, and2-2^-n for a uniformly planted target.
+  Continuous volume/determinant is not a counting theorem for this ensemble;
+  even its parity-corrected mildly exponential ratio gives the wrong mean.
+- Dividing a polynomial list size by that heuristic does not establish a
+  success upper bound. The claimed universal trilemma is unsupported.
+- Coster's0.9408 threshold uses a shortest-vector oracle. It is not an
+  unconditional polynomial-time guarantee for LLL/BKZ. The low-density
+  inequality in the historical text also contradicts its own volume formula.
+
+The ball-volume asymptotic itself survives. No efficient exact-CVP,
+Gaussian sampler or DCP algorithm follows. The corrected Gaussian target
+has useful source-average Boolean mass, while one specified conservative
+rejection normalization is too expensive. Its scope is in the linked note.
+Only the associated registry record is queued for preserved mechanical
+quarantine; no unrelated lattice result is withdrawn here.
+
+## Historical text (withdrawn claims preserved)
+
+**Historical status (withdrawn)**: PROVED & FORMALLY FALSIFIED
 **Negative Result Registered**: `NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER` (#953)  
 **Applies to**: `DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER`, `DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY`, `DCP-BABAI-DEVIATION-DEPTH-BARRIER`  
 **Claim Gate**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  

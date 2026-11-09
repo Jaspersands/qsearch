@@ -1,0 +1,30 @@
+== A. exp(x)M exp(-x) vs exp(ad_x)M = sum_{k<p} ad_x^k M / k!  (ad_x^p = ad_{x^p} = 0 in char p)
+ N=2 (x=J_N, M=E_N1): p=2:FAILS p=3:holds p=5:holds p=7:holds   [fails exactly for 2<=p<=2]
+ N=3 (x=J_N, M=E_N1): p=3:FAILS p=5:holds p=7:holds   [fails exactly for 3<=p<=4]
+ N=4 (x=J_N, M=E_N1): p=5:FAILS p=7:holds p=11:holds   [fails exactly for 4<=p<=6]
+ N=5 (x=J_N, M=E_N1): p=5:FAILS p=7:FAILS p=11:holds p=13:holds   [fails exactly for 5<=p<=8]
+ N=6 (x=J_N, M=E_N1): p=7:FAILS p=11:holds p=13:holds   [fails exactly for 6<=p<=10]
+ N=7 (x=J_N, M=E_N1): p=7:FAILS p=11:FAILS p=13:holds p=17:holds   [fails exactly for 7<=p<=12]
+   smallest witness N=p=2: x=E12, M=E21: conj-trunc = -x M x = E12 (nonzero mod 2)
+== B. Proposition conjugation: Stab_{exp L}(A_1..A_k) = exp(L cap cap ker ad_A_i)
+ N=2 p=2: 1 Lie subalgebras (incl. n_N), 32 (g, tuple) pairs agree
+ N=3 p=3: 6 Lie subalgebras (incl. n_N), 532521 (g, tuple) pairs agree
+ N=3 p=5: 6 Lie subalgebras (incl. n_N), 6800 (g, tuple) pairs agree
+ N=4 p=5: 6 Lie subalgebras (incl. n_N), 120800 (g, tuple) pairs agree
+ N=5 p=5: 6 Lie subalgebras (incl. n_N), 61000 (g, tuple) pairs agree
+   transporter for L = n_N: brute force vs the linear system X A - B X = B - A
+   N=2 p=2: 120 candidate g agree
+   N=3 p=3: 1620 candidate g agree
+   N=3 p=5: 7500 candidate g agree
+   beyond the Proposition (N > p, exp undefined): Stab_{UT_N}(A) = I + (n_N cap commutant A), exhaustive
+   N=3 p=2: 200 pairs agree (linear in X for every N, p)
+   N=4 p=3: 18225 pairs agree (linear in X for every N, p)
+== C. 2-jet quadratic stabilizer, singular B allowed, N <= p < 2N-1:
+   {g in UT_N : g^T B g = B, b^T g = b^T} == exp{X in n_N : X^T B + B X = 0, b^T X = 0}
+   N=3 p=3: 729 forms (261 singular) x 27 X: 0 mismatches
+   N=4 p=5: 300 forms (262 singular) x 1500 X: 0 mismatches
+   N=5 p=5: 300 forms (269 singular) x 1500 X: 0 mismatches
+== D. Remark (ii) controls
+   UT_4(F_5), F=x0x1x3+2x0x2^2-x1^2x2 (Delta=3<5), N=E01+E12+E23: grad F.(Nx)=0 formally; F(exp(N)x)-F(x) = {(0, 0, 0, 3): 1}  (nonzero; so Delta<p is not enough)
+   over Q: F(exp(tN)x)-F(x) = t**5*x3**3/6 + 5*t**4*x2*x3**2/6 + 5*t**3*x1*x3**2/3 + 5*t**3*x2**2*x3/6 + 5*t**2*x0*x3**2/2 + 5*t**2*x1*x2*x3/2 + 5*t*x0*x2*x3  (every other coefficient is divisible by 5; mod 5 it is t^5 x3^3/6 = t^5 x3^3, i.e. t*x3^3 for t in F_5)
+   p=3, f=u^3v-uv^3 (H = UT_2(F_3), order 3); 2-jet at non-fixed anchor (0,1) = {(1, 0): 2}; its stabilizer K = {t: [0]} = 1, so K does not contain H

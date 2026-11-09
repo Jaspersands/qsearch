@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "arithmetic": "Sage exact cyclotomic field Q(zeta_8)",
+  "scope": "Classical supplied-description stabilizer simulation; finite falsifier controls only.",
+  "six_qubit": {
+    "n": 6,
+    "K": 16,
+    "exceptional_size": 7,
+    "cell_dimensions": [
+      4,
+      3,
+      2,
+      1,
+      0,
+      3,
+      2,
+      1,
+      0,
+      2,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "rank": 16,
+    "determinant": "7/64",
+    "residual_norm_squared": "7/64",
+    "charpoly": "t^16 - 16*t^15 + 7623/64*t^14 - 17521/32*t^13 + 111293/64*t^12 - 64701/16*t^11 + 455455/64*t^10 - 309023/32*t^9 + 652509/64*t^8 - 67067/8*t^7 + 341341/64*t^6 - 82719/32*t^5 + 59423/64*t^4 - 3773/16*t^3 + 2493/64*t^2 - 113/32*t + 7/64",
+    "checks": {
+      "partition": true,
+      "cell_sizes": true,
+      "independence": true,
+      "gram_characteristic_polynomial": true,
+      "residual": true
+    }
+  },
+  "three_qubit": {
+    "n": 3,
+    "state_count": 1080,
+    "distinct_up_to_global_phase": true,
+    "states_by_support_dimension": {
+      "0": 8,
+      "1": 112,
+      "2": 448,
+      "3": 512
+    },
+    "maximum_stabilizer_fidelity": "9/16",
+    "maximizing_state_count": 8,
+    "in_V_fidelity_histogram": {
+      "0": 7,
+      "1/2": 4
+    },
+    "enumeration": "All GF(2) linear subspaces, all affine cosets, and phases i^(linear + 2 quadratic); exact Q(zeta_8)."
+  },
+  "claim_gates": {
+    "full_learner_execution": false,
+    "quantum_execution": false,
+    "unrestricted_extent_lower_bound_exponential": false,
+    "general_learning_no_go": false
+  }
+}

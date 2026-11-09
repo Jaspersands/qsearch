@@ -1,10 +1,12 @@
 # Uniform Character-Shift Decoding Lower Bound & Weil-Chernoff Query-Time Separation
 
 **Date**: 2026-10-11  
-**Status**: Rigorously Proved, Tested, and Integrated  
+**Status**: Query-ceiling and identification results proved; uniform Omega(p) hardness conditional on Legendre PRG hardness (see `research/STATE.md`)  
 **Negative Result ID**: `NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER`  
 **Applies to**: `CHARACTER-SHIFT-DECODING-LOWER-BOUND`, `LEGENDRE-PRG-INVERSION`, `CYCLOTOMIC-DEGREE-OBSTRUCTION`, `QUERY-TIME-SEPARATION`  
 **Speedup Claim Allowed**: `False`
+
+> **Scope correction (2026-11-01):** the uniform Omega(p) lower bound in Theorem 4 and the statements built on it are conditional on Legendre PRG hardness. The claim gate in `theorems/character_shift_decoding_lower_bound_barrier.py` no longer marks that hardness as verified. The query-ceiling and identification results stand.
 
 ---
 

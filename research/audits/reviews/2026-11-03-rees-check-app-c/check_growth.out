@@ -1,0 +1,18 @@
+part 1 exact: antisymmetrizer (a), (b) on 6 (d,k); (c) on 15 (d,k,r) rational W: ok
+part 2 LCU with recovery: 54 random inputs in range(P_k x I), max entry error 4.4e-16
+  without recovery, weight of the kept k registers outside wedge^k V (reject branch, normalized, pure input):
+    d=3 r=3 k=2 J=dft        : 0.500
+    d=3 r=3 k=2 J=householder: 0.500
+    d=3 r=3 k=2 J=random     : 0.500
+    d=4 r=3 k=2 J=dft        : 0.500
+    d=4 r=3 k=2 J=householder: 0.500
+    d=4 r=3 k=2 J=random     : 0.500
+    d=4 r=4 k=2 J=dft        : 0.500
+    d=4 r=4 k=2 J=householder: 0.500
+    d=4 r=4 k=2 J=random     : 0.500
+    d=4 r=4 k=3 J=dft        : 0.667
+    d=4 r=4 k=3 J=householder: 0.667
+    d=4 r=4 k=3 J=random     : 0.667
+  k = 1 cases without recovery: max weight outside V = 4.4e-16
+part 2 (mpmath 30 digits, d=3, k=2, J=DFT): max error 3.06e-31
+part 3 growth tree: 80 nodes, max |P(accept) - p_k| = 1.7e-15, max support leak = 7.3e-15

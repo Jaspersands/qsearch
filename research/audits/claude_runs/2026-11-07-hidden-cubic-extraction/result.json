@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2669,
+      "path": "research/audits/claude_inputs/2026-11-07-hidden-cubic/contract.md",
+      "sha256": "ac2ba85ef8e73fd80ac688c9b98f814aa388d3ccb28d48ea48216f9ff5f8bc1e",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 5500,
+      "path": "research/audits/claude_inputs/2026-11-07-hidden-cubic/state_excerpt.md",
+      "sha256": "c4e69d600ec49502b9fe2270628a227b4930af57b051bb5c68b4d6e0bffc8128",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 4039,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-06T15:11:02.907467+00:00",
+  "input_token_allowance": 4295,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.68135,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-hidden-cubic/extraction_prompt.md",
+    "sha256": "f32545fe69cd815a4e440393cbab3224964fc97475f986a92e1f6a8cb92d9d7d",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261106T150401.310788Z-4edb2e90",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 4039,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 1.67879
+}

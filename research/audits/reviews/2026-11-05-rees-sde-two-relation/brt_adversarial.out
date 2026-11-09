@@ -1,0 +1,8 @@
+adv below-CW p=1009 kappa=2 M=4: solver=budget exhaustive solvable=False (checked at p=13)
+adv below-CW p=1009 kappa=3 M=4: solver=budget exhaustive solvable=False (checked at p=13)
+adv planted-top p=1009 kappa=2 a=6 E=3 M=16: ND' fails in 6/6, deterministic-split solver failed 6, succeeded 0; random-split solver {'ok': 6}
+adv planted-top p=1009 kappa=2 a=8 E=3 M=25: ND' fails in 6/6, deterministic-split solver failed 6, succeeded 0; random-split solver {'ok': 6}
+adv planted-top p=1009 kappa=3 a=6 E=3 M=16: ND' fails in 6/6, deterministic-split solver failed 6, succeeded 0; random-split solver {'fail:good-empty': 6}
+adv planted-top p=10007 kappa=2 a=10 E=4 M=27: ND' fails in 6/6, deterministic-split solver failed 6, succeeded 0; random-split solver {'ok': 6}
+adv structured p=1009 kappa=2 a=6 E=3 M=16: {'rep:ok': 9, 'lowrank:ok': 10, 'rep:fail:good-empty': 1}
+adv structured p=1009 kappa=3 a=6 E=3 M=16: {'rep:ok': 10, 'lowrank:ok': 10}

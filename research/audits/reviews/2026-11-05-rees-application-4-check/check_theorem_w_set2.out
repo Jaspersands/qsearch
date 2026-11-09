@@ -1,0 +1,17 @@
+Theorem W independent check; seed 51105
+{'label': 's2-p5-heis4-in', 'p': 5, 'alg': 'heis4', 'D': 4, 'd': 3, 'nu': 4, 'nu_witness': 4, 'weight': 1, 'Delta': 25, 'K': 3, 'dhat': 1, 'hyp': True, 'guard': 'max((nu-1)dhat,2dhat)=3', 'H_order': '5^3', 'H_normal': True, 'H_has_comm': True, 'W_dim': 3, 'naive_dim': 3, 'match': True, 'evals': 492, 'T': 123, 'candidates': 125, 'tdeg': 0, 'tdeg_bound': 3, 'secs': 2.8}
+{'label': 's2-p7-L4-in-boundary', 'p': 7, 'alg': 'L4', 'D': 4, 'd': 4, 'nu': 4, 'nu_witness': 4, 'weight': 2, 'Delta': 98, 'K': 3, 'dhat': 2, 'hyp': True, 'guard': 'max((nu-1)dhat,2dhat)=6', 'H_order': '7^1', 'H_normal': False, 'H_has_comm': False, 'W_dim': 1, 'naive_dim': 0, 'match': True, 'evals': 1143, 'T': 127, 'candidates': 7, 'tdeg': 3, 'tdeg_bound': 6, 'secs': 2.6}
+{'label': 's2-p7-exterior-in', 'p': 7, 'alg': 'exterior', 'D': 4, 'd': 3, 'nu': 2, 'nu_witness': 2, 'weight': 3, 'Delta': 21, 'K': 2, 'dhat': 3, 'hyp': True, 'guard': 'max((nu-1)dhat,2dhat)=6', 'H_order': '7^1', 'H_normal': False, 'H_has_comm': False, 'W_dim': 1, 'naive_dim': 0, 'match': True, 'evals': 1230, 'T': 123, 'candidates': 7, 'tdeg': 3, 'tdeg_bound': 3, 'secs': 2.3}
+{'label': 's2-p11-heis4-in-boundary', 'p': 11, 'alg': 'heis4', 'D': 4, 'd': 3, 'nu': 4, 'nu_witness': 4, 'weight': 3, 'Delta': 363, 'K': 3, 'dhat': 3, 'hyp': True, 'guard': 'max((nu-1)dhat,2dhat)=9', 'H_order': '11^1', 'H_normal': False, 'H_has_comm': False, 'W_dim': 1, 'naive_dim': 0, 'match': True, 'evals': 1230, 'T': 123, 'candidates': 11, 'tdeg': 2, 'tdeg_bound': 9, 'secs': 5.8}
+{'label': 's2-p11-blocks4-in-nu2', 'p': 11, 'alg': 'blocks4', 'D': 4, 'd': 2, 'nu': 2, 'nu_witness': 2, 'weight': 5, 'Delta': 55, 'K': 2, 'dhat': 5, 'hyp': True, 'guard': 'max((nu-1)dhat,2dhat)=10', 'H_order': '11^1', 'H_normal': True, 'H_has_comm': True, 'W_dim': 1, 'naive_dim': 0, 'match': True, 'evals': 1309, 'T': 119, 'candidates': 11, 'tdeg': 2, 'tdeg_bound': 5, 'secs': 20.7}
+{'label': 's2-p13-heis4-in-boundary', 'p': 13, 'alg': 'heis4', 'D': 4, 'd': 3, 'nu': 4, 'nu_witness': 4, 'weight': 4, 'Delta': 52, 'K': 2, 'dhat': 4, 'hyp': True, 'guard': 'max((nu-1)dhat,2dhat)=12', 'H_order': '13^1', 'H_normal': False, 'H_has_comm': False, 'W_dim': 1, 'naive_dim': 0, 'match': True, 'evals': 1599, 'T': 123, 'candidates': 13, 'tdeg': 4, 'tdeg_bound': 12, 'secs': 7.9}
+{'label': 's2-p13-n3-in', 'p': 13, 'alg': 'n3', 'D': 3, 'd': 3, 'nu': 3, 'nu_witness': 3, 'weight': 6, 'Delta': 78, 'K': 2, 'dhat': 6, 'hyp': True, 'guard': 'max((nu-1)dhat,2dhat)=12', 'H_order': '13^1', 'H_normal': False, 'H_has_comm': False, 'W_dim': 1, 'naive_dim': 0, 'match': True, 'evals': 2337, 'T': 123, 'candidates': 13, 'tdeg': 6, 'tdeg_bound': 12, 'secs': 19.1}
+--- summary ---
+s2-p5-heis4-in           hyp=True  H=5^3    Wdim=3 naive=3 match=True evals=492
+s2-p7-L4-in-boundary     hyp=True  H=7^1    Wdim=1 naive=0 match=True evals=1143
+s2-p7-exterior-in        hyp=True  H=7^1    Wdim=1 naive=0 match=True evals=1230
+s2-p11-heis4-in-boundary hyp=True  H=11^1   Wdim=1 naive=0 match=True evals=1230
+s2-p11-blocks4-in-nu2    hyp=True  H=11^1   Wdim=1 naive=0 match=True evals=1309
+s2-p13-heis4-in-boundary hyp=True  H=13^1   Wdim=1 naive=0 match=True evals=1599
+s2-p13-n3-in             hyp=True  H=13^1   Wdim=1 naive=0 match=True evals=2337
+total 61 s

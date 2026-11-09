@@ -1,0 +1,9 @@
+[D] p=13 d=4 kappa=4 g=6 a=6 maps=[[0, 1, 2], [3, 4, 5]] Ms=[9, 9] n0=[4, 4]: 48/60 runs returned s, every s verified exactly; outcomes {'ok': 48, 'F3': 12} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=13 d=4 kappa=4 g=6 a=4 maps=[[0, 1], [2, 3], [4, 5]] Ms=[6, 6, 6] n0=[3, 3, 3]: 1/60 runs returned s, every s verified exactly; outcomes {'F3': 58, 'F2': 1, 'ok': 1} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=31 d=6 kappa=6 g=6 a=6 maps=[[0, 1, 2], [3, 4, 5]] Ms=[8, 8] n0=[3, 3]: 47/60 runs returned s, every s verified exactly; outcomes {'ok': 47, 'F3': 13} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=11 d=2 kappa=2 g=4 a=3 maps=[[0, 1], [2, 3]] Ms=[6, 6] n0=[3, 3]: 55/60 runs returned s, every s verified exactly; outcomes {'ok': 55, 'F2': 3, 'F3': 2} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=37 d=9 kappa=9 g=4 a=4 maps=[[0, 1], [2, 3]] Ms=[6, 6] n0=[3, 3]: 2/60 runs returned s, every s verified exactly; outcomes {'F3': 56, 'F2': 2, 'ok': 2} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=13 d=3 kappa=3 g=6 a=5 maps=random Ms=[8, 8] n0=[3, 3]: 58/60 runs returned s, every s verified exactly; outcomes {'F3': 2, 'ok': 58} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[F] (Monte Carlo) p=31 d=6 kappa=6 g=4 a=4 blocks=[[0, 1], [2, 3]] Ms=[11, 11] n0=[7, 7] B=20: node abort bound sum_j n_j beta_j + 3 nu 2^-B = 0.0825; observed 0/150 aborts
+[F] (Monte Carlo) p=13 d=4 kappa=4 g=4 a=4 blocks=[[0, 1], [2, 3]] Ms=[14, 14] n0=[10, 10] B=20: node abort bound sum_j n_j beta_j + 3 nu 2^-B = 0.0396; observed 0/150 aborts
+D AND F PASSED

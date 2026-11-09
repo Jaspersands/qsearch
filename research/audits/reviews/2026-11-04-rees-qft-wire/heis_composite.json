@@ -1,0 +1,1180 @@
+{
+ "status": {
+  "status": "explicit_qft_mod_p_wired_as_optional_backend_finite_checks",
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "formal_compiler_checked": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review",
+  "explicit_qft_backend_available": true,
+  "default_backend_unchanged": true,
+  "poly_log_p_arithmetic_implemented": true,
+  "fixed_finite_gate_set": false,
+  "monolithic_explicit_simulation": false
+ },
+ "heis_composite": {
+  "source": [
+   {
+    "instance": "Heis(F_3) H=<[]> normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854553e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 1)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 2)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 0)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.7
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 1)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.563725797885456e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 2)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854553e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 0)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 1)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854553e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.5
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 2)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.5
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 0)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 1)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 2)]> non-normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.5
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.8
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854553e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.7
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.9
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.9
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.9
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 3054,
+    "prefix_gates_explicit": 16730,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 81,
+    "max_support_explicit": 10368,
+    "prune_err_explicit": 5.089422481444885e-08,
+    "state_distance": 1.5637257978854557e-14,
+    "norm_explicit": 0.9999999999999697,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 4
+     },
+     "n_calls": 4,
+     "proved_total": 4.7745615406923e-08,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.5
+   }
+  ],
+  "segment": [
+   {
+    "instance": "Heis(F_3) H=<[]> normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590961,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.3355120957399853,
+     "01": 0.3321829169737981,
+     "10": 0.33230498728629976
+    },
+    "label_tv": 0.0021787624066113565,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 11.9
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590992,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.3355120957399853,
+     "01": 0.3321829169737981,
+     "10": 0.33230498728629976
+    },
+    "label_tv": 0.0021787624066113565,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 9.8
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 1)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590761,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.33551209573998525,
+     "01": 0.33218291697379826,
+     "10": 0.3323049872863002
+    },
+    "label_tv": 0.0021787624066110234,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 11.8
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 2)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590933,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.33551209573998525,
+     "01": 0.3321829169737986,
+     "10": 0.33230498728630037
+    },
+    "label_tv": 0.0021787624066107736,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 12.1
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 0)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590979,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.33551209573998525,
+     "01": 0.33218291697379826,
+     "10": 0.3323049872863002
+    },
+    "label_tv": 0.0021787624066110234,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 10.9
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 1)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726591075,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.33551209573998525,
+     "01": 0.3321829169737986,
+     "10": 0.33230498728630037
+    },
+    "label_tv": 0.0021787624066107736,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 10.8
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 2)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726591161,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.3355120957399853,
+     "01": 0.3321829169737981,
+     "10": 0.33230498728629976
+    },
+    "label_tv": 0.0021787624066113565,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 12.1
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 0)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590989,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.33551209573998525,
+     "01": 0.3321829169737981,
+     "10": 0.33230498728629976
+    },
+    "label_tv": 0.0021787624066113287,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 10.3
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 1)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590861,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.33551209573998525,
+     "01": 0.33218291697379826,
+     "10": 0.3323049872863002
+    },
+    "label_tv": 0.0021787624066110234,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 10.7
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 2)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.0930394472659081,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.3355120957399853,
+     "01": 0.3321829169737986,
+     "10": 0.33230498728630037
+    },
+    "label_tv": 0.0021787624066108013,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 9.3
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 0)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726591054,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.3355120957399853,
+     "01": 0.3321829169737981,
+     "10": 0.33230498728629976
+    },
+    "label_tv": 0.0021787624066113565,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 11.2
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 1)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.09303944726590835,
+    "norm_explicit": 0.9999999999999577,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.3355120957399853,
+     "01": 0.3321829169737981,
+     "10": 0.33230498728629976
+    },
+    "label_tv": 0.0021787624066113565,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 10.8
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 2)]> non-normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "state_distance": 0.0930394472659112,
+    "norm_explicit": 0.9999999999999578,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 0.33333333333333526,
+     "01": 0.33333333333333526,
+     "10": 0.33333333333333526
+    },
+    "label_law_explicit": {
+     "00": 0.3355120957399853,
+     "01": 0.3321829169737981,
+     "10": 0.33230498728629976
+    },
+    "label_tv": 0.0021787624066113565,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 12.0
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "state_distance": 1.1936403787381889e-08,
+    "norm_explicit": 0.999999999999962,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 1.0000000000000027
+    },
+    "label_law_explicit": {
+     "00": 0.9999999999999611
+    },
+    "label_tv": 2.0761170560490427e-14,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.6
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "state_distance": 1.1936403787381907e-08,
+    "norm_explicit": 0.999999999999962,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 1.0000000000000027
+    },
+    "label_law_explicit": {
+     "00": 0.9999999999999611
+    },
+    "label_tv": 2.0761170560490427e-14,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 1.3
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "state_distance": 1.1936403787381889e-08,
+    "norm_explicit": 0.999999999999962,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 1.0000000000000027
+    },
+    "label_law_explicit": {
+     "00": 0.9999999999999611
+    },
+    "label_tv": 2.0761170560490427e-14,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 1.2
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "state_distance": 1.1936403787381899e-08,
+    "norm_explicit": 0.999999999999962,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 1.0000000000000027
+    },
+    "label_law_explicit": {
+     "00": 0.9999999999999611
+    },
+    "label_tv": 2.0761170560490427e-14,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 1.1
+   },
+   {
+    "instance": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "state_distance": 1.1936403787381894e-08,
+    "norm_explicit": 0.999999999999962,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 1.0000000000000027
+    },
+    "label_law_explicit": {
+     "00": 0.9999999999999611
+    },
+    "label_tv": 2.0761170560490427e-14,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.7
+   },
+   {
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal",
+    "prefix_gates_exact": 4326,
+    "prefix_gates_explicit": 24840,
+    "qubits_exact": 93,
+    "qubits_explicit": 116,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "state_distance": 1.1936403787381906e-08,
+    "norm_explicit": 0.999999999999962,
+    "measured_register": [
+     "z0"
+    ],
+    "label_law_exact": {
+     "00": 1.0000000000000027
+    },
+    "label_law_explicit": {
+     "00": 0.9999999999999611
+    },
+    "label_tv": 2.0761170560490427e-14,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 5,
+      "qft_dg_general": 1
+     },
+     "n_calls": 6,
+     "proved_total": 0.2215226869012442,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08
+    },
+    "seconds": 0.7
+   }
+  ],
+  "instrument": {
+   "d": 2,
+   "p": 3,
+   "top_coordinates": 1,
+   "inputs": 3,
+   "qubits_exact": 21,
+   "qubits_explicit": 44,
+   "gates_explicit": 7094,
+   "max_state_distance": 0.09303944726590595,
+   "prune_err_max": 1.4201208167750858e-09,
+   "hybrid": {
+    "calls": {
+     "qft_zero": 1,
+     "qft_dg_general": 1
+    },
+    "n_calls": 2,
+    "proved_total": 0.22152263915562878,
+    "B": 0.22152262721922492,
+    "prep": 1.193640385173075e-08
+   },
+   "seconds": 3.5
+  }
+ }
+}

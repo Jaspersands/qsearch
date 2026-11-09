@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "scope": "Classical exact weight multiplicities and one finite native point count only.",
+  "wedge_square": {
+    "quintic_multiplicities": {
+      "-2": 6,
+      "-1": 176,
+      "0": 962,
+      "1": 176,
+      "2": 6
+    },
+    "dimension": 1326,
+    "K3_control_multiplicities": {
+      "-1": 19,
+      "0": 172,
+      "1": 19
+    },
+    "K3_has_weight_plus_or_minus_2": false
+  },
+  "D26_half_spin": {
+    "active_coordinates": 4,
+    "inactive_coordinates": 22,
+    "inactive_parity_counts": [
+      2097152,
+      2097152
+    ],
+    "multiplicities_by_half_parity": {
+      "0": {
+        "-2": 2097152,
+        "-1": 8388608,
+        "0": 12582912,
+        "1": 8388608,
+        "2": 2097152
+      },
+      "1": {
+        "-2": 2097152,
+        "-1": 8388608,
+        "0": 12582912,
+        "1": 8388608,
+        "2": 2097152
+      }
+    },
+    "dimension_each": 33554432,
+    "weight_width": 4,
+    "central_shift_can_make_width_1": false,
+    "exponential_state_enumeration": false,
+    "normalized_formal_slopes": [
+      "-3/2",
+      "-1/2",
+      "1/2",
+      "3/2",
+      "5/2"
+    ],
+    "formal_slope_scope": "Conditional ordinary formal shape only; no generic Newton or actual quintic slope claim.",
+    "known_Deligne_Schnell_Hodge_obstruction_claimed_new": false
+  },
+  "native_F7_baseline": {
+    "original_polynomial": "x0^5 + x1^5 + x2^5 + x0^2*x1*x2*x3 + x0*x1^2*x2*x3 + x3^5",
+    "original_gradient_charts_unit_ideal": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "original_smooth": true,
+    "fallback_change": null,
+    "selected_polynomial": "x0^5 + x1^5 + x2^5 + x0^2*x1*x2*x3 + x0*x1^2*x2*x3 + x3^5",
+    "selected_gradient_charts_unit_ideal": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "selected_smooth_over_algebraic_closure": true,
+    "point_count_method": "Sage projective subscheme rational_points over F7",
+    "F7_points": 58,
+    "H2_Frobenius_trace": 8,
+    "P2_coefficient_c1_of_T": -8,
+    "trace_formula": "#X = 1 + q^2 + Tr(F|H2)",
+    "coefficient_formula": "[T]det(1-T F|H2) = 1 + q^2 - #X = -Tr(F|H2)",
+    "correction_record": "Earlier labels reversed the trace/coefficient signs; corrected to trace +8 and P2 coefficient -8 for #X(F7)=58.",
+    "full_P2_computed": false
+  },
+  "formula_normalizations_only": {
+    "genus": 31,
+    "base_degree": 45,
+    "nodes": 220,
+    "b2": 53
+  },
+  "claim_gates": {
+    "algorithm_implementation": false,
+    "novelty": false,
+    "speedup": false,
+    "quantum_execution": false
+  }
+}

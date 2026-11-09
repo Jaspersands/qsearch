@@ -1,0 +1,19 @@
+[moore2-control] p=5 D=2 dimL=1 formal_deg=6 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=1 (|H|=5, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=21 | 0.3s
+[UT3-audit-control] p=5 D=3 dimL=3 formal_deg=6 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=1 (|H|=5, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=81 | 0.0s
+[moore2-control] p=7 D=2 dimL=1 formal_deg=8 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=1 (|H|=7, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=21 | 0.0s
+[UT3-audit-control] p=7 D=3 dimL=3 formal_deg=8 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=1 (|H|=7, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=81 | 0.1s
+[planted k=<b> delta=2] p=7 D=4 dimL=4 formal_deg=14 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=1 (|H|=7, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=120 | 0.8s
+[planted k=<a+b> delta=2] p=7 D=4 dimL=4 formal_deg=14 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=2 (|H|=49, subspace=True) | naive_Lie dim=1 match=False | W dim=2 match=True evals=120 | 0.5s
+[planted k=<b,e> delta=2] p=7 D=4 dimL=4 formal_deg=14 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=2 (|H|=49, subspace=True) | naive_Lie dim=0 match=False | W dim=2 match=True evals=120 | 0.6s
+[planted k=<a,e> delta=2] p=7 D=4 dimL=4 formal_deg=14 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=2 (|H|=49, subspace=True) | naive_Lie dim=0 match=False | W dim=2 match=True evals=120 | 0.6s
+[planted k=<b> delta=2] p=11 D=4 dimL=4 formal_deg=22 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=1 (|H|=11, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=120 | 5.5s
+[planted k=<b> delta=3] p=11 D=4 dimL=4 formal_deg=33 weight=3 delta_hat=3 hypothesis_W=yes | brute dim=1 (|H|=11, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=160 | 18.9s
+[planted k=<a,e> delta=2] p=11 D=4 dimL=4 formal_deg=22 weight=2 delta_hat=2 hypothesis_W=yes | brute dim=2 (|H|=121, subspace=True) | naive_Lie dim=0 match=False | W dim=2 match=True evals=120 | 6.7s
+[planted k=<a,e> delta=3] p=11 D=4 dimL=4 formal_deg=33 weight=3 delta_hat=3 hypothesis_W=yes | brute dim=2 (|H|=121, subspace=True) | naive_Lie dim=0 match=False | W dim=2 match=True evals=160 | 13.7s
+[planted k=<b> delta=4] p=13 D=4 dimL=4 formal_deg=52 weight=4 delta_hat=4 hypothesis_W=yes | brute dim=1 (|H|=13, subspace=True) | naive_Lie dim=0 match=False | W dim=1 match=True evals=200 | 94.5s
+[planted k=<a,e> delta=4] p=13 D=4 dimL=4 formal_deg=52 weight=4 delta_hat=4 hypothesis_W=yes | brute dim=2 (|H|=169, subspace=True) | naive_Lie dim=0 match=False | W dim=2 match=True evals=200 | 61.4s
+[UT4(F5) audit cubic (outside W hypothesis)] p=5 D=4 dimL=6 formal_deg=3 weight=3 delta_hat=3 hypothesis_W=NO | brute dim=0 (|H|=1, subspace=True) | naive_Lie dim=1 match=False | W dim=1 match=False evals=288 | 5.1s
+
+SUMMARY: 14 cases inside the W hypothesis, W correct in 14; naive Lie correct in 0.
+         1 cases outside: W correct in 0.
+EXIT 0

@@ -1,0 +1,9 @@
+p=857 kappa=4 S0=2.815890e+23 reps=106 samples=3200
+  exact low part: M5/S0=0.97548  L1(v<=5)/S0=0.43236  (1, 2):0.1684 (1, 3):0.0005259 (1, 4):0.0002956 (2, 2):0.1221 (2, 3):0.141
+  class (2, 4): size=151380 mean|S|/p^5=65.25 (se 6.9) max/p^5=953.4 class L1/S0=0.01622
+  class (3, 3): size=960000 mean|S|/p^5=307.7 (se 54) max/p^5=2.448e+04 class L1/S0=0.485
+  class (3, 4): size=31202664 mean|S|/p^5=7.917 (se 0.5) max/p^5=89.7 class L1/S0=0.4056
+  class (4, 4): size=1041385551 mean|S|/p^5=0.4168 (se 0.02) max/p^5=2.8 class L1/S0=0.7126
+  L1(v>=6)/S0 = 1.6193 +- 0.0956
+  (R)  pure refined: (L1low+L1high)/S0 = 2.0517  -> fails (estimate)
+  (H5) hybrid: M5/S0 = 0.9755 vs L1high/S0 = 1.6193 -> fails (estimate)

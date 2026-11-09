@@ -21,6 +21,31 @@ import Formal.CentralSpectralProjector
 import Formal.CentralDescentRecords
 import Formal.CentralDescentPolicy
 import Formal.ReesMeasuredReceiver
+import Formal.ReesGeneralCover
+import Formal.ReesGeneralLaw
+import Formal.ReesGeneralLawClassThree
+import Formal.ReesGeneralReceiver
+import Formal.BCHClassFour
+import Formal.BCHClassFourSubgroups
+import Formal.ReesGeneralLawClassFour
+import Formal.BCHClassFive
+import Formal.BCHClassFiveSubgroups
+import Formal.ReesGeneralLawClassFive
+import Formal.BCHClassSix
+import Formal.BCHClassSixSubgroups
+import Formal.ReesGeneralLawClassSix
+import Formal.BCHClassSeven
+import Formal.BCHClassSevenSubgroups
+import Formal.ReesGeneralLawClassSeven
+import Formal.ReesGeneralMeasuredReceiver
+import Formal.ReesSdeGcd
+import Formal.ReesSdeWitness
+import Formal.ReesSdeTriangular
+import Formal.ReesSdeQuadratic
+import Formal.ReesSdePolicy
+import Formal.ReesSdeSolver
+import Formal.ReesMergeReduction
+import Formal.ReesS2Local
 
 /-!
 # Axiom audit
@@ -918,3 +943,1364 @@ info: 'QSearch.ReesCentralQuotientBCH.groupDilation_centralEmbedding' depends on
 /-- info: 'QSearch.CentralDescentPolicy.measured_randomized_output_trace_conservation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs (whitespace := lax) in
 #print axioms QSearch.CentralDescentPolicy.measured_randomized_output_trace_conservation
+
+/-! ## General-class Rees modules (promoted 2026-11-02)
+
+Guards for `ReesGeneralCover`, `ReesGeneralLaw`, `ReesGeneralLawClassThree` and
+`ReesGeneralReceiver`, first written in
+`research/audits/reviews/2026-11-02-rees-lean/ReesGeneralAudit.lean`.
+-/
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_eq_sum
+
+/-- info: 'QSearch.ReesGeneralCover.homogeneousElement' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.homogeneousElement
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_homogeneousElement' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_homogeneousElement
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_gradeOne' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_gradeOne
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_one_surjective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_one_surjective
+
+/-- info: 'QSearch.ReesGeneralCover.lowerCentralSeries_rees_eq_bot_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.lowerCentralSeries_rees_eq_bot_iff
+
+/-- info: 'QSearch.ReesGeneralCover.rees_class_exact' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.rees_class_exact
+
+/-- info: 'QSearch.ReesGeneralCover.nilpotencyLength_rees' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.nilpotencyLength_rees
+
+/-- info: 'QSearch.ReesGeneralCover.top_grade_central' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.top_grade_central
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_comp_scaling' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_comp_scaling
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_comp_dilation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_comp_dilation
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_mem_gamma_of_tail' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_mem_gamma_of_tail
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_image_tail' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_image_tail
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_surjective
+
+/-- info: 'QSearch.ReesGeneralCover.mem_hiddenCover_iff_coeff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.mem_hiddenCover_iff_coeff
+
+/-- info: 'QSearch.ReesGeneralCover.mem_hiddenCover_iff_graded' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.mem_hiddenCover_iff_graded
+
+/-- info: 'QSearch.ReesGeneralCover.mem_hiddenCover_iff_forall_eval' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.mem_hiddenCover_iff_forall_eval
+
+/-- info: 'QSearch.ReesGeneralCover.hiddenCover_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.hiddenCover_eq
+
+/-- info: 'QSearch.ReesGeneralCover.evaluation_image_hiddenCover' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.evaluation_image_hiddenCover
+
+/-- info: 'QSearch.ReesGeneralCover.gradeOne_mem_hiddenCover_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.gradeOne_mem_hiddenCover_iff
+
+/-- info: 'QSearch.ReesGeneralCover.field_points_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.field_points_isUnit
+
+/-- info: 'QSearch.ReesGeneralCover.field_hiddenCover_mem_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.field_hiddenCover_mem_iff
+
+/-- info: 'QSearch.ReesGeneralCover.field_hiddenCover_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralCover.field_hiddenCover_eq
+
+/-- info: 'QSearch.ReesGeneralLaw.NilpotentGroupLaw' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.NilpotentGroupLaw
+
+/-- info: 'QSearch.ReesGeneralLaw.AdditiveOnCommuting' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.AdditiveOnCommuting
+
+/-- info: 'QSearch.ReesGeneralLaw.LawGroup' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.LawGroup
+
+/-- info: 'QSearch.ReesGeneralLaw.lawHom' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.lawHom
+
+/-- info: 'QSearch.ReesGeneralLaw.lawHom_surjective' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.lawHom_surjective
+
+/-- info: 'QSearch.ReesGeneralLaw.lawEquiv' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.lawEquiv
+
+/-- info: 'QSearch.ReesGeneralLaw.subgroupOfLie' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.subgroupOfLie
+
+/-- info: 'QSearch.ReesGeneralLaw.comap_subgroupOfLie' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.comap_subgroupOfLie
+
+/-- info: 'QSearch.ReesGeneralLaw.SubgroupsAreSubalgebras' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.SubgroupsAreSubalgebras
+
+/-- info: 'QSearch.ReesGeneralLaw.mul_eq_add_of_lie_eq_zero' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.mul_eq_add_of_lie_eq_zero
+
+/-- info: 'QSearch.ReesGeneralLaw.ReesGroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.ReesGroup
+
+/-- info: 'QSearch.ReesGeneralLaw.BaseGroup' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.BaseGroup
+
+/-- info: 'QSearch.ReesGeneralLaw.evaluationHom' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.evaluationHom
+
+/-- info: 'QSearch.ReesGeneralLaw.dilationHom' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.dilationHom
+
+/-- info: 'QSearch.ReesGeneralLaw.evaluationHom_surjective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.evaluationHom_surjective
+
+/-- info: 'QSearch.ReesGeneralLaw.evaluationHom_comp_dilation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.evaluationHom_comp_dilation
+
+/-- info: 'QSearch.ReesGeneralLaw.hiddenSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.hiddenSubgroup
+
+/-- info: 'QSearch.ReesGeneralLaw.hiddenSubgroup_eq_iInf' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.hiddenSubgroup_eq_iInf
+
+/-- info: 'QSearch.ReesGeneralLaw.mem_hiddenSubgroup_iff_coeff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.mem_hiddenSubgroup_iff_coeff
+
+/-- info: 'QSearch.ReesGeneralLaw.hiddenSubgroup_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.hiddenSubgroup_eq
+
+/-- info: 'QSearch.ReesGeneralLaw.tuple_hides' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.tuple_hides
+
+/-- info: 'QSearch.ReesGeneralLaw.tuple_hides_coeff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.tuple_hides_coeff
+
+/-- info: 'QSearch.ReesGeneralLaw.tuple_hides_arbitrary_subgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.tuple_hides_arbitrary_subgroup
+
+/-- info: 'QSearch.ReesGeneralLaw.dilation_hiddenSubgroup_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.dilation_hiddenSubgroup_iff
+
+/-- info: 'QSearch.ReesGeneralLaw.evaluationHom_image_hiddenSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.evaluationHom_image_hiddenSubgroup
+
+/-- info: 'QSearch.ReesGeneralLaw.trunc_class_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.trunc_class_le
+
+/-- info: 'QSearch.ReesGeneralLaw.TruncGroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.TruncGroup
+
+/-- info: 'QSearch.ReesGeneralLaw.groupMk' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.groupMk
+
+/-- info: 'QSearch.ReesGeneralLaw.groupMk_surjective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.groupMk_surjective
+
+/-- info: 'QSearch.ReesGeneralLaw.groupMk_ker' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.groupMk_ker
+
+/-- info: 'QSearch.ReesGeneralLaw.projectHom' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.projectHom
+
+/-- info: 'QSearch.ReesGeneralLaw.projectHom_surjective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.projectHom_surjective
+
+/-- info: 'QSearch.ReesGeneralLaw.projectHom_groupMk' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.projectHom_groupMk
+
+/-- info: 'QSearch.ReesGeneralLaw.projectHom_kernel_central' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.projectHom_kernel_central
+
+/-- info: 'QSearch.ReesGeneralLaw.projectHom_kernel_additive' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.projectHom_kernel_additive
+
+/-- info: 'QSearch.ReesGeneralLaw.terminalGroupEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.terminalGroupEquiv
+
+/-- info: 'QSearch.ReesGeneralLaw.terminalMap' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.terminalMap
+
+/-- info: 'QSearch.ReesGeneralLaw.terminal_hidden_image' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.terminal_hidden_image
+
+/-- info: 'QSearch.ReesGeneralLaw.groupDilation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.groupDilation
+
+/-- info: 'QSearch.ReesGeneralLawClassThree.bchLaw' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassThree.bchLaw
+
+/-- info: 'QSearch.ReesGeneralLawClassThree.bchLaw_additive' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassThree.bchLaw_additive
+
+/-- info: 'QSearch.ReesGeneralLawClassThree.toBCH' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassThree.toBCH
+
+/-- info: 'QSearch.ReesGeneralLawClassThree.bchLaw_subgroups' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassThree.bchLaw_subgroups
+
+/-- info: 'QSearch.ReesGeneralLawClassThree.classThree_tuple_hides_arbitrary_subgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassThree.classThree_tuple_hides_arbitrary_subgroup
+
+/-- info: 'QSearch.ReesGeneralReceiver.centralEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.centralEmbedding
+
+/-- info: 'QSearch.ReesGeneralReceiver.centralEmbedding_injective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.centralEmbedding_injective
+
+/-- info: 'QSearch.ReesGeneralReceiver.projectHom_kernel_eq_range' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.projectHom_kernel_eq_range
+
+/-- info: 'QSearch.ReesGeneralReceiver.centralEmbedding_central' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.centralEmbedding_central
+
+/-- info: 'QSearch.ReesGeneralReceiver.groupDilation_centralEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.groupDilation_centralEmbedding
+
+/-- info: 'QSearch.ReesGeneralReceiver.groupDilation_groupMk' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.groupDilation_groupMk
+
+/-- info: 'QSearch.ReesGeneralReceiver.stageHidden' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.stageHidden
+
+/-- info: 'QSearch.ReesGeneralReceiver.stageHidden_projection' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.stageHidden_projection
+
+/-- info: 'QSearch.ReesGeneralReceiver.dilation_stageHidden_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.dilation_stageHidden_iff
+
+/-- info: 'QSearch.ReesGeneralReceiver.canonicalSection' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.canonicalSection
+
+/-- info: 'QSearch.ReesGeneralReceiver.canonicalSection_right_inverse' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.canonicalSection_right_inverse
+
+/-- info: 'QSearch.ReesGeneralReceiver.step_output' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.step_output
+
+/-- info: 'QSearch.ReesGeneralReceiver.step_output_canonical' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.step_output_canonical
+
+/-- info: 'QSearch.ReesGeneralReceiver.terminal_membership' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.terminal_membership
+
+/-- info: 'QSearch.ReesGeneralReceiver.terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralReceiver.terminal_source
+
+/-- info: 'QSearch.ReesGeneralLaw.instGroup' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLaw.instGroup
+
+/-! ## Class-four BCH group (2026-11-02) -/
+
+/-- info: 'QSearch.BCHClassFour.ClassFour' depends on axioms: [propext] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.ClassFour
+
+/-- info: 'QSearch.BCHClassFour.jacobi3' depends on axioms: [propext] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.jacobi3
+
+/-- info: 'QSearch.BCHClassFour.jacobi4a' depends on axioms: [propext] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.jacobi4a
+
+/-- info: 'QSearch.BCHClassFour.jacobi4b' depends on axioms: [propext] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.jacobi4b
+
+/-- info: 'QSearch.BCHClassFour.jacobi4b'' depends on axioms: [propext] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.jacobi4b'
+
+/-- info: 'QSearch.BCHClassFour.jacobi4c' depends on axioms: [propext] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.jacobi4c
+
+/-- info: 'QSearch.BCHClassFour.classFour_of_lowerCentralSeries' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.classFour_of_lowerCentralSeries
+
+/-- info: 'QSearch.BCHClassFour.bch' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch
+
+/-- info: 'QSearch.BCHClassFour.bch_zero_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_zero_left
+
+/-- info: 'QSearch.BCHClassFour.bch_zero_right' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_zero_right
+
+/-- info: 'QSearch.BCHClassFour.bch_neg_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_neg_left
+
+/-- info: 'QSearch.BCHClassFour.bch_neg_right' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_neg_right
+
+/-- info: 'QSearch.BCHClassFour.bch_of_lie_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_of_lie_eq_zero
+
+/-- info: 'QSearch.BCHClassFour.map_bch' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.map_bch
+
+/-- info: 'QSearch.BCHClassFour.bch_smul_same' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_smul_same
+
+/-- info: 'QSearch.BCHClassFour.four_ne_zero'' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.four_ne_zero'
+
+/-- info: 'QSearch.BCHClassFour.six_ne_zero'' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.six_ne_zero'
+
+/-- info: 'QSearch.BCHClassFour.twelve_ne_zero'' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.twelve_ne_zero'
+
+/-- info: 'QSearch.BCHClassFour.twentyfour_ne_zero'' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.twentyfour_ne_zero'
+
+/-- info: 'QSearch.BCHClassFour.bch_assoc_of_classFour' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_assoc_of_classFour
+
+/-- info: 'QSearch.BCHClassFour.bch_assoc' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.bch_assoc
+
+/-- info: 'QSearch.BCHClassFour.BCH' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.BCH
+
+/-- info: 'QSearch.BCHClassFour.BCH.ext' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.BCH.ext
+
+/-- info: 'QSearch.BCHClassFour.equiv' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.equiv
+
+/-- info: 'QSearch.BCHClassFour.instGroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.instGroup
+
+/-- info: 'QSearch.BCHClassFour.val_mul' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.val_mul
+
+/-- info: 'QSearch.BCHClassFour.val_mul_formula' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.val_mul_formula
+
+/-- info: 'QSearch.BCHClassFour.val_one' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.val_one
+
+/-- info: 'QSearch.BCHClassFour.val_inv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.val_inv
+
+/-- info: 'QSearch.BCHClassFour.val_pow' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.val_pow
+
+/-- info: 'QSearch.BCHClassFour.val_zpow' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.val_zpow
+
+/-- info: 'QSearch.BCHClassFour.lieHom' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.lieHom
+
+/-- info: 'QSearch.BCHClassFour.lieHom_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.lieHom_apply
+
+/-- info: 'QSearch.BCHClassFour.lieEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.lieEquiv
+
+/-- info: 'QSearch.BCHClassFour.lieEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.lieEquiv_apply
+
+/-- info: 'QSearch.BCHClassFour.lieHom_id' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.lieHom_id
+
+/-- info: 'QSearch.BCHClassFour.lieHom_comp' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.lieHom_comp
+
+/-- info: 'QSearch.BCHClassFour.lieEquiv_symm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFour.lieEquiv_symm
+
+/-! ## Class-four subgroups are Lie subalgebras (2026-11-02) -/
+
+/-- info: 'QSearch.BCHClassFourSubgroups.quad_central' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.quad_central
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly
+
+/-- info: 'QSearch.BCHClassFourSubgroups.bch_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.bch_conjugate
+
+/-- info: 'QSearch.BCHClassFourSubgroups.bch_comm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.bch_comm
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly_left
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly_right' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly_right
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly_deg_three' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly_deg_three
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly_deg_four' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly_deg_four
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly_left_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly_left_left
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly_right_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly_right_left
+
+/-- info: 'QSearch.BCHClassFourSubgroups.commPoly_right_right' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.commPoly_right_right
+
+/-- info: 'QSearch.BCHClassFourSubgroups.bch_cancel_bracket' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.bch_cancel_bracket
+
+/-- info: 'QSearch.BCHClassFourSubgroups.bch_cancel_cubic' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.bch_cancel_cubic
+
+/-- info: 'QSearch.BCHClassFourSubgroups.comm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.comm
+
+/-- info: 'QSearch.BCHClassFourSubgroups.comm_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.comm_mem
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_comm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_comm
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_comm_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_comm_left
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_comm_right' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_comm_right
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_comm_left_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_comm_left_left
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_comm_right_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_comm_right_left
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_comm_right_right' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_comm_right_right
+
+/-- info: 'QSearch.BCHClassFourSubgroups.neZeroTwo' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.neZeroTwo
+
+/-- info: 'QSearch.BCHClassFourSubgroups.neZeroThree' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.neZeroThree
+
+/-- info: 'QSearch.BCHClassFourSubgroups.powerScalar' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.powerScalar
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_powerScalar' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_powerScalar
+
+/-- info: 'QSearch.BCHClassFourSubgroups.powerScalar_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.powerScalar_mem
+
+/-- info: 'QSearch.BCHClassFourSubgroups.bracketWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.bracketWord
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_bracketWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_bracketWord
+
+/-- info: 'QSearch.BCHClassFourSubgroups.bracketWord_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.bracketWord_mem
+
+/-- info: 'QSearch.BCHClassFourSubgroups.addWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.addWord
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_addWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_addWord
+
+/-- info: 'QSearch.BCHClassFourSubgroups.addWord_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.addWord_mem
+
+/-- info: 'QSearch.BCHClassFourSubgroups.mk_smul_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.mk_smul_mem
+
+/-- info: 'QSearch.BCHClassFourSubgroups.mk_lie_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.mk_lie_mem
+
+/-- info: 'QSearch.BCHClassFourSubgroups.mk_add_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.mk_add_mem
+
+/-- info: 'QSearch.BCHClassFourSubgroups.toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassFourSubgroups.mem_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.mem_toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassFourSubgroups.val_mem_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.val_mem_toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassFourSubgroups.toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.toSubgroup
+
+/-- info: 'QSearch.BCHClassFourSubgroups.mem_toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.mem_toSubgroup
+
+/-- info: 'QSearch.BCHClassFourSubgroups.toLieSubalgebra_toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.toLieSubalgebra_toSubgroup
+
+/-- info: 'QSearch.BCHClassFourSubgroups.toSubgroup_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFourSubgroups.toSubgroup_toLieSubalgebra
+
+/-! ## General-law hypotheses discharged at class four (2026-11-02) -/
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.bchLaw' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.bchLaw
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.bchLaw_additive' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.bchLaw_additive
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.toBCH' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.toBCH
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.bchLaw_subgroups' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.bchLaw_subgroups
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.classFour_tuple_hides_arbitrary_subgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.classFour_tuple_hides_arbitrary_subgroup
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.canonicalPoints' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.canonicalPoints
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.canonicalPoints_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.canonicalPoints_isUnit
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.classFour_tuple_hides_coeff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.classFour_tuple_hides_coeff
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.classFour_step_output' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.classFour_step_output
+
+/-- info: 'QSearch.ReesGeneralLawClassFour.classFour_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFour.classFour_terminal_source
+
+/-! ## General-class measured receiver composed over all stages (2026-11-02) -/
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.convertStep' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.convertStep
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.measuredPacket' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.measuredPacket
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.measured_packet_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.measured_packet_eq
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.measured_step_output' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.measured_step_output
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.averaged_step_output' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.averaged_step_output
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.convert_step_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.convert_step_source
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.descend' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.descend
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.descend_top' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.descend_top
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.descend_step' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.descend_step
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.descend_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.descend_source
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.measured_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.measured_terminal_source
+
+/-- info: 'QSearch.ReesGeneralMeasuredReceiver.classFour_measured_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralMeasuredReceiver.classFour_measured_terminal_source
+
+/-! ## Rees SDE solvers: Chevalley–Warning witness, triangular solver, gcd reduction (2026-11-03) -/
+
+/-- info: 'QSearch.ReesSdeGcd.pow_bezout_exponent' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeGcd.pow_bezout_exponent
+
+/-- info: 'QSearch.ReesSdeGcd.range_pow_units_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeGcd.range_pow_units_eq
+
+/-- info: 'QSearch.ReesSdeGcd.bezout_witness' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeGcd.bezout_witness
+
+/-- info: 'QSearch.ReesSdeWitness.coordPoly_totalDegree_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeWitness.coordPoly_totalDegree_le
+
+/-- info: 'QSearch.ReesSdeWitness.eval_coordPoly' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeWitness.eval_coordPoly
+
+/-- info: 'QSearch.ReesSdeWitness.exists_witness' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeWitness.exists_witness
+
+/-- info: 'QSearch.ReesSdeWitness.exists_witness_zmod' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeWitness.exists_witness_zmod
+
+/-- info: 'QSearch.ReesSdeWitness.exists_witness_gcd' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeWitness.exists_witness_gcd
+
+/-- info: 'QSearch.ReesSdeWitness.exists_witness_linear' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeWitness.exists_witness_linear
+
+/-- info: 'QSearch.ReesSdeTriangular.realized_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.realized_zero
+
+/-- info: 'QSearch.ReesSdeTriangular.realized_mono' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.realized_mono
+
+/-- info: 'QSearch.ReesSdeTriangular.add_mem_of_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.add_mem_of_disjoint
+
+/-- info: 'QSearch.ReesSdeTriangular.realized_add' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.realized_add
+
+/-- info: 'QSearch.ReesSdeTriangular.roundWeight_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.roundWeight_mem
+
+/-- info: 'QSearch.ReesSdeTriangular.roundWeight_support' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.roundWeight_support
+
+/-- info: 'QSearch.ReesSdeTriangular.roundWeight_sum' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.roundWeight_sum
+
+/-- info: 'QSearch.ReesSdeTriangular.exists_dependence' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.exists_dependence
+
+/-- info: 'QSearch.ReesSdeTriangular.realized_extend' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.realized_extend
+
+/-- info: 'QSearch.ReesSdeTriangular.stop_witness' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.stop_witness
+
+/-- info: 'QSearch.ReesSdeTriangular.witness_aux' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.witness_aux
+
+/-- info: 'QSearch.ReesSdeTriangular.triangular_witness' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.triangular_witness
+
+/-- info: 'QSearch.ReesSdeTriangular.two_mul_triangle' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.two_mul_triangle
+
+/-- info: 'QSearch.ReesSdeTriangular.triangular_sde_witness' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.triangular_sde_witness
+
+/-- info: 'QSearch.ReesSdeTriangular.coset_product' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.coset_product
+
+/-- info: 'QSearch.ReesSdeTriangular.exists_coset_index' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.exists_coset_index
+
+/-- info: 'QSearch.ReesSdeTriangular.exists_generator' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.exists_generator
+
+/-- info: 'QSearch.ReesSdeTriangular.triangular_sde_of_contraction' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.triangular_sde_of_contraction
+
+/-- info: 'QSearch.ReesSdeTriangular.triangular_sde_zmod' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.triangular_sde_zmod
+
+/-- info: 'QSearch.ReesSdeTriangular.contraction_three' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.contraction_three
+
+/-- info: 'QSearch.ReesSdeTriangular.generator_three' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.generator_three
+
+/-- info: 'QSearch.ReesSdeTriangular.triangular_sde_three' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeTriangular.triangular_sde_three
+
+/-! ## Class-five BCH group (2026-11-04) -/
+
+/-- info: 'QSearch.BCHClassFive.classFive_of_lowerCentralSeries' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.classFive_of_lowerCentralSeries
+
+/-- info: 'QSearch.BCHClassFive.bch_assoc_of_classFive' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.bch_assoc_of_classFive
+
+/-- info: 'QSearch.BCHClassFive.bch_assoc' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.bch_assoc
+
+/-- info: 'QSearch.BCHClassFive.instGroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.instGroup
+
+/-- info: 'QSearch.BCHClassFive.val_mul_formula' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.val_mul_formula
+
+/-- info: 'QSearch.BCHClassFive.lieHom' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.lieHom
+
+/-- info: 'QSearch.BCHClassFive.lieEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.lieEquiv
+
+/-- info: 'QSearch.BCHClassFive.val_zpow' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFive.val_zpow
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.val_comm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.val_comm
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.val_bracketWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.val_bracketWord
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.val_addWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.val_addWord
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.mem_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.mem_toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.toSubgroup
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.toLieSubalgebra_toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.toLieSubalgebra_toSubgroup
+
+/-- info: 'QSearch.BCHClassFiveSubgroups.toSubgroup_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassFiveSubgroups.toSubgroup_toLieSubalgebra
+
+/-- info: 'QSearch.ReesGeneralLawClassFive.bchLaw' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFive.bchLaw
+
+/-- info: 'QSearch.ReesGeneralLawClassFive.bchLaw_subgroups' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFive.bchLaw_subgroups
+
+/-- info: 'QSearch.ReesGeneralLawClassFive.classFive_tuple_hides_coeff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFive.classFive_tuple_hides_coeff
+
+/-- info: 'QSearch.ReesGeneralLawClassFive.classFive_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFive.classFive_terminal_source
+
+/-- info: 'QSearch.ReesGeneralLawClassFive.classFive_measured_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassFive.classFive_measured_terminal_source
+
+/-! ## Class-six BCH group (2026-11-05) -/
+
+/-- info: 'QSearch.BCHClassSix.classSix_of_lowerCentralSeries' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.classSix_of_lowerCentralSeries
+
+/-- info: 'QSearch.BCHClassSix.bch_assoc_of_classSix' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.bch_assoc_of_classSix
+
+/-- info: 'QSearch.BCHClassSix.bch_assoc' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.bch_assoc
+
+/-- info: 'QSearch.BCHClassSix.instGroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.instGroup
+
+/-- info: 'QSearch.BCHClassSix.val_mul_formula' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.val_mul_formula
+
+/-- info: 'QSearch.BCHClassSix.lieHom' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.lieHom
+
+/-- info: 'QSearch.BCHClassSix.lieEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.lieEquiv
+
+/-- info: 'QSearch.BCHClassSix.val_zpow' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSix.val_zpow
+
+/-- info: 'QSearch.BCHClassSixSubgroups.val_comm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.val_comm
+
+/-- info: 'QSearch.BCHClassSixSubgroups.val_bracketWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.val_bracketWord
+
+/-- info: 'QSearch.BCHClassSixSubgroups.val_addWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.val_addWord
+
+/-- info: 'QSearch.BCHClassSixSubgroups.toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassSixSubgroups.mem_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.mem_toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassSixSubgroups.toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.toSubgroup
+
+/-- info: 'QSearch.BCHClassSixSubgroups.toLieSubalgebra_toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.toLieSubalgebra_toSubgroup
+
+/-- info: 'QSearch.BCHClassSixSubgroups.toSubgroup_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSixSubgroups.toSubgroup_toLieSubalgebra
+
+/-- info: 'QSearch.ReesGeneralLawClassSix.bchLaw' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSix.bchLaw
+
+/-- info: 'QSearch.ReesGeneralLawClassSix.bchLaw_subgroups' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSix.bchLaw_subgroups
+
+/-- info: 'QSearch.ReesGeneralLawClassSix.classSix_tuple_hides_coeff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSix.classSix_tuple_hides_coeff
+
+/-- info: 'QSearch.ReesGeneralLawClassSix.classSix_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSix.classSix_terminal_source
+
+/-- info: 'QSearch.ReesGeneralLawClassSix.classSix_measured_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSix.classSix_measured_terminal_source
+
+/-! ## Class-seven BCH group (2026-11-05) -/
+
+/-- info: 'QSearch.BCHClassSeven.classSeven_of_lowerCentralSeries' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.classSeven_of_lowerCentralSeries
+
+/-- info: 'QSearch.BCHClassSeven.bch_assoc_of_classSeven' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.bch_assoc_of_classSeven
+
+/-- info: 'QSearch.BCHClassSeven.bch_assoc' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.bch_assoc
+
+/-- info: 'QSearch.BCHClassSeven.instGroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.instGroup
+
+/-- info: 'QSearch.BCHClassSeven.val_mul_formula' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.val_mul_formula
+
+/-- info: 'QSearch.BCHClassSeven.lieHom' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.lieHom
+
+/-- info: 'QSearch.BCHClassSeven.lieEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.lieEquiv
+
+/-- info: 'QSearch.BCHClassSeven.val_zpow' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSeven.val_zpow
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.val_comm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.val_comm
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.val_bracketWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.val_bracketWord
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.val_addWord' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.val_addWord
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.mem_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.mem_toLieSubalgebra
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.toSubgroup
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.toLieSubalgebra_toSubgroup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.toLieSubalgebra_toSubgroup
+
+/-- info: 'QSearch.BCHClassSevenSubgroups.toSubgroup_toLieSubalgebra' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.BCHClassSevenSubgroups.toSubgroup_toLieSubalgebra
+
+/-- info: 'QSearch.ReesGeneralLawClassSeven.bchLaw' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSeven.bchLaw
+
+/-- info: 'QSearch.ReesGeneralLawClassSeven.bchLaw_subgroups' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSeven.bchLaw_subgroups
+
+/-- info: 'QSearch.ReesGeneralLawClassSeven.classSeven_tuple_hides_coeff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSeven.classSeven_tuple_hides_coeff
+
+/-- info: 'QSearch.ReesGeneralLawClassSeven.classSeven_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSeven.classSeven_terminal_source
+
+/-- info: 'QSearch.ReesGeneralLawClassSeven.classSeven_measured_terminal_source' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesGeneralLawClassSeven.classSeven_measured_terminal_source
+
+/-! ## Rees SDE at kappa = 2 and Chevalley-Warning receiver policies (2026-11-05) -/
+
+/-- info: 'QSearch.ReesSdeQuadratic.nonsquare_mul_nonsquare' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeQuadratic.nonsquare_mul_nonsquare
+
+/-- info: 'QSearch.ReesSdeQuadratic.exists_consecutive_nonsquare' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeQuadratic.exists_consecutive_nonsquare
+
+/-- info: 'QSearch.ReesSdeQuadratic.exists_quadratic_contraction' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeQuadratic.exists_quadratic_contraction
+
+/-- info: 'QSearch.ReesSdeQuadratic.contraction_two' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeQuadratic.contraction_two
+
+/-- info: 'QSearch.ReesSdeQuadratic.triangular_sde_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeQuadratic.triangular_sde_quadratic
+
+/-- info: 'QSearch.ReesSdeQuadratic.triangular_sde_gcd_two' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeQuadratic.triangular_sde_gcd_two
+
+/-- info: 'QSearch.ReesSdePolicy.exists_witness_module' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdePolicy.exists_witness_module
+
+/-- info: 'QSearch.ReesSdePolicy.exists_witness_module_gcd' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdePolicy.exists_witness_module_gcd
+
+/-- info: 'QSearch.ReesSdePolicy.cwPolicy_active' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdePolicy.cwPolicy_active
+
+/-- info: 'QSearch.ReesSdePolicy.cwPolicy_sde' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdePolicy.cwPolicy_sde
+
+/-- info: 'QSearch.ReesSdePolicy.measured_terminal_source_cw' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdePolicy.measured_terminal_source_cw
+
+/-- info: 'QSearch.ReesSdePolicy.classSix_measured_terminal_source_cw' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdePolicy.classSix_measured_terminal_source_cw
+
+/-- info: 'QSearch.ReesSdeSolver.kernelVec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.kernelVec
+
+/-- info: 'QSearch.ReesSdeSolver.solveVec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.solveVec
+
+/-- info: 'QSearch.ReesSdeSolver.triSolve' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.triSolve
+
+/-- info: 'QSearch.ReesSdeSolver.quadSolveZMod' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.quadSolveZMod
+
+/-- info: 'QSearch.ReesSdeSolver.linSolve' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.linSolve
+
+/-- info: 'QSearch.ReesSdeSolver.cwSearch' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.cwSearch
+
+/-- info: 'QSearch.ReesSdeSolver.kernelVec_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.kernelVec_spec
+
+/-- info: 'QSearch.ReesSdeSolver.solveVec_some' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.solveVec_some
+
+/-- info: 'QSearch.ReesSdeSolver.solveVec_none' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.solveVec_none
+
+/-- info: 'QSearch.ReesSdeSolver.triRound_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.triRound_spec
+
+/-- info: 'QSearch.ReesSdeSolver.triSolve_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.triSolve_spec
+
+/-- info: 'QSearch.ReesSdeSolver.contraction_of_index' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.contraction_of_index
+
+/-- info: 'QSearch.ReesSdeSolver.pow_bezoutExp' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.pow_bezoutExp
+
+/-- info: 'QSearch.ReesSdeSolver.linSolve_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.linSolve_spec
+
+/-- info: 'QSearch.ReesSdeSolver.linSolve_zmod_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.linSolve_zmod_spec
+
+/-- info: 'QSearch.ReesSdeSolver.quadSolve_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.quadSolve_spec
+
+/-- info: 'QSearch.ReesSdeSolver.quadSolveExp_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.quadSolveExp_spec
+
+/-- info: 'QSearch.ReesSdeSolver.findMu_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.findMu_spec
+
+/-- info: 'QSearch.ReesSdeSolver.findMu_contraction' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.findMu_contraction
+
+/-- info: 'QSearch.ReesSdeSolver.quadSolveZMod_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.quadSolveZMod_spec
+
+/-- info: 'QSearch.ReesSdeSolver.quadSolveZModExp_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.quadSolveZModExp_spec
+
+/-- info: 'QSearch.ReesSdeSolver.cwSearch_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.cwSearch_spec
+
+/-- info: 'QSearch.ReesSdeSolver.cwSearch_witness' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.cwSearch_witness
+
+/-- info: 'QSearch.ReesSdeSolver.cwSearch_zmod_gcd' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesSdeSolver.cwSearch_zmod_gcd
+
+/-- info: 'QSearch.ReesMergeReduction.witness_coords' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesMergeReduction.witness_coords
+
+/-- info: 'QSearch.ReesMergeReduction.exponent_cancels' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesMergeReduction.exponent_cancels
+
+/-- info: 'QSearch.ReesMergeReduction.merge_product_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesMergeReduction.merge_product_eq
+
+/-- info: 'QSearch.ReesMergeReduction.merge_product_eq_of_labels' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesMergeReduction.merge_product_eq_of_labels
+
+/-- info: 'QSearch.ReesMergeReduction.zero_product_indicator' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesMergeReduction.zero_product_indicator
+
+/-- info: 'QSearch.ReesS2Local.hasContraction_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.hasContraction_iff
+
+/-- info: 'QSearch.ReesS2Local.two_rows_diff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.two_rows_diff
+
+/-- info: 'QSearch.ReesS2Local.beta_injective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.beta_injective
+
+/-- info: 'QSearch.ReesS2Local.alpha_injective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.alpha_injective
+
+/-- info: 'QSearch.ReesS2Local.exists_A_witness' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.exists_A_witness
+
+/-- info: 'QSearch.ReesS2Local.mem_E2_of_A_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.mem_E2_of_A_eq_zero
+
+/-- info: 'QSearch.ReesS2Local.hasContraction_transfer' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.hasContraction_transfer
+
+/-- info: 'QSearch.ReesS2Local.mem_E2_iff_exists' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.mem_E2_iff_exists
+
+/-- info: 'QSearch.ReesS2Local.card_pairs_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.card_pairs_le
+
+/-- info: 'QSearch.ReesS2Local.mem_E2_of_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.mem_E2_of_le
+
+/-- info: 'QSearch.ReesS2Local.mem_E2_of_dvd' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.mem_E2_of_dvd
+
+/-- info: 'QSearch.ReesS2Local.thirteen_mem_E2_four' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.thirteen_mem_E2_four
+
+/-- info: 'QSearch.ReesS2Local.twentynine_mem_E2_four' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.twentynine_mem_E2_four
+
+/-- info: 'QSearch.ReesS2Local.seven_not_mem_E2_three' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms QSearch.ReesS2Local.seven_not_mem_E2_three

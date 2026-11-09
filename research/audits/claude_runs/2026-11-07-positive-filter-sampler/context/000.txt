@@ -1,0 +1,45 @@
+Current pass scope: classical attack on a newly selected tilted-walk algorithm for native scalar OPI. The Gaudin pass is closed. The following is a new proposed general lemma, not an established source theorem. Parameters are rational; source actual implementation uses a computable rational upper normalization rather than an eigenvalue oracle. Input access means exact classical samplers for stationary pi and chain updates, and exact rational score evaluation. Quantum input is ONLY the coherent stationary state; arbitrary initial states are excluded.
+
+## 3. Constructive classical sampler for a positive filter
+
+General statement, independent of RS: let P be a finite reversible chain
+with classically samplable stationary pi and updates, and let G be a paid
+rational function into[g0,1], g0>0. Let
+ C=sum_(j=0)^M w_j[(D(P)+bG)/nu]^j,
+with nonnegative rational weights, nonzero total, b>=0, nu>0. All parameters
+and M have polynomial charged description/execution size. Let
+ R=(P+bG)/(1+b), a substochastic kernel. It is implemented by one choice:
+with probability1/(1+b), make a P step; otherwise stay and survive with
+probabilityG(current state), and kill if that Bernoulli fails.
+
+Define d_j=w_j[(1+b)/nu]^j, A=sum_jd_j. A single survival trial atx samples
+j with probability d_j/A and takes j steps ofR. Its survival probability is
+ p(x)=A^-1 sum_j w_j nu^-j (P+bG)^j1(x).
+Detailed balance gives
+ C|sqrt(pi)> = A sum_x sqrt(pi(x))p(x)|x>.
+Therefore samplex~pi, run TWO independent survival trials FROM THE SAME x,
+and retain x iff both survive. Conditioned on acceptance this is EXACTLY
+the computational-basis law of normalized C|sqrt(pi)>.
+
+Every R step has survival at least
+ t0=(1+b g0)/(1+b), so t0^M<=p(x)<=1. Acceptance>=t0^(2M), and
+ expected work O(M t0^(-2M))<=O(M exp[2(1-g0)bM]).           (COST)
+The output law q has q(x)/pi(x) between t0^(2M) and t0^(-2M), and
+ TV(q,pi)<=exp[2(1-g0)bM]-1.                              (LAW)
+There is no oracle for p(x), no path enumeration, and no conditional future
+samples. Each pair is generated independently. Rational d_j weights have
+polynomial bitlength O(M times parameter bitlength), even if A is large;
+integer-weight sampling and every Bernoulli can be capped, charging their
+failure in epsilon. Cap outer trials at t0^(-2M)log(1/epsilon), with harmless
+constant factors and integer ceilings; a union bound pays finite random
+bit generation. The exact algebraic law is separate from bounded-runtime
+approximate sampling. No quantum state or phase information is reconstructed.
+
+For g0=1/2 and the native source prescription (PRODUCT), this gives a
+classical polynomial sampler and q/ pi=1+O(Lambda^-2) uniformly; TV has the
+same upper bound. For any fixed marked set S, q(S)<=exp(bM)pi(S).
+If C is implemented as a contraction, its HERALDED marked amplitude is
+at most sqrt(q(S)), so this filter cannot create a superpolynomial gain
+over the stationary starting overlap. This is an upper bound for this
+specific use of this filter, not a lower bound on all search algorithms.
+

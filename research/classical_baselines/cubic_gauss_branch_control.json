@@ -1,0 +1,346 @@
+{
+  "scope": "Four exact finite classical controls. No quantum execution, hardness result, asymptotic inference, or Ito geometric-product evaluation.",
+  "source_scope": {
+    "ito_cubic_gauss_product_2012": {
+      "primary_generator_and_sum_lines": "35-44",
+      "product_formula_lines": "45-53",
+      "representative_system_alpha_definition_lines": "61-70",
+      "geometric_system_construction_lines": "128-148"
+    },
+    "van_dam_seroussi_gauss_2002": {
+      "section_6_1_lines": "535-553",
+      "scope": "The stated DLP reduction uses a primitive full-order multiplicative character and arbitrary additive beta. This fixed order-three character control is not that full-order DLP reduction."
+    }
+  },
+  "results": [
+    {
+      "prime": 7,
+      "cyclotomic_conductor": 21,
+      "cyclotomic_degree": 12,
+      "primary_pi_coefficients_a_b": [
+        -2,
+        -3
+      ],
+      "primary_pi_description": "(-2) + (-3)*rho",
+      "all_primary_candidates_b_negative": [
+        [
+          -2,
+          -3
+        ]
+      ],
+      "primary_search_integer_pairs_tested": 105,
+      "rho_bar_mod_p": 4,
+      "betas": [
+        1,
+        2,
+        3
+      ],
+      "chi_beta_rho_exponents": [
+        0,
+        1,
+        2
+      ],
+      "tau_beta_over_tau_1_rho_exponents": [
+        0,
+        2,
+        1
+      ],
+      "exact_tau_1_cube_equals_minus_p_pi": true,
+      "all_three_exact_cubes_equal": true,
+      "three_exact_sums_distinct": true,
+      "exact_sums_in_cyclotomic_generator": {
+        "1": "-zeta21^10 + zeta21^8 - zeta21^7 - zeta21^6 + 2*zeta21^5 - zeta21^4 + 2*zeta21^2 + zeta21 - 1",
+        "2": "-zeta21^10 - 2*zeta21^8 + 2*zeta21^6 - zeta21^5 - zeta21^4 - zeta21^2 - 2*zeta21 + 1",
+        "3": "2*zeta21^10 + zeta21^8 + zeta21^7 - zeta21^6 - zeta21^5 + 2*zeta21^4 - zeta21^2 + zeta21"
+      },
+      "complex_embedding": "zeta_(3p) maps to exp(2*pi*i/(3p))",
+      "complex_precision_bits": 160,
+      "tau_1_complex_real": "2.3704694055762005915750146520127194318968241927",
+      "tau_1_complex_imag": "1.1751062918847870026177056898343305058803813423",
+      "principal_cube_root_real": "2.3704694055762005915750146520127194318968241927",
+      "principal_cube_root_imag": "1.1751062918847870026177056898343305058803813423",
+      "branch_index_k_tau_equals_principal_root_times_rho_k": 0,
+      "branch_comparison_absolute_error": "4.1053665947016125124718640135446761658601424078e-48",
+      "arbitrary_integer_orbit_representatives_S": [
+        1,
+        3
+      ],
+      "S_product_mod_p": 3,
+      "alpha_lift_minus_rho_exponent": 1,
+      "alpha_lift_cube_equals_minus_one_exactly": true,
+      "changed_representatives_one_rotation": [
+        4,
+        3
+      ],
+      "changed_product_mod_p": 5,
+      "changed_alpha_lift_minus_rho_exponent": 2,
+      "changed_product_ratio_mod_p": 4,
+      "changed_alpha_ratio_equals_rho_exactly": true,
+      "product_cubes_unchanged_mod_p": true,
+      "S_is_claimed_to_be_Ito_geometric_system": false,
+      "classical_work": {
+        "terms_per_direct_sum": 6,
+        "number_direct_sums": 3,
+        "total_direct_sum_terms": 18,
+        "character_values_enumerated": 6,
+        "orbit_partition_residues": 6,
+        "scope": "Direct exact cyclotomic sums enumerate p-1 terms each; no poly(log p) classical algorithm or asymptotic branch theorem is inferred."
+      },
+      "seconds": 0.030613041948527098
+    },
+    {
+      "prime": 13,
+      "cyclotomic_conductor": 39,
+      "cyclotomic_degree": 24,
+      "primary_pi_coefficients_a_b": [
+        1,
+        -3
+      ],
+      "primary_pi_description": "(1) + (-3)*rho",
+      "all_primary_candidates_b_negative": [
+        [
+          1,
+          -3
+        ]
+      ],
+      "primary_search_integer_pairs_tested": 171,
+      "rho_bar_mod_p": 9,
+      "betas": [
+        1,
+        4,
+        2
+      ],
+      "chi_beta_rho_exponents": [
+        0,
+        1,
+        2
+      ],
+      "tau_beta_over_tau_1_rho_exponents": [
+        0,
+        2,
+        1
+      ],
+      "exact_tau_1_cube_equals_minus_p_pi": true,
+      "all_three_exact_cubes_equal": true,
+      "three_exact_sums_distinct": true,
+      "exact_sums_in_cyclotomic_generator": {
+        "1": "zeta39^23 - 2*zeta39^22 - 2*zeta39^21 + 3*zeta39^20 - 2*zeta39^19 - 2*zeta39^18 + 3*zeta39^17 - zeta39^16 + 2*zeta39^14 - zeta39^13 - 2*zeta39^12 + zeta39^11 - 3*zeta39^9 + zeta39^7 - 3*zeta39^6 + zeta39^4 - zeta39^3 + zeta39^2 + 2*zeta39 - 2",
+        "4": "zeta39^23 + zeta39^22 + zeta39^21 + zeta39^19 + zeta39^18 - zeta39^16 - zeta39^14 + zeta39^12 + zeta39^11 + zeta39^7 + zeta39^4 - zeta39^3 + zeta39^2 - zeta39",
+        "2": "-2*zeta39^23 + zeta39^22 + zeta39^21 - 3*zeta39^20 + zeta39^19 + zeta39^18 - 3*zeta39^17 + 2*zeta39^16 - zeta39^14 + zeta39^13 + zeta39^12 - 2*zeta39^11 + 3*zeta39^9 - 2*zeta39^7 + 3*zeta39^6 - 2*zeta39^4 + 2*zeta39^3 - 2*zeta39^2 - zeta39 + 2"
+      },
+      "complex_embedding": "zeta_(3p) maps to exp(2*pi*i/(3p))",
+      "complex_precision_bits": 160,
+      "tau_1_complex_real": "0.91083583244632639179723476694124248427714047852",
+      "tau_1_complex_imag": "-3.4886068976500931689159856372349434796239248847",
+      "principal_cube_root_real": "2.5658042809594365675826257397401806204215211350",
+      "principal_cube_root_imag": "2.5331104184007117016118345243901591889514890882",
+      "branch_index_k_tau_equals_principal_root_times_rho_k": 2,
+      "branch_comparison_absolute_error": "4.9340365872578844610565828133785861188928106348e-48",
+      "arbitrary_integer_orbit_representatives_S": [
+        1,
+        2,
+        4,
+        7
+      ],
+      "S_product_mod_p": 4,
+      "alpha_lift_minus_rho_exponent": 1,
+      "alpha_lift_cube_equals_minus_one_exactly": true,
+      "changed_representatives_one_rotation": [
+        9,
+        2,
+        4,
+        7
+      ],
+      "changed_product_mod_p": 10,
+      "changed_alpha_lift_minus_rho_exponent": 2,
+      "changed_product_ratio_mod_p": 9,
+      "changed_alpha_ratio_equals_rho_exactly": true,
+      "product_cubes_unchanged_mod_p": true,
+      "S_is_claimed_to_be_Ito_geometric_system": false,
+      "classical_work": {
+        "terms_per_direct_sum": 12,
+        "number_direct_sums": 3,
+        "total_direct_sum_terms": 36,
+        "character_values_enumerated": 12,
+        "orbit_partition_residues": 12,
+        "scope": "Direct exact cyclotomic sums enumerate p-1 terms each; no poly(log p) classical algorithm or asymptotic branch theorem is inferred."
+      },
+      "seconds": 0.0025051250122487545
+    },
+    {
+      "prime": 19,
+      "cyclotomic_conductor": 57,
+      "cyclotomic_degree": 36,
+      "primary_pi_coefficients_a_b": [
+        -5,
+        -3
+      ],
+      "primary_pi_description": "(-5) + (-3)*rho",
+      "all_primary_candidates_b_negative": [
+        [
+          -5,
+          -3
+        ]
+      ],
+      "primary_search_integer_pairs_tested": 253,
+      "rho_bar_mod_p": 11,
+      "betas": [
+        1,
+        4,
+        2
+      ],
+      "chi_beta_rho_exponents": [
+        0,
+        1,
+        2
+      ],
+      "tau_beta_over_tau_1_rho_exponents": [
+        0,
+        2,
+        1
+      ],
+      "exact_tau_1_cube_equals_minus_p_pi": true,
+      "all_three_exact_cubes_equal": true,
+      "three_exact_sums_distinct": true,
+      "exact_sums_in_cyclotomic_generator": {
+        "1": "zeta57^35 - 2*zeta57^34 + 3*zeta57^32 - 2*zeta57^30 + 3*zeta57^29 - 2*zeta57^28 - 2*zeta57^27 + 2*zeta57^26 - 2*zeta57^25 + 3*zeta57^23 - zeta57^22 + 2*zeta57^20 - zeta57^19 - 2*zeta57^18 + zeta57^17 - 3*zeta57^15 + zeta57^14 + zeta57^13 - 2*zeta57^12 + zeta57^10 - 3*zeta57^9 + 2*zeta57^7 - 3*zeta57^6 + zeta57^5 + zeta57^4 - zeta57^3 + zeta57^2 + 2*zeta57 - 2",
+        "4": "zeta57^35 + zeta57^34 + zeta57^30 + zeta57^28 + zeta57^27 - zeta57^26 + zeta57^25 - zeta57^22 - zeta57^20 + zeta57^18 + zeta57^17 + zeta57^14 + zeta57^13 + zeta57^12 + zeta57^10 - zeta57^7 + zeta57^5 + zeta57^4 - zeta57^3 + zeta57^2 - zeta57",
+        "2": "-2*zeta57^35 + zeta57^34 - 3*zeta57^32 + zeta57^30 - 3*zeta57^29 + zeta57^28 + zeta57^27 - zeta57^26 + zeta57^25 - 3*zeta57^23 + 2*zeta57^22 - zeta57^20 + zeta57^19 + zeta57^18 - 2*zeta57^17 + 3*zeta57^15 - 2*zeta57^14 - 2*zeta57^13 + zeta57^12 - 2*zeta57^10 + 3*zeta57^9 - zeta57^7 + 3*zeta57^6 - 2*zeta57^5 - 2*zeta57^4 + 2*zeta57^3 - 2*zeta57^2 - zeta57 + 2"
+      },
+      "complex_embedding": "zeta_(3p) maps to exp(2*pi*i/(3p))",
+      "complex_precision_bits": 160,
+      "tau_1_complex_real": "-1.3328142433947864014000200752775759233987932416",
+      "tau_1_complex_imag": "-4.1501332740773498048126582779391116916468079530",
+      "principal_cube_root_real": "4.2605279661394644479911998855735170435389646302",
+      "principal_cube_root_imag": "0.92081564373305391955893518090561666602719585759",
+      "branch_index_k_tau_equals_principal_root_times_rho_k": 2,
+      "branch_comparison_absolute_error": "2.2065682425159404664303803629003342617994367641e-47",
+      "arbitrary_integer_orbit_representatives_S": [
+        1,
+        2,
+        4,
+        5,
+        8,
+        10
+      ],
+      "S_product_mod_p": 8,
+      "alpha_lift_minus_rho_exponent": 1,
+      "alpha_lift_cube_equals_minus_one_exactly": true,
+      "changed_representatives_one_rotation": [
+        11,
+        2,
+        4,
+        5,
+        8,
+        10
+      ],
+      "changed_product_mod_p": 12,
+      "changed_alpha_lift_minus_rho_exponent": 2,
+      "changed_product_ratio_mod_p": 11,
+      "changed_alpha_ratio_equals_rho_exactly": true,
+      "product_cubes_unchanged_mod_p": true,
+      "S_is_claimed_to_be_Ito_geometric_system": false,
+      "classical_work": {
+        "terms_per_direct_sum": 18,
+        "number_direct_sums": 3,
+        "total_direct_sum_terms": 54,
+        "character_values_enumerated": 18,
+        "orbit_partition_residues": 18,
+        "scope": "Direct exact cyclotomic sums enumerate p-1 terms each; no poly(log p) classical algorithm or asymptotic branch theorem is inferred."
+      },
+      "seconds": 0.0028394999681040645
+    },
+    {
+      "prime": 31,
+      "cyclotomic_conductor": 93,
+      "cyclotomic_degree": 60,
+      "primary_pi_coefficients_a_b": [
+        -5,
+        -6
+      ],
+      "primary_pi_description": "(-5) + (-6)*rho",
+      "all_primary_candidates_b_negative": [
+        [
+          -5,
+          -6
+        ]
+      ],
+      "primary_search_integer_pairs_tested": 351,
+      "rho_bar_mod_p": 25,
+      "betas": [
+        1,
+        3,
+        5
+      ],
+      "chi_beta_rho_exponents": [
+        0,
+        1,
+        2
+      ],
+      "tau_beta_over_tau_1_rho_exponents": [
+        0,
+        2,
+        1
+      ],
+      "exact_tau_1_cube_equals_minus_p_pi": true,
+      "all_three_exact_cubes_equal": true,
+      "three_exact_sums_distinct": true,
+      "exact_sums_in_cyclotomic_generator": {
+        "1": "-2*zeta93^59 - zeta93^57 - 2*zeta93^56 + zeta93^55 - zeta93^53 + 2*zeta93^52 - zeta93^51 - 2*zeta93^50 + 2*zeta93^49 + zeta93^48 + zeta93^45 - zeta93^44 + zeta93^43 - zeta93^42 - zeta93^41 + 2*zeta93^40 - 2*zeta93^38 + zeta93^37 - zeta93^36 + zeta93^34 + zeta93^31 - zeta93^28 - 2*zeta93^26 - zeta93^25 + 2*zeta93^24 + zeta93^22 + zeta93^21 - 2*zeta93^20 - zeta93^19 + zeta93^18 - zeta93^17 - zeta93^14 + zeta93^13 + 2*zeta93^12 - 2*zeta93^11 + zeta93^10 + zeta93^9 - zeta93^7 + 2*zeta93^6 - 2*zeta93^5 + 2*zeta93^3 + 1",
+        "3": "zeta93^59 + 2*zeta93^57 + zeta93^56 - 2*zeta93^55 - zeta93^53 - zeta93^52 + 2*zeta93^51 + zeta93^50 - zeta93^49 + zeta93^48 + zeta93^45 - zeta93^44 - 2*zeta93^43 + 2*zeta93^42 - zeta93^41 - zeta93^40 + zeta93^38 - 2*zeta93^37 + 2*zeta93^36 - 2*zeta93^34 - zeta93^31 - zeta93^28 + zeta93^26 - zeta93^25 - zeta93^24 - 2*zeta93^22 + zeta93^21 + zeta93^20 - zeta93^19 + zeta93^18 + 2*zeta93^17 + 2*zeta93^14 - 2*zeta93^13 - zeta93^12 + zeta93^11 - 2*zeta93^10 + zeta93^9 - zeta93^7 - zeta93^6 + zeta93^5 - zeta93^3",
+        "5": "zeta93^59 - zeta93^57 + zeta93^56 + zeta93^55 + 2*zeta93^53 - zeta93^52 - zeta93^51 + zeta93^50 - zeta93^49 - 2*zeta93^48 - 2*zeta93^45 + 2*zeta93^44 + zeta93^43 - zeta93^42 + 2*zeta93^41 - zeta93^40 + zeta93^38 + zeta93^37 - zeta93^36 + zeta93^34 + 2*zeta93^28 + zeta93^26 + 2*zeta93^25 - zeta93^24 + zeta93^22 - 2*zeta93^21 + zeta93^20 + 2*zeta93^19 - 2*zeta93^18 - zeta93^17 - zeta93^14 + zeta93^13 - zeta93^12 + zeta93^11 + zeta93^10 - 2*zeta93^9 + 2*zeta93^7 - zeta93^6 + zeta93^5 - zeta93^3 - 1"
+      },
+      "complex_embedding": "zeta_(3p) maps to exp(2*pi*i/(3p))",
+      "complex_precision_bits": 160,
+      "tau_1_complex_real": "5.1258085391534114967978687576174438288420393016",
+      "tau_1_complex_imag": "2.1739564898916375411060202084723090059271156939",
+      "principal_cube_root_real": "5.1258085391534114967978687576174438288420393016",
+      "principal_cube_root_imag": "2.1739564898916375411060202084723090059271156939",
+      "branch_index_k_tau_equals_principal_root_times_rho_k": 0,
+      "branch_comparison_absolute_error": "3.3295960127185288360726159657217714571949309353e-47",
+      "arbitrary_integer_orbit_representatives_S": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        11,
+        12,
+        16,
+        17
+      ],
+      "S_product_mod_p": 30,
+      "alpha_lift_minus_rho_exponent": 0,
+      "alpha_lift_cube_equals_minus_one_exactly": true,
+      "changed_representatives_one_rotation": [
+        25,
+        2,
+        3,
+        4,
+        6,
+        8,
+        11,
+        12,
+        16,
+        17
+      ],
+      "changed_product_mod_p": 6,
+      "changed_alpha_lift_minus_rho_exponent": 1,
+      "changed_product_ratio_mod_p": 25,
+      "changed_alpha_ratio_equals_rho_exactly": true,
+      "product_cubes_unchanged_mod_p": true,
+      "S_is_claimed_to_be_Ito_geometric_system": false,
+      "classical_work": {
+        "terms_per_direct_sum": 30,
+        "number_direct_sums": 3,
+        "total_direct_sum_terms": 90,
+        "character_values_enumerated": 30,
+        "orbit_partition_residues": 30,
+        "scope": "Direct exact cyclotomic sums enumerate p-1 terms each; no poly(log p) classical algorithm or asymptotic branch theorem is inferred."
+      },
+      "seconds": 0.004708125023171306
+    }
+  ],
+  "total_worker_seconds": 2.2167305829934776
+}

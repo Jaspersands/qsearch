@@ -1,0 +1,52 @@
+{
+  "billing_status": "unknown",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 1682,
+      "path": "research/audits/claude_inputs/2026-11-07-bethe-prefix/candidate.md",
+      "sha256": "9bdc2ee05d29be7778dc4ed3918b560e5eafb2319d13651a733b8e7a8b368448",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 21218,
+      "path": "research/audits/claude_inputs/2026-11-07-bethe-prefix/sources.md",
+      "sha256": "0393cae472c013350628ff7f5ffe23581a7a90f2350a6c43021457e9eeefd3a1",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6875,
+  "effort": "high",
+  "failure_stage": "generation",
+  "failure_type": "ReadTimeout",
+  "finished_at": "2026-11-07T02:03:51.308010+00:00",
+  "input_token_allowance": 7131,
+  "max_budget_usd": 1.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.683884,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-bethe-prefix/repair_prompt.md",
+    "sha256": "c16fc418b23fc0f4dd378e4a107e2f5964839d1a4a3a916e74dca8da54fc7ce8",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "retry_note": "The request may have been billed. Check the provider before any manual retry.",
+  "role": "constructive",
+  "run_id": "20261107T014849.019979Z-9bd454d3",
+  "status": "failed",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 6875,
+    "output_tokens": 5
+  },
+  "usage_cost_estimate_usd": 0.0276,
+  "usage_is_partial": true
+}

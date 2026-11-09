@@ -51,7 +51,7 @@ from coset_same_hidden_target_law import (
     source_label_probability,
 )
 from representation_obstruction import hook_length_dimension, integer_partitions
-from research_registry import utc_now
+from research_registry import ExperimentResultRecord, upsert_experiment_result, utc_now
 from symmetric_character import symmetric_character
 from symmetric_marked_class_contraction import compose, cycle_type
 
@@ -527,15 +527,25 @@ def write_kronecker_marginal_conservation_report(
     ),
     registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
     registry_result_id: str = "",
-    **kwargs: Any,
 ) -> dict[str, Any]:
-    path = path
-    output_path = path
-    for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
-        kwargs.pop(_k, None)
-    report = asdict(run_kronecker_marginal_conservation())
+    result = run_kronecker_marginal_conservation()
+    report = asdict(result)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    if write_registry:
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=result.created_at,
+                status=result.status,
+                summary=result.summary,
+                metrics=dict(result.headline_metrics),
+                falsifiers_triggered=result.falsifiers_triggered,
+                artifacts={"coset_kronecker_marginal_conservation": str(path)},
+            )
+        )
     return report
 
 

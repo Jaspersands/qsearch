@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "scope": "Exact finite classical local-residue and determinant gates only.",
+  "ramified_dyadic": {
+    "status": "PASS",
+    "valuation": 0,
+    "leaf_valuations": [
+      2,
+      2
+    ],
+    "uniformizer": "a",
+    "local_denominators": [
+      {
+        "value": "1",
+        "valuation": 0,
+        "denominator_ideal_norm": "1"
+      },
+      {
+        "value": "1",
+        "valuation": 0,
+        "denominator_ideal_norm": "1"
+      }
+    ],
+    "residue": "2*a + 3",
+    "precision": 17,
+    "exponent_binary_bits": 201,
+    "exponent": "2^200+1",
+    "nonunit_leaves": true,
+    "direct_small_unit_power_matches": true
+  },
+  "denominator_enlarged_division": {
+    "expression": "((3+2sqrt(2))^E-1)/2",
+    "target_P_precision": 17,
+    "enlarged_P_precision": 19,
+    "residue": "a + 1",
+    "binary_geometric_sum_matches": true,
+    "inverting_2_mod_P_power_rejected": true
+  },
+  "split_11_local_unit": {
+    "status": "PASS",
+    "valuation": 0,
+    "leaf_valuations": [
+      0
+    ],
+    "uniformizer": "11",
+    "local_denominators": [
+      {
+        "value": "1/2*b + 15/2",
+        "valuation": 0,
+        "denominator_ideal_norm": "11"
+      }
+    ],
+    "residue": "-6335*b",
+    "original_rational_denominator": 11,
+    "alternate_unit_denominator_matches": true,
+    "opposite_prime": {
+      "status": "NEGATIVE_VALUATION",
+      "valuation": -1
+    }
+  },
+  "determinant_character": {
+    "rational_dimension": 10,
+    "module_j_and_multiplicity": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "B_characteristic_polynomial": "x^10 - 10*x^8 + 40*x^6 - 80*x^4 + 80*x^2 - 32",
+    "commutation_exact": true,
+    "quotient_determinant_norms": [
+      "-17",
+      "2"
+    ],
+    "predicted_and_actual_Q_determinant": "-136",
+    "radical_lift_independence": true,
+    "incorrect_multiplicity_exponent_determinant": "578"
+  },
+  "claim_gates": {
+    "full_similarity_solver": false,
+    "algorithm_execution": false,
+    "quantum_execution": false,
+    "novelty": false,
+    "speedup": false
+  }
+}

@@ -1,0 +1,4 @@
+p=139 L1/S0=0.8932 | cycle: n=13872 L1/S0=0.8324 max/p^5=0.9714 max/p^4=135 forest: n=5298 L1/S0=0.05261 max/p^5=0.08121 max/p^4=11.29 full: n=512 L1/S0=0.008209 max/p^5=0.07569 max/p^4=10.52 | O1 bound/S0=-0.9606 O1 holds=True
+p=199 L1/S0=0.5973 | cycle: n=13872 L1/S0=0.5639 max/p^5=0.98 max/p^4=195 forest: n=5298 L1/S0=0.02958 max/p^5=0.06877 max/p^4=13.69 full: n=512 L1/S0=0.003905 max/p^5=0.07344 max/p^4=14.62 | O1 bound/S0=-0.981 O1 holds=True
+p=139: #e with |S_e|>=p^4.5: 102 (their L1/S0 = 0.7536); support sizes of those: {np.int64(4): np.int64(54), np.int64(6): np.int64(48)}; #e with |S_e|=0 (to 1e-6 S0): 15792; quantiles of log_p|S_e| (nonzero): [3.474 3.527 4.013 4.994]
+p=199: #e with |S_e|>=p^4.5: 104 (their L1/S0 = 0.523); support sizes of those: {np.int64(4): np.int64(54), np.int64(6): np.int64(48), np.int64(9): np.int64(2)}; #e with |S_e|=0 (to 1e-6 S0): 15792; quantiles of log_p|S_e| (nonzero): [3.49  3.516 4.008 4.996]

@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "Finite exact coefficient-extraction interface; no alternative-decomposition search or all-n theorem evidence.",
+  "n": 3,
+  "K": 4,
+  "base_field": "Q(zeta_8)",
+  "relative_polynomial": "x^5 - 2",
+  "irreducible_over_base": true,
+  "relative_degree": 5,
+  "absolute_degree": 20,
+  "epsilon": "1/2048",
+  "coefficient_column_count": 5,
+  "coefficient_rank": 4,
+  "original_span_rank": 4,
+  "checks": {
+    "coefficient_columns_equal_R_then_epsilon_states": true,
+    "coefficient_span_equals_V": true,
+    "each_original_state_recovered_exactly": true,
+    "field_identity_theta_power_5_equals_2": true,
+    "exact_real_bounds_1_less_theta_less_2": true,
+    "exact_real_bound_theta_power_K_less_2": true
+  },
+  "claim_gates": {
+    "general_rank_to_extent_bound": false,
+    "full_learner_execution": false,
+    "quantum_execution": false,
+    "exhaustive_minimal_rank_search": false
+  }
+}

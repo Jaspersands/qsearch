@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2378,
+      "path": "research/audits/claude_inputs/2026-11-07-surface-torsion/context.md",
+      "sha256": "99f1b42f0b01b1e411cca7009480a379c41bdf43248a67b248dfa1377b63bdb2",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 3488,
+      "path": "research/audits/claude_inputs/2026-11-07-surface-torsion/pila_excerpt.md",
+      "sha256": "f25a8d6f59ac5f2bd731266765d1f960abcbaffe61e19e1ba493d5d6632f7a33",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 3249,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-06T23:09:10.367142+00:00",
+  "input_token_allowance": 3505,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.67345,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-surface-torsion/construction.md",
+    "sha256": "3104bf2bb60e586cb7eaba63bc90b3976097dfb391c178fe8bc82e648c869653",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261106T230125.993394Z-6a00fcf1",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 3249,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 1.67089
+}

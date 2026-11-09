@@ -1,0 +1,367 @@
+{
+ "status": {
+  "status": "explicit_qft_mod_p_wired_as_optional_backend_finite_checks",
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "formal_compiler_checked": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review",
+  "explicit_qft_backend_available": true,
+  "default_backend_unchanged": true,
+  "poly_log_p_arithmetic_implemented": true,
+  "fixed_finite_gate_set": false,
+  "monolithic_explicit_simulation": false
+ },
+ "recoveries": {
+  "heis_f3": {
+   "runs": [
+    {
+     "instance": "Heis(F_3) H=<[]> normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[]> normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 1)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 1)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 2)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 2)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 0)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 0)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 1)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 1)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 2)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 2)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 0)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 0)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 1)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 1)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 2)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 2)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 0)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 0)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 1)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 1)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 2)]> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 2)]> non-normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 42
+    },
+    {
+     "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal",
+     "seed": 20261104,
+     "recovered": true,
+     "oracle_queries": 42
+    }
+   ],
+   "all_recovered_exact_backend": true,
+   "n_samples_per_run": 7,
+   "sim_params": [
+    7,
+    7,
+    28
+   ],
+   "budget_sim_params": {
+    "calls": {
+     "qft_general": 3,
+     "qft_zero": 18,
+     "qft_dg_general": 3
+    },
+    "n_calls": 24,
+    "proved_total": 1.329135978170619,
+    "B": 0.22152262721922492,
+    "prep": 1.193640385173075e-08,
+    "float_total": 0.6885015505548799
+   },
+   "coupling_failure_sim_params_proved": 1.0,
+   "coupling_failure_sim_params_float": 1.0,
+   "target_eta": 0.005524271728019903,
+   "target_params": [
+    22,
+    17,
+    14
+   ],
+   "target_budget_proved": 0.011351453018770457,
+   "coupling_failure_target_proved": 0.0794601711313932
+  },
+  "n4_f5": {
+   "runs": [
+    {
+     "instance": "n4(F_5) H=<e2> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=<e1> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=<e1+e3> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=<e2,e4> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=<e1+e2,e3> (closure)",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=<e3,e4> = gamma_2",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=<e2,e3> non-normal",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=Z(G)",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    },
+    {
+     "instance": "n4(F_5) H=trivial",
+     "seed": 20261103,
+     "recovered": true,
+     "oracle_queries": 240
+    }
+   ],
+   "all_recovered_exact_backend": true,
+   "n_samples_per_run": 8,
+   "sim_params": [
+    8,
+    8,
+    28
+   ],
+   "budget_sim_params": {
+    "calls": {
+     "qft_general": 4,
+     "qft_zero": 124,
+     "qft_dg_general": 20
+    },
+    "n_calls": 148,
+    "proved_total": 4.835174796809037,
+    "B": 0.20146559557319427,
+    "prep": 4.05687398063077e-09,
+    "float_total": 2.830084497442241
+   },
+   "coupling_failure_sim_params_proved": 1.0,
+   "coupling_failure_sim_params_float": 1.0,
+   "target_eta": 0.0010649489576809157,
+   "target_params": [
+    28,
+    20,
+    16
+   ],
+   "target_budget_proved": 0.01103870698573177,
+   "coupling_failure_target_proved": 0.08830965588585415
+  }
+ }
+}

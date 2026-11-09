@@ -1,0 +1,268 @@
+{
+  "scope": "Eight fixed finite classical arithmetic controls; no sweep, asymptotic inference, or quantum execution.",
+  "primes": [
+    3,
+    5,
+    7,
+    13,
+    17,
+    23,
+    41,
+    229
+  ],
+  "arithmetic_backend": "Sage quadratic fields and PARI BNF with bnfcertify=1",
+  "class_number_convention": "Ordinary ideal class group of the maximal order, not the narrow class group or the order Z[sqrt(p)].",
+  "unit_convention": "Generator of the full maximal-order unit group modulo torsion, normalized to epsilon>1 in the positive-sqrt(p) embedding.",
+  "compact_quantum_primitive_executed": false,
+  "quantum_class_group_or_unit_algorithm_executed": false,
+  "results": [
+    {
+      "prime": 3,
+      "radicand": -3,
+      "field_discriminant": -3,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [],
+      "ordinary_class_number": 1,
+      "class_number_mod_four": 1,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 1,
+      "wilson_square_target_mod_p": 1,
+      "formula_case": "p=3 direct exception",
+      "unexceptional_imaginary_formula_mod_p": 2,
+      "unexceptional_formula_rejected": true,
+      "predicted_half_factorial_mod_p": 1,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 0.08481595804914832
+    },
+    {
+      "prime": 5,
+      "radicand": 5,
+      "field_discriminant": 5,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [],
+      "ordinary_class_number": 1,
+      "class_number_mod_four": 1,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 2,
+      "wilson_square_target_mod_p": 4,
+      "formula_case": "(-1)^((h(p)+1)/2) times constant coefficient of positive fundamental unit",
+      "real_embedding": "a maps to the positive square root of p",
+      "raw_pari_sage_fundamental_unit": "-1/2*a + 1/2",
+      "positive_fundamental_unit": "1/2*a + 1/2",
+      "positive_fundamental_unit_coefficients": [
+        "1/2",
+        "1/2"
+      ],
+      "positive_fundamental_unit_norm": -1,
+      "positive_fundamental_unit_in_maximal_order": true,
+      "constant_coefficient_mod_p": 3,
+      "class_number_sign": -1,
+      "integer_generator_order_discriminant": 20,
+      "wrong_unit_normalization_controls": [
+        {
+          "variant": "inverse",
+          "unit": "1/2*a - 1/2",
+          "norm": -1,
+          "embedding_positive_and_greater_than_one": false,
+          "predicted_factorial_mod_p": 3,
+          "equals_direct_factorial": false,
+          "passes_wilson_square_check": true
+        },
+        {
+          "variant": "negative",
+          "unit": "-1/2*a - 1/2",
+          "norm": -1,
+          "embedding_positive_and_greater_than_one": false,
+          "predicted_factorial_mod_p": 3,
+          "equals_direct_factorial": false,
+          "passes_wilson_square_check": true
+        },
+        {
+          "variant": "squared",
+          "unit": "1/2*a + 3/2",
+          "norm": 1,
+          "embedding_positive_and_greater_than_one": true,
+          "predicted_factorial_mod_p": 1,
+          "equals_direct_factorial": false,
+          "passes_wilson_square_check": false
+        }
+      ],
+      "predicted_half_factorial_mod_p": 2,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 1.5196468329522759
+    },
+    {
+      "prime": 7,
+      "radicand": -7,
+      "field_discriminant": -7,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [],
+      "ordinary_class_number": 1,
+      "class_number_mod_four": 1,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 6,
+      "wilson_square_target_mod_p": 1,
+      "formula_case": "(-1)^((h(-p)+1)/2), p>3",
+      "predicted_half_factorial_mod_p": 6,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 0.004328417009674013
+    },
+    {
+      "prime": 13,
+      "radicand": 13,
+      "field_discriminant": 13,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [],
+      "ordinary_class_number": 1,
+      "class_number_mod_four": 1,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 5,
+      "wilson_square_target_mod_p": 12,
+      "formula_case": "(-1)^((h(p)+1)/2) times constant coefficient of positive fundamental unit",
+      "real_embedding": "a maps to the positive square root of p",
+      "raw_pari_sage_fundamental_unit": "-1/2*a + 3/2",
+      "positive_fundamental_unit": "1/2*a + 3/2",
+      "positive_fundamental_unit_coefficients": [
+        "3/2",
+        "1/2"
+      ],
+      "positive_fundamental_unit_norm": -1,
+      "positive_fundamental_unit_in_maximal_order": true,
+      "constant_coefficient_mod_p": 8,
+      "class_number_sign": -1,
+      "integer_generator_order_discriminant": 52,
+      "predicted_half_factorial_mod_p": 5,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 0.005662666051648557
+    },
+    {
+      "prime": 17,
+      "radicand": 17,
+      "field_discriminant": 17,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [],
+      "ordinary_class_number": 1,
+      "class_number_mod_four": 1,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 13,
+      "wilson_square_target_mod_p": 16,
+      "formula_case": "(-1)^((h(p)+1)/2) times constant coefficient of positive fundamental unit",
+      "real_embedding": "a maps to the positive square root of p",
+      "raw_pari_sage_fundamental_unit": "-a + 4",
+      "positive_fundamental_unit": "a + 4",
+      "positive_fundamental_unit_coefficients": [
+        "4",
+        "1"
+      ],
+      "positive_fundamental_unit_norm": -1,
+      "positive_fundamental_unit_in_maximal_order": true,
+      "constant_coefficient_mod_p": 4,
+      "class_number_sign": -1,
+      "integer_generator_order_discriminant": 68,
+      "predicted_half_factorial_mod_p": 13,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 0.003846875042654574
+    },
+    {
+      "prime": 23,
+      "radicand": -23,
+      "field_discriminant": -23,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [
+        3
+      ],
+      "ordinary_class_number": 3,
+      "class_number_mod_four": 3,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 1,
+      "wilson_square_target_mod_p": 1,
+      "formula_case": "(-1)^((h(-p)+1)/2), p>3",
+      "predicted_half_factorial_mod_p": 1,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 0.004517749999649823
+    },
+    {
+      "prime": 41,
+      "radicand": 41,
+      "field_discriminant": 41,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [],
+      "ordinary_class_number": 1,
+      "class_number_mod_four": 1,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 9,
+      "wilson_square_target_mod_p": 40,
+      "formula_case": "(-1)^((h(p)+1)/2) times constant coefficient of positive fundamental unit",
+      "real_embedding": "a maps to the positive square root of p",
+      "raw_pari_sage_fundamental_unit": "-5*a + 32",
+      "positive_fundamental_unit": "5*a + 32",
+      "positive_fundamental_unit_coefficients": [
+        "32",
+        "5"
+      ],
+      "positive_fundamental_unit_norm": -1,
+      "positive_fundamental_unit_in_maximal_order": true,
+      "constant_coefficient_mod_p": 32,
+      "class_number_sign": -1,
+      "integer_generator_order_discriminant": 164,
+      "predicted_half_factorial_mod_p": 9,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 0.005191917065531015
+    },
+    {
+      "prime": 229,
+      "radicand": 229,
+      "field_discriminant": 229,
+      "maximal_order_basis": [
+        "1/2*a + 1/2",
+        "a"
+      ],
+      "ordinary_class_group_invariants": [
+        3
+      ],
+      "ordinary_class_number": 3,
+      "class_number_mod_four": 3,
+      "pari_bnf_certified": true,
+      "direct_half_factorial_mod_p": 122,
+      "wilson_square_target_mod_p": 228,
+      "formula_case": "(-1)^((h(p)+1)/2) times constant coefficient of positive fundamental unit",
+      "real_embedding": "a maps to the positive square root of p",
+      "raw_pari_sage_fundamental_unit": "-1/2*a + 15/2",
+      "positive_fundamental_unit": "1/2*a + 15/2",
+      "positive_fundamental_unit_coefficients": [
+        "15/2",
+        "1/2"
+      ],
+      "positive_fundamental_unit_norm": -1,
+      "positive_fundamental_unit_in_maximal_order": true,
+      "constant_coefficient_mod_p": 122,
+      "class_number_sign": 1,
+      "integer_generator_order_discriminant": 916,
+      "predicted_half_factorial_mod_p": 122,
+      "prediction_equals_direct_factorial": true,
+      "seconds": 0.004589417017996311
+    }
+  ],
+  "total_worker_seconds": 4.342586459009908
+}

@@ -1,0 +1,59 @@
+== A. Lemma 2 (0/1 points of subspaces), exhaustive
+  N=1 t=1: subspaces 1, max #0/1 points 2 (2^t=2), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=2 t=1: subspaces 4, max #0/1 points 2 (2^t=2), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=2 t=2: subspaces 1, max #0/1 points 4 (2^t=4), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=3 t=1: subspaces 13, max #0/1 points 2 (2^t=2), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=3 t=2: subspaces 13, max #0/1 points 4 (2^t=4), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=3 t=3: subspaces 1, max #0/1 points 8 (2^t=8), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=4 t=1: subspaces 40, max #0/1 points 2 (2^t=2), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=4 t=2: subspaces 130, max #0/1 points 4 (2^t=4), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=4 t=3: subspaces 40, max #0/1 points 8 (2^t=8), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=4 t=4: subspaces 1, max #0/1 points 16 (2^t=16), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=5 t=1: subspaces 121, max #0/1 points 2 (2^t=2), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=5 t=2: subspaces 1210, max #0/1 points 4 (2^t=4), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=5 t=3: subspaces 1210, max #0/1 points 8 (2^t=8), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=5 t=4: subspaces 121, max #0/1 points 16 (2^t=16), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=5 t=5: subspaces 1, max #0/1 points 32 (2^t=32), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=6 t=1: subspaces 364, max #0/1 points 2 (2^t=2), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=6 t=2: subspaces 11011, max #0/1 points 4 (2^t=4), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+  N=6 t=3: subspaces 33880, max #0/1 points 8 (2^t=8), violations of <=2^t: 0, >3/4*2^t but not partition: 0
+== B. Theorem 2: defect set E_2
+  |E_2| = 240 (0 in E_2: True; assignments with defect 0: [(0, 0, 0, 0, 0, 0, 0, 0)])
+  nonzero e with e and 2e in E_2: 56 (= 28 lines)
+  ordered independent pairs (a,b) spanning a 2-dim subspace inside E_2: 0
+  brute force, one column per pattern (8 columns, D = 2-dim generic): pairs (y_e1,y_e2) giving a 2-dim realization: 0
+== C. Theorem 3: 0/1-complete k-dim subspaces K of F_3^t ({0,1}^t + K = F_3^t)
+  t=2 k=1: subspaces 4, 0/1-complete 2
+  t=3 k=1: subspaces 13, 0/1-complete 0
+  t=4 k=2: subspaces 130, 0/1-complete 60
+  t=5 k=2: subspaces 1210, 0/1-complete 0
+  t=5 k=1: subspaces 121, 0/1-complete 0
+== D. Theorem 5: pattern sets T admitting a 2-dim realization (gain or zero-sum)
+  feasible T (with trivial ones): 218; trivial (a 0/1 dependency exists): 136; non-trivial: 82
+  non-trivial feasible T that miss a line of F_3^2 (= some dependency has full support): 58
+  non-trivial feasible T hitting all four lines: [[(0, 1), (1, 1), (1, 2), (2, 0), (2, 1)], [(0, 1), (1, 0), (2, 0), (2, 1), (2, 2)], [(0, 1), (1, 1), (2, 0), (2, 1), (2, 2)], [(0, 1), (0, 2), (1, 0), (1, 2), (2, 2)], [(0, 2), (1, 1), (1, 2), (2, 0), (2, 2)], [(0, 1), (1, 0), (1, 1), (1, 2), (2, 0)], [(0, 1), (1, 0), (1, 1), (2, 1), (2, 2)], [(0, 2), (1, 1), (2, 0), (2, 1), (2, 2)], [(0, 2), (1, 2), (2, 0), (2, 1), (2, 2)], [(0, 1), (0, 2), (1, 0), (2, 1), (2, 2)], [(0, 2), (1, 0), (1, 1), (1, 2), (2, 2)], [(0, 1), (0, 2), (1, 2), (2, 0), (2, 2)], [(0, 1), (1, 0), (1, 1), (1, 2), (2, 1)], [(0, 2), (1, 0), (2, 0), (2, 1), (2, 2)], [(0, 1), (0, 2), (1, 1), (2, 0), (2, 1)], [(0, 2), (1, 0), (1, 1), (1, 2), (2, 1)], [(0, 1), (0, 2), (1, 1), (1, 2), (2, 0)], [(0, 1), (1, 0), (1, 2), (2, 0), (2, 2)], [(0, 1), (0, 2), (1, 0), (1, 1), (2, 1)], [(0, 1), (1, 0), (1, 1), (1, 2), (2, 2)], [(0, 2), (1, 0), (1, 1), (2, 0), (2, 1)], [(0, 2), (1, 0), (1, 1), (1, 2), (2, 0)], [(0, 2), (1, 0), (1, 2), (2, 1), (2, 2)], [(0, 1), (1, 2), (2, 0), (2, 1), (2, 2)]]
+  min |T| non-trivial: 4; sizes: {1: 0, 2: 0, 3: 0, 4: 30, 5: 48, 6: 4, 7: 0, 8: 0}
+  subsets of a line-complement with |T|>=4, non-trivial: 58; equal to non-trivial feasible family: False
+  subsets of a line-complement with |T|>=4 (incl. trivial): 82; all feasible? True
+  number of feasible T NOT inside any of the four 6-sets T_1..T_4: 48
+== E. Theorem 4 (nested-support gadget), independent check
+  all 8 identities union_alpha == alpha1 h1 + alpha2 h2 modulo <delta, delta'>: True
+  h1,h2 independent modulo relations: True
+  exhaustive: class-level (y_e1,y_e2) pairs for T_1 giving a genuine 2-dim realization: 120
+  class-nonemptiness patterns (delta' indep. of delta) with an EMPTY listed union: 16
+    nonempty classes [(2, 1), (2, 2)] empty unions for alpha [(1, 0)] zero-sum class union forced: True
+    nonempty classes [(2, 0), (2, 2)] empty unions for alpha [(2, 2)] zero-sum class union forced: True
+    nonempty classes [(2, 0), (2, 1)] empty unions for alpha [(0, 1)] zero-sum class union forced: True
+    nonempty classes [(1, 2), (2, 2)] empty unions for alpha [(1, 0), (1, 1)] zero-sum class union forced: True
+    nonempty classes [(1, 2), (2, 1), (2, 2)] empty unions for alpha [(1, 0)] zero-sum class union forced: True
+    nonempty classes [(1, 1), (2, 0)] empty unions for alpha [(0, 2), (2, 2)] zero-sum class union forced: True
+    nonempty classes [(1, 1), (2, 0), (2, 2)] empty unions for alpha [(2, 2)] zero-sum class union forced: True
+    nonempty classes [(1, 1), (1, 2)] empty unions for alpha [(1, 1), (2, 1)] zero-sum class union forced: True
+    nonempty classes [(1, 1), (1, 2), (2, 2)] empty unions for alpha [(1, 1)] zero-sum class union forced: True
+    nonempty classes [(1, 0), (2, 1)] empty unions for alpha [(0, 1), (2, 0)] zero-sum class union forced: True
+    nonempty classes [(1, 0), (2, 0), (2, 1)] empty unions for alpha [(0, 1)] zero-sum class union forced: True
+    nonempty classes [(1, 0), (1, 2)] empty unions for alpha [(2, 0), (2, 1)] zero-sum class union forced: True
+    nonempty classes [(1, 0), (1, 2), (2, 1)] empty unions for alpha [(2, 0)] zero-sum class union forced: True
+    nonempty classes [(1, 0), (1, 1)] empty unions for alpha [(0, 2), (2, 1)] zero-sum class union forced: True
+    nonempty classes [(1, 0), (1, 1), (2, 0)] empty unions for alpha [(0, 2)] zero-sum class union forced: True
+    nonempty classes [(1, 0), (1, 1), (1, 2)] empty unions for alpha [(2, 1)] zero-sum class union forced: True

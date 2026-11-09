@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_mascot": true,
+    "source_mascot_moduli": true,
+    "source_stoll": true,
+    "closed_2026-11-07-local-saturation-precision.md": true,
+    "closed_2026-11-07-local-saturation-precision-sources.md": true,
+    "exact_control": true,
+    "false_gates": true,
+    "kernel_cases": true,
+    "control_syntax": true,
+    "ledger": true,
+    "terminal_howell": true,
+    "terminal_certificate": true,
+    "empty_certificate": true,
+    "title_AGENT_HANDOFF.md": true,
+    "title_MECHANICAL_FOLLOW_UP_PLAN.md": true,
+    "STATE_title": true,
+    "STATE_open": true,
+    "note_open": true
+  },
+  "ledger": {
+    "nonpartial_estimates": 72,
+    "estimated_usd": "57.237428",
+    "completed_reports": 37,
+    "partial_unknown_billing_records": 1,
+    "not_balance": true
+  },
+  "pass_estimate_usd": "2.110246",
+  "control_reexecuted": false,
+  "source_snapshots": {
+    "mascot": {
+      "sha256": "4da85f621b32b68e2673c71bc8b8cac7bfe1666fbd4c9f975c181a2474811880",
+      "url": "https://www.maths.tcd.ie/~mascotn/research/TorsHensel.pdf"
+    },
+    "mascot_moduli": {
+      "sha256": "f2b9fe38291e071e4629625cd092f512abf7c2180b177eeba7c4b13d9fae7411",
+      "url": "https://arxiv.org/pdf/2004.14683"
+    },
+    "stoll": {
+      "sha256": "0b9612f52d98dbe7def9989f60e288ee03220697e695ff54cecd81424d2f1890",
+      "url": "https://mathe2.uni-bayreuth.de/stoll/papers/ratpts-selmer-2016-12-07.pdf"
+    },
+    "retained_KM": {
+      "sha256": "159d37b94b6862deafe50bafe621ca4a6f1cd9c1e984ecaeaf6f76bd0634962a",
+      "scope": "retained exact-field algorithms; no new precision inference"
+    }
+  },
+  "review_sha256": {
+    "2026-11-07-local-saturation-precision.md": "db48d4609ec429c7d5855687879f448fe9c8ceca48c03120384f85e1288c9878",
+    "2026-11-07-local-saturation-precision-sources.md": "aa26160f51f06d04d0f044e94f043bb0a4bcbfb938d1548451cb4dd33796ba9b"
+  },
+  "control_sha256": {
+    "control.py": "6f4e8cca6bd87bf0ff8addc0f1dd7649585602730a9d0a07c5a470b6aefbc4ed",
+    "result.json": "62bb716b70e137522a8c31b24dcd7df53eee32e7006cbe0a0e0dbf850e323f5d"
+  },
+  "scope": "Scoped written finite-quotient/kernel proof and exact classical falsifier checkpoint; native stable HALF remains OPEN."
+}

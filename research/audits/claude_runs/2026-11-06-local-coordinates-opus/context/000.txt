@@ -1,0 +1,116 @@
+## 8. Proposed explicit local-arithmetic completion (review pending)
+
+Two additional actual primary sources were obtained and hashed in the same
+source directory: Poteaux--Weimann, Fast Integral Bases Computation,
+https://weimann.users.lmno.cnrs.fr/integral_bases.pdf ; and Local Polynomial
+Factorisation, https://weimann.users.lmno.cnrs.fr/issac.pdf . The former's
+model explicitly includes the Boolean RAM for A=Z. The paragraph on local
+p-integral bases states the local version of Theorem1 with the local index
+contribution, and explicitly says no discriminant factorization is needed.
+This is the source route below; an alternative round-2 argument is not used.
+
+### 8.1 Base maximal order and squareclass coordinates
+
+Factor f over Q by the classical polynomial-bit integer-polynomial algorithm.
+Its monic integral factors have polynomial coefficient height. On each
+factor apply the source's p-INTEGRAL basis algorithm at the GIVEN p. The
+product gives an explicit order O whose p-adic completion is the maximal
+order of L. If Delta=v_p(disc f), each basis denominator is a power of p
+of exponent<=Delta/2; the total index exponent is also<=Delta/2. Reduced
+triangular numerators have polynomial bits. Exact rational arithmetic in
+these bases computes the p-integral multiplication table with polynomial
+bits; reducing it mod p^P loses no precision. Global maximal orders and
+factoring the integer discriminant are unnecessary.
+
+Let R=O/pO, a d-dimensional F_p algebra. Its nilradical N is the kernel of
+the F_p-linear Frobenius power a->a^(p^s), p^s>=d. Linear algebra and modular
+powering compute it. Decompose the reduced algebra R/N into finite fields
+by polynomial factoring and linear algebra. One need not find a primitive
+element for the entire product in one random trial: successive random
+elements and their minimal-polynomial factors refine components. Two
+different embeddings collide on a random element with probability<=1/p
+unless they belong to the same field orbit; a logarithmic number of trials
+separates distinct field components with high probability. All residual
+degrees are <=d; capped randomized finite-field routines are charged.
+
+Lift the resulting orthogonal idempotents from R/N to R and then O/p^P O
+by idempotent Newton lifting. Over the nilpotent ideal, the polynomial
+3u^2-2u^3 squares the idempotence error; O(log(dP)) iterations suffice.
+Each component O_i is a DVR integer ring. Its residue map rho_i and residue
+degree f_i are now explicit. Its rank is n_i and ramification e_i=n_i/f_i.
+For e_i=1 take uniformizer p. Otherwise choose by linear algebra a class
+in the component nilradical N_i outside N_i^2; any lift has valuation1.
+This is possible because N_i/N_i^2 is one-dimensional over its residue
+field. Thus no search over p elements or supplied uniformizer is needed.
+
+For an integral nonzero a in a component, compute its multiplication
+determinant in an integral basis, giving
+
+    m_i = v_p(N_{L_i/Q_p}(a))/f_i = v_i(a).
+
+Normalize by the chosen uniformizer pi_i^m_i and reduce via rho_i; its
+quadratic character is a power with O(f_i log p) exponent bits. Together
+with m_i mod2 this gives the desired two squareclass bits. Matrix inversion
+by adjugate/Cramer to divide by pi_i^m_i loses at most f_i*m_i p-digits.
+The determinant and finite-ring calculations are polynomial matrix work.
+
+### 8.2 Avoid unnecessary composita in the actual algorithm
+
+The fields E_i/K in §§4--5 are needed for the PROOF of the character bound,
+not for runtime coordinate calculations. At a node compute the content and
+primitive reduction F of f(xi+pi^t Z); factor F over k to find its k-roots.
+These are exactly the exceptional residues. This performs the entire tree
+without constructing E_i or their integral bases. Find the K-rational
+roots of f once by the degree-d local factorization over the explicit K;
+the linear factors provide the Weierstrass representatives to finite
+precision. No full splitting field is built.
+
+For a sampled x or a modified Weierstrass unit, compute the norm to L as
+the determinant of multiplication over the known integral tower basis of
+K/Q_p. Unramified K_f and Eisenstein K_f[pi], pi^e=pu, have such a basis
+explicitly. The matrix dimension is<=g and entries lie in O_L. Polynomial
+operations, including synthetic division by a known root for f/(X-alpha),
+are integral and do not lose p-adic precision. The result is fed into the
+BASE order-coordinate algorithm above. Keep the local factorization of f
+relative to K at degree d: p>d does not imply p>dg.
+
+### 8.3 A conservative working precision
+
+Put Delta=v_p(disc f), T=g*Delta+2 and
+
+    V=d*g*(T+Delta+2),   P=16*d^2*g^2*(Delta+2)+16.
+
+At every generic node t<=g*Delta+1, v_K(x-alpha)<=t for every geometric
+root. This remains true under every embedding of K since the root set is
+base-field invariant. Consequently every component of the transferred
+norm has normalized valuation<=d*g*T<V. At a Weierstrass root, components
+are root differences or f'(alpha); normalized p-valuations are bounded
+by the discriminant, so their transferred valuations are also<V.
+
+Thus all determinant valuations used for coordinate extraction are <=dV.
+The choice P>dV+2 leaves at least two p-digits after the worst Cramer loss.
+The earlier order construction is exact rational arithmetic, so its basis
+denominators do not consume this finite-ring precision; input polynomial
+evaluation in its integral table preserves precision. Idempotents and
+component bases are computed in the finite ring itself. Generic inputs and
+point-square tests need precision at most dT+1 in the K normalization,
+which is also covered.
+
+Compute K-rational roots and all local factor approximations to absolute
+K-precision S=e_K*(P+Delta+2). This is polynomial and exceeds the source
+OM precision threshold v_K(disc f)=e_K Delta. A linear factor approximation
+gives a root approximation to S digits directly. Evaluation of the modified
+Weierstrass polynomial and its norm is stable modulo p^P because they are
+integral polynomial operations. The norm determinant does not introduce
+a hidden division. Root labels and output squareclasses are therefore
+unchanged by the finite approximations.
+
+All values Delta,d,g,P,S are polynomial in native input bits; residue-field
+elements have O(g log p) bits and every field degree is charged. Assign
+failure budgets to field construction/factoring and the span samples, cap
+their clocks and return ABORT on failure. Every returned full-rank basis
+then remains exact, rather than a potentially wrong approximate image.
+
+This explicit completion is a proposed proof awaiting independent attack,
+especially the finite-algebra decomposition/component-basis details and
+the actual p-integral source hypotheses. Do not yet promote the runtime.

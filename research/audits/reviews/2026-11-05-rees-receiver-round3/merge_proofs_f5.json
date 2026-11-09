@@ -1,0 +1,51 @@
+{
+ "status": "exact_level0_law_class3_by_coset_symmetry_and_hub_decomposition_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "mode": "merge",
+ "job": "n4_f5",
+ "runs": [
+  {
+   "grade": 2,
+   "prove_controlled_merge": {
+    "macros": 48,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "block_structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   },
+   "seconds": 0.0
+  },
+  {
+   "grade": 3,
+   "prove_controlled_merge": {
+    "macros": 82,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "block_structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 27
+   },
+   "seconds": 0.0
+  }
+ ],
+ "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 2}",
+ "qubits": 1198,
+ "steps": 3181,
+ "anatomy_ok": true,
+ "setup_seconds": 2.0
+}

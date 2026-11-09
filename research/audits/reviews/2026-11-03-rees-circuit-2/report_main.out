@@ -1,0 +1,35 @@
+heis_f3 merges 0.0 s
+heis_f3 Heis(F_3) H=<[]> normal OK 0.01 s
+heis_f3 Heis(F_3) H=<[(1, 0, 0)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(1, 0, 1)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(1, 0, 2)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(1, 1, 0)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(1, 1, 1)]> non-normal OK 0.01 s
+heis_f3 Heis(F_3) H=<[(1, 1, 2)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(1, 2, 0)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(1, 2, 1)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(1, 2, 2)]> non-normal OK 0.01 s
+heis_f3 Heis(F_3) H=<[(0, 1, 0)]> non-normal OK 0.01 s
+heis_f3 Heis(F_3) H=<[(0, 1, 1)]> non-normal OK 0.01 s
+heis_f3 Heis(F_3) H=<[(0, 1, 2)]> non-normal OK 0.02 s
+heis_f3 Heis(F_3) H=<[(0, 0, 1)]> normal OK 0.0 s
+heis_f3 Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal OK 0.0 s
+heis_f3 Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal OK 0.0 s
+heis_f3 Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal OK 0.01 s
+heis_f3 Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal OK 0.01 s
+heis_f3 Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal OK 0.01 s
+heis_f3 checks True runs True merges True bitlevel True 0.5 s
+n4_f5 merges 54.4 s
+n4_f5 n4(F_5) H=<e2> non-normal OK 22.25 s
+n4_f5 n4(F_5) H=<e1> non-normal OK 22.5 s
+n4_f5 n4(F_5) H=<e1+e3> non-normal OK 21.3 s
+n4_f5 n4(F_5) H=<e2,e4> non-normal OK 31.11 s
+n4_f5 n4(F_5) H=<e1+e2,e3> (closure) OK 16.75 s
+n4_f5 n4(F_5) H=<e3,e4> = gamma_2 OK 15.13 s
+n4_f5 n4(F_5) H=<e2,e3> non-normal OK 29.64 s
+n4_f5 n4(F_5) H=Z(G) OK 27.87 s
+n4_f5 n4(F_5) H=trivial OK 24.17 s
+n4_f5 checks True runs True merges True bitlevel True 280.2 s
+n4_f5_is_arity18 checks True runs True merges True bitlevel True 292.5 s
+{"status": "gate_level_circuit_generator_simulated_finite_instances_not_a_coherent_receiver", "coherent_receiver_implemented": false, "general_sde_implemented": false, "formal_compiler_checked": false, "independent_review": false, "novelty_established": false, "speedup_claim_allowed": false, "review": "AI-checked, pending human review", "seconds": 292.5, "resources": {"heis_f3": {"instance": "Heis(F_3) c=2 dims=(3, 1) points=(1, 2) M={2: 3}", "bits_per_coordinate": 2, "label_bits": 5, "bch_nodes": {"2": ["xy"]}, "modules": {"source_without_oracle": {"qubits": 24, "logical_ops": {"qft3": 4, "x_with_1_controls": 64, "x_with_2_controls": 64}, "transpiled_cx_u_excluding_oracle": {"u": 574, "cx": 440}, "transpiled_depth_excluding_oracle": 379}, "instrument_d2": {"qubits": 10, "logical_ops": {"qft3": 1, "qft3_dg": 1, "x_with_1_controls": 4, "x_with_2_controls": 4}, "transpiled_cx_u_excluding_oracle": {"u": 51, "cx": 32}, "transpiled_depth_excluding_oracle": 57}, "merge_d2_s1": {"qubits": 24, "logical_ops": {"swap": 8, "x_with_1_controls": 128, "x_with_2_controls": 64, "x_with_3_controls": 64}, "transpiled_cx_u_excluding_oracle": {"u": 1572, "cx": 1362}, "transpiled_depth_excluding_oracle": 1663}, "merge_d2_s2": {"qubits": 24, "logical_ops": {"swap": 8, "x_with_1_controls": 128, "x_with_2_controls": 64, "x_with_3_controls": 64}, "transpiled_cx_u_excluding_oracle": {"u": 1567, "cx": 1370}, "transpiled_depth_excluding_oracle": 1662}, "q_preparation_d2": {"qubits": 6, "logical_ops": {"qft3": 3}, "transpiled_cx_u_excluding_oracle": {"u": 24, "cx": 9}, "transpiled_depth_excluding_oracle": 7}, "readout": {"qubits": 6, "logical_ops": {"qft3": 3}, "transpiled_cx_u_excluding_oracle": {"u": 24, "cx": 9}, "transpiled_depth_excluding_oracle": 7}}, "terminal_sample": {"profile": {"qubits": 82, "logical_ops": {"measure": 12, "qft3": 21, "qft3_dg": 3, "swap": 24, "x_with_1_controls": 588, "x_with_2_controls": 396, "x_with_3_controls": 192}, "transpiled_cx_u_excluding_oracle": {"u": 6647,
+PYTHONPATH=$PWD PYTHONDONTWRITEBYTECODE=1 nice -n 10 timeout 5400  -B -m       245.12s user 30.39s system 90% cpu 5:04.98 total

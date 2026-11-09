@@ -1,0 +1,6 @@
+import Formal.ReesMergeReduction
+#print axioms QSearch.ReesMergeReduction.merge_product_eq_of_labels
+#print axioms QSearch.ReesMergeReduction.merge_product_eq
+#print axioms QSearch.ReesMergeReduction.exponent_cancels
+#print axioms QSearch.ReesMergeReduction.witness_coords
+#print axioms QSearch.ReesMergeReduction.zero_product_indicator

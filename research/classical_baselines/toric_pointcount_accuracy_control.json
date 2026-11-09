@@ -1,0 +1,216 @@
+{
+  "contract": "finite classical controls only; no quantum execution or novelty",
+  "nondegenerate_cases": [
+    {
+      "p": 41,
+      "s": 5,
+      "rho": 4,
+      "volume": 4,
+      "all_faces": [
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 3,
+          "terms": 5,
+          "unit_ideal": true
+        }
+      ],
+      "count": 1664,
+      "ambient_count": 1561,
+      "absolute_error": 103,
+      "weight_bound": 123,
+      "target_error_squared": "68921/4",
+      "large_field_branch": true,
+      "meets_target": true
+    },
+    {
+      "p": 43,
+      "s": 5,
+      "rho": 4,
+      "volume": 4,
+      "all_faces": [
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 0,
+          "terms": 1,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 1,
+          "terms": 2,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 2,
+          "terms": 3,
+          "unit_ideal": true
+        },
+        {
+          "dimension": 3,
+          "terms": 5,
+          "unit_ideal": true
+        }
+      ],
+      "count": 1734,
+      "ambient_count": 1723,
+      "absolute_error": 11,
+      "weight_bound": 129,
+      "target_error_squared": "79507/4",
+      "large_field_branch": true,
+      "meets_target": true
+    }
+  ],
+  "degenerate_guard": {
+    "polynomial": "(1+x)(1+y+z)",
+    "p": 41,
+    "s": 6,
+    "rho": 4,
+    "count": 3121,
+    "ambient_count": 1561,
+    "error": 1560,
+    "target_error": "1681/2",
+    "ambient_estimator_fails": true,
+    "classically_exact_by_factorization": true
+  },
+  "fixed_order_identity_control": {
+    "p": 13,
+    "g": 4,
+    "s": 4,
+    "rho": 4,
+    "polynomial": "1+x^4+y^4+z^4",
+    "twists_checked": 16,
+    "jacobi_identities_checked": 16,
+    "kernel_tuples": 64,
+    "character_formula_count": 0,
+    "native_count": 0,
+    "pila_algorithm_executed": false,
+    "all_exact": true
+  },
+  "source_pdf_sha256": {
+    "maeda_pointcount_2608_23929": "363e22e3fb5d5ff7cc1aefb045c0b00fe39a12ccdb49bcb575df0860a5b666be",
+    "sperber_voight_sparse_dwork": "42b4b97f7e657dc8fe7612438fb99a85a51f51b07a318767b475ece996c46f08",
+    "pila_curve_families_0504570": "e4de1712f56a7025c1cb66cfb97db877bbe0b51dbdf3b1b855573fb5baca1657"
+  }
+}

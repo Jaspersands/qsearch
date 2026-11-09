@@ -1,0 +1,43 @@
+== A. E_1(c), E_W(c) for c = 2..9: analytic rule vs scan over primes < 200000 ==
+c=2: E_1=5  E_W(analytic)=5 at p=3 [E_1 attained]  E_W(scan)=5 first at p=3
+c=3: E_1=11  E_W(analytic)=11 at p=7 [E_1 attained]  E_W(scan)=11 first at p=7
+c=4: E_1=23  E_W(analytic)=23 at p=13 [E_1 attained]  E_W(scan)=23 first at p=13
+c=5: E_1=38  E_W(analytic)=38 at p=61 [E_1 attained]  E_W(scan)=38 first at p=61
+c=6: E_1=56  E_W(analytic)=56 at p=61 [E_1 attained]  E_W(scan)=56 first at p=61
+c=7: E_1=77  E_W(analytic)=77 at p=421 [E_1 attained]  E_W(scan)=77 first at p=421
+c=8: E_1=109  E_W(analytic)=107 at p=2521 [E_1 - 2 (grade 2 two-level, all other grades at Schedule 1)]  E_W(scan)=107 first at p=2521
+c=9: E_1=145  E_W(analytic)=143 at p=2521 [E_1 - 2 (grade 2 two-level, all other grades at Schedule 1)]  E_W(scan)=143 first at p=2521
+A passed: E_W(c) = 5, 11, 23, 38, 56, 77, 107, 143; E_1(c) = ..., 109, 145.
+
+== B. K_c, log2(c K_c), and prod M_d <= K_c (m+1)^{E_W-1} ==
+c=2: log2 K_c = 2.0   log2(c K_c) = 3.0
+c=3: log2 K_c = 11.5   log2(c K_c) = 13.1
+c=4: log2 K_c = 47.5   log2(c K_c) = 49.5
+c=5: log2 K_c = 117.2   log2(c K_c) = 119.5
+c=6: log2 K_c = 233.5   log2(c K_c) = 236.1
+c=7: log2 K_c = 410.4   log2(c K_c) = 413.2
+c=8: log2 K_c = 746.4   log2(c K_c) = 749.4
+c=9: log2 K_c = 1202.8   log2(c K_c) = 1206.0
+B passed on 2064 exact profiles.
+
+== C. Q_core increasing in m; phi superadditive ==
+C passed.
+
+== D. all e_p = 1: sum_p (n_p+t)(n_p+1)^(E-1) <= 2^E (L+t)(L+1)^(E-1) ==
+D passed.
+
+== E. Counterexample to the displayed chain in (ii): n_p^2 <= k d ==
+G=C_3^3: ell=5, d=1, n_p=3, k=7: n_p^2=9 > k d=7; true support bound min(d,n_p)^2=1 <= k d
+G=C_5^3: ell=7, d=1, n_p=3, k=6: n_p^2=9 > k d=6; true support bound min(d,n_p)^2=1 <= k d
+G=C_3^3: ell=5, d=1, n_p=3, k=8: n_p^2=9 > k d=8; true support bound min(d,n_p)^2=1 <= k d
+G=C_3^4: ell=7, d=1, n_p=4, k=9: n_p^2=16 > k d=9; true support bound min(d,n_p)^2=1 <= k d
+E: the displayed inequality fails at G = C_27 (p=3, e=3, s=1, eps=1/2); the cost bound with min(d, n_p) holds.
+
+== F. Chart-acquisition oracle calls vs the stated gate term, G = C_3, c = 2, s redundant generators ==
+s=2: d=3, k=5, Q_f=10, Q_f(ell^3+w)=90, chart oracle calls >= 275 (ratio 3.1); plus k d = 15 single-coordinate QFTs over Z/3
+s=10: d=55, k=5, Q_f=10, Q_f(ell^3+w)=90, chart oracle calls >= 5175 (ratio 57.5); plus k d = 275 single-coordinate QFTs over Z/3
+s=100: d=5050, k=5, Q_f=10, Q_f(ell^3+w)=90, chart oracle calls >= 479250 (ratio 5325.0); plus k d = 25250 single-coordinate QFTs over Z/3
+s=1000: d=500500, k=5, Q_f=10, Q_f(ell^3+w)=90, chart oracle calls >= 47542500 (ratio 528250.0); plus k d = 2502500 single-coordinate QFTs over Z/3
+F: the chart term grows like s^2 and is unbounded relative to Q_f (ell^3 + w); (iii) must add it.
+
+ALL CHECKS PASSED

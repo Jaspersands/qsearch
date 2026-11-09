@@ -1,0 +1,832 @@
+{
+ "status": "coherent_label_receiver_backend_kappa3_grade_finite_checks",
+ "scope": "n4(F_7) only: grade 3 kappa_3 = 3 (triangular arity 3), grade 2 kappa_2 = 2 (arity 6)",
+ "coherent_receiver_implemented": false,
+ "coherent_label_backend_kappa3_instance": true,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "whole_circuit_amplitude_simulation": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "parts": [
+  "blocks",
+  "counts",
+  "paths",
+  "proofs",
+  "runs",
+  "state"
+ ],
+ "args": {
+  "out": "research/audits/reviews/2026-11-04-rees-circuit-coherent-k3/run.json",
+  "parts": "counts,proofs,blocks,paths,state,runs",
+  "per_label": 1024,
+  "grade2_tuples": 64,
+  "max_all": 400,
+  "state_instances": "",
+  "run_instances": "0,1,2,3,7,8",
+  "all_lambda_q": false
+ },
+ "config": "n4(F_7) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 3}",
+ "kappa_constants_grade3": {
+  "kappa": 3,
+  "g": 2,
+  "h": 2,
+  "omega": 4,
+  "alpha": [
+   1,
+   0,
+   5
+  ],
+  "beta": [
+   0,
+   2,
+   6
+  ],
+  "u": 1,
+  "roots": [
+   {
+    "q": 3,
+    "S": 1,
+    "Q": 2,
+    "e1": 1,
+    "z": 4,
+    "wq": 4
+   }
+  ]
+ },
+ "counts": {
+  "config": "n4(F_7) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 3}",
+  "terminal_sample": {
+   "by_component": {
+    "bch_merge_grade2": {
+     "swap": 1260,
+     "x": 37248,
+     "cx": 127392,
+     "ccx": 52704,
+     "add_product": 96,
+     "add_scaled": 144,
+     "gates": 218604
+    },
+    "bch_merge_grade3": {
+     "swap": 7290,
+     "x": 207072,
+     "cx": 700848,
+     "ccx": 289872,
+     "add_product": 576,
+     "add_scaled": 648,
+     "gates": 1205082
+    },
+    "final_qft": {
+     "qft_calls": 4,
+     "measured_qudits": 4,
+     "gates": 0
+    },
+    "instrument": {
+     "x": 2280,
+     "cx": 8820,
+     "ccx": 3780,
+     "add_scaled": 30,
+     "gates": 14880
+    },
+    "instrument_qft": {
+     "qft_calls": 60,
+     "gates": 0
+    },
+    "oracle": {
+     "oracle_calls": 54,
+     "gates": 0
+    },
+    "q_prep_qft": {
+     "qft_calls": 40,
+     "gates": 0
+    },
+    "sde_grade2": {
+     "x": 167260,
+     "cx": 539564,
+     "ccx": 224500,
+     "swap": 7152,
+     "add_product": 596,
+     "add_scaled": 44,
+     "gates": 938476
+    },
+    "sde_grade3": {
+     "x": 286704,
+     "cx": 933504,
+     "ccx": 388560,
+     "swap": 11520,
+     "add_product": 960,
+     "add_scaled": 276,
+     "gates": 1620288
+    },
+    "source_evaluation": {
+     "x": 57456,
+     "cx": 222264,
+     "ccx": 92988,
+     "add_scaled": 756,
+     "gates": 372708
+    },
+    "source_qft": {
+     "qft_calls": 126,
+     "gates": 0
+    },
+    "witness_control_grade2": {
+     "x": 13152,
+     "cx": 42816,
+     "ccx": 17568,
+     "swap": 576,
+     "add_product": 48,
+     "gates": 74112
+    },
+    "witness_control_grade3": {
+     "x": 69048,
+     "cx": 224352,
+     "ccx": 92232,
+     "swap": 3024,
+     "add_product": 252,
+     "gates": 388656
+    }
+   },
+   "total": {
+    "qft_calls": 230,
+    "oracle_calls": 54,
+    "x": 840220,
+    "cx": 2799560,
+    "ccx": 1162204,
+    "swap": 30822,
+    "measured_qudits": 4,
+    "add_scaled": 1898,
+    "add_product": 2528,
+    "gates": 4832806
+   },
+   "qubits": 1629,
+   "qubits_by_role": {
+    "arith_ancilla": 14,
+    "evaluation_w": 12,
+    "block_workspace_pool": 367,
+    "address_top": 378,
+    "oracle_output": 648,
+    "label_z_grade3": 54,
+    "Q_grade2": 108,
+    "label_z_grade2": 36,
+    "Q_grade1": 12
+   },
+   "sources": {
+    "1": 1,
+    "2": 6,
+    "3": 18
+   },
+   "arities": {
+    "2": 6,
+    "3": 3
+   },
+   "oracle_calls": 54
+  },
+  "structure": {
+   "garbage_never_touched_again": true,
+   "single_measurement_at_end": true,
+   "measured_register_is_root_Q": true
+  },
+  "blocks": {
+   "2": {
+    "kappa": 2,
+    "arity": 6,
+    "label_dim": 2,
+    "sde_class": "CoherentSDEK2",
+    "sde_qubits": 417,
+    "qubits": {
+     "labels": 36,
+     "children": 108,
+     "Q": 12,
+     "witness_S": 18,
+     "arith_ancilla": 14,
+     "sde_workspace": 349,
+     "merge_workspace_on_sde_wires": 36,
+     "merge_workspace_extra": 0,
+     "total": 537,
+     "workspace_total": 381
+    },
+    "segments": {
+     "sde_U_and_Uinv": {
+      "x": 167260,
+      "cx": 539564,
+      "ccx": 224500,
+      "swap": 7152,
+      "add_product": 596,
+      "add_scaled": 44,
+      "gates": 938476
+     },
+     "witness_control_G": {
+      "x": 13152,
+      "cx": 42816,
+      "ccx": 17568,
+      "swap": 576,
+      "add_product": 48,
+      "gates": 74112
+     },
+     "bch_merge": {
+      "swap": 1260,
+      "x": 37248,
+      "cx": 127392,
+      "ccx": 52704,
+      "add_product": 96,
+      "add_scaled": 144,
+      "gates": 218604
+     },
+     "block_total": {
+      "x": 217660,
+      "cx": 709772,
+      "ccx": 294772,
+      "swap": 8988,
+      "add_product": 740,
+      "add_scaled": 188,
+      "gates": 1231192
+     }
+    },
+    "structure": {
+     "sde_never_writes_labels_or_Q_or_children": true,
+     "child_merges_local_footprint": true,
+     "merge_workspace_wires_outside_sde_workspace": 0
+    }
+   },
+   "3": {
+    "kappa": 3,
+    "arity": 3,
+    "label_dim": 1,
+    "sde_class": "CoherentSDEKappa",
+    "sde_qubits": 169,
+    "qubits": {
+     "labels": 9,
+     "children": 63,
+     "Q": 18,
+     "witness_S": 9,
+     "arith_ancilla": 14,
+     "sde_workspace": 137,
+     "merge_workspace_on_sde_wires": 57,
+     "merge_workspace_extra": 0,
+     "total": 250,
+     "workspace_total": 160
+    },
+    "segments": {
+     "sde_U_and_Uinv": {
+      "x": 47784,
+      "cx": 155584,
+      "ccx": 64760,
+      "swap": 1920,
+      "add_product": 160,
+      "add_scaled": 46,
+      "gates": 270048
+     },
+     "witness_control_G": {
+      "x": 11508,
+      "cx": 37392,
+      "ccx": 15372,
+      "swap": 504,
+      "add_product": 42,
+      "gates": 64776
+     },
+     "bch_merge": {
+      "swap": 1215,
+      "x": 34512,
+      "cx": 116808,
+      "ccx": 48312,
+      "add_product": 96,
+      "add_scaled": 108,
+      "gates": 200847
+     },
+     "block_total": {
+      "x": 93804,
+      "cx": 309784,
+      "ccx": 128444,
+      "swap": 3639,
+      "add_product": 298,
+      "add_scaled": 154,
+      "gates": 535671
+     }
+    },
+    "structure": {
+     "sde_never_writes_labels_or_Q_or_children": true,
+     "child_merges_local_footprint": true,
+     "merge_workspace_wires_outside_sde_workspace": 0
+    }
+   }
+  },
+  "measured_generator_cw_arity": {
+   "qubits": 1418,
+   "arith_gates": 1951320,
+   "swap_macro": 510,
+   "ccx": 474780,
+   "qft_calls": 238,
+   "oracle_calls": 60,
+   "classical_bits": 102,
+   "macros": {
+    "add_scaled": 1710,
+    "add_product": 720
+   },
+   "arities": {
+    "2": 5,
+    "3": 4
+   }
+  },
+  "measured_generator_coherent_arity": {
+   "qubits": 1322,
+   "arith_gates": 1812372,
+   "swap_macro": 486,
+   "ccx": 440928,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "classical_bits": 102,
+   "macros": {
+    "add_scaled": 1578,
+    "add_product": 672
+   },
+   "arities": {
+    "2": 6,
+    "3": 3
+   }
+  }
+ },
+ "proofs": {
+  "d2": {
+   "controlled_merge": {
+    "macros": 48,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   }
+  },
+  "d3": {
+   "controlled_merge": {
+    "macros": 82,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   },
+   "sde_exhaustive": {
+    "inputs": 343,
+    "gates": 135024,
+    "witness_equals_canonical": true,
+    "witness_nonzero": true,
+    "equation_holds": true,
+    "labels_restored": true,
+    "workspace_clean": true
+   }
+  }
+ },
+ "blocks": {
+  "d3_all_label_triples": {
+   "inputs": 351232,
+   "gates": 535671,
+   "qubits": 250,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 5.5,
+   "passed": true
+  },
+  "d3_all_q_two_label_triples": {
+   "inputs": 235298,
+   "gates": 535671,
+   "qubits": 250,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 3.7,
+   "passed": true
+  },
+  "d3_structured": {
+   "inputs": 4096,
+   "gates": 535671,
+   "qubits": 250,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 0.32,
+   "passed": true
+  },
+  "d2_structured": {
+   "inputs": 4096,
+   "gates": 1231192,
+   "qubits": 537,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 0.67,
+   "passed": true
+  }
+ },
+ "assembled_basis_paths": {
+  "fresh_registers_zero_before_qft": true,
+  "children_and_Q": true,
+  "labels": true,
+  "root_Q_unchanged": true,
+  "workspace_clean": true,
+  "paths": 512,
+  "passed": true
+ },
+ "state": {
+  "rows": [
+   {
+    "instance": "n4(F_7) H=<e2> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 12.4
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 64 of 13841287201",
+      "cases": 64,
+      "distinct_merges": 53,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 12.5
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 26.5
+   },
+   {
+    "instance": "n4(F_7) H=<e1> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 12.3
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 64 of 13841287201",
+      "cases": 64,
+      "distinct_merges": 52,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 14.2
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 28.1
+   },
+   {
+    "instance": "n4(F_7) H=<e1+e3> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 12.9
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 64 of 13841287201",
+      "cases": 64,
+      "distinct_merges": 57,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 14.4
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 29.0
+   },
+   {
+    "instance": "n4(F_7) H=<e2,e4> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 2.5
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 7,
+      "tuples": "sampled 64 of 117649",
+      "cases": 64,
+      "distinct_merges": 21,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 12.3
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 17.2
+   },
+   {
+    "instance": "n4(F_7) H=<e1+e2,e3> (closure)",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 2.2
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 9.6
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 15.0
+   },
+   {
+    "instance": "n4(F_7) H=<e3,e4> = gamma_2",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 2.2
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 10.1
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 14.9
+   },
+   {
+    "instance": "n4(F_7) H=<e2,e3> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 13.1
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 7,
+      "tuples": "sampled 64 of 117649",
+      "cases": 64,
+      "distinct_merges": 23,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 12.0
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 27.4
+   },
+   {
+    "instance": "n4(F_7) H=Z(G)",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 2.1
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 7,
+      "tuples": "sampled 64 of 117649",
+      "cases": 64,
+      "distinct_merges": 26,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 11.7
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 15.9
+   },
+   {
+    "instance": "n4(F_7) H=trivial",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 12.8
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 64 of 13841287201",
+      "cases": 64,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 14.1
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 28.3
+   }
+  ],
+  "all_pass": true
+ },
+ "runs": {
+  "rows": [
+   {
+    "instance": "n4(F_7) H=<e2> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 33.9
+   },
+   {
+    "instance": "n4(F_7) H=<e2> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 28.9
+   },
+   {
+    "instance": "n4(F_7) H=<e1> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 31.7
+   },
+   {
+    "instance": "n4(F_7) H=<e1> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 25.6
+   },
+   {
+    "instance": "n4(F_7) H=<e1+e3> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 30.1
+   },
+   {
+    "instance": "n4(F_7) H=<e1+e3> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 26.8
+   },
+   {
+    "instance": "n4(F_7) H=<e2,e4> non-normal",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 23.5
+   },
+   {
+    "instance": "n4(F_7) H=<e2,e4> non-normal",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 20.5
+   },
+   {
+    "instance": "n4(F_7) H=Z(G)",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 18.5
+   },
+   {
+    "instance": "n4(F_7) H=Z(G)",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 19.5
+   },
+   {
+    "instance": "n4(F_7) H=trivial",
+    "seed": 20261103,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 34.0
+   },
+   {
+    "instance": "n4(F_7) H=trivial",
+    "seed": 20261104,
+    "recovered": true,
+    "oracle_queries": 432,
+    "top_sources": 144,
+    "coherent_witness_d3": 48,
+    "coherent_witness_d2": 8,
+    "seconds": 32.8
+   }
+  ],
+  "all_recovered": true
+ },
+ "seconds": 543.2
+}

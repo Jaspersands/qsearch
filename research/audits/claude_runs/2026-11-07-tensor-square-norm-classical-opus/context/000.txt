@@ -1,0 +1,110 @@
+Primary: https://arxiv.org/pdf/2510.02280v2
+PDF SHA256: 037f365f75cd9c8d00870fe20ca3d04a78c2b23831cf91e5b53d7d6c31d58a4a
+Locators are pdftotext -layout newline line numbers, not form-feed counts.
+
+LINES 94-129
+
+                                               2
+reduction from the S-unit group problem to HSP on Rm as defined in [15], which then can
+be solved efficiently by the quantum HSP algorithm in [15]. We also show how to get exact
+compact representations of the desired field elements with respect to a given integral basis
+for O, while [15] only returns fixed point rational approximations of the units. Compact
+representations are usually easier for further algebraic processing. Our main results are
+summarized in the next theorem.
+
+Theorem 1 (S-unit group computation). There is a quantum algorithm for computing
+the S-unit group of a number field K in compact representation which runs in polynomial
+time in the parameters n = deg(K), log(|∆|), |S| and maxp∈S {log(N (p))}, where ∆ is the
+discriminant of the ring of integers of K.
+
+Corollary 1. There are quantum polynomial time algorithms for the resolution of the fol-
+lowing tasks in computational number theory:
+
+   • Ideal class group computation (under GRH),
+
+   • S-class group computation (under GRH),
+
+   • Relative class group and unit group computation (under GRH),
+
+   • Ideal class decomposition in the ideal class group (under GRH),
+
+   • Principal Ideal Problem,
+
+   • Ray class group computation (under GRH),
+
+   • Norm equation resolution,
+
+where GRH denotes the Generalized Rieman Hypothesis.
+
+    As an important corollary, combining recent works in lattice cryptanalysis [9, 13], our
+results induce a quantum polynomial-time attack on an entire family of cryptosystems
+relying on the hardness of finding a short generator of a principal ideal.
+LINES 1654-1687
+Definition 8 (Compact representation). Let l > 0 be a constant, a compact representation
+of α ∈ O with respect to the integral basis (ωj )j≤n of O is a set of exact representations of
+                                                                    k
+polynomial size algebraic numbers γj satisfying α = γ0 γ1l · · · γkl , where k is polynomial in
+the size of the input.
+
+    Biasse and Fieker [4, Sec. 5] described an efficient method based on [18, Alg. 7.53] to
+classically compute a compact representation of an algebraic number in polynomial time.
+These methods rely on the knowledge of an exact representation of the algebraic number
+we wish to represent (which is not the case here). A modification of [18, Alg. 7.53] using
+the approximation of the vector corresponding to an algebraic number yields a compact
+representation of that number.
+    Our algorithm for the compact representation of an S-unit takes as input l > 0 and a
+rational approximation (to an arbitrary polynomial precision q) of a vector of the form
+
+                       (log(|α|1 , · · · , log(|α|n1 +n2 ), θ, vp1 (α), · · · , vp|S| (α)),
+
+                                          Q vp (α)
+where α is an S-unit. We can assume that j pj j       ⊆ O. If not, we replace each log(|α|j )
+by                                                  
+                            X
+                                |vpk (α)|ek log(pk ) + log(|α|j )
+                                vpk (α)<0
+
+                                                                                  |vp (α)|ek
+(where N (pk ) = pekk ), thus calculating a compact representation of α vp (α)<0 pk k
+                                                                        Q
+                                                                                             .
+                                                                            k
+From that, we can easily derive a compact representation of α. Then, we choose k0 minimal
+          log(|α|                                  Q ⌊vp (α)/lk ⌋
+such that lk0 j ≤ log(|∆|), initiate an ideal I to j pj j         , and we compute rational
+                                    k
+approximations vj of (|α|j )1/l . Then at each step, I is replaced by I l and we compute
+LINES 1795-1806
+group boils down to computing ker(π ◦ φ), which is the lattice of (e1 , ..., eN ) ∈ ZN such
+that pe11 , . . . , peNN = (α) for some α ∈ K. These α are S-units for S = B, and the exponent
+vectors of a generating set of US give us a generating set for ker(π ◦ φ) from which we derive
+Cl(O)
+    The best unconditional bounds on |S| are exponential in log(|∆|). As the complexity of
+the computation of the |S|-unit group is polynomial in |S|, we cannot achieve a polynomial
+complexity unconditionally that way. However, under the Generalized Riemann Hypothesis
+(GRH), the classes of all prime ideals of O of norm up to 48 log(|∆|)2 generate Cl(O). The
+size of S := {p ⊆ O prime | N (p) ≤ 48 log(|∆|)2 } is polynomial in log(|∆|), and calculating
+the corresponding S-unit group is therefore polynomial in n and log(|∆|).
+
+Algorithm 5 Ideal class group of O
+LINES 1922-1941
+8.6   Norm equations
+Finally, our work allows us to describe polynomial time algorithms for solving relative
+norm equations of the form NL/K (x) = θ where L/K is an arbitrary Galois extension.
+Norm equations are an important example of Diophantine equations which are a major
+topic in number theory. The resolution of the Pell equation (for√which there is a quantum
+algorithm [23]) can be seen as a special case where L = Q( ∆), K = Q and θ = 1
+(when we restrict our attention to integer solutions). Solving norm equations in general
+is an important task in computational number theory. A classical method was described
+by Simon [31] (based on the work of Fieker [17] for Galois extensions) that solves general
+extensions in exponential time in the degree of the fields. For the Galois case, it simply
+uses the knowledge of the S-unit group and the relative class group, which we can provide
+in polynomial time for number fields of arbitrary degree. However, the general method
+
+
+                                                32
+uses the Galois closure, whose degree can be exponential in the degree of the field, thus
+restricting the direct application of our work to arbitrary Galois extensions.
+
+
+References

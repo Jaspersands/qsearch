@@ -1,0 +1,28 @@
+identities: f(r)-f(r-1) = floor((r+2)/2)+3 >= 4 ; f(r)-f(r-2) = r+7 (r>=3) ; D3(q)-D3(q-2) = q+1 (q>=3)
+  ok for r < 400
+case-2 count: b + 2r + D3(q) - q >= f(b) whenever b <= q-2, all r,q < 200:
+  ok
+case-3 count: f(r) - (r+1) >= f(r - qp) for 2 <= qp < r:
+  ok
+heavy stalls with Y-count failing are possible by counting only for:
+  r=9 [(3, 5, 1, 0)]
+  r=10 [(3, 6, 1, 4)]
+  r=11 [(3, 6, 2, 2), (3, 7, 1, 8), (4, 6, 1, 0)]
+  r=12 [(3, 6, 3, 0), (3, 7, 2, 6), (3, 8, 1, 13), (4, 7, 1, 4)]
+  r=13 [(3, 7, 3, 4), (3, 8, 2, 11), (3, 9, 1, 18), (4, 7, 2, 2), (4, 8, 1, 9), (5, 7, 1, 0)]
+  r=14 [(3, 7, 4, 2), (3, 8, 3, 9), (3, 9, 2, 16), (3, 10, 1, 24), (4, 7, 3, 0), (4, 8, 2, 7)]
+  r=15 [(3, 7, 5, 0), (3, 8, 4, 7), (3, 9, 3, 14), (3, 10, 2, 22), (3, 11, 1, 30), (4, 8, 3, 5)]
+smallest r: 9
+Lemma W bound G*_E >= kappa^-E (p - E - (kappa^E-1)(E-1) sqrt p); least p with bound >= p/(2 kappa^E):
+  kappa=2 E=3: p >= 796  (2 kappa^E = 16)
+  kappa=2 E=4: p >= 8116  (2 kappa^E = 32)
+  kappa=2 E=5: p >= 61524  (2 kappa^E = 64)
+  kappa=2 E=6: p >= 396924  (2 kappa^E = 128)
+  kappa=3 E=3: p >= 10828  (2 kappa^E = 54)
+  kappa=3 E=4: p >= 230416  (2 kappa^E = 162)
+  kappa=3 E=5: p >= 3748116  (2 kappa^E = 486)
+  kappa=3 E=6: p >= 52998424  (2 kappa^E = 1458)
+Theorem Q1(c), c<=2: need 2.5 r * 2 kappa^5 / p <= 1/2  ->  p >= 10 kappa^5 r = [320, 2430]
+kappa/(p-1) <= 2 kappa^5/p at those p: True True
+general range check, E'=3+c, p >= 8 k^{2E'} E'^2 implies Lemma W bound >= p/(2k^E'):
+  ok

@@ -1,0 +1,44 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4062,
+      "path": "research/audits/claude_inputs/2026-11-07-global-isotropy/contract.md",
+      "sha256": "524c6940c7c1eac0ca956a44e7e418b495492ad7ae00c46e3da1353145728d90",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 2899,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-06T17:52:05.546957+00:00",
+  "input_token_allowance": 3155,
+  "max_budget_usd": 1.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.66798,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-global-isotropy/local_norm_prompt.md",
+    "sha256": "9c6ba9b84d43b1a0a8dd50d986b9c0f0fa593c2043314f92f399f7d8f027a7c8",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261106T175159.095508Z-aff3030f",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2899,
+    "output_tokens": 334
+  },
+  "usage_cost_estimate_usd": 0.018276
+}

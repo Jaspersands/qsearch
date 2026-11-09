@@ -1,0 +1,120 @@
+SOURCE research/audits/sources/local_kummer_cluster/om_clusters.txt
+SHA256 4a06a6cf30d701bdbc4e0bdf6bb53ab5388da024048d70cf75e2787354b827b6
+
+Original newline ranges (1, 115)
+                                     On OM Algorithms and Cluster Pictures
+                   Adrien Poteaux                                                  Tristan Vaccon                                      Martin Weimann
+              Université Lille; Cristal                              Université de Limoges; CNRS, XLIM                         Université de Caen-Normandie ;
+                    Lille, France                                                 UMR 7252                                                 LMNO
+            adrien.poteaux@univ-lille.fr                                       Limoges, France                                          Caen, France
+                                                                          tristan.vaccon@unilim.fr                              martin.weimann@unicaen.fr
+ABSTRACT                                                                                        way to recover the cluster pictures of a polynomial 𝑔 ∈ 𝐾 [𝑥] from
+In this paper, we study the connection between the OM-factorization                             its OM-factorization when the ramification is tame. This is the main
+of a polynomial and its cluster pictures, which is a representation                             topic of this paper. Cluster pictures have been introduced in [7] as
+of the relative configuration of the roots. Our contribution is three-                          a convenient representation of the relative configuration set of the
+fold, assuming that the residual characteristic zero or large enough:                           roots of a polynomial to compute various arithmetic data attached
+(1) We provide and showcase an implementation of the OM al-                                     to hyperelliptic curves: semitable model, conductor, minimal dis-
+gorithms. (2) We make explicit and constructive the connection                                  criminant, Galois representation, Tamagawa number, root number,
+between the valuative tree of a polynomial, the cluster picture of its                          reduction type, Kodaira type, . . . We refer to [6, 13] for an exten-
+roots and the Berkovich skeleton of its roots. As such, we provide                              sive presentation of the applications of cluster pictures (see also
+a complexity result on the computation of cluster pictures. (3) We                              [13]). This reference has been followed by a SageMath package1 .
+elaborate on this connection to provide and showcase an algorithm                               Independently, a theoretical approach has been presented in [12].
+to compute cluster pictures based on the OM algorithms.                                         However, no theoretical analysis nor complexity of the computation
+                                                                                                of cluster pictures has been presented in these previous works.
+CCS CONCEPTS
+• Computing methodologies → Algebraic algorithms.
+                                                                                                1.1      Contributions.
+                                                                                                In what follows, we let 𝐴 be the valuation ring of a discrete rank-
+KEYWORDS                                                                                        one valued field (𝐾, 𝑣 𝐾 ). We assume that 𝐴 is principal. We denote
+Algorithms, OM algorithms, augmented valuation, inductive valua-                                by 𝜅 the residue field of 𝐾.
+tion, cluster picture, Berkovich skeleton                                                          In this work, we show that computing the cluster picture of a
+                                                                                                polynomial 𝑔 ∈ 𝐾 [𝑥] mainly reduces to compute an OM-factorization
+ACM Reference Format:
+                                                                                                under the assumption that no wild ramification occurs. More pre-
+Adrien Poteaux, Tristan Vaccon, and Martin Weimann. 2025. On OM Algo-
+                                                                                                cisely, this paper is dedicated to three main tasks, assuming that
+rithms and Cluster Pictures. In International Symposium on Symbolic and
+Algebraic Computation (ISSAC ’25), July 28 – August 1, 2025, Guanajuato,                        the residual characteristic is zero or large enough :
+Mexico. ACM, New York, NY, USA, 10 pages. https://doi.org/XXXXXXXX                                  (1) We provide and showcase an implementation of the OM
+                                                                                                        algorithm.
+1     INTRODUCTION                                                                                  (2) We make explicit and constructive the connection between
+Let (𝐾, 𝑣 𝐾 ) be a discrete rank-one valued field with henselization                                    the OM factorisation of 𝑔, the valuative tree (Section 5.1),
+𝐾 ℎ . Given a separable irreducible polynomial 𝑔 ∈ 𝐾 [𝑥], the OM                                        the cluster picture of its roots (Section 3) and the Berkovich
+algorithm computes an approximation of each irreducible factors                                         skeleton (Section 6).
+of 𝑔 in 𝐾 ℎ [𝑥]. These factors are one-to-one with the extensions of                                (3) We elaborate on this connection to provide and showcase
+𝑣 𝐾 to the field 𝐾 [𝑥]/(𝑔), and a crucial feature of the OM algorithm                                   an algorithm to compute cluster pictures based on the OM
+is to approximate these valuations by some inductive valuations on                                      algorithms.
+𝐾 [𝑥], which are some suitably increasing sequences of extended                                   Combined with [28], this leads to the following complexity esti-
+valuations on 𝐾 [𝑥].                                                                            mates for cluster pictures and Berkovich skeleton :
+    It turns out that there is an equivalent description of the involved
+                                                                                                    Theorem 1.1. There exists a deterministic algorithm which, given
+extended valuations on 𝐾 [𝑥] in the language of rigid analytic ge-
+                                                                                                𝑔 ∈ 𝐴[𝑥] monic separable of degree 𝑑 such that char(𝜅) = 0 or
+ometry, valuations corresponding to rigid diskoids [29, Thm 4.56].
+                                                                                                char(𝜅) > 𝑑, computes the cluster picture and the Berkovich skeleton
+Besides establishing a bridge between valuation theory and non
+                                                                                                of the roots of 𝑔 with 𝑂 𝜀 (𝑑𝛿) operations in 𝜅 where 𝛿 = 𝛿 (𝑔) is the gen-
+archimedean geometry, this reinterpretation gives a convenient
+                                                                                                eralized Okutsu bound2 , plus some residual univariate factorizations
+Permission to make digital or hard copies of all or part of this work for personal or           whose costs fit in the bound if 𝜅 = F𝑝 .
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the                 We use here the notation 𝑂 𝜀 (𝑑) := 𝑂 (𝑑 1+𝑜 (1) ) where 𝑂 () denote
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or          the classical asymptotic notation. We work with computation trees
+republish, to post on servers or to redistribute to lists, requires prior specific permission   and we use an algebraic RAM model, counting only the number of
+and/or a fee. Request permissions from permissions@acm.org.
+ISSAC ’25, July 28 – August 1, 2025, Guanajuato, Mexico                                         arithmetic operations in 𝜅.
+© 2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+                                                                                                1 https://github.com/alexjbest/cluster-pictures/tree/master
+ACM ISBN XXXXXXX. . . $15.00
+https://doi.org/XXXXXXXX                                                                        2 See Eq. (1) on page 5.
+
+   Remark 1.2. This result follows from the fact that we can easily        of many arithmetic-geometric tasks in number fields and function
+deduce the cluster picture from an OM-factorization with suitable          fields of algebraic curves, such as factoring ideals in Dedekind rings
+precision. If the residual characteristic is small, we may still compute   (which was the original motivation of Ore) or computing integral
+an OM-factorization of 𝑔 (with a higher complexity due to the lack of      basis [9, 11, 27]. A package ’+Ideals’ for Magma has been designed
+approximate roots, see Remark 4.1 and [3, 28]). However, the output is     for this purpose in the case of number fields [10].
+not sufficient to recover cluster pictures when wild ramification occurs
+(see Example 4.3).                                                             Arithmetic geometry and clusters. Mac Lane valuations and key
+   Remark 1.3. By [27], the bound 𝛿 (𝑔) is at most twice the 𝑣 𝐾 -         polynomials play also a key role in arithmetic geometry since we
+index of the integral closure of 𝐴 in 𝐾 [𝑥]/(𝑔). In particular, we have    can use valuations to represent a normal model of a curve 𝑋 over a
+𝛿 (𝑔) ≤ 𝑣 𝐾 (Disc(𝑔)), the difference being possibly significant.          valued field 𝐾, a key point towards the computation of a semistable
+                                                                           model of 𝑋 (that is an integral, proper, and flat scheme over the
+   Remark 1.4. If 𝑔 ∈ 𝐴[𝑥] is not monic, a single Hensel lifting           valuation ring of 𝐾 with generic fiber 𝑋 and whose special fiber is
+allows to reduce to the monic case. However, we need then to take care     reduced with ordinary double points as singularities). This fact is
+of the valuation of the leading coefficient of 𝑔 in the bound 𝛿 (𝑔) (see   illustrated in the case of hyperelliptic curves in [13, 29]. It turns out
+e.g. [26] for such considerations in the context of Puiseux series).       that many computational tasks of arithmetic geometry (semistable
+                                                                           model, lattice of regular forms, regulator, etc.) are facilitated once
+1.2    History and related results                                         we know the cluster picture of the input polynomial (see e.g. [13,
+   History. The OM algorithm is inspired from a pioneering work of         6, 7]), this combinatorial object being a convenient representation
+Ore in the 1920s [24, 23] about the factorization of a prime number        of the relative 𝑣 𝐾 -adic distances between the roots. In turn, the
+𝑝 in a number field Q[𝑥]/(𝑔). Ore conjectured the existence of an          connection between valuations and cluster pictures requires the
+algorithm based on the iteration of a double dissection process, in        language of rigid analytic geometry. On one hand, there exists a
+the spirit of Hensel’s work : a partial factorization according to the     bijection between augmented valuations on 𝐾 [𝑥] with residual
+slopes of the Newton polygon attached to some extended valuation           transcendental extensions and rigid diskoids with finite radius [29,
+of Q[𝑥], and a further partial factorization according to the prime        Thm 4.56], and on the other hand it is shown in [13] that we can
+factors of a certain residual polynomial of 𝑔 attached to each slope.      recover the cluster pictures from these diskoids (at least in the
+In the 1930s, Mac Lane solved this problem in the more general             tamely ramified case). The possibility of using various languages
+context of a discrete rank-one field (𝐾, 𝑣𝑘 ), introducing the central     for somehow a same object is of theoretical and practical interest,
+notion of inductive valuations and key polynomials [16, 15]. In            as it relates valuation theory, arithmetic geometry and Berkovich
+the 1980s, Okutsu [21] constructed similar approximations without          geometry. As such, we believe that it is an important issue to design
+using valuations on 𝐾 [𝑥] nor key polynomials, motivated by the            efficient algorithms to switch from one representation (valuations,
+computation of integral bases in local fields. In 1999, Montes [25]        clusters, or skeleton) to another.
+constructed a concrete residual polynomial operator leading to the
+design of a practical algorithm following the exact pattern that Ore       1.3    Organisation.
+had foreseen. This algorithm is known as the OM algorithm, named
+after Ore, Mac Lane, Okutsu and Montes.                                    In Section 2, we define the inductive valuations of 𝐾 [𝑥] as intro-
+                                                                           duced by Mac Lane [16, 15], and we explain how to represent them
+   Complexity. Up to our knowledge, the best complexity results            with diskoids, following [29]. We define the cluster picture of a
+for the OM algorithm is given in [28], thanks to a fast Hensel lifting     polynomial 𝑔 ∈ 𝐾 [𝑥] in Section 3, providing some illustrative ex-
+with respect to an extended valuation, and a divide and conquer            amples. In Section 4, we detail the OM algorithm of [28] (assuming
+strategy based on a suitable care of the precision. Moreover, when         residual characteristic zero or large enough), and we give some first
+the residual characteristic is zero or high enough (as assumed in          illustrations of its connection with clusters. Example 4.3 shows that
+this paper), Abhyankar’s approximate roots provide some easy-to-           assuming tame ramification is unavoidable in this context. Section 5
+compute optimal key polynomials, allowing to decrease the number           constitutes the main part of this paper : we explain how to compute
+of iterations of the double dissection process. This leads to the          the cluster picture of a polynomial 𝑔 from an OM-factorization with
+complexity stated in Theorem 1.1.                                          a suitable precision. To this aim, we use the notion of valuative tree
+                                                                           and we relate on Proposition 5.9 to compute the relative depths of
+   Generalization to non discrete rank-one valuations. Besides com-
+                                                                           the clusters. We obtain in such a way a complexity estimates for the
+plexity issues, approximate roots are crucial objects since they allow

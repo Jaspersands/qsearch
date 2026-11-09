@@ -1,0 +1,14 @@
+hand example L_5 ([e1,e2]=e3,[e1,e3]=e4,[e1,e4]=e5,[e2,e3]=e5) p=3: class=4, b over 30 runs = [3]
+hand example L_5 ([e1,e2]=e3,[e1,e3]=e4,[e1,e4]=e5,[e2,e3]=e5) p=5: class=4, b over 30 runs = [3]
+hand example L_5 ([e1,e2]=e3,[e1,e3]=e4,[e1,e4]=e5,[e2,e3]=e5) p=7: class=4, b over 30 runs = [3]
+hand example L_6 ([e1,ei]=e(i+1) i=2..5, [e2,e3]=e5, [e2,e4]=e6, [e2,e5]=-e6, [e3,e4]=e6) p=3: class=5, b over 30 runs = [3]
+hand example L_6 ([e1,ei]=e(i+1) i=2..5, [e2,e3]=e5, [e2,e4]=e6, [e2,e5]=-e6, [e3,e4]=e6) p=5: class=5, b over 30 runs = [3]
+hand example L_6 ([e1,ei]=e(i+1) i=2..5, [e2,e3]=e5, [e2,e4]=e6, [e2,e5]=-e6, [e3,e4]=e6) p=7: class=5, b over 30 runs = [3]
+hand example L_6 ([e1,ei]=e(i+1) i=2..5, [e2,e3]=e5, [e2,e4]=e6, [e2,e5]=-e6, [e3,e4]=e6) p=11: class=5, b over 30 runs = [3]
+hand example L_6 ([e1,ei]=e(i+1) i=2..5, [e2,e3]=e5, [e2,e4]=e6, [e2,e5]=-e6, [e3,e4]=e6) p=10007: class=5, b over 30 runs = [3]
+algebras: 981, construction runs: 4010
+failures of abelian/ideal/flag/self-centralizing/dim<=b(b+1)/2/class<=2b-1: 0
+max observed class - b: 3
+smallest (dim, class, b) with class > b: ((5, 4, 3), 'hand5 p=3')
+max class seen for each b: {1: 1, 2: 2, 3: 5, 4: 7, 5: 8, 6: 8, 7: 7, 8: 8} (bound 2b-1)
+dimension bound attained (b, dim, class): [(1, 1, 1), (2, 3, 2), (3, 6, 3), (3, 6, 4), (3, 6, 5)]

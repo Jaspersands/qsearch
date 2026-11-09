@@ -57545,6 +57545,7 @@
     "source": "research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md"
   },
   {
+    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
     "applies_to": [
       "CHARACTER-SHIFT-DECODING-LOWER-BOUND",
       "LEGENDRE-PRG-INVERSION",
@@ -57555,14 +57556,13 @@
     "evidence": {
       "artifact": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json",
       "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
-      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}",
       "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
       "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
-      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model"
+      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model, conditional on Legendre PRG hardness (not computed here)",
+      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}"
     },
-    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
-    "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice requires Omega(p) operations, matching the computational hardness of inverting the Legendre PRG.",
-    "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
+    "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice is conjectured to need Omega(p) operations. That bound is conditional on the hardness of inverting the Legendre PRG and is not proved here.",
+    "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s is conjectured to require solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts, conditional on Legendre PRG hardness. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
     "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
   },
   {

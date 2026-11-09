@@ -1,0 +1,1554 @@
+Primary source: https://arxiv.org/pdf/2504.16808v3
+PDF SHA256: 28b5aec210d4e68b909349a2dbd7d53a1b64e222f28c0061f7b86c8a6e054c84
+Full pdftotext -layout transcription; page control characters replaced by newlines.
+
+                                               Desingularization of double covers of
+                                                         regular surfaces
+
+
+
+
+arXiv:2504.16808v3 [math.NT] 10 Mar 2026
+                                                                                  Qing Liu∗
+
+
+                                                                                  Abstract
+                                                     Let Z be a noetherian integral excellent regular scheme of dimension 2.
+                                                 Let Y be an integral normal scheme endowed with a ﬁnite ﬂat morphism
+                                                 Y → Z of degree 2. We give a description of Lipman’s desingularization
+                                                 of Y by explicit equations, leading to a desingularization algorithm for Y .
+
+
+                                           Contents
+                                           1 Introduction                                                                           2
+
+                                           2 The multiplicity λp (Y )                                                               4
+                                             2.1 Deﬁnition and basic properties for local rings . . . . . . . . . . .               4
+                                             2.2 Algorithm for determining the multiplicity λp (Y ) . . . . . . . . .               7
+                                             2.3 Multiplicity in the global case . . . . . . . . . . . . . . . . . . . .            9
+
+                                           3 Normalized blowing-up                                                                  9
+                                             3.1 Blowing-up regular schemes along a point . . . . . . . . . . . . .                 9
+                                             3.2 Normalization after blowing-up . . . . . . . . . . . . . . . . . . .              11
+                                             3.3 Lipman’s resolution of singularities . . . . . . . . . . . . . . . . .            12
+                                             3.4 The exceptional locus of Lipman’s resolution of singularities . . .               14
+                                             3.5 A complete example of resolution of singularities . . . . . . . . .               16
+                                             3.6 Simultaneous resolution of singularities . . . . . . . . . . . . . . .            21
+
+                                           4 Variations of the multiplicities after normalized blowing-ups              21
+                                             4.1 Double covers of P1k . . . . . . . . . . . . . . . . . . . . . . . . . 21
+                                             4.2 Multiplicity along a regular closed subscheme . . . . . . . . . . . 23
+                                             4.3 Upper bound on the multiplicities . . . . . . . . . . . . . . . . . 25
+
+                                           5 Desingularization algorithm                                                 27
+                                             5.1 Normalization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+                                             5.2 Finding the singular points . . . . . . . . . . . . . . . . . . . . . 28
+                                             5.3 Desingularization algorithm . . . . . . . . . . . . . . . . . . . . . 29
+                                             5.4 Presentation of a regular ring and of its Rees algebras . . . . . . 30
+                                              ∗ I would like to thank INRIA Sud-Ouest and the team Canari for their hospitality during
+
+                                           the preparation of a part of this work.
+
+
+                                                                                       1
+
+1    Introduction
+The existence of the desingularization of excellent surfaces (reduced noetherian
+excellent schemes of dimension 2) is well known from the theoretical point of
+view. However, in practice, the implementation of an algorithm of desingular-
+ization in full generalities is rather complicated, see [3] and [7] for an overview
+of various approaches. In view of applications in arithmetic geometry, a lot of
+work also have been done for smooth projective curves C over a discrete val-
+uation ﬁeld K. The aim is then to ﬁnd a projective regular scheme over the
+valuation ring OK of K, with generic ﬁber isomorphic to C, see [8], [15] and the
+references therein, when C is a cyclic cover of P1K , mostly assuming the residue
+characteristic of K to be prime to the order of the cover. For hypersurfaces
+in the aﬃne plane A2 over OK , see also [5] with some powerful applications in
+number theory.
+    In this work we deal with a special type of surfaces for which Lipman’s
+method works very well and is completely explicit.
+Theorem 1.1 (Lipman, [17]). Let Y be a noetherian integral normal excellent
+surface. Consider a sequence of birational morphisms
+                        ... → Yn → · · · → Y1 → Y0 := Y                       (1.1)
+where each Yi+1 → Yi is the normalization of the blowing-up of Yi along some
+singular closed (reduced) point. Then the sequence is necessarily ﬁnite.
+    The surfaces we are interested in are double covers of regular surfaces. For
+simplicity we only work with noetherian excellent schemes (e.g., algebraic vari-
+eties over a ﬁeld, schemes of ﬁnite type over Dedekind domains of characteristic
+0 or complete discrete valuation rings, see [9], §8.2.3).
+Deﬁnition 1.2 Let Z be an integral noetherian regular scheme. We deﬁne a
+double cover of Z as a reduced scheme Y endowed with a ﬁnite ﬂat morphism
+of degree 2
+                                 ψ : Y → Z.
+We call Y a normal double cover of Z if moreover Y is integral and normal.
+Example 1.3 Let C be a hyperelliptic curve over Q, with the canonical degree
+2 morphism C → P1Q . Let Z = P1Z and let W be the normalization of Z in the
+function ﬁeld K(C) of C. Then Z is a regular excellent surface, and W → Z is
+a normal double cover of Z. The surface W is a so called Weierstrass model of
+C. It is singular in general. A resolution of singularities on W gives a projective
+regular model of C over Z.
+Example 1.4 More generally, let Z be an integral noetherian excellent surface.
+Let L be a (possibly inseparable) quadratic extension of the function ﬁeld K(Z)
+of Z and let Y be the normalization of Z in L. Then Y → Z is a normal
+double cover. Indeed, Y → Z is ﬁnite because Z is excellent. The scheme Y a
+noetherian integral normal surface, hence Cohen-MaCaulay, hence ﬂat over Z
+because the latter is regular.
+
+                                        2
+
+    Now come back to the general situation. The key point in our situation is
+that if we start with a normal double cover Y → Z of a regular surface, then
+in any sequence like (1.1), all the Yi ’s are again normal double covers of regu-
+lar surfaces. More precisely (Theorem 3.4), we have a canonical commutative
+diagram
+               Yn       / Yn−1       / ···      / Y1     / Y0 = Y
+
+
+                 
+ blqn−1 
+ blqn−2            blq1      
+    blq0         
+
+                Zn      / Zn−1     / ···             / Z1           / Z0 := Z
+
+where the vertical arrows are normal double covers of regular surfaces, and the
+lower horizontal arrows are blowing-ups of (reduced) closed points qi ∈ Zi . Each
+morphism Yi+1 → Yi is a normalized blowing-up, meaning that we blow-up the
+singular point (with the reduced structure) of Yi lying over qi , then we take the
+normalization.
+    Moreover, we can give explicit equations for the Yi ’s as follows. First one
+can cover Z0 by small aﬃne open subsets V ’s over which Y0 is deﬁned by a
+monic polynomial of degree 2 (Lemma 2.2):
+
+                         y 2 + ay + b = 0,     a, b ∈ OZ (V ).                  (1.2)
+
+If Z1 → Z0 is the blowing-up of a point q0 ∈ Z0 , and if λq0 (Y0 ) is the multiplicity
+of Y0 at the point lying over q0 (Deﬁnitions 2.3 and 2.14), we set r = [λq0 (Y0 )/2].
+Let s, t be a system of coordinates of Z0 at q0 . Then Y1 is covered by the aﬃne
+schemes deﬁned respectively by
+
+                     y12 + (a/sr )y1 + (b/s2r ) = 0,        y1 = y/sr
+
+and
+                     z12 + (a/tr )z1 + (b/t2r ) = 0,        z1 = y/tr
+(Proposition 3.3). And we continue in the same way for the Yi ’s.
+   The computation of the multiplicity λq (Y ) ∈ N is straightforward when
+       ∗
+2 ∈ OZ,q  . Indeed we can reduce to a = 0 and b(q) = 0. Then λq (Y ) is just
+the order of b in the regular local ring OZ,q (Proposition 2.6(2)). If 2 is not
+invertible, there is no canonical choice of the equation (1.2). We give a simple
+algorithm (Lemma 2.10) to determine λq (Y ) in the case.
+    As a byproduct of Theorem 3.4 we prove the existence of a simultaneous
+resolution of singularities for covers of degree 2 of excellent normal surfaces
+(Corollary 3.12).
+   When 2 is invertible in OZ , the sequence (Zi )i≥0 is classical and consists in
+making the branch locus of Y → Z regular. In the case Z = P1R over a discrete
+valuation ring R, this is essentially equivalent to locate the branch locus of the
+generic ﬁber of Y → Z. The language of clusters ([6], §1.1, [15]) is then more
+explicit and convenient. The novelty here is that our method works in any
+(mixed or equal) characteristic. It can also be applied to the case when Z is a
+
+                                          3
+
+regular model over R of a smooth curve ZK over K := Frac(R) and YK → ZK
+is a double cover of smooth curves over K.
+    Our initial motivation is to give an easily implementable algorithm to ﬁnding
+a desingularization of the surface W in Example 1.3, in the spirit of Tate’s
+algorithm for elliptic curves [21]. Indeed, a regular model of C over Z allows to
+compute some important arithmetic invariants of C as its Artin conductor, the
+Tamagawa number of its Jacobian J(C) as well as the (ﬁnite part of) L-function
+of J(C). Applications will be given in [13]. An implementation in PARI/gp [18]
+by B. Allombert is ongoing.
+    Now let us describe the content of this paper. In § 2, we introduce our
+multiplicity λp (Y ) for any double cover Y → Z of regular scheme and for any
+point p ∈ Y . This invariant already appeared in various works, when Z is a
+smooth surface over a perfect ﬁeld, or in the context of Hironaka’s characteristic
+polyhedra (see e.g. [4], §5). In our setting it is particularly simple to deﬁne.
+    Normalized blowing-ups are deﬁned in § 3 as blowing-ups followed by a nor-
+malization. These are the morphisms appearing in the top line of Sequence (1.1).
+We prove the main theorem 3.4 about the description of a sequence of normal-
+ized blowing-ups. The equation of each Yi is given in Proposition 3.3.
+    In § 4, we give a bound on the sum of the multiplicities running through
+the closed points of the exceptional locus of the normalized blowing-up Y1 →
+Y (Theorem 4.6). Finally in § 5 we apply the above results to describe a
+desingularization algorithm for the double covers of regular excellent surfaces.
+   The general setting in this work is the following: Z is an integral noetherian
+excellent regular scheme, Y → Z is a double cover. No assumption are made on
+the residue ﬁelds of Z. Except in § 2, Z will be of dimension 2.
+
+
+2     The multiplicity λp (Y )
+The multiplicity of Y at a closed point p is a local invariant depending only
+on OY,y . Let A be an integral noetherian regular ring. Let B = A[y] be an
+A-algebra with y 2 + ay + b = 0 for some a, b ∈ A. We will deﬁne a multiplicity
+λm (B) ∈ N for any maximal ideal m of A. It is a measure of singularity of B at
+the maximal ideals lying over m.
+
+2.1    Deﬁnition and basic properties for local rings
+Let us ﬁrst recall some elementary facts on regular rings. Let m be a maximal
+ideal of A, let d = dim Am and k = A/m. Consider
+                           Grm (A) = ⊕ℓ≥0 mℓ /mℓ+1 .
+It is canonically a homogeneous k-algebra. As A is regular, it is isomorphic to
+Symk (m/m2 ), the polynomial ring in d variables over k.
+    For any element non zero element a ∈ A, ordm (a), or simply ord(a) if m
+is implicitly given, is the supremum of the integers n such that a ∈ mn . It
+
+                                        4
+
+depends only on the ideal aA. By convention ord(0) = +∞. We have ord(ab) =
+ord(a) + ord(b) for a, b ∈ A \ {0}. As Grm (A) is an integral domain, ord extends
+to a valuation on Frac(A).
+
+Deﬁnition 2.1 Keep the above notation. If ordm (a) = ℓ 6= +∞, the initial
+form of a is the image of a in mℓ /mℓ+1 . The latter can be viewed as the k-
+vector space of homogeneous polynomials in d variables and of degree ℓ.
+
+Lemma 2.2. Let R be a noetherian ring. Let D be an R-algebra, free of rank
+2 as R-module. Then there exists y ∈ D such that D = R ⊕ Ry, and we have
+for some a, b ∈ R
+                             y 2 + ay + b = 0.
+Moreover, any other z such that D = R[z] satisﬁes z = uy + v with u ∈ R∗ and
+v ∈ R.
+Proof. Locally on Spec R, R is a direct summand in D ([2], II, §3, Proposition
+6 with M = R and N = D), then apply op. cit., Cor. 1 to Proposition 12
+with M = D and N = R, which implies that R is a direct summand in D. The
+existence of the equation on y and the statement on z are obvious.
+
+Deﬁnition 2.3 Let A be an integral noetherian regular ring. Let B be a re-
+duced A-algebra, free of rank 2 as A-module. Write B = A[y] with
+
+                                y 2 + ay + b = 0
+
+for some a, b ∈ A.
+    Fix a maximal ideal m ⊂ A. For each generator y as above, denote by
+
+                       λm (y) = min{2 ordm (a), ordm (b)}.
+
+Deﬁne
+                      λm (B) = sup{λm (y)} ∈ N ∪ {+∞},
+                                 y
+
+where the supremum runs through all generators y as above. Note that when an
+y is given, we only need to compute λ(y + c) for all c ∈ A to determine λm (B).
+
+Remark 2.4 The above multiplicity is very likely twice the invariant δ(B) ∈
+Q≥0 considered by [4], §5, in a much more general context involving Hironaka’s
+characteristic polyhedra. We use the notation λm (B) to keep coherent with our
+previous work [12], Déﬁnition 10 (with r = 1).
+   The multiplicity λm (B) is local, in the sense that it depends only on Am →
+Bm as shown in the lemma below.
+
+Lemma 2.5. Keep the above notation.
+(1) We have ordm = ordmAm on Frac(A).
+(2) Consider the Am -algebra Bm , then
+
+                               λm (B) = λmAm (Bm ).
+
+                                         5
+
+Proof. (1) This is because mn Am ∩ A = mn for all n ≥ 0.
+   (2) Clearly λm (B) ≤ λmAm (Bm ). Let z be a generator of Bm as Am -algebra.
+Let B = A[y]. Then there exists u ∈ A∗m , v ∈ Am such that y = uz + v.
+Approximate v by a sequence vn ∈ A: v = vn + αn with αn ∈ mn Am . Then
+B = A[y − vn ] and we have, if n is big enough,
+
+        λmAm (z) = λmAm (uz) = λmAm (y − vn ) = λm (y − vn ) ≤ λm (B).
+
+This proves the inverse inequality.
+Proposition 2.6. Let A, m and B be as in Deﬁnition 2.3, let k = A/m. Let
+∆B/A = (a2 − 4b)A be the discriminant ideal.
+(1) We have ordm (∆B/A ) = 0 if and only if A → B is étale at m.
+(2) We have λm (B) ≤ ordm (∆B/A ), with equality when char(k) 6= 2.
+(3) The following properties are equivalent:
+    (a) λm (B) = +∞,
+    (b) char(A) = 2, and for any generator y we have a = 0 and b is a square
+        in the m-adic completion Âm of A.
+    (c) B ⊗A Âm is non-reduced.
+    In particular, if A is excellent, then λm (B) is ﬁnite.
+Proof. (1) is clear.
+   (2) We have
+
+       ordm (∆B/A ) = ordm (a2 − 4b) ≥ min{ordm (a2 ), ordm (b)} = λm (y).
+
+Thus λm (B) ≤ ordm (∆B/A ). When char(k) 6= 2, by Lemma 2.5 we can suppose
+2 ∈ A∗ . Then B = A[y + a/2] and ordm (∆B/A ) = λm (y + a/2) ≤ λm (B) which
+implies the equality.
+   (3) We can suppose A is local.
+   (a) =⇒ (b) Suppose that λm (B) = +∞. Then there exists a sequence (cn )n
+in A such that λm (y + cn ) ≥ 2n. Thus
+
+                       a − 2cn ∈ mn ,   b − acn + c2n ∈ m2n .
+
+If char(A) 6= 2, then cn converges to some ĉ ∈ Âm and we have a = 2ĉ. As
+A → Âm is faithfully ﬂat, a ∈ A ∩ 2Âm = 2A. Thus ĉ = c ∈ A. Then b = c2
+and (y − c)2 = 0, contradiction because B is reduced by hypothesis. Therefore
+char(A) = 2. Then a ∈ ∩n mn = {0} and b + c2n ∈ m2n . This implies that cn
+converges to some ĉ ∈ Âm with ĉ2 = b.
+     (b) =⇒ (c) is clear. Let us prove (c) =⇒ (a). By Lemma 2.7(1) below, there
+exists α̂ ∈ Âm such that (y + α̂)2 = 0. If (αn )n is a sequence in A convergent to
+α̂, then λm (y + αn ) tends to +∞.
+     Finally, if A is excellent then so is B, hence B ⊗A Âm is reduced.
+
+                                         6
+
+Lemma 2.7. Let R be an integral normal domain, let D = R[T ]/(T 2 + aT + b).
+(1) The ring D is not integral if and only if T 2 + aT + b is reducible in R[T ].
+(2) The ring D is non-reduced if and only if T 2 + aT + b = (T + c)2 for some
+    c ∈ A.
+Proof. The “if” part in both statements are obvious. Let us prove the converse.
+Let K = Frac(R). As D is ﬂat over R, D → D ⊗R K is injective. If D is non-
+integral, then D ⊗R K is non-integral and we have T 2 +aT +b = (T +c1 )(T +c2 )
+for some c1 , c2 ∈ K. This implies that the ci ’s are integral over R, hence belong
+to R. The proof is similar for the non-reduced case.
+
+Remark 2.8 Keep the notation of Proposition 2.6. We have ∆B/A = 0 if and
+only if B is integral and Frac(B)/Frac(A) is an inseparable extension.
+
+Proposition 2.9. Keep the notation of Deﬁnition 2.3.
+(1) The Artinian ring B/mB is reduced if and only if λm (B) = 0. If k := A/m
+    is perfect or of char(k) 6= 2, then this is equivalent to A → B étale above m.
+(2) The ring B is regular at all maximal ideals lying over m if and only if
+    λm (B) ≤ 1.
+(3) If λm (B) ≥ 1, then there is only one maximal ideal n ⊂ B lying over m,
+    A/m → B/n is an isomorphism and we have Bn = Bm .
+Proof. By Lemma 2.5 we can suppose A is local. Suppose char(k) = 2 (otherwise
+the proof is easier). Let λm (y) = λm (B).
+    If λm (B) = 0 and ordm (a) = 0, then A → B is étale and B is regular.
+Suppose λm (B) = 0 and ordm (a) > 0. Then B/mB ≃ k[T ]/(T 2 + b̄). If
+T 2 + b̄ ∈ k[T ] is reducible, there exists α ∈ A∗ such that b − α2 ∈ m. This
+implies that λm (B) ≥ λm (y + α) > 0. Contradiction. So B/mB is a radicial
+quadratic extension of k and B is regular.
+    If λm (B) ≥ 1, then a, b ∈ m and B/mB ≃ k[T ]/(T 2). This implies that B is
+local with maximal ideal n, not étale over A, and we have k ≃ B/n. The equality
+Bn = Bm comes from the fact that for any u ∈ B \ n, the norm NB/A (u) ∈ A\ m.
+    Finally when λm (B) ≥ 1, we have y ∈ n and the relation y 2 + ay + b = 0
+implies that B is regular if and only if b ∈/ m2 , equivalently, λm (B) = 1.
+
+2.2    Algorithm for determining the multiplicity λp (Y )
+We now discuss how to ﬁnd a generator y of B reaching λm (B). We can restrict
+to char(k) = 2 by Proposition 2.6. The lemma below is a generalization of
+[10], Lemma 3.3(1-2). It gives an algorithm to ﬁnding a generator y of B with
+λm (B) = λm (y).
+Lemma 2.10. Let A, m, B be as in Deﬁnition 2.3 with char(A/m) = 2. We
+omit m from the subscripts of ord and λ.
+
+
+                                        7
+
+(1) If 2 ord(a) ≤ ord(b), then λ(B) = λ(y).
+(2) Suppose 2 ord(a) > ord(b). Let b̃ ∈ Grm (A) be the initial form of b (see
+    Deﬁnition 2.1).
+     (a) If b̃ is not a square in Grm (A), then λ(B) = λ(y).
+     (b) Suppose b̃ is a square in Grm (A): there exists c ∈ A such that b − c2 ∈
+         mℓ+1 where ℓ = ord(b). Then
+
+                                     λ(y + c) > λ(y).
+
+Proof. Up to multiplication by a unit of A, any other basis {1, z} of B over A
+is given by y = z + c for some c ∈ A. The equation of z is
+
+                       z 2 + (a + 2c)z + (b + ac + c2 ) = 0.
+
+Using the fact that ord is a valuation on Frac(A), the proof of (1) is similar to
+that of Lemma 3.3(1) in [10].
+   (2.a) If λ(B) > λ(y), there exists c ∈ A such that
+
+                        ord(b + ac + c2 ) > λ(y) = ord(b).
+
+As 2 ord(a) > ord(b), this implies that ord(b) = 2 ord(c) and ord(b+c2 ) > ord(b).
+This is equivalent to the initial form of b being a square in Grm (A).
+   (2.b) We have ord(b) = 2 ord(c). Moreover
+
+ 2 ord(a + 2c) > ord(b),   ord(b + ac + c2 ) = ord(b − c2 + (a + 2c)c) > ord(b).
+
+Hence λ(y + c) > ord(b) = λ(y).
+
+Remark 2.11 If char(A/m) = 2, and ∆B/A 6= 0, then λm (B) = ordm (∆B/A ) if
+and only if for some generator y of B we have 2 ordm (a) ≤ ordm (b). This then
+implies that λm (B) = λm (y).
+
+Example 2.12 Let A = Z[x]. Let
+
+                           B = Z[x, y]/(y 2 + x5 − 1).
+
+and let m ⊂ A be a maximal ideal.
+(1) As B ⊗Z Q is regular, we have λm (B) ≤ 1 if m ∩ Z = {0}.
+(2) Suppose now that m ∩ Z = ℓZ for some prime number ℓ. There exists a
+    monic f (x) ∈ Z[x] such that f (x) is irreducible in Fℓ [x] and m = (ℓ, f (x)).
+     (a) If ℓ 6= 2, 5, then λm (B) ≤ 1, with equality if and only if f (x) | x5 − 1
+         in Fℓ [x].
+     (b) If ℓ = 5, then λm (B) = 0 if f (x) is prime to x − 1 in F5 [x]. Let
+         m5 := (5, x − 1). Then λm5 (B) = ordm5 (x5 − 1) = 2.
+
+                                        8
+
+      (c) Let ℓ = 2. Let z = y − 1 ∈ B. Then z 2 + 2z + x5 = 0. Consider
+          m2 = (2, x). By Lemma 2.10(1), we have λm2 (B) = 2 ordm2 (2) = 2.
+      (d) Let ℓ = 2 and m 6= m2 , then λm (B) = 1. Indeed, the curve z 2 + x5 over
+          F2 is smooth away from the point x = z = 0, hence Spec B → Spec Z
+          is smooth at m and Bm is regular. Thus λm (B) = 1 (it is non-zero by
+          Proposition 2.9(2)).
+Proposition 2.13. Let (A, m) → (A′ , m′ ) be an étale extension of regular local
+rings. Then
+                        λm (B) = λm′ (B ⊗A A′ ).
+Proof. Let k, k ′ be the respective residue ﬁelds of A, A′ . As Grm (A) → Grm′ (A′ ) ≃
+Grm (A) ⊗k k ′ is injective, ordm coincides with ordm′ on A.
+    Let y ∈ B such that λm (y) = λm (B). Then B ′ = A′ [y]. If char(k) 6= 2 then
+λm′ (B ′ ) = ordm′ (∆B/A ) = ordm (∆B/A ). Suppose char(k) = 2. By Lemma 2.10,
+λm (y) = λm′ (y) = λm′ (B ′ ) (in the case 2.10(2) use the fact that if an element
+of Grm (A) is a square in Grm (A) ⊗k k ′ , then it is already a square in Grm (A)
+because k ′ is separable over k.)
+
+2.3     Multiplicity in the global case
+Deﬁnition 2.14 Let Z be an integral noetherian excellent regular scheme. Let
+ψ : Y → Z be a double cover (Deﬁnition 1.2). Then for any p ∈ Y with image
+q ∈ Z, deﬁne
+                 λp (Y ) = λq (Y ) = λmq (ψ∗ OY ⊗OZ OZ,q ).
+We deﬁne the discriminant ideal ∆Y /Z ⊂ OZ as the norm Nψ∗ OY /OZ of the
+annihilator ideal of Ω1Y /Z . It coincides with the usual deﬁnition when Z =
+Spec A is aﬃne.
+Remark 2.15 The multiplicity λp (Y ) is the same for all points p ∈ ψ −1 (q), so
+there is no ambiguity to denote it by λq (Y ). Moreover, when λp (Y ) ≥ 1, then
+ψ −1 (q) = {p} and k(q) → k(p) is an isomorphism (Proposition 2.9(3)).
+
+
+3     Normalized blowing-up
+For any scheme Y and closed subscheme Y0 ⊂ Y , we call the normalized blowing-
+up of Y along Y0 the normalization of the blowing-up of Y along Y0 . In this
+section we study the normalized blowing-up of Y at a singular point when Y
+is a normal double cover ψ : Y → Z of an integral noetherian excellent regular
+surface Z.
+
+3.1     Blowing-up regular schemes along a point
+Let A be a ring and let m ⊂ A be a maximal ideal. We recall below the explicit
+description of the blowing-up
+                             blm : Z ′ → Z = Spec A
+
+                                         9
+
+of Z along m. Denote by A    e the Rees algebra ⊕n≥0 mn . For any s ∈ m \ {0},
+                                                                          e and
+denote by s̃ the element s viewed as a homogeneous element of degree 1 in A
+     e                                      e
+by A(s̃) the homogeneous localization of A with respect to the positive powers
+of s̃. Denote by D+ (s̃) ⊆ Z ′ the principal open subset deﬁned by s̃.
+Proposition 3.1. Let A be an integral noetherian regular ring, let m ⊂ A be
+a maximal ideal of dim Am = 2. Let s, t be a system of generators of m and
+denote k = A/m.
+(1) We have
+                              Z ′ ≃ Proj A[S, T ]/(tS − sT ),
+    Z ′ is a regular surface, covered by the principal open subsets D+ (s̃) and
+    D+ (t̃). The homomorphism
+
+                                     e(s̃) = OZ ′ (D+ (s̃)),
+                  A[T1 ]/(sT1 − t) → A                              T1 7→ t̃/s̃
+
+                                                             e(s̃) .
+    of A-algebras is an isomorphism, it takes mr ⊆ A onto sr A
+(2) Let E = V (mOZ ′ ) ⊂ Z ′ be the exceptional divisor. Then
+
+                                           e(s̃) ) ≃ Spec k[t̄1 ]
+                            ∩D+ (s̃) = V (sA
+
+                                                                          e(s̃)
+    where t̄1 is the images of t1 := t̃/s̃ modulo s. Any maximal ideal of A
+    containing s is generated by s and one other element.
+(3) Let νE be the normalized discrete valuation on Frac(A) associated to the
+    generic point of E. Then νE (α) = ordm (α) for all α ∈ Frac(A).
+                                 e(s̃) .
+(4) If A is factorial then so is A
+(5) Let f ∈ A with ordm (f ) = n ≥ 1.
+     (a) Let V (f )′ be the strict transform of V (f ) in Z ′ . Then we have V (f )′ ∩
+         D+ (s̃) = V (f /sn ).
+     (b) The image of f /sn ∈ A    e(s̃) in A
+                                            e(s̃) /(s) ≃ k[t̄1 ] has degree at most equal
+         to n.
+Proof. (1), (2), (5.a) are standard.
+    (3) Let ξE be the generic point of E. By (2), ξE ∈ D+ (s̃) and OZ ′ ,ξE (−E)
+is generated by s. Therefore νE (s) = 1. If α ∈ mℓ \ mℓ+1 , then α/sℓ ∈ A    e(s̃) ,
+hence νE (α) ≥ ℓ = ordm (α).
+    Conversely, suppose νE (α) = ℓ. We have
+
+                           div(αs−ℓ ) = div(α) − ℓE ≥ 0
+
+                                         e(s̃) . So there exists N ≥ ℓ such that
+as Weil divisors on D+ (s̃). Thus α ∈ sℓ A
+   N −ℓ
+αs       ∈ m . Because the class of s in m/m2 ⊂ Grm (A) is a regular element,
+            N
+       ℓ
+α ∈ m , hence ordm (α) ≥ νE (α).
+
+                                           10
+
+    (4) Notice that s ∈ A   e(s̃) is a prime element by (2), and (A
+                                                                  e(s̃) )s = As is
+                 e
+factorial. Hence A(s̃) is factorial by Nagata’s criterion.
+    (5.b) Write                      X
+                             f=          αi ti sn−i + ǫn+1
+                                      0≤i≤n
+                              n+1
+with αi ∈ A and ǫn+1 ∈ m          . This implies that
+                                    X
+                          f /sn =                        e(s̃) .
+                                        αi ti1 + sc, c ∈ A
+                                    0∈i≤n
+
+Its class mod s has degree ≤ n.
+
+3.2      Normalization after blowing-up
+To determine the integral closure of an integral domain we will use Serre’s (S2 )
++ (R1 ) criterion ([9], Theorem 8.2.23).
+Lemma 3.2. Let (R, ν) be a discrete valuation ring with residue ﬁeld κ, let
+
+                               D = R[y]/(y 2 + αy + β)
+
+be an R-algebra with ∆D/R := α2 − 4β 6= 0.
+(1) If ν(α2 − 4β) = 0, then D is an étale R-algebra of rank 2;
+(2) If ν(α2 − 4β) = 1, then D is a discrete valuation ring totally ramiﬁed over
+    R with ramiﬁcation index 2;
+(3) The same is true if char(κ) = 2, ν(α) > 0, and ν(β) = 1;
+(4) If char(κ) = 2, ν(α) > 0, and β is not a square in κ, then D is a discrete
+    valuation ring with ramiﬁcation index 1 over R and inseparable quadratic
+    residue extension.
+Proof. Straightforward.
+Proposition 3.3. Keep the notation of Proposition 3.1 with A excellent. Let
+B be an integrally closed domain, free of rank 2 over A. Fix a generator y
+such that λm (y) = λm (B) and set r = [λm (B)/2]. Let s ∈ m \ m2 and let
+B1 := Ae(s̃) [y1 ] ⊂ Frac(B). Put
+
+                        y1 = y/sr , a1 = a/sr , b1 = b/s2r ∈ As .
+Then
+                            e(s̃) ;
+(1) ∆B1 /Ae(s̃) = s−2r ∆B/A A
+
+              e(s̃) ,
+(2) a1 , b1 ∈ A
+                                       y12 + a1 y1 + b1 = 0                  (3.1)
+                                        e(s̃) in Frac(B).
+      and B1 is the integral closure of A
+
+                                              11
+
+Proof. The hypothesis A excellent insures that λm (B) is ﬁnite (Proposition 2.6).
+Part (2) is immediate.
+    (1) We have a1 , b1 ∈ A   e(s̃) by Proposition 3.1(1). As B1 contains A
+                                                                          e(s̃) and
+              e
+is ﬁnite over A(s̃) , it is enough to show that B1 is integrally closed. As Ae(s̃) is
+regular and
+                             B1 ≃ A e(s̃) [T ]/(T 2 + a1 T + b1 ),
+
+B1 is a local complete intersection, hence satisﬁes (Sn ) for all n ≥ 1 ([9],
+Corollary 8.2.18 and Example 8.2.20). By Serre’s criterion it is enough to
+show that B1 is integrally closed at points of codimension 1. Moreover, as
+Spec B1 → Spec B is an isomorphism away from V (s), it is enough to check the
+property for codimension 1 points belonging to V (s), so lying over the generic
+point ξE of E (exceptional divisor of Z ′ → Z).
+   Let R = OZ ′ ,ξE . Then
+
+                       B1 ⊗Ae(s̃) R ≃ R[y1 ]/(y12 + a1 y1 + b1 ).
+
+We will apply Lemma 3.2. We have min{2νE (a1 ), νE (b1 )} ≤ 1. So we only have
+to check that when char(k(ξE )) = 2, νE (a1 ) > 0 and νE (b1 ) = 0, then b1 is not
+a square in k(ξE ). Under these hypothesis, we have 2 ordm (a) = 2νE (a) > 2r =
+νE (b) = ordm (b) (Proposition 3.1(3)).
+     Suppose that b1 is a square in k(ξE ) = Frac(A   e(s̃) /(s)). As A    e(s̃) /(s) is
+integrally closed (Proposition 3.1(2)), b1 is a square in A   e(s̃) /(s): there exist
+          e
+c1 , c2 ∈ A(s̃) such that
+                                  b1 = c21 + sc2 .
+There exist N ≥ r big enough, αN ∈ mN and β2N ∈ m2N such that c1 = αN /sN ,
+c2 = β2N /s2N . Then
+                           s2N −2r b = α2N + sβ2N .
+So the initial form of s2N −2r b ∈ m2N is a square in Grm (A), thus the same is
+true for that of b. This contradicts Lemma 2.10(2.b) and (1) is proved.
+
+3.3    Lipman’s resolution of singularities
+Theorem 3.4. Let Z be an integral noetherian excellent regular surface, let
+ψ : Y → Z be a normal double cover. Let p0 ∈ Y be a singular point, let
+q0 = ψ(p0 ).
+(1) Let Z ′ (resp. Y ′ ) be the blowing-up of Z (resp. of Y ) along the (reduced)
+    closed point q0 (resp. p0 ) and let Ỹ → Y ′ be the normalization. Then we
+    have a canonical commutative diagram
+
+                                                   blp0
+                                  Ỹ ❅      / Y′          /Y
+                                      ❅❅
+                                        ❅❅
+                                          ❅                    ψ
+                                       φ ❅❅
+ 
+
+                                                   blq0     
+
+                                              Z′          /Z
+
+
+                                           12
+
+    and φ : Ỹ → Z ′ is a double cover with discriminant ideal
+
+                            ∆Ỹ /Z ′ = OZ ′ (2rE) ⊗OZ ∆Y /Z ,
+
+    where r = [λq0 (Y )/2] and E is the exceptional divisor of Z ′ → Z.
+(2) If
+                           Yn → Yn−1 → ... → Y1 → Y0 = Y
+    is a sequence of normalized blowing-ups of (reduced) singular points pi ∈ Yi ,
+    then we have a commutative diagram
+
+                 Yn         / Yn−1        / ···     / Y1        / Y0
+
+                   ψn              ψn−1                  ψ1        ψ0 =ψ
+                 
+             
+                       
+            
+
+                Zn          / Zn−1        / ···     / Z1      / Z0 := Z
+
+    where Zi+1 → Zi is the blowing-up of the reduced closed point qi ∈ Zi , image
+    of pi , and each ψi : Yi → Zi is a normal double cover.
+(3) Suppose moreover that Y → Z is generically étale. Then the Galois group
+    G := Gal(K(Y )/K(Z)) acts on each Yi and Yi /G = Zi .
+Proof. (1) First we prove that Y ′ → Z factorizes through a ﬁnite morphism
+Y ′ → Z ′ . We can suppose that B is free over A. Let m ⊂ A be the maximal
+ideal corresponding to q0 . Let λm (y) = λm (B). Then a ∈ m and b ∈ m2 . Let
+n ⊂ B be the maximal ideal corresponding to p0 . It is easy to that
+
+                            nn = mn ⊕ mn−1 y = mn−1 n
+
+for all n ≥ 1. Therefore
+
+                      ⊕n≥0 nn = Ay + (⊕n≥0 mn ) + (⊕n≥0 mn )ỹ
+
+where ỹ is y viewed as homogeneous element of degree 1. Hence ⊕n≥0 nn is
+ﬁnite over ⊕n≥0 mn (see also [20], Proposition 5.2.5), and Y → Z induces a
+ﬁnite morphism Y ′ → Z ′ . Thus Ỹ coincides with the normalization of Z ′ in
+K(Y ). The local structure of Ỹ is described by Proposition 3.3, and we see that
+Ỹ → Z ′ is a normal double cover (this also follows from Example 1.4), and the
+discriminant ideal is OZ ′ (2rE) ⊗OZ ∆Y /Z .
+    (2) and (3) follow from (1).
+
+Remark 3.5 Suppose Z = Spec A is aﬃne and Y = Spec B is free over A. Con-
+sider the graded A-algebra Ã[W ] with deg W = r. We see using Proposition 3.3
+that Ỹ is the closed subscheme of Proj(Ã[W ]) deﬁned by the equation
+
+                                   W 2 + ãW + b̃ = 0,
+
+where ã, b̃ are respectively a and b considered as homogeneous elements in Ã of
+respective degrees r, 2r.
+
+                                           13
+
+3.4    The exceptional locus of Lipman’s resolution of singu-
+       larities
+Keep the assumption and notation of Theorem 3.4. Suppose that Lipman’s
+sequence for the singular point p0 ∈ Y0 terminates at YN . The morphism
+YN → Y0 is an isomorphism away from p0 . In this subsection we study the
+scheme structure of the pre-image of p0 by YN → Y0 (the exceptional locus of
+YN → Y0 ).
+   We ﬁx a prime divisor E0 ∋ q0 of Z0 , regular at q0 . Typically, for our
+applications in mind, Z is a relative curve over a discrete valuation ring R, and
+E0 is the closed ﬁber of Z. Let
+
+                              E := YN ×Y0 ψ0∗ E0 ⊂ YN .
+
+This is the union of the strict transform of ψ ∗ E0 in YN and the exceptional locus
+of YN → Y0 . In the above example, E is the closed ﬁber of YN . We would like
+to know the structure of each irreducible component of E, their multiplicities in
+E, and how they intersect each other.
+    The double cover Y0 → Z0 induces a ﬁnite ﬂat morphism E → ZN ×Z0 E0
+of degree 2. We start by describing ZN ×Z0 E0 . For all 1 ≤ i ≤ N , denote by
+Ei ⊂ Zi the exceptional divisor of Zi → Zi−1 and by Ei′ (including i = 0) its
+strict transform in ZN .
+Lemma 3.6. Write                              X
+                              ZN ×Z E0 =              mi Ei′
+                                           0≤i≤N
+
+as Cartier divisors of ZN .
+(1) For 1 ≤ i ≤ N , Ei = P1k(qi−1 ) . For all 0 ≤ i ≤ N , the canonical morphism
+    Ei′ → Ei is an isomorphism. Denote by qi′ ∈ Ei′ the pre-image of qi .
+(2) The union ∪0≤i≤N Ei′ ⊂ ZN is a tree of irreducible components with trans-
+    verse intersections.
+(3) The multiplicities mi can be determined inductively as follows: m0 = m1 =
+    1. Let i ≥ 1. If qi is the intersection point of Ei with the strict transform
+    of Ei−1 in Zi , then mi+1 = mi + mi−1 . Otherwise, mi+1 = mi .
+Proof. (1) This is because Ei′ → Ei is ﬁnite birational and Ei is normal.
+   (2)-(3) Apply inductively Proposition 3.1 to the Zi ’s. One can take for s a
+generator of OZ (−E0 )q0 .
+Proposition 3.7. Keep the notation of Lemma 3.6. For 1 ≤ i ≤ N , set
+                                          −1
+                                   Θ′i = ψN  (Ei′ )
+
+with the reduced structure.
+
+
+
+                                         14
+
+(1) The scheme Θ′i is irreducible if and only if ψi−1 (Ei ) is irreducible. When it
+    is reducible, it has two irreducible components, each of them is isomorphic
+    to Ei′ by ψN , and has multiplicity mi in E.
+(2) Suppose that λqi−1 (Yi−1 ) is odd, then Θ′i → Ei′ is an isomorphism, and the
+    multiplicity of Θ′i in E is 2mi .
+(3) Suppose that λqi−1 (Yi−1 ) is even and Θ′i is irreducible. Then the latter
+    has multiplicity mi in E. Moreover, if char(k(q0 )) 6= 2, then Θ′i → Ei′ is
+    generically étale.
+Proof. Note that any ﬁnite birational morphism onto Ei′ is an isomorphism
+because the latter is normal. So it is enough to study Θ′i at its generic points.
+Note that the multiplicity in E of an irreducible component of Θ′i is equal to mi
+multiplied by the ramiﬁcation index over Ei′ .
+    As YN → Yi is an isomorphism over an open neighborhood of the generic
+point of Ei , it is enough to show the statement for Θi := ψi−1 (Ei ). Moreover
+without loss of generalities we can assume that i = 1. Then all the statements
+of the proposition follow from direct observations on an aﬃne equation (3.1) of
+Y1
+
+Remark 3.8 Keep the notation of Propositions 3.7 and 3.3.
+(1) The scheme ψ1−1 (E1 ) is irreducible if and only if the polynomial
+
+                                T 2 + ā1 T + b̄1 ∈ k[t̄1 ][T ]
+
+    (where ¯∗ means the class modulo s) is irreducible. The same statement
+    applies to ψi−1 (Ei ) if a similar equation of Yi is known.
+(2) Suppose char(k(q0 )) = 2 and Θ1 is irreducible. The Θ′1 → E1′ is generically
+    étale if and only if 2 ordm (a) = λq0 (Y ).
+(3) The structure of Θ′1 , in the case (3) of Proposition 3.7 is more complicate
+    to describe. We have to determine inductively the strict transform of Θ1
+    after each blowing-up.
+
+Proposition 3.9. Keep the notation of Lemma 3.6 and Proposition 3.7. Let
+0 ≤ i 6= j ≤ N be such that Ei′ ∩ Ej′ = {q} 6= ∅.
+(1) If Θ′i has two irreducible components Θ′i,1 , Θ′i,2 and similarly for Θ′j , then up
+    to renumbering, Θ′i,1 and Θ′j,1 (resp. Θ′i,2 and Θ′j,2 ) intersect transversely
+    at a single k(q)-rational point, and Θ′i,1 ∩ Θ′j,2 = Θ′i,2 ∩ Θ′j,1 = ∅.
+
+(2) If Θ′i has two irreducible components and Θ′j is irreducible, then Θ′j inter-
+    sects transversely each of these components at a single k(q)-rational point.
+    These intersection points can be the same.
+
+
+
+
+                                           15
+
+(3) Suppose that Θ′i and Θ′j are both irreducible. Denote by ei , ej the respective
+    ramiﬁcation indexes of ψN at the generic points of Θ′i , Θ′j . Then we have
+
+                            ei [k(Θ′i ) : k(Ei′ )] = ej [k(Θ′j ) : k(Ej′ )] = 2
+
+      and                       X
+                                         ip (Θ′i , Θ′j )ei ej [k(p) : k(q)] = 2
+                                −1
+                             p∈ψN  (q)
+
+      where ip (Θ′i , Θ′j ) denotes the intersection multiplicity of Θ′i and Θ′j at p.
+Proof. Let {Θ′i,α }α , {Θ′j,β }β be the respective irreducible components of Θ′i and
+Θ′j . Let ei,α be the ramiﬁcation index of ψN at the generic point of Θ′i,α ,
+similarly for ej,β . We have
+                   X
+                       ei,α [k(Θ′i,α ) : k(Ei′ )] = [K(Y ) : K(Z)] = 2.
+                       α
+
+Similarly for Θ′j . By general intersection theory, we have
+            X
+                        ∗
+                   ip (ψN Ei′ , ψN
+                                 ∗
+                                   Ej′ )[k(p) : k(q)] = [K(Y ) : K(Z)]iq (Ei′ , Ej′ ) = 2,
+          −1
+       p∈ψN  (q)
+
+                  ∗
+                                    P         ′                   ∗  ′
+and by deﬁnition ψN Ei′ =             α ei,α Θi,α (similarly for ψN Ej ). Therefore
+                       X      X
+                                    ip (Θ′i,α , Θ′j,β )ei,α ej,β [k(p) : k(q)] = 2.
+                       −1
+                    p∈ψN  (q) α,β
+
+All coeﬃcients in the above equality are positive except the intersection multi-
+plicities ip which can be zero. This leaves very few possibilities for the combi-
+nations of the various coeﬃcients.
+                                                   −1
+    We also notice that through any point of ψN       (q) ∩ Θ′i passes a point of
+ −1          ′
+ψN (q) ∩ Θj , by the going down property of YN → ZN (see [19], tag 00HU).
+The proposition is then proved by straightforward case-by-case analysis.
+
+3.5      A complete example of resolution of singularities
+Example 3.10 Let Z = P1Z2 be the projective line over the 2-adic integers.
+Fix two integers n, m such that at least one of them is non-zero. Let Y be the
+projective scheme over Z2 associated to the aﬃne equation
+
+                                y 2 = (s2 − 2)3 + 16ms2 + n2 .
+
+Replacing y with y + s3 + n, we get
+
+                     y 2 + 2(s3 + n)y + 2(3s4 + ns3 + 2m1 s2 + 4) = 0                        (3.2)
+
+where m1 := −(4m + 3). This is a normal Weierstrass model of a genus 2
+curve ([10], Lemma 2.3.1(c)). The closed ﬁber of Y over Spec Z2 is a double
+
+                                                  16
+
+(multiplicity 2) projective line over F2 . Denote it by 2Θ0 . The aim of this
+example is to determine the minimal resolution of singularities of Y when 8 ∤ n.
+Denote by t = 2 the uniformizing element of Z2 .
+   For each singular point of Y , the notations Yi and Zi refer to the blowing-
+ups described by Theorem 3.4. We use the same notation for diﬀerent singular
+points for simplicity. When we describe the equations of Yi , D+ (f˜) always
+means open subset in Zi+1 (for instance, we frequently consider D+ (s̃) as open
+subset of Zi for i > 1).
+   (I) We ﬁrst deal with the point q∞ corresponding to 1/s = 0. Let x = 1/s
+and z = y/s3 , we get:
+              z 2 + 2(1 + nx3 )z + 2x2 (3 + nx + 2m1 x2 + 4x4 ) = 0.                     (3.3)
+with λq∞ (Y ) = 2 = λq∞ (z).
+   (I.1) First blowing-up. We blow-up Y1 → Y along the point lying over q∞ .
+Over D+ (x̃), we have t = xt1 and
+              z12 + t1 (1 + nx3 )z1 + t1 x(3 + nx + 2m1 x2 + 4x4 ) = 0.                  (3.4)
+There is a unique singular point p∞,1 = (t1 = x = z1 = 0) with multiplicity
+λp∞,1 (Y1 ) = 2.
+   Over D+ (t̃), the equation is (x1 = x/t)
+          w12 + (1 + nt3 x31 )w1 + tx21 (3 + ntx1 + 2m1 t2 x21 + 4t4 x41 ) = 0
+which deﬁnes two regular points at x1 = 0 (poles of t1 ).
+    The exceptional locus Θ1 (with the reduced structure) of Y1 → Y is union
+of two projective lines over F2 , of multiplicity 1, intersecting at p∞,1 . The strict
+transform of Θ0 intersects Θ1 at t1 = 0 which is p∞,1 .
+    (I.2) Second blowing-up. We blow-up Y2 → Y1 along p∞,1 . We use Equa-
+tion (3.4). Over D+ (x̃) ⊂ Z1 we have (letting t1 = xt2 )
+              z22 + t2 (1 + nx3 )z2 + t2 (3 + nx + 2m1 x2 + 4x4 ) = 0.
+Over D+ (t̃1 ), we have x = t1 x1 and
+          w22 + (1 + nt31 x31 )w2 + x1 (3 + nt1 x1 + 2m1 t21 x21 + 4t41 x41 ) = 0.
+We see that the exceptional locus is a smooth conic of multiplicity 2 (we have t =
+x2 t2 ). Its intersection with the strict transform of Θ0 is the point t2 = z2 = 0.
+The intersection with the strict transform of Θ1 are the points x1 = 0, w2 = 0, 1.
+    The exceptional locus of Y1 → Y and Y2 → Y1 as well as the strict transforms
+of Θ0 are as shown in the ﬁgure below. In Y2 , the components are isomorphic
+to P1F2 , the intersections are transverse at rational points.
+
+
+     2                                   2                                 2
+
+
+
+                                                                                     2
+
+
+
+                                             17
+
+   The numbers indicate the multiplicities of the components.
+    (II) Now come back to Equation (3.2). The singularities depend on the
+parity of n. Indeed, when n is even, there is a unique singular point p0 , lying
+above q0 = (s = 2 = 0) with λq0 (Y ) = 3. When n is odd, there are two singular
+points: p0 with λq0 (Y ) = 2 and p∗ lying over q∗ = (s + 1 = 2 = 0), with
+λq∗ (Y ) = 2.
+    We start with the simpler case n is odd .
+    (II.1) First blowing-up. We blow-up Y1 → Y along p0 . We use Equa-
+tion (3.2). The equation of Y1 over D+ (s̃) is (2 = t = st1 ):
+
+              y12 + t1 (s3 + n)y1 + st1 (3s2 + ns + 2m1 st1 + t21 ) = 0.          (3.5)
+
+There is a unique singular point p1 , lying over q1 = (s = t1 = 0), with λq1 (Y1 ) =
+2. Over D+ (t̃), we have s = s1 t and
+
+              w12 + (s31 t3 + n)w1 + t(3s41 t2 + ns31 t + 2m1 s21 + 1) = 0
+
+which is regular at s1 = 0 (two points, poles of t1 ).
+    The exceptional locus Θ1 of Y1 → Y above p0 is a reduced degenerate conic
+as n is odd. It meets the strict transform of Θ0 at p1 .
+    (II.2) Second blowing-up. We blow-up Y2 → Y1 along p1 . We use Equa-
+tion (3.5). Over D+ (s̃) ⊂ Z2 , we have t1 = st2 and
+
+                y22 + t2 (s3 + n)y2 + t2 s(n + 3s + m1 st2 + st22 ) = 0.          (3.6)
+
+Over D+ (t̃1 ), the equation of Y2 is (s = s2 t1 )
+
+           w22 + (n + s32 t31 )w2 + s2 t1 (3s22 t1 + ns2 + m1 s2 t1 + t1 ) = 0,
+
+which is regular at s2 = 0.
+    The exceptional locus Θ2 is union of two projective lines over F2 , of multi-
+plicity 2 and intersecting at p2 = (t2 = y2 = s = 0) with λp2 (Y2 ) = 2. They
+have multiplicity 2 because t = s2 t2 . The intersection with the strict transform
+of Θ0 is p2 , and with that of Θ1 is s2 = 0 (two points).
+    (II.3) Third blowing-up. We blow-up Y2 along the unique singular point p2
+(lying over p0 ). Over D+ (s̃) ⊂ Z3 , we have (t2 = st3 )
+
+               y32 + t3 (s3 + n)y3 + t3 (n + 3s + m1 s3 t3 + s3 t23 ) = 0.
+
+Over D+ (t̃2 ), we have (s = s3 t2 )
+
+             w32 + (s33 t32 + n)w3 + s3 (n + 3s3 t2 + m1 s3 t22 + s3 t32 ) = 0.
+
+The exceptional locus Θ3 is a smooth conic, intersecting the strict transform of
+Θ2 at the two rationals points s3 = 0. It intersects the strict transform of Θ0
+at the rational point t3 = 0. As t = s3 t3 , Θ3 has multiplicity 3. We ﬁnished
+solving the singularity p0 . We represent the three blowing-ups above in the
+picture below.
+
+                                            18
+
+                                                                                       2
+                                                             2
+     2                                              2                         2    3
+                          2
+
+                                                             2
+                                                                                       2
+
+
+
+
+In the last step all components are isomorphic to P1F2 and the intersection points
+are rational and transverse.
+    (III) The resolution of p∗ is obtained by one single blowing-up. The excep-
+tional locus consists in a copy of P1F2 of multiplicity 1, meeting transversely the
+strict transform of Θ0 at a rational point.
+    The complete resolution of the projective Weierstrass model deﬁned by Equa-
+tion (3.2) is of type [IV∗ − I∗1 − α] in [16], page 175.
+   (IV) Suppose from now on that n = 2n1 is even . We already solved p∞ in
+Part (I). It remains to solve the singularity at p0 . We have λp0 (Y ) = 3 given by
+Equation (3.2).
+   (IV.1) First normalized blowing-up. We use Equation (3.2). Let Y1 → Y be
+the normalized blowing-up along p0 . The equation over D+ (s̃) is
+         y12 + st1 (s2 + n1 t1 )y1 + t1 (3s3 + n1 s3 t1 + m1 s2 t1 + st21 ) = 0.       (3.7)
+The point at inﬁnity, s1 = 0 in D+ (t̃), is regular in Y1 . The exceptional locus
+Θ1 is 2P1F2 . It intersects the strict transform of Θ0 at p1 = (s = t1 = y1 = 0),
+with λp1 (Y1 ) = 4.
+    (IV.2) Normalized blowing-up along p1 . We use Equation (3.7). Over D+ (s̃) ⊂
+Z1 , we have t1 = st2 and
+                y22 + st2 (s + n1 t2 )y2 + t2 (3 + n1 st2 + m1 t2 + t22 ) = 0.         (3.8)
+The point at inﬁnity s2 = 0 (s = t1 s2 ), is regular in Y2
+    The exceptional locus Θ2 is a rational curve over F2 of multiplicity 2, with
+a cusp p2 at t2 = 1. The intersection of Θ2 with the strict transform of Θ0 is
+t2 = 0, and with that of Θ1 at s2 = 0. The strict transforms of Θ0 and of Θ1
+do not intersect each other.
+    The only possible singular point of Y2 lying over p0 is p2 . Let us compute
+λp2 (Y2 ). We make the change of variables t2 = x + 1 and y2 = z2 + 1. We have
+                     z22 + n1 s(1 + x)2 z2 + x3 − ms4 (1 + x)4 = 0.                    (3.9)
+    The strict transform of Θ1 in Y2 is a projective line over F2 , with self-
+intersection −1. It is an exceptional divisor.
+    (IV.3.1) Suppose n1 is odd . Then λp2 (Y2 ) = 2. After blowing-up p2 , the
+exceptional locus Θ3 is a union of two projective lines over F2 , of multiplicity 2,
+intersecting each other at a rational point p3 . It intersects the strict transform
+of Θ2 at p3 . Moreover the point p3 is regular in Y3 . The minimal regular model
+over Z2 of the genus 2 curve deﬁned by Equation (3.2) has type [2IV − 2] in [16],
+page 165.
+
+                                             19
+
+                            2         2             2
+
+
+                                                        2
+
+
+                                                        2
+
+
+
+   (IV.3.2) Suppose n1 = 2n2 is even , then λp2 (Y2 ) = 3. We have an equation
+
+                  z22 + n2 s3 (1 + x)3 z2 + x3 − ms4 (1 + x)4 = 0.         (3.10)
+
+with p2 = (s = x = z2 = 0). The blowing-up Y3 → Y2 along p2 contains a unique
+singular point p3 ∈ D+ (s̃) deﬁned by s = x/s = z2 /s = 0, with multiplicity
+λp3 (Y3 ) = 4. The exceptional locus Θ3 is isomorphic to P1F2 and has multiplicity
+4.
+    (IV.3.3) For the normalized blowing-up Y4 → Y3 along p3 , the equation of
+Y4 over D+ (s̃) ⊂ Z4 is
+
+               z32 + n2 s2 (1 + sx1 )3 z3 + x31 s − ms2 (1 + sx1 )4 = 0.
+
+Blow-up-normalize Y4 → Y3 along p3 gives an equation over D+ (s̃)
+
+                z42 + n2 (1 + s2 x2 )3 z3 + x32 − m(1 + s2 x2 )4 = 0.
+
+If n2 is odd (so 4 divides exactly n), then the closed ﬁber of the Lipman’s
+resolution of the initial Weierstrass model is
+                        2         2            2
+
+                                                                  2
+                                                4
+
+                                           2
+
+
+
+where the last (elliptic) component is given by the equation
+
+                                w2 + w + x3 + m̄ = 0
+
+over F2 . After contracting the strict transforms of Θ1 and Θ3 , we ﬁnd the
+minimal regular model which has type [2I0−2 ] in [16], page 159,
+                            2         2             2
+
+
+                                                            2
+
+
+
+
+This type is denoted by [2I0 − 3] in [11], pp. 71-72, for compatibility with the
+more general types [2K − ℓ].
+
+                                          20
+
+Remark 3.11 The genus 2 curve in the above example is that of [11], Exemple
+1 page 74. But the resolution of singularities there is incorrect. Nevertheless, the
+integer d deﬁned in op. cit., Théorème 1, page 70, is equal to 5 in Case (IV.3.3).
+It still satisﬁes the inequalities stated at the beginning of that example.
+    To ﬁnd the Artin conductor of the Jacobian of our genus 2 curve, we need
+not only the minimal resolution X → Y , but also the integer d mentioned above.
+The latter can be read from the closed ﬁber of the last Zi when there is no more
+singularities. We will come back to this question in [13].
+
+3.6    Simultaneous resolution of singularities
+Let f : X → Y be a ﬁnite morphism of integral noetherian excellent surfaces.
+S. Abhyankar [1] asked for the existence of resolutions of singularities X̃ → X
+and Ỹ → Y such that f extends to a ﬁnite morphism X̃ → Ỹ . He proved
+that the answer is no if deg f > 3, and is positive when f is a Galois cover
+of degree ≤ 3 of algebraic surfaces over a ﬁeld of characteristic diﬀerent from
+deg f . For normal surfaces ﬁbered over a discrete valuation ring, similar results
+are obtained in [14], §7 without assumption on the residue characteristics.
+Corollary 3.12. Let f : X → Y be a ﬁnite morphism of degree 2 of integral
+noetherian excellent surfaces. Then there are resolutions of singularities X̃ → X
+and Ỹ → Y such that f extends to a ﬁnite morphism X̃ → Ỹ .
+Proof. Replacing Y with a resolution of singularities of Y and then X by the
+normalization of Y in K(X), we can assume that Y is regular. Then X → Y is
+a normal double cover (Example 1.4). Applying Theorem 3.4 to X → Y then
+yields a simultaneous resolution of singularities.
+
+
+4     Variations of the multiplicities after normal-
+      ized blowing-ups
+In this section we will give a bound on the multiplicities of the points of Ỹ lying
+over E in terms of λq0 (Y ) (Theorem 4.6). It says roughly that the sum of the
+new multiplicities is bounded by λq0 (Y ). This is done by comparing them to
+the multiplicities of the double cover Ỹ ×Z ′ E → E when Ỹ ×Z ′ E is reduced,
+or of a “twisted” version of λq otherwise.
+
+4.1    Double covers of P1k
+We ﬁrst give some properties of the multiplicities λq on double covers of regular
+curves.
+Proposition 4.1. Let E be an integral regular curve over a ﬁeld k. Let Θ → E
+be a double cover (Θ may be reducible) and let π : Θ̃ → Θ be the normalization
+map.
+
+
+
+                                        21
+
+(1) Let q ∈ E be a closed point q ∈ E. We have
+
+                          dimk ((π∗ OΘ̃ )q /OΘ,q ) = [λq (Θ)/2].
+
+(2) Let p ∈ Θ be a point lying over q. If λq (Θ) is odd, then there is only one
+    point p̃ ∈ Θ̃p , and we have k(p) = k(p̃).
+(3) If E is proper over k, then
+                                             X
+                       pa (Θ) = pa (Θ̃) +          [λq (Θ)/2][k(q) : k],
+                                             q∈E
+
+    where pa (C) = 1−χ(OC ) denotes the arithmetic genus of any proper variety
+    C over k.
+Proof. (1)-(2) Similar to [12], Lemme 6. The proof of (3) is similar to [9],
+Proposition 7.5.4.
+   Next we consider the case E = P1k . Fix an integer r ≥ 1 and two homoge-
+neous polynomials a(s, t), b(s, t) ∈ k[s, t] such that
+
+                             max{2 deg a, deg b} = 2r.
+
+Consider the curve Θ in the weighted projective space P(1, 1, r) deﬁned by the
+equation
+                          z 2 + a(s, t)z + b(s, t) = 0.
+Lemma 4.2. Let Θ be as above and suppose that Θ is reduced. Denote by
+Θ̃ → Θ the normalization map.
+(1) We have a ﬁnite ﬂat morphism Θ → P1k of degree 2. Moreover H 0 (Θ, OΘ ) =
+    k and pa (Θ) = r − 1.
+(2) If Θ → P1k is generically étale then
+                               X
+                                    λq (Θ)[k(q) : k] ≤ 2r.
+                               q∈P1k
+
+
+(3) Suppose that Θ → P1k is purely inseparable.
+
+    (a) If H 0 (Θ̃, OΘ̃ ) = k, then
+                               X
+                                   2[λq (Θ)/2][k(q) : k] ≤ 2r − 2.
+                             q∈P1k
+
+
+    (b) Otherwise, we have
+                                X
+                                       2[λq (Θ)/2][k(q) : k] = 2r,
+                               q∈P1k
+
+        and λq (Θ) is even if k(q) = k.
+
+                                            22
+
+(4) In all cases, λq (Θ) ≤ 2r.
+Proof. (1) The ﬁrst part is clear and the second part can be proved by deforming
+the curve to a hyperelliptic curve of genus r − 1, or by computing the Čech
+cohomology of OΘ with the aﬃne covering {D+ (s), D+ (t)}.
+    (2) Denote by ∆(t) = ∆Θ/P1k ∈ k[t]. For any closed point q ∈ Spec k[t],
+λq (Θ) ≤ ordq (∆) by Proposition 2.6(2). We have
+                      X
+                              λp (Θ)[k(q) : k] ≤ deg ∆(t) ≤ 2r.
+                   q∈Spec k[t]
+
+We are done if t = ∞ corresponds to a regular point. Otherwise we have
+λ∞ (Θ) ≤ deg t2r ∆(1/t) = 2r − deg ∆(t).
+   (3.a) We have pa (Θ̃) = dim H 1 (Θ̃, OΘ̃ ) ≥ 0. The desired inequalities results
+from Proposition 4.1(3) and (1).
+   (3.b) Let k̃ = H 0 (Θ̃, OΘ̃ ) with k ( k̃. Then Θ̃ is a k̃-scheme. The morphism
+Θ̃ → Θ → P1k induces a morphism Θ̃ → P1k̃ :
+
+                                    Θ̃        / P1
+                                                 k̃
+
+
+                                    
+            
+
+                                    Θ         / P1 .
+                                                 k
+
+We see that Θ̃ → P1k̃ has degree 2/[k̃ : k], thus [k̃ : k] = 2, and Θ̃ → P1k̃ is
+birational hence an isomorphism. Therefore pa (Θ̃) = −1 and
+                          X
+                              [λq (Θ)/2][k(q) : k] = r
+                            q∈P1k
+
+
+by Proposition 4.1 and (1). Note that k̃/k is inseparable because k(Θ) = k(Θ̃) =
+k̃(t) is inseparable over k(t).
+     Let k(q) = k and suppose that λq (Θ) is odd. Let p ∈ Θq and let p̃ ∈
+Θ̃p . Then k(p) = k(q) = k because p is singular, and k(p̃) = k(p) = k by
+Proposition 4.1(2). But k̃ = H 0 (Θ̃, OΘ̃ ) ⊆ k(p̃), contradiction.
+     (4) is an immediate consequence of (2) and (3).
+
+4.2    Multiplicity along a regular closed subscheme
+Let ψ : Y → Z be a normal double cover of an integral noetherian regular
+excellent scheme. Let Γ be an integral regular closed subscheme of Z. We deﬁne
+in this subsection a multiplicity λΓ,q (Y ) which is just λq (Y ×Z Γ) if Y ×Z Γ → Γ
+is a double cover (equivalently if Y ×Z Γ is reduced). If this condition is not
+satisﬁed, we have to “twist” Y ×Z Γ to get a double cover.
+Lemma 4.3. Let A be integral noetherian regular and excellent. Let B be a
+normal and free A-algebra of rank 2. Suppose that A → B has ramiﬁcation
+index 2 above some prime ideal q ⊂ A of height 1, and that A/q is normal.
+
+                                         23
+
+(1) There exists a generator y of B such that a ∈ q, b ∈ q \ q2 .
+(2) Fix an y given by (1). If m ∈ V (q) is a maximal ideal of A such that
+    Am /qAm is regular, then λm (B) = λm (y − c) for some c ∈ q (depending in
+    m).
+Proof. (1) Let y be a generator of B. As A → B has ramiﬁcation index 2 above
+q, B/qB ≃ (A/q)[T ]/(T 2 + āT + b̄) is non-reduced. So T 2 + āT + b̄ is a square in
+Frac(A/q)[T ]. But A/q is integrally closed, so T 2 + āT + b̄ is in fact a square in
+(A/q)[T ]. Therefore translating y by a suitable element of A we have a, b ∈ q.
+            / q2 because B ⊗A Aq is normal.
+Moreover, b ∈
+    (2) Suppose that for some c1 ∈ A we have
+
+ λm (y − c1 ) = min{2 ordm (a + 2c1 ), ordm (b + (a + 2c1 )c1 − c21 )} > ℓ := λm (y).
+
+This implies that ordm (c1 ) ≥ ℓ/2 and ordm (b − c21 ) > ℓ. Therefore
+
+                             c21 ∈ b + mℓ+1 ⊂ q + mℓ+1 .
+
+In A/p, we have c̄21 ∈ m̄ℓ+1 . As A/p is regular at m̄, this implies that ordm̄ (c̄1 ) ≥
+r := ⌈(ℓ + 1)/2⌉. In other words c1 = c + s with c ∈ q and s ∈ mr . As r > ℓ/2,
+we have λm (y − c) = λm ((y − c1 ) + s) > ℓ. Repeating this operation if necessary
+we will get a generator y − c as desired, because λm (B) is ﬁnite.
+
+Deﬁnition 4.4 Let ψ : Y → Z be as in the beginning of this subsection. Let
+Γ ⊂ Z be an integral regular closed subscheme of codimension 1 such that ψ
+has ramiﬁcation index 2 above the generic point of Γ. Then Θ := Y ×Z Γ → Γ
+is ﬁnite ﬂat of rank 2, but Θ is not reduced. So we can’t deﬁne the multiplicity
+λq (Θ) as in Deﬁnition 2.3. Instead we will deﬁne a “twisted” version for Θ.
+    We construct an eﬀective divisor D on Γ as follows. Let U ⊆ Z be an aﬃne
+open subset such that OZ (−Γ)|U = sOZ (U ) is free, and that ψ −1 (U ) → U is
+free, deﬁned by some equation
+
+                                   y 2 + ay + b = 0
+
+such that a, b ∈ sOZ (U ) and b ∈ / s2 OZ (U ) (Lemma 4.3(1)). Note that any
+another similar equation of ψ (U ) will give another b′ = ub + s2 c with u a
+                              −1
+
+unit and c ∈ OZ (U ). Then deﬁne D|U∩Γ as the zero divisor of (s−1 b)|U∩Γ . It
+does not depend on the choice of the equation. This allows to deﬁne an eﬀective
+divisor D on Γ.
+   Now for any q ∈ Γ we put
+
+                         λΓ,q (Y ) = ordq (OΓ (−D)q ) < +∞
+
+(order at q of the ideal OΓ (−D)q ⊆ OΓ,q ). It will be crucial for the proof of
+Theorem 4.6(1) that we can compute λΓ,q (Y ) with the same equation for all
+points in a suitable open subset of Γ.
+
+Lemma 4.5. Let Y → Z and Γ be as above. Let ξΓ be the generic point of Γ,
+let q ∈ Γ be a closed point and let Θ = Y ×Z Γ.
+
+                                          24
+
+(1) If Y → Z has ramiﬁcation index 2 over ξΓ , then
+
+                                 λΓ,q (Y ) ≥ λq (Y ) − 1 ≥ 0.
+
+(2) Suppose that Y → Z has ramiﬁcation index 1 above ξΓ . Then Θ → Γ is a
+    double cover and λq (Θ) ≥ λq (Y ).
+Proof. We can suppose that Z = Spec A with (A, m) local. Observe that for
+any α ∈ A,
+                          ordm (α) ≤ ordm (α|Γ )
+where α|Γ denotes the image of α in O(Γ).
+    (1) We can suppose that Z = Spec A is local. Let s ∈ m be a generator
+of the ideal OZ (−Γ). Let y ∈ B be such that λm (B) = λm (y) and a, b ∈ sA
+(Lemma 4.3(2)). By deﬁnition
+
+        λq (Y ) ≤ ordq (b) = ordq (b/s) + 1 ≤ ordq ((b/s)|Γ ) + 1 = λΓ,q (Y ) + 1
+
+(the last equality comes from the deﬁnition of λΓ,q (Y )). On the other hands, as
+a, b ∈ m, we have λq (Y ) ≥ 1.
+    (2) Let B = A[y] with λq (Y ) = λm (y). The projection Θ → Γ is ﬁnite ﬂat
+of rank 2. The scheme Θ is reduced because it is a local complete intersection
+(Lemma 2.2) and reduced at the generic points. Hence Θ → Γ is a double cover.
+An equation of Θ is given by
+
+                               ȳ 2 + āȳ + b̄ = 0 mod s
+
+Then
+
+        λq (Θ) ≥ min{2 ordq (ā), ordq (b̄)} ≥ min{2 ordq (a), ordq (b)} = λq (Y )
+
+and the lemma is proved.
+
+4.3      Upper bound on the multiplicities
+Theorem 4.6. Let Z be an integral noetherian excellent surface. Let ψ : Y → Z
+be a normal double cover. Let p0 ∈ Y be a singular point, q0 = ψ(p0 ).
+    Let φ : Ỹ → Z ′ be as in Theorem 3.4 and let E ⊂ Z ′ be the exceptional
+divisor of Z ′ → Z. Let Θ := Ỹ ×Z ′ E.
+(1) If λq0 (Y ) is odd, then λq (Ỹ ) ≥ 1 for all q ∈ E, and
+         X                                    X
+              (λq (Ỹ ) − 1)[k(q) : k(q0 )] ≤    λE,q (Ỹ )[k(q) : k(q0 )] ≤ λq0 (Y ).
+           q∈E                               q∈E
+
+
+      (See § 4.2 for the deﬁnition of λE,q (Ỹ ).)
+(2) Suppose that λq0 (Y ) is even. Then Θ → E is a double cover.
+
+                                            25
+
+    (a) If λq0 (Y ) = ordq0 (∆Y /Z ), then
+                 X                                 X
+                       λq (Ỹ )[k(q) : k(q0 )] ≤         λq (Θ)[k(q) : k(q0 )] ≤ λq0 (Y ).
+                 q∈E                               q∈E
+
+
+    (b) Otherwise,
+           X                                  X
+         2    [λq (Ỹ )/2][k(q) : k(q0 )] ≤ 2   [λq (Θ)/2][k(q) : k(q0 )] ≤ λq0 (Y ).
+            q∈E                                       q∈E
+
+
+    (c) In both cases we have
+
+                       λq (Ỹ )[k(q) : k(q0 )] ≤ λq (Θ)[k(q) : k(q0 )] ≤ λq0 (Y )
+
+         for all q ∈ E.
+Proof. We can suppose that Z = Spec A is local. Let m be the maximal ideal
+of A, k = A/m, let λm (B) = λm (y) and r = [λm (B)/2].
+   (1) The cover φ : Ỹ → Z ′ has ramiﬁcation index 2 at the generic point of
+Θ (Proposition 3.7(2)). Let s, t be a system of generators of m. We use the
+notation of Proposition 3.1. By Lemma 4.3(1), we can suppose that a, b ∈ sA.
+The equation of Ỹ ×Z ′ D+ (s̃) is
+
+                     y12 + a1 y1 + b1 = 0,         a1 = a/sr , b1 = b/s2r
+
+                                                      e(s̃) . Write
+(Proposition 3.3). As ordm (a) ≥ r + 1, we have a1 ∈ sA
+                   X
+            b=              βi ti s2r+1−i + ǫ2r+2 ,         βi ∈ A, ǫ2r+2 ∈ m2r+2 .
+                 0≤i≤2r+1
+
+Then, if t1 = t/s,
+                                        X
+                          b1 /s =               βi ti1 + sc,      e(s̃)
+                                                                c∈A
+                                     0≤i≤2r+1
+             P
+Let f (t̄1 ) = 0≤i≤2r+1 β̄i t̄i1 ∈ k[t̄1 ] be the class of b1 /s mod s. By Lemma 4.5(1),
+for all q ∈ E ∩ D+ (s̃), we have
+
+                          1 ≤ λq (Ỹ ) ≤ λE,q (Ỹ ) = ordq (f (t̄1 )).
+
+Therefore                 X
+                                     (λq (Ỹ ) − 1)[k(q) : k] ≤ deg f (t̄1 ).
+                       q∈E∩D+ (s̃)
+
+The only point missed is the rational point {s1 = 0} in D+ (t̃), where s1 = s/t.
+The same reasoning as above shows that
+                                  X
+        λs1 =0 (Ỹ ) ≤ ords1 =0 (     β̄i s̄2r+1−i
+                                            1      ) = 2r + 1 − deg f (t¯1 ).
+                                      0≤i≤2r+1
+
+
+                                                 26
+
+This implies the desired inequality on the sum running through E.
+   (2) The fact that Θ → E is a double cover is Lemma 4.5(2). Let Ã =
+⊕n≥0 mn . Then
+                           Ã ⊗A k ≃ Grm (A) ≃ k[s, t]
+because A is regular. For any f ∈ mn , if we consider f as a homogeneous
+element f˜ ∈ Ãn , then the image f˜(q0 ) of f˜ in Ã ⊗A k is 0 if ordm (f ) > n, and is
+a homogeneous polynomial of degree n, equal to the initial form of f otherwise.
+By Remark 3.5, Θ is the closed subscheme of P(1, 1, r) deﬁned by the equation
+                              w2 + ã(q0 )w + b̃(q0 ) = 0
+where a, b are respectively considered as elements of mr and m2r . This is a
+double cover of E of arithmetic genus r − 1. So (2) is an immediate consequence
+of Lemmas 4.2 and 4.5.
+Corollary 4.7. Keep the assumption of Theorem 3.4. For any i ≥ 1, denote
+by Ei ⊆ Zi the exceptional divisor of Zi → Zi−1 . Then for all q ∈ Ei , we have
+                             ⌈λq (Yi )/2⌉ ≤ ⌈λq0 (Y )/2⌉.
+Proof. By induction on i and by using Theorem 4.6 (1) and (2.c).
+Example 4.8 Let Z = Spec k[s, t] over a ﬁeld k. Let n ≥ 3. Consider Y ⊂
+Spec k[s, t, y] deﬁned by
+                          y 2 + t3 + sn = 0.
+Let q0 = (0, 0) ∈ Z. Then λq0 (Y ) = 3. We get a sequence of normalized
+blowing-ups (for i + 1 < n/3)
+                        → Yi+1 → Yi → · · · → Y1 → Y0 = Y
+where Yi has an aﬃne open subset deﬁned by
+                yi2 + sn−3i+1 + st3i = 0,        ti = t/si , yi = y/s3m+1 ,
+if i = 2m + 1, and by
+                   yi2 + sn−3i + t3i = 0,    ti = t/si , yi = y/s3m ,
+if i = 2m. The center of Yi+1 → Yi is pi = {yi = s = ti = 0} which has
+λpi (Yi ) = 4 or 3 depending on whether i is odd or even. There is no other
+singular points on Yi .
+
+
+5     Desingularization algorithm
+Let A be a noetherian regular excellent domain of dimension 2. We will also
+assume A is factorial (e.g. local). This assumption implies that locally free
+A-algebras B of rank 2 are free (because the quotient A-module B/A is locally
+free of rank 1 by Lemma 2.2). Let B be an integral free A-algebra of rank 2.
+We denote as before Z = Spec A and Y = Spec B.
+
+                                            27
+
+5.1      Normalization
+We determine the integral closure B ′ of B when ∆B/A 6= 0. Write B = A[y]
+with y 2 + ay + b = 0. Let t be a prime divisor of a2 − 4b. Denote by νt the
+normalized valuation on Frac(A) induces by tA.
+    As A (hence B) is excellent, B ′ is ﬁnite over B. By Serre’s criterion B ′ is
+Cohen-Macaulay, hence ﬁnite ﬂat of rank 2 over A. Therefore B ′ has a basis
+{1, z} over A. There exist u, v ∈ A such that
+
+                                    y = uz + v.                                (5.1)
+
+In particular B = A[y] is normal at primes lying over tA if and only if t ∤ u.
+Note that u | a + 2v, b + av + v 2 , hence u | b − v 2 .
+Normalization algorithm Let y and t be as above.
+(1) Let r = [(min{2νt (a), νt (b)})/2]. Let y1 = y/tr , a1 = a/tr , b1 = b/t2r .
+    Then a1 , b1 ∈ A and
+                                  y12 + a1 y1 + b1 = 0
+      with B ⊆ B1 := A[y1 ] ⊂ L := Frac(B) and min{2νt (a1 ), νt (b1 )} ≤ 1.
+(2) Now replace y with y1 , we can assume min{2νt (a), νt (b)} ≤ 1. Then A[y] is
+    normal at primes above tA except possibly when νt (a) > 0, νt (b) = 0 and
+    char(A/tA) = 2 (Lemma 3.2).
+(3) Assume that the above conditions hold. By the discussions following Equa-
+    tion (5.1), we see that A[y] is not normal at some prime lying over tA if and
+    only if there exists c ∈ A such that t | b − c2 (equivalently b is a square in
+    A/tA).
+(4) Suppose that such a c ∈ A exists. Let y1 = y − c. Then A[y] = A[y1 ] with
+
+                          y12 + (a + 2c)y1 + (b + ac + c2 ) = 0
+
+      and νt (a + 2c), νt (b + ac + c2 ) > 0. Go back to Step (1) with this new
+      equation.
+   When the above algorithm terminates (this always happens eventually be-
+cause the valuation νt (u) of the factor u in Equation (5.1) decreases strictly when
+we pass through Step (4) twice.), we go to another prime divisor of a2 − 4b. At
+the end we get B ′ together with a basis {1, z}.
+
+5.2      Finding the singular points
+We are given a normal B = A[y] with
+
+                                  y 2 + ay + b = 0.
+
+Singular points of Y . Even though there are only ﬁnitely many singular
+points, there is no obvious way to ﬁnd them for general A.
+
+                                         28
+
+    - If A (hence B) is a ﬁnite type algebra over some perfect ﬁeld, we can use
+Jacobian criterion.
+    - Suppose that Z is smooth with integral ﬁbers over some Dedekind domain
+R (e.g. A = R[x]) and that B ⊗A Frac(R) is regular. We can look for singular
+points in the closed ﬁbers of Y → Spec R (which are curves over ﬁelds). The
+singular points of Y are among them.
+    However, if B ⊗R k(w) is non-reduced for some closed point w ∈ Spec R, all
+points of the ﬁber Yw are singular. The worst situation is when ∆B/A (w) = 0.
+Suppose R is local of dimension 1 with a uniformizing element π. Then π | a
+and b is a square in A/πA. Let b ≡ c2 mod π. Replace y with y + c, then we
+get an equation with π | a, b. As B is normal, π 2 ∤ b. The singular points of Y
+are exactly those lying over the zeros of b/π in the curve Spec(A ⊗R k(w)).
+Singular points in the normalized blowing-ups. Let q0 ∈ Z be such that
+λq0 (Y ) ≥ 2. Let k = k(q0 ).
+    Let Ỹ → Y be the normalized blowing-up at the point p0 lying over q0
+(see § 3). We search for singular points of Ỹ lying over the exceptional locus
+           blm                           e(s̃) be as in Proposition 3.3. We ﬁrst look for
+E ⊂ Z ′ −→      Z. Let a1 , b1 ∈ A
+singular points lying over D+ (s̃). There are two cases.
+    (1) s ∤ a21 + 4b1 in A      e(s̃) (ramiﬁcation index 1). Then any singular point
+of Ỹ lying over E ∩ D+ (s̃) must correspond to a multiple factor f (t1 ) of the
+polynomial a21 + 4b1 ∈ A       e(s̃) /(s) ≃ k[t1 ]. Lift f (t1 ) to an F ∈ A  e(s̃) . Then (s, F )
+is a maximal ideal. Compute λ(s,F ) (A              e(s̃) [y1 ]) to see whether we really get a
+singular point.
+    (2) s | a21 + 4b1 . Then we have s | a1 (we take a = 0 if char(k) 6= 2).
+    (2.1) If s | b1 then s2 ∤ b1 . The singular points correspond exactly to the
+zeros of s−1 b1 ∈ A   e(s̃) /(s) ≃ k[t1 ].
+    (2.2) If char(k) = 2, and b̄1 ∈ A             e(s̃) /(s) is a square. Translate y1 by an
+element of A  e(s̃) to make s | b1 . Go back to (2.1).
+    (2.3) If char(k) = 2, and b̄1 ∈ A       e(s̃) /(s) is not a square. A necessary condition
+                    e
+for (s, F ), F ∈ A(s̃) , to deﬁne a singular point is that F̄ (t1 ) ∈ k[t1 ] divides the
+derivative of b̄1 (t1 ).
+     (3) It remains the points lying over V+ (s̃) ∩ E. Let t ∈ m be such that s, t
+generate mAm . Then V+ (s̃) ∩ E = V+ (s̃) ∩ D+ (t̃) ∩ E is the point s1 = t = 0 in
+D+ (t̃) (where s1 = s/t). Check similarly whether it induces a singular point of
+Ỹ .
+
+5.3     Desingularization algorithm
+Let Z be an integral noetherian excellent regular surface. Let Y → Z be a
+double cover. We work locally on Z and suppose Z = Spec A is aﬃne.
+   (1) Find the normalization of Y (§ 5.1), then suppose Y is normal.
+   (2) Find the singular points of Y (§ 5.2).
+
+
+
+                                               29
+
+   (3) Fix a singular point lying over a closed point q0 ∈ Z. Compute λq0 (Y )
+using Lemma 2.10.
+   (4) Consider the normalized blowing-up Ỹ → Y along the point p0 lying
+over q0 . Use the aﬃne equation of Ỹ given Proposition 3.3 to ﬁnd the singular
+points of Ỹ lying over p0 .
+   (5) Repeat the above process for all singular points of Y . At the end we get
+a new normal double cover of an integral noetherian excellent regular surface.
+   (6) Go back to (2).
+
+5.4    Presentation of a regular ring and of its Rees algebras
+The most computationally complicated part of our algorithm should be the de-
+termination of ordm and of the initial form of an element of A (Lemma 2.10(2.b)).
+For these purposes we need an as simple as possible presentation (by generators
+and relations) of A and of the rings appearing after blowing-up Spec A along
+maximal ideals.
+   We will restrict ourselves to the case when A is of ﬁnite type over some
+principal ideal domain R (e.g. Z, Fp [T ]). Write
+                                A = R[U1 , . . . , Un ]/I
+for some n ≥ 2. Let m ⊂ A be a maximal ideal of height 2 generated by s, t.
+Then
+           e(s̃) = A[T1 ]/(sT1 − t) = R[U1 , . . . , Un , T1 ]/(I, ST1 − T )
+           A
+where S, T ∈ R[U1 , . . . , Un ] are liftings of s, t respectively. Thus in general we
+need to add a new variable and a new relation to represent the R-algebra Ã(s̃) .
+However this is not necessary in some particular cases.
+   Suppose that we can write
+                                    A = A0 [S, T ]/I
+for some R-algebra A0 such that m is generated by the classes s, t of S, T in A.
+Then
+               Ae(s̃) = A0 [S, T, T1 ]/(I, ST1 − T ) = A0 [S, T1 ]/I ′
+where I ′ is obtained by replacing T with ST1 in the polynomials in I. Similarly
+                 Ã(t̃) = A0 [S, T, S1 ]/(I, T S1 − S) = A0 [T, S1 ]/I ′′
+where I ′′ is obtained by replacing S with T S1 in the polynomials in I.
+    Let mq be a maximal ideal of A  e(s̃) containing s. It corresponds to a closed
+point q of E ∩ D+ (s̃). Suppose that q is rational over k := A/m. Then there
+exists θ ∈ A0 such that mq is generated by the classes of S, T1 − θ. After
+translating T1 by θ, we can suppose θ = 0. Then the blowing-up of Spec A       e(s̃)
+along q is covered by the spectra of
+                            A0 [S, T2 ]/J,    A0 [T1 , S2 ]/J ′
+where J is obtained by substituting ST2 to T1 in the polynomials of I ′ , and J ′
+is obtained by substituting T1 S2 to S in the polynomials of I ′ .
+
+                                             30
+
+Corollary 5.1. Let R be a PID. Suppose A = R[x]. Let π ∈ R be an irreducible
+element and let k = R/(π). If we blow-up Spec A along a rational point q
+of Spec k[x], and then successively blow-up k-rational points in the exceptional
+divisors, then all intermediate schemes are covered by regular aﬃne schemes of
+the form
+                          Spec(R[S, T ]/(f (S, T ) − π))
+with f (S, T ) ∈ (S, T )R[S, T ].
+Proof. We can suppose that q corresponds to the maximal ideal (x, π) ⊂ R[x].
+Let A0 = R. We have A = A0 [S, T ]/(f (S, T ) − π) with f (S, T ) = T . Then
+apply the above discussions.
+
+
+References
+ [1] S. Abhyankar, Simultaneous Resolution for Algebraic Surfaces, Amer. J.
+     Math. 78 (1956), 761–790.
+ [2] N. Bourbaki: Algèbre commutative, chapitres 1-4, Springer (2006).
+ [3] V. Cossart, U. Jannsen, S. Saito: Desingularization: invariants and strategy
+     – application to dimension 2, With contributions by B. Schober. Lecture
+     Notes in Math., 2270 (2020), Springer.
+ [4] V. Cossart, U. Jannsen, B. Schober: Invariance of Hironaka’s characteristic
+     polyhedron, RACSAM 113 (2019), 4145–4169.
+ [5] T. Dokchitser, Models of curves over discrete valuation rings, Duke Math.
+     J. 170 (2021), 2519–2574.
+ [6] T. Dokchitser, V. Dokchitser, C. Maistret, A. Morgan, Arithmetic of hy-
+     perelliptic curves over local ﬁelds. Math. Ann. 385 (2023), 1213—1322.
+ [7] A. Frühbis-Krüger, L. Ristau, B. Schober, Embedded desingularization for
+     arithmetic surfaces – toward a parallel implementation, Math. Comp. 90
+     (2021), 1957–1997.
+ [8] S. Kunzweiler, S. Wewers, Integral diﬀerential forms for superelliptic
+     curves, preprint (2023), https://arxiv.org/abs/2003.12357v2.
+ [9] Q. Liu: Algebraic geometry and arithmetic curves, GTM 6, Oxford Univer-
+     sity Press, new edition (2006).
+[10] Q. Liu: Computing minimal Weierstrass equations of hyperelliptic curves,
+     Res. Number Theory 9, 76 (2023).
+[11] Q. Liu: Conducteur et discriminant minimal de courbes de genre 2. Com-
+     positio Math., 94 (1994), 51-79.
+
+
+
+                                       31
+
+[12] Q. Liu: Modèles entiers de courbes hyperelliptiques sur un anneau de valu-
+     ation discrète, Trans. Amer. Math. Soc., 348 (1996), 4577–4610.
+[13] Q. Liu: Minimal Weierstrass models and regular models of hyperelliptic
+     curves, work in progress.
+[14] Q. Liu and D. Lorenzini: Models of curves and ﬁnite covers, Compositio
+     Math., 118 (1999), 61–102.
+[15] S. Muselli, Models and integral diﬀerentials of hyperelliptic curves, Glasgow
+     Mathematical Journal, 66 (2024), 382–439.
+[16] Y. Namikawa and K. Ueno: The complete classiﬁcation of ﬁbres in pencils
+     of curves of genus two, Manuscripta Math., 9 (1973), 143–186.
+[17] J. Lipman, Desingularization of two-dimensional schemes, Ann. Math. 107
+     (1978), 151–207.
+[18] The PARI Group, PARI/GP, Univ. Bordeaux, 2025, available from
+     http://pari.math.u-bordeaux.fr/
+[19] Stacks      Project     Authors:                      Stacks         Project,
+     http://stacks.math.columbia.edu, (2024).
+[20] I. Swanson and C. Huncke: Integral closure of ideals, rings and mod-
+     ules, London Math. Society Lect. Note Series 336, Cambridge Univ. Press
+     (2006).
+[21] John Tate, Algorithm for determining the type of singular ﬁber in an elliptic
+     pencil, in Modular Functions of One Variable. IV, pages 33–52, Lecture
+     Notes in Math., 476, Springer-Verlag (1975).
+
+   Univ. Bordeaux, CNRS, IMB, UMR 5251, F-33405 Talence, France
+   qing.liu@math.u-bordeaux.fr
+
+
+
+
+                                       32
+

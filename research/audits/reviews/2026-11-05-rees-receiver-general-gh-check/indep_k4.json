@@ -1,0 +1,191 @@
+[
+ {
+  "label": "kappa4 exhaustive (p=61: every contraction has a zero entry per paper)",
+  "p": 61,
+  "a": 1,
+  "d": 4,
+  "kappa": 4,
+  "u": 1,
+  "g": 2,
+  "inputs": 226981,
+  "contraction": {
+   "alpha": [
+    1,
+    0,
+    39,
+    53
+   ],
+   "beta": [
+    0,
+    5,
+    18,
+    22
+   ]
+  },
+  "module_contraction_equals_own_lex_least": true,
+  "K_hist": {
+   "0": 62281,
+   "1": 164700
+  },
+  "gates": 1722978,
+  "wires": 416,
+  "no_gate_targets_label": true,
+  "F_items_touch_no_S": true,
+  "gate_types": [
+   "ccx",
+   "cx",
+   "swap",
+   "x"
+  ],
+  "labels_restored": true,
+  "S_equals_paper_witness": true,
+  "workspace_zero": true,
+  "witness_valid": true,
+  "lemma4_prime": true,
+  "all_pass": true,
+  "seconds": 19.8,
+  "rss_mb": 154.7
+ },
+ {
+  "label": "kappa4 exhaustive, u != 1",
+  "p": 41,
+  "a": 1,
+  "d": 12,
+  "kappa": 4,
+  "u": 7,
+  "g": 3,
+  "inputs": 68921,
+  "contraction": {
+   "alpha": [
+    1,
+    27,
+    39,
+    13
+   ],
+   "beta": [
+    0,
+    5,
+    1,
+    37
+   ]
+  },
+  "module_contraction_equals_own_lex_least": true,
+  "K_hist": {
+   "0": 19721,
+   "1": 49200
+  },
+  "gates": 1565438,
+  "wires": 466,
+  "no_gate_targets_label": true,
+  "F_items_touch_no_S": true,
+  "gate_types": [
+   "ccx",
+   "cx",
+   "swap",
+   "x"
+  ],
+  "labels_restored": true,
+  "S_equals_paper_witness": true,
+  "workspace_zero": true,
+  "witness_valid": true,
+  "lemma4_prime": true,
+  "all_pass": true,
+  "seconds": 6.4,
+  "rss_mb": 154.7
+ },
+ {
+  "label": "kappa4 alt contraction",
+  "p": 41,
+  "a": 1,
+  "d": 4,
+  "kappa": 4,
+  "u": 1,
+  "g": 3,
+  "inputs": 68921,
+  "contraction": {
+   "alpha": [
+    1,
+    6,
+    2,
+    38
+   ],
+   "beta": [
+    0,
+    26,
+    38,
+    12
+   ]
+  },
+  "module_contraction_equals_own_lex_least": null,
+  "K_hist": {
+   "0": 19721,
+   "1": 49200
+  },
+  "gates": 1433644,
+  "wires": 442,
+  "no_gate_targets_label": true,
+  "F_items_touch_no_S": true,
+  "gate_types": [
+   "ccx",
+   "cx",
+   "swap",
+   "x"
+  ],
+  "labels_restored": true,
+  "S_equals_paper_witness": true,
+  "workspace_zero": true,
+  "witness_valid": true,
+  "lemma4_prime": true,
+  "all_pass": true,
+  "seconds": 6.0,
+  "rss_mb": 154.7
+ },
+ {
+  "label": "kappa4 a=2 sampled",
+  "p": 73,
+  "a": 2,
+  "d": 4,
+  "kappa": 4,
+  "u": 1,
+  "g": 5,
+  "inputs": 600,
+  "contraction": {
+   "alpha": [
+    1,
+    60,
+    49,
+    63
+   ],
+   "beta": [
+    0,
+    10,
+    23,
+    13
+   ]
+  },
+  "module_contraction_equals_own_lex_least": true,
+  "K_hist": {
+   "0": 247,
+   "1": 196,
+   "2": 157
+  },
+  "gates": 5349898,
+  "wires": 1046,
+  "no_gate_targets_label": true,
+  "F_items_touch_no_S": true,
+  "gate_types": [
+   "ccx",
+   "cx",
+   "swap",
+   "x"
+  ],
+  "labels_restored": true,
+  "S_equals_paper_witness": true,
+  "workspace_zero": true,
+  "witness_valid": true,
+  "lemma4_prime": true,
+  "all_pass": true,
+  "seconds": 6.2,
+  "rss_mb": 211.6
+ }
+]

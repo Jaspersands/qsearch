@@ -1,0 +1,202 @@
+{
+ "status": "sparse_coset_support_simulation_of_generated_circuits_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_sde_implemented": false,
+ "formal_compiler_checked": false,
+ "independent_review": false,
+ "novelty_established": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "config": "n5(F_5) c=4 dims=(5, 3, 2, 1) points=(1, 2, 3, 4) M={2: 7, 3: 3, 4: 5}",
+ "group_orders": {
+  "1": 3125,
+  "2": 390625,
+  "3": 9765625,
+  "4": 48828125
+ },
+ "checks": [
+  {
+   "instance": "n5(F_5) H=trivial",
+   "normal": true,
+   "dim_h": 0,
+   "source": {
+    "address_unchanged": true,
+    "workspace_clean": true,
+    "fibres": 48828125,
+    "lifted_order": 1,
+    "equal_fibres": true,
+    "identity_fibre_is_subgroup": true,
+    "fibres_are_left_cosets": true,
+    "coset_generators": 0,
+    "coset_state": true,
+    "chunks": 47
+   },
+   "source_equals_rho_lift": true,
+   "source_workspace_clean": true,
+   "grades": {
+    "4": {
+     "label_support": 5,
+     "label_law_uniform_on_K_perp": true,
+     "arity": 5,
+     "tuples": "all",
+     "tuples_with_witnesses_capped": 0,
+     "cases": 1952500,
+     "merge_outputs_equal_rho_H": true,
+     "state_support": 1,
+     "branch_support_max": 5,
+     "group_order": 48828125,
+     "target_support": 1
+    },
+    "3": {
+     "label_support": 25,
+     "label_law_uniform_on_K_perp": true,
+     "arity": 3,
+     "tuples": "all",
+     "tuples_with_witnesses_capped": 0,
+     "cases": 77500,
+     "merge_outputs_equal_rho_H": true,
+     "state_support": 1,
+     "branch_support_max": 25,
+     "group_order": 9765625,
+     "target_support": 1
+    },
+    "2": {
+     "label_support": 125,
+     "label_law_uniform_on_K_perp": true,
+     "arity": 7,
+     "tuples": "sampled 6 of 476837158203125",
+     "tuples_with_witnesses_capped": 6,
+     "cases": 360,
+     "merge_outputs_equal_rho_H": true,
+     "state_support": 1,
+     "branch_support_max": 125,
+     "group_order": 390625,
+     "target_support": 1
+    }
+   },
+   "group_order_top": 48828125,
+   "source_seconds": 55.4,
+   "readout_uniform_on_h_perp": true,
+   "nullspace_of_readout_support_equals_log_H": true,
+   "passed": true,
+   "seconds": 599.69
+  },
+  {
+   "instance": "n5(F_5) H=<e2> non-normal",
+   "normal": false,
+   "dim_h": 1,
+   "source": {
+    "address_unchanged": true,
+    "workspace_clean": true,
+    "fibres": 9765625,
+    "lifted_order": 5,
+    "equal_fibres": true,
+    "identity_fibre_is_subgroup": true,
+    "fibres_are_left_cosets": true,
+    "coset_generators": 1,
+    "coset_state": true,
+    "chunks": 47
+   },
+   "source_equals_rho_lift": true,
+   "source_workspace_clean": true,
+   "grades": {
+    "4": {
+     "label_support": 5,
+     "label_law_uniform_on_K_perp": true,
+     "arity": 5,
+     "tuples": "all",
+     "tuples_with_witnesses_capped": 0,
+     "cases": 1952500,
+     "merge_outputs_equal_rho_H": true,
+     "state_support": 5,
+     "branch_support_max": 25,
+     "group_order": 48828125,
+     "target_support": 5
+    },
+    "3": {
+     "label_support": 25,
+     "label_law_uniform_on_K_perp": true,
+     "arity": 3,
+     "tuples": "all",
+     "tuples_with_witnesses_capped": 0,
+     "cases": 77500,
+     "merge_outputs_equal_rho_H": true,
+     "state_support": 5,
+     "branch_support_max": 125,
+     "group_order": 9765625,
+     "target_support": 5
+    },
+    "2": {
+     "label_support": 125,
+     "label_law_uniform_on_K_perp": true,
+     "arity": 7,
+     "tuples": "sampled 6 of 476837158203125",
+     "tuples_with_witnesses_capped": 6,
+     "cases": 360,
+     "merge_outputs_equal_rho_H": true,
+     "state_support": 5,
+     "branch_support_max": 625,
+     "group_order": 390625,
+     "target_support": 5
+    }
+   },
+   "group_order_top": 48828125,
+   "source_seconds": 131.5,
+   "readout_uniform_on_h_perp": true,
+   "nullspace_of_readout_support_equals_log_H": true,
+   "passed": true,
+   "seconds": 822.04
+  }
+ ],
+ "seeded_runs": [],
+ "merge_gate_checks": {},
+ "all_merges_proved": true,
+ "all_bitlevel_ok": true,
+ "instrument": {
+  "2": {
+   "mode": "exact",
+   "leak": 0,
+   "completeness_err": 0,
+   "circulant_err": 0,
+   "round_err": 0,
+   "qft_factors": [
+    2,
+    2,
+    2
+   ],
+   "counts_are_exact_mismatches": true,
+   "qft_matrix_float_consistency": true,
+   "ok": true
+  },
+  "3": {
+   "mode": "exact",
+   "leak": 0,
+   "completeness_err": 0,
+   "circulant_err": 0,
+   "round_err": 0,
+   "qft_factors": [
+    2,
+    2
+   ],
+   "counts_are_exact_mismatches": true,
+   "qft_matrix_float_consistency": true,
+   "ok": true
+  },
+  "4": {
+   "mode": "exact",
+   "leak": 0,
+   "completeness_err": 0,
+   "circulant_err": 0,
+   "round_err": 0,
+   "qft_factors": [
+    2
+   ],
+   "counts_are_exact_mismatches": true,
+   "qft_matrix_float_consistency": true,
+   "ok": true
+  }
+ },
+ "seconds": 1608.8,
+ "all_checks_pass": true,
+ "all_runs_recover": true
+}

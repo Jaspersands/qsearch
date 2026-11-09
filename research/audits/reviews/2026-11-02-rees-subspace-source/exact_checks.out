@@ -1,0 +1,45 @@
+== Part A: LCU growth instrument ==
+d=3 r=2 k=1: p_succ=0.250000000000 want=0.250000000000 |succ-A(.)A|=2.8e-17 recovery: ancilla_leak=1.2e-17 |rej-(I-A)(.)(I-A)|=2.2e-16 kept_outside_wedgeV=1.3e-16; NO recovery: kept_outside_wedgeV=7.08e-17
+d=3 r=2: top state == |Omega_V><Omega_V| err=2.2e-16; naive one-shot success 0.250000 vs r^-r=0.250000
+d=3 r=3 k=1: p_succ=0.333333333333 want=0.333333333333 |succ-A(.)A|=2.8e-17 recovery: ancilla_leak=3.4e-18 |rej-(I-A)(.)(I-A)|=1.1e-16 kept_outside_wedgeV=1.1e-16; NO recovery: kept_outside_wedgeV=1.11e-16
+d=3 r=3 k=2: p_succ=0.111111111111 want=0.111111111111 |succ-A(.)A|=1.0e-17 recovery: ancilla_leak=1.8e-17 |rej-(I-A)(.)(I-A)|=8.4e-17 kept_outside_wedgeV=1.1e-16; NO recovery: kept_outside_wedgeV=9.31e-02
+d=3 r=3: top state == |Omega_V><Omega_V| err=2.9e-17; naive one-shot success 0.037037 vs r^-r=0.037037
+d=4 r=3 k=1: p_succ=0.333333333333 want=0.333333333333 |succ-A(.)A|=2.1e-17 recovery: ancilla_leak=2.2e-18 |rej-(I-A)(.)(I-A)|=1.1e-16 kept_outside_wedgeV=8.9e-17; NO recovery: kept_outside_wedgeV=9.34e-17
+d=4 r=3 k=2: p_succ=0.111111111111 want=0.111111111111 |succ-A(.)A|=6.9e-18 recovery: ancilla_leak=8.7e-18 |rej-(I-A)(.)(I-A)|=4.2e-17 kept_outside_wedgeV=8.3e-17; NO recovery: kept_outside_wedgeV=6.42e-02
+d=4 r=3: top state == |Omega_V><Omega_V| err=2.8e-17; naive one-shot success 0.037037 vs r^-r=0.037037
+d=4 r=2 k=1: p_succ=0.250000000000 want=0.250000000000 |succ-A(.)A|=2.8e-17 recovery: ancilla_leak=2.8e-18 |rej-(I-A)(.)(I-A)|=1.1e-16 kept_outside_wedgeV=6.5e-17; NO recovery: kept_outside_wedgeV=6.55e-17
+d=4 r=2: top state == |Omega_V><Omega_V| err=5.6e-17; naive one-shot success 0.250000 vs r^-r=0.250000
+== Part B: principal angles, TD, overlap gap ==
+400 random (d<=7,r<=d) cases: TD=(1/r)sum sin, overlap=prod cos, overlap<=1-TD^2/2 all hold; max (1-overlap)/(TD^2/2) observed = 51.851 (>=1 required)
+r=1, theta=1e-3: (1-cos)/(sin^2/2) = 1.00000025 (gap delta^2/2 tight to 2nd order)
+== Part C: exterior source on the Rees cover of Heis(F_p) ==
+p=3 H=<X> |H|=3 normal=False rank r=2: stab(V)=ray-stab(Omega)=H; max|det-1| on H=1.732; delta=min TD=0.9039; true overlap gap=0.8775 >= delta^2/2=0.4085
+   zero-moment design (1, 1, 1, 2, 2, 2) k=1: |F-1| on H~=6.7e-15, max|F| off H~=0.0018, TD(sigma,tau)=1.5202e-03 <= sqrt(N)(1-g)^k/2=5.5140e-01; tau==left-coset mixture err=3.5e-18
+   zero-moment design (1, 1, 1, 2, 2, 2) k=3: |F-1| on H~=2.0e-14, max|F| off H~=0.0000, TD(sigma,tau)=5.5183e-09 <= sqrt(N)(1-g)^k/2=8.2791e-03; tau==left-coset mixture err=3.5e-18
+   plain c distinct points (1,2) k=1: |F-1| on H~=0.000: cancelled (accident: moments mod p=[0, 2], or k%p==0)
+   plain c distinct points (1,2) k=3: |F-1| on H~=0.000: cancelled (accident: moments mod p=[0, 2], or k%p==0)
+p=5 H=<X> |H|=5 normal=False rank r=2: stab(V)=ray-stab(Omega)=H; max|det-1| on H=1.902; delta=min TD=0.9548; true overlap gap=0.9175 >= delta^2/2=0.4558
+   zero-moment design (1, 2, 3, 4) k=1: |F-1| on H~=1.8e-15, max|F| off H~=0.0003, TD(sigma,tau)=2.6905e-04 <= sqrt(N)(1-g)^k/2=1.0315e+00; tau==left-coset mixture err=2.2e-19
+   zero-moment design (1, 2, 3, 4) k=3: |F-1| on H~=5.3e-15, max|F| off H~=0.0000, TD(sigma,tau)=2.0970e-11 <= sqrt(N)(1-g)^k/2=7.0235e-03; tau==left-coset mixture err=2.2e-19
+   plain c distinct points (1,2) k=1: |F-1| on H~=1.902: NOT cancelled => in-coset phases != 1, wrong density
+   plain c distinct points (1,2) k=3: |F-1| on H~=1.902: NOT cancelled => in-coset phases != 1, wrong density
+p=5 H=<X,Z> |H|=25 normal=True rank r=2: stab(V)=ray-stab(Omega)=H; max|det-1| on H=1.902; delta=min TD=1.0000; true overlap gap=1.0000 >= delta^2/2=0.5000
+   zero-moment design (1, 2, 3, 4) k=1: |F-1| on H~=3.1e-15, max|F| off H~=0.0000, TD(sigma,tau)=2.6459e-15 <= sqrt(N)(1-g)^k/2=0.0000e+00; tau==left-coset mixture err=0.0e+00
+   zero-moment design (1, 2, 3, 4) k=3: |F-1| on H~=9.3e-15, max|F| off H~=0.0000, TD(sigma,tau)=8.0029e-15 <= sqrt(N)(1-g)^k/2=0.0000e+00; tau==left-coset mixture err=0.0e+00
+   plain c distinct points (1,2) k=1: |F-1| on H~=1.902: NOT cancelled => in-coset phases != 1, wrong density
+   plain c distinct points (1,2) k=3: |F-1| on H~=1.902: NOT cancelled => in-coset phases != 1, wrong density
+p=3 H=<Z> |H|=3 normal=True rank r=2: stab(V)=ray-stab(Omega)=H; max|det-1| on H=1.732; delta=min TD=0.8455; true overlap gap=0.7532 >= delta^2/2=0.3574
+   zero-moment design (1, 1, 1, 2, 2, 2) k=1: |F-1| on H~=1.3e-15, max|F| off H~=0.0002, TD(sigma,tau)=1.5073e-04 <= sqrt(N)(1-g)^k/2=1.1107e+00; tau==left-coset mixture err=0.0e+00
+   zero-moment design (1, 1, 1, 2, 2, 2) k=3: |F-1| on H~=4.0e-15, max|F| off H~=0.0000, TD(sigma,tau)=7.7072e-12 <= sqrt(N)(1-g)^k/2=6.7664e-02; tau==left-coset mixture err=0.0e+00
+   plain c distinct points (1,2) k=1: |F-1| on H~=1.732: NOT cancelled => in-coset phases != 1, wrong density
+   plain c distinct points (1,2) k=3: |F-1| on H~=0.000: cancelled (accident: moments mod p=[0, 2], or k%p==0)
+== Part D: exact growth-clock tail vs r*2^-B ==
+r=2..8, B=1..6: exact Pr(timeout per output) <= r*2^-B always; max tail/bound = 3.378e-01
+== Part E: paper budgets re-derived from T ==
+r=1: T bits=1592 B=0 N=0 raw=T(N+1) ceil_log2=1592 artifact N=0 raw_bits=1592 base R calls<=rT bits=1592 growth instruments TN bits=0
+r=2: T bits=1592 B=1598 N=6392 raw=T(N+1) ceil_log2=1605 artifact N=6392 raw_bits=1605 base R calls<=rT bits=1593 growth instruments TN bits=1605
+r=8: T bits=1592 B=1600 N=102400 raw=T(N+1) ceil_log2=1609 artifact N=102400 raw_bits=1609 base R calls<=rT bits=1595 growth instruments TN bits=1609
+r=32: T bits=1592 B=1602 N=1640448 raw=T(N+1) ceil_log2=1613 artifact N=1640448 raw_bits=1613 base R calls<=rT bits=1597 growth instruments TN bits=1613
+p=43 c=9 design [1, 27, 41, 32, 4, 22, 35, 42, 16, 2, 11, 39, 21, 8]: exact power sums j=1..9 mod p = [0, 0, 0, 0, 0, 0, 0, 0, 0]; distinct=14, all nonzero=True
+per lifted source: M=14 design copies x k=420400 blocks = 5885600 exterior states (paper's coset-copy lift uses c=9)
+ALL CHECKS PASSED

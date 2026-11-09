@@ -1,0 +1,35 @@
+{
+ "status": {
+  "status": "coherent_kappa_sde_solve_finite_checks",
+  "scope": "grades with kappa_d = gcd(d, p-1) >= 2 and p not in E_2(kappa_d) (canonical contraction found by the stated search), triangular solver of prop:triangular-sde at (a+1)(a+2)/2 columns; checked mainly at kappa = 3",
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "coherent_kappa3_sde_implemented": true,
+  "coherent_fixed_kappa_sde_implemented": true,
+  "wired_into_generated_receiver": false,
+  "independent_review": false,
+  "speedup_claim_allowed": false
+ },
+ "rref": {
+  "p": 7,
+  "a": 2,
+  "d": 3,
+  "M": 6,
+  "row_spaces": 6884860,
+  "expected": 6884860,
+  "gates": 402726,
+  "qubits": 412,
+  "output_equals_canonical": true,
+  "inputs_restored": true,
+  "workspace_clean": true,
+  "witness_nonzero": true,
+  "equation_holds": true,
+  "canonical_padding_free": true,
+  "K_hist": [
+   1620496,
+   2690492,
+   2573872
+  ],
+  "seconds": 47.0
+ }
+}

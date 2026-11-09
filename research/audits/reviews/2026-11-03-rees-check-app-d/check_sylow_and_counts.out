@@ -1,0 +1,13 @@
+(1) Lemma tb-sylow(c) needs p > c:
+  D8: |G|=8 class=2 gen orders=[2, 2] exponent=4
+  C3 wr C3: |G|=81 class=3 gen orders=[3, 3] exponent=9
+(2) Lemma tb-kernel span bound:
+  fail <= #hyperplanes * p^-t <= p^(k-t) everywhere; max ratio fail/p^(k-t) = 0.9959; t=k+ceil(log_p(2/delta)) gives <= delta/2
+(3) counts:
+  d(4,9) = 40584
+  d(2,2) = 3  (Hall basis X1,X2,[X1,X2])
+  d <= sum s^k checked s<=5, c<=7; 9*143 = 1287
+  Schedule-1 exponent at c=9: 145
+  log2(9 K_9) = 1206.0
+  x(x+t)(x+1)^(E-1) superadditive on 0..59 (E=143, t=40)
+  L <= l/log2(c+1): needs p >= c+1, true for p > c

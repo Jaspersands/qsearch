@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 10212,
+      "path": "research/RELATIVE_NORM_TENSOR_SUPPORT.md",
+      "sha256": "4e75072755d65a170f7d1b1a5908ac2a5bf06e0a34c0f22dedd6991d2af563b3",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 4295,
+      "path": "research/audits/claude_inputs/2026-11-07-relative-norms/ls_excerpt.md",
+      "sha256": "3be131d9e5bdf80ae1bfaa7d1762b7aad0d33c7f92d9d8a63d9d3fdf6851ceb9",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6267,
+  "effort": "high",
+  "finished_at": "2026-11-06T19:54:33.082472+00:00",
+  "input_token_allowance": 6523,
+  "max_budget_usd": 1.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.681452,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-relative-norms/coordinates_prompt.md",
+    "sha256": "e8b6bb8f65cd4bb38f569233c8b34737dc28e0bc208616e7699ad8edff959737",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "classical",
+  "run_id": "20261106T195206.378720Z-4ce55603",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 6267,
+    "output_tokens": 14356
+  },
+  "usage_cost_estimate_usd": 0.312188
+}

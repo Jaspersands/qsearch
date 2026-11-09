@@ -1,0 +1,172 @@
+{
+ "status": "negative_controls_c3_phase_A",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "instance": "n4(F_5) H=<e2> non-normal",
+ "label_tuple": [
+  [
+   0,
+   0
+  ],
+  [
+   0,
+   0
+  ],
+  [
+   0,
+   0
+  ],
+  [
+   0,
+   0
+  ],
+  [
+   0,
+   0
+  ],
+  [
+   0,
+   0
+  ]
+ ],
+ "part": [
+  0,
+  2
+ ],
+ "rows": [
+  {
+   "mutant": "oracle entry",
+   "x0": 1,
+   "failed_checks": [
+    "K1c_conditioned_support_is_one_left_coset",
+    "K2_instrument_equals_reference",
+    "K5_2_rho_Q2_proportional_to_rho_H2_every_label_tuple",
+    "KS_source_state_is_coset_superposition"
+   ],
+   "detected": true,
+   "seconds": 261.3
+  },
+  {
+   "mutant": "drop gate",
+   "step": 7,
+   "component": "source_evaluation",
+   "dropped": "ccx",
+   "wires": [
+    4,
+    16,
+    5
+   ],
+   "position": "middle",
+   "failed_checks": [],
+   "detected": false,
+   "seconds": 106.5,
+   "final_state_identical_to_unmutated": true
+  },
+  {
+   "mutant": "drop gate",
+   "step": 116,
+   "component": "sde_grade3",
+   "dropped": "cx",
+   "wires": [
+    445,
+    33
+   ],
+   "position": "first",
+   "failed_checks": [
+    "K3_child_translated_after_its_own_merge",
+    "K4_children_equal_reference_translation_every_hub",
+    "K4_witness_and_workspace_zero"
+   ],
+   "detected": true,
+   "seconds": 104.1
+  },
+  {
+   "mutant": "drop gate",
+   "step": 116,
+   "component": "sde_grade3",
+   "dropped": "ccx",
+   "wires": [
+    33,
+    34,
+    32
+   ],
+   "position": "middle",
+   "failed_checks": [
+    "K3_child_translated_after_its_own_merge",
+    "K4_children_equal_reference_translation_every_hub",
+    "K4_witness_and_workspace_zero"
+   ],
+   "detected": true,
+   "seconds": 92.1
+  },
+  {
+   "mutant": "drop gate",
+   "step": 150,
+   "component": "witness_control_grade3",
+   "dropped": "cx",
+   "wires": [
+    1,
+    52
+   ],
+   "position": "middle",
+   "failed_checks": [
+    "K3_child_translated_after_its_own_merge",
+    "K4_children_equal_reference_translation_every_hub",
+    "K4_witness_and_workspace_zero"
+   ],
+   "detected": true,
+   "seconds": 100.0
+  },
+  {
+   "mutant": "drop gate",
+   "step": 157,
+   "component": "bch_merge_grade3",
+   "dropped": "cx",
+   "wires": [
+    3,
+    76
+   ],
+   "position": "first",
+   "detected": "exception",
+   "exception": "AssertionError('gate ccx(12, 448, 13) joins two children')",
+   "seconds": 7.3
+  },
+  {
+   "mutant": "drop gate",
+   "step": 157,
+   "component": "bch_merge_grade3",
+   "dropped": "ccx",
+   "wires": [
+    1,
+    78,
+    2
+   ],
+   "position": "middle",
+   "failed_checks": [],
+   "detected": false,
+   "seconds": 112.3,
+   "final_state_identical_to_unmutated": true
+  },
+  {
+   "mutant": "MergeBlock skip_bennett (both grades)",
+   "detected": "exception",
+   "exception": "AssertionError('gate ccx(12, 448, 13) joins two children')",
+   "seconds": 8.1
+  }
+ ],
+ "baseline": {
+  "all_checkpoints_pass": true,
+  "failed": [],
+  "seconds": 159.1
+ },
+ "summary": {
+  "mutants": 8,
+  "caught": 4,
+  "equivalent": 2,
+  "missed": 0,
+  "exceptions": 2
+ }
+}

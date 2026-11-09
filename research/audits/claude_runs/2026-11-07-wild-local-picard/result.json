@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 49144,
+      "path": "research/audits/claude_inputs/2026-11-07-wild-local/bosch_liu_source.md",
+      "sha256": "c2adb5c3117ece9dce0dc17829dfccc1afade669b15dbecbef0a9bbf0a0ab691",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 17105,
+      "path": "research/GOOD_DYADIC_GROWING_SELMER.md",
+      "sha256": "0b8470dfd16bcfaf56c70f4a44bdf497edf0cc70d8a3528209fe47a62626caec",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 27190,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-06T19:01:28.778073+00:00",
+  "input_token_allowance": 27734,
+  "max_budget_usd": 1.2,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.766296,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-wild-local/picard_prompt.md",
+    "sha256": "decb23a19a4c347867b8841fcdd4d4f16127137aeed973f566bf1f7ba62a4230",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261106T185529.132841Z-a7777431",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 27190,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 0.76412
+}

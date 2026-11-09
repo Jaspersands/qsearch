@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 6723,
+      "path": "research/audits/claude_inputs/2026-11-07-monomial-descent/candidate_snapshot.md",
+      "sha256": "2d330ff5566c317a915560ed720cd1179c9e4309492532e269be22481ee5eca7",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 450,
+      "path": "research/audits/claude_inputs/2026-11-07-monomial-descent/state_excerpt.md",
+      "sha256": "cd46edbc48df25a3cd677a72721639294403d82912caf2c83837c7dfb3a1cdf0",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 3457,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-06T14:31:04.185292+00:00",
+  "input_token_allowance": 3713,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.67553,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-monomial-descent/support_prompt.md",
+    "sha256": "9f0e62acb7dd98a7bac67df6de51f11b2e525648d12173e8c94172943642120f",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261106T143101.910123Z-9c31e747",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 3457,
+    "output_tokens": 0
+  },
+  "usage_cost_estimate_usd": 0.03457
+}

@@ -135,11 +135,13 @@ def evaluate_sis_gadget_trapdoor_witness_compilation(
         "q_mod": q_mod,
         "K_total_wires": k_total,
         "m_trapdoor_cols": m_cols,
-        "zero_sum_at_eq_0_mod_2t_verified": zero_sum_verified,
+        # B is defined as -G*R, so A*T == 0 holds for every R; this is an identity,
+        # not a test that could fail, and it is kept out of all_verified.
+        "zero_sum_identity_by_construction": zero_sum_verified,
         "all_punctured_dyadic_scales_verified": all_punctured_exact,
         "num_punctured_scales_extracted": len(punctured_records),
         "punctured_records": punctured_records,
-        "all_verified": zero_sum_verified and all_punctured_exact and len(punctured_records) == nt,
+        "all_verified": all_punctured_exact and len(punctured_records) == nt,
     }
 
 

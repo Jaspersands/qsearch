@@ -1,0 +1,54 @@
+{
+  "scope": "One paired exact p5 falsifier of elliptic-trace and unmarked-zeta shortcuts",
+  "p": 5,
+  "r": 2,
+  "cases": [
+    {
+      "a": 1,
+      "cyclotomic_value": "zeta5^3 + zeta5^2 + 2",
+      "minpoly_coefficients_low_to_high": [
+        1,
+        -3,
+        1
+      ],
+      "algebraic_degree": 2,
+      "sage_genus": 4,
+      "affine_point_count": 10,
+      "projective_point_count": 12,
+      "boundary_justification": "One totally ramified rational point at each simple pole"
+    },
+    {
+      "a": 4,
+      "cyclotomic_value": "-zeta5^3 - zeta5^2 + 1",
+      "minpoly_coefficients_low_to_high": [
+        1,
+        -3,
+        1
+      ],
+      "algebraic_degree": 2,
+      "sage_genus": 4,
+      "affine_point_count": 10,
+      "projective_point_count": 12,
+      "boundary_justification": "One totally ramified rational point at each simple pole"
+    }
+  ],
+  "distinct_conjugates": true,
+  "isomorphism_equation_exact": true,
+  "affine_point_bijection_exact": true,
+  "same_full_zeta": "Follows from the proved Fp isomorphism; full zeta not computed",
+  "source_sha256": {
+    "bruin_kloosterman_1807_03600.pdf": "8fe41010abeb9902c2276c3e7bb03d05f2f5eda08da220af7fa3c35c2f6a5b4c",
+    "childs_walk_0810_0312.pdf": "8d1b05126d4cbceaa9aa1d2b46b179c801c699c6e43b860dd945c0ae8403dbc5",
+    "kloosterman_degree_1107_0188.pdf": "e5cc317ad39053affe604865655d2cf6174797143204c374dd3222667b548b7e",
+    "kedlaya_zeta_0411623.pdf": "8c79ac97303ad408d299555f27868d704c105a744bc4bbffdfc6d12f010e4034"
+  },
+  "guards": {
+    "full_zeta_executed": false,
+    "quantum_algorithm_executed": false,
+    "runtime_lower_bound": false,
+    "general_classical_solution": false,
+    "novelty": false,
+    "separation": false,
+    "marked_curve_algorithms_ruled_out": false
+  }
+}

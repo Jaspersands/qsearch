@@ -1,0 +1,12 @@
+p=5 S=[0, 1, 4] k=2 d=2 L=all: gadget found [0.1s]; trials=200
+Traceback (most recent call last):
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-08-rees-sde-fq-nest/verify_gadget.py", line 142, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-08-rees-sde-fq-nest/verify_gadget.py", line 117, in main
+    res, _ = apply_gadget(V, p, S, k, d, Phi, gamma, D)
+             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-08-rees-sde-fq-nest/verify_gadget.py", line 87, in apply_gadget
+    assert y.any(), 'degenerate realizer'
+           ~~~~~^^
+AssertionError: degenerate realizer

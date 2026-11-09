@@ -1,0 +1,9 @@
+N(q) <= 1.25q + sqrt(2q) + 7 for 3 <= q < 5000: True
+guarantee(n) <= n^2/4 + 0.754 (n+2)^{3/2} + 5.75 n + sqrt(2n) + 13 for all tested n in [3, 3000]: True []
+  n=10: exact 72 (0.7200 n^2)  closed 131 (1.3133)  KOW F_5 sparse one-dim ~0.4 n^2
+  n=30: exact 407 (0.4522 n^2)  closed 555 (0.6164)  KOW F_5 sparse one-dim ~0.4 n^2
+  n=60: exact 1340 (0.3722 n^2)  closed 1637 (0.4548)  KOW F_5 sparse one-dim ~0.4 n^2
+  n=100: exact 3361 (0.3361 n^2)  closed 3879 (0.3879)  KOW F_5 sparse one-dim ~0.4 n^2
+  n=300: exact 26362 (0.2929 n^2)  closed 28221 (0.3136)  KOW F_5 sparse one-dim ~0.4 n^2
+  n=1000: exact 271321 (0.2713 n^2)  closed 279731 (0.2797)  KOW F_5 sparse one-dim ~0.4 n^2
+  n=3000: exact 2355231 (0.2617 n^2)  closed 2391400 (0.2657)  KOW F_5 sparse one-dim ~0.4 n^2

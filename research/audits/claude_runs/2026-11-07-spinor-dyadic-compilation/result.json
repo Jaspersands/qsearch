@@ -1,0 +1,44 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4280,
+      "path": "research/audits/claude_inputs/2026-11-07-spinor-genus/dyadic_compilation.md",
+      "sha256": "88a9abc806250e80ebd490e5059061b7f1bd098ec9da3be16ad62ad0d065d585",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 2496,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-07T02:30:49.088491+00:00",
+  "input_token_allowance": 2752,
+  "max_budget_usd": 1.3,
+  "max_tokens": 16384,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 0.84672,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-spinor-genus/dyadic_prompt.md",
+    "sha256": "6c155fbf20f28e54330ca896d1c81d94a2e10174484ca27e32d2274d69f7f3c9",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261107T022713.591804Z-7bb53b26",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2496,
+    "output_tokens": 16384
+  },
+  "usage_cost_estimate_usd": 0.84416
+}

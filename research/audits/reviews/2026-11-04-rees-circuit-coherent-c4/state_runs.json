@@ -1,0 +1,696 @@
+{
+ "status": "coherent_label_receiver_backend_class_four_instance_finite_checks",
+ "scope": "n5(F_7) only: kappa = (2, 3, 2) at grades (4, 3, 2), arities (3, 6, 10)",
+ "coherent_receiver_implemented": false,
+ "coherent_label_backend_class_four_instance": true,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "whole_circuit_amplitude_simulation": false,
+ "source_from_gate_list_on_all_addresses": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "parts": [
+  "runs",
+  "state"
+ ],
+ "args": {
+  "out": "research/audits/reviews/2026-11-04-rees-circuit-coherent-c4/state_runs.json",
+  "parts": "state,runs",
+  "per_label": 4096,
+  "random_sde": 4194304,
+  "tuples": 64,
+  "max_all": 400,
+  "state_instances": "0,1,2,3,4,5,6,7",
+  "run_instances": "0,1,2,3,4,5,6,7",
+  "paths": 256
+ },
+ "config": "n5(F_7) c=4 dims=(5, 3, 2, 1) points=(1, 2, 3, 4) M={2: 10, 3: 6, 4: 3}",
+ "state": {
+  "rows": [
+   {
+    "instance": "n5(F_7) H=trivial",
+    "normal": true,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 1,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.1
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 1,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^6",
+      "cases": 64,
+      "distinct_merges": 51,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.4
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 1,
+      "label_support": 343,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 343^10",
+      "cases": 64,
+      "distinct_merges": 62,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 1.2
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 0,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 1,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 1.8
+   },
+   {
+    "instance": "n5(F_7) H=<e1> non-normal",
+    "normal": false,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 7,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.0
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 7,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^6",
+      "cases": 64,
+      "distinct_merges": 55,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.4
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 7,
+      "label_support": 343,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 343^10",
+      "cases": 64,
+      "distinct_merges": 63,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 1.3
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 1,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 7,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 1.7
+   },
+   {
+    "instance": "n5(F_7) H=<e2> non-normal",
+    "normal": false,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 7,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.0
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 7,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^6",
+      "cases": 64,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.4
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 7,
+      "label_support": 343,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 343^10",
+      "cases": 64,
+      "distinct_merges": 63,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 1.4
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 1,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 7,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 1.9
+   },
+   {
+    "instance": "n5(F_7) H=<e3> non-normal",
+    "normal": false,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 49,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.0
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 49,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^6",
+      "cases": 64,
+      "distinct_merges": 58,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.6
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 49,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^10",
+      "cases": 64,
+      "distinct_merges": 58,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 1.3
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 2,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 49,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 1.9
+   },
+   {
+    "instance": "n5(F_7) H=Z(G) = <e5>",
+    "normal": true,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 2401,
+      "label_support": 1,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.0
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 343,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 7^6",
+      "cases": 64,
+      "distinct_merges": 14,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.4
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 49,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^10",
+      "cases": 64,
+      "distinct_merges": 56,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 1.1
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 4,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 2401,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 1.5
+   },
+   {
+    "instance": "n5(F_7) H=<e2,e5> non-normal",
+    "normal": false,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 16807,
+      "label_support": 1,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.0
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 2401,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 7^6",
+      "cases": 64,
+      "distinct_merges": 17,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.6
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 343,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^10",
+      "cases": 64,
+      "distinct_merges": 57,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 2.2
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 5,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 16807,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 2.8
+   },
+   {
+    "instance": "n5(F_7) H=<e1+e2+e5> non-normal",
+    "normal": false,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 7,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.0
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 7,
+      "label_support": 49,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 49^6",
+      "cases": 64,
+      "distinct_merges": 59,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.4
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 7,
+      "label_support": 343,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 343^10",
+      "cases": 64,
+      "distinct_merges": 63,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 1.2
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 1,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 7,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 1.6
+   },
+   {
+    "instance": "n5(F_7) H=<e4,e5> = gamma_3",
+    "normal": true,
+    "grades": {
+     "4": {
+      "arity": 3,
+      "state_support": 823543,
+      "label_support": 1,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.8
+     },
+     "3": {
+      "arity": 6,
+      "state_support": 117649,
+      "label_support": 1,
+      "label_law_uniform": true,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 0.6
+     },
+     "2": {
+      "arity": 10,
+      "state_support": 2401,
+      "label_support": 7,
+      "label_law_uniform": true,
+      "tuples": "sampled 64 of 7^10",
+      "cases": 64,
+      "distinct_merges": 23,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 1.9
+     }
+    },
+    "source": {
+     "evaluation_is_aE_s_for_all_a": true,
+     "oracle_wiring": true,
+     "kernel_dim": 7,
+     "kernel_equals_exp_h_lift": true,
+     "evaluation_homomorphism_sampled": true,
+     "hom_pairs": 4096,
+     "passed": true,
+     "coset_state": true
+    },
+    "source_support": 823543,
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 4.1
+   }
+  ],
+  "all_pass": true
+ },
+ "runs": {
+  "rows": [
+   {
+    "instance": "n5(F_7) H=trivial",
+    "normal": true,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 1.9
+   },
+   {
+    "instance": "n5(F_7) H=trivial",
+    "normal": true,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 1.9
+   },
+   {
+    "instance": "n5(F_7) H=<e1> non-normal",
+    "normal": false,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 0.4
+   },
+   {
+    "instance": "n5(F_7) H=<e1> non-normal",
+    "normal": false,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 0.4
+   },
+   {
+    "instance": "n5(F_7) H=<e2> non-normal",
+    "normal": false,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 0.4
+   },
+   {
+    "instance": "n5(F_7) H=<e2> non-normal",
+    "normal": false,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 0.4
+   },
+   {
+    "instance": "n5(F_7) H=<e3> non-normal",
+    "normal": false,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 1.5
+   },
+   {
+    "instance": "n5(F_7) H=<e3> non-normal",
+    "normal": false,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 1.4
+   },
+   {
+    "instance": "n5(F_7) H=Z(G) = <e5>",
+    "normal": true,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 1.6
+   },
+   {
+    "instance": "n5(F_7) H=Z(G) = <e5>",
+    "normal": true,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 1.7
+   },
+   {
+    "instance": "n5(F_7) H=<e2,e5> non-normal",
+    "normal": false,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 2.4
+   },
+   {
+    "instance": "n5(F_7) H=<e2,e5> non-normal",
+    "normal": false,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 2.5
+   },
+   {
+    "instance": "n5(F_7) H=<e1+e2+e5> non-normal",
+    "normal": false,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 0.4
+   },
+   {
+    "instance": "n5(F_7) H=<e1+e2+e5> non-normal",
+    "normal": false,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 0.4
+   },
+   {
+    "instance": "n5(F_7) H=<e4,e5> = gamma_3",
+    "normal": true,
+    "seed": 20261103,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 45.1
+   },
+   {
+    "instance": "n5(F_7) H=<e4,e5> = gamma_3",
+    "normal": true,
+    "seed": 20261104,
+    "recovered": true,
+    "terminal_samples": 9,
+    "oracle_queries": 6480,
+    "top_sources": 1620,
+    "coherent_witness_d4": 540,
+    "coherent_witness_d3": 90,
+    "coherent_witness_d2": 9,
+    "seconds": 46.4
+   }
+  ],
+  "all_recovered": true
+ },
+ "seconds": 130.5
+}

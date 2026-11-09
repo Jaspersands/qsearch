@@ -1,0 +1,129 @@
+{
+  "scope": "Exact CLASSICAL sparse quadratic derivative/leading-coefficient control. No generic LS, quantum HSP, full theorem-sized run, or asymptotic inference.",
+  "N": 1099511627777,
+  "N_bits": 41,
+  "native_field": "Q(T)[Y]/(Y^2-T^(2N)-2)",
+  "native_units": [
+    "Y-T^N",
+    "Y+T^N",
+    "2",
+    "T"
+  ],
+  "expanded_T_power": false,
+  "good": {
+    "prime": 2305843009213693951,
+    "derivative_matrix_mod_p": [
+      [
+        0,
+        0,
+        0,
+        1152921504606846976
+      ],
+      [
+        1339023561403835722,
+        966819447809858229,
+        0,
+        0
+      ]
+    ],
+    "lll_basis": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        -1152921504606846976,
+        1152921504606846975,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2305843009213693951
+      ]
+    ],
+    "short_alg_basis": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "cutoff_control_only": 64,
+    "later_GS_norm_squared_min": "5316911983139663487003542222693990401/2"
+  },
+  "leading_coefficients": {
+    "plus_branch": [
+      "1",
+      "2",
+      "2",
+      "1"
+    ],
+    "minus_branch": [
+      "-2",
+      "-1",
+      "2",
+      "1"
+    ],
+    "naive_cancelled_coefficient": 0,
+    "norm_repaired_coefficient": "1"
+  },
+  "both_branches_exact_relation_basis": [
+    [
+      [
+        1,
+        1,
+        -1,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        1,
+        -1,
+        0
+      ]
+    ]
+  ],
+  "derivative_only_false_positive": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "constant_only_false_positive": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "bad_characteristic": {
+    "p": 257,
+    "divides_N": true,
+    "short_rank": 3,
+    "false_vector": [
+      1,
+      0,
+      0,
+      0
+    ]
+  }
+}

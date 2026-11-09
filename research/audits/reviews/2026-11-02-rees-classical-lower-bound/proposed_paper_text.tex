@@ -1,0 +1,99 @@
+% Proposed paper text for main.tex (item 9, 2026-11-02-rees-classical-lower-bound.md).
+% Target: a new subsection at the end of Section~\ref{sec:classical-landscape},
+% after Remark~\ref{rem:filters} and before \section{Mechanical Verification ...}.
+% Status: AI-checked, pending human review. Bibliography entries are in
+% proposed_references.bib in this folder.
+
+\subsection{Classical Query Complexity and the Query Separation}
+\label{sec:classical-query}
+
+This subsection states what classical algorithms cannot do in the oracle model of Definition~\ref{def:input-contract}. A \emph{classical query algorithm} receives $p$ and the structure constants of $\mathcal{L}$, so it knows the group law, and evaluates the hiding function $f$ at points of $G$ of its choice. Its cost is the number of evaluations; all other computation is free. It \emph{solves the HSP with error $\delta$} if, for every subgroup $H$ and every function $f$ hiding $H$, it outputs $\hh$ with probability at least $1-\delta$. The label set has at least $|G|$ elements. Coset-copy input has no classical counterpart and is not treated here. Write $N_1 = (p^m-1)/(p-1)$ and $z = \dim Z(\mathcal{L})$.
+
+\begin{lemma}[Collision bound]
+\label{lem:collision}
+Let $K \le G$, and let $\mu$ be a probability distribution on subgroups $H$ with $K < H \le G$. Put $\rho = \max_{g \in G\setminus K}\Pr_{H\sim\mu}[g\in H]$ and $\pi = \max_H \mu(H)$. Consider a classical randomized algorithm that is told $K$ and makes $q$ queries.
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+  \item If it outputs $H$ with probability at least $1-\delta$ for every $H$ in the support of $\mu$, then $\binom{q}{2}\rho \ge 1-\delta-\pi$.
+  \item If it decides whether the hidden subgroup is $K$ or lies in the support of $\mu$, with error at most $\delta$ in each case, then $\binom{q}{2}\rho \ge 1-2\delta$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For a subgroup $J$, let $O_J$ answer queries by lazy sampling: a point in a left coset of $J$ queried before gets that coset's label, and a point in a new coset gets a label drawn uniformly from the labels not yet used. This realizes a uniformly random injective labelling of $G/J$, so $O_J$ hides $J$, and a bound for these random labellings is a bound for the worst case. Run the algorithm against $O_K$ and against $O_H$ with the same coins and the same stream of fresh labels. The two runs agree until the first query $x_j$ that lies in a new left coset of $K$ but in a previously visited left coset of $H$, that is, until $x_i^{-1}x_j \in H\setminus K$ for some $i<j$. Let $x_1,\dots,x_q$ be the queries of the run against $O_K$. Their law does not depend on $H$, so for $H\sim\mu$ drawn independently,
+\[
+  \Pr[\text{the runs differ}] \le \sum_{i<j}\Pr_{H\sim\mu}\bigl[x_i^{-1}x_j \in H\setminus K\bigr] \le \binom{q}{2}\rho .
+\]
+For~(i), the run against $O_H$ outputs $H$ only if the runs differ or the run against $O_K$ outputs $H$. The latter output does not depend on $H$, so averaging over $\mu$ gives $1-\delta \le \binom q2\rho + \pi$. For~(ii), the run against $O_H$ answers ``not $K$'' with probability at least $1-\delta$, and the run against $O_K$ does so with probability at most $\delta$, so the runs differ with probability at least $1-2\delta$.
+\end{proof}
+
+This is Simon's collision argument~\cite{Simon1997}. Childs proves the deterministic form for $N$ subgroups that meet only in the identity~\cite[Theorem~5.1]{ChildsQA}, and Ye, Huang, Li and Wang prove the randomized form for $\mathbb{Z}_p^n$~\cite[Lemma~1]{YeHuangLiWang2021}. Only the instantiation below is specific to the present setting.
+
+\begin{proposition}[Classical query complexity]
+\label{prop:classical-query}
+Let $\mathcal{L}$ be as in Definition~\ref{def:input-contract} with $m \ge 2$, and let $0 \le \delta < 1/2$.
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+  \item Every classical query algorithm that solves the HSP with error $\delta$ makes $q$ queries with $\binom q2 \ge (1-\delta)N_1 - 1$, hence $q > \sqrt{2(1-\delta)\,p^{m-1}}$. This holds already under the promise $|H| = p$.
+  \item If $\mathcal{L}$ is not abelian, the bound of~(i) holds under the promise that $H$ is a non-normal subgroup of order $p$, with $N_1$ replaced by $(p^m-p^z)/(p-1) \ge p^{m-2}(p+1)$.
+  \item Let $\mathfrak{k}$ be an ideal of dimension $k \le m-2$ and $K = \exp\mathfrak{k}$. An algorithm that is told $K$ and promised $K < H$ with $[H:K] = p$ still needs $\binom q2 \ge (1-\delta)(p^{m-k}-1)/(p-1) - 1$, hence $q > \sqrt{2(1-\delta)\,|G|/|H|}$. Under the further promise that $H$ is normal, the same holds with $p^{m-k}$ replaced by $p^{z_k}$ when $z_k \coloneqq \dim Z(\mathcal{L}/\mathfrak{k}) \ge 2$.
+  \item Deciding whether $H = 1$ or $|H| = p$, with error at most $\delta$ in each case, needs $\binom q2 \ge (1-2\delta)N_1$.
+  \item Conversely, let $0<\eps<1$, $t = \lceil\log_p(2/\eps)\rceil$, $\ell = \ln(2/\eps)$ and
+  \[
+    Q = 5(m+t) + 16\lceil \ell\rceil + \Bigl\lceil\sqrt{2p^{m-1}\max(2t+2,\,8\ell)}\,\Bigr\rceil .
+  \]
+  Query $Q$ independent uniform points $x_1,\dots,x_Q$. For each label value, let $x_a$ be the first point with that label, and output the Lie subalgebra generated by the vectors $\log(x_a^{-1}x_i)$ over all later points $x_i$ with the same label. The output is always contained in $\hh$, and it equals $\hh$ with probability at least $1-\eps$, for every $H$. For fixed $c$, the remaining work is $\poly(Q, m, \log p)$.
+\end{enumerate}
+In particular, for fixed $\delta \in (0,1/2)$ the classical randomized query complexity of the HSP in $G$ is $\Theta(p^{(m-1)/2})$. The implied constants depend only on $\delta$; they do not depend on $c$ or on the structure constants of $\mathcal{L}$.
+\end{proposition}
+
+\begin{proof}
+Since $c<p$, the elements $\exp(sx)$, $s\in\Fp$, commute and $\exp(sx)\exp(s'x) = \exp((s+s')x)$. So $G$ has exponent $p$, the subgroups of order $p$ are the sets $\exp(\Fp v)$ with $v \ne 0$, and each $g \ne 1$ lies in exactly one of them. For a subgroup $J$ with $\log J = \mathfrak{j}$, the group $Z(G)$ is $\exp Z(\mathcal{L})$ and $J$ is normal exactly when $\mathfrak{j}$ is an ideal, by the Lazard correspondence.
+
+(i) Take $K = 1$ and $\mu$ uniform on the $N_1$ subgroups of order $p$, so $\rho = \pi = 1/N_1$. Lemma~\ref{lem:collision}(i) gives $\binom q2 \ge (1-\delta)N_1 - 1$. This forces $q \ge 2$, because $N_1 \ge 3$ and $\delta < 1/2$. Since $N_1 \ge p^{m-1}+1$, we get $q^2 = q(q-1) + q \ge 2(1-\delta)p^{m-1} - 2\delta + q > 2(1-\delta)p^{m-1}$.
+
+(ii) A normal subgroup of order $p$ of a $p$-group meets the centre nontrivially, so it is central. Hence the non-normal subgroups of order $p$ are the $\exp(\Fp v)$ with $v \notin Z(\mathcal{L})$. There are $(p^m-p^z)/(p-1)$ of them, and a nonabelian $\mathcal{L}$ has $z \le m-2$, since $\dim \mathcal{L}/Z(\mathcal{L}) = 1$ would make $\mathcal{L}$ abelian. Take $\mu$ uniform on them. A central $g$ lies in none of them, and any other $g\neq 1$ lies in exactly one, so $\rho = \pi = (p-1)/(p^m-p^z)$. The arithmetic of~(i) applies, since $p^{m-2}(p+1) \ge p^{m-1}+1$.
+
+(iii) The subgroups $H$ with $K<H$ and $[H:K]=p$ are the $\exp(\mathfrak{k}+\Fp v)$ with $v\notin\mathfrak{k}$. Each $\mathfrak{k}+\Fp v$ is a subalgebra because $\mathfrak{k}$ is an ideal, and there are $(p^{m-k}-1)/(p-1)$ of them. Each $g \notin K$ lies in exactly one, namely $\exp(\mathfrak{k} + \Fp\log g)$. Take $\mu$ uniform; then $\rho=\pi=(p-1)/(p^{m-k}-1)$, and~(i) applies with $m$ replaced by $m-k$ and $p^{m-k-1} = |G|/|H|$. Such an $H$ is normal exactly when $(\mathfrak{k}+\Fp v)/\mathfrak{k}$ is an ideal of $\mathcal{L}/\mathfrak{k}$. A one-dimensional ideal of a nilpotent Lie algebra is central, so there are $(p^{z_k}-1)/(p-1)$ normal choices. Each $g\notin K$ lies in at most one of them, so again $\rho=\pi$ is one over their number.
+
+(iv) This is Lemma~\ref{lem:collision}(ii) with the $\mu$ of~(i).
+
+(v) Equal labels $f(x_a) = f(x_i)$ give $x_a^{-1}x_i \in H$, so every generator lies in the subalgebra $\hh$, and so does the output. If $H = 1$, the output is $0 = \hh$. Let $|H| = p^k$ with $k\ge 1$, and let $M = p^{m-k}$ be the number of left cosets. Write $x_i = r_ih_i$ with $r_i$ in a fixed transversal and $h_i\in H$. For uniform $x_i$, the pair $(r_i,h_i)$ is uniform, and $h_i$ is independent of $r_i$. Let $D$ be the number of cosets visited and $e = Q-D$. The $e$ elements $x_a^{-1}x_i = h_a^{-1}h_i$, one for each non-first point $x_i$ of each visited coset, are independent and uniform on $H$, given the coset pattern. By the Lazard correspondence the output contains the logarithm of the subgroup they generate. By the Burnside basis theorem, $e$ uniform elements fail to generate $H$ only if their images in $H/\Phi(H)\cong\Fp^{d}$, $d\le k$, lie in a hyperplane. This has probability at most $\frac{p^d-1}{p-1}p^{-e} < p^{d-e}/(p-1)$. With $s = k+t$, the failure probability is therefore at most $\Pr[e<s] + p^{-t}/(p-1) \le \Pr[e<s] + \eps/2$.
+
+Let $Y_j = 1$ if $x_j$ lands in an already visited coset. Given the past, $\Pr[Y_j = 1] = D_{j-1}/M$ with $D_{j-1} = j-1-e_{j-1}$. Realize $Y_j = [U_j < D_{j-1}/M]$ with independent uniform $U_j \in [0,1]$. On the event $e < s$, every $j$ has $D_{j-1} \ge j-s$, so $e \ge X \coloneqq \sum_j [U_j < \min(1,(j-s)^+/M)]$. Here $X$ is a sum of independent Bernoulli variables with mean $\mu_X = \sum_{i=1}^{Q-s}\min(1,i/M)$. The Chernoff bound $\Pr[X \le \mu_X/2] \le e^{-\mu_X/8}$ gives $\Pr[e<s] \le \eps/2$ as soon as $\mu_X \ge \max(2s, 8\ell)$. Put $\Phi = p^{m-1}\max(2t+2,8\ell)$. Since $s\le m+t$, we have $Q-s \ge 4(m+t) + 16\ell + \sqrt{2\Phi}$. If $Q-s \le M$, then $\mu_X \ge (Q-s)^2/(2M) \ge p^{k-1}\max(2t+2,8\ell) \ge \max(2s,8\ell)$, using $p^{k-1}(t+1) \ge k(t+1) \ge k+t$. If $Q-s > M$, then $\mu_X \ge (Q-s)-M/2 \ge (Q-s)/2 \ge \max(2s,8\ell)$. So the total failure probability is at most $\eps$.
+
+For fixed $c$, each $\log(x_a^{-1}x_i) = \BCH(-x_a,x_i)$ costs a bounded number of brackets. Grouping equal labels is a sort, and the subalgebra generated by at most $Q$ vectors is reached after at most $m$ rounds of bracketing and Gaussian elimination. The $\Theta$ statement combines~(i) at error $\delta$ with~(v) at $\eps = \delta$, using $m \le 2p^{(m-1)/2}$ for $p\ge 2$.
+\end{proof}
+
+The upper bound~(v) is the standard birthday algorithm~\cite[Section~1]{Nayak2022}, with explicit constants. For comparison, Nayak's deterministic algorithm for arbitrary finite groups uses at most $2\lceil\sqrt{|G|\ln|G|}\,\rceil$ queries~\cite[Corollary~4.2]{Nayak2022}, here $2\lceil\sqrt{p^m m\ln p}\,\rceil$, larger than~(v) by a factor of order $\sqrt{p\,m\log p}$. For $m=1$ the problem is trivial: $G = \Fp$ has two subgroups, and two queries suffice.
+
+\begin{table}[htbp]
+\centering
+\caption{Query counts at $\delta = \eps = 1/3$ and $p \ge 11$, where $t = 1$. Here $Q_{\mathrm q}$ is the Schedule~1 count $c(m+t)\prod_{d=2}^c B_d(g_d)$ of Remark~\ref{rem:query-separation}. The column ``$\mathrm{LB} > Q_{\mathrm q}$'' gives the smallest prime $p$ at which the bound $\binom q2 \ge \frac23 N_1 - 1$ of Proposition~\ref{prop:classical-query}(i) forces more than $Q_{\mathrm q}$ classical queries. For $p$ below the value in the next column, the classical algorithm of Proposition~\ref{prop:classical-query}(v) uses fewer than $Q_{\mathrm q}$ queries. The last column is the information-theoretic count of copies of $\rho_H$, $\lceil 4\log_2(3r)\rceil$ of~\cite[Eq.~(10.10)]{ChildsQA}, with $r$ the number of subspaces of $\Fp^m$, at the crossover prime; it has exponential post-processing. Exact computation, \file{research/audits/reviews/2026-11-02-rees-classical-lower-bound/classical_lb.json} and \file{birthday_crossover.json}.}
+\label{tab:query-crossover}
+\small
+\begin{tabular}{@{}lcccrrrr@{}}
+\toprule
+Family & $c$ & $m$ & $(g_2,\dots,g_c)$ & $\log_2 Q_{\mathrm q}$ & $\mathrm{LB} > Q_{\mathrm q}$ from & (v) $< Q_{\mathrm q}$ for $p <$ & copies \\
+\midrule
+Heisenberg & 2 & 3 & $(1)$ & $9.00$ & $443$ & $84$ & $81$ \\
+filiform & 3 & 4 & $(2,1)$ & $27.76$ & $337{,}853$ & $119{,}671$ & $301$ \\
+free, two generators & 3 & 5 & $(3,2)$ & $33.19$ & $92{,}107$ & $42{,}290$ & $407$ \\
+Dixmier--Lister & 3 & 8 & $(4,2)$ & $35.06$ & $997$ & $638$ & $644$ \\
+class-$\ReesClassNineClass$ profile & 9 & 19 & $(17,16,\dots,1)$ & $1572.66$ & $2^{174.72}$ & $2^{174.47}$ & $62{,}909$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[The query separation; conditional on Theorem~\ref{thm:main}]
+\label{rem:query-separation}
+By Section~\ref{sec:recursion}, the procedure of Theorem~\ref{thm:main} under Schedule~1 makes
+\[
+  Q_{\mathrm q} = c\,(m+t)\prod_{d=2}^c B_d(g_d),
+  \qquad t = \lceil\log_p(3/\eps)\rceil ,
+\]
+oracle queries. This count does not depend on $p$ once $p \ge 3/\eps$, and at fixed $c$ it is polynomial in $m$ with exponent at most $1+\sum_{d=2}^c d\lceil\log_2(d+1)\rceil$. By Proposition~\ref{prop:classical-query}(i) and~(ii), every classical algorithm with error $\delta<1/2$ needs more than $\sqrt{2(1-\delta)p^{m-1}}$ queries, even when $H$ is promised to be non-normal of order $p$. Hence, if Theorem~\ref{thm:main} holds, then for fixed $c$ and every sequence of instances with $m\ge2$ and $p^{m-1}\to\infty$, the ratio of classical to quantum query complexity is at least $p^{(m-1)/2}/\poly_c(m)$. In the input length $n = m\log_2 p$ this is $2^{\Omega(n)}$, both for $p\to\infty$ at fixed $m$ and for $m\to\infty$ at fixed $p$. Three limits apply.
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+  \item A query separation by itself is not new. Ettinger, H{\o}yer and Knill determine $H$ in any finite group with $O(\log^2|G| + \log(1/\eps))$ queries~\cite[Theorem~2]{EttingerHoyerKnill2004}, here $O(m^2\log^2 p + \log(1/\eps))$, but with exponential-time processing. Theorem~\ref{thm:main}, if correct, adds polynomial running time at polynomially many queries; it does not lower the query count, and its Schedule~1 count is far above the information-theoretic one (Table~\ref{tab:query-crossover}).
+  \item The constants are large. Below the crossover primes of Table~\ref{tab:query-crossover}, the stated quantum bound gives no query advantage. For the class-$\ReesClassNineClass$ profile of Section~\ref{sec:uniform-compilation}, an advantage needs $p > 2^{174.7}$.
+  \item The separation concerns queries to an oracle with arbitrary labels. In this model a query lower bound also bounds classical running time from below. It says nothing about any explicitly given $f$, and we know no explicit family of hiding functions on which classical algorithms stay slow (see the start of this section). We claim no speedup for any concrete problem.
+\end{enumerate}
+\end{remark}

@@ -233,6 +233,10 @@ def lifted_quadratic_countercontrol():
 
 
 def run_controls():
+    # The controls verify themselves with assert statements. Under python -O those are
+    # stripped, so refuse to produce the verified status rather than emit it unchecked.
+    if not __debug__:
+        raise RuntimeError("run without -O: the phase-depth controls verify with assert statements")
     return {"status": "NATIVE_NONCLASSICAL_PHASE_DEPTH_HIERARCHY_VERIFIED_REVIEW_PENDING",
             "cyclic_operator_identities": [repeated_identity(d) for d in range(1, 21)],
             "sharp_native_odd_level_controls": [sharp_degree_control(L) for L in (3, 5, 7, 9, 13, 19)],

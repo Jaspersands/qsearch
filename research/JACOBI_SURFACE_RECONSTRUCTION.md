@@ -1,5 +1,13 @@
 # Exact Surface Counts: CM Reconstruction And A Real Classical Attack
 
+**2026-11-06 scope refresh:** the repeated-character composite-conductor
+phase problem is now covered by Tal's September classical algorithm,
+ECCC TR26-211, Theorem1.5/Section3.1, and the reviewed group-ring reduction
+in [JACOBI_GROUP_RING_RECOVERY.md](JACOBI_GROUP_RING_RECOVERY.md). Do not
+use this older note's unextended prime-primary proof to infer that the
+corresponding repeated-Jacobi task still needs a quantum phase routine.
+This does not promote the old LLL implementation to full norm recovery.
+
 2026-10-17. Local mathematical derivations, review pending. No novelty claim.
 
 **Superseding classical comparison:** the [known-norm reduction](JACOBI_KNOWN_NORM_REDUCTION.md)

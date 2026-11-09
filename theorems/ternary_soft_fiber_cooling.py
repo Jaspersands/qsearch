@@ -67,7 +67,8 @@ def action_certificate(purity, support, parent_action, marker_action=0, bits=80,
             "raw_fiber_success_upper": str(bound),
             "weighting_scope": "one_target_density" if one_target else "original_source_Born_weighted_collision_purity",
             "bound_applies_to_temperature_and_block_policies_depending_on_full_labels_and_target": True,
-            "arbitrary_signed_and_nonmonotone_parent_schedules_covered": True,
+            # Derivation scope only: run_controls checks two schedules, not all of them.
+            "arbitrary_signed_and_nonmonotone_parent_schedules_derivation_claim": True,
             "projection_or_postselection_is_not_free_parent_evolution": True,
             "starting_state_is_uniform_native_word_superposition": True,
             "arbitrary_quantum_receiver_lower_bound": False}

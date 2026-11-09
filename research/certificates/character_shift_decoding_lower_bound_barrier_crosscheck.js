@@ -66,8 +66,8 @@ function runCrossCheck() {
     }
 
     // 1. Report integrity and SHA256
-    assertCheck("Report status is CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND_PROVED",
-        report.status === "CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND_PROVED");
+    assertCheck("Report status is CHARACTER_SHIFT_QUERY_CEILING_PROVED_HARDNESS_CONDITIONAL",
+        report.status === "CHARACTER_SHIFT_QUERY_CEILING_PROVED_HARDNESS_CONDITIONAL");
 
     if (fs.existsSync(DERIVATION_PATH)) {
         const derivationContent = fs.readFileSync(DERIVATION_PATH);
@@ -153,7 +153,8 @@ function runCrossCheck() {
 
     // 9. Claim Gating
     assertCheck("Speedup claim disallowed in report", report.claim_gate.speedup_claim_allowed === false);
-    assertCheck("Classical decoding hardness verified in report", report.claim_gate.classical_decoding_hardness_verified === true);
+    assertCheck("Classical decoding hardness is not marked verified (conditional on Legendre PRG hardness)", report.claim_gate.classical_decoding_hardness_verified === false);
+    assertCheck("Classical decoding hardness status is conditional", report.claim_gate.classical_decoding_hardness_status === "conditional-on-legendre-prg-hardness");
 
     console.log(`\nAll ${passCount} / ${checkCount} checks PASS.`);
 }

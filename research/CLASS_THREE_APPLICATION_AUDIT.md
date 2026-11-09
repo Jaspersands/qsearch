@@ -22,6 +22,48 @@ it does not make the resulting computational problem classically hard.
 
 ## Classical Baselines
 
+### 2026-10-31 Permutable Stabilizers In Arbitrary Permutation Ambients
+
+The new `PERMUTABLE_SYLOW_HSP.md` does not revive these explicit-object
+applications, even when the supplied permutation ambient G<=S_n is
+NONSOLVABLE. Promise H=Stab_G(X) is permutable. Compute a public Sylow P_p
+for every prime dividing |G|. [Kantor, Sylow's Theorem in Polynomial Time,
+Main Theorem](https://darkwing.uoregon.edu/~kantor/PAPERS/ptimeSylow.pdf)
+pays this CLASSICALLY in the explicit permutation degree; the full theorem
+and input specification were checked, not just its abstract. All relevant
+primes are at most n and the order can be computed by permutation-group
+methods, so no large-integer factoring oracle is added.
+
+For each P_p, compute Stab_(P_p)(X) using the applicable classical solvable
+stabilizer algorithm below. The Sylow order argument in PERMUTABLE_SYLOW_HSP
+shows this is a full Sylow of H. Their generated union is exactly H, even
+if the pieces do not commute. This is a classical polynomial algorithm
+for the following explicit native inputs under the promised stabilizer:
+
+- Color strings and sets on n points, by Luks set stabilization.
+- Graphs or fixed-arity explicit relations, by the induced action on at
+  most n^d tuples for fixed d. Preserve/lift the original action kernel.
+- Explicit linear codes under the supplied coordinate-permutation group,
+  by solvable matrix-group subspace stabilization. Each P_p has its only
+  cross-characteristic prime p<=n, so the mu factor in the source is paid.
+
+The classical reduction actually only requires H to permute with each
+chosen P_p; unlike the quantum p-group solver, the classical stabilizer
+subroutine needs no extra promise on its hidden intersection. The candidate
+quantum advantage for this native class is therefore falsified by a matched
+polynomial baseline. This does not dequantize arbitrary oracle HSP, succinct
+functions on exponentially many positions, unknown quantum states, general
+transporters, or finding an unknown ambient group. No classical lower bound
+is asserted for those residuals.
+
+Independent review accepted this extension. An actual Sage/GAP standard
+set-stabilizer call on the regular 27-point action of SmallGroup(27,4)
+recovered its nonnormal permutable order3 subgroup exactly from the explicit
+subset; this is a finite sanity check, not evidence for the polynomial
+theorem. The subgroup was exposed only to build and verify the test input.
+The asymptotic claim uses the published algorithms and Sylow proof.
+No new backend, repeated small-group census or broad test expansion follows.
+
 ### Graphs And Explicit Colorings
 
 For a supplied solvable permutation group Gamma, color/set stabilizers

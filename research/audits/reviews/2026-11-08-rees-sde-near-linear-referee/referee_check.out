@@ -1,0 +1,44 @@
+== A: exact wrong-key frequency vs union bound ==
+kap=2 p=2003 lam=1 m=12: trials=399 zero_hits=1 Pr[wrong key consistent]=0.6165 union_bound=0.9893 2kap^(1-lam)=2.0000 Pr[all eps equal]=0.0000 exact=4.88e-04
+kap=2 p=2003 lam=3 m=14: trials=396 zero_hits=4 Pr[wrong key consistent]=0.2020 union_bound=0.2478 2kap^(1-lam)=0.5000 Pr[all eps equal]=0.0000 exact=1.22e-04
+kap=3 p=3001 lam=1 m=9: trials=299 zero_hits=1 Pr[wrong key consistent]=0.3779 union_bound=0.4614 2kap^(1-lam)=2.0000 Pr[all eps equal]=0.0000 exact=1.52e-04
+kap=3 p=3001 lam=2 m=10: trials=300 zero_hits=0 Pr[wrong key consistent]=0.1167 union_bound=0.1539 2kap^(1-lam)=0.6667 Pr[all eps equal]=0.0000 exact=5.08e-05
+kap=4 p=3001 lam=1 m=7: trials=300 zero_hits=0 Pr[wrong key consistent]=0.4533 union_bound=0.7393 2kap^(1-lam)=2.0000 Pr[all eps equal]=0.0000 exact=2.44e-04
+kap=2 p=20011 lam=2 m=17: trials=150 zero_hits=0 Pr[wrong key consistent]=0.3133 union_bound=0.3058 2kap^(1-lam)=1.0000 Pr[all eps equal]=0.0000 exact=1.53e-05
+== B: column-language bank, own nullspace, full kernel enumeration ==
+kap=2 p=29 m=6 k=2 a=6 M=10 dead pairs: P0-solutions=28 using_pairs=0 predicted_block_only=28 keys=[11, 14] theta=14
+kap=2 p=29 m=6 k=2 a=6 M=10 dead pairs: P0-solutions=14 using_pairs=0 predicted_block_only=14 keys=[18] theta=18
+kap=2 p=29 m=6 k=2 a=6 M=10 dead pairs: P0-solutions=28 using_pairs=0 predicted_block_only=28 keys=[0, 15] theta=15
+kap=2 p=29 m=6 k=2 a=6 M=10 LIVE-pair control: P0-solutions=6524 using_pairs=6496 predicted_block_only=28 keys=[3, 20] theta=3
+kap=2 p=29 m=6 k=2 a=6 M=10 LIVE-pair control: P0-solutions=9674 using_pairs=9632 predicted_block_only=42 keys=[5, 10, 28] theta=28
+kap=2 p=29 m=6 k=2 a=6 M=10 LIVE-pair control: P0-solutions=9674 using_pairs=9632 predicted_block_only=42 keys=[12, 13, 28] theta=13
+kap=2 p=41 m=7 k=1 a=6 M=9 dead pairs: P0-solutions=60 using_pairs=0 predicted_block_only=60 keys=[2, 16, 28] theta=28
+kap=2 p=41 m=7 k=1 a=6 M=9 dead pairs: P0-solutions=20 using_pairs=0 predicted_block_only=20 keys=[32] theta=32
+kap=2 p=41 m=7 k=1 a=6 M=9 dead pairs: P0-solutions=60 using_pairs=0 predicted_block_only=60 keys=[9, 22, 23] theta=9
+kap=2 p=41 m=7 k=1 a=6 M=9 LIVE-pair control: P0-solutions=440 using_pairs=420 predicted_block_only=20 keys=[11] theta=11
+kap=2 p=41 m=7 k=1 a=6 M=9 LIVE-pair control: P0-solutions=440 using_pairs=420 predicted_block_only=20 keys=[9] theta=9
+kap=2 p=41 m=7 k=1 a=6 M=9 LIVE-pair control: P0-solutions=440 using_pairs=420 predicted_block_only=20 keys=[16] theta=16
+kap=3 p=37 m=5 k=2 a=5 M=9 dead pairs: P0-solutions=24 using_pairs=0 predicted_block_only=24 keys=[4, 18] theta=4
+kap=3 p=37 m=5 k=2 a=5 M=9 dead pairs: P0-solutions=36 using_pairs=0 predicted_block_only=36 keys=[4, 10, 35] theta=4
+kap=3 p=37 m=5 k=2 a=5 M=9 dead pairs: P0-solutions=12 using_pairs=0 predicted_block_only=12 keys=[28] theta=28
+kap=3 p=37 m=5 k=2 a=5 M=9 LIVE-pair control: P0-solutions=2196 using_pairs=2184 predicted_block_only=12 keys=[24] theta=24
+kap=3 p=37 m=5 k=2 a=5 M=9 LIVE-pair control: P0-solutions=2196 using_pairs=2184 predicted_block_only=12 keys=[28] theta=28
+kap=3 p=37 m=5 k=2 a=5 M=9 LIVE-pair control: P0-solutions=4224 using_pairs=4200 predicted_block_only=24 keys=[22, 36] theta=22
+kap=4 p=37 m=5 k=2 a=5 M=9 dead pairs: P0-solutions=9 using_pairs=0 predicted_block_only=9 keys=[22] theta=22
+kap=4 p=37 m=5 k=2 a=5 M=9 dead pairs: P0-solutions=9 using_pairs=0 predicted_block_only=9 keys=[22] theta=22
+kap=4 p=37 m=5 k=2 a=5 M=9 LIVE-pair control: P0-solutions=999 using_pairs=990 predicted_block_only=9 keys=[28] theta=28
+kap=4 p=37 m=5 k=2 a=5 M=9 LIVE-pair control: P0-solutions=999 using_pairs=990 predicted_block_only=9 keys=[24] theta=24
+kap=6 p=37 m=4 k=2 a=4 M=8 dead pairs: P0-solutions=6 using_pairs=0 predicted_block_only=6 keys=[27] theta=27
+kap=6 p=37 m=4 k=2 a=4 M=8 dead pairs: P0-solutions=6 using_pairs=0 predicted_block_only=6 keys=[0] theta=0
+kap=6 p=37 m=4 k=2 a=4 M=8 LIVE-pair control: P0-solutions=342 using_pairs=336 predicted_block_only=6 keys=[27] theta=27
+kap=6 p=37 m=4 k=2 a=4 M=8 LIVE-pair control: P0-solutions=636 using_pairs=624 predicted_block_only=12 keys=[4, 10] theta=4
+== C: shift symmetry of the bank (Corollary H2) ==
+kap=2 m=6 p=147457: #K by shift sigma=0..1: [2358, 2302]; u(eps+1)/u(eps) in a single coset (banks equal after P-rescaling of columns): True
+kap=2 m=6 p=147457: #K by shift sigma=0..1: [2339, 2298]; u(eps+1)/u(eps) in a single coset (banks equal after P-rescaling of columns): True
+kap=2 m=6 p=147457: #K by shift sigma=0..1: [2380, 2293]; u(eps+1)/u(eps) in a single coset (banks equal after P-rescaling of columns): True
+kap=3 m=4 p=105019: #K by shift sigma=0..2: [1321, 1317, 1328]; u(eps+1)/u(eps) in a single coset (banks equal after P-rescaling of columns): True
+kap=3 m=4 p=105019: #K by shift sigma=0..2: [1279, 1267, 1361]; u(eps+1)/u(eps) in a single coset (banks equal after P-rescaling of columns): True
+kap=3 m=4 p=105019: #K by shift sigma=0..2: [1364, 1307, 1285]; u(eps+1)/u(eps) in a single coset (banks equal after P-rescaling of columns): True
+== D: kappa=3 dead weight of density 5/2 at p=7 ==
+p=7 kappa=3: #dead 5-column banks in F_7^2 (columns up to P-scaling, multisets) = 1008; example ((0, 1), (1, 0), (1, 2), (1, 4), (3, 1))
+/opt/anaconda3/bin/python -B referee_check.py ABCD  156.90s user 0.45s system 83% cpu 3:07.80 total

@@ -1,0 +1,654 @@
+{
+ "status": {
+  "status": "explicit_qft_and_coherent_labels_one_circuit_per_terminal_sample_finite_checks",
+  "scope": "Heis(F_3) and n4(F_5) only (every SDE grade has kappa_d <= 2)",
+  "full_gate_level_terminal_sample": true,
+  "no_mid_circuit_measurement": true,
+  "monolithic_simulation": false,
+  "fixed_finite_gate_set": false,
+  "coherent_receiver_implemented": false,
+  "general_instances": false,
+  "kappa_ge3_grades_coherent": false,
+  "independent_review": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review"
+ },
+ "heis_f3": {
+  "params": [
+   7,
+   7,
+   28
+  ],
+  "includes_inverse_transform": true,
+  "tol": 1e-10,
+  "rows": [
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999578,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 2.9,
+    "instance": "Heis(F_3) H=<[]> normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999578,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 3.0,
+    "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999577,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 2.8,
+    "instance": "Heis(F_3) H=<[(1, 0, 1)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999578,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 2.8,
+    "instance": "Heis(F_3) H=<[(1, 0, 2)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999577,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 2.7,
+    "instance": "Heis(F_3) H=<[(1, 1, 0)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999577,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 2.7,
+    "instance": "Heis(F_3) H=<[(1, 1, 1)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999578,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 3.0,
+    "instance": "Heis(F_3) H=<[(1, 1, 2)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999578,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 3.5,
+    "instance": "Heis(F_3) H=<[(1, 2, 0)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999577,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 4.0,
+    "instance": "Heis(F_3) H=<[(1, 2, 1)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999578,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 3.5,
+    "instance": "Heis(F_3) H=<[(1, 2, 2)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999577,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 4.3,
+    "instance": "Heis(F_3) H=<[(0, 1, 0)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999578,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 3.1,
+    "instance": "Heis(F_3) H=<[(0, 1, 1)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 729,
+    "support_explicit": 591948,
+    "max_support_explicit": 705024,
+    "prune_err_explicit": 6.676587095803944e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999577,
+    "state_distance": 0.09303944726590585,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 3.3,
+    "instance": "Heis(F_3) H=<[(0, 1, 2)]> non-normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "prune_err_exact": 3.091119528033682e-16,
+    "norm_explicit": 0.999999999999962,
+    "state_distance": 1.193640378738193e-08,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 0.3,
+    "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "prune_err_exact": 3.091119528033682e-16,
+    "norm_explicit": 0.999999999999962,
+    "state_distance": 1.193640378738193e-08,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 0.3,
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "prune_err_exact": 3.091119528033682e-16,
+    "norm_explicit": 0.999999999999962,
+    "state_distance": 1.193640378738193e-08,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 0.3,
+    "instance": "Heis(F_3) H=<[(1, 1, 0), (0, 0, 1)]> normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "prune_err_exact": 3.091119528033682e-16,
+    "norm_explicit": 0.999999999999962,
+    "state_distance": 1.193640378738193e-08,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 0.3,
+    "instance": "Heis(F_3) H=<[(1, 2, 0), (0, 0, 1)]> normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "prune_err_exact": 3.091119528033682e-16,
+    "norm_explicit": 0.999999999999962,
+    "state_distance": 1.193640378738193e-08,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 0.2,
+    "instance": "Heis(F_3) H=<[(0, 1, 0), (0, 0, 1)]> normal"
+   },
+   {
+    "items": [
+     0,
+     25
+    ],
+    "wires": 60,
+    "gates_explicit": 24840,
+    "gates_exact": 4326,
+    "support_exact": 81,
+    "support_explicit": 648,
+    "max_support_explicit": 31104,
+    "prune_err_explicit": 6.61267757597365e-08,
+    "prune_err_exact": 3.091119528033682e-16,
+    "norm_explicit": 0.999999999999962,
+    "state_distance": 1.193640378738193e-08,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 6,
+     "zero_input_forward": 5,
+     "general": 1,
+     "B": 0.22152262721922492,
+     "prep": 1.193640385173075e-08,
+     "B_simple": 0.2215226659973142,
+     "exact_formula": 0.2215226869012442
+    },
+    "seconds": 0.3,
+    "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 1, 0), (0, 0, 1)]> normal"
+   }
+  ]
+ },
+ "n4_f5": {
+  "params": [
+   4,
+   4,
+   28
+  ],
+  "includes_inverse_transform": false,
+  "tol": 1e-10,
+  "rows": [
+   {
+    "items": [
+     0,
+     54
+    ],
+    "wires": 101,
+    "gates_explicit": 58225,
+    "gates_exact": 20457,
+    "support_exact": 390625,
+    "support_explicit": 390625,
+    "max_support_explicit": 6250000,
+    "prune_err_explicit": 4.17187908771804e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999559,
+    "state_distance": 2.189173277163757e-14,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 8,
+     "zero_input_forward": 8,
+     "general": 0,
+     "B": 1.007782236638206,
+     "prep": 4.05687398063077e-09,
+     "B_simple": 1.0077822887573864,
+     "exact_formula": 3.245499184504616e-08
+    },
+    "seconds": 54.9,
+    "instance": "n4(F_5) H=<e2> non-normal"
+   },
+   {
+    "items": [
+     0,
+     54
+    ],
+    "wires": 101,
+    "gates_explicit": 58225,
+    "gates_exact": 20457,
+    "support_exact": 390625,
+    "support_explicit": 390625,
+    "max_support_explicit": 6250000,
+    "prune_err_explicit": 4.17187908771804e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999559,
+    "state_distance": 2.189173277163757e-14,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 8,
+     "zero_input_forward": 8,
+     "general": 0,
+     "B": 1.007782236638206,
+     "prep": 4.05687398063077e-09,
+     "B_simple": 1.0077822887573864,
+     "exact_formula": 3.245499184504616e-08
+    },
+    "seconds": 54.6,
+    "instance": "n4(F_5) H=<e1> non-normal"
+   },
+   {
+    "items": [
+     0,
+     54
+    ],
+    "wires": 101,
+    "gates_explicit": 58225,
+    "gates_exact": 20457,
+    "support_exact": 390625,
+    "support_explicit": 390625,
+    "max_support_explicit": 6250000,
+    "prune_err_explicit": 4.17187908771804e-08,
+    "prune_err_exact": 0.0,
+    "norm_explicit": 0.9999999999999559,
+    "state_distance": 2.189173277163757e-14,
+    "exact_run_mass_on_pool_or_ancillas": 0.0,
+    "hybrid": {
+     "n_calls": 8,
+     "zero_input_forward": 8,
+     "general": 0,
+     "B": 1.007782236638206,
+     "prep": 4.05687398063077e-09,
+     "B_simple": 1.0077822887573864,
+     "exact_formula": 3.245499184504616e-08
+    },
+    "seconds": 53.2,
+    "instance": "n4(F_5) H=<e1+e3> non-normal"
+   }
+  ]
+ }
+}

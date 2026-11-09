@@ -1,0 +1,18 @@
+== negative controls ==
+unsolvable kappa=2 p=257 a=2 M=4: result=stall
+unsolvable kappa=2 p=257 a=3 M=6: result=stall
+unsolvable kappa=2 p=257 a=5 M=10: result=stall
+unsolvable kappa=2 p=257 a=8 M=16: result=stall
+unsolvable kappa=3 p=2767 a=2 M=4: result=stall
+unsolvable kappa=3 p=2767 a=3 M=6: result=stall
+unsolvable kappa=3 p=2767 a=5 M=10: result=stall
+unsolvable kappa=3 p=2767 a=8 M=16: result=stall
+no-swap control kappa=2 p=257 a=4: {'span': 17, 'stall': 0, 'direct': 3}, columns discarded at would-be swaps=0 (with swaps: all reach the span, pi=0)
+no-swap control kappa=2 p=257 a=8: {'span': 20, 'stall': 0, 'direct': 0}, columns discarded at would-be swaps=0 (with swaps: all reach the span, pi=0)
+no-swap control kappa=3 p=2767 a=6: {'span': 20, 'stall': 0, 'direct': 0}, columns discarded at would-be swaps=0 (with swaps: all reach the span, pi=0)
+no-swap control kappa=3 p=2767 a=10: {'span': 20, 'stall': 0, 'direct': 0}, columns discarded at would-be swaps=0 (with swaps: all reach the span, pi=0)
+one-source control kappa=2 p=257 a=6: passes=600 fail(all sources)=5 fail(one source)=2
+one-source control kappa=3 p=2767 a=6: passes=600 fail(all sources)=0 fail(one source)=1
+corrupted witness rejected: True
+negative controls OK: True
+ALL OK: True

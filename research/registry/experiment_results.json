@@ -3686,7 +3686,7 @@
       "self_dual_wreath_central_support_rank_bridge": "research/representation/self_dual_wreath_central_support_rank_bridge.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-08-08T20:40:23.826043+00:00",
+    "created_at": "2026-11-01T05:17:22.678118+00:00",
     "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE",
     "falsifiers_triggered": [
       "Global diagonal covariance does not remove the central-support problem.",
@@ -17504,6 +17504,34 @@
     },
     "status": "diagonal-label-transform-isolated-multiplicity-space-open",
     "summary": "Verified diagonal YJM content spectra on 3 finite Kronecker sectors through n=6; 2 sector(s) explicitly retain nontrivial unresolved multiplicity degeneracy."
+  },
+  {
+    "artifacts": {
+      "coset_kronecker_marginal_conservation": "research/representation/coset_kronecker_marginal_conservation.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-11-01T05:17:19.475805+00:00",
+    "experiment_id": "EXP-COSET-KRONECKER-MARGINAL-CONSERVATION",
+    "falsifiers_triggered": [
+      "Naive maximally mixed fusion drops the conditioned column operators.",
+      "Target support occurrence does not imply target measurement mass gain.",
+      "Additional copies do not improve the final irrep-label marginal.",
+      "The surviving search space is joint and multiplicity-sensitive."
+    ],
+    "id": "RESULT-EXP-COSET-KRONECKER-MARGINAL-CONSERVATION-LATEST",
+    "metrics": {
+      "all_copy_marginal_conservation_theorem_count": 1,
+      "existing_two_copy_law_marginal_failure_count": 0,
+      "fusion_marginal_control_failure_count": 0,
+      "maximum_tested_copy_count": 7,
+      "maximum_tested_symmetric_group_degree": 5,
+      "multiplicity_collective_information_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "regular_column_control_failure_count": 0,
+      "target_label_signal_amplification_count": 0
+    },
+    "status": "kronecker-target-marginal-conserved-correlations-open",
+    "summary": "Proved that arbitrary-copy physical Kronecker fusion cannot amplify the weak-Fourier target-label marginal."
   },
   {
     "artifacts": {

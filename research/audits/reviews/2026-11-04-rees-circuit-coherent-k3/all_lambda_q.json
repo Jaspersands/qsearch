@@ -1,0 +1,71 @@
+{
+ "status": "coherent_label_receiver_backend_kappa3_grade_finite_checks",
+ "scope": "n4(F_7) only: grade 3 kappa_3 = 3 (triangular arity 3), grade 2 kappa_2 = 2 (arity 6)",
+ "coherent_receiver_implemented": false,
+ "coherent_label_backend_kappa3_instance": true,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "whole_circuit_amplitude_simulation": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "parts": [
+  "none"
+ ],
+ "args": {
+  "out": "research/audits/reviews/2026-11-04-rees-circuit-coherent-k3/all_lambda_q.json",
+  "parts": "none",
+  "per_label": 256,
+  "grade2_tuples": 64,
+  "max_all": 400,
+  "state_instances": "",
+  "run_instances": "0,1,2,3,7,8",
+  "all_lambda_q": true
+ },
+ "config": "n4(F_7) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 3}",
+ "kappa_constants_grade3": {
+  "kappa": 3,
+  "g": 2,
+  "h": 2,
+  "omega": 4,
+  "alpha": [
+   1,
+   0,
+   5
+  ],
+  "beta": [
+   0,
+   2,
+   6
+  ],
+  "u": 1,
+  "roots": [
+   {
+    "q": 3,
+    "S": 1,
+    "Q": 2,
+    "e1": 1,
+    "z": 4,
+    "wq": 4
+   }
+  ]
+ },
+ "d3_all_lambda_q": {
+  "inputs": 40353607,
+  "gates": 535671,
+  "qubits": 250,
+  "labels_unchanged": true,
+  "q_unchanged": true,
+  "x_equals_bch_with_coherent_witness": true,
+  "witness_and_workspace_clean": true,
+  "outputs_canonical": true,
+  "sim_seconds": 421.0,
+  "passed": true,
+  "index_range": [
+   0,
+   40353607
+  ],
+  "total_inputs_all_lambda_q": 40353607
+ },
+ "seconds": 421.1
+}

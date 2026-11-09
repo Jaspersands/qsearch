@@ -1,5 +1,11 @@
 # Genus-Two Repolarization Through An Explicit Polarized Quotient
 
+**2026-10-31 scope/priority correction:** `SURFACE_SOURCE_RECONCILIATION.md`
+recovers the prior prime-only eight-copy construction and retained full PPAV
+paper. The specific failed complement and the genus-two Cayley selector do
+not exclude or replace that distinct dimension16 route. Read the new note
+for the current input promises, imported model contracts and classical gates.
+
 30 October 2026. A constructive mathematical deduction, independently
 checked by an automated reviewer. NOT a uniform efficient geometric
 converter, implemented quantum source, novelty certificate or speedup.

@@ -1,0 +1,32 @@
+{
+  "scope": "This research pass only. Estimates, not invoice or prepaid balance. No automatic retry.",
+  "runs": [
+    {
+      "bundle": "research/audits/claude_runs/2026-11-06-uniform-character-constructive-fable",
+      "model": "claude-fable-5-1",
+      "status": "empty_response",
+      "stop_reason": "refusal",
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 15552,
+        "output_tokens": 0
+      },
+      "usage_cost_estimate_usd": 0.15552
+    },
+    {
+      "bundle": "research/audits/claude_runs/2026-11-06-fourier-feature-review-opus",
+      "model": "claude-opus-5-5",
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 4110,
+        "output_tokens": 20080
+      },
+      "usage_cost_estimate_usd": 0.41804
+    }
+  ],
+  "total_usage_cost_estimate_usd": 0.57356
+}

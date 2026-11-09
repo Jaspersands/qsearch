@@ -1,0 +1,655 @@
+{
+ "configs": [
+  {
+   "config": "heis_f3",
+   "p": 3,
+   "c": 2,
+   "m": 3,
+   "n": 4,
+   "b": 2,
+   "arity": {
+    "2": 3
+   },
+   "N": {
+    "1": 1,
+    "2": 3
+   },
+   "predicted_macros": {
+    "source_evaluation": 48,
+    "instrument": 3,
+    "sde_grade2": 98,
+    "witness_control_grade2": 18,
+    "bch_merge_grade2": 72
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 24,
+     "coarse_bound": 48
+    }
+   },
+   "predicted_total_macros": 239,
+   "measured_macros": {
+    "bch_merge_grade2": 72,
+    "instrument": 3,
+    "sde_grade2": 98,
+    "source_evaluation": 48,
+    "witness_control_grade2": 18
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 115282,
+   "qubits": 182,
+   "qft_calls": 24,
+   "oracle_calls": 6,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 724,
+   "gates_over_macros": 482.4,
+   "seconds": 0.0
+  },
+  {
+   "config": "heis_f5",
+   "p": 5,
+   "c": 2,
+   "m": 3,
+   "n": 4,
+   "b": 3,
+   "arity": {
+    "2": 3
+   },
+   "N": {
+    "1": 1,
+    "2": 3
+   },
+   "predicted_macros": {
+    "source_evaluation": 48,
+    "instrument": 3,
+    "sde_grade2": 174,
+    "witness_control_grade2": 18,
+    "bch_merge_grade2": 72
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 24,
+     "coarse_bound": 48
+    }
+   },
+   "predicted_total_macros": 315,
+   "measured_macros": {
+    "bch_merge_grade2": 72,
+    "instrument": 3,
+    "sde_grade2": 174,
+    "source_evaluation": 48,
+    "witness_control_grade2": 18
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 344834,
+   "qubits": 263,
+   "qft_calls": 24,
+   "oracle_calls": 6,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 1560,
+   "gates_over_macros": 1094.7,
+   "seconds": 0.0
+  },
+  {
+   "config": "n4_f5",
+   "p": 5,
+   "c": 3,
+   "m": 4,
+   "n": 7,
+   "b": 3,
+   "arity": {
+    "2": 6,
+    "3": 2
+   },
+   "N": {
+    "1": 1,
+    "2": 6,
+    "3": 12
+   },
+   "predicted_macros": {
+    "source_evaluation": 504,
+    "instrument": 24,
+    "sde_grade2": 504,
+    "witness_control_grade2": 48,
+    "bch_merge_grade2": 240,
+    "sde_grade3": 312,
+    "witness_control_grade3": 168,
+    "bch_merge_grade3": 816
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 40,
+     "coarse_bound": 80
+    },
+    "bch_per_child_grade3": {
+     "exact": 68,
+     "coarse_bound": 180
+    }
+   },
+   "predicted_total_macros": 2616,
+   "measured_macros": {
+    "bch_merge_grade2": 240,
+    "bch_merge_grade3": 816,
+    "instrument": 24,
+    "sde_grade2": 504,
+    "sde_grade3": 312,
+    "source_evaluation": 504,
+    "witness_control_grade2": 48,
+    "witness_control_grade3": 168
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 2694596,
+   "qubits": 1198,
+   "qft_calls": 176,
+   "oracle_calls": 36,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 1560,
+   "gates_over_macros": 1030.0,
+   "seconds": 0.1
+  },
+  {
+   "config": "n4_f7",
+   "p": 7,
+   "c": 3,
+   "m": 4,
+   "n": 7,
+   "b": 3,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "N": {
+    "1": 1,
+    "2": 6,
+    "3": 18
+   },
+   "predicted_macros": {
+    "source_evaluation": 756,
+    "instrument": 30,
+    "sde_grade2": 640,
+    "witness_control_grade2": 48,
+    "bch_merge_grade2": 240,
+    "sde_grade3": 1236,
+    "witness_control_grade3": 252,
+    "bch_merge_grade3": 1224
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 40,
+     "coarse_bound": 80
+    },
+    "bch_per_child_grade3": {
+     "exact": 68,
+     "coarse_bound": 180
+    }
+   },
+   "predicted_total_macros": 4426,
+   "measured_macros": {
+    "bch_merge_grade2": 240,
+    "bch_merge_grade3": 1224,
+    "instrument": 30,
+    "sde_grade2": 640,
+    "sde_grade3": 1236,
+    "source_evaluation": 756,
+    "witness_control_grade2": 48,
+    "witness_control_grade3": 252
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 4832806,
+   "qubits": 1629,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 1560,
+   "gates_over_macros": 1091.9,
+   "seconds": 0.1
+  },
+  {
+   "config": "n4_f13",
+   "p": 13,
+   "c": 3,
+   "m": 4,
+   "n": 7,
+   "b": 4,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "N": {
+    "1": 1,
+    "2": 6,
+    "3": 18
+   },
+   "predicted_macros": {
+    "source_evaluation": 756,
+    "instrument": 30,
+    "sde_grade2": 824,
+    "witness_control_grade2": 48,
+    "bch_merge_grade2": 240,
+    "sde_grade3": 1764,
+    "witness_control_grade3": 252,
+    "bch_merge_grade3": 1224
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 40,
+     "coarse_bound": 80
+    },
+    "bch_per_child_grade3": {
+     "exact": 68,
+     "coarse_bound": 180
+    }
+   },
+   "predicted_total_macros": 5138,
+   "measured_macros": {
+    "bch_merge_grade2": 240,
+    "bch_merge_grade3": 1224,
+    "instrument": 30,
+    "sde_grade2": 824,
+    "sde_grade3": 1764,
+    "source_evaluation": 756,
+    "witness_control_grade2": 48,
+    "witness_control_grade3": 252
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 9903076,
+   "qubits": 2105,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 2712,
+   "gates_over_macros": 1927.4,
+   "seconds": 0.2
+  },
+  {
+   "config": "f23_f7",
+   "p": 7,
+   "c": 3,
+   "m": 5,
+   "n": 10,
+   "b": 3,
+   "arity": {
+    "2": 10,
+    "3": 6
+   },
+   "N": {
+    "1": 1,
+    "2": 10,
+    "3": 60
+   },
+   "predicted_macros": {
+    "source_evaluation": 3600,
+    "instrument": 150,
+    "sde_grade2": 1376,
+    "witness_control_grade2": 100,
+    "bch_merge_grade2": 560,
+    "sde_grade3": 5840,
+    "witness_control_grade3": 1080,
+    "bch_merge_grade3": 6600
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 56,
+     "coarse_bound": 112
+    },
+    "bch_per_child_grade3": {
+     "exact": 110,
+     "coarse_bound": 280
+    }
+   },
+   "predicted_total_macros": 19306,
+   "measured_macros": {
+    "bch_merge_grade2": 560,
+    "bch_merge_grade3": 6600,
+    "instrument": 150,
+    "sde_grade2": 1376,
+    "sde_grade3": 5840,
+    "source_evaluation": 3600,
+    "witness_control_grade2": 100,
+    "witness_control_grade3": 1080
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 21058880,
+   "qubits": 5986,
+   "qft_calls": 990,
+   "oracle_calls": 180,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 1560,
+   "gates_over_macros": 1090.8,
+   "seconds": 0.4
+  },
+  {
+   "config": "f23_f13",
+   "p": 13,
+   "c": 3,
+   "m": 5,
+   "n": 10,
+   "b": 4,
+   "arity": {
+    "2": 10,
+    "3": 6
+   },
+   "N": {
+    "1": 1,
+    "2": 10,
+    "3": 60
+   },
+   "predicted_macros": {
+    "source_evaluation": 3600,
+    "instrument": 150,
+    "sde_grade2": 1712,
+    "witness_control_grade2": 100,
+    "bch_merge_grade2": 560,
+    "sde_grade3": 7920,
+    "witness_control_grade3": 1080,
+    "bch_merge_grade3": 6600
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 56,
+     "coarse_bound": 112
+    },
+    "bch_per_child_grade3": {
+     "exact": 110,
+     "coarse_bound": 280
+    }
+   },
+   "predicted_total_macros": 21722,
+   "measured_macros": {
+    "bch_merge_grade2": 560,
+    "bch_merge_grade3": 6600,
+    "instrument": 150,
+    "sde_grade2": 1712,
+    "sde_grade3": 7920,
+    "source_evaluation": 3600,
+    "witness_control_grade2": 100,
+    "witness_control_grade3": 1080
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 41378508,
+   "qubits": 7765,
+   "qft_calls": 990,
+   "oracle_calls": 180,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 2712,
+   "gates_over_macros": 1904.9,
+   "seconds": 0.5
+  },
+  {
+   "config": "n5_f7",
+   "p": 7,
+   "c": 4,
+   "m": 5,
+   "n": 11,
+   "b": 3,
+   "arity": {
+    "2": 10,
+    "3": 6,
+    "4": 3
+   },
+   "N": {
+    "1": 1,
+    "2": 10,
+    "3": 60,
+    "4": 180
+   },
+   "predicted_macros": {
+    "source_evaluation": 15840,
+    "instrument": 330,
+    "sde_grade2": 1376,
+    "witness_control_grade2": 100,
+    "bch_merge_grade2": 560,
+    "sde_grade3": 5840,
+    "witness_control_grade3": 1080,
+    "bch_merge_grade3": 6600,
+    "sde_grade4": 14760,
+    "witness_control_grade4": 4320,
+    "bch_merge_grade4": 27000
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 56,
+     "coarse_bound": 112
+    },
+    "bch_per_child_grade3": {
+     "exact": 110,
+     "coarse_bound": 280
+    },
+    "bch_per_child_grade4": {
+     "exact": 150,
+     "coarse_bound": 604
+    }
+   },
+   "predicted_total_macros": 77806,
+   "measured_macros": {
+    "bch_merge_grade2": 560,
+    "bch_merge_grade3": 6600,
+    "bch_merge_grade4": 27000,
+    "instrument": 330,
+    "sde_grade2": 1376,
+    "sde_grade3": 5840,
+    "sde_grade4": 14760,
+    "source_evaluation": 15840,
+    "witness_control_grade2": 100,
+    "witness_control_grade3": 1080,
+    "witness_control_grade4": 4320
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 83492540,
+   "qubits": 20566,
+   "qft_calls": 3330,
+   "oracle_calls": 720,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 1560,
+   "gates_over_macros": 1073.1,
+   "seconds": 1.2
+  },
+  {
+   "config": "n5_f41",
+   "p": 41,
+   "c": 4,
+   "m": 5,
+   "n": 11,
+   "b": 6,
+   "arity": {
+    "2": 10,
+    "3": 3,
+    "4": 3
+   },
+   "N": {
+    "1": 1,
+    "2": 10,
+    "3": 30,
+    "4": 90
+   },
+   "predicted_macros": {
+    "source_evaluation": 7920,
+    "instrument": 180,
+    "sde_grade2": 2368,
+    "witness_control_grade2": 100,
+    "bch_merge_grade2": 560,
+    "sde_grade3": 2700,
+    "witness_control_grade3": 540,
+    "bch_merge_grade3": 3300,
+    "sde_grade4": 16860,
+    "witness_control_grade4": 2160,
+    "bch_merge_grade4": 13500
+   },
+   "bch_bound": {
+    "bch_per_child_grade2": {
+     "exact": 56,
+     "coarse_bound": 112
+    },
+    "bch_per_child_grade3": {
+     "exact": 110,
+     "coarse_bound": 280
+    },
+    "bch_per_child_grade4": {
+     "exact": 150,
+     "coarse_bound": 604
+    }
+   },
+   "predicted_total_macros": 50188,
+   "measured_macros": {
+    "bch_merge_grade2": 560,
+    "bch_merge_grade3": 3300,
+    "bch_merge_grade4": 13500,
+    "instrument": 180,
+    "sde_grade2": 2368,
+    "sde_grade3": 2700,
+    "sde_grade4": 16860,
+    "source_evaluation": 7920,
+    "witness_control_grade2": 100,
+    "witness_control_grade3": 540,
+    "witness_control_grade4": 2160
+   },
+   "exact_match": true,
+   "gates_excl_oracle": 204993304,
+   "qubits": 20528,
+   "qft_calls": 1740,
+   "oracle_calls": 360,
+   "gates_le_macros_times_158b2_plus_raw": null,
+   "max_gates_per_macro_bound": 5964,
+   "gates_over_macros": 4084.5,
+   "seconds": 1.3
+  }
+ ],
+ "scaling": [
+  {
+   "config": "n4_f7",
+   "p": 7,
+   "b": 3,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 4426,
+   "gates_excl_oracle": 4832806,
+   "qubits": 1629,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 1091.9,
+   "seconds": 0.1
+  },
+  {
+   "config": "n4_f13",
+   "p": 13,
+   "b": 4,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 5138,
+   "gates_excl_oracle": 9903076,
+   "qubits": 2105,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 1927.4,
+   "seconds": 0.1
+  },
+  {
+   "config": "n4_f19",
+   "p": 19,
+   "b": 5,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 5418,
+   "gates_excl_oracle": 15977570,
+   "qubits": 2519,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 2949.0,
+   "seconds": 0.2
+  },
+  {
+   "config": "n4_f31",
+   "p": 31,
+   "b": 5,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 6218,
+   "gates_excl_oracle": 20051586,
+   "qubits": 2691,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 3224.8,
+   "seconds": 0.2
+  },
+  {
+   "config": "n4_f37",
+   "p": 37,
+   "b": 6,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 6202,
+   "gates_excl_oracle": 26704156,
+   "qubits": 3055,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 4305.7,
+   "seconds": 0.2
+  },
+  {
+   "config": "n4_f43",
+   "p": 43,
+   "b": 6,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 6338,
+   "gates_excl_oracle": 28033872,
+   "qubits": 3108,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 4423.1,
+   "seconds": 0.3
+  },
+  {
+   "config": "n4_f61",
+   "p": 61,
+   "b": 6,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 6786,
+   "gates_excl_oracle": 31189904,
+   "qubits": 3229,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 4596.2,
+   "seconds": 0.5
+  },
+  {
+   "config": "n4_f67",
+   "p": 67,
+   "b": 7,
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "exact_match": true,
+   "predicted_total_macros": 6746,
+   "gates_excl_oracle": 39669850,
+   "qubits": 3579,
+   "qft_calls": 230,
+   "oracle_calls": 54,
+   "gates_over_macros": 5880.5,
+   "seconds": 0.7
+  }
+ ]
+}

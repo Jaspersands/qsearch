@@ -1,0 +1,80 @@
+{
+  "scope": "Exact finite control only; no uniform rank theorem",
+  "interpolation": "Sage Lagrange; no fast-runtime claim",
+  "results": [
+    {
+      "p": 13,
+      "checked_irreducibles": 728,
+      "oracle_queries_per_input": 13,
+      "rank_counts": {
+        "2": 48,
+        "3": 680
+      },
+      "deficient_examples": [
+        {
+          "bcd": [
+            1,
+            1,
+            5
+          ],
+          "rank": 2,
+          "kernel": [
+            [
+              1,
+              4,
+              9
+            ]
+          ]
+        },
+        {
+          "bcd": [
+            1,
+            1,
+            11
+          ],
+          "rank": 2,
+          "kernel": [
+            [
+              1,
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "bcd": [
+            1,
+            2,
+            12
+          ],
+          "rank": 2,
+          "kernel": [
+            [
+              1,
+              0,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "p": 17,
+      "checked_irreducibles": 1632,
+      "oracle_queries_per_input": 17,
+      "rank_counts": {
+        "3": 1632
+      },
+      "deficient_examples": []
+    },
+    {
+      "p": 19,
+      "checked_irreducibles": 2280,
+      "oracle_queries_per_input": 19,
+      "rank_counts": {
+        "3": 2280
+      },
+      "deficient_examples": []
+    }
+  ]
+}

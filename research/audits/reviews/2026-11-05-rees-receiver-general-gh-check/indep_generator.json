@@ -1,0 +1,352 @@
+[
+ {
+  "config": "heis_f7",
+  "refused": null,
+  "p": 7,
+  "b": 3,
+  "c": 2,
+  "m": 3,
+  "n": 4,
+  "dims": [
+   3,
+   1
+  ],
+  "kappa": {
+   "2": 2
+  },
+  "own_arity": {
+   "2": 3
+  },
+  "config_arity": {
+   "2": 3
+  },
+  "arity_match": {
+   "2": true
+  },
+  "sde_classes": {
+   "2": "CoherentSDEK2"
+  },
+  "N": {
+   "1": 1,
+   "2": 3
+  },
+  "BR": {
+   "2": 2
+  },
+  "LIN": {
+   "2": 8
+  },
+  "predicted": {
+   "source_evaluation": 48,
+   "instrument": 3,
+   "sde_grade2": 234,
+   "witness_control_grade2": 18,
+   "bch_merge_grade2": 72
+  },
+  "emitted": {
+   "source_evaluation": 48,
+   "instrument": 3,
+   "sde_grade2": 234,
+   "witness_control_grade2": 18,
+   "bch_merge_grade2": 72
+  },
+  "exact_match_by_component": {
+   "source_evaluation": true,
+   "witness_control_grade2": true,
+   "instrument": true,
+   "bch_merge_grade2": true,
+   "sde_grade2": true
+  },
+  "coarse_bounds_ok": true,
+  "macros": 375,
+  "gates": 450026,
+  "macro_gates_by_formula_counts": 449318,
+  "raw_gates_outside_macros": 708,
+  "raw_fraction": 0.0016,
+  "gates_le_bound_times_macros_plus_raw": true,
+  "gates_per_macro": 1200.1,
+  "macro_bound_158b2_46b": 1560,
+  "qft_calls": 24,
+  "oracle_calls": 6,
+  "qubits": 274,
+  "oracle_calls_eq_c_Nc": true,
+  "items": 1081,
+  "structure": {
+   "garbage_never_touched_again": true,
+   "single_measurement_at_end": true,
+   "measured_register_is_root_Q": true
+  },
+  "d1": {
+   "label_wires": 9,
+   "label_wires_bad": 0,
+   "oracle_output_wires": 54,
+   "oracle_wires_bad": 0,
+   "passed": true
+  },
+  "seconds": 0.0,
+  "rss_mb": 119.8
+ },
+ {
+  "config": "n4_f73",
+  "refused": null,
+  "p": 73,
+  "b": 7,
+  "c": 3,
+  "m": 4,
+  "n": 7,
+  "dims": [
+   4,
+   2,
+   1
+  ],
+  "kappa": {
+   "2": 2,
+   "3": 3
+  },
+  "own_arity": {
+   "2": 6,
+   "3": 3
+  },
+  "config_arity": {
+   "2": 6,
+   "3": 3
+  },
+  "arity_match": {
+   "2": true,
+   "3": true
+  },
+  "sde_classes": {
+   "2": "CoherentSDEK2",
+   "3": "CoherentSDEKappa"
+  },
+  "N": {
+   "1": 1,
+   "2": 6,
+   "3": 18
+  },
+  "BR": {
+   "2": 4,
+   "3": 8
+  },
+  "LIN": {
+   "2": 12,
+   "3": 18
+  },
+  "predicted": {
+   "source_evaluation": 756,
+   "instrument": 30,
+   "sde_grade2": 1328,
+   "witness_control_grade2": 48,
+   "bch_merge_grade2": 240,
+   "sde_grade3": 2940,
+   "witness_control_grade3": 252,
+   "bch_merge_grade3": 1224
+  },
+  "emitted": {
+   "source_evaluation": 756,
+   "instrument": 30,
+   "sde_grade3": 2940,
+   "witness_control_grade3": 252,
+   "bch_merge_grade3": 1224,
+   "sde_grade2": 1328,
+   "witness_control_grade2": 48,
+   "bch_merge_grade2": 240
+  },
+  "exact_match_by_component": {
+   "source_evaluation": true,
+   "bch_merge_grade3": true,
+   "witness_control_grade2": true,
+   "instrument": true,
+   "witness_control_grade3": true,
+   "bch_merge_grade2": true,
+   "sde_grade2": true,
+   "sde_grade3": true
+  },
+  "coarse_bounds_ok": true,
+  "macros": 6818,
+  "gates": 40183090,
+  "macro_gates_by_formula_counts": 40143912,
+  "raw_gates_outside_macros": 39178,
+  "raw_fraction": 0.001,
+  "gates_le_bound_times_macros_plus_raw": true,
+  "gates_per_macro": 5893.7,
+  "macro_bound_158b2_46b": 8064,
+  "qft_calls": 230,
+  "oracle_calls": 54,
+  "qubits": 3616,
+  "oracle_calls_eq_c_Nc": true,
+  "items": 45171,
+  "structure": {
+   "garbage_never_touched_again": true,
+   "single_measurement_at_end": true,
+   "measured_register_is_root_Q": true
+  },
+  "d1": {
+   "label_wires": 210,
+   "label_wires_bad": 0,
+   "oracle_output_wires": 1350,
+   "oracle_wires_bad": 0,
+   "passed": true
+  },
+  "seconds": 0.7,
+  "rss_mb": 132.3
+ },
+ {
+  "config": "n5_f29",
+  "refused": "ValueError: p = 29 lies in E_2(4): no two-level contraction",
+  "seconds": 0.2
+ },
+ {
+  "config": "n5_f37",
+  "refused": "ValueError: p = 37 lies in E_2(4): no two-level contraction",
+  "seconds": 0.4
+ },
+ {
+  "config": "n5_f53",
+  "refused": "ValueError: p = 53 lies in E_2(4): no two-level contraction",
+  "seconds": 0.4
+ },
+ {
+  "config": "n5_f17",
+  "refused": "ValueError: p = 17 lies in E_2(4): no two-level contraction",
+  "seconds": 0.3
+ },
+ {
+  "config": "n6_f11",
+  "refused": "ValueError: p = 11 lies in E_2(5): no two-level contraction",
+  "seconds": 0.8
+ },
+ {
+  "config": "n6_f31",
+  "refused": "ValueError: p = 31 lies in E_2(5): no two-level contraction",
+  "seconds": 0.8
+ },
+ {
+  "config": "q5_f13",
+  "refused": "ValueError: p = 13 lies in E_2(4): no two-level contraction",
+  "seconds": 0.2
+ },
+ {
+  "config": "n5_f61",
+  "refused": null,
+  "p": 61,
+  "b": 6,
+  "c": 4,
+  "m": 5,
+  "n": 11,
+  "dims": [
+   5,
+   3,
+   2,
+   1
+  ],
+  "kappa": {
+   "2": 2,
+   "3": 3,
+   "4": 4
+  },
+  "own_arity": {
+   "2": 10,
+   "3": 6,
+   "4": 3
+  },
+  "config_arity": {
+   "2": 10,
+   "3": 6,
+   "4": 3
+  },
+  "arity_match": {
+   "2": true,
+   "3": true,
+   "4": true
+  },
+  "sde_classes": {
+   "2": "CoherentSDEK2",
+   "3": "CoherentSDEKappa",
+   "4": "CoherentSDEKappa"
+  },
+  "N": {
+   "1": 1,
+   "2": 10,
+   "3": 60,
+   "4": 180
+  },
+  "BR": {
+   "2": 6,
+   "3": 14,
+   "4": 20
+  },
+  "LIN": {
+   "2": 16,
+   "3": 27,
+   "4": 35
+  },
+  "predicted": {
+   "source_evaluation": 15840,
+   "instrument": 330,
+   "sde_grade2": 2672,
+   "witness_control_grade2": 100,
+   "bch_merge_grade2": 560,
+   "sde_grade3": 12240,
+   "witness_control_grade3": 1080,
+   "bch_merge_grade3": 6600,
+   "sde_grade4": 38520,
+   "witness_control_grade4": 4320,
+   "bch_merge_grade4": 27000
+  },
+  "emitted": {
+   "source_evaluation": 15840,
+   "instrument": 330,
+   "sde_grade4": 38520,
+   "witness_control_grade4": 4320,
+   "bch_merge_grade4": 27000,
+   "sde_grade3": 12240,
+   "witness_control_grade3": 1080,
+   "bch_merge_grade3": 6600,
+   "sde_grade2": 2672,
+   "witness_control_grade2": 100,
+   "bch_merge_grade2": 560
+  },
+  "exact_match_by_component": {
+   "source_evaluation": true,
+   "witness_control_grade4": true,
+   "bch_merge_grade4": true,
+   "bch_merge_grade2": true,
+   "bch_merge_grade3": true,
+   "witness_control_grade2": true,
+   "instrument": true,
+   "witness_control_grade3": true,
+   "sde_grade4": true,
+   "sde_grade2": true,
+   "sde_grade3": true
+  },
+  "coarse_bounds_ok": true,
+  "macros": 109262,
+  "gates": 477005772,
+  "macro_gates_by_formula_counts": 476526036,
+  "raw_gates_outside_macros": 479736,
+  "raw_fraction": 0.001,
+  "gates_le_bound_times_macros_plus_raw": true,
+  "gates_per_macro": 4365.7,
+  "macro_bound_158b2_46b": 5964,
+  "qft_calls": 3330,
+  "oracle_calls": 720,
+  "qubits": 41035,
+  "oracle_calls_eq_c_Nc": true,
+  "items": 577339,
+  "structure": {
+   "garbage_never_touched_again": true,
+   "single_measurement_at_end": true,
+   "measured_register_is_root_Q": true
+  },
+  "d1": {
+   "label_wires": 1980,
+   "label_wires_bad": 0,
+   "oracle_output_wires": 21600,
+   "oracle_wires_bad": 0,
+   "passed": true
+  },
+  "seconds": 14.2,
+  "rss_mb": 274.7
+ }
+]

@@ -1,0 +1,419 @@
+{
+  "scope": "Two predeclared below-threshold finite controls and one singular-coordinate guard; not a quantum execution or asymptotic proof",
+  "exact_backend": "Sage finite fields, polynomials, matrices and kernels",
+  "numerical_backend": "NumPy normalized FFT; tolerance 1e-11",
+  "source_boundary": "Actual preparation receives only p,n,k and the native padded-sign callable; A,B,S,C appear only in analysis",
+  "z_boundary": "Joint arrays compare canonical purifications of the measured-z mixture; no coherent z resource is inferred",
+  "rank_boundary": "All good ideal cone labels are enumerated for algebra checks; the actual noisy-label receiver is not run",
+  "cases": [
+    {
+      "p": 7,
+      "n": 3,
+      "k": 1,
+      "m": 2,
+      "r": 3,
+      "A": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "b": [
+        1,
+        2,
+        3
+      ],
+      "c": 1,
+      "B_determinant": 3,
+      "S": "z0^2 - z0 - 1",
+      "z_monomial_exponents": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "y_matrix_entry_order": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "feature_convention": "z monomials times y_i^2 or 2*y_i*y_j; kernel entries are symmetric-matrix entries",
+      "T": 18,
+      "threshold_p_ge_256T": 4608,
+      "inside_claimed_prime_regime": false,
+      "good_z_count": 7,
+      "bad_z": [],
+      "all_ideal_nonzero_cone_rows": 336,
+      "exact_joint_feature_rank": 17,
+      "exact_kernel_dimension": 1,
+      "C_coefficients": [
+        4,
+        5,
+        1,
+        5,
+        0,
+        6,
+        4,
+        4,
+        0,
+        5,
+        0,
+        0,
+        3,
+        3,
+        0,
+        2,
+        0,
+        0
+      ],
+      "kernel_equals_C_after_C_tt_normalization": true,
+      "decoded_A": [
+        [
+          5,
+          6,
+          0
+        ],
+        [
+          6,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          6
+        ]
+      ],
+      "decoded_b": [
+        6,
+        5,
+        4
+      ],
+      "decoded_c": 6,
+      "decode_selected_public_grid_point": [
+        0
+      ],
+      "decode_S_ratios": [
+        1,
+        1,
+        6
+      ],
+      "decoded_affine_form_projectively_correct": true,
+      "native_diagnostic_sign_queries": 343,
+      "exact_restriction_sign_checks": 2058,
+      "source_norms_squared": {
+        "actual": 1.0,
+        "ideal": 0.9999999999999996
+      },
+      "joint_z_marginals_exact": "1/7",
+      "joint_purification_distance_squared_expression": "2*(1-sqrt(6/7))",
+      "joint_purification_distance_squared": 0.14835980045489705,
+      "joint_purification_distance_squared_expected": 0.14835980045489694,
+      "ideal_good_slice_Fourier_max_amplitude_error": 2.7755575615628914e-17,
+      "actual_good_z_nonzero_cone_mass": 0.6568691616588325,
+      "ideal_good_z_nonzero_cone_mass": 0.7197001249479378,
+      "ideal_good_z_nonzero_cone_mass_exact": "1728/2401",
+      "measured_joint_total_variation": 0.24135351766695828,
+      "pure_comparison_trace_distance_bound": 0.3779644730092272,
+      "actual_bad_z_probability": 0.0,
+      "bad_z_not_discarded_in_normalization": true,
+      "actual_receiver_executed": false
+    },
+    {
+      "p": 5,
+      "n": 4,
+      "k": 2,
+      "m": 2,
+      "r": 3,
+      "A": [
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "b": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "c": 1,
+      "B_determinant": 3,
+      "S": "z0^2 + z1^2 + z0 - 2*z1 - 1",
+      "z_monomial_exponents": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "y_matrix_entry_order": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "feature_convention": "z monomials times y_i^2 or 2*y_i*y_j; kernel entries are symmetric-matrix entries",
+      "T": 36,
+      "threshold_p_ge_256T": 9216,
+      "inside_claimed_prime_regime": false,
+      "good_z_count": 21,
+      "bad_z": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "all_ideal_nonzero_cone_rows": 504,
+      "exact_joint_feature_rank": 35,
+      "exact_kernel_dimension": 1,
+      "C_coefficients": [
+        1,
+        2,
+        1,
+        2,
+        0,
+        4,
+        4,
+        4,
+        0,
+        3,
+        0,
+        0,
+        2,
+        2,
+        0,
+        4,
+        0,
+        0,
+        4,
+        4,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        0,
+        3,
+        0,
+        0
+      ],
+      "kernel_equals_C_after_C_tt_normalization": true,
+      "decoded_A": [
+        [
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4
+        ]
+      ],
+      "decoded_b": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "decoded_c": 4,
+      "decode_selected_public_grid_point": [
+        0,
+        0
+      ],
+      "decode_S_ratios": [
+        1,
+        4,
+        2,
+        4,
+        0,
+        4
+      ],
+      "decoded_affine_form_projectively_correct": true,
+      "native_diagnostic_sign_queries": 625,
+      "exact_restriction_sign_checks": 2500,
+      "source_norms_squared": {
+        "actual": 1.0000000000000002,
+        "ideal": 1.0
+      },
+      "joint_z_marginals_exact": "1/25",
+      "joint_purification_distance_squared_expression": "2*(1-sqrt(4/5))",
+      "joint_purification_distance_squared": 0.2111456180001683,
+      "joint_purification_distance_squared_expected": 0.2111456180001683,
+      "ideal_good_slice_Fourier_max_amplitude_error": 1.3877787807814457e-17,
+      "actual_good_z_nonzero_cone_mass": 0.3760128,
+      "ideal_good_z_nonzero_cone_mass": 0.516096,
+      "ideal_good_z_nonzero_cone_mass_exact": "8064/15625",
+      "measured_joint_total_variation": 0.2951296,
+      "pure_comparison_trace_distance_bound": 0.4472135954999579,
+      "actual_bad_z_probability": 0.16,
+      "bad_z_not_discarded_in_normalization": true,
+      "actual_receiver_executed": false
+    }
+  ],
+  "bad_coordinate_guard": {
+    "p": 7,
+    "n": 3,
+    "A": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "b": [
+      1,
+      2,
+      3
+    ],
+    "c": 1,
+    "A_determinant": 6,
+    "B_determinant": 0,
+    "A_invertible": true,
+    "chosen_B_invertible": false,
+    "B_inverse_not_attempted": true,
+    "coordinate_rejection_needed": true,
+    "source_contract_invalid": false,
+    "interpretation": "analysis-only bad-chart guard; no hidden determinant test is granted to the receiver"
+  }
+}

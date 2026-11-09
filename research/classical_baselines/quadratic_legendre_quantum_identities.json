@@ -1,0 +1,870 @@
+{
+  "status": "EXACT_NATIVE_DCP_AND_PARTIAL_LEGENDRE_IDENTITIES_PASS",
+  "predeclaration_revision": "Before execution, parent authorized replacing p41 with p43: p37 and p41 were both1 mod4. Exactly p37/p43 now cover both branches.",
+  "source_contracts": [
+    {
+      "p": 37,
+      "harness_center_a": 7,
+      "width_rule": "first positive public quadratic nonresidue",
+      "public_seed": 7301,
+      "public_offsets": [
+        21,
+        14,
+        31,
+        15,
+        16,
+        11,
+        16,
+        11,
+        18,
+        14,
+        24,
+        20,
+        0,
+        26,
+        0,
+        3,
+        28,
+        4,
+        4,
+        7,
+        30,
+        19,
+        21,
+        16,
+        5,
+        3,
+        10,
+        3,
+        11,
+        2,
+        9,
+        35,
+        30,
+        2,
+        14,
+        34,
+        26,
+        12,
+        10,
+        5
+      ],
+      "fingerprint_length": 40,
+      "global_union_bound": "16643844013448935528569/1208925819614629174706176",
+      "global_delta_target": "1/64"
+    },
+    {
+      "p": 43,
+      "harness_center_a": 7,
+      "width_rule": "first positive public quadratic nonresidue",
+      "public_seed": 7301,
+      "public_offsets": [
+        21,
+        39,
+        14,
+        31,
+        15,
+        16,
+        39,
+        11,
+        16,
+        11,
+        18,
+        14,
+        24,
+        20,
+        0,
+        26,
+        0,
+        3,
+        28,
+        4,
+        4,
+        7,
+        40,
+        30,
+        19,
+        21,
+        16,
+        5,
+        3,
+        10,
+        3,
+        11,
+        2,
+        38,
+        9,
+        35,
+        30,
+        2,
+        14,
+        34,
+        26
+      ],
+      "fingerprint_length": 41,
+      "global_union_bound": "67438570301388784059147/4835703278458516698824704",
+      "global_delta_target": "1/64"
+    }
+  ],
+  "sage_version": "10.9",
+  "script_sha256": "a7485a6e20df4247df2b409d5fe80faf5c7fd704376bd583d69f4ed6e616bbaf",
+  "scope": "Dense finite exact algebra control using hidden parameters only in the oracle harness and expected-answer checks. Width test is conditional on the correct harness center. No sieve or efficient measurement is simulated.",
+  "kuperberg_sieve_implemented": false,
+  "end_to_end_quantum_decoder_executed": false,
+  "asymptotic_or_speedup_evidence_claimed": false,
+  "q1_or_phase_only_transfer_claimed": false,
+  "rows": [
+    {
+      "p": 37,
+      "harness_center_a": 7,
+      "width_rule": "first positive public quadratic nonresidue",
+      "public_seed": 7301,
+      "public_offsets": [
+        21,
+        14,
+        31,
+        15,
+        16,
+        11,
+        16,
+        11,
+        18,
+        14,
+        24,
+        20,
+        0,
+        26,
+        0,
+        3,
+        28,
+        4,
+        4,
+        7,
+        30,
+        19,
+        21,
+        16,
+        5,
+        3,
+        10,
+        3,
+        11,
+        2,
+        9,
+        35,
+        30,
+        2,
+        14,
+        34,
+        26,
+        12,
+        10,
+        5
+      ],
+      "fingerprint_length": 40,
+      "global_union_bound": "16643844013448935528569/1208925819614629174706176",
+      "global_delta_target": "1/64",
+      "harness_width_d": 2,
+      "harness_coefficients_b_c": [
+        23,
+        10
+      ],
+      "harness_only_not_recovered_by_a_sieve": true,
+      "passed": true,
+      "exact_field": "CyclotomicField(148) with canonical QQbar embedding",
+      "gauss_phase": "1",
+      "all_fibers_checked": 37,
+      "all_fiber_sizes_two": true,
+      "exact_coset_phase_and_uniform_label_checks": 1369,
+      "zero_fourier_label_retained": true,
+      "omitted_inversion_relative_shifts": 37,
+      "exact_C_adjoint_C_and_zero_frequency_identities": true,
+      "exact_QFT_unitary_circulant_coefficients": 37,
+      "exact_diagonal_unit_modulus_checks": 37,
+      "wrong_real_gauss_phase_rejected": null,
+      "omitted_zero_frequency_rejected": true,
+      "native_square_root_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          21,
+          13
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          26,
+          10
+        ],
+        [
+          27,
+          8
+        ],
+        [
+          28,
+          18
+        ],
+        [
+          30,
+          17
+        ],
+        [
+          33,
+          12
+        ],
+        [
+          34,
+          16
+        ],
+        [
+          36,
+          6
+        ]
+      ],
+      "square_domain_size": 19,
+      "restricted_character_sum": -1,
+      "exact_width_target_formula": "(sqrt(|S|/p)-1/(p*sqrt(|S|)))^2",
+      "exact_width_target_probability": {
+        "output": 2,
+        "rational": "13358/26011",
+        "sqrt_p_coefficient": "-2/1369"
+      },
+      "exact_output_probabilities": [
+        {
+          "output": 0,
+          "rational": "1/26011",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 1,
+          "rational": "1/26011",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 2,
+          "rational": "13358/26011",
+          "sqrt_p_coefficient": "-2/1369"
+        },
+        {
+          "output": 3,
+          "rational": "1/26011",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 4,
+          "rational": "149/26011",
+          "sqrt_p_coefficient": "4/26011"
+        },
+        {
+          "output": 5,
+          "rational": "2/1369",
+          "sqrt_p_coefficient": "2/26011"
+        },
+        {
+          "output": 6,
+          "rational": "2/1369",
+          "sqrt_p_coefficient": "2/26011"
+        },
+        {
+          "output": 7,
+          "rational": "1333/26011",
+          "sqrt_p_coefficient": "12/26011"
+        },
+        {
+          "output": 8,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 9,
+          "rational": "593/26011",
+          "sqrt_p_coefficient": "8/26011"
+        },
+        {
+          "output": 10,
+          "rational": "149/26011",
+          "sqrt_p_coefficient": "-4/26011"
+        },
+        {
+          "output": 11,
+          "rational": "1/26011",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 12,
+          "rational": "593/26011",
+          "sqrt_p_coefficient": "-8/26011"
+        },
+        {
+          "output": 13,
+          "rational": "2/1369",
+          "sqrt_p_coefficient": "2/26011"
+        },
+        {
+          "output": 14,
+          "rational": "926/26011",
+          "sqrt_p_coefficient": "10/26011"
+        },
+        {
+          "output": 15,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 16,
+          "rational": "149/26011",
+          "sqrt_p_coefficient": "4/26011"
+        },
+        {
+          "output": 17,
+          "rational": "926/26011",
+          "sqrt_p_coefficient": "10/26011"
+        },
+        {
+          "output": 18,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 19,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 20,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 21,
+          "rational": "149/26011",
+          "sqrt_p_coefficient": "-4/26011"
+        },
+        {
+          "output": 22,
+          "rational": "926/26011",
+          "sqrt_p_coefficient": "10/26011"
+        },
+        {
+          "output": 23,
+          "rational": "2/1369",
+          "sqrt_p_coefficient": "2/26011"
+        },
+        {
+          "output": 24,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 25,
+          "rational": "1333/26011",
+          "sqrt_p_coefficient": "12/26011"
+        },
+        {
+          "output": 26,
+          "rational": "149/26011",
+          "sqrt_p_coefficient": "4/26011"
+        },
+        {
+          "output": 27,
+          "rational": "593/26011",
+          "sqrt_p_coefficient": "-8/26011"
+        },
+        {
+          "output": 28,
+          "rational": "1/26011",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 29,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 30,
+          "rational": "593/26011",
+          "sqrt_p_coefficient": "8/26011"
+        },
+        {
+          "output": 31,
+          "rational": "334/26011",
+          "sqrt_p_coefficient": "-6/26011"
+        },
+        {
+          "output": 32,
+          "rational": "926/26011",
+          "sqrt_p_coefficient": "10/26011"
+        },
+        {
+          "output": 33,
+          "rational": "149/26011",
+          "sqrt_p_coefficient": "4/26011"
+        },
+        {
+          "output": 34,
+          "rational": "149/26011",
+          "sqrt_p_coefficient": "4/26011"
+        },
+        {
+          "output": 35,
+          "rational": "2/1369",
+          "sqrt_p_coefficient": "2/26011"
+        },
+        {
+          "output": 36,
+          "rational": "1/26011",
+          "sqrt_p_coefficient": "0"
+        }
+      ],
+      "exact_probability_sum": "1",
+      "oracle_counts": {
+        "fingerprint_full_enumeration": 2960,
+        "width_canonical_root": 19,
+        "width_alternative_root_control": 19
+      },
+      "control_native_oracle_calls": 2998,
+      "distinct_control_native_points": 37,
+      "native_queries_per_fresh_DCP_sample": 40,
+      "width_state_native_queries_per_coherent_preparation": 1,
+      "classical_public_character_table_entries": 37
+    },
+    {
+      "p": 43,
+      "harness_center_a": 7,
+      "width_rule": "first positive public quadratic nonresidue",
+      "public_seed": 7301,
+      "public_offsets": [
+        21,
+        39,
+        14,
+        31,
+        15,
+        16,
+        39,
+        11,
+        16,
+        11,
+        18,
+        14,
+        24,
+        20,
+        0,
+        26,
+        0,
+        3,
+        28,
+        4,
+        4,
+        7,
+        40,
+        30,
+        19,
+        21,
+        16,
+        5,
+        3,
+        10,
+        3,
+        11,
+        2,
+        38,
+        9,
+        35,
+        30,
+        2,
+        14,
+        34,
+        26
+      ],
+      "fingerprint_length": 41,
+      "global_union_bound": "67438570301388784059147/4835703278458516698824704",
+      "global_delta_target": "1/64",
+      "harness_width_d": 2,
+      "harness_coefficients_b_c": [
+        29,
+        4
+      ],
+      "harness_only_not_recovered_by_a_sieve": true,
+      "passed": true,
+      "exact_field": "CyclotomicField(172) with canonical QQbar embedding",
+      "gauss_phase": "i",
+      "all_fibers_checked": 43,
+      "all_fiber_sizes_two": true,
+      "exact_coset_phase_and_uniform_label_checks": 1849,
+      "zero_fourier_label_retained": true,
+      "omitted_inversion_relative_shifts": 43,
+      "exact_C_adjoint_C_and_zero_frequency_identities": true,
+      "exact_QFT_unitary_circulant_coefficients": 43,
+      "exact_diagonal_unit_modulus_checks": 43,
+      "wrong_real_gauss_phase_rejected": true,
+      "omitted_zero_frequency_rejected": true,
+      "native_square_root_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          13,
+          20
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          19
+        ],
+        [
+          21,
+          8
+        ],
+        [
+          23,
+          18
+        ],
+        [
+          24,
+          14
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          31,
+          17
+        ],
+        [
+          35,
+          11
+        ],
+        [
+          36,
+          6
+        ],
+        [
+          38,
+          9
+        ],
+        [
+          40,
+          13
+        ],
+        [
+          41,
+          16
+        ]
+      ],
+      "square_domain_size": 22,
+      "restricted_character_sum": 0,
+      "exact_width_target_formula": "|S|/p",
+      "exact_width_target_probability": {
+        "output": 2,
+        "rational": "22/43",
+        "sqrt_p_coefficient": "0"
+      },
+      "exact_output_probabilities": [
+        {
+          "output": 0,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 1,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 2,
+          "rational": "22/43",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 3,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 4,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 5,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 6,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 7,
+          "rational": "18/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 8,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 9,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 10,
+          "rational": "25/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 11,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 12,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 13,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 14,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 15,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 16,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 17,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 18,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 19,
+          "rational": "18/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 20,
+          "rational": "18/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 21,
+          "rational": "25/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 22,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 23,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 24,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 25,
+          "rational": "25/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 26,
+          "rational": "18/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 27,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 28,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 29,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 30,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 31,
+          "rational": "25/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 32,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 33,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 34,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 35,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 36,
+          "rational": "25/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 37,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 38,
+          "rational": "49/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 39,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 40,
+          "rational": "9/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 41,
+          "rational": "1/946",
+          "sqrt_p_coefficient": "0"
+        },
+        {
+          "output": 42,
+          "rational": "2/473",
+          "sqrt_p_coefficient": "0"
+        }
+      ],
+      "exact_probability_sum": "1",
+      "oracle_counts": {
+        "fingerprint_full_enumeration": 3526,
+        "width_canonical_root": 22,
+        "width_alternative_root_control": 22
+      },
+      "control_native_oracle_calls": 3570,
+      "distinct_control_native_points": 43,
+      "native_queries_per_fresh_DCP_sample": 41,
+      "width_state_native_queries_per_coherent_preparation": 1,
+      "classical_public_character_table_entries": 43
+    }
+  ],
+  "wall_seconds": 14.081751415971667
+}

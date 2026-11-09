@@ -1,0 +1,13 @@
+n4_f7 merges 273.7 s
+n4_f7 n4(F_7) H=<e2> non-normal OK 72.42 s
+n4_f7 n4(F_7) H=<e1> non-normal OK 66.26 s
+n4_f7 n4(F_7) H=<e1+e3> non-normal OK 68.18 s
+n4_f7 n4(F_7) H=<e2,e4> non-normal OK 59.8 s
+n4_f7 n4(F_7) H=<e1+e2,e3> (closure) OK 63.17 s
+n4_f7 n4(F_7) H=<e3,e4> = gamma_2 OK 53.55 s
+n4_f7 n4(F_7) H=<e2,e3> non-normal OK 55.71 s
+n4_f7 n4(F_7) H=Z(G) OK 51.58 s
+n4_f7 n4(F_7) H=trivial OK 53.47 s
+n4_f7 checks True runs True merges True bitlevel True 1047.5 s
+{"status": "gate_level_circuit_generator_simulated_finite_instances_not_a_coherent_receiver", "coherent_receiver_implemented": false, "general_sde_implemented": false, "formal_compiler_checked": false, "independent_review": false, "novelty_established": false, "speedup_claim_allowed": false, "review": "AI-checked, pending human review", "seconds": 1047.5}
+PYTHONPATH=$PWD PYTHONDONTWRITEBYTECODE=1 nice -n 10 timeout 7200  -B -m       646.64s user 207.00s system 81% cpu 17:28.06 total

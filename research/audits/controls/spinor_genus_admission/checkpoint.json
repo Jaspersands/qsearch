@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_kirschmer": true,
+    "source_beli_thesis": true,
+    "source_voight": true,
+    "source_voight_errata": true,
+    "inaccessible_sources_not_admitted": true,
+    "closed_2026-11-07-spinor-genus-core.md": true,
+    "closed_2026-11-07-spinor-genus-sources.md": true,
+    "source_errata_checked": true,
+    "syntax_control": true,
+    "syntax_dyadic_control": true,
+    "neighbor_control": true,
+    "neighbor_det": true,
+    "neighbor_false_gates": true,
+    "nonisometry_not_from_control": true,
+    "dyadic_control": true,
+    "dyadic_data": true,
+    "dyadic_false_gates": true,
+    "terminal_2026-11-07-spinor-transport-support": true,
+    "empty_2026-11-07-spinor-transport-support": true,
+    "usage_2026-11-07-spinor-transport-support": true,
+    "terminal_2026-11-07-spinor-dyadic-compilation": true,
+    "empty_2026-11-07-spinor-dyadic-compilation": true,
+    "usage_2026-11-07-spinor-dyadic-compilation": true,
+    "ledger": true,
+    "pass_cost": true,
+    "title_AGENT_HANDOFF.md": true,
+    "title_MECHANICAL_FOLLOW_UP_PLAN.md": true,
+    "STATE_title": true,
+    "STATE_full_gate_open": true,
+    "note_gate_open": true,
+    "note_no_live_api": true
+  },
+  "source_snapshots": [
+    {
+      "name": "ling2024",
+      "url": "https://eprint.iacr.org/2024/1475.pdf",
+      "status": 403,
+      "pdf": false
+    },
+    {
+      "name": "defi2026",
+      "url": "https://eprint.iacr.org/2026/890.pdf",
+      "status": 403,
+      "pdf": false
+    },
+    {
+      "name": "kirschmer",
+      "url": "https://math.uni-paderborn.de/fileadmin/mathematik/AG-Computeralgebra/Publications-kirschmer/Definite_quadratic_and_hermitian_forms_with_small_class_number.pdf",
+      "status": 200,
+      "sha256": "5d246423c8ff204ada863693fe89133bd5228920b44138480563d76f89b8990d"
+    },
+    {
+      "name": "beli_thesis",
+      "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1486394475980202&disposition=inline",
+      "status": 200,
+      "sha256": "2017a94aa50fc681369d27a48b8683529ad0fb3d5b65e88342951507114cb413",
+      "text_bytes": 368795
+    },
+    {
+      "name": "voight",
+      "url": "https://jvoight.github.io/articles/quatalgs-051919.pdf",
+      "sha256": "018def14b136701d82f52401cc0024559e9a1d6d98b6d63343cef8b761b85b62",
+      "repository_pdf": "research/audits/sources/global_isotropy/voight.pdf",
+      "retained": true
+    },
+    {
+      "name": "voight_errata",
+      "url": "https://jvoight.github.io/articles/quatalgs-errata.pdf",
+      "sha256": "cb5482f360f8268d1baad085b78e2281e8e254da407d778c21b441ede2f1f675",
+      "repository_pdf": "research/audits/sources/global_isotropy/voight_errata.pdf",
+      "retained": true
+    }
+  ],
+  "review_sha256": {
+    "2026-11-07-spinor-genus-core.md": "eceb91ca8d0f258dbff4c72d9be8d8c0db38d0a529b4a472f3d00b2fd0445a49",
+    "2026-11-07-spinor-genus-sources.md": "93870262a6b435dac79ae4fceaf2dd3a42930bd3d268d6909a9f65b27ae1dfe4"
+  },
+  "control_sha256": {
+    "control.py": "57f99a32f50bc1ddcee5623bcb7a1d1a5a9909f125030b7ad1d018a9d1db552d",
+    "result.json": "3e248bc282d03dbf05d5bc106a289ac1a2ac629f8db90456bafdf67c08877776",
+    "dyadic_control.py": "8d94d7915a97432a6f2ab5e128cd0fdba6049651cc0010146620a10101ebe8df",
+    "dyadic_result.json": "34be1b0d2d76faaddb452bb79737b983b43ad2d30db5f132708643aba5616616"
+  },
+  "ledger": {
+    "nonpartial_estimates": 74,
+    "estimated_usd": "58.116572",
+    "completed_reports": 37,
+    "partial_unknown_billing_records": 2,
+    "not_balance": true
+  },
+  "pass_estimate_usd": "0.879144",
+  "Claude_runs": {
+    "2026-11-07-spinor-transport-support": {
+      "status": "empty_response",
+      "stop_reason": "refusal",
+      "estimate_usd": "0.034984",
+      "findings": false,
+      "retried": false
+    },
+    "2026-11-07-spinor-dyadic-compilation": {
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "estimate_usd": "0.84416",
+      "findings": false,
+      "retried": false
+    }
+  },
+  "controls_reexecuted_at_checkpoint": false,
+  "Beli_visual_PDF_pages_one_based": [
+    40,
+    81,
+    123
+  ],
+  "scope": "Reviewed ray-class obstruction and classical dyadic ternary generator compilation; full native isometry algorithm remains unadmitted."
+}

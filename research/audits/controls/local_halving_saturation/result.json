@@ -1,0 +1,200 @@
+{
+  "status": "PASS",
+  "scope": "Exact finite classical halving and formal-log determinant controls only.",
+  "halving": {
+    "f": "x^5 + 30*x^4 + 273*x^3 + 820*x^2 + 576*x",
+    "s": "41/1008*x^4 + 439/360*x^3 + 1595/144*x^2 + 13817/420*x + 24",
+    "square_root_values": [
+      "24",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "inconsistent_monic_w_degrees": [
+      0,
+      1
+    ],
+    "u": "1",
+    "v": "10*x - 50",
+    "w": "x^2 - 35*x + 24",
+    "r": "-300*x + 240",
+    "Stoll_identity_exact": true,
+    "independent_Cantor_2Q_equals_P": true,
+    "independent_Cantor_4Q_equals_zero": true,
+    "Q_exact_order": 4,
+    "P_Kummer_values": [
+      "576",
+      "1",
+      "4",
+      "9",
+      "16"
+    ],
+    "P_dyadic_labels": [
+      {
+        "valuation": 6,
+        "odd_unit_mod_8": 1,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "valuation": 0,
+        "odd_unit_mod_8": 1,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "valuation": 2,
+        "odd_unit_mod_8": 1,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "valuation": 0,
+        "odd_unit_mod_8": 1,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "valuation": 4,
+        "odd_unit_mod_8": 1,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "Q_Kummer_values": [
+      "24",
+      "60",
+      "180",
+      "420",
+      "840"
+    ],
+    "Q_dyadic_labels": [
+      {
+        "valuation": 3,
+        "odd_unit_mod_8": 3,
+        "F2_coordinates_2_minus1_5": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "valuation": 2,
+        "odd_unit_mod_8": 7,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "valuation": 2,
+        "odd_unit_mod_8": 5,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "valuation": 2,
+        "odd_unit_mod_8": 1,
+        "F2_coordinates_2_minus1_5": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "valuation": 3,
+        "odd_unit_mod_8": 1,
+        "F2_coordinates_2_minus1_5": [
+          1,
+          0,
+          0
+        ]
+      }
+    ],
+    "Q_has_nonzero_dyadic_label": true
+  },
+  "log_determinants": [
+    {
+      "g": 1,
+      "f": "x^3 + x + 1",
+      "N": 2,
+      "retained_c_m": 64,
+      "truncated_determinant_v2": 2,
+      "predicted_full_determinant_v2": 2,
+      "omitted_determinant_tail_v2_lower_bound": 130,
+      "tail_strictly_above_determinant": true
+    },
+    {
+      "g": 2,
+      "f": "x^5 + x + 1",
+      "N": 2,
+      "retained_c_m": 64,
+      "truncated_determinant_v2": 9,
+      "predicted_full_determinant_v2": 9,
+      "omitted_determinant_tail_v2_lower_bound": 136,
+      "tail_strictly_above_determinant": true
+    },
+    {
+      "g": 3,
+      "f": "x^7 + x + 1",
+      "N": 2,
+      "retained_c_m": 64,
+      "truncated_determinant_v2": 22,
+      "predicted_full_determinant_v2": 22,
+      "omitted_determinant_tail_v2_lower_bound": 146,
+      "tail_strictly_above_determinant": true
+    },
+    {
+      "g": 4,
+      "f": "x^9 + x + 1",
+      "N": 2,
+      "retained_c_m": 64,
+      "truncated_determinant_v2": 40,
+      "predicted_full_determinant_v2": 40,
+      "omitted_determinant_tail_v2_lower_bound": 160,
+      "tail_strictly_above_determinant": true
+    },
+    {
+      "g": 5,
+      "f": "x^11 + x + 1",
+      "N": 2,
+      "retained_c_m": 64,
+      "truncated_determinant_v2": 65,
+      "predicted_full_determinant_v2": 65,
+      "omitted_determinant_tail_v2_lower_bound": 178,
+      "tail_strictly_above_determinant": true
+    }
+  ],
+  "tail_bound": {
+    "coefficient_bound": "v2(c_m)>=-2m: binomial(-1/2,j)=(-1)^j binomial(2j,j)/4^j, j<=m, with integral F.",
+    "entry_tail": "For k=0..g-1 and m>=M, v2(c_m*(2^N i)^(2k+2m+1)/(2k+2m+1)) >= N(2k+1)+2M(N-1).",
+    "determinant_tail": "Every determinant difference term has an omitted entry; other column k entries have valuation >=N(2k+1). Hence v2(det(full)-det(truncated))>=N*g^2+2M(N-1).",
+    "finite_checks_are_all_g_proof": false
+  },
+  "claim_gates": {
+    "full_local_image": false,
+    "global_Selmer": false,
+    "quantum_execution": false,
+    "general_saturation_clock": false
+  }
+}

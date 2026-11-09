@@ -1,0 +1,62 @@
+{
+ "status": "exact_level0_law_class3_by_coset_symmetry_and_hub_decomposition_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "mode": "B",
+ "job": "n4_f5",
+ "runs": [
+  {
+   "name": "n4(F_5) H=<e3,e4> = gamma_2",
+   "normal": true,
+   "cosets": [
+    14764,
+    9767,
+    10690,
+    14018,
+    9035,
+    12120
+   ],
+   "label_tuple": null,
+   "hubs": 625,
+   "labels_and_Q1_unchanged": true,
+   "workspace_and_witness_clean_every_hub": true,
+   "hub_joins": 0,
+   "hub_peak_rows": 390625,
+   "final_state_signature": "d68ba448805b4e0f2ab3b4f5e3c863109b92a34ba9764899ec33638daf6518df",
+   "readout_law_rational": true,
+   "support_equals_h_perp": true,
+   "exact_law_uniform_on_h_perp": true,
+   "law_support_size": 25,
+   "h_perp_size": 25,
+   "law_signature": "003b42d207abd08a970d1949a23ea315740e070b4802a03b440c87575ce6df86",
+   "label_tuples_in_hubs": 1,
+   "orthogonality_classes_of_hubs": 25,
+   "checkpoints": {
+    "K0_workspace_clean": true,
+    "K2_grade2_instrument_equals_reference": true,
+    "K2_grade2_label_law_uniform_on_Kperp": true,
+    "K4_reference_witness_solves_sum_s2_lambda_eq_0": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K5_rho_Q1_proportional_to_rho_H1_every_label_tuple": true,
+    "K5_rho_Q1_proportional_to_rho_H1_total": true
+   },
+   "all_checkpoints_pass": true,
+   "law_computed": true,
+   "law_mass_per_point": "1/25",
+   "seconds": 123.5,
+   "max_rss_MB": 1164.1
+  }
+ ],
+ "config": "n4(F_5) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 2}",
+ "qubits": 1198,
+ "steps": 3181,
+ "anatomy_ok": true,
+ "setup_seconds": 2.7,
+ "max_rss_MB": 1164.1,
+ "seconds": 126.2
+}

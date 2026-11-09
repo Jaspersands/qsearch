@@ -1,0 +1,22 @@
+(A) n = 60: m_used for WNEST (deterministic) and KOW; formula bound(n) = 1381; n^2/4 = 900, n^2/3 = 1200.  All WNEST per-piece asserts on.
+family            WNEST m_used          KOW m_used        max(|X|-q) WNEST   max series class seen
+random            [1142, 1132, 1140]     [1029, 1037, 1045] [9, 10, 9]         1
+chains_a20_x3     [104, 104, 104]        [67, 67, 68]       [None, None, None] 20
+chains_a10_x6     [153, 153, 153]        [125, 119, 115]    [-31, -31, -31]    10
+chains_a5_x12     [213, 153, 130]        [210, 242, 236]    [-31, -31, -30]    5
+lowrank_30        [1143, 1141, 1142]     [986, 991, 1004]   [9, 9, 10]         1
+two_subspaces     [1142, 1143, 1141]     [887, 885, 868]    [10, 9, 10]        1
+duplicates        [1143, 1139, 1116]     [619, 618, 627]    [10, 10, 10]       2
+sparse            [104, 1103, 1063]      [68, 74, 66]       [-1, 9, 9]         19
+projective_k7     [169, 169, 233]        [242, 243, 219]    [9, 9, 9]          1
+signed_blocks_6   [104, 160, 104]        [122, 74, 78]      [2, 0, -9]         11
+weightgap         [1143, 1142, 1144]     [1038, 1013, 1049] [9, 10, 10]        1
+
+(B) hill climb over instances (maximize WNEST m_used); 'fail' = stream exhausted before a solution
+ n   m_stream  formula  start      best m_used (random start, chain start)   max |X|-q   cap 2N/3+2sqrtN/3-q at q=n
+  8      72      62.7             [40, 40] (never failed)        6       8.31
+ 10      94      84.2             [55, 55] (never failed)        6       8.53
+ 12     118     108.7             [75, 74] (never failed)        7       9.46
+ 14     145     135.4             [95, 94] (never failed)        7       9.65
+
+no assertion fired: every piece satisfied wt >= r*+2 and wt <= 2N/3 + 2 sqrt(N)/3, and every witness summed to zero

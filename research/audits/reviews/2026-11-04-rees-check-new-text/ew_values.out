@@ -1,0 +1,16 @@
+c=2: E_W=5 (prime witness p=3; residue/interval upper bound 5), E_1=5, lemma predicts 5, paper value 5
+c=3: E_W=11 (prime witness p=7; residue/interval upper bound 11), E_1=11, lemma predicts 11, paper value 11
+c=4: E_W=23 (prime witness p=13; residue/interval upper bound 23), E_1=23, lemma predicts 23, paper value 23
+c=5: E_W=38 (prime witness p=61; residue/interval upper bound 38), E_1=38, lemma predicts 38, paper value 38
+c=6: E_W=56 (prime witness p=61; residue/interval upper bound 56), E_1=56, lemma predicts 56, paper value 56
+c=7: E_W=77 (prime witness p=421; residue/interval upper bound 77), E_1=77, lemma predicts 77, paper value 77
+c=8: E_W=107 (prime witness p=2521; residue/interval upper bound 109), E_1=109, lemma predicts 107, paper value 107
+c=9: E_W=143 (prime witness p=2521; residue/interval upper bound 145), E_1=145, lemma predicts 143, paper value 143
+c=10: E_W=183 (prime witness p=2521; residue/interval upper bound 185), E_1=185, lemma predicts 183
+c=11: E_W=227 (prime witness p=55441; residue/interval upper bound 229), E_1=229, lemma predicts 227
+c=12: E_W=275 (prime witness p=55441; residue/interval upper bound 277), E_1=277, lemma predicts 275
+c=13: E_W=323 (prime witness p=4324321; residue/interval upper bound 329), E_1=329, lemma predicts 327  <-- Lemma tb-count-exponent dichotomy FAILS
+2521 prime: True ; 841 = 29^2: True
+16*3^8 = 104976 (the lemma says thresholds 'exceed 104976 for d>=3'; at d=3 it is equal)
+candidates p = 1 mod 27720 in [1024,104976): [(27721, False), (55441, True), (83161, False)]
+lcm(2..13) = 360360 > 104976

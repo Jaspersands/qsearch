@@ -1,0 +1,43 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 5861,
+      "path": "research/audits/reviews/2026-11-07-sparse-fock-torus-counterexample.md",
+      "sha256": "3f508fe68d7fee286924b046b65cf06816a1a1164369f8d2269c2efcfe0188b3",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 3453,
+  "effort": "high",
+  "finished_at": "2026-11-06T16:42:57.476570+00:00",
+  "input_token_allowance": 3709,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.67549,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-sparse-fock-torus/prompt.md",
+    "sha256": "0393cff39cf13433aef40e13d3a0dba4062069a065c302894550f3c6840a11c8",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261106T164032.311467Z-da259519",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 3453,
+    "output_tokens": 11234
+  },
+  "usage_cost_estimate_usd": 0.59623
+}

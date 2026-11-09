@@ -1,0 +1,76 @@
+== A: symbolic c=3 Rees filiform group law
+PASS associativity
+PASS left/right inverse
+PASS identity
+PASS [G,G] in grades>=2 coords (first 4 coords zero)
+PASS [[G,G],G] in t-axis only
+PASS class exactly 3 (4-fold commutators vanish)
+PASS h(a) n(u,v,t) h(a)^-1 = n(u,v,t+a u)
+PASS N abelian
+== B: exact Z[omega] branch computation
+   filiform c=3 p=5: labels=125 good=25 bad=100
+PASS filiform c=3 p=5: every label has mass exactly 1/|N| under K and under 1
+PASS filiform c=3 p=5: bad branches of K equal the trivial-instance branch exactly
+PASS filiform c=3 p=5: good branches equal sum_h R_h P_lambda (rank m/p inside P_lambda)
+PASS filiform c=3 p=5: P_K commutes with P_lambda on good labels
+PASS filiform c=3 p=5: correlation at h(1) is 1 (good) / 0 (bad)
+PASS filiform c=3 p=5: good fraction = p^-kappa = 1/5
+   filiform c=3 p=7: labels=8 good=4 bad=4
+PASS filiform c=3 p=7: every label has mass exactly 1/|N| under K and under 1
+PASS filiform c=3 p=7: bad branches of K equal the trivial-instance branch exactly
+PASS filiform c=3 p=7: good branches equal sum_h R_h P_lambda (rank m/p inside P_lambda)
+PASS filiform c=3 p=7: P_K commutes with P_lambda on good labels
+PASS filiform c=3 p=7: correlation at h(1) is 1 (good) / 0 (bad)
+   Heisenberg Rees c=2 p=3: labels=3 good=3 bad=0
+PASS Heisenberg Rees c=2 p=3: every label has mass exactly 1/|N| under K and under 1
+PASS Heisenberg Rees c=2 p=3: bad branches of K equal the trivial-instance branch exactly
+PASS Heisenberg Rees c=2 p=3: good branches equal sum_h R_h P_lambda (rank m/p inside P_lambda)
+PASS Heisenberg Rees c=2 p=3: P_K commutes with P_lambda on good labels
+PASS Heisenberg Rees c=2 p=3: correlation at h(1) is 1 (good) / 0 (bad)
+PASS Heisenberg Rees c=2 p=3: N central, kappa=0, all labels good
+   Heisenberg Rees c=2 p=5: labels=5 good=5 bad=0
+PASS Heisenberg Rees c=2 p=5: every label has mass exactly 1/|N| under K and under 1
+PASS Heisenberg Rees c=2 p=5: bad branches of K equal the trivial-instance branch exactly
+PASS Heisenberg Rees c=2 p=5: good branches equal sum_h R_h P_lambda (rank m/p inside P_lambda)
+PASS Heisenberg Rees c=2 p=5: P_K commutes with P_lambda on good labels
+PASS Heisenberg Rees c=2 p=5: correlation at h(1) is 1 (good) / 0 (bad)
+PASS Heisenberg Rees c=2 p=5: N central, kappa=0, all labels good
+== C: kappa = rank ad(tX)|n_N and stabiliser census
+PASS c=3 p=5: R=3=c(c-1)/2, kappa=1=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=4 p=5: R=6=c(c-1)/2, kappa=3=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=5 p=7: R=10=c(c-1)/2, kappa=6=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=6 p=7: R=15=c(c-1)/2, kappa=10=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=7 p=11: R=21=c(c-1)/2, kappa=15=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=8 p=11: R=28=c(c-1)/2, kappa=21=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=9 p=11: R=36=c(c-1)/2, kappa=28=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=10 p=11: R=45=c(c-1)/2, kappa=36=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=11 p=13: R=55=c(c-1)/2, kappa=45=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=12 p=13: R=66=c(c-1)/2, kappa=55=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=13 p=17: R=78=c(c-1)/2, kappa=66=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=14 p=17: R=91=c(c-1)/2, kappa=78=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=15 p=17: R=105=c(c-1)/2, kappa=91=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=16 p=17: R=120=c(c-1)/2, kappa=105=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=17 p=19: R=136=c(c-1)/2, kappa=120=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=18 p=19: R=153=c(c-1)/2, kappa=136=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=19 p=23: R=171=c(c-1)/2, kappa=153=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+PASS c=20 p=23: R=190=c(c-1)/2, kappa=171=(c-1)(c-2)/2, im(exp(aT)-I)=im T
+   (c,R,kappa): [(3, 3, 1), (4, 6, 3), (8, 28, 21), (12, 66, 55), (20, 190, 171)]
+PASS census c=3 p=5: |K_lambda| in {1,p} only; #{|K_lambda|=p}=25=p^(R-kappa)=p^2
+PASS census c=3 p=7: |K_lambda| in {1,p} only; #{|K_lambda|=p}=49=p^(R-kappa)=p^2
+PASS census c=4 p=5: |K_lambda| in {1,p} only; #{|K_lambda|=p}=125=p^(R-kappa)=p^3
+PASS census c=4 p=7: |K_lambda| in {1,p} only; #{|K_lambda|=p}=343=p^(R-kappa)=p^3
+== D: tensor-distance formula and sample bound (exact)
+PASS binomial average of 1-p^-b equals 1-(1-delta)^M <= M delta
+PASS Dtr(uniform rank m/p^b subset, uniform rank m) = 1-p^-b
+PASS M >= (1-1/p-e)/delta = p^kappa (1 - e/(1-1/p))
+== E: c=12 numbers versus rees_full_grade_budget.json case 2
+   artifact profile=[13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1] r=11 D=79
+   filiform(13) profile=[13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]; R=sum_(d>=2) g_d=66; kappa=55; p^(R-kappa)=p^11
+PASS artifact profile equals the note's filiform profile
+PASS R=66, kappa=55, D=79, r=11
+   withdrawn text: g_1=2 (artifact 13); sum_(k=2..11) g_k = 65 (text: 55); FgTwelveDerived-1 = 10 (text: 55)
+PASS withdrawn text mismatches artifact (g_1, sum_(2..11), r-1 all != quoted)
+PASS artifact itself records no kappa / no lower-bound field
+
+SUMMARY: ALL PASS
+/opt/anaconda3/bin/python -u premature_exact_check.py   21.21s user 0.53s system 17% cpu 2:02.89 total

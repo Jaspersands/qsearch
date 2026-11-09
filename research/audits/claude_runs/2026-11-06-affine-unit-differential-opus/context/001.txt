@@ -1,0 +1,202 @@
+Extraction note: PDF control character0x03 (end-of-proof marker) rendered [QED]. Newline locators unchanged.
+SOURCE https://arxiv.org/pdf/2610.27250v1
+Original newline lines 80--133
+
+1.2. Main results and input conventions. For a tuple u = (u1 , . . . , uk ) of units in a
+commutative ring and e ∈ Zk , write
+                                       ue = ue11 · · · uekk .
+If A is a commutative K-algebra, where K is a field, the algebraicity lattice of u ∈ (A× )k is
+                                   n                                 o
+(1.1)                  AlgK (u) = e ∈ Zk ue is algebraic over K .
+For a commutative ring A, the relation lattice of u ∈ (A× )k is
+                                            n                   o
+(1.2)                           RelA (u) = e ∈ Zk ue = 1 .
+   Throughout the paper, polynomial running times refer to bit complexity, with integer
+coefficients and lattice coordinates encoded in binary. The numbers of variables and units are
+fixed, and the polynomial-time bounds may depend on these numbers. Polynomial degrees
+are measured numerically. We allow dense polynomial representations, as well as sparse
+representations whose numerical degrees are polynomially bounded in the input length. Our
+complexity bounds do not apply to unrestricted sparse representations with binary-encoded
+exponents.
+Theorem 1.1 (Computing algebraicity lattices). Fix nonnegative integers m, k and let
+K = Q or Fp . Let
+                                  A = K[X1 , . . . , Xm ]/(f1 , . . . , fr ),
+and let u = (u1 , . . . , uk ) ∈ (A× )k be specified by polynomial representatives of the units
+and their inverses. A basis of AlgK (u) can be computed in deterministic polynomial time.
+
+[PAGE BREAK]
+              QUANTUM POLYNOMIAL-TIME CONJUGACY IN METABELIAN GROUPS                              3
+
+Moreover, if D ≥ 2 bounds the total degrees of the input polynomials, then AlgK (u) admits a
+basis b1 , . . . , bs satisfying
+                              ∥bi ∥∞ ≤ k! D(m+1)k            (1 ≤ i ≤ s).
+Theorem 1.2 (Computing relation lattices). Fix nonnegative integers m, k. Let
+                                A = Z[X1 , . . . , Xm ]/(f1 , . . . , fr ),
+and let u = (u1 , . . . , uk ) ∈ (A× )k be specified by polynomial representatives of the units and
+their inverses. A basis of RelA (u) can be computed in bounded-error quantum polynomial
+time.
+Corollary 1.3 (Subgroup membership and exponent representations). Fix nonnegative
+integers m, k. Let S and u1 , . . . , uk be as in Theorem 1.2, and let h ∈ S × be specified by
+polynomial representatives of h and h−1 . There is a bounded-error quantum polynomial-time
+algorithm that decides whether
+                                          h ∈ ⟨u1 , . . . , uk ⟩.
+If so, the algorithm computes a vector e0 ∈ Zk such that
+                           {e ∈ Zk : ue = h} = e0 + RelS (u1 , . . . , uk ).
+Theorem 1.4. Fix k ≥ 1. There is a bounded-error quantum polynomial-time algorithm that,
+given a finite presentation
+(1.3)                            G = ⟨x1 , . . . , xk | r1 , . . . , rm ⟩M
+of a metabelian group and two words x, y over its generators, decides whether x and y are
+conjugate in G.
+   In Theorem 1.4, the number k of generators is fixed, but the defining relations of G are
+part of the input. The algorithm is uniform in these relations and in the input words. Its
+polynomial running time has degree depending only on k.
+   The reductions and the new lattice argument are proved below. We use the standard
+polynomial algorithms for integer linear algebra and Hermite and Smith normal forms,
+the effective algebraic bounds specified in Section 2, Lenstra–Silverberg’s Theorem 1.11(i)
+for explicitly represented finite-dimensional commutative Q-algebras [16], and quantum
+factorization, order finding and the finite abelian hidden-subgroup algorithm [21, 4]. These
+underlying algorithmic theorems are used with their stated input representations; their proofs
+are not reproduced here.
+Original newline lines 411--455
+of ideals and to test algebraicity.
+Lemma 2.5. Let K = Q or Fp , and let
+                          R = K[Z1 , . . . , Zs ],            J = (f1 , . . . , fr ) ≤ R,
+where s is fixed. Given an integer E ≥ 0 encoded in unary, there is a deterministic polynomial-
+time algorithm that computes a K-basis of
+                                                  J ∩ R≤E .
+Over Q, the computed basis has polynomial coefficient bit length.
+Proof. Let D ≥ 2 bound the degrees of the generators of J, and put d = max{D, E}. By
+Hermann’s ideal-membership degree bound [2, Theorem 3.4], every polynomial h ∈ J of
+degree at most E admits a representation
+                                       r
+                                                                               s
+                                                             deg aν ≤ (2d)2 .
+                                       X
+                                 h=         aν f ν ,
+                                      ν=1
+
+[PAGE BREAK]
+              QUANTUM POLYNOMIAL-TIME CONJUGACY IN METABELIAN GROUPS                              10
+               s
+Set H = (2d)2 + D. Since s is fixed, both the multiplier-degree bound and H are polynomial
+in d.
+   Write h and the multipliers aν with undetermined coefficients, subject to the respective
+                             s
+degree bounds E and (2d)2 . Comparing coefficients up to degree H gives a homogeneous
+linear system
+                                               Bu = Ca,
+where u is the coefficient vector of h and a collects the coefficients of the multipliers. Here B
+embeds the coefficients of h into the coefficient space of polynomials of degree at most H,
+while C represents the map (a1 , . . . , ar ) 7→ ν aν fν .
+                                                P
+
+   By Gaussian elimination, compute a matrix L whose rows form a basis of the left nullspace
+of C. Then
+                                Bu ∈ im C ⇐⇒ LBu = 0.
+Thus ker(LB) is precisely the coefficient space of
+                                               J ∩ R≤E .
+Since s is fixed, the degree bounds imply that all the linear systems have polynomial
+dimensions and polynomial coefficient bit length. Standard bounds for Gaussian elimination
+over Q ensure that the matrices produced by elimination and the resulting basis vectors
+also have polynomial coefficient bit length. Over Fp , field operations have polynomial bit
+complexity in log p. Thus the required basis can be computed in deterministic polynomial
+time.                                                                                    □
+2.4. Arithmetic splitting. We now establish an effective separation of rational and modular
+information in a finitely generated Z-algebra. Theorem 2.8 embeds P/I into the product of
+its rationalization and a modular quotient, where the modulus has polynomial bit length.
+Consequently, multiplicative relations in P/I, including exponent-lattice relations, can be
+SOURCE https://arxiv.org/pdf/2307.09394
+Original newline lines 886--951
+
+                          5. Computing Unit Lattices
+   Let K be a field, X = {x1 , . . . , xn } a set of indeterminates, and K[X] the
+polynomial ring over K in the indeterminates X. Let f1 , . . . , fk ∈ K[X], and let
+I ⊆ K[X] be an ideal such that the residue classes of f1 , . . . , fk in K[X]/I are non-
+zerodivisors. This section is concerned with providing an algorithm for computing
+the unit lattice and the associated character of f1 , . . . , fk modulo I. In the final
+section of this paper we then show how computing the binomial part of a general
+polynomial ideal reduces to computing unit lattices.
+   The main idea is to reduce the computation to 0-dimensional ideals. Recall that
+a subset U ⊆ X is said to be an independent set of indeterminates modulo I if we
+have I ∩ K[U ] = h0i.
+Proposition 5.1. Let I ⊆ K[X] be an ideal and U ⊆ X = {x1 , . . . , xn } be a
+maximal independent set of indeterminates modulo I. Let σ be an elimination term
+ordering with respect to X \ U , and let G be a Gröbner basis with respect to σ.
+(a) The ideal IK(U )[X \ U ] is a 0-dimensional ideal.
+(b) The set G is a Gröbner basis of IK(U )[X \ U ].
+(c) We have IK(U )[X \ U ] ∩ K[X] = I : h∞ where h = lcm{LC(g) | g ∈ G} and
+    G is considered as a subset of K(U )[X \ U ].
+Proof. [15], Proposition 4.3.1                                                         [QED]
+   This proposition together with the next lemma allows us to reduce the problem
+to computing unit lattices and associated characters modulo 0-dimensional ideals
+of the form IK(U )[X \ U ].
+Lemma 5.2. Let I ⊆ K[X] be an ideal and f ∈ K[X] with I : f ∞ = I : f m for
+m > 0. Then we have
+                        I = (I : f m ) ∩ hI, f m i.
+Proof. [15], Lemma 3.3.6                                                               [QED]
+  Let us now present an algorithm for computing unit lattices and their associated
+characters modulo an ideal.
+Algorithm 5.3. (Computing Unit Lattices and Associated Characters)
+ Let I ⊆ K[X] be an ideal, and let f1 , . . . , fk ∈ K[X] such that I : hf i∞ = I for
+f = f1 · · · fk . Consider the following sequence of instructions.
+(1) Compute a maximal independent set of indeterminates U ⊆ X modulo I.
+(2) Using Algorithm 5.7 compute the unit lattice Λ and the associated character
+    ̺ : Λ → K × of (f1 , . . . , fk ) modulo IK(U )[X \ U ] ∩ K[X].
+(3) Compute a Gröbner basis G of I with respect to an elimination ordering for
+    the indeterminates in X \ U .
+(4) Compute h = lcm{LC(g) | g ∈ G} with G considered as a subset of K(U )[X\U ],
+    and compute m > 0 such that I : h∞ = I : hm .
+(5) If I : h∞ ⊆ hI, hm i : hf i∞ , return the unit lattice Λ and the associated character
+    ̺. Otherwise apply the algorithm recursively to hI, hm i : hf i∞ and obtain a unit
+    lattice M with associated character τ .
+
+[PAGE BREAK]
+18                       MARTIN KREUZER AND FLORIAN WALSH
+
+
+(6) Apply Algorithm 4.6 to compute the lattice N = (Λ, ̺) ∩ (M, τ ). Return N
+     together with the character ̺|N .
+This is an algorithm which computes the unit lattice and the associated character
+of (f1 , . . . , fk ) modulo I.
+Proof. We first show that the algorithm terminates. Since I is contained in J =
+(I + hhi) : hf i∞ , the dimension of J is less than or equal to the dimension of I.
+Furthermore the maximal independent set U modulo I is not independent modulo
+J since h ∈ K[U ]∩J. This means in each recursive call of the algorithm the number
+of possible maximal independent sets or the dimension decreases.
+   By Lemma 5.2 we have I = (I : hm ) ∩ hI, hm i. Let us show that this implies
+I = (I : hm ) ∩ (hI, hm i : hf i∞ ). An element g ∈ (I : hm ) ∩ (hI, hm i : hf i∞ ) satisfies
+gf k ∈ hI, hm i for some k ∈ N. Hence we get gf k ∈ (I : hm ) ∩ (hI, hm i) = I. This
+shows g ∈ I since we have I : hf i∞ = I by assumption. Proposition 5.1 shows that
+the unit lattice and the associated character of (f1 , . . . , fk ) modulo I : hm are given
+by Λ and ̺. Therefore we conclude that the unit lattice of (f1 , . . . , fk ) modulo I is
+given by N , and that its associated character is ̺|N .                                    [QED]
+  This algorithm already yields a method for computing the binomial part of ideals
+which are saturated with respect to the product of all indeterminates.
+Corollary 5.4. (Computing the Binomial Part of Saturated Ideals)
+ Let I ⊆ K[X] be an ideal which satisfies I : hx1 · · · xn i = I. Then the following
+instructions form an algorithm which computes Bin(I).
+SOURCE https://arxiv.org/pdf/1509.08843
+Original newline lines 225--247
+roots of unity in orders that the authors recently developed; see [14, 12, 13]. We also proved that,
+given a Q-algebra E, one can find, in polynomial time, generators for the group µ(E) of roots of
+unity in E, and we presented a solution to the discrete logarithm problem in µ(E); see [14]. The
+following result states that, in fact, the discrete logarithm problem in the full multiplicative group
+E ∗ of E admits an efficient solution.
+Theorem 1.11. (i) There is a deterministic polynomial-time algorithm that, given a Q-algebra E
+  and a finite system S of elements of E, decides whether all elements of S belong to E ∗ , and if
+  so determines a finite set of generators for the kernel of the group homomorphism
+                                                            Y
+                                ZS → E ∗ ,      (ms )s∈S 7→     sms .
+                                                              s∈S
+
+(ii) There is a deterministic polynomial-time algorithm that, given a Q-algebra E, a finite system S
+     of elements of E ∗ and t ∈ E ∗ , decides whether                                 ∗
+                                                   Q t belong to the subgroup hSi of E generated by
+     S, and if so produces (ms )s∈S ∈ ZS with t = s∈S sms .
+   The case of Theorem 1.11 in which E is assumed to be a field is already quite complicated; it was
+done by G. Ge [5]. We prove Theorem 1.11 in section 8 by a reduction to the case E is a field as
+dealt with by Ge.
+   In [1] one finds a result that is in substance equivalent to Theorem 1.11, with a proof that proceeds
+along the same lines.
+
+Acknowledgment: We thank the referee for helpful comments, and especially for pointing out that

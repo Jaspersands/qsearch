@@ -1,0 +1,43 @@
+# Open folded XXZ: proposed full native transform
+Date 2026-11-07. Scientific question selected independently after quintic pass.
+Input: N+2 spin qubits in ANY unknown state, including entanglement with reference;
+H_N=-(1/8) sum_{j=0}^{N-2}(1+Z_j Z_{j+3})(X_{j+1}X_{j+2}+Y_{j+1}Y_{j+2}),
+N>=2, binary rational t and epsilon>0. Compile exp(-itH_N) to operator error epsilon
+with gates/BIT poly(N, bitlength(t), log(1/epsilon)), no fragment/Bethe-root advice.
+This is fast-forwarding a specified interacting Hamiltonian, not a classical hardness claim.
+Known supplied eigenstate preparation is not a global eigenbasis transform.
+
+Parent proposed exact combinatorial lemma:
+Change basis by b_i=s_i XOR s_{i+1}, i=0,...,N, retaining s_0. Each allowed
+matrix entry is -1/2 times rewrite 011 <-> 110 on adjacent triples of bond bits.
+Parse the bond string uniquely left-to-right: A=11, B=10, C=0; at end a single
+unpaired 1 is D. Greedy parse equivalently each 1-run before a zero has
+2a+b ones, contributes A^a B if b=1, A^a C if b=0; final run contributes A^a D^d.
+Let m=#A, h=#B+#C, w the B/C subsequence, d final D bit, ell=m+h.
+Record label (s0,w,d,m) and squeezed binary string q of length ell with A=1
+and each B or C=0, retaining w in their original order. This is bijective onto
+valid labeled words: reinsert B/C at zeros in q, A at ones, append D^d, expand
+and recover s by prefix XOR. Valid physical length L=N+1=2m+2#B+#C+d.
+Every original 011<->110 rewrites adjacent AC<->CA or AB<->BA:
+AC=110, CA=011; AB=1110, BA=1011 (rewrite final triple).
+Claim one-to-one transitions, coefficient -1/2, no extra phases/boundary terms.
+Thus each fixed label block is m fermions on an open ell-site path with
+H_free=-(1/4)sum_{r=1}^{ell-1}(X_r X_{r+1}+Y_r Y_{r+1}), one-body
+tridiagonal hopping -1/2, eigenvalues -cos(pi*k/(ell+1)), k=1,...,ell.
+Empty/full occupancy and all jammed/boundary sectors included.
+
+Route: reversible parse/encode, label-controlled sine-transform Gaussian
+unitary on padded q (ell<=N+1), phase each occupied sine mode by
+exp(+it cos(pi*k/(ell+1))), inverse sine transform and decode. Static labels
+are retained coherently throughout, then uncomputed; no postselection or
+measurement. All loops polynomial N; sine/cos and t phases use precision
+O(logN+log(1+abs(t))+log1/epsilon). Computing encode AND inverse classically
+polynomial suffices for clean reversible implementation, never discard old string.
+
+Classical comparator: for computational-basis input the squeezed state evolves
+as a Slater determinant; determinant amplitudes, DPP sampling and inverse map
+pay strong simulation of basis measurements and additive polynomial-row-sparse
+bounded observables. Known folded eigenstates likewise. For samples p_x=|psi_x|²,
+L(x)=sum_y O_xy psi_y/psi_x has E L=<O>, E|L|²<=||O||². Precision and nearzero
+amplitude risks must be paid. This does not classically simulate arbitrary unknown
+quantum input, nor imply any classical separation. No novelty/execution claim.

@@ -1,0 +1,47 @@
+% Proposed text (a): insert in main.tex directly after the proof of
+% Theorem~\ref{thm:uniform-compilation} (before the paragraph "Gate-level control").
+% AI-checked, pending human review.
+
+\begin{lemma}[Approximate Fourier transform over $\mathbb{Z}/N$ with explicit size; AI-checked, pending human review]
+\label{lem:qft-mod}
+Let $N \ge 3$ be odd (for example $N = p$ or $N = p^e$ with $p$ an odd prime), $b = \lceil\log_2 N\rceil$, $0 < \eta \le 1$ and $L = \log_2(1/\eta)$. Put
+\[
+  t = \Bigl\lceil \log_2\frac{36N}{\eta^2}\Bigr\rceil,\qquad
+  r = \Bigl\lceil \log_2\frac{6\sqrt2\,\pi t}{\eta}\Bigr\rceil,\qquad
+  \tau = \Bigl\lceil \log_2\frac{3\pi(b+3)}{\eta}\Bigr\rceil .
+\]
+Let $\mathrm{QFT}_N|x\rangle = N^{-1/2}\sum_{y=0}^{N-1}e^{2\pi i xy/N}|y\rangle$ on the canonical subspace $C_N = \mathrm{span}\{|0\rangle,\dots,|N-1\rangle\}$ of a $b$-qubit register. There is a circuit $V$ on $8b + 2t + 6$ qubits with at most
+\[
+  328b^2 + 92bt + 2tr + (b+5)\tau + 26t + 240b + 60 \;\le\; 420b^2 + 187bL + 4L^2 + O\bigl((b+L)\log(b+L+2)\bigr) = O\bigl((b+L)^2\bigr)
+\]
+gates from $\{X, \mathrm{CNOT}, \mathrm{SWAP}, \mathrm{Toffoli}, H\}\cup\{R_k^{\pm1}, \Lambda(R_k)^{\pm1} : k \le \max(r,\tau)\}$, where $R_k = \mathrm{diag}(1, e^{2\pi i/2^k})$ and $\Lambda$ denotes one control, such that
+\[
+  \bigl\|V(\psi\otimes|0\rangle) - (\mathrm{QFT}_N\psi)\otimes|0\rangle\bigr\| \le \eta
+\]
+for every unit vector $\psi \in C_N$, with every ancilla returned to $|0\rangle$ and the global phase included. The same holds for $V^\dagger$ and $\mathrm{QFT}_N^\dagger$. The gate list is computed classically in time $\poly(b + L)$.
+\end{lemma}
+
+\begin{proof}
+Write $\omega = e^{2\pi i/N}$, $\chi_x = \mathrm{QFT}_N|x\rangle$ and $S|y\rangle = |y+1 \bmod N\rangle$ on $C_N$; then $S\chi_x = \omega^{k}\chi_x$ with $k = -x \bmod N$. Besides the data register $X$ the circuit uses registers $F, Z, K$ of $b$ qubits, $M$ of $t$ qubits, $W$ of $t+b$ qubits, one qubit $a$, and the $3b+5$ arithmetic ancillas of the second backend of the paragraph on gate-level control below. All arithmetic is built, as there, from a ripple-carry adder, a comparison with $N$, a modular adder and a shift-and-add modular multiplier; each is a permutation of basis states that is correct on canonical inputs and returns its ancillas to $0$ (the ripple-carry adder and the comparison are correct on every word). The circuit is $V = \mathrm{SW}\,E^{-1}\,\mathrm{DEC}^{-1}\,\mathrm{ADD}\,\mathrm{DEC}\,E\,\mathrm{PH}\,\mathrm{PREP}$, with $\mathrm{PREP}$ applied first.
+
+\emph{Preparation.} Let $\rho = (N/2^b)^{1/2}$ and $\sin^2\theta = 2^b/(4N) \in [1/4, 1/2)$, and let $\tilde\theta$ be the multiple of $2\pi/2^\tau$ nearest to $\theta$. Put $A(\vartheta) = H^{\otimes b}\otimes R_y(2\vartheta)$ on $(F, a)$; the good part ($F < N$, $a = 1$) of $A(\vartheta)|0\rangle$ is $\sin\alpha(\vartheta)\,|g\rangle$ with $|g\rangle = N^{-1/2}\sum_{y<N}|y\rangle|1\rangle$, independent of $\vartheta$, and $\sin\alpha(\vartheta) = \rho\sin\vartheta$, so $\alpha(\theta) = \pi/6$. With the reflection $S_\chi = I - 2\Pi_{F<N,\,a=1}$ (a comparison into a clean qubit, a controlled $Z$, the comparison again) and $S_0 = I - 2|0\rangle\langle0|$ (a Toffoli chain), one Grover iteration $Q = -A S_0 A^\dagger S_\chi$ rotates by $2\alpha$ in the plane of $|g\rangle$ and the bad part, so $QA(\tilde\theta)|0\rangle = \sin(3\tilde\alpha)|g\rangle + \cos(3\tilde\alpha)|g^\perp\rangle$, $\tilde\alpha = \alpha(\tilde\theta)$. $\mathrm{PREP}$ is $Q A(\tilde\theta)$ followed by $X$ on $a$, where $R_y(2\tilde\theta)$ is built as $S H R(2\tilde\theta) H S^\dagger = e^{i\tilde\theta}R_y(2\tilde\theta)$ with $R(\phi) = \mathrm{diag}(1, e^{i\phi})$ a product of at most $\tau$ gates $R_k$, and the leftover global phase $-e^{i\tilde\theta}$ is cancelled exactly by $R(\beta)XR(\beta) = e^{i\beta}X$ with $\beta = \pi - \tilde\theta$. So $\|\mathrm{PREP}|0\rangle - |u_N\rangle|0\rangle\| = 2|\sin((\pi/2 - 3\tilde\alpha)/2)| \le 3|\alpha - \tilde\alpha| \le 3|\theta - \tilde\theta| \le 3\pi 2^{-\tau}$, where $u_N = N^{-1/2}\sum_{y<N}|y\rangle$, using $d\alpha/d\vartheta = \rho\cos\vartheta/\cos\alpha \le 1$.
+
+\emph{Phase.} $\mathrm{PH}$ computes $z = xy \bmod N$ into $Z$, applies $R(2\pi c_j/2^\tau)$ to bit $j$ of $Z$ with $c_j$ the integer nearest to $2^\tau(2^j \bmod N)/N$, and uncomputes $Z$ by the reversed list. On canonical $X, F$ it is diagonal with phases within $\sum_{j<b}2\pi\cdot2^{-\tau-1} = \pi b2^{-\tau}$ of $\omega^{xy}$. Ideally $\mathrm{PH}\,\mathrm{PREP}$ maps $|x\rangle|0\rangle$ to $|x\rangle\chi_x$.
+
+\emph{Phase estimation.} $E$ applies $H^{\otimes t}$ to $M$, then $F \mathrel{+}= 2^j \bmod N$ controlled on bit $j$ of $M$ for $j < t$, then the inverse Fourier transform over $\mathbb{Z}/2^t$ in its standard product form with every controlled rotation $\Lambda(R_k)^{-1}$, $k > r$, omitted. The full form has $t - k + 1$ rotations $\Lambda(R_k)^{-1}$ and $\|\Lambda(R_k)^{-1} - I\| = 2\sin(\pi/2^k)$, so the omission costs at most $\eps_{\mathrm{aq}} = \sum_{k=r+1}^t(t-k+1)2\sin(\pi/2^k) \le 2\pi t2^{-r}$ in operator norm. For each $x$, $E(\chi_x\otimes|0\rangle) = \chi_x\otimes\tilde\beta_k$, and the ideal $\beta_k$ has $\beta_k(l) = 2^{-t}\sum_{m<2^t}e^{2\pi i m\delta_l}$, $\delta_l = k/N - l/2^t$. Let $\tilde k(l)$ be the integer nearest to $lN/2^t$ (half up), reduced mod $N$. If the representative $d_l \in (-1/2, 1/2]$ of $\delta_l$ has $|d_l| < 1/(2N)$, then $\tilde k(l) = k$. Since $|\beta_k(l)| \le 1/(2^{t+1}|d_l|)$ and the numbers $2^td_l$ are distinct points of a translate of $\mathbb{Z}$, the mass of $\beta_k$ on $\mathrm{Bad}_k = \{l : \tilde k(l) \ne k\}$ is at most $\eps_{\mathrm{pe}}^2 = (1/a + 1/a^2)/2$ with $a = 2^{t-1}/N$.
+
+\emph{Erasure.} $\mathrm{DEC}$ forms $W = lN + 2^{t-1} < 2^{t+b}$ by shift-and-add, copies its top $b$ bits into $K$ and resets $K = N$ to $0$, so $K = \tilde k(l)$; $\mathrm{ADD}$ is $X \mathrel{+}= K \bmod N$. Since $x + k \equiv 0$,
+\[
+  \mathrm{DEC}^{-1}\mathrm{ADD}\,\mathrm{DEC}\,E\,|x\rangle\chi_x|0\rangle = |0\rangle\chi_x\tilde\beta_k + \sum_{l\in\mathrm{Bad}_k}\tilde\beta_k(l)\bigl(|x+\tilde k(l)\rangle - |0\rangle\bigr)\chi_x|l\rangle ,
+\]
+and $E^{-1}$ maps the first term to $|0\rangle\chi_x|0\rangle$ exactly. The second term has norm at most $\sqrt2(\eps_{\mathrm{pe}} + \eps_{\mathrm{aq}})$, and for different $x$ these terms are orthogonal because they carry the orthogonal factors $\chi_x$. Finally $\mathrm{SW}$ swaps $X$ and $F$.
+
+\emph{Total.} Writing $V - U$ as a telescoping sum over $\mathrm{PREP}$, $\mathrm{PH}$ and the erasure, the error on $\psi\otimes|0\rangle$ is at most $3\pi2^{-\tau} + \pi b2^{-\tau} + \sqrt2(\eps_{\mathrm{pe}} + \eps_{\mathrm{aq}})$. The choice of $\tau$, $t$ and $r$ makes each of $(b+3)\pi2^{-\tau}$, $\sqrt2\,\eps_{\mathrm{pe}} \le (2/a)^{1/2}$ (as $a \ge 18/\eta^2 \ge 1$) and $\sqrt2\,\eps_{\mathrm{aq}}$ at most $\eta/3$. For $V^\dagger$ use $V^\dagger - U^\dagger = V^\dagger(U - V)U^\dagger$, where $U^\dagger$ preserves canonical inputs with clean workspace. The gate count is the sum of the block counts: a ripple-carry addition on $n$ bits uses $6n+1$ gates, a comparison at most $16b+5$, a modular addition at most $38b+12$, a multiplication at most $158b^2+46b$; $\mathrm{PREP}$ uses at most $39b + 5\tau + 30$, $\mathrm{PH}$ at most $2(158b^2+46b) + b\tau$, $E$ at most $t(40b+13) + tr$, $\mathrm{DEC}$ at most $6bt + 6b^2 + 35b + 13$, $\mathrm{ADD}$ at most $38b + 12$, $\mathrm{SW}$ $b$ swaps. With $t < b + 2L + 6.2$, $r < L + \log_2 t + 5.8$ and $\tau < L + \log_2(b+3) + 4.3$ this gives the stated bound.
+\end{proof}
+
+% One sentence to add at the end of item (iii) of Theorem~\ref{thm:uniform-compilation}:
+% "Lemma~\ref{lem:qft-mod} gives an explicit construction of this transform over
+% $\mathbb{Z}/N$ for every odd $N$, including $N = p^e$, with
+% $O((\log N + \log(1/\eta))^2)$ gates from $\{X,\mathrm{CNOT},\mathrm{SWAP},\mathrm{Toffoli},H\}$
+% and dyadic rotations $R_k^{\pm1},\Lambda(R_k)^{\pm1}$ with $k = O(\log((\log N+\log(1/\eta))/\eta))$;
+% over a fixed finite gate set each rotation is further synthesized, for example by~\cite{DawsonNielsen2006}."

@@ -1,0 +1,39 @@
+kappa=2 J=3 E=7 N_loc=12 | C0=580658 (prime 580663) | C_loc=583982 prime 583991 [claimed 583991, MATCH] prev prime 583981 satisfies: False | C_old=2322604 [claimed 2322604, MATCH]
+   LW_E(C_loc) float = 13.0031 attained at e=7; N_loc+1 = 13
+kappa=2 J=4 E=10 N_loc=25 | C0=84768869 (prime 84768877) | C_loc=84822109 prime 84822113 [claimed 84822113, MATCH] prev prime 84822097 satisfies: False | C_old=339075436 [claimed 339075436, MATCH]
+   LW_E(C_loc) float = 26.0002 attained at e=10; N_loc+1 = 26
+kappa=3 J=3 E=7 N_loc=16 | C0=172029470 (prime 172029493) | C_loc=172103820 prime 172103821 [claimed 172103821, MATCH] prev prime 172103809 satisfies: False | C_old=688117852 [claimed 688117852, MATCH]
+   LW_E(C_loc) float = 17.0000 attained at e=7; N_loc+1 = 17
+kappa=3 J=4 E=10 N_loc=33 | C0=282419970644 (prime 282419970727) | C_loc=282423985962 prime 282423985969 [claimed 282423985969, MATCH] prev prime 282423985927 satisfies: False | C_old=1129679882536 [claimed 1129679882536, MATCH]
+   LW_E(C_loc) float = 34.0000 attained at e=10; N_loc+1 = 34
+
+J=3: max_{a<400} D_J(a) - a^2/(2(J-1)) = 399.8 (linear-term size)
+J=4: max_{a<400} D_J(a) - a^2/(2(J-1)) = 334.5 (linear-term size)
+J=5: max_{a<400} D_J(a) - a^2/(2(J-1)) = 301.9 (linear-term size)
+J=6: max_{a<400} D_J(a) - a^2/(2(J-1)) = 282.9 (linear-term size)
+J=7: max_{a<400} D_J(a) - a^2/(2(J-1)) = 271.2 (linear-term size)
+
+kappa=2 a=1000  p=1e6  tri=501501    (a) None   (b) (3, 253001)
+kappa=2 a=1000  p=1e7  tri=501501    (a) (3, 253001)   (b) (3, 253001)
+kappa=2 a=1000  p=1e8  tri=501501    (a) (3, 253001)   (b) (4, 171502)
+kappa=2 a=1000  p=1e10 tri=501501    (a) (4, 171502)   (b) (5, 131753)
+kappa=2 a=1000  p=1e12 tri=501501    (a) (5, 131753)   (b) (6, 108704)
+kappa=2 a=10000 p=1e6  tri=50015001  (a) None   (b) (3, 25030001)
+kappa=2 a=10000 p=1e7  tri=50015001  (a) (3, 25030001)   (b) (3, 25030001)
+kappa=2 a=10000 p=1e8  tri=50015001  (a) (3, 25030001)   (b) (4, 16715002)
+kappa=2 a=10000 p=1e10 tri=50015001  (a) (4, 16715002)   (b) (5, 12567503)
+kappa=2 a=10000 p=1e12 tri=50015001  (a) (5, 12567503)   (b) (6, 10087004)
+kappa=3 a=1000  p=1e6  tri=501501    (a) None   (b) None
+kappa=3 a=1000  p=1e7  tri=501501    (a) None   (b) None
+kappa=3 a=1000  p=1e8  tri=501501    (a) None   (b) None
+kappa=3 a=1000  p=1e10 tri=501501    (a) (3, 253001)   (b) (3, 253001)
+kappa=3 a=1000  p=1e12 tri=501501    (a) (3, 253001)   (b) (4, 171502)
+kappa=3 a=10000 p=1e6  tri=50015001  (a) None   (b) None
+kappa=3 a=10000 p=1e7  tri=50015001  (a) None   (b) None
+kappa=3 a=10000 p=1e8  tri=50015001  (a) None   (b) None
+kappa=3 a=10000 p=1e10 tri=50015001  (a) (3, 25030001)   (b) (3, 25030001)
+kappa=3 a=10000 p=1e12 tri=50015001  (a) (3, 25030001)   (b) (4, 16715002)
+
+Time caveat for Corollary L1 at its own threshold p = kappa^E (E r + 2), kappa=2, J=3, r=40:
+  p = 36096, |Good| >= p/(2k^E) = 141.0, |Bad| <= Er/2 = 140.0, |Good|-|Bad| >= 1.0: rejection sampling needs up to p/(|Good|-|Bad|) = 36096 expected trials per level (Theorem A: <= 2 kappa^E = 256)
+  at Theorem A's own p = 2 E r kappa^E = 71680: |Good|-|Bad| >= 140.0, trials <= 512.0 = 4 kappa^E

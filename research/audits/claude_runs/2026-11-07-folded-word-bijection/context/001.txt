@@ -1,0 +1,180 @@
+Source https://arxiv.org/pdf/2411.15132 (v3 15Sep2025), exact retained text. Hash in source.json.
+
+## Original lines 375-445
+of N + 2 qubits labeled by j = 0, . . . , N + 1. The Hamiltonian
+                                    −2
+                                 1 NX                               y    y
+                        H=−            (1 + σjz σj+3
+                                                 z
+                                                     )(σj+1
+                                                        x    x
+                                                            σj+2 + σj+1 σj+2 ),                 (3.1)
+                                 8 j=0
+
+acts diagonally on the boundary qubits at positions j = 0 and j = N + 1, as it is clear from
+the allowed dynamical processes (2.3). Therefore, boundary qubits carry well-defined quantum
+numbers and the Hilbert space splits into four sectors depending on the states of these boundary
+qubits. The global bit-flip symmetry of the Hamiltonian implies that we can fix the qubit at
+position j = 0 to be in |0⟩.
+    As we explained in Subsection 2.2, the Hilbert space fragments of an open chain can be
+labeled by the state of the computational basis where magnons are at their leftmost positions
+and domain walls lie to their right. If the last qubit of the chain is in |1⟩, the reference state of
+a fragment in this sector is
+
+                         |0 i1 . . . iN −1 11⟩       or         |0 i1 . . . iN −2 001⟩ .        (3.2)
+
+By using the transition rules (2.3) again, it is simple to see that the fragment associated to the
+first state is isomorphic to the fragment of a chain with N + 3 qubits and reference state
+
+                                             |0 i1 . . . iN −1 110⟩ .                           (3.3)
+
+The same argument implies that the fragment labeled by the second state is isomorphic to that
+of a chain with N + 1 qubits and reference state
+
+                                             |0 i1 . . . iN −2 00⟩ .                            (3.4)
+
+                                                        7
+
+Hence, without loss of generality, we just consider below the sector where both boundary qubits
+are in |0⟩.
+    We consider in the following that states of the form
+
+                             |0 i1 . . . iN −2 110⟩ ,        |011 i3 . . . iN 0⟩ ,              (3.5)
+
+contain a domain wall between the next to last and last qubit, and the first and second qubit
+respectively, even though the definition of domain wall of Subsection 2.1 does not encompass
+these cases. This guarantees that the number of domain walls in all the states of a fragment is
+the same. Moreover, it helps to establish a map between the eigenstates of the free XX model
+and those of the folded XXZ chain which will be the basis for our characterization of the latter.
+    With the previous small change in nomenclature, we describe now folded XXZ eigenstates of
+the form |0⟩ ⊗ |ΨM,D ⟩ ⊗ |0⟩, which carries M magnons and D domain walls. We will show below
+that the state |ΨM,D ⟩, describing the central N spins, can be written as
+                                                                              
+                              |ΨM,D ⟩ = UD |ΦM ⟩N0 ⊗ |0⟩⊗N −N0 ,                                (3.6)
+
+where |ΦM ⟩ is an M -magnon eigenstate of the XX model, realizing free spinless fermions, and
+UD is a unitary. The XX eigenstate lives on an open chain with a reduced number of sites
+N0 = N + 1 − M − D. Due to the reflection with the open boundaries, each magnon of the XX
+model has components with momenta ±pa , where
+                                                  πma
+                                          pa =          ,                                       (3.7)
+                                                 N0 + 1
+and ma , a = 1, . . . , M , are integers. The unitary operator UD introduces the contact repulsion
+among magnons and contains the information on the domain wall positions. It implements
+a collection of permutations and bit flips, but does not alter the value of the XX eigenstate
+coefficients. Therefore, the magnon momenta of the folded XXZ chain are directly inherited
+from those of |ΦM ⟩. The only effect of the interaction on the spectrum of allowed momenta is
+through M and D in the effective length N0 in (3.7).
+    The formula (3.6) was not given in this form before. It is a convenient representation of the
+eigenstates because it directly leads to the circuits that prepare them: we prepare |ΦM ⟩ first, and
+afterward act with the circuit UD for which we provide the factorization into elementary gates.
+However, the key results behind formula (3.6) appear in earlier works, including the original work
+on the constrained XXZ model [35, 36], as well as in the more recent [25, 44], which treated the
+folded XXZ model as a “hard-rod deformation” of the XX spin chain.
+
+3.1   Magnons
+
+## Original lines 770-820
+4.2   From Free to Contact-Repulsive Magnons
+We construct now a quantum circuit that maps XX eigenstates into purely magnonic eigenstates
+of the folded XXZ model, realizing the unitary U0 we detailed in Subsection 3.1:
+                                                                                                      
+                                              |ΨM,0 ⟩ = U0 |ΦM ⟩N −M +1 ⊗ |0⟩⊗M −1 .                                               (4.2)
+
+This transformation introduces a contact repulsion among magnons by shifting free-magnon
+positions according to (3.15). Recall that we focus on folded XXZ eigenstates with the non-
+dynamical boundary spins at |0⟩, such that |ΨM,0 ⟩ denotes the state of the N bulk spins of the
+chain. The qubit requirements of the circuit are the following.
+
+  • A physical register Rphys with N qubits initialized in the state |ΦM ⟩ ⊗ |0⟩⊗M −1 .
+
+  • An auxiliary register Raux with M + 1 qubits initialized in |1⟩|0⟩⊗M , which keeps track of
+    how many magnons have been already shifted.
+
+    The circuit searches for the free magnons in |ΦM ⟩ scanning from right to left. Every time a
+magnon is found, the qubit in |1⟩ in Raux moves one position toward the right. The concatenation
+of CSWAP gates of Fig. 3a performs this operation. We describe the action of the circuit on states
+of the computational basis. Consider that all operations associated to the scan from positions
+N − M + 1 down to n + 1 of Rphys have been already performed. The circuit focuses next on the
+n-th qubit, where we assume that the r-th magnon is placed. The module in Fig. 3a is executed
+with the n-th qubit as control. This places the |1⟩ in Raux at position M − r + 2. The circuit
+
+
+                                                                       14
+
+now use the information in the auxiliary register to shift the r-the magnon according to (3.15),
+which is achieved by applying the module of Fig. 3b to the qubits n to n + M − 1 of Rphys . Note
+that the action of this module is trivial if there is no magnon at position n.
+
+
+
+
+           SWAP      =                                  SHIFT            •       =
+
+
+
+
+                      (a)                                                        (b)
+
+            Figure 3: Building blocks of the circuit that implements the unitary U0 .
+
+   The iterating these operations leads us to the quantum circuit depicted in Fig. 4. Any M -
+magnon initial state leaves Raux in the state |0⟩⊗M |1⟩ at the end of the circuit. This guarantees
+that physical and ancillary qubits end in a product state. Let us mention that the circuit in Fig. 4
+admits straightforward simplifications that we have not included for the sake of clarity, since the
+modules in Figs. 3a–3b at the beginning and end of the circuit can only have a non-trivial effect
+on a reduced number of qubits.
+                                                                0 0 0 0 0 1
+
+
+
+## Original lines 1030-1077
+operations associated to the search for this type of domain wall irrelevant. As a result of these
+simplifications, the range of the first MOVE gate can be reduced from five to three qubits.
+
+Inserting the magnon into Rphys . The circuits of Figs. 6 and 7 correctly relocate the domain
+walls according to the potential presence of a magnon in Raux,n . The next step is to move the
+magnon, if present, from Raux,n into Rphys with the help of the information stored in Rc . The
+circuit in Fig. 8 fulfills this task. The first chain of Toffoli gates duplicates the magnon and places
+the duplicate at the appropriate location in Rphys . A further set of Toffoli gates resets Raux,n to
+|0⟩.
+
+Reset of ancillary qubits. At this point of the algorithm, the information stored in Rc is
+also contained in the position of the leftmost magnon in Rphys . The circuit in Fig. 10 extracts
+this information directly from Rphys and uses it to reset Rc . Starting from the leftmost qubit of
+Rphys , the circuit searches for |01⟩ domain walls up to position n − 1, and stores the result in a
+new register Rr . Since two domain walls of this type cannot be separated by less than four sites,
+
+                                                                                      18
+
+we can save resources as shown in Fig. 9c, by applying the SCAN gate of Fig. 9b to concatenated
+blocks of five qubits. The first SCAN gate acts on the left boundary qubit, which has been
+omitted, together with the first r + 1 qubits of Rphys , where r is the remainder of the quotient
+(n − 1)/4.
+    Let us assume that there was a magnon at Raux,n . The circuit searches for this magnon from
+position n + 1 to n + D of Rphys . The n-th position can be skipped because Rc keeps in its
+starting configuration when the magnon occupies it. First, the circuit queries whether there is
+a magnon in the form of a hole at site n + 1 or a particle at n + 2. A positive answer is not
+enough to ensure that the desired qubit has been found. For instance, the configuration |0010⟩
+on sites (n,.., n + 3) is also compatible with having encountered a previous magnon. According to
+the shifting rules (3.32), the situation of interest and the spurious one correspond respectively to
+having one and zero domain walls of type |01⟩ to the left of the magnon. The module in Fig. 9a
+is able to discriminate between both situations using the information in the register Rr .
+    The series of concatenated SCAN and RESET gates in Fig. 10 allows to unambiguously
+identify where the magnon was inserted and correctly reset R0 . It is important to notice that the
+SCAN gates will count now |01⟩ configurations associated both to domain walls and magnons.
+This agnostic counting is fundamental for the final reset of the register Rr . The design of the
+circuit is such that a |01⟩ count originated by a magnon never leads to an active Rr control qubit
+in the RESET gates. Finally, following the same scheme of Fig. 9c, a series of SCAN gates is
+applied from position n + D − 3 to the first qubit of Rphys . They trigger a chain of CSWAP gates
+inverse to that in Fig. 3a, denoted as ISWAP, ensuring the reset of Rr after their completion.
+
+    All the circuits just described are run again, taking now the position n − 1 of Rphys as
+reference. We iterate this process until all magnons are depleted from Raux , which ends in the
+state |0⟩⊗N −D , while Rphys outputs the desired state |ΨM,D ⟩. Table 2 shows the number of
+CNOT, Toffoli and CSWAP gates required by these circuits. For simplicity, we have considered
+that all SWAP gates act on D/2 + 1 qubits, although this overestimates the number of CSWAPs
+required. For example, the first SWAP gate in Fig. 6 can be replaced by a single CSWAP between
+
+                                                                                                   0         0    0
+

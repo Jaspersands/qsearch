@@ -1,0 +1,27 @@
+bezout lift: checked 35691 triples (p,d,x)
+profiles checked: 16383
+r= 1 max P (g_d=d) = 4  r!((r+1)!)^2 = 4  ratio = 1
+r= 2 max P (g_d=d) = 54  r!((r+1)!)^2 = 72  ratio = 1.33
+r= 3 max P (g_d=d) = 1920  r!((r+1)!)^2 = 3456  ratio = 1.8
+r= 4 max P (g_d=d) = 147000  r!((r+1)!)^2 = 345600  ratio = 2.35
+r= 5 max P (g_d=d) = 20995200  r!((r+1)!)^2 = 62208000  ratio = 2.96
+r= 6 max P (g_d=d) = 5050085040  r!((r+1)!)^2 = 18289152000  ratio = 3.62
+r= 7 max P (g_d=d) = 1897912074240  r!((r+1)!)^2 = 8193540096000  ratio = 4.32
+r= 8 max P (g_d=d) = 1052873903088000  r!((r+1)!)^2 = 5309413982208000  ratio = 5.04
+r= 9 max P (g_d=d) = 824820796800000000  r!((r+1)!)^2 = 4778472583987200000  ratio = 5.79
+r=10 max P (g_d=d) = 880739939575188000000  r!((r+1)!)^2 = 5781951826624512000000  ratio = 6.56
+r=11 max P (g_d=d) = 1245342225006424542412800  r!((r+1)!)^2 = 9158611693373227008000000  ratio = 7.35
+r=12 max P (g_d=d) = 2276429230013242278451276800  r!((r+1)!)^2 = 18573664514160904372224000000  ratio = 8.16
+r=13 max P (g_d=d) = 5271665143488678808473600000000  r!((r+1)!)^2 = 47325697182081984340426752000000  ratio = 8.98
+r=14 max P (g_d=d) = 15200349570731872811356092000000000  r!((r+1)!)^2 = 149075946123558250672344268800000000  ratio = 9.81
+case dims=[4] p=2: P=1 scalar=1 m=8 D=4 I=16 <= 2mP=16: all fields match = True
+case dims=[6, 3, 1] p=65537: P=32 scalar=54 m=10 D=10 I=500 <= 2mP=640: all fields match = True
+   g_d = [2, 1]  guard p >= 16 g^(2g+2) for g>=2: True
+case dims=[13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1] p=2^127-1: P=7640436342325248000 scalar=371209638446513340737559399141212160000 m=17 D=79 I=144546256892554638370 <= 2mP=259774835639058432000: all fields match = True
+   g_d = [2, 3, 2, 1, 6, 7, 2, 9, 2, 1, 6]  guard p >= 16 g^(2g+2) for g>=2: True
+rank-failure bound 1/((p-1)p^(m-t)) verified exactly for p<=7, t<=4, m<=t+4
+geometric sum bound checked g<=39
+TOTAL FAILURES: 0
+caps dims=[6, 3, 1]: sde_calls ok, nonlinear_sde_calls ok, solver_failure_bits_per_call ok, classical_uniform_draw_cap ok, classical_fair_bit_cap ok
+caps dims=[13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: sde_calls ok, nonlinear_sde_calls ok, solver_failure_bits_per_call ok, classical_uniform_draw_cap ok, classical_fair_bit_cap ok
+TOTAL FAILURES (after caps): 0

@@ -1,0 +1,44 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4083,
+      "path": "research/audits/claude_inputs/2026-11-07-reselection/context.md",
+      "sha256": "853a10c6ea3f40d138fdd36d6a7ed3c6eed16af41c342b759d4b02d74f82e5e5",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 2191,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-06T22:32:29.692221+00:00",
+  "input_token_allowance": 2447,
+  "max_budget_usd": 1.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.665148,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-reselection/hidden_structure.md",
+    "sha256": "17efee715af3079dba5e31f0d519d3e00126e6e356f5a3376b41eb35653a0812",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261106T223221.728338Z-50558aaf",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2191,
+    "output_tokens": 532
+  },
+  "usage_cost_estimate_usd": 0.019404
+}

@@ -1,0 +1,13 @@
+n in [4,3000) with guarantee(n) > Theorem A bound: []
+max_n guarantee(n) - (n^2/4+(8/9)(n+2)^1.5+4n+12) over [4,3000): -28.06
+KOW (8) literal, ceil   : n in [4,3000) with guarantee >= KOW: count 3, largest 8  -> guarantee < KOW for all 9 <= n < 3000
+KOW integer pieces      : n in [4,3000) with guarantee >= KOW: count 11, largest 14  -> guarantee < KOW for all 15 <= n < 3000
+note's kow_recursion    : n in [4,3000) with guarantee >= KOW: count 31, largest 34  -> guarantee < KOW for all 35 <= n < 3000
+  n=   34 guarantee=     468 KOW(8)=     521 KOWint=     509 note's=     466 ThmA=     643.7 KOWclosed=     556.3
+  n=   35 guarantee=     491 KOW(8)=     549 KOWint=     537 note's=     492 ThmA=     673.1 KOWclosed=     584.3
+  n=   64 guarantee=    1433 KOW(8)=    1651 KOWint=    1629 note's=    1536 ThmA=    1787.6 KOWclosed=    1686.3
+  n=  100 guarantee=    3242 KOW(8)=    3819 KOWint=    3785 note's=    3621 ThmA=    3850.7 KOWclosed=    3934.3
+  n= 1000 guarantee=  269044 KOW(8)=  340249 KOWint=  339915 note's=  337479 ThmA=  282271.7 KOWclosed=  341334.3
+  n= 2999 guarantee= 2343300 KOW(8)= 3021721 KOWint= 3020721 note's= 3012387 ThmA= 2406753.2 KOWclosed= 3024992.3
+Theorem A closed form < KOW closed form ((n+1)(n+2)+1)/3+n*ceil(log3(n+1)) for all n in ( 80 , 20000)
+Theorem A closed form < KOW (8) literal for all n in ( 105 , 20000)

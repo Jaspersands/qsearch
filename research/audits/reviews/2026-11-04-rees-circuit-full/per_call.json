@@ -1,0 +1,665 @@
+{
+ "status": {
+  "status": "explicit_qft_and_coherent_labels_one_circuit_per_terminal_sample_finite_checks",
+  "scope": "Heis(F_3) and n4(F_5) only (every SDE grade has kappa_d <= 2)",
+  "full_gate_level_terminal_sample": true,
+  "no_mid_circuit_measurement": true,
+  "monolithic_simulation": false,
+  "fixed_finite_gate_set": false,
+  "coherent_receiver_implemented": false,
+  "general_instances": false,
+  "kappa_ge3_grades_coherent": false,
+  "independent_review": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review"
+ },
+ "heis_f3": [
+  {
+   "call": 0,
+   "component": "source_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    7,
+    7,
+    28
+   ],
+   "wires": 36,
+   "gates": 3420,
+   "sigma_max": 0.11475022261445957,
+   "sigma_upper": 0.11475022261874383,
+   "column_errors": [
+    1.1936403727566575e-08,
+    0.11314328372717491,
+    0.11475022261445955
+   ],
+   "prune_err_max": 2.473524200214247e-12,
+   "max_support": 21729,
+   "B": 0.22152262721922492,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.4
+  },
+  {
+   "call": 4,
+   "component": "instrument_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    7,
+    7,
+    28
+   ],
+   "wires": 36,
+   "gates": 3420,
+   "sigma_max": 0.11475022261445957,
+   "sigma_upper": 0.11475022261874383,
+   "column_errors": [
+    1.1936403727566575e-08,
+    0.11314328372717491,
+    0.11475022261445955
+   ],
+   "prune_err_max": 2.473524200214247e-12,
+   "max_support": 21729,
+   "B": 0.22152262721922492,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.2
+  },
+  {
+   "call": 5,
+   "component": "instrument_qft",
+   "kind": "qft_dg",
+   "zero_input": false,
+   "params": [
+    7,
+    7,
+    28
+   ],
+   "wires": 36,
+   "gates": 3420,
+   "sigma_max": 0.11475022261445972,
+   "sigma_upper": 0.11475022261446044,
+   "column_errors": [
+    0.0930394473699728,
+    0.0930394472138736,
+    0.09303944721387349
+   ],
+   "prune_err_max": 4.1408415849184873e-16,
+   "max_support": 3072,
+   "B": 0.22152262721922492,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.1
+  },
+  {
+   "call": 18,
+   "component": "q_prep_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    7,
+    7,
+    28
+   ],
+   "wires": 36,
+   "gates": 3420,
+   "sigma_max": 0.11475022261445957,
+   "sigma_upper": 0.11475022261874383,
+   "column_errors": [
+    1.1936403727566575e-08,
+    0.11314328372717491,
+    0.11475022261445955
+   ],
+   "prune_err_max": 2.473524200214247e-12,
+   "max_support": 21729,
+   "B": 0.22152262721922492,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.1
+  },
+  {
+   "call": 21,
+   "component": "final_qft",
+   "kind": "qft",
+   "zero_input": false,
+   "params": [
+    7,
+    7,
+    28
+   ],
+   "wires": 36,
+   "gates": 3420,
+   "sigma_max": 0.11475022261445957,
+   "sigma_upper": 0.11475022261874383,
+   "column_errors": [
+    1.1936403727566575e-08,
+    0.11314328372717491,
+    0.11475022261445955
+   ],
+   "prune_err_max": 2.473524200214247e-12,
+   "max_support": 21729,
+   "B": 0.22152262721922492,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.1
+  },
+  {
+   "call": 0,
+   "component": "source_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    9,
+    9,
+    28
+   ],
+   "wires": 40,
+   "gates": 3866,
+   "sigma_max": 0.056971295021552175,
+   "sigma_upper": 0.05697129504069432,
+   "column_errors": [
+    1.1936403335474337e-08,
+    0.05677006493601177,
+    0.056971295021552154
+   ],
+   "prune_err_max": 1.1051724678777328e-11,
+   "max_support": 86688,
+   "B": 0.10888564368212102,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.5
+  },
+  {
+   "call": 4,
+   "component": "instrument_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    9,
+    9,
+    28
+   ],
+   "wires": 40,
+   "gates": 3866,
+   "sigma_max": 0.056971295021552175,
+   "sigma_upper": 0.05697129504069432,
+   "column_errors": [
+    1.1936403335474337e-08,
+    0.05677006493601177,
+    0.056971295021552154
+   ],
+   "prune_err_max": 1.1051724678777328e-11,
+   "max_support": 86688,
+   "B": 0.10888564368212102,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.4
+  },
+  {
+   "call": 5,
+   "component": "instrument_qft",
+   "kind": "qft_dg",
+   "zero_input": false,
+   "params": [
+    9,
+    9,
+    28
+   ],
+   "wires": 40,
+   "gates": 3866,
+   "sigma_max": 0.056971295021552584,
+   "sigma_upper": 0.05697129502155323,
+   "column_errors": [
+    0.046434788480964204,
+    0.04643478840266239,
+    0.04643478840266236
+   ],
+   "prune_err_max": 3.7302189187088215e-16,
+   "max_support": 12288,
+   "B": 0.10888564368212102,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.2
+  },
+  {
+   "call": 18,
+   "component": "q_prep_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    9,
+    9,
+    28
+   ],
+   "wires": 40,
+   "gates": 3866,
+   "sigma_max": 0.056971295021552175,
+   "sigma_upper": 0.05697129504069432,
+   "column_errors": [
+    1.1936403335474337e-08,
+    0.05677006493601177,
+    0.056971295021552154
+   ],
+   "prune_err_max": 1.1051724678777328e-11,
+   "max_support": 86688,
+   "B": 0.10888564368212102,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.5
+  },
+  {
+   "call": 21,
+   "component": "final_qft",
+   "kind": "qft",
+   "zero_input": false,
+   "params": [
+    9,
+    9,
+    28
+   ],
+   "wires": 40,
+   "gates": 3866,
+   "sigma_max": 0.056971295021552175,
+   "sigma_upper": 0.05697129504069432,
+   "column_errors": [
+    1.1936403335474337e-08,
+    0.05677006493601177,
+    0.056971295021552154
+   ],
+   "prune_err_max": 1.1051724678777328e-11,
+   "max_support": 86688,
+   "B": 0.10888564368212102,
+   "prep": 1.193640385173075e-08,
+   "seconds": 0.4
+  },
+  {
+   "call": 0,
+   "component": "source_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    7,
+    7,
+    8
+   ],
+   "wires": 36,
+   "gates": 3348,
+   "sigma_max": 0.11504645604922345,
+   "sigma_upper": 0.11504645604922377,
+   "column_errors": [
+    0.004624173445005925,
+    0.11343272952488298,
+    0.11503557266898647
+   ],
+   "prune_err_max": 1.8350050193788452e-16,
+   "max_support": 21760,
+   "B": 0.23432798897806678,
+   "prep": 0.004624173445005812,
+   "seconds": 0.1
+  },
+  {
+   "call": 4,
+   "component": "instrument_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    7,
+    7,
+    8
+   ],
+   "wires": 36,
+   "gates": 3348,
+   "sigma_max": 0.11504645604922345,
+   "sigma_upper": 0.11504645604922377,
+   "column_errors": [
+    0.004624173445005925,
+    0.11343272952488298,
+    0.11503557266898647
+   ],
+   "prune_err_max": 1.8350050193788452e-16,
+   "max_support": 21760,
+   "B": 0.23432798897806678,
+   "prep": 0.004624173445005812,
+   "seconds": 0.1
+  },
+  {
+   "call": 5,
+   "component": "instrument_qft",
+   "kind": "qft_dg",
+   "zero_input": false,
+   "params": [
+    7,
+    7,
+    8
+   ],
+   "wires": 36,
+   "gates": 3348,
+   "sigma_max": 0.11504645604922382,
+   "sigma_upper": 0.11504645604922444,
+   "column_errors": [
+    0.09342076929773425,
+    0.09325800220521581,
+    0.09325800220521585
+   ],
+   "prune_err_max": 3.5134920312968443e-16,
+   "max_support": 3072,
+   "B": 0.23432798897806678,
+   "prep": 0.004624173445005812,
+   "seconds": 0.1
+  },
+  {
+   "call": 18,
+   "component": "q_prep_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    7,
+    7,
+    8
+   ],
+   "wires": 36,
+   "gates": 3348,
+   "sigma_max": 0.11504645604922345,
+   "sigma_upper": 0.11504645604922377,
+   "column_errors": [
+    0.004624173445005925,
+    0.11343272952488298,
+    0.11503557266898647
+   ],
+   "prune_err_max": 1.8350050193788452e-16,
+   "max_support": 21760,
+   "B": 0.23432798897806678,
+   "prep": 0.004624173445005812,
+   "seconds": 0.1
+  },
+  {
+   "call": 21,
+   "component": "final_qft",
+   "kind": "qft",
+   "zero_input": false,
+   "params": [
+    7,
+    7,
+    8
+   ],
+   "wires": 36,
+   "gates": 3348,
+   "sigma_max": 0.11504645604922345,
+   "sigma_upper": 0.11504645604922377,
+   "column_errors": [
+    0.004624173445005925,
+    0.11343272952488298,
+    0.11503557266898647
+   ],
+   "prune_err_max": 1.8350050193788452e-16,
+   "max_support": 21760,
+   "B": 0.23432798897806678,
+   "prep": 0.004624173445005812,
+   "seconds": 0.2
+  }
+ ],
+ "n4_f5": [
+  {
+   "call": 0,
+   "component": "source_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    8,
+    8,
+    28
+   ],
+   "wires": 46,
+   "gates": 5874,
+   "sigma_max": 0.117920166426566,
+   "sigma_upper": 0.11792016646210841,
+   "column_errors": [
+    4.056870725166156e-09,
+    0.07287172597928088,
+    0.11668804137979032,
+    0.117920166426566,
+    0.07287172597928095
+   ],
+   "prune_err_max": 1.589504905564531e-11,
+   "max_support": 169344,
+   "B": 0.20146559557319427,
+   "prep": 4.05687398063077e-09,
+   "seconds": 1.7
+  },
+  {
+   "call": 7,
+   "component": "instrument_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    8,
+    8,
+    28
+   ],
+   "wires": 46,
+   "gates": 5874,
+   "sigma_max": 0.117920166426566,
+   "sigma_upper": 0.11792016646210841,
+   "column_errors": [
+    4.056870725166156e-09,
+    0.07287172597928088,
+    0.11668804137979032,
+    0.117920166426566,
+    0.07287172597928095
+   ],
+   "prune_err_max": 1.589504905564531e-11,
+   "max_support": 169344,
+   "B": 0.20146559557319427,
+   "prep": 4.05687398063077e-09,
+   "seconds": 1.3
+  },
+  {
+   "call": 8,
+   "component": "instrument_qft",
+   "kind": "qft_dg",
+   "zero_input": false,
+   "params": [
+    8,
+    8,
+    28
+   ],
+   "wires": 46,
+   "gates": 5874,
+   "sigma_max": 0.11792016642656604,
+   "sigma_upper": 0.11792016642709181,
+   "column_errors": [
+    0.08734053074137361,
+    0.08734053072962616,
+    0.08734053073693014,
+    0.0873405307375944,
+    0.08734053073040401
+   ],
+   "prune_err_max": 2.351351443065781e-13,
+   "max_support": 20480,
+   "B": 0.20146559557319427,
+   "prep": 4.05687398063077e-09,
+   "seconds": 0.6
+  },
+  {
+   "call": 18,
+   "component": "q_prep_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    8,
+    8,
+    28
+   ],
+   "wires": 46,
+   "gates": 5874,
+   "sigma_max": 0.117920166426566,
+   "sigma_upper": 0.11792016646210841,
+   "column_errors": [
+    4.056870725166156e-09,
+    0.07287172597928088,
+    0.11668804137979032,
+    0.117920166426566,
+    0.07287172597928095
+   ],
+   "prune_err_max": 1.589504905564531e-11,
+   "max_support": 169344,
+   "B": 0.20146559557319427,
+   "prep": 4.05687398063077e-09,
+   "seconds": 1.6
+  },
+  {
+   "call": 172,
+   "component": "final_qft",
+   "kind": "qft",
+   "zero_input": false,
+   "params": [
+    8,
+    8,
+    28
+   ],
+   "wires": 46,
+   "gates": 5874,
+   "sigma_max": 0.117920166426566,
+   "sigma_upper": 0.11792016646210841,
+   "column_errors": [
+    4.056870725166156e-09,
+    0.07287172597928088,
+    0.11668804137979032,
+    0.117920166426566,
+    0.07287172597928095
+   ],
+   "prune_err_max": 1.589504905564531e-11,
+   "max_support": 169344,
+   "B": 0.20146559557319427,
+   "prep": 4.05687398063077e-09,
+   "seconds": 1.5
+  },
+  {
+   "call": 0,
+   "component": "source_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    8,
+    8,
+    8
+   ],
+   "wires": 46,
+   "gates": 5790,
+   "sigma_max": 0.1183443501074041,
+   "sigma_upper": 0.11834435010740452,
+   "column_errors": [
+    0.005309461924277439,
+    0.07355608214674825,
+    0.11711486032603598,
+    0.11834248026866233,
+    0.07355608214674801
+   ],
+   "prune_err_max": 1.8320237204552576e-16,
+   "max_support": 169472,
+   "B": 0.22150112189614324,
+   "prep": 0.005309461924277538,
+   "seconds": 1.7
+  },
+  {
+   "call": 7,
+   "component": "instrument_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    8,
+    8,
+    8
+   ],
+   "wires": 46,
+   "gates": 5790,
+   "sigma_max": 0.1183443501074041,
+   "sigma_upper": 0.11834435010740452,
+   "column_errors": [
+    0.005309461924277439,
+    0.07355608214674825,
+    0.11711486032603598,
+    0.11834248026866233,
+    0.07355608214674801
+   ],
+   "prune_err_max": 1.8320237204552576e-16,
+   "max_support": 169472,
+   "B": 0.22150112189614324,
+   "prep": 0.005309461924277538,
+   "seconds": 1.5
+  },
+  {
+   "call": 8,
+   "component": "instrument_qft",
+   "kind": "qft_dg",
+   "zero_input": false,
+   "params": [
+    8,
+    8,
+    8
+   ],
+   "wires": 46,
+   "gates": 5790,
+   "sigma_max": 0.11834435010740449,
+   "sigma_upper": 0.11834435010740527,
+   "column_errors": [
+    0.08783566300760857,
+    0.08782354603589858,
+    0.08783136546803594,
+    0.08783206258686534,
+    0.08782436484404962
+   ],
+   "prune_err_max": 3.4778246371835435e-16,
+   "max_support": 20480,
+   "B": 0.22150112189614324,
+   "prep": 0.005309461924277538,
+   "seconds": 0.6
+  },
+  {
+   "call": 18,
+   "component": "q_prep_qft",
+   "kind": "qft",
+   "zero_input": true,
+   "params": [
+    8,
+    8,
+    8
+   ],
+   "wires": 46,
+   "gates": 5790,
+   "sigma_max": 0.1183443501074041,
+   "sigma_upper": 0.11834435010740452,
+   "column_errors": [
+    0.005309461924277439,
+    0.07355608214674825,
+    0.11711486032603598,
+    0.11834248026866233,
+    0.07355608214674801
+   ],
+   "prune_err_max": 1.8320237204552576e-16,
+   "max_support": 169472,
+   "B": 0.22150112189614324,
+   "prep": 0.005309461924277538,
+   "seconds": 1.4
+  },
+  {
+   "call": 172,
+   "component": "final_qft",
+   "kind": "qft",
+   "zero_input": false,
+   "params": [
+    8,
+    8,
+    8
+   ],
+   "wires": 46,
+   "gates": 5790,
+   "sigma_max": 0.1183443501074041,
+   "sigma_upper": 0.11834435010740452,
+   "column_errors": [
+    0.005309461924277439,
+    0.07355608214674825,
+    0.11711486032603598,
+    0.11834248026866233,
+    0.07355608214674801
+   ],
+   "prune_err_max": 1.8320237204552576e-16,
+   "max_support": 169472,
+   "B": 0.22150112189614324,
+   "prep": 0.005309461924277538,
+   "seconds": 1.4
+  }
+ ]
+}

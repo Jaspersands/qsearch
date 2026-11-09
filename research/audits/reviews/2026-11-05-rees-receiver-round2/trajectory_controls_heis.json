@@ -1,0 +1,67 @@
+{
+ "status": "monolithic_trajectory_simulation_of_assembled_coherent_terminal_sample_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "job": "heis_f3",
+ "schedule_verified": true,
+ "rows": [
+  {
+   "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+   "oracle": "unmutated",
+   "x0": null,
+   "trajectories": 60,
+   "caught_by_KS": 0,
+   "caught_by_readout_law": 0,
+   "seconds": 6.3
+  },
+  {
+   "instance": "Heis(F_3) H=<[(1, 0, 0)]> non-normal",
+   "oracle": "oracle entry changed",
+   "x0": 1,
+   "trajectories": 60,
+   "caught_by_KS": 60,
+   "caught_by_readout_law": 21,
+   "seconds": 6.2
+  },
+  {
+   "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+   "oracle": "unmutated",
+   "x0": null,
+   "trajectories": 60,
+   "caught_by_KS": 0,
+   "caught_by_readout_law": 0,
+   "seconds": 5.5
+  },
+  {
+   "instance": "Heis(F_3) H=<[(0, 0, 1)]> normal",
+   "oracle": "oracle entry changed",
+   "x0": 3,
+   "trajectories": 60,
+   "caught_by_KS": 60,
+   "caught_by_readout_law": 0,
+   "seconds": 5.4
+  },
+  {
+   "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+   "oracle": "unmutated",
+   "x0": null,
+   "trajectories": 60,
+   "caught_by_KS": 0,
+   "caught_by_readout_law": 0,
+   "seconds": 6.2
+  },
+  {
+   "instance": "Heis(F_3) H=<[(1, 0, 0), (0, 0, 1)]> normal",
+   "oracle": "oracle entry changed",
+   "x0": 3,
+   "trajectories": 60,
+   "caught_by_KS": 60,
+   "caught_by_readout_law": 39,
+   "seconds": 6.2
+  }
+ ]
+}

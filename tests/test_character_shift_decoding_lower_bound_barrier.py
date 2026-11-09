@@ -123,9 +123,10 @@ def test_report_and_registry_integration(tmp_path, monkeypatch):
     assert out_path.exists()
 
     report = json.loads(out_path.read_text())
-    assert report["status"] == "CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND_PROVED"
+    assert report["status"] == "CHARACTER_SHIFT_QUERY_CEILING_PROVED_HARDNESS_CONDITIONAL"
     assert report["claim_gate"]["speedup_claim_allowed"] is False
-    assert report["claim_gate"]["classical_decoding_hardness_verified"] is True
+    assert report["claim_gate"]["classical_decoding_hardness_verified"] is False
+    assert report["claim_gate"]["classical_decoding_hardness_status"] == "conditional-on-legendre-prg-hardness"
 
     # Registry check
     registry = json.loads(registry_copy.read_text())

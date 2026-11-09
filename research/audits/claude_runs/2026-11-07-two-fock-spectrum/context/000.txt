@@ -1,0 +1,66 @@
+# Candidate: two unknown Fock strings under a Gaussian unitary
+
+UNREVIEWED working claim, not established by this packet. Current repo state
+has completed general sparse algebraic-constant lattice and parked hidden
+cubic Clifford learning. This is an independent copy-learning problem.
+
+Native input: independent copies of one exact parity-definite n-mode pure
+state psi=G(alpha|x>+beta|y>), x,y distinct unknown occupation strings of the
+same parity, G an unknown even fermionic Gaussian unitary. Known physical
+Majorana coordinates/Jordan-Wigner encoding; arbitrary polynomial quantum
+circuits and single-copy Pauli measurements allowed. No G, inverse, branch
+bits, moments or minimum amplitude supplied. Output a polynomial preparation
+circuit within trace distance epsilon, failure eta. No classical separation
+claim: supplied G,x,y admits Gaussian/Pfaffian simulation. Aim is polynomial
+copy/time versus unrestricted exponential tomography.
+
+Let k=Hamming(x,y), p=|alpha|². For k>=6, quadratic and quartic Majorana
+operators have zero cross matrix elements. Choose covariance convention so
+pure branch covariances J0,J1 square to -I. They commute. Put
+J=(J0-J1)/2, P=-J² (rank2k), B=(J0+J1)/2. Then B is a complex structure on
+Pperp and zero on P; C=B+(2p-1)J.
+
+Write W(J)_abcd=Jab Jcd-Jac Jbd+Jad Jbc. Quartic moment tensor T (with its
+usual minus sign relative to raw four-Majorana expectation) satisfies
+K=T-W(C)=a W(J), a=4p(1-p). Regard antisymmetric matrices X as vectors with
+inner product sum_(a<b) Xab Yab = Tr(X^T Y)/2. Flatten W on pair indices:
+L_J(X)=<J,X>J+J X J. On the active 2k-space it has unique top eigenvalue k-1
+with eigenvector J, eigenvalues +/-1 on the orthogonal complement; outside
+active pairs it is zero. Thus top K eigenvector is J/sqrt(k) up to sign,
+gap a(k-2). Check this formula/sign carefully.
+
+Candidate algorithm: estimate O(n^4) two/four-point Pauli means to additive
+delta by independent measurements, form K, diagonalize O(n²)-square matrix.
+Loop all even k>=6 if needed. Scale top eigenvector by sqrt(k), round its
+largest 2k singular subspace to a rank2k orthogonal complex structure Jhat.
+On its complement round projected C to a complex structure Bhat. These
+commute exactly. Their Bhat +/- Jhat pure Gaussian branches have one common
+known normal-form frame and differ in all k active bits. Undo that learned
+frame on fresh copies, estimate the unnormalized 2x2 density block on those
+two Fock strings with bounded observables (no free postselection), return
+its top pure eigenvector and the frame. All conditional failures retained.
+
+Uniformity plan: if min(p,1-p)<=epsilon²/10000, covariance polar rounding
+already approximates the dominant Gaussian branch. Otherwise a is at least
+inverse polynomial in epsilon, so fourth-tensor and active-space gaps are
+paid; delta=epsilon^10/[10^20(n+1)^10] is an intentionally conservative
+polynomial choice, not yet proved sufficient. For k<=4, use the existing
+fixed-4 Gaussian-compressible learner (Mele/Herasymenko PRXQuantum6.010319)
+or derive its elementary covariance compression argument. Odd total parity
+can be detected and toggled with fixed X1, then restored on output.
+
+Generate the Gaussian candidate, the 4-compressible candidate, and the
+O(n) rounded spectral candidates. Select by fresh-copy fidelity estimates
+(apply each inverse preparation and measure all zero), error O(epsilon²),
+paying polynomial copies and confidence. No test is an all-n proof.
+
+Useful elementary stability: for pure Gaussian covariances Gamma,Gamma',
+the expected excitation count of one in the other's vacuum frame is
+||Gamma-Gamma'||_F²/8, hence their infidelity is at most that quantity.
+Approximate both orthogonal branches => target is near their learned span;
+fresh two-dimensional tomography then learns the missing global cat phase.
+
+Prior source checks: Sen2609.12219v1 section1.4 explicitly asks unknown
+Gaussian-rotated k-sparse Fock learning. Amidi2610.08723v1 theorem1 has a
+FIXED particle cap per disjoint branch, and connected quartic methods;
+it must be checked for overlap. No novelty claim or general k-sparse result.

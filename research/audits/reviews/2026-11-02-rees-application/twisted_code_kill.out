@@ -1,0 +1,15 @@
+== 1. vector-register shift lemma (float check)
+n=2 p=5 two copies of rho_(U,P), P cubic, delta=(1,-1), U=F_p*(1, 4): max|Pr[z]-p^-2n|=6.51e-19; max|rho_w - rho_(U,P_z)|=3.54e-17
+n=2 p=7 two copies of rho_(U,P), P cubic, delta=(1,-1), U=F_p*(1, 0): max|Pr[z]-p^-2n|=2.71e-19; max|rho_w - rho_(U,P_z)|=4.27e-17
+n=2 p=7 different quadratics Q1,Q2, delta=(1,3), U=F_p*(1, 5): max|Pr[z]-p^-2n|=2.71e-19; max|rho_w - rho_(U,P_z)|=3.66e-17
+== 2. elimination in the n-dim register, phase constant for every eta (exact over F_p)
+n=2 p=7 d=3: constant for all eta=[True, True, True], noise survives=[True, True, True], copies per Fourier sample=[56, 66, 70]
+n=3 p=7 d=3: constant for all eta=[True, True, True], noise survives=[True, True, True], copies per Fourier sample=[142, 140, 142]
+n=2 p=13 d=4: constant for all eta=[True, True, True], noise survives=[True, True, True], copies per Fourier sample=[1593, 1785, 1755]
+== 3. U from Fourier samples of Pi_U/p^(n-k) (exact over F_p)
+n=4 p=7 k=1: rank U=1, dim of recovered space=1, rank of U+recovered=1 (equal means recovered=U)
+n=5 p=11 k=2: rank U=2, dim of recovered space=2, rank of U+recovered=2 (equal means recovered=U)
+== 4. two consecutive Lemma D stages on state vectors (float check)
+n=2 p=5 d=3: stage-1 max deviation=6.40e-17; stage-2 max deviation=1.04e-16; |Pr[z']-p^-2n|=1.30e-18; degree of predicted stage-2 phase=2
+n=2 p=7 d=3: stage-1 max deviation=1.11e-16; stage-2 max deviation=1.04e-16; |Pr[z']-p^-2n|=2.71e-19; degree of predicted stage-2 phase=2
+exit 0

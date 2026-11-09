@@ -1,0 +1,39 @@
+{
+  "billing_status": "unknown",
+  "budget_check": "passed",
+  "context": [],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 585,
+  "effort": "high",
+  "failure_stage": "generation",
+  "failure_type": "ReadTimeout",
+  "finished_at": "2026-11-06T20:09:38.429028+00:00",
+  "input_token_allowance": 841,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.64681,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-relative-norms/support_prompt.md",
+    "sha256": "92e7b3269b4a3b2be03f9c818e3eb4ba1d2ca753ce64f7bca7bcd954a3bdd6a2",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "retry_note": "The request may have been billed. Check the provider before any manual retry.",
+  "role": "adversarial",
+  "run_id": "20261106T195206.377948Z-ef3277e2",
+  "status": "failed",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 585,
+    "output_tokens": 8
+  },
+  "usage_cost_estimate_usd": 0.00625,
+  "usage_is_partial": true
+}

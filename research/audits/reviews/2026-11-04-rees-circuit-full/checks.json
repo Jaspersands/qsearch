@@ -1,0 +1,134 @@
+{
+ "status": {
+  "status": "explicit_qft_and_coherent_labels_one_circuit_per_terminal_sample_finite_checks",
+  "scope": "Heis(F_3) and n4(F_5) only (every SDE grade has kappa_d <= 2)",
+  "full_gate_level_terminal_sample": true,
+  "no_mid_circuit_measurement": true,
+  "monolithic_simulation": false,
+  "fixed_finite_gate_set": false,
+  "coherent_receiver_implemented": false,
+  "general_instances": false,
+  "kappa_ge3_grades_coherent": false,
+  "independent_review": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review"
+ },
+ "heis_f3": {
+  "slice_check": {
+   "slices": 24,
+   "gates_compared": 188952,
+   "equal_to_lemma": true,
+   "footprint_ok": true,
+   "disjoint_ok": true,
+   "first_failure": null,
+   "passed": true
+  },
+  "wire_check": {
+   "pool_and_ancillas_disjoint": true,
+   "called_registers_disjoint_from_pool_and_ancillas": true,
+   "pool_roles": [
+    "block_workspace_pool"
+   ],
+   "pool_roles_ok": true,
+   "pool_untouched_outside_blocks": true,
+   "no_call_oracle_or_measure_inside_blocks": true,
+   "blocks": 1,
+   "blocks_equal_merge_nodes": true,
+   "zero_input_from_stream_equals_items": true,
+   "every_zero_input_call_is_forward": true,
+   "passed": true
+  },
+  "basis_paths": {
+   "pool_and_ancillas_zero_before_every_call": true,
+   "calls_checked": 24,
+   "zero_input_registers_zero": true,
+   "children_and_Q": true,
+   "labels": true,
+   "root_Q_unchanged": true,
+   "workspace_clean": true,
+   "paths": 16384,
+   "passed": true
+  },
+  "mutants": {
+   "mutant_labels": {
+    "wire_check_passed": false,
+    "basis_paths_passed": false
+   },
+   "mutant_oracle": {
+    "wire_check_passed": false,
+    "basis_paths_passed": false
+   },
+   "mutant_qudit": {
+    "wire_check_passed": false,
+    "basis_paths_passed": false
+   },
+   "rotation": {
+    "slice_check_passed": false
+   },
+   "footprint": {
+    "slice_check_passed": false,
+    "footprint_ok": false
+   }
+  },
+  "seconds": 1.6
+ },
+ "n4_f5": {
+  "slice_check": {
+   "slices": 176,
+   "gates_compared": 2341328,
+   "equal_to_lemma": true,
+   "footprint_ok": true,
+   "disjoint_ok": true,
+   "first_failure": null,
+   "passed": true
+  },
+  "wire_check": {
+   "pool_and_ancillas_disjoint": true,
+   "called_registers_disjoint_from_pool_and_ancillas": true,
+   "pool_roles": [
+    "block_workspace_pool"
+   ],
+   "pool_roles_ok": true,
+   "pool_untouched_outside_blocks": true,
+   "no_call_oracle_or_measure_inside_blocks": true,
+   "blocks": 7,
+   "blocks_equal_merge_nodes": true,
+   "zero_input_from_stream_equals_items": true,
+   "every_zero_input_call_is_forward": true,
+   "passed": true
+  },
+  "basis_paths": {
+   "pool_and_ancillas_zero_before_every_call": true,
+   "calls_checked": 176,
+   "zero_input_registers_zero": true,
+   "children_and_Q": true,
+   "labels": true,
+   "root_Q_unchanged": true,
+   "workspace_clean": true,
+   "paths": 1024,
+   "passed": true
+  },
+  "mutants": {
+   "mutant_labels": {
+    "wire_check_passed": false,
+    "basis_paths_passed": false
+   },
+   "mutant_oracle": {
+    "wire_check_passed": false,
+    "basis_paths_passed": false
+   },
+   "mutant_qudit": {
+    "wire_check_passed": false,
+    "basis_paths_passed": false
+   },
+   "rotation": {
+    "slice_check_passed": false
+   },
+   "footprint": {
+    "slice_check_passed": false,
+    "footprint_ok": false
+   }
+  },
+  "seconds": 27.4
+ }
+}

@@ -1,0 +1,772 @@
+A Polynomial-Time Quantum Algorithm for the Dihedral
+Coset Problem
+DANIEL R. SIMON, Amazon Web Services, USA
+We present a polynomial-time quantum algorithm for the Dihedral Coset Problem (DCP). The algorithm is
+based on Regev’s polynomial-time reduction of the Dihedral Subgroup Problem (DSP) to the modular subset
+sum problem [12], but uses a different technique to erase sample bits without use of a subset sum oracle. The
+algorithm can thus combine with Regev’s [12] reduction of lattice problems to DCP, improved by Brakerski,
+Kirshanova, Stehlé and Wen [3], to yield polynomial-time quantum algorithms for various lattice problems,
+such as finding a polynomial-factor approximation to the shortest vector in an 𝑛-dimensional lattice (SVP),
+and the “learning with errors” problem (LWE). The algorithm can tolerate a faulty sample rate as high as
+                                                                                                           √
+1/𝑂 (log 𝑛), allowing the algorithm-reduction combination to efficiently solve, for example, SVP with a 𝑛
+                                                             √
+polylog(𝑛) approximation factor, or LWE instances with 𝛼 = 𝑛 polylog(𝑛).
+
+CCS Concepts: • Theory of computation → Quantum computation theory; Cryptographic primitives; •
+Security and privacy → Public key (asymmetric) techniques.
+
+Additional Key Words and Phrases: quantum algorithms, dihedral coset problem, hidden subgroup problem,
+lattice-based cryptography, learning with errors
+
+ACM Reference Format:
+Daniel R. Simon. 2026. A Polynomial-Time Quantum Algorithm for the Dihedral Coset Problem. 1, 1 (Novem-
+ber 2026), 13 pages. https://doi.org/10.1145/nnnnnnn.nnnnnnn
+
+
+1    Introduction
+1.1 Lattice-Based Cryptography
+The discovery of quantum algorithms capable of efficiently attacking the most popular classical
+public-key cryptosystems [14] has created interest in public-key cryptosystems that are resistant to
+such quantum attacks. One promising approach is “lattice cryptography” [10], which is based on the
+believed computational difficulty of various problems over lattices, such as the polynomial-factor
+approximate Shortest Vector Problem (𝑝 (𝑛)-SVP). 𝑝 (𝑛)-SVP is the problem of finding a non-zero
+vector in an 𝑛-dimensional lattice whose length is within a polynomial 𝑝 (𝑛) factor of the length
+of the shortest non-zero vector in the lattice. The security of several lattice-based cryptosystems,
+such as the Ajtai-Dwork cryptosystem [1] and “learning with errors” (LWE) [13], depends on the
+hardness of 𝑝 (𝑛)-SVP. The best previously available algorithms—classical or quantum—for solving
+𝑝 (𝑛)-SVP, such as BKZ ([4]), require fully exponential time.
+
+
+Author’s Contact Information: Daniel R. Simon, Amazon Web Services, Cryptography Group, Seattle, Washington, USA,
+dcp-paper@amazon.com.
+
+
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the
+full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored.
+Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+© 2026 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM XXXX-XXXX/2026/11-ART
+https://doi.org/10.1145/nnnnnnn.nnnnnnn
+
+
+                                                                   , Vol. 1, No. 1, Article . Publication date: November 2026.
+2                                                                                                    Simon
+
+
+1.2    The Dihedral Subgroup Problem
+The Dihedral Subgroup Problem (DSP) [5] can be stated as follows: assume that a function 𝑓 is
+constant on a subgroup 𝐻 of a dihedral group 𝐺, as well as on each of its cosets; the problem is to
+identify 𝐻 . Ettinger and Høyer [5] showed that it suffices to solve the problem in the case where
+the subgroup is of order 2. Applying the standard “sampling” method results in the following very
+simple formulation of the problem, due to Regev [12]: given a source of random samples of the
+superposition
+                                 1          1
+                                √ |0, 𝑥⟩ + √ |1, 𝑥 + 𝑑 (mod 𝑁 )⟩
+                                  2          2
+where 2𝑁 ≈ 2𝑛+1 is the size of the dihedral group, 𝑑, 𝑥 ∈ {0...𝑁 − 1}, 𝑑 is fixed and 𝑥 is chosen
+arbitrarily for each sample, find 𝑑.
+   Boneh and Lipton [2] showed that the general hidden subgroup problem for Abelian groups
+is in quantum polynomial time, but dihedral groups are (slightly) non-Abelian. The best previ-
+ously
+    √ known quantum algorithm for solving DSP is due to Kuperberg [8], and has running time
+                     √
+2𝑂 ( log 𝑁 ) ≈ 2𝑂 ( 𝑛) . Regev [12] gives a polynomial-time quantum algorithm for DSP, but it relies on
+a subset sum oracle to “erase” input bits. The algorithm presented here emulates Regev’s algorithm,
+but handles the input bits differently.
+
+1.3    The Dihedral Coset Problem
+The Dihedral Coset Problem (DCP) [12] is identical to Regev’s formulation of the DSP, but with a
+faulty sample probability of 1/𝑎(𝑛) in the DSP samples—that is, with probability 1/𝑎(𝑛) that the
+sample will consist of a random bit and random value, rather than the correct superposition. Regev
+[12] showed a polynomial-time reduction from solving 𝑎(𝑛)-SVP to solving DCP on a group of
+                         2
+size 2𝑁 , where 𝑁 ≈ 2𝑛 . This quadratic dimension increase was later removed in an improved
+reduction from LWE presented by Brakerski,   √   Kirshanova, Stehlé and Wen [3]. These reductions
+both yield an approximation factor 𝑎(𝑛) 𝑛 polylog(𝑛), but at the cost of a 1/𝑎(𝑛) faulty sample
+probability. Kuperberg’s
+                    √
+                           algorithm requires error-free input, and hence produces an approximation
+factor at best 2𝑂 ( 𝑛) when combined with Regev’s reduction—no better than what BKZ offers
+classically. Since the quantum algorithm presented here tolerates a faulty sample rate as high as
+1/𝑂 (log 𝑛), it can produce (via√ [3]), for example, a polynomial-time quantum√ algorithm for SVP
+with an approximation factor 𝑛 polylog(𝑛), or for LWE instances with 𝛼 = 𝑛 polylog(𝑛) [11] [9].
+
+2     The Algorithm
+2.1    Algorithm Overview
+Regev’s polynomial-time DSP algorithm [12] that uses a subset        Í sum oracle can be summarized
+as follows: first, generate slightly more than 𝑛 DSP samples 𝑏𝑖 ∈ {0,1} |𝑏𝑖 , 𝑥 + 𝑏𝑖 𝑑⟩ (all arithmetic
+operations being mod 𝑁 , where 𝑁 ≈ 2𝑛 ), then Fourier-transform the 𝑥 + 𝑏𝑖 𝑑 portion of each and
+measure it, producing a superposition of 0 and 1 and a measured value 𝑦𝑖 , such that the phases of
+0 and 1 differ by a factor 𝜔 𝑦𝑖 𝑑 (where 𝜔 is an 𝑁 th root of unity). Next, compute the subset sum
+   𝑏𝑖 𝑦𝑖 in superposition, and measure all but the most significant bit ℎ of it, calling     the measured
+Í
+                                                                                                  ′
+bits 𝑧 ′ . The phases of all of the states that survive this measurement will be 𝜔 𝑏𝑖 𝑦𝑖 𝑑 = 𝜔 (𝑧 +ℎ𝑁 /2)𝑑 ,
+                                                                                     Í
+
+             ′
+where 𝜔 𝑧 𝑑 is constant. We can then use theÍsubset sum oracle to compute (in superposition) the
+solutions to the two subset sum problems 𝑏𝑖 𝑦𝑖 = 𝑧 ′ + ℎ𝑁 /2 given 𝑧 ′ for ℎ = 0 and ℎ = 1. With
+non-negligible probability, there will be exactly one solution for each value of ℎ, which can be
+used to “erase” the 𝑏𝑖 values in each case, leaving only ℎ distinguishing the two solution states.
+Their phases will differ by 𝜔 𝑁 𝑑/2 , which will be 1 if the last bit 𝑑𝑛 of 𝑑 is 0 and −1 if 𝑑𝑛 = 1. Hence
+
+, Vol. 1, No. 1, Article . Publication date: November 2026.
+Polynomial-Time Quantum Algorithm for DCP                                                                        3
+
+
+Hadamard-transforming ℎ and measuring it will produce 𝑑𝑛 with probability 1. The remaining bits
+of 𝑑 can be obtained by repeating this algorithm recursively, using knowledge of 𝑑𝑛 to erase the
+last bit from every sample and obtaining 𝑑𝑛−1 as above, and so on.
+   We will follow this outline, Í but use a different method to erase the 𝑏𝑖 values. First, as before, we
+will generate DSP samples 𝑏𝑖 ∈ {0,1} |𝑏𝑖 , 𝑥 + 𝑏𝑖 𝑑⟩ (some of them faulty—i.e., a random (𝑛 + 1)-bit
+value, not in superposition), Fourier-transform the 𝑥 + 𝑏𝑖 𝑑 portions 𝑦𝑖 , and compute the subset sum
+𝑧 in superposition, measuring the least significant 𝑛 − 1 bits 𝑧 ′ of the sum, while leaving the most
+significant bit ℎ unmeasured. However, we will do this with 𝑘𝑛𝑐+1 samples (for constants 𝑘 and 𝑐),
+forming a superposition of states 𝜙 = 𝑏 1 ...𝑏𝑘𝑛𝑐+1 . We then process the bits in groups of 𝑐 log 𝑛, as
+follows: first, we compute in superposition the log 𝑛 most significant bits 𝑠 of the sum 𝑟 𝑗 = 𝑏𝑖 𝑦𝑖
+                                                                                                     Í
+for group 𝑔 𝑗 , then we Hadamard-transform the 𝑏𝑖 values in 𝑔 𝑗 and measure them along with the
+corresponding 𝑦𝑖 values. If all the 𝑏𝑖 measurements result in 0, then we include this group in set
+𝐴—otherwise, we will measure all of the bits of 𝑠 for the group, and then include it in set 𝐵.
+   Our goal will be to run Regev’s algorithm on 𝐴—which has no extraneous phases introduced
+by the erasure of its bits 𝑏𝑖 —instead of on the entire set of samples, using the 𝑠 values for 𝐴 to
+construct a new ℎ ∗ that replaces the original ℎ, and transferring theÍ      phase that encodes 𝑑𝑛 from ℎ
+to ℎ ∗ . The lower-order 𝑛 − 1 bits of the replacement subset sum 𝑧 ∗ = 𝐴 𝑏𝑖 𝑦𝑖 over just 𝐴 won’t ever
+be explicitly calculated—it’ll range over all possible values, in fact—but it’ll be used implicitly to
+argue that the samples in 𝐵 have an identical effect regardless of the value of ℎ ∗ , and hence can be
+ignored.
+   We can successfully collect an expected 𝑎 = 𝑛/log 𝑛 groups in set 𝐴, assuming 𝑘 > 𝑐 and thus
+enough samples that an overwhelmingly large fraction of the possible measured strings contain at
+least that many groups qualifying for set 𝐴. We then compute the sum 𝑠 ∗ of the 𝑠 values, measure all
+but the last 𝑠 value 𝑠𝑎 , and erase 𝑠𝑎 using 𝑠 ∗ and the other measured 𝑠 values. Next, we Hadamard-
+transform and measure all the bits of 𝑠 ∗ except the most significant bit ℎ ∗ . Assuming we get the
+desired all-zeroes result (with expected probability 2/𝑛 over choices of the 𝑦𝑖 ’s), we’re left with the
+single bits ℎ and ℎ ∗ , where ℎ ∗ divides all the states based on whether 𝑧 ∗ has highest-order bit 0 or 1.
+(Because we’ve used the most significant log 𝑛 bits of the sums for each group, and there are only
+𝑛/log 𝑛 𝑠 values summed to obtain 𝑠 ∗ , the computed value of ℎ ∗ will be the correct highest-order
+bit of 𝑧 ∗ , as long as the most significant log log 𝑛 bits of 𝑠 ∗ contained at least one 0—a condition we
+can check for.)
+   Finally, we compute and measure ℎ ′ = ℎ ⊕ℎ ∗ . Recall that ℎ starts off encoding 𝑑𝑛 in the Hadamard
+basis—that is, that the ℎ = 0 and ℎ = 1 states have the same or opposite phases depending on
+whether 𝑑𝑛 = 0 or 𝑑𝑛 = 1. If for each value of ℎ ′ the effect of Hadamard-transforming the 𝑏𝑖 ’s in set
+𝐵 on the phases of ℎ ∗ = 0 and ℎ ∗ = 1 is the same, then it’s easy to verify that the computation of ℎ ′
+effectively copies ℎ’s encoding of 𝑑𝑛 to ℎ ∗ . (Whether the bits of ℎ and ℎ ∗ are exactly the same or
+exactly opposite, the relationship between the final phases of their two states will be the same for
+both qubits.) We can thus use ℎ ′ and ℎ ∗ to erase ℎ, leaving a single unmeasured bit ℎ ∗ , and measure
+ℎ ∗ in the Hadamard basis, in place of ℎ, to obtain 𝑑𝑛 . All that remains is to show that the effect of
+set 𝐵 on the amplitudes and phases of the states ℎ ∗ = 0 and ℎ ∗ = 1 is approximately equal for both.
+   Now, these ℎ ∗ = 0 and ℎ ∗ = 1 states are each composed of the sum of all the original states 𝜙
+(each with phase 1 or −1) consistent with the measured values and that value of ℎ ∗ . We can consider
+each 𝜙 to be of the form (𝜙𝐴 , 𝜙 𝐵 ), where 𝜙𝐴 consists of the portion of the original state associated
+with groups of samples in 𝐴, and similarly for 𝜙 𝐵 . We can then partition these state-portions 𝜙𝐴
+and 𝜙 𝐵 into sets based on their corresponding value of 𝑧 ∗ . We make the following observations:
+
+  (1) For any particular value of 𝑧¯∗ , the least significant 𝑛 − 1 bits of 𝑧 ∗ , the same set of 𝜙 𝐵 state-
+      portions are consistent with 𝑧¯∗ and ℎ ∗ irrespective of the value of ℎ ∗ . For example, if ℎ ′ was
+
+                                                        , Vol. 1, No. 1, Article . Publication date: November 2026.
+4                                                                                                     Simon
+
+
+        measured to be 0 and 𝜙 𝐵 is consistent with the value of 𝑧¯∗ and ℎ ∗ = 0, then it will also be
+        consistent with 𝑧¯∗ and ℎ ∗ = 1, because adding 2𝑛−1 to both 𝑧 ∗ and 𝑧 ′ won’t change their
+        difference (mod 𝑁 ). The phases of the sums of the states 𝜙 consistent with 𝑧¯∗ for both
+        values of ℎ ∗ will thus be the same, once ℎ ′ is computed and measured, and the contributions
+        of the 𝜙 𝐵 state portions to each amplitude will also be identical for both values of ℎ ∗ .
+    (2) Let 𝑧ℎ∗ be the most significant log 𝑛 bits of 𝑧 ∗ , and 𝑧𝑙∗ be the remaining bits. Then for a
+        sufficiently large constant 𝑐 and any 𝑧ℎ∗ , the state-portions 𝜙𝐴 are extremely close to uniformly
+        distributed across values of 𝑧𝑙∗ . This is a result of the pairwise independence of the subset
+        sums 𝑧𝑙∗ [12]. (There are approximately 2 (𝑐𝑛 (1−1/𝑂 (log 𝑛) ) −𝑛−𝑐 log 𝑛 𝜙𝐴 values distributed over
+        the 2𝑛−log 𝑛 possible 𝑧𝑙∗ values—assuming a 1/𝑂 (log 𝑛) faulty sample rate—so the expected
+        2 (𝑐𝑛 (1−1/𝑂 (log 𝑛) ) −2𝑛−𝑂 (log 𝑛) states per value will vary by a standard deviation which is the
+        square root of that number, and which can be made exponentially small compared to the
+        total—even when totaled over all the possible values of 𝑧𝑙∗ —by choosing a large enough 𝑐.)
+    (3) Moreover, for any particular pair of values of 𝑧ℎ∗ that differ only in ℎ ∗ , the number of 𝜙𝐴
+        state-portions consistent with each is approximately equal—differing by an expected fraction
+        about 1/𝑛 (𝑐 −1)/2 of the total. This is again a result of the pairwise independence of subset
+        sums, this time in the group 𝑎 that produces 𝑠𝑎 . (We consider here only the randomness in 𝑧ℎ∗
+        associated with the generation of 𝑠𝑎 —the additional randomness stemming from “overflow”
+        bits generated by summing the lower 𝑛 − log 𝑛 bits of the subset sum only increases the
+        entropy, and hence the uniformity, of 𝑧ℎ∗ . We also assume that 𝑔𝑎 ’s 𝑐 log 𝑛 samples are all
+                                                                               ′
+        non-faulty, which is true with probability approximately 𝑒 −𝑐/𝑐 , where the faulty sample rate
+        is 1/𝑐 ′ log 𝑛.)
+   It follows that for any pair of values of 𝑧ℎ∗ differing only in ℎ ∗ , the expected difference in the
+sizes of their amplitudes will be on average about 1/𝑛 (𝑐 −1)/2 —since the amplitudes for pairs of
+corresponding 𝑧𝑙∗ values will all be almost exactly the same, by observations 1 and 2, and with
+the same phase, by observation 1—and hence the total expected difference in the magnitudes of
+the amplitudes of ℎ ∗ = 0 and ℎ ∗ = 1 will average about 1/𝑛 (𝑐 −3)/2 . (We’re assuming here that
+the amplitudes associated with each 𝑧 ∗ value are “well-behaved” enough—that is, that they aren’t
+so huge and mutually canceling—that the tiny differences among amplitudes associated with
+the 𝜙𝐴 state-portions for different 𝑧 ∗ values aren’t unduly magnified. Fortunately, the pairwise
+independence of the phases of states over possible measured values of the Hadamard-transformed
+bits 𝑏𝑖 ensures that these per-𝑧 ∗ amplitudes are within reasonable bounds with high probability.)
+For large enough 𝑐, then, this total difference in amplitude will be small enough that we can
+(by repeating the algorithm multiple times) recover 𝑑𝑛 from ℎ ∗ as we did from ℎ in the original
+algorithm, and recurse as before to recover all of 𝑑.
+
+2.2    Algorithm Details
+(Note: The proofs in this section are presented as sketches—more formal proofs can be found in
+[6].)
+Theorem. There exist a polynomial-time      (in 𝑛) quantum algorithm and constant 𝑐 ′ such that, given
+DSP samples of the form 𝑏𝑖 ∈ {0,1} |𝑏𝑖 , 𝑥 + 𝑏𝑖 𝑑 (mod 𝑁 )⟩ (where 𝑁 is exponential in 𝑛 and 𝑥 is a
+                            Í
+random value (mod 𝑁 )) with probability at least 1 − 1/𝑐 ′ log 𝑛, and a random (𝑛 + 1)-bit value
+otherwise, computes the last bit 𝑑𝑛 of 𝑑.
+Proof. For simplicity, let 𝑁 = 2𝑛 , and assume all arithmetic operations and relations involving states,
+amplitudes and phases are (mod 𝑁 ). We will describe each step of the algorithm in sequence,
+along with the expression representing the superposition created at that step.
+
+, Vol. 1, No. 1, Article . Publication date: November 2026.
+Polynomial-Time Quantum Algorithm for DCP                                                                                           5
+
+
+    In Step 1, we collect a sequence of 𝑄 = 𝑘𝑛𝑐+1 (𝑛 + 1)-bit DSP samples 𝑅𝑖 = 2−1/2 𝑏𝑖 ∈ {0,1} |𝑏𝑖 , 𝑥𝑖 +
+                                                                                       Í
+𝑏𝑖 𝑑⟩ (or, in the case of faulty samples, 𝑅𝑖 = |𝑏𝑖 , 𝑥𝑖 ⟩). For each sample, we Fourier-transform the
+𝑥𝑖 + 𝑏𝑖 𝑑 portion, producing the values 𝑦1 ...𝑦𝑄 , and move the 𝑦𝑖 values to the end, creating the
+concatenated string 𝑌 . The resulting superposition is as follows:
+                                           ∑︁     Í
+                               2− (𝑛+1)𝑄/2      𝜔 𝑖 𝑦𝑖 (𝑥𝑖 +𝑏𝑖 𝑑 ) |𝑏 1, ..., 𝑏𝑄 , 𝑌 ⟩
+                                                  𝑏 1 ...𝑏𝑄 ,𝑌
+
+   In step 2, we compute the sum 𝑧 = 𝑖=1 𝑏𝑖 𝑦𝑖 in superposition, and measure all but the highest-
+                                             Í𝑄
+order bit of the result, obtaining the (𝑛 − 1)-bit value 𝑧 ′ . We’ll define 𝑍𝑌′ as the set of vectors
+𝜙 = 𝑏 1 ...𝑏𝑄 instantiated by the samples and consistent with 𝑌 and the measured value of 𝑧 ′ (for one
+of ℎ = 0 or ℎ = 1), and ℎ as the highest-order bit of 𝑧. The resulting superposition is thus as follows:
+                             ∑︁               ∑︁          Í          ′
+                           (    |𝑍𝑌′ |) −1/2     (−1)ℎ𝑑𝑛 𝜔 𝑖 𝑥𝑖 𝑦𝑖 +𝑧 𝑑 |𝜙, 𝑌 , ℎ, 𝑧 ′ ⟩
+                                   𝑌                  𝑌 ,𝜙 ∈𝑍𝑌′
+                                                                                                      ′
+   Henceforth we’ll omit the measured value 𝑧 ′ and the constant value 𝜔 𝑧 𝑑 from the superposition.
+   In step 3, we divide the bits 𝑏𝑖 into Í
+                                         groups 𝑔 𝑗 of size 𝑐 log 𝑛, and compute the value 𝑠 𝑗 as the most
+significant log 𝑛 bits of the sum 𝑟 𝑗 = 𝑔 𝑗 𝑏𝑖 𝑦𝑖 . The resulting superposition is as follows:
+                         ∑︁              ∑︁             Í
+                       (    |𝑍𝑌′ |) −1/2     (−1)ℎ𝑑𝑛 𝜔 𝑖 𝑥𝑖 𝑦𝑖 |𝜙, 𝑌 , ℎ, 𝑠 1 ...𝑠𝑄/𝑐 log 𝑛 ⟩
+                               𝑌               𝑌 ,𝜙 ∈𝑍𝑌′
+   In step 4, we Hadamard-transform the bits 𝑏𝑖 of each group 𝑔 𝑗 , producing the following superpo-
+sition over all strings 𝐷 = 𝑏 1′ ...𝑏𝑄′ :
+                                                             ′
+                      ∑︁               ∑︁ ∑︁          Í
+                                             (−1)ℎ𝑑𝑛 + 𝑏 𝑗 𝑏 𝑗 𝜔 𝑖 𝑥𝑖 𝑦𝑖 |𝐷, 𝑌 , ℎ, 𝑠 1 ...𝑠𝑄/𝑐 log 𝑛 ⟩
+                                                                Í
+              2−𝑄/2 (    |𝑍𝑌′ |) −1/2
+                         𝑌            𝐷 𝑌 ,𝜙 ∈𝑍𝑌′
+
+   We then measure 𝑌 (renaming 𝑍𝑌′ for the measured 𝑌 as 𝑍 ′ ) and 𝐷, and move the measured
+bits of the first 𝑎 = 𝑛/log 𝑛 groups for which the 𝑏𝑖′ are all 0 to the front (i.e., henceforth labeling
+them 𝑏 1 ...𝑏𝑐𝑛 ). We call these latter groups (and their associated 𝑠 𝑗 values) set 𝐴, and include the
+remaining 𝛽 = (𝑄/𝑐 log 𝑛) − (𝑛/log 𝑛) groups in set 𝐵. We’ll also henceforth omit the now-constant
+phase coefficient 𝜔 𝑥𝑖 𝑦𝑖 .
+Lemma 1. If 𝑘 > 𝑐, then with constant probability, the measured value of 𝐷 = 𝑏 1′ ...𝑏𝑄′ will have at
+least 𝑛/log 𝑛 groups that consist of all zeroes.
+Proof. (Sketch) Let 𝐷 0 be the set of 𝐷 values with more zeroes than ones, let 𝐷 1 be the set of
+𝐷 values with more ones than zeroes, and let 𝐷 0=1 be the remainder (with an equal number of
+ones and zeroes). Also, let 𝑍𝑒𝑣𝑒𝑛 be the set of 𝜙 ∈ 𝑍 ′ with an even number of ones, and 𝑍𝑜𝑑𝑑 be
+𝑍 ′ − 𝑍𝑒𝑣𝑒𝑛 . The portion of the superposition corresponding to 𝐷 1 after the measurement of 𝑌 is
+                                                 ∑︁ ∑︁
+                               2−𝑄/2 |𝑍 ′ | −1/2       (−1)ℎ𝑑𝑛 +𝜙 ·𝐷 |𝐷...⟩
+                                                              𝐷 1 𝜙 ∈𝑍 ′
+                                       ∑︁ ∑︁                                        ∑︁ ∑︁
+            = 2−𝑄/2 |𝑍 ′ | −1/2 (                     (−1)ℎ𝑑𝑛 +𝜙 ·𝐷 |𝐷...⟩ +                      (−1)ℎ𝑑𝑛 +𝜙 ·𝐷 |𝐷...⟩)
+                                       𝐷 1 𝜙 ∈𝑍𝑒𝑣𝑒𝑛                                 𝐷 1 𝜙 ∈𝑍𝑜𝑑𝑑
+                                       ∑︁ ∑︁                                        ∑︁ ∑︁
+            =2   −𝑄/2     ′ −1/2
+                        |𝑍 |       (                  (−1)   ℎ𝑑𝑛 +𝜙 ·𝐷
+                                                                         |𝐷...⟩ −                 (−1)ℎ𝑑𝑛 +𝜙 ·𝐷 |𝐷...⟩)
+                                       𝐷 0 𝜙 ∈𝑍𝑒𝑣𝑒𝑛                                 𝐷 0 𝜙 ∈𝑍𝑜𝑑𝑑
+
+  since the phase (−1)𝜙 ·𝐷 for any 𝐷 and its counterpart with all the bits reversed will be identical
+for 𝑍𝑒𝑣𝑒𝑛 , and opposite for 𝑍𝑜𝑑𝑑 . Given that the sums are all as likely (over choices of 𝑌 ) to be
+negative as positive, and as least as likely to have opposite phases as identical ones between 𝑍𝑒𝑣𝑒𝑛
+
+                                                                           , Vol. 1, No. 1, Article . Publication date: November 2026.
+6                                                                                                                       Simon
+
+
+and 𝑍𝑜𝑑𝑑 , it follows that the expected total probability (over choices of 𝑌 ) of 𝐷 0 is at least as large
+as that of 𝐷 1 . Hence with at least constant probability, 𝐷 has at least as many zeroes as ones.
+   Now, consider the set 𝐷𝑌 of pairs (𝐷, 𝑌 ) such that 𝐷 ∈ 𝐷 0 ∪ 𝐷 0=1 and 𝑌 consists of values 𝑦𝑖
+such that the lower-order 𝑛 − 2 log 𝑛 bits of the 𝑦𝑖 values are all distinct. (The latter condition holds
+for the overwhelming majority of possible 𝑌 , and thus 𝐷𝑌 still covers a constant fraction of the
+total probability space.) Let 𝐷𝑌𝑏𝑎𝑑 be the set of elements of 𝐷𝑌 that do not produce the required
+𝑛/log 𝑛 all-zero groups, and 𝐷𝑌𝑔𝑜𝑜𝑑 be 𝐷𝑌 −𝐷𝑌𝑏𝑎𝑑 . We can map every element of 𝐷𝑌𝑏𝑎𝑑 to a distinct
+element of 𝐷𝑌𝑔𝑜𝑜𝑑 as follows: we first swap locations of zero bits and one bits in 𝐷 so that the new
+𝐷 is in 𝐷𝑌𝑔𝑜𝑜𝑑 , then we swap the lower 𝑛 − 2 log 𝑛 bits of the corresponding 𝑦𝑖 values. The values
+of 𝜙 that are in 𝑍𝑌′ will also have their bits rearranged the same way as those of 𝐷, and the phase
+of each such 𝜙 will be unchanged after the rearrangement, given the rearrangement of the bits
+of 𝐷. The total probability of these mapped elements of 𝐷𝑌𝑔𝑜𝑜𝑑 will therefore be as large as the
+probability of 𝐷𝑌𝑏𝑎𝑑 , and 𝐷𝑌𝑔𝑜𝑜𝑑 will thus have an expected probability at least as large as 𝐷𝑌𝑏𝑎𝑑 .
+It follows that with at least constant probability, the measured value (𝐷, 𝑌 ) will be in 𝐷𝑌𝑔𝑜𝑜𝑑 . □
+   The resulting superposition (assuming the required number of all-zero groups) is as follows:
+
+                                                                ′
+                                ∑︁                   Í
+                           𝜈1            (−1)ℎ𝑑𝑛 + 𝐵 𝑏 𝑗 𝑏 𝑗 |0𝑐𝑛𝑏𝑐𝑛+1
+                                                                  ′
+                                                                       , ..., 𝑏𝑄′ , 𝑌 , ℎ, 𝑠 1 ...𝑠𝑄/𝑐 log 𝑛 ⟩
+                                𝜙 ∈𝑍 ′
+
+  where 𝜈 1 is the normalization coefficient determined by the measurement of 𝑌 and 𝐷. Henceforth
+we’ll omit the measured values 𝑌 and (rearranged) 𝐷 from the superposition.
+  We can rewrite this superposition in terms of the sum 𝑧 ∗ = 𝐴 𝑟 𝑗 = 𝑐𝑛     𝑖=1 𝑏𝑖 𝑦𝑖 —that is, defining
+                                                                  Í        Í
+the sets 𝑍𝑧′∗ of states 𝜙 ∈ 𝑍 ′ for which 𝑐𝑛
+                                          𝑖=1 𝑏𝑖 𝑦𝑖 = 𝑧 . We thus create the following superposition:
+                                                       ∗
+                                         Í
+
+                                                                                     ′
+                                         ∑︁ ∑︁                        Í𝑄
+                                   𝜈1                    (−1)ℎ𝑑𝑛 + 𝑗 =𝑐𝑛+1 𝑏 𝑗 𝑏 𝑗 |ℎ, 𝑠 1 ...𝑠𝑄/𝑐 log 𝑛 ⟩
+                                          𝑧 ∗ 𝜙 ∈𝑍 ′ ∗
+                                                  𝑧
+
+   Now, consider the set 𝐴𝑧 ∗ of strings 𝜙𝐴 = 𝑏 1 ...𝑏𝑐𝑛 , 𝜙𝐴 ∈ 𝑍 ′ such that 𝑐𝑛    𝑖=1 𝑏𝑖 𝑦𝑖 = 𝑧 , and the set
+                                                                                                 ∗
+                                                                                   Í
+
+𝐵𝑧 ∗,ℎ of strings 𝜙 𝐵 = 𝑏𝑐𝑛+1 ...𝑏𝑄 , 𝜙 𝐵 ∈ 𝑍 ′ such that 𝑖=𝑐𝑛+1 𝑏𝑖 𝑦𝑖 + 𝑧 ∗ = 𝑧 ′ + 2𝑛−1ℎ for ℎ = 0 or ℎ = 1.
+                                                         Í𝑄
+
+Any 𝜙 ∈ 𝑍𝑧′∗ must consist of a concatenation of an element of 𝐴𝑧 ∗ and an element of 𝐵𝑧 ∗,ℎ (for one
+of ℎ = 0 or ℎ = 1), and moreover any such concatenation must be in 𝑍𝑧′∗ . We can hence rewrite the
+above superposition as follows:
+
+                                                                                          ′
+                                ∑︁ ∑︁                ∑︁                         Í𝑄
+                           𝜈1                                  (−1)ℎ𝑑𝑛 + 𝑗 =𝑐𝑛+1 𝑏 𝑗 𝑏 𝑗 |ℎ, 𝑠 1 ...𝑠𝑄/𝑐 log 𝑛 ⟩
+                                𝑧 ∗ ,ℎ 𝜙𝐴 ∈𝐴𝑧 ∗ 𝜙 𝐵 ∈𝐵𝑧 ∗ ,ℎ
+
+  In step 5, we measure the values 𝑠𝑖 for groups in 𝐵, leaving values 𝑆 = (𝜎1′ ...𝜎𝛽′ ). We define
+the sets 𝐵𝑧 ∗,𝑆,ℎ as the sets of states in 𝐵𝑧 ∗,ℎ consistent with the measured value 𝑆. The resulting
+superposition is as follows:
+
+                                                                                          ′
+                              ∑︁ ∑︁                 ∑︁                          Í𝑄
+                         𝜈2                                    (−1)ℎ𝑑𝑛 + 𝑗 =𝑐𝑛+1 𝑏 𝑗 𝑏 𝑗 |ℎ, 𝑠 1 ...𝑠𝑎 , 𝜎1′ ...𝜎𝛽′ ⟩
+                              𝑧 ∗ ,ℎ 𝜙𝐴 ∈𝐴𝑧 ∗ 𝜙 𝐵 ∈𝐵𝑧 ∗ ,𝑆,ℎ
+
+  where 𝜈 2 is the revised normalization coefficient determined by the measurements. For brevity,
+we define
+                                                                      ′
+                                            ∑︁          Í𝑄
+                                𝐶𝑧 ∗,𝑆,ℎ =         (−1) 𝑗 =𝑐𝑛+1 𝑏 𝑗 𝑏 𝑗
+                                                               𝜙 𝐵 ∈𝐵𝑧 ∗ ,𝑆,ℎ
+
+and rewrite the above superposition as
+
+, Vol. 1, No. 1, Article . Publication date: November 2026.
+Polynomial-Time Quantum Algorithm for DCP                                                                                              7
+
+
+                                    ∑︁ ∑︁
+                               𝜈2                         (−1)ℎ𝑑𝑛 𝐶𝑧 ∗,𝑆,ℎ |ℎ, 𝑠 1 ...𝑠𝑎 , 𝜎1′ ...𝜎𝛽′ ⟩
+                                     𝑧 ∗ ,ℎ 𝜙   𝐴 ∈𝐴𝑧 ∗
+
+   Henceforth we’ll omit the measured values 𝜎1′ ...𝜎𝛽′ .
+   In step 6, we compute the sum 𝑠 ∗ = 𝑗 𝑠 𝑗 (mod 𝑛), using 𝑠 1 ...𝑠𝑎−1 and 𝑠 ∗ to erase 𝑠𝑎 , and compute
+                                          Í
+the bit 𝑙𝑠 ∗ which is 1 if the second-most significant through log log 𝑛-most significant bits of 𝑠 ∗ are
+all 1, and 0 otherwise. We then Hadamard-transform 𝑠¯∗ (the low-order log 𝑛 − 1 bits of 𝑠 ∗ ), and
+measure 𝑊 = (𝑠 1 ...𝑠𝑎−1, 𝑙𝑠 ∗ ), producing the measured value 𝑊 ′ . We proceed only if the measured
+value of 𝑙𝑠 ∗ is 0 (an event which occurs with at least constant probability, by the same reasoning as
+Lemma 1). We also measure the Hadamard-transformed bits of 𝑠¯∗ , and proceed only if the result is
+all zeroes—an event which occurs with expected probability 2/𝑛, over choices of 𝑌 .
+   We define the sets 𝐴𝑧′ ∗,𝑊 ′ as the sets of states in 𝐴𝑧 ∗ consistent with the measured value 𝑊 ′ . We
+also label the most significant bit of 𝑠 ∗ as ℎ ∗ , giving us the following superposition:
+
+                                                            (−1)ℎ𝑑𝑛 𝐶𝑧 ∗,𝑆,ℎ |ℎ, ℎ ∗,𝑊 ′, 0log 𝑛−1 ⟩
+                                  ∑︁            ∑︁
+                             𝜈3
+                                  𝑧 ∗ ,ℎ 𝜙   𝐴 ∈𝐴𝑧 ∗ ,𝑊 ′
+
+     where 𝜈 3 is the revised normalization coefficient determined by the measurements. Note that ℎ ∗
+as calculated is the most significant bit of the sum of the most significant log 𝑛 bits of the 𝑛/log 𝑛
+values 𝑟 𝑗 whose sum is 𝑧 ∗ , and also that 𝑙𝑠 ∗ = 0 (meaning that the most significant log log 𝑛 bits of
+𝑠 ∗ , apart from ℎ ∗ , aren’t all 1). We can therefore be sure that the omitted less significant bits of the
+subset sums 𝑟 𝑗 don’t affect the computation of ℎ ∗ , and hence that ℎ ∗ correctly represents the most
+significant bit of 𝑧 ∗ . Henceforth we’ll omit the measured values 𝑊 ′ and 0log 𝑛−1 .
+     Finally, in step 7, we compute and measure ℎ ′ = ℎ ⊕ ℎ ∗ , and use it to erase ℎ. We also replace
+𝐶𝑧 ∗,𝑆,ℎ with 𝐶𝑧 ∗,𝑆,ℎ ′ , which is defined equivalently to 𝐶𝑧 ∗,𝑆,ℎ but with 𝐵𝑧∗,𝑆,ℎ replaced by 𝐵𝑧∗,𝑆,ℎ
+                                                                                                     ′
+                                                                                                          ′ , the
+
+same set of states restricted to those elements consistent with the measured value of ℎ . We thus  ′
+
+produce the following superposition:
+                                       ∑︁                 ∗    ′
+                                                                           ∑︁
+                                  𝜈4          (−1) (ℎ ⊕ℎ )𝑑𝑛                           𝐶𝑧 ∗,𝑆,ℎ ′ |ℎ ∗, ℎ ′ ⟩
+                                       𝑧∗                              𝜙𝐴 ∈𝐴𝑧 ∗ ,𝑊 ′
+
+   where 𝜈 4 is theÍrevised normalization coefficient determined by the measurement of ℎ ′ . We will
+now show that 𝜙𝐴 ∈𝐴𝑧 ∗ ,𝑊 ′ 𝐶𝑧 ∗,𝑆,ℎ′ will be approximately equal for either value of ℎ ∗ , given two
+values of 𝑧 ∗ whose least significant 𝑛 − 1 bits (which we’ll call 𝑧¯∗ ) are equal.
+Lemma 2. 𝐶𝑧 ∗,𝑆,ℎ ′ is equal for any two values 𝑧 0∗ and 𝑧 1∗ of 𝑧 ∗ that differ only in the most significant
+bit ℎ ∗ , and either measured value of ℎ ′ .
+Proof. For any element 𝜙 𝐵 of 𝐵𝑧′ ∗,𝑆,ℎ ′ , 𝑧 0∗ + 𝐵 𝑏𝑖 𝑦𝑖 = 𝑧 ′ + 2𝑛−1ℎ. We can add or subtract 2𝑛−1 as
+                                                  Í
+                                      0
+necessary from both 𝑧 0∗ and 𝑧 ′ + 2𝑛−1ℎ to obtain the equality 𝑧 1∗ + 𝐵 𝑏𝑖 𝑦𝑖 = 𝑧 ′ + 2𝑛−1ℎ for the other
+                                                                         Í
+value of ℎ ∗ (and hence of ℎ, since we’ve fixed ℎ ′ = ℎ ∗ ⊕ ℎ by measuring it). Thus 𝐵𝑧′ ∗,𝑆,ℎ ′ = 𝐵𝑧′ ∗,𝑆,ℎ ′ ,
+                                                                                              0         1
+and the lemma’s claim follows.                                                                              □
+   We can therefore rewrite the above superposition in terms of 𝐶𝑧¯∗ = 𝐶𝑧 ∗,𝑆,ℎ ′ for either 𝑧 ∗ whose
+least significant 𝑛 − 1 bits are 𝑧¯∗ (and the measured value of ℎ ′ ), as follows:
+                                               ∑︁                  ∗   ′
+                                                                                 ∑︁
+                               𝜓 = 𝜈4                (−1) (ℎ ⊕ℎ )𝑑𝑛                          𝐶𝑧¯∗ |ℎ ∗, ℎ ′ ⟩
+                                                𝑧∗                          𝜙𝐴 ∈𝐴𝑧 ∗ ,𝑊 ′
+
+  We next show that the portion of the amplitude of either value of ℎ ∗ that is associated with a
+particular 𝑧 ∗ is of bounded size. This will allow us later to convert the bounded relative deviations
+
+                                                                              , Vol. 1, No. 1, Article . Publication date: November 2026.
+8                                                                                                              Simon
+
+
+from uniformity of these amplitude portions into a bounded absolute total deviation across all
+values of 𝑧 ∗ .
+Definition 1. For a given measured 𝑧 ′ , and a resulting superposition 𝜓 of values of ℎ ∗ at the end of
+step 7, let 𝑀 be the set of values (𝑌 , 𝐷,𝑊 ′, 𝑆, ℎ ′ ) measured (apart from 𝑧 ′ ) during the algorithm, let
+𝑇𝑀+ (resp., 𝑇𝑀− ) be the set of states 𝜙 consistent with 𝑀 and ℎ ∗ and with phase 1 (resp., −1) resulting
+                                                                     ′
+from measurement of 𝑀 (ignoring the constant phase 𝜔 𝑦𝑧 𝑑 ). Let 𝑇𝑀 = 𝑇𝑀+ ∪ 𝑇𝑀− , and let 𝑡𝑀 (resp.,
+𝑡𝑀 , 𝑡𝑀 ) be |𝑇𝑀 | (resp., |𝑇𝑀 |, |𝑇𝑀 |).
+ +    −                      +       −
+
+Lemma 3. The probability (over choices of 𝑀) that for some 𝑧 ∗ the amplitude 𝛼𝑧 ∗ = 𝜈 4 𝜙𝐴 ∈𝐴𝑧 ∗ ,𝑊 ′ 𝐶𝑧¯∗
+                                                                                                Í
+has magnitude greater than Ω(2𝑛 ) is less than 𝑂 (2−𝑛 ).
+Proof. (Sketch) Let 𝑇𝑀 ′ (resp., 𝑇𝑀+ ′ , 𝑇𝑀−′ ) be defined identically to 𝑇𝑀 (resp., 𝑇𝑀+ , 𝑇𝑀− ), but with ℎ¯′
+replacing ℎ ′ , and let 𝑇 = 𝑇𝑀 ∪ 𝑇𝑀 ′ , 𝑇 + = 𝑇𝑀+ ∪ 𝑇𝑀+ ′ , and 𝑇 − = 𝑇𝑀− ∪ 𝑇𝑀−′ . Note that 𝑇𝑀 and 𝑇𝑀 ′ are
+disjoint and of equal expected size 𝑡/2 (where 𝑡 = |𝑇 |) over choices of 𝑌 , since for any 𝑌 that maps
+a given 𝜙 to 𝑇𝑀 , there’s a corresponding 𝑌 ′ that maps it to 𝑇𝑀 ′ , where the difference is only the
+addition of 2𝑛−1 to two 𝑦𝑖 values, one on either side of the boundary between 𝜙𝐴 and 𝜙 𝐵 —say, in
+𝑔𝑎 on the 𝜙𝐴 side, and among the unused samples on the 𝜙 𝐵 side, to maintain consistency with
+measured 𝑠𝑖 values. Note that this partition depends only on 𝑌 , and not on 𝐷. (All values of 𝐷 are
+equally compatible with any partition of 𝜙 values into 𝑇𝑀 and 𝑇𝑀 ′ —𝐷 only determines the 𝜙 values’
+phases.)
+   Now, consider a set 𝑀𝐷 of 𝑀 values with fixed (𝑌 ,𝑊 ′, 𝑆, ℎ ′ ) and varying 𝐷. 𝑇𝑀 and 𝑇𝑀 ′ will be
+the same for all values of 𝐷 in 𝑀𝐷 , since any 𝐷 is compatible with any 𝜙 value, and only affects
+the phase of 𝜙. Moreover, any 𝜙 (resp., any pair 𝜙 1 and 𝜙 2 ), regardless of whether in 𝑇𝑀 or 𝑇𝑀 ′ ,
+is equally often in 𝑇 + or 𝑇 − (resp., both in 𝑇 + , both in 𝑇 − , or one of them in each), over choices
+of 𝐷. (This holds as long as there’s a single non-zero bit in 𝜙, since that bit leaves the phase of 𝜙
+unchanged if paired with a zero in 𝐷—that is, for half the possible values of 𝐷—and flips 𝜙’s phase
+if paired with a 1 in 𝐷. The exception, the all-zeroes state, only appears in the superposition if the
+measured value of 𝑧 was 0, which occurs with exponentially small probability.) The phases of the
+elements of 𝑇𝑀 can thus be considered to be selected pairwise-independently over choices of 𝐷
+(assuming uniform 𝐷—that is, not considering the actual probability that each 𝐷 is measured). The
+sizes of 𝑇𝑀+ and 𝑇𝑀− —that is, 𝑡𝑀   + and 𝑡 − —will therefore have mean and variance 𝜎 2 = Θ(𝑡 ).
+                                            𝑀                                                 𝑀        𝑀
+   Moreover, the subsets 𝑇𝑀,𝑧 ∗ and 𝑇𝑀,𝑧
+                                 +            −
+                                                ∗ of 𝑇𝑀,𝑧 ∗ (where 𝑇𝑀,𝑧 ∗ is defined for each 𝐷 as the set of
+
+𝜙 ∈ 𝑇𝑀 compatible with 𝑧 ∗ ) for a given 𝑧 ∗ can be partitioned according to the value of their 𝜙 𝐵 state
+portions (which define their phase). And since the distinct 𝜙 values in each such partition must
+differ within their 𝜙𝐴 state portions, they are therefore assigned 𝑧 ∗ values pairwise independently
+over choices of 𝑌 . Hence the pairwise independence of phases of 𝜙 states over choices of 𝐷 (and 𝑌 ),
+and the resulting mean and variance of 𝑡𝑀         + and 𝑡 − , carry over to the sizes 𝑡 +
+                                                           𝑀                            𝑀,𝑧 ∗ and 𝑡 𝑀,𝑧 ∗ of 𝑇𝑀,𝑧 ∗
+                                                                                                    −         +
+
+and 𝑇𝑀,𝑧− , respectively: 𝑡 +
+           ∗                 𝑀,𝑧 ∗ and 𝑡 𝑀,𝑧 ∗ will have mean and variance 𝑂 (𝑡 𝑀 /2 ).
+                                          −                                            𝑛
+                                                     2
+   We next consider the expected value 𝐸 (𝛼𝑧 ∗ ) for some 𝑧 over (the actual distribution on) 𝐷 in a
+                                                                   ∗
+
+set 𝑀𝐷 and a random choice of 𝑌 . It can be expressed as 𝐷 𝑃𝑟 [𝐷]𝛼𝑧2∗,𝐷 , where 𝛼𝑧 ∗,𝐷 is the portion
+                                                                  Í
+of 𝐷’s amplitude post-normalization that corresponds to states 𝜙 compatible with 𝑧 ∗ —i.e.,
+                                  𝛼𝑧 ∗,𝐷 = (𝑡𝑀 · |𝑀𝐷 | · 𝑃𝑟 [𝐷]) −1/2 |𝑡𝑀,𝑧
+                                                                        +         −
+                                                                            ∗ − 𝑡 𝑀,𝑧 ∗ |
+
+
+Hence
+                    𝐸 (𝛼𝑧2∗ ) =                           2                                          2
+                                  ∑︁
+                                         +         −                                +         −
+                                       (𝑡𝑀,𝑧 ∗ − 𝑡 𝑀,𝑧 ∗ ) /(𝑡 𝑀 · |𝑀𝐷 |) = 𝐸 𝐷 ((𝑡 𝑀,𝑧 ∗ − 𝑡 𝑀,𝑧 ∗ ) /𝑡 𝑀 )
+                                  𝐷
+where 𝐸𝐷 is the expectation over the uniform distribution on 𝐷. Note that 𝐸𝐷 ((𝑡𝑀,𝑧                     2
+                                                                                           ∗ − 𝑡 𝑀,𝑧 ∗ ) ) is
+                                                                                        +        −
+
+the variance of 𝑡𝑀,𝑧 ∗ − 𝑡𝑀,𝑧 ∗ , and is therefore 𝑂 (𝑡𝑀 /2 ), as computed above for 𝑡𝑀,𝑧 ∗ and 𝑡𝑀,𝑧 ∗ . It
+                   +         −                             𝑛                            +           −
+
+follows that 𝐸 (𝛼𝑧2∗ ) is 𝑂 (2−𝑛 ), and hence the probability that 𝛼𝑧2∗ > Ω(2𝑛 ) (meaning 𝛼𝑧 ∗ > Ω(2𝑛/2 ))
+
+, Vol. 1, No. 1, Article . Publication date: November 2026.
+Polynomial-Time Quantum Algorithm for DCP                                                                           9
+
+
+is at most 𝑂 (2−2𝑛 ). The probability that for at least one value of 𝑧 ∗ 𝛼𝑧 ∗ > Ω(2𝑛/2 ) is thus at most
+𝑂 (2−𝑛 ).                                                                                                       □
+Corollary. For any log 𝑛-bit value 𝑧ℎ∗ let 𝑍ℎ∗ be the set of values of 𝑧 ∗ whose most significant log 𝑛
+bits are 𝑧ℎ∗ , and let 𝛼𝑧ℎ∗ be the amplitude of 𝑧ℎ∗ in the superposition, i.e., 𝑍 ∗ 𝛼𝑧 ∗ , where 𝛼𝑧 ∗ is defined
+                                                                                   Í
+                                                                                     ℎ
+as in Lemma 3. Then the probability (over choices of 𝑀) that for some 𝑧ℎ∗ consistent with ℎ ∗ the
+amplitude 𝛼𝑧ℎ∗ has magnitude greater than 𝑛 1/2 is less than 𝑂 (1/𝑛).
+Proof. (Sketch) The proof follows the structure of Lemma 3, but with 𝑧ℎ∗ replacing 𝑧 ∗ and 𝑛
+                                            √
+substituting for 2𝑛 (and hence 𝑛 substituting for 2𝑛/2 ).                                                       □
+    Next, we will show that for two 𝑧ℎ∗ values that differ only in ℎ ∗ , their implicit amplitudes in 𝜓
+following step 7 are approximately equal. We do so by demonstrating that the 𝜙𝐴 state portions are
+so close to uniformly distributed over 𝑧 ∗ values that, given the bound established by Lemma 3, the
+amplitudes of any two 𝑧 ∗ values differing only in ℎ ∗ are close to identical—so close, in fact, that
+their sums across all 𝑧 ∗ values sharing the same 𝑧ℎ∗ (apart from ℎ ∗ ) are also approximately identical.
+Lemma 4. For any 𝑧 ∗ , let 𝑧ℎ∗ be the most significant log 𝑛 bits of 𝑧 ∗ , and 𝑧𝑙∗ be the remaining bits.
+Then for any two values 𝑧ℎ,0           ∗ and 𝑧 ∗ of 𝑧 ∗ that differ only in the most significant bit ℎ ∗ , and for
+                                                    ℎ,1 ℎ
+𝑐 ≥ 12, the amplitudes 𝛼𝑧ℎ,0         ∗ and 𝛼 𝑧 ∗ (defined as in the corollary to Lemma 3) differ by an expected
+                                                  ℎ,1
+multiplicative factor 1 ± 𝑂 (𝑛 − ( ( (𝑐 −1)/2) −1) ) with probability at least 1 − 1/𝑛.
+Proof. (Sketch) For any 𝜙𝐴 , the value of 𝑧ℎ∗ is the sum of the “overflow” bits produced by summing
+the relevant 𝑧𝑙∗ values, the measured 𝑠 𝑗 values, and 𝑠𝑎 . We will focus on the latter, dividing the
+state-portions 𝜙𝐴 into sets 𝐴𝑔𝑎 , each with a different value of the string 𝑞𝑔𝑎 of values of the bits
+in 𝑔𝑎 , and assuming that 𝑧ℎ∗ is fully determined by 𝑠𝑎 . (Considering the additional variation from
+the “overflow” bits in determining 𝑧ℎ∗ would only increase the uniformity of 𝑧ℎ∗ , which we want
+to maximize in any event.) Note that the sets 𝐴𝑔𝑎 are of equal size, since a particular value of 𝑞𝑔𝑎
+doesn’t restrict the values of the rest of the bits in 𝜙𝐴 , as long as 𝑧 ∗ isn’t specified.
+    Since the values of 𝑠𝑎 for 𝜙𝐴 in different 𝐴𝑔𝑎 are pairwise independent over all possible 𝑦𝑖 values,
+we can model the distribution of 𝑧ℎ∗ values—based solely on the variation in 𝑠𝑎 —as a “balls in bins”
+problem, with 𝑛𝑐 balls and 𝑛 bins. The mean for each bin is thus 𝑛𝑐 −1 balls, with a variance 𝑛𝑐 −1
+and standard deviation 𝑛 (𝑐 −1)/2 for each bin. (We are assuming here that 𝑔𝑎 contains no faulty
+samples—an event which occurs with probability greater than (1 − 1/𝑐 ′ log 𝑛)𝑐 log 𝑛 = 𝑒 −𝑐/𝑐 .) By
+                                                                                                             ′
+
+
+Chebyshev’s inequality, then, the probability that the number of balls in a particular bin differs
+from 𝑛𝑐 −1 by 𝜅𝑛 (𝑐 −1)/2 is at most 1/𝜅 2 , and the probability that any bin deviates from the mean by
+𝜅 ′𝑛 (𝑐 −1)/2 is thus at most 𝑛/𝜅 ′2 . For example, for 𝜅 = 𝑛, the bins deviate from the mean by at most
+𝑛 ( (𝑐 −1)/2)+1 except with probability at most 1/𝑛.
+    The values of 𝑧𝑙∗ for different 𝜙𝐴 are also pairwise independent, so we can again model the distribu-
+tion of 𝑧𝑙∗ values for each 𝐴𝑔𝑎 as a “balls in bins” problem, with an expected 𝜏 = 2𝑐𝑛 (1−1/(𝑐 log 𝑛) ) −𝑛−𝑐 log 𝑛
+                                                                                                   ′
+
+
+balls (since the 𝑛 − log 𝑛 measured bits of 𝑊 ′ , plus the log 𝑛 bits of 𝑧ℎ∗ , reduce the 𝑐𝑛 bits of 𝐴 by
+an expected 𝑛 effective bits, and 𝑔𝑎 has 𝑐 log 𝑛 bits) distributed among 2𝑛−log 𝑛 bins. (To simplify
+the calculations we’ll consider the number of bins as 2𝑛 .) The mean number of balls per bin is
+thus 𝜇 = 2𝑐𝑛 (1−1/(𝑐 log 𝑛) ) −2𝑛−𝑐 log 𝑛 , with an equivalent variance and thus a standard deviation
+                             ′
+
+                        ′ log 𝑛) ) −𝑛−𝑐 log 𝑛/2
+𝜎 =2     (𝑐𝑛/2) (1−1/(𝑐                         .
+    By Chebyshev’s inequality, then, the number of balls will deviate from 𝜇 by 𝜅 ′𝜎 for a given bin
+with probability at most 1/𝜅 ′ 2 . Setting 𝜅 ′ = 2𝑛 and 𝑐 ≥ 12, we get that with probability at least
+1 − 2−2𝑛 , a bin deviates from 𝜇 by at most 2 (12𝑛/2) (1−1/(𝑐 log 𝑛) )+𝑛−12 log 𝑛/2 balls—or, in amplitude
+                                                                       ′
+
+
+terms, a 𝑧𝑙 value deviates by that much from the expected number of 𝜙𝐴 state portions. We know
+              ∗
+
+from Lemma 3 that the amplitude of a given (𝑧ℎ∗ , 𝑧𝑙∗ ) pair has (except with exponentially small
+probability) magnitude at most 2𝑛/2 . It follows that with probability at least 1 − 2−𝑛 , the total
+
+
+                                                           , Vol. 1, No. 1, Article . Publication date: November 2026.
+10                                                                                                     Simon
+
+
+deviation 𝛿 from 𝜇 over all 2𝑛 − 𝑛 possible values of 𝑧𝑙∗ for a given 𝑧ℎ∗ is at most
+                                ((2 (12𝑛/2) (1−1/(𝑐 log 𝑛) )+𝑛−12 log 𝑛/2 )/𝜇) (2𝑛/2 ) (2𝑛 )
+                                                    ′
+
+
+
+                                = (2 (12𝑛/2) (1−1/(𝑐 log 𝑛) )+5𝑛/2−12 log 𝑛/2 )/𝜇
+                                                              ′
+
+
+                                                    < 2−𝑛
+even if all the relative deviations are maximal and all in the same direction.
+  We further observe from the superposition 𝜓 yielded by step 7 that the amplitude associated
+with a given set 𝐴𝑔𝑎 is given by
+                                ∑︁           ∗  ′
+                                                              ∑︁
+                             𝜈4     (−1) (ℎ ⊕ℎ )𝑑𝑛                         𝐶 (𝑧 ∗¯,𝑧 ∗ )
+                                                                                               ℎ 𝑙
+                                       𝑧𝑙∗                        𝜙𝐴 ∈𝐴 (𝑧 ∗ ,𝑧 ∗ ),𝑊 ′ ∩𝐴𝑔𝑎
+                                                                           ℎ 𝑙
+
+Because of the nearly-uniform distribution of the 𝜙𝐴 state-portions over values of 𝑧𝑙∗ , though, we
+can treat this amplitude as a simple sum of the relevant 𝐶𝑧¯∗ values, multiplied by the expected
+number 𝜇 of compatible state-portions 𝜙𝐴 , ignoring the resulting exponentially small error 𝛿. That
+is, we can approximate the amplitude of 𝐴𝑔𝑎 as
+                                            ∗  ′
+                                                           ∑︁
+                                 𝜈 4 (−1) (ℎ ⊕ℎ )𝑑𝑛 |𝐴𝑔𝑎 |    𝐶 (𝑧 ∗¯,𝑧 ∗ )
+                                                                                        ℎ 𝑙
+                                                                              𝑧𝑙∗
+
+    where the sets 𝐴𝑔𝑎 are of equal size. Moreover, for two 𝑞𝑔𝑎 values whose corresponding 𝑧ℎ∗ values
+differ at most in ℎ ∗ the 𝐶𝑧¯∗ corresponding to each 𝑧𝑙∗ is the same   Í (by Lemma 2)—as is, therefore,
+the sum over all 𝑧𝑙∗ of the 𝐶𝑧¯∗ . Hence if we define 𝐽 = 𝜈 4 |𝐴𝑔𝑎 | 𝑧 ∗ 𝐶 (𝑧 ∗¯,𝑧 ∗ ) for a given 𝑧ℎ∗ , then the
+                                                                           𝑙      ℎ 𝑙
+amplitude of 𝑧ℎ∗ is just 𝐽 multiplied by the number of sets 𝐴𝑔𝑎 corresponding to the given 𝑧ℎ∗ . The
+relative multiplicative difference between two values of 𝑧ℎ∗ differing only in ℎ ∗ is thus bounded (with
+probability at least 1 − 1/𝑛) by 1 ± 𝑂 (𝑛 ( (𝑐 −1)/2)+1− (𝑐 −1) ) = 1 ± 𝑂 (𝑛 − ( ( (𝑐 −1)/2) −1) ), as required. □
+    Using Lemma 4 along with the corollary to Lemma 3, it follows      √ that the amplitudes of the values
+of 𝑧ℎ∗ in the superposition 𝜓 following step 7 are all at most 𝑛 except with probability at most
+𝑂 (1/𝑛), and hence for 𝑐 ≥ 12 the sum of the differences in amplitudes across the 𝑛/2 pairs 𝑧ℎ∗ that
+differ only in ℎ ∗ is at most 𝑂 (𝑛 − ( ( (𝑐 −1)/2)√
+                                                  −5/2) ) ≤ 1/𝑛 except with probability 1/𝑛. This is small
+
+enough compared to the approximately 1/ 2 amplitude of at least one of the two possible values of
+ℎ ∗ (and hence both, since their difference is so small) that Hadamard-transforming and measuring
+ℎ ∗ , which has inherited its encoding of 𝑑𝑛 from ℎ by the computation of ℎ ′ , will yield 𝑑𝑛 with
+probability significantly greater than 1/2. Thus polynomially many iterations of the algorithm will
+allow us to extract 𝑑𝑛 with near-certainty.                                                          √           □
+Corollary. There exists a polynomial-time quantum algorithm that computes 𝑂 √                      ( 𝑛 polylog(𝑛))-
+factor approximations of SVP solutions, and solutions to LWE instances with 𝛼 = 𝑂 ( 𝑛 polylog(𝑛)).[11][9]
+
+3    A Note on [7]
+Gupte, Ragavan and Zhandry [7] recently presented a proof that the density matrix representing
+the state of the above algorithm following step 2—assuming averaging over untouched portions
+of the 𝑦𝑖 values—is exponentially close to that which would be produced if all the qubits 𝑏𝑖 were
+traced out (i.e., measured and then discarded). They argue that this result implies that the above
+algorithm can’t possibly produce a correct value of 𝑑𝑛 with non-negligible probability, since the
+information about 𝑑𝑛 is encoded in the relationship between the phases of each value of ℎ, and
+thus destroyed when all the 𝑏𝑖 ’s are traced out, collapsing ℎ to a single value.
+   As it turns out, Lemmas 1, 2 and 3 are all completely compatible with the result in [7]—Lemmas 2
+and 3, in particular, focus on the 𝜙 𝐵 portion of the state, which could in fact be traced out, reducing
+it to a single value, without affecting the algorithm at all. Rather, it’s Lemma 4—–the claim that
+
+, Vol. 1, No. 1, Article . Publication date: November 2026.
+Polynomial-Time Quantum Algorithm for DCP                                                                     11
+
+
+the 𝜙𝐴 state portions are roughly evenly distributed among 𝑧 ∗ values—that fails once the bits in 𝜙𝐴
+are traced out.
+   Now, this would certainly cause the algorithm to fail—set 𝐴 is exactly the set that needs to
+be represented for both values of ℎ and ℎ ∗ , and hence not be traced out, for the algorithm to
+work. However, the fact that 𝐴 is post-selected such that the results of the Hadamard transforms on
+its bits are all zero allows the states of ℎ and ℎ ∗ computed in the algorithm—perhaps surprisingly—to
+diverge non-negligibly from the case where the values of the 𝑏𝑖 ’s in 𝐴 are traced out, despite the
+theorem proven in [7].
+   Consider, for example, the case where all the 𝑏𝑖 ’s are measured as zero following their Hadamard
+transforms. (Or alternatively, consider a variation of the algorithm in which a random set 𝐴 of
+𝑛/(log 𝑛) groups of 𝑏𝑖 ’s is pre-selected, then the rest of the 𝑏𝑖 ’s are measured, hoping that the
+Hadamard transforms on set 𝐴 all result in zeroes.) In that case, the algorithm can easily be seen to
+work correctly (as a mildly modified version of Regev’s original algorithm, with the 𝑏𝑖 ’s just erased
+a different way), even though its pre-Hadamard-transform density matrix, per [7], is only negligibly
+different from the one for the case where the 𝑏𝑖 ’s were all traced out, preventing the algorithm
+from working correctly. Of course, the Hadamard transform on the 𝑏𝑖 ’s (or in the variation, the 𝑏𝑖 ’s
+in 𝐴) only results in all zeroes with exponentially small probability. But note that the probability
+expressed in the density matrix in [7] is over choices of the 𝑦𝑖 ’s, and an all-zeroes outcome of
+the Hadamard transforms makes the average output across all 𝑦𝑖 ’s completely different from the
+all-𝑏𝑖 ’s-traced-out case. In effect, the Hadamard transform concentrates the expected difference
+between the intact-𝑏𝑖 ’s and traced-out-𝑏𝑖 ’s cases in the all-zeroes outcome, making it non-negligible
+when conditioned on that outcome occurring.
+   (In density matrix terms, the effect of the negligibly-different density matrices on the states of
+the computed values ℎ ∗ and ℎ normally carries through the Hadamard transform because the states
+whose amplitudes are summed have varying phases, and hence interfere negatively, keeping the
+difference small. But this effect breaks down when the result of the Hadamard transform is all
+zeroes, and therefore imparts no phases to the input states, causing the two density matrices, when
+ℎ ∗ and ℎ are included, to diverge significantly.)
+   This exceptional behavior of the all-zeroes Hadamard transform result is important because the
+crux of the argument in [7] is the implicit claim that the negligible difference between the actual
+and traced-out density matrices over choices of the untouched portions of the 𝑦𝑖 ’s is persistently
+uniform and completely independent of the evolution of the algorithm’s state. But this claim is in
+fact incorrect, as we’ve shown, since the difference can become non-negligible in the case of an
+all-zeroes Hadamard transform result on a given set 𝐴 of 𝑏𝑖 ’s. Moreover, this case is recognizeable
+to the algorithm, and can even be amplified and exploited by it. And that’s precisely what the
+algorithm does by post-selecting 𝐴 to have an all-zeroes Hadamard transform result: the negligible
+probability of this event occurring—and the density matrix thus diverging from the traced-out case,
+yielding a correct algorithm output—for any particular choice of 𝐴 instead becomes a near-certainty
+when 𝐴 is post-selected based on the outcome of the Hadamard transforms on the 𝑏𝑖 ’s.
+   More precisely, consider another variation of the algorithm, identical to the previous one in
+which 𝐴 is randomly pre-selected, except that we omit the measurement of the 𝑏𝑖 ’s in set 𝐵 (still
+hoping that the Hadamard transforms on the 𝑏𝑖 ’s in 𝐴 all result in zeroes). The proof presented in
+Section 2 can easily be adapted to show that this variation of the algorithm works correctly in the
+(exponentially unlikely) case that the Hadamard transforms on the 𝑏𝑖 ’s in the pre-selected 𝐴 do
+in fact all produce zeroes. (The proof is slightly simpler than for the full algorithm—for example,
+the claims of pairwise independence in Lemma 3 can be over choices of 𝐴 as well as 𝐷 and 𝑌 .
+The required condition also better matches the formal proof in [6].) Moreover, the theorem in [7]
+clearly doesn’t contradict this proof, since the probability of an all-zeroes Hadamard transform
+
+                                                      , Vol. 1, No. 1, Article . Publication date: November 2026.
+12                                                                                                               Simon
+
+
+result on any particular pre-selected 𝐴 is within the exponentially small bound allowed by the
+theorem. (Again, though, averaging over traced-out values of the 𝑏𝑖 ’s in set 𝐴 would produce a very
+different—and incorrect—result in the successful all-zeroes-𝐴 case, as in the previous variation.)
+   Finally, if we consider the original algorithm, in which set 𝐴 is post-selected (randomly among
+sets of all-zeroes groups of samples, assuming a sufficient fixed number of groups processed), its
+output can easily be shown to be identical to that of the variation in which 𝐴 is randomly pre-
+selected, conditioned on the Hadamard transforms on 𝐴 in every case all producing zeroes, as hoped.
+The only difference is the much larger success probability, which can thus be seen to be a direct
+consequence of post-selecting 𝐴. It’s also consistent with the theorem proven in [7] in the sense
+that whichever set 𝐴 is ultimately post-selected, the probability that that particular set produced
+all zeroes when Hadamard-transformed—and the ℎ ∗ and ℎ computed from it thus deviate from the
+distribution dictated by the traced-out-𝐴 density matrix—was a priori exponentially small, and thus
+within the bound specified by the theorem. However, the exponentially small probabilities for each
+choice of 𝐴 sum over the exponentially many choices of 𝐴 to produce a significant (overwhelming,
+in fact) probability that at least one such choice is available to the algorithm, making success via
+post-selction possible.
+   To summarize, 1) the algorithm cannot work unless its output deviates non-negligibly from the
+traced-out-𝐴 average, but can tolerate averaging over traced-out values of the 𝑏𝑖 ’s in B; 2) deviation
+from the traced-out-𝐴 average can occur with high probability if set 𝐴 is Hadamard-transformed
+and the result is all zeroes; and 3) post-selection of set 𝐴 allows that latter condition to hold with
+high probability overall, rather than an exponentially small one. Tracing out all the 𝑏𝑖 ’s—including
+those in 𝐴—as proposed in [7], will thus produce an incorrect prediction of the algorithm’s output.
+
+Acknowledgments
+The author would like to thank Sam Jaques, Sanketh Menda, Daniele Micciancio, Seyoon Ragavan,
+Vinod Vaikuntanathan, Thomas Vidick and Mark Zhandry for many immensely useful discussions
+and suggestions.
+
+References
+ [1] M. Ajtai and C. Dwork. 1997. A Public-Key Cryptosystem with Worst Case/Average Case Equivalence. In In STOC.
+     ACM Press, 284–293.
+ [2] D. Boneh and R. Lipton. 1995. Quantum cryptanalysis of hidden linear forms. In CRYPTO. 424–437.
+ [3] Z. Brakerski, E. Kirshanova, D. Stehlé, and W. Wen. 2018. Learning with Errors and Extrapolated Dihedral Cosets. In
+     PKC 2018. 702–727.
+ [4] Y. Chen and P. Q. Nguyen. 2011. BKZ 2.0: Better lattice security estimates. In ASIACRYPT. 1–20.
+ [5] M. Ettinger and P. Høyer. 2000. On quantum algorithms for noncommutative hidden subgroups. Adv. in Appl. Math.
+     25, 3 (2000), 239–251.
+ [6] Y. Guo and S. Yang. 2026. Rigorous Statements and Proofs of the Lemmas in Simon’s Algorithm for the Dihedral Coset
+     Problem and Their Underlying Hypothesis. Cryptology ePrint Archive, Paper 2026/1714. https://eprint.iacr.org/2026/
+     1714
+ [7] A. Gupte, S. Ragavan, and M. Zhandry. 2026. The ePrint:2026/1591 Quantum Algorithm Does Not Solve DCP.
+     https://eprint.iacr.org/2026/1693.
+ [8] G. Kuperberg. 2005. A subexponential-time quantum algorithm for the dihedral hidden subgroup problem. SIAM J. on
+     Computing 35, 1 (2005), 170–188.
+ [9] D. Micciancio. [n. d.]. ([n. d.]). Personal Communication.
+[10] C. Peikert. 2016. A Decade of Lattice Cryptography. Foundations and Trends in Theoretical Computer Science 10, 4
+     (2016), 283–424.
+[11] S. Ragavan. [n. d.]. ([n. d.]). Personal Communication.
+[12] O. Regev. 2004. Quantum Computation and Lattice Problems. SIAM J. on Computing 33, 3 (2004), 738–760.
+[13] O. Regev. 2005. On Lattices, Learning with Errors, Random Linear Codes, and Cryptography. In In STOC. ACM Press,
+     84–93.
+
+
+, Vol. 1, No. 1, Article . Publication date: November 2026.
+Polynomial-Time Quantum Algorithm for DCP                                                                             13
+
+
+[14] P. Shor. 1997. Polynomial-time algorithms for prime factorization and discrete logarithms on a quantum computer.
+     SIAM J. on Computing 26, 5 (1997), 1484–1509.
+
+
+
+
+                                                              , Vol. 1, No. 1, Article . Publication date: November 2026.
+

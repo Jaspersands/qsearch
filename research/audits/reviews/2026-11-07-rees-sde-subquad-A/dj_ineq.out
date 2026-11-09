@@ -1,0 +1,30 @@
+fast D_J recursion = brute recursion for J<=8, q<=300
+J  C   c=2(J-1)  c*(J)  (Y) (I1) (I2) (TS) bound   min r with case 3a possible
+3  2   4         3      True True True True True   12
+4  4   6         5      True True True True True   16
+5  6   8         7      True True True True True   20
+6  8   10        9      True True True True True   24
+7  10  12        11     True True True True True   28
+8  12  14        13     True True True True True   32
+9  14  16        14     True True True True True   36
+10 16  18        16     True True True True True   40
+11 18  20        17     True True True True True   44
+12 20  22        19     True True True True True   48
+13 22  24        20     True True True True True   52
+14 24  26        21     True True True True True   56
+15 26  28        22     True True True True True   60
+16 28  30        23     True True True True True   64
+17 30  32        24     True True True True True   68
+18 32  34        24     True True True True True   72
+19 34  36        25     True True True True True   76
+20 36  38        26     True True True True True   80
+
+a, kappa, J, F(a) = D_J(a)+C a, triangular (a+1)(a+2)/2, D_3(a)+2a, ratio F/(a^2/(2(J-1)))
+16 2 4 122 153 113 2.859
+64 2 6 970 2145 1217 2.368
+256 2 8 7924 33153 17153 1.693
+1024 2 10 75272 525825 265217 1.292
+16 3 3 113 153 113 1.766
+64 3 4 994 2145 1217 1.456
+256 3 6 8785 33153 17153 1.34
+1024 3 7 98309 525825 265217 1.125

@@ -1,0 +1,13 @@
+r=12 uniform leaf: L= 4 maxblocks=4 rho= 14 N*_lev= 4 N*_src= 4 min|Good|=3 H(leaf)=False | passes=100 fails=0 events={} | deterministic: ok
+r=12 uniform leaf: L= 4 maxblocks=4 rho= 14 N*_lev= 4 N*_src= 4 min|Good|=3 H(leaf)=False | passes=100 fails=0 events={} | deterministic: ok
+r=12 EC      leaf: L= 4 maxblocks=4 rho= 15 N*_lev= 0 N*_src=15 min|Good|=3 H(leaf)=True | passes=100 fails=0 events={} | deterministic: ok
+r=12 EC      leaf: L= 4 maxblocks=4 rho= 13 N*_lev= 0 N*_src=13 min|Good|=2 H(leaf)=True | passes=100 fails=0 events={} | deterministic: ok
+r=18 uniform leaf: L= 6 maxblocks=4 rho= 18 N*_lev= 4 N*_src= 3 min|Good|=3 H(leaf)=False | passes=100 fails=0 events={} | deterministic: ok
+r=18 uniform leaf: L= 6 maxblocks=4 rho= 20 N*_lev= 4 N*_src= 3 min|Good|=3 H(leaf)=False | passes=100 fails=0 events={} | deterministic: ok
+r=18 EC      leaf: L= 6 maxblocks=4 rho= 18 N*_lev= 0 N*_src=18 min|Good|=2 H(leaf)=True | passes=100 fails=0 events={} | deterministic: ok
+r=18 EC      leaf: L= 6 maxblocks=4 rho= 21 N*_lev= 0 N*_src=21 min|Good|=3 H(leaf)=True | passes=100 fails=0 events={} | deterministic: ok
+r=24 uniform leaf: L= 8 maxblocks=4 rho= 27 N*_lev= 4 N*_src= 3 min|Good|=2 H(leaf)=False | passes=100 fails=0 events={} | deterministic: ok
+r=24 uniform leaf: L= 8 maxblocks=4 rho= 26 N*_lev= 4 N*_src= 4 min|Good|=3 H(leaf)=False | passes=100 fails=0 events={} | deterministic: ok
+r=24 EC      leaf: L= 8 maxblocks=4 rho= 29 N*_lev= 0 N*_src=29 min|Good|=2 H(leaf)=True | passes=100 fails=0 events={} | deterministic: ok
+r=24 EC      leaf: L= 8 maxblocks=4 rho= 27 N*_lev= 0 N*_src=27 min|Good|=3 H(leaf)=True | passes=100 fails=0 events={} | deterministic: ok
+SUMMARY {'leaves': 12, 'H_holds': 6, 'H_holds_and_fallback': 0, 'fallback_leaves': 0, 'det_ok': 12}

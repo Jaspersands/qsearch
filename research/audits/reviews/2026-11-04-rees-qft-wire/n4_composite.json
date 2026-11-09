@@ -1,0 +1,136 @@
+{
+ "status": {
+  "status": "explicit_qft_mod_p_wired_as_optional_backend_finite_checks",
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "formal_compiler_checked": false,
+  "independent_review": false,
+  "novelty_established": false,
+  "speedup_claim_allowed": false,
+  "review": "AI-checked, pending human review",
+  "explicit_qft_backend_available": true,
+  "default_backend_unchanged": true,
+  "poly_log_p_arithmetic_implemented": true,
+  "fixed_finite_gate_set": false,
+  "monolithic_explicit_simulation": false
+ },
+ "n4_composite": {
+  "instrument": [
+   {
+    "d": 3,
+    "p": 5,
+    "top_coordinates": 1,
+    "inputs": 5,
+    "qubits_exact": 38,
+    "qubits_explicit": 67,
+    "gates_explicit": 12224,
+    "max_state_distance": 0.08734053073518566,
+    "prune_err_max": 1.0851919788844078e-08,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 1,
+      "qft_dg_general": 1
+     },
+     "n_calls": 2,
+     "proved_total": 0.20146559963006824,
+     "B": 0.20146559557319427,
+     "prep": 4.05687398063077e-09
+    },
+    "seconds": 55.8
+   },
+   {
+    "d": 3,
+    "p": 5,
+    "top_coordinates": 1,
+    "inputs": 5,
+    "qubits_exact": 38,
+    "qubits_explicit": 61,
+    "gates_explicit": 10488,
+    "max_state_distance": 0.2525813258659123,
+    "prune_err_max": 2.816718655025394e-09,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 1,
+      "qft_dg_general": 1
+     },
+     "n_calls": 2,
+     "proved_total": 0.6404344450302364,
+     "B": 0.6404344409733624,
+     "prep": 4.05687398063077e-09
+    },
+    "seconds": 17.0
+   }
+  ],
+  "source": [
+   {
+    "instance": "n4(F_5) H=<e2> non-normal",
+    "prefix_gates_exact": 16652,
+    "prefix_gates_explicit": 49699,
+    "qubits_exact": 758,
+    "qubits_explicit": 779,
+    "support_exact": 78125,
+    "support_explicit": 78125,
+    "max_support_explicit": 1250000,
+    "prune_err_explicit": 3.5981504637994254e-08,
+    "state_distance": 1.9090214662862113e-14,
+    "norm_explicit": 0.9999999999999617,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 7
+     },
+     "n_calls": 7,
+     "proved_total": 2.839811786441539e-08,
+     "B": 1.007782236638206,
+     "prep": 4.05687398063077e-09
+    },
+    "seconds": 25.1
+   },
+   {
+    "instance": "n4(F_5) H=<e1> non-normal",
+    "prefix_gates_exact": 16652,
+    "prefix_gates_explicit": 49699,
+    "qubits_exact": 758,
+    "qubits_explicit": 779,
+    "support_exact": 78125,
+    "support_explicit": 78125,
+    "max_support_explicit": 1250000,
+    "prune_err_explicit": 3.5981504637994254e-08,
+    "state_distance": 1.9090214662862076e-14,
+    "norm_explicit": 0.9999999999999617,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 7
+     },
+     "n_calls": 7,
+     "proved_total": 2.839811786441539e-08,
+     "B": 1.007782236638206,
+     "prep": 4.05687398063077e-09
+    },
+    "seconds": 23.7
+   },
+   {
+    "instance": "n4(F_5) H=<e1+e3> non-normal",
+    "prefix_gates_exact": 16652,
+    "prefix_gates_explicit": 49699,
+    "qubits_exact": 758,
+    "qubits_explicit": 779,
+    "support_exact": 78125,
+    "support_explicit": 78125,
+    "max_support_explicit": 1250000,
+    "prune_err_explicit": 3.5981504637994254e-08,
+    "state_distance": 1.9090214662862154e-14,
+    "norm_explicit": 0.9999999999999617,
+    "hybrid": {
+     "calls": {
+      "qft_zero": 7
+     },
+     "n_calls": 7,
+     "proved_total": 2.839811786441539e-08,
+     "B": 1.007782236638206,
+     "prep": 4.05687398063077e-09
+    },
+    "seconds": 25.6
+   }
+  ]
+ }
+}

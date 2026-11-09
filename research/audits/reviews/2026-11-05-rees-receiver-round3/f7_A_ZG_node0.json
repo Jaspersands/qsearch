@@ -1,0 +1,71 @@
+{
+ "status": "exact_level0_law_class3_by_coset_symmetry_and_hub_decomposition_finite_instances",
+ "coherent_receiver_implemented": false,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "mode": "A",
+ "job": "n4_f7",
+ "runs": [
+  {
+   "name": "n4(F_7) H=Z(G)",
+   "normal": true,
+   "node": 0,
+   "coset_x0": 0,
+   "Q2_uniform": true,
+   "merge_inputs_other_wires_constant": true,
+   "oracle_outputs_constant_after_conditioning": true,
+   "hubs": 117649,
+   "total_child_rows": 121060821,
+   "reference_witness_solves": true,
+   "hub_range": [
+    0,
+    117649
+   ],
+   "chunks": 41,
+   "final_state_signature": "accd4bcb7f0ec37d0b839738bd7067f9c2ed8b0489408cf5508042d062256986",
+   "rho_Q2_signature": "dbb9b580eb1eb802a43970eae3041f2ce32a9c18bc4983545b91cc39fea59b90",
+   "label_tuples": 1,
+   "rho_Q2_scales": [
+    40353607
+   ],
+   "H2_order": 49,
+   "checkpoints": {
+    "KS_source_state_is_coset_superposition": true,
+    "K0_workspace_clean": true,
+    "K1c_conditioned_support_is_one_left_coset": true,
+    "K2_instrument_equals_reference": true,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": true,
+    "K3_child_translated_after_its_own_merge": true,
+    "K4_children_equal_reference_translation_every_hub": true,
+    "K4_labels_and_Q2_unchanged": true,
+    "K4_witness_and_workspace_zero": true,
+    "K5_2_rho_Q2_proportional_to_rho_H2_every_label_tuple": true,
+    "K5_2_grade3_label_law_uniform_on_Kperp_power_M": true
+   },
+   "checkpoint_counts": {
+    "KS_source_state_is_coset_superposition": 3,
+    "K0_workspace_clean": 6,
+    "K1c_conditioned_support_is_one_left_coset": 3,
+    "K2_instrument_equals_reference": 3,
+    "K3_workspace_unentangled_at_each_merge_component_boundary": 369,
+    "K3_child_translated_after_its_own_merge": 123,
+    "K4_children_equal_reference_translation_every_hub": 41,
+    "K4_labels_and_Q2_unchanged": 41,
+    "K4_witness_and_workspace_zero": 41,
+    "K5_2_rho_Q2_proportional_to_rho_H2_every_label_tuple": 1
+   },
+   "all_checkpoints_pass": true,
+   "seconds": 419.2,
+   "max_rss_MB": 2132.0
+  }
+ ],
+ "config": "n4(F_7) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 3}",
+ "qubits": 1629,
+ "steps": 5703,
+ "anatomy_ok": true,
+ "setup_seconds": 2.5,
+ "max_rss_MB": 2132.0,
+ "seconds": 421.8
+}

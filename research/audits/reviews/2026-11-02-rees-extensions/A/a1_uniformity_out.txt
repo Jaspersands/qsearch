@@ -1,0 +1,40 @@
+== A1: Schedule 3 at c = u = r+1, a_d = u-1 at every grade (worst case), exact integers
+ cases: 92; failures of mu bound / acceptance / bank<=1/64 / abort<=1/16: 0
+ bank sum with P_tree leaves (paper's looser count) <= 1/64 in all cases: True
+  r=  1 p=67                   log2(tree bank failure)=     -27.6 B=    9 log2(queries/tree)/(r log2(r+2))=2.524 log2(classical/tree)/(r log2(r+2))=8.309
+  r=  1 p=2305843009213693951  log2(tree bank failure)=    -357.0 B=    9 log2(queries/tree)/(r log2(r+2))=2.524 log2(classical/tree)/(r log2(r+2))=8.309
+  r=  2 p=149                  log2(tree bank failure)=     -48.4 B=   14 log2(queries/tree)/(r log2(r+2))=2.189 log2(classical/tree)/(r log2(r+2))=5.377
+  r=  2 p=2305843009213693951  log2(tree bank failure)=    -525.9 B=   14 log2(queries/tree)/(r log2(r+2))=2.189 log2(classical/tree)/(r log2(r+2))=7.132
+  r=  3 p=257                  log2(tree bank failure)=     -56.2 B=   18 log2(queries/tree)/(r log2(r+2))=2.010 log2(classical/tree)/(r log2(r+2))=6.641
+  r=  3 p=2305843009213693951  log2(tree bank failure)=    -698.1 B=   18 log2(queries/tree)/(r log2(r+2))=2.010 log2(classical/tree)/(r log2(r+2))=5.688
+  r=  5 p=577                  log2(tree bank failure)=     -85.5 B=   29 log2(queries/tree)/(r log2(r+2))=1.817 log2(classical/tree)/(r log2(r+2))=6.219
+  r=  5 p=2305843009213693951  log2(tree bank failure)=   -1018.1 B=   29 log2(queries/tree)/(r log2(r+2))=1.817 log2(classical/tree)/(r log2(r+2))=6.219
+  r= 10 p=1949                 log2(tree bank failure)=    -223.6 B=   61 log2(queries/tree)/(r log2(r+2))=1.619 log2(classical/tree)/(r log2(r+2))=4.047
+  r= 10 p=2305843009213693951  log2(tree bank failure)=   -1813.1 B=   61 log2(queries/tree)/(r log2(r+2))=1.619 log2(classical/tree)/(r log2(r+2))=5.839
+  r= 20 p=7057                 log2(tree bank failure)=    -317.8 B=  134 log2(queries/tree)/(r log2(r+2))=1.483 log2(classical/tree)/(r log2(r+2))=5.600
+  r= 20 p=2305843009213693951  log2(tree bank failure)=   -3355.0 B=  134 log2(queries/tree)/(r log2(r+2))=1.483 log2(classical/tree)/(r log2(r+2))=5.600
+  r= 40 p=26903                log2(tree bank failure)=   -1358.1 B=  301 log2(queries/tree)/(r log2(r+2))=1.389 log2(classical/tree)/(r log2(r+2))=2.138
+  r= 40 p=2305843009213693951  log2(tree bank failure)=   -6340.8 B=  301 log2(queries/tree)/(r log2(r+2))=1.389 log2(classical/tree)/(r log2(r+2))=5.451
+  r=100 p=163223               log2(tree bank failure)=   -3984.7 B=  872 log2(queries/tree)/(r log2(r+2))=1.308 log2(classical/tree)/(r log2(r+2))=1.908
+  r=100 p=2305843009213693951  log2(tree bank failure)=  -14952.2 B=  872 log2(queries/tree)/(r log2(r+2))=1.308 log2(classical/tree)/(r log2(r+2))=5.316
+  r=300 p=1449619              log2(tree bank failure)=  -12310.4 B= 3077 log2(queries/tree)/(r log2(r+2))=1.246 log2(classical/tree)/(r log2(r+2))=2.503
+  r=300 p=2305843009213693951  log2(tree bank failure)=  -42198.8 B= 3077 log2(queries/tree)/(r log2(r+2))=1.246 log2(classical/tree)/(r log2(r+2))=5.221
+ max ratios over all r: queries 2.524, classical 8.309
+
+== A2: filiform family attains c = r+1 (g_2 > ... > g_c >= 1)
+  r=1: dim L=3, (g_2..g_c)=(1,), class=2, c==r+1: True, strictly decreasing: True
+  r=2: dim L=4, (g_2..g_c)=(2, 1), class=3, c==r+1: True, strictly decreasing: True
+  r=3: dim L=5, (g_2..g_c)=(3, 2, 1), class=4, c==r+1: True, strictly decreasing: True
+  r=5: dim L=7, (g_2..g_c)=(5, 4, 3, 2, 1), class=6, c==r+1: True, strictly decreasing: True
+  r=8: dim L=10, (g_2..g_c)=(8, 7, 6, 5, 4, 3, 2, 1), class=9, c==r+1: True, strictly decreasing: True
+  r=20: dim L=22, (g_2..g_c)=(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1), class=21, c==r+1: True, strictly decreasing: True
+
+== A3: IMS regime p < 16(r+1)^2: log2(p^r) / (r log2(r+2)) with p the largest such prime
+  r=  1 p=     61 ratio=3.742
+  r=  2 p=    139 ratio=3.559
+  r=  5 p=    571 ratio=3.262
+  r= 10 p=   1933 ratio=3.045
+  r= 50 p=  41611 ratio=2.692
+  r=100 p= 163211 ratio=2.595
+  r=300 p=1449611 ratio=2.484
+  max ratio over r=1..300: 3.742 (bounded: log2 p < 4 + 2 log2(r+1))

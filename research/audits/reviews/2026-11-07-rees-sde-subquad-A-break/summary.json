@@ -1,0 +1,310 @@
+{
+ "groups": {
+  "agent": 352,
+  "budgetC": 630,
+  "budgetCrest": 90,
+  "conv": 1875,
+  "fams": 1647,
+  "smallp": 6784,
+  "thmprime": 585,
+  "topstall": 33,
+  "topstallrest": 21
+ },
+ "families": {
+  "agent_planted": 84,
+  "agent_vtwist": 40,
+  "agent_topbank": 36,
+  "agent_q1fam_lines_a+1": 12,
+  "agent_q1fam_lines_a+2": 12,
+  "agent_q1fam_pairs_nr": 12,
+  "agent_q1fam_subsp_a-1": 12,
+  "agent_q1fam_subsp_half": 12,
+  "agent_q1fam_chain": 12,
+  "agent_q1fam_flats2": 12,
+  "agent_q1fam_flats3": 12,
+  "agent_q1fam_hyper_plus_half": 12,
+  "agent_q1fam_sparse": 12,
+  "agent_q1fam_small012": 12,
+  "agent_q1fam_flag01": 12,
+  "agent_q1fam_proportional": 12,
+  "agent_q1fam_nested": 12,
+  "agent_q1fam_half_rank_dense": 12,
+  "agent_q1fam_repeated": 12,
+  "budgetC": 720,
+  "uniform": 215,
+  "lines": 215,
+  "nested": 215,
+  "planted": 215,
+  "planted2": 215,
+  "twist": 212,
+  "adapt_rado": 305,
+  "adapt_top": 305,
+  "adapt_mix": 305,
+  "adapt_case2": 305,
+  "repeat": 215,
+  "design_rado": 200,
+  "design_top": 200,
+  "design_u30": 200,
+  "design_mix": 200,
+  "small": 6784,
+  "thm_in": 315,
+  "thm_below": 270,
+  "topstall": 54
+ },
+ "branch": {
+  "call": 13992,
+  "stall": 5214,
+  "case31_W": 298,
+  "reach_V": 6670,
+  "case32_leafB": 1524,
+  "direct_fwd": 2089,
+  "case2_Y": 1131,
+  "case33_top": 63,
+  "top_leaf": 58,
+  "case33_Uplus": 446,
+  "case33_closure": 124,
+  "case30_Uplus": 95,
+  "case1_closure": 1533,
+  "zero_col": 19,
+  "top_stall_rec": 5,
+  "climb:evals": 29477,
+  "climb:call": 32085,
+  "climb:direct_fwd": 7731,
+  "climb:stall": 10948,
+  "climb:case2_Y": 596,
+  "climb:reach_V": 13406,
+  "climb:case32_leafB": 6064,
+  "climb:case31_W": 955,
+  "climb:case1_closure": 1956,
+  "climb:case30_Uplus": 45,
+  "climb:case33_Uplus": 1012,
+  "climb:case33_closure": 222,
+  "climb:case33_top": 98,
+  "climb:top_leaf": 98
+ },
+ "outcomes": {
+  "leaf": 9909,
+  "solution": 2108
+ },
+ "minslack": {
+  "CorA_BminusU": 0,
+  "CorA_b_ge_1": 0,
+  "CorA_pool_in_span": 0,
+  "I1": 14,
+  "I2": 13,
+  "MI_cert": 0,
+  "M_outside_bound": 5,
+  "M_outside_in_RoutZ_X": 0,
+  "M_qW_ge_c1": 0,
+  "M_qW_le_q": 0,
+  "M_r2_le_qW_1": 0,
+  "T2b_decomp": 0,
+  "T2b_rounds": 0,
+  "T2b_unused": 0,
+  "TS": 6,
+  "Tm_Z_size": 0,
+  "Tma_top_blocks_le_m1": 0,
+  "Tmb_mp_le_m": 1,
+  "Tmb_outside": 2,
+  "Tmc_m_le_J2": 0,
+  "U_vs_Uplus": 0,
+  "Y_cols_ge_b_pi": 0,
+  "Y_ineq": 1,
+  "absorbed_realizes_Uplus": 0,
+  "c30_outside": 15,
+  "c31_q_gt_c": 0,
+  "c33_Xp_eq_outside": 0,
+  "c33_m_le_2J3": 0,
+  "case1_Fin_spans_U": 0,
+  "case3_X_le_r_1": 0,
+  "case3_outUp_in_X": 0,
+  "case3_r_ge_2q2": 0,
+  "hyp_M_ge_F": 0,
+  "load_le_c": 0,
+  "pi_ge_2": 2,
+  "pi_lower": 0,
+  "rec_count": 0,
+  "rec_count_Hcur": 18,
+  "rec_count_U+30": 15,
+  "rec_count_U+33": 0,
+  "rec_count_W": 19,
+  "rec_count_Y": 1,
+  "rec_rank_drop": 0
+ },
+ "nfails": 0,
+ "fails": [],
+ "backsub": {
+  "agent:k2|J3": {
+   "passes": 670,
+   "fail": 2,
+   "coinc": 2
+  },
+  "agent:k2|J4": {
+   "passes": 650,
+   "fail": 2,
+   "coinc": 3
+  },
+  "agent:k3|J3": {
+   "passes": 720,
+   "fail": 0,
+   "coinc": 0
+  },
+  "agent:k3|J4": {
+   "passes": 690,
+   "fail": 2,
+   "coinc": 1
+  },
+  "budgetC:k2|J4": {
+   "passes": 785,
+   "fail": 1,
+   "coinc": 1
+  },
+  "budgetC:k2|J5": {
+   "passes": 815,
+   "fail": 5,
+   "coinc": 2
+  },
+  "budgetC:k3|J4": {
+   "passes": 810,
+   "fail": 1,
+   "coinc": 0
+  },
+  "budgetC:k3|J5": {
+   "passes": 405,
+   "fail": 0,
+   "coinc": 0
+  },
+  "conv:k2|J2": {
+   "passes": 1340,
+   "fail": 0,
+   "coinc": 5
+  },
+  "conv:k2|J3": {
+   "passes": 1600,
+   "fail": 2,
+   "coinc": 3
+  },
+  "conv:k2|J4": {
+   "passes": 1675,
+   "fail": 0,
+   "coinc": 0
+  },
+  "conv:k3|J3": {
+   "passes": 1570,
+   "fail": 0,
+   "coinc": 0
+  },
+  "conv:k3|J4": {
+   "passes": 1680,
+   "fail": 1,
+   "coinc": 1
+  },
+  "fams:k2|J2": {
+   "passes": 4320,
+   "fail": 0,
+   "coinc": 8
+  },
+  "fams:k2|J3": {
+   "passes": 2520,
+   "fail": 2,
+   "coinc": 3
+  },
+  "fams:k2|J4": {
+   "passes": 2580,
+   "fail": 1,
+   "coinc": 2
+  },
+  "fams:k3|J3": {
+   "passes": 2510,
+   "fail": 0,
+   "coinc": 0
+  },
+  "fams:k3|J4": {
+   "passes": 2510,
+   "fail": 12,
+   "coinc": 0
+  },
+  "smallp:k2|J2": {
+   "passes": 32940,
+   "fail": 846,
+   "coinc": 15841
+  },
+  "smallp:k2|J3": {
+   "passes": 35880,
+   "fail": 11475,
+   "coinc": 17754
+  },
+  "smallp:k2|J4": {
+   "passes": 37830,
+   "fail": 18254,
+   "coinc": 19359
+  },
+  "smallp:k3|J3": {
+   "passes": 27870,
+   "fail": 17609,
+   "coinc": 7956
+  },
+  "smallp:k3|J4": {
+   "passes": 29100,
+   "fail": 22676,
+   "coinc": 8328
+  },
+  "thm_below|J2|k2": {
+   "passes": 11500,
+   "fail": 2,
+   "coinc": 68
+  },
+  "thm_below|J3|k2": {
+   "passes": 8000,
+   "fail": 1,
+   "coinc": 1
+  },
+  "thm_below|J3|k3": {
+   "passes": 4000,
+   "fail": 0,
+   "coinc": 0
+  },
+  "thm_in|J2|k2": {
+   "passes": 18400,
+   "fail": 0,
+   "coinc": 7
+  },
+  "thm_in|J3|k2": {
+   "passes": 4650,
+   "fail": 0,
+   "coinc": 0
+  },
+  "thm_in|J3|k3": {
+   "passes": 4300,
+   "fail": 0,
+   "coinc": 0
+  },
+  "thm_in|J4|k2": {
+   "passes": 4600,
+   "fail": 0,
+   "coinc": 0
+  },
+  "topstall:k2|J4": {
+   "passes": 220,
+   "fail": 0,
+   "coinc": 0
+  },
+  "topstall:k2|J5": {
+   "passes": 180,
+   "fail": 14,
+   "coinc": 3
+  },
+  "topstall:k3|J4": {
+   "passes": 240,
+   "fail": 6,
+   "coinc": 0
+  },
+  "topstallrest:k2|J4": {
+   "passes": 240,
+   "fail": 0,
+   "coinc": 0
+  }
+ },
+ "maxload": 8,
+ "maxblocks": 13
+}

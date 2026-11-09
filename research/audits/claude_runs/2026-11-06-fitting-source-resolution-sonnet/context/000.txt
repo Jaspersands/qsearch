@@ -1,0 +1,162 @@
+# Greither exact source packet: smaller circular group and 2-part correction
+
+Source URL: https://www.numdam.org/item/10.5802/aif.1299.pdf
+
+Original extracted text SHA256: 30695dd3778c88818ad69f2e3c6a6b34a925a45807291b0a6ab05c096ae45c68
+
+Locators use NEWLINE-delimited lines, matching sed -n; form-feed page breaks do not create extra numbered lines. Excerpts below were checked to contain the named statement and its proof.
+
+
+## Unramified premise and large-group announcement
+
+Newline-delimited source lines 249--275
+
+
+\A^(F)^\ = \(A<i(F)|\mA^(F+)\\, and the product of all these terms
+equals |(1 -e^)A^(F)~ \. From this one sees that Thm. B implies Thm. A.
+   Theorem A has a counterpart for real fields. Assume as above F/Q
+abelian,      unramified   in    p    (p    is  again arbitrary) with
+Gal ( F / Q ) == A = Ao x A^,, Ap the p-part of A .
+
+    THEOREM C. — If F is real and Ap ;5 cyclic, then for all characters
+7 of A whose order is not a power of p (i.e. / l A o ^ e ) , and which are
+faithful on Ap, we have
+                                             |d(X)
+                       WF\
+                        ^^ n\       ^p(U)
+
+where Ap(F) is the p-part of the projective limit of the ray class groups
+C v(F), v e ^ J . (Note that A'p(F) is infinite, but we will see that
+(l-e,)Ap(F) is finite.)
+
+    We shall also obtain a generalization of Gras' conjecture. For the
+precise statement, see Thm. 4.14. We only mention the following corollary
+(see 4.15): If p = 2 and |A| is odd, then E / C ^ and A^(F) have
+isomorphic composition series as ZatAj-modules, where E = Op and Ci
+is the «large » group of circular units of F, as defined by Sinnott [20],
+p. 209. For odd p, a similar result has been proven (modulo the main
+conjecture) by Greenberg [9].
+    Finally let us mention that (as Wiles points out) the 2-adic main
+conjecture implies the 2-part of the Birch-Tate conjecture by a theorem
+of Kolster [14], so that now the full Birch-Tate conjecture is established
+
+
+## Printed pp456--457: proof of Lemma2.3, definition and remark3
+
+Newline-delimited source lines 357--400
+
+
+    Proof. — The relation « => » is evident from the definition of circular
+units. (Note here that the T|'S are well-defined, i.e. we do have a norm-
+coherent sequence on the right.)
+      « c » : We make three preliminary remarks.
+    1) If some relative norm of some circular number x is a (circular)
+unit, then x is itself a unit, hence a circular unit by definition (Sinnott
+[20], p. 202).
+   2) Fix an abelian extension fe/Q. We claim : In Sinnott's definition
+of circular numbers in k
+          D(k) == Z[Gal(fe/Q)] - span {±NQ(n)iQ(n)nk(l-^n)\n,a e f^J}
+we may just as well take a = 1 : it is allright to restrict to
+
+[PAGE BREAK]
+                CLASS GROUPS AND THE MAIN CONJECTURE                 457
+
+all   a     dividing    n;    let   n' = n / a .   Since    the     map
+Gal (Q(n)/Q(n) nk) -> Gal (Q(n')/Q(n')nfc) is surjective, one easily sees
+that A^(n)/Q(n)n^(l-^) equals AQ^/Q^n^l-^y 3 , P a suitable element
+of Z[Gal(k/Q)].
+  3) Let k/Q be abelian of conductor dividing m. Define
+ZVk) == D(k) n ^[m-1]. Then Z),(k) = <±N^^^(l-^)\n divides
+m>.
+    (Proof of 3): « => » is clear since the right hand side consists of
+circular numbers, and also of m-units.
+    « c » : We first claim that we may even omit in the definition of
+D(k) all n which are not prime to m and do not divide m. For suppose
+n is not prime to m, i.e. n' = gcm(n,m) ^ 1. One quickly checks that
+M.H^/Q^I-U is in the Galois span of 1 - ^, and
+Q(n) n k = Q O Q n k , hence the contribution of n is already covered
+by the contribution of n1.
+   Now we can show « c= » in 3): Consider an expression
+
+           n^QW/^QWa-^)^. n      ^Q(^nQ(«)(l-^)^
+           n\m           (u,n)=l
+
+
+(second product also finite, of course), and assume it represents an
+m-unit. Since k n Q(u) is just Q for all u prime to m, the second ]~[
+is an integer, prime to m. The first ]~[, however, is an m-unit. Hence
+the second Y[ is ± 1, and Remark 3) is proved).
+    After these remarks, we can now prove « c: » of Lemma 2.3. It
+suffices to show for all v > 0.
+      (*) (universal norms in ^v) c: <{d=r|^^| l^m^u^Q))
+
+with r\^F == Mn^l-^pv^) and N^ short for A^)/Q(^)^, and
+< • • • > means « closure of Galois span of .. ».
+
+
+## Printed pp495--496: Theorem4.14 and full Corollary4.15 proof
+
+Newline-delimited source lines 2040--2098
+
+
+arbitrary, we get our conclusion.
+
+   Now we go back from ray class groups to class groups.
+
+    THEOREM 4.14. - Let F/Q be real and cyclic with group A . (Again,
+it suffices that the p-part Ap is cyclic.) Let ^p be the group of circular
+units of F in the sense of Sinnott, Cp = ^p n E p . Then we have for all
+nontrivial characters %' of Ao (recall A = A ? x A o ) :
+         !
+                  | (E,IC,\. \=\A (F)/1 • l^'^ • | (R: U)^ ,
+
+where R = Z[A] and U are as in Sinnott [20].
+
+    Remark. - The group Cp is usually a bit smaller than one would
+expect; e.g., if F = QKp)^ p ^ 3, then it does not contain ^p + ^1
+(only the square of this unit). This can be partly remedied by studying
+the group Cp (see op. cit. p. 209). Usually, this brings about indeterminacies
+in the formulas. However, one can prove the following :
+
+[PAGE BREAK]
+496                           CORNELIUS GREITHER
+
+
+   COROLLARY 4.15. — If | A | is prime to p , then the conjecture ofG.
+Gras is true in the following form : [Ep/C,p] = [A(F)] in ^"(ZJA]),
+the Grothendieck group of the category of all finite ^.p[A]-modules.
+      Assuming Thm. 4.14, we give the proof of the corollary :
+   It is not too hard to check that ZpR = ZpU if |A| is prime to p .
+Using the description of K^{Zp[A}) via ^-parts, and Thm. 4.14, we
+obtain [Ep/Cp] = [A(F)] + [(1-^)(Z^/2Z^)[A]]. For p odd, we are then
+done since C^p/Cp is 2-elementary. For p = 2, one checks, using the
+arguments of Sinnott [20], p. 209 and (p, A|) = 1, that every totally
+positive element of Cp is a square in E p , and hence
+CIF/CF ^ (1-^)(Z/2Z)[A], and we are again done.                    D
+
+    Proof of 4.14. — First note that U does not have to be a subset
+of R; the index notation is explained in Sinnott, op. cit. §1. Let
+e' == 1 — e . The statement of 4.14 can be equivalently expressed in the
+form (suppress subscripts (. . )p) '.
+
+               [e'WQ] = [e'A(F)] + [^Z,/2)[A]] + [ e ' R / e ' U ]
+
+in K^(Zp[A]). (To see the equivalence, note that R^ = Zp(^)[Ap] is
+local for any character %' of Ao, and the class of an R^ module in
+K^(Zp[^\) is determined by its length, i.e. by its order.) Let (9 be the
+ring obtained by adjoining all values of all characters ^ of A to Zp.
+(O will play the role of R in Sinnott's proof.) Let (9^ be the Z^A-
+module (9 (A operating through 7).
+      Claim.   - [(9®e'A(F)} = ^W(2- ^(U))] - [e'U, : e'E,\              in
+                                       x
+CT^A).
+   (^ running over all characters of A which are nontrivial on Ao, ®
+taken over Zp.)
+   To prove this claim, it suffices to see that for any %' ^ 1, A ' ( F )
+has the cardinality p to the power ^t^"1!^!,^)) (sum over ^ with
+^lAo^ 7 ); but this follows directly from Theorem 4.11.
+  Since [Ey/C^ = [Up/Cp] — [Up/Ep] ^d since the natural map
+K^^pA) -> K^^A) is injective, it remains to show :
+
+      (*) [(9®e'(UplCp)\ = f ]~[ ^i(\Lp(\^)\\
+                             L/|Ao^l       / \1       /J

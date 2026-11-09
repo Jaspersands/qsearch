@@ -1,0 +1,163 @@
+Primary J.S.Milne Abelian Varieties https://jmilne.org/math/CourseNotes/AV.pdf
+Text SHA256 fb9fcd9960d6df085998d9a79c6784ff40af49e4edd9dce0c887722785988758
+Original text2098-2120,3969-4046,5481-5502,6227-6263, control chars removed.
+
+not contained in an open affine subvariety.
+
+R EMARK 8.12. Assume k is algebraically closed. Let A be an abelian variety over k, and
+let G be a finite subgroup of A. Then we can form the quotient B D A=G. It is an abelian
+variety, and W A ! B is an isogeny with kernel G.
+    Recall that an isogeny ˛W A ! B is separable if the field extension k.A/  k.B/ is
+separable. This is equivalent to saying that ˛ is étale, because it is then étale at one point
+(see AG 10.12b), and so it is étale at all points by homogeneity.
+    Let ˛W A ! B be a separable isogeny (for example, any isogeny of degree prime to
+the characteristic), and let G D Ker.˛/. From the universal property of A=G, we have a
+regular map A=G ! B. This is again separable, and it is bijective. Because B is normal,
+this implies that it is an isomorphism (see AG 8.19): B D A=G.
+    Now consider two separable isogenies ˇW A ! B, W A ! C , and suppose that
+Ker.ˇ/  Ker. /. On identifying B with A= Ker.ˇ/ and using the universal property
+of quotients, we find that there is a (unique) regular map ıW B ! C such that ı ı ˇ D .
+Moreover, ı is automatically a homomorphism (because it maps 0 to 0).
+    For example, suppose ˛W A ! B is a separable isogeny such that Ker.˛/  An . Then
+˛ D ˇ ı nA for some isogeny ˇW A ! B, i.e., ˛ is divisible by n in Hom.A; B/.
+
+    Let W D V =G. We shall need to consider the relation between sheaves on V and
+sheaves on W . By a coherent G-sheaf on V , we mean a coherent sheaf M of OV -modules
+together with an action of G on M compatible with its action on V .
+
+     For a variety V over Fq , the Frobenius map V W V ! V is defined to be the identity
+map on the underlying topological space of V and is the map f 7! f q on OV . For example,
+if V D Pn D Proj.kŒX0 ; :::; Xn /, then V is defined by the homomorphism of rings
+                                     q
+                          Xi 7! Xi W kŒX0 ; :::; Xn  ! kŒX0 ; :::; Xn 
+
+and induces the map on points
+                                                q
+                      .x0 W    W xn / 7! .x0 W    W xnq /W Pn .F/ ! Pn .F/:
+
+For any regular map 'W W ! V of varieties over Fq , it is obvious that ' ı W D V ı '.
+Therefore, if V ,! Pn is a projective embedding of V , then V induces the map
+                                                            q
+                                 .x0 W ::: W xn / 7! .x0 W ::: W xnq /
+
+on V .F/. Thus V .Fq / is the set of fixed points of V W V .F/ ! V .F/:
+    Let A be an abelian variety over Fq . Then A maps 0 to 0 (because 0 2 V .Fq //, and
+so it is an endomorphism of A. Recall that its characteristic polynomial P is a monic
+polynomial of degree 2g, g D dim.A/, with coefficients in Z.
+                                     Q                           ˇ       ˇ
+T HEOREM 1.1. Write P .X / D i .X ai /, and let Nm D ˇA.Fq m /ˇ. Then
+
+  (a) Nm D 2g             aim / for all m  1, and
+              Q
+                i D1 .1
+                                            1
+    (b) (Riemann hypothesis) jai j D q 2 .
+Hence
+                                                    1
+                   jNm    q mg j  2g  q m.g       2/   C .22g      2g     1/q m.g 1/ :
+
+P ROOF. We first deduce the inequality from the preceding statements. Take m D 1 in (a)
+and expand out to get
+                                                2g
+                                                X
+                  ˇ      ˇ
+                  ˇA.Fq /ˇ D a1    a2g              a1    ai 1 ai C1    a2g C   
+                                                i D1
+
+                                                    75
+76                                   CHAPTER II. ABELIAN VARIETIES: ARITHMETIC
+
+
+The first term on the right is an integer, and in fact a positive integer because it is P .0/ D
+deg./, and (b) shows that it has absolute value q g . Hence it equals q g (actually, it easy
+to prove directly that deg./ D q g ). The Riemann hypothesis shows that each term
+                                                        1
+a1    ai 1 ai C1    a2g has absolute value D q g 2 , and so the sum has absolute value
+                1
+ 2g  q g 2 . There are .2g 2g 1/ terms remaining, and each has absolute value
+ q g 1 , whence the inequality. We first prove (a) in the case m D 1. The kernel of
+
+                                        idW A.F/ ! A.F/
+
+is A.Fq /. I claim that the map
+
+                                  .d /0 W Tgt0 .A/ ! Tgt0 .A/
+
+is zero — in fact, that this is true for any variety. In proving it, we can replace A with an
+open affine neighbourhood U , and embed U into Am some m in such a way that 0 maps to
+the origin 0. The map .d /0 on Tgt0 .U / is the restriction of the map .d /0 on Tgt0 .Am /.
+                                                           q           q         q 1
+But W An ! An is given by the equations Yi D Xi , and d.Xi / D qXi                  D 0 (in
+characteristic p). We now find that
+
+                          d.      id/0 D .d /0    .d.id //0 D     1:
+
+Hence  1 is étale at the origin, and so, by homogeneity, it is étale at every point — each
+point in the kernel occurs with multiplicity 1. Therefore,
+                                 ˇ       ˇ
+                                 ˇA.Fq /ˇ D deg. id/:
+
+But, from the definition of P , we know that
+
+                                     deg.    id/ D P .1/;
+
+                   ai /. When we replace  with  m in the above argument, we find that
+           Q
+
+P ROPOSITION 6.1. Let P be a k-rational point on C . The map f P W C ! J has the
+following universal property: for any map 'W C ! A from C into an abelian variety sending
+P to 0, there is a unique homomorphism W J ! A such that ' D ı f P .
+
+P ROOF. Consider the map
+                                                X
+                           .P1 ; :::; Pg / 7!       .Pi /W C g ! A:
+                                                i
+
+Clearly this is symmetric, and so it factors through C .g/ . It therefore defines a rational map
+  W J ! A, which (I 3.2) shows to be a regular map. It is clear from the construction that
+   ı f P D ' (note that f P is the composite of Q 7! Q C .g 1/P W C ! C .g/ with
+f W C .g/ ! J /. In particular,
+  .g/                                   maps 0 to 0, and (I 1.2) shows that it is therefore a
+homomorphism. If     0  is a second homomorphism such that 0 ı f P D ', then and 0
+agree on f .C / C    C f P .C / (g copies), which is the whole of J .
+            P
+                                                                                               2
+
+
+C OROLLARY 6.2. Let N be a divisorial correspondence between .C; P / and J such that
+11    The zeta function of a curve
+Let C be a complete nonsingular curve over a finite field k D Fq . The best way to prove the
+Riemann hypothesis for C is to use intersection theory on C  C (see Hartshorne 1977, V,
+118                                                        CHAPTER III. JACOBIAN VARIETIES
+
+
+Ex. 1.10), but in this section we show how it can be derived from the corresponding result
+for the Jacobian of C . Recall (II 1) that the characteristic polynomial of the Frobenius
+endomorphism J of J acting on T` J is a polynomial P .X/ of degree 2g with integral
+coefficients whose roots ai have absolute value q 1=2 .
+                                                                                   P
+T HEOREM 11.1. The number N of points on C with coordinates in k is equal to 1        ai C
+q. Therefore, jN q 1j  2gq 1=2 .
+
+    The proof will be based on the following analogue of the Lefschetz trace formula. A
+map ˛W C ! C induces a unique endomorphism ˛ 0 of J such that f P ˛ D ˛ 0 f P for any
+point P in C.k al / (cf. (6.1)).
+P ROPOSITION 11.2. For any endomorphism ˛ of C ,
+
+                                . ˛  / D 1          Tr.˛ 0 / C deg.˛/:
+
+    Recall (I 10) that if P˛0 .X / D .X     ai /, then Tr.˛/ D ai , and that Tr.˛ 0 / D
+     0
+Tr.˛ jT` J /. We now show that the proposition implies the theorem. Let C W Ck al ! Ck al
+be the Frobenius endomorphism of C (see II 1).
+    Then . C  / D N , the degree of C is q, and the map induced by C on J is J .
+Therefore the formula in (11.2) immediately gives that in (11.1). Before proving (11.2) we
+need a lemma.
+L EMMA 11.3. Let A be an abelian variety of dimension g over a field k, and let H be
+the class of an ample divisor in NS.A/. For any endomorphism ˛ of A, write DH .˛/ D
+.˛ C 1/ .H / ˛  .H / H . Then
+                                                    .H g 1  DH .˛//
+                                    Tr.˛/ D g                        :
+                                                         .H g /
+
+P ROOF. 5 The calculation in (I 10.13) shows that

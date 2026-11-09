@@ -1,0 +1,772 @@
+{
+  "status": "FINITE_NONFALSIFICATION_ONLY",
+  "scope": "One deterministic bounded N6 M3 optimization; native physical joint charge vectors.",
+  "N": 6,
+  "M": 3,
+  "dimension": 20,
+  "native_charge_convention": "Q_i=n_i+(g/2)*sum_j(SWAP_ij-I)/(eps_i-eps_j)",
+  "constraints": {
+    "eps_0": 0,
+    "eps_5": 5,
+    "minimum_spacing": "1/64",
+    "g_interval": [
+      0,
+      16
+    ]
+  },
+  "seed": 20261107,
+  "evaluation_cap": 4096,
+  "evaluation_count": 4015,
+  "threshold_1_over_N": 0.16666666666666666,
+  "robust_violation_margin": 1e-06,
+  "differential_evolution": {
+    "nfev": 3600,
+    "nit": 59,
+    "success": false,
+    "message": "Maximum number of iterations has been exceeded.",
+    "fun": 0.3531753449949357
+  },
+  "powell_polish": {
+    "nfev": 414,
+    "nit": 2,
+    "success": true,
+    "message": "Optimization terminated successfully.",
+    "fun": 0.3531733000715514
+  },
+  "initial_named_starts": [
+    {
+      "name": "equally_spaced",
+      "spacings": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "g": 0.0
+    },
+    {
+      "name": "equally_spaced",
+      "spacings": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "g": 0.1
+    },
+    {
+      "name": "equally_spaced",
+      "spacings": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "g": 1.0
+    },
+    {
+      "name": "equally_spaced",
+      "spacings": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "g": 16.0
+    },
+    {
+      "name": "left_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        4.9375
+      ],
+      "g": 0.0
+    },
+    {
+      "name": "left_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        4.9375
+      ],
+      "g": 0.1
+    },
+    {
+      "name": "left_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        4.9375
+      ],
+      "g": 1.0
+    },
+    {
+      "name": "left_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        4.9375
+      ],
+      "g": 16.0
+    },
+    {
+      "name": "right_cluster",
+      "spacings": [
+        4.9375,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625
+      ],
+      "g": 0.0
+    },
+    {
+      "name": "right_cluster",
+      "spacings": [
+        4.9375,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625
+      ],
+      "g": 0.1
+    },
+    {
+      "name": "right_cluster",
+      "spacings": [
+        4.9375,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625
+      ],
+      "g": 1.0
+    },
+    {
+      "name": "right_cluster",
+      "spacings": [
+        4.9375,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625
+      ],
+      "g": 16.0
+    },
+    {
+      "name": "split_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        4.9375,
+        0.015625,
+        0.015625
+      ],
+      "g": 0.0
+    },
+    {
+      "name": "split_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        4.9375,
+        0.015625,
+        0.015625
+      ],
+      "g": 0.1
+    },
+    {
+      "name": "split_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        4.9375,
+        0.015625,
+        0.015625
+      ],
+      "g": 1.0
+    },
+    {
+      "name": "split_cluster",
+      "spacings": [
+        0.015625,
+        0.015625,
+        4.9375,
+        0.015625,
+        0.015625
+      ],
+      "g": 16.0
+    }
+  ],
+  "best": {
+    "minimum_squared_joint_gap": 0.3531733000706801,
+    "sites": [
+      0.0,
+      0.01562500021257237,
+      0.03125000021257237,
+      4.968749999972258,
+      4.984374999974363,
+      5.0
+    ],
+    "g": 1.01639424413733,
+    "minimum_adjacent_spacing": 0.015625,
+    "closest_pair_indices_in_combination_basis": [
+      18,
+      19
+    ],
+    "closest_pair_charge_vectors": [
+      [
+        0.49656890339990695,
+        0.500379658595108,
+        0.5042628521919996,
+        0.49573714782299094,
+        0.4996203414201197,
+        0.5034310965698734
+      ],
+      [
+        0.25714639135641926,
+        0.2578013547633735,
+        0.25845952171748504,
+        0.7415404782850744,
+        0.7421986452392614,
+        0.7428536086383866
+      ]
+    ],
+    "max_joint_eigenvector_residual": 2.1234208849929104e-11,
+    "relative_joint_residual": 4.2562735161850797e-13,
+    "combination_weights": [
+      1.0,
+      3.0,
+      9.0,
+      27.0,
+      81.0,
+      243.0
+    ],
+    "minimum_combination_eigenvalue_spacing": 4.076313063629797,
+    "combination_attempts": [
+      {
+        "weights": [
+          1.0,
+          3.0,
+          9.0,
+          27.0,
+          81.0,
+          243.0
+        ],
+        "residual": 2.1234208849929104e-11,
+        "relative_residual": 4.2562735161850797e-13
+      }
+    ],
+    "sum_charge_identity_max_error": 7.105427357601002e-15,
+    "max_commutator_entry": 4.547473508864641e-13,
+    "optimization_coordinates": [
+      4.3189306723324657e-11,
+      0.0,
+      0.9999999999943635,
+      0.07588079898856145,
+      1.01639424413733
+    ],
+    "evaluation": 3805
+  },
+  "improvement_history": [
+    {
+      "evaluation": 1,
+      "value": 2.0
+    },
+    {
+      "evaluation": 2,
+      "value": 1.5963684924074577
+    },
+    {
+      "evaluation": 3,
+      "value": 1.075024561927867
+    },
+    {
+      "evaluation": 14,
+      "value": 0.6190469640845406
+    },
+    {
+      "evaluation": 15,
+      "value": 0.353270802315916
+    },
+    {
+      "evaluation": 2390,
+      "value": 0.35321416229701963
+    },
+    {
+      "evaluation": 2573,
+      "value": 0.35321272174036944
+    },
+    {
+      "evaluation": 2848,
+      "value": 0.3531876299216871
+    },
+    {
+      "evaluation": 2999,
+      "value": 0.35318727877264144
+    },
+    {
+      "evaluation": 3141,
+      "value": 0.35318173845618556
+    },
+    {
+      "evaluation": 3348,
+      "value": 0.3531805301878594
+    },
+    {
+      "evaluation": 3379,
+      "value": 0.35317943341788954
+    },
+    {
+      "evaluation": 3392,
+      "value": 0.35317691750586233
+    },
+    {
+      "evaluation": 3512,
+      "value": 0.3531753449949357
+    },
+    {
+      "evaluation": 3624,
+      "value": 0.3531753335610205
+    },
+    {
+      "evaluation": 3625,
+      "value": 0.3531752646016586
+    },
+    {
+      "evaluation": 3626,
+      "value": 0.35317522207913293
+    },
+    {
+      "evaluation": 3627,
+      "value": 0.35317519583570617
+    },
+    {
+      "evaluation": 3628,
+      "value": 0.35317517963048756
+    },
+    {
+      "evaluation": 3629,
+      "value": 0.35317516962049905
+    },
+    {
+      "evaluation": 3630,
+      "value": 0.35317516343604705
+    },
+    {
+      "evaluation": 3631,
+      "value": 0.3531751596146308
+    },
+    {
+      "evaluation": 3632,
+      "value": 0.3531751572531647
+    },
+    {
+      "evaluation": 3633,
+      "value": 0.3531751557938143
+    },
+    {
+      "evaluation": 3634,
+      "value": 0.3531751548919288
+    },
+    {
+      "evaluation": 3635,
+      "value": 0.35317515433455016
+    },
+    {
+      "evaluation": 3636,
+      "value": 0.35317515399007915
+    },
+    {
+      "evaluation": 3637,
+      "value": 0.353175153777184
+    },
+    {
+      "evaluation": 3638,
+      "value": 0.35317515364561086
+    },
+    {
+      "evaluation": 3639,
+      "value": 0.35317515356429163
+    },
+    {
+      "evaluation": 3640,
+      "value": 0.353175153514036
+    },
+    {
+      "evaluation": 3641,
+      "value": 0.353175153482976
+    },
+    {
+      "evaluation": 3642,
+      "value": 0.35317515346378003
+    },
+    {
+      "evaluation": 3643,
+      "value": 0.3531751534519153
+    },
+    {
+      "evaluation": 3644,
+      "value": 0.3531751534445832
+    },
+    {
+      "evaluation": 3645,
+      "value": 0.3531751534400523
+    },
+    {
+      "evaluation": 3646,
+      "value": 0.35317515343725164
+    },
+    {
+      "evaluation": 3647,
+      "value": 0.35317515343552064
+    },
+    {
+      "evaluation": 3648,
+      "value": 0.35317515343445083
+    },
+    {
+      "evaluation": 3649,
+      "value": 0.3531751534337897
+    },
+    {
+      "evaluation": 3650,
+      "value": 0.35317515343337924
+    },
+    {
+      "evaluation": 3651,
+      "value": 0.353175153433129
+    },
+    {
+      "evaluation": 3668,
+      "value": 0.3531749924336111
+    },
+    {
+      "evaluation": 3669,
+      "value": 0.35317481934757755
+    },
+    {
+      "evaluation": 3670,
+      "value": 0.3531747128664485
+    },
+    {
+      "evaluation": 3671,
+      "value": 0.3531746472453736
+    },
+    {
+      "evaluation": 3672,
+      "value": 0.3531746067610729
+    },
+    {
+      "evaluation": 3673,
+      "value": 0.3531745817678076
+    },
+    {
+      "evaluation": 3674,
+      "value": 0.35317456633158756
+    },
+    {
+      "evaluation": 3675,
+      "value": 0.35317455679547793
+    },
+    {
+      "evaluation": 3676,
+      "value": 0.3531745509033676
+    },
+    {
+      "evaluation": 3677,
+      "value": 0.35317454726242575
+    },
+    {
+      "evaluation": 3678,
+      "value": 0.353174545012421
+    },
+    {
+      "evaluation": 3679,
+      "value": 0.35317454362192713
+    },
+    {
+      "evaluation": 3680,
+      "value": 0.35317454276258764
+    },
+    {
+      "evaluation": 3681,
+      "value": 0.3531745422314983
+    },
+    {
+      "evaluation": 3682,
+      "value": 0.353174541903273
+    },
+    {
+      "evaluation": 3683,
+      "value": 0.35317454170042156
+    },
+    {
+      "evaluation": 3684,
+      "value": 0.3531745415750489
+    },
+    {
+      "evaluation": 3685,
+      "value": 0.3531745414975695
+    },
+    {
+      "evaluation": 3686,
+      "value": 0.3531745414496811
+    },
+    {
+      "evaluation": 3687,
+      "value": 0.3531745414200891
+    },
+    {
+      "evaluation": 3688,
+      "value": 0.3531745414017957
+    },
+    {
+      "evaluation": 3689,
+      "value": 0.3531745413904921
+    },
+    {
+      "evaluation": 3690,
+      "value": 0.3531745413835041
+    },
+    {
+      "evaluation": 3691,
+      "value": 0.3531745413791864
+    },
+    {
+      "evaluation": 3692,
+      "value": 0.3531745413765203
+    },
+    {
+      "evaluation": 3693,
+      "value": 0.35317454137486726
+    },
+    {
+      "evaluation": 3694,
+      "value": 0.35317454137384774
+    },
+    {
+      "evaluation": 3695,
+      "value": 0.35317454137321835
+    },
+    {
+      "evaluation": 3696,
+      "value": 0.35317454137282966
+    },
+    {
+      "evaluation": 3697,
+      "value": 0.3531745413725868
+    },
+    {
+      "evaluation": 3715,
+      "value": 0.3531744772037071
+    },
+    {
+      "evaluation": 3716,
+      "value": 0.3531743168778176
+    },
+    {
+      "evaluation": 3717,
+      "value": 0.35317421818841777
+    },
+    {
+      "evaluation": 3718,
+      "value": 0.35317415734680785
+    },
+    {
+      "evaluation": 3719,
+      "value": 0.35317411980260544
+    },
+    {
+      "evaluation": 3720,
+      "value": 0.353174096621153
+    },
+    {
+      "evaluation": 3721,
+      "value": 0.3531740823026894
+    },
+    {
+      "evaluation": 3722,
+      "value": 0.353174073456619
+    },
+    {
+      "evaluation": 3723,
+      "value": 0.3531740679906822
+    },
+    {
+      "evaluation": 3724,
+      "value": 0.3531740646130187
+    },
+    {
+      "evaluation": 3725,
+      "value": 0.3531740625256879
+    },
+    {
+      "evaluation": 3726,
+      "value": 0.3531740612357143
+    },
+    {
+      "evaluation": 3727,
+      "value": 0.3531740604384951
+    },
+    {
+      "evaluation": 3728,
+      "value": 0.35317405994579587
+    },
+    {
+      "evaluation": 3729,
+      "value": 0.35317405964129833
+    },
+    {
+      "evaluation": 3730,
+      "value": 0.35317405945310515
+    },
+    {
+      "evaluation": 3731,
+      "value": 0.35317405933679713
+    },
+    {
+      "evaluation": 3732,
+      "value": 0.35317405926491413
+    },
+    {
+      "evaluation": 3733,
+      "value": 0.3531740592204909
+    },
+    {
+      "evaluation": 3734,
+      "value": 0.3531740591930326
+    },
+    {
+      "evaluation": 3735,
+      "value": 0.35317405917606515
+    },
+    {
+      "evaluation": 3736,
+      "value": 0.3531740591655763
+    },
+    {
+      "evaluation": 3737,
+      "value": 0.35317405915909666
+    },
+    {
+      "evaluation": 3738,
+      "value": 0.353174059155091
+    },
+    {
+      "evaluation": 3739,
+      "value": 0.35317405915261285
+    },
+    {
+      "evaluation": 3740,
+      "value": 0.3531740591510837
+    },
+    {
+      "evaluation": 3741,
+      "value": 0.35317405915013966
+    },
+    {
+      "evaluation": 3742,
+      "value": 0.3531740591495536
+    },
+    {
+      "evaluation": 3743,
+      "value": 0.35317405914919264
+    },
+    {
+      "evaluation": 3744,
+      "value": 0.3531740591489532
+    },
+    {
+      "evaluation": 3745,
+      "value": 0.3531740591489388
+    },
+    {
+      "evaluation": 3747,
+      "value": 0.3531740591489363
+    },
+    {
+      "evaluation": 3748,
+      "value": 0.35317405914893557
+    },
+    {
+      "evaluation": 3749,
+      "value": 0.3531740591489351
+    },
+    {
+      "evaluation": 3751,
+      "value": 0.353174059148933
+    },
+    {
+      "evaluation": 3758,
+      "value": 0.3531740591489319
+    },
+    {
+      "evaluation": 3784,
+      "value": 0.35317330795929175
+    },
+    {
+      "evaluation": 3785,
+      "value": 0.3531733000717386
+    },
+    {
+      "evaluation": 3786,
+      "value": 0.3531733000715356
+    },
+    {
+      "evaluation": 3787,
+      "value": 0.35317330007153513
+    },
+    {
+      "evaluation": 3788,
+      "value": 0.35317330007153386
+    },
+    {
+      "evaluation": 3793,
+      "value": 0.3531733000715328
+    },
+    {
+      "evaluation": 3805,
+      "value": 0.3531733000706801
+    }
+  ],
+  "worst_accepted_joint_residual": 1.2514267356216514e-09,
+  "multiple_combination_evaluation_count": 14,
+  "rationalized_best_for_parent_only": {
+    "sites": [
+      "0",
+      "1/64",
+      "1/32",
+      "159/32",
+      "319/64",
+      "5"
+    ],
+    "g": "62369/61363",
+    "exact_certificate_required": true
+  },
+  "versions": {
+    "numpy": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "claim_gates": {
+    "all_parameter_lower_bound": false,
+    "all_N_gap": false,
+    "exact_counterexample": false,
+    "efficient_algorithm": false,
+    "hardness": false,
+    "quantum_execution": false
+  }
+}

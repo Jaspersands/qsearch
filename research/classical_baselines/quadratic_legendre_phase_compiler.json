@@ -1,0 +1,104 @@
+{
+  "cases": [
+    {
+      "counts": {
+        "basis_cases": 500,
+        "clean_reference_checks_passed": 500,
+        "exact_operator_identity_checks_passed": 500,
+        "harness_character_evaluations": 50,
+        "irreducible_quadratics": 10,
+        "negative_classical_oracle_callback_evaluations": 1000,
+        "negative_control_coincidental_matches": 260,
+        "negative_control_failures": 240,
+        "positive_classical_oracle_callback_evaluations": 1000,
+        "secret_reference_pairs": 50,
+        "zero_output_promise_rejections": 1
+      },
+      "first_negative_failure": {
+        "basis_bit": 0,
+        "basis_x": 2,
+        "expected_output_bit": 1,
+        "g_x": 1,
+        "g_x0": -1,
+        "harness_b_c": [
+          0,
+          2
+        ],
+        "negative_output_bit": 0,
+        "x0": 0
+      },
+      "p": 5
+    },
+    {
+      "counts": {
+        "basis_cases": 2058,
+        "clean_reference_checks_passed": 2058,
+        "exact_operator_identity_checks_passed": 2058,
+        "harness_character_evaluations": 147,
+        "irreducible_quadratics": 21,
+        "negative_classical_oracle_callback_evaluations": 4116,
+        "negative_control_coincidental_matches": 1050,
+        "negative_control_failures": 1008,
+        "positive_classical_oracle_callback_evaluations": 4116,
+        "secret_reference_pairs": 147,
+        "zero_output_promise_rejections": 1
+      },
+      "first_negative_failure": {
+        "basis_bit": 0,
+        "basis_x": 2,
+        "expected_output_bit": 1,
+        "g_x": -1,
+        "g_x0": 1,
+        "harness_b_c": [
+          0,
+          1
+        ],
+        "negative_output_bit": 0,
+        "x0": 0
+      },
+      "p": 7
+    }
+  ],
+  "claim": "Unconditional native phase access suffices to coherently compute relative output bits with one phase query per call, up to the fixed global phase g(x0).",
+  "coherent_superpositions": "Covered by equality on every basis input and linearity",
+  "global_phase": "g(x0) is independent of X,B and retained in exact equality",
+  "identity": "C_g|x,B,x0> = g(x0)|x,B XOR (L_g(x) XOR L_g(x0)),x0>",
+  "limits": "Finite exact compiler control only. No end-to-end recovery algorithm executed; no polynomial-time algorithm, quantum speedup, novelty, or classical hardness claim.",
+  "native_access": "Unconditional U_g|x>=g(x)|x>, with g(x) in {-1,+1}",
+  "predeclared_inputs": {
+    "amplitudes": "Exact integer unnormalized Hadamards followed by division by 2",
+    "basis_inputs_X_B": "ALL F_p x {0,1}",
+    "primes": [
+      5,
+      7
+    ],
+    "references_x0": "ALL F_p",
+    "secrets": "ALL monic irreducible X^2+bX+c over F_p"
+  },
+  "resources": {
+    "classical_simulation_cost": "Each basis case evaluates two phase branches per circuit; harness additionally enumerates p character values per secret. These are classical simulation evaluations, not native coherent-query counts.",
+    "coherent_native_phase_queries_per_compiled_call": 1,
+    "controlled_oracle_queries": 0,
+    "controlled_swaps_per_compiled_call": 2,
+    "hadamards_per_compiled_call": 2,
+    "reference_register": "Public |x0>, returned clean; O(log p) qubits"
+  },
+  "sage_version": "10.9",
+  "source_file": "quadratic_legendre_phase_compiler.py",
+  "source_sha256": "88e4d3cbf76be36ef042949c609f062d098f8b55f286c8cc0817e69d8e7c24a4",
+  "status": "PASS",
+  "totals": {
+    "basis_cases": 2558,
+    "clean_reference_checks_passed": 2558,
+    "exact_operator_identity_checks_passed": 2558,
+    "harness_character_evaluations": 197,
+    "irreducible_quadratics": 31,
+    "negative_classical_oracle_callback_evaluations": 5116,
+    "negative_control_coincidental_matches": 1310,
+    "negative_control_failures": 1248,
+    "positive_classical_oracle_callback_evaluations": 5116,
+    "secret_reference_pairs": 197,
+    "zero_output_promise_rejections": 2
+  },
+  "zero_promise_scope": "The compiler rejects a zero returned on a simulated branch; native nonzero output at every x remains an input promise, not a globally verified property of a black-box oracle."
+}

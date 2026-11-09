@@ -1,0 +1,1281 @@
+{
+ "status": "poly_log_p_reversible_arithmetic_backend_for_generated_circuits_finite_checks",
+ "coherent_receiver_implemented": false,
+ "general_sde_implemented": false,
+ "formal_compiler_checked": false,
+ "independent_review": false,
+ "novelty_established": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "qft_poly_log_p_implemented": false,
+ "poly_log_p_arithmetic_implemented": true,
+ "rows": [
+  {
+   "p": 3,
+   "bits": 2,
+   "add_product_total": 712,
+   "add_product_total_min": 712,
+   "add_product_ccx": 164,
+   "add_scaled_total": 254,
+   "add_scaled_ccx": 60,
+   "ancilla_qubits": 11,
+   "merges": {
+    "Heis(F_3)": {
+     "2": {
+      "total": 9760,
+      "ccx": 2272,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 35
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 44,
+      "cx": 150,
+      "ccx": 60,
+      "arith_total": 254
+     },
+     {
+      "coeff": 2,
+      "x": 44,
+      "cx": 150,
+      "ccx": 60,
+      "arith_total": 254
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 134,
+      "cx": 410,
+      "ccx": 164,
+      "swap": 4,
+      "arith_total": 712
+     },
+     {
+      "coeff": 2,
+      "x": 134,
+      "cx": 410,
+      "ccx": 164,
+      "swap": 4,
+      "arith_total": 712
+     }
+    ]
+   },
+   "old_add_product_gates": 16,
+   "old_add_scaled_gates": 8,
+   "seconds": 0.03
+  },
+  {
+   "p": 5,
+   "bits": 3,
+   "add_product_total": 1480,
+   "add_product_total_min": 1476,
+   "add_product_ccx": 366,
+   "add_scaled_total": 476,
+   "add_scaled_ccx": 120,
+   "ancilla_qubits": 14,
+   "merges": {
+    "Heis(F_5)": {
+     "2": {
+      "total": 19432,
+      "ccx": 4872,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 50
+     }
+    },
+    "n4(F_5)": {
+     "2": {
+      "total": 35060,
+      "ccx": 8772,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 68
+     },
+     "3": {
+      "total": 64418,
+      "ccx": 16090,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 89
+     }
+    },
+    "n5(F_5)": {
+     "2": {
+      "total": 50688,
+      "ccx": 12672,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 86
+     },
+     "3": {
+      "total": 108452,
+      "ccx": 27064,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 125
+     },
+     "4": {
+      "total": 151538,
+      "ccx": 37798,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 152
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 72,
+      "cx": 282,
+      "ccx": 120,
+      "arith_total": 474
+     },
+     {
+      "coeff": 4,
+      "x": 72,
+      "cx": 282,
+      "ccx": 122,
+      "arith_total": 476
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 250,
+      "cx": 848,
+      "ccx": 366,
+      "swap": 12,
+      "arith_total": 1476
+     },
+     {
+      "coeff": 4,
+      "x": 250,
+      "cx": 852,
+      "ccx": 366,
+      "swap": 12,
+      "arith_total": 1480
+     }
+    ]
+   },
+   "old_add_product_gates": 144,
+   "old_add_scaled_gates": 36,
+   "seconds": 0.09
+  },
+  {
+   "p": 7,
+   "bits": 3,
+   "add_product_total": 1544,
+   "add_product_total_min": 1532,
+   "add_product_ccx": 366,
+   "add_scaled_total": 496,
+   "add_scaled_ccx": 120,
+   "ancilla_qubits": 14,
+   "merges": {
+    "Heis(F_7)": {
+     "2": {
+      "total": 20210,
+      "ccx": 4914,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 50
+     }
+    },
+    "n4(F_7)": {
+     "2": {
+      "total": 36464,
+      "ccx": 8832,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 68
+     },
+     "3": {
+      "total": 67000,
+      "ccx": 16176,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 89
+     }
+    },
+    "n5(F_7)": {
+     "2": {
+      "total": 52718,
+      "ccx": 12750,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 86
+     },
+     "3": {
+      "total": 112798,
+      "ccx": 27186,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 125
+     },
+     "4": {
+      "total": 157610,
+      "ccx": 37950,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 152
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 76,
+      "cx": 294,
+      "ccx": 120,
+      "arith_total": 490
+     },
+     {
+      "coeff": 4,
+      "x": 76,
+      "cx": 294,
+      "ccx": 120,
+      "arith_total": 490
+     },
+     {
+      "coeff": 6,
+      "x": 76,
+      "cx": 294,
+      "ccx": 126,
+      "arith_total": 496
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 274,
+      "cx": 880,
+      "ccx": 366,
+      "swap": 12,
+      "arith_total": 1532
+     },
+     {
+      "coeff": 4,
+      "x": 274,
+      "cx": 880,
+      "ccx": 366,
+      "swap": 12,
+      "arith_total": 1532
+     },
+     {
+      "coeff": 6,
+      "x": 274,
+      "cx": 892,
+      "ccx": 366,
+      "swap": 12,
+      "arith_total": 1544
+     }
+    ]
+   },
+   "old_add_product_gates": 528,
+   "old_add_scaled_gates": 88,
+   "seconds": 0.11
+  },
+  {
+   "p": 11,
+   "bits": 4,
+   "add_product_total": 2604,
+   "add_product_total_min": 2584,
+   "add_product_ccx": 648,
+   "add_scaled_total": 792,
+   "add_scaled_ccx": 200,
+   "ancilla_qubits": 17,
+   "merges": {
+    "Heis(F_11)": {
+     "2": {
+      "total": 33376,
+      "ccx": 8496,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 65
+     }
+    },
+    "n4(F_11)": {
+     "2": {
+      "total": 60436,
+      "ccx": 15332,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 89
+     },
+     "3": {
+      "total": 111406,
+      "ccx": 28182,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 117
+     }
+    },
+    "n5(F_11)": {
+     "2": {
+      "total": 87496,
+      "ccx": 22168,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 113
+     },
+     "3": {
+      "total": 187852,
+      "ccx": 47448,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 165
+     },
+     "4": {
+      "total": 262722,
+      "ccx": 66302,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 201
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 112,
+      "cx": 470,
+      "ccx": 200,
+      "arith_total": 782
+     },
+     {
+      "coeff": 7,
+      "x": 112,
+      "cx": 470,
+      "ccx": 208,
+      "arith_total": 790
+     },
+     {
+      "coeff": 10,
+      "x": 112,
+      "cx": 470,
+      "ccx": 210,
+      "arith_total": 792
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 430,
+      "cx": 1482,
+      "ccx": 648,
+      "swap": 24,
+      "arith_total": 2584
+     },
+     {
+      "coeff": 7,
+      "x": 430,
+      "cx": 1498,
+      "ccx": 648,
+      "swap": 24,
+      "arith_total": 2600
+     },
+     {
+      "coeff": 10,
+      "x": 430,
+      "cx": 1502,
+      "ccx": 648,
+      "swap": 24,
+      "arith_total": 2604
+     }
+    ]
+   },
+   "old_add_product_gates": 3080,
+   "old_add_scaled_gates": 308,
+   "seconds": 0.09
+  },
+  {
+   "p": 13,
+   "bits": 4,
+   "add_product_total": 2604,
+   "add_product_total_min": 2584,
+   "add_product_ccx": 648,
+   "add_scaled_total": 792,
+   "add_scaled_ccx": 200,
+   "ancilla_qubits": 17,
+   "merges": {
+    "Heis(F_13)": {
+     "2": {
+      "total": 33378,
+      "ccx": 8498,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 65
+     }
+    },
+    "n4(F_13)": {
+     "2": {
+      "total": 60440,
+      "ccx": 15336,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 89
+     },
+     "3": {
+      "total": 111412,
+      "ccx": 28188,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 117
+     }
+    },
+    "n5(F_13)": {
+     "2": {
+      "total": 87502,
+      "ccx": 22174,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 113
+     },
+     "3": {
+      "total": 187862,
+      "ccx": 47458,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 165
+     },
+     "4": {
+      "total": 262746,
+      "ccx": 66326,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 201
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 112,
+      "cx": 470,
+      "ccx": 200,
+      "arith_total": 782
+     },
+     {
+      "coeff": 7,
+      "x": 112,
+      "cx": 470,
+      "ccx": 204,
+      "arith_total": 786
+     },
+     {
+      "coeff": 12,
+      "x": 112,
+      "cx": 470,
+      "ccx": 210,
+      "arith_total": 792
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 430,
+      "cx": 1482,
+      "ccx": 648,
+      "swap": 24,
+      "arith_total": 2584
+     },
+     {
+      "coeff": 7,
+      "x": 430,
+      "cx": 1490,
+      "ccx": 648,
+      "swap": 24,
+      "arith_total": 2592
+     },
+     {
+      "coeff": 12,
+      "x": 430,
+      "cx": 1502,
+      "ccx": 648,
+      "swap": 24,
+      "arith_total": 2604
+     }
+    ]
+   },
+   "old_add_product_gates": 5520,
+   "old_add_scaled_gates": 460,
+   "seconds": 0.1
+  },
+  {
+   "p": 101,
+   "bits": 7,
+   "add_product_total": 7556,
+   "add_product_total_min": 7484,
+   "add_product_ccx": 1974,
+   "add_scaled_total": 2134,
+   "add_scaled_ccx": 560,
+   "ancilla_qubits": 26,
+   "merges": {
+    "Heis(F_101)": {
+     "2": {
+      "total": 94130,
+      "ccx": 25154,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 110
+     }
+    },
+    "n4(F_101)": {
+     "2": {
+      "total": 171260,
+      "ccx": 45612,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 152
+     },
+     "3": {
+      "total": 317098,
+      "ccx": 84258,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 201
+     }
+    },
+    "n5(F_101)": {
+     "2": {
+      "total": 248390,
+      "ccx": 66070,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 194
+     },
+     "3": {
+      "total": 535798,
+      "ccx": 142170,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 285
+     },
+     "4": {
+      "total": 750288,
+      "ccx": 198948,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 348
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 272,
+      "cx": 1266,
+      "ccx": 560,
+      "arith_total": 2098
+     },
+     {
+      "coeff": 50,
+      "x": 272,
+      "cx": 1266,
+      "ccx": 596,
+      "arith_total": 2134
+     },
+     {
+      "coeff": 54,
+      "x": 272,
+      "cx": 1266,
+      "ccx": 590,
+      "arith_total": 2128
+     },
+     {
+      "coeff": 98,
+      "x": 272,
+      "cx": 1266,
+      "ccx": 596,
+      "arith_total": 2134
+     },
+     {
+      "coeff": 100,
+      "x": 272,
+      "cx": 1266,
+      "ccx": 596,
+      "arith_total": 2134
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 1146,
+      "cx": 4280,
+      "ccx": 1974,
+      "swap": 84,
+      "arith_total": 7484
+     },
+     {
+      "coeff": 50,
+      "x": 1146,
+      "cx": 4352,
+      "ccx": 1974,
+      "swap": 84,
+      "arith_total": 7556
+     },
+     {
+      "coeff": 54,
+      "x": 1146,
+      "cx": 4340,
+      "ccx": 1974,
+      "swap": 84,
+      "arith_total": 7544
+     },
+     {
+      "coeff": 98,
+      "x": 1146,
+      "cx": 4352,
+      "ccx": 1974,
+      "swap": 84,
+      "arith_total": 7556
+     },
+     {
+      "coeff": 100,
+      "x": 1146,
+      "cx": 4352,
+      "ccx": 1974,
+      "swap": 84,
+      "arith_total": 7556
+     }
+    ]
+   },
+   "old_add_product_gates": 5915600,
+   "old_add_scaled_gates": 59156,
+   "seconds": 0.14
+  },
+  {
+   "p": 1031,
+   "bits": 11,
+   "add_product_total": 17888,
+   "add_product_total_min": 17668,
+   "add_product_ccx": 4862,
+   "add_scaled_total": 4888,
+   "add_scaled_ccx": 1320,
+   "ancilla_qubits": 38,
+   "merges": {
+    "Heis(F_1031)": {
+     "2": {
+      "total": 219694,
+      "ccx": 61118,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 170
+     }
+    },
+    "n4(F_1031)": {
+     "2": {
+      "total": 400564,
+      "ccx": 111076,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 236
+     },
+     "3": {
+      "total": 743174,
+      "ccx": 205694,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 313
+     }
+    },
+    "n5(F_1031)": {
+     "2": {
+      "total": 581434,
+      "ccx": 161034,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 302
+     },
+     "3": {
+      "total": 1256898,
+      "ccx": 347430,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 445
+     },
+     "4": {
+      "total": 1761148,
+      "ccx": 486608,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 544
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 592,
+      "cx": 2866,
+      "ccx": 1320,
+      "arith_total": 4778
+     },
+     {
+      "coeff": 83,
+      "x": 592,
+      "cx": 2866,
+      "ccx": 1392,
+      "arith_total": 4850
+     },
+     {
+      "coeff": 789,
+      "x": 592,
+      "cx": 2866,
+      "ccx": 1430,
+      "arith_total": 4888
+     },
+     {
+      "coeff": 862,
+      "x": 592,
+      "cx": 2866,
+      "ccx": 1392,
+      "arith_total": 4850
+     },
+     {
+      "coeff": 1030,
+      "x": 592,
+      "cx": 2866,
+      "ccx": 1420,
+      "arith_total": 4878
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 2506,
+      "cx": 10080,
+      "ccx": 4862,
+      "swap": 220,
+      "arith_total": 17668
+     },
+     {
+      "coeff": 83,
+      "x": 2506,
+      "cx": 10224,
+      "ccx": 4862,
+      "swap": 220,
+      "arith_total": 17812
+     },
+     {
+      "coeff": 789,
+      "x": 2506,
+      "cx": 10300,
+      "ccx": 4862,
+      "swap": 220,
+      "arith_total": 17888
+     },
+     {
+      "coeff": 862,
+      "x": 2506,
+      "cx": 10224,
+      "ccx": 4862,
+      "swap": 220,
+      "arith_total": 17812
+     },
+     {
+      "coeff": 1030,
+      "x": 2506,
+      "cx": 10280,
+      "ccx": 4862,
+      "swap": 220,
+      "arith_total": 17868
+     }
+    ]
+   },
+   "old_add_product_gates": 9873312200,
+   "old_add_scaled_gates": 9585740,
+   "seconds": 0.69
+  },
+  {
+   "p": 65537,
+   "bits": 17,
+   "add_product_total": 40888,
+   "add_product_total_min": 40312,
+   "add_product_ccx": 11594,
+   "add_scaled_total": 10982,
+   "add_scaled_ccx": 3060,
+   "ancilla_qubits": 56,
+   "merges": {
+    "Heis(F_65537)": {
+     "2": {
+      "total": 498162,
+      "ccx": 144354,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 260
+     }
+    },
+    "n4(F_65537)": {
+     "2": {
+      "total": 909332,
+      "ccx": 262788,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 362
+     },
+     "3": {
+      "total": 1688950,
+      "ccx": 487470,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 481
+     }
+    },
+    "n5(F_65537)": {
+     "2": {
+      "total": 1320502,
+      "ccx": 381222,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 464
+     },
+     "3": {
+      "total": 2857870,
+      "ccx": 823986,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 685
+     },
+     "4": {
+      "total": 4005696,
+      "ccx": 1154676,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 838
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 1304,
+      "cx": 6330,
+      "ccx": 3060,
+      "arith_total": 10694
+     },
+     {
+      "coeff": 5307,
+      "x": 1304,
+      "cx": 6330,
+      "ccx": 3348,
+      "arith_total": 10982
+     },
+     {
+      "coeff": 50495,
+      "x": 1304,
+      "cx": 6330,
+      "ccx": 3332,
+      "arith_total": 10966
+     },
+     {
+      "coeff": 55126,
+      "x": 1304,
+      "cx": 6330,
+      "ccx": 3298,
+      "arith_total": 10932
+     },
+     {
+      "coeff": 65536,
+      "x": 1304,
+      "cx": 6330,
+      "ccx": 3300,
+      "arith_total": 10934
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 5234,
+      "cx": 22940,
+      "ccx": 11594,
+      "swap": 544,
+      "arith_total": 40312
+     },
+     {
+      "coeff": 5307,
+      "x": 5234,
+      "cx": 23516,
+      "ccx": 11594,
+      "swap": 544,
+      "arith_total": 40888
+     },
+     {
+      "coeff": 50495,
+      "x": 5234,
+      "cx": 23484,
+      "ccx": 11594,
+      "swap": 544,
+      "arith_total": 40856
+     },
+     {
+      "coeff": 55126,
+      "x": 5234,
+      "cx": 23416,
+      "ccx": 11594,
+      "swap": 544,
+      "arith_total": 40788
+     },
+     {
+      "coeff": 65536,
+      "x": 5234,
+      "cx": 23420,
+      "ccx": 11594,
+      "swap": 544,
+      "arith_total": 40792
+     }
+    ]
+   },
+   "seconds": 0.63
+  },
+  {
+   "p": 2305843009213693951,
+   "bits": 61,
+   "add_product_total": 590476,
+   "add_product_total_min": 576080,
+   "add_product_ccx": 148962,
+   "add_scaled_total": 151412,
+   "add_scaled_ccx": 37820,
+   "ancilla_qubits": 188,
+   "merges": {
+    "Heis(F_2305843009213693951)": {
+     "2": {
+      "total": 7052826,
+      "ccx": 1875994,
+      "macros": {
+       "add_product": 8,
+       "add_scaled": 16,
+       "swap": 1
+      },
+      "qubits": 920
+     }
+    },
+    "n4(F_2305843009213693951)": {
+     "2": {
+      "total": 12908752,
+      "ccx": 3406240,
+      "macros": {
+       "add_product": 16,
+       "add_scaled": 24,
+       "swap": 1
+      },
+      "qubits": 1286
+     },
+     "3": {
+      "total": 24029352,
+      "ccx": 6301056,
+      "macros": {
+       "add_product": 32,
+       "add_scaled": 36,
+       "swap": 1
+      },
+      "qubits": 1713
+     }
+    },
+    "n5(F_2305843009213693951)": {
+     "2": {
+      "total": 18764678,
+      "ccx": 4936486,
+      "macros": {
+       "add_product": 24,
+       "add_scaled": 32,
+       "swap": 1
+      },
+      "qubits": 1652
+     },
+     "3": {
+      "total": 40703054,
+      "ccx": 10636082,
+      "macros": {
+       "add_product": 56,
+       "add_scaled": 54,
+       "swap": 1
+      },
+      "qubits": 2445
+     },
+     "4": {
+      "total": 57081130,
+      "ccx": 14888270,
+      "macros": {
+       "add_product": 80,
+       "add_scaled": 70,
+       "swap": 1
+      },
+      "qubits": 2994
+     }
+    }
+   },
+   "mult_rows": {
+    "add_scaled": [
+     {
+      "coeff": 1,
+      "x": 15620,
+      "cx": 90774,
+      "ccx": 37820,
+      "arith_total": 144214
+     },
+     {
+      "coeff": 93350626358629462,
+      "x": 15620,
+      "cx": 90774,
+      "ccx": 41358,
+      "arith_total": 147752
+     },
+     {
+      "coeff": 888315200261588942,
+      "x": 15620,
+      "cx": 90774,
+      "ccx": 41846,
+      "arith_total": 148240
+     },
+     {
+      "coeff": 2052762717387312301,
+      "x": 15620,
+      "cx": 90774,
+      "ccx": 40992,
+      "arith_total": 147386
+     },
+     {
+      "coeff": 2305843009213693950,
+      "x": 15620,
+      "cx": 90774,
+      "ccx": 45018,
+      "arith_total": 151412
+     }
+    ],
+    "add_product": [
+     {
+      "coeff": 1,
+      "x": 90522,
+      "cx": 329276,
+      "ccx": 148962,
+      "swap": 7320,
+      "arith_total": 576080
+     },
+     {
+      "coeff": 93350626358629462,
+      "x": 90522,
+      "cx": 336352,
+      "ccx": 148962,
+      "swap": 7320,
+      "arith_total": 583156
+     },
+     {
+      "coeff": 888315200261588942,
+      "x": 90522,
+      "cx": 337328,
+      "ccx": 148962,
+      "swap": 7320,
+      "arith_total": 584132
+     },
+     {
+      "coeff": 2052762717387312301,
+      "x": 90522,
+      "cx": 335620,
+      "ccx": 148962,
+      "swap": 7320,
+      "arith_total": 582424
+     },
+     {
+      "coeff": 2305843009213693950,
+      "x": 90522,
+      "cx": 343672,
+      "ccx": 148962,
+      "swap": 7320,
+      "arith_total": 590476
+     }
+    ]
+   },
+   "seconds": 4.76
+  }
+ ],
+ "fit_add_product_loglog": [
+  1.95706369061771,
+  173.2953185218024
+ ],
+ "fit_add_product_quadratic": [
+  165.36575799249044,
+  -433.8666123611007,
+  1576.2712493598017
+ ],
+ "fit_add_product_ccx_quadratic": [
+  39.999999999999964,
+  2.0000000000015037,
+  -1.3304659287462687e-11
+ ],
+ "fit_add_scaled_quadratic": [
+  41.762628896510996,
+  -71.77250319063079,
+  382.39440105810934
+ ],
+ "fit_p_ge_101_loglog": {
+  "add_product": [
+   2.0206461334064096,
+   141.8975820923899
+  ],
+  "add_product_ccx": [
+   1.997290028969009,
+   40.46264182602217
+  ],
+  "add_scaled": [
+   1.9780767566162434,
+   43.20415424570542
+  ],
+  "merge Heis d2": [
+   2.0020726934721087,
+   1826.606668861889
+  ],
+  "merge n4 d3": [
+   2.0070137186064527,
+   6101.409728114937
+  ],
+  "merge n5 d4": [
+   2.008725006583252,
+   14395.301874803183
+  ]
+ },
+ "formula_matches": true,
+ "seconds": 6.6
+}

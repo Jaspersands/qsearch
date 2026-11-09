@@ -1,0 +1,92 @@
+0 fam_chain agree
+1 fam_flag01 agree
+2 fam_flats2 agree
+3 fam_flats3 agree
+4 fam_chain agree
+5 fam_flag01 agree
+6 fam_flats2 agree
+7 fam_flats3 agree
+8 fam_chain agree
+9 fam_flag01 agree
+10 fam_flats2 agree
+11 fam_flats3 agree
+12 fam_chain agree
+13 fam_flag01 agree
+14 fam_flats2 agree
+15 fam_flats3 agree
+16 planted_14_[8] agree
+17 planted_14_[6, 5] agree
+18 planted_18_[8] agree
+19 planted_18_[6, 5] agree
+20 vtwist_24 agree
+21 topbank_18_1 agree
+22 topbank_20_2 agree
+23 topbank_20_2 agree
+24 topbank_16_1 agree
+25 fam_chain agree
+26 fam_flag01 agree
+27 fam_flats2 agree
+28 fam_flats3 agree
+29 fam_chain agree
+30 fam_flag01 agree
+31 fam_flats2 agree
+32 fam_flats3 agree
+33 fam_chain agree
+34 fam_flag01 agree
+35 fam_flats2 agree
+36 fam_flats3 agree
+37 fam_chain agree
+38 fam_flag01 agree
+39 fam_flats2 agree
+40 fam_flats3 agree
+41 planted_14_[8] agree
+42 planted_14_[6, 5] agree
+43 planted_18_[8] agree
+44 planted_18_[6, 5] agree
+45 vtwist_24 agree
+46 topbank_18_1 agree
+47 topbank_20_2 agree
+48 topbank_20_2 agree
+49 topbank_16_1 agree
+50 my_uniform_10 agree
+51 my_lines_10 agree
+52 my_nested_10 agree
+53 my_planted_10 agree
+54 my_planted2_10 agree
+55 my_twist_10 agree
+56 my_adapt_rado_10 agree
+57 my_adapt_top_10 agree
+58 my_adapt_mix_10 agree
+59 my_adapt_case2_10 agree
+60 my_repeat_10 agree
+61 my_uniform_16 agree
+62 my_lines_16 agree
+63 my_nested_16 agree
+64 my_planted_16 agree
+65 my_planted2_16 agree
+66 my_twist_16 agree
+67 my_adapt_rado_16 agree
+68 my_adapt_top_16 agree
+69 my_adapt_mix_16 agree
+70 my_adapt_case2_16 agree
+71 my_repeat_16 agree
+72 my_uniform_10 agree
+73 my_lines_10 agree
+74 my_nested_10 agree
+75 my_planted_10 agree
+Traceback (most recent call last):
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-07-rees-sde-subquad-A-break/cross.py", line 173, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-07-rees-sde-subquad-A-break/cross.py", line 158, in main
+    cols = gen()
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-07-rees-sde-subquad-A-break/cross.py", line 155, in <lambda>
+    families.make(fam, random.Random(rng.random()), p, k, J, r))))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-07-rees-sde-subquad-A-break/families.py", line 365, in make
+    return fam_planted(rng, p, k, J, r, M, 2)
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-07-rees-sde-subquad-A-break/families.py", line 146, in fam_planted
+    d = rng.randrange(1, len(Ep) + 1)
+  File "/opt/anaconda3/lib/python3.13/random.py", line 323, in randrange
+    raise ValueError(f"empty range in randrange({start}, {stop})")
+ValueError: empty range in randrange(1, 1)

@@ -6,6 +6,24 @@ project. Choose a sensible number, keep tasks focused, and report their
 conclusions. This permission does not authorize extra Git, network, or
 external-service actions.
 
+# Claude API Research Agents
+
+The owner explicitly authorized Claude API research agents on 2026-11-06,
+using the prepaid $200 Anthropic credit with no automatic reload. This
+authorization covers sending selected repository research material through
+`tools/claude_research_agent.py`; it does not authorize Git actions or
+unrelated external-service work. No further per-call permission is needed
+within that research scope.
+
+Use Claude for independent mathematical attacks, classical-baseline checks,
+or a constructive alternative when it can change the next scientific action.
+Follow `research/CLAUDE_RESEARCH_WORKFLOW.md`. Give explicit, narrow context
+files and a concrete proof obligation; do not send credentials or archives.
+Keep the corpus lookup, primary-source checks and cheapest classical attacks
+before quantum implementation. Claude reports are advisory: verify each
+material claim, record its disposition, and never promote a theorem from an
+agent's ACCEPT label or a passing finite control.
+
 # Research Pass Protocol (Codex research passes)
 
 `research/GOAL.md` is the binding owner policy. At the start of a pass, read

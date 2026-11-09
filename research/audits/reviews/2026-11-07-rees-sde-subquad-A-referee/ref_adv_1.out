@@ -1,0 +1,9 @@
+adv-topstall p=10007 k=2 J=4 r=46 b=5 k=4 deg=True ok=True 0s {'direct': 1}
+adv-topstall p=10007 k=2 J=5 r=38 b=5 k=5 deg=True ok=True 1s {'maxblocks': 5, 'maxrho': 42, 'maxdepth': 1, 'stall': 2, 'maxq': 2, 'absorb': 2, 'top-rounds': 2, 'rec:topstall': 1, 'minslack': 15, 'leaf:top': 1, 'passes': 1}
+adv-topstall p=10007 k=2 J=4 r=46 b=5 k=4 deg=False ok=True 2s {'maxblocks': 5, 'maxload': 1, 'maxrho': 47, 'stall': 1, 'maxq': 4, 'max_need': 1, 'absorb': 1, 'top-rounds': 1, 'leaf:top': 1, 'passes': 1}
+adv-multibig p=10007 k=2 J=3 r=34 Qs=[8, 8] s=2 noise=0 ok=True 1s {'maxblocks': 3, 'maxrho': 20, 'maxdepth': 1, 'stall': 2, 'maxq': 10, 'max_need': 5, 'W': 1, 'W_bigrounds': 2, 'rec:W': 1, 'minslack': 145, 'leaf:closure': 1, 'passes': 1}
+adv-multibig p=10007 k=2 J=3 r=36 Qs=[7, 7, 7] s=1 noise=3 ok=True 1s {'maxblocks': 7, 'maxload': 4, 'maxrho': 48, 'stall': 1, 'maxq': 12, 'max_need': 4, 'absorb': 1, 'leaf:absorbedV': 1, 'passes': 1}
+adv-multibig p=10007 k=2 J=4 r=44 Qs=[10, 10] s=1 noise=0 ok=True 1s {'maxblocks': 9, 'maxload': 5, 'maxrho': 62, 'stall': 1, 'maxq': 10, 'max_need': 5, 'absorb': 1, 'leaf:absorbedV': 1, 'passes': 1}
+adv-multibig p=10007 k=2 J=3 r=28 Qs=[8] s=3 noise=3 ok=True 0s {'maxblocks': 3, 'maxrho': 20, 'maxdepth': 1, 'stall': 2, 'maxq': 5, 'max_need': 5, 'W': 1, 'W_bigrounds': 1, 'rec:W': 1, 'minslack': 64, 'leaf:closure': 1, 'passes': 1}
+TOTAL adv 1 {'banks': 7, 'solved': 7, 'maxblocks': 9, 'maxload': 5, 'maxrho': 62, 'maxdepth': 1, 'direct': 1, 'stall': 9, 'maxq': 12, 'max_need': 5, 'absorb': 5, 'top-rounds': 3, 'rec:topstall': 1, 'minslack': 15, 'leaf:top': 2, 'passes': 6, 'coinc': 0, 'pass_fail': 0, 'W': 2, 'W_bigrounds': 3, 'W_neq_U': 0, 'rec:W': 2, 'leaf:closure': 2, 'leaf:absorbedV': 2}
+nice -n 10 /opt/anaconda3/bin/python -B ref_run.py adv 1  4.20s user 0.07s system 70% cpu 6.068 total

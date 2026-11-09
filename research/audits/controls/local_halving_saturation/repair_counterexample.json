@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "All integral dyadic h; falsifies the report bound, not halving.",
+  "f": "x**3 + 4*x - 1",
+  "point": [
+    "1/4",
+    "1/8"
+  ],
+  "c": "x**2 + x/4 + 65/16",
+  "resultant_a_f": "-1/64",
+  "resultant_a_prime_f": "(8*h**3 - 268*h**2 + 6*h - 1)**2/4096",
+  "v2_resultants": [
+    -6,
+    -12
+  ],
+  "claimed_lower_bound": 6,
+  "numerator_odd_for_every_h_in_Z2": true,
+  "source_of_error": "Unstated integrality of a,b; actual near-infinity inputs are not integral.",
+  "first_inline_attempt": "Resultants computed correctly; a guessed sign/polynomial assertion was wrong. Corrected from exact CAS and rerun once.",
+  "claim_gates": {
+    "full_local_image": false,
+    "global_selmer": false,
+    "quantum_execution": false,
+    "hardness": false
+  }
+}

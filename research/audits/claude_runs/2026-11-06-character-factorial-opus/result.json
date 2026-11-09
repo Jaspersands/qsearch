@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 16297,
+      "path": "research/LEGENDRE_HANKEL_RESULTANT_READOUT.md",
+      "sha256": "ddf9c2d72bf4950335cf8f4ca4ff7415fa7383572a662e6731ea594d33ea0e0e",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 12717,
+      "path": "research/LEGENDRE_FOURIER_FEATURE_CLASSICAL_MATCH.md",
+      "sha256": "f7cf62e5b0afc2f3822e69ae71e47d193d3255dc1be1a5d8029f7804df6ac1ab",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 12913,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-06T09:12:31.081819+00:00",
+  "input_token_allowance": 13172,
+  "max_budget_usd": 0.75,
+  "max_tokens": 24000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.532688,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-06-character-factorial/constructive_prompt.md",
+    "sha256": "4011db04ae93ba5365d94dfcede2f3d6f81d6e6e3cefdef4799e1c2ed5535e71",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261106T091222.157584Z-34442644",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 12913,
+    "output_tokens": 612
+  },
+  "usage_cost_estimate_usd": 0.063892
+}

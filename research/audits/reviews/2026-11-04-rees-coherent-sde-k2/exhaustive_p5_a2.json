@@ -1,0 +1,34 @@
+{
+ "status": {
+  "status": "coherent_kappa2_sde_solve_finite_checks",
+  "scope": "grades with kappa_d = gcd(d, p-1) = 2 (incl. every d = 2), triangular solver of prop:triangular-sde at (a+1)(a+2)/2 columns",
+  "coherent_receiver_implemented": false,
+  "general_sde_implemented": false,
+  "coherent_kappa2_sde_implemented": true,
+  "coherent_kappa_ge3_sde_implemented": false,
+  "wired_into_generated_receiver": false,
+  "independent_review": false,
+  "speedup_claim_allowed": false
+ },
+ "exhaustive_chunked": {
+  "p": 5,
+  "a": 2,
+  "d": 2,
+  "M": 6,
+  "inputs": 244140625,
+  "gates": 351466,
+  "qubits": 418,
+  "output_equals_canonical": true,
+  "inputs_restored": true,
+  "workspace_clean": true,
+  "witness_nonzero": true,
+  "equation_holds": true,
+  "canonical_padding_free": true,
+  "K_hist": [
+   105390625,
+   94350000,
+   44400000
+  ],
+  "seconds": 1781.3
+ }
+}

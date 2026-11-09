@@ -1,0 +1,674 @@
+{
+ "status": "coherent_label_receiver_backend_class_four_instance_finite_checks",
+ "scope": "n5(F_7) only: kappa = (2, 3, 2) at grades (4, 3, 2), arities (3, 6, 10)",
+ "coherent_receiver_implemented": false,
+ "coherent_label_backend_class_four_instance": true,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "whole_circuit_amplitude_simulation": false,
+ "source_from_gate_list_on_all_addresses": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "parts": [
+  "blocks",
+  "counts",
+  "macros",
+  "mutants",
+  "proofs",
+  "sde"
+ ],
+ "args": {
+  "out": "research/audits/reviews/2026-11-04-rees-circuit-coherent-c4/run.json",
+  "parts": "counts,macros,proofs,sde,blocks,mutants",
+  "per_label": 4096,
+  "random_sde": 4194304,
+  "tuples": 64,
+  "max_all": 400,
+  "state_instances": "",
+  "run_instances": "",
+  "paths": 256
+ },
+ "config": "n5(F_7) c=4 dims=(5, 3, 2, 1) points=(1, 2, 3, 4) M={2: 10, 3: 6, 4: 3}",
+ "counts": {
+  "config": "n5(F_7) c=4 dims=(5, 3, 2, 1) points=(1, 2, 3, 4) M={2: 10, 3: 6, 4: 3}",
+  "terminal_sample": {
+   "by_component": {
+    "bch_merge_grade2": {
+     "swap": 3120,
+     "x": 90080,
+     "cx": 306720,
+     "ccx": 126900,
+     "add_product": 240,
+     "add_scaled": 320,
+     "gates": 526820
+    },
+    "bch_merge_grade3": {
+     "swap": 42120,
+     "x": 1166880,
+     "cx": 3929520,
+     "ccx": 1625400,
+     "add_product": 3360,
+     "add_scaled": 3240,
+     "gates": 6763920
+    },
+    "bch_merge_grade4": {
+     "swap": 178740,
+     "x": 4903200,
+     "cx": 16462800,
+     "ccx": 6809400,
+     "add_product": 14400,
+     "add_scaled": 12600,
+     "gates": 28354140
+    },
+    "final_qft": {
+     "qft_calls": 5,
+     "measured_qudits": 5,
+     "gates": 0
+    },
+    "instrument": {
+     "x": 25080,
+     "cx": 97020,
+     "ccx": 41580,
+     "add_scaled": 330,
+     "gates": 163680
+    },
+    "instrument_qft": {
+     "qft_calls": 660,
+     "gates": 0
+    },
+    "oracle": {
+     "oracle_calls": 720,
+     "gates": 0
+    },
+    "q_prep_qft": {
+     "qft_calls": 685,
+     "gates": 0
+    },
+    "sde_grade2": {
+     "x": 364132,
+     "cx": 1175588,
+     "ccx": 488572,
+     "swap": 15648,
+     "add_product": 1304,
+     "add_scaled": 72,
+     "gates": 2043940
+    },
+    "sde_grade3": {
+     "x": 1428840,
+     "cx": 4637960,
+     "ccx": 1928680,
+     "swap": 59040,
+     "add_product": 4920,
+     "add_scaled": 920,
+     "gates": 8054520
+    },
+    "sde_grade4": {
+     "x": 3794880,
+     "cx": 12240960,
+     "ccx": 5097360,
+     "swap": 161280,
+     "add_product": 13440,
+     "add_scaled": 1320,
+     "gates": 21294480
+    },
+    "source_evaluation": {
+     "x": 1203840,
+     "cx": 4656960,
+     "ccx": 1948320,
+     "add_scaled": 15840,
+     "gates": 7809120
+    },
+    "source_qft": {
+     "qft_calls": 1980,
+     "gates": 0
+    },
+    "witness_control_grade2": {
+     "x": 27400,
+     "cx": 89200,
+     "ccx": 36600,
+     "swap": 1200,
+     "add_product": 100,
+     "gates": 154400
+    },
+    "witness_control_grade3": {
+     "x": 295920,
+     "cx": 961920,
+     "ccx": 395280,
+     "swap": 12960,
+     "add_product": 1080,
+     "gates": 1666080
+    },
+    "witness_control_grade4": {
+     "x": 1183680,
+     "cx": 3844800,
+     "ccx": 1581120,
+     "swap": 51840,
+     "add_product": 4320,
+     "gates": 6661440
+    }
+   },
+   "total": {
+    "qft_calls": 3330,
+    "oracle_calls": 720,
+    "x": 14483932,
+    "cx": 48403448,
+    "ccx": 20079212,
+    "swap": 525948,
+    "measured_qudits": 5,
+    "add_scaled": 34642,
+    "add_product": 43164,
+    "gates": 83492540
+   },
+   "qubits": 20566,
+   "qubits_by_role": {
+    "arith_ancilla": 14,
+    "evaluation_w": 15,
+    "block_workspace_pool": 752,
+    "address_top": 5940,
+    "oracle_output": 10800,
+    "label_z_grade4": 540,
+    "Q_grade3": 1800,
+    "label_z_grade3": 360,
+    "Q_grade2": 240,
+    "label_z_grade2": 90,
+    "Q_grade1": 15
+   },
+   "sources": {
+    "1": 1,
+    "2": 10,
+    "3": 60,
+    "4": 180
+   },
+   "arities": {
+    "2": 10,
+    "3": 6,
+    "4": 3
+   },
+   "oracle_calls": 720
+  },
+  "structure": {
+   "garbage_never_touched_again": true,
+   "single_measurement_at_end": true,
+   "measured_register_is_root_Q": true
+  },
+  "blocks": {
+   "2": {
+    "kappa": 2,
+    "arity": 10,
+    "label_dim": 3,
+    "sde_class": "CoherentSDEK2",
+    "sde_qubits": 856,
+    "qubits": {
+     "labels": 90,
+     "children": 240,
+     "Q": 15,
+     "witness_S": 30,
+     "arith_ancilla": 14,
+     "sde_workspace": 722,
+     "merge_workspace_on_sde_wires": 48,
+     "merge_workspace_extra": 0,
+     "total": 1111,
+     "workspace_total": 766
+    },
+    "segments": {
+     "sde_U_and_Uinv": {
+      "x": 364132,
+      "cx": 1175588,
+      "ccx": 488572,
+      "swap": 15648,
+      "add_product": 1304,
+      "add_scaled": 72,
+      "gates": 2043940
+     },
+     "witness_control_G": {
+      "x": 27400,
+      "cx": 89200,
+      "ccx": 36600,
+      "swap": 1200,
+      "add_product": 100,
+      "gates": 154400
+     },
+     "bch_merge": {
+      "swap": 3120,
+      "x": 90080,
+      "cx": 306720,
+      "ccx": 126900,
+      "add_product": 240,
+      "add_scaled": 320,
+      "gates": 526820
+     },
+     "block_total": {
+      "x": 481612,
+      "cx": 1571508,
+      "ccx": 652072,
+      "swap": 19968,
+      "add_product": 1644,
+      "add_scaled": 392,
+      "gates": 2725160
+     }
+    },
+    "structure": {
+     "sde_never_writes_labels_or_Q_or_children": true,
+     "child_merges_local_footprint": true,
+     "merge_workspace_wires_outside_sde_workspace": 0
+    }
+   },
+   "3": {
+    "kappa": 3,
+    "arity": 6,
+    "label_dim": 2,
+    "sde_class": "CoherentSDEKappa",
+    "sde_qubits": 412,
+    "qubits": {
+     "labels": 36,
+     "children": 180,
+     "Q": 24,
+     "witness_S": 18,
+     "arith_ancilla": 14,
+     "sde_workspace": 344,
+     "merge_workspace_on_sde_wires": 84,
+     "merge_workspace_extra": 0,
+     "total": 616,
+     "workspace_total": 376
+    },
+    "segments": {
+     "sde_U_and_Uinv": {
+      "x": 142884,
+      "cx": 463796,
+      "ccx": 192868,
+      "swap": 5904,
+      "add_product": 492,
+      "add_scaled": 92,
+      "gates": 805452
+     },
+     "witness_control_G": {
+      "x": 29592,
+      "cx": 96192,
+      "ccx": 39528,
+      "swap": 1296,
+      "add_product": 108,
+      "gates": 166608
+     },
+     "bch_merge": {
+      "swap": 4212,
+      "x": 116688,
+      "cx": 392952,
+      "ccx": 162540,
+      "add_product": 336,
+      "add_scaled": 324,
+      "gates": 676392
+     },
+     "block_total": {
+      "x": 289164,
+      "cx": 952940,
+      "ccx": 394936,
+      "swap": 11412,
+      "add_product": 936,
+      "add_scaled": 416,
+      "gates": 1648452
+     }
+    },
+    "structure": {
+     "sde_never_writes_labels_or_Q_or_children": true,
+     "child_merges_local_footprint": true,
+     "merge_workspace_wires_outside_sde_workspace": 0
+    }
+   },
+   "4": {
+    "kappa": 2,
+    "arity": 3,
+    "label_dim": 1,
+    "sde_class": "CoherentSDEK2",
+    "sde_qubits": 169,
+    "qubits": {
+     "labels": 9,
+     "children": 99,
+     "Q": 30,
+     "witness_S": 9,
+     "arith_ancilla": 14,
+     "sde_workspace": 137,
+     "merge_workspace_on_sde_wires": 111,
+     "merge_workspace_extra": 0,
+     "total": 298,
+     "workspace_total": 160
+    },
+    "segments": {
+     "sde_U_and_Uinv": {
+      "x": 63248,
+      "cx": 204016,
+      "ccx": 84956,
+      "swap": 2688,
+      "add_product": 224,
+      "add_scaled": 22,
+      "gates": 354908
+     },
+     "witness_control_G": {
+      "x": 19728,
+      "cx": 64080,
+      "ccx": 26352,
+      "swap": 864,
+      "add_product": 72,
+      "gates": 111024
+     },
+     "bch_merge": {
+      "swap": 2979,
+      "x": 81720,
+      "cx": 274380,
+      "ccx": 113490,
+      "add_product": 240,
+      "add_scaled": 210,
+      "gates": 472569
+     },
+     "block_total": {
+      "x": 164696,
+      "cx": 542476,
+      "ccx": 224798,
+      "swap": 6531,
+      "add_product": 536,
+      "add_scaled": 232,
+      "gates": 938501
+     }
+    },
+    "structure": {
+     "sde_never_writes_labels_or_Q_or_children": true,
+     "child_merges_local_footprint": true,
+     "merge_workspace_wires_outside_sde_workspace": 0
+    }
+   }
+  },
+  "measured_generator_cw_arity": {
+   "qubits": 16316,
+   "arith_gates": 35574182,
+   "swap_macro": 6489,
+   "ccx": 8624658,
+   "qft_calls": 2705,
+   "oracle_calls": 588,
+   "classical_bits": 813,
+   "macros": {
+    "add_scaled": 26362,
+    "add_product": 14672
+   },
+   "arities": {
+    "2": 7,
+    "3": 7,
+    "4": 3
+   },
+   "gates_incl_bch_swaps": 35580671
+  },
+  "measured_generator_coherent_arity": {
+   "qubits": 19979,
+   "arith_gates": 43637660,
+   "swap_macro": 7980,
+   "ccx": 10579560,
+   "qft_calls": 3330,
+   "oracle_calls": 720,
+   "classical_bits": 1005,
+   "macros": {
+    "add_scaled": 32330,
+    "add_product": 18000
+   },
+   "arities": {
+    "2": 10,
+    "3": 6,
+    "4": 3
+   },
+   "gates_incl_bch_swaps": 43645640
+  }
+ },
+ "macros": {
+  "rows": 12,
+  "all_ok": true,
+  "words_per_row": [
+   64,
+   512
+  ],
+  "used_kind_coeff": [
+   [
+    "add_product",
+    1
+   ],
+   [
+    "add_product",
+    2
+   ],
+   [
+    "add_product",
+    6
+   ],
+   [
+    "add_scaled",
+    1
+   ],
+   [
+    "add_scaled",
+    2
+   ],
+   [
+    "add_scaled",
+    3
+   ],
+   [
+    "add_scaled",
+    4
+   ],
+   [
+    "add_scaled",
+    6
+   ]
+  ],
+  "used_all_checked": true
+ },
+ "proofs": {
+  "d2": {
+   "controlled_merge": {
+    "macros": 66,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   }
+  },
+  "d3": {
+   "controlled_merge": {
+    "macros": 128,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   }
+  },
+  "d4": {
+   "controlled_merge": {
+    "macros": 174,
+    "x_equals_bch_of_minus_delta_s_sigma_q": true,
+    "workspace_zero": true,
+    "s_and_q_unchanged": true,
+    "never_writes_labels_S_Q": true,
+    "proved": true
+   },
+   "structure": {
+    "sde_never_writes_labels_or_Q_or_children": true,
+    "child_merges_local_footprint": true,
+    "merge_workspace_wires_outside_sde_workspace": 0
+   }
+  }
+ },
+ "sde": {
+  "d4_all_label_triples": {
+   "inputs": 343,
+   "gates": 177454,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 0.1,
+   "passed": true
+  },
+  "d3_all_rank_le1": {
+   "inputs": 941185,
+   "gates": 402726,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 6.1,
+   "passed": true
+  },
+  "d3_random": {
+   "inputs": 4194304,
+   "gates": 402726,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 29.1,
+   "passed": true
+  },
+  "d3_structured": {
+   "inputs": 16384,
+   "gates": 402726,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 0.3,
+   "passed": true
+  },
+  "d2_random": {
+   "inputs": 1048576,
+   "gates": 1021970,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 18.1,
+   "passed": true
+  },
+  "d2_structured": {
+   "inputs": 16384,
+   "gates": 1021970,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 0.7,
+   "passed": true
+  },
+  "d2_rank_le1_sampled": {
+   "inputs": 16384,
+   "gates": 1021970,
+   "witness_equals_canonical": true,
+   "witness_nonzero": true,
+   "equation_holds": true,
+   "labels_restored": true,
+   "workspace_clean": true,
+   "sim_seconds": 0.7,
+   "passed": true
+  }
+ },
+ "blocks": {
+  "d4_all_label_triples": {
+   "inputs": 1404928,
+   "gates": 938501,
+   "qubits": 298,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 25.2,
+   "passed": true
+  },
+  "d3_all_rank_le1": {
+   "inputs": 941185,
+   "gates": 1648452,
+   "qubits": 616,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 29.5,
+   "passed": true
+  },
+  "d3_random": {
+   "inputs": 262144,
+   "gates": 1648452,
+   "qubits": 616,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 8.3,
+   "passed": true
+  },
+  "d3_structured": {
+   "inputs": 4096,
+   "gates": 1648452,
+   "qubits": 616,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 0.9,
+   "passed": true
+  },
+  "d2_structured": {
+   "inputs": 4096,
+   "gates": 2725160,
+   "qubits": 1111,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 1.6,
+   "passed": true
+  },
+  "d2_random": {
+   "inputs": 65536,
+   "gates": 2725160,
+   "qubits": 1111,
+   "labels_unchanged": true,
+   "q_unchanged": true,
+   "x_equals_bch_with_coherent_witness": true,
+   "witness_and_workspace_clean": true,
+   "outputs_canonical": true,
+   "sim_seconds": 3.4,
+   "passed": true
+  }
+ },
+ "mutants": {
+  "d4_g_sign": true,
+  "d4_skip_ctrl_inv": true,
+  "d4_skip_sde_inv": true,
+  "d4_skip_bennett": true,
+  "d3_sde_beta": true,
+  "d3_sde_alpha": true,
+  "d3_sde_omega_min": true,
+  "d4_wrong_degree_witness": true,
+  "all_rejected": true
+ },
+ "seconds": 136.3
+}

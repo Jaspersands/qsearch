@@ -1,0 +1,23 @@
+1. rho closed form = max form; prime power gives e; kappa=6 gives 1+max(nu2,nu3); 1+max <= rho <= nu: OK for p < 3000
+2. brute-force lattice: max failing chain = rho-1 for kappa in (6,10,12), p < 700; 53796 anchors
+3. full solver = driver at p=1459 kappa=3 a=1: default 7 runs, variant 1 runs
+3. full solver = driver at p=163 kappa=3 a=1: default 5 runs, variant 1 runs
+3. full solver = driver at p=7681 kappa=2 a=2: default 10 runs, variant 1 runs
+3. full solver = driver at p=257 kappa=2 a=2: default 9 runs, variant 1 runs
+4. kappa=6 p=90656394427 (37 bits) nu=21 rho=21: A(a=2) variant 21 default 22; C(a=1, level 3) variant 21 default 22; C(a=2) variant 21
+4. kappa=6 p=6112404799489 (43 bits) nu=30 rho=16: A(a=2) variant 16 default 31; C(a=1, level 3) variant 16 default 18; C(a=2) variant 16
+4. kappa=6 p=841126395248641 (50 bits) nu=42 rho=41: A(a=3) variant 41 default 43; C(a=1, level 3) variant 41 default 43; C(a=2) variant 41
+4. kappa=6 p=2377 (12 bits) nu=6 rho=4: A(a=1) variant 4 default 7; C(a=1, level 3) variant 4 default 6; C(a=2) variant 4
+4. kappa=6 p=7 (3 bits) nu=2 rho=2: A(a=1) variant 2 default 3; C(a=1, level 3) variant 2 default 3; C(a=2) variant 2
+4. kappa=6 p=13 (4 bits) nu=3 rho=3: A(a=1) variant 3 default 4; C(a=1, level 3) variant 3 default 4; C(a=2) variant 3
+4. kappa=10 p=91268055041 (37 bits) nu=31 rho=31: A(a=2) variant 31 default 32; C(a=1, level 3) variant 31 default 32
+4. kappa=10 p=33000001 (25 bits) nu=12 rho=7: A(a=1) variant 7 default 13; C(a=1, level 3) variant 7 default 9
+4. kappa=10 p=4386901855468751 (52 bits) nu=21 rho=21: A(a=2) variant 21 default 22; C(a=1, level 3) variant 21 default 22
+4. kappa=10 p=11 (4 bits) nu=2 rho=2: A(a=1) variant 2 default 3; C(a=1, level 3) variant 2 default 3
+4. kappa=12 p=105063787570933 (47 bits) nu=27 rho=27: A(a=2) variant 27 default 28; C(a=1, level 3) variant 27 default 28
+4. kappa=12 p=309586821121 (39 bits) nu=30 rho=21: A(a=2) variant 21 default 31; C(a=1, level 3) variant 21 default 23
+4. kappa=12 p=2377 (12 bits) nu=6 rho=5: A(a=1) variant 5 default 7; C(a=1, level 3) variant 5 default 7
+4. kappa=12 p=13 (4 bits) nu=3 rho=3: A(a=1) variant 3 default 4; C(a=1, level 3) variant 3 default 4
+5. kappa=30 p=172801: family A with each l* gives {2: 6, 3: 11, 5: 12}; rho = 12
+6. random level-2 prefixes (150 per case): variant runs <= rho; max seen vs rho: {(6, 73): (4, 4), (10, 101): (3, 3), (12, 73): (3, 4)}
+ALL OK

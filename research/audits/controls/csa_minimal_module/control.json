@@ -1,0 +1,88 @@
+{
+  "status": "PASS_MODULE_EXTRACTION_TABLE_INDEX_UNSUPPORTED",
+  "scope": "One exact classical fixture/control, not an asymptotic proof or a KM execution.",
+  "algebra": "M2((-1,-1)_Q)",
+  "degree_n": 4,
+  "index_d": 2,
+  "splitting_fixture": "Q(i), explicit known matrices",
+  "module_Q_dimension": 8,
+  "basis_products_checked": 256,
+  "pari_baseline": {
+    "input": "alginit(nfinit(y), expanded integral identity-first left multiplication table)",
+    "table_size": [
+      16,
+      16,
+      16
+    ],
+    "alginit_succeeded": true,
+    "algindex": null,
+    "algindex_error": "sorry, computation of Hasse invariants over table CSA is not yet implemented",
+    "algindex_status": "UNSUPPORTED_TABLE_INPUT",
+    "supplied_cyclic_or_local_invariant_advice": false
+  },
+  "separate_specialized_fixture_check": {
+    "input": "Explicit quaternion/cyclic presentation (-1,-1), plus known M2(H) factorization of this fixture",
+    "Hamilton_discriminant": 2,
+    "Hamilton_algindex": 2,
+    "fixture_index": 2,
+    "general_table_to_cyclic_conversion_claim": false
+  },
+  "hom_system": {
+    "equations": 2048,
+    "variables": 128,
+    "rank": 120,
+    "nullity": 8,
+    "chosen_combination": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "chosen_map_rank": 8
+  },
+  "extraction": {
+    "affine_coefficient_rank": 4,
+    "idempotent_coordinates": [
+      "1",
+      "0",
+      "0",
+      "0",
+      "7/3",
+      "0",
+      "8/15",
+      "-4/15",
+      "0",
+      "0",
+      "0",
+      "0",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    "idempotent_verified": true,
+    "image_equals_Ae": true,
+    "Ae_Q_dimension": 8,
+    "corner_eAe_Q_dimension": 4
+  },
+  "wrong_degree_control": {
+    "regular_module_Q_dimension": 16,
+    "image_ideal_Q_dimension": 16,
+    "extracted_idempotent": "1",
+    "nonminimal": true,
+    "orthogonal_nonzero_idempotent_decomposition": "1 = E11 + E22",
+    "prior_degree_4_field_control": "research/audits/controls/reduced_norms/control.py",
+    "prior_control_rerun": false
+  },
+  "claim_gates": {
+    "full_algorithm_execution": false,
+    "quantum_execution": false,
+    "general_asymptotic_clock_verified": false,
+    "finite_control_proves_minimality_in_general": false,
+    "novelty_or_classical_separation": false
+  }
+}

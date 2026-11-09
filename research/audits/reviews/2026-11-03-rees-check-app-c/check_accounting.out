@@ -1,0 +1,7 @@
+1. tails exact for r = 2..10, B = 1..8: P(timeout) <= r 2^-B everywhere; largest ratio 0.338; prod p_k = r^-r exactly
+2. profile p=43, c=9, m=19, n=97: t=1, log2 B_leaf = 1569.49, b = 2102, ell = 420400, M = 14, log2 T = 1591.98
+   r=1: B=None, N=0, raw copies T(N+1) ~ 2^1591.9771, rT controlled R calls ~ 2^1591.98; json: raw_copy_cap == T(N+1), per-output cap == N, growth cap == TN, tail_bits == B
+   r=2: B=1598, N=6392, raw copies T(N+1) ~ 2^1604.6194, rT controlled R calls ~ 2^1592.98; json: raw_copy_cap == T(N+1), per-output cap == N, growth cap == TN, tail_bits == B
+   r=8: B=1600, N=102400, raw copies T(N+1) ~ 2^1608.6210, rT controlled R calls ~ 2^1594.98; json: raw_copy_cap == T(N+1), per-output cap == N, growth cap == TN, tail_bits == B
+   r=32: B=1602, N=1640448, raw copies T(N+1) ~ 2^1612.6228, rT controlled R calls ~ 2^1596.98; json: raw_copy_cap == T(N+1), per-output cap == N, growth cap == TN, tail_bits == B
+3. Remark multiple-p: ell = 420400 -> 420411 (multiple of 43); c*ell' = 3,783,699; M*ell = 5,885,600; c(ell+p) = 3,783,987

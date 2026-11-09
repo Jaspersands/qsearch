@@ -1,0 +1,20 @@
+..............                                                           [100%]
+============================= slowest 20 durations =============================
+87.41s call     tests/test_rees_circuit_general.py::test_slow_n4_f7_one_non_normal_subgroup
+65.79s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=Z(G)]
+65.36s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e2,e4> non-normal]
+65.03s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e2,e3> non-normal]
+35.13s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e1+e3> non-normal]
+34.17s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e1> non-normal]
+33.04s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e2> non-normal]
+32.31s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=trivial]
+22.59s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e1+e2,e3> (closure)]
+21.33s call     tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e3,e4> = gamma_2]
+14.69s call     tests/test_rees_circuit_general.py::test_slow_n4_grade_two_merge_exhaustive_bit_level[4]
+12.05s call     tests/test_rees_circuit_general.py::test_slow_n4_grade_two_merge_exhaustive_bit_level[1]
+10.48s call     tests/test_rees_circuit_general.py::test_slow_n4_grade_two_merge_exhaustive_bit_level[2]
+9.33s call     tests/test_rees_circuit_general.py::test_slow_n4_grade_two_merge_exhaustive_bit_level[3]
+0.29s setup    tests/test_rees_circuit_general.py::test_slow_n4_more_label_tuples_all_witnesses[n4(F_5) H=<e2> non-normal]
+
+(5 durations < 0.005s hidden.  Use -vv to show these durations.)
+14 passed, 58 deselected in 509.85s (0:08:29)

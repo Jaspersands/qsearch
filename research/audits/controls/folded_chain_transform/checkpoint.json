@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "date": "2026-11-07",
+  "heading": "2026-11-07 Folded Chain Coherent Fast Forwarding",
+  "source_pdf_hashes_checked": 6,
+  "sources_relied_on": [
+    "folded",
+    "solvable_dynamics",
+    "dimers",
+    "tractable_states"
+  ],
+  "unused_selection_leads": [
+    "f_basis",
+    "adiabatic"
+  ],
+  "closed_reviews": [
+    "research/audits/reviews/2026-11-07-folded-chain-core.md",
+    "research/audits/reviews/2026-11-07-folded-chain-source.md"
+  ],
+  "exact_classical_control": {
+    "total_runs": 1,
+    "rerun_at_checkpoint": false,
+    "N_values": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "max_states": 1024,
+    "scope": "finite classical falsifier only"
+  },
+  "native_normalization": {
+    "spin_H_prefactor": "-1/8",
+    "hopping": "-1/2",
+    "one_body_energy": "-cos(pi*k/(ell+1))",
+    "source_energy_formula_discrepancy_preserved": true
+  },
+  "claude_runs": [
+    {
+      "name": "word-bijection",
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "estimated_usd": 0.87223
+    },
+    {
+      "name": "uniform-unitary",
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "estimated_usd": 0.351284
+    }
+  ],
+  "pass_estimate_usd": 1.223514,
+  "aggregate_nonpartial_estimate_usd": 50.66482,
+  "nonpartial_usage_records": 66,
+  "completed_reports": 34,
+  "prior_partial_timeout_billing": "UNKNOWN",
+  "estimates_are_provider_balance": false,
+  "claim_gates": {
+    "written_arbitrary_input_transform_reviewed": true,
+    "classical_basis_input_readout_match": true,
+    "arbitrary_input_classical_simulation": false,
+    "novelty": false,
+    "speedup_separation": false,
+    "implementation": false,
+    "quantum_execution": false
+  },
+  "validation": "frozen source hashes, syntax, statuses and scope; no full suite"
+}

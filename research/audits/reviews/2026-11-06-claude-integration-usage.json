@@ -1,0 +1,96 @@
+{
+  "scope": "Recorded integration requests only; not account balance or invoice",
+  "estimated_usage_usd": "8.956502",
+  "runs": [
+    {
+      "status": "truncated",
+      "model": "claude-fable-5-1",
+      "effort": "max",
+      "stop_reason": "max_tokens",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 3.26365,
+      "bundle": "audits/claude_runs/2026-11-06-fitting-gate-fable"
+    },
+    {
+      "status": "truncated",
+      "model": "claude-sonnet-5-5",
+      "effort": "high",
+      "stop_reason": "max_tokens",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 0.17237,
+      "bundle": "audits/claude_runs/2026-11-06-fitting-source-resolution-sonnet"
+    },
+    {
+      "status": "failed",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "stop_reason": null,
+      "billing_status": "not_started",
+      "usage_cost_estimate_usd": null,
+      "bundle": "audits/claude_runs/2026-11-06-fitting-two-part-fable-high"
+    },
+    {
+      "status": "completed",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "stop_reason": "end_turn",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 0.86619,
+      "bundle": "audits/claude_runs/2026-11-06-fitting-two-part-fable-high-resumed"
+    },
+    {
+      "status": "completed",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "stop_reason": "end_turn",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 0.2445,
+      "bundle": "audits/claude_runs/2026-11-06-generator-gate-opus"
+    },
+    {
+      "status": "dry_run",
+      "model": "claude-fable-5-1",
+      "effort": "max",
+      "stop_reason": null,
+      "billing_status": "not_started",
+      "usage_cost_estimate_usd": null,
+      "bundle": "audits/claude_runs/2026-11-06-integration-dry-run"
+    },
+    {
+      "status": "truncated",
+      "model": "claude-fable-5-1",
+      "effort": "max",
+      "stop_reason": "max_tokens",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 1.91272,
+      "bundle": "audits/claude_runs/2026-11-06-prime-index-core-fable"
+    },
+    {
+      "status": "truncated",
+      "model": "claude-opus-5-5",
+      "effort": "max",
+      "stop_reason": "max_tokens",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 0.800444,
+      "bundle": "audits/claude_runs/2026-11-06-prime-index-resources-opus"
+    },
+    {
+      "status": "truncated",
+      "model": "claude-opus-5-5",
+      "effort": "max",
+      "stop_reason": "max_tokens",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 1.288644,
+      "bundle": "audits/claude_runs/2026-11-06-residue-gate-opus"
+    },
+    {
+      "status": "completed",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "stop_reason": "end_turn",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": 0.407984,
+      "bundle": "audits/claude_runs/2026-11-06-residue-gate-opus-high"
+    }
+  ]
+}

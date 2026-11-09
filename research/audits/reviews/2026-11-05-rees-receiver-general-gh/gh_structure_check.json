@@ -1,0 +1,2011 @@
+{
+ "configs": [
+  {
+   "config": "heis_f3",
+   "p": 3,
+   "dims": [
+    3,
+    1
+   ],
+   "c": 2,
+   "kappa": {
+    "2": 2
+   },
+   "arity": {
+    "2": 3
+   },
+   "refused": null,
+   "items": 781,
+   "D1_label_registers": 3,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 3,
+      "a": 1,
+      "d": 2,
+      "kappa": 2,
+      "M": 3,
+      "stop": null,
+      "contraction": null
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 30,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "U alone, all label tuples",
+     "inputs": 27,
+     "gates": 30104,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 0.0
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 115282,
+    "ccx": 26760,
+    "qubits": 182,
+    "qft_calls": 24,
+    "oracle_calls": 6,
+    "add_product": 118,
+    "add_scaled": 121,
+    "sources": {
+     "1": 1,
+     "2": 3
+    },
+    "b": 2,
+    "n_cover": 4,
+    "m": 3,
+    "by_component_gates": {
+     "bch_merge_grade2": 29304,
+     "final_qft": 0,
+     "instrument": 762,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 60208,
+     "source_evaluation": 12192,
+     "source_qft": 0,
+     "witness_control_grade2": 12816
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 72,
+     "final_qft": 0,
+     "instrument": 3,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 98,
+     "source_evaluation": 48,
+     "source_qft": 0,
+     "witness_control_grade2": 18
+    }
+   },
+   "rss_mb": 104.1,
+   "seconds": 0.0
+  },
+  {
+   "config": "heis_f5",
+   "p": 5,
+   "dims": [
+    3,
+    1
+   ],
+   "c": 2,
+   "kappa": {
+    "2": 2
+   },
+   "arity": {
+    "2": 3
+   },
+   "refused": null,
+   "items": 1125,
+   "D1_label_registers": 3,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 5,
+      "a": 1,
+      "d": 2,
+      "kappa": 2,
+      "M": 3,
+      "stop": null,
+      "contraction": null
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 30,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "U alone, all label tuples",
+     "inputs": 125,
+     "gates": 117826,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 0.1
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 344834,
+    "ccx": 85936,
+    "qubits": 263,
+    "qft_calls": 24,
+    "oracle_calls": 6,
+    "add_product": 194,
+    "add_scaled": 121,
+    "sources": {
+     "1": 1,
+     "2": 3
+    },
+    "b": 3,
+    "n_cover": 4,
+    "m": 3,
+    "by_component_gates": {
+     "bch_merge_grade2": 58296,
+     "final_qft": 0,
+     "instrument": 1428,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 235652,
+     "source_evaluation": 22818,
+     "source_qft": 0,
+     "witness_control_grade2": 26640
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 72,
+     "final_qft": 0,
+     "instrument": 3,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 174,
+     "source_evaluation": 48,
+     "source_qft": 0,
+     "witness_control_grade2": 18
+    }
+   },
+   "rss_mb": 107.0,
+   "seconds": 0.1
+  },
+  {
+   "config": "n4_f5",
+   "p": 5,
+   "dims": [
+    4,
+    2,
+    1
+   ],
+   "c": 3,
+   "kappa": {
+    "2": 2,
+    "3": 1
+   },
+   "arity": {
+    "2": 6,
+    "3": 2
+   },
+   "refused": null,
+   "items": 6459,
+   "D1_label_registers": 24,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 5,
+      "a": 2,
+      "d": 2,
+      "kappa": 2,
+      "M": 6,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 6,
+     "expected": 6,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDE",
+      "p": 5,
+      "a": 1,
+      "d": 3,
+      "kappa": 1,
+      "M": 2,
+      "stop": null,
+      "contraction": null
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 48,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 27
+     },
+     "prove_controlled_merge": {
+      "macros": 82,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 984344,
+     "qubits": 538,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 0.91,
+     "passed": true,
+     "seconds": 1.0
+    },
+    "3": {
+     "mode": "U alone, all label tuples",
+     "inputs": 25,
+     "gates": 36472,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 0.1
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 2694596,
+    "ccx": 671852,
+    "qubits": 1198,
+    "qft_calls": 176,
+    "oracle_calls": 36,
+    "add_product": 1444,
+    "add_scaled": 1172,
+    "sources": {
+     "1": 1,
+     "2": 6,
+     "3": 12
+    },
+    "b": 3,
+    "n_cover": 7,
+    "m": 4,
+    "by_component_gates": {
+     "bch_merge_grade2": 210372,
+     "bch_merge_grade3": 772980,
+     "final_qft": 0,
+     "instrument": 11424,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 702932,
+     "sde_grade3": 437664,
+     "source_evaluation": 239640,
+     "source_qft": 0,
+     "witness_control_grade2": 71040,
+     "witness_control_grade3": 248544
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 240,
+     "bch_merge_grade3": 816,
+     "final_qft": 0,
+     "instrument": 24,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 504,
+     "sde_grade3": 312,
+     "source_evaluation": 504,
+     "source_qft": 0,
+     "witness_control_grade2": 48,
+     "witness_control_grade3": 168
+    }
+   },
+   "rss_mb": 136.6,
+   "seconds": 1.2
+  },
+  {
+   "config": "n4_f7",
+   "p": 7,
+   "dims": [
+    4,
+    2,
+    1
+   ],
+   "c": 3,
+   "kappa": {
+    "2": 2,
+    "3": 3
+   },
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "refused": null,
+   "items": 19787,
+   "D1_label_registers": 30,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 7,
+      "a": 2,
+      "d": 2,
+      "kappa": 2,
+      "M": 6,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 6,
+     "expected": 6,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEKappa",
+      "p": 7,
+      "a": 1,
+      "d": 3,
+      "kappa": 3,
+      "M": 3,
+      "stop": "power",
+      "contraction": [
+       [
+        1,
+        0,
+        5
+       ],
+       [
+        0,
+        2,
+        6
+       ]
+      ]
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 48,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 82,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 1231192,
+     "qubits": 537,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 1.23,
+     "passed": true,
+     "seconds": 1.3
+    },
+    "3": {
+     "mode": "U alone, all label tuples",
+     "inputs": 343,
+     "gates": 135024,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 0.2
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 4832806,
+    "ccx": 1162204,
+    "qubits": 1629,
+    "qft_calls": 230,
+    "oracle_calls": 54,
+    "add_product": 2528,
+    "add_scaled": 1898,
+    "sources": {
+     "1": 1,
+     "2": 6,
+     "3": 18
+    },
+    "b": 3,
+    "n_cover": 7,
+    "m": 4,
+    "by_component_gates": {
+     "bch_merge_grade2": 218604,
+     "bch_merge_grade3": 1205082,
+     "final_qft": 0,
+     "instrument": 14880,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 938476,
+     "sde_grade3": 1620288,
+     "source_evaluation": 372708,
+     "source_qft": 0,
+     "witness_control_grade2": 74112,
+     "witness_control_grade3": 388656
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 240,
+     "bch_merge_grade3": 1224,
+     "final_qft": 0,
+     "instrument": 30,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 640,
+     "sde_grade3": 1236,
+     "source_evaluation": 756,
+     "source_qft": 0,
+     "witness_control_grade2": 48,
+     "witness_control_grade3": 252
+    }
+   },
+   "rss_mb": 142.6,
+   "seconds": 1.7
+  },
+  {
+   "config": "n4_f13",
+   "p": 13,
+   "dims": [
+    4,
+    2,
+    1
+   ],
+   "c": 3,
+   "kappa": {
+    "2": 2,
+    "3": 3
+   },
+   "arity": {
+    "2": 6,
+    "3": 3
+   },
+   "refused": null,
+   "items": 24919,
+   "D1_label_registers": 30,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 13,
+      "a": 2,
+      "d": 2,
+      "kappa": 2,
+      "M": 6,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 6,
+     "expected": 6,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEKappa",
+      "p": 13,
+      "a": 1,
+      "d": 3,
+      "kappa": 3,
+      "M": 3,
+      "stop": "power",
+      "contraction": [
+       [
+        1,
+        0,
+        10
+       ],
+       [
+        0,
+        3,
+        12
+       ]
+      ]
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 48,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 82,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 2542888,
+     "qubits": 703,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 2.26,
+     "passed": true,
+     "seconds": 2.5
+    },
+    "3": {
+     "mode": "U alone, all label tuples",
+     "inputs": 2197,
+     "gates": 340106,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 0.4
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 9903076,
+    "ccx": 2495964,
+    "qubits": 2105,
+    "qft_calls": 230,
+    "oracle_calls": 54,
+    "add_product": 3240,
+    "add_scaled": 1898,
+    "sources": {
+     "1": 1,
+     "2": 6,
+     "3": 18
+    },
+    "b": 4,
+    "n_cover": 7,
+    "m": 4,
+    "by_component_gates": {
+     "bch_merge_grade2": 362304,
+     "bch_merge_grade3": 2003760,
+     "final_qft": 0,
+     "instrument": 23760,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 2055592,
+     "sde_grade3": 4081272,
+     "source_evaluation": 595908,
+     "source_qft": 0,
+     "witness_control_grade2": 124992,
+     "witness_control_grade3": 655488
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 240,
+     "bch_merge_grade3": 1224,
+     "final_qft": 0,
+     "instrument": 30,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 824,
+     "sde_grade3": 1764,
+     "source_evaluation": 756,
+     "source_qft": 0,
+     "witness_control_grade2": 48,
+     "witness_control_grade3": 252
+    }
+   },
+   "rss_mb": 177.6,
+   "seconds": 3.0
+  },
+  {
+   "config": "f23_f7",
+   "p": 7,
+   "dims": [
+    5,
+    3,
+    2
+   ],
+   "c": 3,
+   "kappa": {
+    "2": 2,
+    "3": 3
+   },
+   "arity": {
+    "2": 10,
+    "3": 6
+   },
+   "refused": null,
+   "items": 79351,
+   "D1_label_registers": 150,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 7,
+      "a": 3,
+      "d": 2,
+      "kappa": 2,
+      "M": 10,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 10,
+     "expected": 10,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEKappa",
+      "p": 7,
+      "a": 2,
+      "d": 3,
+      "kappa": 3,
+      "M": 6,
+      "stop": "power",
+      "contraction": [
+       [
+        1,
+        0,
+        5
+       ],
+       [
+        0,
+        2,
+        6
+       ]
+      ]
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 66,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 128,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 2725160,
+     "qubits": 1111,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 2.44,
+     "passed": true,
+     "seconds": 2.7
+    },
+    "3": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 1648452,
+     "qubits": 616,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 1.37,
+     "passed": true,
+     "seconds": 1.5
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 21058880,
+    "ccx": 5063132,
+    "qubits": 5986,
+    "qft_calls": 990,
+    "oracle_calls": 180,
+    "add_product": 11004,
+    "add_scaled": 8302,
+    "sources": {
+     "1": 1,
+     "2": 10,
+     "3": 60
+    },
+    "b": 3,
+    "n_cover": 10,
+    "m": 5,
+    "by_component_gates": {
+     "bch_merge_grade2": 526820,
+     "bch_merge_grade3": 6763920,
+     "final_qft": 0,
+     "instrument": 74400,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 2043940,
+     "sde_grade3": 8054520,
+     "source_evaluation": 1774800,
+     "source_qft": 0,
+     "witness_control_grade2": 154400,
+     "witness_control_grade3": 1666080
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 560,
+     "bch_merge_grade3": 6600,
+     "final_qft": 0,
+     "instrument": 150,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 1376,
+     "sde_grade3": 5840,
+     "source_evaluation": 3600,
+     "source_qft": 0,
+     "witness_control_grade2": 100,
+     "witness_control_grade3": 1080
+    }
+   },
+   "rss_mb": 220.6,
+   "seconds": 4.8
+  },
+  {
+   "config": "f23_f13",
+   "p": 13,
+   "dims": [
+    5,
+    3,
+    2
+   ],
+   "c": 3,
+   "kappa": {
+    "2": 2,
+    "3": 3
+   },
+   "arity": {
+    "2": 10,
+    "3": 6
+   },
+   "refused": null,
+   "items": 98987,
+   "D1_label_registers": 150,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 13,
+      "a": 3,
+      "d": 2,
+      "kappa": 2,
+      "M": 10,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 10,
+     "expected": 10,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEKappa",
+      "p": 13,
+      "a": 2,
+      "d": 3,
+      "kappa": 3,
+      "M": 6,
+      "stop": "power",
+      "contraction": [
+       [
+        1,
+        0,
+        10
+       ],
+       [
+        0,
+        3,
+        12
+       ]
+      ]
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 66,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 128,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 5444948,
+     "qubits": 1445,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 4.86,
+     "passed": true,
+     "seconds": 5.2
+    },
+    "3": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 3297724,
+     "qubits": 807,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 3.05,
+     "passed": true,
+     "seconds": 3.4
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 41378508,
+    "ccx": 10427708,
+    "qubits": 7765,
+    "qft_calls": 990,
+    "oracle_calls": 180,
+    "add_product": 13420,
+    "add_scaled": 8302,
+    "sources": {
+     "1": 1,
+     "2": 10,
+     "3": 60
+    },
+    "b": 4,
+    "n_cover": 10,
+    "m": 5,
+    "by_component_gates": {
+     "bch_merge_grade2": 874340,
+     "bch_merge_grade3": 11264520,
+     "final_qft": 0,
+     "instrument": 118800,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 4310208,
+     "sde_grade3": 18902800,
+     "source_evaluation": 2837520,
+     "source_qft": 0,
+     "witness_control_grade2": 260400,
+     "witness_control_grade3": 2809920
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 560,
+     "bch_merge_grade3": 6600,
+     "final_qft": 0,
+     "instrument": 150,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 1712,
+     "sde_grade3": 7920,
+     "source_evaluation": 3600,
+     "source_qft": 0,
+     "witness_control_grade2": 100,
+     "witness_control_grade3": 1080
+    }
+   },
+   "rss_mb": 277.5,
+   "seconds": 9.3
+  },
+  {
+   "config": "n5_f7",
+   "p": 7,
+   "dims": [
+    5,
+    3,
+    2,
+    1
+   ],
+   "c": 4,
+   "kappa": {
+    "2": 2,
+    "3": 3,
+    "4": 2
+   },
+   "arity": {
+    "2": 10,
+    "3": 6,
+    "4": 3
+   },
+   "refused": null,
+   "items": 181231,
+   "D1_label_registers": 330,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 7,
+      "a": 3,
+      "d": 2,
+      "kappa": 2,
+      "M": 10,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 10,
+     "expected": 10,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEKappa",
+      "p": 7,
+      "a": 2,
+      "d": 3,
+      "kappa": 3,
+      "M": 6,
+      "stop": "power",
+      "contraction": [
+       [
+        1,
+        0,
+        5
+       ],
+       [
+        0,
+        2,
+        6
+       ]
+      ]
+     }
+    },
+    "4": {
+     "occurrences": 60,
+     "expected": 60,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 7,
+      "a": 1,
+      "d": 4,
+      "kappa": 2,
+      "M": 3,
+      "stop": null,
+      "contraction": null
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 66,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 128,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "4": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 174,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 2725160,
+     "qubits": 1111,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 2.06,
+     "passed": true,
+     "seconds": 2.3
+    },
+    "3": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 1648452,
+     "qubits": 616,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 1.28,
+     "passed": true,
+     "seconds": 1.5
+    },
+    "4": {
+     "mode": "U alone, all label tuples",
+     "inputs": 343,
+     "gates": 177454,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 0.1
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 83492540,
+    "ccx": 20079212,
+    "qubits": 20566,
+    "qft_calls": 3330,
+    "oracle_calls": 720,
+    "add_product": 43164,
+    "add_scaled": 34642,
+    "sources": {
+     "1": 1,
+     "2": 10,
+     "3": 60,
+     "4": 180
+    },
+    "b": 3,
+    "n_cover": 11,
+    "m": 5,
+    "by_component_gates": {
+     "bch_merge_grade2": 526820,
+     "bch_merge_grade3": 6763920,
+     "bch_merge_grade4": 28354140,
+     "final_qft": 0,
+     "instrument": 163680,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 2043940,
+     "sde_grade3": 8054520,
+     "sde_grade4": 21294480,
+     "source_evaluation": 7809120,
+     "source_qft": 0,
+     "witness_control_grade2": 154400,
+     "witness_control_grade3": 1666080,
+     "witness_control_grade4": 6661440
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 560,
+     "bch_merge_grade3": 6600,
+     "bch_merge_grade4": 27000,
+     "final_qft": 0,
+     "instrument": 330,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 1376,
+     "sde_grade3": 5840,
+     "sde_grade4": 14760,
+     "source_evaluation": 15840,
+     "source_qft": 0,
+     "witness_control_grade2": 100,
+     "witness_control_grade3": 1080,
+     "witness_control_grade4": 4320
+    }
+   },
+   "rss_mb": 277.5,
+   "seconds": 8.1
+  },
+  {
+   "config": "n5_f41",
+   "p": 41,
+   "dims": [
+    5,
+    3,
+    2,
+    1
+   ],
+   "c": 4,
+   "kappa": {
+    "2": 2,
+    "3": 1,
+    "4": 4
+   },
+   "arity": {
+    "2": 10,
+    "3": 3,
+    "4": 3
+   },
+   "refused": null,
+   "items": 276031,
+   "D1_label_registers": 180,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 41,
+      "a": 3,
+      "d": 2,
+      "kappa": 2,
+      "M": 10,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 10,
+     "expected": 10,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDE",
+      "p": 41,
+      "a": 2,
+      "d": 3,
+      "kappa": 1,
+      "M": 3,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "4": {
+     "occurrences": 30,
+     "expected": 30,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEKappa",
+      "p": 41,
+      "a": 1,
+      "d": 4,
+      "kappa": 4,
+      "M": 3,
+      "stop": "power",
+      "contraction": [
+       [
+        1,
+        27,
+        39,
+        13
+       ],
+       [
+        0,
+        5,
+        1,
+        37
+       ]
+      ]
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 66,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 6
+     },
+     "prove_controlled_merge": {
+      "macros": 128,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "4": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 174,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 15134004,
+     "qubits": 2138,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 13.83,
+     "passed": true,
+     "seconds": 14.9
+    },
+    "3": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 2942320,
+     "qubits": 475,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 2.55,
+     "passed": true,
+     "seconds": 2.8
+    },
+    "4": {
+     "mode": "U alone, all label tuples",
+     "inputs": 68921,
+     "gates": 1433630,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 2.6
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 204993304,
+    "ccx": 54385484,
+    "qubits": 20528,
+    "qft_calls": 1740,
+    "oracle_calls": 360,
+    "add_product": 31976,
+    "add_scaled": 18212,
+    "sources": {
+     "1": 1,
+     "2": 10,
+     "3": 30,
+     "4": 90
+    },
+    "b": 6,
+    "n_cover": 11,
+    "m": 5,
+    "by_component_gates": {
+     "bch_merge_grade2": 1828080,
+     "bch_merge_grade3": 11820720,
+     "bch_merge_grade4": 49649580,
+     "final_qft": 0,
+     "instrument": 286200,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 12752724,
+     "sde_grade3": 14617600,
+     "sde_grade4": 86017800,
+     "source_evaluation": 12547800,
+     "source_qft": 0,
+     "witness_control_grade2": 553200,
+     "witness_control_grade3": 2984880,
+     "witness_control_grade4": 11934720
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 560,
+     "bch_merge_grade3": 3300,
+     "bch_merge_grade4": 13500,
+     "final_qft": 0,
+     "instrument": 180,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 2368,
+     "sde_grade3": 2700,
+     "sde_grade4": 16860,
+     "source_evaluation": 7920,
+     "source_qft": 0,
+     "witness_control_grade2": 100,
+     "witness_control_grade3": 540,
+     "witness_control_grade4": 2160
+    }
+   },
+   "rss_mb": 524.6,
+   "seconds": 24.7
+  },
+  {
+   "config": "n5_f13",
+   "p": 13,
+   "dims": [
+    5,
+    3,
+    2,
+    1
+   ],
+   "c": 4,
+   "kappa": {
+    "2": 2,
+    "3": 3,
+    "4": 4
+   },
+   "arity": {
+    "2": 10,
+    "3": 6,
+    "4": 3
+   },
+   "refused": "p = 13 lies in E_2(4): no two-level contraction",
+   "seconds": 0.2
+  },
+  {
+   "config": "n5_f5",
+   "p": 5,
+   "dims": [
+    5,
+    3,
+    2,
+    1
+   ],
+   "c": 4,
+   "kappa": {
+    "2": 2,
+    "3": 1,
+    "4": 4
+   },
+   "arity": {
+    "2": 10,
+    "3": 3,
+    "4": 3
+   },
+   "refused": "p = 5 lies in E_2(4): no two-level contraction",
+   "seconds": 0.2
+  },
+  {
+   "config": "n6_f7",
+   "p": 7,
+   "dims": [
+    6,
+    4,
+    3,
+    2,
+    1
+   ],
+   "c": 5,
+   "kappa": {
+    "2": 2,
+    "3": 3,
+    "4": 2,
+    "5": 1
+   },
+   "arity": {
+    "2": 15,
+    "3": 10,
+    "4": 6,
+    "5": 2
+   },
+   "refused": null,
+   "items": 2157766,
+   "D1_label_registers": 4110,
+   "D1_labels_control_only_after_qft_dg": true,
+   "D1_oracle_outputs_written_once_never_touched": true,
+   "S5_structure": {
+    "garbage_never_touched_again": true,
+    "single_measurement_at_end": true,
+    "measured_register_is_root_Q": true
+   },
+   "D2c_blocks": {
+    "2": {
+     "occurrences": 1,
+     "expected": 1,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 7,
+      "a": 4,
+      "d": 2,
+      "kappa": 2,
+      "M": 15,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "3": {
+     "occurrences": 15,
+     "expected": 15,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEKappa",
+      "p": 7,
+      "a": 3,
+      "d": 3,
+      "kappa": 3,
+      "M": 10,
+      "stop": "power",
+      "contraction": [
+       [
+        1,
+        0,
+        5
+       ],
+       [
+        0,
+        2,
+        6
+       ]
+      ]
+     }
+    },
+    "4": {
+     "occurrences": 150,
+     "expected": 150,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDEK2",
+      "p": 7,
+      "a": 2,
+      "d": 4,
+      "kappa": 2,
+      "M": 6,
+      "stop": null,
+      "contraction": null
+     }
+    },
+    "5": {
+     "occurrences": 900,
+     "expected": 900,
+     "all_equal_remap_of_block_prog_injective": true,
+     "roles_ok": true,
+     "U_equals_remap_of_sde_prog_injective": true,
+     "sde": {
+      "class": "CoherentSDE",
+      "p": 7,
+      "a": 1,
+      "d": 5,
+      "kappa": 1,
+      "M": 2,
+      "stop": null,
+      "contraction": null
+     }
+    }
+   },
+   "D2b_blocks": {
+    "2": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 84,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "3": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 174,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "4": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 0
+     },
+     "prove_controlled_merge": {
+      "macros": 260,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    },
+    "5": {
+     "block_structure": {
+      "sde_never_writes_labels_or_Q_or_children": true,
+      "child_merges_local_footprint": true,
+      "merge_workspace_wires_outside_sde_workspace": 189
+     },
+     "prove_controlled_merge": {
+      "macros": 366,
+      "x_equals_bch_of_minus_delta_s_sigma_q": true,
+      "workspace_zero": true,
+      "s_and_q_unchanged": true,
+      "never_writes_labels_S_Q": true,
+      "proved": true
+     },
+     "prove_seconds": 0.0,
+     "children_equal_child0_under_renaming": true
+    }
+   },
+   "SIM": {
+    "2": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 5225210,
+     "qubits": 2004,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 5.67,
+     "passed": true,
+     "seconds": 6.2
+    },
+    "3": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 3748806,
+     "qubits": 1259,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 3.72,
+     "passed": true,
+     "seconds": 4.1
+    },
+    "4": {
+     "mode": "whole block, 192 sampled inputs",
+     "inputs": 192,
+     "gates": 2735578,
+     "qubits": 729,
+     "labels_unchanged": true,
+     "q_unchanged": true,
+     "x_equals_bch_with_coherent_witness": true,
+     "witness_and_workspace_clean": true,
+     "outputs_canonical": true,
+     "sim_seconds": 2.79,
+     "passed": true,
+     "seconds": 3.1
+    },
+    "5": {
+     "mode": "U alone, all label tuples",
+     "inputs": 49,
+     "gates": 50148,
+     "witness_equals_canonical": true,
+     "witness_nonzero": true,
+     "equation_holds": true,
+     "labels_restored": true,
+     "workspace_clean": true,
+     "seconds": 0.1
+    }
+   },
+   "CNT": {
+    "gates_excl_oracle": 1474970960,
+    "ccx": 354593276,
+    "qubits": 299922,
+    "qft_calls": 52632,
+    "oracle_calls": 9000,
+    "add_product": 753044,
+    "add_scaled": 641896,
+    "sources": {
+     "1": 1,
+     "2": 15,
+     "3": 150,
+     "4": 900,
+     "5": 1800
+    },
+    "b": 3,
+    "n_cover": 16,
+    "m": 6,
+    "by_component_gates": {
+     "bch_merge_grade2": 1033950,
+     "bch_merge_grade3": 23777250,
+     "bch_merge_grade4": 222405300,
+     "bch_merge_grade5": 668966400,
+     "final_qft": 0,
+     "instrument": 2038560,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 3913340,
+     "sde_grade3": 27363240,
+     "sde_grade4": 146286600,
+     "sde_grade5": 90266400,
+     "source_evaluation": 141984000,
+     "source_qft": 0,
+     "witness_control_grade2": 277920,
+     "witness_control_grade3": 5091600,
+     "witness_control_grade4": 41644800,
+     "witness_control_grade5": 99921600
+    },
+    "by_component_macros": {
+     "bch_merge_grade2": 1080,
+     "bch_merge_grade3": 22800,
+     "bch_merge_grade4": 207000,
+     "bch_merge_grade5": 594000,
+     "final_qft": 0,
+     "instrument": 4110,
+     "instrument_qft": 0,
+     "oracle": 0,
+     "q_prep_qft": 0,
+     "sde_grade2": 2610,
+     "sde_grade3": 19260,
+     "sde_grade4": 99600,
+     "sde_grade5": 61200,
+     "source_evaluation": 288000,
+     "source_qft": 0,
+     "witness_control_grade2": 180,
+     "witness_control_grade3": 3300,
+     "witness_control_grade4": 27000,
+     "witness_control_grade5": 64800
+    }
+   },
+   "rss_mb": 1051.8,
+   "seconds": 893.2
+  }
+ ]
+}

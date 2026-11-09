@@ -1,0 +1,11 @@
+brute p=13 kappa=2 a=2 E=3 M=4 (status, solvable)->count {('ok', True): 34, ('fail:good-empty', False): 3, ('budget', True): 3}
+brute p=29 kappa=2 a=2 E=3 M=4 (status, solvable)->count {('budget', True): 1, ('ok', True): 38, ('fail:good-empty', False): 1}
+brute p=13 kappa=2 a=3 E=3 M=7 (status, solvable)->count {('ok', True): 24, ('budget', True): 1}
+brute p=29 kappa=2 a=3 E=3 M=7 (status, solvable)->count {('ok', True): 10}
+brute p=37 kappa=2 a=3 E=4 M=5 (status, solvable)->count {('ok', True): 15}
+brute p=13 kappa=3 a=2 E=3 M=4 (status, solvable)->count {('fail:good-empty', False): 14, ('ok', True): 23, ('budget', True): 2, ('budget', False): 1}
+brute p=31 kappa=3 a=2 E=3 M=4 (status, solvable)->count {('budget', False): 2, ('ok', True): 25, ('fail:good-empty', False): 12, ('budget', True): 1}
+brute p=37 kappa=3 a=3 E=3 M=7 (status, solvable)->count {('ok', True): 10}
+brute p=61 kappa=3 a=2 E=3 M=4 (status, solvable)->count {('ok', True): 26, ('fail:good-empty', False): 3, ('budget', True): 1}
+brute p=13 kappa=2 a=4 E=3 M=9 (status, solvable)->count {('ok', True): 5, ('budget', True): 1}
+witness-vs-exhaustive contradictions: 0

@@ -1,5 +1,11 @@
 # Weak Siegel Source: Conversion And Stabilization Audit
 
+**2026-10-31 scope/priority correction:** `SURFACE_SOURCE_RECONCILIATION.md`
+recovers the prior prime-only eight-copy construction and retained full PPAV
+paper. The specific failed complement and the genus-two Cayley selector do
+not exclude or replace that distinct dimension16 route. Read the new note
+for the current input promises, imported model contracts and classical gates.
+
 **Later constructive refinement (same date):**
 [SIEGEL_CAYLEY_REPOLARIZATION.md](SIEGEL_CAYLEY_REPOLARIZATION.md) gives a
 genus-two plus-quotient construction and weak-mask-independent kernel and

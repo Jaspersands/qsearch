@@ -1,0 +1,11 @@
+n5(F_11) H=trivial [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [6, 8968, 55]/[9, 9216, 27648], 64.78s
+n5(F_11) H=<e2> non-normal [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [6, 8968, 60]/[9, 9216, 27648], 126.26s
+n5(F_11) H=<e1> non-normal [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [6, 8968, 60]/[9, 9216, 27648], 52.84s
+n5(F_11) H=<e1+e3> non-normal [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [6, 8968, 60]/[9, 9216, 27648], 50.56s
+n5(F_11) H=<e2+e4> non-normal [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [6, 8968, 60]/[9, 9216, 27648], 60.28s
+n5(F_11) H=<e3> non-normal [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [0, 8968, 60]/[9, 9216, 27648], 378.68s
+n5(F_11) H=Z(G) = <e5> [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [0, 6851, 0]/[9, 9216, 27648], 39.56s
+n5(F_11) H=<e2,e5> non-normal [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [0, 6855, 0]/[9, 9216, 27648], 243.17s
+n5(F_11) H=<e1+e2+e5> [rule_w] seed 20261102: recovered, laws True, states True, readout True, queries 7077888 (charged 7077888), arities [1024, 3, 64], full solver runs [6, 8968, 60]/[9, 9216, 27648], 58.59s
+{"status": "exact_small_instance_simulation_not_a_coherent_receiver", "coherent_receiver_implemented": false, "asymptotic_cost_tested": false, "count": "rule_w", "groups": ["n5_11"], "runs": 9, "aborted": 0, "all_recovered": true, "all_laws_uniform": true, "all_stage_outputs_equal_rho_H_d": true, "all_readout_laws_uniform_on_h_perp": true, "all_queries_equal_charged": true, "all_block_sizes_equal_charged_arity": true, "seconds": 1092.5}
+exit 0

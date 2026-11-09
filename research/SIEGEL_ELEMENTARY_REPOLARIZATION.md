@@ -1,5 +1,11 @@
 # Elementary Action Lifts And The Remaining Polarization-Model Gap
 
+**2026-10-31 scope/priority correction:** `SURFACE_SOURCE_RECONCILIATION.md`
+recovers the prior prime-only eight-copy construction and retained full PPAV
+paper. The specific failed complement and the genus-two Cayley selector do
+not exclude or replace that distinct dimension16 route. Read the new note
+for the current input promises, imported model contracts and classical gates.
+
 2026-10-23. Constructive deduction, independent proof/prior-art review pending.
 This is not a completed isogeny HSP oracle or a new cryptanalytic algorithm.
 The tests are exact quaternion identities, not geometric or quantum execution.

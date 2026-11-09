@@ -1,0 +1,916 @@
+[
+ {
+  "header": {
+   "group": "free23_5",
+   "p": 5,
+   "black_box_kind": "bch",
+   "s": 2,
+   "class_bound": 3,
+   "free_rank": 5,
+   "order_G": 3125,
+   "chart_dim": 5,
+   "kernel": {
+    "samples": 8,
+    "tries": 1,
+    "kernel_dim": 0,
+    "las_vegas_rejected_vectors": 0
+   },
+   "kernel_equals_true_fibre": true,
+   "law_mass_outside_true_K_perp": 0.0,
+   "pullback_multiplications": 179104,
+   "pullback_points": 3125,
+   "hiding_function_built_only_after_chart": true,
+   "chart_public_checks": {
+    "kernel_is_ideal": true,
+    "chart_jacobi": true,
+    "chart_class": 3,
+    "chart_exp_homomorphism": true,
+    "homomorphism_check": "exhaustive_9765625_pairs"
+   },
+   "chart_exp_bijective_onto_G": true,
+   "chart_seconds": 120.57
+  },
+  "runs": [
+   {
+    "instance": "free23_5 H=trivial",
+    "dim_h": 0,
+    "normal": true,
+    "meets_center_trivially": true,
+    "contains_center": false,
+    "order_H": 1,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 2325,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 25,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 25,
+       "statistic": 19.80418113425926,
+       "p_value": 0.7078557224672659
+      },
+      "blocks": 9216,
+      "zero_column_exits": 1043,
+      "full_solver_runs": 8173,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 3,
+      "witness_support_sizes": {
+       "1": 1043,
+       "2": 3662,
+       "3": 4511
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 125,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 125,
+       "statistic": 136.2406684027778,
+       "p_value": 0.21327833621239758
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "trivial",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 1,
+     "lifted_order": 1,
+     "subgroup_check": "full",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 5.14
+   },
+   {
+    "instance": "free23_5 H=<g0>",
+    "dim_h": 1,
+    "normal": false,
+    "meets_center_trivially": true,
+    "contains_center": false,
+    "order_H": 5,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 2325,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 25,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 25,
+       "statistic": 19.80418113425926,
+       "p_value": 0.7078557224672659
+      },
+      "blocks": 9216,
+      "zero_column_exits": 1043,
+      "full_solver_runs": 8173,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 3,
+      "witness_support_sizes": {
+       "1": 1043,
+       "2": 3662,
+       "3": 4511
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 125,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 125,
+       "statistic": 135.7523871527778,
+       "p_value": 0.22185323643669866
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "<g0>",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 5,
+     "lifted_order": 5,
+     "subgroup_check": "full",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 3.36
+   },
+   {
+    "instance": "free23_5 H=<g1>",
+    "dim_h": 1,
+    "normal": false,
+    "meets_center_trivially": true,
+    "contains_center": false,
+    "order_H": 5,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 2325,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 25,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 25,
+       "statistic": 19.80418113425926,
+       "p_value": 0.7078557224672659
+      },
+      "blocks": 9216,
+      "zero_column_exits": 1043,
+      "full_solver_runs": 8173,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 3,
+      "witness_support_sizes": {
+       "1": 1043,
+       "2": 3662,
+       "3": 4511
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 125,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 125,
+       "statistic": 135.7523871527778,
+       "p_value": 0.22185323643669866
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "<g1>",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 5,
+     "lifted_order": 5,
+     "subgroup_check": "full",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 2.98
+   },
+   {
+    "instance": "free23_5 H=<g0 g1>",
+    "dim_h": 1,
+    "normal": false,
+    "meets_center_trivially": true,
+    "contains_center": false,
+    "order_H": 5,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 2325,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 25,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 25,
+       "statistic": 19.80418113425926,
+       "p_value": 0.7078557224672659
+      },
+      "blocks": 9216,
+      "zero_column_exits": 1043,
+      "full_solver_runs": 8173,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 3,
+      "witness_support_sizes": {
+       "1": 1043,
+       "2": 3662,
+       "3": 4511
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 125,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 125,
+       "statistic": 135.7523871527778,
+       "p_value": 0.22185323643669866
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "<g0 g1>",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 5,
+     "lifted_order": 5,
+     "subgroup_check": "full",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 3.53
+   },
+   {
+    "instance": "free23_5 H=<[g0,g1]>",
+    "dim_h": 1,
+    "normal": false,
+    "meets_center_trivially": true,
+    "contains_center": false,
+    "order_H": 5,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 2325,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 25,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 25,
+       "statistic": 19.80418113425926,
+       "p_value": 0.7078557224672659
+      },
+      "blocks": 9216,
+      "zero_column_exits": 1043,
+      "full_solver_runs": 8173,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 3,
+      "witness_support_sizes": {
+       "1": 1043,
+       "2": 3662,
+       "3": 4511
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 25,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 25,
+       "statistic": 19.026041666666668,
+       "p_value": 0.7505993683372131
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "<[g0,g1]>",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 5,
+     "lifted_order": 25,
+     "subgroup_check": "full",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 6.7
+   },
+   {
+    "instance": "free23_5 H=<g1, [g0,g1]>",
+    "dim_h": 3,
+    "normal": false,
+    "meets_center_trivially": false,
+    "contains_center": false,
+    "order_H": 125,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 16,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 5,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 5,
+       "statistic": 3.0456452546296298,
+       "p_value": 0.5502160485069725
+      },
+      "blocks": 9216,
+      "zero_column_exits": 4565,
+      "full_solver_runs": 4651,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 2,
+      "witness_support_sizes": {
+       "1": 4565,
+       "2": 4651
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 5,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 5,
+       "statistic": 4.421006944444445,
+       "p_value": 0.35201703754104713
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "<g1, [g0,g1]>",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 125,
+     "lifted_order": 15625,
+     "subgroup_check": "sampled_20000_pairs",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 3.3
+   },
+   {
+    "instance": "free23_5 H=<g0, [g0,g1]>",
+    "dim_h": 3,
+    "normal": false,
+    "meets_center_trivially": false,
+    "contains_center": false,
+    "order_H": 125,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 16,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 5,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 5,
+       "statistic": 3.0456452546296298,
+       "p_value": 0.5502160485069725
+      },
+      "blocks": 9216,
+      "zero_column_exits": 4565,
+      "full_solver_runs": 4651,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 2,
+      "witness_support_sizes": {
+       "1": 4565,
+       "2": 4651
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 5,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 5,
+       "statistic": 4.421006944444445,
+       "p_value": 0.35201703754104713
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "<g0, [g0,g1]>",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 125,
+     "lifted_order": 15625,
+     "subgroup_check": "sampled_20000_pairs",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 3.82
+   },
+   {
+    "instance": "free23_5 H=<g0 g1 g1>",
+    "dim_h": 1,
+    "normal": false,
+    "meets_center_trivially": true,
+    "contains_center": false,
+    "order_H": 5,
+    "recovered_equals_log_H": true,
+    "top_sources": 27648,
+    "oracle_queries": 82944,
+    "charged_queries": 82944,
+    "queries_equal_charged": true,
+    "readout_samples": 9,
+    "every_stage_output_equals_rho_H_d": true,
+    "top_source_equals_rho_H_c": true,
+    "distinct_stage_outputs": {
+     "1": 1,
+     "2": 1
+    },
+    "readout_law_uniform_on_h_perp": true,
+    "channel_calls": 9225,
+    "channel_outputs_computed": 2325,
+    "stages": {
+     "3": {
+      "schedule": "linear",
+      "kappa": 1,
+      "g": 2,
+      "charged_arity": 3,
+      "paper_B_d": 531441,
+      "block_sizes": [
+       3
+      ],
+      "label_support_size": 25,
+      "sources_measured": 27648,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 27648,
+      "chi_square": {
+       "n": 27648,
+       "k": 25,
+       "statistic": 19.80418113425926,
+       "p_value": 0.7078557224672659
+      },
+      "blocks": 9216,
+      "zero_column_exits": 1043,
+      "full_solver_runs": 8173,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 3,
+      "witness_support_sizes": {
+       "1": 1043,
+       "2": 3662,
+       "3": 4511
+      }
+     },
+     "2": {
+      "schedule": "schedule1",
+      "kappa": 2,
+      "g": 3,
+      "charged_arity": 1024,
+      "paper_B_d": 1024,
+      "block_sizes": [
+       1024
+      ],
+      "label_support_size": 125,
+      "sources_measured": 9216,
+      "distinct_states_measured": 1,
+      "every_measured_law_uniform_on_K_perp": true,
+      "observed_labels_in_support": true,
+      "labels_observed": 9216,
+      "chi_square": {
+       "n": 9216,
+       "k": 125,
+       "statistic": 135.7523871527778,
+       "p_value": 0.22185323643669866
+      },
+      "blocks": 9,
+      "zero_column_exits": 9,
+      "full_solver_runs": 0,
+      "diagnostic_nonzero_solves": 0,
+      "theorem11_calls": 0,
+      "restarts": 0,
+      "schedule2_calls": 0,
+      "max_columns_consumed": 1,
+      "witness_support_sizes": {
+       "1": 9
+      }
+     }
+    },
+    "group": "free23_5",
+    "hidden": "<g0 g1 g1>",
+    "source": {
+     "mode": "level_set",
+     "oracle_points_evaluated": 3125,
+     "level_set_size": 5,
+     "lifted_order": 5,
+     "subgroup_check": "full",
+     "coset_check": "sampled_2000_pairs"
+    },
+    "oracle_partition_matches_truth": true,
+    "blackbox_subgroup_recovered": true,
+    "seconds": 2.81
+   }
+  ],
+  "negative_controls": {
+   "naive_pullback": {
+    "fibre_sizes": [
+     1
+    ],
+    "kernel": {
+     "samples": 8,
+     "tries": 1,
+     "kernel_dim": 0,
+     "las_vegas_rejected_vectors": 0
+    },
+    "checks": {
+     "kernel_is_ideal": true,
+     "chart_jacobi": true,
+     "chart_class": 3,
+     "chart_exp_homomorphism": false,
+     "homomorphism_check": "exhaustive_9765625_pairs"
+    }
+   },
+   "one_sample": {
+    "kernel": {
+     "samples": 1,
+     "tries": 1,
+     "kernel_dim": 4,
+     "las_vegas_rejected_vectors": 4
+    },
+    "caught_by_las_vegas_check": true
+   },
+   "strict_subkernel": {
+    "applicable": false,
+    "true_kernel_dim": 0,
+    "subkernel_dim": 0
+   }
+  }
+ }
+]

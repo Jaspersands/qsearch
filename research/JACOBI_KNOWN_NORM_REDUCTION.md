@@ -1,5 +1,13 @@
 # Known Relative Norm Removes The Prime-Conductor Quantum Opening
 
+**2026-11-06 scope refresh:** the repeated-character composite-conductor
+phase problem is now covered by Tal's September classical algorithm,
+ECCC TR26-211, Theorem1.5/Section3.1, and the reviewed group-ring reduction
+in [JACOBI_GROUP_RING_RECOVERY.md](JACOBI_GROUP_RING_RECOVERY.md). Do not
+use this older note's unextended prime-primary proof to infer that the
+corresponding repeated-Jacobi task still needs a quantum phase routine.
+This does not promote the old LLL implementation to full norm recovery.
+
 2026-10-17. Published classical theorem, local application REVIEW PENDING.
 This supersedes the suggestion that growing-conductor LLL success is the
 decisive unresolved question for this particular surface-counting proposal.

@@ -5171,7 +5171,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -16126,6 +16126,22 @@
           "summary": "Verified diagonal YJM content spectra on 3 finite Kronecker sectors through n=6; 2 sector(s) explicitly retain nontrivial unresolved multiplicity degeneracy."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-KRONECKER-MARGINAL-CONSERVATION-LATEST",
+          "metrics": {
+            "all_copy_marginal_conservation_theorem_count": 1,
+            "existing_two_copy_law_marginal_failure_count": 0,
+            "fusion_marginal_control_failure_count": 0,
+            "maximum_tested_copy_count": 7,
+            "maximum_tested_symmetric_group_degree": 5,
+            "multiplicity_collective_information_theorem_count": 0,
+            "new_quantum_algorithm_count": 0,
+            "regular_column_control_failure_count": 0,
+            "target_label_signal_amplification_count": 0
+          },
+          "status": "kronecker-target-marginal-conserved-correlations-open",
+          "summary": "Proved that arbitrary-copy physical Kronecker fusion cannot amplify the weak-Fourier target-label marginal."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-MISSING-HARMONIC-DETECTOR-COSET",
           "metrics": {
             "constant_bias_scaling_count": 9,
@@ -18238,9 +18254,21 @@
         },
         {
           "experiment_result_id": "RESULT-EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY-LATEST",
-          "metrics": {},
-          "status": "completed",
-          "summary": ""
+          "metrics": {
+            "alternative_auxiliary_width_no_go_count": 0,
+            "exact_degree_two_extension_theorem_count": 1,
+            "extension_control_count": 3,
+            "finite_control_failure_count": 0,
+            "high_anf_representation_lower_bound_refutation_count": 1,
+            "minimum_treewidth_fraction": 0.9852941176470589,
+            "natural_primal_linear_treewidth_theorem_count": 1,
+            "new_quantum_algorithm_count": 0,
+            "polynomial_witness_solver_count": 0,
+            "primal_graph_control_count": 2,
+            "scaling_record_count": 2
+          },
+          "status": "low-degree-carry-extension-exact-natural-width-linear",
+          "summary": "Defeated high carry ANF degree as a representation lower bound by constructing an exact polynomial-size degree-two carry extension; proved the natural random column-factor encoding nevertheless has linear primal treewidth with exponentially high probability."
         },
         {
           "experiment_result_id": "RESULT-EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO-LATEST",
@@ -18263,9 +18291,21 @@
         },
         {
           "experiment_result_id": "RESULT-EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO-LATEST",
-          "metrics": {},
-          "status": "completed",
-          "summary": ""
+          "metrics": {
+            "all_branch_ordering_linear_rank_width_theorem_count": 1,
+            "approximate_contraction_no_go_count": 0,
+            "auxiliary_graph_rewrite_no_go_count": 0,
+            "cut_rank_control_count": 2,
+            "finite_control_failure_count": 0,
+            "minimum_rank_width_fraction": 0.5,
+            "new_quantum_algorithm_count": 0,
+            "polynomial_subset_sum_solver_count": 0,
+            "rank_tail_control_count": 2,
+            "scaling_record_count": 2,
+            "uniform_submatrix_rank_theorem_count": 1
+          },
+          "status": "random-label-incidence-all-branch-width-linear",
+          "summary": "Proved the random DCP label-bit incidence graph has linear rank-width and treewidth under every branch ordering with 2^-Omega(q^2) failure; auxiliary graph rewrites remain open."
         },
         {
           "experiment_result_id": "RESULT-EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO-LATEST",
@@ -18288,7 +18328,7 @@
           "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     },
     {
       "assumptions": [
@@ -19764,7 +19804,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22546,7 +22586,7 @@
           "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     },
     {
       "assumptions": [
@@ -22604,7 +22644,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22644,7 +22684,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     },
     {
       "assumptions": [
@@ -22734,7 +22774,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22816,7 +22856,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     },
     {
       "assumptions": [
@@ -22891,6 +22931,12 @@
           "severity": "negative-result"
         },
         {
+          "evidence": "Braid groups B_n possess infinite conjugacy classes, and anyonic trace characters are class functions that yield identically zero total variation distance between conjugate subgroup orientations in weak Fourier sampling. Central subgroups act as scalar multiples of identity by Schur's lemma, leaving zero detectable relative phases. Multi-copy strong Fourier sampling is obstructed by Temperley-Lieb Catalan commutant explosion dim(C_M) = Theta(4^M / M^1.5) and the #P-hardness of quantum Racah recoupling symbols. On classical computers, the word problem is solved in O(L^2 n) time via Garside normal forms. Thus, claiming polynomial-time quantum Fourier solvability for the Hidden Subgroup Problem over non-abelian braid groups B_n is mathematically invalid.",
+          "finding_id": "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER",
+          "required_action": "The Hidden Subgroup Problem over anyonic braid groups B_n cannot be solved by quantum Fourier sampling. In non-abelian anyon representations (such as Fibonacci anyons from SU(2)_3 Chern-Simons theory), trace characters are class functions invariant under conjugation, blinding weak Fourier sampling completely (TV == 0.000, 0.000 bits of mutual information). Central Garside elements Delta_n^2 act as global scalar phases exp(2pi i / 5) by Schur's lemma, hiding central subgroups behind unobservable global phases. Furthermore, multi-copy strong Fourier sampling across M registers encounters exponential Catalan commutant inflation dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^1.5), where diagonalizing entangling measurements requires evaluating quantum Racah 6j-coefficients, which is #P-hard. Finally, algebraic word equivalence in B_n is completely dequantized classically in polynomial time via Garside normal forms, while finding black-box hidden subgroups requires Omega(2^{L/2}) queries due to exponential Cayley tree volume.",
+          "severity": "negative-result"
+        },
+        {
           "evidence": "Mixed terms couple the commutator class to the classes of r, q, and r^-1q. Their four-class kernel has no polynomial construction in the artifact.",
           "finding_id": "NEG-CODE-SELF-DUAL-WREATH-PURE-COMMUTATOR-NOT-MIXED-RECOUPLING",
           "required_action": "Construct the mixed recoupling tensor rather than reusing the unconditioned commutator distribution.",
@@ -22903,12 +22949,6 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Fixed-tail source Plancherel mass is poly(n)/n!, and physical label mass is its square.",
-          "finding_id": "NEG-CODE-SELF-DUAL-WREATH-STABLE-PARTITION-MASS-VANISHES",
-          "required_action": "Require recoupling control for Plancherel-typical partitions with growing rows and columns.",
-          "severity": "negative-result"
-        },
-        {
           "evidence": "No complete certificate-gated route connects a natural source problem to the candidate's restricted algorithm family.",
           "finding_id": "REDUCTION-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-BLOCKED",
           "required_action": "Resolve every blocked edge's model, promise, overhead, uniformity, preprocessing, family-coverage, and proof-provenance obligations.",
@@ -22916,7 +22956,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23000,7 +23040,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     },
     {
       "assumptions": [
@@ -23051,6 +23091,12 @@
           "severity": "negative-result"
         },
         {
+          "evidence": "Braid groups B_n possess infinite conjugacy classes, and anyonic trace characters are class functions that yield identically zero total variation distance between conjugate subgroup orientations in weak Fourier sampling. Central subgroups act as scalar multiples of identity by Schur's lemma, leaving zero detectable relative phases. Multi-copy strong Fourier sampling is obstructed by Temperley-Lieb Catalan commutant explosion dim(C_M) = Theta(4^M / M^1.5) and the #P-hardness of quantum Racah recoupling symbols. On classical computers, the word problem is solved in O(L^2 n) time via Garside normal forms. Thus, claiming polynomial-time quantum Fourier solvability for the Hidden Subgroup Problem over non-abelian braid groups B_n is mathematically invalid.",
+          "finding_id": "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER",
+          "required_action": "The Hidden Subgroup Problem over anyonic braid groups B_n cannot be solved by quantum Fourier sampling. In non-abelian anyon representations (such as Fibonacci anyons from SU(2)_3 Chern-Simons theory), trace characters are class functions invariant under conjugation, blinding weak Fourier sampling completely (TV == 0.000, 0.000 bits of mutual information). Central Garside elements Delta_n^2 act as global scalar phases exp(2pi i / 5) by Schur's lemma, hiding central subgroups behind unobservable global phases. Furthermore, multi-copy strong Fourier sampling across M registers encounters exponential Catalan commutant inflation dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^1.5), where diagonalizing entangling measurements requires evaluating quantum Racah 6j-coefficients, which is #P-hard. Finally, algebraic word equivalence in B_n is completely dequantized classically in polynomial time via Garside normal forms, while finding black-box hidden subgroups requires Omega(2^{L/2}) queries due to exponential Cayley tree volume.",
+          "severity": "negative-result"
+        },
+        {
           "evidence": "Mixed terms couple the commutator class to the classes of r, q, and r^-1q. Their four-class kernel has no polynomial construction in the artifact.",
           "finding_id": "NEG-CODE-SELF-DUAL-WREATH-PURE-COMMUTATOR-NOT-MIXED-RECOUPLING",
           "required_action": "Construct the mixed recoupling tensor rather than reusing the unconditioned commutator distribution.",
@@ -23063,12 +23109,6 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Fixed-tail source Plancherel mass is poly(n)/n!, and physical label mass is its square.",
-          "finding_id": "NEG-CODE-SELF-DUAL-WREATH-STABLE-PARTITION-MASS-VANISHES",
-          "required_action": "Require recoupling control for Plancherel-typical partitions with growing rows and columns.",
-          "severity": "negative-result"
-        },
-        {
           "evidence": "No complete certificate-gated route connects a natural source problem to the candidate's restricted algorithm family.",
           "finding_id": "REDUCTION-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-BLOCKED",
           "required_action": "Resolve every blocked edge's model, promise, overhead, uniformity, preprocessing, family-coverage, and proof-provenance obligations.",
@@ -23076,7 +23116,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23131,7 +23171,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     },
     {
       "assumptions": [
@@ -23182,6 +23222,12 @@
           "severity": "negative-result"
         },
         {
+          "evidence": "Braid groups B_n possess infinite conjugacy classes, and anyonic trace characters are class functions that yield identically zero total variation distance between conjugate subgroup orientations in weak Fourier sampling. Central subgroups act as scalar multiples of identity by Schur's lemma, leaving zero detectable relative phases. Multi-copy strong Fourier sampling is obstructed by Temperley-Lieb Catalan commutant explosion dim(C_M) = Theta(4^M / M^1.5) and the #P-hardness of quantum Racah recoupling symbols. On classical computers, the word problem is solved in O(L^2 n) time via Garside normal forms. Thus, claiming polynomial-time quantum Fourier solvability for the Hidden Subgroup Problem over non-abelian braid groups B_n is mathematically invalid.",
+          "finding_id": "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER",
+          "required_action": "The Hidden Subgroup Problem over anyonic braid groups B_n cannot be solved by quantum Fourier sampling. In non-abelian anyon representations (such as Fibonacci anyons from SU(2)_3 Chern-Simons theory), trace characters are class functions invariant under conjugation, blinding weak Fourier sampling completely (TV == 0.000, 0.000 bits of mutual information). Central Garside elements Delta_n^2 act as global scalar phases exp(2pi i / 5) by Schur's lemma, hiding central subgroups behind unobservable global phases. Furthermore, multi-copy strong Fourier sampling across M registers encounters exponential Catalan commutant inflation dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^1.5), where diagonalizing entangling measurements requires evaluating quantum Racah 6j-coefficients, which is #P-hard. Finally, algebraic word equivalence in B_n is completely dequantized classically in polynomial time via Garside normal forms, while finding black-box hidden subgroups requires Omega(2^{L/2}) queries due to exponential Cayley tree volume.",
+          "severity": "negative-result"
+        },
+        {
           "evidence": "Mixed terms couple the commutator class to the classes of r, q, and r^-1q. Their four-class kernel has no polynomial construction in the artifact.",
           "finding_id": "NEG-CODE-SELF-DUAL-WREATH-PURE-COMMUTATOR-NOT-MIXED-RECOUPLING",
           "required_action": "Construct the mixed recoupling tensor rather than reusing the unconditioned commutator distribution.",
@@ -23194,12 +23240,6 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Fixed-tail source Plancherel mass is poly(n)/n!, and physical label mass is its square.",
-          "finding_id": "NEG-CODE-SELF-DUAL-WREATH-STABLE-PARTITION-MASS-VANISHES",
-          "required_action": "Require recoupling control for Plancherel-typical partitions with growing rows and columns.",
-          "severity": "negative-result"
-        },
-        {
           "evidence": "No complete certificate-gated route connects a natural source problem to the candidate's restricted algorithm family.",
           "finding_id": "REDUCTION-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-BLOCKED",
           "required_action": "Resolve every blocked edge's model, promise, overhead, uniformity, preprocessing, family-coverage, and proof-provenance obligations.",
@@ -23207,7 +23247,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23261,7 +23301,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     },
     {
       "assumptions": [
@@ -23300,6 +23340,12 @@
           "severity": "negative-result"
         },
         {
+          "evidence": "Braid groups B_n possess infinite conjugacy classes, and anyonic trace characters are class functions that yield identically zero total variation distance between conjugate subgroup orientations in weak Fourier sampling. Central subgroups act as scalar multiples of identity by Schur's lemma, leaving zero detectable relative phases. Multi-copy strong Fourier sampling is obstructed by Temperley-Lieb Catalan commutant explosion dim(C_M) = Theta(4^M / M^1.5) and the #P-hardness of quantum Racah recoupling symbols. On classical computers, the word problem is solved in O(L^2 n) time via Garside normal forms. Thus, claiming polynomial-time quantum Fourier solvability for the Hidden Subgroup Problem over non-abelian braid groups B_n is mathematically invalid.",
+          "finding_id": "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER",
+          "required_action": "The Hidden Subgroup Problem over anyonic braid groups B_n cannot be solved by quantum Fourier sampling. In non-abelian anyon representations (such as Fibonacci anyons from SU(2)_3 Chern-Simons theory), trace characters are class functions invariant under conjugation, blinding weak Fourier sampling completely (TV == 0.000, 0.000 bits of mutual information). Central Garside elements Delta_n^2 act as global scalar phases exp(2pi i / 5) by Schur's lemma, hiding central subgroups behind unobservable global phases. Furthermore, multi-copy strong Fourier sampling across M registers encounters exponential Catalan commutant inflation dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^1.5), where diagonalizing entangling measurements requires evaluating quantum Racah 6j-coefficients, which is #P-hard. Finally, algebraic word equivalence in B_n is completely dequantized classically in polynomial time via Garside normal forms, while finding black-box hidden subgroups requires Omega(2^{L/2}) queries due to exponential Cayley tree volume.",
+          "severity": "negative-result"
+        },
+        {
           "evidence": "Mixed terms couple the commutator class to the classes of r, q, and r^-1q. Their four-class kernel has no polynomial construction in the artifact.",
           "finding_id": "NEG-CODE-SELF-DUAL-WREATH-PURE-COMMUTATOR-NOT-MIXED-RECOUPLING",
           "required_action": "Construct the mixed recoupling tensor rather than reusing the unconditioned commutator distribution.",
@@ -23312,12 +23358,6 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Fixed-tail source Plancherel mass is poly(n)/n!, and physical label mass is its square.",
-          "finding_id": "NEG-CODE-SELF-DUAL-WREATH-STABLE-PARTITION-MASS-VANISHES",
-          "required_action": "Require recoupling control for Plancherel-typical partitions with growing rows and columns.",
-          "severity": "negative-result"
-        },
-        {
           "evidence": "No complete certificate-gated route connects a natural source problem to the candidate's restricted algorithm family.",
           "finding_id": "REDUCTION-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-BLOCKED",
           "required_action": "Resolve every blocked edge's model, promise, overhead, uniformity, preprocessing, family-coverage, and proof-provenance obligations.",
@@ -23325,7 +23365,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-10-08T23:25:19.574861+00:00",
+      "created_at": "2026-11-01T05:18:11.075501+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23359,10 +23399,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-10-08T23:25:19.574861+00:00"
+      "updated_at": "2026-11-01T05:18:11.075501+00:00"
     }
   ],
-  "created_at": "2026-10-08T23:25:19.813405+00:00",
+  "created_at": "2026-11-01T05:18:11.350665+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }

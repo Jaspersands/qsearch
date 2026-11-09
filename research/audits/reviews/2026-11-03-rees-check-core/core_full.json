@@ -1,0 +1,354 @@
+{
+ "C10_homomorphisms": [
+  {
+   "algebra": "Heis(F_3)",
+   "cover_dim": 4,
+   "class": 2,
+   "mode": "exhaustive pairs",
+   "E_and_delta_group_homs": true,
+   "associative": true,
+   "E_Lie_hom_on_basis": true
+  },
+  {
+   "algebra": "Heis(F_5)",
+   "cover_dim": 4,
+   "class": 2,
+   "mode": "exhaustive pairs",
+   "E_and_delta_group_homs": true,
+   "associative": true,
+   "E_Lie_hom_on_basis": true
+  },
+  {
+   "algebra": "n4(F_5)",
+   "cover_dim": 7,
+   "class": 3,
+   "mode": "4000 random pairs",
+   "E_and_delta_group_homs": true,
+   "associative": true,
+   "E_Lie_hom_on_basis": true
+  },
+  {
+   "algebra": "n4(F_7)",
+   "cover_dim": 7,
+   "class": 3,
+   "mode": "4000 random pairs",
+   "E_and_delta_group_homs": true,
+   "associative": true,
+   "E_Lie_hom_on_basis": true
+  }
+ ],
+ "C1_homogenization": [
+  {
+   "algebra": "Heis(F_3)",
+   "points": [
+    1,
+    2
+   ],
+   "cover_dim": 4,
+   "subgroups": 19,
+   "ok": 19,
+   "mismatch_examples": []
+  },
+  {
+   "algebra": "Heis(F_5)",
+   "points": [
+    1,
+    2
+   ],
+   "cover_dim": 4,
+   "subgroups": 39,
+   "ok": 39,
+   "mismatch_examples": []
+  },
+  {
+   "algebra": "Heis(F_5)",
+   "points": [
+    2,
+    4
+   ],
+   "cover_dim": 4,
+   "subgroups": 39,
+   "ok": 39,
+   "mismatch_examples": []
+  },
+  {
+   "algebra": "n4(F_5)",
+   "points": [
+    1,
+    2,
+    3
+   ],
+   "cover_dim": 7,
+   "subgroups": 220,
+   "ok": 220,
+   "mismatch_examples": []
+  },
+  {
+   "algebra": "n4(F_5)",
+   "points": [
+    2,
+    3,
+    4
+   ],
+   "cover_dim": 7,
+   "subgroups": 220,
+   "ok": 220,
+   "mismatch_examples": []
+  }
+ ],
+ "C1_negative_c_minus_1_points": [
+  {
+   "algebra": "Heis(F_3)",
+   "points": [
+    1
+   ],
+   "cover_dim": 4,
+   "subgroups": 19,
+   "ok": 6,
+   "mismatch_examples": [
+    {
+     "h": [],
+     "classes": 27,
+     "index_of_Htilde": 81
+    },
+    {
+     "h": [
+      [
+       1,
+       0,
+       0
+      ]
+     ],
+     "classes": 9,
+     "index_of_Htilde": 27
+    },
+    {
+     "h": [
+      [
+       1,
+       0,
+       1
+      ]
+     ],
+     "classes": 9,
+     "index_of_Htilde": 27
+    }
+   ]
+  },
+  {
+   "algebra": "n4(F_5)",
+   "points": [
+    1,
+    2
+   ],
+   "cover_dim": 7,
+   "subgroups": 220,
+   "ok": 39,
+   "mismatch_examples": [
+    {
+     "h": [],
+     "classes": 15625,
+     "index_of_Htilde": 78125
+    },
+    {
+     "h": [
+      [
+       1,
+       0,
+       0,
+       0
+      ]
+     ],
+     "classes": 3125,
+     "index_of_Htilde": 15625
+    },
+    {
+     "h": [
+      [
+       1,
+       0,
+       0,
+       1
+      ]
+     ],
+     "classes": 3125,
+     "index_of_Htilde": 15625
+    }
+   ]
+  }
+ ],
+ "C2_single_evaluation": [
+  {
+   "algebra": "Heis(F_3)",
+   "cases": 38,
+   "agree": 38
+  },
+  {
+   "algebra": "Heis(F_5)",
+   "cases": 468,
+   "agree": 468
+  },
+  {
+   "algebra": "n4(F_5)",
+   "cases": 2640,
+   "agree": 2640
+  }
+ ],
+ "C3_instrument_descent": [
+  {
+   "algebra": "Heis(F_3)",
+   "subgroups": 19,
+   "projector_ok": true,
+   "law_ok": 19,
+   "state_ok": 19,
+   "trace_formula_ok": 19,
+   "descent_cases": 3198,
+   "descent_exact": 3198,
+   "nonwitness_cases": 6084,
+   "nonwitness_differs": 5616,
+   "examples": []
+  },
+  {
+   "algebra": "Heis(F_5)",
+   "subgroups": 39,
+   "projector_ok": true,
+   "law_ok": 39,
+   "state_ok": 39,
+   "trace_formula_ok": 39,
+   "descent_cases": 3912,
+   "descent_exact": 3912,
+   "nonwitness_cases": 14880,
+   "nonwitness_differs": 14400,
+   "examples": []
+  }
+ ],
+ "C3b_base_group_negative_control": {
+  "group": "Heis(F_3) itself, H=<x+z>",
+  "witness_cases": 234,
+  "output_wrong": 72
+ },
+ "C4_copy_lift": [
+  {
+   "algebra": "Heis(F_3)",
+   "subgroups": 19,
+   "exact": 19
+  }
+ ],
+ "C5_refresh_counterexample": {
+  "marginals_maximally_mixed": true,
+  "twirl_invariant": true,
+  "lift_output_is_uniform_projector": true,
+  "lift_output_is_I_over_p": false
+ },
+ "C6_rank_bound": {
+  "cases": 880,
+  "violations": [],
+  "max_fail_over_bound": 0.9999994261571078
+ },
+ "C7_query_count": {
+  "bound_violations": [],
+  "exp_c9": 145,
+  "monotone_violations": [],
+  "ceil_log2_float_agrees": true
+ },
+ "C8_dixmier_lister": {
+  "5": {
+   "jacobi": true,
+   "lcs_dims": [
+    8,
+    4,
+    2
+   ],
+   "cover_dim": 14,
+   "derivation_dim": 12,
+   "system_rank": 52,
+   "all_basis_derivations_into_derived": true,
+   "basis_D_cubed_zero": true,
+   "sum_D_cubed_zero": true
+  },
+  "7": {
+   "jacobi": true,
+   "lcs_dims": [
+    8,
+    4,
+    2
+   ],
+   "cover_dim": 14,
+   "derivation_dim": 12,
+   "system_rank": 52,
+   "all_basis_derivations_into_derived": true,
+   "basis_D_cubed_zero": true,
+   "sum_D_cubed_zero": true
+  },
+  "11": {
+   "jacobi": true,
+   "lcs_dims": [
+    8,
+    4,
+    2
+   ],
+   "cover_dim": 14,
+   "derivation_dim": 12,
+   "system_rank": 52,
+   "all_basis_derivations_into_derived": true,
+   "basis_D_cubed_zero": true,
+   "sum_D_cubed_zero": true
+  },
+  "13": {
+   "jacobi": true,
+   "lcs_dims": [
+    8,
+    4,
+    2
+   ],
+   "cover_dim": 14,
+   "derivation_dim": 12,
+   "system_rank": 52,
+   "all_basis_derivations_into_derived": true,
+   "basis_D_cubed_zero": true,
+   "sum_D_cubed_zero": true
+  },
+  "17": {
+   "jacobi": true,
+   "lcs_dims": [
+    8,
+    4,
+    2
+   ],
+   "cover_dim": 14,
+   "derivation_dim": 12,
+   "system_rank": 52,
+   "all_basis_derivations_into_derived": true,
+   "basis_D_cubed_zero": true,
+   "sum_D_cubed_zero": true
+  },
+  "19": {
+   "jacobi": true,
+   "lcs_dims": [
+    8,
+    4,
+    2
+   ],
+   "cover_dim": 14,
+   "derivation_dim": 12,
+   "system_rank": 52,
+   "all_basis_derivations_into_derived": true,
+   "basis_D_cubed_zero": true,
+   "sum_D_cubed_zero": true
+  },
+  "23": {
+   "jacobi": true,
+   "lcs_dims": [
+    8,
+    4,
+    2
+   ],
+   "cover_dim": 14,
+   "derivation_dim": 12,
+   "system_rank": 52,
+   "all_basis_derivations_into_derived": true,
+   "basis_D_cubed_zero": true,
+   "sum_D_cubed_zero": true
+  }
+ }
+}

@@ -1,0 +1,9 @@
+..........................                                               [100%]
+============================= slowest 5 durations ==============================
+12.79s call     tests/test_rees_circuit_mono.py::test_schedule_verified_and_labels_only_controls
+7.01s call     tests/test_rees_circuit_mono.py::test_heis_recovery_levels_1_and_2
+4.26s call     tests/test_rees_circuit_mono.py::test_n4_trajectories
+2.30s call     tests/test_rees_circuit_exhaustive.py::test_n5_f7_one_nonnormal_subgroup_every_grade_exhaustive
+1.96s call     tests/test_rees_circuit_mono.py::test_heis_all_subgroups_one_trajectory_exactly_uniform
+26 passed in 37.56s
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 nice -n 10  -B -m   22.88s user 1.28s system 63% cpu 37.803 total

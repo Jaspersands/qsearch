@@ -1,0 +1,41 @@
+# Local residue evaluation lemma to audit
+Input: number field K of arbitrary growing degree by explicit polynomial/table,
+expanded maximal order O with polynomial-bit arithmetic data; a nonzero integral
+ideal a in HNF with supplied prime-ideal factorization product P^k; nonzero
+expanded atoms x_i∈K and binary signed exponents e_i. No expanded value alpha=prod
+x_i^e_i is available. Complexity target polynomial in ALL these input bits.
+Output: if alpha is P-integral for every P|a, its residue in the product O/P^k
+(and CRT class in O/a), else identify a P with negative valuation.
+This is local integrality at modulus primes, not a test of global integrality.
+Whole native algorithm pays factoring and prime-ideal decomposition, not this lemma.
+
+Candidate unconditional classical procedure for each P^k:
+1. Compute v_i=v_P(x_i) from expanded fractional principal ideals. These are
+numerically polynomial-bounded in atom/field input bits by numerator/denominator
+norm-height bounds, despite e_i being enormous. No factoring alpha.
+2. Choose pi∈P\P² from an expanded Z-basis of P: some basis element is outside
+P². All arithmetic and pi heights are polynomial in explicit lattice input.
+3. Expand u_i=x_i*pi^(-v_i). The exponent |v_i| is polynomial, so coefficients
+stay polynomial-bit. u_i has v_P=0. Form denominator ideal
+D_i={b∈O: b*u_i∈O} by rational linear algebra/HNF. Since u_i is P-integral,
+D_i not contained in P. Pick a basis element b_i∈D_i\P, put a_i=b_i*u_i∈O.
+Thus u_i=a_i/b_i with b_i a unit mod P^k, even if its original rational integer
+denominator was divisible by the rational prime under P.
+4. Reduce u_i mod P^k, use binary modular powering (negative e_i allowed because
+u_i is a local unit), and compute v=sum e_i v_i as a binary integer. If v<0,
+return negative valuation; if v>=k, local residue0; otherwise multiply the unit
+product by pi^v (0<=v<k). Since P^k is expanded, k<=log2 Norm(P^k) is charged.
+5. CRT the local residues. This handles ramified and dyadic primes, not only tame
+or unramified ones. Exact HNF/unit tests operate on expanded polynomial-height data.
+
+Cheap falsifier motivating this: in Q(sqrt2), prod 2^E*(sqrt2)^(-2E)=1 has only
+nonunit leaves at the ramified prime. Final-unit status does not license reducing
+leaves then inverting them. Also a P-unit may have a rational denominator divisible
+by the rational prime, so simply clearing an integer denominator is insufficient.
+
+Native application (not part of this lemma's proof): repair BHJ compact integral
+matrix similarity. A,B∈Mat_n(Z), output NO or compact C∈GL_n(Z) with BC=CA under
+existing GRH compact class/unit/PIP primitives. Preserve small-lattice computations,
+powerproduct units, finite conductor residues, and local SL lifts; avoid general
+compact-sum equality or expanding C. Existing exponential-output family and actual
+BHJ Cor9.16 do not by themselves establish the repair. No novelty or speedup claim.

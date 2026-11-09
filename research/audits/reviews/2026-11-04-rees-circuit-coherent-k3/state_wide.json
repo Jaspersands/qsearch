@@ -1,0 +1,255 @@
+{
+ "status": "coherent_label_receiver_backend_kappa3_grade_finite_checks",
+ "scope": "n4(F_7) only: grade 3 kappa_3 = 3 (triangular arity 3), grade 2 kappa_2 = 2 (arity 6)",
+ "coherent_receiver_implemented": false,
+ "coherent_label_backend_kappa3_instance": true,
+ "general_instances": false,
+ "qft_synthesised": false,
+ "whole_circuit_amplitude_simulation": false,
+ "independent_review": false,
+ "speedup_claim_allowed": false,
+ "review": "AI-checked, pending human review",
+ "parts": [
+  "state"
+ ],
+ "args": {
+  "out": "research/audits/reviews/2026-11-04-rees-circuit-coherent-k3/state_wide.json",
+  "parts": "state",
+  "per_label": 256,
+  "grade2_tuples": 512,
+  "max_all": 117649,
+  "state_instances": "0,1,2,3,6,7,8",
+  "run_instances": "0,1,2,3,7,8",
+  "all_lambda_q": false
+ },
+ "config": "n4(F_7) c=3 dims=(4, 2, 1) points=(1, 2, 3) M={2: 6, 3: 3}",
+ "kappa_constants_grade3": {
+  "kappa": 3,
+  "g": 2,
+  "h": 2,
+  "omega": 4,
+  "alpha": [
+   1,
+   0,
+   5
+  ],
+  "beta": [
+   0,
+   2,
+   6
+  ],
+  "u": 1,
+  "roots": [
+   {
+    "q": 3,
+    "S": 1,
+    "Q": 2,
+    "e1": 1,
+    "z": 4,
+    "wq": 4
+   }
+  ]
+ },
+ "state": {
+  "rows": [
+   {
+    "instance": "n4(F_7) H=<e2> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 21.2
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 512 of 13841287201",
+      "cases": 512,
+      "distinct_merges": 401,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 52.3
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 76.0
+   },
+   {
+    "instance": "n4(F_7) H=<e1> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 16.4
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 512 of 13841287201",
+      "cases": 512,
+      "distinct_merges": 412,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 57.0
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 75.7
+   },
+   {
+    "instance": "n4(F_7) H=<e1+e3> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 18.0
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 512 of 13841287201",
+      "cases": 512,
+      "distinct_merges": 418,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 64.3
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 84.7
+   },
+   {
+    "instance": "n4(F_7) H=<e2,e4> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 2.8
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 117649,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 16.8
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 22.3
+   },
+   {
+    "instance": "n4(F_7) H=<e2,e3> non-normal",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 13.6
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 117649,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 17.4
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 33.3
+   },
+   {
+    "instance": "n4(F_7) H=Z(G)",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 1,
+      "tuples": "all",
+      "cases": 1,
+      "distinct_merges": 1,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 2.4
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 117649,
+      "distinct_merges": 54,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 15.4
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 19.9
+   },
+   {
+    "instance": "n4(F_7) H=trivial",
+    "grades": {
+     "3": {
+      "arity": 3,
+      "label_support": 7,
+      "tuples": "all",
+      "cases": 343,
+      "distinct_merges": 24,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 14.5
+     },
+     "2": {
+      "arity": 6,
+      "label_support": 49,
+      "tuples": "sampled 512 of 13841287201",
+      "cases": 512,
+      "distinct_merges": 393,
+      "witness_valid": true,
+      "outputs_equal_rho_H": true,
+      "seconds": 41.2
+     }
+    },
+    "readout_uniform_on_h_perp": true,
+    "passed": true,
+    "seconds": 57.3
+   }
+  ],
+  "all_pass": true
+ },
+ "seconds": 371.0
+}

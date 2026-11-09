@@ -1,5 +1,11 @@
 # Signed Trine BPQM: A Certified Constructive Entry Point
 
+**2026-10-31 follow-up:** `TERNARY_SEQUENTIAL_SAMPLING.md` supplies an
+independently reviewed classical sampler matching this proposal's
+ensemble-average guarantee under the same imported block theorem. The
+historical derivation below is retained; it is not an unmatched quantum
+sampling advantage.
+
 2026-10-20. Exact arithmetic with a local physical-degradation derivation,
 INDEPENDENT REVIEW PENDING. Known BPQM mechanism, not a novelty claim or a
 new quantum algorithm. No finite-block receiver or sampler is executed here.

@@ -1,0 +1,24 @@
+cmul N=9 b=4 exhaustive ok, max gates=1288 <= 80b^2+27b=1388: True
+cmul N=15 b=4 exhaustive ok, max gates=1372 <= 80b^2+27b=1388: True
+cmul N=21 b=5 exhaustive ok, max gates=2003 <= 80b^2+27b=2135: True
+cmul N=25 b=5 exhaustive ok, max gates=2007 <= 80b^2+27b=2135: True
+cmul N=27 b=5 exhaustive ok, max gates=2059 <= 80b^2+27b=2135: True
+cmul N=33 b=6 exhaustive ok, max gates=2774 <= 80b^2+27b=3042: True
+cmul N=35 b=6 exhaustive ok, max gates=2826 <= 80b^2+27b=3042: True
+cmul N=45 b=6 exhaustive ok, max gates=2882 <= 80b^2+27b=3042: True
+cmul N=49 b=6 exhaustive ok, max gates=2836 <= 80b^2+27b=3042: True
+cmul N=51 b=6 exhaustive ok, max gates=2886 <= 80b^2+27b=3042: True
+cmul N=55 b=6 exhaustive ok, max gates=2950 <= 80b^2+27b=3042: True
+cmul N=57 b=6 exhaustive ok, max gates=2886 <= 80b^2+27b=3042: True
+cmul N=63 b=6 exhaustive ok, max gates=3018 <= 80b^2+27b=3042: True
+modexp 15 7 6733
+modexp 21 2 9916
+modexp 33 5 13813
+modexp 35 3 14035
+b 2 N 3 max gates 366 bound 80b^2+27b 374 ok True
+b 7 N 127 max gates 4081 bound 80b^2+27b 4109 ok True
+b 12 N 4095 max gates 11796 bound 80b^2+27b 11844 ok True
+b 17 N 131071 max gates 23511 bound 80b^2+27b 23579 ok True
+b 22 N 4194303 max gates 39226 bound 80b^2+27b 39314 ok True
+b 27 N 134217727 max gates 58941 bound 80b^2+27b 59049 ok True
+b 32 N 4294967295 max gates 82656 bound 80b^2+27b 82784 ok True

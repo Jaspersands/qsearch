@@ -1,0 +1,283 @@
+# Actual primary source extracts
+Stoll, Chabauty without the Mordell-Weil group. URL https://mathe2.uni-bayreuth.de/stoll/papers/ratpts-selmer-2016-12-07.pdf . Section5/Prop5.1. Local text lines763-910.
+                 5. Halving points on odd hyperelliptic Jacobians
+
+In this section we describe an algorithm that computes one ‘half’ or all ‘halves’ of a point
+P ∈ 2J(k), where J is the Jacobian of a hyperelliptic curve C of odd degree over the field k.
+We assume that char(k) 6= 2, so that C can be given by an equation y 2 = f (x) with f ∈ k[x]
+squarefree and of odd degree 2g + 1.
+Recall that each point in J(k) is uniquely represented in the form [D − d∞], where D is an
+effective divisor in general position defined over k and d = deg D ≤ g. An effective divisor D
+is said to be in general position if its support does not contain ∞ and D 6≥ P + ι(P ) for any
+point P ∈ C, where ι : C → C is the hyperelliptic involution.
+Any effective divisor D in general position can be described by its Mumford representation
+(a, b). Here a ∈ k[x] is a monic polynomial of degree d = deg D whose roots are the
+x-coordinates of the points in the support of D, with appropriate multiplicity (so that a
+corresponds to the image of D under the hyperelliptic quotient map to P1 ), and b ∈ k[x] is
+another polynomial such that b(ξ) = η for any point P = (ξ, η) in the support of D and
+satisfying a | f − b2 . This polynomial b is uniquely determined modulo a; in particular, we
+obtain a unique representation if we require deg(b) < d. However, it is sometimes useful to
+allow additional flexibility, so we will not always insist on this normalization. In fact, we
+may also want to allow polynomials a of larger degree (this leads to even more non-unique
+representations, but can be useful in certain situations).
+                                                 17
+
+We will use the notation (a, b) to denote the divisor D, and we will write [a, b] = [(a, b)−d∞]
+for the point on J corresponding to it.
+Let c be the leading coefficient of f . Then in terms of the Mumford representation, the
+descent map µ : J(k) → L  is given by
+                                 [a, b] 7−→ (−c)deg(a) a(θ) · (L× )2
+if a and f are coprime. In the general case, write a1 and f1 for a and f divided by their
+(monic) gcd; then
+                  µ([a, b]) = µ̃(a) := (−c)deg(a) a(θ) − a1 (θ)f1 (θ) · (L× )2 ;
+                                                                      
+
+compare [Sch95].
+Since the kernel of µ is 2J(k), this gives us a way of deciding whether a point P ∈ J(k) is
+divisible by 2 in J(k): this is equivalent to the existence of a polynomial s ∈ k[x] such that
+                             s(θ)2 = (−c)deg(a) a(θ) − a1 (θ)f1 (θ) ;
+                                                                    
+
+equivalently,
+                               s2 ≡ (−c)deg(a) (a − a1 f1 ) mod f.
+We will now state a result that shows how to compute a point Q ∈ J(k) such that 2Q = P ,
+given such a polynomial s.
+Note that when a = a21 a2 , then P = [a, b] is divisible by 2 if and only if P2 = [a2 , b] is, and
+each point Q such that 2Q = P has the form Q = Q1 + Q2 where Q2 satisfies 2Q2 = P2 and
+Q1 = [a1 , b]. So we can assume that a is squarefree.
+Proposition 5.1. Let a ∈ k[x] be monic and squarefree, of degree ≤ 2g + 1. Let d denote
+gcd(a, f ), so that a = da1 and f = df1 as above. Suppose we have b, s ∈ k[x] with
+                 f ≡ b2 mod a        and       (−c)deg(a) (a − a1 f1 ) ≡ s2 mod f,
+so that [a, b] ∈ 2J(k). For polynomials u, v and w, consider the following system of congru-
+ences:
+(5.1)              vd ≡ ws mod f1 ,      vd ≡ ub mod a1 ,      uf1 ≡ ws mod d.
+Then this system has a nontrivial solution (u, v, w) with w monic such that
+(5.2)       deg(u) < deg(a)/2,     deg(v) ≤ g + deg(a)/2 − deg(d) and            deg(w) ≤ g.
+Each such solution satisfies the relation
+(5.3)                             u2 f1 = dv 2 − (−c)deg(a) a1 w2 .
+Now assume that (u, v, w) is a solution such that w has minimal degree. Let d1 = gcd(u, w);
+then d1 divides f a1 and v. Write d1 = df da with df = gcd(d1 , f ) and da = gcd(d1 , a1 ). Set
+w1 = w/d1 , u1 = u/d1 , v1 = v/d1 and let r ∈ k[x] be such that
+                      ru1 ≡ −v1 d mod w1 da           and     r ≡ 0 mod df .
+Then Q = [w, r] satisfies P = 2Q.
+If Q and Q0 are computed starting from s and s0 such that s0 6≡ ±s mod f , then Q and Q0
+are distinct.
+                                                 18
+
+Proof. First note that, since f is squarefree, we have that d and f1 are coprime. Also, d
+and a1 are coprime, since a divisor in general position contains no ramification point with
+multiplicity 2 or more. So f1 , a1 and d are coprime in pairs and squarefree. The fact that a
+divides f − b2 implies that d divides b and that d is also the gcd of a and b.
+The first claim is that the system of congruences has a nontrivial solution when the degrees
+of the polynomials are bounded as stated. To see this, note that the conditions are linear in
+(the coefficients of) u, v and w, and that the total number of coefficients of u, v and w is
+  ddeg(a)/2e + (g + bdeg(a)/2c − deg(d) + 1) + (g + 1) = 2g + deg(a) − deg(d) + 2
+                                                              = deg(f1 ) + deg(a1 ) + deg(d) + 1.
+On the other hand, the number of linear constraints is deg(f1 ) + deg(a1 ) + deg(d). So there
+are more variables than constraints, hence nontrivial solutions exist.
+We claim that w cannot be zero in such a solution. Otherwise, the first congruence would
+imply that f1 divides v (since f1 , a1 and d are coprime in pairs), which for degree reasons
+(recall that deg(a) ≤ 2g + 1) is only possible when v = 0. In a similar way, the second
+congruence would then imply that a1 divides u (since a1 is coprime to b), whereas the third
+congruence implies that d divides u, so a divides u, which is only possible when u = 0. But
+then our solution is trivial, a contradiction. So w 6= 0, and without loss of generality, w can
+be taken to be monic.
+We show that every solution as above satisfies relation (5.3). Namely, by the first congruence
+and since s2 ≡ (−c)deg(a) a mod f1 ,
+          d2 v 2 = (dv)2 ≡ (sw)2 = s2 w2 ≡ (−c)deg(a) aw2 = (−c)deg(a) da1 w2 mod f1 ,
+so (since d and f1 are coprime), the relation holds mod f1 . Next, by the second congruence,
+                     d2 v 2 = (dv)2 ≡ (bu)2 = b2 u2 ≡ f u2 = df1 u2 mod a1 ,
+so (since d and a1 are coprime), the relation holds mod a1 . Finally, by the last congruence,
+                 u2 f12 = (uf1 )2 ≡ (sw)2 = s2 w2 ≡ −(−c)deg(a) a1 f1 w2 mod d,
+so (since d and f1 are coprime again), the relation holds also mod d. It follows that it holds
+mod f1 a1 d. Since the degrees of all terms are strictly less than the degree of f1 a1 d, equality
+follows, and (5.3) is verified.
+We note that the fact shown above that a nontrivial solution has w 6= 0 implies that w
+determines the solution uniquely. It follows that there is in fact a unique solution with
+w monic and deg(w) minimal.
+Since d is squarefree, (5.3) implies that the gcd d1 of w and u also divides v. We can therefore
+divide all three by this gcd, obtaining u1 , v1 and w1 ; they satisfy
+                                 u21 f1 = dv12 − (−c)deg(a) a1 w12 .
+If some irreducible factor p of d1 does not divide f a1 , then (u/p, v/p, w/p) also satisfy
+the system of congruences, contradicting the minimality of deg(w). Now assume that p2
+divides d1 for some irreducible polynomial p. Then p divides f1 , a1 or d, say p | a1 (the
+other cases are analogous). Since a1 is squarefree, the congruence vd ≡ ub mod a1 implies
+(v/p)d ≡ (u/p)b mod a1 , and so again (u/p, v/p, w/p) satisfy the system of congruences,
+                                                 19
+
+contradiction. So d1 is squarefree and must therefore divide a1 f1 d. In particular, we can
+write d1 = df da as claimed.
+Note that (u1 b)2 ≡ u21 f ≡ (v1 d)2 mod a1 , so that a1 divides (u1 b − v1 d)(u1 b + v1 d). We claim
+that da = gcd(u1 b + v1 d, a1 ). For this, consider an irreducible factor p of da . If p divides
+u1 b − v1 d, then (u/p, v/p, w/p) are a solution, a contradiction. So p must divide u1 b + v1 d.
+Conversely, if p is any irreducible factor of a1 that divides u1 b + v1 d, then (noticing that b is
+invertible mod a1 ) for p to divide ub − vd, it must necessarily divide u and v, so p | da .
+u1 is invertible mod w1 , but also mod da (since u1 and v1 are coprime as well — a1 is
+squarefree — and da is coprime with f1 and d). Furthermore, df is coprime with w1 (and of
+course also with da ), for essentially the same reason. Therefore a polynomial r exists such
+that u1 r ≡ −v1 d mod w1 da and r ≡ 0 mod df .
+Now we consider the function
+                   φ = u(x)y − v(x)d(x) = df (x)da (x) (u1 (x)y − v1 (x)d(x))
+on C. Its divisor of zeros is
+                                                                                           
+         2(df , 0) + (da , b) + (da , −b) + (d, 0) + (da , −b) + (a1 /da , b) + 2(w1 , −r)
+                                                                            
+                   = (a1 , b) + (d, 0) + 2 (df , 0) + (da , −b) + (w1 , −r)
+                  = (a, b) + 2(w, −r).
+To see this, note that the norm in k[x] of the last factor of φ is u21 f − v12 d2 = (−c)deg(a) da1 w12
+and that u1 b ≡ v1 d mod a1 /da and u1 b ≡ −v1 d mod da (and so also r ≡ b mod da ). Setting
+Q = [w, r], we therefore obtain 2Q = P .
+We now show that Q determines s mod f up to sign. Given Q = [w, r] such that 2Q = P ,
+there is a unique function (up to scaling) on C whose divisor is (a, b) + 2(w, −r) − n∞
+(where n = deg(a) + 2 deg(w)); this function must then be φ, which gives us u and v up to
+scaling; the relation u2 f1 = dv 2 − (−c)deg(a) aw2 then fixes them up to a common sign. Write
+df = df1 dd with df1 = gcd(df , f1 ) and dd = gcd(df , d). In a similar way as above for da , one
+shows that df1 = gcd(w1 s + v1 d, f1 ) and dd = gcd(u1 f1 + w1 s, d). Since w1 is coprime with f ,
+this determines s mod f via the congruences
+                         w1 s ≡ v1 d mod f1 /df1 ,      w1 s ≡ −v1 d mod df1 ,
+                         w1 s ≡ u1 f1 mod d/dd ,        w1 s ≡ −u1 f1 mod dd .
+A common sign change of u and v (which is the only ambiguity here) results in a sign change
+of s.                                                                                     
+
+We can try to use the algorithm implied by Proposition 5.1 over a p-adic field. It will possibly
+run into precision problems when some of the roots of a get close to roots of f (but with the
+resultant of a and f still being nonzero, albeit p-adically small) or when the resulting point
+is represented by a divisor of lower degree or such that some points are close to the point
+at infinity. In practice, however, these problems occur fairly rarely. A possible remedy in
+such a case is to replace (a, b) by another representation (a0 , b0 ) such that [a0 , b0 ] = [a, b] and
+deg(a) > g. Writing f −b2 = ac, we have [c−2hb−h2 a, −b−ha] = [a, b] for all polynomials h.
+Taking h to be constant already allows us to replace a by a polynomial a0 that is coprime
+with f (and probably we can also arrange a0 to be squarefree) and satisfies deg(a0 ) ≤ g + 1
+                                                   20
+
+if deg(a) = g. Another possibility is to consider points in a residue disk given by suitable
+Laurent series, perform the computation on the Laurent series and then specialize.
+
+Mascot, Hensel-lifting torsion points on Jacobians and Galois representations. URL https://www.maths.tcd.ie/~mascotn/research/TorsHensel.pdf . PDF SHA256 4da85f621b32b68e2673c71bc8b8cac7bfe1666fbd4c9f975c181a2474811880. Actual Section2.2.4 lines854-915, Section5 lines1302-1363.
+We will later apply Makdisi’s algorithms over the ground field k = Qq . This means
+that we must be able to perform linear algebra over k, namely kernel and equation
+matrices (these are actually the same up to transposition), which is a non-trivial
+problem since we can only represent elements of k on a computer with finite p-adic
+accuracy.
+
+                                          16
+
+    For this, we use Page’s recent implementation in [Pari/GP] of the computation
+of kernels in Howell form over rings of the form R = Zq /pe , where Zq is the ring
+of integers of Qq and e ∈ N. Recall that the Howell form of an R-submodule M
+of Rd (d ∈ N) is a canonical generating set of this module, which is essentially
+characterized by the fact that these generators are in reduced echelon form, and that
+for all d0 ⩽ d, each element of M whose first d0 entries are 0 is an R-combination of
+the generators whose first d0 entries are 0; cf. [How86] or [SM98] (beware that these
+references consider row spans, whereas we deal with column spans in this article).
+The following result shows that if we consider an approximation up to O(pe ) of a
+matrix A with coefficients in Zq which has “good reduction”, i.e. whose rank does
+not decrease after reduction mod p, then we can compute a kernel matrix of A
+with the same accuracy and satisfying the same conditions, and thus use Makdisi’s
+algorithms without loss of p-adic accuracy.
+
+Theorem 2.23. Let k be a non-Archimedian local field with ring of integers O,
+uniformiser $ and residue field κ, and let A be an m × n matrix with coefficients
+in O, representing a linear map T : On → Om . Let e ∈ N, and let Ke be the kernel
+of the induced map Te : (O/$e )n → (O/$e )m . If rkk (A) = rkκ (A mod $), then the
+Howell generators of Ke that are nonzero mod $ form an approximation mod $e of
+an O-basis of ker T .
+
+Remark 2.24. There can be Howell generators of Ke that are 0 mod $, as demon-
+strated by the example A = (1 $), e = 2.
+
+Proof. Let us write K∞ = ker T , and Kk for the kernel of the induced map k n → k m ,
+so that K∞ = Kk ∩ On . Since O is a PID, we can consider an O-basis h1 , · · · , hd ∈
+On of K∞ in Hermite normal form.
+    We claim P that the hi are linearly independent mod $. Indeed, let λi ∈ O,
+                                                                                    n
+and let x =      i λi hi ∈ K∞ . If x ≡ 0 mod $, say x = $y for some y ∈ O ,
+            n
+then y ∈ O ∩ Kk = K∞ , which shows that the λi are all 0 mod $ since the hi are
+linearly independent over k.
+    We can then prove by induction on e that the hi generate Ke . Indeed, for e = 1
+this follows from the above and the fact that the rank of A does not decrease after
+reduction mod $. Suppose this is true for e, and let x ∈ On be such that x mod $e+1
+                              e                                               n
+          P . Then xemod $ lies in Ke , so there exist λi ∈ O and y ∈ O such
+lies in Ke+1
+that x = i λi hi + $ y; therefore
+
+                            0 ≡ Ax = $e Ay mod $e+1 .
+
+Dividing by $e shows that y mod $ lies in K1 , and is thus in the O-span of the hi ,
+and so is x.
+   It follows that the Howell form of Ke agrees with that of the hi mod $e ; however
+the hi are in echelon form, so they are part of their Howell form mod $e , and the
+other vectors must be linear combinations of them that are 0 mod $.
+
+Remark 2.25. It is shown in [SM98] that the Howell form of ker A mod pe can be
+computed with the same complexity as if R = Zq /pe were a field, namely O(nω )
+operations in R for A of size n × n. Therefore, we can execute the algorithms
+presented in this section over R with the same number of operations in R as if R
+were a field.
+
+
+5     p-adic lifting of torsion points
+Let m ∈ N, and let W be a nZ × dW matrix with coefficients in Fq representing
+an m-torsion point x ∈ J(Fq )[m]. Thanks to algorithm 9 presented in the previous
+section, we can find a lift Wf of W representing a lift x e ∈ J(Qq ) to arbitrary p-adic
+accuracy; however this point x  e will not in general be m-torsion. The purpose of this
+section is to explain how to modify algorithm 9 so that the output W    f represents a
+point of J(Qq ) which is still m-torsion.
+    In this section and in the next one, whenever n ∈ Z and W is a matrix represent-
+ing a point x ∈ J, we will denote by [n]W a matrix representing [n]x ∈ J obtained
+by repeated use of algorithm 3.
+    For simplicity, we will assume that m is coprime to p; indeed the discussion about
+formal groups below shows that this ensures that the m-torsion lift of x to J(Qq ) is
+unique. In practice, we will take m = `, a prime distinct from p.
+    We actually present two methods: the first one is more efficient when the p-adic
+accuracy is still low, whereas the second one should be used when p-adic accuracy
+becomes higher.
+
+5.1    Method 1: Killing the kernel of reduction
+Let p = pZq be the maximal ideal of Zq , and for each e ∈ N, let us denote by Je
+the kernel of the reduction map J(Qq )    / / J(Zq /pe ) . For instance J1 is the kernel
+
+of J(Qq )      / / J(Fq ) .
+   Since J has good reduction at p, and since Qq is unramified, the theory of formal
+groups (cf. for instance [Sil09, theorem IV.6.4.b]) provides us with a p-adic Lie group
+isomorphism
+                                               ∼
+                                     log : J1 −→ pg
+which maps Je to (pe )g for all e (where (pe )g denotes the g-fold cartesian product of
+the set pe ). In particular, Je /J2e ≃ (pe /p2e )g is an Abelian group of exponent pe .
+    Let now x ∈ J(Zq /pe )[m] be an m-torsion point known to accuracy O(pe ). It has
+a unique m-torsion lift x                                                        e0 = x
+                         e ∈ J(Zq /p2e )[m], and its other lifts are of the form x    e +y
+                                                          e
+with y ∈ Je /J2e . Therefore, if N ∈ N is such that p | N and that N ≡ 1 mod m,
+then for any lift xe0 of x, [N ]ex0 = xe is the m-torsion lift of x. This leads to the
+following algorithm:
+   Input: A matrix W over Fq representing a point x ∈ J(Fq )[m], and an
+          integer e0 ∈ N.
+   Output: A matrix W f over Zq /pe0 representing the lift of x in J(Zq /pe0 )[m].
+   f ← W;
+ 1 W
+ 2 e ← 1;
+ 3 while e < e0 do
+
+ 4                  f to Zq /p2e ;
+      f ← a lift of W
+      W                                               // Using algorithm 9
+                                 e
+ 5    N ← an integer such that p | N and N ≡ 1 mod m ;               // By CRT
+ 6    f ← [N ]W
+      W        f;
+ 7    e ← 2e;
+ 8 end
+
+ 9 return W
+          f;
+       Algorithm 10: Lifting torsion points using multiplications
+
+                                           25
+
+                                                                            
+    The complexity of each iteration of the loop is O g ω+3 +g ω log(mpe0 ) operations
+in Zq /pO(e0 ) , the terms coming respectively from algorithm 9 and from multiplication

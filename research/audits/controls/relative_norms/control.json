@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "Exact finite classical algebra and an existing PARI baseline only.",
+  "base": "K=Q(sqrt(5))",
+  "extension": "L=K(cuberoot(2)), non-Galois degree three",
+  "target": "Mod(272/31*y + 609/31, y^2 - 5)",
+  "pari_rnfisnorm_witness": "Mod(Mod(3/31*y + 49/31, y^2 - 5)*x^2 + Mod(-2/31*y + 50/31, y^2 - 5)*x + Mod(-40/31*y - 23/31, y^2 - 5), x^3 - 2)",
+  "pari_relative_norm_verified": true,
+  "independent_relative_determinant_verified": true,
+  "basis_change_determinant_verified": true,
+  "absolute_norm_of_target": 1,
+  "valuations_at_primes_above_31": [
+    -1,
+    1
+  ],
+  "target_denominator": 31,
+  "absolute_discriminant_L": 1458000,
+  "absolute_norm_only_support_rejected": true,
+  "relative_torsion_norm": "Mod(-y - 1, y^2 + y + 1)",
+  "relative_torsion_is_not_just_sign": true,
+  "full_solver_execution": false,
+  "quantum_execution": false,
+  "novelty_or_speedup": false
+}

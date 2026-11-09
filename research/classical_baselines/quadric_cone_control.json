@@ -1,0 +1,788 @@
+{
+  "scope": "Exactly four predeclared finite sources. Exact Sage field/determinant/inverse/rank/kernel algebra and floating normalized NumPy FFT. No sweeps, Monte Carlo, quantum source, QFT circuit or quantum execution; no asymptotic inference.",
+  "source_contract": "Flat native callable F(x)=lambda(x^T A x) divided by sqrt(p^n); lambda(0)=+1. Source receives public p,n and F only. Hidden A, inverse, cone labels and recovery are analysis only.",
+  "native_classical_first": "Completed independently before this source control; do not infer a classical lower bound or query separation. Receipt: audits/reviews/2026-11-05-quadric-classical-scope.md. This script does not rerun the baseline.",
+  "fourier_convention": "np.fft.fftn(norm=ortho), negative exponent, all n coordinates; source flat enumeration in itertools.product order then reshape",
+  "exact_law_reference": "research/QUADRATIC_CHARACTER_CONE_READOUT.md equations (3)-(4)",
+  "claim_gates_false": [
+    "novelty",
+    "quantum/classical separation",
+    "new native oracle upper bound",
+    "quantum implementation/execution",
+    "noise robustness",
+    "even-dimensional extension",
+    "small-prime-universal recovery"
+  ],
+  "all_primes_below_16n_squared": true,
+  "cases": [
+    {
+      "name": "p5_n3_I",
+      "p": 5,
+      "n": 3,
+      "array_entries": 125,
+      "A_analysis_only": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "det_A_exact": 1,
+      "rank_A_exact": 3,
+      "inverse_A_analysis_only": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "epsilon_exact": 1,
+      "native_source_diagnostic_callable_evaluations": 125,
+      "source_constructor_arguments": "public p,n and native callable F only",
+      "pointwise_labels_checked": 125,
+      "exact_prediction_probability_sum": "1",
+      "fft_amplitude_max_abs_error": 5.551115123125783e-17,
+      "fft_probability_max_abs_error": 2.7755575615628914e-17,
+      "source_norm_squared_observed": 1.0000000000000002,
+      "fourier_norm_squared_observed": 1.0000000000000004,
+      "zero_spike_amplitude_exact": "9/25",
+      "zero_spike_probability_exact": "81/625",
+      "zero_spike_probability_observed": 0.12960000000000002,
+      "nonzero_dual_cone_size": 24,
+      "nonzero_dual_cone_point_probability_exact": "16/625",
+      "nonzero_dual_cone_mass_exact": "384/625",
+      "nonzero_dual_cone_mass_observed": 0.6144000000000002,
+      "conditional_nonzero_cone_law": "exactly uniform by rational prediction; pointwise FFT agreement checked",
+      "veronese_feature_order": "y_i^2 then 2*y_i*y_j for i<j; coefficients are symmetric matrix entries",
+      "veronese_rows_checked": 24,
+      "D": 6,
+      "veronese_rank_exact": 5,
+      "kernel_dimension_exact": 1,
+      "learned_dual_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "learned_output_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_projectively_inverse_A": true,
+      "output_projectively_A": true,
+      "changed_chi0_oracle_negative_control": {
+        "access_boundary": "Analysis-only distinct oracle chi(Q), with chi(0)=0; not a native padded-source construction and not a free zero oracle",
+        "nonzero_entries_before_renormalization": 100,
+        "normalization_squared_before_renormalization": "4/5",
+        "renormalized_fourier_total_variation_from_required_padded_law": 0.2735999999999999,
+        "renormalized_fourier_total_variation_exact": "171/625",
+        "renormalized_fourier_max_probability_difference": 0.09760000000000002,
+        "zero_spike_probability": 0.031999999999999994,
+        "zero_spike_probability_exact": "4/125",
+        "nonzero_dual_cone_mass": 0.768,
+        "nonzero_dual_cone_mass_exact": "96/125",
+        "required_padded_law_falsified": true
+      },
+      "public_candidate_validation": {
+        "C_validation_quadratic_matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "corresponding_candidate_output_C_inverse": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ],
+        "C_not_proportional_to_true_dual_matrix": true,
+        "nonzero_true_cone_intersection_count": 8,
+        "conditional_intersection_probability_exact": "1/3",
+        "intersection_upper_bound_5_over_p": "1",
+        "wrong_acceptance_exact": "209/625",
+        "wrong_acceptance_observed": 0.33440000000000014,
+        "correct_acceptance_exact_including_zero": "93/125",
+        "wrong_acceptance_upper_bound_7_over_p": "7/5",
+        "intersection_bound_vacuous": true,
+        "wrong_acceptance_bound_vacuous": true,
+        "outside_cone_and_zero_mass_retained": true
+      },
+      "theorem_prime_threshold_16n_squared": 144,
+      "theorem_prime_threshold_satisfied": false
+    },
+    {
+      "name": "p5_n3_2I",
+      "p": 5,
+      "n": 3,
+      "array_entries": 125,
+      "A_analysis_only": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "det_A_exact": 3,
+      "rank_A_exact": 3,
+      "inverse_A_analysis_only": [
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          3
+        ]
+      ],
+      "epsilon_exact": -1,
+      "native_source_diagnostic_callable_evaluations": 125,
+      "source_constructor_arguments": "public p,n and native callable F only",
+      "pointwise_labels_checked": 125,
+      "exact_prediction_probability_sum": "1",
+      "fft_amplitude_max_abs_error": 2.7755575615628914e-17,
+      "fft_probability_max_abs_error": 1.0408340855860843e-17,
+      "source_norm_squared_observed": 1.0000000000000002,
+      "fourier_norm_squared_observed": 1.0,
+      "zero_spike_amplitude_exact": "1/25",
+      "zero_spike_probability_exact": "1/625",
+      "zero_spike_probability_observed": 0.0016,
+      "nonzero_dual_cone_size": 24,
+      "nonzero_dual_cone_point_probability_exact": "16/625",
+      "nonzero_dual_cone_mass_exact": "384/625",
+      "nonzero_dual_cone_mass_observed": 0.6144000000000001,
+      "conditional_nonzero_cone_law": "exactly uniform by rational prediction; pointwise FFT agreement checked",
+      "veronese_feature_order": "y_i^2 then 2*y_i*y_j for i<j; coefficients are symmetric matrix entries",
+      "veronese_rows_checked": 24,
+      "D": 6,
+      "veronese_rank_exact": 5,
+      "kernel_dimension_exact": 1,
+      "learned_dual_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "learned_output_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_projectively_inverse_A": true,
+      "output_projectively_A": true,
+      "changed_chi0_oracle_negative_control": {
+        "access_boundary": "Analysis-only distinct oracle chi(Q), with chi(0)=0; not a native padded-source construction and not a free zero oracle",
+        "nonzero_entries_before_renormalization": 100,
+        "normalization_squared_before_renormalization": "4/5",
+        "renormalized_fourier_total_variation_from_required_padded_law": 0.26399999999999996,
+        "renormalized_fourier_total_variation_exact": "33/125",
+        "renormalized_fourier_max_probability_difference": 0.030399999999999993,
+        "zero_spike_probability": 0.031999999999999994,
+        "zero_spike_probability_exact": "4/125",
+        "nonzero_dual_cone_mass": 0.768,
+        "nonzero_dual_cone_mass_exact": "96/125",
+        "required_padded_law_falsified": true
+      },
+      "public_candidate_validation": {
+        "C_validation_quadratic_matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "corresponding_candidate_output_C_inverse": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ],
+        "C_not_proportional_to_true_dual_matrix": true,
+        "nonzero_true_cone_intersection_count": 8,
+        "conditional_intersection_probability_exact": "1/3",
+        "intersection_upper_bound_5_over_p": "1",
+        "wrong_acceptance_exact": "193/625",
+        "wrong_acceptance_observed": 0.3088000000000001,
+        "correct_acceptance_exact_including_zero": "77/125",
+        "wrong_acceptance_upper_bound_7_over_p": "7/5",
+        "intersection_bound_vacuous": true,
+        "wrong_acceptance_bound_vacuous": true,
+        "outside_cone_and_zero_mass_retained": true
+      },
+      "theorem_prime_threshold_16n_squared": 144,
+      "theorem_prime_threshold_satisfied": false
+    },
+    {
+      "name": "p5_n3_dense",
+      "p": 5,
+      "n": 3,
+      "array_entries": 125,
+      "A_analysis_only": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "det_A_exact": 2,
+      "rank_A_exact": 3,
+      "inverse_A_analysis_only": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          4,
+          2
+        ],
+        [
+          3,
+          2,
+          3
+        ]
+      ],
+      "epsilon_exact": -1,
+      "native_source_diagnostic_callable_evaluations": 125,
+      "source_constructor_arguments": "public p,n and native callable F only",
+      "pointwise_labels_checked": 125,
+      "exact_prediction_probability_sum": "1",
+      "fft_amplitude_max_abs_error": 4.163336342344337e-17,
+      "fft_probability_max_abs_error": 1.0408340855860843e-17,
+      "source_norm_squared_observed": 1.0000000000000002,
+      "fourier_norm_squared_observed": 1.0,
+      "zero_spike_amplitude_exact": "1/25",
+      "zero_spike_probability_exact": "1/625",
+      "zero_spike_probability_observed": 0.0015999999999999994,
+      "nonzero_dual_cone_size": 24,
+      "nonzero_dual_cone_point_probability_exact": "16/625",
+      "nonzero_dual_cone_mass_exact": "384/625",
+      "nonzero_dual_cone_mass_observed": 0.6144,
+      "conditional_nonzero_cone_law": "exactly uniform by rational prediction; pointwise FFT agreement checked",
+      "veronese_feature_order": "y_i^2 then 2*y_i*y_j for i<j; coefficients are symmetric matrix entries",
+      "veronese_rows_checked": 24,
+      "D": 6,
+      "veronese_rank_exact": 5,
+      "kernel_dimension_exact": 1,
+      "learned_dual_matrix": [
+        [
+          0,
+          4,
+          2
+        ],
+        [
+          4,
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          2
+        ]
+      ],
+      "learned_output_matrix": [
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          4,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          2
+        ]
+      ],
+      "kernel_projectively_inverse_A": true,
+      "output_projectively_A": true,
+      "changed_chi0_oracle_negative_control": {
+        "access_boundary": "Analysis-only distinct oracle chi(Q), with chi(0)=0; not a native padded-source construction and not a free zero oracle",
+        "nonzero_entries_before_renormalization": 100,
+        "normalization_squared_before_renormalization": "4/5",
+        "renormalized_fourier_total_variation_from_required_padded_law": 0.26399999999999996,
+        "renormalized_fourier_total_variation_exact": "33/125",
+        "renormalized_fourier_max_probability_difference": 0.0304,
+        "zero_spike_probability": 0.032,
+        "zero_spike_probability_exact": "4/125",
+        "nonzero_dual_cone_mass": 0.7679999999999999,
+        "nonzero_dual_cone_mass_exact": "96/125",
+        "required_padded_law_falsified": true
+      },
+      "public_candidate_validation": {
+        "C_validation_quadratic_matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "corresponding_candidate_output_C_inverse": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "C_not_proportional_to_true_dual_matrix": true,
+        "nonzero_true_cone_intersection_count": 8,
+        "conditional_intersection_probability_exact": "1/3",
+        "intersection_upper_bound_5_over_p": "1",
+        "wrong_acceptance_exact": "161/625",
+        "wrong_acceptance_observed": 0.25759999999999994,
+        "correct_acceptance_exact_including_zero": "77/125",
+        "wrong_acceptance_upper_bound_7_over_p": "7/5",
+        "intersection_bound_vacuous": true,
+        "wrong_acceptance_bound_vacuous": true,
+        "outside_cone_and_zero_mass_retained": true
+      },
+      "theorem_prime_threshold_16n_squared": 144,
+      "theorem_prime_threshold_satisfied": false
+    },
+    {
+      "name": "p3_n5_I",
+      "p": 3,
+      "n": 5,
+      "array_entries": 243,
+      "A_analysis_only": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "det_A_exact": 1,
+      "rank_A_exact": 5,
+      "inverse_A_analysis_only": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "epsilon_exact": 1,
+      "native_source_diagnostic_callable_evaluations": 243,
+      "source_constructor_arguments": "public p,n and native callable F only",
+      "pointwise_labels_checked": 243,
+      "exact_prediction_probability_sum": "1",
+      "fft_amplitude_max_abs_error": 2.7755575615628914e-16,
+      "fft_probability_max_abs_error": 1.942890293094024e-16,
+      "source_norm_squared_observed": 0.9999999999999998,
+      "fourier_norm_squared_observed": 1.0000000000000004,
+      "zero_spike_amplitude_exact": "11/27",
+      "zero_spike_probability_exact": "121/729",
+      "zero_spike_probability_observed": 0.16598079561042545,
+      "nonzero_dual_cone_size": 80,
+      "nonzero_dual_cone_point_probability_exact": "4/729",
+      "nonzero_dual_cone_mass_exact": "320/729",
+      "nonzero_dual_cone_mass_observed": 0.43895747599451324,
+      "conditional_nonzero_cone_law": "exactly uniform by rational prediction; pointwise FFT agreement checked",
+      "veronese_feature_order": "y_i^2 then 2*y_i*y_j for i<j; coefficients are symmetric matrix entries",
+      "veronese_rows_checked": 80,
+      "D": 15,
+      "veronese_rank_exact": 14,
+      "kernel_dimension_exact": 1,
+      "learned_dual_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "learned_output_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_projectively_inverse_A": true,
+      "output_projectively_A": true,
+      "changed_chi0_oracle_negative_control": {
+        "access_boundary": "Analysis-only distinct oracle chi(Q), with chi(0)=0; not a native padded-source construction and not a free zero oracle",
+        "nonzero_entries_before_renormalization": 162,
+        "normalization_squared_before_renormalization": "2/3",
+        "renormalized_fourier_total_variation_from_required_padded_law": 0.40466392318244215,
+        "renormalized_fourier_total_variation_exact": "295/729",
+        "renormalized_fourier_max_probability_difference": 0.1577503429355283,
+        "zero_spike_probability": 0.008230452674897129,
+        "zero_spike_probability_exact": "2/243",
+        "nonzero_dual_cone_mass": 0.6584362139917703,
+        "nonzero_dual_cone_mass_exact": "160/243",
+        "required_padded_law_falsified": true
+      },
+      "public_candidate_validation": {
+        "C_validation_quadratic_matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "corresponding_candidate_output_C_inverse": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "C_not_proportional_to_true_dual_matrix": true,
+        "nonzero_true_cone_intersection_count": 32,
+        "conditional_intersection_probability_exact": "2/5",
+        "intersection_upper_bound_5_over_p": "5/3",
+        "wrong_acceptance_exact": "49/81",
+        "wrong_acceptance_observed": 0.6049382716049387,
+        "correct_acceptance_exact_including_zero": "49/81",
+        "wrong_acceptance_upper_bound_7_over_p": "7/3",
+        "intersection_bound_vacuous": true,
+        "wrong_acceptance_bound_vacuous": true,
+        "outside_cone_and_zero_mass_retained": true
+      },
+      "theorem_prime_threshold_16n_squared": 400,
+      "theorem_prime_threshold_satisfied": false
+    }
+  ],
+  "all_assertions_passed": true
+}

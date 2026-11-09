@@ -80,8 +80,19 @@ def test_fano_success_probability_bound():
         assert r["fano_success_probability_upper_bound"] <= 0.2
 
 
-def test_report_and_registry_integration():
+def test_report_and_registry_integration(tmp_path, monkeypatch):
     """Verify report generation, claim gate, and negative results registry update."""
+    # Write into a copy of the repo layout so the live report and registry stay untouched.
+    import shutil
+    import theorems.dcp_general_povm_secret_variance_collapse as module
+    for name in ("DERIVATION", "REPORT", "REGISTRY"):
+        live = getattr(module, name)
+        copy = tmp_path / live.relative_to(module.ROOT)
+        copy.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(live, copy)
+        monkeypatch.setattr(module, name, copy)
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+    registry_copy = module.REGISTRY
     out_path = write_report(write_registry=True)
     assert out_path.exists()
 
@@ -91,7 +102,7 @@ def test_report_and_registry_integration():
     assert report["claim_gate"]["non_erasure_inaccessible_environment_closed"] is True
 
     # Registry check
-    registry = json.loads(REGISTRY.read_text())
+    registry = json.loads(registry_copy.read_text())
     entry = next((e for e in registry if e["id"] == NEGATIVE_RESULT_ID), None)
     assert entry is not None
     assert "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER" in entry["applies_to"]

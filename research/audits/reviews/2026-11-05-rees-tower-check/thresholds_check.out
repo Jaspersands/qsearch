@@ -1,0 +1,46 @@
+== W(D,r), T_R(D,r), P(D,r)
+D= 4 r=2: W=     96.335656 T_R=      298.1742 P=         16384  T_R/P=0.0182
+D= 6 r=2: W=     648.77804 T_R=      4061.192 P=        124416  T_R/P=0.0326
+D= 6 r=3: W=     105840.89 T_R=     12022.045 P=        279936  T_R/P=0.0429
+D= 8 r=2: W=     2432.8948 T_R=     23293.238 P=        524288  T_R/P=0.0444
+D= 8 r=4: W=  1.0488218e+8 T_R=     151113.91 P=       2097152  T_R/P=0.0721
+D= 9 r=3: W=     1479142.0 T_R=      134723.2 P=       2125764  T_R/P=0.0634
+D=12 r=2: W=     14688.961 T_R=     237177.91 P=       3981312  T_R/P=0.0596
+D=12 r=3: W=     9151489.0 T_R=     679599.93 P=       8957952  T_R/P=0.0759
+D=16 r=2: W=      50688.98 T_R=     1147006.5 P=      16777216  T_R/P=0.0684
+D=16 r=4: W= 3.2481083e+10 T_R=     7041422.5 P=      67108864  T_R/P=0.105
+D=18 r=3: W=  1.1434219e+8 T_R=     6096199.8 P=      68024448  T_R/P=0.0896
+D=32 r=2: W=      923649.0 T_R=    44409355.0 P=     536870912  T_R/P=0.0827
+D= 5 r=2: W=      275.6372 T_R=     1275.3747 P=         50000  T_R/P=0.0255
+D= 7 r=4: W=    34014968.0 T_R=     68957.602 P=       1075648  T_R/P=0.0641
+== identities
+W(D,D)=T_W(D) for D=2..9: ok
+W <= r^2 D^(2r), 2<=r<=D<200: ok
+W(D,2) < ((D-1)^2+1)^2, 4<=D<2000: ok
+  D=3 (excluded by the lemma): 26.649111 vs 25
+W(D,3) <= 4 D^6, 2<=D<2000: ok
+== Lemma 3.3: D*(lhs) at p = P(D,r), 4<=D<=64, 2<=r<=D (proof claims <= 0.4312)
+max D*lhs = 0.349357 at (25, 5)
+Delta <= 0.5003/(r sqrt D) and first term <= 1.001/(4D) at sample (D,r): ok
+constant 1.1251*e^0.2502/2 = 0.722473
+0.7225*0.2503 = 0.180842 ; 0.2503+0.1809 = 0.4312
+== Theorem 4.2 / corollaries
+kappa= 4 chain=[2, 4] Theta=     96.3357 closed max(4k^(q+1),4q^2k^5)=1.638e+04  4k^max(q+1,7)=6.554e+04
+kappa= 6 chain=[3, 6] Theta=     648.778 closed max(4k^(q+1),4q^2k^5)=2.799e+05  4k^max(q+1,7)=1.120e+06
+kappa= 8 chain=[2, 4, 8] Theta=     2432.89 closed max(4k^(q+1),4q^2k^5)=5.243e+05  4k^max(q+1,7)=8.389e+06
+kappa= 9 chain=[3, 9] Theta=    134723.0 closed max(4k^(q+1),4q^2k^5)=2.126e+06  4k^max(q+1,7)=1.913e+07
+kappa=10 chain=[5, 10] Theta=     12700.0 closed max(4k^(q+1),4q^2k^5)=1.000e+07  4k^max(q+1,7)=4.000e+07
+kappa=12 chain=[3, 6, 12] Theta=     14689.0 closed max(4k^(q+1),4q^2k^5)=8.958e+06  4k^max(q+1,7)=1.433e+08
+kappa=16 chain=[2, 4, 8, 16] Theta=     50689.0 closed max(4k^(q+1),4q^2k^5)=1.678e+07  4k^max(q+1,7)=1.074e+09
+kappa=18 chain=[3, 9, 18] Theta=    134723.0 closed max(4k^(q+1),4q^2k^5)=6.802e+07  4k^max(q+1,7)=2.449e+09
+kappa=24 chain=[3, 6, 12, 24] Theta=    279937.0 closed max(4k^(q+1),4q^2k^5)=2.867e+08  4k^max(q+1,7)=1.835e+10
+kappa=27 chain=[3, 9, 27] Theta=  5.12219e+7 closed max(4k^(q+1),4q^2k^5)=5.166e+08  4k^max(q+1,7)=4.184e+10
+kappa=32 chain=[2, 4, 8, 16, 32] Theta=    923649.0 closed max(4k^(q+1),4q^2k^5)=5.369e+08  4k^max(q+1,7)=1.374e+11
+step thresholds <= P(D_t,q_t) <= closed form; 2^L: Theta < ((k-1)^2+1)^2; 3-smooth: Theta <= 36k^5: ok
+== union-target Weil (Prop 3.4), rows ell, target K
+D=5 K=(0, 1): threshold 761852.8178
+D=5 K=(0, 1, 2): threshold 37246.44693
+D=7 K=(0, 1, 2, 3): threshold 22557820.33
+D=7 K=(0, 1): threshold 2.704214385e+10
+K={0} reproduces T_W at D=3,4,5: ok
+W(5,2) = 275.6372  T_R(7,4) = 68957.602

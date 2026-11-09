@@ -52,7 +52,7 @@ from typing import Any
 import numpy as np
 
 from representation_obstruction import hook_length_dimension
-from research_registry import utc_now
+from research_registry import ExperimentResultRecord, upsert_experiment_result, utc_now
 from self_dual_wreath_collision_free_event_transfer import (
     hierarchy_event_transfer_scaling_record,
 )
@@ -325,10 +325,17 @@ def run_central_support_rank_bridge() -> CentralSupportRankBridgeReport:
         not row.exact_rank_bridge_inequality_verified for row in bridge_controls
     ) + sum(not row.exact_global_covariance_verified for row in covariance)
     tail = [row for row in scaling if row.n == 48 and row.assumed_group_rank_exponent == 1][0]
+    # Each theorem count is 1 only when the check behind it passes. The degree reduction is
+    # conditional on the assumed rank exponent, so only its edge-degree ordering is checked here.
+    relative_rank_verified = all(row.exact_rank_bridge_inequality_verified for row in bridge_controls)
+    covariance_verified = all(row.exact_global_covariance_verified for row in covariance)
+    degree_reduction_verified = all(
+        row.lower_edge_minimum_degree >= row.upper_edge_minimum_degree > 0 for row in scaling
+    )
     metrics: dict[str, int | float] = {
-        "relative_rank_central_support_bridge_theorem_count": 1,
-        "polynomial_rank_degree_reduction_theorem_count": 1,
-        "global_covariance_symmetry_no_go_theorem_count": 1,
+        "relative_rank_central_support_bridge_theorem_count": int(relative_rank_verified),
+        "polynomial_rank_degree_reduction_theorem_count": int(degree_reduction_verified),
+        "global_covariance_symmetry_no_go_theorem_count": int(covariance_verified),
         "rank_bridge_control_count": len(bridge_controls),
         "covariance_control_count": len(covariance),
         "finite_control_failure_count": failures,
@@ -455,10 +462,24 @@ def write_central_support_rank_bridge_report(
     registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
     registry_result_id: str = "",
 ) -> dict[str, Any]:
-    payload = asdict(run_central_support_rank_bridge())
+    report = run_central_support_rank_bridge()
+    payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2) + "\n")
-
+    if write_registry:
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=report.created_at,
+                status=report.status,
+                summary=report.summary,
+                metrics=dict(report.headline_metrics),
+                falsifiers_triggered=report.falsifiers_triggered,
+                artifacts={"self_dual_wreath_central_support_rank_bridge": str(path)},
+            )
+        )
     return payload
 
 

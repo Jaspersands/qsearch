@@ -1,0 +1,228 @@
+{
+  "status": "PASS",
+  "scope": "Two finite exact local Hilbert-pairing/filtration controls; no all-degree inference.",
+  "cases": [
+    {
+      "polynomial": "x^2 - x - 1",
+      "e": 1,
+      "f": 2,
+      "local_degree": 2,
+      "uniformizer": "2",
+      "residue_lifts": [
+        "1",
+        "a"
+      ],
+      "candidate_count": 5,
+      "candidate_generators": [
+        "2",
+        "3",
+        "2*a + 1",
+        "5",
+        "4*a + 1"
+      ],
+      "Hilbert_F2_Gram": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "squareclass_dimension": 4,
+      "Hilbert_Gram_rank": 4,
+      "selected_basis_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "selected_pairing_nondegenerate": true,
+      "unit_filtration_r_values": [
+        1,
+        2,
+        3
+      ],
+      "unit_filtration_ranks": [
+        3,
+        1,
+        0
+      ],
+      "uniformizer_outside_unit_span": true,
+      "quadratic_norm_kernel": {
+        "extension_radicand": "2",
+        "dimension": 3,
+        "generators": [
+          "2",
+          "3",
+          "2*a + 1"
+        ],
+        "actual_symbol_on_every_kernel_generator": 1,
+        "excluded_generator_actual_symbol": -1
+      }
+    },
+    {
+      "polynomial": "x^3 - 6*x - 2",
+      "e": 3,
+      "f": 1,
+      "local_degree": 3,
+      "uniformizer": "a",
+      "residue_lifts": [
+        "1"
+      ],
+      "candidate_count": 7,
+      "candidate_generators": [
+        "a",
+        "a + 1",
+        "a^2 + 1",
+        "6*a + 3",
+        "6*a^2 + 2*a + 1",
+        "2*a^2 + 36*a + 13",
+        "36*a^2 + 24*a + 5"
+      ],
+      "Hilbert_F2_Gram": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "squareclass_dimension": 5,
+      "Hilbert_Gram_rank": 5,
+      "selected_basis_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "selected_pairing_nondegenerate": true,
+      "unit_filtration_r_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "unit_filtration_ranks": [
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        0
+      ],
+      "uniformizer_outside_unit_span": true,
+      "quadratic_norm_kernel": {
+        "extension_radicand": "a",
+        "dimension": 4,
+        "generators": [
+          "a",
+          "a + 1",
+          "43*a^2 + 26*a + 5",
+          "30*a^2 + 228*a + 75"
+        ],
+        "actual_symbol_on_every_kernel_generator": 1,
+        "excluded_generator_actual_symbol": -1
+      }
+    }
+  ],
+  "claim_gates": {
+    "all_degree_inference_from_controls": false,
+    "full_spinor_norm_solver": false,
+    "Beli_source_formula_implementation": false,
+    "full_algorithm": false,
+    "quantum_execution": false,
+    "novelty": false,
+    "speedup": false
+  }
+}

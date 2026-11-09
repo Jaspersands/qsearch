@@ -1,0 +1,19 @@
+[A] p=5 d=2 kappa=2 dimV=2 g=3 pi=[0] M=3 n0=1: 97 successful pi-banks, w exactly uniform on V1 (|V1|=5) for each
+[A] p=5 d=2 kappa=2 dimV=2 g=3 pi=[0] M=3 n0=2: 85 successful pi-banks, w exactly uniform on V1 (|V1|=5) for each
+[A] p=7 d=3 kappa=3 dimV=2 g=3 pi=[0] M=3 n0=1: 217 successful pi-banks, w exactly uniform on V1 (|V1|=7) for each
+[A] p=7 d=2 kappa=2 dimV=2 g=3 pi=[0] M=3 n0=2: 259 successful pi-banks, w exactly uniform on V1 (|V1|=7) for each
+[A] p=5 d=2 kappa=2 dimV=3 g=4 pi=[0, 1] M=3 n0=1: 4897 successful pi-banks, w exactly uniform on V1 (|V1|=5) for each
+[B] p=5 d=2 kappa=2 pi1=[0] pi2=[1, 2] M1=3 n0=1: 12 record pairs, (w1,w2) exactly uniform on V1^2 (|V1|=5), level-2 bank uniform on pi2(V1)^2 (|pi2(V1)|=5)
+[B] p=7 d=3 kappa=3 pi1=[0] pi2=[1, 2] M1=3 n0=1: 12 record pairs, (w1,w2) exactly uniform on V1^2 (|V1|=7), level-2 bank uniform on pi2(V1)^2 (|pi2(V1)|=7)
+[C] p=5 d=2 M=2 n0=1: full-label sampler gives Pr[w=0] = 69/325 (uniform would be 1/5); law = {(0, 0): Fraction(69, 325), (0, 1): Fraction(64, 325), (0, 2): Fraction(64, 325), (0, 3): Fraction(64, 325), (0, 4): Fraction(64, 325)}
+[C] p=5 d=2 M=3 n0=1: full-label sampler gives Pr[w=0] = 3193/12125 (uniform would be 1/5); law = {(0, 0): Fraction(3193, 12125), (0, 1): Fraction(2233, 12125), (0, 2): Fraction(2233, 12125), (0, 3): Fraction(2233, 12125), (0, 4): Fraction(2233, 12125)}
+[D] p=13 d=4 kappa=4 g=6 a=6 maps=[[0, 1, 2], [3, 4, 5]] Ms=[9, 9] n0=[4, 4]: 48/60 runs returned s, every s verified exactly; outcomes {'ok': 48, 'F3': 12} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=13 d=4 kappa=4 g=6 a=4 maps=[[0, 1], [2, 3], [4, 5]] Ms=[6, 6, 6] n0=[3, 3, 3]: 1/60 runs returned s, every s verified exactly; outcomes {'F3': 58, 'F2': 1, 'ok': 1} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=31 d=6 kappa=6 g=6 a=6 maps=[[0, 1, 2], [3, 4, 5]] Ms=[8, 8] n0=[3, 3]: 47/60 runs returned s, every s verified exactly; outcomes {'ok': 47, 'F3': 13} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=11 d=2 kappa=2 g=4 a=3 maps=[[0, 1], [2, 3]] Ms=[6, 6] n0=[3, 3]: 55/60 runs returned s, every s verified exactly; outcomes {'ok': 55, 'F2': 3, 'F3': 2} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=37 d=9 kappa=9 g=4 a=4 maps=[[0, 1], [2, 3]] Ms=[6, 6] n0=[3, 3]: 2/60 runs returned s, every s verified exactly; outcomes {'F3': 56, 'F2': 2, 'ok': 2} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[D] p=13 d=3 kappa=3 g=6 a=5 maps=random Ms=[8, 8] n0=[3, 3]: 58/60 runs returned s, every s verified exactly; outcomes {'F3': 2, 'ok': 58} (F2 = pivot abort, F3 = trial cap 2B ln2 q^-r reached, B=20)
+[F] (Monte Carlo) p=31 d=6 kappa=6 g=4 a=4 blocks=[[0, 1], [2, 3]] Ms=[11, 11] n0=[7, 7] B=20: node abort bound sum_j n_j beta_j + 3 nu 2^-B = 0.0825; observed 0/150 aborts
+[F] (Monte Carlo) p=13 d=4 kappa=4 g=4 a=4 blocks=[[0, 1], [2, 3]] Ms=[14, 14] n0=[10, 10] B=20: node abort bound sum_j n_j beta_j + 3 nu 2^-B = 0.0396; observed 0/150 aborts
+[E] sub-solver count nu <= (M-1)/(min M_j - 1) <= M-1 and nu <= 2 prod_{j>=2} M_j for k<=5, 2<=M_j<=6; beta(M,1;g) > 1 for g>=1 at all tested (p,kappa)
+ALL CHECKS PASSED

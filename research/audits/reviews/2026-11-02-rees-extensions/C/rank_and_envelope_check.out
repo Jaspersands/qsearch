@@ -1,0 +1,15 @@
+(s, c, Witt rank, Sage dim, T=sum s^j)
+(2, 2, 3, 3, 6) OK
+(2, 3, 5, 5, 14) OK
+(2, 4, 8, 8, 30) OK
+(3, 3, 14, 14, 39) OK
+(4, 3, 30, 30, 84) OK
+(2, 5, 14, 14, 62) OK
+(3, 4, 32, 32, 120) OK
+b(b+1) = 10920 json: 10920
+3 + sum d*ceil(log2(d+1)) = 147 json: 147 (core 1+sum = 145 )
+sum r_i(r_i+1) <= b(b+1) for all splits, b<=12, <=4 Sylows: True
+free route s=2 c=3 e=2: d=5, log_p|F|=e*d=10
+free route s=4 c=3 e=2: d=30, log_p|F|=e*d=60
+free route s=2 c=9 e=1: d=127, log_p|F|=e*d=127
+free route s=4 c=9 e=1: d=40584, log_p|F|=e*d=40584

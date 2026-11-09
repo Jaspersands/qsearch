@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2766,
+      "path": "research/audits/claude_inputs/2026-11-07-general-sparse-constants/contract.md",
+      "sha256": "5ee80bf7f3b08ff7c9934d32ff9a14931a53a4c286e6da8710987a5862abedc3",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 21154,
+      "path": "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md",
+      "sha256": "208e3416576c23c387a2d197e40a860e8b79745c5107e2b69a5adf410ebb1935",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 10515,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-06T15:39:18.610270+00:00",
+  "input_token_allowance": 10771,
+  "max_budget_usd": 1.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.698444,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/claude_inputs/2026-11-07-general-sparse-constants/derivative_prompt.md",
+    "sha256": "33a18a99576810736329e3607aee2b885f29d3817c05168ab3c15c5b4dfeb626",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261106T153756.622136Z-644b6cb7",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 10515,
+    "output_tokens": 8102
+  },
+  "usage_cost_estimate_usd": 0.2041
+}

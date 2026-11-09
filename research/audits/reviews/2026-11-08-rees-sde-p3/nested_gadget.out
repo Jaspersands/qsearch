@@ -1,0 +1,15 @@
+C(e1) = (0, 0, 0, 1, 1, 2)  C(e2) = (1, 1, 1, 1, 2, 0)
+gadget: for alpha in F_3^2\0, the subset y_alpha is the union of the pattern classes P_(a,b) listed:
+  alpha=(0, 1): classes [(1, 1), (1, 2), (2, 2)]
+  alpha=(0, 2): classes [(1, 2), (2, 1), (2, 2)]
+  alpha=(1, 0): classes [(1, 0), (1, 1), (2, 0)]
+  alpha=(1, 1): classes [(1, 0), (2, 0), (2, 1)]
+  alpha=(1, 2): classes [(1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
+  alpha=(2, 0): classes [(1, 1), (2, 0), (2, 2)]
+  alpha=(2, 1): classes [(2, 0), (2, 1), (2, 2)]
+  alpha=(2, 2): classes [(1, 0), (1, 2), (2, 1)]
+q=6: 8 class-union subsets realize alpha_1 h1 + alpha_2 h2 for all alpha: OK; h1,h2 independent over F_3: True
+q=10: 8 class-union subsets realize alpha_1 h1 + alpha_2 h2 for all alpha: OK; h1,h2 independent over F_3: True
+q=20: 8 class-union subsets realize alpha_1 h1 + alpha_2 h2 for all alpha: OK; h1,h2 independent over F_3: True
+q=40: 8 class-union subsets realize alpha_1 h1 + alpha_2 h2 for all alpha: OK; h1,h2 independent over F_3: True
+nested-support gadget verified on 20 constructed instances (q = 6, 10, 20, 40); witnesses checked by direct summation

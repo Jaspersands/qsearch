@@ -1,0 +1,45 @@
+{
+  "status": "EXACT_NATIVE_BOUND_ARITHMETIC_PASS",
+  "scope": "Exact finite inequality, conditional on the independently reviewed fusion theorem; no full physical matrix diagonalization.",
+  "theory": "research/GAUDIN_TWO_CLUSTER_GAP.md sections1-3",
+  "core_review": "research/audits/reviews/2026-11-07-gaudin-fusion-core.md",
+  "fused_result_sha256": "c8cbce0b24c4b82f08a40d0ee06a111f68b2a01bd723bdf13d347c21a04c42ae",
+  "parameters": {
+    "cluster_size_n": 64,
+    "physical_N": 128,
+    "excitation_M": 64,
+    "g": "1/128",
+    "delta": "1/281474976710656",
+    "sites_A": "delta*i, i=0,...,63",
+    "sites_B": "1+delta*i, i=0,...,63",
+    "minimum_spacing": "1/281474976710656"
+  },
+  "bounds": {
+    "C_E": "1381632",
+    "C_Q": "7340675643/2",
+    "uniform_compression_e": "25/1048576",
+    "fused_lowest_gap_lower": "67/250",
+    "fused_lowest_gap_upper": "27/100",
+    "strict_physical_squared_joint_gap_upper": "3268523241/1342177280000",
+    "simple_strict_upper": "1/400",
+    "proposed_floor_1_over_N": "1/128"
+  },
+  "checks": {
+    "CE_le_6n3": true,
+    "CQ_le_400n4": true,
+    "positive_distinct_site_condition": true,
+    "separator_isolation": true,
+    "compression_error_paid": true,
+    "two_distinct_anchor_eigenvalues": true,
+    "strict_native_upper_below_1_over_400": true,
+    "one_over_400_below_target_1_over_N": true
+  },
+  "claim_gates": {
+    "all_family_theorem_from_control": false,
+    "superpolynomial_gap": false,
+    "no_polynomial_algorithm": false,
+    "quantum_execution": false,
+    "novelty": false,
+    "separation": false
+  }
+}

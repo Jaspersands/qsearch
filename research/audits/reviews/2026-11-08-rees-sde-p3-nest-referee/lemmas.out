@@ -1,0 +1,24 @@
+== Lemma G ==
+h1,h2 independent mod relations: True
+ alpha (0, 1) unions: [[(1, 1), (1, 2), (2, 2)]]
+ alpha (0, 2) unions: [[(1, 2), (2, 1), (2, 2)]]
+ alpha (1, 0) unions: [[(1, 0), (1, 1), (2, 0)]]
+ alpha (1, 1) unions: [[(1, 0), (2, 0), (2, 1)]]
+ alpha (1, 2) unions: [[(1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]]
+ alpha (2, 0) unions: [[(1, 1), (2, 0), (2, 2)]]
+ alpha (2, 1) unions: [[(2, 0), (2, 1), (2, 2)], [(1, 0), (1, 1), (1, 2)]]
+ alpha (2, 2) unions: [[(1, 0), (1, 2), (2, 1)]]
+note's UNIONS table among the derived solutions: True
+nonempty-class patterns with delta' not in <delta>: 54; (alpha, 2alpha) pairs with both unions empty: 0
+patterns emptying at least one listed union: 16
+numeric gadget identities on 300 random nested pairs: all hold
+== Lemma P ==
+classes tested 20562, drop == a-1 in 20562, max class size 7; no violation
+== Lemma M ==
+432 coloop-free codes: mean = 2N/3 and Var = (2/9) sum a_j^2 exactly in all
+== Lemma D ==
+208 codes: class formula == brute-force conditional expectation at every prefix; selected codeword within one sigma and nonzero
+== N(q) and the closed-form sums ==
+N(q) <= 1.5q+2sqrt(q)+6 for 4<=q<20000: True
+N(q) nondecreasing on 1..20000: True
+sum q <= n^2/4+n/2, sum sqrt q <= (n+2)^1.5/3, #stages <= n/2 for 4<=n<5000: True

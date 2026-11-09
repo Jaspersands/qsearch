@@ -15,6 +15,11 @@ coefficient labels cannot cheaply repair their unconditional marginal on
 most informative source fibers. Its scope and preparation-leakage limitation
 are explicit; arbitrary coherent cross-block mixing remains open.
 
+FOLLOW-UP (2026-11-06): Section10 alone has independent core/actual-text
+review ACCEPTED. It analyzes exact pair-cooling branches, an approximate
+all-branch correction and its matched classical Gaussian sampler. This
+does not change the review status of Sections1--9.
+
 ## 1. Decision
 
 There are three distinct cases, not one solved Gaussian-sampling subroutine.
@@ -586,3 +591,169 @@ when additive leakage dominates it. Keep cross-block mixing, informative
 conditional-core proposals and genuinely quantum basis construction open.
 The next theory pass must construct such an operation, not merely choose a
 more elaborate scalar rejection envelope for the same unconditional proposal.
+
+
+## 10. Pair cooling, retained branches and a matched classical sampler
+
+6 November 2026. Independent core and actual-text review ACCEPTED after
+correcting the nearest-plane tie convention. This section does not promote the older review-pending sections.
+The scientific question is whether coherent pair averaging removes the
+Gaussian source/basis bottleneck for native lattice BDD/LWE algorithms.
+Input is a full-rank explicit rational basis B of L in R^n, plus a PAID
+source of fresh centered Gaussian states at width s. An arbitrary basis
+alone does not supply that source at arbitrary widths. The desired step
+is a centered state at width t=s/sqrt2 on the SAME lattice. Iterating such
+a step cheaply below the basis-controlled regime would be valuable; no
+end-to-end BDD/LWE algorithm is inferred from a cooling identity.
+
+Corpus been-tried and baselines preceded the primary-source check. The
+actual [ADRS paper, arXiv:1412.7994](https://arxiv.org/abs/1412.7994),
+Lemma3.4, Proposition3.5 and Corollary3.6 already provide the centered
+classical combiner and pay its squared-coset weights and repeated use.
+Claim2.6 supplies the uniform shifted-mass bound above smoothing. The
+parent and an independent reviewer read the actual statements. GPV's
+actual Section3 sampling algorithm is the basis-controlled comparator;
+its coordinate normalization is analyzed below with the full profile.
+No novelty is claimed for averaging, Poisson summation or Klein sampling.
+
+Distinct alternatives were screened before selection. Explicit binary
+self-dual code equivalence has a paid controlled-permutation orbit kernel,
+but entrywise Gaussian elimination does not implement its inverse or
+a permutation decoder. For t_c copies its native Gram block is
+(n!)^-1 2^{t_c(dim(pi C intersect sigma C)-n/2)}. Coherent permutations are
+not automatically Clifford; no general dequantization is claimed. Sparse
+finite-field root finding from binary exponents is an external task, but
+no new root-extraction mechanism was supplied; dense degree-based costs
+cannot be charged only to sparse input bits. Actual [Bi--Cheng--Rojas,
+Theorem1.1](https://oaktrust.library.tamu.edu/bitstreams/a351def0-7b7d-4248-90fb-4c92e5a5fe55/download)
+gives deterministic q^(1/2+o(1)) root detection for trinomials. Their
+Theorem1.4's randomized-reduction NP-hardness applies to GROWING term
+count; it is not a fixed-trinomial or quantum lower bound. Neither route is admitted
+for implementation. Pair cooling is selected for its explicit operation
+and exact falsifier, not a generic promise of quantum lattice hardness.
+
+### 10.1. Exact law and the centered branch
+
+Use PROBABILITY widths throughout:
+
+    rho_s(x)=exp(-pi ||x||²/s²),   Z_s=rho_s(L),
+    |G_{L,s}> = Z_s^(-1/2) sum_(x in L) sqrt(rho_s(x)) |x>.
+
+From two copies, compute u=x-y and z=(x+y)/2 using exact rational/basis
+coordinates, and measure u. Completing the square gives
+
+    Pr(u) = rho_(sqrt2 s)(u) rho_t(L+u/2) / Z_s²,
+    state(z | u) = |G_{L+u/2,t}>,             t=s/sqrt2.       (23)
+
+Centered output on L requires u in2L. Its exact probability is
+
+    P_even = rho_t(L)² / rho_s(L)².                           (24)
+
+This is ADRS Lemma3.4's collision mass. At t>=eta_epsilon(L), Poisson
+summation bounds it between 2^-n/(1+epsilon)² and
+2^-n(1+epsilon)². Independent rejection costs
+O(P_even^-1 log(1/eta)) pairs for confidence1-eta; amplitude amplification
+requires a preparation UNITARY AND INVERSE, not only fresh copies, and
+still costs order2^(n/2) in this regime. No universal lower bound for
+other uses of the states follows.
+
+The cheapest exact falsifier of unqualified centered cooling is L=Z and
+odd u. The state is on Z+1/2. Translating by1/2 puts it on Z but yields
+weights rho_t(w+1/2), not rho_t(w): the weights at w=0,-1 are equal,
+whereas the centered target weights have ratio exp(pi/t²). Fourier
+measurement of a parity record alone does not identify these different
+conditional states or restore the target center.
+
+### 10.2. A paid all-branch correction, with its error
+
+There IS a constructive approximate alternative; do not overstate(24)
+as forbidding it. Let g_i=||b_i*||, S_B=sum_i g_i² and R_B=sqrt(S_B)/2.
+For the measured coset c=u mod2L, compute the ordinary Babai residual
+
+    delta_c = u/2 - Babai_B(u/2),       ||delta_c||<=R_B.
+
+Use translation-equivariant rounding floor(x+1/2) at EVERY nearest-plane
+step. Then this residual depends only on c. Merely deterministic rounding
+is insufficient: ties-to-even gives residuals+1/2 and-1/2 for u=1 and3
+in L=Z, despite equal parity. The reviewer supplied this exact correction. Translate
+z to w=z-delta_c in L. Every branch is retained, with state
+
+    |H_delta> = rho_t(L+delta)^(-1/2)
+                sum_(w in L) sqrt(rho_t(w+delta)) |w>.
+
+The shift is public and polynomial-bit, but its Gaussian center is -delta.
+The EXACT overlap with the centered target is
+
+    <G_{L,t}|H_delta> = exp[-pi ||delta||²/(4t²)]
+      * rho_t(L+delta/2)/sqrt[rho_t(L) rho_t(L+delta)].        (25)
+
+If t>=eta_epsilon(L), shifted Poisson mass lies between
+(1-epsilon)t^n/detL and (1+epsilon)t^n/detL. Thus the trace distance of
+EACH branch, and by convexity their mixture after discarding u, from the
+pure target is at most
+
+    sqrt[pi R_B²/(2t²) + 4epsilon].                          (26)
+
+In particular t>=sqrt(pi) R_B/tau and epsilon<=tau²/8 suffice for distance
+<=tau. This is a sufficient regime, not a lower bound outside it.
+The exact law(23), rational arithmetic and polynomial-bit Babai shifts
+pay the operation; finite Gaussian-source, tail and arithmetic errors add
+to(26). No small-width source, source inverse or favorable basis is free.
+
+Repeated use also consumes inputs: this BINARY-TREE protocol needs2^k
+initial copies for k cooling levels, with t_final=s_initial*2^(-k/2),
+so2^k=(s_initial/t_final)^2. This is not polynomial in the BIT LENGTH of
+an arbitrary width ratio. Independent approximate inputs satisfy the
+conservative recurrence e_(j+1)<=2e_j+tau_j; preparation/rounding errors
+cannot just be added once per level. These are this protocol's resource
+counts, not lower bounds for every possible cooling algorithm.
+
+### 10.3. Why this sufficient regime is already classically sampled
+
+Measuring the corrected output gives EXACTLY the same law as classical
+independent X,Y~D_{L,s}, followed by u=X-Y and the same Babai-shifted
+average. This equality is for computational samples; it does not simulate
+arbitrary later coherent measurements.
+
+There is a stronger comparison: the usual coordinate Klein sampler can
+sample the CENTERED target directly under the same sufficient width
+bound, without paying for two prior samples. Use its conditional
+one-dimensional widths r_i=t/g_i. By one-dimensional Poisson summation,
+the normalization at any conditional center differs from r_i by at most
+the relative quantity
+
+    e_i = 2 exp(-pi r_i²)/(1-exp(-3pi r_i²)).                 (27)
+
+Set a=pi t²/S_B. For a>=1 and v_i=g_i²/S_B, sum v_i=1 and
+exp(-a/v_i)<=v_i exp(-a), because exp(-a/v)/v increases on0<v<=1.
+Consequently
+
+    E := sum_i e_i <= 2 exp(-a)/(1-exp(-3a)).                (28)
+
+For completeness this is a density-ratio calculation, not a claim read
+from GPV with the stronger profile silently inserted. The product of the
+Klein step numerators is rho_t(w). Each denominator is r_i(1+d_i),
+|d_i|<=e_i, and product r_i=t^n/detL. If E<=1/4, then the product of all
+(1+d_i) lies between exp(-2E) and exp(2E). Summing the resulting bounds
+for the normalized Klein law shows the Gaussian partition function has
+the same bounds relative to t^n/detL. Hence its likelihood ratio to
+D_{L,t} is between exp(-4E) and exp(4E), giving total variation at most
+exp(4E)-1. Finite one-dimensional truncation/sampling errors add explicitly;
+standard GPV conditional samplers have polynomial bit/precision cost.
+
+For 0<tau<=1/4, the width t>=sqrt(pi)R_B/tau in(26) gives
+a>=pi²/(4tau²), so(28) is exponentially small in1/tau². Thus the proved
+all-branch correction regime is already covered by a classical sampler
+from the SAME basis. This statement does not rely on the coarser
+max(g_i)*sqrt(log n) estimate, which can be misleading for uneven profiles.
+No polynomial BDD/LWE improvement or general coherent-cooling no-go follows.
+
+Next hard gate: any new cooling operation must either give a paid source
+or retain useful coherence at widths outside this basis-controlled
+sufficient regime, AND connect it to a native decoder. A missing mechanism
+is not a reason to build a simulator or another width sweep. Core and actual-text reviews of(23)--(28) are COMPLETE, including the
+translation-equivariant rounding correction and binary-tree input/error
+counts. No finite Gaussian simulation or new backend was run. Next
+admission begins with a concrete operation, corpus lookup and primary
+literature; preserve probability widths, SAME lattice/center, source
+versus inverse access and the matched classical profile bound.

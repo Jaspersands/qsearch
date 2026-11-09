@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "scope": "Exact finite classical Pauli/bijection/Slater controls only; all-n proof separate.",
+  "cases": [
+    {
+      "N": 2,
+      "spins": 4,
+      "states": 16,
+      "label_blocks": 14,
+      "directed_transitions": 4,
+      "jammed_states": 12,
+      "final_D_states": 6,
+      "bijection_inverse_and_all_binomial_block_dimensions": true,
+      "Pauli_H_equals_squeezed_path_H": true,
+      "transition_multiplicity": 1
+    },
+    {
+      "N": 3,
+      "spins": 5,
+      "states": 32,
+      "label_blocks": 24,
+      "directed_transitions": 16,
+      "jammed_states": 18,
+      "final_D_states": 10,
+      "bijection_inverse_and_all_binomial_block_dimensions": true,
+      "Pauli_H_equals_squeezed_path_H": true,
+      "transition_multiplicity": 1
+    },
+    {
+      "N": 4,
+      "spins": 6,
+      "states": 64,
+      "label_blocks": 40,
+      "directed_transitions": 48,
+      "jammed_states": 28,
+      "final_D_states": 22,
+      "bijection_inverse_and_all_binomial_block_dimensions": true,
+      "Pauli_H_equals_squeezed_path_H": true,
+      "transition_multiplicity": 1
+    },
+    {
+      "N": 5,
+      "spins": 7,
+      "states": 128,
+      "label_blocks": 66,
+      "directed_transitions": 128,
+      "jammed_states": 44,
+      "final_D_states": 42,
+      "bijection_inverse_and_all_binomial_block_dimensions": true,
+      "Pauli_H_equals_squeezed_path_H": true,
+      "transition_multiplicity": 1
+    },
+    {
+      "N": 6,
+      "spins": 8,
+      "states": 256,
+      "label_blocks": 108,
+      "directed_transitions": 320,
+      "jammed_states": 70,
+      "final_D_states": 86,
+      "bijection_inverse_and_all_binomial_block_dimensions": true,
+      "Pauli_H_equals_squeezed_path_H": true,
+      "transition_multiplicity": 1
+    },
+    {
+      "N": 7,
+      "spins": 9,
+      "states": 512,
+      "label_blocks": 176,
+      "directed_transitions": 768,
+      "jammed_states": 112,
+      "final_D_states": 170,
+      "bijection_inverse_and_all_binomial_block_dimensions": true,
+      "Pauli_H_equals_squeezed_path_H": true,
+      "transition_multiplicity": 1
+    },
+    {
+      "N": 8,
+      "spins": 10,
+      "states": 1024,
+      "label_blocks": 286,
+      "directed_transitions": 1792,
+      "jammed_states": 180,
+      "final_D_states": 342,
+      "bijection_inverse_and_all_binomial_block_dimensions": true,
+      "Pauli_H_equals_squeezed_path_H": true,
+      "transition_multiplicity": 1
+    }
+  ],
+  "Slater_control": {
+    "N": 6,
+    "label": [
+      0,
+      "BC",
+      0,
+      2
+    ],
+    "ell": 4,
+    "occupied_sine_modes": [
+      1,
+      2
+    ],
+    "exact_energy": "zeta20^6 - zeta20^4 - 1/2",
+    "exact_norm_squared": "25/4",
+    "physical_Pauli_word": "ZZZZZZII",
+    "exact_expectation": "0",
+    "determinant_equals_dense_expectation": true,
+    "polynomial_simulation_for_general_observables_claimed": false
+  },
+  "claim_gates": {
+    "all_n_theorem_from_control": false,
+    "quantum_execution": false,
+    "novelty": false,
+    "speedup": false
+  }
+}

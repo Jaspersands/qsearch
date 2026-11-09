@@ -1,0 +1,50 @@
+== Part A: exhaustive over C in F_p^{r x n}
+   p= 5 kappa=2 h= 2 r=1 n=3: #C=   125 E N=   4.800 (= h^n q^r exact) Var=   3.840 <= h E N=   9.600; bad fraction=0.1120 vs 4/mu=1.667; oblivious Pr_C[Cx in D^r]=q^r=0.6000 for 5 x
+   p= 5 kappa=2 h= 2 r=2 n=3: #C= 15625 E N=   2.880 (= h^n q^r exact) Var=   3.686 <= h E N=   5.760; bad fraction=0.1741 vs 4/mu=2.778; oblivious Pr_C[Cx in D^r]=q^r=0.3600 for 5 x
+   p= 7 kappa=2 h= 3 r=1 n=3: #C=   343 E N=  15.429 (= h^n q^r exact) Var=  19.837 <= h E N=  46.286; bad fraction=0.0262 vs 4/mu=0.778; oblivious Pr_C[Cx in D^r]=q^r=0.5714 for 5 x
+   p= 7 kappa=2 h= 3 r=2 n=3: #C=117649 E N=   8.816 (= h^n q^r exact) Var=  17.813 <= h E N=  26.449; bad fraction=0.1234 vs 4/mu=1.361; oblivious Pr_C[Cx in D^r]=q^r=0.3265 for 5 x
+   p= 7 kappa=3 h= 2 r=2 n=3: #C=117649 E N=   1.469 (= h^n q^r exact) Var=   2.399 <= h E N=   2.939; bad fraction=0.4460 vs 4/mu=5.444; oblivious Pr_C[Cx in D^r]=q^r=0.1837 for 5 x
+   p= 7 kappa=3 h= 2 r=3 n=2: #C=117649 E N=   0.315 (= h^n q^r exact) Var=   0.580 <= h E N=   0.630; bad fraction=0.8488 vs 4/mu=25.407; oblivious Pr_C[Cx in D^r]=q^r=0.0787 for 5 x
+   p=11 kappa=2 h= 5 r=2 n=2: #C= 14641 E N=   7.438 (= h^n q^r exact) Var=  26.125 <= h E N=  37.190; bad fraction=0.1926 vs 4/mu=2.689; oblivious Pr_C[Cx in D^r]=q^r=0.2975 for 5 x
+   p=11 kappa=5 h= 2 r=2 n=3: #C=1771561 E N=   0.595 (= h^n q^r exact) Var=   1.102 <= h E N=   1.190; bad fraction=0.7342 vs 4/mu=13.444; oblivious Pr_C[Cx in D^r]=q^r=0.0744 for 5 x
+   p=13 kappa=3 h= 4 r=2 n=2: #C= 28561 E N=   2.367 (= h^n q^r exact) Var=   8.067 <= h E N=   9.467; bad fraction=0.5187 vs 4/mu=6.760; oblivious Pr_C[Cx in D^r]=q^r=0.1479 for 5 x
+   p=13 kappa=4 h= 3 r=1 n=3: #C=  2197 E N=   8.308 (= h^n q^r exact) Var=  17.254 <= h E N=  24.923; bad fraction=0.1352 vs 4/mu=1.444; oblivious Pr_C[Cx in D^r]=q^r=0.3077 for 5 x
+   p=13 kappa=2 h= 6 r=2 n=2: #C= 28561 E N=  10.438 (= h^n q^r exact) Var=  44.469 <= h E N=  62.627; bad fraction=0.1597 vs 4/mu=2.299; oblivious Pr_C[Cx in D^r]=q^r=0.2899 for 5 x
+   p=13 kappa=6 h= 2 r=2 n=2: #C= 28561 E N=   0.213 (= h^n q^r exact) Var=   0.403 <= h E N=   0.426; bad fraction=0.8963 vs 4/mu=37.556; oblivious Pr_C[Cx in D^r]=q^r=0.0533 for 5 x
+== Part B: exhaustive over all banks A in F_p^{a x M} (columns i.i.d. uniform)
+   p= 5 kappa=2 a=1 M=4 n0=2: banks=    625 pivot-fail=24 low-acceptance=72 no-witness=40; bad fraction=0.1536 <= beta=3.373: True; R[:,F'] uniform per pivot pattern: True; min acceptance (non-failed)=0.0000 vs q^a/2=0.3000
+   p= 7 kappa=3 a=1 M=4 n0=2: banks=   2401 pivot-fail=48 low-acceptance=360 no-witness=360; bad fraction=0.1699 <= beta=4.687: True; R[:,F'] uniform per pivot pattern: True; min acceptance (non-failed)=0.0000 vs q^a/2=0.2143
+   p= 7 kappa=2 a=1 M=5 n0=3: banks=  16807 pivot-fail=342 low-acceptance=126 no-witness=126; bad fraction=0.0278 <= beta=0.798: True; R[:,F'] uniform per pivot pattern: True; min acceptance (non-failed)=0.0000 vs q^a/2=0.2857
+   p=11 kappa=2 a=1 M=4 n0=2: banks=  14641 pivot-fail=120 low-acceptance=250 no-witness=250; bad fraction=0.0253 <= beta=1.475: True; R[:,F'] uniform per pivot pattern: True; min acceptance (non-failed)=0.0000 vs q^a/2=0.2727
+   p= 5 kappa=2 a=2 M=4 n0=2: banks= 390625 pivot-fail=87024 low-acceptance=123312 no-witness=123120; bad fraction=0.5385 <= beta=5.796: True; R[:,F'] uniform per pivot pattern: True; min acceptance (non-failed)=0.0000 vs q^a/2=0.1800
+   p=13 kappa=2 a=1 M=5 n0=3: banks= 371293 pivot-fail=2196 low-acceptance=504 no-witness=504; bad fraction=0.0073 <= beta=0.212: True; R[:,F'] uniform per pivot pattern: True; min acceptance (non-failed)=0.0000 vs q^a/2=0.2692
+   p=31 kappa=3 a=1 M=4 n0=3: banks= 923521 pivot-fail=29790 low-acceptance=1800 no-witness=1800; bad fraction=0.0342 <= beta=0.145: True; R[:,F'] uniform per pivot pattern: True; min acceptance (non-failed)=0.0000 vs q^a/2=0.1774
+== Part B2: random banks, exact per-bank acceptance (enumerating all x in P^{n'})
+   p=13 kappa=3 a=2 M=7 n0=5: 4000 banks; pivot-fail=348 low-acceptance=9; bad fraction=0.0892 vs beta=0.1885; acceptance/q^r: mean 1.002 min 0.396
+   p=13 kappa=2 a=2 M=6 n0=4: 4000 banks; pivot-fail=316 low-acceptance=3; bad fraction=0.0798 vs beta=0.1467; acceptance/q^r: mean 1.002 min 0.000
+   p=31 kappa=3 a=2 M=6 n0=4: 4000 banks; pivot-fail=149 low-acceptance=2; bad fraction=0.0377 vs beta=0.0651; acceptance/q^r: mean 1.000 min 0.254
+   p= 7 kappa=2 a=3 M=9 n0=6: 2000 banks; pivot-fail=343 low-acceptance=0; bad fraction=0.1715 vs beta=0.2544; acceptance/q^r: mean 0.999 min 0.529
+   p=61 kappa=6 a=2 M=6 n0=4: 4000 banks; pivot-fail=68 low-acceptance=7; bad fraction=0.0187 vs beta=0.1397; acceptance/q^r: mean 1.000 min 0.000
+   p=31 kappa=5 a=3 M=8 n0=5: 1500 banks; pivot-fail=54 low-acceptance=32; bad fraction=0.0573 vs beta=0.3014; acceptance/q^r: mean 1.006 min 0.067
+== Part C: end-to-end FCS on random banks (labels uniform on a random a-dim V in F_p^g)
+   p=   13 d=4 kappa=4 g=4 a=3 M=7 n0=3 (bank bound beta=1.000): 24/40 banks gave a witness verified at degree d; mean trials    16.92 vs 1/q^a=   34.33 (kappa^a=64); original design acceptance (MC, 8 banks x 2e4) mean 2.87e-04 vs q^M=2.61e-04
+   p=   31 d=3 kappa=3 g=5 a=4 M=8 n0=3 (bank bound beta=1.000): 40/40 banks gave a witness verified at degree d; mean trials    60.45 vs 1/q^a=   63.08 (kappa^a=81); original design acceptance (MC, 8 banks x 2e4) mean 2.13e-04 vs q^M=2.51e-04
+   p=   61 d=6 kappa=6 g=4 a=3 M=7 n0=3 (bank bound beta=1.000): 39/40 banks gave a witness verified at degree d; mean trials   211.44 vs 1/q^a=  170.53 (kappa^a=216); original design acceptance (MC, 8 banks x 2e4) mean 6.25e-06 vs q^M=6.20e-06
+   p= 1031 d=2 kappa=2 g=6 a=5 M=8 n0=2 (bank bound beta=0.247): 40/40 banks gave a witness verified at degree d; mean trials    33.27 vs 1/q^a=   31.85 (kappa^a=32); original design acceptance (MC, 8 banks x 2e4) mean 3.91e-03 vs q^M=3.94e-03
+   p= 2521 d=5 kappa=5 g=5 a=4 M=7 n0=2 (bank bound beta=1.000): 40/40 banks gave a witness verified at degree d; mean trials   661.70 vs 1/q^a=  621.05 (kappa^a=625); original design acceptance (MC, 8 banks x 2e4) mean 6.25e-06 vs q^M=1.29e-05
+   p= 2521 d=9 kappa=9 g=3 a=2 M=5 n0=2 (bank bound beta=1.000): 40/40 banks gave a witness verified at degree d; mean trials    72.75 vs 1/q^a=   80.49 (kappa^a=81); original design acceptance (MC, 8 banks x 2e4) mean 2.50e-05 vs q^M=1.72e-05
+   p=    7 d=2 kappa=2 g=4 a=3 M=9 n0=5 (bank bound beta=0.288): 37/40 banks gave a witness verified at degree d; mean trials     4.51 vs 1/q^a=    5.36 (kappa^a=8); original design acceptance (MC, 8 banks x 2e4) mean 6.23e-03 vs q^M=6.50e-03
+   p=    5 d=2 kappa=2 g=3 a=3 M=9 n0=6 (bank bound beta=0.827): 29/40 banks gave a witness verified at degree d; mean trials     5.76 vs 1/q^a=    4.63 (kappa^a=8); original design acceptance (MC, 8 banks x 2e4) mean 1.05e-02 vs q^M=1.01e-02
+   p= 2521 d=4 kappa=4 g=8 a=8 M=11 n0=2 (bank bound beta=1.000): 38/40 banks gave a witness verified at degree d; mean trials 46452.05 vs 1/q^a=64915.42 (kappa^a=65536)
+   p=   11 d=5 kappa=5 g=3 a=2 M=8 n0=4 (bank bound beta=1.000): 37/40 banks gave a witness verified at degree d; mean trials    14.05 vs 1/q^a=   13.44 (kappa^a=25); original design acceptance (MC, 8 banks x 2e4) mean 2.86e-05 vs q^M=3.06e-05
+== Part D: two-level FCS
+   exact law p=5 kappa=2 M1=3 n0=2: level-one output second coordinate uniform on F_p for every first-coordinate bank with a witness: True
+   exact law p=7 kappa=3 M1=3 n0=2: level-one output second coordinate uniform on F_p for every first-coordinate bank with a witness: True
+   exact law p=7 kappa=2 M1=3 n0=2: level-one output second coordinate uniform on F_p for every first-coordinate bank with a witness: True
+   exact law p=11 kappa=2 M1=3 n0=2: level-one output second coordinate uniform on F_p for every first-coordinate bank with a witness: True
+   p= 2521 d=4 kappa=4 g=6 a=6 split 3+3 arity 6x6=36: 20/20 witnesses verified at degree d; mean trials    430.9 vs single-level 1/q^a=  4066.9
+   p= 1031 d=2 kappa=2 g=8 a=8 split 4+4 arity 7x7=49: 20/20 witnesses verified at degree d; mean trials    153.5 vs single-level 1/q^a=   254.0
+   p=   61 d=6 kappa=6 g=4 a=4 split 2+2 arity 5x5=25: 15/20 witnesses verified at degree d; mean trials    259.3 vs single-level 1/q^a=   945.7
+   p= 2521 d=5 kappa=5 g=6 a=5 split 3+3 arity 6x6=36: 20/20 witnesses verified at degree d; mean trials    903.0 vs single-level 1/q^a=  3100.3
+ALL CHECKS PASSED
+EXIT 0

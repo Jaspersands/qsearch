@@ -1,0 +1,39 @@
+# One operation to remove the character-reconstruction factorial
+
+Research question: can a uniform quantum algorithm recover an unknown monic
+squarefree degree-d Q over F_p in poly(d,log p), from the coherent BIT oracle
+for F(x)=chi(Q(x)) with chi(0) padded to +1? p is odd, binary, and may be
+arbitrarily large compared with d. Output Q's coefficients, with bounded
+error and public statistical verification. This is a native published
+learning problem, not an invented oracle separation. No field-value,
+extension-field, factor, root or target-dependent reflection advice exists.
+Fresh pure phase copies are available; the chosen-BIT oracle is the stronger
+permitted model. Keep any use of its inverse/coherent control explicit.
+
+The attached notes give the existing uniform exp(O(d log d)) algorithm and
+two precise failed improvements. Do not rederive them. We need ONE genuinely
+different, paid operation that plausibly removes the factorial bottleneck,
+not generic PGM/QSVT/Schur-transform/adiabatic terminology.
+
+An avenue to consider critically is replacing the completely split masking
+polynomial by masks with nonsplit factors of small degree, or a collective
+transform that combines the factor-pattern sectors. The split source's
+permutation garbage is ALREADY unprepared in polynomial time. The factorial
+comes from support density, not from enumerating permutations. Extension
+character values cannot simply be supplied. A generic coefficient shift
+changes the unknown resultant phase. A norm polynomial is proof-only until
+its sign can actually be obtained from the original BIT oracle.
+
+Try to construct a new operation, or disprove one precise attempted operation
+by an explicit counterexample/resource bound. A useful answer may be that no
+operation survives. Do not claim a general impossibility from a failed route.
+The strongest classical comparators include full-table poly(p) reconstruction,
+empirical exhaustive coefficient search, and the attached polynomial classical
+estimator for every chosen additive Fourier mean/candidate-subspace score.
+Thus an additive-accuracy statistical-query decoder must face that match.
+
+Give formulas, how each register is prepared/uncomputed, success scaling,
+the single most important remaining proof obligation, and the cheapest exact
+test. No source citations from memory should be treated as verified; the
+parent will check new references. Do not rely on quantum query complexity
+as a circuit bound. Keep the final report under 1800 words.

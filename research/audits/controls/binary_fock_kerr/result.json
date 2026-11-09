@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "scope": "Exact finite symmetric-power/Kerr/operator identities only.",
+  "beamsplitter_convention": "B(theta)=exp(theta(a\u2020b-b\u2020a)); basis ordered by n_a increasing.",
+  "dual_rail_CZ": {
+    "theta": "pi/4",
+    "operator": "B\u2020 K(n_a) K(n_b) B",
+    "cases": [
+      {
+        "input": [
+          0,
+          0
+        ],
+        "exact_phase": 1,
+        "leakage_amplitude_exactly_zero": true
+      },
+      {
+        "input": [
+          1,
+          0
+        ],
+        "exact_phase": 1,
+        "leakage_amplitude_exactly_zero": true
+      },
+      {
+        "input": [
+          0,
+          1
+        ],
+        "exact_phase": 1,
+        "leakage_amplitude_exactly_zero": true
+      },
+      {
+        "input": [
+          1,
+          1
+        ],
+        "exact_phase": -1,
+        "leakage_amplitude_exactly_zero": true
+      }
+    ],
+    "logical_phases_00_10_01_11": [
+      1,
+      1,
+      1,
+      -1
+    ],
+    "known_universality_composition_claimed_new": false
+  },
+  "Kerr_Fourier": {
+    "period": 4,
+    "coefficients_c0_c1_c2_c3": [
+      "0",
+      "(1-i)/2",
+      "0",
+      "(1+i)/2"
+    ],
+    "coherent_operator_identity_verified_occupations": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "mixture_witness": {
+      "input": [
+        2,
+        0
+      ],
+      "input_beamsplitter_angle": "pi/4",
+      "single_Kerr_on_mode": "a",
+      "inverse_output_beamsplitter_angle": "pi/8",
+      "output_basis": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "exact_coherent_state": [
+        "0",
+        "-1",
+        "0"
+      ],
+      "coherent_count_probabilities": [
+        "0",
+        "1",
+        "0"
+      ],
+      "incoherent_count_probabilities": [
+        "1/4",
+        "1/2",
+        "1/4"
+      ],
+      "total_variation_distance": "1/2",
+      "classical_mixture_shortcut_refuted": true
+    }
+  },
+  "angle_period": {
+    "exact_identity": "B(theta+pi)=(-1)^(pair photon number) B(theta)",
+    "tested_pair_sectors": [
+      {
+        "pair_photons": 0,
+        "shift_phase": 1
+      },
+      {
+        "pair_photons": 1,
+        "shift_phase": -1
+      },
+      {
+        "pair_photons": 2,
+        "shift_phase": 1
+      },
+      {
+        "pair_photons": 3,
+        "shift_phase": -1
+      },
+      {
+        "pair_photons": 4,
+        "shift_phase": 1
+      }
+    ],
+    "spectator_witness_global_photons": 1,
+    "spectator_basis": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "initial_state": "(|100>+|001>)/sqrt2",
+    "outputs_exact_inner_product": "0",
+    "pi_reduction_changes_relative_phase": true
+  },
+  "claim_gates": {
+    "full_binary_cutoff_theorem_from_control": false,
+    "quantum_execution": false,
+    "QHT_simulation": false,
+    "hardness": false,
+    "novelty": false,
+    "speedup": false
+  }
+}

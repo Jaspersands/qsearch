@@ -1,0 +1,29 @@
+python vs C port: 95 common primes, 0 disagreements
+k=4: own decided 80 primes up to 997; in E_2: 6; not in E_2: 74 primes; vs dfs2b: 0 common, 0 disagree []
+   own E_2(4) n [3,997] == paper/earlier exact list: True (own 6, list 6)
+   E2row(4) n decided range c E_2: yes
+k=5: own decided 375 primes up to 12721; in E_2: 9; not in E_2: 366 primes; vs dfs2b: 0 common, 0 disagree []
+   own E_2(5) n [3,12721] == paper/earlier exact list: True (own 9, list 9)
+   E2row(5) n decided range c E_2: yes
+k=6: own decided 148 primes up to 1999; in E_2: 53; not in E_2: 95 primes; vs dfs2b: 0 common, 0 disagree []
+   own E_2(6) n [3,1999] == paper/earlier exact list: True (own 53, list 53)
+   E2row(6) n decided range c E_2: yes
+k=7: own decided 79 primes up to 3389; in E_2: 56; not in E_2: 23 primes; vs dfs2b: 0 common, 0 disagree []
+   own E_2(7) n [3,3389] == paper/earlier exact list: True (own 56, list 56)
+   E2row(7) n decided range c E_2: yes
+k=8: own decided 83 primes up to 2441; in E_2: 82; not in E_2: [1553]; vs dfs2b: 0 common, 0 disagree []
+   E2row(8) n decided range c E_2: yes
+   E_2(4) n {p=1 mod 8} c E_2(8) on decided range: yes ([17])
+   own E_2(4) c E_2(8) on common range: yes (gcd(D,k/D) = 2)
+k=9: own decided 83 primes up to 3583; in E_2: 82; not in E_2: [3529]; vs dfs2b: 0 common, 0 disagree []
+   E2row(9) n decided range c E_2: yes
+k=10: own decided 253 primes up to 8191; in E_2: 250; not in E_2: [3361, 3761, 5821]; vs dfs2b: 253 common, 0 disagree []
+   E2row(10) n decided range c E_2: yes
+   E_2(5) n {p=1 mod 10} c E_2(10) on decided range: yes ([11, 31, 41, 61, 71, 101, 131, 151, 181])
+   own E_2(5) c E_2(10) on common range: yes (gcd(D,k/D) = 1)
+k=12: own decided 312 primes up to 10453; in E_2: 312; not in E_2: []; vs dfs2b: 312 common, 0 disagree []
+   E2row(12) n decided range c E_2: yes
+   E_2(4) n {p=1 mod 12} c E_2(12) on decided range: yes ([13, 37])
+   own E_2(4) c E_2(12) on common range: yes (gcd(D,k/D) = 1)
+   E_2(6) n {p=1 mod 12} c E_2(12) on decided range: yes ([13, 37, 61, 73, 97, 109, 157, 181, 193, 241, 277, 349, 373, 409, 421, 433, 577, 661, 673, 757])
+   own E_2(6) c E_2(12) on common range: yes (gcd(D,k/D) = 2)
