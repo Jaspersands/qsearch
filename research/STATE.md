@@ -6,8 +6,8 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-09, after the handoff entry
-"2026-11-09 Rees SDE F_q Referees: p = 5 Worst Case n²/4 + 3n/2 + 2; p ≥ 7 Cells Stand via Lemma N (AI Only)";
-the next five entries are from the same day.
+"2026-11-09 Rees Black-Box Non-Unique Encodings: HSP Without Identity Test via the Free Cover; Chart Needs Omega(sqrt p) (AI Only)";
+several entries below it are from the same day.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
 - Proved (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2, deterministic (Theorem B′;
