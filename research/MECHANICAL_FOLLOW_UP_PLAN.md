@@ -4,37 +4,55 @@
 Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12. Work in
 audits/reviews/2026-11-09-rees-square-gap-stepanov/osc-mc/ with `nice -n 19 /opt/anaconda3/bin/python -I`, keeping
 each computation under ~2 core-h. Do not edit the paper.
-1. Finish the κ = 6 survey.
-   - `sh survey/run_k6_survey.sh` restarts it if it was stopped; finished primes are skipped.
-   - When all 89 `survey/mc_k6_p*_s13.npz` exist, run
-     `nice -n 19 /opt/anaconda3/bin/python -I k6_spike_survey.py > k6_spike_survey.out`.
-   - Score the two prediction files:
-     - `survey/predictions_N1mu1.txt`: give the log error per prime and its rms. Report the λ ≈ 0.25–0.31 band
-       separately, because the fit's λ-term rests on one prime and 1951 is already off by +0.44.
-     - `survey/predictions_hclass.txt`: score H1–H3, using only primes that finished after 02:16, less 1933's rerun
-       (1759 is in neither set).
-   - Acceptance: the §12.2 table is filled for every band, with spike frequency and amplitude, and H is kept or
-     refuted.
-2. The arithmetic factor F(p).
-   - Run `pairsym.py 6 p 300000` (seed 5) on every survey prime with λ ≤ 0.25. Each takes about 5–20 min; use
-     1.5·10⁶ S where N₁/μ₁ < 0.6.
+1. Finish the κ = 6 survey. DONE 10 Nov 04:49 (§12.10): 21 of 89 primes are spikes; H1 is refuted by 2143, and H2
+   and H3 held; the symR law is scored (`survey/score_predictions.py` → `.out`).
+   - Follow-up DONE 10 Nov 05:31: 2143 at seed 14 (`survey/mc_k6_p2143_s14.npz`) replicates. B_D is 1.29 with lower
+     end 1.09, against 1.28 and 1.07 at seed 13 and the threshold 0.89. All three flags recur (§12.10).
+2. The arithmetic factor F(p). [Started 10 Nov 06:00 by the spike-survey session, in adapted form. The runs are
+   seed-13 `mc_split.py 6 p nconf` at the survey's nconf, which reproduce each survey run and flag 2+2 configurations
+   by pairsym's definition, at the 25 primes with λ ≤ 0.25 lacking a seed-13 split. The driver is
+   `survey/run_k6_split.sh` (resumable; outputs `split/split13_k6_p*`), and the predictions were pre-registered in
+   `survey/predictions_F.txt` (05:59:59).]
+   - Original form: run `pairsym.py 6 p 300000` (seed 5) on every survey prime with λ ≤ 0.25. Each takes about
+     5–20 min; use 1.5·10⁶ S where N₁/μ₁ < 0.6.
    - Compute F = share × N₁/μ₁ / R₂₊₂, with R₂₊₂ = 2,624,400/p² and N₁/μ₁ from the survey.
    - Acceptance:
      - the distribution of F per band, and its maximum;
      - its Spearman correlation with symR, with |a|/√p (p = a² + 3b², a ≡ 1 mod 3), with the cubic class of 2, and
        with |A(0,0) − mean|/√p (review-2026-11-10/fixedcell.py).
-3. κ = 7 class values at a typical λ ≈ 0.3 prime, to compare with 36037.
-   - Run `mc_classes.py 7 35099 10000 --seed 13 --out mc_k7_p35099_s13.npz` (about 1.7 core-h).
-   - Acceptance: B_L and B_D (`equal_p_chain.py`) at both primes, and whether B_D at 36037 exceeds B_D at 35099 by
-     more than 2σ.
+3. κ = 7 class values at a typical λ ≈ 0.3 prime, to compare with 36037. DONE 10 Nov 07:35 (§12.6; referee rounds
+   4b–4e).
+   - 35099: B_L 0.237. 34847 (median symR; rule pre-registered in `predictions_k7_p34847.txt`, 05:48): B_L 0.245
+     (2σ 0.218–0.270). By the rule 36037 is a spike in B_L against two equal-λ primes, and the call is not close
+     (`review-2026-11-10/scratch/score_k7_34847.out`, `k7_34847_bins.out`). Both npz files are outside the repo.
+   - The 36037 split (`mc_split.py 7 36037 6000 --seed 13`, the first 6000 configurations; npz outside the repo):
+     2+2 share 3.1% (F 1.6). Without those configurations B_L is 0.57, so the lift is not a 2+2 effect
+     (`review-2026-11-10/scratch/split36037_decomp.out`). What carries it is item 5.
+   - The original form is kept below.
+   - 36037 is an L-group value-spike candidate (§12.6): B_L 0.635 (2σ 0.54–0.72). Its B_D is not resolved (z 1.6), so
+     compare B_L.
+   - Acceptance: B_L and B_D at both primes, from `review-2026-11-10/scratch/k7_class_values.py` or `equal_p_chain.py`.
+     Then: does B_L at 36037 exceed B_L at 35099 by more than 2σ?
+   - Then split the 36037 run into 2+2 and not-2+2 parts with `mc_split.py` and `split_report.py`, as at κ = 6, to see
+     whether its 4.5% 2+2 share carries the (2,2) and (0,3) lift.
 4. Housekeeping: already done in the working tree. `.gitignore` lists these large binary outputs, as it does
    `survey/*.npz`:
    - `split/*.npz` (28 MB);
    - `review-2026-11-10/scratch/*.npz` (7 MB);
    - `mc_k7_p36037_s13.npz` (17 MB, like the other κ = 7 npz files).
 
-   A κ = 7 npz is over 10 MB. S1 dominates, and compression saves only 13%. Add `mc_k7_p35099_s13.npz` before running
-   item 3.
+   A κ = 7 npz is over 10 MB. S1 dominates, and compression saves only 13%. Item 3's npz for 35099 is written outside
+   the repo, so it needs no entry; a rerun inside the repo would.
+5. What carries the κ = 7 B_L lift at 36037 (proposed 10 Nov 07:35, not started). 36037 was picked for the highest
+   symR at λ ≈ 0.3 (44.2); 34693 has the same symR and pairsym F 0.9 (`sym/sym_rate_k7_lam03.out`).
+   - First write a rule in `predictions_k7_p34693.txt`: name the B_L level of the not-2+2 part that would count as
+     "lifted like 36037" (near 0.57) or "like the comparison primes" (near 0.24), and the inconclusive band between.
+   - Then run `mc_split.py 7 34693 6000 --seed 17 --out <outside the repo>/split_k7_p34693` (a distinct seed;
+     about 1.3 core-h at nice 19) and `split_report.py` on it.
+   - Acceptance: B_L of the all and not-2+2 parts with 2σ ranges, scored by the rule. If it is lifted, symR rather
+     than the 2+2 family predicts the κ = 7 lift, as symR ranks B_L at κ = 6. If not, 36037 is a single prime's
+     effect.
+   - Then split 36037's not-2+2 part by other structure (one ι-pair, other involution cycle types, order-3 symmetry).
 
 ## 2026-11-09 Rees Square Gap: OSC′ Follow-Up
 

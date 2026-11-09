@@ -1,0 +1,53 @@
+Test set: 70 primes written after 2026-11-10 02:16:00, less 1933 (1759 at 02:14:40 is excluded)
+Formation set (written by 02:16, less 1759): [1531, 1543, 1549, 1567, 1579, 1597, 1609, 1621, 1627, 1657, 1663, 1669, 1693, 1699, 1723, 1747, 1753]
+
+(H1) every new sD prime is 1 mod 12:
+   1789  lam 0.230  class  1  B_D 14.83  2-sigma lower 13.11  threshold (2x band median) 1.19  z 9.2
+   2053  lam 0.264  class  1  B_D 1.27  2-sigma lower 0.92  threshold (2x band median) 0.89  z 4.2
+   2113  lam 0.272  class  1  B_D 6.59  2-sigma lower 4.47  threshold (2x band median) 0.89  z 3.7
+   2137  lam 0.275  class  1  B_D 1.28  2-sigma lower 1.14  threshold (2x band median) 0.89  z 9.8
+   2143  lam 0.276  class  7  B_D 1.28  2-sigma lower 1.07  threshold (2x band median) 0.89  z 6.4
+   2179  lam 0.280  class  7  B_D 0.96  2-sigma lower 0.89  threshold (2x band median) 0.89  z 14.6
+   2221  lam 0.286  class  1  B_D 1.93  2-sigma lower 1.61  threshold (2x band median) 0.89  z 6.7
+   2269  lam 0.292  class  1  B_D 5.42  2-sigma lower 3.38  threshold (2x band median) 0.89  z 3.3
+   2341  lam 0.301  class  1  B_D 1.99  2-sigma lower 1.80  threshold (2x band median) 0.89  z 10.8
+   3823  lam 0.492  class  7  B_D 1.18  2-sigma lower 0.50  threshold (2x band median) 0.48  z 2.4
+   3889  lam 0.500  class  1  B_D 1.42  2-sigma lower 1.04  threshold (2x band median) 0.48  z 4.4
+   4129  lam 0.531  class  1  B_D 0.99  2-sigma lower 0.73  threshold (2x band median) 0.48  z 4.4
+   H1 REFUTED by [2143, 2179, 3823]
+
+(H2) per band with >= 6 new primes in both classes: median B_D (new primes) of class 1 > class 7
+   [0.19, 0.22): new 0/0 (does not qualify);  all primes of the band 7/7, medians 2.37 vs 0.70
+   [0.22, 0.25]: new 6/4 (does not qualify);  all primes of the band 8/7, medians 0.78 vs 0.49
+   (0.25, 0.31]: new 15/16, medians 0.92 vs 0.34 -> holds; one-sided Mann-Whitney p 0.006;  all primes of the band 15/16, medians 0.92 vs 0.34
+   [0.49, 0.56]: new 13/16, medians 0.36 vs 0.12 -> holds; one-sided Mann-Whitney p 0.012;  all primes of the band 13/16, medians 0.36 vs 0.12
+
+(H3) new sN spikes occur in both classes:
+   [(1789, 1, 4.5), (2113, 1, 2.06), (2143, 7, 2.08), (2341, 1, 1.75)] -> holds
+
+Rank tests of B_D by class (one-sided, class 1 > class 7):
+   test set, all bands    n = 34/36  medians 0.61 / 0.32  Mann-Whitney p 0.0002
+   test set, lam <= 0.31  n = 21/20  medians 0.91 / 0.37  Mann-Whitney p 0.0012
+   all 89                 n = 43/46  medians 0.73 / 0.34  Mann-Whitney p 0.0001
+   all, lam <= 0.31       n = 30/30  medians 0.93 / 0.47  Mann-Whitney p 0.0003
+   all, lam ~ 0.5         n = 13/16  medians 0.36 / 0.12  Mann-Whitney p 0.0123
+
+Post hoc (not pre-registered): primes with B_D > 2, and the largest B_D in each class, per band
+   B_D > 2: [(1597, 1, 4.0), (1657, 1, 10.53), (1669, 1, 2.37), (1693, 1, 3.28), (1789, 1, 14.83), (1933, 1, 3.66), (2113, 1, 6.59), (2269, 1, 5.42)]
+   [0.19, 0.22) class 1:  7 primes, max B_D 10.53 (1657), sD [1597, 1657, 1669, 1693]
+   [0.19, 0.22) class 7:  7 primes, max B_D 1.00 (1627), sD []
+   [0.22, 0.25] class 1:  8 primes, max B_D 14.83 (1789), sD [1789, 1933]
+   [0.22, 0.25] class 7:  7 primes, max B_D 0.64 (1783), sD []
+   (0.25, 0.31] class 1: 15 primes, max B_D 6.59 (2113), sD [2053, 2113, 2137, 2221, 2269, 2341]
+   (0.25, 0.31] class 7: 16 primes, max B_D 1.28 (2143), sD [2143, 2179]
+   [0.49, 0.56] class 1: 13 primes, max B_D 1.42 (3889), sD [3889, 4129]
+   [0.49, 0.56] class 7: 16 primes, max B_D 1.18 (3823), sD [3823]
+
+predictions_N1mu1.txt (01:20 fit): log(observed / predicted) per prime
+   lam <= 0.25, less 1933   n = 15  rms 0.239  mean +0.036  max |err| 0.372 (1879)
+      1699:-0.15 1723:+0.17 1741:-0.25 1747:+0.33 1753:-0.05 1759:+0.26 1777:+0.30 1783:-0.04 1789:-0.16 1801:+0.04 1831:-0.34 1861:+0.08 1867:+0.30 1873:-0.31 1879:+0.37
+   (0.25, 0.31]             n = 31  rms 0.190  mean +0.035  max |err| 0.442 (1951)
+      1951:+0.44 1987:+0.19 1993:-0.20 1999:-0.10 2011:+0.23 2017:-0.18 2029:+0.41 2053:-0.28 2083:+0.24 2089:+0.00 2113:-0.14 2131:-0.04 2137:-0.07 2143:-0.05 2161:+0.24 2179:-0.11 2203:+0.16 2221:-0.11 2239:+0.04 2251:+0.21 2269:-0.26 2281:-0.15 2287:+0.12 2293:+0.02 2311:+0.09 2341:-0.05 2347:-0.04 2371:-0.04 2377:-0.02 2383:+0.24 2389:+0.31
+   lam ~ 0.5                n = 28  rms 0.132  mean +0.046  max |err| 0.261 (3889)
+      3823:-0.09 3847:+0.17 3853:-0.08 3889:-0.26 3907:+0.16 3919:+0.08 3931:+0.15 3943:+0.01 3967:+0.14 4003:+0.15 4021:-0.18 4027:+0.06 4051:+0.19 4057:-0.01 4093:+0.12 4099:+0.17 4111:+0.04 4129:-0.17 4153:-0.09 4159:+0.17 4177:-0.02 4201:+0.07 4219:+0.16 4231:+0.15 4243:+0.09 4261:+0.11 4273:+0.10 4297:-0.11
+   1933 (known, excluded): +0.048

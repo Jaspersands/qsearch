@@ -1,0 +1,22 @@
+kappa = 6, B_L / band median (median over all primes of the band; unflagged = no sD, sPW or sN)
+  band 1: median B_L 0.502; unflagged  8: max 1.08 (1549), min 0.63 (1609), 10/25/75/90% 0.67/0.72/0.91/0.97; flagged 6: max 3.74 (1657), min 1.49 (1669)
+  band 2: median B_L 0.546; unflagged 12: max 1.22 (1801), min 0.57 (1741), 10/25/75/90% 0.62/0.70/1.02/1.11; flagged 3: max 3.25 (1789), min 1.33 (1759)
+  band 3: median B_L 0.454; unflagged 23: max 1.46 (2281), min 0.55 (2293), 10/25/75/90% 0.69/0.82/1.04/1.16; flagged 8: max 2.56 (2113), min 0.90 (2053)
+  band 4: median B_L 0.326; unflagged 25: max 1.54 (4153), min 0.83 (3877), 10/25/75/90% 0.87/0.90/1.18/1.28; flagged 4: max 1.94 (3889), min 1.51 (3823)
+  2281: lam 0.293 B_L 0.663;  2293: lam 0.295 B_L 0.248;  ratio 2.673 (both unflagged: True)
+  all 68 unflagged: 5/10/25% points of B_L/median 0.65/0.68/0.85; fraction <= 0.55: 0.015
+
+kappa = 7: 36037 / mean of 35099, 47041, 58787 = 2.62; / 35099 = 2.68
+  35099 at the unflagged min (0.55) of B_L/median: kappa = 7 median 0.434, 36037 1.46x it (lower end 1.23x)
+  35099 at the unflagged 5% point   of B_L/median: kappa = 7 median 0.365, 36037 1.74x it (lower end 1.47x)
+  35099 at the unflagged 10% point  of B_L/median: kappa = 7 median 0.347, 36037 1.83x it (lower end 1.54x)
+  35099 at the unflagged 25% point  of B_L/median: kappa = 7 median 0.280, 36037 2.27x it (lower end 1.91x)
+  35099 at the unflagged median     of B_L/median: kappa = 7 median 0.237, 36037 2.68x it (lower end 2.26x)
+
+Expected error at 34847 (6000 configurations, as 35099): se(B_L)/B_L ~ 1/(2z) = 0.061, so 2-sigma half-width 0.050 at 0.41
+  2-sigma upper end at B_L = 0.41: 0.457 (B sqrt(1 + 2/z); the rule needs < 0.535)
+  B_L(34847) = 0.30: 36037/34847 = 2.12 (2-sigma 1.71-2.52)
+  B_L(34847) = 0.41: 36037/34847 = 1.55 (2-sigma 1.25-1.84)
+  B_L(34847) = 0.43: 36037/34847 = 1.48 (2-sigma 1.20-1.76)
+  B_L(34847) = 0.50: 36037/34847 = 1.27 (2-sigma 1.03-1.51)
+  two-prime mean (35099 with 34847) at the rule thresholds: x = 0.41 -> 1.96x; x = 0.43 -> 1.90x

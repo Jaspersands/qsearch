@@ -1,0 +1,21 @@
+Pre-registered prediction, written 2026-11-10 05:48 before the run (spike-survey session).
+Run: nice -n 19 python -I mc_classes.py 7 34847 6000 --seed 13 --out <outside repo>/mc_k7_p34847_s13.npz
+     (log: mc_k7_p34847.log). Read with review-2026-11-10/scratch/k7_class_values.py.
+Choice: 34847 (lambda 0.296) has the median symR (16.26) of the 13 kappa = 7 primes with lambda 0.29-0.31
+  (sym/sym_rate_k7_lam03.out). Its F and class values are unknown. It is the second equal-lambda comparison for
+  36037 (B_L 0.635, 2-sigma lower end 0.535) after 35099 (B_L 0.237).
+Calibration: at kappa = 6, unflagged primes have B_L at most 1.54x their band median (1.46x in (0.25, 0.31]);
+  flagged spikes reach 1.94-3.74x. Two unflagged equal-lambda kappa = 6 primes (2281, 2293) differ by 2.67x.
+Rule:
+  - 36037 is called a spike in B_L if B_L(34847) <= 0.41 (so 36037/34847 >= 1.54) and the 2-sigma upper end of
+    B_L(34847) is below 0.535.
+  - If B_L(34847) >= 0.43, 36037 is not shown to be a spike: the two equal-lambda comparisons span a spread like
+    kappa = 6's.
+  - Otherwise inconclusive.
+Prediction: B_L(34847) is in 0.20-0.32, like 35099 (0.237), 47041 (0.219) and 58787 (0.270).
+
+Addendum, written 2026-11-10 05:52:33 with the run at 418 of 6000 configurations (result unknown).
+It follows the referee's round 4c. The calls above are unchanged.
+  - Report B_L(34847) with its 2-sigma range, and the ratio 36037/34847 with its 2-sigma range.
+  - Mark the call "close" if the 2-sigma range of B_L(34847) crosses 0.41 or 0.43. At 6000 configurations its
+    2-sigma half-width is about 0.05, so any value in roughly 0.36-0.48 is decided by Monte Carlo noise.

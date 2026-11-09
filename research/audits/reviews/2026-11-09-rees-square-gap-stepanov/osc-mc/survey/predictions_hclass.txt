@@ -1,0 +1,32 @@
+2026-11-10T02:16  Written before the runs below finished. This is a post-hoc pattern in the 17 survey primes
+1531-1753 (k6_spike_survey.py output at 02:16) plus the earlier S-batched runs; it is not yet a tested claim.
+
+Hypothesis H. At kappa = 6, B_D spikes need ind(-1) = 0 (mod 6), i.e. p = 1 (mod 12).
+
+Heuristic mechanism. Take a configuration that is partly symmetric under a split involution conjugate to x -> -x.
+The contributions of z and -z to the class values then differ by the phases exp(2 pi i j ind(-1)/6):
+- if ind(-1) = 0, the phases are all 1 and the contributions add;
+- if ind(-1) = 3, the odd characters j change sign and the contributions partly cancel.
+N1/mu1 is a count, not a phase sum, so it should not depend on ind(-1).
+
+Seen so far:
+- The B_D > 2 primes are 1597 (4.00), 1657 (10.53), 1669 (2.37), 1693 (3.28) and the earlier 1933 (3.67). All five
+  are 1 (mod 12). The pre-fix lambda = 0.5 spike 3889 is also 1 (mod 12).
+- The 9 survey primes that are 7 (mod 12) have B_D at most 1.00 (1627).
+- The N1/mu1 spikes 1531 (4.11) and 1627 (2.64) are 7 (mod 12).
+- If class did not matter, the top 4 of 17 would all fall in the class of 8 with probability C(8,4)/C(17,4) = 0.03.
+  Four residue symbols were looked at, so that is about 0.1 after the look-elsewhere correction.
+
+Predictions for the survey primes that finish after 02:16. That is 1741 and 1777 onward; 1759 is left out because its
+file appeared at 02:16 (not looked at).
+(H1) Every prime flagged sD (2-sigma lower end of B_D above twice the band median) is 1 (mod 12).
+(H2) In each lambda band with at least 6 new primes in both classes, the median B_D of the primes that are 1 (mod 12)
+     exceeds the median of those that are 7 (mod 12).
+(H3) sN spikes (N1/mu1 above twice the band median) occur in both classes.
+H is refuted if any new sD prime is 7 (mod 12), or if (H2) fails in a band that qualifies.
+
+2026-11-10T02:24  Correction, appended; the predictions above are unchanged. The heuristic mechanism above is wrong.
+The class modes R, C are sum-zero, and count vectors are taken up to a cyclic shift of the values
+(mc_classes.tables). For a configuration symmetric under x -> -x, U(-z) is a permutation of U(z) plus a constant
+vector; the constant is h + d, where d = beta(-t) - beta(t) does not depend on t. So z and -z contribute equally
+whatever h is. No mechanism for H is known; H is an empirical pattern only.

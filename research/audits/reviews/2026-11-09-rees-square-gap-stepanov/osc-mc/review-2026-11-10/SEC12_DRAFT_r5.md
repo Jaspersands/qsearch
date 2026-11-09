@@ -4,14 +4,17 @@ Question (mechanical plan item 1, §11.9): does OSC′ hold at λ ≤ 0.25 at sp
 Everything here is Monte Carlo or heuristic unless marked otherwise; nothing is a certificate. Code and outputs are in
 `osc-mc/`.
 
-An independent AI referee checked the section in four passes. Rounds 1–2, with the author's disposition of each point,
-are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3 and 3b and their dispositions are in `ROUND3.md`. Its corrections
-are applied:
+An independent AI referee checked the section in eight passes. Rounds 1–2, with the author's disposition of each
+point, are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3, 3b, 3c, 4, 4b and 4c and their dispositions are in
+`ROUND3.md`. Its corrections are applied:
 - a factor 2 in the heuristic at even κ;
 - an undercount in the first `pairsym.py`;
 - a misattributed cyclotomic correlation, and a false identification of |a|/√p with §11.6's |L|/(2√p);
 - overstated readings of the mechanism and of what it implies;
-- a stale survey snapshot, and a spike (1627) missing from the F table.
+- a stale survey snapshot, and a spike (1627) missing from the F table;
+- an over-read of the N₁/μ₁ prediction at λ ≈ 0.5, and two threshold cases counted as refutations of H1;
+- a wrong "median symR" for 35099, and missing 2σ ranges on the bin ratios. The author replaced a knife-edge pairwise
+  calibration of 36037 with the ratio to the band median, and the referee confirmed it.
 
 ### 12.1 Survey design [computed]
 
@@ -30,20 +33,22 @@ are applied:
   - symR (§12.3).
 - **Spike flags, per λ band.**
   - sD: the 2σ lower end of B_D is above twice the band median.
-  - sPW and sN apply the same rule to PW_pair and N₁/μ₁.
+  - sPW and sN: the debiased PW_pair, or N₁/μ₁, is above twice the band median. These two flags use the point
+    value, with no se, as `k6_spike_survey.py` defines them; the H file defines sN the same way.
   - In a band that is not yet complete the medians, and so the flags, are provisional.
-- **Status: interim.** The snapshot is from 03:45 on 10 Nov (`review-2026-11-10/survey_snapshot.out`). 35 of the 89
-  primes are finished: all 29 with λ ≤ 0.25, and 6 of the 31 in (0.25, 0.31]. The rest are running. Rerunning
-  `k6_spike_survey.py` rebuilds every table below.
+- **Status: complete.** §12.2–12.8 were written from the 35-prime snapshot of 03:45 on 10 Nov
+  (`review-2026-11-10/survey_snapshot.out`). The final run (04:49, all 89 primes, `k6_spike_survey.out`) changes
+  nothing at λ ≤ 0.25. The completed bands are in §12.2's table, and the scored predictions in §12.10. Rerunning
+  `k6_spike_survey.py` rebuilds every table.
 
-### 12.2 Results [computed; λ ≤ 0.25 complete, the rest interim]
+### 12.2 Results [computed]
 
 | λ band | primes | median B_L / B_D / PW_pair / N₁/μ₁ | max B_L, B_D (p) | flagged |
 |---|---|---|---|---|
 | 0.197–0.218 | 14 | 0.50 / 0.82 / 2.81 / 0.97 | 1.88, 10.5 (1657) | 6: 1531 sN; 1597 sD sPW sN; 1627 sN; 1657 sD sPW sN; 1669 sD; 1693 sD sPW |
 | 0.222–0.249 | 15 | 0.55 / 0.59 / 1.77 / 0.82 | 1.77, 14.8 (1789) | 3: 1759 sN; 1789 sD sPW sN; 1933 sD sPW sN |
-| 0.251–0.31 (6 of 31 so far) | 6 | 0.43 / 0.44 / 1.25 / 0.64 | 0.53 (1987), 0.91 (1993) | provisional: 1951 sN |
-| earlier: 2347 (0.302) | 1 | 0.41 / 0.34 / 0.75 / 0.76 | | typical |
+| 0.251–0.307 | 31 | 0.45 / 0.44 / 1.04 / 0.81 | 1.16, 6.59 (2113) | 8: 2053 sD sPW; 2113 sD sPW sN; 2137 sD; 2143 sD sPW sN; 2179 sD; 2221 sD sPW; 2269 sD sPW; 2341 sD sPW sN |
+| 0.492–0.553 | 29 | 0.33 / 0.24 / 0.32 / 0.80 | 0.63, 1.42 (3889) | 4: 3823 sD sPW; 3889 sD sPW; 4057 sPW; 4129 sD sPW |
 
 - **Largest spike: 1789.**
   - B_L 1.77, B_D 14.8 (z 9.2, 2σ upper 16.4), PW_pair 31.7, N₁/μ₁ 4.50, c 2.66.
@@ -68,7 +73,8 @@ are applied:
   - At fixed κ any finite set of primes satisfies OSC′ with some constants, so the survey measures their size.
   - PW_pair is above 1 at every prime with λ ≤ 0.25; the lowest is 1.14, at 1879. The κ = 6 threshold of §11.8 is
     λ_T = 1.3, so none of these primes is in the range a κ = 6 certificate would use.
-  - The first value below 1 is at 2011 (λ 0.259, PW_pair 0.92).
+  - The first value below 1 is at 2011 (λ 0.259, PW_pair 0.92). At λ ≈ 0.5 the debiased PW_pair is below 1 at all 29
+    primes (28 of 29 by the CS upper estimate; §12.10).
 
 ### 12.3 symR, a cheap spike indicator [computed]
 
@@ -95,8 +101,10 @@ are applied:
   - The 15 primes with λ ≤ 0.25 that finished since (1699–1879, λ 0.218–0.242) came in with rms log error 0.24 (mean
     +0.04, largest 0.37 at 1879). That is close to the in-sample residual sd of 0.20.
     - They include the largest spike, 1789: 4.50 against a predicted 5.25.
-  - The 6 primes above λ = 0.25 so far have rms 0.25 (mean +0.06). The largest error is +0.44, at 1951: 1.42 against
-    0.91.
+  - At the snapshot, the 6 primes above λ = 0.25 had rms 0.25 (mean +0.06). The largest error is +0.44, at 1951: 1.42
+    against 0.91.
+  - Final (§12.10): rms 0.19 over all 31 primes in (0.25, 0.31] and 0.13 over the 28 at λ ≈ 0.5. At λ ≈ 0.5 the level
+    holds, but the slope is rejected (0.40 ± 0.07 within the band), so there the law has no predictive power.
   - The λ-term rests mostly on the one λ = 0.5 prime 3877. Without it, the λ coefficient is −2.06 instead of +1.93.
     - The prospective primes test it weakly. They sit 0.10 higher in log λ, and they reject the fit without 3877 (mean
       error +0.42, rms 0.47). The referee estimates that they need a coefficient of 2.0 ± 0.6.
@@ -340,7 +348,82 @@ are applied:
     predicts 20–22×. That is "as R₂₊₂ predicts, up to F": F(23549) lies inside κ = 6's 0.3–4.4 and κ = 7's 0.5–2.3.
   - The run rejects a λ-only weight. It does not distinguish R₂₊₂ from other κ-scalings within about 10×. It is one
     prime and 5 events.
-- **Class values at 36037.** `mc_classes.py 7 36037 10⁴ --seed 13` gives B_L …, B_D … (2σ < …), PW_pair … and c ….
+- **Class values at 36037** [computed]. The run is `mc_classes.py 7 36037 10⁴ --seed 13`, 1.57·10⁶ S.
+  - The analysis is in `review-2026-11-10/scratch/k7_class_values.out` and `pw_bin_cs_k7.out`, and the referee's check
+    in `r3c_checks.out` (round 3c of `ROUND3.md`).
+  - 36037 was picked on symR (the highest at λ ≈ 0.3, with 34693) before its F or class values were known. Its F, 2.3,
+    is the highest at κ = 7.
+  - N₁/μ₁ is 1.08, so it is not a count spike.
+  - **B_L.**
+    - It is 0.635 (z 6.9, 2σ 0.54–0.72). At 47041 and 58787 (λ 0.40, 0.50) the same estimators give 0.22 and 0.27.
+    - Every resolved L bin is lifted against 47041: (0,3) 3.70 against 0.44, (2,2) 3.78 against 1.65, (2,3) 0.53
+      against 0.03, (3,3) 0.25 against 0.02. (2,2) and (0,3) carry 63% and 19% of B_L².
+    - The lift is not a heavy-tail or cluster effect. All 16 S-batches contribute positively to B_L, and leaving out
+      any two keeps it ≥ 0.58 (checked). The referee also finds every half-sample of 8 batches ≥ 0.51, and z 4.8–9.8 on
+      8 super-batches.
+  - **B_D.**
+    - It is 9.4 (z 1.6), < 14.1 at 2σ, so its size is not resolved.
+    - Its sign is consistent (checked). It is positive in every batch, the exact sign-flip test gives p ≈ 3·10⁻⁵, and
+      it stays ≥ 5.6 leaving out any one or two batches.
+    - But two batches carry 45% of it. All 17 m ≥ 7 bins have positive z (0.6–2.2), yet their batch profiles correlate
+      at 0.97 (referee), so this is one effect.
+    - At 47041 and 58787, B_D is < 2.6 and < 2.1 at 2σ.
+  - L and D share these batches (profile correlation 0.94, referee), so they are not independent evidence.
+  - PW_pair is 2.71 (null floor 1.00, CS upper 3.08). 92% of it is D-group weight, so it repeats the B_D excess. At
+    47041 and 58787 PW_pair sits at its null floor.
+  - **Comparison.**
+    - From λ 0.4–0.5 to 0.31, B_L rises 2.4–2.9×. At κ = 6 it rises 1.1–1.5× from λ ≈ 0.5 to 0.30 (2347, B_L 0.41,
+      against 0.27–0.37).
+    - In the complete κ = 6 survey the median B_L is 0.45 in (0.25, 0.31] and 0.33 at λ ≈ 0.5, a rise of 1.4×. The
+      band maximum is 1.16, at the spike 2113 (§12.10).
+  - **The equal-λ comparison 35099** (λ 0.298; `mc_classes.py 7 35099 6000 --seed 13`, 1.29·10⁶ S; the 17 MB npz is
+    kept outside the repo). The checks are in `review-2026-11-10/scratch/r4b_checks.out` (referee rounds 4b and 4c).
+    - It was picked as the middle symR of the table above: 21.3, 10th of the 13 λ ≈ 0.3 primes in
+      `sym/sym_rate_k7_lam03.out`, whose median is 16.3.
+    - Its F, 0.5, the lowest at κ = 7, was known when it was picked. F rests on 5 configurations, so its Poisson 95%
+      range is about 0.16–1.2. At κ = 6 rates the above-median symR would raise its B_L, and the low F might lower it.
+    - B_L is 0.237 (z 8.2, 2σ 0.21–0.26). It is stable: all 16 batches contribute positively, leaving out any two
+      keeps it ≥ 0.225, and half-samples range over 0.18–0.30.
+    - B_D is 1.76 (z 0.7, < 3.4), with no consistent sign (sign-flip p 0.12). N₁/μ₁ is 0.95 ± 0.02. PW_pair sits at
+      its null floor (0.93 against 0.90; CS upper 0.53).
+    - Its L bins match 47041's: (2,2) 1.67 against 1.65, and (0,3) 0.65 against 0.44.
+  - **So 36037 is a spike in B_L by the test set in §12.9**, against the three typical κ = 7 primes measured.
+    - Its B_L is 2.7× 35099's at nearly equal λ (0.306 against 0.298). 35099's 2σ upper end, 0.264, is less than
+      half of 36037's 2σ lower end, 0.535. 36037's smallest half-sample value, 0.51, is 1.7× 35099's largest, 0.30.
+    - Every resolved L bin is lifted. The central ratios are given first, then 36037's 2σ lower end over 35099's 2σ
+      upper end:
+      - (2,2) 2.3× (≥ 1.9×);
+      - (0,3) 5.7× (≥ 3.4×);
+      - (2,3) 13× (≥ 6.0×);
+      - (3,3) 12× (≥ 5.6×).
+    - (0,4) and (2,4) are resolved at 36037 (z 3.8 and 2.6) and are noise at 35099 (≥ 2.9× and ≥ 4.2×).
+    - (2,2) and (0,3) carry 81% of the rise in B_L².
+    - At κ = 7 the typical B_L does not rise from λ 0.5 to 0.3: it is 0.27, 0.22 and 0.24 at λ 0.5, 0.4 and 0.3, one
+      prime per λ. At κ = 6 the band medians rise 1.4× (0.33 to 0.45).
+    - 36037's D excess has a consistent sign, which 35099's does not, but its size is unresolved.
+    - F 2.3 against 0.5 (0.16–1.2) fits the κ = 6 pattern that spikes carry a large F. That is two primes, with the
+      selection caveat above.
+    - 36037 is neither sD nor sN, and B_L is not one of the κ = 6 flags.
+  - **The calibration is the weak point** (referee round 4c).
+    - At κ = 6, two unflagged primes at equal λ differ by as much: 2281 (λ 0.293, B_L 0.663) and 2293 (λ 0.295, B_L
+      0.248), 2.67×. So a ratio to one comparison prime cannot separate a spike from the two ends of a wide typical
+      spread.
+    - The better reference is the band median. Unflagged κ = 6 primes reach at most 1.08, 1.22, 1.46 and 1.54× their
+      band median, from λ ≈ 0.21 to λ ≈ 0.5. Spikes reach 3.74, 3.25, 2.56 and 1.94×.
+    - 36037 is 2.6× the mean of the three typical κ = 7 primes. That makes it a spike if they sit near the κ = 7
+      median at λ ≈ 0.3.
+    - If 35099 sat at the bottom of a κ = 6-like spread (0.55× the median), the median would be about 0.43. 36037 would
+      then be 1.47× it, at the top of the unflagged range.
+    - That worst case is extreme. It needs 35099 below 0.58× the κ = 7 median, and at κ = 6 only 2 of the 68
+      unflagged primes are (1741 and 2293). If 35099 sat at the 5%, 10% or 25% point of the unflagged ratios, 36037
+      would be 1.74×, 1.83× or 2.27× the median.
+    - A second equal-λ prime decides this. 34847 is running: it has the median symR of the 13 (16.3), and its F is
+      unknown. Its rule was written before the run (`predictions_k7_p34847.txt`, 05:48):
+      - a spike if B_L(34847) ≤ 0.41 and its 2σ upper end is below 0.535;
+      - not shown to be a spike if B_L(34847) ≥ 0.43;
+      - otherwise inconclusive.
+    - An addendum (05:52, result unknown) asks for both 2σ ranges to be reported. The call is marked "close" if the 2σ
+      range of B_L(34847) crosses 0.41 or 0.43.
 - **Generic rate.**
   - The not-2+2 rate is 0.86–1.04 μ₁ at κ = 7, λ ≈ 0.3 (bucket_stats rates at the four primes with a share), and
     0.79–0.82 μ₁ at 23549 (λ = 0.2).
@@ -354,25 +437,21 @@ are applied:
 - **B_D > 2 occurs only at p ≡ 1 (mod 12)** (h = ind(−1) ≡ 0 mod 6).
   - At λ ≤ 0.25 (complete) that is 6 of the 15 primes ≡ 1 (mod 12): 1597, 1657, 1669, 1693, 1789 and 1933. It is 0 of
     the 14 primes ≡ 7 (mod 12), where the largest B_D is 1.00 (1627).
-  - Over all 35 finished primes it is 6 of 17 against 0 of 18.
-  - The evidence is weak:
+  - Over all 89 primes it is 8 of 43 against 0 of 46 (post hoc; §12.10).
+  - The post hoc evidence at λ ≤ 0.25 is weak:
     - H was formed on 17 survey primes, plus earlier S-batched runs (1933 at seed 11 among them).
     - With the cut at 2, the one-sided probability at λ ≤ 0.25 is 0.011 (C(15,6)/C(29,6)). With the residue
       partitions looked at and the cut chosen, it was 0.14–0.25 at n = 25 (referee, round 2).
     - An exact rank test of B_D by class gives one-sided 0.018 at λ ≤ 0.25 (n = 29).
-    - H was pre-registered for the primes that finish after 02:16, less 1933's rerun (known): 16 primes at the
-      snapshot. 1759 (file written at 02:14–02:16, not looked at) is in neither the formation set nor the test set.
+    - At the 35-prime snapshot (the final scoring is in §12.10): H was pre-registered for the primes that finish after
+      02:16, less 1933's rerun (known), which were 16 primes at the snapshot. 1759 (file written at 02:14–02:16, not looked at) is in neither the formation set nor the test set.
       On the 16 the same test gives 0.010. But h = 3 primes are 4 of the 6 above λ = 0.25 there. Restricted to the 10
       at λ ≤ 0.25 it gives 0.057.
   - Class medians (λ ≤ 0.25): B_D 0.93 against 0.56; N₁/μ₁ 1.16 against 0.67.
-  - Pre-registered predictions (`survey/predictions_hclass.txt`), interim:
-    - (H1), that every new sD prime is ≡ 1 (mod 12), holds so far with one such prime, 1789. 1987 (≡ 7 mod 12, B_D
-      0.85, z 10.2) was flagged sD at the 34-prime snapshot, when its band had 5 primes. It is not flagged at 35. It is
-      decided when the band is complete.
-    - (H2): no band qualifies yet (it needs 6 new primes in both classes).
-    - (H3), that sN spikes occur in both classes: the new sN spikes so far are 1789 (≡ 1) and, provisionally, 1951
-      (≡ 7). So (H3) holds, provisionally.
-  - The count spikes without value spikes (1531, 1627, 1759, and provisionally 1951) are all ≡ 7 (mod 12).
+  - Pre-registered predictions (`survey/predictions_hclass.txt`), scored in §12.10: (H1) is refuted by 2143 (≡ 7 mod
+    12, sD). (H2) held as pre-registered, and (H3) holds. So the data support a shift of B_D towards p ≡ 1 (mod 12),
+    not value spikes only there.
+  - The count spikes without value spikes (1531, 1627 and 1759) are all ≡ 7 (mod 12).
 - **No mechanism is known.**
   - For a configuration fully symmetric under x ↦ −x, z and −z contribute equally whatever h is. This is because the
     class modes are sum-zero and taken up to cyclic shifts of the values.
@@ -401,7 +480,7 @@ are applied:
 - **Other statistics** (λ ≤ 0.25, n = 29): K has Spearman 0.78 with N₁/μ₁ and 0.56 with B_D; max|D|/√p has 0.46 with
   B_D.
 - **Prospective tests.** `survey/predictions_hclass.txt` (02:16; mechanism retracted at 02:24) and
-  `survey/predictions_N1mu1.txt` (01:20) are scored when the survey finishes.
+  `survey/predictions_N1mu1.txt` (01:20) are scored in §12.10.
 
 ### 12.8 Answer, and what it changes
 
@@ -410,6 +489,9 @@ are applied:
     fixed κ. Their size is the information.
   - Spike primes reach B_L 1.88 (1657) and B_D 14.8 (1789). These are 4× and 18–25× the band medians.
   - 9 of the 29 primes are spikes by some flag, 6 of them by sD.
+  - Over all 89 primes (§12.10), 21 are spikes. Spike amplitude falls as λ rises: the largest B_D is 14.8, 6.6 and
+    1.4, and the largest PW_pair 32, 11 and 0.89, at λ ≤ 0.25, in (0.25, 0.31] and at λ ≈ 0.5. At λ ≈ 0.5 the
+    debiased PW_pair is below 1 at every prime (28 of 29 by the CS upper estimate).
 - **What spikes are.**
   - At λ ≈ 0.21, 71–88% of (C1) configurations are 2+2 involution-structured. This holds at the spike primes and at
     the one typical prime measured there (1621).
@@ -432,6 +514,13 @@ are applied:
   - At λ ≈ 0.3 the 2+2 share is 1.1–4.5% at four primes, against an expected 1.9–2.4%. At 23549 (λ 0.2) it is 6.3%,
     against an expected 5.4–5.7%.
   - N₁/μ₁ is 0.84–1.11 at seven primes (six at λ ≈ 0.3, and 23549), with symR 16–67.
+  - Class values at λ ≈ 0.3: at 36037, picked on symR, B_L is 0.635. That is 2.4–2.9× the λ = 0.4–0.5 values, against
+    1.1–1.5× for the same step at κ = 6. N₁/μ₁ there is 1.08, and the D excess has a consistent sign but an unresolved
+    size.
+  - Against the equal-λ typical prime 35099 (B_L 0.237) it is a spike in B_L by §12.9's test (2.7×; §12.6). At κ = 6,
+    two unflagged equal-λ primes differ by 2.67×, so the call rests on 35099 sitting near the κ = 7 median. At κ = 6,
+    only 2 of 68 unflagged primes sit as low as that would need. A second equal-λ prime (34847) decides it under a
+    pre-registered rule.
 - **What changes.** Obstruction (c) of §11.8 narrows to three questions:
   1. Is F(p) = κ^{o(κ)} uniformly over p ≥ p₀ near the threshold path?
      - If (N) holds with B = κ^{o(κ)}, this is the only way the 2+2 family can spoil the (1/2+o(1))κ exponent (§12.5
@@ -452,22 +541,30 @@ are applied:
   - An unconditional exponent statement.
   - F(p) bounded, or κ^{o(κ)}, over p ≥ p₀.
   - Obstruction (c) resolved.
-  - Hypothesis H, or the |a|/√p and cubic-character correlations, as claims.
-  - "κ = 7 has no spike primes" (seven primes at two λ).
+  - Hypothesis H (refuted in its strict form; the class shift of B_D held prospectively (H2) but has no mechanism),
+    or the |a|/√p and cubic-character correlations, as claims.
+  - "κ = 7 has no spike primes". 36037 is a counterexample in B_L, against one equal-λ prime.
+  - 36037 a spike against the spread of κ = 7 class values at λ ≈ 0.3, until 34847 is scored; 36037's B_D size; the
+    lift as a 2+2 effect, until the 2+2 split of the 36037 run is done.
   - The 2+2 family's class values at κ ≥ 7, or v falling with p.
   - The not-2+2 part at spike primes under control.
 
 ### 12.9 Next
 
-- **Finish the survey.**
-  - Run `k6_spike_survey.py` and score both prediction files.
-  - Acceptance: spike frequency and amplitude per band; H1–H3 kept or refuted; the N₁/μ₁ log errors per band.
+- **Finish the survey.** Done (§12.10).
+  - Done: 2143 at seed 14 replicates its D excess and all three flags (§12.10).
 - **F over the survey.**
   - Run `pairsym.py 6 p 300000` at every survey prime with λ ≤ 0.25 (5–20 min each), and compute F with the survey's
     N₁/μ₁.
   - Acceptance: the distribution of F and its maximum, and Spearman with |a|/√p and with the cubic class of 2.
   - A model for F in terms of the cubic Jacobi sum is the first step towards bounding its maximum, which is question 1
     of §12.8.
+- **κ = 7 at typical λ ≈ 0.3 primes.** 35099 is done (§12.6): by this test 36037 is a spike in B_L, with the
+  calibration caveat.
+  - Running: `mc_classes.py 7 34847 6000 --seed 13` (`mc_k7_p34847.log`, npz outside the repo). Score it with the
+    rule in `predictions_k7_p34847.txt` (05:48, addendum 05:52), via `review-2026-11-10/scratch/k7_class_values.py`.
+  - Then a 2+2 / not-2+2 split of the 36037 run, as at κ = 6, to see whether its 4.5% 2+2 share carries the (2,2) and
+    (0,3) lift.
 - **The direct test of (c)** still needs κ = 8 at λ ≈ 0.18 (p ≈ 3.8·10⁵), with a sampler that builds (C1)
   configurations directly (§11.9). That sampler is the main gap.
 - **Bounding F.**
@@ -476,3 +573,99 @@ are applied:
   - The block conditions are explicit. The rest is an upper bound for a (C1) count on a codimension-2 family, which
     §9's existence proof does not give.
   - Weil's error terms are κ^{O(κ²)}√p, useless at p = κ^{O(κ)}. So no method is in hand.
+
+### 12.10 Final survey and the scored predictions (10 Nov, 04:49) [computed; the scoring is pre-registered]
+
+- **Reviewed** by an independent AI referee: round 4 of `review-2026-11-10/ROUND3.md`, with the author's disposition.
+  Its checks are `review-2026-11-10/scratch/r4_checks.py` and `.out`.
+- **Run.** All 89 primes had finished by 04:49 (`k6_spike_survey.out`). The scoring script is
+  `survey/score_predictions.py`, with output in `survey/score_predictions.out`. It uses the flags and bands of
+  `k6_spike_survey.py`. Nothing changes at λ ≤ 0.25. The completed bands are in §12.2's table.
+- **Spikes.** 21 of the 89 primes are flagged.
+  - Amplitude falls as λ rises. The largest B_D is 14.8, 6.6 and 1.4 at λ ≤ 0.25, in (0.25, 0.31] and at λ ≈ 0.5.
+    The largest PW_pair is 32, 11 and 0.89.
+  - In (0.25, 0.31] the largest spikes are 2113 (B_D 6.6, z 3.7; PW_pair 11.1; N₁/μ₁ 2.06) and 2269 (B_D 5.4, z 3.3;
+    PW_pair 8.0; N₁/μ₁ 0.87).
+  - The debiased PW_pair is below 1 at none of the 29 primes with λ ≤ 0.25, at 13 of the 31 in (0.25, 0.31] and at
+    all 29 at λ ≈ 0.5. By the CS upper estimate the counts are 0, 7 and 28. The exception at λ ≈ 0.5 is 3889
+    (debiased 0.89, CS 1.01). These are Monte Carlo estimates, not certificates.
+  - The smallest N₁/μ₁ in the survey is 0.37 (1741), so B ≈ 2.7 in (N) covers all 89 primes.
+- **Replication.** The four primes run at two seeds (1933, 2347, 3877 and 4219) agree on B_D within 0.8 combined
+  jackknife se, and on B_L within 2.0. At 1933, N₁/μ₁ is 2.66 against 2.63. This is the only between-seed check of
+  the B_D se.
+- **N₁/μ₁ predictions** (`survey/predictions_N1mu1.txt`, 01:20; §12.3).
+  - Log errors at the 74 later primes:
+
+    | primes | n | rms | mean | largest |
+    |---|---|---|---|---|
+    | later primes, λ ≤ 0.25 | 15 | 0.24 | +0.04 | +0.37 (1879) |
+    | (0.25, 0.31] | 31 | 0.19 | +0.04 | +0.44 (1951) |
+    | λ ≈ 0.5 | 28 | 0.13 | +0.05 | −0.26 (3889) |
+
+  - Over all 74 the rms is 0.18 (mean +0.04 ± 0.02), and 8 of the 74 are off by more than 0.3. The in-sample residual
+    sd was 0.20 with n in the denominator, or 0.22 with n − 3.
+  - 2347 and 4219 had been seen at seed 11. Without them nothing changes (rms 0.19 and 0.13 in their bands).
+  - At λ ≤ 0.31 this is real prediction: the spreads of log N₁/μ₁ among the predicted primes in the first two rows
+    are 0.65 and 0.40.
+  - At λ ≈ 0.5 the errors confirm the level that 3877 alone had set (mean +0.05 ± 0.02). Without 3877 the fit misses
+    by 3.8× in (0.25, 0.31] and by 52× at λ ≈ 0.5.
+  - But they reject the symR slope there. Within the band it is 0.40 ± 0.07, against 0.98, and a constant does as
+    well (rms 0.12–0.13). So within the λ ≈ 0.5 band the law has no predictive power.
+  - Post hoc:
+    - The within-band slope falls with λ: 1.00 ± 0.06, 0.86 ± 0.09, 0.73 ± 0.07 and 0.40 ± 0.07. symR's own sampling
+      error does not explain this, since its sample is larger at λ ≈ 0.5.
+    - Given symR, N₁/μ₁ is about 15% higher at p ≡ 7 (mod 12), in every band (Mann–Whitney 0.0002).
+- **Hypothesis H** (`survey/predictions_hclass.txt`, 02:16; §12.7).
+  - The sets:
+    - test set: the 70 primes whose npz was written after 02:16, less 1933, whose value was known from seed 11;
+    - formation set: the 17 primes written by 02:16 (1531–1753, less 1741);
+    - 1759 is in neither (§12.7);
+    - the file's own wording gives 71, with 1933;
+    - a strict set of 66 also drops 2347 and 4219 (seen at seed 11), 3877 (seen in an earlier S-batched run) and
+      3889 (named in the file).
+
+    All three test sets give the same verdicts.
+  - **(H1)**, that every new sD prime is ≡ 1 (mod 12), is **refuted by 2143** (≡ 7, λ 0.276, npz written at 03:56).
+    - 2143 is sD as registered: B_D 1.28, z 6.4, 2σ lower end 1.07 (jackknife se) against the threshold 0.89, twice
+      the band median.
+    - The flag survives leaving out any one of the 16 batches with the jackknife redone (16 of 16). It would fall
+      only if the jackknife se were understated by more than 1.68×.
+    - 2179 (≡ 7) and 3823 (≡ 7, λ 0.49) are also flagged, but at the threshold: their se margins are 1.00 and 1.02,
+      and they lose the flag with one batch left out in 12 and 10 of 16 cases. They are threshold cases, not
+      refutations.
+    - The B_D point values of all three stay above the threshold with any two batches left out, and every batch
+      contributes positively (`review-2026-11-10/scratch/leaveout_BD.py`). That tests B_D, not the flag, which is
+      defined by the lower end.
+    - Heavy tails. §12.2's factor of about 2 was measured on N₁/μ₁. Inflating the B_D se after the fact cannot enter
+      the scoring, which fixed the jackknife se. At 2× it would leave 4 class-1 flags and no class-7 flag, so it would
+      rescue H. The seed pairs above give no basis for it.
+    - The refuting excess is moderate. 2143's B_D is 2.9× its band median, like the weakest class-1 flags (2053 and
+      2137).
+    - It replicates (referee round 4b). A second-seed run (`mc_classes.py 6 2143 10000 --seed 14`,
+      `survey/mc_k6_p2143_s14.npz`) gives B_D 1.29 (z 7.2, 2σ lower end 1.09), B_L 0.90 and N₁/μ₁ 1.99. At seed 13
+      they were 1.28 (z 6.4, 1.07), 0.91 and 2.08. All three flags (sD, sPW, sN) recur against the seed-13 band
+      medians.
+    - The seeds differ by 0.03 combined se on B_D, 0.47 on B_L and 0.84 on N₁/μ₁. The se is that of the
+      noise-subtracted X, the scale of the jackknife z. This matches the four seed pairs above, so the jackknife se is
+      borne out at 2143 too.
+    - So the refutation of H1 is not a seed artefact (one replication). This informs the reading, not the score.
+  - **(H2) held as pre-registered** in both bands that qualify. The registered statistic is the class medians of B_D:
+    - (0.25, 0.31]: 0.92 against 0.34 (15 and 16 primes);
+    - λ ≈ 0.5: 0.36 against 0.12 (13 and 16 primes).
+
+    Added summaries, one-sided Mann–Whitney: 0.006 and 0.012 (0.006 and 0.025 on the strict 66). Stratified by band
+    it is 0.0001 on the 70 (0.0002 on the 66).
+  - **(H3) holds.** The new sN spikes are 1789, 2113 and 2341 (≡ 1) and 2143 (≡ 7).
+  - So H is refuted in its strict form, value spikes only at p ≡ 1 (mod 12). H2 held, so the data support a shift of
+    B_D towards p ≡ 1 (mod 12). No mechanism is known.
+  - Post hoc:
+    - The shift does not come from the noise subtraction: unsubtracted values give 0.0001 on the 70.
+    - It survives adjusting for N₁/μ₁ within bands (0.001). Given symR it weakens to 0.016; symR is itself shifted
+      towards p ≡ 1 (mod 12) (stratified 0.005).
+    - B_D > 2 still occurs only at p ≡ 1 (mod 12): 8 of 43 primes against 0 of 46 (P = 0.002). Three of the 8 are
+      test primes (1789, 2113 and 2269); on their own P = 0.11. The largest B_D at p ≡ 7 (mod 12) is 1.28 (2143).
+    - The count spikes without value spikes are still 1531, 1627 and 1759, all ≡ 7 (mod 12). 1951 is not flagged once
+      its band is complete (N₁/μ₁ 1.42 against the threshold 1.62).
+    - At λ ≤ 0.31 the class medians are N₁/μ₁ 1.04 against 0.67 and B_D 0.93 against 0.47 (30 primes each).
+- **For the question asked.** The completed bands leave §12.8's answer and its three questions as they were. Spikes
+  are frequent at κ = 6 (21 of 89), and their amplitude falls as λ rises.

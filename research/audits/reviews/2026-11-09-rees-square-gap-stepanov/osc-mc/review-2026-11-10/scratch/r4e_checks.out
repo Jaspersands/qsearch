@@ -1,0 +1,40 @@
+1. Files and B_L, B_D by my path
+  same P, orb, supp, rb at the three primes: True
+  34847: conf 6000, nS 1378329, S-batched (cnt spread 299-519), N1/mu1 0.934 | B_L 0.245 (z 9.4, 2sig 0.218-0.270) | B_D 0.00 (z -0.7, < 2.33)
+         y_b > 0 in 16/16, top-2 share 0.17; leave-one-out 0.237-0.250; worst leave-two-out 0.233; half-samples 0.178-0.297 (5/50/95% 0.218/0.245/0.270)
+  35099: conf 6000, nS 1288148, S-batched (cnt spread 333-430), N1/mu1 0.950 | B_L 0.237 (z 8.2, 2sig 0.206-0.264) | B_D 1.76 (z 0.7, < 3.38)
+         y_b > 0 in 16/16, top-2 share 0.17; leave-one-out 0.231-0.244; worst leave-two-out 0.225; half-samples 0.184-0.304 (5/50/95% 0.209/0.236/0.266)
+  36037: conf 10000, nS 1570353, S-batched (cnt spread 519-722), N1/mu1 1.080 | B_L 0.635 (z 6.9, 2sig 0.535-0.721) | B_D 9.41 (z 1.6, < 14.12)
+         y_b > 0 in 16/16, top-2 share 0.19; leave-one-out 0.608-0.647; worst leave-two-out 0.583; half-samples 0.506-0.771 (5/50/95% 0.559/0.632/0.710)
+  36037/34847 2.588; delta method 2sig 2.12-3.05; ends 1.98-3.31; 34847/35099 1.034; 36037 min half-sample / 34847 max 1.70, / 35099 max 1.66
+  rule: B_L <= 0.41: True; 2sig upper 0.270 < 0.535: True; call SPIKE; close (range crosses 0.41 or 0.43): False; prediction 0.20-0.32: True
+  ks.analyse 34847: B_L 0.2452 (mine 0.2452), z 9.44 (9.44), lo 0.2177 (0.2177), hi 0.2699 (0.2699); B_D 0.000 (0.000); PW_pair 0.955 floor 0.930 CS 0.200; N1/mu1 se 0.037
+  ks.analyse 35099: B_L 0.2372 (mine 0.2372), z 8.23 (8.23), lo 0.2064 (0.2064), hi 0.2644 (0.2644); B_D 1.761 (1.761); PW_pair 0.927 floor 0.903 CS 0.527; N1/mu1 se 0.019
+  ks.analyse 36037: B_L 0.6347 (mine 0.6347), z 6.89 (6.89), lo 0.5347 (0.5347), hi 0.7210 (0.7210); B_D 9.413 (9.413); PW_pair 2.708 floor 0.998 CS 3.083; N1/mu1 se 0.021
+
+2. L bins (w-rms |V|, no noise subtraction), 36037 over 34847 and over 35099: central, and 36037 lo / other hi
+  (2, 2): 34847 1.929 (z 11.0) | 35099 1.669 (z 13.1) | 36037 3.779 (z 10.2) | /34847 2.0x (>= 1.6x)  /35099 2.3x (>= 1.9x)
+  (0, 3): 34847 0.386 (z 0.9) | 35099 0.646 (z 2.8) | 36037 3.697 (z 5.2) | /34847 9.6x (>= 4.2x)  /35099 5.7x (>= 3.4x)
+  (2, 3): 34847 0.034 (z 1.0) | 35099 0.041 (z 1.9) | 36037 0.526 (z 3.7) | /34847 15.7x (>= 6.0x)  /35099 12.8x (>= 6.0x)
+  (3, 3): 34847 0.022 (z 1.4) | 35099 0.020 (z 2.9) | 36037 0.248 (z 3.1) | /34847 11.2x (>= 4.2x)  /35099 12.3x (>= 5.6x)
+  (0, 4): 34847 0.000 (z -0.2) | 35099 0.000 (z -0.6) | 36037 0.748 (z 3.8) | /34847 inf (>= 2.5x)  /35099 inf (>= 2.9x)
+  (2, 4): 34847 0.009 (z 0.3) | 35099 0.007 (z 0.2) | 36037 0.185 (z 2.6) | /34847 21.2x (>= 3.8x)  /35099 28.3x (>= 4.2x)
+
+3. Seed 13 at all three primes: are the runs correlated?
+  34847: first three S / p: 0.0695 0.8110 0.8196 0.8552 0.8647 0.8958 0.9419 | 0.0026 0.1324 0.6137 0.7887 0.8363 0.9104 0.9848 | 0.3446 0.4087 0.4382 0.6574 0.6876 0.8176 0.8816
+  35099: first three S / p: 0.0695 0.8110 0.8196 0.8552 0.8647 0.8958 0.9419 | 0.0026 0.1324 0.6137 0.7887 0.8363 0.9103 0.9848 | 0.3447 0.4087 0.4382 0.6574 0.6876 0.8176 0.8816
+  36037: first three S / p: 0.0695 0.8110 0.8196 0.8552 0.8647 0.8958 0.9419 | 0.0026 0.1324 0.6137 0.7887 0.8363 0.9103 0.9848 | 0.3446 0.4087 0.4382 0.6574 0.6876 0.8176 0.8816
+  34847-35099: corr of batch counts 0.43, of y_b 0.03 (null sd 1/sqrt(15) = 0.26); cell-level rho of batch deviations -0.017 (cyclic-shift null: mean 0.001, sd 0.029, max |rho| 0.060)
+  34847-36037: corr of batch counts 0.04, of y_b 0.05 (null sd 1/sqrt(15) = 0.26); cell-level rho of batch deviations 0.023 (cyclic-shift null: mean -0.002, sd 0.035, max |rho| 0.065)
+  35099-36037: corr of batch counts 0.04, of y_b -0.06 (null sd 1/sqrt(15) = 0.26); cell-level rho of batch deviations -0.048 (cyclic-shift null: mean 0.003, sd 0.025, max |rho| 0.050)
+
+4. kappa = 6 calibration read with two comparison primes (flags and bands as in r4c_checks.py)
+  band 1: all-prime median 0.502, unflagged median 0.441 (ratio 1.138)
+  band 2: all-prime median 0.546, unflagged median 0.473 (ratio 1.155)
+  band 3: all-prime median 0.454, unflagged median 0.414 (ratio 1.098)
+  band 4: all-prime median 0.326, unflagged median 0.316 (ratio 1.032)
+  68 unflagged ratios; unflagged pairs within a band at most 1.034x apart: 65 of 647 (0.10)
+  36037 central (0.635) at the all-band unflagged max 1.54 needs a kappa = 7 median >= 0.412: 35099 at 0.575 and 34847 at 0.594 of it; kappa = 6 unflagged fractions at or below: 0.029, 0.029; product 0.0009
+  36037 2sig low end (0.535) at the all-band unflagged max 1.54 needs a kappa = 7 median >= 0.347: 35099 at 0.682 and 34847 at 0.705 of it; kappa = 6 unflagged fractions at or below: 0.103, 0.118; product 0.0121
+  36037 central (0.635) at the band-3 unflagged max 1.46 needs a kappa = 7 median >= 0.435: 35099 at 0.545 and 34847 at 0.563 of it; kappa = 6 unflagged fractions at or below: 0.000, 0.015; product 0.0000
+  36037 2sig low end (0.535) at the band-3 unflagged max 1.46 needs a kappa = 7 median >= 0.366: 35099 at 0.647 and 34847 at 0.669 of it; kappa = 6 unflagged fractions at or below: 0.059, 0.059; product 0.0035

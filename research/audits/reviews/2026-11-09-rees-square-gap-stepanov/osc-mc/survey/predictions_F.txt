@@ -1,0 +1,37 @@
+Pre-registered predictions for mechanical item 2 (F over the survey), written 2026-11-10 05:59:59 before any of
+these runs (spike-survey session). No split13_* file exists yet.
+Runs: each of the 25 survey primes with lambda <= 0.25 that has no seed-13 split. That is all 29 except 1597, 1621,
+  1657 and 1789.
+  - Command: mc_classes' companion mc_split.py 6 p nconf --seed 13 --out split/split13_k6_p<p>, with the survey's
+    nconf (5000 below 1700, 10000 above). Driver: survey/run_k6_split.sh (nice 19, 2 at a time).
+  - This reproduces the survey run configuration by configuration (checked at 1597, 1621, 1657 and 1789). It flags
+    2+2 configurations by the same definition as pairsym.py.
+  - It replaces the plan's pairsym.py 6 p 300000. The share and N1/mu1 then come from one sample, and each part's
+    class values come too.
+F(p) = share(p) * N1/mu1(p) * p^2 / 2,624,400  (R_2+2 = N_inv^2 k^4 / p^2, N_inv = 45 at k = 6).
+Known before the runs:
+  - Seed-13 shares: 0.875 (1597), 0.741 (1621), 0.830 (1657), 0.804 (1789). Their F: 3.71, 0.31, 3.88, 4.41.
+  - Other-sample shares: 0.780 (1627, pairsym) and 0.700 (1933, a split at another seed).
+  - Survey N1/mu1 at all 29. So F at share 0.8 is known in advance; its top five are 1789 4.39, 1657 3.74,
+    1597 3.39, 1933 3.03 and 1531 2.94.
+Predictions, scored on the 25 new primes and also reported over all 29:
+ (F1) Every share lies in [0.60, 0.92].
+ (F2) No new prime has F above 4.0, so the maximum over the 29 stays at 1789 (4.4).
+ (F3) Spearman(F, N1/mu1) >= 0.90 over the 25.
+ (F4) The 2+2 part grows faster than the rest: Spearman(share, N1/mu1) > 0.34 over the 25 (one-sided p < 0.05).
+ (F5) The rest is lifted too: Spearman((1 - share) * N1/mu1, N1/mu1) >= 0.5 over the 25.
+ (F6) At the sD primes among the 25 (1669, 1693, 1933), the 2+2 part's B_D exceeds the rest's B_D (split_report.py).
+      1933's other-seed split was seen.
+ (F7) Arithmetic, direction only (exploratory; no claim from it):
+      - Spearman(F, |a|/sqrt p) > 0 over the 29 (p = a^2 + 3b^2, a = 1 mod 3);
+      - at h = 0 (p = 1 mod 12) the median F is higher when 2 is a cube than when it is not;
+      - Spearman(F, |A(0,0) - mean|/sqrt p) > 0 at h = 0 (review-2026-11-10/fixedcell.py).
+Acceptance (plan item 2): the distribution of F per band and its maximum, and the Spearman correlations above, with
+  symR too. Each prediction is kept or refuted.
+Erratum, appended 2026-11-10 06:04:42, before any split13_* result was read (no prediction changes):
+  - The "Seed-13 shares" line mixes two sources. 0.875 (1597), 0.741 (1621) and 0.830 (1657) are pairsym's seed-5
+    shares. The seed-13 split shares (mc_split.py; topic note section 12.5 table) are 0.860, 0.708 and 0.833, so
+    their F is 3.64, 0.30 and 3.89. Only 1789's 0.804 is the split's.
+  - "0.700 (1933, a split at another seed)" is pairsym's seed-5 share. The earlier 1933 split is seed 13 on the
+    first 5022 configurations of the same stream (share 0.762), so the new 10^4-configuration run contains them.
+  - The F values at share 0.8 and every prediction (F1)-(F7) are unchanged.
