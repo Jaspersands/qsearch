@@ -1,4 +1,12 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-09 Rees Exponent p^e
+
+Read audits/reviews/2026-11-09-rees-exponent-pe-blackbox.md. Use `nice -n 19`.
+1. Add tests/test_rees_exponent_pe_blackbox.py. It runs
+   audits/reviews/2026-11-09-rees-exponent-pe-blackbox/exponent_pe_check.py on 81_3,
+   243_24 and 625_8 (import run_group; parse groups.txt). Acceptance: ok == subs and
+   calls_max <= cap for each, in under 60 s.
+Do not edit the paper.
 ## 2026-11-09 Rees Square Gap
 
 Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md. Use `nice -n 19`.

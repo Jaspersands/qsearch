@@ -1,4 +1,90 @@
 # Research Agent Handoff
+## 2026-11-09 Rees Native Application Search 2: Legendre-Masked Unipotent Symmetry Is the Best Constructed Survivor (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper, registry and STATE.md NOT edited.
+Report: audits/reviews/2026-11-09-rees-native-application-search-2.md; scripts and outputs are in
+the folder of the same name. One adversarial Claude subagent ran; its findings were checked and
+adopted (report Section 6).
+
+- **Result: no independently motivated application; the negative stands.** The search covered
+  12 new source rows (Grochow–Qiao, Aut and tensor unipotent parts, codes, qudit transversal
+  gates, unitary symmetries, group crypto, the DISW HSSP framework, AO ciphers, Legendre). All
+  are killed, except one constructed survivor.
+- **L1, the survivor.** The secret is a squarefree Q in F_p[x1..xn] of degree d; the only access
+  is coherent F_p-point queries to chi(Q(x)) (the Legendre-PRF oracle). The task is to find
+  H = Stab_U(Q), with U = UT_{n+1}(F_p).
+  - Reduction: Stab(chi∘Q) = Stab(Q), and a random-point fingerprint with
+    t = (n(n+1)log2 p + log2(1/eta))/log2(4/3) is a hiding function for p >= 64d^2 (proved, with
+    an explicit Weil-by-lines constant).
+  - Exact checks: UT_4(F_5), UT_4(F_7), d = 3, 4. H is non-normal and not inside the
+    translations; about 20 points separate all cosets.
+  - Killed for fixed d, or whenever d log d = O(log log p): the repo's unpublished quantum
+    Legendre learners recover Q (line restrictions plus stitching); Stab is then linear once
+    p > nd.
+  - Killed in the circuit model, by a new Frobenius-root identity: Q F^2 = Q^[p] is linear in Q
+    over F_{p^K}, with F = Q^((p-1)/2) (proved, computed). This is the natural high-p-weight S1
+    family; it is classical.
+  - Survives only for d log d = omega(log log p), n >= 4 (UT_4 is metabelian, so the repo's
+    unreviewed metabelian drafts apply), p superpolynomial. Known tools give H∩T and the lifts;
+    the open piece is pi(H) = HT/T.
+  - Not an application: no consumer, generic keys have trivial H, KKK's key stabilizers have
+    order prime to p, multivariate Legendre PRFs are unpublished, and a nontrivial H needs a
+    planted symmetry.
+- **A1 (AO permutation self-equivalences, the open S1 branch "D fixed, p superpolynomial"):
+  killed.** H is trivial by design (exact: identity only among all of UT_4(F_11)); commutative
+  cryptanalysis is over F_2.
+- **Claim gates that stay false:** speedup, novelty, "application". Never describe L1 as an
+  application.
+- **Correction recorded:** "d < p implies Fix(exp X) = ker D_X" is false (witnesses at p = 5, 7);
+  the correct condition is p > nd.
+- **Next hard question:** a translation-invariant fingerprint of lambda∘Q (degree >= 2 Legendre
+  hidden shift), or a poly(d) Legendre learner. Either would kill L1; neither would make it an
+  application. The missing external item is a natural source of keys with unipotent symmetry.
+- **Next command:** none queued; owner decision. If pursued, extend `legendre_unipotent_check.py`
+  to UT_5(F_7) (n = 4, cheap on a subgroup). Expected artifact: `.out` with
+  Stab(chi∘Q) = Stab(Q) and a non-normal H, pi(H) nontrivial. Acceptance: brute-force equality
+  on every case; this only falsifies.
+- **STATE:** the "Rees applications: none survived" row is unchanged. Proposed reason text is in
+  report Section 7. No Gemini mechanical items.
+
+## 2026-11-09 Rees Black-Box Exponent p^e: Restriction Removable, Conditional Only on Thm is-import (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited. Note:
+audits/reviews/2026-11-09-rees-exponent-pe-blackbox.md.
+
+- Proved (Corollary E in the note). Fix c and assume Thm is-import. Take a black-box p-group
+  of class <= c < p and ANY exponent, with unique l-bit encoding, a coherent XOR
+  multiplication oracle, p given, and arbitrary H. Then H is found with prob >= 1 - eps.
+  On every branch it uses <= L = floor(l/log2 p) field calls and
+  <= L c(L+tau') prod_{d=2}^c B_d(L) queries, tau' = ceil(log_p(6L/eps)). On the good event
+  the bound is <= b c(n+tau) prod B_d(min(n,R)), with b = log_p|G| and n the number of
+  cyclic factors of log G. The exponent costs at most a factor b over cor:black-box.
+- The route: exponent from generator orders; Phi on F_{s,c}(Z/p^e); ker Phi by Lemma
+  tb-kernel with checks and abort; Smith chart; Prop tb-recursion (RtF) with
+  Solve = Thm main; push forward. The old "conditional" label is a mislabel. It comes
+  from part (ii) of thm:ring-to-field (cor:fpt-r), which this route never uses, and from
+  the 2 Nov wording written before the stop rules were proved.
+- Fixes for the paper pass. Cite Prop tb-recursion, not ring-to-field(iii). Replace RtF's
+  time-out by a remark that thm:main's query and gate counts hold for any oracle unitary:
+  its procedure is oblivious and Schedule 1 is total on arbitrary labels; the time-out is
+  not effective, since is-import gives no explicit polynomial.
+- Prior art, no novelty: Ivanyos-Sanselme-Santha (arXiv:0707.1260, Section 3, Theorem 2)
+  already reduce constant-class HSP to exponent p in the refined-pc model. Imran-Ivanyos
+  Prop 1 reduces to semi-elementary sections instead. Both AI-read only.
+- Independent AI attack: HOLDS WITH FIXES, all fixes accepted (note, last section).
+- Finite control: exponent_pe_check.py in the folder of the same name. 48 GAP groups,
+  p = 3 and 5, class 2-4, exponent 9-125, |G| <= 3125, opaque handles; 5359/5359 subgroups
+  recovered; 13900 field instances validated against def:input-contract (2684
+  non-abelian); readout 958/960 (both misses caught); negative controls N1 (cover socle)
+  and N2 (frozen normalizer) fire. The field solver is a brute-force stand-in, not Thm main.
+- Gates that stay false: the paper still says exponent p^e is "not claimed"; nilpotent
+  composition, non-unique encoding, coset-copy input and non-fixed class stay unclaimed;
+  no novelty, speedup or human review.
+- Next hard question: a coherent E^{-1} for black-box elements, via an exact abelian HSP
+  on L_G x Z/M. It would give coset-copy input and quotients G/N at once. Next command:
+  write it in this folder with an exact finite check E^{-1}(E(t)) = t. Mechanical item: see
+  MECHANICAL_FOLLOW_UP_PLAN.md, "2026-11-09 Rees Exponent p^e".
+
 ## 2026-11-09 Rees Black-Box Follow-Ups, Paper-Pass Prep, Repo Collapsed to Main (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited.

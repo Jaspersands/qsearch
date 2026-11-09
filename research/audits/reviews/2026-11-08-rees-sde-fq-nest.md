@@ -49,7 +49,9 @@ q^{q²}(n+1)^{q−1} [literature]).
    {−1,0,1} and −1 ∈ P, which is what the F_3 gadget also used (−1 = 1 + 1); for p ≥ 7 the
    squares are not an interval and the realizers of a full 2-dimensional subgroup cannot be kept
    inside S. This is an obstruction for the piece framework with k = 2 dependencies, not for all
-   algorithms; k = 3 at p = 7 is reported in §2 if finished.
+   algorithms. k = 3 at p = 7 (κ = 2, nested set F_7^*×F_7^2, 294 labels): also UNSAT [exact, given
+   the two-case split of the first slot, `cases7k3.txt`: 2 cases × 343 values of γ_(1,1) = 686
+   sub-cases, CaDiCaL, every one LRAT-verified, `k3_7_split.out`].
 3. **Every odd p, κ ∈ {2, 3}: a proved constant below 1/2 by one-dimensional sparse rounds
    [proved].** Theorem C (§4): KOW's sparse-dependency selection (support ≤ (1−1/p)(l+r)/(1−p^{−r})
    from l + r columns, r = ⌈log_p(l+1)⌉) composed with the paper's contraction weights realizes a
@@ -137,6 +139,7 @@ case splits (`cases*.out`), p = 3 sanity in `table_old_encoding.out` (KOW SAT, N
 | κ=2, p=11 | SAT | UNSAT | UNSAT (31 Lemma U cases × 121 values of γ_(1,1); 3751 sub-cases, CaDiCaL, every one LRAT-verified; `cases11_split.out`) | — |
 | κ=2, p=13 | SAT | UNSAT | FILL13 | — |
 | κ=3, p=7 ({0,±1}) | SAT | UNSAT | UNSAT (1.3 s) | — |
+| κ=2, p=7, **k=3**, d=2 nest | — | — | UNSAT (2 cases × 343 sub-cases, LRAT-verified, `k3_7_split.out`) | — |
 | κ=3, p=13 ({0,1,5,8,12}) | SAT | UNSAT | UNSAT (unsplit, 2807 s, `big_13_k3_nest.out`; and 37/37 cases, `cases13k3.out`; PicoSAT, no proof) | — |
 | (b) q=7, {0,±1} | SAT | UNSAT | UNSAT | — |
 | (b) q=11, {0,±1,±2} | SAT | UNSAT | UNSAT (581 s) | — |
@@ -227,11 +230,13 @@ label sets were met, none infeasible. Finite checks falsify only; Theorem B does
 
 **Obstruction [exact].** For (p, κ) = (7, 2): every one of the 19 cases of Lemma U is UNSAT, both
 for the nested set (42 labels) and for all 48 patterns; (7, 3): UNSAT (unsplit, pycosat 1.3 s and
-z3 35.5 s); FILLOBS. By Lemma 2(B), a column set with one column per nested pattern in general
+z3 35.5 s); (7, 2) unsplit, independent of Lemma U: UNSAT by CaDiCaL (1436 s, 12.3 GB LRAT proof
+verified by lrat-check); (11, 2): UNSAT on all 3751 sub-cases (LRAT-verified); (13, 3): UNSAT
+(PicoSAT, no proof); (13, 2): see §2. By Lemma 2(B), a column set with one column per nested pattern in general
 position (q ≥ p(p−1) − 2) has R(X) ⊇ no 2-dimensional subgroup and no S-witness. Any piece gaining
 2 from two dependencies therefore needs a *missing* pattern, and the only patterns a selection
 rule controls (support nesting: ℓ_1 ≠ 0) are present. This closes the k = 2 route at these p;
-k ≥ 3 bundles (labels in F_p^3) remain open except as noted in §2.
+k ≥ 3 bundles (labels in F_p^3) remain open except k = 3 at p = 7, nested set: UNSAT (§2).
 
 **Theorem C (sparse one-dimensional rounds) [proved].** Let p ∉ E_2(κ) (all p for κ = 2, 3) with a
 normalized contraction (α, β) (α_j + β_i ∈ g^{−(i+j)}P ∪ {0}). At codimension l take the next l + r

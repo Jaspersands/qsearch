@@ -6,8 +6,8 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-09, after the handoff entry
-"2026-11-09 Rees Black-Box Follow-Ups, Paper-Pass Prep, Repo Collapsed to Main (AI Only)";
-the entry below it, "2026-11-09 Rees Square Gap: ...", is from the same day.
+"2026-11-09 Rees Native Application Search 2: Legendre-Masked Unipotent Symmetry Is the Best Constructed Survivor (AI Only)";
+the next three entries are from the same day.
 
 Now (11-09, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -1174,6 +1174,15 @@ or separation is claimed.
 
 ## Now
 
+- **Rees deep checks (11-09, AI only, pending human review).** (i) Hostile referee of the
+  integrated core (prep tree): MINOR, no break; Ivanyos-Santha import matches the source; one
+  Dixmier-Lister scalar check timed out (UNKNOWN); significance risk at STOC
+  (2026-11-09-rees-core-hostile-referee.md). (ii) Black-box exponent p^e, class < p: removable,
+  conditional only on Thm is-import, via the Ivanyos-Sanselme-Santha 2012 route (not new);
+  5359/5359 subgroups recovered; paper still says "not claimed" (owner decision)
+  (2026-11-09-rees-exponent-pe-blackbox.md). (iii) Native application search 2: none found;
+  best survivor (Legendre-masked unipotent symmetry) is constructed
+  (2026-11-09-rees-native-application-search-2.md).
 - **Rees black-box corollary (11-09, AI only, pending human review; paper NOT edited).**
   Draft audits/reviews/2026-11-08-rees-blackbox-corollary-draft.tex, revised after an
   independent referee (MINOR, no break) and a citation check. Exponent-p black-box p-groups of

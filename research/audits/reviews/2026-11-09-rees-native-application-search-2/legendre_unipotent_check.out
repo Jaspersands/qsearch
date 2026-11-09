@@ -1,0 +1,19 @@
+p=5 d=3: invariant space of <g=(1, 0, 0, 1, 0, 1)> in degree<=3 has dim 4 (of 20)
+[R invariant] p=5 d=3 |G|=15625 |Stab(Q)|=5 |Stab(lambda Q)|=5 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.5360 fingerprint_t=17 (cosets=3125) R=-2*x2^2*x3 - x1*x3^2 + 2*x2*x3^2 - 2*x3^3 + 2*x1*x2 + 2*x2^2 + x1*x3 + 2*x2*x3 - 2*x3^2 + x1 + x2 - x3 - 2
+[Q=R o g0] p=5 d=3 |G|=15625 |Stab(Q)|=5 |Stab(lambda Q)|=5 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.5360 fingerprint_t=17 (cosets=3125) g0=(1, 0, 3, 2, 4, 1)
+   H_Q == g0^-1 H_R g0 : True
+[random control] p=5 d=3 |G|=15625 |Stab(Q)|=1 |Stab(lambda Q)|=1 equal=True normal=True contains[G,G]=False inside_translations=True worst_agreement_outside_H=0.6480 fingerprint_t=23 (cosets=15625) 
+[square control] p=5 d=2 |G|=15625 |Stab(Q)|=125 |Stab(lambda Q)|=125 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.6800 fingerprint_t=23 (cosets=125) 
+p=7 d=3: invariant space of <g=(1, 0, 0, 1, 0, 1)> in degree<=3 has dim 3 (of 20)
+[R invariant] p=7 d=3 |G|=117649 |Stab(Q)|=49 |Stab(lambda Q)|=49 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.4898 fingerprint_t=20 (cosets=2401) R=3*x3^3 - 2*x2*x3 + 2*x3^2 + 2*x1 + 3*x2 + 2*x3 + 3
+[Q=R o g0] p=7 d=3 |G|=117649 |Stab(Q)|=49 |Stab(lambda Q)|=49 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.4898 fingerprint_t=19 (cosets=2401) g0=(3, 6, 5, 6, 0, 1)
+   H_Q == g0^-1 H_R g0 : True
+[random control] p=7 d=3 |G|=117649 |Stab(Q)|=1 |Stab(lambda Q)|=1 equal=True normal=True contains[G,G]=False inside_translations=True worst_agreement_outside_H=0.5394 fingerprint_t=27 (cosets=117649) 
+[square control] p=7 d=2 |G|=117649 |Stab(Q)|=343 |Stab(lambda Q)|=343 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.7551 fingerprint_t=37 (cosets=343) 
+p=7 d=4: invariant space of <g=(0, 0, 1, 1, 0, 0)> in degree<=4 has dim 9 (of 35)
+[R invariant] p=7 d=4 |G|=117649 |Stab(Q)|=7 |Stab(lambda Q)|=7 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.5627 fingerprint_t=22 (cosets=16807) R=3*x1*x3^3 - x3^4 - 3*x2*x3^2 - 2*x3^3 - 2*x1*x3 - 3*x3^2 + 2*x2 - 2*x3 - 3
+[Q=R o g0] p=7 d=4 |G|=117649 |Stab(Q)|=7 |Stab(lambda Q)|=7 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.5627 fingerprint_t=19 (cosets=16807) g0=(2, 5, 0, 0, 1, 4)
+   H_Q == g0^-1 H_R g0 : True
+[random control] p=7 d=4 |G|=117649 |Stab(Q)|=1 |Stab(lambda Q)|=1 equal=True normal=True contains[G,G]=False inside_translations=True worst_agreement_outside_H=0.5277 fingerprint_t=24 (cosets=117649) 
+[square control] p=7 d=2 |G|=117649 |Stab(Q)|=343 |Stab(lambda Q)|=343 equal=True normal=False contains[G,G]=False inside_translations=False worst_agreement_outside_H=0.7551 fingerprint_t=37 (cosets=343) 
+nice -n 19 /opt/anaconda3/envs/qsearch-cas/bin/python   122.82s user 29.76s system 42% cpu 6:02.37 total
