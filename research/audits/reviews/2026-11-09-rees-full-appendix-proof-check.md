@@ -21,7 +21,7 @@ fc8a2ac43259, provenance 2545e44aeb3f. The hashes did not change during the chec
   `nice -n 19 timeout`, and read the 3-5 Nov reports only afterwards.
 - `diffs/` holds the change diffs used: every change since the 5 Nov 09:20 archive, and the
   9 Nov patch split by file.
-- Compute was about 1.5 core-hours in all, within the 4 h cap.
+- Compute was about 1.8 core-hours in all (reported per checker; under the 4 h cap), single-threaded at nice 19.
 - **The coordinator re-verified every GAP and ERROR below against the .tex (and against local
   source texts where a citation was at issue).** "V" marks a finding re-derived or re-read by the
   coordinator. "R" marks one taken from the checker's script output and checked only for
@@ -37,7 +37,7 @@ counterexample was found to any of them. The verdicts:
 | Part (checker id) | Verdict | GAP | ERROR | MINOR |
 |---|---|---|---|---|
 | Schedule 2, ll. 1-482 (s2a) | MINOR ONLY | 0 | 0 | 8 |
-| Schedule 2, ll. 483-729 + worst-case Theorem main (s2b) | S2B_VERDICT | | | |
+| Schedule 2, ll. 483-729 + worst-case Theorem main (s2b) | GAPS | 1 (same as t2-1) | 2 | 6 |
 | Schedule 3 (s3) | GAPS | 1 | 0 | 6 |
 | Free coordinate (fc) | MINOR ONLY | 0 | 0 | 6 |
 | Subspace sources (sub) | GAPS | 1 | 0 | 11 |
@@ -49,6 +49,8 @@ counterexample was found to any of them. The verdicts:
 | Provenance (prov) | MINOR ONLY (record errors) | 0 | 3 | 9 |
 | `prop:dl-central-scalars` and its citing sentences (dl) | MINOR ONLY | 0 | 1 | 5 |
 
+Totals: 5 distinct GAPs (t2-1 = s2b-1); 13 ERRORs, 12 distinct (sde-5 = s2b-2); 89 MINOR.
+
 Severity scale:
 - **GAP:** a proof step is missing or wrong, but the statement survives with a stated repair of
   a line or two.
@@ -56,9 +58,11 @@ Severity scale:
 - **MINOR:** wording, notation, status labels.
 
 The most material items are these:
-1. **t2-1 (GAP).** The "on every branch" bounds of `thm:bb-envelope` have no argument on the
-   chart-failure event. There the chart may be non-nilpotent or of class above c, which neither
-   `rem:oblivious` nor the time-out covers. Fix: check γ_{c+1} = 0 and the Lie axioms.
+1. **t2-1 = s2b-1 (GAP).** Two checkers found this independently: t2 from the black-box side,
+   s2b from the worst-case side. The "on every branch" bounds of `thm:bb-envelope` have no
+   argument on the chart-failure event. There the chart may be non-nilpotent or of class above
+   c, which neither `rem:oblivious` nor the time-out covers. Fix: check γ_{c+1} = 0 and the Lie
+   axioms.
 2. **s3-1 (GAP).** `cor:fpt-r` and its Schedule 3 route use "c ≤ r+1", which needs the true
    class. The contract's c is only an upper bound. Fix: replace c by the computed class.
 3. **sub-1 (GAP).** `cor:subspace-hsp` claims polynomial cost in log p for any certified design,
@@ -70,11 +74,23 @@ The most material items are these:
    whole centre, is correct.
 5. **sde-1, sde-2 (GAP).** Two results are called proved or stated as fact with no proof in the
    paper: the composite-κ run bound, and the sparse count (1−1/p)a²/2.
-6. **sde-3, sde-4, sde-5 (ERROR).** Three false or stale sentences in the SDE survey
-   (main.tex:750, :695, :721).
+6. **sde-3, sde-4, sde-5, s2b-2, s2b-3 (ERROR).** False or stale sentences:
+   - in the SDE survey at main.tex:750;
+   - in the κ = 8, 9 sentences at main.tex:695 and :721 and appendix-schedule2.tex:723 and :728.
+
+   The E_2 items must be fixed together in the planned E2-UPDATE pass.
 7. **prov-1, codim-1, t2-2, fb-1 (ERROR).** Stale or false record and side sentences.
 
-S2B_SUMMARY
+**The 9 Nov worst-case argument survives.** s2b checked the Schedule 2 / combined-rule claim:
+- per attempt: Markov at 4T plus abort ≤ 1/4 at k = 2;
+- independence across attempts, with Phase 0 inside each attempt;
+- the recursion tree fixed by (p, m, g_d, ε);
+- labels ≥ p reduced mod p;
+- hiding used only for correctness.
+
+It found it correct, and none of the oracles it tried gives an unbounded or uncounted cost. The
+one hole is not in the oracle model but in invalid charts (item 1). `cor:black-box-pe` is
+unaffected, because its K' is ideal-checked.
 
 ## 1. Schedule 2, lines 1-482 (s2a): MINOR ONLY
 
@@ -113,9 +129,78 @@ Findings:
 
 Earlier report (`2026-11-03-rees-check-app-a.md`): all of P1-P8 are present.
 
-## 2. Schedule 2, lines 483-729, and Theorem main on every oracle (s2b)
+## 2. Schedule 2, lines 483-729, and Theorem main on every oracle (s2b): GAPS (statements survive)
 
-S2B_SECTION
+**Part 1 (appendix ll. 483-729).** Exact searches (`s2b/rcsearch*.out`, `counts.out`,
+`numerics.out`, `cyclo.out`) found no error in the tower, chains, local-obstruction or scope
+statements, within the ranges searched (UNKNOWN items are listed below).
+
+**Part 2 (the 9 Nov claim).** This covers `sec:recursion` `main.tex:608-644`, `rem:oblivious`
+`:1048`, the status of `thm:bb-envelope`, and `main.tex:1225`. The claim is correct in substance:
+- **Per attempt.** Markov at the 4T cut-off gives ≤ 1/4, Schedule 2 at k = 2 aborts with
+  probability ≤ 1/4, so an attempt fails with probability ≤ 1/2. Outputs are checked exactly, so
+  an abort costs only probability.
+- **Across attempts.** Attempts fail independently given the node's columns, because Phase 0 runs
+  inside each attempt; a shared Phase 0 would cause a common failure of up to 1/16. With
+  ⌈log₂(3N/ε)⌉ attempts and a union over nodes, the solver third is ε/3.
+- **Fixed before the run.** Tree, arities, transform counts, N_solver and N_instr are fixed by
+  (p, m, g_d, ε), with no restarts.
+- **Hiding.** It is used only for correctness.
+- **Oracle attacks tried; none succeeded:** labels ≥ p; zero, repeated and rank-deficient
+  columns; non-hiding f in the rank steps; f maximizing late stop-rule firing.
+- **Corollaries.** Dropping the time-out is valid for `cor:black-box-pe`.
+
+Findings:
+1. **GAP (V)**, the same gap as t2-1 (§7), found independently.
+   - Locations: `main.tex:1329`, `:1310`, `:1049`, `:1225`; torsion appendix `:402-404`,
+     `:442-446`, `:838-840`, `:1203-1207`, `:1308`, `:1387`, `:1445`.
+   - The argument: `rem:oblivious` covers only in-contract inputs, but `thm:bb-envelope`'s (R2)
+     chart on the `lem:tb-kernel` failure event can be a Lie ring that is not nilpotent.
+   - Example (`s2b/chart_example.py`): Heisenberg, c = 2, e_p = 1, with [ε1,ε2] = ε1−ε2. The
+     coordinator checked that this example is non-nilpotent: ad_{ε1} has eigenvalue −1 on ε1−ε2.
+   - The analogy "exactly as `cor:black-box-pe` argues" does not carry over, because the
+     corollary's F/K' is ideal-checked and `thm:bb-envelope`'s chart is not.
+   - Fix: antisymmetry, Jacobi and γ_{c+1} = 0 before each call, O(cℓ^6) ring operations in
+     all, below the existing O(ℓ^8) term. After the fix, (i), the status line and `main.tex:1225`
+     follow: beyond `thm:is-import`, only `thm:power-sde`(ii) through the combined rule.
+2. **ERROR (V)**, `appendix-schedule2.tex:723` and `main.tex:721`. "By separate runs above the
+   decided ranges, 14281 ∈ E_2(8)" is stale: 14281 < 16993. The phrase dates from when the range
+   ended at 13873. This is the same as sde-5.
+3. **ERROR**, `appendix-schedule2.tex:723/728` and `main.tex:695/721`.
+   - The new 9 Nov sentence says the constraint solver decided "the 145 primes p ≡ 1 (mod 8)
+     in (9769, 20000] that the pruned search had not decided on 4 November". If it decided them
+     all, E_2(8) is determined.
+   - That contradicts "not known exactly", "In (16993, 20000] only some primes are decided",
+     "Above those ranges most verdicts rest on a single run" (not flagged by an E2-UPDATE
+     comment) and "does not determine E_2(κ) for κ ≥ 8".
+   - "Re-decided, with the same verdicts" is meaningless for primes with no earlier verdict.
+   - Fix all five places together in the E2-UPDATE pass (text in s2b.md §3).
+4. MINOR, appendix `:189`, `:162`; `main.tex:620`, `:1049`.
+   - The cut-off bounds T_1 and T exist only for a fixed implementation, with constants not
+     computed. `rem:oblivious` says so for T; the proof of `thm:app-s2-main` does not say so for
+     T_1.
+   - The stated time is worst-case only if a uniform draw from F_p counts as one step; with fair
+     coins, each rejection loop is unbounded.
+   - Fix: cap each loop at k+2+⌈log₂ N_0⌉ tries. The abort bound stays ≤ 2^{−k}.
+   - Inside the recursion the 4T cut-off already covers this, so Theorem main is unaffected.
+5. MINOR, `main.tex:1312`, torsion `:1581`. "The Schedule 2 calls are not bounded here" is
+   outdated: they are bounded by the unspecified polynomial of `rem:oblivious`, and only the
+   exponent β̂_c is missing.
+6. MINOR, `main.tex:625`. "Fixed before the run under Schedule 1" also holds under the combined
+   rule.
+7. MINOR, appendix `:647`. The "1 < D_1 < κ" sentence omits κ = 7 (primes 43, 113).
+8. MINOR, appendix `:541`. "1 − 1/ρ" should be "1 − 1/ρ_2".
+9. MINOR, appendix `:487/563/573/591`. k means |K|, an element of K, and the round index.
+
+Not checked or UNKNOWN:
+- κ = 9 at 163 and 181 (partial: 15 and 12 of 37 constructions hit the node limit);
+- κ = 9 at 199, 307 and 433 (not run);
+- chains with 1 < D_1 < κ for κ = 9 and κ = 8;
+- the κ = 7 list {29, 43, 71, 113}, which needs E_2(7);
+- κ = 10, 12 (timed out at 200 s);
+- κ = 3 symmetric form above 400;
+- T_R(9,3) ≈ 134723 against the search bound 135000, evaluated in floating point only: margin
+  0.2%, so an interval evaluation is advised.
 
 ## 3. Schedule 3 (s3): GAPS (statements survive)
 
@@ -270,7 +355,7 @@ Exact checks:
 - These were checked against brute force: the Howell primitives, (N1)-(N6) with RtF, the GAP
   count (49 of 58 groups), the E_W values, and 958 of 960 readouts.
 
-1. **GAP (V for the text, R for the examples)**: "on every branch" in `thm:bb-envelope`
+1. **GAP (V for the text, R for the examples; found independently by s2b, §2)**: "on every branch" in `thm:bb-envelope`
    (`main.tex:1310`, `:1329`; appendix `:1196-1207`, `:1381-1383`, `:1445-1448`).
    - **What fails.** On the failure event of `lem:tb-kernel`, the rows of Y generate only a
      subgroup of (ker π)^⊥, and with approximate transforms they can be anything.
@@ -485,6 +570,8 @@ Not checked: E_2(7). The κ = 7 search was stopped to save budget.
 
 ## 12. `prop:dl-central-scalars` (dl): MINOR ONLY
 
+Separately, the handoff entry "2026-11-09 Rees Lean Check" (another session; not re-checked here) records the proposition as Lean-proved, both sentences as stated (`formal/Formal/DixmierListerScalars.lean`, `DixmierListerGroup.lean`). That covers the proposition, not the citing sentence of finding 1.
+
 The proposition holds as stated for every field of characteristic ≠ 2, including 3. The proof is
 complete apart from two unstated clauses (finding 2). The checker ran its own gauge-fixed
 Singular eliminations, without the earlier scripts.
@@ -537,7 +624,9 @@ c. **Uncomputed constants against literal cut-offs.** These rely on time bounds 
    The paper's stance is that such an algorithm exists with valid constants. That is honest
    only if each statement whose bounds use these cut-offs is phrased as existence, or uses
    `rem:oblivious` on valid inputs instead. t2-1's fix removes the one place where neither
-   applies. S2B_CROSS
+   applies. s2b-4 adds that the stated worst-case time of `thm:app-s2-main` assumes a
+   uniform draw is one step, and gives a capped-loop repair. Inside the recursion the 4T
+   cut-off covers it. s2b-5 updates "the Schedule 2 calls are not bounded here".
 d. **E2-UPDATE.** sde-5 and prov-3/prov-8 are wrong now and must be fixed in the planned
    update, not separately.
 e. **Later AI results contradict sentences.** sde-4 is the only sentence found that a later
@@ -586,7 +675,13 @@ sources.
    - the guard argument in the second proof of `thm:app-codim`(ii);
    - `prop:dl-central-scalars`;
    - the witness-circuit and "read off the code" arguments for `coherent_k3`;
-   - `rem:oblivious` and the Schedule 2 worst-case argument (S2B_EXPERT).
+   - `rem:oblivious` and the Schedule 2 worst-case argument (found correct by s2b);
+   - where the chart check of t2-1 belongs: in Theorem main or in the chart step of
+     `thm:bb-envelope`. Does any other caller feed Theorem main out-of-contract inputs on
+     erroneous branches?
+   - whether existence-only cut-off constants are acceptable in stated theorems;
+   - the randomness model (s2b-4);
+   - T_R(9,3), within 0.2% of the search bound.
 10. **Modelling and judgement.**
     - Whether "acts on the centre by a scalar" is the right barrier notion, given that central
       subgroups admit sixth roots (dl-1).

@@ -1,4 +1,66 @@
 # Research Agent Handoff
+## 2026-11-09 Rees Full-Version Appendix Proof Check: No Break; 5 Fixable Gaps (bb-envelope Chart Check, True Class in fpt-r, Subspace Design Size, Two SDE Proofs) (AI Only)
+
+AI-only (coordinator plus 12 Claude checker subagents); nothing human-reviewed. Paper, prep tree
+and claim gates NOT touched; no git. Report:
+audits/reviews/2026-11-09-rees-full-appendix-proof-check.md (per-part reports, scripts and
+outputs in the same-named folder).
+
+**Object.** The integrated prep tree, 2026-11-09-rees-paper-pass-prep/tree/ (passes 1-7). Every
+appendix was checked line by line; the large ones were split. Also checked: their main-text
+counterparts and prop:dl-central-scalars. Every GAP and ERROR was re-checked by the coordinator
+against the .tex and the local sources.
+
+**[checked, AI only] No BREAK.** No stated result was found false, and no counterexample was
+found. Totals: 5 distinct GAPs, 13 ERRORs (false sentences that affect no result; 12 distinct), 89 MINOR items.
+
+The GAPs (each a 1-3 line repair; the statements survive):
+- **t2-1 = s2b-1 (found independently).** thm:bb-envelope "on every branch". On the
+  lem:tb-kernel failure event the chart can be non-nilpotent or of class > c (e.g. [e1,e2] =
+  e1-e2). For e_p = 1 nothing checks it; for e_p > 1 there is a Lie check but no class test.
+  rem:oblivious covers only in-contract inputs, and the RtF time-out is not computable for
+  Theorem main. Fix: check the Lie axioms and gamma_{c+1} = 0 before each call. cor:black-box
+  and cor:black-box-pe are unaffected (ideal check on K').
+- **s3-1.** cor:fpt-r (main.tex:1167) and its Schedule 3 route use c <= r+1. The contract's c is
+  only an upper bound (Heisenberg declared with c = 5). Fix: use the computed true class.
+- **sub-1.** cor:subspace-hsp says "polynomial in log p" for any design, while offering
+  S = F_p^x (T >= p-1). Fix: restrict to lem:app-sub-design(b).
+- **sde-1.** The composite-kappa run bound is called proved, but only kappa = q^e is proved in
+  the paper.
+- **sde-2.** The unlabelled (1-1/p)a^2/2 count is cited to KOW Lemma 3.6; the local text shows
+  it is Remark 3.8, for another weight set.
+
+Notable ERRORs:
+- dl-1: "no automorphism supplies central scalars beyond +-1" (main.tex:254) is false for
+  p = 1 mod 3 (a Z/3-grading acts on exp(F_p e7) by omega). The proposition itself is correct.
+- sde-4: "no o(a^2) method is known" is stale after Theorem A.
+- sde-5, s2b-2, s2b-3: E_2(8)/E_2(9) sentences are inconsistent; fix them in the E2-UPDATE pass.
+- prov-1: the bb-corollary control has 5 groups and 38 subgroups, not 4/30 (also main.tex:1277).
+- codim-1, t2-2, fb-1.
+
+**Confirmed correct.**
+- The 9 Nov Schedule 2 worst-case argument (s2b).
+- prop:dl-central-scalars (independent Singular eliminations at p = 3..13 and 32003).
+- Every recomputed table and threshold.
+
+**Claim gates that stay false:** human review; any appendix result "proved" beyond AI check;
+thm:bb-envelope's every-branch bounds before the t2-1 fix; E_2(kappa) for kappa >= 6
+re-derived; any external import (IS15, ISS 2012, II23, Lazard/Khukhro, Weil/LN 5.41,
+KOW/KMOSW, MP13) verified.
+
+**Next hard question.** Should the input check sit in Theorem main (extend rem:oblivious to
+arbitrary structure constants) or in bb-envelope's chart step? Does any other caller hand
+Theorem main out-of-contract inputs on erroneous branches?
+
+**Next action (integrator, local prep tree only).** Apply the GAP and ERROR fixes, whose exact
+LaTeX is in the sub-reports (t2.md §1, s3.md §1, sub.md F1, sde.md §1-6, dl.md §1, prov.md §1-3,
+codim.md §1, fb.md §1, s2b.md §2-3). Do the E_2 items in the E2-UPDATE pass.
+- Expected artifact: an 8th-pass patch.
+- Acceptance: a 0-warning build, and a focused AI re-check of the changed paragraphs; expert
+  list in report §14.
+
+Mechanical items: none (all are paper edits for the integrator).
+
 ## 2026-11-09 Rees Lean Check: DL Central Scalars and Unitriangular exp/log Machine-Checked, No sorry (AI Only)
 
 AI-written Lean, kernel-checked; Lean statements not yet human-reviewed; no claim gate changed;
