@@ -250,7 +250,10 @@ class Run:
         return sol
     # -- KOW round (baseline): sparsest nonzero combination of the first q + r columns
     def kow_round(self, q, P, rng=None):
-        r = max(1, math.ceil(math.log(q + 1, 3) - 1e-12))
+        # baseline "kow" mode: KOW's pool q + ceil(log_3(q+1)).  In "wnest"/"wnest+" modes KOW
+        # rounds are only used for q <= 3, where the text/guarantee() use pool q + 1 (any nonzero
+        # dependency of q + 1 columns in the q-dim quotient gives a valid piece of cost <= q + 1).
+        r = max(1, math.ceil(math.log(q + 1, 3) - 1e-12)) if self.mode == "kow" else 1
         if not self.pull(q + r):
             self.failed = True
             return "exhausted"
@@ -343,7 +346,7 @@ class Run:
             raise AssertionError("dependent h1,h2 but no nonempty zero-sum union")
         self.add_gens([h1, h2], real)
         return None
-    def run(self, rng=None, qmin_kow=3):
+    def run(self, rng=None, qmin_kow=4):
         while True:
             q = self.n - len(self.gens)
             if q == 0:

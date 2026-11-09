@@ -14,9 +14,37 @@ of the dependencies is {0,1}-valued on T (a zero-sum set for free); counted sepa
 """
 import itertools, sys, time
 import numpy as np
-import pycosat
+try:
+    import pycosat
+except ImportError:      # the k = 4 check below uses cadical instead
+    pycosat = None
+import os, subprocess, tempfile
 
-def feasible(d, k, T, model=False):
+LRAT_CHECK = os.environ.get('LRAT_CHECK', 'lrat-check')
+
+def cadical_solve(nvars, cl):
+    """DIMACS -> cadical with an LRAT proof; an UNSAT answer is accepted only after lrat-check
+    prints 'c VERIFIED'.  Returns 'UNSAT' or a list of signed literals."""
+    work = tempfile.mkdtemp()
+    cnf, prf = os.path.join(work, 'p.cnf'), os.path.join(work, 'p.lrat')
+    with open(cnf, 'w') as f:
+        f.write(f'p cnf {nvars} {len(cl)}\n')
+        for c in cl:
+            f.write(' '.join(map(str, c)) + ' 0\n')
+    r = subprocess.run(['cadical', '--lrat=true', '--binary=false', cnf, prf], capture_output=True, text=True)
+    if r.returncode == 20:
+        ch = subprocess.run([LRAT_CHECK, cnf, prf], capture_output=True, text=True)
+        assert 'c VERIFIED' in ch.stdout and 'failed' not in ch.stdout, ch.stdout[-300:]
+        print('   [cadical UNSAT, LRAT VERIFIED]', flush=True)
+        return 'UNSAT'
+    assert r.returncode == 10, r.stdout[-300:]
+    lits = []
+    for line in r.stdout.splitlines():
+        if line.startswith('v'):
+            lits += [int(x) for x in line.split()[1:] if x != '0']
+    return lits
+
+def feasible(d, k, T, model=False, solver='pycosat'):
     T = [tuple(p) for p in T]
     alph = [a for a in itertools.product(range(3), repeat=d) if any(a)]
     units = [tuple(1 if j == i else 0 for j in range(d)) for i in range(d)]
@@ -54,7 +82,10 @@ def feasible(d, k, T, model=False):
                 v = nv(); cov.append(v)
                 cl.append([-v, uvar[(p, s)]]); cl.append([-v] + good)
         cl.append(cov)
-    sol = pycosat.solve(cl)
+    if solver == 'cadical':
+        sol = cadical_solve(cnt[0], cl)
+    else:
+        sol = pycosat.solve(cl)
     if sol == "UNSAT":
         return False, None
     if not model:

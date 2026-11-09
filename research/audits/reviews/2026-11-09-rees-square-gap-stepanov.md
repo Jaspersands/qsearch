@@ -20,6 +20,17 @@ contraction is $(\alpha,\beta)$ with $\alpha_j + \beta_i \in Q^\circ_{-(i+j)}$ a
   - Its missing input, square-root cancellation of type sums over (C1) orbits, is open.
   - This is the first identified proof route not excluded by a known barrier. It is not a
     proof.
+  - **κ = 5 (§8, exact computation at single primes).** PW_pair < 1 at every tested prime
+    821–2311 (first at 641), PW < 1 at every tested prime 1231–2311, all far below the O1
+    barrier 2628 and $T_A(5) \approx 1.25\cdot10^4$. (N) and (L) look bounded. **(H) as stated is
+    contradicted by the data:** the $m = 6$ classes (3,3) and (2,4) carry a $c/p$ bias rather
+    than square-root cancellation, so $B_H$ grows like $p^{2.3}$. The revised hypothesis OSC′
+    (§8) still predicts a threshold below $T_A(5)$, but its exponent is not yet determined.
+  - **(N) (§9).** Proved without Weil: (C1) configurations exist from $p \approx \kappa^\kappa/(2e)$
+    asymptotically (Theorem C; first certified κ = 5: 1451, κ = 6: 20233, below pigeonhole).
+    Full-space term-by-term certificates for (N) are barred up to $(\kappa-1)\kappa^\kappa$ (O1-N).
+    A κ = 7 Monte Carlo in the OSC regime ($\lambda = 0.15$–$0.31$) gives $N_1/\mu_1 = 0.62$–$1.07$,
+    consistent with the 4-cycle heuristic.
 - **Proved (new in this form; refereed by an independent AI agent, verdict CORRECT, pending human
   review): Proposition 1.** If a contraction has $z$ zero cells then
   $\kappa(\kappa-1) - z \le h + \kappa - 2$. Hence every prime $p \equiv 1 \pmod\kappa$ with
@@ -145,6 +156,17 @@ $E_2(\kappa) \subseteq E_2'(\kappa)$. Write $s_j = \alpha_j$, $t_i = -\beta_i$.
 - **Strongest limitation.** Even the existence of (C1) configurations is unproved below the
   pigeonhole bound $(\kappa-1)\kappa^{\kappa-1}$. Expanding (C1) back into characters brings back
   the $\kappa^{\kappa+1}$-type loss.
+- **κ = 5 sweep [finite computation; `types/orbit_k5.out`, `types/orbit_k5_sweep.out`].**
+  - PW values:
+
+    | p | 271 | 311 | 401 | 521 |
+    |---|---|---|---|---|
+    | PW | 18.1 | 9.34 | 4.49 | 1.95 |
+
+  - Mean bucket size $p/5^4$ is below 1 at all four primes.
+  - Between 401 and 521, PW decays roughly like $p^{-3}$. If that continues, PW < 1 near
+    $p \approx 640$ [heuristic extrapolation], against the O1 barrier 2628 and $T_A(5) \approx 1.25\cdot10^4$.
+  - Superseded by §8, which extends the sweep to 2311 with a validated C kernel.
 - **Second agent pass (`types-proof/REPORT.md`).**
   - [proved] The certificate is valid (Theorem 1 there; the identity is checked to $10^{-11}$).
   - [proved] Pair classes satisfy $n\hat F/\hat F(0) = -\kappa - R$ with $|R| \le \kappa - 2$ (exact
@@ -156,8 +178,10 @@ $E_2(\kappa) \subseteq E_2'(\kappa)$. Write $s_j = \alpha_j$, $t_i = -\beta_i$.
     low-support classes (L), and square-root cancellation over (C1) orbits (H). It would give
     $T = \kappa^{(\kappa+1)/2+o(1)}$, for example $3450$ at κ = 5 against $T_A(5) = 1.25\cdot10^4$.
   - The κ ≤ 4 data have mean bucket size $\gtrsim 0.3$, so they do not test OSC in its regime.
-- **Next hard question.** Test or prove (N) and (H) at κ = 5 near $p \approx 3\cdot10^3$. Prove (C1)
-  existence for some $p = o(\kappa^\kappa)$.
+- **Next hard question (updated after §8–§9).** Prove the $1/p$ boundary term for the matched
+  (3,3) classes at κ = 5 (this turns (H) at $m = 6$ into an (L)-type bound), and determine at
+  which total support $m(\kappa)$ the $1/p$ bias stops. (C1) existence for $p = o(\kappa^\kappa)$ is
+  now proved down to $\kappa^\kappa/(2e)$ only, which is still $\Theta(\kappa^\kappa)$.
 
 ## 4. Literature (web; sources seen by a literature agent, extracts in its scratch folder)
 
@@ -197,6 +221,11 @@ inequality: no failure. `zero_structure.py` checks Lemma 2 on all contractions f
 - The type certificate (§3) is proved for any infinite family of $(\kappa,p)$, or its heuristic
   $\kappa^{\kappa/2+9/4}$ is proved: **false**. O1 or O2 is refuted: **false** (the type
   certificate lies outside their hypotheses).
+- OSC or OSC′ is proved, or (H) is disproved: **false** (finite data at κ = 5 only).
+- PW_pair < 1 for every $p \ge 821$ at κ = 5, or any statement for $p \in [2311, 2628]$: **false**.
+- The κ = 5 numbers have a second independent implementation beyond the exact F-array match
+  with `orbit_types_fast` and `sep_types`: **false**.
+- Theorem C gives contractions: **false** (it gives (C1) configurations only).
 
 ## 7. Proposed paper text (NOT applied; the integrator owns `main.tex`)
 
@@ -216,5 +245,78 @@ pending human review).
 | contraction count (Rees) | 50 | 1450 | 12700 | 38800 |
 
 - PW is falling roughly like p^{-3} over 401–521. Extrapolating that **[heuristic]**, PW < 1 near p ≈ 650. That would be well below the O1 barrier 2628 and T_A(5) ≈ 1.25·10⁴.
-- No prime with PW < 1 has been computed at κ = 5. PW_pair was not computed here.
-- Next command: `orbit_types.py 5 641` and `5 661` on a less loaded machine. Acceptance test: PW < 1 at some p < 2628, which would give the first κ = 5 evidence that the type certificate escapes O1.
+- **Update (same pass): the extrapolation held.** A compute agent wrote a C kernel
+  (`osc-k5/osc_kernel.c`, driver `osc-k5/osc_k5.py`; full report `osc-k5/REPORT.md`). It
+  enumerates S modulo PGL₂ and never enumerates T, so p = 271 takes 0.03 s instead of 34 s.
+  - Validation [computed]: the full $5^{10}$ F array equals `types/orbit_types_fast.py` exactly at
+    p = 271, 311; at κ = 4 it equals `sep_types` at p = 61, 149, 197, 229, 509 and reproduces
+    `cert_k4.out`; it reproduces Rees and PW at 401 and 521. Internal checks (orbit sizes sum to
+    $(p-2)(p-3)$, $N_1 = \hat F(0)/\kappa^2$, integrality) hold at every prime.
+  - Coverage: 56 primes, 181–2311 (`osc-k5/summary.out`). p = 2521 was killed at a 1 h cap
+    without output; 2711–3461 were not run.
+
+  Selected rows [computed]:
+
+  | p | λ = p/625 | Rees | PW | PW_pair | $N_1/\mu_1$ | $B_L$ | $B_H$ |
+  |---|---|---|---|---|---|---|---|
+  | 401 | 0.64 | 12700 | 4.49 | 3.37 | 0.80 | 1.01 | 67 |
+  | 521 | 0.83 | 38800 | 1.94 | 1.47 | 0.33 | 0.26 | 77 |
+  | 641 | 1.03 | 246750 | 1.30 | 0.985 | 0.44 | 0.31 | 89 |
+  | 661 | 1.06 | 338625 | 0.947 | 0.696 | 0.55 | 0.36 | 123 |
+  | 821 | 1.31 | 2349425 | 1.14 | 0.908 | 0.60 | 0.50 | 212 |
+  | 1201 | 1.92 | 70370125 | 1.13 | 0.967 | 0.79 | 0.40 | 999 |
+  | 1231 | 1.97 | 63222310 | 0.296 | 0.200 | 0.71 | 0.39 | 154 |
+  | 2311 | 3.70 | 12417441600 | 0.177 | 0.128 | 0.85 | 0.39 | 3440 |
+
+  - **Crossings [computed, single primes].** PW_pair < 1 first at 641 and at every tested prime
+    821–2311. PW < 1 first at 661 and at every tested prime 1231–2311. Over $p \ge 421$ both
+    decay like $p^{-1.85}$ with prime-dependent spikes (1201, 1301, 1361). Rees = 0 only at
+    181, 211, 251 (191 and 241 have no (C1) configuration).
+  - **(N) [computed].** $N_1/\mu_1 \in [0.27, 0.87]$ for $p \ge 401$, slowly rising.
+  - **(L) [computed].** $B_L = \max_{m\le5} n|\hat F|/(\kappa\hat F(0)) \in [0.22, 0.70]$ for $p \ge 421$.
+  - **(H) [computed; contradicts the hypothesis as stated].** $B_H = \max_{m\ge6} |\hat F|/(\sqrt{m/N_1}\,\hat F(0))$
+    grows from 56 to 3440 over 421–2311 (log-log slope +2.26). The maximiser is always the
+    (3,3) class with r and c of equal value multiset (e.g. {0,0,1,2,2}/{0,0,1,2,2}); (2,4)
+    reaches ≈1200. Class decay of $n|\hat F|/\hat F(0)$: (2,2), (2,3), (3,3) flat (so $|\hat F|/\hat F(0)\sim c/p$);
+    (4,4) $\approx p^{-2.8}$; (5,5) $\approx p^{-3.5}$. $\sqrt{m/N_1}$ is reached only near $m = 10$.
+  - **Probable mechanism [heuristic, unproved].** A boundary term as in Theorem 3: the z-sum
+    runs over $\mathbb P^1 \setminus (S \cup T)$, and the $2\kappa$ excluded points give $O(\kappa)/n$ terms that do
+    not cancel over (C1) orbits when the r- and c-patterns align.
+  - **Revised hypothesis OSC′(B) [conjecture].** Every non-pair class satisfies
+    $|\hat F(\rho)| \le B\kappa\hat F(0)/n$ for support $m \le m_0(\kappa)$, with faster decay beyond. At κ = 5
+    the data give $m_0 = 6$ and $B_{\rm all} \le 0.71$ for $p \ge 421$. Moving $m = 6$ into (L)
+    raises the low weight from 698 to ≈1798 and the leading term of $T_{\rm strong}(B)$ to
+    ≈$9\cdot10^3 B$ [estimate], still below $T_A(5)$ for $B = 1$. How $m_0(\kappa)$ grows decides
+    whether OSC′ still gives an exponent below κ; that is not determined.
+
+## 9. Part (N): the (C1) count (`osc-N/REPORT.md`, independent AI referee in `osc-N/referee/`)
+
+- [proved; referee CORRECT WITH FIXES, fixes applied] **Theorem C.** By double counting
+  $\Lambda_M$ against balanced splits (no Weil needed for κ ≤ 6), (C1) configurations exist at
+  κ = 3 from 19 (tight), κ = 4 from 137, κ = 5 from 1451, κ = 6 from 20233, against pigeonhole
+  31, 197, 2521, 38891. Asymptotically [argued at leading order] from $(1+\varepsilon)\kappa^\kappa/(2e)$.
+  Quantitative (N): $B \le 2.05$ at (4, 641), $\le 8.6$ at (5, 3461), $\le 9.9$ at (6, 50023).
+- [proved; referee CORRECT] **O1-N barrier.** Any certificate bounding every $e \ne 0$ kernel
+  frequency by its modulus fails up to $P_N \approx (\kappa-1)\kappa^\kappa$, above pigeonhole. Signed
+  certificates such as PW_pair escape it.
+- [proved, narrow] **Moment-only barrier.** Certificates using only $\Lambda_1..\Lambda_{\kappa-1}$ fail
+  near $\lambda \approx 1$; the broad "≤ κ−1 rows" version is a conjecture only (referee).
+- [computed, Monte Carlo] **κ = 7 in the OSC regime** (`osc-N/mc_N1.py`, `osc-N/mc_N1_k7.out`):
+
+  | p | λ | samples | $R = N_1/\mu_1$ | 4-cycle heuristic $e^{-n_4/(p-2)}$ |
+  |---|---|---|---|---|
+  | 36037 | 0.306 | 10⁴ | 1.07 ± 0.18 | 0.93 |
+  | 23549 | 0.200 | 1.5·10⁵ | 0.62 ± 0.12 | 0.89 |
+  | 17669 | 0.150 | 10⁶ | 0.85 ± 0.15 | 0.86 |
+  | 12041 | 0.102 | 2·10⁴ | 0 hits (uninformative) | 0.80 |
+
+  All informative rows are within 2σ of the heuristic; nothing suggests (N) fails at λ ≈ 0.15.
+  This is sampling evidence, not a bound.
+
+## 10. Next
+
+- Run κ = 5 at p = 2521 and 2621 as single uncapped runs (≈1.0–1.2 core-h each on an unloaded
+  machine) with `osc-k5/osc_k5.py`. Acceptance: PW_pair < 1 at both, closing the range up to the
+  O1 barrier 2628.
+- Prove the $c/p$ boundary term for matched (3,3) classes (κ = 5), then test $m_0(6)$ with the C
+  kernel at κ = 6 for a few primes near $\lambda \approx 1$ ($p \approx 7800$) if the cost allows.

@@ -14,13 +14,13 @@ F = Field(p, 2)
 def fam(name, n, M):
     if name == 'random':
         return rng.integers(0, p, size=(n, M))
-    if name == 'chain3':        # series classes of size 3: blocks of 3 columns proportional mod the rest
+    if name == 'chain3':        # proportional-column family: blocks of 3 columns v, 2v, 3v (parallel classes of the column matroid; NOT series classes)
         base = rng.integers(0, p, size=(n, M))
         for j in range(0, M - 2, 3):
             base[:, j + 1] = (2 * base[:, j]) % p
             base[:, j + 2] = (3 * base[:, j]) % p
         return base
-    if name == 'chain4':
+    if name == 'chain4':        # proportional-column family: blocks of 4 columns v, 2v, 3v, 4v (parallel classes; NOT series classes)
         base = rng.integers(0, p, size=(n, M))
         for j in range(0, M - 3, 4):
             for t in range(1, 4):

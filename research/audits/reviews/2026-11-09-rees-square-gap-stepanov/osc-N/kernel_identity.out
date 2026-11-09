@@ -1,0 +1,35 @@
+k=3 p=7: |ker|=81  S_0=117649  sum_ker S_e / k^((k-1)^2) = 7427.864198 (imag -5.0e-12)
+  (I1) weighted count W = 7427.864198   (I2) sum_alpha sum_c b_c^k = 7427.864198
+  (I3) open C1 (labelled) = 0  bucket form = 0   W_deg = 7427.8642
+  mu' = p^(2k)/k^((k-1)^2) = 1452.4568;  L1' = 485149;  k^((k-1)^2)*(mu'-W_deg) = -484008
+  term-by-term lower bound on open count: k^-(k-1)^2 (S_0 - L1') - W_deg = -11964.8971  (true 0)
+  barrier check: W_deg >= mu' ? True   p(p-1)^k = 1512
+nice -n 19 /opt/anaconda3/bin/python -I kernel_identity.py 3 7  0.49s user 0.02s system 35% cpu 1.475 total
+k=4 p=5: |ker|=262144  S_0=390625  sum_ker S_e / k^((k-1)^2) = 3087.234516 (imag -1.1e-12)
+  (I1) weighted count W = 3087.234516   (I2) sum_alpha sum_c b_c^k = 3087.234516
+  (I3) open C1 (labelled) = 0  bucket form = 0   W_deg = 3087.2345
+  mu' = p^(2k)/k^((k-1)^2) = 1.4901;  L1' = 8.10669e+08;  k^((k-1)^2)*(mu'-W_deg) = -8.08909e+08
+  term-by-term lower bound on open count: k^-(k-1)^2 (S_0 - L1') - W_deg = -6178.1993  (true 0)
+  barrier check: W_deg >= mu' ? True   p(p-1)^k = 1280
+nice -n 19 /opt/anaconda3/bin/python -I kernel_identity.py 4 5  4.58s user 0.03s system 48% cpu 9.597 total
+k=3 p=13: |ker|=81  S_0=4.82681e+06  sum_ker S_e / k^((k-1)^2) = 196069.049383 (imag -1.1e-10)
+  (I1) weighted count W = 196069.049384   (I2) sum_alpha sum_c b_c^k = 196069.049383
+  (I3) open C1 (labelled) = 0  bucket form = 0   W_deg = 196069.0494
+  mu' = p^(2k)/k^((k-1)^2) = 59590.2346;  L1' = 1.10749e+07;  k^((k-1)^2)*(mu'-W_deg) = -1.10548e+07
+  term-by-term lower bound on open count: k^-(k-1)^2 (S_0 - L1') - W_deg = -273206.5494  (true 0)
+  barrier check: W_deg >= mu' ? True   p(p-1)^k = 22464
+nice -n 19 /opt/anaconda3/bin/python -I kernel_identity.py 3 13  21.20s user 0.06s system 44% cpu 47.327 total
+k=3 p=19: |ker|=81  S_0=4.70459e+07  sum_ker S_e / k^((k-1)^2) = 1485939.567901 (imag -7.5e-10)
+  (I1) weighted count W = 0.000000   (I2) sum_alpha sum_c b_c^k = 1485939.567901
+  (I3) open C1 (labelled) = 0  bucket form = 57456   W_deg = 0.0000
+  mu' = p^(2k)/k^((k-1)^2) = 580813.3457;  L1' = 7.40831e+07;  k^((k-1)^2)*(mu'-W_deg) = 4.70459e+07
+  term-by-term lower bound on open count: k^-(k-1)^2 (S_0 - L1') - W_deg = -333792.8823  (true 0)
+  barrier check: W_deg >= mu' ? False   p(p-1)^k = 110808
+nice -n 19 /opt/anaconda3/bin/python -I kernel_identity.py 3 19 skip  0.42s user 0.02s system 56% cpu 0.776 total
+k=3 p=31: |ker|=81  S_0=8.87504e+08  sum_ker S_e / k^((k-1)^2) = 21413112.604938 (imag -8.7e-09)
+  (I1) weighted count W = 0.000000   (I2) sum_alpha sum_c b_c^k = 21413112.604934
+  (I3) open C1 (labelled) = 0  bucket form = 3046680   W_deg = 0.0000
+  mu' = p^(2k)/k^((k-1)^2) = 10956835.5679;  L1' = 8.59419e+08;  k^((k-1)^2)*(mu'-W_deg) = 8.87504e+08
+  term-by-term lower bound on open count: k^-(k-1)^2 (S_0 - L1') - W_deg = 346728.9731  (true 0)
+  barrier check: W_deg >= mu' ? False   p(p-1)^k = 837000
+nice -n 19 /opt/anaconda3/bin/python -I kernel_identity.py 3 31 skip  2.39s user 0.02s system 45% cpu 5.338 total

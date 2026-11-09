@@ -1,11 +1,16 @@
-"""Independent mod-p linear algebra for the break attempt (numpy int64, p < 2^31).
+"""Independent mod-p linear algebra for the break attempt (numpy int64, p < 2^31; with the
+environment variable QS_BIGP=1 the arrays use dtype=object (Python ints), valid for any prime p,
+used for the J = 4, kappa = 3 theorem-range runs at p ~ 2.8e12; default behaviour is unchanged).
 
 Written from scratch for this audit; shares no code with subquad.py / q1core.py / sss.py.
 All products are of two residues < p < 2^31, so they fit in int64 before reduction.
 """
+import os
+
 import numpy as np
 
-I64 = np.int64
+BIGP = bool(os.environ.get("QS_BIGP"))
+I64 = object if BIGP else np.int64
 
 
 def is_prime(n):
@@ -48,7 +53,7 @@ class Fq:
     """F_p with the kappa-th power classes Q_nu = g^nu P."""
 
     def __init__(self, p, k):
-        assert is_prime(p) and (p - 1) % k == 0 and p < 2 ** 31
+        assert is_prime(p) and (p - 1) % k == 0 and (p < 2 ** 31 or BIGP)
         self.p, self.k = p, k
         fs = factor_small(p - 1)
         g = 2
@@ -64,7 +69,7 @@ class Fq:
 
     def _build_table(self):
         p, g, k = self.p, self.g, self.k
-        pw = np.empty(p - 1, dtype=I64)
+        pw = np.empty(p - 1, dtype=np.int64)   # table only built for p <= 3e6
         pw[0] = 1
         L = 1
         while L < p - 1:
@@ -138,7 +143,7 @@ class Ech:
     def contains_many(self, X):
         if len(X) == 0:
             return np.zeros(0, dtype=bool)
-        return ~self.reduce(X).any(axis=1)
+        return ~(self.reduce(X) != 0).any(axis=1)
 
     def add(self, v):
         p = self.p

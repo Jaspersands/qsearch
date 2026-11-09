@@ -75,7 +75,10 @@ def planted(Fd, r, Qs, J, M, mix=True):
         off += Q
     st = init_state(Fd, cols)
     forward(Fd, cols, J, rng, st, rule="first")
-    Om = st["Ub"]
+    # forward_fast returns "direct" (a monochromatic circuit among the block columns, e.g. Q = 1)
+    # before it sets st["Ub"]: that was the KeyError 'Ub' of the break pass.  No round has then
+    # been realised, so Omega = 0 (the bank is still a valid bank; the later columns are as before).
+    Om = st["Ub"] if "Ub" in st else []
     Ep = [unit(r, i) for i in range(off, r)]
     qq, n2 = r - off, 0
     while qq >= 1:

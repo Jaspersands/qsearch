@@ -368,6 +368,9 @@ def top_phase(Fd, cols, rounds, Ub, r, P, rng, stats, depth):
             assert check(Fd, cols, x)
             stats["top-direct"] += 1
             return x
+        # top-round block count (added 9 Nov): |S| <= m + 1 (T is independent mod U_cur, codim <= m)
+        # and m <= J - 2 (asserted before the call), so a top round has <= J - 1 singleton blocks
+        assert len(S) <= m + 1 and len(S) <= P.J - 1, ("top-round block count", len(S), m, P.J)
         tops.append(mk_round(Fd, cols, S, delta, [[i] for i in S]))
         assert rebuild(Fd, rounds + tops) is not None
     Ucur = rebuild(Fd, rounds + tops)
@@ -444,6 +447,13 @@ def solve_T(Fd, cols, P, rng, stats=None, depth=0):
         return leaf(Fd, cols, rounds, Ub, Fin, P, rng, stats, "closure")
     # case 2
     if b <= q:
+        if P.strict:
+            # (Y) explicit (added 9 Nov): r >= q + b holds at a stall (r = b + eps + q), and for C >= 2
+            #   b + (C-1) r + D_J(q) - q >= F(b);  the pool alone gives b + pi >= F(b) columns in Y.
+            assert r >= q + b, ("(Y) hypothesis r >= q + b", r, q, b)
+            if P.C >= 2:
+                assert b + (P.C - 1) * r + DJ(q, J) - q >= P.F(b), ("(Y) inequality", r, q, b)
+            assert b + len(pool) >= P.F(b), ("(Y) pool count b + pi >= F(b)", b, len(pool), P.F(b))
         return recurse(Fd, cols, span_basis(Fd, [cols[i] for i in BinU]), P, rng, stats, depth, "Y")
     # case 3
     assert r >= 2 * q + 2 and len(X) <= r - 1
@@ -511,4 +521,8 @@ def solve_T(Fd, cols, P, rng, stats=None, depth=0):
     Xp = [i for i in Fr if not in_span(Ub, cols[i], p)]
     if len(Xp) <= P.F(r) - P.F(r - m):
         return recurse(Fd, cols, Ub, P, rng, stats, depth, "H")
+    # T_m(c) (added 9 Nov): the top phase is reached only with m <= J - 2 (for m >= J - 1,
+    # F(r) - F(r-m) >= r + 1 > r - 1 >= |X'| and the H-recursion above applies), hence top
+    # rounds have <= m + 1 <= J - 1 blocks.
+    assert m <= P.J - 2, ("T_m(c): top phase reached with m > J - 2", m, P.J)
     return top_phase(Fd, cols, rounds, Ub, r, P, rng, stats, depth)

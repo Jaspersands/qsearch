@@ -1,0 +1,637 @@
+{
+ "p": 2789427520807,
+ "kappa": 3,
+ "J": 4,
+ "E": 10,
+ "in_theorem_range": true,
+ "seed": 1,
+ "summary": {
+  "topstall": {
+   "n": 12,
+   "outcomes": {
+    "leaf": 12
+   },
+   "branch": {
+    "call": 14,
+    "stall": 14,
+    "case33_closure": 11,
+    "case33_Uplus": 1,
+    "case30_Uplus": 1,
+    "case32_leafB": 1
+   },
+   "leafkinds": {
+    "case33_closure": 11,
+    "case32": 1
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 13,
+    "CorA_pool_in_span": 0,
+    "I2": 110,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 13,
+    "T2b_unused": 1,
+    "U_vs_Uplus": 0,
+    "absorbed_realizes_Uplus": 0,
+    "c30_outside": 125,
+    "c33_Xp_eq_outside": 0,
+    "c33_m_le_2J3": 3,
+    "case3_X_le_r_1": 2,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 5,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 0,
+    "pi_ge_2": 145,
+    "pi_lower": 65,
+    "rec_count": 0,
+    "rec_count_U+30": 125,
+    "rec_count_U+33": 0,
+    "rec_rank_drop": 1
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 6,
+   "maxblocks": 10,
+   "time": 425.7
+  },
+  "fams|uniform": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 8,
+    "reach_V": 8
+   },
+   "leafkinds": {
+    "reach_V": 8
+   },
+   "slack": {
+    "hyp_M_ge_F": 0
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 3.9
+  },
+  "fams|lines": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 8,
+    "reach_V": 8
+   },
+   "leafkinds": {
+    "reach_V": 8
+   },
+   "slack": {
+    "hyp_M_ge_F": 0
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 3.8
+  },
+  "fams|nested": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 8,
+    "reach_V": 5,
+    "stall": 3,
+    "case1_closure": 2,
+    "case32_leafB": 1
+   },
+   "leafkinds": {
+    "reach_V": 5,
+    "case1": 2,
+    "case32": 1
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 1,
+    "CorA_pool_in_span": 0,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 4,
+    "T2b_unused": 1,
+    "U_vs_Uplus": 0,
+    "absorbed_realizes_Uplus": 0,
+    "case1_Fin_spans_U": 0,
+    "case3_X_le_r_1": 2,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 2,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 2,
+    "pi_ge_2": 29,
+    "pi_lower": 5
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 4,
+   "maxblocks": 8,
+   "time": 8.8
+  },
+  "fams|planted": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 9,
+    "stall": 8,
+    "case32_leafB": 7,
+    "case2_Y": 1,
+    "reach_V": 1
+   },
+   "leafkinds": {
+    "case32": 7,
+    "reach_V": 1
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 1,
+    "CorA_pool_in_span": 0,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 3,
+    "T2b_unused": 2,
+    "U_vs_Uplus": 0,
+    "Y_cols_ge_b_pi": 0,
+    "Y_ineq": 23,
+    "absorbed_realizes_Uplus": 0,
+    "case3_X_le_r_1": 2,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 2,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 0,
+    "pi_ge_2": 31,
+    "pi_lower": 6,
+    "rec_count": 23,
+    "rec_count_Y": 23,
+    "rec_rank_drop": 5
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 6,
+   "maxblocks": 10,
+   "time": 87.1
+  },
+  "fams|planted2": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 7,
+    "solution": 1
+   },
+   "branch": {
+    "call": 11,
+    "stall": 8,
+    "case32_leafB": 5,
+    "case2_Y": 3,
+    "reach_V": 2,
+    "direct_fwd": 1
+   },
+   "leafkinds": {
+    "case32": 5,
+    "reach_V": 2
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 1,
+    "CorA_pool_in_span": 0,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 3,
+    "T2b_unused": 1,
+    "U_vs_Uplus": 0,
+    "Y_cols_ge_b_pi": 0,
+    "Y_ineq": 23,
+    "absorbed_realizes_Uplus": 0,
+    "case3_X_le_r_1": 2,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 2,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 3,
+    "pi_ge_2": 30,
+    "pi_lower": 6,
+    "rec_count": 23,
+    "rec_count_Y": 23,
+    "rec_rank_drop": 5
+   },
+   "fails": 0,
+   "passes": 210,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 3,
+   "maxblocks": 7,
+   "time": 11.5
+  },
+  "fams|twist": {
+   "n": 7,
+   "outcomes": {
+    "leaf": 7
+   },
+   "branch": {
+    "call": 7,
+    "stall": 7,
+    "case1_closure": 7
+   },
+   "leafkinds": {
+    "case1": 7
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 6,
+    "CorA_pool_in_span": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 4,
+    "T2b_unused": 1,
+    "U_vs_Uplus": 0,
+    "case1_Fin_spans_U": 0,
+    "hyp_M_ge_F": 0,
+    "pi_ge_2": 28,
+    "pi_lower": 5
+   },
+   "fails": 0,
+   "passes": 210,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 5.8
+  },
+  "fams|adapt_rado": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 9,
+    "stall": 2,
+    "case32_leafB": 1,
+    "case2_Y": 1,
+    "reach_V": 7
+   },
+   "leafkinds": {
+    "case32": 1,
+    "reach_V": 7
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 0,
+    "CorA_pool_in_span": 0,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 3,
+    "T2b_unused": 0,
+    "U_vs_Uplus": 0,
+    "Y_cols_ge_b_pi": 0,
+    "Y_ineq": 23,
+    "absorbed_realizes_Uplus": 0,
+    "case3_X_le_r_1": 0,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 4,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 5,
+    "pi_ge_2": 26,
+    "pi_lower": 3,
+    "rec_count": 23,
+    "rec_count_Y": 23,
+    "rec_rank_drop": 6
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 1,
+   "maxblocks": 5,
+   "time": 6.2
+  },
+  "fams|adapt_top": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 8,
+    "reach_V": 8
+   },
+   "leafkinds": {
+    "reach_V": 8
+   },
+   "slack": {
+    "hyp_M_ge_F": 0
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 6.5
+  },
+  "fams|adapt_mix": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 8,
+    "reach_V": 7,
+    "stall": 1,
+    "case32_leafB": 1
+   },
+   "leafkinds": {
+    "reach_V": 7,
+    "case32": 1
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 3,
+    "CorA_pool_in_span": 0,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 20,
+    "T2b_unused": 0,
+    "U_vs_Uplus": 0,
+    "absorbed_realizes_Uplus": 0,
+    "case3_X_le_r_1": 2,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 12,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 5,
+    "pi_ge_2": 67,
+    "pi_lower": 20
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 1,
+   "maxblocks": 5,
+   "time": 5.1
+  },
+  "fams|adapt_case2": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 7,
+    "solution": 1
+   },
+   "branch": {
+    "call": 9,
+    "reach_V": 5,
+    "stall": 3,
+    "case2_Y": 1,
+    "direct_fwd": 1,
+    "case32_leafB": 2
+   },
+   "leafkinds": {
+    "reach_V": 5,
+    "case32": 2
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 0,
+    "CorA_pool_in_span": 0,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 9,
+    "T2b_unused": 1,
+    "U_vs_Uplus": 0,
+    "Y_cols_ge_b_pi": 2,
+    "Y_ineq": 48,
+    "absorbed_realizes_Uplus": 0,
+    "case3_X_le_r_1": 7,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 12,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 1,
+    "pi_ge_2": 51,
+    "pi_lower": 10,
+    "rec_count": 50,
+    "rec_count_Y": 50,
+    "rec_rank_drop": 10
+   },
+   "fails": 0,
+   "passes": 210,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 5,
+   "maxblocks": 9,
+   "time": 21.4
+  },
+  "fams|repeat": {
+   "n": 8,
+   "outcomes": {
+    "solution": 7,
+    "leaf": 1
+   },
+   "branch": {
+    "call": 8,
+    "direct_fwd": 7,
+    "reach_V": 1
+   },
+   "leafkinds": {
+    "reach_V": 1
+   },
+   "slack": {
+    "hyp_M_ge_F": 0
+   },
+   "fails": 0,
+   "passes": 30,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 0.8
+  },
+  "fams|design_rado": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 8,
+    "reach_V": 6,
+    "stall": 2,
+    "case1_closure": 2
+   },
+   "leafkinds": {
+    "reach_V": 6,
+    "case1": 2
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 11,
+    "CorA_pool_in_span": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 37,
+    "T2b_unused": 4,
+    "U_vs_Uplus": 0,
+    "case1_Fin_spans_U": 0,
+    "hyp_M_ge_F": 0,
+    "pi_ge_2": 114,
+    "pi_lower": 42
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 6.7
+  },
+  "fams|design_top": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 11,
+    "stall": 8,
+    "case1_closure": 4,
+    "case33_Uplus": 3,
+    "case32_leafB": 1,
+    "reach_V": 3
+   },
+   "leafkinds": {
+    "case1": 4,
+    "case32": 1,
+    "reach_V": 3
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 1,
+    "CorA_pool_in_span": 0,
+    "MI_cert": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 0,
+    "T2b_unused": 0,
+    "U_vs_Uplus": 0,
+    "absorbed_realizes_Uplus": 0,
+    "c33_Xp_eq_outside": 0,
+    "c33_m_le_2J3": 4,
+    "case1_Fin_spans_U": 0,
+    "case3_X_le_r_1": 0,
+    "case3_outUp_in_X": 0,
+    "case3_r_ge_2q2": 1,
+    "hyp_M_ge_F": 0,
+    "load_le_c": 5,
+    "pi_ge_2": 17,
+    "pi_lower": 3,
+    "rec_count": 0,
+    "rec_count_U+33": 0,
+    "rec_rank_drop": 0
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 1,
+   "maxblocks": 5,
+   "time": 2.6
+  },
+  "fams|design_u30": {
+   "n": 8,
+   "outcomes": {
+    "leaf": 8
+   },
+   "branch": {
+    "call": 8,
+    "reach_V": 6,
+    "stall": 2,
+    "case1_closure": 2
+   },
+   "leafkinds": {
+    "reach_V": 6,
+    "case1": 2
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 12,
+    "CorA_pool_in_span": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 53,
+    "T2b_unused": 5,
+    "U_vs_Uplus": 0,
+    "case1_Fin_spans_U": 0,
+    "hyp_M_ge_F": 0,
+    "pi_ge_2": 148,
+    "pi_lower": 58
+   },
+   "fails": 0,
+   "passes": 240,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 7.6
+  },
+  "fams|design_mix": {
+   "n": 8,
+   "outcomes": {
+    "solution": 2,
+    "leaf": 6
+   },
+   "branch": {
+    "call": 14,
+    "stall": 7,
+    "case2_Y": 6,
+    "direct_fwd": 2,
+    "reach_V": 5,
+    "case1_closure": 1
+   },
+   "leafkinds": {
+    "reach_V": 5,
+    "case1": 1
+   },
+   "slack": {
+    "CorA_BminusU": 0,
+    "CorA_b_ge_1": 1,
+    "CorA_pool_in_span": 0,
+    "T2b_decomp": 0,
+    "T2b_rounds": 4,
+    "T2b_unused": 0,
+    "U_vs_Uplus": 0,
+    "Y_cols_ge_b_pi": 0,
+    "Y_ineq": 24,
+    "case1_Fin_spans_U": 0,
+    "hyp_M_ge_F": 0,
+    "pi_ge_2": 32,
+    "pi_lower": 7,
+    "rec_count": 24,
+    "rec_count_Y": 24,
+    "rec_rank_drop": 5
+   },
+   "fails": 0,
+   "passes": 180,
+   "pass_fail": 0,
+   "pass_coinc": 0,
+   "maxload": 0,
+   "maxblocks": 4,
+   "time": 4.9
+  }
+ },
+ "fails": {},
+ "generator_failures": {
+  "twist": 1
+ },
+ "elapsed_s": 717
+}

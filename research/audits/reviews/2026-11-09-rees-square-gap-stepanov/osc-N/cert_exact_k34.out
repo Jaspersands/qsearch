@@ -1,0 +1,92 @@
+k=3 p=7 lambda=0.4444 max bucket=1 C1 none
+   M=1: Lambda_M=4  Jensen-low=4  Poisson (p-k)lam^(M-1)=4
+   M=2: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=1.77778  Weil-up=0
+   M=3: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=0.790123
+k=3 p=13 lambda=1.1111 max bucket=2 C1 none
+   M=1: Lambda_M=10  Jensen-low=10  Poisson (p-k)lam^(M-1)=10
+   M=2: Lambda_M=4.90909  Jensen-low=4.90909  Poisson (p-k)lam^(M-1)=11.1111  Weil-up=4.90909
+   M=3: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=12.3457
+k=3 p=19 lambda=1.7778 max bucket=3 C1 EXISTS
+   M=1: Lambda_M=16  Jensen-low=16  Poisson (p-k)lam^(M-1)=16
+   M=2: Lambda_M=17.6471  Jensen-low=17.6471  Poisson (p-k)lam^(M-1)=28.4444  Weil-up=17.6471
+   M=3: Lambda_M=9.88235  Jensen-low=0  Poisson (p-k)lam^(M-1)=50.5679
+k=3 p=31 lambda=3.1111 max bucket=4 C1 EXISTS
+   M=1: Lambda_M=28  Jensen-low=28  Poisson (p-k)lam^(M-1)=28
+   M=2: Lambda_M=67.0345  Jensen-low=67.0345  Poisson (p-k)lam^(M-1)=87.1111  Weil-up=67.0345
+   M=3: Lambda_M=112.966  Jensen-low=72  Poisson (p-k)lam^(M-1)=271.012
+k=3 p=37 lambda=3.7778 max bucket=5 C1 EXISTS
+   M=1: Lambda_M=34  Jensen-low=34  Poisson (p-k)lam^(M-1)=34
+   M=2: Lambda_M=103.714  Jensen-low=103.714  Poisson (p-k)lam^(M-1)=128.444  Weil-up=103.714
+   M=3: Lambda_M=241.371  Jensen-low=180  Poisson (p-k)lam^(M-1)=485.235
+nice -n 19 /opt/anaconda3/bin/python -I bucket_cert.py exact 3 7 13 19 31 37  0.05s user 0.01s system 91% cpu 0.068 total
+k=4 p=5 lambda=0.0156 max bucket=1 C1 none
+   M=1: Lambda_M=1  Jensen-low=1  Poisson (p-k)lam^(M-1)=1
+   M=2: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=0.015625  Weil-up=0
+   M=3: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=0.000244141  Weil-up=6
+   M=4: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=3.8147e-06
+k=4 p=13 lambda=0.1406 max bucket=1 C1 none
+   M=1: Lambda_M=9  Jensen-low=9  Poisson (p-k)lam^(M-1)=9
+   M=2: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=1.26562  Weil-up=0
+   M=3: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=0.177979  Weil-up=120
+   M=4: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=0.0250282
+k=4 p=17 lambda=0.2031 max bucket=2 C1 none
+   M=1: Lambda_M=13  Jensen-low=13  Poisson (p-k)lam^(M-1)=13
+   M=2: Lambda_M=0.342857  Jensen-low=0.342857  Poisson (p-k)lam^(M-1)=2.64062  Weil-up=0.342857
+   M=3: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=0.536377  Weil-up=210
+   M=4: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=0.108952
+k=4 p=29 lambda=0.3906 max bucket=2 C1 none
+   M=1: Lambda_M=25  Jensen-low=25  Poisson (p-k)lam^(M-1)=25
+   M=2: Lambda_M=4.10256  Jensen-low=4.10256  Poisson (p-k)lam^(M-1)=9.76562  Weil-up=4.10256
+   M=3: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=3.8147  Weil-up=720
+   M=4: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=1.49012
+k=4 p=37 lambda=0.5156 max bucket=3 C1 none
+   M=1: Lambda_M=33  Jensen-low=33  Poisson (p-k)lam^(M-1)=33
+   M=2: Lambda_M=9.03529  Jensen-low=9.03529  Poisson (p-k)lam^(M-1)=17.0156  Weil-up=9.03529
+   M=3: Lambda_M=1.87563  Jensen-low=0  Poisson (p-k)lam^(M-1)=8.77368  Weil-up=1320
+   M=4: Lambda_M=0  Jensen-low=0  Poisson (p-k)lam^(M-1)=4.52393
+k=4 p=41 lambda=0.5781 max bucket=4 C1 EXISTS
+   M=1: Lambda_M=37  Jensen-low=37  Poisson (p-k)lam^(M-1)=37
+   M=2: Lambda_M=12.2429  Jensen-low=12.2429  Poisson (p-k)lam^(M-1)=21.3906  Weil-up=12.2429
+   M=3: Lambda_M=1.7004  Jensen-low=0  Poisson (p-k)lam^(M-1)=12.3665  Weil-up=1716
+   M=4: Lambda_M=1.65182  Jensen-low=0  Poisson (p-k)lam^(M-1)=7.14936
+k=4 p=53 lambda=0.7656 max bucket=4 C1 EXISTS
+   M=1: Lambda_M=49  Jensen-low=49  Poisson (p-k)lam^(M-1)=49
+   M=2: Lambda_M=24.8471  Jensen-low=24.8471  Poisson (p-k)lam^(M-1)=37.5156  Weil-up=24.8471
+   M=3: Lambda_M=9.28941  Jensen-low=0.96  Poisson (p-k)lam^(M-1)=28.7229  Weil-up=2730
+   M=4: Lambda_M=5.19529  Jensen-low=0  Poisson (p-k)lam^(M-1)=21.991
+k=4 p=61 lambda=0.8906 max bucket=4 C1 EXISTS
+   M=1: Lambda_M=57  Jensen-low=57  Poisson (p-k)lam^(M-1)=57
+   M=2: Lambda_M=35.7405  Jensen-low=35.7405  Poisson (p-k)lam^(M-1)=50.7656  Weil-up=35.7405
+   M=3: Lambda_M=18.5155  Jensen-low=4.13793  Poisson (p-k)lam^(M-1)=45.2131  Weil-up=4080
+   M=4: Lambda_M=9.08942  Jensen-low=0  Poisson (p-k)lam^(M-1)=40.2679
+k=4 p=73 lambda=1.0781 max bucket=4 C1 EXISTS
+   M=1: Lambda_M=69  Jensen-low=69  Poisson (p-k)lam^(M-1)=69
+   M=2: Lambda_M=55.8229  Jensen-low=55.8229  Poisson (p-k)lam^(M-1)=74.3906  Weil-up=55.8229
+   M=3: Lambda_M=26.8539  Jensen-low=13.7143  Poisson (p-k)lam^(M-1)=80.2024  Weil-up=5814
+   M=4: Lambda_M=12.1111  Jensen-low=0  Poisson (p-k)lam^(M-1)=86.4682
+k=4 p=89 lambda=1.3281 max bucket=6 C1 EXISTS
+   M=1: Lambda_M=85  Jensen-low=85  Poisson (p-k)lam^(M-1)=85
+   M=2: Lambda_M=89.591  Jensen-low=89.591  Poisson (p-k)lam^(M-1)=112.891  Weil-up=89.591
+   M=3: Lambda_M=76.6768  Jensen-low=39.0698  Poisson (p-k)lam^(M-1)=149.933  Weil-up=9240
+   M=4: Lambda_M=66.2839  Jensen-low=0  Poisson (p-k)lam^(M-1)=199.13
+k=4 p=97 lambda=1.4531 max bucket=6 C1 EXISTS
+   M=1: Lambda_M=93  Jensen-low=93  Poisson (p-k)lam^(M-1)=93
+   M=2: Lambda_M=109.473  Jensen-low=109.473  Poisson (p-k)lam^(M-1)=135.141  Weil-up=109.473
+   M=3: Lambda_M=95.3819  Jensen-low=56.1702  Poisson (p-k)lam^(M-1)=196.376  Weil-up=10626
+   M=4: Lambda_M=74.0157  Jensen-low=0  Poisson (p-k)lam^(M-1)=285.359
+k=4 p=101 lambda=1.5156 max bucket=5 C1 EXISTS
+   M=1: Lambda_M=97  Jensen-low=97  Poisson (p-k)lam^(M-1)=97
+   M=2: Lambda_M=120.163  Jensen-low=120.163  Poisson (p-k)lam^(M-1)=147.016  Weil-up=120.163
+   M=3: Lambda_M=124.787  Jensen-low=68.5714  Poisson (p-k)lam^(M-1)=222.821  Weil-up=10626
+   M=4: Lambda_M=101.848  Jensen-low=0  Poisson (p-k)lam^(M-1)=337.712
+k=4 p=137 lambda=2.0781 max bucket=6 C1 EXISTS
+   M=1: Lambda_M=133  Jensen-low=133  Poisson (p-k)lam^(M-1)=133
+   M=2: Lambda_M=238.87  Jensen-low=238.87  Poisson (p-k)lam^(M-1)=276.391  Weil-up=238.87
+   M=3: Lambda_M=367.582  Jensen-low=260.776  Poisson (p-k)lam^(M-1)=574.374  Weil-up=21924
+   M=4: Lambda_M=488.438  Jensen-low=0  Poisson (p-k)lam^(M-1)=1193.62
+k=4 p=197 lambda=3.0156 max bucket=8 C1 EXISTS
+   M=1: Lambda_M=193  Jensen-low=193  Poisson (p-k)lam^(M-1)=193
+   M=2: Lambda_M=526.698  Jensen-low=526.698  Poisson (p-k)lam^(M-1)=582.016  Weil-up=526.698
+   M=3: Lambda_M=1307.22  Jensen-low=1034.23  Poisson (p-k)lam^(M-1)=1755.14  Weil-up=46620
+   M=4: Lambda_M=3014.45  Jensen-low=24  Poisson (p-k)lam^(M-1)=5292.85
+nice -n 19 /opt/anaconda3/bin/python -I bucket_cert.py exact 4 5 13 17 29 37   1.10s user 0.22s system 47% cpu 2.798 total

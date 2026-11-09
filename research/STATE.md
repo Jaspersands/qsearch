@@ -6,8 +6,17 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-09, after the handoff entry
-"2026-11-09 Rees Native Application Search 2: Legendre-Masked Unipotent Symmetry Is the Best Constructed Survivor (AI Only)";
-the next three entries are from the same day.
+"2026-11-09 Rees SDE F_q Referees: p = 5 Worst Case n²/4 + 3n/2 + 2; p ≥ 7 Cells Stand via Lemma N (AI Only)";
+the next five entries are from the same day.
+
+Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
+- Proved (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2, deterministic (Theorem B′;
+  KOW's q = 5 constant 0.4 -> 0.25). Theorem C: (1−1/p)a²/2 + O(a log a) (κ = 2 every odd p,
+  κ = 3 at p ≡ 1 mod 3). Exact, LRAT-verified (Lemma Q repaired by Lemma N): no two-dependency
+  2-dim gadget at p = 7, 11, 13 (κ = 2); k = 3 at p = 7 also UNSAT. q = 11, 13 interval S open.
+- Next: does every spanning k = 3 label set at p = 5 realize three dimensions (n²/6 + O(n))?
+  See audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8. SAT checks use gadget_cnf5.py
+  (CaDiCaL + lrat-check), not pycosat.
 
 Now (11-09, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -1174,6 +1183,15 @@ or separation is claimed.
 
 ## Now
 
+- **Rees, rest of 11-09 (AI only, pending human review).** (i) Non-unique encodings: HSP for
+  arbitrary H still works (normal H was IMS Thm 8); acquiring the chart needs Omega(sqrt p)
+  identity tests (2026-11-09-rees-nonunique-encoding-blackbox.md). (ii) Local paper patch,
+  passes 6-7: hostile-referee fixes applied; NEW prop:dl-central-scalars (DL automorphisms
+  scale the centre only by +-1, char != 2; refereed CORRECT, Groebner check p = 3..11);
+  thm:bb-envelope exponent > p no longer conditional on ring-to-field(iii) (Schedule 2 has
+  worst-case bounds on every oracle; refereed CORRECT after 4 tightenings)
+  (2026-11-09-rees-dl-scalars-schedule2-referee.md). (iii) Mechanical queue: all top items
+  DONE except the kappa=5 p <= 2628 table (BLOCKED: compute; square-gap session runs it).
 - **Rees deep checks (11-09, AI only, pending human review).** (i) Hostile referee of the
   integrated core (prep tree): MINOR, no break; Ivanyos-Santha import matches the source; one
   Dixmier-Lister scalar check timed out (UNKNOWN); significance risk at STOC
@@ -1204,7 +1222,9 @@ or separation is claimed.
   bound only for n > 80. (ii) Prime condition: o(a²) whenever p/a -> inf (F = O(a²/min(log a,
   log(p/a)))); an a-independent threshold needs open Q-loc; nothing at bounded p. (iii)
   Near-linear: only promise-problem hardness below ~2a (Legendre PRF); total regime untouched.
-  Handoff entry "2026-11-08 Rees SDE Open Directions".
+  Handoff entry "2026-11-08 Rees SDE Open Directions". (iv) F_q (11-09, AI-refereed): p = 5 at
+  n²/4 + 3n/2 + 2 (Theorem B′); (1−1/p)a²/2 + O(a log a) at every odd p (κ = 2); no
+  two-dependency gadget at p = 7, 11, 13 (LRAT-verified). Handoff entry "2026-11-09 Rees SDE F_q Referees".
 - **Rees SDE worst case below a² (11-07, AI only, pending human review): Theorem A.**
   Every bank in F_p^a with D_J(a)+O(Ja) columns, J = ceil(log_kappa a), fixed kappa, is solved
   Las Vegas in poly(a, log p) time at p >= ~72 kappa^2 a^6 J^2: O(a²/log a) columns, versus

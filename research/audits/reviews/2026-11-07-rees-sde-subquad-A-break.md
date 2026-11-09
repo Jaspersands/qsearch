@@ -281,3 +281,27 @@ None of these affects correctness.
 - **Next command.** `climb.py slack` restricted to J ∈ {4,5} with the slack objective set to
   `rec_count_U+33`. Expected artifact: `out/climb_slack_<seed>.json`. Acceptance: its minslack
   for `rec_count_U+33` stays ≥ 0, with every bank checked.
+
+## 11. Mechanical-queue follow-up (9 Nov 2026; finite controls, nothing promoted)
+
+Details and commands: `2026-11-09-mechanical-queue-run.md`. All harness changes are opt-in or additive.
+
+1. **U⁺ recursion slack climb, J ∈ {4, 5}, κ = 2** (`climb_uplus.py`; `out/climb_uplus_J45.json`,
+   `out/climb_uplus_J5.json`). Every evaluated bank was run through `algt.py` and `checker.py`:
+   8 591 + 15 609 evaluations, 0 failures, 0 violations, no negative slack of any kind. The climb reached
+   the case-3.3 U⁺ recursion on 3 538 banks at J = 4 and 364 at J = 5, and the least `rec_count_U+33`
+   slack is **0** at both (the recursion target had exactly F(rank) columns), never below. J = 4 climbs
+   started from 19 saved banks that reach the branch (`interesting/`); the J = 5 climbs started from the
+   families (the J45 run reached the branch only at J = 4, hence the second file).
+2. **J = 4, κ = 3 inside the theorem prime range** (`attack_bigp.py`, `la.py` with `QS_BIGP=1`, i.e.
+   Python-int arithmetic; `bigp_equiv.py` shows identical traces to the int64 build on 22 banks at
+   p < 2³¹). p = 2 789 427 520 807 ≥ 8·3²⁰·10² (E = 10), 131 banks (12 top-stall designs up to rank 49
+   plus the families at r ≤ 24), 120 leaves and 11 direct solutions, **0 assertion/check failures**,
+   3 480 back-substitution passes with 0 failures (`out/bigp_J4k3_1.{out,json}`; one `twist` generator
+   failure at r = 8, as before). Ranks above 49 and the 3.3 U⁺ branch at this prime were not reached.
+3. §8 items 2, 3 and 7: `subquad.py` now asserts (Y) (hypothesis r ≥ q + b, the inequality for C ≥ 2, and
+   b + π ≥ F(b)), the T_m(c) condition m ≤ J − 2 before the top phase, and the top-round block count
+   |S| ≤ m + 1 ≤ J − 1; `run_tests.py: planted()` no longer raises `KeyError 'Ub'` (forward returned
+   "direct" before setting `Ub`; 672 parameter combinations now run without error). The eleven test groups
+   (planted, topbank, topbank2, vtwist, vtwist2, critical, heavy, stress, fams, thmprime, climb) were rerun with the
+   asserts on: identical totals to the stored `*.out` files (vtwist differs only by the later `trace` key).

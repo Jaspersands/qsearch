@@ -1,4 +1,115 @@
 # Research Agent Handoff
+## 2026-11-09 Rees Black-Box Non-Unique Encodings: HSP Without Identity Test via the Free Cover; Chart Needs Omega(sqrt p) (AI Only)
+
+AI-only; one AI adversarial check (HOLDS WITH FIXES, all applied); no human review; no claim
+gate changed; paper NOT edited. Note: audits/reviews/2026-11-09-rees-nonunique-encoding-blackbox.md
+(control in the folder of the same name).
+
+- **Theorem N [proved, conditional only on thm:is-import, pending independent correctness and
+  priority review]:** setting is the Babai–Szemerédi model with non-unique l-bit encodings, a
+  p-group of class at most c < p, any exponent, p given, and a coherent multiplication oracle
+  together with its adjoint. Then the HSP for arbitrary H has bounded error and poly-time
+  cost. It uses no identity test and no inverse oracle. Method: skip the kernel step. Run
+  thm:main (e = 1), or RtF with Solve = thm:main (e > 1, M = p^L), directly on the free ring
+  F_{s',c}(Z/M) with oracle f o Phi_str. Phi_str is the Lazard-word pullback evaluated on
+  strings, and f o Phi_str hides Phi^{-1}(H) exactly. s' = min(s, L + log_p(4/eps)), by
+  Frattini random generation. Cost: queries are thm:main's count at m = d(s',c) = O(s'^c), not
+  at m <= L, so for fixed c they are polynomial in l and log 1/eps and independent of s.
+- **Prior art:** for NORMAL H this is already known, unconditionally: IMS Thm 8
+  (quant-ph/0102014). So the added content is non-normal H only. It covers Inui–Le Gall's
+  Z_{p^r}^m ⋊ Z_p (class 2) in the non-unique model, where their Prop 10 needs a bijection
+  they call "very difficult". Priority UNKNOWN; no novelty claimed.
+- **Proposition O [proved, elementary BBBV]:** take elementary abelian G of rank at most 2 in
+  the same model, with all three oracles, even given f for H = G. Then deciding |G| (and so
+  computing ker phi, a chart, or a pc presentation) needs at least sqrt(p)/12 identity tests.
+  Discrete log and constructive membership need at least sqrt(p-1)/12. So the chart step of
+  cor:black-box and of Corollary E cannot be carried over.
+- **Control [exact, finite]:** the setting gives each element 2 to 4 random strings, with 0
+  identity tests. Results: 1406/1406 subgroups in 10 exponent-p groups, and 825/825 in 14
+  exponent-p^e runs, which use M = exp and M = p*exp. The field solver is a brute-force
+  stand-in, NOT thm:main. Old kernel readout: Fourier mass 0.58-0.83 on (ker Phi)^perp.
+- Gates that stay false: non-unique encodings are covered in the paper (owner's paper pass);
+  novelty or priority; normal-HSP content; any separation; nilpotent composition (iii);
+  coset-copy input (iv); class not fixed. The quantum-encoding (IMS Thm 10) special case is a
+  conditional sketch only.
+- Next hard question: the nilpotent composition (iii) with non-unique encodings. The first
+  obstacle is a multiple E of exp(G), since order finding fails. The second is small primes
+  p <= c, since Imran–Ivanyos assume unique encoding.
+- Next command: write the Sylow split from a given E, then test Imran–Ivanyos Prop 1 with f as
+  a secondary encoding (IMS Thm 7 style), in audits/reviews/. Acceptance: a written reduction
+  of the small-prime part to a proved or cited non-unique statement, or a quoted step of
+  Imran–Ivanyos that needs unique strings.
+- Paper pass (owner): replace rem:black-box-scope (ii) by one sentence citing Theorem N, IMS
+  Thm 8 and Prop O. Add the V^dagger assumption to the access-model paragraph
+  (appendix-torsion-blackbox.tex l.545). No STATE.md or mechanical-plan changes were made in
+  this side session.
+
+## 2026-11-09 Rees SDE F_q Referees: p = 5 Worst Case n²/4 + 3n/2 + 2; p ≥ 7 Cells Stand via Lemma N (AI Only)
+
+AI-only; two adversarial AI referees, findings checked by the integrator; nothing human-reviewed;
+no claim gate changed; paper NOT edited. Note: audits/reviews/2026-11-08-rees-sde-fq-nest.md
+(§0 item 0, Lemma N after Lemma Q, §8). Reports: audits/reviews/2026-11-09-rees-sde-fq-nest-referee-B.md
+and -referee-C.md (scripts in the folders of the same names).
+
+- **Theorem B′ [proved, AI-refereed]:** p = 5, S = {0,±1} (KOW's q = 5 small-coefficient problem):
+  every m ≥ n²/4 + 3n/2 + 2 adversarial vectors in F_5^n give a nonzero S-solution in deterministic
+  poly(n, m) time. Only finite input: Fact F5 (all 36,090 spanning GL_2(F_5)-orbits of label sets
+  realize two dimensions), re-verified independently. Replaces the note's n²/4 + O(n^{3/2}); the
+  algorithm is "q + 2 columns, any two dependencies" (SIMPLE5). Below KOW Thm 3.7 at every tested
+  3 ≤ n ≤ 5000; KOW's leading constant 0.4 becomes 0.25.
+- **Theorem C [proved, AI-refereed, with fixes]:** (1−1/p)a²/2 + O(a log a) for κ = 2 at every odd p
+  and κ = 3 at p ≡ 1 mod 3, deterministic given g and (α, β); E_2(3) = ∅ imported from the paper.
+  Gain over (a+1)(a+2)/2 is a²/(2p) − O(a log a), positive only for a ≫ p log a.
+- **Correction:** Lemma Q (label reduction) was proved only in the SAT direction. Lemma N (referee
+  C, checked by hand) makes it exact for S = P ∪ {0}, so every κ = 2 obstruction cell at p = 7, 11,
+  13 and k = 3 at p = 7 stands; the k = 3 two-case cover is proved (two orbits). The (b) q = 11
+  interval cell is downgraded to "P-equivariant problem only"; §4 "closes the k = 2 route" is now
+  [argued].
+- Gates that stay false: novelty/priority of B′ or C; a constant below 1/4 at p = 5 from this
+  framework; the p ≥ 7 obstruction as an algorithmic lower bound; anything about interval S at q = 11, 13.
+- Next hard question (referee B): do all spanning k = 3 label sets at p = 5 realize three dimensions?
+  That would give n²/6 + O(n) at p = 5.
+- Next command: enumerate GL_3(F_5)-orbits of spanning label sets that a 3-dependency piece can
+  produce (or test random ones) with a reduction-free CNF in the style of
+  audits/reviews/2026-11-09-rees-sde-fq-nest-referee-B/f5_feas.py, using CaDiCaL + lrat-check.
+  Artifact audits/reviews/2026-11-10-rees-sde-p5-d3.md; acceptance: a SAT model re-verified by
+  arithmetic for every tested set, or one LRAT-verified UNSAT spanning set. Mechanical items:
+  MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-09 Rees SDE F_q Referees".
+
+## 2026-11-09 Rees SDE F_q Extension: p = 5 at n²/4, No Two-Dependency Gadget at p = 7, 11, 13 (LRAT-Verified) (AI Only)
+
+AI-only; nothing human-reviewed or refereed yet; no claim gate changed; paper NOT edited.
+Note: audits/reviews/2026-11-08-rees-sde-fq-nest.md (scripts and outputs in the folder of the
+same name). Continues "2026-11-08 Rees SDE Open Directions".
+
+- **p = 5, κ = 2 [claimed, unrefereed]:** worst-case diagonal SDE / small-coefficient subset sum
+  in n²/4 + O(n^{3/2}) columns (Theorem B, Lemma J, 36,096-orbit classification). This would halve
+  KOW's q = 5 small-coefficient constant 0.4 to 0.25.
+- **Every odd p, κ ∈ {2,3} [claimed, unrefereed]:** (1−1/p)a²/2 + O(a log a) by KOW sparse
+  one-dimensional rounds composed with the contraction (Theorem C).
+- **Obstruction [exact, finite]:** with all nested patterns F_p^*×F_p present, no 2-dimensional
+  gadget from two dependencies at (p,κ) = (7,2), (11,2), (13,2), (7,3), (13,3). (7,2) is also UNSAT
+  unsplit (CaDiCaL 1436 s, 12.3 GB LRAT proof verified), independent of the Lemma U split. (11,2):
+  3751 sub-cases, (13,2): 6253 sub-cases, all LRAT-verified, coverage of each split checked against
+  its case file and `cases_cover.out`. (13,3) rests on PicoSAT only (no proof). **k = 3 at p = 7**
+  (nested set): UNSAT, 686 LRAT-verified sub-cases, given the draft's two-case first-slot cover
+  `cases7k3.txt` (unchecked). q = 13 small coefficients: **open** (Lemma U needs S = P∪{0}; even
+  two-slot sub-cases exceed 9 min; stopped). 0/1 subset sum at q = 5, 7: nothing (Lemma Z).
+- **Tooling:** `gadget_cnf5.py` (same encoding as `gadget_cnf4.py`, CaDiCaL + lrat-check; UNSAT
+  only on a verified proof), `run_split.sh`, `run_split_k.sh`. Kissat, CaDiCaL (Homebrew) and
+  drat-trim/lrat-check (built from source in the session scratchpad) were installed with owner OK.
+  Kissat DRAT proofs took drat-trim ~550 s per sub-case; LRAT checks take < 1 s.
+- Gates that stay false: Theorem B or C is new / has priority; the p ≥ 7 obstruction is an
+  algorithmic lower bound (it bounds the k-dependency piece framework only); k ≥ 4 bundles are
+  excluded at p ≥ 7; finite checks are scaling evidence.
+- Next hard question: does any k-dependency bundle gain two dimensions at p ≥ 7 (a Lemma Z style
+  proof for all k, or a k = 4 SAT model at p = 7)?
+- Next command: referee §3 (Theorem B, Lemma J, the orbit classification and CNF) and §4
+  (Theorem C) of the note, including the `cases7k3.txt` cover. Artifact
+  audits/reviews/2026-11-09-rees-sde-fq-nest-referee.md; acceptance: every step of Theorem B and
+  C checked or a concrete gap named. Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md
+  "2026-11-09 Rees SDE F_q Extension".
+
 ## 2026-11-09 Rees Native Application Search 2: Legendre-Masked Unipotent Symmetry Is the Best Constructed Survivor (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper, registry and STATE.md NOT edited.
@@ -147,6 +258,9 @@ Three Claude subagents ran: a proof referee, an upper-side attack and a literatu
   - Clean open hypothesis OSC(B): C1-count lower bound, 1/p low-support bias, and square-root
     cancellation over C1 orbits. It would give kappa^{(kappa+1)/2+o(1)} (3450 at kappa = 5).
     Untested in its regime (mean bucket size << 1).
+  - kappa = 5 data (mean bucket size < 1): PW = 18.1, 9.34, 4.49, 1.95 at p = 271, 311, 401,
+    521. Extrapolation puts PW < 1 near p = 640, against the O1 barrier 2628 [heuristic].
+    p = 641 is running: types/orbit_k5_641.out.
   - Literature: best analogue is the Paley n-e.c. threshold (Weil base 4 versus counting base 2,
     no improvement known). The all-p Paley clique lower bound is still (1/2)log2 p (Cohen).
 - **Claim gates false:** square gap closed; any threshold o(kappa^kappa); T_A/T_S/tables changed;

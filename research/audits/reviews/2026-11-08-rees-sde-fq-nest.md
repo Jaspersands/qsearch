@@ -21,8 +21,17 @@ q^{q²}(n+1)^{q−1} [literature]).
 
 ## 0. Verdict
 
+0. **Referee update (2026-11-09): Theorem B′, p = 5 worst case n²/4 + 3n/2 + 2 [proved, refereed
+   by AI (referee B), checked by the integrator; one finite input, Fact F5].** Every spanning label
+   set in F_5²∖0 (all 36,090 GL_2(F_5)-orbits, any size, re-verified independently by referee B with
+   a different CNF and plain-arithmetic checks) has a weakly nondegenerate S-realization. So at
+   codimension q ≥ 2, the first q + 2 columns and *any* two independent dependencies gain two
+   dimensions or give a witness (SIMPLE5, `2026-11-09-rees-sde-fq-nest-referee-B/simple5.py`); q = 1
+   costs 2 columns. Deterministic poly(n, m) time for every m ≥ n²/4 + 3n/2 + 2 (exact recursion
+   ≤ n²/4 + 3n/2 + 1.25, checked to n = 5000). The peeling, Lemma D and Lemma J below are not
+   needed at p = 5; they remain the template where only nested label sets are feasible (p = 3).
 1. **p = 5, κ = 2 (S = {0, ±1}): YES, two dimensions per piece, worst case n²/4 + O(n^{3/2})
-   [proved, with two exact finite inputs].** Theorem B (§3): the deterministic algorithm WNEST₅
+   [proved, with two exact finite inputs; superseded in its error term by item 0].** Theorem B (§3): the deterministic algorithm WNEST₅
    solves every instance with m ≥ guarantee(n) ≤ n²/4 + 0.754 (n+2)^{3/2} + 5.75 n + √(2n) + 13
    columns (exact recursion in `closed_form_p5.out`: 0.372 n² at n = 60, 0.336 at 100, 0.271 at
    1000, 0.262 at 3000; the sparse one-dimensional recursion is 0.44, 0.43, 0.404, 0.401 n²).
@@ -52,15 +61,16 @@ q^{q²}(n+1)^{q−1} [literature]).
    algorithms. k = 3 at p = 7 (κ = 2, nested set F_7^*×F_7^2, 294 labels): also UNSAT [exact, given
    the two-case split of the first slot, `cases7k3.txt`: 2 cases × 343 values of γ_(1,1) = 686
    sub-cases, CaDiCaL, every one LRAT-verified, `k3_7_split.out`].
-3. **Every odd p, κ ∈ {2, 3}: a proved constant below 1/2 by one-dimensional sparse rounds
+3. **Every odd p (κ = 2) and every p ≡ 1 mod 3 (κ = 3): a proved constant below 1/2 by one-dimensional sparse rounds
    [proved].** Theorem C (§4): KOW's sparse-dependency selection (support ≤ (1−1/p)(l+r)/(1−p^{−r})
    from l + r columns, r = ⌈log_p(l+1)⌉) composed with the paper's contraction weights realizes a
-   full line per round, so m ≥ (1−1/p) a²/2 + O(a log a) suffices deterministically (given the
+   full line per round, so m ≥ (1−1/p) a²/2 + O(a log a) suffices deterministically given g and (α, β) (given the
    contraction, which exists for κ = 2, 3 at every p). Checked at (p,κ) ∈ {(5,2),(7,2),(11,2),
    (13,2),(7,3),(13,3)}, a ≤ 40, four families, every witness verified (`sparse_tri.out`); the
    O(a log a) term makes the gain over (a+1)(a+2)/2 small below a ≈ 40.
 4. **(b) KOW small coefficients.** q = 5: yes (item 1). q = 7, 11: no nested two-dimensional
-   gadget [exact, `big_7_int_nest.out`, `big_11_int_nest.out`]; q = 13: §2. The one-dimensional
+   gadget [exact at q = 7, `big_7_int_nest.out`; q = 11 only for the P-equivariant problem,
+   `big_11_int_nest.out` (referee C finding 2: Lemma Q is not shown exact for S = {0,±1,±2})]; q = 13: open (§2). The one-dimensional
    KOW round is reproduced as a feasibility fact at q = 5, 7, 11, 13 [exact, `table_small.out`].
 5. **(c) 0/1 subset sum at q = 5, 7.** Nothing of lower degree from this framework [proved,
    Lemma Z]: a 0/1 realization of even one dimension forces the label set into four parallel
@@ -104,13 +114,28 @@ it (one-hot CNF, every model re-verified over all α and all labels by `gadget_c
 
 **Lemma R (coset reduction) [proved].** If (Φ, γ) is feasible and weakly nondegenerate, so is
 (Φ, γ′) with γ′_{λα} := λγ_α for λ ∈ P and α in a fixed set of representatives of F_p^d∖0 modulo P.
-*Proof.* y′_{λα} = λ(⟨α, Φ⟩ + ⟨γ_α, ·⟩) = λ y_α ∈ λS = S, nonzero iff y_α is. ∎ So the free data are
+*Proof.* y′_{λα} = λ(⟨α, Φ⟩ + ⟨γ_α, ·⟩) = λ y_α ∈ λS = S, nonzero iff y_α is. *Wording repair (referee B
+finding 3).* Weak nondegeneracy is per direction, not per α: if the only nonzero realizer of a direction
+sits at a non-representative multiple μα, the formula γ′_{λα} := λγ_α with α the representative can make
+that direction degenerate. So re-base each (direction, coset) slot at a nonzero member μα of it: set
+y′_{νμα} := ν y_{μα} (ν ∈ P); this is a valid family since y_{μα} ≡ ⟨μα, y_e⟩ modulo the row space, it
+takes values in νS = S and is nonzero iff y_{μα} is, and the CNF's free γ-slot for that coset can
+represent it (for coset 0 of a unit direction re-normalise Φ_j := μ^{-1} y_{μe_j}). The choice is per
+slot, so it never conflicts (unlike Lemma Q). ∎ So the free data are
 γ_α for α in a set of (p^d − 1)/|P| representatives: for d = 2 and κ = 2, (p+1) directions × 2
 cosets minus the two unit directions at coset 0 (where γ = 0 because Φ_j := y_{e_j}).
 
 **Lemma Q (label scaling) [proved].** For λ ∈ P the constraints at λℓ with Φ(λℓ) := λΦ(ℓ) are those
 at ℓ; a solution on L extends to the P-closure of L with the same γ; weak nondegeneracy is
 unchanged. ∎ So labels are taken up to P-scaling.
+*Referee C correction (2026-11-09).* The proof above shows only that a P-equivariant solution
+extends; the UNSAT verdicts need the converse. **Lemma N [proved, referee C; checked by hand]:**
+let S = P ∪ {0}, r ∉ P, and let L span F_p^k with no nonzero linear functional S-valued on L (true
+for F_p^*×F_p^{k−1} and F_p^k∖0). In every feasible (Φ, γ), for any column multiplicities, the
+direction [α] is degenerate iff γ_{rα} = rγ_α. (If γ_{rα} = rγ_α then y_α, r·y_α ∈ S force y_α = 0,
+and each y_{λα} = ⟨γ_{λα} − λγ_α, ·⟩ is an S-valued linear functional on L, hence 0; conversely
+y_{rα} − r y_α = ⟨γ_{rα} − rγ_α, ·⟩ vanishes on a spanning L.) So nondegeneracy depends on γ alone
+and Lemma Q is exact for S = P ∪ {0}. It is not shown for interval S (q = 11 cell).
 
 **Lemma U (unit functionals; case split) [proved].** Let S = P ∪ {0}, κ ≥ 2, L ⊇ F_p^*×F_p (nested),
 d = k = 2, r ∉ P. In every weakly nondegenerate solution γ_{(r,0)} ≠ 0 and γ_{(0,r)} ≠ 0.
@@ -130,20 +155,23 @@ a CNF with those two slots fixed.
 d = dimension realized, k = dependencies, "nest" = labels F_p^*×F_p^{k−1} (δ¹ of full support,
 the others inside it), "all" = F_p^k∖0. SAT = feasible with weak nondegeneracy (a gadget exists);
 UNSAT = none exists. Scripts: `gadget_cnf4.py` (reduced CNF, `table_small.out`, `big_*.out`),
-case splits (`cases*.out`), p = 3 sanity in `table_old_encoding.out` (KOW SAT, NEST SAT, all-8 UNSAT).
+case splits (`cases*.out`); from 2026-11-09 `gadget_cnf5.py` (same encoding, CaDiCaL with LRAT proofs
+checked by lrat-check; UNSAT is accepted only on a verified proof) with `run_split.sh` / `run_split_k.sh`
+(each case split further over all values of γ_(1,1), an exact cover; coverage of every `*_split.out`
+was checked against its case file); p = 3 sanity in `table_old_encoding.out` (KOW SAT, NEST SAT, all-8 UNSAT).
 
 | S | k=1, d=1 | k=1, d=2 | k=2, d=2 nest | k=2, d=2 all |
 |---|---|---|---|---|
 | κ=2, p=5 ({0,±1}) | SAT | UNSAT | **SAT** | **SAT** (24 patterns) |
 | κ=2, p=7 ({0,1,2,4}) | SAT | UNSAT | UNSAT (19 cases, ≤ 4.5 s each; also unsplit, CaDiCaL 1436 s, 12.3 GB LRAT proof verified) | UNSAT (19 cases) |
 | κ=2, p=11 | SAT | UNSAT | UNSAT (31 Lemma U cases × 121 values of γ_(1,1); 3751 sub-cases, CaDiCaL, every one LRAT-verified; `cases11_split.out`) | — |
-| κ=2, p=13 | SAT | UNSAT | FILL13 | — |
+| κ=2, p=13 | SAT | UNSAT | UNSAT (37 Lemma U cases × 169 values of γ_(1,1); 6253 sub-cases, CaDiCaL, every one LRAT-verified; `cases13_split.out`) | — |
 | κ=3, p=7 ({0,±1}) | SAT | UNSAT | UNSAT (1.3 s) | — |
 | κ=2, p=7, **k=3**, d=2 nest | — | — | UNSAT (2 cases × 343 sub-cases, LRAT-verified, `k3_7_split.out`) | — |
 | κ=3, p=13 ({0,1,5,8,12}) | SAT | UNSAT | UNSAT (unsplit, 2807 s, `big_13_k3_nest.out`; and 37/37 cases, `cases13k3.out`; PicoSAT, no proof) | — |
 | (b) q=7, {0,±1} | SAT | UNSAT | UNSAT | — |
-| (b) q=11, {0,±1,±2} | SAT | UNSAT | UNSAT (581 s) | — |
-| (b) q=13, {0,…,±3} | SAT | UNSAT (69 s) | FILLINT13 | — |
+| (b) q=11, {0,±1,±2} | SAT | UNSAT | UNSAT (581 s) **for the P-equivariant problem only**; the free problem is not established (Lemma N needs S ∩ 2S = {0}) | — |
+| (b) q=13, {0,…,±3} | SAT | UNSAT (69 s) | **open**: Lemma U does not apply (S ≠ P∪{0}); unsplit PicoSAT > 17 h, one-slot split > 4.5 h on its first sub-case, two-slot sub-cases > 9 min each (28561 of them); stopped | — |
 | (c) {0,1}, p=5,7, d=1 | UNSAT | — | UNSAT (k=2,3) | UNSAT (k=2) |
 
 The k = 1, d = 1 rows are the paper's contraction (κ = 2: Φ(a) = a for a ∈ P, νa for a ∉ P, ν the
@@ -189,8 +217,10 @@ projective class of the free part g_i (within a class f_i = c_i + s_i t, t unifo
 classes independent and centred), `wnest_p.py: pick_codeword`, asserted on every piece.
 
 **Algorithm WNEST₅ at codimension q ≥ 3.** Pool = first N(q) unused columns, N(q) = min{N :
-N − (5/4)q ≥ 15/4 + √N} (N(q) ≤ (5/4)q + √(2q) + 7 [proved: with N = ⌈(5/4)q + √(2q) + 7⌉,
-√N ≤ √(2q+10) ≤ √(2q) + 3 for q ≥ 2; checked exactly for q < 5000, `closed_form_p5.out`]).
+N − (5/4)q ≥ 15/4 + √N} (N(q) ≤ (5/4)q + √(2q) + 7 [proved: N₀ = ⌈(5/4)q + √(2q) + 6⌉ is feasible for all q ≥ 1, because
+(√(2q) + 9/4)² ≥ (5/4)q + √(2q) + 7 ⟸ (3/4)q + 3.5√(2q) ≥ 31/16, and N₀ < (5/4)q + √(2q) + 7
+(referee B finding 6: the earlier argument with N = ⌈(5/4)q + √(2q) + 7⌉ gave only + 8); checked exactly
+for q < 5000, `closed_form_p5.out`, and for q < 10⁵ by referee B]).
 0. A pool column that is 0 in V lies in U: finish by Lemma 1.
 1. Peel: delete coloops; delete the largest proportionality class of D(F) while its size is ≥ 5.
    Result F*, N* = |F*|, r* = rank(F*); all classes have size ≤ 4.
@@ -220,7 +250,9 @@ constant-size CNF. ∎
 **Measured [sampled; `wnest_p5.out`, `adversarial_p5.out`].** Random/low-rank/few-distinct/sparse
 instances at m = guarantee(n): n = 20: ≤ 178 of 210; 40: ≤ 579 of 661; 60: ≤ 1192 of 1340 (0.33 n²
 consumed; KOW-type sparse one-dimensional recursion 1585, triangular 1891). Pieces cost q + 8..11.
-Eleven structured families at n = 30 (series classes of size 3 and 4, which are *not* peeled;
+Eleven structured families at n = 30 (chain3/chain4: proportional columns v, 2v, 3v, …, i.e. parallel
+classes of the column matroid, not series classes; those runs end with an immediate witness, 38 columns
+(referee B finding 9);
 duplicates; three blocks with proportional sums — the k = 2 degenerate structure; rank-3
 columns; sparse; projective; signed; block-diagonal) consumed ≤ 350 of 407; hill climbs at
 n = 8..14 reached 44/52, 61/72, 80/95, 101/120 and never violated an assertion. 4284 distinct
@@ -232,14 +264,16 @@ label sets were met, none infeasible. Finite checks falsify only; Theorem B does
 for the nested set (42 labels) and for all 48 patterns; (7, 3): UNSAT (unsplit, pycosat 1.3 s and
 z3 35.5 s); (7, 2) unsplit, independent of Lemma U: UNSAT by CaDiCaL (1436 s, 12.3 GB LRAT proof
 verified by lrat-check); (11, 2): UNSAT on all 3751 sub-cases (LRAT-verified); (13, 3): UNSAT
-(PicoSAT, no proof); (13, 2): see §2. By Lemma 2(B), a column set with one column per nested pattern in general
+(PicoSAT, no proof); (13, 2): UNSAT on all 6253 sub-cases (LRAT-verified). By Lemma 2(B), a column set with one column per nested pattern in general
 position (q ≥ p(p−1) − 2) has R(X) ⊇ no 2-dimensional subgroup and no S-witness. Any piece gaining
-2 from two dependencies therefore needs a *missing* pattern, and the only patterns a selection
-rule controls (support nesting: ℓ_1 ≠ 0) are present. This closes the k = 2 route at these p;
+2 from two dependencies therefore needs a *missing* pattern [argued; proved is only the
+infeasibility of the full nested label set and its supersets, for any column multiplicities by Lemma N], and the only patterns a selection
+rule controls (support nesting: ℓ_1 ≠ 0) are present. This closes the k = 2 route at these p [argued];
 k ≥ 3 bundles (labels in F_p^3) remain open except k = 3 at p = 7, nested set: UNSAT (§2).
 
-**Theorem C (sparse one-dimensional rounds) [proved].** Let p ∉ E_2(κ) (all p for κ = 2, 3) with a
-normalized contraction (α, β) (α_j + β_i ∈ g^{−(i+j)}P ∪ {0}). At codimension l take the next l + r
+**Theorem C (sparse one-dimensional rounds) [proved].** Let κ ∈ {2, 3}, p ≡ 1 (mod κ) prime (for κ = 3 this
+needs p ≡ 1 mod 3: otherwise every element is a cube and the problem is trivial), and p ∉ E_2(κ) (all such p
+for κ = 2, 3), with a normalized contraction (α, β) (α_j + β_i ∈ g^{−(i+j)}P ∪ {0}). At codimension l take the next l + r
 columns, r = ⌈log_p(l+1)⌉, an r-dimensional space of dependencies of their images mod U, and the
 sparsest of its p^r − 1 nonzero codewords δ; X = supp δ. The weights x_i = ζδ_i(α_{cos ζ} + β_{cos δ_i})
 lie in S and realize ζv mod U for every ζ ∈ F_p^*, v = Σ β_{cos δ_i} δ_i λ_i (paper, prop:triangular-sde,
@@ -248,7 +282,9 @@ cost |X| ≤ ⌊(l + r)(1−1/p)/(1−p^{−r})⌋ (a uniform nonzero codeword i
 non-identically-zero coordinate with probability (p^r − p^{r−1})/(p^r − 1); the minimum is at most
 the mean). Unused block columns return to the pool. The recursion m_l = max{l + r, m_{l−1} + w_l},
 m_0 = 1, gives m_a = (1−1/p) a²/2 + O(a log a) [proved: w_l ≤ (1−1/p)(l + r) + (l+r)/(p^r − 1) + 1 ≤
-(1−1/p)l + 2r + 2 with p^r ≥ l + 1]. Every output is verified; `sparse_tri.out`: (p, κ) as in §0.3,
+(1−1/p)l + 2r + 2 with p^r ≥ l + 1]. **Running time** poly(a, log p): enumerate the dependency space
+projectively, (p^r − 1)/(p − 1) < 1.5(l + 1) codewords per round. **Gain** over (a+1)(a+2)/2: a²/(2p) − O(a log a),
+positive only when a ≫ p log a. Every output is verified; `sparse_tri.out`: (p, κ) as in §0.3,
 a ∈ {6, 10, 20, 40}, 20/20/20/6 instances per a from four families at the recursion budget, 0
 failures; the budget is 0.46–0.51 a² at a = 40 (p = 5: 732 vs triangular 861). ∎ The contraction is
 found by brute force for p ≤ 13 (`sparse_tri.py: find_contraction`).
@@ -263,8 +299,9 @@ two-dependency set is UNSAT; q = 13: §2. KOW's one-dimensional round is feasibl
 **(c) Lemma Z [proved].** Let p ≥ 5, S = {0,1}, and let (Φ, γ) realize one dimension from k
 dependencies with labels L. Then with γ := γ_2: Φ(ℓ) = 0 ⟹ ⟨γ, ℓ⟩ ∈ {0,1} and Φ(ℓ) = 1 ⟹ ⟨γ, ℓ⟩ ∈
 {−2,−1}; so L ⊆ γ^{-1}({−2,−1,0,1}), four parallel hyperplanes, and γ ≠ 0 unless Φ ≡ 0. The nested
-sets F_p^*×F_p^{k−1} and F_p^k∖0 meet every nonzero functional in ≥ p − 1 ≥ 4 values with 2 among
-them (for γ = (g, 0, …, 0) the values g·F_p^*), so they are infeasible for every k and every p ≥ 5
+sets F_p^*×F_p^{k−1} and F_p^k∖0 meet every nonzero functional in ≥ p − 1 ≥ 4 nonzero values, while the allowed nonzero values of ⟨γ, ℓ⟩ are
+{−2, −1, 1}, only 3 (for γ = (g, 0, …, 0) the values g·F_p^*; any other nonzero functional takes all p values on
+these sets), so they are infeasible for every k and every p ≥ 5
 (for p = 3 the four values are all of F_3, which is KOW's gadget). ∎ Exact confirmation: k = 1, 2, 3
 at p = 5, 7 UNSAT (`table_small.out`). A one-dimensional 0/1 piece thus needs a label set confined
 to four hyperplanes — a pattern gap that neither support nesting nor weight selection produces —
@@ -297,14 +334,44 @@ literature notes; human review and a search are required before any external sta
 "c < 1/4 at p = 5" (no: a two-dependency piece costs ≥ rank + 2 ≥ q + 2 in general position, as at
 p = 3); "the p ≥ 7 obstruction is an algorithmic lower bound" (it bounds the k = 2 piece
 framework only); "k ≥ 3 bundles are excluded at p ≥ 7" (open unless §2 says otherwise);
-"Theorem B's O(n^{3/2}) is O(n log n)" (not shown); finite checks are not scaling evidence.
+"the p = 5 error term is o(n)" (Theorem B′ gives O(n); nothing better shown); finite checks are not scaling evidence.
 
-Next hard question. At p = 7 (κ = 2), does a bundle of k ≥ 3 dependencies with the full nested
-pattern set F_7^*×F_7^{k−1} gain two dimensions (the k = 3 CNF has 294 labels and γ ∈ F_7³; the
-Lemma U split applies to the first slot)? A SAT answer plus the Lemma J/P/M/D machinery would give
-a²/4 at p = 7; UNSAT for all k is the natural conjecture given Lemma Z's style of argument.
+Next hard question. k = 3 at p = 7 (nested set) is now UNSAT (§2), so the natural conjecture
+"no k-dependency bundle gains two dimensions at p ≥ 7" survives its first test. Is there a proof of
+it for all k (a Lemma Z style argument on the label hyperplanes), or a k = 4 SAT model at p = 7?
 
-Next command. `cd research/audits/reviews/2026-11-08-rees-sde-fq-nest && /opt/anaconda3/bin/python -B gadget_cnf4.py 7 pow:2 3 2 nest --quiet --fix "1,0,1:3,0,0"` and the same with `--fix "1,0,1:0,3,0"`;
-expected artifact `k3_7_nest_a.out`, `k3_7_nest_b.out`; acceptance: both UNSAT (closing k = 3 at
-p = 7 for the nested set) or a SAT model, which must then be re-verified on random column sets with
-`verify_gadget.py` before anything is built on it.
+Next command. Referee §3 (Theorem B, Lemma J, the 36,096-orbit classification) and §4 (Theorem C)
+first; the finite cells are done except q = 13 small coefficients, which needs a symmetry split
+for interval S before it is worth more CPU. For k = 4 at p = 7: `run_split_k.sh 7 pow:2 4 cases7k4.txt 9
+k4_7_split.out` after deriving the first-slot cover for k = 4 (the k = 3 two-case cover in
+`cases7k3.txt` is the draft's claim and must be checked by the referee).
+
+## 8. Referee dispositions (2026-11-09)
+
+Referee C (`2026-11-09-rees-sde-fq-nest-referee-C.md`, scripts in the folder of that name):
+A Theorem C ACCEPT WITH FIXES (κ = 3 needs p ≡ 1 mod 3; deterministic given g and (α, β);
+running time poly(a, log p); gain over (a+1)(a+2)/2 is a²/(2p) − O(a log a), positive only for
+a ≫ p log a); B Lemmas R, Q, U ACCEPT WITH FIXES (Lemma Q repaired by Lemma N, adopted above;
+Lemma U's 3p − 2 cover proved for every p); C the k = 3 two-case cover ACCEPT (two orbits of the
+first slot under σ(a, b) = (λa, Mb + av), proof in the report; k = 4 uses `1,0,1:3,0,0,0` and
+`1,0,1:0,3,0,0`); D encoding and γ_(1,1) splits exact, all certificates re-checked, **GAP for the
+q = 11 interval cell** (adopted: downgraded); E Lemma Z ACCEPT (wording). An independent encoding
+without Lemma Q (`free_cnf.py`) re-derives the p = 7 cells (58 LRAT-verified runs). Verified by
+the integrator by hand: Lemma N, and the two-orbit claim for the k = 3 first slot (w_b ≠ 0 maps to
+(0, e_1) by M^T w_b = e_1, ⟨w_b, v⟩ = −λw_a; w_b = 0 maps to (1, 0) by λ = w_a^{-1}; σ acts on labels only).
+
+Referee B (`2026-11-09-rees-sde-fq-nest-referee-B.md`, scripts in the folder of that name):
+ACCEPT WITH FIXES. Orbit count 36,096 re-derived (direct GL_2 action and Burnside), Fact F5
+re-verified on all 36,090 spanning orbits with an independent CNF, end-to-end run on real column
+sets for every orbit, Lemma J exhaustive at p = 5, guarantee(n) matches the code, KOW Thm 3.7 at
+q = 5 (constant 0.4, coefficients {0,±1}) cited correctly. M1 (adopted as Theorem B′, item 0):
+error term O(n). M2 (Lemma Q only half proved): same as referee C finding 1, resolved by Lemma N for
+S = P ∪ {0}. Minor: Lemma R proof wording; the Lemma 2(B) witness breaks the CNF normalisation;
+N(q) argument gives +8 as written (fixable to +7); WNEST₅'s δ′ choice is randomised (SIMPLE5 is
+not); Lemma J also holds at p = 3; "chain3/chain4" are proportional columns; two outputs lack a
+generating script. Theorem B's explicit bound beats KOW's only for n ≥ 59; Theorem B′ beats it for
+every tested 3 ≤ n ≤ 5000. Next question (referee B): do all spanning k = 3 label sets at p = 5
+realize three dimensions? That would give n²/6 + O(n); decide it without Lemma Q unless Lemma N's
+hypothesis is checked for that label set (it holds for any spanning set with no S-valued
+functional).
+

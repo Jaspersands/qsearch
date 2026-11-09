@@ -1,0 +1,24 @@
+N(q) <= 5q/4 + sqrt(2q) + 7 for 1 <= q < 1e5: True []
+referee N(q) == note pool_size(5,q) for q < 3000: True []
+N0 = ceil(5q/4 + sqrt(2q) + 6) feasible (so N(q) <= 5q/4 + sqrt(2q) + 7) for q < 1e5: True
+cost cap <= q + (8/5) sqrt(2q) + 8 for 3 <= q < 1e5: True []
+referee guarantee == note guarantee for 3 <= n < 400 and n = 600, 1000, 3000: True []
+min (closed form - guarantee) over 3 <= n <= 5000: 29.38 at n = 3; with 8sqrt2/15 exact: 29.38
+8 sqrt2/15 = 0.7542472332656508 (note rounds to 0.754, which is >= the exact value: OK)
+  n  guarantee  closed  KOW3.7  KOW3.8  SIMPLE5   (ratios / n^2)
+   10        72       131        66        64       41   0.720 1.313 0.660 0.645 0.410
+   20       210       312       217       214      131   0.525 0.780 0.542 0.534 0.328
+   40       661       857       765       764      461   0.413 0.536 0.478 0.478 0.288
+   60      1340      1637      1647      1639      991   0.372 0.455 0.457 0.455 0.275
+  100      3361      3879      4376      4355     2651   0.336 0.388 0.438 0.436 0.265
+  200     12203     13348     16813     16805    10301   0.305 0.334 0.420 0.420 0.258
+  300     26362     28220     37314     37277    22951   0.293 0.314 0.415 0.414 0.255
+ 1000    271321    279723    405046    405003   251501   0.271 0.280 0.405 0.405 0.252
+ 3000   2355231   2391359   3617358   3616828  2254501   0.262 0.266 0.402 0.402 0.251
+guarantee(n) >= KOW3.7(n) last at n = 17
+closed(n) >= KOW3.7(n) last at n = 58
+guarantee(n) >= KOW3.8(n) last at n = 18
+closed(n) >= KOW3.8(n) last at n = 59
+SIMPLE5(n) >= KOW3.7(n) last at n = None
+SIMPLE5(n) >= guarantee(n) last at n = None
+max SIMPLE5(n) - n^2/4 - 3n/2 over 3..5000: 1.25

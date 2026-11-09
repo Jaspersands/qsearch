@@ -11,6 +11,13 @@ Labels: **[proved]** complete proof here; **[exact]** finite computation, script
 **[sampled]** exact arithmetic on random or constructed instances; **[argued]**; **[conjecture]**;
 **[literature]**. Every statement says whether it is worst-case or average-case.
 
+**Corrections of 9 Nov 2026 (mechanical pass; no new claim, no change of any conclusion).** After the
+referee and break reports: (i) `wnest.py` now runs WNEST at q ≥ 4 and a KOW round with pool q + 1 at q ≤ 3
+(it ran WNEST at q = 3 and used KOW's pool q + ⌈log₃(q+1)⌉, so its own worst case was guarantee(n) + 2 for
+odd n); `tables.py` is rerun with identical numbers; (ii) the "guaranteed 63, 84, 109, 135" in §3 are bound(n),
+the exact guarantee(n) is 46, 64, 85, 109; (iii) the dual-distance and KOW-comparison statements are corrected
+in §0 and Lemma M; Remark (b) is marked unproved. See `2026-11-09-mechanical-queue-run.md`.
+
 Problem. v_1..v_m ∈ F_3^n arbitrary (worst case); find nonempty S with Σ_{i∈S} v_i = 0 in
 poly(n, m) time. Best proved worst-case threshold before this note: KOW Theorem 1.2,
 m ≥ n²/3 + O(n log n), deterministic [literature].
@@ -20,14 +27,22 @@ m ≥ n²/3 + O(n log n), deterministic [literature].
 1. **Theorem A (worst case) [proved; §2].** For every n ≥ 4 and every instance with
    m ≥ n²/4 + (8/9)(n+2)^{3/2} + 4n + 2√n + 15 columns, the deterministic algorithm WNEST
    (§2) outputs a nonempty zero-sum subset in poly(n, m) time. So the worst-case constant drops
-   from 1/3 (KOW) to 1/4. The exact recursion behind the bound (`tables.out`) is below KOW's
-   recursion value for every n ≥ 35 (n = 64: 1433 vs 1536; n = 1000: 269 044 vs 337 479).
+   from 1/3 (KOW) to 1/4. The exact recursion behind the bound (`tables.out`) is below this note's
+   sharpened KOW-type recursion (`kow_recursion()` in `tables.py`, which is NOT KOW's recursion
+   (8)) for every n ≥ 35 (n = 64: 1433 vs 1536; n = 1000: 269 044 vs 337 479). Against KOW's own
+   recursion (8), m_l = max{l, m_{l−1} + 2(l+1)/3 + ⌈log₃(l+1)⌉}, it is below for 9 ≤ n < 3000
+   (15 ≤ n < 3000 with integer pieces; n = 64: 1433 vs 1651) [referee `recursion_ref.out`]. The
+   explicit closed form of Theorem A is below KOW's explicit closed form only for n > 80 (below
+   (8) only for n > 105), so it is not an explicit improvement for small n.
    The three ingredients: the referee's NEST piece (a dependency δ with |supp δ| ≥ rank(supp δ)+2
    carries a second dependency, and the pass's Theorem 4 gadget realizes 2 dimensions for
    |supp δ| columns); **series-class peeling** (Lemma P: deleting a series class of size a drops
-   the rank by ≥ a−1, so N − 1.5·rank never decreases and the pool's dependency code reaches
-   dual distance ≥ 3); and the **second Pless moment** (Lemma M: with dual distance ≥ 3 the
-   weight of a uniform codeword has mean 2N*/3 and variance ≤ 4N*/9, and conditional
+   the rank by ≥ a−1, so N − 1.5·rank never decreases and the pool's dependency code ends with no
+   coloop and every proportionality class of size ≤ 2, i.e. dual distance ≥ 2 [corrected after
+   the referee: series PAIRS survive peeling, so dual distance ≥ 3 is not reached]); and the
+   **second Pless moment** (Lemma M: with no coloop and all classes of size ≤ 2 the
+   weight of a uniform codeword has mean 2N*/3 and variance ≤ 4N*/9 (tight, attained when all
+   classes are pairs; true dual distance ≥ 3 would give 2N*/9), and conditional
    expectations give a codeword within one standard deviation deterministically). The referee
    asked for a dependency of weight in [q+2, (4/3−ε)q] with nested structure in every pool; after
    peeling one of weight in [q+2, q + (8/3)√q + 4] always exists and is found.
@@ -38,7 +53,7 @@ m ≥ n²/3 + O(n log n), deterministic [literature].
    by summation over the original vectors) gives 0.2596–0.2601 n² at n = 150 for the Las Vegas
    refinement WNEST+ (cost exactly q + 2 per piece; Σ(q+2) = n²/4 + 3n/2) and 0.285 n² for the
    purely deterministic WNEST at n = 150 (its n^{3/2} term is real: it needs n ≥ 35 to beat
-   KOW's recursion and n between 120 and 150 to beat KOW's observed random-instance cost 0.289 n²).
+   the note's sharpened KOW-type recursion (n ≥ 9 for KOW's recursion (8)) and n between 120 and 150 to beat KOW's observed random-instance cost 0.289 n²).
 3. **Tightness and the frontier [proved + exact; §4].** Any piece gaining d ≥ 2 dimensions has
    dim D(X) ≥ 2, so |X| ≥ rank(X) + 2 (Lemma 3 of the pass); a scheme whose pieces are in
    general position (rank(X) = min(|X|, q)) and gain ≤ 2 therefore spends ≥ Σ(q_j + 2) ≥ n²/4.
@@ -60,7 +75,8 @@ m ≥ n²/3 + O(n log n), deterministic [literature].
    its Theorem 4 correction (empty unions) are re-derived and confirmed (`pattern_sat.out`).
 5. **Weakest step.** Theorem A has no probabilistic step; its weakest point is the lower-order
    term, O(n^{3/2}) against KOW's O(n log n) (the window [r*+2, μ+σ] has width Θ(√N), and an
-   adversary with dual distance exactly 3 controls all higher moments). Everything else is
+   adversary whose code keeps series pairs (dual distance exactly 2 after peeling, variance
+   4N*/9) controls all higher moments). Everything else is
    finite linear algebra; the parts a referee should attack are Lemma P (rank drop of a series
    class), Lemma M (the variance formula), and the accounting of returned columns (§2, 'Accounting').
 
@@ -109,7 +125,8 @@ Var ≤ 4N/9. *Proof.* A nonzero functional on D is uniform on F_3, so P(δ_i �
 f_i = λ f_j, P(δ_i ≠ 0 ≠ δ_j) = 2/3, covariance 2/3 − 4/9 = 2/9; for non-proportional f_i, f_j
 the pair (δ_i, δ_j) is uniform on F_3² (the map D → F_3² is onto), covariance 0. Sum. ∎
 (This is the second Pless power moment: D has dual distance ≥ 3 iff no coloop and no
-proportional pair.)
+proportional pair. After peeling, proportional pairs may remain, so D(F*) has only dual distance
+≥ 2; the proof uses the statement of Lemma M as written, with a_j ≤ 2, not dual distance ≥ 3.)
 
 **Lemma D (deterministic selection) [proved; `wnest.py: pick_codeword`, asserted on every
 piece].** Given a basis B (k × N) of D, a codeword δ with (wt δ − 2N/3)² ≤ Var[wt] can be
@@ -176,8 +193,9 @@ Remarks. (a) **Las Vegas refinement WNEST+** (same guarantee): among the Lemma D
 polynomially many uniform samples of D(F*), take the lightest with weight ≥ r* + 2. On random
 instances this is q + 2 exactly (`tables.out`). (b) **Mixing with KOW**: at each stage one may also
 compute KOW's sparse dependency (cost w_K for 1 dimension) and take the cheaper per dimension;
-on random instances w_K ≈ 2q/3 > q/2, so WNEST wins, and the worst-case bound is the minimum of
-both. (c) The pass's Model A excluded nothing that WNEST does: F is the first N(q) columns (an
+on random instances w_K ≈ 2q/3 > q/2, so WNEST wins. [UNPROVED: that the worst-case bound is
+the minimum of both. A per-stage greedy mix of two recursions is not shown to be at most the
+minimum of the two global bounds (referee, "Remark (b): GAP"); Theorem A does not use it.] (c) The pass's Model A excluded nothing that WNEST does: F is the first N(q) columns (an
 oblivious choice), peeling is linear algebra on D(F), and the codeword is chosen by conditional
 expectations exactly as KOW derandomize; so the pass's Theorem 6 was false in every reading, as
 the referee said, and the referee's NEST needed only Lemmas P, M, D to become worst-case.
@@ -201,7 +219,7 @@ The referee's 0.2506 n² at n = 120 is 1/4 + 3/(2n) + O(1/n²) with pieces of co
 
 | n | KOW (0.289 n² at n ≥ 90) | WNEST (deterministic) | WNEST+ (Las Vegas, same guarantee) | guarantee(n)/n² |
 |---|---|---|---|---|
-| 60 | 1037–1045 | 1113–1140 (0.309–0.317) | 935–993 (0.260–0.276) | 0.354 (1275; KOW recursion 1359) |
+| 60 | 1037–1045 | 1113–1140 (0.309–0.317) | 935–993 (0.260–0.276) | 0.354 (1275; sharpened KOW-type recursion 1359) |
 | 90 | 2333–2340 | 2425–2430 (0.299–0.300) | 2163 (0.267) | 0.329 (2668; KOW 2954) |
 | 120 | 4154–4173 | 4185–4187 (0.2906) | 3783 (0.2627) | 0.316 (4552; KOW 5156) |
 | 150 | 6516–6520 | 6405–6416 (0.285) | 5842–5853 (0.260) | 0.307 (6916; KOW 7966) |
@@ -215,8 +233,9 @@ subspaces, duplicated columns, sparse columns, projective columns, signed blocks
 "weight-gap" pools: WNEST used 104–1144 columns, never more than the random instances, and no
 per-piece assert fired (wt ≥ r* + 2, wt ≤ 2N/3 + (2/3)√N, Δ(F*) ≥ Δ(F), classes ≤ 2 after
 peeling). The largest series class peeled was 20. **Hill climb (n = 8..14, 400 steps from
-random and chain starts)** could not push m_used above 40, 55, 75, 95 against the guaranteed
-63, 84, 109, 135 and never made the per-piece cost exceed the cap (`adversarial.out`, part B).
+random and chain starts)** could not push m_used above 40, 55, 75, 95 against bound(n) = 63, 84, 109, 135
+(the crude reporting formula `bound()`, labelled "formula" in `adversarial.out`; the exact
+`guarantee(n)` is 46, 64, 85, 109, still above 40, 55, 75, 95) and never made the per-piece cost exceed the cap (`adversarial.out`, part B).
 **Single-pool hill climb (`pool_climb.out`, q = 8..14, 600 steps from random and duplicated-column
 pools)**: the Lemma D weight never exceeded r* + 2 + 5 against the cap r* + 2 + (4/3)√N* ≈ 6–7.3,
 and σ stayed ≤ 2.75 ≤ (2/3)√N*. Finite checks falsify only; Theorem A does not rest on them.
@@ -239,7 +258,10 @@ means it exists for every column set with these patterns. Results for d = 3:
 - k = 3, all 26 patterns: UNSAT. k = 4, all 80 patterns: UNSAT. With Theorem 3 (rank C ≤ 2
   impossible) this says: **a pattern-complete bundle of dimension k ≤ 4 never gains 3** — the
   generic (r* + k)-set in general position gains at most 2 whatever k ≤ 4 is. (k = 4 with δ_1 of
-  full support, 54 patterns: SAT run stopped after ~30 min CPU, open.)
+  full support, 54 patterns: UNSAT, rerun 9 Nov with CaDiCaL and an LRAT proof checked by lrat-check, 839 s;
+  k = 4 with δ_1 and δ_2 both of full support, 36 patterns: UNSAT, 1486 s; k = 3 with δ_1 and δ_2 both of
+  full support, 12 patterns: UNSAT, 60 s — all in `pattern_sat_k4.out`; the earlier pycosat run of the 54-pattern
+  case, stopped after ~30 min with no answer, is kept as `pattern_sat_k4.pycosat_stopped.out`.)
 - δ_1 of full support (the NEST precondition; 9 points of PG(2,3) off a line, 18 patterns):
   UNSAT. The nested chain supp δ_3 ⊆ supp δ_2 ⊆ supp δ_1 = X (7 points): UNSAT. Two disjoint
   dependencies inside a full-support one (5 points): UNSAT. Nested pair plus a disjoint third
@@ -269,11 +291,11 @@ All exact over F_3 (numpy int64), interpreter `/opt/anaconda3/bin/python -B`.
 
 | artifact | what | result |
 |---|---|---|
-| `wnest.py` → `wnest.out` | WNEST/WNEST+/KOW solver; Lemma G symbolic check; peeling, Lemma D selection with asserts for every per-piece bound; random instances n ≤ 150 | gadget identities True; all asserts hold; table in §3 |
-| `tables.py` → `tables.out` | exact `guarantee(n)` recursion vs closed form and KOW's recursion; N(q) bound; WNEST+ on random instances | closed form holds 4 ≤ n < 3000; WNEST < KOW recursion for all n ≥ 35; WNEST+ 0.26 n² at n = 150 |
+| `wnest.py` → `wnest.out` (fixed 9 Nov: WNEST for q ≥ 4, KOW pool q + 1 for q ≤ 3; output unchanged) | WNEST/WNEST+/KOW solver; Lemma G symbolic check; peeling, Lemma D selection with asserts for every per-piece bound; random instances n ≤ 150 | gadget identities True; all asserts hold; table in §3 |
+| `tables.py` → `tables.out` | exact `guarantee(n)` recursion vs closed form and KOW's recursion; N(q) bound; WNEST+ on random instances | closed form holds 4 ≤ n < 3000; WNEST < the note's sharpened KOW-type recursion for all n ≥ 35 (KOW's recursion (8): all n ≥ 9, referee); WNEST+ 0.26 n² at n = 150 |
 | `adversarial.py` → `adversarial.out` | 11 structured families at n = 60 (chains with series classes 5–20, low rank, subspaces, duplicates, sparse, projective, signed blocks, block-diagonal); hill climb n = 8..14 | no assert fired; m_used ≤ random case; hill climb far below the guarantee |
 | `pattern_sat.py` → `pattern_sat.out` | own SAT encoding; d = 2 validation; d = 3 for k = 3 natural sets; PGL(3,3) orbits of point sets | 218/82 reproduced; all d = 3 natural sets UNSAT; orbit table |
-| `pattern_sat_k4.py` → `pattern_sat_k4.out` | d = 3 from k = 4 bundles | all 80 patterns UNSAT (10 s); the 54-pattern case (δ_1 full support) was stopped after ~30 min CPU with no answer and is not used |
+| `pattern_sat_k4.py` → `pattern_sat_k4.out` | d = 3 from k = 4 bundles (CaDiCaL + LRAT proof checked since 9 Nov; `pattern_sat.py` gained a `solver='cadical'` option) | all 80 patterns UNSAT (150 s); 54 patterns (δ_1 full support) UNSAT (839 s); 36 patterns (δ_1, δ_2 full support) UNSAT (1486 s); k = 3, 12 patterns UNSAT (60 s); every UNSAT LRAT-verified |
 | `pool_climb.py` → `pool_climb.out` | hill climb over single pools maximizing the selected weight after peeling | max wt − (r*+2) = 4, 4, 5, 5 at q = 8, 10, 12, 14; no assert fired |
 
 ## 6. Claim gates, next question, next command

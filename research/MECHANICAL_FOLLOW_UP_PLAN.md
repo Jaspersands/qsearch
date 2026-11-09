@@ -1,22 +1,70 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
-## 2026-11-09 Rees Exponent p^e
+## 2026-11-09 Rees SDE F_q Referees (items 1-2 DONE 9 Nov; see audits/reviews/2026-11-09-mechanical-queue-run.md)
+
+Read audits/reviews/2026-11-09-rees-sde-fq-nest-referee-B.md and -referee-C.md. Edit only
+audits/reviews/2026-11-08-rees-sde-fq-nest.md and its folder.
+1. Apply the minor text fixes listed in §8 of the note: Lemma R proof wording; N(q) "+7" argument
+   (referee B finding on +8); Lemma Z statement (referee C finding 6); Theorem C hypotheses (κ = 3
+   needs p ≡ 1 mod 3, running time, gain a²/(2p) − O(a log a)); label "chain3/chain4" as
+   proportional-column families. Acceptance: each listed item changed, nothing else.
+   **DONE 9 Nov:** all five items changed in `2026-11-08-rees-sde-fq-nest.md` (plus two comment lines in
+   `adversarial_p5.py` for the chain3/chain4 label). The Lemma R and N(q) rewrites transcribe the referees'
+   repairs; the integrator should check them against the reports.
+2. Add tests/test_rees_sde_p5_simple.py running referee B's simple5.py on n ≤ 12 for its 8 families
+   at m = guarantee_simple(n), asserting every returned witness sums to 0 with entries in {0,±1}.
+   Acceptance: passes in under 60 s.
+   **DONE 9 Nov:** `tests/test_rees_sde_p5_simple.py`, 1 passed in 4.8 s (8 families x n in {3,4,6,9,12}).
+
+## 2026-11-09 Rees SDE F_q Extension (items 1-3 DONE 9 Nov; see audits/reviews/2026-11-09-mechanical-queue-run.md)
+
+Read audits/reviews/2026-11-08-rees-sde-fq-nest.md. Folder: audits/reviews/2026-11-08-rees-sde-fq-nest/.
+1. Add a coverage checker script `check_split_cover.py` that, for each `*_split.out`, rebuilds the
+   expected fix strings from its case file and requires one LRAT VERIFIED UNSAT line per string
+   (the check done by hand for cases11/13 and k3_7). Acceptance: prints OK for cases11_split.out,
+   cases13_split.out, k3_7_split.out.
+   **DONE 9 Nov:** `check_split_cover.py` (+ `check_split_cover.out`): OK 3751/3751, 6253/6253, 686/686;
+   int13_split.out is empty, reported as EMPTY (no coverage claimed); negative controls (a deleted
+   line, a SAT line) make it FAIL.
+2. Add tests/test_rees_sde_fq_cnf5.py: gadget_cnf5.py on `7 pow:2 2 2 nest --fix "1,0,1:3,0;0,1,1:0,3"`
+   gives UNSAT with 'LRAT VERIFIED', and `5 pow:2 2 2 nest` gives SAT (skip if cadical or
+   lrat-check is missing; LRAT_CHECK env var). Acceptance: passes in under 30 s.
+   **DONE 9 Nov:** `tests/test_rees_sde_fq_cnf5.py`, 2 passed in 2.1 s with LRAT_CHECK set; 2 skipped
+   when lrat-check is not on PATH / LRAT_CHECK.
+3. Add a folder README listing which `big_*.out` files are empty because their PicoSAT runs were
+   stopped on 2026-11-09, and which `*_split.out` file supersedes each. Do not delete outputs.
+   **DONE 9 Nov:** folder `README.md` (parameters of the empty `big_*.out` files are inferred from their
+   names; `big_13_int_nest.out` is not superseded: `int13_split.out` is empty too).
+
+## 2026-11-09 Rees Exponent p^e (item 1 DONE 9 Nov)
 
 Read audits/reviews/2026-11-09-rees-exponent-pe-blackbox.md. Use `nice -n 19`.
 1. Add tests/test_rees_exponent_pe_blackbox.py. It runs
    audits/reviews/2026-11-09-rees-exponent-pe-blackbox/exponent_pe_check.py on 81_3,
    243_24 and 625_8 (import run_group; parse groups.txt). Acceptance: ok == subs and
    calls_max <= cap for each, in under 60 s.
+   **DONE 9 Nov:** `tests/test_rees_exponent_pe_blackbox.py`, 3 passed in 11.7 s.
 Do not edit the paper.
-## 2026-11-09 Rees Square Gap
+## 2026-11-09 Rees Square Gap (item 1 DONE, item 2 BLOCKED, item 3 no action; 9 Nov)
 
 Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md. Use `nice -n 19`.
 1. Extend e2dfs.py (in that folder) to kappa = 8 up to p <= 8^3-3*8^2+2*8 = 336 and
    kappa = 9 up to 9^3-3*9^2+2*9 = 504. Acceptance: every p = 1 mod kappa in range reported
    in E_2(kappa) (Proposition 1 predicts it); output saved as e2dfs_k89.out.
+   **DONE 9 Nov:** `e2dfs_k89.out` (the unchanged `e2dfs.py 8 336` and `9 504`, < 1 s each): all 13
+   primes p = 1 mod 8 up to 336 and all 14 primes p = 1 mod 9 up to 504 are in E_2(kappa); the script
+   prints "subset of E2? True" for both. No code change was needed.
 2. Run types/sep_types.py 5 p and types/orbit_types.py 5 p for primes p = 1 mod 5 in
    [191, 2628]. Acceptance: table of permanent-weighted ratio and C1 count vs first moment,
    saved as types/sep_k5_full.out; no interpretation needed.
+   **BLOCKED 9 Nov (compute, not judgment):** `orbit_types.py 5 p` took 0.5-1.2 h per prime at
+   p = 271-521 and scales about like p^3, so the ~130 primes up to 2628 are far beyond the 2-core-hour
+   cap (p = 641 alone hit 7200 s: `types/orbit_k5_641.out`), and `sep_types.py` enumerates ~p^3 bases.
+   Another session is running the faster `orbit_types_fast.py` and `osc-k5/osc_k5.py` sweeps
+   (`osc-k5/sweep_A.out`, `sweep_B1.out`) over the same primes; their JSON lines carry PW and
+   N1/mu1, so once they finish `osc-k5/summarize.py` can produce this table. Nothing was run here,
+   to avoid duplicating that work on a machine at load ~90.
 3. Port Proposition 1 (twisted Stepanov) to Lean only if the owner asks; otherwise none.
+   No action (the owner has not asked).
 Do not edit the paper.
 ## 2026-11-08 Rees Black-Box Corollary (items 1-3 DONE 9 Nov; see the 2026-11-09 handoff entry)
 
@@ -31,29 +79,45 @@ Read audits/reviews/2026-11-08-rees-blackbox-e2e/README.md and the draft .tex be
    README note stays true.
 Do not edit the paper.
 
-## 2026-11-08 Rees SDE Open Directions
+## 2026-11-08 Rees SDE Open Directions (items 1-3 DONE 9 Nov; see audits/reviews/2026-11-09-mechanical-queue-run.md)
 
 Read audits/reviews/2026-11-08-rees-sde-p3-nest.md and its -referee/-break reports.
 1. Fix code/proof discrepancies in 2026-11-08-rees-sde-p3-nest/wnest.py: WNEST must start at
    q >= 4 (not 3); guarantee() off by +2 for odd n; KOW pool size q+ceil(log_3(q+1)) vs q+1;
    relabel the §3 "guaranteed 63, 84, 109, 135" as bound(n) (guarantee(n) = 46, 64, 85, 109).
    Acceptance: rerun tables.py, numbers match the break report.
+   **DONE 9 Nov:** wnest.py now runs WNEST for q >= 4 and a KOW round with pool q + 1 for q <= 3 (the
+   baseline `kow` mode keeps KOW's pool); `tables.py` rerun: output identical to the old one and to the break
+   report; `crosscheck_wnest_fixed.out` (wnest.py vs strict_wnest.py `proof`): pulls identical in 60/60.
 2. Finish the k = 4, 54-pattern SAT check (pattern_sat_k4.py) and the exhaustive Lemma M+D
    cases (6,2), (7,1) in -p3-nest-break. Acceptance: UNSAT / 0 failures recorded in .out.
+   **DONE 9 Nov:** `pattern_sat_k4.out`: k = 4 all 80 / 54 / 36 patterns and k = 3 12 patterns all UNSAT
+   (CaDiCaL, LRAT-verified; 150 s, 839 s, 1486 s, 60 s); (6,2) and (7,1) had already finished in
+   `lemma_exhaustive2.out` (0 failures, 1 893 220 bases in total).
 3. Edit -p3-nest.md text per the referee: dual distance >= 2; KOW comparison against KOW's
    recursion (8); mark Remark (b) unproved.
+   **DONE 9 Nov** (`2026-11-08-rees-sde-p3-nest.md`; also the 63/84/109/135 relabel and the k = 4 results).
 Do not edit the paper.
 
-## 2026-11-07 Rees SDE Worst Case Below a²
+## 2026-11-07 Rees SDE Worst Case Below a² (items 1-3 DONE 9 Nov; see audits/reviews/2026-11-09-mechanical-queue-run.md)
 
 Read audits/reviews/2026-11-07-rees-sde-subquad-A.md (Theorem A) and -A-break.md.
 1. Slack-minimising climb at J in {4,5}, kappa=2, aimed at the case-3.3 U+ recursion count
    (least slack 0 so far): reuse 2026-11-07-rees-sde-subquad-A-break/attack.py climbs;
    artifact out/climb_uplus_J45.json; acceptance: no negative slack, every bank solved.
+   **DONE 9 Nov:** `climb_uplus.py`; `out/climb_uplus_J45.json` (8591 evals; reached U+ only at J = 4, 3538
+   banks) and `out/climb_uplus_J5.json` (15609 evals, J = 5, 364 banks): 0 failures, no negative slack; least
+   `rec_count_U+33` slack 0 at both J.
 2. Run J=4, kappa=3 inside the theorem prime range (~2.8e12): needs arithmetic beyond
    p < 2^31 in the break harness. Acceptance: 0 assertion failures.
+   **DONE 9 Nov:** `la.py` with `QS_BIGP=1` (Python ints; unchanged by default; identical traces to int64 on 22
+   banks, `bigp_equiv.py`), `attack_bigp.py`: p = 2789427520807, 131 banks, 3480 back-substitution passes,
+   0 failures (`out/bigp_J4k3_1.json`).
 3. Fix the generator KeyError 'Ub' in subquad-A planted(); add explicit (Y), top-round
    block-count and T_m(c) asserts to subquad.py.
+   **DONE 9 Nov:** `run_tests.py planted()` fixed (672 parameter combinations, 0 errors); `subquad.py`
+   asserts (Y), m <= J-2 before the top phase and top-round block count; the 11 stored test groups rerun with
+   identical totals.
 Do not edit the paper; integration is an owner decision.
 
 ## 2026-11-07 Scalar OPI Tilted-Walk Admission

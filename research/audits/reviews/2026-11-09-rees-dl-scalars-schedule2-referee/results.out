@@ -1,0 +1,12 @@
+# dl.sage 3 / 5 (unsliced, 26 variables)
+3 [(1, 'EXISTS'), (2, 'EXISTS')] time 7.245156764984131
+5 [(1, 'EXISTS'), (2, 'none'), (3, 'none'), (4, 'EXISTS')] time 183.19873881340027
+# dl3.sage 3 5 (sliced)
+5 [(1, 'EXISTS'), (2, 'none'), (3, 'none'), (4, 'EXISTS')] time 89.4
+3 [(1, 'EXISTS'), (2, 'EXISTS')] time 23.4
+# dl3.sage 7 11 13 Q (13 and Q hit their 600 s / 300 s time-outs, no output)
+7 [(1, 'EXISTS'), (2, 'none'), (3, 'none'), (4, 'none'), (5, 'none'), (6, 'EXISTS')] time 124.9
+11 [(1, 'EXISTS'), (2, 'none'), (3, 'none'), (4, 'none'), (5, 'none'), (6, 'none'), (7, 'none'), (8, 'none'), (9, 'none'), (10, 'EXISTS')] time 276.2
+exit 124
+# der.py
+derivation failures: []

@@ -69,6 +69,10 @@ tie-breaking, both verified) [exact, `crosscheck_wnest.out`].
   column order within blocks): 1 361 050 bases completed when this note was written (every (k, r)
   with kr ≤ 12 for k ≤ 4; k = 5, r ≤ 2; k = 6, r = 1), 0 failures, max ratio 0.900. The cases
   (k, r) = (6, 2) and (7, 1) were still running; the `.out` file shows whatever finished since.
+  **[9 Nov, mechanical pass]** Both finished: (6, 2) 529 984 bases and (7, 1) 2 186 bases, 0 failures;
+  total over all kernel-form cases 1 893 220 bases, 0 failures, max ratio 0.9000
+  (`lemma_exhaustive2.out`, line "Lemma M+D canonical total"). The Lemma P block (canonical
+  [I_r | A], r(N−r) ≤ 12) also finished: 2 687 096 matrices, 0 failures.
 - Lemma P + coloop drop over **all** column multisets of F_3^q: q = 2, N ≤ 8 (all) and q = 3,
   N ≤ 6: 919 060 multisets, 0 failures; sampled 199 931 matrices q = 4..7 with forced duplicates
   and chains (series classes up to 8): 0 failures.
@@ -130,6 +134,12 @@ none was.
    84, 109, 135"; those are `bound(n)` (the crude reporting formula, labelled "formula" in
    `adversarial.out`), not `guarantee(n)` = 46, 64, 85, 109. The conclusion is unchanged (40, 55,
    75, 95 are below both), but the cited slack is overstated by ≈ 20 columns.
+**[9 Nov: items 1-3 above are fixed in `wnest.py` (mechanical queue, see
+`2026-11-09-mechanical-queue-run.md`). After the fix `wnest.py` runs WNEST for q ≥ 4 and a KOW
+round with pool q + 1 for q ≤ 3, so its worst-case recursion equals `guarantee(n)` for every n;
+`tables.py` reproduces the same numbers; `2026-11-08-rees-sde-p3-nest-break/crosscheck_wnest_fixed.out`
+compares it with `strict_wnest.py` variant `proof`.]**
+
 4. **"Below KOW for n ≥ 35" vs the stated bound.** §0 item 1 compares the exact recursion with
    KOW's; the bound in the theorem statement is the closed form, which is above KOW's recursion for
    n < 146 and above n²/3 for n < 206 (`bounds_check.out`). Theorem A's statement is correct but

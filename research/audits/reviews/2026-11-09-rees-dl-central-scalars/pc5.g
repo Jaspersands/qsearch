@@ -1,0 +1,12 @@
+F := FreeGroup(8);; rws := SingleCollector(F, List([1..8], i -> 5));;
+SetConjugate(rws, 2, 1, F.2^1*F.5^4*F.8^2);;
+SetConjugate(rws, 3, 1, F.3^1*F.6^4);;
+SetConjugate(rws, 4, 1, F.4^1*F.7^4);;
+SetConjugate(rws, 5, 1, F.5^1*F.8^1);;
+SetConjugate(rws, 3, 2, F.3^1*F.8^4);;
+SetConjugate(rws, 4, 2, F.4^1*F.6^4*F.7^2*F.8^2);;
+SetConjugate(rws, 6, 2, F.6^1*F.7^1);;
+SetConjugate(rws, 4, 3, F.4^1*F.5^1*F.7^3);;
+SetConjugate(rws, 5, 3, F.5^1*F.7^1);;
+SetConjugate(rws, 6, 4, F.6^1*F.8^1);;
+G := GroupByRwsNC(rws);;
