@@ -1,4 +1,41 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-10 Rees Square Gap: Spike Survey Follow-Up
+
+Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12. Work in
+audits/reviews/2026-11-09-rees-square-gap-stepanov/osc-mc/ with `nice -n 19 /opt/anaconda3/bin/python -I`, keeping
+each computation under ~2 core-h. Do not edit the paper.
+1. Finish the κ = 6 survey.
+   - `sh survey/run_k6_survey.sh` restarts it if it was stopped; finished primes are skipped.
+   - When all 89 `survey/mc_k6_p*_s13.npz` exist, run
+     `nice -n 19 /opt/anaconda3/bin/python -I k6_spike_survey.py > k6_spike_survey.out`.
+   - Score the two prediction files:
+     - `survey/predictions_N1mu1.txt`: give the log error per prime and its rms. Report the λ ≈ 0.25–0.31 band
+       separately, because the fit's λ-term rests on one prime and 1951 is already off by +0.44.
+     - `survey/predictions_hclass.txt`: score H1–H3, using only primes that finished after 02:16, less 1933's rerun
+       (1759 is in neither set).
+   - Acceptance: the §12.2 table is filled for every band, with spike frequency and amplitude, and H is kept or
+     refuted.
+2. The arithmetic factor F(p).
+   - Run `pairsym.py 6 p 300000` (seed 5) on every survey prime with λ ≤ 0.25. Each takes about 5–20 min; use
+     1.5·10⁶ S where N₁/μ₁ < 0.6.
+   - Compute F = share × N₁/μ₁ / R₂₊₂, with R₂₊₂ = 2,624,400/p² and N₁/μ₁ from the survey.
+   - Acceptance:
+     - the distribution of F per band, and its maximum;
+     - its Spearman correlation with symR, with |a|/√p (p = a² + 3b², a ≡ 1 mod 3), with the cubic class of 2, and
+       with |A(0,0) − mean|/√p (review-2026-11-10/fixedcell.py).
+3. κ = 7 class values at a typical λ ≈ 0.3 prime, to compare with 36037.
+   - Run `mc_classes.py 7 35099 10000 --seed 13 --out mc_k7_p35099_s13.npz` (about 1.7 core-h).
+   - Acceptance: B_L and B_D (`equal_p_chain.py`) at both primes, and whether B_D at 36037 exceeds B_D at 35099 by
+     more than 2σ.
+4. Housekeeping: already done in the working tree. `.gitignore` lists these large binary outputs, as it does
+   `survey/*.npz`:
+   - `split/*.npz` (28 MB);
+   - `review-2026-11-10/scratch/*.npz` (7 MB);
+   - `mc_k7_p36037_s13.npz` (17 MB, like the other κ = 7 npz files).
+
+   A κ = 7 npz is over 10 MB. S1 dominates, and compression saves only 13%. Add `mc_k7_p35099_s13.npz` before running
+   item 3.
+
 ## 2026-11-09 Rees Square Gap: OSC′ Follow-Up
 
 Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md §11. Work in
@@ -6,7 +43,9 @@ audits/reviews/2026-11-09-rees-square-gap-stepanov/osc-mc/ with `nice -n 19 /opt
 each computation under ~2 core-h. Do not edit the paper. Only files written by the fixed
 mc_classes.py (unequal batch counts) give valid weak-bin values; `osc_prime_B_mc.py`,
 `bin_limits.py` and `equal_p_chain.py` refuse or skip the others.
-1. κ = 6 spike survey (the deciding question, §11.9). For every prime p ≡ 1 (mod 6):
+1. κ = 6 spike survey (the deciding question, §11.9). [2026-11-10: running in adapted form, interim (89 primes in
+   [1500, 2400] ∪ [3800, 4300], S-batched, analysed by `k6_spike_survey.py`; λ ≤ 0.25 complete). Report §12; what
+   is left is item 1 of the 2026-11-10 section above.] For every prime p ≡ 1 (mod 6):
    (a) in [1800, 2400] run `mc_classes.py 6 p 5000 --seed 13`, split into two halves of about
    1 core-h each;
    (b) in [3800, 4300] run `mc_classes.py 6 p 10000 --seed 13` (about 1 core-h).

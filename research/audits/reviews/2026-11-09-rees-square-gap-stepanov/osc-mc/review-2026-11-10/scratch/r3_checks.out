@@ -1,0 +1,79 @@
+finished s13 files now: 31 [1867, 1879, 1987]
+  new 1867 lam 0.240 h 3  N1/mu1 0.68 (0.01)  PW 1.29  B_L 0.387  B_D 0.50 (z 3.4) lo 0.32 hi 0.64  symR 9.6
+  new 1879 lam 0.242 h 3  N1/mu1 0.57 (0.01)  PW 1.14  B_L 0.374  B_D 0.32 (z 2.8) lo 0.17 hi 0.43  symR 7.4
+  new 1987 lam 0.256 h 3  N1/mu1 0.92 (0.01)  PW 1.55  B_L 0.527  B_D 0.85 (z 10.2) lo 0.76 hi 0.93  symR 12.9
+band [0.22,0.25] snapshot n=13 med B_L 0.558 B_D 0.598 PW 1.823 N 1.078; flags: 1789 sDsPWsN; 1933 sDsPWsN
+band [0.22,0.25] now n=15 med B_L 0.546 B_D 0.594 PW 1.769 N 0.820; flags: 1759 sN; 1789 sDsPWsN; 1933 sDsPWsN
+band (0.25,0.31] now n=2 med B_L 0.509 B_D 0.594 PW 1.289 N 1.169; flags: 
+n=28 snapshot: n=28 (h0 15, h3 13) MW one-sided exact 0.0232 asym 0.0238; B_D>2: 6/15 vs 0/13, hypergeom P 0.0133; medians B_D 0.93/0.60 N 1.16/0.69
+n=26 (snapshot minus 1873,1951): n=26 (h0 14, h3 12) MW one-sided exact 0.0654 asym 0.0646; B_D>2: 6/14 vs 0/12, hypergeom P 0.0130; medians B_D 0.88/0.61 N 1.21/0.68
+prospective 9: n=9 (h0 6, h3 3) MW one-sided exact 0.0833 asym 0.0778; B_D>2: 1/6 vs 0/3, hypergeom P 0.6667; medians B_D 0.78/0.52 N 1.12/1.10
+prospective 9 + 1759: n=10 (h0 6, h3 4) MW one-sided exact 0.0571 asym 0.0549; B_D>2: 1/6 vs 0/4, hypergeom P 0.6000; medians B_D 0.78/0.51 N 1.12/1.26
+prospective 9 + new finished: n=12 (h0 6, h3 6) MW one-sided exact 0.0660 asym 0.0641; B_D>2: 1/6 vs 0/6, hypergeom P 0.5000; medians B_D 0.78/0.51 N 1.12/0.80
+all finished now: n=31 (h0 15, h3 16) MW one-sided exact 0.0134 asym 0.0141; B_D>2: 6/15 vs 0/16, hypergeom P 0.0068; medians B_D 0.93/0.56 N 1.16/0.68
+band1 n=14: N1/mu1/symR geo mean 0.0380, log-sd 0.172; without 1699: geo 0.0381 log-sd 0.179
+lam<=0.25 n=27: N1/mu1/symR geo mean 0.0427, log-sd 0.227
+predicted & finished: [1699, 1723, 1741, 1747, 1753, 1759, 1777, 1783, 1789, 1801, 1831, 1861, 1867, 1873, 1879, 1933, 1951, 1987]
+  13 (lam<=0.25, excl 1933)    n=13 rms 0.220 mean -0.010 max|e| 0.339
+  incl 1933                    n=14 rms 0.213 mean -0.006 max|e| 0.339
+  lam<=0.25 now, excl 1933     n=15 rms 0.239 mean +0.036 max|e| 0.372
+   1699 obs 0.608 pred 0.71 log err -0.155
+   1723 obs 0.605 pred 0.51 log err +0.171
+   1741 obs 0.365 pred 0.47 log err -0.253
+   1747 obs 0.694 pred 0.50 log err +0.329
+   1753 obs 0.820 pred 0.86 log err -0.048
+   1759 obs 1.893 pred 1.46 log err +0.260
+   1777 obs 1.254 pred 0.93 log err +0.299
+   1783 obs 0.664 pred 0.69 log err -0.038
+   1789 obs 4.496 pred 5.25 log err -0.155
+   1801 obs 1.078 pred 1.04 log err +0.036
+   1831 obs 1.097 pred 1.54 log err -0.339
+   1861 obs 1.157 pred 1.07 log err +0.078
+   1867 obs 0.675 pred 0.50 log err +0.301
+   1873 obs 0.738 pred 1.01 log err -0.314
+   1879 obs 0.565 pred 0.39 log err +0.372
+   1933 obs 2.665 pred 2.54 log err +0.048
+   1951 obs 1.416 pred 0.91 log err +0.442
+   1987 obs 0.921 pred 0.76 log err +0.192
+F(1597) split 3.644  R 1.0290  v 0.0965  F*v 0.3516   (2sig F*v 0.3935)
+F(1621) split 0.300  R 0.9988  v 0.0098  F*v 0.0029   (2sig F*v 0.0043)
+F(1657) split 3.893  R 0.9558  v 0.2514  F*v 0.9786   (2sig F*v 1.0564)
+F(1789) split 4.411  R 0.8200  v 0.3471  F*v 1.5312   (2sig F*v 1.6563)
+F(1933) split 3.333  R 0.7024  v 0.0823  F*v 0.2744   (2sig F*v 0.3091)
+F(1597) pairsym 3.376  pairsym share x survey N 3.707
+F(1621) pairsym 0.312  pairsym share x survey N 0.314
+F(1627) pairsym 1.613  pairsym share x survey N 2.075
+F(1657) pairsym 3.222  pairsym share x survey N 3.880
+F(1789) pairsym 2.271  pairsym share x survey N 4.035
+F(1933) pairsym 2.711  pairsym share x survey N 2.656
+F(2347) pairsym 0.746  pairsym share x survey N 0.708
+F(3877) pairsym 0.803  pairsym share x survey N 0.813
+k=6 T=9993 lam 1.2851  R22 0.0263  Ninv^2k^2/T 7.295
+k=7 T=5.096e+04 lam 0.4331  R22 0.0102  Ninv^2k^2/T 10.602  | with rounded lam_T 0.44: R22 0.00988  Ninv^2k^2/T 10.436
+k=8 T=3.812e+05 lam 0.1817  R22 0.00124  Ninv^2k^2/T 7.405  | with rounded lam_T 0.18: R22 0.00127  Ninv^2k^2/T 7.477
+k=9 T=2.95e+06 lam 0.0685  R22 0.000108  Ninv^2k^2/T 3.924  | with rounded lam_T 0.07: R22 0.000103  Ninv^2k^2/T 3.841
+k=10 T=2.291e+07 lam 0.0229  R22 7.56e-06  Ninv^2k^2/T 1.733  | with rounded lam_T 0.02: R22 9.92e-06  Ninv^2k^2/T 1.984
+  k=7: F*v=1.531 -> 16.23 ; 1621 2sig F*v=0.00434 -> 0.046 ; w(F=4.41) 0.0450
+  k=8: F*v=1.531 -> 11.34 ; 1621 2sig F*v=0.00434 -> 0.032 ; w(F=4.41) 0.0055
+  k=9: F*v=1.531 -> 6.01 ; 1621 2sig F*v=0.00434 -> 0.017 ; w(F=4.41) 0.0005
+  k=10: F*v=1.531 -> 2.65 ; 1621 2sig F*v=0.00434 -> 0.008 ; w(F=4.41) 0.0000
+k7 35281 R 0.0213 share 0.0426 F(pairsym N) 1.76 F(bucket N) 1.80  expected share 0.0242/0.0236  not22 0.843/0.862
+k7 35099 R 0.0215 share 0.0110 F(pairsym N) 0.48 F(bucket N) 0.49  expected share 0.0231/0.0224  not22 0.920/0.949
+k7 36037 R 0.0204 share 0.0449 F(pairsym N) 2.33 F(bucket N) 2.40  expected share 0.0192/0.0187  not22 1.012/1.041
+k7 34693 R 0.0220 share 0.0210 F(pairsym N) 0.91 F(bucket N) 0.85  expected share 0.0232/0.0247  not22 0.930/0.871
+k7 34259 R 0.0226 lam 0.2912
+k7 34469 R 0.0223 lam 0.2930
+k7 23549 R 0.0477 lam 0.2002
+k7 Spearman symR vs N1/mu1 (6 primes): 0.086; with 36037/34693 symR swapped: 0.314
+p=1933: |a|=31 b=18 (3|b: True)  |a|/rp 0.705   |L|=62 M=12  |L|/(2rp) 0.705
+p=1951: |a|=38 b=13 (3|b: False)  |a|/rp 0.860   |L|=1 M=17  |L|/(2rp) 0.011
+p=3571: |a|=52 b=17 (3|b: False)  |a|/rp 0.870   |L|=1 M=23  |L|/(2rp) 0.008
+p=3889: |a|=1 b=36 (3|b: True)  |a|/rp 0.016   |L|=2 M=24  |L|/(2rp) 0.016
+p=4219: |a|=56 b=19 (3|b: False)  |a|/rp 0.862   |L|=1 M=25  |L|/(2rp) 0.008
+p=1789: |a|=41 b=6 (3|b: True)  |a|/rp 0.969   |L|=82 M=4  |L|/(2rp) 0.969
+p=1657: |a|=35 b=12 (3|b: True)  |a|/rp 0.860   |L|=70 M=8  |L|/(2rp) 0.860
+p=1597: |a|=25 b=18 (3|b: True)  |a|/rp 0.626   |L|=50 M=12  |L|/(2rp) 0.626
+lam<=0.31 n=60: Spearman(res,|a|/rp) 0.50  Spearman(res,|L|/2rp) 0.09 ; identical |a|=|L|/2 at 25 of 60 (cube primes 25)
+  h=0 n=30 Spearman(res,|a|/rp) 0.53 (res,|L|/2rp) 0.37
+  h=3 n=30 Spearman(res,|a|/rp) 0.47 (res,|L|/2rp) 0.08
+primes with |L|/(2rp) < 0.1 (all 89):  [(1531, 0.089, 0.818), (1951, 0.011, 0.86), (2203, 0.085, 0.085), (3889, 0.016, 0.016), (4219, 0.008, 0.862), (4231, 0.054, 0.892), (4261, 0.1, 0.812)]

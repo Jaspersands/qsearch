@@ -1,0 +1,14 @@
+author fit reproduced: a -0.142 b 0.978 c 1.932  residual sd 0.196 (np.std, ddof 0); ddof=3: 0.221
+  largest residuals: 1531 +0.56, 1609 -0.23, 1669 -0.22
+  out of sample (measured / predicted, log error): 1699 0.61/0.71 -0.16  1747 0.69/0.50 +0.33  1933 2.63/2.54 +0.03  2347 0.76/0.78 -0.02  4219 1.03/0.89 +0.15
+  leave-one-out log errors: 1531:+0.65 1543:+0.03 1549:+0.13 1567:+0.09 1579:-0.03 1597:-0.12 1609:-0.26 1621:-0.12 1627:-0.08 1657:-0.19 1663:+0.20 1669:-0.23 1693:-0.18 3877:+3.66   (rms 1.004)
+  lambda coefficient when 3877 is left out: -2.06 (log lambda range of the other 13: 0.101)
+  low-lambda primes: log(N1/mu1 / symR) mean -3.267 sd 0.179 (n=13) -> N1/mu1 = 0.0381 symR
+Spearman symR vs N1/mu1 over 15 survey primes: 0.904 (bootstrap 2.5-97.5%: 0.64-0.98)
+block_rate ratio vs N1/mu1: Spearman 0.67 over 9 primes: 1579:0.868/0.39 1621:0.967/0.42 1543:0.889/0.46 3877:0.948/0.85 1933:0.985/2.63 1627:0.978/2.64 1531:0.902/4.11 1597:1.014/4.36 1657:0.982/4.47
+split/split_k6_p1597 (structured share 0.860): L: weighted cos(V_str, V_uns) 0.97, |V_uns|/|V_str| 0.73, |(1-sh)V_uns|^2/|V_all|^2 0.011;  D: weighted cos(V_str, V_uns) 0.68, |V_uns|/|V_str| 0.73, |(1-sh)V_uns|^2/|V_all|^2 0.012   [raw MC means, not noise-subtracted]
+split/split_k6_p1657 (structured share 0.833): L: weighted cos(V_str, V_uns) 0.98, |V_uns|/|V_str| 0.69, |(1-sh)V_uns|^2/|V_all|^2 0.015;  D: weighted cos(V_str, V_uns) 0.92, |V_uns|/|V_str| 0.55, |(1-sh)V_uns|^2/|V_all|^2 0.010   [raw MC means, not noise-subtracted]
+split/split_k6_p1933 (structured share 0.762): L: weighted cos(V_str, V_uns) 0.97, |V_uns|/|V_str| 0.73, |(1-sh)V_uns|^2/|V_all|^2 0.034;  D: weighted cos(V_str, V_uns) 0.59, |V_uns|/|V_str| 0.59, |(1-sh)V_uns|^2/|V_all|^2 0.027   [raw MC means, not noise-subtracted]
+real 0.33
+user 0.21
+sys 0.03

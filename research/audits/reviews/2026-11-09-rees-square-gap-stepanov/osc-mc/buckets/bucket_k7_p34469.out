@@ -1,0 +1,12 @@
+k=7 p=34469 lambda=0.293  nS=200000  configurations 784  per S 0.00392  Poisson 0.00433  ratio 0.91
+  bucket occupancy: mean 0.2929 (lambda 0.2930, the M buckets include S-excluded points), var/mean 0.999
+  occupancy P(b) observed / Poisson(mean):  b=0 0.746/0.746  b=1 0.219/0.219  b=2 0.032/0.032  b=3 0.0031/0.00313  b=4 0.000225/0.000229  b=5 1.3e-05/1.34e-05  b=6 6.26e-07/6.55e-07  b=7 2.41e-08/2.74e-08  b=8 1.15e-09/1e-09  b=9 0/3.26e-11
+  share of configurations by bucket size (Poisson e^-l l^(b-k)/(b-k)!):  b=7 0.724 (0.746)  b=8 0.276 (0.219)
+  share of configurations from the top 0.1% of S: 0.496
+  share of configurations from the top 1.0% of S: 1.000
+  S with the largest buckets (size, configurations, S, bucket):
+    b=8  N_T=8  S=[300, 8265, 11911, 14262, 17727, 29669, 33402]  bucket=[6462, 9515, 9675, 11724, 19714, 27840, 30944, 32377]
+    b=8  N_T=8  S=[3531, 10295, 17900, 19942, 26737, 30673, 33374]  bucket=[1406, 7012, 7898, 10730, 21511, 30397, 33071, 34143]
+    b=8  N_T=8  S=[747, 2288, 7365, 11592, 14605, 20995, 21237]  bucket=[398, 8244, 9193, 9454, 11967, 14531, 18344, 18922]
+    b=8  N_T=8  S=[2671, 18952, 19585, 19802, 22335, 28794, 29895]  bucket=[4640, 5936, 18462, 18476, 19457, 21387, 21590, 24906]
+    b=8  N_T=8  S=[404, 4234, 4997, 10611, 10827, 29005, 30969]  bucket=[1380, 8532, 12156, 13033, 13885, 15819, 31832, 34090]

@@ -1,0 +1,43 @@
+snapshot primes: 35 1531 ... 2017
+N1mu1 mismatches vs snapshot table: []
+h from sym[0] agrees with p mod 12: True
+band [0.19,0.22) n=14  med L/D/PW/N 0.502/0.816/2.810/0.973  maxL 1.879 (1657) maxD 10.53 (1657)  flags {1531: 'sN', 1597: 'sDsPWsN', 1627: 'sN', 1657: 'sDsPWsN', 1669: 'sD', 1693: 'sDsPW'}
+band [0.22,0.25) n=15  med L/D/PW/N 0.546/0.594/1.769/0.820  maxL 1.773 (1789) maxD 14.83 (1789)  flags {1759: 'sN', 1789: 'sDsPWsN', 1933: 'sDsPWsN'}
+band [0.25,0.31) n=6  med L/D/PW/N 0.430/0.435/1.247/0.638  maxL 0.527 (1987) maxD 0.91 (1993)  flags {1951: 'sN'}
+lambda<=0.25: n=29, spikes 9, sD 6
+34-prime band 3: n=5 med D 0.340, 1987 D_lo 0.765 -> flags {1951: 'sN', 1987: 'sD'}
+1987: D 0.853 z 10.19 lo 0.765 hi 0.933 N1 0.921 PW 1.550 h 3
+PW min lambda<=0.25: 1.138 at 1879; PW<1: [(2011, np.float64(0.92))]
+N1mu1 min: 0.365 at 1741 -> B 2.74
+ratio N1/symR lam<0.22   n=14  geo-mean 0.0380  median 0.0363  log-sd 0.172 (ddof1) 0.166 (ddof0)
+ratio N1/symR 0.22-0.25  n=15  geo-mean 0.0510  median 0.0537  log-sd 0.251 (ddof1) 0.242 (ddof0)
+ratio N1/symR >0.25      n=6  geo-mean 0.0629  median 0.0620  log-sd 0.246 (ddof1) 0.225 (ddof0)
+Spearman lam<=0.25: symR~N1 0.921 symR~L 0.915 symR~D 0.770  K~N1 0.779 K~D 0.556 maxD~D 0.460
+N1/Csym lam<=0.25: median 9.347 quartiles 7.785-12.352
+pre-registered set (16): [1741, 1777, 1783, 1789, 1801, 1831, 1861, 1867, 1873, 1879, 1951, 1987, 1993, 1999, 2011, 2017]
+lam<=0.25        n=29 h0 15 h3 14  B_D>2: 6/0  cut 0.0105  MW(B_D) exact 0.0184  max B_D h3 1.00  medians B_D 0.929/0.560 N1 1.157/0.670
+all35            n=35 h0 17 h3 18  B_D>2: 6/0  cut 0.0076  MW(B_D) exact 0.0037  max B_D h3 1.00  medians B_D 0.911/0.522 N1 1.153/0.670
+pre16            n=16 h0 8 h3 8  B_D>2: 1/0  cut 0.5000  MW(B_D) exact 0.0103  max B_D h3 0.85  medians B_D 0.784/0.422 N1 0.908/0.670
+pre16&lam<=0.25  n=10 h0 6 h3 4  B_D>2: 1/0  cut 0.6000  MW(B_D) exact 0.0571  max B_D h3 0.64  medians B_D 0.784/0.514 N1 1.118/0.670
+pre16&lam>0.25   n=6 h0 2 h3 4  B_D>2: 0/0  cut nan  MW(B_D) exact 0.1333  max B_D h3 0.85  medians B_D 0.721/0.337 N1 0.628/0.776
+prospective lam<=0.25 excl 1933  n=15 rms 0.239 mean +0.036 max|e| 0.372 (+0.372 at 1879)  range 1699-1879
+prospective lam>0.25             n=6 rms 0.247 mean +0.063 max|e| 0.442 (+0.442 at 1951)  range 1951-2017
+
+k=7 p=23549: N_inv 105, N_inv^2 k^4 = 26471025, R22 = 0.04773, Poisson configs/S (M=5p) 3.0113e-04
+bucket: ratio 0.836  se(cluster plug-in) 0.090  se(Poisson-only) 0.068
+        se with Poisson composition of bucket sizes 0.115
+pairsym: ratio 0.874 se 0.153; combined ratio 0.849 se 0.079
+share 0.0633  F = share*N1/R22: 1.114 (0.84) 1.167 (0.88)  direct 5/(nS mu R22) 1.159
+F Poisson CI: 68% 0.66-1.94  95% 0.38-2.71
+R22 share prediction at F=1: 0.0542 (0.88) 0.0568 (0.84)
+symR law: 0.038*67.44 = 2.56; log gap to 0.84: 1.12
+not-2+2 rate at 23549: 0.787-0.824
+kappa=7 2+2 weight w = 0.0553
+  k6 1597: share 0.875 ratio 3.97 -> w 3.474 (R22 1.029, F 3.38); w6/w7 62.8; expected 2+2 at k7 if w equal: 313.8, P(<=5) 1.3e-126
+  k6 1621: share 0.741 ratio 0.42 -> w 0.311 (R22 0.999, F 0.31); w6/w7 5.6; expected 2+2 at k7 if w equal: 28.1, P(<=5) 1.1e-07
+  k6 1627: share 0.780 ratio 2.05 -> w 1.599 (R22 0.991, F 1.61); w6/w7 28.9; expected 2+2 at k7 if w equal: 144.5, P(<=5) 1.0e-54
+  k6 1657: share 0.830 ratio 3.71 -> w 3.079 (R22 0.956, F 3.22); w6/w7 55.6; expected 2+2 at k7 if w equal: 278.2, P(<=5) 2.2e-111
+share-only reading: Bin(79, 0.7) P(<=5) = 7.9e-33; Bin(79,0.741) 2.0e-37
+fit on all 89: n=60 cube 25 | rho(|a|) all 0.50 h0 0.53 h3 0.47 | h0 cube 0.64 non 0.62 | h3 cube 0.79 (n=13) non 0.19 (n=17) | rho(|L|/2rp) 0.09 | med res h0 +0.57/-0.05 h3 -0.30/-0.38
+fit on the 60: n=60 cube 25 | rho(|a|) all 0.48 h0 0.52 h3 0.41 | h0 cube 0.66 non 0.56 | h3 cube 0.73 (n=13) non 0.18 (n=17) | rho(|L|/2rp) 0.08 | med res h0 +0.70/-0.03 h3 -0.28/-0.40
+|L| = 2|a| iff 3 | b, else |L| = |a +- 3b|: True

@@ -1,4 +1,117 @@
 # Research Agent Handoff
+## 2026-11-10 Rees Square Gap: κ = 6 Spike Survey (λ ≤ 0.25 Complete); Spikes Carry a Large Involution-Family Factor F; the Family Can Move the Exponent Only If F·B = κ^{Ω(κ)}; κ = 7 at λ = 0.2 Rejects a λ-Only Family Weight (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.
+Report: audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12. Scripts and outputs are in
+2026-11-09-rees-square-gap-stepanov/osc-mc. The review is in osc-mc/review-2026-11-10/: REPORT.md (rounds 1–2) and
+ROUND3.md (rounds 3 and 3b), each with the author's disposition.
+- An independent AI referee checked §12 in four passes. Its corrections are applied:
+  - a factor 2 at even κ;
+  - a pairsym undercount;
+  - a misattributed cyclotomic correlation, and a false |a| = |L|/2 identification;
+  - overstated readings;
+  - a stale snapshot, and a spike missing from the F table.
+
+  Square gap still OPEN.
+- Mechanical item 1, in adapted form: the κ = 6 survey covers every p ≡ 1 (mod 6) in [1500, 2400] ∪ [3800, 4300]
+  (89 primes, S-batched, seed 13). It is INTERIM: 35 primes were done at 03:45, including all 29 with λ ≤ 0.25. The
+  rest are running.
+
+- **[computed, Monte Carlo] The question asked: OSC′ at λ ≤ 0.25 at spike primes.**
+  - At fixed κ any finite set of primes satisfies OSC′ with some constants, so the survey measures their size.
+  - Spike primes reach B_L 1.88 (1657) and B_D 14.8 (1789). These are 4× and 18–25× the band medians (B_L 0.50–0.55,
+    B_D 0.59–0.82).
+  - 1789 also has z 9.2, PW_pair 31.7 and N1/mu1 4.50.
+  - 9 of the 29 primes are spikes by some flag, 6 of them by sD.
+  - PW_pair is above 1 at every prime with λ ≤ 0.25 (lowest 1.14), and λ_T(6) is 1.3.
+- **[computed] What spikes are made of.**
+  - Definition of 2+2 structure: some ι that swaps two pairs of S has two ι-pairs in T. pairsym.py counts it exactly,
+    per bucket.
+  - Its share at λ ≈ 0.21 is 0.78–0.88 at spike primes, against 0.71–0.74 at the one typical prime measured (1621).
+    It is 44% at 2347 and 17% at 3877; the random-b-set null is about 0.2%. Only split involutions occur at κ = 6.
+  - What separates the four split spike primes from 1621:
+    - the family factor F, the measured 2+2 rate over N_inv²κ⁴/p²: 2.3–4.4 against 0.30;
+    - the 2+2 part's B_D: 4.3–17.3 against 0.44 (mc_split.py reproduces mc_classes exactly).
+  - The not-2+2 part is lifted too: 0.61–0.88 mu1 against 0.12, and B_D 2.3–5.8.
+  - The sN spike 1627 has F 1.6–2.1.
+  - symR, the configuration rate of S = {±r_i}, tracks N1/mu1 (Spearman 0.92 at λ ≤ 0.25). A fit written at 01:20
+    predicted the 15 later primes at λ ≤ 0.25 with rms log error 0.24.
+- **[heuristic; the effect bound is elementary] Weight and effect of the family.**
+  - The 4×4 block on two ι-pairs is rank-1 with probability 2κ⁻⁵ for a split ι at even κ and κ⁻⁵ at odd κ, and never
+    for a non-split ι at even κ.
+  - With independence, R₂₊₂ = N_inv²κ⁴/p², where N_inv = C(κ,2)C(κ−2,2)/2.
+  - Measured F:
+    - 0.3–4.4 at 8 κ = 6 primes;
+    - 0.5–2.3 at 4 κ = 7 primes at λ ≈ 0.3;
+    - 1.16 at 23549 (exact Poisson 95% range 0.4–2.7).
+
+    F is not predicted, and its maximum is unknown.
+  - Elementary bound (Minkowski, |Q| ≤ n): the family adds at most F·B·κ^{O(1)} to B_D and to B_L, where B is the
+    constant of (N).
+    - So it can spoil the (1/2+o(1))κ exponent only if F·B = κ^{Ω(κ)} at some p ≥ p₀ near the threshold path. If (N)
+      holds with B = κ^{o(κ)}, that means F(p) = κ^{Ω(κ)}. §11.8's (N) fixes no size for B; §9 measures B up to 9.9.
+    - No independence assumption is needed, since F is defined from the measured rate.
+  - At T(κ), with the largest measured F·v (1789), the family would add to B_D:
+    - about 16, 11, 6 and 3 for κ = 7–10, if its absolute D-rms does not fall with p;
+    - 0.78 and 0.09 at κ = 7 and 8, if its B_D in κ²/p units stays constant;
+    - at most 0.05 with typical values.
+- **[computed] κ = 7.**
+  - λ ≈ 0.3: the 2+2 share is 1.1–4.5% at 4 primes, against an expected 1.9–2.4%. N1/mu1 is 0.89–1.11 at 6 primes
+    with symR 16–44, with no detectable rank relation (n = 6).
+  - λ = 0.2, at 23549 (the highest symR, 67):
+    - N1/mu1 is 0.84 ± 0.09, against about 2.5 for the κ = 6 proportionality. It is consistent with R₂₊₂ but does not
+      discriminate.
+    - The 2+2 weight is 0.055 mu1 (5 of 79 configurations), against 0.31 (1621) to 1.6–3.5 (spikes) at κ = 6,
+      λ ≈ 0.21. A λ-only weight would give 28–314 such configurations (P ≈ 10⁻⁷ at 28).
+    - So at equal λ the weight drops 5.6× (against 1621) to 29–63× (against spikes), where R₂₊₂ predicts 20–22×: as
+      R₂₊₂ predicts, up to F.
+    - This rejects a λ-only weight. It does not separate R₂₊₂ from other κ-scalings within about 10×. It is one prime
+      and 5 events.
+  - 36037 (λ 0.31, symR 44): `mc_classes.py 7 36037 10⁴ --seed 13` is running (osc-mc/mc_k7_p36037.log). B_L and B_D
+    will be added to §12.6.
+- **[computed, post hoc; pre-registered test running] Arithmetic.**
+  - B_D > 2 occurs only at p ≡ 1 (mod 12): 6 of 15 against 0 of 14 at λ ≤ 0.25.
+    - The exact rank test gives 0.018. On the 10 pre-registered primes at λ ≤ 0.25 it gives 0.057.
+  - The count-only spikes are all ≡ 7 (mod 12).
+  - No mechanism is known; the phase mechanism is retracted.
+  - |a|/√p (p = a² + 3b²) ranks symR in part. It is not §11.6's |L|/(2√p), except when 2 is a cube.
+- **Strongest counterexample/baseline:**
+  - 1789: B_D 14.8, the largest group constant at any κ. Its 2+2 part has B_D 17.3 and F 4.4.
+  - The random-b-set null (0.2%).
+  - κ = 7 at λ = 0.2: a 2+2 weight of 0.055 mu1, against at least 0.31 at κ = 6.
+- **Claim gates false:**
+  - square gap closed;
+  - OSC/OSC′ for any κ;
+  - any rigorous bound on spike constants;
+  - R₂₊₂ or the family estimate as a theorem;
+  - R₂₊₂ as the κ-scaling of the 2+2 weight (23549 rejects only a λ-only weight);
+  - F(p) bounded or κ^{o(κ)};
+  - B in (N) bounded or κ^{o(κ)};
+  - obstruction (c) resolved;
+  - hypothesis H, or the cyclotomic correlations, as claims;
+  - "κ = 7 has no spike primes";
+  - the family's class values at κ ≥ 7;
+  - the not-2+2 part under control;
+  - Monte Carlo values as certificates;
+  - threshold certificates at κ ≥ 6;
+  - an exponent below κ proved.
+- **Next hard question:**
+  - Is F(p) = κ^{o(κ)} uniformly over p ≥ p₀? If (N) holds with B = κ^{o(κ)}, this is the only way the 2+2 family
+    can spoil the exponent.
+  - The same question for the other bounded-orbit families.
+  - What are the not-2+2 part at spike primes, and any non-projective structure at κ ≥ 7?
+  - Proof side: an upper bound κ^{o(κ)}·N_inv²κ⁴p⁻²mu1 for the 2+2 count. No method is in hand: Weil's error is
+    κ^{O(κ²)}√p.
+- **Next command:** in osc-mc, when all 89 survey/mc_k6_p*_s13.npz exist, run
+  `nice -n 19 /opt/anaconda3/bin/python -I k6_spike_survey.py > k6_spike_survey.out`.
+  - survey/run_k6_survey.sh is still running; restarting it skips finished primes.
+  - Artifact: k6_spike_survey.out (89 primes).
+  - Acceptance:
+    - spike frequency and amplitude per band;
+    - survey/predictions_N1mu1.txt scored, with λ > 0.25 reported separately;
+    - H1–H3 of survey/predictions_hclass.txt kept or refuted. H1 is open: 1987 was flagged in a 5-prime band.
+- Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-10 Rees Square Gap: Spike Survey Follow-Up".
+
 ## 2026-11-09 Rees Square Gap: OSC′ Made Precise; Exponent (1/2+o(1))κ Conditional on OSC′; Boundary Term Refuted; Spike Primes the Live Obstruction (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.

@@ -5,9 +5,9 @@ pass. `research/GOAL.md` is binding. Search the handoff/priority archives
 only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
-As of 2026-11-09, after the handoff entry
-"2026-11-09 Rees Square Gap: OSC′ Made Precise; Exponent (1/2+o(1))κ Conditional on OSC′; Boundary Term Refuted; Spike Primes the Live Obstruction (AI Only)";
-several entries below it are from the same day.
+As of 2026-11-10, after the handoff entry
+"2026-11-10 Rees Square Gap: κ = 6 Spike Survey (λ ≤ 0.25 Complete); Spikes Carry a Large Involution-Family Factor F; the Family Can Move the Exponent Only If F·B = κ^{Ω(κ)}; κ = 7 at λ = 0.2 Rejects a λ-Only Family Weight (AI Only)";
+entries below it are from 2026-11-09 and earlier.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
 - Proved (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2, deterministic (Theorem B′;
@@ -21,7 +21,7 @@ Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
   See audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8. SAT checks use gadget_cnf5.py
   (CaDiCaL + the fixed lrat-check in audits/reviews/2026-11-09-lrat-checker-fix/), not pycosat.
 
-Now (11-09, AI only): square gap still OPEN.
+Now (11-10, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
   This is a twisted Stepanov bound (the pattern is separable); the paper says
   kappa^2-3kappa+3.
@@ -41,14 +41,32 @@ Now (11-09, AI only): square gap still OPEN.
   step; the lambda-law is excluded). kappa=7 at lambda 0.4 and 0.5: B_L 0.22-0.27, B_D < 2.6
   (2-sigma), not spikes. Per-class kappa=6 constants are NOT resolved (the earlier 2.8/3.1 were
   not bounds).
-- Live obstruction: spike primes. At kappa=6, p=1933 (lambda 0.25): PW_pair 7.2, N1/mu1 = 2.6,
-  B_L 1.2, B_D 3.7 (3-11x typical). The exponent needs OSC' at lambda_T = 0.44, 0.18, 0.07,
-  0.02 for kappa = 7..10, below almost everything tested.
+- Live obstruction: spike primes (report section 12). The kappa=6 survey is INTERIM; lambda <= 0.25
+  is complete (29 primes).
+  - Spikes reach B_L 1.88 (1657) and B_D 14.8 (1789), 4x and 18-25x the band medians. 9 of the 29
+    primes are spikes by some flag.
+  - At lambda ~ 0.21, 71-88% of (C1) configurations are 2+2 involution-structured: some iota swaps
+    two pairs of S and has two iota-pairs in T. This holds at spikes and at the one typical prime
+    measured.
+  - Spikes have a large family factor F (2.3-4.4, against 0.3) and large family class values (B_D
+    4.3-17.3, against 0.44). The rest of the measure is lifted too.
+  - Elementary bound: the family can spoil the (1/2+o(1))kappa exponent only if
+    F*B = kappa^{Omega(kappa)}, B the constant of (N). F is measured at 13 primes (0.3-4.4).
+  - At kappa=7 (lambda 0.3 and 0.2) F is 0.5-2.3, inside kappa=6's range, so the 2+2 weight
+    falls with R_2+2 = N_inv^2 kappa^4/p^2 up to F. At 23549 (lambda 0.2) it is 0.055 mu1,
+    against 0.31-3.5 at kappa=6: a weight depending on lambda alone is rejected (P ~ 1e-7), at
+    one prime.
+  - The exponent needs OSC' at lambda_T = 0.43, 0.18, 0.07, 0.02 for kappa = 7..10, below almost
+    everything tested.
 - Monte Carlo files from before the 9 Nov 22:20 batching fix overstate weak bins (report 11.3).
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
-- Next: kappa=6 spike survey (mechanical plan); (L') for the (2,2) classes; kappa=5 at 2521, 2621
-  once the machine is unloaded.
-- See audits/reviews/2026-11-09-rees-square-gap-stepanov.md section 11.
+- Next:
+  - finish the kappa=6 survey and score its pre-registered predictions;
+  - F(p) over the survey (mechanical plan 2026-11-10);
+  - a (C1) sampler for kappa=8 at lambda 0.18;
+  - (L') for the (2,2) classes;
+  - kappa=5 at 2521 and 2621, once the machine is unloaded.
+- See audits/reviews/2026-11-09-rees-square-gap-stepanov.md sections 11-12.
 Compare its full title with `rg -m1 '^## 20' research/AGENT_HANDOFF.md`.
 Other collaborators' Rees afternoon status and owner decisions are retained.
 
@@ -2581,7 +2599,10 @@ or separation is claimed.
     O1/O2 but is unproved; kappa=5 data: PW_pair < 1 at all tested primes 821-2311, but OSC's
     (H) fails at m=6. OSC' made precise (report section 11): conditionally exponent
     (1/2+o(1))kappa; no boundary term exists (refuted); spike primes are the live obstruction.
-    C1 existence proved from ~kappa^kappa/(2e). Next: kappa=6 spike survey. Paper not edited.
+    C1 existence proved from ~kappa^kappa/(2e). 11-10 (section 12): the kappa=6 spike survey is
+    complete at lambda <= 0.25, and the rest is running. Spikes are large-F 2+2 involution families
+    plus a lifted rest. The family can move the exponent only if F*B = kappa^{Omega(kappa)}. Paper
+    not edited.
   - Open math: Schedule 2 square gap (two-level E_2 itself; for prime kappa nothing beats
     kappa^{kappa+1}); poly(kappa) threshold at arity O(a^2); o(a^2) SDE finding now PROVED whenever p/a -> inf, AI-checked, pending human review (Theorem A, audits/reviews/2026-11-07-rees-sde-subquad-A.md; audits/reviews/2026-11-08-rees-sde-uniform-p.md: O(a^2/min(log a, log(p/a))) columns, every bank; bounded p still open; paper not edited, owner decision); F_3 worst case n^2/4 + O(n^{3/2}) (audits/reviews/2026-11-08-rees-sde-p3-nest.md, AI-checked); near-linear total regime open; the nu+1 IS restarts for
     kappa with two distinct primes (prime-power kappa done, I194); kappa=8 on (11897, 20000] (running); kappa=9 above 15787.

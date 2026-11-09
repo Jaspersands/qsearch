@@ -1,0 +1,50 @@
+Part A: 20 survey primes parsed (+5 earlier rows)
+
+n=17 (02:16 snapshot): B_D > 2 at [1657, 1597, 1693, 1669]; h=0 class 8, h=3 class 9
+  all 4 in h=0: one-sided 0.0294, either class 0.0824, x4 symbols 0.118
+  min over partitions/classes p = 0.0294 at ('ind(-1)', 0, 4, 8); permutation family-wise p = 0.0919
+  with the cut free (top 3..6): min p 0.0221, family-wise p = 0.2229
+  BD    by h: median 1.65 vs 0.63;  U/(n0 n3) = 0.660;  two-sided permutation p = 0.285
+  N     by h: median 1.21 vs 0.65;  U/(n0 n3) = 0.667;  two-sided permutation p = 0.267
+  BL    by h: median 0.65 vs 0.45;  U/(n0 n3) = 0.681;  two-sided permutation p = 0.239
+  symR  by h: median 33.35 vs 15.90;  U/(n0 n3) = 0.736;  two-sided permutation p = 0.112
+
+n=20 (now): B_D > 2 at [1789, 1657, 1597, 1693, 1669]; h=0 class 10, h=3 class 10
+  all 5 in h=0: one-sided 0.0163, either class 0.0325, x4 symbols 0.065
+  min over partitions/classes p = 0.0163 at ('ind(-1)', 0, 5, 10); permutation family-wise p = 0.1106
+  with the cut free (top 3..6): min p 0.0163, family-wise p = 0.1750
+  BD    by h: median 1.65 vs 0.61;  U/(n0 n3) = 0.705;  two-sided permutation p = 0.124
+  N     by h: median 1.27 vs 0.67;  U/(n0 n3) = 0.670;  two-sided permutation p = 0.211
+  BL    by h: median 0.65 vs 0.45;  U/(n0 n3) = 0.700;  two-sided permutation p = 0.142
+  symR  by h: median 33.35 vs 16.00;  U/(n0 n3) = 0.740;  two-sided permutation p = 0.075
+
+Part B: 89 primes; fit -0.332 -2.260 log lambda, residual sd 0.537
+h=0 lam<=0.31 n=30: Spearman(res,|t(0,h)|) 0.810 (author function 0.810); signed 0.017
+  Spearman(res, |t(a,b)|), rows a, columns b:
+   +0.81 +0.11 +0.22 +0.43 +0.15 -0.07
+   +0.11 -0.07 -0.48 -0.47 -0.39 -0.48
+   +0.22 -0.48 +0.15 -0.39 -0.18 -0.47
+   +0.43 -0.47 -0.39 +0.43 -0.47 -0.39
+   +0.15 -0.39 -0.18 -0.47 +0.22 -0.48
+   -0.07 -0.48 -0.47 -0.39 -0.48 +0.11
+  10 distinct cells; top three: 0.81 [(0, 0)]; 0.43 [(0, 3), (3, 0), (3, 3)]; 0.22 [(0, 2), (2, 0), (4, 4)]
+  LOO range 0.79-0.84; bootstrap 95% 0.64-0.91; permutation p(>= obs) 0.00000
+  confounds: Spearman(lam, res) -0.09, (lam, |t|) -0.08, (ind(2)%3==0, |t|) 0.57
+h=3 lam<=0.31 n=30: Spearman(res,|t(0,h)|) 0.267 (author function 0.267); signed 0.122
+  Spearman(res, |t(a,b)|), rows a, columns b:
+   +0.31 -0.17 -0.48 +0.27 +0.02 -0.56
+   -0.16 -0.11 +0.19 +0.02 -0.48 +0.19
+   -0.11 +0.30 -0.16 -0.56 +0.19 -0.17
+   +0.31 -0.16 -0.11 +0.31 -0.16 -0.11
+   -0.16 -0.56 +0.19 -0.17 -0.11 +0.30
+   -0.11 +0.19 +0.02 -0.48 +0.19 -0.16
+  10 distinct cells; top three: 0.31 [(0, 0), (3, 0), (3, 3)]; 0.30 [(2, 1), (4, 5)]; 0.27 [(0, 3)]
+  LOO range 0.19-0.35; bootstrap 95% -0.17-0.61; permutation p(>= obs) 0.07465
+  confounds: Spearman(lam, res) 0.01, (lam, |t|) -0.22, (ind(2)%3==0, |t|) 0.05
+
+16 fixedcell statistics: -0.10 0.70 0.02 0.66 0.02 0.81 0.09 0.74 0.11 0.16 -0.29 0.28 0.12 0.27 -0.01 0.35
+family-wise p (max |stat| over the 16 >= 0.81): 0.0000
+family-wise p (max over 36 cells x 2 classes, |t|, lam<=0.31, >= 0.81): 0.0000
+real 121.69
+user 69.12
+sys 1.10

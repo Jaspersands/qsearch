@@ -1,0 +1,11 @@
+h=0 lam<=0.31 n=30: Spearman(res, cube) 0.53; (res,|t|) 0.81; (res, |a|/rp) 0.53; (|t|, |a|/rp) 0.63; cube share 12/30
+   2 is a cube: n=12  max|t| 0.53  Spearman(res,|t|) +0.61  (res,|a|/rp) +0.64  median res +0.57
+   2 not a cube: n=18  max|t| 0.25  Spearman(res,|t|) +0.67  (res,|a|/rp) +0.62  median res -0.05
+   check 36 A(0,0) = p - 17 - 20a (cube class, a = +-|a|): max | |t| - (5/9)|a|/rp | = 0.010
+h=3 lam<=0.31 n=30: Spearman(res, cube) 0.13; (res,|t|) 0.27; (res, |a|/rp) 0.47; (|t|, |a|/rp) 0.62; cube share 13/30
+   2 is a cube: n=13  max|t| 0.44  Spearman(res,|t|) +0.79  (res,|a|/rp) +0.79  median res -0.30
+   2 not a cube: n=17  max|t| 0.34  Spearman(res,|t|) -0.30  (res,|a|/rp) +0.19  median res -0.38
+
+real 0.94
+user 1.18
+sys 0.88
