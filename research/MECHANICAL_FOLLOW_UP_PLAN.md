@@ -1,4 +1,16 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-09 Rees Square Gap Follow-Up
+
+Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md sections 8-10 and
+osc-k5/REPORT.md. Folder: audits/reviews/2026-11-09-rees-square-gap-stepanov/osc-k5/. Use
+`nice -n 19`, `--threads 2`, and never put a time cap on a run (the driver writes only at the end).
+1. On a machine with spare cores, run `/opt/anaconda3/bin/python -I osc_k5.py 5 2521 > sweep_D_2521.out`
+   and the same for 2621 (about 1.0-1.2 core-h each when unloaded). Then rerun `summarize.py` and
+   `trend.py`. Acceptance: two new rows in summary.out with the internal checks passing (sum of orbit
+   sizes = (p-2)(p-3)); report PW and PW_pair, no interpretation.
+2. Close out the old item 2 of "2026-11-09 Rees Square Gap": types/sep_k5_full.out can be a copy of
+   osc-k5/summary.out with a one-line header pointing to it. Acceptance: the file exists and says so.
+Do not edit the paper.
 ## 2026-11-09 Rees SDE F_q Referees (items 1-2 DONE 9 Nov; see audits/reviews/2026-11-09-mechanical-queue-run.md)
 
 Read audits/reviews/2026-11-09-rees-sde-fq-nest-referee-B.md and -referee-C.md. Edit only

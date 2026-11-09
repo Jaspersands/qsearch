@@ -6,7 +6,7 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-09, after the handoff entry
-"2026-11-09 Rees Black-Box Non-Unique Encodings: HSP Without Identity Test via the Free Cover; Chart Needs Omega(sqrt p) (AI Only)";
+"2026-11-09 Rees Square Gap Follow-Up: kappa = 5 Type Certificate to 2311, (H) Fails at m = 6, C1 Existence Below Pigeonhole (AI Only)";
 several entries below it are from the same day.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
@@ -24,9 +24,17 @@ Now (11-09, AI only): square gap still OPEN.
   kappa^2-3kappa+3.
 - Found: a separable-type certificate that O1, O2 and Chebotarev do not exclude. At kappa=4 its
   pair-signed form certifies from p=137, below 203. With Weil only it is rigorous at about
-  T_A^2. Under the open hypothesis OSC (square-root cancellation over C1 orbits) it would give
-  kappa^{(kappa+1)/2+o(1)}. Next: test OSC at kappa=5 near p=3e3.
-- See audits/reviews/2026-11-09-rees-square-gap-stepanov.md.
+  T_A^2.
+- kappa=5, exact at 56 single primes 181-2311 (validated C kernel): PW_pair < 1 at every tested
+  prime 821-2311, PW < 1 at every tested prime 1231-2311; O1 barrier 2628, T_A(5) ~ 1.25e4.
+- OSC as stated is contradicted at kappa=5: the m=6 classes (3,3), (2,4) keep a c/p bias, so
+  square-root cancellation (H) fails there. Revised conjecture OSC': 1/p bias up to support
+  m_0(kappa), faster decay above (m_0(5)=6, estimated threshold ~9e3 < T_A(5)); exponent
+  depends on m_0(kappa), undetermined. (N) and (L) look bounded; kappa=7 Monte Carlo of (N) at
+  lambda 0.15-0.31 matches the 4-cycle heuristic.
+- Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
+- Next: prove the c/p boundary term for matched (3,3) classes; run kappa=5 at 2521, 2621.
+- See audits/reviews/2026-11-09-rees-square-gap-stepanov.md sections 8-10.
 Compare its full title with `rg -m1 '^## 20' research/AGENT_HANDOFF.md`.
 Other collaborators' Rees afternoon status and owner decisions are retained.
 
@@ -1191,7 +1199,7 @@ or separation is claimed.
   thm:bb-envelope exponent > p no longer conditional on ring-to-field(iii) (Schedule 2 has
   worst-case bounds on every oracle; refereed CORRECT after 4 tightenings)
   (2026-11-09-rees-dl-scalars-schedule2-referee.md). (iii) Mechanical queue: all top items
-  DONE except the kappa=5 p <= 2628 table (BLOCKED: compute; square-gap session runs it).
+  DONE except the kappa=5 p <= 2628 table (now osc-k5/summary.out to 2311; 2521, 2621 left).
 - **Rees deep checks (11-09, AI only, pending human review).** (i) Hostile referee of the
   integrated core (prep tree): MINOR, no break; Ivanyos-Santha import matches the source; one
   Dixmier-Lister scalar check timed out (UNKNOWN); significance risk at STOC
@@ -2555,8 +2563,9 @@ or separation is claimed.
     one re-check). Proposed .tex in report §8, not applied. Prime kappa: unchanged.
   - Square gap 11-09 (audits/reviews/2026-11-09-rees-square-gap-stepanov.md): E_2 now proved
     to contain all p <= kappa^3-3kappa^2+2kappa (lower side only). The type certificate escapes
-    O1/O2 but is unproved; next is C1 existence below (kappa-1)kappa^{kappa-1} and kappa=5
-    type data. Paper not edited.
+    O1/O2 but is unproved; kappa=5 data: PW_pair < 1 at all tested primes 821-2311, but OSC's
+    (H) fails at m=6 (revised OSC', report sections 8-10); C1 existence proved from
+    ~kappa^kappa/(2e). Next: (3,3) boundary term. Paper not edited.
   - Open math: Schedule 2 square gap (two-level E_2 itself; for prime kappa nothing beats
     kappa^{kappa+1}); poly(kappa) threshold at arity O(a^2); o(a^2) SDE finding now PROVED whenever p/a -> inf, AI-checked, pending human review (Theorem A, audits/reviews/2026-11-07-rees-sde-subquad-A.md; audits/reviews/2026-11-08-rees-sde-uniform-p.md: O(a^2/min(log a, log(p/a))) columns, every bank; bounded p still open; paper not edited, owner decision); F_3 worst case n^2/4 + O(n^{3/2}) (audits/reviews/2026-11-08-rees-sde-p3-nest.md, AI-checked); near-linear total regime open; the nu+1 IS restarts for
     kappa with two distinct primes (prime-power kappa done, I194); kappa=8 on (11897, 20000] (running); kappa=9 above 15787.

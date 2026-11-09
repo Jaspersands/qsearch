@@ -1,4 +1,41 @@
 # Research Agent Handoff
+## 2026-11-09 Rees Square Gap Follow-Up: kappa = 5 Type Certificate to 2311, (H) Fails at m = 6, C1 Existence Below Pigeonhole (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.
+Report: audits/reviews/2026-11-09-rees-square-gap-stepanov.md sections 0, 8, 9, 10
+(sub-reports osc-k5/REPORT.md, osc-N/REPORT.md). Square gap still OPEN.
+
+- **[computed, exact at single primes] kappa = 5 type certificate.** A validated C kernel
+  (osc-k5/osc_kernel.c; F array identical to types/orbit_types_fast.py at 271, 311 and to
+  sep_types at kappa = 4) covers 56 primes, 181-2311. PW_pair < 1 first at 641 and at every
+  tested prime 821-2311; PW < 1 at every tested prime 1231-2311. Both far below the O1
+  barrier 2628 and T_A(5) ~ 1.25e4. Decay ~ p^-1.85 with spikes (1201, 1301, 1361).
+- **[computed] OSC parts at kappa = 5.** (N): N1/mu1 in [0.27, 0.87] for p >= 401. (L):
+  B_L in [0.22, 0.70]. (H) AS STATED IS CONTRADICTED: B_H grows 56 -> 3440 (slope +2.26);
+  the matched (3,3) and (2,4) classes carry |F^|/F^(0) ~ c/p, not square-root cancellation.
+  Probable cause [heuristic]: boundary term from the 2kappa excluded z points. Revised
+  conjecture OSC': |F^| <= B kappa F^(0)/n for support m <= m_0(kappa), faster decay above;
+  kappa = 5 data give m_0 = 6, B_all <= 0.71, estimated threshold ~9e3 B < T_A(5). Whether
+  OSC' still gives an exponent below kappa depends on m_0(kappa): undetermined.
+- **[proved; AI referee CORRECT WITH FIXES] Theorem C (osc-N).** C1 configurations exist,
+  without Weil for kappa <= 6, from 19, 137, 1451, 20233 at kappa = 3..6 (pigeonhole 31, 197,
+  2521, 38891); asymptotically from ~kappa^kappa/(2e) [argued at leading order]. Gives C1
+  only, not contractions. [proved] O1-N barrier: modulus-only (N) certificates fail up to
+  ~(kappa-1)kappa^kappa; signed certificates escape it.
+- **[Monte Carlo] (N) at kappa = 7, lambda = 0.15-0.31:** N1/mu1 = 0.85 +- 0.15 (p = 17669),
+  0.62 +- 0.12 (23549), 1.07 +- 0.18 (36037), each within 2 sigma of the 4-cycle heuristic.
+- **Claim gates false:** square gap closed; OSC/OSC' proved or (H) disproved in general;
+  PW_pair < 1 for all p >= 821; anything on [2311, 2628]; second independent implementation
+  of the kappa = 5 numbers; Theorem C gives contractions; T_A or tables changed.
+- **Next hard question:** prove the c/p boundary term for matched (3,3) classes at kappa = 5,
+  and find how m_0(kappa) grows.
+- **Next command (unloaded machine, single uncapped runs ~1.0-1.2 core-h each):** in
+  audits/reviews/2026-11-09-rees-square-gap-stepanov/osc-k5,
+  `nice -n 19 /opt/anaconda3/bin/python -I osc_k5.py 5 2521 > sweep_D_2521.out` (then the
+  same for 2621), each a single run with --threads 2. Artifact: the two output files and
+  acc_k5_p2521/2621.npy; rerun summarize.py. Acceptance: PW_pair < 1 at both.
+- Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-09 Rees Square Gap Follow-Up".
+
 ## 2026-11-09 Rees Black-Box Non-Unique Encodings: HSP Without Identity Test via the Free Cover; Chart Needs Omega(sqrt p) (AI Only)
 
 AI-only; one AI adversarial check (HOLDS WITH FIXES, all applied); no human review; no claim
@@ -260,7 +297,7 @@ Three Claude subagents ran: a proof referee, an upper-side attack and a literatu
     Untested in its regime (mean bucket size << 1).
   - kappa = 5 data (mean bucket size < 1): PW = 18.1, 9.34, 4.49, 1.95 at p = 271, 311, 401,
     521. Extrapolation puts PW < 1 near p = 640, against the O1 barrier 2628 [heuristic].
-    p = 641 is running: types/orbit_k5_641.out.
+    Superseded: see the entry "Rees Square Gap Follow-Up: kappa = 5 Type Certificate to 2311".
   - Literature: best analogue is the Paley n-e.c. threshold (Weil base 4 versus counting base 2,
     no improvement known). The all-p Paley clique lower bound is still (1/2)log2 p (Cohen).
 - **Claim gates false:** square gap closed; any threshold o(kappa^kappa); T_A/T_S/tables changed;
