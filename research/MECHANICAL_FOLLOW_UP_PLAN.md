@@ -1,4 +1,43 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-09 Rees Square Gap: OSC′ Follow-Up
+
+Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md §11. Work in
+audits/reviews/2026-11-09-rees-square-gap-stepanov/osc-mc/ with `nice -n 19 /opt/anaconda3/bin/python -I`,
+each computation under ~2 core-h. Do not edit the paper. Only files written by the fixed
+mc_classes.py (unequal batch counts) give valid weak-bin values; `osc_prime_B_mc.py`,
+`bin_limits.py` and `equal_p_chain.py` refuse or skip the others.
+1. κ = 6 spike survey (the deciding question, §11.9). For every prime p ≡ 1 (mod 6):
+   (a) in [1800, 2400] run `mc_classes.py 6 p 5000 --seed 13`, split into two halves of about
+   1 core-h each;
+   (b) in [3800, 4300] run `mc_classes.py 6 p 10000 --seed 13` (about 1 core-h).
+   - Per prime record:
+     - PW_pair (debiased) and N₁/μ₁ from the log;
+     - B_L and B_D from `equal_p_chain.py <npz files>` (the MC rows);
+     - the noise-law median c (`noise_law_c.py`);
+     - K from `cyclo_spike.py`'s `stats(p, 6)`;
+     - the largest μ_d rate from `struct_c1.py 6 p 1500 400`, divided by the run's own uniform-S
+       rate.
+   - Output: `k6_spike_survey.out`.
+   - Acceptance: the table is complete. Flag spikes (B_D or PW_pair above twice the median of their
+     band). Report their frequency and amplitude per band, and the Spearman correlation of B_D
+     with K and with N₁/μ₁.
+2. κ = 7 at a second λ = 0.5 prime: `mc_classes.py 7 58913 20000 --seed 12` (≈ 1 core-h).
+   - Analysis: `osc_prime_B_mc.py`, `pw_bin_cs.py`, `bin_limits.py`, `noise_law_c.py` and
+     `equal_p_chain.py` on the npz.
+   - Acceptance: B_D resolved (z ≥ 3), or bounded ≤ 5 at 2σ.
+3. Same-seed S-batched reruns of pre-fix κ = 6 files:
+   `mc_classes.py 6 p N --seed 11 --out mc_k6_p<p>_sb.npz` for (p, N) = (1951, 20000),
+   (2719, 30000), (3079, 30000) and (3889, 100000). These take about 0.2–0.5 core-h each.
+   - Acceptance: the naive PW_pair equals the pre-fix log's (identical configurations).
+   - Record the debiased PW_pair, the `osc_prime_B_mc.py` lines, and the B_L, B_D row of
+     `equal_p_chain.py` in `k6_sb_reruns.out`.
+4. Deferred until the machine is unloaded:
+   - κ = 5 at p = 2521, 2621 (item in "2026-11-09 Rees Square Gap Follow-Up" below);
+   - the `types/orbit_types_fast.py` cross-check at 641 and 661 (≥ 4 and ≈ 5 core-h; killed on
+     9 Nov at the 2 core-h budget, no output);
+   - κ = 7 at λ ≈ 0.3 (`mc_classes.py 7 35099 20000 --seed 12`, ≈ 2 core-h with uniform-S
+     sampling).
+
 ## 2026-11-09 LRAT Checker Fix: Queued Split Reruns (items 1-2 DONE 9 Nov, case by case)
 
 Read audits/reviews/2026-11-09-lrat-and-audit-fixes.md. Until 9 Nov evening every "LRAT VERIFIED" came

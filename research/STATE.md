@@ -6,7 +6,7 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-09, after the handoff entry
-"2026-11-09 LRAT Checker Was Unsound: Fixed Build; p = 7 (k = 2, 3) and (11,2) Re-Verified, (13,2) CaDiCaL Only (AI Only)";
+"2026-11-09 Rees Square Gap: OSC′ Made Precise; Exponent (1/2+o(1))κ Conditional on OSC′; Boundary Term Refuted; Spike Primes the Live Obstruction (AI Only)";
 several entries below it are from the same day.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
@@ -38,8 +38,9 @@ Now (11-09, AI only): square gap still OPEN.
   rigorously. OSC' is unproved for every kappa.
 - Data: m_0 = 6 at kappa = 4, 5, 6. Group constants at typical primes do not grow with kappa
   (B_L medians 0.33/0.37/0.34, B_D 1.03/0.85/0.34 at kappa = 4/5/6; equal-p factors 0.55-2.3 per
-  step; the lambda-law is excluded). Per-class kappa=6 constants are NOT resolved (the earlier
-  2.8/3.1 were not bounds).
+  step; the lambda-law is excluded). kappa=7 at lambda 0.4 and 0.5: B_L 0.22-0.27, B_D < 2.6
+  (2-sigma), not spikes. Per-class kappa=6 constants are NOT resolved (the earlier 2.8/3.1 were
+  not bounds).
 - Live obstruction: spike primes. At kappa=6, p=1933 (lambda 0.25): PW_pair 7.2, N1/mu1 = 2.6,
   B_L 1.2, B_D 3.7 (3-11x typical). The exponent needs OSC' at lambda_T = 0.44, 0.18, 0.07,
   0.02 for kappa = 7..10, below almost everything tested.

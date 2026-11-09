@@ -12,6 +12,20 @@ Sym_R(U) = per(zeta^{R_i U_j}) / k!, a function of the multiset of U.  So for on
 Q(R,C) = sum_z Sym_R(U(z)) Sym_C(V(z)) and V(R,C) = E_C1 Q(R,C).
 Convention check: V_here(R,C) matches the osc-k5 values V_exact(R,C) directly (k = 5, p = 401).
 
+Batches are by S, so configurations sharing an S fall in one batch.  Runs before 9 Nov 22:20 assigned
+batches round-robin by configuration (nconf % B); their npz files have equal batch counts.  That is
+not harmless: a bucket of size b > k gives C(b,k) configurations sharing S, and with Poisson(lambda)
+bucket sizes a fraction 1 - exp(-lambda) of all configurations comes from such buckets
+(lambda exp(-lambda) from size k+1); round-robin spreads each such cluster over several batches.
+The split-batch |V|^2 estimate then keeps a positive bias of order se^2, so the "debiased" |V| of a
+class whose true value is below about one se is inflated (to ~se) at every lambda, and at lambda >= 1
+also the S-level sampling noise stays in.  For pre-fix files, read every class or bin that is not far
+above its se as an upper estimate (pw_bin_cs.py, osc_prime_B_mc.py).
+Even with S-batching the per-class sqrt(max(sq, 0)) has mean 0.34 se_b when V = 0 (se_b = standard
+error of the batch-mean average, 16 batches); bin-level sums of the unclipped sq (pw_bin_cs.py)
+avoid that.  The per-configuration se printed by bins_report.py understates the error when
+configurations cluster; the batch-mean se does not.
+
 Usage: python mc_classes.py k p nconf [--seed s] [--batches B] [--out file.npz]
 Writes an npz with the classes, orbit sizes, permanent weights, the batch sums of Q, sum |Q|^2,
 counts, N1 estimate, and prints PW / PW_pair estimates (naive and split-batch debiased).
@@ -168,7 +182,7 @@ def main():
                 iv = canon[cv]
                 Hc = np.bincount(iu * nA + iv, minlength=nA * nA).reshape(nA, nA).astype(float)
                 Q = P @ Hc @ P.T
-                b = nconf % B
+                b = (nS - 1) % B          # batch by S (fixed 9 Nov 22:20; earlier runs used nconf % B)
                 S1[b] += Q
                 cnt[b] += 1
                 S2 += np.abs(Q) ** 2

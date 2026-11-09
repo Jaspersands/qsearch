@@ -1,4 +1,99 @@
 # Research Agent Handoff
+## 2026-11-09 Rees Square Gap: OSC′ Made Precise; Exponent (1/2+o(1))κ Conditional on OSC′; Boundary Term Refuted; Spike Primes the Live Obstruction (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.
+Report: audits/reviews/2026-11-09-rees-square-gap-stepanov.md section 11 (scripts and outputs in
+2026-11-09-rees-square-gap-stepanov/osc-bdry and osc-mc). An independent AI review found five
+errors in the first draft of section 11; all are corrected there. Square gap still OPEN.
+
+- **[identity, checked to 1e-14] The c/p bias is not a boundary term.** Under (C1),
+  V(R,C) = A(R,C) - b(R) - b(C), with A the complete one-variable character-sum part and b the
+  contribution of the 2kappa excluded points.
+  - At kappa = 5 the bias sits in A: matched (3,3) rms |b| 0.44 -> 0.15 against |A| 1.05 -> 0.65
+    over p = 401 -> 641.
+  - So the section-8 mechanism is refuted, and the requested boundary-term proof has no target.
+  - Mechanism found instead: size-biased completion, exact at kappa = 3 via cyclotomic numbers
+    [heuristic at kappa >= 4].
+- **[stated] OSC′ in two precise forms (section 11.8),** for p >= p_0(kappa). L = one-sided non-pair
+  classes and two-sided classes with support m <= m_0 = 6; D = two-sided classes with m >= 7.
+  - Per class, OSC′(B): (N) N1 >= mu1/B; (L′) |V| <= B on L; (D) |V| <= B kappa^2/p +
+    2 sigma_RC/sqrt(N_unl) on D. Here sigma_RC^2 = n/(orb_R orb_C) is the measured noise law
+    (median c = 0.94-1.01 at kappa = 5, 6 and 0.995-1.008 at kappa = 7; the spike p = 1933 has
+    1.34).
+  - Per group, OSC′_rms(B_L, B_D): the weighted rms of |V| over L is <= B_L, and over D is
+    <= B_D kappa^2/p, each plus the noise rms. It is weaker, and it is all the threshold needs
+    (Cauchy-Schwarz).
+  - Neither holds from the bottom of the (C1) range (kappa = 5, p <= 401, per class); p_0 <= T is
+    what the certificate needs. The bounded-support reading (pure noise above m_0) is FALSE.
+- **[derived, conditional] Exponent.** OSC′ implies PW_pair < 1 from
+  T = kappa^{kappa/2 + kappa/(2 ln kappa) + O(1)} max(B_L, sqrt(B_D)), i.e. exponent (1/2+o(1))kappa
+  when the constants are kappa^{o(kappa)} and m_0 = o(kappa) (osc_prime_T.out).
+  - [proved] The weights are bounded rigorously: the sum over r of |per|^2 is kappa^kappa kappa!,
+    so W_tot + 1 <= kappa^{2kappa-1}/kappa!. The only unproved input is OSC′.
+  - The exponent stays below kappa under c^kappa growth of the constants, under growth like a
+    fixed power of 1/lambda (giving max((1/2+b)/(1+b), (1+a)/(2+a)) kappa), and for any decay
+    p^{-a} on D with a > 1/ln kappa + O(1/kappa). It is lost if B_L >= kappa^{(1/2-o(1))kappa} or
+    B_D >= kappa^{(1-o(1))kappa} (kappa! is enough), if the constants grow faster than any power of
+    1/lambda, or if m_0 grows past ~kappa (kappa = 7..10).
+  - With the typical group constants (0.5, 1.6), log_kappa T = 4.91, 5.14, 5.57, 6.18 for
+    kappa = 5..8. The noise alone gives (kappa+1)/2 + log_kappa 3.3.
+- **[computed; Monte Carlo = sampling estimates] Data for OSC′ (equal_p_chain.out).**
+  - m_0 = 6 at kappa = 4, 5, 6.
+  - Group constants, noise removed: B_L median 0.33, 0.37, 0.34 and B_D median 1.03, 0.85, 0.34 at
+    kappa = 4, 5, 6. Maxima: B_L 0.46, 0.79, 1.20 and B_D 2.07, 3.04, 3.67; the kappa = 6 maxima
+    are at the spike 1933.
+  - Per class: kappa = 5 exact (L′) <= 3.5 (p >= 421), (D) <= 8.4. At kappa = 6, 7 the Monte Carlo
+    does not resolve single classes; the earlier "B_low <= 2.8, B_hi <= 3.1" were 3-sigma-deflated
+    maxima, not bounds.
+  - No kappa!-growth at equal p: B_D(5)/B_D(4) = 0.76-2.26 at five common primes, and
+    B_D(6)/B_D(5) = 0.55-0.64 (2-sigma < 0.83) at p ~ 2300.
+  - The lambda-law is excluded: at lambda = 0.5, kappa = 6 (3877) is 0.007x kappa = 5 (311) in
+    the D group (2-sigma < 0.020; a constant-B p-law gives 0.12).
+  - kappa = 7, S-batched, lambda 0.40 (47041) and 0.50 (58787): B_L 0.22 and 0.27; B_D unresolved,
+    < 2.6 at 2-sigma at 47041; CS-upper PW_pair estimates 0.20 and 0.10; neither is a spike.
+    lambda 0.40 is just below lambda_T(7) = 0.44.
+- **[computed] Spike primes: the live obstruction.**
+  - kappa = 6, p = 1933 (lambda 0.25): PW_pair 7.17, N1/mu1 = 2.63, noise law broken (c = 1.34),
+    B_L 1.20 and B_D 3.67 (3-11x the medians), every bin significant up to full support.
+  - 1951, at the same lambda, is 12x smaller in the m >= 7 bins, so spikes are properties of the
+    prime.
+  - Predictors: the cubic |L| ~ 0 and the Eisenstein angle fail. The cyclotomic 4th moment K is a
+    lead (Spearman 0.63 at kappa = 5; ranks the three kappa = 6 spikes first), but two high-K
+    kappa = 6 primes are typical.
+  - At 1933, subsets of mu_12 give ~57x the uniform (C1) rate, so multiplicative structure is
+    implicated (struct_c1_k6.out).
+  - The exponent needs OSC′ at lambda_T ~ 0.44, 0.18, 0.07, 0.02 for kappa = 7..10. Only one
+    kappa = 6 prime (lambda 0.25) and the kappa = 7 run at lambda 0.40 come close.
+- **[defect found and fixed] Monte Carlo batching.** mc_classes.py runs before 9 Nov 22:20
+  batched round-robin by configuration. A fraction 1 - e^{-lambda} of configurations come in
+  clusters sharing S, and round-robin inflates weak values to about one se. Same-seed reruns:
+  PW_pair 0.303 -> 0.258 (kappa = 6, p = 3877), 0.836 -> 0.591 (kappa = 7, p = 58787, equal to
+  its null floor; its whole "signal" was this artefact). Pre-fix weak values are upper estimates
+  only.
+- **Strongest counterexample/baseline:** p = 1933 at kappa = 6 (a prime where the certificate
+  value is 7, above the noise crossing), and the noise-only baseline
+  (kappa+1)/2 + log_kappa 3.3, which no certificate of this type can beat.
+- **Claim gates false:**
+  - square gap closed;
+  - any exponent below kappa proved (the section-11.8 exponent is conditional);
+  - OSC/OSC′ proved for any kappa, or (H) disproved in general;
+  - a finite crossing or the threshold model is a proof;
+  - Monte Carlo values are certificates;
+  - pre-fix weak bins are measurements;
+  - per-class kappa = 6 constants are bounds;
+  - a spike invariant is known;
+  - T_A or tables changed.
+- **Next hard question:** do the spike constants (B_L, B_D) stay kappa^{o(kappa)}, or grow at most
+  like a fixed power of 1/lambda, as lambda falls to lambda_T? Equivalently: does the share of
+  (C1) configurations carried by structured (multiplicative) families stay small? On the proof
+  side: (L′) for the (2,2) classes at one kappa.
+- **Next command:** in audits/reviews/2026-11-09-rees-square-gap-stepanov/osc-mc, the kappa = 6
+  spike survey of MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-09 Rees Square Gap: OSC′ Follow-Up",
+  item 1. Artifact: k6_spike_survey.out with p, PW_pair, N1/mu1, B_L, B_D, noise-law c, K and the
+  mu_d rates per prime. Acceptance: table written for every p = 1 mod 6 in [1800, 2400] and
+  [3800, 4300]; spike frequency and amplitude reported per lambda band.
+- Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-09 Rees Square Gap: OSC′ Follow-Up".
+
 ## 2026-11-09 LRAT Checker Was Unsound: Fixed Build; p = 7 (k = 2, 3) and (11,2) Re-Verified, (13,2) CaDiCaL Only (AI Only)
 
 AI-only (one Claude Code subagent); no git; paper not edited; no claim strengthened. Report:
