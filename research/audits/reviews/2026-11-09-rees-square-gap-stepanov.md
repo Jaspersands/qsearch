@@ -205,3 +205,16 @@ statement and proof of §1 and the zero-cell lemma of §2, and change the senten
 `appendix-sde-side.tex` "every prime $p \equiv 1 \pmod\kappa$ with $p \le \kappa^2 - 3\kappa + 3$ lies in
 $E_2(\kappa)$" to "with $p \le \kappa^3 - 3\kappa^2 + 2\kappa$", citing the new proposition (AI-checked,
 pending human review).
+
+## 8. κ = 5 certificate values (added later in the same pass) [computed]
+
+`types/orbit_types.py 5 p`, run under `nice -n 19`, gave the output in `types/orbit_k5_sweep.out` (plus `types/orbit_k5.out`). Each prime took 0.5–1.2 h at a load average near 300.
+
+| p | 271 | 311 | 401 | 521 |
+|---|---|---|---|---|
+| permanent-weighted PW | 18.1 | 9.34 | 4.49 | 1.95 |
+| contraction count (Rees) | 50 | 1450 | 12700 | 38800 |
+
+- PW is falling roughly like p^{-3} over 401–521. Extrapolating that **[heuristic]**, PW < 1 near p ≈ 650. That would be well below the O1 barrier 2628 and T_A(5) ≈ 1.25·10⁴.
+- No prime with PW < 1 has been computed at κ = 5. PW_pair was not computed here.
+- Next command: `orbit_types.py 5 641` and `5 661` on a less loaded machine. Acceptance test: PW < 1 at some p < 2628, which would give the first κ = 5 evidence that the type certificate escapes O1.
