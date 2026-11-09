@@ -1179,7 +1179,8 @@ or separation is claimed.
   Dixmier-Lister scalar check timed out (UNKNOWN); significance risk at STOC
   (2026-11-09-rees-core-hostile-referee.md). (ii) Black-box exponent p^e, class < p: removable,
   conditional only on Thm is-import, via the Ivanyos-Sanselme-Santha 2012 route (not new);
-  5359/5359 subgroups recovered; paper still says "not claimed" (owner decision)
+  5359/5359 subgroups recovered. Owner 9 Nov: claim it; added to the local paper patch as
+  cor:black-box-pe (credits ISS 2012; thm:bb-envelope wording left for the integrator)
   (2026-11-09-rees-exponent-pe-blackbox.md). (iii) Native application search 2: none found;
   best survivor (Legendre-masked unipotent symmetry) is constructed
   (2026-11-09-rees-native-application-search-2.md).
