@@ -1,4 +1,38 @@
 # Research Agent Handoff
+## 2026-11-09 LRAT Checker Was Unsound: Fixed Build; p = 7 (k = 2, 3) and (11,2) Re-Verified, (13,2) CaDiCaL Only (AI Only)
+
+AI-only (one Claude Code subagent); no git; paper not edited; no claim strengthened. Report:
+audits/reviews/2026-11-09-lrat-and-audit-fixes.md (fixes for audits/reviews/2026-11-09-mechanical-queue-audit.md).
+
+- **Refuted (tooling):** every "LRAT VERIFIED" of 9 Nov came from an lrat-check built from upstream
+  drat-trim master. It accepts an empty clause without a conflict, so the proof `<m+1> 0 0` verifies any
+  CNF. A second hole (an empty clause with a RAT hint, `2 0 1 -1 0`) survives restoring line 161, and
+  both of the audit's builds have it.
+- **Fixed build:** audits/reviews/2026-11-09-lrat-checker-fix/lrat-check (five marked FIX changes;
+  14/14 controls, while upstream verifies 10 of 12 bogus proofs). Its soundness is argued from the code,
+  not formally verified; CaDiCaL proofs use only its RUP path. `gadget_cnf5.py`, `pattern_sat.py`,
+  `free_cnf.py` and `run_split*.sh` refuse a checker that fails the controls.
+- **Re-verified with it:** the four p3-nest pattern SAT proofs; (7,2) unsplit; referee C's 64 UNSAT runs;
+  k = 3 at p = 7 and (11,2), case by case (2 and 31 case CNFs without the γ_(1,1) split, each tied to the
+  recorded split encoding by sha256), given the same case covers as before (the k = 3 two-case cover;
+  Lemma U).
+- **Still CaDiCaL UNSAT, not independently proof-checked:** (13,2), and the 3751/6253/686 split sub-case
+  runs themselves.
+- **Audit items P1-P8 applied; no proof conclusion changed.** A new defect was found and fixed: a
+  QS_BIGP-only IndexError in `algt.good_exact`, unreachable at the theorem prime.
+- Assumptions: finite SAT encodings (gadget_cnf5, S = P ∪ {0}, nested label set) plus Lemmas R, N/Q, U.
+  Counterexample every checker must reject: `p cnf 1 1 / 1 0` with `2 0 0` or `2 0 1 -1 0`.
+- Gates that stay false: "LRAT-verified" for (13,2), or for any run checked by an upstream-built
+  lrat-check (other sessions, cloud); checker soundness as proved; the obstruction as an algorithmic
+  lower bound.
+- Next hard question: unchanged (do all spanning k = 3 label sets at p = 5 realize three dimensions?).
+- Next command (mechanical, (13,2)): from audits/reviews/2026-11-08-rees-sde-fq-nest/,
+  `nice -n 19 /opt/anaconda3/bin/python -I ../2026-11-09-lrat-checker-fix/recheck/case_cert.py 13 pow:2 2
+  cases13.txt cases13_split.out --work <scratch> --cap 14400 --jobs 2 --budget 170000 >
+  ../2026-11-09-lrat-checker-fix/recheck/cases13_cases.out` (unmeasured, roughly 17-45 core-h).
+  Acceptance: "TOTAL: 37/37 cases certified". Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md
+  "2026-11-09 LRAT Checker Fix: Queued Split Reruns".
+
 ## 2026-11-09 Rees Full-Version Appendix Proof Check: No Break; 5 Fixable Gaps (bb-envelope Chart Check, True Class in fpt-r, Subspace Design Size, Two SDE Proofs) (AI Only)
 
 AI-only (coordinator plus 12 Claude checker subagents); nothing human-reviewed. Paper, prep tree
@@ -198,7 +232,9 @@ and -referee-C.md (scripts in the folders of the same names).
   Gain over (a+1)(a+2)/2 is a²/(2p) − O(a log a), positive only for a ≫ p log a.
 - **Correction:** Lemma Q (label reduction) was proved only in the SAT direction. Lemma N (referee
   C, checked by hand) makes it exact for S = P ∪ {0}, so every κ = 2 obstruction cell at p = 7, 11,
-  13 and k = 3 at p = 7 stands; the k = 3 two-case cover is proved (two orbits). The (b) q = 11
+  13 and k = 3 at p = 7 stands; the k = 3 two-case cover is proved (two orbits). [9 Nov LRAT fix: the
+  p = 13 cell is CaDiCaL UNSAT, not independently proof-checked (checker was unsound, 9 Nov); the p = 7
+  (k = 2 and 3) and p = 11 cells were re-verified with the fixed checker.] The (b) q = 11
   interval cell is downgraded to "P-equivariant problem only"; §4 "closes the k = 2 route" is now
   [argued].
 - Gates that stay false: novelty/priority of B′ or C; a constant below 1/4 at p = 5 from this
@@ -207,12 +243,13 @@ and -referee-C.md (scripts in the folders of the same names).
   That would give n²/6 + O(n) at p = 5.
 - Next command: enumerate GL_3(F_5)-orbits of spanning label sets that a 3-dependency piece can
   produce (or test random ones) with a reduction-free CNF in the style of
-  audits/reviews/2026-11-09-rees-sde-fq-nest-referee-B/f5_feas.py, using CaDiCaL + lrat-check.
+  audits/reviews/2026-11-09-rees-sde-fq-nest-referee-B/f5_feas.py, using CaDiCaL + lrat-check (the
+  fixed build audits/reviews/2026-11-09-lrat-checker-fix/lrat-check; the earlier build was unsound).
   Artifact audits/reviews/2026-11-10-rees-sde-p5-d3.md; acceptance: a SAT model re-verified by
   arithmetic for every tested set, or one LRAT-verified UNSAT spanning set. Mechanical items:
   MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-09 Rees SDE F_q Referees".
 
-## 2026-11-09 Rees SDE F_q Extension: p = 5 at n²/4, No Two-Dependency Gadget at p = 7, 11, 13 (LRAT-Verified) (AI Only)
+## 2026-11-09 Rees SDE F_q Extension: p = 5 at n²/4, No Two-Dependency Gadget at p = 7, 11, 13 (LRAT-Verified at p = 7, 11 After the 9 Nov Checker Fix; p = 13 CaDiCaL Only) (AI Only)
 
 AI-only; nothing human-reviewed or refereed yet; no claim gate changed; paper NOT edited.
 Note: audits/reviews/2026-11-08-rees-sde-fq-nest.md (scripts and outputs in the folder of the
@@ -225,14 +262,19 @@ same name). Continues "2026-11-08 Rees SDE Open Directions".
   one-dimensional rounds composed with the contraction (Theorem C).
 - **Obstruction [exact, finite]:** with all nested patterns F_p^*×F_p present, no 2-dimensional
   gadget from two dependencies at (p,κ) = (7,2), (11,2), (13,2), (7,3), (13,3). (7,2) is also UNSAT
-  unsplit (CaDiCaL 1436 s, 12.3 GB LRAT proof verified), independent of the Lemma U split. (11,2):
-  3751 sub-cases, (13,2): 6253 sub-cases, all LRAT-verified, coverage of each split checked against
-  its case file and `cases_cover.out`. (13,3) rests on PicoSAT only (no proof). **k = 3 at p = 7**
-  (nested set): UNSAT, 686 LRAT-verified sub-cases, given the draft's two-case first-slot cover
+  unsplit (CaDiCaL 1436 s, 12.3 GB LRAT proof verified [re-verified with the fixed checker, 9 Nov]),
+  independent of the Lemma U split. (11,2): 3751 sub-cases, (13,2): 6253 sub-cases, all LRAT-verified
+  [9 Nov: CaDiCaL UNSAT, not independently proof-checked (checker was unsound, 9 Nov); the (11,2) cell was
+  re-verified with the fixed checker as its 31 Lemma U cases without the γ_(1,1) split], coverage of
+  each split checked against its case file and `cases_cover.out`. (13,3) rests on PicoSAT only (no
+  proof). **k = 3 at p = 7** (nested set): UNSAT, 686 LRAT-verified sub-cases [9 Nov: CaDiCaL UNSAT,
+  not independently proof-checked (checker was unsound, 9 Nov); the cell was re-verified with the fixed
+  checker as its 2 cases without the γ_(1,1) split], given the draft's two-case first-slot cover
   `cases7k3.txt` (unchecked). q = 13 small coefficients: **open** (Lemma U needs S = P∪{0}; even
   two-slot sub-cases exceed 9 min; stopped). 0/1 subset sum at q = 5, 7: nothing (Lemma Z).
 - **Tooling:** `gadget_cnf5.py` (same encoding as `gadget_cnf4.py`, CaDiCaL + lrat-check; UNSAT
-  only on a verified proof), `run_split.sh`, `run_split_k.sh`. Kissat, CaDiCaL (Homebrew) and
+  only on a verified proof [9 Nov: that lrat-check build was unsound; fixed build and controls in
+  audits/reviews/2026-11-09-lrat-checker-fix/]), `run_split.sh`, `run_split_k.sh`. Kissat, CaDiCaL (Homebrew) and
   drat-trim/lrat-check (built from source in the session scratchpad) were installed with owner OK.
   Kissat DRAT proofs took drat-trim ~550 s per sub-case; LRAT checks take < 1 s.
 - Gates that stay false: Theorem B or C is new / has priority; the p ≥ 7 obstruction is an

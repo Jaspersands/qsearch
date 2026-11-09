@@ -92,6 +92,11 @@ delete closed ones and keep this under120 lines. Paths are relative to
     `--check`: it rewrites `numbers.tex` before checking. Use
     `tests/tools/test_rees_paper_numbers.py`, or import its functions
     read-only.
+18. An `lrat-check` built from upstream drat-trim is unsound: it verifies
+    empty-clause proofs of satisfiable CNFs (10 of 12 bogus controls). Use
+    only `research/audits/reviews/2026-11-09-lrat-checker-fix/lrat-check`
+    and run its `controls.sh` (zsh) first; a solver's UNSAT without that
+    check is "not independently proof-checked".
 
 ## Usage: spend it on thinking, not overhead
 - **Batch.** One command reading several files or running several checks

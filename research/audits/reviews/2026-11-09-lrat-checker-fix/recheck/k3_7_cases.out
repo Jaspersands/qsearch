@@ -1,0 +1,52 @@
+controls: CONTROLS OK: the checker under test matched all 14 expectations
+cadical 3.0.1  checker sha256 13f28c96a0f3df28
+start Mon Nov  9 21:58:49 AEDT 2026
+== case1: case fix=1,0,1:3,0,0
+sha256=d0820c5ae5d8a10e4cd2dc5c9efbe7745e64ab5e1e1d6b2252f1826a3c2f961f vars=7938 clauses=5136399
+tie-in sub-case fix=1,0,1:3,0,0;1,1,0:2,5,1 (recorded cnf_sha256 b3edc61c791111bb08fc4dc87874a9b1276fccc2dd474641cbb44549999176f1)
+sha256=b3edc61c791111bb08fc4dc87874a9b1276fccc2dd474641cbb44549999176f1 vars=7938 clauses=5136400
+tie-in: sha256 equal; case clauses are a prefix: True; 1 extra clauses, all units: True; same vars: True -> OK
+s UNSATISFIABLE
+real 1661.22
+user 1126.15
+sys 38.35
+cadical exit 20 (20 = UNSAT, 0 = unknown / time limit)
+proof bytes 22443255116
+c parsed a formula with 7938 variables and 5136399 clauses
+c topTable reallocation from 1024 to 1536
+c topTable reallocation from 1536 to 2304
+c VERIFIED
+c Added clauses = 14691115.  Deleted clauses = 11489424.  Max live clauses = 5137600
+c verification time = 428.77 secs
+real 428.78
+user 289.37
+sys 8.46
+lrat-check exit 0
+proof sha256 6c4a5b61ae16b4d432f5a200ff6dc8ef412bdb48300bcff37d912fd523e960fb
+end case1 Mon Nov  9 22:36:04 AEDT 2026
+== case2: case fix=1,0,1:0,3,0
+sha256=d604cc59208b5fef83f2c6d8178daaff3d8d5e4b133555a09035837713127cbe vars=7938 clauses=5136399
+tie-in sub-case fix=1,0,1:0,3,0;1,1,0:4,0,6 (recorded cnf_sha256 9fa82645bb95745e593425e447f2c446caa85ce37bca7633b5112594c0ec1da0)
+sha256=9fa82645bb95745e593425e447f2c446caa85ce37bca7633b5112594c0ec1da0 vars=7938 clauses=5136400
+tie-in: sha256 equal; case clauses are a prefix: True; 1 extra clauses, all units: True; same vars: True -> OK
+s UNSATISFIABLE
+real 192.40
+user 136.39
+sys 5.51
+cadical exit 20 (20 = UNSAT, 0 = unknown / time limit)
+proof bytes 2600817631
+c parsed a formula with 7938 variables and 5136399 clauses
+c WARNING hint already satisfied in lemma with index 5887585
+c WARNING hint already satisfied in lemma with index 5887585
+c WARNING hint already satisfied in lemma with index 5887585
+c WARNING hint already satisfied in lemma with index 5887585
+c VERIFIED
+c Added clauses = 6231788.  Deleted clauses = 3945922.  Max live clauses = 5137627
+c verification time = 46.34 secs
+real 46.35
+user 33.22
+sys 0.93
+lrat-check exit 0
+proof sha256 806e533a7d03398aaae172b67252e0b39ff163325a900b78f47a7aedb52eb9e6
+end case2 Mon Nov  9 22:03:20 AEDT 2026
+end Mon Nov  9 22:36:04 AEDT 2026

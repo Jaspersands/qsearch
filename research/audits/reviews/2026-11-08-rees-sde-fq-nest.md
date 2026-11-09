@@ -59,8 +59,11 @@ q^{q²}(n+1)^{q−1} [literature]).
    squares are not an interval and the realizers of a full 2-dimensional subgroup cannot be kept
    inside S. This is an obstruction for the piece framework with k = 2 dependencies, not for all
    algorithms. k = 3 at p = 7 (κ = 2, nested set F_7^*×F_7^2, 294 labels): also UNSAT [exact, given
-   the two-case split of the first slot, `cases7k3.txt`: 2 cases × 343 values of γ_(1,1) = 686
-   sub-cases, CaDiCaL, every one LRAT-verified, `k3_7_split.out`].
+   the two-case split of the first slot, `cases7k3.txt`; re-verified with the fixed checker, 9 Nov, case
+   by case: each of the 2 cases solved as one CNF without the γ_(1,1) split, CaDiCaL UNSAT with its LRAT
+   proof VERIFIED by the fixed lrat-check (`2026-11-09-lrat-checker-fix/recheck/k3_7_cases.out`). The
+   original split, 2 cases × 343 values of γ_(1,1) = 686 sub-cases in `k3_7_split.out`, is CaDiCaL UNSAT;
+   its proofs were not re-checked (checker was unsound, 9 Nov)].
 3. **Every odd p (κ = 2) and every p ≡ 1 mod 3 (κ = 3): a proved constant below 1/2 by one-dimensional sparse rounds
    [proved].** Theorem C (§4): KOW's sparse-dependency selection (support ≤ (1−1/p)(l+r)/(1−p^{−r})
    from l + r columns, r = ⌈log_p(l+1)⌉) composed with the paper's contraction weights realizes a
@@ -163,17 +166,26 @@ the others inside it), "all" = F_p^k∖0. SAT = feasible with weak nondegeneracy
 UNSAT = none exists. Scripts: `gadget_cnf4.py` (reduced CNF, `table_small.out`, `big_*.out`),
 case splits (`cases*.out`); from 2026-11-09 `gadget_cnf5.py` (same encoding, CaDiCaL with LRAT proofs
 checked by lrat-check; UNSAT is accepted only on a verified proof) with `run_split.sh` / `run_split_k.sh`
+[**9 Nov correction:** the lrat-check build used for every run of 9 Nov accepted an empty clause without a
+conflict, so its "LRAT VERIFIED" certified nothing (`2026-11-09-lrat-and-audit-fixes.md`). Runs re-done
+with the fixed build `2026-11-09-lrat-checker-fix/lrat-check` are marked "re-verified with the fixed checker,
+9 Nov"; the others are "CaDiCaL UNSAT, not independently proof-checked". The (11, 2) and k = 3 cells were
+re-done case by case: each case of the case file was solved as one CNF, without the γ_(1,1) split. That CNF
+is a clause prefix of each of its sub-case CNFs (checked on one recorded sub-case per case, whose regenerated
+CNF matches the recorded cnf_sha256), so one verified proof per case covers the case, and the case cover
+covers the cell. `gadget_cnf5.py` now defaults to the fixed build and refuses a checker that verifies a bogus
+proof]
 (each case split further over all values of γ_(1,1), an exact cover; coverage of every `*_split.out`
 was checked against its case file); p = 3 sanity in `table_old_encoding.out` (KOW SAT, NEST SAT, all-8 UNSAT).
 
 | S | k=1, d=1 | k=1, d=2 | k=2, d=2 nest | k=2, d=2 all |
 |---|---|---|---|---|
 | κ=2, p=5 ({0,±1}) | SAT | UNSAT | **SAT** | **SAT** (24 patterns) |
-| κ=2, p=7 ({0,1,2,4}) | SAT | UNSAT | UNSAT (19 cases, ≤ 4.5 s each; also unsplit, CaDiCaL 1436 s, 12.3 GB LRAT proof verified) | UNSAT (19 cases) |
-| κ=2, p=11 | SAT | UNSAT | UNSAT (31 Lemma U cases × 121 values of γ_(1,1); 3751 sub-cases, CaDiCaL, every one LRAT-verified; `cases11_split.out`) | — |
-| κ=2, p=13 | SAT | UNSAT | UNSAT (37 Lemma U cases × 169 values of γ_(1,1); 6253 sub-cases, CaDiCaL, every one LRAT-verified; `cases13_split.out`) | — |
+| κ=2, p=7 ({0,1,2,4}) | SAT | UNSAT | UNSAT (19 cases, ≤ 4.5 s each; also unsplit, CaDiCaL 1436 s, 12.3 GB LRAT proof, re-verified with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/unsplit_7_2.out`) | UNSAT (19 cases) |
+| κ=2, p=11 | SAT | UNSAT | UNSAT (31 Lemma U cases, each solved without the γ_(1,1) split, LRAT proof re-verified with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/cases11_cases.out` and `cases11_c10.out`; the earlier 31 × 121 = 3751 sub-case split `cases11_split.out` is CaDiCaL UNSAT, not independently proof-checked) | — |
+| κ=2, p=13 | SAT | UNSAT | UNSAT (37 Lemma U cases × 169 values of γ_(1,1); 6253 sub-cases, CaDiCaL UNSAT on every one, not independently proof-checked (checker was unsound, 9 Nov); `cases13_split.out`) | — |
 | κ=3, p=7 ({0,±1}) | SAT | UNSAT | UNSAT (1.3 s) | — |
-| κ=2, p=7, **k=3**, d=2 nest | — | — | UNSAT (2 cases × 343 sub-cases, LRAT-verified, `k3_7_split.out`) | — |
+| κ=2, p=7, **k=3**, d=2 nest | — | — | UNSAT (2 cases, each solved without the γ_(1,1) split, LRAT proof re-verified with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/k3_7_cases.out`; the earlier 2 × 343 sub-case split `k3_7_split.out` is CaDiCaL UNSAT, not independently proof-checked) | — |
 | κ=3, p=13 ({0,1,5,8,12}) | SAT | UNSAT | UNSAT (unsplit, 2807 s, `big_13_k3_nest.out`; and 37/37 cases, `cases13k3.out`; PicoSAT, no proof) | — |
 | (b) q=7, {0,±1} | SAT | UNSAT | UNSAT | — |
 | (b) q=11, {0,±1,±2} | SAT | UNSAT | UNSAT (581 s) **for the P-equivariant problem only**; the free problem is not established (Lemma N needs S ∩ 2S = {0}) | — |
@@ -268,9 +280,13 @@ label sets were met, none infeasible. Finite checks falsify only; Theorem B does
 
 **Obstruction [exact].** For (p, κ) = (7, 2): every one of the 19 cases of Lemma U is UNSAT, both
 for the nested set (42 labels) and for all 48 patterns; (7, 3): UNSAT (unsplit, pycosat 1.3 s and
-z3 35.5 s); (7, 2) unsplit, independent of Lemma U: UNSAT by CaDiCaL (1436 s, 12.3 GB LRAT proof
-verified by lrat-check); (11, 2): UNSAT on all 3751 sub-cases (LRAT-verified); (13, 3): UNSAT
-(PicoSAT, no proof); (13, 2): UNSAT on all 6253 sub-cases (LRAT-verified). By Lemma 2(B), a column set with one column per nested pattern in general
+z3 35.5 s); (7, 2) unsplit, independent of Lemma U: UNSAT by CaDiCaL (1436 s, 12.3 GB LRAT proof;
+re-verified with the fixed checker, 9 Nov: regenerated CNF with the same 1134 vars and 106100 clauses,
+a CaDiCaL proof of the same 12,293,854,888 bytes, verified by the fixed lrat-check in 224 s,
+`2026-11-09-lrat-checker-fix/recheck/unsplit_7_2.out`); (11, 2): UNSAT on all 31 Lemma U cases, each solved as one CNF without the γ_(1,1) split (re-verified
+with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/cases11_cases.out` and `cases11_c10.out`; the earlier split into 3751
+sub-cases is CaDiCaL UNSAT, not independently proof-checked); (13, 3): UNSAT (PicoSAT, no proof); (13, 2): UNSAT on all 6253
+sub-cases (CaDiCaL UNSAT, not independently proof-checked (checker was unsound, 9 Nov)). By Lemma 2(B), a column set with one column per nested pattern in general
 position (q ≥ p(p−1) − 2) has R(X) ⊇ no 2-dimensional subgroup and no S-witness. Any piece gaining
 2 from two dependencies therefore needs a *missing* pattern [argued; proved is only the
 infeasibility of the full nested label set and its supersets, for any column multiplicities by Lemma N], and the only patterns a selection
@@ -360,9 +376,11 @@ running time poly(a, log p); gain over (a+1)(a+2)/2 is a²/(2p) − O(a log a), 
 a ≫ p log a); B Lemmas R, Q, U ACCEPT WITH FIXES (Lemma Q repaired by Lemma N, adopted above;
 Lemma U's 3p − 2 cover proved for every p); C the k = 3 two-case cover ACCEPT (two orbits of the
 first slot under σ(a, b) = (λa, Mb + av), proof in the report; k = 4 uses `1,0,1:3,0,0,0` and
-`1,0,1:0,3,0,0`); D encoding and γ_(1,1) splits exact, all certificates re-checked, **GAP for the
+`1,0,1:0,3,0,0`); D encoding and γ_(1,1) splits exact, all certificates re-checked [9 Nov: coverage only; the "LRAT
+VERIFIED" lines it counted came from the unsound checker, see the correction in §2], **GAP for the
 q = 11 interval cell** (adopted: downgraded); E Lemma Z ACCEPT (wording). An independent encoding
-without Lemma Q (`free_cnf.py`) re-derives the p = 7 cells (58 LRAT-verified runs). Verified by
+without Lemma Q (`free_cnf.py`) re-derives the p = 7 cells (58 runs; their LRAT proofs were re-verified
+with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/refC_compare.out`). Verified by
 the integrator by hand: Lemma N, and the two-orbit claim for the k = 3 first slot (w_b ≠ 0 maps to
 (0, e_1) by M^T w_b = e_1, ⟨w_b, v⟩ = −λw_a; w_b = 0 maps to (1, 0) by λ = w_a^{-1}; σ acts on labels only).
 

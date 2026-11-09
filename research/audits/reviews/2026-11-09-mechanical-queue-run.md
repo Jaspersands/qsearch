@@ -3,14 +3,17 @@
 One session worked through the top of `research/MECHANICAL_FOLLOW_UP_PLAN.md`. Everything is a
 finite control or a text/code alignment: no new mathematical claim, no proof conclusion changed.
 Interpreter `/opt/anaconda3/bin/python`, `nice -n 19`, no computation above about 25 CPU minutes.
-`lrat-check` was taken from another session's scratchpad (`LRAT_CHECK` env).
+`lrat-check` was taken from another session's scratchpad (`LRAT_CHECK` env). [9 Nov audit: that build was
+unsound (it accepted an empty clause without a conflict); `2026-11-09-lrat-and-audit-fixes.md` lists which
+results below were re-verified with the fixed checker and which are now CaDiCaL UNSAT, not independently
+proof-checked.]
 
 ## Status by plan item
 
 | section / item | status | artifact |
 |---|---|---|
 | SDE Open Directions 1 (wnest.py discrepancies) | DONE | `2026-11-08-rees-sde-p3-nest/wnest.py`; `tables.out` identical numbers; `…-nest-break/crosscheck_wnest_fixed.{py,out}` |
-| Open Directions 2 (k = 4 SAT; (6,2), (7,1)) | DONE | `…-p3-nest/pattern_sat_k4.out` (all UNSAT, LRAT-verified); `…-break/lemma_exhaustive2.out` already complete |
+| Open Directions 2 (k = 4 SAT; (6,2), (7,1)) | DONE | `…-p3-nest/pattern_sat_k4.out` (all UNSAT, LRAT-verified; re-verified with the fixed checker, 9 Nov); `…-break/lemma_exhaustive2.out` already complete |
 | Open Directions 3 (text per referee) | DONE | `2026-11-08-rees-sde-p3-nest.md` |
 | Worst Case Below a² 1 (U⁺ climb J ∈ {4,5}) | DONE | `…-subquad-A-break/climb_uplus.py`, `out/climb_uplus_J45.json`, `out/climb_uplus_J5.json` |
 | Worst Case 2 (J = 4, κ = 3, theorem prime) | DONE | `attack_bigp.py`, `la.py` (`QS_BIGP=1`), `bigp_equiv.py`, `out/bigp_J4k3_1.*` |
@@ -35,7 +38,8 @@ Interpreter `/opt/anaconda3/bin/python`, `nice -n 19`, no computation above abou
   tie-breaking (2), the same kinds as in the earlier cross-check.
 - **Pattern SAT.** `pattern_sat.py` got a `solver='cadical'` option (DIMACS, LRAT proof, accepted only after
   lrat-check); `pattern_sat_k4.py` uses it. Results: k = 4 all 80 patterns UNSAT (150 s); 54 patterns
-  (δ₁ full support) UNSAT (839 s); 36 patterns UNSAT (1486 s); k = 3, 12 patterns UNSAT (60 s). The earlier
+  (δ₁ full support) UNSAT (839 s); 36 patterns UNSAT (1486 s); k = 3, 12 patterns UNSAT (60 s) [all four
+  proofs re-verified with the fixed checker, 9 Nov]. The earlier
   stopped pycosat output is kept as `pattern_sat_k4.pycosat_stopped.out`. Lemma M+D (6,2) and (7,1) had
   already finished in `lemma_exhaustive2.out` (529 984 and 2 186 bases; total 1 893 220 bases, 0 failures);
   recorded in the break report.
@@ -67,10 +71,14 @@ no such files exist.]
 - **Referees 2.** `tests/test_rees_sde_p5_simple.py`: SIMPLE5 on the eight `attack_ref.py` families (generators
   loaded from its source) at n ∈ {3, 4, 6, 9, 12}, m = guarantee_simple(n): 40 witnesses, nonzero, entries in
   {0, ±1}, zero sum; 4.8 s.
-- **Extension.** `check_split_cover.py`: 3751/3751, 6253/6253, 686/686 sub-cases LRAT-verified UNSAT; negative
+- **Extension.** `check_split_cover.py`: 3751/3751, 6253/6253, 686/686 sub-cases LRAT-verified UNSAT [9 Nov: the
+  "LRAT VERIFIED" strings came from the unsound build, so these are CaDiCaL UNSAT, not independently
+  proof-checked (checker was unsound, 9 Nov); the coverage itself is exact; the k = 3, p = 7 and (11,2)
+  cells were re-verified with the fixed checker as their 2 and 31 cases without the γ_(1,1) split,
+  `2026-11-09-lrat-checker-fix/recheck/{k3_7_cases,cases11_cases,cases11_c10}.out`]; negative
   controls (deleted line, a SAT line) fail it; `int13_split.out` is empty (no coverage claimed). The test
   `tests/test_rees_sde_fq_cnf5.py` (p = 7 case UNSAT with LRAT VERIFIED; p = 5 nest SAT) takes 2 s and skips
-  without lrat-check. README: eight `big_*.out` files are empty; parameters inferred from names; supersession
+  without lrat-check [9 Nov: it now uses the fixed build and has a negative-control test; 3 passed]. README: eight `big_*.out` files are empty; parameters inferred from names; supersession
   map; `big_13_int_nest.out` has no superseding result.
 - **Exponent p^e.** `tests/test_rees_exponent_pe_blackbox.py`: 81_3, 243_24, 625_8 each recover every subgroup
   with calls_max ≤ cap; 11.7 s.
@@ -83,14 +91,17 @@ no such files exist.]
 
 ## Tests run (this session only)
 
-`pytest -q tests/test_rees_sde_fq_cnf5.py` (with `LRAT_CHECK`): 2 passed; without: 2 skipped.
+`pytest -q tests/test_rees_sde_fq_cnf5.py` (with `LRAT_CHECK`): 2 passed; without: 2 skipped. [With the unsound
+build; on 9 Nov, with the fixed build and the new negative-control test: 3 passed.]
 `tests/test_rees_exponent_pe_blackbox.py`: 3 passed. `tests/test_rees_sde_p5_simple.py`: 1 passed.
 No other tests were run; the full suite was not run.
 
 ## Caveats
 
 - `lrat-check` came from another session's scratchpad (`…/193e5e8e…/scratchpad/drat-trim/lrat-check`), copied
-  to this session's scratchpad.
+  to this session's scratchpad. [9 Nov audit: that build had line 161 of `lrat-check.c` commented out (as
+  upstream ships it) and verified a one-line bogus proof on any CNF; fixed build and controls in
+  `2026-11-09-lrat-checker-fix/`.]
 - Another session was concurrently editing `research/MECHANICAL_FOLLOW_UP_PLAN.md` (the "SDE F_q Referees"
   section appeared mid-run); my plan edits are inline "DONE/BLOCKED" notes only.
 - Unrelated modified files in the working tree (handoff, STATE, dfs2b outputs) were not touched.

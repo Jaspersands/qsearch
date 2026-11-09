@@ -258,7 +258,9 @@ means it exists for every column set with these patterns. Results for d = 3:
 - k = 3, all 26 patterns: UNSAT. k = 4, all 80 patterns: UNSAT. With Theorem 3 (rank C ≤ 2
   impossible) this says: **a pattern-complete bundle of dimension k ≤ 4 never gains 3** — the
   generic (r* + k)-set in general position gains at most 2 whatever k ≤ 4 is. (k = 4 with δ_1 of
-  full support, 54 patterns: UNSAT, rerun 9 Nov with CaDiCaL and an LRAT proof checked by lrat-check, 839 s;
+  full support, 54 patterns: UNSAT, rerun 9 Nov with CaDiCaL and an LRAT proof checked by lrat-check, 839 s
+  [the build used then was unsound; all four proofs below were re-verified with the fixed checker, 9 Nov,
+  `2026-11-09-lrat-checker-fix/recheck/pattern_proofs.out`];
   k = 4 with δ_1 and δ_2 both of full support, 36 patterns: UNSAT, 1486 s; k = 3 with δ_1 and δ_2 both of
   full support, 12 patterns: UNSAT, 60 s — all in `pattern_sat_k4.out`; the earlier pycosat run of the 54-pattern
   case, stopped after ~30 min with no answer, is kept as `pattern_sat_k4.pycosat_stopped.out`.)
@@ -295,7 +297,7 @@ All exact over F_3 (numpy int64), interpreter `/opt/anaconda3/bin/python -B`.
 | `tables.py` → `tables.out` | exact `guarantee(n)` recursion vs closed form and KOW's recursion; N(q) bound; WNEST+ on random instances | closed form holds 4 ≤ n < 3000; WNEST < the note's sharpened KOW-type recursion for all n ≥ 35 (KOW's recursion (8): all n ≥ 9, referee); WNEST+ 0.26 n² at n = 150 |
 | `adversarial.py` → `adversarial.out` | 11 structured families at n = 60 (chains with series classes 5–20, low rank, subspaces, duplicates, sparse, projective, signed blocks, block-diagonal); hill climb n = 8..14 | no assert fired; m_used ≤ random case; hill climb far below the guarantee |
 | `pattern_sat.py` → `pattern_sat.out` | own SAT encoding; d = 2 validation; d = 3 for k = 3 natural sets; PGL(3,3) orbits of point sets | 218/82 reproduced; all d = 3 natural sets UNSAT; orbit table |
-| `pattern_sat_k4.py` → `pattern_sat_k4.out` | d = 3 from k = 4 bundles (CaDiCaL + LRAT proof checked since 9 Nov; `pattern_sat.py` gained a `solver='cadical'` option) | all 80 patterns UNSAT (150 s); 54 patterns (δ_1 full support) UNSAT (839 s); 36 patterns (δ_1, δ_2 full support) UNSAT (1486 s); k = 3, 12 patterns UNSAT (60 s); every UNSAT LRAT-verified |
+| `pattern_sat_k4.py` → `pattern_sat_k4.out` | d = 3 from k = 4 bundles (CaDiCaL + LRAT proof checked since 9 Nov; `pattern_sat.py` gained a `solver='cadical'` option) | all 80 patterns UNSAT (150 s); 54 patterns (δ_1 full support) UNSAT (839 s); 36 patterns (δ_1, δ_2 full support) UNSAT (1486 s); k = 3, 12 patterns UNSAT (60 s); every UNSAT LRAT-verified (re-verified with the fixed checker, 9 Nov: `2026-11-09-lrat-checker-fix/recheck/pattern_proofs.out`) |
 | `pool_climb.py` → `pool_climb.out` | hill climb over single pools maximizing the selected weight after peeling | max wt − (r*+2) = 4, 4, 5, 5 at q = 8, 10, 12, 14; no assert fired |
 
 ## 6. Claim gates, next question, next command

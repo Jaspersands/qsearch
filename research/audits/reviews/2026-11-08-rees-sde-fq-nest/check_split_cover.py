@@ -9,6 +9,11 @@ cases11/cases13 and k3_7.
 Usage (from this folder):  python check_split_cover.py [FILE ...]
 With no argument the three completed outputs are checked.  Empty files (e.g. int13_split.out) are
 reported as EMPTY: no coverage is claimed for them.
+
+9 Nov: this script only reads the 'LRAT VERIFIED' strings; it does not re-check proofs. The three
+split files were written with an unsound lrat-check build (it verified an empty clause without a
+conflict), so an OK here means exact coverage by CaDiCaL UNSAT lines, not proof-checked UNSAT,
+until the splits are rerun with ../2026-11-09-lrat-checker-fix/lrat-check.
 """
 import itertools, os, re, sys
 
@@ -37,10 +42,16 @@ def check(path):
         return "UNKNOWN", f"{name}: no case file registered"
     p = k = None
     got, bad = {}, []
+    params = None   # 9 Nov (audit, Extension 1): every line must share one (p, S, k, d, L, mode) header
     for ln in lines:
         m = HEAD.match(ln)
         if not m:
             bad.append("unparsed: " + ln[:100]); continue
+        hdr = ln.split(" fix=", 1)[0]
+        if params is None:
+            params = hdr
+        elif hdr != params:
+            bad.append("parameters differ: " + hdr[:100]); continue
         p, k = int(m.group(1)), int(m.group(2))
         fix, res, info = m.group(5), m.group(6), m.group(7)
         if res != "UNSAT" or "'proof': 'LRAT VERIFIED'" not in info:

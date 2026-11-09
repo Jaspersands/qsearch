@@ -3,7 +3,14 @@
 AI-only adversarial referee, 9 November 2026, one Claude Code subagent; not human-reviewed. No git,
 no network. The only files written are this report and `2026-11-09-rees-sde-fq-nest-referee-C/`
 (scripts and outputs). Interpreter `/opt/anaconda3/bin/python -B`, CaDiCaL plus the scratchpad
-`lrat-check`. Total CPU is about 15 minutes.
+`lrat-check`. Total CPU is about 15 minutes. [9 Nov correction: that build was unsound (it accepted an
+empty clause without a conflict). All 64 UNSAT runs of this report were re-run on 9 Nov with the fixed
+build `2026-11-09-lrat-checker-fix/`: output lines identical apart from timings (verdicts, variable and
+clause counts; for the three gadget_cnf5 reruns also CNF hashes and proof sizes), every proof VERIFIED
+(`2026-11-09-lrat-checker-fix/recheck/refC_compare.out`). The split files that `split_coverage.py`
+counts were not re-checked: CaDiCaL UNSAT, not independently proof-checked. The k = 3, p = 7 and (11, 2)
+cells were re-verified separately, case by case without the γ_(1,1) split
+(`2026-11-09-lrat-checker-fix/recheck/k3_7_cases.out`, `cases11_cases.out`, `cases11_c10.out`).]
 
 ## Verdicts
 
@@ -40,7 +47,7 @@ disjunction over columns, so one equivariant choice per orbit could in principle
 - *Independent confirmation.* `free_cnf.py` is a new encoding without Lemma Q (and optionally
   without Lemma R). It gives UNSAT at p = 7, κ = 2: 19/19 Lemma U cases for the nested set,
   19/19 for all 48 patterns, and 19/19 nested without Lemma R. It also gives UNSAT at p = 7,
-  κ = 3 unsplit. All 58 runs are LRAT-verified.
+  κ = 3 unsplit. All 58 runs are LRAT-verified [re-verified with the fixed checker, 9 Nov].
 - *Sampled check.* `lemma_n_check.py` tested the equivalence on 120 feasible models with
   nondegeneracy dropped, at p = 5 and p = 7, κ = 2 and 3. There were 82 degenerate directions
   and 0 violations.
@@ -129,7 +136,7 @@ should be labelled as a solver verdict. The (7, 2) unsplit 1436 s run was not re
   κ = 2).
 - **Sanity checks.**
   - `orbit_k.py` gives 2 orbits at (p, k) = (7, 3), (7, 4) and (11, 3).
-  - The forced case γ_{(3,0)} = 0 is UNSAT in 9.7 s, LRAT-verified.
+  - The forced case γ_{(3,0)} = 0 is UNSAT in 9.7 s, LRAT-verified [re-verified with the fixed checker, 9 Nov].
   - Two sub-cases were re-run and agree with the original CNFs byte for byte (same sha256):
     `3,0,0;1,1,0:2,5,1` and `0,3,0;1,1,0:4,0,6` (`rerun_k3_7.out`).
   - For k = 4 use `1,0,1:3,0,0,0` and `1,0,1:0,3,0,0`.
@@ -149,11 +156,14 @@ So it is exact for S = P ∪ {0} (Finding 1), and not shown to be exact for inte
 
 - `run_split.sh` and `run_split_k.sh` enumerate all p^k values of γ_(1,1). That is an exact cover.
 - `split_coverage.py` (independent parser) found cases11 3751/3751, cases13 6253/6253 and k3_7
-  686/686, with 0 missing, 0 extra, 0 duplicated, and every line UNSAT with LRAT VERIFIED.
+  686/686, with 0 missing, 0 extra, 0 duplicated, and every line UNSAT with LRAT VERIFIED [9 Nov: those
+  strings came from the unsound build; CaDiCaL UNSAT, not independently proof-checked (checker was unsound,
+  9 Nov)].
 - `cases{7,11,13}.txt` and `cases13k3.txt` equal the `cases_gen.py` output.
 - The acceptance test `'c VERIFIED' in stdout` rejects a truncated proof and a proof against a
   weakened CNF: lrat-check prints "c NOT VERIFIED" for both, and that line does not contain the
-  substring "c VERIFIED".
+  substring "c VERIFIED". [9 Nov: but that build printed "c VERIFIED" for a one-line proof of the empty
+  clause without hints, on any CNF; see `2026-11-09-lrat-checker-fix/controls.out`.]
 
 ## A. Theorem C (checked steps)
 
@@ -184,10 +194,10 @@ So it is exact for S = P ∪ {0} (Finding 1), and not shown to be exact for inte
 
 | script | output | result |
 |---|---|---|
-| `free_cnf.py` (encoding without Lemma Q, optionally without R) | `free_p7_k2.out`, `free_p7_k2_noR.out`, `free_p7_k3kappa.out`, `free_interval.out` | p = 7 κ = 2 nested and all: 38/38 UNSAT, LRAT. Without R: 19/19 UNSAT. κ = 3 unsplit: UNSAT. Interval k = 1 at q = 11, 13: UNSAT. p = 5 nested: SAT (model checked). |
+| `free_cnf.py` (encoding without Lemma Q, optionally without R) | `free_p7_k2.out`, `free_p7_k2_noR.out`, `free_p7_k3kappa.out`, `free_interval.out` | p = 7 κ = 2 nested and all: 38/38 UNSAT, LRAT (re-verified with the fixed checker, 9 Nov). Without R: 19/19 UNSAT. κ = 3 unsplit: UNSAT. Interval k = 1 at q = 11, 13: UNSAT. p = 5 nested: SAT (model checked). |
 | `lemma_n_check.py` | `lemma_n_check.out` | Lemma N equivalence on 120 feasible models, 0 violations. The p = 11 run was stopped and not tested. |
 | `orbit_k.py` | `orbit_k.out` | Lemma U and the k ≥ 3 covers complete. |
-| `split_coverage.py` | `split_coverage.out` | All three split files are exact covers, all LRAT-verified. |
+| `split_coverage.py` | `split_coverage.out` | All three split files are exact covers, all LRAT-verified [9 Nov: by the unsound build; CaDiCaL UNSAT, not independently proof-checked (checker was unsound, 9 Nov)]. |
 | `contraction_check.py` | `contraction_check.out` | Contraction exists at κ = 2, 3 for every p < 1000. |
 | gadget_cnf5 re-runs | `rerun_k3_7.out` | Matching sha256; Lemma U forced case UNSAT. |
 
@@ -204,7 +214,12 @@ So it is exact for S = P ∪ {0} (Finding 1), and not shown to be exact for inte
    (11, 2) and (13, 2), and at k = 3 for (7, 2): no 2-dimensional realization with weak
    nondegeneracy exists for any column multiset whose label set contains the nested set. This
    rests on the LRAT-verified split runs plus Lemmas R, N, Q, U; the p = 7 cells are also
-   confirmed without Lemma Q.
+   confirmed without Lemma Q. [9 Nov: the split runs for (11, 2), (13, 2) and k = 3 at (7, 2) are CaDiCaL
+   UNSAT, not independently proof-checked (checker was unsound, 9 Nov). Re-verified with the fixed
+   checker: the p = 7, k = 2 cells (this report's runs and the (7, 2) unsplit run); the k = 3 cell at
+   (7, 2), given the two-case first-slot cover, and the (11, 2) cell, given Lemma U's 31 cases, by
+   solving each case as one CNF (`2026-11-09-lrat-checker-fix/recheck/k3_7_cases.out`,
+   `cases11_cases.out`, `cases11_c10.out`). (13, 2) is not re-verified.]
    - Hence a piece with dim D(X) = 2 and full nested patterns gains no plane and has no witness.
    - This is not an algorithmic lower bound, and not a proof that the k = 2 framework fails on
      some instance.

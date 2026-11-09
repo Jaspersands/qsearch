@@ -10,6 +10,12 @@ the run touched, against the named referee and break reports. Paths below are re
 (temporary). No proof conclusion of the run is overturned. The **"LRAT-verified"** label is the exception: it is
 void wherever the proof was not kept (X1).
 
+**Disposition (9 Nov, later):** X1 and P1-P8 are fixed or relabelled in `2026-11-09-lrat-and-audit-fixes.md`.
+One correction to X1: both patched builds below (`lratfix/lrat-check-fixed`, `lratfix/lrat-check-strict`) still
+verify `2 0 1 -1 0` (an empty clause with a RAT hint) on the satisfiable `p cnf 1 1 / 1 0`; the build in
+`2026-11-09-lrat-checker-fix/` rejects it, and all re-verifications use that build. Upstream master does ship
+line 161 commented out (the file fetched on 9 Nov was never edited).
+
 ## Problems, most material first
 
 | # | where | problem | fix |

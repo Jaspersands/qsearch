@@ -1,0 +1,5 @@
+controls: CONTROLS OK: the checker under test matched all 14 expectations
+checker /Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-09-lrat-checker-fix/lrat-check sha256 13f28c96a0f3df28; cadical 3.0.1
+1 cases from cases11_c10.txt; tie-in sub-cases from cases11_split.out; cap 5400 s wall per case; CPU budget 99999 s
+1,0,1:2,0;0,1,1:9,0: cnf 2121eb6cff107729 (3982 vars, 1323886 clauses); tie-in OK [1,1,0:0,0]; cadical UNSAT (606 s CPU, 745 s wall); proof 8899592961 bytes sha256 2f0b41b75a98a708; lrat-check VERIFIED (exit 0, 132 s CPU); case CPU 741 s
+TOTAL: 1/1 cases certified (tie-in OK, UNSAT, LRAT VERIFIED by the fixed checker); 0 skipped, 0 not certified; CPU 741 s

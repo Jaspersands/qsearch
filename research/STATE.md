@@ -6,17 +6,20 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-09, after the handoff entry
-"2026-11-09 Rees Square Gap Follow-Up: kappa = 5 Type Certificate to 2311, (H) Fails at m = 6, C1 Existence Below Pigeonhole (AI Only)";
+"2026-11-09 LRAT Checker Was Unsound: Fixed Build; p = 7 (k = 2, 3) and (11,2) Re-Verified, (13,2) CaDiCaL Only (AI Only)";
 several entries below it are from the same day.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
 - Proved (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2, deterministic (Theorem B′;
   KOW's q = 5 constant 0.4 -> 0.25). Theorem C: (1−1/p)a²/2 + O(a log a) (κ = 2 every odd p,
-  κ = 3 at p ≡ 1 mod 3). Exact, LRAT-verified (Lemma Q repaired by Lemma N): no two-dependency
-  2-dim gadget at p = 7, 11, 13 (κ = 2); k = 3 at p = 7 also UNSAT. q = 11, 13 interval S open.
+  κ = 3 at p ≡ 1 mod 3). Exact (Lemma Q repaired by Lemma N): no two-dependency 2-dim gadget at
+  p = 7, 11, 13 (κ = 2); k = 3 at p = 7 also UNSAT. The lrat-check build used on 9 Nov was
+  unsound; re-verified with the fixed checker: p = 7 (k = 2, 3) and p = 11. p = 13 is CaDiCaL UNSAT,
+  not independently proof-checked (rerun queued; audits/reviews/2026-11-09-lrat-and-audit-fixes.md).
+  q = 11, 13 interval S open.
 - Next: does every spanning k = 3 label set at p = 5 realize three dimensions (n²/6 + O(n))?
   See audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8. SAT checks use gadget_cnf5.py
-  (CaDiCaL + lrat-check), not pycosat.
+  (CaDiCaL + the fixed lrat-check in audits/reviews/2026-11-09-lrat-checker-fix/), not pycosat.
 
 Now (11-09, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -27,14 +30,24 @@ Now (11-09, AI only): square gap still OPEN.
   T_A^2.
 - kappa=5, exact at 56 single primes 181-2311 (validated C kernel): PW_pair < 1 at every tested
   prime 821-2311, PW < 1 at every tested prime 1231-2311; O1 barrier 2628, T_A(5) ~ 1.25e4.
-- OSC as stated is contradicted at kappa=5: the m=6 classes (3,3), (2,4) keep a c/p bias, so
-  square-root cancellation (H) fails there. Revised conjecture OSC': 1/p bias up to support
-  m_0(kappa), faster decay above (m_0(5)=6, estimated threshold ~9e3 < T_A(5)); exponent
-  depends on m_0(kappa), undetermined. (N) and (L) look bounded; kappa=7 Monte Carlo of (N) at
-  lambda 0.15-0.31 matches the 4-cycle heuristic.
+- OSC' made precise (report section 11). The c/p bias is NOT a boundary term (exact
+  decomposition; it sits in the complete-sum part). Two forms: per class OSC'(B), and per group
+  OSC'_rms(B_L, B_D) (weighted rms over the m <= 6 and one-sided classes <= B_L, over m >= 7
+  <= B_D kappa^2/p, plus noise). Conditionally either gives exponent (1/2+o(1))kappa:
+  kappa/2 + kappa/(2 ln kappa) + log_kappa max(B_L, sqrt B_D) + O(1). Weights are bounded
+  rigorously. OSC' is unproved for every kappa.
+- Data: m_0 = 6 at kappa = 4, 5, 6. Group constants at typical primes do not grow with kappa
+  (B_L medians 0.33/0.37/0.34, B_D 1.03/0.85/0.34 at kappa = 4/5/6; equal-p factors 0.55-2.3 per
+  step; the lambda-law is excluded). Per-class kappa=6 constants are NOT resolved (the earlier
+  2.8/3.1 were not bounds).
+- Live obstruction: spike primes. At kappa=6, p=1933 (lambda 0.25): PW_pair 7.2, N1/mu1 = 2.6,
+  B_L 1.2, B_D 3.7 (3-11x typical). The exponent needs OSC' at lambda_T = 0.44, 0.18, 0.07,
+  0.02 for kappa = 7..10, below almost everything tested.
+- Monte Carlo files from before the 9 Nov 22:20 batching fix overstate weak bins (report 11.3).
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
-- Next: prove the c/p boundary term for matched (3,3) classes; run kappa=5 at 2521, 2621.
-- See audits/reviews/2026-11-09-rees-square-gap-stepanov.md sections 8-10.
+- Next: kappa=6 spike survey (mechanical plan); (L') for the (2,2) classes; kappa=5 at 2521, 2621
+  once the machine is unloaded.
+- See audits/reviews/2026-11-09-rees-square-gap-stepanov.md section 11.
 Compare its full title with `rg -m1 '^## 20' research/AGENT_HANDOFF.md`.
 Other collaborators' Rees afternoon status and owner decisions are retained.
 
@@ -1232,7 +1245,8 @@ or separation is claimed.
   Near-linear: only promise-problem hardness below ~2a (Legendre PRF); total regime untouched.
   Handoff entry "2026-11-08 Rees SDE Open Directions". (iv) F_q (11-09, AI-refereed): p = 5 at
   n²/4 + 3n/2 + 2 (Theorem B′); (1−1/p)a²/2 + O(a log a) at every odd p (κ = 2); no
-  two-dependency gadget at p = 7, 11, 13 (LRAT-verified). Handoff entry "2026-11-09 Rees SDE F_q Referees".
+  two-dependency gadget at p = 7, 11, 13 (LRAT-verified at p = 7, 11 with the fixed checker; p = 13 CaDiCaL UNSAT,
+  not independently proof-checked, 9 Nov checker fix). Handoff entry "2026-11-09 Rees SDE F_q Referees".
 - **Rees SDE worst case below a² (11-07, AI only, pending human review): Theorem A.**
   Every bank in F_p^a with D_J(a)+O(Ja) columns, J = ceil(log_kappa a), fixed kappa, is solved
   Las Vegas in poly(a, log p) time at p >= ~72 kappa^2 a^6 J^2: O(a²/log a) columns, versus
@@ -2564,8 +2578,9 @@ or separation is claimed.
   - Square gap 11-09 (audits/reviews/2026-11-09-rees-square-gap-stepanov.md): E_2 now proved
     to contain all p <= kappa^3-3kappa^2+2kappa (lower side only). The type certificate escapes
     O1/O2 but is unproved; kappa=5 data: PW_pair < 1 at all tested primes 821-2311, but OSC's
-    (H) fails at m=6 (revised OSC', report sections 8-10); C1 existence proved from
-    ~kappa^kappa/(2e). Next: (3,3) boundary term. Paper not edited.
+    (H) fails at m=6. OSC' made precise (report section 11): conditionally exponent
+    (1/2+o(1))kappa; no boundary term exists (refuted); spike primes are the live obstruction.
+    C1 existence proved from ~kappa^kappa/(2e). Next: kappa=6 spike survey. Paper not edited.
   - Open math: Schedule 2 square gap (two-level E_2 itself; for prime kappa nothing beats
     kappa^{kappa+1}); poly(kappa) threshold at arity O(a^2); o(a^2) SDE finding now PROVED whenever p/a -> inf, AI-checked, pending human review (Theorem A, audits/reviews/2026-11-07-rees-sde-subquad-A.md; audits/reviews/2026-11-08-rees-sde-uniform-p.md: O(a^2/min(log a, log(p/a))) columns, every bank; bounded p still open; paper not edited, owner decision); F_3 worst case n^2/4 + O(n^{3/2}) (audits/reviews/2026-11-08-rees-sde-p3-nest.md, AI-checked); near-linear total regime open; the nu+1 IS restarts for
     kappa with two distinct primes (prime-power kappa done, I194); kappa=8 on (11897, 20000] (running); kappa=9 above 15787.

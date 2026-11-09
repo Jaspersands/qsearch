@@ -295,7 +295,7 @@ Details and commands: `2026-11-09-mechanical-queue-run.md`. All harness changes 
    families (the J45 run reached the branch only at J = 4, hence the second file).
 2. **J = 4, κ = 3 inside the theorem prime range** (`attack_bigp.py`, `la.py` with `QS_BIGP=1`, i.e.
    Python-int arithmetic; `bigp_equiv.py` shows identical traces to the int64 build on 79 banks at
-   p < 2³¹: the 22 family banks, which reach none of the case-3.x branches, plus, since 9 Nov (audit
+   p < 2³¹: the 22 family banks, which reach neither of the U⁺ branches used at the theorem prime, plus, since 9 Nov (audit
    P6), the 57 saved `interesting/*case33_Uplus*` banks, which reach case 3.3 U⁺ (57), 3.0 U⁺ (25),
    3.1 W (1) and the 3.3 closure (6), but not the top phase; `out/bigp_equiv_{int64,bigp}.json`,
    `out/bigp_equiv_compare.out`, 0 differences. Adding them exposed a `QS_BIGP`-only `IndexError` in
@@ -312,6 +312,11 @@ Details and commands: `2026-11-09-mechanical-queue-run.md`. All harness changes 
 3. §8 items 2, 3 and 7: `subquad.py` now asserts (Y) (hypothesis r ≥ q + b, the inequality for C ≥ 2, and
    b + π ≥ F(b)), the T_m(c) condition m ≤ J − 2 before the top phase, and the top-round block count
    |S| ≤ m + 1 ≤ J − 1; `run_tests.py: planted()` no longer raises `KeyError 'Ub'` (forward returned
-   "direct" before setting `Ub`; 672 parameter combinations now run without error). The eleven test groups
+   "direct" before setting `Ub`; 672 parameter combinations now run without error). [9 Nov audit P7: that
+   first fix used Ω = [] after such an exit, although rounds may already have been realised, which silently
+   dropped the Ω component of the later columns. Ω is now `rebuild(Fd, st["rounds"])`. The four groups that
+   call `planted()` (planted, stress, thmprime, climb) were rerun: output identical to the stored `*_1.out`.
+   Probe `2026-11-07-rees-sde-subquad-A/planted_probe.{py,out}`: 352 calls, 0 errors, 108 direct exits, 68 of
+   them with realised rounds (rebuilt Ω of rank 1-5, never None).] The eleven test groups
    (planted, topbank, topbank2, vtwist, vtwist2, critical, heavy, stress, fams, thmprime, climb) were rerun with the
    asserts on: identical totals to the stored `*.out` files (vtwist differs only by the later `trace` key).

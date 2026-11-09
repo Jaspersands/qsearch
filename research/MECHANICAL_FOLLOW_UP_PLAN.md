@@ -1,4 +1,35 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-09 LRAT Checker Fix: Queued Split Reruns (items 1-2 DONE 9 Nov, case by case)
+
+Read audits/reviews/2026-11-09-lrat-and-audit-fixes.md. Until 9 Nov evening every "LRAT VERIFIED" came
+from an unsound lrat-check build (upstream master, line 161 commented out). The fixed build is
+audits/reviews/2026-11-09-lrat-checker-fix/lrat-check; on a new machine run its `build.sh` first and
+require "CONTROLS OK". `run_split.sh`, `run_split_k.sh`, `gadget_cnf5.py`, `pattern_sat.py` and
+referee C's `free_cnf.py` now default to it and refuse a checker that fails the controls. Work in
+audits/reviews/2026-11-08-rees-sde-fq-nest/, `nice -n 19`, `SCRATCH=<scratch dir>`. Do not edit the paper.
+1. (11,2). **DONE 9 Nov, case by case:** each of the 31 Lemma U cases was solved as one CNF, without the
+   gamma_(1,1) split, UNSAT and VERIFIED by the fixed checker
+   (`../2026-11-09-lrat-checker-fix/recheck/cases11_cases.out`, 30 cases; `cases11_c10.out`, the last one,
+   rerun alone with a longer cap). Labels replaced in the note, README, referee C, handoff and STATE. The
+   split rerun (`./run_split.sh 11 pow:2 cases11.txt <jobs> cases11_split_fixed.out`, about 4.3 core-h)
+   is not needed for the claim.
+2. k = 3 at p = 7. **DONE 9 Nov, case by case:** both cases of `cases7k3.txt` UNSAT and VERIFIED
+   (`../2026-11-09-lrat-checker-fix/recheck/k3_7_cases.out`). Labels replaced.
+3. (13,2), still CaDiCaL only. Case by case first:
+   `nice -n 19 /opt/anaconda3/bin/python -I ../2026-11-09-lrat-checker-fix/recheck/case_cert.py 13 pow:2 2 cases13.txt cases13_split.out --work $SCRATCH/cases13 --cap 14400 --jobs 2 --budget 170000 > ../2026-11-09-lrat-checker-fix/recheck/cases13_cases.out`
+   (unmeasured; roughly 17-45 core-h, scaled from p = 11, where the hardest cases cost 0.35-0.65 of their
+   split time and the easy ones far less). Each proof is deleted after its check, but the largest p = 11
+   case proof was 10 GB, so leave free disk for two much larger ones. Acceptance: the line
+   "TOTAL: 37/37 cases certified". A case that hits the cap: rerun it alone with a one-line case file and
+   a longer cap (as `cases11_c10.txt`). Fallback, the split rerun:
+   `./run_split.sh 13 pow:2 cases13.txt <jobs> cases13_split_fixed.out` (about 58 core-h; 970 GB of
+   proofs in total, 4.8 GB at most per sub-case), accepted when `check_split_cover.py` with
+   `cases13_split_fixed.out` added to `CASEFILE` prints OK 6253/6253 and every cnf_sha256 equals the one
+   on the same fix string in `cases13_split.out`. Then replace the (13,2) label "CaDiCaL UNSAT, not
+   independently proof-checked" in the note, README, referee C, handoff and STATE.
+4. Any other session or cloud run that built lrat-check from upstream drat-trim has the same defect;
+   the handoff's next command (p = 5, k = 3, "CaDiCaL + lrat-check") must use the fixed build.
+   Acceptance: its report quotes the `controls.sh <binary>` line "CONTROLS OK".
 ## 2026-11-09 Rees Square Gap Follow-Up
 
 Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md sections 8-10 and
@@ -36,12 +67,16 @@ Read audits/reviews/2026-11-08-rees-sde-fq-nest.md. Folder: audits/reviews/2026-
    cases13_split.out, k3_7_split.out.
    **DONE 9 Nov:** `check_split_cover.py` (+ `check_split_cover.out`): OK 3751/3751, 6253/6253, 686/686;
    int13_split.out is empty, reported as EMPTY (no coverage claimed); negative controls (a deleted
-   line, a SAT line) make it FAIL.
+   line, a SAT line) make it FAIL. [9 Nov audit: the "LRAT VERIFIED" lines it counts came from the unsound
+   checker, so coverage is exact but the split verdicts are CaDiCaL only; the (11,2) and k3_7 cells were
+   re-verified case by case and the (13,2) rerun is queued (top section); it now also
+   requires one shared (p, S, k, d, L) header per file, output unchanged.]
 2. Add tests/test_rees_sde_fq_cnf5.py: gadget_cnf5.py on `7 pow:2 2 2 nest --fix "1,0,1:3,0;0,1,1:0,3"`
    gives UNSAT with 'LRAT VERIFIED', and `5 pow:2 2 2 nest` gives SAT (skip if cadical or
    lrat-check is missing; LRAT_CHECK env var). Acceptance: passes in under 30 s.
    **DONE 9 Nov:** `tests/test_rees_sde_fq_cnf5.py`, 2 passed in 2.1 s with LRAT_CHECK set; 2 skipped
-   when lrat-check is not on PATH / LRAT_CHECK.
+   when lrat-check is not on PATH / LRAT_CHECK. [9 Nov audit: it now prefers the fixed build and adds a
+   negative-control test (bogus empty-clause proofs must fail); 3 passed; with the upstream build 2 fail.]
 3. Add a folder README listing which `big_*.out` files are empty because their PicoSAT runs were
    stopped on 2026-11-09, and which `*_split.out` file supersedes each. Do not delete outputs.
    **DONE 9 Nov:** folder `README.md` (parameters of the empty `big_*.out` files are inferred from their
@@ -104,7 +139,8 @@ Read audits/reviews/2026-11-08-rees-sde-p3-nest.md and its -referee/-break repor
 2. Finish the k = 4, 54-pattern SAT check (pattern_sat_k4.py) and the exhaustive Lemma M+D
    cases (6,2), (7,1) in -p3-nest-break. Acceptance: UNSAT / 0 failures recorded in .out.
    **DONE 9 Nov:** `pattern_sat_k4.out`: k = 4 all 80 / 54 / 36 patterns and k = 3 12 patterns all UNSAT
-   (CaDiCaL, LRAT-verified; 150 s, 839 s, 1486 s, 60 s); (6,2) and (7,1) had already finished in
+   (CaDiCaL, LRAT-verified; 150 s, 839 s, 1486 s, 60 s; the four proofs were re-verified with the fixed
+   checker on 9 Nov, audits/reviews/2026-11-09-lrat-checker-fix/recheck/pattern_proofs.out); (6,2) and (7,1) had already finished in
    `lemma_exhaustive2.out` (0 failures, 1 893 220 bases in total).
 3. Edit -p3-nest.md text per the referee: dual distance >= 2; KOW comparison against KOW's
    recursion (8); mark Remark (b) unproved.
@@ -124,12 +160,17 @@ Read audits/reviews/2026-11-07-rees-sde-subquad-A.md (Theorem A) and -A-break.md
    p < 2^31 in the break harness. Acceptance: 0 assertion failures.
    **DONE 9 Nov:** `la.py` with `QS_BIGP=1` (Python ints; unchanged by default; identical traces to int64 on 22
    banks, `bigp_equiv.py`), `attack_bigp.py`: p = 2789427520807, 131 banks, 3480 back-substitution passes,
-   0 failures (`out/bigp_J4k3_1.json`).
+   0 failures (`out/bigp_J4k3_1.json`). [9 Nov audit P3, P6: the 3.3 U+ recursion was reached on 4 banks and
+   3.0 U+ on 1; the top phase was not. `bigp_equiv.py` now also replays the 57 `interesting/` case-3.3 banks:
+   79 runs, 0 differences (`out/bigp_equiv_compare.out`), after fixing a QS_BIGP-only IndexError in
+   `algt.good_exact` (unreachable for p > 3e6).]
 3. Fix the generator KeyError 'Ub' in subquad-A planted(); add explicit (Y), top-round
    block-count and T_m(c) asserts to subquad.py.
    **DONE 9 Nov:** `run_tests.py planted()` fixed (672 parameter combinations, 0 errors); `subquad.py`
    asserts (Y), m <= J-2 before the top phase and top-round block count; the 11 stored test groups rerun with
-   identical totals.
+   identical totals. [9 Nov audit P7: planted() now rebuilds Omega from the realised rounds after an early
+   "direct" exit instead of using Omega = []; planted, stress, thmprime, climb rerun identical;
+   `planted_probe.out` 352 calls, 0 errors.]
 Do not edit the paper; integration is an owner decision.
 
 ## 2026-11-07 Scalar OPI Tilted-Walk Admission
