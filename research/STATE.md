@@ -6,8 +6,8 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-10, after the handoff entry
-"2026-11-10 Rees Square Gap: κ = 4's 2+2 Family in Closed Form (Cross-Ratio Quadratic Characters; G → 1 by Weil at Fixed κ); at Every Fixed κ G → 1 with Weil Range κ^{(4+o(1))κ}, Correcting κ^{cκ²}; κ = 5 Shape Pre-Registered and Held (AI Only)";
-entries below it are from 2026-11-09 and earlier.
+"2026-11-10 Rees dfs2b Queue Finished: E_2(8) Determined (293 Primes), E_2(9) Known to 25000; Paper Pass Applied Locally (AI Only)";
+several entries below it are from the same day.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
 - Proved (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2, deterministic (Theorem B′;
@@ -1286,11 +1286,14 @@ or separation is claimed.
   full-version lemmas). Paper pass prepared locally (2026-11-09-rees-paper-pass-prep, gitignored).
 - **Repo (11-09).** Only `main` exists, locally and on GitHub. Paper drafts, outreach 04/05,
   third-party texts/PDFs, claude_inputs, >10 MB outputs are gitignored (local only).
-- **Local dfs2b queue (11-09 12:20).** 35 of 99 jobs done (kappa=9 exceptions 21871-24103):
-  non-members 21871, 22051, 22303, 23671 (witnesses verified, 0 bad), 31 members. 8 running
-  (24121-24499), 7 exceptions queued; the 49 plain cross-checks are offloaded to cloud shards
-  S1-S3 (brief 2026-11-09-rees-dfs2b-cloud-plain-brief.md); copy their lines into the queue's
-  out/ before it reaches them. Shared machine: ~20 h per job.
+- **dfs2b queue FINISHED (11-10, AI only, pending human review).** E_2(8) is DETERMINED: 293
+  primes, largest 14281 (1.23 kappa^4.5); all 556 primes = 1 mod 8 up to 20000 decided, none above
+  (explicit-contraction sweeps). E_2(9) known only up to 25000: 414 members, largest 24967; 1295
+  listed exceptions above 25000 and (9^9/2, T_A(9)] still open. Non-members 21871, 22051, 22303,
+  23671, 24841 have witnesses checked by an independent verifier and PARI (530 witness lines, 0
+  bad); every plain-mode cross-check INFEASIBLE. Report audits/reviews/2026-11-10-rees-dfs2b-queue-final.md.
+  Paper pass APPLIED locally to docs/papers/rees-hsp (core 35 pp., companion 211 pp., clean);
+  backup in the gitignored prep folder. The Ivanyos personal-communication sentence is still not in.
 - **Rees SDE open directions (11-08, AI only, pending human review).** (i) p = 3, worst-case
   F_3^n subset sum: PROVED deterministic poly time at n²/4 + O(n^{3/2}) vectors (KOW: n²/3);
   proof referee no gap, break attempt no failure, no prior source found; beats KOW's explicit

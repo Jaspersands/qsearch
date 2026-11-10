@@ -1,4 +1,19 @@
 # Research Agent Handoff
+## 2026-11-10 Rees dfs2b Queue Finished: E_2(8) Determined (293 Primes), E_2(9) Known to 25000; Paper Pass Applied Locally (AI Only)
+
+- Proved (AI only, pending human review; computational): E_2(8) consists of exactly 293 primes,
+  largest 14281. Every p = 1 mod 8 up to 20000 has a pruned dfs2b verdict, and none above 20000 is a
+  member by the existing explicit-contraction sweeps. E_2(9) is determined only up to 25000 (414
+  members, largest 24967); 1295 listed exceptions above 25000 and the range (9^9/2, T_A(9)] stay open.
+- Checks: the five new kappa=9 non-members (21871, 22051, 22303, 23671, 24841) and all 530 stored
+  witness lines pass a new verifier written from the definition (no code shared with dfs2b.c) and a
+  PARI/GP check; negative controls rejected. All plain-mode reruns INFEASIBLE, no prime has two
+  verdicts. The 44 jobs dropped from the queue have verdicts in 2026-11-07-rees-cloud-late-results.txt.
+- Claim gates unchanged. The E_2(9)-exact gate stays false.
+- Paper: paper-pass.patch applied to docs/papers/rees-hsp (local, gitignored), both PDFs clean.
+- Next hard question: E_2(9) above 25000 (1295 exceptions). Next command: none queued; a dfs2b run
+  over the exceptions would need a new brief. Report: audits/reviews/2026-11-10-rees-dfs2b-queue-final.md.
+
 ## 2026-11-10 Rees Square Gap: κ = 4's 2+2 Family in Closed Form (Cross-Ratio Quadratic Characters; G → 1 by Weil at Fixed κ); at Every Fixed κ G → 1 with Weil Range κ^{(4+o(1))κ}, Correcting κ^{cκ²}; κ = 5 Shape Pre-Registered and Held (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.

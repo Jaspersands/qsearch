@@ -1,0 +1,111 @@
+conflicting verdicts: 0
+kappa=8: primes p=1 mod 8 up to 20000: 556; decided 556; undecided 0 []
+  members (INFEASIBLE) 293; largest 14281; ratio largest/k^((k+1)/2) = 1.2327
+  non-members (FEASIBLE) 263
+  program combinations over decided primes:
+     457  dfs2b
+      50  dfs2+dfs2b
+      47  dfs2b+dfs2b-plain
+       1  dfs2b+dfs2b-nosym+dfs2b-plain
+       1  cloud-D+dfs2b
+kappa=9: primes p=1 mod 9 up to 20000: 372; decided 372; undecided 0 []
+  members (INFEASIBLE) 342; largest 19963; ratio largest/k^((k+1)/2) = 0.3381
+  non-members (FEASIBLE) 30
+  program combinations over decided primes:
+     288  dfs2b
+      41  dfs2+dfs2b
+      36  cloud-E+dfs2b
+       4  cloud-A+dfs2b
+       2  dfs2b+dfs2b-plain
+       1  dfs2b+dfs2b-nosym+dfs2b-plain
+kappa=9 sweep exceptions above 20000: 1373 (largest 424549)
+  decided 78: members 72 [20071, 20089, 20107, 20143, 20161, 20269, 20287, 20323, 20341, 20359, 20521, 20593, 20719, 20773, 20809, 20899, 21061, 21169, 21277, 21313, 21493, 21529, 21601, 21673, 21727, 21799, 21817, 21943, 21961, 21997, 22159, 22447, 22483, 22501, 22573, 22699, 22717, 22807, 23041, 23059, 23131, 23167, 23203, 23293, 23311, 23473, 23509, 23563, 23581, 23689, 23743, 23761, 23833, 23869, 23887, 23977, 24049, 24103, 24121, 24229, 24247, 24337, 24373, 24391, 24481, 24499, 24517, 24697, 24733, 24859, 24877, 24967]; non-members [21187, 21871, 22051, 22303, 23671, 24841]
+  undecided 1295; smallest undecided 25057
+  largest decided member 24967; ratio to 9^5 = 0.4228
+    20071 INFEASIBLE via ['dfs2b']
+    20089 INFEASIBLE via ['dfs2b']
+    20107 INFEASIBLE via ['dfs2b']
+    20143 INFEASIBLE via ['dfs2b']
+    20161 INFEASIBLE via ['dfs2b']
+    20269 INFEASIBLE via ['dfs2b']
+    20287 INFEASIBLE via ['dfs2b']
+    20323 INFEASIBLE via ['dfs2b']
+    20341 INFEASIBLE via ['dfs2b']
+    20359 INFEASIBLE via ['dfs2b']
+    20521 INFEASIBLE via ['dfs2b']
+    20593 INFEASIBLE via ['dfs2b']
+    20719 INFEASIBLE via ['dfs2b']
+    20773 INFEASIBLE via ['dfs2b']
+    20809 INFEASIBLE via ['dfs2b']
+    20899 INFEASIBLE via ['dfs2b']
+    21061 INFEASIBLE via ['dfs2b']
+    21169 INFEASIBLE via ['dfs2b']
+    21187 FEASIBLE via ['dfs2b']
+    21277 INFEASIBLE via ['dfs2b']
+    21313 INFEASIBLE via ['cloud-C']
+    21493 INFEASIBLE via ['cloud-C']
+    21529 INFEASIBLE via ['cloud-C']
+    21601 INFEASIBLE via ['cloud-C']
+    21673 INFEASIBLE via ['cloud-C']
+    21727 INFEASIBLE via ['cloud-C']
+    21799 INFEASIBLE via ['cloud-C']
+    21817 INFEASIBLE via ['cloud-C']
+    21871 FEASIBLE via ['dfs2b']
+    21943 INFEASIBLE via ['dfs2b']
+    21961 INFEASIBLE via ['dfs2b']
+    21997 INFEASIBLE via ['dfs2b']
+    22051 FEASIBLE via ['dfs2b']
+    22159 INFEASIBLE via ['dfs2b']
+    22303 FEASIBLE via ['dfs2b']
+    22447 INFEASIBLE via ['dfs2b']
+    22483 INFEASIBLE via ['dfs2b']
+    22501 INFEASIBLE via ['dfs2b']
+    22573 INFEASIBLE via ['dfs2b']
+    22699 INFEASIBLE via ['dfs2b']
+    22717 INFEASIBLE via ['dfs2b']
+    22807 INFEASIBLE via ['dfs2b']
+    23041 INFEASIBLE via ['dfs2b']
+    23059 INFEASIBLE via ['dfs2b']
+    23131 INFEASIBLE via ['dfs2b']
+    23167 INFEASIBLE via ['dfs2b']
+    23203 INFEASIBLE via ['dfs2b']
+    23293 INFEASIBLE via ['dfs2b']
+    23311 INFEASIBLE via ['dfs2b']
+    23473 INFEASIBLE via ['dfs2b']
+    23509 INFEASIBLE via ['dfs2b']
+    23563 INFEASIBLE via ['dfs2b']
+    23581 INFEASIBLE via ['dfs2b']
+    23671 FEASIBLE via ['dfs2b']
+    23689 INFEASIBLE via ['dfs2b']
+    23743 INFEASIBLE via ['dfs2b']
+    23761 INFEASIBLE via ['dfs2b']
+    23833 INFEASIBLE via ['dfs2b']
+    23869 INFEASIBLE via ['dfs2b']
+    23887 INFEASIBLE via ['dfs2b']
+    23977 INFEASIBLE via ['dfs2b']
+    24049 INFEASIBLE via ['dfs2b']
+    24103 INFEASIBLE via ['dfs2b']
+    24121 INFEASIBLE via ['dfs2b']
+    24229 INFEASIBLE via ['dfs2b']
+    24247 INFEASIBLE via ['dfs2b']
+    24337 INFEASIBLE via ['dfs2b']
+    24373 INFEASIBLE via ['dfs2b']
+    24391 INFEASIBLE via ['dfs2b']
+    24481 INFEASIBLE via ['dfs2b']
+    24499 INFEASIBLE via ['dfs2b']
+    24517 INFEASIBLE via ['dfs2b']
+    24697 INFEASIBLE via ['dfs2b']
+    24733 INFEASIBLE via ['dfs2b']
+    24841 FEASIBLE via ['dfs2b']
+    24859 INFEASIBLE via ['dfs2b']
+    24877 INFEASIBLE via ['dfs2b']
+    24967 INFEASIBLE via ['dfs2b']
+feasible witness lines collected: 530 distinct (k,p): 328
+kappa=8: unpruned verdict for 99 of 556 primes (all agree with pruned: True); every prime up to 0 has one; members with one: 99 of 293; first member without one: 17; members without one: 194
+  non-members with a stored witness: 263 of 263; without: []
+kappa=9: unpruned verdict for 80 of 372 primes (all agree with pruned: True); every prime up to 0 has one; members with one: 80 of 342; first member without one: 19; members without one: 262
+  non-members with a stored witness: 30 of 30; without: []
+kappa=8: primes below 4202: 137, with unpruned verdict here: 50 (smallest with one 2473)
+  members >= 4202: 161; every member in [4202,4202] has an unpruned verdict (0 members); first member without: 4217; members with one above 4202: 49; non-members >= 4202 with an unpruned verdict: 0
+kappa=9: primes below 5690: 122, with unpruned verdict here: 36 (smallest with one 3637)
+  members >= 5690: 224; every member in [5690,6067] has an unpruned verdict (6 members); first member without: 6121; members with one above 5690: 44; non-members >= 5690 with an unpruned verdict: 0
