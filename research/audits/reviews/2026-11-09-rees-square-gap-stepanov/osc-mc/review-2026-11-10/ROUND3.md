@@ -1863,3 +1863,172 @@ pieces named, and the §12.12 correction extended to N₁ (§12.12's Weil bullet
 factorial moments, the P1 wording, §12.4, "is consistent with", 0 to 5.4%, and the pre-registration times. Both
 gates are added. The scripts were not rerun: no reported number depends on the pole counter.
 
+
+# Round 4j (referee, 11 Nov 09:33): scoring of mechanical item 6, the κ = 7 band at λ ≈ 0.3
+
+**Verdict: the calls are right.**
+- R1 is NOT SHOWN, R2 is INSIDE, and R3 is inconclusive.
+- Both 34259's 0.519 and 34469's 0.131 are credible measurements.
+- What must change is the interpretation built on two primes: "36037 is a spike in B_L", and the κ = 6 calibration
+  transfer. Fixes follow.
+
+**Own path** (`scratch/r4j_checks.py` → `.out`; nice 19, under 1 s of CPU).
+- It uses its own Gram estimator and noise term, the same as r4hb_checks.py, not `k6_spike_survey.analyse`.
+- Its point values and 2σ ends agree with `score_k7_band.out` to 3 decimals at all nine primes.
+- All nine files share one configuration set: P, orb, supp and rb are identical.
+
+**Timing.**
+- Rules file: 12:24:39.
+- Runs, from log end times minus elapsed time:
+  - 34259 and 34273 started 12:24:45–46;
+  - 34469 and 35281 started 13:35:50;
+  - 36541 started 14:43:17 and finished at 15:26:15.
+- The scorer was saved at 15:26:46, after every result was known.
+- The rules came first, and the scorer only applies them. I reproduced its calls independently, so this is
+  acceptable. It should still be stated (fix 7).
+
+**1. The calls.**
+- **R1.** The SPIKE conditions fail.
+  - 36037's 2σ lower end, 0.535, is below 34259's 2σ upper end, 0.608. The ratio condition holds (2.59 ≥ 1.54).
+  - Since SPIKE fails, the clause order does not matter here: NOT SHOWN applies, because 34259's point value 0.519
+    is ≥ 0.50.
+  - The scorer tests NOT SHOWN before SPIKE, while the rule text lists SPIKE first. That would matter only if both
+    held, which is possible in principle. Future rules should state the precedence.
+  - The call rests on one prime. Without 34259, the band's largest 2σ upper end is 0.419 and its median 0.241, and
+    36037 would be a SPIKE (0.535 > 0.419; ratio 2.63). That is the case the NOT SHOWN clause was written for.
+- **R2.**
+  - ABOVE fails: 0.375 < 0.608. The rule text says 0.374; the difference is immaterial.
+  - INSIDE holds: three band primes have point values ≥ 0.387 (34259, 35281 and 36541).
+- **R3.** ρ = 0.350 over nine primes by hand ranking, with no ties, so the result is inconclusive. Over the seven band
+  primes alone, ρ = 0.179, which is not pre-registered.
+- **Predictions.**
+  - "Each new prime in 0.18–0.35" failed: only 34273 is inside.
+  - R1 SPIKE and R2 ABOVE failed.
+  - The band median (0.245, inside 0.22–0.30) and R3's ρ range held.
+
+**2. Credibility.** Columns: point value, leave-one-batch-out range, all C(16,8) half-samples, positive batch row
+means, top cell's share of X_L, (2,2) and (0,3) bin shares of X_L, and N₁/μ₁.
+
+| p | B_L | leave-one-out | half-samples (5–95%) | rows > 0 | top cell | (2,2) / (0,3) | N₁/μ₁ |
+|---|---|---|---|---|---|---|---|
+| 34259 | 0.519 | 0.471–0.527 | 0.432–0.605 (0.450–0.585) | 16/16 | 0.14 | 0.78 / 0.15 | 1.045 |
+| 34469 | 0.131 | 0.124–0.138 | 0.057–0.197 (0.099–0.162) | 16/16 | 0.24 | 0.55 / 0.08 | 0.947 |
+| typical band (34273, 34847, 35099, 35281, 36541) | — | — | — | 16/16 | 0.16–0.35 | 0.89–1.11 / 0.01–0.05 | 0.93–0.96 |
+| 36037 | 0.635 | 0.608–0.647 | 0.506–0.771 | 16/16 | 0.09 | 0.63 / 0.19 | 1.080 |
+
+- **34259.**
+  - Every batch contributes positively, and no single cell carries the value (top cell 14%, top three 38%). Its
+    lowest half-sample, 0.43, is above every half-sample 95% point of the four lowest band primes (≤ 0.27).
+  - z is 5.4 rather than 7–21 because the batches disagree more (se/X larger), not because the signal is small.
+  - Post hoc, not a claim: its secondary readings look like a milder 36037.
+    - Only 0.78 of X_L sits in (2,2), and 0.15 in (0,3), against 0.89–1.11 and ≤ 0.05 at the typical primes;
+      36037 has 0.63 and 0.19.
+    - N₁/μ₁ is 1.045, and PW_pair is 1.17 against a floor of 1.02.
+    - It also has the highest symR in the band (22.05).
+- **34469.**
+  - It is noisier: its half-samples reach 0.06, but its 5–95% range is 0.099–0.162.
+  - Every batch contributes positively, leaving out one batch gives 0.124–0.138, and the top cell carries 24%.
+  - Its 2σ upper end, 0.158, is below the 2σ lower ends of 34273, 34847 and 35099 (0.199–0.218). So it is genuinely
+    low, not an extreme draw from their level.
+- **Levels.** The band separates at 2σ into at least three levels:
+  - 34469 (≤ 0.158);
+  - 34273, 34847 and 35099 (0.199–0.270);
+  - 35281 and 36541 (0.366–0.419).
+  - 34259 (0.412–0.608) only just overlaps the third level, and 36037 overlaps 34259.
+- B_D is unresolved at every band prime (z ≤ 0.8).
+
+**3. Spread, and the κ = 6 comparison.**
+- Ratios to the band median, 0.245:
+  - band primes: 34259 2.12, 35281 1.60, 36541 1.60, 34847 1.00, 35099 0.97, 34273 0.96, 34469 0.53;
+  - the two symR-picked primes: 34693 1.58 and 36037 2.59.
+- The band spans 3.96× (0.131–0.519), and 4.85× with 36037.
+- Against κ = 6 (§12.6):
+  - 3 of the 7 unselected primes exceed κ = 6's unflagged maximum of 1.54×;
+  - 34259, at 2.12×, sits inside κ = 6's spike range of 1.94–3.74×;
+  - 34469, at 0.53×, is below the 0.58× that only 2 of κ = 6's 68 unflagged primes reach.
+- So, with B_L the only reading available, either:
+  - κ = 7 at λ ≈ 0.3 has spikes among unselected primes at a high rate (1–3 of 7); or
+  - its typical spread is wider than κ = 6's unflagged spread.
+- Seven primes cannot tell these apart, and κ = 7 has no flag analogous to sD/sN. Either way, the κ = 6 numbers do not
+  transfer.
+- Note what the band confirmed: the old worry is answered. 35099 and 34847 sit at the band median (0.97× and 1.00×),
+  not at its bottom.
+- What failed is the other premise of the 0.1% / 1.2% computation: that the κ = 6 unflagged spread carries over.
+
+**Fixes.**
+
+1. **§0, the 36037 bullet (note lines 59–61).** Replace with:
+   "At κ = 7, λ ≈ 0.3, 36037 (picked on symR) has the highest B_L of nine primes. Its B_L is 0.635, 2.6× the median
+   of seven primes not picked on symR (mechanical item 6, pre-registered). Against those seven it is not shown to be a
+   spike: 34259 reaches 0.519 (2σ 0.41–0.61), and the seven span 0.131–0.519 (4.0×). The earlier call, a spike
+   against two equal-λ primes (35099 and 34847), stands as scored, but only as a two-prime statement."
+   - Lines 64–65 need updating too. Replace "The four primes at λ ≈ 0.3 sit at three separated levels" with "The
+     nine primes at λ ≈ 0.3 sit at four or more levels separated at 2σ; symR does not fix B_L (ρ 0.35, inconclusive)".
+
+2. **§12.6.** Keep the 34847 scoring as written, since it is a pre-registered call. Add one line after the call (line
+   1216): "Superseded as a spike claim by the seven-prime band (mechanical item 6): not shown." Mark lines 1199–1204
+   and 1236–1241 as superseded. These are the ratio-to-median argument, the 0.1% / 1.2% probabilities, and "2.4× the
+   implied band median against ≤ 1.46×". Their premise, that the κ = 6 spread carries over, fails at κ = 7, λ ≈ 0.3.
+   - Add a band paragraph with the table from `score_k7_band.out`, the three calls, the failed predictions and the
+     2σ levels.
+   - Add the post hoc observation on 34259, labelled post hoc.
+
+3. **§12.8.**
+   - Line 38: "it is a spike in B_L: 2.7× and 2.6×" → "it was scored a spike against two equal-λ primes (2.7× and
+     2.6×); against the seven-prime band it is not shown (2.6× the median; 34259 at 2.1×)".
+   - Lines 41–43: delete the probability sentence and the 2.4× sentence, or mark them superseded.
+   - Line 54 (item 3): "the B_L spike at 36037 sits in the not-2+2 part" → "the B_L lift at 36037 sits in the
+     not-2+2 part (its split). Whether the high band primes, 34259 in particular, share that is unexamined".
+
+4. **§12.8 gates.**
+   - "'κ = 7 has no spike primes'. 36037 is a counterexample in B_L, against two equal-λ primes." → keep the gate,
+     but change the reason to: "Undecided. No prime at λ ≈ 0.3 is separated from the seven-prime band at 2σ, and that
+     band spreads 4×."
+   - "The κ = 7 spread at λ ≈ 0.3, and so the transfer of the κ = 6 calibration to κ = 7 (two primes are not a
+     distribution)" → "The κ = 7 spread at λ ≈ 0.3 beyond seven primes. The κ = 6 calibration transfer is refuted
+     there (3 of 7 unselected primes exceed κ = 6's unflagged 1.54×)."
+   - Add these gates:
+     - "36037 is a spike" at κ = 7, in any form beyond the two-prime call;
+     - "34259 is a spike";
+     - "κ = 7 spikes are rarer, or more common, than κ = 6's";
+     - "symR predicts B_L at κ = 7".
+
+5. **STATE.md (lines 80–85, and the summary at line 2643).**
+   - Replace "a spike in B_L against two equal-lambda primes … About 2.4x the implied band median, against <= 1.46x
+     … Two primes do not give the kappa=7 spread" with: "highest B_L of nine primes at lambda ~ 0.3 (0.635, 2.6x the
+     seven-prime band median 0.245); a spike against two equal-lambda primes (pre-registered), but not shown against
+     the band (34259 0.519, 2-sigma 0.41-0.61; band 0.131-0.519, 4.0x; R1 NOT SHOWN, R2 INSIDE, R3 rho 0.35
+     inconclusive). The kappa=6 calibration does not transfer."
+   - Line 90's "Four primes … three separated levels" needs the same update as §0.
+   - At line 2643, "36037 is a B_L spike against two equal-lambda primes (pre-registered)" should add "; not shown
+     against the seven-prime band (item 6)". If line 2643 is an archived entry rather than live text, leave it.
+
+6. **Obstruction (c).** This does not resolve or worsen it in the sense that matters.
+   - In magnitude, the band's spread is small against OSC′'s L tolerance at κ = 7. A 4.0–4.85× spread is
+     log₇ = 0.71–0.81, against a tolerance of 1.70 in log_κ (a factor of about 27).
+   - Obstruction (c) is about how class values grow with κ, and one κ cannot measure growth.
+   - What changes is the framing. At κ = 7, λ ≈ 0.3, the large B_L values are not isolated spikes against a tight
+     typical level. So the question "control the spikes" becomes "control the spread", or at least "control the
+     upper tail of B_L".
+   - Item 3 of §12.8 should say that the not-2+2 question is now posed for 36037 only. 34259 was not split.
+
+7. **Record wording.**
+   - Add: "scorer saved 15:26:46, after the results; the rule was applied as written, and the referee reproduced
+     the calls by an independent path".
+   - Add: "R1 rests on 34259 alone. Without it, 36037 would score SPIKE".
+   - Add: "the rule text lists SPIKE before NOT SHOWN, and the scorer tests NOT SHOWN first. That is immaterial
+     here, because SPIKE fails."
+
+**Next action, if one is wanted (not run).** The decisive measurement is cheap and bounded: the not-2+2 split of
+34259 (`mc_split.py 7 34259 6000 --seed 19`). Pre-register first whether its rest stays ≥ 0.45, as 36037's did, and
+whether its 2+2 share is outside 1.1–4.3%. A second seed at 34259 and 34469 would also test whether the 4× spread is
+a property of the primes or of the S draws. All the band runs use distinct seeds, so seed sharing is not an issue here.
+
+### Author's disposition of round 4j (11 Nov)
+
+All points accepted. Fixes 1–7 are applied as worded: §0's 36037 bullet and its levels line, the §12.6 supersession
+line and the band paragraph (table, calls, failed predictions, credibility, post hoc 34259, obstruction (c)), the
+§12.8 class-value bullet, item 3 and the gates, and STATE lines 80–85, 90 and the summary row. The superseded §12.6
+passages are marked, not deleted. The record wording on the scorer's timing, R1 resting on 34259, and the clause order
+is in §12.6. The suggested 34259 split is proposed as mechanical item 7, not started.
+

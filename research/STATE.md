@@ -6,7 +6,7 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-10, after the handoff entry
-"2026-11-10 Rees dfs2b Queue Finished: E_2(8) Determined (293 Primes), E_2(9) Known to 25000; Paper Pass Applied Locally (AI Only)";
+"2026-11-10 Rees Square Gap: κ = 7 Band at λ ≈ 0.3 (Seven Unselected Primes, Pre-Registered): 36037 Not Shown to Be a Spike (34259 at 0.519; Band Spreads 4×); κ = 6 Calibration Does Not Transfer (AI Only)";
 several entries below it are from the same day.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
@@ -77,25 +77,25 @@ Now (11-10, AI only): square gap still OPEN.
     falls with R_2+2 = N_inv^2 kappa^4/p^2 up to F. At 23549 (lambda 0.2) it is 0.055 mu1,
     against 0.31-3.5 at kappa=6: a weight depending on lambda alone is rejected (P ~ 1e-7), at
     one prime.
-  - kappa=7, p=36037 (lambda 0.31, picked on symR): a spike in B_L against two equal-lambda
-    primes. B_L 0.635 (2-sigma >= 0.54) is 2.7x and 2.6x 35099 (0.237) and 34847 (0.245; median
-    symR, scored by a rule written before its run, not close), and 2.4-2.9x the lambda 0.4-0.5
-    values. About 2.4x the implied band median, against <= 1.46x for unflagged kappa=6 primes
-    there. N1/mu1 1.08; B_D has a consistent sign but an unresolved size. Two primes do not give
-    the kappa=7 spread.
+  - kappa=7, p=36037 (lambda 0.31, picked on symR): highest B_L of nine primes at lambda ~ 0.3
+    (0.635, 2.6x the seven-prime band median 0.245). A spike against two equal-lambda primes
+    (pre-registered), but not shown against the band (mechanical item 6, pre-registered: 34259
+    0.519, 2-sigma 0.41-0.61; band 0.131-0.519, 4.0x; R1 NOT SHOWN, R2 INSIDE, R3 rho 0.35
+    inconclusive; 3 of 5 predictions failed). The kappa=6 calibration does not transfer (3 of 7
+    unselected primes exceed kappa=6's unflagged 1.54x). N1/mu1 1.08; B_D unresolved.
   - Not carried by the 2+2 family: its 2+2 share is 3.1% (F 1.6), and without those configurations
     B_L is still 0.57 (2.4x 35099). What carries it is unexamined ("not 2+2" is mc_split's flag).
   - 34693, with 36037's symR (rule written first, seed 17): INCONCLUSIVE. Rest B_L 0.386 (2-sigma
     0.374-0.398), between the comparison primes (<= 0.270) and LIFTED's 0.40; prediction failed.
-    Four primes at lambda ~ 0.3 sit at three separated levels; symR does not fix B_L; 95% of the
+    Nine primes at lambda ~ 0.3 sit at four or more 2-sigma levels; symR does not fix B_L; 95% of the
     excess is in (2,2); G 1.05. B_D is noise-level there and at 36037.
   - The exponent needs OSC' at lambda_T = 0.43, 0.18, 0.07, 0.02 for kappa = 7..10, below almost
     everything tested.
 - Monte Carlo files from before the 9 Nov 22:20 batching fix overstate weak bins (report 11.3).
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
 - Next:
-  - the kappa=7 spread at lambda ~ 0.3: the other five primes in sym_rate_k7_lam03.out by
-    mc_classes, rules written first (12:24:39), seeds 19-27 (mechanical item 6, RUNNING, done ~16:45);
+  - the not-2+2 split of 34259 (mc_split.py 7 34259 6000 --seed 19), rule written first (proposed,
+    not started; mechanical item 7);
   - theory: bound rho_rest (the not-2+2 part of OSC') or G near the thresholds (joint factorial
     moments of (b_K, m_K) at lambda ~ 1); neither has a method;
   - a (C1) sampler for kappa=8 at lambda 0.18;
@@ -2639,9 +2639,10 @@ or separation is claimed.
     (1/2+o(1))kappa; no boundary term exists (refuted); spike primes are the live obstruction.
     C1 existence proved from ~kappa^kappa/(2e). 11-10 (section 12): the kappa=6 spike survey is
     complete (89 primes); the class rule H1 is refuted, the class shift held. Spikes are large-F 2+2 involution families
-    plus a lifted rest. The family can move the exponent only if F*B = kappa^{Omega(kappa)}. At
-    kappa=7, 36037 is a B_L spike against two equal-lambda primes (pre-registered), not carried by
-    the 2+2 family. Paper not edited.
+    plus a lifted rest. The family can move the exponent only if G = s/R_2+2 = kappa^{Omega(kappa)} (12.12;
+    kappa=4 in closed form, 12.13). At kappa=7, 36037 is a B_L spike against two equal-lambda
+    primes (pre-registered), not carried by the 2+2 family; not shown against the seven-prime band
+    (item 6). Paper not edited.
   - Open math: Schedule 2 square gap (two-level E_2 itself; for prime kappa nothing beats
     kappa^{kappa+1}); poly(kappa) threshold at arity O(a^2); o(a^2) SDE finding now PROVED whenever p/a -> inf, AI-checked, pending human review (Theorem A, audits/reviews/2026-11-07-rees-sde-subquad-A.md; audits/reviews/2026-11-08-rees-sde-uniform-p.md: O(a^2/min(log a, log(p/a))) columns, every bank; bounded p still open; paper not edited, owner decision); F_3 worst case n^2/4 + O(n^{3/2}) (audits/reviews/2026-11-08-rees-sde-p3-nest.md, AI-checked); near-linear total regime open; the nu+1 IS restarts for
     kappa with two distinct primes (prime-power kappa done, I194); kappa=8 on (11897, 20000] (running); kappa=9 above 15787.

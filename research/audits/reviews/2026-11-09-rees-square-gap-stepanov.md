@@ -56,13 +56,16 @@ contraction is $(\alpha,\beta)$ with $\alpha_j + \beta_i \in Q^\circ_{-(i+j)}$ a
       p ≈ 3·10⁶; the exact counts go 1.52 → 1.003 for p = 101–32009. At every fixed κ, G → 1, and Weil's range is
       p ≥ κ^{(4+o(1))κ}, against thresholds κ^{(1/2+o(1))κ}. κ = 5's pre-registered shape held at six primes.
     - At κ = 7, λ = 0.2 (one prime) the family weight is 0.055 μ₁, which rejects a weight depending on λ alone.
-    - At κ = 7, λ = 0.31, p = 36037 is a spike in $B_L$ against two equal-λ primes. Its $B_L = 0.635$ is 2.7× and
-      2.6× those of 35099 (0.237) and 34847 (0.245), and 2.4–2.9× the λ = 0.4–0.5 values, with N₁/μ₁ 1.08. 34847 was
-      scored by a rule written before its run. Two primes do not give the κ = 7 spread.
+    - At κ = 7, λ ≈ 0.3, 36037 (picked on symR) has the highest B_L of nine primes. Its B_L is 0.635, 2.6× the median
+      of seven primes not picked on symR (mechanical item 6, pre-registered). Against those seven it is not shown to
+      be a spike: 34259 reaches 0.519 (2σ 0.41–0.61), and the seven span 0.131–0.519 (4.0×). The earlier call, a spike
+      against two equal-λ primes (35099 and 34847), stands as scored, but only as a two-prime statement. The κ = 6
+      calibration does not transfer: 3 of the 7 exceed κ = 6's unflagged maximum of 1.54× the band median.
     - The 36037 lift is not carried by the 2+2 family: without its 2+2 configurations (3.1%) $B_L$ is still 0.57. What
       carries it is unexamined.
     - 34693, with 36037's symR, scored INCONCLUSIVE by a rule written first: B_L 0.386 (2σ 0.374–0.398), between the
-      comparison primes and 36037. The four primes at λ ≈ 0.3 sit at three separated levels; symR does not fix B_L.
+      comparison primes and 36037. The nine primes at λ ≈ 0.3 sit at four or more levels separated at 2σ; symR does not fix B_L (ρ 0.35,
+      inconclusive).
     - The square gap stays open.
   - **(N) (§9).** Proved without Weil: (C1) configurations exist from $p \approx \kappa^\kappa/(2e)$
     asymptotically (Theorem C; first certified κ = 5: 1451, κ = 6: 20233, below pigeonhole).
@@ -775,8 +778,8 @@ Question (mechanical plan item 1, §11.9): does OSC′ hold at λ ≤ 0.25 at sp
 Everything here is Monte Carlo or heuristic unless marked otherwise; nothing is a certificate. Code and outputs are in
 `osc-mc/`.
 
-An independent AI referee checked the section in fifteen passes. Rounds 1–2, with the author's disposition of each
-point, are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3, 3b, 3c, 4, 4b–4g, 4h-a, 4h-b and 4i and their dispositions
+An independent AI referee checked the section in sixteen passes. Rounds 1–2, with the author's disposition of each
+point, are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3, 3b, 3c, 4, 4b–4g, 4h-a, 4h-b, 4i and 4j and their dispositions
 are in `ROUND3.md`. Its corrections are applied:
 - a factor 2 in the heuristic at even κ;
 - an undercount in the first `pairsym.py`;
@@ -1215,6 +1218,9 @@ are in `ROUND3.md`. Its corrections are applied:
     robustness are in `k7_34847_bins.out`; referee round 4e is in `r4e_checks.out`.
     - B_L is 0.245 (z 9.4, 2σ 0.218–0.270). **By the rule, 36037 is a spike in B_L against two equal-λ primes.** The
       call is not close, and the prediction (B_L in 0.20–0.32) held.
+    - **Superseded as a spike claim by the seven-prime band (mechanical item 6, below): not shown.** The
+      ratio-to-median argument above, and the 0.1% / 1.2% probabilities and "2.4× the implied band median against
+      ≤ 1.46×" below, assume that the κ = 6 spread carries over. At κ = 7, λ ≈ 0.3 it does not.
     - It is stable: all 16 batches contribute positively, leaving out any two keeps it ≥ 0.233, and half-samples range
       over 0.18–0.30. 36037's smallest half-sample, 0.51, is 1.7× 34847's largest.
     - 36037 is 2.6× it (2σ 2.1–3.1 by the delta method, 2.0–3.3 from the ends). Every resolved L bin is lifted against
@@ -1233,7 +1239,7 @@ are in `ROUND3.md`. Its corrections are applied:
         batch and cell level, so this is not a seed artifact. Future comparison primes get distinct seeds.
       - The agreement itself is weak evidence: at κ = 6, 10% of unflagged same-band pairs agree to within 1.03×. What
         counts is that both primes are low.
-      - If 36037 were at most the κ = 6 unflagged maximum (1.54× the band median), both comparison primes would have to
+      - [Superseded by the band, below.] If 36037 were at most the κ = 6 unflagged maximum (1.54× the band median), both comparison primes would have to
         lie below 0.6× the κ = 7 median. At κ = 6, 2.9% of unflagged primes do, so for two independent primes the
         chance is about 0.1%, or 1.2% with 36037 at its 2σ lower end. This assumes that the κ = 6 spread carries over
         and that picking by symR does not bias B_L.
@@ -1274,7 +1280,8 @@ are in `ROUND3.md`. Its corrections are applied:
     ends ≤ 0.270) and below the LIFTED threshold 0.40. It is not close by the rule's definition, but the upper end is
     only 0.002 below 0.40. The prediction (0.22–0.35) failed.
   - The whole run gives 0.387 (2σ 0.375–0.398): 1.60× the comparison mean, and 36037's whole run is 1.64× it. So the
-    four κ = 7 primes at λ ≈ 0.3 sit at three separated levels (≤ 0.270; 0.374–0.398; ≥ 0.535 at the 2σ ends).
+    four κ = 7 primes at λ ≈ 0.3 sit at three separated levels (≤ 0.270; 0.374–0.398; ≥ 0.535 at the 2σ ends). With
+    the band below, the nine primes sit at four or more levels, and 34693 is inside the band.
   - The narrow range is real: 95% of X_L is in the (2,2) bin, spread evenly over six cells that agree from batch to
     batch (y_b > 0 in 16 of 16, cv 0.05; half-samples 0.363–0.410). se/X is 0.03, against 0.11–0.15 at the other three.
   - The excess is mostly in (2,2). (0,3), (3,3) and (0,4) are also above the comparison primes. Less of X lies
@@ -1288,6 +1295,48 @@ are in `ROUND3.md`. Its corrections are applied:
     no correlation.
   - Gates stay false: 34693 lifted or 34693 like the comparison primes; a spike/typical dichotomy at κ = 7, λ ≈ 0.3;
     any symR–B_L relation at κ = 7.
+- **The κ = 7 band at λ ≈ 0.3** [computed; pre-registered; referee round 4j]. Mechanical item 6. The rules were
+  written at 12:24:39 (`predictions_k7_lam03_band.txt`), and the runs started at 12:24:45–46: `mc_classes.py 7 p 6000`
+  at seeds 19–27, with npz files outside the repo. The scorer `review-2026-11-10/scratch/score_k7_band.py` → `.out` was
+  saved at 15:26:46, after the results. It applies the rules as written, and the referee reproduced the calls by an
+  independent path (`scratch/r4j_checks.out`).
+
+  | p | λ | symR | N₁/μ₁ | B_L (2σ) | B_D (< 2σ) | PW_pair [floor] |
+  |---|---|---|---|---|---|---|
+  | 34259 | 0.291 | 22.05 | 1.045 | 0.519 (0.412–0.608) | 1.79 (< 3.33) | 1.17 [1.02] |
+  | 34273 | 0.291 | 9.43 | 0.964 | 0.236 (0.199–0.268) | 0 (< 2.81) | 0.96 [0.93] |
+  | 34469 | 0.293 | 16.69 | 0.947 | 0.131 (0.096–0.158) | 1.57 (< 3.57) | 0.93 [0.92] |
+  | 34847 | 0.296 | 16.26 | 0.934 | 0.245 (0.218–0.270) | 0 (< 2.33) | 0.96 [0.93] |
+  | 35099 | 0.298 | 21.33 | 0.950 | 0.237 (0.206–0.264) | 1.76 (< 3.38) | 0.93 [0.90] |
+  | 35281 | 0.300 | 15.79 | 0.943 | 0.392 (0.373–0.410) | 1.06 (< 2.95) | 0.96 [0.91] |
+  | 36541 | 0.311 | 15.32 | 0.951 | 0.393 (0.366–0.419) | 0 (< 1.83) | 0.97 [0.92] |
+  | 34693 (picked on symR) | 0.295 | 44.22 | 0.906 | 0.387 (0.375–0.398) | 0 (< 1.61) | 0.94 [0.90] |
+  | 36037 (picked on symR) | 0.306 | 44.19 | 1.080 | 0.635 (0.535–0.721) | 9.4 (< 14.1) | 2.71 [1.00] |
+
+  - **The band** is the seven primes not picked on symR. Its median is 0.245 and its range 0.131–0.519 (4.0×).
+    Ratios to the median run 0.53–2.12, so 3 of the 7 exceed κ = 6's unflagged maximum of 1.54×, and 34259's 2.12× is
+    inside κ = 6's spike range. At 2σ the band splits into at least three separated levels.
+  - **R1: NOT SHOWN.** 36037's 2σ lower end, 0.535, is below 34259's upper end, 0.608, and 34259's point value 0.519 is
+    ≥ 0.50. 36037 is still 2.6× the band median. R1 rests on 34259 alone: without it, 36037 would score SPIKE (0.535
+    against 0.419). The rule text lists SPIKE before NOT SHOWN while the scorer tests NOT SHOWN first; that is
+    immaterial here, because SPIKE fails. Future rules should say which clause wins.
+  - **R2: INSIDE.** 34259, 35281 and 36541 are all at or above 34693's 0.387.
+  - **R3: inconclusive.** Spearman ρ(symR, B_L) is 0.350 over the nine primes, and 0.18 over the seven band primes (not
+    pre-registered).
+  - **Predictions:** "each new prime in 0.18–0.35" failed (4 of 5 outside), and so did "R1 SPIKE" and "R2 ABOVE". The
+    band median (0.22–0.30) and R3's ρ range held.
+  - **Credibility (referee):** at 34259 every batch contributes positively, leave-one-out gives 0.471–0.527,
+    half-samples 0.432–0.605, and no single cell carries it (14%). 34469 is noisier, but its 2σ upper end (0.158) is
+    below the lower ends of 34273, 34847 and 35099, so it is genuinely low.
+  - **Post hoc, not a claim:** 34259 looks like a milder 36037. 0.78 of its X_L is in (2,2) and 0.15 in (0,3). It has
+    N₁/μ₁ 1.045, PW_pair 1.17 and the highest symR in the band. It has not been split, so whether it shares 36037's
+    not-2+2 lift is unexamined.
+  - **What it means for obstruction (c):** neither resolved nor made worse. A 4.0–4.85× spread is 0.71–0.81 in
+    log₇, against the κ = 7 L tolerance of 1.70. One κ cannot measure growth with κ. What changes is the framing: at
+    κ = 7, λ ≈ 0.3 large B_L values are not isolated spikes against a tight typical level, so the question becomes
+    controlling the spread, or its upper tail.
+  - **Gates stay false:** "36037 is a spike" in any form beyond the two-prime call; "34259 is a spike"; "κ = 7 spikes
+    are rarer, or more common, than κ = 6's"; "symR predicts B_L at κ = 7".
 - **Generic rate.**
   - The not-2+2 rate is 0.86–1.04 μ₁ at κ = 7, λ ≈ 0.3 (bucket_stats rates at the four primes with a share), and
     0.79–0.82 μ₁ at 23549 (λ = 0.2).
@@ -1383,13 +1432,10 @@ are in `ROUND3.md`. Its corrections are applied:
   - Class values at λ ≈ 0.3: at 36037, picked on symR, B_L is 0.635. That is 2.4–2.9× the λ = 0.4–0.5 values, against
     1.1–1.5× for the same step at κ = 6. N₁/μ₁ there is 1.08, and the D excess has a consistent sign but an unresolved
     size.
-  - Against the equal-λ comparison primes 35099 and 34847 (B_L 0.237 and 0.245) it is a spike in B_L: 2.7× and 2.6×,
-    with every resolved L bin lifted (§12.6). 34847 was picked at the median symR and scored by a rule written before
-    its run.
-    - If the κ = 6 spread carried over, two independent primes would both sit as low as a non-spike reading needs with
-      probability about 0.1% (1.2% at 36037's 2σ lower end).
-    - Against the implied band median, 36037 is about 2.4×, against at most 1.46× for unflagged κ = 6 primes at that λ.
-    - Two primes do not give the κ = 7 spread.
+  - Against the equal-λ comparison primes 35099 and 34847 (B_L 0.237 and 0.245) it was scored a spike in B_L (2.7×
+    and 2.6×, every resolved L bin lifted; §12.6). Against the seven-prime band it is not shown (2.6× the median, with
+    34259 at 2.1×; §12.6, mechanical item 6). The probability and "2.4× the implied band median" arguments assumed the
+    κ = 6 spread carries over, and are superseded.
   - The lift is not carried by the 2+2 family. Without its 2+2 configurations (3.1%, F 1.6) B_L at 36037 is 0.57,
     2.4× 35099's; they add about 0.07, in phase with the rest (§12.6). What carries it is unexamined.
 - **What changes.** Obstruction (c) of §11.8 narrows to three questions:
@@ -1399,7 +1445,8 @@ are in `ROUND3.md`. Its corrections are applied:
      - It needs no independence assumption, since G is defined from the measured share.
   2. The same question for the arithmetic factors of the other bounded-orbit families of §12.5 item 4.
   3. What are the not-2+2 part at spike primes, and any non-projective structure at κ ≥ 7?
-     - At κ = 7 this is now the sharper question: the B_L spike at 36037 sits in the not-2+2 part.
+     - At κ = 7: the B_L lift at 36037 sits in the not-2+2 part (its split). Whether the high band primes, 34259 in
+       particular, share that is unexamined; the not-2+2 question is posed for 36037 only.
 
   With the largest measured G·v (1789), the family would add B_D ≈ 3.6 at κ = 7 if its absolute D-rms did not fall
   with p. It would add about 0.17 if its B_D in κ²/p units stayed constant, and at most about 0.12 with typical values.
@@ -1416,9 +1463,12 @@ are in `ROUND3.md`. Its corrections are applied:
   - Obstruction (c) resolved.
   - Hypothesis H (refuted in its strict form; the class shift of B_D held prospectively (H2) but has no mechanism),
     or the |a|/√p and cubic-character correlations, as claims.
-  - "κ = 7 has no spike primes". 36037 is a counterexample in B_L, against two equal-λ primes.
-  - The κ = 7 spread at λ ≈ 0.3, and so the transfer of the κ = 6 calibration to κ = 7 (two primes are not a
-    distribution); how common spikes are at κ = 7; 36037's B_D size.
+  - "κ = 7 has no spike primes". Undecided: no prime at λ ≈ 0.3 is separated from the seven-prime band at 2σ, and
+    that band spreads 4×.
+  - The κ = 7 spread at λ ≈ 0.3 beyond seven primes. The κ = 6 calibration transfer is refuted there (3 of 7
+    unselected primes exceed κ = 6's unflagged 1.54×). How common spikes are at κ = 7; 36037's B_D size.
+  - "36037 is a spike" in any form beyond the two-prime call; "34259 is a spike"; "κ = 7 spikes are rarer, or more
+    common, than κ = 6's"; "symR predicts B_L at κ = 7".
   - The B_L lift at 36037 explained. The split refutes it as a 2+2 effect (a 6000-configuration prefix, against
     35099), but other structure in the rest is unexamined.
   - The 2+2 family's class values at κ ≥ 7, or v falling with p.
@@ -1443,9 +1493,11 @@ are in `ROUND3.md`. Its corrections are applied:
     carry the (2,2) and (0,3) lift: the rest alone makes 85% and 75% of those bins' X.
 - **What carries the κ = 7 lift** (34693 done, §12.6: INCONCLUSIVE, an intermediate level 0.386; neither "36037 alone"
   nor "symR predicts it").
-  - The κ = 7 spread at λ ≈ 0.3 now has three levels in four primes, so a spread estimate needs more primes: the
-    other five in `sym_rate_k7_lam03.out` (34259, 34273, 34469, 35281, 36541), each with a rule written first and a
-    distinct seed.
+  - The five other primes are done (§12.6, mechanical item 6): the band spreads 4×, and 36037 is not shown to be a
+    spike against it.
+  - Cheapest decisive next run: the not-2+2 split of 34259 (`mc_split.py 7 34259 6000 --seed 19`). Pre-register first
+    whether its rest stays ≥ 0.45, as 36037's did, and whether its 2+2 share lies outside 1.1–4.3%. A second seed at
+    34259 and 34469 would test whether the 4× spread belongs to the primes or to the S draws.
   - Then split 36037's rest by other structure: one ι-pair, other involution cycle types, order-3 symmetry.
 - **The direct test of (c)** still needs κ = 8 at λ ≈ 0.18 (p ≈ 3.8·10⁵), with a sampler that builds (C1)
   configurations directly (§11.9). That sampler is the main gap.

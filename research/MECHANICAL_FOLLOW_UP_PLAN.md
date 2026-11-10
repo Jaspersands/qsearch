@@ -58,7 +58,8 @@ each computation under ~2 core-h. Do not edit the paper.
      than the 2+2 family predicts the κ = 7 lift, as symR ranks B_L at κ = 6. If not, 36037 is a single prime's
      effect.
    - Then split 36037's not-2+2 part by other structure (one ι-pair, other involution cycle types, order-3 symmetry).
-6. The κ = 7 spread at λ ≈ 0.3 (proposed 10 Nov about 12:20; rules written 12:24:39 in
+6. DONE 10 Nov 15:26 (§12.6; referee round 4j): band B_L 0.131–0.519 (4.0×); R1 NOT SHOWN (34259 0.519), R2
+   INSIDE, R3 inconclusive (ρ 0.35); 3 of 5 predictions failed. The κ = 7 spread at λ ≈ 0.3 (proposed 10 Nov about 12:20; rules written 12:24:39 in
    `osc-mc/predictions_k7_lam03_band.txt`; runs started 12:25, two at a time, logs `osc-mc/mc_k7_p<p>.log`). Four primes give three B_L levels (0.24, 0.39,
    0.63), so a band median and spread need the other five primes in `sym/sym_rate_k7_lam03.out`: 34259, 34273,
    34469, 35281, 36541.
@@ -70,6 +71,14 @@ each computation under ~2 core-h. Do not edit the paper.
      `k6_spike_survey.analyse`.
    - Acceptance: five B_L values with 2σ, scored by the rule; the band median and range; 36037 and 34693 placed
      against them.
+7. The not-2+2 split of 34259 (proposed 10 Nov, not started). 34259 is the high band prime (B_L 0.519, symR 22).
+   - First write a rule in `osc-mc/predictions_k7_p34259_split.txt`: does its rest stay ≥ 0.45, as 36037's did (0.573)?
+     Is its 2+2 share outside 1.1–4.3%? State which clause wins if two apply.
+   - Then run `nice -n 19 python -I mc_split.py 7 34259 6000 --seed 19 --out <outside the repo>/split_k7_p34259`
+     (about 1.3 core-h; seed 19 reproduces the band run) and `split_report.py` on it.
+   - Optional: a second seed at 34259 and 34469, to test whether the 4× spread belongs to the primes or to the
+     S draws.
+   - Acceptance: all, rest and 2+2 B_L with 2σ, scored by the rule.
 
 ## 2026-11-09 Rees Square Gap: OSC′ Follow-Up
 

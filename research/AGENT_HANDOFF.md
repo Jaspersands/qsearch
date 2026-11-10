@@ -1,4 +1,39 @@
 # Research Agent Handoff
+## 2026-11-10 Rees Square Gap: κ = 7 Band at λ ≈ 0.3 (Seven Unselected Primes, Pre-Registered): 36037 Not Shown to Be a Spike (34259 at 0.519; Band Spreads 4×); κ = 6 Calibration Does Not Transfer (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.
+Report: audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12.6 ("The κ = 7 band at λ ≈ 0.3"), with §0, §12.8 and
+§12.9 reworded. Referee round 4j is in osc-mc/review-2026-11-10/ROUND3.md, with independent checks in
+scratch/r4j_checks.*. Square gap still OPEN.
+- **[computed; pre-registered] Mechanical item 6.** The rules were written at 12:24:39 in
+  osc-mc/predictions_k7_lam03_band.txt; the runs started at 12:24:45 (`mc_classes.py 7 p 6000`, seeds 19–27, npz
+  outside the repo). The scorer review-2026-11-10/scratch/score_k7_band.py was saved after the results; it applies
+  the rules as written, and the referee reproduced them independently.
+  - Band (seven primes not picked on symR), B_L: 34259 0.519 (2σ 0.41–0.61), 36541 0.393, 35281 0.392, 34847 0.245,
+    35099 0.237, 34273 0.236, 34469 0.131 (2σ 0.10–0.16). Median 0.245, range 4.0×, at least three levels at 2σ.
+  - R1 NOT SHOWN: 34259 ≥ 0.50, and 36037's 2σ lower end (0.535) is below 34259's upper end (0.608). The call rests on
+    34259 alone. R2 INSIDE (34693 0.387 is matched by three band primes). R3 inconclusive (ρ(symR, B_L) 0.35 over
+    nine).
+  - Predictions failed: "each new prime in 0.18–0.35" (4 of 5 outside), "R1 SPIKE" and "R2 ABOVE". The median and
+    the ρ range held.
+- **Corrections to earlier entries** (made here, not by editing them):
+  - "36037 a B_L spike against two equal-λ primes" stands only as that two-prime, pre-registered call. Against the
+    band, 36037 (2.6× the median) is not shown to be a spike.
+  - The κ = 6 calibration transfer is refuted at κ = 7, λ ≈ 0.3: 3 of 7 unselected primes exceed κ = 6's unflagged
+    1.54× the band median, and 34259's 2.12× is in κ = 6's spike range. So the 0.1% / 1.2% chance and "2.4× the
+    implied band median against ≤ 1.46×" are superseded.
+  - "Four primes at three separated levels" becomes "nine primes at four or more levels".
+- **Obstruction (c):** neither resolved nor worsened. A 4–4.85× spread is 0.71–0.81 in log₇, against the L
+  tolerance of 1.70. The framing changes from isolated spikes to the spread, or its upper tail.
+- **Claim gates that stay false:** "36037 is a spike" beyond the two-prime call; "34259 is a spike"; "κ = 7 has no
+  spike primes" (undecided); "κ = 7 spikes are rarer, or more common, than κ = 6's"; "symR predicts B_L at κ = 7";
+  the κ = 7 spread beyond seven primes.
+- **Next hard question:** what sets the κ = 7 spread at λ ≈ 0.3? In particular, does the high band prime 34259
+  share 36037's not-2+2 lift?
+- **Next command** (mechanical item 7, proposed): write a rule first (rest B_L ≥ 0.45 as at 36037? 2+2 share outside
+  1.1–4.3%?), then run `nice -n 19 python -I mc_split.py 7 34259 6000 --seed 19 --out <outside the repo>/split_k7_p34259`
+  (about 1.3 core-h) and `split_report.py` on it. Acceptance: rest and 2+2 B_L with 2σ, scored by the rule.
+
 ## 2026-11-10 Rees dfs2b Queue Finished: E_2(8) Determined (293 Primes), E_2(9) Known to 25000; Paper Pass Applied Locally (AI Only)
 
 - Proved (AI only, pending human review; computational): E_2(8) consists of exactly 293 primes,
