@@ -1697,3 +1697,169 @@ random assignment gives with probability 1/6.
 - "34693 lifted" or "34693 like the comparison primes" (the call is inconclusive).
 - A κ = 7 spike/typical dichotomy at λ ≈ 0.3: three levels in four primes.
 - Any symR–B_L relation at κ = 7.
+
+# Round 4i (referee, 10 Nov 12:47): §12.13 draft, κ = 4 in closed form and the κ = 5 shape
+
+**Verdict: ACCEPT WITH CHANGES** (14 fixes below). The algebra is right. One script diagnostic is wrong, and the
+draft's sentence about it must change; no reported number depends on it. Several statements are stronger than
+what is shown.
+
+**Own checks** (`scratch/r4i_checks.py`, `.out`; `scratch/r4i_pole.py`, `.out`; nice 19, about 10 s of CPU in total).
+Own code builds ι as (αz + β)/(γz − α), with γ = a + b − c − d, α = ab − cd and β = γab − α(a + b). It does not use
+`mob_from`, `k4_22.py` or `k5_22.py`. It enumerates the κ³ normalised partial keys instead of relying on witnesses.
+- A. (c s_i + d)(c s_j + d) = −det ι held for both swapped pairs of all 840 involutions tested: κ = 4 (p 197, 401),
+  κ = 5 (1451, 2521), κ = 6 (1933) and κ = 7 (1009). The transport P(ιt)_{ι(l)} = P(t)_l + α_l + β(t) held at
+  every finite, non-exceptional t. The number of σ_ι-fixed partial keys equalled c_ι·κ every time: 8 per split ι and
+  0 per non-split ι at κ = 4; κ per ι at κ = 5 and 7 (5 and 7); 12 per split ι and 0 per non-split ι at κ = 6.
+- B. The κ ≥ 5 pairing predicate (sign fixed in item 6) agreed with actual pairing at every point of every
+  partial-fixed bucket. That is 0 mismatches in 10060, 8706, 10610 and 4264 points at κ = 5, 5, 6 and 7. My first
+  run had the right-hand side's sign reversed and gave about 30% mismatches at κ = 5. The sign is load-bearing.
+- C. #{r : η(r) = η(1 − r) = 1} = (p − 5)/4 at p = 101, 197, 401, 1009 and 2017, by direct count.
+- D. The κ = 4 Weil numbers are in item 5.
+- E. The pole rule of `k4_22.py`, against the enumerated fixed keys, is in item 2.
+
+**Checked and correct as written.**
+- The transport identity and the trace-0 identity: d = −a gives (c s_i + d)(c s_j + d) = a² + bc = −det. Hence
+  α_i + α_j = −ind(−det).
+- Solvability of 2C ≡ −ind(−det) (mod κ).
+- c_ι = 1 at odd κ and 2·[split] at even κ; the discriminant is 4(−det).
+- The −det values r, r(r − 1) and 1 − r. Their product −r²(r − 1)² is a square at p ≡ 1 (mod 4), so
+  #split ∈ {1, 3}, and #split = 1 + 2·[η(r) = η(1 − r) = 1].
+- The count (p − 5)/4, and E[#split] = 1 + (p − 5)/(2(p − 2)).
+- "No partially paired bucket" is a consequence of the transport, and so is "paired ⇒ σ-fixed key". The brute force
+  confirms both.
+- The −2 free-orbit correction. If T is a 2+2 for two involutions, T is invariant under both and hence under V₄. A
+  V₄-invariant 4-set is either a free orbit, which is two pairs for all three ι and so counted 3 times, or
+  Fix(ι₁) ∪ Fix(ι₂). In the second case only ι₃ has two pairs in T; ι₁ and ι₂ each fix two points of T. So "a 2+2
+  for exactly two involutions" cannot happen, and −2 is right.
+  - Note that the brute force tests the correction only at p = 401: the overlap correction is 0 at 101 and 197.
+- The one-variable shape at κ ≥ 5, and the Weil range p ≥ κ^{(4+o(1))κ} (item 7).
+- P2–P5 scored correctly; P1 needs rewording (item 9).
+- Pre-registration order: predictions 12:30:32, `k5_22.py` saved 12:31:12, first output 12:37:18. The order holds.
+
+**Fixes.**
+
+1. **Exceptional points (line 24).** For an involution, d = −a, so ι(∞) = a/c = −d/c = t₀: the pole and ι(∞) are
+   the same point. Write "apart from at most 3 exceptional points: the two fixed points of ι and the pole
+   t₀ = −d/c (= ι(∞))". The bound 3 stands.
+
+2. **The pole sentence in Checks (lines 35–36) is wrong.**
+   - What the script does: `k4_22.py` adds key(t₀) as the 8th fixed key whenever 7 keys are witnessed. It does not
+     check that key(t₀) is σ-fixed.
+   - Why that fails in general: σ maps key(t₀) to key(ι t₀) = key(∞), which is the zero key. So key(t₀) is σ-fixed
+     only when key(t₀) = 0, about 1 split ι in 10 in my samples (62 of 622 at p = 197, 43 of 452 at p = 401).
+   - What `r4i_pole.py` found at p = 401 (452 split ι), with witnesses counted as in `k4_22.py`:
+     - The rule fired 75 times.
+     - 73 of those were in S with an empty bucket. In all 73 the added key is **not** σ-fixed: the missing fixed key
+       has an empty bucket.
+     - Only 2 were in S with all 64 buckets nonempty, and there the rule was right.
+     - At p = 197 the rule fired 5 times (3 in S with an empty bucket) and was right each time.
+   - Why the full-bucket case is a theorem: if all 64 buckets are nonempty and a fixed key K is unwitnessed, then
+     every point of K's bucket is exceptional. A fixed point of ι would witness K, so the bucket holds only t₀, and
+     K = key(t₀).
+   - So "about 19% of split ι at p = 401 … the 8th is witnessed only by the pole, whose bucket then holds only
+     exceptional points" mostly counts S with an empty bucket, where the parenthesis is false.
+   - Harmless for every reported number:
+     - G and the 2+2 count use the actual pairings;
+     - check (b)'s "exactly 8" is applied only when all 64 buckets are nonempty;
+     - the subset check cannot be masked, since paired keys are provably σ-fixed.
+   - Replace with: "every split ι has exactly 8 σ-fixed keys and every non-split ι none (enumerated by the referee,
+     r4i_checks.py). When all 64 buckets are nonempty, each fixed key is witnessed by a non-exceptional point or a
+     fixed point of ι, except that a fixed bucket may consist of the pole alone (2 of 452 split ι at p = 401 in the
+     referee's sample)."
+   - Drop the 19% and 1% figures, or label them as the firing rate of a script counter that is mostly
+     inapplicable. The script's comment on line 87 has the same error. I have not edited it.
+
+3. **μ₁ and μ₂₊₂ notation (line 39).** `k4_22.py` uses the Poisson factorial moments μ₁ = 64·λ⁴/24 and
+   μ₂₊₂ = E[#split]·λ², not 64·C(λ, 4) or 8·C(λ/2, 2). These differ greatly at small λ: at λ = 1.6,
+   64·C(λ, 4) = 1.43 against 64λ⁴/24 = 17.5.
+   - The "Exactly, G = (2/3)·E[#split]·(N₂₊₂/μ₂₊₂)/(N₁/μ₁)" line (line 41) is an identity only with the Poisson
+     moments, because R₂₊₂ = 9·256/p² and μ₂₊₂/μ₁ = 1536·E[#split]/p².
+   - Write: "N₁(S) ≈ μ₁ := 64·λ⁴/4! and #2+2(S) ≈ #split(S)·8·(λ/2)²/2 = #split(S)·λ², with λ = p/64".
+
+4. **E[c_ι] = 1 (lines 18–19).**
+   - A split ι is as likely as a non-split one only to O(1/p). At κ = 4, E[c_ι] = 2E[#split]/3 = 1 − 1/(p − 2).
+   - Write "so E[c_ι] = 1 + O(1/p) (exactly 1 − 1/(p − 2) at κ = 4)".
+   - Likewise, "G(p) → (2/3)·E[#split] = 1" holds in the limit.
+
+5. **Weil at κ = 4: "with explicit constants" (lines 42–49).** Either give the constants or delete the phrase.
+   The constants are:
+   - |b_K − (p − 4)/64| ≤ (63/64)·3√p + O(1). The O(1) covers the points of S, and it is right.
+   - So ε := 192/√p bounds the relative error of b_K. Then
+     G(S) / ((2/3)·#split(S)) ∈ [(1 − ε)²/(1 + ε)⁴, (1 + ε)²/(1 − ε)⁴]·(1 + O(1/λ)), and the same holds for G(p).
+     The O(1/λ) covers the falling factorials, the e_K and the free-orbit correction, which is ≈ 0.34/λ in the
+     data.
+   - ε < 1 needs p > 3.7·10⁴. That is where Weil first certifies b_K > 0, not where it controls G. The factor
+     interval is:
+
+     | p | 10⁵ | 10⁶ | 3·10⁶ | 10⁷ | 10⁸ |
+     |---|---|---|---|---|---|
+     | interval | [0.02, 108] | [0.32, 3.3] | [0.52, 1.97] | [0.70, 1.45] | [0.89, 1.12] |
+
+     The upper end is ≤ 2 from p ≈ 2.9·10⁶ and ≤ 1.1 from p ≈ 1.5·10⁸.
+   - Line 48: replace "The error is below 1 only for p ≳ 4·10⁴" with "Weil's relative error on b_K is below 1
+     only for p ≳ 4·10⁴, and it brackets G within a factor 2 only for p ≳ 3·10⁶".
+   - Also: G(S) ≤ 2 + O(p^{−1/2}) is asymptotic. At p = 101 the 3-split class has G = 2.21 (the draft's own table).
+
+6. **κ ≥ 5 extra condition: state ω_l(K) and its sign (line 70).**
+   - Derivation: s_l − ιt = ι(ι s_l) − ι(t) = det·(ι s_l − t)/((c ι s_l + d)(ct + d)), and the same for s_i − ιt with
+     ι(s_j) = s_i. So the condition is
+     ind(ι(s_l) − t) − ind(s_l − t) ≡ P(t)_j − P(t)_i + ind(c ι(s_l) + d) − ind(c s_j + d) (mod κ),
+     where ι(s_i) = s_j.
+   - P_j − P_i is read off K, so ω_l(K) = K_j − K_i + ind(c ι(s_l) + d) − ind(c s_j + d). Verified (check B).
+   - Line 73: "R₂₊₂ is exactly the main term" → "R₂₊₂ is the leading term:
+     s = E[c_ι]·R₂₊₂·(1 + O(1/λ) + O(κ^{O(1)}/p))".
+   - Name the lower-order pieces:
+     - T with ≥ 3 ι-pairs (possible from κ = 6), which Σ C(m_K, 2)·C(b_K − 4, κ − 4) counts more than once;
+     - T that is a 2+2 for two involutions;
+     - ι with a third swapped pair, or a fixed point, inside S. Here ι(s_l) ∈ S, so the l-condition degenerates.
+       This has probability O(κ²/p) per ι.
+
+7. **The §12.12 correction is right, and Round 4g's endorsement of "κ^{cκ²}" is withdrawn.**
+   - b_K involves κ points, and m_K involves 2κ − 4 points (S and the ι(s_l)) with 2κ − 5 conditions. Weil errors
+     are O(κ√p) against p/κ^{κ−1} and p/(2κ^{2κ−5}).
+   - So b_K is controlled from p ≥ κ^{(2+o(1))κ}, and m_K from p ≥ κ^{(4+o(1))κ}. The range is set by m_K.
+   - With relative errors ε_b and ε_m, G = 1 + O(ε_m + κ·ε_b) = 1 + O(κε). This needs m_K ≫ 1 and b_K ≫ κ, both
+     true in that range.
+   - The same correction applies to N₁(S) = Σ_K C(b_K, κ), which is a polynomial in the b_K. Say so: §12.12's
+     κ^{cκ²} estimate is too pessimistic for N₁ as well. I endorsed that wording in Round 4g; that endorsement was
+     wrong.
+
+8. **Line 82: "second-moment question".** Replace with "a question about the joint factorial moments of
+   (b_K, m_K) at λ ≈ 1: do the sparse patterns cluster in buckets by more than κ^{o(κ)} over Poisson?"
+
+9. **P1 scoring (lines 92–93).**
+   - The pre-registered P1 says "exactly 25", but the measured witnessed counts are 11–25, 17–25 and 23–25 at
+     1451–5011.
+   - What is true: every ι has exactly c_ι·κ^{κ−3} = 25 partial-fixed keys. I enumerated this for 270 κ = 5 ι, as
+     5 partial keys × 5 values of the free coordinate. The shortfall is buckets that are empty or hold only
+     exceptional points (the pole and the ι(s_l)).
+   - Write: "P1 held: every ι has exactly 25 partial-fixed keys (a count of keys; enumerated for 270 ι by the
+     referee). No paired point lay outside them in 201,000 involutions. At small λ only 11–25 of the 25 buckets hold
+     a witnessing point." Scoring P1 as held is fair on that reading.
+
+10. **Line 107: "§12.2 found".** Change to "§12.4 found (0 of 845–1459 structured T per prime from a non-split ι)".
+
+11. **Line 108: "matches".** Change to "is consistent with … Those are threshold-range values, where the theory
+    gives no bound, so they do not test it."
+
+12. **Line 97: overlap correction.** "0.07–5%" → "0 (p = 101, 197) to 5.4% (p = 401), falling as ≈ 0.34/λ".
+
+13. **Line 18: section reference.** "§12.5" is right (item 1). Nothing to fix there.
+
+14. **Pre-registration line (lines 4–5).** Add the script and output times: "k5_22.py saved 12:31:12, first output
+    12:37:18". Any "about 12:40" in messages should read 12:37.
+
+**Gates.** The list on lines 113–114 is right. Add two:
+- "Weil controls G at κ = 4 for p ≳ 4·10⁴" (it certifies only b_K > 0 there);
+- "the pole witnesses the 8th key in about 19% of split ι at p = 401".
+
+### Author's disposition of round 4i (10 Nov)
+
+All 14 points accepted and applied in §12.13 as worded. That covers the pole/ι(∞) identification, the replacement pole
+sentence (the 19%/1% figures dropped, and the counter labelled in `k4_22.py`'s comment), the Poisson moments, E[c_ι] =
+1 + O(1/p), the explicit Weil constants and factor intervals, the signed ω_l(K), "leading term" with the lower-order
+pieces named, and the §12.12 correction extended to N₁ (§12.12's Weil bullet is marked superseded). Also: joint
+factorial moments, the P1 wording, §12.4, "is consistent with", 0 to 5.4%, and the pre-registration times. Both
+gates are added. The scripts were not rerun: no reported number depends on the pole counter.
+

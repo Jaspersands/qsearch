@@ -58,7 +58,8 @@ each computation under ~2 core-h. Do not edit the paper.
      than the 2+2 family predicts the κ = 7 lift, as symR ranks B_L at κ = 6. If not, 36037 is a single prime's
      effect.
    - Then split 36037's not-2+2 part by other structure (one ι-pair, other involution cycle types, order-3 symmetry).
-6. The κ = 7 spread at λ ≈ 0.3 (proposed 10 Nov 12:30, not started). Four primes give three B_L levels (0.24, 0.39,
+6. The κ = 7 spread at λ ≈ 0.3 (proposed 10 Nov about 12:20; rules written 12:24:39 in
+   `osc-mc/predictions_k7_lam03_band.txt`; runs started 12:25, two at a time, logs `osc-mc/mc_k7_p<p>.log`). Four primes give three B_L levels (0.24, 0.39,
    0.63), so a band median and spread need the other five primes in `sym/sym_rate_k7_lam03.out`: 34259, 34273,
    34469, 35281, 36541.
    - For each, first write a rule in `predictions_k7_lam03_band.txt`: predicted B_L with a range, from symR or from

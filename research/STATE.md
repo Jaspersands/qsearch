@@ -6,7 +6,7 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-10, after the handoff entry
-"2026-11-10 Rees Square Gap: the 2+2 Family Is Controlled by G = s/R₂₊₂, Not F·B (Elementary, Asymptotic Only; G Unbounded by Any Known Method); a Backwards (N) Sentence Corrected; κ = 7 at 34693 INCONCLUSIVE (Pre-Registered), Three B_L Levels in Four Primes (AI Only)";
+"2026-11-10 Rees Square Gap: κ = 4's 2+2 Family in Closed Form (Cross-Ratio Quadratic Characters; G → 1 by Weil at Fixed κ); at Every Fixed κ G → 1 with Weil Range κ^{(4+o(1))κ}, Correcting κ^{cκ²}; κ = 5 Shape Pre-Registered and Held (AI Only)";
 entries below it are from 2026-11-09 and earlier.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
@@ -62,6 +62,12 @@ Now (11-10, AI only): square gap still OPEN.
     At kappa = 7-10 it certifies nothing (D addition kappa^{6.8-7.6} vs tolerance 3.4-5.7). Nothing
     bounds G (only cap G <= 1/R_2+2 = kappa^{2.4-5.1} at the thresholds); the counts sit below the
     Weil range; no counterexample family. Measured G: 0.5-2 at kappa=7 (5 primes); kappa=6 capped.
+  - kappa=4 in closed form (section 12.13; AI-refereed sketch): #split in {1,3} by eta(r), eta(1-r)
+    (r the cross-ratio); G(S) -> (2/3)#split, G(p) = 1 + O(p^-1/2) by Weil (a factor-2 bracket only
+    from p ~ 3e6; thresholds ~100-200). Exact G 1.52 -> 1.003 for p 101-32009. At every fixed kappa
+    G -> 1, and Weil's range is kappa^{(4+o(1))kappa} (corrects the kappa^{c kappa^2} of 12.12);
+    near the thresholds the open question is the clustering of sparse one-variable patterns.
+    kappa=5 shape pre-registered, held at 6 primes (G 1.17 at 1451, 0.999 at 100151).
   - F = G*N1/mu1. F over all 29 primes with lambda <= 0.25 (section 12.11) is 0.24-4.41, max
     1789, and tracks N1/mu1 (Spearman 0.98). CORRECTED: the earlier '"F bounded" is "(N)'s B
     bounded at spike primes"' was backwards; spike primes have N1/mu1 1.3-4.5 and do not stress
@@ -89,8 +95,9 @@ Now (11-10, AI only): square gap still OPEN.
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
 - Next:
   - the kappa=7 spread at lambda ~ 0.3: the other five primes in sym_rate_k7_lam03.out by
-    mc_classes, rules written first, seeds 19-27 (mechanical item 6, proposed, not started);
-  - theory: bound rho_rest (the not-2+2 part of OSC') or G; neither has a method;
+    mc_classes, rules written first (12:24:39), seeds 19-27 (mechanical item 6, RUNNING, done ~16:45);
+  - theory: bound rho_rest (the not-2+2 part of OSC') or G near the thresholds (joint factorial
+    moments of (b_K, m_K) at lambda ~ 1); neither has a method;
   - a (C1) sampler for kappa=8 at lambda 0.18;
   - (L') for the (2,2) classes;
   - kappa=5 at 2521 and 2621, once the machine is unloaded.

@@ -1,4 +1,39 @@
 # Research Agent Handoff
+## 2026-11-10 Rees Square Gap: κ = 4's 2+2 Family in Closed Form (Cross-Ratio Quadratic Characters; G → 1 by Weil at Fixed κ); at Every Fixed κ G → 1 with Weil Range κ^{(4+o(1))κ}, Correcting κ^{cκ²}; κ = 5 Shape Pre-Registered and Held (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.
+Report: audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12.13. Scripts: osc-mc/k4_22.py, osc-mc/k5_22.py; outputs
+osc-mc/k4/k4_22_series.out, osc-mc/k4/k5_22_series.out. Referee round 4i (14 fixes, all applied) and its independent
+checks are in osc-mc/review-2026-11-10/ROUND3.md and scratch/r4i_checks.*, r4i_pole.*. Square gap still OPEN.
+- **[elementary] Transport.** For ι ∈ PGL₂ swapping two pairs of S, P(ιt) on the swapped points is P(t) permuted
+  and shifted by a vector depending on S and ι only. Since (cs_i + d)(cs_j + d) = −det ι, a partial key is fixed iff
+  2C ≡ −ind(−det ι) (mod κ) is solvable. So c_ι = 1 at odd κ and 2·[ι split] at even κ, and E[c_ι] = 1 + O(1/p).
+- **[derived; checked exactly] κ = 4.** S's Klein group preserves S, so whole buckets are paired. #2+2(S) is a
+  function of bucket sizes (with a −2·free-V₄-orbit correction). With r the cross-ratio, the −det values are r,
+  r(r − 1) and 1 − r, so #split = 1 + 2·[η(r) = η(1 − r) = 1] ∈ {1, 3}; (p − 5)/4 of the r qualify. These are exact at
+  all S for p = 101, 197 and 401, and brute-forced.
+- **[proof sketch, fixed κ] κ = 4 bound.** By Weil, |b_K − (p − 4)/64| ≤ 3√p, which gives
+  G(S) = (2/3)·#split(S)·(1 + O(p^{−1/2})) ∈ {2/3, 2} and G(p) = 1 + O(p^{−1/2}). The interval is within a factor 2 only
+  for p ≳ 3·10⁶, against thresholds of p ≈ 100–200. Exact G: 1.52, 1.16, 1.10, 1.04, 1.017 and 1.003 at p = 101, 197,
+  401, 1009, 2017 and 32009; per-S classes 0.668 and 2.002 at 32009.
+- **[sketch] Every fixed κ.** Each non-swapped s_l adds a one-variable condition (the signed ω_l(K) is in §12.13).
+  The leading term of the share is exactly E[c_ι]·R₂₊₂, so G → 1. For fixed S, N₁ and #2+2 are polynomials in
+  one-variable counts, so Weil works from p ≥ κ^{(4+o(1))κ}. This corrects §12.12's κ^{cκ²}, for N₁ too; the
+  referee withdrew its round-4g endorsement. The thresholds are κ^{(1/2+o(1))κ}, where m_K ≪ 1: what is left is the
+  joint factorial moments of (b_K, m_K) at λ ≈ 1, and no method is in hand.
+- **[computed; pre-registered 12:30:32] κ = 5** (P1–P4 held at p = 1451–100151): 25 partial-fixed keys per ι;
+  paired fraction 0.195–0.1998 (1/5); split and non-split agree within 1%; G 1.17 and 1.06 at 1451 and 2521, and
+  0.999–1.011 at p ≥ 20011.
+- **Claim gates that stay false:** G bounded near the thresholds; G bounded uniformly in κ; obstruction (c)
+  resolved; the fixed-κ sketch as a theorem without a written proof and human check; "Weil controls G at κ = 4 for
+  p ≳ 4·10⁴".
+- **Next hard question:** the joint factorial moments of (b_K, m_K) at λ ≈ 1 (does the sparse 2+2 pattern cluster by
+  more than κ^{o(κ)} over Poisson?), or ρ_rest. Mechanical item 6 (the κ = 7 band at λ ≈ 0.3) is running: rules in
+  osc-mc/predictions_k7_lam03_band.txt (12:24:39), five runs at seeds 19–27, two at a time, done about 16:45.
+- **Next command:** when item 6 finishes, score it by `predictions_k7_lam03_band.txt` (R1–R3) with
+  `k6_spike_survey.analyse` on the five npz files (outside the repo). Expected artifact: a scored band table.
+  Acceptance: the R1, R2 and R3 calls with 2σ ranges.
+
 ## 2026-11-10 Rees Square Gap: the 2+2 Family Is Controlled by G = s/R₂₊₂, Not F·B (Elementary, Asymptotic Only; G Unbounded by Any Known Method); a Backwards (N) Sentence Corrected; κ = 7 at 34693 INCONCLUSIVE (Pre-Registered), Three B_L Levels in Four Primes (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.

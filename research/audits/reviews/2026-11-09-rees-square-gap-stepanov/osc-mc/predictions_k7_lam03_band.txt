@@ -1,0 +1,25 @@
+Pre-registered rules and predictions, written 2026-11-10 12:24:39 before any of the five runs (spike-survey session).
+Mechanical item 6: the kappa = 7 band at lambda ~ 0.3.
+Runs (one log each, mc_k7_p<p>.log; npz outside the repo):
+  nice -n 19 python -I mc_classes.py 7 p 6000 --seed s --out <outside repo>/mc_k7_p<p>_s<s>.npz
+  34259 s19 (symR 22.05), 34273 s21 (9.43), 34469 s23 (16.69), 35281 s25 (15.79), 36541 s27 (15.32).
+  Two at a time. Read with k6_spike_survey.analyse (B_L with 2-sigma ends from s +- 2 se, as for 34847).
+Known: 35099 0.237 and 34847 0.245 (2-sigma upper ends 0.264 and 0.270; not picked on symR), 36037 0.635
+  (2-sigma lower end 0.535) and 34693 0.387 (2-sigma 0.375-0.398; both picked for the highest symR, about 44).
+The "band" is the seven primes not picked on symR: 35099, 34847 and the five above.
+Rules:
+  R1 (36037 against the band). 36037 is a SPIKE against the band if both hold:
+      its 2-sigma lower end 0.535 is above every band prime's 2-sigma upper end; and
+      0.635 / (band median B_L) >= 1.54 (the kappa = 6 unflagged maximum ratio).
+    NOT SHOWN if some band prime has point B_L >= 0.50. Otherwise INCONCLUSIVE.
+  R2 (34693 against the band). ABOVE the band if 0.374 (its 2-sigma lower end) is above every band prime's
+    2-sigma upper end; INSIDE the band if some band prime has point B_L >= 0.387; otherwise INCONCLUSIVE.
+  R3 (symR and B_L, nine primes with a run at lambda 0.29-0.31). Report the Spearman rank correlation of symR
+    and B_L over all nine. "Consistent with symR ranking B_L" if rho >= 0.60 (one-sided p about 0.04 at n = 9);
+    "no sign" if rho <= 0.20; otherwise inconclusive. Two of the nine were selected on symR; none of this is a
+    claim.
+  Also reported: the band median and range, B_D with 2-sigma upper ends, N1/mu1, PW_pair.
+Predictions (low-to-moderate confidence):
+  - each of the five has B_L in 0.18-0.35, like 35099 and 34847;
+  - band median 0.22-0.30;
+  - R1: SPIKE; R2: ABOVE; R3: inconclusive or consistent (rho 0.3-0.8), driven by the two high-symR primes.

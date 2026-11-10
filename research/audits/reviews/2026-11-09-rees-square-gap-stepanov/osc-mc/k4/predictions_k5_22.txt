@@ -1,0 +1,20 @@
+Pre-registered prediction for kappa = 5, written 2026-11-10 12:30:32 before any kappa = 5 run of k5_22.py (spike-survey session).
+Derivation (to be written up in the topic note section 12.13): for an involution iota of PGL_2(F_p) swapping two
+pairs of S, iota(x) - iota(y) = det (x - y) / ((cx+d)(cy+d)) gives, for each point t, the profile of iota(t) as the
+profile of t on the four swapped points, permuted and shifted by a vector depending only on S, plus a t-dependent
+constant. So t and iota(t) can share a bucket only if the bucket's key is fixed on those four coordinates
+("partial-fixed"); this needs 2C = ind(-det) mod kappa to be solvable: always at odd kappa, iff iota is split at
+even kappa (at kappa = 4, 8 fixed keys of 64 if split, else 0; k4_22.py). Each non-swapped s_j adds the condition
+chi((iota(s_j) - t)/(s_j - t)) = omega_j(K), a one-variable condition with density 1/kappa.
+Predictions for kappa = 5 (N_inv = 15, M = 625 keys):
+  P1 every iota (split or not) has exactly 25 partial-fixed keys, and every bucket containing an iota-pair has one of
+     them;
+  P2 in partial-fixed buckets the paired fraction (points t with iota(t) in the same bucket) is about 1/5: pooled
+     mean within 0.17-0.23 at every p tested;
+  P3 split and non-split iota have the same mean number of iota-pairs in buckets, within 15% (no dichotomy, unlike
+     kappa = 4);
+  P4 G = s/R22 tends to 1: within 0.75-1.33 at p >= 20000; at threshold-size p (1451, 2521) anywhere in 0.4-3
+     (low confidence). Here s is the 2+2 share computed as sum_iota sum_K C(m_K, 2) C(b_K - 4, 1) over sum_K C(b_K, 5),
+     without the overlap correction (reported separately where brute force is cheap).
+  P5 the Weil range for G at kappa = 5 starts near p = 10^9 (m_K's main term p/(2*5^5) against an error ~ 5 sqrt(p)),
+     so no tested p is in it; P4 at p >= 20000 is a heuristic check, not a Weil consequence.

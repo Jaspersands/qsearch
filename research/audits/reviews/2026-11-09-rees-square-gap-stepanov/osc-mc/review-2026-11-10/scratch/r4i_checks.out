@@ -1,0 +1,25 @@
+A/B. Transport, -det identity, sigma-fixed partial keys by enumeration, and the kappa >= 5 pairing predicate
+  k=4 p=197: 120 iota (62 split); -det identity failures 0; transport failures 0; fixed-key count != c*k: 0; pairing predicate mismatches 0 of 0 points; unwitnessed partial-fixed full keys 0, of which nonempty 0
+  k=4 p=401: 60 iota (22 split); -det identity failures 0; transport failures 0; fixed-key count != c*k: 0; pairing predicate mismatches 0 of 0 points; unwitnessed partial-fixed full keys 0, of which nonempty 0
+  k=5 p=1451: 180 iota (0 split); -det identity failures 0; transport failures 0; fixed-key count != c*k: 0; pairing predicate mismatches 0 of 10060 points; unwitnessed partial-fixed full keys 563, of which nonempty 0
+  k=5 p=2521: 90 iota (0 split); -det identity failures 0; transport failures 0; fixed-key count != c*k: 0; pairing predicate mismatches 0 of 8706 points; unwitnessed partial-fixed full keys 73, of which nonempty 0
+  k=6 p=1933: 180 iota (100 split); -det identity failures 0; transport failures 0; fixed-key count != c*k: 0; pairing predicate mismatches 0 of 10610 points; unwitnessed partial-fixed full keys 33664, of which nonempty 0
+  k=7 p=1009: 210 iota (0 split); -det identity failures 0; transport failures 0; fixed-key count != c*k: 0; pairing predicate mismatches 0 of 4264 points; unwitnessed partial-fixed full keys 499719, of which nonempty 0
+
+C. #{r: eta(r) = eta(1-r) = 1} against (p - 5)/4
+  p=101: 24, (p-5)/4 = 24
+  p=197: 48, (p-5)/4 = 48
+  p=401: 99, (p-5)/4 = 99
+  p=1009: 251, (p-5)/4 = 251
+  p=2017: 503, (p-5)/4 = 503
+
+D. kappa = 4 explicit Weil factor, eps = 192/sqrt(p) (relative error of b_K), G(S)/((2/3)#split) in [(1-eps)^2/(1+eps)^4, (1+eps)^2/(1-eps)^4]
+  p=4e+04: eps 0.960, factor in [0.000, 1500625.000]
+  p=1e+05: eps 0.607, factor in [0.023, 108.453]
+  p=1e+06: eps 0.192, factor in [0.323, 3.334]
+  p=3e+06: eps 0.111, factor in [0.519, 1.974]
+  p=1e+07: eps 0.061, factor in [0.697, 1.445]
+  p=1e+08: eps 0.019, factor in [0.892, 1.123]
+  upper factor <= 2.0 from p ~ 2.91e+06
+  upper factor <= 1.1 from p ~ 1.48e+08
+  kappa = 5 Weil range for m_K (main p/(2*5^5) = error 2*(2k-5)*sqrt(p)/2 ~ 5 sqrt p): p ~ 9.8e+08
