@@ -1,4 +1,67 @@
 # Research Agent Handoff
+## 2026-11-11 Rees Square Gap: 34259 Splits Like 36037 (Lift Not in the 2+2 Family; Pre-Registered, All Predictions Held); Obstruction (c) Recast as the Spread of B_L, Next Test σ_L at κ = 7 Pre-Registered (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git. Note:
+audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12.6 (34259 split), §12.14 (new), §0, §12.8, §12.9.
+Referee rounds 4k-a, 4k-b parts 1 and 2 with dispositions: osc-mc/review-2026-11-10/ROUND3.md.
+
+- **Computed, pre-registered (mechanical item 7).** Rule `osc-mc/predictions_k7_p34259_split.txt` (09:37:55,
+  before the run); `mc_split.py 7 34259 6000 --seed 19`; scorer `review-2026-11-10/scratch/score_k7_34259.py` →
+  `.out`. 'all' is identical to the band run (B_L 0.519), so the calls stand.
+  - Q1 REST-LIFTED (close): rest B_L 0.499 (2σ 0.41–0.58); 0.459 without the one batch holding 41 of 193 2+2
+    configurations. Q1 was nearly implied once the share was typical.
+  - Q2 TYPICAL: 2+2 share 3.2% (batch se 0.5%; batch counts over-dispersed, binomial se not used); G 1.43, F 1.49.
+  - X_L: 2+2 alone 0.6%, rest 85.9%, cross 13.5%. Removing the 2+2 part lowers B_L 3.9% (own scale; 36037 8.1%).
+  - The rest is 2.1× the low band prime 35099 (≥ 1.55× at 2σ) but only 1.27× the band's upper pair (35281, 36541),
+    not separated. Two primes selected high: not a class.
+- **Heuristic + computed (§12.14).** OSC′ needs the sup over the N_T ≈ T/(φ(κ) ln T) primes near the threshold
+  (log₇ N_T = 3.42). A power tail fills the L room at γ_L ≈ 0.5 and the D room at γ_D ≈ 1.0 for κ = 7–10, up to the
+  O(1)s (asymptotically 1 and 2). At κ = 6, σ_L = sd(ln B_L) grows as λ falls (0.49 → 0.24 from λ ≈ 0.2 to 0.5,
+  about 3.8σ); the Hill rise is about 1.1σ, not shown. The κ = 7 band's 7 primes: σ_L 0.46, ratio to κ = 6's 1.30
+  (0.61–2.02), COMPATIBLE; lognormal log₇ sup 0.14 = median −0.72 + growth part 0.86 (half the 1.70 room).
+- **Classical baseline:** none applies; nothing bounds the spread. Weil's range for G is κ^{(4+o(1))κ}.
+- **Claim gates stay false:** obstruction (c) resolved either way; any extrapolated sup as a bound; "within budget
+  at κ = 7"; "κ = 7's spread no wider / tail no heavier than κ = 6's" from a COMPATIBLE; "the κ = 6 tail index grows
+  as λ falls"; "γ > 0 shows a power tail"; a κ = 7 not-2+2 spike class or mechanism; "34259's rest lifted against
+  the band"; "34259 is a spike"; "high-B_L primes at κ = 7 have typical 2+2 shares".
+- **Next hard question:** does the spread σ_L grow with κ at equal λ, and along the threshold path? The decisive
+  form is κ = 8 near λ_T(8) = 0.18, which needs the (C1) sampler of §11.9.
+- **Next command (mechanical item 8, pre-registered in `osc-mc/predictions_k7_tail.txt` revisions 1–2, NOT
+  started; about 22 core-h, two at a time):** `nice -n 19 python -I mc_classes.py 7 p 6000 --seed s` for the 17
+  drawn primes at seeds 31–63 odd, then `python tail_index.py k7 <24 npz>`. Artifact: σ_L(7) on 24 primes and the
+  T1′ line. Acceptance: T1′ scored WIDER / NARROWER / COMPATIBLE against the frozen 0.352 (power: 53% at 1.5×).
+- Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md, 2026-11-10 Spike Survey section, items 7 (DONE) and 8.
+
+## 2026-11-11 Rees SDE p = 5, k = 3: Full Set F_5^3∖0 Infeasible, So No n²/6 by "Any Three Dependencies" (AI Only)
+
+AI-only; two cloud sessions (no commits) plus integrator checks; nothing human-reviewed; no claim gate
+changed; paper NOT edited. Note: audits/reviews/2026-11-11-rees-sde-p5-d3.md (transcripts on claude.ai:
+session_01B1JoCiWoB7SSi6bhNMLfEj, session_01B1JoCiBt8hfHb6aTuEP5Y4).
+
+- **Update (same day): certified.** full_sb.py m = 1, 2, 3 re-run locally; CNF hashes match the
+  session's; fixed lrat-check VERIFIED all three (fullsb_m{1,2,3}.out). The refutation below is now
+  certified given session A's hand symmetry-breaking argument (checked by the integrator).
+- **Refuted [computer-assisted]:** "every spanning L ⊆ F_5^3∖0 is
+  feasible", the premise of n²/6 + O(n) at p = 5. The full set F_5^3∖0 is infeasible by two different
+  arguments (exact symmetry breaking + m-split, session A; collineation lemma + 30 GL_3(F_5) classes in
+  two encodings, session B). Also infeasible: complements of size ≤ 6, the nested F_5^*×F_5^2,
+  F_5^*×(F_5^2∖0), and every L whose ±-closure is everything.
+- **Checker caveat:** both sessions used upstream lrat-check, which is unsound for the empty clause
+  (2026-11-09-lrat-and-audit-fixes.md), so their "c VERIFIED" lines certify nothing.
+- **Proved (session A, checked by hand):** L feasible ⟺ an S-functional exists or Σ_L = {Hy : y ∈ S^L}
+  contains a 3-space (H = relation matrix). By it (code, not certificates): every spanning orbit of size
+  ≤ 9 is feasible; infeasible 10-label sets exist; random-column pieces at q ≥ 9 are mostly infeasible.
+  The integrator re-implemented the criterion (`2026-11-11-rees-sde-p5-d3/sigcheck.py`) and confirmed
+  one listed 10-set infeasible and a control feasible.
+- Theorem B′ (n²/4 + 3n/2 + 2) unaffected. Both sessions stopped once the full set was refuted, against
+  the owner's "finish completely": undone items are listed in the note.
+- Gates that stay false: n²/6 at p = 5; the small-set infeasibility is certified; any algorithmic
+  lower bound.
+- Next hard question: a selection rule that keeps every piece's label set feasible (Σ_L ⊇ 3-space)?
+- Next command: none queued for this question; the full-set certification is done
+  (audits/reviews/2026-11-11-rees-sde-p5-d3/run_fullsb.sh). Mechanical items:
+  MECHANICAL_FOLLOW_UP_PLAN.md "2026-11-11 Rees SDE p = 5, k = 3".
+
 ## 2026-11-10 Rees Square Gap: κ = 7 Band at λ ≈ 0.3 (Seven Unselected Primes, Pre-Registered): 36037 Not Shown to Be a Spike (34259 at 0.519; Band Spreads 4×); κ = 6 Calibration Does Not Transfer (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.

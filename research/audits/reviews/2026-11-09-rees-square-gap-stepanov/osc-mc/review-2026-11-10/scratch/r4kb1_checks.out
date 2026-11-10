@@ -1,0 +1,24 @@
+1. Own path: kappa = 6 band (0.25, 0.31]: N 31, sigma_L 0.3516; kappa = 7 band: N 7, sigma_L 0.4588, median B_L 0.2452; ratio 1.3048
+   T1' as tail_index.py (seed 1, l7 draw then l6 draw): 0.61-2.02
+   other seed 7: 0.62-1.98
+   other seed 8: 0.60-1.99
+   other seed 9: 0.60-2.01
+   sigma_L(6) bootstrap (own, seed 1): 0.246-0.433; bootstrap mean 0.343 against point 0.352
+
+2. Extrapolations (log_7 T 5.57, phi 6)
+   N_T 783.6; log_7 median -0.722; lognormal log_7(sup/median) 0.861 (51% of 1.70) -> absolute 0.138
+   power (Hill k=2) 0.143: log_7(sup/median) 0.490 -> absolute -0.232
+   with the kappa = 6 band sigma 0.352: log_7(sup/median) 0.660
+
+3. Measurement noise: per-prime sd of ln B ~ 1/(2z)
+   kappa = 7 band z 5.4 7.0 4.3 21.1 14.9 8.2 9.4 -> 1/(2z) 0.093 0.072 0.115 0.024 0.034 0.061 0.053; rms 0.071, max 0.115
+   kappa = 6 band (N 31): z median 35.4, min 7.4; rms 1/(2z) 0.025
+   quadrature: sqrt(0.352^2 + rms7^2) = 0.359; with 0.12: 0.372; ratio inflation from unequal noise (true sigma 0.352 both): 1.018
+
+4. T1' operating characteristics (N7 24, N6 31, 2000 bootstrap pairs, 400 replicates)
+   normal ln B, sigma7/sigma6 = 1.00: P(WIDER) 0.018, P(NARROWER) 0.033
+   normal ln B, sigma7/sigma6 = 1.25: P(WIDER) 0.207, P(NARROWER) 0.000
+   normal ln B, sigma7/sigma6 = 1.50: P(WIDER) 0.527, P(NARROWER) 0.000
+   normal ln B, sigma7/sigma6 = 2.00: P(WIDER) 0.910, P(NARROWER) 0.000
+   t4 ln B (outlier-prone), scale ratio 1.00: P(WIDER) 0.033, P(NARROWER) 0.080
+   t4 ln B (outlier-prone), scale ratio 1.50: P(WIDER) 0.310, P(NARROWER) 0.003

@@ -66,6 +66,12 @@ contraction is $(\alpha,\beta)$ with $\alpha_j + \beta_i \in Q^\circ_{-(i+j)}$ a
     - 34693, with 36037's symR, scored INCONCLUSIVE by a rule written first: B_L 0.386 (2σ 0.374–0.398), between the
       comparison primes and 36037. The nine primes at λ ≈ 0.3 sit at four or more levels separated at 2σ; symR does not fix B_L (ρ 0.35,
       inconclusive).
+    - 34259, the band's high prime, splits like 36037 (mechanical item 7, pre-registered): its B_L is not carried by
+      the 2+2 family. The rest is 0.499 (0.459 without one batch), its 2+2 share 3.2% is typical, and the rest is
+      not separated from the band's upper pair. This describes two primes selected high; it is not a class.
+    - Obstruction (c) is now a question about the spread of B_L across primes, not about isolated spikes (§12.14). At
+      κ = 6, σ_L = sd(ln B_L) grows as λ falls (0.49 → 0.24 from λ ≈ 0.2 to 0.5, about 3.8σ). The next test is
+      pre-registered: σ_L at κ = 7, λ ≈ 0.3 on 24 primes against κ = 6's 0.352 (mechanical item 8, not started).
     - The square gap stays open.
   - **(N) (§9).** Proved without Weil: (C1) configurations exist from $p \approx \kappa^\kappa/(2e)$
     asymptotically (Theorem C; first certified κ = 5: 1451, κ = 6: 20233, below pigeonhole).
@@ -778,8 +784,8 @@ Question (mechanical plan item 1, §11.9): does OSC′ hold at λ ≤ 0.25 at sp
 Everything here is Monte Carlo or heuristic unless marked otherwise; nothing is a certificate. Code and outputs are in
 `osc-mc/`.
 
-An independent AI referee checked the section in sixteen passes. Rounds 1–2, with the author's disposition of each
-point, are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3, 3b, 3c, 4, 4b–4g, 4h-a, 4h-b, 4i and 4j and their dispositions
+An independent AI referee checked the section in nineteen passes. Rounds 1–2, with the author's disposition of each
+point, are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3, 3b, 3c, 4, 4b–4g, 4h-a, 4h-b, 4i, 4j, 4k-a and 4k-b (parts 1 and 2) and their dispositions
 are in `ROUND3.md`. Its corrections are applied:
 - a factor 2 in the heuristic at even κ;
 - an undercount in the first `pairsym.py`;
@@ -1329,8 +1335,26 @@ are in `ROUND3.md`. Its corrections are applied:
     half-samples 0.432–0.605, and no single cell carries it (14%). 34469 is noisier, but its 2σ upper end (0.158) is
     below the lower ends of 34273, 34847 and 35099, so it is genuinely low.
   - **Post hoc, not a claim:** 34259 looks like a milder 36037. 0.78 of its X_L is in (2,2) and 0.15 in (0,3). It has
-    N₁/μ₁ 1.045, PW_pair 1.17 and the highest symR in the band. It has not been split, so whether it shares 36037's
-    not-2+2 lift is unexamined.
+    N₁/μ₁ 1.045, PW_pair 1.17 and the highest symR in the band.
+  - **The 34259 split** (mechanical item 7; rule `osc-mc/predictions_k7_p34259_split.txt`, written before the run;
+    `mc_split.py 7 34259 6000 --seed 19`; scored by `review-2026-11-10/scratch/score_k7_34259.py` → `.out`; referee
+    round 4k-b part 2).
+    - The 'all' part is identical to the band run (B_L 0.519), so the calls stand.
+    - **Q1: REST-LIFTED (close).** Without its 193 2+2 configurations, B_L is 0.499 (2σ 0.41–0.58). Q1 was nearly
+      implied once the share was typical.
+    - **Q2: TYPICAL.** The 2+2 share is 3.2% (batch se 0.5%; the batch counts are over-dispersed, so the binomial se
+      is not used). G = 1.43, F = 1.49.
+    - **Decomposition of X_L:** 2+2 alone 0.6%, rest alone 85.9%, cross term 13.5% (aligned with the rest). Removing
+      the 2+2 part lowers B_L by 3.9% on the own scale (36037: 8.1%).
+    - **One batch** holds 41 of the 193 2+2 configurations and ranks first for the rest too. Without it the rest is
+      0.459 (2σ 0.43–0.49), the share 2.75% and G 1.22. Both calls are unchanged.
+    - **Reading:** 34259's high B_L is not carried by the 2+2 family, as at 36037. Its rest is 2.1× the low band
+      prime 35099 (≥ 1.55× at 2σ), but only 1.27× the band's upper pair 35281 and 36541, from which it is not
+      separated. Both primes were selected high, so this describes two primes; it is not a class.
+    - All three predictions held: REST-LIFTED with 0.42–0.55, share 1.5–4% with G 0.6–2, and 2+2 under 40% of X_L.
+    - **Gates stay false:** "a κ = 7 not-2+2 spike class" or "a not-2+2 mechanism"; "34259's rest lifted against
+      the band"; "34259 is a spike"; robustness to its largest batch beyond the stated leave-out values; "high-B_L
+      primes at κ = 7 have typical 2+2 shares".
   - **What it means for obstruction (c):** neither resolved nor made worse. A 4.0–4.85× spread is 0.71–0.81 in
     log₇, against the κ = 7 L tolerance of 1.70. One κ cannot measure growth with κ. What changes is the framing: at
     κ = 7, λ ≈ 0.3 large B_L values are not isolated spikes against a tight typical level, so the question becomes
@@ -1445,8 +1469,8 @@ are in `ROUND3.md`. Its corrections are applied:
      - It needs no independence assumption, since G is defined from the measured share.
   2. The same question for the arithmetic factors of the other bounded-orbit families of §12.5 item 4.
   3. What are the not-2+2 part at spike primes, and any non-projective structure at κ ≥ 7?
-     - At κ = 7: the B_L lift at 36037 sits in the not-2+2 part (its split). Whether the high band primes, 34259 in
-       particular, share that is unexamined; the not-2+2 question is posed for 36037 only.
+     - At κ = 7: the B_L lift at 36037 sits in the not-2+2 part (its split), and so does 34259's (§12.6, mechanical
+       item 7). Two primes selected high; not a class. In spread form this question becomes §12.14's.
 
   With the largest measured G·v (1789), the family would add B_D ≈ 3.6 at κ = 7 if its absolute D-rms did not fall
   with p. It would add about 0.17 if its B_D in κ²/p units stayed constant, and at most about 0.12 with typical values.
@@ -1495,9 +1519,10 @@ are in `ROUND3.md`. Its corrections are applied:
   nor "symR predicts it").
   - The five other primes are done (§12.6, mechanical item 6): the band spreads 4×, and 36037 is not shown to be a
     spike against it.
-  - Cheapest decisive next run: the not-2+2 split of 34259 (`mc_split.py 7 34259 6000 --seed 19`). Pre-register first
-    whether its rest stays ≥ 0.45, as 36037's did, and whether its 2+2 share lies outside 1.1–4.3%. A second seed at
-    34259 and 34469 would test whether the 4× spread belongs to the primes or to the S draws.
+  - Done (§12.6, mechanical item 7): the not-2+2 split of 34259. REST-LIFTED (close) and TYPICAL, like 36037. A
+    second seed at 34259 and 34469 would still test whether the 4× spread belongs to the primes or to the S draws.
+  - Next, in spread form (§12.14, mechanical item 8, pre-registered, not started): σ_L at κ = 7, λ ≈ 0.3 on 24
+    primes, against κ = 6's frozen 0.352 (rule T1′), about 22 core-h.
   - Then split 36037's rest by other structure: one ι-pair, other involution cycle types, order-3 symmetry.
 - **The direct test of (c)** still needs κ = 8 at λ ≈ 0.18 (p ≈ 3.8·10⁵), with a sampler that builds (C1)
   configurations directly (§11.9). That sampler is the main gap.
@@ -1852,3 +1877,73 @@ scripts.
 - **Claim gates stay false:** G bounded near the thresholds; G bounded uniformly in κ; obstruction (c) resolved;
   the fixed-κ sketch as a theorem without a written proof and a human check; "Weil controls G at κ = 4 for
   p ≳ 4·10⁴"; "the pole witnesses the 8th key in about 19% of split ι at p = 401".
+
+### 12.14 Obstruction (c) as a tail question, and its next test (11 Nov) [heuristic; computed; pre-registered; referee rounds 4k-a and 4k-b]
+
+- **Why the spread, not single primes.** OSC′ is a statement for every p ≥ p₀, so §11.8's exponent uses the sup of
+  B_L and B_D over the primes near the threshold T(κ), not a typical value.
+  - There are N_T ≈ T/(φ(κ) ln T) primes p ≡ 1 (mod κ) in [T, 2T], so log_κ N_T = (1/2 + o(1))κ. It is 3.42 at κ = 7
+    and 4.29, 4.74 and 5.53 at κ = 8–10.
+  - Write X = B/median(B) across primes at the relevant λ. Under a power tail P(X > x) ≈ x^{−1/γ}, the sup is about
+    median·N_T^γ. Under a lognormal tail with log-sd σ, it is about median·exp(σ√(2 ln N_T)).
+  - **Finite κ.** Against the rooms log_κ B_L < (1/2 − 1/(2 ln κ))κ − O(1) and log_κ B_D < (1 − 1/ln κ)κ − O(1), a
+    power tail uses the whole L room at γ_L ≈ 0.50, 0.48, 0.52 and 0.51 for κ = 7–10, and the whole D room at
+    γ_D ≈ 0.99, 0.97, 1.04 and 1.02. Both ignore the O(1)s: an O(1) of 1 would be 60% of κ = 7's L room of 1.70.
+  - **Asymptotically** the thresholds become γ_L → 1 and γ_D → 2, since log_κ N_T grows like κ/2 while the L and D
+    rooms grow like κ/2 and κ.
+  - **Obstruction (c) in spread form: is the tail heavy enough that the sup over N_T primes fills the room?** This is
+    a heuristic. It extrapolates a tail fitted on tens of primes out to quantile 1/N_T, and Hill > 0 does not show a
+    power tail: a lognormal with σ = 0.45 gives Hill ≈ 0.28.
+- **The κ = 6 reference** [computed; `osc-mc/tail_index.py` → `review-2026-11-10/scratch/tail_k6.out`, rerun 09:51]. The table gives
+  the spread scale σ_L = sd(ln B_L) and Hill estimates on the top quarter, each with a 95% bootstrap range over primes.
+
+  | λ band | N | σ_L | γ_L (Hill) | γ_D (Hill) | primes with X > 2, L / D | max ratio B_L / B_D |
+  |---|---|---|---|---|---|---|
+  | [0.19, 0.25] | 29 | 0.49 (0.35–0.60) | 0.46 (0.19–0.68) | 1.43 (0.42–1.89) | 4 / 6 | 3.5 / 23 |
+  | (0.25, 0.31] | 31 | 0.35 (0.25–0.43) | 0.33 (0.11–0.49) | 0.83 (0.25–1.26) | 3 / 11 | 2.6 / 15 |
+  | [0.49, 0.56] | 29 | 0.24 (0.18–0.29) | 0.23 (0.08–0.32) | 0.73 (0.15–0.99) | 0 / 5 | 1.9 / 5.9 |
+
+  - **The B_L spread grows as λ falls at κ = 6** [computed]. σ_L falls from 0.49 to 0.24 between λ ≈ 0.2 and 0.5,
+    with disjoint ranges (about 3.8σ). The tail indices rise only at about 1.1σ (not shown), and the B_D count of
+    X > 2 does not rise (6, 11, 5).
+  - The threshold path has λ_T(κ) → 0 (0.43, 0.18, 0.07 and 0.02 at κ = 7–10), so the live form of (c) is whether
+    the spread keeps growing along the path.
+  - Against the finite-κ rooms, κ = 6's γ_L of 0.46 at λ ≈ 0.2 is near the L room, and γ_D of 1.43 is above the D
+    room. κ = 6's own log₆ N_T is not computed, and κ = 6's λ_T lies above these bands, so this is an indication,
+    not a call.
+  - At κ = 7, λ ≈ 0.3, the seven band primes give σ_L 0.46 (0.23–0.60), 1.30× κ = 6's at equal λ (0.61–2.02). Their
+    lognormal extrapolation gives log₇ sup B_L ≈ 0.14 (power form −0.23), against the room of 1.70 before the O(1).
+    It has two parts: log₇ median = −0.72, measured below λ_T and the same size as the unknown O(1); and the part that
+    grows with κ, log₇(sup/median) = 0.86 (power form 0.49), which is half the room. Seven primes are too few to use.
+- **The next test** (mechanical item 8; `osc-mc/predictions_k7_tail.txt`, revision 1 after referee round 4k-a,
+  written before any run).
+  - **Quantity:** σ_L(7) at λ ≈ 0.3, from N = 24 primes. These are the 7 band primes plus 17 drawn as
+    `default_rng(2026).choice(pool, 17, replace=False)` from the 30 not yet run, never selected on symR or B_L.
+    36037 and 34693 enter only a secondary analysis. 7 of the 24 values were known when the rule was written.
+  - Each prime gets `mc_classes.py 7 p 6000` at seeds 31–63 (odd), about 22 core-h in all.
+  - **Rule T1′:** take the ratio σ_L(7)/σ_L(6, λ (0.25, 0.31]) = σ_L(7)/0.352, with a 95% range from 2000 independent
+    bootstrap pairs. WIDER if the lower end is above 1, NARROWER if the upper end is below 1, otherwise COMPATIBLE.
+    σ_L is about 2.7× sharper than Hill (referee simulation), but the power is modest: a spread 1.25×, 1.5× or 2×
+    wider is called WIDER about 21%, 53% or 91% of the time.
+  - **Reported only:** Hill and the count of X > 2; the extrapolated log₇ sup under the lognormal and power forms,
+    against 1.70; γ_D if the top 7 B_D values are resolved.
+  - **Predictions:** σ_L(7) in 0.35–0.55, ratio 1.0–1.6, T1′ COMPATIBLE, lognormal log₇ sup below 0.6. The last
+    is not independent: it follows from the σ_L prediction unless the median moves (it needs only σ_L < 0.70).
+  - **What it decides.** WIDER would be the first evidence that the spread grows with κ at equal λ. COMPATIBLE or
+    NARROWER would say it does not between κ = 6 and 7, at this λ only.
+  - One κ step cannot measure growth with κ. The decisive version is the same quantity at κ = 8 near
+    λ_T(8) = 0.18, which needs the (C1) sampler of §11.9.
+- **Limits.**
+  - Measurement noise in each B moves Hill by under 2% and does not make the test conservative. It adds to σ_L in
+    quadrature. The band primes' per-prime log-sd 1/(2z) is 0.024–0.115 (rms 0.071), which moves 0.352 to 0.359;
+    κ = 6's rms is 0.025. So the ratio is inflated by about 1.8%.
+  - For outlier-prone values (t₄-like), the percentile bootstrap of an sd gives a false NARROWER about 8% of the time.
+  - The 7 band primes came from the symmetric-S table, not from B_L.
+  - The λ ≈ 0.3 window is below κ = 7's λ_T = 0.43.
+  - The tail form is an assumption: it could be capped (|V| ≤ n), or heavier far out.
+- **Claim gates stay false:**
+  - obstruction (c) resolved in either direction, and any extrapolated sup as a bound;
+  - "κ = 7's tail is no heavier than κ = 6's", or "its spread is no wider", from a COMPATIBLE;
+  - "within budget at κ = 7" from any extrapolation;
+  - "the κ = 6 tail index grows as λ falls" as a fact (the σ_L rise is resolved; the Hill rise is not);
+  - "γ > 0 shows a power tail".

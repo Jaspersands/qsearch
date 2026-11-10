@@ -49,7 +49,7 @@ con = {q: dd['S1'] / cA[:, None, None] for q, dd in (('str', dS), ('uns', dU))}
 d35, supp35, w35 = load(f35)
 V35 = d35['S1'] / d35['cnt'].astype(float)[:, None, None]
 M, M35 = masks(supp), masks(supp35)
-print('36037 split: %d configurations (%d 2+2, share %.4f; per-batch 2+2 counts %s)' % (cA.sum(), cS.sum(), sh, ' '.join('%d' % c for c in cS)))
+print('%s split: %d configurations (%d 2+2, share %.4f; per-batch 2+2 counts %s)' % (pre.split('/')[-1], cA.sum(), cS.sum(), sh, ' '.join('%d' % c for c in cS)))
 print('(a) own-scale w-rms per part, z; 35099 whole for comparison.  (b) shares of X_all: str-str, uns-uns, 2 x cross.')
 print('%-6s %-18s %-18s %-18s %-14s | %-8s %-8s %-8s  %s' % ('bin', 'all', '2+2', 'rest', '35099', 'ss', 'uu', '2su', 'rest/35099 (2sig low end of rest over high end of 35099)'))
 for g, m in M.items():

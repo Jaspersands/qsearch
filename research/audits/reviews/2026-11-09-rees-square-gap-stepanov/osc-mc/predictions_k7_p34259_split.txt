@@ -1,0 +1,19 @@
+Pre-registered rule and prediction, written 2026-11-11 09:37:55 before the run (spike-survey session). Mechanical item 7.
+Run: nice -n 19 python -I mc_split.py 7 34259 6000 --seed 19 --out <outside repo>/split_k7_p34259
+     (log: split/split_k7_p34259.log). Seed 19 is the band run's seed, so the 'all' part should reproduce the band
+     run (B_L 0.519, 2-sigma 0.412-0.608); a mismatch beyond rounding is reported first and voids the calls below.
+Read with split_report.py and review-2026-11-10/scratch/split36037_decomp.py-style decomposition (k6_spike_survey
+  estimators; parts 'all', 'str' = 2+2-structured by pairsym's definition, 'uns' = the rest, on their own scales).
+Question: does the high band prime 34259 share 36037's not-2+2 lift?
+References: 36037's rest B_L 0.573 (2-sigma 0.478-0.654), its 2+2 share 3.1% +- 0.3%; low band primes' whole-run B_L
+  upper 2-sigma ends 0.264-0.270 (35099, 34847, 34273); 2+2 shares at lambda ~ 0.3 measured 1.1-4.3%.
+Rules (Q1 and Q2 are separate questions; within each, the clauses are mutually exclusive):
+  Q1 (rest). REST-LIFTED if B_L,uns >= 0.45 and its 2-sigma lower end > 0.270.
+             REST-TYPICAL if B_L,uns <= 0.33 and its 2-sigma upper end < 0.45.
+             Otherwise INCONCLUSIVE; "close" if the 2-sigma range crosses 0.33 or 0.45.
+  Q2 (share). ATYPICAL if the 2+2 share's +-2 se interval lies wholly outside 1.1-4.3%; otherwise TYPICAL.
+  Also reported, not called: B_L,str with 2-sigma; G = share/R22 and F; the exact X_L decomposition into 2+2 alone,
+  rest alone and cross (contribution scale c_q,b = S1_q,b/cnt_all,b), with jackknife se; B_D of each part.
+Predictions (moderate confidence): Q1 REST-LIFTED (B_L,uns 0.42-0.55, since the whole run is 0.519 and at 36037
+  removing the 2+2 part lowered B_L by about 10%); Q2 TYPICAL (share 1.5-4%, G 0.6-2); the 2+2 configurations
+  account for under 40% of X_L.

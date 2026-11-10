@@ -2032,3 +2032,430 @@ line and the band paragraph (table, calls, failed predictions, credibility, post
 passages are marked, not deleted. The record wording on the scorer's timing, R1 resting on 34259, and the clause order
 is in §12.6. The suggested 34259 split is proposed as mechanical item 7, not started.
 
+
+# Round 4k-a (referee, 11 Nov 09:43): the proposed tail test of obstruction (c) (sec12_14_draft.md, predictions_k7_tail.txt)
+
+**Verdict: fixes needed before the first run (10 items).**
+- The reframing toward the spread and its upper tail is right.
+- At the κ in reach, the budget mapping is off by a factor of 2.
+- The pre-registered Hill test cannot be decisive at N = 24.
+  - T1 returns COMPATIBLE for practically any plausible γ.
+  - T2's threshold is the asymptotic one, so WITHIN does not mean what the draft says.
+- No item-8 run has started (09:42), so amending the rules now is legitimate. The 22 core-h are worth spending if the
+  primary quantity changes as in fix 5.
+
+**Own checks** (`scratch/r4ka_checks.py` → `.out`; synthetic data, plus the window arithmetic; 2.6 s of CPU).
+
+**1. The mapping.**
+- The asymptotic thresholds are right: γ_L = 1 and γ_D = 2. The quantity log_κ(sup/median) ≈ γ·log_κ N_T is compared
+  with tolerances of about κ/2 and κ, and log_κ N_T ~ κ/2.
+- **"Spends a fraction about γ_L" is wrong at κ = 7–10, by a factor of about 2.** The L tolerance is
+  (1/2 − 1/(2 ln κ))κ, and 1 − 1/ln κ is only 0.49–0.57 for κ = 7–10. With N_T = T/(φ(κ) ln T) primes ≡ 1 (mod κ) in
+  [T, 2T], and log_κ T from §11.8:
+
+  | κ | log_κ N_T | L tolerance | D tolerance | γ_L using all the L room | γ_D using all the D room |
+  |---|---|---|---|---|---|
+  | 7 | 3.42 | 1.70 | 3.40 | 0.50 | 0.99 |
+  | 8 | 4.29 | 2.08 | 4.15 | 0.48 | 0.97 |
+  | 9 | 4.74 | 2.45 | 4.90 | 0.52 | 1.04 |
+  | 10 | 5.53 | 2.83 | 5.66 | 0.51 | 1.02 |
+
+  - So per unit γ the fraction spent is about 2γ_L and γ_D, not γ_L and γ_D/2. These ignore the O(1)s.
+  - The O(1)s are unknown, and an O(1) of 1 is 60% of κ = 7's L room. So at these κ, "fraction" is meaningful only
+    up to those constants.
+  - The factor approaches 1 slowly: 1 − 1/ln κ reaches 0.75 only near κ ≈ 55.
+- Write: "(c) in spread form, asymptotically: γ_L → ≥ 1 or γ_D → ≥ 2. At κ = 7–10 the full budget is already used at
+  γ_L ≈ 0.5 or γ_D ≈ 1.0, up to the O(1)s."
+- Also:
+  - "the supremum of B_L (and of √B_D)" conflicts with "γ_D/2 of the B_D tolerance". Use B_D and the D tolerance
+    throughout, or √B_D and half the tolerance, not both.
+  - The count of primes ≡ 1 (mod κ) uses φ(κ), not κ.
+  - At κ = 7 the threshold sits at λ_T = 0.43, not 0.3. The test window is below the threshold, where κ = 6
+    suggests tails are heavier. That is conservative for WITHIN, and it should be stated.
+  - The heuristic also assumes one tail law over the whole window [T, 2T], where λ varies by a factor of 2, and it
+    ignores all p > 2T. Both are plausible, since tails thin as λ rises, but both are assumptions.
+
+**2. The estimator.** Operating characteristics: Hill with k = 6 on N = 24, 2000-resample percentile bootstrap,
+300 replicates per population.
+
+| population | mean Hill | sd | 95% CI covers truth | P(HEAVIER: lower end > 0.49) | P(LIGHTER: upper end < 0.11) | P(WITHIN: upper end < 1) | P(EXCEEDS: lower end > 1) |
+|---|---|---|---|---|---|---|---|
+| Pareto γ 0.10 | 0.10 | 0.04 | 0.86 | 0.00 | 0.17 | 1.00 | 0.00 |
+| Pareto γ 0.33 | 0.33 | 0.14 | 0.88 | 0.00 | 0.00 | 0.93 | 0.00 |
+| Pareto γ 0.50 | 0.50 | 0.21 | 0.86 | 0.00 | 0.00 | 0.69 | 0.00 |
+| Pareto γ 0.75 | 0.76 | 0.29 | 0.89 | 0.00 | 0.00 | 0.29 | 0.00 |
+| Pareto γ 1.0 | 0.98 | 0.42 | 0.88 | 0.03 | 0.00 | 0.12 | 0.00 |
+| Pareto γ 1.5 | 1.50 | 0.66 | 0.86 | 0.23 | 0.00 | 0.02 | 0.00 |
+| Pareto γ 2.5 | 2.51 | 1.00 | 0.87 | 0.64 | 0.00 | 0.00 | 0.12 |
+| lognormal σ 0.45 | 0.28 | 0.11 | — | 0.00 | 0.00 | 1.00 | 0.00 |
+| lognormal σ 0.70 | 0.43 | 0.16 | — | 0.00 | 0.00 | 0.89 | 0.00 |
+
+- Hill is unbiased for a pure Pareto, but its sd is 0.41γ (γ/√k), and the bootstrap under-covers (86–92% against a
+  nominal 95%).
+- **T1:** HEAVIER has power 3% at γ = 1.0, three times κ = 6's 0.33, and 23% at γ = 1.5. LIGHTER needs γ ≲ 0.1.
+  T1 is COMPATIBLE for anything from about 0.15 to 1.2, so it cannot decide anything.
+- **T2:** WITHIN fires 69% of the time at γ = 0.5, which is the whole L budget at κ = 7 (item 1). EXCEEDS is
+  practically unreachable.
+- The draft says COMPATIBLE and WITHIN would show the κ = 7 spread "spends under half the B_L room". That is wrong.
+  An upper end below 1 allows up to about twice the κ = 7 L room. Under half the room needs an upper end below about
+  0.25.
+- **No power tail is needed to get a positive Hill.** A lognormal with σ = 0.45 gives Hill 0.28. The seven-prime
+  band has ln-sd 0.46. So γ cannot be read as evidence of a power tail. The lognormal sup over N_T primes is
+  median·exp(σ√(2 ln N_T)); at κ = 7 that is log₇ = 0.84 for σ = 0.45 and 1.30 for σ = 0.70, against the L room of
+  1.70. A different k does not help: only N does. Telling γ = 0.5 from 0.33 at 2σ needs k ≈ 40, that is N ≈ 160 primes.
+- **Measurement noise** is negligible for Hill. Multiplicative noise with log-sd 0.05, 0.12 or 0.25 gives a mean
+  Hill of 0.329, 0.331 or 0.339 at γ = 0.33. The relative error of B is about 1/(2z), so z = 4 means about 12%.
+  - Drop "noise inflates γ, so the test is conservative". The effect is under 2%, and an upward bias would in any
+    case be anti-conservative for HEAVIER.
+- **Zeros in B_D.**
+  - Hill is scale-invariant, so dividing by the median is irrelevant, even when the median is the 10⁻⁶ floor.
+  - Floors matter only if X_(k+1) is floored: with 10 of 24 floored Hill is unchanged (0.83); with 18 floored it is
+    14.6.
+  - The "≥ 12 resolved" gate does not guarantee that the top k + 1 = 7 values are resolved. Require that directly.
+- **The reader does not compute γ_D at κ = 7.** `tail_index.py k7` computes only B_L, and it reports no resolution
+  count. So T2's γ_D clause has no pre-registered reader. Amend it before the runs, or drop the clause.
+
+**3. The κ = 6 trend is suggestive, not shown.**
+- The intervals overlap: γ_L 0.23 (0.08–0.32) against 0.46 (0.19–0.68). With sd ≈ 0.41γ, the end-to-end difference
+  is 0.23 ± 0.21, about 1.1σ; for γ_D it is 0.70 ± 0.66, also about 1.1σ.
+- The max ratios fall monotonically, but there are only three bands.
+- "The live form of (c) is whether γ grows along the path" is a fair framing. "Both grow as λ falls" should read
+  "both point estimates grow as λ falls (about 1σ; not shown)".
+- "γ_L is well below 1 at every band, and γ_D below 2" is true only against the asymptotic thresholds. Against the
+  finite-κ budget of about 0.5 and 1.0 (item 1), κ = 6's γ_L at λ ≈ 0.2 (0.46) is already near it, and its γ_D
+  (1.43) is above it.
+  - I have not computed κ = 6's own log₆ N_T, and κ = 6's λ_T lies above these bands. So this is an indication, not
+    a call.
+
+**4. Sample, window and seeds.**
+- The draw reproduces: `default_rng(2026).choice(pool, 17, replace=False)` on the 30-prime pool gives exactly the
+  listed 17. State that call in the file.
+- There are 38 primes p ≡ 1 (mod 7) with λ ∈ [0.29, 0.31] (34147–36457).
+- **36541 has λ = 0.3106, outside the window**, yet it is in the sample. State the window as [0.29, 0.311], or note
+  the exception.
+- Seeds 31–63 odd give 17 distinct seeds, disjoint from the earlier 13, 17 and 19–27. Good.
+- The prediction "γ_L(7) in 0.2–0.6" was made with 7 of the 24 values known. That is fine, but say so.
+
+**Fixes.**
+
+1. **Mapping (draft, first bullet; prediction file, "Why").** Replace "spends a fraction about γ_L … γ_D/2" with the
+   asymptotic statement plus the finite-κ table above: the full budget is used at γ_L ≈ 0.5 and γ_D ≈ 1.0 for
+   κ = 7–10, up to the O(1)s.
+2. **N_T.** Write N_T ≈ T/(φ(κ) ln T); log₇ N_T = 3.42. Drop "(and of √B_D)", or make the D side consistent with it.
+3. **λ_T.** State that the κ = 7 threshold is λ_T = 0.43, so the window lies below it. Optionally, add a window at
+   λ ≈ 0.43, which is the one the heuristic needs at κ = 7.
+4. **κ = 6 reading.**
+   - "Both grow as λ falls" → "the point estimates grow as λ falls (about 1σ; not shown)".
+   - "Well below 1 … below 2" → "below the asymptotic thresholds; near or above the finite-κ budget at λ ≈ 0.2".
+5. **The primary quantity.** Before any run, replace Hill as the primary quantity with the spread scale σ_L, the sd of
+   ln B_L across the 24 primes. Its relative sd is 0.15 at N = 24, 2.7× sharper than Hill's 0.41; the IQR version is
+   0.24. Pre-register:
+   - **T1′:** WIDER if the 95% interval of ln(σ_L(7)/σ_L(6, (0.25, 0.31])) is above 0; NARROWER if below 0; else
+     COMPATIBLE.
+     - The se of the log ratio is about 0.20 for N = 24 and 31, so a 1.5× wider spread is detected at about 2σ.
+     - κ = 6's σ_L for that band must be computed and frozen in the file before the runs. I have not computed it.
+   - **T2′:** report the extrapolated log₇(sup/median) at N_T = 7^3.42 under both models:
+     - lognormal: σ√(2 ln N_T)/ln 7;
+     - power: γ·3.42.
+     Call each against the L room of 1.70 at 1/2 and at 1, labelled heuristic.
+   - Keep Hill and the exceedance count as reported-only. The number of X > 2 has mean 1.4–3.8 and sd 1.1–1.7 at
+     N = 24, which is too noisy to call.
+6. **Rewrite or drop T1 and T2.** If T1 and T2 are kept as written, record their operating characteristics (table
+   above). Delete "COMPATIBLE and WITHIN would say … under half the B_L room".
+7. **"Noise inflates γ, so the test is conservative".** Delete it, or replace it with "measured noise (log-sd ≤ 0.12)
+   moves Hill by under 2%".
+8. **B_D.** Either add a γ_D and σ_D reader with a resolution count, requiring the top k + 1 values resolved (z ≥ 2),
+   or drop the γ_D clause. Neither can stay as written, because the k7 reader does not compute it.
+9. **Sample.**
+   - State the draw call.
+   - Widen the window to [0.29, 0.311] for 36541, or note it.
+   - Note that 7 of the 24 values were known when the predictions were made.
+10. **"What it decides".** Rewrite as: "a first measured κ = 7 spread at one λ, compared in scale with κ = 6 at equal
+    λ. One κ cannot measure growth; the decisive form is κ = 8 near λ_T(8) = 0.18."
+
+**Gates to add.**
+- "κ = 7's tail is no heavier than κ = 6's", from a T1 COMPATIBLE (low power);
+- "within budget at κ = 7", from WITHIN against 1;
+- "the κ = 6 tail grows as λ falls", as a fact;
+- "γ > 0 shows a power tail".
+
+The draft's three gates stay.
+
+### Author's disposition of round 4k-a (11 Nov)
+
+All ten fixes and the four gates are accepted. The verdict was checked against `scratch/r4ka_checks.out` (the window
+count and the draw call reproduce). The changes are in `predictions_k7_tail.txt` (REVISION 1, appended before any
+run; the original text is kept above it) and in `scratch/sec12_14_draft.md`.
+
+1. **Mapping.** Accepted. The finite-κ budgets γ_L ≈ 0.50, 0.48, 0.52, 0.51 and γ_D ≈ 0.99, 0.97, 1.04, 1.02 for
+   κ = 7–10 replace "γ_L … γ_D/2", with the O(1) caveat (an O(1) of 1 is 60% of κ = 7's L room). The asymptotic
+   thresholds γ_L → 1 and γ_D → 2 are kept as limits only.
+2. **N_T.** Accepted: N_T ≈ T/(φ(κ) ln T), log₇ N_T = 3.42 (and 4.29, 4.74, 5.53 at κ = 8–10). "(and of √B_D)" is
+   dropped.
+3. **λ_T.** Accepted: the draft states that the window lies below κ = 7's λ_T = 0.43. The optional λ ≈ 0.43 window is
+   not added; the decisive version is named as κ = 8 near λ_T(8) = 0.18.
+4. **κ = 6 reading.** Accepted as worded, plus the note that κ = 6's λ_T lies above these bands.
+5. **Primary quantity.** Accepted. `tail_index.py` now computes σ_L = sd(ln B_L) with a bootstrap. κ = 6's band
+   (0.25, 0.31] gives σ_L = 0.352 (0.247–0.430), frozen in REVISION 1 before the runs.
+   - T1′ is as specified: the 95% range of the ratio σ_L(7)/0.352 from 2000 independent bootstrap pairs, which is
+     equivalent to the interval of the log ratio.
+   - T2′ is kept as reported only. The reader gives the absolute log₇ sup B_L = log₇ median + the extrapolated
+     log₇(sup/median), under both forms, against the L room of 1.70. The "at 1/2 and at 1" calls are not made,
+     because the O(1) is unknown.
+   - On the seven band primes (preliminary, known before the rule): σ_L 0.459 (0.227–0.603), ratio 1.30 (0.61–2.02),
+     COMPATIBLE; lognormal log₇ sup 0.14, power −0.23.
+6. **T1, T2.** Dropped as calls. Hill and the X > 2 count are reported only.
+7. **"Conservative".** Deleted. The draft now says measured noise (log-sd ≤ 0.12) moves Hill by under 2%, and adds
+   that noise enters σ_L in quadrature (0.35 → 0.37 at 0.12), cancelling in the ratio only if both κ have equal noise.
+8. **B_D.** The γ_D clause is reported only, and only if the top 7 B_D values are resolved; the reader prints the
+   resolved count. At present 0 of 7 band primes have B_D resolved, so no γ_D is expected from item 8.
+9. **Sample.** The draw call is stated. 36541 (λ 0.3106) is noted as outside [0.29, 0.31], and kept as a band prime.
+   That 7 of the 24 values were known is stated.
+10. **"What it decides".** Rewritten as the referee proposed.
+
+Gates: the four new gates are added to the draft and to REVISION 1; the three earlier gates stay.
+
+# Round 4k-b part 1 (referee, 11 Nov 09:50): revised §12.14 draft and predictions_k7_tail.txt REVISION 1
+
+**Verdict: ACCEPT WITH CHANGES (7 items).**
+- The 4k-a fixes and the four gates are applied, and the numbers reproduce.
+- One new error comes from my own 4k-a wording: the power of the test.
+- One finding changes a gate's wording: at κ = 6 the rise of σ_L as λ falls is resolved, not suggestive.
+- Neither the amendments nor this round touches the sample, seeds or run command. REVISION 1 stays valid as a
+  pre-registration, provided the items below are recorded before the first item-8 run.
+
+**Own checks** (`scratch/r4kb1_checks.py` → `.out`; my Gram path, not `k6_spike_survey.analyse`; 2 s of CPU).
+- **σ_L(6, (0.25, 0.31]):**
+  - N 31, 0.3516.
+  - Bootstrap 0.246–0.433 (own seed-1 path). The author's 0.247–0.430 comes from the shared generator inside
+    tail_index.py; the difference is immaterial.
+  - The bootstrap mean is 0.343, so a percentile bootstrap of an sd is biased slightly low. Both sides of the ratio
+    share that bias.
+- **κ = 7 band:** σ_L 0.4588, median B_L 0.2452.
+- **Ratio:** 1.3048. Replaying tail_index.py's T1′ loop (default_rng(1), one l7 draw then one l6 draw per pair, with
+  replacement, 2000 pairs) gives 0.61–2.02 exactly. Other seeds give 0.60–0.62 to 1.98–2.01.
+- **The construction matches my spec.** The percentile range of the ratio is the exponential of the percentile range
+  of the log ratio, and the pairs are independent.
+- **Extrapolations:**
+  - N_T = 783.6 (log₇ 3.42).
+  - Lognormal: log₇(sup/median) = 0.861, plus log₇ median −0.722, gives 0.138.
+  - Power: Hill (k = 2) 0.143 gives log₇(sup/median) 0.490 and an absolute value of −0.232.
+  - Both match 0.14 and −0.23.
+
+**(1) The fixes, one by one.**
+- **Fix 1 (mapping):** applied. One wording slip: "since both rooms and log_κ N_T grow like κ/2 and κ respectively"
+  should be "since log_κ N_T grows like κ/2, and the L and D rooms like κ/2 and κ".
+- **Fix 2 (N_T):** applied. The sup is now of B_L and B_D, and √B_D is gone.
+- **Fix 3 (λ_T):** applied, in Limits. Declining the optional λ ≈ 0.43 window is a fair disposition.
+- **Fix 4 (κ = 6 reading):** applied, but it needs a correction (item A below).
+- **Fix 5 (primary quantity):** applied.
+  - σ_L(6) = 0.352 is frozen.
+  - T1′ is correct.
+  - T2′ as reported-only, without the "at 1/2 and at 1" calls, is a fair disposition, since the O(1) is unknown.
+  - Two items to fix: B (the power statement) and C (the extrapolation readout).
+- **Fix 6:** applied. T1 and T2 are dropped as calls.
+- **Fix 7:** applied, but the new quadrature sentence needs the measured figure (item D).
+- **Fix 8:** applied as reported-only. tail_index.py prints the overall resolved count, not whether the top 7 B_D
+  values are resolved. The scorer must check that by hand, or the reader must print it.
+- **Fix 9:** applied: the draw call, 36541's exception, and the 7 known values.
+- **Fix 10:** applied.
+- **Gates:** all four are present in the draft and in REVISION 1. The earlier gates stay. "A power tail as a fact" is
+  now covered by "γ > 0 shows a power tail", which is fine.
+
+**Items.**
+
+A. **The κ = 6 rise of σ_L is resolved, not suggestive.**
+   - σ_L falls from 0.494 (0.349–0.603) at λ ≈ 0.2 to 0.242 (0.175–0.288) at λ ≈ 0.5. The bootstrap ranges are
+     disjoint. The log ratio is 0.71 ± 0.19, about 3.8σ.
+   - Only the Hill estimates are about 1.1σ.
+   - Write: "σ_L rises as λ falls (disjoint ranges, about 3.8σ end to end); the Hill tail indices only suggestively
+     (about 1.1σ)."
+   - Narrow the gate to "the κ = 6 tail index grows as λ falls" as a fact. The spread scale's growth is shown at
+     κ = 6, for these three bands.
+   - "Every measure of the spread is larger at smaller λ" holds for the table's columns. The count of B_D values with
+     X > 2 is 6, 11 and 5 across the three bands, so it does not hold. Say "every measure in the table".
+
+B. **Power: "a 1.5× wider spread would be detected at about 2σ" is my 4k-a wording, and it misleads.**
+   - An effect expected at 2σ is detected only about half the time. By simulation (N 24 against 31, 2000 pairs,
+     400 replicates), P(WIDER) is:
+     - 0.21 at 1.25×;
+     - 0.53 at 1.5×;
+     - 0.91 at 2×.
+   - With outlier-prone t₄ log values, P(WIDER) is 0.31 at 1.5×.
+   - False calls at equal σ:
+     - normal: WIDER 1.8%, NARROWER 3.3%;
+     - t₄: WIDER 3.3%, NARROWER 8.0%.
+   - Write: "a 1.5× wider spread is called WIDER about half the time, a 2× wider one about 90%".
+   - Add to the gates: "κ = 7's spread is no wider than κ = 6's", from COMPATIBLE.
+
+C. **(3) The absolute quantity is right in principle, but report both parts.**
+   - The room bounds log_κ B_L itself, so log₇ sup = log₇ median + log₇(sup/median) is the quantity to set against
+     1.70.
+   - But the median term, −0.72, is the same size as the unknown O(1), and it is measured at λ 0.3 rather than
+     λ_T = 0.43. The κ-growing part is log₇(sup/median) = 0.86, which is 51% of the room.
+   - Write: "log₇ sup B_L ≈ 0.14 = −0.72 (median) + 0.86 (lognormal sup/median, half the L room)".
+   - Also note that the prediction "lognormal log₇ sup below 0.6" nearly follows from the σ_L prediction. At median
+     0.245 it needs only σ_L < 0.70. So it is not an independent test.
+
+D. **(4) Noise in quadrature.**
+   - The form is right. If the measured ln B = ln B_true + e, with e independent of B_true and sd ε_p, then
+     E[s²] ≈ σ² + mean(ε_p²). So 0.12 takes 0.352 to 0.372, and that arithmetic holds.
+   - But 0.12 is the maximum, not the measured figure. At the κ = 7 band, 1/(2z) is:
+
+     | prime | 34259 | 34273 | 34469 | 35281 | 36541 | 35099 | 34847 |
+     |---|---|---|---|---|---|---|---|
+     | 1/(2z) | 0.093 | 0.072 | 0.115 | 0.024 | 0.034 | 0.061 | 0.053 |
+
+     The rms is 0.071, so 0.352 → 0.359.
+   - The κ = 6 band has median z 35, so its rms is 0.025. With equal true σ, the ratio is then inflated by 1.8%.
+   - Write: "measured per-prime noise has log-sd 0.02–0.12 (rms 0.07 at κ = 7, 0.025 at κ = 6); it raises σ_L(7) by
+     about 2% and the ratio by about 2%".
+   - 1/(2z) is a delta-method figure, valid for z ≫ 1. At z ≈ 4 the error in ln B is skewed by the noise floor, so
+     treat 0.115 as approximate. The half-samples at 34259 (round 4j) suggest a relative error of about 0.08 against
+     1/(2z) = 0.093, which is consistent.
+
+E. **tail_k6.out is stale.**
+   - It was written at 09:44:28, before tail_index.py's last save at 09:44:46.
+   - It contains no T1′ line, so the quoted 1.30 (0.61–2.02) is in no output file. I reproduced it above.
+   - Rerun `tail_index.py k6` and `tail_index.py k7 <7 band files>` into that file before the first item-8 run, so
+     that the frozen 0.352 and the preliminary ratio come from the reader as saved.
+
+F. **tail_index.py's docstring still has the old mapping** ("spends a fraction gamma … gamma/2 of the B_D
+   tolerance"). Update it to the finite-κ statement.
+   - The T1′ block calls `ks.analyse` twice per κ = 6 file. That is harmless, but it doubles the cost.
+
+G. **Bootstrap of an sd under outliers.** At equal σ with t₄ tails, the false NARROWER rate is 8%. Add one line to
+   Limits: "the percentile bootstrap of an sd is miscalibrated under outliers (false NARROWER about 8% under t₄ tails)".
+
+### Author's disposition of round 4k-b part 1 (11 Nov)
+
+All seven items are accepted. The numbers in (2) and (3) are confirmed by the referee's own code path. The changes are
+in `scratch/sec12_14_draft.md`, in `predictions_k7_tail.txt` (REVISION 2, before any item-8 run; sample, seeds, rule
+and the frozen σ_L(6) unchanged) and in `tail_index.py`.
+
+- **(3)** The draft now reports both parts of the extrapolation: log₇ median −0.72, and log₇(sup/median) 0.86
+  (lognormal) or 0.49 (power), which is half the room. It also notes that the "sup below 0.6" prediction is not
+  independent of the σ_L prediction. `tail_index.py` prints both parts.
+- **(4)** Noise is now given as rms 0.071 (range 0.024–0.115), which moves 0.352 to 0.359. κ = 6's rms is 0.025, so
+  the ratio is inflated by about 1.8%.
+- **A** The κ = 6 σ_L rise is called resolved (about 3.8σ), and the Hill rise not shown. "Every measure" is replaced,
+  and the B_D X > 2 counts (6, 11, 5) are added to the table. The gate is narrowed to the tail index.
+- **B** The power statement is now 21%, 53% and 91% at 1.25×, 1.5× and 2×. The gate "spread no wider" from a
+  COMPATIBLE is added.
+- **E** `tail_k6.out` is rerun (09:51:43, after the last save of `tail_index.py`). It now contains the T1′ line
+  (1.30, 0.61–2.02, COMPATIBLE). The Hill γ_D ranges in the table are updated to that file, which differs from the
+  draft in the second decimal.
+- **F** The docstring now states the finite-κ mapping.
+- **Minor**
+  - The "asymptotically" sentence is reworded.
+  - The reader now prints how many of the top 7 B_D values are resolved (0 of 7 on the band).
+  - **G** The t₄ false-NARROWER rate (about 8%) is added to Limits.
+
+# Round 4k-b part 2 (referee, 11 Nov 10:40): scoring of the 34259 split (mechanical item 7), and the part-1 disposition
+
+**Part-1 disposition: ACCEPT.**
+- All seven items are in the files:
+  - REVISION 2 is at 09:52:23, before any item-8 run, and none has started;
+  - `tail_k6.out` was rerun at 09:51:51, after the script's save at 09:51:31, and now has the T1′ line;
+  - the docstring is updated;
+  - the draft's lines on 3.8σ, 21/53/91%, rms 0.071, the 0.86 part, t₄ and the narrowed gates are present.
+
+**Part 2 verdict: the calls are right.**
+- Q1 is REST-LIFTED (close), Q2 is TYPICAL, and all three predictions held.
+- The proposed record needs four changes: the comparison level, the batch-7 caveat, one scale for "removing it lowers
+  B_L", and the note that Q1 was nearly implied by Q2.
+
+**Own path** (`scratch/r4kb2_checks.py` → `.out`; functions as in r4d_checks.py; 0.4 s of CPU).
+- **Reproduction:**
+  - the split's 'all' file is identical to the band run `mc_k7_p34259_s19.npz`: cnt equal, S1 and S2 equal to 0
+    relative difference, the same nS (1,388,434), and the same P, orb, supp and rb;
+  - the parts add up (S1 to 1.7·10⁻¹⁸);
+  - timing: the log's end minus elapsed gives a start at 09:37:55, the same second as the rule file.
+- **B_L on own scales:**
+  - all 0.519 (z 5.4; 2σ 0.412–0.608);
+  - rest 0.499 (z 6.1; 2σ 0.409–0.576);
+  - 2+2 1.027 (z 2.7; 2σ 0.534–1.351).
+  - So Q1 is REST-LIFTED, and close, since 0.45 lies inside the 2σ range.
+- **Q2:**
+  - The share is 0.0322. The binomial ±2se is 0.0276–0.0367; the jackknife over batches, of the ratio, gives se
+    0.0051 and 0.0220–0.0423.
+  - TYPICAL under either. Your batch se, 0.0043, is a different batch formula; the call is the same.
+  - R₂₊₂ = 0.0226, G = 1.43, F = 1.49. All match.
+
+**(2) The decomposition.**
+- Share of X_L(all):
+  - 2+2 alone 0.006 (se 0.003);
+  - rest alone 0.859 (0.039);
+  - cross 0.135 (0.036).
+  - It sums exactly, and the cross term's alignment is cos 0.96.
+- So the 2+2 configurations are 3.2% of the configurations and touch 14% of X_L, mostly through a cross term aligned
+  with the rest. That is about 4× over-represented per configuration, but it is not the lift.
+- **"Removing it lowers B_L by 4%, against about 8% at 36037" is like for like only on the own scale.** With 36037's
+  split recomputed the same way:
+
+  | removing the 2+2 part lowers B_L by | own scale | contribution scale |
+  |---|---|---|
+  | 34259 (0.519 →) | 3.9% (→ 0.499) | 7.3% (→ 0.482) |
+  | 36037 (0.623 →) | 8.1% (→ 0.573) | 10.9% (→ 0.555) |
+
+  Use one scale. The rule's "about 10%" was the contribution scale.
+- **"≥ 1.55×"** (0.409/0.264) is a fair and conservative lower bound against 35099. The ratio of two independent 2σ
+  ends covers more than 95%; the delta-method 2σ range of the ratio is 1.72–2.58.
+- **But 35099 is a low band prime.** Against the band median the rest is 2.04×. Against the band's upper cluster,
+  whole runs not split, it is not separated:
+  - against 35281 (0.392): 1.27×, ends 1.00–1.54×;
+  - against 36541 (0.393): 1.27×, ends 0.98–1.57×.
+- Against 36037's rest it is 0.87× (0.62–1.20×).
+- So "lifted" means lifted above the low band level, not above the band.
+
+**(3) The 41-configuration batch** (batch 7, with 463 configurations, the most of any batch).
+- **Overdispersion.** χ² = 62.0 on 15 df for the per-batch 2+2 counts. The binomial se is invalid, and only the batch
+  se should be quoted; the record should say "binomial ±2se" is not the honest interval. Without batch 7, the share
+  is 0.0275 (se 0.0021) and G is 1.22. Q2 is TYPICAL either way.
+- **It is also the batch that drives the rest.**
+  - Batch 7's row mean in the rest's Gram matrix ranks 1 of 16.
+  - Without it:
+    - all 0.471 (z 14.4; 2σ 0.437–0.503);
+    - rest 0.459 (z 14.5; 2σ 0.426–0.490);
+    - 2+2 0.868.
+  - z nearly triples, so batch 7 carries most of the jackknife se. Most likely it holds one or a few S with many
+    configurations, both 2+2 and rest, pointing the same way. The npz has no per-S data, so this is a reading, not
+    a check.
+- **Nothing called changes.** Without batch 7, Q1 is still REST-LIFTED (close: 0.459 ≥ 0.45, lower end 0.426 >
+  0.270, and the range crosses 0.45), and Q2 is still TYPICAL. The half-samples of the rest range over 0.423–0.557.
+- But the central values (0.519 and 0.499) owe about 0.04–0.05 to one batch of 16. The record should give the
+  leave-batch-7-out values.
+
+**(4) Claims and gates.**
+- **Q1 was nearly implied once Q2 came out TYPICAL.** With a 3% share and the whole run at 0.519, the rest can be
+  far below the whole only if the 2+2 part carries most of X_L. The prediction said as much.
+- **Selection.**
+  - 34259 was picked as the band's high prime after its B_L was known.
+  - 36037 was picked on symR, but its B_L was known when the comparison was made.
+  - "Two top primes share a pattern" is n = 2, post hoc for 34259, and Q1 was near-automatic.
+  - It is a description of these two primes. It is not evidence for a κ = 7 class or mechanism.
+- **May be claimed:**
+  - at 34259 the high B_L is not carried by the 2+2 family;
+  - the rest is 0.499 (2σ 0.41–0.58; 0.459 without its largest batch), about 2× the low band primes
+    (≥ 1.55× at 2σ against 35099);
+  - its 2+2 share, 3.2%, is typical, with G 1.43 (1.22 without batch 7);
+  - the same holds at 36037.
+- **May not be claimed:**
+  - that the rest is lifted against the band as a whole;
+  - that the not-2+2 lift is a mechanism or common at κ = 7;
+  - that 34259 is a spike.
+- **Proposed record**, replacing yours: "34259's high B_L is not carried by the 2+2 family, as at 36037. Its rest
+  is 0.499 (2σ 0.41–0.58; 0.459 without the one batch holding 41 of its 193 2+2 configurations). That is 2.1× the
+  low band prime 35099 (≥ 1.55× at 2σ), but only 1.27× the band's upper pair 35281 and 36541, from which it is not
+  separated. Its 2+2 share, 3.2% (batch se 0.5%), is typical. Removing the 2+2 part lowers B_L by 3.9% on the own
+  scale (36037: 8.1%). Q1 was nearly implied once the share was typical, and both primes were selected high, so this
+  describes two primes; it is not a class."
+- **Also fix:** the decomposition section of `score_k7_34259.out` is headed "36037 split:", a hardcoded label.
+  Correct it in the record, or in the script before it is cited.
+
+**Gates to add:**
+- "a κ = 7 not-2+2 spike class" or "a not-2+2 mechanism";
+- "34259's rest lifted against the band";
+- "34259 is a spike";
+- "the 34259 lift is robust to its largest batch" beyond the stated leave-one-out values;
+- "high-B_L primes at κ = 7 have typical 2+2 shares", which is two primes.

@@ -1,4 +1,15 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-11 Rees SDE p = 5, k = 3
+
+Read audits/reviews/2026-11-11-rees-sde-p5-d3.md. Folder: audits/reviews/2026-11-11-rees-sde-p5-d3/.
+(Items "copy labelsat.py/full_sb.py" and "certify m = 1..3" were done by the integrator on 11-11.)
+1. Add tests/test_rees_sde_p5_d3.py: `labelsat.solve` on F_5^2∖0 (d = 2) is SAT with a passing
+   `check_model`, and on F_7^2∖0 (d = 2, S = {0,1,6}) is UNSAT_VERIFIED with the fixed lrat-check; plus
+   10 random small cases against `labelsat.brute`. Skip if cadical is missing. Acceptance: < 60 s.
+2. Copy `sigma.c` from transcript claude.ai/code/session_01B1JoCiWoB7SSi6bhNMLfEj into the folder and
+   check it agrees with `sigcheck.py` on the first two listed 10-label infeasible sets and two random
+   feasible ones. Acceptance: 4/4 agreement.
+
 ## 2026-11-10 Rees Square Gap: Spike Survey Follow-Up
 
 Read audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12. Work in
@@ -71,7 +82,10 @@ each computation under ~2 core-h. Do not edit the paper.
      `k6_spike_survey.analyse`.
    - Acceptance: five B_L values with 2σ, scored by the rule; the band median and range; 36037 and 34693 placed
      against them.
-7. The not-2+2 split of 34259 (proposed 10 Nov, not started). 34259 is the high band prime (B_L 0.519, symR 22).
+7. DONE 11 Nov 10:37 (§12.6; referee round 4k-b part 2): REST-LIFTED (close), rest 0.499 (0.459 without one batch);
+   2+2 share 3.2% TYPICAL, G 1.43; all three predictions held. Not separated from the band's upper pair; two primes,
+   not a class. Outputs: scratchpad npz (outside the repo), `review-2026-11-10/scratch/score_k7_34259.out`.
+   Original item: the not-2+2 split of 34259 (proposed 10 Nov). 34259 is the high band prime (B_L 0.519, symR 22).
    - First write a rule in `osc-mc/predictions_k7_p34259_split.txt`: does its rest stay ≥ 0.45, as 36037's did (0.573)?
      Is its 2+2 share outside 1.1–4.3%? State which clause wins if two apply.
    - Then run `nice -n 19 python -I mc_split.py 7 34259 6000 --seed 19 --out <outside the repo>/split_k7_p34259`
@@ -79,6 +93,16 @@ each computation under ~2 core-h. Do not edit the paper.
    - Optional: a second seed at 34259 and 34469, to test whether the 4× spread belongs to the primes or to the
      S draws.
    - Acceptance: all, rest and 2+2 B_L with 2σ, scored by the rule.
+8. The spread test of obstruction (c) (§12.14; proposed 11 Nov, NOT started; ask the coordinator before starting).
+   - Rules frozen in `osc-mc/predictions_k7_tail.txt` (revision 1 after referee round 4k-a, revision 2 after 4k-b
+     part 1); do not change them once any run starts.
+   - Run, two at a time (about 22 core-h in all), from `osc-mc`, outputs outside the repo:
+     `nice -n 19 python -I mc_classes.py 7 p 6000 --seed s --out <outside>/mc_k7_p<p>_s<s>.npz` for the 17 drawn primes
+     34147 34217 34231 34511 34651 34679 34721 34819 35141 35393 35533 35603 35617 35771 35897 35911 36107, with
+     seeds 31, 33, …, 63 in that order.
+   - Then `python -I tail_index.py k7 <the 7 band npz> <the 17 new npz>` into `review-2026-11-10/scratch/tail_k7_24.out`.
+   - Acceptance: the T1′ line (σ_L(7)/0.352, 95% bootstrap range, WIDER / NARROWER / COMPATIBLE), the extrapolation
+     parts, and the top-7 B_D resolution count; then an independent AI review before recording.
 
 ## 2026-11-09 Rees Square Gap: OSC′ Follow-Up
 

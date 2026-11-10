@@ -1,0 +1,28 @@
+1. Reproduction and files
+  parts add up: S1 rel diff 1.7e-18, cnt True.  split all vs band run: cnt equal True, S1 max rel diff 0.0e+00, S2 0.0e+00, nS 1388434 vs 1388434, same P/orb/supp/rb True
+  B_L all  0.519 (z 5.4; 2sig 0.412-0.608)
+  B_L uns  0.499 (z 6.1; 2sig 0.409-0.576)
+  B_L str  1.027 (z 2.7; 2sig 0.534-1.351)
+  B_L unsc 0.482 (z 6.6; 2sig 0.402-0.550)
+  Q1: REST-LIFTED (close)
+  per-batch 2+2 counts 11 11 7 14 8 9 10 41 4 11 8 12 15 11 14 7; batch totals 345 329 377 409 432 344 378 463 319 343 395 366 363 367 399 371
+  Q2: share 0.0322; binomial se 0.0023 -> 0.0276-0.0367; jackknife (ratio) se 0.0051 -> 0.0220-0.0423; TYPICAL under both: True
+  R22 0.0226, G 1.43, F 1.49
+
+3. The large batch (index 7, 41 of 463 configurations): dispersion chi2 62.0 on 15 df; without it share 0.0275 (jackknife se 0.0021), G 1.22
+  without it: B_L all  0.471 (z 14.4; 2sig 0.437-0.503)
+  without it: B_L uns  0.459 (z 14.5; 2sig 0.426-0.490)
+  without it: B_L str  0.868 (z 3.4; 2sig 0.560-1.092)
+  uns: y_b > 0 in 16/16; large batch row mean rank 1 of 16; half-samples min/5/50/95% 0.423/0.439/0.503/0.557
+
+2. Decomposition of X_L(all): 2+2 alone 0.006 (se 0.003), rest alone 0.859 (se 0.039), cross 0.135 (se 0.036); sum check -5.3e-16; cos 0.96
+  B_L all 0.519; rest contribution scale 0.482 (-7.3%); rest own scale 0.499 (-3.9%)
+  36037 like for like: B_L all 0.623; rest contribution 0.555 (-10.9%); rest own 0.573 (-8.1%); 2+2 alone 0.015, cross 0.192
+
+4. Comparisons for the rest (own scale 0.499, 2sig 0.409-0.576)
+  35099 whole 0.237 (0.206-0.264): central 2.10x, ends 1.55x
+  band median  0.245: central 2.04x
+  35281 whole  0.392: central 1.27x, ends 1.00x (rest low / their high), 1.54x (rest high / their low)
+  36541 whole  0.393: central 1.27x, ends 0.98x (rest low / their high), 1.57x (rest high / their low)
+  36037 rest   0.573: central 0.87x, ends 0.62x (rest low / their high), 1.20x (rest high / their low)
+  delta-method ratio rest/35099: 2.10, 2-sigma 1.72-2.58

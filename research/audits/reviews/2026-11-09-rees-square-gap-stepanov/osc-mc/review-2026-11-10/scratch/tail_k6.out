@@ -1,0 +1,17 @@
+# tail_index.py k6, then k7 on the 7 band primes; rerun 2026-11-11 09:51:43 after referee round 4k-b part 1
+  [0.19, 0.25]   B_L: N 29  median 0.543  max ratio 3.46  gamma_max 0.37  Hill(k=7) 0.46 (bootstrap 95% 0.19-0.68)  #X>2 4
+  [0.19, 0.25]   sigma_L = sd(ln B_L) 0.494 (bootstrap 95% 0.349-0.603)
+  [0.19, 0.25]   B_D: N 29  median 0.643  max ratio 23.07  gamma_max 0.93  Hill(k=7) 1.43 (bootstrap 95% 0.42-1.89)  #X>2 6
+  (0.25, 0.31]   B_L: N 31  median 0.454  max ratio 2.56  gamma_max 0.27  Hill(k=7) 0.33 (bootstrap 95% 0.11-0.49)  #X>2 3
+  (0.25, 0.31]   sigma_L = sd(ln B_L) 0.352 (bootstrap 95% 0.247-0.430)
+  (0.25, 0.31]   B_D: N 31  median 0.444  max ratio 14.85  gamma_max 0.79  Hill(k=7) 0.83 (bootstrap 95% 0.25-1.26)  #X>2 11
+  [0.49, 0.56]   B_L: N 29  median 0.326  max ratio 1.94  gamma_max 0.20  Hill(k=7) 0.23 (bootstrap 95% 0.08-0.32)  #X>2 0
+  [0.49, 0.56]   sigma_L = sd(ln B_L) 0.242 (bootstrap 95% 0.175-0.288)
+  [0.49, 0.56]   B_D: N 29  median 0.239  max ratio 5.92  gamma_max 0.53  Hill(k=7) 0.73 (bootstrap 95% 0.15-0.99)  #X>2 5
+  kappa=7 band   B_L: N  7  median 0.245  max ratio 2.12  gamma_max 0.39  Hill(k=2) 0.14 (bootstrap 95% 0.00-0.75)  #X>2 1
+  kappa=7 band   sigma_L = sd(ln B_L) 0.459 (bootstrap 95% 0.227-0.603)
+  kappa=7 band   B_D: N  7  median 1.063  max ratio 1.69  gamma_max 0.27  Hill(k=2) 0.13 (bootstrap 95% 0.00-14.33)  #X>2 0
+  B_D resolved (z >= 2) at 0 of 7 primes; top 7 B_D values resolved: 0 (gamma_D reported only if all)
+  T1': sigma_L(7)/sigma_L(6) 1.30 (bootstrap 95% 0.61-2.02; N7 7, N6 31) -> COMPATIBLE
+  N_T 784 (log_7 3.42); median B_L 0.245; extrapolated log_7 sup: lognormal 0.14, power -0.23 (L room 1.70 before O(1))
+    parts: log_7 median -0.72 (measured below lambda_T; same size as the O(1)); log_7(sup/median): lognormal 0.86, power 0.49

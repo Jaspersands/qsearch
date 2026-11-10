@@ -1,0 +1,64 @@
+Pre-registered quantity, rules and predictions for the spread form of obstruction (c), written 2026-11-11 09:39:24 before any of
+the runs below (spike-survey session). Mechanical item 8 (proposed, not started). Topic note section 12.14.
+Quantity: the tail index gamma of X = B/median(B) across primes at fixed kappa and lambda window, by the Hill estimate
+  over the top k = floor(N/4) primes, with a 2000-resample bootstrap over primes (numpy seed 1) for its 95% range.
+  Reader: osc-mc/tail_index.py (written 2026-11-11 09:39:24, before the runs). B from k6_spike_survey.analyse (point estimates).
+Why: if P(X > x) ~ x^(-1/gamma), the sup over the N_T ~ kappa^{(1/2+o(1))kappa} primes near the threshold multiplies the
+  median by kappa^{gamma (1/2+o(1)) kappa}. That spends a fraction ~gamma of the B_L tolerance (1/2 - 1/(2 ln kappa))kappa
+  and ~gamma_D/2 of the B_D tolerance (1 - 1/ln kappa)kappa. Obstruction (c) in spread form: gamma_L -> >= 1, or
+  gamma_D -> >= 2, along the threshold path. This is a heuristic extrapolation from tens of primes to kappa^{kappa/2}.
+Reference (kappa = 6 survey, review-2026-11-10/scratch/tail_k6.out, already known): gamma_L 0.46 (0.19-0.68),
+  0.33 (0.11-0.49), 0.23 (0.08-0.32) and gamma_D 1.43 (0.41-1.88), 0.83 (0.22-1.24), 0.73 (0.17-1.01) at lambda
+  [0.19, 0.25], (0.25, 0.31], [0.49, 0.56]. The tail grows heavier as lambda falls.
+Sample (kappa = 7, lambda in [0.29, 0.31]; 38 primes p = 1 mod 7 there): the 7 band primes of item 6 (34259, 34273,
+  34469, 34847, 35099, 35281, 36541) plus 17 drawn by numpy default_rng(2026) from the 30 not yet run, excluding the
+  two picked on symR (36037, 34693): 34147 34217 34231 34511 34651 34679 34721 34819 35141 35393 35533 35603 35617
+  35771 35897 35911 36107. N = 24, k = 6. 36037 and 34693 are reported as a secondary analysis (N = 26, k = 6).
+Runs: nice -n 19 python -I mc_classes.py 7 p 6000 --seed s --out <outside repo>/mc_k7_p<p>_s<s>.npz, seeds 31, 33, ...,
+  63 in the order listed, two at a time (about 1.3 core-h each, about 22 core-h in all).
+Rules:
+  T1 (against kappa = 6 at equal lambda): HEAVIER if the 95% lower end of gamma_L(7) > 0.49 (the upper end of
+     kappa = 6's (0.25, 0.31] band); LIGHTER if its upper end < 0.11; otherwise COMPATIBLE.
+  T2 (budget): WITHIN if the upper end of gamma_L(7) < 1; EXCEEDS if the lower end > 1; otherwise UNDECIDED.
+     The same for gamma_D against 2, called only if at least 12 of the 24 primes have B_D resolved (z >= 2).
+  Clauses within T1 and within T2 are mutually exclusive.
+Predictions: gamma_L(7) in 0.2-0.6; T1 COMPATIBLE; T2 WITHIN for B_L; gamma_D not called (fewer than 12 resolved).
+Limits: measurement noise in each B (z 4-35 at kappa = 7) inflates gamma; selection of the 7 band primes was by the
+  symmetric-S table, not by B_L; one lambda window at one kappa cannot measure growth with kappa, so the decisive
+  form needs the same quantity at kappa = 8 near lambda_T(8) = 0.18 (needs the (C1) sampler of section 11.9).
+
+REVISION 1, written 2026-11-11 09:45:05 after referee round 4k-a (ROUND3.md) and before any item-8 run. It supersedes the
+"Why", "Rules" and "Predictions" above; the sample, seeds and run command are unchanged.
+Why (corrected): with N_T = T/(phi(kappa) ln T) primes near T (log_7 N_T = 3.42 at kappa = 7), a power tail with index
+  1/gamma puts the sup at median * N_T^gamma. Against the finite-kappa rooms (L: 1.70 in log_7 at kappa = 7, before the
+  unknown O(1)) the whole L room is used at gamma_L ~ 0.5 and the whole D room at gamma_D ~ 1.0 for kappa = 7-10; the
+  asymptotic thresholds gamma_L -> 1, gamma_D -> 2 are only limits. A lognormal tail gives sup ~ median *
+  exp(sigma sqrt(2 ln N_T)). Hill > 0 does not show a power tail (a lognormal with sigma 0.45 gives Hill ~ 0.28).
+  The window [0.29, 0.31] lies below lambda_T(7) = 0.43 (conservative for kappa = 7); 36541 (lambda 0.3106) is just
+  outside it and is kept, as in item 6. 7 of the 24 values (the band) were known when this was written: sigma_L 0.459,
+  ratio 1.30 (0.61-2.02) to kappa = 6 (tail_index.py output, review-2026-11-10/scratch/tail_k6.out).
+The draw is numpy default_rng(2026).choice(pool, 17, replace=False), pool = the 30 primes p = 1 mod 7 with
+  lambda in [0.29, 0.31] not yet run (36037 and 34693 excluded), in increasing order.
+Primary quantity: the spread scale sigma_L = sd(ln B_L) over the N = 24 primes (ddof 1).
+Rule T1' (against kappa = 6 at equal lambda): ratio sigma_L(7)/sigma_L(6, lambda (0.25, 0.31]) with sigma_L(6) = 0.352
+  (bootstrap 0.247-0.430, N 31), 95% range from 2000 independent bootstrap pairs (numpy seed 1), as computed by
+  tail_index.py k7 <24 npz files>. WIDER if the lower end > 1; NARROWER if the upper end < 1; otherwise COMPATIBLE.
+Reported only, not called: Hill (k = 6) and its bootstrap; the count of X > 2; the extrapolated log_7 sup of B_L under
+  the lognormal and power forms against the L room 1.70; gamma_D and B_D (only if the top 7 B_D values are resolved,
+  z >= 2); the secondary N = 26 analysis with 36037 and 34693.
+Predictions: sigma_L(7) in 0.35-0.55; ratio 1.0-1.6; T1' COMPATIBLE; extrapolated lognormal log_7 sup below 0.6.
+Gates that stay false: "kappa = 7's tail is no heavier than kappa = 6's" from a COMPATIBLE; "within budget at kappa = 7"
+  from any extrapolation; "the kappa = 6 tail grows as lambda falls" as a fact (about 1.1 sigma end to end);
+  "gamma > 0 shows a power tail".
+
+REVISION 2, written 2026-11-11 09:52:23 after referee round 4k-b part 1 (ROUND3.md) and before any item-8 run. Sample,
+seeds, command, rule T1' and the frozen sigma_L(6) = 0.352 are unchanged. Additions:
+  - Power of T1' (referee simulation): a spread 1.25x, 1.5x or 2x wider is called WIDER about 21%, 53% or 91% of the
+    time. A COMPATIBLE therefore does not show "no wider".
+  - The prediction "lognormal log_7 sup below 0.6" is not independent of the sigma_L prediction (it needs only
+    sigma_L < 0.70 at the band median). Both parts of the extrapolation are reported: log_7 median, and
+    log_7(sup/median) (lognormal and power forms). tail_index.py now prints them.
+  - gamma_D is reported only if the top 7 B_D values are all resolved (z >= 2); tail_index.py now checks this.
+  - Noise: band per-prime log-sd 1/(2z) rms 0.071 (kappa = 6: 0.025), so the ratio is inflated by about 1.8%.
+  - Extra gate: "kappa = 7's spread is no wider than kappa = 6's" from a COMPATIBLE. Narrowed gate: "the kappa = 6
+    tail index grows as lambda falls" (the kappa = 6 sigma_L rise, 0.49 -> 0.24, is resolved at about 3.8 sigma).

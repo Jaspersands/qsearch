@@ -5,9 +5,9 @@ pass. `research/GOAL.md` is binding. Search the handoff/priority archives
 only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
-As of 2026-11-10, after the handoff entry
-"2026-11-10 Rees Square Gap: κ = 7 Band at λ ≈ 0.3 (Seven Unselected Primes, Pre-Registered): 36037 Not Shown to Be a Spike (34259 at 0.519; Band Spreads 4×); κ = 6 Calibration Does Not Transfer (AI Only)";
-several entries below it are from the same day.
+As of 2026-11-11, after the handoff entry
+"2026-11-11 Rees Square Gap: 34259 Splits Like 36037 (Lift Not in the 2+2 Family; Pre-Registered, All Predictions Held); Obstruction (c) Recast as the Spread of B_L, Next Test σ_L at κ = 7 Pre-Registered (AI Only)";
+the 2026-11-11 SDE entry below it and the entries from 2026-11-10 are by other sessions.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
 - Proved (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2, deterministic (Theorem B′;
@@ -17,8 +17,11 @@ Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
   unsound; re-verified with the fixed checker: p = 7 (k = 2, 3) and p = 11. p = 13 is CaDiCaL UNSAT,
   not independently proof-checked (rerun queued; audits/reviews/2026-11-09-lrat-and-audit-fixes.md).
   q = 11, 13 interval S open.
-- Next: does every spanning k = 3 label set at p = 5 realize three dimensions (n²/6 + O(n))?
-  See audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8. SAT checks use gadget_cnf5.py
+- p = 5, k = 3 (11-11): NO. F_5^3∖0 is infeasible, certified with the fixed lrat-check (session A's
+  three cases, re-run locally), so "any three dependencies" gives no n²/6.
+  Spanning sets of ≤ 9 labels are all feasible; 10-label infeasible sets exist. See
+  audits/reviews/2026-11-11-rees-sde-p5-d3.md. Open: a piece-selection rule keeping label sets feasible.
+- Earlier refs: audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8. SAT checks use gadget_cnf5.py
   (CaDiCaL + the fixed lrat-check in audits/reviews/2026-11-09-lrat-checker-fix/), not pycosat.
 
 Now (11-10, AI only): square gap still OPEN.
@@ -89,13 +92,21 @@ Now (11-10, AI only): square gap still OPEN.
     0.374-0.398), between the comparison primes (<= 0.270) and LIFTED's 0.40; prediction failed.
     Nine primes at lambda ~ 0.3 sit at four or more 2-sigma levels; symR does not fix B_L; 95% of the
     excess is in (2,2); G 1.05. B_D is noise-level there and at 36037.
+  - 34259 (band high prime) split, pre-registered (item 7; 11-11): REST-LIFTED (close), rest 0.499
+    (0.459 without one batch); 2+2 share 3.2% TYPICAL, G 1.43; 2+2 is 14% of X_L. Like 36037, but
+    the rest is not separated from the band's upper pair (1.27x). Two primes selected high, not a class.
+  - Spread form of (c) (section 12.14; 11-11): the sup over N_T primes near T matters (log_7 N_T 3.42);
+    a power tail fills the L room at gamma_L ~ 0.5, the D room at gamma_D ~ 1.0 (kappa 7-10, up to
+    O(1)s). kappa=6 sigma_L = sd(ln B_L) grows as lambda falls (0.49 -> 0.24, ~3.8 sigma). kappa=7
+    band (7 primes): sigma_L 0.46, ratio 1.30 (0.61-2.02) COMPATIBLE.
   - The exponent needs OSC' at lambda_T = 0.43, 0.18, 0.07, 0.02 for kappa = 7..10, below almost
     everything tested.
 - Monte Carlo files from before the 9 Nov 22:20 batching fix overstate weak bins (report 11.3).
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
 - Next:
-  - the not-2+2 split of 34259 (mc_split.py 7 34259 6000 --seed 19), rule written first (proposed,
-    not started; mechanical item 7);
+  - the spread test (mechanical item 8, pre-registered in osc-mc/predictions_k7_tail.txt, NOT
+    started, ~22 core-h): sigma_L at kappa=7, lambda ~ 0.3 on 24 primes vs kappa=6's frozen 0.352
+    (rule T1'; detects 1.5x only about half the time); decisive form kappa=8 near lambda 0.18;
   - theory: bound rho_rest (the not-2+2 part of OSC') or G near the thresholds (joint factorial
     moments of (b_K, m_K) at lambda ~ 1); neither has a method;
   - a (C1) sampler for kappa=8 at lambda 0.18;

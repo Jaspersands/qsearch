@@ -1,0 +1,24 @@
+all: conf  6000 N1/mu1 1.045  B_L 0.519 (z 5.4; 2sig 0.412-0.608)  B_D 1.79 (z 0.8; < 3.33)  PW_pair 1.171
+str: conf   193 N1/mu1 0.034  B_L 1.027 (z 2.7; 2sig 0.534-1.351)  B_D 8.25 (z 0.4; < 20.01)  PW_pair 6.192
+uns: conf  5807 N1/mu1 1.011  B_L 0.499 (z 6.1; 2sig 0.409-0.576)  B_D 1.77 (z 0.8; < 3.38)  PW_pair 1.150
+reproduction of the band run (0.519, 0.412-0.608): OK
+Q1: REST-LIFTED (close)
+  prediction REST-LIFTED with B_L,uns 0.42-0.55: call held, value held
+  rest / 36037 rest 0.573: 0.87;  rest / whole 0.96
+Q2 (binomial se 0.0023): share 0.0322, +-2se 0.0276-0.0367 -> TYPICAL
+Q2 (batch se 0.0043): share 0.0322, +-2se 0.0236-0.0407 -> TYPICAL
+Q2: TYPICAL (batch se; the binomial se is invalid: batch counts over-dispersed, referee round 4k-b part 2)
+2+2 measure share 0.0322; R22 0.0226; G = s/R22 1.43; F = G*N1/mu1 1.49
+  prediction share 1.5-4%: held;  G 0.6-2: held
+--- X_L decomposition: review-2026-11-10/scratch/split36037_decomp.py <prefix> mc_k7_p35099_s13.npz
+split_k7_p34259 split: 6000 configurations (193 2+2, share 0.0322; per-batch 2+2 counts 11 11 7 14 8 9 10 41 4 11 8 12 15 11 14 7)
+(a) own-scale w-rms per part, z; 35099 whole for comparison.  (b) shares of X_all: str-str, uns-uns, 2 x cross.
+bin    all                2+2                rest               35099          | ss       uu       2su       rest/35099 (2sig low end of rest over high end of 35099)
+L        0.519 (  5.4)     1.027 (  2.7)     0.499 (  6.1)     0.237 (  8.2)  |    0.6%    85.9%    13.5%   2.10x (>= 1.55x)
+(2,2)    3.421 (  7.0)     5.398 (  3.4)     3.334 (  7.7)     1.669 ( 13.1)  |    0.3%    88.5%    11.1%   2.00x (>= 1.60x)
+(0,3)    2.699 (  3.4)     7.334 (  2.8)     2.514 (  3.7)     0.646 (  2.8)  |    1.1%    80.3%    18.6%   3.89x (>= 2.01x)
+(2,3)    0.295 (  2.2)     0.946 (  2.1)     0.268 (  2.3)     0.041 (  1.9)  |    1.6%    75.6%    22.8%   6.51x (>= 1.70x)
+(3,3)    0.131 (  2.3)     0.404 (  2.1)     0.120 (  2.5)     0.020 (  2.9)  |    1.4%    76.8%    21.8%   5.96x (>= 2.00x)
+(0,4)    0.536 (  2.4)     1.511 (  1.1)     0.485 (  2.5)     0.000 ( -0.6)  |    1.7%    75.6%    22.7%   infx (>= 1.24x)
+(2,4)    0.081 (  1.6)     0.333 (  1.9)     0.070 (  1.6)     0.007 (  0.2)  |    2.7%    68.3%    29.0%   10.71x (>= 0.00x)
+Amplitude view for L: share x B_L(2+2) = 0.033, (1 - share) x B_L(rest) = 0.483; B_L(all) = 0.519

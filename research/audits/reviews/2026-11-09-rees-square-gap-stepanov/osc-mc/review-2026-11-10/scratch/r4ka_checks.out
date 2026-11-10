@@ -1,0 +1,43 @@
+A. Finite-kappa budget (log_k T from the note; N_T = T/(phi(k) ln T) primes = 1 mod k in [T, 2T])
+  k= 7: log_k N_T 3.42 (k/2 = 3.5); tolerance L 1.70, D 3.40; gamma using all of it: L 0.50, D 0.99; fraction per unit gamma: L 2.01, D 1.01
+  k= 8: log_k N_T 4.29 (k/2 = 4.0); tolerance L 2.08, D 4.15; gamma using all of it: L 0.48, D 0.97; fraction per unit gamma: L 2.06, D 1.03
+  k= 9: log_k N_T 4.74 (k/2 = 4.5); tolerance L 2.45, D 4.90; gamma using all of it: L 0.52, D 1.04; fraction per unit gamma: L 1.93, D 0.97
+  k=10: log_k N_T 5.53 (k/2 = 5.0); tolerance L 2.83, D 5.66; gamma using all of it: L 0.51, D 1.02; fraction per unit gamma: L 1.95, D 0.98
+
+B. Rules under synthetic populations (N 24, k 6, 300 replicates, bootstrap 2000)
+  population            mean Hill  sd    median CI width  P(HEAVIER lo>0.49) P(LIGHTER hi<0.11) P(WITHIN hi<1) P(EXCEEDS lo>1)  CI covers truth
+  Pareto gamma 0.05       0.051    0.019  0.068            0.00               0.83               1.00           0.00             0.92
+  Pareto gamma 0.10       0.100    0.038  0.137            0.00               0.17               1.00           0.00             0.86
+  Pareto gamma 0.20       0.211    0.090  0.276            0.00               0.00               1.00           0.00             0.90
+  Pareto gamma 0.33       0.333    0.138  0.443            0.00               0.00               0.93           0.00             0.88
+  Pareto gamma 0.50       0.501    0.209  0.677            0.00               0.00               0.69           0.00             0.86
+  Pareto gamma 0.75       0.757    0.294  1.011            0.00               0.00               0.29           0.00             0.89
+  Pareto gamma 1.00       0.981    0.415  1.330            0.03               0.00               0.12           0.00             0.88
+  Pareto gamma 1.50       1.504    0.655  1.978            0.23               0.00               0.02           0.00             0.86
+  Pareto gamma 2.50       2.511    1.001  3.438            0.64               0.00               0.00           0.12             0.87
+  lognormal sigma 0.30    0.181    0.060  0.268            0.00               0.00               1.00           0.00             (no power tail)
+  lognormal sigma 0.45    0.282    0.108  0.400            0.00               0.00               1.00           0.00             (no power tail)
+  lognormal sigma 0.70    0.426    0.158  0.607            0.00               0.00               0.89           0.00             (no power tail)
+  lognormal sigma 1.00    0.620    0.219  0.878            0.00               0.00               0.45           0.00             (no power tail)
+  lognormal: the sup over N_T draws is median * exp(sigma sqrt(2 ln N_T)) -> log_k ratio at k=7, N_T=7^3.35: sigma 0.30: 0.56, sigma 0.45: 0.84, sigma 0.70: 1.30, sigma 1.00: 1.86
+
+C. Measurement noise on Hill (Pareto gamma 0.33, N 24, k 6, 4000 replicates)
+  multiplicative noise log-sd 0.00: mean Hill 0.334
+  multiplicative noise log-sd 0.05: mean Hill 0.329
+  multiplicative noise log-sd 0.12: mean Hill 0.331
+  multiplicative noise log-sd 0.25: mean Hill 0.339
+  B_D with 10 of 24 floored at 1e-6 (gamma 0.83): mean Hill 0.830; with 18 floored: 14.6
+
+D. Alternatives (N 24)
+  lognormal sigma 0.45: IQR-sigma mean 0.423 sd 0.099 (rel 0.24); plain sd of ln B rel sd 0.15; #X>2 mean 1.48 sd 1.19
+  lognormal sigma 0.70: IQR-sigma mean 0.664 sd 0.157 (rel 0.24); plain sd of ln B rel sd 0.15; #X>2 mean 3.77 sd 1.71
+  Pareto gamma 0.33: #X>2 mean 1.42 sd 1.12
+  Pareto gamma 0.50: #X>2 mean 2.84 sd 1.45
+
+E. The sample window
+  primes = 1 mod 7 with lambda in [0.29, 0.31]: 38 (p 34147-36457); 36541 has lambda 0.3106 (inside: False)
+  pool (not run, not picked): 30; listed 17 all in pool: True
+  rng.choice(pool, 17, replace=False)  matches the listed set: True
+  rng.permutation(pool)[:17]           matches the listed set: False
+  pool[rng.choice(len, 17, False)]     matches the listed set: True
+  kappa = 7 band ln-sd (7 primes): 0.458; IQR-sigma 0.376
