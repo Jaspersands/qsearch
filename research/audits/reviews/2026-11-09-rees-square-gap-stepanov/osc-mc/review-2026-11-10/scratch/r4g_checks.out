@@ -1,0 +1,28 @@
+1. G = s / R22
+  kappa = 6 (29): N_inv 45, R22 numerator 2624400; G 0.584-1.051 (median 0.738, max at 1933); caps 1/R22 0.893-1.424; G/cap 0.496-0.860; R22 0.702-1.120
+  kappa = 6 spikes: 1789 G 0.98 (F 4.41, N1/mu1 4.50), 1657 G 0.87 (F 3.89, N1/mu1 4.47), 1597 G 0.84 (F 3.64, N1/mu1 4.36), 1933 G 1.05 (F 2.80, N1/mu1 2.66), 1531 G 0.64 (F 2.63, N1/mu1 4.11), 1741 G 0.71 (F 0.26, N1/mu1 0.37)
+  kappa = 7 35281: share 0.0430 (pairsym, 19) R22 0.0213 G 2.022 cap 47.0
+  kappa = 7 35099: share 0.0110 (pairsym, 5) R22 0.0215 G 0.512 cap 46.5
+  kappa = 7 36037: share 0.0308 (split, 185) R22 0.0204 G 1.513 cap 49.1
+  kappa = 7 34693: share 0.0210 (pairsym, 9) R22 0.0220 G 0.955 cap 45.5
+  kappa = 7 23549: share 0.0633 (pairsym, 5) R22 0.0477 G 1.326 cap 20.9
+
+2. N_inv^2 kappa^2 and the trivial cap at the thresholds
+  kappa  4: N_inv    3 (< k^4/8 = 32: True), log_k N_inv^2 k^2 = 3.58; at log_k T = 4.50: log_k(1/R22) = 3.42, B_L addition bound G * k^1.08
+  kappa  5: N_inv   15 (< k^4/8 = 78: True), log_k N_inv^2 k^2 = 5.37; at log_k T = 4.91: log_k(1/R22) = 2.45, B_L addition bound G * k^2.46
+  kappa  6: N_inv   45 (< k^4/8 = 162: True), log_k N_inv^2 k^2 = 6.25; at log_k T = 5.14: log_k(1/R22) = 2.03, B_L addition bound G * k^3.11
+  kappa  7: N_inv  105 (< k^4/8 = 300: True), log_k N_inv^2 k^2 = 6.78; at log_k T = 5.57: log_k(1/R22) = 2.36, B_L addition bound G * k^3.21
+  kappa  8: N_inv  210 (< k^4/8 = 512: True), log_k N_inv^2 k^2 = 7.14; at log_k T = 6.18: log_k(1/R22) = 3.22, B_L addition bound G * k^2.96
+  kappa  9: N_inv  378 (< k^4/8 = 820: True), log_k N_inv^2 k^2 = 7.40; at log_k T = 6.78: log_k(1/R22) = 4.16, B_L addition bound G * k^2.62
+  kappa 10: N_inv  630 (< k^4/8 = 1250: True), log_k N_inv^2 k^2 = 7.60; at log_k T = 7.36: log_k(1/R22) = 5.12, B_L addition bound G * k^2.24
+
+3. Section 12.5 item 6 illustrations: F*v (note) and G*v = F*v / (N1/mu1)
+  1621: F*v 0.003, N1/mu1 0.42 -> G*v 0.007
+  1933: F*v 0.270, N1/mu1 2.66 -> G*v 0.101
+  1597: F*v 0.350, N1/mu1 4.36 -> G*v 0.080
+  1657: F*v 0.980, N1/mu1 4.47 -> G*v 0.219
+  1789: F*v 1.530, N1/mu1 4.50 -> G*v 0.340
+  so the 1789-based additions at T(7..10) (16, 11, 6, 3) scale by 0.222: 3.6, 2.4, 1.3, 0.7; w*17.3 (0.78, 0.09) -> 0.17, 0.020; L 0.09 -> 0.020
+
+4. kappa = 4 bucket check
+  300 (S, pairing) cases at p = 197, 389, 1009, 2017: key map x -> iota(x) single-valued and injective in all but 0 (one point, the pole alpha/gamma, maps to infinity); invariant buckets per case 3.85 on average

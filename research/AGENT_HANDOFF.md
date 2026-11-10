@@ -1,4 +1,51 @@
 # Research Agent Handoff
+## 2026-11-10 Rees Square Gap: the 2+2 Family Is Controlled by G = s/R₂₊₂, Not F·B (Elementary, Asymptotic Only; G Unbounded by Any Known Method); a Backwards (N) Sentence Corrected; κ = 7 at 34693 INCONCLUSIVE (Pre-Registered), Three B_L Levels in Four Primes (AI Only)
+
+AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.
+Report: audits/reviews/2026-11-09-rees-square-gap-stepanov.md §12.12 (theory) and §12.6 (34693). Referee rounds 4g,
+4h-a and 4h-b with dispositions are in osc-mc/review-2026-11-10/ROUND3.md; its checks are in scratch/r4g_checks.out
+and scratch/r4hb_checks.out. Square gap still OPEN.
+- **Corrections to the entry below** (made here, not by editing it):
+  - "the family can move the exponent only if F·B = κ^{Ω(κ)}" is superseded by the G statement below. It was not
+    wrong under (N), but G ≤ F·B, so the G form is never weaker and needs no (N).
+  - "'is F bounded?' is the question whether (N)'s B is bounded at spike primes" was backwards. (N) is a lower bound
+    N₁ ≥ μ₁/B, and spike primes have N₁/μ₁ 1.3–4.5, so they do not stress (N). Its worst case in the survey is 1741
+    (N₁/μ₁ 0.37). F = G·N₁/μ₁, and F's large κ = 6 values are N₁/μ₁'s.
+  - §12.5 item 6's illustrations were about 4.5× too large (N₁/μ₁ taken as 1); restated in G.
+- **[elementary; population quantities] The claim proved.** Let s be the 2+2 share of the (C1) measure and
+  G = s/R₂₊₂, with R₂₊₂ = N_inv²κ⁴/p² and N_inv = C(κ,2)C(κ−2,2)/2. V is linear in the measure and the weighted rms
+  is a norm, and |Q| ≤ n. So the family adds at most G·N_inv²κ² to B_D (κ²/p units) and G·N_inv²κ⁴/p to B_L. It can
+  spoil the (1/2+o(1))κ exponent only if G = κ^{Ω(κ)} at some p ≥ p₀ near the threshold path. This step needs no (N).
+  - **Asymptotic only:** at κ = 7–10 the D addition κ^{6.8–7.6} exceeds the D tolerance of 3.4–5.7 in log_κ, so the
+    bound certifies nothing at finite κ.
+  - **Nothing bounds G.** The only cap is s ≤ 1, i.e. G ≤ 1/R₂₊₂, which is κ^{2.4}–κ^{5.1} at the κ = 7–10 thresholds.
+    A bound needs power-residue pattern counts (κ² differences of 2κ variables) at p = κ^{(1/2+o(1))κ}, where Weil's
+    relative error κ^{O(κ²)}/√p is useless. No formal reduction to a named conjecture is claimed. κ = 3 has no 2+2
+    family; κ = 4 reduces to order-4 character sums over the cross-ratio (closure not checked). No counterexample
+    family is known.
+- **[computed] G in the data.** κ = 6: 0.58–1.05, but capped at 0.89–1.42, so no test. κ = 7: 2.0, 0.51, 1.5, 1.05
+  and 1.3 at 35281, 35099, 36037, 34693 and 23549 (caps 21–49; point values, some on 5 configurations). No measured
+  G is above about 2.
+- **[computed; pre-registered; referee round 4h-b] 34693 (mechanical item 5).** It is the prime with 36037's symR
+  (44.22 against 44.19). Rule written 10:59:29 before the run; `mc_split.py 7 34693 6000 --seed 17`.
+  - Call **INCONCLUSIVE**: not-2+2 B_L is 0.386 (2σ 0.374–0.398). It is above the comparison primes (≤ 0.270) and
+    below LIFTED's 0.40. Not close by the rule, but the upper end is 0.002 below 0.40. The prediction (0.22–0.35)
+    failed.
+  - Whole run 0.387; 36037's is 1.64× it, and 1.60× the comparison mean. So four primes at λ ≈ 0.3 sit at three
+    separated levels. The excess is 95% in (2,2). The 2+2 share is 0.023 (G 1.05). B_D is noise-level here and at
+    36037 alike.
+  - Post hoc: equal symR, B_L 1.64× apart; both high-symR primes above both low ones (probability 1/6). No relation
+    is claimed.
+- **Claim gates that stay false:** G bounded or κ^{o(κ)}; any bound on ρ_rest; obstruction (c) resolved; any
+  certificate at κ = 7–10 from the elementary bound; the κ = 4 2+2 count in closed form; 34693 lifted or typical; a
+  spike/typical dichotomy at κ = 7, λ ≈ 0.3; any symR–B_L relation at κ = 7.
+- **Next hard question:** bound ρ_rest, the not-2+2 part of OSC′ at spike primes, or bound G. Neither has a method.
+  Empirically, the κ = 7 spread at λ ≈ 0.3 needs more primes.
+- **Next command** (mechanical item 6, MECHANICAL_FOLLOW_UP_PLAN.md top): for each of 34259, 34273, 34469, 35281 and
+  36541, write a rule first, then run `nice -n 19 python -I mc_classes.py 7 p 6000 --seed <distinct> --out
+  <outside the repo>` (about 1.3 core-h each; κ = 7 npz files exceed 10 MB). Expected artifact: their B_L with 2σ, scored by the rule. Acceptance: the κ = 7 band median and
+  spread at λ ≈ 0.3, against which 36037 and 34693 are placed.
+
 ## 2026-11-10 Rees Square Gap: κ = 6 Spike Survey Complete (89 Primes; Class Rule H1 Refuted); Spikes Carry a Large Involution-Family Factor F; the Family Can Move the Exponent Only If F·B = κ^{Ω(κ)}; κ = 7: a λ-Only Family Weight Rejected, and 36037 a B_L Spike Against Two Equal-λ Primes (Pre-Registered), Not Carried by the 2+2 Family; F Over 29 Primes Tracks N₁/μ₁ (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git actions.

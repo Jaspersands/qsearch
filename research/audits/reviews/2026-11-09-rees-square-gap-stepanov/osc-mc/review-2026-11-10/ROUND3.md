@@ -1390,3 +1390,310 @@ All accepted, and applied in a new §12.11, §0, §12.4, §12.8 and §12.9, the 
 - The share-by-class result is recorded as post hoc, to be pre-registered before use.
 - Verified myself before recording: F2's ceiling (1933 at share 1: 2.665 × 1933²/2,624,400 = 3.79), and that
   N₁/μ₁·p² alone has Spearman 0.98 with N₁/μ₁ (0.97 over the 25), with F/N₁/μ₁ in 0.58–1.05.
+
+# Round 4g (referee, 10 Nov 11:07): the §12.12 draft (G = s/R₂₊₂)
+
+**Verdict: ACCEPT WITH CHANGES.**
+- The correction to §12.11 is right. The G chain is right, and it is never weaker than the F·B form.
+- Fix one factual slip (the N₁/μ₁ range at the spikes) and one wrong threshold scale (κ^{(1+o(1))κ} should be
+  κ^{(1/2+o(1))κ}).
+- Say that the bound is asymptotic only: at κ = 7–10 it certifies nothing.
+- Qualify the named methods and the κ = 4 "cyclotomic numbers" remark.
+- Re-express §12.5 item 6's illustrations in G. They used F with N₁/μ₁ taken as 1, at κ = 6 primes where N₁/μ₁ is up
+  to 4.5, so they are about 4.5× too large.
+- Script and output: `scratch/r4g_checks.py` and `.out` (about 3 CPU-s at nice 19).
+
+**1. The inequality chain: correct.**
+- **The mixture bound.** V is an expectation over the (C1) measure, so V_all = s·V_fam + (1 − s)V_rest exactly at the
+  population level. The weighted rms is a weighted L² norm, so the triangle inequality gives the bound.
+  - The noise allowance carries through: ν_rest = ν_all/√(1 − s), so (1 − s)ν_rest ≤ ν_all.
+  - The Monte Carlo estimators satisfy this only approximately. State it for population quantities.
+- **|Q| ≤ n.** Q = Σ_z Sym_R·Sym_C over the n = p + 1 − 2κ points of P¹ outside S ∪ T, with |Sym| ≤ 1, so v ≤ n.
+- **The additions.** In κ²/p units the family adds to B_D at most s·n·p/κ² = G·N_inv²κ²(n/p) < G·N_inv²κ². To B_L it
+  adds at most s·n < G·N_inv²κ⁴/p.
+- **The exponents.** N_inv = κ(κ−1)(κ−2)(κ−3)/8 < κ⁴/8. log_κ N_inv²κ² is 6.78, 7.14, 7.40 and 7.60 at κ = 7–10.
+- **"Never weaker".** (N) gives μ₁/N₁ ≤ B, so G = F·μ₁/N₁ ≤ F·B.
+- **Notation.** The draft uses G for both the parameter and the group ("ρ_G … for either group G"). Rename the group,
+  e.g. ρ_𝒢 or "for each group, L or D".
+- **(N) is still needed elsewhere.** The step needs no lower bound on N₁, but OSC′ still contains (N): it enters the
+  noise term (§12.2). Say "this step needs no (N)", not that the argument does.
+
+**2. "Spoils only if G = κ^{Ω(κ)}": it follows, asymptotically.**
+- The exponent (1/2+o(1))κ needs log_κ B_L, log_κ B_D = o(κ) (§11.8). The family adds G·κ^{O(1)}. So if
+  log_κ G = o(κ), the family cannot break it, and the rest enters only through (1 − s)ρ_rest ≤ ρ_rest.
+- **Missing: the elementary bound certifies nothing at accessible κ.**
+  - At κ = 7–10, N_inv²κ² = κ^{6.8–7.6}. The D tolerance for any exponent below κ is (1 − 1/ln κ)κ − O(1) = 3.4–5.7.
+  - At T(κ) the L bound is G·κ^{2.2–3.2}, against (1/2 − 1/(2 ln κ))κ = 1.7–2.8.
+  - So with v ≤ n the bound is asymptotic only. Finite κ still needs the family's v, as in item 6.
+- **Also missing: nothing elementary excludes G = κ^{Ω(κ)}.**
+  - The only cap is s ≤ 1, i.e. G ≤ 1/R₂₊₂. At the §11.8 thresholds that is κ^{2.4}, κ^{3.2}, κ^{4.2} and κ^{5.1} at
+    κ = 7–10, and κ^{κ+κ/ln κ−12+O(1)} in general.
+  - So the question is open, not settled trivially.
+
+**3. G values: confirmed.**
+- **κ = 6** (29 primes, shares from the npz counts, R₂₊₂ = 2,624,400/p²):
+  - G is 0.584–1.051, median 0.738, with the maximum at 1933.
+  - The caps 1/R₂₊₂ are 0.893–1.424, and G/cap is the share, 0.50–0.86. So this is no test, as the draft says.
+  - At the spikes:
+
+    | prime | G | F | N₁/μ₁ |
+    |---|---|---|---|
+    | 1789 | 0.98 | 4.41 | 4.50 |
+    | 1657 | 0.87 | 3.89 | 4.47 |
+    | 1597 | 0.84 | 3.64 | 4.36 |
+    | 1933 | 1.05 | 2.80 | 2.66 |
+    | 1531 | 0.64 | 2.63 | 4.11 |
+
+- **κ = 7** (R₂₊₂ = 105²·7⁴/p²):
+
+  | prime | share | G | cap | source |
+  |---|---|---|---|---|
+  | 35281 | 0.043 | 2.02 | 47.0 | pairsym, 19 configurations |
+  | 35099 | 0.011 | 0.51 | 46.5 | pairsym, 5 |
+  | 36037 | 0.0308 | 1.51 | 49.1 | split, 185 |
+  | 34693 | 0.021 | 0.96 | 45.5 | pairsym, 9 |
+  | 23549 | 0.063 | 1.33 | 20.9 | pairsym, 5 of 79 |
+
+  The caps span 21–49, and "5–185 configurations" is right.
+- **"No measured prime has G above 2"** is false by rounding (35281: 2.02, from 19 clustered pairsym configurations).
+  Use "about 2".
+- **"At spike and typical primes alike" overstates.** At κ = 6 G is capped, so no spike tests anything. At κ = 7 there
+  is one spike, 36037 (G 1.5).
+
+**4. "What a proof would need": four fixes.**
+- **Threshold scale.**
+  - "at p = κ^{(1+o(1))κ} near the thresholds" is wrong. The thresholds are T = κ^{(1/2+o(1))κ}: log_κ T = 5.57–7.36 at
+    κ = 7–10, below κ − 1.
+  - The pattern length is then κ ≍ log p/log log p, with constant about 2.
+- **"About κ² shifted values of one variable set".**
+  - The conditions are on the κ² differences t_i − s_j of 2κ variables: the profile of each t_i in the κ shifts s_j.
+  - Weil's error should be stated as relative: about κ^{O(κ²)}/√p. That exceeds the main term unless p ≥ κ^{cκ²}, which
+    is right as drafted. One-variable Weil suffices; Deligne is not needed.
+- **Named methods.**
+  - Burgess, and Graham–Ringrose (smooth moduli), bound short-interval character sums. They do not address fixed-length
+    patterns with variable shifts, so calling them "the methods known there" misattributes them.
+  - Hanson–Petridis bounds sets whose sumset lies in a multiplicative subgroup. Its sizes are of order √p, which is
+    vacuous for sets of size κ.
+  - Suggested: "Weil-type square-root bounds are the general tool for such counts, and they fail here. Short-interval
+    methods (Burgess; Graham–Ringrose) and sumset bounds in multiplicative subgroups (Hanson–Petridis) address other
+    questions and give nothing at set sizes κ ≍ log p." Keep "no formal reduction to a named conjecture is claimed".
+- **κ = 3.** Fine as a statement: there is no 2+2 family at κ = 3. Better: "κ = 3 has no 2+2 family (two disjoint pairs
+  need κ ≥ 4), so §11.2's exact method says nothing about G."
+- **κ = 4, checked** (300 cases: 25 random S at each of p = 197, 389, 1009, 2017, × 3 pairings).
+  - Every 4-set has one involution per pairing (ι(z) = (αz + β)/(γz − α)). It preserves S.
+  - It maps mc_classes bucket keys to bucket keys bijectively in every case. The one exception is the pole α/γ, which ι
+    sends to ∞, outside the F_p buckets.
+  - Two ι-pairs in T force x and ιx into one bucket, and ι permutes buckets, so that bucket is ι-invariant. "The 2+2
+    count is a sum over ι-invariant buckets" is right.
+  - "Computable by cyclotomic numbers of order 4" is not checked and is doubtful. The buckets depend on the cross-ratio
+    of S (S ∼ {0, ∞, 1, μ}), so the count is a sum over μ of joint order-4 character counts for two points of a bucket.
+    These need not reduce to the field's cyclotomic numbers.
+  - Suggested: "reduces to order-4 character sums over the cross-ratio of S; whether these close in cyclotomic numbers
+    is not checked. Either way it gives κ = 4 values, not a bound uniform in κ."
+- **The spike range in the correction.**
+  - "N₁/μ₁ 2.6–4.5 at the κ = 6 spikes" is wrong for the sD spikes: 1669 and 1693 have 1.28 and 1.36.
+  - Use "N₁/μ₁ 1.3–4.5 at the six sD spikes at λ ≤ 0.25 (2.7–4.5 at the four with the largest F)".
+  - The 1741 statement (0.37, the survey minimum) is right.
+- **The Consequence bullet.** "Unless G grows with κ" should be "unless G grows like κ^{Ω(κ)}": polynomial growth is
+  harmless.
+
+**5. The §12.11 correction: right.**
+- (N) bounds N₁/μ₁ from below. The spikes' large N₁/μ₁ never stresses it, and the family's effect runs through
+  s = G·R₂₊₂, not through N₁/μ₁. So F, which includes the N₁/μ₁ factor, was the wrong parameter.
+
+**What else changes with it.**
+- **§12.5 item 5.** Replace "With the largest measured F (4.4), the weight w = F·R₂₊₂ is up to 4.5% at κ = 7 and 0.55% at
+  κ = 8" with "With the largest measured G (about 2, κ = 7), the share s = G·R₂₊₂ at the thresholds is about 2% at κ = 7
+  and 0.24% at κ = 8".
+- **§12.5 item 6.**
+  - Replace "s = F·R₂₊₂/(N₁/μ₁) … take N₁/μ₁ = 1" with s = G·R₂₊₂. That step applied N₁/μ₁ = 1 to κ = 6 data where it is
+    up to 4.5.
+  - Re-express the illustrations as G·v = F·v/(N₁/μ₁), using the note's F·v and the survey N₁/μ₁ (approximate for
+    1933, whose v is from the earlier split):
+
+    | prime | G·v |
+    |---|---|
+    | 1621 | 0.007 |
+    | 1933 | 0.10 |
+    | 1597 | 0.08 |
+    | 1657 | 0.22 |
+    | 1789 | 0.34 |
+
+    The spread is then about 50×, not 500×.
+  - With 1789's values, the additions at T(7–10) become about 3.6, 2.4, 1.3 and 0.7 (not 16, 11, 6, 3). The
+    constant-B_D variant becomes 0.17 and 0.02 (not 0.78, 0.09), and the L gain about 0.02 (not 0.09).
+  - These scale 1789's κ = 6 G, which is capped there. At κ = 7 the measured G reaches 2, so say they are illustrations.
+  - "Without v": replace F·B by G, as in the draft.
+  - Item 7: replace "in terms of F, which is unbounded" with "in terms of G, which nothing beyond the trivial cap
+    1/R₂₊₂ bounds".
+- **§12.8.**
+  - Question 1 becomes "Is G(p) = κ^{o(κ)} uniformly over p ≥ p₀ near the threshold path?". Drop "If (N) holds with
+    B = κ^{o(κ)} … otherwise the condition is on F·B": the G condition needs no (N) for this step.
+  - The "B_D ≈ 16 at κ = 7" sentence becomes ≈ 3.6, with the same caveat.
+  - Gate: "F(p) bounded, or κ^{o(κ)}" becomes "G(p) bounded, or κ^{o(κ)}".
+- **§12.9 "Bounding F" becomes "Bounding G".**
+  - The target is the share: #2+2 ≤ κ^{o(κ)}·R₂₊₂·N₁.
+  - A bound O(κ^{o(κ)}·N_inv²κ⁴p⁻²·μ₁) on the 2+2 count suffices only together with (N) at B = κ^{o(κ)}.
+- **§12.11.**
+  - Replace "which is (N)'s constant B" with: "At κ = 6 F's size is N₁/μ₁'s, since G = 0.58–1.05 and s ≤ 1 caps it at
+    1.42. A large count does not stress (N), and the family's effect runs through G (§12.12)."
+  - Its gate "F(p) bounded or κ^{o(κ)}" becomes the G gate.
+- **STATE.md and the handoff.**
+  - STATE.md line 63 ("at kappa=6 'F bounded' is '(N)'s B …'") should carry the correction, with the proof target
+    restated as G.
+  - Correct AGENT_HANDOFF.md line 60 by a new top entry rather than an edit, and restate the gate at line 146 as G
+    there.
+
+### Author's disposition of round 4g (10 Nov)
+
+All points accepted and applied.
+- §12.11's backwards (N) sentence is corrected in the note; §12.12 opens with the correction. The spike N₁/μ₁ range is
+  restated as 1.3–4.5 over the six sD spikes at λ ≤ 0.25 (2.7–4.5 at the four with the largest F).
+- §12.12 uses "for each group (L or D)" in place of the clashing symbol, says "this step needs no (N)" and states the
+  bound for population quantities.
+- Added: the bound certifies nothing at κ = 7–10 (D κ^{6.8–7.6} against tolerance 3.4–5.7; L G·κ^{2.2–3.2} against
+  1.7–2.8), and the only cap G ≤ 1/R₂₊₂ is κ^{2.4}, κ^{3.2}, κ^{4.2}, κ^{5.1} at the κ = 7–10 thresholds.
+- "above 2" became "about 2"; "spike and typical alike" is dropped (κ = 6 is capped; κ = 7 has one spike).
+- Thresholds κ^{(1/2+o(1))κ}, pattern length κ ≍ log p/log log p, κ² differences of 2κ variables, relative error
+  κ^{O(κ²)}/√p, and the named-methods sentence are as the referee worded them. No formal reduction is claimed.
+- κ = 3 and κ = 4 sentences as worded (κ = 4 cyclotomic closure not checked).
+- §0's F·B line is restated as G. STATE line 63 and the handoff's F·B statements are corrected by a new top
+  handoff entry and a STATE rewrite, not by editing the old entry.
+
+# Round 4h-a (referee, 10 Nov 11:13): the inserted §12.12, the §0 line, and the round-4g edits
+
+**Verdict: six fixes, all small; the rest landed as worded.**
+- Every round-4g fix in §12.12 landed: the correction and its spike range, the group notation, population quantities,
+  "this step needs no (N)", the asymptotic-only bullet, the cap, "about 2", the threshold scale, the κ² differences,
+  the relative Weil error, the methods sentence, κ = 3, κ = 4, "κ^{Ω(κ)}" in the Consequence, and the new gate.
+- The §12.5 item 5 and 6, §12.8, §12.9 and §12.11 restatements also landed.
+- "Twelve passes" is right through 4g (1, 2, 3, 3b, 3c, 4, 4b–4g). It becomes thirteen with this round.
+- No new computation: the numbers are from `scratch/r4g_checks.out`.
+
+**Fixes.**
+1. **§12.12 "asymptotic only".** The L half is not true at κ = 10. The L additions at T(κ) are G·κ^{3.21, 2.96, 2.62,
+   2.24} against L tolerances of 1.70, 2.08, 2.45 and 2.83 for κ = 7–10, so at κ = 10 it is within tolerance for G ≈ 1.
+   The conclusion stands, because D fails at every κ. Use: "the D addition κ^{6.8–7.6} exceeds the D tolerance of
+   3.4–5.7 in log_κ at every κ = 7–10, and the L addition at T(κ), G·κ^{3.2, 3.0, 2.6, 2.2}, exceeds the L tolerance
+   (1.7, 2.1, 2.5, 2.8) at κ = 7–9".
+2. **§12.12 "κ^{κ+κ/ln κ−12+O(1)} in general".**
+   - The exponent is correct. 1/R₂₊₂ = T²/(N_inv²κ⁴), with 2 log_κ T = κ + κ/ln κ + O(1) and
+     log_κ N_inv²κ⁴ = 12 + O(1). It matches item 5's R₂₊₂ = κ^{12−κ−κ/ln κ+O(1)}.
+   - But the −12 sits inside an unspecified O(1). The O(1) there is about +2.8 at κ = 10: actual 5.12, against
+     κ + κ/ln κ − 12 = 2.34.
+   - Either write κ^{κ+κ/ln κ+O(1)}, here and in item 5, or keep both as they are. It is not wrong; do not drop the
+     statement.
+3. **§12.5 item 6: the 1621 line was not rescaled.** "With 1621's values … at most 0.05, 0.03, 0.02 and 0.01" is still
+   F-based. At 1621 N₁/μ₁ = 0.42, so G = F/0.42 = 2.4·F: there the correction raises the numbers. Use "at most about
+   0.12, 0.07, 0.05 and 0.02".
+   - The same applies to §12.8's "and at most 0.05 with typical values", which should be about 0.12.
+4. **§12.5 item 6, leftover F.** "what matters is the largest F·v over primes near T(κ)" should be G·v.
+5. **§12.9 "Bounding G", last bullet.** "Weil's error terms are κ^{O(κ²)}√p, useless at p = κ^{O(κ)}" is the old
+   wording. Use "Weil's relative error is about κ^{O(κ²)}/√p, useless at the thresholds p = κ^{(1/2+o(1))κ}", as in
+   §12.12.
+6. **"No measured prime has G above about 2"** is fine as a statement, but say what it rests on. Use: "no measured prime
+   has G above about 2 (κ = 7's 2.0 is a pairsym value from 19 clustered configurations; κ = 6 values cannot exceed
+   1.42)".
+   - In "G in the data", "to within about 2×" is a statement about point values, and 35099 and 23549 rest on 5
+     configurations each. Add "(point values; 35099 and 23549 rest on 5 configurations each)".
+
+**Gate list: fine as it stands.** Optionally add "the κ = 4 2+2 count in closed form", since cyclotomic closure is not
+checked.
+
+**§0 line: accept.** Optionally "this step needs no (N)", for consistency with §12.12, since OSC′ itself contains (N).
+"Measured G is 0.5–2 at κ = 7" is right (0.51–2.02).
+
+### Author's disposition of round 4h-a (10 Nov)
+
+Items 1 and 3–6 applied as worded, and the κ = 4 closed-form gate added. Item 2: both exponents are left as they are,
+since the −12 is absorbed into the O(1) and does no harm. §0 left as accepted.
+
+# Round 4h-b (referee, 10 Nov 12:21): scoring of the κ = 7 split at 34693
+
+**Verdict: ACCEPT WITH CHANGES.**
+- The call (INCONCLUSIVE) and the failed prediction are right.
+- The 2σ ends are credible; the reason for z = 34 is given below.
+- Fix three items of wording:
+  - "not close" sits on a 0.002 margin;
+  - the B_D contrast with 36037 is not shown;
+  - 1.65× should be 1.64×.
+- Script and output: `scratch/r4hb_checks.py` and `.out`. It uses my own Gram-matrix path and imports nothing from
+  the scorer. About 3 CPU-s at nice 19.
+
+**Rule and timing.**
+- The rule was written at 10:59:29. The log ends at 12:18:28 after 4736 s, so the run started at about 10:59:32. Seed
+  17 is distinct, as round 4e advised.
+- The scorer was written at 12:19:03, after the result. That is acceptable: the rule names `split_report.py` as the
+  reader, the scorer's logic matches the rule's text line by line, and my path reproduces every value.
+- **Files.**
+  - The parts add up.
+  - Batches are by S: 319–437 configurations per batch, and 3–13 2+2 configurations per batch.
+  - The run has 6007 configurations, 1,467,329 S, and N₁/μ₁ 0.906 (0.89 ± 0.05 was known).
+
+**1. The call is right, but "not close" has almost no margin.**
+- Rest B_L is 0.3861 (2σ 0.3741–0.3977). LIFTED fails only on the point threshold, since its second condition (lower
+  end > 0.270) holds. LIKE fails.
+- The range crosses neither 0.33 nor 0.40, so it is not close by the rule's definition. But the upper end is 0.0023
+  below 0.40: about 2.3 se(B) from the point value, with a jackknife se that is itself uncertain by about 18% on 15
+  degrees of freedom.
+- The prediction (0.22–0.35) failed.
+
+**2. The ends are credible: why z is 34.**
+- 95% of X_L is in the (2,2) bin, which carries large class values (|V| ≈ 3.2), spread evenly over six cells. Their
+  batch-to-batch cv is 0.09–0.10.
+- At 34847, X_L sits in three (2,2) cells with batch cv 0.12–0.18. The rest of the L group adds noise without signal
+  ((0,7) is −12% of X).
+- 34693 therefore has a larger X (3.7·10³ against 1.5·10³) and a smaller jackknife se (108 against 157). se/X is 0.03,
+  against 0.11 (34847), 0.12 (35099) and 0.15 (36037).
+- The batches genuinely agree: y_b > 0 in 16 of 16, with a cv of only 0.05, and half-samples 0.363–0.410. So the narrow
+  range is real, not a broken se.
+- 36037's rest has a wider range because its X is spread over noisier bins: (0,3) 19%, (2,3) 8%, and (0,4) and (2,4)
+  3% each.
+
+**3. The other numbers are confirmed.**
+- Whole-run B_L 0.3869 (0.375–0.398).
+- Ratios:
+  - rest / 0.241 = 1.60;
+  - rest / 36037's rest = 0.67;
+  - 36037 whole / 34693 whole = 1.64 (your 1.65 rounds 0.6347/0.3869 the wrong way).
+- Share 0.0231, R₂₊₂ 0.0220, G 1.05 (pairsym 0.96), F 0.95.
+- "At least three levels" holds at more than 2σ:
+  - 34847 and 35099: upper ends ≤ 0.270;
+  - 34693: 0.374–0.398;
+  - 36037: lower end 0.535.
+- **The profile differs from 36037's.**
+  - 34693's excess is mostly (2,2): 2.81 against 1.93 and 1.67, and 3.78 at 36037.
+  - (0,3) is 1.07 (z 4.3), against 0.39 and 0.65, and 3.70 at 36037.
+  - (3,3) is 0.052 (z 8.8) and (0,4) is 0.29 (z 2.6), both resolved.
+  - So 34693 is intermediate in level and puts less of its X outside (2,2): 5%, against 37% at 36037.
+
+**4. B_D: the reading is right, the contrast is not shown.**
+- X_D is negative at 34693 (−80, se 69). B_D = 0, with upper ends 1.61 (whole run) and 1.53 (rest), in κ²/p units. It is
+  noise-level.
+- But 36037's own B_D is unresolved: 9.4, z 1.6, and its 2σ range reaches 0. So "unlike 36037" overstates. The D group
+  separates neither prime from the comparison primes.
+- PW_pair is at its floor at 34693 (0.944 against 0.90), unlike 36037's 2.71. I have not decomposed PW_pair here,
+  so I give no reason for the difference.
+
+**5. The symR remark is fine as post hoc.** Add that both high-symR primes sitting above both low ones is an ordering
+random assignment gives with probability 1/6.
+
+**Wording for the record.**
+> "34693 (λ 0.295, symR 44.22, equal to 36037's; seed 17; rule written before the run) is scored INCONCLUSIVE.
+> - Its not-2+2 B_L is 0.386 (2σ 0.374–0.398). That is above the comparison primes (upper ends ≤ 0.270) and below the
+>   LIFTED threshold 0.40. It is not close by the rule's definition, but the upper end is only 0.002 below 0.40. The
+>   prediction (0.22–0.35) failed.
+> - The whole run gives 0.387: 1.60× the comparison mean, and 36037's whole run is 1.64× it. So the four κ = 7 primes
+>   at λ ≈ 0.3 sit at three separated levels.
+> - The excess is mostly in (2,2) (95% of X_L). (0,3), (3,3) and (0,4) are also above the comparison primes, with less
+>   outside (2,2) than at 36037.
+> - The 2+2 share is 0.023, so G is 1.05 and F 0.95.
+> - B_D is noise-level (< 1.6 at 2σ), and so is 36037's (z 1.6), so the D group separates neither.
+>
+> Post hoc: the two equal-symR primes differ 1.64× in B_L, though both sit above both low-symR primes (an ordering of
+> probability 1/6 at random). symR does not fix B_L at κ = 7, and four primes support no correlation."
+
+**Gates to add.**
+- "34693 lifted" or "34693 like the comparison primes" (the call is inconclusive).
+- A κ = 7 spike/typical dichotomy at λ ≈ 0.3: three levels in four primes.
+- Any symR–B_L relation at κ = 7.

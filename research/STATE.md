@@ -6,7 +6,7 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-10, after the handoff entry
-"2026-11-10 Rees Square Gap: κ = 6 Spike Survey Complete (89 Primes; Class Rule H1 Refuted); Spikes Carry a Large Involution-Family Factor F; the Family Can Move the Exponent Only If F·B = κ^{Ω(κ)}; κ = 7: a λ-Only Family Weight Rejected, and 36037 a B_L Spike Against Two Equal-λ Primes (Pre-Registered), Not Carried by the 2+2 Family; F Over 29 Primes Tracks N₁/μ₁ (AI Only)";
+"2026-11-10 Rees Square Gap: the 2+2 Family Is Controlled by G = s/R₂₊₂, Not F·B (Elementary, Asymptotic Only; G Unbounded by Any Known Method); a Backwards (N) Sentence Corrected; κ = 7 at 34693 INCONCLUSIVE (Pre-Registered), Three B_L Levels in Four Primes (AI Only)";
 entries below it are from 2026-11-09 and earlier.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
@@ -57,12 +57,16 @@ Now (11-10, AI only): square gap still OPEN.
     measured.
   - Spikes have a large family factor F (2.3-4.4, against 0.3) and large family class values (B_D
     4.3-17.3, against 0.44). The rest of the measure is lifted too.
-  - Elementary bound: the family can spoil the (1/2+o(1))kappa exponent only if
-    F*B = kappa^{Omega(kappa)}, B the constant of (N). F over all 29 primes with lambda <= 0.25
-    (mechanical item 2, pre-registered, section 12.11) is 0.24-4.41, max 1789. But F is N1/mu1
-    rescaled by a share moving about +-12% (Spearman 0.98): at kappa=6 "F bounded" is "(N)'s B
-    bounded at spike primes". The 2+2 share falls with lambda to 0.50 (prediction F1 refuted).
-    Post hoc: share higher at p = 1 than 7 mod 12 (0.71 vs 0.62); not a claim.
+  - Elementary bound (section 12.12; needs no (N); asymptotic only): with s the 2+2 share and
+    G = s/R_2+2, the family can spoil the (1/2+o(1))kappa exponent only if G = kappa^{Omega(kappa)}.
+    At kappa = 7-10 it certifies nothing (D addition kappa^{6.8-7.6} vs tolerance 3.4-5.7). Nothing
+    bounds G (only cap G <= 1/R_2+2 = kappa^{2.4-5.1} at the thresholds); the counts sit below the
+    Weil range; no counterexample family. Measured G: 0.5-2 at kappa=7 (5 primes); kappa=6 capped.
+  - F = G*N1/mu1. F over all 29 primes with lambda <= 0.25 (section 12.11) is 0.24-4.41, max
+    1789, and tracks N1/mu1 (Spearman 0.98). CORRECTED: the earlier '"F bounded" is "(N)'s B
+    bounded at spike primes"' was backwards; spike primes have N1/mu1 1.3-4.5 and do not stress
+    (N). The 2+2 share falls with lambda to 0.50 (F1 refuted). Post hoc: share higher at p = 1
+    than 7 mod 12 (0.71 vs 0.62); not a claim.
   - At kappa=7 (lambda 0.3 and 0.2) F is 0.5-1.8, inside kappa=6's range, so the 2+2 weight
     falls with R_2+2 = N_inv^2 kappa^4/p^2 up to F. At 23549 (lambda 0.2) it is 0.055 mu1,
     against 0.31-3.5 at kappa=6: a weight depending on lambda alone is rejected (P ~ 1e-7), at
@@ -75,13 +79,18 @@ Now (11-10, AI only): square gap still OPEN.
     the kappa=7 spread.
   - Not carried by the 2+2 family: its 2+2 share is 3.1% (F 1.6), and without those configurations
     B_L is still 0.57 (2.4x 35099). What carries it is unexamined ("not 2+2" is mc_split's flag).
+  - 34693, with 36037's symR (rule written first, seed 17): INCONCLUSIVE. Rest B_L 0.386 (2-sigma
+    0.374-0.398), between the comparison primes (<= 0.270) and LIFTED's 0.40; prediction failed.
+    Four primes at lambda ~ 0.3 sit at three separated levels; symR does not fix B_L; 95% of the
+    excess is in (2,2); G 1.05. B_D is noise-level there and at 36037.
   - The exponent needs OSC' at lambda_T = 0.43, 0.18, 0.07, 0.02 for kappa = 7..10, below almost
     everything tested.
 - Monte Carlo files from before the 9 Nov 22:20 batching fix overstate weak bins (report 11.3).
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
 - Next:
-  - what carries the kappa=7 lift: 34693 (same symR as 36037, F 0.9) by mc_split with a distinct
-    seed and a rule written first (proposed, not started);
+  - the kappa=7 spread at lambda ~ 0.3: the other five primes in sym_rate_k7_lam03.out by
+    mc_classes, rules written first, seeds 19-27 (mechanical item 6, proposed, not started);
+  - theory: bound rho_rest (the not-2+2 part of OSC') or G; neither has a method;
   - a (C1) sampler for kappa=8 at lambda 0.18;
   - (L') for the (2,2) classes;
   - kappa=5 at 2521 and 2621, once the machine is unloaded.

@@ -1,0 +1,19 @@
+Pre-registered rule and prediction, written 2026-11-10 10:59:29 before the run (spike-survey session).
+Run: nice -n 19 python -I mc_split.py 7 34693 6000 --seed 17 --out <outside repo>/split_k7_p34693
+     (log: split/split_k7_p34693.log). A distinct seed (referee round 4e). Read with split_report.py
+     (k6_spike_survey.analyse on the _all, _str and _uns parts).
+Choice: 34693 (lambda 0.295) has symR 44.22, equal to 36037's 44.19, the highest at lambda 0.29-0.31
+  (sym/sym_rate_k7_lam03.out). Its pairsym F (0.9, from 9 clustered configurations) and N1/mu1 (0.89 +- 0.05) were
+  known; its class values are unknown.
+Question: is the kappa = 7 B_L lift of 36037, which the 2+2 family does not carry (section 12.6), shared by the other
+  prime with the same symR? The statistic is B_L of the not-2+2 part ('uns', own scale), as at 36037.
+References: 36037's rest B_L 0.573 (2-sigma 0.478-0.654); the comparison primes 35099 and 34847, whole runs, B_L
+  0.237 and 0.245 (2-sigma upper ends 0.264 and 0.270). Their 2+2 shares are about 1-2%, so whole run ~ rest.
+Rule:
+  - LIFTED like 36037 if B_L,rest(34693) >= 0.40 (1.66x the comparison mean 0.241, above the kappa = 6 unflagged
+    maximum of 1.54x) and its 2-sigma lower end is above 0.270.
+  - LIKE the comparison primes if B_L,rest(34693) <= 0.33 and its 2-sigma upper end is below 0.478.
+  - Otherwise inconclusive. The call is "close" if the 2-sigma range of B_L,rest(34693) crosses 0.33 or 0.40.
+  Also reported: B_L of the whole run and of the 2+2 part, B_D of each part, the 2+2 share and F.
+Prediction: B_L,rest(34693) in 0.22-0.35, i.e. not lifted. Reason: at kappa = 7, N1/mu1 does not follow symR
+  (34693 0.89 against 36037 1.08), and 36037 looks like a single prime's effect. Low confidence.

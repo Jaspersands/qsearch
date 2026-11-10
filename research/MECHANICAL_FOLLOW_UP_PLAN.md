@@ -46,7 +46,9 @@ each computation under ~2 core-h. Do not edit the paper.
 
    A κ = 7 npz is over 10 MB. S1 dominates, and compression saves only 13%. Item 3's npz for 35099 is written outside
    the repo, so it needs no entry; a rerun inside the repo would.
-5. What carries the κ = 7 B_L lift at 36037 (proposed 10 Nov 07:35, not started). 36037 was picked for the highest
+5. DONE 10 Nov 12:19 (§12.6; INCONCLUSIVE, rest B_L 0.386, 2σ 0.374–0.398, between the comparison primes and
+   36037; prediction failed; referee round 4h-b). What carries the κ = 7 B_L lift at 36037 (proposed 10 Nov 07:35; rule written 10:59:29 in
+   `osc-mc/predictions_k7_p34693.txt`, run started 10:59 with seed 17, log `osc-mc/split/split_k7_p34693.log`). 36037 was picked for the highest
    symR at λ ≈ 0.3 (44.2); 34693 has the same symR and pairsym F 0.9 (`sym/sym_rate_k7_lam03.out`).
    - First write a rule in `predictions_k7_p34693.txt`: name the B_L level of the not-2+2 part that would count as
      "lifted like 36037" (near 0.57) or "like the comparison primes" (near 0.24), and the inconclusive band between.
@@ -56,6 +58,17 @@ each computation under ~2 core-h. Do not edit the paper.
      than the 2+2 family predicts the κ = 7 lift, as symR ranks B_L at κ = 6. If not, 36037 is a single prime's
      effect.
    - Then split 36037's not-2+2 part by other structure (one ι-pair, other involution cycle types, order-3 symmetry).
+6. The κ = 7 spread at λ ≈ 0.3 (proposed 10 Nov 12:30, not started). Four primes give three B_L levels (0.24, 0.39,
+   0.63), so a band median and spread need the other five primes in `sym/sym_rate_k7_lam03.out`: 34259, 34273,
+   34469, 35281, 36541.
+   - For each, first write a rule in `predictions_k7_lam03_band.txt`: predicted B_L with a range, from symR or from
+     the four known primes, and what would make 36037 a spike against the band (e.g. above the band's maximum 2σ
+     upper end).
+   - Then run `nice -n 19 python -I mc_classes.py 7 p 6000 --seed s --out <outside the repo>/mc_k7_p<p>_s<s>.npz`,
+     with seeds 19, 21, 23, 25, 27 (distinct from 13 and 17), about 1.3 core-h each, one at a time, and read with
+     `k6_spike_survey.analyse`.
+   - Acceptance: five B_L values with 2σ, scored by the rule; the band median and range; 36037 and 34693 placed
+     against them.
 
 ## 2026-11-09 Rees Square Gap: OSC′ Follow-Up
 

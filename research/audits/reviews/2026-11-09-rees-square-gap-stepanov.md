@@ -48,14 +48,17 @@ contraction is $(\alpha,\beta)$ with $\alpha_j + \beta_i \in Q^\circ_{-(i+j)}$ a
       0.3) and large class values of that family. The rest of the measure is lifted too.
     - Over all 29 primes with λ ≤ 0.25 (§12.11), F is 0.24–4.41, maximum 1789. F carries N₁/μ₁'s ranking (Spearman
       0.98), so a large F and a large N₁/μ₁ are the same observation. The 2+2 share falls with λ, to 0.50.
-    - An elementary bound: the family can move the exponent only if $F\cdot B = \kappa^{\Omega(\kappa)}$, where $B$ is
-      the constant of (N).
+    - An elementary bound (§12.12): the family can move the exponent only if $G = s/R_{2+2} = \kappa^{\Omega(\kappa)}$,
+      where $s$ is its share and $R_{2+2}$ its heuristic weight. This needs no (N) and is asymptotic only. Measured G
+      is 0.5–2 at κ = 7; nothing bounds G in general.
     - At κ = 7, λ = 0.2 (one prime) the family weight is 0.055 μ₁, which rejects a weight depending on λ alone.
     - At κ = 7, λ = 0.31, p = 36037 is a spike in $B_L$ against two equal-λ primes. Its $B_L = 0.635$ is 2.7× and
       2.6× those of 35099 (0.237) and 34847 (0.245), and 2.4–2.9× the λ = 0.4–0.5 values, with N₁/μ₁ 1.08. 34847 was
       scored by a rule written before its run. Two primes do not give the κ = 7 spread.
     - The 36037 lift is not carried by the 2+2 family: without its 2+2 configurations (3.1%) $B_L$ is still 0.57. What
       carries it is unexamined.
+    - 34693, with 36037's symR, scored INCONCLUSIVE by a rule written first: B_L 0.386 (2σ 0.374–0.398), between the
+      comparison primes and 36037. The four primes at λ ≈ 0.3 sit at three separated levels; symR does not fix B_L.
     - The square gap stays open.
   - **(N) (§9).** Proved without Weil: (C1) configurations exist from $p \approx \kappa^\kappa/(2e)$
     asymptotically (Theorem C; first certified κ = 5: 1451, κ = 6: 20233, below pigeonhole).
@@ -768,8 +771,8 @@ Question (mechanical plan item 1, §11.9): does OSC′ hold at λ ≤ 0.25 at sp
 Everything here is Monte Carlo or heuristic unless marked otherwise; nothing is a certificate. Code and outputs are in
 `osc-mc/`.
 
-An independent AI referee checked the section in ten passes. Rounds 1–2, with the author's disposition of each
-point, are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3, 3b, 3c, 4, 4b, 4c, 4d and 4e and their dispositions
+An independent AI referee checked the section in fourteen passes. Rounds 1–2, with the author's disposition of each
+point, are in `osc-mc/review-2026-11-10/REPORT.md`; rounds 3, 3b, 3c, 4, 4b–4g, 4h-a and 4h-b and their dispositions
 are in `ROUND3.md`. Its corrections are applied:
 - a factor 2 in the heuristic at even κ;
 - an undercount in the first `pairsym.py`;
@@ -780,7 +783,9 @@ are in `ROUND3.md`. Its corrections are applied:
 - a wrong "median symR" for 35099, and missing 2σ ranges on the bin ratios. The author replaced a knife-edge pairwise
   calibration of 36037 with the ratio to the band median, and the referee confirmed it;
 - 36037's F taken from pairsym's clustered sample (2.3; its split gives 1.6), "a not-2+2 effect" for what the split
-  only refutes, and a two-prime mean called "typical" and set against all-prime band medians (rounds 4d–4e).
+  only refutes, and a two-prime mean called "typical" and set against all-prime band medians (rounds 4d–4e);
+- a backwards sentence in §12.11 that read "F bounded" as "(N)'s B bounded at spike primes", §12.5 item 6's
+  illustrations about 4.5× too large (N₁/μ₁ taken as 1), and overstated proof-obstacle wording (rounds 4f–4h-a).
 
 ### 12.1 Survey design [computed]
 
@@ -1032,42 +1037,45 @@ are in `ROUND3.md`. Its corrections are applied:
      - 0.026 at κ = 6 (p ≈ 10⁴);
      - 0.010 at κ = 7 and 0.0012 at κ = 8;
      - 1.1·10⁻⁴ at κ = 9 and 7.6·10⁻⁶ at κ = 10.
-   - With the largest measured F (4.4), the weight w = F·R₂₊₂ is up to 4.5% at κ = 7 and 0.55% at κ = 8.
-6. **The family's effect on the constants** [elementary, given the definitions].
+   - With the largest measured G (about 2, κ = 7; §12.12), the share s = G·R₂₊₂ at the thresholds is about 2% at κ = 7
+     and 0.24% at κ = 8.
+6. **The family's effect on the constants** [elementary, given the definitions; restated in G on 10 Nov, §12.12].
    - Let the family have share s of the (C1) measure and noise-subtracted absolute D-group rms v.
-     - V is linear in the measure, and the weighted rms is a norm. So ρ_D ≤ (1 − s)ρ_rest + s·v.
-     - The share is s = w/(N₁/μ₁) = F·R₂₊₂/(N₁/μ₁). Under (N) the factor 1/(N₁/μ₁) is at most B. At the κ = 7 primes,
-       where N₁/μ₁ = 0.89–1.11, it is about 1. Below, take N₁/μ₁ = 1.
-   - So the family adds at most F·v·N_inv²κ²/p to B_D (units κ²/p).
+     - V is linear in the measure, and the weighted rms is a norm. So, for population quantities,
+       ρ_D ≤ (1 − s)ρ_rest + s·v.
+     - Write s = G·R₂₊₂, with G = s/R₂₊₂ = F·μ₁/N₁ (§12.12). An earlier version wrote s = F·R₂₊₂/(N₁/μ₁) and took
+       N₁/μ₁ = 1. That applied N₁/μ₁ = 1 to κ = 6 data where it is up to 4.5, so its illustrations were about 4.5× too
+       large; they are corrected below.
+   - So the family adds at most G·v·N_inv²κ²/p to B_D (units κ²/p).
      - At T(κ), N_inv²κ²/p is 10.6, 7.4, 3.9 and 1.7 for κ = 7–10.
      - It tends to 0 like κ^{10−κ/2−κ/(2 ln κ)+O(1)}.
-   - F·v at the five split primes, with F and v (from the 2+2 part's B_D) taken from the same run:
-     - 0.003 at 1621 and 0.27 at 1933;
-     - 0.35 at 1597 and 0.98 at 1657;
-     - 1.53 at 1789.
+   - G·v at the five split primes (v from the 2+2 part's B_D; 1933's v is from its earlier split, so approximate):
+     - 0.007 at 1621 and 0.10 at 1933;
+     - 0.08 at 1597 and 0.22 at 1657;
+     - 0.34 at 1789.
 
-     That is a 500× spread.
+     That is about a 50× spread. At κ = 6, G is capped by s ≤ 1 (§12.12), so these are illustrations.
    - What the family would add at T(κ) depends on how v scales from p ≈ 1800 to T(κ):
-     - If its absolute D-rms v keeps 1789's value, it would add about 16, 11, 6 and 3 at κ = 7–10. Its B_D in κ²/p
-       units then grows about 21× by T(7).
-     - If its B_D keeps 1789's 17.3 (in κ²/p units, as a constant-B law would have it), it would add w·17.3: 0.78 at
-       κ = 7 and 0.09 at κ = 8.
-     - With 1621's values (2σ, absolute v fixed), it adds at most 0.05, 0.03, 0.02 and 0.01.
-     - OSC′ is stated for every p ≥ p₀, so what matters is the largest F·v over primes near T(κ). That is not measured
-       at any κ ≥ 7.
+     - If its absolute D-rms v keeps 1789's value, it would add about 3.6, 2.4, 1.3 and 0.7 at κ = 7–10. Its B_D in
+       κ²/p units then grows about 21× by T(7).
+     - If its B_D keeps 1789's 17.3 (in κ²/p units, as a constant-B law would have it), it would add s·17.3: about 0.17
+       at κ = 7 and 0.02 at κ = 8.
+     - With 1621's values (2σ, absolute v fixed), it adds at most about 0.12, 0.07, 0.05 and 0.02.
+     - OSC′ is stated for every p ≥ p₀, so what matters is the largest G·v over primes near T(κ). That is not measured
+       at any κ ≥ 7. These scale 1789's capped κ = 6 G; at κ = 7 the measured G reaches 2.
    - **Without v.**
      - |Q| ≤ n, because each symmetrised character has modulus ≤ 1. So v ≤ n.
-     - The family then adds at most F·B·N_inv²κ²·(n/p) to B_D and F·B·N_inv²κ⁴·n/p² to B_L. Both are F·B·κ^{O(1)}.
+     - The family then adds at most G·N_inv²κ²·(n/p) to B_D and G·N_inv²κ⁴·n/p² to B_L. Both are G·κ^{O(1)}.
      - Tolerances (§11.8): an exponent below κ survives while log_κ B_D < (1 − 1/ln κ)κ − O(1) and
        log_κ B_L < (1/2 − 1/(2 ln κ))κ − O(1). The exponent (1/2+o(1))κ needs both to be o(κ). The family adds to both.
-     - So the 2+2 family can spoil the (1/2+o(1))κ exponent only if F·B = κ^{Ω(κ)} at some p ≥ p₀ near the threshold
-       path. If (N) holds with B = κ^{o(κ)}, that means F(p) = κ^{Ω(κ)}. §11.8's (N) fixes no size for B, and §9
-       measures B up to 9.9.
-     - This needs no independence assumption, since F is defined from the measured rate.
-   - The L group gains at most w·v_L ≈ 0.045·1.97 = 0.09 at κ = 7 with the 1789 values.
+     - So the 2+2 family can spoil the (1/2+o(1))κ exponent only if G = κ^{Ω(κ)} at some p ≥ p₀ near the threshold
+       path. This step needs no (N). (It replaces the earlier "F·B = κ^{Ω(κ)}", which is never stronger: G ≤ F·B
+       under (N).) The bound is asymptotic only: at κ = 7–10 it certifies nothing (§12.12).
+     - This needs no independence assumption, since G is defined from the measured share.
+   - The L group gains about s·v_L ≈ 0.02 at κ = 7 with the 1789 values.
 7. **What this does not say.**
    - Items 2, 4 and 5 are first-moment counts with an independence assumption. Item 6 does not need it, but it bounds
-     the family's effect only in terms of F, which is unbounded.
+     the family's effect only in terms of G, which nothing beyond the trivial cap 1/R₂₊₂ bounds.
    - It concerns projective families of bounded orbit type.
    - It says nothing about the not-2+2 part at spike primes, or about structure that is not projective.
 
@@ -1254,6 +1262,28 @@ are in `ROUND3.md`. Its corrections are applied:
     - The 2+2 part alone is unresolved: 185 configurations, own-scale B_L 2.2 at z 2.0 (< 3.1 at 2σ). Across the 17
       splits on file its own-scale L amplitude is 1.1–2.0× the rest's at κ = 6 and 3.8× at 36037. So in L it carries
       nearly the rest's profile, amplified. That describes 17 runs; it is not a mechanism.
+- **34693, the other prime with 36037's symR** [computed; pre-registered; referee round 4h-b]. Mechanical item 5. The
+  rule was written at 10:59:29, before the run (`predictions_k7_p34693.txt`); `mc_split.py 7 34693 6000 --seed 17`
+  gave 6007 configurations. Scored by `review-2026-11-10/scratch/score_k7_34693.py` → `.out`; referee checks in
+  `scratch/r4hb_checks.out`.
+  - **Call: INCONCLUSIVE.** Its not-2+2 B_L is 0.386 (2σ 0.374–0.398). That is above the comparison primes (upper
+    ends ≤ 0.270) and below the LIFTED threshold 0.40. It is not close by the rule's definition, but the upper end is
+    only 0.002 below 0.40. The prediction (0.22–0.35) failed.
+  - The whole run gives 0.387 (2σ 0.375–0.398): 1.60× the comparison mean, and 36037's whole run is 1.64× it. So the
+    four κ = 7 primes at λ ≈ 0.3 sit at three separated levels (≤ 0.270; 0.374–0.398; ≥ 0.535 at the 2σ ends).
+  - The narrow range is real: 95% of X_L is in the (2,2) bin, spread evenly over six cells that agree from batch to
+    batch (y_b > 0 in 16 of 16, cv 0.05; half-samples 0.363–0.410). se/X is 0.03, against 0.11–0.15 at the other three.
+  - The excess is mostly in (2,2). (0,3), (3,3) and (0,4) are also above the comparison primes. Less of X lies
+    outside (2,2) than at 36037 (5% against 37%).
+  - The 2+2 share is 0.023 (139 configurations), so G is 1.05 (pairsym 0.96) and F 0.95.
+  - B_D is noise-level (X_D −80 ± 69; < 1.6 at 2σ in κ²/p units). 36037's is unresolved too (z 1.6), so the D group
+    separates neither from the comparison primes. PW_pair is at its floor (0.94 against 0.90), against 2.71 at 36037;
+    this is not decomposed.
+  - Post hoc: the two equal-symR primes differ 1.64× in B_L, though both sit above both low-symR primes (35099 21.3,
+    34847 16.3), an ordering of probability 1/6 at random. symR does not fix B_L at κ = 7, and four primes support
+    no correlation.
+  - Gates stay false: 34693 lifted or 34693 like the comparison primes; a spike/typical dichotomy at κ = 7, λ ≈ 0.3;
+    any symR–B_L relation at κ = 7.
 - **Generic rate.**
   - The not-2+2 rate is 0.86–1.04 μ₁ at κ = 7, λ ≈ 0.3 (bucket_stats rates at the four primes with a share), and
     0.79–0.82 μ₁ at 23549 (λ = 0.2).
@@ -1359,17 +1389,18 @@ are in `ROUND3.md`. Its corrections are applied:
   - The lift is not carried by the 2+2 family. Without its 2+2 configurations (3.1%, F 1.6) B_L at 36037 is 0.57,
     2.4× 35099's; they add about 0.07, in phase with the rest (§12.6). What carries it is unexamined.
 - **What changes.** Obstruction (c) of §11.8 narrows to three questions:
-  1. Is F(p) = κ^{o(κ)} uniformly over p ≥ p₀ near the threshold path?
-     - If (N) holds with B = κ^{o(κ)}, this is the only way the 2+2 family can spoil the (1/2+o(1))κ exponent (§12.5
-       item 6). Otherwise the condition is on F·B.
-     - It needs no independence assumption, since F is defined from the measured rate.
+  1. Is G(p) = s/R₂₊₂ = κ^{o(κ)} uniformly over p ≥ p₀ near the threshold path (§12.12)?
+     - This is the only way the 2+2 family can spoil the (1/2+o(1))κ exponent (§12.5 item 6), and this step needs no
+       (N).
+     - It needs no independence assumption, since G is defined from the measured share.
   2. The same question for the arithmetic factors of the other bounded-orbit families of §12.5 item 4.
   3. What are the not-2+2 part at spike primes, and any non-projective structure at κ ≥ 7?
      - At κ = 7 this is now the sharper question: the B_L spike at 36037 sits in the not-2+2 part.
 
-  With the largest measured F·v (1789), the family would add B_D ≈ 16 at κ = 7 if its absolute D-rms did not fall
-  with p. It would add 0.8 if its B_D in κ²/p units stayed constant, and at most 0.05 with typical values. Either way
-  it is bounded and falls to 0 as κ grows, so it is harmless for the exponent if F and B stay bounded.
+  With the largest measured G·v (1789), the family would add B_D ≈ 3.6 at κ = 7 if its absolute D-rms did not fall
+  with p. It would add about 0.17 if its B_D in κ²/p units stayed constant, and at most about 0.12 with typical values.
+  These are illustrations (1789's G is capped at κ = 6). Either way it falls to 0 as κ grows, so it is harmless for the
+  exponent if G stays κ^{o(κ)}.
 - **Claim gates that stay false.**
   - OSC′ in either form at any κ.
   - Any rigorous bound on spike constants.
@@ -1377,7 +1408,7 @@ are in `ROUND3.md`. Its corrections are applied:
     terms of F.
   - Threshold certificates at κ ≥ 6.
   - An unconditional exponent statement.
-  - F(p) bounded, or κ^{o(κ)}, over p ≥ p₀.
+  - G(p) bounded, or κ^{o(κ)}, over p ≥ p₀.
   - Obstruction (c) resolved.
   - Hypothesis H (refuted in its strict form; the class shift of B_D held prospectively (H2) but has no mechanism),
     or the |a|/√p and cubic-character correlations, as claims.
@@ -1406,20 +1437,21 @@ are in `ROUND3.md`. Its corrections are applied:
   written before the 34847 run, 36037 is a spike in B_L against both, and the call is not close.
   - Done: the 2+2 / not-2+2 split of the 36037 run. Its 2+2 share is 3.1% (the 4.5% was pairsym's), and it does not
     carry the (2,2) and (0,3) lift: the rest alone makes 85% and 75% of those bins' X.
-- **What carries the κ = 7 lift** (proposed, not started). 36037 was picked for the highest symR at λ ≈ 0.3 (44.2).
-  34693 has the same symR and pairsym F 0.9.
-  - Run `mc_split.py 7 34693 6000 --seed 17` (a distinct seed), with a rule written before the run.
-  - If its not-2+2 B_L is also near 0.6, symR rather than the 2+2 family predicts the κ = 7 lift, as symR ranks B_L
-    at κ = 6. If it is near 0.24, 36037 is a single prime's effect.
+- **What carries the κ = 7 lift** (34693 done, §12.6: INCONCLUSIVE, an intermediate level 0.386; neither "36037 alone"
+  nor "symR predicts it").
+  - The κ = 7 spread at λ ≈ 0.3 now has three levels in four primes, so a spread estimate needs more primes: the
+    other five in `sym_rate_k7_lam03.out` (34259, 34273, 34469, 35281, 36541), each with a rule written first and a
+    distinct seed.
   - Then split 36037's rest by other structure: one ι-pair, other involution cycle types, order-3 symmetry.
 - **The direct test of (c)** still needs κ = 8 at λ ≈ 0.18 (p ≈ 3.8·10⁵), with a sampler that builds (C1)
   configurations directly (§11.9). That sampler is the main gap.
-- **Bounding F.**
-  - By §12.5 item 6, the 2+2 family's effect on the exponent is controlled by F. So the proof target is an upper bound
-    O(κ^{o(κ)}·N_inv²κ⁴p⁻²μ₁) for the 2+2 count.
+- **Bounding G** (§12.12).
+  - By §12.5 item 6, the 2+2 family's effect on the exponent is controlled by G. So the proof target is the share:
+    #2+2 ≤ κ^{o(κ)}·R₂₊₂·N₁. A bound O(κ^{o(κ)}·N_inv²κ⁴p⁻²μ₁) on the 2+2 count suffices only together with (N) at
+    B = κ^{o(κ)}.
   - The block conditions are explicit. The rest is an upper bound for a (C1) count on a codimension-2 family, which
     §9's existence proof does not give.
-  - Weil's error terms are κ^{O(κ²)}√p, useless at p = κ^{O(κ)}. So no method is in hand.
+  - Weil's relative error is about κ^{O(κ²)}/√p, useless at the thresholds p = κ^{(1/2+o(1))κ}. So no method is in hand.
 
 ### 12.10 Final survey and the scored predictions (10 Nov, 04:49) [computed; the scoring is pre-registered]
 
@@ -1557,10 +1589,68 @@ are in `ROUND3.md`. Its corrections are applied:
   balanced across classes. To be pre-registered before use.
 - **What this changes.**
   - At κ = 6, λ ≤ 0.25, F lies in 0.24–4.41 at all 29 primes, and its maximum is the 1789 already known. But F is not
-    independent information: a large F and a large N₁/μ₁ are the same observation. So question 1 of §12.8 (is F
-    bounded?) is, at κ = 6, the question whether N₁/μ₁ is bounded at spike primes, which is (N)'s constant B.
+    independent information: a large F and a large N₁/μ₁ are the same observation. At κ = 6 F's size is N₁/μ₁'s,
+    since G = 0.58–1.05 and s ≤ 1 caps it at 1.42. A large count does not stress (N), and the family's effect runs
+    through G (§12.12). (An earlier version of this sentence said the question was "(N)'s constant B"; that was
+    backwards.)
   - The informative results are F1 (the share is not a near-constant 0.6–0.9: it falls with λ to 0.5), F4 (the share
     rises only weakly with N₁/μ₁), F6 (the 2+2 part carries the larger D excess at the sD spikes) and the post hoc
     class difference of the share.
-  - Claim gates stay false: F(p) bounded or κ^{o(κ)}; the share-by-class difference as a claim; any F7 correlation as
+  - Claim gates stay false: G(p) bounded or κ^{o(κ)}; the share-by-class difference as a claim; any F7 correlation as
     a claim.
+
+### 12.12 What controls the 2+2 family's effect: G, not F·B (10 Nov) [elementary; computed; referee round 4g]
+
+- **Correction to §12.11.** §12.11 first said that at κ = 6 "is F bounded?" is the question whether (N)'s B is
+  bounded at spike primes. That was backwards. (N) is the lower bound N₁ ≥ μ₁/B, so B controls μ₁/N₁, which is small
+  at spike primes: N₁/μ₁ is 1.3–4.5 at the six sD spikes with λ ≤ 0.25 (2.7–4.5 at the four with the largest F).
+  Spike primes do not stress (N). Its worst case in the survey is 1741 (N₁/μ₁ 0.37).
+- **The parameter.** Let s be the 2+2 share of the (C1) measure, and G := s/R₂₊₂ = F·μ₁/N₁, the family's share over
+  its heuristic weight R₂₊₂ = N_inv²κ⁴/p². Then F = G·N₁/μ₁ exactly.
+- **§12.5 item 6 without (N)** [elementary; for population quantities, which the Monte Carlo estimators satisfy only
+  approximately].
+  - V is linear in the measure, so V_all = s·V_fam + (1 − s)·V_rest. For each group (L or D) the weighted rms is a
+    norm, so ρ ≤ (1 − s)ρ_rest + s·v. The noise allowance carries through, since (1 − s)ν_rest ≤ ν_all.
+  - |Q| ≤ n, so v ≤ n; and s = G·R₂₊₂ by definition.
+  - Hence the family adds at most G·R₂₊₂·n·p/κ² = G·N_inv²κ²·(n/p) < G·N_inv²κ² to B_D (κ²/p units), and at most
+    G·R₂₊₂·n < G·N_inv²κ⁴/p to B_L.
+  - N_inv = κ(κ−1)(κ−2)(κ−3)/8 < κ⁴/8, so N_inv²κ² = κ^{O(1)}. It is κ^{6.8}, κ^{7.1}, κ^{7.4} and κ^{7.6} at κ = 7–10.
+  - So the 2+2 family can spoil the (1/2+o(1))κ exponent only if G = κ^{Ω(κ)} at some p ≥ p₀ near the threshold path.
+    This step needs no (N); OSC′ itself still contains (N) through the noise term. It replaces item 6's
+    "F·B = κ^{Ω(κ)}" and is never weaker, since G = F·μ₁/N₁ ≤ F·B under (N).
+  - **It is asymptotic only.** The D addition κ^{6.8–7.6} exceeds the D tolerance of 3.4–5.7 in log_κ at every
+    κ = 7–10, and the L addition at T(κ), G·κ^{3.2, 3.0, 2.6, 2.2}, exceeds the L tolerance (1.7, 2.1, 2.5, 2.8) at
+    κ = 7–9. So finite κ still needs the family's v, as in item 6.
+  - **Nothing elementary excludes G = κ^{Ω(κ)}.** The only cap is s ≤ 1, i.e. G ≤ 1/R₂₊₂. At the §11.8 thresholds that
+    is κ^{2.4}, κ^{3.2}, κ^{4.2} and κ^{5.1} at κ = 7–10, and κ^{κ+κ/ln κ−12+O(1)} in general.
+  - The rest still enters through (1 − s)ρ_rest, which this does not bound.
+- **G in the data** [computed; `survey/score_F.out`, §12.6; referee `scratch/r4g_checks.out`].
+  - κ = 6, λ ≤ 0.25 (29 primes): G is 0.58–1.05 (median 0.74). This is no test: R₂₊₂ is 0.70–1.12 there, so s ≤ 1
+    already caps G at 0.89–1.42, and G over its cap is just the share.
+  - κ = 7: G is 2.0 (35281), 0.51 (35099), 1.5 (36037, from its split), 1.05 (34693, from its split) and 1.3 (23549), against
+    trivial caps of 21–49. These rest on 19, 5, 185, 139 and 5 structured configurations; the pairsym values are clustered.
+  - So wherever it can be tested (κ = 7, five primes, one of them the spike 36037), the family's share is its heuristic
+    weight to within about 2× (point values; 35099 and 23549 rest on 5 configurations each). F's large values at the κ = 6 spikes are N₁/μ₁'s.
+- **What a proof would need.**
+  - The target is the share: #2+2 ≤ κ^{o(κ)}·R₂₊₂·N₁. A bound on the 2+2 count relative to μ₁ suffices only together
+    with (N) at B = κ^{o(κ)}.
+  - Both counts are counts of configurations defined by κ-th power residue conditions on the κ² differences t_i − s_j
+    of 2κ variables (the profile of each t_i in the κ shifts s_j). The thresholds are T = κ^{(1/2+o(1))κ} (log_κ T is
+    5.57–7.36 at κ = 7–10), so the pattern length is κ ≍ log p/log log p.
+  - Weil's one-variable bound gives these counts with relative error about κ^{O(κ²)}/√p. That exceeds the main term
+    unless p ≥ κ^{cκ²}.
+  - Weil-type square-root bounds are the general tool for such counts, and they fail here. Short-interval methods
+    (Burgess; Graham–Ringrose) and sumset bounds in multiplicative subgroups (Hanson–Petridis) address other questions
+    and give nothing at set sizes κ ≍ log p. No formal reduction to a named conjecture is claimed.
+  - κ = 3 has no 2+2 family (two disjoint pairs need κ ≥ 4), so §11.2's exact method says nothing about G.
+  - At κ = 4 each pairing of S has one involution, which preserves S and permutes the bucket keys (checked in 300
+    cases, `scratch/r4g_checks.out`). So the 2+2 count is a sum over ι-invariant buckets. It reduces to order-4
+    character sums over the cross-ratio of S; whether these close in cyclotomic numbers is not checked. Either way it
+    gives κ = 4 values, not a bound uniform in κ.
+  - No counterexample family is known: no measured prime has G above about 2 (κ = 7's 2.0 is a pairsym value from 19
+    clustered configurations; κ = 6 values cannot exceed 1.42).
+- **Consequence.** Unless G grows like κ^{Ω(κ)}, the 2+2 family is harmless for the exponent asymptotically, and
+  obstruction (c) is the rest: ρ_rest at spike primes, the part that 36037 shows lifted at κ = 7. That is OSC′ itself
+  for the not-2+2 part, and nothing here bounds it.
+- **Claim gates stay false:** G bounded or κ^{o(κ)}; any bound on ρ_rest; obstruction (c) resolved; any certificate
+  at κ = 7–10 from the elementary bound; the κ = 4 2+2 count in closed form.
