@@ -1,0 +1,29 @@
+1. Reproduction, shares, F and arithmetic by my code (largest |difference| against score_F.out)
+  survey npz reproduced array by array (nS, cnt, S1, S2, N1) at 29 of 29; parts add up at 29 of 29; unique a at 29 of 29
+  max |diff| (rounded as printed): share 0.001, F 0.00, N1/mu1 0.01, h mismatches 0, cube2 mismatches 0, |a|/rp 0.000, t 0.000
+
+2. Predictions, own statistics, scope as written
+  (F1) over 25: share range 0.496-0.792, below 0.60: [1723, 1747, 1759, 1783, 1867, 1879]
+  (F2) max new F 2.80 (1933); overall max 4.41 (1789)
+  (F3) 0.982  (F4) 0.521  (F5) 0.845 over 25
+  (F7) over 29: Spearman(F, |a|/rp) 0.494; h = 0: median F cube 2.80 (n 7) vs 0.72 (n 8); Spearman(F, |t|) at h = 0 0.789 (n 15)
+
+3. What was fixed before the runs (survey N1/mu1 at all 29 was known)
+  (F2) F at share 1 (the most any share can give) among the 25 new: max 3.79 (1933) -> F2 could not fail: True
+  (F3) with any constant share, Spearman(F, N1/mu1) = Spearman(N p^2, N) = 0.969
+  shares permuted among the 25 (no share-N link): Spearman(F, N) median 0.950, P(>= 0.90) 0.999, min 0.875; Spearman((1-share)N, N) median 0.909, P(>= 0.5) 1.000, min 0.789
+  var of log over the 25: N1/mu1 0.373, share 0.0139, p^2 0.0182, F 0.472; cov(log share, log N) 0.0383
+  elasticity d log(2+2 count share N)/d log N1/mu1 over 25: 1.098 (bootstrap 95% 1.041-1.173)
+  elasticity d log(rest count (1-share) N)/d log N1/mu1 over 25: 0.790 (bootstrap 95% 0.636-0.910)
+  elasticity d log(share)/d log N1/mu1 over 25: 0.098 (bootstrap 95% 0.040-0.171)
+  (F7) with F at share 0.8 (known before): Spearman(F08, |a|/rp) 0.475; h = 0 medians cube 3.04 vs 0.82; Spearman(F08, |t|) at h = 0 0.746
+  same with N1/mu1 alone: Spearman(N, |a|/rp) 0.507; Spearman(N, |t|) at h = 0 0.718; Spearman(F, symR) 0.921 vs Spearman(N, symR) 0.921
+  (F7) cube split at h = 0: exact one-sided permutation p for the median difference 0.011 (6435 splits)
+
+4. The exploratory share-by-class result, and lambda
+  Spearman(share, lambda) over 29: -0.400; class counts h=0 by band (<0.22, >=0.22): 7, 8; h=3: 7, 7
+  all          share median h=0 0.710 (n 15) vs h=3 0.619 (n 14); one-sided permutation MW p 0.0034
+  lam < 0.22   share median h=0 0.780 (n 7) vs h=3 0.676 (n 7); one-sided permutation MW p 0.0542
+  lam >= 0.22  share median h=0 0.651 (n 8) vs h=3 0.576 (n 7); one-sided permutation MW p 0.0000
+  share detrended linearly in lambda: h=0 vs h=3 one-sided permutation MW p 0.0000
+  Spearman(share, symR) 0.761; Spearman(share, N1/mu1) over 29 0.616; partial (share, N | lambda) by rank residuals 0.715

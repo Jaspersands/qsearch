@@ -1283,3 +1283,110 @@ The call itself (spike in B_L, not close) does not depend on any of this.
 - The gate is widened to "the κ = 7 spread at λ ≈ 0.3, and so the transfer of the κ = 6 calibration to κ = 7".
 - The (0,3) caveat at 34847, the (0,4)/(2,4) end ratios, and the sPW note are added to §12.6.
 - Future comparison primes get distinct seeds. The proposed 34693 run (mechanical plan item 5) uses seed 17.
+
+# Round 4f (referee, 10 Nov 10:56): scoring of mechanical item 2 (F over the κ = 6 survey, λ ≤ 0.25)
+
+**Verdict: ACCEPT WITH CHANGES.** Every prediction is scored as written, with the right scope, and every number
+reproduces. But three of the six "kept" calls were fixed before the runs by the survey N₁/μ₁, which was already known.
+The record must say so:
+- **F2** could not fail;
+- **F3 and F5** are near-automatic;
+- **F7**'s three directions already held with F at share 0.8.
+
+The informative results are F1 (refuted), F4, F6, and the λ and class dependence of the share.
+- Script and output: `scratch/r4f_checks.py` and `.out`. It is my own code for the shares, N₁/μ₁, F, the arithmetic
+  (pow-based, no primitive root) and the ranks, and imports nothing from `score_F.py`. About 15 CPU-s at nice 19.
+
+**1. Scoring as written.**
+- **Timing.** The predictions were written at 05:59:59 and the erratum at 06:04:42. `score_F.py` was last modified at
+  06:03:48, and the first split13 log at 06:05:59. So the scorer has not changed since before any result, and the
+  07:37 partial run could not have altered it.
+- **Scopes.** F1–F6 are scored over the 25 new primes and F7 over the 29, as written. The 29-prime figures for F1–F5
+  are reported alongside, as the file promises.
+  - F2 "above 4.0" is scored as max ≤ 4.0.
+  - F4's threshold of 0.34 is the one-sided 5% point for n = 25.
+  - The sD set {1669, 1693, 1933} matches the file.
+  - F6 uses `ks.analyse` on the _str/_uns npz. That is exactly what `split_report.py` does.
+- **"Reproduces the survey run" holds more strictly than the scorer checks.** The scorer compares log lines. I compared
+  the arrays (nS, cnt, S1, S2, N1) of each _all npz with `survey/mc_k6_p*_s13.npz`: all 29 match. The parts add up at
+  all 29.
+- **Numbers.**
+  - Shares, N₁/μ₁ and F agree with `score_F.out` to the printed digits (share to 0.001).
+  - F4 is 0.521 with average ranks. The scorer's 0.511 comes from 3-decimal log shares with ties (0.614 twice) and ranks
+    without tie averaging. Over the 29 the values are 0.616 and 0.609. Not material.
+  - F1: range 0.496–0.792, and the same six primes below 0.60.
+- **Arithmetic columns** (own code): h from p mod 12, 2 a cube from 2^((p−1)/3) = 1, a by direct search, and t from
+  χ₆(x) = x^((p−1)/6). There are 0 mismatches in h and in the cube class, and |a|/√p and t agree to 0.000. The
+  representation p = a² + 3b² with a ≡ 1 (mod 3) is unique at all 29. A(0, h) is generator-free for h ∈ {0, 3}, so the
+  primitive root plays no role.
+
+**2. What the data known in advance already fixed** (survey N₁/μ₁ at all 29).
+- **F2 could not fail.** Even at share 1, the largest F any new prime can reach is 3.79 (1933), below 4.0. Record it as
+  "automatically kept".
+- **F3 is near-automatic.**
+  - At any constant share, Spearman(F, N₁/μ₁) = Spearman(N p², N) = 0.969.
+  - With the 25 shares permuted at random, so that share and N₁/μ₁ are unlinked, F3's 0.90 is met in 99.9% of
+    permutations (median 0.950, minimum 0.875).
+  - The reason: over the 25, var log N₁/μ₁ = 0.373, against 0.014 for log share and 0.018 for log p².
+- **F5 is automatic too.** Under the same permutations it is met in 100% of them (median 0.909, minimum 0.789).
+- **The content of F4 and F5 is better given as elasticities** against N₁/μ₁ over the 25 (bootstrap 95%):
+  - 2+2 count, share·N₁/μ₁: 1.10 (1.04–1.17);
+  - rest count, (1 − share)·N₁/μ₁: 0.79 (0.64–0.91);
+  - share: 0.10 (0.04–0.17).
+
+  So both parts grow with the excess, the 2+2 part slightly faster. The share moves by only about ±12% (sd of log
+  share 0.12).
+- **F7 was fixed in advance.** With F at share 0.8, which was known before the runs, all three directions already held:
+  - Spearman with |a|/√p 0.475;
+  - h = 0 medians 3.04 (2 a cube) against 0.82;
+  - Spearman with |t| 0.746.
+
+  The results after the runs (0.494; 2.80 against 0.72; 0.789) are N₁/μ₁'s own correlations: N₁/μ₁ alone gives
+  0.507 and 0.718. Likewise Spearman(F, symR), 0.921, equals Spearman(N₁/μ₁, symR), 0.921.
+
+**3. What F3 and F5 mean.** F3 says F inherits N₁/μ₁'s ranking. That is a property of the definition, not a finding.
+F5 says that the rest's count rises with the excess (elasticity 0.79), which is the substantive part of "the rest is
+lifted too". Neither shows F to be a factor separate from N₁/μ₁.
+
+**4. Wording.**
+- F6 is a point-value comparison, as written. The 2+2 B_D is 2.0–3.0× the rest's, with z 7.7–10.4 against 2.1–10.7.
+  1933 is not fully independent of what was seen: its new run contains the earlier split's first 5022 configurations
+  (erratum).
+- **The exploratory share-by-class result** (post hoc).
+  - It survives a check for confounding by λ. The share falls with λ (Spearman −0.40), but the classes are balanced
+    across bands (h = 0: 7 and 8; h = 3: 7 and 7).
+  - The class difference appears in both bands: permutation MW p 0.054 below λ 0.22, and < 0.001 from 0.22 to 0.25. With
+    a linear λ trend removed, p is < 0.001.
+  - It is still post hoc. Pre-register it on new primes before stating it.
+- **The F7 cube split** has an exact permutation p of 0.011 (n 7 against 8). But it is direction-only by pre-registration
+  and was fixed in advance, so it supports no claim.
+
+**Exact wording.**
+- F2: "(F2) kept automatically: even at share 1 no new prime could exceed F = 3.79 (1933), so this prediction could not
+  fail. The largest new F is 2.80 (1933), and the maximum stays at 1789 (4.41)."
+- F3: "(F3) kept, near-automatically: Spearman(F, N₁/μ₁) is 0.982. It is 0.969 at any constant share and ≥ 0.90 in 99.9%
+  of share permutations, because log N₁/μ₁ carries most of the variance of log F (0.37 of 0.47). F is N₁/μ₁ rescaled by
+  a share that moves by about ±12%; it is not a factor separate from N₁/μ₁."
+- F4: "(F4) kept: Spearman(share, N₁/μ₁) 0.52 (0.51 with the scorer's tie handling). The share's elasticity in N₁/μ₁ is
+  0.10 (0.04–0.17)."
+- F5: "(F5) kept, automatically in rank: 0.845, and ≥ 0.5 in every share permutation. Its content is that the rest's
+  count grows with N₁/μ₁ (elasticity 0.79, 0.64–0.91; the 2+2 count 1.10)."
+- F7: "(F7) all three directions held, but they were already fixed by the known N₁/μ₁: with F at share 0.8 all three
+  held before the runs. No claim."
+- Exploratory: "Spearman(F, symR) 0.92 is N₁/μ₁'s (0.92). Post hoc: the share is higher at p ≡ 1 than p ≡ 7 (mod 12),
+  median 0.71 against 0.62, in both λ bands (permutation p 0.054 and < 0.001), with λ balanced across classes. To be
+  pre-registered before use."
+- §12 text: where F is called the family's "weight factor", add "F carries N₁/μ₁'s ranking (Spearman 0.98)". At κ = 6, a
+  large F and a large N₁/μ₁ are the same observation.
+
+# Author's disposition of round 4f (10 Nov 10:58)
+
+All accepted, and applied in a new §12.11, §0, §12.4, §12.8 and §12.9, the handoff, STATE and mechanical plan item 2.
+- Each prediction is recorded in your wording: F1 refuted, F2 kept automatically, F3 and F5 near-automatic and
+  automatic in rank, F4 at 0.52 with the elasticity 0.10, F6 as point values with 1933's overlap noted, and F7 settled
+  in advance with no claim.
+- Every "weight factor" or "family factor" phrase now says that F carries N₁/μ₁'s ranking. "F bounded" is restated as
+  "(N)'s B bounded at spike primes" for κ = 6.
+- The share-by-class result is recorded as post hoc, to be pre-registered before use.
+- Verified myself before recording: F2's ceiling (1933 at share 1: 2.665 × 1933²/2,624,400 = 3.79), and that
+  N₁/μ₁·p² alone has Spearman 0.98 with N₁/μ₁ (0.97 over the 25), with F/N₁/μ₁ in 0.58–1.05.

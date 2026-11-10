@@ -46,6 +46,8 @@ contraction is $(\alpha,\beta)$ with $\alpha_j + \beta_i \in Q^\circ_{-(i+j)}$ a
     - At λ ≈ 0.21, 71–88% of (C1) configurations are 2+2 involution-structured, at spike and typical primes alike.
       What separates the four split spike primes from the typical 1621 is a large family factor $F$ (2.3–4.4, against
       0.3) and large class values of that family. The rest of the measure is lifted too.
+    - Over all 29 primes with λ ≤ 0.25 (§12.11), F is 0.24–4.41, maximum 1789. F carries N₁/μ₁'s ranking (Spearman
+      0.98), so a large F and a large N₁/μ₁ are the same observation. The 2+2 share falls with λ, to 0.50.
     - An elementary bound: the family can move the exponent only if $F\cdot B = \kappa^{\Omega(\kappa)}$, where $B$ is
       the constant of (N).
     - At κ = 7, λ = 0.2 (one prime) the family weight is 0.055 μ₁, which rejects a weight depending on λ alone.
@@ -936,7 +938,8 @@ are in `ROUND3.md`. Its corrections are applied:
       typical prime measured there, it is 0.71–0.74 (se ≈ 0.01).
     - At the spikes 1789 and 1933 (λ 0.23–0.25) it is 0.70–0.80.
   - What separates the four split spike primes from 1621 strongly:
-    - the family's weight factor F (§12.5 item 3): 2.3–4.4, against 0.30;
+    - the family's weight factor F (§12.5 item 3): 2.3–4.4, against 0.30. Over the survey F carries N₁/μ₁'s
+      ranking (Spearman 0.98; §12.11), so a large F and a large N₁/μ₁ are the same observation at κ = 6;
     - the 2+2 part's class values: B_D 4.3–17.3, against 0.44 (z 1.7, 2σ < 0.65).
   - The not-2+2 part is lifted at those spike primes as well: rate 0.61–0.88 μ₁ against 0.12 at 1621, and B_D 2.3–5.8
     (z 3.5–8.2).
@@ -1324,6 +1327,8 @@ are in `ROUND3.md`. Its corrections are applied:
     the one typical prime measured there (1621).
   - At the four split spike primes, this family's weight factor F and its class values are both large: F 2.3–4.4
     against 0.3 at 1621, and B_D 4.3–17.3 against 0.44. The not-2+2 part is lifted too.
+  - Over the survey (§12.11) F carries N₁/μ₁'s ranking (Spearman 0.98) and is N₁/μ₁ rescaled by a share of 0.50–0.86,
+    so F is not a separate factor at κ = 6.
   - The sN spike 1627 has F 1.6–2.1 without a value spike.
   - Why some primes are like this is not explained. |a|/√p and the cubic character of 2 rank it in part (§12.7).
 - **p against λ.**
@@ -1388,7 +1393,7 @@ are in `ROUND3.md`. Its corrections are applied:
 
 - **Finish the survey.** Done (§12.10).
   - Done: 2143 at seed 14 replicates its D excess and all three flags (§12.10).
-- **F over the survey.** Running since 06:00 in an adapted form, pre-registered in `survey/predictions_F.txt`
+- **F over the survey.** Done (§12.11). It ran from 06:00 to 10:53 in an adapted form, pre-registered in `survey/predictions_F.txt`
   (05:59:59; an erratum at 06:04 fixes two shares quoted from the wrong sample and changes no prediction).
   - `mc_split.py 6 p nconf --seed 13` at the 25 survey primes with λ ≤ 0.25 that have no seed-13 split
     (`survey/run_k6_split.sh`, outputs `split/split13_k6_p*`). It reproduces the survey run, so the share, N₁/μ₁ and
@@ -1511,3 +1516,51 @@ are in `ROUND3.md`. Its corrections are applied:
     - At λ ≤ 0.31 the class medians are N₁/μ₁ 1.04 against 0.67 and B_D 0.93 against 0.47 (30 primes each).
 - **For the question asked.** The completed bands leave §12.8's answer and its three questions as they were. Spikes
   are frequent at κ = 6 (21 of 89), and their amplitude falls as λ rises.
+
+### 12.11 F over the survey (mechanical item 2; 10 Nov, 10:53) [computed; the scoring is pre-registered]
+
+- **Reviewed.** Referee round 4f (`review-2026-11-10/ROUND3.md`, `scratch/r4f_checks.out`): every prediction is scored
+  as written, with the stated scopes, and every number and arithmetic column reproduces by independent code. The
+  interpretation below is the referee's.
+- **Run.** `mc_split.py 6 p nconf --seed 13` at the 25 survey primes with λ ≤ 0.25 that had no seed-13 split
+  (`survey/run_k6_split.sh`; outputs `split/split13_k6_p*`, npz gitignored), plus the four earlier splits. Each run
+  reproduces its survey run array for array (nS, cnt, S1, S2, N1; referee), and the parts add up at all 29. Scored by
+  `survey/score_F.py` (written 06:03, before the first result) → `survey/score_F.out`, against
+  `survey/predictions_F.txt` (05:59:59; erratum 06:04, before any result, no prediction changed).
+- **F per band** (F = share × N₁/μ₁ × p²/2,624,400):
+
+  | λ | n | share median (range) | F median | F min–max |
+  |---|---|---|---|---|
+  | 0.197–0.218 | 14 | 0.71 (0.61–0.86) | 0.67 | 0.24–3.89 (1657) |
+  | 0.222–0.249 | 15 | 0.62 (0.50–0.80) | 0.64 | 0.26–4.41 (1789) |
+
+  The four largest are the sD spikes 1789 (4.41), 1657 (3.89), 1597 (3.64) and 1933 (2.80), then the count spike 1531
+  (2.63).
+- **The predictions, as scored (wording of referee round 4f).**
+  - (F1) **refuted**: shares of the 25 new primes span 0.496–0.792. Six are below 0.60 (1723, 1747, 1759, 1783, 1867,
+    1879), all at λ 0.22–0.25. The share falls with λ (Spearman −0.41 over the 29).
+  - (F2) kept automatically: even at share 1 no new prime could exceed F = 3.79 (1933), so this prediction could not
+    fail. The largest new F is 2.80 (1933); the maximum stays at 1789 (4.41).
+  - (F3) kept, near-automatically: 0.982. It is 0.969 at any constant share and ≥ 0.90 in 99.9% of share permutations,
+    since log N₁/μ₁ carries 0.37 of the 0.47 variance of log F. F is N₁/μ₁ rescaled by a share that moves by about
+    ±12%; it is not a factor separate from N₁/μ₁.
+  - (F4) kept: 0.52 (0.51 with the scorer's tie handling). The share's elasticity in N₁/μ₁ is 0.10 (0.04–0.17).
+  - (F5) kept, automatically in rank: 0.845, and ≥ 0.5 in every share permutation. Its content is that the rest's
+    count grows with N₁/μ₁ (elasticity 0.79, 0.64–0.91; the 2+2 count 1.10).
+  - (F6) kept: at the sD primes 1669, 1693 and 1933 the 2+2 part's B_D (2.8, 4.0, 4.3) is 2.0–3.0× the rest's (1.1,
+    1.3, 2.1). These are point values, and 1933's run contains the 5022 configurations of its earlier split.
+  - (F7) all three directions held (Spearman(F, |a|/√p) 0.49; at h = 0 median F 2.80 when 2 is a cube against 0.72;
+    Spearman(F, |A(0,0) − mean|/√p) 0.79 at h = 0), but they were already fixed by the known N₁/μ₁: with F at share
+    0.8 all three held before the runs. No claim.
+- **Exploratory (not pre-registered).** Spearman(F, symR) 0.92 is N₁/μ₁'s (0.92). Post hoc: the share is higher at
+  p ≡ 1 than p ≡ 7 (mod 12), median 0.71 against 0.62, in both λ bands (permutation p 0.054 and < 0.001), with λ
+  balanced across classes. To be pre-registered before use.
+- **What this changes.**
+  - At κ = 6, λ ≤ 0.25, F lies in 0.24–4.41 at all 29 primes, and its maximum is the 1789 already known. But F is not
+    independent information: a large F and a large N₁/μ₁ are the same observation. So question 1 of §12.8 (is F
+    bounded?) is, at κ = 6, the question whether N₁/μ₁ is bounded at spike primes, which is (N)'s constant B.
+  - The informative results are F1 (the share is not a near-constant 0.6–0.9: it falls with λ to 0.5), F4 (the share
+    rises only weakly with N₁/μ₁), F6 (the 2+2 part carries the larger D excess at the sD spikes) and the post hoc
+    class difference of the share.
+  - Claim gates stay false: F(p) bounded or κ^{o(κ)}; the share-by-class difference as a claim; any F7 correlation as
+    a claim.

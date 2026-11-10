@@ -8,7 +8,10 @@ each computation under ~2 core-h. Do not edit the paper.
    and H3 held; the symR law is scored (`survey/score_predictions.py` → `.out`).
    - Follow-up DONE 10 Nov 05:31: 2143 at seed 14 (`survey/mc_k6_p2143_s14.npz`) replicates. B_D is 1.29 with lower
      end 1.09, against 1.28 and 1.07 at seed 13 and the threshold 0.89. All three flags recur (§12.10).
-2. The arithmetic factor F(p). [Started 10 Nov 06:00 by the spike-survey session, in adapted form. The runs are
+2. The arithmetic factor F(p). DONE 10 Nov 10:53 (§12.11; referee round 4f). F is 0.24–4.41 over the 29 primes
+   (max 1789); F1 refuted (the share falls with λ to 0.50); F2, F3, F5, F7 kept but settled in advance by N₁/μ₁; F4,
+   F6 kept. F tracks N₁/μ₁ (Spearman 0.98). Output `survey/score_F.out`.
+   [Started 10 Nov 06:00 by the spike-survey session, in adapted form. The runs are
    seed-13 `mc_split.py 6 p nconf` at the survey's nconf, which reproduce each survey run and flag 2+2 configurations
    by pairsym's definition, at the 25 primes with λ ≤ 0.25 lacking a seed-13 split. The driver is
    `survey/run_k6_split.sh` (resumable; outputs `split/split13_k6_p*`), and the predictions were pre-registered in

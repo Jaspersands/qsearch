@@ -6,7 +6,7 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-10, after the handoff entry
-"2026-11-10 Rees Square Gap: κ = 6 Spike Survey Complete (89 Primes; Class Rule H1 Refuted); Spikes Carry a Large Involution-Family Factor F; the Family Can Move the Exponent Only If F·B = κ^{Ω(κ)}; κ = 7: a λ-Only Family Weight Rejected, and 36037 a B_L Spike Against Two Equal-λ Primes (Pre-Registered), Not Carried by the 2+2 Family (AI Only)";
+"2026-11-10 Rees Square Gap: κ = 6 Spike Survey Complete (89 Primes; Class Rule H1 Refuted); Spikes Carry a Large Involution-Family Factor F; the Family Can Move the Exponent Only If F·B = κ^{Ω(κ)}; κ = 7: a λ-Only Family Weight Rejected, and 36037 a B_L Spike Against Two Equal-λ Primes (Pre-Registered), Not Carried by the 2+2 Family; F Over 29 Primes Tracks N₁/μ₁ (AI Only)";
 entries below it are from 2026-11-09 and earlier.
 
 Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
@@ -58,7 +58,11 @@ Now (11-10, AI only): square gap still OPEN.
   - Spikes have a large family factor F (2.3-4.4, against 0.3) and large family class values (B_D
     4.3-17.3, against 0.44). The rest of the measure is lifted too.
   - Elementary bound: the family can spoil the (1/2+o(1))kappa exponent only if
-    F*B = kappa^{Omega(kappa)}, B the constant of (N). F is measured at 13 primes (0.3-4.4).
+    F*B = kappa^{Omega(kappa)}, B the constant of (N). F over all 29 primes with lambda <= 0.25
+    (mechanical item 2, pre-registered, section 12.11) is 0.24-4.41, max 1789. But F is N1/mu1
+    rescaled by a share moving about +-12% (Spearman 0.98): at kappa=6 "F bounded" is "(N)'s B
+    bounded at spike primes". The 2+2 share falls with lambda to 0.50 (prediction F1 refuted).
+    Post hoc: share higher at p = 1 than 7 mod 12 (0.71 vs 0.62); not a claim.
   - At kappa=7 (lambda 0.3 and 0.2) F is 0.5-1.8, inside kappa=6's range, so the 2+2 weight
     falls with R_2+2 = N_inv^2 kappa^4/p^2 up to F. At 23549 (lambda 0.2) it is 0.055 mu1,
     against 0.31-3.5 at kappa=6: a weight depending on lambda alone is rejected (P ~ 1e-7), at
@@ -76,8 +80,6 @@ Now (11-10, AI only): square gap still OPEN.
 - Monte Carlo files from before the 9 Nov 22:20 batching fix overstate weak bins (report 11.3).
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
 - Next:
-  - F(p) over the survey (mechanical plan 2026-11-10 item 2; running since 06:00, pre-registered
-    in osc-mc/survey/predictions_F.txt, scored by survey/score_F.py);
   - what carries the kappa=7 lift: 34693 (same symR as 36037, F 0.9) by mc_split with a distinct
     seed and a rule written first (proposed, not started);
   - a (C1) sampler for kappa=8 at lambda 0.18;
