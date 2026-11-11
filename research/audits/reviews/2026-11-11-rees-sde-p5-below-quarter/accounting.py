@@ -18,9 +18,9 @@ for q in range(2, NMAX + 1):
         viol_stage += 1
     G.append(max(q + r, c + G[q - 2]))
 assert all(G[n] == SP.guarantee(n) for n in (2, 3, 10, 57, 100, 999, 1000, 4321))
-viol = [n for n in range(1, NMAX + 1) if G[n] > 0.24 * n * n + 0.48 * n * math.log(n, 5) + 3 * n + 3]
+viol = [n for n in range(1, NMAX + 1) if G[n] > 0.24 * n * n + 0.48 * n * math.log(n, 5) + 1.92 * n + 3]
 def bprime(n): return SP.S5.guarantee_simple(n)
-first_below = next(n for n in range(2, 2000) if all(G[k] < bprime(k) for k in range(n, 2000)))
+first_below = next(n for n in range(2, NMAX + 1) if all(G[k] < bprime(k) for k in range(n, NMAX + 1)))
 def kow(n, q=5):
     best = None
     for r in range(1, 40):
@@ -28,8 +28,8 @@ def kow(n, q=5):
         best = v if best is None else min(best, v)
     return best
 print('stage inequality violations (q <= %d):' % NMAX, viol_stage)
-print('closed-form violations (n <= %d):' % NMAX, len(viol), viol[:10])
-print('G(n) < B\'(n) for every n >= %d (checked to 2000; and at n = %d: %d < %d)' % (first_below, NMAX, G[NMAX], bprime(NMAX)))
+print('closed-form violations (1.92n+3, n <= %d):' % NMAX, len(viol), viol[:10])
+print('G(n) < B\'(n) for every n in [%d, %d] (and at n = %d: %d < %d)' % (first_below, NMAX, NMAX, G[NMAX], bprime(NMAX)))
 for n in (40, 60, 100, 300, 1000, 3000, 10000, 30000):
     print('n=%6d  SPARSE2 %11d (%.4f n^2)  B\' %11d (%.4f n^2)  KOW3.7 %13.0f (%.4f n^2)  saving vs B\' %d'
           % (n, G[n], G[n] / n / n, bprime(n), bprime(n) / n / n, kow(n), kow(n) / n / n, bprime(n) - G[n]))

@@ -1,35 +1,36 @@
 # Agent brief
 
-Generated 2026-10-23 by `python tools/brief/build_brief.py`; covers the 7 days since 2026-10-16 (00:00 local time, UTC+11:00). Do not edit by hand.
+Generated 2026-11-11 by `python tools/brief/build_brief.py`; covers the 7 days since 2026-11-04 (00:00 local time, UTC+11:00). Do not edit by hand.
 Read it before choosing a direction. "Not available" means the source could not be read, not that there is nothing to report.
 
 ## Registry
 
-975 negative records in the working copy; 978 at commit 1dbaf2cd (2026-10-15), the registry's last change before 2026-10-16.
+969 negative records in the working copy; 969 at commit df47b77f (2026-10-30), the registry's last change before 2026-11-04.
 
 Added (0): none.
-Removed (3, all now in the quarantine file): `NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER`, `NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER`, `NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER`.
+Removed (0): none.
 
 ## arXiv watch
 
-Possible kills and scoops with no person's verdict yet: 0. First seen since 2026-10-16 and already reviewed: 22. Labels are triage; verdicts are judgement.
-Open backlog: 0 possible kills; 0 possible scoops (oldest first within each label).
-Watch last saved a run on 2026-10-19.
-- Track algorithm_discovery last covered through 2026-10-18.
-- Track bpqm_gibbs last covered through 2026-10-18.
-- Track code_equivalence last covered through 2026-10-18.
-- Track dcp last covered through 2026-10-18.
-- Track dequantization last covered through 2026-10-18.
-- Track dqi_opi last covered through 2026-10-18.
-- Track hidden_shift last covered through 2026-10-18.
-- Track lattice last covered through 2026-10-18.
-- Track nonabelian_hsp last covered through 2026-10-18.
-- Track number_theory last covered through 2026-10-19.
-- Track qsvt last covered through 2026-10-18.
-- Track query_and_fourier last covered through 2026-10-18.
-- Track representation last covered through 2026-10-18.
-- Track state_discrimination last covered through 2026-10-18.
-Verdicts recorded since 2026-10-16: 22 (should-cite 9, related-only 8, false-alarm 5).
+Possible kills and scoops with no person's verdict yet: 4. First seen since 2026-11-04 and already reviewed: 0. Labels are triage; verdicts are judgement.
+Open backlog: 0 possible kills; 4 possible scoops (oldest first within each label).
+Watch last saved a run on 2026-11-02.
+- Track algorithm_discovery last covered through 2026-11-02.
+- Track bpqm_gibbs last covered through 2026-11-02.
+- Track code_equivalence last covered through 2026-11-02.
+- Track dcp last covered through 2026-11-02.
+- Track dequantization last covered through 2026-11-02.
+- Track dqi_opi last covered through 2026-11-02.
+- Track hidden_shift last covered through 2026-11-02.
+- Track lattice last covered through 2026-11-02.
+- Track nonabelian_hsp last covered through 2026-11-02.
+- Track number_theory last covered through 2026-11-02.
+- Track qsvt last covered through 2026-11-02.
+- Track query_and_fourier last covered through 2026-11-02.
+- Track representation last covered through 2026-11-02.
+- Track state_discrimination last covered through 2026-11-02.
+The watch has checkpoints older than this brief's window; refresh the watch before treating it as current.
+Verdicts recorded since 2026-11-04: 0.
 
 Open actions from verdicts (6; once one is done, run `python tools/arxiv_watch/watch.py --action-done ID`):
 
@@ -48,32 +49,14 @@ Actions awaiting clarification (resolve the target before acting):
 
 | arXiv | Label | First seen | Verdict | Title |
 |---|---|---|---|---|
-| 2609.40036 | possible-kill | 2026-10-18 | should-cite | Cycle Codes and Decoded Quantum Interferometry |
-| 2609.40250 | possible-kill | 2026-10-18 | related-only | An (almost) efficient classical algorithm for sampling from typical Gibbs states |
-| 2609.40302 | possible-kill | 2026-10-18 | false-alarm | Solving Sparse SDPs in Sublinear Time: A Classical Algorithm Inspired by the Quantum OR Lemma |
-| 2610.06753 | possible-kill | 2026-10-18 | should-cite | Discovering New Problems for Decoded Quantum Interferometry |
-| 2609.35239 | possible-kill | 2026-10-19 | false-alarm | Computational Complexity of Clifford Template Compilation: Are Quantum Computers Useful for Compiling Quantum Circuits? |
-| 2610.02079 | possible-kill | 2026-10-19 | related-only | A computational phase diagram for the transverse field Ising model |
-| 2610.06812 | possible-kill | 2026-10-19 | false-alarm | Protecting Quantum Computers against Untrusted Users |
-| 2609.35101 | possible-scoop | 2026-10-18 | related-only | From Simple Sources to Quantum Advantage: Homomorphic Polynomial Transduction via Relative Decoding |
-| 2609.40260 | possible-scoop | 2026-10-18 | related-only | Quantum Algorithms for Minimum Generating Set |
-| 2610.00502 | possible-scoop | 2026-10-18 | should-cite | Quantum Algorithms for OPI Variants Beyond Locality and Classical Decodability |
-| 2610.01902 | possible-scoop | 2026-10-18 | related-only | Exponential quantum advantages for decoded quantum interferometry in the streaming setting |
-| 2610.03566 | possible-scoop | 2026-10-18 | should-cite | Gibbs state preparation through quantum decoding |
-| 2610.03645 | possible-scoop | 2026-10-18 | should-cite | Exponential quantum space advantage in random data streams |
-| 2610.03697 | possible-scoop | 2026-10-18 | should-cite | On The Complexity of Redundancy-Free Quantum Hamiltonians |
-| 2610.04597 | possible-scoop | 2026-10-18 | related-only | Efficient Quantum State Identity Testing |
-| 2610.05752 | possible-scoop | 2026-10-18 | related-only | An efficient Hamiltonian-based quantum algorithm for characters of the symmetric group |
-| 2610.06781 | possible-scoop | 2026-10-18 | false-alarm | Pretty good shadow tomography |
-| 2610.16827 | possible-scoop | 2026-10-18 | should-cite | The Quantum Character Transform |
-| 2609.36480 | possible-scoop | 2026-10-19 | false-alarm | Improved Quantum Algorithms for Black-Box Abelian Group Decomposition |
-| 2609.37636 | possible-scoop | 2026-10-19 | should-cite | Resonance Breaking in Noisy Shor's Algorithm |
-| 2610.01141 | possible-scoop | 2026-10-19 | should-cite | Classical Hardness of Learning Functions of Hamiltonians |
-| 2610.08714 | possible-scoop | 2026-10-19 | related-only | Quantum Algorithms for Multivariable Polynomial Transformations: From Efficient Synthesis to Quantum Channel Transformations |
+| 2610.24719 | possible-scoop | 2026-10-26 | **open**: read it | Fast \(\ell_\infty\)-Reduction of Rank-2 Lattices in $\mathbb{R}^n$ via a New Reduced-Basis Notion |
+| 2610.28737 | possible-scoop | 2026-10-26 | **open**: read it | Local Clifford equivalence to CSS codes: Polynomial-time classification and conversion |
+| 2610.36731 | possible-scoop | 2026-11-02 | **open**: read it | Beyond LWE: Post-Quantum Assumptions under a Counterfactual Break of the Dihedral Coset Problem |
+| 2610.40592 | possible-scoop | 2026-11-02 | **open**: read it | Toric codes all the way down: decoupling translation-invariant topological CSS codes in higher dimensions |
 
 ## Referee
 
-34 notes reviewed; 27 flagged unsound or needs-work; 0 reviews stale (the note changed since). Queue: `research/audits/REFEREE_QUEUE.md`.
+34 notes reviewed; 24 flagged unsound or needs-work; 4 reviews stale (the note changed since). Queue: `research/audits/REFEREE_QUEUE.md`.
 
 - `AFFINE_CLUSTER_NATIVE_PROBE` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "The BPQM tree certificate survives, but a classical separation is STILL UNESTABLISHED". Headline scope (both judges). Every experiment in this note is a classical sampler or exact contraction on finite graphs; none tests the tree certificate, so 'survives' reports no evidence. The decision also drops the certificate's conditions from BPQM_GIBBS_FRONTIER: a review-pending degradation argument, an extrinsic-tree condition only, a single certified point c=13/20, and no finite-graph decoder.
 - `BPQM_GIBBS_FRONTIER` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "It supplies a specified decoder family, public input, rigorous local test and known sampling reduction". Headline scope (both judges). The 'rigorous local test' rests on a degradation argument the note says 'remains review pending'; it certifies a beyond-ceiling tree condition only at (dv,dc)=(3,6), c=13/20, G=128 (c=4/5 is UNKNOWN); and the 'specified decoder family' is not implemented ('the code implements neither complete theorem's decoder', 'complete coherent circuit and finite-block error ledger remain unimplemented'). The sentence drops all three conditions.
@@ -83,15 +66,12 @@ Actions awaiting clarification (resolve the target before acting):
 - `EXPLICIT_CUBIC_OPI` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "Explicit Cubic-Target OPI: A Structural Classical Falsifier". The headline drops the body's scope: the 'falsifier' is a finite, seeded, best-of-four classical score against a one-shot quantum mean at four sizes, with no matched tails or runtime, and the narrowest margin is 104/127=0.8189 vs 0.8168. The note's own conditional analysis says that if E/N->R the attack cannot beat (1+R)/2, which is below the DQI target.
 - `EXPLICIT_QUADRATIC_OPI` **needs-work** (reviewed 2026-10-23). Worst claim (gap): "The high-rate quadratic family has a constructive classical explanation, not a remaining quantum-advantage candidate". The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be weak: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76, about 0.59. Rank also requires Nc<=Kt. Saved perfect inputs include N127,K90, both N31,K19, and the low-rate N7,K3 cases. The headline keeps none of these conditions.
 - `FOLDED_NORM_SOURCE` **needs-work** (reviewed 2026-10-23). Worst claim (gap): "Each classical record uses32 complete-block fits plus64 repair proposals". The 'Classical Best' column (21/53/99) omits the norm-pencil results the note reports later (25/57/104, matching folded_norm_attacks.json). Those results solve the 25-block input and put the 65-block input at 57, above its 56.698728 floor. Read alone, the table suggests the classical baseline lies below every quantum floor, which holds only at 127 blocks.
-- `JACOBI_KNOWN_NORM_REDUCTION` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "Known Relative Norm Removes The Prime-Conductor Quantum Opening". The title states the removal unconditionally. The status line and Next Research Action make it 'subject to independent review of the application', and the Lenstra-Silverberg recovery algorithm was not executed (artifact: classical_known_norm_recovery_executed=false, independent_or_formal_review_completed=false).
-- `JACOBI_SURFACE_RECONSTRUCTION` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "Under the stated Jacobi/primary identities this removes the prime-conductor asymptotic quantum opening". The headline paragraph states the removal as established, while it rests on JACOBI_KNOWN_NORM_REDUCTION's local application of Lenstra-Silverberg Theorem 1.3, which is review pending (artifact flags local_reduction_independently_or_formally_reviewed=false); this note's closing section says 'Independent review of the local application is still needed'. The paragraph does already state that the imported recovery algorithm is not implemented here.
 - `NATIVE_RLWE_CONDUCTOR_ORDER_AUDIT` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "Native RLWE: Exact Metric, Nonprincipal Quaternion Ideal". The title asserts nonprincipality without conditions. Section 3 proves nonprincipality only for M!=0 mod q: the zero ratio gives Lambda_0=qR+Rj=O_q*j, which is principal and has source probability q^(-d). The global proof also depends on the cited DDK Proposition 3 and is review pending. The title needs 'for M!=0 mod q'.
 - `NATIVE_RLWE_IDEAL_CLASS_ORBIT_AUDIT` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "Native Quaternion Ideal Classes: Public Dihedral Orbits". The title presents native quaternion ideal classes in general as public dihedral orbits. The classification in Sections 1-3 holds only on the generic source (M a unit and beta=1+M*bar(M) a unit mod q), with q prime 3 mod 8 and d>=4 a power of two, and it rests on the review-pending saturation step and the cited unit-signature theorem. Native ratios outside that source, such as the x-1 unit ratios with norm -1 and nonunit M, are not classified. The title needs the generic-source restriction.
 - `NATIVE_RLWE_PRIMAL_BABAI_CERTIFICATE` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "Native Ring-LWE: Direct Classical Decoding At The Lower Modulus". Headline scope (both judges). Read alone, the title asserts classical decoding at the q-near-d^4 modulus in general. The note certifies only two seeded labels at d=64, q=16777259, under the exact discrete reference law, with source-discretization, anchor and precision losses outside the bounds and the derivation LOCAL / REVIEW PENDING; d=256/1024 are 'parameter choices, NOT results' and the PRS error-family assumptions were not reverified.
 - `NATIVE_RLWE_SPARSE_WITNESS_AUDIT` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "On typical native labels this does not produce a sufficiently short point". The certificate covers witnesses of norm <=R=2^40, 2^53, 2^66 (2*sqrt(dq) at the three references); the note never shows R is the decoder's passing radius. The rotational decoder accepts up to R0=ceil(t_star/(2E)), about 2^50.4 at d64, 2^69.5 at d256 and 2^89 at d1024 (native_rlwe_subfield_cover_bounds.json). At R0, inequality (4) certifies only k=22, 87 and 332 (327 elliptical), not 44/193/796. Sparse witnesses of support 23-44 at d64 and norm in (R,R0] are not excluded. Section 6 lists larger radii as out of scope; the headline drops both the radius and the three-instance certification.
 - `NATIVE_RLWE_SUBFIELD_COVER_AUDIT` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "This independent source counting excludes typical successful AFFINE witnesses in the stated restricted output class". The restricted output class of Section 2 allows every divisor h, including h=d/2. The counting bound is vacuous at half degree in all six reference rows (artifact density_log2_strict_upper +221, +205, +1466, +1470, +9053, +9628), and its leading coefficient (19/2)theta-5/2 is negative only for theta<5/19. The sentence needs 'for quarter degree and deeper (theta<5/19), at the stated q,P scaling and the three references'.
 - `OPI_FILTER_TAIL_CERTIFICATE` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "Thus classical105/127 and104/127 remain verified witnesses but do NOT kill the quantum tail". On seed 29 (classical_best_of_four=105), the certified lower tail at 105 is 0 for filter degrees 16/18/19. Nothing quantum is certified at that instance's classical score, and the only positive tails (at 102, and at 104 for seed 71) lie below it. The summary also omits the six smaller artifact instances (N7,K3 and N31,K9, seeds 29/71), where classical reaches 7/7, 27/31 and 30/31 and every certified quantum lower tail at those thresholds is 0. The sentence is true only in the weak sense that a finite witness cannot upper-bound a quantum probability.
-- `OUTER_CODED_CHIRP_PROBE` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "a deterministic classical construction below solves EVERY target in the entire proposed useful rate range, and beyond". The algebra behind it holds, but the decision sentence states no limit for 'and beyond'. The construction is proved only for full support N=p-1 with 1<=r<N/2 strictly, and it fails at r=N/2: the note's own p7,N6,r3,b=(0,0,1) countercontrol fails, and so does every failing target in my replay. The sentence also omits that the derivation is review pending and that the task is zero-allowed search, not nonzero-coordinate search or weighted sampling.
 - `POLAR_CONDITIONAL_SAMPLER` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "It resolves the missing public-set premise below for that finite family". This note's premise is 'epsilon_F->0 with a polynomial construction' for a code family. The follow-up certifies a single half-rate length (N32768) at fixed TV 0.0102; half-rate is UNKNOWN at every coarse N<=4096, so no epsilon_F->0 sequence is given. The header also drops that the certificate rests on POLAR_SOURCE_DESIGN's review-pending degradation/duality derivations.
 - `POLAR_SOURCE_DESIGN` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "This finite result removes the missing public-set construction premise for the stated half-rate family". Only one half-rate length is certified (N32768, G256, r3: 0.0102208<0.010221, matching the artifact). Every coarse half-rate target at N16..4096 is UNKNOWN, and no other length or grid is certified at half rate, so no family over N is constructed. The bound also depends on the review-pending degradation/hybrid derivations. The next sentence concedes that there is no fixed-grid asymptotic theorem.
 - `PRIME_CHARACTER_CAPACITY_SOURCE` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "without randomizing input shifts? YES for the flat-spectrum primes below". The YES is unqualified by radius or instance. Non-trivial bounds are certified only at one large instance (N127,K39,p=2^61-1, both zero conventions) for ell24 and ell32. Recomputed: ell37 gives epsilon=2.77e-5 but M*epsilon>>1, so the coherent distance bound is 1, and ell38 is the trivial 1 (stated only in Executed Evidence). The bounded N6,K3,ell2 controls have any-radial-weight bad-mass bounds 1 (p7), 1/3 (p19) and 1/7 (p43). The decision does not say that the control fails as the radius approaches capacity, the regime that capacity-DQI targets.
@@ -103,18 +83,22 @@ Actions awaiting clarification (resolve the target before acting):
 - `PRIME_CHARACTER_OPI` **needs-work** (reviewed 2026-10-23). Worst claim (gap): "K39 and general fixed-input/asymptotic solvability remain open". The open-case list names only K39, but other saved high-rate mixed sources are also not perfect in the artifact. N31,K16 mixed seed71 is best 30/31 (r=2, R+rho=16/31+1/2>1, so in the published perfect-search regime). The r=3 N63,K46 mixed sources are 55/63 and 56/63 (R+rho~1.06>1), and the r=4 N32,K24 mixed sources are 28/32 and 27/32. The superseding norm attack covers only N127,K77. The Live Controls paragraph also reports only the r=3/r=4 global controls ('also perfect') and omits these mixed scores.
 - `PRIME_CHARACTER_PHASE_FEEDBACK` **needs-work** (reviewed 2026-10-22). Worst claim (gap): "There is a concrete interference-restoring action, verified on full native states and locally bounded without selecting fortunate outcomes". Full native-state verification exists only for the four two-row controls at p7/11, N4, K2, ell1, plus one three-row test. At N127, K39, ell32 the restoration is an analytic certificate that 'additionally assumes exact native-state reflections' and rests on frame/rank/feedback proofs awaiting review. The sentence merges the two scopes and names neither the certified instances nor the exact-reflection assumption.
 
+Stale: `JACOBI_KNOWN_NORM_REDUCTION`, `JACOBI_SURFACE_RECONSTRUCTION`, `NATIVE_RLWE_QUATERNION_KERNEL_AUDIT`, `OUTER_CODED_CHIRP_PROBE`.
+
 ## Preflight
 
 No problems from the static checks of `python tools/preflight/preflight.py`.
 
 ## Inertia
 
-From `site/data/cockpit.json`, built 2026-10-19 (rebuild: `python tools/cockpit/build_cockpit.py`). A direction is flagged after 8 handoff sections with no registry gain in it.
+From `site/data/cockpit.json`, built 2026-11-11 (rebuild: `python tools/cockpit/build_cockpit.py`). A direction is flagged after 8 handoff sections with no registry gain in it.
 
-- OPI / prime character (`opi`): 13 sections since the registry last gained a record here (never).
-- BPQM / polar (`bpqm`): 13 sections since the registry last gained a record here (never).
-- DCP / dihedral coset (`dcp`): 32 sections since the registry last gained a record here (2026-10-12).
-- Ternary / lattice (`lattice`): 22 sections since the registry last gained a record here (2026-10-12).
+- OPI / prime character (`opi`): 97 sections since the registry last gained a record here (never).
+- BPQM / polar (`bpqm`): 31 sections since the registry last gained a record here (never).
+- DCP / dihedral coset (`dcp`): 52 sections since the registry last gained a record here (2026-10-12).
+- Carrier / PGM (`carrier_pgm`): 35 sections since the registry last gained a record here (2026-10-12).
+- Ternary / lattice (`lattice`): 115 sections since the registry last gained a record here (2026-10-12).
+- Code equivalence (`code_equivalence`): 10 sections since the registry last gained a record here (2026-10-11).
 
 ## Possible duplicates
 

@@ -185,7 +185,7 @@ was checked against its case file); p = 3 sanity in `table_old_encoding.out` (KO
 | κ=2, p=5 ({0,±1}) | SAT | UNSAT | **SAT** | **SAT** (24 patterns) |
 | κ=2, p=7 ({0,1,2,4}) | SAT | UNSAT | UNSAT (19 cases, ≤ 4.5 s each; also unsplit, CaDiCaL 1436 s, 12.3 GB LRAT proof, re-verified with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/unsplit_7_2.out`) | UNSAT (19 cases) |
 | κ=2, p=11 | SAT | UNSAT | UNSAT (31 Lemma U cases, each solved without the γ_(1,1) split, LRAT proof re-verified with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/cases11_cases.out` and `cases11_c10.out`; the earlier 31 × 121 = 3751 sub-case split `cases11_split.out` is CaDiCaL UNSAT, not independently proof-checked) | — |
-| κ=2, p=13 | SAT | UNSAT | UNSAT (37 Lemma U cases × 169 values of γ_(1,1); 6253 sub-cases, CaDiCaL UNSAT on every one, not independently proof-checked (checker was unsound, 9 Nov); `cases13_split.out`) | — |
+| κ=2, p=13 | SAT | UNSAT | UNSAT (37 Lemma U cases, each solved as one CNF without the γ_(1,1) split, LRAT proof streamed into the fixed checker and VERIFIED, 11 Nov, `2026-11-09-lrat-checker-fix/recheck/cases13_cases.out` (TOTAL 37/37, tie-in OK, 83,034 s CPU; proofs 4–91 GB, never stored; script `case_cert_stream.py`); the earlier split into 6253 sub-cases (`cases13_split.out`) is CaDiCaL UNSAT, not independently proof-checked) | — |
 | κ=3, p=7 ({0,±1}) | SAT | UNSAT | UNSAT (1.3 s) | — |
 | κ=2, p=7, **k=3**, d=2 nest | — | — | UNSAT (2 cases, each solved without the γ_(1,1) split, LRAT proof re-verified with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/k3_7_cases.out`; the earlier 2 × 343 sub-case split `k3_7_split.out` is CaDiCaL UNSAT, not independently proof-checked) | — |
 | κ=3, p=13 ({0,1,5,8,12}) | SAT | UNSAT | UNSAT (unsplit, 2807 s, `big_13_k3_nest.out`; and 37/37 cases, `cases13k3.out`; PicoSAT, no proof) | — |
@@ -287,8 +287,8 @@ re-verified with the fixed checker, 9 Nov: regenerated CNF with the same 1134 va
 a CaDiCaL proof of the same 12,293,854,888 bytes, verified by the fixed lrat-check in 224 s,
 `2026-11-09-lrat-checker-fix/recheck/unsplit_7_2.out`); (11, 2): UNSAT on all 31 Lemma U cases, each solved as one CNF without the γ_(1,1) split (re-verified
 with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/cases11_cases.out` and `cases11_c10.out`; the earlier split into 3751
-sub-cases is CaDiCaL UNSAT, not independently proof-checked); (13, 3): UNSAT (PicoSAT, no proof); (13, 2): UNSAT on all 6253
-sub-cases (CaDiCaL UNSAT, not independently proof-checked (checker was unsound, 9 Nov)). By Lemma 2(B), a column set with one column per nested pattern in general
+sub-cases is CaDiCaL UNSAT, not independently proof-checked); (13, 3): UNSAT (PicoSAT, no proof); (13, 2): UNSAT on all 37 Lemma U cases,
+each solved as one CNF and re-verified with the fixed checker (streamed proofs, 11 Nov, `2026-11-09-lrat-checker-fix/recheck/cases13_cases.out`). By Lemma 2(B), a column set with one column per nested pattern in general
 position (q ≥ p(p−1) − 2) has R(X) ⊇ no 2-dimensional subgroup and no S-witness. Any piece gaining
 2 from two dependencies therefore needs a *missing* pattern [argued; proved is only the
 infeasibility of the full nested label set and its supersets, for any column multiplicities by Lemma N], and the only patterns a selection

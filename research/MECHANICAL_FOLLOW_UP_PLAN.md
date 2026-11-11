@@ -1,4 +1,18 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-11 Rees SDE Queue Status & Repo Wiring Follow-Ups (after harsh pass)
+
+Status of items below ("2026-11-11 Rees SDE Open Items" and "2026-11-11 Rees SDE p = 5, k = 3"):
+- Open Items 2, 3 (`p7_L4b` 12.51 GB streamed LRAT VERIFIED in `lines7_lrat.out`), 5 (`dead_w3_search.py --item5 --ssc` 9/9 `False` in `dead_w3_search.out`; `count_check.py` fixed), 6 (six-point `m=3` 480/480 streamed LRAT VERIFIED in `small/lrat_six_m3_stream.out`), and `p=5, k=3` Item 1 (`tests/test_rees_sde_p5_d3.py`) are **DONE** and covered by `tests/test_rees_sde_{small_sets,p5_d3,2026_11_11_checks}.py`.
+- Open Item 1 (`p = 13` re-check `case_cert_stream.py` PID 3195): still **RUNNING** externally (`13` lines in `cases13_cases.out`); wait for completion before wiring final regression checks.
+- Open Item 4 (`interval-s` at `q = 17, K = 4`): precompute + coverage **DONE** (`13824/13824 COVERAGE OK`, 12 orbits); CPU probe shows `v=0` orbit 6 `UNSAT` in `215.1 s` (`--no-proof`) and `u=0` orbit 0 `UNKNOWN` at `300.2 s` (`--no-proof`, `441,558` vars / `8.74M` clauses), so full LRAT certification is `> 4 core-h` (**HALTED pending coordinator CPU approval**).
+- `p = 5, k = 3` Item 2 (`sigma.c`): **BLOCKED** (`claude.ai/code/session_01B1JoCiWoB7SSi6bhNMLfEj` not available locally).
+
+New mechanical items for Gemini:
+1. Update `theorems/rees_fcs_budget.py` (with explicit paper check, do NOT run `make_numbers.py`) so it recomputes the updated `docs/papers/rees-hsp/main.tex` `tab:fcs-budget` (`w.-d. Q` column and lowered `combined Q` from commit `79d66f19`), fixing `tests/test_rees_fcs_budget.py::test_printed_table_is_the_live_main_tex_table`.
+2. Clean up or fix `tests/KNOWN_FAILURES.txt` (134 predated failures, including the 3 `lattice_sine_window_source.py` stale-hash Node checks in `research/classical_baselines/lattice_localization_gap_frontier.json` and `research/phase_workbench/dcp_paid_tree_receiver.json`).
+3. Audit/prune or regenerate the 288 / 300 legacy dangling `research/EXP-*.json` artifact links in `research/registry/experiment_results.json` and `research/experiment_run_history.json`, and refresh the 4 `stale` referee entries (`JACOBI_*`, `NATIVE_RLWE_QUATERNION_KERNEL_AUDIT`, `OUTER_CODED_CHIRP_PROBE`).
+4. Once `case_cert_stream.py` completes 37/37 cases, verify its output and add regression checks without keeping multi-GB LRAT files on disk.
+
 ## 2026-11-11 Rees SDE Open Items
 
 Read the handoff entry "2026-11-11 Rees SDE Open Items Worked" and the notes it names (audits/reviews/).
@@ -6,7 +20,8 @@ Run CPU-heavy jobs under `nice -n 19`. At most one proof larger than 5 GB may be
 no big run may start with less than 30 GB free; prefer
 2026-11-09-lrat-checker-fix/recheck/case_cert_stream.py, which streams the proof. Use only the fixed
 lrat-check (sha256 13f28c96…).
-1. When the running p = 13 re-check ends, confirm that recheck/cases13_cases.out ends
+1. [DONE 11-11 23:00 by the integrator: 37/37 certified; fq-nest row, bounded-p corollary and STATE updated.]
+   When the running p = 13 re-check ends, confirm that recheck/cases13_cases.out ends
    "TOTAL: 37/37 cases certified". Then edit the fq-nest note's κ = 2 p = 13 row, the bounded-p
    note's LG p = 13 corollary and STATE: "CaDiCaL only" becomes "LRAT-verified". If a case is not
    certified, rerun just that case with a longer --cap.

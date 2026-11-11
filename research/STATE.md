@@ -6,36 +6,45 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-11, after the handoff entry
-"2026-11-11 Rees Square Gap: κ = 7 Spread Test Scored (σ_L 0.316, Ratio 0.90 to κ = 6, COMPATIBLE; Two Predictions Missed); σ_L(7) Frozen for the κ = 8 Test (AI Only)";
-the SDE entry below it is by another session (first Now block); the earlier square-gap entries are summarised
-in the second Now block.
+"2026-11-11 Rees SDE Open Items Worked (`p7_L4b`, `six m=3`, `dead_w3_search`, `q=17` CPU) & Harsh Repo Wiring Audit (AI Only)"
+(and earlier "2026-11-11 Rees Square Gap: κ = 7 Spread Test Scored...");
+the SDE entry below summarises the worked open-items queue and repo audit (first Now block); the earlier square-gap entries are summarised in the second Now block.
 
-Now (11-11, AI only, pending human review): SDE open items worked. Paper NOT edited.
+Now (11-11, AI only, pending human review): SDE open items worked; repo wiring audited. Paper NOT edited.
 - Earlier (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2 (Theorem B′). Theorem C:
   (1−1/p)a²/2 + O(a log a). Lemma Q repaired by Lemma N.
 - NEW, p = 5 below n²/4: Theorem S, m ≥ 0.24n² + 0.48 n log_5 n + 1.92n + 3, deterministic. It beats
-  B′ for n ≥ 29. 6/25 is the limit of this piece family (lifting lemma). Untested: the doubled label
-  set F_5^3∖0. (audits/reviews/2026-11-11-rees-sde-p5-below-quarter.md)
-- NEW, p = 5, k = 3 small sets: every spanning set of ≤ 9 labels is feasible (certified by explicit
-  models over all class orbits). 1,417 orbits of 10 labels are infeasible by the criterion; six are
-  LRAT-certified at the criterion level, none against the original CNF. F_5^3∖0 is infeasible
-  (certified), so there is no n²/6 by "any three dependencies". (audits/reviews/2026-11-11-rees-sde-p5-d3.md)
-- NEW, bounded p (κ = 2): Theorem LG. Full and nested label sets give one dimension per piece at
-  p = 7 and 11 for any number of dependencies; at p = 13 this is conditional on the re-check. So the
-  p = 5 / p ≥ 7 gap is real for the piece method. (audits/reviews/2026-11-11-rees-sde-bounded-p.md)
-- NEW, near-linear total regime: Theorem E. More than (2+η)a columns suffice when
-  p^{η/(2(2+η))} ≥ 2(κ−1)((2+η)a+1); E′ gives exactly 2a + 1 for p > (2κ−2)^{4a+2}. PWPP at
-  a·log₂p columns. The complexity is still OPEN. (audits/reviews/2026-11-11-rees-sde-near-linear-total.md)
-- NEW, interval S: Lemma N′. Lemma Q is exact for every S ≠ F_p. q = 11 and q = 13 are UNSAT for the
-  free problem (LRAT-verified). (audits/reviews/2026-11-11-rees-sde-interval-s.md)
-- Exact, κ = 2: no two-dependency 2-dim gadget at p = 7, 11 (LRAT, fixed checker). The p = 13 re-check
-  is RUNNING with streamed proofs: 10/37 cases VERIFIED as of 19:20, about 20 h of wall time left
-  (2026-11-09-lrat-checker-fix/recheck/case_cert_stream.py → cases13_cases.out). It stays "CaDiCaL
-  only" until 37/37.
-- Disk rule: at most one proof > 5 GB on disk at a time, and no big run with < 30 GB free. Stream
-  proofs into the fixed lrat-check.
-- Next: the queue in the plan entry "2026-11-11 Rees SDE Open Items"; then the doubled label set
-  (the next hard question). Earlier refs: audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8.
+  B′ for n ≥ 29. `accounting.py` fixed (was checking `+3n+3` up to 2000) and `accounting.out`
+  regenerated: 0 violations for n ≤ 30000 and G(n) < B'(n) on [29, 30000]. Untested: doubled
+  F_5^3∖0. (audits/reviews/2026-11-11-rees-sde-p5-below-quarter.md)
+- NEW, p = 5, k = 3 small sets: every spanning set of ≤ 9 labels is feasible (`tests/test_rees_sde_small_sets.py`).
+  1,417 orbits of 10 labels infeasible by criterion (six LRAT-certified at criterion level). Level-2 CNF:
+  all 100 support-≤2 cases (note set + six-point set) AND all 480/480 support-3 (`m=3`) cases of the
+  six-point set are UNSAT + `LRAT VERIFIED` streamed (max 415.8 MB; `small/lrat_six_m3_stream.out`);
+  remaining `msfinalR:4` (supp ≥ 4, 1,177,772 clauses) timed out at 180 s / 644 MB so Level-2 stays incomplete.
+  `tests/test_rees_sde_p5_d3.py` passing (`labelsat.py` `gamma`/`brute` API quirks noted); `sigma.c`
+  BLOCKED (missing locally). F_5^3∖0 is infeasible (certified). (audits/reviews/2026-11-11-rees-sde-p5-d3.md)
+- NEW, bounded p (κ = 2): Theorem LG. Both GL_2(F_7)-orbits (42 + 28 = 70 sets) of p = 7, m = 4 full
+  lines (`p7_L4a` and streamed 12.51 GB `p7_L4b`) are now UNSAT + `LRAT VERIFIED` (`lines7_lrat.out`;
+  corrected 182/546 orbit-size copy-paste to 42/28); p = 11 UNSAT (`btc`); LG corollary at p = 13 now
+  unconditional (p = 13 input certified 37/37). (audits/reviews/2026-11-11-rees-sde-bounded-p.md)
+- NEW, near-linear total regime: Theorem E/E′. `sdecore.py` `solutions_count_p0` + `dead_w3_search.py --item5 --ssc`
+  eliminate the d = 5, p = 37 OOM (402k vs 71.27M vectors); 9/9 `(d ∈ {3..5}, p ∈ {19,31,37})` runs in C (45 s/case)
+  + Python smoke found no dead bank (`False`, `dead_w3_search.out`); `count_check.py` `SyntaxWarning` fixed.
+  PWPP complexity OPEN. (audits/reviews/2026-11-11-rees-sde-near-linear-total.md)
+- NEW, interval S: Lemma N′, Lemma Q exact for S ≠ F_p. q = 11, 13 UNSAT (`LRAT VERIFIED`). At q = 17, K = 4,
+  `linedata.py --no-brute` + `coverage_e1.py` give 13824/13824 `COVERAGE OK` across 12 orbits (6 `u=0` size 2176,
+  6 `v=0` size 128); `--no-proof` probe shows `v=0` orbit 6 UNSAT in 215.1 s, `u=0` orbit 0 UNKNOWN at 300.2 s
+  (441,558 vars, 8,736,943 clauses) -> full LRAT > 4 core-h, HALTED for coordinator signoff. (audits/reviews/2026-11-11-rees-sde-interval-s.md)
+- Exact, κ = 2: no two-dependency 2-dim gadget at p = 7, 11, 13, all LRAT-verified with the fixed checker.
+  p = 13 done 11-11 23:00 by streamed proofs: TOTAL 37/37 certified, 83,034 s CPU
+  (2026-11-09-lrat-checker-fix/recheck/cases13_cases.out, case_cert_stream.py).
+- Repo wiring audit: refreshed stale `native_refresh_crossover_scope_audit.json` (`test_native_*.py` 2321/2321 pass),
+  extended `tests/test_rees_sde_2026_11_11_checks.py`. Open repo debts queued for Gemini: `tests/test_rees_fcs_budget.py`
+  fails vs `79d66f19` `tab:fcs-budget` (`w.-d. Q` column), `KNOWN_FAILURES.txt` (134), 288/300 legacy `EXP-*.json` links,
+  4 stale referee entries, 2 doc-banner hash mismatches.
+- Disk rule: ≤ 1 proof > 5 GB on disk at once, stream LRAT into fixed `lrat-check`.
+- Next: await `case_cert_stream.py` (37/37), decide q = 17 > 4 core-h authorization, split `msfinalR:4`, and Gemini queue in `MECHANICAL_FOLLOW_UP_PLAN.md`.
 
 Now (11-10, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -1321,7 +1330,7 @@ or separation is claimed.
   23671, 24841 have witnesses checked by an independent verifier and PARI (530 witness lines, 0
   bad); every plain-mode cross-check INFEASIBLE. Report audits/reviews/2026-11-10-rees-dfs2b-queue-final.md.
   Paper pass APPLIED locally to docs/papers/rees-hsp (core 35 pp., companion 211 pp., clean);
-  backup in the gitignored prep folder. The Ivanyos personal-communication sentence (he confirmed the corrected arity bound and permitted saying so) went into core rem:is-printed, main rem:is-import(c), both rem:main-solver, the main status paragraph and prov:sde-is-import on 11-11; both compile clean (211 and 35 pp.); the rest of the IS reading stays AI-checked, pending human review.
+  backup in the gitignored prep folder. The Ivanyos personal-communication sentence (he confirmed the corrected arity bound and permitted saying so) went into core rem:is-printed, main rem:is-import(c), both rem:main-solver, the main status paragraph and prov:sde-is-import on 11-11; both compile clean (211 and 35 pp.); the rest of the IS reading stays AI-checked, pending human review. Also 11-11 (local, papers gitignored): background primer, dependency-audit fixes, locator checks and an arXiv-ready core package; NOT for posting yet (owner). Details in the gitignored prep README.
 - **Rees SDE open directions (11-08, AI only, pending human review).** (i) p = 3, worst-case
   F_3^n subset sum: PROVED deterministic poly time at n²/4 + O(n^{3/2}) vectors (KOW: n²/3);
   proof referee no gap, break attempt no failure, no prior source found; beats KOW's explicit
@@ -1331,8 +1340,7 @@ or separation is claimed.
   11-11 (Theorem E), complexity open.
   Handoff entry "2026-11-08 Rees SDE Open Directions". (iv) F_q (11-09, AI-refereed): p = 5 at
   n²/4 + 3n/2 + 2 (Theorem B′); (1−1/p)a²/2 + O(a log a) at every odd p (κ = 2); no
-  two-dependency gadget at p = 7, 11, 13 (LRAT-verified at p = 7, 11 with the fixed checker; p = 13 CaDiCaL UNSAT,
-  not independently proof-checked, 9 Nov checker fix). Handoff entry "2026-11-09 Rees SDE F_q Referees".
+  two-dependency gadget at p = 7, 11, 13 (LRAT-verified at p = 7, 11 and, 11-11, p = 13 with the fixed checker). Handoff entry "2026-11-09 Rees SDE F_q Referees".
 - **Rees SDE worst case below a² (11-07, AI only, pending human review): Theorem A.**
   Every bank in F_p^a with D_J(a)+O(Ja) columns, J = ceil(log_kappa a), fixed kappa, is solved
   Las Vegas in poly(a, log p) time at p >= ~72 kappa^2 a^6 J^2: O(a²/log a) columns, versus

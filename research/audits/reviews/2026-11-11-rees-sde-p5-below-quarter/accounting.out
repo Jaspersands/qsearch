@@ -1,6 +1,6 @@
 stage inequality violations (q <= 30000): 0
-closed-form violations (n <= 30000): 0 []
-G(n) < B'(n) for every n >= 29 (checked to 2000; and at n = 30000: 216104655 < 225045001)
+closed-form violations (1.92n+3, n <= 30000): 0 []
+G(n) < B'(n) for every n in [29, 30000] (and at n = 30000: 216104655 < 225045001)
 n=    40  SPARSE2         455 (0.2844 n^2)  B'         461 (0.2881 n^2)  KOW3.7           765 (0.4783 n^2)  saving vs B' 6
 n=    60  SPARSE2         974 (0.2706 n^2)  B'         991 (0.2753 n^2)  KOW3.7          1647 (0.4575 n^2)  saving vs B' 17
 n=   100  SPARSE2        2589 (0.2589 n^2)  B'        2651 (0.2651 n^2)  KOW3.7          4376 (0.4376 n^2)  saving vs B' 62

@@ -1,4 +1,36 @@
 # Research Agent Handoff
+## 2026-11-11 Rees SDE p = 13 κ = 2 Re-Check Done: 37/37 Cases LRAT-Verified With the Fixed Checker (Streamed Proofs) (AI Only)
+
+AI-only; no git; paper NOT edited. Closes mechanical item 1 of "2026-11-11 Rees SDE Open Items".
+- **Certified.** With κ = 2 at p = 13, no realization of a 2-dim subgroup with S-weights exists from two
+  dependencies with all nested patterns. Each of the 37 Lemma U cases (cover: `cases_cover.out`) is one CNF,
+  checked against its recorded sub-cases ("tie-in OK"); all are CaDiCaL UNSAT, and the fixed lrat-check
+  (sha256 13f28c96…, controls 14/14) reports VERIFIED with exit 0. The proofs were streamed and never stored.
+  They are 4–91 GB each and are identified by their sha256. Total 83,034 s CPU, 8.7 h wall, 3 jobs.
+  Output: audits/reviews/2026-11-09-lrat-checker-fix/recheck/cases13_cases.out (TOTAL line) and `.time`.
+- **Consequences.** The fq-nest note's κ = 2, p = 13 cell is now re-verified. The p = 13 corollary of
+  Theorem LG is unconditional: full and nested label sets give one dimension per piece at p = 7, 11, 13,
+  for any number of dependencies. The κ = 3, p = 13 cell is still PicoSAT UNSAT with no proof.
+- **Gates that stay false.** Anything beyond these finite cells; p ≥ 17 at κ = 2; κ = 3, p = 13 certified.
+- **Next.** Nothing new from this item. Open items stay as in the entry "2026-11-11 Rees SDE Open Items
+  Worked" and the plan.
+
+## 2026-11-11 Rees SDE Open Items Worked (`p7_L4b`, `six m=3`, `dead_w3_search`, `q=17` CPU) & Harsh Repo Wiring Audit (AI Only)
+
+- **Scope & external job left untouched.** Worked all feasible items in `MECHANICAL_FOLLOW_UP_PLAN.md` ("2026-11-11 Rees SDE Open Items" + "p = 5, k = 3") and ran a harsh repo-wide wiring, hash, Lean, CLI, site, and pytest check without disturbing the active `p = 13` `case_cert_stream.py` run (`PID 3195`; `recheck/cases13_cases.out` at 13 lines).
+- **Verified / completed claims (bounded / finite computational certificates under stated access):**
+  - *Item 3 (`2026-11-11-rees-sde-bounded-p.md`):* Streamed LRAT certification of the second `p = 7, m = 4` `GL_2(F_7)`-orbit `p7_L4b.txt` (`{(1,0),(1,1),(1,2),(1,4)}`, `|L|=24`, CNF sha256 `aaf08ffade180f9d…`, 942 vars, 67,694 clauses) succeeded: CaDiCaL `UNSAT` in `1140.8 s`, 12.51 GB LRAT proof (`sha256 cd15012ac621505c…`, streamed over FIFO and never stored), fixed `lrat-check` (`sha256 13f28c96…`, `controls.sh` 14/14 OK) exit `0`, `c VERIFIED` (`lines7_lrat.out`). Both orbits (`42 + 28 = 70` of $\binom{8}{4}$ 4-line sets) are now certified UNSAT; fixed the orbit-size mixup in `2026-11-11-rees-sde-bounded-p.md` (previously misstated as `182/546` from `lines13.out`).
+  - *Item 6 (`2026-11-11-rees-sde-p5-d3.md`):* Streamed LRAT certification of all **480 support-3 (`m = 3`) cases** of the six-point 10-set `001 002 010 020 100 112 121 133 200 211` succeeded: `480/480` `UNSAT=True verified=True chk_rc=0` in `1359.8 s` wall across 3 workers, max proof `415.8 MB`, all-CNF sha256 `c1f1d5e40a41601e` (`small/lrat_six_m3_stream.out`). Timed 180 s probe of the remaining `msfinalR:4` (`supp >= 4`, 1,177,772 clauses) reached 644 MB without solving (`sol_rc=0`), so Level-2 CNF infeasibility remains open above support 3.
+  - *Item 5 (`2026-11-11-rees-sde-near-linear-total.md`):* Wired exact `P_0`-free-coordinate kernel `solutions_count_p0` into `sdecore.py` and `--item5 --ssc --budget` into `dead_w3_search.py` (reducing `d = 5, p = 37` from 71.27M vectors / ~6.3 GB OOM to 402,234 projective vectors). Searched all 9 `(d ∈ {3,4,5}, p ∈ {19,31,37})` pairs (45 s/case in scratch C verified 62/62 against `sdecore`, plus Python check): all 9 `False` (`dead_w3_search.out`); also checked `N(3, 1, p)` for `p ∈ {13,19,31,37}` -> 0 dead 3-sets. Fixed `count_check.py` `SyntaxWarning` and refreshed `count_check.out`.
+  - *`p5-below-quarter/accounting.py`:* Fixed script bug that tested `+3n+3` up to `2000` instead of Theorem S's `+1.92n+3` and `k <= 30000`; regenerated `accounting.out`: `0` violations everywhere on `n <= 30000`, `G(n) < B'(n)` on `[29, 30000]`.
+  - *Wiring & stale-artifact fixes:* Rebuilt `research/reductions/native_refresh_crossover_scope_audit.json` via `theorems.native_refresh_crossover_scope_audit --write` (fixing `reviewed_artifact_sha256` drift from `79d66f19`, making `tests/test_native_refresh_crossover_scope_audit.py` pass 24/24 and `tests/test_native_*.py` pass 2321/2321); added `tests/test_rees_sde_2026_11_11_checks.py`.
+- **Blocked / incomplete items & harsh findings (reported, not papered over):**
+  - *Item 4 (`interval-s` at `q = 17, K = 4`):* Wired `--no-brute` and pruned `T*` in `linedata.py` and `coverage_e1.py`. Built `linedata_p17_K4.json`, `cases_e1_p17.txt`, `coverage_e1_p17.out` (`|Q|=48`, `|T*|=769`, `|adm|=13824`, 12 orbits: 6 `u=0` size 2176, 6 `v=0` size 128; `13824/13824 COVERAGE OK`). Measured single-orbit CNF (441,558 vars, 8,736,943 clauses, `--no-proof`): `v=0` orbit 6 finished `UNSAT` in `215.1 s`, while `u=0` orbit 0 timed out `UNKNOWN` at `300.2 s`. Full 12-orbit LRAT certification will exceed the 4 core-hour threshold -> halted for coordinator signoff.
+  - *`p5-d3` `sigma.c`:* Referenced Claude Code session `session_01B1JoCiWoB7SSi6bhNMLfEj` is not present locally; external fetch disallowed.
+  - *Open repo bugs outside `KNOWN_FAILURES.txt`:* (1) `tests/test_rees_fcs_budget.py::test_printed_table_is_the_live_main_tex_table` FAILS because `docs/papers/rees-hsp/main.tex` (`tab:fcs-budget`) added `w.-d. Q` and lowered `combined Q` (`79d66f19`) while `theorems/rees_fcs_budget.py` retains the 2026-11-04 6-column table. (2) `2026-11-11-rees-sde-p5-d3/labelsat.py`: `solve(..., use_R=True)` omits `-a` keys in `res['gamma']` (raising `KeyError` in `check_model`) and `brute` omits `rank(L,p,d)==d` check. (3) `experiment_results.json` (288 paths) and `experiment_run_history.json` (300 paths) retain dangling `research/EXP-*.json` links; 4 referee entries remain `stale`; two older JSONs (`dcp_subset_sum_euclidean_volume_inflation_barrier.json`, `cyclic_centre_state_hsp_receiver.json`) have stale `derivation_sha256` after banner edits.
+- **Claim gates kept false:** `p = 13` corollary certified (waiting for 37/37 cases in `case_cert_stream.py`); `p = 17` interval-S certified; Level-2 CNF infeasibility for a 10-set completely LRAT-certified (`msfinalR:4` open); "no dead bank exists at d = 3..5, p in {19,31,37}" (only 45 s/case heuristic search negative). See top of `research/MECHANICAL_FOLLOW_UP_PLAN.md` for Gemini follow-ups.
+- **Next hard question & command:** Certify `msfinalR:4` (supp >= 4) on the six-point 10-set via support-4 split, and decide whether to authorize the >4 core-h `q = 17, K = 4` orbit certification (`interval-s/run_cases.sh` adaptation) once `case_cert_stream.py` ends. Next command: finish monitoring `cases13_cases.out` (`wc -l`) until 37/37 LRAT verified, then review Gemini's queued `tab:fcs-budget` recomputation in `theorems/rees_fcs_budget.py`.
+
 ## 2026-11-11 Rees Square Gap: κ = 7 Spread Test Scored (σ_L 0.316, Ratio 0.90 to κ = 6, COMPATIBLE; Two Predictions Missed); σ_L(7) Frozen for the κ = 8 Test (AI Only)
 
 - **Computed, pre-registered, AI-refereed (round 4m, ACCEPT WITH CHANGES, applied).** Mechanical item 8 of

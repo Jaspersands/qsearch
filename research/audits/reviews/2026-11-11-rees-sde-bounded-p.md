@@ -33,8 +33,8 @@ unless stated.
      {ℓ : ℓ_1 ≠ 0} is 2-feasible (inputs: the certified nested planar UNSAT at p = 7, 11). This
      proves the conjecture of fq-nest §7 ("no k-dependency bundle gains two dimensions at
      p ≥ 7") for these two label families; the k = 3, p = 7 SAT run and any k = 4 run are now
-     unnecessary. p = 13: same, conditional on the p = 13 certificate (rerun in progress
-     elsewhere, `2026-11-09-lrat-checker-fix/recheck/cases13_cases.out`).
+     unnecessary. p = 13: same (input certified 11 Nov: 37/37 cases LRAT VERIFIED by the fixed checker,
+     `2026-11-09-lrat-checker-fix/recheck/cases13_cases.out`; integrator's update).
    - p = 5: for every k, F_5^k∖0 is not 3-feasible (input: certified F_5^3∖0). So with full
      label sets p = 5 is capped at two dimensions per piece (Theorem B′'s n²/4), for any number
      of dependencies.
@@ -196,16 +196,11 @@ nested result. The existing CNF encoder `gadget_cnf5.py` (CaDiCaL) also gives SA
 | 11 | SAT | SAT | SAT (2/2 orbits) | UNSAT (2/2 orbits, 792 sets) | UNSAT (1 orbit run) | | | `lines11.out` |
 | 13 | SAT | SAT | SAT (3/3 orbits) | SAT (3/3 orbits, 2002 sets) | not run | | | `lines13.out` |
 
-All UNSAT entries are [computed] by `btc` (no proof) except **p = 7, m = 4, orbit
-{(1,0),(1,1),(1,2),(1,3)} (size 182): [certified]**: `gadget_cnf5.py` CNF sha256
-4b0f3d4630bc917b…, CaDiCaL UNSAT 1690 s, 12.1 GB LRAT proof, `LRAT VERIFIED` by the fixed checker
-in 263.7 s (`lines7_lrat.out`; proof deleted afterwards). The second orbit {(1,0),(1,1),(1,2),(1,4)}
-(size 546) is **queued, not certified**: its solve was stopped at 5 min / 3.2 GB of proof under the
-coordinator's disk rule (≤ 1 proof-writing solver over 5 GB at a time; the p = 13 recheck held the
-slot), and its partial proof was deleted. Monotonicity (§2) makes m ≥ 5 follow from m = 4 (p = 7)
-and m ≥ 6 from m = 5 (p = 11). SAT entries are self-certifying (model verified). Full-line unions
-spanning the plane never carry an S-functional (f(λu) = λf(u) would put F_p^*·f(u) inside S), so
-every SAT entry is a genuine 2-family.
+All UNSAT entries are [computed] by `btc` (no proof) except **both p = 7, m = 4 orbits (`lines7_lrat.out`, covering all $\binom{8}{4}=70$ 4-line sets): [certified]**:
+- Orbit `{(1,0),(1,1),(1,2),(1,3)}` (`p7_L4a.txt`, size 42 in `lines7.out`, misstated earlier as 182 from `lines13.out`): `gadget_cnf5.py` CNF sha256 `4b0f3d4630bc917b…`, CaDiCaL UNSAT 1690 s, 12.1 GB LRAT proof, `LRAT VERIFIED` by the fixed checker in 263.7 s (proof deleted afterwards).
+- Orbit `{(1,0),(1,1),(1,2),(1,4)}` (`p7_L4b.txt`, size 28 in `lines7.out`, misstated earlier as 546 from `lines13.out`): `gadget_cnf5.py` CNF sha256 `aaf08ffade180f9d…`, CaDiCaL UNSAT 1140.8 s, 12.51 GB LRAT proof (sha256 `cd15012ac621505c…`), `LRAT VERIFIED (streamed)` over FIFO into the fixed `lrat-check` (sha256 `13f28c96a0f3df28…`, `controls.sh` 14/14 OK).
+
+Monotonicity (§2) makes m ≥ 5 follow from m = 4 (p = 7) and m ≥ 6 from m = 5 (p = 11). SAT entries are self-certifying (model verified). Full-line unions spanning the plane never carry an S-functional (f(λu) = λf(u) would put F_p^*·f(u) inside S), so every SAT entry is a genuine 2-family.
 
 **Half-lines at p = 7** (`halflines_classify.py`, `halflines7.out`; post-processing
 `halflines_post.py` → `halflines7_post.out`; 143 GL_2-orbits of P-closed sets with m ≤ 3 full
@@ -319,7 +314,7 @@ verified by plain arithmetic over all α ∈ F_p^d∖0 and all labels of the P-c
 | `btc.c`, `btc_run.py` | C port, same search (node counts identical to `bt.py`); later version adds the symmetry Φ(first label) ∈ {(0..0,1..1)} (coordinate permutations and P-scalings of Φ preserve feasibility, nondegeneracy and the Lemma R normalization) | same verdicts, ≈5× fewer nodes on UNSAT |
 | `lines3.out`, `lines7.out` | unions of m full lines, one per PGL_2-orbit (`lines7.out` from the version without the symmetry) | §4 table |
 | `lines11.out`, `lines13.out` | same at p = 11, 13 (node limit 2·10⁹) | §4 table |
-| `lines7_lrat.out` | `gadget_cnf5.py` (CaDiCaL + fixed lrat-check) on the p = 7 sets with 3 and 4 lines | 3 lines SAT (cnf 43fe416c…, model verified); 4 lines, orbit 182: UNSAT, LRAT VERIFIED; orbit 546: queued (disk), not certified |
+| `lines7_lrat.out` | `gadget_cnf5.py` (CaDiCaL + fixed lrat-check) on the p = 7 sets with 3 and 4 lines | 3 lines SAT (cnf 43fe416c…, model verified); 4 lines, orbit 42 (`p7_L4a`) UNSAT, LRAT VERIFIED; orbit 28 (`p7_L4b`) UNSAT, LRAT VERIFIED (streamed) |
 | `check_lemmas.out` | Lemma V and Lemma 1 on 7 SAT models (p = 5, 7, 11; k = 2, 3) | 0 violations: y_α = 0 on ker Δ_α, K_u = {α : ⟨Δ_α,u⟩ = 0} ∪ {0} a subspace of codim ≤ 1, global kernel 0 |
 | `halflines7.out`, `halflines_post.py`, `halflines7_post.out` | P-closed planar sets at p = 7 with m ≤ 3 full lines plus half-lines (143 orbits, node limit 2·10⁸, no timeout); post-processing tallies S-functionals | §4 |
 | `lines13.out` | p = 13, m ≤ 5 | all SAT, models verified |
@@ -334,9 +329,9 @@ Gates that must stay false: "o(a²) or any constant-factor gain at fixed p ≥ 7
 is optimal" or "Theorem C is optimal for all algorithms" (only the argued barrier of §5 for one
 method family on random banks); "every label set at p = 7 is 2-infeasible" (false: 3-line sets
 are feasible); "every P-closed label set at p = 7 with ≥ 4 lines is infeasible" (false: half-line
-sets with 8 lines are feasible); "p = 13 corollary certified"; "m = 4 planar UNSAT at p = 7
-certified" (only one of two orbits is); "half-line pieces can be found in poly time" or "exist"
-as a theorem ((d) is a first-moment heuristic); any novelty claim.
+sets with 8 lines are feasible); "p = 13 corollary certified"; "half-line pieces can be found in
+poly time" or "exist" as a theorem ((d) is a first-moment heuristic); any novelty claim. (Note:
+"m = 4 planar UNSAT at p = 7 certified" is now TRUE on both GL_2(F_7)-orbits via `lines7_lrat.out`.)
 
 Next hard question. Is there a poly-time rule that, in pools of ≈ 1.2l columns at p = 7, finds a
 2-dependency piece whose labels lie in one P-class per line (a feasible half-line pattern), or
@@ -344,11 +339,9 @@ a theta piece, with ≤ (2 − ε)(6/7)l columns? (d) says such pieces exist heu
 out thetas in near-equidistant pools. A negative answer needs a reduction from a hard
 structured-code problem; a positive one gives a constant-factor gain over Theorem C.
 
-Next commands. (1) When `df -k /private/tmp` shows ≥ 30 GB free and no other solver is writing
-a proof over 5 GB: from a scratch work dir holding `p7_L4b.txt`, `nice -n 19
-/opt/anaconda3/bin/python -B …/2026-11-08-rees-sde-fq-nest/gadget_cnf5.py 7 pow:2 2 2
-file:p7_L4b.txt --quiet --work .`, then delete the proof. Acceptance: `UNSAT … LRAT VERIFIED`;
-only then does "p = 7, m = 4 planar UNSAT" become certified. (2) Test (d) empirically at small l:
+Next commands. (1) DONE (2026-11-11): `p7_L4b.txt` certified UNSAT by CaDiCaL (1140.8 s) + streamed
+fixed `lrat-check` (12.51 GB LRAT proof, sha256 `cd15012ac621505c…`), recorded in `lines7_lrat.out`.
+(2) Test (d) empirically at small l:
 random F_7 pools of 1.2l columns, l ≤ 20, enumerate 2-dim subcodes, and count those with a
 feasible half-line pattern. Acceptance: the count is within a factor of 10 of the first-moment
 estimate, or the heuristic is withdrawn.
