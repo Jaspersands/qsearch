@@ -338,6 +338,16 @@ uses complex floats only to compare with exact counts), `nice -n 19`, at most 2 
   - κ = 4: m1 = 3, m2 = 6 at p = 13; m1 = 2, m2 = 5 at p = 17.
   - The run was stopped by hand during κ = 4, p = 29 (the DFS was too slow). κ = 4 at p ≥ 29,
     κ = 5 and κ = 6 were not computed.
+  - Integrator's re-run, 11–12 Nov (`dead_w2_rerun.out`, same script, no time limit). It reproduces
+    every row above (timings aside) and adds the following [exact]:
+    - κ = 4: m2 = 6 at p = 29 (m1 = 3); m2 = 4 at p = 37, 41, 53.
+    - κ = 5: m2 = 6 at p = 11 (m1 = 3); 5 at p = 31, 41; 4 at p = 61.
+    - κ = 6: m2 = 7 at p = 13 (m1 = 3).
+    - κ = 6 at p = 19, 31, 37, 43 is still running.
+    So, at a = 2, N(κ, 2, p) reaches 2a + 1 = 5 already at p = 37 (κ = 4) and p = 61 (κ = 5), far
+    below Theorem E′'s range. All rows are within Chevalley–Warning (m2 ≤ κa). This is
+    falsification-level evidence for the a-independent-threshold question at a = 2 only, not a
+    proof.
 - `dead_w3_search.py` → `dead_w3_search.out` [search, falsification only]: local search for dead
   (2d+1)-column banks.
   - Control κ = 3, p = 7, d = 3: found.
