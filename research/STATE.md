@@ -1295,6 +1295,18 @@ or separation is claimed.
 
 ## Now
 
+- **Rees priority, applications, headline (11-12, AI only, pending human review).** (i) Algebra of
+  Lemma lem:homogeneous is STANDARD (Rees homogenization, DELT arXiv:1704.02852 Def. 9; interpolation,
+  Shpilka-Yehudayoff §2.5); its algorithmic use NOT FOUND in CGT or quantum literature read
+  (2026-11-12-rees-priority-algebra.md, -priority-quantum.md); ISS 2007 STACS citation was missing.
+  (ii) Application search 3: 19 candidates, none survives; "No application is known" stays; scope
+  extension UT_n(Z) finite index (n >= 4) needs owner + priority check (-application-search-3.md).
+  (iii) ISS twist template obstructed beyond class 2 (Prop T; referee CORRECT WITH FIXES, repaired T'
+  proved; escapes by non-abelian Fourier or H-dependent twists not excluded); groups with an abelian
+  normal subgroup of index p are covered by ISS Thm 2 + IS Cor 8 without the cover (argued)
+  (-direct-twist-class3.md, -referee.md). (iv) Core paper (local): class-3 example on the free
+  2-generator class-3 group, Remark rem:fewer-points, public-automorphism wording; headline choice
+  OPEN (owner; prep headline-options.md). Next: specialist priority check (p-group isomorphism).
 - **Rees, rest of 11-09 (AI only, pending human review).** (i) Non-unique encodings: HSP for
   arbitrary H still works (normal H was IMS Thm 8); acquiring the chart needs Omega(sqrt p)
   identity tests (2026-11-09-rees-nonunique-encoding-blackbox.md). (ii) Local paper patch,
