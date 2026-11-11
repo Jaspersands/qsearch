@@ -2459,3 +2459,355 @@ and the frozen σ_L(6) unchanged) and in `tail_index.py`.
 - "34259 is a spike";
 - "the 34259 lift is robust to its largest batch" beyond the stated leave-one-out values;
 - "high-B_L primes at κ = 7 have typical 2+2 shares", which is two primes.
+
+# Round 4l (referee, 11 Nov 10:56): scope and rules for the κ = 8 direct (C1) sampler (predictions_k8_c1_sampler.txt)
+
+**Verdict: the method is correct, and the scope is plausible. Fix the estimator plan and the rules before recording
+(10 items).**
+- The most important item is K8's primary comparison. By κ = 6's own λ dependence, κ = 8 at λ 0.18 against κ = 7 at
+  λ 0.3 is expected to come out about 1.5× wider with no κ effect at all.
+- The item-8 processes were not touched.
+
+**Own checks** (`scratch/r4l_checks.py` → `.out`; 35 s of CPU at nice 19).
+- The sampler is my own. It uses the mirror order t1, s1, t2, s2, …, index lists, and it does not import
+  mc_classes.
+
+**(1) Correctness.**
+- **E[W] = #ordered (C1) sequences: yes.**
+  - Each step draws uniformly from a candidate set that is a function of the history, and W = Π|C|. So any valid
+    sequence is reached with probability 1/W, and E[W] = #{complete paths}. It suffices that complete paths are
+    exactly the valid sequences.
+  - That holds. Each condition c(i, j) = ind(s_j − t_i) − ind(s_1 − t_i) − ind(s_j − t_1) + ind(s_1 − t_1) ≡ 0
+    with i, j ≥ 2 is imposed exactly once, at the step adding the later of s_j and t_i. The new-s and new-t
+    constraints are each this condition rearranged. Conditions with i = 1 or j = 1 are vacuous.
+  - Distinctness comes from excluding used points.
+- **χ = −1 occurs only at used points.**
+  - In the mask form, ind(y − x) and ind(s1 − x) are −1 only at x = y or x = s1, and the same holds for t1 on the
+    S side. In the list form those points stay in the list and are removed at pick time.
+  - This matches mc_classes:
+    - its buckets exclude x ∈ S (inS), so χ = −1 never enters a key;
+    - T is a k-subset of one bucket, so T is disjoint from S;
+    - "modulo the diagonal" is normalisation by s_1's coordinate.
+- **Exact small cases** (all S enumerated with mc_classes' bucket rule):
+  - κ = 3, p = 31: 84630 pairs, against the sampler's 84688 ± 163;
+  - κ = 4, p = 53: 63388, against 64028 ± 439 (1.5σ).
+- **N1.** In mc_classes, N1 = Nunl·k!²·(p + 1 − 2k) = C(p, k)·ET·k!²·(p + 1)/(p(p² − 1)). C(p, k)·ET is the
+  number of unordered pairs, and k!² times that is the number of ordered sequences. So
+  N1 = E[W]·(p + 1)/(p(p² − 1)) = E[W]/(p(p − 1)) is right.
+- **The self-normalised mean targets the (C1) measure**, uniform on unordered pairs, because every pair has k!²
+  orderings.
+  - It is consistent, with ratio bias O(1/ESS), not "exact".
+  - It relies on Q being invariant under relabelling S and T. For sum-zero classes that holds:
+    - a change of s_ref shifts all U_i by one constant;
+    - the permanent symmetrises over the order of T.
+  - mc_classes takes T[0] = the smallest point, and the sampler takes a random t1. The build should check this
+    invariance numerically on one configuration, comparing Q for permuted S and T.
+
+**(2) Reproduction.**
+- **κ = 7, 34259:**
+  - N1/μ1 = 1.106 ± 0.096 and 0.932 ± 0.089 over two seeds of 2500 attempts, pooling to about 1.02 ± 0.07;
+  - the band run gives 1.045 ± 0.026 (analyse's N1mu1_se, recomputed).
+- **κ = 6, 1621:** 0.419 ± 0.075, against the survey's 0.42 and 0.47.
+- **The weights are right at configuration level, not just in the normalisation.** Under Poisson buckets the (C1)
+  measure makes b − k ~ Poisson(λ), where b is the size of T's bucket. The weighted mean of b − k against λ:
+
+  | prime | weighted | unweighted | λ |
+  |---|---|---|---|
+  | κ = 7, 34259 (seed 5) | 0.325 | 0.17 | 0.291 |
+  | κ = 7, 34259 (seed 6) | 0.299 | 0.21 | 0.291 |
+  | κ = 6, 1621 (66 successes) | 0.163 | 0.11 | 0.208 |
+
+  The weights are what remove the bias.
+- **κ = 8, 377513:** 11.3 ms per attempt and success 4.9–5.4%, against the proposal's 13 ms and 5.2%. N1/μ1 is
+  1.03 ± 0.25 and 1.06 ± 0.31. The timing is plausible.
+  - I did not time mc_classes' Q at κ = 8. That would mean importing tables(8). The 0.15 s for two 810³ products is
+    plausible.
+
+**(3) ESS and weights.**
+- **"Weight variance comes from the early candidate counts" is wrong.** The per-step coefficient of variation is:
+
+  | steps | mean count | CV |
+  |---|---|---|
+  | t2–s4 | 3.8·10⁵ down to 5.9·10³ | 0.00–0.04 |
+  | 92 | | 0.10 |
+  | 11 | | 0.29 |
+  | 1.8 | | 0.55 |
+  | last | 1.03 | 0.16 |
+
+  The variance is late: it comes from the bucket-population steps, so the weights are correlated with bucket size.
+  That correlation is what the weights correct.
+- **ESS** is 0.44 and 0.34 over two seeds (72 successes), against the proposal's 0.45. It is roughly stable, but
+  noisy at this size.
+- **The weight tail** is light in principle, since the weights are products of a few Poisson-like counts. On 72
+  successes, though, a Hill estimate of the top 20% gives a tail index of about 1.7, and the largest weight is 15–20%
+  of a seed's total. That is not informative at this size, but it is what the build must check.
+- **Build checks to add:**
+  - per batch: ESS, and the largest weight share (flag if > 5%);
+  - the tail index of the top 20% of normalised weights, from at least 1000 successes (flag if < 3), or PSIS k̂
+    (flag if > 0.5);
+  - the bucket-size check above, as a configuration-level test of the weights;
+  - the Q-invariance check from (1);
+  - store raw W per success alongside the normalised weights.
+
+**(4) The estimators: what must change in analyse.**
+- **Batch means.** Vb = S1_b/cnt_b with S1_b = Σ wQ and cnt_b = Σ w: fine. The ratio bias is about 1/ESS_b, that is
+  about 0.5% of X at ESS 6000 over 16 batches. Simulation should confirm it.
+- **The overall mean, the cross-batch X, and the jackknife over 16 draw-order batches:** unchanged. The batches are
+  independent, and the jackknife carries the weight variability.
+- **The noise term ν is a population quantity, and ESS must not enter it.** nz2 = σ²/Nunl with
+  σ² = S2/N − |Vh|² is the per-configuration variance divided by the number of configurations in the whole space.
+  - With weights, σ² must be the weighted variance: N = Σ w, matching S2 = Σ w|Q|².
+  - Nunl must come from the weighted N1: Nunl = N1/(k!²(p + 1 − 2k)).
+  - Putting ESS in place of N in σ² would overstate ν by Σw/ESS, about 2.5×.
+- **ESS belongs only in the clustered-noise variant.** There, nzc2 = seb²·N/Nunl with N·seb² standing in for the
+  per-configuration variance; with weights, seb² ≈ σ²/ESS, so N → ESS. It is not in any call.
+- **N1/μ1 and its se:**
+  - store the attempts per batch and the raw ΣW per batch, not only the weights normalised to mean 1 over
+    successes;
+  - then N1/μ1 per batch = mean W over the batch's attempts × (p + 1)/(p(p² − 1))/μ1, and the se is the sd over
+    batches divided by √16. This replaces analyse's rate = cnt_b/nS_b.
+- **analyse's "pre-fix file" assertion** (cnt max − min ≤ 1) can misfire on float weights. Add an explicit
+  `weighted` flag to the npz and branch on it.
+
+**(5) Rules.**
+- **V1.**
+  - The band run's N1/μ1 se is available as analyse's N1mu1_se, 0.026 (I recomputed it). Cite it as such. The
+    sampler's se is sd(W)/√attempts.
+  - State "combined 2σ" for B_L explicitly. Two options:
+    - on the X scale: |s_new − s_band| ≤ 2√(se_new² + se_band²); or
+    - on ln B, with se ≈ 1/(2z).
+  - "Seed 19" is irrelevant for a different sampler. Harmless.
+  - **V1 is weak.** The band run's 2σ, 0.412–0.608, is dominated by its batch 7 (round 4k-b part 2), so V1 cannot
+    see a 15% bias.
+  - **Add V0, the decisive and cheap check:** κ = 5, p = 401 against the exact osc-k5 arrays, the convention check
+    mc_classes itself passed. Per class, (weighted V − exact)/se, with a χ² over classes at 5% and every |z| < 4.
+    Also apply the bucket-size check.
+- **V2** (1657 and 1621) is sound and useful. **V3** (ESS ≥ 0.25) is sound. Add the build checks from (3) to V.
+- **K8's primary comparison mixes λ and κ in a way that predicts WIDER with no κ effect.**
+  - At κ = 6, σ_L goes from 0.24 to 0.49 between λ 0.52 and 0.22, an elasticity d ln σ/d ln(1/λ) ≈ 0.8. Over 0.2–0.3
+    alone it is 1.4.
+  - Carried over, λ 0.3 → 0.18 predicts a ratio of about 1.5 from λ alone. That is the size T1′-style power detects
+    about half the time.
+  - Nor is the comparison "along the path": κ = 7's sample is at 0.3, but λ_T(7) = 0.43.
+  - **Recommend:**
+    - **Primary for "growth with κ":** the equal-λ comparison, κ = 8 at λ ≈ 0.3 (p ≈ 6.3·10⁵), 24 primes for equal
+      power, rather than 12.
+    - **Primary for the threshold question:** the absolute room reading at λ_T(8): 2.03·σ_L(8) (and log₈ median)
+      against 2.08, as a heuristic measurement, not a call.
+    - **If the λ_T(8)/κ = 7 ratio stays a call,** pre-register its null as the λ-only expectation, about 1.5 (κ = 6
+      elasticity), not 1, and say that this re-imports a κ = 6 calibration.
+- **Checked numbers:**
+  - κ = 8 room 2.076;
+  - log₈ N_T 4.285;
+  - growth coefficient 2.030, so the room fills at σ_L(8) = 1.02;
+  - λ_T(8) = 0.182, so the κ = 8 band is at its own threshold, which is good;
+  - the pool is 808 primes (356561–398441), and default_rng(2027).choice(pool, 24, replace=False) reproduces the
+    listed 24 (λ 0.170–0.188).
+- **Per-prime noise** (flag if rms 1/(2z) > 0.2). At 0.2, σ_L 0.35 reads 0.40. Pre-register the noise-corrected
+  σ² = s² − mean(1/(2z))² as reported alongside, or void the call when the flag fires.
+
+**(6) Cost.**
+- 13 ms per attempt at 5% success is 0.25 s per success, plus 0.15 s for Q, so about 0.4 s per weighted
+  configuration. At ESS 0.38–0.45, ESS 6000 needs 13–16k weighted configurations, about 1.5–1.8 core-h. That is
+  marginal against the 2 core-h limit.
+- "On this loaded machine perhaps 2–3 core-h" mixes CPU time and wall time. Load stretches wall time; CPU time rises
+  only through contention.
+- **Pre-register a fixed number of attempts per run** (e.g. 250k, about 13k successes) instead of an ESS target. A
+  stopping rule on ESS is harmless for the self-normalised estimator, but a fixed count is reproducible and caps the
+  CPU.
+- **Disk:** S1 is (16, 810, 810) complex, about 168 MB per npz, so 24 runs need about 4 GB outside the repo. The
+  equal-λ arm adds about the same again.
+
+**Fixes.**
+1. "Weight variance comes from the early candidate counts" → "from the late, bucket-population steps (CV 0.3–0.55
+   at counts about 11 and 2)".
+2. "Class values are weighted means" → "self-normalised weighted means: consistent, with O(1/ESS) ratio bias".
+   Add the Q-invariance check.
+3. Noise term: weighted σ² with N = Σ w, and Nunl from the weighted N1. ESS only in the clustered-noise variant.
+4. Store attempts and raw ΣW per batch; N1/μ1 and its se come from them. Add a `weighted` flag.
+5. V1: cite the band run's se as analyse's N1mu1_se (0.026), and define "combined 2σ". Add V0, κ = 5 at p = 401
+   against the exact arrays, and the build checks from (3).
+6. K8: make equal-λ (24 primes at λ ≈ 0.3) the primary κ test. Report the λ_T(8) band as a room reading. If the
+   λ_T(8)/κ = 7 ratio stays a call, its null is about 1.5, not 1.
+7. Noise flag: pre-register the noise-corrected σ_L, or voiding.
+8. Fixed attempts per run, and the 2 core-h limit stated in CPU time.
+9. Disk: about 168 MB per npz.
+10. Gate wording: "WIDER from the λ_T(8)/κ = 7 comparison as evidence for growth with κ" stays false. It is
+    expected from λ alone.
+
+**Gates to add:**
+- "the sampler targets mc_classes' measure", until V0–V3 pass;
+- "κ = 8 spread at λ_T within the room", from the reading in (5);
+- "weights light-tailed", until the build check passes.
+
+### Author's disposition of round 4l (11 Nov)
+
+All ten fixes and the four gates are accepted. They are applied as REVISION 1 of `predictions_k8_c1_sampler.txt`,
+written before any run; the scoping measurements are kept.
+
+1. **Weight variance.** The text now names the late, bucket-population steps.
+2. **Weighted means.** They are now described as self-normalised (O(1/ESS) bias). Build check B1 tests that Q is
+   unchanged under relabelling.
+3. **Noise term.** It now uses N = Σw, with Nunl from the weighted N1.
+4. **Per-batch storage.** Each batch stores attempts and raw ΣW, and the npz carries a `weighted` flag.
+5. **Validation.**
+   - V0 (κ = 5, p = 401, exact arrays, χ² and |z| < 4) is added as the decisive check.
+   - V1 cites N1mu1_se 0.026, defines "combined 2σ" explicitly, and is marked weak.
+   - B1–B3 are added: relabelling invariance, the bucket-size check, and per-batch ESS with the largest-weight share
+     and PSIS k̂.
+6. **Primary comparison.** It is now equal λ: 24 κ = 8 primes at λ ∈ [0.29, 0.31], drawn by `default_rng(2028)`
+   from 782. The λ_T(8) band is a reading only, set against the 2.08 room, and its ratio is read against the λ-only
+   expectation of about 1.5.
+7. **Noise.** The noise-corrected σ_L is pre-registered for both κ, and the call is void if either per-prime noise
+   rms exceeds 0.2.
+8. **Runs and CPU limit.**
+   - Attempts per run are fixed: 250k at λ ≈ 0.18 and 150k at λ ≈ 0.3.
+   - The 2 core-h limit is stated in CPU time.
+   - Both attempt counts are lowered uniformly if a V run exceeds the limit.
+9. **Disk.** About 168 MB per npz, about 8 GB in all, outside the repo.
+10. **Gates.** Added: the sampler's measure, the λ_T room, light-tailed weights, and WIDER from the cross-λ ratio.
+
+# Round 4l part 2 (referee, 11 Nov 10:59): REVISION 1 of predictions_k8_c1_sampler.txt
+
+**Verdict: ACCEPT WITH TWO CHANGES.**
+- All ten round-4l fixes and the four gates are applied correctly in REVISION 1, written at 10:57:33 before any run.
+- Fix 6, the equal-λ primary with the λ_T(8) band as a reading against about 1.5, is done as proposed.
+- The seeds are disjoint from item 8's: 121–167 and 71–117 against 31–63, with 24 each.
+
+**The draw** (`scratch/r4l2_checks.py` → `.out`; 6 s of CPU).
+- There are 782 primes p ≡ 1 (mod 8) with λ ∈ [0.29, 0.31] (608177–650081).
+- `default_rng(2028).choice(pool, 24, replace=False)` reproduces the listed 24 exactly (λ 0.290–0.309).
+
+**Change 1: the fixed attempt counts against 2 core-h.**
+- **At λ ≈ 0.18, 250k is fine.**
+  - Attempts: 250k × 11.3 ms ≈ 2800 s.
+  - Q: about 13k successes × 0.15 s ≈ 1950 s.
+  - That is about 1.3 core-h, for an ESS of about 5–6k.
+- **At λ ≈ 0.3, 150k is at or over the limit.**
+  - A 300-attempt probe at p = 623417 gives 18.6 ms per attempt, 13.7% success (± about 2%) and ESS 0.53.
+  - So 150k attempts cost about 2800 s and give about 20k successes, at 0.15–0.25 s of Q each, since the histogram
+    part scales with p. That is about 1.9–2.2 core-h, for an ESS of about 11k, more than needed.
+  - Use about 100k attempts at λ ≈ 0.3: about 14k successes, ESS about 7k, and about 1.3–1.5 core-h.
+- **The safeguard cannot work as written.** "If the V runs show either above 2 core-h" cannot detect κ = 8 cost,
+  because the V runs are at κ = 5, 6 and 7.
+- Pre-register a κ = 8 timing probe instead. For example, one unscored run of 5000 attempts at each λ, which costs
+  minutes. Lower the counts uniformly from it before the first scored κ = 8 run.
+
+**Change 2: the noise correction.**
+- σ_L,c = sqrt(σ_L² − mean(ε²)), with ε = 1/(2z), is the right method-of-moments correction for independent
+  additive error in ln B. Applying it to both κ is right.
+- State how it enters the bootstrap.
+  - Resample primes as (ln B, ε) pairs, and correct inside each resample.
+  - Floor a negative corrected variance at 0, and report how often that happens.
+  - Otherwise the 95% range is of the raw ratio, not the corrected one.
+- Voiding the call above rms 0.2 is sound.
+  - At 0.2, a raw 0.40 corrects to 0.29. That is a large correction resting on a delta-method ε that is poor near
+    z ≈ 2.5.
+  - At κ = 7 the correction is negligible (0.359 → 0.352), and 1/(2z) agreed with the half-sample spread at 34259
+    (0.08 against 0.093).
+
+No other changes are needed.
+
+### Author's disposition of round 4l part 2 (11 Nov)
+
+Both changes are accepted and applied as REVISION 2 of `predictions_k8_c1_sampler.txt`, written before any run:
+- **Attempt count.** It is now 100k at λ ≈ 0.3.
+- **Cost check.** Before any scored run, an unscored 5000-attempt timing probe at one prime of each κ = 8 band
+  replaces the V-run safeguard.
+- **Noise correction.** The bootstrap resamples primes as (ln B_L, 1/(2z)) pairs and applies the correction inside
+  each resample. A negative corrected variance is floored at 0, and how often that happens is reported.
+- **Item 8.** Its frozen T1′ rule, on raw σ_L, is unchanged.
+
+# Round 4m (referee, 11 Nov 21:22): scoring of mechanical item 8 (κ = 7 σ_L, rule T1′)
+
+**Verdict: ACCEPT WITH CHANGES (7 findings).**
+- The call, COMPATIBLE, reproduces exactly by an independent path, and the misses are scored correctly.
+- The changes are to the record and to what gets frozen for K8.
+
+**Own path** (`scratch/r4m_checks.py` → `.out`; my Gram estimator, not `analyse`; 1.4 s of CPU).
+
+1. **The 24 files and the run conform to the frozen rule.**
+   - **Files:** 7 band files plus the 17 drawn at seeds 31–63 in draw order. `run_k7_tail.sh` computes s = 29 + 2i.
+   - **Each file:** κ = 7, p as listed, 6000–6017 configurations, S-batched.
+   - **Window:** λ 0.2902–0.3106. 36541 is the noted exception.
+   - **Timing:** the run script was saved at 10:43:40, after REVISION 2 (09:52:23).
+   - **Logs:** all 17 logs end normally. `tail7/run.log` is the driver's log.
+   - **Record gap:** `tail_k7_24.out` does not list the files passed to it. My values match it to every printed digit,
+     so the right files were used. Still, add the command line or the file list to the out file, or to the record.
+   - **κ = 6 comparison set:** the rule's (0.25, 0.31] and the reader's [0.2501, 0.31) select the same 31 primes. The
+     nearest λ outside the set are 0.2486 and 0.2416, and none lies at 0.31. σ_L(6) = 0.3516, the frozen 0.352.
+
+2. **T1′ recomputed.**
+   - σ_L(7) = 0.3163 (median B_L 0.2655), and the ratio is 0.8997.
+   - Replaying tail_index.py's loop (default_rng(1), one l7 draw then one l6 draw, 2000 pairs) gives 0.59–1.40, so
+     the call is **COMPATIBLE**.
+   - Other seeds (4000 pairs) give 0.59–1.36 to 0.59–1.38.
+   - Leaving out one prime, σ_L(7) ranges over 0.284–0.323; the largest drop comes from removing 34469.
+   - **Predictions:**
+     - "σ_L in 0.35–0.55" and "ratio 1.0–1.6" are MISSED;
+     - "COMPATIBLE" HELD;
+     - "lognormal sup below 0.6" HELD, and it is not independent.
+   - **Extrapolation parts:** log₇ median −0.68, and lognormal growth part 0.316 × 1.876 = 0.59. Both check.
+   - **Wording:** the interval 0.59–1.40 excludes neither a κ = 7 spread 1.4× wider than κ = 6's nor one 0.6× as wide.
+     So "COMPATIBLE" should be stated with that interval.
+   - Neither "no wider" nor "narrower" follows, and no claim gate flips. Agreed.
+
+3. **Noise.**
+   - 1/(2z_L) ranges over 0.024–0.127, rms 0.063; κ = 6's rms is 0.025.
+   - Corrected values: σ_L(7) 0.3100, σ_L(6) 0.3507, ratio 0.884.
+   - With the pair bootstrap of round 4l part 2 (resampling (ln B, ε) per prime and correcting inside each resample,
+     seed 1), the corrected ratio's range is 0.58–1.38, with no negative corrected variances.
+   - These are reported, not scored. Item 8's rule has no correction.
+
+4. **Band against drawn (not scored; post hoc).**
+   - σ_L is 0.459 for the 7 band primes and 0.251 for the 17 drawn ones.
+   - Over all C(24, 7) = 346,104 splits, a random 7-subset has an sd at least the band's 2.6% of the time. That is
+     one-sided, and the subset was not chosen by this test.
+   - "Consistent with the band not being a random sample" is fair. But the band was chosen from the symmetric-S table
+     to span symR, not on B_L, and p ≈ 0.03 does not exclude chance. Say both.
+   - Consequence for earlier text:
+     - Round 4j's "the band spreads 4× (0.131–0.519)" stays true of the band, but it no longer describes κ = 7 at
+       λ ≈ 0.3. The 17 drawn primes span 0.151–0.352 (2.3×).
+     - The seven-prime readings in §12.14 are superseded by the 24-prime values: σ_L 0.46, ratio 1.30, and
+       lognormal log₇ sup 0.14.
+
+5. **B_D.**
+   - "0 of 24 resolved, so γ_D is not reported" is right. z_D ranges over −1.20 to 1.68.
+   - **The 0.000 entries are clipped, not true zeros.** There are 12 of them: 3 band and 9 drawn primes. Each has
+     s = X − noise < 0, and analyse returns sqrt(max(s, 0)/W).
+   - The printed B_D line is therefore meaningless as a tail statistic: median 0.120, max ratio 23.6, Hill 0.31 and
+     #X > 2 = 11. The median falls between the 12th value, a clipped 10⁻⁶, and the 13th, 0.239.
+   - Record it as "B_D unresolved at all 24 primes (12 clipped to 0); the B_D tail figures in the output are not
+     interpretable".
+
+6. **The freeze for K8 must hold pairs, not log values alone.**
+   - The κ = 8 rule uses σ_L,c for both κ. As round 4l part 2 requires, it is bootstrapped by resampling primes as
+     (ln B_L, ε = 1/(2z_L)) pairs and correcting inside each resample. So the frozen κ = 7 set must be the 24 pairs.
+   - Freeze:
+     - σ_L(7) = 0.3163 raw and 0.3100 noise-corrected, rms ε 0.063;
+     - the 24 (p, B_L, z_L) triples in the order used. The values are in `r4m_checks.out`, section 5.
+   - Make sure REVISION 1 of `predictions_k8_c1_sampler.txt` states the pair bootstrap. If it does not yet, add it in a
+     revision before any κ = 8 run, together with round 4l part 2's other two changes: about 100k attempts at λ ≈ 0.3,
+     and a κ = 8 timing probe.
+
+7. **For item 9's reading** (nothing changes in its rule).
+   - At κ = 7, λ ≈ 0.3, the unselected spread is now 0.32 (0.25 on the drawn primes alone), below κ = 6's 0.35 at
+     equal λ.
+   - K8's equal-λ ratio therefore starts from a lower base than the seven-prime figure suggested. The λ-only
+     expectation of about 1.5 for the λ_T(8) reading is unaffected, since it came from κ = 6.
+
+### Author's disposition of round 4m (11 Nov)
+
+All seven findings are accepted; none changes the call. Applied:
+- **1. Record gap.** `tail_k7_24.out` now begins with the command and the 24 files in order.
+- **2. Wording.** §12.14 records COMPATIBLE with its interval 0.59–1.40, the other-seed ranges and the
+  leave-one-out range. A new gate keeps "κ = 7's spread is narrower" false alongside "no wider".
+- **3. Noise.** The corrected σ_L 0.310 and ratio 0.88 (pair bootstrap 0.58–1.38) are recorded as reported only.
+- **4. Band against drawn.** Recorded post hoc and unscored, with the 2.6% permutation figure, and both readings:
+  probably not random, chance not excluded, band chosen on symR. The seven-prime figures in §12.14 are marked
+  superseded, and the "4×" is attributed to the band.
+- **5. B_D.** The note says 0 of 24 resolved and 12 clipped at 0, and that the B_D tail figures cannot be read.
+- **6. K8 freeze.** REVISION 3 of `predictions_k8_c1_sampler.txt` freezes σ_L(7) 0.3163 raw and 0.3100
+  corrected, with the 24 (p, B_L, z_L) triples, resampled as pairs. The pair bootstrap, 100k attempts and the
+  κ = 8 timing probe were already in REVISION 2.
+- **7.** Recorded in §12.14's reading; item 9's rule is unchanged.

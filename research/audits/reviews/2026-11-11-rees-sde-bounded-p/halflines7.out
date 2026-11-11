@@ -1,0 +1,186 @@
+p=7: 16 P-classes; GL_2 acts on them as a group of order 672 (expected 672)
+m=0: 26 orbits
+  m=0 halflines=0 classes=[] orbit=1: UNSAT nodes=1 0.0s
+  m=0 halflines=1 classes=[14] orbit=16: SAT nodes=2 0.1s
+  m=0 halflines=2 classes=[12, 14] orbit=112: SAT nodes=3 0.0s
+  m=0 halflines=3 classes=[10, 12, 14] orbit=336: SAT nodes=4 0.0s
+  m=0 halflines=3 classes=[10, 13, 14] orbit=112: SAT nodes=4 0.0s
+  m=0 halflines=4 classes=[8, 10, 12, 14] orbit=336: SAT nodes=5 0.0s
+  m=0 halflines=4 classes=[8, 10, 13, 14] orbit=336: SAT nodes=5 0.0s
+  m=0 halflines=4 classes=[6, 10, 12, 14] orbit=224: SAT nodes=5 0.1s
+  m=0 halflines=4 classes=[6, 10, 12, 15] orbit=224: SAT nodes=5 0.0s
+  m=0 halflines=5 classes=[6, 8, 10, 12, 14] orbit=672: SAT nodes=6 0.1s
+  m=0 halflines=5 classes=[6, 8, 10, 13, 15] orbit=224: SAT nodes=6 0.1s
+  m=0 halflines=5 classes=[6, 8, 11, 12, 14] orbit=336: SAT nodes=6 0.0s
+  m=0 halflines=5 classes=[6, 8, 11, 12, 15] orbit=336: SAT nodes=27 0.0s
+  m=0 halflines=5 classes=[6, 8, 11, 13, 15] orbit=112: SAT nodes=6 0.0s
+  m=0 halflines=5 classes=[6, 9, 10, 13, 15] orbit=112: SAT nodes=27 0.0s
+  m=0 halflines=6 classes=[4, 6, 8, 10, 12, 14] orbit=672: SAT nodes=7 0.0s
+  m=0 halflines=6 classes=[4, 6, 8, 10, 13, 14] orbit=672: SAT nodes=42 0.0s
+  m=0 halflines=6 classes=[4, 6, 8, 10, 13, 15] orbit=336: SAT nodes=29 0.0s
+  m=0 halflines=6 classes=[4, 6, 9, 10, 13, 14] orbit=112: SAT nodes=7 0.1s
+  m=0 halflines=7 classes=[2, 4, 6, 8, 10, 12, 14] orbit=224: SAT nodes=8 0.1s
+  m=0 halflines=7 classes=[2, 4, 6, 8, 10, 13, 14] orbit=336: SAT nodes=91 0.1s
+  m=0 halflines=7 classes=[2, 4, 6, 8, 10, 13, 15] orbit=336: SAT nodes=123 0.1s
+  m=0 halflines=7 classes=[2, 4, 6, 8, 11, 13, 14] orbit=112: SAT nodes=1098 0.0s
+  m=0 halflines=7 classes=[2, 4, 7, 8, 11, 13, 14] orbit=16: SAT nodes=8 0.0s
+  m=0 halflines=8 classes=[0, 2, 4, 6, 8, 10, 12, 14] orbit=32: SAT nodes=9 0.0s
+  m=0 halflines=8 classes=[0, 2, 4, 6, 8, 10, 13, 14] orbit=224: SAT nodes=307 0.0s
+m=0 summary (number of half-lines, verdict): count
+   (0, 'UNSAT'): 1
+   (1, 'SAT'): 1
+   (2, 'SAT'): 1
+   (3, 'SAT'): 2
+   (4, 'SAT'): 4
+   (5, 'SAT'): 6
+   (6, 'SAT'): 4
+   (7, 'SAT'): 5
+   (8, 'SAT'): 2
+m=1: 42 orbits
+  m=1 halflines=0 classes=[0, 1] orbit=8: UNSAT nodes=52 0.1s
+  m=1 halflines=1 classes=[0, 1, 14] orbit=112: SAT nodes=4 0.0s
+  m=1 halflines=2 classes=[0, 1, 12, 14] orbit=336: SAT nodes=282 0.0s
+  m=1 halflines=2 classes=[0, 1, 12, 15] orbit=336: SAT nodes=5 0.0s
+  m=1 halflines=3 classes=[0, 1, 10, 12, 14] orbit=672: SAT nodes=983 0.1s
+  m=1 halflines=3 classes=[0, 1, 10, 12, 15] orbit=336: SAT nodes=6 0.1s
+  m=1 halflines=3 classes=[0, 1, 10, 13, 14] orbit=336: SAT nodes=999 0.0s
+  m=1 halflines=3 classes=[0, 1, 8, 12, 14] orbit=672: SAT nodes=999 0.0s
+  m=1 halflines=3 classes=[0, 1, 8, 13, 14] orbit=224: SAT nodes=6 0.0s
+  m=1 halflines=4 classes=[0, 1, 8, 10, 12, 14] orbit=336: SAT nodes=2707 0.1s
+  m=1 halflines=4 classes=[0, 1, 8, 10, 12, 15] orbit=672: SAT nodes=2931 0.0s
+  m=1 halflines=4 classes=[0, 1, 8, 10, 13, 14] orbit=672: SAT nodes=2935 0.0s
+  m=1 halflines=4 classes=[0, 1, 8, 10, 13, 15] orbit=336: SAT nodes=2709 0.1s
+  m=1 halflines=4 classes=[0, 1, 8, 11, 12, 15] orbit=336: SAT nodes=2720 0.1s
+  m=1 halflines=4 classes=[0, 1, 8, 11, 13, 14] orbit=336: SAT nodes=7 0.0s
+  m=1 halflines=4 classes=[0, 1, 6, 10, 12, 14] orbit=224: SAT nodes=2818 0.1s
+  m=1 halflines=4 classes=[0, 1, 6, 10, 12, 15] orbit=224: SAT nodes=7 0.1s
+  m=1 halflines=4 classes=[0, 1, 6, 10, 13, 14] orbit=672: SAT nodes=2718 0.2s
+  m=1 halflines=4 classes=[0, 1, 6, 10, 13, 15] orbit=672: SAT nodes=2825 0.2s
+  m=1 halflines=5 classes=[0, 1, 6, 8, 10, 12, 14] orbit=672: SAT nodes=6975 0.0s
+  m=1 halflines=5 classes=[0, 1, 6, 8, 10, 12, 15] orbit=672: SAT nodes=8159 0.0s
+  m=1 halflines=5 classes=[0, 1, 6, 8, 10, 13, 15] orbit=672: SAT nodes=6982 0.1s
+  m=1 halflines=5 classes=[0, 1, 6, 8, 11, 12, 14] orbit=672: SAT nodes=6956 0.0s
+  m=1 halflines=5 classes=[0, 1, 6, 8, 11, 12, 15] orbit=336: SAT nodes=6998 0.1s
+  m=1 halflines=5 classes=[0, 1, 6, 8, 11, 13, 14] orbit=672: SAT nodes=8161 0.1s
+  m=1 halflines=5 classes=[0, 1, 6, 8, 11, 13, 15] orbit=336: SAT nodes=6957 0.1s
+  m=1 halflines=5 classes=[0, 1, 6, 9, 10, 12, 15] orbit=336: SAT nodes=8 0.1s
+  m=1 halflines=5 classes=[0, 1, 6, 9, 10, 13, 15] orbit=336: SAT nodes=7915 0.0s
+  m=1 halflines=5 classes=[0, 1, 6, 9, 11, 12, 14] orbit=672: SAT nodes=6860 0.0s
+  m=1 halflines=6 classes=[0, 1, 4, 6, 8, 10, 12, 14] orbit=672: SAT nodes=16755 0.0s
+  m=1 halflines=6 classes=[0, 1, 4, 6, 8, 10, 12, 15] orbit=672: SAT nodes=18430 0.0s
+  m=1 halflines=6 classes=[0, 1, 4, 6, 8, 10, 13, 14] orbit=672: SAT nodes=18150 0.1s
+  m=1 halflines=6 classes=[0, 1, 4, 6, 8, 10, 13, 15] orbit=336: SAT nodes=17761 0.0s
+  m=1 halflines=6 classes=[0, 1, 4, 6, 8, 11, 13, 14] orbit=672: SAT nodes=22569 0.0s
+  m=1 halflines=6 classes=[0, 1, 4, 6, 9, 10, 13, 14] orbit=112: SAT nodes=16860 0.0s
+  m=1 halflines=6 classes=[0, 1, 4, 7, 8, 10, 12, 14] orbit=336: SAT nodes=17991 0.1s
+  m=1 halflines=6 classes=[0, 1, 4, 7, 8, 11, 13, 14] orbit=112: SAT nodes=9 0.0s
+  m=1 halflines=7 classes=[0, 1, 2, 4, 6, 8, 10, 12, 14] orbit=224: SAT nodes=42103 0.1s
+  m=1 halflines=7 classes=[0, 1, 2, 4, 6, 8, 10, 13, 14] orbit=336: SAT nodes=48156 0.1s
+  m=1 halflines=7 classes=[0, 1, 2, 4, 6, 8, 10, 13, 15] orbit=336: SAT nodes=48747 0.1s
+  m=1 halflines=7 classes=[0, 1, 2, 4, 6, 8, 11, 13, 14] orbit=112: UNSAT nodes=522149 0.4s
+  m=1 halflines=7 classes=[0, 1, 2, 4, 7, 8, 11, 13, 14] orbit=16: SAT nodes=10 0.0s
+m=1 summary (number of half-lines, verdict): count
+   (0, 'UNSAT'): 1
+   (1, 'SAT'): 1
+   (2, 'SAT'): 2
+   (3, 'SAT'): 5
+   (4, 'SAT'): 10
+   (5, 'SAT'): 10
+   (6, 'SAT'): 8
+   (7, 'SAT'): 4
+   (7, 'UNSAT'): 1
+m=2: 41 orbits
+  m=2 halflines=0 classes=[0, 1, 2, 3] orbit=28: SAT nodes=282 0.0s
+  m=2 halflines=1 classes=[0, 1, 2, 3, 14] orbit=336: SAT nodes=998 0.0s
+  m=2 halflines=2 classes=[0, 1, 2, 3, 12, 14] orbit=336: SAT nodes=2692 0.1s
+  m=2 halflines=2 classes=[0, 1, 2, 3, 12, 15] orbit=336: SAT nodes=2924 0.1s
+  m=2 halflines=2 classes=[0, 1, 2, 3, 10, 14] orbit=672: SAT nodes=2697 0.0s
+  m=2 halflines=2 classes=[0, 1, 2, 3, 10, 12] orbit=336: SAT nodes=2927 0.1s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 10, 12, 14] orbit=672: SAT nodes=6939 0.0s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 10, 12, 15] orbit=672: SAT nodes=8149 0.1s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 10, 13, 14] orbit=672: SAT nodes=6995 0.0s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 10, 13, 15] orbit=672: SAT nodes=6958 0.1s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 8, 10, 12, 14] orbit=336: UNSAT nodes=366054 0.3s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 8, 10, 12, 15] orbit=336: SAT nodes=19218 0.0s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 8, 10, 13, 14] orbit=336: SAT nodes=18104 0.1s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 8, 11, 12, 15] orbit=336: SAT nodes=16831 0.1s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 6, 12, 14] orbit=336: SAT nodes=6926 0.0s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 6, 12, 15] orbit=672: SAT nodes=8148 0.1s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 6, 13, 15] orbit=336: SAT nodes=6936 0.1s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 10, 12, 14] orbit=672: SAT nodes=21190 0.0s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 10, 12, 15] orbit=672: SAT nodes=25260 0.0s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 10, 13, 15] orbit=672: SAT nodes=18077 0.0s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 11, 12, 14] orbit=672: UNSAT nodes=347909 0.3s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 6, 8, 10] orbit=336: SAT nodes=6996 0.0s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 8, 10, 14] orbit=672: SAT nodes=19769 0.1s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 8, 10, 12] orbit=672: UNSAT nodes=374352 0.5s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 8, 10, 12, 14] orbit=672: UNSAT nodes=459031 0.5s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 8, 10, 12, 15] orbit=672: UNSAT nodes=468322 0.3s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 8, 10, 13] orbit=672: SAT nodes=16907 0.1s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 8, 10, 13, 14] orbit=672: UNSAT nodes=468672 0.3s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 8, 10, 13, 15] orbit=672: UNSAT nodes=462817 0.3s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 8, 11, 12, 14] orbit=336: UNSAT nodes=458842 0.3s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 8, 11, 12, 15] orbit=672: UNSAT nodes=459356 0.3s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 8, 11, 13, 15] orbit=336: UNSAT nodes=459219 0.4s
+  m=2 halflines=3 classes=[0, 1, 2, 3, 6, 9, 10] orbit=112: SAT nodes=8188 0.1s
+  m=2 halflines=4 classes=[0, 1, 2, 3, 6, 9, 10, 14] orbit=672: SAT nodes=21180 0.1s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 9, 10, 12, 14] orbit=336: SAT nodes=53662 0.1s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 9, 10, 12, 15] orbit=672: UNSAT nodes=501753 0.3s
+  m=2 halflines=5 classes=[0, 1, 2, 3, 6, 9, 10, 13, 15] orbit=336: SAT nodes=53993 0.1s
+  m=2 halflines=6 classes=[0, 1, 2, 3, 4, 6, 8, 10, 12, 14] orbit=672: UNSAT nodes=718394 0.5s
+  m=2 halflines=6 classes=[0, 1, 2, 3, 4, 6, 8, 10, 13, 14] orbit=672: UNSAT nodes=721468 0.4s
+  m=2 halflines=6 classes=[0, 1, 2, 3, 4, 6, 8, 10, 13, 15] orbit=336: UNSAT nodes=714756 0.3s
+  m=2 halflines=6 classes=[0, 1, 2, 3, 4, 6, 9, 10, 13, 14] orbit=112: UNSAT nodes=723369 0.4s
+m=2 summary (number of half-lines, verdict): count
+   (0, 'SAT'): 1
+   (1, 'SAT'): 1
+   (2, 'SAT'): 4
+   (3, 'SAT'): 9
+   (4, 'SAT'): 9
+   (4, 'UNSAT'): 3
+   (5, 'SAT'): 2
+   (5, 'UNSAT'): 8
+   (6, 'UNSAT'): 4
+m=3: 34 orbits
+  m=3 halflines=0 classes=[0, 1, 2, 3, 4, 5] orbit=56: SAT nodes=2702 0.1s
+  m=3 halflines=1 classes=[0, 1, 2, 3, 4, 5, 14] orbit=336: SAT nodes=6930 0.1s
+  m=3 halflines=2 classes=[0, 1, 2, 3, 4, 5, 12, 14] orbit=336: SAT nodes=16583 0.1s
+  m=3 halflines=2 classes=[0, 1, 2, 3, 4, 5, 12, 15] orbit=336: SAT nodes=18187 0.1s
+  m=3 halflines=1 classes=[0, 1, 2, 3, 4, 5, 10] orbit=224: SAT nodes=7050 0.1s
+  m=3 halflines=2 classes=[0, 1, 2, 3, 4, 5, 10, 14] orbit=672: SAT nodes=20824 0.0s
+  m=3 halflines=2 classes=[0, 1, 2, 3, 4, 5, 10, 15] orbit=672: UNSAT nodes=321447 0.4s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 10, 12, 14] orbit=672: UNSAT nodes=451674 0.4s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 10, 12, 15] orbit=672: UNSAT nodes=449788 0.4s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 10, 13, 14] orbit=672: UNSAT nodes=459345 0.2s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 10, 13, 15] orbit=672: UNSAT nodes=451526 0.3s
+  m=3 halflines=2 classes=[0, 1, 2, 3, 4, 5, 8, 10] orbit=112: UNSAT nodes=316765 0.2s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 8, 10, 14] orbit=672: UNSAT nodes=453710 0.3s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 8, 10, 12, 14] orbit=672: UNSAT nodes=735258 0.4s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 8, 10, 12, 15] orbit=336: UNSAT nodes=713655 0.4s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 8, 10, 13, 14] orbit=336: UNSAT nodes=773483 0.4s
+  m=3 halflines=2 classes=[0, 1, 2, 3, 4, 5, 8, 11] orbit=112: UNSAT nodes=315267 0.3s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 8, 11, 14] orbit=336: UNSAT nodes=452805 0.3s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 8, 11, 15] orbit=336: UNSAT nodes=436965 0.3s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 8, 11, 12, 14] orbit=336: UNSAT nodes=714283 0.4s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 8, 11, 12, 15] orbit=672: UNSAT nodes=696403 0.4s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 8, 11, 13, 15] orbit=336: UNSAT nodes=714419 0.3s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 6, 12, 14] orbit=336: UNSAT nodes=469521 0.3s
+  m=3 halflines=3 classes=[0, 1, 2, 3, 4, 5, 6, 13, 15] orbit=112: UNSAT nodes=478046 0.2s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 6, 10, 12, 14] orbit=672: UNSAT nodes=732957 0.4s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 6, 10, 12, 15] orbit=672: UNSAT nodes=749250 0.4s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 6, 10, 13, 15] orbit=224: UNSAT nodes=746357 0.4s
+  m=3 halflines=4 classes=[0, 1, 2, 3, 4, 5, 6, 11, 13, 15] orbit=224: UNSAT nodes=780027 0.5s
+  m=3 halflines=5 classes=[0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 14] orbit=672: UNSAT nodes=1307264 0.8s
+  m=3 halflines=5 classes=[0, 1, 2, 3, 4, 5, 6, 8, 10, 13, 15] orbit=224: UNSAT nodes=1288478 0.7s
+  m=3 halflines=5 classes=[0, 1, 2, 3, 4, 5, 6, 8, 11, 12, 14] orbit=336: UNSAT nodes=1276902 0.7s
+  m=3 halflines=5 classes=[0, 1, 2, 3, 4, 5, 6, 8, 11, 12, 15] orbit=336: UNSAT nodes=1266465 0.8s
+  m=3 halflines=5 classes=[0, 1, 2, 3, 4, 5, 6, 8, 11, 13, 15] orbit=112: UNSAT nodes=1294344 0.6s
+  m=3 halflines=5 classes=[0, 1, 2, 3, 4, 5, 6, 9, 10, 13, 15] orbit=112: UNSAT nodes=1288092 0.7s
+m=3 summary (number of half-lines, verdict): count
+   (0, 'SAT'): 1
+   (1, 'SAT'): 2
+   (2, 'SAT'): 3
+   (2, 'UNSAT'): 3
+   (3, 'UNSAT'): 9
+   (4, 'UNSAT'): 10
+   (5, 'UNSAT'): 6

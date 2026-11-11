@@ -72,8 +72,10 @@ q^{q²}(n+1)^{q−1} [literature]).
    (13,2),(7,3),(13,3)}, a ≤ 40, four families, every witness verified (`sparse_tri.out`); the
    O(a log a) term makes the gain over (a+1)(a+2)/2 small below a ≈ 40.
 4. **(b) KOW small coefficients.** q = 5: yes (item 1). q = 7, 11: no nested two-dimensional
-   gadget [exact at q = 7, `big_7_int_nest.out`; q = 11 only for the P-equivariant problem,
-   `big_11_int_nest.out` (referee C finding 2: Lemma Q is not shown exact for S = {0,±1,±2})]; q = 13: open (§2). The one-dimensional
+   gadget [exact at q = 7, `big_7_int_nest.out`; q = 11 and q = 13 for the free problem, LRAT-verified with the fixed checker (11 Nov,
+   `2026-11-11-rees-sde-interval-s.md`: Lemma N′ makes Lemma Q exact for every S ≠ F_p, closing
+   referee C finding 2; q = 11 also solved free with no reduction; q = 13 by a 26-orbit split, also
+   re-run with Lemma R only)]. The one-dimensional
    KOW round is reproduced as a feasibility fact at q = 5, 7, 11, 13 [exact, `table_small.out`].
 5. **(c) 0/1 subset sum at q = 5, 7.** Nothing of lower degree from this framework [argued; Lemma Z
    proves the four-hyperplane confinement and the infeasibility of nested and full label sets]: a 0/1 realization of even one dimension forces the label set into four parallel
@@ -188,8 +190,8 @@ was checked against its case file); p = 3 sanity in `table_old_encoding.out` (KO
 | κ=2, p=7, **k=3**, d=2 nest | — | — | UNSAT (2 cases, each solved without the γ_(1,1) split, LRAT proof re-verified with the fixed checker, 9 Nov, `2026-11-09-lrat-checker-fix/recheck/k3_7_cases.out`; the earlier 2 × 343 sub-case split `k3_7_split.out` is CaDiCaL UNSAT, not independently proof-checked) | — |
 | κ=3, p=13 ({0,1,5,8,12}) | SAT | UNSAT | UNSAT (unsplit, 2807 s, `big_13_k3_nest.out`; and 37/37 cases, `cases13k3.out`; PicoSAT, no proof) | — |
 | (b) q=7, {0,±1} | SAT | UNSAT | UNSAT | — |
-| (b) q=11, {0,±1,±2} | SAT | UNSAT | UNSAT (581 s) **for the P-equivariant problem only**; the free problem is not established (Lemma N needs S ∩ 2S = {0}) | — |
-| (b) q=13, {0,…,±3} | SAT | UNSAT (69 s) | **open**: Lemma U does not apply (S ≠ P∪{0}); unsplit PicoSAT > 17 h, one-slot split > 4.5 h on its first sub-case, two-slot sub-cases > 9 min each (28561 of them); stopped | — |
+| (b) q=11, {0,±1,±2} | SAT | UNSAT | UNSAT for the **free** problem (11 Nov: free CNF with no reduction, 760 s, LRAT verified with the fixed checker; also Lemma R only and two equivariant encodings, all verified; `2026-11-11-rees-sde-interval-s.md`). The 9 Nov "P-equivariant only" caveat is closed by Lemma N′ / Corollary Q′ there | — |
+| (b) q=13, {0,…,±3} | SAT | UNSAT (69 s) | UNSAT for the free problem (11 Nov: Lemma L split into 26 orbit cases with a coverage check, all UNSAT and LRAT verified with the fixed checker, equivariant and Lemma-R-only encodings; `2026-11-11-rees-sde-interval-s.md`). Earlier attempts (PicoSAT > 17 h, two-slot split) were stopped | — |
 | (c) {0,1}, p=5,7, d=1 | UNSAT | — | UNSAT (k=2,3) | UNSAT (k=2) |
 
 The k = 1, d = 1 rows are the paper's contraction (κ = 2: Φ(a) = a for a ∈ P, νa for a ∉ P, ν the

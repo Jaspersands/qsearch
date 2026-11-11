@@ -1,0 +1,14 @@
+k=3: 1 reps, pairwise inequivalent, spanning
+k=4: 6 reps, pairwise inequivalent, spanning
+k=5: 28 reps, pairwise inequivalent, spanning
+k=6: 158 reps, pairwise inequivalent, spanning
+k=7: 881 reps, pairwise inequivalent, spanning
+k=8: 5200 reps, pairwise inequivalent, spanning
+k=9: 28962 reps, pairwise inequivalent, spanning
+k=3 -> 4: 59 extensions, all equivalent to a listed rep
+k=4 -> 5: 348 extensions, all equivalent to a listed rep
+k=5 -> 6: 1596 extensions, all equivalent to a listed rep
+k=6 -> 7: 8848 extensions, all equivalent to a listed rep
+k=7 -> 8: 48455 extensions, all equivalent to a listed rep
+k=8 -> 9: 280800 extensions, all equivalent to a listed rep
+nice -n 19 /opt/anaconda3/bin/python -I $H/check_models.py $S 3 9 --closure >  1020.39s user 24.28s system 73% cpu 23:45.73 total

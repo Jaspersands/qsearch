@@ -1,0 +1,8 @@
+k=3 models 1 (SF 1, M 0) all pass check_model; F_3.txt sha256 05f54d0544472e9aebbd1f0ed36430a157a5ba4bae5a40a27b7eaac2869211d2
+k=4 models 6 (SF 6, M 0) all pass check_model; F_4.txt sha256 a8705c0c7031017b2cb057cabc82eee78260f0013d286b317c4a2d34084a57ba
+k=5 models 28 (SF 28, M 0) all pass check_model; F_5.txt sha256 47334da975302703d21cc328127bcc04a0a284e524e2e7278d9f671f2474187d
+k=6 models 158 (SF 150, M 8) all pass check_model; F_6.txt sha256 7f56da1458ee70515593499f486e00b21082b46fdb85c8ef841491ad6b1b9b87
+k=7 models 881 (SF 718, M 163) all pass check_model; F_7.txt sha256 c82072e41bd3970287991136b205905ce60ea1dd59a959448a81dfb02c160e55
+k=8 models 5200 (SF 2966, M 2234) all pass check_model; F_8.txt sha256 6fa5394f1e77e975afa186f61f70f6f7032215e3e9c86a5e1431fddf7ff1348b
+k=9 models 28962 (SF 10139, M 18823) all pass check_model; F_9.txt sha256 212620ee08bce6e996dab274fe681fc53de46bf63260c51ad70d10f7573adc15
+nice -n 19 /opt/anaconda3/bin/python -I $H/check_models.py $S 3 9 >  2>&1  39.03s user 0.30s system 97% cpu 40.202 total

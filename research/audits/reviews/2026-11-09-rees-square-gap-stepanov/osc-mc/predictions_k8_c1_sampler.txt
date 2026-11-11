@@ -1,0 +1,129 @@
+Scope, cost and pre-registered rules for the kappa = 8 direct (C1) sampler (topic note section 12.14; mechanical item
+9). Written 2026-11-11 10:50:08, before any kappa = 8 class-value run and before item 8 (kappa = 7, 24 primes) is scored.
+Nothing here is started; the sampler itself is not written (only the two scoping timers below exist).
+
+WHAT IT MUST SAMPLE. The (C1) measure of mc_classes.py: uniform on pairs (S, T), S a k-set, T a k-subset of one
+S-bucket, i.e. ind(s_j - t_i) = a_j + b_i (mod k) for all i, j. Uniform on unordered pairs = uniform on ordered
+sequences, since each pair gives k!^2 orderings. For each configuration it must output mc_classes.py's per-configuration
+Q = P Hc P^T over z in P^1 minus S u T, so that the existing estimators (k6_spike_survey.analyse, tail_index.py) apply.
+
+WHY uniform-S sampling cannot. At k = 8, lambda = 0.18 (p ~ 3.8e5) a uniform S has ~5.7e-5 configurations
+(M lambda^k / k!, M = k^(k-1)), so 6000 configurations need ~1e8 S at ~30 ms each: ~900 core-h per prime.
+
+METHOD: sequential importance sampling. Order s1, t1, s2, t2, ..., sk, tk. A new s must satisfy
+ind(s - t_i) - ind(s - t_1) = ind(s_1 - t_i) - ind(s_1 - t_1) for the t_i already chosen, and a new t the mirror
+condition. Each step picks uniformly among the unused candidates; the weight W is the product of the candidate counts
+(0 at a dead end). E[W] = number of ordered (C1) sequences, so N1 = E[W] (p+1)/(p(p^2-1)), and class values are
+weighted means (self-normalised). Configurations are independent, so batches need no S-clustering correction.
+
+SCOPING MEASUREMENTS (review-2026-11-10/scratch/c1_seq_proto.py, c1_cost_k8.py; seconds to minutes of CPU):
+  - Correctness of the measure via N1/mu1: k = 7, p = 34259: 1.051 +- 0.087 and 1.052 +- 0.071 (two seeds, 6000
+    attempts each), against the uniform-S band run's 1.045. k = 6, p = 1621: 0.452 +- 0.055, against the survey's
+    0.42 and 0.47. Every success passes a direct (C1) check.
+  - k = 8, p = 377513 (lambda 0.180): success 5.2% of attempts, ESS 0.45 of successes; N1/mu1 1.01 +- 0.15.
+    Index-list form 13 ms per attempt; mc_classes' per-configuration histogram and Q 0.15 s (tables(8): nR = nA = 810,
+    7 s). So about 0.4 s per weighted configuration, about 0.9 s per effective one.
+COST: about 1.5 core-h per prime for an ESS of 6000 (about 13000 weighted configurations), on this loaded machine
+  perhaps 2-3 core-h. Validation (below) about 3 core-h. The 24-prime kappa = 8 band: about 36-70 core-h, two at a time.
+  The per-run limit of 2 core-h may need nconf lowered to 4000 effective; the rule does not depend on nconf.
+
+BUILD REQUIREMENTS (before any rule below is scored):
+  - mc_c1seq.py: the index-list sampler inside mc_classes.py's per-configuration code (same tables, same npz fields),
+    storing weighted batch sums: S1_b = sum w Q, cnt_b = sum w (weights normalised to mean 1 over successes),
+    S2 = sum w |Q|^2, plus ESS per batch and the raw success count. 16 batches by draw order.
+  - A weighted reader (k6_spike_survey.analyse with ESS in place of N in the noise term), checked on simulated weights.
+
+RULE V (validation; must PASS before any kappa = 8 run, else the kappa = 8 calls are void):
+  V1. k = 7, p = 34259, 6000 weighted configurations, seed 19: N1/mu1 within 2 combined se of 1.045, and B_L within
+      the combined 2-sigma of the band run's 0.519 (2-sigma 0.412-0.608).
+  V2. k = 6 at 1657 (spike, B_L 1.88) and 1621 (typical): B_L and B_D each within combined 2-sigma of the survey run.
+  V3. ESS >= 0.25 of successes at every validation run.
+  PASS if all hold; otherwise FAIL, reported with the failing item.
+
+RULE K8 (the decisive form of section 12.14's question, scored only after V passes):
+  Sample: the 24 primes p = 1 (mod 8) with lambda in [0.17, 0.19] drawn by
+    numpy.random.default_rng(2027).choice(pool, 24, replace=False), pool = all 808 such primes (356561-398441):
+    357073 357169 360257 360769 361577 362233 362977 368513 369097 372817 373073 375553 376633 377353 377681 379369
+    379817 382601 382649 383729 384913 385817 387161 394153  (lambda 0.170-0.188). Seeds 71, 73, ..., 117 in this order.
+  Quantity: sigma_L(8) = sd(ln B_L) over the 24 primes.
+  Rule: the ratio sigma_L(8) / sigma_L(7), where sigma_L(7) is item 8's 24-prime value at lambda ~ 0.3, frozen when
+    item 8 is scored (before any kappa = 8 run). 95% range from 2000 independent bootstrap pairs (numpy seed 1), as in
+    T1'. WIDER if the lower end > 1, NARROWER if the upper end < 1, otherwise COMPATIBLE.
+  Reading: the comparison is along the threshold path's direction (kappa up, lambda down), not at equal lambda, and
+    kappa = 7's sample (lambda 0.3) is below its own lambda_T = 0.43. WIDER is evidence that the spread grows along the
+    path; it does not separate kappa from lambda.
+  Reported only: the lognormal growth part log_8(sup/median) = sigma_L(8) sqrt(2 ln N_T)/ln 8 with log_8 N_T = 4.29,
+    about 2.03 sigma_L(8), against the kappa = 8 L room (1/2 - 1/(2 ln 8)) 8 = 2.08 before the O(1) (so the growth
+    part alone fills the room near sigma_L(8) ~ 1.0); log_8 median B_L; per-prime noise rms 1/(2z) (flag if > 0.2);
+    Hill; the B_D resolution count.
+  Optional, equal-lambda: 12 primes at lambda ~ 0.3 (p ~ 6.3e5), ratio to sigma_L(7) by the same rule; about 25 more
+    core-h. Separates kappa from lambda.
+  Power: as for T1' (about 53% for a 1.5x wider spread at N = 24 each).
+Claim gates that stay false: obstruction (c) resolved in either direction; "the spread grows with kappa" from WIDER
+  alone (kappa and lambda move together); any sup extrapolation as a bound; "no wider" from COMPATIBLE; the sampler
+  as validated before rule V is scored.
+
+REVISION 1, written 2026-11-11 10:57:33 after referee round 4l (ROUND3.md; checks in review-2026-11-10/scratch/r4l_checks.*)
+and before any run. It supersedes METHOD's last sentence, COST, BUILD REQUIREMENTS, RULE V and RULE K8 above; the
+scoping measurements stand. The referee confirmed the method: E[W] = #ordered (C1) sequences (exact at k = 3, p = 31,
+and k = 4, p = 53), chi = -1 only on used points, and the N1 conversion.
+  - Weights. Class values are self-normalised weighted means: consistent, with O(1/ESS) ratio bias. The weight variance
+    comes from the late, bucket-population steps (CV 0.3-0.55 at counts ~11 and ~2), not the early ones. ESS 0.34-0.45.
+  - Estimators. Noise term: weighted variance with N = sum w, and Nunl from the weighted N1 (ESS only in the
+    clustered-noise variant, which no call uses). Cross-batch X and jackknife unchanged. Store, per batch, attempts,
+    raw sum W, sum w, sum w Q, sum w |Q|^2 and ESS; N1/mu1 and its se come from attempts and raw sum W. npz flag
+    weighted = True (analyse's pre-fix assertion must not fire on float weights).
+  - COST, in CPU time: about 1.5-1.8 core-h per prime at lambda 0.18 for ESS ~6000 (marginal against the 2 core-h
+    limit). Each run uses a FIXED number of attempts: 250000 at lambda ~ 0.18 and 150000 at lambda ~ 0.3 (p 1.7x
+    larger). If the V runs show either above 2 core-h, both are lowered uniformly before any kappa = 8 run, and the
+    change is recorded here. About 168 MB per npz: about 8 GB for the 48 runs, outside the repo.
+  - BUILD CHECKS (all must pass, recorded with V):
+    B1. Q unchanged under random relabellings of S and of T (checked numerically on 20 configurations).
+    B2. Bucket-size check: weighted mean of (bucket size - k) at the final T step within 2 se of lambda.
+    B3. Weights: per-batch ESS and largest single-weight share (< 0.05), and a PSIS k-hat < 0.5 from >= 1000 successes.
+  RULE V (all must PASS before any kappa = 8 run; else the kappa = 8 calls are void; reported item by item):
+    V0. k = 5, p = 401 against the exact osc-k5 arrays (the convention check mc_classes passed): per class
+        z = (weighted V - exact)/se; PASS if the chi^2 over classes is below its 95% point and every |z| < 4.
+    V1. k = 7, p = 34259: N1/mu1 within 2 sqrt(se_a^2 + se_b^2) of 1.045 (se_b = analyse's N1mu1_se 0.026); B_L within
+        2 sqrt(se_a^2 + se_b^2) of 0.519 with se = (2-sigma high - 2-sigma low)/4 for each run. Weak (the band run's
+        range is dominated by one batch), so V0 is the decisive check.
+    V2. k = 6 at 1657 and 1621: B_L and B_D each within the same combined 2-sigma of the survey run.
+    V3. ESS >= 0.25 of successes at every V run. B1-B3 pass.
+  RULE K8 (primary, equal lambda; scored only after V passes):
+    Sample: 24 primes p = 1 (mod 8), lambda in [0.29, 0.31], drawn by numpy.random.default_rng(2028).choice(pool, 24,
+      replace=False) from all 782 such primes (608177-650081): 608737 611297 617129 617233 618929 620441 621617 622241
+      622313 623417 623929 624209 624809 627617 630689 632041 634441 636721 638081 643009 643273 647641 647809 648889
+      (lambda 0.290-0.309). Seeds 121, 123, ..., 167 in this order.
+    Quantity and rule: ratio sigma_L(8) / sigma_L(7) at equal lambda ~ 0.3, sigma_L(7) = item 8's 24-prime value
+      (frozen when item 8 is scored, before any kappa = 8 run). 95% range from 2000 independent bootstrap pairs (numpy
+      seed 1). WIDER if the lower end > 1, NARROWER if the upper end < 1, otherwise COMPATIBLE.
+    Noise: the call uses the noise-corrected sigma_L,c = sqrt(sigma_L^2 - rms(1/(2z))^2) for both kappa (raw values also
+      reported). The call is VOID if either kappa's per-prime noise rms exceeds 0.2.
+  READING AT lambda_T(8) = 0.18 (reported only, no call): the 24 primes above (default_rng(2027); seeds 71-117).
+    Report sigma_L(8, 0.18), the lognormal growth part 2.03 sigma_L(8) against the kappa = 8 L room 2.08 (fills at
+    sigma_L ~ 1.02 before the O(1) and the median term), and the ratio to sigma_L(7, 0.3) against the lambda-only
+    expectation of about 1.5 (kappa = 6's elasticity d ln sigma / d ln(1/lambda) ~ 0.8).
+  Total about 75-90 core-h for both bands plus V; two at a time.
+  Extra gates (stay false): "the sampler targets mc_classes' measure" until V0-V3 and B1-B3 pass; "kappa = 8 spread at
+    lambda_T within the room" from the reading; "weights light-tailed" until B3 passes; WIDER from the lambda_T(8) /
+    kappa = 7 comparison as evidence for growth with kappa (it is expected from lambda alone).
+
+REVISION 2, written 2026-11-11 10:59:20 after referee round 4l part 2, before any run.
+  - Attempts at lambda ~ 0.3: 100000 (not 150000); probe at p = 623417: 18.6 ms/attempt, 13.7% success, ESS 0.53,
+    so about 1.3-1.5 core-h and ESS ~7000. lambda ~ 0.18 stays 250000 (~1.3 core-h, ESS ~5-6000).
+  - Cost safeguard replaced: before the first scored kappa = 8 run, an UNSCORED timing probe of 5000 attempts at one
+    prime of each kappa = 8 band (the first listed); if either extrapolates above 2 core-h, that band's attempt count
+    is lowered to fit, recorded here before any scored run. The V runs (kappa 5-7) do not bound kappa = 8 cost.
+  - Noise correction inside the bootstrap: primes are resampled as (ln B_L, 1/(2z)) pairs and sigma_L,c is computed
+    inside each resample; a negative corrected variance is floored at 0 and the frequency of flooring is reported.
+    Item 8's rule T1' is unchanged (raw sigma_L); for K8, sigma_L,c(7) is computed from item 8's files the same way.
+
+REVISION 3, written 2026-11-11 21:24:13 after item 8 was scored and referee round 4m, before any kappa = 8 run. No rule changes;
+this freezes the kappa = 7 reference the K8 rule names.
+  - sigma_L(7) = 0.3163 raw (N 24, lambda 0.2902-0.3106), 0.3100 noise-corrected (rms 1/(2 z_L) = 0.063).
+  - Bootstrap set: the 24 (p, B_L, z_L) triples below, resampled as (ln B_L, 1/(2 z_L)) pairs as in REVISION 2.
+    For exact values recompute from item 8's npz files with k6_spike_survey.analyse (files listed in
+    review-2026-11-10/scratch/tail_k7_24.out); the rounded triples are for identification:
+    34259 0.519 5.4; 34273 0.236 7.0; 34469 0.131 4.3; 35281 0.392 21.1; 36541 0.393 14.9; 35099 0.237 8.2; 34847 0.245 9.4; 34147 0.282 12.8; 34217 0.279 14.7; 34231 0.248 12.5; 34511 0.349 13.3; 34651 0.188 3.9; 34679 0.151 4.0; 34721 0.312 13.8; 34819 0.234 6.6; 35141 0.254 12.8; 35393 0.278 15.8; 35533 0.190 9.0; 35603 0.352 19.1; 35617 0.343 16.0; 35771 0.312 15.0; 35897 0.340 13.3; 35911 0.242 9.9; 36107 0.197 8.7
+  - Checks already in place from REVISION 2 (referee round 4m item 6): pair bootstrap, 100k attempts at lambda ~ 0.3,
+    unscored 5000-attempt kappa = 8 timing probe before any scored run.

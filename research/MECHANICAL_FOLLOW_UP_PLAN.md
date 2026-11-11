@@ -1,4 +1,29 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-11 Rees SDE Open Items
+
+Read the handoff entry "2026-11-11 Rees SDE Open Items Worked" and the notes it names (audits/reviews/).
+Run CPU-heavy jobs under `nice -n 19`. At most one proof larger than 5 GB may be on disk at a time, and
+no big run may start with less than 30 GB free; prefer
+2026-11-09-lrat-checker-fix/recheck/case_cert_stream.py, which streams the proof. Use only the fixed
+lrat-check (sha256 13f28c96…).
+1. When the running p = 13 re-check ends, confirm that recheck/cases13_cases.out ends
+   "TOTAL: 37/37 cases certified". Then edit the fq-nest note's κ = 2 p = 13 row, the bounded-p
+   note's LG p = 13 corollary and STATE: "CaDiCaL only" becomes "LRAT-verified". If a case is not
+   certified, rerun just that case with a longer --cap.
+2. Add tests/test_rees_sde_small_sets.py.
+   - Rebuild Q_3..Q_6 with small/orbits.c and compare them with small/hashes.txt.
+   - Run small/check_models.py on F_3..F_6 from small/models/.
+   - Run small/burnside.c and compare it with burnside.out.
+   - Acceptance: < 30 s; skip if there is no C compiler.
+3. Certify the queued p = 7, m = 4 line orbit {(1,0),(1,1),(1,2),(1,4)} (bounded-p note, line-threshold
+   table) with a streamed lrat-check, as in case_cert_stream.py. Acceptance: UNSAT, "c VERIFIED", exit 0.
+4. Interval S at q = 17: run `interval-s/linedata.py 17 4` without the brute-force step, then the
+   orbit split as at q = 13. Report the CPU before launching any run over 4 core-hours.
+5. Near-linear: run `near-linear-total/dead_w3_search` at κ = 3, d = 3..5, p ∈ {19, 31, 37}, as in
+   that note's Next section. Record every dead bank found.
+6. Small sets: run `small/msplit.py` on the six-point 10-set with Φ_1 fixed of support 3 (480 cases),
+   streamed. Acceptance: every case UNSAT and VERIFIED, together with the 100 cases already VERIFIED.
+
 ## 2026-11-11 Rees SDE p = 5, k = 3
 
 Read audits/reviews/2026-11-11-rees-sde-p5-d3.md. Folder: audits/reviews/2026-11-11-rees-sde-p5-d3/.
@@ -93,7 +118,9 @@ each computation under ~2 core-h. Do not edit the paper.
    - Optional: a second seed at 34259 and 34469, to test whether the 4× spread belongs to the primes or to the
      S draws.
    - Acceptance: all, rest and 2+2 B_L with 2σ, scored by the rule.
-8. The spread test of obstruction (c) (§12.14; proposed 11 Nov, NOT started; ask the coordinator before starting).
+8. The spread test of obstruction (c) (§12.14). DONE 11 Nov 21:20: σ_L(7) = 0.316, T1′ ratio 0.90 (0.59–1.40),
+   COMPATIBLE; two predictions missed; referee round 4m ACCEPT WITH CHANGES, applied. Output
+   `review-2026-11-10/scratch/tail_k7_24.out` (+ `_secondary.out`, `r4m_checks.out`).
    - Rules frozen in `osc-mc/predictions_k7_tail.txt` (revision 1 after referee round 4k-a, revision 2 after 4k-b
      part 1); do not change them once any run starts.
    - Run, two at a time (about 22 core-h in all), from `osc-mc`, outputs outside the repo:
@@ -101,8 +128,25 @@ each computation under ~2 core-h. Do not edit the paper.
      34147 34217 34231 34511 34651 34679 34721 34819 35141 35393 35533 35603 35617 35771 35897 35911 36107, with
      seeds 31, 33, …, 63 in that order.
    - Then `python -I tail_index.py k7 <the 7 band npz> <the 17 new npz>` into `review-2026-11-10/scratch/tail_k7_24.out`.
+   - STARTED 11 Nov 10:43 (`osc-mc/run_k7_tail.sh`, logs `osc-mc/tail7/`, npz in the session scratchpad); about
+     65 min per run, two at a time.
    - Acceptance: the T1′ line (σ_L(7)/0.352, 95% bootstrap range, WIDER / NARROWER / COMPATIBLE), the extrapolation
      parts, and the top-7 B_D resolution count; then an independent AI review before recording.
+9. The κ = 8 direct (C1) sampler and the κ = 8 spread test (§12.14; scoped 11 Nov, NOT started; referee rounds 4l and
+   4l part 2). Scope, cost and frozen rules: `osc-mc/predictions_k8_c1_sampler.txt` (revisions 1–2 supersede parts
+   of the original text; revision 3 freezes item 8's σ_L(7) = 0.3163 raw, 0.3100 corrected, and its 24 triples).
+   - Method: sequential importance sampling (s1, t1, s2, t2, …; weight = product of the candidate counts). Scoping
+     timers `review-2026-11-10/scratch/c1_seq_proto.py` and `c1_cost_k8.py`. N1/μ1 reproduces at κ = 7 (34259) and
+     κ = 6 (1621); the referee checked exact counts at κ = 3 and 4. At κ = 8, λ 0.18: about 5% success, ESS about 0.45,
+     about 1.3 core-h per prime. Uniform-S sampling would need about 900 core-h.
+   - Build `mc_c1seq.py` (mc_classes' per-configuration Q, weighted batch sums, `weighted` flag, attempts and raw ΣW
+     per batch) and a weighted reader. Build checks B1–B3: Q relabelling invariance, bucket sizes, weight tail.
+   - Then validation V0–V3: κ = 5, p = 401 exact (decisive); 34259; 1657 and 1621; ESS ≥ 0.25. Then an unscored
+     5000-attempt κ = 8 timing probe per band.
+   - Then K8, primary at equal λ: 24 κ = 8 primes at λ ≈ 0.3 (`default_rng(2028)`, 100k attempts each), with ratio
+     σ_L,c(8)/σ_L,c(7) against item 8. Also a reading at λ_T(8) ≈ 0.18: 24 primes (`default_rng(2027)`, 250k
+     attempts), against the 2.08 room. About 75–90 core-h in all, two at a time; about 8 GB of npz outside the repo.
+   - Acceptance: V and B pass as written, then the K8 line, then an independent AI review before recording.
 
 ## 2026-11-09 Rees Square Gap: OSC′ Follow-Up
 

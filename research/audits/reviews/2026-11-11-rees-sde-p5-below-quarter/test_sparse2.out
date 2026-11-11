@@ -1,0 +1,19 @@
+A. families at m = guarantee(n) exactly (failures would print FAIL)
+n=6 m=19 (B' 19) consumed random:13 random:14 random:8 simplex2:7 simplex2:14 simplex2:8 simplex3:0 simplex3:7 simplex3:8 simplex2mix:0 simplex2mix:14 simplex2mix:14 simplex3mix:7 simplex3mix:14 simplex3mix:8 series4:13 series4:8 series4:18 weight2:0 weight2:0 weight2:0 fewdistinct:0 fewdistinct:0 fewdistinct:0 lowrank:8 lowrank:4 lowrank:7
+n=9 m=35 (B' 35) consumed random:31 random:26 random:25 simplex2:25 simplex2:11 simplex2:30 simplex3:26 simplex3:0 simplex3:11 simplex2mix:27 simplex2mix:31 simplex2mix:25 simplex3mix:19 simplex3mix:30 simplex3mix:19 series4:23 series4:27 series4:24 weight2:10 weight2:21 weight2:22 fewdistinct:4 fewdistinct:0 fewdistinct:0 lowrank:9 lowrank:0 lowrank:0
+n=12 m=55 (B' 55) consumed random:49 random:44 random:48 simplex2:48 simplex2:46 simplex2:48 simplex3:41 simplex3:48 simplex3:47 simplex2mix:42 simplex2mix:42 simplex2mix:42 simplex3mix:48 simplex3mix:43 simplex3mix:47 series4:8 series4:32 series4:0 weight2:35 weight2:9 weight2:41 fewdistinct:4 fewdistinct:0 fewdistinct:0 lowrank:0 lowrank:17 lowrank:18
+n=16 m=89 (B' 89) consumed random:75 random:69 random:76 simplex2:81 simplex2:66 simplex2:81 simplex3:59 simplex3:67 simplex3:73 simplex2mix:77 simplex2mix:80 simplex2mix:78 simplex3mix:84 simplex3mix:68 simplex3mix:56 series4:0 series4:59 series4:8 weight2:29 weight2:55 weight2:27 fewdistinct:0 fewdistinct:0 fewdistinct:0 lowrank:6 lowrank:26 lowrank:0
+n=20 m=131 (B' 131) consumed random:124 random:117 random:116 simplex2:97 simplex2:115 simplex2:123 simplex3:122 simplex3:121 simplex3:100 simplex2mix:124 simplex2mix:122 simplex2mix:124 simplex3mix:116 simplex3mix:116 simplex3mix:120 series4:16 series4:83 series4:0 weight2:34 weight2:29 weight2:46 fewdistinct:0 fewdistinct:0 fewdistinct:0 lowrank:38 lowrank:0 lowrank:33
+n=25 m=195 (B' 195) consumed random:172 random:178 random:183 simplex2:182 simplex2:176 simplex2:184 simplex3:179 simplex3:179 simplex3:179 simplex2mix:185 simplex2mix:178 simplex2mix:153 simplex3mix:172 simplex3mix:186 simplex3mix:181 series4:0 series4:92 series4:16 weight2:23 weight2:24 weight2:0 fewdistinct:0 fewdistinct:4 fewdistinct:0 lowrank:40 lowrank:0 lowrank:45
+n=30 m=270 (B' 271) consumed random:257 random:244 random:255 simplex2:245 simplex2:241 simplex2:250 simplex3:253 simplex3:241 simplex3:221 simplex2mix:243 simplex2mix:248 simplex2mix:240 simplex3mix:242 simplex3mix:219 simplex3mix:232 series4:16 series4:16 series4:0 weight2:77 weight2:10 weight2:32 fewdistinct:0 fewdistinct:0 fewdistinct:0 lowrank:46 lowrank:77 lowrank:61
+n=40 m=455 (B' 461) consumed random:421 random:415 simplex2:388 simplex2:396 simplex3:405 simplex3:419 simplex2mix:353 simplex2mix:359 simplex3mix:418 simplex3mix:416 series4:268 series4:8 weight2:231 weight2:160 fewdistinct:0 fewdistinct:0 lowrank:120 lowrank:102
+n=50 m=690 (B' 701) consumed random:649 random:645 simplex2:601 simplex2:599 simplex3:645 simplex3:613 simplex2mix:483 simplex2mix:482 simplex3mix:645 simplex3mix:641 series4:16 series4:24 weight2:29 weight2:112 fewdistinct:0 fewdistinct:0 lowrank:185 lowrank:158
+runs 225 failures 0
+pieces with q>=20: 551, cost/q mean 0.8481 max 1.1000, min slack to bound 0 (q,r,c,bound worst: (20, 2, 22, 22))
+B. simplex-block piece costs: the first piece of a pure simplex3 instance at q = 121
+  solved: True  first stages (q, r, |Y|, bound): [(121, 3, 120, 120), (119, 3, 113, 118), (117, 3, 111, 116)]
+C. hill climb (maximise consumed columns), n = 8, 10, 12 at m = guarantee(n)
+  n=8 m=29 max consumed by pieces 28 (pool needs m-1=28 at most)
+  n=10 m=41 max consumed by pieces 40 (pool needs m-1=40 at most)
+  n=12 m=55 max consumed by pieces 54 (pool needs m-1=54 at most)
+total failures 0 time 474s

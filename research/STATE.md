@@ -6,23 +6,36 @@ only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
 As of 2026-11-11, after the handoff entry
-"2026-11-11 Rees Square Gap: 34259 Splits Like 36037 (Lift Not in the 2+2 Family; Pre-Registered, All Predictions Held); Obstruction (c) Recast as the Spread of B_L, Next Test σ_L at κ = 7 Pre-Registered (AI Only)";
-the 2026-11-11 SDE entry below it and the entries from 2026-11-10 are by other sessions.
+"2026-11-11 Rees Square Gap: κ = 7 Spread Test Scored (σ_L 0.316, Ratio 0.90 to κ = 6, COMPATIBLE; Two Predictions Missed); σ_L(7) Frozen for the κ = 8 Test (AI Only)";
+the SDE entry below it is by another session (first Now block); the earlier square-gap entries are summarised
+in the second Now block.
 
-Now (11-09, AI only): SDE F_q extension refereed by two AI referees.
-- Proved (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2, deterministic (Theorem B′;
-  KOW's q = 5 constant 0.4 -> 0.25). Theorem C: (1−1/p)a²/2 + O(a log a) (κ = 2 every odd p,
-  κ = 3 at p ≡ 1 mod 3). Exact (Lemma Q repaired by Lemma N): no two-dependency 2-dim gadget at
-  p = 7, 11, 13 (κ = 2); k = 3 at p = 7 also UNSAT. The lrat-check build used on 9 Nov was
-  unsound; re-verified with the fixed checker: p = 7 (k = 2, 3) and p = 11. p = 13 is CaDiCaL UNSAT,
-  not independently proof-checked (rerun queued; audits/reviews/2026-11-09-lrat-and-audit-fixes.md).
-  q = 11, 13 interval S open.
-- p = 5, k = 3 (11-11): NO. F_5^3∖0 is infeasible, certified with the fixed lrat-check (session A's
-  three cases, re-run locally), so "any three dependencies" gives no n²/6.
-  Spanning sets of ≤ 9 labels are all feasible; 10-label infeasible sets exist. See
-  audits/reviews/2026-11-11-rees-sde-p5-d3.md. Open: a piece-selection rule keeping label sets feasible.
-- Earlier refs: audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8. SAT checks use gadget_cnf5.py
-  (CaDiCaL + the fixed lrat-check in audits/reviews/2026-11-09-lrat-checker-fix/), not pycosat.
+Now (11-11, AI only, pending human review): SDE open items worked. Paper NOT edited.
+- Earlier (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2 (Theorem B′). Theorem C:
+  (1−1/p)a²/2 + O(a log a). Lemma Q repaired by Lemma N.
+- NEW, p = 5 below n²/4: Theorem S, m ≥ 0.24n² + 0.48 n log_5 n + 1.92n + 3, deterministic. It beats
+  B′ for n ≥ 29. 6/25 is the limit of this piece family (lifting lemma). Untested: the doubled label
+  set F_5^3∖0. (audits/reviews/2026-11-11-rees-sde-p5-below-quarter.md)
+- NEW, p = 5, k = 3 small sets: every spanning set of ≤ 9 labels is feasible (certified by explicit
+  models over all class orbits). 1,417 orbits of 10 labels are infeasible by the criterion; six are
+  LRAT-certified at the criterion level, none against the original CNF. F_5^3∖0 is infeasible
+  (certified), so there is no n²/6 by "any three dependencies". (audits/reviews/2026-11-11-rees-sde-p5-d3.md)
+- NEW, bounded p (κ = 2): Theorem LG. Full and nested label sets give one dimension per piece at
+  p = 7 and 11 for any number of dependencies; at p = 13 this is conditional on the re-check. So the
+  p = 5 / p ≥ 7 gap is real for the piece method. (audits/reviews/2026-11-11-rees-sde-bounded-p.md)
+- NEW, near-linear total regime: Theorem E. More than (2+η)a columns suffice when
+  p^{η/(2(2+η))} ≥ 2(κ−1)((2+η)a+1); E′ gives exactly 2a + 1 for p > (2κ−2)^{4a+2}. PWPP at
+  a·log₂p columns. The complexity is still OPEN. (audits/reviews/2026-11-11-rees-sde-near-linear-total.md)
+- NEW, interval S: Lemma N′. Lemma Q is exact for every S ≠ F_p. q = 11 and q = 13 are UNSAT for the
+  free problem (LRAT-verified). (audits/reviews/2026-11-11-rees-sde-interval-s.md)
+- Exact, κ = 2: no two-dependency 2-dim gadget at p = 7, 11 (LRAT, fixed checker). The p = 13 re-check
+  is RUNNING with streamed proofs: 10/37 cases VERIFIED as of 19:20, about 20 h of wall time left
+  (2026-11-09-lrat-checker-fix/recheck/case_cert_stream.py → cases13_cases.out). It stays "CaDiCaL
+  only" until 37/37.
+- Disk rule: at most one proof > 5 GB on disk at a time, and no big run with < 30 GB free. Stream
+  proofs into the fixed lrat-check.
+- Next: the queue in the plan entry "2026-11-11 Rees SDE Open Items"; then the doubled label set
+  (the next hard question). Earlier refs: audits/reviews/2026-11-08-rees-sde-fq-nest.md §0 and §8.
 
 Now (11-10, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -97,19 +110,23 @@ Now (11-10, AI only): square gap still OPEN.
     the rest is not separated from the band's upper pair (1.27x). Two primes selected high, not a class.
   - Spread form of (c) (section 12.14; 11-11): the sup over N_T primes near T matters (log_7 N_T 3.42);
     a power tail fills the L room at gamma_L ~ 0.5, the D room at gamma_D ~ 1.0 (kappa 7-10, up to
-    O(1)s). kappa=6 sigma_L = sd(ln B_L) grows as lambda falls (0.49 -> 0.24, ~3.8 sigma). kappa=7
-    band (7 primes): sigma_L 0.46, ratio 1.30 (0.61-2.02) COMPATIBLE.
+    O(1)s). kappa=6 sigma_L = sd(ln B_L) grows as lambda falls (0.49 -> 0.24, ~3.8 sigma).
+  - Spread test at kappa=7 (item 8, pre-registered, scored 11-11 21:20, referee 4m): 24 primes at
+    lambda 0.29-0.31, sigma_L(7) 0.316, ratio to kappa=6's 0.352 is 0.90 (0.59-1.40) COMPATIBLE;
+    predicted sigma_L 0.35-0.55 and ratio 1.0-1.6 MISSED. No growth seen from kappa 6 to 7 at this
+    lambda, none excluded. Post hoc: 7 band primes 0.46 vs 17 drawn 0.25 (P 2.6%); the 7-prime
+    figures are superseded. B_D resolved at 0 of 24. Extrapolated log_7 sup B_L -0.09 (lognormal).
   - The exponent needs OSC' at lambda_T = 0.43, 0.18, 0.07, 0.02 for kappa = 7..10, below almost
     everything tested.
 - Monte Carlo files from before the 9 Nov 22:20 batching fix overstate weak bins (report 11.3).
 - Proved (AI-refereed): C1 configurations exist below pigeonhole (Theorem C; ~kappa^kappa/(2e)).
 - Next:
-  - the spread test (mechanical item 8, pre-registered in osc-mc/predictions_k7_tail.txt, NOT
-    started, ~22 core-h): sigma_L at kappa=7, lambda ~ 0.3 on 24 primes vs kappa=6's frozen 0.352
-    (rule T1'; detects 1.5x only about half the time); decisive form kappa=8 near lambda 0.18;
+  - the kappa=8 (C1) sampler (mechanical item 9; scoped and pre-registered, NOT started; the
+    decisive form of the spread test; sigma_L(7) frozen in its REVISION 3): sequential
+    importance sampling, ~1.3 core-h/prime vs ~900 uniform-S; validate V0-V3 first; primary test at
+    equal lambda ~ 0.3 (sigma_L(8)/sigma_L(7)), lambda_T(8) = 0.18 band a reading only; ~75-90 core-h;
   - theory: bound rho_rest (the not-2+2 part of OSC') or G near the thresholds (joint factorial
     moments of (b_K, m_K) at lambda ~ 1); neither has a method;
-  - a (C1) sampler for kappa=8 at lambda 0.18;
   - (L') for the (2,2) classes;
   - kappa=5 at 2521 and 2621, once the machine is unloaded.
 - See audits/reviews/2026-11-09-rees-square-gap-stepanov.md sections 11-12.
@@ -1304,13 +1321,14 @@ or separation is claimed.
   23671, 24841 have witnesses checked by an independent verifier and PARI (530 witness lines, 0
   bad); every plain-mode cross-check INFEASIBLE. Report audits/reviews/2026-11-10-rees-dfs2b-queue-final.md.
   Paper pass APPLIED locally to docs/papers/rees-hsp (core 35 pp., companion 211 pp., clean);
-  backup in the gitignored prep folder. The Ivanyos personal-communication sentence is still not in.
+  backup in the gitignored prep folder. The Ivanyos personal-communication sentence (he confirmed the corrected arity bound and permitted saying so) went into core rem:is-printed, main rem:is-import(c), both rem:main-solver, the main status paragraph and prov:sde-is-import on 11-11; both compile clean (211 and 35 pp.); the rest of the IS reading stays AI-checked, pending human review.
 - **Rees SDE open directions (11-08, AI only, pending human review).** (i) p = 3, worst-case
   F_3^n subset sum: PROVED deterministic poly time at n²/4 + O(n^{3/2}) vectors (KOW: n²/3);
   proof referee no gap, break attempt no failure, no prior source found; beats KOW's explicit
   bound only for n > 80. (ii) Prime condition: o(a²) whenever p/a -> inf (F = O(a²/min(log a,
-  log(p/a)))); an a-independent threshold needs open Q-loc; nothing at bounded p. (iii)
-  Near-linear: only promise-problem hardness below ~2a (Legendre PRF); total regime untouched.
+  log(p/a)))); an a-independent threshold needs open Q-loc; bounded p: barrier Theorem LG (11-11). (iii)
+  Near-linear: only promise-problem hardness below ~2a (Legendre PRF); total regime: threshold located
+  11-11 (Theorem E), complexity open.
   Handoff entry "2026-11-08 Rees SDE Open Directions". (iv) F_q (11-09, AI-refereed): p = 5 at
   n²/4 + 3n/2 + 2 (Theorem B′); (1−1/p)a²/2 + O(a log a) at every odd p (κ = 2); no
   two-dependency gadget at p = 7, 11, 13 (LRAT-verified at p = 7, 11 with the fixed checker; p = 13 CaDiCaL UNSAT,

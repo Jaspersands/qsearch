@@ -1,0 +1,35 @@
+# Item 8 scoring (rule T1', predictions_k7_tail.txt revisions 1-2). Run from osc-mc/ as
+#   nice -n 19 /opt/anaconda3/bin/python -I tail_index.py k7 <files>
+# files, in this order (7 band primes, then the 17 drawn at seeds 31..63 in draw order; npz kept outside the repo):
+#   /private/tmp/claude-501/-Users-jaspersands--claude-spares-spare-kZ9WMM/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/mc_k7_p34259_s19.npz
+#   /private/tmp/claude-501/-Users-jaspersands--claude-spares-spare-kZ9WMM/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/mc_k7_p34273_s21.npz
+#   /private/tmp/claude-501/-Users-jaspersands--claude-spares-spare-kZ9WMM/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/mc_k7_p34469_s23.npz
+#   /private/tmp/claude-501/-Users-jaspersands--claude-spares-spare-kZ9WMM/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/mc_k7_p35281_s25.npz
+#   /private/tmp/claude-501/-Users-jaspersands--claude-spares-spare-kZ9WMM/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/mc_k7_p36541_s27.npz
+#   /private/tmp/claude-501/-Users-jaspersands--claude-spares-spare-kZ9WMM/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/mc_k7_p35099_s13.npz
+#   /private/tmp/claude-501/-Users-jaspersands--claude-spares-spare-kZ9WMM/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/mc_k7_p34847_s13.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34147_s31.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34217_s33.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34231_s35.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34511_s37.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34651_s39.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34679_s41.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34721_s43.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p34819_s45.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35141_s47.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35393_s49.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35533_s51.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35603_s53.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35617_s55.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35771_s57.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35897_s59.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p35911_s61.npz
+#   /private/tmp/claude-501/-Users-jaspersands-Developer-qsearch/2e593e3c-5bbe-4d57-9307-748faf30eaee/scratchpad/tail7/mc_k7_p36107_s63.npz
+21:20:01
+  kappa=7 band   B_L: N 24  median 0.266  max ratio 1.95  gamma_max 0.21  Hill(k=6) 0.13 (bootstrap 95% 0.04-0.31)  #X>2 0
+  kappa=7 band   sigma_L = sd(ln B_L) 0.316 (bootstrap 95% 0.219-0.393)
+  kappa=7 band   B_D: N 24  median 0.120  max ratio 23.61  gamma_max 0.99  Hill(k=6) 0.31 (bootstrap 95% 0.08-1.64)  #X>2 11
+  B_D resolved (z >= 2) at 0 of 24 primes; top 7 B_D values resolved: 0 (gamma_D reported only if all)
+  T1': sigma_L(7)/sigma_L(6) 0.90 (bootstrap 95% 0.59-1.40; N7 24, N6 31) -> COMPATIBLE
+  N_T 784 (log_7 3.42); median B_L 0.265; extrapolated log_7 sup: lognormal -0.09, power -0.24 (L room 1.70 before O(1))
+    parts: log_7 median -0.68 (measured below lambda_T; same size as the O(1)); log_7(sup/median): lognormal 0.59, power 0.44

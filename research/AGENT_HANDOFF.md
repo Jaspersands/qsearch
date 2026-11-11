@@ -1,4 +1,107 @@
 # Research Agent Handoff
+## 2026-11-11 Rees Square Gap: κ = 7 Spread Test Scored (σ_L 0.316, Ratio 0.90 to κ = 6, COMPATIBLE; Two Predictions Missed); σ_L(7) Frozen for the κ = 8 Test (AI Only)
+
+- **Computed, pre-registered, AI-refereed (round 4m, ACCEPT WITH CHANGES, applied).** Mechanical item 8 of
+  `audits/reviews/2026-11-09-rees-square-gap-stepanov.md` §12.14, rule T1′ frozen in
+  `osc-mc/predictions_k7_tail.txt` (revisions 1–2) before any run.
+  - **Quantity:** σ_L = sd(ln B_L) over 24 primes p ≡ 1 (mod 7), λ = p/7⁶ in 0.290–0.311: the 7 band primes plus 17
+    drawn by `default_rng(2026)`, never selected on symR or B_L. `mc_classes.py 7 p 6000` per prime (S-batched),
+    group constant B_L of OSC′ (§11).
+  - **Result:** σ_L(7) = 0.316 (0.219–0.393); ratio to κ = 6's frozen 0.352 at equal λ is 0.90 (0.59–1.40) →
+    COMPATIBLE. The referee reproduced it by its own estimator; other seeds give 0.59–1.36/1.38.
+  - **Predictions:** σ_L 0.35–0.55 and ratio 1.0–1.6 MISSED; COMPATIBLE and lognormal log₇ sup < 0.6 (−0.09) held
+    (the latter not independent).
+  - **Reported only:** Hill 0.13; no X > 2; log₇ sup B_L −0.09 lognormal, −0.24 power, against the L room 1.70
+    before O(1). B_D resolved at 0 of 24 (12 clipped at 0), so no B_D tail reading. Noise-corrected ratio 0.88.
+  - **Post hoc:** the 7 band primes (σ_L 0.46) are wider than the 17 drawn (0.25); a random 7 is as wide in 2.6% of
+    splits. The seven-prime figures of the previous entry (σ_L 0.46, ratio 1.30, sup 0.14) are superseded.
+- **What it shows:** no growth of the B_L spread from κ = 6 to 7 at λ ≈ 0.3, and none excluded (the range allows
+  1.4× either way). The test had modest power (a 1.5× spread called WIDER about half the time).
+- **Baseline:** κ = 6, λ (0.25, 0.31], N 31, σ_L 0.352.
+- **Claim gates stay false:** obstruction (c) resolved either way; any extrapolated sup as a bound; "κ = 7's spread
+  is no wider" or "is narrower" than κ = 6's; "within budget at κ = 7"; "γ > 0 shows a power tail".
+- **Next hard question:** does σ_L grow from κ = 7 to 8 at equal λ, and how wide is it near λ_T(8) = 0.18?
+- **Next command:** mechanical item 9 (NOT started; needs the coordinator's go-ahead): build `osc-mc/mc_c1seq.py`
+  per `osc-mc/predictions_k8_c1_sampler.txt` (revision 3 freezes σ_L(7) = 0.3163 raw, 0.3100 corrected, with the
+  24 triples); checks B1–B3, validation V0–V3 (V0 κ = 5, p = 401 exact is decisive), then the κ = 8 timing probe.
+  Expected artifact: validation outputs in `review-2026-11-10/scratch/`. Acceptance: V and B pass as written,
+  before any scored κ = 8 run.
+- **Mechanical items:** `MECHANICAL_FOLLOW_UP_PLAN.md`, section "2026-11-10 Rees Square Gap: Spike Survey
+  Follow-Up", items 8 (DONE) and 9.
+- **Files:** `osc-mc/run_k7_tail.sh`, `osc-mc/tail7/*.log`, `review-2026-11-10/scratch/tail_k7_24.out`,
+  `tail_k7_24_secondary.{py,out}`, `r4m_checks.{py,out}`, `ROUND3.md` (round 4m and disposition),
+  `predictions_k8_c1_sampler.txt` (revision 3). The npz files stay outside the repo.
+
+## 2026-11-11 Rees SDE Open Items Worked: p = 5 Below n²/4 (Theorem S, 0.24n²), Near-Linear Threshold (Theorems E, E′), Bounded-p Barrier (Theorem LG), Interval S q = 11, 13 UNSAT, Small Sets Certified; p = 13 Re-Check Streaming (AI Only)
+
+AI-only; one Claude Code session with five subagents; nothing human-reviewed; no claim gate changed;
+paper NOT edited; no git, no network beyond the authorized research workflow. Each proof below was
+re-read by the integrator, and the cheap computations were re-run. Notes (all in audits/reviews/):
+2026-11-11-rees-sde-p5-below-quarter.md, -near-linear-total.md, -bounded-p.md, -interval-s.md,
+2026-11-11-rees-sde-p5-d3.md ("Small-set certification" section). Mechanical items: plan entry
+"2026-11-11 Rees SDE Open Items".
+
+- **Proved, p = 5 worst case (Theorem S).** Every λ_1..λ_m ∈ F_5^n with
+  m ≥ (6/25)n² + (12/25)n log_5 n + 1.92n + 3 has a nonzero {0,±1} solution, found deterministically
+  in O(n⁴ log n) field operations. The only finite input is Fact F5.
+  - Method: take a minimum-support 2-dim subspace of an r-dim dependency space, r ≈ log_5 q.
+  - The exact recursion is below Theorem B′ for n ≥ 29 (242,502 vs 251,501 at n = 1000). The
+    integrator re-ran accounting.py and got the same numbers.
+  - Barrier: the lifting lemma (F_5^k∖0 is never 3-feasible, from Fact T3) limits this method
+    family to 6/25. The doubled label set F_5^3∖0 is untested.
+- **Proved, near-linear total regime (Theorem E).** For p ≡ 1 mod κ, every bank of more than
+  (2+η)a columns has a solution once p^{η/(2(2+η))} ≥ 2(κ−1)((2+η)a+1).
+  - E′: exactly 2a + 1 columns suffice when p > (2κ−2)^{4a+2}.
+  - Lemma R reduces the problem to strictly sub-critical banks.
+  - PWPP membership at a·log₂p columns; SIS-hard only when |P| = 2.
+  - Complexity at near-linear arity for large p is still OPEN: no algorithm, no hardness.
+- **Proved, bounded p (Theorem LG, κ = 2).** If the full lines of L span and no planar section
+  through two full lines has a weakly nondegenerate 2-family, every family on L has rank ≤ 1.
+  - Corollary: full and nested label sets give one dimension per piece at p = 7 and 11, for any
+    number of dependencies.
+  - p = 13 is conditional on the re-check below.
+  - Rank version LG_R.
+  - One of the two p = 7 four-line orbits is LRAT-certified; the other is queued under the disk
+    rule.
+  - Half-lines at p = 7: 224 of 256 are feasible. A 30% saving is suggested by a first moment
+    [argued]; no piece rule is known.
+- **Proved, interval S (Lemma N′ and Corollary Q′).** For 0 ∈ S ≠ F_p, weak nondegeneracy depends
+  on γ alone, so Lemma Q is exact.
+  - q = 11, S = {0,±1,±2}: the free problem is UNSAT, LRAT-verified four ways.
+  - q = 13, S = {0,…,±3}: UNSAT through a 26-orbit split with a coverage check, LRAT-verified.
+  - The fq-nest note's item 4 and table rows (b) were updated.
+- **Certified, p = 5 small sets.** Every spanning label set of ≤ 9 labels in F_5^3 is feasible.
+  - Lemmas (G) GL_3 invariance, (±) signs and (M) monotonicity reduce the problem to 28,962 class
+    orbits at k = 9, instead of 9,598,189 vector orbits.
+  - Burnside reproduces the counts. Completeness has a second check with an independent canonical
+    form. 35,236 explicit models pass labelsat.check_model.
+  - The integrator rebuilt the orbit lists, re-ran Burnside and check_models (identical hashes,
+    all pass), and checked lemmas (±) and (M).
+  - Size 10: 1,417 of 148,982 class orbits are infeasible by the criterion; the rest have checked
+    models. Six of the 1,417 are LRAT-certified at the criterion level: 35 pivot CNFs each, plus a
+    feasible control that comes out SAT.
+  - Original-CNF LRAT for any 10-set: NOT achieved. The 100 support-≤2 cases are VERIFIED for two
+    sets; the support-≥3 case did not finish in 9,000 s.
+  - No simple rule separates infeasible from feasible 10-sets.
+- **Running, p = 13 κ = 2 re-check with the fixed checker.** Script
+  2026-11-09-lrat-checker-fix/recheck/case_cert_stream.py, a copy of case_cert.py that streams the
+  proof from CaDiCaL through a fifo into lrat-check on stdin, hashing it on the way.
+  - Validation: two p = 11 cases reproduce the 9 Nov on-disk proof sha256 and come out VERIFIED. A
+    capped case comes out NOT VERIFIED.
+  - Progress: 10 of 37 cases VERIFIED so far. Proofs are 64–91 GB streamed, about 2 h CPU per case,
+    3 jobs. Output: recheck/cases13_cases.out.
+  - The earlier on-disk attempt filled the disk; it is in the session scratchpad and not kept.
+- **Gates that stay false.** n²/6 at p = 5; any p = 5 constant below 6/25 by this piece family; a
+  polynomial algorithm or hardness for the near-linear total regime; "p = 13 LRAT-verified" (until
+  37/37); "the infeasible 10-sets are certified against the original CNF"; anything about the paper.
+- **Next hard question.** Can the doubled label set F_5^3∖0 (each label with multiplicity 2), or
+  another non-simplex block, give a 3-dim piece cheaper than 3·(6/25) per dimension? Otherwise 6/25
+  is this method family's limit.
+- **Next command.** Let the running case_cert_stream.py finish.
+  - Expected artifact: recheck/cases13_cases.out ending "TOTAL: 37/37 cases certified".
+  - Acceptance test: every case UNSAT, tie-in OK, lrat-check exit 0 with "c VERIFIED".
+  - Then drop "conditional" from the LG p = 13 corollary, the fq-nest κ = 2 p = 13 row and STATE.
+
 ## 2026-11-11 Rees Square Gap: 34259 Splits Like 36037 (Lift Not in the 2+2 Family; Pre-Registered, All Predictions Held); Obstruction (c) Recast as the Spread of B_L, Next Test σ_L at κ = 7 Pre-Registered (AI Only)
 
 AI-only; nothing human-reviewed; no claim gate changed; paper NOT edited; no git. Note:
@@ -31,6 +134,11 @@ Referee rounds 4k-a, 4k-b parts 1 and 2 with dispositions: osc-mc/review-2026-11
   drawn primes at seeds 31–63 odd, then `python tail_index.py k7 <24 npz>`. Artifact: σ_L(7) on 24 primes and the
   T1′ line. Acceptance: T1′ scored WIDER / NARROWER / COMPATIBLE against the frozen 0.352 (power: 53% at 1.5×).
 - Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md, 2026-11-10 Spike Survey section, items 7 (DONE) and 8.
+- **Update (same day).** Item 8 STARTED 10:43. Scoped, not started: mechanical item 9, the κ = 8 (C1) sampler
+  (`osc-mc/predictions_k8_c1_sampler.txt` with revisions 1–2; referee rounds 4l and 4l part 2). It uses sequential
+  importance sampling at about 1.3 core-h per prime, and its N1/μ1 reproduces at κ = 7 and κ = 6. Validation
+  V0–V3 comes first. The primary κ test is at equal λ ≈ 0.3; λ_T(8) is a reading only. Gate: "the sampler targets
+  mc_classes' measure" stays false until V and B pass.
 
 ## 2026-11-11 Rees SDE p = 5, k = 3: Full Set F_5^3∖0 Infeasible, So No n²/6 by "Any Three Dependencies" (AI Only)
 
