@@ -1,0 +1,16 @@
+kappa p d n found evals restarts seconds  [dead bank or least #proj solutions]
+3 7 3 7 True 52 1 0 [[1, 1, 2], [2, 4, 6], [1, 1, 0], [2, 1, 6], [4, 4, 3], [4, 0, 2], [5, 5, 1]]
+3 13 3 7 True 9125 19 4 [[0, 11, 1], [8, 6, 9], [4, 3, 12], [12, 8, 5], [1, 9, 6], [4, 7, 1], [4, 3, 4]]
+3 19 3 7 False 659307 941 600 2
+3 13 4 9 False 85545 134 600 1
+4 29 3 7 True 181 1 1 [[15, 23, 1], [10, 22, 13], [25, 16, 8], [28, 9, 14], [6, 15, 12], [12, 19, 20], [27, 21, 16]]
+# Item 5 (kappa=3, d=3..5, p in {19,31,37}, ssc mode, 45s budget each via P0-free exact C evaluator verified 62/62 against sdecore.solutions_proj; also cross-checked with dead_w3_search.py --item5 --ssc):
+3 19 3 7 False 9775614 13387 45 3
+3 31 3 7 False 2855978 3365 45 10
+3 37 3 7 False 1739146 2190 45 14
+3 19 4 9 False 1337510 1508 45 3
+3 31 4 9 False 243415 250 45 13
+3 37 4 9 False 120331 144 45 19
+3 19 5 11 False 189310 207 45 18
+3 31 5 11 False 21547 18 45 215
+3 37 5 11 False 9087 12 45 445
