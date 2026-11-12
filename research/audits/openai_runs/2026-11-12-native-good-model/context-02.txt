@@ -1,0 +1,68 @@
+# Numerical torsion lift from closed divisors
+
+2026-11-12. Scoped classical bridge, independently source-checked in
+`audits/reviews/2026-11-12-surface-mascot-lift.md`. This advances the native
+surface comparator by paying numerical lifting once a faithful arithmetic
+model is available. It does not pay reconstruction precision or that model.
+
+## Exact statement
+
+Given a genus-g curve with good reduction at P, an actual point O, a faithful
+separable plane/function-field presentation of its good special curve, and
+polynomial-size exact generic Riemann--Roch coordinates, an actual prime-to-P
+ell-torsion class represented by closed divisors can be lifted to precision
+P^E with polynomial bit cost in the presented sizes, g, numerical E, residue
+extension degree, log P and log ell. No geometric support splitting is needed.
+This is classical Mascot/Khuri-Makdisi arithmetic; no quantum advantage follows.
+
+For d0=2g+1 and D0=d0 O, a class D-gO becomes D'=D+(d0-g)O,
+represented by L(2D0-D'). Closed-place RR constructs this subspace. One common
+residue field of polynomial degree supplies more than 5d0 evaluation points
+away from denominators and exceptional loci: Hasse--Weil and factoring random
+projection fibres give a polynomial capped clock. Unit derivatives lift them
+over one unramified local extension. Their supports are independent of D.
+
+Compute exact RR functions in a common-denominator normal form and saturate
+their coefficient lattice. Faithful reduction and a nonzero reduced denominator
+give independent reduced rational functions. Integrality of evaluations at
+more than deg(D0) points forces genuine section integrality: a primitive
+nonintegral section scaled into H0(D0) would otherwise have too many zeros
+on the special curve. Nakayama then certifies the full integral RR lattice.
+Use all products/constraints and full linear systems in the source's practical
+randomized shortcuts; these variants remain polynomial.
+
+At each precision-doubling step Mascot Algorithm10 lifts any Jacobian point
+modulo P^e to P^(2e), then multiplies by N=0 mod P^e, N=1 mod ell. The error
+lies in J_e/J_(2e), whose formal-group law is additive because the ideal is
+square-zero; its exponent divides P^e. This proves unique torsion lifting,
+including P=2, without the source's excessive global logarithm claim.
+
+## Decisive corrections and remaining inputs
+
+* Good reduction of the abstract curve alone is insufficient. Replacing y
+  by Y=P y changes a good equation into Y²=P²f(x), with nonreduced displayed
+  reduction. The faithful presentation and RR coordinate-size bound are
+  explicit upstream obligations, not supplied by the words "good reduction".
+* The source's blanket log:J1->P O^g isomorphism fails at two. On
+  y²+xy=x³+4x+1, discriminant -4225, T=(-1/4,1/8) is nonzero 2-torsion
+  reducing to O with formal parameter 2. The square-zero proof repairs the
+  algorithm, not that assertion.
+* Unique effective degree-g extraction requires residue h0(T+gO)=1.
+  Its Abel differential then has zero kernel and cokernel by RR, so the
+  divisor lifts with unit pivots, even with nonsplit or nonreduced support.
+  Generic-characteristic-zero h0=1 alone is insufficient.
+* Original Frobenius requires conjugation of O and the appropriate divisor
+  correction. A row permutation needs the source's stable evaluation/base
+  data. Numerical lift uniqueness does commute with arithmetic Frobenius.
+
+The primary source is Mascot, arXiv:1808.03939, retained July2019 text,
+Algorithms9/10, Theorem2.23 and Remark1.6:
+`audits/sources/surface_module_2026/mascot_lift.{pdf,txt}`. Remark1.6 explicitly
+leaves rational reconstruction uncertified without a height bound. The paid
+`2026-11-12-closure-lift` call ended empty/truncated and supplies no evidence;
+the independent source proof above is separately recorded.
+
+Next decisive obligation: construct a faithful good auxiliary-prime model
+and polynomial-size exact RR coordinates from the growing-degree native
+cover, and bound canonical torsion coordinates. No full classical point count,
+uniform reconstruction precision, speedup, hardness or separation is claimed.

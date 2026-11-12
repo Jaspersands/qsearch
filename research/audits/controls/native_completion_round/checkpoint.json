@@ -1,0 +1,319 @@
+{
+  "captured_at_utc": "2026-11-12T10:56:03.848396+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 2202,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/dispatch.json",
+    "sha256": "1cc6103186c1b2ea0b647ced3745a8e87929b6f2e3a9340ba27a8ecb492f7ef0"
+  },
+  "dispatch_mutation_scope": "No dispatch mutation; seven observed terminal statuses captured in usage.json.",
+  "exclusions": [
+    {
+      "active_jobs_excluded": 4,
+      "billing": "NOT_CLASSIFIED",
+      "reason": "Excluded by parent instruction; dispatch, request, result, responses and usage not inspected, hashed or counted.",
+      "scope": "Four ACTIVE target-closure jobs and their dispatch/run bundles"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 16676,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/surface_closure_round/usage.json",
+    "sha256": "3881282aadd960e2acdfc0060bb3535729a250eee6059f6b55a843ffb2df22fb"
+  },
+  "not_frozen": "All four active target-closure jobs and their dispatch; shared STATE/main research notes/HANDOFF/workflow. No tests or registry changes.",
+  "review_artifacts": [
+    {
+      "bytes": 15429,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-closed-divisor-encoding.md",
+      "sha256": "d139c2a407e3bc9db53da57f0255fcc966713efc18ea765085e7097043dfad54"
+    },
+    {
+      "bytes": 26513,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-native-jacobian-atlas.md",
+      "sha256": "bef52cd5d91f6d3566ba854ae4554f88c49693f5048d8485aad01ec56fd6b9f4"
+    },
+    {
+      "bytes": 24072,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-native-normalization-lattice.md",
+      "sha256": "5b1a5f92a37b650249a416deb8b66a8a2b92b9171e419f4ba8efe7a0632c03c7"
+    },
+    {
+      "bytes": 28861,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-native-normalized-frame.md",
+      "sha256": "b5b7d3947c9fcb2fef8ab92d31ecc9ad2dee4a926db9488ac00f5062da453080"
+    },
+    {
+      "bytes": 15205,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-target-prime-model.md",
+      "sha256": "c00341428b98544f48bb6fdf283e2d4c7e88feea04426aad4bca59efc11ff602"
+    },
+    {
+      "bytes": 16635,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-target-unramified-orbits.md",
+      "sha256": "089959f89d3f0574344eabfb4cf1c8aac33a586b938e9a81961935b7e84f7087"
+    }
+  ],
+  "scope": "Mechanical bookkeeping and timestamped stable artifacts only; no mathematical certification.",
+  "seven_terminal_results_and_responses": [
+    {
+      "obligation": "native-atlas",
+      "response": {
+        "bytes": 10446,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-atlas/response.md",
+        "sha256": "692a0bf453e82afc29d4b81646a2ee7cbf8c0acb272206979de929edc54508a3"
+      },
+      "response_characters": 9995,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1650,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-atlas/result.json",
+        "sha256": "24dd71cfeac9e7760a8ab3c5b5ac36821fe20a11d9254a38e1596eaa0d3c7f92"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "minimal-model-contraction",
+      "response": {
+        "bytes": 17205,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-contraction/response.md",
+        "sha256": "65aebbaae7f37551a1e224a323711a056f09fca538d79addd27eda5dab223fe9"
+      },
+      "response_characters": 17183,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2096,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-contraction/result.json",
+        "sha256": "9c477d1fbd6f8d0b1ebae52b5bd9f948e6f1d0dafc102ed2eaa0f8a7cd0df755"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "good-model",
+      "response": {
+        "bytes": 12362,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-good-model/response.md",
+        "sha256": "83ed09f80335a3f5e883f364683b3aa89dd1914cd7a31aa04b3e2fdb1abda87e"
+      },
+      "response_characters": 12355,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2119,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-good-model/result.json",
+        "sha256": "f6e5bf3b9b0392f5968c429113f488eb784132d1213891bcfcdb61850ee83538"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "normalized-frame",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalized-frame/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1917,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalized-frame/result.json",
+        "sha256": "ad2bec456ae0730ebbe915d83b94a2a862c76deb891e3dc341eccc3c240baf7b"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "vertical-pole",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-vertical-pole/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2377,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-vertical-pole/result.json",
+        "sha256": "7cc6fde6c364a9a839662ed5c07f442c5676ce9ce5383af177f5ca97b95b097d"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "normalization-lattice",
+      "response": {
+        "bytes": 1855,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalization-lattice/response.md",
+        "sha256": "cec30db25ea4a85e8ae2e49cc16d8c479317722a33946cbe350d7cfc64b4eb08"
+      },
+      "response_characters": 1806,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2183,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalization-lattice/result.json",
+        "sha256": "4041dad100df42d08de780281dee329c97021306cc78b1cd81c572f123e9ab43"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "reconstruction-orbit",
+      "response": {
+        "bytes": 11987,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-reconstruction-orbit/response.md",
+        "sha256": "3af72fb14846021cbb7f716547ea8ac4e16dc4f1b23e1361b99bae824fe8194f"
+      },
+      "response_characters": 11968,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2093,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-reconstruction-orbit/result.json",
+        "sha256": "bb25c261e1b1aa251f026e5aaea457a773c6d2557d167cac37b12928142e7763"
+      },
+      "status": "completed"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "bytes": 103994,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/anderson_abeliants.txt",
+      "sha256": "b1cd29b28752f5676d331e22d4388763b16bee5e6959f44469e66fc4574d27a4"
+    },
+    {
+      "bytes": 327484,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/anderson_abeliants.pdf",
+      "sha256": "8893c5b76ee1da7ffd82f031b622b1f4078e892bc12fb60c0e29b9aa34fa432c"
+    },
+    {
+      "bytes": 140687,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/couveignes.txt",
+      "sha256": "35a28c2eb1ffc78020e221463290c36da505a8bfdefcc37b9946e1fd247491a8"
+    },
+    {
+      "bytes": 434552,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/couveignes.pdf",
+      "sha256": "a034f2b71f49a52b5997a50f31052154e239e6515ae7bc04909c20f7f6ac2ef8"
+    },
+    {
+      "bytes": 965478,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/couveignes_edixhoven_book.txt",
+      "sha256": "0ae7a4befba82ce944abeb0f71f745403bcbb9c8418232d050c8e6effba83dd9"
+    },
+    {
+      "bytes": 1831994,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/couveignes_edixhoven_book.pdf",
+      "sha256": "c4bc5023b844563d9a279dc91520f1403066e55caf2557706b2f17e15c98548b"
+    },
+    {
+      "bytes": 71574,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/bilu_borichev_eisenstein.txt",
+      "sha256": "a193a53f997b00edba2170e0646c96f0c91118fbd6c3de3318969c673ec3b4ed"
+    },
+    {
+      "bytes": 247688,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/bilu_borichev_eisenstein.pdf",
+      "sha256": "31a6d216243dacc754b7040c1b1cbc20df2c4969745fdb6409346c6297bf9af1"
+    },
+    {
+      "bytes": 63714,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/poteaux_good_reduction.txt",
+      "sha256": "8fc886938372ed9c465ceeb188cf526381429f5a9b5bc54b0cbb4e3823029ef7"
+    },
+    {
+      "bytes": 218228,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/poteaux_good_reduction.pdf",
+      "sha256": "d16bb373d751fddd4027ebd4e20ba5f7a5808fac18ae047fb4a17c233a86f193"
+    },
+    {
+      "bytes": 111321,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/buchmann_lenstra_orders.txt",
+      "sha256": "a4cf1ba2a3abc97b30a11c4e9cfffd5350b9d0bc745cd15f8875d43413f8dce5"
+    },
+    {
+      "bytes": 4767212,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/buchmann_lenstra_orders.pdf",
+      "sha256": "1cd1fb22a44a2b58f4c456eceda6cc231ed1b55f57b3e9fe37ffb81ee7ebc84d"
+    },
+    {
+      "bytes": 185835,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/lenstra_polynomial_algorithms.txt",
+      "sha256": "7cf5876634ecd3fc88f7d9cf0fa01690a5d1ade2241628b0be4e7d6d672e7436"
+    },
+    {
+      "bytes": 670655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/lenstra_polynomial_algorithms.pdf",
+      "sha256": "a95c7c26742f08713a828084b69adf5fd298a68655b4bb633e3d2ccf60d8e2da"
+    },
+    {
+      "bytes": 30764,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_torsion_selection/kozen_resolution.txt",
+      "sha256": "39bc0a1b55f42be35ae3be6de0abd43a7569563aac612efbc690893d43edd47c"
+    },
+    {
+      "bytes": 264150,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_torsion_selection/kozen_resolution.pdf",
+      "sha256": "4f5cf58fcf5f29bd5a6f6bc402e1caa1309a129bf6d8756e293be2531525cdac"
+    }
+  ],
+  "source_packet_artifacts": [
+    {
+      "bytes": 79390,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/anderson-source.md",
+      "sha256": "08388908ba856a5f10462942260fb9f045e3cae07d18c14b1c6808fb978a1974"
+    },
+    {
+      "bytes": 18085,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/book-intersection-source.md",
+      "sha256": "e6a44e1224678215fd8ebded43e523ee49fbc82097bc76001d42cdf649a5dac5"
+    },
+    {
+      "bytes": 33558,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/kozen-source.md",
+      "sha256": "539de7f35083b20da30ef75c340dd36e7b8e7c40589ca14dd4fcd662392a66ab"
+    },
+    {
+      "bytes": 10206,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/integral-bases-scope.md",
+      "sha256": "cd4708b8855633a6d24fa19670b01a907874e957346f0f8ff857b0bc24d9fc12"
+    },
+    {
+      "bytes": 18671,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/pairing-source.md",
+      "sha256": "c36faae816d74fe345d9d56e6a10fb02b47e4340dad8622721bacf8304faf78b"
+    },
+    {
+      "bytes": 14226,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/vertical-source.md",
+      "sha256": "0cd625cd2d5da1fbcc89da85a7e5fb24796198eeba9bfebd7cf7d628951b415d"
+    },
+    {
+      "bytes": 7321,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-native-completion/mascot-reconstruction-source.md",
+      "sha256": "2f5849af137b8f3aa78dcb6873e9a234b2006bdc72b8828d2ef1afb94c6d7144"
+    }
+  ],
+  "status": "TERMINAL_NATIVE_COMPLETION_USAGE_MILESTONE",
+  "usage_snapshot": {
+    "bytes": 16106,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_completion_round/usage.json",
+    "sha256": "583f0e7b487aa45c63ef4b64c157ffce7514aa10eb7420e5717b73d5c07cabd4"
+  }
+}

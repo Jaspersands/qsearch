@@ -2,7 +2,8 @@
 
 2026-11-12. Geometric lemma independently proved and parent-checked.
 Precise proof: audits/reviews/2026-11-12-merkl-log-atlas.md. Arithmetic
-transfer remains OPEN; analytic chart existence is not a BIT algorithm.
+transfer is now proved separately in SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md;
+analytic chart existence is not a BIT algorithm.
 This directly targets the branch-height exponential in the surface classical
 comparator, not a general-purpose geometry subsystem. Corpus query and primary
 Javanpeykar1403.6404 Definition3.1.1/Theorem3.1.2 preceded this candidate.
@@ -125,4 +126,6 @@ absolute gr near the diagonal, or arithmetic model conclusion, is inferred.
 
 Uniform stable Faltings transfer is now established separately in
 SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md and its source-checked review. It uses
-the FULL atlas rather than sup gr alone; torsion coordinate heights remain open.
+the FULL atlas rather than sup gr alone. Canonical torsion coordinate heights
+are now proved in SURFACE_TORSION_HEIGHT_CHAIN.md. Explicit numerical
+majorants are under attack in SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md.

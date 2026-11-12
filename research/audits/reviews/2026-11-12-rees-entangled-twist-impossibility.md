@@ -310,8 +310,8 @@ Prop C: the "learn Hγ_c first" step has no in-model source of information.
 * For SOT(Aut) the DL-specific scalar fact is therefore *not* the obstruction. The obstruction is
   Lemma F, which holds for every class-3 group. The paper's prop:dl-central-scalars is correct as
   stated, since it concerns Aut(G) itself.
-* `dl_aut_11.out` (p = 11, Aut(DL) only, 3000 s cap) was still running at writing. It is not
-  needed for any claim.
+* `dl_aut_11.out` (p = 11, Aut(DL) only): did not finish (a 30-minute rerun on 2026-11-12 was
+  also killed with no output); NOT computed. It is not needed for any claim.
 
 ## 8. What a working cover-free scheme must look like
 
@@ -324,8 +324,13 @@ one of the following.
 * **(ii) Measure a label-carrying register on a non-abelian frame,** that is, an HPGP or
   pretty-good-measurement step. IS Cor 8 does exactly this for fil4. For free23 the candidate is
   the state Σ_t ω^{P(t)}|q_a + t v_1⟩ along an unknown line (Prop C(c)). Preparing it is cheap
-  and public: trace the central coordinates of a labelled copy in a section. Whether it can be
-  measured usefully is **UNKNOWN**.
+  and public: trace the central coordinates of a labelled copy in a section. Single-copy
+  marginals carry nothing (2026-11-12 cleanup, `hpgp_free23.py`): for λ ≠ 0 and uniform hard H,
+  the a- and η_c-averaged state of φ_λ(a) on G/γ_3 is I/p³ for every hypothesis (averaging
+  ω^{λ(η_c)t} over η_c kills the t ≠ t′ terms; averaging a makes the point uniform). So no
+  measurement of a single label-carrying copy reveals the line of v_1 or K/γ_3 (exact check
+  p = 5, 7: `hpgp_free23.out`, Holevo χ = 0). Any exit-(ii) algorithm must measure several copies
+  jointly, using that η_c is shared. **UNKNOWN** whether such a measurement exists.
 * **(iii) Use twists outside the model,** such as non-surjective endomorphisms or
   anti-automorphisms. This is argued not to help (§10), but it is not proved.
 * **(iv) Solve ZS(p, 2, poly log p) in polynomial time.** That would also make the Imran–Ivanyos
@@ -404,12 +409,12 @@ poly(log p) labelled copies ψ_λ (exit (ii)) that outputs the line of v_1? For 
 HPGP′-style algorithm for Σ_t ω^{λ∘C_a(t)}|Q_a(t)⟩, whose phase is quadratic in t, on
 G/γ_3 = heis_3. Or is there a proof that every measurement in a natural label-carrying class
 reduces to ZS?
-* **Next command:** `nice -n 19 /opt/anaconda3/bin/python hpgp_free23.py 5 7` (to be written).
-* **Expected artifact:** the exact output distribution of IS's HPGP′ measurement applied to φ_λ(a)
-  on heis_3, and the mutual information with v_1 per copy.
-* **Acceptance test:** the information per copy is Ω(1/poly(log p)) with an efficiently invertible
-  likelihood, which would make exit (ii) viable; or it is ≤ p^{−Ω(1)}, which would close the simple
-  versions of exit (ii).
+* **Done (2026-11-12):** `hpgp_free23.py 5 7` — single-copy Holevo χ = 0 (above), so the simple
+  single-copy version of exit (ii) is REFUTED.
+* **Next command:** the same Holevo computation for two copies with labels λ_1, λ_2 and shared η
+  (state space p^6 = 15625 at p = 5).
+* **Acceptance test:** χ_2 > 0 shows joint information; χ_2 = 0 for all λ_1, λ_2 extends the
+  refutation.
 
 ## Reproduce (from this note's folder)
 

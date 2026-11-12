@@ -1177,8 +1177,8 @@ CAPABILITIES = (
         primitive="Exact source-weighted census of bounded-support multiplicity controls",
         proved_scope=(
             "Enumerate all h-even S_14-to-K_7 branching pairs under the exact joint source law. Repeated "
-            "blocks carry 0.9784 source mass. Adding the highest-mass source-ranked support-four control "
-            "raises audited coverage from 3.07e-5 to 0.008736, still below one percent."
+            "blocks carry 0.9784 source mass. Adding source-ranked support-four/six controls raises audited "
+            "coverage from 3.07e-5 through 0.008736 to 0.046385, visible but still not typical mass."
         ),
         availability="proved-selection-bias-no-go-high-mass-scan-open",
         uniform_polynomial_gate_complexity_proved=False,

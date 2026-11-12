@@ -9,8 +9,10 @@ from __future__ import annotations
 import argparse
 from dataclasses import dataclass
 from fractions import Fraction
+from functools import lru_cache
 from itertools import combinations
 import json
+from math import gcd
 from pathlib import Path
 
 from flint import fmpz
@@ -188,8 +190,152 @@ finite tests of an arbitrary callable. No field-sized table is built.
     return ReesCover(source, cover, basis, algebra.dimension, levels, indices, tuple(map(tuple, inverse)))
 
 
-def recovery_budget(cover, error=Fraction(1, 3)):
+def zero_sum_length(p, kappa):
+    """Least t >= 2 with z_1^kappa+...+z_t^kappa = 0 for NONZERO z_i in F_p (kappa | p-1).
+
+    Equivalently the least number of elements of the subgroup P of nonzero
+    kappa-th powers (order h = (p-1)/kappa) with sum 0.  Exact:
+    t = 2 iff -1 in P iff h is even (kappa = 1 gives h = p-1 even);
+    t <= 3 once p+1-(kappa-1)(kappa-2)sqrt(p) > 3 kappa (Hasse-Weil on the
+    smooth Fermat curve, minus at most 3 kappa points with xyz = 0);
+    otherwise breadth-first search on the Cayley graph Cay(F_p, P), where
+    t = 1 + dist(0, -1).  Chevalley-Warning gives t <= kappa+1.
+    """
+    if type(p) is not int or p < 2 or not fmpz(p).is_prime():
+        raise ValueError("prime p required")
+    if type(kappa) is not int or kappa < 1 or (p-1) % kappa:
+        raise ValueError("positive kappa dividing p-1 required")
+    h = (p-1)//kappa
+    if h % 2 == 0:
+        return 2
+    if kappa > 1:
+        slack = p+1-3*kappa
+        genus2 = (kappa-1)*(kappa-2)
+        if slack > 0 and slack*slack > genus2*genus2*p:
+            return 3
+    powers = {pow(x, kappa, p) for x in range(1, p)}
+    if len(powers) != h:
+        raise ArithmeticError("kappa-th power subgroup has the wrong order")
+    if any((-1-x) % p in powers for x in powers):
+        return 3
+    dist = {0: 0}
+    frontier = [0]
+    while (p-1) not in dist:
+        nxt = []
+        for x in frontier:
+            for y in powers:
+                z = (x+y) % p
+                if z not in dist:
+                    dist[z] = dist[x]+1
+                    nxt.append(z)
+        frontier = nxt
+    t = dist[p-1]+1
+    if t > kappa+1:
+        raise ArithmeticError("Chevalley-Warning bound t <= kappa+1 violated")
+    return t
+
+
+def schedule1_zero_sum_depth(p, degree):
+    """L_d = ceil(log2 t(p, kappa_d)), kappa_d = gcd(d, p-1): the Schedule 1 rounds charged."""
+    if type(degree) is not int or degree < 1:
+        raise ValueError("positive integer degree required")
+    kappa = gcd(degree, p-1)
+    return kappa, (zero_sum_length(p, kappa)-1).bit_length()
+
+
+def zero_sum_sde_arity(p, degree, equations):
+    """Public Schedule 1 arity G(kappa_d, a)^{L_d} (a+1 when kappa_d = 1).
+
+    Never exceeds the published sde_arity(degree, equations) = B_d(a), since
+    kappa_d <= d and L_d <= ceil(log2(kappa_d+1)) <= ceil(log2(d+1)).
+    """
+    if type(equations) is not int or equations < 0:
+        raise ValueError("nonnegative integer equation count required")
+    kappa, depth = schedule1_zero_sum_depth(p, degree)
+    if kappa == 1:
+        return equations+1
+    return (kappa**(kappa*(kappa-1)//2)*(equations+1)**kappa)**depth
+
+
+def _zero_sum_pattern(p, class_bound):
+    return tuple(schedule1_zero_sum_depth(p, d) for d in range(2, class_bound+1))
+
+
+@lru_cache(maxsize=None)
+def zero_sum_depth_patterns(class_bound):
+    """Every (kappa_d, L_d)_{d=2..c} pattern over ALL primes p > c, with one prime realizing it.
+
+    Primes c < p < 4c^4 are enumerated.  For p >= 4c^4 >= 4 kappa^4 the Weil
+    bound gives t <= 3, so L_d = 1 if (p-1)/kappa_d is even and 2 otherwise;
+    the pattern then depends only on p mod N = 2^(J+1) * odd part of
+    lcm(1..c), J = floor(log2 c), and by Dirichlet every unit class mod N
+    contains primes >= 4c^4 (one is found and recorded for each class).
+    """
+    if type(class_bound) is not int or class_bound < 1:
+        raise ValueError("positive integer class bound required")
+    c = class_bound
+    patterns = {}
+    if c == 1:
+        return {(): 2}
+    bound = 4*c**4
+    for p in range(c+1, bound):
+        if fmpz(p).is_prime():
+            patterns.setdefault(_zero_sum_pattern(p, c), p)
+    modulus = 1
+    for d in range(2, c+1):
+        modulus = modulus*d//gcd(modulus, d)
+    modulus = modulus*2**(c.bit_length())//gcd(modulus, 2**(c.bit_length()))
+    for r in range(1, modulus):
+        if gcd(r, modulus) != 1:
+            continue
+        p = r+modulus*((bound-r)//modulus+1)
+        while not fmpz(p).is_prime():
+            p += modulus
+        pattern = _zero_sum_pattern(p, c)
+        expected = tuple((gcd(d, r-1) if r > 1 else d,) for d in range(2, c+1))
+        if tuple((k,) for k, _ in pattern) != expected:
+            raise ArithmeticError("residue-class pattern does not match gcd(d, r-1)")
+        patterns.setdefault(pattern, p)
+    return patterns
+
+
+def zero_sum_depth_exponent(class_bound):
+    """max over primes p > c of 1 + sum_d kappa_d L_d, with a maximizing prime (smallest found)."""
+    best = None
+    for pattern, p in zero_sum_depth_patterns(class_bound).items():
+        value = 1+sum(k*depth for k, depth in pattern)
+        if best is None or value > best[0] or (value == best[0] and p < best[1]):
+            best = (value, p)
+    return best
+
+
+def _pattern_arities(pattern, equations_top_down):
+    """Arities top-down (d = c..2) for a pattern listed bottom-up (d = 2..c)."""
+    out = []
+    for (kappa, depth), a in zip(reversed(pattern), equations_top_down):
+        out.append(a+1 if kappa == 1 else (kappa**(kappa*(kappa-1)//2)*(a+1)**kappa)**depth)
+    return tuple(out)
+
+
+def _worst_zero_sum_arities(class_bound, equations_top_down):
+    """Pattern maximizing the tree size prod M_d over all primes p > c (ties: smallest prime)."""
+    best = None
+    for pattern, p in zero_sum_depth_patterns(class_bound).items():
+        arities = _pattern_arities(pattern, equations_top_down)
+        leaves = tree_budget(arities)["source_leaves"] if arities else 1
+        if best is None or leaves > best[0] or (leaves == best[0] and p < best[2]):
+            best = (leaves, arities, p, pattern)
+    return best[1], best[2], best[3]
+
+
+def recovery_budget(cover, error=Fraction(1, 3), depth="published"):
     """Fresh-copy trees AND final readout; excludes unimplemented gate synthesis.
+
+    depth="published" (default): Schedule 1 at degree d with B_d (published theorem).
+    depth="zero_sum_instance": arity G(kappa_d, g_d)^{L_d} at the cover's own prime.
+    depth="zero_sum_worst": the same arity maximized (as a whole tree) over all primes p > c,
+    a p-uniform count like B_d; rank error and slack stay at the cover's prime.
+    In both zero-sum modes query_dimension_exponent is the max over p > c of 1+sum kappa_d L_d.
 
     Classical SDE attempts run on saved measured labels before any dilation.
     Given a uniform expected-time bound T (including witness verification),
@@ -200,7 +346,20 @@ def recovery_budget(cover, error=Fraction(1, 3)):
     if not isinstance(error, Fraction) or not 0 < error < 1:
         raise ValueError("exact error Fraction in (0,1) required")
     c, n, p = cover.class_bound, cover.source.dimension, cover.p
-    arities = tuple(sde_arity(d, cover.dimensions[d-1]) for d in range(c, 1, -1))
+    equations = tuple(cover.dimensions[d-1] for d in range(c, 1, -1))
+    if depth == "published":
+        arities = tuple(sde_arity(d, a) for d, a in zip(range(c, 1, -1), equations))
+        exponent = 1+sum(d*d.bit_length() for d in range(2, c+1))
+        arity_prime = None
+    elif depth == "zero_sum_instance":
+        arities = tuple(zero_sum_sde_arity(p, d, a) for d, a in zip(range(c, 1, -1), equations))
+        exponent = zero_sum_depth_exponent(c)[0]
+        arity_prime = p
+    elif depth == "zero_sum_worst":
+        arities, arity_prime, _ = _worst_zero_sum_arities(c, equations)
+        exponent = zero_sum_depth_exponent(c)[0]
+    else:
+        raise ValueError("depth must be 'published', 'zero_sum_instance' or 'zero_sum_worst'")
     tree = tree_budget(arities)
     slack = ceil_log(p, 3/error)
     samples = n+slack
@@ -224,16 +383,19 @@ def recovery_budget(cover, error=Fraction(1, 3)):
             "classical_restart_extra_source_copies": 0,
             "instrument_error_per_call": error/(3*instruments),
             "total_error_bound": rank_error+(error/3 if solvers else 0)+error/3,
-            "query_dimension_exponent": 1+sum(d*d.bit_length() for d in range(2, c+1))}
+            "query_dimension_exponent": exponent,
+            "schedule1_depth": depth, "arity_prime": arity_prime}
 
 
-def black_box_large_prime_budget(encoding_bits, class_bound, error=Fraction(1, 3)):
+def black_box_large_prime_budget(encoding_bits, class_bound, error=Fraction(1, 3), depth="published"):
     """Conditional envelope for large-prime CORE calls, not a total gate bound.
 
     The imported outer reduction and input conversion are NOT implemented.
     Fixed class, unique encodings, and ordinary coherent f are premises.
     Small-prime algorithms and group/coordinate preprocessing are excluded
     from the numerical query bound, but receive explicit error allocations.
+    depth="published" charges B_d; depth="zero_sum_worst" charges the
+    zero-sum-depth Schedule 1 arity maximized over all primes p > c.
     """
     if any(type(x) is not int or x < 1 for x in (encoding_bits, class_bound)):
         raise ValueError("positive integer encoding width and fixed class required")
@@ -243,7 +405,16 @@ def black_box_large_prime_budget(encoding_bits, class_bound, error=Fraction(1, 3
     cap = b*(b+1)
     local_error = error/(4*cap)
     slack = ceil_log(2, 12*cap/error)
-    tree = tree_budget(tuple(sde_arity(d, b) for d in range(c, 1, -1)))
+    if depth == "published":
+        arities = tuple(sde_arity(d, b) for d in range(c, 1, -1))
+        exponent = 3+sum(d*d.bit_length() for d in range(2, c+1))
+        arity_prime = None
+    elif depth == "zero_sum_worst":
+        arities, arity_prime, _ = _worst_zero_sum_arities(c, (b,)*(c-1))
+        exponent = 2+zero_sum_depth_exponent(c)[0]
+    else:
+        raise ValueError("depth must be 'published' or 'zero_sum_worst'")
+    tree = tree_budget(arities)
     queries = cap*c*(b+slack)*tree["source_leaves"]
     return {
         "encoding_bits": b, "fixed_class_bound": c,
@@ -255,7 +426,8 @@ def black_box_large_prime_budget(encoding_bits, class_bound, error=Fraction(1, 3
         "uniform_fourier_slack": slack,
         "local_rank_failure_bound": Fraction(1, 2**slack),
         "large_prime_original_query_bound": queries,
-        "large_prime_query_dimension_exponent": 3+sum(d*d.bit_length() for d in range(2, c+1)),
+        "large_prime_query_dimension_exponent": exponent,
+        "schedule1_depth": depth, "arity_prime": arity_prime,
         "conditional_on_rees_core": True,
         "outer_normalizer_recursion_required": True,
         "outer_reduction_implemented": False,
@@ -292,7 +464,7 @@ def binary_zero_sum_support(prime, labels, power_witness):
     return active
 
 
-def black_box_copy_budget(encoding_bits, class_bound, error=Fraction(1, 3)):
+def black_box_copy_budget(encoding_bits, class_bound, error=Fraction(1, 3), depth="published"):
     """Conditional original-coset-copy envelope for ALL fixed-class nilpotent G.
 
     Fresh mixed coset copies replace f queries. Public group inverses are
@@ -300,10 +472,14 @@ def black_box_copy_budget(encoding_bits, class_bound, error=Fraction(1, 3)):
     small-prime branch uses forward-only zero-sum descent and bounded-error
     Fourier sampling. Neither branch nor public preprocessing is executed.
     """
-    large = black_box_large_prime_budget(encoding_bits, class_bound, error)
+    large = black_box_large_prime_budget(encoding_bits, class_bound, error, depth)
     b, c = encoding_bits, class_bound
     small_primes = tuple(p for p in range(2, c+1) if fmpz(p).is_prime())
     arities = tuple((p, sde_arity(p-1, b)) for p in small_primes)
+    # At kappa = p-1 the least zero sum has t = p terms, so ceil(log2 t) = ceil(log2(kappa+1)):
+    # the zero-sum depth leaves the small-prime arities unchanged.
+    if depth != "published" and any(zero_sum_sde_arity(p, p-1, b) != s for p, s in arities):
+        raise ArithmeticError("zero-sum depth changed a small-prime arity")
     worst_arity = max((s for _, s in arities), default=1)
     cap = b*(b+1)
     samples = b+large["uniform_fourier_slack"]
@@ -355,31 +531,61 @@ def main():
     from theorems.right_abelian_induced_source import derived_length_three_witness
     algebra, ambient, *_ = derived_length_three_witness(43)
     cover = make_rees_cover(algebra, ambient)
-    budget = recovery_budget(cover)
-    profile = {key: budget[key] for key in ("original_dimension", "cover_dimension", "class",
-               "grade_dimensions", "queries_per_leaf", "final_fourier_samples", "query_dimension_exponent",
-               "final_fourier_readout_calls", "classical_sde_attempts_per_call",
-               "classical_restart_extra_source_copies")}
-    profile["original_queries_ceil_log2"] = (budget["original_queries"]-1).bit_length()
-    profile["complete_instrument_calls_ceil_log2"] = (budget["complete_instrument_calls"]-1).bit_length()
-    profile["instrument_error_per_call"] = str(budget["instrument_error_per_call"])
-    profile["classical_sde_abort_bound_per_call"] = str(budget["classical_sde_abort_bound_per_call"])
-    profile["readout_included_in_instrument_budget"] = True
-    profile["total_error_bound"] = str(budget["total_error_bound"])
-    outer = black_box_large_prime_budget((cover.p**cover.source.dimension-1).bit_length(), cover.class_bound)
-    outer_profile = {key: value for key, value in outer.items()
-                     if not isinstance(value, Fraction) and key != "large_prime_original_query_bound"}
-    outer_profile["large_prime_original_queries_ceil_log2"] = (outer["large_prime_original_query_bound"]-1).bit_length()
-    outer_profile["status"] = "conditional_worst_case_envelope_not_executed_group_algorithm"
-    outer_profile["scope_audit"] = "research/REES_WHOLE_PROOF_SCOPE_AUDIT.md"
-    copies = black_box_copy_budget(outer["encoding_bits"], cover.class_bound)
-    copy_profile = {key: str(value) if isinstance(value, Fraction) else value
-                    for key, value in copies.items() if not key.endswith("_copy_bound")}
-    for key in ("large_prime_original", "small_prime_original", "total_original"):
-        count = copies[key+"_copy_bound"]
-        copy_profile[key+"_copies_ceil_log2"] = (count-1).bit_length() if count else None
-    copy_profile["status"] = "conditional_copy_only_scope_correction_not_executed_receiver"
-    copy_profile["scope_audit"] = "research/REES_COPY_ONLY_OUTER_REDUCTION.md"
+
+    def profile_of(budget):
+        profile = {key: budget[key] for key in ("original_dimension", "cover_dimension", "class",
+                   "grade_dimensions", "queries_per_leaf", "final_fourier_samples", "query_dimension_exponent",
+                   "final_fourier_readout_calls", "classical_sde_attempts_per_call",
+                   "classical_restart_extra_source_copies")}
+        profile["original_queries_ceil_log2"] = (budget["original_queries"]-1).bit_length()
+        profile["complete_instrument_calls_ceil_log2"] = (budget["complete_instrument_calls"]-1).bit_length()
+        profile["instrument_error_per_call"] = str(budget["instrument_error_per_call"])
+        profile["classical_sde_abort_bound_per_call"] = str(budget["classical_sde_abort_bound_per_call"])
+        profile["readout_included_in_instrument_budget"] = True
+        profile["total_error_bound"] = str(budget["total_error_bound"])
+        return profile
+
+    def outer_of(outer):
+        outer_profile = {key: value for key, value in outer.items()
+                         if not isinstance(value, Fraction) and key != "large_prime_original_query_bound"}
+        outer_profile["large_prime_original_queries_ceil_log2"] = (outer["large_prime_original_query_bound"]-1).bit_length()
+        outer_profile["status"] = "conditional_worst_case_envelope_not_executed_group_algorithm"
+        outer_profile["scope_audit"] = "research/REES_WHOLE_PROOF_SCOPE_AUDIT.md"
+        return outer_profile
+
+    def copy_of(copies):
+        copy_profile = {key: str(value) if isinstance(value, Fraction) else value
+                        for key, value in copies.items() if not key.endswith("_copy_bound")}
+        for key in ("large_prime_original", "small_prime_original", "total_original"):
+            count = copies[key+"_copy_bound"]
+            copy_profile[key+"_copies_ceil_log2"] = (count-1).bit_length() if count else None
+        copy_profile["status"] = "conditional_copy_only_scope_correction_not_executed_receiver"
+        copy_profile["scope_audit"] = "research/REES_COPY_ONLY_OUTER_REDUCTION.md"
+        return copy_profile
+
+    bits = (cover.p**cover.source.dimension-1).bit_length()
+    budget = recovery_budget(cover, depth="zero_sum_worst")
+    profile = profile_of(budget)
+    exponent, exponent_prime = zero_sum_depth_exponent(cover.class_bound)
+    profile["schedule1_depth_rule"] = "L_d = ceil(log2 t_d), t_d least nonzero zero sum of kappa_d-th powers, kappa_d = gcd(d,p-1)"
+    profile["arity_maximizing_prime"] = budget["arity_prime"]
+    profile["query_dimension_exponent_maximizing_prime"] = exponent_prime
+    instance = recovery_budget(cover, depth="zero_sum_instance")
+    instance_profile = profile_of(instance)
+    instance_profile["prime"] = cover.p
+    instance_profile["stage_depths_bottom_up"] = [list(x) for x in _zero_sum_pattern(cover.p, cover.class_bound)]
+    outer_profile = outer_of(black_box_large_prime_budget(bits, cover.class_bound, depth="zero_sum_worst"))
+    copy_profile = copy_of(black_box_copy_budget(bits, cover.class_bound, depth="zero_sum_worst"))
+    published = {"schedule1_depth_rule": "ceil(log2(d+1)) at degree d: B_d of eq:Bd (published thm:main)",
+                 "profile": profile_of(recovery_budget(cover))}
+    published_outer = outer_of(black_box_large_prime_budget(bits, cover.class_bound))
+    published_copy = copy_of(black_box_copy_budget(bits, cover.class_bound))
+    published["large_prime_outer_envelope"] = {key: published_outer[key] for key in (
+        "large_prime_query_dimension_exponent", "large_prime_original_queries_ceil_log2")}
+    published["copy_only_outer_envelope"] = {key: published_copy[key] for key in (
+        "large_prime_copy_dimension_exponent", "small_prime_copy_dimension_exponent",
+        "large_prime_original_copies_ceil_log2", "small_prime_original_copies_ceil_log2",
+        "total_original_copies_ceil_log2")}
     report = {"status": "provisional_Rees_homogenization_and_general_central_descent_not_discovery",
               "input_model": "explicit odd-prime F_p Lie constants, fixed class c<p, coherent ordinary hiding function",
               "profile": profile, "hidden_advice_inputs": [],
@@ -390,6 +596,8 @@ def main():
               "conditional_black_box_scope": "fixed-class finite nilpotent groups via paid published reductions; proof under review",
               "large_prime_outer_envelope": outer_profile,
               "copy_only_outer_envelope": copy_profile,
+              "zero_sum_depth_instance_profile": instance_profile,
+              "published_depth_profile": published,
               "review_manuscript": "research/manuscripts/rees_hsp_review.tex",
               "research_note": "research/REES_HSP_REDUCTION.md"}
     if args.write:

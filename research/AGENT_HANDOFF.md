@@ -1,5 +1,384 @@
 # Research Agent Handoff
 
+
+## 2026-11-12 Explicit Reconstruction Precision Bounds
+
+SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md is a new concrete majorant chain,
+UNDER focused audit: explicit atlas count2^42(r+1)d(d+L), Merkl boundLambda
+2^60(r+1)d³(d+L0), actual nonminimal h_Z(v), source Faltings/theta/minimalDelta,
+book9.2.5 support formula, polynomial known-plane jet recurrence and rational
+Lagrange K/T/e. The analytic constants and h_Z formula were independently
+checked; remaining ledger terms are being attacked. No semistable extension,
+analytic-chart evaluation, or global torsion field becomes algorithmic input.
+
+All536lines of the completed OpenAI whole-composition report were parent-read.
+It confirms conditional U/descent/pmax/Frobenius/boundary/Leray/CRT/fallback
+composition; its main OPEN is height transfer imported from files OMITTED
+in that packet, not a counterexample. Existing source proofs are available
+and a whole internal review is inspecting them. Its fresh-KM warning was
+already resolved. REJECT its alternative intersection shortcut: L(D) intersect
+L(E) uses coefficientwise minimum bounds / maximum required vanishing, not
+adding two vanishing divisors unless disjoint. Our actual source DivAdd/Sub
+plus product construction is unaffected. Full comparator remains UNADMITTED.
+
+Four-job native-composition round now terminal, frozen47hashes:
+2completed,1truncated/NONEMPTY geometry,1emptyREFUSAL. Roundestimates6.027024USD;
+cumulativeAnth107.278338/OpenAI32.751960USD,total140.030298,124records, excluding
+2UNKNOWNhistoricalbills. Estimates not invoices/balances. Two NEW effectivity
+obligations active (Claudeanalyticconstants, OpenAIarithmeticsourceprecision),
+ceilings12USD notcharges. Exactpackets/sessionlocators:
+audits/api_inputs/2026-11-12-precision-effectivity/dispatch.json.
+
+Nextcommand: read stable native-surface-composition review and terminaleffectivity
+reports; root check any precise mathematical error before admission. Expected
+artifact: reviewed complete native theorem or explicit remaining unpaid input.
+Acceptance requires actual effective sources and complete native bit/precision
+interfaces; passing examples or reportlabels cannot supply them. Mechanical
+queue below; no quantum implementation or broad tests.
+
+
+## 2026-11-12 Uniform Monodromy for Certified Pencils
+
+Native-pencil-monodromy review is stable, fully parent-read/source-checked.
+For EVERY certified cubic Lefschetz pencil on a smooth quintic in oddp,
+actual mod-ell geometric image is Sp62 for EVERY oddell!=p. DeligneWeilII
+4.3.3 finite coefficients gives all-PATH-transported cycles span; local
+irreducible nodes make each primitive. Actual4.2.7/4.2.8 extends conjugacy
+past generic-only4.2.6, and torsion-free integral curveH1 makes reduction
+exact. Hall3.1 with r1,S0empty givesfullSp, no separate primitivity premise.
+Both partial paid geometry objections are resolved against actual sources,
+not accepted as counterexamples. No new Katz-open-set or exceptionalell advice.
+
+SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md records the proof. Full classical
+surface composition remains unadmitted while independent whole-claim reviews
+run. Next command: read stable native-surface-composition and terminal paid
+whole-composition reports; expected artifact exact first blocker or reviewed
+whole theorem. No numerical experiment can certify this asymptotic claim.
+Mechanical: include stable pencil/source review at the single next terminal
+composition usage/hash milestone; no new tests or registry promotion.
+
+
+## 2026-11-12 Rees Headline 53, Harsh Self-Check, H_3(Z) Fully Polynomial (AI only)
+
+Claude session; owner decisions (sole author, full version as anc, headline = smaller exponent,
+no posting). Everything AI-checked, pending human review; claim gates unchanged.
+- **Headline (both papers, local):** class-9 exponent of m 145 → 53 (Schedule 1 at depth
+  ⌈log₂ t_d⌉, base κ_d = gcd(d, p−1); lem:rounds in the body; worst case p ≡ 2521 mod 5040;
+  Las Vegas preprocessing; Ivanyos confirmed only the full depth, which gives 145). Numbers
+  rendered from research/reductions/rees_hsp_reduction.json (old profile kept as
+  published_depth_profile; no gate changed). Core 50 pp., full 227 pp., both clean; abstract 1,897.
+  Reports: -headline-53.md, -headline-53-applied.md. Outlook adds 38 (new multi-representation
+  descent, refereed CORRECT WITH FIXES, -exponent-k8-attack.md, -exponent-38-referee.md) and 95
+  (same descent at the Ivanyos-confirmed depth). The "37" sentence was wrong as worded (named
+  solvers give 99; with shorter zero sums 40) and is fixed.
+- **Harsh checks of the human-reader items:** §3 CORRECT WITH FIXES (-harsh-sec3.md, applied);
+  §4/§5/§7 CORRECT, 53 argument CORRECT WITH FIXES (-harsh-sec4.md: rounds are in IS Thm 3 §3.3,
+  not Thm 11; applied); Schedule 2 + triangular proofs CORRECT, E_2 tables recomputed
+  (-harsh-schedule2.md); source checks round 2 (-source-checks-2.md): AKS and II22 confirmed,
+  5 items still need a human (paywalls), and a real error fixed (cor:utz repetitions
+  O(log(b+1) log(m/ε))).
+- **H_3(Z):** Theorem A re-checked against Kuperberg §7 (-h3z-imports.md: ℓ = k case, step-7
+  box, membership checks; fixes applied). Cyclic case H = ⟨h⟩, H ∩ Z = 1 now Theorem C′, proved
+  given LLL, Shor, Rosser–Schoenfeld (-h3z-qzs-attack.md, -h3z-qzs-referee.md,
+  -h3z-cyclic-proof.md with binding errata F1–F6, -h3z-cyclic-referee.md: CORRECT WITH FIXES).
+  Together: quantum poly-time HSP for every subgroup of H_3(Z) in the signed-box, known-b model.
+  Prior art (-h3z-prior-art.md): none found; Schinzel–Schlickewei–Schmidt 1980 may anticipate the
+  SDA step (unread, 403). Not in the paper. Gates stay false (no novelty, no speedup claim).
+- **SDE:** κ = 6 dead banks exact at p = 31, 37, 43: m2 = 8, 6, 6 (-sde-dead-k6.md; m2 ≥ 8 at
+  p = 31 re-checked by brute force).
+- **Cleanups (-cleanups.md):** exponent note 342/2521/labels; hpgp_free23.py refutes single-copy
+  exit (ii); DL_11 NOT computed; H_3(Z) referee reruns byte-identical.
+Gates that must stay false: novelty_established, speedup_claim_allowed; "38 at thm:main status";
+"H_3(Z) result human-checked". Next hard question: a human read of lem:rounds, Theorem C′ (C1(ii),
+Lemma D) and Schinzel–Schlickewei–Schmidt 1980. Next command (agents): two-copy Holevo for free23
+exit (ii); sat3.py 37 9 for the κ = 9 bottleneck. Mechanical items: top of
+MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-12 Complete Finite Orbit Reconstruction
+
+SURFACE_FINITE_ETALE_RECONSTRUCTION.md now admits the complete classical
+reconstruction/readout bridge under its native geometric inputs. Parent read
+all806lines of the independent etale-reconstruction review: actual rank13516
+U=ev_s0 HomGamma, globally rational all-component scalar encoding, closed
+RR extraction, explicit Lagrange heights/precision, relation-idempotent
+quotient to Q[U] with Hopf maps, p-maximal order and kernel-rank Frobenius.
+U need not be Gamma-stable. The larger E rank837992 is only a backup.
+Known-b RR is paid at the already-chosen auxiliary P by etale fibre orders,
+thick-fibre idempotents and semilocal saturation, with no circular new M.
+Direct target coordinate reduction remains falsified by T(T-p).
+
+Full SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION remains under independent whole-
+composition attack. Partial Claude geometry report is NONEMPTY (13269bytes),
+root fully read; it raises conjugacy for every certified pencil. Parent found
+actual Deligne WeilII4.2.7(i)/4.2.8 applies beyond generic pencils for fibre
+dimension1 (renderedPDFpage86), and actual Hall3.1 has generator hypotheses
+satisfied with r1,S0empty, no separate primitivity premise. Focused independent
+source audit now checking this repair. Do not silently accept the partial
+report's source-scope objections or promote the full comparator yet.
+
+Composition statuses: Claude geometry truncated/nonempty; bit uniformity
+empty REFUSAL/no retry; Hopf completed; OpenAI whole composition still running.
+No new ledger scan until that request terminal. Next command: read stable
+native-pencil-monodromy review and terminal whole-composition report; expected
+artifact exact whole-theorem admission OR first unpaid input. Acceptance:
+actual sources and all native/bit/access interfaces agree, not mere report
+labels. See top mechanical queue; no implementation/sweep/registry promotion.
+
+
+## 2026-11-12 Canonical RR and Splitting-Free Frobenius
+
+SURFACE_TORSION_NUMERICAL_LIFT.md now constructs canonical closed coordinates
+from the actual lifted KM point, not an assumed divisor ideal. Parent fully
+read the stable numerical-closed-algebra review/Section7 and primary Mascot
+Algorithm7/DivAdd plus Anderson4.3.1. Input -t, D0=(2g+1)b, E1=(g+1)b,
+residue h0(t+gb)=1 gives W0=L((3g+1)b-D_t). Multiply by a KNOWN high-degree
+RR space to obtain L(A-D_t), then its free quotient gives multiplication
+matrices and A,B,C encoding, with all unit pivots/no support splitting.
+The source prose sign is corrected using its displayed divisor identity.
+
+Completed paid kernel-Frobenius report yields a parent-checked deterministic
+readout from the actual finite etale Hopf algebra: identity idempotent,
+Horner-contracted group endomorphisms, integer ranks of kernel idempotents,
+then primary characteristic factors. No target splitting field is needed.
+Reject its claim that output degree53 limits runtime exponent to53; fixed
+m=13516 gives an enormous but fixed polynomial exponent. No practical claim.
+
+New SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md composes the full native
+quintic route and remains UNDER ATTACK. Use rank-m actual Galois-stable
+U=ev_s0 HomGamma (not Gamma-stable), quotient-first p-maximalization and
+proved boundary determinant division. Full reconstruction review must check
+no circular auxiliary-P/basepoint-RR selection. Full classical match and
+whole-paper rehabilitation stay FALSE gates pending complete independent
+composition/source checks. Paid boundary report checked; Pila2005 repairs
+its accurate Pila1990 scope warning; supplied-torsion alternative unused.
+
+Four DISTINCT composition API obligations dispatched, ceilingsUSD18, not
+charges: geometry, bit uniformity, Hopf readout, whole composition. Hopf
+completed; bit-uniformity returned empty REFUSAL and is not retried. Two
+remain running. Previous five-job target round terminal; frozen61hashes,
+cumulative estimates AnthUSD104.342874/OpenAIUSD29.660400, excluding two
+historical UNKNOWN bills and this new round. No measured balance inferred.
+Next command: read stable etale-reconstruction review and the two terminal
+composition reports. Artifact: a source-checked complete theorem OR exact
+first unpaid interface. Acceptance: every native input/field/bit/precision
+step paid; no evidence from empty reports/tests. Mechanical queue at top of
+MECHANICAL_FOLLOW_UP_PLAN.md. No quantum code or broad test sweep.
+
+## 2026-11-12 Boundary Determinants Replace Parabolic Transport
+
+SURFACE_BOUNDARY_DETERMINANT.md is independently proved and parent-checked.
+Given genuine complete OPEN W/Frobenius (dim13516), divide its ARITHMETIC
+characteristic polynomial by product_closed_z[(1-epsilon_z*T^f)*P_norm_z(T^f)]
+to get the GEOMETRIC parabolic polynomial (dim96). Exact Leray/inertia duality
+accounts for TWO Tate twists; the alternative geometric boundary factor is
+(1-epsilon_z*p^(2f)*T^f)*P_norm_z(p^f*T^f). No semisimplicity or eigenvalue
+matching. Nodal normalization is fixeddegree28/genus30; actual Pila2005
+finite all-field Jacobian stratification pays classical polylogp computation.
+Proper-pencil Leray plus the degree45 base-locus blowup gives degree53 P2.
+This removes the Kummer/parabolic-transport interface ENTIRELY for the endpoint.
+It does not restore the false compact=parabolic theorem.
+
+Completed OpenAI etale-reconstruction report supports the repaired last-stage
+algorithm: all-pair Galois encoding, explicit height thresholds, equalizer
+quotient to Q[E], known-prime order, actual Frobenius. Root read all596lines;
+independent composition review is running. Its useful repair to notation:
+Q[S] is a descended finite etale algebra, not generally split Q^N. Maps extend
+p-LOCALLY, not necessarily at all primes. Numerical closed algebra can be
+obtained by RR quotient L(A)/L(A-D), avoiding a growing-variable ideal step;
+a narrow independent proof is pending. Native full comparator still unadmitted.
+
+Three target Claude requests ended EMPTY/truncated (estimatesUSD4.054436),
+no evidence/retry. OpenAI reconstruction completed estimatedUSD2.493220;
+paid boundary task remains live. The parabolic request's empty result does
+not affect the independently proved determinant bypass. Next command: read
+stable reconstruction and RR-quotient reviews plus terminal boundary report.
+Expected artifact: reviewed complete native composition or first remaining
+unpaid input. No quantum code, numeric sweep or claim from tests. Mechanical
+queue top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-12 Genuine Frame and Target Frobenius Bridge
+
+SURFACE_NATIVE_COVER_CONSTRUCTION now pays the genuine normalized full-GSp
+frame/evaluation from the native fixed (5,3) family. Parent read all native-
+normalized-frame review: actual Segre ROW divisors, one constant-degree
+extension, exact RR/principal functions and closed determinant pairing fix
+the scalar without advice. True generic identification with the original
+Jacobian gives intrinsic etale extension over U_Zp even when formulas invertp.
+
+SURFACE_FINITE_ETALE_RECONSTRUCTION records two independently reviewed,
+parent-accepted bridges. Tame Kummer/purity compactification proves the TRUE
+orbit B_a x E unramified at targetp; E is the complete natural socle of fixed
+rank837992, not unrestricted ambient torsion. Splitting degree<=|GSp||GL_R|.
+Given its certified rational finite algebra and actual operations, Buchmann-
+Lenstra known-prime maximalization computes faithful reduction/Frobenius in
+poly(rank,inputbits,logp), no factoring or p>rank. Direct coordinate reduction
+remains falsified by T(T-p); heights alone do not give good reduction.
+Complete all-component Galois-invariant reconstruction is still UNDER REVIEW.
+
+New decisive simplification under review: remove the boundary at determinant
+level using fixed-genus nodal normalization zeta polynomials, avoiding explicit
+parabolic-kernel transport. Proposed closed-branch factor for degreef,q=p^f:
+(1-epsilon*q²*T^f)*P_normalization(q*T^f). Open dimension13516 minus boundary
+13420 leaves96. Internal derivation supports its Tate factors; paid independent
+review pending. No source's false compact=parabolic assertion is restored.
+
+Seven native jobs terminal, frozen native_completion_round has46 hashes and
+estimatedUSD17.767390 round; cumulative estimatesUSD125.544698 (Anth100.288438,
+OpenAI25.256260), not balances/invoices. Two historical unknown bills excluded.
+Five distinct target-closure jobs active, ceilingsUSD22, not charges. Next
+command: inspect terminal target-closure reports and stable boundary review.
+Expected artifact: complete conditional reconstruction+determinant composition,
+or smallest unpaid interface. Accept only explicit rational invariants, all
+fields/precision, genuine arithmetic and CRT bounds. No full comparator or
+quantum advantage claimed. Mechanical queue top of MECHANICAL_FOLLOW_UP_PLAN.
+
+## 2026-11-12 Closed Torsion Coordinates and Auxiliary Models
+
+SURFACE_TORSION_HEIGHT_CHAIN now includes a parent-checked closed encoding
+bridge: at affine nonsingular support, z=x+c y must both separate points and
+be unramified there. Hermite interpolation encodes multiplicities by A,B,C
+of degree<=g, with height O(DgH+g²(H_F+log(c+1)+log(gD+2))). One c<=Ng(g+1)/2
+works for N divisors; at most D² normalization chart exceptions are charged.
+No support splitting. Actual bit coordinates also charge FIELD PRESENTATION
+height, not just degree. Full review: audits/reviews/2026-11-12-closed-divisor-
+encoding.md. SURFACE_TORSION_NUMERICAL_LIFT now records the accepted native
+two-chart auxiliary model/RR construction from a charged singular equation.
+
+Completed OpenAI reconstruction-orbit report identifies a decisive target
+failure: scaling torsion coordinates by p^k preserves polynomial height and
+all good-auxiliary-P promises yet EVERY integer functional collides modulo p.
+Even Q=X(X-p) shows direct reduction can lose two labels. p large relative
+ell does not fix an input depending on p. This is not full classical failure:
+parent's independent repair reconstructs the finite Q-algebra first, then
+p-maximalizes its order. Actual Buchmann-Lenstra Algorithm6.1/Proposition6.2
+pays this at a KNOWN prime in polynomial bit time, including products of
+fields, without integer factoring. The remaining proof is unramified native
+orbit plus compatible group-operation descent/readout, under independent
+review. Rational reconstruction and parabolic transport still need exact
+composition. No full classical match or speedup inferred.
+
+All seven native-completion API calls are terminal. Three NEW distinct
+Claude/Opus-max tasks run: prescribed-prime model, final cohomology/CRT assembly,
+and parabolic specialization. CeilingsUSD9, not charges; packet/locators in
+audits/api_inputs/2026-11-12-target-closure/dispatch.json. No repeated empty call.
+Next command: read stable normalized-frame, target-unramified/order reviews
+and terminal target-closure reports. Expected artifact: finite-algebra original
+Frobenius theorem or exact counterexample. Acceptance requires reconstructed
+operations on the correct quotient, all Tate factors, and native unramifiedness.
+Gemini items top of MECHANICAL_FOLLOW_UP_PLAN.md; no quantum implementation.
+
+## 2026-11-12 Canonical Torsion Support Heights
+
+SURFACE_TORSION_HEIGHT_CHAIN.md is now independently checked/parent-accepted:
+for degree-d covers with fixed total branch orbit r, logarithmic branch height
+hB, and N torsion classes, a small common basepoint gives unique degree-g
+D_t with sum h(pi Q)<=C_r d^9[d+1+hB+log(N(A+1)+1)], avoiding A additional
+points. This is a SUPPORT-VALUE theorem, not an encoding algorithm. Exact
+finite/analytic reviews are audits/reviews/2026-11-12-torsion-height-*-chain.md.
+On the specific cover-compatible source model Z, contraction losses are paid
+by h_Z(b); on the relatively minimal Y, graph currents give vertical poles
+<=d(h_Z+Delta_st). Green representation pays the archimedean moment. Zero
+pi-values need the direct finite inequality. Arbitrary blowups and use of
+nonminimal discriminant remain invalid. Existential height-field splitting
+is never an algorithmic splitting-field allowance.
+
+The independent trace-lattice review now supplies two-chart normalization
+and good-model/RR inputs from a CHARGED singular plane equation: centered
+truncated Kozen maps bound jet coefficient bits, bounded linear systems give
+an integral basis, and an explicit polynomial-bit M certifies reduction away
+from M. Parent read the entire review; no scalar-operation/bit-cost shortcut.
+Prescribed target p may divide M: that separate target-model problem stays OPEN.
+Native normalized frame, closed encoding and original-p reconstruction are
+still being assembled. Seven native-completion API tasks are now dispatched,
+local ceilingsUSD50, not charges. Normalization Claude partial contains only
+its opening argument: unprinted assertions are not evidence or a retry reason.
+
+Next hard question: can the remaining interfaces be composed at the ORIGINAL
+prime, with all fields, coordinate heights and reductions paid? Next command:
+read stable closed-divisor/frame/target-model reviews and terminal reconstruction
+response. Expected artifact: exact original-prime algorithm or smallest
+counterexample. Accept only charged compatible presentations and certified
+reconstruction, not support-value polynomials alone. No full classical match,
+whole-paper rehabilitation, hardness or separation. Mechanical items at top
+of MECHANICAL_FOLLOW_UP_PLAN.md; no quantum code or numerical sweep.
+
+## 2026-11-12 Native Jacobian Atlas Without Advice
+
+SURFACE_NATIVE_COVER_CONSTRUCTION.md now pays a native radical Jacobian
+presentation and COMPLETE addition atlas over Q(t) for smooth (5,3) curves
+with fixed ambient/projective/parameter degree and binary coefficients B.
+No rational point, extension, or supplied atlas: closed etale hyperplane
+fibres, explicit complete-intersection RR, trace compression, bounded-pole
+interpolation, and coefficient descent of Anderson formulas cover every
+geometric pair. Radicalization and scheme descent are proved separately.
+Bit cost polynomialB, huge format constants; not a growing-genus theorem.
+Parent checked full audits/reviews/2026-11-12-native-jacobian-atlas.md and
+actual source. Combining supplied-atlas level-cover theorem pays unmarked
+cover degree/heights under full monodromy; actual normalized pairing remains.
+
+Height-chain candidate is still UNDER REVIEW. A completed independent
+OpenAI contraction report independently derives the same vertical-graph
+bound; model/metric/source signs are being checked, not promoted from a label.
+The source's exact divisor degree equality also pays h_Z(b), not only stable
+h(b), on its specific normalization-resolution model. Numerical lift remains
+conditional on faithful good-model/RR data. Completed good-model audit leaves
+its native normalization bit bound open; a new trace-lattice/jet proof task
+is running. Six distinct native-completion tasks, local ceilingsUSD42 (NOT
+charges); no empty-request retries. Next command: inspect terminal responses
+and finite/analytic height-chain reviews. Expected artifact: corrected support
+height theorem or counterexample plus exact remaining encoding/model gates.
+Mechanical items below; no full comparator, speedup, or hardness claim.
+
+## 2026-11-12 Candidate Torsion Height Chain and Arithmetic Frame Repair
+
+NEW parent proof candidate SURFACE_TORSION_HEIGHT_CHAIN.md is UNDER REVIEW:
+contraction losses of a section bound new horizontal intersections; the
+minimal dual-graph Laplacian gives vertical pole budget<=d(h_Z(b)+Delta_st).
+A Green integral identity would pay the remaining archimedean moment. With
+actual book9.2.5, this proposes sum support pi-heights<=C_r d^9 S_N. No
+claim is admitted yet: graph signs/model transfer/support avoidance and
+closed-divisor encoding are proof obligations. This is a new narrow route,
+not evidence from the empty broad book-height request.
+
+Independently reviewed inputs now include full-GSp arithmetic repair
+(audits/reviews/2026-11-12-surface-full-similitude.md): with GENUINE presented
+frame/evaluation, Hom(N^vee,J_Cfull[ell])=H1(U,L)(1), q^-1 correction, one
+component with exact deck/Frobenius conventions. Components are deck
+translates, not generally Frobenius conjugates. Native frame still unpaid.
+Theta/discriminant source review pays Theta_av=O_r(d^3+d log S) and
+Delta_st=O_r(d^6 S), on the relatively minimal model only. Supplied-atlas
+level-cover review pays polynomial degrees/heights/bit cost but still needs
+native atlas and one normalized pairing. No full classical match or speedup.
+
+Next hard action: independently attack the new height-chain finite and
+analytic identities, then inspect terminal native-completion reports. Next
+command: read SURFACE_TORSION_HEIGHT_CHAIN.md and its forthcoming review;
+expected artifact is a corrected proof or explicit falsifier, accepting no
+source/model substitution. Gemini items in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-12 Closed-Divisor Numerical Torsion Lift
+
+`SURFACE_TORSION_NUMERICAL_LIFT.md` records polynomial numerical lifting of
+actual prime-to-P torsion from CLOSED divisors, conditional on a faithful
+good-reduction presentation and charged exact RR coordinates. One common
+evaluation field; no support splitting. Coefficient saturation constructs the
+integral RR lattice under that model check. Mascot10's error correction works
+at P=2 by square-zero formal-group layers; its global log claim is false
+(explicit good-reduction 2-torsion counterexample in note). Residue h0=1,
+not generic h0=1, pays canonical degree-g extraction. Independent primary
+review: audits/reviews/2026-11-12-surface-mascot-lift.md. Paid lift and broad
+book-height requests ended EMPTY, no evidence/retries. Book9.2.5 needs relative
+minimality: minimal resolution is insufficient; the separate review records
+the genus-one blowup falsifier and exact minus sign. Full reconstruction,
+native model, torsion heights and point-count match remain OPEN.
+
+Next hard question: native cover/atlas, full-GSp Frobenius and torsion-height
+input closure. New distinct paid native-atlas and contraction obligations:
+audits/api_inputs/2026-11-12-native-completion/dispatch.json. Next command:
+read their terminal response.md and independent full-GSp/level-cover reviews;
+expected artifact is a scoped proof or falsifier, accepted only after checking
+all field, model and height charges. Gemini mechanics below.
+
 ## 2026-11-12 Uniform Stable Height and Canonical Divisor Choice
 
 SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md records two independently proved,

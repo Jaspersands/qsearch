@@ -1,0 +1,98 @@
+Been tried? quantitative Eisenstein Puiseux coefficient heights normalization trace lattice
+
+Killed before
+  1. negative   NEG-DCP-SUBSET-SUM-MARKER-FILTER-AS-DECODER  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM]
+     research/registry/negative_results.json:67562
+     Claim: Selecting marker-one lattice vectors supplies a polynomial subset-sum witness decoder.
+     Why not: Marker-one normalization is easy without a norm bound, while finding one at witness radius is exactly equivalent to the original binary subset-sum search.
+  2. negative   NEG-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO, PO-MEASUREMENT, PO-COMPLEXITY]
+     research/registry/negative_results.json:68901
+     Claim: Disjoint product isotypic filters acting on sublinear source labels per cluster can restore polynomial frame bounds.
+     Why not: Quantitative locality lower bounds prove sublinear disjoint cluster filters leave a superpolynomial common-family spike.
+  3. negative   SCHUR-COMPANION-FINAL-ROOT-PROGRAM-CONTRACTION-INVERSE-DIMENSION  [retained · CODE-COSET-COLLECTIVE, PO-MECHANISM, PO-MEASUREMENT, PO-COMPLEXITY]
+     research/registry/negative_results.json:84957
+     Claim: A normalized label-retaining purification, a supplied reflection about it, or finitely many normalized copies directly expose the endpoint-conjugated Weyl generators at constant normalization.
+     Why not: The normalized projector contraction is exactly B_U/D; the optimal unflattened direct insertion has coefficient between lambda_min(rho) and lambda_max(rho), hence between 1/(32D) and 32/D on the retained window; a traceless-Weyl reflection contraction gives 2B_U/D; and every induced-trace-norm-one l
+  4. negative   NEG-COSET-EXACT-TRACE-AS-COMPLETE-QUARTIC-GAP  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-STABLE-TRACE-CERTIFICATE]
+     research/registry/negative_results.json:62427
+     Claim: The exact first power trace determines the stable quartic spectrum and an efficient Racah transform.
+     Why not: A 4x4 characteristic polynomial requires three additional independent coefficients or power traces, followed by root separation and circuit synthesis.
+  5. negative   TRACE-FUNCTION-REJECT-TRACE_TWO_POLE  [retained · DHS-GOWERS-SIEVE, HYP-LIT-HIDDEN-SHIFT-SIEVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:85599
+     Claim: trace_two_pole is a viable natural trace-function hidden-shift family.
+     Why not: Constant-degree rational equations recover the hidden shift; this natural trace family is classically learnable.
+
+Dequantization checks
+  1. dequant    DEQ-DCP-SUBSET-SUM-MARKER-FILTER-IS-NOT-DECODER  [critical]
+     research/registry/dequantization_checks.json:711
+     Claim: Filtering lattice vectors by marker coordinate supplies a witness decoder.
+     Why not: Supply an actual affine-CVP algorithm and prove inverse-polynomial legal source coverage. Marker gcd normalization, reduced-row filtering, and finite success are not decoding arguments.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:6332
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9005
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7102
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9016
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       General sparse function-field constants: classical attack › 2. Independently reviewed direct-specialization fa  [unlabelled]
+     research/GENERAL_SPARSE_CONSTANTS_ATTACK.md:117
+     More strongly, for EVERY rational specialization a where all u_j can remain units, expanded monic f_a has exponential coefficient height.
+  2. note       Higher-Call Prime-Power Survival Closed Forms: Eisenstein Isomorphism, Simplex Injectivity, Squared-Trinomial   [unlabelled]
+     research/NATIVE_HIGHER_CALL_PRIME_POWER_SURVIVAL_CLOSED_FORM.md:3
+     This note proves three exact algebraic theorems that give closed-form characterizations of the reachable lattice endpoints, the exact integer zero-difference count $N_k(0) = \text{differences}[0, 0]$, the Eisenstein prime ramification structure of $\Delta(t, u)$, and the exact Fourier eigenvalue fo…
+  3. handoff    2026-11-07 General Sparse Algebraic-Constant Lattice  [journal]
+     research/AGENT_HANDOFF.md:3169
+     Core/counterfamily review and one exact CLASSICAL quartic control passed: N41bits unexpanded, four original basis coefficients, derivative rank2, Alg rank5/fullLLL lattice, nonrationalconstants/order2 sign, badp257 rank1, and symbolic Eisenstein residue-6.
+  4. note       Stabilizer-span reconditioning: an exact obstruction with an easy escape › 4. A unique minimum-rank span with   [unlabelled]
+     research/STABILIZER_SPAN_RECONDITIONING.md:194
+     The norm square root and normalized coefficients consequently have polynomial degree/height descriptions, without printing 2^n amplitudes.
+  5. note       Higher-Call Prime-Power Survival Closed Forms: Eisenstein Isomorphism, Simplex Injectivity, Squared-Trinomial   [unlabelled]
+     research/NATIVE_HIGHER_CALL_PRIME_POWER_SURVIVAL_CLOSED_FORM.md:38
+     *Proof.* For part 2, if $(a - b, b - c) = (a' - b', b' - c')$ with $a + b + c = a' + b' + c' = k$, then $a - a' = b - b' = c - c' = \lambda$, and summing yields $3\lambda = k - k = 0 \implies \lambda = 0$.
+
+Code and experiments
+  1. theorem    Higher-call prime-power survival closed forms: Eisenstein isomorphism, trinomial zero law, and Fourier spectra  [code]
+     theorems/native_higher_call_prime_power_survival_closed_form.py:1
+     Higher-call prime-power survival closed forms: Eisenstein isomorphism, trinomial zero law, and Fourier spectra.
+  2. experiment Exact denominator and discriminant gap bound  [planned]
+     research/registry/experiments.json:20775
+     No all-n separator structure controls coefficient height.
+  3. hypothesis native-higher-call-prime-power-survival-closed-form-contract
+     research/hypotheses/native_higher_call_prime_power_survival_closed_form_contract.json
+     native-higher-call-prime-power-survival-closed-form-contract eisenstein_isomorphism_simplex_injectivity_squared_trinomial_zero_law_and_prime_power_fourier_survival_spectra T1 Unimodular Eisenstein Isomorphism and Squared-Trinomial Zero-Difference Law The unimodular Z-linear map iota(x, y) = (x + y)…
+  4. experiment Exp Code Self Dual Wreath Component M4 Operational Boundary  [planned]
+     research/registry/experiments.json:4550
+     Exp Code Self Dual Wreath Component M4 Operational Boundary Converted positive natural M4 into a constant-rate random-mask witness and a quantitative commuting-approximation no-go, while proving that the witness alone is hidden-label blind.
+  5. hypothesis ternary_sequential_spectral_extraction_contract  [conditional_classical_rounding_local_derivation_review_pending]
+     research/hypotheses/ternary_sequential_spectral_extraction_contract.json
+     Charge dimension, full root, original copies, coefficient heights, sign precision and all controlled operations.
+
+Literature
+  1. literature Pretty simple bounds on quantum state discrimination  [seed · state-discrimination, pretty-good-measurement, mixed-states, fidelity-bound]
+     research/literature_records.json
+     Pretty simple bounds on quantum state discrimination Provides adjacent mixed-state PGM discrimination bounds and motivates replacing Holevo-only evidence with direct success certificates for carrier-conditioned ensembles.
+  2. literature Diameters of finite simple groups: sharp bounds and applications  [seed · symmetric-group, centralizer-bound, fixed-point-free-permutation, conjugacy-class]
+     research/literature_records.json
+     The carrier-tail closure strengthens this with a quantitative gap and an exact treatment of the exceptional matching-pair intersection.
+  3. literature Finding Significant Fourier Coefficients: Clarifications, Simplifications, Applications and Limitations  [seed · hidden-number, significant-fourier, access-model, chosen-query]
+     research/literature_records.json
+     Finite-abelian Fourier analysis, significant coefficient finding, hidden-number reductions, lattice approximation, and access-model separation.
+  4. literature Asymptotics of characters of symmetric groups related to Stanley character formula  [seed · symmetric-character, character-ratio, plancherel-typical, representation-theory]
+     research/literature_records.json
+     Asymptotics of characters of symmetric groups related to Stanley character formula Provides a uniform normalized-character bound in terms of Young diagram rows, columns, and transposition length.
+  5. literature Quantum Computation and Lattice Problems  [seed · lattice, dihedral-hsp, unique-svp, reduction]
+     research/literature_records.json
+     Quantum Computation and Lattice Problems Connects efficient dihedral HSP progress to lattice breakthroughs.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

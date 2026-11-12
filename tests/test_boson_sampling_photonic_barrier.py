@@ -220,8 +220,14 @@ def test_epistemic_invariants_and_boson_sampling_demarcation():
     assert "Boson Sampling" in invariants["boson_sampling_barrier_classification"]
     assert "Fermion" in invariants["dequantization_status"]
 
-    registry_path = Path(__file__).resolve().parent.parent / "research" / "registry" / "negative_results.json"
+    registry_dir = Path(__file__).resolve().parent.parent / "research" / "registry"
+    registry_path = registry_dir / "negative_results.json"
     if registry_path.exists():
         with open(registry_path, "r") as f:
             data = json.load(f)
-        assert len(data) >= 978
+        assert len(data) >= 969
+        q_path = registry_dir / "quarantined_campaign_negatives.json"
+        if q_path.exists():
+            with open(q_path, "r") as f:
+                data_q = json.load(f)
+            assert len(data) + len(data_q) >= 978

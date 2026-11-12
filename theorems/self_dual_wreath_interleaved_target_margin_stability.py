@@ -667,8 +667,8 @@ def write_target_margin_stability_report(
     output_path = path
     for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
         kwargs.pop(_k, None)
-    if "run_target_margin_stability" in globals():
-        report = run_target_margin_stability(**kwargs)
+    if "build_target_margin_stability_report" in globals():
+        report = build_target_margin_stability_report(**kwargs)
         payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
     else:
         report = {}

@@ -45,10 +45,11 @@ def test_f5_d2_full_sat_and_f7_d2_unsat_verified(tmp_path: Path) -> None:
     L5 = mod.nonzero(5, 2)
     res_sat = mod.solve(L5, p=5, d=2, S=(0, 1, 4), workdir=str(tmp_path), tag="f5_d2_full")
     assert res_sat["status"] == "SAT"
-    # solve(..., use_R=True) slices res["gamma"] to +-pair reps; check_model expects all alpha.
-    gamma_full = _full_gamma(res_sat["gamma"], 5)
-    ok, msg = mod.check_model(L5, res_sat["Phi"], gamma_full, 5, 2, (0, 1, 4))
+    ok, msg = mod.check_model(L5, res_sat["Phi"], res_sat["gamma"], 5, 2, (0, 1, 4))
     assert (ok, msg) == (True, "ok")
+
+    # Non-spanning label set must return False from brute(), matching check_model().
+    assert mod.brute([(1, 0), (2, 0)], 5, 2, (0, 1, 4)) is False
 
     L7 = mod.nonzero(7, 2)
     res_unsat = mod.solve(L7, p=7, d=2, S=(0, 1, 6), workdir=str(tmp_path), tag="f7_d2_full")
@@ -91,8 +92,7 @@ def test_labelsat_solve_matches_brute_on_ten_random_small_cases(tmp_path: Path) 
         if expected_sat:
             sat_count += 1
             assert res["status"] == "SAT"
-            gamma_full = _full_gamma(res["gamma"], p) if use_R else res["gamma"]
-            ok, msg = mod.check_model(L, res["Phi"], gamma_full, p, d, S)
+            ok, msg = mod.check_model(L, res["Phi"], res["gamma"], p, d, S)
             assert (ok, msg) == (True, "ok")
         else:
             unsat_count += 1

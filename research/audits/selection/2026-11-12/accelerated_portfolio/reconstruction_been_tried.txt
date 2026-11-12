@@ -1,0 +1,101 @@
+Been tried? fixed rank torsion p-adic reconstruction Galois invariant primitive element moving basepoint arithmetic Frobenius
+
+Killed before
+  1. negative   NEG-EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE, PO-MEASUREMENT]
+     research/registry/negative_results.json:68078
+     Claim: Dense GL(m,2) affine preprocessing cannot reduce 2-adic carry ANF degree below Theta(m).
+     Why not: Dense linear transformations preserve algebraic degree and odd label concentration forces linear degree with exponentially many monomials.
+  2. negative   NEG-DCP-TWO-ADIC-LOW-DEGREE-LIFTING-WITHOUT-SOLVER  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH]
+     research/registry/negative_results.json:67901
+     Claim: Low-degree or affine descriptions of finite 2-adic lift predicates establish a polynomial density-one subset-sum solver.
+     Why not: The descriptions were extracted by exponential enumeration, late fits may be interpolation on small fibers, affine hulls overcover exact fibers, and no polynomial equation-solving or reversible coverage theorem follows.
+  3. negative   NEG-DCP-SIGNED-PERMUTATIONS-AS-GLOBAL-FIBER-TRANSPORT  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SIGNED-PERMUTATION-TRANSPORT]
+     research/registry/negative_results.json:67298
+     Claim: Coordinate permutations plus arbitrary bit complements provide a broader total linear-depth 2-adic fiber transport than a single exact-valuation pivot.
+     Why not: Exact coefficient and sign-orbit balance forces the translation to come from an odd number of labels congruent to 2^k, so the class exists exactly when a single pivot exists.
+  4. negative   NEG-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM, PO-MEASUREMENT]
+     research/registry/negative_results.json:69956
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM.
+     Why not: Falsified or refined by exact theorem evaluation.
+  5. negative   NEG-DCP-ADAPTIVE-VALUATION-LAYOUT-COMPRESSION  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-ADAPTIVE-LAYOUT-AUDIT]
+     research/registry/negative_results.json:65258
+     Claim: A label-adaptive balanced cut obtains growing 2-adic subgroup compression by collecting high-valuation labels.
+     Why not: Having a side divisible by four already requires a binomial half-population large deviation with exponential loss.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7454
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-DCP-ODD-UNIT-ORBIT-SUCCESS-COLLAPSE-NO-EASY-MEASURE  [critical]
+     research/registry/dequantization_checks.json:447
+     Claim: Finite odd-unit LLL rescues are evidence for an inverse-polynomial easy-unit orbit with an efficiently recognizable geometry.
+     Why not: Deprioritize blind odd-unit LLL sampling. Odd units preserve all tested 2-adic signatures, success decays sharply, and finite feature rules vanish before the tail. Reopen only with a new odd-part analytic invariant that proves inverse-polynomial source prevalence and forces LLL extraction; do not ge
+  3. dequant    DEQ-DCP-SIGNED-PERMUTATION-TRANSPORT-COLLAPSES-TO-PIVOT  [critical]
+     research/registry/dequantization_checks.json:590
+     Claim: A total coordinate permutation with bit complements gives a global linear-depth 2-adic transport that is materially broader than the exact-valuation coordinate pivot.
+     Why not: Exclude signed-coordinate permutations from further global-transport synthesis. Any surviving route must use genuine coordinate mixing, nonlinear arithmetic, partial transport, or a walk, with a new source-coverage and classical-access analysis.
+  4. dequant    DEQ-DCP-TWO-ADIC-FINITE-INTERPOLATION-NOT-SOLVER  [critical]
+     research/registry/dequantization_checks.json:788
+     Claim: Finite affine or bounded-degree fits to 2-adic carry predicates establish a polynomial density-one subset-sum solver.
+     Why not: Require a symbolic uniform carry representation plus a polynomial witness-finding algorithm and legal-input coverage theorem. Reject truth-table interpolation, affine-hull overapproximations, and bounded-degree equations without a solver; do not generalize this failure to all 2-adic algorithms.
+  5. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH-DCP-SUBSET-SUM-TWO-ADIC-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13999
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH-DCP-SUBSET-SUM-TWO-ADIC: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Uniform arithmetic height: established pieces and remaining coordinate bound › Exact remaining height obligati  [proved]
+     research/SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md:129
+     Fixed-rank GALOIS-STABLE classes and unique divisors give polynomial individual support degrees, not a common split-support field or automatic height bound.
+  2. handoff    2026-11-12 Uniform Stable Height and Canonical Divisor Choice  [journal]
+     research/AGENT_HANDOFF.md:80
+     For fixed branch TOTAL Galois-orbit bound r, every degree-d cover Y/P1/Qbar of positive genus has h_Fal(Y)<=C_r*d^5*(d+1+hB), hB ABSOLUTE LOGARITHMIC branch height.
+  3. note       Candidate canonical torsion-divisor height chain › Input and proposed bound  [unlabelled]
+     research/SURFACE_TORSION_HEIGHT_CHAIN.md:8
+     A full closed-divisor encoding still needs a precise primitive-coordinate/jet reconstruction argument; a polynomial for pi-values alone can lose branch labels.
+  4. note       Quartic-surface P2 from explicit torsion-cover twists › Construction and proof ledger  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:53
+     **Uniform safe-characteristic branch.** Let Q(ell) be one explicit polynomial dominating the fixed-variable elimination dimension bound, its trace-radical guard, frame/twist ranks, primitive-element sampling discriminant degrees, group order and fixed pointed-pencil thresholds.
+  5. note       Surface point counting: the classical height-uniformity gate › Selection and native question  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:19
+     Constructive classical mechanism under examination: construct the torsion cover of a fixed-genus Lefschetz pencil; isolate a fixed-dimensional Edixhoven module at a SMALL auxiliary prime; Hensel lift that module with paid precision; recover its arithmetic Galois action; evaluate Frobenius at p and…
+
+Code and experiments
+  1. hypothesis dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge_contract
+     research/hypotheses/dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge_contract.json
+     teichmuller_representatives_satisfy_a4_equals_a two_adic_teichmuller_decomposition_is_bijection_on_gr4_2 carry_component_satisfies_exact_frobenius_identity_c1_sq_eq_ab doubling_teichmuller_element_shifts_purely_into_carry_slot dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge
+  2. theorem    Subsystem 148: Galois Ring GR(4, m) Teichmuller Lift & Z_4 Carry Decomposition Bridge.  [code]
+     theorems/dcp_galois_ring_gr_4_m_nechaev_kloosterman_hensel_carry_bridge.py:1
+     Every element u in GR(4, m) admits a unique 2-adic Teichmuller representation:
+       u = a + 2 b,   where a, b in T_m = {0, 1, xi, xi^2, ..., xi^{2^m - 2}} subset GR(4, m),
+     and every Teichmuller representative satisfies a^{2^m} = a (in particular, for m = 1,
+     GR(4, 1) = Z_4 and T_1 = {0,…
+  3. theorem    DCP cyclotomic Galois / Frobenius automorphism prime-power peeling bridge.  [code]
+     theorems/dcp_galois_frobenius_automorphism_prime_power_peeling_bridge.py:1
+     dcp galois frobenius automorphism prime power peeling bridge.
+  4. hypothesis dcp_galois_frobenius_automorphism_prime_power_peeling_bridge_contract  [VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING]
+     research/hypotheses/dcp_galois_frobenius_automorphism_prime_power_peeling_bridge_contract.json
+     R_16[X]/(X^4+1) and R_32[X]/(X^8+1) group homomorphism and midpoint annihilation audits dcp_galois_frobenius_automorphism_prime_power_peeling_bridge VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING Cyclotomic Galois Automorphism Witness Equivariance and Conjugation Constant-Term Projection
+  5. theorem    Classical reconstruction given an explicit positive integral Hom lattice.  [code]
+     theorems/projective_lattice_reconstruction.py:1
+     projective lattice reconstruction.
+
+Literature
+  1. literature Primitive spaces of matrices with upper rank two over the field with two elements  [audit]
+     research/literature_audits/dcp_conditional_carry_sources.json
+     Primitive spaces of matrices with upper rank two over the field with two elements ARXIV-1405.1575 https://arxiv.org/abs/1405.1575
+  2. literature cyclotomic_rescaling_sources  [audit]
+     research/literature_audits/cyclotomic_rescaling_sources.json
+     2026-10-06 General ring secrets are not fixed by Galois transport.
+  3. literature Random dilation superchannel  [seed · kronecker-transform, schur-transform, multiplicity-space, representation-theory]
+     research/literature_records.json
+     Random dilation superchannel Defines the internal S_n Kronecker transform as a basis-change primitive in a circuit identity, but does not turn that definition into the hidden-involution recoupling and decoding theorem needed here.
+  4. literature Quantum state isomorphism problems for groups  [seed · group-actions, hidden-shift, state-isomorphism, complexity]
+     research/literature_records.json
+     Circuit-input pure/mixed state orbit decision; phase-invariant conjugate lift and generalized-dihedral StateHSP reduction.
+  5. literature Quantum computation of Fourier transforms over symmetric groups  [seed · symmetric-qft, representation-theory, quantum-fourier, proved-primitive]
+     research/literature_records.json
+     Quantum computation of Fourier transforms over symmetric groups Makes the S_n quantum Fourier transform a solved polynomial-time primitive; a new coset-state route must identify the additional recoupling and decoding operations rather than relabel QFT as the obstacle.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

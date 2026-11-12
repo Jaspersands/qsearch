@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-12",
+  "selection": "Native surface whole-composition falsifiers",
+  "local_ceiling_usd": 18,
+  "jobs": [
+    {
+      "provider": "claude",
+      "obligation": "geometry",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 40000,
+      "budget": 4,
+      "bundle": "research/audits/claude_runs/2026-11-12-composition-geometry",
+      "session_id": 97906,
+      "contexts": [
+        "research/SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md",
+        "research/audits/api_inputs/2026-11-12-native-composition/geometry-source.md"
+      ],
+      "validation_note": "Initial PDF control-character validation made no API call; normalized excerpt and dispatched once."
+    },
+    {
+      "provider": "claude",
+      "obligation": "bit-uniformity",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 40000,
+      "budget": 4,
+      "bundle": "research/audits/claude_runs/2026-11-12-composition-bit-uniformity",
+      "session_id": 59794,
+      "contexts": [
+        "research/SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md",
+        "research/SURFACE_TORSION_HEIGHT_CHAIN.md",
+        "research/SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md",
+        "research/MERKL_LOG_COLLISION_ATLAS.md"
+      ]
+    },
+    {
+      "provider": "claude",
+      "obligation": "kernel-frobenius",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "max_tokens": 32000,
+      "budget": 2,
+      "bundle": "research/audits/claude_runs/2026-11-12-composition-kernel-frobenius",
+      "session_id": 39910,
+      "contexts": [
+        "research/audits/api_inputs/2026-11-12-native-composition/state-scope.md"
+      ]
+    },
+    {
+      "provider": "openai",
+      "obligation": "whole-composition",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 8,
+      "bundle": "research/audits/openai_runs/2026-11-12-composition-whole-composition",
+      "session_id": 50228,
+      "contexts": [
+        "research/SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md",
+        "research/SURFACE_NATIVE_COVER_CONSTRUCTION.md",
+        "research/SURFACE_NATIVE_TORSION_MODULE.md",
+        "research/SURFACE_TORSION_NUMERICAL_LIFT.md",
+        "research/SURFACE_TORSION_HEIGHT_CHAIN.md",
+        "research/SURFACE_FINITE_ETALE_RECONSTRUCTION.md",
+        "research/SURFACE_BOUNDARY_DETERMINANT.md",
+        "research/audits/api_inputs/2026-11-12-native-composition/geometry-source.md"
+      ],
+      "validation_note": "Initial PDF control-character validation made no API call; normalized excerpt and dispatched once."
+    }
+  ],
+  "note": "Four distinct proof obligations. Local ceilings are estimates not charges. No provider retries."
+}

@@ -1,83 +1,89 @@
 # Research State
 
-Read this page and `research/TRAPS.md` at the start of every Codex research
-pass. `research/GOAL.md` is binding. Search the handoff/priority archives
-only for a specific term; never read them whole. Paths below are relative
-to `research/`. Rewrite at the end of each pass; detail belongs in notes.
+Read this page and research/TRAPS.md at every Codex pass; research/GOAL.md is
+binding. Search handoff archives only for specific terms. Preserve other
+collaborators' Rees work below. Latest Codex handoff:
+"2026-11-12 Explicit Reconstruction Precision Bounds".
 
-As of 2026-11-12, handoff entry
-"2026-11-12 Uniform Stable Height and Canonical Divisor Choice".
-Owner asked faster API use: eight distinct requests are now terminal; eight distinct
-closure obligations have been dispatched across both providers. Explicit
-packets/statuses: audits/api_inputs/2026-11-12-{accelerated,surface-closure}/.
-No automatic retries or theorem promotion from reports; no quantum code.
+Selected single scientific question: can the native smooth-quintic surface
+quantum upper bound be classically matched in uniform poly(log p) BIT time?
+The complete candidate is SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md. It is
+UNDER WHOLE-COMPOSITION REVIEW, not an admitted native classical algorithm.
+Actual cubic pencil: genus31, rank62,220nodes,45basepoints; open multiplicity
+13516, parabolic96, surface P2degree53. Never silently substitute genus6.
 
-Selected single continuation: native classical surface closure, based on the
-strongest constructive progress among independently compared endpoints.
-SURFACE_NATIVE_TORSION_MODULE.md is now independently reviewed/source-checked:
-complete geometric natural module from the presented Sp cover, no supplied
-zeta or basis, in poly(ell, NUMERICAL P, presented bits) at fixed n,r. Closed
-place divisors suffice; one common polynomial-degree field and pairing rank
-certify completeness. Certify natural-module preservation before restricting
-original Frobenius; genuine coefficient linearization A remains separate.
-Closure obligations address cover presentation, Faltings transfer,
-basepoint choice, coefficient action, torsion coordinates and lifting, plus
-new full-GSp arithmetic and primary-book intersection routes.
-MERKL_LOG_COLLISION_ATLAS.md is independently proved/parent-checked:
-sup gr<=C_r*d³*(d+L) with full Merkl chart hypotheses and local two-sided
-regularization bound; a global lower bound away from equal base images is
-also independently checked. SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md now proves
-h_Fal<=C_r*d^5*(d+1+hB) for logarithmic branch height and fixed total branch
-orbit, and simultaneous unique divisors outside<=Ng³ bad basepoints in
-char0/P>2g-2. These do NOT pay torsion support coordinates or reconstruction.
+Established/source-checked interfaces: native complete fixed-format Jacobian
+atlas, genuine normalized full-GSp frame/evaluation; small-auxiliary-prime
+complete natural module with actual zeta and Weil-rank certificate; growing
+cover normalization and faithful auxiliary model; uniform logarithmic height
+chain and closed A,B,C coordinate heights; numerical prime-to-P torsion lift;
+canonical divisor RR subspace and closed algebra using explicit Mascot
+Algorithm7 plus high-degree section multiplication; intrinsic target-prime
+unramifiedness and conditional known-prime p-maximal-order/Frobenius recovery.
+See SURFACE_NATIVE_COVER_CONSTRUCTION, SURFACE_NATIVE_TORSION_MODULE,
+SURFACE_TORSION_NUMERICAL_LIFT, SURFACE_TORSION_HEIGHT_CHAIN,
+SURFACE_UNIFORM_ARITHMETIC_HEIGHT and SURFACE_FINITE_ETALE_RECONSTRUCTION.
 
-Two other endpoints recorded without inertial extensions:
-LOCAL_KUMMER_NATIVE_PERTURBATION.md proves original-E subgroup sampling with
-actual signed-divisor certificates and a separate branch-resultant repair.
-Conditioned Mumford materialization/ONE-HALF remains OPEN.
-CHARACTER_BROAD_PHASE_SOURCE.md proves an averaged joint-success bound only
-for bounded public parity-l1 sources. A4d-query nonlinear native BIT operation
-escapes that restriction; general phase synthesis/decoding remains OPEN.
+Numerical extraction does NOT assume an inverse-Abel oracle or divisor ideal.
+Residue h0=1, actual known RR data, enlarged pole/evaluation spaces and unit
+pivots are mandatory. Source prose sign fixed by its displayed divisor formula.
+Direct target reduction stays falsified by T(T-p); actual p-maximalization
+repairs it only after complete rational group-algebra reconstruction.
 
-Closed surface audit SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md: ordinary modular
-invariants retain open cohomology, not parabolic; displayed Theorem4.1 is false
-in BOTH retained surface sources (quintic13516 vs96; exact Legendre2 vs0).
-The finite parabolic filter is written for complete module/genuine arithmetic
-input with charged fields. The new module result pays one input; native cover,
-coefficient action, lifting/heights/reconstruction remain separate. No full
-classical match, whole-paper rehabilitation, hardness or separation. Existing
-quantum G0/Euler route is unaffected.
+New simplification: U=ev_s0 Hom_Gamma(Ndual,J_full[ell]) has rank13516 and is
+Galois-stable by the constant coefficient module. It need not be Gamma-stable.
+Use all-component tuples, not an arbitrary one-component arithmetic scalar.
+Complete all-pair equivariant encoding/equalizer reconstruction is now proved
+and parent-checked (full806line review). Auxiliary-prime choice precedes b;
+known-b RR uses etale fibre orders, thick-fibre idempotents and semilocal
+saturation at that prime, without a circular new excluded integer.
 
-Gaudin picket-fence pass CLOSED scoped attempt: weak-window gap/sampler and
-native prefix falsifier checked; full interval OPEN/parked. Both paid gap
-attempts ended EMPTY (estimatesUSD3.218686), no evidence/retry.
-Accelerated eight-job estimatesUSD11.141382; terminal cumulative AnthUSD74.251518
-and OpenAIUSD16.571020 excluding new closure calls; old unknown bills excluded.
-These are runner estimates, not invoices/balances. Frozen milestone:
-audits/controls/accelerated_endpoint_round/{usage,checkpoint}.json.
+SURFACE_BOUNDARY_DETERMINANT.md independently proves direct ARITHMETIC
+open determinant / product[(1-epsilon*T^f)P_norm(T^f)] = GEOMETRIC parabolic
+polynomial, followed by exact Leray/blowup quotient to degree53. Native fixed-
+genus boundary counts use actual Pila2005 all-field stratification. Explicit
+parabolic-filter transport is UNNEEDED for this endpoint. The false source
+ordinary compact Hom=parabolic claim remains refuted in BOTH versions.
 
-Now, Codex research: PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md is CLOSED for
-written all-circuit scalar algorithms on a 2D succinct periodic resistor network
-at fixed contrast. Quantum poly(B,n,1/epsilon,log1/delta) is paid by a finite
-contrast series, Fourier gradient reflection and unpostselected Hadamard tests.
-Classical marked heat paths match fixed precision in poly(B,n); their established
-inverse-polynomial precision cost is quasi-polynomial. Joint-polynomial classical
-dependence is OPEN, not hardness. Two independent completed core reviews, one
-completed paid classical report and two truncated advisory reports were checked;
-one frozen six-case exact control checks transcription, not asymptotics. No
-novelty, separation, general PDE theorem, practical advantage or quantum execution.
-Independently reselect by external value; no PDE framework or mesh sweep queued.
+Paid Hopf readout independently proved/parent-checked: integer ranks of
+identity-kernel idempotents recover actual arithmetic Frobenius charpoly
+without a splitting field. A report's claim that output degree53 bounds the
+runtime exponent is rejected. All exponents are fixed but impractically large.
+No full comparator, novelty, speedup, hardness, separation or quantum execution
+is inferred from these scoped results or review agreement. Partial geometry
+report raised all-pencil conjugacy; actual Deligne4.2.7/4.2.8 and Hall3.1
+source repair is now independently proved and parent-checked for EVERY
+certified pencil/oddell!=p. Generic-only4.2.6 is
+not the last source statement; no extra primitivity premise in Hall3.1.
 
-Previous pass: SCALAR_OPI_TILTED_WALK_ADMISSION.md is CLOSED for the stated
-positive-filter family. Source-prescribed bM=O(log(D)^-2), plus arbitrary tilt
-with a uniform identity term, polynomial M and bounded sM are classically matched
-on original halfset tables except probability<=2^m/q^k. The maximum promise is
-not a perfect-word finder or per-table certificate; conditioning costs stay paid.
-Four completed reports and one truncated report checked; two frozen controls.
-Generic OPI/longer filters remain OPEN. Both providers are integrated, terminal
-usage saved separately from owner-reported balances; no unknown-billing retry.
-Other collaborators' Rees work below is preserved. Their Nov12 arXiv/readiness
-handoff entry is separate from these Codex passes. Latest p13 re-check is37/37.
+Owner requested faster API spending. The four-job native-composition round is
+terminal: two completed, one truncated/NONEMPTY geometry, one empty REFUSAL
+(no retry). Frozen47hashes and estimates: controls/native_composition_round,
+cumulative Anth107.278338/OpenAI32.751960USD,total140.030298,124records.
+Two historical timeout bills UNKNOWN/excluded. Estimates are not invoices or
+measured account balances. Exact request snapshots are in their API bundles.
+Two NEW precision-effectivity tasks now run, ceilings12USD (not charges):
+Claude analytic constants; OpenAI arithmetic/closed-height precision. Packets:
+audits/api_inputs/2026-11-12-precision-effectivity/dispatch.json.
+
+The paid whole-composition review was fully read and leaves a conditional
+result because key upstream height proofs were omitted from its packet.
+SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md now gives concrete computable
+majorants; its analytic constants/point-height formula have been independently
+checked, remaining ledger is under attack. A whole internal review is checking
+the complete source chain. Its proposed RR-intersection shortcut is rejected
+(absent disjointness, vanishings do not add); actual source DivAdd/Sub remains
+valid. Full native comparator stays UNADMITTED pending whole-claim review.
+
+Other endpoints retained without inertial extensions: LOCAL_KUMMER_NATIVE_
+PERTURBATION pays original-E subgroup sampling and branch-resultant repair,
+but stable native ONE-HALF remains OPEN. CHARACTER_BROAD_PHASE_SOURCE proves
+only a public-parity-l1 source bound, escaped by native nonlinear BIT use;
+general polynomial decoding remains OPEN. PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION
+has a written all-circuit fixed-contrast quantum scalar algorithm, classically
+matched at fixed precision; joint-polynomial inverse-precision classical cost
+is OPEN, not hardness. Gaudin weak-window/prefix pass closed scoped attempt;
+full path gap parked. Reselect by external value after surface composition.
 
 Now (11-11, AI only, pending human review): SDE open items worked; repo wiring audited. Paper NOT edited.
 - Earlier (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2 (Theorem B′). Theorem C:
@@ -1363,6 +1369,17 @@ quadratic GL2 route. No poly(d) efficiency, quantum execution, novelty
 or separation is claimed.
 
 ## Now
+
+- **Rees headline 53, harsh self-check, H_3(Z) (11-12 night, Claude, AI only, pending human review).**
+  - Papers (local, not posted): headline class-9 exponent 145 → 53 (lem:rounds; Ivanyos confirmed
+    only the full depth); Outlook adds 38 and 95. Core 50 pp., full 227 pp. Owner: sole author,
+    full version as anc approved, endorser pending, AI-use paragraph still DRAFT.
+  - Harsh referees: §3, §4, Schedule 2 all CORRECT (WITH FIXES, applied); source checks round 2:
+    5 items need a human (paywalls); cor:utz repetition count fixed.
+  - H_3(Z): every subgroup in quantum poly time in the signed-box model (Theorem A + Theorem C′),
+    each refereed CORRECT WITH FIXES by AI; prior art none found; not in the paper; gates false.
+  - SDE κ = 6 dead banks exact at p = 31, 37, 43 (m2 = 8, 6, 6).
+  - Handoff "2026-11-12 Rees Headline 53, Harsh Self-Check, H_3(Z) Fully Polynomial (AI only)".
 
 - **Rees arXiv readiness and attacks (11-12 late, Claude, AI only, pending human review).**
   - Papers (local): core 45 pp. is self-contained; the full 223 pp. is synced and ships as the
@@ -2841,7 +2858,7 @@ or separation is claimed.
 
 | Direction | Established result and scope | File |
 |---|---|---|
-| Surface classical descent and finite parabolic repair | Reviewed ordinary modular descent REFUTED in both source versions; explicit Legendre2 vs0 and quintic13516 vs96. Written supplied-module finite filter via Kummer inertia/centralizers costs poly(ell, numerical auxiliary P, presented size), fixed rank/branches. Native module/Frobenius construction and uniform lifting OPEN; no full classical match, hardness, separation or execution. | `SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md` |
+| Surface classical reconstruction and boundary repair | Reviewed ordinary compact=parabolic descent REFUTED in both source versions (Legendre2 vs0, quintic13516 vs96). Native frame, complete auxiliary module, normalization/RR, uniform heights, canonical closed encoding, finite coordinate algebra and original-prime Frobenius now proved under stated geometry. Exact boundary determinant bypasses parabolic transport. Whole native quintic composition UNDER REVIEW; no full classical match, hardness, separation or execution. | `SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md`, `SURFACE_FINITE_ETALE_RECONSTRUCTION.md`, `SURFACE_BOUNDARY_DETERMINANT.md` |
 | Succinct periodic conductivity | Reviewed written quantum poly(B,n,1/epsilon) scalar estimator for every fixed-contrast 2D circuit material. Constructive classical heat-path estimator matches fixed precision, quasi-polynomial for inverse-polynomial precision. Joint-polynomial match OPEN; no hardness, novelty, separation or quantum execution. Two core reviews and one frozen exact control. | `PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md` |
 | Scalar OPI root-anchor tilted filter | Reviewed exact paired classical sampler; prescribed bM=O(log(D)^-2). Arbitrary tilt with uniform identity term, polynomial M and bounded sM matched with high probability over original halfset tables; native maximum attainment paid by second moment. Flat-conditioned actual amplitude bounded, paid projected sampler only. Two frozen controls; no generic OPI no-go, hardness, novelty or separation. | `SCALAR_OPI_TILTED_WALK_ADMISSION.md` |
 | Two-cluster Gaudin joint-gap counterfamily | Reviewed finite-distinct rational sites, spacingn^-8,g1/(2n),N=2n,M=n give squared gap<=2312n^-5/3 by fusion/min-max; exact128-site bound<1/400. Uniform1/N floor refuted, weaker polynomial preparation OPEN. Known critical BCS mechanism; no novelty, superpoly-gap or separation. | `GAUDIN_TWO_CLUSTER_GAP.md` |

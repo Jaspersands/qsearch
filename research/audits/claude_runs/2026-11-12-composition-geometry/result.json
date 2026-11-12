@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 12641,
+      "path": "research/SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md",
+      "sha256": "30a18be0cab0553c0e64b408bb2e29cdcd29bb97627869d85afc3041659d461c",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 13590,
+      "path": "research/audits/api_inputs/2026-11-12-native-composition/geometry-source.md",
+      "sha256": "e1d3d829c3a39462bf0b7ce7888cf576869c5ea98d9e8da6325f547dd1649d74",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 11561,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T11:40:47.793777+00:00",
+  "input_token_allowance": 11817,
+  "max_budget_usd": 4.0,
+  "max_tokens": 40000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 2.11817,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-native-composition/geometry.md",
+    "sha256": "ac9005f92363a0e66e433a9124cbc4ab458482e3263ba0c42c3239d2c0eb2e45",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T113215.337729Z-60a4de0a",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 11561,
+    "output_tokens": 40000
+  },
+  "usage_cost_estimate_usd": 2.11561
+}

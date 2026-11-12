@@ -8,6 +8,13 @@ command was run. Claim gates are unchanged: `speedup_claim_allowed` and `novelty
 stay false. There is no application: f is an arbitrary oracle.
 
 **Verdict.**
+* **Update (2026-11-12, later): the cyclic case below is no longer open in this model.** Theorem C′
+  (`2026-11-12-rees-h3z-cyclic-proof.md`, with SDA-ISO from `2026-11-12-rees-h3z-qzs-attack.md`)
+  solves H = ⟨h⟩, H ∩ Z = 1, and H = 1 in quantum polynomial time, proved given cited theorems
+  (LLL, Shor period finding and factoring, Rosser–Schoenfeld), refereed CORRECT WITH FIXES
+  (`-qzs-referee.md`, `-cyclic-referee.md`). With Theorem A this gives every subgroup of H_3(Z) in
+  the signed-box, known-b model. AI only, pending human review; no prior solution found
+  (`-prior-art.md`); claim gates stay false. The bullets below are the state before Theorem C′.
 * Every subgroup H with H ∩ Z(G) ≠ 1 is found in quantum polynomial time (Theorem A, proved
   given Kuperberg Thm 1.5/7.1 and cor:utz; AI-checked and refereed twice by AI, pending human
   review).
@@ -86,8 +93,8 @@ sampling only, so Step 1 really needs Q ≈ 2^{6b+3}.
 
 ## 2. Theorem A: H ∩ Z ≠ 1 is polynomial
 
-**Theorem A (proved given cited theorems: Kuperberg 2025 Thm 1.5 via its Thm 7.1, and cor:utz,
-itself AI-checked, pending human review; second referee 2026-11-12-rees-h3z-referee.md).**
+**Theorem A (proved given cited theorems: Kuperberg 2025 Thm 1.5 via its Thm 7.1, and the n = 3 route of
+cor:utz (ISS 2012 Thm 1 at odd q, Imran–Ivanyos 2023 Thm 1 at q = 2; arXiv versions checked); second referee 2026-11-12-rees-h3z-referee.md).**
 There is a quantum algorithm with the following guarantee. Input: b ≥ 1, ε ∈ (0,1), and an
 oracle for f as in §0, coherent on matrices with entries in (−2^B, 2^B), where
 B = B(b) = max(20b+11, 2P_K + 3b + 3) = poly(b) and 2^{P_K} bounds the entries of Kuperberg's
@@ -99,12 +106,16 @@ b must be given: doubling is sound for Step 1 alone, not for the whole theorem (
 returning too small an S cannot be detected, and with H ∩ Z = 1 doubling never stops).
 
 Imported results:
-* Kuperberg 2025, arXiv:2507.18499v1, Thm 1.5 (HSP in Z^k for arbitrary hidden subgroups,
-  poly(k, n) with n the bit complexity of the answer, elements of Z^k in binary) and its proof
-  Thm 7.1 / Algorithm A (§7.1, read in the PDF on 2026-11-12). Algorithm A applies the
-  hiding function only on the cube ‖x‖_∞ < Q/2, with Q, R, S, T of order exp(poly(n)), and
-  Thm 7.1 says it "succeeds with good probability". Thm 1.8 is the one labelled outlined;
-  Thm 7.1 is proved in §§7.4–7.8 (not checked here). Cor 1.7 pulls back to Z^k, as below.
+* Kuperberg 2025, arXiv:2507.18499v1, Thm 1.5 via Thm 7.1 / Algorithm A (§7.1; proof §§7.4–7.8,
+  read 2026-11-12, `2026-11-12-rees-h3z-imports.md`). Algorithm A takes the answer size n, or
+  any upper bound n' ≥ n. All of its parameters are lower bounds in n (§7.8, p. 36), so
+  n' works, in time poly(k, n'). It runs in worst-case polynomial time, with constant success
+  probability (≥ 1/2 − o(1) for steps 1–6, by Lemmas 7.6 and 7.16, times Shor–Kitaev's constant
+  in step 7). It queries f on the cube ‖x‖_∞ < Q/2, with log_2 Q = O(k(n+k)) and an absolute
+  constant that the paper does not compute (step 2). It also queries f∘A_6 in step 7, whose range
+  is not stated. We LLL-reduce A_6 and skip any run whose step-7 range leaves the box. The proof
+  assumes rank ℓ < k in §7.7; the full-rank case is covered below by a parallel Shor–Kitaev run.
+  Lemmas 7.6 and 7.16 are read but not verified line by line (pending human review).
 * Shor/Kitaev period finding (Mosca–Ekert §§2, 4.2, not re-read).
 * cor:utz / rem:utz-scope(b) for finite index in H_3(Z): ISS 2012 for q ≥ 3 and
   Imran–Ivanyos 2023 Thm 1 for q = 2.
@@ -127,19 +138,29 @@ Imported results:
    f(x^{eα}y^βz^γ) on Z^3 hides the lattice L = ψ^{-1}(S) ∋ (0,0,e), S = (H∩A)/⟨z^e⟩. This is
    Kuperberg's proof of Cor 1.7. L has a basis with entries < 2^{4b+2}: in rk 2,
    [Z^3:L] = [A:H∩A] ≤ [G:H] < 2^{4b+2}; in rk 1 the basis is (u'_1, u'_2, γ_0), (0,0,e) with
-   |u'_2| < 2^{4b+1}; in rk 0 it is (0,0,e). So the answer size is n_L = O(b). Run Algorithm A
-   at that n_L. Its queries have entries < 2^{P_K}, P_K = poly(n_L), so the matrix entries are
-   < e·2^{2P_K} + 2^{P_K} < 2^B. Repeat O(log 1/ε) times and keep the vectors v with
-   F̃(v) = F̃(0); every kept vector lies in L, and the lattice they generate is L with
-   probability ≥ 1 − ε/4. (Assumes Thm 7.1 holds when run with an upper bound on n, and that
-   "good probability" means a constant; not checked in §§7.4–7.8.)
+   |u'_2| < 2^{4b+1}; in rk 0 it is (0,0,e). So the answer size is n_L = O(b).
+   Run Algorithm A with the bound n' = 9(4b+3) + O(1) ≥ n_L. Before step 7, replace A_6 by an
+   LLL-reduced basis of H_1, and skip the run if step 7's query range leaves the box. In parallel,
+   run finite-index Shor–Kitaev on F̃ over Z^3 with index bound 2^{4b+2} (cube side 2^{8b+5}); it
+   returns L whenever rk π(H) = 2, i.e. rk L = 3, the case Kuperberg's §7.7 sets aside. Let 2^{P_K}
+   bound the entries of every vector queried by these runs. Then P_K = O(n_L) = O(b), with an
+   absolute constant from Kuperberg's Lemma 7.16 that is not computed, so we state P_K = poly(b).
+   The matrix entries are < e·2^{2P_K} + 2^{P_K} < 2^B. Repeat O(log 1/ε) times. LLL-reduce each
+   run's output, discard vectors with ‖v‖_∞ ≥ 2^{4b+5} (these queries stay below 2^{11b+12}), and
+   keep the remaining v with F̃(v) = F̃(0). Every kept vector lies in L. Each run succeeds with
+   constant probability, so the lattice the kept vectors generate is L with probability ≥ 1 − ε/4.
 3. **Rank of S** (it equals rk π(H), since π(h^e) ∈ eZ × Z for every h ∈ H):
    * rk 0: π(H∩A) = 0, so π(H) = 0 since eπ(H) ⊆ π(H∩A), and H = ⟨z^e⟩.
    * rk 2: [G:H] = [Z^2:π(H)]·e ≤ d^2 < 2^{4b+2}, where d = ω(πg,πg') for two generators
-     with independent projections (e | d). Apply cor:utz with index parameter b' = 4b+2 and
-     error ε/2. Its box [0, 2^{20b+11}) lies inside the signed box, and the coset convention
-     matches. For n = 3 it uses ISS 2012 (q ≥ 3) and Imran–Ivanyos 2023 Thm 1 (q = 2), and not
-     Thm is-import. cor:utz is AI-checked, pending human review.
+     with independent projections (e | d). Use index parameter b' = 4b+2: apply the
+     reduction in the proof of cor:utz (periods of x, y, z; M = lcm; Γ(M) ⊆ H; the quotient
+     UT_3(Z/M), queried on [0, 2^{20b+11})). Do not apply cor:nilpotent. Split UT_3(Z/M) by CRT into
+     the groups UT_3(Z/q^k). For each odd q use ISS (arXiv:0707.1260v1, Thm 1, via its Lemmas 1–3
+     and Thms 3–5), with the explicit polycyclic presentation by base-q digits, amplified by the union
+     of outputs h with f(h) = f(1). For q = 2 use Imran–Ivanyos (arXiv:2304.08376v1, Thm 1), with the
+     purification oracle of cor:nilpotent's proof. This route does not use Thm is-import. It is not
+     cor:utz as stated, which assumes is-import. Error ε/2. ISS's own q = 2 case (its Lemma 3 cites
+     Friedl et al.) is not used.
    * rk 1: π(H∩A) = π(H) ∩ (eZ × Z) = Zu with u ≠ 0, so the primitive direction v = u/gcd(u)
      is read off any element of L with (α,β) ≠ 0, and H ⊆ A_v. Restrict f to A_v via
      ι(t,s) = g_v^t z^s = (tv_1, tv_2, s + C(t,2)v_1v_2). Then f∘ι hides L_v = ι^{-1}(H), of
@@ -153,7 +174,7 @@ Imported results:
    and every basis element lies in A_v. The referee's check regenerates H from ι(basis) and
    z^e on 357 instances.
 
-The outputs generate H itself: z^e (rk 0), ι(HNF basis of L_v) (rk 1), cor:utz's output (rk 2).
+The outputs generate H itself: z^e (rk 0), ι(HNF basis of L_v) (rk 1), the CRT-split output of the n = 3 route (rk 2).
 Every step except Kuperberg's queries the box of exponent max(6b+4, 16b+6, 20b+11) = 20b+11;
 Kuperberg's step needs 2P_K + 3b + 3 = poly(b). So B = poly(b), not O(b) as an earlier draft
 said. Errors: ε/4 + ε/4 + ε/2 = ε. ∎

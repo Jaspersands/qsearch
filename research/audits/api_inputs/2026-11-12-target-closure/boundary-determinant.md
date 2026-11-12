@@ -1,0 +1,20 @@
+Decisively prove or falsify a NEW simplification in the native classical surface comparator: discard explicit parabolic-subspace computation and recover only its characteristic polynomial by boundary determinant division. Existing repaired Kummer filter is expensive and has a specialization interface; remove it if this theorem works. No tools/browsing/execution. Actual primary nodal cohomology and Pila statement supplied; do not trust the source's later false Theorem4.1. Focus on exact local Tate/dual factors, torsion coefficients, closed branch points, and native classical cost. Return substantive proof or first obstruction before budget exhaustion.
+
+Native fixed-degree task: every smooth quintic surface X/F_p, chosen cubic-Veronese Lefschetz pencil, smooth fibres (5,3) genus31, n62,r220,45 basepoints, singular fibres geometrically irreducible with ONE ordinary node. Full symplectic geometric monodromy, ell>53,ell!=p, all relevant finite-coefficient/invariant-cycle hypotheses charged; p small relative fixed polynomialell can use direct fixed-degree point counting in polynomialell cost. Suppose genuine full-GSp torsion reconstruction gives arithmetic Frobenius F_W on WHOLE W=Hom_Gamma(Ndual,J_Cfull[ell])~=H1(U,L)(1), L=R1 f_*muell, dimm=(r-2)n=13516. This input is conditional; do not solve reconstruction. Reviewed conventions imply geo Frobenius on open H1(U,L') for L'=R1 f_*Fell is p² F_W^-1.
+
+Proposed exact sequence from Leray for j:U→P1:
+0→H1(P1,j_*L')→H1(U,L')→⊕_(geometric z)H1(I_z,L')→H2(P1,j_*L')→0.
+FullSp invariants vanish, so H2(P1,j_*L')=H2_c(U,L')=H0(U,L'dual)dual(-1)=0. Need justify j_!/j_* skyscraper sequence in finite coefficients and the procyclic inertia (not finite cyclic quotient, whose cohomological dimension differs).
+For closed z degreef, q=p^f, nodal fibre C_z with smooth normalization Ctilde genus30 and graph Frobenius sign epsilon=+1 if two node branches split over F_q, -1 otherwise, P_node(U)=(1-epsilon U)*P_Ctilde(U). Invariant cycles identify (L')^I with H1(C_z,Fell). Symplectic pairing L'×L'→Fell(-1) identifies coinvariants with invariants-dual(-1); H1(I,L')=coinvariants(-1). Therefore geo LOCAL boundary Frobenius=q² F_node^-1. Selfdual normalization roots turn that into factor
+B_z(T)=(1-epsilon*q²*T^f) * P_Ctilde(q*T^f).
+The induction over f branch conjugates gives T^f (not T to power1 or q=p). Boundary total degree220*61=13420. Multiplicativity of determinants over short exact sequence, without semisimplicity or eigenvalue separation modell, gives
+P_par(T)=det(1-T*p²F_W^-1)/product_z B_z(T) modell,
+degree96. Check this exact formula and prove all Tate factors; an error here decisively kills route.
+
+Compute each Ctilde by explicit node normalization over F_(p^f), f<=220; original degree15 curve fixedformat implies fixeddegree/genus output. Pila/Schoof classical zeta for fixed genus/degree over that field costs polylogp. Node is unique => rational over closedpoint field, branch sign via degree2 tangent factorization. No general growing-genus polylogp point-count oracle. Branch factorization, residuefields, normalize and all classical counts charged. All M=220 countsfixednumber; no common support splitting.
+
+Optionally complete scalar assembly (but keep reconstruction conditional): basepoint scheme B finiteetale degree45, P_B(T)=det(1-T Frob on H0(B)); blowup adds P_B(pT). Proper-pencil Leray then predicts
+P2_X(T) P_B(pT)=(1-pT)^2 P_par(T).
+Check nonrational basepoints/no rationalsection: section sum degree45 and ell>53 suffice or determinant filtration avoids splitting. H1/H3zero, b2=53, integral torsionfree hypersurface; all constants fixed. CRT product>2^54 p^53 reconstructs integer degree53P2, enough primesell=O(logp). #X=1+p²-[T]P2. If p<=Q(ell) for fixedpolynomialQ, direct counts over extensions degree<=53 cost p^O(1)<=Q(ell)^O(1), polynomialell, so fallback need not hide a nonuniform finite threshold.
+
+Give primary hypothesis gaps if any. Do not invoke the false ordinary-compact-Hom=parabolic theorem; ordinary Hom must remain OPEN and boundary divided explicitly. An exact finite toy control can only falsify, not prove.

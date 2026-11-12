@@ -57,7 +57,7 @@ MACRO_TAGS = {
     "2^61-1": "MersSixtyOne",
     "2^127-1": "MersOneTwentySeven",
 }
-COLUMNS = ("combined_Q", "uniform_kernel_Q", "uniform_kernel_trials", "iii_Q", "iii_trials", "iii_total")
+COLUMNS = ("combined_Q", "uniform_kernel_Q", "uniform_kernel_trials", "iii_Q", "iii_trials", "iii_total", "wd_Q")
 COLUMN_TAGS = {
     "combined_Q": "CombQ",
     "uniform_kernel_Q": "UkQ",
@@ -65,6 +65,7 @@ COLUMN_TAGS = {
     "iii_Q": "FcQ",
     "iii_trials": "FcTrials",
     "iii_total": "FcTotal",
+    "wd_Q": "WdQ",
 }
 
 mpmath.mp.dps = 120
@@ -263,14 +264,110 @@ def free_coordinate_iii(p: int, profile=PROFILE, eps: F = EPS, explicit: bool = 
                 total=total, rank=rank, bank=bank, capped=capped, budget_ok=budget_ok)
 
 
-def combined_rule(p: int, profile=PROFILE, eps: F = EPS):
+ECG_EXCEPTIONS = {
+    (3, 2): set(),
+    (3, 3): {7, 13, 19, 31, 37, 43, 61, 67, 73, 79, 97, 103, 109, 127, 139, 151, 157, 163, 181, 193, 211, 241},
+}
+
+
+def M_J(a: int, J: int) -> int:
+    """Remark rem:sde-block-steered block-refined triangular arity M_J(a)."""
+    mu, r0 = divmod(a, J - 1)
+    return 1 + mu * (a + 1) - (J - 1) * mu * (mu - 1) // 2 + ((r0 + 1) if r0 > 0 else 0)
+
+
+def _weil_ge(p: int, e: int, k: int, rhs: int) -> bool:
+    """Exact test of p - e - (k^e - 1)(e - 1) sqrt(p) >= rhs for rhs >= 0."""
+    C = (k ** e - 1) * (e - 1)
+    lhs = p - e - rhs
+    return lhs >= 0 and lhs * lhs >= C * C * p
+
+
+def block_steered_admissible(p: int, k: int, gd: int, tau: F) -> dict:
+    """Guards (G1)-(G3) of Remark rem:sde-block-steered / Appendix app:sde-side."""
+    J = max(3, k)
+    M = M_J(gd, J)
+    Lam = -(-gd // (J - 1))
+    pairs = Lam * math.comb(J, 2)
+    weil_pos = all(_weil_ge(p, e, k, 1) for e in range(2, J + 1))
+    g1 = weil_pos or ((J, k) in ECG_EXCEPTIONS and p not in ECG_EXCEPTIONS[(J, k)])
+    g2 = all(_weil_ge(p, e, k, 2 * pairs * k ** e) for e in range(2, J + 1))
+    bank = F(M + pairs, p - 1) + F(1, (p - 1) * p ** (M - gd))
+    g3 = bank <= tau
+    return dict(J=J, M=M, Lambda=Lam, G1=g1, G2=g2, G3=g3, bank=bank, ok=g1 and g2 and g3)
+
+
+def combined_rule(p: int, profile=PROFILE, eps: F = EPS, block_steered: bool = False):
     c, m = len(profile), profile[0]
     S = m + ceil_log_base(p, 3 / eps)
-    sch = {d: combined_choice(p, d, profile[d - 1]) for d in range(2, c + 1)}
-    P = 1
-    for d in sch:
-        P *= sch[d][1]
-    return dict(S=S, sch=sch, P=P, Q=c * S * P)
+    sch = {}
+    acc = 1
+    bs_grades = []
+    for d in range(2, c + 1):
+        name, Mc = combined_choice(p, d, profile[d - 1])
+        k = gcd(d, p - 1)
+        chosen = (name, Mc)
+        if block_steered and 2 <= k < p - 1:
+            tau = eps / (9 * (c - 1) * S * acc)
+            info = block_steered_admissible(p, k, profile[d - 1], tau)
+            if info["ok"] and info["M"] < Mc:
+                chosen = (f"BS(J={info['J']})", info["M"])
+                bs_grades.append(d)
+        sch[d] = chosen
+        acc *= chosen[1]
+    return dict(S=S, sch=sch, P=acc, Q=c * S * acc, bs_grades=bs_grades)
+
+
+def _jstar_h(p: int, h: int) -> int:
+    """Least J with D_J = F_p for D_0 = P_kappa union {0} (rem:fc-witness-h3(a))."""
+    k = (p - 1) // h
+    D = {pow(x, k, p) for x in range(1, p)} | {0}
+    j = 0
+    while len(D) < p:
+        D = {(x - y) % p for x in D for y in D}
+        j += 1
+    return j
+
+
+def _n0_table(J: int, sigma: int, n: int) -> F:
+    N = [F(e + 1) for e in range(n + 1)]
+    for _ in range(J):
+        pref, new = F(0), []
+        for e in range(n + 1):
+            new.append(1 + sigma * pref)
+            pref += N[e]
+        N = new
+    return N[n]
+
+
+def weight_doubling_iii(p: int, profile=PROFILE, eps: F = EPS):
+    """Remark rem:fc-witness-h3(b) weight-doubling node at Gamma_F, linear node at Gamma_1."""
+    c, m = len(profile), profile[0]
+    S = m + ceil_log_base(p, 3 / eps)
+    acc, sch = 1, {}
+    for d in range(2, c + 1):
+        gd = profile[d - 1]
+        k = gcd(d, p - 1)
+        if k == 1:
+            M, how = gd + 1, "lin"
+        else:
+            assert 2 <= k < p - 1
+            h = (p - 1) // k
+            tau = eps / (9 * (c - 1) * S * acc)
+            A = 2 * (k - 1) * (k - 2) + 4
+            if p >= A * A:
+                Nbar = 1 + (p - 1).bit_length() * F(p, p - 1) * F(gd * (gd + 1), 2)
+                how = "rescaled"
+            else:
+                sigma = min(p, ceil_log2((p - 1) ** 2) + 4)
+                J = _jstar_h(p, h)
+                Nbar = _n0_table(J, sigma, gd)
+                how = f"tables(j*={J})"
+            L = ceil_frac(2 * Nbar)
+            M = gd + ceil_log_base(p, 2 / tau) + ceil_log2(2 / tau) * L
+        sch[d] = (how, M)
+        acc *= M
+    return dict(S=S, sch=sch, P=acc, Q=c * S * acc)
 
 
 def rc_bank(p: int, k: int, gd: int, M: int, literal_main: bool) -> F:
@@ -348,32 +445,38 @@ def _bound(x) -> dict:
 
 def row(label: str, p: int) -> dict:
     assert is_probable_prime(p) and p > len(PROFILE)
-    comb = combined_rule(p)
+    comb_wc = combined_rule(p, block_steered=False)
+    comb = combined_rule(p, block_steered=True)
+    wd = weight_doubling_iii(p)
     fc = free_coordinate_iii(p)
     fcx = free_coordinate_iii(p, explicit=True)
     uk = uniform_kernel_mixed(p)
     uk_lit = uniform_kernel_mixed(p, literal_main=True)
     exact = {
         "combined_Q": comb["Q"],
+        "combined_worst_case_Q": comb_wc["Q"],
         "uniform_kernel_Q": uk["Q"] if uk else None,
         "uniform_kernel_trials": uk["max_trials"] if uk else None,
         "iii_Q": fc["Q"],
         "iii_trials": fc["max_cap"],
         "iii_total": fc["total"],
+        "wd_Q": wd["Q"],
     }
     table = {k: (fmt1(v) if v is not None else None) for k, v in exact.items()}
     margins = {k: (round(boundary_margin(v), 4) if v is not None else None) for k, v in exact.items()}
     grades = {}
     for d, gr in fc["grades"].items():
         e = dict(cls=gr["cls"], schedule=gr["schedule"], kappa=gr["kappa"], M=_s(gr["M"]),
-                 combined_schedule=gr["combined"][0], combined_M=_s(gr["combined"][1]))
+                 combined_schedule=gr["combined"][0], combined_M=_s(gr["combined"][1]),
+                 combined_bs_schedule=comb["sch"][d][0], combined_bs_M=_s(comb["sch"][d][1]),
+                 wd_schedule=wd["sch"][d][0], wd_M=_s(wd["sch"][d][1]))
         if gr["cls"] == "F":
             q = grade_data(p, d)[2]
             e.update(n0=gr["n0"], tau=_bound(gr["tau"]), bank_bound=_bound(gr["bank"]),
                      trial_cap=_s(fc["caps"][d]), log2_trial_cap=round(log2_exact(fc["caps"][d]), 4),
                      log2_q_inv_g=round(log2_exact(1 / q ** PROFILE[d - 1]), 4),
                      explicit_M=_s(fcx["grades"][d]["M"]), explicit_n0=fcx["grades"][d]["n0"],
-                     fcs_not_above_combined=gr["M"] <= gr["combined"][1])
+                     fcs_not_above_combined=gr["M"] <= gr["combined"][1] and gr["M"] <= comb["sch"][d][1])
         grades[str(d)] = e
     out = {
         "label": label,
@@ -381,7 +484,10 @@ def row(label: str, p: int) -> dict:
         "table": table,
         "exact": {k: (_s(v) if v is not None else None) for k, v in exact.items()},
         "rounding_margin": margins,
-        "combined": {"S": comb["S"], "arities": {str(d): [s, _s(M)] for d, (s, M) in comb["sch"].items()}},
+        "combined": {"S": comb["S"], "bs_grades": comb["bs_grades"],
+                     "arities": {str(d): [s, _s(M)] for d, (s, M) in comb["sch"].items()}},
+        "combined_worst_case": {"S": comb_wc["S"], "arities": {str(d): [s, _s(M)] for d, (s, M) in comb_wc["sch"].items()}},
+        "wd": {"S": wd["S"], "arities": {str(d): [s, _s(M)] for d, (s, M) in wd["sch"].items()}},
         "iii": {
             "S": fc["S"], "t": fc["t"], "N_sampler_nodes": _s(fc["N"]), "B": fc["B"],
             "argmax_cap_grade": fc["argmax_cap"], "Gamma0_empty": all(g["cls"] != "0" for g in fc["grades"].values()),
@@ -435,9 +541,11 @@ def build() -> dict:
         "m": PROFILE[0],
         "eps": _s(EPS),
         "formulas": {
-            "combined_Q": "rem:combined-schedule arities; Q = c S prod_d M_d, S = m + ceil(log_p(3/eps)) (after thm:main)",
+            "combined_Q": "rem:combined-schedule with rem:sde-block-steered option when admissible; Q = c S prod_d M_d",
+            "combined_worst_case_Q": "rem:combined-schedule worst-case arities alone (no block-steered option)",
             "iii": "thm:free-coordinate(iii), rule (R1)-(R4) of app:fc-mixed, least public M_d with beta(M_d,n0;g_d) <= tau_d,"
                    " tau_d = eps/(9(c-1) S n_d); B = ceil(log2(27N/eps)); trial cap ceil(2 B ln2 q^{-g_d})",
+            "wd_Q": "rem:fc-witness-h3(b) weight-doubling node at 2 <= kappa_d < p-1 and linear node elsewhere",
             "uniform_kernel": "thm:random-column(i) nodes in a script-defined mixed rule (see uniform_kernel.rule)",
             "rounding": "log2 to one decimal, rounded to nearest, as printed",
         },
@@ -456,7 +564,8 @@ def main(argv=None) -> int:
     for r in data["rows"]:
         t = r["table"]
         print(f"{r['label']:>8s} & {t['combined_Q']} & {t['uniform_kernel_Q'] or '--'} & "
-              f"{t['uniform_kernel_trials'] or '--'} & {t['iii_Q']} & {t['iii_trials']} & {t['iii_total']}")
+              f"{t['uniform_kernel_trials'] or '--'} & {t['iii_Q']} & {t['iii_trials']} & "
+              f"{t['iii_total']} & {t['wd_Q']}")
     print(f"wrote {args.out}")
     return 0
 

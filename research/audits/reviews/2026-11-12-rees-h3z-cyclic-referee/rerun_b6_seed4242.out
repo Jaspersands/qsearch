@@ -1,0 +1,8 @@
+  sampler self-test w=(3, -2) X3=17 A=12345: TV(empirical, exact) = 0.0742; null TV (exact draw) = 0.0770
+  sampler self-test w=(4, 6) X3=-5 A=777: TV(empirical, exact) = 0.0895; null TV (exact draw) = 0.0889
+  sampler self-test w=(0, 5) X3=9 A=0: TV(empirical, exact) = 0.0741; null TV (exact draw) = 0.0731
+  sampler self-test w=(8, 4) X3=3 A=99991: TV(empirical, exact) = 0.0926; null TV (exact draw) = 0.0924
+| b | log2 Mb | K | log2 N0 | trials | h recovered, 1st batch | h recovered, <=3 batches | direction ok / batches | SDA tries per sample | off-strip samples (bound 2^-7+2^-14 = 0.0079) | direct X decode, 1st batch (heuristic route) | s/trial |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 6 | 44 | 103 | 434 | 200 | 200/200 | 200/200 | 200/200 | 1.030 | 0/800 | 194/200 | 0.17 |
+| control (decoder given unrelated uniform alpha), b=6 | | | | 100 | 0/100 | 0/100 | 0/300 | | | 0/100 | |

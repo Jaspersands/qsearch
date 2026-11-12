@@ -70,6 +70,57 @@ Selected by concrete end-to-end progress, not to repeat agreement or empty
 runs. Their exact packets/statuses are in audits/api_inputs/2026-11-12-surface-
 closure/dispatch.json. Reconcile them only at the next clean milestone.
 
+Usage closure milestone, Nov12: eight terminal requests, four completed/nonempty,
+two truncated/nonempty, two truncated/empty. Round estimates AnthUSD13.244390,
+OpenAIUSD3.710380 (total16.954770); frozen-prior cumulative AnthUSD87.495908,
+OpenAIUSD20.281400. Two historical timeout bills UNKNOWN/excluded; these are
+runner estimates, not invoices or balances. Audit: audits/controls/surface_closure_round/.
+Five NEW narrow native-completion tasks are running across both providers:
+native atlas, minimal-model contraction, faithful good model/RR, genuine
+normalized frame, and vertical pole budget. Local ceilingsUSD35, not charges.
+Exact contexts/statuses: audits/api_inputs/2026-11-12-native-completion/dispatch.json.
+The empty broad book-height request was not repeated; these narrower tasks
+use newly checked source hypotheses and independent parent proof proposals.
+
+Native-completion milestone, Nov12: seven terminal, four completed, two
+truncated/empty and one truncated/nonempty (normalization1855bytes). Round
+estimates AnthUSD12.792530/OpenAIUSD4.974860, totalUSD17.767390; cumulative
+AnthUSD100.288438/OpenAIUSD25.256260, totalUSD125.544698 across115 records.
+Two old timeout bills remain UNKNOWN/excluded. Frozen ledger and46 stable
+hashes: audits/controls/native_completion_round/. These are runner estimates,
+not invoices/balances. Five NEW target-closure obligations run (three Opus/max,
+two OpenAI/max), local ceilingsUSD22. They concern original-prime model,
+cohomological assembly, parabolic transfer, repaired finite-etale reconstruction,
+and boundary determinant replacement. Exact contexts/sessions in
+audits/api_inputs/2026-11-12-target-closure/dispatch.json. No empty-call retry;
+initial OpenAI CLI flag validation made no API call before correction.
+
+Target-closure milestone, Nov12: five terminal, two completed/nonempty and
+three truncated/empty. Round estimates Anth4.054436/OpenAI4.404140USD;
+cumulative Anth104.342874/OpenAI29.660400USD across120 records, excluding two
+historical UNKNOWN timeout bills. Frozen61hashes: audits/controls/target_closure_round/.
+Four new DISTINCT native-composition obligations dispatched, ceilings18USD:
+three Claude/high and one OpenAI/max. Exact packets/sessions are in
+api_inputs/2026-11-12-native-composition/dispatch.json. Bit-uniformity ended
+with empty provider REFUSAL, not retried. Hopf readout completed; geometry and
+whole-composition remain active. Reconcile the new round only at its milestone.
+Initial source-excerpt control-character validation made no API call; sanitized
+local PDF excerpt was then dispatched once. All costs remain estimates, not
+invoices, provider caps or balances.
+
+Native-composition milestone, Nov12: four terminal, two completed/nonempty,
+one truncated/NONEMPTY geometry13269bytes, one empty provider REFUSAL (not
+retried). RoundAnth2.935464/OpenAI3.091560USD,total6.027024; cumulative
+Anth107.278338/OpenAI32.751960USD,total140.030298,124records. Two historical
+UNKNOWN bills excluded. Frozen47hashes: controls/native_composition_round.
+Parent fully checked reports and recorded material errors/source dispositions.
+Two NEW precision-effectivity tasks launched with explicit numerical majorants
+and previously omitted source proofs: Claude/high analytic constants and
+OpenAI/max arithmetic/closed-coordinate precision, ceilings12USD notcharges.
+Exact selected contexts/statuses in api_inputs/2026-11-12-precision-effectivity/.
+These are distinct new proof obligations, not a repeat of the refused broad
+bit-uniformity request. Reconcile only at the next terminal milestone.
+
 ## Scientific placement
 
 1. Start from STATE and TRAPS and refresh a stale state from the latest

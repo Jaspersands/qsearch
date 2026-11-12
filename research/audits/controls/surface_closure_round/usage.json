@@ -1,0 +1,442 @@
+{
+  "captured_at_utc": "2026-11-12T09:55:09.570404+00:00",
+  "closure_round": {
+    "by_provider_usd": {
+      "Anthropic": "13.244390",
+      "OpenAI": "3.710380"
+    },
+    "completed_nonempty_reports": 4,
+    "jobs": 8,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-level-cover",
+        "completed_review": true,
+        "obligation": "level-cover",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 19803,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-level-cover/response.md",
+          "sha256": "12beee9cab33a64e1079ef04c689f734c9044789184bd987b7cf783e6abe9bcc"
+        },
+        "response_characters": 19781,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1746,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-level-cover/result.json",
+          "sha256": "9633f330c20c3770dfb15bf5f230193e253874dd06d1091c918e839fa5b6ff99"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 9385,
+          "input_tokens_details": {
+            "cache_write_tokens": 9382,
+            "cached_tokens": 0
+          },
+          "output_tokens": 42736,
+          "output_tokens_details": {
+            "reasoning_tokens": 37806
+          },
+          "total_tokens": 52121
+        },
+        "usage_cost_estimate_usd": "2.230650"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-faltings",
+        "completed_review": true,
+        "obligation": "faltings",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 20845,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-faltings/response.md",
+          "sha256": "d0f98993df08ab721847cde54f6cdd0bb888bab03dd3266ced68628dfbc85903"
+        },
+        "response_characters": 19426,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1852,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-faltings/result.json",
+          "sha256": "4ed9e3a37394f504d945fd893d452b5ba2ac316b3a5976c1803b179a18978cf6"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 23792,
+          "output_tokens": 41144
+        },
+        "usage_cost_estimate_usd": "2.295120"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-basepoint",
+        "completed_review": false,
+        "obligation": "basepoint",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 15760,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-basepoint/response.md",
+          "sha256": "6ae2c37161d0fd25bb87827ac55aca797a54d966f8fdc2f42b8716fc764556aa"
+        },
+        "response_characters": 14893,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1641,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-basepoint/result.json",
+          "sha256": "e98f921f04074b8bd5dc77a577308a1fbac6546af0e8b263fc697a58b26ea0b8"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 5323,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "0.676652"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-coefficient-action",
+        "completed_review": false,
+        "obligation": "coefficient-action",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 8950,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-coefficient-action/response.md",
+          "sha256": "ee32d643c9907baf8f8eacbe2e22f74bf27159344f00be02c8f0601d0deab174"
+        },
+        "response_characters": 8631,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1894,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-coefficient-action/result.json",
+          "sha256": "d8c27ad6fc9abc0cf51071c0abf8345e8dc25b41260b356b6c1cdc2f42ac200f"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 13982,
+          "output_tokens": 48000
+        },
+        "usage_cost_estimate_usd": "1.015928"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-torsion-height",
+        "completed_review": true,
+        "obligation": "torsion-height",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 18139,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-torsion-height/response.md",
+          "sha256": "17985c22a67cb02a844ade441b473465990d47c0d7f07874837558c1f13b7fd3"
+        },
+        "response_characters": 18124,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1755,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-torsion-height/result.json",
+          "sha256": "6dff6123d7b9073d9295ea65606ac93b4ad5c7598fd7f92104aa207632765e36"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 7818,
+          "input_tokens_details": {
+            "cache_write_tokens": 7815,
+            "cached_tokens": 0
+          },
+          "output_tokens": 28031,
+          "output_tokens_details": {
+            "reasoning_tokens": 23308
+          },
+          "total_tokens": 35849
+        },
+        "usage_cost_estimate_usd": "1.479730"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-lift",
+        "completed_review": false,
+        "obligation": "lift",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-lift/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1881,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-lift/result.json",
+          "sha256": "f4b7759fd6e43b507666cfd66cfe450a9b8b212ba6405e3144006adc618c282b"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 42040,
+          "output_tokens": 48000
+        },
+        "usage_cost_estimate_usd": "2.820400"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-full-similitude",
+        "completed_review": true,
+        "obligation": "full-similitude",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 16785,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-full-similitude/response.md",
+          "sha256": "c5c52a556160c0c232a747a5f7ace2df84bc8780c585469736091211548b215c"
+        },
+        "response_characters": 16616,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1851,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-full-similitude/result.json",
+          "sha256": "c08ade428aa1276f4e137cc8570ac2e078765ff72902c150f36520ef7e8006d8"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 18083,
+          "output_tokens": 51706
+        },
+        "usage_cost_estimate_usd": "2.766130"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-book-height",
+        "completed_review": false,
+        "obligation": "book-height",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-book-height/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 2136,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-book-height/result.json",
+          "sha256": "882dcefa7ed7101206bebeda37af00449c0794ce03c17edffb487c64436c9564"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 47016,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "3.670160"
+      }
+    ],
+    "status_counts": {
+      "completed": 4,
+      "truncated": 4
+    },
+    "terminal_jobs": 8,
+    "truncated_empty_reports": 2,
+    "truncated_nonempty_reports": 2,
+    "usage_estimate_usd": "16.954770"
+  },
+  "cost_note": "Stored runner usage estimates only: not invoices, actual billing, remaining balances or spend caps. Two historical timeout total bills remain UNKNOWN and excluded. Truncated terminal usage is counted even when its report is empty.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 54,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "107.777308",
+    "known_terminal_nonpartial_usage_records": 108
+  },
+  "dispatch_observed_status_changes": [
+    {
+      "after": "completed",
+      "before": null,
+      "obligation": "level-cover"
+    },
+    {
+      "after": "completed",
+      "before": null,
+      "obligation": "faltings"
+    },
+    {
+      "after": "truncated",
+      "before": null,
+      "obligation": "basepoint"
+    },
+    {
+      "after": "truncated",
+      "before": null,
+      "obligation": "coefficient-action"
+    },
+    {
+      "after": "completed",
+      "before": null,
+      "obligation": "torsion-height"
+    },
+    {
+      "after": "truncated",
+      "before": null,
+      "obligation": "lift"
+    },
+    {
+      "after": "completed",
+      "before": null,
+      "obligation": "full-similitude"
+    },
+    {
+      "after": "truncated",
+      "before": null,
+      "obligation": "book-height"
+    }
+  ],
+  "exclusions": [
+    {
+      "billing": "NOT_CLASSIFIED",
+      "reason": "New in-flight native-completion jobs are not inspected, hashed, counted or added to this milestone.",
+      "scope": "research/audits/api_inputs/2026-11-12-native-completion/ and all associated native-completion run bundles"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs retained from the frozen prior ledger"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 17083,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/accelerated_endpoint_round/usage.json",
+    "sha256": "b7739e73c22dca316fdaf6c54382137456192af41d988429686f20486d43b5a4"
+  },
+  "providers": {
+    "Anthropic": {
+      "closure_round": {
+        "completed_nonempty_reports": 2,
+        "jobs": 6,
+        "status_counts": {
+          "completed": 2,
+          "truncated": 4
+        },
+        "terminal_jobs": 6,
+        "truncated_empty_reports": 2,
+        "truncated_nonempty_reports": 2,
+        "usage_estimate_usd": "13.244390"
+      },
+      "completed_and_nonempty": 45,
+      "empty_response_count": 13,
+      "frozen_prior_estimate_usd": "74.251518",
+      "frozen_prior_known_terminal_records": 92,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_eight_explicit_jobs": 102,
+      "known_estimate_by_status_usd": {
+        "completed": "32.328186",
+        "empty_response": "0.789814",
+        "truncated": "54.377908"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "87.495908",
+      "known_terminal_nonpartial_usage_records": 98,
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "status_counts_excluding_native_completion": {
+        "completed": 45,
+        "dry_run": 1,
+        "empty_response": 13,
+        "failed": 3,
+        "truncated": 40
+      },
+      "terminal_results": 101,
+      "truncated_and_empty": 30,
+      "truncated_and_nonempty": 10
+    },
+    "OpenAI": {
+      "closure_round": {
+        "completed_nonempty_reports": 2,
+        "jobs": 2,
+        "status_counts": {
+          "completed": 2
+        },
+        "terminal_jobs": 2,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "3.710380"
+      },
+      "completed_and_nonempty": 9,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "16.571020",
+      "frozen_prior_known_terminal_records": 8,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_eight_explicit_jobs": 10,
+      "known_estimate_by_status_usd": {
+        "completed": "17.777890",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "20.281400",
+      "known_terminal_nonpartial_usage_records": 10,
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_excluding_native_completion": {
+        "completed": 9,
+        "incomplete": 1
+      },
+      "terminal_results": 10,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "scope": "Frozen accelerated-endpoint prior plus exactly the eight terminal jobs listed in surface-closure/dispatch.json. No repository-wide run sweep and no native-completion job inspected."
+}

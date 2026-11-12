@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-12",
+  "selection": "native surface completion, exact missing input bridges",
+  "local_ceiling_usd": 50,
+  "jobs": [
+    {
+      "provider": "claude",
+      "obligation": "native-atlas",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 7,
+      "session_id": 81982,
+      "bundle": "research/audits/claude_runs/2026-11-12-native-atlas"
+    },
+    {
+      "provider": "openai",
+      "obligation": "minimal-model-contraction",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 7,
+      "session_id": 70201,
+      "bundle": "research/audits/openai_runs/2026-11-12-native-contraction"
+    },
+    {
+      "provider": "openai",
+      "obligation": "good-model",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 7,
+      "session_id": 87396,
+      "bundle": "research/audits/openai_runs/2026-11-12-native-good-model"
+    },
+    {
+      "provider": "claude",
+      "obligation": "normalized-frame",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 7,
+      "bundle": "research/audits/claude_runs/2026-11-12-native-normalized-frame",
+      "session_id": 82954
+    },
+    {
+      "provider": "claude",
+      "obligation": "vertical-pole",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 7,
+      "session_id": 79444,
+      "bundle": "research/audits/claude_runs/2026-11-12-native-vertical-pole"
+    },
+    {
+      "provider": "claude",
+      "obligation": "normalization-lattice",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 7,
+      "session_id": 57370,
+      "bundle": "research/audits/claude_runs/2026-11-12-native-normalization-lattice"
+    },
+    {
+      "provider": "openai",
+      "obligation": "reconstruction-orbit",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 8,
+      "session_id": 14181,
+      "bundle": "research/audits/openai_runs/2026-11-12-native-reconstruction-orbit"
+    }
+  ],
+  "note": "Preflight ceilings are not charges/provider billing caps. No retry of the empty broad book-height request."
+}

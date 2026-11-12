@@ -1,0 +1,437 @@
+{
+  "captured_at_utc": "2026-11-12T11:19:27.911494+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 1678,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-target-closure/dispatch.json",
+    "sha256": "361c19e6cca26e65b9252096025c5d01ff68b9302e1544ff43e23751694d4ba4"
+  },
+  "dispatch_mutation_scope": "No dispatch mutation; all five terminal result statuses captured in usage.json.",
+  "exclusions": [
+    {
+      "reason": "Independent reviews are still being written; not read or hashed.",
+      "scope": "etale-reconstruction and numerical-closed-algebra independent reviews"
+    },
+    {
+      "reason": "Changing shared artifacts are not hashed or edited.",
+      "scope": "Shared STATE/main notes/HANDOFF/workflow"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "five_terminal_results_and_responses": [
+    {
+      "obligation": "target-model",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2099,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/result.json",
+        "sha256": "c51ccf2b710f1a8c39970aae2c7026a537d292ac6d49aef70571cd86310d2dbc"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "cohomology-assembly",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2128,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/result.json",
+        "sha256": "2cfaf87ca991c5a42565768d4da552b8362b9a8457441386dc5e2e3f1337e8dc"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "parabolic-transfer",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2103,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/result.json",
+        "sha256": "15e84ae15437fd830dac285b37b563d9873c2e9b582e9cc1d4997aaf9b0db7f2"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "etale-reconstruction",
+      "response": {
+        "bytes": 24634,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/response.md",
+        "sha256": "0017ac7909c964c37474e80c02ca99444830b8485e2eea048eb1e215f351d4ad"
+      },
+      "response_characters": 24609,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2281,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/result.json",
+        "sha256": "c70a5ece7086ef8d04b5ae0c46402a9341f4daf776936cd7ea40498763807753"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "boundary-determinant",
+      "response": {
+        "bytes": 19114,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/response.md",
+        "sha256": "e8f961ef0df95a398737c2de85b2ef08edaa4bada1d95f4fba465bab5b67adef"
+      },
+      "response_characters": 19096,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2116,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/result.json",
+        "sha256": "b800ba4fd3b438f83c55d2d72334ecc98c77b970a3ca912308149db7a5440d3b"
+      },
+      "status": "completed"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 16106,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_completion_round/usage.json",
+    "sha256": "583f0e7b487aa45c63ef4b64c157ffce7514aa10eb7420e5717b73d5c07cabd4"
+  },
+  "not_frozen": "Active etale-reconstruction/numerical-closed-algebra independent reviews and changing shared notes/STATE/HANDOFF/workflow. Stable archived context snapshots within the five terminal request bundles may be hashed; live originals are excluded. No tests or registry changes.",
+  "review_artifacts": [
+    {
+      "bytes": 18323,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-boundary-determinant-repair.md",
+      "sha256": "c8ad5279045c4bf0bf90c79642b368c864434656ef0b72fed3605d727df05c6b"
+    },
+    {
+      "bytes": 15205,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-target-prime-model.md",
+      "sha256": "c00341428b98544f48bb6fdf283e2d4c7e88feea04426aad4bca59efc11ff602"
+    },
+    {
+      "bytes": 16635,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-target-unramified-orbits.md",
+      "sha256": "089959f89d3f0574344eabfb4cf1c8aac33a586b938e9a81961935b7e84f7087"
+    },
+    {
+      "bytes": 28861,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-native-normalized-frame.md",
+      "sha256": "b5b7d3947c9fcb2fef8ab92d31ecc9ad2dee4a926db9488ac00f5062da453080"
+    }
+  ],
+  "scope": "Mechanical bookkeeping and timestamped stable artifact hashes only, no mathematical certification.",
+  "source_artifacts": [
+    {
+      "bytes": 55932,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_torsion_selection/pila_frobenius.txt",
+      "sha256": "923b9b6b9d0e8504445b8dc08b70671adb25316348f75ede5dee0aaf12ba2bf1"
+    },
+    {
+      "bytes": 194674,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_torsion_selection/pila_frobenius.pdf",
+      "sha256": "eee7433ec3ffa1dee071aaf6eb17b26ed622120b079d8e88ea3ab025d4fe5dce"
+    },
+    {
+      "bytes": 25013,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/legendre_prf/pila_curve_families_0504570.txt",
+      "sha256": "c132a0e8dad95bbdc9fbdced13d8863c62a6a621eebae705114199ae0b6e5f6b"
+    },
+    {
+      "bytes": 95966,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/legendre_prf/pila_curve_families_0504570.pdf",
+      "sha256": "e4de1712f56a7025c1cb66cfb97db877bbe0b51dbdf3b1b855573fb5baca1657"
+    },
+    {
+      "bytes": 126308,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/surfaces.txt",
+      "sha256": "504289c9cd964bec432b83fe12337a6b8ec509f26f3bdc334f1e0d8d6e96d9e3"
+    },
+    {
+      "bytes": 102442,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_module_2026/etale_p1.txt",
+      "sha256": "bcc728c78de1828f39e88933aa1532997e4c42c3e06fa4f864eb1ca6a1d90059"
+    }
+  ],
+  "source_packet_artifacts": [
+    {
+      "bytes": 8477,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-target-closure/cohomology-source.md",
+      "sha256": "9c24718f3a0cec76ee395d8d23fb363e1e44fb14d7354ce57fdb3bba7bc78eb2"
+    },
+    {
+      "bytes": 5688,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-target-closure/nodal-source.md",
+      "sha256": "048f693322dbd533c7a1ca16297d21ddfca85783aee2491d58112b3e09bfe5a1"
+    },
+    {
+      "bytes": 9342,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-target-closure/p-maximal-source.md",
+      "sha256": "81d373f7d98a28535b872af4521374992298b59e0fb9d885fde5436a76bcfe18"
+    }
+  ],
+  "status": "TERMINAL_TARGET_CLOSURE_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 262,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/context/000.txt",
+      "sha256": "f224890f9ebcdf679d53b3c16a9d6d42ebbe0f53df1d69ecab78be7a4e6bf221"
+    },
+    {
+      "bytes": 7915,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/context/001.txt",
+      "sha256": "5825faa6e48b921bd0cfeb0bc8d7bdd9069ef630909584aacd724abffbd13135"
+    },
+    {
+      "bytes": 24072,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/context/002.txt",
+      "sha256": "5b1a5f92a37b650249a416deb8b66a8a2b92b9171e419f4ba8efe7a0632c03c7"
+    },
+    {
+      "bytes": 4127,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/context/003.txt",
+      "sha256": "d55470309c91bd6ca9fe673ebd3dfcc5ba46b3b3820399faf4db871c50f7737a"
+    },
+    {
+      "bytes": 2706,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/prompt.txt",
+      "sha256": "3653c05c81ec24c2a923fabfd23d2b7eb19a3373f3f776ccc6692c5e80973f4c"
+    },
+    {
+      "bytes": 41595,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/request.json",
+      "sha256": "3225f6d934776546d845d3052710635fb3deb633abcd39d4f63551ab58d11fd4"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2099,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-target-model/result.json",
+      "sha256": "c51ccf2b710f1a8c39970aae2c7026a537d292ac6d49aef70571cd86310d2dbc"
+    },
+    {
+      "bytes": 262,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/context/000.txt",
+      "sha256": "f224890f9ebcdf679d53b3c16a9d6d42ebbe0f53df1d69ecab78be7a4e6bf221"
+    },
+    {
+      "bytes": 8477,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/context/001.txt",
+      "sha256": "9c24718f3a0cec76ee395d8d23fb363e1e44fb14d7354ce57fdb3bba7bc78eb2"
+    },
+    {
+      "bytes": 18357,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/context/002.txt",
+      "sha256": "34a6d22ef0a48aa13bc67c3485bdca1e1454ecdb42e75a5e975d5a5ea7af73e9"
+    },
+    {
+      "bytes": 9867,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/context/003.txt",
+      "sha256": "4d5503ade9ea7e559d91e7404acd6c0507f0a95db45f5ea47716bb60cac79062"
+    },
+    {
+      "bytes": 2312,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/prompt.txt",
+      "sha256": "44e7b8366bdda28e9910f2b6bcbaf5d0f467c49940e941e49fc85f32f5e01cce"
+    },
+    {
+      "bytes": 42739,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/request.json",
+      "sha256": "1a37209cb0493a8562b56ff998a1a027e32038b202d927a60fde0c2884603e1e"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2128,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-cohomology-assembly/result.json",
+      "sha256": "2cfaf87ca991c5a42565768d4da552b8362b9a8457441386dc5e2e3f1337e8dc"
+    },
+    {
+      "bytes": 262,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/context/000.txt",
+      "sha256": "f224890f9ebcdf679d53b3c16a9d6d42ebbe0f53df1d69ecab78be7a4e6bf221"
+    },
+    {
+      "bytes": 24049,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/context/001.txt",
+      "sha256": "1007e2ea01578bbbcc9a0c499dd7c8b38307344e024c8f540f24638359586797"
+    },
+    {
+      "bytes": 9535,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/context/002.txt",
+      "sha256": "10e399e40f22d55169a39b5dcfd32f33ada106a58e0c3990e1fca8a6e7997dcb"
+    },
+    {
+      "bytes": 18357,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/context/003.txt",
+      "sha256": "34a6d22ef0a48aa13bc67c3485bdca1e1454ecdb42e75a5e975d5a5ea7af73e9"
+    },
+    {
+      "bytes": 2464,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/prompt.txt",
+      "sha256": "d2fa32e65478eab11894a5a43be70d8aaa94f95bd1f6c4a658c1722ba5f1a5f8"
+    },
+    {
+      "bytes": 57455,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/request.json",
+      "sha256": "c8dd88104077e50c4f2637dd33f162d02a486f9616e91722e0f7266975d53e5c"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2103,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-target-parabolic-transfer/result.json",
+      "sha256": "15e84ae15437fd830dac285b37b563d9873c2e9b582e9cc1d4997aaf9b0db7f2"
+    },
+    {
+      "bytes": 7008,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/context-00.txt",
+      "sha256": "b0addc1edf52271bf00a0f546f5c924285d0617bcc16c0ec238631d716e05c5f"
+    },
+    {
+      "bytes": 262,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/context-01.txt",
+      "sha256": "f224890f9ebcdf679d53b3c16a9d6d42ebbe0f53df1d69ecab78be7a4e6bf221"
+    },
+    {
+      "bytes": 9342,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/context-02.txt",
+      "sha256": "81d373f7d98a28535b872af4521374992298b59e0fb9d885fde5436a76bcfe18"
+    },
+    {
+      "bytes": 10484,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/context-03.txt",
+      "sha256": "788803d824b70bbeff661ba766ebf3c8120db989aa764e2a2bb06d6e438870f0"
+    },
+    {
+      "bytes": 7366,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/context-04.txt",
+      "sha256": "8a01b138ee34f47ea78e1cb74c83a422e256e7324e1ad7e6d66ca085390a2d54"
+    },
+    {
+      "bytes": 18357,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/context-05.txt",
+      "sha256": "34a6d22ef0a48aa13bc67c3485bdca1e1454ecdb42e75a5e975d5a5ea7af73e9"
+    },
+    {
+      "bytes": 11987,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/context-06.txt",
+      "sha256": "3af72fb14846021cbb7f716547ea8ac4e16dc4f1b23e1361b99bae824fe8194f"
+    },
+    {
+      "bytes": 747472,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/provider-response.json",
+      "sha256": "3b42f749973226af294974aab274755ec74d8db00490234219511c199a7a71cb"
+    },
+    {
+      "bytes": 67753,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/request.json",
+      "sha256": "1730561382473a61f0f20d905dfc3765e17e9e7a28b5d9d2e455799289b1f2cb"
+    },
+    {
+      "bytes": 24634,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/response.md",
+      "sha256": "0017ac7909c964c37474e80c02ca99444830b8485e2eea048eb1e215f351d4ad"
+    },
+    {
+      "bytes": 2281,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-etale-reconstruction/result.json",
+      "sha256": "c70a5ece7086ef8d04b5ae0c46402a9341f4daf776936cd7ea40498763807753"
+    },
+    {
+      "bytes": 4149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/context-00.txt",
+      "sha256": "8d4d717da8195bbb0636364b309ec7e8af231a925ea7dcce81e119b7d5fad42a"
+    },
+    {
+      "bytes": 262,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/context-01.txt",
+      "sha256": "f224890f9ebcdf679d53b3c16a9d6d42ebbe0f53df1d69ecab78be7a4e6bf221"
+    },
+    {
+      "bytes": 5688,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/context-02.txt",
+      "sha256": "048f693322dbd533c7a1ca16297d21ddfca85783aee2491d58112b3e09bfe5a1"
+    },
+    {
+      "bytes": 8477,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/context-03.txt",
+      "sha256": "9c24718f3a0cec76ee395d8d23fb363e1e44fb14d7354ce57fdb3bba7bc78eb2"
+    },
+    {
+      "bytes": 18357,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/context-04.txt",
+      "sha256": "34a6d22ef0a48aa13bc67c3485bdca1e1454ecdb42e75a5e975d5a5ea7af73e9"
+    },
+    {
+      "bytes": 9867,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/context-05.txt",
+      "sha256": "4d5503ade9ea7e559d91e7404acd6c0507f0a95db45f5ea47716bb60cac79062"
+    },
+    {
+      "bytes": 559930,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/provider-response.json",
+      "sha256": "21023538531b790977e48d8e72ac0fc07dd391778bf4e9d910450fb8a0e31961"
+    },
+    {
+      "bytes": 49953,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/request.json",
+      "sha256": "59c91849588a59f8300221ca6979917a24c4234611de14e928f4886dd15031d7"
+    },
+    {
+      "bytes": 19114,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/response.md",
+      "sha256": "e8f961ef0df95a398737c2de85b2ef08edaa4bada1d95f4fba465bab5b67adef"
+    },
+    {
+      "bytes": 2116,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-target-boundary-determinant/result.json",
+      "sha256": "b800ba4fd3b438f83c55d2d72334ecc98c77b970a3ca912308149db7a5440d3b"
+    }
+  ],
+  "unique_hashed_artifact_count": 61,
+  "usage_snapshot": {
+    "bytes": 13138,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/target_closure_round/usage.json",
+    "sha256": "007bf87fe04b550bcd98685c10ab7e279ac15a647667c885ea4ca49dcf93cba3"
+  }
+}

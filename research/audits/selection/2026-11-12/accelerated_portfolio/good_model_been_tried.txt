@@ -1,0 +1,98 @@
+Been tried? good reduction certificate normalization polynomial bit Riemann Roch integral basis
+
+Killed before
+  1. negative   NEG-DCP-LOCAL-BAD-REGISTER-DETECTION-ENSEMBLE-IDENTITY  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-CONTAMINATION-WITNESS]
+     research/registry/negative_results.json:66350
+     Claim: A state-only local measurement can identify arbitrary bad DCP basis registers before the reflection is known.
+     Why not: For every nonzero Fourier label, averaging a good phase qubit over the unknown reflection gives I/2. An allowed randomized bad basis qubit has the same density operator.
+  2. negative   NEG-DCP-LOW-BIT-PRECONDITIONER-COUNT-GEOMETRY  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY]
+     research/registry/negative_results.json:66410
+     Claim: Conditioning O(log n) low subset-sum bits creates an improved exact-solution or near-residual density that explains a polynomial high-bit solver.
+     Why not: For every fixed low fiber, high residual indicators are pairwise independent with exact mean F|W|/Q and binomial variance; the ensemble density exponent is unchanged.
+  3. negative   NEG-DCP-COLLISION-FREE-BATCH-CANNOT-WITNESS-CONTAMINATION  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-CONTAMINATION-WITNESS]
+     research/registry/negative_results.json:65516
+     Claim: An arbitrary small batch of public-label DCP qubits contains a state-only contamination witness.
+     Why not: When the label subset sums are collision-free, the exact hidden-reflection-averaged good ensemble is I/2^m, identical to the uniformly randomized bad basis ensemble.
+  4. negative   NEG-CODE-WREATH-GENERIC-SPECTRAL-TRIM-QSVT  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-DEGREE-OBSTRUCTION, PO-MEASUREMENT, PO-COMPLEXITY]
+     research/registry/negative_results.json:61308
+     Claim: A generic bounded-polynomial transform of the normalization-one average-frame encoding implements the constant-success spectral trimming in polynomial degree.
+     Why not: The cutoff is Theta(1/n!). Bernstein's inequality forces Omega(n!) eigenvalue-polynomial degree or Omega(sqrt(n!)) singular-value-polynomial degree.
+  5. negative   NEG-DCP-PERFECT-STATE-SIEVE-DOES-NOT-COVER-REGEV-F1-PROMISE  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-BAD-REGISTER-ROBUSTNESS]
+     research/registry/negative_results.json:66666
+     Claim: A sieve tested only on perfect DCP coset states covers the Regev f=1 lattice reduction.
+     Why not: The theorem permits arbitrary bad basis-state registers at rate 1/log N. They are not identified by the Fourier label and can create corrupted endpoints and random decoder bits.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-DHS-DCP-CONTAMINATION-WITNESS-DCP-CONTAMINATION-WITNESS-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12954
+     Claim: RESULT-EXP-DHS-DCP-CONTAMINATION-WITNESS-DCP-CONTAMINATION-WITNESS: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-DCP-F1-GLOBAL-PGM-INFORMATION-NOT-CIRCUIT  [critical]
+     research/registry/dequantization_checks.json:172
+     Claim: Either f=1 contamination destroys global PGM information, or proving robust information supplies an efficient decoder.
+     Why not: Use the proved product-mixture all-good bound as the robustness invariant. Stop proposing signal-only f=1 witnesses; construct the full-rank measurement circuit and compose its complete output with the exact reduction.
+  3. dequant    DEQ-DCP-FIXED-MOMENT-CONDITIONED-FIBER-TAIL  [critical]
+     research/registry/dequantization_checks.json:216
+     Claim: An inverse-polynomial source mass of low-bit fibers retains inverse-polynomial conditional signal from a nonnegative source-nongeneric fixed-order tuple contribution.
+     Why not: Discard selected fixed-order energetic fibers. A surviving route must charge growing order, prove a signed observable is not dominated by bad tuples without exponential variance, or state an explicit reduced-basis event with inverse-polynomial coverage and decoder implication.
+  4. dequant    DEQ-RESULT-EXP-DHS-DCP-CONTAMINATED-PGM-AUDIT-DCP-CONTAMINATED-PGM-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12943
+     Claim: RESULT-EXP-DHS-DCP-CONTAMINATED-PGM-AUDIT-DCP-CONTAMINATED-PGM: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-DCP-LOW-BIT-PRECONDITIONER-PRESERVES-RESIDUAL-DENSITY  [critical]
+     research/registry/dequantization_checks.json:348
+     Claim: O(log n) low-bit conditioning creates a lower-density high-quotient search whose exact or near-residual candidate counts explain a polynomial partial subset-sum solver.
+     Why not: Reject count-only and fixed residual-window mechanisms. Reopen the preconditioner only with a proved higher-order correlation, changed LLL basis geometry, or implicit decoder that has inverse-polynomial legal coverage; pairwise independence is not a general subset-sum lower bound.
+
+Notes and handoff
+  1. note       Inverse Trace: Ray-Class Scope And A Direct HSP Barrier › Ray Convention And Bounded Effective Selection  [unlabelled]
+     research/INVERSE_TRACE_RAY_CLASS_SCOPE.md:107
+     Once the correct E is supplied, bounded-height Riemann-Roch and the normalization above suffice classically.
+  2. note       Constructive AG Research Checkpoint › Previous Source Pass  [unlabelled]
+     research/CONSTRUCTIVE_AG_RESEARCH_CHECKPOINT.md:103
+     An actual degree-eight cover and complete Riemann-Roch evaluation code were constructed: genus 41, matrix 43 by 176, Schur square rank 126, Schur cube rank 176.
+  3. note       Surface point counting: the classical height-uniformity gate › Parent finite-field repair construction  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:223
+     For eachD_i, Riemann--Roch computes a nonzero functionf_i withdiv(f_i)=ellD_i; the principal-divisor space is one-dimensional, with degree/field size paid.
+  4. note       Quartic-surface P2 from explicit torsion-cover twists › Construction and proof ledger  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:93
+     Charge the given model degree before any low-degree Riemann-Roch conversion for Kedlaya's input; genus0 components giveq+1 directly.
+  5. note       Inverse Trace: Ray-Class Scope And A Direct HSP Barrier › Primary Sources And Paid Scope  [unlabelled]
+     research/INVERSE_TRACE_RAY_CLASS_SCOPE.md:132
+     Theorem B.9 concerns classical Riemann-Roch computation with explicit divisor data and charged height.
+
+Code and experiments
+  1. result     EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION exact-n10-ladder-advancing-by-good-reduction-coefficients-and-scalin  [exact-n10-ladder-advancing-by-good-reduction-coefficients-and-scaling-open]
+     research/registry/experiment_results.json:19952
+     6 exact good-prime reduction(s) prove the corresponding n=10 separator polynomials are square-free; rational coefficients, full target coverage, asymptotic compression, and a decoder remain open.
+  2. theorem    Certificate and scaling gate for exact modular YJM contraction.  [code]
+     theorems/coset_typical_modular_yjm_contraction.py:1
+     Compute one exact good-reduction certificate on the n=10 ladder.
+  3. experiment Exact f=1 contaminated covariant-PGM information audit  [planned]
+     research/registry/experiments.json:22283
+     Apply the fixed clean PGM to the primary-source tensor-product contamination model, prove the all-good branch lower bound uniformly over arbitrary basis-state bad values, verify it numerically for adversarial patterns, and keep implementation complexity separate.
+  4. proof      DHS-GOWERS-SIEVE PO-INPUT-MODEL  [text-present]
+     research/registry/proof_status.json
+     Independent coset-state samples from D_N under the exact f=1 DCP promise: each register is good with probability at least 1-1/log N and otherwise may be an arbitrary basis-state register.
+  5. result     EXP-DHS-DCP-CONTAMINATION-WITNESS collective-signal-computationally-blocked  [collective-signal-computationally-blocked]
+     research/registry/experiment_results.json:21640
+     78 were exactly indistinguishable from randomized bad basis states; 42 had a collective subset-sum signal, but zero polynomial-time witnesses or robust decoders were established.
+
+Literature
+  1. literature Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem  [audit]
+     research/literature_audits/dcp_pgm_encoding_sources.json
+     An independently costed native normalization escape.
+  2. literature EPRINT-2024-1147  [audit]
+     research/literature_audits/native_rlwe_quaternion_sources.json
+     Earlier full PDF, before merger into 2025/287; later refresh returned 403 EPRINT-2024-1147 Norm-reduced quaternion principal-ideal reduction for rank-two module-LIP Number-field units or principal ideals do not automatically solve quaternion short-generator search Preserve the metric and integral p…
+  3. literature Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem  [seed · pgm-implementation, pretty-good-measurement, quantum-polar-decomposition, state-preparation-oracle]
+     research/literature_records.json
+     Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem Gives a generic pure-state PGM/polar implementation benchmark with explicit state-preparation, condition-number, rank, and hypothesis-count costs.
+  4. literature Pretty simple bounds on quantum state discrimination  [seed · state-discrimination, pretty-good-measurement, mixed-states, fidelity-bound]
+     research/literature_records.json
+     Pretty simple bounds on quantum state discrimination Provides adjacent mixed-state PGM discrimination bounds and motivates replacing Holevo-only evidence with direct success certificates for carrier-conditioned ensembles.
+  5. literature Quantum algorithm for Petz recovery channels and pretty good measurements  [audit]
+     research/literature_audits/dcp_pgm_encoding_sources.json
+     Quantum algorithm for Petz recovery channels and pretty good measurements ARXIV-2006.16924 https://arxiv.org/html/2006.16924
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

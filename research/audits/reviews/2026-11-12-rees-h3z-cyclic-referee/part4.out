@@ -1,0 +1,22 @@
+  stage-1 no-wrap 2^(2(n-1)) n gamma 2 B3 = 2^12*7*2^(-2b-19)*2^(2b+4) = 0.8750 (independent of b)
+  stage-1 union term: max log2 = -18.080 at b=1; b=400: -42.174; first non-decrease at b = [54, 55, 56]
+  stage-2 union term: max log2 = -43.150 at b=1; b=400: -466.245; monotone decreasing: True
+  second Lemma D condition 2^(n-1) sqrt(n) gamma: stage 1 = 8.07e-05 (b=1), stage 2 = 9.34e-06 (b=1)
+  b=1: stage-2 p_bad <= 0.00440 (claimed 0.0044); stage-1 p_bad <= 0.00787; P(correct v | ideal) >= 0.9685; P(l^ ok) >= 0.9824
+  b=2: stage-2 p_bad <= 0.00415 (claimed 0.0044); stage-1 p_bad <= 0.00787; P(correct v | ideal) >= 0.9685; P(l^ ok) >= 0.9834
+  b=6: stage-2 p_bad <= 0.00392 (claimed 0.0044); stage-1 p_bad <= 0.00787; P(correct v | ideal) >= 0.9685; P(l^ ok) >= 0.9843
+  b=10: stage-2 p_bad <= 0.00391 (claimed 0.0044); stage-1 p_bad <= 0.00787; P(correct v | ideal) >= 0.9685; P(l^ ok) >= 0.9844
+  b=50: stage-2 p_bad <= 0.00391 (claimed 0.0044); stage-1 p_bad <= 0.00787; P(correct v | ideal) >= 0.9685; P(l^ ok) >= 0.9844
+  Lemma P': worst over b=1..200 with RS (3.5)/(3.6): P(Z>0) >= 0.2284 (b=1, S1 >= 2.784, prime-count constant 0.7322); with RS Cor. 3 (0.6): 0.2243 (S1 >= 2.282)
+  enumeration: 1.74*Q*(2 sqrt3 eps)^2 = 41.76 ln eps^-2 (claimed <= 42 ln eps^-2); box/count constant check; after Markov cap: 0.1784 (claimed 0.17); ratio (5.66x+1)/(x/3) <= 20 for x>=1, 6.66 for x<1 -> 20^3 = 8000 OK
+  parameter inequalities b=1..200: 0 failures []; max TV/eta_s = 1.8608 (must be <= 2)
+  B(b): 1:278, 6:369, 10:441, 50:1163, 100:2063, 200:4011; B(200)-B(100) = 1948 (linear slope ~18-20/b)
+  w=(1, 255): #lines meeting [-P,P)^2 (P=256) = 130817; (#lines/4P^2)/(|w|_inf/P) = 0.5010 (proof uses <= 1.1/(1+V/R) slack)
+  w=(255, 255): #lines meeting [-P,P)^2 (P=256) = 196095; (#lines/4P^2)/(|w|_inf/P) = 0.7510 (proof uses <= 1.1/(1+V/R) slack)
+  w=(255, 254): #lines meeting [-P,P)^2 (P=256) = 195838; (#lines/4P^2)/(|w|_inf/P) = 0.7500 (proof uses <= 1.1/(1+V/R) slack)
+  w=(0, 1): #lines meeting [-P,P)^2 (P=256) = 512; (#lines/4P^2)/(|w|_inf/P) = 0.5000 (proof uses <= 1.1/(1+V/R) slack)
+  w=(1, 0): #lines meeting [-P,P)^2 (P=256) = 512; (#lines/4P^2)/(|w|_inf/P) = 0.5000 (proof uses <= 1.1/(1+V/R) slack)
+  w=(128, 128): #lines meeting [-P,P)^2 (P=256) = 114688; (#lines/4P^2)/(|w|_inf/P) = 0.8750 (proof uses <= 1.1/(1+V/R) slack)
+  w=(0, 128): #lines meeting [-P,P)^2 (P=256) = 65536; (#lines/4P^2)/(|w|_inf/P) = 0.5000 (proof uses <= 1.1/(1+V/R) slack)
+  w=(3, -2): #lines meeting [-P,P)^2 (P=256) = 2554; (#lines/4P^2)/(|w|_inf/P) = 0.8314 (proof uses <= 1.1/(1+V/R) slack)
+  w=(100, -37): #lines meeting [-P,P)^2 (P=256) = 66444; (#lines/4P^2)/(|w|_inf/P) = 0.6489 (proof uses <= 1.1/(1+V/R) slack)

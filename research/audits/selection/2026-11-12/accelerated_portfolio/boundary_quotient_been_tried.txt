@@ -1,0 +1,98 @@
+Been tried? parabolic cohomology characteristic polynomial boundary inertia coinvariants nodal normalization Frobenius quotient
+
+Killed before
+  1. negative   NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND  [retained · NONABELIAN-COSET-COLLECTIVE-OBSERVABLES, LIE-TYPE-MATRIX-HSP, SYMPLECTIC-PARABOLIC-HSP, ISOTROPIC-PARABOLIC-SPECTRUM]
+     research/registry/negative_results.json:68122
+     Claim: Quantum algorithms can achieve an exponential speedup for finding unknown isotropic parabolic subgroups P_U in Sp(2n, F_q) over classical algorithms.
+     Why not: For every k-dimensional isotropic subspace U in F_q^{2n} (1 <= k <= n) and every non-zero vector u, the symplectic transvection T_u belongs to P_U if and only if u in U^perp. This algebraic equivalence allows an explicit classical randomized algorithm to reconstruct U in expected O(n q^k) queries an
+  2. negative   NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND  [retained · NONABELIAN-COSET-COLLECTIVE-OBSERVABLES, LIE-TYPE-MATRIX-HSP, ORTHOGONAL-PARABOLIC-HSP, QUADRATIC-INVARIANT-OBSTRUCTION]
+     research/registry/negative_results.json:68286
+     Claim: Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in orthogonal groups O(d, F_q) and SO(d, F_q) over classical algorithms.
+     Why not: For every k-dimensional isotropic subspace U in F_q^d (1 <= k <= m = floor(d/2)) and every non-singular vector v in F_q^d, the orthogonal reflection R_v (for p > 2) or transvection T_v (for p = 2) belongs to P_U if and only if v in U^perp. In SO(d, F_q) for k < m, bireflections R_{v0} R_v satisfy th
+  3. negative   NEG-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM, PO-MEASUREMENT]
+     research/registry/negative_results.json:69956
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   NEG-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY, PO-MEASUREMENT]
+     research/registry/negative_results.json:71777
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY.
+     Why not: Falsified or refined by exact theorem evaluation.
+  5. negative   NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND  [retained · NONABELIAN-COSET-COLLECTIVE-OBSERVABLES, LIE-TYPE-MATRIX-HSP, UNITARY-PARABOLIC-HSP, HERMITIAN-INVARIANT-OBSTRUCTION]
+     research/registry/negative_results.json:72787
+     Claim: Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in unitary groups U(n, F_{q^2}) and SU(n, F_{q^2}) over classical algorithms.
+     Why not: For every k-dimensional isotropic subspace U in F_{q^2}^n (1 <= k <= m = floor(n/2)), every non-zero skew-Hermitian scalar lam, and every non-zero isotropic vector v, the unitary transvection T_{v, lam} belongs to P_U if and only if v in U^perp. An explicit classical randomized algorithm finds a bas
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12151
+     Claim: RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-COSET-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12140
+     Claim: RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:11975
+     Claim: RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-COSET-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:11964
+     Claim: RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12107
+     Claim: RESULT-EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. handoff    2026-11-12 Surface Modular Descent Refuted and Finite Filter Repaired  [journal]
+     research/AGENT_HANDOFF.md:406
+     For odd prime ell, full natural Sp monodromy and nontrivial transvection inertia, compact-cover ordinary invariant tensors equal OPEN cohomology, not parabolic cohomology: dimensions (r-2)n versus r-2n.
+  2. note       Surface point counting: the classical height-uniformity gate › New core falsifier: modular compactification lo  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:121
+     Degree ell^dimM is polynomialell at fixedg, but actual function representatives, arithmetic linearization, inertia transport and heights must all be paid.
+  3. note       Quartic-surface P2 from explicit torsion-cover twists › Construction and proof ledger  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:129
+     **CRT and output.** Smooth quartics lift smoothly in characteristiczero; H2 has torsion-free rank22 and the integral Frobenius polynomial reduces correctly for everyell!=p.
+  4. note       Native cover presentation: exact admitted interfaces › Arithmetic action from a genuine full similitude-frame   [proved]
+     research/SURFACE_NATIVE_COVER_CONSTRUCTION.md:89
+     Norm-zero transvection inertia makes the compact Hom equal the OPEN cohomology Hom, not the parabolic part.
+  5. note       Native small-characteristic natural torsion-module extraction › Contract and source scope  [unlabelled]
+     research/SURFACE_NATIVE_TORSION_MODULE.md:8
+     Their minimum common definition degree also has the bound |AutG|<=|G|^(n+n²), from Frobenius action on deck maps.
+
+Code and experiments
+  1. hypothesis prime_character_exterior_bound_contract  [EXACT_GEOMETRY_NATIVE_WITNESS_AND_LOCAL_TRACE_BOUND_REVIEW_PENDING]
+     research/hypotheses/prime_character_exterior_bound_contract.json
+     Expected-polynomial classical perfect search under the stated high-rate and field promises; no quantum advantage in that promised structured family if local proof survives review Reuse norm solver; exact n-cycle indicator from exterior powers of standard S_n; tame compact-support trace formula, zer…
+  2. experiment Exact full n=8 orbit-state transfer  [planned]
+     research/registry/experiments.json:20592
+     Propagate exact integer weights on the simultaneous-conjugacy quotient of permutation pairs through degree 17 with arbitrary-precision weights, contract each distribution with symmetric-group characters, and recover each complete characteristic polynomial and discriminant by Newton identities.
+  3. experiment Exact all-target n=9 typical separator certificate  [planned]
+     research/registry/experiments.json:20972
+     Propagate the exact simultaneous-conjugacy transfer through degree 28 with arbitrary-precision weights; order S_9 rows by conjugacy class; amortize all 27 target contractions through 30 class sums; recover Newton characteristic polynomials; and certify square-free gcds and rational root gaps.
+  4. result     EXP-COSET-STABLE-TRACE-CERTIFICATE exact-stable-racah-trace-proved-full-quartic-open  [exact-stable-racah-trace-proved-full-quartic-open]
+     research/registry/experiment_results.json:19139
+     A characteristic polynomial still needs an all-n normalized root-separation theorem.
+  5. result     EXP-COSET-STABLE-TRACE-CERTIFICATE exact-stable-racah-trace-proved-full-quartic-open  [exact-stable-racah-trace-proved-full-quartic-open]
+     research/registry/experiment_results.json:19110
+     A characteristic polynomial still needs an all-n normalized root-separation theorem.
+
+Literature
+  1. literature Algorithm for Solving Massively Underdefined Systems of Multivariate Quadratic Equations over Finite Fields  [audit]
+     research/literature_audits/dcp_conditional_carry_sources.json
+     Polynomial first-layer MQ solution is already a classical baseline; higher quotients need not remain quadratic.
+  2. literature singer_residual_hardness_sources  [audit]
+     research/literature_audits/singer_residual_hardness_sources.json
+     AUDIT-SINGER-RESIDUAL-HARDNESS 2026-10-05 Martin Roetteler ROETTELER-1608.02005V1 Printed coefficient/probability formulas need normalization and trivial-character accounting; this audit does not refute the known efficient cases.
+  3. literature goppa_holdout_quantum_access  [audit]
+     research/literature_audits/goppa_holdout_quantum_access.json
+     Construct a compact parity-preserving representation of the local-relation quotient with a direct useful output map, beating the matrix-free classical baseline Unconditional key recovery, a quantum solver, or a characteristic-preserving complex lift Sections 1-5, Claim 6.2, Theorem 7.2 and referenc…
+  4. literature hermite_decoder_prior_art  [audit]
+     research/literature_audits/hermite_decoder_prior_art.json
+     tests/test_hermite_prior_art_interface.py 1/4 (X^17-X)*f^[1] One Appendix A proof step, not the dimension theorem 2026-10-21 HERMITE-DECODER-EXACT-PRIOR-ART Deterministic polynomial-time construction of a small-characteristic differential decoding space Random-coordinate pruning of an affine space…
+  5. literature ARXIV-2609.40321-v1  [audit]
+     research/literature_audits/binary_error_frontier_sources.json
+     Ternary Section4.2 quotient primitive only; not complete published sample-time algorithm or growing-modulus DCP conversion.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

@@ -1,0 +1,125 @@
+# Finite orbit algebras and original-prime Frobenius
+
+2026-11-12. Selected question: can the classical small-prime torsion route
+recover ORIGINAL-prime Frobenius uniformly from a binary smooth quintic input?
+Quantum upper bound is the existing fixed-degree curve/torsion-cover route;
+this construction seeks a matching classical poly(log p) bound, not a speedup.
+Native cover, auxiliary model/lift and intrinsic height interfaces are proved
+in the linked topic notes. COMPLETE Galois-invariant reconstruction is still
+under review. No full classical match, hardness or separation is inferred.
+
+## Two admitted bridges and the exact remaining input
+
+Parent read full independent reviews:
+- audits/reviews/2026-11-12-target-unramified-orbits.md;
+- audits/reviews/2026-11-12-target-prime-model.md.
+The strongest direct baseline is Buchmann-Lenstra1994 Algorithm6.1/Prop6.2,
+actual Sections5.7-5.9/6.1-6.2 checked in retained source. It computes a
+p-maximal order at a KNOWN prime in polynomial bit time; global integer
+factorization is not an input. The 2025 lecture Lemma5.24 has a stronger
+all-bad-primes hypothesis and is not substituted for this prime-only theorem.
+
+Conditional algorithmic theorem: given the CERTIFIED complete finite reduced
+Q-algebra of the intended Galois set, polynomial-size multiplication/unit and
+actual operation/deck maps, with target inertia trivial, compute its faithful
+finite-etale reduction and Frobenius in polynomial(rank,input bits,log p).
+This does not supply that algebra, its coefficient heights, or missing maps.
+All ranks must be polynomial in numerical ell with fixed n,r; unrestricted
+torsion of a growing-genus Jacobian is excluded.
+
+## Genuine native orbit is unramified
+
+The original smooth surface and transverse cubic Lefschetz pencil over Z_p
+have branch divisor finite etale of degree220. On the complement U the
+INTRINSIC full GSp frame is finite etale, not a generic ramified twist.
+At a branch, work over a strict henselian complete unramified DVR R with
+A=R[[t]]. Pull back t=s^ell. Tame Abhyankar kills horizontal inertia; the
+cover was already etale at the vertical prime p and elsewhere away from t.
+Purity over regular R[[s]] gives a split etale cover. Kummer descent yields
+local normalization R[[w]], t=w^e with e|ell. Therefore the compactified
+cover is smooth proper over Z_p, without a ramified base extension.
+Its product Jacobian ell-torsion is unramified. The full constant-Gamma deck
+action makes the natural socle E Galois-stable, so E is unramified too.
+
+Let n=62,r=220,m=(r-2)n=13516,R=nm=837992. The safe E is the WHOLE natural
+socle, not an assumed parabolic subset. A regular rational fibre B_a is a
+constant-Gamma torsor. One geometric point generates its entire splitting
+field, degree<=d=|Gamma|, since sigma(b)=b rho(sigma) and rho is a homomorphism.
+The E field has degree<=|GL_R(Fell)|. Thus S=B_a x E has d ell^R points and
+splitting degree<=d|GL_R|, polynomial in ell for fixed n,r. Do not split all
+ambient torsion or all divisor support roots. Closed canonical divisors lie
+in the class/basepoint field by uniqueness, even if their supports do not.
+
+Choose a0 in 1..r+1 regular mod p (the stated large-prime regime suffices),
+then a=a0+p k. If auxiliary P!=p exceeds the polynomial number of bad base
+images, a bounded grid of k contains a choice satisfying all residue h0=1
+and chart conditions, while EVERY a remains target-regular. log a is
+O(log p+log badcount). The earlier height chain explicitly depends on log a
+through h_Z and the Green moment, so this retains a polynomial bound in the
+NATIVE input bits; do not reuse the small-a bound while dropping this term.
+
+Counterexamples: ramified constant twists do not extend etale over U; colliding
+branch sections invalidate the tame local normal form; a fibre at a branch
+can ramify despite a smooth compact curve. These are excluded explicitly.
+
+## Known-prime maximalization, maps, and Frobenius
+
+From any rational multiplication basis containing 1, multiply its other
+basis elements by a common structure-constant denominator. The resulting
+full lattice O0 is an integral order of polynomial size. No number-field
+factorization is necessary. For a current overorder O of rankD:
+
+1. Choose t with p^t>D. Binary powering and F_p linear algebra find the
+   kernel of z->z^(p^t) on O/pO, exactly its nilradical.
+2. Let I be its preimage. Compute O'=(I:I), with O subset O' subset p^-1 O,
+   by lattice/linear algebra. Strict changes lower v_p(disc O) by>=2.
+3. Stop at equality. Buchmann-Lenstra proves the terminal order p-maximal;
+   original-order Hermite coordinates bound ALL intermediate bits uniformly.
+
+There are <=log|disc O0|/(2 log p) strict iterations, each polynomial, with
+no p>rank requirement. Under intrinsic unramifiedness, final discriminant is
+a p-unit. Its reduction is finite etale. Any actual Q-algebra map preserves
+p-integral closures; tensor products of these etale orders are already
+p-normal. Thus group, deck, zero, scalar, relation and quotient operations
+extend. Their reduced coordinate denominators are p-units, with exact checks.
+F:a->a^p is computed by binary powering. On geometric points phi, phi o F
+sends values to their pth powers, hence represents ARITHMETIC Frobenius.
+
+For explicit E labels use ONE finite extension killing GL_R(Fell), e.g.
+ell^ceil(log_ell R)*product_(j=1..R)(ell^j-1); R is fixed. Standard finite-field
+factoring and group-operation tables recover an F_ell basis and F_E matrix.
+No arbitrary lcm of a growing unrelated list. Equivariant Hom linear algebra
+then gives W with phi g^T=P(g)phi, retaining actual frame arithmetic.
+
+## Direct reduction falsified; reconstructed algebra still required
+
+Completed OpenAI native-reconstruction-orbit report was fully parent-read.
+Its useful counterexample is Q(T)=T(T-p): separable rational algebra Q x Q
+has a nonreduced monogenic reduction, while p-maximal order Z x Z is faithful.
+More generally p^k-scaled canonical coordinates preserve every polynomial
+height and auxiliary-P promise while defeating ALL integer separating
+functionals modulo p. Large p relative ell does not repair inputs varying
+with p. Treat this direct-reduction route as falsified, not the comparator.
+
+Proposed remaining reconstruction: encode ALL (b,t) using b and redundant
+canonical divisors indexed by all constant deck translates, including the
+cyclotomic component coordinate. Choose common z and a separating gamma
+modulo the SMALL P, whose numerical size can exceed the known polynomial
+bad-parameter counts. Lift at certified precision from intrinsic encoding
+heights. Product polynomials and interpolation tables for Galois-equivariant
+operations are rational; all heights have polynomial Lagrange/minor bounds.
+A relation idempotent e in A tensor A marking equal torsion labels can descend
+away the torsor factor by the linear equalizer
+
+    A_E = ker[f -> e*(f tensor1-1tensor f)].
+
+Its multiplication and genuine group/deck maps are computed in this subalgebra.
+Then apply the admitted p-maximal procedure. This exact reconstruction,
+including extraction of a closed algebra from numerical RR, compatible
+all-component descent, and an effective precision bound, is UNDER REVIEW.
+The transcript/packet is audits/api_inputs/2026-11-12-target-closure/
+etale-reconstruction.md. Do not promote it from height bounds alone.
+
+Final cohomological assembly is also under review. A new possible shortcut
+uses explicit nodal-boundary determinant division instead of constructing
+and transporting a parabolic subspace. Neither shortcut is admitted yet.

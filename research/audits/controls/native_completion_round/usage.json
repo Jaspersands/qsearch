@@ -1,0 +1,417 @@
+{
+  "captured_at_utc": "2026-11-12T10:56:03.848396+00:00",
+  "cost_note": "Stored runner usage estimates only, not invoices, actual billing, balances or spend caps. No owner balance subtraction. Two historical timeout total bills remain UNKNOWN and excluded. Known terminal truncated usage counts even for empty reports. Normalization-lattice is a 1855-byte nonempty partial report.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 58,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "125.544698",
+    "known_terminal_nonpartial_usage_records": 115
+  },
+  "dispatch_observed_status_changes": [],
+  "dispatch_observed_statuses": [
+    {
+      "manifest_observed_status": null,
+      "obligation": "native-atlas",
+      "terminal_result_status": "completed"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "minimal-model-contraction",
+      "terminal_result_status": "completed"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "good-model",
+      "terminal_result_status": "completed"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "normalized-frame",
+      "terminal_result_status": "truncated"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "vertical-pole",
+      "terminal_result_status": "truncated"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "normalization-lattice",
+      "terminal_result_status": "truncated"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "reconstruction-orbit",
+      "terminal_result_status": "completed"
+    }
+  ],
+  "exclusions": [
+    {
+      "active_jobs_excluded": 4,
+      "billing": "NOT_CLASSIFIED",
+      "reason": "Excluded by parent instruction; dispatch, request, result, responses and usage not inspected, hashed or counted.",
+      "scope": "Four ACTIVE target-closure jobs and their dispatch/run bundles"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 16676,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/surface_closure_round/usage.json",
+    "sha256": "3881282aadd960e2acdfc0060bb3535729a250eee6059f6b55a843ffb2df22fb"
+  },
+  "native_completion_round": {
+    "by_provider_usd": {
+      "Anthropic": "12.792530",
+      "OpenAI": "4.974860"
+    },
+    "completed_nonempty_reports": 4,
+    "jobs": 7,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-atlas",
+        "completed_review": true,
+        "obligation": "native-atlas",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 10446,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-atlas/response.md",
+          "sha256": "692a0bf453e82afc29d4b81646a2ee7cbf8c0acb272206979de929edc54508a3"
+        },
+        "response_characters": 9995,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1650,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-atlas/result.json",
+          "sha256": "24dd71cfeac9e7760a8ab3c5b5ac36821fe20a11d9254a38e1596eaa0d3c7f92"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 31676,
+          "output_tokens": 44370
+        },
+        "usage_cost_estimate_usd": "2.535260"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-contraction",
+        "completed_review": true,
+        "obligation": "minimal-model-contraction",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 17205,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-contraction/response.md",
+          "sha256": "65aebbaae7f37551a1e224a323711a056f09fca538d79addd27eda5dab223fe9"
+        },
+        "response_characters": 17183,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2096,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-contraction/result.json",
+          "sha256": "9c477d1fbd6f8d0b1ebae52b5bd9f948e6f1d0dafc102ed2eaa0f8a7cd0df755"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 11698,
+          "input_tokens_details": {
+            "cache_write_tokens": 11695,
+            "cached_tokens": 0
+          },
+          "output_tokens": 29082,
+          "output_tokens_details": {
+            "reasoning_tokens": 24045
+          },
+          "total_tokens": 40780
+        },
+        "usage_cost_estimate_usd": "1.571080"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-good-model",
+        "completed_review": true,
+        "obligation": "good-model",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 12362,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-good-model/response.md",
+          "sha256": "83ed09f80335a3f5e883f364683b3aa89dd1914cd7a31aa04b3e2fdb1abda87e"
+        },
+        "response_characters": 12355,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2119,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-good-model/result.json",
+          "sha256": "f6e5bf3b9b0392f5968c429113f488eb784132d1213891bcfcdb61850ee83538"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 17312,
+          "input_tokens_details": {
+            "cache_write_tokens": 17309,
+            "cached_tokens": 0
+          },
+          "output_tokens": 29271,
+          "output_tokens_details": {
+            "reasoning_tokens": 26176
+          },
+          "total_tokens": 46583
+        },
+        "usage_cost_estimate_usd": "1.636670"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalized-frame",
+        "completed_review": false,
+        "obligation": "normalized-frame",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalized-frame/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1917,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalized-frame/result.json",
+          "sha256": "ad2bec456ae0730ebbe915d83b94a2a862c76deb891e3dc341eccc3c240baf7b"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 16252,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "3.362520"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-vertical-pole",
+        "completed_review": false,
+        "obligation": "vertical-pole",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-vertical-pole/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 2377,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-vertical-pole/result.json",
+          "sha256": "7cc6fde6c364a9a839662ed5c07f442c5676ce9ce5383af177f5ca97b95b097d"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 25696,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "3.456960"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalization-lattice",
+        "completed_review": false,
+        "obligation": "normalization-lattice",
+        "provider": "Anthropic",
+        "report_classification": "PARTIAL_NONEMPTY_1855_BYTES; not empty and not a completed report",
+        "response": {
+          "bytes": 1855,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalization-lattice/response.md",
+          "sha256": "cec30db25ea4a85e8ae2e49cc16d8c479317722a33946cbe350d7cfc64b4eb08"
+        },
+        "response_characters": 1806,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2183,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-native-normalization-lattice/result.json",
+          "sha256": "4041dad100df42d08de780281dee329c97021306cc78b1cd81c572f123e9ab43"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 23779,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "3.437790"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-reconstruction-orbit",
+        "completed_review": true,
+        "obligation": "reconstruction-orbit",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 11987,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-reconstruction-orbit/response.md",
+          "sha256": "3af72fb14846021cbb7f716547ea8ac4e16dc4f1b23e1361b99bae824fe8194f"
+        },
+        "response_characters": 11968,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2093,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-native-reconstruction-orbit/result.json",
+          "sha256": "bb25c261e1b1aa251f026e5aaea457a773c6d2557d167cac37b12928142e7763"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 8986,
+          "input_tokens_details": {
+            "cache_write_tokens": 8983,
+            "cached_tokens": 0
+          },
+          "output_tokens": 33545,
+          "output_tokens_details": {
+            "reasoning_tokens": 30473
+          },
+          "total_tokens": 42531
+        },
+        "usage_cost_estimate_usd": "1.767110"
+      }
+    ],
+    "status_counts": {
+      "completed": 4,
+      "truncated": 3
+    },
+    "terminal_jobs": 7,
+    "truncated_empty_reports": 2,
+    "truncated_nonempty_reports": 1,
+    "usage_estimate_usd": "17.767390"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 46,
+      "empty_response_count": 13,
+      "frozen_prior_estimate_usd": "87.495908",
+      "frozen_prior_known_terminal_records": 98,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_seven_explicit_jobs": 106,
+      "known_estimate_by_status_usd": {
+        "completed": "34.863446",
+        "empty_response": "0.789814",
+        "truncated": "64.635178"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "100.288438",
+      "known_terminal_nonpartial_usage_records": 102,
+      "native_completion_round": {
+        "completed_nonempty_reports": 1,
+        "jobs": 4,
+        "status_counts": {
+          "completed": 1,
+          "truncated": 3
+        },
+        "terminal_jobs": 4,
+        "truncated_empty_reports": 2,
+        "truncated_nonempty_reports": 1,
+        "usage_estimate_usd": "12.792530"
+      },
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "status_counts_excluding_target_closure": {
+        "completed": 46,
+        "dry_run": 1,
+        "empty_response": 13,
+        "failed": 3,
+        "truncated": 43
+      },
+      "terminal_results": 105,
+      "truncated_and_empty": 32,
+      "truncated_and_nonempty": 11
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 12,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "20.281400",
+      "frozen_prior_known_terminal_records": 10,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_seven_explicit_jobs": 13,
+      "known_estimate_by_status_usd": {
+        "completed": "22.752750",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "25.256260",
+      "known_terminal_nonpartial_usage_records": 13,
+      "native_completion_round": {
+        "completed_nonempty_reports": 3,
+        "jobs": 3,
+        "status_counts": {
+          "completed": 3
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "4.974860"
+      },
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_excluding_target_closure": {
+        "completed": 12,
+        "incomplete": 1
+      },
+      "terminal_results": 13,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "scope": "Frozen surface-closure prior plus exactly seven terminal native-completion jobs listed in the named dispatch. No repository-wide sweep, target-closure inspection, provider request or retry."
+}

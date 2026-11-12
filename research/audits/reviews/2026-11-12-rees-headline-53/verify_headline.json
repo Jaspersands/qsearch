@@ -1,0 +1,535 @@
+{
+ "checks": {
+  "t2_iff_even_index": false,
+  "chevalley_warning_t_le_k_plus_1": true,
+  "weil_t_le_3_on_range_p_ge_4k4": true,
+  "t(41,8)": 5,
+  "t(2521,8)": 3,
+  "t_ge_4_cases": [
+   [
+    29,
+    4,
+    4
+   ],
+   [
+    31,
+    6,
+    5
+   ],
+   [
+    41,
+    8,
+    5
+   ],
+   [
+    67,
+    6,
+    4
+   ],
+   [
+    79,
+    6,
+    4
+   ],
+   [
+    89,
+    8,
+    4
+   ],
+   [
+    137,
+    8,
+    4
+   ],
+   [
+    139,
+    6,
+    4
+   ],
+   [
+    223,
+    6,
+    4
+   ],
+   [
+    233,
+    8,
+    4
+   ],
+   [
+    761,
+    8,
+    4
+   ]
+  ],
+  "max_p_with_t_ge_4": 761,
+  "weil_spotcheck_26244_40000_violations": []
+ },
+ "E1_table": {
+  "2": {
+   "E1": 5,
+   "attained_at": 3,
+   "pattern": [
+    [
+     2,
+     2
+    ]
+   ],
+   "max_over_exhaustive_range": 5,
+   "max_over_residue_classes_p_ge_26244": 5,
+   "published_1+sum d*ceil(log2(d+1))": 5
+  },
+  "3": {
+   "E1": 8,
+   "attained_at": 7,
+   "pattern": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "max_over_exhaustive_range": 8,
+   "max_over_residue_classes_p_ge_26244": 8,
+   "published_1+sum d*ceil(log2(d+1))": 11
+  },
+  "4": {
+   "E1": 16,
+   "attained_at": 5,
+   "pattern": [
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "max_over_exhaustive_range": 16,
+   "max_over_residue_classes_p_ge_26244": 14,
+   "published_1+sum d*ceil(log2(d+1))": 23
+  },
+  "5": {
+   "E1": 19,
+   "attained_at": 61,
+   "pattern": [
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "max_over_exhaustive_range": 19,
+   "max_over_residue_classes_p_ge_26244": 19,
+   "published_1+sum d*ceil(log2(d+1))": 38
+  },
+  "6": {
+   "E1": 35,
+   "attained_at": 31,
+   "pattern": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     3
+    ]
+   ],
+   "max_over_exhaustive_range": 35,
+   "max_over_residue_classes_p_ge_26244": 29,
+   "published_1+sum d*ceil(log2(d+1))": 56
+  },
+  "7": {
+   "E1": 36,
+   "attained_at": 31,
+   "pattern": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "max_over_exhaustive_range": 36,
+   "max_over_residue_classes_p_ge_26244": 36,
+   "published_1+sum d*ceil(log2(d+1))": 77
+  },
+  "8": {
+   "E1": 44,
+   "attained_at": 2521,
+   "pattern": [
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     2
+    ]
+   ],
+   "max_over_exhaustive_range": 44,
+   "max_over_residue_classes_p_ge_26244": 44,
+   "published_1+sum d*ceil(log2(d+1))": 109
+  },
+  "9": {
+   "E1": 53,
+   "attained_at": 2521,
+   "pattern": [
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     9,
+     1
+    ]
+   ],
+   "max_over_exhaustive_range": 53,
+   "max_over_residue_classes_p_ge_26244": 53,
+   "published_1+sum d*ceil(log2(d+1))": 145
+  }
+ },
+ "profile": {
+  "worst_prime_or_class": 2521,
+  "worst_pattern": [
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    1
+   ],
+   [
+    8,
+    2
+   ],
+   [
+    9,
+    1
+   ]
+  ],
+  "log2_Q_new": 563.6272649968196,
+  "original_queries_ceil_log2_new": 564,
+  "log2_Q_p43": 278.289668708648,
+  "p43_pattern": [
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    6,
+    2
+   ],
+   [
+    7,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    1
+   ]
+  ],
+  "log2_Q_published": 1572.6582628209237,
+  "original_queries_ceil_log2_published": 1573,
+  "sde_attempts_per_call_new": 441,
+  "instrument_calls_ceil_log2_new": 561
+ },
+ "envelope_b104": {
+  "worst": 2521,
+  "pattern": [
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    1
+   ],
+   [
+    8,
+    2
+   ],
+   [
+    9,
+    1
+   ]
+  ],
+  "large_prime_original_queries_ceil_log2_new": 794,
+  "large_prime_query_dimension_exponent_new": 55
+ },
+ "crossover": [
+  {
+   "family": "Heisenberg",
+   "worst": 11,
+   "pattern": [
+    [
+     2,
+     2
+    ]
+   ],
+   "log2_Q_old": 9.0,
+   "log2_Q_new": 9.0,
+   "Q_new": "512",
+   "LB_crossover_prime": "443",
+   "log2_LB_crossover": 8.79,
+   "birthday_below": "84",
+   "log2_birthday_below": 6.39,
+   "ehk_copies_at_crossover": 81
+  },
+  {
+   "family": "filiform",
+   "worst": 19,
+   "pattern": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "log2_Q_old": 27.76,
+   "log2_Q_new": 20.0,
+   "Q_new": "1049760",
+   "LB_crossover_prime": "9391",
+   "log2_LB_crossover": 13.2,
+   "birthday_below": "3325",
+   "log2_birthday_below": 11.7,
+   "ehk_copies_at_crossover": 218
+  },
+  {
+   "family": "free, two generators",
+   "worst": 19,
+   "pattern": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "log2_Q_old": 33.19,
+   "log2_Q_new": 23.68,
+   "Q_new": "13436928",
+   "LB_crossover_prime": "3413",
+   "log2_LB_crossover": 11.74,
+   "birthday_below": "1567",
+   "log2_birthday_below": 10.61,
+   "ehk_copies_at_crossover": 293
+  },
+  {
+   "family": "Dixmier--Lister",
+   "worst": 19,
+   "pattern": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "log2_Q_old": 35.06,
+   "log2_Q_new": 25.55,
+   "Q_new": "49207500",
+   "LB_crossover_prime": "157",
+   "log2_LB_crossover": 7.29,
+   "birthday_below": "97",
+   "log2_birthday_below": 6.6,
+   "ehk_copies_at_crossover": 474
+  },
+  {
+   "family": "class-9 profile",
+   "worst": 2521,
+   "pattern": [
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     9,
+     1
+    ]
+   ],
+   "log2_Q_old": 1572.66,
+   "log2_Q_new": 563.63,
+   "Q_new": "46635124239544273829416301635423862424571208397763403648767407399664787662901904962092318457708788669523930901753475942537814855305963351049634840576000000000000000000000",
+   "LB_crossover_prime": null,
+   "log2_LB_crossover": 62.6,
+   "birthday_below": null,
+   "log2_birthday_below": 62.35,
+   "ehk_copies_at_crossover": 22548
+  }
+ ]
+}

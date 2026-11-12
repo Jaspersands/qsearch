@@ -15,7 +15,8 @@ Problem (worst case). λ_1..λ_M ∈ F_p^a; find nonzero x ∈ S^M with Σ x_iλ
 S = P ∪ {0}, P = (F_p^*)^κ. Known at bounded p (`2026-11-08-rees-sde-fq-nest.md` §0,
 `2026-11-11-rees-sde-p5-d3.md`): p = 3, 5 (κ = 2) n²/4 + O(n); every odd p (κ = 2)
 (1−1/p)a²/2 + O(a log a) (Theorem C); no two-dependency, two-dimensional gadget at p = 7, 11
-(certified), 13 (CaDiCaL only); F_5^3∖0 not 3-feasible (certified). Everything below is κ = 2
+(certified), 13 (certified, 37/37 LRAT-verified in `2026-11-09-lrat-checker-fix/recheck/cases13_cases.out`);
+F_5^3∖0 not 3-feasible (certified). Everything below is κ = 2
 unless stated.
 
 ## 0. Verdict
@@ -172,7 +173,7 @@ Inputs and consequences:
 | 5 | F_5^3∖0 not 3-feasible | [certified] `2026-11-11-rees-sde-p5-d3/fullsb_m{1,2,3}.out` (+ hand-checked symmetry breaking) | R*(5) = 2: full-label pieces gain ≤ 2 |
 | 7 | nested planar UNSAT | [certified] `2026-11-09-lrat-checker-fix/recheck/unsplit_7_2.out` (unsplit, no case split) | full and nested sets 2-infeasible; R*(7) = 1 |
 | 11 | nested planar UNSAT | [certified] `recheck/cases11_cases.out` (30/31) + `cases11_c10.out` (1/1), Lemma U cover | full and nested 2-infeasible; R*(11) = 1 |
-| 13 | nested planar UNSAT | CaDiCaL only (`2026-11-08-rees-sde-fq-nest/cases13_split.out`); recheck running | conditional |
+| 13 | nested planar UNSAT | [certified] `2026-11-09-lrat-checker-fix/recheck/cases13_cases.out` (37/37 cases, tie-in OK, UNSAT, fixed `lrat-check` VERIFIED) | full and nested 2-infeasible; R*(13) = 1 |
 
 **Corollary 2 (pools) [proved].** Let a pool have dependency code D of dimension r and full label
 set F_p^r∖0. For X ⊆ pool, D(X) ≅ U^⊥ with U = span(labels outside X), and the labels of X are

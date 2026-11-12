@@ -14,6 +14,12 @@ All three are finite computations. They prove no asymptotic statement.
 proves, all of which are at the paper's own standard (AI-checked, pending human review).
 The core theorem itself rests on the AI-checked reading of Ivanyos–Santha
 (rem:is-import(e)). Nothing here has been read by a human.
+**Relabelling after the referee (2026-11-12).** The paper's status convention calls a claim
+*conditional* if it depends on thm:power-sde(ii) or prop:decoupled-sde (unread by a human)
+or on finite AI computations. Under that convention T2 and T3 are **CONDITIONAL**, and so
+are T4 and T5 (they depend on appendix-free-coordinate and Theorem A, unread). Only T1 has
+the status of thm:main. Read every "PROVED" below as "complete argument from the cited
+unread results", not as the paper's own "proved" label.
 
 ## 0. Setting and notation
 
@@ -38,8 +44,8 @@ rest on the analytic arguments given with each claim.
 
 | solver (locator) | per-grade arity | prime range | label law? | Las Vegas? | what keeps it conditional |
 |---|---|---|---|---|---|
-| Schedule 1 (core thm:is-import, lem:bezout) | B_κ(a) = G(κ,a)^{⌈log2(κ+1)⌉} | all p > c | no | deterministic | IS reading AI-checked only (rem:is-import(e)) |
-| Schedule 1, zero-sum depth (main.tex sec:schedule1; IS audit 11-02, deviation (c)) | G(κ,a)^{⌈log2 t⌉} | all p > c | no | deterministic for the computed zero sum; Las Vegas for the shortest one (T1) | as above, plus the audit's claim "Any t ≤ 2^L works" |
+| Schedule 1 (core thm:is-import, lem:bezout) | B_κ(a) = G(κ,a)^{⌈log2(κ+1)⌉} | all p > c | no | deterministic (no solver failure) | IS reading AI-checked only (rem:is-import(e)) |
+| Schedule 1, zero-sum depth (main.tex sec:schedule1; IS audit 11-02, deviation (c)) | G(κ,a)^{⌈log2 t⌉} | all p > c | no | Las Vegas (finding the shortest zero sum; the arity is public in advance), charged ε/3 via rem:is-import(d) (T1) | as above, plus the audit's claim "Any t ≤ 2^L works" |
 | Schedule 2 (appendix-schedule2 thm:app-s2-main) | (a+1)((κ−1)a+1) | p ≥ 16κ^{2κ+2} as stated; 4κ^{2κ+2} in the proof (rem:app-s2-four) | no (worst case) | Las Vegas, never wrong | only review: thm:power-sde(ii) "stays conditional" because no human has read it; the Weil-bound locator |
 | triangular / decoupled (prop:triangular-sde, prop:decoupled-sde) | (a+1)(a+2)/2 | p ∉ E_2(κ) (finite tables; above T_A(κ) by prop:app-s2-TA) | no | Las Vegas | review, and the E_2 tables are finite AI computations; κ = 9 is undecided on (20000, T_A(9) = 3.10e9) |
 | tower / union chains (rem:app-s2-tower-scope, app:s2-chains) | degree Ω(κ)+1, or 3 (4 for some κ = 7 primes) | every p ≡ 1 mod κ outside NOSTD(κ) | no | Las Vegas | review and finite searches |
@@ -80,13 +86,13 @@ Each hypothesis named in the task, checked against core/main-core.tex (the core)
 - **Prime range.** This is the only mathematical (non-review) obstruction. It is
   quantified in section 2.
 
-**Conclusion (CONDITIONAL only on human review, at the same standard as thm:main).**
+**Conclusion (CONDITIONAL on human review and on the finite computations named in the Labels paragraph).**
 The worst-case solvers carry no hidden hypothesis beyond their stated prime ranges. The
 law-derived solvers carry the label law, which holds for thm:main's input model.
 
 ## 2. Discharged statements (step 2)
 
-**T1 (PROVED).**
+**T1 (PROVED given the IS reading; status of thm:main, rem:is-import(e)).**
 - *Statement.* Schedule 1 alone (no Schedule 2) at degree κ_d, using the shortest zero sum
   of κ_d-th powers, has arity G(κ_d, g_d)^{⌈log2 t_d⌉}. Here t_d = 2 for odd κ_d, and
   t_d = p when κ_d = p−1. With this arity, the query count of thm:main holds for every
@@ -103,6 +109,16 @@ law-derived solvers carry the label law, which holds for thm:main's input model.
 - *Why the shortest zero sum is allowed.* The IS audit 2026-11-02, deviation (c), states
   "Any t ≤ 2^L works" in the final step. main.tex sec:schedule1 already states the count
   G(κ_d, a)^{⌈log2 ℓ_d⌉} for the computed zero sum ℓ_d. Using the shortest one is my step.
+  The referee confirmed it against IS §3.3 (iterating Theorem 11 L times gives one vector with
+  2^L representations with disjoint supports; scale representation j by z_j, where
+  Σ_{j≤t} z_j^d = 0, and give the others weight 0), and an exact simulation gave 60/60
+  verified witnesses. Two additions: (i) Theorem 11 allows J = ∅; in that case stop at once,
+  since a solution is already found. (ii) The depth ⌈log2 t⌉ is public before the run: t = 2
+  iff (p−1)/κ is even; otherwise ⌈log2 t⌉ = 2 once p+1−(κ−1)(κ−2)√p > 3κ; exhaustive search
+  below that. Only finding the length-3 or length-4 zero sum is Las Vegas, so the core's
+  "deterministic, no solver failure to budget" becomes rem:is-import(d) with ε/3.
+  Ivanyos's confirmation covers C ≤ G^{⌈log2(d+1)⌉}, not this t-depth variant, which is an AI
+  reading of the same proof (rem:is-import(e) standard).
 - *Why 53 holds for all p > 9.* The exact scan covers p ≤ 3·10^6. Above that, t ≤ 3, so
   e_d ≤ 2κ_d. For even κ, t = 2 whenever (p−1)/κ is even. At c = 9, having 8 | p−1 forces
   (p−1)/2, (p−1)/4 and (p−1)/6 to be even. So only κ = 8 can cost 2κ, and
@@ -110,7 +126,7 @@ law-derived solvers carry the label law, which holds for thm:main's input model.
 - *Comparison.* This lowers the core theorem's own bound from 145 to 53 at c = 9, with no
   Schedule 2 input. It is conditional only on the IS import, like the core theorem.
 
-**T2 (PROVED, law-free, at the standard of thm:power-sde(ii)).**
+**T2 (CONDITIONAL, law-free; on thm:power-sde(ii) / prop:app-s2-TA, which main.tex keeps conditional, and below T_A on finite E_2 computations).**
 - *Statement.* For every p ≥ 4c^{2c+2}, and also for every p ≥ 16c^{2c+2} as printed,
   Q = O_c((m+τ) m^{2(c−1)}), so **E = 2c−1** (17 at c = 9).
 - *Sharper range via the triangular solver.* For every prime p > c with p ∉ ⋃_{d≤c}
@@ -122,15 +138,25 @@ law-derived solvers carry the label law, which holds for thm:main's input model.
 - *Explicit ranges.* The E_2 tables are finite computations, AI-checked.
   - For c ≤ 8 this holds for every p > 14281 (max E_2(8) = 14281).
   - For c = 9 it holds for every p > 14281 except primes p ≡ 1 mod 9 in E_2(9):
-    - decided (414 members) for p ≤ 20000;
-    - undecided on (20000, 3.10e9);
+    - decided for p ≤ 20000: 342 members among the 372 primes p ≡ 1 mod 9 in that range
+      (30 non-members), max 19963; decided to 25000 with 414 members;
+    - explicit contractions cover every prime in (20000, 9^9/2] except 1373 listed
+      primes; 78 of those (those below 25000) are decided (72 members, 6 non-members). The
+      undecided set is the 1295 listed primes in (25000, 424549] together with
+      (9^9/2, T_A(9)];
     - none above T_A(9) = 3.10e9.
   - So E = 17 holds unconditionally on the prime for p > 3.10·10^9.
+- *Cost of the contraction search.* In the bands T_A(κ) < p ≤ T_S(κ) and p ≤ T_A(κ) the
+  contraction, and E_2 membership, are found by exhaustive search. That is O_κ(1), but at
+  κ = 9 it is about p^κ with p up to 2.8·10^10, so "polynomial time" holds there only with an
+  astronomically large constant.
 - *At the undecided κ = 9 primes,* grade 9 costs 3 instead of 2, so E = 18:
-  - by the 3·3 tower (law-free, degree 3) for p > 2125764;
+  - by the 3·3 tower (law-free, degree 3): in closed form for p > 2125764, and for
+    p > 1.347·10^5 via the numerical T_R(9,3) (a numerical evaluation of a proved criterion);
+    complete searches cover p ≤ 135000 (rem:app-s2-tower-scope);
   - by union chains in between (rem:app-s2-tower-scope).
 
-**T3 (PROVED, law-free, all primes, finite tables).** The best per-grade combination,
+**T3 (CONDITIONAL, law-free, all primes; finite tables, NOSTD/E_2/chain data quoted, not re-run).** The best per-grade combination,
 chosen from public (p, d, g_d), uses:
 - linear arity at κ = 1;
 - the two-level / triangular arity when p ∉ E_2(κ);
@@ -145,8 +171,7 @@ Its exponent, maximized over p > c, is E_R5 = 3, 5, 16, 14, 28, 29, 36, 37 for c
 The rule uses no law and no information about H. This is valid because every component is
 worst-case and Las Vegas.
 
-**T4 (PROVED up to polylog factors, law-derived; at the standard of
-thm:free-coordinate(iii)).**
+**T4 (CONDITIONAL; up to polylog factors, law-derived; on thm:free-coordinate(iii) and the ideal i.i.d. label supply of thm:main only).**
 - Weight-doubling nodes give Q = O_c(m^{2c−1} polylog m) for every p > ((c−1)(c−2)+3)²,
   where j* = 1 at every grade. At c = 9 that range is p > 3481.
 - Over all p > c the exponent is 3, 6, 8, 10, 13, 14, 16, 19 (the paper's table,
@@ -155,7 +180,7 @@ thm:free-coordinate(iii)).**
 - The polylog factor is log(1/τ_d) with τ_d ~ ε/poly(m) nodes. The factor (2log2 p + 6)^{j*}
   does not depend on m.
 
-**T5 (PROVED, law-free, prime range growing with m).**
+**T5 (CONDITIONAL, law-free, prime range growing with m; on Theorem A, refereed CORRECT but unread by a human).**
 - Theorem A gives Q = O_c(m^{2c−1}/(log m)^{c−1}) for p ≥ about 72c² m^6 log² m.
 - The uniform-p version gives F = O(a²/min(log a, log(p/a))). It gains only a power of
   log, never a power of m.
@@ -165,13 +190,17 @@ thm:free-coordinate(iii)).**
 - up to polylog factors and using the oracle-model label law for p > 3481.
 
 Over all primes p > c at c = 9:
-- 19 law-derived;
-- 37 law-free;
-- 53 with Schedule 1 alone.
+- 19 law-derived (the paper's LAW table; O(m^19 polylog m), not m^19; ideal i.i.d. supply only,
+  not pooled leftovers or the black-box corollaries);
+- 37 law-free: a finite computation over the quoted NOSTD/E_2/chain lists (at p = 41, κ_8 = 8,
+  the 8th powers are μ_5, t = 5, and that grade costs 24); NOT re-run here;
+- 53 with Schedule 1 alone (verified independently by the referee: E_S1t = 5, 8, 16, 19, 35, 36,
+  44, 53, Weil tail max 53).
 
-Each of these is CONDITIONAL on exactly one thing: human review of the AI-checked inputs,
-namely the IS reading, appendix-schedule2 and the E_2 tables, and for T4 also
-appendix-free-coordinate.
+Each of these is CONDITIONAL. The conditions are human review of the AI-checked inputs (the IS
+reading, appendix-schedule2, appendix-free-coordinate), and also the finite AI computations
+(E_2 tables, NOSTD lists, chain searches), the numerical thresholds (T_R(9,3), Θ_2, Θ_3) and
+the O_κ(1) exhaustive-search constants. More than review remains.
 
 **Other rule rows (exponents.out, c = 2..9), for reference.**
 
@@ -199,11 +228,15 @@ Charging ⌈log2 t⌉ instead of ⌈log2(κ+1)⌉ gives e = [2, 3, 4, 5, 6, 7, 1
 (T1). Odd κ has t = 2. Even κ = 2, 4, 6 has t = 2 because (2520/κ) is even. κ = 8 has
 2520/8 = 315 odd, so t = 3 or 4.
 
-Using the E_2 tables makes 2521 quadratic at every grade, since 2521 ∉ E_2(κ) for κ ≤ 9 by
-the tables and the scan. So **the 143 is an artefact of two things**: Schedule 1 charged at
-full depth, and the coarse 16κ^{2κ+2} threshold, at a small prime ≡ 1 mod 2520.
+The E_2 tables alone do NOT make 2521 quadratic at grades 8 and 9: 2521 ∈ E_2(8) and
+2521 ∈ E_2(9) (dfs2b tables; `in_E2` agrees). At p = 2521 the E_2-only rule (R2) gives 81,
+R3 gives 38 and R5 gives 20 (grades 8 and 9 cost [16, 9] under R3 and [4, 3] under R5),
+not 17 (recomputed with exponents.py). So **the 143 is an artefact of Schedule 1 being
+charged at full depth and of the coarse 16κ^{2κ+2} threshold at a small prime ≡ 1 mod 2520**,
+but the E_2 tables alone do not repair it; the zero-sum depth (T1, 53), then towers and chains
+(R3, R5), do.
 
-Once every arity is quadratic, E = 1 + 2(c−1):
+At primes where every arity is quadratic (not 2521), E = 1 + 2(c−1):
 - the product of the c−1 grade arities, m^{2(c−1)}, dominates;
 - the remaining factor m is the c(m+τ) terminal samples.
 
@@ -234,12 +267,15 @@ with linear support is known.
 
 ## 5. Label reuse (step 4, continued)
 
-**5.1 Pool lemma (PROVED; no exponent gain with current solvers).**
+**5.1 Pool lemma (PROVED, mathematically sound per the referee; no exponent gain with current solvers; keep out of the core).**
 - *Statement.* In prop:descent the targets with s_i = 0 are untouched: the translation is
   the identity on those slots. They remain in their post-measurement states ρ_{λ_i}, with
   known labels, in tensor product with everything else. So they may be returned to the
   grade-d pool and used in a later merge at the same grade. The amortized consumption per
   merge is then |supp s|, not M_d.
+- *Core-procedure caveat (referee).* The lemma changes the core procedure, which "consumes and
+  discards" weight-0 targets, and makes the tree adaptive; N_QFT would need a public upper
+  bound. Since it gives no gain, keep it out.
 - *Caveat (adversarial).* A leftover's label was an input to the witness choice, so the
   pool's labels are not i.i.d. uniform. The lemma is valid with worst-case solvers only,
   not with Schedule 3 or the block-steered option, unless their law is re-proved for
@@ -277,13 +313,14 @@ current solvers. Lowering 2c−1 toward the floor c requires a new SDE finder (s
 
 ## 6. Gate count (UNKNOWN beyond a sketch)
 
-- Each merge applies M_d controlled translations. By thm:uniform-compilation(i)–(ii) each
-  costs O(c³ D_d³) field operations, where D_d ≤ m. The QFTs are poly(log p, log 1/η).
-- So the quantum gates are Q · O_c(m³ polylog), which gives a gate exponent ≤ E+3, plus
-  classical solver time.
-- The classical solver times of Schedule 2, triangular and Theorem A are polynomial. I did
-  not pin down their degrees in g_d, and they could dominate. This is an upper-bound
-  sketch, not a proved gate exponent.
+- Referee's bound (check 4), adopted: controlled translations number ≤ (c−1)·#sources = O(Q),
+  each 4·(d−1)d(d+1)/2 brackets × O(D³) = O_c(m³) field operations. QFTs: O(Q·m), each
+  poly(log p, log(m/ε)). Classical solver work per merge (triangular: O(a) eliminations of size
+  a×(a+1), plus O(M) coset tests and roots; Schedule 2: N nullspaces plus one of size
+  (κ−1)a×N) is O(a² + poly(κ, log p)) per column and does not dominate.
+- Total: O_c(Q·m³·poly(log p, log(m/ε))) + O(Q·w), plus the O_c(1) contraction-search
+  constants: gate exponent E+3 = 2c+2 (20 at c = 9), up to polylog factors and the w term.
+  CONDITIONAL, as T2. (Replaces my earlier "UNKNOWN".)
 
 ## 7. Adversarial self-check
 
@@ -340,3 +377,24 @@ to 1.
 - It returns verified witnesses at M = O(a) on adversarial banks for κ = 8, p = 41,
   a ≤ 40.
 - Its running time is polynomial in a.
+
+## Cleanup (2026-11-12)
+
+Applied per `2026-11-12-rees-exponent-discharge-referee.md`. Pre-cleanup copy:
+`2026-11-12-rees-cleanups/exponent-discharge-pre-cleanup.md`. Numbers re-verified by me:
+E_2(9) ≤ 20000 has 342 members, 30 non-members, 0 undecided (372 primes ≡ 1 mod 9; json
+count), E_2(8) has 293; 2521 is a member of both (json); per-rule exponents at p = 2521 from
+`exponents.e_grade`: R2 81, R3 38, R5 20 (R4 26, R1t 53). The 414/25000 and 1373/78/1295
+figures are copied from 2026-11-10-rees-dfs2b-queue-final.md l. 90–91 (not recomputed); T_A
+values, E_S1t and the Weil tail are from referee_checks.out (not recomputed).
+
+1. Labels paragraph: added relabelling (T2, T3, T4, T5 CONDITIONAL; only T1 has thm:main status).
+2. §1 table, Schedule 1 zero-sum row: "deterministic" replaced by Las Vegas / public arity / ε/3 via rem:is-import(d); Schedule 1 row clarified.
+3. T1: heading status; J = ∅ sentence; public-arity rule; Las Vegas charge; Ivanyos coverage caveat; referee's confirmation of IS §3.3.
+4. T2: heading CONDITIONAL; "414 members for p ≤ 20000" replaced by 342 of 372 (414 only for ≤ 25000); undecided set restated (1373/78/1295, plus (9^9/2, T_A(9)]); added the O_κ(1) search-cost caveat; tower status (1.347·10^5 numerical, 2125764 closed form, searches to 135000).
+5. T3, T4, T5 headings relabelled CONDITIONAL, with their conditions named.
+6. "Best proved exponent" block: 19 is O(m^19 polylog m) under the label law only; 37 is a finite computation over quoted lists, not re-run; 53 verified; "exactly one thing" replaced by the fuller list of conditions.
+7. §3: removed the false "2521 ∉ E_2(κ) for κ ≤ 9"; restated the artefact paragraph with R2 81, R3 38, R5 20; changed "every arity is quadratic" to "at primes where every arity is quadratic (not 2521)".
+8. §5.1: added referee's core-procedure caveat; kept out of the core.
+9. §6: UNKNOWN gate count replaced by the referee's bound, O_c(Q·m³·polylog)+O(Q·w), exponent 2c+2 (20 at c = 9), CONDITIONAL.
+Not applied (not in the note's scope): core/paper edits (already dispositioned by the integrator); §7 and §8 text untouched.

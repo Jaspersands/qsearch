@@ -1,0 +1,98 @@
+Been tried? arithmetic surface contraction intersection semistable torsion height
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION, PO-MEASUREMENT]
+     research/registry/negative_results.json:71731
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED, PO-MEASUREMENT]
+     research/registry/negative_results.json:72329
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED.
+     Why not: Falsified or refined by exact theorem evaluation.
+  3. negative   NEG-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE, PO-MEASUREMENT]
+     research/registry/negative_results.json:72510
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   NEG-CODE-WREATH-ALL-ORDER-WORD-MAP-NOT-GROWING-CONTRACTION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP, PO-COMPLEXITY, PO-SUCCESS]
+     research/registry/negative_results.json:60959
+     Claim: Eliminating the physical-irrep sum from natural frame moments already gives a polynomial high-order moment algorithm.
+     Why not: The exact replacement enumerates (n!)^m bridge sequences and 2^m subset words. No compressed recurrence is proved at the required growing moment order.
+  5. negative   NEG-SELF-DUAL-WREATH-RELATIVE-EFFECT-INTERSECTION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RELATIVE-EFFECT-INTERSECTION, PO-MEASUREMENT]
+     research/registry/negative_results.json:71712
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RELATIVE-EFFECT-INTERSECTION.
+     Why not: Falsified or refined by exact theorem evaluation.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9522
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10160
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION-COSET-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12426
+     Claim: RESULT-EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9566
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3560
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+
+Notes and handoff
+  1. note       Uniform arithmetic height: established pieces and remaining coordinate bound › Exact remaining height obligati  [proved]
+     research/SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md:101
+     The current decisive obligation is polynomial height of CLOSED torsion-divisor encodings for a controlled b, with model height charged.
+  2. note       Surface point counting: the classical height-uniformity gate › Current work and claim gates  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:104
+     Paid OpenAI `audits/openai_runs/2026-11-12-surface-height` attacks the constructive uniform Arakelov/torsion-height lemma.
+  3. note       Surface point counting: the classical height-uniformity gate › Selection and native question  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:19
+     Proof obligations: uniform coefficient/branch/curve/torsion-divisor height, small good auxiliary prime, exact arithmetic action and reconstruction degree, no supplied curve torsion or normalized representatives, bounded failure clocks.
+  4. handoff    2026-11-12 Uniform Stable Height and Canonical Divisor Choice  [journal]
+     research/AGENT_HANDOFF.md:3
+     SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md records two independently proved, parent/source-checked subresults.
+  5. note       Native small-characteristic natural torsion-module extraction  [unlabelled]
+     research/SURFACE_NATIVE_TORSION_MODULE.md:1
+     This removes a specific supplied-module input in the repaired surface filter; no full native point count, uniform height, novelty or separation claim.
+
+Code and experiments
+  1. theorem    Exact public arithmetic for the p-torsion Lie algebra of an explicit ring.  [code]
+     theorems/lie_torsion_reduction.py:1
+     Exact public arithmetic for the p-torsion Lie algebra of an explicit ring.
+  2. theorem    Exact Jacobi/CM experiment for split Fermat SURFACES, not a quantum oracle.  [code]
+     theorems/jacobi_surface_reconstruction.py:1
+     cyclotomic referencecharacters valuation profile surface bound lift surface residue native surface count public ideal basis classical lll attempt identify root turns primary normalize public surface attempt surface control large public ideal control run controls main.
+  3. result     EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE exact-two-partition-ribbon-surface-theorem-proved  [exact-two-partition-ribbon-surface-theorem-proved]
+     research/registry/experiment_results.json:13418
+     exp code self dual wreath two partition ribbon surface.
+  4. result     EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION leading-relative-surface-obstruction-resolved  [leading-relative-surface-obstruction-resolved]
+     research/registry/experiment_results.json:11568
+     exp code self dual wreath relative surface factorization.
+  5. theorem    Arithmetic budgets for proposed marked polarized-isogeny source lemmas.  [code]
+     theorems/siegel_marked_source.py:1
+     Arithmetic budgets for proposed marked polarized-isogeny source lemmas.
+
+Literature
+  1. literature Diameters of finite simple groups: sharp bounds and applications  [seed · symmetric-group, centralizer-bound, fixed-point-free-permutation, conjugacy-class]
+     research/literature_records.json
+     The carrier-tail closure strengthens this with a quantitative gap and an exact treatment of the exceptional matching-pair intersection.
+  2. literature Bounds for Characters of the Symmetric Group: A Hypercontractive Approach  [seed · symmetric-character, character-ratio, hypercontractivity, product-mixing]
+     research/literature_records.json
+     Bounds for Characters of the Symmetric Group: A Hypercontractive Approach Connects character norm bounds to product mixing and Fourier coefficients of normal sets, suggesting analytic tools for the shared bridge-word contraction beyond pointwise estimates.
+  3. literature Quantum Algorithms for Gowers Norm Estimation, Polynomial Structure Testing, and Counting Arithmetic Progressi  [seed · gowers-norm, property-testing, higher-order-fourier, finite-fields]
+     research/literature_records.json
+     Quantum Algorithms for Gowers Norm Estimation, Polynomial Structure Testing, and Counting Arithmetic Progressions Recent signal that higher-order harmonic analysis is an active quantum algorithms interface.
+  4. literature A Tight Lower Bound for Non-coherent Index Erasure  [seed · state-generation, index-erasure, query-lower-bound, black-box]
+     research/literature_records.json
+     It is the correct generic warning for DCP fiber erasure, but it does not transfer automatically to public arithmetic subset-sum maps.
+  5. literature Asymptotics of characters of symmetric groups related to Stanley character formula  [seed · symmetric-character, character-ratio, plancherel-typical, representation-theory]
+     research/literature_records.json
+     This is the main available route from collision-free typical partitions to quantitative wreath-frame moment contraction.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

@@ -1,0 +1,14 @@
+1. bezout conversion: tests=4320 failures=0
+2. p=7 five-label cubic example: nonzero solutions = 0
+   p=5 six-label quadratic example: nonzero solutions = 0
+   p=7 six-label quadratic example: nonzero solutions = 0
+   p=11 six-label quadratic example: nonzero solutions = 0
+   p=3: every 3 scalar labels admit a nonzero quadratic witness: True
+   p=5: every 3 scalar labels admit a nonzero quadratic witness: True
+   p=7: every 3 scalar labels admit a nonzero quadratic witness: True
+   p=11: every 3 scalar labels admit a nonzero quadratic witness: True
+3. SUM remark holds: True
+4. c=9 exponent with base G(d,.) and L_d = ceil(log2 t_d): max over 11<=p<6000 is 71 at p=31
+   with base G(kappa_d,.) (Schedule 1 runs IS at degree kappa_d): max 53 at p=2521
+   standard depth at base kappa_d (B_{kappa_d}): max 145 at p=2521 (theorem charges B_d: 145)
+5. Weil bound / zero-coordinate count violations (k in 2,4,6,8; p<400): []

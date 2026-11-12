@@ -342,11 +342,17 @@ uses complex floats only to compare with exact counts), `nice -n 19`, at most 2 
     every row above (timings aside) and adds the following [exact]:
     - κ = 4: m2 = 6 at p = 29 (m1 = 3); m2 = 4 at p = 37, 41, 53.
     - κ = 5: m2 = 6 at p = 11 (m1 = 3); 5 at p = 31, 41; 4 at p = 61.
-    - κ = 6: m2 = 7 at p = 13 and at p = 19 (m1 = 3 both; p = 19 took 17.1 h).
-    - κ = 6 at p = 31, 37, 43: NOT computed. macOS killed the run about 2 min into p = 31 for low
-      swap (> 80 GB compressed memory). This DFS cannot reach these cells on this machine.
-    So, at a = 2, N(κ, 2, p) reaches 2a + 1 = 5 already at p = 37 (κ = 4) and p = 61 (κ = 5), far
-    below Theorem E′'s range. All rows are within Chevalley–Warning (m2 ≤ κa). This is
+    - κ = 6: m2 = 7 at p = 13 and at p = 19 (m1 = 3 both); m2 = 8 at p = 31 (m1 = 4); m2 = 6 at
+      p = 37, 43 (m1 = 3). The p ≥ 31 cells come from `2026-11-12-rees-sde-dead-k6/deadcone.c`
+      [exact]: the same search tree with a P-stable cone bitset instead of kernel enumeration; it
+      reproduces all 20 rows above, including #max_ext, and is cross-checked by an independent
+      numpy implementation and by brute force. At p = 31, P = ⟨2⟩, and binary weight shows that
+      (1,0)⁴, (0,1), (1,1)³ is dead (hand proof in the 12 Nov report; integrator re-checked by brute
+      force). Supplementary [exact]: (m1, m2) = (2, 5), (3, 6), (3, 6), (3, 6) at p = 61, 67, 73, 79.
+    So, at a = 2, N(κ, 2, p) reaches 2a + 1 = 5 already at p = 37 (κ = 4) and p = 61 (κ = 5), but
+    not for κ = 6 at any p ≤ 79. There N(6, 2, p) ∈ {6, 7, 8, 9}, with m2 = 2·m1 except at p = 13,
+    19, 61. The values are not monotone in p (N(6, 2, 31) = 9). All rows are within
+    Chevalley–Warning (m2 ≤ κa). This is
     falsification-level evidence for the a-independent-threshold question at a = 2 only, not a
     proof.
 - `dead_w3_search.py` → `dead_w3_search.out` [search, falsification only]: local search for dead

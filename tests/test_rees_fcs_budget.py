@@ -14,14 +14,14 @@ ROOT = Path(__file__).resolve().parents[1]
 MAIN = ROOT / "docs" / "papers" / "rees-hsp" / "main.tex"
 ARTIFACT = fb.DEFAULT_OUT
 
-# The table as printed in main.tex on 2026-11-04 (None marks a dash).
+# The table as printed in main.tex (None marks a dash).
 PRINTED = {
-    "11": ("202.1", None, None, "42.3", "28.3", "47.0"),
-    "1031": ("167.3", None, None, "36.6", "33.4", "50.8"),
-    "5281": ("852.3", "50.3", "128.2", "39.1", "33.8", "52.2"),
-    "2^31-1": ("944.9", "50.9", "121.6", "35.9", "31.0", "49.8"),
-    "2^61-1": ("555.4", "52.9", "128.3", "34.1", "33.5", "51.0"),
-    "2^127-1": ("61.5", "49.9", "115.2", "34.0", "31.0", "49.5"),
+    "11": ("202.1", None, None, "42.3", "28.3", "47.0", "103.5"),
+    "1031": ("167.3", None, None, "36.6", "33.4", "50.8", "93.0"),
+    "5281": ("852.3", "50.3", "128.2", "39.1", "33.8", "52.2", "119.9"),
+    "2^31-1": ("940.3", "50.9", "121.6", "35.9", "31.0", "49.8", "127.1"),
+    "2^61-1": ("533.4", "52.9", "128.3", "34.1", "33.5", "51.0", "150.8"),
+    "2^127-1": ("41.4", "49.9", "115.2", "34.0", "31.0", "49.5", "142.0"),
 }
 
 
@@ -61,6 +61,8 @@ def _row_values(row: dict) -> tuple:
 def test_artifact_matches_printed_table(artifact):
     got = {r["label"]: _row_values(r) for r in artifact["rows"]}
     assert got == PRINTED
+    wc = {r["label"]: r["table"]["combined_worst_case_Q"] for r in artifact["rows"]}
+    assert (wc["2^31-1"], wc["2^61-1"], wc["2^127-1"]) == ("944.9", "555.4", "61.5")
 
 
 @pytest.mark.skipif(not MAIN.exists(), reason="paper source not present")
@@ -127,7 +129,7 @@ def test_uniform_kernel_rule_is_flagged_and_robust(artifact):
 
 def test_proposed_macro_entries(artifact):
     entries = artifact["proposed_numbers_map_entries"]
-    assert len(entries) == 32
+    assert len(entries) == 38
     names = [e["macro"] for e in entries]
     assert len(set(names)) == len(names) and all(re.fullmatch(r"[A-Za-z]+", n) for n in names)
     for e in entries:

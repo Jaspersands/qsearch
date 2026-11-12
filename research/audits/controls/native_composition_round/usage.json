@@ -1,0 +1,315 @@
+{
+  "captured_at_utc": "2026-11-12T12:04:52.961519+00:00",
+  "cost_note": "Stored runner estimates only, not invoices, actual bills, balances or spending caps. No subtraction from owner balance. Two historical timeout totals remain UNKNOWN and excluded. Geometry is nonempty truncation; bit-uniformity is empty refusal with known estimate and no retry.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 62,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "140.030298",
+    "known_terminal_nonpartial_usage_records": 124
+  },
+  "dispatch_observed_status_changes": [],
+  "dispatch_observed_statuses": [
+    {
+      "manifest_observed_status": null,
+      "obligation": "geometry",
+      "terminal_result_status": "truncated"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "bit-uniformity",
+      "terminal_result_status": "empty_response"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "kernel-frobenius",
+      "terminal_result_status": "completed"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "whole-composition",
+      "terminal_result_status": "completed"
+    }
+  ],
+  "exclusions": [
+    {
+      "reason": "Still being written; not read or hashed.",
+      "scope": "Active native-surface-composition independent review"
+    },
+    {
+      "reason": "Not hashed or edited.",
+      "scope": "Changing shared main notes/STATE/HANDOFF/workflow"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 13138,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/target_closure_round/usage.json",
+    "sha256": "007bf87fe04b550bcd98685c10ab7e279ac15a647667c885ea4ca49dcf93cba3"
+  },
+  "native_composition_round": {
+    "by_provider_usd": {
+      "Anthropic": "2.935464",
+      "OpenAI": "3.091560"
+    },
+    "completed_nonempty_reports": 2,
+    "empty_refusal_reports": 1,
+    "jobs": 4,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-geometry",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "obligation": "geometry",
+        "provider": "Anthropic",
+        "report_classification": "PARTIAL_NONEMPTY_13269_BYTES; not a completed report",
+        "response": {
+          "bytes": 13269,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-geometry/response.md",
+          "sha256": "51a3cfd427907785c5bb58775826ce823d30b7d3a405f240796814492312aed2"
+        },
+        "response_characters": 12384,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1662,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-geometry/result.json",
+          "sha256": "05ec075f37a5ba16e38443b9a11f456bd725d408ff18c150374d3f93c421337d"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 11561,
+          "output_tokens": 40000
+        },
+        "usage_cost_estimate_usd": "2.115610"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-bit-uniformity",
+        "completed_review": false,
+        "failure_type": "EmptyResponse",
+        "obligation": "bit-uniformity",
+        "provider": "Anthropic",
+        "report_classification": "EMPTY_REFUSAL; no report and no retry",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-bit-uniformity/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 2064,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-bit-uniformity/result.json",
+          "sha256": "39cb14465fbd4794af9498f1d4fd8ef83d4ac26ca52df74956170eb5d47ceb4b"
+        },
+        "status": "empty_response",
+        "stop_reason": "refusal",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 17027,
+          "output_tokens": 4298
+        },
+        "usage_cost_estimate_usd": "0.385170"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-kernel-frobenius",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "kernel-frobenius",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 13174,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-kernel-frobenius/response.md",
+          "sha256": "02bb3c5ef987c9fdd9620684277ff95519793065f664b2bdfb6808e7ea69deae"
+        },
+        "response_characters": 12559,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1404,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-composition-kernel-frobenius/result.json",
+          "sha256": "0c67b2b3a3c33dd78a64bac5078f58847f5a061b035cd23d9c475575d7b9d6f8"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 1021,
+          "output_tokens": 21530
+        },
+        "usage_cost_estimate_usd": "0.434684"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-composition-whole-composition",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "whole-composition",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 28994,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-composition-whole-composition/response.md",
+          "sha256": "c1011b17a12bc3dd79adaab0edb565cd0a137f80200692fce2f88b9638d8468a"
+        },
+        "response_characters": 28965,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2529,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-composition-whole-composition/result.json",
+          "sha256": "400c9c99eeebe285b4d13b09110f44b818364b2e64ec0576efdcbab34df3cac7"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 19916,
+          "input_tokens_details": {
+            "cache_write_tokens": 19913,
+            "cached_tokens": 0
+          },
+          "output_tokens": 57848,
+          "output_tokens_details": {
+            "reasoning_tokens": 50747
+          },
+          "total_tokens": 77764
+        },
+        "usage_cost_estimate_usd": "3.091560"
+      }
+    ],
+    "status_counts": {
+      "completed": 2,
+      "empty_response": 1,
+      "truncated": 1
+    },
+    "terminal_jobs": 4,
+    "truncated_empty_reports": 0,
+    "truncated_nonempty_reports": 1,
+    "usage_estimate_usd": "6.027024"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 47,
+      "empty_response_count": 14,
+      "frozen_prior_estimate_usd": "104.342874",
+      "frozen_prior_known_terminal_records": 105,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_four_explicit_jobs": 112,
+      "known_estimate_by_status_usd": {
+        "completed": "35.298130",
+        "empty_response": "1.174984",
+        "truncated": "70.805224"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "107.278338",
+      "known_terminal_nonpartial_usage_records": 108,
+      "native_composition_round": {
+        "completed_nonempty_reports": 1,
+        "empty_refusal_reports": 1,
+        "jobs": 3,
+        "status_counts": {
+          "completed": 1,
+          "empty_response": 1,
+          "truncated": 1
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 1,
+        "usage_estimate_usd": "2.935464"
+      },
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "status_counts_through_native_composition": {
+        "completed": 47,
+        "dry_run": 1,
+        "empty_response": 14,
+        "failed": 3,
+        "truncated": 47
+      },
+      "terminal_results": 111,
+      "truncated_and_empty": 35,
+      "truncated_and_nonempty": 12
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 15,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "29.660400",
+      "frozen_prior_known_terminal_records": 15,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_four_explicit_jobs": 16,
+      "known_estimate_by_status_usd": {
+        "completed": "30.248450",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "32.751960",
+      "known_terminal_nonpartial_usage_records": 16,
+      "native_composition_round": {
+        "completed_nonempty_reports": 1,
+        "empty_refusal_reports": 0,
+        "jobs": 1,
+        "status_counts": {
+          "completed": 1
+        },
+        "terminal_jobs": 1,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "3.091560"
+      },
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_native_composition": {
+        "completed": 15,
+        "incomplete": 1
+      },
+      "terminal_results": 16,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "scope": "Frozen target-closure prior plus exactly four terminal native-composition jobs listed in named dispatch. Actual stored result files and saved usage are authoritative; no historical-run rescan."
+}

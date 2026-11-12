@@ -1,0 +1,5 @@
+Part 1: rigorous-variant SDA-ISO (full enumeration of hits q in [Q/2,Q])
+| K | log2 M | log2 Q | mean #hits [pred 2eps^2Q] | P(good prime) | CE bound | 1-exp(-S1) | P(good q incl. composite) | composite not factored | non-primitive mu (prime / comp) | max log2|mu| | s/trial |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 200 | 840 | 413.1 | 1118.06 [1120.13] | 131/150 | 0.222 | 0.859 | 149/150 | 8204 | 0 / 9 | 206.4 | 0.797 |
+nice -n 19 /opt/anaconda3/envs/qsearch-cas/bin/python -c   111.86s user 0.63s system 93% cpu 2:00.27 total

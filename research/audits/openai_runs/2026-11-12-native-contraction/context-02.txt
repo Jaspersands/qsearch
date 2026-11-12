@@ -1,0 +1,127 @@
+# Uniform arithmetic height: established pieces and remaining coordinate bound
+
+2026-11-12. Native classical surface comparison remains OPEN. This note
+records two proved sub-obligations from the accelerated closure round.
+Paid reports remain advisory; independent proofs and actual sources were
+parent-checked. No whole point-counting, novelty or quantum-separation claim.
+
+## Stable Faltings height is now bounded uniformly
+
+Fix r>=3. For every finite degree-d map pi:Y->P1 over Qbar with Y smooth,
+projective, connected of genus g>=1 and total Galois orbit of branch points
+of cardinality <=r, put hB=max h(beta), ABSOLUTE LOGARITHMIC projective height.
+Then, for an effective C_r depending only on r,
+
+    h_Fal(Y) <= C_r*d^5*(d+1+hB).
+
+Proof and exact source ledger:
+audits/reviews/2026-11-12-surface-faltings-transfer.md. It combines the proved
+MERKL_LOG_COLLISION_ATLAS.md with actual Javanpeykar1403.6404 Theorem2.4.1,
+Lemma2.3.1, Proposition4.2.4 and Theorem4.3.2. It does not reinterpret the
+source's exponential HB as logarithmic. Field enlargement in the height
+proof is existential and cancels after normalization; no algorithm for a
+semistable model or its extension field is asserted.
+
+The precise product-formula identity is
+I_fin(P,Q)+sum_sigma log(1/vartheta_sigma(P,Q))=[K:Q](h(P)+h(Q)),
+with vartheta using maximum homogeneous norms. Consequently both normalized
+finite intersections and average log inverse chordal distance are bounded
+by h(P)+h(Q)+log2. Thus average L_sigma<=1+r(r-1)(2hB+log2).
+
+The FULL Merkl atlas gives |log||dz||_Ar|<=Lambda_sigma, not just sup gr.
+The actual angular Whitney/root charts also have
+|d(pi^*t)/dz|>=dist_ch(pi(x),B)/800 at finite base values. For a rational
+a outside B, every b over a therefore satisfies
+
+    hAr(b) <= Lambda_bar +(d+1)*sum_beta(h(beta)+h(a)+log2)
+              +2d²logd+log800,
+    Lambda_bar <= C_r*d³*(d+1+hB).
+
+The finite term uses the general-cover normalization with vertical branch
+only at primes<=d; horizontal branch collisions are explicitly charged by
+the same product formula. The factorial-normalized source Wronskian has
+lognorm<=g(g+1)Lambda_sigma/2+O(g²+glog(gd)) by Cauchy/Hadamard and
+full-chart density<=d². Choose a among1,...,g³+r+1 avoiding branch and
+Weierstrass images; g=O_r(d) and h(a)=O_r(logd). Actual Theorem2.4.1 gives
+the displayed h_Fal bound, including genus one and branches at infinity.
+
+This proves an intrinsic inequality, not model-coordinate heights or
+reconstruction precision. The twist family y²=a*x(x-1)(x-2) still forces
+charging supplied-model coefficients. The completed Claude faltings report
+is accepted after repairing its containing-branch-set equality and Wronskian
+normalization. No theorem is inferred from its verdict label.
+
+## One common point makes canonical divisors unique
+
+For ANY smooth projective geometrically connected genus-g curve C/k and ANY
+N geometric degree-zero classes T, assume char0 or char(k)>2g-2. Outside at
+most
+
+    [0 in T]*(g³-g)+|T\{0}|*floor(g(g-1)²/2) <= N*g³
+
+geometric points b, every E in T has h0(E(gb))=1. Hence it has a UNIQUE
+effective degree-g representative D_E. This descends as a CLOSED divisor
+over the field fixing b and E, without splitting geometric supports.
+
+Independent proof: audits/reviews/2026-11-12-surface-common-basepoint.md.
+RR reduces failure to a section of K tensor E^-1 vanishing to order g.
+The complete-series Wronskian has local leading Vandermonde in vanishing
+orders <=2g-2; it is nonzero in the stated characteristic. Total weights
+are g³-g for E=0 and g(g-1)² otherwise; nonzero-class bad points consume
+weight>=2. This verifies the printed portion of the PARTIAL Claude report;
+unprinted growing-rank/lazy-certification assertions are not admitted.
+
+Characteristic is a real gate: the smooth char3 plane quartic
+y³z+yz³=x⁴ has genus3 and every tangent contact>=3, so h0(3b)>=2 at EVERY
+b. At an affine (a,b), substitution gives (x-a^9)(a-x)³; infinity has
+contact4. Thus no unrestricted-characteristic bad-set assertion survives.
+
+For a separable plane map of degree D with discriminant exclusions R,
+enumerate N*g³+R+1 TOTAL base values over a field of size at least that,
+skip discriminant zeros, factor a regular fibre and adjoin ONE residue
+field of degree<=D. Test h0=1 for every supplied class by charged RR. For
+rank m fixed, enumeration of ell^m classes is polynomial. Every class is
+already represented over the native module's ONE common field; do not
+take a growing arbitrary lcm of support fields. RR costs charge positive
+and negative divisor degrees and presentations. Randomized subroutines
+need capped independent restarts, not an assumed tail from expectation.
+
+Original Frobenius/deck maps need the basepoint correction:
+
+    D_(sigma E)^b is the unique effective member of
+        |sigma(D_E^b)+g*b-g*sigma(b)|.
+
+Replacing original Frobenius by an extension power is invalid. In char0,
+a base value of height<=log(Ng³+R+1) exists; coordinate/Arakelov comparison
+must still be paid. Under an ACTUAL smooth DVR model, section b and extended
+line bundle E, h0=1 on the special fibre gives H1=0 and a free rank-one H0;
+the canonical divisor is finite flat and specializes correctly. This is
+compatibility, not an algorithm constructing those extensions.
+
+## Exact remaining height obligation
+
+The completed OpenAI torsion-height report correctly separates chosen small
+b from arbitrary b: uniqueness alone cannot omit its height. On the fixed
+elliptic curve y²=x³-2x, P=(2,2), Q=(0,0), b_N=[2^N]P gives
+v2 x(b_N)=-2N and v2 x(b_N+Q)=2N+1. Unique degree-one representatives of
+the fixed nonzero2-torsion class have unbounded coefficient heights. This
+illustrates the missing basepoint charge; ell2 is not an odd-ell surface
+counterfamily. The zero class D_0=g*b already forces the same charge at
+every ell. This does NOT refute a controlled choice of small b.
+
+Source TheoremB.4's constants are not polynomial in growing g: its displayed
+comparison has4^g factors and its Jacobian representation can have exponential
+size. Its use alone therefore remains insufficient. Fixed-rank GALOIS-STABLE
+classes and unique divisors give polynomial individual support degrees, not
+a common split-support field or automatic height bound.
+
+The current decisive obligation is polynomial height of CLOSED torsion-divisor
+encodings for a controlled b, with model height charged. An explicit source
+route is under paid attack: Couveignes-Edixhoven general Chapter9 intersection
+Theorems9.1.3/9.2.5, rather than a generic exponentially sized theta embedding.
+Their vertical terms, support-closure hypotheses, cross-intersections and
+metric integrals must be paid outside modular curves. The book's PDF text
+has extraction defects; ambiguous signs require viewing the original page.
+Neither a finite successful reconstruction nor canonical-height zero pays
+this global bound. The six initial closure tasks plus two distinct source/
+similitude follow-ups are tracked in their dispatch.json; no quantum code.

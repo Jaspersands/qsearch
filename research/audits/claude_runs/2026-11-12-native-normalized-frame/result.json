@@ -1,0 +1,56 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3654,
+      "path": "research/audits/api_inputs/2026-11-12-native-completion/state-excerpt.md",
+      "sha256": "2f29632db80cdf89788958fc661d910153b0c9ab4ab4065d21cda65dc336676c",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 16578,
+      "path": "research/audits/reviews/2026-11-12-surface-level-cover.md",
+      "sha256": "49c670519151fd79de1a151aaec0c0a01db85066af752a95c0f7c73a49819d99",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 18671,
+      "path": "research/audits/api_inputs/2026-11-12-native-completion/pairing-source.md",
+      "sha256": "c36faae816d74fe345d9d56e6a10fb02b47e4340dad8622721bacf8304faf78b",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 16252,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T10:09:00.415034+00:00",
+  "input_token_allowance": 16578,
+  "max_budget_usd": 7.0,
+  "max_tokens": 64000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 3.36578,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-native-completion/normalized-frame.md",
+    "sha256": "6cf635cc4499818798d473c53848f918155ebca015b066eb618977d936e9d62a",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T095429.894723Z-70c30d2d",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 16252,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 3.36252
+}

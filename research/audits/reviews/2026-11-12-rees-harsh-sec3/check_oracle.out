@@ -1,0 +1,17 @@
+/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-rees-harsh-sec3/check_oracle.py:7: SyntaxWarning: invalid escape sequence '\h'
+  c-sets with s^k collisions; pairs b = a*u with u in hlift / u in P_{c-1}\hlift / random.
+O1 Heisenberg F_3 exhaustive: subalgebras=19 pairs=124659 mismatches=0
+O2-O4 Heisenberg p=5 c=2 point sets=[[1, 2], [2, 4], [1, 4]]: checks=1080 mismatches=0 closure_fail=0 query_count_fail=0
+O2-O4 Heisenberg p=7 c=2 point sets=[[1, 2], [1, 4], [1, 6]]: checks=1080 mismatches=0 closure_fail=0 query_count_fail=0
+O2-O4 free(2,3) p=5 c=3 point sets=[[1, 2, 3], [1, 2, 4], [1, 4, 2]]: checks=1200 mismatches=0 closure_fail=0 query_count_fail=0
+O2-O4 free(2,3) p=7 c=3 point sets=[[1, 2, 3], [1, 5, 6], [1, 6, 2]]: checks=1320 mismatches=0 closure_fail=0 query_count_fail=0
+O2-O4 free(3,2) p=5 c=2 point sets=[[1, 2], [3, 4], [1, 4]]: checks=1080 mismatches=0 closure_fail=0 query_count_fail=0
+O2-O4 filiform5 p=5 c=4 point sets=[[1, 2, 3, 4], [1, 2, 3, 4], [1, 4, 2, 3]]: checks=1080 mismatches=0 closure_fail=0 query_count_fail=0
+O2-O4 Dixmier-Lister p=5 c=3 point sets=[[1, 2, 3], [1, 2, 3], [1, 4, 2]]: checks=1200 mismatches=0 closure_fail=0 query_count_fail=0
+O2-O4 Dixmier-Lister p=7 c=3 point sets=[[1, 2, 3], [4, 5, 6], [1, 6, 2]]: checks=840 mismatches=0 closure_fail=0 query_count_fail=0
+O5 intro example p=5: E_s(v) in hh for s=1,2,3: [True, True, False] E_3(v)=6u: True
+O5 intro example p=7: E_s(v) in hh for s=1,2,3: [True, True, False] E_3(v)=6u: True
+O5 intro example p=11: E_s(v) in hh for s=1,2,3: [True, True, False] E_3(v)=6u: True
+O5 Heisenberg F_3 example: E1(u)=0, delta_2(u)=2tz - t^2 z, E1(delta_2 u)=z : True
+O6 negative control (2 points at class 3, H=1): dim P_2=2, equal labels=True, not in hlift=True
+TOTAL FAILURES: 0

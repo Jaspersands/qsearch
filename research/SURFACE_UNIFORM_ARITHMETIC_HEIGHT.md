@@ -1,7 +1,7 @@
 # Uniform arithmetic height: established pieces and remaining coordinate bound
 
 2026-11-12. Native classical surface comparison remains OPEN. This note
-records two proved sub-obligations from the accelerated closure round.
+records proved sub-obligations from the accelerated closure round.
 Paid reports remain advisory; independent proofs and actual sources were
 parent-checked. No whole point-counting, novelty or quantum-separation claim.
 
@@ -51,6 +51,37 @@ charging supplied-model coefficients. The completed Claude faltings report
 is accepted after repairing its containing-branch-set equality and Wronskian
 normalization. No theorem is inferred from its verdict label.
 
+## Averaged theta and stable discriminant budgets
+
+Source-checked review: audits/reviews/2026-11-12-surface-theta-delta.md.
+The book4.4.5, Javanpeykar and Wilms use the SAME determinant-normalized
+theta norm. Javanpeykar Lemma2.4.2 states exactly
+
+    Theta_av <= (g/4)log max(1,h_Fal)+(4g³+5g+1)log2,
+
+where Theta_av is the embedding AVERAGE of log sup norms, not a pointwise
+embedding bound. Put S=d+1+hB. The established Faltings bound gives
+Theta_av<=C_r[d³+d log S]. This directly pays the book9.2.5 theta term.
+No exponentially sized theta embedding is constructed or needed.
+
+The same existing small non-Weierstrass point and factorial-normalized
+Wronskian budget, substituted in actual Javanpeykar Theorem2.4.1, give
+
+    Delta_st <= C_r*d^6*S,       delta_Fal <= C_r*d^5*S.
+
+Delta_st is the normalized node sum on the RELATIVELY MINIMAL regular
+semistable model. It does not bound node sums after arbitrary blowups.
+No effective semistable extension/model algorithm follows. The independent
+Wilms check gives log thetaSup<=log c_g+delta/24+(g/3)log(2pi), with
+log c_g=O(g log(g+2)); averaging also works but is unnecessary here.
+
+Transfer from these budgets to actual torsion support heights is now proved
+separately in SURFACE_TORSION_HEIGHT_CHAIN.md, including the specific h_Z
+model and vertical/Green terms. These source corollaries alone would not have
+established those identities. SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md
+now makes the effective constants and reconstruction threshold explicit;
+its particular numerical majorants are undergoing a focused audit.
+
 ## One common point makes canonical divisors unique
 
 For ANY smooth projective geometrically connected genus-g curve C/k and ANY
@@ -98,7 +129,7 @@ line bundle E, h0=1 on the special fibre gives H1=0 and a free rank-one H0;
 the canonical divisor is finite flat and specializes correctly. This is
 compatibility, not an algorithm constructing those extensions.
 
-## Exact remaining height obligation
+## Historical obstruction: basepoint and model heights must stay charged
 
 The completed OpenAI torsion-height report correctly separates chosen small
 b from arbitrary b: uniqueness alone cannot omit its height. On the fixed
@@ -115,13 +146,11 @@ size. Its use alone therefore remains insufficient. Fixed-rank GALOIS-STABLE
 classes and unique divisors give polynomial individual support degrees, not
 a common split-support field or automatic height bound.
 
-The current decisive obligation is polynomial height of CLOSED torsion-divisor
-encodings for a controlled b, with model height charged. An explicit source
-route is under paid attack: Couveignes-Edixhoven general Chapter9 intersection
-Theorems9.1.3/9.2.5, rather than a generic exponentially sized theta embedding.
-Their vertical terms, support-closure hypotheses, cross-intersections and
-metric integrals must be paid outside modular curves. The book's PDF text
-has extraction defects; ambiguous signs require viewing the original page.
-Neither a finite successful reconstruction nor canonical-height zero pays
-this global bound. The six initial closure tasks plus two distinct source/
-similitude follow-ups are tracked in their dispatch.json; no quantum code.
+That obligation was subsequently paid in SURFACE_TORSION_HEIGHT_CHAIN.md
+and its closed-divisor-encoding review, using actual Couveignes-Edixhoven
+Chapter9 Theorems9.1.3/9.2.5. Vertical terms, support-closure hypotheses,
+cross-intersections and metric integrals are explicitly charged outside
+modular curves. Ambiguous book signs were checked against rendered primary
+pages. Neither finite successful reconstruction nor canonical-height zero
+is the proof. Complete numerical RR/reconstruction is recorded separately;
+the whole native surface composition remains under review.

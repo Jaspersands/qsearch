@@ -1,0 +1,98 @@
+Been tried? uniform classical smooth quintic Lefschetz monodromy integral torsion finite etale reconstruction
+
+Killed before
+  1. negative   NEG-DCP-IID-BIASED-LINEAR-MARGIN-PARSEVAL  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-IID-BIASED-LINEAR-MARGIN]
+     research/registry/negative_results.json:66161
+     Claim: A biased or smoothed one-pass linear score gives sample-efficient coarse DCP frequency buckets while retaining a uniform decision margin.
+     Why not: Parseval plus the optimal two-level margin response forces energy at least 4 gamma^2 S(N-S)/N. Resolving the margin by a uniformly MSE-controlled empirical mean retains the exponential sample-versus-bucket-enumeration tradeoff.
+  2. negative   NEG-COSET-STABLE-THREE-COPY-FINITE-CONDITIONING-AS-INVERSE-FRAME-THEOREM  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-STABLE-THREE-COPY-FRAME]
+     research/registry/negative_results.json:64185
+     Claim: Full-rank well-conditioned n=8 stable frame spectra prove a polynomial inverse-frame filter and decoder.
+     Why not: Finite spectra do not supply an all-n lower bound. The separate exact character-ratio coercivity certificate now supplies that bound, but no hidden-involution outcome theorem follows.
+  3. negative   NEG-AFFINE-ERASURE-INSTRUMENT-MATCHED-CLASSICAL-DUAL  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID]
+     research/registry/negative_results.json:57446
+     Claim: Positive affine-subspace erasure instruments with retained branch phases evade matched classical constraint sampling.
+     Why not: Every positive uniform-affine-subspace mixture supplies both a coherent quantum partial-linear-information instrument and a matched classical affine-constraint sampler where quantum reconstruction and classical equation matrices are exact transposes; mean unresolved loads are matched.
+  4. negative   NEG-COSET-STABLE-THREE-COPY-CONDITIONING-AS-HIDDEN-INVOLUTION-DECODER  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING]
+     research/registry/negative_results.json:64159
+     Claim: An all-n conditioned stable frame and polynomial inverse-square-root filter constitute a hidden-involution decoder.
+     Why not: The filter is only an implementable measurement primitive on one conditioned branch; no outcome-information, reconstruction, branch-probability, or classical-separation theorem follows.
+  5. negative   CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2  [retained · DHS-GOWERS-SIEVE, HYP-LIT-HIDDEN-SHIFT-SIEVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:44749
+     Claim: No tested instance of bent_quadratic_f2 is recovered by the implemented value-access baselines.
+     Why not: Baseline sweep found 16 low-complexity evaluator recoveries and 4 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.
+
+Dequantization checks
+  1. dequant    DEQ-DCP-IID-BIASED-LINEAR-MARGIN-PARSEVAL-NOGO  [critical]
+     research/registry/dequantization_checks.json:271
+     Claim: A biased or smooth uniformly margin-separated one-pass linear score gives a joint-polynomial DCP frequency localizer.
+     Why not: Exclude uniformly margin-separated one-score MSE-certified linear bucket mutations. Search adaptive multiple scores or nonlinear record coupling, and do not generalize this restricted theorem.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7454
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3186
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+  4. dequant    DEQ-DCP-FULL-DOMAIN-CARRY-ANF-GROWTH  [critical]
+     research/registry/dequantization_checks.json:227
+     Claim: Random power-of-two subset-sum carries admit a uniformly bounded-degree algebraic solver.
+     Why not: Reject bounded-degree carry reconstruction for the tested random-label family. Require a uniform symbolic exception and polynomial witness solver before reopening it; preserve that finite high ANF degree is not a lower bound against lattice, representation, quantum, or other non-algebraic routes.
+  5. dequant    DEQ-COSET-STABLE-CONDITIONED-FRAME-STILL-LACKS-OUTCOME-DECODER-AND-SEPARATION  [high]
+     research/registry/dequantization_checks.json:5232
+     Claim: A polynomial stable three-copy frame block encoding, all-n conditioning, and inverse filter imply an efficient hidden-involution decoder.
+     Why not: Derive the parameter-dependent filtered outcome law, prove branch probability and mutual-information or reconstruction guarantees, and compare the statistics with classical character and tensor contractions.
+
+Notes and handoff
+  1. note       Native quintic-surface P2 beyond the K3-type abelian mechanism  [unlabelled]
+     research/QUINTIC_SURFACE_P2_ADMISSION.md:1
+     Nov12 closure: the classical source's ordinary modular descent is refuted in both retained versions; a supplied-input finite parabolic filter is repaired.
+  2. note       Finite orbit algebras and original-prime Frobenius › Genuine native orbit is unramified  [proved]
+     research/SURFACE_FINITE_ETALE_RECONSTRUCTION.md:30
+     The original smooth surface and transverse cubic Lefschetz pencil over Z_p have branch divisor finite etale of degree220.
+  3. note       Finite orbit algebras and original-prime Frobenius  [proved]
+     research/SURFACE_FINITE_ETALE_RECONSTRUCTION.md:1
+     Selected question: can the classical small-prime torsion route recover ORIGINAL-prime Frobenius uniformly from a binary smooth quintic input?
+  4. note       Surface point counting: the classical height-uniformity gate › Selection and native question  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:19
+     Constructive classical mechanism under examination: construct the torsion cover of a fixed-genus Lefschetz pencil; isolate a fixed-dimensional Edixhoven module at a SMALL auxiliary prime; Hensel lift that module with paid precision; recover its arithmetic Galois action; evaluate Frobenius at p and…
+  5. note       Native cover presentation: exact admitted interfaces › Native bounded atlas for the actual genus-31 fibre  [proved]
+     research/SURFACE_NATIVE_COVER_CONSTRUCTION.md:45
+     The complete-intersection Koszul resolution computes every needed RR space L(kE) by fixed-size linear algebra; a finite-etale trace pairing supplies Anderson's compression functional over Q(t) for ALL divisor classes simultaneously.
+
+Code and experiments
+  1. theorem    Classical reconstruction given an explicit positive integral Hom lattice.  [code]
+     theorems/projective_lattice_reconstruction.py:1
+     Classical reconstruction given an explicit positive integral Hom lattice.
+  2. theorem    Classical recovery WITH a full evaluable target End lattice and Gram form.  [code]
+     theorems/endomorphism_transport_recovery.py:1
+     torsion transport coordinates integraltransport reconstruct integral transport kernelrecovery kernel from integral transport.
+  3. hypothesis prime_character_exterior_bound_contract  [EXACT_GEOMETRY_NATIVE_WITNESS_AND_LOCAL_TRACE_BOUND_REVIEW_PENDING]
+     research/hypotheses/prime_character_exterior_bound_contract.json
+     Expected-polynomial classical perfect search under the stated high-rate and field promises; no quantum advantage in that promised structured family if local proof survives review Reuse norm solver; exact n-cycle indicator from exterior powers of standard S_n; tame compact-support trace formula, zer…
+  4. experiment Self Dual Wreath Dyadic Modular Fiber Torsion No Go  [planned]
+     research/registry/experiments.json:5562
+     exp code self dual wreath dyadic modular fiber torsion no go.
+  5. result     EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO all-generated-collisions-dequantized  [all-generated-collisions-dequantized]
+     research/registry/experiment_results.json:5597
+     exp code self dual wreath dyadic modular fiber torsion no go.
+
+Literature
+  1. literature On the quaternion l-isogeny path problem  [audit]
+     research/literature_audits/native_rlwe_quaternion_sources.json
+     Primary HTML Sections2.4,3.1,4.1 and4.6; associated PDF available ARXIV-1406.0981-v1 Classical heuristic smooth-norm ideal-class representatives Growing center degree, nonmaximal conductor order and native short-basis setup are not supplied; Section4.6 still uses maximal orders Maximal definite qua…
+  2. literature EPRINT-2024-1147  [audit]
+     research/literature_audits/native_rlwe_quaternion_sources.json
+     Earlier full PDF, before merger into 2025/287; later refresh returned 403 EPRINT-2024-1147 Norm-reduced quaternion principal-ideal reduction for rank-two module-LIP Number-field units or principal ideals do not automatically solve quaternion short-generator search Preserve the metric and integral p…
+  3. literature The ePrint:2026/1591 Quantum Algorithm Does Not Solve DCP  [seed · dcp-label-digest, dihedral-coset, no-go, dephasing-hybrid]
+     research/literature_records.json
+     Uniform independent DCP phase samples after measuring low subset-sum bits.
+  4. literature Quantum Advantage via Solving Multivariate Quadratics  [audit]
+     research/literature_audits/dcp_conditional_carry_sources.json
+     Author arXiv version2 withdrawal comment, not a reconstruction of the classical attack.
+  5. literature On the Hidden Shifted Power Problem  [seed · hidden-shifted-power, shifted-character, multiplicative-character, finite-fields]
+     research/literature_records.json
+     Is there a uniform polylogarithmic classical decoder, or a natural reduction or named assumption supporting superpolynomial uniform decoding hardness?
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

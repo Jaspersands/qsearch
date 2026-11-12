@@ -1,0 +1,5 @@
+Part 1: rigorous-variant SDA-ISO (full enumeration of hits q in [Q/2,Q])
+| K | log2 M | log2 Q | mean #hits [pred 2eps^2Q] | P(good prime) | CE bound | 1-exp(-S1) | P(good q incl. composite) | composite not factored | non-primitive mu (prime / comp) | max log2|mu| | s/trial |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 100 | 440 | 212.1 | 564.88 [565.61] | 168/200 | 0.221 | 0.854 | 199/200 | 4861 | 0 / 19 | 106.0 | 0.339 |
+(K=200 row in this run aborted on a float overflow in fincke_pohst, fixed; rerun with seed 2028 in checks_part1_K200.out)

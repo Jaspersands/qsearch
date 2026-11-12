@@ -1,0 +1,1 @@
+Current accepted interfaces are scoped in supplied notes. Native full comparator OPEN. Latest parent support-value theorem independently proved; closed encoding proof reviewed; target-prime model remains open. No source theorem is accepted solely from its name.

@@ -1,0 +1,25 @@
+(1) rank-1 family attaining e ~ 2^(3b):
+   b= 2  e=30  log2(e)/b=2.500  e/2^(3b+1)=0.2344
+   b= 3  e=364  log2(e)/b=3.000  e/2^(3b+1)=0.3555
+   b= 4  e=3480  log2(e)/b=3.000  e/2^(3b+1)=0.4248
+   b= 5  e=30256  log2(e)/b=3.000  e/2^(3b+1)=0.4617
+   b= 6  e=252000  log2(e)/b=3.000  e/2^(3b+1)=0.4807
+   b= 7  e=2056384  log2(e)/b=3.000  e/2^(3b+1)=0.4903
+   b= 8  e=16613760  log2(e)/b=3.000  e/2^(3b+1)=0.4951
+   b= 9  e=133563136  log2(e)/b=3.000  e/2^(3b+1)=0.4976
+   b=10  e=1071121920  log2(e)/b=3.000  e/2^(3b+1)=0.4988
+(2) exhaustive two-generator rank-1 maxima of e:
+   b=1  max e=3  bound 2^(3b+1)=16  witness=((1, 1, -1), (-1, -1, -1))
+   b=2  max e=30  bound 2^(3b+1)=128  witness=((3, 3, -3), (-2, -2, -3))
+   b=3  max e=364  bound 2^(3b+1)=1024  witness=((7, 7, -7), (-6, -6, -7))
+(3) random signed instances: 3000
+   L_maxbits_over_b: 6.8333
+   e_over_2^(3b+1)_max: 0.4316
+   rk1: 357
+   rk1_index_over_2^(3b+1)_max: 0.4316
+   rk2: 1292
+   rk2_index_over_2^(4b+2)_max: 0.5389
+(4) entries of x^{e al} y^be z^ga for |al|,|be|,|ga| <= 2^T - 1:
+   b=3 T=20 e=2^10-1: max |entry| bits = 50  (2T+3b+1 = 50)
+   b=5 T=40 e=2^16-1: max |entry| bits = 96  (2T+3b+1 = 96)
+all asserts passed

@@ -1,0 +1,101 @@
+Been tried? Lefschetz pencil conjugacy vanishing cycles connected parameter space monodromy
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-NAIMARK-COMPRESSED-PERMUTATION-BARRIER  [retained · CODE-COSET-COLLECTIVE, CODE-EQUIVALENCE-HARD-FAMILY-SEARCH, UNIFORM-HARMONIC-NAIMARK-DILATION, COMPRESSED-PERMUTATION-POVM]
+     research/registry/negative_results.json:70670
+     Claim: A uniform harmonic Naimark dilation with compressed permutation outcomes (point-stabilizer or cycle-type) on the growing-width carrier space can bypass the Holevo information collapse and identify the hidden permutation 
+     Why not: By the Peter-Weyl decomposition and Frobenius reciprocity on S_n downarrow S_{n-1}, any covariant point POVM has diagonal matrix elements [M_j]_{g, g} = 1/n! identically across all group elements g, producing exactly flat outcome distributions p(j | tau) = 1/n with zero mutual information. When coup
+  2. negative   NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA (quarantined)  [QUARANTINED_OVERBROAD_NO_GO · NONABELIAN-COSET-OBSERVABLES, MULTIPLICITY-COMMUTANT, RACAH-RECOUPLING, KRONECKER-POVM]
+     research/registry/quarantined_campaign_negatives.json:513
+     Claim: Multiplicity-space commutant Hamiltonians or pairwise Kronecker recoupling observables can extract hidden subgroup or code equivalence permutations in polynomial quantum time.
+     Why not: By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruli
+  3. negative   CARRIER-CONTEXTUALITY-NOT-HIDDEN-INVOLUTION-IDENTITY-SIGNAL  [retained · CODE-COSET-COLLECTIVE, carrier-only adaptive protocols, symmetric-group hidden involution]
+     research/registry/negative_results.json:42877
+     Claim: The maximal carrier disturbance itself identifies which conjugate involution is hidden.
+     Why not: Every carrier-PVM branch effect is invariant under simultaneous conjugation, so its distribution is identical for every involution in the fixed cycle-type conjugacy class.
+  4. negative   CLASS-UNIFORM-COMMUTATOR-BOUND-NOT-DIRECT-PLANCHEREL-TAIL-PROOF  [retained · CODE-COSET-COLLECTIVE, class-uniform commutator filtering, character-squared commuting tail]
+     research/registry/negative_results.json:44718
+     Claim: The existing class-uniform 7/(4p(n)) theorem directly proves the character-squared weighted commuting tail vanishes.
+     Why not: The character-squared law is nonuniform on conjugacy classes; the class-uniform proof supplies no domination or kernel comparison.
+  5. negative   NEG-SINGER-CYCLE-TORAL-HSP-BARRIER  [retained · NONABELIAN-COSET-COLLECTIVE-OBSERVABLES, LIE-TYPE-MATRIX-HSP, NON-SPLIT-TORAL-HSP, SINGER-CYCLE-OBSTRUCTION]
+     research/registry/negative_results.json:72719
+     Claim: Quantum algorithms can efficiently find unknown non-split maximal tori (Singer cycles) in GL(n, F_q) in polynomial time.
+     Why not: Every element g in T \ F_q* I has an irreducible characteristic polynomial of degree n over F_q with no eigenvalues in F_q. Consequently, T contains no transvections or unipotent matrices (T cap Transvections = empty). Classical structured probes cannot produce collisions, enforcing an unconditional
+
+Dequantization checks
+  1. dequant    DEQ-SELF-DUAL-WREATH-CLASS-TRIPLES-MISS-EQUAL-COMMUTATORS  [critical]
+     research/registry/dequantization_checks.json:1327
+     Claim: The three relative conjugacy classes determine equal-pair third-moment commutator characters.
+     Why not: Introduce recoupling or richer simultaneous-conjugacy coordinates and validate their contraction on equal and mixed complete W_3/W_4 controls.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9137
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-SELF-DUAL-WREATH-PHYSICAL-LABELS-NOT-HIDDEN-HARMONICS  [high]
+     research/registry/dequantization_checks.json:5364
+     Claim: Conservation of physical wreath Fourier labels resolves the hidden-label simultaneous-conjugacy harmonic transform.
+     Why not: Keep physical convolution blocks and hidden-label carrier multiplicity blocks as separate interfaces; supply the missing coherent harmonic transform explicitly.
+  4. dequant    DEQ-RESULT-EXP-COSET-COVARIANT-FRAME-COSET-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10512
+     Claim: RESULT-EXP-COSET-COVARIANT-FRAME-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7718
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Native classical quintic reconstruction: composition under attack › 1. Fixed native geometry  [unlabelled]
+     research/SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md:30
+     For ell>53, full Sp_n monodromy must be justified by vanishing-cycle spanning/conjugacy and the transvection theorem, not assumed from rational Zariski density alone.
+  2. note       Surface point counting: the classical height-uniformity gate › New core falsifier: modular compactification lo  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:121
+     Assume vanishing cycles span M, as in the hypersurface pencils.
+  3. note       Native classical quintic reconstruction: composition under attack › Scientific question and native contract  [unlabelled]
+     research/SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md:9
+     Primary-source checks include Couveignes, Lauder-Wan, Mascot, Anderson, Buchmann-Lenstra, Pila2005, and actual Lefschetz/monodromy source passages.
+  4. handoff    2026-11-07 Surface Torsion Geometry Construction  [journal]
+     research/AGENT_HANDOFF.md:2553
+     Cubic pencil genus19/base36/nodes132, irreducible-node proof and mod-ell invariant cycles pay Leray corrections.
+  5. note       Quartic-surface P2 from explicit torsion-cover twists › Scientific question and exact contract  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:22
+     The mechanism uses a fixed-genus Lefschetz pencil, explicit small-ell torsion covers, modular character induction, and known quantum CURVE zeta computation.
+
+Code and experiments
+  1. theorem    Complete classical search on a chosen reciprocal-affine pencil.  [code]
+     theorems/reciprocal_affine_pencil.py:1
+     reciprocal affine pencil.
+  2. hypothesis prime_character_exterior_bound_contract  [EXACT_GEOMETRY_NATIVE_WITNESS_AND_LOCAL_TRACE_BOUND_REVIEW_PENDING]
+     research/hypotheses/prime_character_exterior_bound_contract.json
+     Expected-polynomial classical perfect search under the stated high-rate and field promises; no quantum advantage in that promised structured family if local proof survives review Reuse norm solver; exact n-cycle indicator from exterior powers of standard S_n; tame compact-support trace formula, zer…
+  3. theorem    Classical quadratic-extension norm attack on explicit mixed-coset OPI.  [code]
+     theorems/prime_character_norm_attack.py:1
+     An all-parameter norm-pencil failure on a STRICT input solved by Q=13.
+  4. theorem    Clifford theory exposes, but does not solve, the connected CS polar.  [code]
+     theorems/self_dual_wreath_connected_clifford_normal_form.py:1
+     Equality or conjugate collisions among independent Plancherel
+draws have asymptotically vanishing union bound because the Plancherel
+collision probability is ``exp(-Theta(sqrt(n)))`` and there are only
+``poly(n)`` draws.
+  5. theorem    Conjugacy-class compression for bounded-support character contractions.  [code]
+     theorems/symmetric_marked_class_contraction.py:1
+     Conjugacy-class compression for bounded-support character contractions.
+
+Literature
+  1. literature On the matrices of given rank in a large subspace  [audit]
+     research/literature_audits/dcp_pivot_span_sources.json
+     ARXIV-1004.0579 Trivial-spectrum dimension bound via induction and a directed elementary-matrix cycle.
+  2. literature Primitive spaces of matrices with upper rank two over the field with two elements  [audit]
+     research/literature_audits/dcp_conditional_carry_sources.json
+     ARXIV-1405.1575 Nonsingular affine matrix pencils from trivial-spectrum matrix spaces over F2.
+  3. literature Critical pairs for the Product Singleton Bound  [audit]
+     research/literature_audits/dcp_native_schur_sources.json
+     Low-dimensional native pencil images cannot be promoted from rare structured codes; larger correlated matrix spaces and different quantum architectures remain open.
+  4. literature ternary_cyclic_extractor_sources  [audit]
+     research/literature_audits/ternary_cyclic_extractor_sources.json
+     AUDIT-NATIVE-CURVATURE-CYCLIC-EXTRACTOR Fixed curvature-only translation cycles partition the entire original source word space and have a SUM-gate inverse.
+  5. literature Solving systems of diagonal polynomial equations over finite fields  [audit]
+     research/literature_audits/ternary_incidence_sources.json
+     arXiv:1503.09016v2 Theorem5 Corollary6 Section5 shared-parameter phase construction Constant-degree univariate HPGP-prime over prime fields with growing parameter dimension is already quantum polynomial time.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

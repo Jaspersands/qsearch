@@ -57545,7 +57545,6 @@
     "source": "research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md"
   },
   {
-    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
     "applies_to": [
       "CHARACTER-SHIFT-DECODING-LOWER-BOUND",
       "LEGENDRE-PRG-INVERSION",
@@ -57556,11 +57555,12 @@
     "evidence": {
       "artifact": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json",
       "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
+      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}",
       "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
       "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
-      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model, conditional on Legendre PRG hardness (not computed here)",
-      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}"
+      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model, conditional on Legendre PRG hardness (not computed here)"
     },
+    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
     "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice is conjectured to need Omega(p) operations. That bound is conditional on the hardness of inverting the Legendre PRG and is not proved here.",
     "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s is conjectured to require solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts, conditional on Legendre PRG hardness. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
     "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
@@ -70125,7 +70125,21 @@
       "PO-MEASUREMENT"
     ],
     "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY.",
-    "evidence": {},
+    "evidence": {
+      "all_width_signed_suppression_theorem_count": 0,
+      "checked_support_size_pair_count": 21845,
+      "dense_support_target_collapse_control_count": 10,
+      "dense_support_target_collapse_failure_count": 0,
+      "exact_density_boundary_margin_theorem_count": 1,
+      "exact_margin_census_count": 8,
+      "higher_multi_boundary_signed_theorem_count": 0,
+      "margin_census_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "partition_prefactor_dominated_row_count": 8,
+      "positive_component_signal_count": 0,
+      "scaling_record_count": 9,
+      "sub_half_log_signed_suppression_theorem_count": 1
+    },
     "id": "NEG-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY",
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
@@ -71772,7 +71786,20 @@
       "PO-MEASUREMENT"
     ],
     "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE.",
-    "evidence": {},
+    "evidence": {
+      "arbitrary_reversible_presentation_no_go_count": 0,
+      "constant_suffix_generator_corollary_count": 1,
+      "efficient_measurement_count": 0,
+      "entropy_compensated_scalar_no_superleading_count": 1,
+      "finite_control_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "ordered_subword_suffix_control_count": 2,
+      "positive_component_signal_count": 0,
+      "reversible_constant_density_theorem_count": 1,
+      "reversible_program_control_count": 3,
+      "scaling_record_count": 4,
+      "sharpness_control_count": 2
+    },
     "id": "NEG-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE",
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",

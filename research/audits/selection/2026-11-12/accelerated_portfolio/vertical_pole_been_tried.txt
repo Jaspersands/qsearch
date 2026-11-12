@@ -1,0 +1,100 @@
+Been tried? vertical pole multiplicity minimal regular model plane curve coefficient height bound
+
+Killed before
+  1. negative   TRACE-FUNCTION-REJECT-TRACE_TWO_POLE  [retained · DHS-GOWERS-SIEVE, HYP-LIT-HIDDEN-SHIFT-SIEVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:85572
+     Claim: trace_two_pole is a viable natural trace-function hidden-shift family.
+     Why not: Constant-degree rational equations recover the hidden shift; this natural trace family is classically learnable.
+  2. negative   NEG-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY, PO-MEASUREMENT]
+     research/registry/negative_results.json:68645
+     Claim: Negative simplex holonomy causes local destructive interference within a single multiplicity-scalar affine plane channel.
+     Why not: Theorem proves every multiplicity-scalar affine-plane carrier channel has positive flat J3 holonomy.
+  3. negative   TRACE-FUNCTION-REJECT-TRACE_CUBIC_TWO_POLE  [retained · DHS-GOWERS-SIEVE, HYP-LIT-HIDDEN-SHIFT-SIEVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:85500
+     Claim: trace_cubic_two_pole is a viable natural trace-function hidden-shift family.
+     Why not: Constant-degree rational equations recover the hidden shift; this natural trace family is classically learnable.
+  4. negative   NEG-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO, PO-MEASUREMENT]
+     research/registry/negative_results.json:68672
+     Claim: Disjoint affine triangles extrapolate to threshold-scale orthogonal atoms.
+     Why not: Support pressure theorem proves affine-plane channel support demand exceeds pair-core capacity by a factorially divergent factor.
+  5. negative   NEG-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT, PO-MEASUREMENT]
+     research/registry/negative_results.json:71655
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT.
+     Why not: Falsified or refined by exact theorem evaluation.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:6354
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:6365
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-CFI-STRUCTURAL-DECODER-PROMISED-GADGET  [high]
+     research/registry/dequantization_checks.json:4792
+     Claim: Regular-base CFI survivor rows provide nonclassical coset-state evidence under their promised family model.
+     Why not: Do not use promised regular-CFI gadget rows as positive evidence when the access model permits structural gadget decoding. Move to CFI-like families where the promise is unavailable, or prove a measurement/lower-bound result beyond this reconstruction.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:6376
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12349
+     Claim: RESULT-EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Uniform arithmetic height: established pieces and remaining coordinate bound › Exact remaining height obligati  [proved]
+     research/SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md:101
+     Unique degree-one representatives of the fixed nonzero2-torsion class have unbounded coefficient heights.
+  2. handoff    2026-11-12 Uniform Stable Height and Canonical Divisor Choice  [journal]
+     research/AGENT_HANDOFF.md:26
+     Chapter9 book height chain is under separate source attack, including its model and vertical-term hypotheses.
+  3. note       Surface point counting: the classical height-uniformity gate › Parent finite-field repair construction  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:294
+     For a monic primitive polynomial with coefficient pole divisor A on P1, every root lying in L_h belongs to L_Y(q^*A), of dimension at most D*deg(A)+1.
+  4. note       Growing Mersenne Reciprocal-Trace Target › 4. Spectral Bound With The Correct Growing Genus  [unlabelled]
+     research/MERSENNE_RECIPROCAL_RESEARCH_TARGET.md:127
+     v=0 is not a two-pole curve and is handled by balance instead.
+  5. note       Surface point counting: the classical height-uniformity gate › Checked primary sources and parameter substitut  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:57
+     Twisting or rescaling a fixed curve cannot refute a bound for STABLE height.
+
+Code and experiments
+  1. theorem    Commuting-square architecture and its vertical-multiplicity boundary.  [code]
+     theorems/coset_hidden_involution_commuting_square_recoupling_boundary.py:1
+     Commuting-square architecture and its vertical-multiplicity boundary.
+  2. hypothesis dcp_lattice_gram_schmidt_babai_nearest_plane_vs_rounding_bridge_contract  [VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING]
+     research/hypotheses/dcp_lattice_gram_schmidt_babai_nearest_plane_vs_rounding_bridge_contract.json
+     For any full-rank lattice basis B, the inscribed L2 ball radius of Babai Coordinate Rounding satisfies r_CR(B) = 1 / (2 max_i ||(B^{-1})_{i,.}||_2) <= r_NP(B) = 0.5 min_i ||b_tilde_i||_2, with strict inequality whenever the minimal row has non-zero Gram-Schmidt coupling.
+  3. theorem    Positive affine-plane holonomy for multiplicity-scalar carrier channels.  [code]
+     theorems/self_dual_wreath_affine_plane_scalar_holonomy.py:1
+     At high Kronecker
+multiplicity, several affine-plane channels may occupy overlapping coefficient
+subspaces and recouple by nontrivial orthogonal ``6j`` matrices.
+  4. result     EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY scalar-affine-plane-holonomy-proved-matrix-recoupling-o  [scalar-affine-plane-holonomy-proved-matrix-recoupling-open]
+     research/registry/experiment_results.json:2339
+     Proved that every multiplicity-scalar affine-plane carrier channel has positive flat J3 holonomy and isolated matrix 6j recoupling as the possible failure mechanism.
+  5. experiment Affine plane scalar holonomy analysis  [planned]
+     research/registry/experiments.json:1393
+     Affine plane scalar holonomy analysis Proved that every multiplicity-scalar affine-plane carrier channel has positive flat J3 holonomy and isolated matrix 6j recoupling as the possible failure mechanism.
+
+Literature
+  1. literature hermite_decoder_prior_art  [audit]
+     research/literature_audits/hermite_decoder_prior_art.json
+     A polynomial with a nonzero highest derivative coefficient need not have a regular base-field point in the high-degree regime.
+  2. literature native_rlwe_primal_babai_sources  [audit]
+     research/literature_audits/native_rlwe_primal_babai_sources.json
+     2026-10-05 entry and outline proof formal verification of this repository or new source-specific probability bounds established nearest-plane algorithm and declared LLL approximation formalization https://isa-afp.org/entries/Babai_Nearest_Plane.html author-linked abstract; local centered-MGF proof…
+  3. literature A remark on the quantum complexity of the Kronecker coefficients  [seed · kronecker-coefficient, sharp-bqp, invariant-projector, representation-theory]
+     research/literature_records.json
+     A remark on the quantum complexity of the Kronecker coefficients Places exact Kronecker multiplicity counting in #BQP using commuting projectors; counting an invariant space is weaker than coherently resolving a basis and its state-dependent transition amplitudes.
+  4. literature goppa_holdout_quantum_access  [audit]
+     research/literature_audits/goppa_holdout_quantum_access.json
+     Construct a compact parity-preserving representation of the local-relation quotient with a direct useful output map, beating the matrix-free classical baseline Unconditional key recovery, a quantum solver, or a characteristic-preserving complex lift Sections 1-5, Claim 6.2, Theorem 7.2 and referenc…
+  5. literature Quantum Algorithms for Representation-Theoretic Multiplicities  [seed · kronecker-coefficient, multiplicity-estimation, dimension-ratio, representation-theory]
+     research/literature_records.json
+     Quantum Algorithms for Representation-Theoretic Multiplicities Gives quantum multiplicity algorithms under dimension-ratio restrictions, but the revised paper no longer supports the original conjecture of a superpolynomial Kronecker advantage on those families.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

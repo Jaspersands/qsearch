@@ -1,0 +1,35 @@
+Part 4: per-factor law for delta_mu, huge mu (exact integers)
+  300 cases: sigma == mu^2 (s0 + t Omega(u)) + (mu^2-mu)/2 (2c-ab) t :  300/300
+  h=(4, 6, 1), mu=6: delta_mu(sigma(w/2)) in K = True  (a single factor does NOT separate u, u+w/2)
+  same pair with mu=5: in K = False; product of factors (6,5) separates (gcd(mu1,mu2)=1)
+Part 3: theta = rho/2^m, q odd: #hits and distribution of c mod q given a hit (exact)
+  m=20 q=101 eps=1/8: hits=262145 (2 floor(eps M)+1 = 262145); c mod q counts min/max = 2595/2596 (mean 2595.5)
+  m=22 q=997 eps=1/16: hits=524289 (2 floor(eps M)+1 = 524289); c mod q counts min/max = 525/526 (mean 525.9)
+  m=24 q=1009 eps=1/32: hits=1048577 (2 floor(eps M)+1 = 1048577); c mod q counts min/max = 1039/1040 (mean 1039.2)
+  m=18 q=15 eps=1/4: hits=131073 (2 floor(eps M)+1 = 131073); c mod q counts min/max = 8738/8739 (mean 8738.2)
+Part 5: explicit truncated states, overlap <psi | psi.k>, k = h^tau z^sigma
+  a=(1, -2, 7) tau=1 sigma=0: phys |ov|=0.9222 (drift formula 0.9222; Part-B law 1-|s|/N=1.0000); ISS |ov|=0.9667 (pred (1-|tau|/T)(1-|s|/N)=0.9667); phase err vs e(+theta sigma): phys 0.0e+00, ISS 0.0e+00
+  a=(1, -2, 7) tau=2 sigma=5: phys |ov|=0.8451 (drift formula 0.8451; Part-B law 1-|s|/N=0.9975); ISS |ov|=0.9310 (pred (1-|tau|/T)(1-|s|/N)=0.9310); phase err vs e(+theta sigma): phys 6.5e-16, ISS 7.4e-16
+  a=(1, -2, 7) tau=-1 sigma=9: phys |ov|=0.9265 (drift formula 0.9265; Part-B law 1-|s|/N=0.9955); ISS |ov|=0.9623 (pred (1-|tau|/T)(1-|s|/N)=0.9623); phase err vs e(+theta sigma): phys 1.5e-15, ISS 1.4e-15
+  a=(40, -2, 7) tau=1 sigma=0: phys |ov|=0.8656 (drift formula 0.8657; Part-B law 1-|s|/N=1.0000); ISS |ov|=0.9667 (pred (1-|tau|/T)(1-|s|/N)=0.9667); phase err vs e(+theta sigma): phys 0.0e+00, ISS 0.0e+00
+  a=(40, -2, 7) tau=2 sigma=5: phys |ov|=0.7359 (drift formula 0.7359; Part-B law 1-|s|/N=0.9975); ISS |ov|=0.9310 (pred (1-|tau|/T)(1-|s|/N)=0.9310); phase err vs e(+theta sigma): phys 4.4e-16, ISS 6.1e-16
+  a=(40, -2, 7) tau=-1 sigma=9: phys |ov|=0.8700 (drift formula 0.8700; Part-B law 1-|s|/N=0.9955); ISS |ov|=0.9623 (pred (1-|tau|/T)(1-|s|/N)=0.9623); phase err vs e(+theta sigma): phys 4.0e-16, ISS 8.0e-16
+  a=(400, 11, -30) tau=1 sigma=0: phys |ov|=0.3436 (drift formula 0.3437; Part-B law 1-|s|/N=1.0000); ISS |ov|=0.9667 (pred (1-|tau|/T)(1-|s|/N)=0.9667); phase err vs e(+theta sigma): phys 0.0e+00, ISS 0.0e+00
+  a=(400, 11, -30) tau=2 sigma=5: phys |ov|=0.0000 (drift formula 0.0000; Part-B law 1-|s|/N=0.9975); ISS |ov|=0.9310 (pred (1-|tau|/T)(1-|s|/N)=0.9310); phase err vs e(+theta sigma): phys nan, ISS 1.9e-15
+  a=(400, 11, -30) tau=-1 sigma=9: phys |ov|=0.3480 (drift formula 0.3480; Part-B law 1-|s|/N=0.9955); ISS |ov|=0.9623 (pred (1-|tau|/T)(1-|s|/N)=0.9623); phase err vs e(+theta sigma): phys 1.8e-15, ISS 2.2e-15
+Part 6: independent toy Fourier law, Mb=32, K=24, exact phases from the Part-4 formula
+  h=(2, 3, 5) mu~2^28.3: total=1.0000; mass with ||<y,w>/Mb + gamma|| <= 1/Mb: 0.463; <= 0.1: 0.860
+  h=(2, 3, 5) mu~2^28.3: total=1.0000; mass with ||<y,w>/Mb - gamma|| <= 1/Mb: 0.013; <= 0.1: 0.073
+  h=(2, 3, 5) mu~2^28.3: total=1.0000; mass with ||<y,w>/Mb (no offset)|| <= 1/Mb: 0.008; <= 0.1: 0.020
+  uniform mass in a 1/Mb strip: 0.094
+  h=(3, 1, -4) mu~2^28.4: total=1.0000; mass with ||<y,w>/Mb + gamma|| <= 1/Mb: 0.541; <= 0.1: 0.873
+  h=(3, 1, -4) mu~2^28.4: total=1.0000; mass with ||<y,w>/Mb - gamma|| <= 1/Mb: 0.019; <= 0.1: 0.062
+  h=(3, 1, -4) mu~2^28.4: total=1.0000; mass with ||<y,w>/Mb (no offset)|| <= 1/Mb: 0.006; <= 0.1: 0.016
+  uniform mass in a 1/Mb strip: 0.094
+  h=(1, 4, 2) mu~2^29.5: total=1.0000; mass with ||<y,w>/Mb + gamma|| <= 1/Mb: 0.609; <= 0.1: 0.877
+  h=(1, 4, 2) mu~2^29.5: total=1.0000; mass with ||<y,w>/Mb - gamma|| <= 1/Mb: 0.609; <= 0.1: 0.877
+  h=(1, 4, 2) mu~2^29.5: total=1.0000; mass with ||<y,w>/Mb (no offset)|| <= 1/Mb: 0.609; <= 0.1: 0.877
+  uniform mass in a 1/Mb strip: 0.094
+Part 2: overlap lemma  |lambda(A_p cap A_p') - 4e^2| <= d^2/(3 p p'), d = gcd(p,p')
+  360 (p,p',eps) cases: violations 0; max |err|/bound = 0.735
+nice -n 19 /opt/anaconda3/envs/qsearch-cas/bin/python referee_checks.py 4 3 5  8.25s user 0.20s system 85% cpu 9.881 total

@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-12",
+  "selection": "last native target-prime interfaces",
+  "local_ceiling_usd": 22,
+  "jobs": [
+    {
+      "provider": "claude",
+      "obligation": "target-model",
+      "model": "claude-opus-5-5",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 3,
+      "bundle": "research/audits/claude_runs/2026-11-12-target-target-model",
+      "session_id": 47583
+    },
+    {
+      "provider": "claude",
+      "obligation": "cohomology-assembly",
+      "model": "claude-opus-5-5",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 3,
+      "bundle": "research/audits/claude_runs/2026-11-12-target-cohomology-assembly",
+      "session_id": 95509
+    },
+    {
+      "provider": "claude",
+      "obligation": "parabolic-transfer",
+      "model": "claude-opus-5-5",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 3,
+      "bundle": "research/audits/claude_runs/2026-11-12-target-parabolic-transfer",
+      "session_id": 34680
+    },
+    {
+      "provider": "openai",
+      "obligation": "etale-reconstruction",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 7,
+      "session_id": 32183,
+      "bundle": "research/audits/openai_runs/2026-11-12-target-etale-reconstruction"
+    },
+    {
+      "provider": "openai",
+      "obligation": "boundary-determinant",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 6,
+      "session_id": 80496,
+      "bundle": "research/audits/openai_runs/2026-11-12-target-boundary-determinant"
+    }
+  ],
+  "note": "Initial local CLI validation used wrong flag and made no API call. Corrected invocation dispatched once. Ceilings are not charges."
+}

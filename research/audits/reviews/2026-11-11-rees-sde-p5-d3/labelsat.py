@@ -165,7 +165,7 @@ def solve(L, p=5, d=3, S=(0, 1, 4), use_R=True, use_N=True, timeout=900, workdir
     st, model = run_cadical(cnf, timeout); res = dict(L=info['L'], nvars=nvars, nclauses=len(clauses))
     if st == 'SAT':
         Phi, gamma = decode(model, info); ok, msg = check_model(info['L'], Phi, gamma, p, d, S)
-        res.update(status='SAT' if ok else 'SAT_CHECK_FAILED:' + msg, Phi=Phi, gamma={a: gamma[a] for a in info['reps']})
+        res.update(status='SAT' if ok else 'SAT_CHECK_FAILED:' + msg, Phi=Phi, gamma=gamma)
     elif st == 'UNSAT':
         lrat = os.path.join(wd, tag + '.lrat'); st2, _ = run_cadical(cnf, timeout, lrat=lrat)
         if st2 != 'UNSAT': res.update(status='UNSAT_UNVERIFIED(' + st2 + ')')
@@ -182,6 +182,7 @@ def solve(L, p=5, d=3, S=(0, 1, 4), use_R=True, use_N=True, timeout=900, workdir
 def brute(L, p, d, S):
     """Exhaustive over Phi; gamma independent per alpha; no reductions.  True iff feasible."""
     S = sorted(set(x % p for x in S)); L = sorted(set(L)); alphas = nonzero(p, d); gams = vecs(p, d)
+    if rank(L, p, d) != d: return False
     dirs = {}
     for a in alphas: dirs.setdefault(canon_dir(a, p), []).append(a)
     Sset = set(S)

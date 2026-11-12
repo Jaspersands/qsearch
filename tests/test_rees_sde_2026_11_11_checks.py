@@ -142,3 +142,16 @@ def test_p7_m4_both_orbits_and_six_point_m3_certificates() -> None:
     assert len(verified_cases) == 480
     assert any(ln.startswith("TOTAL | 001 002 010 020 100 112 121 133 200 211 | m=3 support-3 streamed | cases 480 verified 480 |") for ln in m3_lines)
 
+
+def test_p13_and_p17_streamed_lrat_verifications() -> None:
+    p13_lines = (REVIEWS / "2026-11-09-lrat-checker-fix" / "recheck" / "cases13_cases.out").read_text(encoding="utf-8").splitlines()
+    assert any("TOTAL: 37/37 cases certified (tie-in OK, UNSAT, LRAT VERIFIED by the fixed checker); 0 skipped, 0 not certified;" in ln for ln in p13_lines)
+
+    p17_lines = (INTERVAL_S / "cases17_K4_lrat.out").read_text(encoding="utf-8").splitlines()
+    p17_verified = [ln for ln in p17_lines if ln.startswith("case ") and "UNSAT=True verified=True chk_rc=0" in ln]
+    assert len(p17_verified) == 12
+    assert any("TOTAL: 12/12 orbits UNSAT LRAT VERIFIED |" in ln for ln in p17_lines)
+
+    p17_zero = (INTERVAL_S / "cases17_K4_zero_equi.out").read_text(encoding="utf-8")
+    assert "UNSAT=True verified=True chk_rc=0" in p17_zero
+

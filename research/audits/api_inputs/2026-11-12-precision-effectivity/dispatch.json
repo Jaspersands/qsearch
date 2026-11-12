@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-12",
+  "selection": "Explicit computable reconstruction precision",
+  "local_ceiling_usd": 12,
+  "jobs": [
+    {
+      "provider": "claude",
+      "obligation": "analytic-constants",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "max_tokens": 32768,
+      "budget": 2,
+      "contexts": [
+        "research/SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md",
+        "research/audits/reviews/2026-11-12-merkl-log-atlas.md",
+        "research/audits/api_inputs/2026-11-12-precision-effectivity/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-12-precision-analytic-constants",
+      "chunk_id": "b72c9f",
+      "wall_time_seconds": 1.002579125,
+      "session_id": 5783,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "provider": "openai",
+      "obligation": "arithmetic-precision",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 10,
+      "contexts": [
+        "research/SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md",
+        "research/SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md",
+        "research/SURFACE_TORSION_HEIGHT_CHAIN.md",
+        "research/audits/reviews/2026-11-12-surface-faltings-transfer.md",
+        "research/audits/reviews/2026-11-12-torsion-height-finite-chain.md",
+        "research/audits/reviews/2026-11-12-torsion-height-analytic-chain.md",
+        "research/audits/reviews/2026-11-12-closed-divisor-encoding.md",
+        "research/audits/api_inputs/2026-11-12-precision-effectivity/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-12-precision-arithmetic-precision",
+      "chunk_id": "19fa1e",
+      "wall_time_seconds": 1.002577917,
+      "session_id": 38238,
+      "original_token_count": 0,
+      "output": ""
+    }
+  ],
+  "note": "New numerical effectivity obligations with newly explicit proof and source inputs; no unknown-cost retry. Local ceilings are not charges."
+}

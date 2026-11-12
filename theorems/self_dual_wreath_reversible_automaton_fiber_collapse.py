@@ -719,8 +719,8 @@ def write_reversible_automaton_fiber_report(
     output_path = path
     for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
         kwargs.pop(_k, None)
-    if "run_reversible_automaton_fiber" in globals():
-        report = run_reversible_automaton_fiber(**kwargs)
+    if "build_reversible_automaton_fiber_report" in globals():
+        report = build_reversible_automaton_fiber_report(**kwargs)
         payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
     else:
         report = {}

@@ -375,3 +375,101 @@ def test_nonmetabelian_derived_algebra_is_not_excluded_by_the_public_compiler():
     assert any(lifted)
     assert all(r == 8 for a, (r, _) in zip(lifted, cover.indices) if a)
     assert cover.evaluate(lifted, 3) == tuple(pow(3, 8, 11)*a % 11 for a in witness)
+
+
+# ---- Schedule 1 at zero-sum depth L_d = ceil(log2 t_d) (2026-11-12 headline change) ----
+
+def _brute_zero_sum_length(p, kappa):
+    """Least t with t nonzero kappa-th powers summing to 0, by plain sumset iteration."""
+    powers = {pow(x, kappa, p) for x in range(1, p)}
+    sums, t = set(powers), 1
+    while 0 not in sums:
+        sums = {(a+b) % p for a in sums for b in powers}
+        t += 1
+    return t
+
+
+def test_zero_sum_length_matches_bruteforce_parity_rule_and_chevalley_warning():
+    from flint import fmpz
+    from theorems.rees_hsp_reduction import zero_sum_length
+    for p in range(3, 400):
+        if not fmpz(p).is_prime():
+            continue
+        for kappa in range(1, 10):
+            if (p-1) % kappa:
+                continue
+            t = zero_sum_length(p, kappa)
+            assert t == _brute_zero_sum_length(p, kappa)
+            assert 2 <= t <= kappa+1
+            assert (t == 2) == (((p-1)//kappa) % 2 == 0)
+    assert zero_sum_length(41, 8) == 5      # 8th powers of F_41 are mu_5
+    assert zero_sum_length(2521, 8) == 3    # 2520/8 = 315 odd, Weil shortcut
+    assert zero_sum_length(5, 4) == 5       # kappa = p-1: zero-sum subset, t = p
+    for bad in ((15, 2), (13, 5), (7, 0)):
+        with pytest.raises(ValueError):
+            zero_sum_length(*bad)
+
+
+def test_zero_sum_depth_exponents_and_arity_never_exceed_published():
+    from theorems.full_jet_resource_certificate import sde_arity
+    from theorems.rees_hsp_reduction import zero_sum_depth_exponent, zero_sum_sde_arity
+    values = [zero_sum_depth_exponent(c) for c in range(2, 10)]
+    assert [v for v, _ in values] == [5, 8, 16, 19, 35, 36, 44, 53]
+    assert values[-1] == (53, 2521) and zero_sum_depth_exponent(1) == (1, 2)
+    for p in (11, 13, 41, 43, 73, 2521, 7561):
+        for d in range(1, 10):
+            for a in (0, 1, 5, 17):
+                assert zero_sum_sde_arity(p, d, a) <= sde_arity(d, a)
+    assert zero_sum_sde_arity(43, 5, 12) == 13             # kappa_5 = gcd(5, 42) = 1
+    assert zero_sum_sde_arity(13, 2, 3) == 2*4**2           # p = 1 mod 4: t = 2, one round
+    assert zero_sum_sde_arity(43, 2, 3) == (2*4**2)**2      # p = 3 mod 4: t = 3, two rounds
+
+
+def test_class_nine_profile_at_zero_sum_depth_keeps_published_profile():
+    from theorems.rees_hsp_reduction import black_box_copy_budget
+    source, ambient, _ = derived_length_three_witness(43)
+    cover = make_rees_cover(source, ambient)
+    published = recovery_budget(cover)
+    worst = recovery_budget(cover, depth="zero_sum_worst")
+    instance = recovery_budget(cover, depth="zero_sum_instance")
+    assert published["query_dimension_exponent"] == 145
+    assert worst["query_dimension_exponent"] == instance["query_dimension_exponent"] == 53
+    assert worst["arity_prime"] == 2521 and instance["arity_prime"] == 43
+    assert (worst["original_queries"]-1).bit_length() == 564
+    assert (published["original_queries"]-1).bit_length() == 1573
+    assert instance["original_queries"] <= worst["original_queries"] < published["original_queries"]
+    assert all(a <= b for a, b in zip(worst["stage_arities_top_down"], published["stage_arities_top_down"]))
+    assert worst["total_error_bound"] == published["total_error_bound"] == Fraction(1207, 5418)
+    outer = black_box_large_prime_budget(104, 9, depth="zero_sum_worst")
+    assert outer["large_prime_query_dimension_exponent"] == 55
+    assert (outer["large_prime_original_query_bound"]-1).bit_length() == 794
+    assert black_box_large_prime_budget(104, 9)["large_prime_query_dimension_exponent"] == 147
+    new_copy, old_copy = black_box_copy_budget(104, 9, depth="zero_sum_worst"), black_box_copy_budget(104, 9)
+    assert new_copy["small_prime_zero_sum_arities"] == old_copy["small_prime_zero_sum_arities"]
+    assert new_copy["small_prime_copy_dimension_exponent"] == 147
+    with pytest.raises(ValueError):
+        recovery_budget(cover, depth="shortest")
+
+
+def test_committed_reduction_report_has_headline_and_published_depth_profile():
+    import json
+    from pathlib import Path
+    report = json.loads((Path(__file__).resolve().parents[1]/"research/reductions/rees_hsp_reduction.json").read_text())
+    profile, old = report["profile"], report["published_depth_profile"]
+    assert profile["query_dimension_exponent"] == 53
+    assert (profile["original_queries_ceil_log2"], profile["complete_instrument_calls_ceil_log2"]) == (564, 561)
+    assert profile["classical_sde_attempts_per_call"] == 441
+    assert profile["total_error_bound"] == "1207/5418"
+    assert old["profile"]["query_dimension_exponent"] == 145
+    assert (old["profile"]["original_queries_ceil_log2"], old["profile"]["complete_instrument_calls_ceil_log2"]) == (1573, 1570)
+    assert old["profile"]["classical_sde_attempts_per_call"] == 1081
+    assert old["large_prime_outer_envelope"] == {"large_prime_query_dimension_exponent": 147,
+                                                 "large_prime_original_queries_ceil_log2": 2194}
+    assert report["large_prime_outer_envelope"]["large_prime_query_dimension_exponent"] == 55
+    assert report["large_prime_outer_envelope"]["large_prime_original_queries_ceil_log2"] == 794
+    assert report["copy_only_outer_envelope"]["small_prime_original_copies_ceil_log2"] == 1918
+    assert report["copy_only_outer_envelope"]["total_original_copies_ceil_log2"] == 1918
+    for gate in ("speedup_claim_allowed", "novelty_established", "independent_review",
+                 "coherent_receiver_implemented", "general_sde_implemented", "formal_compiler_checked"):
+        assert report[gate] is False
+    assert report["copy_only_outer_envelope"]["speedup_claim_allowed"] is False

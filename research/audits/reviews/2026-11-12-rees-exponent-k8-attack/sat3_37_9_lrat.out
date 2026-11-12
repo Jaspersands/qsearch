@@ -1,0 +1,12 @@
+s UNSATISFIABLE
+timeout 1500 nice -n 19 cadical -q --lrat=true --no-binary l3_37_9_0.cnf   538.50s user 17.01s system 93% cpu 9:54.57 total
+cadical_exit=20
+-rw-r--r--@ 1 jaspersands  wheel  4730036890 Nov 12 22:06 l3_37_9_0.lrat
+c allocated 1024 13546405 359640
+c Added clauses = 8436548.  Deleted clauses = 7726565.  Max live clauses = 2006876
+c verification time = 73.75 secs
+timeout 2400 nice -n 19 $L l3_37_9_0.cnf l3_37_9_0.lrat  69.21s user 2.33s system 96% cpu 1:13.78 total
+check_exit=0
+c00a76cec23e16d2
+
+[exited with code 0]

@@ -1308,6 +1308,100 @@ from self_dual_wreath_shared_pair_recoupling_decoupling import write_shared_pair
 from self_dual_wreath_sibling_frame_all_fixed_joint import write_sibling_frame_all_fixed_joint_report
 from self_dual_wreath_sibling_frame_all_fixed_mp import write_sibling_frame_all_fixed_mp_report
 from self_dual_wreath_sign_twist_collective_activation import write_sign_twist_collective_activation_report
+from coset_hidden_involution_all_copy_target_lcu_no_go import write_all_copy_target_LCU_no_go_report
+from coset_hidden_involution_single_hecke_all_degree_moment_no_go import write_all_degree_moment_report
+from coset_hidden_involution_joint_primitive_ambient_lift_obstruction import write_ambient_lift_report
+from coset_hidden_involution_single_hecke_bounded_spectral_no_go import write_bounded_spectral_report
+from coset_hidden_involution_bounded_support_commutant_generation import write_bounded_support_commutant_report
+from self_dual_wreath_branch_character_cyclic_polar_compiler import write_branch_character_cyclic_polar_report
+from self_dual_wreath_branch_character_polar_naimark_completion import write_branch_character_polar_naimark_completion_report
+from self_dual_wreath_branch_character_raw_concentration_central_fourier_bridge import write_central_raw_concentration_bridge_report
+from self_dual_wreath_orientation_kernel_character_tensor_boundary import write_character_tensor_boundary_report
+from coset_hidden_involution_matching_charge_orbit_recoupling_reduction import write_charge_orbit_recoupling_report
+from coset_hidden_involution_matching_charge_coherent_label_compiler import write_coherent_label_compiler_report
+from coset_hidden_involution_colour_resolved_paired_tower_boundary import write_colour_resolved_paired_tower_report
+from coset_hidden_involution_commutant_support_growth_boundary import write_commutant_support_growth_report
+from coset_hidden_involution_commuting_square_recoupling_boundary import write_commuting_square_recoupling_report
+from self_dual_wreath_component_direct_naimark_polar_equivalence import write_component_direct_naimark_polar_equivalence_report
+from self_dual_wreath_component_polar_physical_pgm_closure import write_component_polar_physical_pgm_closure_report
+from coset_hidden_involution_matching_charge_conditional_diameter import write_conditional_diameter_report
+from self_dual_wreath_connected_clifford_normal_form import write_connected_clifford_normal_form_report
+from self_dual_wreath_connected_quotient_heisenberg_reduction import write_connected_quotient_heisenberg_reduction_report
+from self_dual_wreath_point_critical_energy_separation import write_critical_energy_separation_report
+from self_dual_wreath_point_critical_identity_atom import write_critical_identity_atom_report
+from coset_hidden_involution_cross_transposition_hecke_moment_no_go import write_cross_transposition_Hecke_moment_report
+from self_dual_wreath_branch_character_cyclic_quadrant_overlap import write_cyclic_quadrant_overlap_report
+from coset_hidden_involution_cross_transposition_hecke_degree_five_no_go import write_degree_five_report
+from coset_hidden_involution_diagonal_charge_bias_no_go import write_diagonal_charge_bias_no_go_report
+from coset_hidden_involution_double_coset_polar_reduction import write_double_coset_polar_report
+from self_dual_wreath_branch_character_equivariant_multiplier_normal_form import write_equivariant_multiplier_normal_form_report
+from self_dual_wreath_final_root_byproduct_covariance_no_go import write_final_root_byproduct_covariance_no_go_report
+from self_dual_wreath_final_root_metric_access_width_no_go import write_final_root_metric_access_width_no_go_report
+from self_dual_wreath_final_root_physical_preparation_extension_scope_boundary import write_final_root_physical_preparation_extension_scope_boundary_report
+from self_dual_wreath_final_root_program_contraction_normalization_no_go import write_final_root_program_contraction_normalization_no_go_report
+from self_dual_wreath_final_root_purification_naimark_program_boundary import write_final_root_purification_naimark_program_boundary_report
+from self_dual_wreath_final_root_scalar_mixer_no_go import write_final_root_scalar_mixer_no_go_report
+from self_dual_wreath_final_root_state_preparation_oracle_query_boundary import write_final_root_state_preparation_oracle_query_boundary_report
+from self_dual_wreath_orientation_fixed_space_recoupling import write_fixed_space_recoupling_report
+from self_dual_wreath_branch_character_gpe_dilation_separation import write_gpe_dilation_separation_report
+from self_dual_wreath_gpe_fusion_tree_cs_boundary import write_gpe_fusion_tree_cs_boundary_report
+from self_dual_wreath_orientation_kernel_hash_normalization_no_go import write_hash_normalization_no_go_report
+from coset_hidden_involution_hyperoctahedral_branching_mass import write_hyperoctahedral_branching_mass_report
+from self_dual_wreath_joint_character_analysis_map_normalization import write_joint_analysis_map_normalization_report
+from self_dual_wreath_joint_character_natural_sector_mass import write_joint_character_natural_sector_mass_report
+from coset_hidden_involution_paired_tower_joint_primitive_projector import write_joint_primitive_projector_report
+from self_dual_wreath_joint_character_purification_access_boundary import write_joint_purification_access_boundary_report
+from self_dual_wreath_branch_character_label_coherent_power_map_boundary import write_label_coherent_power_map_boundary_report
+from self_dual_wreath_latent_master_polar_tradeoff import write_latent_master_polar_tradeoff_report
+from coset_hidden_involution_matching_charge_cs_correlation import write_matching_charge_CS_correlation_report
+from coset_hidden_involution_matching_charge_natural_independence import write_matching_charge_natural_independence_report
+from coset_hidden_involution_mixed_hecke_word_lcu_no_go import write_mixed_word_LCU_report
+from self_dual_wreath_mrs_identification_escape_theorem import write_mrs_identification_escape_report
+from self_dual_wreath_branch_character_naimark_autocorrelation_fourier_boundary import write_naimark_autocorrelation_fourier_boundary_report
+from self_dual_wreath_branch_character_natural_frobenius_word_map import write_natural_frobenius_word_map_report
+from coset_hidden_involution_natural_matrix_multiplicity import write_natural_matrix_multiplicity_report
+from self_dual_wreath_natural_q_scale_spectral_window_no_go import write_natural_q_scale_spectral_window_no_go_report
+from coset_hidden_involution_natural_recoupling_boundary import write_natural_recoupling_boundary_report
+from coset_hidden_involution_target_interference_negativity_barrier import write_negativity_barrier_report
+from coset_hidden_involution_normalized_likelihood_charge_commutator_no_go import write_normalized_likelihood_charge_no_go_report
+from coset_hidden_involution_occupied_matrix_rank import write_occupied_matrix_rank_report
+from self_dual_wreath_orientation_homogeneous_space_polar import write_orientation_homogeneous_space_polar_report
+from coset_hidden_involution_pair_gaudin_hierarchy import write_pair_gaudin_hierarchy_report
+from coset_hidden_involution_pair_matching_charge_hierarchy import write_pair_matching_charge_report
+from self_dual_wreath_pair_relation_common_support_no_go import write_pair_relation_common_support_no_go_report
+from self_dual_wreath_pair_sheaf_metric_incompatibility import write_pair_sheaf_metric_incompatibility_report
+from coset_hidden_involution_paired_tower_missing_label_boundary import write_paired_tower_missing_label_report
+from coset_hidden_involution_matching_charge_pairwise_kernel_dequantization import write_pairwise_kernel_dequantization_report
+from coset_hidden_involution_physical_target_convolution_normal_form import write_physical_target_convolution_report
+from coset_hidden_involution_plancherel_local_commutant_certificate import write_plancherel_local_commutant_report
+from self_dual_wreath_point_centered_residual_no_go import write_point_centered_residual_report
+from self_dual_wreath_point_child_star_relative_collision import write_point_child_star_relative_collision_report
+from self_dual_wreath_point_copy_threshold import write_point_copy_threshold_report
+from self_dual_wreath_branch_character_power_map_fourier_access_boundary import write_power_map_fourier_access_boundary_report
+from coset_hidden_involution_rank_tracking_commutant_witness import write_rank_tracking_commutant_report
+from self_dual_wreath_branch_character_raw_polar_matched_filter_boundary import write_raw_polar_matched_filter_boundary_report
+from self_dual_wreath_regular_master_walsh_flatness_no_go import write_regular_master_walsh_flatness_report
+from coset_hidden_involution_joint_primitive_representation_cone_obstruction import write_representation_cone_report
+from self_dual_wreath_schur_branch_merger_polar_equivalence import write_schur_branch_merger_polar_equivalence_report
+from self_dual_wreath_schur_dilated_multiplicity_access import write_schur_dilated_multiplicity_access_report
+from self_dual_wreath_branch_character_sector_resolved_whitening_no_go import write_sector_resolved_whitening_no_go_report
+from coset_hidden_involution_shared_conjugation_qsvt_lower_bound import write_shared_conjugation_QSVT_report
+from self_dual_wreath_source_adaptive_walsh_collision_reduction import write_source_adaptive_walsh_collision_report
+from self_dual_wreath_source_block_branch_covariance_boundary import write_source_block_branch_covariance_boundary_report
+from coset_hidden_involution_source_local_likelihood_no_go import write_source_local_likelihood_no_go_report
+from self_dual_wreath_source_order_gauge_canonicalization import write_source_order_gauge_canonicalization_report
+from self_dual_wreath_split_sector_branch_regularity import write_split_sector_branch_regularity_report
+from coset_hidden_involution_stable_support_six_certificate import write_stable_support_six_report
+from coset_hidden_involution_standard_block_recoupling import write_standard_block_recoupling_report
+from self_dual_wreath_orientation_syndrome_component_reduction import write_syndrome_component_reduction_report
+from coset_hidden_involution_matching_charge_target_gauge_trivialization import write_target_gauge_trivialization_report
+from self_dual_wreath_trace_biased_adaptive_walsh_no_go import write_trace_biased_adaptive_walsh_report
+from self_dual_wreath_trace_biased_coefficient_rank_no_go import write_trace_biased_coefficient_rank_report
+from coset_hidden_involution_trimmed_row_block_encoding_no_go import write_trimmed_row_block_encoding_report
+from coset_hidden_involution_trimmed_row_kernel_succinctness import write_trimmed_row_kernel_report
+from coset_hidden_involution_two_subgroup_projector_algebra_no_go import write_two_projector_algebra_report
+from self_dual_wreath_branch_character_whole_sum_path_erasure_boundary import write_whole_sum_path_erasure_boundary_report
+from coset_hidden_involution_matching_charge_word_moment_dequantization import write_word_moment_dequantization_report
 from learnability_baselines import write_learnability_report
 from phase_family_naturalness import write_phase_family_naturalness_report
 from phase_state_workbench import write_hidden_shift_workbench
@@ -3356,7 +3450,7 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
             reasons.append("closure/conductor directly tests invariant collapse")
     elif top_frontier == "character-shift-decoding-lower-bound":
         if is_character_experiment:
-            bonus += 100
+            bonus += 120
             reasons.append("top frontier is hidden-shift decoding/lower-bound work")
     elif top_frontier == "dcp-density-one-subset-sum-partial-solver":
         if is_density_one_subset_sum_experiment:
@@ -4171,10 +4265,1597 @@ def _build_fallback_artifacts(payload: dict[str, Any], experiment_id: str) -> di
     return arts
 
 
+def _run_explicit_marker_and_wreath_experiment(experiment_id: str, experiment: dict) -> RunnerResult | None:
+    result_id = _latest_result_id_for_experiment(experiment_id)
+    if (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-ALL-COPY-TARGET-LCU-NO-GO"
+    ):
+        try:
+            payload = write_all_copy_target_LCU_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_all_copy_target_LCU_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-BOUNDED-SUPPORT-COMMUTANT-GENERATION"
+    ):
+        try:
+            payload = write_bounded_support_commutant_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_bounded_support_commutant_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-COLOUR-RESOLVED-PAIRED-TOWER-BOUNDARY"
+    ):
+        try:
+            payload = write_colour_resolved_paired_tower_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_colour_resolved_paired_tower_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-COMMUTANT-SUPPORT-GROWTH-BOUNDARY"
+    ):
+        try:
+            payload = write_commutant_support_growth_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_commutant_support_growth_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-COMMUTING-SQUARE-RECOUPLING-BOUNDARY"
+    ):
+        try:
+            payload = write_commuting_square_recoupling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_commuting_square_recoupling_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-DEGREE-FIVE-NO-GO"
+    ):
+        try:
+            payload = write_degree_five_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_degree_five_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-MOMENT-NO-GO"
+    ):
+        try:
+            payload = write_cross_transposition_Hecke_moment_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_cross_transposition_Hecke_moment_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-DIAGONAL-CHARGE-BIAS-NO-GO"
+    ):
+        try:
+            payload = write_diagonal_charge_bias_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_diagonal_charge_bias_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-DOUBLE-COSET-POLAR-REDUCTION"
+    ):
+        try:
+            payload = write_double_coset_polar_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_double_coset_polar_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-HYPEROCTAHEDRAL-BRANCHING-MASS"
+    ):
+        try:
+            payload = write_hyperoctahedral_branching_mass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_hyperoctahedral_branching_mass_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-AMBIENT-LIFT-OBSTRUCTION"
+    ):
+        try:
+            payload = write_ambient_lift_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_ambient_lift_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-REPRESENTATION-CONE-OBSTRUCTION"
+    ):
+        try:
+            payload = write_representation_cone_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_representation_cone_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-COHERENT-LABEL-COMPILER"
+    ):
+        try:
+            payload = write_coherent_label_compiler_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_coherent_label_compiler_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CONDITIONAL-DIAMETER"
+    ):
+        try:
+            payload = write_conditional_diameter_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_conditional_diameter_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CS-CORRELATION"
+    ):
+        try:
+            payload = write_matching_charge_CS_correlation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_matching_charge_CS_correlation_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-NATURAL-INDEPENDENCE"
+    ):
+        try:
+            payload = write_matching_charge_natural_independence_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_matching_charge_natural_independence_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-ORBIT-RECOUPLING-REDUCTION"
+    ):
+        try:
+            payload = write_charge_orbit_recoupling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_charge_orbit_recoupling_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-PAIRWISE-KERNEL-DEQUANTIZATION"
+    ):
+        try:
+            payload = write_pairwise_kernel_dequantization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_pairwise_kernel_dequantization_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-TARGET-GAUGE-TRIVIALIZATION"
+    ):
+        try:
+            payload = write_target_gauge_trivialization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_target_gauge_trivialization_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-WORD-MOMENT-DEQUANTIZATION"
+    ):
+        try:
+            payload = write_word_moment_dequantization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_word_moment_dequantization_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MIXED-HECKE-WORD-LCU-NO-GO"
+    ):
+        try:
+            payload = write_mixed_word_LCU_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_mixed_word_LCU_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-MATRIX-MULTIPLICITY"
+    ):
+        try:
+            payload = write_natural_matrix_multiplicity_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_natural_matrix_multiplicity_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-RECOUPLING-BOUNDARY"
+    ):
+        try:
+            payload = write_natural_recoupling_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_natural_recoupling_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-NORMALIZED-LIKELIHOOD-CHARGE-COMMUTATOR-NO-GO"
+    ):
+        try:
+            payload = write_normalized_likelihood_charge_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_normalized_likelihood_charge_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-OCCUPIED-MATRIX-RANK"
+    ):
+        try:
+            payload = write_occupied_matrix_rank_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_occupied_matrix_rank_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-PAIR-GAUDIN-HIERARCHY"
+    ):
+        try:
+            payload = write_pair_gaudin_hierarchy_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_pair_gaudin_hierarchy_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-PAIR-MATCHING-CHARGE-HIERARCHY"
+    ):
+        try:
+            payload = write_pair_matching_charge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_pair_matching_charge_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-JOINT-PRIMITIVE-PROJECTOR"
+    ):
+        try:
+            payload = write_joint_primitive_projector_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_joint_primitive_projector_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-MISSING-LABEL-BOUNDARY"
+    ):
+        try:
+            payload = write_paired_tower_missing_label_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_paired_tower_missing_label_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-PHYSICAL-TARGET-CONVOLUTION-NORMAL-FORM"
+    ):
+        try:
+            payload = write_physical_target_convolution_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_physical_target_convolution_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-PLANCHEREL-LOCAL-COMMUTANT-CERTIFICATE"
+    ):
+        try:
+            payload = write_plancherel_local_commutant_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_plancherel_local_commutant_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-RANK-TRACKING-COMMUTANT-WITNESS"
+    ):
+        try:
+            payload = write_rank_tracking_commutant_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_rank_tracking_commutant_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION"
+    ):
+        payload = write_multiplicity_twirl_projection_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-SHARED-CONJUGATION-QSVT-LOWER-BOUND"
+    ):
+        try:
+            payload = write_shared_conjugation_QSVT_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_shared_conjugation_QSVT_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-ALL-DEGREE-MOMENT-NO-GO"
+    ):
+        try:
+            payload = write_all_degree_moment_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_all_degree_moment_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-BOUNDED-SPECTRAL-NO-GO"
+    ):
+        try:
+            payload = write_bounded_spectral_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_bounded_spectral_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-LOCAL-LIKELIHOOD-NO-GO"
+    ):
+        try:
+            payload = write_source_local_likelihood_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_source_local_likelihood_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-STABLE-SUPPORT-SIX-CERTIFICATE"
+    ):
+        try:
+            payload = write_stable_support_six_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_stable_support_six_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-STANDARD-BLOCK-RECOUPLING"
+    ):
+        try:
+            payload = write_standard_block_recoupling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_standard_block_recoupling_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-TARGET-INTERFERENCE-NEGATIVITY-BARRIER"
+    ):
+        try:
+            payload = write_negativity_barrier_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_negativity_barrier_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-BLOCK-ENCODING-NO-GO"
+    ):
+        try:
+            payload = write_trimmed_row_block_encoding_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_trimmed_row_block_encoding_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-KERNEL-SUCCINCTNESS"
+    ):
+        try:
+            payload = write_trimmed_row_kernel_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_trimmed_row_kernel_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-COSET-HIDDEN-INVOLUTION-TWO-SUBGROUP-PROJECTOR-ALGEBRA-NO-GO"
+    ):
+        try:
+            payload = write_two_projector_algebra_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_two_projector_algebra_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DIRECT-NAIMARK-POLAR-EQUIVALENCE"
+    ):
+        try:
+            payload = write_component_direct_naimark_polar_equivalence_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_component_direct_naimark_polar_equivalence_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POLAR-PHYSICAL-PGM-CLOSURE"
+    ):
+        try:
+            payload = write_component_polar_physical_pgm_closure_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_component_polar_physical_pgm_closure_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-CONNECTED-CLIFFORD-NORMAL-FORM"
+    ):
+        try:
+            payload = write_connected_clifford_normal_form_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_connected_clifford_normal_form_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-CONNECTED-QUOTIENT-HEISENBERG-REDUCTION"
+    ):
+        try:
+            payload = write_connected_quotient_heisenberg_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_connected_quotient_heisenberg_reduction_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-GPE-FUSION-TREE-CS-BOUNDARY"
+    ):
+        try:
+            payload = write_gpe_fusion_tree_cs_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_gpe_fusion_tree_cs_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-LATENT-MASTER-POLAR-TRADEOFF"
+    ):
+        try:
+            payload = write_latent_master_polar_tradeoff_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_latent_master_polar_tradeoff_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-MRS-IDENTIFICATION-ESCAPE-THEOREM"
+    ):
+        try:
+            payload = write_mrs_identification_escape_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_mrs_identification_escape_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SPACE-RECOUPLING"
+    ):
+        try:
+            payload = write_fixed_space_recoupling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_fixed_space_recoupling_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-HOMOGENEOUS-SPACE-POLAR"
+    ):
+        try:
+            payload = write_orientation_homogeneous_space_polar_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_orientation_homogeneous_space_polar_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SYNDROME-COMPONENT-REDUCTION"
+    ):
+        try:
+            payload = write_syndrome_component_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_syndrome_component_reduction_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-PAIR-RELATION-COMMON-SUPPORT-NO-GO"
+    ):
+        try:
+            payload = write_pair_relation_common_support_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_pair_relation_common_support_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-PAIR-SHEAF-METRIC-INCOMPATIBILITY"
+    ):
+        try:
+            payload = write_pair_sheaf_metric_incompatibility_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_pair_sheaf_metric_incompatibility_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-POINT-CENTERED-RESIDUAL-NO-GO"
+    ):
+        try:
+            payload = write_point_centered_residual_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_point_centered_residual_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-RELATIVE-COLLISION"
+    ):
+        try:
+            payload = write_point_child_star_relative_collision_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_point_child_star_relative_collision_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-POINT-COPY-THRESHOLD"
+    ):
+        try:
+            payload = write_point_copy_threshold_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_point_copy_threshold_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-ENERGY-SEPARATION"
+    ):
+        try:
+            payload = write_critical_energy_separation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_critical_energy_separation_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-IDENTITY-ATOM"
+    ):
+        try:
+            payload = write_critical_identity_atom_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_critical_identity_atom_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-WALSH-FLATNESS-NO-GO"
+    ):
+        try:
+            payload = write_regular_master_walsh_flatness_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_regular_master_walsh_flatness_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-SOURCE-ADAPTIVE-WALSH-COLLISION-REDUCTION"
+    ):
+        try:
+            payload = write_source_adaptive_walsh_collision_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_source_adaptive_walsh_collision_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-SOURCE-BLOCK-BRANCH-COVARIANCE-BOUNDARY"
+    ):
+        try:
+            payload = write_source_block_branch_covariance_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_source_block_branch_covariance_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-SOURCE-ORDER-GAUGE-CANONICALIZATION"
+    ):
+        try:
+            payload = write_source_order_gauge_canonicalization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_source_order_gauge_canonicalization_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-ADAPTIVE-WALSH-NO-GO"
+    ):
+        try:
+            payload = write_trace_biased_adaptive_walsh_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_trace_biased_adaptive_walsh_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-POLAR-COMPILER"
+    ):
+        try:
+            payload = write_branch_character_cyclic_polar_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_branch_character_cyclic_polar_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-QUADRANT-OVERLAP"
+    ):
+        try:
+            payload = write_cyclic_quadrant_overlap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_cyclic_quadrant_overlap_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-EQUIVARIANT-MULTIPLIER-NORMAL-FORM"
+    ):
+        try:
+            payload = write_equivariant_multiplier_normal_form_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_equivariant_multiplier_normal_form_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-GPE-DILATION-SEPARATION"
+    ):
+        try:
+            payload = write_gpe_dilation_separation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_gpe_dilation_separation_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-LABEL-COHERENT-POWER-MAP-BOUNDARY"
+    ):
+        try:
+            payload = write_label_coherent_power_map_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_label_coherent_power_map_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-NAIMARK-AUTOCORRELATION-FOURIER-BOUNDARY"
+    ):
+        try:
+            payload = write_naimark_autocorrelation_fourier_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_naimark_autocorrelation_fourier_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-NATURAL-FROBENIUS-WORD-MAP"
+    ):
+        try:
+            payload = write_natural_frobenius_word_map_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_natural_frobenius_word_map_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POLAR-NAIMARK-COMPLETION"
+    ):
+        try:
+            payload = write_branch_character_polar_naimark_completion_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_branch_character_polar_naimark_completion_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POWER-MAP-FOURIER-ACCESS-BOUNDARY"
+    ):
+        try:
+            payload = write_power_map_fourier_access_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_power_map_fourier_access_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-CONCENTRATION-CENTRAL-FOURIER-BRIDGE"
+    ):
+        try:
+            payload = write_central_raw_concentration_bridge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_central_raw_concentration_bridge_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-POLAR-MATCHED-FILTER-BOUNDARY"
+    ):
+        try:
+            payload = write_raw_polar_matched_filter_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_raw_polar_matched_filter_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-SECTOR-RESOLVED-WHITENING-NO-GO"
+    ):
+        try:
+            payload = write_sector_resolved_whitening_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_sector_resolved_whitening_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-WHOLE-SUM-PATH-ERASURE-BOUNDARY"
+    ):
+        try:
+            payload = write_whole_sum_path_erasure_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_whole_sum_path_erasure_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-ANALYSIS-MAP-NORMALIZATION"
+    ):
+        try:
+            payload = write_joint_analysis_map_normalization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_joint_analysis_map_normalization_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-NATURAL-SECTOR-MASS"
+    ):
+        try:
+            payload = write_joint_character_natural_sector_mass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_joint_character_natural_sector_mass_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-PURIFICATION-ACCESS-BOUNDARY"
+    ):
+        try:
+            payload = write_joint_purification_access_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_joint_purification_access_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-CHARACTER-TENSOR-BOUNDARY"
+    ):
+        try:
+            payload = write_character_tensor_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_character_tensor_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-HASH-NORMALIZATION-NO-GO"
+    ):
+        try:
+            payload = write_hash_normalization_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_hash_normalization_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE"
+    ):
+        try:
+            payload = write_schur_branch_merger_polar_equivalence_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_schur_branch_merger_polar_equivalence_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-SCHUR-DILATED-MULTIPLICITY-ACCESS"
+    ):
+        try:
+            payload = write_schur_dilated_multiplicity_access_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_schur_dilated_multiplicity_access_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY"
+    ):
+        try:
+            payload = write_split_sector_branch_regularity_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_split_sector_branch_regularity_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO"
+    ):
+        try:
+            payload = write_trace_biased_coefficient_rank_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_trace_biased_coefficient_rank_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY"
+    ):
+        try:
+            payload = write_schur_companion_transform_scope_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_schur_companion_transform_scope_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY"
+    ):
+        try:
+            payload = write_addressed_cross_map_pair_polar_gram_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_addressed_cross_map_pair_polar_gram_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO"
+    ):
+        try:
+            payload = write_natural_q_scale_spectral_window_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_natural_q_scale_spectral_window_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-METRIC-ACCESS-WIDTH-NO-GO"
+    ):
+        try:
+            payload = write_final_root_metric_access_width_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_final_root_metric_access_width_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO"
+    ):
+        try:
+            payload = write_final_root_scalar_mixer_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_final_root_scalar_mixer_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO"
+    ):
+        try:
+            payload = write_final_root_byproduct_covariance_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_final_root_byproduct_covariance_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY"
+    ):
+        try:
+            payload = write_final_root_physical_preparation_extension_scope_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_final_root_physical_preparation_extension_scope_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO"
+    ):
+        try:
+            payload = write_final_root_program_contraction_normalization_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_final_root_program_contraction_normalization_no_go_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY"
+    ):
+        try:
+            payload = write_final_root_purification_naimark_program_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_final_root_purification_naimark_program_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    elif (
+        experiment_id
+        == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY"
+    ):
+        try:
+            payload = write_final_root_state_preparation_oracle_query_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = write_final_root_state_preparation_oracle_query_boundary_report()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
+        )
+    else:
+        return None
+    if not any(r["id"] == result_id for r in load_experiment_results()):
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=result_id,
+                experiment_id=experiment_id,
+                candidate_id=experiment["candidate_id"],
+                created_at=utc_now(),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts=(
+                    lambda rep: {
+                        **payload.get("artifacts", {}),
+                        "report": str(rep),
+                        experiment_id.lower().replace("-", "_"): str(rep),
+                        **{
+                            experiment_id.lower().replace("-", "_")[len(p):]: str(rep)
+                            for p in ("exp_code_", "exp_coset_", "exp_dhs_", "exp_hyp_", "exp_")
+                            if experiment_id.lower().replace("-", "_").startswith(p)
+                        },
+                    }
+                )(payload.get("artifacts", {}).get("report", f"research/{experiment_id}.json")),
+            )
+        )
+    append_run_history(result_id)
+    write_experiment_trends()
+    return runner_result
+
+
 def run_experiment(experiment_id: str) -> RunnerResult:
     experiment = _experiment_by_id(experiment_id)
     if experiment is None:
         raise ValueError(f"unknown experiment id: {experiment_id}")
+
+    explicit_result = _run_explicit_marker_and_wreath_experiment(experiment_id, experiment)
+    if explicit_result is not None:
+        return explicit_result
 
     if experiment_id in DCP_RECURSIVE_DECODER_EXPERIMENTS:
         result_id = _latest_result_id_for_experiment(experiment_id)
@@ -12712,1555 +14393,6 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_result_id=result_id,
             )
             runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-ALL-COPY-TARGET-LCU-NO-GO"
-        ):
-            try:
-                payload = write_all_copy_target_LCU_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_all_copy_target_LCU_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-BOUNDED-SUPPORT-COMMUTANT-GENERATION"
-        ):
-            try:
-                payload = write_bounded_support_commutant_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_bounded_support_commutant_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-COLOUR-RESOLVED-PAIRED-TOWER-BOUNDARY"
-        ):
-            try:
-                payload = write_colour_resolved_paired_tower_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_colour_resolved_paired_tower_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-COMMUTANT-SUPPORT-GROWTH-BOUNDARY"
-        ):
-            try:
-                payload = write_commutant_support_growth_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_commutant_support_growth_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-COMMUTING-SQUARE-RECOUPLING-BOUNDARY"
-        ):
-            try:
-                payload = write_commuting_square_recoupling_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_commuting_square_recoupling_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-DEGREE-FIVE-NO-GO"
-        ):
-            try:
-                payload = write_degree_five_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_degree_five_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-MOMENT-NO-GO"
-        ):
-            try:
-                payload = write_cross_transposition_Hecke_moment_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_cross_transposition_Hecke_moment_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-DIAGONAL-CHARGE-BIAS-NO-GO"
-        ):
-            try:
-                payload = write_diagonal_charge_bias_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_diagonal_charge_bias_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-DOUBLE-COSET-POLAR-REDUCTION"
-        ):
-            try:
-                payload = write_double_coset_polar_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_double_coset_polar_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-HYPEROCTAHEDRAL-BRANCHING-MASS"
-        ):
-            try:
-                payload = write_hyperoctahedral_branching_mass_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_hyperoctahedral_branching_mass_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-AMBIENT-LIFT-OBSTRUCTION"
-        ):
-            try:
-                payload = write_ambient_lift_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_ambient_lift_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-REPRESENTATION-CONE-OBSTRUCTION"
-        ):
-            try:
-                payload = write_representation_cone_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_representation_cone_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-COHERENT-LABEL-COMPILER"
-        ):
-            try:
-                payload = write_coherent_label_compiler_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_coherent_label_compiler_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CONDITIONAL-DIAMETER"
-        ):
-            try:
-                payload = write_conditional_diameter_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_conditional_diameter_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CS-CORRELATION"
-        ):
-            try:
-                payload = write_matching_charge_CS_correlation_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_matching_charge_CS_correlation_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-NATURAL-INDEPENDENCE"
-        ):
-            try:
-                payload = write_matching_charge_natural_independence_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_matching_charge_natural_independence_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-ORBIT-RECOUPLING-REDUCTION"
-        ):
-            try:
-                payload = write_charge_orbit_recoupling_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_charge_orbit_recoupling_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-PAIRWISE-KERNEL-DEQUANTIZATION"
-        ):
-            try:
-                payload = write_pairwise_kernel_dequantization_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_pairwise_kernel_dequantization_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-TARGET-GAUGE-TRIVIALIZATION"
-        ):
-            try:
-                payload = write_target_gauge_trivialization_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_target_gauge_trivialization_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-WORD-MOMENT-DEQUANTIZATION"
-        ):
-            try:
-                payload = write_word_moment_dequantization_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_word_moment_dequantization_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MIXED-HECKE-WORD-LCU-NO-GO"
-        ):
-            try:
-                payload = write_mixed_word_LCU_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_mixed_word_LCU_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-MATRIX-MULTIPLICITY"
-        ):
-            try:
-                payload = write_natural_matrix_multiplicity_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_natural_matrix_multiplicity_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-RECOUPLING-BOUNDARY"
-        ):
-            try:
-                payload = write_natural_recoupling_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_natural_recoupling_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-NORMALIZED-LIKELIHOOD-CHARGE-COMMUTATOR-NO-GO"
-        ):
-            try:
-                payload = write_normalized_likelihood_charge_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_normalized_likelihood_charge_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-OCCUPIED-MATRIX-RANK"
-        ):
-            try:
-                payload = write_occupied_matrix_rank_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_occupied_matrix_rank_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-PAIR-GAUDIN-HIERARCHY"
-        ):
-            try:
-                payload = write_pair_gaudin_hierarchy_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_pair_gaudin_hierarchy_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-PAIR-MATCHING-CHARGE-HIERARCHY"
-        ):
-            try:
-                payload = write_pair_matching_charge_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_pair_matching_charge_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-JOINT-PRIMITIVE-PROJECTOR"
-        ):
-            try:
-                payload = write_joint_primitive_projector_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_joint_primitive_projector_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-MISSING-LABEL-BOUNDARY"
-        ):
-            try:
-                payload = write_paired_tower_missing_label_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_paired_tower_missing_label_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-PHYSICAL-TARGET-CONVOLUTION-NORMAL-FORM"
-        ):
-            try:
-                payload = write_physical_target_convolution_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_physical_target_convolution_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-PLANCHEREL-LOCAL-COMMUTANT-CERTIFICATE"
-        ):
-            try:
-                payload = write_plancherel_local_commutant_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_plancherel_local_commutant_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-RANK-TRACKING-COMMUTANT-WITNESS"
-        ):
-            try:
-                payload = write_rank_tracking_commutant_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_rank_tracking_commutant_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION"
-        ):
-            payload = write_multiplicity_twirl_projection_report(
-                write_registry=True,
-                registry_experiment_id=experiment_id,
-                registry_candidate_id=experiment["candidate_id"],
-                registry_result_id=result_id,
-            )
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-SHARED-CONJUGATION-QSVT-LOWER-BOUND"
-        ):
-            try:
-                payload = write_shared_conjugation_QSVT_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_shared_conjugation_QSVT_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-ALL-DEGREE-MOMENT-NO-GO"
-        ):
-            try:
-                payload = write_all_degree_moment_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_all_degree_moment_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-BOUNDED-SPECTRAL-NO-GO"
-        ):
-            try:
-                payload = write_bounded_spectral_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_bounded_spectral_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-LOCAL-LIKELIHOOD-NO-GO"
-        ):
-            try:
-                payload = write_source_local_likelihood_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_source_local_likelihood_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-STABLE-SUPPORT-SIX-CERTIFICATE"
-        ):
-            try:
-                payload = write_stable_support_six_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_stable_support_six_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-STANDARD-BLOCK-RECOUPLING"
-        ):
-            try:
-                payload = write_standard_block_recoupling_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_standard_block_recoupling_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-TARGET-INTERFERENCE-NEGATIVITY-BARRIER"
-        ):
-            try:
-                payload = write_negativity_barrier_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_negativity_barrier_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-BLOCK-ENCODING-NO-GO"
-        ):
-            try:
-                payload = write_trimmed_row_block_encoding_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_trimmed_row_block_encoding_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-KERNEL-SUCCINCTNESS"
-        ):
-            try:
-                payload = write_trimmed_row_kernel_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_trimmed_row_kernel_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-COSET-HIDDEN-INVOLUTION-TWO-SUBGROUP-PROJECTOR-ALGEBRA-NO-GO"
-        ):
-            try:
-                payload = write_two_projector_algebra_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_two_projector_algebra_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DIRECT-NAIMARK-POLAR-EQUIVALENCE"
-        ):
-            try:
-                payload = write_component_direct_naimark_polar_equivalence_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_component_direct_naimark_polar_equivalence_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POLAR-PHYSICAL-PGM-CLOSURE"
-        ):
-            try:
-                payload = write_component_polar_physical_pgm_closure_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_component_polar_physical_pgm_closure_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-CONNECTED-CLIFFORD-NORMAL-FORM"
-        ):
-            try:
-                payload = write_connected_clifford_normal_form_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_connected_clifford_normal_form_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-CONNECTED-QUOTIENT-HEISENBERG-REDUCTION"
-        ):
-            try:
-                payload = write_connected_quotient_heisenberg_reduction_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_connected_quotient_heisenberg_reduction_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-GPE-FUSION-TREE-CS-BOUNDARY"
-        ):
-            try:
-                payload = write_gpe_fusion_tree_cs_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_gpe_fusion_tree_cs_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-LATENT-MASTER-POLAR-TRADEOFF"
-        ):
-            try:
-                payload = write_latent_master_polar_tradeoff_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_latent_master_polar_tradeoff_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-MRS-IDENTIFICATION-ESCAPE-THEOREM"
-        ):
-            try:
-                payload = write_mrs_identification_escape_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_mrs_identification_escape_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SPACE-RECOUPLING"
-        ):
-            try:
-                payload = write_fixed_space_recoupling_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_fixed_space_recoupling_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-HOMOGENEOUS-SPACE-POLAR"
-        ):
-            try:
-                payload = write_orientation_homogeneous_space_polar_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_orientation_homogeneous_space_polar_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SYNDROME-COMPONENT-REDUCTION"
-        ):
-            try:
-                payload = write_syndrome_component_reduction_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_syndrome_component_reduction_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-RELATION-COMMON-SUPPORT-NO-GO"
-        ):
-            try:
-                payload = write_pair_relation_common_support_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_pair_relation_common_support_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-SHEAF-METRIC-INCOMPATIBILITY"
-        ):
-            try:
-                payload = write_pair_sheaf_metric_incompatibility_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_pair_sheaf_metric_incompatibility_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-POINT-CENTERED-RESIDUAL-NO-GO"
-        ):
-            try:
-                payload = write_point_centered_residual_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_point_centered_residual_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-RELATIVE-COLLISION"
-        ):
-            try:
-                payload = write_point_child_star_relative_collision_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_point_child_star_relative_collision_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-POINT-COPY-THRESHOLD"
-        ):
-            try:
-                payload = write_point_copy_threshold_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_point_copy_threshold_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-ENERGY-SEPARATION"
-        ):
-            try:
-                payload = write_critical_energy_separation_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_critical_energy_separation_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-IDENTITY-ATOM"
-        ):
-            try:
-                payload = write_critical_identity_atom_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_critical_identity_atom_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-WALSH-FLATNESS-NO-GO"
-        ):
-            try:
-                payload = write_regular_master_walsh_flatness_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_regular_master_walsh_flatness_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-SOURCE-ADAPTIVE-WALSH-COLLISION-REDUCTION"
-        ):
-            try:
-                payload = write_source_adaptive_walsh_collision_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_source_adaptive_walsh_collision_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-SOURCE-BLOCK-BRANCH-COVARIANCE-BOUNDARY"
-        ):
-            try:
-                payload = write_source_block_branch_covariance_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_source_block_branch_covariance_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-SOURCE-ORDER-GAUGE-CANONICALIZATION"
-        ):
-            try:
-                payload = write_source_order_gauge_canonicalization_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_source_order_gauge_canonicalization_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-ADAPTIVE-WALSH-NO-GO"
-        ):
-            try:
-                payload = write_trace_biased_adaptive_walsh_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_trace_biased_adaptive_walsh_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-POLAR-COMPILER"
-        ):
-            try:
-                payload = write_branch_character_cyclic_polar_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_branch_character_cyclic_polar_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-QUADRANT-OVERLAP"
-        ):
-            try:
-                payload = write_cyclic_quadrant_overlap_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_cyclic_quadrant_overlap_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-EQUIVARIANT-MULTIPLIER-NORMAL-FORM"
-        ):
-            try:
-                payload = write_equivariant_multiplier_normal_form_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_equivariant_multiplier_normal_form_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-GPE-DILATION-SEPARATION"
-        ):
-            try:
-                payload = write_gpe_dilation_separation_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_gpe_dilation_separation_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-LABEL-COHERENT-POWER-MAP-BOUNDARY"
-        ):
-            try:
-                payload = write_label_coherent_power_map_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_label_coherent_power_map_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-NAIMARK-AUTOCORRELATION-FOURIER-BOUNDARY"
-        ):
-            try:
-                payload = write_naimark_autocorrelation_fourier_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_naimark_autocorrelation_fourier_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-NATURAL-FROBENIUS-WORD-MAP"
-        ):
-            try:
-                payload = write_natural_frobenius_word_map_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_natural_frobenius_word_map_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POLAR-NAIMARK-COMPLETION"
-        ):
-            try:
-                payload = write_branch_character_polar_naimark_completion_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_branch_character_polar_naimark_completion_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POWER-MAP-FOURIER-ACCESS-BOUNDARY"
-        ):
-            try:
-                payload = write_power_map_fourier_access_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_power_map_fourier_access_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-CONCENTRATION-CENTRAL-FOURIER-BRIDGE"
-        ):
-            try:
-                payload = write_central_raw_concentration_bridge_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_central_raw_concentration_bridge_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-POLAR-MATCHED-FILTER-BOUNDARY"
-        ):
-            try:
-                payload = write_raw_polar_matched_filter_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_raw_polar_matched_filter_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-SECTOR-RESOLVED-WHITENING-NO-GO"
-        ):
-            try:
-                payload = write_sector_resolved_whitening_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_sector_resolved_whitening_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-WHOLE-SUM-PATH-ERASURE-BOUNDARY"
-        ):
-            try:
-                payload = write_whole_sum_path_erasure_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_whole_sum_path_erasure_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-ANALYSIS-MAP-NORMALIZATION"
-        ):
-            try:
-                payload = write_joint_analysis_map_normalization_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_joint_analysis_map_normalization_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-NATURAL-SECTOR-MASS"
-        ):
-            try:
-                payload = write_joint_character_natural_sector_mass_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_joint_character_natural_sector_mass_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-PURIFICATION-ACCESS-BOUNDARY"
-        ):
-            try:
-                payload = write_joint_purification_access_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_joint_purification_access_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-CHARACTER-TENSOR-BOUNDARY"
-        ):
-            try:
-                payload = write_character_tensor_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_character_tensor_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-HASH-NORMALIZATION-NO-GO"
-        ):
-            try:
-                payload = write_hash_normalization_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_hash_normalization_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE"
-        ):
-            try:
-                payload = write_schur_branch_merger_polar_equivalence_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_schur_branch_merger_polar_equivalence_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-SCHUR-DILATED-MULTIPLICITY-ACCESS"
-        ):
-            try:
-                payload = write_schur_dilated_multiplicity_access_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_schur_dilated_multiplicity_access_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY"
-        ):
-            try:
-                payload = write_split_sector_branch_regularity_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_split_sector_branch_regularity_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO"
-        ):
-            try:
-                payload = write_trace_biased_coefficient_rank_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_trace_biased_coefficient_rank_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY"
-        ):
-            try:
-                payload = write_schur_companion_transform_scope_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_schur_companion_transform_scope_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY"
-        ):
-            try:
-                payload = write_addressed_cross_map_pair_polar_gram_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_addressed_cross_map_pair_polar_gram_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO"
-        ):
-            try:
-                payload = write_natural_q_scale_spectral_window_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_natural_q_scale_spectral_window_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-METRIC-ACCESS-WIDTH-NO-GO"
-        ):
-            try:
-                payload = write_final_root_metric_access_width_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_final_root_metric_access_width_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO"
-        ):
-            try:
-                payload = write_final_root_scalar_mixer_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_final_root_scalar_mixer_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO"
-        ):
-            try:
-                payload = write_final_root_byproduct_covariance_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_final_root_byproduct_covariance_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY"
-        ):
-            try:
-                payload = write_final_root_physical_preparation_extension_scope_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_final_root_physical_preparation_extension_scope_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO"
-        ):
-            try:
-                payload = write_final_root_program_contraction_normalization_no_go_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_final_root_program_contraction_normalization_no_go_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY"
-        ):
-            try:
-                payload = write_final_root_purification_naimark_program_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_final_root_purification_naimark_program_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY"
-        ):
-            try:
-                payload = write_final_root_state_preparation_oracle_query_boundary_report(
-                    write_registry=True,
-                    registry_experiment_id=experiment_id,
-                    registry_candidate_id=experiment["candidate_id"],
-                    registry_result_id=result_id,
-                )
-            except TypeError:
-                payload = write_final_root_state_preparation_oracle_query_boundary_report()
-            runner_result = RunnerResult(
-                experiment_id, "completed", result_id, payload.get("summary", "")
-            )
         else:
             return _write_blocked_result(experiment)
         if not any(r["id"] == result_id for r in load_experiment_results()):
@@ -14281,7 +14413,7 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                             experiment_id.lower().replace("-", "_"): str(rep),
                             **{
                                 experiment_id.lower().replace("-", "_")[len(p):]: str(rep)
-                                for p in ("exp_code_", "exp_coset_", "exp_dhs_", "exp_hyp_")
+                                for p in ("exp_code_", "exp_coset_", "exp_dhs_", "exp_hyp_", "exp_")
                                 if experiment_id.lower().replace("-", "_").startswith(p)
                             },
                         }

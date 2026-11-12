@@ -1,5 +1,119 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## 2026-11-12 Explicit precision and usage checkpoint
+
+Native-composition ledger frozen: audits/controls/native_composition_round,
+47 stable hashes,124 cumulative records,total estimate140.030298USD. Do not
+rescan history or infer balance. Two precision-effectivity requests now active
+in their dispatch.json; reconcile at terminal milestone only. Active whole
+internal review and new precision ledger must not be hashed while changing.
+Preserve the rejected RR-intersection shortcut and full-comparator pending
+gate. No broad validation, quantum code, Git, or registry promotion.
+
+## 2026-11-12 Uniform pencil source checkpoint
+
+Stable native-pencil-monodromy review and Hall primary source are ready for
+the next terminal composition hash milestone. Root checked Deligne PDFpage86.
+Do not promote the still-reviewed whole comparator or rerun broad tests.
+
+
+## 2026-11-12 Rees Headline 53 and Harsh Self-Check (Claude)
+
+- Recompute the full-version tables not redone for depth ⌈log₂ t_d⌉: tab:fcs-budget (combined
+  column), tab:full-grade-budget, tab:random-column-budget, class-3/12 profiles; and the
+  preprocessing running-time term (rem:is-runtime, appendix-sde-side). See
+  audits/reviews/2026-11-12-rees-headline-53-applied.md.
+- prop:mixed-schedule: charge the preprocessing failure in its error split (flagged at (S1),
+  appendix-schedule3.tex).
+- arxiv/: rebuild the package after the owner edits the AI-use paragraph (build_package.sh refuses
+  the DRAFT marker); arxiv/numbers.tex and arxiv/main-core.tex are stale until then.
+- Two-copy Holevo computation for free23 exit (ii) (p = 5, state space 15625).
+
+## 2026-11-12 Complete orbit bridge checkpoint
+
+Native-composition statuses: geometry truncated/NONEMPTY (not empty), bit
+uniformity empty REFUSAL (no retry), Hopf completed, OpenAI whole composition
+active. Reconcile only at terminal milestone. Stable etale-reconstruction
+review806lines and updated numerical review423lines can be hashed then;
+exclude active native-pencil-monodromy review/shared notes. Preserve complete
+bridge versus unadmitted whole comparator. No broad checks or quantum code.
+
+
+## 2026-11-12 Canonical RR and native-composition checkpoint
+
+Target-closure ledger is frozen in audits/controls/target_closure_round:
+61 hashes, five terminal requests, cumulative estimates134.003274USD.
+Do not rescan it or infer account balances. Four distinct composition requests
+are in api_inputs/2026-11-12-native-composition/dispatch.json; reconcile ONCE
+when terminal. Bit-uniformity is empty provider REFUSAL, no retry. Kernel
+report completed but its output-degree/runtime-exponent objection is false;
+preserve the parent's explicit disposition. Geometry/whole-composition pending.
+No hashing active reviews, registry promotion, quantum code or broad tests.
+
+## 2026-11-12 Boundary determinant checkpoint
+
+Preserve OPEN versus PARABOLIC distinction and exact arithmetic/geometric
+formulas in SURFACE_BOUNDARY_DETERMINANT.md. Kummer-filter implementation is
+UNNECESSARY for this characteristic-polynomial endpoint; do not queue it.
+Target round has three EMPTY Claude calls, one completed OpenAI reconstruction
+and one still-running OpenAI boundary call. Reconcile once terminal; do not
+retry empty reports or hash active reviews. Full composition remains under
+review; no registry promotion, quantum code or broad tests.
+
+## 2026-11-12 Genuine frame and original-prime checkpoint
+
+Native-completion usage frozen in audits/controls/native_completion_round;
+46 hashes validated once. Five target-closure tasks ACTIVE; reconcile only at
+their terminal milestone. Do not rehash shared notes while root is editing.
+Native normalized frame and conditional p-maximal-order bridge are accepted;
+complete reconstruction and boundary determinant replacement remain under
+review. No registry promotion, broad validation, numerical sweep or code.
+
+## 2026-11-12 Closed coordinate and auxiliary-model checkpoint
+
+Seven native-completion requests are terminal. Reconcile this round ONCE with
+provider-separated usage and stable evidence hashes, excluding three active
+target-closure jobs. Short truncated normalization is not a completed proof.
+Keep direct target reduction falsified even if height checks pass; a p-maximal
+order repair is under review. No broad tests, code or claim registry promotion.
+
+## 2026-11-12 Canonical support-height checkpoint
+
+Supersedes earlier UNDER REVIEW instructions for SURFACE_TORSION_HEIGHT_CHAIN:
+finite and analytic reviews are parent-accepted in their scoped support-value
+claim. Preserve distinction from closed encoding and original-prime model.
+At the next terminal native-completion milestone reconcile all seven bundles,
+including reconstruction-orbit; truncated normalization has a short partial,
+not a completed proof. No rerun, broad test, registry promotion or quantum code.
+
+## 2026-11-12 Native Jacobian atlas checkpoint
+
+Preserve the fixed (5,3)/parameter-degree/native-coefficient scope in
+SURFACE_NATIVE_COVER_CONSTRUCTION.md. Source and review are stable. No huge
+atlas implementation or toy control is requested: the symbolic proof pays
+this interface only. Next native-completion usage reconciliation must include
+the new normalization-lattice task and distinguish terminal from active jobs.
+Height-chain proof remains under independent review; do not promote it.
+
+## 2026-11-12 Height-chain candidate and arithmetic frame
+
+Keep SURFACE_TORSION_HEIGHT_CHAIN.md explicitly UNDER REVIEW. Do not promote
+its candidate support-height bound from any finite check. Preserve exact
+GSp right-action/pushforward and Tate-factor conventions in its independent
+review. Native-completion dispatch now has five distinct paid obligations;
+reconcile at one terminal milestone, no active-file tests or retries. Frozen
+closure usage is audits/controls/surface_closure_round/usage.json. No quantum
+code, registry claim changes, or broad suite runs requested.
+
+## 2026-11-12 Numerical lift and closure audit
+
+Preserve SURFACE_TORSION_NUMERICAL_LIFT.md model/residue-h0/precision guards.
+At the next clean milestone reconcile only terminal closure requests and
+source/review hashes; empty lift/book-height calls are no evidence, unknown
+historical bills remain excluded. Read new native-completion dispatch.json
+for session/bundle locators; do not retry or infer a theorem from a label.
+No quantum implementation, broad tests or registry promotion requested.
+
 ## 2026-11-12 Uniform Stable Height and Canonical Divisor Choice
 
 Eight closure jobs total now; exact new packets/sessions in their dispatch.

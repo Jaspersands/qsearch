@@ -281,23 +281,25 @@ What each run needs:
 - **Not shown:**
   - label sets with missing patterns;
   - k ≥ 3;
-  - q ≥ 17;
+  - q ≥ 19 (S_K, K ≥ 5);
   - any lower bound for KOW-type small-coefficient subset sum. Referee C finding 3 (a property of
     label sets, not of instances) applies unchanged.
+- **2026-11-12 completion (q = 17, S = {0,…,±4}, K = 4, equi + Corollary Q′):**
+  - `linedata.py 17 4 --no-brute` (`linedata_p17.out`), `cases_e1.py 17 4` (`cases_e1_p17.txt`, 12 nonzero orbits summing to 13824), and `coverage_e1.py 17 4 cases_e1_p17.txt` (`coverage_e1_p17.out`, `outside A: 0; missing from A: 0`, `COVERAGE OK`).
+  - FIFO-streamed `cadical --lrat=true --binary=false` + fixed `lrat-check`:
+    - 12/12 nonzero orbits (`cases17_K4_lrat.out`, 441558 vars / 8736943 clauses each, `max_proof=547460770`, `wall=1172.1s`): all 12 `UNSAT=True verified=True chk_rc=0`.
+    - Zero e1 datum (`cases17_K4_zero_equi.out`, `proof=157814027`, `solve_check=115.8s`): `UNSAT=True verified=True chk_rc=0`.
+  - Combined with Corollary Q′ (and Lemma L + `coverage_e1.py`), the q = 17, S = {0,…,±4}, k = 2, d = 2, L = F_17^*×F_17 cell is closed for the free problem under the e1-line-data split in `equi` mode; a standalone `freeR` run (independent of Lemma N′/Corollary Q′) was not run for q = 17.
 - **Gates that must stay false:**
   - "the k = 2 piece framework is closed for interval S" (argued only);
   - "this is an algorithmic lower bound";
-  - "line data are rank one for every p" (exact at p = 11, 13 only);
-  - "q = 13 SAT-free verified" (only q = 11 has the SAT-free check).
-- **Next hard question.** The line data are rank one (c = t ⊗ w) at p = 11 and 13, and at p = 11
+  - "line data are rank one for every p" (exact at p = 11, 13, 17 only);
+  - "q = 13 or q = 17 SAT-free verified" (only q = 11 has the SAT-free check);
+  - "q = 17 freeR verified without Lemma N′ / Corollary Q′" (not run).
+- **Next hard question.** The line data are rank one (c = t ⊗ w) at p = 11, 13 and 17, and at p = 11
   y_D is a function of one linear form ⟨w_D, ℓ⟩. Is there a hand proof, for every q ≥ 11, that
   ridge functions G_{a_D}(⟨w_D,·⟩) cannot be linear in D modulo linear functionals? At p = 11 the
   best partial assignment satisfies 11 of the 12 directions.
-- **Next command (q = 17, S = {0,…,±4}).** Run `/opt/anaconda3/bin/python -I linedata.py 17 4`,
-  then `cases_e1.py 17 4`. Check that `coverage_e1.py 17 4 cases_e1_p17.txt` prints
-  "COVERAGE OK". Measure one case with `int_cnf.py 17 int:4 nest equi --fix … --no-proof
-  --timeout 1800`, then run `run_cases.sh`.
+- **Next command (q = 19, S = {0,…,±4}, K = 4; or K = 5 at p = 23).** Same streamed pipeline for any higher p if needed beyond the asymptotic argument.
   - Acceptance: every line LRAT VERIFIED with the fixed checker, or a SAT model with
     "model_check": "OK".
-  - The brute-force step (1) of `linedata.py` needs |T*| · 17^7 membership tests, so drop it there
-    and keep enumerations (2) and (3).

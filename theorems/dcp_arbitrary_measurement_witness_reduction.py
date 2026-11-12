@@ -1177,7 +1177,11 @@ def write_arbitrary_measurement_witness_reduction_report(
     if kwargs:
         raise TypeError(f"unexpected report arguments: {sorted(kwargs)}")
     payload = asdict(run_arbitrary_measurement_witness_reduction())
-    payload["artifacts"] = {"report": str(path), "derivation": "research/DCP_PHYSICAL_WITNESS_REDUCTION.md"}
+    payload["artifacts"] = {
+        "dcp_arbitrary_measurement_witness_reduction": str(path),
+        "report": str(path),
+        "derivation": "research/DCP_PHYSICAL_WITNESS_REDUCTION.md",
+    }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     if write_registry:

@@ -1,0 +1,99 @@
+Been tried? uniform theta supremum norm Faltings delta canonical torsion coordinate height
+
+Killed before
+  1. negative   UNANCHORED-RELATIVE-GRAPH-GAUGE-NOT-POVM-INVARIANT  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER, PO-MEASUREMENT]
+     research/registry/negative_results.json:85633
+     Claim: The opaque input gauge relating the relative-transfer graph column to the canonical endpoint can be ignored at the root.
+     Why not: A three-dimensional noncommuting control changes a root branch effect by constant operator norm when that gauge is omitted.
+  2. negative   SCHUR-COMPANION-CANONICAL-G-OVER-Q-NO-NATURAL-POLYNOMIAL-WINDOW  [retained · CODE-COSET-COLLECTIVE, PO-MECHANISM, PO-MEASUREMENT, PO-COMPLEXITY]
+     research/registry/negative_results.json:84813
+     Claim: The natural orientation Gram has nonnegligible trace-weighted mass at eigenvalue Omega(q/poly(n)), so generic inverse-polynomial functional calculus on the canonical G/q assembly preserves the physical PGM mass.
+     Why not: The exact sibling second moment and uniform leaf-rank lower bound give native high-mass at most 2 P p(n)[(1-1/g)/q+1/g]/[delta p_cf(1-epsilon)], which is o(1) for polynomial P and delta^-1.
+  3. negative   NEG-CODE-WREATH-BRANCH-CONTROLLED-LOCAL-FILTER-NORM-RESTORATION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PAIRED-BLOCK-FILTER-BYPASS, PO-MEASUREMENT, PO-COMPLEXITY]
+     research/registry/negative_results.json:61085
+     Claim: Removing trivial/sign selected sectors independently in each orientation block restores a uniform poly(n)2^-k residual frame norm.
+     Why not: Pairs of Sellke-good blocks share retained nontrivial self-dual irreps. Assigning one bit per pair recreates 2^Theta(k) filtered projectors with a common vector.
+  4. negative   NEG-CODE-WREATH-UNIFORM-COLLISION-FREE-NORM-BOUND  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION, PO-MEASUREMENT, PO-COMPLEXITY]
+     research/registry/negative_results.json:61915
+     Claim: Every naturally occupied globally collision-free orientation frame satisfies ||F_nu|| <= poly(n)2^-k uniformly over target irreps.
+     Why not: Sellke-typical tensor-covering blocks yield r=Theta(k) independently switchable blocks whose 2^r orientation projectors share a vector, so some target has ||F_nu||>=2^(r-k).
+  5. negative   NEG-DCP-OPERATOR-NORM-APPROXIMATE-ERASURE-SHORTCUT  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION, EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION]
+     research/registry/negative_results.json:66622
+     Claim: An operator-norm approximate erasure-plus-QFT circuit can retain inverse-polynomial decoding success while evading the average witness reduction.
+     Why not: Reference postselection and inverse preparation are stable at delta<=rho^2 R^(5/2)/128. For inverse-polynomial R this is only inverse-polynomial precision.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7454
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-CODE-WREATH-ORIENTATION-SUPPORT-NOT-NORM-BOUND  [critical]
+     research/registry/dequantization_checks.json:1547
+     Claim: Global source-partition distinctness leaves polynomially many orientation projectors and therefore closes the collision-free frame-norm bound.
+     Why not: Analyze canonical angles, fusion-frame coherence, or exact recoupling geometry for the fully supported projector sum; prove a polynomial norm bound or construct an asymptotic natural counterexample.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3186
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:6772
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:6783
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Logarithmic-collision Merkl atlas  [proved]
+     research/MERKL_LOG_COLLISION_ATLAS.md:1
+     No full Faltings/coordinate-height or point-count claim follows yet.
+  2. note       Uniform arithmetic height: established pieces and remaining coordinate bound › Exact remaining height obligati  [proved]
+     research/SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md:101
+     The completed OpenAI torsion-height report correctly separates chosen small b from arbitrary b: uniqueness alone cannot omit its height.
+  3. note       Logarithmic-collision Merkl atlas › Global lower bound away from equal base images  [proved]
+     research/MERKL_LOG_COLLISION_ATLAS.md:109
+     Uniform stable Faltings transfer is now established separately in SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md and its source-checked review.
+  4. handoff    2026-11-12 Uniform Stable Height and Canonical Divisor Choice  [journal]
+     research/AGENT_HANDOFF.md:3
+     Next command: read terminal closure reports and the Mascot review, then construct or falsify the remaining torsion-coordinate height interface.
+  5. note       Surface point counting: the classical height-uniformity gate › Completed height attack and empty repair reques  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:334
+     Coverdegree2 and branchset{0,1,2,infinity} stayfixed, and stable Faltings/delta invariants stayfixed undergeometricisomorphism.
+
+Code and experiments
+  1. theorem    Cyclic-torsion no-go for dyadic modular automaton fibers.  [code]
+     theorems/self_dual_wreath_dyadic_modular_fiber_torsion_no_go.py:1
+     self dual wreath dyadic modular fiber torsion no go.
+  2. theorem    Exact public arithmetic for the p-torsion Lie algebra of an explicit ring.  [code]
+     theorems/lie_torsion_reduction.py:1
+     lie torsion reduction.
+  3. theorem    Paid native-fiber enumeration and exact witnesses to weighted moment bounds.  [code]
+     theorems/dcp_weighted_fiber_moment_search.py:1
+     Nonnegative real weights suffice for the fourth-moment supremum, but power
+iteration does NOT certify its global maximum or supply an informative POVM.
+  4. theorem    Reverse-transport kernel recovery from already supplied torsion matrices.  [code]
+     theorems/siegel_reverse_transport.py:1
+     reverse torsion coordinates reconstruct reverse transport reversekernelrecovery kernel from reverse transport.
+  5. hypothesis dcp_quantum_chernoff_information_geodesic_exponent_bridge_contract  [VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING]
+     research/hypotheses/dcp_quantum_chernoff_information_geodesic_exponent_bridge_contract.json
+     For two isospectral single-qubit DCP states rho(theta_0, gamma) and rho(theta_1, gamma), Tr(rho_0^s rho_1^{1-s}) is minimized at s* = 1/2, with exact Quantum Bhattacharyya coefficient B_QCB = 1 - (1 - sqrt(1 - gamma^2)) * sin^2(Delta_theta / 2).
+
+Literature
+  1. literature Bounds for Characters of the Symmetric Group: A Hypercontractive Approach  [seed · symmetric-character, character-ratio, hypercontractivity, product-mixing]
+     research/literature_records.json
+     Bounds for Characters of the Symmetric Group: A Hypercontractive Approach Connects character norm bounds to product mixing and Fourier coefficients of normal sets, suggesting analytic tools for the shared bridge-word contraction beyond pointwise estimates.
+  2. literature Sharp character bounds and cutoff profiles for symmetric groups  [seed · symmetric-character, character-ratio, random-walk, cutoff]
+     research/literature_records.json
+     Sharp character bounds and cutoff profiles for symmetric groups Develops sharp uniform character bounds and class-walk cutoff tools that may control the low-support word classes left by the conditioned collision-free wreath moment expansion.
+  3. literature Asymptotics of characters of symmetric groups related to Stanley character formula  [seed · symmetric-character, character-ratio, plancherel-typical, representation-theory]
+     research/literature_records.json
+     Asymptotics of characters of symmetric groups related to Stanley character formula Provides a uniform normalized-character bound in terms of Young diagram rows, columns, and transposition length.
+  4. literature singer_shor_access_closure_sources  [audit]
+     research/literature_audits/singer_shor_access_closure_sources.json
+     AUDIT-SINGER-KNOWN-SHOR-ACCESS-CLOSURE Clean zero-input/XOR coordinate phase construction using paid known DLog Complete unheralded amplified hyperplane Fourier output law Exact randomized sqrt(q) schedule with constant mean recovery Matching to the previous sparse membership lower bound under iden…
+  5. literature ternary_pair_lattice_sources  [audit]
+     research/literature_audits/ternary_pair_lattice_sources.json
+     AUD-NATIVE-A2-PAIR-CVP research/certificates/ternary_pair_lattice_crosscheck.js A2 exact native shell and18 absolute squared-norm gap.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

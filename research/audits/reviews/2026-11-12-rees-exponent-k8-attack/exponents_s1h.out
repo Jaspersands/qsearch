@@ -1,0 +1,12 @@
+S1t  p<=30000: 5(p=29983) 8(p=29983) 16(p=5) 19(p=29581) 35(p=31) 36(p=29611) 44(p=29401) 53(p=12601)
+S1H  p<=30000: 3(p=29989) 6(p=29989) 10(p=13) 14(p=29881) 20(p=31) 25(p=29401) 29(p=29401) 38(p=20161)
+c=9 S1H top primes: [(38, 20161), (38, 15121), (38, 12601), (38, 7561), (38, 2521), (37, 16381), (37, 8821), (37, 6301), (35, 29611), (35, 28351)]
+  p=20161: e_d = [(2, 'S1t'), (3, 'S1t'), (3, 'HCD s=1 F1 (Weil)'), (5, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (7, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (9, 'S1t')] kappa_d = [2, 3, 4, 5, 6, 7, 8, 9] E = 38
+  p=15121: e_d = [(2, 'S1t'), (3, 'S1t'), (3, 'HCD s=1 F1 (Weil)'), (5, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (7, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (9, 'S1t')] kappa_d = [2, 3, 4, 5, 6, 7, 8, 9] E = 38
+  p=12601: e_d = [(2, 'S1t'), (3, 'S1t'), (3, 'HCD s=1 F1 (Weil)'), (5, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (7, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (9, 'S1t')] kappa_d = [2, 3, 4, 5, 6, 7, 8, 9] E = 38
+  p=2521: e_d = [(2, 'S1t'), (3, 'S1t'), (3, 'HCD s=1 F1 (Weil)'), (5, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (7, 'S1t'), (4, 'HCD s=1 F1 (Weil)'), (9, 'S1t')] kappa_d = [2, 3, 4, 5, 6, 7, 8, 9] E = 38
+  p=41: e_d = [(2, 'S1t'), (1, 'S1t'), (3, 'HCD s=1 F1'), (5, 'S1t'), (2, 'S1t'), (1, 'S1t'), (7, 'HCD s=2 F1'), (1, 'S1t')] kappa_d = [2, 1, 4, 5, 2, 1, 8, 1] E = 23
+c=8 S1H max over primes in (30000, 3000000]: (29, 2992081)  (all kappa <= 9 satisfy the Weil test there)
+c=9 S1H max over primes in (30000, 3000000]: (38, 2988721)  (all kappa <= 9 satisfy the Weil test there)
+analytic tail: for p > 30000 and kappa <= 9, t <= 3 and the Weil test holds, so S1H(k) depends only on
+the parities of (p-1)/k; the residue classes are all realised below 3e6 (see max above).

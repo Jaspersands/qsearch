@@ -371,8 +371,8 @@ def finite_physical_six_label_control(n: int) -> FinitePhysicalSixLabelControl:
     dimensions = np.asarray(
         [hook_length_dimension(partition) for partition in partitions]
     )
-    any_one_dimensional = np.zeros(shape, dtype=bool)
-    all_one_dimensional = np.ones(shape, dtype=bool)
+    any_one_dimensional = np.zeros(likelihood.shape, dtype=bool)
+    all_one_dimensional = np.ones(likelihood.shape, dtype=bool)
     for axis in range(6):
         axis_shape = [1] * 6
         axis_shape[axis] = len(partitions)

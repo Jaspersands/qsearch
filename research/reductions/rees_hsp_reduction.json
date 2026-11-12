@@ -18,16 +18,19 @@
     ],
     "queries_per_leaf": 9,
     "final_fourier_samples": 20,
-    "query_dimension_exponent": 145,
+    "query_dimension_exponent": 53,
     "final_fourier_readout_calls": 20,
-    "classical_sde_attempts_per_call": 1081,
+    "classical_sde_attempts_per_call": 441,
     "classical_restart_extra_source_copies": 0,
-    "original_queries_ceil_log2": 1573,
-    "complete_instrument_calls_ceil_log2": 1570,
-    "instrument_error_per_call": "1/261402681256039014299384353402387949825555221776134706665137261162334667903346450134719925495588192239516322097306499074705911952954999126444322435386542849166531058087585616157882241138064323893475166133998610045112095358594282235038954887838559846936702771185685636291264010838778515230968224595735359852524370721678366372321061039159498398069267742468818052221463038257358338531210026032487567099671123568880999871975790197508271858193314132582570905641962295293977981800",
-    "classical_sde_abort_bound_per_call": "1/25907488423335759149119404380021415302343251169810191149683373827511083464703404402170929113783951935383945966632551924657895518385381565038977715192414529269954230307400494254651764190987931691678690262844511368775936957878360665423117229523092423211623687233581922502698677070749504324119849921106688801703386590859967332352",
+    "original_queries_ceil_log2": 564,
+    "complete_instrument_calls_ceil_log2": 561,
+    "instrument_error_per_call": "1/46635124239544273829416301635423862428614293076223008482033254301539956338794761888590330550843980779449020812850766758978153555559443016494282755535348836359500502929640",
+    "classical_sde_abort_bound_per_call": "1/5678427533559428832416592249125035424637823130369672345949142181098744438385921275985867583701277855943457200048954515105739075223552",
     "readout_included_in_instrument_budget": true,
-    "total_error_bound": "1207/5418"
+    "total_error_bound": "1207/5418",
+    "schedule1_depth_rule": "L_d = ceil(log2 t_d), t_d least nonzero zero sum of kappa_d-th powers, kappa_d = gcd(d,p-1)",
+    "arity_maximizing_prime": 2521,
+    "query_dimension_exponent_maximizing_prime": 2521
   },
   "hidden_advice_inputs": [],
   "normalizer_recursion_required": false,
@@ -46,14 +49,16 @@
     "large_prime_call_cap": 10920,
     "small_prime_call_cap": 9,
     "uniform_fourier_slack": 19,
-    "large_prime_query_dimension_exponent": 147,
+    "large_prime_query_dimension_exponent": 55,
+    "schedule1_depth": "zero_sum_worst",
+    "arity_prime": 2521,
     "conditional_on_rees_core": true,
     "outer_normalizer_recursion_required": true,
     "outer_reduction_implemented": false,
     "covers_small_prime_queries": false,
     "covers_group_preprocessing_cost": false,
     "is_total_gate_bound": false,
-    "large_prime_original_queries_ceil_log2": 2194,
+    "large_prime_original_queries_ceil_log2": 794,
     "status": "conditional_worst_case_envelope_not_executed_group_algorithm",
     "scope_audit": "research/REES_WHOLE_PROOF_SCOPE_AUDIT.md"
   },
@@ -88,7 +93,7 @@
     ],
     "small_prime_descent_depth_bound": 8,
     "final_fourier_samples_per_call": 123,
-    "large_prime_copy_dimension_exponent": 147,
+    "large_prime_copy_dimension_exponent": 55,
     "small_prime_copy_dimension_exponent": 147,
     "preprocessing_error_allocation": "1/12",
     "chart_error_per_large_prime_call": "1/131040",
@@ -111,11 +116,116 @@
     "outer_reduction_implemented": false,
     "is_total_gate_bound": false,
     "speedup_claim_allowed": false,
-    "large_prime_original_copies_ceil_log2": 2194,
+    "large_prime_original_copies_ceil_log2": 794,
     "small_prime_original_copies_ceil_log2": 1918,
-    "total_original_copies_ceil_log2": 2194,
+    "total_original_copies_ceil_log2": 1918,
     "status": "conditional_copy_only_scope_correction_not_executed_receiver",
     "scope_audit": "research/REES_COPY_ONLY_OUTER_REDUCTION.md"
+  },
+  "zero_sum_depth_instance_profile": {
+    "original_dimension": 19,
+    "cover_dimension": 97,
+    "class": 9,
+    "grade_dimensions": [
+      19,
+      17,
+      16,
+      14,
+      12,
+      9,
+      6,
+      3,
+      1
+    ],
+    "queries_per_leaf": 9,
+    "final_fourier_samples": 20,
+    "query_dimension_exponent": 53,
+    "final_fourier_readout_calls": 20,
+    "classical_sde_attempts_per_call": 271,
+    "classical_restart_extra_source_copies": 0,
+    "original_queries_ceil_log2": 279,
+    "complete_instrument_calls_ceil_log2": 276,
+    "instrument_error_per_call": "1/596411078284476256823795638479723669376820407710714608122450673692424069838890173800",
+    "classical_sde_abort_bound_per_call": "1/3794275180128377091639574036764685364535950857523710002444946112771297432041422848",
+    "readout_included_in_instrument_budget": true,
+    "total_error_bound": "1207/5418",
+    "prime": 43,
+    "stage_depths_bottom_up": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ]
+  },
+  "published_depth_profile": {
+    "schedule1_depth_rule": "ceil(log2(d+1)) at degree d: B_d of eq:Bd (published thm:main)",
+    "profile": {
+      "original_dimension": 19,
+      "cover_dimension": 97,
+      "class": 9,
+      "grade_dimensions": [
+        19,
+        17,
+        16,
+        14,
+        12,
+        9,
+        6,
+        3,
+        1
+      ],
+      "queries_per_leaf": 9,
+      "final_fourier_samples": 20,
+      "query_dimension_exponent": 145,
+      "final_fourier_readout_calls": 20,
+      "classical_sde_attempts_per_call": 1081,
+      "classical_restart_extra_source_copies": 0,
+      "original_queries_ceil_log2": 1573,
+      "complete_instrument_calls_ceil_log2": 1570,
+      "instrument_error_per_call": "1/261402681256039014299384353402387949825555221776134706665137261162334667903346450134719925495588192239516322097306499074705911952954999126444322435386542849166531058087585616157882241138064323893475166133998610045112095358594282235038954887838559846936702771185685636291264010838778515230968224595735359852524370721678366372321061039159498398069267742468818052221463038257358338531210026032487567099671123568880999871975790197508271858193314132582570905641962295293977981800",
+      "classical_sde_abort_bound_per_call": "1/25907488423335759149119404380021415302343251169810191149683373827511083464703404402170929113783951935383945966632551924657895518385381565038977715192414529269954230307400494254651764190987931691678690262844511368775936957878360665423117229523092423211623687233581922502698677070749504324119849921106688801703386590859967332352",
+      "readout_included_in_instrument_budget": true,
+      "total_error_bound": "1207/5418"
+    },
+    "large_prime_outer_envelope": {
+      "large_prime_query_dimension_exponent": 147,
+      "large_prime_original_queries_ceil_log2": 2194
+    },
+    "copy_only_outer_envelope": {
+      "large_prime_copy_dimension_exponent": 147,
+      "small_prime_copy_dimension_exponent": 147,
+      "large_prime_original_copies_ceil_log2": 2194,
+      "small_prime_original_copies_ceil_log2": 1918,
+      "total_original_copies_ceil_log2": 2194
+    }
   },
   "review_manuscript": "research/manuscripts/rees_hsp_review.tex",
   "research_note": "research/REES_HSP_REDUCTION.md"

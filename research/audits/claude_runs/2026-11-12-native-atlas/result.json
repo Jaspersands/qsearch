@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3654,
+      "path": "research/audits/api_inputs/2026-11-12-native-completion/state-excerpt.md",
+      "sha256": "2f29632db80cdf89788958fc661d910153b0c9ab4ab4065d21cda65dc336676c",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 79390,
+      "path": "research/audits/api_inputs/2026-11-12-native-completion/anderson-source.md",
+      "sha256": "08388908ba856a5f10462942260fb9f045e3cae07d18c14b1c6808fb978a1974",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 31676,
+  "effort": "high",
+  "finished_at": "2026-11-12T09:58:02.646571+00:00",
+  "input_token_allowance": 32310,
+  "max_budget_usd": 7.0,
+  "max_tokens": 64000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 3.5231,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-native-completion/native-atlas.md",
+    "sha256": "e03e81ec51ced8fbb9c7e9dd3c6f49e4519a80a98c7ca0394b9942e844dcb1c7",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T094755.983057Z-cad0010d",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 31676,
+    "output_tokens": 44370
+  },
+  "usage_cost_estimate_usd": 2.53526
+}

@@ -1,0 +1,100 @@
+Been tried? native Jacobian Weil pairing normalized arithmetic GSp level frame Brauer obstruction
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY, PO-MEASUREMENT]
+     research/registry/negative_results.json:70684
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-CODE-WREATH-COLLISION-FREE-EXACT-INDEPENDENCE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-FRAME-PROBE, PO-COMPLEXITY, PO-SUCCESS]
+     research/registry/negative_results.json:61115
+     Claim: Global source-partition distinctness forces the exact frame norm bound ||B||<=2^{1-k}.
+     Why not: Complete finite W5 collision-free probes contain top eigenvalues slightly above 2^{1-k}.
+  3. negative   AFFINE-NODE-NORMALIZED-FRAME-QSVT-NO-NATURAL-RESPONSE  [retained · CODE-COSET-COLLECTIVE, PO-MECHANISM, PO-COMPLEXITY, PO-NOGO]
+     research/registry/negative_results.json:1467
+     Claim: Normalization-one block encodings of the exact affine-node averaged frames can be separately pseudoinverted at inverse-polynomial resolution to give a uniform compiler on the natural balanced common fiber.
+     Why not: For natural final siblings, the exact second-moment/rank theorem makes the full-sibling native mass and rank above every inverse-polynomial eigenvalue of Fbar_s vanish. The final common span has Theta(D) rank on positive source mass, so the common intersection of the two truncated spectral windows h
+  4. negative   NEG-SELF-DUAL-WREATH-PAIR-TRANSPORT-DEGREE-OBSTRUCTION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-DEGREE-OBSTRUCTION, PO-MEASUREMENT]
+     research/registry/negative_results.json:71036
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-DEGREE-OBSTRUCTION.
+     Why not: Falsified or refined by exact theorem evaluation.
+  5. negative   NEG-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT, PO-MEASUREMENT]
+     research/registry/negative_results.json:70323
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT.
+     Why not: Falsified or refined by exact theorem evaluation.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8147
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-CODE-WREATH-CONSTANT-GAP-NOT-TYPICAL-MOMENT  [critical]
+     research/registry/dequantization_checks.json:1426
+     Claim: A constant gap for the unconditional coupled word walk proves a typical all-unequal projector-sub-POVM rate.
+     Why not: Remove rare equal one-dimensional sectors by deriving the all-unequal conditioned normalized-character kernel, then prove a level-sensitive growing-order contraction at the 2^-k frame-eigenvalue scale.
+  3. dequant    DEQ-CODE-WREATH-GLOBAL-DISTINCTNESS-NOT-NORM-BOUND  [critical]
+     research/registry/dequantization_checks.json:1459
+     Claim: Asymptotic global distinctness of source partitions proves the all-unequal frame contraction.
+     Why not: Prove a uniform character-ratio, projector-overlap, or Fourier-level contraction for arbitrary globally distinct source-partition tuples; do not infer it from collision probability alone.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-PGM-BRIDGE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10105
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-PGM-BRIDGE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-COSET-THREE-COPY-RECOUPLING-OBSTRUCTION-COSET-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12206
+     Claim: RESULT-EXP-COSET-THREE-COPY-RECOUPLING-OBSTRUCTION-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. handoff    2026-11-07 Surface Torsion Character Repair  [journal]
+     research/AGENT_HANDOFF.md:2353
+     Repaired conditional readout uses cyclic ell-prime CHARACTERS, FULL arithmetic GL_r frame torsors, contragredient J[ell], and explicit twists overFp^j.
+  2. handoff    2026-11-07 Surface Torsion Geometry Construction  [journal]
+     research/AGENT_HANDOFF.md:2321
+     A CLOSED WRITTEN geometry proof now pays fixed-coordinate unique reduced-divisor charts, O(logell) flattened group operations, polynomial t-heights, reduced torsion and full arithmetic GL38 frame algebra.
+  3. note       Native quintic-surface P2 beyond the K3-type abelian mechanism › Selection, input and endpoint  [unlabelled]
+     research/QUINTIC_SURFACE_P2_ADMISSION.md:29
+     Quantum mechanism reuses explicit curve-Jacobian torsion frames, cyclic-character G0 induction, characteristic-zero twisted-curve readout, boundaryLeray and CRT.
+  4. note       The Symplectic Parabolic Obstruction: Non-Linear Block Duality, Gel'fand Pair Collapse, and the Brauer Commuta  [proved]
+     research/SYMPLECTIC_PARABOLIC_OBSTRUCTION_GELFAND_BRAUER_BARRIER.md:1
+     **Investigation**: Investigation 27 (Non-Abelian Matrix HSP & Lie-Type Representation Theory) **Date**: 2026-10-11 **Status**: PROVED & AUDITED MATHEMATICAL OBSTRUCTION **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False` ---
+  5. note       Good-dyadic local images and growing-genus two-Selmer dimension › 2. The concrete dyadic operation  [unlabelled]
+     research/GOOD_DYADIC_GROWING_SELMER.md:64
+     Let A_n be the level-2^n formal kernel of the good Jacobian.
+
+Code and experiments
+  1. experiment Exp Coset Perfect Matching Spherical Boundary  [planned]
+     research/registry/experiments.json:18919
+     Exp Coset Perfect Matching Spherical Boundary Resolved the perfect-matching homogeneous Fourier sampling step, proved the multiplicity-free row normal form, and ruled out a naive substitution of the 2026 Brauer-algebra QFT; the live bottleneck is now a verifier or polar implementation for the physi…
+  2. theorem    Divisor-free public kernel construction from two split polynomial fibers.  [code]
+     theorems/interval_split_fibers.py:1
+     The output
+feeds the existing native translation-frame solver, not circuit search.
+  3. experiment Exp Code Self Dual Wreath Pair Transport Native Mass Boundary  [planned]
+     research/registry/experiments.json:9853
+     Exp Code Self Dual Wreath Pair Transport Native Mass Boundary Transferred the natural d_alpha^4 carrier law exactly to conditional native pair-frame mass and proved that normalized cross-overlap QSVT remains superpolynomial on that mass.
+  4. theorem    Exact two-copy frame spectrum and the recoupling obstruction to its PGM.  [code]
+     theorems/coset_two_copy_frame.py:1
+     Exact two-copy frame spectrum and the recoupling obstruction to its PGM.
+  5. theorem    Perfect-matching spherical boundary for hidden-involution measurements.  [code]
+     theorems/coset_perfect_matching_spherical_boundary.py:1
+     The 2026 quantum Fourier transform for the Brauer algebra does not close the
+remaining row-state problem.
+
+Literature
+  1. literature Efficient Quantum Fourier Transforms For Semisimple Algebras  [seed · diagram-algebra-qft, large-loop-regime]
+     research/literature_records.json
+     Approximate recursive Fourier transforms for partition, Brauer, and walled Brauer algebras.
+  2. literature native_generalized_dihedral_sources  [audit]
+     research/literature_audits/native_generalized_dihedral_sources.json
+     AUDIT-NATIVE-GENERALIZED-DIHEDRAL-PHASE-BRIDGE Carried additive charts and unimodular perfect-pairing matrices for all supported native levels.
+  3. literature ternary_carry_receiver_sources  [audit]
+     research/literature_audits/ternary_carry_receiver_sources.json
+     2026-10-06 Public odd-level GF3 kernel state with exact divided frequencies Level3 classical cubic phase and low-label-only leading signature Conditional three-packet cubic cancellation L5 fourth-difference countercontrol Trace pairing, native PSP/CCP input and integer-secret scope as recorded in c…
+  4. literature Asymptotics of characters of symmetric groups related to Stanley character formula  [seed · symmetric-character, character-ratio, plancherel-typical, representation-theory]
+     research/literature_records.json
+     Asymptotics of characters of symmetric groups related to Stanley character formula Provides a uniform normalized-character bound in terms of Young diagram rows, columns, and transposition length.
+  5. literature cyclotomic_fiber_receiver_sources  [audit]
+     research/literature_audits/cyclotomic_fiber_receiver_sources.json
+     2026-10-06 Trace-dual unimodular native frequency coordinates with explicit integer-secret scope Known post-Fourier one-hot conversion conformance and complete source costs Public exact suffix-rank receiver replay on original even-level full-secret samples IID native collision moment, information l…
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.
