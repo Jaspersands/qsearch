@@ -1,0 +1,278 @@
+# Referee report: Corollary cor:nilpotent (black-box nilpotent groups of fixed class)
+
+Status: AI-checked, pending human review. Hostile single referee, 2026-11-12.
+Object: `docs/papers/rees-hsp/core/main-core.tex` (local draft), Corollary `cor:nilpotent`, its
+proof, Remark `rem:nilpotent-scope`, the revised proof of `cor:utz`, and the wording about
+`cor:nilpotent` in the abstract, Section 1, `rem:black-box-scope`(iii) and the Outlook.
+Sources read: Imran-Ivanyos arXiv:2304.08376v1 (local text: Theorem 1, Sections 1, 2.1-2.4,
+Lemma 1, Propositions 1-3, Section 6); `appendix-torsion-blackbox.tex` (Access model,
+`lem:tb-sylow`, `lem:tb-small-primes`); ISS 2012 arXiv:0707.1260 (Theorem 1, Section 3).
+Nothing was edited in the paper; no computation was needed.
+
+## Verdict: CORRECT WITH FIXES
+
+The mathematics of the corollary is sound. The Sylow split, the order finding without an identity,
+the hypotheses of `cor:black-box-pe` at each `G_p`, and the error budget all check, and so do the
+inputs supplied to II Theorem 1. No finding is FATAL. One finding is MAJOR: the paper says the
+corollary answers, in "the setting" of Imran and Ivanyos's question, a case they ask about.
+Their question is posed in a strictly more general oracle model, which the corollary does not
+cover. The other findings are MINOR: a wrong bound in the `cor:utz` proof, missing details in
+the access model, a precision schedule, and consistency edits.
+
+## Checks that passed (no fix needed)
+
+- (a) `cor:black-box-pe` at `G_p`, `p > c`. `p` is known from the factorizations. `G_p <= G`, so
+  its class is at most `c < p`. The encodings and the oracle are the same unique `ell`-bit
+  encodings and the same coherent oracle, and `G_p` is closed under the oracle. `f` restricted to
+  `G_p` hides `H cap G_p`, because `x^{-1}y in G_p`. The queries of `cor:black-box-pe` are only at
+  `Phi`-images, which lie in `G_p`. `L_p = floor(ell/log2 p) <= ell`. The error `eps/(2 ell)` is
+  rational. At most `log2|G| <= ell` primes divide `|G|`, so the large primes cost at most
+  `eps/2` in total. Generators equal to 1 (when `p` does not divide `o_i`) are harmless: the
+  exponent step and the pullback allow them.
+- (b) Orders. `k -> g^{k+1}` has least period `o_i` and is injective on a period. It can be
+  computed out of place without `enc(1)`: start at `z_0 = g`, and at each bit compute
+  `z_j * g^{2^j}` into a fresh register, then select coherently between `z_j` and that product.
+  The test `g^{v+1} = g` holds iff `g^v = 1` iff `o_i | v`, by unique encoding. The candidates are
+  lcms of two denominators `<= 2^ell`, so `v <= 2^{2 ell}`, and Shor's algorithm factors them in
+  `poly(ell)`. The prime-stripping loop keeps `o_i | v` and stops only when `v/q` fails for every
+  prime `q | v`, so it ends at exactly `o_i`. Every failure is detected: a candidate is accepted
+  only after an exact classical check, and an incomplete factorization is caught by the AKS test,
+  whatever the gate approximation. `O(ell + log(s/eps))` repetitions matches the Chernoff count
+  of `lem:tb-sylow`(d).
+- (c) Sylow facts (a)-(c), including `G_{<=c} = <g_i^{n_i}>`: the `q`-part of `g_i` for `q > c`
+  has order dividing `n_i`, and `gcd(n_i, ord pi_{<=c}(g_i)) = 1`. Also `f|_{G_{<=c}}` hides
+  `H cap G_{<=c} = prod_{p<=c} H_p`, and the union of the outputs generates `H`.
+- (d) II Theorem 1 (local text, line 151) assumes: nilpotent, class bounded by a constant, prime
+  factors of `|G|` bounded by a constant, a black-box group with unique `ell`-bit encoding
+  ("the group operations are given by oracles", Section 2.2), prime factors known (Section 2.2
+  and Proposition 1), and the oracle "on zero input, returns a copy of an arbitrary (though fixed)
+  purification" plus its inverse (Section 1). The paper supplies each of these:
+  - the primes from (b);
+  - the identity as `g_1^{o_1}`;
+  - the inverse as `x^{M-1}` (valid: the `p`-part of `|G_{<=c}|` is at most `2^ell`, so
+    `p^{floor(ell/log2 p)}` covers it, and `log2 M <= pi(c) ell`);
+  - the purification `P` then `U_f`, by II Lemma 1 (cited accurately);
+  - the inverse as `U_f` then `P^{-1}` (correct, since an XOR oracle is an involution).
+  The query count `poly(log|G_{<=c}|) = poly_c(ell)` is right; the exponent is not explicit in
+  II, roughly `ell^{O(c^2 log c)}` through Proposition 2 and Theorem 2.
+  The citation of II Section 2.1 for exactness under exact Fourier transforms, with a constant
+  number of gates at bounded primes, is accurate.
+- (e) The union bound `eps/4 + ell*eps/(2 ell) + eps/4 = eps` is right. The order step makes no
+  `f` queries, `cor:black-box-pe` makes `poly_c(ell, log(ell/eps))` queries per prime, and II
+  makes `poly_c(ell)` calls, so the total is `poly_c(ell, log 1/eps)` and independent of `s`.
+- (f) `cor:utz`, apart from Finding 3.
+  - `ell = m ceil(log2 M)` is right: `m` entries in `[0,M)`.
+  - `UT_n(Z/M)` is nilpotent of class at most `n-1` and generated by the `x_ij mod M`.
+  - `f-bar` hides `H/Gamma(M)` because `Gamma(M) <= H`.
+  - The lifts together with the `x_ij^M` generate `H`.
+  - Error `eps/4 + 3eps/4`; the period domain `2^{2b+1} <= 2^B`.
+  - "Primes `q >= n` divide the index" is right: in `prod_q G-bar_q`, `q | e_ij` forces
+    `[G-bar_q : H-bar_q] > 1`.
+- (g) "For `c <= 2` the corollary is not new [ISS12]" is accurate. ISS 2012 Theorem 1
+  (0707.1260, line 64) covers all nil-2 groups, including the abelian ones and the prime 2,
+  unconditionally, through refined polycyclic presentations of solvable black-box groups. The
+  inverse and the identity they assume are recovered here as in the proof. The quote from II
+  Section 6 in `rem:nilpotent-scope`(a) is faithful as a paraphrase. II write that "Even a
+  non-exact method ... would be of great interest". Section 6, line 899, continues: "would give
+  a new result in the non-exact setting: existence of an efficient probabilistic quantum hidden
+  subgroup algorithm for nilpotent groups of smooth order having O(1)-bounded nilpotency class".
+  Outlook item (4) and the results list at the head of Section `sec:outlook` already include
+  `cor:nilpotent`, and no leftover text says the composition is "not claimed".
+
+## Findings
+
+### 1. MAJOR: the oracle model of Imran and Ivanyos is not that of `cor:nilpotent`, and their Section 6 is mis-described
+
+Locations: abstract ("including a case they ask about"); Section 1, paragraph "Black-box groups and
+other presentations" ("Imran and Ivanyos ask for such an algorithm ..."); Related Work paragraph
+"Imran and Ivanyos solve the HSP exactly" ("they pose the case of bounded class and smooth order as
+an open problem"; "in the setting of their open question"); "What is new, and what is not" ("the
+setting of the open question"); `rem:nilpotent-scope`(a) and (c).
+
+Problem.
+(i) II pose their HSP with an oracle that creates an arbitrary fixed purification of the subgroup
+state, plus its inverse (Section 1). Their Proposition 3, through which Section 6 says a
+randomized zero-sum finder "would give" the smooth-order result, is stated in that model. The
+standard `U_f` is only one instance of that oracle. `cor:nilpotent` needs `U_f` itself: the
+tuple oracle evaluates `f` at `c` points of the cover, which a purification oracle does not
+allow, and copy input is excluded too (`rem:black-box-scope`(iv)). So the corollary gives the
+smooth-order result only in the standard-oracle special case, not "in the setting of their open
+question".
+(ii) II do not pose the smooth-order HSP as an open problem, and they do not "ask for such an
+algorithm". They propose the zero-sum question as "a problem for further research" and note
+that a positive answer would imply the HSP result. Every other qualifier (conditional, not exact,
+zero-sum question left open) is present, so the fix is wording only.
+
+Replacement text.
+
+Abstract: replace "for black-box nilpotent groups of fixed class, including a case they ask
+about." with
+```latex
+for black-box nilpotent groups of fixed class with a standard hiding-function oracle, including the groups of smooth order for which they note that an efficient zero-sum algorithm would give such a result.
+```
+
+Section 1, "Black-box groups ..." paragraph: replace the sentence "Imran and Ivanyos ask for such an
+algorithm, ... (Remark~\ref{rem:nilpotent-scope})." with
+```latex
+Imran and Ivanyos note that an efficient, even randomized, zero-sum algorithm would give a probabilistic algorithm for nilpotent groups of smooth order and bounded class, in their model, where $H$ is given by an oracle that creates a purification of the subgroup state~\cite[Section~6 and Proposition~3]{ImranIvanyos2023}. Corollary~\ref{cor:nilpotent} gives such an algorithm by another route, for every order, when $H$ is given by a standard oracle $U_f$, conditional on Theorem~\ref{thm:is-import}; it does not cover their more general oracle, and it leaves the zero-sum question open (Remark~\ref{rem:nilpotent-scope}).
+```
+
+Related Work: replace "and they pose the case of bounded class and smooth order as an open
+problem~\cite[Section~6]{ImranIvanyos2023};" with
+```latex
+and they ask for a $\poly(np)$-time zero-sum algorithm, which would give the case of bounded class and smooth order~\cite[Section~6]{ImranIvanyos2023};
+```
+and replace "and so gives a bounded-error polynomial-time algorithm in the setting of their open
+question, for every order and not only smooth ones," with
+```latex
+and so gives a bounded-error polynomial-time algorithm for the groups of that case, and for every order, when $H$ is given by a standard oracle $U_f$ rather than by their subgroup-state oracle,
+```
+
+"What is new": replace "the setting of the open question of~\cite[Section~6]{ImranIvanyos2023}"
+with
+```latex
+which contains, for a standard oracle, the smooth-order case that~\cite[Section~6]{ImranIvanyos2023} relate to their zero-sum question
+```
+
+`rem:nilpotent-scope`(a): after "conditional on Theorem~\ref{thm:is-import}." insert
+```latex
+Their question is posed in their oracle model, where $H$ is given by a unitary that creates a fixed purification of the subgroup state, together with its inverse~\cite[Section~1 and Proposition~3]{ImranIvanyos2023}. Corollary~\ref{cor:nilpotent} needs the standard oracle $U_f$, since the tuple oracle evaluates $f$ at $c$ points of the cover, so it gives no algorithm in that model.
+```
+`rem:nilpotent-scope`(c): replace "and only oracle input is covered, as in
+Remark~\ref{rem:black-box-scope}" with
+```latex
+and only the standard oracle $U_f$ is covered: neither the coset-copy input of Theorem~\ref{thm:main} (Remark~\ref{rem:black-box-scope}) nor the subgroup-state oracle of~\cite{ImranIvanyos2023}
+```
+
+### 2. MINOR: II Theorem 1 is an imported theorem but is not named in the hypotheses; the status paragraph omits the new corollaries
+
+Locations: statement of `cor:nilpotent` (and `cor:utz`, which inherits it); `sec:status` ("All of
+this applies equally to Corollaries~\ref{cor:black-box} and~\ref{cor:black-box-pe} ...");
+Appendix `app:artifacts` (no entry for `cor:nilpotent` or `cor:utz`; the `utz_e2e_check.py`
+check is only a LaTeX comment).
+
+Problem. `sec:status` says that imported results are "stated as cited theorems and named in the
+hypotheses that use them". `cor:nilpotent` names only `thm:is-import`, yet for `p <= c` it relies
+on II Theorem 1, which rests on II Theorem 2 (the zero-sum finder) and on the exact
+uniform-superposition method of [II22]. These were read only by AI. II is published (QIP 23,
+2024), so this is a disclosure issue, not a gap. The II locators (Theorem 1, Lemma 1, Sections
+2.1, 2.2, 6) were checked against arXiv v1 only.
+
+Fix. In `cor:nilpotent`, replace "Fix $c \ge 1$ and assume Theorem~\ref{thm:is-import}." with
+```latex
+Fix $c \ge 1$ and assume Theorem~\ref{thm:is-import}; for the primes $p \le c$ the proof imports~\cite[Theorem~1]{ImranIvanyos2023}.
+```
+In `sec:status`, replace the last sentence with
+```latex
+All of this applies equally to Corollaries~\ref{cor:black-box}, \ref{cor:black-box-pe}, \ref{cor:nilpotent} and~\ref{cor:utz}; the algebraic steps of the first two and the reduction of the last were also run on small groups (Appendix~\ref{app:artifacts}), and Corollary~\ref{cor:nilpotent} also imports~\cite[Theorem~1]{ImranIvanyos2023}, whose numbering refers to arXiv:2304.08376v1.
+```
+In `app:artifacts`, add an item for `research/audits/reviews/2026-11-12-rees-utz-finite-index/utz_e2e_check.py`,
+stating that brute force replaces the quantum steps.
+
+### 3. MINOR: `cor:utz`, the bound `M <= 2^{mb}` fails as written
+
+Location: proof of `cor:utz`, paragraph "Periods": "Let $M$ be the least common multiple of the
+accepted values. Then $M \le 2^{mb}$".
+
+Problem. With `O(log(m/eps))` repetitions per pair, a pair can have several accepted candidates.
+Each is a multiple of `e_ij` and at most `2^b`, but their lcm need not be `<= 2^b`: for `e_ij = 1`,
+for example, the candidates `2^b - 1` and `2^b - 3` would both be accepted. Erroneous continued-
+fraction outputs occur with small nonzero probability. Then `M` can exceed `2^{mb}`, the entries
+`M` of `x_ij^M` and the lifts can leave `[0, 2^B)`, the domain of the oracle, and the stated
+`ell` bound fails. The intended argument needs one value per pair.
+
+Fix. Replace "Let $M$ be the least common multiple of the accepted values. Then $M \le 2^{mb}$ and
+$\Gamma(M) \subseteq H$." with
+```latex
+For each pair let $r_{ij}$ be its least accepted candidate, and let $M = \operatorname{lcm}_{i<j} r_{ij}$. Then $M \le 2^{mb}$, every $e_{ij}$ divides $M$, and $\Gamma(M) \subseteq H$.
+```
+
+### 4. MINOR: the access model of II is only partly supplied in the text (in-place multiplication, clean preparation, attribution)
+
+Location: proof of `cor:nilpotent`, paragraph "Primes $p \le c$".
+
+Problem.
+(i) II's black box gives "the group operations" by oracles. The exact Watrous preparation and the
+restriction and pushing conversions (II Sections 2.2 and 2.4) act in place. The core gives only
+the out-of-place oracle and the inverse. The full version (Access model, around line 551 of
+`appendix-torsion-blackbox.tex`) says how to obtain the in-place map; the core does not.
+(ii) Lemma 1 needs `|v(x)>` to be constant on cosets, so the preparation must leave its workspace
+in a state independent of `x`. This holds if the exact method of [II22] is clean. It is
+asserted, and was not checked against [II22].
+(iii) II Section 2.2 attributes the exact version of Watrous's method to their earlier paper
+[II22]. The core cites neither Watrous nor [II22].
+
+Fix. After "with its workspace uncomputed." insert
+```latex
+If their model's multiplication is the in-place map $|x,y\rangle \mapsto |x,xy\rangle$, it is obtained from ours: compute $xy$ out of place, XOR $x^{-1}(xy) = y$ into the input register, with $x^{-1} = x^{M-1}$ computed and uncomputed in a clean register, and swap the two registers.
+```
+Replace "by the exact version of Watrous's method used in~\cite[Section~2.2]{ImranIvanyos2023}"
+with
+```latex
+with clean workspace, by the exact version of Watrous's method that~\cite[Section~2.2]{ImranIvanyos2023} use (they attribute it to their earlier exact abelian algorithm)
+```
+Mark the clean-workspace property for human verification against [II22].
+
+### 5. MINOR: the compilation precision presumes a known operation count; `s` is missing from the gate bound
+
+Location: proof of `cor:nilpotent`, "Primes $p \le c$", last two sentences.
+
+Problem. The phrase "each to accuracy $\eps/4$ divided by their number" needs an explicit a-priori
+bound on the number of operations of II's algorithm. II give only `poly(ell)`, with unspecified
+constants. Separately, II's operation count must depend on the size `s` of the input generating
+set (they reduce generating sets by membership tests), but the step is charged
+`poly_c(ell, w, log 1/eps)` gates. The total in the corollary statement does include `s`, so the
+statement is unaffected.
+
+Fix. Replace "each to accuracy $\eps/4$ divided by their number, gives error at most $\eps/4$ by
+Lemma~\ref{lem:hybrid}" with
+```latex
+the $j$th of them to accuracy $\eps/(8j^2)$, gives error at most $\sum_j \eps/(8j^2) < \eps/4$ by Lemma~\ref{lem:hybrid}, with no a-priori count of the operations
+```
+and replace "uses $\poly_c(\ell,w,\log(1/\eps))$ gates" with "uses $\poly_c(s,\ell,w,\log(1/\eps))$
+gates and black-box multiplications".
+
+### 6. MINOR: stale counting word in `rem:black-box-scope`; open problem (4)
+
+Locations: `rem:black-box-scope`, "and the second and fourth apply to both"; Outlook, open problem (4).
+
+Problem. There are now three corollaries, and restrictions (ii) and (iv) apply to all three.
+Open problem (4) omits the oracle-model gap of Finding 1.
+
+Fix. Replace "and the second and fourth apply to both" with "and the second and fourth apply to all
+three". In open problem (4), replace "non-unique encodings, or class growing with the input." with
+```latex
+non-unique encodings, class growing with the input, or the subgroup-state oracle of~\cite{ImranIvanyos2023} in place of $U_f$.
+```
+
+### 7. MINOR (optional): strength of the `c <= 2` and `n = 3` remarks
+
+Locations: `rem:nilpotent-scope`(b); `rem:utz-scope`(b).
+
+Both remarks are accurate. A reader may still take "not new" to mean "covered conditionally".
+ISS 2012 is unconditional, and it covers the prime 2 at class two, so for `n = 3` the import of
+II Theorem 1 at `q = 2` is not needed. Optional replacement in (b) of `rem:nilpotent-scope`:
+```latex
+For $c \le 2$ the corollary is contained, unconditionally, in~\cite{IvanyosSanselmeSantha2012}, with the inverse and the identity recovered as in the proof.
+```
+In `rem:utz-scope`(b), "with~\cite{IvanyosSanselmeSantha2012} for $q \ge 3$ and~\cite[Theorem~1]{ImranIvanyos2023}
+for $q = 2$" may become "with~\cite{IvanyosSanselmeSantha2012}, which covers every prime at class two,".
+
+## Claim gates that must stay false
+
+- The corollary does not answer II's zero-sum question, it is not exact, and it gives nothing in
+  II's subgroup-state oracle model.
+- The corollary has no application, and no novelty for `c <= 2`.
+- No speedup is claimed.
+- There is no human check of II Theorem 1, II Lemma 1, or the exact Watrous method of [II22].
+
+## Disposition (integrator, 2026-11-12)
+
+All seven findings were applied to the local core draft (`docs/papers/rees-hsp/core/main-core.tex`, gitignored), using the replacement text above. One change: the abstract does not use the long replacement from Finding 1, because of the 1,920-character limit. It now reads "for black-box nilpotent groups of fixed class with a standard oracle", and the §1 paragraph and Remark rem:nilpotent-scope(a) carry the comparison with the Imran–Ivanyos oracle model. The draft compiles clean at 45 pp, the abstract is 1,901 characters, and the arXiv package was rebuilt (its text is identical to the core PDF).
+
+Open items for a human:
+- Imran–Ivanyos Theorem 1 and Lemma 1 have not been checked by a human.
+- Neither has the clean-workspace exact Watrous preparation of [II22].
+- A specialist priority check of Corollary cor:nilpotent is still needed.
+
+Claim gates unchanged.
